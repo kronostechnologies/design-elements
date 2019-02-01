@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>letter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="letter" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16.7107038,2 L3.29053011,2 L10.0045791,9.49450276 L16.7107038,2 Z M18,3.55842785 L10.7452158,11.666091 L10.7396758,11.6611338 C10.7170002,11.6859927 10.6928597,11.7099471 10.6672606,11.7328804 C10.2559056,12.1013983 9.62369359,12.0666719 9.25517571,11.6553168 L2,3.55678568 L2,16.0301514 L18,16.0301514 L18,3.55842785 Z M0.5,0 L19.5,0 C19.7761424,-5.07265313e-17 20,0.223857625 20,0.5 L20,17.5 C20,17.7761424 19.7761424,18 19.5,18 L0.5,18 C0.223857625,18 3.38176876e-17,17.7761424 0,17.5 L0,0.5 C-3.38176876e-17,0.223857625 0.223857625,5.07265313e-17 0.5,0 Z" id="Combined-Shape" fill="#000000"></path>
+    </g>
+</svg>

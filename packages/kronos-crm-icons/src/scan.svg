@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-scan</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ico-scan" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M1,14 L19,14 C19.5522847,14 20,14.4477153 20,15 L20,18 C20,18.5522847 19.5522847,19 19,19 L1,19 C0.44771525,19 6.76353751e-17,18.5522847 0,18 L0,15 C-6.76353751e-17,14.4477153 0.44771525,14 1,14 Z M2,17 C2.55228475,17 3,16.5522847 3,16 C3,15.4477153 2.55228475,15 2,15 C1.44771525,15 1,15.4477153 1,16 C1,16.5522847 1.44771525,17 2,17 Z" id="Combined-Shape" fill="#000000"></path>
+        <rect id="Rectangle-Copy-2" fill="#000000" transform="translate(12.009870, 7.426032) rotate(42.000000) translate(-12.009870, -7.426032) " x="2.00986973" y="5.92603236" width="20" height="3" rx="1"></rect>
+        <rect id="Rectangle" fill="#000000" x="2" y="19" width="3" height="1"></rect>
+        <rect id="Rectangle-Copy" fill="#000000" x="15" y="19" width="3" height="1"></rect>
+    </g>
+</svg>

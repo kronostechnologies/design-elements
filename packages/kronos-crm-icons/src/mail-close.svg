@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>mail-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mail-close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0.0367647059,0.972918388 C0.012254902,1.07445148 0,1.18112549 0,1.29165519 L0,12.7083448 C0,13.4344992 0.547794118,14 1.22303922,14 L15.7769608,14 C16.4534314,14 17,13.4216469 17,12.7083448 L17,1.29165519 C17,1.18112549 16.9877451,1.07445148 16.9632353,0.972918388 L8.5,9.33718902 L0.0379901961,0.972918388 L0.0367647059,0.972918388 Z M0.974264706,0.02698981 C1.05392157,0.00899660332 1.1372549,0 1.22181373,0 L15.7757353,0 C15.8615196,0 15.9448529,0.00899660332 16.0257353,0.02698981 L8.5122549,7.47746259 L0.974264706,0.02698981 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

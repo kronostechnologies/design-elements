@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>warning</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="warning" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5">
+            <path d="M19.0743497,17.1896124 L19.4685304,17.9256661 L19.9093009,17.6896124 L19.9093009,17.1896124 L19.0743497,17.1896124 Z" id="Shape-Copy" stroke="#000000" fill-rule="nonzero"></path>
+            <polygon id="Path" fill="#000000" points="11.0423567 16.6686572 8.95877453 16.6686572 8.95877453 14.585075 11.0423567 14.585075"></polygon>
+            <polygon id="Path" fill="#000000" points="11.0423567 13.0223884 8.95877453 13.0223884 8.95877453 6.25074644 11.0423567 6.25074644"></polygon>
+        </g>
+    </g>
+</svg>

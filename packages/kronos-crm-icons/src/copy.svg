@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill="#000000" fill-rule="nonzero" id="Shape">
+            <path d="M12.5,5 L12.5,0 L3.75,0 L0,3.75 L0,15 L7.5,15 L7.5,20 L20,20 L20,5 L12.5,5 Z M3.75,1.7675 L3.75,3.75 L1.7675,3.75 L3.75,1.7675 Z M1.25,13.75 L1.25,5 L5,5 L5,1.25 L11.25,1.25 L11.25,5 L7.5,8.75 L7.5,13.75 L1.25,13.75 Z M11.25,6.7675 L11.25,8.75 L9.2675,8.75 L11.25,6.7675 Z M18.75,18.75 L8.75,18.75 L8.75,10 L12.5,10 L12.5,6.25 L18.75,6.25 L18.75,18.75 Z"></path>
+        </g>
+    </g>
+</svg>
