@@ -8,7 +8,11 @@
   "contributors": [
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
   ],
+  "scripts": {
+    "build": "./scripts/build.sh",
+    "doPublish": "./scripts/doPublish.sh"
+  },
   "devDependencies": {
-    "lerna": "^3.6.0"
+    "svgo": "^1.1.1"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "@equisoft/kronos-crm-icons",
+  "version": "0.1.2",
+  "description": "Icons for Equisoft's Customers-relationship Management app.",
+  "license": "MIT",
+  "author": "Equisoft Design",
+  "maintainers": [
+    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+  ],
+  "contributors": [
+    "Hugo Soucy <hugo.soucy@equisoft.com> (https://github.com/hs0ucy)",
+    "Stéphanie Turgeon-Girard <stephanie.turgeon-girard@equisoft.com> (https://github.com/sturgeon)",
+    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+  ],
+  "scripts": {
+    "prepublishOnly": "../scripts/prepublishOnly.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kronostechnologies/design-elements.git"
+  }
+}

@@ -1,0 +1,1 @@
+yarn rollup --config --watch
