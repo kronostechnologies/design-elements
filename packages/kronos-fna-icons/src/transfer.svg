@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+<svg viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
     <title>transfer</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="transfer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon id="Shape" fill="#000000" fill-rule="nonzero" transform="translate(10.000000, 9.000000) rotate(-180.000000) translate(-10.000000, -9.000000) " points="11.0344828 18 11.0344828 13.1538462 0 13.1538462 0 4.84615385 11.0344828 4.84615385 11.0344828 0 20 9"></polygon>
-    </g>
+    <path d="M8.966 0v4.846H20v8.308H8.966V18L0 9z" />
 </svg>

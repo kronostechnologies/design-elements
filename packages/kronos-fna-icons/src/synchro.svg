@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+<svg viewBox="0 0 18 20" xmlns="http://www.w3.org/2000/svg">
     <title>synchro</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="synchro" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" fill="#000000" fill-rule="nonzero">
-            <path d="M14.015,15.001 L14.015,10.97 L15.984,10.97 L15.984,16.97 L3.984,16.97 L3.984,19.97 L0,15.986 L3.984,12.002 L3.984,15.002 L14.015,15.002 L14.015,15.001 Z M3.983,4.969 L3.983,9 L2.014,9 L2.014,3 L14.014,3 L14.014,0 L17.998,3.984 L14.014,7.968 L14.014,4.968 L3.983,4.968 L3.983,4.969 Z" id="Shape"></path>
-        </g>
-    </g>
+    <path d="M14.015 15.001V10.97h1.969v6h-12v3L0 15.986l3.984-3.984v3l10.031-.001zM3.983 4.969V9H2.014V3h12V0l3.984 3.984-3.984 3.984v-3l-10.031.001z" />
 </svg>
