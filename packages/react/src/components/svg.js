@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({className, svg}) => (
+export default ({ className, svg }) => (
     <svg className={className}>
-        <use href={`#${svg.id}`}/>
+        <use href={`#${svg.id}`} />
     </svg>
 );

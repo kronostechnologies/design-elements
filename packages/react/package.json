@@ -7,7 +7,8 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
-    "start": "./scripts/start.sh"
+    "start": "./scripts/start.sh",
+    "eslint": "./scripts/eslint.sh"
   },
   "files": [
     "dist"
@@ -35,6 +36,10 @@
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "@equisoft/eslint-config-react": "^1.0.1",
+    "eslint": "^5.14.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-react": "^7.12.4",
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.0.0",
