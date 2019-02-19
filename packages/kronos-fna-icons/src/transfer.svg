@@ -1,4 +1,4 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-<title>transfer</title>
-<path d="M8.966 1v4.846h11.034v8.308h-11.034v4.846l-8.966-9z"></path>
+<svg viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+    <title>transfer</title>
+    <path d="M8.966 0v4.846H20v8.308H8.966V18L0 9z" />
 </svg>
