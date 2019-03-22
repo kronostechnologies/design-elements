@@ -18,7 +18,8 @@
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
   ],
   "contributors": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
+    "Léane Mei Dostie-Chalifour <leane.dostie@equisoft.com> (https://github.com/leanedostie)"
   ],
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
   },
   "dependencies": {
     "react": "^16.8.0",
-    "svg-sprite-loader": "^4.1.3"
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -37,12 +38,12 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@equisoft/eslint-config-react": "^1.0.1",
+    "@svgr/rollup": "^4.1.0",
     "eslint": "^5.14.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-react": "^7.12.4",
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "styled-components": "^4.1.3"
+    "rollup-plugin-node-resolve": "^4.0.0"
   }
 }
