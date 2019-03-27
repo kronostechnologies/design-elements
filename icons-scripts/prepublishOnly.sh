@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-svgo -f ../src -o .
+svgo --config=../.svgo.yml -f ../src -o . --disable=removeViewBox --enable=removeDimensions
 cp ../README.md .

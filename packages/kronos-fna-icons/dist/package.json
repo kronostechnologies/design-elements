@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/kronos-fna-icons",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Icons for Equisoft's Financial Needs Analysis app.",
   "license": "MIT",
   "author": "Equisoft Design",
@@ -10,7 +10,8 @@
   "contributors": [
     "Hugo Soucy <hugo.soucy@equisoft.com> (https://github.com/hs0ucy)",
     "Stéphanie Turgeon-Girard <stephanie.turgeon-girard@equisoft.com> (https://github.com/sturgeon)",
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
+    "Larry Matte <larry.matte@equisoft.com> (https://github.com/larrymatte)"
   ],
   "scripts": {
     "prepublishOnly": "../scripts/prepublishOnly.sh"

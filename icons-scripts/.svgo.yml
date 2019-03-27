@@ -1,0 +1,6 @@
+# replace default config
+
+plugins:
+
+- convertColors:
+    currentColor: true
