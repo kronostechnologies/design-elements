@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-svgo -f ./src -o ./dist --disable=removeViewBox --enable=removeDimensions --enable=removeUselessStrokeAndFill
+svgo --config=../../icons-scripts/custom-svgo.yml -f ./src -o ./dist --disable=removeViewBox --enable=removeDimensions

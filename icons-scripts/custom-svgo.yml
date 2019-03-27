@@ -1,3 +1,5 @@
+# replace default config
+
 plugins:
 
 - convertColors:
