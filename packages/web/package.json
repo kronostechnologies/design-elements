@@ -10,7 +10,8 @@
     "start": "./scripts/start.sh"
   },
   "files": [
-    "dist"
+    "dist",
+    "style"
   ],
   "author": "Equisoft Design",
   "maintainers": [
