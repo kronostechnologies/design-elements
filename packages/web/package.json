@@ -7,7 +7,8 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
-    "start": "./scripts/start.sh"
+    "start": "./scripts/start.sh",
+    "stylelint": "./scripts/stylelint.sh"
   },
   "files": [
     "dist",
@@ -26,5 +27,9 @@
   },
   "bugs": {
     "url": "https://github.com/kronostechnologies/design-elements/issues"
+  },
+  "devDependencies": {
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0"
   }
 }

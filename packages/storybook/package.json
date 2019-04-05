@@ -1,0 +1,22 @@
+{
+    "name": "@equisoft/design-elements-storybook",
+    "version": "0.1.1",
+    "scripts": {
+        "start": "./scripts/start.sh"
+    },
+    "author": "Equisoft Design",
+    "maintainers": [
+        "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+    ],
+    "contributors": [
+        "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+    ],
+    "dependencies": {
+        "@equisoft/design-elements-react": "^0.1.1",
+        "@equisoft/design-elements-web": "^0.1.1",
+        "@storybook/react": "^5.0.6",
+        "babel-loader": "^8.0.5",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+    }
+}
