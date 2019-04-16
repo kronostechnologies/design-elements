@@ -2,4 +2,4 @@
 The Equisoft design system.
 
 ## Setup
-This repository is a multipackage repository meaning this repository represent multiple package. These packages are located in `packages` folders and are released using [lerna](https://github.com/reggi). Each package have their own `README.md` and their own release cycles. For more information, check out the `packages` folder themselves.
+This repository is a multipackage repository meaning this repository represent multiple packages. These packages are located in the `packages` folder and are published using [lerna](https://github.com/reggi). Each package has its own `README.md` and its own release cycle. For more information, check out the `packages` folder themselves.
