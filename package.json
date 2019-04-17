@@ -9,6 +9,6 @@
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
   ],
   "devDependencies": {
-    "lerna": "^3.6.0"
+    "lerna": "^3.13.1"
   }
 }

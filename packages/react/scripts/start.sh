@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-yarn rollup --config --watch
+rollup --config --watch

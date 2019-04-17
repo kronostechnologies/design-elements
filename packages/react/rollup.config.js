@@ -10,7 +10,8 @@ export default {
     },
     external: [
         'react',
-        'styled-components',
+        // 'react-dom',
+        // 'styled-components',
     ],
     plugins: [
         resolve({
