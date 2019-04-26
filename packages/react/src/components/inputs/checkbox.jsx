@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
-    height: 16px;
-    margin: 0;
-    width: 16px;
+  height: 16px;
+  margin: 0;
+  width: 16px;
 `;
 
 export default class checkbox extends Component {
