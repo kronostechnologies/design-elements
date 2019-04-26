@@ -2,59 +2,59 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-    align-items: center;
-    display: flex;
-    max-width: 160px;
+  align-items: center;
+  display: flex;
+  max-width: 160px;
 `;
 
 const Progress = styled.progress`
-    appearance: none;
-    height: 4px;
-    margin: 6px;
-    min-width: 148px;
+  appearance: none;
+  height: 4px;
+  margin: 6px;
+  min-width: 148px;
 
-    &[value] {
-        &::-moz-progress-bar {
-            background-color: #36477F;
-        }
-
-        &::-webkit-progress-bar {
-            background-color: #D9DDE2;
-        }
-
-        &::-webkit-progress-value {
-            background-color: #36477F;
-        }
+  &[value] {
+    &::-moz-progress-bar {
+      background-color: #36477f;
     }
+
+    &::-webkit-progress-bar {
+      background-color: #d9dde2;
+    }
+
+    &::-webkit-progress-value {
+      background-color: #36477f;
+    }
+  }
 `;
 
 const UL = styled.ul`
-    display: flex;
-    height: 16px;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 160px;
+  display: flex;
+  height: 16px;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 160px;
 `;
 
 const AbstractStep = styled.li`
-    background-color: #36477F;
-    border-radius: 50%;
-    display: inline-block;
-    width: 16px;
+  background-color: #36477f;
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
 `;
 
 const PastStep = AbstractStep;
 
 const CurrentStep = styled(AbstractStep)`
-    border: 4px solid #D9DDE2;
-    width: 8px;
+  border: 4px solid #d9dde2;
+  width: 8px;
 `;
 
 const FutureStep = styled(AbstractStep)`
-    background-color: #D9DDE2;
+  background-color: #d9dde2;
 `;
 
 export default class progress extends Component {

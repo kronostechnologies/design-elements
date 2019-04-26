@@ -6,10 +6,10 @@ import SVG from '../../svg';
 import plusSign from '../../../icons/plus-sign.svg';
 
 const Icon = styled(SVG)`
-    fill: #FFFFFF;
-    height: 16px;
-    margin-right: 8px;
-    width: 16px;
+  fill: #fff;
+  height: 16px;
+  margin-right: 8px;
+  width: 16px;
 `;
 
 export default ({ children, disabled, onClick }) => (
