@@ -1,0 +1,11 @@
+// Need this because `font-*` properties are not inherited to the form
+// elemements.
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
