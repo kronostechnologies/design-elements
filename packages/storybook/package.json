@@ -2,6 +2,7 @@
     "name": "@equisoft/design-elements-storybook",
     "version": "0.1.1",
     "scripts": {
+    "build": "./scripts/build.sh",
         "start": "./scripts/start.sh"
     },
     "author": "Equisoft Design",
@@ -14,10 +15,9 @@
     "dependencies": {
         "@equisoft/design-elements-react": "^0.1.1",
         "@equisoft/design-elements-web": "^0.1.1",
-        "@storybook/react": "^5.0.6",
-        "babel-loader": "^8.0.5",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.6",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
-    },
-    "devDependencies": {}
+  }
 }
