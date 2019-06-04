@@ -8,7 +8,7 @@
     "build": "./scripts/build.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
     "start": "./scripts/start.sh",
-    "stylelint": "./scripts/stylelint.sh"
+    "lint": "./scripts/lint.sh"
   },
   "files": [
     "dist",
