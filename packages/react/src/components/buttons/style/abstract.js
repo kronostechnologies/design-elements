@@ -1,4 +1,5 @@
 export default `
+    align-items: center;
     border: 1px solid #E2732D;
     border-radius: 20px;
     cursor: pointer;
