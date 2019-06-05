@@ -1,20 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../secondary';
-import SVG from '../../svg';
-import plusSign from '../../../icons/plus-sign.svg';
+import plusicon from 'feather-icons/dist/icons/plus.svg';
 
-const Icon = styled(SVG)`
-  fill: #e2732d;
-  height: 16px;
-  margin-right: 8px;
-  width: 16px;
+import SVG from '../../svg';
+import Abstract from '../abstract';
+import style from '../styles/secondary.js';
+
+const Button = styled(Abstract)`
+  ${style}
 `;
 
-export default ({ children, onClick }) => (
-    <Button onClick={onClick}>
-        <Icon svg={plusSign} />
+const Plus = styled(SVG)`
+  height: 1rem;
+  margin-right: 0.5rem;
+  width: 1rem;
+`;
+
+export default ({ children, disabled, onClick }) => (
+    <Button disabled={disabled} onClick={onClick}>
+        <Plus svg={plusicon} />
         {children}
     </Button>
 );
