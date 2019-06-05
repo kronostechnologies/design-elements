@@ -5,11 +5,12 @@ export Progress from './components/progress';
 export RollingEnso from './components/enso';
 export SVG from './components/svg';
 
-export PrimaryButton from './components/buttons/primary';
-export SecondaryButton from './components/buttons/secondary';
+export ButtonPrimary from './components/buttons/primary';
+export ButtonSecondary from './components/buttons/secondary';
+export ButtonTertiary from './components/buttons/tertiary';
 
-export PrimaryAddButton from './components/buttons/add/primary';
-export SecondaryAddButton from './components/buttons/add/secondary';
+export ButtonAddPrimary from './components/buttons/add/primary';
+export ButtonAddSecondary from './components/buttons/add/secondary';
 
 export Checkbox from './components/inputs/checkbox';
 export OptionButton from './components/inputs/option';
