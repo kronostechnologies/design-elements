@@ -32,7 +32,8 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "feather-icons": "^4.21.0"
   },
   "peerDependencies": {
     "@equisoft/design-elements-web": "^0.1.1"
