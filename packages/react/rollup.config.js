@@ -11,6 +11,7 @@ export default {
     external: [
         'react',
         'styled-components',
+        'feather-icons',
     ],
     plugins: [
         resolve({
