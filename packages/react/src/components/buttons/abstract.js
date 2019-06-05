@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import style from './style/abstract';
+import style from './styles/abstract';
 
 export default styled.button`
   ${style}
