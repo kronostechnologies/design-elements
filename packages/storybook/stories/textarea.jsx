@@ -1,21 +1,36 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Textarea } from '@equisoft/design-elements-react';
+import { Textarea, Label, ErrorFormControl } from '@equisoft/design-elements-react';
 
 storiesOf('Textarea', module)
     .add('Normal', () => (
-        <Textarea id="ta_normal" placeholder="Enter your text here"></Textarea>
+        <Textarea
+            id="ta_normal"
+            label="Text area label"
+            placeholder="Enter your text here"
+        />
     ))
     .add('Filled', () => (
         <Textarea
-            id="ta_filled"
-            placeholder="Enter your text here"
             defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio."
+            id="ta_filled"
+            label="A label for a filled text area"
+            placeholder="Enter your text here"
         />
     ))
     .add('Disabled', () => (
-        <Textarea disabled="disabled" id="ta_disabled" placeholder="This field is disabled" />
+        <Textarea
+            disabled
+            id="ta_disabled"
+            label="A label for the disabled text area"
+            placeholder="Sorry but this field is disabled"
+        />
     ))
     .add('Error', () => (
-        <Textarea id="ta_error" placeholder="Enter your text here" required />
+        <Textarea
+            invalid
+            id="ta_error"
+            label="A label for an invalid text area"
+            invalidMsg="This is a custom invalid message"
+        />
     ));
