@@ -21,4 +21,7 @@ export SearchInput from './components/inputs/search';
 export Select from './components/inputs/select';
 export TextInput from './components/inputs/text';
 
-export Textarea from './components/forms/textarea';
+export InputEmail from './components/forms/inputs/email';
+export InputTelephone from './components/forms/inputs/telephone';
+export InputText from './components/forms/inputs/text';
+export Textarea from './components/forms/inputs/textarea';
