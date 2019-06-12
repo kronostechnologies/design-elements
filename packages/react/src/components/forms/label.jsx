@@ -14,11 +14,8 @@ const Label = styled.label`
   }
 `;
 
-export default ({ children, htmlfor, ...props }) => (
-    <Label
-        htmlFor={htmlfor}
-        {...props}
-    >
+export default ({ children, forId }) => (
+    <Label htmlFor={forId}>
         {children}
     </Label>
 );
