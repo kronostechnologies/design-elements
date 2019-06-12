@@ -1,11 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Textarea, Label, ErrorFormControl } from '@equisoft/design-elements-react';
+import { Textarea } from '@equisoft/design-elements-react';
 
 storiesOf('Textarea', module)
     .add('Normal', () => (
         <Textarea
             id="ta_normal"
+            label="Text area label"
+            placeholder="Enter your text here"
+        />
+    ))
+    .add('Optional', () => (
+        <Textarea
+            optional="Optional"
+            id="ta_optional"
             label="Text area label"
             placeholder="Enter your text here"
         />
@@ -28,9 +36,9 @@ storiesOf('Textarea', module)
     ))
     .add('Error', () => (
         <Textarea
-            invalid
             id="ta_error"
             label="A label for an invalid text area"
-            invalidMsg="This is a custom invalid message"
+            valid={false}
+            validMsg="This is a custom invalid message"
         />
     ));
