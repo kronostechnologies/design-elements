@@ -14,7 +14,7 @@ export default ({ controlId, feedbackMsg }) => (
     <InvalidField
         role="alert"
         aria-live="polite"
-        id={`${controlId}_feedback`}
+        id={`${controlId}_invalid`}
     >
         {feedbackMsg}
     </InvalidField>
