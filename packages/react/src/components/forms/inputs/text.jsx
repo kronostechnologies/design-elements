@@ -40,6 +40,7 @@ export default class InputText extends Component {
                 <Input
                     id={id}
                     onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
+                    onInput={thatEvt => this.handleCheckValidity(thatEvt)}
                     required={isRequired}
                     type={type || 'text'}
                     {...props}
