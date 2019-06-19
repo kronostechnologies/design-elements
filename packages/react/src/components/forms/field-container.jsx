@@ -10,12 +10,12 @@ const FieldContainer = styled.div`
   input,
   select,
   textarea {
-    border-color: ${props => props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)'};
+    border-color: ${props => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
   }
 `;
 
 export default ({ children, fieldId, label, optional, valid, validMsg, ...props }) => (
-    <FieldContainer valid={valid} {...props}>
+    <FieldContainer {...props} valid={valid}>
         {label &&
          (
              <Label forId={fieldId}>
