@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
-import style from '../styles/abstract';
+import style from '../styles/inputs';
 import FieldContainer from '../field-container';
 
 const Input = styled.input`
@@ -27,7 +27,7 @@ export default class InputText extends Component {
         const { id, label, optional, required, type, valid, validMsg, ...props } = this.props;
         const { validity } = this.state;
         const isValid = (valid === undefined ? validity : valid);
-        const isRequired = optional ? false : 'required';
+        const isRequired = optional ? null : true;
 
         return (
             <FieldContainer
@@ -38,12 +38,12 @@ export default class InputText extends Component {
                 validMsg={validMsg || 'This text input is invalid'}
             >
                 <Input
+                    {...props}
                     id={id}
                     onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
                     onInput={thatEvt => this.handleCheckValidity(thatEvt)}
                     required={isRequired}
                     type={type || 'text'}
-                    {...props}
                 />
             </FieldContainer>
         );

@@ -1,6 +1,6 @@
 import React from 'react';
 import InputText from './text';
 
-export default ({ type, ...props }) => (
-    <InputText type="tel" {...props} />
+export default ({ ...props }) => (
+    <InputText {...props} type="tel" />
 );

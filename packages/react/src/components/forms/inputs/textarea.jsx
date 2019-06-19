@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
-import style from '../styles/abstract';
+import style from '../styles/inputs';
 import FieldContainer from '../field-container';
 
 const Textarea = styled.textarea`
@@ -43,10 +43,10 @@ export default class textarea extends Component {
                 validMsg={validMsg || 'This text area input is invalid'}
             >
                 <Textarea
+                    {...props}
                     id={id}
                     onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
                     required={isRequired}
-                    {...props}
                 />
             </FieldContainer>
         );
