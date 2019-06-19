@@ -10,18 +10,13 @@ export SVG from './components/svg';
 export ButtonPrimary from './components/buttons/primary';
 export ButtonSecondary from './components/buttons/secondary';
 export ButtonTertiary from './components/buttons/tertiary';
-
 export ButtonAddPrimary from './components/buttons/add/primary';
 export ButtonAddSecondary from './components/buttons/add/secondary';
+export ButtonSearch from './components/buttons/search/'
 
 // Forms Elements
-export Checkbox from './components/inputs/checkbox';
-export OptionButton from './components/inputs/option';
-export SearchInput from './components/inputs/search';
-export Select from './components/inputs/select';
-export TextInput from './components/inputs/text';
-
 export InputEmail from './components/forms/inputs/email';
+export InputSearch from './components/forms/inputs/search';
 export InputTelephone from './components/forms/inputs/telephone';
 export InputText from './components/forms/inputs/text';
 export Textarea from './components/forms/inputs/textarea';
