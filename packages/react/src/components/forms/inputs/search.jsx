@@ -5,7 +5,6 @@ import XIcon from 'feather-icons/dist/icons/x.svg';
 
 import SVG from '../../svg';
 import VisuallyHidden from '../../a11y/visuallyhidden';
-import ButtonSearch from '../../buttons/search';
 
 import style from '../styles/inputs';
 import Label from '../label';
@@ -44,7 +43,7 @@ const IcoReset = styled(SVG)`
 
 const Input = styled.input`
   ${style}
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: ${props => (props.global && '0.25rem 0 0 0.25rem')};
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 
@@ -68,18 +67,12 @@ const Reset = styled.button`
   top: 0.5rem;
   width: 0.75rem;
 
-  input:valid ~ & {
+  input:valid + & {
     display: inline-block;
   }
 `;
 
-const SearchSubmit = styled(ButtonSearch)`
-  border-left: 0;
-  border-radius: 0 0.25rem 0.25rem 0;
-  position: relative;
-`;
-
-export default ({ disabled, id, label, ...props }) => (
+export default ({ children, disabled, id, global, label, ...props }) => (
     <Form action="" id="searchForm" role="search">
         <InnerWrapper>
             <Label forId={id}>
@@ -91,6 +84,7 @@ export default ({ disabled, id, label, ...props }) => (
                 {...props}
                 autoComplete="on"
                 disabled={disabled}
+                global={global}
                 id={id}
                 required
                 type="search"
@@ -101,12 +95,6 @@ export default ({ disabled, id, label, ...props }) => (
                 <VisuallyHidden>Reset</VisuallyHidden>
             </Reset>
         </InnerWrapper>
-
-        <SearchSubmit
-            disabled={disabled}
-            type="submit"
-        >
-            Search
-        </SearchSubmit>
+        {children}
     </Form>
 );

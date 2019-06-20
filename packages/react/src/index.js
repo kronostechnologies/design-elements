@@ -12,11 +12,12 @@ export ButtonSecondary from './components/buttons/secondary';
 export ButtonTertiary from './components/buttons/tertiary';
 export ButtonAddPrimary from './components/buttons/add/primary';
 export ButtonAddSecondary from './components/buttons/add/secondary';
-export ButtonSearch from './components/buttons/search/'
+export ButtonSearch from './components/buttons/search/';
 
 // Forms Elements
 export InputEmail from './components/forms/inputs/email';
-export InputSearch from './components/forms/inputs/search';
 export InputTelephone from './components/forms/inputs/telephone';
 export InputText from './components/forms/inputs/text';
+export Search from './components/forms/inputs/search';
+export SearchGlobal from './components/forms/inputs/search-global';
 export Textarea from './components/forms/inputs/textarea';
