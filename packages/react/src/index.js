@@ -17,7 +17,7 @@ import TextArea from './components/forms/inputs/text-area';
 // Miscellaneous
 import Card from './components/card';
 import EnsoSpinner from './components/enso-spinner';
-import Headband from './components/headband';
+import Headband from './components/headband/equisoft-default';
 import Progress from './components/progress';
 
 export {
