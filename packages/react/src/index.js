@@ -1,14 +1,16 @@
+// Miscellaneous
 export Card from './components/card';
 export Enso from './components/enso';
 export Headband from './components/headband';
 export Progress from './components/progress';
 export RollingEnso from './components/enso';
-export SVG from './components/svg';
 
-export PrimaryButton from './components/buttons/primary';
-export SecondaryButton from './components/buttons/secondary';
-export PrimaryAddButton from './components/buttons/add/primary';
-export SecondaryAddButton from './components/buttons/add/secondary';
+// Buttons
+export ButtonPrimary from './components/buttons/primary/primary';
+export ButtonSecondary from './components/buttons/secondary/secondary';
+export ButtonTertiary from './components/buttons/tertiary/tertiary';
+export ButtonAddPrimary from './components/buttons/add/primary';
+export ButtonAddSecondary from './components/buttons/add/secondary';
 
 // Form Elements
 export Checkbox from './components/forms/inputs/checkbox';
