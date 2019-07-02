@@ -7,7 +7,6 @@ export SVG from './components/svg';
 
 export PrimaryButton from './components/buttons/primary';
 export SecondaryButton from './components/buttons/secondary';
-
 export PrimaryAddButton from './components/buttons/add/primary';
 export SecondaryAddButton from './components/buttons/add/secondary';
 
@@ -19,4 +18,6 @@ export Select from './components/forms/inputs/select';
 export InputEmail from './components/forms/inputs/email';
 export InputTelephone from './components/forms/inputs/telephone';
 export InputText from './components/forms/inputs/text';
+export SearchContextual from './components/forms/inputs/search-contextual';
+export SearchGlobal from './components/forms/inputs/search-global';
 export TextArea from './components/forms/inputs/textarea';
