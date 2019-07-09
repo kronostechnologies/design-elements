@@ -16,3 +16,6 @@ export OptionButton from './components/inputs/option';
 export SearchInput from './components/inputs/search';
 export Select from './components/inputs/select';
 export TextInput from './components/inputs/text';
+
+export NoContactIcon from './icons/no-contact.svg';
+export CheckmarkIcon from './icons/checkmark.svg';
