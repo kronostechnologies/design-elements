@@ -8,15 +8,14 @@ storiesOf('Textarea', module)
             id="ta_normal"
             label="Text area label"
             placeholder="Enter your text here"
-            required
         />
     ))
-    .add('Optional', () => (
+    .add('Required', () => (
         <Textarea
-            required={false}
-            id="ta_optional"
+            id="ta_required"
             label="Text area label"
             placeholder="Enter your text here"
+            required
         />
     ))
     .add('Filled', () => (

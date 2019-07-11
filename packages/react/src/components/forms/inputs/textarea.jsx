@@ -37,7 +37,6 @@ export default class textarea extends Component {
             <FieldContainer
                 fieldId={id}
                 label={label}
-                required={required}
                 valid={isValid}
                 validMsg={validMsg || 'This text area input is invalid'}
             >

@@ -10,25 +10,25 @@ const FieldContainer = styled.div`
     input,
     select,
     textarea {
-    border-color: ${props => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
+    border-color: ${props => props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)'};
+
+    &:focus{
+        border-color: ${props => props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)'};
     }
 `;
 
-export default ({ children, fieldId, label, required, valid, validMsg, ...props }) => (
+export default ({ children, fieldId, label, valid, validMsg, ...props }) => (
     <FieldContainer {...props} valid={valid}>
         {label &&
-         (
              <Label forId={fieldId}>
                  {label}
-                 {!required && ' (optional)'}
              </Label>
-         )
         }
 
         {children}
 
         {!valid &&
-         (<InvalidField controlId={fieldId} feedbackMsg={validMsg} />)
+         <InvalidField controlId={fieldId} feedbackMsg={validMsg} />
         }
     </FieldContainer>
 );

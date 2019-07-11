@@ -24,10 +24,6 @@ export default `
     }
   }
 
-  &:focus {
-    border-color: rgb(0, 128, 165);
- }
-
   label + & {
     display: block;
     margin-top: 0.5rem;
