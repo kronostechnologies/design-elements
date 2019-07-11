@@ -19,3 +19,4 @@ export Select from './components/forms/inputs/select';
 export InputEmail from './components/forms/inputs/email';
 export InputTelephone from './components/forms/inputs/telephone';
 export InputText from './components/forms/inputs/text';
+export TextArea from './components/forms/inputs/textarea';

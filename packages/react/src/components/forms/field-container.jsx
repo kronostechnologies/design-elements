@@ -21,17 +21,15 @@ const FieldContainer = styled.div`
 export default ({ children, fieldId, label, valid, validMsg, ...props }) => (
     <FieldContainer {...props} valid={valid}>
         {label &&
-         (
              <Label forId={fieldId}>
                  {label}
              </Label>
-         )
         }
 
         {children}
 
         {!valid &&
-         (<InvalidField controlId={fieldId} feedbackMsg={validMsg} />)
+         <InvalidField controlId={fieldId} feedbackMsg={validMsg} />
         }
     </FieldContainer>
 );
