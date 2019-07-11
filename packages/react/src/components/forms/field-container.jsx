@@ -5,16 +5,17 @@ import Label from './label';
 import InvalidField from '../feedbacks/invalid-field';
 
 const FieldContainer = styled.div`
-    margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem;
 
-    input,
-    select,
-    textarea {
+  input,
+  select,
+  textarea {
     border-color: ${props => props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)'};
+  }
 
-    &:focus{
-        border-color: ${props => props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)'};
-    }
+  &:focus {
+    border-color: ${props => props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)'};
+  }
 `;
 
 export default ({ children, fieldId, label, valid, validMsg, ...props }) => (

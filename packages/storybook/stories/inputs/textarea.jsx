@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Textarea } from '@equisoft/design-elements-react';
+import { TextArea } from '@equisoft/design-elements-react';
 
-storiesOf('Textarea', module)
+storiesOf('TextArea', module)
     .add('Normal', () => (
-        <Textarea
+        <TextArea
             id="ta_normal"
             label="Text area label"
             placeholder="Enter your text here"
         />
     ))
     .add('Required', () => (
-        <Textarea
+        <TextArea
             id="ta_required"
             label="Text area label"
             placeholder="Enter your text here"
@@ -19,7 +19,7 @@ storiesOf('Textarea', module)
         />
     ))
     .add('Filled', () => (
-        <Textarea
+        <TextArea
             defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio."
             id="ta_filled"
             label="A label for a filled text area"
@@ -28,7 +28,7 @@ storiesOf('Textarea', module)
         />
     ))
     .add('Disabled', () => (
-        <Textarea
+        <TextArea
             disabled
             id="ta_disabled"
             label="A label for the disabled text area"
@@ -37,7 +37,7 @@ storiesOf('Textarea', module)
         />
     ))
     .add('Error', () => (
-        <Textarea
+        <TextArea
             id="ta_error"
             label="A label for an invalid text area"
             valid={false}

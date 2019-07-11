@@ -11,9 +11,12 @@ export SecondaryButton from './components/buttons/secondary';
 export PrimaryAddButton from './components/buttons/add/primary';
 export SecondaryAddButton from './components/buttons/add/secondary';
 
+// Form Elements
 export Checkbox from './components/forms/inputs/checkbox';
 export OptionButton from './components/forms/inputs/option';
 export SearchInput from './components/forms/inputs/search';
 export Select from './components/forms/inputs/select';
-export TextInput from './components/forms/inputs/text';
-export Textarea from './components/forms/inputs/textarea';
+export InputEmail from './components/forms/inputs/email';
+export InputTelephone from './components/forms/inputs/telephone';
+export InputText from './components/forms/inputs/text';
+export TextArea from './components/forms/inputs/textarea';
