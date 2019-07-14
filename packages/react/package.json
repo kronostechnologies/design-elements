@@ -30,6 +30,8 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "dependencies": {
+    "feather-icons": "^4.21.0",
+    "lodash-es": "^4.17.14",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
