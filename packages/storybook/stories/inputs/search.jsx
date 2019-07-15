@@ -19,7 +19,7 @@ storiesOf('Search Bar', module)
             placeholder="Ex.: Marquee Mark"
         />
     ))
-    .add('Disabled', () => (“
+    .add('Disabled', () => (
         <SearchGlobal
             disabled
             id="searchbar_disabled"

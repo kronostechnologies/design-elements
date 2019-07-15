@@ -8,4 +8,9 @@ export default styled(enso)`
   fill: #e2732d;
   height: 80px;
   width: 83px;
+
+  @keyframes roll {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 `;

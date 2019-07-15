@@ -1,9 +1,8 @@
 // Miscellaneous
 export Card from './components/card';
-export Enso from './components/enso';
+export EnsoSpinner from './components/enso-spinner';
 export Headband from './components/headband';
 export Progress from './components/progress';
-export RollingEnso from './components/enso';
 
 // Buttons
 export ButtonPrimary from './components/buttons/primary/primary';
