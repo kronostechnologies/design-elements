@@ -1,28 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-    ButtonPrimary,
-    ButtonSecondary,
-    ButtonTertiary,
-    ButtonAddPrimary,
-    ButtonAddSecondary
-} from '@equisoft/design-elements-react';
+
+import { AddButton, Button } from '@equisoft/design-elements-react';
 
 storiesOf('Buttons', module)
     .add('Primary', () => (
-        <ButtonPrimary>Primary Button</ButtonPrimary>
+        <Button type="primary">Primary Button</Button>
     ))
     .add('Secondary', () => (
-        <ButtonSecondary>Secondary Button</ButtonSecondary>
+        <Button type="secondary">Secondary Button</Button>
     ))
     .add('Tertiary', () => (
-        <ButtonTertiary>Tertiary Button</ButtonTertiary>
+        <Button type="tertiary">Tertiary Button</Button>
     ));
 
 storiesOf('Buttons/Add', module)
     .add('Primary', () => (
-        <ButtonAddPrimary>Primary Button</ButtonAddPrimary>
+        <AddButton type="primary">Primary Button</AddButton>
     ))
     .add('Secondary', () => (
-        <ButtonAddSecondary>Secondary Button</ButtonAddSecondary>
+        <AddButton type="secondary">Secondary Button</AddButton>
     ));

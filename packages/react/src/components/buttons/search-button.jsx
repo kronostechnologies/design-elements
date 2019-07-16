@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Abstract from '../abstract';
+import { AbstractButton } from './abstract-button';
 
-const SearchButton = styled(Abstract)`
+const Button = styled(AbstractButton)`
   background: rgb(255, 255, 255);
   border-color: rgb(217, 221, 226);
   color: rgb(99, 114, 130);
@@ -26,8 +26,10 @@ const SearchButton = styled(Abstract)`
   }
 `;
 
-export default ({ children, disabled, onClick, ...props }) => (
-    <SearchButton {...props} disabled={disabled} onClick={onClick}>
+const SearchButton = ({ children, disabled, onClick, ...props }) => (
+    <Button {...props} disabled={disabled} onClick={onClick}>
         {children}
-    </SearchButton>
+    </Button>
 );
+
+export { SearchButton };

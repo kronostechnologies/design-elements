@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SearchInput from './search-input';
-import SearchButton from '../../buttons/search/search-button.jsx';
+import { SearchButton } from '../../buttons/search-button.jsx';
 
 const SearchSubmit = styled(SearchButton)`
   border-left: 0;
