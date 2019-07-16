@@ -11,6 +11,10 @@ export ButtonTertiary from './components/buttons/tertiary/tertiary';
 export ButtonAddPrimary from './components/buttons/add/primary';
 export ButtonAddSecondary from './components/buttons/add/secondary';
 
+// Icons
+export NoContactIcon from './icons/no-contact.svg';
+export CheckmarkIcon from './icons/checkmark.svg';
+
 // Form Elements
 export Checkbox from './components/forms/inputs/checkbox';
 export OptionButton from './components/forms/inputs/option';
