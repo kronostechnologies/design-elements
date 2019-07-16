@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Abstract from './abstract';
+import Abstract from '../abstract';
 
-import style from './style/secondary';
+import style from '../styles/tertiary';
 
 export default styled(Abstract)`
   ${style}
