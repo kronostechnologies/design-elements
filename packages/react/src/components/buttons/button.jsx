@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 import { SECONDARY, TERTIARY } from '../../constants';
-import { AbstractButton } from './abstract-button';
 
 import primaryStyle from './styles/primary';
 import secondaryStyle from './styles/secondary';
 import tertiaryStyle from './styles/tertiary';
+
+import { AbstractButton } from './abstract-button';
 
 const Button = styled(AbstractButton)`
   ${props => {

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
 
 import { SECONDARY } from '../../constants';
-import { AbstractButton } from './abstract-button';
 
 import primaryStyle from './styles/primary.js';
 import secondaryStyle from './styles/secondary.js';
+
+import { AbstractButton } from './abstract-button';
 
 
 const Button = styled(AbstractButton)`

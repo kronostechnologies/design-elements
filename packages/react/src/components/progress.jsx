@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { range } from 'lodash-es';
 
 const Div = styled.div`
   align-items: center;
@@ -7,7 +8,7 @@ const Div = styled.div`
   max-width: 160px;
 `;
 
-const Progress = styled.progress`
+const StyledProgress = styled.progress`
   appearance: none;
   height: 4px;
   margin: 6px;
@@ -57,47 +58,31 @@ const FutureStep = styled(AbstractStep)`
   background-color: #d9dde2;
 `;
 
-export default class progress extends Component {
-    constructor(props) {
-        super(props);
+const getStep = (step, max, value) => {
+    let StepComponent;
 
-        this.steps = [0, 1, 2];
+    if (step < value) {
+        StepComponent = PastStep;
+    } else if (step === value) {
+        StepComponent = CurrentStep;
 
-        this.renderStep = this.renderStep.bind(this);
-    }
-
-    renderStep(step) {
-        const { max, value } = this.props;
-        let Step;
-
-        if (step < value) {
-            Step = PastStep;
-        } else if (step === value) {
-            Step = CurrentStep;
-
-            if (step === max) {
-                Step = PastStep;
-            }
-        } else {
-            Step = FutureStep;
+        if (step === max) {
+            StepComponent = PastStep;
         }
-
-        return <Step key={step} />;
+    } else {
+        StepComponent = FutureStep;
     }
 
-    // renderSteps() {
-    //     const { max } = this.props;
-    // }
+    return <StepComponent key={step} />;
+};
 
-    render() {
-        const { max, value } = this.props;
-        return (
-            <Div>
-                <Progress max={max} value={value} />
-                <UL>
-                    {this.steps.map(step => this.renderStep(step))}
-                </UL>
-            </Div>
-        );
-    }
-}
+const Progress = ({ max, value }) => (
+    <Div>
+        <StyledProgress max={max} value={value} />
+        <UL>
+            {range(max + 1).map(step => getStep(step, max, value))}
+        </UL>
+    </Div>
+);
+
+export { Progress };

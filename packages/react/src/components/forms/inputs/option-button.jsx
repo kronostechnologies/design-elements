@@ -24,9 +24,11 @@ const Input = styled.input`
   }
 `;
 
-export default ({ checked, label, name, value }) => (
+const OptionButton = ({ checked, label, name, value }) => (
     <div>
         <Input checked={checked} id="id" name={name} type="radio" value={value} />
         <label htmlFor="id">{label}</label>
     </div>
 );
+
+export { OptionButton };

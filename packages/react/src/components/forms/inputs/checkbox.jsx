@@ -7,7 +7,7 @@ const Input = styled.input`
   width: 16px;
 `;
 
-export default class checkbox extends Component {
+class Checkbox extends Component {
     constructor(props) {
         super(props);
 
@@ -44,3 +44,5 @@ export default class checkbox extends Component {
         );
     }
 }
+
+export { Checkbox };

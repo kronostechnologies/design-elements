@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { InputEmail, InputTelephone, InputText } from '@equisoft/design-elements-react';
+import { InputEmail, InputTelephone, TextInput } from '@equisoft/design-elements-react';
 
 storiesOf('Input text fields', module)
     .add('Normal', () => (
-        <InputText
+        <TextInput
             id="ta_firstname"
             label="First Name"
             placeholder="Ex.: John"
         />
     ))
     .add('Required', () => (
-        <InputText
+        <TextInput
             id="ta_lastname"
             label="Last Name"
             placeholder="Ex.: Doe"
@@ -19,18 +19,19 @@ storiesOf('Input text fields', module)
         />
     ))
     .add('Phone (pattern validation)', () => (
-        <InputTelephone
+        <TextInput
             defaultValue="555-987-6543"
             id="ta_phone"
             label="Telephone"
             pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
             placeholder="Ex.: 555-123-4567"
             required
+            type="tel"
             validMsg="Please enter a valid phone number"
         />
     ))
     .add('Disabled', () => (
-        <InputText
+        <TextInput
             disabled
             id="ta_disabled"
             label="A disabled text input"
@@ -38,11 +39,12 @@ storiesOf('Input text fields', module)
         />
     ))
     .add('Email Error', () => (
-        <InputEmail
+        <TextInput
             defaultValue="john.doe@.stld."
             id="ta_error"
             label="Email"
             required
+            type="email"
             valid={false} /* It's a way to force the error */
             validMsg="This is an invalid email format"
         />

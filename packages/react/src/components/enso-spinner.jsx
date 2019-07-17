@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import enso from '../icons/enso.svg';
+import Enso from '../icons/enso.svg';
 
-export default styled(enso)`
+const EnsoSpinner = styled(Enso)`
   animation: roll 1s infinite;
   animation-timing-function: linear;
   fill: #e2732d;
@@ -14,3 +14,5 @@ export default styled(enso)`
     to { transform: rotate(360deg); }
   }
 `;
+
+export { EnsoSpinner };
