@@ -24,5 +24,5 @@ export InputTelephone from './components/forms/inputs/telephone';
 export InputText from './components/forms/inputs/text';
 export SearchContextual from './components/forms/inputs/search-contextual';
 export SearchGlobal from './components/forms/inputs/search-global';
-export Select from './components/forms/selects/default';
+export Select from './components/forms/selects/Select';
 export TextArea from './components/forms/inputs/textarea';
