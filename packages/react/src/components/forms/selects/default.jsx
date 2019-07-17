@@ -30,16 +30,14 @@ export default class SelectDefault extends Component {
     }
 
     render() {
-        const { children, id, label, optional, required, valid, validMsg, ...props } = this.props;
+        const { children, id, label, required, valid, validMsg, ...props } = this.props;
         const { validity } = this.state;
         const isValid = (valid === undefined ? validity : valid);
-        const isRequired = optional ? null : true;
 
         return (
             <FieldContainer
                 fieldId={id}
                 label={label}
-                optional={optional}
                 valid={isValid}
                 validMsg={validMsg || 'You must select an option'}
             >
@@ -48,7 +46,7 @@ export default class SelectDefault extends Component {
                     id={id}
                     onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
                     onChange={thatEvt => this.handleCheckValidity(thatEvt)}
-                    required={isRequired}
+                    required={required}
                 >
                     {children}
                 </Select>
