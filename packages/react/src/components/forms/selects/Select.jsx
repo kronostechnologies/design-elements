@@ -30,9 +30,10 @@ export default class SelectDefault extends Component {
     }
 
     render() {
-        const { children, id, label, required, valid, validMsg, ...props } = this.props;
+        const { children, id, label, options, required, valid, validMsg, ...props } = this.props;
         const { validity } = this.state;
         const isValid = (valid === undefined ? validity : valid);
+        const selectOptions = options.map(option => <option value={option.value}>{option.label}</option>);
 
         return (
             <FieldContainer
@@ -48,7 +49,7 @@ export default class SelectDefault extends Component {
                     onChange={thatEvt => this.handleCheckValidity(thatEvt)}
                     required={required}
                 >
-                    {children}
+                    {selectOptions}
                 </Select>
             </FieldContainer>
         );
