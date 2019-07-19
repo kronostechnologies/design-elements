@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Chooser, ChooseRadio } from '@equisoft/design-elements-react';
+import {
+    Chooser,
+    ChooseRadio,
+    ManIcon,
+    VisuallyHidden,
+    WomanIcon,
+} from '@equisoft/design-elements-react';
 
 storiesOf('Choosers', module)
     .add('Chooser Default', () => (
@@ -19,7 +25,7 @@ storiesOf('Choosers', module)
         </Chooser>
     ))
 
-    .add('Chooser In Columns', () => (
+    .add('Chooser in Columns', () => (
         <Chooser inColumns>
             <ChooseRadio id="ar_1" groupName="ageRange" value="0,24">
                 <b>0 à 24 ans</b>
@@ -42,6 +48,24 @@ storiesOf('Choosers', module)
             </ChooseRadio>
 
             <ChooseRadio id="ar_6" groupName="ageRange" value="">
+                Préfère ne pas répondre
+            </ChooseRadio>
+        </Chooser>
+    ))
+
+    .add('Chooser with Icons', () => (
+        <Chooser inColumns>
+            <ChooseRadio id="gdr_male" groupName="gender" value="male">
+                <VisuallyHidden>Homme</VisuallyHidden>
+                <ManIcon/>
+            </ChooseRadio>
+
+            <ChooseRadio id="gdr_female" groupName="gender" value="female">
+                <VisuallyHidden>Femme</VisuallyHidden>
+                <WomanIcon/>
+            </ChooseRadio>
+
+            <ChooseRadio id="gdr_skip" groupName="gender" value="">
                 Préfère ne pas répondre
             </ChooseRadio>
         </Chooser>
