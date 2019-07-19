@@ -41,4 +41,10 @@ export default `
     font-size: 1.5rem;
     font-weight: 400;
   }
+
+  svg {
+    color: inherit;
+    height: 3rem;
+    width: 3rem;
+  }
 `;
