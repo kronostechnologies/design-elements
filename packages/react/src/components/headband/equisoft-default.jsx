@@ -77,19 +77,13 @@ export default class Headband extends Component {
                 <Brand href="/" aria-label="Home" rel="index">
                     <MediaView maxWidth={breakpoints['tablet']}>
                         <Logo>
-                            <img
-                                alt="Equisoft triangle"
-                                src={EquisoftIco}
-                            />
+                          <EquisoftIco />
                         </Logo>
                     </MediaView>
 
                     <MediaView minWidth={breakpoints['tablet']}>
                         <Logo>
-                            <img
-                                alt="Equisoft full logo"
-                                src={EquisoftLogo}
-                            />
+                            <EquisoftLogo />
                         </Logo>
                     </MediaView>
 
