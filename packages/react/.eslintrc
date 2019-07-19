@@ -1,6 +1,3 @@
 {
-    "extends": ["@equisoft/eslint-config-react"],
-    "rules": {
-        "import/prefer-default-export": "off"
-    }
+    "extends": ["@equisoft/eslint-config-react"]
 }
