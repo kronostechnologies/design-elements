@@ -41,13 +41,16 @@ export default `
     font-size: 1.5rem;
     font-weight: 400;
   }
-<<<<<<< variant A
+<<<<<<< HEAD
 
   svg {
     color: inherit;
     height: 3rem;
     width: 3rem;
   }
+<<<<<<< HEAD
 >>>>>>> variant B
 ======= end
+=======
+>>>>>>> e00f327... add a css rule for the svg in the chooser
 `;
