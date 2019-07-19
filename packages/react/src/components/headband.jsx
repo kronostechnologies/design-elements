@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.header`
+const Headband = styled.header`
   align-items: center;
   background: linear-gradient(45deg, #17275e, #3a4e8d);
   color: #fff;
@@ -14,3 +14,5 @@ export default styled.header`
     text-decoration: none;
   }
 `;
+
+export default Headband;

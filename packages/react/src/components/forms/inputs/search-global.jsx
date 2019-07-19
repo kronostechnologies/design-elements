@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SearchInput from './search-input';
-import SearchButton from '../../buttons/search/search-button.jsx';
+import SearchButton from '../../buttons/search-button.jsx';
 
 const SearchSubmit = styled(SearchButton)`
   border-left: 0;
@@ -10,7 +10,7 @@ const SearchSubmit = styled(SearchButton)`
   position: relative;
 `;
 
-export default ({ disabled, id, label, onSubmit }) => (
+const SearchGlobal = ({ disabled, id, label, onSubmit }) => (
     <SearchInput
         disabled={disabled}
         id={id}
@@ -27,3 +27,5 @@ export default ({ disabled, id, label, onSubmit }) => (
         </SearchSubmit>
     </SearchInput>
 );
+
+export default SearchGlobal;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Label = styled.label`
+const StyledLabel = styled.label`
   color: rgb(0, 0, 0);
   font-size: 0.75rem;
   font-weight: 400;
@@ -14,8 +14,10 @@ const Label = styled.label`
   }
 `;
 
-export default ({ children, forId }) => (
-    <Label htmlFor={forId}>
+const Label = ({ children, forId }) => (
+    <StyledLabel htmlFor={forId}>
         {children}
-    </Label>
+    </StyledLabel>
 );
+
+export default Label;

@@ -79,7 +79,7 @@ const Reset = styled.button`
   }
 `;
 
-export default ({ children, disabled, id, global, label, onInput, onSubmit, ...props }) => (
+const SearchInput = ({ children, disabled, id, global, label, onInput, onSubmit, ...props }) => (
     <Form role="search" onSubmit={e => { e.preventDefault(); }}>
         <InnerWrapper>
             <Label forId={id}>
@@ -106,3 +106,5 @@ export default ({ children, disabled, id, global, label, onInput, onSubmit, ...p
         {children}
     </Form>
 );
+
+export default SearchInput;

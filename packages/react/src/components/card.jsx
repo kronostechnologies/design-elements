@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.div`
+const Card = styled.div`
   background: rgb(255, 255, 255);
   border: 1px solid rgb(220, 220, 220);
   border-radius: 0.5rem;
@@ -9,3 +9,5 @@ export default styled.div`
   margin-bottom: 3rem;
   padding: 2rem;
 `;
+
+export default Card;

@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-
 import styled from 'styled-components';
+
 import style from '../styles/inputs';
+
 import FieldContainer from '../field-container';
 
-const Textarea = styled.textarea`
-  min-height: 6.5rem;
-  min-width: 100%;
+const Input = styled.input`
   ${style}
-  outline: none;
-  overflow: auto;
-  resize: vertical;
 `;
 
-export default class textarea extends Component {
+class TextInput extends Component {
     constructor(props) {
         super(props);
 
@@ -29,7 +25,7 @@ export default class textarea extends Component {
     }
 
     render() {
-        const { id, label, required, valid, validMsg, ...props } = this.props;
+        const { id, label, required, type, valid, validMsg, ...props } = this.props;
         const { validity } = this.state;
         const isValid = (valid === undefined ? validity : valid);
 
@@ -38,15 +34,18 @@ export default class textarea extends Component {
                 fieldId={id}
                 label={label}
                 valid={isValid}
-                validMsg={validMsg || 'This text area input is invalid'}
+                validMsg={validMsg || 'This text input is invalid'}
             >
-                <Textarea
+                <Input
                     {...props}
                     id={id}
                     onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
                     required={required}
+                    type={type || 'text'}
                 />
             </FieldContainer>
         );
     }
 }
+
+export default TextInput;

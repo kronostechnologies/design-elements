@@ -1,28 +1,38 @@
-// Miscellaneous
-export Card from './components/card';
-export EnsoSpinner from './components/enso-spinner';
-export Headband from './components/headband';
-export Progress from './components/progress';
-
 // Buttons
-export ButtonPrimary from './components/buttons/primary/primary';
-export ButtonSecondary from './components/buttons/secondary/secondary';
-export ButtonTertiary from './components/buttons/tertiary/tertiary';
-export ButtonAddPrimary from './components/buttons/add/primary';
-export ButtonAddSecondary from './components/buttons/add/secondary';
+import AddButton from './components/buttons/add-button';
+import Button from './components/buttons/button';
 
 // Icons
-export NoContactIcon from './icons/no-contact.svg';
-export CheckmarkIcon from './icons/checkmark.svg';
+import NoContactIcon from './icons/no-contact.svg';
+import CheckmarkIcon from './icons/checkmark.svg';
 
 // Form Elements
-export Checkbox from './components/forms/inputs/checkbox';
-export OptionButton from './components/forms/inputs/option';
-export SearchInput from './components/forms/inputs/search';
-export InputEmail from './components/forms/inputs/email';
-export InputTelephone from './components/forms/inputs/telephone';
-export InputText from './components/forms/inputs/text';
-export SearchContextual from './components/forms/inputs/search-contextual';
-export SearchGlobal from './components/forms/inputs/search-global';
-export Select from './components/forms/selects/Select';
-export TextArea from './components/forms/inputs/textarea';
+import Checkbox from './components/forms/inputs/checkbox';
+import OptionButton from './components/forms/inputs/option-button';
+import TextInput from './components/forms/inputs/text-input';
+import SearchContextual from './components/forms/inputs/search-contextual';
+import SearchGlobal from './components/forms/inputs/search-global';
+import TextArea from './components/forms/inputs/text-area';
+
+// Miscellaneous
+import Card from './components/card';
+import EnsoSpinner from './components/enso-spinner';
+import Headband from './components/headband';
+import Progress from './components/progress';
+
+export {
+    AddButton,
+    Button,
+    NoContactIcon,
+    CheckmarkIcon,
+    Checkbox,
+    OptionButton,
+    TextInput,
+    SearchContextual,
+    SearchGlobal,
+    TextArea,
+    Card,
+    EnsoSpinner,
+    Headband,
+    Progress,
+};

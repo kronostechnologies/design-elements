@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const InvalidField = styled.div`
+const Field = styled.div`
   color: rgb(164, 12, 46);
   font-size: 0.75rem;
   font-weight: 400;
@@ -10,12 +10,14 @@ const InvalidField = styled.div`
   margin: 0.25rem 0 0;
 `;
 
-export default ({ controlId, feedbackMsg }) => (
-    <InvalidField
+const InvalidField = ({ controlId, feedbackMsg }) => (
+    <Field
         role="alert"
         aria-live="polite"
         id={`${controlId}_invalid`}
     >
         {feedbackMsg}
-    </InvalidField>
+    </Field>
 );
+
+export default InvalidField;
