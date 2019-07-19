@@ -31,4 +31,4 @@ const OptionButton = ({ checked, label, name, value }) => (
     </div>
 );
 
-export { OptionButton };
+export default OptionButton;

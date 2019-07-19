@@ -10,4 +10,4 @@ const Card = styled.div`
   padding: 2rem;
 `;
 
-export { Card };
+export default Card;

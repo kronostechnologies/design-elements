@@ -1,7 +1,7 @@
 import React from 'react';
-import { debounce } from 'lodash-es';
+import debounce from 'lodash-es/debounce';
 
-import { SearchInput } from './search-input';
+import SearchInput from './search-input';
 
 const SearchContextual = ({ disabled, id, label, onInput }) => (
     <SearchInput
@@ -12,4 +12,4 @@ const SearchContextual = ({ disabled, id, label, onInput }) => (
     />
 );
 
-export { SearchContextual };
+export default SearchContextual;

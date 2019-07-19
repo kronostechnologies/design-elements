@@ -6,7 +6,7 @@ import primaryStyle from './styles/primary';
 import secondaryStyle from './styles/secondary';
 import tertiaryStyle from './styles/tertiary';
 
-import { AbstractButton } from './abstract-button';
+import AbstractButton from './abstract-button';
 
 const Button = styled(AbstractButton)`
   ${props => {
@@ -19,4 +19,4 @@ const Button = styled(AbstractButton)`
     }}
 `;
 
-export { Button };
+export default Button;

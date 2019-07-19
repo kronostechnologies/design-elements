@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import style from '../styles/inputs';
 
-import { FieldContainer } from '../field-container';
+import FieldContainer from '../field-container';
 
 const Input = styled.input`
   ${style}
@@ -48,4 +48,4 @@ class TextInput extends Component {
     }
 }
 
-export { TextInput };
+export default TextInput;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import style from '../styles/inputs';
 
-import { FieldContainer } from '../field-container';
+import FieldContainer from '../field-container';
 
 const StyledTextArea = styled.textarea`
   ${style}
@@ -52,4 +52,4 @@ class TextArea extends Component {
     }
 }
 
-export { TextArea };
+export default TextArea;

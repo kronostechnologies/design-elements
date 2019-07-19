@@ -15,4 +15,4 @@ const Headband = styled.header`
   }
 `;
 
-export { Headband };
+export default Headband;

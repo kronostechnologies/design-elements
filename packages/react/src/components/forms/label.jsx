@@ -20,4 +20,4 @@ const Label = ({ children, forId }) => (
     </StyledLabel>
 );
 
-export { Label };
+export default Label;

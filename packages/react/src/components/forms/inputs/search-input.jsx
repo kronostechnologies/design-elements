@@ -6,7 +6,7 @@ import XIcon from 'feather-icons/dist/icons/x.svg';
 import VisuallyHidden from '../../a11y/visuallyhidden';
 
 import style from '../styles/inputs';
-import { Label } from '../label';
+import Label from '../label';
 
 const Form = styled.form`
   display: flex;
@@ -107,4 +107,4 @@ const SearchInput = ({ children, disabled, id, global, label, onInput, onSubmit,
     </Form>
 );
 
-export { SearchInput };
+export default SearchInput;

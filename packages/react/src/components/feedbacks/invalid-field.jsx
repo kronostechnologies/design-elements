@@ -20,4 +20,4 @@ const InvalidField = ({ controlId, feedbackMsg }) => (
     </Field>
 );
 
-export { InvalidField };
+export default InvalidField;

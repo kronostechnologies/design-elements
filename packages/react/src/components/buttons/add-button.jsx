@@ -7,7 +7,7 @@ import { SECONDARY } from '../../constants';
 import primaryStyle from './styles/primary.js';
 import secondaryStyle from './styles/secondary.js';
 
-import { AbstractButton } from './abstract-button';
+import AbstractButton from './abstract-button';
 
 
 const Button = styled(AbstractButton)`
@@ -27,4 +27,4 @@ const AddButton = ({ children, disabled, onClick, type }) => (
     </Button>
 );
 
-export { AddButton };
+export default AddButton;

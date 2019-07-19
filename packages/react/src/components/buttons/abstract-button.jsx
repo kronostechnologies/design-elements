@@ -6,4 +6,4 @@ const AbstractButton = styled.button`
   ${abstractStyle}
 `;
 
-export { AbstractButton };
+export default AbstractButton;

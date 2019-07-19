@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { range } from 'lodash-es';
+import range from 'lodash-es/range';
 
 const Div = styled.div`
   align-items: center;
@@ -85,4 +85,4 @@ const Progress = ({ max, value }) => (
     </Div>
 );
 
-export { Progress };
+export default Progress;
