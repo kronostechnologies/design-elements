@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import styled from 'styled-components';
-import visuallyhidden from '../a11y/styles/visuallyhidden';
 
 const Grid = styled.div`
   align-items: stretch;
@@ -23,18 +21,14 @@ export default class Chooser extends Component {
 
         /* If the last button got an empty value attribute */
         /* it's become a skip button */
-        const skip = chooseRadiosArray.filter((child, index, array) => {
-            if (child === array.slice(-1)[0]
-                && child.props.value === "") return child;
-        });
+        const skip = chooseRadiosArray.filter((child, index, array) =>
+            (child === array.slice(-1)[0] && child.props.value === '') && child);
 
         /* Then return the skip button */
         const skipButton = (skip.length !== 0 && <Skip>{skip}</Skip>);
 
         /*  And return the array with the non-skip ones */
-        const chooseRadios = chooseRadiosArray.filter(child => {
-            return child !== skip[0] && child;
-        });
+        const chooseRadios = chooseRadiosArray.filter(child => child !== skip[0] && child);
 
         return (
             <>
