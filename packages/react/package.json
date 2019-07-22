@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-react",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "React implementation of the Equisoft design system.",
   "license": "MIT",
   "main": "dist/design-elements-react.cjs.js",
@@ -15,10 +15,12 @@
   ],
   "author": "Equisoft Design",
   "maintainers": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
+    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
+    "Christian Roy <christian.roy@equisoft.com> (https://github.com/christian-roy)"
   ],
   "contributors": [
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
+    "Christian Roy <christian.roy@equisoft.com> (https://github.com/christian-roy)",
     "Léane Mei Dostie-Chalifour <leane.dostie@equisoft.com> (https://github.com/leanedostie)",
     "Keven Beaulieu <keven.beaulieu@equisoft.com> (https://github.com/kbeaulieu)"
   ],
