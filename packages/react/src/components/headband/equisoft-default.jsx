@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import MediaView from '../media-view';
@@ -7,7 +7,7 @@ import breakpoints from '../tokens/breakpoints';
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
 
-const tabletMin = (breakpoints['tablet'] / 16) + 'rem';
+const tabletMin = `${(breakpoints.tablet / 16)}rem`;
 
 const Header = styled.header`
   align-items: center;
@@ -45,10 +45,16 @@ const Brand = styled.a`
 `;
 
 const Logo = styled.div`
-  display: block;
+  align-items: center;
+  display: flex;
   flex: 1 1 50%;
   font-size: 1.5rem;
   font-weight: 700;
+`;
+
+const Equisoft = styled(EquisoftLogo)`
+  height: 40px;
+  width: 161px;
 `;
 
 const Project = styled.em`
@@ -68,32 +74,32 @@ const Project = styled.em`
   }
 `;
 
-export default class Headband extends Component {
-    render() {
-        const { children, appName, ...props } =  this.props;
+function Headband(props) {
+    const { children, appName } = props;
 
-        return (
-            <Header {...props} role="banner">
-                <Brand href="/" aria-label="Home" rel="index">
-                    <MediaView maxWidth={breakpoints['tablet']}>
-                        <Logo>
-                          <EquisoftIco />
-                        </Logo>
-                    </MediaView>
+    return (
+        <Header {...props} role="banner">
+            <Brand href="/" aria-label="Home" rel="index">
+                <MediaView maxWidth={breakpoints.tablet}>
+                    <Logo>
+                        <EquisoftIco />
+                    </Logo>
+                </MediaView>
 
-                    <MediaView minWidth={breakpoints['tablet']}>
-                        <Logo>
-                            <EquisoftLogo />
-                        </Logo>
-                    </MediaView>
+                <MediaView minWidth={breakpoints.tablet}>
+                    <Logo>
+                        <Equisoft />
+                    </Logo>
+                </MediaView>
 
-                    <Project>{appName}</Project>
-                </Brand>
+                <Project>{appName}</Project>
+            </Brand>
 
-                <div>
-                    {children}
-                </div>
-            </Header>
-        );
-    }
+            <div>
+                {children}
+            </div>
+        </Header>
+    );
 }
+
+export default Headband;
