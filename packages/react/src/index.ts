@@ -17,6 +17,8 @@ import Select from './components/forms/selects/Select';
 
 // Miscellaneous
 import Card from './components/card';
+import Chooser from './components/choosers/chooser';
+import ChooseRadio from './components/choosers/controls/choose-radio';
 import EnsoSpinner from './components/enso-spinner';
 import Headband from './components/headband/equisoft-default';
 import Progress from './components/progress';
@@ -37,6 +39,8 @@ export {
     Select,
     TextArea,
     Card,
+    Chooser,
+    ChooseRadio,
     EnsoSpinner,
     Headband,
     Progress,
