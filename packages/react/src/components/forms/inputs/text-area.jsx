@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import style from '../styles/inputs';
@@ -14,76 +14,54 @@ const StyledTextArea = styled.textarea`
   resize: vertical;
 `;
 
-class TextArea extends Component {
-    constructor(props) {
-        super(props);
+const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }) => {
+    const [{ value }, setValue] = useState({ value: defaultValue || '' });
+    const [{ validity }, setValidity] = useState({ validity: true });
 
-        this.state = {
-            validity: true,
-            value: props.defaultValue || '',
-        };
-
-        this.handleBlur = this.handleBlur.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleCheckValidity = this.handleCheckValidity.bind(this);
-        this.handleFocus = this.handleFocus.bind(this);
-    }
-
-    handleBlur(event) {
-        const { onBlur } = this.props;
-
-        this.setState({ value: event.target.value });
-        this.handleCheckValidity(event);
-        if (typeof onBlur === 'function') {
-            onBlur(event);
-        }
-    }
-
-    handleChange(event) {
-        const { onChange } = this.props;
+    const handleBlur = event => {
         const newValue = event.target.value;
 
-        this.setState({ value: newValue });
+        setValue({ value: newValue });
+        setValidity({ validity: event.target.checkValidity() });
+
+        if (typeof onBlur === 'function') {
+            onBlur(newValue);
+        }
+    };
+
+    const handleChange = event => {
+        const newValue = event.target.value;
+        setValue({ value: newValue });
+
         if (typeof onChange === 'function') {
             onChange(newValue);
         }
-    }
+    };
 
-    handleCheckValidity(event) {
-        this.setState({ validity: event.target.checkValidity() });
-    }
-
-    handleFocus(event) {
-        const { onFocus } = this.props;
-
+    const handleFocus = () => {
         if (typeof onFocus === 'function') {
-            onFocus(event);
+            onFocus(value);
         }
-    }
+    };
 
-    render() {
-        const { disabled, id, label, required, validMsg } = this.props;
-        const { validity, value } = this.state;
-
-        return (
-            <FieldContainer
-                fieldId={id}
-                label={label}
-                valid={validity}
-                validMsg={validMsg || 'This text area input is invalid'}
-            >
-                <StyledTextArea
-                    disabled={disabled}
-                    id={id}
-                    onBlur={event => this.handleBlur(event)}
-                    onChange={event => this.handleChange(event)}
-                    onFocus={event => this.handleFocus(event)}
-                    required={required}
-                    value={value}
-                />
-            </FieldContainer>
-        );
-    }
-}
+    return (
+        <FieldContainer
+            fieldId={id}
+            label={label}
+            valid={validity}
+            validMsg={validMsg || 'This text area input is invalid'}
+        >
+            <StyledTextArea
+                disabled={disabled}
+                id={id}
+                onBlur={event => handleBlur(event)}
+                onChange={event => handleChange(event)}
+                onFocus={event => handleFocus(event)}
+                required={required}
+                value={value}
+            />
+        </FieldContainer>
+    );
+};
 
 export default TextArea;

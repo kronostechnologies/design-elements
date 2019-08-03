@@ -12,6 +12,7 @@ import OptionButton from './components/forms/inputs/option-button';
 import TextInput from './components/forms/inputs/text-input';
 import SearchContextual from './components/forms/inputs/search-contextual';
 import SearchGlobal from './components/forms/inputs/search-global';
+import Select from './components/forms/selects/Select';
 import TextArea from './components/forms/inputs/text-area';
 
 // Miscellaneous
@@ -35,4 +36,5 @@ export {
     EnsoSpinner,
     Headband,
     Progress,
+    Select,
 };

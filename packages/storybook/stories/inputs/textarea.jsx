@@ -14,9 +14,9 @@ storiesOf('TextArea', module)
         <TextArea
             id="ta_callbacks"
             label="Text area label"
-            onChange={(e) => console.log(`Custom function called on change. Current value: ${e.target.value}`)}
-            onBlur={(e) => console.log(`Custom function called on blur. Current value: ${e.target.value}`)}
-            onFocus={(e) => console.log(`Custom function called on focus. Current value: ${e.target.value}`)}
+            onChange={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
+            onBlur={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
+            onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
             placeholder="Enter your text here"
         />
     ))
