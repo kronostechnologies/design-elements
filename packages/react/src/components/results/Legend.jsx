@@ -15,10 +15,8 @@ const Item = styled.li`
     font-size: 2.8em;
     color: ${props => props.color || "#27A7C9"};
     font-weight: bold;
-    display: inline;
     width: 0.5em;
-    margin-left: -0.5em;
-    margin-top: -0.4em;
+    margin: -0.4em 0 0 -0.5em;
   }
 `;
 
