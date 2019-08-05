@@ -1,9 +1,20 @@
 import React from 'react';
 
 const legend = props => {
+    const legend = [
+        {
+            name: "Barry",
+            description: "white"
+        },
+        {
+            name: "Samuel",
+            description: "L.Chang"
+        },
+    ]
+
     return (
         <ul>
-            {props.legend.map(lgd => (
+            {legend.map(lgd => (
                 <li>
                     <p>{lgd.name}</p>
                     <span>{lgd.description}</span>
