@@ -4,9 +4,10 @@ import styled from "styled-components";
 const Container = styled.div `
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
     p {
         margin: 0;
-        flex-basis: 24%;
+        width: 130px;
         text-align: right;
     }
 `;
@@ -14,15 +15,15 @@ const Container = styled.div `
 const Progress = styled.div `
     width: 100%;
     background-color: #dcdcdc;
-    border-radius: 10px;
-    height: 12px;
+    border-radius: 4px;
+    height: 8px;
 `;
 
 const Bar = styled.div `
     width: ${props => props.percent};
-    height: 12px;
-    background-color: ${props => props.color || "#63E0FD"};
-    border-radius: 10px;
+    height: 8px;
+    background: linear-gradient(to right, black, ${props => props.color || "#63E0FD"} 40%);
+    border-radius: 4px;
 `;
 
 const bar = props => {
