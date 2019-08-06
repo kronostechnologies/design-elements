@@ -55,7 +55,7 @@ class ProgressRing extends React.Component {
               cy={radius}
             />
             <circle
-              stroke="red"
+              stroke={this.props.color}
               fill="transparent"
               strokeWidth={stroke}
               strokeDasharray={this.circumference + " " + this.circumference}

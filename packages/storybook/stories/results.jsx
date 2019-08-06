@@ -29,8 +29,9 @@ storiesOf('Results', module)
         <ProgressCircle 
           radius="50" 
           stroke="4" 
-          progress="40"
+          progress="75"
           label="Vous"
           number="50k $"
+          color="#65e2ff"
         />
     ));
