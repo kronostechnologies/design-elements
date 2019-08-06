@@ -7,20 +7,20 @@ class ProgressRing extends React.Component {
     super(props);
 
     const { radius, stroke } = this.props;
-
     this.normalizedRadius = radius - stroke * 2;
     this.circumference = this.normalizedRadius * 2 * Math.PI;
   }
 
   render() {
     const { radius, stroke, progress } = this.props;
+    const PlaceholderDashoffset = this.circumference - 1 * this.circumference;
     const strokeDashoffset =
       this.circumference - (progress / 100) * this.circumference;
-    const PlaceholderDashoffset = this.circumference - 1 * this.circumference;
 
+    // Styled Components
     const Number = styled.div`
-      width: ${props => props.rad * 2}px;
-      height: ${props => props.rad * 2}px;
+      width: ${radius * 2}px;
+      height: ${radius * 2}px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,34 +28,32 @@ class ProgressRing extends React.Component {
       top: 0;
       left: 0;
       p {
-          font-size: 1.625rem;
+        font-size: 1.625rem;
       }
     `;
 
     const Label = styled.p`
-      width: ${props => props.rad * 2}px;
+      width: ${radius * 2}px;
       text-align: center;
     `;
 
     const CirclePath = styled.circle`
-        transform: rotateZ(90deg);
-        transform-origin: 50% 50%;
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
     `;
 
-    const style = {
-      display: 'inline-block'
-    };
-
     const Wrapper = styled.div`
-        position: relative;
-        width: ${radius * 2}px;
-        height: ${radius * 2}px;
-        
-    
+      position: relative;
+      width: ${radius * 2}px;
+      height: ${radius * 2}px;
+    `;
+
+    const Container = styled.div`
+      display: inline-block;
     `;
 
     return (
-      <div style={style}>
+      <Container>
         <Wrapper>
           <svg height={radius * 2} width={radius * 2}>
             <circle
@@ -83,12 +81,12 @@ class ProgressRing extends React.Component {
               cy={radius}
             />
           </svg>
-          <Number rad={radius}>
+          <Number>
             <p>{this.props.number}</p>
           </Number>
         </Wrapper>
-        <Label rad={radius}>{this.props.label}</Label>
-      </div>
+        <Label>{this.props.label}</Label>
+      </Container>
     );
   }
 }

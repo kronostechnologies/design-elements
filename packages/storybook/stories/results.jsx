@@ -29,7 +29,7 @@ storiesOf('Results', module)
       <React.Fragment>
         <ProgressCircle 
           radius="73" 
-          stroke="7" 
+          stroke="8" 
           progress="75"
           label="Vous"
           number="50k $"
@@ -37,7 +37,7 @@ storiesOf('Results', module)
         />
         <ProgressCircle 
           radius="73" 
-          stroke="7" 
+          stroke="8" 
           progress="100"
           label="Pairs Equisoft"
           number="63k $"
@@ -45,7 +45,7 @@ storiesOf('Results', module)
         />
         <ProgressCircle 
           radius="73" 
-          stroke="7" 
+          stroke="8" 
           progress="60"
           label="Pairs General"
           number="45k $"
