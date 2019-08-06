@@ -6,14 +6,15 @@ const Item = styled.li`
   display: flex;
   margin: 15px 0;
 
-  & p {
+  p {
     margin: 0;
+    font-size: 0.875rem;
   }
 
   ::before {
     content: "•";
-    font-size: 2.8em;
-    color: ${props => props.color || "#27A7C9"};
+    font-size: 2.6em;
+    color: ${props => props.color || "#65e2ff"};
     font-weight: bold;
     width: 0.5em;
     margin: -0.4em 0 0 -0.5em;
@@ -21,7 +22,7 @@ const Item = styled.li`
 `;
 
 const Description = styled.span`
-  font-size: 0.9em;
+  font-size: 0.75rem;
   color: gray;
 `;
 

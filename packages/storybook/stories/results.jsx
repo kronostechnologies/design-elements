@@ -8,7 +8,7 @@ const legend = [
       description: "Données provenants de vos réponses"
     },
     {
-      name: "Pairs d'Equisoft",
+      name: "Pairs Equisoft",
       description: "Données privée d'Equisoft",
       color: "#000014"
     },

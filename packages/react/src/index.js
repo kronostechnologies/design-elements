@@ -21,7 +21,7 @@ import Headband from './components/headband/equisoft-default';
 import Progress from './components/progress';
 
 // Results
-import Legend from './components/results/Legend';
+import Legend from './components/results/legend';
 
 export {
     AddButton,
