@@ -22,7 +22,7 @@ import Progress from './components/progress';
 
 // Results
 import Legend from './components/results/Legend';
-import ProgressBar from './components/results/progress-bar';
+import ProgressBar from './components/results/progress-bar/progress-bar';
 
 export {
     AddButton,
