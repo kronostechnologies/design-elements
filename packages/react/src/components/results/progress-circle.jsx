@@ -17,6 +17,7 @@ class ProgressRing extends React.Component {
     const strokeDashoffset =
       this.circumference - (progress / 100) * this.circumference;
     const PlaceholderDashoffset = this.circumference - 1 * this.circumference;
+
     const Number = styled.div`
       width: ${props => props.rad * 2}px;
       height: ${props => props.rad * 2}px;
@@ -28,41 +29,49 @@ class ProgressRing extends React.Component {
       left: 0;
     `;
 
+    const Label = styled.p`
+      width: ${props => props.rad * 2}px;
+      text-align: center;
+    `;
+
     const style = {
       position: "relative"
     };
 
     return (
       <div>
-        <svg height={radius * 2} width={radius * 2} style={style}>
-          <circle
-            stroke="#DCDCDC"
-            fill="transparent"
-            strokeWidth={stroke}
-            strokeDasharray={this.circumference + " " + this.circumference}
-            style={{ PlaceholderDashoffset }}
-            stroke-width={stroke}
-            strokeLinecap="round"
-            r={this.normalizedRadius}
-            cx={radius}
-            cy={radius}
-          />
-          <circle
-            stroke="red"
-            fill="transparent"
-            strokeWidth={stroke}
-            strokeDasharray={this.circumference + " " + this.circumference}
-            style={{ strokeDashoffset }}
-            stroke-width={stroke}
-            strokeLinecap="round"
-            r={this.normalizedRadius}
-            cx={radius}
-            cy={radius}
-          />
-        </svg>
-        <Number rad={radius} > 
-          <p>{this.props.number}</p>
-        </Number>
+        <div>
+          <svg height={radius * 2} width={radius * 2} style={style}>
+            <circle
+              stroke="#DCDCDC"
+              fill="transparent"
+              strokeWidth={stroke}
+              strokeDasharray={this.circumference + " " + this.circumference}
+              style={{ PlaceholderDashoffset }}
+              stroke-width={stroke}
+              strokeLinecap="round"
+              r={this.normalizedRadius}
+              cx={radius}
+              cy={radius}
+            />
+            <circle
+              stroke="red"
+              fill="transparent"
+              strokeWidth={stroke}
+              strokeDasharray={this.circumference + " " + this.circumference}
+              style={{ strokeDashoffset }}
+              stroke-width={stroke}
+              strokeLinecap="round"
+              r={this.normalizedRadius}
+              cx={radius}
+              cy={radius}
+            />
+          </svg>
+          <Number rad={radius}>
+            <p>{this.props.number}</p>
+          </Number>
+        </div>
+        <Label rad={radius}>{this.props.label}</Label>
       </div>
     );
   }

@@ -30,7 +30,7 @@ storiesOf('Results', module)
           radius="50" 
           stroke="4" 
           progress="40"
-          label=""
-          number="50k"
+          label="Vous"
+          number="50k $"
         />
     ));
