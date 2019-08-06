@@ -22,6 +22,7 @@ import Progress from './components/progress';
 
 // Results
 import Legend from './components/results/Legend';
+import ProgressBar from './components/results/progress-bar';
 
 export {
     AddButton,
@@ -38,5 +39,6 @@ export {
     EnsoSpinner,
     Headband,
     Progress,
-    Legend
+    Legend,
+    ProgressBar
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Legend } from '@equisoft/design-elements-react';
+import { Legend, ProgressBar } from '@equisoft/design-elements-react';
 
 const legend = [
     {
@@ -23,4 +23,7 @@ storiesOf('Results', module)
     .add('Legend', () => (
         <Legend legend={legend}
         />
-    ));
+    ))
+    .add('Progress Bar', () => (
+      <ProgressBar />
+  ));
