@@ -28,28 +28,28 @@ storiesOf('Results', module)
     .add('Progress Circle', () => (
       <React.Fragment>
         <ProgressCircle 
-          radius="60" 
-          stroke="4" 
+          radius="73" 
+          stroke="7" 
           progress="75"
           label="Vous"
           number="50k $"
           color="#65e2ff"
         />
         <ProgressCircle 
-          radius="60" 
-          stroke="4" 
-          progress="75"
-          label="Vous"
-          number="50k $"
-          color="#65e2ff"
+          radius="73" 
+          stroke="7" 
+          progress="100"
+          label="Pairs Equisoft"
+          number="63k $"
+          color="#263238"
         />
         <ProgressCircle 
-          radius="60" 
-          stroke="4" 
-          progress="75"
-          label="Vous"
-          number="50k $"
-          color="#65e2ff"
+          radius="73" 
+          stroke="7" 
+          progress="60"
+          label="Pairs General"
+          number="45k $"
+          color="#637282"
         />
       </React.Fragment>
     ));
