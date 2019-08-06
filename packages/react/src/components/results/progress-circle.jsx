@@ -27,6 +27,9 @@ class ProgressRing extends React.Component {
       position: absolute;
       top: 0;
       left: 0;
+      p {
+          font-size: 1.625rem;
+      }
     `;
 
     const Label = styled.p`
@@ -40,13 +43,21 @@ class ProgressRing extends React.Component {
     `;
 
     const style = {
-      position: "relative"
+      display: 'inline-block'
     };
 
+    const Wrapper = styled.div`
+        position: relative;
+        width: ${radius * 2}px;
+        height: ${radius * 2}px;
+        
+    
+    `;
+
     return (
-      <div>
-        <div>
-          <svg height={radius * 2} width={radius * 2} style={style}>
+      <div style={style}>
+        <Wrapper>
+          <svg height={radius * 2} width={radius * 2}>
             <circle
               stroke="#DCDCDC"
               fill="transparent"
@@ -75,7 +86,7 @@ class ProgressRing extends React.Component {
           <Number rad={radius}>
             <p>{this.props.number}</p>
           </Number>
-        </div>
+        </Wrapper>
         <Label rad={radius}>{this.props.label}</Label>
       </div>
     );

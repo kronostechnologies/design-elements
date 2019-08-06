@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Legend, ProgressCircle } from '@equisoft/design-elements-react';
 
@@ -26,12 +26,30 @@ storiesOf('Results', module)
         />
     ))
     .add('Progress Circle', () => (
+      <React.Fragment>
         <ProgressCircle 
-          radius="50" 
+          radius="60" 
           stroke="4" 
           progress="75"
           label="Vous"
           number="50k $"
           color="#65e2ff"
         />
+        <ProgressCircle 
+          radius="60" 
+          stroke="4" 
+          progress="75"
+          label="Vous"
+          number="50k $"
+          color="#65e2ff"
+        />
+        <ProgressCircle 
+          radius="60" 
+          stroke="4" 
+          progress="75"
+          label="Vous"
+          number="50k $"
+          color="#65e2ff"
+        />
+      </React.Fragment>
     ));
