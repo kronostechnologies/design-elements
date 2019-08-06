@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Legend } from '@equisoft/design-elements-react';
+import { Legend, ProgressCircle } from '@equisoft/design-elements-react';
 
 const legend = [
     {
@@ -21,6 +21,16 @@ const legend = [
 
 storiesOf('Results', module)
     .add('Legend', () => (
-        <Legend legend={legend}
+        <Legend 
+          legend={legend}
+        />
+    ))
+    .add('Progress Circle', () => (
+        <ProgressCircle 
+          radius="50" 
+          stroke="4" 
+          progress="40"
+          label=""
+          number="50k"
         />
     ));
