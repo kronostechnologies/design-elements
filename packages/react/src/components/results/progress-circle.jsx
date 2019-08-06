@@ -34,6 +34,11 @@ class ProgressRing extends React.Component {
       text-align: center;
     `;
 
+    const CirclePath = styled.circle`
+        transform: rotateZ(90deg);
+        transform-origin: 50% 50%;
+    `;
+
     const style = {
       position: "relative"
     };
@@ -54,7 +59,7 @@ class ProgressRing extends React.Component {
               cx={radius}
               cy={radius}
             />
-            <circle
+            <CirclePath
               stroke={this.props.color}
               fill="transparent"
               strokeWidth={stroke}
