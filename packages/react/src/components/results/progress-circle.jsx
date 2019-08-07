@@ -6,6 +6,7 @@ const progressCircle = props => {
   const { percent } = props;
   const radius = 73;
   const stroke = 8;
+
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const placeholderDashoffset = circumference - 1 * circumference;
@@ -29,6 +30,7 @@ const progressCircle = props => {
   const Label = styled.p`
     width: ${(radius * 2) / 16}rem;
     text-align: center;
+    color: ${props => props.main ? "#000000" : "#57666e"};
   `;
 
   const CirclePath = styled.circle`
@@ -79,7 +81,7 @@ const progressCircle = props => {
           <p>{props.number}</p>
         </Number>
       </Wrapper>
-      <Label>{props.label}</Label>
+      <Label main={props.main}>{props.label}</Label>
     </Container>
   );
 };

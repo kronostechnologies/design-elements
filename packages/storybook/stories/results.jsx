@@ -28,6 +28,7 @@ storiesOf('Results', module)
     .add('Progress Circle', () => (
       <React.Fragment>
         <ProgressCircle 
+          main={true}
           percent="75"
           label="Vous"
           number="50k $"
