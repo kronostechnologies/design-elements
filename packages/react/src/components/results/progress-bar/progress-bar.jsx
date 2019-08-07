@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 // Components
 import Bar from "./bar/bar";
@@ -9,14 +9,14 @@ const style = {
 
 const progress_bar = props => {
   return (
-    <React.Fragment>
+    <div>
       <label style={style} >{props.label}</label>
       <Bar 
         percent={props.percent}
         color={props.color}
         numbers={props.numbers}
       />
-    </React.Fragment>
+    </div>
   );
 };
 
