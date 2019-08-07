@@ -15,7 +15,7 @@ const Item = styled.li`
   ::before {
     content: "•";
     font-size: 2.6em;
-    color: ${props => props.color || "#65e2ff"};
+    color: ${props => props.color || 'rgb(101, 226, 255)'};
     font-weight: bold;
     width: 0.5em;
     margin: -0.4em 0 0 -0.5em;
@@ -24,12 +24,12 @@ const Item = styled.li`
 
 const List = styled.ul`
   margin: 0;
-  padding: 0 1.1rem;
+  padding: 0 1.2rem;
 `;
 
 const Description = styled.span`
   font-size: 0.75rem;
-  color: gray;
+  color: rgb(87, 102, 110);
 `;
 
 const legend = props => {
