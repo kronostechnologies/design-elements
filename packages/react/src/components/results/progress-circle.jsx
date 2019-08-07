@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-class ProgressRing extends React.Component {
+class ProgressCircle extends React.Component {
   constructor(props) {
     super(props);
 
@@ -91,4 +91,4 @@ class ProgressRing extends React.Component {
   }
 }
 
-export default ProgressRing;
+export default ProgressCircle;

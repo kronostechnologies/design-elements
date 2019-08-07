@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Legend, ProgressCircle } from '@equisoft/design-elements-react';
+import { Legend, ProgressCircle, ProgressCircleTest } from '@equisoft/design-elements-react';
 
 const legend = [
     {
@@ -44,6 +44,34 @@ storiesOf('Results', module)
           color="#263238"
         />
         <ProgressCircle 
+          radius="73" 
+          stroke="8" 
+          progress="60"
+          label="Pairs General"
+          number="45k $"
+          color="#637282"
+        />
+      </React.Fragment>
+    ))
+    .add('Progress Circle Test', () => (
+      <React.Fragment>
+        <ProgressCircleTest 
+          radius="73" 
+          stroke="8" 
+          progress="75"
+          label="Vous"
+          number="50k $"
+          color="#65e2ff"
+        />
+        <ProgressCircleTest
+          radius="73" 
+          stroke="8" 
+          progress="100"
+          label="Pairs Equisoft"
+          number="63k $"
+          color="#263238"
+        />
+        <ProgressCircleTest
           radius="73" 
           stroke="8" 
           progress="60"
