@@ -4,12 +4,14 @@ import styled from "styled-components";
 // Source: https://css-tricks.com/building-progress-ring-quickly/
 const progressCircle = props => {
 
-  const { radius, stroke, progress } = props;
+  const { percent } = props;
+  const radius = 73;
+  const stroke = 8;
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const PlaceholderDashoffset = circumference - 1 * circumference;
   const strokeDashoffset =
-    circumference - (progress / 100) * circumference;
+    circumference - (percent / 100) * circumference;
 
   // Styled Components
   const Number = styled.div`
