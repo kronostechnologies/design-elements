@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Item = styled.li`
   list-style: none;
   display: flex;
-  margin: 15px 0;
+  margin: 0;
+  padding: 0 0 15px;
 
   p {
     margin: 0;
@@ -21,6 +22,11 @@ const Item = styled.li`
   }
 `;
 
+const List = styled.ul`
+  margin: 0;
+  padding: 0 1.1rem;
+`;
+
 const Description = styled.span`
   font-size: 0.75rem;
   color: gray;
@@ -28,7 +34,7 @@ const Description = styled.span`
 
 const legend = props => {
   return (
-    <ul>
+    <List>
       {props.legend.map(lgd => (
         <Item color={lgd.color}>
           <div>
@@ -37,7 +43,7 @@ const legend = props => {
           </div>
         </Item>
       ))}
-    </ul>
+    </List>
   );
 };
 
