@@ -27,6 +27,7 @@ storiesOf('Results', module)
     .add('Progress Bar', () => (
       <React.Fragment>
         <ProgressBar 
+          main = {true}
           label = "Vous"
           percent = "80"
           color = "#2CABCD"
