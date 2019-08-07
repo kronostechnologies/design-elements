@@ -15,8 +15,8 @@ const progressCircle = props => {
 
   // Styled Components
   const Number = styled.div`
-    width: ${radius * 2}px;
-    height: ${radius * 2}px;
+    width: ${(radius * 2) / 16}rem;
+    height: ${(radius * 2) / 16}rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@ const progressCircle = props => {
   `;
 
   const Label = styled.p`
-    width: ${radius * 2}px;
+    width: ${(radius * 2) / 16}rem;
     text-align: center;
   `;
 
@@ -40,8 +40,8 @@ const progressCircle = props => {
 
   const Wrapper = styled.div`
     position: relative;
-    width: ${radius * 2}px;
-    height: ${radius * 2}px;
+    width: ${(radius * 2) / 16}rem;
+    height: ${(radius * 2) / 16}rem;
   `;
 
   const Container = styled.div`
