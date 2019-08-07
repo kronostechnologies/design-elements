@@ -28,19 +28,19 @@ storiesOf('Results', module)
       <React.Fragment>
         <ProgressBar 
           label = "Vous"
-          percent = "80%"
+          percent = "80"
           color = "#2CABCD"
           numbers= "50k - 100k$"
         />
         <ProgressBar 
           label = "Pairs Equisoft"
-          percent = "60%"
+          percent = "60"
           color = "#263238"
           numbers= "150k - 250k$"
         />
         <ProgressBar 
           label = "Pairs General"
-          percent = "85%"
+          percent = "85"
           color = "#637282"
           numbers= "425k - 500k$"
         />

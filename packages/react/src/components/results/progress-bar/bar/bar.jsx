@@ -20,9 +20,9 @@ const Progress = styled.div `
 `;
 
 const Bar = styled.div `
-    width: ${props => props.percent};
+    width: ${props => props.percent}%;
     height: 8px;
-    background: linear-gradient(to right, black, ${props => props.color || "#63E0FD"} 40%);
+    background: linear-gradient(to right, rgb(0, 0, 0, 0.7), ${props => props.color || "#63E0FD"} 40%);
     border-radius: 4px;
 `;
 
