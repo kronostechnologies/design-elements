@@ -26,8 +26,13 @@ const Button = styled(AbstractButton)`
   }
 `;
 
-const SearchButton = ({ children, disabled, onClick, ...props }) => (
-    <Button {...props} disabled={disabled} onClick={onClick}>
+const SearchButton = ({ children, className, disabled, onClick, type }) => (
+    <Button
+        className={className}
+        disabled={disabled}
+        onClick={onClick}
+        type={type}
+    >
         {children}
     </Button>
 );

@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 
 import VisuallyHidden from '../../a11y/visuallyhidden';
+import SearchButton from '../../buttons/search-button';
 
 import style from '../styles/inputs';
 import Label from '../label';
 
-const Form = styled.form`
+const SearchWrapper = styled.div`
   display: flex;
 
   label {
@@ -43,7 +44,7 @@ const IcoReset = styled(XIcon)`
 
 const Input = styled.input`
   ${style} /* Must be the first rule */
-  border-radius: ${props => (props.global && '0.25rem 0 0 0.25rem')};
+  border-radius: ${props => (props.hasButton && '0.25rem 0 0 0.25rem')};
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 
@@ -79,32 +80,96 @@ const Reset = styled.button`
   }
 `;
 
-const SearchInput = ({ children, disabled, id, global, label, onInput, onSubmit, ...props }) => (
-    <Form role="search" onSubmit={e => { e.preventDefault(); }}>
-        <InnerWrapper>
-            <Label forId={id}>
-                <IcoSearch disabled={disabled} />
-                <VisuallyHidden>{label}</VisuallyHidden>
-            </Label>
+const SearchSubmit = styled(SearchButton)`
+  border-left: 0;
+  border-radius: 0 0.25rem 0.25rem 0;
+  position: relative;
+`;
 
-            <Input
-                {...props}
-                autoComplete="on"
-                disabled={disabled}
-                global={global}
-                onInput={onInput}
-                onSubmit={onSubmit}
-                id={id}
-                type="search"
-            />
+class SearchInput extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
 
-            <Reset type="reset">
-                <IcoReset />
-                <VisuallyHidden>Reset</VisuallyHidden>
-            </Reset>
-        </InnerWrapper>
-        {children}
-    </Form>
-);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleReset = this.handleReset.bind(this);
+        this.handleSearchButtonClick = this.handleSearchButtonClick.bind(this);
+    }
+
+    handleChange(event) {
+        const { onChange } = this.props;
+        const newValue = event.target.value;
+
+        this.setState({ value: newValue });
+        if (typeof onChange === 'function') {
+            onChange(newValue);
+        }
+    }
+
+    handleKeyDown(event) {
+        const { onSearch } = this.props;
+        const { value } = this.state;
+
+        if (typeof onSearch === 'function' && event.keyCode === 13) {
+            onSearch(value);
+        }
+    }
+
+    handleReset() {
+        this.setState({ value: '' });
+    }
+
+    handleSearchButtonClick() {
+        const { onSearch } = this.props;
+        const { value } = this.state;
+
+        onSearch(value);
+    }
+
+    render() {
+        const { disabled, hasButton, id, label } = this.props;
+        const { value } = this.state;
+
+        return (
+            <SearchWrapper>
+                <InnerWrapper>
+                    <Label forId={id}>
+                        <IcoSearch disabled={disabled} />
+                        <VisuallyHidden>{label}</VisuallyHidden>
+                    </Label>
+
+                    <Input
+                        autoComplete="on"
+                        disabled={disabled}
+                        onChange={event => this.handleChange(event)}
+                        onKeyDown={event => this.handleKeyDown(event)}
+                        hasButton={hasButton}
+                        id={id}
+                        type="search"
+                        value={value}
+                    />
+
+                    <Reset onClick={this.handleReset}>
+                        <IcoReset />
+                        <VisuallyHidden>Reset</VisuallyHidden>
+                    </Reset>
+                </InnerWrapper>
+                {
+                    hasButton &&
+                    (
+                        <SearchSubmit
+                            disabled={disabled}
+                            type="submit"
+                            onClick={this.handleSearchButtonClick}
+                        >
+                            {label}
+                        </SearchSubmit>
+                    )
+                }
+            </SearchWrapper>
+        );
+    }
+}
 
 export default SearchInput;

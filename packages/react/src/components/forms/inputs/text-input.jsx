@@ -14,34 +14,69 @@ class TextInput extends Component {
         super(props);
 
         this.state = {
+            value: props.defaultValue || '',
             validity: true,
         };
 
+        this.handleBlur = this.handleBlur.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleCheckValidity = this.handleCheckValidity.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
     }
 
-    handleCheckValidity(thatEvt) {
-        return this.setState({ validity: thatEvt.target.checkValidity() });
+    handleBlur(event) {
+        const { onBlur } = this.props;
+
+        this.setState({ value: event.target.value });
+        this.handleCheckValidity(event);
+        if (typeof onBlur === 'function') {
+            onBlur(event);
+        }
+    }
+
+    handleChange(event) {
+        const { onChange } = this.props;
+
+        this.setState({ value: event.target.value });
+        if (typeof onChange === 'function') {
+            onChange(event);
+        }
+    }
+
+    handleCheckValidity(event) {
+        this.setState({ validity: event.target.checkValidity() });
+    }
+
+    handleFocus(event) {
+        const { onFocus } = this.props;
+
+        if (typeof onFocus === 'function') {
+            onFocus(event);
+        }
     }
 
     render() {
-        const { id, label, required, type, valid, validMsg, ...props } = this.props;
-        const { validity } = this.state;
-        const isValid = (valid === undefined ? validity : valid);
+        const { disabled, id, label, pattern, placeholder, required, type, validMsg } = this.props;
+        const { validity, value } = this.state;
 
         return (
             <FieldContainer
                 fieldId={id}
                 label={label}
-                valid={isValid}
+                valid={validity}
                 validMsg={validMsg || 'This text input is invalid'}
             >
                 <Input
-                    {...props}
+                    disabled={disabled}
                     id={id}
-                    onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
+                    onBlur={event => this.handleBlur(event)}
+                    onChange={event => this.handleChange(event)}
+                    onFocus={event => this.handleFocus(event)}
+                    pattern={pattern}
+                    placeholder={placeholder}
                     required={required}
                     type={type || 'text'}
+                    value={value}
                 />
             </FieldContainer>
         );
