@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { SECONDARY, TERTIARY } from '../../constants';
@@ -20,28 +20,18 @@ const StyledButton = styled(AbstractButton)`
     }}
 `;
 
-class Button extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        const { onClick } = this.props;
+const Button = ({ children, disabled, onClick }) => {
+    const handleClick = () => {
         if (typeof onClick === 'function') {
             onClick();
         }
-    }
+    };
 
-    render() {
-        const { children, disabled } = this.props;
-
-        return (
-            <StyledButton disabled={disabled} onClick={this.handleClick}>
-                { children }
-            </StyledButton>
-        );
-    }
-}
+    return (
+        <StyledButton disabled={disabled} onClick={handleClick}>
+            { children }
+        </StyledButton>
+    );
+};
 
 export default Button;
