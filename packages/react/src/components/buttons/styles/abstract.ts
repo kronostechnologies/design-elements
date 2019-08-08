@@ -13,6 +13,7 @@ export default `
   line-height: normal;
   min-height: 2rem;
   min-width: 2rem;
+  outline: none;
   padding: 0.5rem 1rem;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
