@@ -31,10 +31,10 @@ export {
     TextInput,
     SearchContextual,
     SearchGlobal,
+    Select,
     TextArea,
     Card,
     EnsoSpinner,
     Headband,
     Progress,
-    Select,
 };
