@@ -24,11 +24,18 @@ const Input = styled.input`
   }
 `;
 
-const OptionButton = ({ checked, label, name, value }) => (
+interface OptionButtonProps {
+    checked?: boolean;
+    label: string;
+    name: string;
+    value: number;
+}
+
+const OptionButton = ({ checked, label, name, value }: OptionButtonProps) => (
     <div>
         <Input checked={checked} id="id" name={name} type="radio" value={value} />
         <label htmlFor="id">{label}</label>
     </div>
 );
 
-export default OptionButton;
+export { OptionButton };

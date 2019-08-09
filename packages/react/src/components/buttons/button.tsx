@@ -7,7 +7,7 @@ import tertiaryStyle from './styles/tertiary';
 
 import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
-export type ButtonType = 'primary' | 'secondary' | 'tertiary';
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 export interface ButtonProps extends AbstractButtonProps {
     buttonType: ButtonType;

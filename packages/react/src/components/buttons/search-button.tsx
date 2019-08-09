@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
-export interface SearchButtonProps extends AbstractButtonProps {
+interface SearchButtonProps extends AbstractButtonProps {
     className: string;
 }
 

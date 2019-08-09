@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { TextAreaProps } from './text-area';
 
 import style from '../styles/inputs';
 
 import FieldContainer from '../field-container';
 
-const StyledTextArea = styled.textarea`
+const Input = styled.input`
   ${style}
-  min-height: 6.5rem;
-  min-width: 100%;
-  outline: none;
-  overflow: auto;
-  resize: vertical;
 `;
 
-const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }) => {
+interface TextInputProps extends TextAreaProps {
+    pattern?: string;
+    placeholder?: string;
+    type?: string;
+
+}
+
+const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
 
@@ -49,19 +52,22 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
             fieldId={id}
             label={label}
             valid={validity}
-            validMsg={validMsg || 'This text area input is invalid'}
+            validMsg={validMsg || 'This text input is invalid'}
         >
-            <StyledTextArea
+            <Input
                 disabled={disabled}
                 id={id}
                 onBlur={event => handleBlur(event)}
                 onChange={event => handleChange(event)}
-                onFocus={event => handleFocus(event)}
+                onFocus={event => handleFocus()}
+                pattern={pattern}
+                placeholder={placeholder}
                 required={required}
+                type={type || 'text'}
                 value={value}
             />
         </FieldContainer>
     );
 };
 
-export default TextArea;
+export { TextInput };
