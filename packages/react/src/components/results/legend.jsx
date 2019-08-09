@@ -29,7 +29,7 @@ const List = styled.ul`
 
 const Description = styled.span`
   font-size: 0.75rem;
-  color: gray;
+  color: rgb(87, 102, 110);
 `;
 
 const legend = props => {
