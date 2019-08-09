@@ -15,7 +15,7 @@ const Item = styled.li`
   ::before {
     content: "•";
     font-size: 2.6em;
-    color: ${props => props.color || "#65e2ff"};
+    color: ${props => props.color || 'rgb(101, 226, 255)'};
     font-weight: bold;
     width: 0.5em;
     margin: -0.4em 0 0 -0.5em;
