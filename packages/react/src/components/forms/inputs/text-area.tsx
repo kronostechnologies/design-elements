@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import style from '../styles/inputs';
 
-import FieldContainer from '../field-container';
+import { FieldContainer } from '../field-container';
 
 const StyledTextArea = styled.textarea`
   ${style}
@@ -23,14 +23,14 @@ export interface TextAreaProps {
     onChange?: ((...args: any[]) => void);
     onFocus?: ((...args: any[]) => void);
     required?: boolean;
-    validMsg?: ((...args: any[]) => boolean);
+    validMsg?: string;
 }
 
 const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }: TextAreaProps) => {
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
 
-    const handleBlur = event => {
+    const handleBlur = (event: any) => {
         const newValue = event.target.value;
 
         setValue({ value: newValue });
@@ -41,7 +41,7 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
         }
     };
 
-    const handleChange = event => {
+    const handleChange = (event: any) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Label from './label';
+import { Label } from './label';
 import { InvalidField } from '../feedbacks/invalid-field';
 
 const StyledDiv = styled.div`
@@ -18,7 +18,16 @@ const StyledDiv = styled.div`
   }
 `;
 
-const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props }) => (
+interface FieldContainerProps{
+    children: any;
+    fieldId: string;
+    label: string;
+    valid: boolean;
+    validMsg: string;
+
+}
+
+const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps) => (
     <StyledDiv {...props} valid={valid}>
         {label && (
             <Label forId={fieldId}>
@@ -34,4 +43,4 @@ const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props })
     </StyledDiv>
 );
 
-export default FieldContainer;
+export { FieldContainer } ;

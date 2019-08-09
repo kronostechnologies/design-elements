@@ -7,7 +7,7 @@ import VisuallyHidden from '../../a11y/visuallyhidden';
 import { SearchButton } from '../../buttons/search-button';
 
 import style from '../styles/inputs';
-import Label from '../label';
+import { Label } from '../label';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -98,7 +98,7 @@ export interface SearchInputProps {
 const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: '' });
 
-    const handleChange = event => {
+    const handleChange = (event: any) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
@@ -107,7 +107,7 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
         }
     };
 
-    const handleKeyDown = event => {
+    const handleKeyDown = (event: any) => {
         if (typeof onSearch === 'function' && event.keyCode === 13) {
             onSearch(value);
         }
