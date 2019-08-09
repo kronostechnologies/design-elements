@@ -24,7 +24,7 @@ const Item = styled.li`
 
 const List = styled.ul`
   margin: 0;
-  padding: 0 1.1rem;
+  padding: 0 1.2rem;
 `;
 
 const Description = styled.span`
