@@ -17,7 +17,7 @@ storiesOf('Choosers', module)
                 Marié ou vivant avec  un conjoint
             </ChooseRadio>
 
-            <ChooseRadio id="ar_6" groupName="maritalStatus" value="">
+            <ChooseRadio id="ar_6" groupName="maritalStatus" skippable value="SKIPPED">
                 Préfère ne pas répondre
             </ChooseRadio>
         </Chooser>
@@ -45,7 +45,7 @@ storiesOf('Choosers', module)
                 65+
             </ChooseRadio>
 
-            <ChooseRadio id="ar_6" groupName="ageRange" value="">
+            <ChooseRadio id="ar_6" groupName="ageRange" skippable value="SKIPPED">
                 Préfère ne pas répondre
             </ChooseRadio>
         </Chooser>

@@ -14,7 +14,7 @@ const Label = styled.label`
 
 export default class ChooseRadio extends Component {
     render() {
-        const { children, groupName, id, value, ...props } = this.props;
+        const { children, groupName, id, value, skippable, ...props } = this.props;
 
         return (
             <>

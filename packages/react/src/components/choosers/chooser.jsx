@@ -19,10 +19,10 @@ export default class Chooser extends Component {
         const { children, inColumns } = this.props;
         const chooseRadiosArray = React.Children.toArray(children);
 
-        /* If the last button got an empty value attribute */
+        /* If the button got an `skippable` prop */
         /* it's become a skip button */
-        const skip = chooseRadiosArray.filter((child, index, array) =>
-            (child === array.slice(-1)[0] && child.props.value === '') && child);
+        const skip = chooseRadiosArray.filter(child =>
+            child.props.skippable && child);
 
         /* Then return the skip button */
         const skipButton = (skip.length !== 0 && <Skip>{skip}</Skip>);
