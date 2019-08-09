@@ -11,7 +11,7 @@ const Field = styled.div`
 `;
 
 interface InvalidFieldProps {
-    controlId: number;
+    controlId: string;
     feedbackMsg: string;
 }
 

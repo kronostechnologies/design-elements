@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 
 import styled from 'styled-components';
 import styles from '../styles/inputs.js';
-import FieldContainer from '../field-container';
+import { FieldContainer } from '../field-container';
 
 const StyledSelect = styled.select`
   ${styles}
@@ -14,15 +14,25 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-const Select = ({ children, id, label, options, required, valid, validMsg, ...props }) => {
+interface SelectProps {
+    children: any;
+    id: string;
+    label: string;
+    options: any[];
+    required?: boolean;
+    valid: boolean;
+    validMsg: string;
+}
+
+const Select = ({ children, id, label, options, required, valid, validMsg, ...props }: SelectProps) => {
     const [validity, setValidity] = useState(true);
 
-    const selectOptions = options.map((option, i) => {
+    const selectOptions: object = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
 
-    const handleCheckValidity = event => {
+    const handleCheckValidity = (event: any) => {
         setValidity(event.target.checkValidity());
     };
 
@@ -46,4 +56,4 @@ const Select = ({ children, id, label, options, required, valid, validMsg, ...pr
     );
 };
 
-export default Select;
+export { Select };
