@@ -1,44 +1,41 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { Component } from 'react';
 
-interface MediaViewProps {
-    children?: ReactNode;
-    maxWidth?: number;
-    minWidth?: number;
-}
+class MediaView extends Component {
+    constructor(props) {
+        super(props);
 
-interface State {
-    screenWidth: number;
-}
-
-const MediaView = ({ children, maxWidth, minWidth }: MediaViewProps) => {
-    const defaultState = { screenWidth: (window.innerWidth || document.documentElement.clientWidth) };
-    const [{ screenWidth }, setScreenWidth] = useState<State>(defaultState);
-
-    useEffect(() => {
-        window.addEventListener('resize', handleScreenResize);
-        return () => {
-            window.removeEventListener('resize', handleScreenResize);
+        this.state = {
+            screenWidth: (window.innerWidth || document.documentElement.clientWidth) ,
         };
-    }, []);
 
-    const handleScreenResize = (): void => {
-        setScreenWidth({ screenWidth: (window.innerWidth || document.documentElement.clientWidth) });
-    };
-
-    let isMinDisplay = false;
-    let isMaxDisplay = false;
-    if (minWidth !== undefined) {
-        isMinDisplay = (screenWidth >= minWidth);
-    }
-    if (maxWidth !== undefined) {
-        isMaxDisplay = (screenWidth < maxWidth);
+        this.handleScreeResize = this.handleScreeResize.bind(this);
     }
 
-    if (isMinDisplay || isMaxDisplay) {
-        return <>{children}</>;
+    componentDidMount() {
+        return window.addEventListener('resize', this.handleScreeResize);
     }
 
-    return null;
-};
+    componentWillUnmount() {
+        return window.addEventListener('resize', this.handleScreeResize);
+    }
 
-export { MediaView };
+    handleScreeResize() {
+        return this.setState({screenWidth: (window.innerWidth || document.documentElement.clientWidth)});
+    }
+
+    render() {
+        const { children, maxWidth, minWidth } =  this.props;
+        const { screenWidth } = this.state;
+
+        const isMinDisplay = (screenWidth >= minWidth);
+        const isMaxDisplay = (screenWidth < maxWidth);
+
+        if (isMinDisplay || isMaxDisplay) {
+            return <>{children}</>;
+        }
+
+        return null;
+    }
+}
+
+export { MediaView }

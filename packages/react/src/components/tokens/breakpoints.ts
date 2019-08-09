@@ -1,3 +1,3 @@
-export const breakpoints = {
+export default {
     tablet: 768,
 };
