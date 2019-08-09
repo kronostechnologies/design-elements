@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Legend } from '@equisoft/design-elements-react';
 
-const legend = [
+const legends = [
     {
       name: "Vous",
       description: "Données provenants de vos réponses"
@@ -21,6 +21,6 @@ const legend = [
 
 storiesOf('Results', module)
     .add('Legend', () => (
-        <Legend legend={legend}
+        <Legend legends={legends}
         />
     ));
