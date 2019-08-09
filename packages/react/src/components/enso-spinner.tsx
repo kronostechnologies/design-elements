@@ -15,4 +15,4 @@ const EnsoSpinner = styled(Enso)`
   }
 `;
 
-export default EnsoSpinner;
+export { EnsoSpinner };

@@ -58,7 +58,13 @@ const FutureStep = styled(AbstractStep)`
   background-color: #d9dde2;
 `;
 
-const getStep = (step, max, value) => {
+interface getStepProps {
+    step: number;
+    max: number;
+    value: number;
+}
+
+const getStep = ({ step, max, value }: getStepProps) => {
     let StepComponent;
 
     if (step < value) {
@@ -85,4 +91,4 @@ const Progress = ({ max, value }) => (
     </Div>
 );
 
-export default Progress;
+export { Progress };

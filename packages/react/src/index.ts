@@ -16,10 +16,10 @@ import { TextInput } from './components/forms/inputs/text-input';
 import { Select } from './components/forms/selects/Select';
 
 // Miscellaneous
-import Card from './components/card';
-import EnsoSpinner from './components/enso-spinner';
-import Headband from './components/headband/equisoft-default';
-import Progress from './components/progress';
+import { Card } from './components/card';
+import { EnsoSpinner } from './components/enso-spinner';
+import { Headband } from './components/headband/equisoft-default';
+import { Progress } from './components/progress';
 
 export {
     AddButton,
