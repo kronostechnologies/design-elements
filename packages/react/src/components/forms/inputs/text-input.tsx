@@ -1,59 +1,39 @@
-import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
+import { TextAreaProps } from './text-area';
 
-import { FieldContainer } from '../field-container';
+import style from '../styles/inputs';
 
-import { inputsStyle } from '../styles/inputs';
+import FieldContainer from '../field-container';
 
 const Input = styled.input`
-  ${inputsStyle}
+  ${style}
 `;
 
-type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    'inputMode' | 'value'>;
-
-interface TextInputProps extends PartialInputProps {
-    defaultValue?: string;
-    disabled?: boolean;
-    label?: string;
+interface TextInputProps extends TextAreaProps {
     pattern?: string;
     placeholder?: string;
-    required?: boolean;
     type?: string;
     validationErrorMessage?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
 
-    onChange?(event: ChangeEvent<HTMLInputElement>): void;
-
-    onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
-const TextInput = React.forwardRef(
-    ({ onBlur, onChange, onFocus, ...props }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
-        const [{ validity }, setValidity] = useState({ validity: true });
-        const id = uuid();
+const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
+    const [{ value }, setValue] = useState({ value: defaultValue || '' });
+    const [{ validity }, setValidity] = useState({ validity: true });
 
-        function handleBlur(event: FocusEvent<HTMLInputElement>): void {
-            setValidity({ validity: event.currentTarget.checkValidity() });
+    const handleBlur = event => {
+        const newValue = event.target.value;
 
-            if (onBlur) {
-                onBlur(event);
-            }
+        setValue({ value: newValue });
+        setValidity({ validity: event.target.checkValidity() });
+
+        if (typeof onBlur === 'function') {
+            onBlur(newValue);
         }
-
-        function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-            if (onChange) {
-                onChange(event);
-            }
-        }
-
-        function handleFocus(event: FocusEvent<HTMLInputElement>): void {
-            if (onFocus) {
-                onFocus(event);
-            }
-        }
+    };
 
         const {
             defaultValue,
@@ -92,4 +72,33 @@ const TextInput = React.forwardRef(
         );
     });
 
-export { TextInput };
+    const handleFocus = () => {
+        if (typeof onFocus === 'function') {
+            onFocus(value);
+        }
+    };
+
+    return (
+        <FieldContainer
+            fieldId={id}
+            label={label}
+            valid={validity}
+            validMsg={validMsg || 'This text input is invalid'}
+        >
+            <Input
+                disabled={disabled}
+                id={id}
+                onBlur={event => handleBlur(event)}
+                onChange={event => handleChange(event)}
+                onFocus={event => handleFocus()}
+                pattern={pattern}
+                placeholder={placeholder}
+                required={required}
+                type={type || 'text'}
+                value={value}
+            />
+        </FieldContainer>
+    );
+};
+
+export { TextInput };

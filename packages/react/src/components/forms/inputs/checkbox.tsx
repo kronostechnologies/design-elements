@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement } from 'react';
+import React, { RefObject } from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -9,18 +9,23 @@ const Input = styled.input`
 
 interface CheckboxProps {
     defaultChecked?: boolean;
-
-    onChange?(event: ChangeEvent<HTMLInputElement>, checked: boolean): void;
+    onChange: ((...args: any[]) => void);
 }
 
-export function Checkbox({ defaultChecked, onChange }: CheckboxProps): ReactElement {
-    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-        if (onChange) {
-            onChange(event, event.currentTarget.checked);
+type Ref = ((instance: HTMLInputElement) => void) | RefObject<HTMLInputElement>;
+
+const Checkbox = ({ defaultChecked, onChange }: CheckboxProps) => {
+    const ref: Ref = React.createRef();
+
+    const handleChange = () => {
+        if (typeof onChange === 'function') {
+            onChange(ref.current.checked);
         }
-    }
+    };
 
     return (
-        <Input defaultChecked={defaultChecked} onChange={handleChange} type="checkbox" />
+        <Input defaultChecked={defaultChecked} ref={ref} onChange={handleChange} type="checkbox" />
     );
-}
+};
+
+export { Checkbox };

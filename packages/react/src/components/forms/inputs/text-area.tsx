@@ -1,12 +1,12 @@
-import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
-import { FieldContainer } from '../field-container';
-import { inputsStyle } from '../styles/inputs';
+import style from '../styles/inputs';
+
+import FieldContainer from '../field-container';
 
 const StyledTextArea = styled.textarea`
-  ${inputsStyle}
+  ${style}
   min-height: 6.5rem;
   min-width: 100%;
   outline: none;
@@ -17,8 +17,11 @@ const StyledTextArea = styled.textarea`
 export interface TextAreaProps {
     defaultValue?: string;
     disabled?: boolean;
+    id: string;
     label: string;
-    placeholder?: string;
+    onBlur?: ((...args: any[]) => void);
+    onChange?: ((...args: any[]) => void);
+    onFocus?: ((...args: any[]) => void);
     required?: boolean;
     validationErrorMessage?: string;
     value?: string;
@@ -30,33 +33,29 @@ export interface TextAreaProps {
     onFocus?(event: FocusEvent<HTMLTextAreaElement>): void;
 }
 
-interface ValidityProps {
-    validity: boolean;
-}
+const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }: TextAreaProps) => {
+    const [{ value }, setValue] = useState({ value: defaultValue || '' });
+    const [{ validity }, setValidity] = useState({ validity: true });
 
-export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps): ReactElement {
-    const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
-    const id = uuid();
+    const handleBlur = event => {
+        const newValue = event.target.value;
 
-    function handleBlur(event: FocusEvent<HTMLTextAreaElement>): void {
-        setValidity({ validity: event.currentTarget.checkValidity() });
+        setValue({ value: newValue });
+        setValidity({ validity: event.target.checkValidity() });
 
-        if (onBlur) {
-            onBlur(event);
+        if (typeof onBlur === 'function') {
+            onBlur(newValue);
         }
-    }
+    };
 
-    function handleChange(event: ChangeEvent<HTMLTextAreaElement>): void {
-        if (onChange) {
-            onChange(event);
-        }
-    }
+    const handleChange = event => {
+        const newValue = event.target.value;
+        setValue({ value: newValue });
 
-    function handleFocus(event: FocusEvent<HTMLTextAreaElement>): void {
-        if (onFocus) {
-            onFocus(event);
+        if (typeof onChange === 'function') {
+            onChange(newValue);
         }
-    }
+    };
 
     const { defaultValue, disabled, label, placeholder, required, validationErrorMessage, value } = props;
 
@@ -68,16 +67,16 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
             validationErrorMessage={validationErrorMessage || 'This text area input is invalid'}
         >
             <StyledTextArea
-                defaultValue={defaultValue}
                 disabled={disabled}
                 id={id}
-                onBlur={handleBlur}
-                onChange={handleChange}
-                onFocus={handleFocus}
-                placeholder={placeholder}
+                onBlur={event => handleBlur(event)}
+                onChange={event => handleChange(event)}
+                onFocus={event => handleFocus()}
                 required={required}
                 value={value}
             />
         </FieldContainer>
     );
-}
+};
+
+export { TextArea };
