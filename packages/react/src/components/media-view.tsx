@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class MediaView extends Component {
+class MediaView extends Component {
     constructor(props) {
         super(props);
 
@@ -37,3 +37,5 @@ export default class MediaView extends Component {
         return null;
     }
 }
+
+export { MediaView }

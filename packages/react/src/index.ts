@@ -16,11 +16,11 @@ import { TextInput } from './components/forms/inputs/text-input';
 import { Select } from './components/forms/selects/select';
 
 // Miscellaneous
-import Card from './components/card';
+import { Card } from './components/card';
 import Chooser from './components/choosers/chooser';
-import EnsoSpinner from './components/enso-spinner';
-import Headband from './components/headband/equisoft-default';
-import Progress from './components/progress';
+import { EnsoSpinner } from './components/enso-spinner';
+import { Headband } from './components/headband/equisoft-default';
+import { Progress } from './components/progress';
 
 // Results
 import Legend from './components/results/legend';

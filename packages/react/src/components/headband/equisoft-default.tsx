@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import MediaView from '../media-view';
+import { MediaView } from '../media-view';
 import breakpoints from '../tokens/breakpoints';
 
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
@@ -75,7 +75,7 @@ const Project = styled.em`
 `;
 
 function Headband(props) {
-    const { children, appName } = props;
+    const { children, appName }: {children: any,  appName: string} = props;
 
     return (
         <Header {...props} role="banner">
@@ -102,4 +102,4 @@ function Headband(props) {
     );
 }
 
-export default Headband;
+export { Headband };
