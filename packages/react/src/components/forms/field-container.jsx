@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Label from './label';
-import InvalidField from '../feedbacks/invalid-field';
+import { InvalidField } from '../feedbacks/invalid-field';
 
 const StyledDiv = styled.div`
   margin: 0 0 1.5rem;

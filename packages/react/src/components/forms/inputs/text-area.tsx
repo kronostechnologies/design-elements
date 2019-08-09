@@ -5,11 +5,28 @@ import style from '../styles/inputs';
 
 import FieldContainer from '../field-container';
 
-const Input = styled.input`
+const StyledTextArea = styled.textarea`
   ${style}
+  min-height: 6.5rem;
+  min-width: 100%;
+  outline: none;
+  overflow: auto;
+  resize: vertical;
 `;
 
-const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, pattern, placeholder, required, type, validMsg }) => {
+export interface TextAreaProps {
+    defaultValue?: string;
+    disabled?: boolean;
+    id: string;
+    label: string;
+    onBlur?: ((...args: any[]) => void);
+    onChange?: ((...args: any[]) => void);
+    onFocus?: ((...args: any[]) => void);
+    required?: boolean;
+    validMsg?: ((...args: any[]) => boolean);
+}
+
+const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }: TextAreaProps) => {
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
 
@@ -44,22 +61,19 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
             fieldId={id}
             label={label}
             valid={validity}
-            validMsg={validMsg || 'This text input is invalid'}
+            validMsg={validMsg || 'This text area input is invalid'}
         >
-            <Input
+            <StyledTextArea
                 disabled={disabled}
                 id={id}
                 onBlur={event => handleBlur(event)}
                 onChange={event => handleChange(event)}
-                onFocus={event => handleFocus(event)}
-                pattern={pattern}
-                placeholder={placeholder}
+                onFocus={event => handleFocus()}
                 required={required}
-                type={type || 'text'}
                 value={value}
             />
         </FieldContainer>
     );
 };
 
-export default TextInput;
+export { TextArea };

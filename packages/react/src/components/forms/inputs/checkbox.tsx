@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -7,8 +7,15 @@ const Input = styled.input`
   width: 16px;
 `;
 
-const Checkbox = ({ defaultChecked, onChange }) => {
-    const ref = React.createRef();
+interface CheckboxProps {
+    defaultChecked?: boolean;
+    onChange: ((...args: any[]) => void);
+}
+
+type Ref = ((instance: HTMLInputElement) => void) | RefObject<HTMLInputElement>;
+
+const Checkbox = ({ defaultChecked, onChange }: CheckboxProps) => {
+    const ref: Ref = React.createRef();
 
     const handleChange = () => {
         if (typeof onChange === 'function') {
@@ -21,4 +28,4 @@ const Checkbox = ({ defaultChecked, onChange }) => {
     );
 };
 
-export default Checkbox;
+export { Checkbox };

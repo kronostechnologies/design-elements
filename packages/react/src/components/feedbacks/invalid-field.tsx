@@ -10,7 +10,12 @@ const Field = styled.div`
   margin: 0.25rem 0 0;
 `;
 
-const InvalidField = ({ controlId, feedbackMsg }) => (
+interface InvalidFieldProps {
+    controlId: number;
+    feedbackMsg: string;
+}
+
+const InvalidField = ({ controlId, feedbackMsg }: InvalidFieldProps) => (
     <Field
         role="alert"
         aria-live="polite"
@@ -20,4 +25,4 @@ const InvalidField = ({ controlId, feedbackMsg }) => (
     </Field>
 );
 
-export default InvalidField;
+export { InvalidField };

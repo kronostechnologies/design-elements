@@ -86,7 +86,16 @@ const SearchSubmit = styled(SearchButton)`
   position: relative;
 `;
 
-const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => {
+export interface SearchInputProps {
+    disabled?: boolean;
+    hasButton?: boolean;
+    id: string;
+    label: string;
+    onChange?: ((...args: any[]) => void);
+    onSearch?: ((...args: any[]) => void);
+}
+
+const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: '' });
 
     const handleChange = event => {
@@ -154,4 +163,4 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => 
     );
 };
 
-export default SearchInput;
+export { SearchInput };

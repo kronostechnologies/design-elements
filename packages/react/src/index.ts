@@ -7,12 +7,12 @@ import CheckmarkIcon from './icons/checkmark.svg';
 import NoContactIcon from './icons/no-contact.svg';
 
 // Form Elements
-import Checkbox from './components/forms/inputs/checkbox';
-import OptionButton from './components/forms/inputs/option-button';
-import SearchContextual from './components/forms/inputs/search-contextual';
-import SearchGlobal from './components/forms/inputs/search-global';
-import TextArea from './components/forms/inputs/text-area';
-import TextInput from './components/forms/inputs/text-input';
+import { Checkbox } from './components/forms/inputs/checkbox';
+import { OptionButton } from './components/forms/inputs/option-button';
+import { SearchContextual } from './components/forms/inputs/search-contextual';
+import { SearchGlobal } from './components/forms/inputs/search-global';
+import { TextArea } from './components/forms/inputs/text-area';
+import { TextInput } from './components/forms/inputs/text-input';
 import Select from './components/forms/selects/select';
 
 // Miscellaneous
