@@ -1,8 +1,8 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from './label';
+import { InvalidField } from '../feedbacks/invalid-field';
 
 const StyledDiv = styled.div`
   margin: 0 0 1.5rem;
@@ -10,18 +10,18 @@ const StyledDiv = styled.div`
   input,
   select,
   textarea {
-    border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
+    border-color: ${props => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
   }
 
   &:focus {
-    border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
+    border-color: ${props => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
   }
 `;
 
-interface FieldContainerProps {
-    children: ReactNode;
+interface FieldContainerProps{
+    children: any;
     fieldId: string;
-    label?: string;
+    label: string;
     valid: boolean;
     validationErrorMessage: string;
 }

@@ -4,7 +4,7 @@ import { TextAreaProps } from './text-area';
 
 import style from '../styles/inputs';
 
-import FieldContainer from '../field-container';
+import { FieldContainer } from '../field-container';
 
 const Input = styled.input`
   ${style}
@@ -24,7 +24,7 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
 
-    const handleBlur = event => {
+    const handleBlur = (event: any) => {
         const newValue = event.target.value;
 
         setValue({ value: newValue });
