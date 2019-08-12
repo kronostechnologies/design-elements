@@ -13,11 +13,17 @@ const Label = styled.label`
 `;
 
 export default class ChooseRadio extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
     handleChange(thatEvt) {
         const { onChange } = this.props;
 
         if (typeof onChange === 'function') {
-            onChange(thatEvt);
+            onChange(thatEvt.target.value);
         }
     }
 
