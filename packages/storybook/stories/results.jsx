@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Legend, ProgressBar } from '@equisoft/design-elements-react';
 
@@ -19,31 +19,35 @@ const legend = [
     }
 ];
 
+const progressBars = [
+  {
+    main: true,
+    label: "Vous",
+    percent: "100",
+    color: "rgb(0, 129, 165)",
+    numbers: "50k - 100k$",
+  },
+  {
+    label: "Pairs Equisoft",
+    percent: "60",
+    color: "rgb(38, 50, 56)",
+    numbers: "150k - 250k$",
+  },
+  {
+    label: "Pairs Général",
+    percent: "60",
+    color: "rgb(99, 114, 130)",
+    numbers: "150k - 250k$",
+  }
+]
+
 storiesOf('Results', module)
     .add('Legend', () => (
         <Legend legend={legend}
         />
     ))
     .add('Progress Bar', () => (
-      <React.Fragment>
         <ProgressBar 
-          main = {true}
-          label = "Vous"
-          percent = "80"
-          color = "#2CABCD"
-          numbers= "50k - 100k$"
+          content={progressBars}
         />
-        <ProgressBar 
-          label = "Pairs Equisoft"
-          percent = "60"
-          color = "#263238"
-          numbers= "150k - 250k$"
-        />
-        <ProgressBar 
-          label = "Pairs General"
-          percent = "85"
-          color = "#637282"
-          numbers= "425k - 500k$"
-        />
-      </React.Fragment>
-  ));
+));
