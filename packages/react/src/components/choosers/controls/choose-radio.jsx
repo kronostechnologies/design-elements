@@ -13,12 +13,27 @@ const Label = styled.label`
 `;
 
 export default class ChooseRadio extends Component {
+    handleChange(thatEvt) {
+        const { onChange } = this.props;
+
+        if (typeof onChange === 'function') {
+            onChange(thatEvt);
+        }
+    }
+
     render() {
-        const { children, groupName, id, value, skippable, ...props } = this.props;
+        const { children, groupName, id, onChange, skippable, value, ...props } = this.props;
 
         return (
             <>
-                <Radio {...props} id={id} name={groupName} type="radio" value={value} />
+                <Radio
+                    {...props}
+                    id={id}
+                    name={groupName}
+                    onChange={thatEvt => this.handleChange(thatEvt)}
+                    type="radio"
+                    value={value}
+                />
                 <Label htmlFor={id}>{children}</Label>
             </>
         );
