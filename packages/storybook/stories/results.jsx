@@ -30,7 +30,7 @@ storiesOf('Results', module)
           main = {true}
           label = "Vous"
           percent = "80"
-          color = "#2CABCD"
+          color = "rgb(44,171,205)"
           numbers= "50k - 100k$"
         />
         <ProgressBar 
