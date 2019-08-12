@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Circle } from './circle/circle';
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-const progressCircle = ({ percent, color, label, main, result }) => {
+const ProgressCircle = ({ percent, color, label, main, result }) => {
     const radius = 73;
     const stroke = 8;
 
@@ -57,4 +57,4 @@ const progressCircle = ({ percent, color, label, main, result }) => {
     );
 };
 
-export default progressCircle;
+export default ProgressCircle;
