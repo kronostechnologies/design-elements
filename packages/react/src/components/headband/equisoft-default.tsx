@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { Children } from '../buttons/abstract-button';
 import { MediaView } from '../media-view';
 import breakpoints from '../tokens/breakpoints';
 
@@ -74,8 +75,8 @@ const Project = styled.em`
   }
 `;
 
-function Headband(props) {
-    const { children, appName }: {children: any,  appName: string} = props;
+function Headband(props: any): ReactNode {
+    const { children, appName }: {children: Children,  appName: string} = props;
 
     return (
         <Header {...props} role="banner">
