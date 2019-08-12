@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-const progressCircle = props => {
+const ProgressCircle = props => {
   const { percent } = props;
   const radius = 73;
   const stroke = 8;
