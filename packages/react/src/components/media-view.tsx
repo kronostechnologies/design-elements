@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 
-class MediaView extends Component {
-    constructor(props) {
+interface MediaViewProps {
+    children?: any;
+    maxWidth?: number;
+    minWidth?: number;
+}
+
+class MediaView extends Component<{}, {screenWidth: number, children?: ReactNode}> {
+    constructor(props: any[]) {
         super(props);
 
         this.state = {
@@ -24,7 +30,7 @@ class MediaView extends Component {
     }
 
     render() {
-        const { children, maxWidth, minWidth } =  this.props;
+        const { children, maxWidth, minWidth }: MediaViewProps =  this.props;
         const { screenWidth } = this.state;
 
         const isMinDisplay = (screenWidth >= minWidth);
@@ -38,4 +44,4 @@ class MediaView extends Component {
     }
 }
 
-export { MediaView }
+export { MediaView };
