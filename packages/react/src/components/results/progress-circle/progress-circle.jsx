@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 import { Circle } from './circle/circle';
 
@@ -10,39 +10,44 @@ const progressCircle = ({ percent, color, label, main, result }) => {
 
     // Styled Components
     const Container = styled.div`
-        display: inline-block;
-    `;
+    display: inline-block;
+  `;
 
     const Wrapper = styled.div`
-        position: relative;
-        width: ${(radius * 2) / 16}rem;
-        height: ${(radius * 2) / 16}rem;
-    `;
+    height: ${(radius * 2) / 16}rem;
+    position: relative;
+    width: ${(radius * 2) / 16}rem;
+  `;
 
     const Number = styled.div`
-        width: ${(radius * 2) / 16}rem;
-        height: ${(radius * 2) / 16}rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        p {
-          font-size: 1.625rem;
-        }
-    `;
+    align-items: center;
+    display: flex;
+    height: ${(radius * 2) / 16}rem;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: ${(radius * 2) / 16}rem;
+    p {
+      font-size: 1.625rem;
+    }
+  `;
 
     const Label = styled.p`
-        width: ${(radius * 2) / 16}rem;
-        text-align: center;
-        color: ${props => props.main ? 'rgb(0,0,0)' : "rgb(87,102,110)"};
-    `;
+    color: ${props => (props.main ? 'rgb(0,0,0)' : 'rgb(87,102,110)')};
+    text-align: center;
+    width: ${(radius * 2) / 16}rem;
+  `;
 
     return (
         <Container>
             <Wrapper>
-                <Circle radius={radius} stroke={stroke} percent={percent} color={color} />
+                <Circle
+                    radius={radius}
+                    stroke={stroke}
+                    percent={percent}
+                    color={color}
+                />
                 <Number>
                     <p>{result}</p>
                 </Number>
