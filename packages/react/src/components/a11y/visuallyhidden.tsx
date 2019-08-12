@@ -3,12 +3,14 @@ import styled from 'styled-components';
 
 import styles from './styles/visuallyhidden';
 
-const VisuallyHidden = styled.span`
+const Hidden = styled.span`
   ${styles}
 `;
 
-export default ({ children }) => (
-    <VisuallyHidden>
+const VisuallyHidden =  ({ children }: {children: any}) => (
+    <Hidden>
         {children}
-    </VisuallyHidden>
+    </Hidden>
 );
+
+export { VisuallyHidden };
