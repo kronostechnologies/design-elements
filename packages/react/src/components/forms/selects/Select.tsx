@@ -1,8 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
-import styles from '../styles/inputs.js';
+import { Children } from '../../buttons/abstract-button';
 import { FieldContainer } from '../field-container';
+import styles from '../styles/inputs.js';
 
 const StyledSelect = styled.select`
   ${styles}
@@ -15,7 +16,7 @@ const StyledSelect = styled.select`
 `;
 
 interface SelectProps {
-    children: any;
+    children: Children;
     id: string;
     label: string;
     options: any[];

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
+import styled from 'styled-components';
 
 import { VisuallyHidden } from '../../a11y/visuallyhidden';
 import { SearchButton } from '../../buttons/search-button';
 
-import style from '../styles/inputs';
 import { Label } from '../label';
+import style from '../styles/inputs';
 
 const SearchWrapper = styled.div`
   display: flex;

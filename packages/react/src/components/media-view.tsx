@@ -1,12 +1,14 @@
 import React, { Component, ReactNode } from 'react';
 
+import { Children } from './buttons/abstract-button';
+
 interface MediaViewProps {
-    children?: any;
+    children?: ReactNode[] | string;
     maxWidth?: number;
     minWidth?: number;
 }
 
-class MediaView extends Component<{}, {screenWidth: number, children?: ReactNode}> {
+class MediaView extends Component<{}, {screenWidth: number, children?: Children}> {
     constructor(props: any[]) {
         super(props);
 

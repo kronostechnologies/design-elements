@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Label } from './label';
+import { Children } from '../buttons/abstract-button';
 import { InvalidField } from '../feedbacks/invalid-field';
+import { Label } from './label';
 
 const StyledDiv = styled.div`
   margin: 0 0 1.5rem;
@@ -18,8 +19,8 @@ const StyledDiv = styled.div`
   }
 `;
 
-interface FieldContainerProps{
-    children: any;
+interface FieldContainerProps {
+    children: Children;
     fieldId: string;
     label: string;
     valid: boolean;
