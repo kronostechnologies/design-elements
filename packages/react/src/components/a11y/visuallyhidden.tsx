@@ -1,14 +1,14 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import { hiddenStyle } from './styles/visuallyhidden';
+import styles from './styles/visuallyhidden';
 
 const Hidden = styled.span`
-  ${hiddenStyle}
+  ${styles}
 `;
 
-const VisuallyHidden =  ({ children }: {children: ReactNode}) => (
-    <Hidden aria-hidden="false">
+const VisuallyHidden =  ({ children }: {children: any}) => (
+    <Hidden>
         {children}
     </Hidden>
 );
