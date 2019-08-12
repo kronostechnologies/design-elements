@@ -22,7 +22,7 @@ import Progress from './components/progress';
 
 // Results
 import Legend from './components/results/legend';
-import ProgressCircle from './components/results/progress-circle';
+import ProgressCircle from './components/results/progress-circle/progress-circle';
 
 export {
     AddButton,
@@ -40,5 +40,5 @@ export {
     Headband,
     Progress,
     Legend,
-    ProgressCircle
+    ProgressCircle,
 };

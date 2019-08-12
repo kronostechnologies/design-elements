@@ -26,25 +26,11 @@ storiesOf('Results', module)
         />
     ))
     .add('Progress Circle', () => (
-      <React.Fragment>
         <ProgressCircle 
           main={true}
           percent="75"
           label="Vous"
-          number="50k $"
-          color="#65e2ff"
+          result="50k $"
+          color="rgb(101,226,255)"
         />
-        <ProgressCircle 
-          percent="100"
-          label="Pairs Equisoft"
-          number="63k $"
-          color="#263238"
-        />
-        <ProgressCircle 
-          percent="60"
-          label="Pairs General"
-          number="45k $"
-          color="#637282"
-        />
-      </React.Fragment>
     ));
