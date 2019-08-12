@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
 import XIcon from 'feather-icons/dist/icons/x.svg';
+import styled from 'styled-components';
 
 import { VisuallyHidden } from '../../a11y/visuallyhidden';
 import { SearchButton } from '../../buttons/search-button';
