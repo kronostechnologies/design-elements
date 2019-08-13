@@ -12,7 +12,7 @@ const Label = styled.label`
   ${chooseStyles}
 `;
 
-export default class ChooseRadio extends Component {
+class ChooseRadio extends Component {
     constructor(props) {
         super(props);
 
@@ -45,3 +45,6 @@ export default class ChooseRadio extends Component {
         );
     }
 }
+
+
+export default { ChooseRadio };

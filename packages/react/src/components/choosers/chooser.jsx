@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { ChooseRadio } from './controls/choose-radio';
 
 const Grid = styled.div`
   align-items: stretch;
@@ -11,33 +12,31 @@ const Grid = styled.div`
 `;
 
 const Skip = styled.div`
-  margin: 1rem 0 0;
+    margin: 1rem 0 0;
 `;
 
-export default class Chooser extends Component {
-    render() {
-        const { children, inColumns } = this.props;
-        const chooseRadiosArray = React.Children.toArray(children);
+const Chooser = ({ inColumns, groupName, options, skippable }) => {
+    const chooserOptions = options.map((option, i) => {
+        const key = `${groupName}_${i}`;
 
-        /* If the button got an `skippable` prop */
-        /* it's become a skip button */
-        const skip = chooseRadiosArray.filter(child =>
-            child.props.skippable && child);
+        return <ChooseRadio groupName={groupName} key={key} value={option.value}>{option.label}</ChooseRadio>;
+    });
 
-        /* Then return the skip button */
-        const skipButton = (skip.length !== 0 && <Skip>{skip}</Skip>);
+    const skipButton = (skippable && (
+        <Skip>
+            <ChooseRadio groupName={groupName} value="SKIPPED">Préfère ne pas répondre</ChooseRadio>
+        </Skip>
+    ));
 
-        /*  And return the array with the non-skip ones */
-        const chooseRadios = chooseRadiosArray.filter(child => child !== skip[0] && child);
+    return (
+        <>
+            <Grid inColumns={inColumns}>
+                {chooserOptions}
+            </Grid>
 
-        return (
-            <>
-                <Grid inColumns={inColumns}>
-                    {chooseRadios}
-                </Grid>
+            {skipButton}
+        </>
+    );
+};
 
-                {skipButton}
-            </>
-        );
-    }
-}
+export default { Chooser };
