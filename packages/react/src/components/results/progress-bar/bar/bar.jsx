@@ -23,11 +23,9 @@ const Progress = styled.div `
 const Bar = styled.div `
     width: ${props => props.percent}%;
     height: 0.55rem;
-    background: linear-gradient(to right, ${props => props.darkenColor}, ${props => props.color || 'rgb(99,224,253)'} 70%);
+    background: linear-gradient(to right, ${props => props.color}, ${props => props.lightenColor || props.color} 50%);
     border-radius: 4rem;
 `;
-
-// https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)#stackoverflow-archive-begin
 
 const bar = ({ main, color, percent, numbers }) => {
     const rgb2hex = rgb => {
@@ -78,7 +76,7 @@ const bar = ({ main, color, percent, numbers }) => {
     return (
         <Container main={main}>
             <Progress>
-                <Bar color={color} percent={percent} darkenColor={LightenDarkenColor(color, 20)} />
+                {main ? <Bar color={color} percent={percent} lightenColor={LightenDarkenColor(color, 80)} /> : <Bar color={color} percent={percent} />}
             </Progress>
             <p>{numbers}</p>
         </Container>
