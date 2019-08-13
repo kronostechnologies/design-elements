@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Chooser from '@equisoft/design-elements-react';
+import { Chooser } from '@equisoft/design-elements-react';
 
 const maritalStatus = [
     {value: "single", label: "Célibataire, vivant seul ou en colocation"},

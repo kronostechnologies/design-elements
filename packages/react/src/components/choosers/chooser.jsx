@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ChooseRadio } from './controls/choose-radio';
+import ChooseRadio from './controls/choose-radio';
 
 const Grid = styled.div`
   align-items: stretch;
@@ -16,15 +16,25 @@ const Skip = styled.div`
 `;
 
 const Chooser = ({ inColumns, groupName, options, skippable }) => {
-    const chooserOptions = options.map((option, i) => {
-        const key = `${groupName}_${i}`;
-
-        return <ChooseRadio groupName={groupName} key={key} value={option.value}>{option.label}</ChooseRadio>;
-    });
+    const chooserOptions = options.map((option, i) => (
+        <ChooseRadio
+            groupName={groupName}
+            id={`${groupName}_${i}`}
+            value={option.value}
+        >
+            {option.label}
+        </ChooseRadio>
+    ));
 
     const skipButton = (skippable && (
         <Skip>
-            <ChooseRadio groupName={groupName} value="SKIPPED">Préfère ne pas répondre</ChooseRadio>
+            <ChooseRadio
+                groupName={groupName}
+                id={`${groupName}_skip`}
+                value="skip"
+            >
+                Préfère ne pas répondre
+            </ChooseRadio>
         </Skip>
     ));
 
@@ -39,4 +49,4 @@ const Chooser = ({ inColumns, groupName, options, skippable }) => {
     );
 };
 
-export default { Chooser };
+export default Chooser;

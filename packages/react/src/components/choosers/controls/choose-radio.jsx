@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 import visuallyhidden from '../../a11y/styles/visuallyhidden';
@@ -12,39 +12,29 @@ const Label = styled.label`
   ${chooseStyles}
 `;
 
-class ChooseRadio extends Component {
-    constructor(props) {
-        super(props);
+const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value }) => {
+    const ref = React.createRef();
 
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(thatEvt) {
-        const { onChange } = this.props;
-
+    const handleChange = () => {
         if (typeof onChange === 'function') {
-            onChange(thatEvt.target.value);
+            onChange(ref.current.checked);
         }
-    }
+    };
 
-    render() {
-        const { children, groupName, id, onChange, skippable, value, ...props } = this.props;
+    return (
+        <>
+            <Radio
+                defaultChecked={defaultChecked}
+                id={id}
+                name={groupName}
+                onChange={handleChange}
+                ref={ref}
+                type="radio"
+                value={value}
+            />
+            <Label htmlFor={id}>{children}</Label>
+        </>
+    );
+};
 
-        return (
-            <>
-                <Radio
-                    {...props}
-                    id={id}
-                    name={groupName}
-                    onChange={thatEvt => this.handleChange(thatEvt)}
-                    type="radio"
-                    value={value}
-                />
-                <Label htmlFor={id}>{children}</Label>
-            </>
-        );
-    }
-}
-
-
-export default { ChooseRadio };
+export default ChooseRadio;
