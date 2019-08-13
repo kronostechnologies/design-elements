@@ -11,11 +11,11 @@ const StyledDiv = styled.div`
   input,
   select,
   textarea {
-    border-color: ${props => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
+    border-color: ${(props: FieldContainerProps) => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
   }
 
   &:focus {
-    border-color: ${props => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
+    border-color: ${(props: FieldContainerProps) => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
   }
 `;
 
