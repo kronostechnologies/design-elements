@@ -2,29 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div `
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    p {
-        margin: 0;
-        width: 8.5rem;
-        text-align: right;
-        color: ${props => (props.main ? 'rgb(0,0,0)' : 'rgb(87,102,110)')};
-    }
+  align-items: center;
+  display: flex;
+  margin-bottom: 1rem;
+  p {
+    color: ${props => (props.main ? 'rgb(0,0,0)' : 'rgb(87,102,110)')};
+    margin: 0;
+    text-align: right;
+    width: 8.5rem;
+  }
 `;
 
 const Progress = styled.div `
-    width: 100%;
-    background-color: rgb(220,220,220);
-    border-radius: 4rem;
-    height: 0.55rem;
+  background-color: rgb(220,220,220);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 100%;
 `;
 
 const Bar = styled.div `
-    width: ${props => props.percent}%;
-    height: 0.55rem;
-    background: linear-gradient(to right, ${props => props.color}, ${props => props.lightenColor || props.color} 50%);
-    border-radius: 4rem;
+  background: linear-gradient(to right, ${props => props.color}, ${props => props.lightenColor || props.color} 50%);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: ${props => props.percent}%;
 `;
 
 const bar = ({ main, color, percent, numbers }) => {
@@ -45,11 +45,8 @@ const bar = ({ main, color, percent, numbers }) => {
 
         const isOk = /(^[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(col);
 
-        console.log('isOk', isOk);
-
         if (!isOk) {
             col = rgb2hex(col);
-            console.log('gros test:', col);
             usePound = true;
         }
 

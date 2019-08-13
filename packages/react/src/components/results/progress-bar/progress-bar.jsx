@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import Bar from './bar/bar';
 
 const Label = styled.label`
-  font-size: 0.875rem;
   color: ${props => (props.main ? 'rgb(0, 0, 0)' : 'rgb(87, 102, 110)')};
+  font-size: 0.875rem;
 `;
 
 const ProgressBar = ({ content }) => (
