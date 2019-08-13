@@ -1,9 +1,10 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import svgr from '@svgr/rollup';
+import typescript from 'rollup-plugin-typescript';
 
 export default {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
         file: 'dist/design-elements-react.cjs.js',
         format: 'cjs',
@@ -14,11 +15,12 @@ export default {
     ],
     plugins: [
         resolve({
-            extensions: ['.js', '.jsx'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
         babel({
             exclude: 'node_modules/**',
         }),
         svgr({ icon: true }),
+        typescript(),
     ],
 };

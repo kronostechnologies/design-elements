@@ -7,7 +7,7 @@ storiesOf('Search Bar', module)
         <SearchContextual
             id="searchbar_contextual"
             label="Search"
-            onInput={()=>{console.log("SEARCHING CONTEXTUALLY")}}
+            onChange={(value)=>{console.log(`Searching for: ${value}`)}}
             placeholder="Ex.: Miky Mike"
         />
     ))
@@ -15,7 +15,7 @@ storiesOf('Search Bar', module)
         <SearchGlobal
             id="searchbar_global"
             label="Search"
-            onSubmit={()=>{console.log("SEARCHING ON SUBMIT")}}
+            onSearch={(value)=>{console.log(`Searching for: ${value}`)}}
             placeholder="Ex.: Marquee Mark"
         />
     ))

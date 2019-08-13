@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import style from '../styles/inputs';
@@ -9,43 +9,57 @@ const Input = styled.input`
   ${style}
 `;
 
-class TextInput extends Component {
-    constructor(props) {
-        super(props);
+const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, pattern, placeholder, required, type, validMsg }) => {
+    const [{ value }, setValue] = useState({ value: defaultValue || '' });
+    const [{ validity }, setValidity] = useState({ validity: true });
 
-        this.state = {
-            validity: true,
-        };
+    const handleBlur = event => {
+        const newValue = event.target.value;
 
-        this.handleCheckValidity = this.handleCheckValidity.bind(this);
-    }
+        setValue({ value: newValue });
+        setValidity({ validity: event.target.checkValidity() });
 
-    handleCheckValidity(thatEvt) {
-        return this.setState({ validity: thatEvt.target.checkValidity() });
-    }
+        if (typeof onBlur === 'function') {
+            onBlur(newValue);
+        }
+    };
 
-    render() {
-        const { id, label, required, type, valid, validMsg, ...props } = this.props;
-        const { validity } = this.state;
-        const isValid = (valid === undefined ? validity : valid);
+    const handleChange = event => {
+        const newValue = event.target.value;
+        setValue({ value: newValue });
 
-        return (
-            <FieldContainer
-                fieldId={id}
-                label={label}
-                valid={isValid}
-                validMsg={validMsg || 'This text input is invalid'}
-            >
-                <Input
-                    {...props}
-                    id={id}
-                    onBlur={thatEvt => this.handleCheckValidity(thatEvt)}
-                    required={required}
-                    type={type || 'text'}
-                />
-            </FieldContainer>
-        );
-    }
-}
+        if (typeof onChange === 'function') {
+            onChange(newValue);
+        }
+    };
+
+    const handleFocus = () => {
+        if (typeof onFocus === 'function') {
+            onFocus(value);
+        }
+    };
+
+    return (
+        <FieldContainer
+            fieldId={id}
+            label={label}
+            valid={validity}
+            validMsg={validMsg || 'This text input is invalid'}
+        >
+            <Input
+                disabled={disabled}
+                id={id}
+                onBlur={event => handleBlur(event)}
+                onChange={event => handleChange(event)}
+                onFocus={event => handleFocus(event)}
+                pattern={pattern}
+                placeholder={placeholder}
+                required={required}
+                type={type || 'text'}
+                value={value}
+            />
+        </FieldContainer>
+    );
+};
 
 export default TextInput;
