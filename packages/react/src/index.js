@@ -40,5 +40,5 @@ export {
     Headband,
     Progress,
     Legend,
-    ProgressBar
+    ProgressBar,
 };
