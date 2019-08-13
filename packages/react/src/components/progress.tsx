@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import range from 'lodash-es/range';
 import styled from 'styled-components';
@@ -65,7 +65,7 @@ interface GetStepProps {
     value: number;
 }
 
-const getStep = ({ step, max, value }: GetStepProps) => {
+const getStep = ({ step, max, value }: GetStepProps): ReactElement => {
     let StepComponent;
 
     if (step < value) {

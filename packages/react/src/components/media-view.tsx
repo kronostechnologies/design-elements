@@ -3,13 +3,17 @@ import React, { Component, ReactNode } from 'react';
 import { Child } from './buttons/abstract-button';
 
 interface MediaViewProps {
-    children?: ReactNode[] | string;
+    children?: Child;
     maxWidth?: number;
     minWidth?: number;
 }
 
-class MediaView extends Component<{}, {screenWidth: number, children?: Child}> {
-    constructor(props: any[]) {
+interface State {
+    screenWidth: number;
+}
+
+class MediaView extends Component<{}, State> {
+    constructor(props: MediaViewProps) {
         super(props);
 
         this.state = {
