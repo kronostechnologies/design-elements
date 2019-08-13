@@ -3,17 +3,17 @@ import { storiesOf } from '@storybook/react';
 import { Legend } from '@equisoft/design-elements-react';
 
 const legendItems = [{
-        name: "Vous",
-        description: "Données provenants de vos réponses"
+        name: "You",
+        description: "Data from your answers"
     },
     {
-        name: "Pairs Equisoft",
-        description: "Données privée d'Equisoft",
+        name: "Equisoft Peers",
+        description: "Private Equisoft data",
         color: "#000014"
     },
     {
-        name: "Pairs Général",
-        description: "Données publiques accessible à tous",
+        name: "General Peers",
+        description: "Publicly accessible data",
         color: "#304E63"
     }
 ];
