@@ -68,7 +68,7 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
                 id={id}
                 onBlur={event => handleBlur(event)}
                 onChange={event => handleChange(event)}
-                onFocus={event => handleFocus()}
+                onFocus={handleFocus}
                 required={required}
                 value={value}
             />
