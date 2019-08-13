@@ -1,14 +1,12 @@
-import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
+import React, { useState } from 'react';
+
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
-
-import { ChooseInput } from '../../choosers/controls/choose-input';
+import { Child } from '../../buttons/abstract-button';
 import { FieldContainer } from '../field-container';
-
-import { inputsStyle } from '../styles/inputs';
+import styles from '../styles/inputs.js';
 
 const StyledSelect = styled.select`
-  ${inputsStyle}
+  ${styles}
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-position: right 0.75rem center;
@@ -17,93 +15,46 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-interface SelectOption {
-    label: string;
-    value?: string;
-}
-
 interface SelectProps {
-    children?: ReactNode;
-    label?: string;
-    options: SelectOption[];
+    children: Child;
+    id: string;
+    label: string;
+    options: any[];
     required?: boolean;
-    skipOption?: SelectOption;
-    validationErrorMessage?: string;
-    name?: string;
-    value?: string;
-
-    onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
+    valid: boolean;
+    validMsg: string;
 }
 
-export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
-    const [{ valid }, setValid] = useState({ valid: true });
-    const id = uuid();
+const Select = ({ children, id, label, options, required, valid, validMsg, ...props }: SelectProps) => {
+    const [validity, setValidity] = useState(true);
 
-    const selectRef = useRef<HTMLSelectElement | null>(null);
-    const [skipSelected, setSkipSelected] = useState(false);
-
-    const selectOptions = options.map((option, i) => {
+    const selectOptions: object = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
 
-    function handleSelectChange(event: ChangeEvent<HTMLSelectElement>): void {
-        setSkipSelected(false);
-        setValid({ valid: event.target.checkValidity() });
-
-        if (onChange) {
-            onChange(event);
-        }
-    }
-
-    function handleSkipChange(event: ChangeEvent<HTMLInputElement>): void {
-        const selectElement = selectRef.current;
-        if (selectElement) {
-            const checked = !skipSelected;
-            if (checked) {
-                selectElement.value = '';
-                setValid({ valid: true });
-            }
-
-            setSkipSelected(checked);
-            if (onChange) {
-                onChange(event);
-            }
-        }
-    }
-
-    const { label, name, required, skipOption, validationErrorMessage, value } = props;
+    const handleCheckValidity = (event: any) => {
+        setValidity(event.target.checkValidity());
+    };
 
     return (
-        <>
-            <FieldContainer
-                fieldId={id}
-                label={label}
-                valid={valid}
-                validationErrorMessage={validationErrorMessage || 'You must select an option'}
+        <FieldContainer
+            fieldId={id}
+            label={label}
+            valid={validity}
+            validMsg={validMsg || 'You must select an option'}
+        >
+            <StyledSelect
+                {...props}
+                id={id}
+                onBlur={event => handleCheckValidity(event)}
+                onChange={event => handleCheckValidity(event)}
+                required={required}
             >
-                <StyledSelect
-                    id={id}
-                    onChange={handleSelectChange}
-                    name={name}
-                    required={required}
-                    ref={selectRef}
-                    value={value}
-                >
-                    {selectOptions}
-                </StyledSelect>
-            </FieldContainer>
-            {skipOption && (
-                <ChooseInput
-                    groupName={`${id}_skip`}
-                    onChange={handleSkipChange}
-                    checked={skipSelected}
-                    type="radio"
-                    value={skipOption.value}
-                >
-                    {skipOption.label}
-                </ChooseInput>
-            )}
-        </>
+                {selectOptions}
+            </StyledSelect>
+        </FieldContainer>
     );
-}
+};
+
+export { Select };
