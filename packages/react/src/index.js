@@ -38,5 +38,5 @@ export {
     EnsoSpinner,
     Headband,
     Progress,
-    Legend
+    Legend,
 };

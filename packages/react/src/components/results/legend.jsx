@@ -32,13 +32,13 @@ const Description = styled.span`
     color: rgb(87, 102, 110);
 `;
 
-const legend = ({legends}) => (
+const legend = ({ items }) => (
     <List>
-        {legends.map(lgd => (
-            <Item color={lgd.color}>
+        {items.map(item => (
+            <Item color={item.color}>
                 <div>
-                    <p>{lgd.name}</p>
-                    <Description>{lgd.description}</Description>
+                    <p>{item.name}</p>
+                    <Description>{item.description}</Description>
                 </div>
             </Item>
         ))}
