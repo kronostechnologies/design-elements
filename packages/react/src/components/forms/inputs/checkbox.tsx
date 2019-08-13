@@ -19,6 +19,7 @@ const Checkbox = ({ defaultChecked, onChange }: CheckboxProps) => {
 
     const handleChange = () => {
         if (typeof onChange === 'function') {
+            if (ref.current === null) return;
             onChange(ref.current.checked);
         }
     };

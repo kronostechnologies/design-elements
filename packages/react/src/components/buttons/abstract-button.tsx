@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import abstractStyle from './styles/abstract';
 
-export type Children = ReactNode[] | string | Element;
+export type Child = ReactNode | ReactNode[];
 
 export interface AbstractButtonProps {
-    children?: Children;
+    children?: Child;
     disabled?: boolean;
     onClick(): void;
 }

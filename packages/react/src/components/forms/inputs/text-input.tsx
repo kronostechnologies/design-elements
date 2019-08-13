@@ -59,7 +59,7 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
                 id={id}
                 onBlur={event => handleBlur(event)}
                 onChange={event => handleChange(event)}
-                onFocus={event => handleFocus()}
+                onFocus={handleFocus}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={required}

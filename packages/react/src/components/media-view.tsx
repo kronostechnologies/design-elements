@@ -1,6 +1,6 @@
 import React, { Component, ReactNode } from 'react';
 
-import { Children } from './buttons/abstract-button';
+import { Child } from './buttons/abstract-button';
 
 interface MediaViewProps {
     children?: ReactNode[] | string;
@@ -8,7 +8,7 @@ interface MediaViewProps {
     minWidth?: number;
 }
 
-class MediaView extends Component<{}, {screenWidth: number, children?: Children}> {
+class MediaView extends Component<{}, {screenWidth: number, children?: Child}> {
     constructor(props: any[]) {
         super(props);
 
@@ -34,9 +34,14 @@ class MediaView extends Component<{}, {screenWidth: number, children?: Children}
     render() {
         const { children, maxWidth, minWidth }: MediaViewProps =  this.props;
         const { screenWidth } = this.state;
-
-        const isMinDisplay = (screenWidth >= minWidth);
-        const isMaxDisplay = (screenWidth < maxWidth);
+        let isMinDisplay = false;
+        let isMaxDisplay = false;
+        if (minWidth !== undefined) {
+            isMinDisplay = (screenWidth >= minWidth);
+        }
+        if (maxWidth !== undefined) {
+            isMaxDisplay = (screenWidth < maxWidth);
+        }
 
         if (isMinDisplay || isMaxDisplay) {
             return <>{children}</>;
