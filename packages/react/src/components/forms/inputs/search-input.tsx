@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
@@ -45,7 +45,7 @@ const IcoReset = styled(XIcon)`
 
 const Input = styled.input`
   ${style} /* Must be the first rule */
-  border-radius: ${props => (props.hasButton && '0.25rem 0 0 0.25rem')};
+  border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')};
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 
@@ -99,7 +99,7 @@ export interface SearchInputProps {
 const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: '' });
 
-    const handleChange = (event: any) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
@@ -108,7 +108,7 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
         }
     };
 
-    const handleKeyDown = (event: any) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
         if (typeof onSearch === 'function' && event.keyCode === 13) {
             onSearch(value);
         }
