@@ -21,6 +21,9 @@ import EnsoSpinner from './components/enso-spinner';
 import Headband from './components/headband/equisoft-default';
 import Progress from './components/progress';
 
+// Results
+import Legend from './components/results/legend';
+
 export {
     AddButton,
     Button,
@@ -37,4 +40,5 @@ export {
     EnsoSpinner,
     Headband,
     Progress,
+    Legend,
 };
