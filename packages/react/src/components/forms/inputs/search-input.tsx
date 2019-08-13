@@ -91,7 +91,7 @@ export interface SearchInputProps {
     disabled?: boolean;
     hasButton?: boolean;
     id: string;
-    label: string;
+    label?: string;
     onChange?: ((...args: any[]) => void);
     onSearch?: ((...args: any[]) => void);
 }
@@ -135,8 +135,8 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
                 <Input
                     autoComplete="on"
                     disabled={disabled}
-                    onChange={event => handleChange(event)}
-                    onKeyDown={event => handleKeyDown(event)}
+                    onChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event)}
+                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
                     hasButton={hasButton}
                     id={id}
                     type="search"
@@ -153,7 +153,7 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
         (
             <SearchSubmit
                 disabled={disabled}
-                type="submit"
+                className="primary"
                 onClick={handleSearchButtonClick}
             >
                 {label}
