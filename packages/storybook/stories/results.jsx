@@ -25,9 +25,28 @@ const progressBars = [
   }
 ]
 
+const legendItems = [{
+  name: "You",
+  description: "Data from your answers"
+},
+{
+  name: "Equisoft Peers",
+  description: "Private Equisoft data",
+  color: "#000014"
+},
+{
+  name: "General Peers",
+  description: "Publicly accessible data",
+  color: "#304E63"
+}
+];
+
 storiesOf('Results', module)
     .add('Progress Bar', () => (
         <ProgressBar 
           content={progressBars}
         />
-));
+    ))
+    .add('Legend', () => (
+      <Legend items={legendItems} />
+    ));

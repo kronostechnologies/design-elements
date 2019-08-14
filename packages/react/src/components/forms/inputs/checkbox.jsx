@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -7,42 +7,18 @@ const Input = styled.input`
   width: 16px;
 `;
 
-class Checkbox extends Component {
-    constructor(props) {
-        super(props);
+const Checkbox = ({ defaultChecked, onChange }) => {
+    const ref = React.createRef();
 
-        this.state = {
-            checked: props.checked,
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.toggle = this.toggle.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({ checked: nextProps.checked });
-    }
-
-    handleChange() {
-        const { onChange } = this.props;
-        this.toggle();
-
-        if (onChange) {
-            onChange();
+    const handleChange = () => {
+        if (typeof onChange === 'function') {
+            onChange(ref.current.checked);
         }
-    }
+    };
 
-    toggle() {
-        const { checked } = this.state;
-        this.setState({ checked: !checked });
-    }
-
-    render() {
-        const { checked } = this.state;
-        return (
-            <Input checked={checked} onChange={event => this.handleChange(event)} type="checkbox" />
-        );
-    }
-}
+    return (
+        <Input defaultChecked={defaultChecked} ref={ref} onChange={handleChange} type="checkbox" />
+    );
+};
 
 export default Checkbox;

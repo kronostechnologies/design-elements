@@ -1,0 +1,20 @@
+{
+    "extends": "./node_modules/@equisoft/tslint-config/tsconfig.standards.json",
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "noEmitOnError": true,
+        "sourceMap": true,
+        "baseUrl": "./src/",
+        "paths": {}
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules/**/*"
+    ]
+}
