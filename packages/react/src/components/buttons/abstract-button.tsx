@@ -14,7 +14,7 @@ export interface AbstractButtonProps extends PartialButtonProps {
 }
 
 const AbstractButton = styled.button`
-  ${abstractStyle}
+  ${styles}
 `;
 
 export { AbstractButton };

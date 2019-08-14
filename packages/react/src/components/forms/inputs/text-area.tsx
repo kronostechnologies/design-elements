@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import styled from 'styled-components';
 
-import style from '../styles/inputs';
+import { styles } from '../styles/inputs';
 
 import { FieldContainer } from '../field-container';
 
 const StyledTextArea = styled.textarea`
-  ${style}
+  ${styles}
   min-height: 6.5rem;
   min-width: 100%;
   outline: none;
@@ -19,8 +19,8 @@ export interface TextAreaProps {
     disabled?: boolean;
     id: string;
     label: string;
-    onBlur?: ((...args: any[]) => void);
-    onChange?: ((...args: any[]) => void);
+    onBlur?: ((event: FocusEvent<HTMLTextAreaElement>) => void);
+    onChange?: ((event: ChangeEvent<HTMLInputElement> | string) => void);
     onFocus?: ((...args: any[]) => void);
     required?: boolean;
     validationErrorMessage?: string;
@@ -51,7 +51,7 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
         }
     };
 
-    const handleChange = (event: any) => {
+    const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
@@ -72,8 +72,8 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
             <StyledTextArea
                 disabled={disabled}
                 id={id}
-                onBlur={event => handleBlur(event)}
-                onChange={event => handleChange(event)}
+                onBlur={(event: FocusEvent<HTMLTextAreaElement>) => {handleBlur(event); }}
+                onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {handleChange(event); }}
                 onFocus={handleFocus}
                 required={required}
                 value={value}

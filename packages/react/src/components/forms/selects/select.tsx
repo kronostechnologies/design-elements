@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
 
 import styled from 'styled-components';
 import { Child } from '../../buttons/abstract-button';
 import { FieldContainer } from '../field-container';
-import styles from '../styles/inputs.js';
+import { styles } from '../styles/inputs.js';
 
 const StyledSelect = styled.select`
   ${styles}
@@ -47,8 +47,8 @@ const Select = ({ children, id, label, options, required, valid, validMsg, ...pr
             <StyledSelect
                 {...props}
                 id={id}
-                onBlur={event => handleCheckValidity(event)}
-                onChange={event => handleCheckValidity(event)}
+                onBlur={(event: FocusEvent<HTMLSelectElement>) => {handleCheckValidity(event); }}
+                onChange={(event: ChangeEvent<HTMLSelectElement>) => {handleCheckValidity(event); }}
                 required={required}
             >
                 {selectOptions}
