@@ -10,6 +10,16 @@ storiesOf('TextArea', module)
             placeholder="Enter your text here"
         />
     ))
+    .add('Event callbacks (see console)', () => (
+        <TextArea
+            id="ta_callbacks"
+            label="Text area label"
+            onChange={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
+            onBlur={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
+            onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
+            placeholder="Enter your text here"
+        />
+    ))
     .add('Required', () => (
         <TextArea
             id="ta_required"
@@ -18,7 +28,7 @@ storiesOf('TextArea', module)
             required
         />
     ))
-    .add('Filled', () => (
+    .add('Default Value', () => (
         <TextArea
             defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio."
             id="ta_filled"
@@ -33,15 +43,6 @@ storiesOf('TextArea', module)
             id="ta_disabled"
             label="A label for the disabled text area"
             placeholder="Sorry but this field is disabled"
-            required
-        />
-    ))
-    .add('Error', () => (
-        <TextArea
-            id="ta_error"
-            label="A label for an invalid text area"
-            valid={false}
-            validMsg="This is a custom invalid message"
             required
         />
     ));

@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-storybook",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "scripts": {
     "build": "./scripts/build.sh",
     "start": "./scripts/start.sh"
@@ -13,6 +13,7 @@
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
   ],
   "dependencies": {
+    "@babel/plugin-proposal-dynamic-import": "^7.5.0",
     "@equisoft/design-elements-react": "^0.2.0",
     "@equisoft/design-elements-web": "^0.1.1",
     "@storybook/react": "^5.0.11",
