@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
 import styles from '../styles/inputs.js';
@@ -14,13 +14,19 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-const Select = ({ children, id, label, options, required, valid, validMsg, ...props }) => {
+const Select = ({ id, label, onChange, options, required, valid, validMsg, ...props }) => {
     const [validity, setValidity] = useState(true);
 
     const selectOptions = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
+
+    const handleChange = event => {
+        if (typeof onChange === 'function') {
+            onChange(event.target.selectedOptions[0].value);
+        }
+    };
 
     const handleCheckValidity = event => {
         setValidity(event.target.checkValidity());
@@ -37,7 +43,7 @@ const Select = ({ children, id, label, options, required, valid, validMsg, ...pr
                 {...props}
                 id={id}
                 onBlur={event => handleCheckValidity(event)}
-                onChange={event => handleCheckValidity(event)}
+                onChange={event => handleChange(event)}
                 required={required}
             >
                 {selectOptions}
