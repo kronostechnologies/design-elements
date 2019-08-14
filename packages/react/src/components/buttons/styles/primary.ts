@@ -1,4 +1,4 @@
-export default `
+export const primaryStyles = `
   background-color: rgb(226, 115, 46);
   border-color: rgb(226, 115, 46);
   color: white;

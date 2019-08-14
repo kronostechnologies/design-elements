@@ -1,5 +1,5 @@
 // Visually hiding text but not for the screen readers
-export default `
+export const styles = `
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px !important;

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import primaryStyle from './styles/primary';
-import secondaryStyle from './styles/secondary';
-import tertiaryStyle from './styles/tertiary';
+import { primaryStyles } from './styles/primary';
+import { secondaryStyles } from './styles/secondary';
+import { tertiaryStyles } from './styles/tertiary';
 
 import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
@@ -16,11 +16,11 @@ export interface ButtonProps extends AbstractButtonProps {
 const StyledButton = styled(AbstractButton)`
     ${(props: ButtonProps) => {
         if (props.buttonType === 'secondary') {
-            return secondaryStyle;
+            return secondaryStyles;
         } else if (props.buttonType === 'tertiary') {
-            return tertiaryStyle;
+            return tertiaryStyles;
         }
-        return primaryStyle;
+        return primaryStyles;
     }}
 `;
 

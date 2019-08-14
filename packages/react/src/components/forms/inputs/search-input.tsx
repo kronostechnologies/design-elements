@@ -8,7 +8,7 @@ import { VisuallyHidden } from '../../a11y/visuallyhidden';
 import { SearchButton } from '../../buttons/search-button';
 
 import { Label } from '../label';
-import style from '../styles/inputs';
+import { styles } from '../styles/inputs';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ const IcoReset = styled(XIcon)`
 `;
 
 const Input = styled.input`
-  ${style} /* Must be the first rule */
+  ${styles} /* Must be the first rule */
   border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')};
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
@@ -135,8 +135,8 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
                 <Input
                     autoComplete="on"
                     disabled={disabled}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event)}
-                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event)}
+                    onChange={(event: ChangeEvent<HTMLInputElement>) => {handleChange(event); }}
+                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {handleKeyDown(event); }}
                     hasButton={hasButton}
                     id={id}
                     type="search"
