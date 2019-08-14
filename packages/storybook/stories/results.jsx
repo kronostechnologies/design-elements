@@ -7,8 +7,8 @@ const progressBars = [
     main: true,
     label: "You",
     percent: "100",
-    color1: "rgb(0, 129, 165)",
-    color2: "rgb(85,210,240)",
+    color1: "rgb(0, 128, 165)",
+    color2: "rgb(101,226,255)",
     numbers: "50k - 100k$",
   },
   {
