@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Components
 import Bar from './bar/bar';
 
 const Label = styled.label`
@@ -16,7 +15,8 @@ const ProgressBar = ({ content }) => (
                 <Label main={el.main}>{el.label}</Label>
                 <Bar
                     percent={el.percent}
-                    color={el.color}
+                    color1={el.color1}
+                    color2={el.color2}
                     numbers={el.numbers}
                     main={el.main}
                 />

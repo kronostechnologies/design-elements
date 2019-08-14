@@ -21,7 +21,6 @@ import Headband from './components/headband/equisoft-default';
 import Progress from './components/progress';
 
 // Results
-import Legend from './components/results/Legend';
 import ProgressBar from './components/results/progress-bar/progress-bar';
 
 export {
@@ -39,6 +38,5 @@ export {
     EnsoSpinner,
     Headband,
     Progress,
-    Legend,
     ProgressBar,
 };

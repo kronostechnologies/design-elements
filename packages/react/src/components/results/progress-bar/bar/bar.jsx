@@ -21,63 +21,19 @@ const Progress = styled.div `
 `;
 
 const Bar = styled.div `
-  background: linear-gradient(to right, ${props => props.color}, ${props => props.lightenColor || props.color} 50%);
+  background: linear-gradient(to right, ${props => props.color1}, ${props => props.color2 || props.color1} 50%);
   border-radius: 4rem;
   height: 0.55rem;
   width: ${props => props.percent}%;
 `;
 
-const bar = ({ main, color, percent, numbers }) => {
-    const rgb2hex = rgb => {
-        rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-        return (rgb && rgb.length === 4) ? `${
-            (`0${parseInt(rgb[1], 10).toString(16)}`).slice(-2)
-        }${(`0${parseInt(rgb[2], 10).toString(16)}`).slice(-2)
-        }${(`0${parseInt(rgb[3], 10).toString(16)}`).slice(-2)}` : '';
-    };
-
-    const LightenDarkenColor = (col, amt) => {
-        let usePound = false;
-        if (col[0] === '#') {
-            col = col.slice(1);
-            usePound = true;
-        }
-
-        const isOk = /(^[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(col);
-
-        if (!isOk) {
-            col = rgb2hex(col);
-            usePound = true;
-        }
-
-        const num = parseInt(col, 16);
-
-        let r = (num >> 16) + amt;
-
-        if (r > 255) r = 255;
-        else if (r < 0) r = 0;
-
-        let b = ((num >> 8) & 0x00FF) + amt;
-
-        if (b > 255) b = 255;
-        else if (b < 0) b = 0;
-
-        let g = (num & 0x0000FF) + amt;
-
-        if (g > 255) g = 255;
-        else if (g < 0) g = 0;
-
-        return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16);
-    };
-
-    return (
-        <Container main={main}>
-            <Progress>
-                {main ? <Bar color={color} percent={percent} lightenColor={LightenDarkenColor(color, 80)} /> : <Bar color={color} percent={percent} />}
-            </Progress>
-            <p>{numbers}</p>
-        </Container>
-    );
-};
+const bar = ({ main, color1, color2, percent, numbers }) => (
+    <Container main={main}>
+        <Progress>
+            {main ? <Bar color1={color1} color2={color2} percent={percent} /> : <Bar color1={color1} percent={percent} />}
+        </Progress>
+        <p>{numbers}</p>
+    </Container>
+);
 
 export default bar;
