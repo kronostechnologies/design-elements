@@ -13,11 +13,9 @@ const Label = styled.label`
 `;
 
 const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value }) => {
-    const ref = React.createRef();
-
-    const handleChange = () => {
+    const handleChange = event => {
         if (typeof onChange === 'function') {
-            onChange(ref.current.checked);
+            onChange(event.target.value);
         }
     };
 
@@ -27,8 +25,7 @@ const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value 
                 defaultChecked={defaultChecked}
                 id={id}
                 name={groupName}
-                onChange={handleChange}
-                ref={ref}
+                onChange={event => handleChange(event)}
                 type="radio"
                 value={value}
             />
