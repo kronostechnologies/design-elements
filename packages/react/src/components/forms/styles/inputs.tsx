@@ -1,4 +1,4 @@
-export default `
+export const styles = `
   background: rgb(255, 255, 255);
   border: 1px solid rgb(217, 221, 226);
   border-radius: 0.25rem;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Child } from '../buttons/abstract-button';
 import { MediaView } from '../media-view';
-import breakpoints from '../tokens/breakpoints';
+import { breakpoints } from '../tokens/breakpoints';
 
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';

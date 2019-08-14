@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import styled from 'styled-components';
 import { TextAreaProps } from './text-area';
 
-import style from '../styles/inputs';
+import { styles } from '../styles/inputs';
 
 import { FieldContainer } from '../field-container';
 
 const Input = styled.input`
-  ${style}
+  ${styles}
 `;
 
 interface TextInputProps extends TextAreaProps {
@@ -32,7 +32,7 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
         }
     };
 
-    const handleChange = (event: any) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
@@ -57,8 +57,8 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
             <Input
                 disabled={disabled}
                 id={id}
-                onBlur={event => handleBlur(event)}
-                onChange={event => handleChange(event)}
+                onBlur={(event: FocusEvent<HTMLInputElement>) => {handleBlur(event); }}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {handleChange(event); }}
                 onFocus={handleFocus}
                 pattern={pattern}
                 placeholder={placeholder}

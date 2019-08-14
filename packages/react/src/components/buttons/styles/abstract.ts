@@ -1,4 +1,4 @@
-export default `
+export const styles = `
   align-items: center;
   appearance: none;
   background: inherit;

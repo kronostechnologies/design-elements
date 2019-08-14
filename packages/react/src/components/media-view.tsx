@@ -23,19 +23,19 @@ class MediaView extends Component<MediaViewProps, State> {
         this.handleScreeResize = this.handleScreeResize.bind(this);
     }
 
-    componentDidMount() {
-        return window.addEventListener('resize', this.handleScreeResize);
+    componentDidMount(): void {
+        window.addEventListener('resize', this.handleScreeResize);
     }
 
-    componentWillUnmount() {
-        return window.addEventListener('resize', this.handleScreeResize);
+    componentWillUnmount(): void {
+        window.addEventListener('resize', this.handleScreeResize);
     }
 
-    handleScreeResize() {
-        return this.setState({screenWidth: (window.innerWidth || document.documentElement.clientWidth)});
+    handleScreeResize(): void {
+        this.setState({ screenWidth: (window.innerWidth || document.documentElement.clientWidth) });
     }
 
-    render() {
+    render(): JSX.Element | null {
         const { children, maxWidth, minWidth }: MediaViewProps =  this.props;
         const { screenWidth } = this.state;
         let isMinDisplay = false;
