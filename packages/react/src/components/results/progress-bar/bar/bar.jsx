@@ -6,7 +6,7 @@ const Container = styled.div `
   display: flex;
   margin-bottom: 1rem;
   p {
-    color: 'rgb(87,102,110)';
+    color: ${props => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};
     margin: 0;
     text-align: right;
     width: 8.5rem;
@@ -14,23 +14,23 @@ const Container = styled.div `
 `;
 
 const Progress = styled.div `
-  background-color: rgb(220,220,220);
+  background-color: rgb(220, 220, 220);
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
 `;
 
 const Bar = styled.div `
-  background: linear-gradient(to right, ${props => props.color1}, ${props => props.color2 || props.color1} 50%);
+  background: ${props => props.color};
   border-radius: 4rem;
   height: 0.55rem;
   width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
 `;
 
-const bar = ({ color1, color2, percent, endLabel }) => (
-    <Container>
+const bar = ({ color, percent, endLabel, secondary }) => (
+    <Container secondary={secondary}>
         <Progress>
-            {<Bar color1={color1} color2={color2} percent={percent} />}
+            <Bar color={color} percent={percent} />
         </Progress>
         <p>{endLabel}</p>
     </Container>
