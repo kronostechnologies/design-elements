@@ -17,8 +17,17 @@ const ageRange = [
 
 storiesOf('Choosers', module)
     .add('Chooser with a skip button', () => (
-        <Chooser groupName="maritalStatus" options={maritalStatus} skippable />
+        <Chooser
+            groupName="maritalStatus"
+            options={maritalStatus}
+            skippable
+        />
     ))
-    .add('Chooser in Columns', () => (
-        <Chooser groupName="ageRange" options={ageRange} inColumns />
+    .add('Chooser in Columns with callback', () => (
+        <Chooser
+            groupName="ageRange"
+            onChange={v => console.log(v)}
+            options={ageRange}
+            inColumns
+        />
     ));

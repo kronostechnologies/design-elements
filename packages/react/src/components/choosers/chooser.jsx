@@ -12,14 +12,21 @@ const Grid = styled.div`
 `;
 
 const Skip = styled.div`
-    margin: 1rem 0 0;
+  margin: 1rem 0 0;
 `;
 
-const Chooser = ({ inColumns, groupName, options, skippable }) => {
+const Chooser = ({ inColumns, groupName, onChange, options, skippable }) => {
+    const handleChange = value => {
+        if (typeof onChange === 'function') {
+            onChange(value);
+        }
+    };
+
     const chooserOptions = options.map((option, i) => (
         <ChooseRadio
             groupName={groupName}
             id={`${groupName}_${i}`}
+            onChange={value => handleChange(value)}
             value={option.value}
         >
             {option.label}
@@ -31,6 +38,7 @@ const Chooser = ({ inColumns, groupName, options, skippable }) => {
             <ChooseRadio
                 groupName={groupName}
                 id={`${groupName}_skip`}
+                onChange={value => handleChange(value)}
                 value="skip"
             >
                 Préfère ne pas répondre
