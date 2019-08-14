@@ -12,7 +12,7 @@ const Label = styled.label`
   ${chooseStyles}
 `;
 
-const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value }) => {
+const ChooseRadio = ({ defaultChecked, checked, children, groupName, id, onChange, value }) => {
     const handleChange = event => {
         if (typeof onChange === 'function') {
             onChange(event.target.value);
@@ -22,6 +22,7 @@ const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value 
     return (
         <>
             <Radio
+                checked={checked}
                 defaultChecked={defaultChecked}
                 id={id}
                 name={groupName}
