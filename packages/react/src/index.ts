@@ -23,6 +23,7 @@ import Progress from './components/progress';
 
 // Results
 import Legend from './components/results/legend';
+import ProgressCircle from './components/results/progress-circle/progress-circle';
 import ProgressBar from './components/results/progress-bar/progress-bar';
 
 export {
@@ -43,4 +44,5 @@ export {
     Progress,
     ProgressBar,
     Legend,
+    ProgressCircle,
 };
