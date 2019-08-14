@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Child } from '../buttons/abstract-button';
@@ -22,13 +22,13 @@ const StyledDiv = styled.div`
 interface FieldContainerProps {
     children: Child;
     fieldId: string;
-    label: string;
+    label?: string;
     valid: boolean;
     validMsg: string;
 
 }
 
-const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps): ReactNode => (
+const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps) => (
     <StyledDiv {...props} valid={valid}>
         {label && (
             <Label forId={fieldId}>
