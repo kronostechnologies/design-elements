@@ -4,24 +4,23 @@ import { Legend, ProgressBar } from '@equisoft/design-elements-react';
 
 const progressBars = [
   {
-    main: true,
-    label: "You",
-    percent: "100",
     color1: "rgb(0, 128, 165)",
     color2: "rgb(101,226,255)",
-    numbers: "50k - 100k$",
+    descriptionLabel: "You",
+    endLabel: "50k - 100k$",
+    percent: "100",
   },
   {
-    label: "Equisoft",
-    percent: "60",
     color1: "rgb(38, 50, 56)",
-    numbers: "150k - 250k$",
+    descriptionLabel: "Equisoft",
+    endLabel: "150k - 250k$",
+    percent: "60",
   },
   {
-    label: "General",
-    percent: "60",
     color1: "rgb(99, 114, 130)",
-    numbers: "150k - 250k$",
+    descriptionLabel: "General",
+    endLabel: "150k - 250k$",
+    percent: "60",
   }
 ]
 

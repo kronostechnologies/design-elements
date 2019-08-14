@@ -6,7 +6,7 @@ const Container = styled.div `
   display: flex;
   margin-bottom: 1rem;
   p {
-    color: ${props => (props.main ? 'rgb(0,0,0)' : 'rgb(87,102,110)')};
+    color: 'rgb(87,102,110)';
     margin: 0;
     text-align: right;
     width: 8.5rem;
@@ -24,15 +24,15 @@ const Bar = styled.div `
   background: linear-gradient(to right, ${props => props.color1}, ${props => props.color2 || props.color1} 50%);
   border-radius: 4rem;
   height: 0.55rem;
-  width: ${props => props.percent}%;
+  width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
 `;
 
-const bar = ({ main, color1, color2, percent, numbers }) => (
-    <Container main={main}>
+const bar = ({ color1, color2, percent, endLabel }) => (
+    <Container>
         <Progress>
-            {main ? <Bar color1={color1} color2={color2} percent={percent} /> : <Bar color1={color1} percent={percent} />}
+            {<Bar color1={color1} color2={color2} percent={percent} />}
         </Progress>
-        <p>{numbers}</p>
+        <p>{endLabel}</p>
     </Container>
 );
 

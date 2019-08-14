@@ -12,13 +12,12 @@ const ProgressBar = ({ content }) => (
     <React.Fragment>
         {content.map(el => (
             <div>
-                <Label main={el.main}>{el.label}</Label>
+                <Label>{el.descriptionLabel}</Label>
                 <Bar
-                    percent={el.percent}
                     color1={el.color1}
                     color2={el.color2}
-                    numbers={el.numbers}
-                    main={el.main}
+                    endLabel={el.endLabel}
+                    percent={el.percent}
                 />
             </div>
         ))}
