@@ -14,13 +14,12 @@ export default class SelectSkip extends Component {
         this.handleSelectChange = this.handleSelectChange.bind(this);
     }
 
-    handleSelectChange(event) {
-        if (event.target.selectedIndex === 0
-            || event.target.selectedIndex === null) {
-            return this.setState({ checked: true });
+    handleSelectChange(value) {
+        if (value === '') {
+            this.setState({ checked: true });
+        } else {
+            this.setState({ checked: false });
         }
-
-        return this.setState({ checked: false });
     }
 
     handleRadioChange(event, selectElemId) {
@@ -45,7 +44,7 @@ export default class SelectSkip extends Component {
                     {...props}
                     id={id}
                     label={label}
-                    onChange={event => this.handleSelectChange(event)}
+                    onChange={value => this.handleSelectChange(value)}
                     options={options}
                 />
 
@@ -53,7 +52,7 @@ export default class SelectSkip extends Component {
                     checked={checked}
                     groupName="provinces"
                     id={`${id}_skip`}
-                    onChange={event => this.handleRadioChange(event, id)}
+                    onChange={value => this.handleRadioChange(value, id)}
                     value="skip"
                 >
                     {children}
