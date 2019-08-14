@@ -15,11 +15,11 @@ export default class SelectSkip extends Component {
     }
 
     handleSelectChange(value) {
-        if (value === '') {
-            this.setState({ checked: true });
-        } else {
-            this.setState({ checked: false });
+        if (value === '' || value === undefined) {
+            return this.setState({ checked: true });
         }
+
+        return this.setState({ checked: false });
     }
 
     handleRadioChange(event, selectElemId) {
