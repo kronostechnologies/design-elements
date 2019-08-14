@@ -12,7 +12,7 @@ interface State {
     screenWidth: number;
 }
 
-class MediaView extends Component<{}, State> {
+class MediaView extends Component<MediaViewProps, State> {
     constructor(props: MediaViewProps) {
         super(props);
 

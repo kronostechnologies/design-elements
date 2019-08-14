@@ -33,9 +33,12 @@ export interface TextAreaProps {
     onFocus?(event: FocusEvent<HTMLTextAreaElement>): void;
 }
 
+interface ValueProps { value: string; }
+interface ValidityProps { validity: boolean; }
+
 const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }: TextAreaProps) => {
-    const [{ value }, setValue] = useState({ value: defaultValue || '' });
-    const [{ validity }, setValidity] = useState({ validity: true });
+    const [{ value }, setValue] = useState<ValueProps>({ value: defaultValue || '' });
+    const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
 
     const handleBlur = (event: any) => {
         const newValue = event.target.value;

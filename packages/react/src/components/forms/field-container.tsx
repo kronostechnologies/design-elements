@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Child } from '../buttons/abstract-button';
@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
 interface FieldContainerProps {
     children: Child;
     fieldId: string;
-    label: string;
+    label?: string;
     valid: boolean;
     validationErrorMessage: string;
 }
