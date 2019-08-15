@@ -1,3 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.styles = "\n  background: rgb(255, 255, 255);\n  border: 1px solid rgb(217, 221, 226);\n  border-radius: 0.25rem;\n  box-shadow: none;\n  box-sizing: border-box;\n  color: rgb(0, 0, 0);\n  font-family: inherit;\n  font-size: calc(1rem - 2px);\n  margin: 0;\n  outline: none;\n  padding: 0.5rem;\n\n  &::placeholder {\n    color: rgb(99, 114, 130);\n  }\n\n  &:disabled {\n    background-color: rgb(242, 243, 249);\n    border-color: rgb(217, 221, 226);\n\n    &,\n    &::placeholder {\n      color: rgb(156, 167, 180);\n    }\n  }\n\n  &:focus {\n    border-color: rgb(54, 71, 127);\n  }\n\n  label + & {\n    display: block;\n    margin-top: 0.5rem;\n    width: 100%;\n  }\n";
