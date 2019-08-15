@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Circle = ({ radius, stroke, percent, color }) => {
+interface CircleProps {
+    radius: number;
+    stroke: number;
+    percent: number;
+    color: string;
+}
+
+const Circle = ({ radius, stroke, percent, color }: CircleProps) => {
     const normalizedRadius = radius - (stroke * 2);
     const circumference = normalizedRadius * 2 * Math.PI;
-    const placeholderDashoffset = circumference - (1 * circumference);
     const strokeDashoffset = circumference - ((percent / 100) * circumference);
 
     const CirclePath = styled.circle`
@@ -19,7 +25,6 @@ const Circle = ({ radius, stroke, percent, color }) => {
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeDasharray={`${circumference} ${circumference}`}
-                style={{ placeholderDashoffset }}
                 strokeLinecap="round"
                 r={normalizedRadius}
                 cx={radius}

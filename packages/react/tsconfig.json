@@ -9,7 +9,8 @@
         "noEmitOnError": true,
         "sourceMap": true,
         "baseUrl": "./src/",
-        "paths": {}
+        "paths": {},
+        "outDir": "./dist"
     },
     "include": [
         "src/**/*"

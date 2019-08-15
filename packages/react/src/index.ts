@@ -23,9 +23,9 @@ import { Headband } from './components/headband/equisoft-default';
 import { Progress } from './components/progress';
 
 // Results
-import Legend from './components/results/legend';
-import ProgressBar from './components/results/progress-bar/progress-bar';
-import ProgressCircle from './components/results/progress-circle/progress-circle';
+import { Legend } from './components/results/legend';
+import { ProgressBar } from './components/results/progress-bar/progress-bar';
+import { ProgressCircle } from './components/results/progress-circle/progress-circle';
 
 export {
     AddButton,
