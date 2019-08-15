@@ -41,15 +41,12 @@ const legendItems = [{
 }
 ];
 
-storiesOf('Results', module)
-    .add('Progress Bar', () => (
-        <ProgressBar 
-          content={progressBars}
-        />
-    ))
-    .add('Legend', () => (
+storiesOf('Results/Legend', module)
+    .add('Default', () => (
         <Legend items={legendItems} />
-    ))
+    ));
+
+storiesOf('Results/ProgressCircle')
     .add('ProgressCircle', () => (
         <ProgressCircle
             percent={66}
@@ -66,4 +63,9 @@ storiesOf('Results', module)
             resultLabel='56 k$'
             secondary
         />
+    ));
+
+storiesOf('Results/ProgressBar', module)
+    .add('Default', () => (
+        <ProgressBar content={progressBars} />
     ));
