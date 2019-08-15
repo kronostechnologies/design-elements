@@ -19,13 +19,14 @@ import SelectSkip from './components/forms/selects/Select-skip';
 // Miscellaneous
 import Card from './components/card';
 import Chooser from './components/choosers/chooser';
-import ChooseRadio from './components/choosers/controls/choose-radio';
 import EnsoSpinner from './components/enso-spinner';
 import Headband from './components/headband/equisoft-default';
 import Progress from './components/progress';
 
 // Results
 import Legend from './components/results/legend';
+import ProgressCircle from './components/results/progress-circle/progress-circle';
+import ProgressBar from './components/results/progress-bar/progress-bar';
 
 export {
     AddButton,
@@ -41,10 +42,11 @@ export {
     TextArea,
     Card,
     Chooser,
-    ChooseRadio,
     EnsoSpinner,
     Headband,
     Progress,
+    ProgressBar,
     SelectSkip,
     Legend,
+    ProgressCircle,
 };

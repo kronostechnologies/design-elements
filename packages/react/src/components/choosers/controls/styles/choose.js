@@ -42,6 +42,7 @@ export default `
     font-weight: 400;
   }
 
+  /* For future support of SVG icons in button */
   svg {
     color: inherit;
     height: 3rem;
