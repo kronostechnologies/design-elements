@@ -15,7 +15,7 @@ const Skip = styled.div`
   margin: 1rem 0 0;
 `;
 
-const Chooser = ({ inColumns, groupName, onChange, options, skipLabel, skippable }) => {
+const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel }) => {
     const handleChange = value => {
         if (typeof onChange === 'function') {
             onChange(value);
@@ -33,15 +33,15 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipLabel, skippable
         </ChooseRadio>
     ));
 
-    const skipButton = (skippable && (
+    const skipButton = (skipValue && skipLabel && (
         <Skip>
             <ChooseRadio
                 groupName={groupName}
                 id={`${groupName}_skip`}
                 onChange={value => handleChange(value)}
-                value="skip"
+                value={skipValue}
             >
-                {skipLabel || 'Préfère ne pas répondre'}
+                {skipLabel}
             </ChooseRadio>
         </Skip>
     ));

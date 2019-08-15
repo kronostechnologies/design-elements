@@ -3,16 +3,16 @@ import { storiesOf } from '@storybook/react';
 import { Chooser } from '@equisoft/design-elements-react';
 
 const maritalStatus = [
-    {value: "single", label: "Célibataire, vivant seul ou en colocation"},
-    {value: "married", label: "Marié ou vivant avec  un conjoint"}
+    {value: "single", label: "Single, living alone or with a roommate"},
+    {value: "married", label: "Married or living with a spouse"}
 ];
 
 const ageRange = [
-    {value: "0,24", label: "0 à 24 ans"},
-    {value: "25,34", label: "25 à 34 ans"},
-    {value: "35,49", label: "35 à 49 ans"},
-    {value: "50,64", label: "50 à 64 ans"},
-    {value: "65,Infinity", label: "65+"},
+    { value: "0,24", label: "Less than 24 years old" },
+    { value: "25,34", label: "25 to 34 years old" },
+    { value: "35,49", label: "35 to 49 years old" },
+    { value: "50,64", label: "50 to 64 years old" },
+    { value: "65+", label: "65+ years old" },
 ];
 
 storiesOf('Choosers', module)
@@ -20,7 +20,8 @@ storiesOf('Choosers', module)
         <Chooser
             groupName="maritalStatus"
             options={maritalStatus}
-            skippable
+            skipLabel="Would rather not say"
+            skipValue="skip"
         />
     ))
     .add('Chooser in Columns with callback', () => (
