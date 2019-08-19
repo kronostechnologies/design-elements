@@ -7,7 +7,7 @@ storiesOf('TextArea', module)
         <TextArea
             id="ta_normal"
             label="Text area label"
-            placeholder="Enter your text here"
+            validMsg='Temporary Message'
         />
     ))
     .add('Event callbacks (see console)', () => (
@@ -17,14 +17,14 @@ storiesOf('TextArea', module)
             onChange={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
             onBlur={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
             onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
-            placeholder="Enter your text here"
+            validMsg='Temporary Message'
         />
     ))
     .add('Required', () => (
         <TextArea
             id="ta_required"
             label="Text area label"
-            placeholder="Enter your text here"
+            validMsg='Temporary Message'
             required
         />
     ))
@@ -33,7 +33,7 @@ storiesOf('TextArea', module)
             defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio."
             id="ta_filled"
             label="A label for a filled text area"
-            placeholder="Enter your text here"
+            validMsg='Temporary Message'
             required
         />
     ))
@@ -42,7 +42,7 @@ storiesOf('TextArea', module)
             disabled
             id="ta_disabled"
             label="A label for the disabled text area"
-            placeholder="Sorry but this field is disabled"
+            validMsg='Temporary Message'
             required
         />
     ));

@@ -21,7 +21,9 @@ storiesOf('Select', module)
     .add('Default', () => (
         <Select
             id="s_provinces"
-            name="provinces"
             label="Choose your province or territory"
-            options={provinces} />
+            options={provinces} 
+            valid
+            validMsg='Temporary Message'
+            children/>
     ));
