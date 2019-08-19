@@ -1,0 +1,245 @@
+version: 2.1
+
+variables:
+  - &working_directory '~/design-elements'
+  - &react_directory '~/design-elements/packages/react'
+  - &storybook_directory '~/design-elements/packages/storybook'
+  - &web_directory '~/design-elements/packages/web'
+
+orbs:
+  aws-ecr: circleci/aws-ecr@6.1.0
+
+executors:
+  node:
+    docker:
+      - image: 'circleci/node:10.16.2'
+
+commands:
+  attach_at_working_directory:
+    steps:
+      - attach_workspace:
+          at: *working_directory
+
+  node_deps_cache_restore:
+    steps:
+      - restore_cache:
+          name: Restoring NodeJS dependencies cache (node_modules)
+          key: &yarn_cache 'v1-yarn-install-{{ checksum "yarn.lock" }}'
+
+  node_deps_cache_save:
+    steps:
+      - save_cache:
+          name: Saving NodeJS dependencies cache (node_modules)
+          key: *yarn_cache
+          paths:
+            - 'node_modules'
+
+  node_deps_install:
+    steps:
+      - node_deps_cache_restore
+      - run: test -d node_modules || yarn --non-interactive --no-progress --frozen-lockfile
+      - node_deps_cache_save
+
+  yarn_build:
+    steps:
+      - run: yarn build
+
+  yarn_lint:
+    steps:
+      - run: yarn lint:ci
+      - store_test_results:
+          path: build/lint
+
+  yarn_test:
+    steps:
+      - run: yarn test:ci
+      - store_test_results:
+          path: build/tests
+
+  yarn_link:
+    parameters:
+      display_name:
+        type: string
+      working_directory:
+        type: string
+    steps:
+      - run:
+          name: 'Link << parameters.display_name >>'
+          command: 'yarn link'
+          working_directory: << parameters.working_directory >>
+
+  yarn_link_packages:
+    parameters:
+      packages:
+        type: string
+      working_directory:
+        type: string
+    steps:
+      - run:
+          name: 'Link << parameters.packages >>'
+          command: 'yarn link << parameters.packages >>'
+          working_directory: << parameters.working_directory >>
+
+jobs:
+  prepare_workspace:
+    executor: "node"
+    working_directory: *working_directory
+    steps:
+      - checkout
+      - persist_to_workspace:
+          root: '.'
+          paths: '.'
+
+  node_install_deps:
+    executor: "node"
+    parameters:
+      directory:
+        type: string
+    working_directory: << parameters.directory >>
+    steps:
+      - attach_at_working_directory
+      - node_deps_install
+      - persist_to_workspace:
+          root: *working_directory
+          paths: '*/*/node_modules'
+
+  yarn_lint:
+    executor: "node"
+    parameters:
+      directory:
+        type: string
+    working_directory: << parameters.directory >>
+    steps:
+      - attach_at_working_directory
+      - node_deps_cache_restore
+      - yarn_lint
+
+  yarn_test:
+    executor: "node"
+    parameters:
+      directory:
+        type: string
+    working_directory: << parameters.directory >>
+    steps:
+      - attach_at_working_directory
+      - node_deps_cache_restore
+      - yarn_test
+
+  yarn_build:
+    executor: "node"
+    parameters:
+      directory:
+        type: string
+    working_directory: << parameters.directory >>
+    steps:
+      - attach_at_working_directory
+      - node_deps_cache_restore
+      - yarn_build
+
+  yarn_link:
+    executor: "node"
+    working_directory: *working_directory
+    steps:
+      - attach_at_working_directory
+      - yarn_link:
+          display_name: '@equisoft/design-elements-web'
+          working_directory: *web_directory
+      - yarn_link:
+          display_name: '@equisoft/design-elements-react'
+          working_directory: *react_directory
+      - yarn_link_packages:
+          packages: '@equisoft/design-elements-web @equisoft/design-elements-react'
+          working_directory: *storybook_directory
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - prepare_workspace:
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+
+      ### WEB
+      - node_install_deps:
+          name: web_node_install_deps
+          directory: *web_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - prepare_workspace
+      - yarn_lint:
+          name: web_yarn_lint
+          directory: *web_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - web_node_install_deps
+      - yarn_build:
+          name: web_yarn_build
+          directory: *web_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - web_node_install_deps
+
+      ### REACT
+      - node_install_deps:
+          name: react_node_install_deps
+          directory: *react_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - prepare_workspace
+      - yarn_lint:
+          name: react_yarn_lint
+          directory: *react_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - react_node_install_deps
+      - yarn_build:
+          name: react_yarn_build
+          directory: *react_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - react_node_install_deps
+
+      ### STORYBOOK
+      - yarn_link:
+          name: storybook_yarn_link
+          requires:
+            - web_yarn_build
+            - react_yarn_build
+      - node_install_deps:
+          name: storybook_node_install_deps
+          directory: *storybook_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - prepare_workspace
+      - yarn_lint:
+          name: storybook_yarn_lint
+          directory: *storybook_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - storybook_yarn_link
+      - yarn_build:
+          name: storybook_yarn_build
+          directory: *storybook_directory
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          requires:
+            - storybook_yarn_link

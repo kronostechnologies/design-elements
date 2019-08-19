@@ -14,8 +14,8 @@ yarn start
 or
 ```
 cd design-elements/packages/storybook
-npm install
-npm run start
+yarn install
+yarn start
 ```
 
 ## Working with local components

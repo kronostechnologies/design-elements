@@ -3,7 +3,9 @@
   "version": "0.3.0",
   "scripts": {
     "build": "./scripts/build.sh",
-    "start": "./scripts/start.sh"
+    "start": "./scripts/start.sh",
+    "lint": "./scripts/lint.sh",
+    "lint:ci": "./scripts/lint.sh --ci"
   },
   "author": "Equisoft Design",
   "maintainers": [
@@ -13,21 +15,23 @@
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
   ],
   "dependencies": {
-    "@babel/plugin-proposal-dynamic-import": "^7.5.0",
-    "@equisoft/design-elements-react": "^0.2.0",
-    "@equisoft/design-elements-web": "^0.1.1",
+    "@equisoft/design-elements-react": "^0.4.0",
+    "@equisoft/design-elements-web": "^0.4.0",
     "@storybook/react": "^5.0.11",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.0.0",
-    "node-sass": "^4.12.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@equisoft/tslint-config": "^0.0.8",
+    "@equisoft/tslint-config-react": "^0.0.3",
     "@types/storybook__react": "^4.0.2",
     "awesome-typescript-loader": "^5.2.1",
-    "typescript": "^3.5.3"
+    "babel-loader": "^8.0.6",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "webpack": "~4.39.2"
   }
 }

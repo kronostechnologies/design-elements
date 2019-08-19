@@ -1,20 +1,21 @@
-const path = require('path');
+module.exports = async ({ config, mode }) => {
+    const isDevMode = mode !== 'PRODUCTION';
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader'},
-          { loader: 'sass-loader' }
-        ]
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        use: {loader: require.resolve('awesome-typescript-loader')},
-      }
-    ]
-  }
+    config.module.rules.push(
+        {
+            test: /\.scss$/,
+            use: [
+                { loader: 'style-loader' },
+                { loader: 'css-loader' },
+                { loader: 'sass-loader' }
+            ]
+        },
+        {
+            test: /\.(ts|tsx)$/,
+            loader: 'awesome-typescript-loader',
+            options: { errorsAsWarnings: isDevMode }
+        }
+    );
+
+    return config;
 };

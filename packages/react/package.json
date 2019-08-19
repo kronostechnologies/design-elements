@@ -9,7 +9,8 @@
     "build": "./scripts/build.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
     "start": "./scripts/start.sh",
-    "lint": "./scripts/lint.sh"
+    "lint": "./scripts/lint.sh",
+    "lint:ci": "./scripts/lint.sh --ci"
   },
   "files": [
     "dist"
