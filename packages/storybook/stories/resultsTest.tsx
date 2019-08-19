@@ -46,7 +46,7 @@ storiesOf('Resultst/Legend', module)
         <Legend items={legendItems} />
     ));
 
-storiesOf('Resultst/ProgressCircle')
+storiesOf('Resultst/ProgressCircle', module)
     .add('ProgressCircle', () => (
         <ProgressCircle
             percent={66}

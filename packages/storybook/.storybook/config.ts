@@ -6,8 +6,8 @@ import { addDecorator, configure } from '@storybook/react';
 addDecorator(withKnobs);
 const req = require.context('../stories', true, /\.tsx$/);
 
-function loadStories(): void {
-    req.keys().forEach(req);
+function loadStories() {
+  req.keys().forEach(req);
 }
 
 configure(loadStories, module);

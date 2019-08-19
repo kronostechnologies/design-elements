@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Checkbox } from '@equisoft/design-elements-react';
 import { storiesOf } from '@storybook/react';
 

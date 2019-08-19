@@ -21,11 +21,6 @@ const provinces = [
     {  value: 'yt', label: 'Yukon' },
 ];
 
-const skipOption = {
-    label: 'Skip this question',
-    value: 'skip',
-};
-
 storiesOf('Select', module)
     .add('Default', () => (
         <Select
