@@ -26,6 +26,7 @@
     "style-loader": "^0.23.1"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^5.1.11",
     "@types/storybook__react": "^4.0.2",
     "awesome-typescript-loader": "^5.2.1",
     "typescript": "^3.5.3"
