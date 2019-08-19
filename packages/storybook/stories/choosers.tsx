@@ -1,6 +1,7 @@
+import * as React from 'react';
+
 import { Chooser } from '@equisoft/design-elements-react';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
@@ -31,9 +32,7 @@ storiesOf('Choosers', module)
     .add('Chooser in Columns with callback', () => (
         <Chooser
             groupName="ageRange"
-            onChange={event => {
-                console.log(event.currentTarget.value);
-            }}
+            onChange={v => console.log(v)}
             options={ageRange}
             inColumns
         />

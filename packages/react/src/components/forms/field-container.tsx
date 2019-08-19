@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 import { InvalidField } from '../feedbacks/invalid-field';
@@ -23,25 +23,23 @@ interface FieldContainerProps {
     fieldId: string;
     label?: string;
     valid: boolean;
-    validMsg: string;
+    validationErrorMessage: string;
 }
 
-function FieldContainer({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps): ReactElement {
-    return (
-        <StyledDiv {...props} valid={valid}>
-            {label && (
-                <Label forId={fieldId}>
-                    {label}
-                </Label>
-            )}
+const FieldContainer = ({ children, fieldId, label, valid, validationErrorMessage, ...props }: FieldContainerProps) => (
+    <StyledDiv {...props} valid={valid}>
+        {label && (
+            <Label forId={fieldId}>
+                {label}
+            </Label>
+        )}
 
             {children}
 
-            {!valid &&
-            <InvalidField controlId={fieldId} feedbackMsg={validMsg} />
-            }
-        </StyledDiv>
-    );
-}
+        {!valid &&
+            <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />
+        }
+    </StyledDiv>
+);
 
 export { FieldContainer } ;

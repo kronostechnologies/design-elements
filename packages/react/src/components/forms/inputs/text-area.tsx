@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -20,7 +20,7 @@ export interface TextAreaProps {
     label: string;
     placeholder?: string;
     required?: boolean;
-    validMsg?: string;
+    validationErrorMessage?: string;
     value?: string;
 
     onBlur?(event: FocusEvent<HTMLTextAreaElement>): void;
@@ -33,8 +33,7 @@ export interface TextAreaProps {
 interface ValidityProps {
     validity: boolean;
 }
-
-export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps): ReactElement {
+const TextArea = ({ onBlur, onChange, onFocus, ...props }: TextAreaProps) => {
     const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
     const id = uuid();
 
@@ -58,14 +57,14 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
         }
     }
 
-    const { defaultValue, disabled, label, placeholder, required, validMsg, value } = props;
+    const { defaultValue, disabled, label, placeholder, required, validationErrorMessage, value } = props;
 
     return (
         <FieldContainer
             fieldId={id}
             label={label}
             valid={validity}
-            validMsg={validMsg || 'This text area input is invalid'}
+            validationErrorMessage={validationErrorMessage || 'This text area input is invalid'}
         >
             <StyledTextArea
                 defaultValue={defaultValue}
@@ -80,4 +79,6 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
             />
         </FieldContainer>
     );
-}
+};
+
+export { TextArea } ;
