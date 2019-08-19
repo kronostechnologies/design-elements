@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChooseRadio from './controls/choose-radio';
+import ChooseInput from './controls/choose-input';
 
 const Grid = styled.div`
   align-items: stretch;
@@ -23,26 +23,28 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
     };
 
     const chooserOptions = options.map((option, i) => (
-        <ChooseRadio
+        <ChooseInput
             groupName={groupName}
             id={`${groupName}_${i}`}
             onChange={value => handleChange(value)}
+            type="radio"
             value={option.value}
         >
             {option.label}
-        </ChooseRadio>
+        </ChooseInput>
     ));
 
     const skipButton = (skipValue && skipLabel && (
         <Skip>
-            <ChooseRadio
+            <ChooseInput
                 groupName={groupName}
                 id={`${groupName}_skip`}
                 onChange={value => handleChange(value)}
+                type="radio"
                 value={skipValue}
             >
                 {skipLabel}
-            </ChooseRadio>
+            </ChooseInput>
         </Skip>
     ));
 

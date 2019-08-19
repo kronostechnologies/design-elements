@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Select, SelectSkip } from '@equisoft/design-elements-react';
+import { Select } from '@equisoft/design-elements-react';
 
 const provinces = [{value: "", label: "-"},
                    {value: "on", label: "Ontario"},
@@ -23,14 +23,28 @@ storiesOf('Select', module)
             id="s_provinces"
             name="provinces"
             label="Choose your province or territory"
-            options={provinces} />
+            onChange={(value) => {console.log(value);}}
+            options={provinces}
+        />
     ))
     .add('With Skip', () => (
-        <SelectSkip
+        <Select
             id="s_provinces"
             name="provinces"
             label="Choose your province or territory"
-            options={provinces}>
-            Préfère ne pas répondre
-        </SelectSkip>
+            onChange={(value) => {console.log(value);}}
+            options={provinces}
+            skipLabel={"Skip this question"}
+        />
+    ))
+    .add('Required', () => (
+        <Select
+            id="s_provinces"
+            name="provinces"
+            label="Choose your province or territory"
+            onChange={(value) => {console.log(value);}}
+            options={provinces}
+            required
+            skipLabel={"Skip this question"}
+        />
     ));
