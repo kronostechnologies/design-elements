@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Select } from '@equisoft/design-elements-react';
 

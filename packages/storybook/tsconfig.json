@@ -2,7 +2,7 @@
     "compilerOptions": {
       "outDir": "build/lib",
       "module": "commonjs",
-      "target": "es5",
+      "target": "es6",
       "lib": ["es5", "es6", "es7", "es2017", "dom"],
       "sourceMap": true,
       "allowJs": false,
@@ -22,7 +22,9 @@
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "skipLibCheck": true,
+      "noEmitOnError": true,
     },
-    "include": ["stories/**/*"],
+    "include": ["stories"],
     "exclude": ["node_modules", "build", "scripts"]
   }
+  
