@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
-var react_2 = require("@storybook/react");
-var design_elements_react_1 = require("@equisoft/design-elements-react");
-var progressBars = [
+const React = require("react");
+const react_1 = require("@storybook/react");
+const design_elements_react_1 = require("@equisoft/design-elements-react");
+const progressBars = [
     {
         color: "rgb(101,226,255)",
         descriptionLabel: "You",
@@ -25,7 +25,7 @@ var progressBars = [
         secondary: true,
     }
 ];
-var legendItems = [{
+const legendItems = [{
         name: "You",
         description: "Data from your answers"
     },
@@ -40,11 +40,11 @@ var legendItems = [{
         color: "#304E63"
     }
 ];
-react_2.storiesOf('Results/Legend', module)
-    .add('Default', function () { return (react_1.default.createElement(design_elements_react_1.Legend, { items: legendItems })); });
-react_2.storiesOf('Results/ProgressCircle', module)
-    .add('ProgressCircle', function () { return (react_1.default.createElement(design_elements_react_1.ProgressCircle, { percent: 66, color: 'rgb(101,226,255)', descriptionLabel: 'RRSP', resultLabel: '56 k$', secondary: false })); })
-    .add('ProgressCircle Secondary', function () { return (react_1.default.createElement(design_elements_react_1.ProgressCircle, { percent: 66, color: '#304E63', descriptionLabel: 'RRSP', resultLabel: '56 k$', secondary: true })); });
-react_2.storiesOf('Results/ProgressBar', module)
-    .add('Default', function () { return (react_1.default.createElement(design_elements_react_1.ProgressBar, { content: progressBars })); });
+react_1.storiesOf('Results/Legend', module)
+    .add('Default', () => (React.createElement(design_elements_react_1.Legend, { items: legendItems })));
+react_1.storiesOf('Results/ProgressCircle', module)
+    .add('ProgressCircle', () => (React.createElement(design_elements_react_1.ProgressCircle, { percent: 66, color: 'rgb(101,226,255)', descriptionLabel: 'RRSP', resultLabel: '56 k$', secondary: false })))
+    .add('ProgressCircle Secondary', () => (React.createElement(design_elements_react_1.ProgressCircle, { percent: 66, color: '#304E63', descriptionLabel: 'RRSP', resultLabel: '56 k$', secondary: true })));
+react_1.storiesOf('Results/ProgressBar', module)
+    .add('Default', () => (React.createElement(design_elements_react_1.ProgressBar, { content: progressBars })));
 //# sourceMappingURL=results.js.map

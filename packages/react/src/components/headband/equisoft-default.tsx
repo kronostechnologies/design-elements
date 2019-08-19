@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Child } from '../buttons/abstract-button';
@@ -75,11 +75,10 @@ const Project = styled.em`
   }
 `;
 
-function Headband(props: any): ReactNode {
-    const { children, appName }: {children: Child,  appName: string} = props;
+const Headband = ({ children, appName }: {children: Child,  appName: string}) => {
 
     return (
-        <Header {...props} role="banner">
+        <Header role="banner">
             <Brand href="/" aria-label="Home" rel="index">
                 <MediaView maxWidth={breakpoints.tablet}>
                     <Logo>
@@ -101,6 +100,6 @@ function Headband(props: any): ReactNode {
             </div>
         </Header>
     );
-}
+};
 
 export { Headband };
