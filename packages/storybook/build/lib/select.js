@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
-var react_2 = require("@storybook/react");
-var design_elements_react_1 = require("@equisoft/design-elements-react");
-var provinces = [{ value: "", label: "-" },
+const React = require("react");
+const react_1 = require("@storybook/react");
+const design_elements_react_1 = require("@equisoft/design-elements-react");
+const provinces = [{ value: "", label: "-" },
     { value: "on", label: "Ontario" },
     { value: "qc", label: "Quebec" },
     { value: "bc", label: "British Columbia" },
@@ -17,6 +17,6 @@ var provinces = [{ value: "", label: "-" },
     { value: "nt", label: "Northwest Territories" },
     { value: "nu", label: "Nunavut" },
     { value: "yt", label: "Yukon" }];
-react_2.storiesOf('Select', module)
-    .add('Default', function () { return (react_1.default.createElement(design_elements_react_1.Select, { id: "s_provinces", label: "Choose your province or territory", options: provinces, valid: true, validMsg: 'Temporary Message', children: true })); });
+react_1.storiesOf('Select', module)
+    .add('Default', () => (React.createElement(design_elements_react_1.Select, { id: "s_provinces", label: "Choose your province or territory", options: provinces, valid: true, validMsg: 'Temporary Message', children: true })));
 //# sourceMappingURL=select.js.map
