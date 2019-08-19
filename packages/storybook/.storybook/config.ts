@@ -1,9 +1,10 @@
 import { configure } from '@storybook/react';
 import '@equisoft/design-elements-web/style/body.css';
 
+const req = require.context('../stories', true, /\.stories\.tsx$/);
+
 function loadStories() {
-    const req = require.context('../stories', true, /\.jsx$/);
-    req.keys().forEach(filename => req(filename));
+  req.keys().forEach(req);
 }
 
 configure(loadStories, module);

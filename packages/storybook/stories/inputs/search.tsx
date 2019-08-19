@@ -8,7 +8,6 @@ storiesOf('Search Bar', module)
             id="searchbar_contextual"
             label="Search"
             onChange={(value)=>{console.log(`Searching for: ${value}`)}}
-            placeholder="Ex.: Miky Mike"
         />
     ))
     .add('Global', () => (
@@ -16,7 +15,6 @@ storiesOf('Search Bar', module)
             id="searchbar_global"
             label="Search"
             onSearch={(value)=>{console.log(`Searching for: ${value}`)}}
-            placeholder="Ex.: Marquee Mark"
         />
     ))
     .add('Disabled', () => (
@@ -24,6 +22,5 @@ storiesOf('Search Bar', module)
             disabled
             id="searchbar_disabled"
             label="Search"
-            placeholder="Ex.: Sorry it's disabled"
         />
     ));

@@ -46,13 +46,14 @@ storiesOf('Results/Legend', module)
         <Legend items={legendItems} />
     ));
 
-storiesOf('Results/ProgressCircle')
+storiesOf('Results/ProgressCircle', module)
     .add('ProgressCircle', () => (
         <ProgressCircle
             percent={66}
             color={'rgb(101,226,255)'}
             descriptionLabel='RRSP'
             resultLabel='56 k$'
+            secondary={false}
         />
     ))
     .add('ProgressCircle Secondary', () => (

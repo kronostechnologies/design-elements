@@ -9,6 +9,7 @@ storiesOf('Input text fields', module)
             label="First Name"
             placeholder="Ex.: John"
             type="text"
+            validMsg='Temporary Message'
         />
     ))
     .add('Type: Email', () => (
@@ -17,6 +18,7 @@ storiesOf('Input text fields', module)
             label="Email"
             placeholder="Ex.: name@example.com"
             type="email"
+            validMsg='Temporary Message'
         />
     ))
     .add('Type: Phone', () => (
@@ -25,6 +27,7 @@ storiesOf('Input text fields', module)
             label="Phone"
             placeholder="Ex.: 555-555-5555"
             type="tel"
+            validMsg='Temporary Message'
         />
     ))
     .add('Default value', () => (
@@ -32,6 +35,7 @@ storiesOf('Input text fields', module)
             defaultValue="1234 Main Street"
             id="ta_address"
             label="Address"
+            validMsg='Temporary Message'
         />
     ))
     .add('Required', () => (
@@ -40,6 +44,7 @@ storiesOf('Input text fields', module)
             label="Last Name (required)"
             placeholder="Ex.: Doe"
             required
+            validMsg='Temporary Message'
         />
     ))
     .add('Event callbacks', () => (
@@ -51,6 +56,7 @@ storiesOf('Input text fields', module)
             onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
             placeholder="Ex.: Hello"
             required
+            validMsg='Temporary Message'
         />
     ))
     .add('Pattern validation', () => (
@@ -69,5 +75,6 @@ storiesOf('Input text fields', module)
             id="ta_disabled"
             label="A disabled text input"
             placeholder="Sorry but this field is disabled"
+            validMsg='Temporary Message'
         />
     ));
