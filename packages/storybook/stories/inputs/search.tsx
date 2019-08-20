@@ -1,30 +1,30 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react';
 
-storiesOf('Search Bar', module)
-    .add('Contextual', () => (
+import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+
+const stories = storiesOf('Search Bar', module);
+stories.addDecorator(withKnobs);
+
+stories.add('Contextual', () => (
         <SearchContextual
-            label="Search"
-            onChange={event => {
-                console.log(`Searching for: ${event.currentTarget.value}`);
-            }}
+            label={text('label', 'Search')}
+            onChange={(value) => {console.log(`Searching for: ${value}`); }}
             placeholder="Ex.: Miky Mike"
         />
     ))
     .add('Global', () => (
         <SearchGlobal
-            label="Search"
-            onSearch={value => {
-                console.log(`Searching for: ${value}`);
-            }}
+            label={text('label', 'Search')}
+            onSearch={(value) => {console.log(`Searching for: ${value}`); }}
             placeholder="Ex.: Marquee Mark"
         />
     ))
     .add('Disabled', () => (
         <SearchGlobal
-            disabled
-            label="Search"
+            disabled={boolean('disabled', true)}
+            label={text('label', 'Search')}
             placeholder="Ex.: Sorry it's disabled"
         />
     ));

@@ -1,39 +1,46 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { AddButton, Button } from '@equisoft/design-elements-react';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
-storiesOf('Buttons', module)
-    .add('Primary', () => (
-        <Button buttonType="primary" onClick={() => {console.log('Button Clicked')}}>
-            Primary Button
+const options = ['primary', 'secondary', 'tertiary'];
+
+const stories = storiesOf('Buttons', module);
+stories.addDecorator(withKnobs);
+
+stories.add('Primary', () => (
+        <Button buttonType={select('buttonType', options, 'primary')} onClick={() => {console.log('Button Clicked')}}>
+            {text('Children (not a property)', 'Primary Button')}
         </Button>
     ))
     .add('Secondary', () => (
-        <Button buttonType="secondary" onClick={() => {console.log('Button Clicked')}}>Secondary Button</Button>
+        <Button buttonType={select('buttonType', options, 'secondary')} onClick={() => {console.log('Button Clicked')}}>{text('Children (not a property)', 'Secondary Button')}</Button>
     ))
     .add('Tertiary', () => (
-        <Button buttonType="tertiary" onClick={() => {console.log('Button Clicked')}}>Tertiary Button</Button>
+        <Button buttonType={select('buttonType', options, 'tertiary')} onClick={() => {console.log('Button Clicked')}}>{text('Children (not a property)', 'Tertiary Button')}</Button>
     ))
     .add('Disabled', () => (
-        <Button disabled buttonType="primary" onClick={() => {console.log('Button Clicked')}}>Disabled Button</Button>
+        <Button disabled={boolean('disabled', true)} buttonType={select('buttonType', options, 'primary')} onClick={() => {console.log('Button Clicked')}}>{text('Children (not a property)', 'Disabled Button')}</Button>
     ))
     .add('Event callback', () => (
         <Button
-            onClick={() => {console.log("The button has been clicked!")}}
-            buttonType="primary"
+            onClick={() => {console.log('The button has been clicked!')}}
+            buttonType={select('buttonType', options, 'primary')}
         >
-            See Console For Callback
+            {text('Children (not a property)', 'See Console for Callback')}
         </Button>
     ));
 
-storiesOf('Buttons/Add', module)
-    .add('Primary', () => (
-        <AddButton buttonType="primary" onClick={() => {console.log('Button Clicked')}}>Primary Button</AddButton>
+const nested = storiesOf('Buttons/Add', module);
+nested.addDecorator(withKnobs);
+  
+nested.add('Primary', () => (
+        <AddButton buttonType={select('buttonType', options, 'primary')} onClick={() => {console.log('Button Clicked')}}>{text('Children (not a property)', 'Primary Button')}</AddButton>
     ))
     .add('Secondary', () => (
-        <AddButton buttonType="secondary" onClick={() => {console.log('Button Clicked')}}>Secondary Button</AddButton>
+        <AddButton buttonType={select('buttonType', options, 'secondary')} onClick={() => {console.log('Button Clicked')}}>{text('Children (not a property)', 'Secondary Button')}</AddButton>
     ))
     .add('Tertiary', () => (
-        <AddButton buttonType="tertiary" onClick={() => {console.log('Button Clicked')}}>Tertiary Button</AddButton>
+        <AddButton buttonType={select('buttonType', options, 'tertiary')} onClick={() => {console.log('Button Clicked')}}>{text('Children (not a property)', 'Tertiary Button')}</AddButton>
     ));
