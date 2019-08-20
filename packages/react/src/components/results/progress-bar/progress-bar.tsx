@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Bar } from './bar/bar';
 
 const Label = styled.label`
-  color: ${(props: any) => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};
+  color: ${(props: {secondary: boolean}) => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};
   font-size: 0.875rem;
 `;
 

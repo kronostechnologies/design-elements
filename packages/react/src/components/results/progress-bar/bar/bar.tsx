@@ -35,7 +35,7 @@ interface BarProps {
 }
 
 const Bar = ({ color, percent, endLabel, secondary }: BarProps) => (
-    <Container secondary={secondary}>
+    <Container secondary={secondary || false}>
         <Progress>
             <StyledBar color={color} percent={percent} />
         </Progress>
