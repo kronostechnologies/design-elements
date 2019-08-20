@@ -31,7 +31,7 @@ interface BarProps {
     color: string;
     percent: string;
     endLabel: string;
-    secondary: boolean;
+    secondary?: boolean;
 }
 
 const Bar = ({ color, percent, endLabel, secondary }: BarProps) => (

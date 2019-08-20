@@ -9,7 +9,7 @@ const Hidden = styled.span`
 `;
 
 const VisuallyHidden =  ({ children }: {children: Child}) => (
-    <Hidden>
+    <Hidden aria-hidden="false">
         {children}
     </Hidden>
 );
