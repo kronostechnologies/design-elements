@@ -18,10 +18,15 @@ export default `
   &:disabled {
     background-color: rgb(242, 243, 249);
     border-color: rgb(217, 221, 226);
+
     &,
     &::placeholder {
       color: rgb(156, 167, 180);
     }
+  }
+
+  &:focus {
+    border-color: rgb(54, 71, 127);
   }
 
   label + & {

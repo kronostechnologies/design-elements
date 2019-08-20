@@ -13,7 +13,7 @@ import SearchContextual from './components/forms/inputs/search-contextual';
 import SearchGlobal from './components/forms/inputs/search-global';
 import TextArea from './components/forms/inputs/text-area';
 import TextInput from './components/forms/inputs/text-input';
-import Select from './components/forms/selects/Select';
+import Select from './components/forms/selects/select';
 
 // Miscellaneous
 import Card from './components/card';

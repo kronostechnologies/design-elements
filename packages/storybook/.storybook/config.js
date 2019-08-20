@@ -1,5 +1,5 @@
 import { configure } from '@storybook/react';
-import '@equisoft/design-elements-web/style/body.scss';
+import '@equisoft/design-elements-web/style/body.css';
 
 function loadStories() {
     const req = require.context('../stories', true, /\.jsx$/);

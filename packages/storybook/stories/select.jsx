@@ -23,6 +23,28 @@ storiesOf('Select', module)
             id="s_provinces"
             name="provinces"
             label="Choose your province or territory"
+            onChange={(value) => {console.log(value);}}
             options={provinces}
+        />
+    ))
+    .add('With Skip', () => (
+        <Select
+            id="s_provinces"
+            name="provinces"
+            label="Choose your province or territory"
+            onChange={(value) => {console.log(value);}}
+            options={provinces}
+            skipLabel={"Skip this question"}
+        />
+    ))
+    .add('Required', () => (
+        <Select
+            id="s_provinces"
+            name="provinces"
+            label="Choose your province or territory"
+            onChange={(value) => {console.log(value);}}
+            options={provinces}
+            required
+            skipLabel={"Skip this question"}
         />
     ));

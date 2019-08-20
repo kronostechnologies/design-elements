@@ -1,8 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import styled from 'styled-components';
 import styles from '../styles/inputs.js';
+
 import FieldContainer from '../field-container';
+import ChooseInput from '../../choosers/controls/choose-input';
 
 const StyledSelect = styled.select`
   ${styles}
@@ -14,35 +16,65 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-const Select = ({ children, id, label, options, required, valid, validMsg, ...props }) => {
-    const [validity, setValidity] = useState(true);
+const Select = ({ id, label, onChange, options, required, skipLabel, validMsg }) => {
+    const [{ validity }, setValidity] = useState({ validity: true });
+
+    const selectRef = useRef(null);
+    const skipRef = useRef(null);
 
     const selectOptions = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
 
-    const handleCheckValidity = event => {
-        setValidity(event.target.checkValidity());
+    const handleSelectChange = event => {
+        skipRef.current.checked = false;
+        setValidity({ validity: event.target.checkValidity() });
+
+        if (typeof onChange === 'function') {
+            onChange(event.target.value);
+        }
+    };
+
+    const handleSkipChange = () => {
+        if (skipRef.current.checked) {
+            selectRef.current.value = '';
+            setValidity({ validity: true });
+        }
+
+        onChange(skipRef.current.checked ? 'skip' : selectRef.current.value);
     };
 
     return (
-        <FieldContainer
-            fieldId={id}
-            label={label}
-            valid={validity}
-            validMsg={validMsg || 'You must select an option'}
-        >
-            <StyledSelect
-                {...props}
-                id={id}
-                onBlur={event => handleCheckValidity(event)}
-                onChange={event => handleCheckValidity(event)}
-                required={required}
+        <>
+            <FieldContainer
+                fieldId={id}
+                label={label}
+                valid={validity}
+                validMsg={validMsg || 'You must select an option'}
             >
-                {selectOptions}
-            </StyledSelect>
-        </FieldContainer>
+                <StyledSelect
+                    id={id}
+                    onChange={handleSelectChange}
+                    required={required}
+                    ref={selectRef}
+                >
+                    {selectOptions}
+                </StyledSelect>
+            </FieldContainer>
+            { skipLabel && (
+                <ChooseInput
+                    groupName="provinces"
+                    id={`${id}_skip`}
+                    onChange={handleSkipChange}
+                    ref={skipRef}
+                    type="checkbox"
+                    value="skip"
+                >
+                    {skipLabel}
+                </ChooseInput>
+            )}
+        </>
     );
 };
 

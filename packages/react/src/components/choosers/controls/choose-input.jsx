@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import visuallyhidden from '../../a11y/styles/visuallyhidden';
 import chooseStyles from './styles/choose';
 
-const Radio = styled.input`
+const Input = styled.input`
   ${visuallyhidden}
 `;
 
@@ -12,7 +12,7 @@ const Label = styled.label`
   ${chooseStyles}
 `;
 
-const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value }) => {
+const ChooseInput = React.forwardRef(({ defaultChecked, children, groupName, id, onChange, type, value }, ref) => {
     const handleChange = event => {
         if (typeof onChange === 'function') {
             onChange(event.target.value);
@@ -21,17 +21,18 @@ const ChooseRadio = ({ defaultChecked, children, groupName, id, onChange, value 
 
     return (
         <>
-            <Radio
+            <Input
                 defaultChecked={defaultChecked}
                 id={id}
-                name={groupName}
                 onChange={event => handleChange(event)}
-                type="radio"
+                name={groupName}
+                ref={ref}
+                type={type}
                 value={value}
             />
             <Label htmlFor={id}>{children}</Label>
         </>
     );
-};
+});
 
-export default ChooseRadio;
+export default ChooseInput;
