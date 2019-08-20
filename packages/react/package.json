@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-react",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "React implementation of the Equisoft design system.",
   "license": "MIT",
   "main": "dist/design-elements-react.cjs.js",

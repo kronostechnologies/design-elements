@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-web",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Web components implementation of the Equisoft design system.",
   "license": "MIT",
   "main": "dist/design-elements-web.cjs.js",
