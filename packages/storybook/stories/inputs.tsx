@@ -3,6 +3,7 @@ import React from 'react';
 import { TextInput } from '@equisoft/design-elements-react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Input text fields', module)
     .add('Type: Text', () => (

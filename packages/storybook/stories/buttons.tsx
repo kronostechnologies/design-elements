@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AddButton, Button } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
@@ -14,6 +15,7 @@ storiesOf('Buttons', module)
             label={text('label', 'Primary Button')}
             buttonType={select('buttonType', options, 'primary') as ButtonType}
             disabled={boolean('disabled', false)}
+            onClick={action('Button clicked')}
         />
     ))
     .add('Secondary', () => (
@@ -21,6 +23,7 @@ storiesOf('Buttons', module)
             label={text('label', 'Secondary Button')}
             buttonType={select('buttonType', options, 'secondary') as ButtonType}
             disabled={boolean('disabled', false)}
+            onClick={action('Button clicked')}
         />
     ))
     .add('Tertiary', () => (
@@ -28,6 +31,7 @@ storiesOf('Buttons', module)
             label={text('label', 'Tertiary Button')}
             buttonType={select('buttonType', options, 'tertiary') as ButtonType}
             disabled={boolean('disabled', false)}
+            onClick={action('Button clicked')}
         />
     ))
     .add('Disabled', () => (
@@ -35,6 +39,7 @@ storiesOf('Buttons', module)
             label={text('label', 'Disabled Button')}
             buttonType={select('buttonType', options, 'primary') as ButtonType}
             disabled={boolean('disabled', true)}
+            onClick={action('Button clicked')}
         />
     ))
     .add('Event callback', () => (
@@ -52,6 +57,7 @@ storiesOf('Buttons/Add', module)
             label={text('label', 'Primary Button')}
             buttonType={select('buttonType', options, 'primary') as ButtonType}
             disabled={boolean('disabled', false)}
+            onClick={action('Button clicked')}
         />
     ))
     .add('Secondary', () => (
@@ -59,6 +65,7 @@ storiesOf('Buttons/Add', module)
             label={text('label', 'Secondary Button')}
             buttonType={select('buttonType', options, 'secondary') as ButtonType}
             disabled={boolean('disabled', false)}
+            onClick={action('Button clicked')}
         />
     ))
     .add('Tertiary', () => (
@@ -66,5 +73,6 @@ storiesOf('Buttons/Add', module)
             label={text('label', 'Tertiary Button')}
             buttonType={select('buttonType', options, 'tertiary') as ButtonType}
             disabled={boolean('disabled', false)}
+            onClick={action('Button clicked')}
         />
     ));
