@@ -2,7 +2,7 @@
     "extends": "./node_modules/@equisoft/tslint-config/tsconfig.standards.json",
     "compilerOptions": {
         "target": "es6",
-        "module": "commonjs",
+        "module": "ES2015",
         "esModuleInterop": true,
         "jsx": "react",
         "allowSyntheticDefaultImports": true,
@@ -12,7 +12,7 @@
         "paths": {},
         "outDir": "./dist",
         "declaration": true,
-        "declarationDir": "./dist"
+        "declarationDir": "./dist",
     },
     "include": [
         "src/**/*"

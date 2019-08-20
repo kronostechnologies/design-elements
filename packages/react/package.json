@@ -35,7 +35,6 @@
   "dependencies": {
     "@types/lodash-es": "^4.17.3",
     "feather-icons": "^4.21.0",
-    "lodash-es": "^4.17.14",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
@@ -60,6 +59,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^2.3.0",
+    "lodash-es": "^4.17.14",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.2.3",

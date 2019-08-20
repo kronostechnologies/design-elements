@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { styles } from './styles/abstract';
 
-export type Child = ReactNode | ReactNode[];
+export type Child = ReactNode;
 
 export interface AbstractButtonProps {
     children?: Child;

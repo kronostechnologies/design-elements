@@ -8,24 +8,20 @@ const Label = styled.label`
   font-size: 0.875rem;
 `;
 
-interface ElProps {
-    color: string;
-    descriptionLabel: string;
-    endLabel: string;
-    percent: string;
-    secondary: boolean;
+interface ProgressBarProps {
+    content: {color: string, descriptionLabel: string, endLabel: string, percent: string, secondary?: boolean}[];
 }
 
-const ProgressBar = ({ content }: any) => (
+const ProgressBar = ({ content }: ProgressBarProps) => (
     <React.Fragment>
-        {content.map((el: ElProps) => (
+        {content.map((el) => (
             <div>
-                <Label secondary={el.secondary}>{el.descriptionLabel}</Label>
+                <Label secondary={el.secondary || false}>{el.descriptionLabel}</Label>
                 <Bar
                     color={el.color}
                     endLabel={el.endLabel}
                     percent={el.percent}
-                    secondary={el.secondary}
+                    secondary={el.secondary || false}
                 />
             </div>
         ))}

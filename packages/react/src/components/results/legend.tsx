@@ -32,15 +32,13 @@ const Description = styled.span`
   font-size: 0.75rem;
 `;
 
-interface ItemProps {
-    name: string;
-    description: string;
-    color?: string;
+interface LegendProps {
+    items: {name: string, description: string, color?: string}[];
 }
 
-const Legend = ({ items }: any) => (
+const Legend = ({ items }: LegendProps) => (
     <List>
-        {items.map((item: ItemProps) => (
+        {items.map((item) => (
             <Item color={item.color}>
                 <div>
                     <p>{item.name}</p>

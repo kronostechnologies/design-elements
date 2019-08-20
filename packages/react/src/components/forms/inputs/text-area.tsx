@@ -69,8 +69,8 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
             <StyledTextArea
                 disabled={disabled}
                 id={id}
-                onBlur={(event: FocusEvent<HTMLTextAreaElement>) => {handleBlur(event); }}
-                onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {handleChange(event); }}
+                onBlur={handleBlur}
+                onChange={handleChange}
                 onFocus={handleFocus}
                 required={required}
                 value={value}
