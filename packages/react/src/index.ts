@@ -17,7 +17,7 @@ import { Select } from './components/forms/selects/select';
 
 // Miscellaneous
 import { Card } from './components/card';
-import Chooser from './components/choosers/chooser';
+import { Chooser } from './components/choosers/chooser';
 import { EnsoSpinner } from './components/enso-spinner';
 import { Headband } from './components/headband/equisoft-default';
 import { Progress } from './components/progress';

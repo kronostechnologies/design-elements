@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Child } from '../buttons/abstract-button';
-import { styles } from './styles/visuallyhidden';
+import { hiddenStyle } from './styles/visuallyhidden';
 
 const Hidden = styled.span`
-  ${styles}
+  ${hiddenStyle}
 `;
 
 const VisuallyHidden =  ({ children }: {children: Child}) => (

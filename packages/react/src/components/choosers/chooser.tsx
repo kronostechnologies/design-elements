@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChooseInput from './controls/choose-input';
+import { ChooseInput } from './controls/choose-input';
 
 const Grid = styled.div`
   align-items: stretch;
@@ -59,4 +59,4 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
     );
 };
 
-export default Chooser;
+export { Chooser };

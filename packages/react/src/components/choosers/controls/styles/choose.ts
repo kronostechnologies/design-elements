@@ -1,4 +1,4 @@
-export default `
+export const chooseStyle = `
   align-items: center;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(217, 221, 226);
