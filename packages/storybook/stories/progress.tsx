@@ -1,14 +1,18 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Progress } from '@equisoft/design-elements-react';
 
-storiesOf('Progress', module)
-    .add('Beginning', () => (
-        <Progress max={2} value={0} />
+import { Progress } from '@equisoft/design-elements-react';
+import { withKnobs, number } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+
+const stories = storiesOf('Progress', module);
+stories.addDecorator(withKnobs);
+
+stories.add('Beginning', () => (
+        <Progress max={number('max', 2)} value={number('value', 0)} />
     ))
     .add('Middle', () => (
-        <Progress max={2} value={1} />
+        <Progress max={number('max', 2)} value={number('value', 1)} />
     ))
     .add('End', () => (
-        <Progress max={2} value={2} />
+        <Progress max={number('max', 2)} value={number('value', 2)} />
     ));
