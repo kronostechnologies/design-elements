@@ -1,20 +1,23 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Search Bar', module)
     .add('Contextual', () => (
         <SearchContextual
             id="searchbar_contextual"
             label="Search"
-            changeCallback={(value)=>{console.log(`Searching for: ${value}`)}}
+            placeholder="Ex.: Miky Mike"
+            changeCallback={action('Searching for')}
         />
     ))
     .add('Global', () => (
         <SearchGlobal
             id="searchbar_global"
             label="Search"
-            searchCallback={(value)=>{console.log(`Searching for: ${value}`)}}
+            placeholder="Ex.: Marquee Mark"
+            searchCallback={action('Searching for')}
         />
     ))
     .add('Disabled', () => (

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { TextInput } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Input text fields', module)
     .add('Type: Text', () => (
@@ -47,9 +48,9 @@ storiesOf('Input text fields', module)
         <TextInput
             id="ta_lastname"
             label="See console for callbacks"
-            changeCallback={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
-            blurCallback={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
-            focusCallback={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
+            onChange={action('Custom function called on change. Current value')}
+            onBlur={action('Custom function called on blur. Current value')}
+            onFocus={action('Custom function called on focus. Current value')}
             placeholder="Ex.: Hello"
             required
             validMsg="This field is required"

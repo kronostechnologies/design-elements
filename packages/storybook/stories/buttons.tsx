@@ -2,21 +2,22 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { AddButton, Button } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Buttons', module)
     .add('Primary', () => (
-        <Button buttonType="primary" onClick={() => {console.log('Button Clicked')}}>
+        <Button buttonType="primary" onClick={action('Button clicked')}>
             Primary Button
         </Button>
     ))
     .add('Secondary', () => (
-        <Button buttonType="secondary" onClick={() => {console.log('Button Clicked')}}>Secondary Button</Button>
+        <Button buttonType="secondary" onClick={action('Button clicked')}>Secondary Button</Button>
     ))
     .add('Tertiary', () => (
-        <Button buttonType="tertiary" onClick={() => {console.log('Button Clicked')}}>Tertiary Button</Button>
+        <Button buttonType="tertiary" onClick={action('Button clicked')}>Tertiary Button</Button>
     ))
     .add('Disabled', () => (
-        <Button disabled buttonType="primary" onClick={() => {console.log('Button Clicked')}}>Disabled Button</Button>
+        <Button disabled buttonType="primary" onClick={action('Button clicked')}>Disabled Button</Button>
     ))
     .add('Event callback', () => (
         <Button
@@ -29,11 +30,11 @@ storiesOf('Buttons', module)
 
 storiesOf('Buttons/Add', module)
     .add('Primary', () => (
-        <AddButton buttonType="primary" onClick={() => {console.log('Button Clicked')}}>Primary Button</AddButton>
+        <AddButton buttonType="primary" onClick={action('Button clicked')}>Primary Button</AddButton>
     ))
     .add('Secondary', () => (
-        <AddButton buttonType="secondary" onClick={() => {console.log('Button Clicked')}}>Secondary Button</AddButton>
+        <AddButton buttonType="secondary" onClick={action('Button clicked')}>Secondary Button</AddButton>
     ))
     .add('Tertiary', () => (
-        <AddButton buttonType="tertiary" onClick={() => {console.log('Button Clicked')}}>Tertiary Button</AddButton>
+        <AddButton buttonType="tertiary" onClick={action('Button clicked')}>Tertiary Button</AddButton>
     ));

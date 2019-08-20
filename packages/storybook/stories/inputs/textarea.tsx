@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { TextArea } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('TextArea', module)
     .add('Normal', () => (
@@ -13,9 +14,10 @@ storiesOf('TextArea', module)
         <TextArea
             id="ta_callbacks"
             label="Text area label"
-            changeCallback={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
-            blurCallback={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
-            focusCallback={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
+            changeCallback={action('Custom function called on blur. Current value:')}
+            blurCallback={action('Custom function called on blur. Current value:')}
+            focusCallback={action('Custom function called on blur. Current value:')}
+            validMsg='Temporary Message'
         />
     ))
     .add('Required', () => (
