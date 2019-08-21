@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Child } from '../buttons/abstract-button';
 import { MediaView } from '../media-view';
 import { breakpoints } from '../tokens/breakpoints';
 
