@@ -8,8 +8,16 @@ const Label = styled.label`
   font-size: 0.875rem;
 `;
 
+interface ProgressBarProp {
+    color: string;
+    descriptionLabel: string;
+    endLabel: string;
+    percent: string;
+    secondary?: boolean;
+}
+
 interface ProgressBarProps {
-    content: {color: string, descriptionLabel: string, endLabel: string, percent: string, secondary?: boolean}[];
+    content: ProgressBarProp[];
 }
 
 const ProgressBar = ({ content }: ProgressBarProps) => (
