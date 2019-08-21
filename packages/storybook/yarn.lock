@@ -1088,10 +1088,10 @@
     react-dom "^16.8.6"
     styled-components "^4.2.0"
 
-"@equisoft/design-elements-web@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-0.1.1.tgz#7482fab47c43b265d753f3a6d2be012a6b9df4ac"
-  integrity sha512-RPsg7lQMuAYA4GA2OFi3ldqGRCgUvgTZ1grIkurOtcklwg9qGhOpZQPYuX2pFb+hm+GEdwWLA1HdQ3TO3u7AQg==
+"@equisoft/design-elements-web@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-0.5.0.tgz#219019202d92e6e8562c639758171ec3cebcba52"
+  integrity sha512-rdqIxoKUvrB2nugAewUwz5L0+XLJXBL91Cl26sSU7w8ESVF+9nJz+4XPw7K9Fn2fyRh7OXS7IRRlKu/r+UlIvg==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
