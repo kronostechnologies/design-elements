@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import styled from 'styled-components';
-import { Child } from '../buttons/abstract-button';
 
 const StyledLabel = styled.label`
   color: rgb(0, 0, 0);
@@ -16,7 +15,7 @@ const StyledLabel = styled.label`
   }
 `;
 
-const Label = ({ children, forId }: {children: Child, forId: string}) => (
+const Label = ({ children, forId }: {children: ReactNode, forId: string}) => (
     <StyledLabel htmlFor={forId}>
         {children}
     </StyledLabel>

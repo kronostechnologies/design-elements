@@ -1,7 +1,6 @@
-import React, { ChangeEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactNode, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import { Child } from '../../buttons/abstract-button';
 import { ChooseInput } from '../../choosers/controls/choose-input';
 import { FieldContainer } from '../field-container';
 
@@ -18,7 +17,7 @@ const StyledSelect = styled.select`
 `;
 
 interface SelectProps {
-    children: Child;
+    children: ReactNode;
     id: string;
     label: string;
     options: any[];

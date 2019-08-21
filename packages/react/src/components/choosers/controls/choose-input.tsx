@@ -1,8 +1,7 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 import styled from 'styled-components';
 
 import { hiddenStyle } from '../../a11y/styles/visuallyhidden';
-import { Child } from '../../buttons/abstract-button';
 import { chooseStyle } from './styles/choose';
 
 const Input = styled.input<ForwardRefInput>`
@@ -19,7 +18,7 @@ interface ForwardRefInput {
 
 interface ChooseInputProps {
     defaultChecked?: boolean;
-    children: Child;
+    children: ReactNode;
     groupName: string;
     id: string;
     type: 'radio' | 'checkbox';
