@@ -1,4 +1,4 @@
-export const styles = `
+export const abstractStyle = `
   align-items: center;
   appearance: none;
   background: inherit;

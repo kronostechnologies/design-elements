@@ -1,12 +1,12 @@
 import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import styled from 'styled-components';
 
-import { styles } from '../styles/inputs';
+import { inputsStyle } from '../styles/inputs';
 
 import { FieldContainer } from '../field-container';
 
 const StyledTextArea = styled.textarea`
-  ${styles}
+  ${inputsStyle}
   min-height: 6.5rem;
   min-width: 100%;
   outline: none;

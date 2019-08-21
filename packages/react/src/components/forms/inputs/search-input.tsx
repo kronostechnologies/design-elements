@@ -8,7 +8,7 @@ import { VisuallyHidden } from '../../a11y/visuallyhidden';
 import { SearchButton } from '../../buttons/search-button';
 
 import { Label } from '../label';
-import { styles } from '../styles/inputs';
+import { inputsStyle } from '../styles/inputs';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ const IcoReset = styled(XIcon)`
 `;
 
 const Input = styled.input`
-  ${styles} /* Must be the first rule */
+  ${inputsStyle} /* Must be the first rule */
   border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')};
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;

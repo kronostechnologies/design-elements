@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { styles } from './styles/abstract';
+import { abstractStyle } from './styles/abstract';
 
 export interface AbstractButtonProps {
     children?: ReactNode;
@@ -10,7 +10,7 @@ export interface AbstractButtonProps {
 }
 
 const AbstractButton = styled.button`
-  ${styles}
+  ${abstractStyle}
 `;
 
 export { AbstractButton };

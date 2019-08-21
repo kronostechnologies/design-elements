@@ -2,12 +2,12 @@ import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import styled from 'styled-components';
 import { TextAreaProps } from './text-area';
 
-import { styles } from '../styles/inputs';
+import { inputsStyle } from '../styles/inputs';
 
 import { FieldContainer } from '../field-container';
 
 const Input = styled.input`
-  ${styles}
+  ${inputsStyle}
 `;
 
 interface TextInputProps extends TextAreaProps {
