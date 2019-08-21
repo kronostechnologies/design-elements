@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
 import { inputsStyle } from '../styles/inputs';
@@ -19,17 +19,17 @@ export interface TextAreaProps {
     disabled?: boolean;
     id: string;
     label: string;
-    onBlur?: ((event: FocusEvent<HTMLTextAreaElement>) => void);
-    onChange?: ((event: ChangeEvent<HTMLInputElement> | string) => void);
-    onFocus?: ((...args: any[]) => void);
     required?: boolean;
     validMsg: string;
+    blurCallback?(value: string): void;
+    changeCallback?(value: string): void;
+    focusCallback?(value: string): void;
 }
 
 interface ValueProps { value: string; }
 interface ValidityProps { validity: boolean; }
 
-const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, required, validMsg }: TextAreaProps) => {
+const TextArea = ({ defaultValue, disabled, id, label, blurCallback, changeCallback, focusCallback, required, validMsg }: TextAreaProps) => {
     const [{ value }, setValue] = useState<ValueProps>({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
 
@@ -39,8 +39,8 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
         setValue({ value: newValue });
         setValidity({ validity: event.target.checkValidity() });
 
-        if (typeof onBlur === 'function') {
-            onBlur(newValue);
+        if (blurCallback) {
+            blurCallback(newValue);
         }
     };
 
@@ -48,14 +48,14 @@ const TextArea = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus
         const newValue = event.target.value;
         setValue({ value: newValue });
 
-        if (typeof onChange === 'function') {
-            onChange(newValue);
+        if (changeCallback) {
+            changeCallback(newValue);
         }
     };
 
     const handleFocus = () => {
-        if (typeof onFocus === 'function') {
-            onFocus(value);
+        if (focusCallback) {
+            focusCallback(value);
         }
     };
 

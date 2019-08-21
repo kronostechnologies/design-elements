@@ -14,10 +14,9 @@ interface TextInputProps extends TextAreaProps {
     pattern?: string;
     placeholder?: string;
     type?: string;
-
 }
 
-const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
+const TextInput = ({ defaultValue, disabled, id, label, blurCallback, changeCallback, focusCallback, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
 
@@ -27,8 +26,8 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
         setValue({ value: newValue });
         setValidity({ validity: event.target.checkValidity() });
 
-        if (typeof onBlur === 'function') {
-            onBlur(newValue);
+        if (blurCallback) {
+            blurCallback(newValue);
         }
     };
 
@@ -36,14 +35,14 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
         const newValue = event.target.value;
         setValue({ value: newValue });
 
-        if (typeof onChange === 'function') {
-            onChange(newValue);
+        if (changeCallback) {
+            changeCallback(newValue);
         }
     };
 
     const handleFocus = () => {
-        if (typeof onFocus === 'function') {
-            onFocus(value);
+        if (focusCallback) {
+            focusCallback(value);
         }
     };
 
@@ -57,8 +56,8 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
             <Input
                 disabled={disabled}
                 id={id}
-                onBlur={(event: FocusEvent<HTMLInputElement>) => {handleBlur(event); }}
-                onChange={(event: ChangeEvent<HTMLInputElement>) => {handleChange(event); }}
+                onBlur={handleBlur}
+                onChange={handleChange}
                 onFocus={handleFocus}
                 pattern={pattern}
                 placeholder={placeholder}

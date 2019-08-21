@@ -92,25 +92,25 @@ export interface SearchInputProps {
     hasButton?: boolean;
     id: string;
     label?: string;
-    onChange?: ((...args: any[]) => void);
-    onSearch?: ((...args: any[]) => void);
+    changeCallback?(value: string): void;
+    searchCallback?(value: string): void;
 }
 
-const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: SearchInputProps) => {
+const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCallback }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: '' });
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
-        if (typeof onChange === 'function') {
-            onChange(newValue);
+        if (changeCallback) {
+            changeCallback(newValue);
         }
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (typeof onSearch === 'function' && event.keyCode === 13) {
-            onSearch(value);
+        if (searchCallback && event.keyCode === 13) {
+            searchCallback(value);
         }
     };
 
@@ -119,8 +119,8 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
     };
 
     const handleSearchButtonClick = () => {
-        if (typeof onSearch === 'function') {
-            onSearch(value);
+        if (searchCallback) {
+            searchCallback(value);
         }
     };
 
@@ -135,8 +135,8 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }: Sea
                 <Input
                     autoComplete="on"
                     disabled={disabled}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {handleChange(event); }}
-                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {handleKeyDown(event); }}
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
                     hasButton={hasButton}
                     id={id}
                     type="search"

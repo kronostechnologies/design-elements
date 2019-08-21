@@ -31,9 +31,7 @@ const ChooseInput = React.forwardRef(
         ref: React.Ref<HTMLInputElement>) => {
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-            if (typeof onChange === 'function') {
-                onChange(event.target.value);
-            }
+            onChange(event.target.value);
         };
 
         return (

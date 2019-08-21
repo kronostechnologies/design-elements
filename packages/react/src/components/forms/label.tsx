@@ -15,7 +15,12 @@ const StyledLabel = styled.label`
   }
 `;
 
-const Label = ({ children, forId }: {children: ReactNode, forId: string}) => (
+interface LabelProps {
+    children: ReactNode;
+    forId: string;
+}
+
+const Label = ({ children, forId }: LabelProps) => (
     <StyledLabel htmlFor={forId}>
         {children}
     </StyledLabel>

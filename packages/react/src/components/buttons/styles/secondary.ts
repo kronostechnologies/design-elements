@@ -1,4 +1,4 @@
-export const secondaryStyles = `
+export const secondaryStyle = `
   background-color: transparent;
   border-color: rgb(226, 115, 46);
   color: rgb(226, 115, 46);

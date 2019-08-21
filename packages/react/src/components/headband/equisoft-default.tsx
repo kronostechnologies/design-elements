@@ -74,32 +74,33 @@ const Project = styled.em`
   }
 `;
 
-function Headband(props: any): ReactNode {
-    const { children, appName }: {children: ReactNode,  appName: string} = props;
-
-    return (
-        <Header {...props} role="banner">
-            <Brand href="/" aria-label="Home" rel="index">
-                <MediaView maxWidth={breakpoints.tablet}>
-                    <Logo>
-                        <EquisoftIco />
-                    </Logo>
-                </MediaView>
-
-                <MediaView minWidth={breakpoints.tablet}>
-                    <Logo>
-                        <Equisoft />
-                    </Logo>
-                </MediaView>
-
-                <Project>{appName}</Project>
-            </Brand>
-
-            <div>
-                {children}
-            </div>
-        </Header>
-    );
+interface HeadbandProps {
+    children: ReactNode;
+    appName: string;
 }
+
+const Headband = ({ children, appName }: HeadbandProps) => (
+    <Header role="banner">
+        <Brand href="/" aria-label="Home" rel="index">
+            <MediaView maxWidth={breakpoints.tablet}>
+                <Logo>
+                    <EquisoftIco />
+                </Logo>
+            </MediaView>
+
+            <MediaView minWidth={breakpoints.tablet}>
+                <Logo>
+                    <Equisoft />
+                </Logo>
+            </MediaView>
+
+            <Project>{appName}</Project>
+        </Brand>
+
+        <div>
+            {children}
+        </div>
+    </Header>
+);
 
 export { Headband };

@@ -24,7 +24,6 @@ interface FieldContainerProps {
     label?: string;
     valid: boolean;
     validMsg: string;
-
 }
 
 const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps) => (
