@@ -7,7 +7,7 @@ const Grid = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: ${props => (props.inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none')};
+  grid-template-columns: ${(props: {inColumns?: boolean}) => (props.inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none')};
   width: auto;
 `;
 
@@ -15,8 +15,18 @@ const Skip = styled.div`
   margin: 1rem 0 0;
 `;
 
-const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel }) => {
-    const handleChange = value => {
+interface ChooserProps {
+    inColumns?: boolean;
+    groupName: string;
+    onChange?: ((...args: any[]) => void);
+    options: {value: string, label: string}[];
+    skipValue: string;
+    skipLabel: string;
+
+}
+
+const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel }: ChooserProps) => {
+    const handleChange = (value: any) => {
         if (typeof onChange === 'function') {
             onChange(value);
         }
