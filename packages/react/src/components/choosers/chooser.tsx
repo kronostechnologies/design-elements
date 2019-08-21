@@ -36,7 +36,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
         <ChooseInput
             groupName={groupName}
             id={`${groupName}_${i}`}
-            onChange={value => handleChange(value)}
+            onChange={handleChange}
             type="radio"
             value={option.value}
         >
@@ -49,7 +49,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
             <ChooseInput
                 groupName={groupName}
                 id={`${groupName}_skip`}
-                onChange={value => handleChange(value)}
+                onChange={handleChange}
                 type="radio"
                 value={skipValue}
             >
