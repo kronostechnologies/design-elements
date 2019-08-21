@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChooseInput from './controls/choose-input';
+import { ChooseInput } from './controls/choose-input';
 
 const Grid = styled.div`
   align-items: stretch;
   box-sizing: border-box;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: ${props => (props.inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none')};
+  grid-template-columns: ${(props: {inColumns?: boolean}) => (props.inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none')};
   width: auto;
 `;
 
@@ -15,8 +15,18 @@ const Skip = styled.div`
   margin: 1rem 0 0;
 `;
 
-const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel }) => {
-    const handleChange = value => {
+interface ChooserProps {
+    inColumns?: boolean;
+    groupName: string;
+    onChange?: ((...args: any[]) => void);
+    options: {value: string, label: string}[];
+    skipValue: string;
+    skipLabel: string;
+
+}
+
+const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel }: ChooserProps) => {
+    const handleChange = (value: any) => {
         if (typeof onChange === 'function') {
             onChange(value);
         }
@@ -26,7 +36,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
         <ChooseInput
             groupName={groupName}
             id={`${groupName}_${i}`}
-            onChange={value => handleChange(value)}
+            onChange={handleChange}
             type="radio"
             value={option.value}
         >
@@ -39,7 +49,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
             <ChooseInput
                 groupName={groupName}
                 id={`${groupName}_skip`}
-                onChange={value => handleChange(value)}
+                onChange={handleChange}
                 type="radio"
                 value={skipValue}
             >
@@ -59,4 +69,4 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
     );
 };
 
-export default Chooser;
+export { Chooser };

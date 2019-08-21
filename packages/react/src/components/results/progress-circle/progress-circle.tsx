@@ -3,8 +3,16 @@ import styled from 'styled-components';
 
 import { Circle } from './circle/circle';
 
+interface ProgressCircleProps {
+    percent: number;
+    color: string;
+    descriptionLabel: string;
+    resultLabel: string;
+    secondary: boolean;
+}
+
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-const ProgressCircle = ({ color, descriptionLabel, percent, resultLabel, secondary }) => {
+const ProgressCircle = ({ color, descriptionLabel, percent, resultLabel, secondary }: ProgressCircleProps) => {
     const radius = 73;
     const stroke = 8;
 
@@ -51,13 +59,13 @@ const ProgressCircle = ({ color, descriptionLabel, percent, resultLabel, seconda
                     percent={percent}
                     color={color}
                 />
-                <Result secondary={secondary}>
+                <Result>
                     <p>{resultLabel}</p>
                 </Result>
             </Wrapper>
-            <Label secondary={secondary}>{descriptionLabel}</Label>
+            <Label>{descriptionLabel}</Label>
         </Container>
     );
 };
 
-export default ProgressCircle;
+export { ProgressCircle };

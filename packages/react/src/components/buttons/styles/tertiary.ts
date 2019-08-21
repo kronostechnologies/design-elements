@@ -1,4 +1,4 @@
-export default `
+export const tertiaryStyle = `
   background-color: transparent;
   border-color: transparent;
   color: #637282;

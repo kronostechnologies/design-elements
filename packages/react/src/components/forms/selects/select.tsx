@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react';
-
+import React, { ChangeEvent, ReactNode, useRef, useState } from 'react';
 import styled from 'styled-components';
-import styles from '../styles/inputs.js';
 
-import FieldContainer from '../field-container';
-import ChooseInput from '../../choosers/controls/choose-input';
+import { ChooseInput } from '../../choosers/controls/choose-input';
+import { FieldContainer } from '../field-container';
+
+import { inputsStyle } from '../styles/inputs';
 
 const StyledSelect = styled.select`
-  ${styles}
+  ${inputsStyle}
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-position: right 0.75rem center;
@@ -16,19 +16,33 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-const Select = ({ id, label, onChange, options, required, skipLabel, validMsg }) => {
+interface SelectProps {
+    children: ReactNode;
+    id: string;
+    label: string;
+    options: any[];
+    required?: boolean;
+    skipLabel?: string;
+    valid: boolean;
+    validMsg: string;
+    onChange(value: string): void;
+}
+
+const Select = ({ id, label, onChange, options, required, skipLabel, validMsg }: SelectProps) => {
     const [{ validity }, setValidity] = useState({ validity: true });
 
-    const selectRef = useRef(null);
-    const skipRef = useRef(null);
+    const selectRef = useRef<HTMLSelectElement>(null);
+    const skipRef = useRef<HTMLInputElement>(null);
 
     const selectOptions = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
 
-    const handleSelectChange = event => {
-        skipRef.current.checked = false;
+    const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        if (skipRef.current) {
+            skipRef.current.checked = false;
+        }
         setValidity({ validity: event.target.checkValidity() });
 
         if (typeof onChange === 'function') {
@@ -37,12 +51,14 @@ const Select = ({ id, label, onChange, options, required, skipLabel, validMsg })
     };
 
     const handleSkipChange = () => {
-        if (skipRef.current.checked) {
-            selectRef.current.value = '';
-            setValidity({ validity: true });
-        }
+        if (selectRef.current && skipRef.current) {
+            if (skipRef.current.checked) {
+                selectRef.current.value = '';
+                setValidity({ validity: true });
+            }
 
-        onChange(skipRef.current.checked ? 'skip' : selectRef.current.value);
+            onChange(skipRef.current.checked ? 'skip' : selectRef.current.value);
+        }
     };
 
     return (
@@ -78,4 +94,4 @@ const Select = ({ id, label, onChange, options, required, skipLabel, validMsg })
     );
 };
 
-export default Select;
+export { Select };

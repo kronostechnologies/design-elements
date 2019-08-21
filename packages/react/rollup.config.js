@@ -1,7 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import svgr from '@svgr/rollup';
-import typescript from 'rollup-plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 
 export default {
     input: 'src/index.ts',
@@ -21,6 +21,8 @@ export default {
             exclude: 'node_modules/**',
         }),
         svgr({ icon: true }),
-        typescript(),
+        typescript({
+            objectHashIgnoreUnknownHack: true,
+        }),
     ],
 };

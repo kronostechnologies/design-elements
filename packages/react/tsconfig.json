@@ -2,14 +2,18 @@
     "extends": "./node_modules/@equisoft/tslint-config/tsconfig.standards.json",
     "compilerOptions": {
         "target": "es6",
-        "module": "commonjs",
+        "module": "ESNext",
+        "moduleResolution": "node",
         "esModuleInterop": true,
         "jsx": "react",
         "allowSyntheticDefaultImports": true,
         "noEmitOnError": true,
         "sourceMap": true,
         "baseUrl": "./src/",
-        "paths": {}
+        "paths": {},
+        "outDir": "./dist",
+        "declaration": true,
+        "declarationDir": "./dist",
     },
     "include": [
         "src/**/*"

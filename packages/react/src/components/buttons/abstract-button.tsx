@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import abstractStyle from './styles/abstract';
+import { abstractStyle } from './styles/abstract';
 
 export interface AbstractButtonProps {
-    children?: ReactNode[];
+    children?: ReactNode;
     disabled?: boolean;
     onClick(): void;
 }

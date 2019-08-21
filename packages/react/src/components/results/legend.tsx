@@ -32,9 +32,13 @@ const Description = styled.span`
   font-size: 0.75rem;
 `;
 
-const Legend = ({ items }) => (
+interface LegendProps {
+    items: {name: string, description: string, color?: string}[];
+}
+
+const Legend = ({ items }: LegendProps) => (
     <List>
-        {items.map(item => (
+        {items.map((item) => (
             <Item color={item.color}>
                 <div>
                     <p>{item.name}</p>
@@ -45,4 +49,4 @@ const Legend = ({ items }) => (
     </List>
 );
 
-export default Legend;
+export { Legend };

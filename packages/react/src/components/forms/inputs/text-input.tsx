@@ -1,41 +1,48 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import styled from 'styled-components';
+import { TextAreaProps } from './text-area';
 
-import style from '../styles/inputs';
+import { inputsStyle } from '../styles/inputs';
 
-import FieldContainer from '../field-container';
+import { FieldContainer } from '../field-container';
 
 const Input = styled.input`
-  ${style}
+  ${inputsStyle}
 `;
 
-const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocus, pattern, placeholder, required, type, validMsg }) => {
+interface TextInputProps extends TextAreaProps {
+    pattern?: string;
+    placeholder?: string;
+    type?: string;
+}
+
+const TextInput = ({ defaultValue, disabled, id, label, blurCallback, changeCallback, focusCallback, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
 
-    const handleBlur = event => {
+    const handleBlur = (event: any) => {
         const newValue = event.target.value;
 
         setValue({ value: newValue });
         setValidity({ validity: event.target.checkValidity() });
 
-        if (typeof onBlur === 'function') {
-            onBlur(newValue);
+        if (blurCallback) {
+            blurCallback(newValue);
         }
     };
 
-    const handleChange = event => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
-        if (typeof onChange === 'function') {
-            onChange(newValue);
+        if (changeCallback) {
+            changeCallback(newValue);
         }
     };
 
     const handleFocus = () => {
-        if (typeof onFocus === 'function') {
-            onFocus(value);
+        if (focusCallback) {
+            focusCallback(value);
         }
     };
 
@@ -49,9 +56,9 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
             <Input
                 disabled={disabled}
                 id={id}
-                onBlur={event => handleBlur(event)}
-                onChange={event => handleChange(event)}
-                onFocus={event => handleFocus(event)}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                onFocus={handleFocus}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={required}
@@ -62,4 +69,4 @@ const TextInput = ({ defaultValue, disabled, id, label, onBlur, onChange, onFocu
     );
 };
 
-export default TextInput;
+export { TextInput };

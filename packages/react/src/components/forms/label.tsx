@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+
 import styled from 'styled-components';
 
 const StyledLabel = styled.label`
@@ -14,10 +15,15 @@ const StyledLabel = styled.label`
   }
 `;
 
-const Label = ({ children, forId }) => (
+interface LabelProps {
+    children: ReactNode;
+    forId: string;
+}
+
+const Label = ({ children, forId }: LabelProps) => (
     <StyledLabel htmlFor={forId}>
         {children}
     </StyledLabel>
 );
 
-export default Label;
+export { Label };

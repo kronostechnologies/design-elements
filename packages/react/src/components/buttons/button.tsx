@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import primaryStyle from './styles/primary';
-import secondaryStyle from './styles/secondary';
-import tertiaryStyle from './styles/tertiary';
+import { primaryStyle } from './styles/primary';
+import { secondaryStyle } from './styles/secondary';
+import { tertiaryStyle } from './styles/tertiary';
 
 import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
-export type ButtonType = 'primary' | 'secondary' | 'tertiary';
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 export interface ButtonProps extends AbstractButtonProps {
     buttonType: ButtonType;

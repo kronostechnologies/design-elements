@@ -1,6 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { ReactElement } from 'react';
+
 import range from 'lodash-es/range';
+import styled from 'styled-components';
 
 const Div = styled.div`
   align-items: center;
@@ -58,7 +59,13 @@ const FutureStep = styled(AbstractStep)`
   background-color: #d9dde2;
 `;
 
-const getStep = (step, max, value) => {
+interface GetStepProps {
+    step: number;
+    max: number;
+    value: number;
+}
+
+const getStep = ({ step, max, value }: GetStepProps): ReactElement => {
     let StepComponent;
 
     if (step < value) {
@@ -76,13 +83,13 @@ const getStep = (step, max, value) => {
     return <StepComponent key={step} />;
 };
 
-const Progress = ({ max, value }) => (
+const Progress = ({ max, value }: {max: number, value: number}) => (
     <Div>
         <StyledProgress max={max} value={value} />
         <UL>
-            {range(max + 1).map(step => getStep(step, max, value))}
+            {range(max + 1).map((step: number) => getStep({ step, max, value }))}
         </UL>
     </Div>
 );
 
-export default Progress;
+export { Progress };

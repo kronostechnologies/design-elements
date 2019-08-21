@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
+import styled from 'styled-components';
 
-import VisuallyHidden from '../../a11y/visuallyhidden';
+import { VisuallyHidden } from '../../a11y/visuallyhidden';
 import { SearchButton } from '../../buttons/search-button';
 
-import style from '../styles/inputs';
-import Label from '../label';
+import { Label } from '../label';
+import { inputsStyle } from '../styles/inputs';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const InnerWrapper = styled.div`
 `;
 
 const IcoSearch = styled(SearchIcon)`
-  color: ${props => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
+  color: ${(props: {disabled: boolean}) => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
   height: 1rem;
   width: 1rem;
 `;
@@ -43,8 +44,8 @@ const IcoReset = styled(XIcon)`
 `;
 
 const Input = styled.input`
-  ${style} /* Must be the first rule */
-  border-radius: ${props => (props.hasButton && '0.25rem 0 0 0.25rem')};
+  ${inputsStyle} /* Must be the first rule */
+  border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')};
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 
@@ -86,21 +87,30 @@ const SearchSubmit = styled(SearchButton)`
   position: relative;
 `;
 
-const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => {
+export interface SearchInputProps {
+    disabled?: boolean;
+    hasButton?: boolean;
+    id: string;
+    label?: string;
+    changeCallback?(value: string): void;
+    searchCallback?(value: string): void;
+}
+
+const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCallback }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: '' });
 
-    const handleChange = event => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setValue({ value: newValue });
 
-        if (typeof onChange === 'function') {
-            onChange(newValue);
+        if (changeCallback) {
+            changeCallback(newValue);
         }
     };
 
-    const handleKeyDown = event => {
-        if (typeof onSearch === 'function' && event.keyCode === 13) {
-            onSearch(value);
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (searchCallback && event.keyCode === 13) {
+            searchCallback(value);
         }
     };
 
@@ -109,8 +119,8 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => 
     };
 
     const handleSearchButtonClick = () => {
-        if (typeof onSearch === 'function') {
-            onSearch(value);
+        if (searchCallback) {
+            searchCallback(value);
         }
     };
 
@@ -125,8 +135,8 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => 
                 <Input
                     autoComplete="on"
                     disabled={disabled}
-                    onChange={event => handleChange(event)}
-                    onKeyDown={event => handleKeyDown(event)}
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
                     hasButton={hasButton}
                     id={id}
                     type="search"
@@ -143,7 +153,7 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => 
         (
             <SearchSubmit
                 disabled={disabled}
-                type="submit"
+                className="primary"
                 onClick={handleSearchButtonClick}
             >
                 {label}
@@ -154,4 +164,4 @@ const SearchInput = ({ disabled, hasButton, id, label, onChange, onSearch }) => 
     );
 };
 
-export default SearchInput;
+export { SearchInput };
