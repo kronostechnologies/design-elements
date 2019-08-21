@@ -32,7 +32,7 @@ const InnerWrapper = styled.div`
 `;
 
 const IcoSearch = styled(SearchIcon)`
-  color: ${props => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
+  color: ${(props: {disabled: boolean}) => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
   height: 1rem;
   width: 1rem;
 `;

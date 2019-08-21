@@ -32,7 +32,7 @@ interface SelectProps {
 const Select = ({ id, label, onChange, options, required, skipLabel, validMsg }: SelectProps) => {
     const [{ validity }, setValidity] = useState({ validity: true });
 
-    const selectRef = useRef<HTMLInputElement>(null);
+    const selectRef = useRef<HTMLSelectElement>(null);
     const skipRef = useRef<HTMLInputElement>(null);
 
     const selectOptions = options.map((option, i) => {
