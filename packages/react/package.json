@@ -33,7 +33,6 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "dependencies": {
-    "@types/lodash-es": "^4.17.3",
     "feather-icons": "^4.21.0",
     "lodash-es": "^4.17.14",
     "react": "^16.8.6",
@@ -53,6 +52,7 @@
     "@equisoft/tslint-config": "^0.0.8",
     "@equisoft/tslint-config-react": "^0.0.3",
     "@svgr/rollup": "^4.1.0",
+    "@types/lodash-es": "^4.17.3",
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
     "@types/styled-components": "4.1.8",
