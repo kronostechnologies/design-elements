@@ -53,7 +53,6 @@ storiesOf('Results/ProgressCircle', module)
             color={'rgb(101,226,255)'}
             descriptionLabel='RRSP'
             resultLabel='56 k$'
-            secondary={false}
         />
     ))
     .add('ProgressCircle Secondary', () => (
