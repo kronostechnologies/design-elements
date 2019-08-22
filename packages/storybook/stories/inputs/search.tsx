@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';

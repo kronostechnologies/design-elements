@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Progress } from '@equisoft/design-elements-react';
 import { withKnobs, number } from '@storybook/addon-knobs';

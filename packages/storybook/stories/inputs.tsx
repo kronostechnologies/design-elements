@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { TextInput } from '@equisoft/design-elements-react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
