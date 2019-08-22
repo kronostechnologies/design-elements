@@ -17,14 +17,14 @@ const StyledSelect = styled.select`
 `;
 
 interface SelectProps {
-    children: ReactNode;
+    children?: ReactNode;
     id: string;
     label: string;
     options: any[];
     required?: boolean;
     skipLabel?: string;
-    valid: boolean;
-    validMsg: string;
+    valid?: boolean;
+    validMsg?: string;
     onChange(value: string): void;
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { TextInput } from '@equisoft/design-elements-react';
 
@@ -40,17 +40,19 @@ storiesOf('Input text fields', module)
             label="Last Name (required)"
             placeholder="Ex.: Doe"
             required
+            validMsg="This field is required"
         />
     ))
     .add('Event callbacks', () => (
         <TextInput
             id="ta_lastname"
             label="See console for callbacks"
-            onChange={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
-            onBlur={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
-            onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
+            changeCallback={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
+            blurCallback={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
+            focusCallback={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
             placeholder="Ex.: Hello"
             required
+            validMsg="This field is required"
         />
     ))
     .add('Pattern validation', () => (

@@ -1,11 +1,20 @@
 const path = require('path');
 
-module.exports = async ({ config, mode }) => {
-  config.module.rules.push({
-    test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../'),
-  });
-
-  return config;
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader'},
+          { loader: 'sass-loader' }
+        ]
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: {loader: require.resolve('awesome-typescript-loader')},
+      }
+    ]
+  }
 };

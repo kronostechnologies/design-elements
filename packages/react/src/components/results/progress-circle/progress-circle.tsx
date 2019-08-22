@@ -8,7 +8,7 @@ interface ProgressCircleProps {
     color: string;
     descriptionLabel: string;
     resultLabel: string;
-    secondary: boolean;
+    secondary?: boolean;
 }
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/

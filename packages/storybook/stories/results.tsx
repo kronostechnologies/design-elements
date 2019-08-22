@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Legend, ProgressCircle, ProgressBar } from '@equisoft/design-elements-react';
 
@@ -46,7 +46,7 @@ storiesOf('Results/Legend', module)
         <Legend items={legendItems} />
     ));
 
-storiesOf('Results/ProgressCircle')
+storiesOf('Results/ProgressCircle', module)
     .add('ProgressCircle', () => (
         <ProgressCircle
             percent={66}
@@ -69,3 +69,4 @@ storiesOf('Results/ProgressBar', module)
     .add('Default', () => (
         <ProgressBar content={progressBars} />
     ));
+    

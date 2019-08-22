@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Select } from '@equisoft/design-elements-react';
 
@@ -21,7 +21,6 @@ storiesOf('Select', module)
     .add('Default', () => (
         <Select
             id="s_provinces"
-            name="provinces"
             label="Choose your province or territory"
             onChange={(value) => {console.log(value);}}
             options={provinces}
@@ -30,7 +29,6 @@ storiesOf('Select', module)
     .add('With Skip', () => (
         <Select
             id="s_provinces"
-            name="provinces"
             label="Choose your province or territory"
             onChange={(value) => {console.log(value);}}
             options={provinces}
@@ -40,7 +38,6 @@ storiesOf('Select', module)
     .add('Required', () => (
         <Select
             id="s_provinces"
-            name="provinces"
             label="Choose your province or territory"
             onChange={(value) => {console.log(value);}}
             options={provinces}

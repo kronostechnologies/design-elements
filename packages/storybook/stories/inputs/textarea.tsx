@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { TextArea } from '@equisoft/design-elements-react';
 
@@ -7,24 +7,22 @@ storiesOf('TextArea', module)
         <TextArea
             id="ta_normal"
             label="Text area label"
-            placeholder="Enter your text here"
         />
     ))
     .add('Event callbacks (see console)', () => (
         <TextArea
             id="ta_callbacks"
             label="Text area label"
-            onChange={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
-            onBlur={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
-            onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
-            placeholder="Enter your text here"
+            changeCallback={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
+            blurCallback={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
+            focusCallback={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
         />
     ))
     .add('Required', () => (
         <TextArea
             id="ta_required"
             label="Text area label"
-            placeholder="Enter your text here"
+            validMsg="This field is required"
             required
         />
     ))
@@ -33,7 +31,7 @@ storiesOf('TextArea', module)
             defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio."
             id="ta_filled"
             label="A label for a filled text area"
-            placeholder="Enter your text here"
+            validMsg="This field is required"
             required
         />
     ))
@@ -42,7 +40,7 @@ storiesOf('TextArea', module)
             disabled
             id="ta_disabled"
             label="A label for the disabled text area"
-            placeholder="Sorry but this field is disabled"
+            validMsg="This field is required"
             required
         />
     ));

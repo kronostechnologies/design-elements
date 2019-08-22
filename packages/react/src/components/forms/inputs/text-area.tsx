@@ -20,7 +20,7 @@ export interface TextAreaProps {
     id: string;
     label: string;
     required?: boolean;
-    validMsg: string;
+    validMsg?: string;
     blurCallback?(value: string): void;
     changeCallback?(value: string): void;
     focusCallback?(value: string): void;
