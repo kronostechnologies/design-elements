@@ -5,7 +5,7 @@ import uuid from 'uuid/v4';
 import { hiddenStyle } from '../../a11y/styles/visuallyhidden';
 import { chooseStyle } from './styles/choose';
 
-const Input = styled.input<ForwardRefInput>`
+const Input = styled.input`
   ${hiddenStyle}
 `;
 
@@ -13,31 +13,30 @@ const Label = styled.label`
   ${chooseStyle}
 `;
 
-interface ForwardRefInput {
-    ref: React.Ref<HTMLInputElement>;
-}
-
 interface ChooseInputProps {
     defaultChecked?: boolean;
+    checked?: boolean;
     children: ReactNode;
     groupName: string;
-    type: 'radio' | 'checkbox';
-    value: string;
-    onChange(value: string): void;
+    type: 'radio' | 'checkbox';
+    value?: string;
+
+    onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 const ChooseInput = React.forwardRef(
-    ({ defaultChecked, children, groupName, onChange, type, value }: ChooseInputProps,
-        ref: React.Ref<HTMLInputElement>) => {
+    ({ defaultChecked, checked, children, groupName, onChange, type, value }: ChooseInputProps,
+     ref: React.Ref<HTMLInputElement>) => {
         const id = uuid();
 
-        const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-            onChange(event.target.value);
-        };
+        function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+            onChange(event);
+        }
 
         return (
             <>
                 <Input
+                    checked={checked}
                     defaultChecked={defaultChecked}
                     id={id}
                     onChange={handleChange}
@@ -51,4 +50,4 @@ const ChooseInput = React.forwardRef(
         );
     });
 
-export { ChooseInput };
+export { ChooseInput };

@@ -41,9 +41,15 @@ storiesOf('Input text fields', module)
     .add('Event callbacks', () => (
         <TextInput
             label="See console for callbacks"
-            changeCallback={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
-            blurCallback={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
-            focusCallback={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
+            onChange={event => {
+                console.log(`Custom function called on change. Current value: ${event.currentTarget.value}`);
+            }}
+            onBlur={event => {
+                console.log(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
+            }}
+            onFocus={event => {
+                console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
+            }}
             placeholder="Ex.: Hello"
             required
             validMsg="This field is required"

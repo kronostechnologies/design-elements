@@ -6,18 +6,25 @@ storiesOf('Search Bar', module)
     .add('Contextual', () => (
         <SearchContextual
             label="Search"
-            changeCallback={(value)=>{console.log(`Searching for: ${value}`)}}
+            onChange={event => {
+                console.log(`Searching for: ${event.currentTarget.value}`);
+            }}
+            placeholder="Ex.: Miky Mike"
         />
     ))
     .add('Global', () => (
         <SearchGlobal
             label="Search"
-            searchCallback={(value)=>{console.log(`Searching for: ${value}`)}}
+            onSearch={value => {
+                console.log(`Searching for: ${value}`);
+            }}
+            placeholder="Ex.: Marquee Mark"
         />
     ))
     .add('Disabled', () => (
         <SearchGlobal
             disabled
             label="Search"
+            placeholder="Ex.: Sorry it's disabled"
         />
     ));

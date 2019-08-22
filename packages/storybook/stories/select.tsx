@@ -30,7 +30,8 @@ storiesOf('Select', module)
             label="Choose your province or territory"
             onChange={(value) => {console.log(value);}}
             options={provinces}
-            skipLabel={"Skip this question"}
+            skipLabel="Skip this question"
+            skipValue="skip"
         />
     ))
     .add('Required', () => (
@@ -39,6 +40,7 @@ storiesOf('Select', module)
             onChange={(value) => {console.log(value);}}
             options={provinces}
             required
-            skipLabel={"Skip this question"}
+            skipLabel="Skip this question"
+            skipValue="skip"
         />
     ));
