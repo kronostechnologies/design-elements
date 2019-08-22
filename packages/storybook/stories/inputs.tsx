@@ -51,9 +51,9 @@ storiesOf('Input text fields', module)
         <TextInput
             id="ta_lastname"
             label="See console for callbacks"
-            onChange={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
-            onBlur={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
-            onFocus={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
+            changeCallback={(value) => console.log(`Custom function called on change. Current value: ${value}`)}
+            blurCallback={(value) => console.log(`Custom function called on blur. Current value: ${value}`)}
+            focusCallback={(value) => console.log(`Custom function called on focus. Current value: ${value}`)}
             placeholder="Ex.: Hello"
             required
             validMsg='Temporary Message'

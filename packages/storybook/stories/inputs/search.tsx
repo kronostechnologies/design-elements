@@ -7,14 +7,14 @@ storiesOf('Search Bar', module)
         <SearchContextual
             id="searchbar_contextual"
             label="Search"
-            onChange={(value)=>{console.log(`Searching for: ${value}`)}}
+            changeCallback={(value)=>{console.log(`Searching for: ${value}`)}}
         />
     ))
     .add('Global', () => (
         <SearchGlobal
             id="searchbar_global"
             label="Search"
-            onSearch={(value)=>{console.log(`Searching for: ${value}`)}}
+            searchCallback={(value)=>{console.log(`Searching for: ${value}`)}}
         />
     ))
     .add('Disabled', () => (
