@@ -20,8 +20,8 @@ interface ChooserProps {
     groupName: string;
     onChange?: ((...args: any[]) => void);
     options: {value: string, label: string}[];
-    skipValue: string;
-    skipLabel: string;
+    skipValue?: string;
+    skipLabel?: string;
 
 }
 

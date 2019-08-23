@@ -48,9 +48,9 @@ storiesOf('Input text fields', module)
         <TextInput
             id="ta_lastname"
             label="See console for callbacks"
-            onChange={action('Custom function called on change. Current value')}
-            onBlur={action('Custom function called on blur. Current value')}
-            onFocus={action('Custom function called on focus. Current value')}
+            changeCallback={action('Custom function called on change. Current value')}
+            blurCallback={action('Custom function called on blur. Current value')}
+            focusCallback={action('Custom function called on focus. Current value')}
             placeholder="Ex.: Hello"
             required
             validMsg="This field is required"

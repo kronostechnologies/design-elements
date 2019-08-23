@@ -8,7 +8,7 @@ storiesOf('Search Bar', module)
         <SearchContextual
             id="searchbar_contextual"
             label="Search"
-            placeholder="Ex.: Miky Mike"
+            // placeholder="Ex.: Miky Mike"
             changeCallback={action('Searching for')}
         />
     ))
@@ -16,7 +16,7 @@ storiesOf('Search Bar', module)
         <SearchGlobal
             id="searchbar_global"
             label="Search"
-            placeholder="Ex.: Marquee Mark"
+            // placeholder="Ex.: Marquee Mark"
             searchCallback={action('Searching for')}
         />
     ))
