@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Card } from '@equisoft/design-elements-react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('Card', module);

@@ -6,5 +6,4 @@ import { storiesOf } from '@storybook/react';
 storiesOf('Spinners', module)
     .add('Enso', () => (
         <EnsoSpinner />
-    ))
-    
+    ));

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
-    { value: 'married', label: 'Married or living with a spouse' }
+    { value: 'married', label: 'Married or living with a spouse' },
 ];
 
 const ageRange = [

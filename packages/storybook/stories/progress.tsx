@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Progress } from '@equisoft/design-elements-react';
-import { withKnobs, number } from '@storybook/addon-knobs';
+import { number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('Progress', module);
