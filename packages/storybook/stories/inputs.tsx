@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { TextInput } from '@equisoft/design-elements-react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('Input text fields', module);
