@@ -4,11 +4,14 @@ import { AddButton, Button } from '@equisoft/design-elements-react';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('Buttons', module);
-stories.addDecorator(withKnobs);
+const buttons = storiesOf('Buttons', module);
+buttons.addDecorator(withKnobs);
+
+const addButtons = storiesOf('Buttons/Add', module);
+addButtons.addDecorator(withKnobs);
 const options = ['primary', 'secondary', 'tertiary'];
 
-stories.add('Primary', () => (
+buttons.add('Primary', () => (
         <Button buttonType={select('buttonType', options, 'primary')}>
             {text('children', 'Primary Button')}
         </Button>
@@ -37,8 +40,7 @@ stories.add('Primary', () => (
         </Button>
     ));
 
-storiesOf('Buttons/Add', module)
-    .add('Primary', () => (
+addButtons.add('Primary', () => (
         <AddButton buttonType={select('buttonType', options, 'primary')}>
             {text('children', 'Primary Button')}
         </AddButton>
