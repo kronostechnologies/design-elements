@@ -11,7 +11,6 @@ storiesOf('Search Bar', module)
     ))
     .add('Global', () => (
         <SearchGlobal
-            id="searchbar_global"
             label="Search"
             searchCallback={(value)=>{console.log(`Searching for: ${value}`)}}
         />
@@ -19,7 +18,6 @@ storiesOf('Search Bar', module)
     .add('Disabled', () => (
         <SearchGlobal
             disabled
-            id="searchbar_disabled"
             label="Search"
         />
     ));
