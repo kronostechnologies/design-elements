@@ -5,6 +5,7 @@ import { TextAreaProps } from './text-area';
 import { inputsStyle } from '../styles/inputs';
 
 import { FieldContainer } from '../field-container';
+const uuidv1 = require('uuid/v1');
 
 const Input = styled.input`
   ${inputsStyle}
@@ -16,9 +17,10 @@ interface TextInputProps extends TextAreaProps {
     type?: string;
 }
 
-const TextInput = ({ defaultValue, disabled, id, label, blurCallback, changeCallback, focusCallback, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
+const TextInput = ({ defaultValue, disabled, label, blurCallback, changeCallback, focusCallback, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
     const [{ value }, setValue] = useState({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState({ validity: true });
+    const id = uuidv1();
 
     const handleBlur = (event: any) => {
         const newValue = event.target.value;
