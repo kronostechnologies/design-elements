@@ -5,7 +5,6 @@ import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react'
 storiesOf('Search Bar', module)
     .add('Contextual', () => (
         <SearchContextual
-            id="searchbar_contextual"
             label="Search"
             changeCallback={(value)=>{console.log(`Searching for: ${value}`)}}
         />
