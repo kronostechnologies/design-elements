@@ -5,6 +5,7 @@ import { ChooseInput } from '../../choosers/controls/choose-input';
 import { FieldContainer } from '../field-container';
 
 import { inputsStyle } from '../styles/inputs';
+const uuidv1 = require('uuid/v1');
 
 const StyledSelect = styled.select`
   ${inputsStyle}
@@ -18,7 +19,6 @@ const StyledSelect = styled.select`
 
 interface SelectProps {
     children?: ReactNode;
-    id: string;
     label: string;
     options: any[];
     required?: boolean;
@@ -28,8 +28,9 @@ interface SelectProps {
     onChange(value: string): void;
 }
 
-const Select = ({ id, label, onChange, options, required, skipLabel, validMsg }: SelectProps) => {
+const Select = ({ label, onChange, options, required, skipLabel, validMsg }: SelectProps) => {
     const [{ validity }, setValidity] = useState({ validity: true });
+    const id = uuidv1();
 
     const selectRef = useRef<HTMLSelectElement>(null);
     const skipRef = useRef<HTMLInputElement>(null);
