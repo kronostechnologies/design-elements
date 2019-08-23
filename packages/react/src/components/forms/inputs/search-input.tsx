@@ -90,13 +90,16 @@ const SearchSubmit = styled(SearchButton)`
 export interface SearchInputProps {
     disabled?: boolean;
     hasButton?: boolean;
-    id: string;
     label?: string;
     changeCallback?(value: string): void;
     searchCallback?(value: string): void;
 }
 
-const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCallback }: SearchInputProps) => {
+interface SearchInputInnerProps extends SearchInputProps {
+    id: string;
+}
+
+const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCallback }: SearchInputInnerProps) => {
     const [{ value }, setValue] = useState({ value: '' });
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
