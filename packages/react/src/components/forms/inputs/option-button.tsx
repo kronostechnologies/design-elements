@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 const uuidv1 = require('uuid/v1');
 
 const uniqueId = uuidv1();

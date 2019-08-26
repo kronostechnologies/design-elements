@@ -1,9 +1,8 @@
 import React, { ChangeEvent, ReactNode, useRef, useState } from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 import { ChooseInput } from '../../choosers/controls/choose-input';
 import { FieldContainer } from '../field-container';
-
 import { inputsStyle } from '../styles/inputs';
 const uuidv1 = require('uuid/v1');
 

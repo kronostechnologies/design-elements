@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { SearchInput, SearchInputProps } from './search-input';
 const uuidv1 = require('uuid/v1');
 

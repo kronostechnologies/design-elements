@@ -1,9 +1,8 @@
 import React, { ChangeEvent, useState } from 'react';
+
 import styled from 'styled-components';
-
-import { inputsStyle } from '../styles/inputs';
-
 import { FieldContainer } from '../field-container';
+import { inputsStyle } from '../styles/inputs';
 const uuidv1 = require('uuid/v1');
 
 const StyledTextArea = styled.textarea`
