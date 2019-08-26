@@ -33,6 +33,7 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "dependencies": {
+    "@types/uuid": "^3.4.5",
     "feather-icons": "^4.21.0",
     "lodash-es": "^4.17.14",
     "react": "^16.8.6",
