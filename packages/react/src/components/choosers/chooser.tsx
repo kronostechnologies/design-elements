@@ -35,7 +35,6 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
     const chooserOptions = options.map((option, i) => (
         <ChooseInput
             groupName={groupName}
-            id={`${groupName}_${i}`}
             onChange={handleChange}
             type="radio"
             value={option.value}
@@ -48,7 +47,6 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
         <Skip>
             <ChooseInput
                 groupName={groupName}
-                id={`${groupName}_skip`}
                 onChange={handleChange}
                 type="radio"
                 value={skipValue}
