@@ -3,7 +3,6 @@ export const primaryStyle = `
   border-color: rgb(226, 115, 46);
   color: white;
 
-  &:focus,
   &:hover {
     background-color: rgb(183, 94, 43);
     border-color: rgb(183, 94, 43);

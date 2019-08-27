@@ -3,7 +3,6 @@ export const tertiaryStyle = `
   border-color: transparent;
   color: #637282;
 
-  &:focus,
   &:hover {
     color: black;
   }
