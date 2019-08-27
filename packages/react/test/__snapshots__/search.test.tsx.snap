@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchGlobal Matches the snapshot 1`] = `
+<div
+  className="sc-ifAKCX jojDhl"
+>
+  <div
+    className="sc-EHOje eNdeiV"
+  >
+    <label
+      className="sc-bxivhb ehRUut"
+      htmlFor="searchbar_global"
+    >
+      <svg
+        className="sc-bZQynM gQLQiz"
+      />
+      <span
+        aria-hidden="false"
+        className="sc-htpNat gPwbuH"
+      >
+        Search
+      </span>
+    </label>
+    <input
+      autoComplete="on"
+      className="sc-htoDjs hECHJA"
+      id="searchbar_global"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="search"
+      value="foo"
+    />
+    <button
+      className="sc-dnqmqq eDuaOl"
+      data-testid="resetButton"
+      onClick={[Function]}
+    >
+      <svg
+        className="sc-gzVnrw cODjhC"
+      />
+      <span
+        aria-hidden="false"
+        className="sc-htpNat gPwbuH"
+      >
+        Reset
+      </span>
+    </button>
+  </div>
+  <button
+    className="sc-bdVaJa primary sc-iwsKbI htioOs sc-bwzfXH xbjaQ"
+    onClick={[Function]}
+  >
+    Search
+  </button>
+</div>
+`;

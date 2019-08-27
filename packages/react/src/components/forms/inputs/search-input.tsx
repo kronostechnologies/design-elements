@@ -92,12 +92,13 @@ export interface SearchInputProps {
     hasButton?: boolean;
     id: string;
     label?: string;
+    initialValue?: string;
     changeCallback?(value: string): void;
     searchCallback?(value: string): void;
 }
 
-const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCallback }: SearchInputProps) => {
-    const [{ value }, setValue] = useState({ value: '' });
+const SearchInput = ({ disabled, hasButton, id, initialValue, label, changeCallback, searchCallback }: SearchInputProps) => {
+    const [{ value }, setValue] = useState({ value: initialValue || '' });
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
@@ -143,7 +144,7 @@ const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCal
                     value={value}
                 />
 
-                <Reset onClick={handleReset}>
+                <Reset data-testid="resetButton" onClick={handleReset}>
                     <IcoReset />
                     <VisuallyHidden>Reset</VisuallyHidden>
                 </Reset>
