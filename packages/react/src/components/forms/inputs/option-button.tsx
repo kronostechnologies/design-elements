@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-const uuidv1 = require('uuid/v1');
-
-const uniqueId = uuidv1();
+import uuid from 'uuid/v4';
 
 const Input = styled.input`
   position: absolute;
@@ -34,11 +32,15 @@ interface OptionButtonProps {
     value: number;
 }
 
-const OptionButton = ({ checked, label, name, value }: OptionButtonProps) => (
-    <div>
-        <Input checked={checked} id={uniqueId} name={name} type="radio" value={value} />
-        <label htmlFor={uniqueId}>{label}</label>
-    </div>
-);
+const OptionButton = ({ checked, label, name, value }: OptionButtonProps) => {
+    const id = uuid();
+
+    return (
+      <div>
+          <Input checked={checked} id={id} name={name} type="radio" value={value} />
+          <label htmlFor={id}>{label}</label>
+      </div>
+    );
+};
 
 export { OptionButton };

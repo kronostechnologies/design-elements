@@ -1,4 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import  uuid from 'uuid/v4';
 
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
@@ -95,12 +96,9 @@ export interface SearchInputProps {
     searchCallback?(value: string): void;
 }
 
-interface SearchInputInnerProps extends SearchInputProps {
-    id: string;
-}
-
-const SearchInput = ({ disabled, hasButton, id, label, changeCallback, searchCallback }: SearchInputInnerProps) => {
+const SearchInput = ({ disabled, hasButton, label, changeCallback, searchCallback }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: '' });
+    const id = uuid();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
