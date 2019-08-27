@@ -3,7 +3,6 @@ export const secondaryStyle = `
   border-color: rgb(226, 115, 46);
   color: rgb(226, 115, 46);
 
-  &:focus,
   &:hover {
     background-color: rgb(226, 115, 46);
     border-color: rgb(226, 115, 46);
