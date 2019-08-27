@@ -81,7 +81,6 @@ const Select = ({ label, onChange, options, required, skipLabel, validMsg }: Sel
             { skipLabel && (
                 <ChooseInput
                     groupName="provinces"
-                    id={`${id}_skip`}
                     onChange={handleSkipChange}
                     ref={skipRef}
                     type="checkbox"
