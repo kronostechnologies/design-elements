@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
 import { InvalidField } from '../feedbacks/invalid-field';
@@ -10,11 +10,11 @@ const StyledDiv = styled.div`
   input,
   select,
   textarea {
-    border-color: ${(props: {valid: boolean}) => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
+    border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
   }
 
   &:focus {
-    border-color: ${(props: {valid: boolean}) => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
+    border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
   }
 `;
 
@@ -26,20 +26,22 @@ interface FieldContainerProps {
     validMsg: string;
 }
 
-const FieldContainer = ({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps) => (
-    <StyledDiv {...props} valid={valid}>
-        {label && (
-            <Label forId={fieldId}>
-                {label}
-            </Label>
-        )}
+function FieldContainer({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps): ReactElement {
+    return (
+        <StyledDiv {...props} valid={valid}>
+            {label && (
+                <Label forId={fieldId}>
+                    {label}
+                </Label>
+            )}
 
-        {children}
+            {children}
 
-        {!valid &&
+            {!valid &&
             <InvalidField controlId={fieldId} feedbackMsg={validMsg} />
-        }
-    </StyledDiv>
-);
+            }
+        </StyledDiv>
+    );
+}
 
 export { FieldContainer } ;

@@ -13,6 +13,7 @@
         },
         "jsx-no-lambda": [false],
         "jsx-no-multiline-js": [false],
-        "jsx-boolean-value": [false]
+        "jsx-boolean-value": [false],
+        "no-console": false
     }
 }

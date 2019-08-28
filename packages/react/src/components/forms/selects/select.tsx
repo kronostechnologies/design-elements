@@ -17,20 +17,20 @@ const StyledSelect = styled.select`
   background-size: 0.75rem;
   position: relative;
 `;
+
 // tslint:enable:max-line-length
 
 interface SelectOption {
-    label?: string;
+    label: string;
     value?: string;
 }
 
 interface SelectProps {
     children?: ReactNode;
-    label: string;
+    label?: string;
     options: SelectOption[];
     required?: boolean;
-    skipLabel?: string;
-    skipValue?: string;
+    skipOption?: SelectOption;
     valid?: boolean;
     validMsg?: string;
     value?: string;
@@ -75,7 +75,7 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
         }
     }
 
-    const { label, required, skipLabel, skipValue, validMsg, value } = props;
+    const { label, required, skipOption, validMsg, value } = props;
 
     return (
         <>
@@ -95,15 +95,15 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
                     {selectOptions}
                 </StyledSelect>
             </FieldContainer>
-            {skipValue && skipLabel && (
+            {skipOption && (
                 <ChooseInput
                     groupName={`${id}_skip`}
                     onChange={handleSkipChange}
                     checked={skipSelected}
                     type="radio"
-                    value={skipValue}
+                    value={skipOption.value}
                 >
-                    {skipLabel}
+                    {skipOption.label}
                 </ChooseInput>
             )}
         </>

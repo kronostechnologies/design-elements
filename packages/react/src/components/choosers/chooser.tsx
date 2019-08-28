@@ -17,7 +17,7 @@ const Skip = styled.div`
 `;
 
 interface ChooserOption {
-    label?: string;
+    label: string;
     value?: string;
 }
 
@@ -25,14 +25,13 @@ interface ChooserProps {
     inColumns?: boolean;
     groupName: string;
     options: ChooserOption[];
-    skipLabel?: string;
-    skipValue?: string;
-    value?: string;
+    skipOption?: ChooserOption;
+    value?: string | null;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel, value }: ChooserProps) => {
+const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }: ChooserProps) => {
     const [isControlled] = useState(value !== undefined);
 
     function handleChange(event: ChangeEvent<HTMLInputElement>): void {
@@ -54,27 +53,25 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
         </ChooseInput>
     ));
 
-    const skipButton = (skipValue && skipLabel && (
-        <Skip>
-            <ChooseInput
-                groupName={groupName}
-                onChange={handleChange}
-                type="radio"
-                checked={isControlled ? value === skipValue : undefined}
-                value={skipValue}
-            >
-                {skipLabel}
-            </ChooseInput>
-        </Skip>
-    ));
-
     return (
         <>
             <Grid inColumns={inColumns}>
                 {chooserOptions}
             </Grid>
 
-            {skipButton}
+            {skipOption && (
+                <Skip>
+                    <ChooseInput
+                        groupName={groupName}
+                        onChange={handleChange}
+                        type="radio"
+                        checked={isControlled ? value === skipOption.value : undefined}
+                        value={skipOption.value}
+                    >
+                        {skipOption.label}
+                    </ChooseInput>
+                </Skip>
+            )}
         </>
     );
 };

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -10,16 +10,18 @@ const Input = styled.input`
   ${inputsStyle}
 `;
 
-interface TextInputProps {
+type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+    'inputMode' | 'value'>;
+
+interface TextInputProps extends PartialInputProps {
     defaultValue?: string;
     disabled?: boolean;
-    label: string;
+    label?: string;
     pattern?: string;
     placeholder?: string;
     required?: boolean;
     type?: string;
     validMsg?: string;
-    value?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
 
