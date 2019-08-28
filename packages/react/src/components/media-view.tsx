@@ -15,13 +15,13 @@ const MediaView = ({ children, maxWidth, minWidth }: MediaViewProps) => {
     const [{ screenWidth }, setScreenWidth] = useState<State>(defaultState);
 
     useEffect(() => {
-        window.addEventListener('resize', handleScreeResize);
+        window.addEventListener('resize', handleScreenResize);
         return () => {
-            window.removeEventListener('resize', handleScreeResize);
+            window.removeEventListener('resize', handleScreenResize);
         };
     }, []);
 
-    const handleScreeResize = (): void => {
+    const handleScreenResize = (): void => {
         setScreenWidth({ screenWidth: (window.innerWidth || document.documentElement.clientWidth) });
     };
 
