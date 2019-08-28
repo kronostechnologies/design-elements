@@ -1,10 +1,10 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Chooser } from '@equisoft/design-elements-react';
+import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
-    { value: 'married', label: 'Married or living with a spouse' }
+    { value: 'married', label: 'Married or living with a spouse' },
 ];
 
 const ageRange = [
@@ -15,19 +15,22 @@ const ageRange = [
     { value: '65+', label: '65+ years old' },
 ];
 
+const skipOption = {
+    label: 'Would rather not say',
+    value: 'skip',
+};
+
 storiesOf('Choosers', module)
     .add('Chooser with a skip button', () => (
         <Chooser
             groupName="maritalStatus"
             options={maritalStatus}
-            skipLabel="Would rather not say"
-            skipValue="skip"
+            skipOption={skipOption}
         />
     ))
     .add('Chooser in Columns with callback', () => (
         <Chooser
             groupName="ageRange"
-            value={value}
             onChange={event => {
                 console.log(event.currentTarget.value);
             }}

@@ -13,15 +13,16 @@ import { Select } from './components/forms/selects/select';
 
 // Miscellaneous
 import { Card } from './components/card';
-import { Chooser } from './components/choosers/chooser';
+import { Chooser } from './components/choosers/chooser';
 import { EnsoSpinner } from './components/enso-spinner';
 import { Headband } from './components/headband/equisoft-default';
 import { Progress } from './components/progress';
 
 // Results
 import { Legend } from './components/results/legend';
-import { ProgressBar } from './components/results/progress-bar/progress-bar';
-import { ProgressCircle } from './components/results/progress-circle/progress-circle';
+
+export { ProgressBar } from './components/results/progress-bar/progress-bar';
+export { ProgressCircle } from './components/results/progress-circle/progress-circle';
 
 export {
     AddButton,
@@ -38,7 +39,5 @@ export {
     EnsoSpinner,
     Headband,
     Progress,
-    ProgressBar,
     Legend,
-    ProgressCircle,
 };

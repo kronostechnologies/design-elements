@@ -1,7 +1,9 @@
 const path = require('path');
+const pkg = require('../package');
 
 module.exports = {
     entry: './src/index.ts',
+    externals: Object.keys(pkg.peerDependencies),
     module: {
         rules: [
             {
@@ -11,7 +13,14 @@ module.exports = {
             },
             {
                 test: /.svg$/,
-                use: ['@svgr/webpack'],
+                loader: '@svgr/webpack',
+                options: {
+                    svgoConfig: {
+                        plugins: {
+                            removeViewBox: false
+                        }
+                    }
+                }
             },
         ],
     },
@@ -21,6 +30,6 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist'),
-        libraryTarget: 'commonjs'
+        libraryTarget: 'umd'
     },
 };
