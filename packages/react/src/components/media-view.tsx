@@ -11,13 +11,13 @@ interface State {
 }
 
 const MediaView = ({ children, maxWidth, minWidth }: MediaViewProps) => {
-
-    const [{ screenWidth }, setScreenWidth] = useState<State>({ screenWidth: (window.innerWidth || document.documentElement.clientWidth) });
+    const defaultState = { screenWidth: (window.innerWidth || document.documentElement.clientWidth) };
+    const [{ screenWidth }, setScreenWidth] = useState<State>(defaultState);
 
     useEffect(() => {
         window.addEventListener('resize', handleScreeResize);
         return () => {
-            window.addEventListener('resize', handleScreeResize);
+            window.removeEventListener('resize', handleScreeResize);
         };
     }, []);
 
