@@ -1,11 +1,10 @@
 import * as React from 'react';
 
 import { Checkbox } from '@equisoft/design-elements-react';
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('Checkboxes', module);
-stories.addDecorator(withKnobs);
 
 stories.add('Normal', () => (
         <Checkbox

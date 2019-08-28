@@ -1,11 +1,10 @@
 import * as React from 'react';
 
 import { TextInput } from '@equisoft/design-elements-react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('Input text fields', module);
-stories.addDecorator(withKnobs);
 
 stories.add('Type: Text', () => (
         <TextInput

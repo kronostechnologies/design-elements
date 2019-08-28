@@ -1,14 +1,12 @@
 import * as React from 'react';
 
 import { AddButton, Button } from '@equisoft/design-elements-react';
-import { select, text, withKnobs } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const buttons = storiesOf('Buttons', module);
-buttons.addDecorator(withKnobs);
 
 const addButtons = storiesOf('Buttons/Add', module);
-addButtons.addDecorator(withKnobs);
 const options = ['primary', 'secondary', 'tertiary'];
 
 buttons.add('Primary', () => (

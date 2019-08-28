@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('Search Bar', module);
-stories.addDecorator(withKnobs);
 
 stories.add('Contextual', () => (
         <SearchContextual

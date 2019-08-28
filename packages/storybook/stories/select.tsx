@@ -1,8 +1,8 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { Select } from '@equisoft/design-elements-react';
-import { boolean, object, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, object, text } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
 const provinces = [{ value: '', label: '-' },
                    {  value: 'on', label: 'Ontario' },
@@ -25,7 +25,6 @@ const skipOption = {
 };
 
 const stories = storiesOf('Select', module);
-stories.addDecorator(withKnobs);
 
 stories.add('Default', () => (
         <Select

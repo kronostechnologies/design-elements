@@ -1,5 +1,5 @@
 import { Legend, ProgressBar, ProgressCircle } from '@equisoft/design-elements-react';
-import { boolean, color, number, object, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, color, number, object, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
@@ -44,13 +44,10 @@ const legendItems = [
 ];
 
 const legend = storiesOf('Results/Legend', module);
-legend.addDecorator(withKnobs);
 
 const progressCircle = storiesOf('Results/ProgressCircle', module);
-progressCircle.addDecorator(withKnobs);
 
 const progressBar = storiesOf('Results/ProgressBar', module);
-progressBar.addDecorator(withKnobs);
 
 legend.add('Default', () => (
         <Legend items={object('items', legendItems)} />

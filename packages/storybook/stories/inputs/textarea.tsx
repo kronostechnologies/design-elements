@@ -1,11 +1,10 @@
 import * as React from 'react';
 
 import { TextArea } from '@equisoft/design-elements-react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const stories = storiesOf('TextArea', module);
-stories.addDecorator(withKnobs);
 
 stories.add('Normal', () => (
         <TextArea
