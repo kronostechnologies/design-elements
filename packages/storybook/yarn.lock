@@ -971,11 +971,6 @@
     react-dom "^16.8.6"
     styled-components "^4.2.0"
 
-"@equisoft/design-elements-web@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-0.5.0.tgz#219019202d92e6e8562c639758171ec3cebcba52"
-  integrity sha512-rdqIxoKUvrB2nugAewUwz5L0+XLJXBL91Cl26sSU7w8ESVF+9nJz+4XPw7K9Fn2fyRh7OXS7IRRlKu/r+UlIvg==
-
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@equisoft/tslint-config-react/-/tslint-config-react-0.0.3.tgz#3d0580d26386288397581710300bff5e1800cf1b"
@@ -1453,7 +1448,15 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/storybook__react@^4.0.2":
+"@types/storybook__addon-knobs@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@types/storybook__addon-knobs/-/storybook__addon-knobs-5.0.3.tgz#a6366877d7b21f9fa2cc9eb23650304388393350"
+  integrity sha512-NnSOu4ajk4kL1e1eRe9zzyspIghgFu8B9ELyrAl1jF/nJE26YK2oDTi7qr+k/+X33rNaYFo6e7+lsEqeI3MLXg==
+  dependencies:
+    "@types/react" "*"
+    "@types/storybook__react" "*"
+
+"@types/storybook__react@*", "@types/storybook__react@^4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-4.0.2.tgz#f36fb399574c662e79c1a0cf6e429b6ff730da40"
   integrity sha512-U/+J5qccRdKFryvHkk1a0IeZaSIZLCmTwAQhTSDGeC3SPNIYPus+EtunBqP49r870l8czbfxtjeC3IL9P66ngQ==

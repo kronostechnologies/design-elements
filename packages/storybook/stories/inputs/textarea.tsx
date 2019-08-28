@@ -4,12 +4,11 @@ import { TextArea } from '@equisoft/design-elements-react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('TextArea', module);
-
-stories.add('Normal', () => (
+storiesOf('TextArea', module)
+    .add('Normal', () => (
         <TextArea
             label={text('label', 'Text area label')}
-            validMsg={text('validMsg', 'Temporary Message')}
+            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
         />
     ))
     .add('Event callbacks (see console)', () => (
@@ -25,12 +24,13 @@ stories.add('Normal', () => (
                 console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
             }}
             placeholder={text('placeholder', 'Enter your text here')}
+            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
         />
     ))
     .add('Required', () => (
         <TextArea
             label={text('label', 'Text area label')}
-            validMsg={text('validMsg', 'Temporary Message')}
+            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
             placeholder={text('placeholder', 'Enter your text here')}
             required={boolean('required', true)}
         />
@@ -39,7 +39,7 @@ stories.add('Normal', () => (
         <TextArea
             defaultValue={text('defaultValue', 'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.')}
             label={text('label', 'A label for a filled text area')}
-            validMsg={text('validMsg', 'Temporary Message')}
+            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
             placeholder={text('placeholder', 'Enter your text here')}
             required={boolean('required', true)}
         />
@@ -48,8 +48,8 @@ stories.add('Normal', () => (
         <TextArea
             disabled={boolean('disabled', true)}
             label={text('label', 'A label for the disabled text area')}
-            validMsg={text('validMsg', 'Temporary Message')}
-            placeholder={text('placeholder', 'Enter your text here')}
+            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
+            placeholder={text('placeholder', 'This field is disabled')}
             required={boolean('required', true)}
         />
     ));

@@ -4,9 +4,8 @@ import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react'
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('Search Bar', module);
-
-stories.add('Contextual', () => (
+storiesOf('Search Bar', module)
+    .add('Contextual', () => (
         <SearchContextual
             label={text('label', 'Search')}
             onChange={(value) => {console.log(`Searching for: ${value}`); }}

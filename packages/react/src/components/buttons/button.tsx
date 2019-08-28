@@ -5,10 +5,8 @@ import { primaryStyle } from './styles/primary';
 import { secondaryStyle } from './styles/secondary';
 import { tertiaryStyle } from './styles/tertiary';
 
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
-
 export interface ButtonProps extends AbstractButtonProps {
-    buttonType: ButtonType;
+    buttonType: string;
 }
 
 const StyledButton = styled(AbstractButton)((props: ButtonProps) => {

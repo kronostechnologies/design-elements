@@ -32,13 +32,11 @@ interface SelectProps {
     required?: boolean;
     skipOption?: SelectOption;
     valid?: boolean;
-    validMsg?: string;
-    value?: string;
-
-    onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
+    validationErrorMessage?: string;
+    onChange(value: string): void;
 }
 
-export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
+const Select = ({ label, onChange, options, required, skipLabel, validationErrorMessage }: SelectProps) => {
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = uuid();
 
@@ -83,7 +81,7 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
                 fieldId={id}
                 label={label}
                 valid={validity}
-                validMsg={validMsg || 'You must select an option'}
+                validationErrorMessage={validationErrorMessage || 'You must select an option'}
             >
                 <StyledSelect
                     id={id}

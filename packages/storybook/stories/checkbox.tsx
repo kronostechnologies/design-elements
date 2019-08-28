@@ -4,9 +4,8 @@ import { Checkbox } from '@equisoft/design-elements-react';
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('Checkboxes', module);
-
-stories.add('Normal', () => (
+storiesOf('Checkboxes', module)
+    .add('Normal', () => (
         <Checkbox
             defaultChecked={boolean('defaultChecked', false)}
             onChange={() => { console.log('Change event toggled'); }}

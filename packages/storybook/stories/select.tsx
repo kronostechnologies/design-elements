@@ -24,9 +24,8 @@ const skipOption = {
     value: 'skip',
 };
 
-const stories = storiesOf('Select', module);
-
-stories.add('Default', () => (
+storiesOf('Select', module)
+    .add('Default', () => (
         <Select
             label={text('label', 'Choose your province or territory')}
             onChange={(value) => {console.log(value); }}

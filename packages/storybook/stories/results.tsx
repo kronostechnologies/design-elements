@@ -43,17 +43,13 @@ const legendItems = [
     },
 ];
 
-const legend = storiesOf('Results/Legend', module);
-
-const progressCircle = storiesOf('Results/ProgressCircle', module);
-
-const progressBar = storiesOf('Results/ProgressBar', module);
-
-legend.add('Default', () => (
+storiesOf('Results/Legend', module)
+    .add('Default', () => (
         <Legend items={object('items', legendItems)} />
     ));
 
-progressCircle.add('ProgressCircle', () => (
+storiesOf('Results/ProgressCircle', module)
+    .add('ProgressCircle', () => (
         <ProgressCircle
             percent={number('percent', 66)}
             color={color('color', 'rgb(101,226,255)')}
@@ -72,6 +68,7 @@ progressCircle.add('ProgressCircle', () => (
         />
     ));
 
-progressBar.add('Default', () => (
+storiesOf('Results/ProgressBar', module)
+    .add('Default', () => (
         <ProgressBar content={object('content', progressBars)} />
     ));
