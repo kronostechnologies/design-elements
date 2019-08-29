@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bar Matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.c0 p {
+  color: rgb(87,102,110);
+  margin: 0;
+  text-align: right;
+  width: 8.5rem;
+}
+
+.c1 {
+  background-color: rgb(220,220,220);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 100%;
+}
+
+.c2 {
+  background: #ccc;
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 55%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      color="#ccc"
+    />
+  </div>
+  <p>
+    20k
+  </p>
+</div>
+`;

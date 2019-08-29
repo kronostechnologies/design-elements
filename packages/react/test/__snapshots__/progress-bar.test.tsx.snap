@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar Has secondary styles 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.c1 p {
+  color: rgb(87,102,110);
+  margin: 0;
+  text-align: right;
+  width: 8.5rem;
+}
+
+.c2 {
+  background-color: rgb(220,220,220);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 100%;
+}
+
+.c3 {
+  background: rgb(101,226,255);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 100%;
+}
+
+.c0 {
+  color: rgb(87,102,110);
+  font-size: 0.875rem;
+}
+
+<div>
+  <label
+    className="c0"
+  >
+    You
+  </label>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        color="rgb(101,226,255)"
+      />
+    </div>
+    <p>
+      50k - 100k$
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar Matches the snapshot 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.c1 p {
+  color: rgb(0,0,0);
+  margin: 0;
+  text-align: right;
+  width: 8.5rem;
+}
+
+.c2 {
+  background-color: rgb(220,220,220);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 100%;
+}
+
+.c3 {
+  background: rgb(101,226,255);
+  border-radius: 4rem;
+  height: 0.55rem;
+  width: 100%;
+}
+
+.c0 {
+  color: rgb(0,0,0);
+  font-size: 0.875rem;
+}
+
+<div>
+  <label
+    className="c0"
+  >
+    You
+  </label>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        color="rgb(101,226,255)"
+      />
+    </div>
+    <p>
+      50k - 100k$
+    </p>
+  </div>
+</div>
+`;

@@ -1,53 +1,48 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-
 import { SearchButton } from '../src/components/buttons/search-button';
 import { SearchGlobal } from '../src/components/forms/inputs/search-global';
+jest.mock('uuid/v4');
 
 describe('SearchGlobal', () => {
     test('Search callback is called when search button is clicked', () => {
-        const mockCallback = jest.fn().mockImplementation((value: string) => `Searching for: ${value}`);
+        const callback = jest.fn();
         const wrapper = mount(
-            <SearchGlobal initialValue="foo" label="Search" onSearch={mockCallback} />,
+            <SearchGlobal initialValue="foo" label="Search" onSearch={callback} />,
         );
-        const button = wrapper.find(SearchButton);
 
-        button.simulate('click');
-
-        expect(mockCallback).toHaveBeenCalledTimes(1);
-        expect(mockCallback).toHaveReturnedWith('Searching for: foo');
+        wrapper.find(SearchButton).simulate('click');
+        expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('Search callback is called when Enter is pressed in input', () => {
-        const mockCallback = jest.fn().mockImplementation((value: string) => `Searching for: ${value}`);
+        const callback = jest.fn();
         const wrapper = mount(
-            <SearchGlobal initialValue="bing" label="Search" onSearch={mockCallback} />,
+            <SearchGlobal initialValue="bing" label="Search" onSearch={callback} />,
         );
-        const input = wrapper.find('input');
 
-        input.simulate('keyDown', { keyCode: 13 });
-
-        expect(mockCallback).toHaveBeenCalledTimes(1);
-        expect(mockCallback).toHaveReturnedWith('Searching for: bing');
+        wrapper.find('input').simulate('keyDown', { keyCode: 13 });
+        expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Contains initial value', () => {
+    test('Search callback cannot be called when disabled', () => {
+        const callback = jest.fn();
         const wrapper = mount(
-            <SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />,
+            <SearchGlobal initialValue="foo" label="Search" onSearch={callback} disabled />,
         );
-        const input = wrapper.find('input');
 
-        expect(input.props().value).toBe('foo');
+        wrapper.find(SearchButton).simulate('click');
+        expect(callback).toHaveBeenCalledTimes(0);
     });
 
     test('Reset buttons clears input value', () => {
         const wrapper = mount(
             <SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />,
         );
+
         const reset = wrapper.find('[data-testid="resetButton"]').at(1);
         reset.simulate('click');
-
         expect(wrapper.contains('foo')).toBe(false);
     });
 

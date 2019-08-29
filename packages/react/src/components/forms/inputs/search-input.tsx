@@ -1,5 +1,5 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
-import React, { ChangeEvent, KeyboardEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -101,8 +101,8 @@ export interface SearchInputProps {
     onSearch?(value: string): void;
 }
 
-export function SearchInput({ onChange, onSearch, ...props }: SearchInputProps): ReactElement {
-    const [{ value }, setValue] = useState({ value: '' });
+export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: SearchInputProps) => {
+    const [{ value }, setValue] = useState({ value: initialValue || '' });
     const id = uuid();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -171,4 +171,4 @@ export function SearchInput({ onChange, onSearch, ...props }: SearchInputProps):
             }
         </SearchWrapper>
     );
-}
+};

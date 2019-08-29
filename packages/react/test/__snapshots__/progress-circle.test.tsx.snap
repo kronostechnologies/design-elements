@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressCircle Has secondary styles 1`] = `
+.c0 {
+  display: inline-block;
+}
+
+.c1 {
+  height: 9.125rem;
+  position: relative;
+  width: 9.125rem;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9.125rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 9.125rem;
+}
+
+.c3 p {
+  color: rgb(87,102,110);
+  font-size: 1.625rem;
+}
+
+.c4 {
+  color: rgb(87,102,110);
+  text-align: center;
+  width: 9.125rem;
+}
+
+.c2 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      height={146}
+      width={146}
+    >
+      <circle
+        cx={73}
+        cy={73}
+        fill="transparent"
+        r={57}
+        stroke="#DCDCDC"
+        strokeDasharray="358.1415625092364 358.1415625092364"
+        strokeLinecap="round"
+        strokeWidth={8}
+      />
+      <circle
+        className="c2"
+        cx={73}
+        cy={73}
+        fill="transparent"
+        r={57}
+        stroke="#304E63"
+        strokeDasharray="358.1415625092364 358.1415625092364"
+        strokeLinecap="round"
+        strokeWidth={8}
+        style={
+          Object {
+            "strokeDashoffset": 121.76813125314035,
+          }
+        }
+      />
+    </svg>
+    <div
+      className="c3"
+    >
+      <p>
+        56 k$
+      </p>
+    </div>
+  </div>
+  <p
+    className="c4"
+  >
+    RRSP
+  </p>
+</div>
+`;
+
+exports[`ProgressCircle Matches the snapshot 1`] = `
+.c0 {
+  display: inline-block;
+}
+
+.c1 {
+  height: 9.125rem;
+  position: relative;
+  width: 9.125rem;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9.125rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 9.125rem;
+}
+
+.c3 p {
+  color: rgb(0,0,0);
+  font-size: 1.625rem;
+}
+
+.c4 {
+  color: rgb(0,0,0);
+  text-align: center;
+  width: 9.125rem;
+}
+
+.c2 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      height={146}
+      width={146}
+    >
+      <circle
+        cx={73}
+        cy={73}
+        fill="transparent"
+        r={57}
+        stroke="#DCDCDC"
+        strokeDasharray="358.1415625092364 358.1415625092364"
+        strokeLinecap="round"
+        strokeWidth={8}
+      />
+      <circle
+        className="c2"
+        cx={73}
+        cy={73}
+        fill="transparent"
+        r={57}
+        stroke="#304E63"
+        strokeDasharray="358.1415625092364 358.1415625092364"
+        strokeLinecap="round"
+        strokeWidth={8}
+        style={
+          Object {
+            "strokeDashoffset": 121.76813125314035,
+          }
+        }
+      />
+    </svg>
+    <div
+      className="c3"
+    >
+      <p>
+        56 k$
+      </p>
+    </div>
+  </div>
+  <p
+    className="c4"
+  >
+    RRSP
+  </p>
+</div>
+`;

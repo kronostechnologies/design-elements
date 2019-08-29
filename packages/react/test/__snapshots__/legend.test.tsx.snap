@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Legend Matches the snapshot 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0 1.2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 15px;
+}
+
+.c1 p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c1::before {
+  color: rgb(101,226,255);
+  content: '•';
+  font-size: 2.6em;
+  font-weight: 600;
+  margin: -0.4em 0 0 -0.5em;
+  width: 0.5em;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 15px;
+}
+
+.c3 p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c3::before {
+  color: #000014;
+  content: '•';
+  font-size: 2.6em;
+  font-weight: 600;
+  margin: -0.4em 0 0 -0.5em;
+  width: 0.5em;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 15px;
+}
+
+.c4 p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::before {
+  color: #304E63;
+  content: '•';
+  font-size: 2.6em;
+  font-weight: 600;
+  margin: -0.4em 0 0 -0.5em;
+  width: 0.5em;
+}
+
+.c2 {
+  color: rgb(87,102,110);
+  font-size: 0.75rem;
+}
+
+<ul
+  className="c0"
+>
+  <li
+    className="c1"
+  >
+    <div>
+      <p>
+        You
+      </p>
+      <span
+        className="c2"
+      >
+        Data from your answers
+      </span>
+    </div>
+  </li>
+  <li
+    className="c3"
+    color="#000014"
+  >
+    <div>
+      <p>
+        Equisoft Peers
+      </p>
+      <span
+        className="c2"
+      >
+        Private Equisoft data
+      </span>
+    </div>
+  </li>
+  <li
+    className="c4"
+    color="#304E63"
+  >
+    <div>
+      <p>
+        General Peers
+      </p>
+      <span
+        className="c2"
+      >
+        Publicly accessible data
+      </span>
+    </div>
+  </li>
+</ul>
+`;

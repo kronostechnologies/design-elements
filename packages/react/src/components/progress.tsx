@@ -1,6 +1,4 @@
 import React, { ReactElement } from 'react';
-
-import range from 'lodash-es/range';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -58,6 +56,20 @@ const CurrentStep = styled(AbstractStep)`
 const FutureStep = styled(AbstractStep)`
   background-color: #d9dde2;
 `;
+
+const range = (value: number) => {
+    const array = [];
+    if (value >= 0) {
+        for (let i = 0; i < value; i++) {
+            array.push(i);
+        }
+    } else {
+        for (let i = 0; i > value; i--) {
+            array.push(i);
+        }
+    }
+    return array;
+};
 
 interface GetStepProps {
     step: number;

@@ -1,0 +1,354 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
+.c1 {
+  color: rgb(0,0,0);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: rgb(217,221,226);
+}
+
+.c0:focus {
+  border-color: rgb(0,128,165);
+}
+
+.c2 {
+  background: rgb(255,255,255);
+  border: 1px solid rgb(217,221,226);
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(0,0,0);
+  font-family: inherit;
+  font-size: calc(1rem - 2px);
+  margin: 0;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.c2::-webkit-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2::-moz-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2:-ms-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2::placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2:disabled {
+  background-color: rgb(242,243,249);
+  border-color: rgb(217,221,226);
+}
+
+.c2:disabled,
+.c2:disabled::-webkit-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled::-moz-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled:-ms-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled::placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:focus {
+  border-color: rgb(54,71,127);
+}
+
+label + .c2 {
+  display: block;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+  >
+    Telephone
+  </label>
+  <input
+    className="c2"
+    defaultValue="foo"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+    placeholder="Ex.: 555-123-4567"
+    type="tel"
+  />
+</div>
+`;
+
+exports[`TextInput Matches the snapshot [required = true] 1`] = `
+.c1 {
+  color: rgb(0,0,0);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: rgb(217,221,226);
+}
+
+.c0:focus {
+  border-color: rgb(0,128,165);
+}
+
+.c2 {
+  background: rgb(255,255,255);
+  border: 1px solid rgb(217,221,226);
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(0,0,0);
+  font-family: inherit;
+  font-size: calc(1rem - 2px);
+  margin: 0;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.c2::-webkit-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2::-moz-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2:-ms-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2::placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2:disabled {
+  background-color: rgb(242,243,249);
+  border-color: rgb(217,221,226);
+}
+
+.c2:disabled,
+.c2:disabled::-webkit-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled::-moz-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled:-ms-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled::placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:focus {
+  border-color: rgb(54,71,127);
+}
+
+label + .c2 {
+  display: block;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+  >
+    Telephone
+  </label>
+  <input
+    className="c2"
+    defaultValue="foo"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+    placeholder="Ex.: 555-123-4567"
+    required={true}
+    type="tel"
+  />
+</div>
+`;
+
+exports[`TextInput Matches the snapshot 1`] = `
+.c1 {
+  color: rgb(0,0,0);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: rgb(217,221,226);
+}
+
+.c0:focus {
+  border-color: rgb(0,128,165);
+}
+
+.c2 {
+  background: rgb(255,255,255);
+  border: 1px solid rgb(217,221,226);
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(0,0,0);
+  font-family: inherit;
+  font-size: calc(1rem - 2px);
+  margin: 0;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.c2::-webkit-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2::-moz-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2:-ms-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2::placeholder {
+  color: rgb(99,114,130);
+}
+
+.c2:disabled {
+  background-color: rgb(242,243,249);
+  border-color: rgb(217,221,226);
+}
+
+.c2:disabled,
+.c2:disabled::-webkit-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled::-moz-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled:-ms-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:disabled,
+.c2:disabled::placeholder {
+  color: rgb(156,167,180);
+}
+
+.c2:focus {
+  border-color: rgb(54,71,127);
+}
+
+label + .c2 {
+  display: block;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+  >
+    Telephone
+  </label>
+  <input
+    className="c2"
+    defaultValue="foo"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+    placeholder="Ex.: 555-123-4567"
+    type="tel"
+  />
+</div>
+`;

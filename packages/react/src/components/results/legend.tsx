@@ -39,8 +39,8 @@ interface LegendProps {
 export function Legend({ items }: LegendProps): ReactElement {
     return (
         <List>
-            {items.map(item => (
-                <Item key={item.name} color={item.color}>
+            {items.map((item, i) => (
+                <Item color={item.color} key={`${item.name}-${i}`}>
                     <div>
                         <p>{item.name}</p>
                         <Description>{item.description}</Description>

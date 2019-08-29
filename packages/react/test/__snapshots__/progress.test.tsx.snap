@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress Matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 160px;
+}
+
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 4px;
+  margin: 6px;
+  min-width: 148px;
+}
+
+.c1[value]::-moz-progress-bar {
+  background-color: #36477f;
+}
+
+.c1[value]::-webkit-progress-bar {
+  background-color: #d9dde2;
+}
+
+.c1[value]::-webkit-progress-value {
+  background-color: #36477f;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 160px;
+}
+
+.c3 {
+  background-color: #36477f;
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
+}
+
+.c4 {
+  background-color: #36477f;
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
+  border: 4px solid #d9dde2;
+  width: 8px;
+}
+
+.c5 {
+  background-color: #36477f;
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
+  background-color: #d9dde2;
+}
+
+<div
+  className="c0"
+>
+  <progress
+    className="c1"
+    max={2}
+    value={1}
+  />
+  <ul
+    className="c2"
+  >
+    <li
+      className="c3"
+    />
+    <li
+      className="c4"
+    />
+    <li
+      className="c5"
+    />
+  </ul>
+</div>
+`;

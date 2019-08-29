@@ -1,68 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchGlobal Matches the snapshot 1`] = `
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.25rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 700;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: normal;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background: rgb(255,255,255);
-  border-color: rgb(217,221,226);
-  color: rgb(99,114,130);
-}
-
-.c9:not(:disabled) {
-  cursor: pointer;
-}
-
-.c9 > svg {
-  color: inherit;
-}
-
-.c9:hover {
-  background-color: rgb(217,221,226);
-  border-color: rgb(217,221,226);
-  color: rgb(99,114,130);
-}
-
-.c9:disabled,
-.c9:disabled:focus,
-.c9:disabled:hover {
-  background-color: rgb(242,243,249);
-  border-color: rgb(217,221,226);
-  color: rgb(156,167,180);
-}
-
+exports[`Search Contextual Matches the snapshot [Disabled] 1`] = `
 .c4 {
   border: 0 !important;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -117,7 +55,7 @@ input + .c2 {
 }
 
 .c3 {
-  color: rgb(99,114,130);
+  color: rgb(156,167,180);
   height: 1rem;
   width: 1rem;
 }
@@ -140,7 +78,6 @@ input + .c2 {
   margin: 0;
   outline: none;
   padding: 0.5rem;
-  border-radius: 0.25rem 0 0 0.25rem;
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 }
@@ -229,10 +166,218 @@ input:valid + .c6 {
   display: inline-block;
 }
 
-.c8 {
-  border-left: 0;
-  border-radius: 0 0.25rem 0.25rem 0;
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <label
+      className="c2"
+    >
+      <svg
+        className="c3"
+        disabled={true}
+      />
+      <span
+        aria-hidden="false"
+        className="c4"
+      >
+        Search
+      </span>
+    </label>
+    <input
+      autoComplete="on"
+      className="c5"
+      disabled={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      type="search"
+      value=""
+    />
+    <button
+      className="c6"
+      data-testid="resetButton"
+      onClick={[Function]}
+    >
+      <svg
+        className="c7"
+      />
+      <span
+        aria-hidden="false"
+        className="c4"
+      >
+        Reset
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Search Contextual Matches the snapshot [Enabled] 1`] = `
+.c4 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.c2 {
+  color: rgb(0,0,0);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c2 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 label {
+  bottom: 0.5rem;
+  color: rgb(99,114,130);
+  display: inline-block;
+  height: 1rem;
+  left: 0.5rem;
+  margin: auto;
+  position: absolute;
+  top: 0.5rem;
+  width: 1rem;
+}
+
+.c1 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   position: relative;
+}
+
+.c3 {
+  color: rgb(99,114,130);
+  height: 1rem;
+  width: 1rem;
+}
+
+.c7 {
+  color: black;
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.c5 {
+  background: rgb(255,255,255);
+  border: 1px solid rgb(217,221,226);
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(0,0,0);
+  font-family: inherit;
+  font-size: calc(1rem - 2px);
+  margin: 0;
+  outline: none;
+  padding: 0.5rem;
+  line-height: 1;
+  padding: 0.5rem 1.75rem 0.5rem 2rem;
+}
+
+.c5::-webkit-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c5::-moz-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c5:-ms-input-placeholder {
+  color: rgb(99,114,130);
+}
+
+.c5::placeholder {
+  color: rgb(99,114,130);
+}
+
+.c5:disabled {
+  background-color: rgb(242,243,249);
+  border-color: rgb(217,221,226);
+}
+
+.c5:disabled,
+.c5:disabled::-webkit-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c5:disabled,
+.c5:disabled::-moz-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c5:disabled,
+.c5:disabled:-ms-input-placeholder {
+  color: rgb(156,167,180);
+}
+
+.c5:disabled,
+.c5:disabled::placeholder {
+  color: rgb(156,167,180);
+}
+
+.c5:focus {
+  border-color: rgb(54,71,127);
+}
+
+label + .c5 {
+  display: block;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+label + .c5 {
+  margin-top: 0;
+}
+
+.c5::-webkit-search-decoration,
+.c5::-webkit-search-cancel-button,
+.c5::-webkit-search-results-button,
+.c5::-webkit-search-results-decoration {
+  display: none;
+}
+
+.c6 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  bottom: 0.5rem;
+  cursor: pointer;
+  display: none;
+  height: 0.75rem;
+  margin: auto;
+  padding: 0;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 0.75rem;
+}
+
+input:valid + .c6 {
+  display: inline-block;
 }
 
 <div
@@ -260,7 +405,7 @@ input:valid + .c6 {
       onChange={[Function]}
       onKeyDown={[Function]}
       type="search"
-      value="foo"
+      value=""
     />
     <button
       className="c6"
@@ -278,11 +423,5 @@ input:valid + .c6 {
       </span>
     </button>
   </div>
-  <button
-    className="primary c8 c9"
-    onClick={[Function]}
-  >
-    Search
-  </button>
 </div>
 `;

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Option Button Is checked 1`] = `
+.c0 {
+  position: absolute;
+  z-index: -1;
+}
+
+.c0 + label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d9dde2;
+  border-radius: 8px;
+  color: #637282;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 40px;
+}
+
+.c0:checked + label {
+  background-color: #006296;
+  border-color: #006296;
+  color: #fff;
+}
+
+<div>
+  <input
+    checked={true}
+    className="c0"
+    name="test"
+    type="radio"
+    value={2}
+  />
+  <label>
+    option
+  </label>
+</div>
+`;
+
+exports[`Option Button Matches the snapshot 1`] = `
+.c0 {
+  position: absolute;
+  z-index: -1;
+}
+
+.c0 + label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d9dde2;
+  border-radius: 8px;
+  color: #637282;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 40px;
+}
+
+.c0:checked + label {
+  background-color: #006296;
+  border-color: #006296;
+  color: #fff;
+}
+
+<div>
+  <input
+    className="c0"
+    name="test"
+    type="radio"
+    value={2}
+  />
+  <label>
+    option
+  </label>
+</div>
+`;
