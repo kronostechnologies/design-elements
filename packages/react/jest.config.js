@@ -1,13 +1,12 @@
 module.exports = {
     moduleNameMapper: {
-        '\\.svg': '<rootDir>/test/mocks/svg-mock.js',
+        '\\.svg': '<rootDir>/test/__mocks__/svg-mock.js',
     },
     roots: [
         '<rootDir>/test',
     ],
-    setupFilesAfterEnv: ['<rootDir>test/setup.js'],
+    setupFilesAfterEnv: ['<rootDir>test/setup.ts'],
     transform: {
         '^.+\\.tsx?$': 'ts-jest',
-        '^.+\\.js$': 'babel-jest',
     },
 };
