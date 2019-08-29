@@ -1,5 +1,6 @@
 import React, { ChangeEvent, ReactNode } from 'react';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
 
 import { hiddenStyle } from '../../a11y/styles/visuallyhidden';
 import { chooseStyle } from './styles/choose';
@@ -20,15 +21,15 @@ interface ChooseInputProps {
     defaultChecked?: boolean;
     children: ReactNode;
     groupName: string;
-    id: string;
     type: 'radio' | 'checkbox';
     value: string;
     onChange(value: string): void;
 }
 
 const ChooseInput = React.forwardRef(
-    ({ defaultChecked, children, groupName, id, onChange, type, value }: ChooseInputProps,
+    ({ defaultChecked, children, groupName, onChange, type, value }: ChooseInputProps,
         ref: React.Ref<HTMLInputElement>) => {
+        const id = uuid();
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
             onChange(event.target.value);

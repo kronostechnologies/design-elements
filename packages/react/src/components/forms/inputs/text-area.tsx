@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useState } from 'react';
+import uuid from 'uuid/v4';
+
 import styled from 'styled-components';
-
-import { inputsStyle } from '../styles/inputs';
-
 import { FieldContainer } from '../field-container';
+import { inputsStyle } from '../styles/inputs';
 
 const StyledTextArea = styled.textarea`
   ${inputsStyle}
@@ -17,7 +17,6 @@ const StyledTextArea = styled.textarea`
 export interface TextAreaProps {
     defaultValue?: string;
     disabled?: boolean;
-    id: string;
     label: string;
     required?: boolean;
     validMsg?: string;
@@ -29,9 +28,10 @@ export interface TextAreaProps {
 interface ValueProps { value: string; }
 interface ValidityProps { validity: boolean; }
 
-const TextArea = ({ defaultValue, disabled, id, label, blurCallback, changeCallback, focusCallback, required, validMsg }: TextAreaProps) => {
+const TextArea = ({ defaultValue, disabled, label, blurCallback, changeCallback, focusCallback, required, validMsg }: TextAreaProps) => {
     const [{ value }, setValue] = useState<ValueProps>({ value: defaultValue || '' });
     const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
+    const id = uuid();
 
     const handleBlur = (event: any) => {
         const newValue = event.target.value;

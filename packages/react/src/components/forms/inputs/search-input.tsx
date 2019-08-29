@@ -1,4 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import  uuid from 'uuid/v4';
 
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
@@ -90,15 +91,15 @@ const SearchSubmit = styled(SearchButton)`
 export interface SearchInputProps {
     disabled?: boolean;
     hasButton?: boolean;
-    id: string;
     label?: string;
     initialValue?: string;
     changeCallback?(value: string): void;
     searchCallback?(value: string): void;
 }
 
-const SearchInput = ({ disabled, hasButton, id, initialValue, label, changeCallback, searchCallback }: SearchInputProps) => {
+const SearchInput = ({ disabled, hasButton, label, initialValue, changeCallback, searchCallback }: SearchInputProps) => {
     const [{ value }, setValue] = useState({ value: initialValue || '' });
+    const id = uuid();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;

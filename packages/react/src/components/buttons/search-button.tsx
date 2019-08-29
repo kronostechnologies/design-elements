@@ -12,7 +12,6 @@ const StyledButton = styled(AbstractButton)`
     border-color: rgb(217, 221, 226);
     color: rgb(99, 114, 130);
 
-    &:focus,
     &:hover {
         background-color: rgb(217, 221, 226);
         border-color: rgb(217, 221, 226);
