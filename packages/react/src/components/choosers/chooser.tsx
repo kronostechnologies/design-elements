@@ -32,7 +32,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipValue, skipLabel
         }
     };
 
-    const chooserOptions = options.map((option, i) => (
+    const chooserOptions = options.map((option) => (
         <ChooseInput
             groupName={groupName}
             onChange={handleChange}

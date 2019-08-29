@@ -9,7 +9,8 @@
     "build": "./scripts/build.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
     "start": "./scripts/start.sh",
-    "lint": "./scripts/lint.sh"
+    "lint": "./scripts/lint.sh",
+    "test": "./scripts/test.sh"
   },
   "files": [
     "dist"
@@ -36,8 +37,8 @@
     "@types/uuid": "^3.4.5",
     "feather-icons": "^4.21.0",
     "lodash-es": "^4.17.14",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "styled-components": "^4.2.0",
     "uuid": "^3.3.3"
   },
@@ -54,19 +55,28 @@
     "@equisoft/tslint-config": "^0.0.8",
     "@equisoft/tslint-config-react": "^0.0.3",
     "@svgr/rollup": "^4.1.0",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.18",
     "@types/lodash-es": "^4.17.3",
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
+    "@types/react-test-renderer": "^16.9.0",
     "@types/styled-components": "4.1.8",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.14.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^2.3.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.9.0",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   }

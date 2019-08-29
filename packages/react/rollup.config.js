@@ -15,10 +15,10 @@ export default {
         'styled-components',
     ],
     plugins: [
-        commonjs(),
         resolve({
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
+        commonjs(),
         babel({
             exclude: 'node_modules/**',
         }),

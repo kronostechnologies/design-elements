@@ -1,5 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
-import  uuid from 'uuid/v4';
+import uuid from 'uuid/v4';
 
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
@@ -92,12 +92,13 @@ export interface SearchInputProps {
     disabled?: boolean;
     hasButton?: boolean;
     label?: string;
+    initialValue?: string;
     changeCallback?(value: string): void;
     searchCallback?(value: string): void;
 }
 
-const SearchInput = ({ disabled, hasButton, label, changeCallback, searchCallback }: SearchInputProps) => {
-    const [{ value }, setValue] = useState({ value: '' });
+const SearchInput = ({ disabled, hasButton, label, initialValue, changeCallback, searchCallback }: SearchInputProps) => {
+    const [{ value }, setValue] = useState({ value: initialValue || '' });
     const id = uuid();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -144,7 +145,7 @@ const SearchInput = ({ disabled, hasButton, label, changeCallback, searchCallbac
                     value={value}
                 />
 
-                <Reset onClick={handleReset}>
+                <Reset data-testid="resetButton" onClick={handleReset}>
                     <IcoReset />
                     <VisuallyHidden>Reset</VisuallyHidden>
                 </Reset>
