@@ -1,5 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
-import  uuid from 'uuid/v4';
+import uuid from 'uuid/v4';
 
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
