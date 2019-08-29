@@ -971,6 +971,11 @@
     react-dom "^16.8.6"
     styled-components "^4.2.0"
 
+"@equisoft/design-elements-web@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-0.5.0.tgz#219019202d92e6e8562c639758171ec3cebcba52"
+  integrity sha512-rdqIxoKUvrB2nugAewUwz5L0+XLJXBL91Cl26sSU7w8ESVF+9nJz+4XPw7K9Fn2fyRh7OXS7IRRlKu/r+UlIvg==
+
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@equisoft/tslint-config-react/-/tslint-config-react-0.0.3.tgz#3d0580d26386288397581710300bff5e1800cf1b"
