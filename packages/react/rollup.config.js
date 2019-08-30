@@ -15,13 +15,13 @@ export default {
         'styled-components',
     ],
     plugins: [
+        babel({
+            exclude: 'node_modules/**',
+        }),
         resolve({
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
         commonjs(),
-        babel({
-            exclude: 'node_modules/**',
-        }),
         svgr({ icon: true }),
         typescript(),
     ],
