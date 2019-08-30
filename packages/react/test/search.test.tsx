@@ -9,7 +9,7 @@ describe('SearchGlobal', () => {
     test('Search callback is called when search button is clicked', () => {
         const mockCallback = jest.fn().mockImplementation((value: string) => `Searching for: ${value}`);
         const wrapper = mount(
-            <SearchGlobal initialValue="foo" label="Search" searchCallback={mockCallback} />,
+            <SearchGlobal initialValue="foo" label="Search" onSearch={mockCallback} />,
         );
         const button = wrapper.find(SearchButton);
 
@@ -22,7 +22,7 @@ describe('SearchGlobal', () => {
     test('Search callback is called when Enter is pressed in input', () => {
         const mockCallback = jest.fn().mockImplementation((value: string) => `Searching for: ${value}`);
         const wrapper = mount(
-            <SearchGlobal initialValue="bing" label="Search" searchCallback={mockCallback} />,
+            <SearchGlobal initialValue="bing" label="Search" onSearch={mockCallback} />,
         );
         const input = wrapper.find('input');
 
@@ -34,7 +34,7 @@ describe('SearchGlobal', () => {
 
     test('Contains initial value', () => {
         const wrapper = mount(
-            <SearchGlobal initialValue="foo" label="Search" searchCallback={() => {}} />,
+            <SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />,
         );
         const input = wrapper.find('input');
 
@@ -43,7 +43,7 @@ describe('SearchGlobal', () => {
 
     test('Reset buttons clears input value', () => {
         const wrapper = mount(
-            <SearchGlobal initialValue="foo" label="Search" searchCallback={() => {}} />,
+            <SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />,
         );
         const reset = wrapper.find('[data-testid="resetButton"]').at(1);
         reset.simulate('click');
@@ -53,7 +53,7 @@ describe('SearchGlobal', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <SearchGlobal initialValue="foo" label="Search" searchCallback={() => {}} />,
+            <SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
