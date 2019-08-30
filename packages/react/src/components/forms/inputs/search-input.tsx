@@ -1,12 +1,12 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import SearchIcon from 'feather-icons/dist/icons/search.svg';
+import React, { ChangeEvent, KeyboardEvent, ReactElement, useState } from 'react';
+import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import styled from 'styled-components';
 
 import { VisuallyHidden } from '../../a11y/visuallyhidden';
-import { SearchButton } from '../../buttons/search-button';
+import { SearchButton } from '../../buttons/search-button';
 
 import { Label } from '../label';
 import { inputsStyle } from '../styles/inputs';
@@ -32,8 +32,9 @@ const InnerWrapper = styled.div`
   position: relative;
 `;
 
+type IcoSearchProps = Pick<SearchInputProps, 'disabled'>;
 const IcoSearch = styled(SearchIcon)`
-  color: ${(props: {disabled: boolean}) => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
+  color: ${(props: IcoSearchProps) => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
   height: 1rem;
   width: 1rem;
 `;
@@ -93,26 +94,29 @@ export interface SearchInputProps {
     hasButton?: boolean;
     label?: string;
     initialValue?: string;
-    changeCallback?(value: string): void;
-    searchCallback?(value: string): void;
+    placeholder?: string;
+
+    onChange?(event: ChangeEvent<HTMLInputElement>): void;
+
+    onSearch?(value: string): void;
 }
 
-const SearchInput = ({ disabled, hasButton, label, initialValue, changeCallback, searchCallback }: SearchInputProps) => {
-    const [{ value }, setValue] = useState({ value: initialValue || '' });
+export function SearchInput({ onChange, onSearch, ...props }: SearchInputProps): ReactElement {
+    const [{ value }, setValue] = useState({ value: '' });
     const id = uuid();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const newValue = event.target.value;
+        const newValue = event.currentTarget.value;
         setValue({ value: newValue });
 
-        if (changeCallback) {
-            changeCallback(newValue);
+        if (onChange) {
+            onChange(event);
         }
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (searchCallback && event.keyCode === 13) {
-            searchCallback(value);
+        if (onSearch && event.keyCode === 13) {
+            onSearch(value);
         }
     };
 
@@ -121,10 +125,12 @@ const SearchInput = ({ disabled, hasButton, label, initialValue, changeCallback,
     };
 
     const handleSearchButtonClick = () => {
-        if (searchCallback) {
-            searchCallback(value);
+        if (onSearch) {
+            onSearch(value);
         }
     };
+
+    const { disabled, hasButton, label, placeholder } = props;
 
     return (
         <SearchWrapper>
@@ -141,6 +147,7 @@ const SearchInput = ({ disabled, hasButton, label, initialValue, changeCallback,
                     onKeyDown={handleKeyDown}
                     hasButton={hasButton}
                     id={id}
+                    placeholder={placeholder}
                     type="search"
                     value={value}
                 />
@@ -152,18 +159,16 @@ const SearchInput = ({ disabled, hasButton, label, initialValue, changeCallback,
             </InnerWrapper>
             {
                 hasButton &&
-        (
-            <SearchSubmit
-                disabled={disabled}
-                className="primary"
-                onClick={handleSearchButtonClick}
-            >
-                {label}
-            </SearchSubmit>
-        )
+                (
+                    <SearchSubmit
+                        disabled={disabled}
+                        className="primary"
+                        onClick={handleSearchButtonClick}
+                    >
+                        {label}
+                    </SearchSubmit>
+                )
             }
         </SearchWrapper>
     );
-};
-
-export { SearchInput };
+}

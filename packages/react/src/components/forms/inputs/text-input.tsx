@@ -1,73 +1,84 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
+import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import styled from 'styled-components';
 import { FieldContainer } from '../field-container';
+
 import { inputsStyle } from '../styles/inputs';
-import { TextAreaProps } from './text-area';
 
 const Input = styled.input`
   ${inputsStyle}
 `;
 
-interface TextInputProps extends TextAreaProps {
+interface TextInputProps {
+    defaultValue?: string;
+    disabled?: boolean;
+    id: string;
+    label: string;
     pattern?: string;
     placeholder?: string;
+    required?: boolean;
     type?: string;
+    validMsg?: string;
+    value?: string;
+
+    onBlur?(event: FocusEvent<HTMLInputElement>): void;
+
+    onChange?(event: ChangeEvent<HTMLInputElement>): void;
+
+    onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
-const TextInput = ({ defaultValue, disabled, label, blurCallback, changeCallback, focusCallback, pattern, placeholder, required, type, validMsg }: TextInputProps) => {
-    const [{ value }, setValue] = useState({ value: defaultValue || '' });
-    const [{ validity }, setValidity] = useState({ validity: true });
-    const id = uuid();
+const TextInput = React.forwardRef(
+    ({ onBlur, onChange, onFocus, ...props }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
+        const [{ validity }, setValidity] = useState({ validity: true });
+        const id = uuid();
 
-    const handleBlur = (event: any) => {
-        const newValue = event.target.value;
+        function handleBlur(event: FocusEvent<HTMLInputElement>): void {
+            setValidity({ validity: event.currentTarget.checkValidity() });
 
-        setValue({ value: newValue });
-        setValidity({ validity: event.target.checkValidity() });
-
-        if (blurCallback) {
-            blurCallback(newValue);
+            if (onBlur) {
+                onBlur(event);
+            }
         }
-    };
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const newValue = event.target.value;
-        setValue({ value: newValue });
-
-        if (changeCallback) {
-            changeCallback(newValue);
+        function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+            if (onChange) {
+                onChange(event);
+            }
         }
-    };
 
-    const handleFocus = () => {
-        if (focusCallback) {
-            focusCallback(value);
+        function handleFocus(event: FocusEvent<HTMLInputElement>): void {
+            if (onFocus) {
+                onFocus(event);
+            }
         }
-    };
 
-    return (
-        <FieldContainer
-            fieldId={id}
-            label={label}
-            valid={validity}
-            validMsg={validMsg || 'This text input is invalid'}
-        >
-            <Input
-                disabled={disabled}
-                id={id}
-                onBlur={handleBlur}
-                onChange={handleChange}
-                onFocus={handleFocus}
-                pattern={pattern}
-                placeholder={placeholder}
-                required={required}
-                type={type || 'text'}
-                value={value}
-            />
-        </FieldContainer>
-    );
-};
+        const { defaultValue, disabled, label, pattern, placeholder, required, type, validMsg, value } = props;
 
-export { TextInput };
+        return (
+            <FieldContainer
+                fieldId={id}
+                label={label}
+                valid={validity}
+                validMsg={validMsg || 'This text input is invalid'}
+            >
+                <Input
+                    defaultValue={defaultValue}
+                    disabled={disabled}
+                    id={id}
+                    ref={ref}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    onFocus={handleFocus}
+                    pattern={pattern}
+                    placeholder={placeholder}
+                    required={required}
+                    type={type || 'text'}
+                    value={value}
+                />
+            </FieldContainer>
+        );
+    });
+
+export { TextInput };

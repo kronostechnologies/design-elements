@@ -13,7 +13,7 @@
         "paths": {},
         "outDir": "./dist",
         "declaration": true,
-        "declarationDir": "./dist",
+        "declarationDir": "./dist"
     },
     "include": [
         "src/**/*",

@@ -1,11 +1,13 @@
-import React, { ChangeEvent, ReactNode, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
+import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import styled from 'styled-components';
-import { ChooseInput } from '../../choosers/controls/choose-input';
-import { FieldContainer } from '../field-container';
+import { ChooseInput } from '../../choosers/controls/choose-input';
+import { FieldContainer } from '../field-container';
+
 import { inputsStyle } from '../styles/inputs';
 
+// tslint:disable:max-line-length
 const StyledSelect = styled.select`
   ${inputsStyle}
   appearance: none;
@@ -15,51 +17,65 @@ const StyledSelect = styled.select`
   background-size: 0.75rem;
   position: relative;
 `;
+// tslint:enable:max-line-length
+
+interface SelectOption {
+    label?: string;
+    value?: string;
+}
 
 interface SelectProps {
     children?: ReactNode;
     label: string;
-    options: any[];
+    options: SelectOption[];
     required?: boolean;
     skipLabel?: string;
+    skipValue?: string;
     valid?: boolean;
     validMsg?: string;
-    onChange(value: string): void;
+    value?: string;
+
+    onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
 }
 
-const Select = ({ label, onChange, options, required, skipLabel, validMsg }: SelectProps) => {
+export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = uuid();
 
-    const selectRef = useRef<HTMLSelectElement>(null);
-    const skipRef = useRef<HTMLInputElement>(null);
+    const selectRef = useRef<HTMLSelectElement | null>(null);
+    const [skipSelected, setSkipSelected] = useState(false);
 
     const selectOptions = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
 
-    const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
-        if (skipRef.current) {
-            skipRef.current.checked = false;
-        }
+    function handleSelectChange(event: ChangeEvent<HTMLSelectElement>): void {
+        setSkipSelected(false);
         setValidity({ validity: event.target.checkValidity() });
 
-        if (typeof onChange === 'function') {
-            onChange(event.target.value);
+        if (onChange) {
+            onChange(event);
         }
-    };
+    }
 
-    const handleSkipChange = () => {
-        if (selectRef.current && skipRef.current) {
-            if (skipRef.current.checked) {
-                selectRef.current.value = '';
+    function handleSkipChange(event: ChangeEvent<HTMLInputElement>): void {
+        const selectElement = selectRef.current;
+        if (selectElement) {
+            const checked = !skipSelected;
+            if (checked) {
+                selectElement.value = '';
                 setValidity({ validity: true });
             }
 
-            onChange(skipRef.current.checked ? 'skip' : selectRef.current.value);
+            setSkipSelected(checked);
+            if (onChange) {
+                onChange(event);
+            }
         }
-    };
+    }
+
+    const { label, required, skipLabel, skipValue, validMsg, value } = props;
 
     return (
         <>
@@ -72,25 +88,24 @@ const Select = ({ label, onChange, options, required, skipLabel, validMsg }: Sel
                 <StyledSelect
                     id={id}
                     onChange={handleSelectChange}
+                    value={value}
                     required={required}
                     ref={selectRef}
                 >
                     {selectOptions}
                 </StyledSelect>
             </FieldContainer>
-            { skipLabel && (
+            {skipValue && skipLabel && (
                 <ChooseInput
-                    groupName="provinces"
+                    groupName={`${id}_skip`}
                     onChange={handleSkipChange}
-                    ref={skipRef}
-                    type="checkbox"
-                    value="skip"
+                    checked={skipSelected}
+                    type="radio"
+                    value={skipValue}
                 >
                     {skipLabel}
                 </ChooseInput>
             )}
         </>
     );
-};
-
-export { Select };
+}

@@ -1,12 +1,12 @@
 import React from 'react';
-
 import { SearchInput, SearchInputProps } from './search-input';
 
-const SearchContextual = ({ disabled, label, changeCallback }: SearchInputProps) => (
+const SearchContextual = ({ disabled, label, onChange, placeholder }: SearchInputProps) => (
     <SearchInput
         disabled={disabled}
         label={label}
-        changeCallback={changeCallback}
+        onChange={onChange}
+        placeholder={placeholder}
     />
 );
 
