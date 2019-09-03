@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-rollup --config --watch
+webpack --config ./webpack/webpack.config.dev.js
