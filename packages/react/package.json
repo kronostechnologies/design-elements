@@ -4,7 +4,7 @@
   "description": "React implementation of the Equisoft design system.",
   "license": "MIT",
   "main": "dist/design-elements-react.cjs.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "build": "./scripts/build.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",

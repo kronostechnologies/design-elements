@@ -13,7 +13,6 @@ const Input = styled.input`
 interface TextInputProps {
     defaultValue?: string;
     disabled?: boolean;
-    id: string;
     label: string;
     pattern?: string;
     placeholder?: string;

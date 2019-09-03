@@ -13,6 +13,7 @@ export default {
     external: [
         'react',
         'styled-components',
+        'crypto',
     ],
     plugins: [
         babel({
