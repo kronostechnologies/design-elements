@@ -2,10 +2,6 @@
 import { AddButton } from './components/buttons/add-button';
 import { Button } from './components/buttons/button';
 
-// Icons
-import CheckmarkIcon from './icons/checkmark.svg';
-import NoContactIcon from './icons/no-contact.svg';
-
 // Form Elements
 import { Checkbox } from './components/forms/inputs/checkbox';
 import { OptionButton } from './components/forms/inputs/option-button';
@@ -30,8 +26,6 @@ import { ProgressCircle } from './components/results/progress-circle/progress-ci
 export {
     AddButton,
     Button,
-    NoContactIcon,
-    CheckmarkIcon,
     Checkbox,
     OptionButton,
     TextInput,

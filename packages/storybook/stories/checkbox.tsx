@@ -10,5 +10,5 @@ storiesOf('Checkboxes', module)
         <Checkbox defaultChecked onChange={() => {console.log('Change event toggled')}} />
     ))
     .add('Event callback', () => (
-        <Checkbox onChange={(event, checked) => console.log(`Checkbox is ${checked ? 'checked' : 'unchecked'}!`)} />
+        <Checkbox onChange={(_event, checked) => console.log(`Checkbox is ${checked ? 'checked' : 'unchecked'}!`)} />
     ))
