@@ -35,12 +35,12 @@
   "dependencies": {
     "feather-icons": "^4.21.0",
     "lodash-es": "^4.17.14",
+    "styled-components": "^4.3.2",
     "uuid": "^3.3.3"
   },
   "peerDependencies": {
     "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "styled-components": "^4.3.2"
+    "react-dom": "~16.9.0"
   },
   "devDependencies": {
     "@equisoft/stylelint-config-styled-components": "^0.1.0",
@@ -63,7 +63,6 @@
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-test-renderer": "^16.9.0",
-    "styled-components": "^4.3.2",
     "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3",
