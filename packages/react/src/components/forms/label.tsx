@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 
 import styled from 'styled-components';
-import { Child } from '../buttons/abstract-button';
 
 const StyledLabel = styled.label`
   color: rgb(0, 0, 0);

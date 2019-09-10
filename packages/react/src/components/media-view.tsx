@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-
-import { Child } from './buttons/abstract-button';
+import React, { Component, ReactNode } from 'react';
 
 interface MediaViewProps {
-    children?: Child;
+    children?: ReactNode;
     maxWidth?: number;
     minWidth?: number;
 }
