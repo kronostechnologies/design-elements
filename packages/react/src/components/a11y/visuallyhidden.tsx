@@ -8,7 +8,7 @@ const Hidden = styled.span`
 `;
 
 const VisuallyHidden =  ({ children }: {children: ReactNode}) => (
-    <Hidden>
+    <Hidden aria-hidden="false">
         {children}
     </Hidden>
 );

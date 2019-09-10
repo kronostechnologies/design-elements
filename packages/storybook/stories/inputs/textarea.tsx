@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TextArea } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
@@ -27,15 +28,9 @@ storiesOf('TextArea', module)
     .add('Event callbacks (see console)', () => (
         <TextArea
             label={text('label', 'Text area label')}
-            onChange={event => {
-                console.log(`Custom function called on change. Current value: ${event.currentTarget.value}`);
-            }}
-            onBlur={event => {
-                console.log(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
-            }}
-            onFocus={event => {
-                console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
-            }}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
             placeholder={text('placeholder', 'Enter your text here')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}

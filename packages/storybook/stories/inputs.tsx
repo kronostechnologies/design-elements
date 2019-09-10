@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { TextInput } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 storiesOf('Input text fields', module)
     .add('Type: Text', () => (
@@ -76,15 +76,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            onChange={event => {
-                console.log(`Custom function called on change. Current value: ${event.currentTarget.value}`);
-            }}
-            onBlur={event => {
-                console.log(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
-            }}
-            onFocus={event => {
-                console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
-            }}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Pattern validation', () => (
