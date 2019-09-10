@@ -27,7 +27,6 @@ interface ChooserProps {
     options: ChooserOption[];
     skipOption?: ChooserOption;
     value?: string | null;
-
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
@@ -59,7 +58,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }:
                 {chooserOptions}
             </Grid>
 
-            {skipOption && (
+            {skipOption !== undefined && (
                 <Skip>
                     <ChooseInput
                         groupName={groupName}

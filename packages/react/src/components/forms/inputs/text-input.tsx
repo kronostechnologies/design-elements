@@ -62,7 +62,7 @@ const TextInput = React.forwardRef(
                 fieldId={id}
                 label={label}
                 valid={validity}
-                validMsg={validationErrorMessage || 'This text input is invalid'}
+                validationErrorMessage={validationErrorMessage || 'This text input is invalid'}
             >
                 <Input
                     defaultValue={defaultValue}

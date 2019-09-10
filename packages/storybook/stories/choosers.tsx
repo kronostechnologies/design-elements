@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Chooser } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 import { boolean, object, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
@@ -35,7 +36,7 @@ storiesOf('Choosers', module)
         <Chooser
             groupName={text('groupName', 'ageRange')}
             inColumns={boolean('inColumns', true)}
-            onChange={event => console.log(event)}
+            onChange={action('onChange callback')}
             options={object('options', ageRange)}
         />
     ));

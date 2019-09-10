@@ -1,9 +1,13 @@
-import React, { ChangeEvent, FocusEvent, ReactNode, useState } from 'react';
-
+import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
+
+import { ChooseInput } from '../../choosers/controls/choose-input';
 import { FieldContainer } from '../field-container';
+
 import { inputsStyle } from '../styles/inputs';
 
+// tslint:disable:max-line-length
 const StyledSelect = styled.select`
   ${inputsStyle}
   appearance: none;
@@ -14,46 +18,94 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-interface SelectProps {
-    children: ReactNode;
-    id: string;
+// tslint:enable:max-line-length
+
+interface SelectOption {
     label: string;
-    options: any[];
-    required?: boolean;
-    valid: boolean;
-    validMsg: string;
+    value?: string;
 }
 
-const Select = ({ children, id, label, options, required, valid, validMsg, ...props }: SelectProps) => {
-    const [validity, setValidity] = useState(true);
+interface SelectProps {
+    children?: ReactNode;
+    label?: string;
+    options: SelectOption[];
+    required?: boolean;
+    skipOption?: SelectOption;
+    valid?: boolean;
+    validMsg?: string;
+    value?: string;
 
-    const selectOptions: object = options.map((option, i) => {
+    onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
+}
+
+export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
+    const [{ validity }, setValidity] = useState({ validity: true });
+    const id = uuid();
+
+    const selectRef = useRef<HTMLSelectElement | null>(null);
+    const [skipSelected, setSkipSelected] = useState(false);
+
+    const selectOptions = options.map((option, i) => {
         const key = `${option.value}-${i}`;
         return <option key={key} value={option.value}>{option.label}</option>;
     });
 
-    const handleCheckValidity = (event: any) => {
-        setValidity(event.target.checkValidity());
-    };
+    function handleSelectChange(event: ChangeEvent<HTMLSelectElement>): void {
+        setSkipSelected(false);
+        setValidity({ validity: event.target.checkValidity() });
+
+        if (onChange) {
+            onChange(event);
+        }
+    }
+
+    function handleSkipChange(event: ChangeEvent<HTMLInputElement>): void {
+        const selectElement = selectRef.current;
+        if (selectElement) {
+            const checked = !skipSelected;
+            if (checked) {
+                selectElement.value = '';
+                setValidity({ validity: true });
+            }
+
+            setSkipSelected(checked);
+            if (onChange) {
+                onChange(event);
+            }
+        }
+    }
+
+    const { label, required, skipOption, validMsg, value } = props;
 
     return (
-        <FieldContainer
-            fieldId={id}
-            label={label}
-            valid={validity}
-            validMsg={validMsg || 'You must select an option'}
-        >
-            <StyledSelect
-                {...props}
-                id={id}
-                onBlur={(event: FocusEvent<HTMLSelectElement>) => {handleCheckValidity(event); }}
-                onChange={(event: ChangeEvent<HTMLSelectElement>) => {handleCheckValidity(event); }}
-                required={required}
+        <>
+            <FieldContainer
+                fieldId={id}
+                label={label}
+                valid={validity}
+                validMsg={validMsg || 'You must select an option'}
             >
-                {selectOptions}
-            </StyledSelect>
-        </FieldContainer>
+                <StyledSelect
+                    id={id}
+                    onChange={handleSelectChange}
+                    value={value}
+                    required={required}
+                    ref={selectRef}
+                >
+                    {selectOptions}
+                </StyledSelect>
+            </FieldContainer>
+            {skipOption && (
+                <ChooseInput
+                    groupName={`${id}_skip`}
+                    onChange={handleSkipChange}
+                    checked={skipSelected}
+                    type="radio"
+                    value={skipOption.value}
+                >
+                    {skipOption.label}
+                </ChooseInput>
+            )}
+        </>
     );
-};
-
-export { Select };
+}
