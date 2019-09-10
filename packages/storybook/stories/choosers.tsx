@@ -16,13 +16,17 @@ const ageRange = [
     { value: '65+', label: '65+ years old' },
 ];
 
+const skipOption = {
+    label: 'Would rather not say',
+    value: 'skip',
+};
+
 storiesOf('Choosers', module)
     .add('Chooser with a skip button', () => (
         <Chooser
             groupName="maritalStatus"
             options={maritalStatus}
-            skipLabel="Would rather not say"
-            skipValue="skip"
+            skipOption={skipOption}
         />
     ))
     .add('Chooser in Columns with callback', () => (

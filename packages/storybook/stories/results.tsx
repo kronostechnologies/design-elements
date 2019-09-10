@@ -3,29 +3,6 @@ import { boolean, color, number, object, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-const progressBars = [
-    {
-        color: 'rgb(101,226,255)',
-        descriptionLabel: 'You',
-        endLabel: '50k - 100k$',
-        percent: '100',
-    },
-    {
-        color: 'rgb(38, 50, 56)',
-        descriptionLabel: 'Equisoft',
-        endLabel: '150k - 250k$',
-        percent: '60',
-        secondary: true,
-    },
-    {
-        color: 'rgb(99, 114, 130)',
-        descriptionLabel: 'General',
-        endLabel: '150k - 250k$',
-        percent: '60',
-        secondary: true,
-    },
-];
-
 const legendItems = [
     {
         name: 'You',
@@ -70,5 +47,19 @@ storiesOf('Results/ProgressCircle', module)
 
 storiesOf('Results/ProgressBar', module)
     .add('Default', () => (
-        <ProgressBar content={object('content', progressBars)} />
+        <ProgressBar
+            color="rgb(101,226,255)"
+            descriptionLabel="You"
+            resultLabel="50k - 100k$"
+            percent={100}
+        />
+    ))
+    .add('Secondary', () => (
+        <ProgressBar
+            color="rgb(38, 50, 56)"
+            descriptionLabel="Equisoft"
+            resultLabel="150k - 250k$"
+            percent={60}
+            secondary={true}
+        />
     ));

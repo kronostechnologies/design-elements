@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactNode, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -33,10 +33,12 @@ interface SelectProps {
     skipOption?: SelectOption;
     valid?: boolean;
     validationErrorMessage?: string;
-    onChange(value: string): void;
+    value?: string;
+
+    onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
 }
 
-const Select = ({ label, onChange, options, required, skipLabel, validationErrorMessage }: SelectProps) => {
+const Select = ({ onChange, options, ...props }: SelectProps) => {
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = uuid();
 
@@ -73,7 +75,7 @@ const Select = ({ label, onChange, options, required, skipLabel, validationError
         }
     }
 
-    const { label, required, skipOption, validMsg, value } = props;
+    const { label, required, skipOption, validationErrorMessage, value } = props;
 
     return (
         <>
@@ -106,4 +108,6 @@ const Select = ({ label, onChange, options, required, skipLabel, validationError
             )}
         </>
     );
-}
+};
+
+export { Select };

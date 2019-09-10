@@ -7,7 +7,6 @@ import { storiesOf } from '@storybook/react';
 storiesOf('Input text fields', module)
     .add('Type: Text', () => (
         <TextInput
-            id={text('id', 'ta_firstname')}
             label={text('label', 'First Name')}
             placeholder={text('placeholder', 'Ex.: John')}
             type={text('type', 'text')}
@@ -16,7 +15,6 @@ storiesOf('Input text fields', module)
     ))
     .add('Type: Email', () => (
         <TextInput
-            id={text('id', 'ta_email')}
             label={text('label', 'Email')}
             placeholder={text('placeholder', 'Ex.: name@example.com')}
             type={text('type', 'email')}
@@ -25,7 +23,6 @@ storiesOf('Input text fields', module)
     ))
     .add('Type: Phone', () => (
         <TextInput
-            id={text('id', 'ta_phone')}
             label={text('label', 'Phone')}
             placeholder={text('placeholder', 'Ex.: 555-555-5555')}
             type={text('type', 'tel')}
@@ -35,14 +32,12 @@ storiesOf('Input text fields', module)
     .add('Default value', () => (
         <TextInput
             defaultValue={text('defaultValue', '1234 Main Street')}
-            id={text('id', 'ta_address')}
             label={text('label', 'Address')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
         />
     ))
     .add('Required', () => (
         <TextInput
-            id={text('id', 'ta_lastname')}
             label={text('label', 'Last Name (required)')}
             placeholder={text('placeholder', 'Ex.: Doe')}
             required={boolean('required', true)}
@@ -68,7 +63,6 @@ storiesOf('Input text fields', module)
     ))
     .add('Pattern validation', () => (
         <TextInput
-            id={text('id', 'ta_phone')}
             label={text('label', 'Telephone')}
             pattern={text('pattern', '[0-9]{3}-?[0-9]{3}-?[0-9]{4}')}
             placeholder={text('placeholder', 'Ex.: 555-123-4567')}
@@ -79,7 +73,6 @@ storiesOf('Input text fields', module)
     .add('Disabled', () => (
         <TextInput
             disabled={boolean('disabled', true)}
-            id={text('id', 'ta_disabled')}
             label={text('label', 'A disabled text input')}
             placeholder={text('placeholder', 'Sorry but this field is disabled')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
