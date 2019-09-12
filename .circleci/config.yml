@@ -1,0 +1,142 @@
+version: 2.1
+
+variables:
+    - &working_directory '~/design-elements'
+    - &react_directory '~/design-elements/packages/react'
+    - &storybook_directory '~/design-elements/packages/storybook'
+    - &web_directory '~/design-elements/packages/web'
+
+executors:
+    node:
+        docker:
+            - image: circleci/node:10.16.3
+        working_directory: *working_directory
+
+jobs:
+    setup:
+        executor: node
+        steps:
+            - checkout
+            - persist_to_workspace:
+                root: *working_directory
+                paths:
+                    - .
+    build_react:
+        executor: node
+        steps:
+            - attach_workspace:
+                at: '.'
+            - restore_cache:
+                keys:
+                    - yarn-packages-react-{{ checksum "~/design-elements/packages/react/yarn.lock" }}
+            - run:
+                name: Install Dependencies
+                command: yarn --frozen-lockfile
+                working_directory: *react_directory
+            - save_cache:
+                name: Save Cache
+                key: yarn-packages-react-{{ checksum "~/design-elements/packages/react/yarn.lock" }}
+                paths:
+                    - node_modules
+            - run:
+                name: Lint
+                command: yarn lint
+                working_directory: *react_directory
+            - run:
+                name: Build
+                command: yarn build
+                working_directory: *react_directory
+            - run:
+               name: Test
+               command: yarn test
+               working_directory: *react_directory
+            - persist_to_workspace:
+                root: *working_directory
+                paths: 
+                    - packages/react
+    build_web:
+        executor: node
+        steps:
+            - attach_workspace:
+                at: '.'
+            - restore_cache:
+                keys:
+                    - yarn-packages-web-{{ checksum "~/design-elements/packages/web/yarn.lock" }}
+            - run:
+                name: Install Dependencies
+                command: yarn --frozen-lockfile
+                working_directory: *web_directory
+            - save_cache:
+                name: Save Cache
+                key: yarn-packages-web-{{ checksum "~/design-elements/packages/web/yarn.lock" }}
+                paths:
+                    - node_modules
+            - run:
+                name: Lint
+                command: yarn lint
+                working_directory: *web_directory
+            - run:
+                name: Build
+                command: yarn build
+                working_directory: *web_directory
+            - persist_to_workspace:
+                root: *working_directory
+                paths: 
+                    - packages/web
+    build_storybook:
+        executor: node
+        steps:
+            - attach_workspace:
+                at: '.'
+            - run:
+                name: Register React Package
+                command: yarn link
+                working_directory: *react_directory
+            - run:
+                name: Register Web Package
+                command: yarn link
+                working_directory: *web_directory
+            - restore_cache:
+                keys:
+                    - yarn-packages-storybook-{{ checksum "~/design-elements/packages/storybook/yarn.lock" }}
+            - run:
+                name: Install Dependencies
+                command: yarn --frozen-lockfile
+                working_directory: *storybook_directory
+            - save_cache:
+                name: Save Cache
+                key: yarn-packages-storybook-{{ checksum "~/design-elements/packages/storybook/yarn.lock" }}
+                paths:
+                    - node_modules
+            - run:
+                name: Link React Package
+                command: yarn link @equisoft/design-elements-react
+                working_directory: *storybook_directory
+            - run:
+                name: Link Web Package
+                command: yarn link @equisoft/design-elements-web
+                working_directory: *storybook_directory
+            - run:
+                name: Lint
+                command: yarn lint
+                working_directory: *storybook_directory
+            - run:
+                name: Build
+                command: yarn build
+                working_directory: *storybook_directory
+
+workflows:
+    version: 2
+    build_all:
+        jobs:
+            - setup
+            - build_react:
+                requires:
+                    - setup
+            - build_web:
+                requires:
+                    - setup
+            - build_storybook:
+                requires:
+                    - build_react
+                    - build_web

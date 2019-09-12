@@ -6,9 +6,9 @@
   "main": "dist/design-elements-web.cjs.js",
   "scripts": {
     "build": "./scripts/build.sh",
+    "lint": "./scripts/lint.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
-    "start": "./scripts/start.sh",
-    "lint": "./scripts/lint.sh"
+    "start": "./scripts/start.sh"
   },
   "files": [
     "dist",
