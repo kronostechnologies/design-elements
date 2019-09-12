@@ -3,6 +3,7 @@
   "version": "0.6.2",
   "scripts": {
     "build": "./scripts/build.sh",
+    "lint": "./scripts/lint.sh",
     "start": "./scripts/start.sh"
   },
   "author": "Equisoft Design",
