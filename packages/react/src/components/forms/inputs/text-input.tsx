@@ -43,11 +43,11 @@ const TextInput = React.forwardRef(
             }
         }
 
-        const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        function handleChange(event: ChangeEvent<HTMLInputElement>): void {
             if (onChange) {
                 onChange(event);
             }
-        };
+        }
 
         function handleFocus(event: FocusEvent<HTMLInputElement>): void {
             if (onFocus) {
@@ -55,16 +55,8 @@ const TextInput = React.forwardRef(
             }
         }
 
-        const { defaultValue,
-                disabled,
-                label,
-                pattern,
-                placeholder,
-                required,
-                type,
-                validationErrorMessage,
-                value,
-        } = props;
+        // tslint:disable-next-line:max-line-length
+        const { defaultValue, disabled, label, pattern, placeholder, required, type, validationErrorMessage, value } = props;
 
         return (
             <FieldContainer

@@ -1,7 +1,7 @@
 import { Legend, ProgressBar, ProgressCircle } from '@equisoft/design-elements-react';
 import { boolean, color, number, object, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import * as React from 'react';
+import React from 'react';
 
 const legendItems = [
     {
@@ -28,19 +28,19 @@ storiesOf('Results/Legend', module)
 storiesOf('Results/ProgressCircle', module)
     .add('ProgressCircle', () => (
         <ProgressCircle
-            percent={number('percent', 66)}
-            color={color('color', 'rgb(101,226,255)')}
             descriptionLabel={text('descriptionLabel', 'RRSP')}
             resultLabel={text('resultLabel', '56 k$')}
+            percent={number('percent', 66)}
+            color={color('color', 'rgb(101,226,255)')}
             secondary={boolean('secondary', false)}
         />
     ))
     .add('ProgressCircle Secondary', () => (
         <ProgressCircle
-            percent={number('percent', 66)}
-            color={color('color', '#304E63')}
             descriptionLabel={text('descriptionLabel', 'RRSP')}
             resultLabel={text('resultLabel', '56 k$')}
+            percent={number('percent', 66)}
+            color={color('color', '#304E63')}
             secondary={boolean('secondary', true)}
         />
     ));
@@ -48,18 +48,19 @@ storiesOf('Results/ProgressCircle', module)
 storiesOf('Results/ProgressBar', module)
     .add('Default', () => (
         <ProgressBar
-            color="rgb(101,226,255)"
-            descriptionLabel="You"
-            resultLabel="50k - 100k$"
-            percent={100}
+            descriptionLabel={text('descriptionLabel', 'You')}
+            resultLabel={text('resultLabel', '50k - 100k$')}
+            percent={number('percent', 100)}
+            color={color('color', 'rgb(101,226,255)')}
+            secondary={boolean('secondary', false)}
         />
     ))
     .add('Secondary', () => (
         <ProgressBar
-            color="rgb(38, 50, 56)"
-            descriptionLabel="Equisoft"
-            resultLabel="150k - 250k$"
-            percent={60}
-            secondary={true}
+            descriptionLabel={text('descriptionLabel', 'Equisoft')}
+            resultLabel={text('resultLabel', '150k - 250k$')}
+            percent={number('percent', 60)}
+            color={color('color', 'rgb(38, 50, 56)')}
+            secondary={boolean('secondary', true)}
         />
     ));

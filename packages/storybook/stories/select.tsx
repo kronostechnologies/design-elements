@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Select } from '@equisoft/design-elements-react';
 import { boolean, object, text } from '@storybook/addon-knobs';
@@ -28,14 +28,36 @@ storiesOf('Select', module)
     .add('Default', () => (
         <Select
             label={text('label', 'Choose your province or territory')}
+            value={text('value', '')}
+            name={text('name', 'provinces')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
             onChange={(value) => {console.log(value); }}
+            required={boolean('required', false)}
+            valid={boolean('valid', true)}
+            options={object('options', provinces)}
+        />
+    ))
+    .add('With Value', () => (
+        <Select
+            label={text('label', 'Choose your province or territory')}
+            value={text('value', 'on')}
+            name={text('name', 'provinces')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            onChange={(value) => {console.log(value); }}
+            required={boolean('required', false)}
+            valid={boolean('valid', true)}
             options={object('options', provinces)}
         />
     ))
     .add('With Skip', () => (
         <Select
             label={text('label', 'Choose your province or territory')}
+            value={text('value', '')}
+            name={text('name', 'provinces')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
             onChange={console.log}
+            required={boolean('required', false)}
+            valid={boolean('valid', true)}
             options={object('options', provinces)}
             skipOption={object('skipOption', skipOption)}
         />
@@ -43,9 +65,13 @@ storiesOf('Select', module)
     .add('Required', () => (
         <Select
             label={text('label', 'Choose your province or territory')}
+            value={text('value', '')}
+            name={text('name', 'provinces')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
             onChange={console.log}
-            options={object('options', provinces)}
             required={boolean('required', true)}
+            valid={boolean('valid', true)}
+            options={object('options', provinces)}
             skipOption={object('skipOption', skipOption)}
         />
     ));

@@ -23,9 +23,10 @@ export function Button({ children, onClick, ...props }: ButtonProps): ReactEleme
         onClick && onClick();
     }
 
+    const label: string = props.label || '';
     return (
         <StyledButton onClick={handleClick} {...props}>
-            {children}
+            {children}{label}
         </StyledButton>
     );
 }

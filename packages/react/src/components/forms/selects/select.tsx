@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactNode, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -33,12 +33,13 @@ interface SelectProps {
     skipOption?: SelectOption;
     valid?: boolean;
     validationErrorMessage?: string;
+    name?: string;
     value?: string;
 
     onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
 }
 
-const Select = ({ onChange, options, ...props }: SelectProps) => {
+export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = uuid();
 
@@ -75,7 +76,7 @@ const Select = ({ onChange, options, ...props }: SelectProps) => {
         }
     }
 
-    const { label, required, skipOption, validationErrorMessage, value } = props;
+    const { label, name, required, skipOption, validationErrorMessage, value } = props;
 
     return (
         <>
@@ -88,9 +89,10 @@ const Select = ({ onChange, options, ...props }: SelectProps) => {
                 <StyledSelect
                     id={id}
                     onChange={handleSelectChange}
-                    value={value}
+                    name={name}
                     required={required}
                     ref={selectRef}
+                    value={value}
                 >
                     {selectOptions}
                 </StyledSelect>
@@ -108,6 +110,4 @@ const Select = ({ onChange, options, ...props }: SelectProps) => {
             )}
         </>
     );
-};
-
-export { Select };
+}

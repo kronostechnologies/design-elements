@@ -10,13 +10,12 @@ const PlusIcon = styled(PlusSign)`
   width: 1rem;
 `;
 
-const AddButton = ({ children, disabled, onClick, buttonType }: ButtonProps) => {
+const AddButton = ({ disabled, onClick, buttonType, label }: ButtonProps) => {
     const handleClick = () => { onClick && onClick(); };
 
     return (
-        <Button disabled={disabled} onClick={handleClick} buttonType={buttonType}>
-        <PlusIcon />
-            {children}
+        <Button disabled={disabled} onClick={handleClick} buttonType={buttonType} label={label}>
+            <PlusIcon />
         </Button>
     );
 };

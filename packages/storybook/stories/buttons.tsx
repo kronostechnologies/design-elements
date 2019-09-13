@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
 import { AddButton, Button } from '@equisoft/design-elements-react';
-import { select, text } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
@@ -10,47 +10,61 @@ const options = ['primary', 'secondary', 'tertiary'];
 
 storiesOf('Buttons', module)
     .add('Primary', () => (
-        <Button buttonType={select('buttonType', options, 'primary') as ButtonType}>
-            {text('children', 'Primary Button')}
-        </Button>
+        <Button
+            label={text('label', 'Primary Button')}
+            buttonType={select('buttonType', options, 'primary') as ButtonType}
+            disabled={boolean('disabled', false)}
+        />
     ))
     .add('Secondary', () => (
-        <Button buttonType={select('buttonType', options, 'secondary') as ButtonType}>
-            {text('children', 'Secondary Button')}
-        </Button>
+        <Button
+            label={text('label', 'Secondary Button')}
+            buttonType={select('buttonType', options, 'secondary') as ButtonType}
+            disabled={boolean('disabled', false)}
+        />
     ))
     .add('Tertiary', () => (
-        <Button buttonType={select('buttonType', options, 'tertiary') as ButtonType}>
-            {text('children', 'Tertiary Button')}
-        </Button>
+        <Button
+            label={text('label', 'Tertiary Button')}
+            buttonType={select('buttonType', options, 'tertiary') as ButtonType}
+            disabled={boolean('disabled', false)}
+        />
     ))
     .add('Disabled', () => (
-        <Button disabled buttonType={select('buttonType', options, 'primary') as ButtonType}>
-            {text('children', 'Disabled Button')}
-        </Button>
+        <Button
+            label={text('label', 'Disabled Button')}
+            buttonType={select('buttonType', options, 'primary') as ButtonType}
+            disabled={boolean('disabled', true)}
+        />
     ))
     .add('Event callback', () => (
         <Button
+            label={text('label', 'See Console For Callback')}
             onClick={() => { console.log('The button has been clicked!'); }}
             buttonType={select('buttonType', options, 'primary') as ButtonType}
-        >
-            {text('children', 'See Console For Callback')}
-        </Button>
+            disabled={boolean('disabled', false)}
+        />
     ));
 
 storiesOf('Buttons/Add', module)
     .add('Primary', () => (
-        <AddButton buttonType={select('buttonType', options, 'primary') as ButtonType}>
-            {text('children', 'Primary Button')}
-        </AddButton>
+        <AddButton
+            label={text('label', 'Primary Button')}
+            buttonType={select('buttonType', options, 'primary') as ButtonType}
+            disabled={boolean('disabled', false)}
+        />
     ))
     .add('Secondary', () => (
-        <AddButton buttonType={select('buttonType', options, 'secondary') as ButtonType}>
-            {text('children', 'Tertiary Button')}
-        </AddButton>
+        <AddButton
+            label={text('label', 'Secondary Button')}
+            buttonType={select('buttonType', options, 'secondary') as ButtonType}
+            disabled={boolean('disabled', false)}
+        />
     ))
     .add('Tertiary', () => (
-        <AddButton buttonType={select('buttonType', options, 'tertiary') as ButtonType}>
-            {text('children', 'Disabled Button')}
-        </AddButton>
+        <AddButton
+            label={text('label', 'Tertiary Button')}
+            buttonType={select('buttonType', options, 'tertiary') as ButtonType}
+            disabled={boolean('disabled', false)}
+        />
     ));

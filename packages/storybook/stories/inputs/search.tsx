@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { SearchContextual, SearchGlobal } from '@equisoft/design-elements-react';
 import { boolean, text } from '@storybook/addon-knobs';
@@ -9,20 +9,22 @@ storiesOf('Search Bar', module)
         <SearchContextual
             label={text('label', 'Search')}
             onChange={(value) => {console.log(`Searching for: ${value}`); }}
-            placeholder="Ex.: Miky Mike"
+            placeholder={text('placeholder', 'Ex.: Miky Mike')}
+            disabled={boolean('disabled', false)}
         />
     ))
     .add('Global', () => (
         <SearchGlobal
             label={text('label', 'Search')}
             onSearch={(value) => {console.log(`Searching for: ${value}`); }}
-            placeholder="Ex.: Marquee Mark"
+            placeholder={text('placeholder', 'Ex.: Marquee Mark')}
+            disabled={boolean('disabled', false)}
         />
     ))
     .add('Disabled', () => (
         <SearchGlobal
-            disabled={boolean('disabled', true)}
             label={text('label', 'Search')}
-            placeholder="Ex.: Sorry it's disabled"
+            placeholder={text('placeholder', 'Ex.: Sorry this field is disabled')}
+            disabled={boolean('disabled', true)}
         />
     ));

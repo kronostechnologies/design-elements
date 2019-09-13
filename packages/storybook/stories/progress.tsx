@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Progress } from '@equisoft/design-elements-react';
 import { number } from '@storybook/addon-knobs';

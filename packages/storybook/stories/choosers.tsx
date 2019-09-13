@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Chooser } from '@equisoft/design-elements-react';
+import { boolean, object, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 const maritalStatus = [
@@ -17,23 +18,24 @@ const ageRange = [
 ];
 
 const skipOption = {
-    label: 'Would rather not say',
     value: 'skip',
+    label: 'Would rather not say',
 };
 
 storiesOf('Choosers', module)
     .add('Chooser with a skip button', () => (
         <Chooser
-            groupName="maritalStatus"
-            options={maritalStatus}
-            skipOption={skipOption}
+            groupName={text('groupName', 'maritalStatus')}
+            inColumns={boolean('inColumns', false)}
+            options={object('options', maritalStatus)}
+            skipOption={object('skipOption', skipOption)}
         />
     ))
     .add('Chooser in Columns with callback', () => (
         <Chooser
-            groupName="ageRange"
+            groupName={text('groupName', 'ageRange')}
+            inColumns={boolean('inColumns', true)}
             onChange={v => console.log(v)}
-            options={ageRange}
-            inColumns
+            options={object('options', ageRange)}
         />
     ));

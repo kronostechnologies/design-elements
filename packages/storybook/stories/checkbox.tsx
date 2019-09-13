@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Checkbox } from '@equisoft/design-elements-react';
 import { boolean } from '@storybook/addon-knobs';

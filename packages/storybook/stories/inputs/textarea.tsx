@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { TextArea } from '@equisoft/design-elements-react';
 import { boolean, text } from '@storybook/addon-knobs';
@@ -8,7 +8,12 @@ storiesOf('TextArea', module)
     .add('Normal', () => (
         <TextArea
             label={text('label', 'Text area label')}
-            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
+            placeholder={text('placeholder', 'Enter your text here')}
+            defaultValue={text('defaultValue', '')}
+            value={text('value', '')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            disabled={boolean('disabled', false)}
+            required={boolean('required', false)}
         />
     ))
     .add('Event callbacks (see console)', () => (
@@ -24,32 +29,43 @@ storiesOf('TextArea', module)
                 console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
             }}
             placeholder={text('placeholder', 'Enter your text here')}
-            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
+            defaultValue={text('defaultValue', '')}
+            value={text('value', '')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            disabled={boolean('disabled', false)}
+            required={boolean('required', false)}
         />
     ))
     .add('Required', () => (
         <TextArea
             label={text('label', 'Text area label')}
-            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
             placeholder={text('placeholder', 'Enter your text here')}
+            defaultValue={text('defaultValue', '')}
+            value={text('value', '')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            disabled={boolean('disabled', false)}
             required={boolean('required', true)}
         />
     ))
     .add('Default Value', () => (
         <TextArea
-            defaultValue={text('defaultValue', 'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.')}
-            label={text('label', 'A label for a filled text area')}
-            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
+            label={text('label', 'Text area label')}
             placeholder={text('placeholder', 'Enter your text here')}
-            required={boolean('required', true)}
+            defaultValue={text('defaultValue', 'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.')}
+            value={text('value', 'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            disabled={boolean('disabled', false)}
+            required={boolean('required', false)}
         />
     ))
     .add('Disabled', () => (
         <TextArea
-            disabled={boolean('disabled', true)}
             label={text('label', 'A label for the disabled text area')}
-            validationErrorMessage={text('validationErrorMessage', 'Temporary Message')}
             placeholder={text('placeholder', 'This field is disabled')}
-            required={boolean('required', true)}
+            defaultValue={text('defaultValue', '')}
+            value={text('value', '')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            disabled={boolean('disabled', true)}
+            required={boolean('required', false)}
         />
     ));

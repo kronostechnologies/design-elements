@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -33,7 +33,8 @@ export interface TextAreaProps {
 interface ValidityProps {
     validity: boolean;
 }
-const TextArea = ({ onBlur, onChange, onFocus, ...props }: TextAreaProps) => {
+
+export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps): ReactElement {
     const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
     const id = uuid();
 
@@ -79,6 +80,4 @@ const TextArea = ({ onBlur, onChange, onFocus, ...props }: TextAreaProps) => {
             />
         </FieldContainer>
     );
-};
-
-export { TextArea } ;
+}
