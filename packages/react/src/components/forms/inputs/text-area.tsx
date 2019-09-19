@@ -20,7 +20,7 @@ export interface TextAreaProps {
     label: string;
     placeholder?: string;
     required?: boolean;
-    validMsg?: string;
+    validationErrorMessage?: string;
     value?: string;
 
     onBlur?(event: FocusEvent<HTMLTextAreaElement>): void;
@@ -58,14 +58,14 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
         }
     }
 
-    const { defaultValue, disabled, label, placeholder, required, validMsg, value } = props;
+    const { defaultValue, disabled, label, placeholder, required, validationErrorMessage, value } = props;
 
     return (
         <FieldContainer
             fieldId={id}
             label={label}
             valid={validity}
-            validMsg={validMsg || 'This text area input is invalid'}
+            validationErrorMessage={validationErrorMessage || 'This text area input is invalid'}
         >
             <StyledTextArea
                 defaultValue={defaultValue}

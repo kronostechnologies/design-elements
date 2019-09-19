@@ -7,7 +7,6 @@ import { FieldContainer } from '../field-container';
 
 import { inputsStyle } from '../styles/inputs';
 
-// tslint:disable:max-line-length
 const StyledSelect = styled.select`
   ${inputsStyle}
   appearance: none;
@@ -17,8 +16,6 @@ const StyledSelect = styled.select`
   background-size: 0.75rem;
   position: relative;
 `;
-
-// tslint:enable:max-line-length
 
 interface SelectOption {
     label: string;
@@ -31,15 +28,15 @@ interface SelectProps {
     options: SelectOption[];
     required?: boolean;
     skipOption?: SelectOption;
-    valid?: boolean;
-    validMsg?: string;
+    validationErrorMessage?: string;
+    name?: string;
     value?: string;
 
     onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
 }
 
 export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
-    const [{ validity }, setValidity] = useState({ validity: true });
+    const [{ valid }, setValid] = useState({ valid: true });
     const id = uuid();
 
     const selectRef = useRef<HTMLSelectElement | null>(null);
@@ -52,7 +49,7 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
 
     function handleSelectChange(event: ChangeEvent<HTMLSelectElement>): void {
         setSkipSelected(false);
-        setValidity({ validity: event.target.checkValidity() });
+        setValid({ valid: event.target.checkValidity() });
 
         if (onChange) {
             onChange(event);
@@ -65,7 +62,7 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
             const checked = !skipSelected;
             if (checked) {
                 selectElement.value = '';
-                setValidity({ validity: true });
+                setValid({ valid: true });
             }
 
             setSkipSelected(checked);
@@ -75,22 +72,23 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
         }
     }
 
-    const { label, required, skipOption, validMsg, value } = props;
+    const { label, name, required, skipOption, validationErrorMessage, value } = props;
 
     return (
         <>
             <FieldContainer
                 fieldId={id}
                 label={label}
-                valid={validity}
-                validMsg={validMsg || 'You must select an option'}
+                valid={valid}
+                validationErrorMessage={validationErrorMessage || 'You must select an option'}
             >
                 <StyledSelect
                     id={id}
                     onChange={handleSelectChange}
-                    value={value}
+                    name={name}
                     required={required}
                     ref={selectRef}
+                    value={value}
                 >
                     {selectOptions}
                 </StyledSelect>

@@ -5,10 +5,8 @@ import { primaryStyle } from './styles/primary';
 import { secondaryStyle } from './styles/secondary';
 import { tertiaryStyle } from './styles/tertiary';
 
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
-
 export interface ButtonProps extends AbstractButtonProps {
-    buttonType: ButtonType;
+    buttonType: 'primary' | 'secondary' | 'tertiary';
 }
 
 const StyledButton = styled(AbstractButton)((props: ButtonProps) => {
@@ -25,9 +23,10 @@ export function Button({ children, onClick, ...props }: ButtonProps): ReactEleme
         onClick && onClick();
     }
 
+    const label: string = props.label || '';
     return (
         <StyledButton onClick={handleClick} {...props}>
-            {children}
+            {children}{label}
         </StyledButton>
     );
 }

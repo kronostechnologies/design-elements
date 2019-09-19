@@ -23,25 +23,17 @@ interface FieldContainerProps {
     fieldId: string;
     label?: string;
     valid: boolean;
-    validMsg: string;
+    validationErrorMessage: string;
 }
 
-function FieldContainer({ children, fieldId, label, valid, validMsg, ...props }: FieldContainerProps): ReactElement {
+export function FieldContainer(
+    { children, fieldId, label, valid, validationErrorMessage, ...props }: FieldContainerProps,
+): ReactElement {
     return (
         <StyledDiv {...props} valid={valid}>
-            {label && (
-                <Label forId={fieldId}>
-                    {label}
-                </Label>
-            )}
-
+            {label && <Label forId={fieldId}>{label}</Label>}
             {children}
-
-            {!valid &&
-            <InvalidField controlId={fieldId} feedbackMsg={validMsg} />
-            }
+            {!valid && <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />}
         </StyledDiv>
     );
 }
-
-export { FieldContainer } ;

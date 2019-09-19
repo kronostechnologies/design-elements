@@ -21,7 +21,7 @@ interface TextInputProps extends PartialInputProps {
     placeholder?: string;
     required?: boolean;
     type?: string;
-    validMsg?: string;
+    validationErrorMessage?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
 
@@ -55,14 +55,24 @@ const TextInput = React.forwardRef(
             }
         }
 
-        const { defaultValue, disabled, label, pattern, placeholder, required, type, validMsg, value } = props;
+        const {
+            defaultValue,
+            disabled,
+            label,
+            pattern,
+            placeholder,
+            required,
+            type,
+            validationErrorMessage,
+            value,
+        } = props;
 
         return (
             <FieldContainer
                 fieldId={id}
                 label={label}
                 valid={validity}
-                validMsg={validMsg || 'This text input is invalid'}
+                validationErrorMessage={validationErrorMessage || 'This text input is invalid'}
             >
                 <Input
                     defaultValue={defaultValue}
