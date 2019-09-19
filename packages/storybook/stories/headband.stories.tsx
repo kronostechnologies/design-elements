@@ -1,14 +1,12 @@
 import React from 'react';
 
 import { Headband } from '@equisoft/design-elements-react';
+import { text } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
-export default {
-    title: 'Headband',
-    component: Headband,
-};
-
-export const equisoftDefault = () => (
-    <Headband appName="Benchmark">
-        {'Hello World!'}
-    </Headband>
-);
+storiesOf('Headband', module)
+    .add('Equisoft Default', () => (
+        <Headband appName={text('appName', 'Benchmark')}>
+            {text('children', 'Hello World!')}
+        </Headband>
+    ));
