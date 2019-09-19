@@ -9,8 +9,16 @@ storiesOf('TextArea', module)
         <TextArea
             label={text('label', 'Text area label')}
             placeholder={text('placeholder', 'Enter your text here')}
-            defaultValue={text('defaultValue', '')}
-            value={text('value', '')}
+            validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            disabled={boolean('disabled', false)}
+            required={boolean('required', false)}
+        />
+    ))
+    .add('Controlled value', () => (
+        <TextArea
+            label={text('label', 'Text area label')}
+            placeholder={text('placeholder', 'Enter your text here')}
+            value={text('value', 'This is the value')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', false)}
@@ -29,8 +37,6 @@ storiesOf('TextArea', module)
                 console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
             }}
             placeholder={text('placeholder', 'Enter your text here')}
-            defaultValue={text('defaultValue', '')}
-            value={text('value', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', false)}
@@ -40,8 +46,6 @@ storiesOf('TextArea', module)
         <TextArea
             label={text('label', 'Text area label')}
             placeholder={text('placeholder', 'Enter your text here')}
-            defaultValue={text('defaultValue', '')}
-            value={text('value', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', true)}
@@ -51,8 +55,7 @@ storiesOf('TextArea', module)
         <TextArea
             label={text('label', 'Text area label')}
             placeholder={text('placeholder', 'Enter your text here')}
-            defaultValue={text('defaultValue', 'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.')}
-            value={text('value', 'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.')}
+            defaultValue={'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.'}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', false)}
@@ -62,8 +65,6 @@ storiesOf('TextArea', module)
         <TextArea
             label={text('label', 'A label for the disabled text area')}
             placeholder={text('placeholder', 'This field is disabled')}
-            defaultValue={text('defaultValue', '')}
-            value={text('value', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', true)}
             required={boolean('required', false)}

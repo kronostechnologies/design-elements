@@ -7,7 +7,6 @@ import { storiesOf } from '@storybook/react';
 storiesOf('Search Bar', module)
     .add('Contextual', () => (
         <SearchContextual
-            label={text('label', 'Search')}
             onChange={(value) => {console.log(`Searching for: ${value}`); }}
             placeholder={text('placeholder', 'Ex.: Miky Mike')}
             disabled={boolean('disabled', false)}

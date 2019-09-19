@@ -31,17 +31,9 @@ export function FieldContainer(
 ): ReactElement {
     return (
         <StyledDiv {...props} valid={valid}>
-            {label && (
-                <Label forId={fieldId}>
-                    {label}
-                </Label>
-            )}
-
-                {children}
-
-            {!valid &&
-                <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />
-            }
+            {label && <Label forId={fieldId}>{label}</Label>}
+            {children}
+            {!valid && <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />}
         </StyledDiv>
     );
 }

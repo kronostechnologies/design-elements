@@ -7,6 +7,6 @@ import { storiesOf } from '@storybook/react';
 storiesOf('Headband', module)
     .add('Equisoft Default', () => (
         <Headband appName={text('appName', 'Benchmark')}>
-            {text('Children (not a property)', 'Hello World!')}
+            {text('children', 'Hello World!')}
         </Headband>
     ));

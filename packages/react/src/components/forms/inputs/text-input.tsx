@@ -55,8 +55,17 @@ const TextInput = React.forwardRef(
             }
         }
 
-        // tslint:disable-next-line:max-line-length
-        const { defaultValue, disabled, label, pattern, placeholder, required, type, validationErrorMessage, value } = props;
+        const {
+            defaultValue,
+            disabled,
+            label,
+            pattern,
+            placeholder,
+            required,
+            type,
+            validationErrorMessage,
+            value,
+        } = props;
 
         return (
             <FieldContainer

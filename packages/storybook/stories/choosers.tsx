@@ -35,7 +35,7 @@ storiesOf('Choosers', module)
         <Chooser
             groupName={text('groupName', 'ageRange')}
             inColumns={boolean('inColumns', true)}
-            onChange={v => console.log(v)}
+            onChange={event => console.log(event)}
             options={object('options', ageRange)}
         />
     ));

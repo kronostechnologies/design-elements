@@ -1,25 +1,25 @@
 import React from 'react';
 
 import { Checkbox } from '@equisoft/design-elements-react';
-import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 storiesOf('Checkboxes', module)
     .add('Normal', () => (
         <Checkbox
-            defaultChecked={boolean('defaultChecked', false)}
+            defaultChecked={false}
             onChange={() => { console.log('Change event toggled'); }}
         />
     ))
     .add('Checked by default', () => (
         <Checkbox
-            defaultChecked={boolean('defaultChecked', true)}
+            defaultChecked={true}
             onChange={() => { console.log('Change event toggled'); }}
         />
     ))
     .add('Event callback', () => (
         <Checkbox
+            defaultChecked={false}
+            // tslint:disable-next-line:variable-name
             onChange={(_event, checked) => console.log(`Checkbox is ${checked ? 'checked' : 'unchecked'}!`)}
-            defaultChecked={boolean('defaultChecked', false)}
         />
     ));
