@@ -17,7 +17,7 @@
     "@babel/plugin-proposal-dynamic-import": "^7.5.0",
     "@equisoft/design-elements-react": "^0.6.2",
     "@equisoft/design-elements-web": "^0.6.2",
-    "@storybook/react": "5.0.11",
+    "@storybook/react": "^5.2.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "node-sass": "^4.12.0",

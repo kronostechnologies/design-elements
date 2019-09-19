@@ -45,6 +45,12 @@ storiesOf('Results/ProgressCircle', module)
         />
     ));
 
+// storiesOf('Results/ProgressBar', module)
+//     .add('Default', () => progressBars.map(bar => (
+//             <ProgressBar {...bar} key={bar.descriptionLabel} />
+//         ),
+//     ));
+
 storiesOf('Results/ProgressBar', module)
     .add('Default', () => (
         <ProgressBar
