@@ -1,7 +1,10 @@
 import { Checkbox } from '@equisoft/design-elements-react';
 import * as React from 'react';
 
-export default { title: 'Checkboxes' };
+export default {
+    title: 'Checkboxes',
+    component: Checkbox,
+};
 
 export const Normal = () => (
     <Checkbox onChange={() => {console.log('Change event toggled'); }} />

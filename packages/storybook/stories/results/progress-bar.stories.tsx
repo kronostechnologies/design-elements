@@ -2,7 +2,10 @@ import { ProgressBar } from '@equisoft/design-elements-react';
 import { boolean, color, number, text } from '@storybook/addon-knobs';
 import React from 'react';
 
-export default { title: 'Results/Progress Bar' };
+export default {
+    title: 'Results/Progress Bar',
+    component: ProgressBar,
+};
 
 export const normal = () => (
     <ProgressBar

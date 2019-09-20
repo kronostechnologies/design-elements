@@ -4,7 +4,10 @@ import { TextArea } from '@equisoft/design-elements-react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 
-export default { title: 'TextArea' };
+export default {
+    title: 'TextArea',
+    component: TextArea,
+};
 
 export const normal = () => (
     <TextArea

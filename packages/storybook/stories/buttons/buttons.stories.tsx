@@ -7,7 +7,10 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 const options = ['primary', 'secondary', 'tertiary'];
 
-export default { title: 'Buttons' };
+export default {
+    title: 'Buttons',
+    component: Button,
+};
 
 export const primary = () => (
     <Button

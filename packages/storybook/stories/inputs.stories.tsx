@@ -4,7 +4,10 @@ import { TextInput } from '@equisoft/design-elements-react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 
-export default { title: 'Input Text Fields' };
+export default {
+    title: 'Input Text Fields',
+    component: TextInput,
+};
 
 export const typeText = () => (
     <TextInput

@@ -2,7 +2,10 @@ import { ProgressCircle } from '@equisoft/design-elements-react';
 import { boolean, color, number, text } from '@storybook/addon-knobs';
 import React from 'react';
 
-export default { title: 'Results/Progress Circle' };
+export default {
+    title: 'Results/Progress Circle',
+    component: ProgressCircle,
+};
 
 export const normal = () => (
     <ProgressCircle

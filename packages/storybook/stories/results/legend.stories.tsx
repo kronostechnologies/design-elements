@@ -19,7 +19,10 @@ const legendItems = [
     },
 ];
 
-export default { title: 'Results/Legend' };
+export default {
+    title: 'Results/Legend',
+    component: Legend,
+};
 export const normal = () => (
     <Legend items={object('items', legendItems)} />
 );

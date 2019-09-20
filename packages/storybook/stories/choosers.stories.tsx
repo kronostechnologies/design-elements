@@ -22,7 +22,10 @@ const skipOption = {
     label: 'Would rather not say',
 };
 
-export default { title: 'Choosers' };
+export default {
+    title: 'Choosers',
+    component: Chooser,
+};
 
 export const withASkipButton = () => (
     <Chooser
