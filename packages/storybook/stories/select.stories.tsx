@@ -3,7 +3,6 @@ import React from 'react';
 import { Select } from '@equisoft/design-elements-react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 
 const provinces = [
     { value: '', label: '-' },
@@ -27,47 +26,47 @@ const skipOption = {
     value: 'skip',
 };
 
-storiesOf('Select', module)
-    .add('Default', () => (
-        <Select
-            label={text('label', 'Choose your province or territory')}
-            name={text('name', 'provinces')}
-            validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            onChange={action('onChange callback')}
-            required={boolean('required', false)}
-            options={object('options', provinces)}
-        />
-    ))
-    .add('Controlled Value', () => (
-        <Select
-            label={text('label', 'Choose your province or territory')}
-            value={text('value', 'on')}
-            name={text('name', 'provinces')}
-            validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            onChange={action('onChange callback')}
-            required={boolean('required', false)}
-            options={object('options', provinces)}
-        />
-    ))
-    .add('With Skip', () => (
-        <Select
-            label={text('label', 'Choose your province or territory')}
-            name={text('name', 'provinces')}
-            validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            onChange={action('onChange callback')}
-            required={boolean('required', false)}
-            options={object('options', provinces)}
-            skipOption={object('skipOption', skipOption)}
-        />
-    ))
-    .add('Required', () => (
-        <Select
-            label={text('label', 'Choose your province or territory')}
-            name={text('name', 'provinces')}
-            validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            onChange={action('onChange callback')}
-            required={boolean('required', true)}
-            options={object('options', provinces)}
-            skipOption={object('skipOption', skipOption)}
-        />
-    ));
+export default { title: 'Select' };
+
+export const normal = () => (
+    <Select
+        label={text('label', 'Choose your province or territory')}
+        name={text('name', 'provinces')}
+        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        onChange={(value) => {console.log(value); }}
+        required={boolean('required', false)}
+        options={object('options', provinces)}
+    />
+);
+export const controlledValue = () => (
+    <Select
+        label={text('label', 'Choose your province or territory')}
+        value={text('value', 'on')}
+        name={text('name', 'provinces')}
+        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        onChange={(value) => {console.log(value); }}
+        required={boolean('required', false)}
+        options={object('options', provinces)}
+    />
+);
+export const withSkip = () => (
+    <Select
+        label={text('label', 'Choose your province or territory')}
+        name={text('name', 'provinces')}
+        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        onChange={console.log}
+        required={boolean('required', false)}
+        options={object('options', provinces)}
+        skipOption={object('skipOption', skipOption)}
+    />
+);
+export const required = () => (
+    <Select
+        label={text('label', 'Choose your province or territory')}
+        name={text('name', 'provinces')}
+        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        onChange={console.log}
+        required={boolean('required', true)}
+        options={object('options', provinces)}
+    />
+);

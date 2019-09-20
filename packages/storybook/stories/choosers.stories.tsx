@@ -3,7 +3,6 @@ import React from 'react';
 import { Chooser } from '@equisoft/design-elements-react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
@@ -23,21 +22,21 @@ const skipOption = {
     label: 'Would rather not say',
 };
 
-storiesOf('Choosers', module)
-    .add('Chooser with a skip button', () => (
-        <Chooser
-            groupName={text('groupName', 'maritalStatus')}
-            inColumns={boolean('inColumns', false)}
-            options={object('options', maritalStatus)}
-            onChange={action('onChange callback')}
-            skipOption={object('skipOption', skipOption)}
-        />
-    ))
-    .add('Chooser in Columns with callback', () => (
-        <Chooser
-            groupName={text('groupName', 'ageRange')}
-            inColumns={boolean('inColumns', true)}
-            onChange={action('onChange callback')}
-            options={object('options', ageRange)}
-        />
-    ));
+export default { title: 'Choosers' };
+
+export const withASkipButton = () => (
+    <Chooser
+        groupName={text('groupName', 'maritalStatus')}
+        inColumns={boolean('inColumns', false)}
+        options={object('options', maritalStatus)}
+        skipOption={object('skipOption', skipOption)}
+    />
+);
+export const inColumnsWithCallback = () => (
+    <Chooser
+        groupName={text('groupName', 'ageRange')}
+        inColumns={boolean('inColumns', true)}
+        onChange={event => console.log(event)}
+        options={object('options', ageRange)}
+    />
+);

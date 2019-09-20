@@ -1,9 +1,8 @@
+import { EnsoSpinner } from '@equisoft/design-elements-react';
 import React from 'react';
 
-import { EnsoSpinner } from '@equisoft/design-elements-react';
-import { storiesOf } from '@storybook/react';
+export default { title: 'Spinners' };
 
-storiesOf('Spinners', module)
-    .add('Enso', () => (
-        <EnsoSpinner />
-    ));
+export const enso = () => (
+    <EnsoSpinner />
+);
