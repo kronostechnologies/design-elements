@@ -9,7 +9,34 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
+<<<<<<< HEAD
 "@babel/core@7.6.0":
+=======
+<<<<<<< HEAD
+=======
+"@babel/core@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
+  integrity sha512-i4qoSr2KTtce0DmkuuQBV4AuQgGPUcPXMr9L5MyYAtk06z068lQ10a4O009fe5OB/DfNV+h+qqT7ddNV8UnRjg==
+  dependencies:
+    "@babel/code-frame" "^7.5.5"
+    "@babel/generator" "^7.5.5"
+    "@babel/helpers" "^7.5.5"
+    "@babel/parser" "^7.5.5"
+    "@babel/template" "^7.4.4"
+    "@babel/traverse" "^7.5.5"
+    "@babel/types" "^7.5.5"
+    convert-source-map "^1.1.0"
+    debug "^4.1.0"
+    json5 "^2.1.0"
+    lodash "^4.17.13"
+    resolve "^1.3.2"
+    semver "^5.4.1"
+    source-map "^0.5.0"
+
+>>>>>>> Docs page implementation
+"@babel/core@7.6.0", "@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
+>>>>>>> Docs page implementation
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.0.tgz#9b00f73554edd67bebc86df8303ef678be3d7b48"
   integrity sha512-FuRhDRtsd6IptKpHXAa+4WPZYY2ZzgowkbLBecEDDSje1X/apG7jQM33or3NdOmjXBKWGOg4JmSiRfUfuTtHXw==
@@ -29,6 +56,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+<<<<<<< HEAD
 "@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.2.tgz#069a776e8d5e9eefff76236bc8845566bd31dd91"
@@ -53,6 +81,16 @@
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.6.2.tgz#dac8a3c2df118334c2a29ff3446da1636a8f8c03"
   integrity sha512-j8iHaIW4gGPnViaIHI7e9t/Hl8qLjERI6DcV9kEpAIDJsAOrcnXqRS7t+QbhL76pwbtqP+QCQLL0z1CyVmtjjQ==
+=======
+<<<<<<< HEAD
+"@babel/generator@^7.6.0":
+=======
+"@babel/generator@^7.4.0", "@babel/generator@^7.5.5", "@babel/generator@^7.6.0":
+>>>>>>> Docs page implementation
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.6.0.tgz#e2c21efbfd3293ad819a2359b448f002bfdfda56"
+  integrity sha512-Ms8Mo7YBdMMn1BYuNtKuP/z0TgEIhbcyB8HVR6PPNYp4P61lMsABiS4A3VG1qznjXVCf3r+fVHhm4efTYVsySA==
+>>>>>>> Docs page implementation
   dependencies:
     "@babel/types" "^7.6.0"
     jsesc "^2.5.1"
@@ -252,10 +290,21 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+<<<<<<< HEAD
 "@babel/parser@^7.4.2", "@babel/parser@^7.6.0", "@babel/parser@^7.6.2":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.6.2.tgz#205e9c95e16ba3b8b96090677a67c9d6075b70a1"
   integrity sha512-mdFqWrSPCmikBoaBYMuBulzTIKuXVPtEISFbRRVNwMWpCms/hmE2kRq0bblUHaNRKrjRlmVbx1sDHmjmRgD2Xg==
+=======
+<<<<<<< HEAD
+"@babel/parser@^7.6.0":
+=======
+"@babel/parser@^7.4.2", "@babel/parser@^7.5.5", "@babel/parser@^7.6.0":
+>>>>>>> Docs page implementation
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.6.0.tgz#3e05d0647432a8326cb28d0de03895ae5a57f39b"
+  integrity sha512-+o2q111WEx4srBs7L9eJmcwi655eD8sXniLqMB93TBK9GrNzGrxDWSjiqz2hLU0Ha8MTXFIP0yd9fNdP+m43ZQ==
+>>>>>>> Docs page implementation
 
 "@babel/plugin-proposal-async-generator-functions@^7.2.0":
   version "7.2.0"
@@ -1065,6 +1114,7 @@
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
 "@mdx-js/loader@^1.1.0":
+<<<<<<< HEAD
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.5.0.tgz#aca337cd78f114e0451d59a06c9c66e6aeab345e"
   integrity sha512-pBL1oXuRPmK3GbY3BPsncFby2oALssDwviSEsoIwJoiZ8OVU3fZHbfAd0tKEFSJSBu/XqfLNKf2JNtQIdmq5KQ==
@@ -1077,19 +1127,43 @@
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.5.0.tgz#0f9aa44c888ad197f7346f8c8c81d0bc2d1b17a6"
   integrity sha512-Xkg3AjxgCGwxXRBSVssekhsKdEg3N7mGrvGyxYgVapSTqaO4c/3El+iLWhNzFJ99ujosnCTMVw+cDq3oLYJx1w==
+=======
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.4.5.tgz#b9054ab977d97f545b7bcdd29ea0f34a37d0e932"
+  integrity sha512-altL75vMjcLyab2A0hcq+KV5qpnRBXR0uVnpFNo0TWFav1q8FGxEYwU7ybzV+qL5sVfv32WPhRw3uH3RT2tFoA==
+  dependencies:
+    "@mdx-js/mdx" "^1.4.5"
+    "@mdx-js/react" "^1.4.5"
+    loader-utils "1.2.3"
+
+"@mdx-js/mdx@^1.1.0", "@mdx-js/mdx@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.4.5.tgz#f1658dcf7b535162ad0ecdbc9f50541accb17417"
+  integrity sha512-kxnQIi10DxsvRf+H+IiUlnvY/vLLBcg6hl+63mAAv/Dy79RTPdpeA/F/dBuRuOygJEJTh8ilm0ouwyqeuyypJA==
+>>>>>>> Docs page implementation
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/plugin-syntax-jsx" "7.2.0"
     "@babel/plugin-syntax-object-rest-spread" "7.2.0"
+<<<<<<< HEAD
     "@mdx-js/util" "^1.5.0"
     babel-plugin-apply-mdx-type-prop "^1.5.0"
     babel-plugin-extract-import-names "^1.5.0"
+=======
+    "@mdx-js/util" "^1.4.5"
+    babel-plugin-apply-mdx-type-prop "^1.4.5"
+    babel-plugin-extract-import-names "^1.4.5"
+>>>>>>> Docs page implementation
     camelcase-css "2.0.1"
     detab "2.0.2"
     hast-util-raw "5.0.1"
     lodash.uniq "4.5.0"
     mdast-util-to-hast "6.0.2"
+<<<<<<< HEAD
     remark-mdx "^1.5.0"
+=======
+    remark-mdx "^1.4.5"
+>>>>>>> Docs page implementation
     remark-parse "7.0.1"
     remark-squeeze-paragraphs "3.0.4"
     style-to-object "0.2.3"
@@ -1097,6 +1171,7 @@
     unist-builder "1.0.4"
     unist-util-visit "2.0.0"
 
+<<<<<<< HEAD
 "@mdx-js/react@^1.0.27", "@mdx-js/react@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.5.0.tgz#bb060963c459e4e1553130448006ab756c6fdc4c"
@@ -1106,6 +1181,17 @@
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.5.0.tgz#4915de47ae55ae62bb26eef073b8e022ea506e14"
   integrity sha512-+mJxrZfDoZ1TX/BVxBaDtYfZFS95r6Z6u5CnYNZJYZdcELUaBX0D7FMM9Up/sb9OTq1sfxHkEkud8sohqrIT/Q==
+=======
+"@mdx-js/react@^1.0.27", "@mdx-js/react@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.4.5.tgz#c1e79ebabf61917527b955044340bac794025148"
+  integrity sha512-zSqXbG+La9JRaNp2ff2wzaSoU2zNR5kQ/YWkjcddqDMZz06eiyjqIz+A2MkZio5IfFrvFTCkgDtWKb7+UsAQUw==
+
+"@mdx-js/util@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.4.5.tgz#6426e8473f81fcca7648d09d11d263e3070ddcce"
+  integrity sha512-1MkrXjMfbFnVEkFGqc7oBf2iWObVbkxyBue0C24B+0Qg5s2gejIhs/wcA5/2c9RqvACURDgPNiD6rx3lf+zRsQ==
+>>>>>>> Docs page implementation
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -1153,6 +1239,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@storybook/addon-docs@^5.3.0-alpha.0":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.3.tgz#3d12cab1e7861710c8d2af5574f44ea854ed66ef"
@@ -1179,6 +1266,8 @@
 =======
 =======
 >>>>>>> CSF format stories
+=======
+>>>>>>> Docs page implementation
 <<<<<<< HEAD
 "@storybook/addon-knobs@5.2.1":
 =======
@@ -1190,6 +1279,31 @@
 >>>>>>> Storybook update to 5.2
 >>>>>>> Storybook update to 5.2
 =======
+=======
+"@storybook/addon-docs@^5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.0.tgz#4a65ac4d6aa0cee69f73cb2b86cc95b766032f8f"
+  integrity sha512-iBHrc1CLV31pTDZBs5w9wgb4udQi5Mw8ZKtZUm+2OUAqmkCeLK6zFZBQetZldUp03Xg/iKmUe81y+d3l5yxYGA==
+  dependencies:
+    "@babel/generator" "^7.4.0"
+    "@babel/parser" "^7.4.2"
+    "@babel/plugin-transform-react-jsx" "^7.3.0"
+    "@mdx-js/loader" "^1.1.0"
+    "@mdx-js/mdx" "^1.1.0"
+    "@mdx-js/react" "^1.0.27"
+    "@storybook/addons" "5.3.0-alpha.0"
+    "@storybook/api" "5.3.0-alpha.0"
+    "@storybook/components" "5.3.0-alpha.0"
+    "@storybook/router" "5.3.0-alpha.0"
+    "@storybook/source-loader" "5.3.0-alpha.0"
+    "@storybook/theming" "5.3.0-alpha.0"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    js-string-escape "^1.0.1"
+    lodash "^4.17.11"
+    prop-types "^15.7.2"
+
+>>>>>>> Docs page implementation
 "@storybook/addon-knobs@5.2.1", "@storybook/addon-knobs@^5.1.11":
 >>>>>>> CSF format stories
   version "5.2.1"
@@ -1227,6 +1341,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
+<<<<<<< HEAD
 "@storybook/addons@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.3.tgz#4314325c98223d8aee49f172fb4eb117afc94529"
@@ -1236,6 +1351,17 @@
     "@storybook/channels" "5.3.0-alpha.3"
     "@storybook/client-logger" "5.3.0-alpha.3"
     "@storybook/core-events" "5.3.0-alpha.3"
+=======
+"@storybook/addons@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.0.tgz#cf08ff785df284084883da8c804fbf51ecb1ef40"
+  integrity sha512-WrI+Hab0hXDK+4q8WWO+zpysNbMU4wZHdD9MZJ6smCUCTvhhGd2X1BFLkYGL0nSeSO+ghZrWxKRzbR+WToMW6w==
+  dependencies:
+    "@storybook/api" "5.3.0-alpha.0"
+    "@storybook/channels" "5.3.0-alpha.0"
+    "@storybook/client-logger" "5.3.0-alpha.0"
+    "@storybook/core-events" "5.3.0-alpha.0"
+>>>>>>> Docs page implementation
     core-js "^3.0.1"
     global "^4.3.2"
     util-deprecate "^1.0.2"
@@ -1263,6 +1389,7 @@
     telejson "^2.2.2"
     util-deprecate "^1.0.2"
 
+<<<<<<< HEAD
 "@storybook/api@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.3.tgz#15d1fc2f0149e17ef792a2438f47d90c9a7a43a0"
@@ -1273,6 +1400,18 @@
     "@storybook/core-events" "5.3.0-alpha.3"
     "@storybook/router" "5.3.0-alpha.3"
     "@storybook/theming" "5.3.0-alpha.3"
+=======
+"@storybook/api@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.0.tgz#bc1758df1fb9a26a9a9b02f8f3468f08f5c69043"
+  integrity sha512-bieUfd+eDoG79Os02oUxE9lP5QegyXnYPiVcdoJdCgxScmSR8RJITZQifXiIqdddtKu+0IxwjNfmxSrMaOgUCQ==
+  dependencies:
+    "@storybook/channels" "5.3.0-alpha.0"
+    "@storybook/client-logger" "5.3.0-alpha.0"
+    "@storybook/core-events" "5.3.0-alpha.0"
+    "@storybook/router" "5.3.0-alpha.0"
+    "@storybook/theming" "5.3.0-alpha.0"
+>>>>>>> Docs page implementation
     core-js "^3.0.1"
     fast-deep-equal "^2.0.1"
     global "^4.3.2"
@@ -1304,10 +1443,17 @@
   dependencies:
     core-js "^3.0.1"
 
+<<<<<<< HEAD
 "@storybook/channels@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.3.tgz#f4d77aabc9cc4a674ca44df17aead3b8955a7c5f"
   integrity sha512-s7jjcLxqHia8eFskNdSdDzBDAfBxVLQhL4P+U8iU9WaeWRvwf00Rqh0pjrEaOVoVgyjFcqwHEwafQ+Zb5Auxvg==
+=======
+"@storybook/channels@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.0.tgz#32c7141303f485efa7c7685b9d0f10dc3e90305a"
+  integrity sha512-2RYBx6NdD7pTVEi6XZwWM0C5sqKnQxbsgaVPFM5YTpRr1jsnDSQ6kGrEuOCSrNwSzVx94da/fxPQLlfRBsTsUA==
+>>>>>>> Docs page implementation
   dependencies:
     core-js "^3.0.1"
 
@@ -1339,10 +1485,17 @@
   dependencies:
     core-js "^3.0.1"
 
+<<<<<<< HEAD
 "@storybook/client-logger@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.3.tgz#e908470b184e93e95d1f2dda68534a19f42535c9"
   integrity sha512-qs546tOHIDU+qyUpOLesZHfRkUAGFrQRZ6wKRO+zR6oLLhxOvqxi0S3QaGqQE1ztpl4OsZxANk7SEpPTA7i0sg==
+=======
+"@storybook/client-logger@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.0.tgz#397576e4d37b0fad3ae002e53cdc6cdb1fba6d50"
+  integrity sha512-B678Usj47BSLCLzKGobAYbiN5yZPCE2F/nKHYml95Df954jmszDbt/wQ5YZdU4PX6UsvLFcGr4yqyD54pAZbXA==
+>>>>>>> Docs page implementation
   dependencies:
     core-js "^3.0.1"
 
@@ -1370,6 +1523,7 @@
     react-textarea-autosize "^7.1.0"
     simplebar-react "^1.0.0-alpha.6"
 
+<<<<<<< HEAD
 "@storybook/components@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.3.tgz#356580ef71c4f883e786dc4d7230e2a8bcd71b25"
@@ -1377,6 +1531,15 @@
   dependencies:
     "@storybook/client-logger" "5.3.0-alpha.3"
     "@storybook/theming" "5.3.0-alpha.3"
+=======
+"@storybook/components@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.0.tgz#e018183adcd03181c114214777ef91cf04f8d8f6"
+  integrity sha512-vep+yS8CgCEqwq9YmFAfM19uFVoiHAQoInh1VfmuIHbZfI9EijfKiW3o7sgkstod6uC91nSX7S2OlR7ZXwJOIw==
+  dependencies:
+    "@storybook/client-logger" "5.3.0-alpha.0"
+    "@storybook/theming" "5.3.0-alpha.0"
+>>>>>>> Docs page implementation
     "@types/react-syntax-highlighter" "10.1.0"
     core-js "^3.0.1"
     global "^4.3.2"
@@ -1401,10 +1564,17 @@
   dependencies:
     core-js "^3.0.1"
 
+<<<<<<< HEAD
 "@storybook/core-events@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.3.tgz#0f57fca15b1903be9a85b9b4b3888ed311ea8b7b"
   integrity sha512-s54NS3+Ogsx5ri5u8qzlo/LChq4yTGuc4iSCD6b4473ijI4/p2bfaVgQmvsPuc7HvRpNCbXs2tsNY8CxLPoQWQ==
+=======
+"@storybook/core-events@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.0.tgz#28855c20ade77499db44c25d38b1a42db78c9b53"
+  integrity sha512-hF5YErDj4A6Du4ViVBTOQ3YxclCXNy7tM21HcIz5T4J4SHJ8Q/AVO/L+7TMRTLY4CI6dkVXYrk46xl8NcgVQ/w==
+>>>>>>> Docs page implementation
   dependencies:
     core-js "^3.0.1"
 
@@ -1545,10 +1715,17 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
+<<<<<<< HEAD
 "@storybook/router@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.3.tgz#6fbd27ef37682dba0ebb4911393cad5a3fc70667"
   integrity sha512-lS3jsn03NhqLZeY7Kqtu82QhD8/pwNjX3HZzCS6oSDhcQYyLtJtj5hps/PmiI2FgOqjEjRh/Hq0ZjdU9U8AXmw==
+=======
+"@storybook/router@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.0.tgz#a87535d355668323c704300c8523d45da67d8133"
+  integrity sha512-JVrkJQwcabscspuqUGp+IuTO0oghmov9Bel9j7e8I3CZJRy8rAsfSjYHrfXypFoD/6V3nyLmXcXvV7HLfUApkg==
+>>>>>>> Docs page implementation
   dependencies:
     "@reach/router" "^1.2.1"
     "@types/reach__router" "^1.2.3"
@@ -1558,6 +1735,7 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
+<<<<<<< HEAD
 "@storybook/source-loader@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.3.tgz#90ca950b352b3a3dff11e25bebf6731348b14e29"
@@ -1565,6 +1743,15 @@
   dependencies:
     "@storybook/addons" "5.3.0-alpha.3"
     "@storybook/router" "5.3.0-alpha.3"
+=======
+"@storybook/source-loader@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.0.tgz#31f607d8b063751e83b4a28c7e699dcbeec46bd6"
+  integrity sha512-651fMJLrUqu965Y6oLc3K4ab66+38EYNgDiMOIeQhiFMMEyUvClep6mN2aJb/x5YucmUY5hFkfqIXU6avrHpYw==
+  dependencies:
+    "@storybook/addons" "5.3.0-alpha.0"
+    "@storybook/router" "5.3.0-alpha.0"
+>>>>>>> Docs page implementation
     core-js "^3.0.1"
     estraverse "^4.2.0"
     global "^4.3.2"
@@ -1591,6 +1778,7 @@
     prop-types "^15.7.2"
     resolve-from "^5.0.0"
 
+<<<<<<< HEAD
 "@storybook/theming@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.3.tgz#205cdc328ddf7f463176dd1d44b2e5bfbb5430cb"
@@ -1603,6 +1791,20 @@
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.19"
+=======
+"@storybook/theming@5.3.0-alpha.0":
+  version "5.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.0.tgz#375eb452763502fab55dc1782ffb0231f9aef9a1"
+  integrity sha512-8SQJH5dfr+tXbOUUtVRsndtIeFVtQhb3ZK12vT3b7uY8LURwOOXOTdH1bObXldFvaie1666HXcxpmilPyZPHUQ==
+  dependencies:
+    "@emotion/core" "^10.0.14"
+    "@emotion/styled" "^10.0.14"
+    "@storybook/client-logger" "5.3.0-alpha.0"
+    common-tags "^1.8.0"
+    core-js "^3.0.1"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.14"
+>>>>>>> Docs page implementation
     global "^4.3.2"
     memoizerific "^1.11.3"
     polished "^3.3.1"
@@ -2377,6 +2579,7 @@ babel-plugin-add-react-displayname@^0.0.5:
   resolved "https://registry.yarnpkg.com/babel-plugin-add-react-displayname/-/babel-plugin-add-react-displayname-0.0.5.tgz#339d4cddb7b65fd62d1df9db9fe04de134122bd5"
   integrity sha1-M51M3be2X9YtHfnbn+BN4TQSK9U=
 
+<<<<<<< HEAD
 babel-plugin-apply-mdx-type-prop@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-apply-mdx-type-prop/-/babel-plugin-apply-mdx-type-prop-1.5.0.tgz#01574b3087c7e47673d340332fb8d76a801e8dc0"
@@ -2384,6 +2587,15 @@ babel-plugin-apply-mdx-type-prop@^1.5.0:
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0"
     "@mdx-js/util" "^1.5.0"
+=======
+babel-plugin-apply-mdx-type-prop@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/babel-plugin-apply-mdx-type-prop/-/babel-plugin-apply-mdx-type-prop-1.4.5.tgz#e58ae2f4d71c4227e09a991828e13e78384b7d2f"
+  integrity sha512-+lt3eel+QbJZJKP6/B1u0kKL7VJEM/v+np6m6IP9V2+DIune1BhWeN91NtfB/RKTko5v9GZ352CZgwjEA7AOXg==
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0"
+    "@mdx-js/util" "^1.4.5"
+>>>>>>> Docs page implementation
 
 babel-plugin-dynamic-import-node@2.3.0, babel-plugin-dynamic-import-node@^2.3.0:
   version "2.3.0"
@@ -2408,10 +2620,17 @@ babel-plugin-emotion@^10.0.14, babel-plugin-emotion@^10.0.17:
     find-root "^1.1.0"
     source-map "^0.5.7"
 
+<<<<<<< HEAD
 babel-plugin-extract-import-names@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-extract-import-names/-/babel-plugin-extract-import-names-1.5.0.tgz#b5df56411705de97b20f5acf69caf9e0d8010edd"
   integrity sha512-GzNJ0/RlfHWCd7QE05FIPlK8s2ZDQ9aTggDb3IJgpSu+0E4hCNKIjYmSGXFfgdjFlB/eDyOw9ZZ4KDWU7hnnog==
+=======
+babel-plugin-extract-import-names@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/babel-plugin-extract-import-names/-/babel-plugin-extract-import-names-1.4.5.tgz#c7a591f23977eacbd32cb25177b0e6457baf25e0"
+  integrity sha512-yZmzQ6sOFq8L+hk4maqZIWxvXYgIK4N4YsaRu2hyDQKhDAVidhrvSmWb94Npggigv7CeEv6vp4kG1HgzABAFdw==
+>>>>>>> Docs page implementation
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0"
 
@@ -3018,7 +3237,11 @@ ccount@^1.0.3:
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.0.4.tgz#9cf2de494ca84060a2a8d2854edd6dfb0445f386"
   integrity sha512-fpZ81yYfzentuieinmGnphk0pLkOTMm6MZdVqwd77ROvhko6iujLNGrHH5E7utq3ygWklwfmwuG+A7P+NpqT6w==
 
+<<<<<<< HEAD
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4.2:
+=======
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4.2:
+>>>>>>> Docs page implementation
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -5743,7 +5966,11 @@ lodash.uniq@4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
+<<<<<<< HEAD
 lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@~4.17.10:
+=======
+lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.5, lodash@~4.17.10:
+>>>>>>> Docs page implementation
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -7653,16 +7880,27 @@ relateurl@^0.2.7:
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
+<<<<<<< HEAD
 remark-mdx@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-1.5.0.tgz#780541b0455ab7432dbb8501be32aa7734b1f441"
   integrity sha512-eeYUHFAkfsX+zGDQ8iMjsIGWRvco9x//P6OOemYTnXhqlcnn3Xo2kcxsMX9ibvBtX+/qwZ/i+juDnMe5Buu0Xw==
+=======
+remark-mdx@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-1.4.5.tgz#4701cad33c6a4a0465514f39a7dbe9ee7715139f"
+  integrity sha512-Njjly0I6l7WAe+ob2qQ3K393rtkyJLjbaZOn84CE2P6nQRzei5PlNRn6DH5SfCzdzP7llHZbW+CVsj989kd/Wg==
+>>>>>>> Docs page implementation
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/helper-plugin-utils" "7.0.0"
     "@babel/plugin-proposal-object-rest-spread" "7.5.5"
     "@babel/plugin-syntax-jsx" "7.2.0"
+<<<<<<< HEAD
     "@mdx-js/util" "^1.5.0"
+=======
+    "@mdx-js/util" "^1.4.5"
+>>>>>>> Docs page implementation
     is-alphabetical "1.0.3"
     remark-parse "7.0.1"
     unified "8.3.2"
@@ -8760,6 +8998,21 @@ trim-newlines@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-1.0.0.tgz#5887966bb582a4503a41eb524f7d35011815a613"
   integrity sha1-WIeWa7WCpFA6QetST301ARgVphM=
+
+trim-trailing-lines@^1.0.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/trim-trailing-lines/-/trim-trailing-lines-1.1.2.tgz#d2f1e153161152e9f02fabc670fb40bec2ea2e3a"
+  integrity sha512-MUjYItdrqqj2zpcHFTkMa9WAv4JHTI6gnRQGPFLrt5L9a6tRMiDnIqYl8JBvu2d2Tc3lWJKQwlGCp0K8AvCM+Q==
+
+trim@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/trim/-/trim-0.0.1.tgz#5858547f6b290757ee95cccc666fb50084c460dd"
+  integrity sha1-WFhUf2spB1fulczMZm+1AITEYN0=
+
+trough@^1.0.0:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.4.tgz#3b52b1f13924f460c3fbfd0df69b587dbcbc762e"
+  integrity sha512-tdzBRDGWcI1OpPVmChbdSKhvSVurznZ8X36AYURAcl+0o2ldlCY2XPzyXNNxwJwwyIU+rIglTCG4kxtNKBQH7Q==
 
 trim-trailing-lines@^1.0.0:
   version "1.1.2"

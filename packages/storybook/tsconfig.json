@@ -9,7 +9,8 @@
       "noEmitOnError": true,
       "sourceMap": true,
       "baseUrl": "./stories/",
-      "paths": {}
+      "paths": {},
+      "noImplicitAny": false
     },
     "include": [
       "stories", "custom.d.ts"

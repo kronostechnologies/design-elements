@@ -26,7 +26,10 @@ const skipOption = {
     value: 'skip',
 };
 
-export default { title: 'Select' };
+export default {
+    title: 'Select',
+    component: Select,
+};
 
 export const normal = () => (
     <Select
