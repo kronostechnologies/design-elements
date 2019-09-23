@@ -27,6 +27,7 @@ interface ChooserProps {
     options: ChooserOption[];
     skipOption?: ChooserOption;
     value?: string | null;
+
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
