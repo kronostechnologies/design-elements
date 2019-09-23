@@ -6,11 +6,13 @@ import { Label } from './label';
 
 const StyledDiv = styled.div`
   margin: 0 0 1.5rem;
+
   input,
   select,
   textarea {
     border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
   }
+
   &:focus {
     border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
   }
