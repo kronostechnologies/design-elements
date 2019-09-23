@@ -29,6 +29,7 @@ storiesOf('Choosers', module)
             groupName={text('groupName', 'maritalStatus')}
             inColumns={boolean('inColumns', false)}
             options={object('options', maritalStatus)}
+            onChange={action('onChange callback')}
             skipOption={object('skipOption', skipOption)}
         />
     ))

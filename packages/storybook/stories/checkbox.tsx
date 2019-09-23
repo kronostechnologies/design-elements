@@ -8,18 +8,18 @@ storiesOf('Checkboxes', module)
     .add('Normal', () => (
         <Checkbox
             defaultChecked={false}
-            onChange={action('Change event toggled')}
+            onChange={action('onChange callback')}
         />
     ))
     .add('Checked by default', () => (
         <Checkbox
             defaultChecked={true}
-            onChange={action('Change event toggled')}
+            onChange={action('onChange callback')}
         />
     ))
     .add('Event callback', () => (
         <Checkbox
             defaultChecked={false}
-            onChange={action('Change event toggled')}
+            onChange={action('onChange callback')}
         />
     ));

@@ -13,6 +13,9 @@ storiesOf('TextArea', module)
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', false)}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Controlled value', () => (
@@ -23,18 +26,9 @@ storiesOf('TextArea', module)
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', false)}
-        />
-    ))
-    .add('Event callbacks (see console)', () => (
-        <TextArea
-            label={text('label', 'Text area label')}
             onChange={action('onChange callback')}
             onBlur={action('onBlur callback')}
             onFocus={action('onFocus callback')}
-            placeholder={text('placeholder', 'Enter your text here')}
-            validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            disabled={boolean('disabled', false)}
-            required={boolean('required', false)}
         />
     ))
     .add('Required', () => (
@@ -44,6 +38,9 @@ storiesOf('TextArea', module)
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', true)}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Default Value', () => (
@@ -54,6 +51,9 @@ storiesOf('TextArea', module)
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', false)}
             required={boolean('required', false)}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Disabled', () => (
@@ -63,5 +63,8 @@ storiesOf('TextArea', module)
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
             disabled={boolean('disabled', true)}
             required={boolean('required', false)}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ));

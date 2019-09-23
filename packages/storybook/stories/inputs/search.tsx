@@ -8,7 +8,7 @@ import { storiesOf } from '@storybook/react';
 storiesOf('Search Bar', module)
     .add('Contextual', () => (
         <SearchContextual
-            onChange={action('onSearch callback')}
+            onChange={action('onChange callback')}
             placeholder={text('placeholder', 'Ex.: Miky Mike')}
             disabled={boolean('disabled', false)}
         />
@@ -17,6 +17,7 @@ storiesOf('Search Bar', module)
         <SearchGlobal
             label={text('label', 'Search')}
             onSearch={action('onSearch callback')}
+            onChange={action('onChange callback')}
             placeholder={text('placeholder', 'Ex.: Marquee Mark')}
             disabled={boolean('disabled', false)}
         />
