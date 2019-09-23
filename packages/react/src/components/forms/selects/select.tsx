@@ -28,7 +28,6 @@ interface SelectProps {
     options: SelectOption[];
     required?: boolean;
     skipOption?: SelectOption;
-    valid?: boolean;
     validationErrorMessage?: string;
     name?: string;
     value?: string;
