@@ -86,9 +86,9 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
                     id={id}
                     onChange={handleSelectChange}
                     name={name}
-                    value={value}
                     required={required}
                     ref={selectRef}
+                    value={value}
                 >
                     {selectOptions}
                 </StyledSelect>
