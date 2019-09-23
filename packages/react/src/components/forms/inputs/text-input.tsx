@@ -55,7 +55,17 @@ const TextInput = React.forwardRef(
             }
         }
 
-        const { defaultValue, disabled, label, pattern, placeholder, required, type, validationErrorMessage, value } = props;
+        const {
+            defaultValue,
+            disabled,
+            label,
+            pattern,
+            placeholder,
+            required,
+            type,
+            validationErrorMessage,
+            value,
+        } = props;
 
         return (
             <FieldContainer

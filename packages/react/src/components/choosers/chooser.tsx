@@ -58,7 +58,7 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }:
                 {chooserOptions}
             </Grid>
 
-            {skipOption !== undefined && (
+            {skipOption && (
                 <Skip>
                     <ChooseInput
                         groupName={groupName}
