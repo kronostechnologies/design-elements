@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TextInput } from '@equisoft/design-elements-react';
+import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
@@ -15,6 +16,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Type: Email', () => (
@@ -27,6 +31,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Type: Phone', () => (
@@ -39,6 +46,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Default value', () => (
@@ -51,6 +61,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '1234 Main Street')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Required', () => (
@@ -63,27 +76,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
-        />
-    ))
-    .add('Event callbacks', () => (
-        <TextInput
-            disabled={boolean('disabled', false)}
-            required={boolean('required', true)}
-            label={text('label', 'See console for callbacks')}
-            placeholder={text('placeholder', 'Ex.: Hello')}
-            type={text('type', 'text')}
-            defaultValue={text('defaultValue', '')}
-            pattern={text('pattern', '')}
-            validationErrorMessage={text('validationErrorMessage', 'Error message')}
-            onChange={event => {
-                console.log(`Custom function called on change. Current value: ${event.currentTarget.value}`);
-            }}
-            onBlur={event => {
-                console.log(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
-            }}
-            onFocus={event => {
-                console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
-            }}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Pattern validation', () => (
@@ -96,6 +91,9 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '[0-9]{3}-?[0-9]{3}-?[0-9]{4}')}
             validationErrorMessage={text('validationErrorMessage', 'Please enter a valid phone number')}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ))
     .add('Disabled', () => (
@@ -108,5 +106,8 @@ storiesOf('Input text fields', module)
             defaultValue={text('defaultValue', '')}
             pattern={text('pattern', '')}
             validationErrorMessage={text('validationErrorMessage', 'Error message')}
+            onChange={action('onChange callback')}
+            onBlur={action('onBlur callback')}
+            onFocus={action('onFocus callback')}
         />
     ));
