@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { Select } from '@equisoft/design-elements-react';
-import { action } from '@storybook/addon-actions';
-import { boolean, object, text } from '@storybook/addon-knobs';
 
 const provinces = [
     { value: '', label: '-' },
@@ -33,43 +31,43 @@ export default {
 
 export const normal = () => (
     <Select
-        label={text('label', 'Choose your province or territory')}
-        name={text('name', 'provinces')}
-        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        label="Choose your province or territory"
+        name="provinces"
+        validationErrorMessage="Error message"
         onChange={(value) => {console.log(value); }}
-        required={boolean('required', false)}
-        options={object('options', provinces)}
+        required={false}
+        options={provinces}
     />
 );
 export const controlledValue = () => (
     <Select
-        label={text('label', 'Choose your province or territory')}
-        value={text('value', 'on')}
-        name={text('name', 'provinces')}
-        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        label="Choose your province or territory"
+        value="on"
+        name="provinces"
+        validationErrorMessage="Error message"
         onChange={(value) => {console.log(value); }}
-        required={boolean('required', false)}
-        options={object('options', provinces)}
+        required={false}
+        options={provinces}
     />
 );
 export const withSkip = () => (
     <Select
-        label={text('label', 'Choose your province or territory')}
-        name={text('name', 'provinces')}
-        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        label="Choose your province or territory"
+        name="provinces"
+        validationErrorMessage="Error message"
         onChange={console.log}
-        required={boolean('required', false)}
-        options={object('options', provinces)}
-        skipOption={object('skipOption', skipOption)}
+        required={false}
+        options={provinces}
+        skipOption={skipOption}
     />
 );
 export const required = () => (
     <Select
-        label={text('label', 'Choose your province or territory')}
-        name={text('name', 'provinces')}
-        validationErrorMessage={text('validationErrorMessage', 'Error message')}
+        label="Choose your province or territory"
+        name="provinces"
+        validationErrorMessage="Error message"
         onChange={console.log}
-        required={boolean('required', true)}
-        options={object('options', provinces)}
+        required={true}
+        options={provinces}
     />
 );

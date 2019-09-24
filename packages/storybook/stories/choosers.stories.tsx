@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { Chooser } from '@equisoft/design-elements-react';
-import { action } from '@storybook/addon-actions';
-import { boolean, object, text } from '@storybook/addon-knobs';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
@@ -27,19 +25,34 @@ export default {
     component: Chooser,
 };
 
-export const withASkipButton = () => (
+export const normal = () => (
     <Chooser
-        groupName={text('groupName', 'maritalStatus')}
-        inColumns={boolean('inColumns', false)}
-        options={object('options', maritalStatus)}
-        skipOption={object('skipOption', skipOption)}
+        groupName="maritalStatus"
+        inColumns={false}
+        options={maritalStatus}
     />
 );
-export const inColumnsWithCallback = () => (
+
+export const withASkipButton = () => (
     <Chooser
-        groupName={text('groupName', 'ageRange')}
-        inColumns={boolean('inColumns', true)}
+        groupName="maritalStatus"
+        inColumns={false}
+        options={maritalStatus}
+        skipOption={skipOption}
+    />
+);
+export const inColumns = () => (
+    <Chooser
+        groupName="ageRange"
+        inColumns={true}
+        options={ageRange}
+    />
+);
+export const withCallback = () => (
+    <Chooser
+        groupName="ageRange"
+        inColumns={true}
         onChange={event => console.log(event)}
-        options={object('options', ageRange)}
+        options={ageRange}
     />
 );

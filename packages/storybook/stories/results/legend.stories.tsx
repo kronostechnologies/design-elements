@@ -1,5 +1,4 @@
 import { Legend } from '@equisoft/design-elements-react';
-import { object } from '@storybook/addon-knobs';
 import React from 'react';
 
 const legendItems = [
@@ -24,5 +23,5 @@ export default {
     component: Legend,
 };
 export const normal = () => (
-    <Legend items={object('items', legendItems)} />
+    <Legend items={legendItems} />
 );

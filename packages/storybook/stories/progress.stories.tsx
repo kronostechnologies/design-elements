@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Progress } from '@equisoft/design-elements-react';
-import { number } from '@storybook/addon-knobs';
 
 export default {
     title: 'Progress',
@@ -9,11 +8,12 @@ export default {
 };
 
 export const beginning = () => (
-    <Progress max={number('max', 2)} value={number('value', 0)} />
-);
-export const middle = () => (
-    <Progress max={number('max', 2)} value={number('value', 1)} />
-);
-export const end = () => (
-    <Progress max={number('max', 2)} value={number('value', 2)} />
+    <div>
+        <h3 style={{ marginTop: '0' }} >Begining</h3>
+        <Progress max={2} value={0} />
+        <h3>Middle</h3>
+        <Progress max={2} value={1} />
+        <h3>End</h3>
+        <Progress max={2} value={2} />
+    </div>
 );
