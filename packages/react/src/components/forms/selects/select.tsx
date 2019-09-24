@@ -23,13 +23,23 @@ interface SelectOption {
 }
 
 interface SelectProps {
+    /** Array of options */
     children?: ReactNode;
     label?: string;
+    /** SelectOption: { label: string; value?: string } */
     options: SelectOption[];
     required?: boolean;
+    /** SelectOption: { label: string; value?: string } */
     skipOption?: SelectOption;
+    /**
+   * Error message
+   *
+   * @default You must select an option
+   **/
     validationErrorMessage?: string;
+    /** Name attribute on select */
     name?: string;
+    /** Default selected value */
     value?: string;
 
     onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;

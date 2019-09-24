@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
-import { Button, ButtonProps } from './button';
+import { Button } from './button';
 
 const PlusIcon = styled(PlusSign)`
   height: 1rem;
@@ -10,7 +10,16 @@ const PlusIcon = styled(PlusSign)`
   width: 1rem;
 `;
 
-const AddButton = ({ disabled, onClick, buttonType, label }: ButtonProps) => {
+interface ButtonProps {
+    label?: string;
+    children?: ReactNode;
+    disabled?: boolean;
+
+    onClick?(): void;
+    buttonType: 'primary' | 'secondary' | 'tertiary';
+}
+
+export function AddButton({ disabled, onClick, buttonType, label }: ButtonProps): ReactElement {
     const handleClick = () => { onClick && onClick(); };
 
     return (
@@ -18,6 +27,4 @@ const AddButton = ({ disabled, onClick, buttonType, label }: ButtonProps) => {
             <PlusIcon />
         </Button>
     );
-};
-
-export { AddButton };
+}

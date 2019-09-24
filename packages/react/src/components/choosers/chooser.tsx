@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import { ChooseInput } from './controls/choose-input';
 
@@ -22,16 +22,29 @@ interface ChooserOption {
 }
 
 interface ChooserProps {
+    /**
+   * Sets the elements in columns
+   *
+   * @default NULL
+   **/
     inColumns?: boolean;
+    /** Sets input names */
     groupName: string;
+    /** ChooserOption: { label: string; value?: string; } */
     options: ChooserOption[];
+    /**
+   * Sets properties for the skip button
+   *
+   * @default NULL
+   **/
     skipOption?: ChooserOption;
+    /** Sets initial value */
     value?: string | null;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }: ChooserProps) => {
+export function Chooser({ inColumns, groupName, onChange, options, skipOption, value }: ChooserProps): ReactElement {
     const [isControlled] = useState(value !== undefined);
 
     function handleChange(event: ChangeEvent<HTMLInputElement>): void {
@@ -74,6 +87,4 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }:
             )}
         </>
     );
-};
-
-export { Chooser };
+}

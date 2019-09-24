@@ -65,6 +65,13 @@ interface GetStepProps {
     value: number;
 }
 
+interface ProgressProps {
+    /** Progress length */
+    max: number;
+    /** Progress value */
+    value: number;
+}
+
 const getStep = ({ step, max, value }: GetStepProps): ReactElement => {
     let StepComponent;
 
@@ -83,13 +90,13 @@ const getStep = ({ step, max, value }: GetStepProps): ReactElement => {
     return <StepComponent key={step} />;
 };
 
-const Progress = ({ max, value }: {max: number, value: number}) => (
-    <Div>
-        <StyledProgress max={max} value={value} />
-        <UL>
-            {range(max + 1).map((step: number) => getStep({ step, max, value }))}
-        </UL>
-    </Div>
-);
-
-export { Progress };
+export function Progress({ max, value }: ProgressProps): ReactElement {
+    return (
+        <Div>
+            <StyledProgress max={max} value={value} />
+            <UL>
+                {range(max + 1).map((step: number) => getStep({ step, max, value }))}
+            </UL>
+        </Div>
+    );
+}

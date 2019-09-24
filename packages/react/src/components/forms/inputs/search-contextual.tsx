@@ -1,13 +1,21 @@
-import React from 'react';
-import { SearchInput, SearchInputProps } from './search-input';
+import React, { ChangeEvent, ReactElement } from 'react';
+import { SearchInput  } from './search-input';
 
-const SearchContextual = ({ disabled, label, onChange, placeholder }: SearchInputProps) => (
-    <SearchInput
-        disabled={disabled}
-        label={label}
-        onChange={onChange}
-        placeholder={placeholder}
-    />
-);
+interface SearchInputProps {
+    disabled?: boolean;
+    label?: string;
+    placeholder?: string;
 
-export { SearchContextual };
+    onChange?(event: ChangeEvent<HTMLInputElement>): void;
+}
+
+export function SearchContextual({ disabled, label, onChange, placeholder }: SearchInputProps): ReactElement {
+    return (
+        <SearchInput
+            disabled={disabled}
+            label={label}
+            onChange={onChange}
+            placeholder={placeholder}
+        />
+    );
+}

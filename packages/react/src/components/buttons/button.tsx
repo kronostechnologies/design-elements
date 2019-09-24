@@ -1,11 +1,16 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { AbstractButton, AbstractButtonProps } from './abstract-button';
+import { AbstractButton } from './abstract-button';
 import { primaryStyle } from './styles/primary';
 import { secondaryStyle } from './styles/secondary';
 import { tertiaryStyle } from './styles/tertiary';
 
-export interface ButtonProps extends AbstractButtonProps {
+interface ButtonProps {
+    label?: string;
+    children?: ReactNode;
+    disabled?: boolean;
+
+    onClick?(): void;
     buttonType: 'primary' | 'secondary' | 'tertiary';
 }
 

@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-import { SearchInput, SearchInputProps } from './search-input';
+import { SearchInput } from './search-input';
 
-const SearchGlobal = ({ disabled, label, onSearch, placeholder }: SearchInputProps) => (
-    <SearchInput
-        disabled={disabled}
-        hasButton
-        label={label}
-        onSearch={onSearch}
-        placeholder={placeholder}
-    />
-);
+interface SearchInputProps {
+    disabled?: boolean;
+    label?: string;
+    placeholder?: string;
 
-export { SearchGlobal };
+    onSearch?(value: string): void;
+}
+
+export function SearchGlobal({ disabled, label, onSearch, placeholder }: SearchInputProps): ReactElement {
+    return (
+        <SearchInput
+            disabled={disabled}
+            hasButton
+            label={label}
+            onSearch={onSearch}
+            placeholder={placeholder}
+        />
+    );
+}

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
 import { MediaView } from '../media-view';
@@ -75,32 +75,34 @@ const Project = styled.em`
 `;
 
 interface HeadbandProps {
+    /** Label to the right */
     children: ReactNode;
+    /** Center label */
     appName: string;
 }
 
-const Headband = ({ children, appName }: HeadbandProps) => (
-    <Header role="banner">
-        <Brand href="/" aria-label="Home" rel="index">
-            <MediaView maxWidth={breakpoints.tablet}>
-                <Logo>
-                    <EquisoftIco />
-                </Logo>
-            </MediaView>
+export function Headband({ children, appName }: HeadbandProps): ReactElement {
+    return (
+        <Header role="banner">
+            <Brand href="/" aria-label="Home" rel="index">
+                <MediaView maxWidth={breakpoints.tablet}>
+                    <Logo>
+                        <EquisoftIco />
+                    </Logo>
+                </MediaView>
 
-            <MediaView minWidth={breakpoints.tablet}>
-                <Logo>
-                    <Equisoft />
-                </Logo>
-            </MediaView>
+                <MediaView minWidth={breakpoints.tablet}>
+                    <Logo>
+                        <Equisoft />
+                    </Logo>
+                </MediaView>
 
-            <Project>{appName}</Project>
-        </Brand>
+                <Project>{appName}</Project>
+            </Brand>
 
-        <div>
-            {children}
-        </div>
-    </Header>
-);
-
-export { Headband };
+            <div>
+                {children}
+            </div>
+        </Header>
+    );
+}

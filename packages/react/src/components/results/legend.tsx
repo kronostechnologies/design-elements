@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -39,20 +39,21 @@ interface LegendItem {
 }
 
 interface LegendProps {
+    /** LegendItem: { name: string; description: string; color?: string } */
     items: LegendItem[];
 }
 
-const Legend = ({ items }: LegendProps) => (
-    <List>
-        {items.map(item => (
-            <Item key={item.name} color={item.color}>
-                <div>
-                    <p>{item.name}</p>
-                    <Description>{item.description}</Description>
-                </div>
-            </Item>
-        ))}
-    </List>
-);
-
-export { Legend };
+export function Legend({ items }: LegendProps): ReactElement {
+    return (
+        <List>
+            {items.map(item => (
+                <Item key={item.name} color={item.color}>
+                    <div>
+                        <p>{item.name}</p>
+                        <Description>{item.description}</Description>
+                    </div>
+                </Item>
+            ))}
+        </List>
+    );
+}

@@ -10,9 +10,16 @@ const Label = styled.label`
 
 interface Props {
     color: string;
+    /** Top label */
     descriptionLabel?: string;
+    /** End label */
     resultLabel: ReactText;
     percent: number;
+    /**
+   * Sets a lighter font color
+   *
+   * @default NULL
+   **/
     secondary?: boolean;
 }
 

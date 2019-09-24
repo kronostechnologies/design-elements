@@ -41,6 +41,13 @@ export const withASkipButton = () => (
         skipOption={skipOption}
     />
 );
+export const withValue = () => (
+    <Chooser
+        groupName="ageRange"
+        options={ageRange}
+        value="35,49"
+    />
+);
 export const inColumns = () => (
     <Chooser
         groupName="ageRange"
