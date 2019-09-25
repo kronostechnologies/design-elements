@@ -9,8 +9,7 @@
       "noEmitOnError": true,
       "sourceMap": true,
       "baseUrl": "./stories/",
-      "paths": {},
-      "noImplicitAny": false
+      "paths": {}
     },
     "include": [
       "stories"

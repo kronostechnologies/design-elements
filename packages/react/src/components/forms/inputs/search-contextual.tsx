@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ReactElement } from 'react';
-import { SearchInput  } from './search-input';
+import { SearchInput } from './search-input';
 
 interface SearchInputProps {
     disabled?: boolean;

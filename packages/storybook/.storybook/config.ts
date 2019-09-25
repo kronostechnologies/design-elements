@@ -10,11 +10,4 @@ addParameters({
     },
 });
 
-// const req = require.context('../stories', true, /\.stories\.tsx$/);
-
-// function loadStories(): void {
-//     req.keys().forEach(req);
-// }
-
-// configure(loadStories, module);
 configure(require.context('../stories/', true, /\.stories\.tsx$/), module);
