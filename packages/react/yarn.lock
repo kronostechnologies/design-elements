@@ -7650,10 +7650,14 @@ webpack-cli@^3.3.7:
     yargs "13.2.4"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 webpack-log@^1.1.2:
 =======
 webpack-log@^1.1.2, webpack-log@^1.2.0:
 >>>>>>> Added react-docgen
+=======
+webpack-log@^1.1.2:
+>>>>>>> TS loader optimisation
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
   integrity sha512-U9AnICnu50HXtiqiDxuli5gLB5PGBo7VvcHx36jRZHwK4vzOYLbImqT4lwWwoMHdQWwEKw736fCHEekokTEKHA==
