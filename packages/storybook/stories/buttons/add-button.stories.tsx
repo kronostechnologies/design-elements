@@ -55,17 +55,5 @@ export const eventCallback = () => (
             onClick={() => { console.log('The button has been clicked!'); }}
             disabled={false}
         />
-        <AddButton
-            label="See Console For Callback"
-            buttonType={'secondary' as ButtonType}
-            onClick={() => { console.log('The button has been clicked!'); }}
-            disabled={false}
-        />
-        <AddButton
-            label="See Console For Callback"
-            buttonType={'tertiary' as ButtonType}
-            onClick={() => { console.log('The button has been clicked!'); }}
-            disabled={false}
-        />
     </div>
 );
