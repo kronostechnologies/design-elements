@@ -35,7 +35,7 @@
     "@types/react-color": "^3.0.1",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "4.1.8",
-    "awesome-typescript-loader": "^5.2.1",
+    "ts-loader": "^6.1.2",
     "tslint": "^5.19.0",
     "typescript": "^3.5.3",
     "webpack": "^4.39.2"
