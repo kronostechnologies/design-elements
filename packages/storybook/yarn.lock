@@ -10,6 +10,7 @@
     "@babel/highlight" "^7.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/core@7.6.0":
 =======
 <<<<<<< HEAD
@@ -18,28 +19,12 @@
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
   integrity sha512-i4qoSr2KTtce0DmkuuQBV4AuQgGPUcPXMr9L5MyYAtk06z068lQ10a4O009fe5OB/DfNV+h+qqT7ddNV8UnRjg==
-  dependencies:
-    "@babel/code-frame" "^7.5.5"
-    "@babel/generator" "^7.5.5"
-    "@babel/helpers" "^7.5.5"
-    "@babel/parser" "^7.5.5"
-    "@babel/template" "^7.4.4"
-    "@babel/traverse" "^7.5.5"
-    "@babel/types" "^7.5.5"
-    convert-source-map "^1.1.0"
-    debug "^4.1.0"
-    json5 "^2.1.0"
-    lodash "^4.17.13"
-    resolve "^1.3.2"
-    semver "^5.4.1"
-    source-map "^0.5.0"
-
->>>>>>> Docs page implementation
-"@babel/core@7.6.0", "@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
->>>>>>> Docs page implementation
+=======
+"@babel/core@7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.0.tgz#9b00f73554edd67bebc86df8303ef678be3d7b48"
   integrity sha512-FuRhDRtsd6IptKpHXAa+4WPZYY2ZzgowkbLBecEDDSje1X/apG7jQM33or3NdOmjXBKWGOg4JmSiRfUfuTtHXw==
+>>>>>>> Rebase fixes
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/generator" "^7.6.0"
@@ -56,6 +41,36 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+<<<<<<< HEAD
+>>>>>>> Docs page implementation
+"@babel/core@7.6.0", "@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
+>>>>>>> Docs page implementation
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.0.tgz#9b00f73554edd67bebc86df8303ef678be3d7b48"
+  integrity sha512-FuRhDRtsd6IptKpHXAa+4WPZYY2ZzgowkbLBecEDDSje1X/apG7jQM33or3NdOmjXBKWGOg4JmSiRfUfuTtHXw==
+=======
+"@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.2.tgz#069a776e8d5e9eefff76236bc8845566bd31dd91"
+  integrity sha512-l8zto/fuoZIbncm+01p8zPSDZu/VuuJhAfA7d/AbzM09WR7iVhavvfNDYCNpo1VvLk6E6xgAoP9P+/EMJHuRkQ==
+>>>>>>> Rebase fixes
+  dependencies:
+    "@babel/code-frame" "^7.5.5"
+    "@babel/generator" "^7.6.2"
+    "@babel/helpers" "^7.6.2"
+    "@babel/parser" "^7.6.2"
+    "@babel/template" "^7.6.0"
+    "@babel/traverse" "^7.6.2"
+    "@babel/types" "^7.6.0"
+    convert-source-map "^1.1.0"
+    debug "^4.1.0"
+    json5 "^2.1.0"
+    lodash "^4.17.13"
+    resolve "^1.3.2"
+    semver "^5.4.1"
+    source-map "^0.5.0"
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 "@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
   version "7.6.2"
@@ -77,10 +92,13 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+=======
+>>>>>>> Rebase fixes
 "@babel/generator@^7.4.0", "@babel/generator@^7.6.0", "@babel/generator@^7.6.2":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.6.2.tgz#dac8a3c2df118334c2a29ff3446da1636a8f8c03"
   integrity sha512-j8iHaIW4gGPnViaIHI7e9t/Hl8qLjERI6DcV9kEpAIDJsAOrcnXqRS7t+QbhL76pwbtqP+QCQLL0z1CyVmtjjQ==
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 "@babel/generator@^7.6.0":
@@ -91,6 +109,8 @@
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.6.0.tgz#e2c21efbfd3293ad819a2359b448f002bfdfda56"
   integrity sha512-Ms8Mo7YBdMMn1BYuNtKuP/z0TgEIhbcyB8HVR6PPNYp4P61lMsABiS4A3VG1qznjXVCf3r+fVHhm4efTYVsySA==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     "@babel/types" "^7.6.0"
     jsesc "^2.5.1"
@@ -291,10 +311,14 @@
     js-tokens "^4.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@babel/parser@^7.4.2", "@babel/parser@^7.6.0", "@babel/parser@^7.6.2":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.6.2.tgz#205e9c95e16ba3b8b96090677a67c9d6075b70a1"
   integrity sha512-mdFqWrSPCmikBoaBYMuBulzTIKuXVPtEISFbRRVNwMWpCms/hmE2kRq0bblUHaNRKrjRlmVbx1sDHmjmRgD2Xg==
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 "@babel/parser@^7.6.0":
@@ -305,6 +329,8 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.6.0.tgz#3e05d0647432a8326cb28d0de03895ae5a57f39b"
   integrity sha512-+o2q111WEx4srBs7L9eJmcwi655eD8sXniLqMB93TBK9GrNzGrxDWSjiqz2hLU0Ha8MTXFIP0yd9fNdP+m43ZQ==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
 
 "@babel/plugin-proposal-async-generator-functions@^7.2.0":
   version "7.2.0"
@@ -962,6 +988,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@emotion/core@^10.0.14", "@emotion/core@^10.0.17", "@emotion/core@^10.0.9":
 =======
 <<<<<<< HEAD
@@ -981,6 +1008,9 @@
 >>>>>>> CSF format stories
 "@emotion/core@^10.0.14", "@emotion/core@^10.0.9":
 >>>>>>> Storybook update to 5.2
+=======
+"@emotion/core@^10.0.14", "@emotion/core@^10.0.17", "@emotion/core@^10.0.9":
+>>>>>>> Rebase fixes
   version "10.0.17"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.17.tgz#3367376709721f4ee2068cff54ba581d362789d8"
   integrity sha512-gykyjjr0sxzVuZBVTVK4dUmYsorc2qLhdYgSiOVK+m7WXgcYTKZevGWZ7TLAgTZvMelCTvhNq8xnf8FR1IdTbg==
@@ -1001,11 +1031,6 @@
     "@emotion/utils" "0.11.2"
     babel-plugin-emotion "^10.0.14"
 
-"@emotion/hash@0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.7.2.tgz#53211e564604beb9befa7a4400ebf8147473eeef"
-  integrity sha512-RMtr1i6E8MXaBWwhXL3yeOU8JXRnz8GNxHvaUfVvwxokvayUY0zoBeWbKw1S9XkufmGEEdQd228pSZXFkAln8Q==
-
 "@emotion/hash@0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.7.3.tgz#a166882c81c0c6040975dd30df24fae8549bd96f"
@@ -1017,11 +1042,6 @@
   integrity sha512-We7VBiltAJ70KQA0dWkdPMXnYoizlxOXpvtjmu5/MBnExd+u0PGgV27WCYanmLAbCwAU30Le/xA0CQs/F/Otig==
   dependencies:
     "@emotion/memoize" "0.7.3"
-
-"@emotion/memoize@0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.2.tgz#7f4c71b7654068dfcccad29553520f984cc66b30"
-  integrity sha512-hnHhwQzvPCW1QjBWFyBtsETdllOM92BfrKWbUTmh9aeOlcVOiXvlPsK4104xH8NsaKfg86PTFsWkueQeUfMA/w==
 
 "@emotion/memoize@0.7.3":
   version "0.7.3"
@@ -1115,6 +1135,7 @@
 
 "@mdx-js/loader@^1.1.0":
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.5.0.tgz#aca337cd78f114e0451d59a06c9c66e6aeab345e"
   integrity sha512-pBL1oXuRPmK3GbY3BPsncFby2oALssDwviSEsoIwJoiZ8OVU3fZHbfAd0tKEFSJSBu/XqfLNKf2JNtQIdmq5KQ==
@@ -1131,20 +1152,33 @@
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.4.5.tgz#b9054ab977d97f545b7bcdd29ea0f34a37d0e932"
   integrity sha512-altL75vMjcLyab2A0hcq+KV5qpnRBXR0uVnpFNo0TWFav1q8FGxEYwU7ybzV+qL5sVfv32WPhRw3uH3RT2tFoA==
+=======
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.5.0.tgz#aca337cd78f114e0451d59a06c9c66e6aeab345e"
+  integrity sha512-pBL1oXuRPmK3GbY3BPsncFby2oALssDwviSEsoIwJoiZ8OVU3fZHbfAd0tKEFSJSBu/XqfLNKf2JNtQIdmq5KQ==
+>>>>>>> Rebase fixes
   dependencies:
-    "@mdx-js/mdx" "^1.4.5"
-    "@mdx-js/react" "^1.4.5"
+    "@mdx-js/mdx" "^1.5.0"
+    "@mdx-js/react" "^1.5.0"
     loader-utils "1.2.3"
 
+<<<<<<< HEAD
 "@mdx-js/mdx@^1.1.0", "@mdx-js/mdx@^1.4.5":
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.4.5.tgz#f1658dcf7b535162ad0ecdbc9f50541accb17417"
   integrity sha512-kxnQIi10DxsvRf+H+IiUlnvY/vLLBcg6hl+63mAAv/Dy79RTPdpeA/F/dBuRuOygJEJTh8ilm0ouwyqeuyypJA==
 >>>>>>> Docs page implementation
+=======
+"@mdx-js/mdx@^1.1.0", "@mdx-js/mdx@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.5.0.tgz#0f9aa44c888ad197f7346f8c8c81d0bc2d1b17a6"
+  integrity sha512-Xkg3AjxgCGwxXRBSVssekhsKdEg3N7mGrvGyxYgVapSTqaO4c/3El+iLWhNzFJ99ujosnCTMVw+cDq3oLYJx1w==
+>>>>>>> Rebase fixes
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/plugin-syntax-jsx" "7.2.0"
     "@babel/plugin-syntax-object-rest-spread" "7.2.0"
+<<<<<<< HEAD
 <<<<<<< HEAD
     "@mdx-js/util" "^1.5.0"
     babel-plugin-apply-mdx-type-prop "^1.5.0"
@@ -1154,16 +1188,25 @@
     babel-plugin-apply-mdx-type-prop "^1.4.5"
     babel-plugin-extract-import-names "^1.4.5"
 >>>>>>> Docs page implementation
+=======
+    "@mdx-js/util" "^1.5.0"
+    babel-plugin-apply-mdx-type-prop "^1.5.0"
+    babel-plugin-extract-import-names "^1.5.0"
+>>>>>>> Rebase fixes
     camelcase-css "2.0.1"
     detab "2.0.2"
     hast-util-raw "5.0.1"
     lodash.uniq "4.5.0"
     mdast-util-to-hast "6.0.2"
 <<<<<<< HEAD
+<<<<<<< HEAD
     remark-mdx "^1.5.0"
 =======
     remark-mdx "^1.4.5"
 >>>>>>> Docs page implementation
+=======
+    remark-mdx "^1.5.0"
+>>>>>>> Rebase fixes
     remark-parse "7.0.1"
     remark-squeeze-paragraphs "3.0.4"
     style-to-object "0.2.3"
@@ -1172,10 +1215,14 @@
     unist-util-visit "2.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@mdx-js/react@^1.0.27", "@mdx-js/react@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.5.0.tgz#bb060963c459e4e1553130448006ab756c6fdc4c"
   integrity sha512-SsXcxwvGYA00HQcZHuE+8vl53paa4tgMo748ZE2cQvir7E7/tRsayU8VRE4fSIWuSaDgOnw8jO+D5zBHP1P2Rg==
+<<<<<<< HEAD
 
 "@mdx-js/util@^1.5.0":
   version "1.5.0"
@@ -1192,6 +1239,13 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.4.5.tgz#6426e8473f81fcca7648d09d11d263e3070ddcce"
   integrity sha512-1MkrXjMfbFnVEkFGqc7oBf2iWObVbkxyBue0C24B+0Qg5s2gejIhs/wcA5/2c9RqvACURDgPNiD6rx3lf+zRsQ==
 >>>>>>> Docs page implementation
+=======
+
+"@mdx-js/util@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.5.0.tgz#4915de47ae55ae62bb26eef073b8e022ea506e14"
+  integrity sha512-+mJxrZfDoZ1TX/BVxBaDtYfZFS95r6Z6u5CnYNZJYZdcELUaBX0D7FMM9Up/sb9OTq1sfxHkEkud8sohqrIT/Q==
+>>>>>>> Rebase fixes
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -1240,6 +1294,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@storybook/addon-docs@^5.3.0-alpha.0":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.3.tgz#3d12cab1e7861710c8d2af5574f44ea854ed66ef"
@@ -1280,10 +1335,12 @@
 >>>>>>> Storybook update to 5.2
 =======
 =======
+=======
+>>>>>>> Rebase fixes
 "@storybook/addon-docs@^5.3.0-alpha.0":
-  version "5.3.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.0.tgz#4a65ac4d6aa0cee69f73cb2b86cc95b766032f8f"
-  integrity sha512-iBHrc1CLV31pTDZBs5w9wgb4udQi5Mw8ZKtZUm+2OUAqmkCeLK6zFZBQetZldUp03Xg/iKmUe81y+d3l5yxYGA==
+  version "5.3.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.3.tgz#3d12cab1e7861710c8d2af5574f44ea854ed66ef"
+  integrity sha512-cWo/1x5ifx3DT2BmKQviwfRuRHwdp5EenlXKMH3FcOU1ut/+rzhjtTXdgv7fCkjEeOBfUidP7g4n4tcc9gpRug==
   dependencies:
     "@babel/generator" "^7.4.0"
     "@babel/parser" "^7.4.2"
@@ -1291,25 +1348,19 @@
     "@mdx-js/loader" "^1.1.0"
     "@mdx-js/mdx" "^1.1.0"
     "@mdx-js/react" "^1.0.27"
-    "@storybook/addons" "5.3.0-alpha.0"
-    "@storybook/api" "5.3.0-alpha.0"
-    "@storybook/components" "5.3.0-alpha.0"
-    "@storybook/router" "5.3.0-alpha.0"
-    "@storybook/source-loader" "5.3.0-alpha.0"
-    "@storybook/theming" "5.3.0-alpha.0"
+    "@storybook/addons" "5.3.0-alpha.3"
+    "@storybook/api" "5.3.0-alpha.3"
+    "@storybook/components" "5.3.0-alpha.3"
+    "@storybook/router" "5.3.0-alpha.3"
+    "@storybook/source-loader" "5.3.0-alpha.3"
+    "@storybook/theming" "5.3.0-alpha.3"
     core-js "^3.0.1"
     global "^4.3.2"
     js-string-escape "^1.0.1"
     lodash "^4.17.11"
     prop-types "^15.7.2"
 
-<<<<<<< HEAD
->>>>>>> Docs page implementation
-"@storybook/addon-knobs@5.2.1", "@storybook/addon-knobs@^5.1.11":
->>>>>>> CSF format stories
-=======
 "@storybook/addon-knobs@5.2.1":
->>>>>>> Removed addon-knobs
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.2.1.tgz#6bc2f7e254ccce09d6f5136e9cce63cd808c9853"
   integrity sha512-JCSqrGYyVVBNkudhvla7qc9m0/Mn1UMaMzIxH5kewEE1KWZcCkdXD5hDASN39pkn3mX1yyqveP8jiyIL9vVBLg==
@@ -1346,10 +1397,14 @@
     util-deprecate "^1.0.2"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/addons@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.3.tgz#4314325c98223d8aee49f172fb4eb117afc94529"
   integrity sha512-xOZnlDzQf00qyUzjBwhlnb/JSqBoBtDYnoNvV92V8DzurQy/4cZOw0C6MnXFnnviKSRbFxFypF6MDOl12tfXbg==
+<<<<<<< HEAD
   dependencies:
     "@storybook/api" "5.3.0-alpha.3"
     "@storybook/channels" "5.3.0-alpha.3"
@@ -1366,6 +1421,13 @@
     "@storybook/client-logger" "5.3.0-alpha.0"
     "@storybook/core-events" "5.3.0-alpha.0"
 >>>>>>> Docs page implementation
+=======
+  dependencies:
+    "@storybook/api" "5.3.0-alpha.3"
+    "@storybook/channels" "5.3.0-alpha.3"
+    "@storybook/client-logger" "5.3.0-alpha.3"
+    "@storybook/core-events" "5.3.0-alpha.3"
+>>>>>>> Rebase fixes
     core-js "^3.0.1"
     global "^4.3.2"
     util-deprecate "^1.0.2"
@@ -1394,10 +1456,14 @@
     util-deprecate "^1.0.2"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/api@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.3.tgz#15d1fc2f0149e17ef792a2438f47d90c9a7a43a0"
   integrity sha512-Dl0Gil01hHE/lcC6RpZvIQLAvq7Khbq3JoKr0sk8bTeJkF5rgSG9x0XAtY8quNZc39dWWBE6RGqjgDvSbIOQSQ==
+<<<<<<< HEAD
   dependencies:
     "@storybook/channels" "5.3.0-alpha.3"
     "@storybook/client-logger" "5.3.0-alpha.3"
@@ -1416,6 +1482,14 @@
     "@storybook/router" "5.3.0-alpha.0"
     "@storybook/theming" "5.3.0-alpha.0"
 >>>>>>> Docs page implementation
+=======
+  dependencies:
+    "@storybook/channels" "5.3.0-alpha.3"
+    "@storybook/client-logger" "5.3.0-alpha.3"
+    "@storybook/core-events" "5.3.0-alpha.3"
+    "@storybook/router" "5.3.0-alpha.3"
+    "@storybook/theming" "5.3.0-alpha.3"
+>>>>>>> Rebase fixes
     core-js "^3.0.1"
     fast-deep-equal "^2.0.1"
     global "^4.3.2"
@@ -1448,16 +1522,22 @@
     core-js "^3.0.1"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/channels@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.3.tgz#f4d77aabc9cc4a674ca44df17aead3b8955a7c5f"
   integrity sha512-s7jjcLxqHia8eFskNdSdDzBDAfBxVLQhL4P+U8iU9WaeWRvwf00Rqh0pjrEaOVoVgyjFcqwHEwafQ+Zb5Auxvg==
+<<<<<<< HEAD
 =======
 "@storybook/channels@5.3.0-alpha.0":
   version "5.3.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.0.tgz#32c7141303f485efa7c7685b9d0f10dc3e90305a"
   integrity sha512-2RYBx6NdD7pTVEi6XZwWM0C5sqKnQxbsgaVPFM5YTpRr1jsnDSQ6kGrEuOCSrNwSzVx94da/fxPQLlfRBsTsUA==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     core-js "^3.0.1"
 
@@ -1490,16 +1570,22 @@
     core-js "^3.0.1"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/client-logger@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.3.tgz#e908470b184e93e95d1f2dda68534a19f42535c9"
   integrity sha512-qs546tOHIDU+qyUpOLesZHfRkUAGFrQRZ6wKRO+zR6oLLhxOvqxi0S3QaGqQE1ztpl4OsZxANk7SEpPTA7i0sg==
+<<<<<<< HEAD
 =======
 "@storybook/client-logger@5.3.0-alpha.0":
   version "5.3.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.0.tgz#397576e4d37b0fad3ae002e53cdc6cdb1fba6d50"
   integrity sha512-B678Usj47BSLCLzKGobAYbiN5yZPCE2F/nKHYml95Df954jmszDbt/wQ5YZdU4PX6UsvLFcGr4yqyD54pAZbXA==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     core-js "^3.0.1"
 
@@ -1528,10 +1614,14 @@
     simplebar-react "^1.0.0-alpha.6"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/components@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.3.tgz#356580ef71c4f883e786dc4d7230e2a8bcd71b25"
   integrity sha512-v0kwIQcs/n8yWWaxpoFu3qK70IDOTKlfJZaKz6r1zO67qGUERqvmRK0R0S+TeB+cW2hKil9Z1OS0PzdCH6nWZg==
+<<<<<<< HEAD
   dependencies:
     "@storybook/client-logger" "5.3.0-alpha.3"
     "@storybook/theming" "5.3.0-alpha.3"
@@ -1544,6 +1634,11 @@
     "@storybook/client-logger" "5.3.0-alpha.0"
     "@storybook/theming" "5.3.0-alpha.0"
 >>>>>>> Docs page implementation
+=======
+  dependencies:
+    "@storybook/client-logger" "5.3.0-alpha.3"
+    "@storybook/theming" "5.3.0-alpha.3"
+>>>>>>> Rebase fixes
     "@types/react-syntax-highlighter" "10.1.0"
     core-js "^3.0.1"
     global "^4.3.2"
@@ -1569,16 +1664,22 @@
     core-js "^3.0.1"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/core-events@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.3.tgz#0f57fca15b1903be9a85b9b4b3888ed311ea8b7b"
   integrity sha512-s54NS3+Ogsx5ri5u8qzlo/LChq4yTGuc4iSCD6b4473ijI4/p2bfaVgQmvsPuc7HvRpNCbXs2tsNY8CxLPoQWQ==
+<<<<<<< HEAD
 =======
 "@storybook/core-events@5.3.0-alpha.0":
   version "5.3.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.0.tgz#28855c20ade77499db44c25d38b1a42db78c9b53"
   integrity sha512-hF5YErDj4A6Du4ViVBTOQ3YxclCXNy7tM21HcIz5T4J4SHJ8Q/AVO/L+7TMRTLY4CI6dkVXYrk46xl8NcgVQ/w==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     core-js "^3.0.1"
 
@@ -1720,16 +1821,22 @@
     qs "^6.6.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/router@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.3.tgz#6fbd27ef37682dba0ebb4911393cad5a3fc70667"
   integrity sha512-lS3jsn03NhqLZeY7Kqtu82QhD8/pwNjX3HZzCS6oSDhcQYyLtJtj5hps/PmiI2FgOqjEjRh/Hq0ZjdU9U8AXmw==
+<<<<<<< HEAD
 =======
 "@storybook/router@5.3.0-alpha.0":
   version "5.3.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.0.tgz#a87535d355668323c704300c8523d45da67d8133"
   integrity sha512-JVrkJQwcabscspuqUGp+IuTO0oghmov9Bel9j7e8I3CZJRy8rAsfSjYHrfXypFoD/6V3nyLmXcXvV7HLfUApkg==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     "@reach/router" "^1.2.1"
     "@types/reach__router" "^1.2.3"
@@ -1740,10 +1847,14 @@
     qs "^6.6.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/source-loader@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.3.tgz#90ca950b352b3a3dff11e25bebf6731348b14e29"
   integrity sha512-HhYYel89uhLNNtEvtksjXw7XMniOUXkvZvZZN8qBgfgy3EfIEYWtX0ThG9EgrnKDnQMEPNBK+xTujXNfdEmK/A==
+<<<<<<< HEAD
   dependencies:
     "@storybook/addons" "5.3.0-alpha.3"
     "@storybook/router" "5.3.0-alpha.3"
@@ -1756,6 +1867,11 @@
     "@storybook/addons" "5.3.0-alpha.0"
     "@storybook/router" "5.3.0-alpha.0"
 >>>>>>> Docs page implementation
+=======
+  dependencies:
+    "@storybook/addons" "5.3.0-alpha.3"
+    "@storybook/router" "5.3.0-alpha.3"
+>>>>>>> Rebase fixes
     core-js "^3.0.1"
     estraverse "^4.2.0"
     global "^4.3.2"
@@ -1783,10 +1899,14 @@
     resolve-from "^5.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 "@storybook/theming@5.3.0-alpha.3":
   version "5.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.3.tgz#205cdc328ddf7f463176dd1d44b2e5bfbb5430cb"
   integrity sha512-UW08IVTfVZVbZZbmGBruarf+oPDo9lwM7Wg7ZHwU8YcWLVNxr24cWVIdY6EmpQJojdUwHWe9MseXzh+6Omnvmg==
+<<<<<<< HEAD
   dependencies:
     "@emotion/core" "^10.0.17"
     "@emotion/styled" "^10.0.17"
@@ -1800,15 +1920,21 @@
   version "5.3.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.0.tgz#375eb452763502fab55dc1782ffb0231f9aef9a1"
   integrity sha512-8SQJH5dfr+tXbOUUtVRsndtIeFVtQhb3ZK12vT3b7uY8LURwOOXOTdH1bObXldFvaie1666HXcxpmilPyZPHUQ==
+=======
+>>>>>>> Rebase fixes
   dependencies:
-    "@emotion/core" "^10.0.14"
-    "@emotion/styled" "^10.0.14"
-    "@storybook/client-logger" "5.3.0-alpha.0"
+    "@emotion/core" "^10.0.17"
+    "@emotion/styled" "^10.0.17"
+    "@storybook/client-logger" "5.3.0-alpha.3"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
+<<<<<<< HEAD
     emotion-theming "^10.0.14"
 >>>>>>> Docs page implementation
+=======
+    emotion-theming "^10.0.19"
+>>>>>>> Rebase fixes
     global "^4.3.2"
     memoizerific "^1.11.3"
     polished "^3.3.1"
@@ -2584,10 +2710,14 @@ babel-plugin-add-react-displayname@^0.0.5:
   integrity sha1-M51M3be2X9YtHfnbn+BN4TQSK9U=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 babel-plugin-apply-mdx-type-prop@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-apply-mdx-type-prop/-/babel-plugin-apply-mdx-type-prop-1.5.0.tgz#01574b3087c7e47673d340332fb8d76a801e8dc0"
   integrity sha512-C5h3X7pPV7Pt5QUzbeOILPrgon5Zw830XJ7evT8AFO77ZZy/+pEH1tOaNBa1IiMcSjFqLATYjqlT8uZYn9z49w==
+<<<<<<< HEAD
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0"
     "@mdx-js/util" "^1.5.0"
@@ -2600,6 +2730,11 @@ babel-plugin-apply-mdx-type-prop@^1.4.5:
     "@babel/helper-plugin-utils" "7.0.0"
     "@mdx-js/util" "^1.4.5"
 >>>>>>> Docs page implementation
+=======
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0"
+    "@mdx-js/util" "^1.5.0"
+>>>>>>> Rebase fixes
 
 babel-plugin-dynamic-import-node@2.3.0, babel-plugin-dynamic-import-node@^2.3.0:
   version "2.3.0"
@@ -2609,14 +2744,14 @@ babel-plugin-dynamic-import-node@2.3.0, babel-plugin-dynamic-import-node@^2.3.0:
     object.assign "^4.1.0"
 
 babel-plugin-emotion@^10.0.14, babel-plugin-emotion@^10.0.17:
-  version "10.0.17"
-  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.17.tgz#5673fbed7b1ed61b4b98d5530f33c8a4d1b08484"
-  integrity sha512-KNuBadotqYWpQexHhHOu7M9EV1j2c+Oh/JJqBfEQDusD6mnORsCZKHkl+xYwK82CPQ/23wRrsBIEYnKjtbMQJw==
+  version "10.0.19"
+  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.19.tgz#67b9b213f7505c015f163a387a005c12c502b1de"
+  integrity sha512-1pJb5uKN/gx6bi3gGr588Krj49sxARI9KmxhtMUa+NRJb6lR3OfC51mh3NlWRsOqdjWlT4cSjnZpnFq5K3T5ZA==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
-    "@emotion/hash" "0.7.2"
-    "@emotion/memoize" "0.7.2"
-    "@emotion/serialize" "^0.11.10"
+    "@emotion/hash" "0.7.3"
+    "@emotion/memoize" "0.7.3"
+    "@emotion/serialize" "^0.11.11"
     babel-plugin-macros "^2.0.0"
     babel-plugin-syntax-jsx "^6.18.0"
     convert-source-map "^1.5.0"
@@ -2625,16 +2760,22 @@ babel-plugin-emotion@^10.0.14, babel-plugin-emotion@^10.0.17:
     source-map "^0.5.7"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 babel-plugin-extract-import-names@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-extract-import-names/-/babel-plugin-extract-import-names-1.5.0.tgz#b5df56411705de97b20f5acf69caf9e0d8010edd"
   integrity sha512-GzNJ0/RlfHWCd7QE05FIPlK8s2ZDQ9aTggDb3IJgpSu+0E4hCNKIjYmSGXFfgdjFlB/eDyOw9ZZ4KDWU7hnnog==
+<<<<<<< HEAD
 =======
 babel-plugin-extract-import-names@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/babel-plugin-extract-import-names/-/babel-plugin-extract-import-names-1.4.5.tgz#c7a591f23977eacbd32cb25177b0e6457baf25e0"
   integrity sha512-yZmzQ6sOFq8L+hk4maqZIWxvXYgIK4N4YsaRu2hyDQKhDAVidhrvSmWb94Npggigv7CeEv6vp4kG1HgzABAFdw==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0"
 
@@ -7885,26 +8026,36 @@ relateurl@^0.2.7:
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Rebase fixes
 remark-mdx@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-1.5.0.tgz#780541b0455ab7432dbb8501be32aa7734b1f441"
   integrity sha512-eeYUHFAkfsX+zGDQ8iMjsIGWRvco9x//P6OOemYTnXhqlcnn3Xo2kcxsMX9ibvBtX+/qwZ/i+juDnMe5Buu0Xw==
+<<<<<<< HEAD
 =======
 remark-mdx@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-1.4.5.tgz#4701cad33c6a4a0465514f39a7dbe9ee7715139f"
   integrity sha512-Njjly0I6l7WAe+ob2qQ3K393rtkyJLjbaZOn84CE2P6nQRzei5PlNRn6DH5SfCzdzP7llHZbW+CVsj989kd/Wg==
 >>>>>>> Docs page implementation
+=======
+>>>>>>> Rebase fixes
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/helper-plugin-utils" "7.0.0"
     "@babel/plugin-proposal-object-rest-spread" "7.5.5"
     "@babel/plugin-syntax-jsx" "7.2.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@mdx-js/util" "^1.5.0"
 =======
     "@mdx-js/util" "^1.4.5"
 >>>>>>> Docs page implementation
+=======
+    "@mdx-js/util" "^1.5.0"
+>>>>>>> Rebase fixes
     is-alphabetical "1.0.3"
     remark-parse "7.0.1"
     unified "8.3.2"
@@ -9003,6 +9154,7 @@ trim-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-1.0.0.tgz#5887966bb582a4503a41eb524f7d35011815a613"
   integrity sha1-WIeWa7WCpFA6QetST301ARgVphM=
 
+<<<<<<< HEAD
 trim-trailing-lines@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/trim-trailing-lines/-/trim-trailing-lines-1.1.2.tgz#d2f1e153161152e9f02fabc670fb40bec2ea2e3a"
@@ -9018,6 +9170,8 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.4.tgz#3b52b1f13924f460c3fbfd0df69b587dbcbc762e"
   integrity sha512-tdzBRDGWcI1OpPVmChbdSKhvSVurznZ8X36AYURAcl+0o2ldlCY2XPzyXNNxwJwwyIU+rIglTCG4kxtNKBQH7Q==
 
+=======
+>>>>>>> Rebase fixes
 trim-trailing-lines@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/trim-trailing-lines/-/trim-trailing-lines-1.1.2.tgz#d2f1e153161152e9f02fabc670fb40bec2ea2e3a"
@@ -9124,6 +9278,14 @@ type-is@~1.6.17, type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
+<<<<<<< HEAD
+=======
+type@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/type/-/type-1.2.0.tgz#848dd7698dafa3e54a6c479e759c4bc3f18847a0"
+  integrity sha512-+5nt5AAniqsCnu2cEQQdpzCAh33kVx8n0VoFidKpB1dVVLAN/F+bgVOqOJqOnEnrhp222clB5p3vUlD+1QAnfg==
+
+>>>>>>> Rebase fixes
 typed-styles@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/typed-styles/-/typed-styles-0.0.7.tgz#93392a008794c4595119ff62dde6809dbc40a3d9"
