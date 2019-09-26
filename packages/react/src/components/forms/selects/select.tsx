@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -23,8 +23,6 @@ interface SelectOption {
 }
 
 interface SelectProps {
-    /** Array of options */
-    children?: ReactNode;
     label?: string;
     /** SelectOption: { label: string; value?: string } */
     options: SelectOption[];
