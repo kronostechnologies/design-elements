@@ -25,6 +25,9 @@ import { Legend } from './components/legend/legend';
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 
+// Dev
+import Datepicker from './components/forms/inputs/date-input/date-picker/date-picker';
+
 export {
     AddButton,
     Button,
@@ -42,4 +45,5 @@ export {
     Progress,
     Legend,
     RadioButtonGroup,
+    Datepicker,
 };
