@@ -12,7 +12,7 @@ import calendar, {
 } from './calendar-helper';
 
 class Calendar extends Component {
-    state = { ...this.resolveStateFromProp(), today: new Date() };
+    state = { ...this.resolveStateFromProp(), today: new Date(), monthDropDownIsOpen: false };
     // @ts-ignore
     resolveStateFromDate(date) {
         const isDateObject = isDate(date);
@@ -104,22 +104,55 @@ class Calendar extends Component {
         const fn = evt.shiftKey ? this.gotoNextYear : this.gotoNextMonth;
         this.handlePressure(fn);
     };
+    // @ts-ignore
+    changeMonth = (month: number): any => {
+        // this.setState({ month: month });
+        // this.renderMonthAndYear();
+        this.setState({ month: month });
+    }
+
+    handleChange = (evt: any) => {
+        evt.preventDefault();
+        const fn = this.changeMonth(evt.target.value);
+        this.handlePressure(fn);
+    }
 
     renderMonthAndYear = () => {
         const { month, year } = this.state;
-        const monthname = Object.keys(CALENDAR_MONTHS)[
+        const monthname = Object.values(CALENDAR_MONTHS)[
           Math.max(0, Math.min(month - 1, 11))
         ];
+        let months = [];
+        for (let [key, value] of Object.entries(CALENDAR_MONTHS)) {
+            months.push({ key: key, value: value });
+        }
+        const monthsList = months.map((mth, i) => (
+          <li onClick={this.handleChange} value={i + 1} key={mth.key + mth.value}>{mth.value}</li>
+        ));
 
         return (
           <Styled.CalendarHeader>
             <Styled.ArrowLeft
               onMouseDown={this.handlePrevious}
               onMouseUp={this.clearPressureTimer}
-              title='Previous Month'
+              title="Previous Month"
             />
             <Styled.CalendarMonth>
-              {monthname} {year}
+              <Styled.CurrentDate>
+                <Styled.CurrentDateContainer
+                  onClick={() => {
+                      this.setState({ monthDropDownIsOpen: !this.state.monthDropDownIsOpen });
+                  }}
+                >
+                  <p>{monthname}</p>
+                  <Styled.MonthList style={this.state.monthDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
+                    {monthsList}
+                  </Styled.MonthList>
+                </Styled.CurrentDateContainer>
+                <Styled.CurrentDateContainer>
+                  <p>{year}</p>
+                </Styled.CurrentDateContainer>
+              </Styled.CurrentDate>
             </Styled.CalendarMonth>
             <Styled.ArrowRight
               onMouseDown={this.handleNext}

@@ -42,7 +42,8 @@ export const Arrow = styled.button`
 	background: white;
 	&:after {
 		content: ">";
-		font-size: 2rem;
+		color: #57666e;
+		font-size: 1.6rem;
 	}
 	:hover {
 		opacity: 0.8;
@@ -63,7 +64,6 @@ export const CalendarContainer = styled.div`
 	border-radius: 5px;
 	border: 1px solid #d9dde2;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	overflow: hidden;
 	width: 100%;
 	box-sizing: border-box;
 	background: white;
@@ -83,8 +83,6 @@ export const CalendarGrid = styled.div`
 
 export const CalendarMonth = styled.div`
 	font-weight: 500;
-	font-size: 5em;
-	color: #06c;
 	text-align: center;
 	padding: 0.5em 0.25em;
 	word-spacing: 5px;
@@ -132,4 +130,52 @@ export const HighlightedCalendarDate = styled(CalendarDate)`
 export const TodayCalendarDate = styled(HighlightedCalendarDate)`
 	color: #000000 !important;
 	background: white !important;
+`;
+
+export const CurrentDate = styled.div`
+	display: flex;
+	justify-content: space-between;
+`;
+
+export const CurrentDateContainer = styled.div`
+	border: 1px solid #57666e;
+	border-radius: 6px;
+	font-size: 4em;
+	box-sizing: border-box;
+	padding 0.2em 0.4em;
+	margin: 0 5px;
+	position: relative;
+	p {
+		margin: 0;
+		&:after {
+			content: "⌄";
+			color: #57666e;
+			margin-left: 10px;
+			font-weight: lighter;
+			font-size: 1em;
+		}
+	}
+`;
+
+export const MonthList = styled.ul`
+	position: absolute;
+	left: -5px;
+	box-sizing: border-box;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	margin: 0 5px;
+	border: 1px solid #57666e;
+	border-radius: 6px;
+	width: 100%;
+	text-align: left;
+	li {
+		padding 0.2em 0.4em;
+		border-radius: 6px;
+		&:hover{
+			background: #d9dde2;
+			cursor: pointer;
+		}
+	}
 `;
