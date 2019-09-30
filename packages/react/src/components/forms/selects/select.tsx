@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, ReactNode, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -17,19 +17,19 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-interface SelectOption {
-    label: string;
-    value?: string;
-}
-
 interface SelectProps {
-    children?: ReactNode;
+    options: { label: string; value?: string }[];
     label?: string;
-    options: SelectOption[];
     required?: boolean;
-    skipOption?: SelectOption;
+    /** Optional parameter to allow user to skip question */
+    skipOption?: { label: string; value?: string };
+    /**
+    * Message displayed in case of validation error
+    * @default You must select an option
+    **/
     validationErrorMessage?: string;
     name?: string;
+    /** Only use to control input value externally */
     value?: string;
 
     onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;

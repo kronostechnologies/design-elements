@@ -1,13 +1,13 @@
 // tslint:disable-next-line:no-import-side-effect
 import '@equisoft/design-elements-web/style/body.css';
-import { withKnobs } from '@storybook/addon-knobs';
-import { addDecorator, configure } from '@storybook/react';
+import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
+import { addParameters, configure } from '@storybook/react';
 
-addDecorator(withKnobs);
-const req = require.context('../stories', true, /\.tsx$/);
+addParameters({
+    docs: {
+        container: DocsContainer,
+        page: DocsPage,
+    },
+});
 
-function loadStories(): void {
-    req.keys().forEach(req);
-}
-
-configure(loadStories, module);
+configure(require.context('../stories/', true, /\.stories\.(tsx|mdx)$/), module);

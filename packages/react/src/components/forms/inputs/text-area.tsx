@@ -15,18 +15,21 @@ const StyledTextArea = styled.textarea`
 `;
 
 export interface TextAreaProps {
+    label: string;
     defaultValue?: string;
     disabled?: boolean;
-    label: string;
     placeholder?: string;
     required?: boolean;
+    /**
+    * Message displayed in case of validation error
+    * @default This text area input is invalid
+    **/
     validationErrorMessage?: string;
+    /** Only use if you want to control input value externally */
     value?: string;
 
     onBlur?(event: FocusEvent<HTMLTextAreaElement>): void;
-
     onChange?(event: ChangeEvent<HTMLTextAreaElement>): void;
-
     onFocus?(event: FocusEvent<HTMLTextAreaElement>): void;
 }
 

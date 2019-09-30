@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import { ChooseInput } from './controls/choose-input';
 
@@ -16,22 +16,20 @@ const Skip = styled.div`
   margin: 1rem 0 0;
 `;
 
-interface ChooserOption {
-    label: string;
-    value?: string;
-}
-
 interface ChooserProps {
-    inColumns?: boolean;
     groupName: string;
-    options: ChooserOption[];
-    skipOption?: ChooserOption;
+    options: {label: string; value?: string}[];
+    /** Optional button to allow user to skip question */
+    skipOption?: {label: string; value?: string};
+    /** Set inputs in columns layout */
+    inColumns?: boolean;
+    /** Only use if you want to control input value externally */
     value?: string | null;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }: ChooserProps) => {
+export function Chooser({ inColumns, groupName, onChange, options, skipOption, value }: ChooserProps): ReactElement {
     const [isControlled] = useState(value !== undefined);
 
     function handleChange(event: ChangeEvent<HTMLInputElement>): void {
@@ -74,6 +72,4 @@ const Chooser = ({ inColumns, groupName, onChange, options, skipOption, value }:
             )}
         </>
     );
-};
-
-export { Chooser };
+}

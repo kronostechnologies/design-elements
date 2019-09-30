@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-start-storybook
+start-storybook --docs

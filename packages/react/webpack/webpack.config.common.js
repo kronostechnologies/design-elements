@@ -8,7 +8,10 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'awesome-typescript-loader',
+                use: [
+                    { loader: 'ts-loader' },
+                    { loader: 'react-docgen-typescript-loader' },
+                ],
                 exclude: /node_modules/,
             },
             {
