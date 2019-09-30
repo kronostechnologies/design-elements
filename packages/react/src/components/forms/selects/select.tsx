@@ -17,27 +17,19 @@ const StyledSelect = styled.select`
   position: relative;
 `;
 
-interface SelectOption {
-    label: string;
-    value?: string;
-}
-
 interface SelectProps {
+    options: { label: string; value?: string }[];
     label?: string;
-    /** SelectOption: { label: string; value?: string } */
-    options: SelectOption[];
     required?: boolean;
-    /** SelectOption: { label: string; value?: string } */
-    skipOption?: SelectOption;
+    /** Optional parameter to allow user to skip question */
+    skipOption?: { label: string; value?: string };
     /**
-   * Error message
-   *
-   * @default You must select an option
-   **/
+    * Message displayed in case of validation error
+    * @default You must select an option
+    **/
     validationErrorMessage?: string;
-    /** Name attribute on select */
     name?: string;
-    /** Default selected value */
+    /** Only use to control input value externally */
     value?: string;
 
     onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;

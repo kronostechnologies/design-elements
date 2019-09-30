@@ -16,29 +16,14 @@ const Skip = styled.div`
   margin: 1rem 0 0;
 `;
 
-interface ChooserOption {
-    label: string;
-    value?: string;
-}
-
 interface ChooserProps {
-    /**
-   * Sets the elements in columns
-   *
-   * @default NULL
-   **/
-    inColumns?: boolean;
-    /** Sets input names */
     groupName: string;
-    /** ChooserOption: { label: string; value?: string; } */
-    options: ChooserOption[];
-    /**
-   * Sets properties for the skip button
-   *
-   * @default NULL
-   **/
-    skipOption?: ChooserOption;
-    /** Sets initial value */
+    options: {label: string; value?: string}[];
+    /** Optional button to allow user to skip question */
+    skipOption?: {label: string; value?: string};
+    /** Set inputs in columns layout */
+    inColumns?: boolean;
+    /** Only use if you want to control input value externally */
     value?: string | null;
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;

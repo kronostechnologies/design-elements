@@ -29,13 +29,13 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                          plugins: ['@babel/plugin-transform-react-jsx'],
+                            plugins: ['@babel/plugin-transform-react-jsx'],
                         },
                     },
                     {
                         loader: '@mdx-js/loader',
                         options: {
-                          compilers: [createCompiler({})],
+                            compilers: [createCompiler({})],
                         },
                     },
                 ]

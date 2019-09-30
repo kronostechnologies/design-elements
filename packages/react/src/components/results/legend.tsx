@@ -32,15 +32,8 @@ const Description = styled.span`
   font-size: 0.75rem;
 `;
 
-interface LegendItem {
-    name: string;
-    description: string;
-    color?: string;
-}
-
 interface LegendProps {
-    /** LegendItem: { name: string; description: string; color?: string } */
-    items: LegendItem[];
+    items: { name: string; description: string; color?: string }[];
 }
 
 export function Legend({ items }: LegendProps): ReactElement {

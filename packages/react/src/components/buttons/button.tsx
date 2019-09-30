@@ -6,12 +6,16 @@ import { secondaryStyle } from './styles/secondary';
 import { tertiaryStyle } from './styles/tertiary';
 
 interface ButtonProps {
+    /**
+     * Visual style
+     * @default primary
+     **/
+    buttonType: 'primary' | 'secondary' | 'tertiary';
     label?: string;
     children?: ReactNode;
     disabled?: boolean;
 
     onClick?(): void;
-    buttonType: 'primary' | 'secondary' | 'tertiary';
 }
 
 const StyledButton = styled(AbstractButton)((props: ButtonProps) => {

@@ -11,12 +11,16 @@ const PlusIcon = styled(PlusSign)`
 `;
 
 interface ButtonProps {
+    /**
+     * Visual style
+     * @default primary
+     **/
+    buttonType: 'primary' | 'secondary' | 'tertiary';
     label?: string;
     children?: ReactNode;
     disabled?: boolean;
 
     onClick?(): void;
-    buttonType: 'primary' | 'secondary' | 'tertiary';
 }
 
 export function AddButton({ disabled, onClick, buttonType, label }: ButtonProps): ReactElement {

@@ -75,10 +75,10 @@ const Project = styled.em`
 `;
 
 interface HeadbandProps {
-    /** Label to the right */
-    children: ReactNode;
-    /** Center label */
+    /** Application name label */
     appName: string;
+    /** Right-side content */
+    children: ReactNode;
 }
 
 export function Headband({ children, appName }: HeadbandProps): ReactElement {

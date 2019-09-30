@@ -12,7 +12,7 @@
       "paths": {}
     },
     "include": [
-      "stories"
+      "stories", "custom.d.ts"
     ],
     "exclude": [
       "node_modules", "scripts"

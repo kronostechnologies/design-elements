@@ -9,8 +9,8 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    {loader: 'ts-loader'},
-                    {loader: 'react-docgen-typescript-loader'},
+                    { loader: 'ts-loader' },
+                    { loader: 'react-docgen-typescript-loader' },
                 ],
                 exclude: /node_modules/,
             },

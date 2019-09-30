@@ -66,9 +66,9 @@ interface GetStepProps {
 }
 
 interface ProgressProps {
-    /** Progress length */
+    /** Progress max steps */
     max: number;
-    /** Progress value */
+    /** Progress current step */
     value: number;
 }
 

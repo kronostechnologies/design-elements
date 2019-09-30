@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactText } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 import { Circle } from './circle/circle';
@@ -46,16 +46,12 @@ const Label = styled.p`
 
 interface Props {
     color: string;
+    /** Center label */
+    resultLabel: string | number;
+    percent: number;
     /** Bottom label */
     descriptionLabel?: string;
-    /** Center label */
-    resultLabel: ReactText;
-    percent: number;
-    /**
-   * Sets a lighter font color
-   *
-   * @default NULL
-   **/
+    /** Sets a lighter font color */
     secondary?: boolean;
 }
 

@@ -9,17 +9,14 @@ const Label = styled.label`
 `;
 
 interface Props {
+    /** [0 - 100] */
+    percent: number;
     color: string;
-    /** Top label */
-    descriptionLabel?: string;
     /** End label */
     resultLabel: ReactText;
-    percent: number;
-    /**
-   * Sets a lighter font color
-   *
-   * @default NULL
-   **/
+    /** Top label */
+    descriptionLabel?: string;
+    /** Sets a lighter font color */
     secondary?: boolean;
 }
 
