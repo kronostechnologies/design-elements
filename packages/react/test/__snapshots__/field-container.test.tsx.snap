@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field Container Invalid field snapshot 1`] = `
+.c2 {
+  color: rgb(164,12,46);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0.25rem 0 0;
+}
+
+.c1 {
+  color: rgb(0,0,0);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: rgb(164,12,46);
+}
+
+.c0:focus {
+  border-color: rgb(164,12,46);
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    htmlFor="test-id"
+  >
+    test label
+  </label>
+  Children
+  <div
+    aria-live="polite"
+    className="c2"
+    id="test-id_invalid"
+    role="alert"
+  >
+    This text area input is invalid
+  </div>
+</div>
+`;
+
+exports[`Field Container Valid field snapshot 1`] = `
+.c1 {
+  color: rgb(0,0,0);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: rgb(217,221,226);
+}
+
+.c0:focus {
+  border-color: rgb(0,128,165);
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    htmlFor="test-id"
+  >
+    test label
+  </label>
+  Children
+</div>
+`;

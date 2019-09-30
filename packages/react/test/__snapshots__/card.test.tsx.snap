@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Matches the snapshot 1`] = `
+.c0 {
+  background: rgb(255,255,255);
+  border: 1px solid rgb(220,220,220);
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+<div
+  className="c0"
+>
+  Hello World
+</div>
+`;

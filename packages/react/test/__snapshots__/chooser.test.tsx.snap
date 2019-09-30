@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chooser Matches the snapshot 1`] = `
+Array [
+  .c1 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgb(255,255,255);
+  border: 1px solid rgb(217,221,226);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: rgb(87,102,110);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 1rem;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.c2:hover {
+  background: rgb(217,221,226);
+  border-color: rgb(217,221,226);
+}
+
+input[type="checkbox"]:checked + .c2,
+input[type="radio"]:checked + .c2 {
+  background: rgb(0,128,165);
+  border-color: rgb(0,128,165);
+  color: rgb(255,255,255);
+}
+
+input[type="checkbox"]:focus + .c2,
+input[type="radio"]:focus + .c2 {
+  border-color: rgb(0,128,165);
+}
+
+input[type="checkbox"]:disabled + .c2,
+input[type="radio"]:disabled + .c2 {
+  background: rgb(241,242,242);
+  border-color: rgb(217,221,226);
+  color: rgb(156,167,180);
+  cursor: auto;
+}
+
+.c2 b {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.c2 svg {
+  color: inherit;
+  height: 3rem;
+  width: 3rem;
+}
+
+.c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(8.75rem,1fr));
+  width: auto;
+}
+
+<div
+    className="c0"
+  >
+    <input
+      checked={false}
+      className="c1"
+      name="maritalStatus"
+      onChange={[Function]}
+      type="radio"
+      value="single"
+    />
+    <label
+      className="c2"
+    >
+      Single, living alone or with a roommate
+    </label>
+    <input
+      checked={true}
+      className="c1"
+      name="maritalStatus"
+      onChange={[Function]}
+      type="radio"
+      value="married"
+    />
+    <label
+      className="c2"
+    >
+      Married or living with a spouse
+    </label>
+  </div>,
+  .c1 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgb(255,255,255);
+  border: 1px solid rgb(217,221,226);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: rgb(87,102,110);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 1rem;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.c2:hover {
+  background: rgb(217,221,226);
+  border-color: rgb(217,221,226);
+}
+
+input[type="checkbox"]:checked + .c2,
+input[type="radio"]:checked + .c2 {
+  background: rgb(0,128,165);
+  border-color: rgb(0,128,165);
+  color: rgb(255,255,255);
+}
+
+input[type="checkbox"]:focus + .c2,
+input[type="radio"]:focus + .c2 {
+  border-color: rgb(0,128,165);
+}
+
+input[type="checkbox"]:disabled + .c2,
+input[type="radio"]:disabled + .c2 {
+  background: rgb(241,242,242);
+  border-color: rgb(217,221,226);
+  color: rgb(156,167,180);
+  cursor: auto;
+}
+
+.c2 b {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.c2 svg {
+  color: inherit;
+  height: 3rem;
+  width: 3rem;
+}
+
+.c0 {
+  margin: 1rem 0 0;
+}
+
+<div
+    className="c0"
+  >
+    <input
+      checked={false}
+      className="c1"
+      name="maritalStatus"
+      onChange={[Function]}
+      type="radio"
+      value="skip"
+    />
+    <label
+      className="c2"
+    >
+      Would rather not say
+    </label>
+  </div>,
+]
+`;

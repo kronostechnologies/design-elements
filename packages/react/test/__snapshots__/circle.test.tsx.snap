@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Circle Matches the snapshot 1`] = `
+.c0 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+<svg
+  height={146}
+  width={146}
+>
+  <circle
+    cx={73}
+    cy={73}
+    fill="transparent"
+    r={57}
+    stroke="#DCDCDC"
+    strokeDasharray="358.1415625092364 358.1415625092364"
+    strokeLinecap="round"
+    strokeWidth={8}
+  />
+  <circle
+    className="c0"
+    cx={73}
+    cy={73}
+    fill="transparent"
+    r={57}
+    stroke="#ccc"
+    strokeDasharray="358.1415625092364 358.1415625092364"
+    strokeLinecap="round"
+    strokeWidth={8}
+    style={
+      Object {
+        "strokeDashoffset": 161.16370312915637,
+      }
+    }
+  />
+</svg>
+`;

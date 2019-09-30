@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Matches the snapshot 1`] = `
+.c0 {
+  height: 16px;
+  margin: 0;
+  width: 16px;
+}
+
+<input
+  className="c0"
+  defaultChecked={true}
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;

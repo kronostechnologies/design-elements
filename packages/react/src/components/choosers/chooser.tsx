@@ -32,11 +32,11 @@ interface ChooserProps {
 export function Chooser({ inColumns, groupName, onChange, options, skipOption, value }: ChooserProps): ReactElement {
     const [isControlled] = useState(value !== undefined);
 
-    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         if (onChange) {
             onChange(event);
         }
-    }
+    };
 
     const chooserOptions = options.map((option) => (
         <ChooseInput

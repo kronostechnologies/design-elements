@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { AbstractButton, AbstractButtonProps } from './abstract-button';
+import { AbstractButton } from './abstract-button';
 
-interface SearchButtonProps extends AbstractButtonProps {
+interface ButtonProps {
+    label?: string;
+    children?: ReactNode;
     className: string;
+    disabled?: boolean;
+
+    onClick?(): void;
 }
 
 const StyledButton = styled(AbstractButton)`
@@ -29,12 +34,12 @@ const StyledButton = styled(AbstractButton)`
     }
 `;
 
-const SearchButton = ({ children, className, disabled, onClick }: SearchButtonProps) => {
+const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {
     const handleClick = () => { onClick && onClick(); };
 
     return (
         <StyledButton className={className} disabled={disabled} onClick={handleClick}>
-            {children}
+            {children}{label}
         </StyledButton>
     );
 };
