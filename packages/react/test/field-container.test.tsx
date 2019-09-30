@@ -9,7 +9,7 @@ describe('Field Container', () => {
                 fieldId="test-id"
                 label="test label"
                 valid
-                validMsg="This text area input is invalid"
+                validationErrorMessage="This text area input is invalid"
             >
                 Children
             </FieldContainer>,
@@ -24,7 +24,7 @@ describe('Field Container', () => {
                 fieldId="test-id"
                 label="test label"
                 valid={false}
-                validMsg="This text area input is invalid"
+                validationErrorMessage="This text area input is invalid"
             >
                 Children
             </FieldContainer>,

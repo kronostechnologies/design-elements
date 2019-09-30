@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchGlobal Matches the snapshot 1`] = `
-.c9 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,23 +41,23 @@ exports[`SearchGlobal Matches the snapshot 1`] = `
   color: rgb(99,114,130);
 }
 
-.c9:not(:disabled) {
+.c8:not(:disabled) {
   cursor: pointer;
 }
 
-.c9 > svg {
+.c8 > svg {
   color: inherit;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: rgb(217,221,226);
   border-color: rgb(217,221,226);
   color: rgb(99,114,130);
 }
 
-.c9:disabled,
-.c9:disabled:focus,
-.c9:disabled:hover {
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
   background-color: rgb(242,243,249);
   border-color: rgb(217,221,226);
   color: rgb(156,167,180);
@@ -229,7 +229,7 @@ input:valid + .c6 {
   display: inline-block;
 }
 
-.c8 {
+.c9 {
   border-left: 0;
   border-radius: 0 0.25rem 0.25rem 0;
   position: relative;
@@ -279,7 +279,7 @@ input:valid + .c6 {
     </button>
   </div>
   <button
-    className="primary c8 c9"
+    className="c8 c9 primary"
     onClick={[Function]}
   >
     Search

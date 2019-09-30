@@ -54,7 +54,7 @@ describe('Select', () => {
                 onChange={() => {}}
                 options={provinces}
                 skipOption={skipOption}
-                validMsg="Error Message"
+                validationErrorMessage="Error Message"
             />,
         ).toJSON();
 
@@ -69,7 +69,7 @@ describe('Select', () => {
                 options={provinces}
                 required
                 skipOption={skipOption}
-                validMsg="Error Message"
+                validationErrorMessage="Error Message"
             />,
         ).toJSON();
 

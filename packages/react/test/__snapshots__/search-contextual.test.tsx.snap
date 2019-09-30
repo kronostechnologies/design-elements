@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search Contextual Matches the snapshot [Disabled] 1`] = `
+exports[`Search Contextual Matches the snapshot when disabled 1`] = `
 .c4 {
   border: 0 !important;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -214,7 +214,7 @@ input:valid + .c6 {
 </div>
 `;
 
-exports[`Search Contextual Matches the snapshot [Enabled] 1`] = `
+exports[`Search Contextual Matches the snapshot when enabled 1`] = `
 .c4 {
   border: 0 !important;
   -webkit-clip: rect(1px,1px,1px,1px);

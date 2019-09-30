@@ -10,7 +10,7 @@ describe('TextArea', () => {
         label: 'Comment',
         placeholder: 'Enter your comment',
         required: true,
-        validMsg: 'Error message',
+        validationErrorMessage: 'Error message',
     };
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();

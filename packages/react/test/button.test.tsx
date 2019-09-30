@@ -7,9 +7,7 @@ describe('Button', () => {
     test('onClick callback is called when clicked', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <Button onClick={callback} buttonType="primary">
-                Primary
-            </Button>,
+            <Button onClick={callback} buttonType="primary" label="Primary Button" />,
         );
         wrapper.find(Button).simulate('click');
         expect(callback).toHaveBeenCalledTimes(1);
@@ -18,9 +16,7 @@ describe('Button', () => {
     test('onClick callback cannot be called when disabled', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <Button onClick={callback} buttonType="primary" disabled>
-                Primary
-            </Button>,
+            <Button onClick={callback} buttonType="primary" disabled label="Primary Button" />,
         );
         wrapper.find(Button).simulate('click');
         expect(callback).toHaveBeenCalledTimes(0);
@@ -28,9 +24,7 @@ describe('Button', () => {
 
     test('Is disabled', () => {
         const tree = renderer.create(
-            <Button onClick={() => {}} buttonType="primary" disabled>
-                Secondary
-            </Button>,
+            <Button onClick={() => {}} buttonType="primary" disabled label="Primary Button" />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -38,9 +32,7 @@ describe('Button', () => {
 
     test('Has primary styles', () => {
         const tree = renderer.create(
-            <Button onClick={() => {}} buttonType="primary">
-                Secondary
-            </Button>,
+            <Button onClick={() => {}} buttonType="primary" label="Primary Button" />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -48,9 +40,7 @@ describe('Button', () => {
 
     test('Has secondary styles', () => {
         const tree = renderer.create(
-            <Button onClick={() => {}} buttonType="secondary">
-                Secondary
-            </Button>,
+            <Button onClick={() => {}} buttonType="secondary" label="Secondary Button" />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -58,9 +48,7 @@ describe('Button', () => {
 
     test('Has tertiary styles', () => {
         const tree = renderer.create(
-            <Button onClick={() => {}} buttonType="tertiary">
-                Secondary
-            </Button>,
+            <Button onClick={() => {}} buttonType="tertiary" label="Tertiary Button" />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

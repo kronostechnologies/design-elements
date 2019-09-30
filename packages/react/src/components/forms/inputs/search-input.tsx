@@ -163,10 +163,9 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                     <SearchSubmit
                         disabled={disabled}
                         className="primary"
+                        label={label}
                         onClick={handleSearchButtonClick}
-                    >
-                        {label}
-                    </SearchSubmit>
+                    />
                 )
             }
         </SearchWrapper>

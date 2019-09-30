@@ -9,7 +9,7 @@ describe('TextInput', () => {
         label: 'See console for callbacks',
         placeholder: 'Ex.: Hello',
         required: true,
-        validMsg: 'This field is required',
+        validationErrorMessage: 'This field is required',
         defaultValue: 'foo',
         type: 'tel',
         pattern: '[0-9]{3}-?[0-9]{3}-?[0-9]{4}',
@@ -87,7 +87,7 @@ describe('TextInput', () => {
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
                 placeholder="Ex.: 555-123-4567"
                 type="tel"
-                validMsg="Please enter a valid phone number"
+                validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
             />,
         ).toJSON();
@@ -102,7 +102,7 @@ describe('TextInput', () => {
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
                 placeholder="Ex.: 555-123-4567"
                 type="tel"
-                validMsg="Please enter a valid phone number"
+                validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
                 disabled
             />,
@@ -118,7 +118,7 @@ describe('TextInput', () => {
                 pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
                 placeholder="Ex.: 555-123-4567"
                 type="tel"
-                validMsg="Please enter a valid phone number"
+                validationErrorMessage="Please enter a valid phone number"
                 defaultValue="foo"
                 required
             />,

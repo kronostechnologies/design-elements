@@ -10,7 +10,8 @@
     "lint": "./scripts/lint.sh",
     "prepublishOnly": "./scripts/prepublishOnly.sh",
     "start": "./scripts/start.sh",
-    "test": "./scripts/test.sh"
+    "test": "./scripts/test.sh",
+    "test-update": "./scripts/test-update.sh"
   },
   "files": [
     "dist"
