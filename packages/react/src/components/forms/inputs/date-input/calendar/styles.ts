@@ -157,7 +157,7 @@ export const CurrentDateContainer = styled.div`
 	}
 `;
 
-export const MonthList = styled.ul`
+export const DateList = styled.div`
 	position: absolute;
 	left: -5px;
 	box-sizing: border-box;
@@ -169,6 +169,8 @@ export const MonthList = styled.ul`
 	border: 1px solid #57666e;
 	border-radius: 6px;
 	width: 100%;
+	height: 200px;
+	overflow-y: auto;
 	text-align: left;
 	li {
 		padding 0.2em 0.4em;

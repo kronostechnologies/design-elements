@@ -12,7 +12,12 @@ import calendar, {
 } from './calendar-helper';
 
 class Calendar extends Component {
-    state = { ...this.resolveStateFromProp(), today: new Date(), monthDropDownIsOpen: false };
+    state = {
+        ...this.resolveStateFromProp(),
+        today: new Date(),
+        monthDropDownIsOpen: false,
+        yearDropDownIsOpen: false,
+    };
     // @ts-ignore
     resolveStateFromDate(date) {
         const isDateObject = isDate(date);
@@ -106,9 +111,12 @@ class Calendar extends Component {
     };
     // @ts-ignore
     changeMonth = (month: number): any => {
-        // this.setState({ month: month });
-        // this.renderMonthAndYear();
         this.setState({ month: month });
+    }
+
+    // @ts-ignore
+    changeYear = (year: number): any => {
+        this.setState({ year: year });
     }
 
     handleChange = (evt: any) => {
@@ -127,9 +135,12 @@ class Calendar extends Component {
             months.push({ key: key, value: value });
         }
         const monthsList = months.map((mth, i) => (
-          <li onClick={this.handleChange} value={i + 1} key={mth.key + mth.value}>{mth.value}</li>
+          <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={mth.key + mth.value}>{mth.value}</li>
         ));
-
+        const yearList = [];
+        for (let i = 1900; i <= this.state.today.getFullYear(); i++) {
+            yearList.push(i);
+        }
         return (
           <Styled.CalendarHeader>
             <Styled.ArrowLeft
@@ -145,19 +156,28 @@ class Calendar extends Component {
                   }}
                 >
                   <p>{monthname}</p>
-                  <Styled.MonthList style={this.state.monthDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
+                  <Styled.DateList style={this.state.monthDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
                     {monthsList}
-                  </Styled.MonthList>
+                  </Styled.DateList>
                 </Styled.CurrentDateContainer>
-                <Styled.CurrentDateContainer>
+                <Styled.CurrentDateContainer
+                  onClick={() => {
+                      this.setState({ yearDropDownIsOpen: !this.state.yearDropDownIsOpen });
+                  }}
+                >
                   <p>{year}</p>
+                  <Styled.DateList style={this.state.yearDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
+                    {yearList.map((yearItem, i) => (
+                      <li key={yearItem + '' + i} onClick={() => this.changeYear(yearItem)}>{yearItem}</li>
+                    ))}
+                  </Styled.DateList>
                 </Styled.CurrentDateContainer>
               </Styled.CurrentDate>
             </Styled.CalendarMonth>
             <Styled.ArrowRight
               onMouseDown={this.handleNext}
               onMouseUp={this.clearPressureTimer}
-              title='Next Month'
+              title="Next Month"
             />
           </Styled.CalendarHeader>
         );
@@ -232,7 +252,12 @@ class Calendar extends Component {
 
     render() {
         return (
-          <Styled.CalendarContainer>
+          <Styled.CalendarContainer
+            onClick={() => {
+                this.state.yearDropDownIsOpen && this.setState({ yearDropDownIsOpen: false });
+                this.state.monthDropDownIsOpen && this.setState({ monthDropDownIsOpen: false });
+            }}
+          >
             {this.renderMonthAndYear()}
 
             <Styled.CalendarGrid>
