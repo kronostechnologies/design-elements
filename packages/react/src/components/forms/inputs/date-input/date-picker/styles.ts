@@ -1,5 +1,13 @@
 import styled from 'styled-components';
-import { FormGroup, Label, Input, Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
+import { FormGroup, Input, Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
+
+import CalendarIcon from '../../../../../icons/calendar.svg';
+
+export const Calendar = styled(CalendarIcon)`
+	height: 16px;
+	width: 16px;
+	color: #57666e;
+`;
 
 export const DatePickerContainer = styled.div`
 	position: relative;
@@ -10,31 +18,33 @@ export const DatePickerFormGroup = styled(FormGroup)`
 	justify-content: space-between;
 	flex-direction: row-reverse;
 	position: relative;
-	width: 200px;
+	width: 180px;
 	height: 32px;
 	box-sizing: border-box;
-	border: 2px solid #57666e;
+	border: 1px solid #57666e;
 	border-radius: 5px;
 	overflow: hidden;
 	background-color: #ffffff;
 `;
 
-export const DatePickerLabel = styled(Label)`
+export const DatePickerLabel = styled.div`
 	margin: 0;
-	padding: 0 1rem;
+	padding: 0 0.5rem;
 	font-weight: 600;
 	font-size: 0.5rem;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: #06c;
-	border-left: 2px solid #57666e;
+	border-left: 1px solid #57666e;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 `;
 
 export const DatePickerInput = styled(Input)`
-	padding: 0.4rem 0 0.4rem 1rem;
+	padding: 0.4rem 0 0.4rem 0.4rem;
+	width: 100%
 	font-weight: 500;
 	font-size: 0.875rem;
 	color: #333;
@@ -45,10 +55,10 @@ export const DatePickerInput = styled(Input)`
 	background: transparent !important;
 	display: flex;
 	align-items: center;
-
 	::placeholder {
 		color: #999;
-		font-size: 0.9rem;
+		font-size: 0.875rem;
+		margin: 0;
 	}
 `;
 
@@ -58,7 +68,7 @@ export const DatePickerDropdown = styled(Dropdown)`
 	height: 100%;
 	top: 0;
 	left: 0;
-`
+`;
 
 export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	position: relative;
@@ -67,14 +77,17 @@ export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	background: transparent;
 	opacity: 0;
 	filter: alpha(opacity=0);
+	cursor: pointer;
 `;
 
 export const DatePickerDropdownMenu = styled(DropdownMenu)`
 	position: absolute;
 	left: -5px !important;
-	width: 400px;
+	width: 250px;
+	height: 256px;
 	border: none;
 	padding: 0;
 	margin: 0;
 	outline: none;
+	transform: translate3d(5px, 43px, 0px) !important
 `;

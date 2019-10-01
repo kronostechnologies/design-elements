@@ -51,7 +51,9 @@ class Datepicker extends React.Component {
         return (
           <Styled.DatePickerContainer>
             <Styled.DatePickerFormGroup>
-              <Styled.DatePickerLabel>{label}</Styled.DatePickerLabel>
+              <Styled.DatePickerLabel>
+                <Styled.Calendar />
+              </Styled.DatePickerLabel>
               <Styled.DatePickerInput
                 type="text"
                 // @ts-ignore
@@ -59,6 +61,7 @@ class Datepicker extends React.Component {
                 onChange={this.handleChange}
                 readOnly="readonly"
                 placeholder="YYYY - MM - DD"
+                style={this.state.calendarOpen ? { border: '1px solid #0080a5' } : null}
               />
             </Styled.DatePickerFormGroup>
 

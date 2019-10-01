@@ -8,5 +8,15 @@ export default {
 };
 
 export const normal = () => (
-    <Datepicker />
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '60vh',
+            width: '100%',
+        }}
+    >
+        <Datepicker />
+    </div>
 );

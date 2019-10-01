@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+import ChevronDown from '../../../../../icons/chevron-down.svg';
+import ChevronLeft from '../../../../../icons/chevron-left.svg';
+import ChevronRight from '../../../../../icons/chevron-right.svg';
+
 // export const Arrow = styled.button`
 // 	appearance: none;
 // 	user-select: none;
@@ -30,33 +34,60 @@ import styled from 'styled-components';
 // 	}
 // `;
 
-export const Arrow = styled.button`
-	user-select: none;
-	outline: none !important;
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	padding: 0;
-	border: none;
-	transition: all .25s ease-out;
-	background: white;
-	&:after {
-		content: ">";
-		color: #57666e;
-		font-size: 1.6rem;
-	}
-	:hover {
+// export const Arrow = styled.button`
+// 	user-select: none;
+// 	width: 0px;
+// 	outline: none !important;
+// 	display: inline-block;
+// 	position: relative;
+// 	cursor: pointer;
+// 	padding: 0;
+// 	border: none;
+// 	transition: all .25s ease-out;
+// 	background: transparent;
+// 	&:after {
+// 		content: ">";
+// 		color: #57666e;
+// 		font-size: 1.6rem;
+// 	}
+// 	:hover {
+// 		opacity: 0.8;
+// 	}
+// `;
+
+// export const ArrowLeft = styled(Arrow)`
+// 	left: 1.5rem;
+// 	transform: rotate(180deg);
+// `;
+
+// export const ArrowRight = styled(Arrow)`
+// 	right: 1.5rem;
+// `;
+
+export const ArrowLeft = styled(ChevronLeft)`
+	color: #57666e;
+	height: 12px;
+	width: 12px;
+	&:hover {
 		opacity: 0.8;
+		cursor: pointer;
 	}
 `;
 
-export const ArrowLeft = styled(Arrow)`
-	left: 1.5rem;
-	transform: rotate(180deg);
+export const ArrowRight = styled(ChevronRight)`
+	color: #57666e;
+	height: 12px;
+	width: 12px;
+	&:hover {
+		opacity: 0.8;
+		cursor: pointer;
+	}
 `;
 
-export const ArrowRight = styled(Arrow)`
-	right: 1.5rem;
+export const ArrowDown = styled(ChevronDown)`
+	color: #57666e
+	height: 12px;
+	width: 12px;
 `;
 
 export const CalendarContainer = styled.div`
@@ -65,9 +96,10 @@ export const CalendarContainer = styled.div`
 	border: 1px solid #d9dde2;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	width: 100%;
+	height: 100%;
 	box-sizing: border-box;
 	background: white;
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 `;
 
 export const CalendarHeader = styled.div`
@@ -77,6 +109,9 @@ export const CalendarHeader = styled.div`
 `;
 
 export const CalendarGrid = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
   display: grid;
   grid-template: repeat(7, auto) / repeat(7, auto);
 `;
@@ -93,8 +128,9 @@ export const CalendarCell = styled.div`
 	text-align: center;
 	align-self: center;
 	letter-spacing: 0.1rem;
-	margin: 0.2em 1em;
-	padding: 0.2rem 0;
+	// margin: 0.2em 1em;
+	// padding: 0.3rem 0;
+	padding: 0.3rem 0;
 	user-select: none;
 	// @ts-ignore
   	grid-column: ${props => (props.index % 7) + 1} / span 1;
@@ -140,20 +176,21 @@ export const CurrentDate = styled.div`
 export const CurrentDateContainer = styled.div`
 	border: 1px solid #57666e;
 	border-radius: 6px;
-	font-size: 4em;
+	font-size: 0.875rem;
 	box-sizing: border-box;
-	padding 0.2em 0.4em;
+	padding 0.43em 0.6em;
 	margin: 0 5px;
 	position: relative;
+	cursor: pointer;
+`;
+
+export const MonthAndYear = styled.div`
+	display: flex;
+	width: 4.0rem;
+	align-items: center;
+	justify-content: space-between;
 	p {
-		margin: 0;
-		&:after {
-			content: "⌄";
-			color: #57666e;
-			margin-left: 10px;
-			font-weight: lighter;
-			font-size: 1em;
-		}
+		margin: 0 1rem 0 0;
 	}
 `;
 
@@ -166,7 +203,8 @@ export const DateList = styled.div`
 	padding: 0;
 	background-color: white;
 	margin: 0 5px;
-	border: 1px solid #57666e;
+	border: 1px solid #d9dde2;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 6px;
 	width: 100%;
 	height: 200px;
@@ -180,4 +218,16 @@ export const DateList = styled.div`
 			cursor: pointer;
 		}
 	}
+`;
+
+export const CalendarArrow = styled.div`
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top:-8px;
+	right: 79px;
+	background-color: white;
+	transform: rotate(45deg);
+	border-top: 1px solid #d9dde2;
+	border-left: 1px solid #d9dde2;
 `;
