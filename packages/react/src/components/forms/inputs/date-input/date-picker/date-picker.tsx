@@ -60,7 +60,7 @@ class Datepicker extends React.Component {
                 value={date ? date.split('-').join(' / ') : ''}
                 onChange={this.handleChange}
                 readOnly="readonly"
-                placeholder="YYYY - MM - DD"
+                placeholder="AAAA-MM-JJ"
                 style={this.state.calendarOpen ? { border: '1px solid #0080a5' } : null}
               />
             </Styled.DatePickerFormGroup>
@@ -70,14 +70,19 @@ class Datepicker extends React.Component {
               toggle={this.toggleCalendar}
             >
               <Styled.DatePickerDropdownToggle color="transparent" />
-
-              <Styled.DatePickerDropdownMenu>
+              <Styled.DatePickerDropdownMenu
+                // @ts-ignore
+                position={this.props.position}
+                open={calendarOpen}
+              >
                 {calendarOpen && (
                   // @ts-ignore
                   <Calendar
                     // @ts-ignore
                     date={date && new Date(date)}
                     onDateChanged={this.handleDateChange}
+                    // @ts-ignore
+                    position={this.props.position}
                   />
                 )}
               </Styled.DatePickerDropdownMenu>

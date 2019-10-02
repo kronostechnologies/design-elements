@@ -212,7 +212,6 @@ export const DateList = styled.div`
 	text-align: left;
 	li {
 		padding 0.2em 0.4em;
-		border-radius: 6px;
 		&:hover{
 			background: #d9dde2;
 			cursor: pointer;
@@ -224,10 +223,21 @@ export const CalendarArrow = styled.div`
 	width: 15px;
 	height: 15px;
 	position: absolute;
-	top:-8px;
-	right: 79px;
 	background-color: white;
-	transform: rotate(45deg);
 	border-top: 1px solid #d9dde2;
 	border-left: 1px solid #d9dde2;
+	${props => {
+	// @ts-ignore
+    switch (props.position) {
+        case 'bottomRight':
+            return 'top:-8px;' + 'right: 79px;' + 'transform: rotate(45deg);';
+        case 'bottomLeft':
+            return 'top:-8px;' + 'right: 10px;' + 'transform: rotate(45deg);';
+        case 'topRight':
+            return 'top:97%;' + 'right: 79px;' + 'transform: rotate(225deg);';
+        case 'topLeft':
+            return 'top:97%;' + 'right: 10px;' + 'transform: rotate(225deg);';
+        default:
+            return 'translate3d(5px, 43px, 0px) !important';
+    }}}
 `;

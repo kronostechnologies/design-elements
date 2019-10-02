@@ -2,24 +2,24 @@ export const THIS_YEAR = +(new Date().getFullYear());
 export const THIS_MONTH = +(new Date().getMonth()) + 1;
 
 export const WEEK_DAYS = {
-    Sunday: 'Sun',
-    Monday: 'Mon',
-    Tuesday: 'Tue',
-    Wednesday: 'Wed',
-    Thursday: 'Thu',
-    Friday: 'Fri',
-    Saturday: 'Sat',
+    Sunday: 'DI',
+    Monday: 'LU',
+    Tuesday: 'MA',
+    Wednesday: 'ME',
+    Thursday: 'JE',
+    Friday: 'VE',
+    Saturday: 'SA',
 };
 
 export const CALENDAR_MONTHS = {
     January: 'Jan',
-    February: 'Feb',
+    February: 'Fev',
     March: 'Mar',
-    April: 'Apr',
-    May: 'May',
-    June: 'Jun',
-    July: 'Jul',
-    August: 'Aug',
+    April: 'Avr',
+    May: 'Mai',
+    June: 'Juin',
+    July: 'Juil',
+    August: 'Aou',
     September: 'Sep',
     October: 'Oct',
     November: 'Nov',

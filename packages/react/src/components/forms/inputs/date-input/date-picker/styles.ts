@@ -89,5 +89,20 @@ export const DatePickerDropdownMenu = styled(DropdownMenu)`
 	padding: 0;
 	margin: 0;
 	outline: none;
-	transform: translate3d(5px, 43px, 0px) !important
+	${props => !props.open ? 'z-index: -1000' : null}
+	// @ts-ignore
+	${props => {
+    switch (props.position) {
+    	case 'bottomRight':
+            return 'transform: translate3d(5px, 43px, 0px) !important;';
+        case 'bottomLeft':
+            return 'transform: translate3d(-65px, 43px, 0px) !important;';
+        case 'topRight':
+            return 'transform: translate3d(5px, -267px, 0px) !important;' + 'top: -10px;';
+        case 'topLeft':
+            return 'transform:translate3d(-65px, -267px, 0px) !important;' + 'top: -10px;';
+        default:
+            return 'transform: translate3d(5px, 43px, 0px) !important;';
+    }
+}};
 `;

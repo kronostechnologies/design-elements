@@ -269,7 +269,9 @@ class Calendar extends Component<{
                 {this.getCalendarDates().map(this.renderCalendarDate)}
               </Fragment>
             </Styled.CalendarGrid>
-            <Styled.CalendarArrow/>
+            {/*
+              // @ts-ignore */}
+            <Styled.CalendarArrow position={this.props.position} />
           </Styled.CalendarContainer>
         );
     }
