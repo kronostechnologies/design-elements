@@ -136,13 +136,26 @@ export const CalendarCell = styled.div`
   	grid-column: ${props => (props.index % 7) + 1} / span 1;
 `;
 
+interface CalendarDayProps {
+    index: number;
+}
+
 export const CalendarDay = styled(CalendarCell)`
+	${(props: CalendarDayProps) => props.index && null}
 	font-weight: 600;
 	font-size: 2.25em;
 	color: #000000;
 `;
 
+interface CalendarDateProps {
+    index: number;
+    inMonth: boolean | 0;
+    onClick: any;
+    title: string;
+}
+
 export const CalendarDate = styled(CalendarCell)`
+	${(props: CalendarDateProps) => props.index && null}
 	// @ts-ignore
 	font-weight: ${props => props.inMonth ? 500 : 300};
 	font-size: 2.8em;
@@ -164,6 +177,7 @@ export const HighlightedCalendarDate = styled(CalendarDate)`
 `;
 
 export const TodayCalendarDate = styled(HighlightedCalendarDate)`
+	${(props: CalendarDateProps) => props.index && null}
 	color: #000000 !important;
 	background: white !important;
 `;
@@ -220,6 +234,7 @@ export const DateList = styled.div`
 `;
 
 export const CalendarArrow = styled.div`
+	${(props: { position: string }) => props.position && null}
 	width: 15px;
 	height: 15px;
 	position: absolute;

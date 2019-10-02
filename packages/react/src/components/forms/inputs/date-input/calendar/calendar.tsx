@@ -11,10 +11,7 @@ import calendar, {
 } from './calendar-helper';
 import * as Styled from './styles';
 
-class Calendar extends Component<{
-    date: Date,
-    onDateChanged(date: Date): void,
-}> {
+class Calendar extends Component<{ date: Date, position: string, onDateChanged(date: Date | null): void}> {
     state = {
         ...this.resolveStateFromProp(),
         today: new Date(),
@@ -23,7 +20,7 @@ class Calendar extends Component<{
     };
     pressureTimeout: NodeJS.Timeout | undefined;
     pressureTimer: NodeJS.Timeout | undefined;
-    dayTimeout: void | undefined;
+    dayTimeout: NodeJS.Timer | undefined;
 
     resolveStateFromDate(date: Date): { current: Date | null, month: number, year: number } {
         const isDateObject = isDate(date);
@@ -185,16 +182,6 @@ class Calendar extends Component<{
           </Styled.CalendarHeader>
         );
     };
-    renderDayLabel = (day: string, index: number): ReactElement => {
-        // @ts-ignore
-        const daylabel = WEEK_DAYS[day].toUpperCase();
-        return (
-          // @ts-ignore
-          <Styled.CalendarDay key={daylabel} index={index}>
-            {daylabel}
-          </Styled.CalendarDay>
-        );
-    };
 
     renderCalendarDate = (date: (string | number)[], index: number) => {
         const { current, month, year, today } = this.state;
@@ -216,30 +203,26 @@ class Calendar extends Component<{
             : Styled.CalendarDate;
 
         return (
-          // @ts-ignore
           <DateComponent key={getDateISO(renderedDate)} {...props}>
             {renderedDate.getDate()}
           </DateComponent>
         );
     };
 
-    componentDidMount() {
-        const now = new Date();
+    componentDidMount(): void {
+        const now = new Date().setHours(0, 0, 0, 0);
         const tomorrow = new Date().setHours(0, 0, 0, 0) + 24 * 60 * 60 * 1000;
-        // @ts-ignore
+
         const ms = tomorrow - now;
-        // @ts-ignore
         this.dayTimeout = setTimeout(() => {
             this.setState({ today: new Date() }, this.clearDayTimeout);
         }, ms);
     }
-    // @ts-ignore
-    componentDidUpdate(prevProps) {
-        console.log('[componentDidUpdate] preProps: ', prevProps);
+
+    componentDidUpdate(prevProps: Readonly<{ date: Date; onDateChanged(date: Date): void; }>): void {
         const { date, onDateChanged } = this.props;
         const { date: prevDate } = prevProps;
         const dateMatch = date === prevDate || isSameDay(date, prevDate);
-        console.log('[componentDidUpdate] date: ', date);
 
         !dateMatch &&
           this.setState(this.resolveStateFromDate(date), () => {
@@ -247,12 +230,12 @@ class Calendar extends Component<{
           });
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         this.clearPressureTimer();
         this.clearDayTimeout();
     }
 
-    render() {
+    render(): ReactElement {
         return (
           <Styled.CalendarContainer
             onClick={() => {
@@ -263,14 +246,21 @@ class Calendar extends Component<{
             {this.renderMonthAndYear()}
 
             <Styled.CalendarGrid>
-              <Fragment>{Object.keys(WEEK_DAYS).map(this.renderDayLabel)}</Fragment>
+              <Fragment>
+                {Object.values(WEEK_DAYS).map((day, index) => {
+                    const daylabel = day.toUpperCase();
+                    return (
+                      <Styled.CalendarDay key={daylabel} index={index}>
+                        {daylabel}
+                      </Styled.CalendarDay>
+                    );
+                })}
+              </Fragment>
 
               <Fragment>
                 {this.getCalendarDates().map(this.renderCalendarDate)}
               </Fragment>
             </Styled.CalendarGrid>
-            {/*
-              // @ts-ignore */}
             <Styled.CalendarArrow position={this.props.position} />
           </Styled.CalendarContainer>
         );

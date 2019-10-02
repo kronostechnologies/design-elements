@@ -36,8 +36,8 @@ export const isDate = date => {
     return isDate && isValidDate;
 };
 
-export const getDateISO = (date = new Date()) => {
-    if (!isDate(date)) return null;
+export const getDateISO = (date = new Date()): string | number | undefined => {
+    if (!isDate(date)) return undefined;
 
     return [
         date.getFullYear(),

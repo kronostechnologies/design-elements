@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 
 import Calendar from '../calendar/calendar';
 import { getDateISO, isDate } from '../calendar/calendar-helper';
 import * as Styled from './styles';
 
-class Datepicker extends React.Component {
+class Datepicker extends React.Component
+  <{ value: Date, position: string, onDateChanged(date: Date | null, calendarOpen?: false): void}> {
     state = { date: null, calendarOpen: false };
 
     toggleCalendar = () =>
       this.setState({ calendarOpen: !this.state.calendarOpen });
 
-    // @ts-ignore
-    handleChange = evt => evt.preventDefault();
-    // @ts-ignore
-    handleDateChange = date => {
-        // @ts-ignore
+    handleChange = (evt: ChangeEvent) => evt.preventDefault();
+
+    handleDateChange = (date: Date) => {
         const { onDateChanged } = this.props;
         const { date: currentDate } = this.state;
         const newDate = date ? getDateISO(date) : null;
@@ -25,16 +24,18 @@ class Datepicker extends React.Component {
           });
     };
 
-    componentDidMount() {
-        // @ts-ignore
+    componentDidMount(): void {
         const { value: date } = this.props;
         const newDate = date && new Date(date);
 
         isDate(newDate) && this.setState({ date: getDateISO(newDate) });
     }
-    // @ts-ignore
-    componentDidUpdate(prevProps) {
-        // @ts-ignore
+
+    componentDidUpdate(
+        prevProps: Readonly<{
+            value: Date;
+            onDateChanged(date: null, calendarOpen?: false | undefined): void;
+        }>): void {
         const { value: date } = this.props;
         const { value: prevDate } = prevProps;
         const dateISO = getDateISO(new Date(date));
@@ -43,9 +44,7 @@ class Datepicker extends React.Component {
         dateISO !== prevDateISO && this.setState({ date: dateISO });
     }
 
-    render() {
-        // @ts-ignore
-        const { label } = this.props;
+    render(): ReactElement {
         const { date, calendarOpen } = this.state;
 
         return (
@@ -71,17 +70,14 @@ class Datepicker extends React.Component {
             >
               <Styled.DatePickerDropdownToggle color="transparent" />
               <Styled.DatePickerDropdownMenu
-                // @ts-ignore
                 position={this.props.position}
                 open={calendarOpen}
               >
                 {calendarOpen && (
-                  // @ts-ignore
                   <Calendar
                     // @ts-ignore
                     date={date && new Date(date)}
                     onDateChanged={this.handleDateChange}
-                    // @ts-ignore
                     position={this.props.position}
                   />
                 )}
