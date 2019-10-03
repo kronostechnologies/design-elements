@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Date Picker Renders bottom left calendar 1`] = `
+<div
+  className="sc-kAzzGY dMfzxP"
+>
+  <div
+    className="sc-chPdSV ljXAxv form-group"
+  >
+    <div
+      className="sc-kgoBCf ifpZgn"
+    >
+      <svg
+        className="sc-cSHVUG kSRuyc"
+      />
+    </div>
+    <input
+      className="sc-kGXeez dOultX form-control"
+      onChange={[Function]}
+      placeholder="AAAA-MM-JJ"
+      readOnly="readonly"
+      style={null}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="sc-kpOJdX hfPkaB dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="sc-dxgOiQ blwJuv btn btn-transparent"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="sc-ckVGcZ gfFyS dropdown-menu"
+      open={false}
+      position="bottomLeft"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Date Picker Renders bottom right calendar 1`] = `
+<div
+  className="sc-kAzzGY dMfzxP"
+>
+  <div
+    className="sc-chPdSV ljXAxv form-group"
+  >
+    <div
+      className="sc-kgoBCf ifpZgn"
+    >
+      <svg
+        className="sc-cSHVUG kSRuyc"
+      />
+    </div>
+    <input
+      className="sc-kGXeez dOultX form-control"
+      onChange={[Function]}
+      placeholder="AAAA-MM-JJ"
+      readOnly="readonly"
+      style={null}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="sc-kpOJdX hfPkaB dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="sc-dxgOiQ blwJuv btn btn-transparent"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="sc-ckVGcZ fXgxhk dropdown-menu"
+      open={false}
+      position="bottomRight"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Date Picker Renders top left calendar 1`] = `
+<div
+  className="sc-kAzzGY dMfzxP"
+>
+  <div
+    className="sc-chPdSV ljXAxv form-group"
+  >
+    <div
+      className="sc-kgoBCf ifpZgn"
+    >
+      <svg
+        className="sc-cSHVUG kSRuyc"
+      />
+    </div>
+    <input
+      className="sc-kGXeez dOultX form-control"
+      onChange={[Function]}
+      placeholder="AAAA-MM-JJ"
+      readOnly="readonly"
+      style={null}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="sc-kpOJdX hfPkaB dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="sc-dxgOiQ blwJuv btn btn-transparent"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="sc-ckVGcZ jtAHPV dropdown-menu"
+      open={false}
+      position="topLeft"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Date Picker Renders top right calendar 1`] = `
+<div
+  className="sc-kAzzGY dMfzxP"
+>
+  <div
+    className="sc-chPdSV ljXAxv form-group"
+  >
+    <div
+      className="sc-kgoBCf ifpZgn"
+    >
+      <svg
+        className="sc-cSHVUG kSRuyc"
+      />
+    </div>
+    <input
+      className="sc-kGXeez dOultX form-control"
+      onChange={[Function]}
+      placeholder="AAAA-MM-JJ"
+      readOnly="readonly"
+      style={null}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="sc-kpOJdX hfPkaB dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="sc-dxgOiQ blwJuv btn btn-transparent"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="sc-ckVGcZ difBNY dropdown-menu"
+      open={false}
+      position="topRight"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
