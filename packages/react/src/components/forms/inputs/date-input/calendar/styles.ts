@@ -4,73 +4,13 @@ import ChevronDown from '../../../../../icons/chevron-down.svg';
 import ChevronLeft from '../../../../../icons/chevron-left.svg';
 import ChevronRight from '../../../../../icons/chevron-right.svg';
 
-// export const Arrow = styled.button`
-// 	appearance: none;
-// 	user-select: none;
-// 	outline: none !important;
-// 	display: inline-block;
-// 	position: relative;
-// 	cursor: pointer;
-// 	padding: 0;
-// 	border: none;
-// 	border-top: 1.6em solid transparent;
-// 	border-bottom: 1.6em solid transparent;
-// 	transition: all .25s ease-out;
-// `;
-
-// export const ArrowLeft = styled(Arrow)`
-// 	border-right: 2.4em solid #ccc;
-// 	left: 1.5rem;
-// 	:hover {
-// 		border-right-color: #06c;
-// 	}
-// `;
-
-// export const ArrowRight = styled(Arrow)`
-// 	border-left: 2.4em solid #ccc;
-// 	right: 1.5rem;
-// 	:hover {
-// 		border-left-color: #06c;
-// 	}
-// `;
-
-// export const Arrow = styled.button`
-// 	user-select: none;
-// 	width: 0px;
-// 	outline: none !important;
-// 	display: inline-block;
-// 	position: relative;
-// 	cursor: pointer;
-// 	padding: 0;
-// 	border: none;
-// 	transition: all .25s ease-out;
-// 	background: transparent;
-// 	&:after {
-// 		content: ">";
-// 		color: #57666e;
-// 		font-size: 1.6rem;
-// 	}
-// 	:hover {
-// 		opacity: 0.8;
-// 	}
-// `;
-
-// export const ArrowLeft = styled(Arrow)`
-// 	left: 1.5rem;
-// 	transform: rotate(180deg);
-// `;
-
-// export const ArrowRight = styled(Arrow)`
-// 	right: 1.5rem;
-// `;
-
 export const ArrowLeft = styled(ChevronLeft)`
 	color: #57666e;
 	height: 12px;
 	width: 12px;
 	&:hover {
-		opacity: 0.8;
 		cursor: pointer;
+		opacity: 0.8;
 	}
 `;
 
@@ -79,8 +19,8 @@ export const ArrowRight = styled(ChevronRight)`
 	height: 12px;
 	width: 12px;
 	&:hover {
-		opacity: 0.8;
 		cursor: pointer;
+		opacity: 0.8;
 	}
 `;
 
@@ -91,49 +31,46 @@ export const ArrowDown = styled(ChevronDown)`
 `;
 
 export const CalendarContainer = styled.div`
-	font-size: 5px;
-	border-radius: 5px;
-	border: 1px solid #d9dde2;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
 	background: white;
+	border: 1px solid #d9dde2;
+	border-radius: 5px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	font-size: 5px;
+	height: 100%;
 	padding: 0.5rem 1rem;
+	width: 100%;
 `;
 
 export const CalendarHeader = styled.div`
-	display: flex;
 	align-items: center;
+	display: flex;
 	justify-content: space-between;
 `;
 
 export const CalendarGrid = styled.div`
-  box-sizing: border-box;
-  width: 100%;
-  height: 85%;
-  display: grid;
-  grid-template: repeat(7, auto) / repeat(7, auto);
+	box-sizing: border-box;
+	display: grid;
+	grid-template: repeat(7, auto) / repeat(7, auto);
+	height: 85%;
+	width: 100%;
 `;
 
 export const CalendarMonth = styled.div`
 	font-weight: 500;
-	text-align: center;
 	padding: 0.5em 0.25em;
-	word-spacing: 5px;
+	text-align: center;
 	user-select: none;
+	word-spacing: 5px;
 `;
 
 export const CalendarCell = styled.div`
-	text-align: center;
 	align-self: center;
+  	grid-column: ${(props: {index: number}) => (props.index % 7) + 1} / span 1;
 	letter-spacing: 0.1rem;
-	// margin: 0.2em 1em;
-	// padding: 0.3rem 0;
 	padding: 0.3rem 0;
+	text-align: center;
 	user-select: none;
-	// @ts-ignore
-  	grid-column: ${props => (props.index % 7) + 1} / span 1;
 `;
 
 interface CalendarDayProps {
@@ -142,9 +79,9 @@ interface CalendarDayProps {
 
 export const CalendarDay = styled(CalendarCell)`
 	${(props: CalendarDayProps) => props.index && null}
+	color: #000000;
 	font-weight: 600;
 	font-size: 2.25em;
-	color: #000000;
 `;
 
 interface CalendarDateProps {
@@ -156,14 +93,11 @@ interface CalendarDateProps {
 
 export const CalendarDate = styled(CalendarCell)`
 	${(props: CalendarDateProps) => props.index && null}
-	// @ts-ignore
-	font-weight: ${props => props.inMonth ? 500 : 300};
-	font-size: 2.8em;
 	border-radius: 200px;
-	cursor: pointer;
-	// @ts-ignore
 	color: ${props => props.inMonth ? `#000000` : `#ddd`};
-	// @ts-ignore
+	cursor: pointer;
+	font-size: 2.8em;
+	font-weight: ${props => props.inMonth ? 500 : 300};
   	grid-row: ${props => Math.floor(props.index / 7) + 2} / span 1;
 	transition: all .4s ease-out;
 	:hover {
@@ -172,14 +106,14 @@ export const CalendarDate = styled(CalendarCell)`
 `;
 
 export const HighlightedCalendarDate = styled(CalendarDate)`
-	color: #fff !important;
 	background: #0080a5 !important;
+	color: #fff !important;
 `;
 
 export const TodayCalendarDate = styled(HighlightedCalendarDate)`
 	${(props: CalendarDateProps) => props.index && null}
-	color: #000000 !important;
 	background: white !important;
+	color: #000000 !important;
 `;
 
 export const CurrentDate = styled.div`
@@ -190,40 +124,39 @@ export const CurrentDate = styled.div`
 export const CurrentDateContainer = styled.div`
 	border: 1px solid #57666e;
 	border-radius: 6px;
-	font-size: 0.875rem;
 	box-sizing: border-box;
-	padding 0.43em 0.6em;
-	margin: 0 5px;
-	position: relative;
 	cursor: pointer;
+	font-size: 0.875rem;
+	margin: 0 5px;
+	padding 0.43em 0.6em;
+	position: relative;
 `;
 
 export const MonthAndYear = styled.div`
-	display: flex;
-	width: 4.0rem;
 	align-items: center;
+	display: flex;
 	justify-content: space-between;
+	width: 4.0rem;
 	p {
 		margin: 0 1rem 0 0;
 	}
 `;
 
 export const DateList = styled.div`
-	position: absolute;
-	left: -5px;
-	box-sizing: border-box;
-	list-style: none;
-	margin: 0;
-	padding: 0;
 	background-color: white;
-	margin: 0 5px;
 	border: 1px solid #d9dde2;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 6px;
-	width: 100%;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
 	height: 200px;
+	left: -5px;
+	list-style: none;
+	margin: 0 5px;
 	overflow-y: auto;
+	padding: 0;
+	position: absolute;
 	text-align: left;
+	width: 100%;
 	li {
 		padding 0.2em 0.4em;
 		&:hover{
@@ -235,14 +168,13 @@ export const DateList = styled.div`
 
 export const CalendarArrow = styled.div`
 	${(props: { position: string }) => props.position && null}
-	width: 15px;
+	background-color: white;
+	border-left: 1px solid #d9dde2;
+	border-top: 1px solid #d9dde2;
 	height: 15px;
 	position: absolute;
-	background-color: white;
-	border-top: 1px solid #d9dde2;
-	border-left: 1px solid #d9dde2;
+	width: 15px;
 	${props => {
-	// @ts-ignore
     switch (props.position) {
         case 'bottomRight':
             return 'top:-8px;' + 'right: 79px;' + 'transform: rotate(45deg);';
