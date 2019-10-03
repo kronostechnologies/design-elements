@@ -18,17 +18,9 @@ export const normal = () => (
             width: '100%',
         }}
     >
-        {/*
-        // @ts-ignore */}
-        <Datepicker position="bottomRight" />
-        {/*
-        // @ts-ignore */}
+        <Datepicker position="bottomRight" value={new Date('2002-07-14')} />
         <Datepicker position="bottomLeft" />
-        {/*
-        // @ts-ignore */}
         <Datepicker position="topRight" />
-        {/*
-        // @ts-ignore */}
         <Datepicker position="topLeft" />
     </div>
 );

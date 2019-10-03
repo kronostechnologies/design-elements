@@ -1,11 +1,11 @@
 import React, { ChangeEvent, ReactElement } from 'react';
 
-import Calendar from '../calendar/calendar';
-import { getDateISO, isDate } from '../calendar/calendar-helper';
+import Calendar from './calendar/calendar';
+import { getDateISO, isDate } from './calendar/calendar-helper';
 import * as Styled from './styles';
 
 class Datepicker extends React.Component
-  <{ value: Date, position: string, onDateChanged(date: Date | null, calendarOpen?: false): void}> {
+  <{ value?: Date, position: string, onDateChanged?(date: Date | null, calendarOpen?: false): void}> {
     state = { date: null, calendarOpen: false };
 
     toggleCalendar = () =>
@@ -27,20 +27,26 @@ class Datepicker extends React.Component
     componentDidMount(): void {
         const { value: date } = this.props;
         const newDate = date && new Date(date);
+        newDate && newDate.setDate(newDate.getDate() + 1);
 
         isDate(newDate) && this.setState({ date: getDateISO(newDate) });
     }
 
     componentDidUpdate(
         prevProps: Readonly<{
-            value: Date;
-            onDateChanged(date: null, calendarOpen?: false | undefined): void;
+            value?: Date;
+            onDateChanged?(date: null, calendarOpen?: false | undefined): void;
         }>): void {
-        const { value: date } = this.props;
-        const { value: prevDate } = prevProps;
-        const dateISO = getDateISO(new Date(date));
-        const prevDateISO = getDateISO(new Date(prevDate));
-
+        let dateISO;
+        let prevDateISO;
+        if (this.props.value) {
+            const { value: date } = this.props;
+            dateISO = getDateISO(new Date(date));
+        }
+        if (prevProps.value) {
+            const { value: prevDate } = prevProps;
+            prevDateISO = getDateISO(new Date(prevDate));
+        }
         dateISO !== prevDateISO && this.setState({ date: dateISO });
     }
 

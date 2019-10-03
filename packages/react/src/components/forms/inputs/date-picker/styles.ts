@@ -1,7 +1,7 @@
 import { Dropdown, DropdownMenu, DropdownToggle, FormGroup, Input } from 'reactstrap';
 import styled from 'styled-components';
 
-import CalendarIcon from '../../../../../icons/calendar.svg';
+import CalendarIcon from '../../../../icons/calendar.svg';
 
 export const Calendar = styled(CalendarIcon)`
 	color: #57666e;
