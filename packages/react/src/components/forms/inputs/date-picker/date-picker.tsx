@@ -4,8 +4,17 @@ import Calendar from './calendar/calendar';
 import { getDateISO, isDate } from './calendar/calendar-helper';
 import * as Styled from './styles';
 
+interface DatePickerProps {
+    disabled?: boolean;
+    position: string;
+    valid?: boolean;
+    value?: Date;
+    validationErrorMessage?: string;
+    onDateChanged?(date: Date | null, calendarOpen?: false): void;
+}
+
 class Datepicker extends React.Component
-  <{ value?: Date, position: string, onDateChanged?(date: Date | null, calendarOpen?: false): void}> {
+  <DatePickerProps, {}> {
     state = { date: null, calendarOpen: false };
 
     toggleCalendar = () =>
@@ -52,29 +61,39 @@ class Datepicker extends React.Component
 
     render(): ReactElement {
         const { date, calendarOpen } = this.state;
+        const disabledValue = this.props.disabled ? this.props.disabled : false;
+        const validValue = this.props.valid !== undefined ? this.props.valid : true;
 
         return (
-          <Styled.DatePickerContainer>
-            <Styled.DatePickerFormGroup>
-              <Styled.DatePickerLabel>
-                <Styled.Calendar />
+          <Styled.DatePickerContainer disabled={disabledValue}>
+            <Styled.DatePickerFormGroup disabled={disabledValue}>
+              <Styled.DatePickerLabel disabled={disabledValue}>
+                <Styled.Calendar disabled={disabledValue} />
               </Styled.DatePickerLabel>
               <Styled.DatePickerInput
                 type="text"
                 // @ts-ignore
-                value={date ? date.split('-').join(' / ') : ''}
+                value={date ? date : ''}
                 onChange={this.handleChange}
                 readOnly="readonly"
                 placeholder="AAAA-MM-JJ"
-                style={this.state.calendarOpen ? { border: '1px solid #0080a5' } : null}
+                disabled={disabledValue}
+                focus={this.state.calendarOpen}
+                valid={validValue}
               />
+              <Styled.ErrorMessage style={validValue ? { display: 'none' } : {}}>
+                {this.props.validationErrorMessage || 'Invalid date format'}
+              </Styled.ErrorMessage>
             </Styled.DatePickerFormGroup>
 
             <Styled.DatePickerDropdown
               isOpen={calendarOpen}
               toggle={this.toggleCalendar}
             >
-              <Styled.DatePickerDropdownToggle color="transparent" />
+              <Styled.DatePickerDropdownToggle
+                color="transparent"
+                disabled={disabledValue}
+              />
               <Styled.DatePickerDropdownMenu
                 position={this.props.position}
                 open={calendarOpen}

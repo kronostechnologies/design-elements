@@ -4,32 +4,41 @@ import styled from 'styled-components';
 import CalendarIcon from '../../../../icons/calendar.svg';
 
 export const Calendar = styled(CalendarIcon)`
-	color: #57666e;
+	color: ${(props: {disabled: boolean}) => props.disabled ? '#bcc7cc;' : '#57666e;'}
 	height: 16px;
 	width: 16px;
 `;
 
 export const DatePickerContainer = styled.div`
 	position: relative;
+	&:hover {
+		.form-group {
+			> div {
+				${(props: {disabled: boolean}) => props.disabled ? null : 'background-color: #d9dde2;'}
+			}
+		}
+	}
 `;
 
 export const DatePickerFormGroup = styled(FormGroup)`
 	background-color: #ffffff;
-	border: 1px solid #57666e;
+	border: ${(props: {disabled: boolean}) => props.disabled ? '1px solid #d9dde2' : '1px solid #57666e;'}
 	border-radius: 5px;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row-reverse;
 	height: 32px;
 	justify-content: space-between;
-	overflow: hidden;
+	overflow: unset;
 	position: relative;
 	width: 180px;
 `;
 
 export const DatePickerLabel = styled.div`
 	align-items: center;
-	border-left: 1px solid #57666e;
+	background: ${(props: {disabled: boolean}) => props.disabled ? '#f1f2f2' : 'transparent'}
+	border-left: ${(props: {disabled: boolean}) => props.disabled ? '1px solid #d9dde2' : '1px solid #57666e;'}
+	border-radius: 0 5px 5px 0;
 	color: #06c;
 	display: flex;
 	font-size: 0.5rem;
@@ -44,8 +53,10 @@ export const DatePickerLabel = styled.div`
 
 export const DatePickerInput = styled(Input)`
 	align-items: center;
-	background: transparent !important;
-	border: none;
+	background: ${(props: {disabled: boolean, focus: boolean, valid: boolean}) => props.disabled ? '#f1f2f2 !important' : 'transparent !important;'}
+	border: ${props => props.focus ? '1px solid #0080a5' : 'none'}
+	${props => props.valid ? null : 'border: 1px solid #a40c2e !important'}
+	border-radius: 5px 0 0 5px;
 	box-shadow: none;
 	color: #333;
 	display: flex;
@@ -56,10 +67,17 @@ export const DatePickerInput = styled(Input)`
 	text-align: center;
 	width: 100%
 	::placeholder {
-		color: #999;
+		color: ${props => props.disabled ? '#9ca7b4;' : '#999;'}
 		font-size: 0.875rem;
 		margin: 0;
 	}
+`;
+
+export const ErrorMessage = styled.p`
+	color: #a40c2e;
+	position: absolute !important;
+	top: 20px;
+	left: 0;
 `;
 
 export const DatePickerDropdown = styled(Dropdown)`
@@ -72,7 +90,7 @@ export const DatePickerDropdown = styled(Dropdown)`
 
 export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	background: transparent;
-	cursor: pointer;
+	cursor: ${(props: {disabled: boolean}) => props.disabled ? 'cursor: none;' : 'pointer;'}
 	filter: alpha(opacity=0);
 	height: 100%;
 	opacity: 0;

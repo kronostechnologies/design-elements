@@ -19,8 +19,8 @@ export const normal = () => (
         }}
     >
         <Datepicker position="bottomRight" value={new Date('2002-07-14')} />
-        <Datepicker position="bottomLeft" />
-        <Datepicker position="topRight" />
+        <Datepicker position="bottomLeft" disabled/>
+        <Datepicker position="topRight" valid={false} validationErrorMessage="Format de date non valide" />
         <Datepicker position="topLeft" />
     </div>
 );
