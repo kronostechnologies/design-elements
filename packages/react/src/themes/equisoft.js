@@ -1,0 +1,17 @@
+import greys from './greys';
+import notifications from './notifications'
+
+export default {
+    main: {
+        "primary-1.1": "#0080A5",
+        "primary-1.2": "#F7BFD2",
+        "primary-1.3": "#006C8A",
+        "primary-2": "#012639",
+        "primary-3": "#094C6C",
+        "secondary-4.1": "#EF483E",
+        "secondary-4.2": "#FF847C",
+        "secondary-4.3": "#D41F14",
+    },
+    greys,
+    notifications,
+}

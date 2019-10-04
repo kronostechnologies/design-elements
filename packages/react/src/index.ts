@@ -12,6 +12,9 @@ import { Select } from './components/select/select';
 import { TextArea } from './components/text-area/text-area';
 import { TextInput } from './components/text-input/text-input';
 
+// Context
+import { Theme } from './components/theme';
+
 // Miscellaneous
 import { Card } from './components/card/card';
 import { Chooser } from './components/choosers/chooser';
@@ -35,6 +38,7 @@ export {
     SearchContextual,
     SearchGlobal,
     Select,
+    Theme,
     TextArea,
     Card,
     Chooser,
