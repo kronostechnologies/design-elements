@@ -11,7 +11,12 @@ import calendar, {
 } from './calendar-helper';
 import * as Styled from './styles';
 
-class Calendar extends Component<{ date: Date, position: string, onDateChanged(date: Date | null): void}> {
+class Calendar extends Component<{
+    date: Date,
+    position: string,
+    max: number,
+    min: number,
+    onDateChanged(date: Date | null): void}> {
     state = {
         ...this.resolveStateFromProp(),
         today: new Date(),
@@ -24,12 +29,12 @@ class Calendar extends Component<{ date: Date, position: string, onDateChanged(d
 
     resolveStateFromDate(date: Date): { current: Date | null, month: number, year: number } {
         const isDateObject = isDate(date);
-        const savedDate = isDateObject ? date : new Date();
+        const savedDate = isDateObject ? date : false;
 
         return {
             current: isDateObject ? date : null,
-            month: +savedDate.getMonth() + 1,
-            year: savedDate.getFullYear(),
+            month: savedDate ? +savedDate.getMonth() + 1 : new Date().getMonth() + 1,
+            year: savedDate ? savedDate.getFullYear() : this.props.max,
         };
     }
 
@@ -132,7 +137,8 @@ class Calendar extends Component<{ date: Date, position: string, onDateChanged(d
           <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={mth.key + mth.value}>{mth.value}</li>
         ));
         const yearList = [];
-        for (let i = 1900; i <= this.state.today.getFullYear(); i++) {
+        // @ts-ignore
+        for (let i = this.props.max; i >= this.props.min; i--) {
             yearList.push(i);
         }
         return (

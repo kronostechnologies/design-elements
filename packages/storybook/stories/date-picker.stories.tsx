@@ -23,7 +23,7 @@ export const normal = () => (
         <Datepicker position="topRight" valid={false} validationErrorMessage="Format de date non valide" />
         <Datepicker position="topLeft" />
         <form>
-            <Datepicker position="topLeft" required />
+            <Datepicker position="topLeft" required max="2016-02-02" min="2002-02-02" />
             <button type="submit">Submit</button>
         </form>
     </div>

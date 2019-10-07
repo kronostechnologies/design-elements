@@ -6,6 +6,8 @@ import * as Styled from './styles';
 
 interface DatePickerProps {
     disabled?: boolean;
+    max?: string;
+    min?: string;
     position: string;
     required?: boolean;
     valid?: boolean;
@@ -16,17 +18,44 @@ interface DatePickerProps {
 
 class Datepicker extends React.Component
   <DatePickerProps, {}> {
-    state = { date: null, calendarOpen: false };
+    state = {
+        date: null,
+        calendarOpen: false,
+        validity: this.props.valid !== undefined ? this.props.valid : true,
+    };
 
-    toggleCalendar = () =>
-      this.setState({ calendarOpen: !this.state.calendarOpen });
+    dateCheck = (date: Date) => {
+        let dateCurrent: string | number | undefined | Date = getDateISO(new Date(date));
+        const maxDate = this.props.max ? new Date(this.props.max) : new Date();
+        const minDate = this.props.min ? new Date(this.props.min) : new Date();
+
+        if (dateCurrent === undefined) dateCurrent = new Date();
+        maxDate.setDate(maxDate.getDate() + 1);
+        minDate.setDate(minDate.getDate() + 1);
+
+        const max = this.props.max ? getDateISO(new Date(maxDate)) : false;
+        const min = this.props.min ? getDateISO(new Date(minDate)) : false;
+
+        if (max && !min) {
+            return (dateCurrent <= max);
+        } else if (!max && min) {
+            return (dateCurrent >= min);
+        } else if (max && min) {
+            return (dateCurrent >= min && dateCurrent <= max);
+        } else {
+            return (true);
+        }
+    }
+
+    toggleCalendar = () => this.setState({ calendarOpen: !this.state.calendarOpen });
 
     handleChange = (evt: ChangeEvent) => evt.preventDefault();
 
     handleDateChange = (date: Date) => {
         const { onDateChanged } = this.props;
         const { date: currentDate } = this.state;
-        const newDate = date ? getDateISO(date) : null;
+        const newDate = getDateISO(date);
+        this.setState({ validity: this.dateCheck(date) });
 
         currentDate !== newDate &&
           this.setState({ date: newDate, calendarOpen: false }, () => {
@@ -60,19 +89,15 @@ class Datepicker extends React.Component
         dateISO !== prevDateISO && this.setState({ date: dateISO });
     }
 
-    testPreventDefault(e: any) {
-        const form = e.target.form;
-        form.preventDefault();
-    }
-
     render(): ReactElement {
         const { date, calendarOpen } = this.state;
         const disabledValue = this.props.disabled ? this.props.disabled : false;
-        const validValue = this.props.valid !== undefined ? this.props.valid : true;
 
         return (
-          // @ts-ignore
-          <Styled.DatePickerContainer disabled={disabledValue} onSubmit={this.testPreventDefault}>
+          <Styled.DatePickerContainer
+            disabled={disabledValue}
+            data-valid={this.state.validity}
+          >
             <Styled.DatePickerFormGroup disabled={disabledValue}>
               <Styled.DatePickerLabel disabled={disabledValue}>
                 <Styled.Calendar disabled={disabledValue} />
@@ -82,15 +107,17 @@ class Datepicker extends React.Component
                 // @ts-ignore
                 value={date ? date : undefined}
                 onChange={this.handleChange}
+                // @ts-ignore
+                onBlur={this.handleDateChange}
                 pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"
                 placeholder="AAAA-MM-JJ"
                 disabled={disabledValue}
                 focus={this.state.calendarOpen}
                 required={this.props.required !== undefined ? this.props.required : false}
-                valid={validValue}
+                valid={this.state.validity}
               />
-              <Styled.ErrorMessage className="error-message" style={validValue ? { display: 'none' } : {}}>
-                {this.props.validationErrorMessage || 'Invalid date format'}
+              <Styled.ErrorMessage className="error-message" style={this.state.validity ? { display: 'none' } : {}}>
+                {this.props.validationErrorMessage || 'Invalid date'}
               </Styled.ErrorMessage>
             </Styled.DatePickerFormGroup>
 
@@ -112,6 +139,8 @@ class Datepicker extends React.Component
                     date={date && new Date(date)}
                     onDateChanged={this.handleDateChange}
                     position={this.props.position}
+                    max={this.props.max ? new Date(this.props.max).getFullYear() : new Date().getFullYear()}
+                    min={this.props.min ? new Date(this.props.min).getFullYear() : 1900}
                   />
                 )}
               </Styled.DatePickerDropdownMenu>
