@@ -22,5 +22,9 @@ export const normal = () => (
         <Datepicker position="bottomLeft" disabled/>
         <Datepicker position="topRight" valid={false} validationErrorMessage="Format de date non valide" />
         <Datepicker position="topLeft" />
+        <form>
+            <Datepicker position="topLeft" required />
+            <button type="submit">Submit</button>
+        </form>
     </div>
 );

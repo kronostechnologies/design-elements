@@ -7,6 +7,7 @@ import * as Styled from './styles';
 interface DatePickerProps {
     disabled?: boolean;
     position: string;
+    required?: boolean;
     valid?: boolean;
     value?: Date;
     validationErrorMessage?: string;
@@ -59,13 +60,19 @@ class Datepicker extends React.Component
         dateISO !== prevDateISO && this.setState({ date: dateISO });
     }
 
+    testPreventDefault(e: any) {
+        const form = e.target.form;
+        form.preventDefault();
+    }
+
     render(): ReactElement {
         const { date, calendarOpen } = this.state;
         const disabledValue = this.props.disabled ? this.props.disabled : false;
         const validValue = this.props.valid !== undefined ? this.props.valid : true;
 
         return (
-          <Styled.DatePickerContainer disabled={disabledValue}>
+          // @ts-ignore
+          <Styled.DatePickerContainer disabled={disabledValue} onSubmit={this.testPreventDefault}>
             <Styled.DatePickerFormGroup disabled={disabledValue}>
               <Styled.DatePickerLabel disabled={disabledValue}>
                 <Styled.Calendar disabled={disabledValue} />
@@ -73,15 +80,16 @@ class Datepicker extends React.Component
               <Styled.DatePickerInput
                 type="text"
                 // @ts-ignore
-                value={date ? date : ''}
+                value={date ? date : undefined}
                 onChange={this.handleChange}
-                readOnly="readonly"
+                pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"
                 placeholder="AAAA-MM-JJ"
                 disabled={disabledValue}
                 focus={this.state.calendarOpen}
+                required={this.props.required !== undefined ? this.props.required : false}
                 valid={validValue}
               />
-              <Styled.ErrorMessage style={validValue ? { display: 'none' } : {}}>
+              <Styled.ErrorMessage className="error-message" style={validValue ? { display: 'none' } : {}}>
                 {this.props.validationErrorMessage || 'Invalid date format'}
               </Styled.ErrorMessage>
             </Styled.DatePickerFormGroup>

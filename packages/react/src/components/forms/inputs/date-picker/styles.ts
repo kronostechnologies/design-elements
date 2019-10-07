@@ -1,4 +1,4 @@
-import { Dropdown, DropdownMenu, DropdownToggle, FormGroup, Input } from 'reactstrap';
+import { Dropdown, DropdownMenu, DropdownToggle, FormGroup } from 'reactstrap';
 import styled from 'styled-components';
 
 import CalendarIcon from '../../../../icons/calendar.svg';
@@ -51,7 +51,7 @@ export const DatePickerLabel = styled.div`
 	text-transform: uppercase;
 `;
 
-export const DatePickerInput = styled(Input)`
+export const DatePickerInput = styled.input`
 	align-items: center;
 	background: ${(props: {disabled: boolean, focus: boolean, valid: boolean}) => props.disabled ? '#f1f2f2 !important' : 'transparent !important;'}
 	border: ${props => props.focus ? '1px solid #0080a5' : 'none'}
