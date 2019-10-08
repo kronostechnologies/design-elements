@@ -107,7 +107,7 @@ jobs:
             - run:
                 name: Build
                 command: yarn build
-                working_directory: *storybook_directory             
+                working_directory: *storybook_directory
 
 workflows:
     version: 2
