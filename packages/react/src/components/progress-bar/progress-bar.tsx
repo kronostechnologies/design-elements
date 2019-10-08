@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactText } from 'react';
 import styled from 'styled-components';
 
-import { Bar } from './bar/bar';
+import { Bar } from '../bar/bar';
 
 const Label = styled.label`
   color: ${(props: { secondary: boolean }) => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};

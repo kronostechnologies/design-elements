@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
-import { Circle } from './circle/circle';
+import { Circle } from '../circle/circle';
 
 const RADIUS = 73;
 const STROKE = 8;
