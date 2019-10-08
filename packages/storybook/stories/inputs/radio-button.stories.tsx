@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 import { RadioButton } from '@equisoft/design-elements-react';
 
@@ -23,4 +23,14 @@ export const disabled = () => (
 );
 export const defaultChecked = () => (
     <RadioButton groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]}/>
+);
+export const callback = () => (
+    <RadioButton
+        groupName="planets"
+        onChange={(event: ChangeEvent<HTMLInputElement>) => console.log(`Radio button ${event.target.value} is ${event.target.checked ? 'checked' : 'unchecked'}!`)}
+        buttons={[
+            { label: 'Earth', value: 'earth' },
+            { label: 'Saturn', value: 'saturn' },
+        ]}
+    />
 );

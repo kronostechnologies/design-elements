@@ -1,0 +1,309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio button Matches the snapshot 1`] = `
+Array [
+  <label
+    style={
+      Object {
+        "fontSize": "0.75rem",
+      }
+    }
+  >
+    Planets
+  </label>,
+  .c0 {
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  padding-left: 25px;
+  position: relative;
+  margin: 15px 0 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .circle {
+  background-color: #0080a5;
+  border: 1px solid #0080a5;
+}
+
+.c0 input:checked + .circle:after {
+  background-color: white;
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 7px;
+}
+
+.c0 .circle {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #ffffff;
+  border: 1px solid #57666e;
+  border-radius: 50%;
+  display: inline-block;
+  height: 16px;
+  left: 0;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.c0:hover .circle {
+  border: 1px solid #0080a5;
+}
+
+<label
+    className="c0"
+    style={
+      Object {
+        "marginTop": "7px",
+      }
+    }
+  >
+     
+    Earth
+    <input
+      name="planets"
+      onChange={[Function]}
+      type="radio"
+      value="earth"
+    />
+    <span
+      className="circle"
+    />
+  </label>,
+  .c0 {
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  padding-left: 25px;
+  position: relative;
+  margin: 15px 0 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .circle {
+  background-color: #0080a5;
+  border: 1px solid #0080a5;
+}
+
+.c0 input:checked + .circle:after {
+  background-color: white;
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 7px;
+}
+
+.c0 .circle {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #ffffff;
+  border: 1px solid #57666e;
+  border-radius: 50%;
+  display: inline-block;
+  height: 16px;
+  left: 0;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.c0:hover .circle {
+  border: 1px solid #0080a5;
+}
+
+<label
+    className="c0"
+    style={Object {}}
+  >
+     
+    Mars
+    <input
+      defaultChecked={true}
+      name="planets"
+      onChange={[Function]}
+      type="radio"
+      value="mars"
+    />
+    <span
+      className="circle"
+    />
+  </label>,
+  .c0 {
+  display: block;
+  font-size: 0.875rem;
+  padding-left: 25px;
+  position: relative;
+  margin: 15px 0 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .circle {
+  background-color: #0080a5;
+  border: 1px solid #0080a5;
+}
+
+.c0 input:checked + .circle:after {
+  background-color: white;
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 7px;
+}
+
+.c0 .circle {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #f1f2f2;
+  border: 1px solid #d9dde2;
+  border-radius: 50%;
+  display: inline-block;
+  height: 16px;
+  left: 0;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.c0:hover .circle {
+  border: 1px solid #d9dde2;
+}
+
+<label
+    className="c0"
+    disabled={true}
+    style={Object {}}
+  >
+     
+    Pluto
+    <input
+      disabled={true}
+      name="planets"
+      onChange={[Function]}
+      type="radio"
+      value="pluto"
+    />
+    <span
+      className="circle"
+    />
+  </label>,
+  .c0 {
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  padding-left: 25px;
+  position: relative;
+  margin: 15px 0 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .circle {
+  background-color: #0080a5;
+  border: 1px solid #0080a5;
+}
+
+.c0 input:checked + .circle:after {
+  background-color: white;
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 7px;
+}
+
+.c0 .circle {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #ffffff;
+  border: 1px solid #57666e;
+  border-radius: 50%;
+  display: inline-block;
+  height: 16px;
+  left: 0;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.c0:hover .circle {
+  border: 1px solid #0080a5;
+}
+
+<label
+    className="c0"
+    style={Object {}}
+  >
+     
+    Saturn
+    <input
+      name="planets"
+      onChange={[Function]}
+      type="radio"
+      value="saturn"
+    />
+    <span
+      className="circle"
+    />
+  </label>,
+]
+`;
