@@ -67,10 +67,6 @@ jobs:
                 key: yarn-packages-web-{{ checksum "~/design-elements/packages/web/yarn.lock" }}
                 paths:
                     - node_modules
-            - run:
-                name: Build
-                command: yarn build
-                working_directory: *web_directory
             - persist_to_workspace:
                 root: *working_directory
                 paths: 
@@ -111,7 +107,7 @@ jobs:
             - run:
                 name: Build
                 command: yarn build
-                working_directory: *storybook_directory
+                working_directory: *storybook_directory             
 
 workflows:
     version: 2
