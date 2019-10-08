@@ -39,10 +39,6 @@ jobs:
                 paths:
                     - node_modules
             - run:
-                name: Lint
-                command: yarn lint
-                working_directory: *react_directory
-            - run:
                 name: Build
                 command: yarn build
                 working_directory: *react_directory
@@ -71,10 +67,6 @@ jobs:
                 key: yarn-packages-web-{{ checksum "~/design-elements/packages/web/yarn.lock" }}
                 paths:
                     - node_modules
-            - run:
-                name: Lint
-                command: yarn lint
-                working_directory: *web_directory
             - run:
                 name: Build
                 command: yarn build
@@ -115,10 +107,6 @@ jobs:
             - run:
                 name: Link Web Package
                 command: yarn link @equisoft/design-elements-web
-                working_directory: *storybook_directory
-            - run:
-                name: Lint
-                command: yarn lint
                 working_directory: *storybook_directory
             - run:
                 name: Build
