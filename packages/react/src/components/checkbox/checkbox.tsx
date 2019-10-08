@@ -1,14 +1,13 @@
 import React, { ChangeEvent, Fragment, ReactElement } from 'react';
 import styled from 'styled-components';
-
 import CheckMark from '../../../icons/check.svg';
 
 const StyledCheckMark = styled(CheckMark)`
     color: white;
-    opacity: 0;
     font-weight: bold;
-    height: 16px;
-    width: 16px;
+    height: 100%;
+    opacity: 0;
+    width: 100%;
 `;
 
 const StyledLabel = styled.label `
