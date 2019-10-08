@@ -24,6 +24,8 @@ import { Legend } from './components/legend/legend';
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 
+import { RadioButton } from './/components/forms/inputs/radio-button';
+
 export {
     AddButton,
     Button,
@@ -40,4 +42,5 @@ export {
     Headband,
     Progress,
     Legend,
+    RadioButton,
 };
