@@ -9,7 +9,7 @@
     "build": "webpack --config ./webpack/webpack.config.prod.js",
     "prepublishOnly": "yarn build",
     "start": "webpack --config ./webpack/webpack.config.dev.js",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test-update": "jest -u"
   },
   "files": [
