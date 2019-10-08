@@ -1,6 +1,6 @@
 import React, { ChangeEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
-import { ChooseInput } from './controls/choose-input';
+import { ChooseInput } from '../choose-input/choose-input';
 
 type GridProps = Pick<ChooserProps, 'inColumns'>;
 const Grid = styled.div<GridProps>`
