@@ -6,12 +6,11 @@
   "main": "dist/bundle.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "./scripts/build.sh",
-    "lint": "./scripts/lint.sh",
-    "prepublishOnly": "./scripts/prepublishOnly.sh",
-    "start": "./scripts/start.sh",
-    "test": "./scripts/test.sh",
-    "test-update": "./scripts/test-update.sh"
+    "build": "webpack --config ./webpack/webpack.config.prod.js",
+    "prepublishOnly": "yarn build",
+    "start": "webpack --config ./webpack/webpack.config.dev.js",
+    "test": "jest --runInBand",
+    "test-update": "jest -u"
   },
   "files": [
     "dist"

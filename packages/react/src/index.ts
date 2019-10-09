@@ -3,20 +3,20 @@ import { AddButton } from './components/buttons/add-button';
 import { Button } from './components/buttons/button';
 
 // Form Elements
-import { Checkbox } from './components/forms/inputs/checkbox';
-import { OptionButton } from './components/forms/inputs/option-button';
-import { SearchContextual } from './components/forms/inputs/search-contextual';
-import { SearchGlobal } from './components/forms/inputs/search-global';
-import { TextArea } from './components/forms/inputs/text-area';
-import { TextInput } from './components/forms/inputs/text-input';
-import { Select } from './components/forms/selects/select';
+import { Checkbox } from './components/checkbox/checkbox';
+import { OptionButton } from './components/option-button/option-button';
+import { SearchContextual } from './components/search/search-contextual';
+import { SearchGlobal } from './components/search/search-global';
+import { Select } from './components/select/select';
+import { TextArea } from './components/text-area/text-area';
+import { TextInput } from './components/text-input/text-input';
 
 // Miscellaneous
-import { Card } from './components/card';
+import { Card } from './components/card/card';
 import { Chooser } from './components/choosers/chooser';
-import { EnsoSpinner } from './components/enso-spinner';
+import { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 import { Headband } from './components/headband/equisoft-default';
-import { Progress } from './components/progress';
+import { Progress } from './components/progress/progress';
 
 // Results
 import { Legend } from './components/results/legend';

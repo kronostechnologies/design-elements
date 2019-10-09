@@ -2,9 +2,8 @@
   "name": "@equisoft/design-elements-storybook",
   "version": "0.6.2",
   "scripts": {
-    "build": "./scripts/build.sh",
-    "lint": "./scripts/lint.sh",
-    "start": "./scripts/start.sh"
+    "build": "start-storybook --smoke-test",
+    "start": "start-storybook --docs"
   },
   "author": "Equisoft Design",
   "maintainers": [
