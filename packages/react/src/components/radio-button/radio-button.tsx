@@ -1,21 +1,40 @@
-import React, { ChangeEvent, Fragment, ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
+
+const Legend = styled.legend`
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    padding: 0;
+`;
 
 const StyledLabel = styled.label `
-    ${(props: {disabled?: boolean}) => props.disabled ? null : 'cursor: pointer;'}
+    ${(props: {disabled?: boolean}) => props.disabled ? null : 'cursor: pointer;'};
     display: block;
     font-size: 0.875rem;
-    padding-left: 25px;
+    padding-left: 24px;
     position: relative;
-    margin: 15px 0 0 0;
     user-select: none;
+
+    &:not(:first-of-type) {
+        margin-top: 16px;
+    }
+
     input {
-        display: none;
-        &:checked + .circle {
+        height: 16px;
+        left: 0;
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        top: 2px;
+        width: 16px;
+
+        &:checked + .radioInput {
             background-color: #0080a5;
             border: 1px solid #0080a5;
-            &:after {
-                background-color: white;
+
+            &::after {
+                background-color: #fff;
                 border-radius: 50%;
                 content: "";
                 height: 7px;
@@ -27,9 +46,9 @@ const StyledLabel = styled.label `
             }
         }
     }
-    .circle {
-        align-self: center;
-        background-color: ${(props: {disabled?: boolean}) => props.disabled ? '#f1f2f2' : '#ffffff'};
+
+    .radioInput {
+        background-color: ${(props: {disabled?: boolean}) => props.disabled ? '#f1f2f2' : '#fff'};
         border: 1px solid ${(props: {disabled?: boolean}) => props.disabled ? '#d9dde2' : '#57666e'};
         border-radius: 50%;
         display: inline-block;
@@ -40,7 +59,8 @@ const StyledLabel = styled.label `
         top: 0;
         width: 16px;
     }
-    &:hover .circle {
+
+    &:hover .radioInput {
         border: 1px solid ${(props: {disabled?: boolean}) => props.disabled ? '#d9dde2' : '#0080a5'};
     }
 `;
@@ -49,6 +69,7 @@ interface RadioButtonProps {
     label?: string;
     /** Sets the name property of all buttons */
     groupName: string;
+    checkedValue?: string;
     buttons: {
         label: string,
         value: string,
@@ -58,33 +79,27 @@ interface RadioButtonProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function RadioButton({ buttons, groupName, label, onChange }: RadioButtonProps): ReactElement  {
-    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        if (onChange) {
-            onChange(event);
-        }
-    };
-
+export function RadioButton({ buttons, groupName, label, onChange, checkedValue }: RadioButtonProps): ReactElement  {
     return (
-        <Fragment>
-            <label style={{ fontSize: '0.75rem' }}>{label}</label>
-            {buttons.map((button, key) => (
+        <>
+            {label && <Legend>{label}</Legend>}
+            {buttons.map((button) => (
                 <StyledLabel
                     disabled={button.disabled}
-                    key={groupName + '-' + key}
-                    style={key === 0 ? { marginTop: '7px' } : {}}
+                    key={uuid()}
                 > {button.label}
                     <input
                         type="radio"
                         name={groupName}
                         value={button.value}
+                        checked={checkedValue ? checkedValue === button.value : undefined}
                         defaultChecked={button.defaultChecked}
                         disabled={button.disabled}
-                        onChange={handleChange}
+                        onChange={onChange}
                     />
-                    <span className="circle" />
+                    <span className="radioInput" />
                 </StyledLabel>
             ))}
-        </Fragment>
+        </>
     );
 }

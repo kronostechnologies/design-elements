@@ -1,7 +1,8 @@
-import { mount } from 'enzyme';
 import React from 'react';
+
+import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { RadioButton } from '../src/components/forms/inputs/radio-button';
+import { RadioButton } from './radio-button';
 
 const Buttons = [
     { label: 'Earth', value: 'earth' },
@@ -11,13 +12,26 @@ const Buttons = [
 ];
 
 describe('Radio button', () => {
-    test('onChange callback is called when clicked', () => {
+    test('onChange callback is called when changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
             <RadioButton label="Planets" groupName="planets" buttons={Buttons} onChange={callback} />,
         );
         wrapper.find('input').at(0).simulate('change');
         expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('Can be used as a controlled input', () => {
+        const wrapper = mount(
+            <RadioButton
+                groupName="color"
+                checkedValue="red"
+                buttons={[{ label: 'Red', value: 'red' }]}
+                onChange={() => {}}
+            />,
+        );
+        const input = wrapper.find('input[type="radio"]').at(0);
+        expect(input.prop('checked')).toBe(true);
     });
 
     test('Matches the snapshot', () => {
