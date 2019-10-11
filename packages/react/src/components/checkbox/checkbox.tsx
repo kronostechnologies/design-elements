@@ -1,10 +1,17 @@
-import React, { ChangeEvent, Fragment, ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
+
+import CheckMark from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
-import CheckMark from '../../../icons/check.svg';
+import uuid from 'uuid/v4';
+
+const Legend = styled.legend`
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    padding: 0;
+`;
 
 const StyledCheckMark = styled(CheckMark)`
-    color: white;
-    font-weight: bold;
+    color: #fff;
     height: 100%;
     opacity: 0;
     width: 100%;
@@ -14,23 +21,30 @@ const StyledLabel = styled.label `
     ${(props: {disabled?: boolean}) => props.disabled ? null : 'cursor: pointer;'}
     display: block;
     font-size: 0.875rem;
-    padding-left: 25px;
+    padding-left: 24px;
     position: relative;
-    margin: 15px 0 0 0;
     user-select: none;
+
+    &:not(:first-of-type) {
+        margin-top: 16px;
+    }
+
     input {
         display: none;
+
         &:checked + .box {
             background-color: #0080a5;
             border: 1px solid #0080a5;
+
             ${StyledCheckMark} {
                 opacity: 1;
             }
         }
     }
+
     .box {
         align-self: center;
-        background-color: ${(props: {disabled?: boolean}) => props.disabled ? '#f1f2f2' : '#ffffff'};
+        background-color: ${(props: {disabled?: boolean}) => props.disabled ? '#f1f2f2' : '#fff'};
         border: 1px solid ${(props: {disabled?: boolean}) => props.disabled ? '#d9dde2' : '#57666e'};
         border-radius: 5px;
         display: inline-block;
@@ -41,6 +55,7 @@ const StyledLabel = styled.label `
         top: 0;
         width: 16px;
     }
+
     &:hover .box {
         border: 1px solid ${(props: {disabled?: boolean}) => props.disabled ? '#d9dde2' : '#0080a5'};
     }
@@ -48,7 +63,8 @@ const StyledLabel = styled.label `
 
 interface CheckboxProps {
     label?: string;
-    checkboxes: {
+    checkedValues?: string[];
+    checkboxGroup: {
         label: string,
         name: string,
         value: string,
@@ -58,33 +74,27 @@ interface CheckboxProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function Checkbox({ label, checkboxes, onChange }: CheckboxProps): ReactElement  {
-    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        if (onChange) {
-            onChange(event);
-        }
-    };
-
+export function Checkbox({ label, checkedValues, checkboxGroup, onChange }: CheckboxProps): ReactElement  {
     return (
-        <Fragment>
-            <label style={{ fontSize: '0.75rem' }}>{label}</label>
-            {checkboxes.map((checkbox, key) => (
+        <>
+            {label && <Legend>{label}</Legend>}
+            {checkboxGroup.map((checkbox) => (
                 <StyledLabel
                     disabled={checkbox.disabled}
-                    key={checkbox.name + '-' + key}
-                    style={key === 0 ? { marginTop: '7px' } : {}}
+                    key={uuid()}
                 > {checkbox.label}
                     <input
                         type="checkbox"
                         name={checkbox.name}
                         value={checkbox.value}
+                        checked={checkedValues ? checkedValues.includes(checkbox.value) : undefined}
                         defaultChecked={checkbox.defaultChecked}
                         disabled={checkbox.disabled}
-                        onChange={handleChange}
+                        onChange={onChange}
                     />
                     <span className="box"><StyledCheckMark className="checkMark"/></span>
                 </StyledLabel>
             ))}
-        </Fragment>
+        </>
     );
 }

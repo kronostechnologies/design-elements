@@ -2,18 +2,19 @@
 
 exports[`Checkbox Matches the snapshot 1`] = `
 Array [
-  <label
-    style={
-      Object {
-        "fontSize": "0.75rem",
-      }
-    }
+  .c0 {
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+<legend
+    className="c0"
   >
     Vehicule
-  </label>,
+  </legend>,
   .c2 {
-  color: white;
-  font-weight: bold;
+  color: #fff;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -23,13 +24,16 @@ Array [
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
-  padding-left: 25px;
+  padding-left: 24px;
   position: relative;
-  margin: 15px 0 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: 16px;
 }
 
 .c0 input {
@@ -49,7 +53,7 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #57666e;
   border-radius: 5px;
   display: inline-block;
@@ -71,17 +75,11 @@ Array [
 
 <label
     className="c0"
-    style={
-      Object {
-        "marginTop": "7px",
-      }
-    }
   >
      
     Boat
     <input
       name="vehicule1"
-      onChange={[Function]}
       type="checkbox"
       value="boat"
     />
@@ -94,8 +92,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: white;
-  font-weight: bold;
+  color: #fff;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -105,13 +102,16 @@ Array [
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
-  padding-left: 25px;
+  padding-left: 24px;
   position: relative;
-  margin: 15px 0 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: 16px;
 }
 
 .c0 input {
@@ -131,7 +131,7 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #57666e;
   border-radius: 5px;
   display: inline-block;
@@ -153,14 +153,12 @@ Array [
 
 <label
     className="c0"
-    style={Object {}}
   >
      
     Plane
     <input
       defaultChecked={true}
       name="vehicule2"
-      onChange={[Function]}
       type="checkbox"
       value="plane"
     />
@@ -173,8 +171,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: white;
-  font-weight: bold;
+  color: #fff;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -187,13 +184,16 @@ Array [
 .c0 {
   display: block;
   font-size: 0.875rem;
-  padding-left: 25px;
+  padding-left: 24px;
   position: relative;
-  margin: 15px 0 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: 16px;
 }
 
 .c0 input {
@@ -232,14 +232,12 @@ Array [
 <label
     className="c0"
     disabled={true}
-    style={Object {}}
   >
      
     Car
     <input
       disabled={true}
       name="vehicule3"
-      onChange={[Function]}
       type="checkbox"
       value="car"
     />
@@ -252,8 +250,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: white;
-  font-weight: bold;
+  color: #fff;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -263,13 +260,16 @@ Array [
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
-  padding-left: 25px;
+  padding-left: 24px;
   position: relative;
-  margin: 15px 0 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: 16px;
 }
 
 .c0 input {
@@ -289,7 +289,7 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #57666e;
   border-radius: 5px;
   display: inline-block;
@@ -311,13 +311,11 @@ Array [
 
 <label
     className="c0"
-    style={Object {}}
   >
      
     Bike
     <input
       name="vehicule4"
-      onChange={[Function]}
       type="checkbox"
       value="bike"
     />
