@@ -10,11 +10,11 @@ export default {
 export const normal = () => (
     <div
         style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
             alignItems: 'center',
+            display: 'flex',
+            flexWrap: 'wrap',
             height: '90vh',
+            justifyContent: 'space-between',
             width: '100%',
         }}
     >

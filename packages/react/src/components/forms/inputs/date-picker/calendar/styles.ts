@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-import ChevronDown from '../../../../../icons/chevron-down.svg';
-import ChevronLeft from '../../../../../icons/chevron-left.svg';
-import ChevronRight from '../../../../../icons/chevron-right.svg';
+import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
+import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
+import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
 
 export const ArrowLeft = styled(ChevronLeft)`
 	color: #57666e;
 	height: 12px;
 	width: 12px;
+
 	&:hover {
 		cursor: pointer;
 		opacity: 0.8;
@@ -18,6 +19,7 @@ export const ArrowRight = styled(ChevronRight)`
 	color: #57666e;
 	height: 12px;
 	width: 12px;
+
 	&:hover {
 		cursor: pointer;
 		opacity: 0.8;
@@ -31,14 +33,14 @@ export const ArrowDown = styled(ChevronDown)`
 `;
 
 export const CalendarContainer = styled.div`
-	background: white;
+	background: #fff;
 	border: 1px solid #d9dde2;
 	border-radius: 5px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
 	font-size: 5px;
 	height: 100%;
-	padding: 0.5rem 1rem;
+	padding: 8px 16px;
 	width: 100%;
 `;
 
@@ -58,7 +60,7 @@ export const CalendarGrid = styled.div`
 
 export const CalendarMonth = styled.div`
 	font-weight: 500;
-	padding: 0.5em 0.25em;
+	padding: 4px 2px;
 	text-align: center;
 	user-select: none;
 	word-spacing: 5px;
@@ -73,15 +75,10 @@ export const CalendarCell = styled.div`
 	user-select: none;
 `;
 
-interface CalendarDayProps {
-    index: number;
-}
-
 export const CalendarDay = styled(CalendarCell)`
-	${(props: CalendarDayProps) => props.index && null}
 	color: #000000;
-	font-weight: 600;
 	font-size: 2.25em;
+	font-weight: 600;
 `;
 
 interface CalendarDateProps {
@@ -92,14 +89,14 @@ interface CalendarDateProps {
 }
 
 export const CalendarDate = styled(CalendarCell)`
-	${(props: CalendarDateProps) => props.index && null}
 	border-radius: 200px;
-	color: ${props => props.inMonth ? `#000000` : `#ddd`};
+	color: ${(props: CalendarDateProps) => props.inMonth ? `#000000` : `#ddd`};
 	cursor: pointer;
 	font-size: 2.8em;
 	font-weight: ${props => props.inMonth ? 500 : 300};
   	grid-row: ${props => Math.floor(props.index / 7) + 2} / span 1;
 	transition: all .4s ease-out;
+
 	:hover {
 		background: #f1f2f2;
 	}
@@ -111,8 +108,7 @@ export const HighlightedCalendarDate = styled(CalendarDate)`
 `;
 
 export const TodayCalendarDate = styled(HighlightedCalendarDate)`
-	${(props: CalendarDateProps) => props.index && null}
-	background: white !important;
+	background: #fff !important;
 	color: #000000 !important;
 `;
 
@@ -127,8 +123,8 @@ export const CurrentDateContainer = styled.div`
 	box-sizing: border-box;
 	cursor: pointer;
 	font-size: 0.875rem;
-	margin: 0 5px;
-	padding 0.43em 0.6em;
+	margin: 0 4px;
+	padding 6px 8px;
 	position: relative;
 `;
 
@@ -137,13 +133,14 @@ export const MonthAndYear = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 4.0rem;
+
 	p {
-		margin: 0 1rem 0 0;
+		margin: 0 16px 0 0;
 	}
 `;
 
 export const DateList = styled.div`
-	background-color: white;
+	background-color: #fff;
 	border: 1px solid #d9dde2;
 	border-radius: 6px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -151,14 +148,16 @@ export const DateList = styled.div`
 	height: 200px;
 	left: -5px;
 	list-style: none;
-	margin: 0 5px;
+	margin: 0 4px;
 	overflow-y: auto;
 	padding: 0;
 	position: absolute;
 	text-align: left;
 	width: 100%;
+
 	li {
-		padding 0.2em 0.4em;
+		padding 4px 6px;
+
 		&:hover{
 			background: #d9dde2;
 			cursor: pointer;
@@ -167,14 +166,13 @@ export const DateList = styled.div`
 `;
 
 export const CalendarArrow = styled.div`
-	${(props: { position: string }) => props.position && null}
-	background-color: white;
+	background-color: #fff;
 	border-left: 1px solid #d9dde2;
 	border-top: 1px solid #d9dde2;
 	height: 15px;
 	position: absolute;
 	width: 15px;
-	${props => {
+	${(props: { position: string }) => {
     switch (props.position) {
         case 'bottomRight':
             return 'top:-8px;' + 'right: 79px;' + 'transform: rotate(45deg);';

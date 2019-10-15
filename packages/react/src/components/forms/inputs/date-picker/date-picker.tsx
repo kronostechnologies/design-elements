@@ -105,7 +105,7 @@ class Datepicker extends React.Component
               <Styled.DatePickerInput
                 type="text"
                 // @ts-ignore
-                value={date ? date : undefined}
+                value={date ? date : ''}
                 onChange={this.handleChange}
                 // @ts-ignore
                 onBlur={this.handleDateChange}
