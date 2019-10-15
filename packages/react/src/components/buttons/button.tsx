@@ -2,8 +2,7 @@ import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { AbstractButton } from './abstract-button';
 
-// @ts-ignore
-import equisoftTheme from '../../themes/equisoft';
+import { equisoftTheme } from '../../themes/equisoft';
 
 interface ButtonProps {
     /**
@@ -14,12 +13,12 @@ interface ButtonProps {
     label?: string;
     children?: ReactNode;
     disabled?: boolean;
+    theme?: Theme | {};
 
     onClick?(): void;
 }
 
-// @ts-ignore
-const primaryStyle = (theme) => `
+const primaryStyle = (theme: Theme) => `
   background-color: ${theme.main['secondary-4.1']};
   border-color: ${theme.main['secondary-4.1']};
   color: white;
@@ -39,8 +38,7 @@ const primaryStyle = (theme) => `
   }
 `;
 
-// @ts-ignore
-const secondaryStyle = (theme) => `
+const secondaryStyle = (theme: Theme) => `
   background-color: transparent;
   border-color: ${theme.main['secondary-4.1']};
   color: ${theme.main['secondary-4.1']};
@@ -62,8 +60,7 @@ const secondaryStyle = (theme) => `
   }
 `;
 
-// @ts-ignore
-const tertiaryStyle = (theme) => `
+const tertiaryStyle = (theme: Theme) => `
   background-color: transparent;
   border-color: transparent;
   color: ${theme.greys['light-grey']};
@@ -82,18 +79,22 @@ const tertiaryStyle = (theme) => `
 `;
 
 const StyledButton = styled(AbstractButton)((props: ButtonProps) => {
-    // @ts-ignore
-    const { theme } = props;
+    let { theme }: ButtonProps = props;
 
-    if (props.buttonType === 'secondary') {
-        // @ts-ignore
-        return secondaryStyle(theme);
-    } else if (props.buttonType === 'tertiary') {
-        // @ts-ignore
-        return tertiaryStyle(theme);
+    if (theme) {
+        if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+            theme = equisoftTheme;
+        }
+
+        if (props.buttonType === 'secondary') {
+            return secondaryStyle(theme as Theme);
+        } else if (props.buttonType === 'tertiary') {
+            return tertiaryStyle(theme as Theme);
+        }
+        return primaryStyle(theme as Theme);
     }
-    // @ts-ignore
-    return primaryStyle(theme);
+
+    return '';
 });
 
 export function Button({ children, onClick, ...props }: ButtonProps): ReactElement {

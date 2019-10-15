@@ -1,10 +1,13 @@
 import React, { ReactElement } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-// @ts-ignore
-import equisoftTheme from '../themes/equisoft';
-// @ts-ignore
-export function Theme({ children }): ReactElement {
+import { equisoftTheme } from '../../themes/equisoft';
+
+interface ThemeWrapperProps {
+    children: ReactElement;
+}
+
+export function ThemeWrapper({ children }: ThemeWrapperProps): ReactElement {
     return (
         <ThemeProvider theme={equisoftTheme}>
             {children}
