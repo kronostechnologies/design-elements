@@ -13,7 +13,7 @@ interface DatePickerProps {
     valid?: boolean;
     value?: Date;
     validationErrorMessage?: string;
-    onDateChanged?(date: Date | null, calendarOpen?: false): void;
+    onDateChanged?(date: Date | null, valid?: boolean): void;
 }
 
 class Datepicker extends React.Component
@@ -59,7 +59,7 @@ class Datepicker extends React.Component
 
         currentDate !== newDate &&
           this.setState({ date: newDate, calendarOpen: false }, () => {
-              typeof onDateChanged === 'function' && onDateChanged(this.state.date);
+              typeof onDateChanged === 'function' && onDateChanged(this.state.date, this.state.validity);
           });
     };
 
@@ -74,7 +74,7 @@ class Datepicker extends React.Component
     componentDidUpdate(
         prevProps: Readonly<{
             value?: Date;
-            onDateChanged?(date: null, calendarOpen?: false | undefined): void;
+            onDateChanged?(date: null, valid?: boolean): void;
         }>): void {
         let dateISO;
         let prevDateISO;
