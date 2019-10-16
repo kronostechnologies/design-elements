@@ -1,0 +1,907 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Date Picker Renders bottom left calendar 1`] = `
+.c3 {
+  color: #57666e;
+  height: 16px;
+  width: 16px;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:hover .form-group > div {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  background-color: #fff;
+  border: 1px solid #57666e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: unset;
+  position: relative;
+  width: 180px;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  border-left: 1px solid #57666e;
+  border-radius: 0 5px 5px 0;
+  color: #06c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.5rem;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0 8px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent !important;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  color: #333;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 8px 0 8px 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::-moz-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4:-ms-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c5 {
+  color: #a40c2e;
+  left: 0;
+  position: absolute !important;
+  top: 20px;
+}
+
+.c6 {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c7 {
+  background: transparent;
+  cursor: pointer;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  height: 32px;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+}
+
+.c8 {
+  border: none;
+  height: 256px;
+  left: -5px !important;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  z-index: -1000;
+  -webkit-transform: translate3d(-65px,43px,0px) !important;
+  -ms-transform: translate3d(-65px,43px,0px) !important;
+  transform: translate3d(-65px,43px,0px) !important;
+  width: 250px;
+}
+
+<div
+  className="c0"
+  data-valid={true}
+  disabled={false}
+>
+  <div
+    className="c1 form-group"
+  >
+    <div
+      className="c2"
+      disabled={false}
+    >
+      <svg
+        className="c3"
+        disabled={false}
+      />
+    </div>
+    <input
+      className="c4"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      pattern="([12]\\\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01]))"
+      placeholder="AAAA-MM-JJ"
+      required={false}
+      type="text"
+      value=""
+    />
+    <p
+      className="c5 error-message"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      Invalid date
+    </p>
+  </div>
+  <div
+    className="c6 dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="c7 btn btn-transparent"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="c8 dropdown-menu"
+      open={false}
+      position="bottomLeft"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Date Picker Renders bottom right calendar 1`] = `
+.c3 {
+  color: #57666e;
+  height: 16px;
+  width: 16px;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:hover .form-group > div {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  background-color: #fff;
+  border: 1px solid #57666e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: unset;
+  position: relative;
+  width: 180px;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  border-left: 1px solid #57666e;
+  border-radius: 0 5px 5px 0;
+  color: #06c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.5rem;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0 8px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent !important;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  color: #333;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 8px 0 8px 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::-moz-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4:-ms-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c5 {
+  color: #a40c2e;
+  left: 0;
+  position: absolute !important;
+  top: 20px;
+}
+
+.c6 {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c7 {
+  background: transparent;
+  cursor: pointer;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  height: 32px;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+}
+
+.c8 {
+  border: none;
+  height: 256px;
+  left: -5px !important;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  z-index: -1000;
+  -webkit-transform: translate3d(5px,43px,0px) !important;
+  -ms-transform: translate3d(5px,43px,0px) !important;
+  transform: translate3d(5px,43px,0px) !important;
+  width: 250px;
+}
+
+<div
+  className="c0"
+  data-valid={true}
+  disabled={false}
+>
+  <div
+    className="c1 form-group"
+  >
+    <div
+      className="c2"
+      disabled={false}
+    >
+      <svg
+        className="c3"
+        disabled={false}
+      />
+    </div>
+    <input
+      className="c4"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      pattern="([12]\\\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01]))"
+      placeholder="AAAA-MM-JJ"
+      required={false}
+      type="text"
+      value=""
+    />
+    <p
+      className="c5 error-message"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      Invalid date
+    </p>
+  </div>
+  <div
+    className="c6 dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="c7 btn btn-transparent"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="c8 dropdown-menu"
+      open={false}
+      position="bottomRight"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Date Picker Renders top left calendar 1`] = `
+.c3 {
+  color: #57666e;
+  height: 16px;
+  width: 16px;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:hover .form-group > div {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  background-color: #fff;
+  border: 1px solid #57666e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: unset;
+  position: relative;
+  width: 180px;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  border-left: 1px solid #57666e;
+  border-radius: 0 5px 5px 0;
+  color: #06c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.5rem;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0 8px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent !important;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  color: #333;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 8px 0 8px 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::-moz-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4:-ms-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c5 {
+  color: #a40c2e;
+  left: 0;
+  position: absolute !important;
+  top: 20px;
+}
+
+.c6 {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c7 {
+  background: transparent;
+  cursor: pointer;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  height: 32px;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+}
+
+.c8 {
+  border: none;
+  height: 256px;
+  left: -5px !important;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  z-index: -1000;
+  -webkit-transform: translate3d(-65px,-267px,0px) !important;
+  -ms-transform: translate3d(-65px,-267px,0px) !important;
+  transform: translate3d(-65px,-267px,0px) !important;
+  top: -10px;
+  width: 250px;
+}
+
+<div
+  className="c0"
+  data-valid={true}
+  disabled={false}
+>
+  <div
+    className="c1 form-group"
+  >
+    <div
+      className="c2"
+      disabled={false}
+    >
+      <svg
+        className="c3"
+        disabled={false}
+      />
+    </div>
+    <input
+      className="c4"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      pattern="([12]\\\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01]))"
+      placeholder="AAAA-MM-JJ"
+      required={false}
+      type="text"
+      value=""
+    />
+    <p
+      className="c5 error-message"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      Invalid date
+    </p>
+  </div>
+  <div
+    className="c6 dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="c7 btn btn-transparent"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="c8 dropdown-menu"
+      open={false}
+      position="topLeft"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Date Picker Renders top right calendar 1`] = `
+.c3 {
+  color: #57666e;
+  height: 16px;
+  width: 16px;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:hover .form-group > div {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  background-color: #fff;
+  border: 1px solid #57666e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: unset;
+  position: relative;
+  width: 180px;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  border-left: 1px solid #57666e;
+  border-radius: 0 5px 5px 0;
+  color: #06c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.5rem;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0 8px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent !important;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  color: #333;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 8px 0 8px 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::-moz-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4:-ms-input-placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4::placeholder {
+  color: #999;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c5 {
+  color: #a40c2e;
+  left: 0;
+  position: absolute !important;
+  top: 20px;
+}
+
+.c6 {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c7 {
+  background: transparent;
+  cursor: pointer;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  height: 32px;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+}
+
+.c8 {
+  border: none;
+  height: 256px;
+  left: -5px !important;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  z-index: -1000;
+  -webkit-transform: translate3d(5px,-267px,0px) !important;
+  -ms-transform: translate3d(5px,-267px,0px) !important;
+  transform: translate3d(5px,-267px,0px) !important;
+  top: -10px;
+  width: 250px;
+}
+
+<div
+  className="c0"
+  data-valid={true}
+  disabled={false}
+>
+  <div
+    className="c1 form-group"
+  >
+    <div
+      className="c2"
+      disabled={false}
+    >
+      <svg
+        className="c3"
+        disabled={false}
+      />
+    </div>
+    <input
+      className="c4"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      pattern="([12]\\\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01]))"
+      placeholder="AAAA-MM-JJ"
+      required={false}
+      type="text"
+      value=""
+    />
+    <p
+      className="c5 error-message"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      Invalid date
+    </p>
+  </div>
+  <div
+    className="c6 dropdown"
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      aria-label={null}
+      className="c7 btn btn-transparent"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle Dropdown
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+      className="c8 dropdown-menu"
+      open={false}
+      position="topRight"
+      role="menu"
+      tabIndex="-1"
+    />
+  </div>
+</div>
+`;

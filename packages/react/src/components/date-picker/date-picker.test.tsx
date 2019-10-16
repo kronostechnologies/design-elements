@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import DatePicker from '../src/components/forms/inputs/date-picker/date-picker';
+import DatePicker from './date-picker';
 
 const setup = (position: string) => {
     const tree = renderer.create(
