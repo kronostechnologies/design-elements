@@ -17,6 +17,7 @@ import { Chooser } from './components/choosers/chooser';
 import { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 import { Headband } from './components/headband/equisoft-default';
 import { Progress } from './components/progress/progress';
+import { Icon } from './components/icon/icon';
 
 // Results
 import { Legend } from './components/legend/legend';
@@ -40,4 +41,5 @@ export {
     Headband,
     Progress,
     Legend,
+    Icon,
 };
