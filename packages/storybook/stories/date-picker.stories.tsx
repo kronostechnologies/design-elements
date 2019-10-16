@@ -30,7 +30,7 @@ export const normal = () => (
                 justifyContent: 'space-between',
             }}
         >
-            <Datepicker position="bottomRight"/>
+            <Datepicker/>
             <Datepicker position="bottomLeft"/>
         </div>
         <div
@@ -46,22 +46,21 @@ export const normal = () => (
 );
 
 export const disabled = () => (
-    <Datepicker position="bottomRight" disabled/>
+    <Datepicker disabled/>
 );
 export const withValue = () => (
-    <div>
-        <Datepicker position="bottomRight" value={new Date('2002-07-14')} />
+    <div style={storiesStyle}>
+        <Datepicker value={new Date('2002-07-14')} />
     </div>
 );
 export const errorMessage = () => (
     <div style={storiesStyle}>
-        <Datepicker position="bottomRight" valid={false} validationErrorMessage="Invalid date format" />
+        <Datepicker valid={false} validationErrorMessage="Invalid date format" />
     </div>
 );
 export const withCallback = () => (
     <div style={storiesStyle}>
         <Datepicker
-            position="bottomRight"
             onDateChanged={(date: Date, valid: boolean) => {
                 console.log('Date: ' + date + ' Validity: ' + valid);
             }}
@@ -71,7 +70,7 @@ export const withCallback = () => (
 export const required = () => (
     <form style={{ display: 'flex' }}>
         <div style={storiesStyle}>
-            <Datepicker position="bottomRight" required max="2016-02-02" min="2002-02-02" />
+            <Datepicker required max="2016-02-02" min="2002-02-02" />
         </div>
         <div>
             <button type="submit">Submit</button>

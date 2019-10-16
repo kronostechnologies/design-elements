@@ -8,7 +8,7 @@ interface DatePickerProps {
     disabled?: boolean;
     max?: string;
     min?: string;
-    position: string;
+    position?: string;
     required?: boolean;
     valid?: boolean;
     value?: Date;
@@ -130,7 +130,7 @@ class Datepicker extends React.Component
                 disabled={disabledValue}
               />
               <Styled.DatePickerDropdownMenu
-                position={this.props.position}
+                position={this.props.position ? this.props.position : 'bottomRight'}
                 open={calendarOpen}
               >
                 {calendarOpen && (
@@ -138,7 +138,7 @@ class Datepicker extends React.Component
                     // @ts-ignore
                     date={date && new Date(date)}
                     onDateChanged={this.handleDateChange}
-                    position={this.props.position}
+                    position={this.props.position ? this.props.position : 'bottomRight'}
                     max={this.props.max ? new Date(this.props.max).getFullYear() : new Date().getFullYear()}
                     min={this.props.min ? new Date(this.props.min).getFullYear() : 1900}
                   />
