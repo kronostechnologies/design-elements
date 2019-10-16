@@ -92,7 +92,7 @@ export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	background: transparent;
 	cursor: ${(props: {disabled: boolean}) => props.disabled ? 'cursor: none' : 'pointer'};
 	filter: alpha(opacity=0);
-	height: 100%;
+	height: 32px;
 	opacity: 0;
 	position: relative;
 	width: 100%;

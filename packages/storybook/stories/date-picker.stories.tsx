@@ -7,24 +7,74 @@ export default {
     component: Datepicker,
 };
 
+const storiesStyle = {
+    display: 'flex',
+    height: '290px',
+    justifyContent: 'space-between',
+};
+
 export const normal = () => (
     <div
         style={{
-            alignItems: 'center',
             display: 'flex',
             flexWrap: 'wrap',
-            height: '90vh',
+            flexDirection: 'column',
+            height: '400px',
             justifyContent: 'space-between',
             width: '100%',
         }}
     >
-        <Datepicker position="bottomRight" value={new Date('2002-07-14')} />
-        <Datepicker position="bottomLeft" disabled/>
-        <Datepicker position="topRight" valid={false} validationErrorMessage="Format de date non valide" />
-        <Datepicker position="topLeft" />
-        <form>
-            <Datepicker position="topLeft" required max="2016-02-02" min="2002-02-02" />
-            <button type="submit">Submit</button>
-        </form>
+        <div
+            style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+            }}
+        >
+            <Datepicker position="bottomRight"/>
+            <Datepicker position="bottomLeft"/>
+        </div>
+        <div
+            style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+            }}
+        >
+            <Datepicker position="topRight"/>
+            <Datepicker position="topLeft"/>
+        </div>
     </div>
+);
+
+export const disabled = () => (
+    <Datepicker position="bottomRight" disabled/>
+);
+export const withValue = () => (
+    <div>
+        <Datepicker position="bottomRight" value={new Date('2002-07-14')} />
+    </div>
+);
+export const errorMessage = () => (
+    <div style={storiesStyle}>
+        <Datepicker position="bottomRight" valid={false} validationErrorMessage="Invalid date format" />
+    </div>
+);
+export const withCallback = () => (
+    <div style={storiesStyle}>
+        <Datepicker
+            position="bottomRight"
+            onDateChanged={(date: Date, valid: boolean) => {
+                console.log('Date: ' + date + ' Validity: ' + valid);
+            }}
+        />
+    </div>
+);
+export const required = () => (
+    <form style={{ display: 'flex' }}>
+        <div style={storiesStyle}>
+            <Datepicker position="bottomRight" required max="2016-02-02" min="2002-02-02" />
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 );
