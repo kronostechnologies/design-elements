@@ -2,33 +2,32 @@
 The Equisoft design system.
 
 ## Repository Structure
-This repository is setup as a multipackage repository.  While related, every package in the `/packages/` folder is a separate project, with its own documentation and releases.
+This project is setup as a monorepo containing multiple packages. While closely related, every package in the `/packages/` folder is stand-alone.
 
-Packages that are meant to be used in Equisoft applications are published to [Equisoft's NPM repository](https://www.npmjs.com/settings/equisoft/packages).
+Packages meant for use within Equisoft apps are currently being published to [Equisoft's NPM repository](https://www.npmjs.com/settings/equisoft/packages).
 
-Please visit each package's main page for installation and usage details.
+Please visit each package's README for installation and usage details.
+
 
 ## Main Packages
-To contribute to the repo or implement the components in your app, you will most likely have to use the following packages:
+To contribute to Design Elements or implement its components in your app, you will most likely have to get familiar with the following packages:
 
-- `/react/`: The [React](https://reactjs.org/) implementation of Design Elements.
-- `/web/` : Global CSS files to be applied in tandem with the Design Elements components.  In the future, this repo might also contain the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) implementation of Design Elements.
-- `/storybook/`: This package contains all of the [Storybook](https://storybook.js.org/) documentation for the React components of Design Elements.  This includes props documentation and components implementation examples.
+- `/react/`: [React](https://reactjs.org/) implementation of Design Elements. This is our first delivery target.
+- `/web/` : Complementary [Sass](https://sass-lang.com/) snipets to be used alongside Design Elements components.  On the long term, our goal is for this folder to contain the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) implementation of Design Elements.
+- `/storybook/`: This package contains the [Storybook](https://storybook.js.org/) documentation for Design Elements' React components. This includes props documentation and components implementation examples.
 
-## Contribution Guide
-The design system is an inner source project within Equisoft.  As such, we welcome and encourage contributions to the repository from product and service teams.
+
+## Contribution Guidelines
+Design Elements is an Equisoft inner source project. As such, we welcome and encourage contributions to it from both product and service teams.
 
 ### Types of contribution we welcome
-There are a couple of ways you can contribute to the project:
-
+Here are the ways you are invited to contribute:
 - **Developing a new component**
-
 - **Adding features to an existing component**
-
 - **Bug fixing**
 
 
-## About The Team
-This project is designed and maintained by the interdisciplinary [Product Design Team](https://confluence.equisoft.com/display/PRODUCTDESIGN) based in Equisoft's Quebec City and Montreal offices.
+## About the Team
+This project is designed, coded and maintained by the interdisciplinary [Product Design Team](https://confluence.equisoft.com/display/PRODUCTDESIGN) based in Equisoft's Quebec City and Montreal offices.
 
-We work in collaboration with the Tech Lead, Front-End ([Pierre-Luc Paquin](pierre-luc.paquin@equisoft.com)) to ensure that the project respects Equisoft's technological guidelines and integrates well with our suite of products.  Don't hesitate to contact him if you'd like to know if Design Elements is right for your project.
+Our work is supervised by [Pierre-Luc Paquin](mailto:pierre-luc.paquin@equisoft.com), Equisoft's Tech Lead, Front-End, to ensure that the project serves apps needs and aligns with Equisoft's global Front-End strategy. [Pierre-Luc](mailto:pierre-luc.paquin@equisoft.com) also acts as Product Owner for the design system initiative, so don't hesitate to [contact him](mailto:pierre-luc.paquin@equisoft.com) today to know what Design Elements can do for you. 👨‍⚕️‍

@@ -1,5 +1,5 @@
 # Design Elements React
-The React implementation of the Design Elements design system.
+React implementation of Design Elements, the Equisoft design system.
 
 ## Installation
 
