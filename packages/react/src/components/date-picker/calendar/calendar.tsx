@@ -1,4 +1,6 @@
-import React, { Component, Fragment, KeyboardEvent, ReactElement } from 'react';
+import React, { Component, KeyboardEvent, ReactElement } from 'react';
+
+import uuid from 'uuid/v4';
 import calendar, {
   CALENDAR_MONTHS,
   getDateISO,
@@ -13,19 +15,21 @@ import * as Styled from './styles';
 
 class Calendar extends Component<{
     date: Date,
-    position: string,
     max: number,
     min: number,
-    onDateChanged(date: Date | null): void}> {
+    position: string,
+    onDateChanged(date: Date | null): void,
+}> {
     state = {
         ...this.resolveStateFromProp(),
         today: new Date(),
         monthDropDownIsOpen: false,
         yearDropDownIsOpen: false,
     };
+
+    dayTimeout: NodeJS.Timer | undefined;
     pressureTimeout: NodeJS.Timeout | undefined;
     pressureTimer: NodeJS.Timeout | undefined;
-    dayTimeout: NodeJS.Timer | undefined;
 
     resolveStateFromDate(date: Date): { current: Date | null, month: number, year: number } {
         const isDateObject = isDate(date);
@@ -49,6 +53,7 @@ class Calendar extends Component<{
 
         return calendar(calendarMonth, calendarYear);
     };
+
     gotoDate = (date: Date) => (evt: KeyboardEvent<HTMLElement>) => {
         evt && evt.preventDefault();
         const { current } = this.state;
@@ -134,10 +139,9 @@ class Calendar extends Component<{
             months.push({ key: key, value: value });
         }
         const monthsList = months.map((mth, i) => (
-          <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={mth.key + mth.value}>{mth.value}</li>
+          <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={uuid()}>{mth.value}</li>
         ));
         const yearList = [];
-        // @ts-ignore
         for (let i = this.props.max; i >= this.props.min; i--) {
             yearList.push(i);
         }
@@ -173,8 +177,8 @@ class Calendar extends Component<{
                     <Styled.ArrowDown/>
                   </Styled.MonthAndYear>
                   <Styled.DateList style={this.state.yearDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
-                    {yearList.map((yearItem, i) => (
-                      <li key={yearItem + '' + i} onClick={() => this.changeYear(yearItem)}>{yearItem}</li>
+                    {yearList.map((yearItem) => (
+                      <li key={uuid()} onClick={() => this.changeYear(yearItem)}>{yearItem}</li>
                     ))}
                   </Styled.DateList>
                 </Styled.CurrentDateContainer>
@@ -252,20 +256,20 @@ class Calendar extends Component<{
             {this.renderMonthAndYear()}
 
             <Styled.CalendarGrid>
-              <Fragment>
+              <>
                 {Object.values(WEEK_DAYS).map((day, index) => {
                     const daylabel = day.toUpperCase();
                     return (
-                      <Styled.CalendarDay key={daylabel} index={index}>
+                      <Styled.CalendarDay key={uuid()} index={index}>
                         {daylabel}
                       </Styled.CalendarDay>
                     );
                 })}
-              </Fragment>
+              </>
 
-              <Fragment>
+              <>
                 {this.getCalendarDates().map(this.renderCalendarDate)}
-              </Fragment>
+              </>
             </Styled.CalendarGrid>
             <Styled.CalendarArrow position={this.props.position} />
           </Styled.CalendarContainer>

@@ -24,21 +24,11 @@ export const normal = () => (
             width: '100%',
         }}
     >
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-            }}
-        >
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Datepicker/>
             <Datepicker position="bottomLeft"/>
         </div>
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-            }}
-        >
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Datepicker position="topRight"/>
             <Datepicker position="topLeft"/>
         </div>

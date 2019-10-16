@@ -28,7 +28,6 @@ interface SelectProps {
     * @default You must select an option
     **/
     validationErrorMessage?: string;
-    /** Name attribute on select */
     name?: string;
     /** Only use to control input value externally */
     value?: string;

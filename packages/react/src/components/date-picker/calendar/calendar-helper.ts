@@ -27,10 +27,10 @@ export const CALENDAR_MONTHS = {
 };
 
 export const CALENDAR_WEEKS = 6;
-// @ts-ignore
-export const zeroPad = (value, length) => `${value}`.padStart(length, '0');
-// @ts-ignore
-export const isDate = date => {
+
+export const zeroPad = (value: number, length: number) => `${value}`.padStart(length, '0');
+
+export const isDate = (date: Date | undefined) => {
     const isDate = Object.prototype.toString.call(date) === '[object Date]';
     const isValidDate = date && !Number.isNaN(date.valueOf());
     return isDate && isValidDate;
@@ -62,8 +62,8 @@ export const getMonthDays = (month = THIS_MONTH, year = THIS_YEAR) => {
 export const getMonthFirstDay = (month = THIS_MONTH, year = THIS_YEAR) => {
     return +(new Date(`${year}-${zeroPad(month, 2)}-01`).getDay()) + 1;
 };
-// @ts-ignore
-export const isSameMonth = (date, basedate = new Date()) => {
+
+export const isSameMonth = (date: Date, basedate = new Date()) => {
     if (!(isDate(date) && isDate(basedate))) return false;
 
     const basedateMonth = +(basedate.getMonth()) + 1;
@@ -74,8 +74,8 @@ export const isSameMonth = (date, basedate = new Date()) => {
 
     return (+basedateMonth === +dateMonth) && (+basedateYear === +dateYear);
 };
-// @ts-ignore
-export const isSameDay = (date, basedate = new Date()) => {
+
+export const isSameDay = (date: Date, basedate = new Date()) => {
     if (!(isDate(date) && isDate(basedate))) return false;
 
     const basedateDate = basedate.getDate() + 1;
@@ -88,15 +88,15 @@ export const isSameDay = (date, basedate = new Date()) => {
 
     return (+basedateDate === +dateDate) && (+basedateMonth === +dateMonth) && (+basedateYear === +dateYear);
 };
-// @ts-ignore
-export const getPreviousMonth = (month, year) => {
+
+export const getPreviousMonth = (month: number, year: number) => {
     const prevMonth = (month > 1) ? month - 1 : 12;
     const prevMonthYear = (month > 1) ? year : year - 1;
 
     return { month: prevMonth, year: prevMonthYear };
 };
-// @ts-ignore
-export const getNextMonth = (month, year) => {
+
+export const getNextMonth = (month: number, year: number) => {
     const nextMonth = (month < 12) ? month + 1 : 1;
     const nextMonthYear = (month < 12) ? year : year + 1;
 
@@ -114,7 +114,7 @@ export default (month = THIS_MONTH, year = THIS_YEAR) => {
     const { month: nextMonth, year: nextMonthYear } = getNextMonth(month, year);
 
     const prevMonthDays = getMonthDays(prevMonth, prevMonthYear);
-	// @ts-ignore
+    // @ts-ignore
     const prevMonthDates = [...new Array(daysFromPrevMonth)].map((n, index) => {
         const day = index + 1 + (prevMonthDays - daysFromPrevMonth);
         return [ prevMonthYear, zeroPad(prevMonth, 2), zeroPad(day, 2) ];

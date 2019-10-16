@@ -4,6 +4,7 @@ import { Button } from './components/buttons/button';
 
 // Form Elements
 import { CheckboxGroup } from './components/checkbox-group/checkbox-group';
+import Datepicker from './components/date-picker/date-picker';
 import { OptionButton } from './components/option-button/option-button';
 import { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 import { SearchContextual } from './components/search/search-contextual';
@@ -24,9 +25,6 @@ import { Legend } from './components/legend/legend';
 
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
-
-// Dev
-import Datepicker from './components/forms/inputs/date-picker/date-picker';
 
 export {
     AddButton,
