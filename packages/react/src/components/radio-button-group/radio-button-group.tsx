@@ -65,7 +65,7 @@ const StyledLabel = styled.label `
     }
 `;
 
-interface RadioButtonProps {
+interface RadioButtonGroupProps {
     label?: string;
     /** Sets the name property of all buttons */
     groupName: string;
@@ -79,7 +79,8 @@ interface RadioButtonProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function RadioButton({ buttons, groupName, label, onChange, checkedValue }: RadioButtonProps): ReactElement  {
+export function RadioButtonGroup(
+    { buttons, groupName, label, onChange, checkedValue }: RadioButtonGroupProps): ReactElement  {
     return (
         <>
             {label && <Legend>{label}</Legend>}

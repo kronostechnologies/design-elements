@@ -1,11 +1,11 @@
 import React, { ChangeEvent } from 'react';
 
-import { RadioButton } from '@equisoft/design-elements-react';
+import { RadioButtonGroup } from '@equisoft/design-elements-react';
 import { forceReRender } from '@storybook/react';
 
 export default {
-    title: 'Radio Button',
-    component: RadioButton,
+    title: 'Radio Button Group',
+    component: RadioButtonGroup,
 };
 
 const Buttons = [
@@ -30,18 +30,18 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 };
 
 export const normal = () => (
-    <RadioButton label="Planets" groupName="planets" buttons={Buttons}/>
+    <RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons}/>
 );
 
 export const disabled = () => (
-    <RadioButton groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', disabled: true }]}/>
+    <RadioButtonGroup groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', disabled: true }]}/>
 );
 export const defaultChecked = () => (
-    <RadioButton groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]}/>
+    <RadioButtonGroup groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]}/>
 );
 export const controlled = () => {
     return (
-        <RadioButton
+        <RadioButtonGroup
             label="Colors"
             groupName="colors"
             checkedValue={checkedValue}
@@ -51,7 +51,7 @@ export const controlled = () => {
     );
 };
 export const callback = () => (
-    <RadioButton
+    <RadioButtonGroup
         groupName="cities"
         onChange={(event: ChangeEvent<HTMLInputElement>) => console.log(`Radio button ${event.target.value} is ${event.target.checked ? 'checked' : 'unchecked'}!`)}
         buttons={[

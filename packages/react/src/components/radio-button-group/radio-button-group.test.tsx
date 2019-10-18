@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { RadioButton } from './radio-button';
+import { RadioButtonGroup } from './radio-button-group';
 
 const Buttons = [
     { label: 'Earth', value: 'earth' },
@@ -15,7 +15,7 @@ describe('Radio button', () => {
     test('onChange callback is called when changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <RadioButton label="Planets" groupName="planets" buttons={Buttons} onChange={callback} />,
+            <RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons} onChange={callback} />,
         );
         wrapper.find('input').at(0).simulate('change');
         expect(callback).toHaveBeenCalledTimes(1);
@@ -23,7 +23,7 @@ describe('Radio button', () => {
 
     test('Can be used as a controlled input', () => {
         const wrapper = mount(
-            <RadioButton
+            <RadioButtonGroup
                 groupName="color"
                 checkedValue="red"
                 buttons={[{ label: 'Red', value: 'red' }]}
@@ -36,7 +36,7 @@ describe('Radio button', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <RadioButton label="Planets" groupName="planets" buttons={Buttons}/>,
+            <RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons}/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
