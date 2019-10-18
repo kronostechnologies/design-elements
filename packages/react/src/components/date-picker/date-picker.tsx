@@ -13,13 +13,13 @@ interface DatePickerProps {
     valid?: boolean;
     value?: Date;
     validationErrorMessage?: string;
-    onDateChanged?(date: Date | null, valid?: boolean): void;
+    onDateChanged?(date: Date | null | string, valid?: boolean): void;
 }
 
 class Datepicker extends React.Component
   <DatePickerProps, {}> {
     state = {
-        date: null,
+        date: '',
         calendarOpen: false,
         validity: this.props.valid !== undefined ? this.props.valid : true,
     };
@@ -49,7 +49,22 @@ class Datepicker extends React.Component
 
     toggleCalendar = () => this.setState({ calendarOpen: !this.state.calendarOpen });
 
-    handleChange = (evt: ChangeEvent) => evt.preventDefault();
+    handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+        evt.preventDefault();
+        this.setState({ date: evt.target.value });
+        this.setState({ validity: this.dateCheck(new Date(evt.target.value)) });
+    }
+
+    handleBlur = () => {
+        const { onDateChanged } = this.props;
+        let test;
+        if (this.state.date !== '') {
+            test = this.dateCheck(new Date(this.state.date));
+            if (test) test = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/.test(this.state.date);
+            this.setState({ validity: test });
+        }
+        typeof onDateChanged === 'function' && onDateChanged(this.state.date, test);
+    }
 
     handleDateChange = (date: Date) => {
         const { onDateChanged } = this.props;
@@ -105,10 +120,10 @@ class Datepicker extends React.Component
               <Styled.DatePickerInput
                 type="text"
                 // @ts-ignore
-                value={date ? date : ''}
                 onChange={this.handleChange}
+                value={date ? date : ''}
                 // @ts-ignore
-                onBlur={this.handleDateChange}
+                onBlur={this.handleBlur}
                 pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"
                 placeholder="AAAA-MM-JJ"
                 disabled={disabledValue}
@@ -126,6 +141,7 @@ class Datepicker extends React.Component
               toggle={this.toggleCalendar}
             >
               <Styled.DatePickerDropdownToggle
+                tabIndex={-1}
                 color="transparent"
                 disabled={disabledValue}
               />
