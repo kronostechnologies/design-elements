@@ -135,7 +135,7 @@ exports[`Date Picker Renders bottom left calendar 1`] = `
   cursor: pointer;
   -webkit-filter: alpha(opacity=0);
   filter: alpha(opacity=0);
-  height: 32px;
+  height: 100%;
   opacity: 0;
   position: relative;
   width: 100%;
@@ -150,9 +150,9 @@ exports[`Date Picker Renders bottom left calendar 1`] = `
   padding: 0;
   position: absolute;
   z-index: -1000;
-  -webkit-transform: translate3d(-65px,43px,0px) !important;
-  -ms-transform: translate3d(-65px,43px,0px) !important;
-  transform: translate3d(-65px,43px,0px) !important;
+  -webkit-transform: translate3d(-65px,68px,0px) !important;
+  -ms-transform: translate3d(-65px,68px,0px) !important;
+  transform: translate3d(-65px,68px,0px) !important;
   width: 250px;
 }
 
@@ -206,6 +206,7 @@ exports[`Date Picker Renders bottom left calendar 1`] = `
       className="c7 btn btn-transparent"
       disabled={false}
       onClick={[Function]}
+      tabIndex={-1}
       type="button"
     >
       <span
@@ -361,7 +362,7 @@ exports[`Date Picker Renders bottom right calendar 1`] = `
   cursor: pointer;
   -webkit-filter: alpha(opacity=0);
   filter: alpha(opacity=0);
-  height: 32px;
+  height: 100%;
   opacity: 0;
   position: relative;
   width: 100%;
@@ -376,9 +377,9 @@ exports[`Date Picker Renders bottom right calendar 1`] = `
   padding: 0;
   position: absolute;
   z-index: -1000;
-  -webkit-transform: translate3d(5px,43px,0px) !important;
-  -ms-transform: translate3d(5px,43px,0px) !important;
-  transform: translate3d(5px,43px,0px) !important;
+  -webkit-transform: translate3d(5px,68px,0px) !important;
+  -ms-transform: translate3d(5px,68px,0px) !important;
+  transform: translate3d(5px,68px,0px) !important;
   width: 250px;
 }
 
@@ -432,6 +433,7 @@ exports[`Date Picker Renders bottom right calendar 1`] = `
       className="c7 btn btn-transparent"
       disabled={false}
       onClick={[Function]}
+      tabIndex={-1}
       type="button"
     >
       <span
@@ -588,7 +590,7 @@ exports[`Date Picker Renders calendar with error message 1`] = `
   cursor: pointer;
   -webkit-filter: alpha(opacity=0);
   filter: alpha(opacity=0);
-  height: 32px;
+  height: 100%;
   opacity: 0;
   position: relative;
   width: 100%;
@@ -603,9 +605,9 @@ exports[`Date Picker Renders calendar with error message 1`] = `
   padding: 0;
   position: absolute;
   z-index: -1000;
-  -webkit-transform: translate3d(5px,43px,0px) !important;
-  -ms-transform: translate3d(5px,43px,0px) !important;
-  transform: translate3d(5px,43px,0px) !important;
+  -webkit-transform: translate3d(5px,68px,0px) !important;
+  -ms-transform: translate3d(5px,68px,0px) !important;
+  transform: translate3d(5px,68px,0px) !important;
   width: 250px;
 }
 
@@ -655,6 +657,7 @@ exports[`Date Picker Renders calendar with error message 1`] = `
       className="c7 btn btn-transparent"
       disabled={false}
       onClick={[Function]}
+      tabIndex={-1}
       type="button"
     >
       <span
@@ -810,7 +813,7 @@ exports[`Date Picker Renders top left calendar 1`] = `
   cursor: pointer;
   -webkit-filter: alpha(opacity=0);
   filter: alpha(opacity=0);
-  height: 32px;
+  height: 100%;
   opacity: 0;
   position: relative;
   width: 100%;
@@ -825,9 +828,9 @@ exports[`Date Picker Renders top left calendar 1`] = `
   padding: 0;
   position: absolute;
   z-index: -1000;
-  -webkit-transform: translate3d(-65px,-267px,0px) !important;
-  -ms-transform: translate3d(-65px,-267px,0px) !important;
-  transform: translate3d(-65px,-267px,0px) !important;
+  -webkit-transform: translate3d(-65px,-242px,0px) !important;
+  -ms-transform: translate3d(-65px,-242px,0px) !important;
+  transform: translate3d(-65px,-242px,0px) !important;
   top: -10px;
   width: 250px;
 }
@@ -882,6 +885,7 @@ exports[`Date Picker Renders top left calendar 1`] = `
       className="c7 btn btn-transparent"
       disabled={false}
       onClick={[Function]}
+      tabIndex={-1}
       type="button"
     >
       <span
@@ -1037,7 +1041,7 @@ exports[`Date Picker Renders top right calendar 1`] = `
   cursor: pointer;
   -webkit-filter: alpha(opacity=0);
   filter: alpha(opacity=0);
-  height: 32px;
+  height: 100%;
   opacity: 0;
   position: relative;
   width: 100%;
@@ -1052,9 +1056,9 @@ exports[`Date Picker Renders top right calendar 1`] = `
   padding: 0;
   position: absolute;
   z-index: -1000;
-  -webkit-transform: translate3d(5px,-267px,0px) !important;
-  -ms-transform: translate3d(5px,-267px,0px) !important;
-  transform: translate3d(5px,-267px,0px) !important;
+  -webkit-transform: translate3d(5px,-242px,0px) !important;
+  -ms-transform: translate3d(5px,-242px,0px) !important;
+  transform: translate3d(5px,-242px,0px) !important;
   top: -10px;
   width: 250px;
 }
@@ -1109,6 +1113,7 @@ exports[`Date Picker Renders top right calendar 1`] = `
       className="c7 btn btn-transparent"
       disabled={false}
       onClick={[Function]}
+      tabIndex={-1}
       type="button"
     >
       <span
