@@ -25,32 +25,33 @@ export const normal = () => (
         }}
     >
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Datepicker/>
-            <Datepicker position="bottomLeft"/>
+            <Datepicker label="Date"/>
+            <Datepicker label="Date" position="bottomLeft"/>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Datepicker position="topRight"/>
-            <Datepicker position="topLeft"/>
+            <Datepicker label="Date" position="topRight"/>
+            <Datepicker label="Date" position="topLeft"/>
         </div>
     </div>
 );
 
 export const disabled = () => (
-    <Datepicker disabled/>
+    <Datepicker label="Date" disabled/>
 );
 export const withValue = () => (
     <div style={storiesStyle}>
-        <Datepicker value={new Date('2002-07-14')} />
+        <Datepicker label="Date" value={new Date('2002-07-14')} />
     </div>
 );
 export const errorMessage = () => (
     <div style={storiesStyle}>
-        <Datepicker valid={false} validationErrorMessage="Invalid date format" />
+        <Datepicker label="Date" valid={false} validationErrorMessage="Invalid date format" />
     </div>
 );
 export const withCallback = () => (
     <div style={storiesStyle}>
         <Datepicker
+            label="Date"
             onDateChanged={(date: Date, valid: boolean) => {
                 console.log('Date: ' + date + ' Validity: ' + valid);
             }}
@@ -60,7 +61,7 @@ export const withCallback = () => (
 export const required = () => (
     <form style={{ display: 'flex' }}>
         <div style={storiesStyle}>
-            <Datepicker required max="2016-02-02" min="2002-02-02" />
+            <Datepicker label="Date" required max="2016-02-02" min="2002-02-02" />
         </div>
         <div>
             <button type="submit">Submit</button>

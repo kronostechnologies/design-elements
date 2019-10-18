@@ -6,6 +6,7 @@ import * as Styled from './styles';
 
 interface DatePickerProps {
     disabled?: boolean;
+    label?: string;
     max?: string;
     min?: string;
     position?: string;
@@ -113,6 +114,7 @@ class Datepicker extends React.Component
             disabled={disabledValue}
             data-valid={this.state.validity}
           >
+            {this.props.label && <Styled.Label>{this.props.label}</Styled.Label>}
             <Styled.DatePickerFormGroup disabled={disabledValue}>
               <Styled.DatePickerLabel disabled={disabledValue}>
                 <Styled.Calendar disabled={disabledValue} />

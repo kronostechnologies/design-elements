@@ -9,6 +9,13 @@ export const Calendar = styled(CalendarIcon)`
 	width: 16px;
 `;
 
+export const Label = styled.label`
+	display: block;
+	font-size: 0.75rem;
+	margin-bottom: 8px;
+	padding: 0;
+`;
+
 export const DatePickerContainer = styled.div`
 	position: relative;
 
@@ -92,7 +99,7 @@ export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	background: transparent;
 	cursor: ${(props: {disabled: boolean}) => props.disabled ? 'cursor: none' : 'pointer'};
 	filter: alpha(opacity=0);
-	height: 32px;
+	height: 100%;
 	opacity: 0;
 	position: relative;
 	width: 100%;
@@ -110,15 +117,15 @@ export const DatePickerDropdownMenu = styled(DropdownMenu)`
 	${props => {
     switch (props.position) {
     	case 'bottomRight':
-            return 'transform: translate3d(5px, 43px, 0px) !important;';
+            return 'transform: translate3d(5px, 68px, 0px) !important;';
         case 'bottomLeft':
-            return 'transform: translate3d(-65px, 43px, 0px) !important;';
+            return 'transform: translate3d(-65px, 68px, 0px) !important;';
         case 'topRight':
-            return 'transform: translate3d(5px, -267px, 0px) !important;' + 'top: -10px;';
+            return 'transform: translate3d(5px, -242px, 0px) !important;' + 'top: -10px;';
         case 'topLeft':
-            return 'transform:translate3d(-65px, -267px, 0px) !important;' + 'top: -10px;';
+            return 'transform:translate3d(-65px, -242px, 0px) !important;' + 'top: -10px;';
         default:
-            return 'transform: translate3d(5px, 43px, 0px) !important;';
+            return 'transform: translate3d(5px, 68px, 0px) !important;';
     }}};
 	width: 250px;
 `;
