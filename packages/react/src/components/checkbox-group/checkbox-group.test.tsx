@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { Checkbox } from './checkbox';
+import { CheckboxGroup } from './checkbox-group';
 
 const checkboxGroup = [
     { label: 'Boat', name: 'vehicule1', value: 'boat' },
@@ -16,7 +16,7 @@ describe('Checkbox', () => {
     test('onChange callback is called when checkbox is checked / unchecked', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <Checkbox
+            <CheckboxGroup
                 checkboxGroup={checkboxGroup}
                 onChange={callback}
             />,
@@ -27,7 +27,7 @@ describe('Checkbox', () => {
 
     test('Can be used as a controlled value', () => {
         const wrapper = mount(
-            <Checkbox
+            <CheckboxGroup
                 checkboxGroup={[{ label: 'Boat', name: 'vehicule1', value: 'boat' }]}
                 checkedValues={['boat']}
                 onChange={() => {}}
@@ -39,7 +39,7 @@ describe('Checkbox', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <Checkbox label="Vehicule" checkboxGroup={checkboxGroup} />,
+            <CheckboxGroup label="Vehicule" checkboxGroup={checkboxGroup} />,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

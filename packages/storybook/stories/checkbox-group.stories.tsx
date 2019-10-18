@@ -1,11 +1,11 @@
-import { Checkbox } from '@equisoft/design-elements-react';
+import { CheckboxGroup } from '@equisoft/design-elements-react';
 
 import { forceReRender } from '@storybook/react';
 import React, { ChangeEvent } from 'react';
 
 export default {
-    title: 'Checkboxes',
-    component: Checkbox,
+    title: 'Checkbox Group',
+    component: CheckboxGroup,
 };
 
 const Checkboxes = [
@@ -35,15 +35,15 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 };
 
 export const normal = () => (
-    <Checkbox label="Vehicule" checkboxGroup={Checkboxes} />
+    <CheckboxGroup label="Vehicule" checkboxGroup={Checkboxes} />
 );
 
 export const disabled = () => (
-    <Checkbox checkboxGroup={[{ label: 'Car', name: 'vehicule', value: 'car', disabled: true }]} />
+    <CheckboxGroup checkboxGroup={[{ label: 'Car', name: 'vehicule', value: 'car', disabled: true }]} />
 );
 export const controlled = () => {
     return (
-        <Checkbox
+        <CheckboxGroup
             label="Colors"
             checkboxGroup={CheckboxesControlled}
             checkedValues={checkedValues}
@@ -52,10 +52,10 @@ export const controlled = () => {
     );
 };
 export const defaultChecked = () => (
-    <Checkbox checkboxGroup={[{ label: 'Plane', name: 'vehicule', value: 'plane', defaultChecked: true }]} />
+    <CheckboxGroup checkboxGroup={[{ label: 'Plane', name: 'vehicule', value: 'plane', defaultChecked: true }]} />
 );
 export const callback = () => (
-    <Checkbox
+    <CheckboxGroup
         onChange={(event) => console.log(`Checkbox ${event.target.value} is ${event.target.checked ? 'checked' : 'unchecked'}!`)}
         checkboxGroup={[{ label: 'Bike', name: 'vehicule', value: 'bike', checked: false }]}
     />

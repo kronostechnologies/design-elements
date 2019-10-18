@@ -74,7 +74,7 @@ interface CheckboxProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function Checkbox({ label, checkedValues, checkboxGroup, onChange }: CheckboxProps): ReactElement  {
+export function CheckboxGroup({ label, checkedValues, checkboxGroup, onChange }: CheckboxProps): ReactElement  {
     return (
         <>
             {label && <Legend>{label}</Legend>}
