@@ -2,7 +2,6 @@ import React, { ChangeEvent, ReactElement } from 'react';
 
 import CheckMark from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
@@ -81,7 +80,7 @@ export function CheckboxGroup({ label, checkedValues, checkboxGroup, onChange }:
             {checkboxGroup.map((checkbox) => (
                 <StyledLabel
                     disabled={checkbox.disabled}
-                    key={uuid()}
+                    key={checkbox.name + '-' + checkbox.value}
                 > {checkbox.label}
                     <input
                         type="checkbox"
