@@ -214,7 +214,7 @@ class Calendar extends Component<{
 
         return (
           <DateComponent key={getDateISO(renderedDate)} {...props}>
-            {renderedDate.getDate()}
+            <p>{renderedDate.getDate()}</p>
           </DateComponent>
         );
     };

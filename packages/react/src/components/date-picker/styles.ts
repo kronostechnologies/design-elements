@@ -18,6 +18,8 @@ export const Label = styled.label`
 
 export const DatePickerContainer = styled.div`
 	position: relative;
+	height: 60px;
+	width: 180px;
 
 	&:hover .form-group > div {
 				${(props: {disabled: boolean}) => props.disabled ? null : 'background-color: #d9dde2'};
@@ -28,13 +30,12 @@ export const DatePickerContainer = styled.div`
 
 export const DatePickerFormGroup = styled(FormGroup)`
 	background-color: #fff;
-	border: ${(props: {disabled: boolean}) => props.disabled ? '1px solid #d9dde2' : '1px solid #57666e'};
 	border-radius: 5px;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row-reverse;
 	height: 32px;
-	justify-content: space-between;
+	justify-content: flex-end;
 	overflow: unset;
 	position: relative;
 	width: 180px;
@@ -43,7 +44,8 @@ export const DatePickerFormGroup = styled(FormGroup)`
 export const DatePickerLabel = styled.div`
 	align-items: center;
 	background: ${(props: {disabled: boolean}) => props.disabled ? '#f1f2f2' : 'transparent'};
-	border-left: ${props => props.disabled ? '1px solid #d9dde2' : '1px solid #57666e'};
+	border: ${props => props.disabled ? '1px solid #d9dde2' : '1px solid #57666e'};
+	border-left: none;
 	border-radius: 0 5px 5px 0;
 	color: #06c;
 	display: flex;
@@ -60,8 +62,16 @@ export const DatePickerLabel = styled.div`
 export const DatePickerInput = styled.input`
 	align-items: center;
 	background: ${(props: {disabled: boolean, focus: boolean, valid: boolean}) => props.disabled ? '#f1f2f2 !important' : 'transparent !important'};
-	border: ${props => props.focus ? '1px solid #0080a5' : 'none'};
-	${props => props.valid ? null : 'border: 1px solid #a40c2e !important'};
+	border: ${props => {
+    if (props.disabled) {
+        return '1px solid #d9dde2';
+    } else if (props.focus) {
+        return '1px solid #0080a5';
+    } else if (!props.valid) {
+        return '1px solid #a40c2e !important';
+    } else {
+        return '1px solid #57666e';
+    }}};
 	border-radius: 5px 0 0 5px;
 	box-shadow: none;
 	color: #333;
@@ -70,12 +80,12 @@ export const DatePickerInput = styled.input`
 	font-weight: 500;
 	letter-spacing: 1px;
 	padding: 8px 0 8px 8px;
-	text-align: center;
-	width: 100%
+	width: 110px;
 
 	::placeholder {
 		color: ${props => props.disabled ? '#9ca7b4' : '#999'};
 		font-size: 0.875rem;
+		font-weight: 400;
 		margin: 0;
 	}
 `;
@@ -88,11 +98,10 @@ export const ErrorMessage = styled.p`
 `;
 
 export const DatePickerDropdown = styled(Dropdown)`
-	height: 100%;
+	height: 60px;
 	left: 0;
 	position: absolute;
 	top: 0;
-	width: 100%;
 `;
 
 export const DatePickerDropdownToggle = styled(DropdownToggle)`
@@ -102,7 +111,7 @@ export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	height: 100%;
 	opacity: 0;
 	position: relative;
-	width: 100%;
+	width: 180px;
 `;
 
 export const DatePickerDropdownMenu = styled(DropdownMenu)`
@@ -113,19 +122,20 @@ export const DatePickerDropdownMenu = styled(DropdownMenu)`
 	outline: none;
 	padding: 0;
 	position: absolute;
+	z-index: 10;
 	${props => !props.open ? 'z-index: -1000' : null};
 	${props => {
     switch (props.position) {
     	case 'bottomRight':
-            return 'transform: translate3d(5px, 68px, 0px) !important;';
+            return 'transform: translate3d(5px, 64px, 0px) !important;';
         case 'bottomLeft':
-            return 'transform: translate3d(-65px, 68px, 0px) !important;';
+            return 'transform: translate3d(-92px, 64px, 0px) !important;';
         case 'topRight':
-            return 'transform: translate3d(5px, -242px, 0px) !important;' + 'top: -10px;';
+            return 'transform: translate3d(5px, -238px, 0px) !important;' + 'top: -10px;';
         case 'topLeft':
-            return 'transform:translate3d(-65px, -242px, 0px) !important;' + 'top: -10px;';
+            return 'transform:translate3d(-92px, -238px, 0px) !important;' + 'top: -10px;';
         default:
-            return 'transform: translate3d(5px, 68px, 0px) !important;';
+            return 'transform: translate3d(5px, 64px, 0px) !important;';
     }}};
 	width: 250px;
 `;

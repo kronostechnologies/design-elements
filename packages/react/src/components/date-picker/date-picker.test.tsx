@@ -6,7 +6,7 @@ import DatePicker from './date-picker';
 
 const setup = (position: string) => {
     const tree = renderer.create(
-        <DatePicker position={position} />,
+        <DatePicker label="Date" position={position} />,
     ).toJSON();
     return tree;
 };
@@ -15,7 +15,7 @@ describe('Date Picker', () => {
     test('onDateChanged callback is called when date is blurred', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <DatePicker onDateChanged={callback}/>,
+            <DatePicker label="Date" onDateChanged={callback}/>,
         );
         wrapper.find('input').simulate('blur');
         expect(callback).toHaveBeenCalledTimes(1);
@@ -38,7 +38,7 @@ describe('Date Picker', () => {
     });
     test('Renders calendar with error message', () => {
         const tree = renderer.create(
-            <DatePicker valid={false}/>,
+            <DatePicker label="Date" valid={false}/>,
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });

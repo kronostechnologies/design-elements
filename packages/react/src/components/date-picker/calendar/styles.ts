@@ -6,8 +6,8 @@ import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
 
 export const ArrowLeft = styled(ChevronLeft)`
 	color: #57666e;
-	height: 12px;
-	width: 12px;
+	height: 16px;
+	width: 16px;
 
 	&:hover {
 		cursor: pointer;
@@ -17,8 +17,8 @@ export const ArrowLeft = styled(ChevronLeft)`
 
 export const ArrowRight = styled(ChevronRight)`
 	color: #57666e;
-	height: 12px;
-	width: 12px;
+	height: 16px;
+	width: 16px;
 
 	&:hover {
 		cursor: pointer;
@@ -28,8 +28,8 @@ export const ArrowRight = styled(ChevronRight)`
 
 export const ArrowDown = styled(ChevronDown)`
 	color: #57666e
-	height: 12px;
-	width: 12px;
+	height: 16px;
+	width: 16px;
 `;
 
 export const CalendarContainer = styled.div`
@@ -39,8 +39,7 @@ export const CalendarContainer = styled.div`
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
 	font-size: 5px;
-	height: 100%;
-	padding: 8px 16px;
+	padding: 12px 16px 18px;
 	width: 100%;
 `;
 
@@ -53,6 +52,7 @@ export const CalendarHeader = styled.div`
 export const CalendarGrid = styled.div`
 	box-sizing: border-box;
 	display: grid;
+	grid-gap: 2.5px;
 	grid-template: repeat(7, auto) / repeat(7, auto);
 	height: 85%;
 	width: 100%;
@@ -67,17 +67,27 @@ export const CalendarMonth = styled.div`
 `;
 
 export const CalendarCell = styled.div`
+	align-items: center;
 	align-self: center;
-  	grid-column: ${(props: {index: number}) => (props.index % 7) + 1} / span 1;
+	display: flex;
+	grid-column: ${(props: {index: number}) => (props.index % 7) + 1} / span 1;
+	height: 24px;
+	justify-content: center;
 	letter-spacing: 0.1rem;
-	padding: 0.3rem 0;
+	margin: 0 auto;
 	text-align: center;
 	user-select: none;
+	width: 24px;
+
+	p {
+		display: block;
+		margin: 0;
+	}
 `;
 
 export const CalendarDay = styled(CalendarCell)`
 	color: #000000;
-	font-size: 2.25em;
+	font-size: 0.875rem;
 	font-weight: 600;
 `;
 
@@ -119,12 +129,12 @@ export const CurrentDate = styled.div`
 
 export const CurrentDateContainer = styled.div`
 	border: 1px solid #57666e;
-	border-radius: 6px;
+	border-radius: 4px;
 	box-sizing: border-box;
 	cursor: pointer;
 	font-size: 0.875rem;
 	margin: 0 4px;
-	padding 6px 8px;
+	padding 6px;
 	position: relative;
 `;
 
@@ -169,19 +179,19 @@ export const CalendarArrow = styled.div`
 	background-color: #fff;
 	border-left: 1px solid #d9dde2;
 	border-top: 1px solid #d9dde2;
-	height: 15px;
+	height: 10px;
 	position: absolute;
-	width: 15px;
+	width: 10px;
 	${(props: { position: string }) => {
     switch (props.position) {
         case 'bottomRight':
-            return 'top:-8px;' + 'right: 79px;' + 'transform: rotate(45deg);';
+            return 'top:-5px;' + 'right: 108px;' + 'transform: rotate(45deg);';
         case 'bottomLeft':
-            return 'top:-8px;' + 'right: 10px;' + 'transform: rotate(45deg);';
+            return 'top:-5px;' + 'right: 11px;' + 'transform: rotate(45deg);';
         case 'topRight':
-            return 'top:97%;' + 'right: 79px;' + 'transform: rotate(225deg);';
+            return 'top:249px;' + 'right: 108px;' + 'transform: rotate(225deg);';
         case 'topLeft':
-            return 'top:97%;' + 'right: 10px;' + 'transform: rotate(225deg);';
+            return 'top:249px;' + 'right: 11px;' + 'transform: rotate(225deg);';
         default:
             return 'translate3d(5px, 43px, 0px) !important';
     }}}

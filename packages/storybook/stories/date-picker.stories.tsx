@@ -9,8 +9,7 @@ export default {
 
 const storiesStyle = {
     display: 'flex',
-    height: '290px',
-    justifyContent: 'space-between',
+    height: '320px',
 };
 
 export const normal = () => (
@@ -52,6 +51,7 @@ export const withCallback = () => (
     <div style={storiesStyle}>
         <Datepicker
             label="Date"
+            min="2002-02-02"
             onDateChanged={(date: Date, valid: boolean) => {
                 console.log('Date: ' + date + ' Validity: ' + valid);
             }}
@@ -59,12 +59,8 @@ export const withCallback = () => (
     </div>
 );
 export const required = () => (
-    <form style={{ display: 'flex' }}>
-        <div style={storiesStyle}>
+    <form style={{ height: '310px' }}>
             <Datepicker label="Date" required max="2016-02-02" min="2002-02-02" />
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
+            <button style={{ marginTop: '20px' }} type="submit">Submit</button>
     </form>
 );
