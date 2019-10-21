@@ -9,10 +9,10 @@ export default {
 };
 
 const Buttons = [
-        { label: 'Earth', value: 'earth' },
-        { label: 'Mars', value: 'mars', defaultChecked: true },
-        { label: 'Pluto', value: 'pluto', disabled: true },
-        { label: 'Saturn', value: 'saturn' },
+    { label: 'Earth', value: 'earth' },
+    { label: 'Mars', value: 'mars', defaultChecked: true },
+    { label: 'Pluto', value: 'pluto', disabled: true },
+    { label: 'Saturn', value: 'saturn' },
 ];
 
 const ButtonsControlled = [

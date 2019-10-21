@@ -1,6 +1,5 @@
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
@@ -87,7 +86,7 @@ export function RadioButtonGroup(
             {buttons.map((button) => (
                 <StyledLabel
                     disabled={button.disabled}
-                    key={uuid()}
+                    key={groupName + '-' + button.value}
                 > {button.label}
                     <input
                         type="radio"
