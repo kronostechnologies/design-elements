@@ -51,7 +51,6 @@ export const withCallback = () => (
     <div style={storiesStyle}>
         <Datepicker
             label="Date"
-            min="2002-02-02"
             onDateChanged={(date: Date, valid: boolean) => {
                 console.log('Date: ' + date + ' Validity: ' + valid);
             }}

@@ -60,7 +60,9 @@ class Datepicker extends React.Component
         const { onDateChanged } = this.props;
         let test;
         if (this.state.date !== '') {
-            test = this.dateCheck(new Date(this.state.date));
+            const date = new Date(this.state.date);
+            date.setDate(date.getDate() + 1);
+            test = this.dateCheck(new Date(date));
             if (test) test = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/.test(this.state.date);
             this.setState({ validity: test });
         }
