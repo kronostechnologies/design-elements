@@ -1,6 +1,5 @@
 import React, { Component, KeyboardEvent, ReactElement } from 'react';
 
-import uuid from 'uuid/v4';
 import calendar, {
   CALENDAR_MONTHS,
   getDateISO,
@@ -139,7 +138,7 @@ class Calendar extends Component<{
             months.push({ key: key, value: value });
         }
         const monthsList = months.map((mth, i) => (
-          <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={uuid()}>{mth.value}</li>
+          <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={mth.value}>{mth.value}</li>
         ));
         const yearList = [];
         for (let i = this.props.max; i >= this.props.min; i--) {
@@ -178,7 +177,7 @@ class Calendar extends Component<{
                   </Styled.MonthAndYear>
                   <Styled.DateList style={this.state.yearDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
                     {yearList.map((yearItem) => (
-                      <li key={uuid()} onClick={() => this.changeYear(yearItem)}>{yearItem}</li>
+                      <li key={yearItem} onClick={() => this.changeYear(yearItem)}>{yearItem}</li>
                     ))}
                   </Styled.DateList>
                 </Styled.CurrentDateContainer>
@@ -260,7 +259,7 @@ class Calendar extends Component<{
                 {Object.values(WEEK_DAYS).map((day, index) => {
                     const daylabel = day.toUpperCase();
                     return (
-                      <Styled.CalendarDay key={uuid()} index={index}>
+                      <Styled.CalendarDay key={daylabel} index={index}>
                         {daylabel}
                       </Styled.CalendarDay>
                     );

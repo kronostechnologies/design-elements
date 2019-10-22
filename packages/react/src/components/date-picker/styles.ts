@@ -17,9 +17,9 @@ export const Label = styled.label`
 `;
 
 export const DatePickerContainer = styled.div`
-	position: relative;
 	height: 60px;
-	width: 180px;
+	position: relative;
+	width: 140px;
 
 	&:hover .form-group > div {
 				${(props: {disabled: boolean}) => props.disabled ? null : 'background-color: #d9dde2'};
@@ -38,7 +38,7 @@ export const DatePickerFormGroup = styled(FormGroup)`
 	justify-content: flex-end;
 	overflow: unset;
 	position: relative;
-	width: 180px;
+	width: 140px;
 `;
 
 export const DatePickerLabel = styled.div`
@@ -47,6 +47,7 @@ export const DatePickerLabel = styled.div`
 	border: ${props => props.disabled ? '1px solid #d9dde2' : '1px solid #57666e'};
 	border-left: none;
 	border-radius: 0 5px 5px 0;
+	box-sizing: border-box;
 	color: #06c;
 	display: flex;
 	font-size: 0.5rem;
@@ -54,9 +55,9 @@ export const DatePickerLabel = styled.div`
 	justify-content: center;
 	letter-spacing: 2px;
 	margin: 0;
-	padding: 0 8px;
 	position: relative;
 	text-transform: uppercase;
+	width: 32px;
 `;
 
 export const DatePickerInput = styled.input`
@@ -74,13 +75,15 @@ export const DatePickerInput = styled.input`
     }}};
 	border-radius: 5px 0 0 5px;
 	box-shadow: none;
+	box-sizing: border-box;
 	color: #333;
 	display: flex;
+	font-family: inherit;
 	font-size: 0.875rem;
 	font-weight: 500;
 	letter-spacing: 1px;
 	padding: 8px 0 8px 8px;
-	width: 110px;
+	width: 108px;
 
 	::placeholder {
 		color: ${props => props.disabled ? '#9ca7b4' : '#999'};
@@ -111,7 +114,7 @@ export const DatePickerDropdownToggle = styled(DropdownToggle)`
 	height: 100%;
 	opacity: 0;
 	position: relative;
-	width: 180px;
+	width: 140px;
 `;
 
 export const DatePickerDropdownMenu = styled(DropdownMenu)`
@@ -122,6 +125,7 @@ export const DatePickerDropdownMenu = styled(DropdownMenu)`
 	outline: none;
 	padding: 0;
 	position: absolute;
+	width: 250px;
 	z-index: 10;
 	${props => !props.open ? 'z-index: -1000' : null};
 	${props => {
@@ -129,13 +133,12 @@ export const DatePickerDropdownMenu = styled(DropdownMenu)`
     	case 'bottomRight':
             return 'transform: translate3d(5px, 64px, 0px) !important;';
         case 'bottomLeft':
-            return 'transform: translate3d(-92px, 64px, 0px) !important;';
+            return 'transform: translate3d(-105px, 64px, 0px) !important;';
         case 'topRight':
-            return 'transform: translate3d(5px, -238px, 0px) !important;' + 'top: -10px;';
+            return 'transform: translate3d(5px, -241px, 0px) !important;' + 'top: -10px;';
         case 'topLeft':
-            return 'transform:translate3d(-92px, -238px, 0px) !important;' + 'top: -10px;';
+            return 'transform:translate3d(-105px, -241px, 0px) !important;' + 'top: -10px;';
         default:
             return 'transform: translate3d(5px, 64px, 0px) !important;';
     }}};
-	width: 250px;
 `;

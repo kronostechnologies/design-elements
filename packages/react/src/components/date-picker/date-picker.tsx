@@ -27,10 +27,10 @@ class Datepicker extends React.Component
 
     dateCheck = (date: Date) => {
         let dateCurrent: string | number | undefined | Date = getDateISO(new Date(date));
+        if (dateCurrent === undefined) dateCurrent = new Date();
+
         const maxDate = this.props.max ? new Date(this.props.max) : new Date();
         const minDate = this.props.min ? new Date(this.props.min) : new Date();
-
-        if (dateCurrent === undefined) dateCurrent = new Date();
         maxDate.setDate(maxDate.getDate() + 1);
         minDate.setDate(minDate.getDate() + 1);
 

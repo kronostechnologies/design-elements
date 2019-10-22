@@ -39,7 +39,7 @@ export const CalendarContainer = styled.div`
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
 	font-size: 5px;
-	padding: 12px 16px 18px;
+	padding: 16px;
 	width: 100%;
 `;
 
@@ -185,13 +185,13 @@ export const CalendarArrow = styled.div`
 	${(props: { position: string }) => {
     switch (props.position) {
         case 'bottomRight':
-            return 'top:-5px;' + 'right: 108px;' + 'transform: rotate(45deg);';
+            return 'top:-5px;' + 'right: 121px;' + 'transform: rotate(45deg);';
         case 'bottomLeft':
             return 'top:-5px;' + 'right: 11px;' + 'transform: rotate(45deg);';
         case 'topRight':
-            return 'top:249px;' + 'right: 108px;' + 'transform: rotate(225deg);';
+            return 'top:252px;' + 'right: 121px;' + 'transform: rotate(225deg);';
         case 'topLeft':
-            return 'top:249px;' + 'right: 11px;' + 'transform: rotate(225deg);';
+            return 'top:252px;' + 'right: 11px;' + 'transform: rotate(225deg);';
         default:
             return 'translate3d(5px, 43px, 0px) !important';
     }}}

@@ -8,7 +8,6 @@ export default {
 };
 
 const storiesStyle = {
-    display: 'flex',
     height: '320px',
 };
 
@@ -58,7 +57,7 @@ export const withCallback = () => (
     </div>
 );
 export const required = () => (
-    <form style={{ height: '310px' }}>
+    <form style={storiesStyle}>
             <Datepicker label="Date" required max="2016-02-02" min="2002-02-02" />
             <button style={{ marginTop: '20px' }} type="submit">Submit</button>
     </form>
