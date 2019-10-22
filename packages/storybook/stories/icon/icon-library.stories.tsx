@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon } from '@equisoft/design-elements-react';
 
 export default {
-    title: 'Icon',
+    title: 'Icon/library',
     component: Icon,
 };
 
@@ -32,7 +32,11 @@ export const all = () => (
 );
 
 all.story = {
-    decorators: [(storyFn: () => React.ReactElement) => <div style={{ display: 'flex', justifyContent: 'space-around' }}>{storyFn()}</div>]
+    decorators: [(storyFn: () => React.ReactElement) => (
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+            {storyFn()}
+        </div>
+    )],
 };
 
 export const alertTriangle = () => (
@@ -110,4 +114,3 @@ export const trash = () => (
 export const x = () => (
     <Icon name="x" />
 );
-
