@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: See something that isn't right?  Report it!
-title: 'bug(BrokenComponent): This doesn''t work'
+title: "[BUG]: This doesn't work"
 labels: bug
 assignees: ''
 
