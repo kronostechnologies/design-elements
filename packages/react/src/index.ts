@@ -3,7 +3,7 @@ import { AddButton } from './components/buttons/add-button';
 import { Button } from './components/buttons/button';
 
 // Form Elements
-import { Checkbox } from './components/checkbox/checkbox';
+import { CheckboxGroup } from './components/checkbox-group/checkbox-group';
 import { OptionButton } from './components/option-button/option-button';
 import { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 import { SearchContextual } from './components/search/search-contextual';
@@ -28,7 +28,7 @@ export { ProgressCircle } from './components/progress-circle/progress-circle';
 export {
     AddButton,
     Button,
-    Checkbox,
+    CheckboxGroup,
     OptionButton,
     TextInput,
     SearchContextual,
