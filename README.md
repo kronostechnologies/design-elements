@@ -27,7 +27,9 @@ Here are the ways you are invited to contribute:
 - **Bug fixing**
 
 ### Templates
-We use issue and pull request templates to standardize the contribution process and improve communication in the repo.  When reporting a bug, requesting a feature or submitting a pull request, please take the time to fill all relevant fields.
+We use issue and pull request templates to standardize the contribution process and improve communication in the repo.
+
+When reporting a bug, requesting a feature or submitting a pull request, **please take the time to fill all relevant fields**.
 
 
 ## About the Team
