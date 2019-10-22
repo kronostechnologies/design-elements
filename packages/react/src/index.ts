@@ -5,6 +5,7 @@ import { Button } from './components/buttons/button';
 // Form Elements
 import { Checkbox } from './components/checkbox/checkbox';
 import { OptionButton } from './components/option-button/option-button';
+import { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 import { SearchContextual } from './components/search/search-contextual';
 import { SearchGlobal } from './components/search/search-global';
 import { Select } from './components/select/select';
@@ -40,4 +41,5 @@ export {
     Headband,
     Progress,
     Legend,
+    RadioButtonGroup,
 };
