@@ -11,7 +11,7 @@
 
 ## New component checklist
 - [ ] The new component and its tests are in the same component folder.
-- [ ] The component is unit tested and/or snapshot tested.
+- [ ] The component is unit tested and/or snapshot tested.
 - [ ] All of the relevant Storybook stories have been added to the `storybook` package.
-- [ ] There are no linting errors or warnings in the modified/new code.
+- [ ] There are no linting errors or warnings in the modified/new code.
 - [ ] The CircleCI build is successful.
