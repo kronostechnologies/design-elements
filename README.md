@@ -26,6 +26,9 @@ Here are the ways you are invited to contribute:
 - **Adding features to an existing component**
 - **Bug fixing**
 
+### Templates
+We use issue and pull request templates to standardize the contribution process and improve communication in the repo.  When reporting a bug, requesting a feature or submitting a pull request, please take the time to fill all relevant fields.
+
 
 ## About the Team
 This project is designed, coded and maintained by the interdisciplinary [Product Design Team](https://confluence.equisoft.com/display/PRODUCTDESIGN) based in Equisoft's Quebec City and Montreal offices.
