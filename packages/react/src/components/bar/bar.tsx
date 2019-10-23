@@ -1,13 +1,17 @@
 import React, { ReactText } from 'react';
 import styled from 'styled-components';
 
+import { equisoftTheme } from '../../themes/equisoft';
+
 const Container = styled.div`
   align-items: center;
   display: flex;
   margin-bottom: 1rem;
 
   p {
-    color: ${(props: { secondary: boolean }) => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};
+    color: ${(props: { secondary: boolean }) => {
+        return (props.secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black);
+    }};
     margin: 0;
     text-align: right;
     width: 8.5rem;
@@ -15,7 +19,7 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-  background-color: rgb(220, 220, 220);
+  background-color: ${equisoftTheme.greys.grey};
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
