@@ -20,27 +20,7 @@ import Trash from 'feather-icons/dist/icons/trash.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import Open from '../../icons/open.svg';
 
-type IconName =
-    | 'alertTriangle'
-    | 'arrowLeft'
-    | 'check'
-    | 'chevronDown'
-    | 'chevronUp'
-    | 'copy'
-    | 'edit'
-    | 'helpCircle'
-    | 'home'
-    | 'info'
-    | 'mail'
-    | 'mapPin'
-    | 'menu'
-    | 'moreHorizontal'
-    | 'open'
-    | 'phone'
-    | 'search'
-    | 'trash'
-    | 'x'
-;
+type IconName = keyof typeof iconMapping;
 
 interface IconProps {
     /** Name of the icon, has to be in IconName */
@@ -57,7 +37,7 @@ interface IconProps {
     color?: string;
 }
 
-const iconMapping: { [key in IconName]: any } = {
+const iconMapping = {
     alertTriangle: AlertTriangle,
     arrowLeft: ArrowLeft,
     check: Check,
@@ -77,7 +57,7 @@ const iconMapping: { [key in IconName]: any } = {
     search: Search,
     trash: Trash,
     x: X,
-};
+} as const;
 
 export function Icon({ name, size, ...props }: IconProps): ReactElement | null {
     const Component = iconMapping[name];
