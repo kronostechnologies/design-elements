@@ -13,89 +13,83 @@ interface ButtonProps {
     label?: string;
     children?: ReactNode;
     disabled?: boolean;
-    theme?: Theme | {};
 
     onClick?(): void;
 }
-
-const primaryStyle = (theme: Theme) => `
-  background-color: ${theme.main['secondary-4.1']};
-  border-color: ${theme.main['secondary-4.1']};
-  color: white;
-
-  &:hover {
-    background-color: ${theme.main['secondary-4.3']};
-    border-color: ${theme.main['secondary-4.3']};
-  }
-
-  &:disabled {
-    &,
-    &:focus,
-    &:hover {
-      background-color: ${theme.main['secondary-4.2']};
-      border-color: ${theme.main['secondary-4.2']};
-    }
-  }
-`;
-
-const secondaryStyle = (theme: Theme) => `
-  background-color: transparent;
-  border-color: ${theme.main['secondary-4.1']};
-  color: ${theme.main['secondary-4.1']};
-
-  &:hover {
-    background-color: ${theme.main['secondary-4.1']};
-    border-color: ${theme.main['secondary-4.1']};
-    color: white;
-  }
-
-  &:disabled {
-      &,
-      &:focus,
-      &:hover {
-        background-color: transparent;
-        border-color: ${theme.main['secondary-4.2']};
-        color: ${theme.main['secondary-4.2']};
+const StyledButton = styled(AbstractButton)`
+  ${(props: {theme?: Theme, buttonType: 'primary' | 'secondary' | 'tertiary'}) => {
+      let theme = props.theme;
+      if (theme) {
+          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+              theme = equisoftTheme;
+          }
+      } else {
+          theme = equisoftTheme;
       }
-  }
+      switch (props.buttonType) {
+          case 'primary':
+              return `
+                background-color: ${theme.main['secondary-4.1']};
+                border-color: ${theme.main['secondary-4.1']};
+                color: ${theme.greys.white};
+
+                &:hover {
+                  background-color: ${theme.main['secondary-4.3']};
+                  border-color: ${theme.main['secondary-4.3']};
+                }
+
+                &:disabled {
+                  &,
+                  &:focus,
+                  &:hover {
+                    background-color: ${theme.main['secondary-4.2']};
+                    border-color: ${theme.main['secondary-4.2']};
+                  }
+                }
+              `;
+          case 'secondary':
+              return `
+                background-color: transparent;
+                border-color: ${theme.main['secondary-4.1']};
+                color: ${theme.main['secondary-4.1']};
+
+                &:hover {
+                  background-color: ${theme.main['secondary-4.1']};
+                  border-color: ${theme.main['secondary-4.1']};
+                  color: ${theme.greys.white};
+                }
+
+                &:disabled {
+                    &,
+                    &:focus,
+                    &:hover {
+                      background-color: transparent;
+                      border-color: ${theme.main['secondary-4.2']};
+                      color: ${theme.main['secondary-4.2']};
+                    }
+                }
+            `;
+          case 'tertiary':
+              return `
+                background-color: transparent;
+                border-color: transparent;
+                color: ${theme.greys['light-grey']};
+
+                &:hover {
+                  color: ${theme.greys.black};
+                }
+
+                &:disabled {
+                  &,
+                  &:focus,
+                  &:hover {
+                    color: ${theme.greys['mid-grey']};
+                  }
+                }
+            `;
+      }
+  }}
 `;
-
-const tertiaryStyle = (theme: Theme) => `
-  background-color: transparent;
-  border-color: transparent;
-  color: ${theme.greys['light-grey']};
-
-  &:hover {
-    color: ${theme.greys.black};
-  }
-
-  &:disabled {
-    &,
-    &:focus,
-    &:hover {
-      color: ${theme.greys['mid-grey']};
-    }
-  }
-`;
-
-const StyledButton = styled(AbstractButton)((props: ButtonProps) => {
-    let { theme }: ButtonProps = props;
-
-    if (theme) {
-        if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-            theme = equisoftTheme;
-        }
-
-        if (props.buttonType === 'secondary') {
-            return secondaryStyle(theme as Theme);
-        } else if (props.buttonType === 'tertiary') {
-            return tertiaryStyle(theme as Theme);
-        }
-        return primaryStyle(theme as Theme);
-    }
-
-    return '';
-});
 
 export function Button({ children, onClick, ...props }: ButtonProps): ReactElement {
     function handleClick(): void {
@@ -104,7 +98,7 @@ export function Button({ children, onClick, ...props }: ButtonProps): ReactEleme
 
     const label: string = props.label || '';
     return (
-        <StyledButton onClick={handleClick} {...props}>
+        <StyledButton onClick={handleClick} buttonType={props.buttonType} {...props}>
             {children}{label}
         </StyledButton>
     );

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { equisoftTheme } from '../../themes/equisoft';
 import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
@@ -13,23 +14,27 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-  background: rgb(255, 255, 255);
-  border-color: rgb(217, 221, 226);
-  color: rgb(99, 114, 130);
-
-  &:hover {
-    background-color: rgb(217, 221, 226);
-    border-color: rgb(217, 221, 226);
-    color: rgb(99, 114, 130);
-  }
+    background: ${equisoftTheme.greys.white};
+    border-color: ${equisoftTheme.greys.grey};
+    color: ${equisoftTheme.greys['mid-grey']};
 
   &:disabled {
     &,
     &:focus,
     &:hover {
-      background-color: rgb(242, 243, 249);
-      border-color: rgb(217, 221, 226);
-      color: rgb(156, 167, 180);
+        background-color: ${equisoftTheme.greys.grey};
+        border-color: ${equisoftTheme.greys.grey};
+        color: ${equisoftTheme.greys['mid-grey']};
+    }
+
+    &:disabled {
+        &,
+        &:focus,
+        &:hover {
+            background-color: ${equisoftTheme.greys['light-grey']};
+            border-color: ${equisoftTheme.greys.grey};
+            color: ${equisoftTheme.greys['mid-grey']};
+        }
     }
   }
 `;
