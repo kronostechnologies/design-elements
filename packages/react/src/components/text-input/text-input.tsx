@@ -2,12 +2,24 @@ import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes,
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
+import { equisoftTheme } from '../../themes/equisoft';
 import { FieldContainer } from '../field-container/field-container';
-
 import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input`
-  ${inputsStyle}
+    ${(props: {theme?: Theme}) => {
+        let theme = props.theme;
+        if (theme) {
+            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+                theme = equisoftTheme;
+            }
+        } else {
+            theme = equisoftTheme;
+        }
+        return `
+            ${inputsStyle(theme)}
+        `;
+    }}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,

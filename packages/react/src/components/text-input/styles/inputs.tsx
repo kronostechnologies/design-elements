@@ -26,7 +26,7 @@ export const inputsStyle = (theme: Theme) => `
   }
 
   &:focus {
-    border-color: rgb(54, 71, 127);
+    border-color: ${theme.main['primary-1.1']};
   }
 
   label + & {
