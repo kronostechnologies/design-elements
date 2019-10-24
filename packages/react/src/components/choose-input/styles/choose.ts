@@ -1,51 +1,66 @@
-export const chooseStyle = `
-  align-items: center;
-  background: rgb(255, 255, 255);
-  border: 1px solid rgb(217, 221, 226);
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-  color: rgb(87, 102, 110);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 1rem;
-  transition: all 0.25s ease-in-out;
+import styled from 'styled-components';
+import { equisoftTheme } from '../../../themes/equisoft';
 
-  &:hover {
-    background: rgb(217, 221, 226);
-    border-color: rgb(217, 221, 226);
-  }
+export const Label = styled.label`
+    ${(props: {theme?: Theme}) => {
+        let theme = props.theme;
+        if (theme) {
+            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+                theme = equisoftTheme;
+            }
+        } else {
+            theme = equisoftTheme;
+        }
+        return (`
+          align-items: center;
+          background: ${theme.greys.white};
+          border: 1px solid ${theme.greys.grey};
+          border-radius: 0.5rem;
+          box-sizing: border-box;
+          color: ${theme.greys['dark-grey']};
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          min-height: 3rem;
+          padding: 1rem;
+          transition: all 0.25s ease-in-out;
 
-  input[type="checkbox"]:checked + &,
-  input[type="radio"]:checked + & {
-    background: rgb(0, 128, 165);
-    border-color: rgb(0, 128, 165);
-    color: rgb(255, 255, 255);
-  }
+          &:hover {
+            background: ${theme.greys.grey};
+            border-color: ${theme.greys.grey};
+          }
 
-  input[type="checkbox"]:focus + &,
-  input[type="radio"]:focus + & {
-    border-color: rgb(0, 128, 165);
-  }
+          input[type="checkbox"]:checked + &,
+          input[type="radio"]:checked + & {
+            background: ${theme.main['primary-1.1']};
+            border-color: ${theme.main['primary-1.1']};
+            color: ${theme.greys.white};
+          }
 
-  input[type="checkbox"]:disabled + &,
-  input[type="radio"]:disabled + & {
-    background: rgb(241, 242, 242);
-    border-color: rgb(217, 221, 226);
-    color: rgb(156, 167, 180);
-    cursor: auto;
-  }
+          input[type="checkbox"]:focus + &,
+          input[type="radio"]:focus + & {
+            border-color: ${theme.main['primary-1.1']};
+          }
 
-  b {
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
+          input[type="checkbox"]:disabled + &,
+          input[type="radio"]:disabled + & {
+            background: ${theme.greys['light-grey']};
+            border-color: ${theme.greys.grey};
+            color: ${theme.greys['mid-grey']};
+            cursor: auto;
+          }
 
-  /* For future support of SVG icons in button */
-  svg {
-    color: inherit;
-    height: 3rem;
-    width: 3rem;
-  }
+          b {
+            font-size: 1.5rem;
+            font-weight: 400;
+          }
+
+          /* For future support of SVG icons in button */
+          svg {
+            color: inherit;
+            height: 3rem;
+            width: 3rem;
+          }
+        `);
+    }}
 `;
