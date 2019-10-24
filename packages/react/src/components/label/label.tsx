@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react';
 
 import styled from 'styled-components';
+import { equisoftTheme } from '../../themes/equisoft';
 
 const StyledLabel = styled.label`
-  color: rgb(0, 0, 0);
+  color: ${equisoftTheme.greys.black};
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.0166em;
