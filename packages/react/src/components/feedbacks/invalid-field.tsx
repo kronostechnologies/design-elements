@@ -1,8 +1,10 @@
 import React from 'react';
+
 import styled from 'styled-components';
+import { equisoftTheme } from '../../themes/equisoft';
 
 const Field = styled.div`
-  color: rgb(164, 12, 46);
+  color: ${equisoftTheme.notifications['error-2.1']};
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.0166em;

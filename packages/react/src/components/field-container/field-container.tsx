@@ -1,22 +1,34 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { equisoftTheme } from '../../themes/equisoft';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 
 const StyledDiv = styled.div`
-  margin: 0 0 1.5rem;
+  ${(props: {theme?: Theme, valid: boolean}) => {
+      let theme = props.theme;
+      if (theme) {
+          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+              theme = equisoftTheme;
+          }
+      } else {
+          theme = equisoftTheme;
+      }
+      return (`
+      margin: 0 0 1.5rem;
 
-  input,
-  select,
-  textarea {
-    border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(217, 221, 226)' : 'rgb(164, 12, 46)')};
-  }
+      input,
+      select,
+      textarea {
+        border-color: ${props.valid ? theme.greys.grey : theme.notifications['error-2.1']};
+      }
 
-  &:focus {
-    border-color: ${(props: { valid: boolean }) => (props.valid ? 'rgb(0, 128, 165)' : 'rgb(164, 12, 46)')};
-  }
-`;
+      &:focus {
+        border-color: ${props.valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
+      }
+    `);
+  }}`;
 
 interface FieldContainerProps {
     children: ReactNode;
