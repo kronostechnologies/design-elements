@@ -1,5 +1,7 @@
 import React from 'react';
+
 import styled from 'styled-components';
+import { equisoftTheme } from '../../themes/equisoft';
 
 interface CircleProps {
     radius: number;
@@ -21,7 +23,7 @@ const Circle = ({ radius, stroke, percent, color }: CircleProps) => {
     return (
         <svg height={radius * 2} width={radius * 2}>
             <circle
-                stroke="#DCDCDC"
+                stroke={equisoftTheme.greys.grey}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeDasharray={`${circumference} ${circumference}`}

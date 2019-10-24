@@ -1,13 +1,14 @@
 import React, { ReactElement } from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
+import { equisoftTheme } from '../../themes/equisoft';
 import { Circle } from '../circle/circle';
 
 const RADIUS = 73;
 const STROKE = 8;
 
 function getColor(secondary: boolean | undefined): string {
-    return secondary ? 'rgb(87,102,110)' : 'rgb(0, 0, 0)';
+    return secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black;
 }
 
 interface ResultProps extends Pick<Props, 'secondary'> {
