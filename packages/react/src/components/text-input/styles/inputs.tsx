@@ -1,10 +1,10 @@
-export const inputsStyle = `
-  background: rgb(255, 255, 255);
-  border: 1px solid rgb(217, 221, 226);
+export const inputsStyle = (theme: Theme) => `
+  background: ${theme.greys.white};
+  border: 1px solid ${theme.greys.grey};
   border-radius: 0.25rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
+  color: ${theme.greys.black};
   font-family: inherit;
   font-size: calc(1rem - 2px);
   margin: 0;
@@ -12,16 +12,16 @@ export const inputsStyle = `
   padding: 0.5rem;
 
   &::placeholder {
-    color: rgb(99, 114, 130);
+    color: ${theme.greys['dark-grey']};
   }
 
   &:disabled {
-    background-color: rgb(242, 243, 249);
-    border-color: rgb(217, 221, 226);
+    background-color: ${theme.greys['light-grey']};
+    border-color: ${theme.greys.grey};
 
     &,
     &::placeholder {
-      color: rgb(156, 167, 180);
+      color: ${theme.greys['mid-grey']};
     }
   }
 

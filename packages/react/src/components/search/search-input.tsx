@@ -8,6 +8,7 @@ import XIcon from 'feather-icons/dist/icons/x.svg';
 import { SearchButton } from '../buttons/search-button';
 import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 
+import { equisoftTheme } from '../../themes/equisoft';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
 
@@ -16,7 +17,7 @@ const SearchWrapper = styled.div`
 
   label {
     bottom: 0.5rem;
-    color: rgb(99, 114, 130);
+    color: ${equisoftTheme.greys['dark-grey']};
     display: inline-block;
     height: 1rem;
     left: 0.5rem;
@@ -34,33 +35,45 @@ const InnerWrapper = styled.div`
 
 type IcoSearchProps = Pick<SearchInputProps, 'disabled'>;
 const IcoSearch = styled(SearchIcon)`
-  color: ${(props: IcoSearchProps) => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
+  color: ${(props: IcoSearchProps) => (props.disabled ? equisoftTheme.greys['mid-grey'] : equisoftTheme.greys['dark-grey'])};
   height: 1rem;
   width: 1rem;
 `;
 
 const IcoReset = styled(XIcon)`
-  color: black;
+  color: ${equisoftTheme.greys.black};
   height: 0.75rem;
   width: 0.75rem;
 `;
 
 const Input = styled.input`
-  ${inputsStyle} /* Must be the first rule */
-  border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')}; /* stylelint-disable-line order/properties-alphabetical-order */
-  line-height: 1;
-  padding: 0.5rem 1.75rem 0.5rem 2rem;
+  ${(props: {theme?: Theme, hasButton?: boolean}) => {
+      let theme = props.theme;
+      if (theme) {
+          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+              theme = equisoftTheme;
+          }
+      } else {
+          theme = equisoftTheme;
+      }
+      return `
+      ${inputsStyle(theme)} /* Must be the first rule */
+      border-radius: ${props.hasButton && '0.25rem 0 0 0.25rem'};
+      line-height: 1;
+      padding: 0.5rem 1.75rem 0.5rem 2rem;
 
-  label + & {
-    margin-top: 0;
-  }
+      label + & {
+        margin-top: 0;
+      }
 
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        display: none;
+      }
+    `;
+  }}
 `;
 
 const Reset = styled.button`
