@@ -2,16 +2,29 @@ import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
+import { equisoftTheme } from '../../themes/equisoft';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
 const StyledTextArea = styled.textarea`
-  ${inputsStyle} /* Must be the first rule */
-  min-height: 6.5rem; /* stylelint-disable-line order/properties-alphabetical-order */
-  min-width: 100%;
-  outline: none;
-  overflow: auto;
-  resize: vertical;
+    ${(props: {theme?: Theme}) => {
+        let theme = props.theme;
+        if (theme) {
+            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+                theme = equisoftTheme;
+            }
+        } else {
+            theme = equisoftTheme;
+        }
+        return `
+            ${inputsStyle(theme)}
+            min-height: 6.5rem;
+            min-width: 100%;
+            outline: none;
+            overflow: auto;
+            resize: vertical;
+        `;
+    }}
 `;
 
 export interface TextAreaProps {
