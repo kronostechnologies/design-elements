@@ -4,7 +4,7 @@ import Enso from '../../icons/enso.svg';
 import { equisoftTheme } from '../../themes/equisoft';
 
 const EnsoSpinner = styled(Enso)`
-  ${(props: {theme?: Theme, buttonType: 'primary' | 'secondary' | 'tertiary'}) => {
+  ${(props: {theme?: Theme}) => {
       let theme = props.theme;
       if (theme) {
           if (Object.entries(theme).length === 0 && theme.constructor === Object) {
