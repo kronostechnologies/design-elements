@@ -9,12 +9,12 @@ const legendItems = [
     {
         name: 'Equisoft Peers',
         description: 'Private Equisoft data',
-        color: '#000014',
+        color: '#012639',
     },
     {
         name: 'General Peers',
         description: 'Publicly accessible data',
-        color: '#304E63',
+        color: '#094C6C',
     },
 ];
 

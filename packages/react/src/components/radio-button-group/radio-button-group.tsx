@@ -19,7 +19,7 @@ const StyledLabel = styled.label `
         } else {
             theme = equisoftTheme;
         }
-        return (`
+        return `
         ${props.disabled ? '' : 'cursor: pointer;'};
         display: block;
         font-size: 0.875rem;
@@ -74,7 +74,7 @@ const StyledLabel = styled.label `
         &:hover .radioInput {
             border: 1px solid ${props.disabled ? theme.greys.grey : theme.main['primary-1.1']};
         }
-        `);
+        `;
     }}
 `;
 

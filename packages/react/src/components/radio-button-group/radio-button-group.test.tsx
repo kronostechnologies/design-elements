@@ -36,11 +36,7 @@ describe('Radio button', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <RadioButtonGroup
-                label="Planets"
-                groupName="planets"
-                buttons={Buttons}
-            />,
+            <RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons} />,
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });

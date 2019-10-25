@@ -15,7 +15,7 @@ const StyledDiv = styled.div`
       } else {
           theme = equisoftTheme;
       }
-      return (`
+      return `
       margin: 0 0 1.5rem;
 
       input,
@@ -27,7 +27,7 @@ const StyledDiv = styled.div`
       &:focus {
         border-color: ${props.valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
       }
-    `);
+    `;
   }}`;
 
 interface FieldContainerProps {

@@ -11,7 +11,7 @@ export const Label = styled.label`
         } else {
             theme = equisoftTheme;
         }
-        return (`
+        return `
           align-items: center;
           background: ${theme.greys.white};
           border: 1px solid ${theme.greys.grey};
@@ -61,6 +61,6 @@ export const Label = styled.label`
             height: 3rem;
             width: 3rem;
           }
-        `);
+        `;
     }}
 `;
