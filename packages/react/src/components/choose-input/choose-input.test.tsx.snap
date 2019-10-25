@@ -26,11 +26,11 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgb(255,255,255);
-  border: 1px solid rgb(217,221,226);
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: rgb(87,102,110);
+  color: #57666E;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -47,27 +47,27 @@ Array [
 }
 
 .c0:hover {
-  background: rgb(217,221,226);
-  border-color: rgb(217,221,226);
+  background: #D9DDE2;
+  border-color: #D9DDE2;
 }
 
 input[type="checkbox"]:checked + .c0,
 input[type="radio"]:checked + .c0 {
-  background: rgb(0,128,165);
-  border-color: rgb(0,128,165);
-  color: rgb(255,255,255);
+  background: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
 }
 
 input[type="checkbox"]:focus + .c0,
 input[type="radio"]:focus + .c0 {
-  border-color: rgb(0,128,165);
+  border-color: #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c0,
 input[type="radio"]:disabled + .c0 {
-  background: rgb(241,242,242);
-  border-color: rgb(217,221,226);
-  color: rgb(156,167,180);
+  background: #F1F2F2;
+  border-color: #D9DDE2;
+  color: #9CA7B4;
   cursor: auto;
 }
 

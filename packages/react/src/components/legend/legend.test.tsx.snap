@@ -22,7 +22,7 @@ exports[`Legend Matches the snapshot 1`] = `
 }
 
 .c1::before {
-  color: rgb(101,226,255);
+  color: #0080A5;
   content: '•';
   font-size: 2.6em;
   font-weight: 600;
@@ -79,7 +79,7 @@ exports[`Legend Matches the snapshot 1`] = `
 }
 
 .c2 {
-  color: rgb(87,102,110);
+  color: #57666E;
   font-size: 0.75rem;
 }
 

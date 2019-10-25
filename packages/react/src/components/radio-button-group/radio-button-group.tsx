@@ -20,7 +20,7 @@ const StyledLabel = styled.label `
             theme = equisoftTheme;
         }
         return (`
-        ${props.disabled ? null : 'cursor: pointer;'};
+        ${props.disabled ? '' : 'cursor: pointer;'};
         display: block;
         font-size: 0.875rem;
         padding-left: 24px;

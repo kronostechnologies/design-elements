@@ -14,14 +14,14 @@ exports[`ProgressBar Has secondary styles 1`] = `
 }
 
 .c1 p {
-  color: rgb(87,102,110);
+  color: #57666E;
   margin: 0;
   text-align: right;
   width: 8.5rem;
 }
 
 .c2 {
-  background-color: rgb(220,220,220);
+  background-color: #D9DDE2;
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
@@ -35,7 +35,7 @@ exports[`ProgressBar Has secondary styles 1`] = `
 }
 
 .c0 {
-  color: rgb(87,102,110);
+  color: #57666E;
   font-size: 0.875rem;
 }
 
@@ -77,14 +77,14 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 }
 
 .c1 p {
-  color: rgb(0,0,0);
+  color: #000000;
   margin: 0;
   text-align: right;
   width: 8.5rem;
 }
 
 .c2 {
-  background-color: rgb(220,220,220);
+  background-color: #D9DDE2;
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
@@ -98,7 +98,7 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 }
 
 .c0 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.875rem;
 }
 

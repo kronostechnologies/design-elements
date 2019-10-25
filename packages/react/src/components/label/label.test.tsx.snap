@@ -2,7 +2,7 @@
 
 exports[`Label Matches the snapshot 1`] = `
 .c0 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;

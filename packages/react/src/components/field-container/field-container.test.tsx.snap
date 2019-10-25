@@ -2,7 +2,7 @@
 
 exports[`Field Container Invalid field snapshot 1`] = `
 .c2 {
-  color: rgb(164,12,46);
+  color: #A40C2E;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -14,7 +14,7 @@ exports[`Field Container Invalid field snapshot 1`] = `
 }
 
 .c1 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -36,11 +36,11 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: rgb(164,12,46);
+  border-color: #A40C2E;
 }
 
 .c0:focus {
-  border-color: rgb(164,12,46);
+  border-color: #A40C2E;
 }
 
 <div
@@ -66,7 +66,7 @@ input + .c1 {
 
 exports[`Field Container Valid field snapshot 1`] = `
 .c1 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -88,11 +88,11 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: rgb(217,221,226);
+  border-color: #D9DDE2;
 }
 
 .c0:focus {
-  border-color: rgb(0,128,165);
+  border-color: #0080A5;
 }
 
 <div

@@ -14,7 +14,7 @@ Array [
     Vehicule
   </legend>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -36,12 +36,28 @@ Array [
   margin-top: 16px;
 }
 
+<<<<<<< HEAD
+=======
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .box {
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
+}
+
+.c0 input:checked + .box .c1 {
+  opacity: 1;
+}
+
+>>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #fff;
-  border: 1px solid #57666e;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -53,7 +69,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #0080a5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input {
@@ -92,7 +108,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -114,12 +130,28 @@ Array [
   margin-top: 16px;
 }
 
+<<<<<<< HEAD
+=======
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .box {
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
+}
+
+.c0 input:checked + .box .c1 {
+  opacity: 1;
+}
+
+>>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #fff;
-  border: 1px solid #57666e;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -131,7 +163,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #0080a5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input {
@@ -171,7 +203,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -197,12 +229,28 @@ Array [
   margin-top: 16px;
 }
 
+<<<<<<< HEAD
+=======
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .box {
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
+}
+
+.c0 input:checked + .box .c1 {
+  opacity: 1;
+}
+
+>>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #f1f2f2;
-  border: 1px solid #d9dde2;
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -214,7 +262,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #d9dde2;
+  border: 1px solid #D9DDE2;
 }
 
 .c0 input {
@@ -251,7 +299,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -273,12 +321,28 @@ Array [
   margin-top: 16px;
 }
 
+<<<<<<< HEAD
+=======
+.c0 input {
+  display: none;
+}
+
+.c0 input:checked + .box {
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
+}
+
+.c0 input:checked + .box .c1 {
+  opacity: 1;
+}
+
+>>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #fff;
-  border: 1px solid #57666e;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -290,7 +354,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #0080a5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input {

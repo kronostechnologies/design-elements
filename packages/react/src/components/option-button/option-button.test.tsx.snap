@@ -11,10 +11,10 @@ exports[`Option Button Is checked 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #d9dde2;
+  background-color: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 8px;
-  color: #637282;
+  color: #57666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,9 +28,9 @@ exports[`Option Button Is checked 1`] = `
 }
 
 .c0:checked + label {
-  background-color: #006296;
-  border-color: #006296;
-  color: #fff;
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
 }
 
 <div>
@@ -58,10 +58,10 @@ exports[`Option Button Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #d9dde2;
+  background-color: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 8px;
-  color: #637282;
+  color: #57666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -75,9 +75,9 @@ exports[`Option Button Matches the snapshot 1`] = `
 }
 
 .c0:checked + label {
-  background-color: #006296;
-  border-color: #006296;
-  color: #fff;
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
 }
 
 <div>

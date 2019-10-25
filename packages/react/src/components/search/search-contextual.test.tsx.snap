@@ -13,7 +13,7 @@ exports[`Search Contextual Matches the snapshot when disabled 1`] = `
 }
 
 .c2 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -37,7 +37,7 @@ input + .c2 {
 
 .c0 label {
   bottom: 0.5rem;
-  color: rgb(99,114,130);
+  color: #57666E;
   display: inline-block;
   height: 1rem;
   left: 0.5rem;
@@ -55,76 +55,77 @@ input + .c2 {
 }
 
 .c3 {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
   height: 1rem;
   width: 1rem;
 }
 
 .c7 {
-  color: black;
+  color: #000000;
   height: 0.75rem;
   width: 0.75rem;
 }
 
 .c5 {
-  background: rgb(255,255,255);
-  border: 1px solid rgb(217,221,226);
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: rgb(0,0,0);
+  color: #000000;
   font-family: inherit;
   font-size: calc(1rem - 2px);
   margin: 0;
   outline: none;
   padding: 0.5rem;
+  border-radius: undefined;
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 }
 
 .c5::-webkit-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5::-moz-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5:-ms-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5::placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5:disabled {
-  background-color: rgb(242,243,249);
-  border-color: rgb(217,221,226);
+  background-color: #F1F2F2;
+  border-color: #D9DDE2;
 }
 
 .c5:disabled,
 .c5:disabled::-webkit-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:disabled,
 .c5:disabled::-moz-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:disabled,
 .c5:disabled:-ms-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:disabled,
 .c5:disabled::placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:focus {
-  border-color: rgb(54,71,127);
+  border-color: #0080A5;
 }
 
 label + .c5 {
@@ -227,7 +228,7 @@ exports[`Search Contextual Matches the snapshot when enabled 1`] = `
 }
 
 .c2 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -251,7 +252,7 @@ input + .c2 {
 
 .c0 label {
   bottom: 0.5rem;
-  color: rgb(99,114,130);
+  color: #57666E;
   display: inline-block;
   height: 1rem;
   left: 0.5rem;
@@ -269,76 +270,77 @@ input + .c2 {
 }
 
 .c3 {
-  color: rgb(99,114,130);
+  color: #57666E;
   height: 1rem;
   width: 1rem;
 }
 
 .c7 {
-  color: black;
+  color: #000000;
   height: 0.75rem;
   width: 0.75rem;
 }
 
 .c5 {
-  background: rgb(255,255,255);
-  border: 1px solid rgb(217,221,226);
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: rgb(0,0,0);
+  color: #000000;
   font-family: inherit;
   font-size: calc(1rem - 2px);
   margin: 0;
   outline: none;
   padding: 0.5rem;
+  border-radius: undefined;
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 }
 
 .c5::-webkit-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5::-moz-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5:-ms-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5::placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c5:disabled {
-  background-color: rgb(242,243,249);
-  border-color: rgb(217,221,226);
+  background-color: #F1F2F2;
+  border-color: #D9DDE2;
 }
 
 .c5:disabled,
 .c5:disabled::-webkit-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:disabled,
 .c5:disabled::-moz-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:disabled,
 .c5:disabled:-ms-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:disabled,
 .c5:disabled::placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c5:focus {
-  border-color: rgb(54,71,127);
+  border-color: #0080A5;
 }
 
 label + .c5 {

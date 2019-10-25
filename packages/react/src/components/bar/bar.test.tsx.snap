@@ -14,14 +14,14 @@ exports[`Bar Matches the snapshot 1`] = `
 }
 
 .c0 p {
-  color: rgb(87,102,110);
+  color: #57666E;
   margin: 0;
   text-align: right;
   width: 8.5rem;
 }
 
 .c1 {
-  background-color: rgb(220,220,220);
+  background-color: #D9DDE2;
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
