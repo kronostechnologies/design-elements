@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
+
 import styled from 'styled-components';
+import { equisoftTheme } from '../../themes/equisoft';
 
 const Div = styled.div`
   align-items: center;
@@ -8,24 +10,36 @@ const Div = styled.div`
 `;
 
 const StyledProgress = styled.progress`
-  appearance: none;
-  height: 4px;
-  margin: 6px;
-  min-width: 148px;
+  ${(props: {theme?: Theme}) => {
+      let theme = props.theme;
+      if (theme) {
+          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+              theme = equisoftTheme;
+          }
+      } else {
+          theme = equisoftTheme;
+      }
+      return `
+      appearance: none;
+      height: 4px;
+      margin: 6px;
+      min-width: 148px;
 
-  &[value] {
-    &::-moz-progress-bar {
-      background-color: #36477f;
-    }
+      &[value] {
+        &::-moz-progress-bar {
+          background-color: ${theme.main['primary-3']};
+        }
 
-    &::-webkit-progress-bar {
-      background-color: #d9dde2;
-    }
+        &::-webkit-progress-bar {
+          background-color: ${theme.greys.grey};
+        }
 
-    &::-webkit-progress-value {
-      background-color: #36477f;
-    }
-  }
+        &::-webkit-progress-value {
+          background-color: ${theme.main['primary-3']};
+        }
+      }
+    `;
+  }}
 `;
 
 const UL = styled.ul`
@@ -40,21 +54,33 @@ const UL = styled.ul`
 `;
 
 const AbstractStep = styled.li`
-  background-color: #36477f;
-  border-radius: 50%;
-  display: inline-block;
-  width: 16px;
+  ${(props: {theme?: Theme}) => {
+      let theme = props.theme;
+      if (theme) {
+          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+              theme = equisoftTheme;
+          }
+      } else {
+          theme = equisoftTheme;
+      }
+      return `
+      background-color: ${theme.main['primary-3']};
+      border-radius: 50%;
+      display: inline-block;
+      width: 16px;
+    `;
+  }}
 `;
 
 const PastStep = AbstractStep;
 
 const CurrentStep = styled(AbstractStep)`
-  border: 4px solid #d9dde2;
+  border: 4px solid ${equisoftTheme.greys.grey};
   width: 8px;
 `;
 
 const FutureStep = styled(AbstractStep)`
-  background-color: #d9dde2;
+  background-color: ${equisoftTheme.greys.grey};
 `;
 
 const range = (value: number) => {
