@@ -20,7 +20,7 @@ const Header = styled.header`
       } else {
           theme = equisoftTheme;
       }
-      return (`
+      return `
       align-items: center;
       background: ${theme.main['primary-2']};
       box-sizing: border-box;
@@ -34,7 +34,7 @@ const Header = styled.header`
         min-height: 5rem;
         padding: 1.25rem 1.5rem;
       }
-    `);
+    `;
   }}
 `;
 

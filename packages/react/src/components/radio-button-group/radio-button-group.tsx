@@ -21,59 +21,59 @@ const StyledLabel = styled.label `
         }
         return (`
         ${props.disabled ? null : 'cursor: pointer;'};
-            display: block;
-            font-size: 0.875rem;
-            padding-left: 24px;
-            position: relative;
-            user-select: none;
+        display: block;
+        font-size: 0.875rem;
+        padding-left: 24px;
+        position: relative;
+        user-select: none;
 
-            &:not(:first-of-type) {
-                margin-top: 16px;
-            }
+        &:not(:first-of-type) {
+            margin-top: 16px;
+        }
 
-            input {
-                height: 16px;
-                left: 0;
-                margin: 0;
-                opacity: 0;
-                position: absolute;
-                top: 2px;
-                width: 16px;
+        input {
+            height: 16px;
+            left: 0;
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            top: 2px;
+            width: 16px;
 
-                &:checked + .radioInput {
-                    background-color: ${theme.main['primary-1.1']};
-                    border: 1px solid ${theme.main['primary-1.1']};
+            &:checked + .radioInput {
+                background-color: ${theme.main['primary-1.1']};
+                border: 1px solid ${theme.main['primary-1.1']};
 
-                    &::after {
-                        background-color: ${theme.greys.white};
-                        border-radius: 50%;
-                        content: "";
-                        height: 7px;
-                        left: 50%;
-                        position: absolute;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 7px;
-                    }
+                &::after {
+                    background-color: ${theme.greys.white};
+                    border-radius: 50%;
+                    content: "";
+                    height: 7px;
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 7px;
                 }
             }
+        }
 
-            .radioInput {
-                background-color: ${props.disabled ? theme.greys['light-grey'] : theme.greys.white};
-                border: 1px solid ${props.disabled ? theme.greys.grey : theme.greys['dark-grey']};
-                border-radius: 50%;
-                display: inline-block;
-                height: 16px;
-                left: 0;
-                margin-top: 2px;
-                position: absolute;
-                top: 0;
-                width: 16px;
-            }
+        .radioInput {
+            background-color: ${props.disabled ? theme.greys['light-grey'] : theme.greys.white};
+            border: 1px solid ${props.disabled ? theme.greys.grey : theme.greys['dark-grey']};
+            border-radius: 50%;
+            display: inline-block;
+            height: 16px;
+            left: 0;
+            margin-top: 2px;
+            position: absolute;
+            top: 0;
+            width: 16px;
+        }
 
-            &:hover .radioInput {
-                border: 1px solid ${props.disabled ? theme.greys.grey : theme.main['primary-1.1']};
-            }
+        &:hover .radioInput {
+            border: 1px solid ${props.disabled ? theme.greys.grey : theme.main['primary-1.1']};
+        }
         `);
     }}
 `;

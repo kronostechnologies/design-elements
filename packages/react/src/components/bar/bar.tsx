@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-bottom: 1rem;
 
   p {
-    color: ${(props: { secondary: boolean }) => {
+    color: ${(props: {secondary: boolean}) => {
         return (props.secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black);
     }};
     margin: 0;
@@ -26,10 +26,10 @@ const Progress = styled.div`
 `;
 
 const StyledBar = styled.div`
-  background: ${props => props.color};
+  background: ${(props: {color?: string, percent: number}) => props.color};
   border-radius: 4rem;
   height: 0.55rem;
-  width: ${(props: { percent: number }) => Math.min(Math.max(props.percent, 0), 100)}%;
+  width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
 `;
 
 interface BarProps {

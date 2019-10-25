@@ -5,7 +5,7 @@ import { equisoftTheme } from '../../themes/equisoft';
 import { Bar } from '../bar/bar';
 
 const Label = styled.label`
-  color: ${(props: { secondary: boolean }) => (props.secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black)};
+  color: ${(props: {secondary: boolean}) => (props.secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black)};
   font-size: 0.875rem;
 `;
 

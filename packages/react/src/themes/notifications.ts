@@ -7,4 +7,4 @@ export default {
     'alert-3.1': '#FF6F00',
     'alert-3.2': '#FFECB3',
     'alert-3.3': '#FFB302',
-}
+};

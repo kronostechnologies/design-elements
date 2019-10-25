@@ -73,7 +73,7 @@ const StyledButton = styled(AbstractButton)`
               return `
                 background-color: transparent;
                 border-color: transparent;
-                color: ${theme.greys['light-grey']};
+                color: ${theme.greys['dark-grey']};
 
                 &:hover {
                   color: ${theme.greys.black};
