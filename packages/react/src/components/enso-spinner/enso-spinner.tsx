@@ -1,18 +1,31 @@
 import styled from 'styled-components';
 
 import Enso from '../../icons/enso.svg';
+import { equisoftTheme } from '../../themes/equisoft';
 
 const EnsoSpinner = styled(Enso)`
-  animation: roll 1s infinite;
-  animation-timing-function: linear;
-  fill: #e2732d;
-  height: 80px;
-  width: 83px;
+  ${(props: {theme?: Theme, buttonType: 'primary' | 'secondary' | 'tertiary'}) => {
+      let theme = props.theme;
+      if (theme) {
+          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
+              theme = equisoftTheme;
+          }
+      } else {
+          theme = equisoftTheme;
+      }
+      return `
+      animation: roll 1s infinite;
+      animation-timing-function: linear;
+      fill: ${theme.main['primary-1.1']};
+      height: 80px;
+      width: 83px;
 
-  @keyframes roll {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+      @keyframes roll {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+    `;
+  }}
 `;
 
 export { EnsoSpinner };
