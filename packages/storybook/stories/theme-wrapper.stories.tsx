@@ -13,33 +13,17 @@ export const normal = () => (
     <>
         <ThemeWrapper theme={testTheme}>
             <div>
+                <h3 style={{ marginTop: '0' }} >With wrapper (test theme)</h3>
                 <Button label="Primary" buttonType={'primary' as ButtonType} disabled={false} />
                 <Button label="Secondary" buttonType={'secondary' as ButtonType} disabled={false} />
                 <Button label="Tertiary" buttonType={'tertiary' as ButtonType} disabled={false} />
             </div>
         </ThemeWrapper>
         <div>
+            <h3>Without wrapper (default Equisoft theme)</h3>
             <Button label="Primary" buttonType={'primary' as ButtonType} disabled={false} />
             <Button label="Secondary" buttonType={'secondary' as ButtonType} disabled={false} />
             <Button label="Tertiary" buttonType={'tertiary' as ButtonType} disabled={false} />
         </div>
     </>
-);
-
-export const withWrapper = () => (
-    <ThemeWrapper theme={testTheme}>
-        <div>
-            <Button label="Primary" buttonType={'primary' as ButtonType} disabled={false} />
-            <Button label="Secondary" buttonType={'secondary' as ButtonType} disabled={false} />
-            <Button label="Tertiary" buttonType={'tertiary' as ButtonType} disabled={false} />
-        </div>
-    </ThemeWrapper>
-);
-
-export const withoutWrapper = () => (
-    <div>
-        <Button label="Primary" buttonType={'primary' as ButtonType} disabled={false} />
-        <Button label="Secondary" buttonType={'secondary' as ButtonType} disabled={false} />
-        <Button label="Tertiary" buttonType={'tertiary' as ButtonType} disabled={false} />
-    </div>
 );
