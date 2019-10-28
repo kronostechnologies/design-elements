@@ -27,3 +27,7 @@ export { Progress } from './components/progress/progress';
 export { Legend } from './components/legend/legend';
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
+
+// Themes
+export { equisoftTheme } from './themes/equisoft';
+export { testTheme } from './themes/test-theme';
