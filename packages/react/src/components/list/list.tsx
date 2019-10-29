@@ -65,6 +65,7 @@ const Wrapper = styled.ul<WrapperProps>`
 `;
 
 const Item = styled.li<ItemProps>`
+    color: #000;
     height: ${itemHeight}px;
     line-height: ${itemHeight}px;
     white-space: nowrap;

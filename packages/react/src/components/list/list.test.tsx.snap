@@ -16,6 +16,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c2 {
+  color: #000;
   height: 32px;
   line-height: 32px;
   white-space: nowrap;
@@ -32,6 +33,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1 {
+  color: #000;
   height: 32px;
   line-height: 32px;
   white-space: nowrap;
