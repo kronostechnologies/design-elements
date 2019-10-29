@@ -27,9 +27,12 @@ export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
 export { RouteLink } from './components/route-link/route-link';
 export { Progress } from './components/progress/progress';
+export { GlobalNavigationMobile } from './components/global-navigation-mobile/global-navigation-mobile';
 
 // Results
+
 export { Legend } from './components/legend/legend';
+
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 
