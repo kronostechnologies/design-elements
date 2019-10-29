@@ -1055,20 +1055,6 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-1.0.0.tgz#a3c5cdf679b2e897a94074565df488e1561863de"
-  integrity sha512-LJJN55VuDeqYFPFGpxWyLx30MRJKR2H+7ENQr7/FWe7+IkQIsZoRdEV4Y8Z4XcLzVRJ1NpYbzXgmEbjTy6EjoA==
-  dependencies:
-    feather-icons "^4.21.0"
-    lodash-es "^4.17.14"
-    uuid "^3.3.3"
-
-"@equisoft/design-elements-web@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-1.0.0.tgz#ffdc411a3f7e0b8c290c66e772ea968ced50b323"
-  integrity sha512-RibyviXf2oQYMfVnYewPQhkPa5ZFEyhji4JgmmB9SDfYlKaUC2bIHdlqAFpbV/KhqclVwfhwalzgeBmIYuuWBg==
-
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@equisoft/tslint-config-react/-/tslint-config-react-0.0.3.tgz#3d0580d26386288397581710300bff5e1800cf1b"
@@ -3602,11 +3588,6 @@ core-js@^3.0.1, core-js@^3.0.4:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.3.5.tgz#58d20f48a95a07304b62ff752742b82b56431ed8"
   integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
 
-core-js@^3.1.3:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.4.2.tgz#ee2b1a60b50388d8ddcda8cdb44a92c7a9ea76df"
-  integrity sha512-bUTfqFWtNKWp73oNIfRkqwYZJeNT3lstzZcAkhhiuvDraRSgOH1/+F9ZklbpR4zpdKuo4cpXN8tKP7s61yjX+g==
-
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -4517,14 +4498,6 @@ fbjs@^0.8.0:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
-
-feather-icons@^4.21.0:
-  version "4.24.1"
-  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.24.1.tgz#f31a83c5a2d1c040576aacb7882d8acdfb7f7f09"
-  integrity sha512-CGBzG9L9M2sNWEpLY2HJgacW4q1KzypMqLiCPQRr6t4uDDXqYprWRWKcHEwD/vDDiDnkSS7N4L5BLYwjGGH8pw==
-  dependencies:
-    classnames "^2.2.5"
-    core-js "^3.1.3"
 
 figgy-pudding@^3.5.1:
   version "3.5.1"
@@ -6129,11 +6102,6 @@ locate-path@^5.0.0:
   integrity sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
   dependencies:
     p-locate "^4.1.0"
-
-lodash-es@^4.17.14:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
-  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -9904,7 +9872,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
-uuid@^3.3.2, uuid@^3.3.3:
+uuid@^3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
