@@ -12,6 +12,9 @@ import { Select } from './components/select/select';
 import { TextArea } from './components/text-area/text-area';
 import { TextInput } from './components/text-input/text-input';
 
+// Lists
+import { List } from './components/list/list';
+
 // Miscellaneous
 import { Card } from './components/card/card';
 import { Chooser } from './components/choosers/chooser';
@@ -31,6 +34,7 @@ export {
     CheckboxGroup,
     OptionButton,
     TextInput,
+    List,
     SearchContextual,
     SearchGlobal,
     Select,

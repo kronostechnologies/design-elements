@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Matches the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  list-style-type: none;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.19);
+  margin: 0;
+  padding: 0;
+  max-height: 96px;
+  overflow-y: auto;
+}
+
+.c2 {
+  height: 32px;
+  line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  padding: 0 0px;
+  cursor: pointer;
+}
+
+.c2:hover,
+.c2:focus {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  height: 32px;
+  line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  padding: 0 28px;
+  cursor: pointer;
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: #d9dde2;
+}
+
+.c3 {
+  color: #637282;
+  width: 12px;
+  height: 12px;
+  padding: 0 8px;
+}
+
+<ul
+  className="c0"
+  role="listbox"
+>
+  <li
+    aria-label="Option A"
+    className="c1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    selected={false}
+    tabIndex={0}
+  >
+    Option A
+  </li>
+  <li
+    aria-label="Option B"
+    className="c2"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    selected={true}
+    tabIndex={0}
+  >
+    <svg
+      className="c3"
+    />
+    Option B
+  </li>
+  <li
+    aria-label="Option C"
+    className="c1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    selected={false}
+    tabIndex={0}
+  >
+    Option C
+  </li>
+  <li
+    aria-label="Option D"
+    className="c1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    selected={false}
+    tabIndex={0}
+  >
+    Option D
+  </li>
+  <li
+    aria-label="Option E"
+    className="c1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    selected={false}
+    tabIndex={0}
+  >
+    Option E
+  </li>
+  <li
+    aria-label="Option F"
+    className="c1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    selected={false}
+    tabIndex={0}
+  >
+    Option F
+  </li>
+</ul>
+`;
