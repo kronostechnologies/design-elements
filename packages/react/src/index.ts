@@ -18,6 +18,7 @@ import { Chooser } from './components/choosers/chooser';
 import { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 import { Headband } from './components/headband/equisoft-default';
 import { Icon } from './components/icon/icon';
+export { Link } from './components/link/link';
 import { Progress } from './components/progress/progress';
 
 // Results
