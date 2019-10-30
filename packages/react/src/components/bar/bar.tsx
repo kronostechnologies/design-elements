@@ -5,6 +5,7 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   margin-bottom: 1rem;
+
   p {
     color: ${(props: { secondary: boolean }) => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};
     margin: 0;

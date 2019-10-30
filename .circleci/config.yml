@@ -43,12 +43,18 @@ jobs:
                 command: yarn build
                 working_directory: *react_directory
             - run:
+                name: Lint
+                command: yarn lint:ci
+                working_directory: *react_directory
+            - run:
                name: Test
-               command: yarn test
+               command: yarn test:ci
                working_directory: *react_directory
+            - store_test_results:
+                path: packages/react/build
             - persist_to_workspace:
                 root: *working_directory
-                paths: 
+                paths:
                     - packages/react
     build_web:
         executor: node
@@ -62,14 +68,20 @@ jobs:
                 name: Install Dependencies
                 command: yarn --frozen-lockfile
                 working_directory: *web_directory
+            - run:
+                name: Lint
+                command: yarn lint:ci
+                working_directory: *web_directory
             - save_cache:
                 name: Save Cache
                 key: yarn-packages-web-{{ checksum "~/design-elements/packages/web/yarn.lock" }}
                 paths:
                     - node_modules
+            - store_test_results:
+                path: packages/web/build
             - persist_to_workspace:
                 root: *working_directory
-                paths: 
+                paths:
                     - packages/web
     build_storybook:
         executor: node

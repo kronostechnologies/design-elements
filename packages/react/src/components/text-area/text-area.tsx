@@ -6,8 +6,8 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
 const StyledTextArea = styled.textarea`
-  ${inputsStyle}
-  min-height: 6.5rem;
+  ${inputsStyle} /* Must be the first rule */
+  min-height: 6.5rem; /* stylelint-disable-line order/properties-alphabetical-order */
   min-width: 100%;
   outline: none;
   overflow: auto;
