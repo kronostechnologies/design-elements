@@ -1,8 +1,9 @@
 import React, { ReactElement, ReactNode } from 'react';
-import styled from 'styled-components';
-import { AbstractButton } from './abstract-button';
 
+import styled from 'styled-components';
 import { equisoftTheme } from '../../themes/equisoft';
+import { Theme } from '../theme-wrapper/theme-wrapper';
+import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
     /**
@@ -17,15 +18,8 @@ interface ButtonProps {
     onClick?(): void;
 }
 const StyledButton = styled(AbstractButton)`
-  ${(props: {theme?: Theme, buttonType: 'primary' | 'secondary' | 'tertiary'}) => {
-      let theme = props.theme;
-      if (theme) {
-          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-              theme = equisoftTheme;
-          }
-      } else {
-          theme = equisoftTheme;
-      }
+  ${(props: {theme: Theme, buttonType: 'primary' | 'secondary' | 'tertiary'}) => {
+      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       switch (props.buttonType) {
           case 'primary':
               return `

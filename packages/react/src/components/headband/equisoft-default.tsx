@@ -7,19 +7,13 @@ import { MediaView } from '../media-view/media-view';
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
 import { equisoftTheme } from '../../themes/equisoft';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const tabletMin = `${(breakpoints.tablet / 16)}rem`;
 
 const Header = styled.header`
-  ${(props: {theme?: Theme}) => {
-      let theme = props.theme;
-      if (theme) {
-          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-              theme = equisoftTheme;
-          }
-      } else {
-          theme = equisoftTheme;
-      }
+  ${(props: {theme: Theme}) => {
+      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
       align-items: center;
       background: ${theme.main['primary-2']};

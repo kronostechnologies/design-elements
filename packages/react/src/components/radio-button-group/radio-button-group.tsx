@@ -2,6 +2,7 @@ import React, { ChangeEvent, ReactElement } from 'react';
 
 import styled from 'styled-components';
 import { equisoftTheme } from '../../themes/equisoft';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
   font-size: 0.75rem;
@@ -10,15 +11,8 @@ const Legend = styled.legend`
 `;
 
 const StyledLabel = styled.label `
-    ${(props: {theme?: Theme, disabled?: boolean}) => {
-        let theme = props.theme;
-        if (theme) {
-            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-                theme = equisoftTheme;
-            }
-        } else {
-            theme = equisoftTheme;
-        }
+    ${(props: {theme: Theme, disabled?: boolean}) => {
+        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
         return `
         ${props.disabled ? '' : 'cursor: pointer;'};
         display: block;

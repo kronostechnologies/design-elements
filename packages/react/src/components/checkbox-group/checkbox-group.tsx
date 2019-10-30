@@ -3,6 +3,7 @@ import React, { ChangeEvent, ReactElement } from 'react';
 import CheckMark from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
 import { equisoftTheme } from '../../themes/equisoft';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
   font-size: 0.75rem;
@@ -18,15 +19,8 @@ const StyledCheckMark = styled(CheckMark)`
 `;
 
 const StyledLabel = styled.label`
-    ${(props: {theme?: Theme, disabled: boolean | undefined}) => {
-        let theme = props.theme;
-        if (theme) {
-            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-                theme = equisoftTheme;
-            }
-        } else {
-            theme = equisoftTheme;
-        }
+    ${(props: {theme: Theme, disabled: boolean | undefined}) => {
+        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
         return `
             ${props.disabled ? '' : 'cursor: pointer;'}
             display: block;

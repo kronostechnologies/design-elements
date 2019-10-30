@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 
 import styled from 'styled-components';
 import { equisoftTheme } from '../../themes/equisoft';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const List = styled.ul`
   margin: 0;
@@ -9,15 +10,8 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  ${(props: {theme?: Theme, color?: string}) => {
-      let theme = props.theme;
-      if (theme) {
-          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-              theme = equisoftTheme;
-          }
-      } else {
-          theme = equisoftTheme;
-      }
+  ${(props: {theme: Theme, color?: string}) => {
+      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
       display: flex;
       list-style: none;

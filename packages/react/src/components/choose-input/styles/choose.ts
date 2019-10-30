@@ -2,15 +2,8 @@ import styled from 'styled-components';
 import { equisoftTheme } from '../../../themes/equisoft';
 
 export const Label = styled.label`
-    ${(props: {theme?: Theme}) => {
-        let theme = props.theme;
-        if (theme) {
-            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-                theme = equisoftTheme;
-            }
-        } else {
-            theme = equisoftTheme;
-        }
+    ${props => {
+        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
         return `
           align-items: center;
           background: ${theme.greys.white};

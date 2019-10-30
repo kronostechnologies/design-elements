@@ -1,3 +1,4 @@
+import { Theme } from '../components/theme-wrapper/theme-wrapper';
 import greys from './greys';
 import notifications from './notifications';
 

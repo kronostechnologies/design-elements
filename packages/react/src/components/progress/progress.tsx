@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 
 import styled from 'styled-components';
 import { equisoftTheme } from '../../themes/equisoft';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Div = styled.div`
   align-items: center;
@@ -10,15 +11,8 @@ const Div = styled.div`
 `;
 
 const StyledProgress = styled.progress`
-  ${(props: {theme?: Theme}) => {
-      let theme = props.theme;
-      if (theme) {
-          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-              theme = equisoftTheme;
-          }
-      } else {
-          theme = equisoftTheme;
-      }
+  ${(props: {theme: Theme}) => {
+      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
       appearance: none;
       height: 4px;
@@ -54,15 +48,8 @@ const UL = styled.ul`
 `;
 
 const AbstractStep = styled.li`
-  ${(props: {theme?: Theme}) => {
-      let theme = props.theme;
-      if (theme) {
-          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-              theme = equisoftTheme;
-          }
-      } else {
-          theme = equisoftTheme;
-      }
+  ${(props: {theme: Theme}) => {
+      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
       background-color: ${theme.main['primary-3']};
       border-radius: 50%;

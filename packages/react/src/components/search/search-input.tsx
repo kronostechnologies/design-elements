@@ -11,6 +11,7 @@ import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 import { equisoftTheme } from '../../themes/equisoft';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -47,15 +48,8 @@ const IcoReset = styled(XIcon)`
 `;
 
 const Input = styled.input`
-  ${(props: {theme?: Theme, hasButton?: boolean}) => {
-      let theme = props.theme;
-      if (theme) {
-          if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-              theme = equisoftTheme;
-          }
-      } else {
-          theme = equisoftTheme;
-      }
+  ${(props: {theme: Theme, hasButton?: boolean}) => {
+      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
       ${inputsStyle(theme)} /* Must be the first rule */
       border-radius: ${props.hasButton && '0.25rem 0 0 0.25rem'};

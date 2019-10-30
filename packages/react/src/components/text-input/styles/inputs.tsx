@@ -1,3 +1,5 @@
+import { Theme } from '../../theme-wrapper/theme-wrapper';
+
 export const inputsStyle = (theme: Theme) => `
   background: ${theme.greys.white};
   border: 1px solid ${theme.greys.grey};

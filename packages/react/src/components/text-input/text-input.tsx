@@ -4,18 +4,12 @@ import uuid from 'uuid/v4';
 
 import { equisoftTheme } from '../../themes/equisoft';
 import { FieldContainer } from '../field-container/field-container';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input`
-    ${(props: {theme?: Theme}) => {
-        let theme = props.theme;
-        if (theme) {
-            if (Object.entries(theme).length === 0 && theme.constructor === Object) {
-                theme = equisoftTheme;
-            }
-        } else {
-            theme = equisoftTheme;
-        }
+    ${(props: {theme: Theme}) => {
+        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
         return `
             ${inputsStyle(theme)}
         `;
