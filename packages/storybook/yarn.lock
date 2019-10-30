@@ -893,7 +893,11 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+<<<<<<< HEAD
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3":
+=======
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3":
+>>>>>>> Adds component and story
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
   integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
@@ -1209,9 +1213,15 @@
     warning "^3.0.0"
 
 "@storybook/addon-docs@^5.3.0-alpha.0":
+<<<<<<< HEAD
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.34.tgz#d037cb8f128443b57921ded64d2e483629160212"
   integrity sha512-IWx1XcP8HIlWvWbOz35iNFjvDL5af7kpdAibsLvks5/yr8pLoUQaiT2fTPpndLJNBz6cvO4YN4wSWnkvm6lrPA==
+=======
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.33.tgz#7202d2306de4f03bb215c9f26e6350b80fd3b412"
+  integrity sha512-+4Lo3GQm7yAgOlhxyvV8msnlYQM5MpfZxvPCgzfYBl5Cq3dl/sAeyuvqmcoVNPIRvU475grPgGmjz/dp4frgtA==
+>>>>>>> Adds component and story
   dependencies:
     "@babel/generator" "^7.4.0"
     "@babel/parser" "^7.4.2"
@@ -1221,12 +1231,21 @@
     "@mdx-js/loader" "^1.1.0"
     "@mdx-js/mdx" "^1.1.0"
     "@mdx-js/react" "^1.0.27"
+<<<<<<< HEAD
     "@storybook/addons" "5.3.0-alpha.34"
     "@storybook/api" "5.3.0-alpha.34"
     "@storybook/components" "5.3.0-alpha.34"
     "@storybook/router" "5.3.0-alpha.34"
     "@storybook/source-loader" "5.3.0-alpha.34"
     "@storybook/theming" "5.3.0-alpha.34"
+=======
+    "@storybook/addons" "5.3.0-alpha.33"
+    "@storybook/api" "5.3.0-alpha.33"
+    "@storybook/components" "5.3.0-alpha.33"
+    "@storybook/router" "5.3.0-alpha.33"
+    "@storybook/source-loader" "5.3.0-alpha.33"
+    "@storybook/theming" "5.3.0-alpha.33"
+>>>>>>> Adds component and story
     core-js "^3.0.1"
     global "^4.3.2"
     js-string-escape "^1.0.1"
@@ -1248,6 +1267,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
+<<<<<<< HEAD
 "@storybook/addons@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.34.tgz#3b3ed9932d0012fc3bf33ce67d1d460f5c7933c7"
@@ -1257,6 +1277,17 @@
     "@storybook/channels" "5.3.0-alpha.34"
     "@storybook/client-logger" "5.3.0-alpha.34"
     "@storybook/core-events" "5.3.0-alpha.34"
+=======
+"@storybook/addons@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.33.tgz#4feafb23a08b8336f36a7448691a7f9e2a20dd02"
+  integrity sha512-mKtO6Qs6oEqhBzuvrR3uiW2rYAjARdW3SJcpJzTEuUkouWwpm65xXpYwnj9gsVXO91TqYJ9ArF6HBkKl3I/nKA==
+  dependencies:
+    "@storybook/api" "5.3.0-alpha.33"
+    "@storybook/channels" "5.3.0-alpha.33"
+    "@storybook/client-logger" "5.3.0-alpha.33"
+    "@storybook/core-events" "5.3.0-alpha.33"
+>>>>>>> Adds component and story
     core-js "^3.0.1"
     global "^4.3.2"
     util-deprecate "^1.0.2"
@@ -1284,6 +1315,7 @@
     telejson "^3.0.2"
     util-deprecate "^1.0.2"
 
+<<<<<<< HEAD
 "@storybook/api@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.34.tgz#09d290936587715a8d78e48a4e79f6154eaf1c39"
@@ -1294,6 +1326,18 @@
     "@storybook/core-events" "5.3.0-alpha.34"
     "@storybook/router" "5.3.0-alpha.34"
     "@storybook/theming" "5.3.0-alpha.34"
+=======
+"@storybook/api@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.33.tgz#bfe29b2b13c5677c9089bac782fa82bea8e4a3ba"
+  integrity sha512-2nS07kOr/PHovmzsSc3U8hFNMFboEGi+XDQpl75yP/AHSHsHB8VR5DYu9M8Diznz3Tpfn8Ikn/lmCVc/AxZ6fA==
+  dependencies:
+    "@storybook/channels" "5.3.0-alpha.33"
+    "@storybook/client-logger" "5.3.0-alpha.33"
+    "@storybook/core-events" "5.3.0-alpha.33"
+    "@storybook/router" "5.3.0-alpha.33"
+    "@storybook/theming" "5.3.0-alpha.33"
+>>>>>>> Adds component and story
     core-js "^3.0.1"
     fast-deep-equal "^2.0.1"
     global "^4.3.2"
@@ -1325,10 +1369,17 @@
   dependencies:
     core-js "^3.0.1"
 
+<<<<<<< HEAD
 "@storybook/channels@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.34.tgz#4d0e9e84d3df8cf2240489f667b71dd40b02180a"
   integrity sha512-GsMpAJq92pPl3BGr+FUd4mFUHcNpQEVSaJdsKsLIl9h/mVvTyVc1WMu/H+tHBligRwN9soM53Jmf0/d6Ysko3Q==
+=======
+"@storybook/channels@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.33.tgz#3047694406634a8f8b9a5255fa3e5f8aea2d0b73"
+  integrity sha512-i4Mmjoiy9jS3FWar5T4ArUsFLYQSZ0R4a+VtlFfaplVJXColeQPSS8Iusj8VlxvUn15vycguDoDAk5wTT8iFog==
+>>>>>>> Adds component and story
   dependencies:
     core-js "^3.0.1"
 
@@ -1360,10 +1411,17 @@
   dependencies:
     core-js "^3.0.1"
 
+<<<<<<< HEAD
 "@storybook/client-logger@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.34.tgz#780e9658e79917927281d19f325d84a97a28c4b4"
   integrity sha512-oYYy8nRESswKhjH1WqcLYU71lkXtyZP1HNEIZfnERHNh2R8C0AA8HYlWWQfj0twxZFeJBDBwAOL90Ib7HKE0NA==
+=======
+"@storybook/client-logger@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.33.tgz#d76c4f7d102fc7a87318a4166df13cc61f024c9a"
+  integrity sha512-YqAQgenrmkP+NdHT2iX0OHBiwEU4OGOahq4+JBLVjGJAqY1UK4jsyZsmkpwEbC7aEZLTbCftJPOQ4t3Ho0QKrg==
+>>>>>>> Adds component and story
   dependencies:
     core-js "^3.0.1"
 
@@ -1392,6 +1450,7 @@
     react-textarea-autosize "^7.1.0"
     simplebar-react "^1.0.0-alpha.6"
 
+<<<<<<< HEAD
 "@storybook/components@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.34.tgz#a864251092cdef4ca13ce918c446cfb9cd9fab51"
@@ -1399,6 +1458,15 @@
   dependencies:
     "@storybook/client-logger" "5.3.0-alpha.34"
     "@storybook/theming" "5.3.0-alpha.34"
+=======
+"@storybook/components@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.33.tgz#a764a0b09de076f556387bc90bd420cf763d2520"
+  integrity sha512-CbllY9HNVsKTJVpR/BNvPOA/x3fiO0clXfb+PKzJsaqikBRLJgrye97Q1mM5uCpcXtWDkQWLFp7hu3bNl5mlEQ==
+  dependencies:
+    "@storybook/client-logger" "5.3.0-alpha.33"
+    "@storybook/theming" "5.3.0-alpha.33"
+>>>>>>> Adds component and story
     "@types/react-syntax-highlighter" "11.0.1"
     "@types/react-textarea-autosize" "^4.3.3"
     core-js "^3.0.1"
@@ -1425,10 +1493,17 @@
   dependencies:
     core-js "^3.0.1"
 
+<<<<<<< HEAD
 "@storybook/core-events@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.34.tgz#57d322153cbf872ae539f50846346cc619f5aee3"
   integrity sha512-TnaAcQ9S+wzqK+sai8PkBqFPnqxPRp/+But7q0ud6eGNdwG3PvUE9G/FnihyjgWCJBGQZ4HitU9ccbcprKfftQ==
+=======
+"@storybook/core-events@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.33.tgz#60369d3c145de32cccb8333bd95e478955a29566"
+  integrity sha512-jsEIm23jg0L8wUdinmI4xQ6QpSeK6NSyYCSw7jqinuhN/V5OeVYX2XzeoXUpoBVEextXe5kbDvXFJ7UOfHqbow==
+>>>>>>> Adds component and story
   dependencies:
     core-js "^3.0.1"
 
@@ -1558,10 +1633,17 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
+<<<<<<< HEAD
 "@storybook/router@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.34.tgz#28b6eb8ffeec144372a8a41018b1a0cc001a3ae4"
   integrity sha512-fNhNPosslo7MfxAmb0cYEuoYByGwyE+dkpY11DZ/nSmcr2jo0Zpw6IFkX64q+ZK6iRgb6mShZwCqrIT41jfZKQ==
+=======
+"@storybook/router@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.33.tgz#0b4790e6a4c3745978d99fda073522650d463b5d"
+  integrity sha512-jh2bE+0bL7FWimn5RkuZ3MyRwrVIPwfT+GP8tNi2iTRkaupJ+QJQss7kEr6tpEvSiuSra9GjBhcTHF1YQx54AQ==
+>>>>>>> Adds component and story
   dependencies:
     "@reach/router" "^1.2.1"
     "@types/reach__router" "^1.2.3"
@@ -1571,6 +1653,7 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
+<<<<<<< HEAD
 "@storybook/source-loader@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.34.tgz#2bcc41c71e4aaeb45c04de3588f456f2c2a1abc3"
@@ -1578,6 +1661,15 @@
   dependencies:
     "@storybook/addons" "5.3.0-alpha.34"
     "@storybook/router" "5.3.0-alpha.34"
+=======
+"@storybook/source-loader@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.33.tgz#53e6b5d79352c0d86c64b446d48982bfe7dd59ad"
+  integrity sha512-Hmd4XG+2RSwg8mzyVcmB3g3P68whzQGwPD8louf79RuAYY61LmYYdMOqGde15bvJDhc5A8S+BowWNCzxQ2c/yw==
+  dependencies:
+    "@storybook/addons" "5.3.0-alpha.33"
+    "@storybook/router" "5.3.0-alpha.33"
+>>>>>>> Adds component and story
     core-js "^3.0.1"
     estraverse "^4.2.0"
     global "^4.3.2"
@@ -1604,6 +1696,7 @@
     prop-types "^15.7.2"
     resolve-from "^5.0.0"
 
+<<<<<<< HEAD
 "@storybook/theming@5.3.0-alpha.34":
   version "5.3.0-alpha.34"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.34.tgz#0d8ea39188fd4f3eb258c81cf370b7fac64fcde6"
@@ -1612,6 +1705,16 @@
     "@emotion/core" "^10.0.20"
     "@emotion/styled" "^10.0.17"
     "@storybook/client-logger" "5.3.0-alpha.34"
+=======
+"@storybook/theming@5.3.0-alpha.33":
+  version "5.3.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.33.tgz#08c6f560196a4ccfa9393ff2a663bb21c55a254d"
+  integrity sha512-TPiwQtj2BWjrHli3iiVcUXKILuYDh09Rldjev5F3fkes3MXJUAd2DGKRxXFAIwz/4iMyfPTI6sklLhJ7Z2tfAA==
+  dependencies:
+    "@emotion/core" "^10.0.20"
+    "@emotion/styled" "^10.0.17"
+    "@storybook/client-logger" "5.3.0-alpha.33"
+>>>>>>> Adds component and story
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.19"
@@ -1807,9 +1910,15 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/node@*":
+<<<<<<< HEAD
   version "12.12.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.0.tgz#ff3201972d6dc851a9275308a17b9b5094e68057"
   integrity sha512-6N8Sa5AaENRtJnpKXZgvc119PKxT1Lk9VPy4kfT8JF23tIe1qDfaGkBR2DRKJFIA7NptMz+fps//C6aLi1Uoug==
+=======
+  version "12.11.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.7.tgz#57682a9771a3f7b09c2497f28129a0462966524a"
+  integrity sha512-JNbGaHFCLwgHn/iCckiGSOZ1XYHsKFwREtzPwSGCVld1SGhOlmZw2D4ZI94HQCrBHbADzW9m4LER/8olJTRGHA==
+>>>>>>> Adds component and story
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -3155,9 +3264,15 @@ can-use-dom@^0.1.0:
   integrity sha1-IsxKNKCrxDlQ9CxkEQJKP2NmtFo=
 
 caniuse-lite@^1.0.30000989, caniuse-lite@^1.0.30001004:
+<<<<<<< HEAD
   version "1.0.30001006"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001006.tgz#5b6e8288792cfa275f007b2819a00ccad7112655"
   integrity sha512-MXnUVX27aGs/QINz+QG1sWSLDr3P1A3Hq5EUWoIt0T7K24DuvMxZEnh3Y5aHlJW6Bz2aApJdSewdYLd8zQnUuw==
+=======
+  version "1.0.30001005"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001005.tgz#823054210be638c725521edcb869435dae46728d"
+  integrity sha512-g78miZm1Z5njjYR216a5812oPiLgV1ssndgGxITHWUopmjUrCswMisA0a2kSB7a0vZRox6JOKhM51+efmYN8Mg==
+>>>>>>> Adds component and story
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -8734,9 +8849,15 @@ source-map-resolve@^0.5.0:
     urix "^0.1.0"
 
 source-map-support@~0.5.12:
+<<<<<<< HEAD
   version "0.5.16"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.16.tgz#0ae069e7fe3ba7538c64c98515e35339eac5a042"
   integrity sha512-efyLRJDr68D9hBBNIPWFjhpFzURh+KJykQwvMyW5UiZzYwoF6l4YMMDIJJEyFWxWCqfyxLzz6tSfUFR+kXXsVQ==
+=======
+  version "0.5.15"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.15.tgz#20fe16f16e74644e21a396c78c841fa66e35df6c"
+  integrity sha512-wYF5aX1J0+V51BDT3Om7uXNn0ct2FWiV4bvwiGVefxkm+1S1o5jsecE5lb2U28DDblzxzxeIDbTVpXHI9D/9hA==
+>>>>>>> Adds component and story
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
@@ -8753,7 +8874,11 @@ source-map@^0.4.2:
   dependencies:
     amdefine ">=0.0.4"
 
+<<<<<<< HEAD
 source-map@^0.5.0, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
+=======
+source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
+>>>>>>> Adds component and story
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=

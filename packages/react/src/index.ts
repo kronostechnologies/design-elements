@@ -24,6 +24,7 @@ export { Chooser } from './components/choosers/chooser';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
+export { Link } from './components/link/link';
 export { Progress } from './components/progress/progress';
 
 // Results
