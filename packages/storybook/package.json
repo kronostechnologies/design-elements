@@ -3,7 +3,11 @@
   "version": "0.6.2",
   "scripts": {
     "build": "start-storybook --smoke-test",
-    "start": "start-storybook --docs"
+    "start": "start-storybook --docs",
+    "lint": "yarn tslint",
+    "lint:ci": "mkdir -p build/lint/ts && yarn tslint:ci",
+    "tslint": "tslint -p tsconfig.json \"stories/**/*.{ts,tsx}\"",
+    "tslint:ci": "tslint -p tsconfig.json \"stories/**/*.{ts,tsx}\" --format junit -o build/lint/ts/junit.xml"
   },
   "author": "Equisoft Design",
   "maintainers": [

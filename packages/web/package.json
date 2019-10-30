@@ -6,7 +6,7 @@
   "main": "dist/design-elements-web.cjs.js",
   "scripts": {
     "lint": "yarn stylelint",
-    "lint:ci": "mkdir -p build/lint/style && yarn stylelint",
+    "lint:ci": "mkdir -p build/lint/style && yarn stylelint:ci",
     "stylelint": "stylelint \"./style/**/*.scss\" \"./style/*.scss\"",
     "stylelint:ci": "stylelint --custom-formatter node_modules/stylelint-junit-formatter \"./style/**/*.scss\" \"./style/*.scss\" > build/lint/style/junit.xml"
   },

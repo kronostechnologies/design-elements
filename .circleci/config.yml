@@ -120,6 +120,12 @@ jobs:
                 name: Build
                 command: yarn build
                 working_directory: *storybook_directory
+            - run:
+                name: Lint
+                command: yarn lint:ci
+                working_directory: *storybook_directory
+            - store_test_results:
+                path: packages/storybook/build
 
 workflows:
     version: 2
