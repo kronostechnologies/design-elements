@@ -5,12 +5,14 @@ import { equisoftTheme } from '../../themes/equisoft';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 import { AbstractButton } from './abstract-button';
 
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
+
 interface ButtonProps {
     /**
      * Visual style
      * @default primary
      **/
-    buttonType: 'primary' | 'secondary' | 'tertiary';
+    buttonType: ButtonType;
     label?: string;
     children?: ReactNode;
     disabled?: boolean;
@@ -18,7 +20,7 @@ interface ButtonProps {
     onClick?(): void;
 }
 const StyledButton = styled(AbstractButton)`
-  ${(props: {theme: Theme, buttonType: 'primary' | 'secondary' | 'tertiary'}) => {
+  ${(props: {theme: Theme, buttonType: ButtonType}) => {
       const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       switch (props.buttonType) {
           case 'primary':
