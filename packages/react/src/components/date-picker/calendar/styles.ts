@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
 import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
 import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
+import { CalendarArrowPosition } from '../date-picker';
 
 export const ArrowLeft = styled(ChevronLeft)`
 	color: #57666e;
@@ -182,7 +183,7 @@ export const CalendarArrow = styled.div`
 	height: 10px;
 	position: absolute;
 	width: 10px;
-	${(props: { position: string }) => {
+	${(props: { position: CalendarArrowPosition }) => {
     switch (props.position) {
         case 'bottomRight':
             return 'top:-5px;' + 'right: 121px;' + 'transform: rotate(45deg);';

@@ -1,25 +1,38 @@
 import React, { Component, KeyboardEvent, ReactElement } from 'react';
 
-import calendar, {
+import { CalendarArrowPosition } from '../date-picker';
+import {
   CALENDAR_MONTHS,
+  fullCalendar,
   getDateISO,
   getNextMonth,
   getPreviousMonth,
-  isDate,
   isSameDay,
   isSameMonth,
   WEEK_DAYS,
 } from './calendar-helper';
 import * as Styled from './styles';
 
-class Calendar extends Component<{
-    date: Date,
-    max: number,
-    min: number,
-    position: string,
-    onDateChanged(date: Date | null): void,
-}> {
-    state = {
+interface CalendarProps {
+    date: Date;
+    max: number;
+    min: number;
+    arrowPosition: CalendarArrowPosition;
+    onDateChanged(date: Date | null): void;
+}
+
+interface CalendarState {
+    today: Date;
+    monthDropDownIsOpen: boolean;
+    yearDropDownIsOpen: boolean;
+    current: Date | null;
+    month: number;
+    months: { key: string; value: string; }[];
+    year: number;
+}
+
+class Calendar extends Component<CalendarProps, CalendarState> {
+    state: CalendarState = {
         ...this.resolveStateFromProp(),
         today: new Date(),
         monthDropDownIsOpen: false,
@@ -30,67 +43,70 @@ class Calendar extends Component<{
     pressureTimeout: NodeJS.Timeout | undefined;
     pressureTimer: NodeJS.Timeout | undefined;
 
-    resolveStateFromDate(date: Date): { current: Date | null, month: number, year: number } {
-        const isDateObject = isDate(date);
-        const savedDate = isDateObject ? date : false;
+    resolveStateFromDate(date: Date)
+    : { current: Date | null, month: number, months: { key: string; value: string; }[], year: number } {
+        const savedDate = date;
+        const months = [];
+        for (const [key, value] of Object.entries(CALENDAR_MONTHS)) {
+            months.push({ key: key, value: value });
+        }
 
         return {
-            current: isDateObject ? date : null,
+            months: months,
+            current: date,
             month: savedDate ? +savedDate.getMonth() + 1 : new Date().getMonth() + 1,
             year: savedDate ? savedDate.getFullYear() : this.props.max,
         };
     }
 
-    resolveStateFromProp(): { current: Date | null, month: number, year: number } {
+    resolveStateFromProp()
+    : { current: Date | null, month: number, months: { key: string; value: string; }[], year: number } {
         return this.resolveStateFromDate(this.props.date);
     }
 
     getCalendarDates = () => {
         const { month, year } = this.state;
-        const calendarMonth = month;
-        const calendarYear = year;
 
-        return calendar(calendarMonth, calendarYear);
+        return fullCalendar(month, year);
     };
 
-    gotoDate = (date: Date) => (evt: KeyboardEvent<HTMLElement>) => {
+    goToDate = (date: Date) => (evt: KeyboardEvent<HTMLElement>) => {
         evt && evt.preventDefault();
         const { current } = this.state;
         const { onDateChanged } = this.props;
 
-        !(current && isSameDay(date, current)) &&
-          this.setState(this.resolveStateFromDate(date), () => {
-              typeof onDateChanged === 'function' && onDateChanged(date);
-          });
+        if (!(current && isSameDay(date, current))) {
+            this.setState(this.resolveStateFromDate(date), () => {
+                onDateChanged(date);
+            });
+        }
     };
 
-    gotoPreviousMonth = () => {
+    goToPreviousMonth = () => {
         const { month, year } = this.state;
         this.setState(getPreviousMonth(month, year));
     };
 
-    gotoNextMonth = () => {
+    goToNextMonth = () => {
         const { month, year } = this.state;
         this.setState(getNextMonth(month, year));
     };
 
-    gotoPreviousYear = () => {
+    goToPreviousYear = () => {
         const { year } = this.state;
         this.setState({ year: year - 1 });
     };
 
-    gotoNextYear = () => {
+    goToNextYear = () => {
         const { year } = this.state;
         this.setState({ year: year + 1 });
     };
 
     handlePressure = (fn: () => void) => {
-        if (typeof fn === 'function') {
-            fn();
-            this.pressureTimeout = setTimeout(() => {
-                this.pressureTimer = setInterval(fn, 100);
-            }, 500);
-        }
+        fn();
+        this.pressureTimeout = setTimeout(() => {
+            this.pressureTimer = setInterval(fn, 100);
+        }, 500);
     };
 
     clearPressureTimer = () => {
@@ -104,39 +120,27 @@ class Calendar extends Component<{
 
     handlePrevious = (evt: KeyboardEvent<Element>) => {
         evt && evt.preventDefault();
-        const fn = evt.shiftKey ? this.gotoPreviousYear : this.gotoPreviousMonth;
+        const fn = evt.shiftKey ? this.goToPreviousYear : this.goToPreviousMonth;
         this.handlePressure(fn);
     };
 
     handleNext = (evt: KeyboardEvent<Element>) => {
         evt && evt.preventDefault();
-        const fn = evt.shiftKey ? this.gotoNextYear : this.gotoNextMonth;
+        const fn = evt.shiftKey ? this.goToNextYear : this.goToNextMonth;
         this.handlePressure(fn);
     };
 
     changeMonth = (month: number): void => {
-        this.setState({ month: month });
+        this.setState({ month });
     }
 
     changeYear = (year: number): void => {
-        this.setState({ year: year });
-    }
-
-    handleChange = (evt: any) => {
-        evt.preventDefault();
-        const fn = () => this.changeMonth(evt.target.value);
-        this.handlePressure(fn);
+        this.setState({ year });
     }
 
     renderMonthAndYear = () => {
-        const { month, year } = this.state;
-        const monthname = Object.values(CALENDAR_MONTHS)[
-          Math.max(0, Math.min(month - 1, 11))
-        ];
-        const months = [];
-        for (const [key, value] of Object.entries(CALENDAR_MONTHS)) {
-            months.push({ key: key, value: value });
-        }
+        const { month, months, year } = this.state;
+        const monthName = Object.values(CALENDAR_MONTHS)[month - 1];
         const monthsList = months.map((mth, i) => (
           <li onClick={() => this.changeMonth(i + 1)} value={i + 1} key={mth.value}>{mth.value}</li>
         ));
@@ -159,7 +163,7 @@ class Calendar extends Component<{
                   }}
                 >
                   <Styled.MonthAndYear>
-                    <p>{monthname}</p>
+                    <p>{monthName}</p>
                     <Styled.ArrowDown/>
                   </Styled.MonthAndYear>
                   <Styled.DateList style={this.state.monthDropDownIsOpen ? { display: 'block' } : { display: 'none' }}>
@@ -201,7 +205,7 @@ class Calendar extends Component<{
         const inMonth =
           month && year && isSameMonth(renderedDate, new Date([year, month, 1].join('-')));
 
-        const onClick = this.gotoDate(renderedDate);
+        const onClick = this.goToDate(renderedDate);
 
         const props = { index, inMonth, onClick, title: renderedDate.toDateString() };
 
@@ -270,7 +274,7 @@ class Calendar extends Component<{
                 {this.getCalendarDates().map(this.renderCalendarDate)}
               </>
             </Styled.CalendarGrid>
-            <Styled.CalendarArrow position={this.props.position} />
+            <Styled.CalendarArrow position={this.props.arrowPosition} />
           </Styled.CalendarContainer>
         );
     }

@@ -2,9 +2,9 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import DatePicker from './date-picker';
+import DatePicker, { CalendarArrowPosition } from './date-picker';
 
-const setup = (position: string) => {
+const setup = (position: CalendarArrowPosition) => {
     const tree = renderer.create(
         <DatePicker label="Date" position={position} />,
     ).toJSON();

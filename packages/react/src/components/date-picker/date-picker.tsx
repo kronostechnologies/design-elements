@@ -1,15 +1,17 @@
 import React, { ChangeEvent, ReactElement } from 'react';
 
 import Calendar from './calendar/calendar';
-import { getDateISO, isDate } from './calendar/calendar-helper';
+import { getDateISO, isValidDate } from './calendar/calendar-helper';
 import * as Styled from './styles';
+
+export type CalendarArrowPosition = 'bottomRight' | 'bottomLeft' | 'topRight' | 'topLeft';
 
 interface DatePickerProps {
     disabled?: boolean;
     label: string;
     max?: string;
     min?: string;
-    position?: string;
+    position?: CalendarArrowPosition;
     required?: boolean;
     valid?: boolean;
     value?: Date;
@@ -86,7 +88,7 @@ class Datepicker extends React.Component
         const newDate = date && new Date(date);
         newDate && newDate.setDate(newDate.getDate() + 1);
 
-        isDate(newDate) && this.setState({ date: getDateISO(newDate) });
+        isValidDate(newDate) && this.setState({ date: getDateISO(newDate) });
     }
 
     componentDidUpdate(
@@ -158,7 +160,7 @@ class Datepicker extends React.Component
                     // @ts-ignore
                     date={date && new Date(date)}
                     onDateChanged={this.handleDateChange}
-                    position={this.props.position ? this.props.position : 'bottomRight'}
+                    arrowPosition={this.props.position ? this.props.position : 'bottomRight'}
                     max={this.props.max ? new Date(this.props.max).getFullYear() : new Date().getFullYear()}
                     min={this.props.min ? new Date(this.props.min).getFullYear() : 1900}
                   />

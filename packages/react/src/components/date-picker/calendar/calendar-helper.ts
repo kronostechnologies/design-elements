@@ -1,5 +1,5 @@
-export const THIS_YEAR = +(new Date().getFullYear());
-export const THIS_MONTH = +(new Date().getMonth()) + 1;
+const THIS_YEAR = +(new Date().getFullYear());
+const THIS_MONTH = +(new Date().getMonth()) + 1;
 
 export const WEEK_DAYS = {
     Sunday: 'DI',
@@ -30,14 +30,14 @@ export const CALENDAR_WEEKS = 6;
 
 export const zeroPad = (value: number, length: number) => `${value}`.padStart(length, '0');
 
-export const isDate = (date: Date | undefined) => {
+export const isValidDate = (date: Date | undefined) => {
     const isDate = Object.prototype.toString.call(date) === '[object Date]';
     const isValidDate = date && !Number.isNaN(date.valueOf());
     return isDate && isValidDate;
 };
 
 export const getDateISO = (date = new Date()): string | number | undefined => {
-    if (!isDate(date)) return undefined;
+    if (!isValidDate(date)) return undefined;
 
     return [
         date.getFullYear(),
@@ -46,9 +46,13 @@ export const getDateISO = (date = new Date()): string | number | undefined => {
     ].join('-');
 };
 
+function isLeapYear(year: number): boolean {
+    return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+}
+
 export const getMonthDays = (month = THIS_MONTH, year = THIS_YEAR) => {
     const months30 = [4, 6, 9, 11];
-    const leapYear = year % 4 === 0;
+    const leapYear = isLeapYear(year);
 
     return month === 2
 		? leapYear
@@ -63,30 +67,30 @@ export const getMonthFirstDay = (month = THIS_MONTH, year = THIS_YEAR) => {
     return +(new Date(`${year}-${zeroPad(month, 2)}-01`).getDay()) + 1;
 };
 
-export const isSameMonth = (date: Date, basedate = new Date()) => {
-    if (!(isDate(date) && isDate(basedate))) return false;
+export const isSameMonth = (date: Date, baseDate = new Date()) => {
+    if (!(isValidDate(date) && isValidDate(baseDate))) return false;
 
-    const basedateMonth = +(basedate.getMonth()) + 1;
-    const basedateYear = basedate.getFullYear();
+    const baseDateMonth = +(baseDate.getMonth()) + 1;
+    const baseDateYear = baseDate.getFullYear();
 
     const dateMonth = +(date.getMonth()) + 1;
     const dateYear = date.getFullYear();
 
-    return (+basedateMonth === +dateMonth) && (+basedateYear === +dateYear);
+    return (+baseDateMonth === +dateMonth) && (+baseDateYear === +dateYear);
 };
 
-export const isSameDay = (date: Date, basedate = new Date()) => {
-    if (!(isDate(date) && isDate(basedate))) return false;
+export const isSameDay = (date: Date, baseDate = new Date()) => {
+    if (!(isValidDate(date) && isValidDate(baseDate))) return false;
 
-    const basedateDate = basedate.getDate() + 1;
-    const basedateMonth = +(basedate.getMonth()) + 1;
-    const basedateYear = basedate.getFullYear();
+    const baseDateDate = baseDate.getDate() + 1;
+    const baseDateMonth = +(baseDate.getMonth()) + 1;
+    const baseDateYear = baseDate.getFullYear();
 
     const dateDate = date.getDate();
     const dateMonth = +(date.getMonth()) + 1;
     const dateYear = date.getFullYear();
 
-    return (+basedateDate === +dateDate) && (+basedateMonth === +dateMonth) && (+basedateYear === +dateYear);
+    return (+baseDateDate === +dateDate) && (+baseDateMonth === +dateMonth) && (+baseDateYear === +dateYear);
 };
 
 export const getPreviousMonth = (month: number, year: number) => {
@@ -103,7 +107,7 @@ export const getNextMonth = (month: number, year: number) => {
     return { month: nextMonth, year: nextMonthYear };
 };
 
-export default (month = THIS_MONTH, year = THIS_YEAR) => {
+export const fullCalendar = (month = THIS_MONTH, year = THIS_YEAR) => {
     const monthDays = getMonthDays(month, year);
     const monthFirstDay = getMonthFirstDay(month, year);
 
@@ -114,18 +118,18 @@ export default (month = THIS_MONTH, year = THIS_YEAR) => {
     const { month: nextMonth, year: nextMonthYear } = getNextMonth(month, year);
 
     const prevMonthDays = getMonthDays(prevMonth, prevMonthYear);
-    // @ts-ignore
-    const prevMonthDates = [...new Array(daysFromPrevMonth)].map((n, index) => {
+
+    const prevMonthDates = [...new Array(daysFromPrevMonth)].map((_, index) => {
         const day = index + 1 + (prevMonthDays - daysFromPrevMonth);
         return [ prevMonthYear, zeroPad(prevMonth, 2), zeroPad(day, 2) ];
     });
-	// @ts-ignore
-    const thisMonthDates = [...new Array(monthDays)].map((n, index) => {
+
+    const thisMonthDates = [...new Array(monthDays)].map((_, index) => {
         const day = index + 1;
         return [year, zeroPad(month, 2), zeroPad(day, 2)];
     });
-	// @ts-ignore
-    const nextMonthDates = [...new Array(daysFromNextMonth)].map((n, index) => {
+
+    const nextMonthDates = [...new Array(daysFromNextMonth)].map((_, index) => {
         const day = index + 1;
         return [nextMonthYear, zeroPad(nextMonth, 2), zeroPad(day, 2)];
     });
