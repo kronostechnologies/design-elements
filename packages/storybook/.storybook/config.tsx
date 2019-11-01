@@ -1,8 +1,12 @@
+import React from 'react';
+
+import { ThemeWrapper } from '@equisoft/design-elements-react';
 // tslint:disable-next-line:no-import-side-effect
 import '@equisoft/design-elements-web/style/body.css';
-
 import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
-import { addParameters, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+
+addDecorator(storyFn => <ThemeWrapper>{storyFn()}</ThemeWrapper>);
 
 addParameters({
     docs: {
