@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
 
-import { equisoftTheme } from '../../themes/equisoft';
+import styled from 'styled-components';
 import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
@@ -14,29 +13,30 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-    background: ${equisoftTheme.greys.white};
-    border-color: ${equisoftTheme.greys.grey};
-    color: ${equisoftTheme.greys['mid-grey']};
-
-  &:disabled {
-    &,
-    &:focus,
-    &:hover {
-        background-color: ${equisoftTheme.greys.grey};
-        border-color: ${equisoftTheme.greys.grey};
-        color: ${equisoftTheme.greys['mid-grey']};
-    }
+    ${props => `
+    background: ${props.theme.greys.white};
+    border-color: ${props.theme.greys.grey};
+    color: ${props.theme.greys['mid-grey']};
 
     &:disabled {
         &,
         &:focus,
         &:hover {
-            background-color: ${equisoftTheme.greys['light-grey']};
-            border-color: ${equisoftTheme.greys.grey};
-            color: ${equisoftTheme.greys['mid-grey']};
+            background-color: ${props.theme.greys.grey};
+            border-color: ${props.theme.greys.grey};
+            color: ${props.theme.greys['mid-grey']};
         }
-    }
-  }
+
+        &:disabled {
+            &,
+            &:focus,
+            &:hover {
+                background-color: ${props.theme.greys['light-grey']};
+                border-color: ${props.theme.greys.grey};
+                color: ${props.theme.greys['mid-grey']};
+            }
+        }
+    }`}
 `;
 
 const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {

@@ -6,30 +6,23 @@ import { MediaView } from '../media-view/media-view';
 
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
-import { equisoftTheme } from '../../themes/equisoft';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const tabletMin = `${(breakpoints.tablet / 16)}rem`;
 
 const Header = styled.header`
-  ${(props: {theme: Theme}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
-      return `
-      align-items: center;
-      background: ${theme.main['primary-2']};
-      box-sizing: border-box;
-      color: ${theme.greys.white};
-      display: flex;
-      justify-content: space-between;
-      min-height: 2.75rem;
-      padding: 0.75rem 1rem;
+  align-items: center;
+  background: ${props => props.theme.main['primary-2']};
+  box-sizing: border-box;
+  color: ${props => props.theme.greys.white};
+  display: flex;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
 
-      @media screen and (min-width: ${tabletMin}) {
-        min-height: 5rem;
-        padding: 1.25rem 1.5rem;
-      }
-    `;
-  }}
+  @media screen and (min-width: ${tabletMin}) {
+    min-height: 5rem;
+    padding: 1.25rem 1.5rem;
+  }
 `;
 
 const Brand = styled.a`
@@ -73,7 +66,7 @@ const Project = styled.em`
   padding: 0 1.5rem;
 
   @media screen and (min-width: ${tabletMin}) {
-    border-left: 1px solid ${equisoftTheme.greys.white};
+    border-left: 1px solid ${props => props.theme.greys.white};
     font-size: 1rem;
     line-height: 2.5rem;
     margin: 0 0 0 1.5rem;

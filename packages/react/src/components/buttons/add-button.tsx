@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
-import styled from 'styled-components';
 
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
+import styled from 'styled-components';
 import { Button } from './button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';

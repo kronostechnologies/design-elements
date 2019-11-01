@@ -49,15 +49,17 @@ exports[`SearchGlobal Matches the snapshot 1`] = `
   color: inherit;
 }
 
-.c8:hover {
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
   background-color: #D9DDE2;
   border-color: #D9DDE2;
   color: #9CA7B4;
 }
 
-.c8:disabled,
-.c8:disabled:focus,
-.c8:disabled:hover {
+.c8:disabled:disabled,
+.c8:disabled:disabled:focus,
+.c8:disabled:disabled:hover {
   background-color: #F1F2F2;
   border-color: #D9DDE2;
   color: #9CA7B4;

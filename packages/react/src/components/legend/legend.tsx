@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 
 import styled from 'styled-components';
-import { equisoftTheme } from '../../themes/equisoft';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const List = styled.ul`
@@ -10,33 +9,28 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  ${(props: {theme: Theme, color?: string}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
-      return `
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0 0 15px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 15px;
 
-      p {
-        font-size: 0.875rem;
-        margin: 0;
-      }
+  p {
+    font-size: 0.875rem;
+    margin: 0;
+  }
 
-      ::before {
-        color: ${props.color || theme.main['primary-1.1']};
-        content: '•';
-        font-size: 2.6em;
-        font-weight: 600;
-        margin: -0.4em 0 0 -0.5em;
-        width: 0.5em;
-      }
-    `;
-  }}
+  ::before {
+    color: ${(props: {theme: Theme, color?: string}) => props.color || props.theme.main['primary-1.1']};
+    content: '•';
+    font-size: 2.6em;
+    font-weight: 600;
+    margin: -0.4em 0 0 -0.5em;
+    width: 0.5em;
+  }
 `;
 
 const Description = styled.span`
-  color: ${equisoftTheme.greys['dark-grey']};
+  color: ${props => props.theme.greys['dark-grey']};
   font-size: 0.75rem;
 `;
 

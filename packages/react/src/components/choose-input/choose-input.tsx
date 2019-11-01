@@ -1,7 +1,7 @@
 import React, { ChangeEvent, ReactNode } from 'react';
+
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
 import { hiddenStyle } from '../visually-hidden/styles/visuallyhidden';
 import { Label } from './styles/choose';
 
@@ -28,7 +28,6 @@ const ChooseInput = React.forwardRef(
         function handleChange(event: ChangeEvent<HTMLInputElement>): void {
             onChange(event);
         }
-
         return (
             <>
                 <Input
@@ -44,6 +43,7 @@ const ChooseInput = React.forwardRef(
                 <Label htmlFor={id}>{children}</Label>
             </>
         );
-    });
+    },
+);
 
 export { ChooseInput };

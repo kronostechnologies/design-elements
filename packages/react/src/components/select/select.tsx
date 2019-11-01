@@ -1,27 +1,19 @@
 import React, { ChangeEvent, ReactElement, useRef, useState } from 'react';
+
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
 import { ChooseInput } from '../choose-input/choose-input';
 import { FieldContainer } from '../field-container/field-container';
-
-import { equisoftTheme } from '../../themes/equisoft';
 import { inputsStyle } from '../text-input/styles/inputs';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const StyledSelect = styled.select`
-    ${(props: {theme: Theme}) => {
-        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
-        return `
-            ${inputsStyle(theme)}
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-position: right 0.75rem center;
-            background-repeat: no-repeat;
-            background-size: 0.75rem;
-            position: relative;
-        `;
-    }}
+    ${props => inputsStyle(props.theme)}
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 0.75rem;
+    position: relative;
 `;
 
 interface SelectProps {

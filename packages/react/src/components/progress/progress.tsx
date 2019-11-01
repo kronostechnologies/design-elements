@@ -1,8 +1,5 @@
 import React, { ReactElement } from 'react';
-
 import styled from 'styled-components';
-import { equisoftTheme } from '../../themes/equisoft';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Div = styled.div`
   align-items: center;
@@ -11,9 +8,6 @@ const Div = styled.div`
 `;
 
 const StyledProgress = styled.progress`
-  ${(props: {theme: Theme}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
-      return `
       appearance: none;
       height: 4px;
       margin: 6px;
@@ -21,19 +15,17 @@ const StyledProgress = styled.progress`
 
       &[value] {
         &::-moz-progress-bar {
-          background-color: ${theme.main['primary-3']};
+          background-color: ${props => props.theme.main['primary-3']};
         }
 
         &::-webkit-progress-bar {
-          background-color: ${theme.greys.grey};
+          background-color: ${props => props.theme.greys.grey};
         }
 
         &::-webkit-progress-value {
-          background-color: ${theme.main['primary-3']};
+          background-color: ${props => props.theme.main['primary-3']};
         }
       }
-    `;
-  }}
 `;
 
 const UL = styled.ul`
@@ -48,26 +40,21 @@ const UL = styled.ul`
 `;
 
 const AbstractStep = styled.li`
-  ${(props: {theme: Theme}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
-      return `
-      background-color: ${theme.main['primary-3']};
-      border-radius: 50%;
-      display: inline-block;
-      width: 16px;
-    `;
-  }}
+  background-color: ${props => props.theme.main['primary-3']};
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
 `;
 
 const PastStep = AbstractStep;
 
 const CurrentStep = styled(AbstractStep)`
-  border: 4px solid ${equisoftTheme.greys.grey};
+  border: 4px solid ${props => props.theme.greys.grey};
   width: 8px;
 `;
 
 const FutureStep = styled(AbstractStep)`
-  background-color: ${equisoftTheme.greys.grey};
+  background-color: ${props => props.theme.greys.grey};
 `;
 
 const range = (value: number) => {

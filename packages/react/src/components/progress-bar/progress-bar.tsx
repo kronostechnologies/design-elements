@@ -1,11 +1,11 @@
 import React, { ReactElement, ReactText } from 'react';
-import styled from 'styled-components';
 
-import { equisoftTheme } from '../../themes/equisoft';
+import styled from 'styled-components';
 import { Bar } from '../bar/bar';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Label = styled.label`
-  color: ${(props: {secondary: boolean}) => (props.secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black)};
+  color: ${(props: {theme: Theme, secondary: boolean}) => (props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black)};
   font-size: 0.875rem;
 `;
 

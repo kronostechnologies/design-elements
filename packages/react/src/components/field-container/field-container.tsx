@@ -1,25 +1,23 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { equisoftTheme } from '../../themes/equisoft';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const StyledDiv = styled.div`
   ${(props: {theme: Theme, valid: boolean}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
       margin: 0 0 1.5rem;
 
       input,
       select,
       textarea {
-        border-color: ${props.valid ? theme.greys.grey : theme.notifications['error-2.1']};
+        border-color: ${props.valid ? props.theme.greys.grey : props.theme.notifications['error-2.1']};
       }
 
       &:focus {
-        border-color: ${props.valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
+        border-color: ${props.valid ? props.theme.main['primary-1.1'] : props.theme.notifications['error-2.1']};
       }
     `;
   }}`;

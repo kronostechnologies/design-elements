@@ -2,22 +2,19 @@ import React from 'react';
 
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-import { equisoftTheme } from '../../themes/equisoft';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Input = styled.input`
-  ${(props: {theme: Theme}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
+  ${props => {
       return `
       position: absolute;
       z-index: -1;
 
       + label {
         align-items: center;
-        background-color: ${theme.greys.white};
-        border: 1px solid ${theme.greys.grey};
+        background-color: ${props.theme.greys.white};
+        border: 1px solid ${props.theme.greys.grey};
         border-radius: 8px;
-        color: ${theme.greys['dark-grey']};
+        color: ${props.theme.greys['dark-grey']};
         display: flex;
         font-size: 24px;
         justify-content: center;
@@ -25,9 +22,9 @@ const Input = styled.input`
       }
 
       &:checked + label {
-        background-color: ${theme.main['primary-1.1']};
-        border-color: ${theme.main['primary-1.1']};
-        color: ${theme.greys.white};
+        background-color: ${props.theme.main['primary-1.1']};
+        border-color: ${props.theme.main['primary-1.1']};
+        color: ${props.theme.greys.white};
       }
     `;
   }}

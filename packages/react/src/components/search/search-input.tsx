@@ -8,7 +8,6 @@ import XIcon from 'feather-icons/dist/icons/x.svg';
 import { SearchButton } from '../buttons/search-button';
 import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 
-import { equisoftTheme } from '../../themes/equisoft';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { Theme } from '../theme-wrapper/theme-wrapper';
@@ -18,7 +17,7 @@ const SearchWrapper = styled.div`
 
   label {
     bottom: 0.5rem;
-    color: ${equisoftTheme.greys['dark-grey']};
+    color: ${props => props.theme.greys['dark-grey']};
     display: inline-block;
     height: 1rem;
     left: 0.5rem;
@@ -34,24 +33,22 @@ const InnerWrapper = styled.div`
   position: relative;
 `;
 
-type IcoSearchProps = Pick<SearchInputProps, 'disabled'>;
 const IcoSearch = styled(SearchIcon)`
-  color: ${(props: IcoSearchProps) => (props.disabled ? equisoftTheme.greys['mid-grey'] : equisoftTheme.greys['dark-grey'])};
+  color: ${(props: {theme: Theme, disabled?: boolean}) => (props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey'])};
   height: 1rem;
   width: 1rem;
 `;
 
 const IcoReset = styled(XIcon)`
-  color: ${equisoftTheme.greys.black};
+  color: ${props => props.theme.greys.black};
   height: 0.75rem;
   width: 0.75rem;
 `;
 
 const Input = styled.input`
   ${(props: {theme: Theme, hasButton?: boolean}) => {
-      const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
       return `
-      ${inputsStyle(theme)} /* Must be the first rule */
+      ${inputsStyle(props.theme)} /* Must be the first rule */
       border-radius: ${props.hasButton && '0.25rem 0 0 0.25rem'};
       line-height: 1;
       padding: 0.5rem 1.75rem 0.5rem 2rem;

@@ -1,7 +1,7 @@
 import React, { ReactText } from 'react';
-import styled from 'styled-components';
 
-import { equisoftTheme } from '../../themes/equisoft';
+import styled from 'styled-components';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Container = styled.div`
   align-items: center;
@@ -9,8 +9,8 @@ const Container = styled.div`
   margin-bottom: 1rem;
 
   p {
-    color: ${(props: {secondary: boolean}) => {
-        return (props.secondary ? equisoftTheme.greys['dark-grey'] : equisoftTheme.greys.black);
+    color: ${(props: {theme: Theme, secondary: boolean}) => {
+        return (props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black);
     }};
     margin: 0;
     text-align: right;
@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-  background-color: ${equisoftTheme.greys.grey};
+  background-color: ${props => props.theme.greys.grey}};
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;

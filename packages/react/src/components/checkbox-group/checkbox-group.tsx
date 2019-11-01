@@ -2,7 +2,6 @@ import React, { ChangeEvent, ReactElement } from 'react';
 
 import CheckMark from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
-import { equisoftTheme } from '../../themes/equisoft';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
@@ -12,7 +11,7 @@ const Legend = styled.legend`
 `;
 
 const StyledCheckMark = styled(CheckMark)`
-    color: ${equisoftTheme.greys.white};
+    color: ${props => props.theme.greys.white};
     height: 100%;
     opacity: 0;
     width: 100%;
@@ -20,7 +19,6 @@ const StyledCheckMark = styled(CheckMark)`
 
 const StyledLabel = styled.label`
     ${(props: {theme: Theme, disabled: boolean | undefined}) => {
-        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
         return `
             ${props.disabled ? '' : 'cursor: pointer;'}
             display: block;
@@ -37,8 +35,8 @@ const StyledLabel = styled.label`
                 display: none;
 
                 &:checked + .box {
-                    background-color: ${theme.main['primary-1.1']};
-                    border: 1px solid ${theme.main['primary-1.1']};
+                    background-color: ${props.theme.main['primary-1.1']};
+                    border: 1px solid ${props.theme.main['primary-1.1']};
 
                     ${StyledCheckMark} {
                         opacity: 1;
@@ -48,8 +46,8 @@ const StyledLabel = styled.label`
 
             .box {
                 align-self: center;
-                background-color: ${props.disabled ? theme.greys['light-grey'] : theme.greys.white};
-                border: 1px solid ${props.disabled ? theme.greys.grey : theme.greys['dark-grey']};
+                background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
                 border-radius: 5px;
                 display: inline-block;
                 height: 16px;
@@ -61,7 +59,7 @@ const StyledLabel = styled.label`
             }
 
             &:hover .box {
-                border: 1px solid ${props.disabled ? theme.greys.grey : theme.main['primary-1.1']};
+                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
             }
         `;
     }}

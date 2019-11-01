@@ -29,23 +29,6 @@ Array [
   margin-top: 16px;
 }
 
-.c0 .radioInput {
-  background-color: #fff;
-  border: 1px solid #57666e;
-  border-radius: 50%;
-  display: inline-block;
-  height: 16px;
-  left: 0;
-  margin-top: 2px;
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-
-.c0:hover .radioInput {
-  border: 1px solid #0080a5;
-}
-
 .c0 input {
   height: 16px;
   left: 0;
@@ -75,8 +58,6 @@ Array [
   width: 7px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
@@ -94,7 +75,6 @@ Array [
   border: 1px solid #0080A5;
 }
 
->>>>>>> Fixes tests
 <label
     className="c0"
   >
@@ -125,23 +105,6 @@ Array [
   margin-top: 16px;
 }
 
-.c0 .radioInput {
-  background-color: #fff;
-  border: 1px solid #57666e;
-  border-radius: 50%;
-  display: inline-block;
-  height: 16px;
-  left: 0;
-  margin-top: 2px;
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-
-.c0:hover .radioInput {
-  border: 1px solid #0080a5;
-}
-
 .c0 input {
   height: 16px;
   left: 0;
@@ -171,8 +134,6 @@ Array [
   width: 7px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
@@ -190,7 +151,6 @@ Array [
   border: 1px solid #0080A5;
 }
 
->>>>>>> Fixes tests
 <label
     className="c0"
   >
@@ -207,7 +167,6 @@ Array [
     />
   </label>,
   .c0 {
-  cursor: default;
   display: block;
   font-size: 0.875rem;
   padding-left: 24px;
@@ -220,23 +179,6 @@ Array [
 
 .c0:not(:first-of-type) {
   margin-top: 16px;
-}
-
-.c0 .radioInput {
-  background-color: #f1f2f2;
-  border: 1px solid #d9dde2;
-  border-radius: 50%;
-  display: inline-block;
-  height: 16px;
-  left: 0;
-  margin-top: 2px;
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-
-.c0:hover .radioInput {
-  border: 1px solid #d9dde2;
 }
 
 .c0 input {
@@ -268,8 +210,6 @@ Array [
   width: 7px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 .radioInput {
   background-color: #F1F2F2;
   border: 1px solid #D9DDE2;
@@ -287,7 +227,6 @@ Array [
   border: 1px solid #D9DDE2;
 }
 
->>>>>>> Fixes tests
 <label
     className="c0"
     disabled={true}
@@ -320,23 +259,6 @@ Array [
   margin-top: 16px;
 }
 
-.c0 .radioInput {
-  background-color: #fff;
-  border: 1px solid #57666e;
-  border-radius: 50%;
-  display: inline-block;
-  height: 16px;
-  left: 0;
-  margin-top: 2px;
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-
-.c0:hover .radioInput {
-  border: 1px solid #0080a5;
-}
-
 .c0 input {
   height: 16px;
   left: 0;
@@ -366,8 +288,6 @@ Array [
   width: 7px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
@@ -385,7 +305,6 @@ Array [
   border: 1px solid #0080A5;
 }
 
->>>>>>> Fixes tests
 <label
     className="c0"
   >

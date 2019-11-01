@@ -36,8 +36,6 @@ Array [
   margin-top: 16px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 input {
   display: none;
 }
@@ -51,7 +49,6 @@ Array [
   opacity: 1;
 }
 
->>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -70,19 +67,6 @@ Array [
 
 .c0:hover .box {
   border: 1px solid #0080A5;
-}
-
-.c0 input {
-  display: none;
-}
-
-.c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
 }
 
 .c3 input:checked + .box .c1 {
@@ -130,8 +114,6 @@ Array [
   margin-top: 16px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 input {
   display: none;
 }
@@ -145,7 +127,6 @@ Array [
   opacity: 1;
 }
 
->>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -164,19 +145,6 @@ Array [
 
 .c0:hover .box {
   border: 1px solid #0080A5;
-}
-
-.c0 input {
-  display: none;
-}
-
-.c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
 }
 
 .c3 input:checked + .box .c1 {
@@ -214,7 +182,6 @@ Array [
 }
 
 .c0 {
-  cursor: default;
   display: block;
   font-size: 0.875rem;
   padding-left: 24px;
@@ -229,8 +196,6 @@ Array [
   margin-top: 16px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 input {
   display: none;
 }
@@ -244,7 +209,6 @@ Array [
   opacity: 1;
 }
 
->>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -263,19 +227,6 @@ Array [
 
 .c0:hover .box {
   border: 1px solid #D9DDE2;
-}
-
-.c0 input {
-  display: none;
-}
-
-.c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
 }
 
 <label
@@ -321,8 +272,6 @@ Array [
   margin-top: 16px;
 }
 
-<<<<<<< HEAD
-=======
 .c0 input {
   display: none;
 }
@@ -336,7 +285,6 @@ Array [
   opacity: 1;
 }
 
->>>>>>> Fixes tests
 .c0 .box {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -355,19 +303,6 @@ Array [
 
 .c0:hover .box {
   border: 1px solid #0080A5;
-}
-
-.c0 input {
-  display: none;
-}
-
-.c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
 }
 
 .c3 input:checked + .box .c1 {

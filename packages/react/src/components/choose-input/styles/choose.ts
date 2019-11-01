@@ -1,16 +1,14 @@
 import styled from 'styled-components';
-import { equisoftTheme } from '../../../themes/equisoft';
 
 export const Label = styled.label`
     ${props => {
-        const theme = Object.entries(props.theme).length === 0 ? equisoftTheme : props.theme;
         return `
           align-items: center;
-          background: ${theme.greys.white};
-          border: 1px solid ${theme.greys.grey};
+          background: ${props.theme.greys.white};
+          border: 1px solid ${props.theme.greys.grey};
           border-radius: 0.5rem;
           box-sizing: border-box;
-          color: ${theme.greys['dark-grey']};
+          color: ${props.theme.greys['dark-grey']};
           cursor: pointer;
           display: flex;
           justify-content: center;
@@ -19,27 +17,27 @@ export const Label = styled.label`
           transition: all 0.25s ease-in-out;
 
           &:hover {
-            background: ${theme.greys.grey};
-            border-color: ${theme.greys.grey};
+            background: ${props.theme.greys.grey};
+            border-color: ${props.theme.greys.grey};
           }
 
           input[type="checkbox"]:checked + &,
           input[type="radio"]:checked + & {
-            background: ${theme.main['primary-1.1']};
-            border-color: ${theme.main['primary-1.1']};
-            color: ${theme.greys.white};
+            background: ${props.theme.main['primary-1.1']};
+            border-color: ${props.theme.main['primary-1.1']};
+            color: ${props.theme.greys.white};
           }
 
           input[type="checkbox"]:focus + &,
           input[type="radio"]:focus + & {
-            border-color: ${theme.main['primary-1.1']};
+            border-color: ${props.theme.main['primary-1.1']};
           }
 
           input[type="checkbox"]:disabled + &,
           input[type="radio"]:disabled + & {
-            background: ${theme.greys['light-grey']};
-            border-color: ${theme.greys.grey};
-            color: ${theme.greys['mid-grey']};
+            background: ${props.theme.greys['light-grey']};
+            border-color: ${props.theme.greys.grey};
+            color: ${props.theme.greys['mid-grey']};
             cursor: auto;
           }
 
