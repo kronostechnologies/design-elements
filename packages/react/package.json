@@ -9,7 +9,14 @@
     "build": "webpack --config ./webpack/webpack.config.prod.js",
     "prepublishOnly": "yarn build",
     "start": "webpack --config ./webpack/webpack.config.dev.js",
-    "test": "jest --max-workers=2",
+    "test": "jest",
+    "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' jest --max-workers=2 --reporters=default --reporters=jest-junit",
+    "lint": "yarn tslint && yarn stylelint",
+    "lint:ci": "mkdir -p build/lint/ts build/lint/style && yarn tslint:ci && yarn stylelint:ci",
+    "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\"",
+    "tslint:ci": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\" --format junit -o build/lint/ts/junit.xml",
+    "stylelint": "stylelint \"./src/**/*.{ts,tsx}\"",
+    "stylelint:ci": "stylelint --custom-formatter node_modules/stylelint-junit-formatter \"./src/**/*.{ts,tsx}\" > build/lint/style/junit.xml",
     "test-update": "jest -u"
   },
   "files": [
@@ -60,11 +67,13 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.9.0",
+    "jest-junit": "^9.0.0",
     "jest-styled-components": "^6.3.3",
     "react": "~16.9.0",
     "react-docgen-typescript-loader": "^3.2.1",
     "react-dom": "~16.9.0",
     "react-test-renderer": "^16.9.0",
+    "stylelint-junit-formatter": "^0.2.2",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.1.2",
     "tslint": "^5.18.0",
@@ -72,5 +81,8 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-merge": "^4.2.2"
+  },
+  "jest-junit": {
+    "outputDirectory": "build/tests"
   }
 }

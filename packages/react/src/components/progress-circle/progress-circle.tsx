@@ -14,34 +14,35 @@ interface ResultProps extends Pick<Props, 'secondary'> {
 }
 
 const Container = styled.div`
-    display: inline-block;
+  display: inline-block;
 `;
 
 const Wrapper = styled.div`
-    height: ${(RADIUS * 2) / 16}rem;
-    position: relative;
-    width: ${(RADIUS * 2) / 16}rem;
+  height: ${(RADIUS * 2) / 16}rem;
+  position: relative;
+  width: ${(RADIUS * 2) / 16}rem;
 `;
 
 const Result = styled.div`
-    align-items: center;
-    display: flex;
-    height: ${(RADIUS * 2) / 16}rem;
-    justify-content: center;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: ${(RADIUS * 2) / 16}rem;
-    p {
-        color: ${(props: ResultProps) => getColor(props.secondary)};
-        font-size: 1.625rem;
-    }
+  align-items: center;
+  display: flex;
+  height: ${(RADIUS * 2) / 16}rem;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: ${(RADIUS * 2) / 16}rem;
+
+  p {
+    color: ${(props: ResultProps) => getColor(props.secondary)};
+    font-size: 1.625rem;
+  }
 `;
 
 const Label = styled.p`
-    color: ${(props: ResultProps) => getColor(props.secondary)};
-    text-align: center;
-    width: ${(RADIUS * 2) / 16}rem;
+  color: ${(props: ResultProps) => getColor(props.secondary)};
+  text-align: center;
+  width: ${(RADIUS * 2) / 16}rem;
 `;
 
 interface Props {

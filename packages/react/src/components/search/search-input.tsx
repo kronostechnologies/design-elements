@@ -5,8 +5,8 @@ import uuid from 'uuid/v4';
 
 import XIcon from 'feather-icons/dist/icons/x.svg';
 
-import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 import { SearchButton } from '../buttons/search-button';
+import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -47,7 +47,7 @@ const IcoReset = styled(XIcon)`
 
 const Input = styled.input`
   ${inputsStyle} /* Must be the first rule */
-  border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')};
+  border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')}; /* stylelint-disable-line order/properties-alphabetical-order */
   line-height: 1;
   padding: 0.5rem 1.75rem 0.5rem 2rem;
 

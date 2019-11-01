@@ -1,8 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { MediaView } from '../media-view/media-view';
 import { breakpoints } from '../../tokens/breakpoints';
+import { MediaView } from '../media-view/media-view';
 
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
