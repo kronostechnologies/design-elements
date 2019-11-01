@@ -17,6 +17,7 @@ import { Card } from './components/card/card';
 import { Chooser } from './components/choosers/chooser';
 import { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 import { Headband } from './components/headband/equisoft-default';
+import { Icon } from './components/icon/icon';
 import { Progress } from './components/progress/progress';
 
 // Results
@@ -39,6 +40,7 @@ export {
     Chooser,
     EnsoSpinner,
     Headband,
+    Icon,
     Progress,
     Legend,
     RadioButtonGroup,
