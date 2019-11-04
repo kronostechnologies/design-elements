@@ -10,8 +10,8 @@ const Legend = styled.legend`
 `;
 
 const StyledLabel = styled.label `
-    ${(props: {theme: Theme, disabled?: boolean}) => {
-        return `
+  ${(props: {theme: Theme, disabled?: boolean}) => {
+      return `
         ${props.disabled ? '' : 'cursor: pointer;'};
         display: block;
         font-size: 0.875rem;
@@ -67,7 +67,7 @@ const StyledLabel = styled.label `
             border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
         }
         `;
-    }}
+  }}
 `;
 
 interface RadioButtonGroupProps {

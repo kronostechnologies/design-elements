@@ -1,4 +1,4 @@
-export default {
+export const greys = {
     white: '#FFFFFF',
     'colored-white': '#F8F8FA',
     'light-grey': '#F1F2F2',

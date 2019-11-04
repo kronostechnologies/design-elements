@@ -1,12 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { OptionButton } from './option-button';
 jest.mock('uuid/v4');
 
 describe('Option Button', () => {
     test('Is checked', () => {
         const tree = renderer.create(
-            <OptionButton label="option" name="test" value={2} checked />,
+            ThemeWrapped(<OptionButton label="option" name="test" value={2} checked />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -14,7 +15,7 @@ describe('Option Button', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <OptionButton label="option" name="test" value={2} />,
+            ThemeWrapped(<OptionButton label="option" name="test" value={2} />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

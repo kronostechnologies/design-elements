@@ -6,21 +6,18 @@ import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const StyledDiv = styled.div`
-  ${(props: {theme: Theme, valid: boolean}) => {
-      return `
-      margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem;
 
-      input,
-      select,
-      textarea {
-        border-color: ${props.valid ? props.theme.greys.grey : props.theme.notifications['error-2.1']};
-      }
+  input,
+  select,
+  textarea {
+    border-color: ${(props: {theme: Theme, valid: boolean}) => props.valid ? props.theme.greys.grey : props.theme.notifications['error-2.1']};
+  }
 
-      &:focus {
-        border-color: ${props.valid ? props.theme.main['primary-1.1'] : props.theme.notifications['error-2.1']};
-      }
-    `;
-  }}`;
+  &:focus {
+    border-color: ${props => props.valid ? props.theme.main['primary-1.1'] : props.theme.notifications['error-2.1']};
+  }
+`;
 
 interface FieldContainerProps {
     children: ReactNode;

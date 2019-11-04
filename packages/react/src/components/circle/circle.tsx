@@ -9,8 +9,8 @@ interface CircleProps {
 }
 
 const CirclePath = styled.circle`
-    transform: rotate(90deg);
-    transform-origin: 50% 50%;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
 `;
 
 const Circle = ({ radius, stroke, percent, color }: CircleProps) => {

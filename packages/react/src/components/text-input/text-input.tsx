@@ -6,7 +6,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input`
-    ${props => inputsStyle(props.theme)}
+  ${props => inputsStyle(props.theme)}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,

@@ -11,58 +11,58 @@ const Legend = styled.legend`
 `;
 
 const StyledCheckMark = styled(CheckMark)`
-    color: ${props => props.theme.greys.white};
-    height: 100%;
-    opacity: 0;
-    width: 100%;
+  color: ${props => props.theme.greys.white};
+  height: 100%;
+  opacity: 0;
+  width: 100%;
 `;
 
 const StyledLabel = styled.label`
-    ${(props: {theme: Theme, disabled: boolean | undefined}) => {
-        return `
-            ${props.disabled ? '' : 'cursor: pointer;'}
-            display: block;
-            font-size: 0.875rem;
-            padding-left: 24px;
-            position: relative;
-            user-select: none;
+  ${(props: {theme: Theme, disabled: boolean | undefined}) => {
+      return `
+        ${props.disabled ? '' : 'cursor: pointer;'}
+        display: block;
+        font-size: 0.875rem;
+        padding-left: 24px;
+        position: relative;
+        user-select: none;
 
-            &:not(:first-of-type) {
-                margin-top: 16px;
-            }
+        &:not(:first-of-type) {
+            margin-top: 16px;
+        }
 
-            input {
-                display: none;
+        input {
+            display: none;
 
-                &:checked + .box {
-                    background-color: ${props.theme.main['primary-1.1']};
-                    border: 1px solid ${props.theme.main['primary-1.1']};
+            &:checked + .box {
+                background-color: ${props.theme.main['primary-1.1']};
+                border: 1px solid ${props.theme.main['primary-1.1']};
 
-                    ${StyledCheckMark} {
-                        opacity: 1;
-                    }
+                ${StyledCheckMark} {
+                    opacity: 1;
                 }
             }
+        }
 
-            .box {
-                align-self: center;
-                background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
-                border-radius: 5px;
-                display: inline-block;
-                height: 16px;
-                left: 0;
-                margin-top: 2px;
-                position: absolute;
-                top: 0;
-                width: 16px;
-            }
+        .box {
+            align-self: center;
+            background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+            border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
+            border-radius: 5px;
+            display: inline-block;
+            height: 16px;
+            left: 0;
+            margin-top: 2px;
+            position: absolute;
+            top: 0;
+            width: 16px;
+        }
 
-            &:hover .box {
-                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
-            }
-        `;
-    }}
+        &:hover .box {
+            border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
+        }
+    `;
+  }}
 `;
 
 interface CheckboxProps {

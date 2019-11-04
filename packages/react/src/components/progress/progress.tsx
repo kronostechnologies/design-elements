@@ -8,24 +8,24 @@ const Div = styled.div`
 `;
 
 const StyledProgress = styled.progress`
-      appearance: none;
-      height: 4px;
-      margin: 6px;
-      min-width: 148px;
+  appearance: none;
+  height: 4px;
+  margin: 6px;
+  min-width: 148px;
 
-      &[value] {
-        &::-moz-progress-bar {
-          background-color: ${props => props.theme.main['primary-3']};
-        }
+  &[value] {
+    &::-moz-progress-bar {
+      background-color: ${props => props.theme.main['primary-3']};
+    }
 
-        &::-webkit-progress-bar {
-          background-color: ${props => props.theme.greys.grey};
-        }
+    &::-webkit-progress-bar {
+      background-color: ${props => props.theme.greys.grey};
+    }
 
-        &::-webkit-progress-value {
-          background-color: ${props => props.theme.main['primary-3']};
-        }
-      }
+    &::-webkit-progress-value {
+      background-color: ${props => props.theme.main['primary-3']};
+    }
+  }
 `;
 
 const UL = styled.ul`

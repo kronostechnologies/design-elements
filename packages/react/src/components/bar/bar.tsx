@@ -9,9 +9,7 @@ const Container = styled.div`
   margin-bottom: 1rem;
 
   p {
-    color: ${(props: {theme: Theme, secondary: boolean}) => {
-        return (props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black);
-    }};
+    color: ${(props: {theme: Theme, secondary: boolean}) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
     margin: 0;
     text-align: right;
     width: 8.5rem;
@@ -19,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-  background-color: ${props => props.theme.greys.grey}};
+  background-color: ${props => props.theme.greys.grey};
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;

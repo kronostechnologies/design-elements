@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { TextArea } from './text-area';
 jest.mock('uuid/v4');
 
@@ -15,7 +16,7 @@ describe('TextArea', () => {
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <TextArea onChange={callback} {...defaultProps} />,
+            ThemeWrapped(<TextArea onChange={callback} {...defaultProps} />),
         );
 
         wrapper.find('textarea').simulate('change', { target: { value: 'bar' } });
@@ -25,7 +26,7 @@ describe('TextArea', () => {
     test('onBlur callback is called when content is blurred', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <TextArea onBlur={callback} {...defaultProps} />,
+            ThemeWrapped(<TextArea onBlur={callback} {...defaultProps} />),
         );
 
         wrapper.find('textarea').simulate('blur');
@@ -35,7 +36,7 @@ describe('TextArea', () => {
     test('onFocus callback is called when content is focused', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <TextArea onFocus={callback} {...defaultProps} />,
+            ThemeWrapped(<TextArea onFocus={callback} {...defaultProps} />),
         );
 
         wrapper.find('textarea').simulate('focus');
@@ -45,7 +46,7 @@ describe('TextArea', () => {
     test('onFocus callback cannot be called when disabled', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <TextArea onBlur={callback} {...defaultProps} disabled />,
+            ThemeWrapped(<TextArea onBlur={callback} {...defaultProps} disabled />),
         );
 
         wrapper.find('textarea').simulate('focus');
@@ -54,7 +55,7 @@ describe('TextArea', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <TextArea onChange={() => {}}  onBlur={() => {}} {...defaultProps} />,
+            ThemeWrapped(<TextArea onChange={() => {}}  onBlur={() => {}} {...defaultProps} />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -62,7 +63,7 @@ describe('TextArea', () => {
 
     test('Is disabled', () => {
         const tree = renderer.create(
-            <TextArea onChange={() => {}}  onBlur={() => {}} {...defaultProps} disabled />,
+            ThemeWrapped(<TextArea onChange={() => {}}  onBlur={() => {}} {...defaultProps} disabled />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

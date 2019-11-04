@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-    ${props => `
+  ${props => `
     background: ${props.theme.greys.white};
     border-color: ${props.theme.greys.grey};
     color: ${props.theme.greys['mid-grey']};

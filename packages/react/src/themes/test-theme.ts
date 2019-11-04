@@ -1,6 +1,6 @@
 import { Theme } from '../components/theme-wrapper/theme-wrapper';
-import greys from './greys';
-import notifications from './notifications';
+import { greys } from './greys';
+import { notifications } from './notifications';
 
 export const testTheme: Theme = {
     main: {

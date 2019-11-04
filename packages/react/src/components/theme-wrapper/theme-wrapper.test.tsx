@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import renderer from 'react-test-renderer';
 import { testTheme } from '../../themes/test-theme';
 import { Button } from '../buttons/button';
 import { ThemeWrapper } from './theme-wrapper';
+
+export const ThemeWrapped = (children: ReactElement) => (
+    <ThemeWrapper>
+        {children}
+    </ThemeWrapper>
+);
 
 describe('Theme Wrapper', () => {
     test('Returns component with default theme', () => {
