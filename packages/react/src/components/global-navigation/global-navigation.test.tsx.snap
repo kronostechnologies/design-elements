@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalNavigation Matches the snapshot 1`] = `
+.c0 {
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  display: grid;
+  grid-template-rows: 1fr 112px;
+  height: 100%;
+  overflow: hidden;
+  width: 56px;
+}
+
+.c1 {
+  display: grid;
+  grid-template-rows: repeat(10,56px);
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  -webkit-align-content: end;
+  -ms-flex-line-pack: end;
+  align-content: end;
+  display: grid;
+  grid-template-rows: repeat(2,56px);
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+}
+
+.c2 > a,
+.c2 > button {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #57666e;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.c2 > a:hover,
+.c2 > button:hover {
+  cursor: pointer;
+}
+
+.c2 > a:hover svg,
+.c2 > button:hover svg {
+  color: white;
+  z-index: 1;
+}
+
+.c2 > a:hover::before,
+.c2 > button:hover::before {
+  background-color: #006c8a;
+  border-radius: 50%;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 12px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 0;
+}
+
+.c2 > a:focus,
+.c2 > button:focus,
+.c2 > a.active,
+.c2 > button.active {
+  cursor: pointer;
+}
+
+.c2 > a:focus svg,
+.c2 > button:focus svg,
+.c2 > a.active svg,
+.c2 > button.active svg {
+  color: white;
+  z-index: 1;
+}
+
+.c2 > a:focus::before,
+.c2 > button:focus::before,
+.c2 > a.active::before,
+.c2 > button.active::before {
+  background-color: #0080a5;
+  border-radius: 50%;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 12px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 0;
+}
+
+<div
+  className="c0"
+>
+  <nav>
+    <ul
+      className="c1"
+    >
+      <li
+        className="c2"
+      >
+        <button
+          onClick={[MockFunction]}
+          title="home"
+        >
+          <svg
+            color="#57666e"
+            focusable={false}
+            height="16"
+            width="16"
+          />
+        </button>
+      </li>
+      <li
+        className="c2"
+      >
+        <button
+          onClick={[MockFunction]}
+          title="portfolio"
+        >
+          <svg
+            color="#57666e"
+            focusable={false}
+            height="16"
+            width="16"
+          />
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <footer>
+    <ul
+      className="c3"
+    >
+      <li
+        className="c2"
+      >
+        <button
+          className="tutu"
+          onClick={[Function]}
+        >
+          <svg
+            color="currentColor"
+            focusable={false}
+            height="16"
+            width="16"
+          />
+        </button>
+      </li>
+      <li
+        className="c2"
+      >
+        <button
+          onClick={[MockFunction]}
+        >
+          <svg
+            color="currentColor"
+            focusable={false}
+            height="16"
+            width="16"
+          />
+        </button>
+      </li>
+    </ul>
+  </footer>
+</div>
+`;

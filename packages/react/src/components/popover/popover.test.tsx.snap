@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover Matches the snapshot 1`] = `
+<button
+  className=""
+  onClick={[Function]}
+>
+  target
+</button>
+`;

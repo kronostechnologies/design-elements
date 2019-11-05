@@ -32,6 +32,12 @@ export { RouteLink } from './components/route-link/route-link';
 export { Progress } from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 
+// Navigation
+export { GlobalNavigation } from './components/global-navigation/global-navigation';
+
+// Popover
+export { Popover } from './components/popover/popover';
+
 // Results
 export { Legend } from './components/legend/legend';
 export { ProgressBar } from './components/progress-bar/progress-bar';

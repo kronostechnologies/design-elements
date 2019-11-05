@@ -6,8 +6,8 @@
         <mask id="mask-2" fill="white">
             <use xlink:href="#path-1"></use>
         </mask>
-        <use id="Open" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-        <g id="Core/Grey/7(BLACK)" mask="url(#mask-2)" fill="#000000">
+        <use id="Open" fill="currentColor" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Core/Grey/7(BLACK)" mask="url(#mask-2)" fill="currentColor">
             <rect id="CRM/5" x="0" y="0" width="24" height="24"></rect>
         </g>
     </g>
