@@ -2,69 +2,104 @@ import React, { ReactElement } from 'react';
 
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { Icon, IconName } from '../icon/icon';
 
 interface LinkProps {
     type?: 'nav' | 'ext';
     href: string;
+    iconName?: IconName;
     label: string;
     disabled?: boolean;
 }
 
 const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
   .link {
     font-size: 0.875rem;
-    margin: 0;
+    font-weight: 400;
+    margin: ${(props: {disabled?: boolean, icon: boolean}) => props.icon ? '0 0 0 8px' : '0'};
     ${props => props.disabled ? 'cursor: default' : ''};
     text-decoration: none;
+  }
 
-    &:visited {
-      color: #0080a5;
-      font-weight: 600;
+  &.external {
+    color: ${props => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
+
+    .link {
+      color: ${props => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
+
+      &:hover {
+        ${props => props.disabled ? '' : 'text-decoration: underline'};
+      }
+
+      &:visited {
+        color: #094c6c;
+      }
     }
   }
 
-  .external {
-    color: ${(props: {disabled?: boolean}) => props.disabled ? '#7fbfd2 !important' : '#0080a5'}
-    &:hover {
-      color: #006c8a;
-    }
-  }
-
-  .navigation {
+  &.navigation {
     color: ${props => props.disabled ? '#9ca7b4 !important' : '#57666e'};
 
-    &:hover {
-      color: #000;
+    /* stylelint-disable */
+    .link {
+    /* stylelint-enable */
+      color: ${props => props.disabled ? '#9ca7b4 !important' : '#57666e'};
+
+      &:hover {
+        color: #000;
+
+        ~ svg {
+          ${props => props.disabled ? '' : 'color: #000'};
+        }
+      }
+
+      ${props => props.disabled ? '' : `
+        &:active {
+          color: #0080a5;
+          font-weight: 600;
+
+          ~ svg {
+            color: #0080a5;
+          }
+        }
+      `}
     }
   }
 `;
 
-export function Link({ type, href, label, disabled }: LinkProps): ReactElement {
+export function Link({ disabled, href, iconName, label, type }: LinkProps): ReactElement {
     if (type === 'ext') {
         return (
-            <Container disabled={disabled}>
+            <Container disabled={disabled} className="external" icon={iconName ? true : false}>
                 {disabled ?
-                    <p className="link external">
+                    <p className="link">
                         {label}
                     </p> :
-                    <a href={href} className="link external">
+                    <a href={href} className="link">
                         {label}
                     </a>
                 }
+                {iconName && <Icon name={iconName} size="16"/>}
             </Container>
         );
     } else {
         return (
             <BrowserRouter>
-                <Container disabled={disabled}>
+                <Container disabled={disabled} className="navigation" icon={iconName ? true : false}>
                     {disabled ?
-                        <p className="link navigation">
+                        <p className="link">
                             {label}
                         </p> :
-                        <NavLink to={href} className="link navigation">
+                        <NavLink to={href} className="link">
                             {label}
                         </NavLink>
                     }
+                    {iconName && <Icon name={iconName} size="16"/>}
                 </Container>
             </BrowserRouter>
         );
