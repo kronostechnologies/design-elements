@@ -8,20 +8,20 @@ export default {
 };
 
 export const all = () => (
-    <div>
+    <>
         <Link href="/story" label="Navigation Link" iconName="mail"/>
         <Link href="/" label="Navigation Link"/>
-        <Link type="ext" href="https://github.com/" label="External Link"  iconName="mail"/>
-        <Link type="ext" href="https://github.com/" label="External Link"/>
-    </div>
+        <Link type="ext" href="#" label="External Link"  iconName="mail"/>
+        <Link type="ext" href="#" label="External Link"/>
+    </>
 );
 
 export const disabled = () => (
     <>
         <Link href="/" label="Navigation Link" iconName="mail" disabled/>
         <Link href="/" label="Navigation Link" disabled/>
-        <Link type="ext" href="https://github.com/" label="External Link" iconName="mail" disabled/>
-        <Link type="ext" href="https://github.com/" label="External Link" disabled/>
+        <Link type="ext" href="#" label="External Link" iconName="mail" disabled/>
+        <Link type="ext" href="#" label="External Link" disabled/>
     </>
 );
 export const withIcon = () => (
@@ -31,5 +31,5 @@ export const navigationLink = () => (
     <Link href="/story" label="Navigation Link"/>
 );
 export const externalLink = () => (
-    <Link type="ext" href="https://github.com/" label="External Link"/>
+    <Link type="ext" href="#" label="External Link"/>
 );
