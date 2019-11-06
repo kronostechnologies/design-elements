@@ -7,7 +7,7 @@ export default {
     component: List,
 };
 
-const optionsA = [
+const options = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -26,74 +26,34 @@ const optionsA = [
     },
 ];
 
-const optionsB = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-    },
-    {
-        label: 'Option C',
-        value: 'optionC',
-    },
-    {
-        label: 'Option D',
-        value: 'optionD',
-    },
-    {
-        label: 'Option E',
-        value: 'optionE',
-    },
-    {
-        label: 'Option F',
-        value: 'optionF',
-    },
-];
-
-const optionsC = [
+const optionsWithoutLabel = [
     {
         value: 'optionA',
     },
     {
         value: 'optionB',
-    },
-    {
-        value: 'optionC',
-    },
-    {
-        value: 'optionD',
     },
 ];
 
 export const list = () => (
     <List
-        options={optionsA}
+        options={options}
         onChange={option => console.log('onChange', option)}
     />
 );
 
 export const listWithCheck = () => (
     <List
-        withCheck={true}
+        checkIndicator={true}
         defaultValue={'optionC'}
-        options={optionsA}
-        onChange={option => console.log('onChange', option)}
-    />
-);
-
-export const listWithOverflow = () => (
-    <List
-        options={optionsB}
+        options={options}
         onChange={option => console.log('onChange', option)}
     />
 );
 
 export const listWithThreeItemsVisible = () => (
     <List
-        options={optionsB}
+        options={options}
         onChange={option => console.log('onChange', option)}
         numberOfItemsVisible={3}
     />
@@ -101,7 +61,7 @@ export const listWithThreeItemsVisible = () => (
 
 export const listWithoutOptionLabel = () => (
     <List
-        options={optionsC}
+        options={optionsWithoutLabel}
         onChange={option => console.log('onChange', option)}
         numberOfItemsVisible={3}
     />

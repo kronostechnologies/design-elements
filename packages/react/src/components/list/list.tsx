@@ -3,27 +3,22 @@ import React, { KeyboardEvent, ReactElement, useState } from 'react';
 import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
 
-interface Option {
-    /**
-     * Option value
-     */
+export interface Option {
     value: string;
-    /**
-     * Option label, if not provided will be set with value
-     */
+    // Option label, if not provided will be set with value
     label?: string;
 }
 
 interface ListProps {
     /**
-     * Array of options
+     * { value: string; label?: string; }[]
      */
     options: Option[];
     /**
-     * With/without check indicator on the selected option
+     * Display check indicator on the selected option
      * @default false
      */
-    withCheck?: boolean;
+    checkIndicator?: boolean;
     /**
      * The default selected option
      */
@@ -45,61 +40,61 @@ interface WrapperProps {
 
 interface ItemProps {
     selected: boolean;
-    withCheck: boolean;
+    checkIndicator: boolean;
 }
 
 const itemHeight = 32;
 
 const Wrapper = styled.ul<WrapperProps>`
-    width: 100%;
-    min-width: 200px;
-    border-radius: 4px;
-    overflow: hidden;
-    list-style-type: none;
-    background-color: #fff;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.19);
-    margin: 0;
-    padding: 0;
-    max-height: ${({ numberOfItemsVisible }) => numberOfItemsVisible * itemHeight}px;
-    overflow-y: auto;
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  max-height: ${({ numberOfItemsVisible }) => numberOfItemsVisible * itemHeight}px;
+  min-width: 200px;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
 `;
 
 const Item = styled.li<ItemProps>`
-    color: #000;
-    height: ${itemHeight}px;
-    line-height: ${itemHeight}px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.875rem;
-    padding: 0 ${({ withCheck, selected }) => (withCheck ? (selected ? 0 : 28) : 16)}px;
-    cursor: pointer;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: ${itemHeight}px;
+  line-height: ${itemHeight}px;
+  overflow: hidden;
+  padding: 0 ${({ checkIndicator, selected }) => (checkIndicator ? (selected ? 0 : 28) : 16)}px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-    &:hover,
-    &:focus {
-        background-color: #d9dde2;
-    }
+  &:hover,
+  &:focus {
+    background-color: #d9dde2;
+  }
 `;
 
 const CheckIndicator = styled(Check)`
-    color: #637282;
-    width: 12px;
-    height: 12px;
-    padding: 0 8px;
+  color: #637282;
+  height: 12px;
+  padding: 0 8px;
+  width: 12px;
 `;
 
 export function List({
     options,
     onChange,
-    withCheck = false,
+    checkIndicator = false,
     defaultValue,
     numberOfItemsVisible = 4,
-    ...props
 }: ListProps): ReactElement {
     const [selectedValue, setSelectedValue] = useState<string | undefined>(defaultValue);
 
     function isOptionSelected({ value }: Option): boolean {
         return value === selectedValue;
+    }
+
+    function shouldDisplayCheckIndicator(option: Option): boolean {
+        return checkIndicator && isOptionSelected(option);
     }
 
     function selectOption(option: Option): void {
@@ -123,20 +118,20 @@ export function List({
     }
 
     return (
-        <Wrapper role="listbox" numberOfItemsVisible={numberOfItemsVisible} {...props}>
+        <Wrapper role="listbox" numberOfItemsVisible={numberOfItemsVisible}>
             {options.map((option, index) => (
                 <Item
-                    key={index}
+                    key={`${option.value}-${index}`}
                     role="option"
                     aria-label={option.label || option.value}
                     onClick={handleSelect(option)}
                     onKeyDown={handleKeyDown(option)}
                     selected={isOptionSelected(option)}
                     tabIndex={0}
-                    withCheck={withCheck}
+                    checkIndicator={checkIndicator}
                 >
                     <>
-                        {withCheck && isOptionSelected(option) && <CheckIndicator />}
+                        {shouldDisplayCheckIndicator(option) && <CheckIndicator />}
                         {option.label || option.value}
                     </>
                 </Item>
