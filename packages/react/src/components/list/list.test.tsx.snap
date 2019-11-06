@@ -104,27 +104,5 @@ exports[`List Matches the snapshot 1`] = `
   >
     Option D
   </li>
-  <li
-    aria-label="Option E"
-    className="c1"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role="option"
-    selected={false}
-    tabIndex={0}
-  >
-    Option E
-  </li>
-  <li
-    aria-label="Option F"
-    className="c1"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role="option"
-    selected={false}
-    tabIndex={0}
-  >
-    Option F
-  </li>
 </ul>
 `;
