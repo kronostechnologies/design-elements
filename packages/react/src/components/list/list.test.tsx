@@ -31,14 +31,6 @@ describe('List', () => {
                 label: 'Option D',
                 value: 'optionD',
             },
-            {
-                label: 'Option E',
-                value: 'optionE',
-            },
-            {
-                label: 'Option F',
-                value: 'optionF',
-            },
         ];
         onChange = jest.fn();
     });
