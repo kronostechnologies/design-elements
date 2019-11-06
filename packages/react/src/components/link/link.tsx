@@ -5,11 +5,12 @@ import styled from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 
 interface LinkProps {
-    type?: 'nav' | 'ext';
+    disabled?: boolean;
+    exact?: boolean;
     href: string;
     iconName?: IconName;
     label: string;
-    disabled?: boolean;
+    type?: 'nav' | 'ext';
 }
 
 const Container = styled.a`
@@ -22,7 +23,13 @@ const Container = styled.a`
   }
 
   &.external {
-    color: ${(props: {disabled?: boolean, to?: string}) => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
+    color:
+      ${(props: {
+          activeClassName?: string,
+          disabled?: boolean,
+          exact?: boolean,
+          to?: string,
+      }) => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
 
     &:hover {
       ${props => props.disabled ? '' : 'text-decoration: underline'};
@@ -49,7 +56,7 @@ const Container = styled.a`
     }
 
     ${props => props.disabled ? '' : `
-      &:active {
+      &.active {
         color: #0080a5;
         font-weight: 600;
 
@@ -61,7 +68,7 @@ const Container = styled.a`
   }
 `;
 
-export function Link({ disabled, href, iconName, label, type }: LinkProps): ReactElement {
+export function Link({ disabled, exact, href, iconName, label, type }: LinkProps): ReactElement {
     if (type === 'ext') {
         return (
             <Container disabled={disabled} href={disabled ? undefined : href} className="external">
@@ -80,7 +87,14 @@ export function Link({ disabled, href, iconName, label, type }: LinkProps): Reac
         } else {
             return (
                 <Router>
-                    <Container as={NavLink} to={href} disabled={disabled} className="navigation">
+                    <Container
+                      activeClassName="active"
+                      as={NavLink}
+                      className="navigation"
+                      disabled={disabled}
+                      exact={exact}
+                      to={href}
+                    >
                       {iconName && <Icon name={iconName} size="16"/>}
                       {label}
                     </Container>

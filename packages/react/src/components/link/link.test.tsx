@@ -5,14 +5,14 @@ import { Link } from './link';
 describe('Link', () => {
     test('Navigation link matches snapshot', () => {
         const tree = renderer.create(
-            <Link href="/" label="Navigation Link"/>,
+            <Link href="/test" label="Navigation Link"/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
     });
     test('Navigation link with icon matches snapshot', () => {
         const tree = renderer.create(
-            <Link href="/story" label="Navigation Link" iconName="mail"/>,
+            <Link href="/test" label="Navigation Link" iconName="mail"/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
