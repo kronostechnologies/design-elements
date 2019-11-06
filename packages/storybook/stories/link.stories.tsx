@@ -9,19 +9,19 @@ export default {
 
 export const all = () => (
     <>
-        <Link href="/story" label="Navigation Link" iconName="mail"/>
-        <Link href="/" label="Navigation Link"/>
-        <Link type="ext" href="#" label="External Link"  iconName="mail"/>
-        <Link type="ext" href="#" label="External Link"/>
+        <Link href="/story" label="Navigation Link" iconName="mail"/><br/>
+        <Link href="/story" label="Navigation Link"/><br/>
+        <Link type="ext" href="#" label="External Link"  iconName="mail"/><br/>
+        <Link type="ext" href="#" label="External Link"/><br/>
     </>
 );
 
 export const disabled = () => (
     <>
-        <Link href="/" label="Navigation Link" iconName="mail" disabled/>
-        <Link href="/" label="Navigation Link" disabled/>
-        <Link type="ext" href="#" label="External Link" iconName="mail" disabled/>
-        <Link type="ext" href="#" label="External Link" disabled/>
+        <Link href="/story" label="Navigation Link" iconName="mail" disabled/><br/>
+        <Link href="/story" label="Navigation Link" disabled/><br/>
+        <Link type="ext" href="#" label="External Link" iconName="mail" disabled/><br/>
+        <Link type="ext" href="#" label="External Link" disabled/><br/>
     </>
 );
 export const withIcon = () => (
