@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 
@@ -12,31 +12,26 @@ interface LinkProps {
     disabled?: boolean;
 }
 
-const Container = styled.div`
+const Container = styled.a`
   align-items: center;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  display: inline-flex;
+  text-decoration: none;
 
-  .link {
-    font-size: 0.875rem;
-    font-weight: 400;
-    margin: ${(props: {disabled?: boolean, icon: boolean}) => props.icon ? '0 0 0 8px' : '0'};
-    ${props => props.disabled ? 'cursor: default' : ''};
-    text-decoration: none;
+  svg {
+    margin-right: 8px;
   }
 
   &.external {
-    color: ${props => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
+    color: ${(props: {disabled?: boolean, to?: string}) => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
 
-    .link {
-      color: ${props => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
+    &:hover {
+      ${props => props.disabled ? '' : 'text-decoration: underline'};
+    }
 
-      &:hover {
-        ${props => props.disabled ? '' : 'text-decoration: underline'};
-      }
+    &:visited {
+      color: #094c6c;
 
-      &:visited {
+      svg {
         color: #094c6c;
       }
     }
@@ -45,63 +40,52 @@ const Container = styled.div`
   &.navigation {
     color: ${props => props.disabled ? '#9ca7b4 !important' : '#57666e'};
 
-    /* stylelint-disable */
-    .link {
-    /* stylelint-enable */
-      color: ${props => props.disabled ? '#9ca7b4 !important' : '#57666e'};
+    &:hover {
+      color: #000;
 
-      &:hover {
-        color: #000;
+      ~ svg {
+        ${props => props.disabled ? '' : 'color: #000'};
+      }
+    }
+
+    ${props => props.disabled ? '' : `
+      &:active {
+        color: #0080a5;
+        font-weight: 600;
 
         ~ svg {
-          ${props => props.disabled ? '' : 'color: #000'};
+          color: #0080a5;
         }
       }
-
-      ${props => props.disabled ? '' : `
-        &:active {
-          color: #0080a5;
-          font-weight: 600;
-
-          ~ svg {
-            color: #0080a5;
-          }
-        }
-      `}
-    }
+    `}
   }
 `;
 
 export function Link({ disabled, href, iconName, label, type }: LinkProps): ReactElement {
     if (type === 'ext') {
         return (
-            <Container disabled={disabled} className="external" icon={iconName ? true : false}>
-                {disabled ?
-                    <p className="link">
-                        {label}
-                    </p> :
-                    <a href={href} className="link">
-                        {label}
-                    </a>
-                }
-                {iconName && <Icon name={iconName} size="16"/>}
+            <Container disabled={disabled} href={disabled ? undefined : href} className="external">
+              {iconName && <Icon name={iconName} size="16"/>}
+              {label}
             </Container>
         );
     } else {
-        return (
-            <BrowserRouter>
-                <Container disabled={disabled} className="navigation" icon={iconName ? true : false}>
-                    {disabled ?
-                        <p className="link">
-                            {label}
-                        </p> :
-                        <NavLink to={href} className="link">
-                            {label}
-                        </NavLink>
-                    }
-                    {iconName && <Icon name={iconName} size="16"/>}
-                </Container>
-            </BrowserRouter>
-        );
+        if (disabled) {
+            return (
+              <Container disabled={disabled} className="navigation">
+                {iconName && <Icon name={iconName} size="16"/>}
+                {label}
+              </Container>
+            );
+        } else {
+            return (
+                <Router>
+                    <Container as={NavLink} to={href} disabled={disabled} className="navigation">
+                      {iconName && <Icon name={iconName} size="16"/>}
+                      {label}
+                    </Container>
+                </Router>
+            );
+        }
     }
 }
