@@ -6,41 +6,32 @@ exports[`Link External link matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c0 .link {
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 8px;
 }
 
 .c0.external {
   color: #0080a5;
 }
 
-.c0.external .link {
-  color: #0080a5;
-}
-
-.c0.external .link:hover {
+.c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c0.external .link:visited {
+.c0.external:visited {
+  color: #094c6c;
+}
+
+.c0.external:visited svg {
   color: #094c6c;
 }
 
@@ -48,37 +39,29 @@ exports[`Link External link matches snapshot 1`] = `
   color: #57666e;
 }
 
-.c0.navigation .link {
-  color: #57666e;
-}
-
-.c0.navigation .link:hover {
+.c0.navigation:hover {
   color: #000;
 }
 
-.c0.navigation .link:hover ~ svg {
+.c0.navigation:hover ~ svg {
   color: #000;
 }
 
-.c0.navigation .link:active {
+.c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
 }
 
-.c0.navigation .link:active ~ svg {
+.c0.navigation.active ~ svg {
   color: #0080a5;
 }
 
-<div
+<a
   className="c0 external"
+  href="https://github.com/"
 >
-  <a
-    className="link"
-    href="https://github.com/"
-  >
-    External Link
-  </a>
-</div>
+  External Link
+</a>
 `;
 
 exports[`Link External link with icon matches snapshot 1`] = `
@@ -87,41 +70,32 @@ exports[`Link External link with icon matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c0 .link {
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin: 0 0 0 8px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 8px;
 }
 
 .c0.external {
   color: #0080a5;
 }
 
-.c0.external .link {
-  color: #0080a5;
-}
-
-.c0.external .link:hover {
+.c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c0.external .link:visited {
+.c0.external:visited {
+  color: #094c6c;
+}
+
+.c0.external:visited svg {
   color: #094c6c;
 }
 
@@ -129,42 +103,34 @@ exports[`Link External link with icon matches snapshot 1`] = `
   color: #57666e;
 }
 
-.c0.navigation .link {
-  color: #57666e;
-}
-
-.c0.navigation .link:hover {
+.c0.navigation:hover {
   color: #000;
 }
 
-.c0.navigation .link:hover ~ svg {
+.c0.navigation:hover ~ svg {
   color: #000;
 }
 
-.c0.navigation .link:active {
+.c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
 }
 
-.c0.navigation .link:active ~ svg {
+.c0.navigation.active ~ svg {
   color: #0080a5;
 }
 
-<div
+<a
   className="c0 external"
+  href="https://github.com/"
 >
-  <a
-    className="link"
-    href="https://github.com/"
-  >
-    External Link
-  </a>
   <svg
     color="currentColor"
     height="16"
     width="16"
   />
-</div>
+  External Link
+</a>
 `;
 
 exports[`Link Navigation link matches snapshot 1`] = `
@@ -173,41 +139,32 @@ exports[`Link Navigation link matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c0 .link {
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 8px;
 }
 
 .c0.external {
   color: #0080a5;
 }
 
-.c0.external .link {
-  color: #0080a5;
-}
-
-.c0.external .link:hover {
+.c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c0.external .link:visited {
+.c0.external:visited {
+  color: #094c6c;
+}
+
+.c0.external:visited svg {
   color: #094c6c;
 }
 
@@ -215,40 +172,31 @@ exports[`Link Navigation link matches snapshot 1`] = `
   color: #57666e;
 }
 
-.c0.navigation .link {
-  color: #57666e;
-}
-
-.c0.navigation .link:hover {
+.c0.navigation:hover {
   color: #000;
 }
 
-.c0.navigation .link:hover ~ svg {
+.c0.navigation:hover ~ svg {
   color: #000;
 }
 
-.c0.navigation .link:active {
+.c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
 }
 
-.c0.navigation .link:active ~ svg {
+.c0.navigation.active ~ svg {
   color: #0080a5;
 }
 
-<div
+<a
+  aria-current={null}
   className="c0 navigation"
+  href="/test"
+  onClick={[Function]}
 >
-  <a
-    aria-current="page"
-    className="link active"
-    href="/"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    Navigation Link
-  </a>
-</div>
+  Navigation Link
+</a>
 `;
 
 exports[`Link Navigation link with icon matches snapshot 1`] = `
@@ -257,41 +205,32 @@ exports[`Link Navigation link with icon matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c0 .link {
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin: 0 0 0 8px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 8px;
 }
 
 .c0.external {
   color: #0080a5;
 }
 
-.c0.external .link {
-  color: #0080a5;
-}
-
-.c0.external .link:hover {
+.c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c0.external .link:visited {
+.c0.external:visited {
+  color: #094c6c;
+}
+
+.c0.external:visited svg {
   color: #094c6c;
 }
 
@@ -299,42 +238,34 @@ exports[`Link Navigation link with icon matches snapshot 1`] = `
   color: #57666e;
 }
 
-.c0.navigation .link {
-  color: #57666e;
-}
-
-.c0.navigation .link:hover {
+.c0.navigation:hover {
   color: #000;
 }
 
-.c0.navigation .link:hover ~ svg {
+.c0.navigation:hover ~ svg {
   color: #000;
 }
 
-.c0.navigation .link:active {
+.c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
 }
 
-.c0.navigation .link:active ~ svg {
+.c0.navigation.active ~ svg {
   color: #0080a5;
 }
 
-<div
+<a
+  aria-current={null}
   className="c0 navigation"
+  href="/test"
+  onClick={[Function]}
 >
-  <a
-    aria-current={null}
-    className="link"
-    href="/story"
-    onClick={[Function]}
-  >
-    Navigation Link
-  </a>
   <svg
     color="currentColor"
     height="16"
     width="16"
   />
-</div>
+  Navigation Link
+</a>
 `;
