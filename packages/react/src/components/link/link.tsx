@@ -10,7 +10,7 @@ interface LinkProps {
     href: string;
     iconName?: IconName;
     label: string;
-    type?: 'nav' | 'ext';
+    routerLink?: typeof NavLink;
 }
 
 const Container = styled.a`
@@ -49,27 +49,19 @@ const Container = styled.a`
 
     &:hover {
       color: #000;
-
-      ~ svg {
-        ${props => props.disabled ? '' : 'color: #000'};
-      }
     }
 
     ${props => props.disabled ? '' : `
       &.active {
         color: #0080a5;
         font-weight: 600;
-
-        ~ svg {
-          color: #0080a5;
-        }
       }
     `}
   }
 `;
 
-export function Link({ disabled, exact, href, iconName, label, type }: LinkProps): ReactElement {
-    if (type === 'ext') {
+export function Link({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement {
+    if (!routerLink) {
         return (
             <Container disabled={disabled} href={disabled ? undefined : href} className="external">
               {iconName && <Icon name={iconName} size="16"/>}
@@ -86,18 +78,17 @@ export function Link({ disabled, exact, href, iconName, label, type }: LinkProps
             );
         } else {
             return (
-              <NavLink to="/" exact={exact}>testtest</NavLink>
-                  // <Container
-                  //   activeClassName="active"
-                  //   as={NavLink}
-                  //   className="navigation"
-                  //   disabled={disabled}
-                  //   exact={exact}
-                  //   to={href}
-                  // >
-                  //   {iconName && <Icon name={iconName} size="16"/>}
-                  //   {label}
-                  // </Container>
+              <Container
+                activeClassName="active"
+                as={routerLink}
+                className="navigation"
+                disabled={disabled}
+                exact={exact}
+                to={href}
+              >
+                {iconName && <Icon name={iconName} size="16"/>}
+                {label}
+              </Container>
             );
         }
     }
