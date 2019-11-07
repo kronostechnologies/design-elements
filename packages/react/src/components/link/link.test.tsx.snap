@@ -43,17 +43,9 @@ exports[`Link External link matches snapshot 1`] = `
   color: #000;
 }
 
-.c0.navigation:hover ~ svg {
-  color: #000;
-}
-
 .c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
-}
-
-.c0.navigation.active ~ svg {
-  color: #0080a5;
 }
 
 <a
@@ -107,17 +99,9 @@ exports[`Link External link with icon matches snapshot 1`] = `
   color: #000;
 }
 
-.c0.navigation:hover ~ svg {
-  color: #000;
-}
-
 .c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
-}
-
-.c0.navigation.active ~ svg {
-  color: #0080a5;
 }
 
 <a
@@ -176,17 +160,9 @@ exports[`Link Navigation link matches snapshot 1`] = `
   color: #000;
 }
 
-.c0.navigation:hover ~ svg {
-  color: #000;
-}
-
 .c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
-}
-
-.c0.navigation.active ~ svg {
-  color: #0080a5;
 }
 
 <a
@@ -242,17 +218,9 @@ exports[`Link Navigation link with icon matches snapshot 1`] = `
   color: #000;
 }
 
-.c0.navigation:hover ~ svg {
-  color: #000;
-}
-
 .c0.navigation.active {
   color: #0080a5;
   font-weight: 600;
-}
-
-.c0.navigation.active ~ svg {
-  color: #0080a5;
 }
 
 <a
