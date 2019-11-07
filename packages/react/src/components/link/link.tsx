@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 
@@ -86,19 +86,18 @@ export function Link({ disabled, exact, href, iconName, label, type }: LinkProps
             );
         } else {
             return (
-                <Router>
-                    <Container
-                      activeClassName="active"
-                      as={NavLink}
-                      className="navigation"
-                      disabled={disabled}
-                      exact={exact}
-                      to={href}
-                    >
-                      {iconName && <Icon name={iconName} size="16"/>}
-                      {label}
-                    </Container>
-                </Router>
+              <NavLink to="/" exact={exact}>testtest</NavLink>
+                  // <Container
+                  //   activeClassName="active"
+                  //   as={NavLink}
+                  //   className="navigation"
+                  //   disabled={disabled}
+                  //   exact={exact}
+                  //   to={href}
+                  // >
+                  //   {iconName && <Icon name={iconName} size="16"/>}
+                  //   {label}
+                  // </Container>
             );
         }
     }

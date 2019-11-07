@@ -47,6 +47,7 @@
     "uuid": "^3.3.3"
   },
   "peerDependencies": {
+    "@types/react-router-dom": "^5.1.2",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-router-dom": "^5.1.2"
@@ -62,7 +63,7 @@
     "@types/lodash-es": "^4.17.3",
     "@types/react": "~16.9.2",
     "@types/react-dom": "~16.9.0",
-    "@types/react-router-dom": "^5.1.0",
+    "@types/react-router-dom": "^5.1.2",
     "@types/react-test-renderer": "^16.9.0",
     "@types/styled-components": "4.1.8",
     "@types/uuid": "^3.4.5",
