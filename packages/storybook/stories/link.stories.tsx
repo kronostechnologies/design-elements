@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from '@equisoft/design-elements-react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 export default {
     title: 'Link',
@@ -9,28 +9,30 @@ export default {
 };
 
 export const all = () => (
-    <BrowserRouter>
-        <Link href="/story" label="Navigation Link" iconName="mail"/><br/>
-        {/* <Link href="/story" label="Navigation Link"/><br/>
-        <Link type="ext" href="#" label="External Link"  iconName="mail"/><br/>
-        <Link type="ext" href="#" label="External Link"/><br/> */}
-    </BrowserRouter>
+    <Router>
+        <Link routerLink={NavLink} href="/story1" label="Navigation Link" iconName="mail"/><br/>
+        <Link routerLink={NavLink} href="/story2" label="Navigation Link"/><br/>
+        <Link href="#" label="External Link" iconName="mail"/><br/>
+        <Link href="#" label="External Link"/><br/>
+    </Router>
 );
 
-// export const disabled = () => (
-//     <>
-//         <Link href="/story" label="Navigation Link" iconName="mail" disabled/><br/>
-//         <Link href="/story" label="Navigation Link" disabled/><br/>
-//         <Link type="ext" href="#" label="External Link" iconName="mail" disabled/><br/>
-//         <Link type="ext" href="#" label="External Link" disabled/><br/>
-//     </>
-// );
-// export const withIcon = () => (
-//     <Link href="/story" label="Navigation Link" iconName="mail"/>
-// );
-// export const navigationLink = () => (
-//     <Link href="/story" label="Navigation Link"/>
-// );
-// export const externalLink = () => (
-//     <Link type="ext" href="#" label="External Link"/>
-// );
+export const disabled = () => (
+    <Router>
+        <Link routerLink={NavLink} href="/story" label="Navigation Link" iconName="mail" disabled/><br/>
+        <Link routerLink={NavLink} href="/story" label="Navigation Link" disabled/><br/>
+        <Link href="#" label="External Link" iconName="mail" disabled/><br/>
+        <Link href="#" label="External Link" disabled/><br/>
+    </Router>
+);
+export const withIcon = () => (
+    <Link href="#" label="External Link" iconName="mail"/>
+);
+export const navigationLink = () => (
+    <Router>
+        <Link routerLink={NavLink} href="/story" label="Navigation Link"/>
+    </Router>
+);
+export const externalLink = () => (
+    <Link href="#" label="External Link"/>
+);
