@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link External link matches snapshot 1`] = `
+exports[`Link Disabled link matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -18,13 +18,12 @@ exports[`Link External link matches snapshot 1`] = `
   margin-right: 8px;
 }
 
-.c0.external {
-  color: #0080a5;
+.c0.iconOnly svg {
+  margin: 0;
 }
 
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c0.external {
+  color: #7fbfd2;
 }
 
 .c0.external:visited {
@@ -36,26 +35,19 @@ exports[`Link External link matches snapshot 1`] = `
 }
 
 .c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
+  color: #9ca7b4;
 }
 
 <a
-  className="c0 external"
-  href="https://github.com/"
+  aria-disabled="true"
+  className="c0 navigation"
+  disabled={true}
 >
-  External Link
+  Navigation Link
 </a>
 `;
 
-exports[`Link External link with icon matches snapshot 1`] = `
+exports[`Link Link matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -73,64 +65,8 @@ exports[`Link External link with icon matches snapshot 1`] = `
   margin-right: 8px;
 }
 
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  className="c0 external"
-  href="https://github.com/"
->
-  <svg
-    color="currentColor"
-    height="16"
-    width="16"
-  />
-  External Link
-</a>
-`;
-
-exports[`Link Navigation link matches snapshot 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: 8px;
+.c0.iconOnly svg {
+  margin: 0;
 }
 
 .c0.external {
@@ -172,7 +108,7 @@ exports[`Link Navigation link matches snapshot 1`] = `
 </a>
 `;
 
-exports[`Link Navigation link with icon matches snapshot 1`] = `
+exports[`Link Link with icon matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -188,6 +124,10 @@ exports[`Link Navigation link with icon matches snapshot 1`] = `
 
 .c0 svg {
   margin-right: 8px;
+}
+
+.c0.iconOnly svg {
+  margin: 0;
 }
 
 .c0.external {
