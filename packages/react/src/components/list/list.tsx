@@ -10,9 +10,6 @@ export interface Option {
 }
 
 interface ListProps {
-    /**
-     * { value: string; label?: string; }[]
-     */
     options: Option[];
     /**
      * Display check indicator on the selected option
