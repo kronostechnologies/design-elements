@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { Link } from './link';
 
 describe('Link', () => {
-    test('Navigation link matches snapshot', () => {
+    test('Link matches snapshot', () => {
         const tree = renderer.create(
             <Router>
                 <Link routerLink={NavLink} href="/test" label="Navigation Link"/>
@@ -13,10 +13,19 @@ describe('Link', () => {
 
         expect(tree).toMatchSnapshot();
     });
-    test('Navigation link with icon matches snapshot', () => {
+    test('Link with icon matches snapshot', () => {
         const tree = renderer.create(
             <Router>
                 <Link routerLink={NavLink} href="/test" label="Navigation Link" iconName="mail"/>
+            </Router>,
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+    test('Disabled link matches snapshot', () => {
+        const tree = renderer.create(
+            <Router>
+                <Link routerLink={NavLink} href="/test" label="Navigation Link" disabled/>
             </Router>,
         ).toJSON();
 
