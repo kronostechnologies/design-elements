@@ -52,6 +52,7 @@ exports[`External Link Disabled link matches snapshot 1`] = `
   disabled={true}
 >
 <<<<<<< HEAD
+<<<<<<< HEAD
   External Link
 </a>
 `;
@@ -59,6 +60,9 @@ exports[`External Link Disabled link matches snapshot 1`] = `
 exports[`External Link matches snapshot 1`] = `
 =======
   Navigation Link
+=======
+  External Link
+>>>>>>> Link fixes
 </a>
 `;
 
@@ -185,6 +189,7 @@ exports[`External Link with icon matches snapshot 1`] = `
   href="#"
 >
 <<<<<<< HEAD
+<<<<<<< HEAD
   <svg
     color="currentColor"
     height="16"
@@ -197,6 +202,9 @@ exports[`External Link with icon matches snapshot 1`] = `
 exports[`External Link without href matches snapshot 1`] = `
 =======
   Navigation Link
+=======
+  External Link
+>>>>>>> Link fixes
 </a>
 `;
 
@@ -271,9 +279,13 @@ exports[`External Link Link with icon matches snapshot 1`] = `
     width="16"
   />
 <<<<<<< HEAD
+<<<<<<< HEAD
   External Link
 =======
   Navigation Link
 >>>>>>> Adds tests to external-link
+=======
+  External Link
+>>>>>>> Link fixes
 </a>
 `;

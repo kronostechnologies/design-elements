@@ -9,22 +9,19 @@ export default {
     decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
 };
 
-export const all = () => (
-    <>
-        <Link routerLink={NavLink} href="/story1" label="Navigation Link" iconName="mail"/><br/>
-        <Link routerLink={NavLink} href="/story2" label="Navigation Link"/><br/>
-    </>
+export const normal = () => (
+    <Link routerLink={NavLink} href="/story2" label="Navigation Link"/>
 );
 
-export const disabled = () => (
-    <>
-        <Link routerLink={NavLink} href="/story" label="Navigation Link" iconName="mail" disabled/><br/>
-        <Link routerLink={NavLink} href="/story" label="Navigation Link" disabled/><br/>
-    </>
-);
 export const withIcon = () => (
     <Link routerLink={NavLink} href="/story" label="Navigation Link" iconName="mail"/>
 );
 export const onlyIcon = () => (
     <Link routerLink={NavLink} href="/story" iconName="mail"/>
+);
+export const disabled = () => (
+    <>
+        <Link routerLink={NavLink} href="/story" label="Navigation Link" iconName="mail" disabled/><br/>
+        <Link routerLink={NavLink} href="/story" label="Navigation Link" disabled/><br/>
+    </>
 );
