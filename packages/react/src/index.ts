@@ -22,6 +22,7 @@ export { List } from './components/list/list';
 export { Card } from './components/card/card';
 export { Chooser } from './components/choosers/chooser';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
+export { ExternalLink } from './components/external-link/external-link';
 export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
 export { Link } from './components/link/link';
