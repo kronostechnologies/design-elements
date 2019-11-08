@@ -44,11 +44,29 @@ exports[`External Link disabled matches snapshot 1`] = `
   className="c0 external"
   disabled={true}
 >
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Link fixes
   External Link
 </a>
 `;
 
 exports[`External Link matches snapshot 1`] = `
+<<<<<<< HEAD
+=======
+=======
+  Navigation Link
+=======
+  External Link
+>>>>>>> Link fixes
+</a>
+`;
+
+exports[`External Link Link matches snapshot 1`] = `
+>>>>>>> Adds tests to external-link
+>>>>>>> Link fixes
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -166,6 +184,11 @@ exports[`External Link with icon matches snapshot 1`] = `
   className="c0 external"
   href="#"
 >
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Link fixes
   <svg
     color="currentColor"
     height="16"
@@ -176,6 +199,19 @@ exports[`External Link with icon matches snapshot 1`] = `
 `;
 
 exports[`External Link without href matches snapshot 1`] = `
+<<<<<<< HEAD
+=======
+=======
+  Navigation Link
+=======
+  External Link
+>>>>>>> Link fixes
+</a>
+`;
+
+exports[`External Link Link with icon matches snapshot 1`] = `
+>>>>>>> Adds tests to external-link
+>>>>>>> Link fixes
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -237,6 +273,18 @@ exports[`External Link without href matches snapshot 1`] = `
     height="16"
     width="16"
   />
+<<<<<<< HEAD
   External Link
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  External Link
+=======
+  Navigation Link
+>>>>>>> Adds tests to external-link
+=======
+  External Link
+>>>>>>> Link fixes
+>>>>>>> Link fixes
 </a>
 `;
