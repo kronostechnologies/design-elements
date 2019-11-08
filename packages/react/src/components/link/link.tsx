@@ -29,7 +29,7 @@ const Container = styled.a`
           disabled?: boolean,
           exact?: boolean,
           to?: string,
-      }) => props.disabled ? '#7fbfd2 !important' : '#0080a5'};
+      }) => props.disabled ? '#7fbfd2' : '#0080a5'};
 
     &:hover {
       ${props => props.disabled ? '' : 'text-decoration: underline'};
@@ -45,16 +45,15 @@ const Container = styled.a`
   }
 
   &.navigation {
-    color: ${props => props.disabled ? '#9ca7b4 !important' : '#57666e'};
+    color: ${props => props.disabled ? '#9ca7b4' : '#57666e'};
 
     &:hover {
-      color: #000;
+      ${props => props.disabled ? '' : 'color: #000;'}
     }
 
     ${props => props.disabled ? '' : `
       &.active {
         color: #0080a5;
-        font-weight: 600;
       }
     `}
   }
