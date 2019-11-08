@@ -13,31 +13,29 @@ interface LinkProps {
     routerLink: typeof NavLink;
 }
 
-export function Link({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement {
-    if (disabled) {
-        return (
-          <StyledLink
-            disabled={disabled}
-            aria-disabled="true"
-            className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
-          >
-            {iconName && <Icon name={iconName} size="16"/>}
-            {label}
-          </StyledLink>
-        );
-    } else {
-        return (
-          <StyledLink
-            activeClassName="active"
-            as={routerLink}
-            className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
-            disabled={disabled}
-            exact={exact}
-            to={href}
-          >
-            {iconName && <Icon name={iconName} size="16"/>}
-            {label}
-          </StyledLink>
-        );
+export const Link = ({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement => (
+  <>
+    {disabled ?
+      <StyledLink
+        disabled={disabled}
+        aria-disabled="true"
+        className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
+      >
+        {iconName && <Icon name={iconName} size="16"/>}
+        {label}
+      </StyledLink>
+      :
+      <StyledLink
+        activeClassName="active"
+        as={routerLink}
+        className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
+        disabled={disabled}
+        exact={exact}
+        to={href}
+      >
+        {iconName && <Icon name={iconName} size="16"/>}
+        {label}
+      </StyledLink>
     }
-}
+  </>
+);

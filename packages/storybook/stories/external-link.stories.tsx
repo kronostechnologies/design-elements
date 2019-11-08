@@ -26,3 +26,9 @@ export const disabled = () => (
 export const withCallback = () => (
     <ExternalLink label="External Link" onClick={() => console.log('Link clicked')}/>
 );
+export const disabled = () => (
+    <>
+        <ExternalLink href="#" label="External Link" iconName="mail" disabled/><br/>
+        <ExternalLink href="#" label="External Link" disabled/><br/>
+    </>
+);
