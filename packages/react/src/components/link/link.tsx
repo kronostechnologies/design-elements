@@ -9,11 +9,18 @@ interface LinkProps {
     exact?: boolean;
     href: string;
     iconName?: IconName;
-    label: string;
+    label?: string;
     routerLink?: typeof NavLink;
 }
 
-const Container = styled.a`
+interface ContainerProps {
+    activeClassName?: string;
+    disabled?: boolean;
+    exact?: boolean;
+    to?: string;
+}
+
+const Container = styled.a<ContainerProps>`
   align-items: center;
   display: inline-flex;
   text-decoration: none;
@@ -22,14 +29,12 @@ const Container = styled.a`
     margin-right: 8px;
   }
 
+  &.iconOnly svg {
+    margin: 0;
+  }
+
   &.external {
-    color:
-      ${(props: {
-          activeClassName?: string,
-          disabled?: boolean,
-          exact?: boolean,
-          to?: string,
-      }) => props.disabled ? '#7fbfd2' : '#0080a5'};
+    color: ${props => props.disabled ? '#7fbfd2' : '#0080a5'};
 
     &:hover {
       ${props => props.disabled ? '' : 'text-decoration: underline'};
@@ -62,7 +67,12 @@ const Container = styled.a`
 export function Link({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement {
     if (!routerLink) {
         return (
-            <Container disabled={disabled} href={disabled ? undefined : href} className="external">
+            <Container
+              disabled={disabled}
+              href={disabled ? undefined : href}
+              aria-disabled={disabled ? 'true' : 'false'}
+              className={'external' + (label && label !== '' ? '' : ' iconOnly')}
+            >
               {iconName && <Icon name={iconName} size="16"/>}
               {label}
             </Container>
@@ -70,7 +80,11 @@ export function Link({ disabled, exact, href, iconName, label, routerLink }: Lin
     } else {
         if (disabled) {
             return (
-              <Container disabled={disabled} className="navigation">
+              <Container
+                disabled={disabled}
+                aria-disabled="true"
+                className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
+              >
                 {iconName && <Icon name={iconName} size="16"/>}
                 {label}
               </Container>
@@ -80,7 +94,7 @@ export function Link({ disabled, exact, href, iconName, label, routerLink }: Lin
               <Container
                 activeClassName="active"
                 as={routerLink}
-                className="navigation"
+                className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
                 disabled={disabled}
                 exact={exact}
                 to={href}
