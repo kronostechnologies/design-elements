@@ -28,6 +28,11 @@ export const disabled = () => (
 export const withIcon = () => (
     <Link href="#" label="External Link" iconName="mail"/>
 );
+export const onlyIcon = () => (
+    <Router>
+        <Link routerLink={NavLink} href="/story" iconName="mail"/>
+    </Router>
+);
 export const navigationLink = () => (
     <Router>
         <Link routerLink={NavLink} href="/story" label="Navigation Link"/>
