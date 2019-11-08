@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link Disabled link matches snapshot 1`] = `
+exports[`External Link Disabled link matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -40,14 +40,14 @@ exports[`Link Disabled link matches snapshot 1`] = `
 
 <a
   aria-disabled="true"
-  className="c0 navigation"
+  className="c0 external"
   disabled={true}
 >
   Navigation Link
 </a>
 `;
 
-exports[`Link Link matches snapshot 1`] = `
+exports[`External Link Link matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -99,16 +99,15 @@ exports[`Link Link matches snapshot 1`] = `
 }
 
 <a
-  aria-current={null}
-  className="c0 navigation"
-  href="/test"
-  onClick={[Function]}
+  aria-disabled="false"
+  className="c0 external"
+  href="#"
 >
   Navigation Link
 </a>
 `;
 
-exports[`Link Link with icon matches snapshot 1`] = `
+exports[`External Link Link with icon matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -160,10 +159,9 @@ exports[`Link Link with icon matches snapshot 1`] = `
 }
 
 <a
-  aria-current={null}
-  className="c0 navigation"
-  href="/test"
-  onClick={[Function]}
+  aria-disabled="false"
+  className="c0 external"
+  href="#"
 >
   <svg
     color="currentColor"
