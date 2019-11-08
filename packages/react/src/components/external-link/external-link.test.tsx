@@ -5,21 +5,21 @@ import { ExternalLink } from './external-link';
 describe('External Link', () => {
     test('Link matches snapshot', () => {
         const tree = renderer.create(
-                <ExternalLink href="#" label="Navigation Link"/>,
+                <ExternalLink href="#" label="External Link"/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
     });
     test('Link with icon matches snapshot', () => {
         const tree = renderer.create(
-                <ExternalLink href="#" label="Navigation Link" iconName="mail"/>,
+                <ExternalLink href="#" label="External Link" iconName="mail"/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
     });
     test('Disabled link matches snapshot', () => {
         const tree = renderer.create(
-                <ExternalLink href="#" label="Navigation Link" disabled/>,
+                <ExternalLink href="#" label="External Link" disabled/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

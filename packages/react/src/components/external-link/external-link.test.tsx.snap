@@ -43,7 +43,7 @@ exports[`External Link Disabled link matches snapshot 1`] = `
   className="c0 external"
   disabled={true}
 >
-  Navigation Link
+  External Link
 </a>
 `;
 
@@ -103,7 +103,7 @@ exports[`External Link Link matches snapshot 1`] = `
   className="c0 external"
   href="#"
 >
-  Navigation Link
+  External Link
 </a>
 `;
 
@@ -168,6 +168,6 @@ exports[`External Link Link with icon matches snapshot 1`] = `
     height="16"
     width="16"
   />
-  Navigation Link
+  External Link
 </a>
 `;
