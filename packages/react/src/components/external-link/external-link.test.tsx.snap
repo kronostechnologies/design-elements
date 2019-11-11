@@ -6,7 +6,18 @@ exports[`External Link disabled matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
   cursor: default;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  cursor: default;
+=======
+>>>>>>> Adds tests to external-link
+=======
+  cursor: default;
+>>>>>>> Adds onClick callback to external-link
+>>>>>>> Adds onClick callback to external-link
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -134,6 +145,14 @@ exports[`External Link with icon matches snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Adds tests to external-link
+=======
+>>>>>>> Adds onClick callback to external-link
+>>>>>>> Adds onClick callback to external-link
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -217,7 +236,18 @@ exports[`External Link Link with icon matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
   cursor: pointer;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  cursor: pointer;
+=======
+>>>>>>> Adds tests to external-link
+=======
+  cursor: pointer;
+>>>>>>> Adds onClick callback to external-link
+>>>>>>> Adds onClick callback to external-link
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
