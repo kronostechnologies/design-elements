@@ -9,6 +9,7 @@ interface ContainerProps {
 
 export const StyledLink = styled.a<ContainerProps>`
   align-items: center;
+  cursor: ${props => props.disabled ? 'default' : 'pointer'};
   display: inline-flex;
   text-decoration: none;
 

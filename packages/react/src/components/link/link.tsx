@@ -19,7 +19,7 @@ export const Link = ({ disabled, exact, href, iconName, label, routerLink }: Lin
       <StyledLink
         disabled={disabled}
         aria-disabled="true"
-        className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
+        className={`navigation ${label ? '' : 'iconOnly'}`}
       >
         {iconName && <Icon name={iconName} size="16"/>}
         {label}
@@ -28,7 +28,7 @@ export const Link = ({ disabled, exact, href, iconName, label, routerLink }: Lin
       <StyledLink
         activeClassName="active"
         as={routerLink}
-        className={'navigation' + (label && label !== '' ? '' : ' iconOnly')}
+        className={`navigation ${label ? '' : 'iconOnly'}`}
         disabled={disabled}
         exact={exact}
         to={href}
