@@ -8,16 +8,31 @@ interface ExternalLinkProps {
     href: string;
     iconName?: IconName;
     label?: string;
+    onClick?(): void;
 }
 
-export const ExternalLink = ({ disabled, href, iconName, label }: ExternalLinkProps): ReactElement => (
-    <StyledLink
-        disabled={disabled}
-        href={disabled ? undefined : href}
-        aria-disabled={disabled ? 'true' : 'false'}
-        className={'external' + (label && label !== '' ? '' : ' iconOnly')}
-    >
-        {iconName && <Icon name={iconName} size="16"/>}
-        {label}
-    </StyledLink>
+export const ExternalLink = ({ disabled, href, iconName, label, onClick }: ExternalLinkProps): ReactElement => (
+    <>
+        {onClick ?
+            <StyledLink
+                disabled={disabled}
+                aria-disabled={disabled ? 'true' : 'false'}
+                className={'external' + (label ? '' : ' iconOnly')}
+                onClick={disabled ? undefined : onClick}
+            >
+                {iconName && <Icon name={iconName} size="16"/>}
+                {label}
+            </StyledLink>
+            :
+            <StyledLink
+                disabled={disabled}
+                href={disabled ? undefined : href}
+                aria-disabled={disabled ? 'true' : 'false'}
+                className={'external' + (label ? '' : ' iconOnly')}
+            >
+                {iconName && <Icon name={iconName} size="16"/>}
+                {label}
+            </StyledLink>
+        }
+    </>
 );
