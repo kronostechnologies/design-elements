@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`External Link Disabled link matches snapshot 1`] = `
+exports[`External Link link matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -48,7 +48,7 @@ exports[`External Link Disabled link matches snapshot 1`] = `
 </a>
 `;
 
-exports[`External Link Link matches snapshot 1`] = `
+exports[`External Link matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -109,7 +109,7 @@ exports[`External Link Link matches snapshot 1`] = `
 </a>
 `;
 
-exports[`External Link Link with icon matches snapshot 1`] = `
+exports[`External Link with icon matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;

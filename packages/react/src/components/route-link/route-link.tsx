@@ -19,13 +19,13 @@ interface LinkProps {
     routerLink: RouterLinkProps;
 }
 
-export const Link = ({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement => (
+export const RouteLink = ({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement => (
   <>
     {disabled ?
       <StyledLink
         disabled={disabled}
         aria-disabled="true"
-        className={`navigation ${label ? '' : 'iconOnly'}`}
+        className={`navigation${label ? '' : ' iconOnly'}`}
       >
         {iconName && <Icon name={iconName} size="16"/>}
         {label}
@@ -34,7 +34,7 @@ export const Link = ({ disabled, exact, href, iconName, label, routerLink }: Lin
       <StyledLink
         {...{
             as: routerLink,
-            className: `navigation ${label ? '' : 'iconOnly'}`,
+            className: `navigation${label ? '' : ' iconOnly'}`,
             disabled: disabled,
             exact: exact,
             to: href,
