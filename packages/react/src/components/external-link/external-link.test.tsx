@@ -10,7 +10,6 @@ describe('External Link', () => {
         const wrapper = mount(
             <ExternalLink onClick={callback} href="#" label="External Link"/>,
         );
-
         wrapper.find(ExternalLink).simulate('click');
         expect(callback).toHaveBeenCalledTimes(1);
     });

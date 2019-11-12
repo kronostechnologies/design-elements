@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports[`External Link disabled matches snapshot 1`] = `
 =======
 exports[`External Link Disabled link matches snapshot 1`] = `
 >>>>>>> Adds tests to external-link
+=======
+exports[`External Link link matches snapshot 1`] = `
+>>>>>>> Changes link for route-link
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -70,8 +74,12 @@ exports[`External Link matches snapshot 1`] = `
 </a>
 `;
 
+<<<<<<< HEAD
 exports[`External Link Link matches snapshot 1`] = `
 >>>>>>> Adds tests to external-link
+=======
+exports[`External Link matches snapshot 1`] = `
+>>>>>>> Changes link for route-link
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -206,6 +214,7 @@ exports[`External Link with icon matches snapshot 1`] = `
 </a>
 `;
 
+<<<<<<< HEAD
 exports[`External Link without href matches snapshot 1`] = `
 =======
   Navigation Link
@@ -217,6 +226,9 @@ exports[`External Link without href matches snapshot 1`] = `
 
 exports[`External Link Link with icon matches snapshot 1`] = `
 >>>>>>> Adds tests to external-link
+=======
+exports[`External Link with icon matches snapshot 1`] = `
+>>>>>>> Changes link for route-link
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
