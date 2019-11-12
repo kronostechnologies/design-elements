@@ -4,13 +4,19 @@ import { NavLink } from 'react-router-dom';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from './styles/styled-link';
 
+type Nav = typeof NavLink;
+
+interface RouterLinkProps extends Nav {
+    displayName?: string;
+}
+
 interface LinkProps {
     disabled?: boolean;
     exact?: boolean;
     href: string;
     iconName?: IconName;
     label?: string;
-    routerLink: typeof NavLink;
+    routerLink: RouterLinkProps;
 }
 
 export const Link = ({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement => (
@@ -26,12 +32,14 @@ export const Link = ({ disabled, exact, href, iconName, label, routerLink }: Lin
       </StyledLink>
       :
       <StyledLink
-        activeClassName="active"
-        as={routerLink}
-        className={`navigation ${label ? '' : 'iconOnly'}`}
-        disabled={disabled}
-        exact={exact}
-        to={href}
+        {...{
+            as: routerLink,
+            className: `navigation ${label ? '' : 'iconOnly'}`,
+            disabled: disabled,
+            exact: exact,
+            to: href,
+            ...(routerLink.displayName === 'NavLink' && { activeClassName: 'active' }),
+        }}
       >
         {iconName && <Icon name={iconName} size="16"/>}
         {label}

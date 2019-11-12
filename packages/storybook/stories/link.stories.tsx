@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import { Link } from '@equisoft/design-elements-react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Link as RouterLink, NavLink } from 'react-router-dom';
 
 export default {
     title: 'Link',
@@ -10,7 +10,17 @@ export default {
 };
 
 export const normal = () => (
-    <Link routerLink={NavLink} href="/story2" label="Navigation Link"/>
+    <>
+        <Link routerLink={NavLink} href="/story1" label="NavLink"/><br/>
+        <Link routerLink={RouterLink} href="/story2" label="Link"/>
+    </>
+);
+
+export const withNavlink = () => (
+    <Link routerLink={NavLink} href="/story" label="NavLink"/>
+);
+export const withLink = () => (
+    <Link routerLink={RouterLink} href="/story" label="Link"/>
 );
 
 export const withIcon = () => (
