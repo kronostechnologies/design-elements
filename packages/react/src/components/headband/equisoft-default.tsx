@@ -11,9 +11,9 @@ const tabletMin = `${(breakpoints.tablet / 16)}rem`;
 
 const Header = styled.header`
   align-items: center;
-  background: rgba(1, 38, 57, 1);
+  background: #012639;
   box-sizing: border-box;
-  color: rgba(255, 255, 255);
+  color: #fff;
   display: flex;
   justify-content: space-between;
   min-height: 2.75rem;
