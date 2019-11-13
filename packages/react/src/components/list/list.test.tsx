@@ -5,6 +5,7 @@ import { List, Option } from './list';
 
 describe('List', () => {
     let defaultValue: string;
+    let defaultValueIndex: number;
     let options: Option[];
     let onChange: (option: Option) => void;
 
@@ -14,6 +15,7 @@ describe('List', () => {
 
     beforeEach(() => {
         defaultValue = 'optionB';
+        defaultValueIndex = 1;
         options = [
             {
                 label: 'Option A',
@@ -40,7 +42,7 @@ describe('List', () => {
             <List options={options} defaultValue={defaultValue} onChange={onChange} />,
         );
 
-        expect(getOptionByIndex(wrapper, 1).prop('selected')).toEqual(true);
+        expect(getOptionByIndex(wrapper, defaultValueIndex).prop('selected')).toEqual(true);
         expect(getOptionByIndex(wrapper, 2).prop('selected')).toEqual(false);
     });
 
@@ -50,6 +52,7 @@ describe('List', () => {
         );
 
         getOptionByIndex(wrapper, 2).simulate('click');
+
         expect(onChange).toHaveBeenCalledTimes(1);
     });
 
@@ -59,7 +62,9 @@ describe('List', () => {
         );
 
         expect(getOptionByIndex(wrapper, 3).find('svg')).toHaveLength(0);
+
         getOptionByIndex(wrapper, 3).simulate('click');
+
         expect(getOptionByIndex(wrapper, 3).find('svg')).toHaveLength(1);
     });
 

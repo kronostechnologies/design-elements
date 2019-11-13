@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useMemo, useState } from 'react';
 
 import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
@@ -7,6 +7,11 @@ export interface Option {
     value: string;
     // Option label, if not provided will be set with value
     label?: string;
+}
+
+interface ListOption extends Option {
+    id: string;
+    focusIndex: number;
 }
 
 interface ListProps {
@@ -40,6 +45,7 @@ interface WrapperProps {
 
 interface ItemProps {
     selected: boolean;
+    focused: boolean;
     checkIndicator: boolean;
 }
 
@@ -57,6 +63,7 @@ const Wrapper = styled.ul<WrapperProps>`
 `;
 
 const Item = styled.li<ItemProps>`
+  background-color: ${({ focused }) => focused ? '#d9dde2' : 'inherit'};
   color: #000;
   cursor: pointer;
   font-size: 0.875rem;
@@ -87,47 +94,99 @@ export function List({
     defaultValue,
     numberOfItemsVisible = 4,
 }: ListProps): ReactElement {
-    const [selectedValue, setSelectedValue] = useState<string | undefined>(defaultValue);
+    const defaultSelectedIndex = useMemo(() => options.findIndex(option => option.value === defaultValue),
+        [...options, defaultValue],
+    );
 
-    function isOptionSelected({ value }: Option): boolean {
-        return value === selectedValue;
+    const [selectedOptionId, setSelectedOptionId] = useState(
+        defaultValue ? `${defaultValue}-${defaultSelectedIndex}` : undefined,
+    );
+
+    const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
+
+    const list: ListOption[] = useMemo(() =>
+        options.map((option, index)  => ({ ...option, id: `${option.value}-${index}`, focusIndex: index })),
+        options,
+    );
+
+    function isOptionSelected(option: ListOption): boolean {
+        return selectedOptionId ? option.id === selectedOptionId : false;
     }
 
-    function shouldDisplayCheckIndicator(option: Option): boolean {
+    function isOptionFocused(option: ListOption): boolean {
+        return option.focusIndex === selectedFocusIndex;
+    }
+
+    function shouldDisplayCheckIndicator(option: ListOption): boolean {
         return checkIndicator && isOptionSelected(option);
     }
 
-    function selectOption(option: Option): void {
-        setSelectedValue(option.value);
+    function selectOption(option: ListOption): void {
+        const { id, focusIndex, value, label } = option;
+
+        setSelectedOptionId(id);
+        setSelectedFocusIndex(focusIndex);
 
         if (onChange) {
-            onChange(option);
+            onChange({ value, label });
         }
     }
 
-    function handleSelect(option: Option): () => void {
+    function handleSelect(option: ListOption): () => void {
         return () => selectOption(option);
     }
 
-    function handleKeyDown(option: Option): (e: KeyboardEvent<HTMLLIElement>) => void {
-        return (e: KeyboardEvent<HTMLLIElement>) => {
-            if (e.keyCode === 13) {
-                selectOption(option);
-            }
-        };
+    function handleKeyDown(e: KeyboardEvent<HTMLUListElement>): void {
+        // ' ' is the space bar key
+        switch (e.key) {
+            case 'Enter':
+            case ' ':
+                e.preventDefault();
+
+                if (selectedFocusIndex >= 0) {
+                    selectOption(list[selectedFocusIndex]);
+                }
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+
+                const prevOption = list[selectedFocusIndex - 1];
+
+                if (prevOption) {
+                    setSelectedFocusIndex(prevOption.focusIndex);
+                }
+                break;
+            case 'ArrowDown':
+                e.preventDefault();
+
+                const nextOption = list[selectedFocusIndex + 1];
+
+                if (nextOption) {
+                    setSelectedFocusIndex(nextOption.focusIndex);
+                }
+                break;
+        }
     }
 
     return (
-        <Wrapper role="listbox" numberOfItemsVisible={numberOfItemsVisible}>
-            {options.map((option, index) => (
+        <Wrapper
+            role="listbox"
+            numberOfItemsVisible={numberOfItemsVisible}
+            tabIndex={0}
+            aria-activedescendant={selectedOptionId}
+            aria-labelledby={selectedOptionId}
+            onKeyDown={handleKeyDown}
+        >
+            {list.map(option => (
                 <Item
-                    key={`${option.value}-${index}`}
+                    key={option.id}
                     role="option"
+                    id={option.id}
                     aria-label={option.label || option.value}
+                    aria-selected={isOptionSelected(option)}
                     onClick={handleSelect(option)}
-                    onKeyDown={handleKeyDown(option)}
                     selected={isOptionSelected(option)}
-                    tabIndex={0}
+                    focused={isOptionFocused(option)}
                     checkIndicator={checkIndicator}
                 >
                     <>

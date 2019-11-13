@@ -13,6 +13,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1 {
+  background-color: inherit;
   color: #000;
   cursor: pointer;
   font-size: 0.875rem;
@@ -30,6 +31,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c2 {
+  background-color: #d9dde2;
   color: #000;
   cursor: pointer;
   font-size: 0.875rem;
@@ -54,28 +56,32 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 <ul
+  aria-activedescendant="optionB-1"
+  aria-labelledby="optionB-1"
   className="c0"
+  onKeyDown={[Function]}
   role="listbox"
+  tabIndex={0}
 >
   <li
     aria-label="Option A"
+    aria-selected={false}
     className="c1"
+    id="optionA-0"
     onClick={[Function]}
-    onKeyDown={[Function]}
     role="option"
     selected={false}
-    tabIndex={0}
   >
     Option A
   </li>
   <li
     aria-label="Option B"
+    aria-selected={true}
     className="c2"
+    id="optionB-1"
     onClick={[Function]}
-    onKeyDown={[Function]}
     role="option"
     selected={true}
-    tabIndex={0}
   >
     <svg
       className="c3"
@@ -84,23 +90,23 @@ exports[`List Matches the snapshot 1`] = `
   </li>
   <li
     aria-label="Option C"
+    aria-selected={false}
     className="c1"
+    id="optionC-2"
     onClick={[Function]}
-    onKeyDown={[Function]}
     role="option"
     selected={false}
-    tabIndex={0}
   >
     Option C
   </li>
   <li
     aria-label="Option D"
+    aria-selected={false}
     className="c1"
+    id="optionD-3"
     onClick={[Function]}
-    onKeyDown={[Function]}
     role="option"
     selected={false}
-    tabIndex={0}
   >
     Option D
   </li>
