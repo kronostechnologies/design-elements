@@ -1,5 +1,7 @@
 import React, { ReactText } from 'react';
+
 import styled from 'styled-components';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Container = styled.div`
   align-items: center;
@@ -7,7 +9,7 @@ const Container = styled.div`
   margin-bottom: 1rem;
 
   p {
-    color: ${(props: { secondary: boolean }) => (props.secondary ? 'rgb(87, 102, 110)' : 'rgb(0, 0, 0)')};
+    color: ${(props: {theme: Theme, secondary: boolean}) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
     margin: 0;
     text-align: right;
     width: 8.5rem;
@@ -15,17 +17,17 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-  background-color: rgb(220, 220, 220);
+  background-color: ${props => props.theme.greys.grey};
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
 `;
 
 const StyledBar = styled.div`
-  background: ${props => props.color};
+  background: ${(props: {color?: string, percent: number}) => props.color};
   border-radius: 4rem;
   height: 0.55rem;
-  width: ${(props: { percent: number }) => Math.min(Math.max(props.percent, 0), 100)}%;
+  width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
 `;
 
 interface BarProps {

@@ -2,7 +2,7 @@
 
 exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
 .c1 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -24,20 +24,20 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: rgb(217,221,226);
+  border-color: #D9DDE2;
 }
 
 .c0:focus {
-  border-color: rgb(0,128,165);
+  border-color: #0080A5;
 }
 
 .c2 {
-  background: rgb(255,255,255);
-  border: 1px solid rgb(217,221,226);
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: rgb(0,0,0);
+  color: #000000;
   font-family: inherit;
   font-size: calc(1rem - 2px);
   margin: 0;
@@ -46,48 +46,48 @@ input + .c1 {
 }
 
 .c2::-webkit-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2::-moz-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2:-ms-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2::placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2:disabled {
-  background-color: rgb(242,243,249);
-  border-color: rgb(217,221,226);
+  background-color: #F1F2F2;
+  border-color: #D9DDE2;
 }
 
 .c2:disabled,
 .c2:disabled::-webkit-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled::-moz-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled:-ms-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled::placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:focus {
-  border-color: rgb(54,71,127);
+  border-color: #0080A5;
 }
 
 label + .c2 {
@@ -120,7 +120,7 @@ label + .c2 {
 
 exports[`TextInput Matches the snapshot [required = true] 1`] = `
 .c1 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -142,20 +142,20 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: rgb(217,221,226);
+  border-color: #D9DDE2;
 }
 
 .c0:focus {
-  border-color: rgb(0,128,165);
+  border-color: #0080A5;
 }
 
 .c2 {
-  background: rgb(255,255,255);
-  border: 1px solid rgb(217,221,226);
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: rgb(0,0,0);
+  color: #000000;
   font-family: inherit;
   font-size: calc(1rem - 2px);
   margin: 0;
@@ -164,48 +164,48 @@ input + .c1 {
 }
 
 .c2::-webkit-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2::-moz-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2:-ms-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2::placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2:disabled {
-  background-color: rgb(242,243,249);
-  border-color: rgb(217,221,226);
+  background-color: #F1F2F2;
+  border-color: #D9DDE2;
 }
 
 .c2:disabled,
 .c2:disabled::-webkit-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled::-moz-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled:-ms-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled::placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:focus {
-  border-color: rgb(54,71,127);
+  border-color: #0080A5;
 }
 
 label + .c2 {
@@ -238,7 +238,7 @@ label + .c2 {
 
 exports[`TextInput Matches the snapshot 1`] = `
 .c1 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -260,20 +260,20 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: rgb(217,221,226);
+  border-color: #D9DDE2;
 }
 
 .c0:focus {
-  border-color: rgb(0,128,165);
+  border-color: #0080A5;
 }
 
 .c2 {
-  background: rgb(255,255,255);
-  border: 1px solid rgb(217,221,226);
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: rgb(0,0,0);
+  color: #000000;
   font-family: inherit;
   font-size: calc(1rem - 2px);
   margin: 0;
@@ -282,48 +282,48 @@ input + .c1 {
 }
 
 .c2::-webkit-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2::-moz-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2:-ms-input-placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2::placeholder {
-  color: rgb(99,114,130);
+  color: #57666E;
 }
 
 .c2:disabled {
-  background-color: rgb(242,243,249);
-  border-color: rgb(217,221,226);
+  background-color: #F1F2F2;
+  border-color: #D9DDE2;
 }
 
 .c2:disabled,
 .c2:disabled::-webkit-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled::-moz-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled:-ms-input-placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:disabled,
 .c2:disabled::placeholder {
-  color: rgb(156,167,180);
+  color: #9CA7B4;
 }
 
 .c2:focus {
-  border-color: rgb(54,71,127);
+  border-color: #0080A5;
 }
 
 label + .c2 {
@@ -351,4 +351,142 @@ label + .c2 {
     type="tel"
   />
 </div>
+`;
+
+exports[`Theme Wrapper Returns component with default theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #FF847C;
+  border-color: #FF847C;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
+`;
+
+exports[`Theme Wrapper Returns component with test theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #B3974B;
+  border-color: #B3974B;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #FFD86B;
+  border-color: #FFD86B;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #736130;
+  border-color: #736130;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
 `;

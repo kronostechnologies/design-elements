@@ -1,16 +1,15 @@
 import React, { ReactElement } from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 import { Circle } from '../circle/circle';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const RADIUS = 73;
 const STROKE = 8;
 
-function getColor(secondary: boolean | undefined): string {
-    return secondary ? 'rgb(87,102,110)' : 'rgb(0, 0, 0)';
-}
-
-interface ResultProps extends Pick<Props, 'secondary'> {
+interface ResultProps {
+    theme: Theme;
+    secondary?: boolean;
 }
 
 const Container = styled.div`
@@ -34,13 +33,13 @@ const Result = styled.div`
   width: ${(RADIUS * 2) / 16}rem;
 
   p {
-    color: ${(props: ResultProps) => getColor(props.secondary)};
+    color: ${(props: ResultProps) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
     font-size: 1.625rem;
   }
 `;
 
 const Label = styled.p`
-  color: ${(props: ResultProps) => getColor(props.secondary)};
+  color: ${(props: ResultProps) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
   text-align: center;
   width: ${(RADIUS * 2) / 16}rem;
 `;

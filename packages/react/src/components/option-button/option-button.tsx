@@ -1,28 +1,33 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
 const Input = styled.input`
-  position: absolute;
-  z-index: -1;
+  ${props => {
+      return `
+      position: absolute;
+      z-index: -1;
 
-  + label {
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #d9dde2;
-    border-radius: 8px;
-    color: #637282;
-    display: flex;
-    font-size: 24px;
-    justify-content: center;
-    min-height: 40px;
-  }
+      + label {
+        align-items: center;
+        background-color: ${props.theme.greys.white};
+        border: 1px solid ${props.theme.greys.grey};
+        border-radius: 8px;
+        color: ${props.theme.greys['dark-grey']};
+        display: flex;
+        font-size: 24px;
+        justify-content: center;
+        min-height: 40px;
+      }
 
-  &:checked + label {
-    background-color: #006296;
-    border-color: #006296;
-    color: #fff;
-  }
+      &:checked + label {
+        background-color: ${props.theme.main['primary-1.1']};
+        border-color: ${props.theme.main['primary-1.1']};
+        color: ${props.theme.greys.white};
+      }
+    `;
+  }}
 `;
 
 interface OptionButtonProps {

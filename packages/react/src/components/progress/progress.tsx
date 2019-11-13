@@ -15,15 +15,15 @@ const StyledProgress = styled.progress`
 
   &[value] {
     &::-moz-progress-bar {
-      background-color: #36477f;
+      background-color: ${props => props.theme.main['primary-3']};
     }
 
     &::-webkit-progress-bar {
-      background-color: #d9dde2;
+      background-color: ${props => props.theme.greys.grey};
     }
 
     &::-webkit-progress-value {
-      background-color: #36477f;
+      background-color: ${props => props.theme.main['primary-3']};
     }
   }
 `;
@@ -40,7 +40,7 @@ const UL = styled.ul`
 `;
 
 const AbstractStep = styled.li`
-  background-color: #36477f;
+  background-color: ${props => props.theme.main['primary-3']};
   border-radius: 50%;
   display: inline-block;
   width: 16px;
@@ -49,12 +49,12 @@ const AbstractStep = styled.li`
 const PastStep = AbstractStep;
 
 const CurrentStep = styled(AbstractStep)`
-  border: 4px solid #d9dde2;
+  border: 4px solid ${props => props.theme.greys.grey};
   width: 8px;
 `;
 
 const FutureStep = styled(AbstractStep)`
-  background-color: #d9dde2;
+  background-color: ${props => props.theme.greys.grey};
 `;
 
 const range = (value: number) => {

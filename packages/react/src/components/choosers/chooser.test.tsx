@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { Chooser } from './chooser';
 jest.mock('uuid/v4');
 
@@ -18,13 +19,15 @@ describe('Chooser', () => {
     test('onChange callback is called when chooser is changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <Chooser
-                inColumns
-                groupName="maritalStatus"
-                options={maritalStatus}
-                skipOption={skipOption}
-                onChange={callback}
-            />,
+            ThemeWrapped(
+                <Chooser
+                    inColumns
+                    groupName="maritalStatus"
+                    options={maritalStatus}
+                    skipOption={skipOption}
+                    onChange={callback}
+                />,
+            ),
         );
 
         wrapper.find('input').at(0).simulate('change');
@@ -33,13 +36,15 @@ describe('Chooser', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <Chooser
-                inColumns
-                groupName="maritalStatus"
-                options={maritalStatus}
-                skipOption={skipOption}
-                value="married"
-            />,
+            ThemeWrapped(
+                <Chooser
+                    inColumns
+                    groupName="maritalStatus"
+                    options={maritalStatus}
+                    skipOption={skipOption}
+                    value="married"
+                />,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

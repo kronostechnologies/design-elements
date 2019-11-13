@@ -11,7 +11,7 @@ export const normal = () => (
         descriptionLabel="RRSP"
         resultLabel="56 k$"
         percent={66}
-        color="rgb(101,226,255)"
+        color="#0080A5"
         secondary={false}
     />
 );
@@ -20,7 +20,7 @@ export const secondary = () => (
         descriptionLabel="RRSP"
         resultLabel="56 k$"
         percent={66}
-        color="#304E63"
+        color="#012639"
         secondary={true}
     />
 );

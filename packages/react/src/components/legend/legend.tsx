@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
+
 import styled from 'styled-components';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const List = styled.ul`
   margin: 0;
@@ -18,7 +20,7 @@ const Item = styled.li`
   }
 
   ::before {
-    color: ${props => props.color || 'rgb(101, 226, 255)'};
+    color: ${(props: {theme: Theme, color?: string}) => props.color || props.theme.main['primary-1.1']};
     content: '•';
     font-size: 2.6em;
     font-weight: 600;
@@ -28,7 +30,7 @@ const Item = styled.li`
 `;
 
 const Description = styled.span`
-  color: rgb(87, 102, 110);
+  color: ${props => props.theme.greys['dark-grey']};
   font-size: 0.75rem;
 `;
 

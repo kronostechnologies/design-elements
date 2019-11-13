@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-
 import Enso from '../../icons/enso.svg';
 
 const EnsoSpinner = styled(Enso)`
   animation: roll 1s infinite;
   animation-timing-function: linear;
-  fill: #e2732d;
+  fill: ${props => props.theme.main['primary-1.1']};
   height: 80px;
   width: 83px;
 

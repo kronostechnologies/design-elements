@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 interface CircleProps {
     radius: number;
@@ -8,20 +8,21 @@ interface CircleProps {
     color: string;
 }
 
+const CirclePath = styled.circle`
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+`;
+
 const Circle = ({ radius, stroke, percent, color }: CircleProps) => {
     const normalizedRadius = radius - (stroke * 2);
     const circumference = normalizedRadius * 2 * Math.PI;
     const strokeDashoffset = circumference - ((percent / 100) * circumference);
-
-    const CirclePath = styled.circle`
-      transform: rotate(90deg);
-      transform-origin: 50% 50%;
-    `;
+    const theme = useContext(ThemeContext);
 
     return (
         <svg height={radius * 2} width={radius * 2}>
             <circle
-                stroke="#DCDCDC"
+                stroke={theme.greys.grey}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeDasharray={`${circumference} ${circumference}`}

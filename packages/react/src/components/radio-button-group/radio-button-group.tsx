@@ -1,5 +1,7 @@
 import React, { ChangeEvent, ReactElement } from 'react';
+
 import styled from 'styled-components';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
   font-size: 0.75rem;
@@ -8,60 +10,64 @@ const Legend = styled.legend`
 `;
 
 const StyledLabel = styled.label `
-  cursor: ${(props: {disabled?: boolean}) => props.disabled ? 'default' : 'pointer;'};
-  display: block;
-  font-size: 0.875rem;
-  padding-left: 24px;
-  position: relative;
-  user-select: none;
+  ${(props: {theme: Theme, disabled?: boolean}) => {
+      return `
+        ${props.disabled ? '' : 'cursor: pointer;'};
+        display: block;
+        font-size: 0.875rem;
+        padding-left: 24px;
+        position: relative;
+        user-select: none;
 
-  &:not(:first-of-type) {
-    margin-top: 16px;
-  }
+        &:not(:first-of-type) {
+            margin-top: 16px;
+        }
 
-  .radioInput {
-    background-color: ${(props: {disabled?: boolean}) => props.disabled ? '#f1f2f2' : '#fff'};
-    border: 1px solid ${(props: {disabled?: boolean}) => props.disabled ? '#d9dde2' : '#57666e'};
-    border-radius: 50%;
-    display: inline-block;
-    height: 16px;
-    left: 0;
-    margin-top: 2px;
-    position: absolute;
-    top: 0;
-    width: 16px;
-  }
+        input {
+            height: 16px;
+            left: 0;
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            top: 2px;
+            width: 16px;
 
-  &:hover .radioInput {
-    border: 1px solid ${(props: {disabled?: boolean}) => props.disabled ? '#d9dde2' : '#0080a5'};
-  }
+            &:checked + .radioInput {
+                background-color: ${props.theme.main['primary-1.1']};
+                border: 1px solid ${props.theme.main['primary-1.1']};
 
-  input {
-    height: 16px;
-    left: 0;
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-    top: 2px;
-    width: 16px;
+                &::after {
+                    background-color: ${props.theme.greys.white};
+                    border-radius: 50%;
+                    content: "";
+                    height: 7px;
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 7px;
+                }
+            }
+        }
 
-    &:checked + .radioInput {
-      background-color: #0080a5;
-      border: 1px solid #0080a5;
+        .radioInput {
+            background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+            border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
+            border-radius: 50%;
+            display: inline-block;
+            height: 16px;
+            left: 0;
+            margin-top: 2px;
+            position: absolute;
+            top: 0;
+            width: 16px;
+        }
 
-      &::after {
-        background-color: #fff;
-        border-radius: 50%;
-        content: "";
-        height: 7px;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 7px;
-      }
-    }
-  }
+        &:hover .radioInput {
+            border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
+        }
+        `;
+  }}
 `;
 
 interface RadioButtonGroupProps {

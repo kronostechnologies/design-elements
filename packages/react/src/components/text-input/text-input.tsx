@@ -1,13 +1,12 @@
 import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
+
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
 import { FieldContainer } from '../field-container/field-container';
-
 import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input`
-  ${inputsStyle}
+  ${props => inputsStyle(props.theme)}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,

@@ -10,13 +10,14 @@ import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const SearchWrapper = styled.div`
   display: flex;
 
   label {
     bottom: 0.5rem;
-    color: rgb(99, 114, 130);
+    color: ${props => props.theme.greys['dark-grey']};
     display: inline-block;
     height: 1rem;
     left: 0.5rem;
@@ -32,35 +33,38 @@ const InnerWrapper = styled.div`
   position: relative;
 `;
 
-type IcoSearchProps = Pick<SearchInputProps, 'disabled'>;
 const IcoSearch = styled(SearchIcon)`
-  color: ${(props: IcoSearchProps) => (props.disabled ? 'rgb(156, 167, 180)' : 'rgb(99, 114, 130)')};
+  color: ${(props: {theme: Theme, disabled?: boolean}) => (props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey'])};
   height: 1rem;
   width: 1rem;
 `;
 
 const IcoReset = styled(XIcon)`
-  color: black;
+  color: ${props => props.theme.greys.black};
   height: 0.75rem;
   width: 0.75rem;
 `;
 
 const Input = styled.input`
-  ${inputsStyle} /* Must be the first rule */
-  border-radius: ${(props: SearchInputProps) => (props.hasButton && '0.25rem 0 0 0.25rem')}; /* stylelint-disable-line order/properties-alphabetical-order */
-  line-height: 1;
-  padding: 0.5rem 1.75rem 0.5rem 2rem;
+  ${(props: {theme: Theme, hasButton?: boolean}) => {
+      return `
+      ${inputsStyle(props.theme)} /* Must be the first rule */
+      border-radius: ${props.hasButton && '0.25rem 0 0 0.25rem'};
+      line-height: 1;
+      padding: 0.5rem 1.75rem 0.5rem 2rem;
 
-  label + & {
-    margin-top: 0;
-  }
+      label + & {
+        margin-top: 0;
+      }
 
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        display: none;
+      }
+    `;
+  }}
 `;
 
 const Reset = styled.button`

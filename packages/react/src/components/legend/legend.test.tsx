@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { Legend } from './legend';
 
 describe('Legend', () => {
@@ -23,14 +24,14 @@ describe('Legend', () => {
 
     test('Is rendering all legends', () => {
         const wrapper = mount(
-            <Legend items={legendItem}/>,
+            ThemeWrapped(<Legend items={legendItem}/>),
         );
         expect(wrapper.find(`li`).length).toBe(3);
     });
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <Legend items={legendItem}/>,
+            ThemeWrapped(<Legend items={legendItem}/>),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

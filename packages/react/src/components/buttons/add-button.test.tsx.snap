@@ -36,9 +36,9 @@ exports[`Add Button Button has primary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: rgb(226,115,46);
-  border-color: rgb(226,115,46);
-  color: white;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
 }
 
 .c0:not(:disabled) {
@@ -50,15 +50,15 @@ exports[`Add Button Button has primary styles 1`] = `
 }
 
 .c0:hover {
-  background-color: rgb(183,94,43);
-  border-color: rgb(183,94,43);
+  background-color: #D41F14;
+  border-color: #D41F14;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: rgb(240,185,150);
-  border-color: rgb(240,185,150);
+  background-color: #FF847C;
+  border-color: #FF847C;
 }
 
 .c1 {
@@ -116,8 +116,8 @@ exports[`Add Button Button has secondary styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: transparent;
-  border-color: rgb(226,115,46);
-  color: rgb(226,115,46);
+  border-color: #EF483E;
+  color: #EF483E;
 }
 
 .c0:not(:disabled) {
@@ -129,17 +129,17 @@ exports[`Add Button Button has secondary styles 1`] = `
 }
 
 .c0:hover {
-  background-color: rgb(226,115,46);
-  border-color: rgb(226,115,46);
-  color: white;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
   background-color: transparent;
-  border-color: rgb(240,185,150);
-  color: rgb(240,185,150);
+  border-color: #FF847C;
+  color: #FF847C;
 }
 
 .c1 {
@@ -198,7 +198,7 @@ exports[`Add Button Button has tertiary styles 1`] = `
   user-select: none;
   background-color: transparent;
   border-color: transparent;
-  color: #637282;
+  color: #57666E;
 }
 
 .c0:not(:disabled) {
@@ -210,13 +210,13 @@ exports[`Add Button Button has tertiary styles 1`] = `
 }
 
 .c0:hover {
-  color: black;
+  color: #000000;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  color: rgba(0,0,0,0.4);
+  color: #9CA7B4;
 }
 
 .c1 {
@@ -273,9 +273,9 @@ exports[`Add Button Button is disabled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: rgb(226,115,46);
-  border-color: rgb(226,115,46);
-  color: white;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
 }
 
 .c0:not(:disabled) {
@@ -287,15 +287,15 @@ exports[`Add Button Button is disabled 1`] = `
 }
 
 .c0:hover {
-  background-color: rgb(183,94,43);
-  border-color: rgb(183,94,43);
+  background-color: #D41F14;
+  border-color: #D41F14;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: rgb(240,185,150);
-  border-color: rgb(240,185,150);
+  background-color: #FF847C;
+  border-color: #FF847C;
 }
 
 .c1 {
@@ -314,5 +314,143 @@ exports[`Add Button Button is disabled 1`] = `
     className="c1"
   />
   Primary Button
+</button>
+`;
+
+exports[`Theme Wrapper Returns component with default theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #FF847C;
+  border-color: #FF847C;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
+`;
+
+exports[`Theme Wrapper Returns component with test theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #B3974B;
+  border-color: #B3974B;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #FFD86B;
+  border-color: #FFD86B;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #736130;
+  border-color: #736130;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
 </button>
 `;

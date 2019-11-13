@@ -11,9 +11,9 @@ const tabletMin = `${(breakpoints.tablet / 16)}rem`;
 
 const Header = styled.header`
   align-items: center;
-  background: #012639;
+  background: ${props => props.theme.main['primary-2']};
   box-sizing: border-box;
-  color: #fff;
+  color: ${props => props.theme.greys.white};
   display: flex;
   justify-content: space-between;
   min-height: 2.75rem;
@@ -66,7 +66,7 @@ const Project = styled.em`
   padding: 0 1.5rem;
 
   @media screen and (min-width: ${tabletMin}) {
-    border-left: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid ${props => props.theme.greys.white};
     font-size: 1rem;
     line-height: 2.5rem;
     margin: 0 0 0 1.5rem;

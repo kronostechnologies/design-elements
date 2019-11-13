@@ -14,14 +14,14 @@ exports[`ProgressBar Has secondary styles 1`] = `
 }
 
 .c1 p {
-  color: rgb(87,102,110);
+  color: #57666E;
   margin: 0;
   text-align: right;
   width: 8.5rem;
 }
 
 .c2 {
-  background-color: rgb(220,220,220);
+  background-color: #D9DDE2;
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
@@ -35,7 +35,7 @@ exports[`ProgressBar Has secondary styles 1`] = `
 }
 
 .c0 {
-  color: rgb(87,102,110);
+  color: #57666E;
   font-size: 0.875rem;
 }
 
@@ -77,14 +77,14 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 }
 
 .c1 p {
-  color: rgb(0,0,0);
+  color: #000000;
   margin: 0;
   text-align: right;
   width: 8.5rem;
 }
 
 .c2 {
-  background-color: rgb(220,220,220);
+  background-color: #D9DDE2;
   border-radius: 4rem;
   height: 0.55rem;
   width: 100%;
@@ -98,7 +98,7 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 }
 
 .c0 {
-  color: rgb(0,0,0);
+  color: #000000;
   font-size: 0.875rem;
 }
 
@@ -124,4 +124,142 @@ exports[`ProgressBar Matches the snapshot 1`] = `
     </p>
   </div>
 </div>
+`;
+
+exports[`Theme Wrapper Returns component with default theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #FF847C;
+  border-color: #FF847C;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
+`;
+
+exports[`Theme Wrapper Returns component with test theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #B3974B;
+  border-color: #B3974B;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #FFD86B;
+  border-color: #FFD86B;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #736130;
+  border-color: #736130;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
 `;

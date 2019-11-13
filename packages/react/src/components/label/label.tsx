@@ -1,9 +1,8 @@
 import React, { ReactNode } from 'react';
-
 import styled from 'styled-components';
 
 const StyledLabel = styled.label`
-  color: rgb(0, 0, 0);
+  color: ${props => props.theme.greys.black};
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.0166em;
