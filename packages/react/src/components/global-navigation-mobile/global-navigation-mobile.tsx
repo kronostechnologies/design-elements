@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #fff;
+  background-color: ${props => props.theme.greys.white};
   font-size: 1.125rem;
   height: 100vh;
   left: 0%;
@@ -25,18 +25,18 @@ const Container = styled.div`
     }
 
     .external {
-      color: #57666e;
+      color: ${props => props.theme.greys['dark-grey']};
 
       &:hover {
-        color: #000;
+        color: ${props => props.theme.greys.black};
         text-decoration: none;
       }
 
       &:visited {
-        color: #57666e;
+        color: ${props => props.theme.greys['dark-grey']};
 
         &:hover {
-          color: #000;
+          color: ${props => props.theme.greys.black};
         }
       }
     }
