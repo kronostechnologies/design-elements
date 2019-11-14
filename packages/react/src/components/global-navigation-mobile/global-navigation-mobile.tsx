@@ -16,6 +16,10 @@ const Container = styled.div`
   width: 100%;
   z-index: 100;
 
+  > .side-panel {
+    margin-top: 0;
+  }
+
   li {
     margin-left: 24px;
     padding: 12px 0;
@@ -65,7 +69,7 @@ export function GlobalNavigationMobile({ children }: GlobalNavMobileProps): Reac
     const [{ open }, setOpen] = useState({ open: false });
     return (
         <>
-            <Container open={open}>
+            <Container open={open} className="side-panel">
                 {children}
             </Container>
             <button onClick={() => setOpen({ open: !open })}>

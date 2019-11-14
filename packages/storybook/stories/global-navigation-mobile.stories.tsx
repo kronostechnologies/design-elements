@@ -27,5 +27,11 @@ export const globalNavigationMobile = () => (
                 <RouteLink routerLink={NavLink} label="Legal mentions" href="/legal-mentions" iconName="helpCircle"/>
             </li>
         </ul>
+        <GlobalNavigationMobile>
+            <ul>
+                <li><RouteLink routerLink={NavLink} label="Settings" href="/settings"/></li>
+                <li><RouteLink routerLink={NavLink} label="Contact us" href="/contact" iconName="info"/></li>
+            </ul>
+        </GlobalNavigationMobile>
     </GlobalNavigationMobile>
 );
