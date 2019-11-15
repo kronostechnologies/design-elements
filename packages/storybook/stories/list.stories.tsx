@@ -24,6 +24,14 @@ const options = [
         label: 'Option D',
         value: 'optionD',
     },
+    {
+        label: 'Option C',
+        value: 'optionF',
+    },
+    {
+        label: 'Option D',
+        value: 'optionG',
+    },
 ];
 
 const optionsWithoutLabel = [
@@ -64,5 +72,13 @@ export const listWithoutOptionLabel = () => (
         options={optionsWithoutLabel}
         onChange={option => console.log('onChange', option)}
         numberOfItemsVisible={3}
+    />
+);
+
+export const listWithAutofocus = () => (
+    <List
+        options={options}
+        onChange={option => console.log('onChange', option)}
+        autofocus={true}
     />
 );

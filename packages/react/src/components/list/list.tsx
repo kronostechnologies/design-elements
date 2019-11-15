@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, useMemo, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useMemo, useRef, useState, useEffect } from 'react';
 
 import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
@@ -12,6 +12,7 @@ export interface Option {
 interface ListOption extends Option {
     id: string;
     focusIndex: number;
+    ref: React.RefObject<HTMLLIElement>;
 }
 
 interface ListProps {
@@ -19,6 +20,11 @@ interface ListProps {
      * { value: string; label?: string; }[]
      */
     options: Option[];
+    /**
+     * Autofocus
+     * @default false
+     */
+    autofocus?: boolean;
     /**
      * Display check indicator on the selected option
      * @default false
@@ -93,7 +99,10 @@ export function List({
     checkIndicator = false,
     defaultValue,
     numberOfItemsVisible = 4,
+    autofocus = false,
 }: ListProps): ReactElement {
+    const listRef = useRef<HTMLUListElement>(null);
+
     const defaultSelectedIndex = useMemo(() => options.findIndex(option => option.value === defaultValue),
         [...options, defaultValue],
     );
@@ -105,7 +114,8 @@ export function List({
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
 
     const list: ListOption[] = useMemo(() =>
-        options.map((option, index)  => ({ ...option, id: `${option.value}-${index}`, focusIndex: index })),
+        options.map((option, index)  =>
+            ({ ...option, id: `${option.value}-${index}`, focusIndex: index, ref: React.createRef<HTMLLIElement>() })),
         options,
     );
 
@@ -136,6 +146,34 @@ export function List({
         return () => selectOption(option);
     }
 
+    function scrollIntoList(direction: 'up' | 'down'): void {
+        const currentOption = list[selectedFocusIndex];
+
+        if (!listRef.current || !currentOption || !currentOption.ref.current) {
+            return;
+        }
+
+        const listRect = listRef.current.getBoundingClientRect();
+        const itemRect = currentOption.ref.current.getBoundingClientRect();
+
+        switch (direction) {
+            case 'up':
+                const isPrevItemHidden = listRect.top - itemRect.top >= 0;
+
+                if (isPrevItemHidden) {
+                    listRef.current.scrollTop = listRef.current.scrollTop - itemRect.height;
+                }
+                break;
+            case 'down':
+                const isNextItemHidden = listRect.bottom - itemRect.bottom <= 0;
+
+                if (isNextItemHidden) {
+                    listRef.current.scrollTop = listRef.current.scrollTop + itemRect.height;
+                }
+                break;
+        }
+    }
+
     function handleKeyDown(e: KeyboardEvent<HTMLUListElement>): void {
         // ' ' is the space bar key
         switch (e.key) {
@@ -154,6 +192,7 @@ export function List({
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
+                    scrollIntoList('up');
                 }
                 break;
             case 'ArrowDown':
@@ -163,16 +202,25 @@ export function List({
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
+                    scrollIntoList('down');
                 }
                 break;
         }
     }
 
+    useEffect(() => {
+        if (autofocus && listRef.current) {
+            listRef.current.focus();
+        }
+    }, [autofocus]);
+
     return (
         <Wrapper
             role="listbox"
-            numberOfItemsVisible={numberOfItemsVisible}
             tabIndex={0}
+            ref={listRef}
+            onKeyPress={handleKeyDown}
+            numberOfItemsVisible={numberOfItemsVisible}
             aria-activedescendant={selectedOptionId}
             aria-labelledby={selectedOptionId}
             onKeyDown={handleKeyDown}
@@ -180,6 +228,7 @@ export function List({
             {list.map(option => (
                 <Item
                     key={option.id}
+                    ref={option.ref}
                     role="option"
                     id={option.id}
                     aria-label={option.label || option.value}

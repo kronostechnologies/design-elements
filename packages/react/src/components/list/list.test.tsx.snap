@@ -60,6 +60,7 @@ exports[`List Matches the snapshot 1`] = `
   aria-labelledby="optionB-1"
   className="c0"
   onKeyDown={[Function]}
+  onKeyPress={[Function]}
   role="listbox"
   tabIndex={0}
 >
