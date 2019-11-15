@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useState } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -63,18 +63,15 @@ const Container = styled.div`
 
 interface GlobalNavMobileProps {
     children?: ReactNode;
+    open: boolean;
 }
 
-export function GlobalNavigationMobile({ children }: GlobalNavMobileProps): ReactElement {
-    const [{ open }, setOpen] = useState({ open: false });
+export function GlobalNavigationMobile({ children, open }: GlobalNavMobileProps): ReactElement {
     return (
         <>
             <Container open={open} className="side-panel">
                 {children}
             </Container>
-            <button onClick={() => setOpen({ open: !open })}>
-                toggle menu
-            </button>
         </>
     );
 }
