@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, useMemo, useRef, useState, useEffect } from 'react';
+import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 
 import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
