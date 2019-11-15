@@ -10,12 +10,13 @@ export default {
     decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
 };
 
-type menuType = 'main' | 'second' | 'nested';
+type menuType = 'main' | 'second' | 'nested' | 'left';
 
 const allMenus = {
     main: false,
     second: false,
     nested: false,
+    left: false,
 };
 
 const HandleMenuClick = (menu: menuType) => {
@@ -62,5 +63,19 @@ export const withNestedMenu = () => (
             <Button label="Close menu" buttonType="primary" onClick={() => HandleMenuClick('second')}/>
         </GlobalNavigationMobile>
         <Button label="Click to open menu" buttonType="primary" onClick={() => HandleMenuClick('second')}/>
+    </>
+);
+
+export const leftOrigin = () => (
+    <>
+        <GlobalNavigationMobile open={allMenus.left} menuOrigin="left">
+            <ul>
+                <li><RouteLink routerLink={NavLink} label="Section 1" href="/section1" iconName="home"/></li>
+                <li><RouteLink routerLink={NavLink} label="Section 2" href="/section2" iconName="mail"/></li>
+                <li><RouteLink routerLink={NavLink} label="Section 3" href="/section3" iconName="mapPin"/></li>
+            </ul>
+            <Button label="Close menu" buttonType="primary" onClick={() => HandleMenuClick('left')}/>
+        </GlobalNavigationMobile>
+        <Button label="Click to open menu" buttonType="primary" onClick={() => HandleMenuClick('left')}/>
     </>
 );

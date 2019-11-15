@@ -1,6 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Global Navigation Mobile is closed 1`] = `
+exports[`Global Navigation Mobile is closed on left side 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  font-size: 1.125rem;
+  height: 100vh;
+  left: 0%;
+  margin-top: 2.75rem;
+  overflow-y: auto;
+  padding: 0 30px;
+  position: fixed;
+  top: 0%;
+  -webkit-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .side-panel {
+  margin-top: 0;
+}
+
+.c0 li {
+  margin-left: 24px;
+  padding: 12px 0;
+}
+
+.c0 li svg {
+  margin-left: -24px;
+}
+
+.c0 li .external {
+  color: #57666E;
+}
+
+.c0 li .external:hover {
+  color: #000000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 li .external:visited {
+  color: #57666E;
+}
+
+.c0 li .external:visited:hover {
+  color: #000000;
+}
+
+.c0 li:first-child {
+  padding-top: 0;
+}
+
+.c0 li:last-child {
+  padding-bottom: 0;
+}
+
+.c0 ul {
+  list-style: none;
+  margin: 0;
+  padding: 24px 0;
+}
+
+<div
+  className="c0 side-panel"
+  open={false}
+  origin="left"
+>
+  <ul>
+    <li>
+      Test
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Global Navigation Mobile is closed on right side 1`] = `
 .c0 {
   background-color: #FFFFFF;
   font-size: 1.125rem;
@@ -68,6 +146,7 @@ exports[`Global Navigation Mobile is closed 1`] = `
 <div
   className="c0 side-panel"
   open={false}
+  origin="right"
 >
   <ul>
     <li>
@@ -145,6 +224,7 @@ exports[`Global Navigation Mobile is open 1`] = `
 <div
   className="c0 side-panel"
   open={true}
+  origin="right"
 >
   <ul>
     <li>

@@ -17,10 +17,23 @@ describe('Global Navigation Mobile', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('is closed', () => {
+    test('is closed on right side', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <GlobalNavigationMobile open={false}>
+                    <ul>
+                        <li>Test</li>
+                    </ul>
+                </GlobalNavigationMobile>,
+            ),
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('is closed on left side', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <GlobalNavigationMobile open={false} menuOrigin="left">
                     <ul>
                         <li>Test</li>
                     </ul>

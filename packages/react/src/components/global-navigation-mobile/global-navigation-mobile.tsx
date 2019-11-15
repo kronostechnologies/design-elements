@@ -1,17 +1,19 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
+type origin = 'right' | 'left';
+
 const Container = styled.div`
   background-color: ${props => props.theme.greys.white};
   font-size: 1.125rem;
   height: 100vh;
   left: 0%;
-  margin-top: 2.75rem;
+  margin-top: 48px;
   overflow-y: auto;
-  padding: 0 30px;
+  padding: 0 24px;
   position: fixed;
   top: 0%;
-  transform: translate(${(props: {open: boolean}) => props.open ? '0%' : '100%'});
+  transform: translate(${(props: {open: boolean, origin: origin}) => props.open ? '0%' : props.origin === 'left' ? '-100%' : '100%'});
   transition: all 300ms;
   width: 100%;
   z-index: 100;
@@ -64,12 +66,21 @@ const Container = styled.div`
 interface GlobalNavMobileProps {
     children?: ReactNode;
     open: boolean;
+    /**
+     * Menu origin position
+     * @default right
+     **/
+    menuOrigin?: origin;
 }
 
-export function GlobalNavigationMobile({ children, open }: GlobalNavMobileProps): ReactElement {
+export function GlobalNavigationMobile({ children, open, menuOrigin }: GlobalNavMobileProps): ReactElement {
     return (
         <>
-            <Container open={open} className="side-panel">
+            <Container
+              className="side-panel"
+              open={open}
+              origin={menuOrigin ? menuOrigin : 'right'}
+            >
                 {children}
             </Container>
         </>
