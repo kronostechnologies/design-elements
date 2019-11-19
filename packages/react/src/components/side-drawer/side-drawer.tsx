@@ -3,22 +3,27 @@ import styled from 'styled-components';
 
 type origin = 'right' | 'left';
 
-const Container = styled.div`
+interface ContainerProps {
+    open: boolean;
+    origin: origin;
+}
+
+const Container = styled.div<ContainerProps>`
   background-color: ${props => props.theme.greys.white};
   font-size: 1.125rem;
   height: 100vh;
   left: 0%;
-  margin-top: 48px;
+  margin-top: 56px;
   overflow-y: auto;
   padding: 0 24px;
   position: fixed;
   top: 0%;
-  transform: translate(${(props: {open: boolean, origin: origin}) => props.open ? '0%' : props.origin === 'left' ? '-100%' : '100%'});
+  transform: translate(${props => props.open ? '0%' : props.origin === 'left' ? '-100%' : '100%'});
   transition: all 300ms;
   width: 100%;
   z-index: 100;
 
-  > .side-panel {
+  > .side-drawer {
     margin-top: 0;
   }
 
@@ -63,23 +68,23 @@ const Container = styled.div`
   }
 `;
 
-interface GlobalNavMobileProps {
+interface SideDrawerProps {
     children?: ReactNode;
     open: boolean;
     /**
-     * Menu origin position
+     * Drawer origin position
      * @default right
      **/
-    menuOrigin?: origin;
+    drawerOrigin?: origin;
 }
 
-export function GlobalNavigationMobile({ children, open, menuOrigin }: GlobalNavMobileProps): ReactElement {
+export function SideDrawer({ children, open, drawerOrigin }: SideDrawerProps): ReactElement {
     return (
         <>
             <Container
-              className="side-panel"
+              className="side-drawer"
               open={open}
-              origin={menuOrigin ? menuOrigin : 'right'}
+              origin={drawerOrigin ? drawerOrigin : 'right'}
             >
                 {children}
             </Container>
