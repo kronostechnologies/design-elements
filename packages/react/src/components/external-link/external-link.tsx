@@ -17,7 +17,7 @@ export const ExternalLink = ({ disabled, href, iconName, label, onClick, target 
         aria-disabled={disabled ? 'true' : 'false'}
         className={`external${label ? '' : ' iconOnly'}`}
         disabled={disabled}
-        href={disabled ? undefined : href}
+        href={disabled ? undefined : href ? href : 'javascript:void(0)'}
         onClick={disabled ? undefined : onClick}
         target={target}
     >

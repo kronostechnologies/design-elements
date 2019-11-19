@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`External Link link matches snapshot 1`] = `
+exports[`External Link disabled matches snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -103,7 +103,7 @@ exports[`External Link matches snapshot 1`] = `
 <a
   aria-disabled="false"
   className="c0 external"
-  href="#"
+  href="https://www.google.ca/"
 >
   External Link
 </a>
@@ -165,6 +165,72 @@ exports[`External Link with icon matches snapshot 1`] = `
   aria-disabled="false"
   className="c0 external"
   href="#"
+>
+  <svg
+    color="currentColor"
+    height="16"
+    width="16"
+  />
+  External Link
+</a>
+`;
+
+exports[`External Link without href matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+.c0.iconOnly svg {
+  margin: 0;
+}
+
+.c0.external {
+  color: #0080a5;
+}
+
+.c0.external:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0.external:visited {
+  color: #094c6c;
+}
+
+.c0.external:visited svg {
+  color: #094c6c;
+}
+
+.c0.navigation {
+  color: #57666e;
+}
+
+.c0.navigation:hover {
+  color: #000;
+}
+
+.c0.navigation.active {
+  color: #0080a5;
+}
+
+<a
+  aria-disabled="false"
+  className="c0 external"
+  href="javascript:void(0)"
 >
   <svg
     color="currentColor"

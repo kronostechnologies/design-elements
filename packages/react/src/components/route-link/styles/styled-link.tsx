@@ -44,10 +44,8 @@ export const StyledLink = styled.a<ContainerProps>`
       ${props => props.disabled ? '' : 'color: #000;'}
     }
 
-    ${props => props.disabled ? '' : `
-      &.active {
-        color: #0080a5;
-      }
-    `}
+    &.active {
+      ${props => props.disabled ? '' : 'color: #0080a5;'}
+    }
   }
 `;

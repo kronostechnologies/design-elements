@@ -10,12 +10,13 @@ describe('External Link', () => {
         const wrapper = mount(
             <ExternalLink onClick={callback} href="#" label="External Link"/>,
         );
+
         wrapper.find(ExternalLink).simulate('click');
         expect(callback).toHaveBeenCalledTimes(1);
     });
     test('matches snapshot', () => {
         const tree = renderer.create(
-                <ExternalLink href="#" label="External Link"/>,
+                <ExternalLink href="https://www.google.ca/" label="External Link"/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -27,7 +28,14 @@ describe('External Link', () => {
 
         expect(tree).toMatchSnapshot();
     });
-    test('link matches snapshot', () => {
+    test('without href matches snapshot', () => {
+        const tree = renderer.create(
+                <ExternalLink label="External Link" iconName="mail"/>,
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+    test('disabled matches snapshot', () => {
         const tree = renderer.create(
                 <ExternalLink href="#" label="External Link" disabled/>,
         ).toJSON();

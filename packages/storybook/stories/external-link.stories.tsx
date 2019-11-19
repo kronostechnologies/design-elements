@@ -8,19 +8,19 @@ export default {
 };
 
 export const normal = () => (
-    <ExternalLink href="#" label="External Link"/>
+    <ExternalLink label="External Link"/>
 );
 
 export const withIcon = () => (
-    <ExternalLink href="#" label="External Link" iconName="mail"/>
+    <ExternalLink label="External Link" iconName="mail"/>
 );
 export const onlyIcon = () => (
-    <ExternalLink href="#" iconName="mail"/>
+    <ExternalLink iconName="mail"/>
 );
 export const disabled = () => (
     <>
-        <ExternalLink href="#" label="External Link" iconName="mail" disabled/><br/>
-        <ExternalLink href="#" label="External Link" disabled/><br/>
+        <ExternalLink label="External Link" iconName="mail" disabled/><br/>
+        <ExternalLink label="External Link" disabled/><br/>
     </>
 );
 export const withCallback = () => (

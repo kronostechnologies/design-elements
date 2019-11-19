@@ -32,14 +32,11 @@ export const RouteLink = ({ disabled, exact, href, iconName, label, routerLink }
       </StyledLink>
       :
       <StyledLink
-        {...{
-            as: routerLink,
-            className: `navigation${label ? '' : ' iconOnly'}`,
-            disabled: disabled,
-            exact: exact,
-            to: href,
-            ...(routerLink.displayName === 'NavLink' && { activeClassName: 'active' }),
-        }}
+        as={routerLink}
+        className={`navigation${label ? '' : ' iconOnly'}`}
+        disabled={disabled}
+        exact={exact}
+        to={href}
       >
         {iconName && <Icon name={iconName} size="16"/>}
         {label}
