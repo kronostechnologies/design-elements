@@ -27,7 +27,7 @@ export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
 export { RouteLink } from './components/route-link/route-link';
 export { Progress } from './components/progress/progress';
-export { GlobalNavigationMobile } from './components/global-navigation-mobile/global-navigation-mobile';
+export { SideDrawer } from './components/side-drawer/side-drawer';
 
 // Results
 
