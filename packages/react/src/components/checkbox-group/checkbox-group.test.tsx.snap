@@ -14,7 +14,7 @@ Array [
     Vehicule
   </legend>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -41,8 +41,8 @@ Array [
 }
 
 .c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input:checked + .box .c1 {
@@ -53,8 +53,8 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #fff;
-  border: 1px solid #57666e;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -66,7 +66,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #0080a5;
+  border: 1px solid #0080A5;
 }
 
 .c3 input:checked + .box .c1 {
@@ -92,7 +92,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -119,8 +119,8 @@ Array [
 }
 
 .c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input:checked + .box .c1 {
@@ -131,8 +131,8 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #fff;
-  border: 1px solid #57666e;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -144,7 +144,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #0080a5;
+  border: 1px solid #0080A5;
 }
 
 .c3 input:checked + .box .c1 {
@@ -171,7 +171,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -201,8 +201,8 @@ Array [
 }
 
 .c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input:checked + .box .c1 {
@@ -213,8 +213,8 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #f1f2f2;
-  border: 1px solid #d9dde2;
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -226,7 +226,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #d9dde2;
+  border: 1px solid #D9DDE2;
 }
 
 <label
@@ -250,7 +250,7 @@ Array [
     </span>
   </label>,
   .c2 {
-  color: #fff;
+  color: #FFFFFF;
   height: 100%;
   opacity: 0;
   width: 100%;
@@ -277,8 +277,8 @@ Array [
 }
 
 .c0 input:checked + .box {
-  background-color: #0080a5;
-  border: 1px solid #0080a5;
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
 }
 
 .c0 input:checked + .box .c1 {
@@ -289,8 +289,8 @@ Array [
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: #fff;
-  border: 1px solid #57666e;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
   border-radius: 5px;
   display: inline-block;
   height: 16px;
@@ -302,7 +302,7 @@ Array [
 }
 
 .c0:hover .box {
-  border: 1px solid #0080a5;
+  border: 1px solid #0080A5;
 }
 
 .c3 input:checked + .box .c1 {
@@ -328,4 +328,142 @@ Array [
     </span>
   </label>,
 ]
+`;
+
+exports[`Theme Wrapper Returns component with default theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #FF847C;
+  border-color: #FF847C;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
+`;
+
+exports[`Theme Wrapper Returns component with test theme 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: normal;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #B3974B;
+  border-color: #B3974B;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #FFD86B;
+  border-color: #FFD86B;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #736130;
+  border-color: #736130;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  
+</button>
 `;

@@ -1,16 +1,19 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { ProgressBar } from './progress-bar';
 
 describe('ProgressBar', () => {
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <ProgressBar
-                color="rgb(101,226,255)"
-                descriptionLabel="You"
-                resultLabel="50k - 100k$"
-                percent={100}
-            />,
+            ThemeWrapped(
+                <ProgressBar
+                    color="rgb(101,226,255)"
+                    descriptionLabel="You"
+                    resultLabel="50k - 100k$"
+                    percent={100}
+                />,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -18,13 +21,15 @@ describe('ProgressBar', () => {
 
     test('Has secondary styles', () => {
         const tree = renderer.create(
-            <ProgressBar
-                color="rgb(101,226,255)"
-                descriptionLabel="You"
-                resultLabel="50k - 100k$"
-                percent={100}
-                secondary
-            />,
+            ThemeWrapped(
+                <ProgressBar
+                    color="rgb(101,226,255)"
+                    descriptionLabel="You"
+                    resultLabel="50k - 100k$"
+                    percent={100}
+                    secondary
+                />,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

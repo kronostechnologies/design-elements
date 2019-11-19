@@ -1,47 +1,47 @@
 import React, { ReactElement } from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 import { Circle } from '../circle/circle';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const RADIUS = 73;
 const STROKE = 8;
 
-function getColor(secondary: boolean | undefined): string {
-    return secondary ? 'rgb(87,102,110)' : 'rgb(0, 0, 0)';
-}
-
-interface ResultProps extends Pick<Props, 'secondary'> {
+interface ResultProps {
+    theme: Theme;
+    secondary?: boolean;
 }
 
 const Container = styled.div`
-    display: inline-block;
+  display: inline-block;
 `;
 
 const Wrapper = styled.div`
-    height: ${(RADIUS * 2) / 16}rem;
-    position: relative;
-    width: ${(RADIUS * 2) / 16}rem;
+  height: ${(RADIUS * 2) / 16}rem;
+  position: relative;
+  width: ${(RADIUS * 2) / 16}rem;
 `;
 
 const Result = styled.div`
-    align-items: center;
-    display: flex;
-    height: ${(RADIUS * 2) / 16}rem;
-    justify-content: center;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: ${(RADIUS * 2) / 16}rem;
-    p {
-        color: ${(props: ResultProps) => getColor(props.secondary)};
-        font-size: 1.625rem;
-    }
+  align-items: center;
+  display: flex;
+  height: ${(RADIUS * 2) / 16}rem;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: ${(RADIUS * 2) / 16}rem;
+
+  p {
+    color: ${(props: ResultProps) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
+    font-size: 1.625rem;
+  }
 `;
 
 const Label = styled.p`
-    color: ${(props: ResultProps) => getColor(props.secondary)};
-    text-align: center;
-    width: ${(RADIUS * 2) / 16}rem;
+  color: ${(props: ResultProps) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
+  text-align: center;
+  width: ${(RADIUS * 2) / 16}rem;
 `;
 
 interface Props {

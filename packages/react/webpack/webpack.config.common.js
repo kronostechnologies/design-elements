@@ -10,8 +10,15 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: [
                     { loader: 'ts-loader' },
-                    { loader: 'react-docgen-typescript-loader' },
                 ],
+                exclude: /node_modules/,
+            },
+            {
+                test: /.tsx$/,
+                loader: 'react-docgen-typescript-loader',
+                options: {
+                    shouldExtractLiteralValuesFromEnum: true,
+                },
                 exclude: /node_modules/,
             },
             {

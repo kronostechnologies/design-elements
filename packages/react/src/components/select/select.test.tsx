@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { Select } from './select';
 jest.mock('uuid/v4');
 
@@ -33,15 +34,12 @@ const initialProps = {
     skipOption: { ...skipOption },
 };
 
-const setup = (callback: ((event: React.ChangeEvent<HTMLSelectElement>) => void) = () => {}) => {
-    const wrapper = mount (<Select onChange={callback} {...initialProps}/>);
-    return wrapper;
-};
-
 describe('Select', () => {
     test('onChange callback is called when selected value is changed', () => {
         const callback = jest.fn();
-        const wrapper = setup(callback);
+        const wrapper = mount(
+            ThemeWrapped(<Select onChange={callback} {...initialProps}/>),
+        );
 
         wrapper.find('select').simulate('change', { target: { value: 'on', checkValidity: () => true } });
         expect(callback).toHaveBeenCalledTimes(1);
@@ -49,13 +47,15 @@ describe('Select', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <Select
-                label="Choose your province or territory"
-                onChange={() => {}}
-                options={provinces}
-                skipOption={skipOption}
-                validationErrorMessage="Error Message"
-            />,
+            ThemeWrapped(
+                <Select
+                    label="Choose your province or territory"
+                    onChange={() => {}}
+                    options={provinces}
+                    skipOption={skipOption}
+                    validationErrorMessage="Error Message"
+                />,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -63,14 +63,16 @@ describe('Select', () => {
 
     test('Is required', () => {
         const tree = renderer.create(
-            <Select
-                label="Choose your province or territory"
-                onChange={() => {}}
-                options={provinces}
-                required
-                skipOption={skipOption}
-                validationErrorMessage="Error Message"
-            />,
+            ThemeWrapped(
+                <Select
+                    label="Choose your province or territory"
+                    onChange={() => {}}
+                    options={provinces}
+                    required
+                    skipOption={skipOption}
+                    validationErrorMessage="Error Message"
+                />,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

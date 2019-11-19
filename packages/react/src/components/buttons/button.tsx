@@ -1,37 +1,94 @@
 import React, { ReactElement, ReactNode } from 'react';
+
 import styled from 'styled-components';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 import { AbstractButton } from './abstract-button';
-import { primaryStyle } from './styles/primary';
-import { secondaryStyle } from './styles/secondary';
-import { tertiaryStyle } from './styles/tertiary';
+
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 interface ButtonProps {
     /**
      * Visual style
      * @default primary
      **/
-    buttonType: 'primary' | 'secondary' | 'tertiary';
+    buttonType: ButtonType;
     label?: string;
     children?: ReactNode;
     disabled?: boolean;
 
     onClick?(): void;
 }
+const StyledButton = styled(AbstractButton)`
+  ${(props: {theme: Theme, buttonType: ButtonType}) => {
+      switch (props.buttonType) {
+          case 'primary':
+              return `
+                background-color: ${props.theme.main['secondary-4.1']};
+                border-color: ${props.theme.main['secondary-4.1']};
+                color: ${props.theme.greys.white};
 
-const StyledButton = styled(AbstractButton)((props: ButtonProps) => {
-    if (props.buttonType === 'secondary') {
-        return secondaryStyle;
-    } else if (props.buttonType === 'tertiary') {
-        return tertiaryStyle;
-    }
-    return primaryStyle;
-});
+                &:hover {
+                  background-color: ${props.theme.main['secondary-4.3']};
+                  border-color: ${props.theme.main['secondary-4.3']};
+                }
+
+                &:disabled {
+                  &,
+                  &:focus,
+                  &:hover {
+                    background-color: ${props.theme.main['secondary-4.2']};
+                    border-color: ${props.theme.main['secondary-4.2']};
+                  }
+                }
+              `;
+          case 'secondary':
+              return `
+                background-color: transparent;
+                border-color: ${props.theme.main['secondary-4.1']};
+                color: ${props.theme.main['secondary-4.1']};
+
+                &:hover {
+                  background-color: ${props.theme.main['secondary-4.1']};
+                  border-color: ${props.theme.main['secondary-4.1']};
+                  color: ${props.theme.greys.white};
+                }
+
+                &:disabled {
+                    &,
+                    &:focus,
+                    &:hover {
+                      background-color: transparent;
+                      border-color: ${props.theme.main['secondary-4.2']};
+                      color: ${props.theme.main['secondary-4.2']};
+                    }
+                }
+            `;
+          case 'tertiary':
+              return `
+                background-color: transparent;
+                border-color: transparent;
+                color: ${props.theme.greys['dark-grey']};
+
+                &:hover {
+                  color: ${props.theme.greys.black};
+                }
+
+                &:disabled {
+                  &,
+                  &:focus,
+                  &:hover {
+                    color: ${props.theme.greys['mid-grey']};
+                  }
+                }
+            `;
+      }
+  }}
+`;
 
 export function Button({ children, onClick, ...props }: ButtonProps): ReactElement {
     function handleClick(): void {
         onClick && onClick();
     }
-
     const label: string = props.label || '';
     return (
         <StyledButton onClick={handleClick} {...props}>

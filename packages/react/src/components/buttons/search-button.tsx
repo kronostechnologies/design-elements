@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
@@ -13,25 +13,30 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-    background: rgb(255, 255, 255);
-    border-color: rgb(217, 221, 226);
-    color: rgb(99, 114, 130);
-
-    &:hover {
-        background-color: rgb(217, 221, 226);
-        border-color: rgb(217, 221, 226);
-        color: rgb(99, 114, 130);
-    }
+  ${props => `
+    background: ${props.theme.greys.white};
+    border-color: ${props.theme.greys.grey};
+    color: ${props.theme.greys['mid-grey']};
 
     &:disabled {
         &,
         &:focus,
         &:hover {
-            background-color: rgb(242, 243, 249);
-            border-color: rgb(217, 221, 226);
-            color: rgb(156, 167, 180);
+            background-color: ${props.theme.greys.grey};
+            border-color: ${props.theme.greys.grey};
+            color: ${props.theme.greys['mid-grey']};
         }
-    }
+
+        &:disabled {
+            &,
+            &:focus,
+            &:hover {
+                background-color: ${props.theme.greys['light-grey']};
+                border-color: ${props.theme.greys.grey};
+                color: ${props.theme.greys['mid-grey']};
+            }
+        }
+    }`}
 `;
 
 const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {

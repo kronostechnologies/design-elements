@@ -1,8 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { MediaView } from '../media-view/media-view';
 import { breakpoints } from '../../tokens/breakpoints';
+import { MediaView } from '../media-view/media-view';
 
 import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
@@ -11,9 +11,9 @@ const tabletMin = `${(breakpoints.tablet / 16)}rem`;
 
 const Header = styled.header`
   align-items: center;
-  background: rgba(1, 38, 57, 1);
+  background: ${props => props.theme.main['primary-2']};
   box-sizing: border-box;
-  color: rgba(255, 255, 255);
+  color: ${props => props.theme.greys.white};
   display: flex;
   justify-content: space-between;
   min-height: 2.75rem;
@@ -66,7 +66,7 @@ const Project = styled.em`
   padding: 0 1.5rem;
 
   @media screen and (min-width: ${tabletMin}) {
-    border-left: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid ${props => props.theme.greys.white};
     font-size: 1rem;
     line-height: 2.5rem;
     margin: 0 0 0 1.5rem;

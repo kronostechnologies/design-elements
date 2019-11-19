@@ -11,7 +11,7 @@ export const normal = () => (
         descriptionLabel="You"
         resultLabel="50k - 100k$"
         percent={100}
-        color="rgb(101,226,255)"
+        color="#0080A5"
         secondary={false}
     />
 );
@@ -20,7 +20,7 @@ export const secondary = () => (
         descriptionLabel="Equisoft"
         resultLabel="150k - 250k$"
         percent={60}
-        color="rgb(38, 50, 56)"
+        color="#012639"
         secondary={true}
     />
 );

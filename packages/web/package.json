@@ -5,7 +5,10 @@
   "license": "MIT",
   "main": "dist/design-elements-web.cjs.js",
   "scripts": {
-    "lint": "stylelint './style/**/*.scss'"
+    "lint": "yarn stylelint",
+    "lint:ci": "mkdir -p build/lint/style && yarn stylelint:ci",
+    "stylelint": "stylelint \"./style/**/*.scss\" \"./style/*.scss\"",
+    "stylelint:ci": "stylelint --custom-formatter node_modules/stylelint-junit-formatter \"./style/**/*.scss\" \"./style/*.scss\" > build/lint/style/junit.xml"
   },
   "files": [
     "dist",
@@ -26,7 +29,9 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "devDependencies": {
+    "@equisoft/stylelint-scss-config": "^0.0.2",
     "stylelint": "^9.10.1",
-    "stylelint-config-recommended": "^2.1.0"
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-junit-formatter": "^0.2.2"
   }
 }

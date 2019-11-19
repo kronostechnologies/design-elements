@@ -1,8 +1,10 @@
 import React, { ReactElement, ReactNode } from 'react';
-import styled from 'styled-components';
 
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
+import styled from 'styled-components';
 import { Button } from './button';
+
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 const PlusIcon = styled(PlusSign)`
   height: 1rem;
@@ -15,7 +17,7 @@ interface ButtonProps {
      * Visual style
      * @default primary
      **/
-    buttonType: 'primary' | 'secondary' | 'tertiary';
+    buttonType: ButtonType;
     label?: string;
     children?: ReactNode;
     disabled?: boolean;

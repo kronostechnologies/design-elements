@@ -1,14 +1,14 @@
 import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
+
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
 const StyledTextArea = styled.textarea`
-  ${inputsStyle}
   min-height: 6.5rem;
   min-width: 100%;
+  ${props => inputsStyle(props.theme)}
   outline: none;
   overflow: auto;
   resize: vertical;

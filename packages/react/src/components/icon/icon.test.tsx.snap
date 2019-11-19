@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon Matches the snapshot 1`] = `
+<svg
+  color="currentColor"
+  height="24"
+  width="24"
+/>
+`;

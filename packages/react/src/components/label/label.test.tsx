@@ -1,13 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { Label } from './label';
 
 describe('Label', () => {
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <Label forId="test-id">
-                Children
-            </Label>,
+            ThemeWrapped(
+                <Label forId="test-id">
+                    Children
+                </Label>,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
