@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Matches the snapshot 1`] = `
+.c0 {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  max-height: 96px;
+  min-width: 200px;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c1 {
+  background-color: inherit;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: #d9dde2;
+}
+
+.c2 {
+  background-color: #d9dde2;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:hover,
+.c2:focus {
+  background-color: #d9dde2;
+}
+
+.c3 {
+  color: #637282;
+  height: 12px;
+  padding: 0 8px;
+  width: 12px;
+}
+
+<ul
+  aria-activedescendant="optionB-1"
+  aria-labelledby="optionB-1"
+  className="c0"
+  onKeyDown={[Function]}
+  onKeyPress={[Function]}
+  role="listbox"
+  tabIndex={0}
+>
+  <li
+    aria-label="Option A"
+    aria-selected={false}
+    className="c1"
+    id="optionA-0"
+    onClick={[Function]}
+    role="option"
+    selected={false}
+  >
+    Option A
+  </li>
+  <li
+    aria-label="Option B"
+    aria-selected={true}
+    className="c2"
+    id="optionB-1"
+    onClick={[Function]}
+    role="option"
+    selected={true}
+  >
+    <svg
+      className="c3"
+    />
+    Option B
+  </li>
+  <li
+    aria-label="Option C"
+    aria-selected={false}
+    className="c1"
+    id="optionC-2"
+    onClick={[Function]}
+    role="option"
+    selected={false}
+  >
+    Option C
+  </li>
+  <li
+    aria-label="Option D"
+    aria-selected={false}
+    className="c1"
+    id="optionD-3"
+    onClick={[Function]}
+    role="option"
+    selected={false}
+  >
+    Option D
+  </li>
+</ul>
+`;

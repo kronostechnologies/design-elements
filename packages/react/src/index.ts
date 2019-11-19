@@ -15,6 +15,9 @@ export { TextInput } from './components/text-input/text-input';
 // Context
 export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';
 
+// Lists
+export { List } from './components/list/list';
+
 // Miscellaneous
 export { Card } from './components/card/card';
 export { Chooser } from './components/choosers/chooser';
