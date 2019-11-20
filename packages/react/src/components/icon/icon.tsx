@@ -42,7 +42,7 @@ const iconMapping = {
     x: X,
 } as const;
 
-type IconName = keyof typeof iconMapping;
+export type IconName = keyof typeof iconMapping;
 
 interface IconProps {
     /** Name of the icon, has to be in IconName */
