@@ -8,9 +8,7 @@ describe('Side Drawer', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <SideDrawer open>
-                    <ul>
-                        <li>Test</li>
-                    </ul>
+                    <p>Test</p>
                 </SideDrawer>,
             ),
         ).toJSON();
@@ -21,9 +19,7 @@ describe('Side Drawer', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <SideDrawer open={false}>
-                    <ul>
-                        <li>Test</li>
-                    </ul>
+                    <p>Test</p>
                 </SideDrawer>,
             ),
         ).toJSON();
@@ -34,9 +30,20 @@ describe('Side Drawer', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <SideDrawer open={false} drawerOrigin="left">
-                    <ul>
-                        <li>Test</li>
-                    </ul>
+                    <p>Test</p>
+                </SideDrawer>,
+            ),
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has nested drawer', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <SideDrawer open drawerOrigin="left">
+                    <SideDrawer open nested>
+                        <p>Test</p>
+                    </SideDrawer>
                 </SideDrawer>,
             ),
         ).toJSON();

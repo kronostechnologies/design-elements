@@ -1,93 +1,64 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
 
-type origin = 'right' | 'left';
+type Origin = 'right' | 'left';
 
 interface ContainerProps {
     open: boolean;
-    origin: origin;
+    origin?: Origin;
 }
 
 const Container = styled.div<ContainerProps>`
   background-color: ${props => props.theme.greys.white};
-  font-size: 1.125rem;
-  height: 100vh;
-  left: 0%;
-  margin-top: 56px;
+  height: calc(100vh - 56px);
+  left: 0;
+  overflow-x: hidden;
   overflow-y: auto;
-  padding: 0 24px;
   position: fixed;
-  top: 0%;
+  top: 56px;
   transform: translate(${props => props.open ? '0%' : props.origin === 'left' ? '-100%' : '100%'});
   transition: all 300ms;
   width: 100%;
   z-index: 100;
 
   > .side-drawer {
-    margin-top: 0;
-  }
-
-  li {
-    margin-left: 24px;
-    padding: 12px 0;
-
-    svg {
-      margin-left: -24px;
-    }
-
-    .external {
-      color: ${props => props.theme.greys['dark-grey']};
-
-      &:hover {
-        color: ${props => props.theme.greys.black};
-        text-decoration: none;
-      }
-
-      &:visited {
-        color: ${props => props.theme.greys['dark-grey']};
-
-        &:hover {
-          color: ${props => props.theme.greys.black};
-        }
-      }
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 24px 0;
+    height: 100%;
+    top: 0;
   }
 `;
 
 interface SideDrawerProps {
-    children?: ReactNode;
-    open: boolean;
+    children: ReactNode;
     /**
      * Drawer origin position
      * @default right
      **/
-    drawerOrigin?: origin;
+    drawerOrigin?: Origin;
+    /** Use on nested drawers to prevent background scroll */
+    nested?: boolean;
+    open: boolean;
 }
 
-export function SideDrawer({ children, open, drawerOrigin }: SideDrawerProps): ReactElement {
+export function SideDrawer({ children, nested, open, drawerOrigin }: SideDrawerProps): ReactElement {
+    useEffect(() => {
+        if (open)document.body.style.overflow = `hidden`;
+
+        return () => {
+            if (!nested) document.body.style.overflow = `unset`;
+        };
+    }, [open]);
+
     return (
-        <>
-            <Container
-              className="side-drawer"
-              open={open}
-              origin={drawerOrigin ? drawerOrigin : 'right'}
-            >
-                {children}
-            </Container>
-        </>
+        <Container
+          className="side-drawer"
+          open={open}
+          origin={drawerOrigin}
+        >
+            {children}
+        </Container>
     );
 }
+
+SideDrawer.defaultProps = {
+    drawerOrigin: 'right',
+};
