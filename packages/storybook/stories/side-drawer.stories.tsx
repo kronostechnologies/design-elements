@@ -1,85 +1,88 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-import { Button, ExternalLink, RouteLink, SideDrawer } from '@equisoft/design-elements-react';
+import { Button, SideDrawer } from '@equisoft/design-elements-react';
 import { forceReRender } from '@storybook/react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+
+const Box = styled.div`
+    background-color: #094C6C;
+    border-radius: 8px;
+    height: 20vh;
+    margin-bottom: 16px;
+
+    &:nth-child(2n) {
+        background-color: #012639;
+    }
+`;
 
 export default {
     title: 'Side Drawer',
     component: SideDrawer,
-    decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
 };
 
-type drawerType = 'main' | 'second' | 'nested' | 'left';
+type DrawerType = 'normal' | 'withNestedDrawer' | 'nested' | 'scrollable' | 'left';
 
 const allDrawers = {
-    main: false,
-    second: false,
+    normal: false,
+    withNestedDrawer: false,
     nested: false,
+    scrollable: false,
     left: false,
 };
 
-const HandleClick = (drawer: drawerType) => {
+const toggleDrawer = (drawer: DrawerType) => {
     allDrawers[drawer] = !allDrawers[drawer];
     forceReRender();
 };
 
 export const normal = () => (
     <>
-        <SideDrawer open={allDrawers.main}>
-            <ul>
-                <li><RouteLink routerLink={NavLink} label="Profile" href="/profile" iconName="mail"/></li>
-                <li><ExternalLink label="Log out" href="/logout"/></li>
-            </ul>
-            <ul>
-                <li><RouteLink routerLink={NavLink} label="Section 1" href="/section1" iconName="home"/></li>
-                <li><RouteLink routerLink={NavLink} label="Section 2" href="/section2" iconName="mail"/></li>
-                <li><RouteLink routerLink={NavLink} label="Section 3" href="/section3" iconName="mapPin"/></li>
-            </ul>
-            <ul>
-                <li><RouteLink routerLink={NavLink} label="Settings" href="/settings"/></li>
-                <li><RouteLink routerLink={NavLink} label="Contact us" href="/contact" iconName="info"/></li>
-                <li><RouteLink routerLink={NavLink} label="Legal mentions" href="/legal" iconName="helpCircle"/></li>
-            </ul>
-            <Button label="Close drawer" buttonType="primary" onClick={() => HandleClick('main')}/>
+        <SideDrawer open={allDrawers.normal}>
+            <h3>Drawer Content</h3>
+            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('normal')}/>
         </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => HandleClick('main')}/>
+        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('normal')}/>
     </>
 );
 
 export const withNestedDrawer = () => (
     <>
-        <SideDrawer open={allDrawers.second}>
-            <ul>
-                <li><RouteLink routerLink={NavLink} label="Section 1" href="/section1" iconName="home"/></li>
-                <li><RouteLink routerLink={NavLink} label="Section 2" href="/section2" iconName="mail"/></li>
-                <li><RouteLink routerLink={NavLink} label="Section 3" href="/section3" iconName="mapPin"/></li>
-            </ul>
-            <SideDrawer open={allDrawers.nested}>
-                <p>Nested Drawer</p>
-                <Button label="Close drawer" buttonType="primary" onClick={() => HandleClick('nested')}/>
+        <SideDrawer open={allDrawers.withNestedDrawer}>
+            <h3>Drawer Content</h3>
+            <SideDrawer open={allDrawers.nested} nested>
+                <h3>Nested Drawer Content</h3>
+                <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('nested')}/>
             </SideDrawer>
-            <Button
-                label="Open nested side-drawer"
-                buttonType="primary"
-                onClick={() => HandleClick('nested')}
-            /><br/>
-            <Button label="Close drawer" buttonType="primary" onClick={() => HandleClick('second')}/>
+            <Button label="Open nested drawer" buttonType="primary" onClick={() => toggleDrawer('nested')} /><br/>
+            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('withNestedDrawer')}/>
         </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => HandleClick('second')}/>
+        <Button
+            label="Click to open side-drawer"
+            buttonType="primary"
+            onClick={() => toggleDrawer('withNestedDrawer')}
+        />
+    </>
+);
+
+export const scrollable = () => (
+    <>
+        <SideDrawer open={allDrawers.scrollable}>
+            <h3>Drawer with scrollable content</h3>
+            <div>
+                {[...Array(6).keys()].map(el => <Box key={el}/>)}
+            </div>
+            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('scrollable')}/>
+        </SideDrawer>
+        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('scrollable')}/>
     </>
 );
 
 export const leftOrigin = () => (
     <>
         <SideDrawer open={allDrawers.left} drawerOrigin="left">
-            <ul>
-                <li><RouteLink routerLink={NavLink} label="Section 1" href="/section1" iconName="home"/></li>
-                <li><RouteLink routerLink={NavLink} label="Section 2" href="/section2" iconName="mail"/></li>
-                <li><RouteLink routerLink={NavLink} label="Section 3" href="/section3" iconName="mapPin"/></li>
-            </ul>
-            <Button label="Close drawer" buttonType="primary" onClick={() => HandleClick('left')}/>
+            <h3>Drawer Content</h3>
+            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('left')}/>
         </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => HandleClick('left')}/>
+        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('left')}/>
     </>
 );
