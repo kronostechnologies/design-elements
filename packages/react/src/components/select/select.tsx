@@ -12,7 +12,7 @@ const StyledSelect = styled.select`
   background-position: right 0.75rem center;
   background-repeat: no-repeat;
   background-size: 0.75rem;
-  ${props => inputsStyle(props.theme)}
+  ${props => inputsStyle(props.theme)};
   position: relative;
 `;
 
@@ -23,23 +23,23 @@ interface SelectProps {
     /** Optional parameter to allow user to skip question */
     skipOption?: { label: string; value?: string };
     /**
-    * Message displayed in case of validation error
-    * @default You must select an option
-    **/
+     * Message displayed in case of validation error
+     * @default You must select an option
+     **/
     validationErrorMessage?: string;
     name?: string;
     /** Only use to control input value externally */
     value?: string;
 
-    onChange(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
+    onChange?(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
 }
 
-export function Select({ onChange, options, ...props }: SelectProps): ReactElement {
+export function Select({ onChange, options, skipOption, value, ...props }: SelectProps): ReactElement {
     const [{ valid }, setValid] = useState({ valid: true });
     const id = uuid();
 
     const selectRef = useRef<HTMLSelectElement | null>(null);
-    const [skipSelected, setSkipSelected] = useState(false);
+    const [skipSelected, setSkipSelected] = useState(skipOption ? value === skipOption.value : false);
 
     const selectOptions = options.map((option, i) => {
         const key = `${option.value}-${i}`;
@@ -71,7 +71,7 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
         }
     }
 
-    const { label, name, required, skipOption, validationErrorMessage, value } = props;
+    const { label, name, required, validationErrorMessage } = props;
 
     return (
         <>
@@ -97,6 +97,7 @@ export function Select({ onChange, options, ...props }: SelectProps): ReactEleme
                     groupName={`${id}_skip`}
                     onChange={handleSkipChange}
                     checked={skipSelected}
+                    data-testid="select-skip-option"
                     type="radio"
                     value={skipOption.value}
                 >
