@@ -1,8 +1,10 @@
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { Select } from './select';
+
 jest.mock('uuid/v4');
 
 const provinces = [
@@ -38,7 +40,7 @@ describe('Select', () => {
     test('onChange callback is called when selected value is changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            ThemeWrapped(<Select onChange={callback} {...initialProps}/>),
+            ThemeWrapped(<Select onChange={callback} {...initialProps} />),
         );
 
         wrapper.find('select').simulate('change', { target: { value: 'on', checkValidity: () => true } });
@@ -50,7 +52,6 @@ describe('Select', () => {
             ThemeWrapped(
                 <Select
                     label="Choose your province or territory"
-                    onChange={() => {}}
                     options={provinces}
                     skipOption={skipOption}
                     validationErrorMessage="Error Message"
@@ -66,7 +67,6 @@ describe('Select', () => {
             ThemeWrapped(
                 <Select
                     label="Choose your province or territory"
-                    onChange={() => {}}
                     options={provinces}
                     required
                     skipOption={skipOption}
@@ -76,5 +76,26 @@ describe('Select', () => {
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('should select skip option when value is skip value', () => {
+        const wrapper = shallow(<Select options={[]} skipOption={skipOption} value={skipOption.value} />);
+
+        const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
+        expect(skipOptionWrapper.props().checked).toBe(true);
+    });
+
+    test('should not select skip option when value is different than skip value', () => {
+        const wrapper = shallow(<Select options={[]} skipOption={skipOption} value="not skip value" />);
+
+        const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
+        expect(skipOptionWrapper.props().checked).toBe(false);
+    });
+
+    test('should not display skip option when no skipOption is provided', () => {
+        const wrapper = shallow(<Select options={[]} />);
+
+        const skipOptionWrapper = findByTestId(wrapper, 'select-skip-option');
+        expect(skipOptionWrapper.length).toBe(0);
     });
 });
