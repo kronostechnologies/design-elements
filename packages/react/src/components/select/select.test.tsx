@@ -2,7 +2,7 @@ import { mount, shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Select } from './select';
 
 jest.mock('uuid/v4');

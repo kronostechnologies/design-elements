@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React, { ChangeEvent } from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { TextInput } from './text-input';
 jest.mock('uuid/v4');
 

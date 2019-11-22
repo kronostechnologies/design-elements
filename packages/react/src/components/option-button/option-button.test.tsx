@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { OptionButton } from './option-button';
 jest.mock('uuid/v4');
 
