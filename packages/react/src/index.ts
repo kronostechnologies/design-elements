@@ -26,6 +26,7 @@ export { ExternalLink } from './components/external-link/external-link';
 export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
 export { MobileMenu } from './components/mobile-menu/mobile-menu';
+export { MobileMenuItem } from './components/mobile-menu-item/mobile-menu-item';
 export { RouteLink } from './components/route-link/route-link';
 export { Progress } from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
