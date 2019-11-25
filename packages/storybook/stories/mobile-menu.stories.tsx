@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 import { Button, ExternalLink, MobileMenu, MobileMenuItem, RouteLink, SideDrawer } from '@equisoft/design-elements-react';
 import { forceReRender } from '@storybook/react';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 export default {
     title: 'Mobile Menu',
@@ -20,7 +20,7 @@ const HandleClick = () => {
 export const normal = () => (
     <MobileMenu>
         <MobileMenuItem>
-            <ExternalLink href="/story1" label="Section 1" iconName="home"/>
+            <RouteLink routerLink={NavLink} href="/story1" label="Section 1" iconName="home"/>
         </MobileMenuItem>
         <MobileMenuItem>
             <RouteLink routerLink={NavLink} href="/story2" label="Section 2" iconName="mail"/>
@@ -29,7 +29,7 @@ export const normal = () => (
             <RouteLink routerLink={NavLink} href="/story3" label="Section 3" iconName="alertTriangle"/>
         </MobileMenuItem>
         <MobileMenuItem>
-            <RouteLink routerLink={NavLink} href="/story4" label="Section 4" iconName="mapPin"/>
+            <ExternalLink href="/story4" label="Section 4" iconName="mapPin"/>
         </MobileMenuItem>
     </MobileMenu>
 );

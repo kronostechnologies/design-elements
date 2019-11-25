@@ -1,170 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Mobile Menu Matches snapshot 1`] = `
+exports[`Mobile Menu adds styles to External Link 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1 svg {
+  margin-right: 8px;
+}
+
+.c1.iconOnly svg {
+  margin: 0;
+}
+
+.c1.external {
+  color: #0080a5;
+}
+
+.c1.external:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1.external:visited {
+  color: #094c6c;
+}
+
+.c1.external:visited svg {
+  color: #094c6c;
+}
+
+.c1.navigation {
+  color: #57666e;
+}
+
+.c1.navigation:hover {
+  color: #000;
+}
+
+.c1.navigation.active {
+  color: #0080a5;
+}
+
 .c0 > * {
+  margin: 12px 0;
+}
+
+.c0 > a {
   margin: 0;
   padding: 12px 0;
 }
 
-.c0 .external {
+.c0 .external,
+.c0 .external:visited {
   color: #57666E;
 }
 
-.c0 .external:hover {
+.c0 .external svg,
+.c0 .external:visited svg {
+  color: #57666E;
+}
+
+.c0 .external:hover,
+.c0 .external:visited:hover {
   color: #000000;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c0 .external:visited {
-  color: #57666E;
-}
-
-.c0 .external:visited:hover {
+.c0 .external:hover svg,
+.c0 .external:visited:hover svg {
   color: #000000;
 }
 
 <li
   className="c0"
 >
-  Test
+  <a
+    aria-disabled="false"
+    className="c1 external"
+    href="javascript:void(0)"
+  >
+    Test Link
+  </a>
 </li>
 `;
 
-exports[`Theme Wrapper Returns component with default theme 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.25rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 700;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: normal;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
+exports[`Mobile Menu matches snapshot 1`] = `
+.c0 > * {
+  margin: 12px 0;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
+.c0 > a {
+  margin: 0;
+  padding: 12px 0;
 }
 
-.c0 > svg {
-  color: inherit;
+.c0 .external,
+.c0 .external:visited {
+  color: #57666E;
 }
 
-.c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+.c0 .external svg,
+.c0 .external:visited svg {
+  color: #57666E;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: #FF847C;
-  border-color: #FF847C;
+.c0 .external:hover,
+.c0 .external:visited:hover {
+  color: #000000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-<button
+.c0 .external:hover svg,
+.c0 .external:visited:hover svg {
+  color: #000000;
+}
+
+<li
   className="c0"
-  onClick={[Function]}
 >
-  
-</button>
-`;
-
-exports[`Theme Wrapper Returns component with test theme 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.25rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 700;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: normal;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #B3974B;
-  border-color: #B3974B;
-  color: #FFFFFF;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #FFD86B;
-  border-color: #FFD86B;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: #736130;
-  border-color: #736130;
-}
-
-<button
-  className="c0"
-  onClick={[Function]}
->
-  
-</button>
+  <p>
+    Test
+  </p>
+</li>
 `;

@@ -12,27 +12,20 @@ const StyledLi = styled.li`
     padding: 12px 0;
   }
 
-  .external {
+  .external,
+  .external:visited {
     color: ${props => props.theme.greys['dark-grey']};
+
+    svg {
+      color: ${props => props.theme.greys['dark-grey']};
+    }
 
     &:hover {
       color: ${props => props.theme.greys.black};
       text-decoration: none;
-    }
-
-    &:visited {
-      color: ${props => props.theme.greys['dark-grey']};
 
       svg {
-        color: ${props => props.theme.greys['dark-grey']};
-      }
-
-      &:hover {
         color: ${props => props.theme.greys.black};
-
-        svg {
-          color: ${props => props.theme.greys.black};
-        }
       }
     }
   }

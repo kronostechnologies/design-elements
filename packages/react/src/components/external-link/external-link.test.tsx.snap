@@ -1,43 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 exports[`External Link disabled matches snapshot 1`] = `
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-exports[`External Link disabled matches snapshot 1`] = `
-=======
-exports[`External Link Disabled link matches snapshot 1`] = `
->>>>>>> Adds tests to external-link
-=======
-exports[`External Link link matches snapshot 1`] = `
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
-=======
-exports[`External Link disabled matches snapshot 1`] = `
->>>>>>> Rebase master
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
   cursor: default;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  cursor: default;
-=======
->>>>>>> Adds tests to external-link
-=======
-  cursor: default;
->>>>>>> Adds onClick callback to external-link
->>>>>>> Adds onClick callback to external-link
-=======
-  cursor: default;
->>>>>>> Rebase master
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -75,42 +44,11 @@ exports[`External Link disabled matches snapshot 1`] = `
   className="c0 external"
   disabled={true}
 >
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Link fixes
-=======
->>>>>>> Rebase master
   External Link
 </a>
 `;
 
 exports[`External Link matches snapshot 1`] = `
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-  Navigation Link
-=======
-  External Link
->>>>>>> Link fixes
-</a>
-`;
-
-<<<<<<< HEAD
-exports[`External Link Link matches snapshot 1`] = `
->>>>>>> Adds tests to external-link
-<<<<<<< HEAD
->>>>>>> Link fixes
-=======
-=======
-exports[`External Link matches snapshot 1`] = `
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
-=======
->>>>>>> Rebase master
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -178,17 +116,6 @@ exports[`External Link with icon matches snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Adds tests to external-link
-=======
->>>>>>> Adds onClick callback to external-link
->>>>>>> Adds onClick callback to external-link
-=======
->>>>>>> Rebase master
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -239,14 +166,6 @@ exports[`External Link with icon matches snapshot 1`] = `
   className="c0 external"
   href="#"
 >
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Link fixes
-=======
->>>>>>> Rebase master
   <svg
     color="currentColor"
     height="16"
@@ -257,49 +176,12 @@ exports[`External Link with icon matches snapshot 1`] = `
 `;
 
 exports[`External Link without href matches snapshot 1`] = `
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-  Navigation Link
-=======
-  External Link
->>>>>>> Link fixes
-</a>
-`;
-
-exports[`External Link Link with icon matches snapshot 1`] = `
->>>>>>> Adds tests to external-link
-<<<<<<< HEAD
->>>>>>> Link fixes
-=======
-=======
-exports[`External Link with icon matches snapshot 1`] = `
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
-=======
->>>>>>> Rebase master
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
   cursor: pointer;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  cursor: pointer;
-=======
->>>>>>> Adds tests to external-link
-=======
-  cursor: pointer;
->>>>>>> Adds onClick callback to external-link
->>>>>>> Adds onClick callback to external-link
-=======
-  cursor: pointer;
->>>>>>> Rebase master
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -355,22 +237,6 @@ exports[`External Link with icon matches snapshot 1`] = `
     height="16"
     width="16"
   />
-<<<<<<< HEAD
-<<<<<<< HEAD
   External Link
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  External Link
-=======
-  Navigation Link
->>>>>>> Adds tests to external-link
-=======
-  External Link
->>>>>>> Link fixes
->>>>>>> Link fixes
-=======
-  External Link
->>>>>>> Rebase master
 </a>
 `;
