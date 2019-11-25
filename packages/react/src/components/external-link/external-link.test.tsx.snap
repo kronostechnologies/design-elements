@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports[`External Link disabled matches snapshot 1`] = `
 =======
 <<<<<<< HEAD
@@ -13,11 +14,15 @@ exports[`External Link Disabled link matches snapshot 1`] = `
 exports[`External Link link matches snapshot 1`] = `
 >>>>>>> Changes link for route-link
 >>>>>>> Changes link for route-link
+=======
+exports[`External Link disabled matches snapshot 1`] = `
+>>>>>>> Rebase master
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
   cursor: default;
 =======
@@ -30,6 +35,9 @@ exports[`External Link link matches snapshot 1`] = `
   cursor: default;
 >>>>>>> Adds onClick callback to external-link
 >>>>>>> Adds onClick callback to external-link
+=======
+  cursor: default;
+>>>>>>> Rebase master
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -68,15 +76,19 @@ exports[`External Link link matches snapshot 1`] = `
   disabled={true}
 >
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> Link fixes
+=======
+>>>>>>> Rebase master
   External Link
 </a>
 `;
 
 exports[`External Link matches snapshot 1`] = `
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -97,6 +109,8 @@ exports[`External Link Link matches snapshot 1`] = `
 exports[`External Link matches snapshot 1`] = `
 >>>>>>> Changes link for route-link
 >>>>>>> Changes link for route-link
+=======
+>>>>>>> Rebase master
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -165,6 +179,7 @@ exports[`External Link with icon matches snapshot 1`] = `
   align-items: center;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -172,6 +187,8 @@ exports[`External Link with icon matches snapshot 1`] = `
 =======
 >>>>>>> Adds onClick callback to external-link
 >>>>>>> Adds onClick callback to external-link
+=======
+>>>>>>> Rebase master
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -223,10 +240,13 @@ exports[`External Link with icon matches snapshot 1`] = `
   href="#"
 >
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> Link fixes
+=======
+>>>>>>> Rebase master
   <svg
     color="currentColor"
     height="16"
@@ -236,8 +256,8 @@ exports[`External Link with icon matches snapshot 1`] = `
 </a>
 `;
 
-<<<<<<< HEAD
 exports[`External Link without href matches snapshot 1`] = `
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -257,11 +277,14 @@ exports[`External Link Link with icon matches snapshot 1`] = `
 exports[`External Link with icon matches snapshot 1`] = `
 >>>>>>> Changes link for route-link
 >>>>>>> Changes link for route-link
+=======
+>>>>>>> Rebase master
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
   cursor: pointer;
 =======
@@ -274,6 +297,9 @@ exports[`External Link with icon matches snapshot 1`] = `
   cursor: pointer;
 >>>>>>> Adds onClick callback to external-link
 >>>>>>> Adds onClick callback to external-link
+=======
+  cursor: pointer;
+>>>>>>> Rebase master
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -330,6 +356,7 @@ exports[`External Link with icon matches snapshot 1`] = `
     width="16"
   />
 <<<<<<< HEAD
+<<<<<<< HEAD
   External Link
 =======
 <<<<<<< HEAD
@@ -342,5 +369,8 @@ exports[`External Link with icon matches snapshot 1`] = `
   External Link
 >>>>>>> Link fixes
 >>>>>>> Link fixes
+=======
+  External Link
+>>>>>>> Rebase master
 </a>
 `;

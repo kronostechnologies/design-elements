@@ -957,24 +957,10 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-<<<<<<< HEAD
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
   integrity sha512-r24eVUUr0QqNZa+qrImUk8fn5SPhHq+IfYvIoIMg0do3GdK9sMdiLKP3GYVVaxpPKORgm8KRKaNTEhAjgIpLMw==
-=======
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3":
-  version "7.6.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
-  integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.4.0":
-  version "7.7.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
-  integrity sha512-JONRbXbTXc9WQE2mAZd1p0Z3DZ/6vaQIkgYMSTP3KjRCyd7rCZCcfhCyX+YjwcKxcZ82UrxbRD358bpExNgrjw==
->>>>>>> Changes link for route-link
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -1206,35 +1192,10 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
-<<<<<<< HEAD
 "@storybook/addon-docs@^5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.2.6.tgz#73184f37b2716928b81a8ff4f43ac3bf51332ab0"
   integrity sha512-HLOlT3+FdxYWPFuMtym6tTqEpItobdOmjNNLZPVzGdbmj7lFEGDpW6JiZuYoEQaXW2rm0v7EpdoE3Szr133GOQ==
-=======
-"@storybook/addon-docs@^5.3.0-alpha.0":
-<<<<<<< HEAD
-<<<<<<< HEAD
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.33.tgz#7202d2306de4f03bb215c9f26e6350b80fd3b412"
-  integrity sha512-+4Lo3GQm7yAgOlhxyvV8msnlYQM5MpfZxvPCgzfYBl5Cq3dl/sAeyuvqmcoVNPIRvU475grPgGmjz/dp4frgtA==
-=======
-<<<<<<< HEAD
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.34.tgz#d037cb8f128443b57921ded64d2e483629160212"
-  integrity sha512-IWx1XcP8HIlWvWbOz35iNFjvDL5af7kpdAibsLvks5/yr8pLoUQaiT2fTPpndLJNBz6cvO4YN4wSWnkvm6lrPA==
-=======
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.33.tgz#7202d2306de4f03bb215c9f26e6350b80fd3b412"
-  integrity sha512-+4Lo3GQm7yAgOlhxyvV8msnlYQM5MpfZxvPCgzfYBl5Cq3dl/sAeyuvqmcoVNPIRvU475grPgGmjz/dp4frgtA==
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.0-alpha.33.tgz#7202d2306de4f03bb215c9f26e6350b80fd3b412"
-  integrity sha512-+4Lo3GQm7yAgOlhxyvV8msnlYQM5MpfZxvPCgzfYBl5Cq3dl/sAeyuvqmcoVNPIRvU475grPgGmjz/dp4frgtA==
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
   dependencies:
     "@babel/generator" "^7.4.0"
     "@babel/parser" "^7.4.2"
@@ -1242,49 +1203,18 @@
     "@mdx-js/loader" "^1.1.0"
     "@mdx-js/mdx" "^1.1.0"
     "@mdx-js/react" "^1.0.27"
-<<<<<<< HEAD
     "@storybook/addons" "5.2.6"
     "@storybook/api" "5.2.6"
     "@storybook/components" "5.2.6"
     "@storybook/router" "5.2.6"
     "@storybook/source-loader" "5.2.6"
     "@storybook/theming" "5.2.6"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    "@storybook/addons" "5.3.0-alpha.34"
-    "@storybook/api" "5.3.0-alpha.34"
-    "@storybook/components" "5.3.0-alpha.34"
-    "@storybook/router" "5.3.0-alpha.34"
-    "@storybook/source-loader" "5.3.0-alpha.34"
-    "@storybook/theming" "5.3.0-alpha.34"
-=======
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-    "@storybook/addons" "5.3.0-alpha.33"
-    "@storybook/api" "5.3.0-alpha.33"
-    "@storybook/components" "5.3.0-alpha.33"
-    "@storybook/router" "5.3.0-alpha.33"
-    "@storybook/source-loader" "5.3.0-alpha.33"
-    "@storybook/theming" "5.3.0-alpha.33"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
     core-js "^3.0.1"
     global "^4.3.2"
     js-string-escape "^1.0.1"
     lodash "^4.17.15"
     prop-types "^15.7.2"
 
-<<<<<<< HEAD
 "@storybook/addons@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.2.6.tgz#c1278137acb3502e068b0b0d07a8371c607e9c02"
@@ -1294,46 +1224,6 @@
     "@storybook/channels" "5.2.6"
     "@storybook/client-logger" "5.2.6"
     "@storybook/core-events" "5.2.6"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@storybook/addons@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.33.tgz#4feafb23a08b8336f36a7448691a7f9e2a20dd02"
-  integrity sha512-mKtO6Qs6oEqhBzuvrR3uiW2rYAjARdW3SJcpJzTEuUkouWwpm65xXpYwnj9gsVXO91TqYJ9ArF6HBkKl3I/nKA==
-  dependencies:
-=======
-<<<<<<< HEAD
-"@storybook/addons@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.34.tgz#3b3ed9932d0012fc3bf33ce67d1d460f5c7933c7"
-  integrity sha512-gcexkLO54aEpXarPpGwxJttyPjG4DOPFtD47NsNjBSQBeg8TH8qxyTzdiEk0kPmUy2skxswrAxoK1unlVneA/A==
-  dependencies:
-    "@storybook/api" "5.3.0-alpha.34"
-    "@storybook/channels" "5.3.0-alpha.34"
-    "@storybook/client-logger" "5.3.0-alpha.34"
-    "@storybook/core-events" "5.3.0-alpha.34"
-=======
-=======
->>>>>>> Changes link for route-link
-"@storybook/addons@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.33.tgz#4feafb23a08b8336f36a7448691a7f9e2a20dd02"
-  integrity sha512-mKtO6Qs6oEqhBzuvrR3uiW2rYAjARdW3SJcpJzTEuUkouWwpm65xXpYwnj9gsVXO91TqYJ9ArF6HBkKl3I/nKA==
-  dependencies:
->>>>>>> Adds component and story
-    "@storybook/api" "5.3.0-alpha.33"
-    "@storybook/channels" "5.3.0-alpha.33"
-    "@storybook/client-logger" "5.3.0-alpha.33"
-    "@storybook/core-events" "5.3.0-alpha.33"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
     core-js "^3.0.1"
     global "^4.3.2"
     util-deprecate "^1.0.2"
@@ -1361,70 +1251,10 @@
     telejson "^3.0.2"
     util-deprecate "^1.0.2"
 
-<<<<<<< HEAD
 "@storybook/channel-postmessage@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-5.2.6.tgz#60aaef0e80300c9812a571ca3ce0f28e2c404f04"
   integrity sha512-y+63wWiEc/Q4s4MZ3KJ//5A8j5VLufxuLvPxwv9FuS4z8lmN0fqeGJn857qIlFGbZhzsQaoRdmfsCQpBBgUneg==
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@storybook/api@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.33.tgz#bfe29b2b13c5677c9089bac782fa82bea8e4a3ba"
-  integrity sha512-2nS07kOr/PHovmzsSc3U8hFNMFboEGi+XDQpl75yP/AHSHsHB8VR5DYu9M8Diznz3Tpfn8Ikn/lmCVc/AxZ6fA==
-  dependencies:
-=======
-<<<<<<< HEAD
-"@storybook/api@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.34.tgz#09d290936587715a8d78e48a4e79f6154eaf1c39"
-  integrity sha512-OR0aXOcXdjEfIB1w8r8QxNrEk14E/gYDBDyca5ypPDcgCFMb0Xwl+MiYQY4u2DjCKpMqK2TiDSBMsuFlRLYXAw==
-  dependencies:
-    "@storybook/channels" "5.3.0-alpha.34"
-    "@storybook/client-logger" "5.3.0-alpha.34"
-    "@storybook/core-events" "5.3.0-alpha.34"
-    "@storybook/router" "5.3.0-alpha.34"
-    "@storybook/theming" "5.3.0-alpha.34"
-=======
-=======
->>>>>>> Changes link for route-link
-"@storybook/api@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.33.tgz#bfe29b2b13c5677c9089bac782fa82bea8e4a3ba"
-  integrity sha512-2nS07kOr/PHovmzsSc3U8hFNMFboEGi+XDQpl75yP/AHSHsHB8VR5DYu9M8Diznz3Tpfn8Ikn/lmCVc/AxZ6fA==
-  dependencies:
->>>>>>> Adds component and story
-    "@storybook/channels" "5.3.0-alpha.33"
-    "@storybook/client-logger" "5.3.0-alpha.33"
-    "@storybook/core-events" "5.3.0-alpha.33"
-    "@storybook/router" "5.3.0-alpha.33"
-    "@storybook/theming" "5.3.0-alpha.33"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-    core-js "^3.0.1"
-    fast-deep-equal "^2.0.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    prop-types "^15.6.2"
-    react "^16.8.3"
-    semver "^6.0.0"
-    shallow-equal "^1.1.0"
-    store2 "^2.7.1"
-    telejson "^3.0.3"
-    util-deprecate "^1.0.2"
-
-"@storybook/channel-postmessage@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-5.2.5.tgz#47397e543a87ea525cbe93f7d85bd8533edc9127"
-  integrity sha512-GoiC6dUM3YfNKpvj3syxQIQJLHBnH61CfLJzz4xygmn+3keHtjtz6yPHaU4+00MSSP2uDzqePkjgXx4DcLedHA==
->>>>>>> Changes link for route-link
   dependencies:
     "@storybook/channels" "5.2.6"
     "@storybook/client-logger" "5.2.6"
@@ -1432,43 +1262,10 @@
     global "^4.3.2"
     telejson "^3.0.2"
 
-<<<<<<< HEAD
 "@storybook/channels@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.2.6.tgz#e2837508864dc4d5b5e03f078886f0ce113762ea"
   integrity sha512-/UsktYsXuvb1efjVPCEivhh5ywRhm7hl73pQnpJLJHRqyLMM2I5nGPFELTTNuU9yWy7sP9QL5gRqBBPe1sqjZQ==
-=======
-"@storybook/channels@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.2.5.tgz#d6ca2b490281dacb272096563fe760ccb353c4bb"
-  integrity sha512-I+zB3ym5ozBcNBqyzZbvB6gRIG/ZKKkqy5k6LwKd5NMx7NU7zU74+LQUBBOcSIrigj8kCArZz7rlgb0tlSKXxQ==
-  dependencies:
-    core-js "^3.0.1"
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-"@storybook/channels@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.34.tgz#4d0e9e84d3df8cf2240489f667b71dd40b02180a"
-  integrity sha512-GsMpAJq92pPl3BGr+FUd4mFUHcNpQEVSaJdsKsLIl9h/mVvTyVc1WMu/H+tHBligRwN9soM53Jmf0/d6Ysko3Q==
-=======
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-"@storybook/channels@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.33.tgz#3047694406634a8f8b9a5255fa3e5f8aea2d0b73"
-  integrity sha512-i4Mmjoiy9jS3FWar5T4ArUsFLYQSZ0R4a+VtlFfaplVJXColeQPSS8Iusj8VlxvUn15vycguDoDAk5wTT8iFog==
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
   dependencies:
     core-js "^3.0.1"
 
@@ -1493,43 +1290,10 @@
     qs "^6.6.0"
     util-deprecate "^1.0.2"
 
-<<<<<<< HEAD
 "@storybook/client-logger@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.6.tgz#cfc4536e9b724b086f7509c2bb34c221016713c9"
   integrity sha512-hJvPD267cCwLIRMOISjDH8h9wbwOcXIJip29UlJbU9iMtZtgE+YelmlpmZJvqcDfUiXWWrOh7tP76mj8EAfwIQ==
-=======
-"@storybook/client-logger@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.5.tgz#6f386ac6f81b4a783c57d54bb328281abbea1bab"
-  integrity sha512-6DyYUrMgAvF+th0foH7UNz+2JJpRdvNbpvYKtvi/+hlvRIaI6AqANgLkPUgMibaif5TLzjCr0bLdAYcjeJz03w==
-  dependencies:
-    core-js "^3.0.1"
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-"@storybook/client-logger@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.34.tgz#780e9658e79917927281d19f325d84a97a28c4b4"
-  integrity sha512-oYYy8nRESswKhjH1WqcLYU71lkXtyZP1HNEIZfnERHNh2R8C0AA8HYlWWQfj0twxZFeJBDBwAOL90Ib7HKE0NA==
-=======
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-"@storybook/client-logger@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.33.tgz#d76c4f7d102fc7a87318a4166df13cc61f024c9a"
-  integrity sha512-YqAQgenrmkP+NdHT2iX0OHBiwEU4OGOahq4+JBLVjGJAqY1UK4jsyZsmkpwEbC7aEZLTbCftJPOQ4t3Ho0QKrg==
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
   dependencies:
     core-js "^3.0.1"
 
@@ -1558,95 +1322,17 @@
     react-textarea-autosize "^7.1.0"
     simplebar-react "^1.0.0-alpha.6"
 
-<<<<<<< HEAD
 "@storybook/core-events@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.2.6.tgz#34c9aae256e7e5f4a565b81f1e77dda8bccc6752"
   integrity sha512-W8kLJ7tc0aAxs11CPUxUOCReocKL4MYGyjTg8qwk0USLzPUb/FUQWmhcm2ilFz6Nz8dXLcKrXdRVYTmiMsgAeg==
   dependencies:
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@storybook/components@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.33.tgz#a764a0b09de076f556387bc90bd420cf763d2520"
-  integrity sha512-CbllY9HNVsKTJVpR/BNvPOA/x3fiO0clXfb+PKzJsaqikBRLJgrye97Q1mM5uCpcXtWDkQWLFp7hu3bNl5mlEQ==
-  dependencies:
-    "@storybook/client-logger" "5.3.0-alpha.33"
-    "@storybook/theming" "5.3.0-alpha.33"
-=======
-<<<<<<< HEAD
-"@storybook/components@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.34.tgz#a864251092cdef4ca13ce918c446cfb9cd9fab51"
-  integrity sha512-RmOcf0yU03Gq5RMcgNI8XqsyqsladQG10FWRrfnhWMDgxyMB+4KuJJH+m2wED+K5eQyEPOufAs/867oNRsZAOQ==
-  dependencies:
-    "@storybook/client-logger" "5.3.0-alpha.34"
-    "@storybook/theming" "5.3.0-alpha.34"
-=======
-=======
->>>>>>> Changes link for route-link
-"@storybook/components@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.0-alpha.33.tgz#a764a0b09de076f556387bc90bd420cf763d2520"
-  integrity sha512-CbllY9HNVsKTJVpR/BNvPOA/x3fiO0clXfb+PKzJsaqikBRLJgrye97Q1mM5uCpcXtWDkQWLFp7hu3bNl5mlEQ==
-  dependencies:
-    "@storybook/client-logger" "5.3.0-alpha.33"
-    "@storybook/theming" "5.3.0-alpha.33"
-<<<<<<< HEAD
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-    "@types/react-syntax-highlighter" "11.0.1"
-    "@types/react-textarea-autosize" "^4.3.3"
->>>>>>> Changes link for route-link
     core-js "^3.0.1"
 
-<<<<<<< HEAD
 "@storybook/core@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/core/-/core-5.2.6.tgz#60c092607158d7d28db59f7e67da4f7e12703fb2"
   integrity sha512-q7Ful7TCm9nmjgLsJFqIwVv395NlaOXgGajyaQCQlCKB2V+jgs7GDmdCNNdWAOue4eAsFU6wQSP9lWtq0yzK4w==
-=======
-"@storybook/core-events@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.2.5.tgz#62881164a4a01aa99ff0691e70eaed2dd58e229e"
-  integrity sha512-O5GM8XEBbYNbM6Z7a4H1bbnbO2cxQrXMhEwansC7a7YinQdkTPiuGxke3NiyK+7pLDh778kpQyjoCjXq6UfAoQ==
-  dependencies:
-    core-js "^3.0.1"
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-"@storybook/core-events@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.34.tgz#57d322153cbf872ae539f50846346cc619f5aee3"
-  integrity sha512-TnaAcQ9S+wzqK+sai8PkBqFPnqxPRp/+But7q0ud6eGNdwG3PvUE9G/FnihyjgWCJBGQZ4HitU9ccbcprKfftQ==
-=======
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-"@storybook/core-events@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.33.tgz#60369d3c145de32cccb8333bd95e478955a29566"
-  integrity sha512-jsEIm23jg0L8wUdinmI4xQ6QpSeK6NSyYCSw7jqinuhN/V5OeVYX2XzeoXUpoBVEextXe5kbDvXFJ7UOfHqbow==
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-  dependencies:
-    core-js "^3.0.1"
-
-"@storybook/core@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-5.2.5.tgz#cc04313480a1847aa6881420c675517cc400dc2e"
-  integrity sha512-R6A6VzSh++pB1a+9DsywW5Mlp0/eauQz1A8m2DrllWcTHTjbn0ZovlG5HBrKjpknFXpCWxkUKE4eTAE2tWsryA==
->>>>>>> Changes link for route-link
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.3.3"
     "@babel/plugin-proposal-object-rest-spread" "^7.3.2"
@@ -1769,7 +1455,6 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
-<<<<<<< HEAD
 "@storybook/source-loader@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.2.6.tgz#06e6b5e93ea4c635c7d05c517ad8711de9030ba3"
@@ -1777,73 +1462,6 @@
   dependencies:
     "@storybook/addons" "5.2.6"
     "@storybook/router" "5.2.6"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-"@storybook/router@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.34.tgz#28b6eb8ffeec144372a8a41018b1a0cc001a3ae4"
-  integrity sha512-fNhNPosslo7MfxAmb0cYEuoYByGwyE+dkpY11DZ/nSmcr2jo0Zpw6IFkX64q+ZK6iRgb6mShZwCqrIT41jfZKQ==
-=======
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-"@storybook/router@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.33.tgz#0b4790e6a4c3745978d99fda073522650d463b5d"
-  integrity sha512-jh2bE+0bL7FWimn5RkuZ3MyRwrVIPwfT+GP8tNi2iTRkaupJ+QJQss7kEr6tpEvSiuSra9GjBhcTHF1YQx54AQ==
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-  dependencies:
-    "@reach/router" "^1.2.1"
-    "@types/reach__router" "^1.2.3"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    qs "^6.6.0"
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@storybook/source-loader@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.33.tgz#53e6b5d79352c0d86c64b446d48982bfe7dd59ad"
-  integrity sha512-Hmd4XG+2RSwg8mzyVcmB3g3P68whzQGwPD8louf79RuAYY61LmYYdMOqGde15bvJDhc5A8S+BowWNCzxQ2c/yw==
-  dependencies:
-    "@storybook/addons" "5.3.0-alpha.33"
-    "@storybook/router" "5.3.0-alpha.33"
-=======
-<<<<<<< HEAD
-"@storybook/source-loader@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.34.tgz#2bcc41c71e4aaeb45c04de3588f456f2c2a1abc3"
-  integrity sha512-/q8NrxSPJzRU4I9HfBEJLAF4z7m/PmvKev+ff51/+8Ss0gZDTgHLiGalpFB7eA2UK7UwKTgknYYFySvNkMlFuQ==
-  dependencies:
-    "@storybook/addons" "5.3.0-alpha.34"
-    "@storybook/router" "5.3.0-alpha.34"
-=======
-=======
->>>>>>> Changes link for route-link
-"@storybook/source-loader@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-alpha.33.tgz#53e6b5d79352c0d86c64b446d48982bfe7dd59ad"
-  integrity sha512-Hmd4XG+2RSwg8mzyVcmB3g3P68whzQGwPD8louf79RuAYY61LmYYdMOqGde15bvJDhc5A8S+BowWNCzxQ2c/yw==
-  dependencies:
-    "@storybook/addons" "5.3.0-alpha.33"
-    "@storybook/router" "5.3.0-alpha.33"
-<<<<<<< HEAD
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
     core-js "^3.0.1"
     estraverse "^4.2.0"
     global "^4.3.2"
@@ -1870,7 +1488,6 @@
     prop-types "^15.7.2"
     resolve-from "^5.0.0"
 
-<<<<<<< HEAD
 "@storybook/ui@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-5.2.6.tgz#33df2f2e03d9cf81dc52928a0dc4db280ee8f56a"
@@ -1884,67 +1501,6 @@
     "@storybook/core-events" "5.2.6"
     "@storybook/router" "5.2.6"
     "@storybook/theming" "5.2.6"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@storybook/theming@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.33.tgz#08c6f560196a4ccfa9393ff2a663bb21c55a254d"
-  integrity sha512-TPiwQtj2BWjrHli3iiVcUXKILuYDh09Rldjev5F3fkes3MXJUAd2DGKRxXFAIwz/4iMyfPTI6sklLhJ7Z2tfAA==
-  dependencies:
-    "@emotion/core" "^10.0.20"
-    "@emotion/styled" "^10.0.17"
-    "@storybook/client-logger" "5.3.0-alpha.33"
-=======
-<<<<<<< HEAD
-"@storybook/theming@5.3.0-alpha.34":
-  version "5.3.0-alpha.34"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.34.tgz#0d8ea39188fd4f3eb258c81cf370b7fac64fcde6"
-  integrity sha512-jG/W5oUUDP+R2yFC214A2xwM9AlRWx5PNwsckHCGJHZzVwEarYLWSJRoiGgzf8GV88aJ4Iib0OJI3RfjAEhgUw==
-  dependencies:
-    "@emotion/core" "^10.0.20"
-    "@emotion/styled" "^10.0.17"
-    "@storybook/client-logger" "5.3.0-alpha.34"
-=======
-=======
->>>>>>> Changes link for route-link
-"@storybook/theming@5.3.0-alpha.33":
-  version "5.3.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.33.tgz#08c6f560196a4ccfa9393ff2a663bb21c55a254d"
-  integrity sha512-TPiwQtj2BWjrHli3iiVcUXKILuYDh09Rldjev5F3fkes3MXJUAd2DGKRxXFAIwz/4iMyfPTI6sklLhJ7Z2tfAA==
-  dependencies:
-    "@emotion/core" "^10.0.20"
-    "@emotion/styled" "^10.0.17"
-    "@storybook/client-logger" "5.3.0-alpha.33"
-<<<<<<< HEAD
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
->>>>>>> Changes link for route-link
-    core-js "^3.0.1"
-    deep-object-diff "^1.1.0"
-    emotion-theming "^10.0.19"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    polished "^3.3.1"
-    prop-types "^15.7.2"
-    resolve-from "^5.0.0"
-    ts-dedent "^1.1.0"
-
-"@storybook/ui@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-5.2.5.tgz#0c2c67216e4c808e39cdb48301cafde81b77d074"
-  integrity sha512-C+5KmeTtdG6xkGXPmFDHPxTcSvVohuFD1399fnzjYhfLlRJ04ix3g16rcyDTxRtrFgFidOyGHdzCypgkdaN8dQ==
-  dependencies:
-    "@storybook/addons" "5.2.5"
-    "@storybook/api" "5.2.5"
-    "@storybook/channels" "5.2.5"
-    "@storybook/client-logger" "5.2.5"
-    "@storybook/components" "5.2.5"
-    "@storybook/core-events" "5.2.5"
-    "@storybook/router" "5.2.5"
-    "@storybook/theming" "5.2.5"
->>>>>>> Changes link for route-link
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
     core-js-pure "^3.0.1"
@@ -2085,7 +1641,6 @@
   integrity sha512-iTs9HReBu7evG77Q4EC8hZnqRt57irBDkK9nvmHroiOIVwYMQc4IvYvdRgwKfYepunIY7Oh/dBuuld+Gj9uo6w==
 
 "@types/node@*":
-<<<<<<< HEAD
   version "12.12.12"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.12.tgz#529bc3e73dbb35dd9e90b0a1c83606a9d3264bdb"
   integrity sha512-MGuvYJrPU0HUwqF7LqvIj50RZUX23Z+m583KBygKYUZLlZ88n6w28XRNJRJgsHukLEnLz6w6SvxZoLgbr5wLqQ==
@@ -2094,29 +1649,6 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  version "12.11.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.7.tgz#57682a9771a3f7b09c2497f28129a0462966524a"
-  integrity sha512-JNbGaHFCLwgHn/iCckiGSOZ1XYHsKFwREtzPwSGCVld1SGhOlmZw2D4ZI94HQCrBHbADzW9m4LER/8olJTRGHA==
-=======
-<<<<<<< HEAD
-  version "12.12.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.0.tgz#ff3201972d6dc851a9275308a17b9b5094e68057"
-  integrity sha512-6N8Sa5AaENRtJnpKXZgvc119PKxT1Lk9VPy4kfT8JF23tIe1qDfaGkBR2DRKJFIA7NptMz+fps//C6aLi1Uoug==
-=======
-  version "12.11.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.7.tgz#57682a9771a3f7b09c2497f28129a0462966524a"
-  integrity sha512-JNbGaHFCLwgHn/iCckiGSOZ1XYHsKFwREtzPwSGCVld1SGhOlmZw2D4ZI94HQCrBHbADzW9m4LER/8olJTRGHA==
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
-  version "12.11.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.7.tgz#57682a9771a3f7b09c2497f28129a0462966524a"
-  integrity sha512-JNbGaHFCLwgHn/iCckiGSOZ1XYHsKFwREtzPwSGCVld1SGhOlmZw2D4ZI94HQCrBHbADzW9m4LER/8olJTRGHA==
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -3400,42 +2932,10 @@ can-use-dom@^0.1.0:
   resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
   integrity sha1-IsxKNKCrxDlQ9CxkEQJKP2NmtFo=
 
-<<<<<<< HEAD
 caniuse-lite@^1.0.30000989, caniuse-lite@^1.0.30001010:
   version "1.0.30001012"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001012.tgz#653ec635e815b9e0fb801890923b0c2079eb34ec"
   integrity sha512-7RR4Uh04t9K1uYRWzOJmzplgEOAXbfK72oVNokCdMzA67trrhPzy93ahKk1AWHiA0c58tD2P+NHqxrA8FZ+Trg==
-=======
-caniuse-lite@^1.0.30000989, caniuse-lite@^1.0.30001004:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  version "1.0.30001005"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001005.tgz#823054210be638c725521edcb869435dae46728d"
-  integrity sha512-g78miZm1Z5njjYR216a5812oPiLgV1ssndgGxITHWUopmjUrCswMisA0a2kSB7a0vZRox6JOKhM51+efmYN8Mg==
-=======
-<<<<<<< HEAD
-  version "1.0.30001006"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001006.tgz#5b6e8288792cfa275f007b2819a00ccad7112655"
-  integrity sha512-MXnUVX27aGs/QINz+QG1sWSLDr3P1A3Hq5EUWoIt0T7K24DuvMxZEnh3Y5aHlJW6Bz2aApJdSewdYLd8zQnUuw==
-=======
-  version "1.0.30001005"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001005.tgz#823054210be638c725521edcb869435dae46728d"
-  integrity sha512-g78miZm1Z5njjYR216a5812oPiLgV1ssndgGxITHWUopmjUrCswMisA0a2kSB7a0vZRox6JOKhM51+efmYN8Mg==
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
-  version "1.0.30001005"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001005.tgz#823054210be638c725521edcb869435dae46728d"
-  integrity sha512-g78miZm1Z5njjYR216a5812oPiLgV1ssndgGxITHWUopmjUrCswMisA0a2kSB7a0vZRox6JOKhM51+efmYN8Mg==
->>>>>>> Changes link for route-link
-
-capture-exit@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/capture-exit/-/capture-exit-2.0.0.tgz#fb953bfaebeb781f62898239dabb426d08a509a4"
-  integrity sha512-PiT/hQmTonHhl/HFGN+Lx3JJUznrVYJ3+AQsnthneZbvW7x+f08Tk7yLJTLEOUvBTbduLeeBkxEaYXUOUrRq6g==
-  dependencies:
-    rsvp "^4.8.4"
->>>>>>> Changes link for route-link
 
 case-sensitive-paths-webpack-plugin@^2.2.0:
   version "2.2.0"
@@ -3805,37 +3305,10 @@ core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
   integrity sha512-I39t74+4t+zau64EN1fE5v2W31Adtc/REhzWN+gWRRXg6WH5qAsZm62DHpQ1+Yhe4047T55jvzz7MUqF/dBBlA==
 
-<<<<<<< HEAD
 core-js@^3.0.1, core-js@^3.0.4, core-js@^3.1.3:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.4.2.tgz#ee2b1a60b50388d8ddcda8cdb44a92c7a9ea76df"
   integrity sha512-bUTfqFWtNKWp73oNIfRkqwYZJeNT3lstzZcAkhhiuvDraRSgOH1/+F9ZklbpR4zpdKuo4cpXN8tKP7s61yjX+g==
-=======
-core-js@^3.0.1, core-js@^3.0.4:
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.3.5.tgz#58d20f48a95a07304b62ff752742b82b56431ed8"
-  integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
-
-core-js@^3.1.3:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.4.1.tgz#76dd6828412900ab27c8ce0b22e6114d7ce21b18"
-  integrity sha512-KX/dnuY/J8FtEwbnrzmAjUYgLqtk+cxM86hfG60LGiW3MmltIc2yAmDgBgEkfm0blZhUrdr1Zd84J2Y14mLxzg==
-=======
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.4.0.tgz#29ea478601789c72f2978e9bb98f43546f89d3aa"
-  integrity sha512-lQxb4HScV71YugF/X28LtePZj9AB7WqOpcB+YztYxusvhrgZiQXPmCYfPC5LHsw/+ScEtDbXU3xbqH3CjBRmYA==
->>>>>>> Adds only icon links
-<<<<<<< HEAD
->>>>>>> Adds only icon links
-=======
-=======
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.4.1.tgz#76dd6828412900ab27c8ce0b22e6114d7ce21b18"
-  integrity sha512-KX/dnuY/J8FtEwbnrzmAjUYgLqtk+cxM86hfG60LGiW3MmltIc2yAmDgBgEkfm0blZhUrdr1Zd84J2Y14mLxzg==
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -8681,33 +8154,9 @@ source-map-resolve@^0.5.0:
     urix "^0.1.0"
 
 source-map-support@~0.5.12:
-<<<<<<< HEAD
   version "0.5.16"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.16.tgz#0ae069e7fe3ba7538c64c98515e35339eac5a042"
   integrity sha512-efyLRJDr68D9hBBNIPWFjhpFzURh+KJykQwvMyW5UiZzYwoF6l4YMMDIJJEyFWxWCqfyxLzz6tSfUFR+kXXsVQ==
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  version "0.5.15"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.15.tgz#20fe16f16e74644e21a396c78c841fa66e35df6c"
-  integrity sha512-wYF5aX1J0+V51BDT3Om7uXNn0ct2FWiV4bvwiGVefxkm+1S1o5jsecE5lb2U28DDblzxzxeIDbTVpXHI9D/9hA==
-=======
-<<<<<<< HEAD
-  version "0.5.16"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.16.tgz#0ae069e7fe3ba7538c64c98515e35339eac5a042"
-  integrity sha512-efyLRJDr68D9hBBNIPWFjhpFzURh+KJykQwvMyW5UiZzYwoF6l4YMMDIJJEyFWxWCqfyxLzz6tSfUFR+kXXsVQ==
-=======
-  version "0.5.15"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.15.tgz#20fe16f16e74644e21a396c78c841fa66e35df6c"
-  integrity sha512-wYF5aX1J0+V51BDT3Om7uXNn0ct2FWiV4bvwiGVefxkm+1S1o5jsecE5lb2U28DDblzxzxeIDbTVpXHI9D/9hA==
->>>>>>> Adds component and story
->>>>>>> Adds component and story
-=======
-  version "0.5.15"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.15.tgz#20fe16f16e74644e21a396c78c841fa66e35df6c"
-  integrity sha512-wYF5aX1J0+V51BDT3Om7uXNn0ct2FWiV4bvwiGVefxkm+1S1o5jsecE5lb2U28DDblzxzxeIDbTVpXHI9D/9hA==
->>>>>>> Changes link for route-link
->>>>>>> Changes link for route-link
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
@@ -8724,11 +8173,7 @@ source-map@^0.4.2:
   dependencies:
     amdefine ">=0.0.4"
 
-<<<<<<< HEAD
 source-map@^0.5.0, source-map@^0.5.6, source-map@^0.5.7:
-=======
-source-map@^0.5.0, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
->>>>>>> Changes link for route-link
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
