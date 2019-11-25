@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
-  font-size: 0.75rem;
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: var(--spacing-half);
   padding: 0;
 `;
 
@@ -14,6 +15,7 @@ const StyledCheckMark = styled(CheckMark)`
   color: ${props => props.theme.greys.white};
   height: 100%;
   opacity: 0;
+  position:absolute;
   width: 100%;
 `;
 
@@ -22,13 +24,13 @@ const StyledLabel = styled.label`
       return `
         ${props.disabled ? '' : 'cursor: pointer;'}
         display: block;
-        font-size: 0.875rem;
-        padding-left: 24px;
+        line-height: 24px;
+        padding-left: var(--spacing-3x);
         position: relative;
         user-select: none;
 
         &:not(:first-of-type) {
-            margin-top: 16px;
+            margin-top: var(--spacing-1x);
         }
 
         input {
@@ -48,13 +50,12 @@ const StyledLabel = styled.label`
             align-self: center;
             background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
             border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             display: inline-block;
             height: 16px;
             left: 0;
-            margin-top: 2px;
             position: absolute;
-            top: 0;
+            top: 4px;
             width: 16px;
         }
 
