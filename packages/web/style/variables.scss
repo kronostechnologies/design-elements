@@ -1,0 +1,16 @@
+:root {
+  font-size: 62.5%; // reset root font size to 10px => 1rem = 10px, 1.4rem = 14px, 2.4 rem = 24px etc.
+
+  // var for spacing margin & padding
+  --spacing-base: 8px;
+
+  --spacing-half: calc(.5 * var(--spacing-base));
+  --spacing-1x: var(--spacing-base);
+  --spacing-2x: calc(2 * var(--spacing-base));
+  --spacing-3x: calc(3 * var(--spacing-base));
+  --spacing-4x: calc(4 * var(--spacing-base));
+
+  // var for typo
+  --font-normal: 400;
+  --font-bold: 700;
+}

@@ -7,9 +7,7 @@ import { Button } from './button';
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 const PlusIcon = styled(PlusSign)`
-  height: 1rem;
-  margin-right: 0.5rem;
-  width: 1rem;
+  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
 `;
 
 interface ButtonProps {
