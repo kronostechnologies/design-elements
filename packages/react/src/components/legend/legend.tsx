@@ -5,33 +5,36 @@ import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const List = styled.ul`
   margin: 0;
-  padding: 0 1.2rem;
+  padding: 0;
 `;
 
 const Item = styled.li`
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0 0 15px;
+  margin: 0 0 var(--spacing-1x);
+  padding: 0 var(--spacing-2x);
 
   p {
     font-size: 0.875rem;
+    line-height: 1.5rem;
     margin: 0;
   }
 
   ::before {
-    color: ${(props: {theme: Theme, color?: string}) => props.color || props.theme.main['primary-1.1']};
-    content: '•';
-    font-size: 2.6em;
-    font-weight: 600;
-    margin: -0.4em 0 0 -0.5em;
-    width: 0.5em;
+    background-color: ${(props: {theme: Theme, color?: string}) => props.color || props.theme.main['primary-1.2']};
+    border-radius: 50%;
+    content: '';
+    height: var(--spacing-1x);
+    margin: .5rem var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
+    width: var(--spacing-1x);
   }
 `;
 
 const Description = styled.span`
   color: ${props => props.theme.greys['dark-grey']};
+  display: block;
   font-size: 0.75rem;
+  line-height: 1.25rem;
 `;
 
 interface LegendProps {
