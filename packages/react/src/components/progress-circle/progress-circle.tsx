@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Circle } from '../circle/circle';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
-const RADIUS = 73;
+const RADIUS = 62;
 const STROKE = 8;
 
 interface ResultProps {
@@ -14,63 +14,76 @@ interface ResultProps {
 
 const Container = styled.div`
   display: inline-block;
+  height: auto;
+  width: 100%;
 `;
 
 const Wrapper = styled.div`
-  height: ${(RADIUS * 2) / 16}rem;
+  height: inherit;
+  margin-bottom: 0.5rem;
   position: relative;
-  width: ${(RADIUS * 2) / 16}rem;
+  width: inherit;
 `;
 
 const Result = styled.div`
   align-items: center;
   display: flex;
-  height: ${(RADIUS * 2) / 16}rem;
+  height: 100%;
   justify-content: center;
   left: 0;
   position: absolute;
   top: 0;
-  width: ${(RADIUS * 2) / 16}rem;
+  width: 100%;
 
   p {
-    color: ${(props: ResultProps) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
-    font-size: 1.625rem;
+    color: ${(props: ResultProps) => props.theme.greys.black};
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
   }
 `;
 
 const Label = styled.p`
-  color: ${(props: ResultProps) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
+  color: ${(props: ResultProps) => props.theme.greys.black};
+  font-size: 1rem;
+  letter-spacing: 0.46px;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  width: ${(RADIUS * 2) / 16}rem;
+`;
+
+const StyledCircle = styled(Circle)`
+  height: auto;
+  min-height: 124px;
+  width: 100%;
 `;
 
 interface Props {
     color: string;
-    /** Center label */
-    resultLabel: string | number;
-    percent: number;
     /** Bottom label */
     descriptionLabel?: string;
-    /** Sets a lighter font color */
-    secondary?: boolean;
+    percent: number;
+    /** Center label */
+    resultLabel: string | number;
 }
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-export function ProgressCircle({ color, descriptionLabel, percent, resultLabel, secondary }: Props): ReactElement {
+export function ProgressCircle({ color, descriptionLabel, percent, resultLabel }: Props): ReactElement {
     return (
         <Container>
             <Wrapper>
-                <Circle
+                <StyledCircle
                     radius={RADIUS}
                     stroke={STROKE}
                     percent={percent}
                     color={color}
                 />
-                <Result secondary={secondary}>
+                <Result>
                     <p>{resultLabel}</p>
                 </Result>
             </Wrapper>
-            {descriptionLabel && <Label secondary={secondary}>{descriptionLabel}</Label>}
+            {descriptionLabel && <Label>{descriptionLabel}</Label>}
         </Container>
     );
 }
