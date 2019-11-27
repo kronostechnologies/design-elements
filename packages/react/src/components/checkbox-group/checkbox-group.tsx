@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: .75rem;
+  line-height: 1.25rem;
   margin-bottom: var(--spacing-half);
   padding: 0;
 `;
@@ -24,7 +24,7 @@ const StyledLabel = styled.label`
       return `
         ${props.disabled ? '' : 'cursor: pointer;'}
         display: block;
-        line-height: 24px;
+        line-height: 1.5rem;
         padding-left: var(--spacing-3x);
         position: relative;
         user-select: none;
