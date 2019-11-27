@@ -6,7 +6,7 @@ import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const StyledDiv = styled.div`
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 
   input,
   select,

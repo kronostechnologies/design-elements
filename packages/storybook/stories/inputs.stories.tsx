@@ -102,7 +102,7 @@ export const disabled = () => (
     <TextInput
         disabled={true}
         required={false}
-        label="A disabled text inpu"
+        label="A disabled text input"
         placeholder="Sorry but this field is disabled"
         type="text"
         defaultValue=""

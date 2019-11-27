@@ -3,15 +3,17 @@ import { Theme } from '../../theme-wrapper/theme-wrapper';
 export const inputsStyle = (theme: Theme) => `
   background: ${theme.greys.white};
   border: 1px solid ${theme.greys.grey};
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
   color: ${theme.greys.black};
   font-family: inherit;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
+  letter-spacing: .025rem;
+  line-height: 1.4rem;
   margin: 0;
   outline: none;
-  padding: 0.5rem;
+  padding: var(--spacing-half) var(--spacing-1x);
 
   &::placeholder {
     color: ${theme.greys['dark-grey']};
@@ -33,7 +35,7 @@ export const inputsStyle = (theme: Theme) => `
 
   label + & {
     display: block;
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-half);
     width: 100%;
   }
 `;
