@@ -88,7 +88,7 @@ const Reset = styled.button`
 
 const SearchSubmit = styled(SearchButton)`
   border-left: 0;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   position: relative;
 `;
 

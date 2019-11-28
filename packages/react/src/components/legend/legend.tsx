@@ -24,9 +24,9 @@ const Item = styled.li`
     background-color: ${(props: {theme: Theme, color?: string}) => props.color || props.theme.main['primary-1.2']};
     border-radius: 50%;
     content: '';
-    height: var(--spacing-1x);
-    margin: .5rem var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
-    width: var(--spacing-1x);
+    height: 8px;
+    margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
+    width: 8px;
   }
 `;
 

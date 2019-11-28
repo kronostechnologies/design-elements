@@ -13,7 +13,7 @@ const Grid = styled.div<GridProps>`
 `;
 
 const Skip = styled.div`
-  margin: 1rem 0 0;
+  margin: var(--spacing-2x) 0 0;
 `;
 
 interface ChooserProps {

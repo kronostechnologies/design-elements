@@ -14,7 +14,7 @@ export const StyledLink = styled.a<ContainerProps>`
   text-decoration: none;
 
   svg {
-    margin-right: 8px;
+    margin-right: var(--spacing-1x);
   }
 
   &.iconOnly svg {

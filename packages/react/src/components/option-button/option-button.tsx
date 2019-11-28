@@ -10,10 +10,12 @@ const Input = styled.input`
       z-index: -1;
 
       + label {
+        --border-radius: 8px;
+
         align-items: center;
         background-color: ${props.theme.greys.white};
         border: 1px solid ${props.theme.greys.grey};
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         color: ${props.theme.greys['dark-grey']};
         display: flex;
         font-size: 24px;
