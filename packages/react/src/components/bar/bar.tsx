@@ -6,7 +6,7 @@ import { Theme } from '../theme-wrapper/theme-wrapper';
 const Container = styled.div`
   align-items: center;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-2x);
 
   p {
     color: ${(props: {theme: Theme, secondary: boolean}) => props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black};
@@ -18,14 +18,14 @@ const Container = styled.div`
 
 const Progress = styled.div`
   background-color: ${props => props.theme.greys.grey};
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.55rem;
   width: 100%;
 `;
 
 const StyledBar = styled.div`
   background: ${(props: {color?: string, percent: number}) => props.color};
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.55rem;
   width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
 `;
