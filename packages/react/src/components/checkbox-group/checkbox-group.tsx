@@ -7,7 +7,7 @@ import { Theme } from '../theme-wrapper/theme-wrapper';
 const Legend = styled.legend`
   font-size: .75rem;
   line-height: 1.25rem;
-  margin-bottom: var(--spacing-half);
+  margin-bottom: var(--spacing-1x);
   padding: 0;
 `;
 
@@ -51,6 +51,7 @@ const StyledLabel = styled.label`
             background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
             border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
             border-radius: var(--border-radius);
+            box-sizing: border-box;
             display: inline-block;
             height: 16px;
             left: 0;
