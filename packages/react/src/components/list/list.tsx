@@ -89,7 +89,7 @@ const Item = styled.li<ItemProps>`
 const CheckIndicator = styled(Check)`
   color: #637282;
   height: 12px;
-  padding: 0 8px;
+  padding: 0 var(--spacing-1x);
   width: 12px;
 `;
 
