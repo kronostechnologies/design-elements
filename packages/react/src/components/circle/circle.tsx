@@ -1,49 +1,54 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { ReactElement } from 'react';
+import styled from 'styled-components';
+import { useTheme } from '../../hooks/use-theme';
 
 interface CircleProps {
+    color: string;
+    percent: number;
     radius: number;
     stroke: number;
-    percent: number;
-    color: string;
 }
 
-const CirclePath = styled.circle`
-  transform: rotate(90deg);
-  transform-origin: 50% 50%;
-`;
-
-const Circle = ({ radius, stroke, percent, color }: CircleProps) => {
-    const normalizedRadius = radius - (stroke * 2);
+export function Circle({ color, percent, radius, stroke }: CircleProps): ReactElement {
+    const normalizedRadius = radius - stroke / 2;
     const circumference = normalizedRadius * 2 * Math.PI;
     const strokeDashoffset = circumference - ((percent / 100) * circumference);
-    const theme = useContext(ThemeContext);
+    const theme = useTheme();
+    const diameter = radius * 2;
 
     return (
-        <svg height={radius * 2} width={radius * 2}>
-            <circle
+        <Svg height="100%" width="100%" viewBox={`0 0 ${diameter} ${diameter}`}>
+            <BackgroundCircle
                 stroke={theme.greys.grey}
                 fill="transparent"
                 strokeWidth={stroke}
-                strokeDasharray={`${circumference} ${circumference}`}
                 strokeLinecap="round"
                 r={normalizedRadius}
                 cx={radius}
                 cy={radius}
             />
-            <CirclePath
+            <FillCircle
                 stroke={color}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeDasharray={`${circumference} ${circumference}`}
-                style={{ strokeDashoffset }}
+                strokeDashoffset={strokeDashoffset}
                 strokeLinecap="round"
                 r={normalizedRadius}
                 cx={radius}
                 cy={radius}
             />
-        </svg>
+        </Svg>
     );
-};
+}
 
-export { Circle };
+const BackgroundCircle = styled.circle``;
+
+const FillCircle = styled.circle`
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+`;
+
+const Svg = styled.svg`
+  display: block;
+`;
