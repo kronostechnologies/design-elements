@@ -1055,19 +1055,19 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-0.6.2.tgz#9675ea2e596f342999bd4ee6def52e549039a3ae"
-  integrity sha512-c2sVf8U9X56lzICnQhrj5QiMCdxW5uSezEsAqpmssvilwIrm3AcJL7KmtRg6u2ykXCNknZZsZ8KUiOhhcIfNSQ==
+"@equisoft/design-elements-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-1.0.0.tgz#a3c5cdf679b2e897a94074565df488e1561863de"
+  integrity sha512-LJJN55VuDeqYFPFGpxWyLx30MRJKR2H+7ENQr7/FWe7+IkQIsZoRdEV4Y8Z4XcLzVRJ1NpYbzXgmEbjTy6EjoA==
   dependencies:
     feather-icons "^4.21.0"
     lodash-es "^4.17.14"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-0.6.2.tgz#24aa96c69368343bab0f5221c9436aa21404b414"
-  integrity sha512-WNkFGNHK1ma4IYB32CeGaURX+IsCRJfFKLSxYI+5kHo3jrtCXdHlH7CZG58pVkyBAGovh9erMsRE3Mwzwe8Hvg==
+"@equisoft/design-elements-web@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-1.0.0.tgz#ffdc411a3f7e0b8c290c66e772ea968ced50b323"
+  integrity sha512-RibyviXf2oQYMfVnYewPQhkPa5ZFEyhji4JgmmB9SDfYlKaUC2bIHdlqAFpbV/KhqclVwfhwalzgeBmIYuuWBg==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
