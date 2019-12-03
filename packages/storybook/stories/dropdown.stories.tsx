@@ -42,6 +42,9 @@ export const disabled = () => (
 export const invalid = () => (
     <Dropdown options={options} valid={false}/>
 );
+export const scrollable = () => (
+    <Dropdown options={options} scrollable/>
+);
 export const withCallback = () => (
     <Dropdown options={options} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
 );

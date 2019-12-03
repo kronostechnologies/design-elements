@@ -73,6 +73,7 @@ interface DropdownProps {
     disabled?: boolean;
     label?: string;
     options: Option[];
+    scrollable?: boolean;
     valid?: boolean;
     validationErrorMessage?: string;
     onChange?(option: Option): void;
@@ -83,6 +84,7 @@ export const Dropdown = ({
     label = 'Select an option',
     onChange,
     options,
+    scrollable,
     valid = true,
     validationErrorMessage = 'You must select an option',
 }: DropdownProps) => {
@@ -132,6 +134,7 @@ export const Dropdown = ({
                 </InputWrapper>
                 <ListWrapper open={open}>
                     <List
+                        numberOfItemsVisible={scrollable ? 3.5 : undefined}
                         checkIndicator
                         options={options}
                         onChange={handleChange}
