@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-storybook",
-  "version": "0.6.2",
+  "version": "1.0.0",
   "scripts": {
     "build": "start-storybook --smoke-test",
     "start": "start-storybook --docs",
@@ -18,8 +18,8 @@
   ],
   "dependencies": {
     "@babel/plugin-proposal-dynamic-import": "^7.5.0",
-    "@equisoft/design-elements-react": "^0.6.2",
-    "@equisoft/design-elements-web": "^0.6.2",
+    "@equisoft/design-elements-react": "^1.0.0",
+    "@equisoft/design-elements-web": "^1.0.0",
     "@storybook/react": "^5.2.1",
     "@types/react-router-dom": "^5.1.2",
     "babel-loader": "^8.0.6",
