@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, ThemeProviderProps } from 'styled-components';
 
-import { equisoftTheme } from '../../themes/equisoft';
+import { equisoftTheme } from '../../themes/equisoft';
 
 export interface Theme {
     main: {
@@ -35,8 +35,7 @@ export interface Theme {
     };
 }
 
-interface ThemeWrapperProps {
-    children: ReactElement;
+interface ThemeWrapperProps extends Omit<ThemeProviderProps<Theme>, 'theme'> {
     theme?: Theme;
 }
 

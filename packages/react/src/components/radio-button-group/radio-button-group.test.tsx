@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { RadioButtonGroup } from './radio-button-group';
 
 const Buttons = [

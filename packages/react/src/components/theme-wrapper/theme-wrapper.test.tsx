@@ -1,15 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
 import renderer from 'react-test-renderer';
-import { testTheme } from '../../themes/test-theme';
-import { Button } from '../buttons/button';
+import { Button, testTheme } from '../..';
 import { ThemeWrapper } from './theme-wrapper';
-
-export const ThemeWrapped = (children: ReactElement) => (
-    <ThemeWrapper>
-        {children}
-    </ThemeWrapper>
-);
 
 describe('Theme Wrapper', () => {
     test('Returns component with default theme', () => {
@@ -21,6 +14,7 @@ describe('Theme Wrapper', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
     test('Returns component with test theme', () => {
         const tree = renderer.create(
             <ThemeWrapper theme={testTheme}>
