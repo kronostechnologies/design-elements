@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useEffect, useRef, useState } from 'react';
 
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
