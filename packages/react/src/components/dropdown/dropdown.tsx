@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid';
 
@@ -94,6 +94,7 @@ export const Dropdown = ({
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');
     const [searchValue, setSearchValue] = useState('');
+    const [autoFocus, setAutofocus] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     const id = uuid();
     const ListOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
@@ -127,6 +128,12 @@ export const Dropdown = ({
         setSearchValue(event.target.value);
     };
 
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.keyCode === 40 || 38) {
+            setAutofocus(!autoFocus);
+        }
+    };
+
     return (
         <>
             <StyledFieldContainer
@@ -147,6 +154,7 @@ export const Dropdown = ({
                         type="text"
                         value={value}
                         onChange={handleInputChange}
+                        onKeyDown={handleKeyDown}
                         placeholder="Select an option"
                         readOnly={!searchable}
                     />
@@ -154,7 +162,8 @@ export const Dropdown = ({
                 </InputWrapper>
                 <ListWrapper open={open}>
                     <List
-                        numberOfItemsVisible={scrollable ? 3.5 : undefined}
+                        autofocus={searchable ? autoFocus : open}
+                        numberOfItemsVisible={scrollable ? 3 : undefined}
                         checkIndicator
                         options={searchable ? ListOptions : options}
                         onChange={handleChange}
