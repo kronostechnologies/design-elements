@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useEffect, useRef, useState } from 'react';
 
 import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
@@ -103,21 +103,16 @@ export function List({
 }: ListProps): ReactElement {
     const listRef = useRef<HTMLUListElement>(null);
 
-    const defaultSelectedIndex = useMemo(() => options.findIndex(option => option.value === defaultValue),
-        [...options, defaultValue],
-    );
-
+    const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedOptionId, setSelectedOptionId] = useState(
         defaultValue ? `${defaultValue}-${defaultSelectedIndex}` : undefined,
     );
 
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
 
-    const list: ListOption[] = useMemo(() =>
+    const list: ListOption[] | [] =
         options.map((option, index)  =>
-            ({ ...option, id: `${option.value}-${index}`, focusIndex: index, ref: React.createRef<HTMLLIElement>() })),
-        options,
-    );
+            ({ ...option, id: `${option.value}`, focusIndex: index, ref: React.createRef<HTMLLIElement>() }));
 
     function isOptionSelected(option: ListOption): boolean {
         return selectedOptionId ? option.id === selectedOptionId : false;

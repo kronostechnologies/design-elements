@@ -45,6 +45,9 @@ export const invalid = () => (
 export const scrollable = () => (
     <Dropdown options={options} scrollable/>
 );
+export const searchable = () => (
+    <Dropdown options={options} searchable/>
+);
 export const withCallback = () => (
     <Dropdown options={options} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
 );

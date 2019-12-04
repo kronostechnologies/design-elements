@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { ChangeEvent, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid';
 
@@ -74,6 +74,7 @@ interface DropdownProps {
     label?: string;
     options: Option[];
     scrollable?: boolean;
+    searchable?: boolean;
     valid?: boolean;
     validationErrorMessage?: string;
     onChange?(option: Option): void;
@@ -85,27 +86,45 @@ export const Dropdown = ({
     onChange,
     options,
     scrollable,
+    searchable,
     valid = true,
     validationErrorMessage = 'You must select an option',
 }: DropdownProps) => {
     const [focus, setFocus] = useState(false);
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');
+    const [searchValue, setSearchValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const id = uuid();
+    const ListOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
 
     const handleClick = () => {
         setOpen(!open);
         if (!open) {
             setFocus(true);
-        } else setFocus(false);
+            if (searchable) {
+                inputRef.current && inputRef.current.focus();
+            }
+        } else {
+            const testValue = options.filter(option => option.label === value);
+            if (testValue.length <= 0) setValue('');
+            inputRef.current && inputRef.current.blur();
+            setFocus(false);
+            setSearchValue('');
+        }
     };
 
     const handleChange = (option: Option): void => {
         setValue(option.label);
         setOpen(!open);
         setFocus(!focus);
+        setSearchValue('');
         if (onChange) onChange(option);
+    };
+
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+        setSearchValue(event.target.value);
     };
 
     return (
@@ -127,8 +146,9 @@ export const Dropdown = ({
                         ref={inputRef}
                         type="text"
                         value={value}
+                        onChange={handleInputChange}
                         placeholder="Select an option"
-                        readOnly
+                        readOnly={!searchable}
                     />
                     <Icon name={open ? 'chevronUp' : 'chevronDown'}/>
                 </InputWrapper>
@@ -136,7 +156,7 @@ export const Dropdown = ({
                     <List
                         numberOfItemsVisible={scrollable ? 3.5 : undefined}
                         checkIndicator
-                        options={options}
+                        options={searchable ? ListOptions : options}
                         onChange={handleChange}
                     />
                 </ListWrapper>
