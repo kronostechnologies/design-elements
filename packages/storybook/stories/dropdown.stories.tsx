@@ -26,6 +26,11 @@ const options = [
     },
 ];
 
+const skipOption = {
+    label: 'Skip this question',
+    value: 'skip',
+};
+
 export default {
     title: 'Dropdown',
     component: Dropdown,
@@ -59,4 +64,7 @@ export const withCallback = () => (
 );
 export const withoutLabel = () => (
     <Dropdown options={options}/>
+);
+export const withSkip = () => (
+    <Dropdown label="Select an option" options={options} skipOption={skipOption} searchable/>
 );

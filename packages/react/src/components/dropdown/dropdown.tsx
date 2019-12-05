@@ -2,6 +2,7 @@ import React, { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useSt
 import styled from 'styled-components';
 import uuid from 'uuid';
 
+import { ChooseInput } from '../choose-input/choose-input';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon//icon';
 import { List } from '../list/list';
@@ -87,6 +88,7 @@ interface DropdownProps {
     options: Option[];
     numberOfItemsVisible?: number;
     searchable?: boolean;
+    skipOption?: { label: string; value?: string };
     valid?: boolean;
     validationErrorMessage?: string;
     onChange?(option: Option): void;
@@ -99,6 +101,7 @@ export const Dropdown = ({
     options,
     numberOfItemsVisible,
     searchable,
+    skipOption,
     valid = true,
     validationErrorMessage = 'You must select an option',
 }: DropdownProps) => {
@@ -106,6 +109,7 @@ export const Dropdown = ({
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');
     const [searchValue, setSearchValue] = useState('');
+    const [skipSelected, setSkipSelected] = useState(skipOption ? value === skipOption.value : false);
     const [autoFocus, setAutofocus] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -141,8 +145,9 @@ export const Dropdown = ({
     const handleChange = (option: Option): void => {
         setValue(option.label);
         setOpen(false);
-        setFocus(!focus);
+        setFocus(false);
         setSearchValue('');
+        setSkipSelected(false);
         if (onChange) onChange(option);
         if (searchable) setAutofocus(false);
     };
@@ -172,6 +177,13 @@ export const Dropdown = ({
                 setOpen(false);
                 setSearchValue('');
             }
+        }
+    };
+
+    const handleSkipChange = () => {
+        if (!skipSelected) {
+            setSkipSelected(true);
+            setValue('');
         }
     };
 
@@ -213,6 +225,18 @@ export const Dropdown = ({
                     />
                 </ListWrapper>
             </StyledFieldContainer>
+            {skipOption && (
+                <ChooseInput
+                    groupName={`${id}_skip`}
+                    onChange={handleSkipChange}
+                    checked={skipSelected}
+                    data-testid="select-skip-option"
+                    type="radio"
+                    value={skipOption.value}
+                >
+                    {skipOption.label}
+                </ChooseInput>
+            )}
         </>
     );
 };
