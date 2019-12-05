@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid';
 
@@ -96,8 +96,19 @@ export const Dropdown = ({
     const [searchValue, setSearchValue] = useState('');
     const [autoFocus, setAutofocus] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
     const id = uuid();
     const ListOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
+
+    useEffect(() => {
+        // @ts-ignore
+        document.addEventListener('mouseup', handleClickOutside);
+
+        return () => {
+            // @ts-ignore
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
+    });
 
     const handleClick = () => {
         setOpen(!open);
@@ -117,7 +128,7 @@ export const Dropdown = ({
 
     const handleChange = (option: Option): void => {
         setValue(option.label);
-        setOpen(!open);
+        setOpen(false);
         setFocus(!focus);
         setSearchValue('');
         if (onChange) onChange(option);
@@ -129,8 +140,21 @@ export const Dropdown = ({
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.keyCode === 40 || 38) {
+        if (event.keyCode === 40 || event.keyCode === 38) {
             setAutofocus(!autoFocus);
+        }
+    };
+
+    const handleClickOutside = (event: MouseEvent): void => {
+        if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+            if (open) {
+                const testValue = options.filter(option => option.label === value);
+                if (testValue.length <= 0) setValue('');
+                inputRef.current && inputRef.current.blur();
+                setFocus(false);
+                setOpen(false);
+                setSearchValue('');
+            }
         }
     };
 
@@ -143,9 +167,10 @@ export const Dropdown = ({
                 validationErrorMessage={validationErrorMessage}
             >
                 <InputWrapper
-                    onClick={disabled ? undefined : handleClick}
-                    focus={focus}
                     disabled={disabled}
+                    focus={focus}
+                    onClick={disabled ? undefined : handleClick}
+                    ref={wrapperRef}
                     valid={valid}
                 >
                     <StyledInput
