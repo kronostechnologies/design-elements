@@ -207,7 +207,8 @@ export function List({
         if (autofocus && listRef.current) {
             listRef.current.focus();
         }
-    }, [autofocus]);
+        setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
+    }, [autofocus, options.length]);
 
     return (
         <Wrapper
