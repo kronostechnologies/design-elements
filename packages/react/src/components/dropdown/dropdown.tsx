@@ -12,10 +12,14 @@ interface Option {
     value: string;
 }
 
-interface InputWrapperProps {
+interface InputProps {
+    searchable?: boolean;
     disabled?: boolean;
-    focus?: boolean;
     theme: Theme;
+}
+
+interface InputWrapperProps extends InputProps {
+    focus?: boolean;
     valid: boolean;
 }
 
@@ -36,16 +40,24 @@ const InputWrapper = styled.div<InputWrapperProps>`
   padding: 0.5rem;
   width: 100%;
 
+  &:hover {
+    cursor: ${props => props.disabled ? 'default' : 'pointer'};
+  }
+
   svg {
     color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
   }
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<InputProps>`
   background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
   border: none;
   font-size: calc(1rem - 2px);
   width: 100%;
+
+  &:hover {
+    cursor: ${props => props.disabled ? 'default' : props.searchable ? 'text' : 'pointer'};
+  }
 
   &::placeholder {
     color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
@@ -73,7 +85,7 @@ interface DropdownProps {
     disabled?: boolean;
     label?: string;
     options: Option[];
-    scrollable?: boolean;
+    numberOfItemsVisible?: number;
     searchable?: boolean;
     valid?: boolean;
     validationErrorMessage?: string;
@@ -82,10 +94,10 @@ interface DropdownProps {
 
 export const Dropdown = ({
     disabled,
-    label = 'Select an option',
+    label,
     onChange,
     options,
-    scrollable,
+    numberOfItemsVisible,
     searchable,
     valid = true,
     validationErrorMessage = 'You must select an option',
@@ -132,6 +144,7 @@ export const Dropdown = ({
         setFocus(!focus);
         setSearchValue('');
         if (onChange) onChange(option);
+        if (searchable) setAutofocus(false);
     };
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -140,8 +153,12 @@ export const Dropdown = ({
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (!searchable) event.preventDefault();
         if (event.keyCode === 40 || event.keyCode === 38) {
             setAutofocus(!autoFocus);
+        }
+        if (event.keyCode === 9 || event.keyCode === 13) {
+            handleClick();
         }
     };
 
@@ -181,14 +198,15 @@ export const Dropdown = ({
                         onChange={handleInputChange}
                         onKeyDown={handleKeyDown}
                         placeholder="Select an option"
-                        readOnly={!searchable}
+                        required={true}
+                        searchable={searchable}
                     />
                     <Icon name={open ? 'chevronUp' : 'chevronDown'}/>
                 </InputWrapper>
                 <ListWrapper open={open}>
                     <List
                         autofocus={searchable ? autoFocus : open}
-                        numberOfItemsVisible={scrollable ? 3 : undefined}
+                        numberOfItemsVisible={numberOfItemsVisible ? numberOfItemsVisible : undefined}
                         checkIndicator
                         options={searchable ? ListOptions : options}
                         onChange={handleChange}

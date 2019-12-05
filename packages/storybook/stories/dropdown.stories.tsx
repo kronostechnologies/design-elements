@@ -33,21 +33,30 @@ export default {
 };
 
 export const normal = () => (
-    <Dropdown options={options}/>
+    <Dropdown label="Select an option" options={options}/>
 );
 
 export const disabled = () => (
-    <Dropdown options={options} disabled/>
+    <Dropdown label="Select an option" options={options} disabled/>
 );
 export const invalid = () => (
-    <Dropdown options={options} valid={false}/>
+    <Dropdown label="Select an option" options={options} valid={false}/>
 );
-export const scrollable = () => (
-    <Dropdown options={options} scrollable/>
+export const required = () => (
+    <form onSubmit={event => event.preventDefault()}>
+        <Dropdown label="Select an option" options={options}/>
+        <button type="submit">Submit</button>
+    </form>
+);
+export const withTwoItemsVisible = () => (
+    <Dropdown label="Select an option" options={options} numberOfItemsVisible={2}/>
 );
 export const searchable = () => (
-    <Dropdown options={options} searchable/>
+    <Dropdown label="Select an option" options={options} searchable/>
 );
 export const withCallback = () => (
-    <Dropdown options={options} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
+    <Dropdown label="Select an option" options={options} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
+);
+export const withoutLabel = () => (
+    <Dropdown options={options}/>
 );
