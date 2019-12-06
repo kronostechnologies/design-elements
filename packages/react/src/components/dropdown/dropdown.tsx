@@ -86,8 +86,9 @@ interface DropdownProps {
     defaultValue?: string;
     disabled?: boolean;
     label?: string;
-    options: Option[];
+    name?: string;
     numberOfItemsVisible?: number;
+    options: Option[];
     placeholder?: string;
     searchable?: boolean;
     skipOption?: { label: string; value?: string };
@@ -102,6 +103,7 @@ export const Dropdown = ({
     label,
     onChange,
     options,
+    name,
     numberOfItemsVisible,
     placeholder = 'Select an option',
     searchable,
@@ -215,6 +217,7 @@ export const Dropdown = ({
                         ref={inputRef}
                         type="text"
                         value={value}
+                        name={name}
                         onChange={handleInputChange}
                         onKeyDown={handleKeyDown}
                         placeholder={placeholder}
