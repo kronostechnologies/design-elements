@@ -38,6 +38,9 @@ export const normal = () => (
     <Dropdown label="Select an option" options={provinces}/>
 );
 
+export const customPlaceholder = () => (
+    <Dropdown label="Select an option" options={provinces} placeholder="Custom placeholder"/>
+);
 export const disabled = () => (
     <Dropdown label="Select an option" options={provinces} disabled/>
 );
@@ -50,14 +53,14 @@ export const required = () => (
         <button type="submit">Submit</button>
     </form>
 );
-export const withTwoItemsVisible = () => (
-    <Dropdown label="Select an option" options={provinces} numberOfItemsVisible={2}/>
-);
 export const searchable = () => (
     <Dropdown label="Select an option" options={provinces} searchable/>
 );
 export const withCallback = () => (
     <Dropdown label="Select an option" options={provinces} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
+);
+export const withDefaultValue = () => (
+    <Dropdown label="Select an option" options={provinces} defaultValue="qc"/>
 );
 export const withoutLabel = () => (
     <Dropdown options={provinces}/>
@@ -65,6 +68,6 @@ export const withoutLabel = () => (
 export const withSkip = () => (
     <Dropdown label="Select an option" options={provinces} skipOption={skipOption} searchable/>
 );
-export const withDefaultValue = () => (
-    <Dropdown label="Select an option" options={provinces} defaultValue="qc"/>
+export const withTwoItemsVisible = () => (
+    <Dropdown label="Select an option" options={provinces} numberOfItemsVisible={2}/>
 );
