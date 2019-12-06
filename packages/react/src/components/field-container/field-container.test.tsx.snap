@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Field Container Invalid field snapshot 1`] = `
+<<<<<<< HEAD
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -13,6 +14,9 @@ exports[`Field Container Invalid field snapshot 1`] = `
   margin: var(--spacing-half) 0 0;
 }
 
+=======
+<<<<<<< HEAD
+>>>>>>> Adds defaultValue prop
 .c1 {
   color: #000000;
   display: block;
@@ -31,6 +35,45 @@ exports[`Field Container Invalid field snapshot 1`] = `
 
 input + .c1 {
   margin-left: var(--spacing-half);
+<<<<<<< HEAD
+=======
+.c2 {
+  color: #A40C2E;
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0.25rem 0 0;
+>>>>>>> Adds defaultValue prop
+}
+
+.c1 {
+  color: #000000;
+  font-size: 0.75rem;
+<<<<<<< HEAD
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
+  margin: var(--spacing-half) 0 0;
+=======
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c1 {
+  margin-left: 0.5rem;
+>>>>>>> Adds defaultValue prop
 }
 
 .c0 {

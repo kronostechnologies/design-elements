@@ -99,6 +99,29 @@ input + .c2 {
   width: 1px !important;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+=======
+>>>>>>> Adds defaultValue prop
+>>>>>>> Adds defaultValue prop
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

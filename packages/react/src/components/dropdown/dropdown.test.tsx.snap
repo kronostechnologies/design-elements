@@ -1,5 +1,663 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Dropdown Has no label 1`] = `
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #D9DDE2;
+}
+
+.c0:focus {
+  border-color: #0080A5;
+}
+
+.c5 {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: 200px;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c6 {
+  background-color: inherit;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6:hover,
+.c6:focus {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #D9DDE2;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.c2:hover {
+  cursor: pointer;
+}
+
+.c2 svg {
+  color: #57666E;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: none;
+  font-size: calc(1rem - 2px);
+  width: 100%;
+}
+
+.c3:hover {
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3::-moz-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3:-ms-input-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3::placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c4 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 ul {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+<div
+  className="c0 c1"
+>
+  <div
+    className="c2"
+    onClick={[Function]}
+  >
+    <input
+      className="c3"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Select an option"
+      required={true}
+      type="text"
+      value=""
+    />
+    <svg
+      color="currentColor"
+      height="24"
+      width="24"
+    />
+  </div>
+  <div
+    className="c4"
+    open={false}
+  >
+    <ul
+      className="c5"
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        aria-label="-"
+        aria-selected={false}
+        className="c6"
+        id=""
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        -
+      </li>
+      <li
+        aria-label="Ontario"
+        aria-selected={false}
+        className="c6"
+        id="on"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Ontario
+      </li>
+      <li
+        aria-label="Quebec"
+        aria-selected={false}
+        className="c6"
+        id="qc"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Quebec
+      </li>
+      <li
+        aria-label="British Columbia"
+        aria-selected={false}
+        className="c6"
+        id="bc"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        British Columbia
+      </li>
+      <li
+        aria-label="Alberta"
+        aria-selected={false}
+        className="c6"
+        id="ab"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Alberta
+      </li>
+      <li
+        aria-label="Manitoba"
+        aria-selected={false}
+        className="c6"
+        id="mb"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Manitoba
+      </li>
+      <li
+        aria-label="Saskatchewan"
+        aria-selected={false}
+        className="c6"
+        id="sk"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Saskatchewan
+      </li>
+      <li
+        aria-label="Nova Scotia"
+        aria-selected={false}
+        className="c6"
+        id="ns"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Nova Scotia
+      </li>
+      <li
+        aria-label="New Brunswick"
+        aria-selected={false}
+        className="c6"
+        id="nb"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        New Brunswick
+      </li>
+      <li
+        aria-label="Newfoundland and Labrador"
+        aria-selected={false}
+        className="c6"
+        id="nl"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Newfoundland and Labrador
+      </li>
+      <li
+        aria-label="Prince Edward Island"
+        aria-selected={false}
+        className="c6"
+        id="pe"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Prince Edward Island
+      </li>
+      <li
+        aria-label="Northwest Territories"
+        aria-selected={false}
+        className="c6"
+        id="nt"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Northwest Territories
+      </li>
+      <li
+        aria-label="Nunavut"
+        aria-selected={false}
+        className="c6"
+        id="nu"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Nunavut
+      </li>
+      <li
+        aria-label="Yukon"
+        aria-selected={false}
+        className="c6"
+        id="yt"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Yukon
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Dropdown Is disabled 1`] = `
+.c2 {
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0;
+}
+
+input + .c2 {
+  margin-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #D9DDE2;
+}
+
+.c0:focus {
+  border-color: #0080A5;
+}
+
+.c6 {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: 200px;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c7 {
+  background-color: inherit;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7:hover,
+.c7:focus {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.c3:hover {
+  cursor: default;
+}
+
+.c3 svg {
+  color: #9CA7B4;
+}
+
+.c4 {
+  background-color: #F1F2F2;
+  border: none;
+  font-size: calc(1rem - 2px);
+  width: 100%;
+}
+
+.c4:hover {
+  cursor: default;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #9CA7B4;
+  font-size: 0.875rem;
+}
+
+.c4::-moz-placeholder {
+  color: #9CA7B4;
+  font-size: 0.875rem;
+}
+
+.c4:-ms-input-placeholder {
+  color: #9CA7B4;
+  font-size: 0.875rem;
+}
+
+.c4::placeholder {
+  color: #9CA7B4;
+  font-size: 0.875rem;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c5 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c5 ul {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+<div
+  className="c0 c1"
+>
+  <label
+    className="c2"
+  >
+    Select an option
+  </label>
+  <div
+    className="c3"
+    disabled={true}
+  >
+    <input
+      className="c4"
+      disabled={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Select an option"
+      required={true}
+      type="text"
+      value=""
+    />
+    <svg
+      color="currentColor"
+      height="24"
+      width="24"
+    />
+  </div>
+  <div
+    className="c5"
+    open={false}
+  >
+    <ul
+      className="c6"
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        aria-label="-"
+        aria-selected={false}
+        className="c7"
+        id=""
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        -
+      </li>
+      <li
+        aria-label="Ontario"
+        aria-selected={false}
+        className="c7"
+        id="on"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Ontario
+      </li>
+      <li
+        aria-label="Quebec"
+        aria-selected={false}
+        className="c7"
+        id="qc"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Quebec
+      </li>
+      <li
+        aria-label="British Columbia"
+        aria-selected={false}
+        className="c7"
+        id="bc"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        British Columbia
+      </li>
+      <li
+        aria-label="Alberta"
+        aria-selected={false}
+        className="c7"
+        id="ab"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Alberta
+      </li>
+      <li
+        aria-label="Manitoba"
+        aria-selected={false}
+        className="c7"
+        id="mb"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Manitoba
+      </li>
+      <li
+        aria-label="Saskatchewan"
+        aria-selected={false}
+        className="c7"
+        id="sk"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Saskatchewan
+      </li>
+      <li
+        aria-label="Nova Scotia"
+        aria-selected={false}
+        className="c7"
+        id="ns"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Nova Scotia
+      </li>
+      <li
+        aria-label="New Brunswick"
+        aria-selected={false}
+        className="c7"
+        id="nb"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        New Brunswick
+      </li>
+      <li
+        aria-label="Newfoundland and Labrador"
+        aria-selected={false}
+        className="c7"
+        id="nl"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Newfoundland and Labrador
+      </li>
+      <li
+        aria-label="Prince Edward Island"
+        aria-selected={false}
+        className="c7"
+        id="pe"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Prince Edward Island
+      </li>
+      <li
+        aria-label="Northwest Territories"
+        aria-selected={false}
+        className="c7"
+        id="nt"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Northwest Territories
+      </li>
+      <li
+        aria-label="Nunavut"
+        aria-selected={false}
+        className="c7"
+        id="nu"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Nunavut
+      </li>
+      <li
+        aria-label="Yukon"
+        aria-selected={false}
+        className="c7"
+        id="yt"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Yukon
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Dropdown Is invalid 1`] = `
 Array [
   .c8 {
@@ -870,142 +1528,4 @@ input[type="radio"]:disabled + .c0 {
     Skip this question
   </label>,
 ]
-`;
-
-exports[`Theme Wrapper Returns component with default theme 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.25rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 700;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: normal;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: #FF847C;
-  border-color: #FF847C;
-}
-
-<button
-  className="c0"
-  onClick={[Function]}
->
-  
-</button>
-`;
-
-exports[`Theme Wrapper Returns component with test theme 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.25rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 700;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: normal;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #B3974B;
-  border-color: #B3974B;
-  color: #FFFFFF;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #FFD86B;
-  border-color: #FFD86B;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: #736130;
-  border-color: #736130;
-}
-
-<button
-  className="c0"
-  onClick={[Function]}
->
-  
-</button>
 `;
