@@ -83,6 +83,7 @@ const ListWrapper = styled.div`
 `;
 
 interface DropdownProps {
+    defaultValue?: string;
     disabled?: boolean;
     label?: string;
     options: Option[];
@@ -95,6 +96,7 @@ interface DropdownProps {
 }
 
 export const Dropdown = ({
+    defaultValue,
     disabled,
     label,
     onChange,
@@ -107,12 +109,16 @@ export const Dropdown = ({
 }: DropdownProps) => {
     const [focus, setFocus] = useState(false);
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState('');
+    const defaultOption = options.filter(option => option.value === defaultValue);
+    const [value, setValue] = useState(defaultValue && defaultOption.length > 0 ? defaultOption[0].label : '');
     const [searchValue, setSearchValue] = useState('');
-    const [skipSelected, setSkipSelected] = useState(skipOption ? value === skipOption.value : false);
+    const [skipSelected, setSkipSelected] =
+        useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
     const [autoFocus, setAutofocus] = useState(false);
+
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
+
     const id = uuid();
     const ListOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
 
@@ -134,8 +140,8 @@ export const Dropdown = ({
                 inputRef.current && inputRef.current.focus();
             }
         } else {
-            const testValue = options.filter(option => option.label === value);
-            if (testValue.length <= 0) setValue('');
+            const checkValue = options.filter(option => option.label === value);
+            checkValue.length <= 0 && setValue('');
             inputRef.current && inputRef.current.blur();
             setFocus(false);
             setSearchValue('');
@@ -148,8 +154,8 @@ export const Dropdown = ({
         setFocus(false);
         setSearchValue('');
         setSkipSelected(false);
-        if (onChange) onChange(option);
-        if (searchable) setAutofocus(false);
+        onChange && onChange(option);
+        searchable && setAutofocus(false);
     };
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -171,7 +177,7 @@ export const Dropdown = ({
         if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
             if (open) {
                 const testValue = options.filter(option => option.label === value);
-                if (testValue.length <= 0) setValue('');
+                testValue.length <= 0 && setValue('');
                 inputRef.current && inputRef.current.blur();
                 setFocus(false);
                 setOpen(false);
@@ -220,6 +226,7 @@ export const Dropdown = ({
                         autofocus={searchable ? autoFocus : open}
                         numberOfItemsVisible={numberOfItemsVisible ? numberOfItemsVisible : undefined}
                         checkIndicator
+                        defaultValue={defaultValue}
                         options={searchable ? ListOptions : options}
                         onChange={handleChange}
                     />

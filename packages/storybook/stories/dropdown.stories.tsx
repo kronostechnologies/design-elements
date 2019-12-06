@@ -7,23 +7,20 @@ const Container = styled.div`
     height: 200px;
 `;
 
-const options = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-    },
-    {
-        label: 'Option C',
-        value: 'optionC',
-    },
-    {
-        label: 'Option D',
-        value: 'optionD',
-    },
+const provinces = [
+    {  value: 'on', label: 'Ontario' },
+    {  value: 'qc', label: 'Quebec' },
+    {  value: 'bc', label: 'British Columbia' },
+    {  value: 'ab', label: 'Alberta' },
+    {  value: 'mb', label: 'Manitoba' },
+    {  value: 'sk', label: 'Saskatchewan' },
+    {  value: 'ns', label: 'Nova Scotia' },
+    {  value: 'nb', label: 'New Brunswick' },
+    {  value: 'nl', label: 'Newfoundland and Labrador' },
+    {  value: 'pe', label: 'Prince Edward Island' },
+    {  value: 'nt', label: 'Northwest Territories' },
+    {  value: 'nu', label: 'Nunavut' },
+    {  value: 'yt', label: 'Yukon' },
 ];
 
 const skipOption = {
@@ -38,33 +35,36 @@ export default {
 };
 
 export const normal = () => (
-    <Dropdown label="Select an option" options={options}/>
+    <Dropdown label="Select an option" options={provinces}/>
 );
 
 export const disabled = () => (
-    <Dropdown label="Select an option" options={options} disabled/>
+    <Dropdown label="Select an option" options={provinces} disabled/>
 );
 export const invalid = () => (
-    <Dropdown label="Select an option" options={options} valid={false}/>
+    <Dropdown label="Select an option" options={provinces} valid={false}/>
 );
 export const required = () => (
     <form onSubmit={event => event.preventDefault()}>
-        <Dropdown label="Select an option" options={options}/>
+        <Dropdown label="Select an option" options={provinces}/>
         <button type="submit">Submit</button>
     </form>
 );
 export const withTwoItemsVisible = () => (
-    <Dropdown label="Select an option" options={options} numberOfItemsVisible={2}/>
+    <Dropdown label="Select an option" options={provinces} numberOfItemsVisible={2}/>
 );
 export const searchable = () => (
-    <Dropdown label="Select an option" options={options} searchable/>
+    <Dropdown label="Select an option" options={provinces} searchable/>
 );
 export const withCallback = () => (
-    <Dropdown label="Select an option" options={options} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
+    <Dropdown label="Select an option" options={provinces} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
 );
 export const withoutLabel = () => (
-    <Dropdown options={options}/>
+    <Dropdown options={provinces}/>
 );
 export const withSkip = () => (
-    <Dropdown label="Select an option" options={options} skipOption={skipOption} searchable/>
+    <Dropdown label="Select an option" options={provinces} skipOption={skipOption} searchable/>
+);
+export const withDefaultValue = () => (
+    <Dropdown label="Select an option" options={provinces} defaultValue="qc"/>
 );

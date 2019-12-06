@@ -106,12 +106,17 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> Renames Dropdown to Select
 <<<<<<< HEAD
 =======
 >>>>>>> Adds CSS variables
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> Adds defaultValue prop
 .c2 {
   color: #000000;
   display: block;
@@ -130,6 +135,7 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Adds defaultValue prop
 <<<<<<< HEAD
@@ -145,6 +151,11 @@ input + .c2 {
 >>>>>>> Adds CSS variables
 =======
 >>>>>>> Updates mobile styles
+=======
+=======
+>>>>>>> Adds defaultValue prop
+>>>>>>> Adds defaultValue prop
+>>>>>>> Adds defaultValue prop
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

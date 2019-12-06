@@ -1,8 +1,8 @@
 import { mount, ReactWrapper, shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { findByTestId } from '../../test-utils/enzyme-selectors';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
+import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Dropdown } from './dropdown';
 jest.mock('uuid/v4');
 
@@ -43,7 +43,7 @@ describe('Dropdown', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Matches the snapshot', () => {
+    test('matches the snapshot', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <Dropdown
@@ -57,7 +57,7 @@ describe('Dropdown', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Is invalid', () => {
+    test('is invalid', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <Dropdown
@@ -70,6 +70,46 @@ describe('Dropdown', () => {
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('is disabled', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <Dropdown
+                    label="Select an option"
+                    options={provinces}
+                    disabled
+                />,
+            ),
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has no label', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <Dropdown
+                    options={provinces}
+                />,
+            ),
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('should select skip option when defaultValue is skip value', () => {
+        const wrapper = shallow(<Dropdown options={[]} skipOption={skipOption} defaultValue={skipOption.value} />);
+
+        const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
+        expect(skipOptionWrapper.props().checked).toBe(true);
+    });
+
+    test('should not select skip option when defaultValue is different than skip value', () => {
+        const wrapper = shallow(<Dropdown options={[]} skipOption={skipOption} defaultValue="not skip value" />);
+
+        const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
+        expect(skipOptionWrapper.props().checked).toBe(false);
     });
 
     test('should not display skip option when no skipOption is provided', () => {
