@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown Has no label 1`] = `
+exports[`Dropdown has no label 1`] = `
 .c0 {
   margin: 0 0 1.5rem;
 }
@@ -318,7 +318,7 @@ exports[`Dropdown Has no label 1`] = `
 </div>
 `;
 
-exports[`Dropdown Is disabled 1`] = `
+exports[`Dropdown is disabled 1`] = `
 .c2 {
   color: #000000;
   font-size: 0.75rem;
@@ -658,7 +658,7 @@ input + .c2 {
 </div>
 `;
 
-exports[`Dropdown Is invalid 1`] = `
+exports[`Dropdown is invalid 1`] = `
 Array [
   .c8 {
   color: #A40C2E;
@@ -1104,7 +1104,7 @@ input[type="radio"]:disabled + .c0 {
 ]
 `;
 
-exports[`Dropdown Matches the snapshot 1`] = `
+exports[`Dropdown matches the snapshot 1`] = `
 Array [
   .c2 {
   color: #000000;
