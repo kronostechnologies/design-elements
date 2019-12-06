@@ -105,7 +105,7 @@ export function List({
 
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedOptionId, setSelectedOptionId] = useState(
-        defaultValue ? `${defaultValue}-${defaultSelectedIndex}` : undefined,
+        defaultValue ? `${defaultValue}` : undefined,
     );
 
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
