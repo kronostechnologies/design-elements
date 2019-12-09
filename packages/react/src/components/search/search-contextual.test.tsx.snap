@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search Contextual Matches the snapshot when disabled 1`] = `
+.c4 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -19,17 +30,6 @@ exports[`Search Contextual Matches the snapshot when disabled 1`] = `
 
 input + .c2 {
   margin-left: var(--spacing-half);
-}
-
-.c4 {
-  border: 0 !important;
-  -webkit-clip: rect(1px,1px,1px,1px);
-  clip: rect(1px,1px,1px,1px);
-  height: 1px !important;
-  overflow: hidden;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
 }
 
 .c0 {
@@ -225,6 +225,17 @@ input:valid + .c6 {
 `;
 
 exports[`Search Contextual Matches the snapshot when enabled 1`] = `
+.c4 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
 .c2 {
   color: #000000;
   display: block;
@@ -243,17 +254,6 @@ exports[`Search Contextual Matches the snapshot when enabled 1`] = `
 
 input + .c2 {
   margin-left: var(--spacing-half);
-}
-
-.c4 {
-  border: 0 !important;
-  -webkit-clip: rect(1px,1px,1px,1px);
-  clip: rect(1px,1px,1px,1px);
-  height: 1px !important;
-  overflow: hidden;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
 }
 
 .c0 {

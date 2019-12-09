@@ -1,97 +1,243 @@
-import React, { ChangeEvent, ReactElement, useRef, useState } from 'react';
-
+import React, { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
+import uuid from 'uuid';
+
 import { ChooseInput } from '../choose-input/choose-input';
 import { FieldContainer } from '../field-container/field-container';
-import { inputsStyle } from '../text-input/styles/inputs';
+import { Icon } from '../icon/icon';
+import { List } from '../list/list';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
-const StyledSelect = styled.select`
-    ${props => inputsStyle(props.theme)}; /* Must be the first rule */
-    appearance: none; /* stylelint-disable-line order/properties-alphabetical-order */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-position: right 0.75rem center;
-    background-repeat: no-repeat;
-    background-size: 0.75rem;
+interface Option {
+    label: string;
+    value: string;
+}
+
+interface InputProps {
+    searchable?: boolean;
+    disabled?: boolean;
+    theme: Theme;
+}
+
+interface InputWrapperProps extends InputProps {
+    focus?: boolean;
+    valid: boolean;
+}
+
+const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
-interface SelectProps {
-    options: { label: string; value?: string }[];
-    label?: string;
-    required?: boolean;
-    /** Optional parameter to allow user to skip question */
-    skipOption?: { label: string; value?: string };
-    /**
-     * Message displayed in case of validation error
-     * @default You must select an option
-     **/
-    validationErrorMessage?: string;
-    name?: string;
-    /** Only use to control input value externally */
-    value?: string;
+const InputWrapper = styled.div<InputWrapperProps>`
+    align-items: center;
+    background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+    border: 1px solid ${props => props.valid ? props.focus ? props.theme.main['primary-1.1'] : props.theme.greys.grey : props.theme.notifications['error-2.1']};
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 32px;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0.5rem;
+    width: 100%;
 
-    onChange?(event: ChangeEvent<HTMLSelectElement | HTMLInputElement>): void;
+    &:hover {
+        cursor: ${props => props.disabled ? 'default' : 'pointer'};
+    }
+
+    svg {
+        color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
+    }
+`;
+
+const StyledInput = styled.input<InputProps>`
+    background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+    border: none;
+    font-size: calc(1rem - 2px);
+    letter-spacing: 0.4px;
+    width: 100%;
+
+    &:hover {
+        cursor: ${props => props.disabled ? 'default' : props.searchable ? 'text' : 'pointer'};
+    }
+
+    &::placeholder {
+        color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
+        font-size: 0.875rem;
+    }
+
+    &:focus {
+        outline: none;
+    }
+`;
+
+const ListWrapper = styled.div`
+    display: ${(props: {open?: boolean}) => props.open ? 'flex' : 'none'};
+    position: absolute;
+    width: 100%;
+
+    ul {
+        border-radius: 0.25rem;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        outline: none;
+    }
+`;
+
+interface SelectProps {
+    defaultValue?: string;
+    disabled?: boolean;
+    label?: string;
+    name?: string;
+    numberOfItemsVisible?: number;
+    options: Option[];
+    placeholder?: string;
+    searchable?: boolean;
+    skipOption?: { label: string; value?: string };
+    valid?: boolean;
+    validationErrorMessage?: string;
+    onChange?(option: Option): void;
 }
 
-export function Select({ onChange, options, skipOption, value, ...props }: SelectProps): ReactElement {
-    const [{ valid }, setValid] = useState({ valid: true });
+export const Select = ({
+    defaultValue,
+    disabled,
+    label,
+    onChange,
+    options,
+    name,
+    numberOfItemsVisible,
+    placeholder = 'Select an option',
+    searchable,
+    skipOption,
+    valid = true,
+    validationErrorMessage = 'You must select an option',
+}: SelectProps) => {
+    const [focus, setFocus] = useState(false);
+    const [open, setOpen] = useState(false);
+    const defaultOption = options.filter(option => option.value === defaultValue);
+    const [value, setValue] = useState(defaultValue && defaultOption.length > 0 ? defaultOption[0].label : '');
+    const [searchValue, setSearchValue] = useState('');
+    const [skipSelected, setSkipSelected] =
+        useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
+    const [autoFocus, setAutofocus] = useState(false);
+
+    const inputRef = useRef<HTMLInputElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
     const id = uuid();
+    const ListOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
 
-    const selectRef = useRef<HTMLSelectElement | null>(null);
-    const [skipSelected, setSkipSelected] = useState(skipOption ? value === skipOption.value : false);
+    useEffect(() => {
+        // @ts-ignore
+        document.addEventListener('mouseup', handleClickOutside);
 
-    const selectOptions = options.map((option, i) => {
-        const key = `${option.value}-${i}`;
-        return <option key={key} value={option.value}>{option.label}</option>;
+        return () => {
+            // @ts-ignore
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
     });
 
-    function handleSelectChange(event: ChangeEvent<HTMLSelectElement>): void {
+    const handleClick = () => {
+        setOpen(!open);
+        if (!open) {
+            setFocus(true);
+            if (searchable) {
+                inputRef.current && inputRef.current.focus();
+            }
+        } else {
+            const checkValue = options.filter(option => option.label === value);
+            checkValue.length <= 0 && setValue('');
+            inputRef.current && inputRef.current.blur();
+            setFocus(false);
+            setSearchValue('');
+        }
+    };
+
+    const handleChange = (option: Option): void => {
+        setValue(option.label);
+        setOpen(false);
+        setFocus(false);
+        setSearchValue('');
         setSkipSelected(false);
-        setValid({ valid: event.target.checkValidity() });
+        onChange && onChange(option);
+        searchable && setAutofocus(false);
+    };
 
-        if (onChange) {
-            onChange(event);
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+        setSearchValue(event.target.value);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (!searchable) event.preventDefault();
+        if (event.keyCode === 40 || event.keyCode === 38) {
+            setAutofocus(!autoFocus);
         }
-    }
+        if (event.keyCode === 9 || event.keyCode === 13) {
+            handleClick();
+        }
+    };
 
-    function handleSkipChange(event: ChangeEvent<HTMLInputElement>): void {
-        const selectElement = selectRef.current;
-        if (selectElement) {
-            const checked = !skipSelected;
-            if (checked) {
-                selectElement.value = '';
-                setValid({ valid: true });
-            }
-
-            setSkipSelected(checked);
-            if (onChange) {
-                onChange(event);
+    const handleClickOutside = (event: MouseEvent): void => {
+        if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+            if (open) {
+                const testValue = options.filter(option => option.label === value);
+                testValue.length <= 0 && setValue('');
+                inputRef.current && inputRef.current.blur();
+                setFocus(false);
+                setOpen(false);
+                setSearchValue('');
             }
         }
-    }
+    };
 
-    const { label, name, required, validationErrorMessage } = props;
+    const handleSkipChange = () => {
+        if (!skipSelected) {
+            setSkipSelected(true);
+            setValue('');
+        }
+    };
 
     return (
         <>
-            <FieldContainer
+            <StyledFieldContainer
                 fieldId={id}
                 label={label}
                 valid={valid}
-                validationErrorMessage={validationErrorMessage || 'You must select an option'}
+                validationErrorMessage={validationErrorMessage}
             >
-                <StyledSelect
-                    id={id}
-                    onChange={handleSelectChange}
-                    name={name}
-                    required={required}
-                    ref={selectRef}
-                    value={value}
+                <InputWrapper
+                    disabled={disabled}
+                    focus={focus}
+                    onClick={disabled ? undefined : handleClick}
+                    ref={wrapperRef}
+                    valid={valid}
                 >
-                    {selectOptions}
-                </StyledSelect>
-            </FieldContainer>
+                    <StyledInput
+                        disabled={disabled}
+                        ref={inputRef}
+                        type="text"
+                        value={value}
+                        name={name}
+                        onChange={handleInputChange}
+                        onKeyDown={handleKeyDown}
+                        placeholder={placeholder}
+                        required={true}
+                        searchable={searchable}
+                    />
+                    <Icon name={open ? 'chevronUp' : 'chevronDown'}/>
+                </InputWrapper>
+                <ListWrapper open={open}>
+                    <List
+                        autofocus={searchable ? autoFocus : open}
+                        numberOfItemsVisible={numberOfItemsVisible ? numberOfItemsVisible : undefined}
+                        checkIndicator
+                        defaultValue={defaultValue}
+                        options={searchable ? ListOptions : options}
+                        onChange={handleChange}
+                    />
+                </ListWrapper>
+            </StyledFieldContainer>
             {skipOption && (
                 <ChooseInput
                     groupName={`${id}_skip`}
@@ -106,4 +252,4 @@ export function Select({ onChange, options, skipOption, value, ...props }: Selec
             )}
         </>
     );
-}
+};

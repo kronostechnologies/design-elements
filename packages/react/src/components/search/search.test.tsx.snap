@@ -100,7 +100,10 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Renames Dropdown to Select
 <<<<<<< HEAD
 .c2 {
   color: #000000;
@@ -112,16 +115,36 @@ input + .c2 {
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
+=======
+.c2 {
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+>>>>>>> Renames Dropdown to Select
   margin: 0;
 }
 
 input + .c2 {
+<<<<<<< HEAD
   margin-left: var(--spacing-half);
 }
 
 =======
 >>>>>>> Adds defaultValue prop
+<<<<<<< HEAD
 >>>>>>> Adds defaultValue prop
+=======
+=======
+  margin-left: 0.5rem;
+}
+
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
