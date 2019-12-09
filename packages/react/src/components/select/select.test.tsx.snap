@@ -146,6 +146,7 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
+<<<<<<< HEAD
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -167,6 +168,36 @@ input + .c2 {
 .c6 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+=======
+.c4::placeholder {
+  color: #9CA7B4;
+  font-size: 0.875rem;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+<<<<<<< HEAD
+label + .c2 {
+  display: block;
+  margin-top: var(--spacing-half);
+<<<<<<< HEAD
+=======
+=======
+.c5 {
+  display: none;
+  position: absolute;
+>>>>>>> Renames Dropdown to Select
+  width: 100%;
+>>>>>>> Renames Dropdown to Select
+}
+
+.c5 ul {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+>>>>>>> Renames Dropdown to Select
 }
 
 <div
@@ -178,6 +209,7 @@ input + .c2 {
     Select an option
   </label>
   <div
+<<<<<<< HEAD
     aria-expanded={false}
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
@@ -230,6 +262,54 @@ input + .c2 {
         aria-selected={false}
         className="c8"
         id="undefined_on"
+=======
+    className="c3"
+    disabled={true}
+  >
+    <input
+      className="c4"
+      disabled={true}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Select an option"
+      required={true}
+      type="text"
+      value=""
+    />
+    <svg
+      color="currentColor"
+      height="24"
+      width="24"
+    />
+  </div>
+  <div
+    className="c5"
+    open={false}
+  >
+    <ul
+      className="c6"
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        aria-label="-"
+        aria-selected={false}
+        className="c7"
+        id=""
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        -
+      </li>
+      <li
+        aria-label="Ontario"
+        aria-selected={false}
+        className="c7"
+        id="on"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -239,8 +319,13 @@ input + .c2 {
       <li
         aria-label="Quebec"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_qc"
+=======
+        className="c7"
+        id="qc"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -250,8 +335,13 @@ input + .c2 {
       <li
         aria-label="British Columbia"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_bc"
+=======
+        className="c7"
+        id="bc"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -261,8 +351,13 @@ input + .c2 {
       <li
         aria-label="Alberta"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_ab"
+=======
+        className="c7"
+        id="ab"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -272,8 +367,13 @@ input + .c2 {
       <li
         aria-label="Manitoba"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_mb"
+=======
+        className="c7"
+        id="mb"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -283,8 +383,13 @@ input + .c2 {
       <li
         aria-label="Saskatchewan"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_sk"
+=======
+        className="c7"
+        id="sk"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -294,8 +399,13 @@ input + .c2 {
       <li
         aria-label="Nova Scotia"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_ns"
+=======
+        className="c7"
+        id="ns"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -305,8 +415,13 @@ input + .c2 {
       <li
         aria-label="New Brunswick"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_nb"
+=======
+        className="c7"
+        id="nb"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -316,8 +431,13 @@ input + .c2 {
       <li
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_nl"
+=======
+        className="c7"
+        id="nl"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -327,8 +447,13 @@ input + .c2 {
       <li
         aria-label="Prince Edward Island"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_pe"
+=======
+        className="c7"
+        id="pe"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -338,8 +463,13 @@ input + .c2 {
       <li
         aria-label="Northwest Territories"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_nt"
+=======
+        className="c7"
+        id="nt"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -349,8 +479,13 @@ input + .c2 {
       <li
         aria-label="Nunavut"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_nu"
+=======
+        className="c7"
+        id="nu"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -360,8 +495,13 @@ input + .c2 {
       <li
         aria-label="Yukon"
         aria-selected={false}
+<<<<<<< HEAD
         className="c8"
         id="undefined_yt"
+=======
+        className="c7"
+        id="yt"
+>>>>>>> Renames Dropdown to Select
         onClick={[Function]}
         role="option"
         selected={false}
@@ -373,6 +513,7 @@ input + .c2 {
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`Select invalid select has a different style 1`] = `
 Array [
   .c9 {
@@ -397,15 +538,48 @@ Array [
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
+=======
+exports[`Select is invalid 1`] = `
+Array [
+  .c2 {
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+>>>>>>> Renames Dropdown to Select
   margin: 0;
 }
 
 input + .c2 {
+<<<<<<< HEAD
   margin-left: var(--spacing-half);
 }
 
 .c0 {
   margin: 0 0 var(--spacing-3x);
+=======
+  margin-left: 0.5rem;
+}
+
+.c8 {
+  color: #A40C2E;
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.0166em;
+  -moz-letter-spacing: 0.0166em;
+  -ms-letter-spacing: 0.0166em;
+  letter-spacing: 0.0166em;
+  line-height: 1.1666;
+  margin: 0.25rem 0 0;
+}
+
+.c0 {
+  margin: 0 0 1.5rem;
+>>>>>>> Renames Dropdown to Select
 }
 
 .c0 input,
@@ -418,8 +592,13 @@ input + .c2 {
   border-color: #A40C2E;
 }
 
+<<<<<<< HEAD
 .c7 {
   background-color: #FFFFFF;
+=======
+.c6 {
+  background-color: #fff;
+>>>>>>> Renames Dropdown to Select
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -429,6 +608,7 @@ input + .c2 {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -441,18 +621,34 @@ input + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+=======
+.c7 {
+  background-color: inherit;
+  color: #000;
+  cursor: pointer;
+>>>>>>> Renames Dropdown to Select
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
+<<<<<<< HEAD
   padding: 0 34px;
+=======
+  padding: 0 28px;
+>>>>>>> Renames Dropdown to Select
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+<<<<<<< HEAD
 .c8:hover,
 .c8:focus {
   background-color: #D9DDE2;
+=======
+.c7:hover,
+.c7:focus {
+  background-color: #d9dde2;
+>>>>>>> Renames Dropdown to Select
 }
 
 .c1 {
@@ -1066,7 +1262,11 @@ input + .c2 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #A40C2E;
+<<<<<<< HEAD
   border-radius: var(--border-radius);
+=======
+  border-radius: 0.25rem;
+>>>>>>> Renames Dropdown to Select
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1077,9 +1277,14 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+<<<<<<< HEAD
   margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
+=======
+  margin-top: 8px;
+  padding: 0.5rem;
+>>>>>>> Renames Dropdown to Select
   width: 100%;
 }
 
@@ -1094,17 +1299,24 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
+<<<<<<< HEAD
   border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: 0.875rem;
+=======
+  font-size: calc(1rem - 2px);
+>>>>>>> Renames Dropdown to Select
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
+<<<<<<< HEAD
   max-height: 100%;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+=======
+>>>>>>> Renames Dropdown to Select
   width: 100%;
 }
 
@@ -1132,6 +1344,7 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
+<<<<<<< HEAD
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1145,14 +1358,28 @@ input + .c2 {
 }
 
 .c6 {
+=======
+.c4:focus {
+  outline: none;
+}
+
+.c5 {
+>>>>>>> Renames Dropdown to Select
   display: none;
   position: absolute;
   width: 100%;
 }
 
+<<<<<<< HEAD
 .c6 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+=======
+.c5 ul {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+>>>>>>> Renames Dropdown to Select
 }
 
 <div
@@ -1164,6 +1391,7 @@ input + .c2 {
       Select an option
     </label>
     <div
+<<<<<<< HEAD
       aria-expanded={false}
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
@@ -1206,16 +1434,60 @@ input + .c2 {
     >
       <ul
         className="c7"
+=======
+      className="c3"
+      onClick={[Function]}
+    >
+      <input
+        className="c4"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select an option"
+        required={true}
+        type="text"
+        value=""
+      />
+      <svg
+        color="currentColor"
+        height="24"
+        width="24"
+      />
+    </div>
+    <div
+      className="c5"
+      open={false}
+    >
+      <ul
+        className="c6"
+>>>>>>> Renames Dropdown to Select
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         role="listbox"
         tabIndex={0}
       >
         <li
+<<<<<<< HEAD
           aria-label="Ontario"
           aria-selected={false}
           className="c8"
           id="undefined_on"
+=======
+          aria-label="-"
+          aria-selected={false}
+          className="c7"
+          id=""
+          onClick={[Function]}
+          role="option"
+          selected={false}
+        >
+          -
+        </li>
+        <li
+          aria-label="Ontario"
+          aria-selected={false}
+          className="c7"
+          id="on"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1225,8 +1497,13 @@ input + .c2 {
         <li
           aria-label="Quebec"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_qc"
+=======
+          className="c7"
+          id="qc"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1236,8 +1513,13 @@ input + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_bc"
+=======
+          className="c7"
+          id="bc"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1247,8 +1529,13 @@ input + .c2 {
         <li
           aria-label="Alberta"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_ab"
+=======
+          className="c7"
+          id="ab"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1258,8 +1545,13 @@ input + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_mb"
+=======
+          className="c7"
+          id="mb"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1269,8 +1561,13 @@ input + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_sk"
+=======
+          className="c7"
+          id="sk"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1280,8 +1577,13 @@ input + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_ns"
+=======
+          className="c7"
+          id="ns"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1291,8 +1593,13 @@ input + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nb"
+=======
+          className="c7"
+          id="nb"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1302,8 +1609,13 @@ input + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nl"
+=======
+          className="c7"
+          id="nl"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1313,8 +1625,13 @@ input + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_pe"
+=======
+          className="c7"
+          id="pe"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1324,8 +1641,13 @@ input + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nt"
+=======
+          className="c7"
+          id="nt"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1335,8 +1657,13 @@ input + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nu"
+=======
+          className="c7"
+          id="nu"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1346,8 +1673,13 @@ input + .c2 {
         <li
           aria-label="Yukon"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_yt"
+=======
+          className="c7"
+          id="yt"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1358,7 +1690,11 @@ input + .c2 {
     </div>
     <div
       aria-live="polite"
+<<<<<<< HEAD
       className="c9"
+=======
+      className="c8"
+>>>>>>> Renames Dropdown to Select
       id="undefined_invalid"
       role="alert"
     >
@@ -1480,8 +1816,17 @@ Array [
   width: fit-content;
 }
 
+<<<<<<< HEAD
 input + .c2 {
+=======
+<<<<<<< HEAD
+input + .c1 {
+>>>>>>> Renames Dropdown to Select
   margin-left: var(--spacing-half);
+=======
+input + .c2 {
+  margin-left: 0.5rem;
+>>>>>>> Renames Dropdown to Select
 }
 
 .c0 {
@@ -1498,8 +1843,17 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+<<<<<<< HEAD
 .c6 {
+=======
+<<<<<<< HEAD
+.c7 {
+>>>>>>> Renames Dropdown to Select
   background-color: #FFFFFF;
+=======
+.c6 {
+  background-color: #fff;
+>>>>>>> Renames Dropdown to Select
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -1509,12 +1863,51 @@ input + .c2 {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .c7 {
+=======
+<<<<<<< HEAD
+.c8 {
+=======
+.c7 {
+  background-color: inherit;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7:hover,
+.c7:focus {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
   background-color: inherit;
+=======
+  background-color: #FFFFFF;
+  border: 1px solid #D9DDE2;
+<<<<<<< HEAD
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  box-sizing: border-box;
+>>>>>>> Renames Dropdown to Select
   color: #000000;
   cursor: pointer;
   display: -webkit-box;
@@ -1561,6 +1954,33 @@ input + .c2 {
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
+<<<<<<< HEAD
+=======
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 0.75rem;
+  position: relative;
+=======
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0.5rem;
+  width: 100%;
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
 }
 
 .c3:hover {
@@ -1574,17 +1994,24 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
+<<<<<<< HEAD
   border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: 0.875rem;
+=======
+  font-size: calc(1rem - 2px);
+>>>>>>> Renames Dropdown to Select
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
+<<<<<<< HEAD
   max-height: 100%;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+=======
+>>>>>>> Renames Dropdown to Select
   width: 100%;
 }
 
@@ -1613,6 +2040,7 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c4:focus {
   outline: none;
 }
@@ -1625,15 +2053,58 @@ input + .c2 {
 =======
 >>>>>>> Adds more keyboard functionalities
 .c5 {
+=======
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+=======
+.c4:focus {
+  outline: none;
+}
+
+.c5 {
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
   display: none;
   position: absolute;
   width: 100%;
 >>>>>>> Renames Dropdown to Select
 }
 
+<<<<<<< HEAD
 .c5 ul {
+=======
+<<<<<<< HEAD
+.c6 ul {
+>>>>>>> Renames Dropdown to Select
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+=======
+<<<<<<< HEAD
+label + .c2 {
+  display: block;
+  margin-top: var(--spacing-half);
+<<<<<<< HEAD
+=======
+  width: 100%;
+=======
+.c5 ul {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
 }
 
 <div
@@ -1645,6 +2116,7 @@ input + .c2 {
       Select an option
     </label>
     <div
+<<<<<<< HEAD
       aria-expanded={false}
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
@@ -1695,6 +2167,53 @@ input + .c2 {
           aria-selected={false}
           className="c8"
           id="undefined_on"
+=======
+      className="c3"
+      onClick={[Function]}
+    >
+      <input
+        className="c4"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select an option"
+        required={true}
+        type="text"
+        value=""
+      />
+      <svg
+        color="currentColor"
+        height="24"
+        width="24"
+      />
+    </div>
+    <div
+      className="c5"
+      open={false}
+    >
+      <ul
+        className="c6"
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        role="listbox"
+        tabIndex={0}
+      >
+        <li
+          aria-label="-"
+          aria-selected={false}
+          className="c7"
+          id=""
+          onClick={[Function]}
+          role="option"
+          selected={false}
+        >
+          -
+        </li>
+        <li
+          aria-label="Ontario"
+          aria-selected={false}
+          className="c7"
+          id="on"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1704,8 +2223,13 @@ input + .c2 {
         <li
           aria-label="Quebec"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_qc"
+=======
+          className="c7"
+          id="qc"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1715,8 +2239,13 @@ input + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_bc"
+=======
+          className="c7"
+          id="bc"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1726,8 +2255,13 @@ input + .c2 {
         <li
           aria-label="Alberta"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_ab"
+=======
+          className="c7"
+          id="ab"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1737,8 +2271,13 @@ input + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_mb"
+=======
+          className="c7"
+          id="mb"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1748,8 +2287,13 @@ input + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_sk"
+=======
+          className="c7"
+          id="sk"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1759,8 +2303,13 @@ input + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_ns"
+=======
+          className="c7"
+          id="ns"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1770,8 +2319,13 @@ input + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nb"
+=======
+          className="c7"
+          id="nb"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1781,8 +2335,13 @@ input + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nl"
+=======
+          className="c7"
+          id="nl"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1792,8 +2351,13 @@ input + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_pe"
+=======
+          className="c7"
+          id="pe"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1803,8 +2367,13 @@ input + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nt"
+=======
+          className="c7"
+          id="nt"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1814,8 +2383,13 @@ input + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_nu"
+=======
+          className="c7"
+          id="nu"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1825,8 +2399,13 @@ input + .c2 {
         <li
           aria-label="Yukon"
           aria-selected={false}
+<<<<<<< HEAD
           className="c8"
           id="undefined_yt"
+=======
+          className="c7"
+          id="yt"
+>>>>>>> Renames Dropdown to Select
           onClick={[Function]}
           role="option"
           selected={false}

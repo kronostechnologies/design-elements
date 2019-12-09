@@ -6,10 +6,13 @@ exports[`Field Container Invalid field snapshot 1`] = `
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Updates mobile styles
 =======
 >>>>>>> Adds defaultValue prop
+=======
+>>>>>>> Renames Dropdown to Select
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -38,7 +41,13 @@ exports[`Field Container Invalid field snapshot 1`] = `
 =======
 <<<<<<< HEAD
 >>>>>>> Adds defaultValue prop
+<<<<<<< HEAD
 >>>>>>> Adds defaultValue prop
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
 .c1 {
   color: #000000;
   display: block;
@@ -72,7 +81,14 @@ input + .c1 {
 =======
 .c2 {
   color: #A40C2E;
+<<<<<<< HEAD
 >>>>>>> Adds defaultValue prop
+=======
+=======
+.c1 {
+  color: #000000;
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
   font-size: 0.75rem;
   font-weight: 400;
   -webkit-letter-spacing: 0.0166em;
@@ -82,18 +98,28 @@ input + .c1 {
   line-height: 1.1666;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 0.25rem 0 0;
 >>>>>>> Adds defaultValue prop
 =======
   margin: 0;
 >>>>>>> Renames Dropdown to Select
 =======
+=======
+>>>>>>> Renames Dropdown to Select
   margin: 0.25rem 0 0;
 >>>>>>> Adds defaultValue prop
+=======
+  margin: 0;
+>>>>>>> Renames Dropdown to Select
 }
 
-.c1 {
-  color: #000000;
+input + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c2 {
+  color: #A40C2E;
   font-size: 0.75rem;
 <<<<<<< HEAD
   font-weight: var(--font-normal);
@@ -110,6 +136,7 @@ input + .c1 {
   -ms-letter-spacing: 0.0166em;
   letter-spacing: 0.0166em;
   line-height: 1.1666;
+<<<<<<< HEAD
   margin: 0;
 >>>>>>> Adds defaultValue prop
 }
@@ -122,7 +149,13 @@ input + .c1 {
 =======
 >>>>>>> Adds defaultValue prop
 >>>>>>> Adds defaultValue prop
+<<<<<<< HEAD
 >>>>>>> Adds defaultValue prop
+=======
+=======
+  margin: 0.25rem 0 0;
+>>>>>>> Renames Dropdown to Select
+>>>>>>> Renames Dropdown to Select
 }
 
 .c0 {
