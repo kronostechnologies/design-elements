@@ -21,6 +21,10 @@ interface ListOption extends Option {
 interface ListProps {
     id?: string;
     /**
+     * Sets list id
+     */
+    ListId?: string;
+    /**
      * { value: string; label?: string; }[]
      */
     options: Option[];

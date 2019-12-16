@@ -344,6 +344,7 @@ export const Select = ({
             if (suggestOption) {
                 setFocusedValue(suggestOption.value);
             }
+            setFocus(false);
         }
     };
 
