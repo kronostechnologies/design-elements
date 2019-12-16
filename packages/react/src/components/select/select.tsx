@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid';
 
@@ -7,11 +7,6 @@ import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { List } from '../list/list';
 import { Theme } from '../theme-wrapper/theme-wrapper';
-
-interface Option {
-    label: string;
-    value: string;
-}
 
 interface InputProps {
     searchable?: boolean;
@@ -31,14 +26,26 @@ const StyledFieldContainer = styled(FieldContainer)`
 const InputWrapper = styled.div<InputWrapperProps>`
     align-items: center;
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-    border: 1px solid ${props => props.valid ? props.focus ? props.theme.main['primary-1.1'] : props.theme.greys.grey : props.theme.notifications['error-2.1']};
+    border:
+        1px solid ${props => {
+            if (props.valid) {
+                if (props.focus) {
+                    return props.theme.main['primary-1.1'];
+                } else {
+                    return props.theme.greys['dark-grey'];
+                }
+            } else {
+                return props.theme.notifications['error-2.1'];
+            }
+        }};
     border-radius: 0.25rem;
     box-sizing: border-box;
     display: flex;
     height: 32px;
     justify-content: space-between;
     margin-top: 8px;
-    padding: 0.5rem;
+    ${props => props.disabled ? `border: 1px solid ${props.theme.greys.grey};` : ''}
+    padding-right: 0.5rem;
     width: 100%;
 
     &:hover {
@@ -53,8 +60,13 @@ const InputWrapper = styled.div<InputWrapperProps>`
 const StyledInput = styled.input<InputProps>`
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
     border: none;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    caret-color: ${props => props.searchable ? 'unset' : 'transparent'};
     font-size: calc(1rem - 2px);
     letter-spacing: 0.4px;
+    max-height: 100%;
+    padding: 0.5rem 0 0.5rem 0.5rem;
     width: 100%;
 
     &:hover {
@@ -83,6 +95,11 @@ const ListWrapper = styled.div`
     }
 `;
 
+interface Option {
+    label: string;
+    value: string;
+}
+
 interface SelectProps {
     defaultValue?: string;
     disabled?: boolean;
@@ -105,7 +122,7 @@ export const Select = ({
     onChange,
     options,
     name,
-    numberOfItemsVisible,
+    numberOfItemsVisible = 4,
     placeholder = 'Select an option',
     searchable,
     skipOption,
@@ -114,8 +131,8 @@ export const Select = ({
 }: SelectProps) => {
     const [focus, setFocus] = useState(false);
     const [open, setOpen] = useState(false);
-    const defaultOption = options.filter(option => option.value === defaultValue);
-    const [value, setValue] = useState(defaultValue && defaultOption.length > 0 ? defaultOption[0].label : '');
+    const defaultOption = options.find(option => option.value === defaultValue);
+    const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
     const [searchValue, setSearchValue] = useState('');
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
@@ -124,37 +141,43 @@ export const Select = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
 
-    const id = uuid();
-    const ListOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
+    const id = useMemo(uuid, []);
+    const filteredOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
 
     useEffect(() => {
-        // @ts-ignore
+        // @ts-ignore: MouseEvent type persisting error
         document.addEventListener('mouseup', handleClickOutside);
 
         return () => {
-            // @ts-ignore
+            // @ts-ignore: MouseEvent type persisting error
             document.removeEventListener('mouseup', handleClickOutside);
         };
-    });
+    }, [open]);
 
-    const handleClick = () => {
-        setOpen(!open);
-        if (!open) {
-            setFocus(true);
-            if (searchable) {
-                inputRef.current && inputRef.current.focus();
-            }
-        } else {
-            const checkValue = options.filter(option => option.label === value);
-            checkValue.length <= 0 && setValue('');
-            inputRef.current && inputRef.current.blur();
-            setFocus(false);
+    const handleClick = (esc: boolean = false) => {
+        const checkSearchValue = options.find(option => option.label === inputValue);
+        if (esc) {
+            !checkSearchValue && setInputValue('');
             setSearchValue('');
+            inputRef.current && inputRef.current.focus();
+            setOpen(false);
+        } else if (!open) {
+            setFocus(true);
+            if (searchable) inputRef.current && inputRef.current.focus();
+            setOpen(!open);
+        } else if (!searchable && open) {
+            checkSearchValue && setSearchValue('');
+            inputRef.current && inputRef.current.focus();
+            setOpen(!open);
+        } else {
+            checkSearchValue && setSearchValue('');
+            inputRef.current && inputRef.current.focus();
+            setOpen(!open);
         }
     };
 
     const handleChange = (option: Option): void => {
-        setValue(option.label);
+        setInputValue(option.label);
         setOpen(false);
         setFocus(false);
         setSearchValue('');
@@ -164,37 +187,37 @@ export const Select = ({
     };
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
+        setInputValue(event.target.value);
         setSearchValue(event.target.value);
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (!searchable) event.preventDefault();
         if (event.keyCode === 40 || event.keyCode === 38) {
-            setAutofocus(!autoFocus);
-        }
-        if (event.keyCode === 9 || event.keyCode === 13) {
+            open && setAutofocus(true);
+        } else if (event.keyCode === 13) {
+            event.preventDefault();
             handleClick();
+        } else if (event.keyCode === 27) {
+            handleClick(true);
         }
     };
 
     const handleClickOutside = (event: MouseEvent): void => {
         if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
             if (open) {
-                const testValue = options.filter(option => option.label === value);
-                testValue.length <= 0 && setValue('');
+                const checkSearchValue = options.find(option => option.label === inputValue);
+                checkSearchValue && setSearchValue('');
                 inputRef.current && inputRef.current.blur();
-                setFocus(false);
-                setOpen(false);
-                setSearchValue('');
+                setOpen(!open);
             }
+            setFocus(false);
         }
     };
 
     const handleSkipChange = () => {
         if (!skipSelected) {
             setSkipSelected(true);
-            setValue('');
+            setInputValue('');
         }
     };
 
@@ -209,7 +232,7 @@ export const Select = ({
                 <InputWrapper
                     disabled={disabled}
                     focus={focus}
-                    onClick={disabled ? undefined : handleClick}
+                    onClick={disabled ? undefined : ()  => handleClick(false)}
                     ref={wrapperRef}
                     valid={valid}
                 >
@@ -217,9 +240,11 @@ export const Select = ({
                         disabled={disabled}
                         ref={inputRef}
                         type="text"
-                        value={value}
+                        value={inputValue}
                         name={name}
+                        onBlur={() => setFocus(false)}
                         onChange={handleInputChange}
+                        onFocus={() => setFocus(true)}
                         onKeyDown={handleKeyDown}
                         placeholder={placeholder}
                         required={true}
@@ -230,11 +255,13 @@ export const Select = ({
                 <ListWrapper open={open}>
                     <List
                         autofocus={searchable ? autoFocus : open}
-                        numberOfItemsVisible={numberOfItemsVisible ? numberOfItemsVisible : undefined}
+                        ListId={id}
+                        numberOfItemsVisible={numberOfItemsVisible}
                         checkIndicator
                         defaultValue={defaultValue}
-                        options={searchable ? ListOptions : options}
+                        options={filteredOptions}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                     />
                 </ListWrapper>
             </StyledFieldContainer>

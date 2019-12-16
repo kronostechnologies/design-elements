@@ -8,7 +8,6 @@ import { Select } from './select';
 jest.mock('uuid/v4');
 
 const provinces = [
-    { value: '', label: '-' },
     { value: 'on', label: 'Ontario' },
     { value: 'qc', label: 'Quebec' },
     { value: 'bc', label: 'British Columbia' },

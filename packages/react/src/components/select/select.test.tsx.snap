@@ -1,5 +1,322 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Select has mobile styles 1`] = `
+.c0 {
+  margin: 0 0 1.5rem;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #D9DDE2;
+}
+
+.c0:focus {
+  border-color: #0080A5;
+}
+
+.c5 {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: 200px;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c6 {
+  background-color: inherit;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6:hover,
+.c6:focus {
+  background-color: #d9dde2;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+
+.c2:hover {
+  cursor: pointer;
+}
+
+.c2 svg {
+  color: #57666E;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  caret-color: transparent;
+  font-size: calc(1rem - 2px);
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  max-height: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  width: 100%;
+}
+
+.c3:hover {
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3::-moz-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3:-ms-input-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3::placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c4 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 ul {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+<div
+  className="c0 c1"
+>
+  <div
+    className="c2"
+    onClick={[Function]}
+  >
+    <input
+      className="c3"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Select an option"
+      type="text"
+      value=""
+    />
+    <svg
+      color="currentColor"
+      height="24"
+      width="24"
+    />
+  </div>
+  <div
+    className="c4"
+    open={false}
+  >
+    <ul
+      className="c5"
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+      <li
+        aria-label="Ontario"
+        aria-selected={false}
+        className="c6"
+        id="on-0"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Ontario
+      </li>
+      <li
+        aria-label="Quebec"
+        aria-selected={false}
+        className="c6"
+        id="qc-1"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Quebec
+      </li>
+      <li
+        aria-label="British Columbia"
+        aria-selected={false}
+        className="c6"
+        id="bc-2"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        British Columbia
+      </li>
+      <li
+        aria-label="Alberta"
+        aria-selected={false}
+        className="c6"
+        id="ab-3"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Alberta
+      </li>
+      <li
+        aria-label="Manitoba"
+        aria-selected={false}
+        className="c6"
+        id="mb-4"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Manitoba
+      </li>
+      <li
+        aria-label="Saskatchewan"
+        aria-selected={false}
+        className="c6"
+        id="sk-5"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Saskatchewan
+      </li>
+      <li
+        aria-label="Nova Scotia"
+        aria-selected={false}
+        className="c6"
+        id="ns-6"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Nova Scotia
+      </li>
+      <li
+        aria-label="New Brunswick"
+        aria-selected={false}
+        className="c6"
+        id="nb-7"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        New Brunswick
+      </li>
+      <li
+        aria-label="Newfoundland and Labrador"
+        aria-selected={false}
+        className="c6"
+        id="nl-8"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Newfoundland and Labrador
+      </li>
+      <li
+        aria-label="Prince Edward Island"
+        aria-selected={false}
+        className="c6"
+        id="pe-9"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Prince Edward Island
+      </li>
+      <li
+        aria-label="Northwest Territories"
+        aria-selected={false}
+        className="c6"
+        id="nt-10"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Northwest Territories
+      </li>
+      <li
+        aria-label="Nunavut"
+        aria-selected={false}
+        className="c6"
+        id="nu-11"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Nunavut
+      </li>
+      <li
+        aria-label="Yukon"
+        aria-selected={false}
+        className="c6"
+        id="yt-12"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+        Yukon
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Select has no label 1`] = `
 .c0 {
   margin: 0 0 1.5rem;
@@ -67,7 +384,7 @@ exports[`Select has no label 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 8px;
-  padding: 0.5rem;
+  padding-right: 0.5rem;
   width: 100%;
 }
 
@@ -82,11 +399,16 @@ exports[`Select has no label 1`] = `
 .c3 {
   background-color: #FFFFFF;
   border: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  caret-color: transparent;
   font-size: calc(1rem - 2px);
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
+  max-height: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
   width: 100%;
 }
 
@@ -139,7 +461,9 @@ exports[`Select has no label 1`] = `
   >
     <input
       className="c3"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="Select an option"
       required={true}
@@ -164,21 +488,10 @@ exports[`Select has no label 1`] = `
       tabIndex={0}
     >
       <li
-        aria-label="-"
-        aria-selected={false}
-        className="c6"
-        id=""
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        -
-      </li>
-      <li
         aria-label="Ontario"
         aria-selected={false}
         className="c6"
-        id="on"
+        id="on-0"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -189,7 +502,7 @@ exports[`Select has no label 1`] = `
         aria-label="Quebec"
         aria-selected={false}
         className="c6"
-        id="qc"
+        id="qc-1"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -200,7 +513,7 @@ exports[`Select has no label 1`] = `
         aria-label="British Columbia"
         aria-selected={false}
         className="c6"
-        id="bc"
+        id="bc-2"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -211,7 +524,7 @@ exports[`Select has no label 1`] = `
         aria-label="Alberta"
         aria-selected={false}
         className="c6"
-        id="ab"
+        id="ab-3"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -222,7 +535,7 @@ exports[`Select has no label 1`] = `
         aria-label="Manitoba"
         aria-selected={false}
         className="c6"
-        id="mb"
+        id="mb-4"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -233,7 +546,7 @@ exports[`Select has no label 1`] = `
         aria-label="Saskatchewan"
         aria-selected={false}
         className="c6"
-        id="sk"
+        id="sk-5"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -244,7 +557,7 @@ exports[`Select has no label 1`] = `
         aria-label="Nova Scotia"
         aria-selected={false}
         className="c6"
-        id="ns"
+        id="ns-6"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -255,7 +568,7 @@ exports[`Select has no label 1`] = `
         aria-label="New Brunswick"
         aria-selected={false}
         className="c6"
-        id="nb"
+        id="nb-7"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -266,7 +579,7 @@ exports[`Select has no label 1`] = `
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
         className="c6"
-        id="nl"
+        id="nl-8"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -277,7 +590,7 @@ exports[`Select has no label 1`] = `
         aria-label="Prince Edward Island"
         aria-selected={false}
         className="c6"
-        id="pe"
+        id="pe-9"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -288,7 +601,7 @@ exports[`Select has no label 1`] = `
         aria-label="Northwest Territories"
         aria-selected={false}
         className="c6"
-        id="nt"
+        id="nt-10"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -299,7 +612,7 @@ exports[`Select has no label 1`] = `
         aria-label="Nunavut"
         aria-selected={false}
         className="c6"
-        id="nu"
+        id="nu-11"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -310,7 +623,7 @@ exports[`Select has no label 1`] = `
         aria-label="Yukon"
         aria-selected={false}
         className="c6"
-        id="yt"
+        id="yt-12"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -409,7 +722,8 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 8px;
-  padding: 0.5rem;
+  border: 1px solid #D9DDE2;
+  padding-right: 0.5rem;
   width: 100%;
 }
 
@@ -424,11 +738,16 @@ input + .c2 {
 .c4 {
   background-color: #F1F2F2;
   border: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  caret-color: transparent;
   font-size: calc(1rem - 2px);
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
+  max-height: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
   width: 100%;
 }
 
@@ -461,17 +780,12 @@ input + .c2 {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
-<<<<<<< HEAD
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
-<<<<<<< HEAD
-=======
-=======
 .c5 {
   display: none;
   position: absolute;
->>>>>>> Renames Dropdown to Select
   width: 100%;
 >>>>>>> Renames Dropdown to Select
 }
@@ -497,7 +811,9 @@ label + .c2 {
     <input
       className="c4"
       disabled={true}
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="Select an option"
       required={true}
@@ -522,21 +838,10 @@ label + .c2 {
       tabIndex={0}
     >
       <li
-        aria-label="-"
-        aria-selected={false}
-        className="c7"
-        id=""
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        -
-      </li>
-      <li
         aria-label="Ontario"
         aria-selected={false}
         className="c7"
-        id="on"
+        id="on-0"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -547,7 +852,7 @@ label + .c2 {
         aria-label="Quebec"
         aria-selected={false}
         className="c7"
-        id="qc"
+        id="qc-1"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -558,7 +863,7 @@ label + .c2 {
         aria-label="British Columbia"
         aria-selected={false}
         className="c7"
-        id="bc"
+        id="bc-2"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -569,7 +874,7 @@ label + .c2 {
         aria-label="Alberta"
         aria-selected={false}
         className="c7"
-        id="ab"
+        id="ab-3"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -580,7 +885,7 @@ label + .c2 {
         aria-label="Manitoba"
         aria-selected={false}
         className="c7"
-        id="mb"
+        id="mb-4"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -591,7 +896,7 @@ label + .c2 {
         aria-label="Saskatchewan"
         aria-selected={false}
         className="c7"
-        id="sk"
+        id="sk-5"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -602,7 +907,7 @@ label + .c2 {
         aria-label="Nova Scotia"
         aria-selected={false}
         className="c7"
-        id="ns"
+        id="ns-6"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -613,7 +918,7 @@ label + .c2 {
         aria-label="New Brunswick"
         aria-selected={false}
         className="c7"
-        id="nb"
+        id="nb-7"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -624,7 +929,7 @@ label + .c2 {
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
         className="c7"
-        id="nl"
+        id="nl-8"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -635,7 +940,7 @@ label + .c2 {
         aria-label="Prince Edward Island"
         aria-selected={false}
         className="c7"
-        id="pe"
+        id="pe-9"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -646,7 +951,7 @@ label + .c2 {
         aria-label="Northwest Territories"
         aria-selected={false}
         className="c7"
-        id="nt"
+        id="nt-10"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -657,7 +962,7 @@ label + .c2 {
         aria-label="Nunavut"
         aria-selected={false}
         className="c7"
-        id="nu"
+        id="nu-11"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -668,7 +973,7 @@ label + .c2 {
         aria-label="Yukon"
         aria-selected={false}
         className="c7"
-        id="yt"
+        id="yt-12"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -776,7 +1081,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 8px;
-  padding: 0.5rem;
+  padding-right: 0.5rem;
   width: 100%;
 }
 
@@ -791,11 +1096,16 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  caret-color: transparent;
   font-size: calc(1rem - 2px);
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
+  max-height: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
   width: 100%;
 }
 
@@ -853,7 +1163,9 @@ input + .c2 {
     >
       <input
         className="c4"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         placeholder="Select an option"
         required={true}
@@ -878,21 +1190,10 @@ input + .c2 {
         tabIndex={0}
       >
         <li
-          aria-label="-"
-          aria-selected={false}
-          className="c7"
-          id=""
-          onClick={[Function]}
-          role="option"
-          selected={false}
-        >
-          -
-        </li>
-        <li
           aria-label="Ontario"
           aria-selected={false}
           className="c7"
-          id="on"
+          id="on-0"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -903,7 +1204,7 @@ input + .c2 {
           aria-label="Quebec"
           aria-selected={false}
           className="c7"
-          id="qc"
+          id="qc-1"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -914,7 +1215,7 @@ input + .c2 {
           aria-label="British Columbia"
           aria-selected={false}
           className="c7"
-          id="bc"
+          id="bc-2"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -925,7 +1226,7 @@ input + .c2 {
           aria-label="Alberta"
           aria-selected={false}
           className="c7"
-          id="ab"
+          id="ab-3"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -936,7 +1237,7 @@ input + .c2 {
           aria-label="Manitoba"
           aria-selected={false}
           className="c7"
-          id="mb"
+          id="mb-4"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -947,7 +1248,7 @@ input + .c2 {
           aria-label="Saskatchewan"
           aria-selected={false}
           className="c7"
-          id="sk"
+          id="sk-5"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -958,7 +1259,7 @@ input + .c2 {
           aria-label="Nova Scotia"
           aria-selected={false}
           className="c7"
-          id="ns"
+          id="ns-6"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -969,7 +1270,7 @@ input + .c2 {
           aria-label="New Brunswick"
           aria-selected={false}
           className="c7"
-          id="nb"
+          id="nb-7"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -980,7 +1281,7 @@ input + .c2 {
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
           className="c7"
-          id="nl"
+          id="nl-8"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -991,7 +1292,7 @@ input + .c2 {
           aria-label="Prince Edward Island"
           aria-selected={false}
           className="c7"
-          id="pe"
+          id="pe-9"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1002,7 +1303,7 @@ input + .c2 {
           aria-label="Northwest Territories"
           aria-selected={false}
           className="c7"
-          id="nt"
+          id="nt-10"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1013,7 +1314,7 @@ input + .c2 {
           aria-label="Nunavut"
           aria-selected={false}
           className="c7"
-          id="nu"
+          id="nu-11"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1024,7 +1325,7 @@ input + .c2 {
           aria-label="Yukon"
           aria-selected={false}
           className="c7"
-          id="yt"
+          id="yt-12"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1257,7 +1558,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 8px;
-  padding: 0.5rem;
+  padding-right: 0.5rem;
   width: 100%;
 >>>>>>> Renames Dropdown to Select
 }
@@ -1273,11 +1574,16 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  caret-color: transparent;
   font-size: calc(1rem - 2px);
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
+  max-height: 100%;
+  padding: 0.5rem 0 0.5rem 0.5rem;
   width: 100%;
 }
 
@@ -1351,7 +1657,9 @@ label + .c2 {
     >
       <input
         className="c4"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         placeholder="Select an option"
         required={true}
@@ -1376,21 +1684,10 @@ label + .c2 {
         tabIndex={0}
       >
         <li
-          aria-label="-"
-          aria-selected={false}
-          className="c7"
-          id=""
-          onClick={[Function]}
-          role="option"
-          selected={false}
-        >
-          -
-        </li>
-        <li
           aria-label="Ontario"
           aria-selected={false}
           className="c7"
-          id="on"
+          id="on-0"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1401,7 +1698,7 @@ label + .c2 {
           aria-label="Quebec"
           aria-selected={false}
           className="c7"
-          id="qc"
+          id="qc-1"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1412,7 +1709,7 @@ label + .c2 {
           aria-label="British Columbia"
           aria-selected={false}
           className="c7"
-          id="bc"
+          id="bc-2"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1423,7 +1720,7 @@ label + .c2 {
           aria-label="Alberta"
           aria-selected={false}
           className="c7"
-          id="ab"
+          id="ab-3"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1434,7 +1731,7 @@ label + .c2 {
           aria-label="Manitoba"
           aria-selected={false}
           className="c7"
-          id="mb"
+          id="mb-4"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1445,7 +1742,7 @@ label + .c2 {
           aria-label="Saskatchewan"
           aria-selected={false}
           className="c7"
-          id="sk"
+          id="sk-5"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1456,7 +1753,7 @@ label + .c2 {
           aria-label="Nova Scotia"
           aria-selected={false}
           className="c7"
-          id="ns"
+          id="ns-6"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1467,7 +1764,7 @@ label + .c2 {
           aria-label="New Brunswick"
           aria-selected={false}
           className="c7"
-          id="nb"
+          id="nb-7"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1478,7 +1775,7 @@ label + .c2 {
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
           className="c7"
-          id="nl"
+          id="nl-8"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1489,7 +1786,7 @@ label + .c2 {
           aria-label="Prince Edward Island"
           aria-selected={false}
           className="c7"
-          id="pe"
+          id="pe-9"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1500,7 +1797,7 @@ label + .c2 {
           aria-label="Northwest Territories"
           aria-selected={false}
           className="c7"
-          id="nt"
+          id="nt-10"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1511,7 +1808,7 @@ label + .c2 {
           aria-label="Nunavut"
           aria-selected={false}
           className="c7"
-          id="nu"
+          id="nu-11"
           onClick={[Function]}
           role="option"
           selected={false}
@@ -1522,7 +1819,7 @@ label + .c2 {
           aria-label="Yukon"
           aria-selected={false}
           className="c7"
-          id="yt"
+          id="yt-12"
           onClick={[Function]}
           role="option"
           selected={false}

@@ -17,6 +17,10 @@ interface ListOption extends Option {
 
 interface ListProps {
     /**
+     * Sets list id
+     */
+    ListId?: string;
+    /**
      * { value: string; label?: string; }[]
      */
     options: Option[];
@@ -43,6 +47,7 @@ interface ListProps {
      * OnChange callback function, invoked when an option is selected
      */
     onChange?(option: Option): void;
+    onKeyDown?(event: KeyboardEvent): void;
 }
 
 interface WrapperProps {
@@ -94,8 +99,10 @@ const CheckIndicator = styled(Check)`
 `;
 
 export function List({
+    ListId,
     options,
     onChange,
+    onKeyDown,
     checkIndicator = false,
     defaultValue,
     numberOfItemsVisible = 4,
@@ -105,14 +112,19 @@ export function List({
 
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedOptionId, setSelectedOptionId] = useState(
-        defaultValue ? `${defaultValue}` : undefined,
+        defaultValue ? `${defaultValue}-${ListId ? ListId : defaultSelectedIndex}` : undefined,
     );
 
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
 
     const list: ListOption[] | [] =
         options.map((option, index)  =>
-            ({ ...option, id: `${option.value}`, focusIndex: index, ref: React.createRef<HTMLLIElement>() }));
+            ({
+                ...option,
+                id: `${option.value}-${ListId ? ListId : index}`,
+                focusIndex: index,
+                ref: React.createRef<HTMLLIElement>(),
+            }));
 
     function isOptionSelected(option: ListOption): boolean {
         return selectedOptionId ? option.id === selectedOptionId : false;
@@ -201,6 +213,7 @@ export function List({
                 }
                 break;
         }
+        if (onKeyDown) onKeyDown(e);
     }
 
     useEffect(() => {
