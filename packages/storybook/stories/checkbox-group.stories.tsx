@@ -57,6 +57,6 @@ export const defaultChecked = () => (
 export const callback = () => (
     <CheckboxGroup
         onChange={(event) => console.log(`Checkbox ${event.target.value} is ${event.target.checked ? 'checked' : 'unchecked'}!`)}
-        checkboxGroup={[{ label: 'Bike', name: 'vehicule', value: 'bike'}]}
+        checkboxGroup={[{ label: 'Bike', name: 'vehicule', value: 'bike', checked: false }]}
     />
 );
