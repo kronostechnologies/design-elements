@@ -3,13 +3,14 @@
 exports[`Chooser Matches the snapshot 1`] = `
 Array [
   .c2 {
+  --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
-  border-radius: 0.5rem;
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #57666E;
   cursor: pointer;
@@ -17,12 +18,19 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-size: 1rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.5rem;
   min-height: 3rem;
-  padding: 1rem;
+  padding: var(--spacing-1x);
+  text-align: center;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
@@ -54,7 +62,8 @@ input[type="radio"]:disabled + .c2 {
 
 .c2 b {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: var(--font-normal);
+  line-height: 2.5rem;
 }
 
 .c2 svg {
@@ -117,13 +126,14 @@ input[type="radio"]:disabled + .c2 {
     </label>
   </div>,
   .c2 {
+  --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
-  border-radius: 0.5rem;
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #57666E;
   cursor: pointer;
@@ -131,12 +141,19 @@ input[type="radio"]:disabled + .c2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-size: 1rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.5rem;
   min-height: 3rem;
-  padding: 1rem;
+  padding: var(--spacing-1x);
+  text-align: center;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
@@ -168,7 +185,8 @@ input[type="radio"]:disabled + .c2 {
 
 .c2 b {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: var(--font-normal);
+  line-height: 2.5rem;
 }
 
 .c2 svg {
@@ -189,7 +207,7 @@ input[type="radio"]:disabled + .c2 {
 }
 
 .c0 {
-  margin: 1rem 0 0;
+  margin: var(--spacing-2x) 0 0;
 }
 
 <div

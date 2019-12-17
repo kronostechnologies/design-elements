@@ -3,22 +3,23 @@
 exports[`TextArea Is disabled 1`] = `
 .c1 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c1 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -36,15 +37,20 @@ input + .c1 {
   min-width: 100%;
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.4rem;
   margin: 0;
   outline: none;
-  padding: 0.5rem;
+  padding: var(--spacing-half) var(--spacing-1x);
   outline: none;
   overflow: auto;
   resize: vertical;
@@ -97,7 +103,7 @@ input + .c1 {
 
 label + .c2 {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-half);
   width: 100%;
 }
 
@@ -125,22 +131,23 @@ label + .c2 {
 exports[`TextArea Matches the snapshot 1`] = `
 .c1 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c1 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -158,15 +165,20 @@ input + .c1 {
   min-width: 100%;
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.4rem;
   margin: 0;
   outline: none;
-  padding: 0.5rem;
+  padding: var(--spacing-half) var(--spacing-1x);
   outline: none;
   overflow: auto;
   resize: vertical;
@@ -219,7 +231,7 @@ input + .c1 {
 
 label + .c2 {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-half);
   width: 100%;
 }
 

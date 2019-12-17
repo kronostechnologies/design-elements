@@ -16,7 +16,7 @@ exports[`Route Link disabled matches snapshot (Link) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -64,7 +64,7 @@ exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -112,7 +112,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -173,7 +173,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -235,7 +235,7 @@ exports[`Route Link only icon matches snapshot (Link) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -300,7 +300,7 @@ exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -366,7 +366,7 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -432,7 +432,7 @@ exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {

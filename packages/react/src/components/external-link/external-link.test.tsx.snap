@@ -16,7 +16,7 @@ exports[`External Link disabled matches snapshot 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -64,7 +64,7 @@ exports[`External Link matches snapshot 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -125,7 +125,7 @@ exports[`External Link with icon matches snapshot 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {
@@ -191,7 +191,7 @@ exports[`External Link without href matches snapshot 1`] = `
 }
 
 .c0 svg {
-  margin-right: 8px;
+  margin-right: var(--spacing-1x);
 }
 
 .c0.iconOnly svg {

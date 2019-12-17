@@ -14,15 +14,15 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 
 .c4 {
   background-color: #D9DDE2;
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-half);
   width: 100%;
 }
 
 .c5 {
   background: rgb(101,226,255);
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.5rem;
   width: 100%;
 }
@@ -36,11 +36,11 @@ exports[`ProgressBar Matches the snapshot 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   line-height: 1.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-half);
 }
 
 .c1 + .c0 {
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-half);
 }
 
 <div
