@@ -7,9 +7,9 @@ export const abstractStyle = `
   color: inherit;
   display: inline-flex;
   font-family: inherit;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: var(--font-bold);
-  letter-spacing: .55px;
+  letter-spacing: 0.55px;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;

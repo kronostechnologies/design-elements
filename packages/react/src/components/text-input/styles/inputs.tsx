@@ -9,7 +9,7 @@ export const inputsStyle = (theme: Theme) => `
   color: ${theme.greys.black};
   font-family: inherit;
   font-size: 0.875rem;
-  letter-spacing: .025rem;
+  letter-spacing: 0.025rem;
   line-height: 1.4rem;
   margin: 0;
   outline: none;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1.25rem;
   margin-bottom: var(--spacing-1x);
   padding: 0;
