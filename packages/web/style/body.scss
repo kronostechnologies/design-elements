@@ -6,9 +6,9 @@ body {
   color: rgb(0, 0, 0);
   font-family: 'Open Sans', sans-serif;
   font-size: 0.875rem;
-  letter-spacing: 0.025rem;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.025rem;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
 }
