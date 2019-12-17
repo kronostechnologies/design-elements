@@ -10,8 +10,8 @@ export const abstractStyle = `
   font-size: .75rem;
   font-weight: var(--font-bold);
   letter-spacing: .55px;
-  min-height: var(--spacing-4x);
-  min-width: var(--spacing-4x);
+  min-height: 2rem;
+  min-width: 2rem;
   outline: none;
   padding: var(--spacing-half) var(--spacing-2x);
   text-transform: uppercase;
