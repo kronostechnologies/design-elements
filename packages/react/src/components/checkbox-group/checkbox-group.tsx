@@ -15,7 +15,7 @@ const StyledCheckMark = styled(CheckMark)`
   color: ${props => props.theme.greys.white};
   height: 100%;
   opacity: 0;
-  position:absolute;
+  position: absolute;
   width: 100%;
 `;
 
