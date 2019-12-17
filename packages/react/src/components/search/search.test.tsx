@@ -1,8 +1,8 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { SearchButton } from '../buttons/search-button';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
 import { SearchGlobal } from './search-global';
 jest.mock('uuid/v4');
 

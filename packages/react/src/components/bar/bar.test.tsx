@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../theme-wrapper/theme-wrapper.test';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Bar } from './bar';
 
 describe('Bar', () => {
@@ -11,7 +11,6 @@ describe('Bar', () => {
                 color="#ccc"
                 endLabel="20k"
                 percent={55}
-                secondary={true}
             />,
         ),
         ).toJSON();

@@ -5,8 +5,18 @@ import { Bar } from '../bar/bar';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Label = styled.label`
-  color: ${(props: {theme: Theme, secondary: boolean}) => (props.secondary ? props.theme.greys['dark-grey'] : props.theme.greys.black)};
+  color: ${(props: { theme: Theme }) => props.theme.greys.black};
+  display: block;
   font-size: 0.875rem;
+  letter-spacing: 0.46px;
+  line-height: 1.5rem;
+  margin-bottom: 0.25rem;
+`;
+
+const Container = styled.div`
+  & + & {
+    margin-top: 0.5rem;
+  }
 `;
 
 interface Props {
@@ -17,20 +27,17 @@ interface Props {
     resultLabel: ReactText;
     /** Top label */
     descriptionLabel?: string;
-    /** Sets a lighter font color */
-    secondary?: boolean;
 }
 
-export function ProgressBar({ color, descriptionLabel, resultLabel, percent, secondary }: Props): ReactElement {
+export function ProgressBar({ color, descriptionLabel, resultLabel, percent }: Props): ReactElement {
     return (
-        <div>
-            <Label secondary={secondary || false}>{descriptionLabel}</Label>
+        <Container>
+            <Label>{descriptionLabel}</Label>
             <Bar
                 color={color}
                 endLabel={resultLabel}
                 percent={percent}
-                secondary={secondary || false}
             />
-        </div>
+        </Container>
     );
 }
