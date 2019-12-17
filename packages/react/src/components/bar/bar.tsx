@@ -17,7 +17,7 @@ const Progress = styled.div`
   background-color: ${props => props.theme.greys.grey};
   border-radius: var(--border-radius);
   height: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-half);
   width: 100%;
 `;
 

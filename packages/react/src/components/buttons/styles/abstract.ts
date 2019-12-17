@@ -6,8 +6,10 @@ export const abstractStyle = `
   border-radius: 1.6rem;
   color: inherit;
   display: inline-flex;
+  font-family: inherit;
   font-size: .75rem;
   font-weight: var(--font-bold);
+  letter-spacing: .55px;
   min-height: var(--spacing-4x);
   min-width: var(--spacing-4x);
   outline: none;

@@ -6,7 +6,7 @@ const StyledLabel = styled.label`
   display: block;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
-  letter-spacing: 0.025rem;
+  letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
 
