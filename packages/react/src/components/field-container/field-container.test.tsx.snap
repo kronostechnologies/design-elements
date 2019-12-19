@@ -3,6 +3,7 @@
 exports[`Field Container Invalid field snapshot 1`] = `
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -21,6 +22,8 @@ exports[`Field Container Invalid field snapshot 1`] = `
 =======
 <<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
+=======
+>>>>>>> Adds CSS variables
 .c1 {
   color: #000000;
   display: block;
@@ -40,6 +43,7 @@ exports[`Field Container Invalid field snapshot 1`] = `
 input + .c1 {
   margin-left: var(--spacing-half);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .c2 {
   color: #A40C2E;
@@ -64,12 +68,13 @@ input + .c1 {
 
 input + .c1 {
   margin-left: 0.5rem;
+=======
+>>>>>>> Adds CSS variables
 }
 
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
-<<<<<<< HEAD
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.025rem;
   -moz-letter-spacing: 0.025rem;
@@ -77,23 +82,6 @@ input + .c1 {
   letter-spacing: 0.025rem;
   line-height: 1.25rem;
   margin: var(--spacing-half) 0 0;
-=======
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
-<<<<<<< HEAD
-  margin: 0;
-}
-
-input + .c1 {
-  margin-left: 0.5rem;
->>>>>>> Adds defaultValue prop
-=======
-  margin: 0.25rem 0 0;
->>>>>>> Renames Dropdown to Select
 }
 
 .c0 {

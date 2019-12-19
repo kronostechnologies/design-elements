@@ -38,14 +38,14 @@ const InputWrapper = styled.div<InputWrapperProps>`
                 return props.theme.notifications['error-2.1'];
             }
         }};
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
     height: 32px;
     justify-content: space-between;
-    margin-top: 8px;
+    margin-top: var(--spacing-1x);
     ${props => props.disabled ? `border: 1px solid ${props.theme.greys.grey};` : ''}
-    padding-right: 0.5rem;
+    padding-right: var(--spacing-1x);
     width: 100%;
 
     &:hover {
@@ -60,13 +60,13 @@ const InputWrapper = styled.div<InputWrapperProps>`
 const StyledInput = styled.input<InputProps>`
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
     border: none;
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
     box-sizing: border-box;
     caret-color: ${props => props.searchable ? 'unset' : 'transparent'};
     font-size: calc(1rem - 2px);
     letter-spacing: 0.4px;
     max-height: 100%;
-    padding: 0.5rem 0 0.5rem 0.5rem;
+    padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
     width: 100%;
 
     &:hover {
@@ -89,7 +89,7 @@ const ListWrapper = styled.div`
     width: 100%;
 
     ul {
-        border-radius: 0.25rem;
+        border-radius: var(--border-radius);
         box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
         outline: none;
     }

@@ -2,7 +2,7 @@
 
 exports[`Select has mobile styles 1`] = `
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -55,7 +55,7 @@ exports[`Select has mobile styles 1`] = `
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,8 +66,8 @@ exports[`Select has mobile styles 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
-  padding-right: 0.5rem;
+  margin-top: var(--spacing-1x);
+  padding-right: var(--spacing-1x);
   width: 100%;
 }
 
@@ -82,7 +82,7 @@ exports[`Select has mobile styles 1`] = `
 .c3 {
   background-color: #FFFFFF;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: calc(1rem - 2px);
@@ -91,7 +91,7 @@ exports[`Select has mobile styles 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
 
@@ -130,7 +130,7 @@ exports[`Select has mobile styles 1`] = `
 }
 
 .c4 ul {
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
@@ -319,7 +319,7 @@ exports[`Select has mobile styles 1`] = `
 
 exports[`Select has no label 1`] = `
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -371,8 +371,13 @@ exports[`Select has no label 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
+<<<<<<< HEAD
   border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
+=======
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
+>>>>>>> Adds CSS variables
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -383,8 +388,8 @@ exports[`Select has no label 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
-  padding-right: 0.5rem;
+  margin-top: var(--spacing-1x);
+  padding-right: var(--spacing-1x);
   width: 100%;
 }
 
@@ -399,7 +404,7 @@ exports[`Select has no label 1`] = `
 .c3 {
   background-color: #FFFFFF;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: calc(1rem - 2px);
@@ -408,7 +413,7 @@ exports[`Select has no label 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
 
@@ -447,7 +452,7 @@ exports[`Select has no label 1`] = `
 }
 
 .c4 ul {
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
@@ -653,7 +658,11 @@ exports[`Select is disabled 1`] = `
 }
 
 input + .c2 {
+<<<<<<< HEAD
   margin-left: 0.5rem;
+=======
+  margin-left: var(--spacing-half);
+>>>>>>> Adds CSS variables
 }
 
 .c0 {
@@ -709,8 +718,13 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
+<<<<<<< HEAD
   border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
+=======
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
+>>>>>>> Adds CSS variables
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -721,9 +735,9 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: var(--spacing-1x);
   border: 1px solid #D9DDE2;
-  padding-right: 0.5rem;
+  padding-right: var(--spacing-1x);
   width: 100%;
 }
 
@@ -738,7 +752,7 @@ input + .c2 {
 .c4 {
   background-color: #F1F2F2;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: calc(1rem - 2px);
@@ -747,7 +761,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
 
@@ -780,9 +794,22 @@ input + .c2 {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
+<<<<<<< HEAD
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+label + .c2 {
+  display: block;
+  margin-top: var(--spacing-half);
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> Adds CSS variables
+>>>>>>> Adds CSS variables
 .c5 {
   display: none;
   position: absolute;
@@ -791,7 +818,7 @@ label + .c2 {
 }
 
 .c5 ul {
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
@@ -989,34 +1016,35 @@ exports[`Select is invalid 1`] = `
 Array [
   .c2 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c2 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c8 {
   color: #A40C2E;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
-  margin: 0.25rem 0 0;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
+  margin: var(--spacing-half) 0 0;
 }
 
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -1069,7 +1097,7 @@ input + .c2 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #A40C2E;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1080,8 +1108,8 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
-  padding-right: 0.5rem;
+  margin-top: var(--spacing-1x);
+  padding-right: var(--spacing-1x);
   width: 100%;
 }
 
@@ -1096,7 +1124,7 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: calc(1rem - 2px);
@@ -1105,7 +1133,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
 
@@ -1144,7 +1172,7 @@ input + .c2 {
 }
 
 .c5 ul {
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
@@ -1458,13 +1486,8 @@ Array [
   width: fit-content;
 }
 
-<<<<<<< HEAD
-input + .c1 {
-  margin-left: var(--spacing-half);
-=======
 input + .c2 {
-  margin-left: 0.5rem;
->>>>>>> Renames Dropdown to Select
+  margin-left: var(--spacing-half);
 }
 
 .c0 {
@@ -1520,6 +1543,11 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Adds CSS variables
   border: 1px solid #D9DDE2;
 <<<<<<< HEAD
   border-radius: var(--border-radius);
@@ -1546,7 +1574,15 @@ input + .c2 {
   background-size: 0.75rem;
   position: relative;
 =======
+<<<<<<< HEAD
   border-radius: 0.25rem;
+=======
+=======
+=======
+>>>>>>> Adds CSS variables
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
+>>>>>>> Adds CSS variables
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1557,10 +1593,9 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 8px;
-  padding-right: 0.5rem;
+  margin-top: var(--spacing-1x);
+  padding-right: var(--spacing-1x);
   width: 100%;
->>>>>>> Renames Dropdown to Select
 }
 
 .c3:hover {
@@ -1574,7 +1609,7 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: calc(1rem - 2px);
@@ -1583,7 +1618,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
 
@@ -1628,6 +1663,7 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
@@ -1635,12 +1671,17 @@ label + .c2 {
 =======
   width: 100%;
 =======
+=======
+>>>>>>> Adds CSS variables
 .c5 ul {
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
+<<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
 >>>>>>> Renames Dropdown to Select
+=======
+>>>>>>> Adds CSS variables
 }
 
 <div
