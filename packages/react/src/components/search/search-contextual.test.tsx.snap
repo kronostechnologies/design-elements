@@ -14,18 +14,19 @@ exports[`Search Contextual Matches the snapshot when disabled 1`] = `
 
 .c2 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c2 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c0 {
@@ -61,26 +62,30 @@ input + .c2 {
 }
 
 .c7 {
-  color: #000000;
-  height: 0.75rem;
-  width: 0.75rem;
+  color: #57666E;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .c5 {
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.4rem;
   margin: 0;
   outline: none;
-  padding: 0.5rem;
+  padding: var(--spacing-half) var(--spacing-1x);
   border-radius: undefined;
-  line-height: 1;
-  padding: 0.5rem 1.75rem 0.5rem 2rem;
+  padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 }
 
 .c5::-webkit-input-placeholder {
@@ -130,7 +135,7 @@ input + .c2 {
 
 label + .c5 {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-half);
   width: 100%;
 }
 
@@ -154,13 +159,13 @@ label + .c5 {
   bottom: 0.5rem;
   cursor: pointer;
   display: none;
-  height: 0.75rem;
+  height: 1.25rem;
   margin: auto;
   padding: 0;
   position: absolute;
-  right: 0.5rem;
+  right: 0.25rem;
   top: 0.5rem;
-  width: 0.75rem;
+  width: 1.25rem;
 }
 
 input:valid + .c6 {
@@ -229,18 +234,19 @@ exports[`Search Contextual Matches the snapshot when enabled 1`] = `
 
 .c2 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c2 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c0 {
@@ -276,26 +282,30 @@ input + .c2 {
 }
 
 .c7 {
-  color: #000000;
-  height: 0.75rem;
-  width: 0.75rem;
+  color: #57666E;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .c5 {
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.4rem;
   margin: 0;
   outline: none;
-  padding: 0.5rem;
+  padding: var(--spacing-half) var(--spacing-1x);
   border-radius: undefined;
-  line-height: 1;
-  padding: 0.5rem 1.75rem 0.5rem 2rem;
+  padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 }
 
 .c5::-webkit-input-placeholder {
@@ -345,7 +355,7 @@ input + .c2 {
 
 label + .c5 {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-half);
   width: 100%;
 }
 
@@ -369,13 +379,13 @@ label + .c5 {
   bottom: 0.5rem;
   cursor: pointer;
   display: none;
-  height: 0.75rem;
+  height: 1.25rem;
   margin: auto;
   padding: 0;
   position: absolute;
-  right: 0.5rem;
+  right: 0.25rem;
   top: 0.5rem;
-  width: 0.75rem;
+  width: 1.25rem;
 }
 
 input:valid + .c6 {

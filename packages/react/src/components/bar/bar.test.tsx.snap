@@ -14,15 +14,15 @@ exports[`Bar Matches the snapshot 1`] = `
 
 .c1 {
   background-color: #D9DDE2;
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-half);
   width: 100%;
 }
 
 .c2 {
   background: #ccc;
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.5rem;
   width: 55%;
 }

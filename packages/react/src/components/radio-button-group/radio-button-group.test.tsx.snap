@@ -4,7 +4,8 @@ exports[`Radio button Matches the snapshot 1`] = `
 Array [
   .c0 {
   font-size: 0.75rem;
-  margin-bottom: 8px;
+  line-height: 1.25rem;
+  margin-bottom: var(--spacing-1x);
   padding: 0;
 }
 
@@ -17,7 +18,8 @@ Array [
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -26,7 +28,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -48,24 +50,25 @@ Array [
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 7px;
+  height: 8px;
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 7px;
+  width: 8px;
 }
 
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: 50%;
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
+  margin-top: var(--spacing-half);
   position: absolute;
   top: 0;
   width: 16px;
@@ -93,7 +96,8 @@ Array [
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -102,7 +106,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -124,24 +128,25 @@ Array [
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 7px;
+  height: 8px;
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 7px;
+  width: 8px;
 }
 
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: 50%;
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
+  margin-top: var(--spacing-half);
   position: absolute;
   top: 0;
   width: 16px;
@@ -169,7 +174,8 @@ Array [
   .c0 {
   display: block;
   font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -178,7 +184,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -200,24 +206,25 @@ Array [
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 7px;
+  height: 8px;
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 7px;
+  width: 8px;
 }
 
 .c0 .radioInput {
   background-color: #F1F2F2;
   border: 1px solid #D9DDE2;
   border-radius: 50%;
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
+  margin-top: var(--spacing-half);
   position: absolute;
   top: 0;
   width: 16px;
@@ -247,7 +254,8 @@ Array [
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -256,7 +264,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -278,24 +286,25 @@ Array [
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 7px;
+  height: 8px;
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 7px;
+  width: 8px;
 }
 
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: 50%;
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
+  margin-top: var(--spacing-half);
   position: absolute;
   top: 0;
   width: 16px;

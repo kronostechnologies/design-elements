@@ -3,17 +3,23 @@ import styled from 'styled-components';
 export const Label = styled.label`
   ${props => {
       return `
+        --border-radius: 8px;
+
         align-items: center;
         background: ${props.theme.greys.white};
-        border: 1px solid ${props.theme.greys.grey};
-        border-radius: 0.5rem;
+        border: 1px solid ${props.theme.greys['dark-grey']};
+        border-radius: var(--border-radius);
         box-sizing: border-box;
         color: ${props.theme.greys['dark-grey']};
         cursor: pointer;
         display: flex;
+        font-size: 1rem;
         justify-content: center;
+        letter-spacing: 0;
+        line-height: 1.5rem;
         min-height: 3rem;
-        padding: 1rem;
+        padding: var(--spacing-1x);
+        text-align: center;
         transition: all 0.25s ease-in-out;
 
         &:hover {
@@ -43,7 +49,8 @@ export const Label = styled.label`
 
         b {
           font-size: 1.5rem;
-          font-weight: 400;
+          font-weight: var(--font-normal);
+          line-height: 2.5rem;
         }
 
         /* For future support of SVG icons in button */

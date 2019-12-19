@@ -5,7 +5,8 @@ import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
   font-size: 0.75rem;
-  margin-bottom: 8px;
+  line-height: 1.25rem;
+  margin-bottom: var(--spacing-1x);
   padding: 0;
 `;
 
@@ -15,12 +16,13 @@ const StyledLabel = styled.label `
         ${props.disabled ? '' : 'cursor: pointer;'};
         display: block;
         font-size: 0.875rem;
-        padding-left: 24px;
+        line-height: 1.5rem;
+        padding-left: var(--spacing-3x);
         position: relative;
         user-select: none;
 
         &:not(:first-of-type) {
-            margin-top: 16px;
+            margin-top: var(--spacing-1x);
         }
 
         input {
@@ -40,12 +42,12 @@ const StyledLabel = styled.label `
                     background-color: ${props.theme.greys.white};
                     border-radius: 50%;
                     content: "";
-                    height: 7px;
+                    height: 8px;
                     left: 50%;
                     position: absolute;
                     top: 50%;
                     transform: translate(-50%, -50%);
-                    width: 7px;
+                    width: 8px;
                 }
             }
         }
@@ -54,10 +56,11 @@ const StyledLabel = styled.label `
             background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
             border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
             border-radius: 50%;
+            box-sizing: border-box;
             display: inline-block;
             height: 16px;
             left: 0;
-            margin-top: 2px;
+            margin-top: var(--spacing-half);
             position: absolute;
             top: 0;
             width: 16px;

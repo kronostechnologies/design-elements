@@ -3,34 +3,35 @@
 exports[`Field Container Invalid field snapshot 1`] = `
 .c1 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c1 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
-  margin: 0.25rem 0 0;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
+  margin: var(--spacing-half) 0 0;
 }
 
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -67,22 +68,23 @@ input + .c1 {
 exports[`Field Container Valid field snapshot 1`] = `
 .c1 {
   color: #000000;
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
 input + .c1 {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-half);
 }
 
 .c0 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,

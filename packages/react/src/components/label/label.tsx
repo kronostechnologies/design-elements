@@ -3,14 +3,15 @@ import styled from 'styled-components';
 
 const StyledLabel = styled.label`
   color: ${props => props.theme.greys.black};
+  display: block;
   font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
+  font-weight: var(--font-normal);
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
   margin: 0;
 
   input + & {
-    margin-left: 0.5rem;
+    margin-left: var(--spacing-half);
   }
 `;
 

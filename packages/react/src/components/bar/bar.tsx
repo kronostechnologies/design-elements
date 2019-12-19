@@ -15,15 +15,15 @@ const Container = styled.div`
 
 const Progress = styled.div`
   background-color: ${props => props.theme.greys.grey};
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-half);
   width: 100%;
 `;
 
 const StyledBar = styled.div`
   background: ${(props: { color?: string, percent: number }) => props.color};
-  border-radius: 4rem;
+  border-radius: var(--border-radius);
   height: 0.5rem;
   width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
 `;

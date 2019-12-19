@@ -17,11 +17,11 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   min-height: 2.75rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem var(--spacing-2x);
 
   @media screen and (min-width: ${tabletMin}) {
     min-height: 5rem;
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem var(--spacing-3x);
   }
 `;
 
@@ -49,7 +49,7 @@ const Logo = styled.div`
   display: flex;
   flex: 1 1 50%;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-bold);
 `;
 
 const Equisoft = styled(EquisoftLogo)`
@@ -63,14 +63,14 @@ const Project = styled.em`
   font-size: 1.25rem;
   font-style: normal;
   line-height: 1.5rem;
-  padding: 0 1.5rem;
+  padding: 0 var(--spacing-3x);
 
   @media screen and (min-width: ${tabletMin}) {
     border-left: 1px solid ${props => props.theme.greys.white};
     font-size: 1rem;
     line-height: 2.5rem;
-    margin: 0 0 0 1.5rem;
-    padding: 0 0 0 1.5rem;
+    margin: 0 0 0 var(--spacing-3x);
+    padding: 0 0 0 var(--spacing-3x);
   }
 `;
 

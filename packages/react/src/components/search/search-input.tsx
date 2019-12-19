@@ -40,18 +40,17 @@ const IcoSearch = styled(SearchIcon)`
 `;
 
 const IcoReset = styled(XIcon)`
-  color: ${props => props.theme.greys.black};
-  height: 0.75rem;
-  width: 0.75rem;
+  color: ${props => props.theme.greys['dark-grey']};
+  height: 1.25rem;
+  width: 1.25rem;
 `;
 
 const Input = styled.input`
   ${(props: {theme: Theme, hasButton?: boolean}) => {
       return `
       ${inputsStyle(props.theme)} /* Must be the first rule */
-      border-radius: ${props.hasButton && '0.25rem 0 0 0.25rem'};
-      line-height: 1;
-      padding: 0.5rem 1.75rem 0.5rem 2rem;
+      border-radius: ${props.hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
+      padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 
       label + & {
         margin-top: 0;
@@ -74,13 +73,13 @@ const Reset = styled.button`
   bottom: 0.5rem;
   cursor: pointer;
   display: none;
-  height: 0.75rem;
+  height: 1.25rem;
   margin: auto;
   padding: 0;
   position: absolute;
-  right: 0.5rem;
+  right: 0.25rem;
   top: 0.5rem;
-  width: 0.75rem;
+  width: 1.25rem;
 
   input:valid + & {
     display: inline-block;
@@ -89,7 +88,7 @@ const Reset = styled.button`
 
 const SearchSubmit = styled(SearchButton)`
   border-left: 0;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   position: relative;
 `;
 

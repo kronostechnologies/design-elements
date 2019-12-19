@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   height: inherit;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-1x);
   position: relative;
   width: inherit;
 `;

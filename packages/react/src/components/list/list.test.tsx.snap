@@ -51,7 +51,7 @@ exports[`List Matches the snapshot 1`] = `
 .c3 {
   color: #637282;
   height: 12px;
-  padding: 0 8px;
+  padding: 0 var(--spacing-1x);
   width: 12px;
 }
 

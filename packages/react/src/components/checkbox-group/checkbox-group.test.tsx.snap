@@ -4,7 +4,8 @@ exports[`Checkbox Matches the snapshot 1`] = `
 Array [
   .c0 {
   font-size: 0.75rem;
-  margin-bottom: 8px;
+  line-height: 1.25rem;
+  margin-bottom: var(--spacing-1x);
   padding: 0;
 }
 
@@ -17,14 +18,15 @@ Array [
   color: #FFFFFF;
   height: 100%;
   opacity: 0;
+  position: absolute;
   width: 100%;
 }
 
 .c0 {
   cursor: pointer;
   display: block;
-  font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -33,7 +35,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -55,13 +57,13 @@ Array [
   align-self: center;
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
   position: absolute;
-  top: 0;
+  top: 4px;
   width: 16px;
 }
 
@@ -95,14 +97,15 @@ Array [
   color: #FFFFFF;
   height: 100%;
   opacity: 0;
+  position: absolute;
   width: 100%;
 }
 
 .c0 {
   cursor: pointer;
   display: block;
-  font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -111,7 +114,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -133,13 +136,13 @@ Array [
   align-self: center;
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
   position: absolute;
-  top: 0;
+  top: 4px;
   width: 16px;
 }
 
@@ -174,6 +177,7 @@ Array [
   color: #FFFFFF;
   height: 100%;
   opacity: 0;
+  position: absolute;
   width: 100%;
 }
 
@@ -183,8 +187,8 @@ Array [
 
 .c0 {
   display: block;
-  font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -193,7 +197,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -215,13 +219,13 @@ Array [
   align-self: center;
   background-color: #F1F2F2;
   border: 1px solid #D9DDE2;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
   position: absolute;
-  top: 0;
+  top: 4px;
   width: 16px;
 }
 
@@ -253,14 +257,15 @@ Array [
   color: #FFFFFF;
   height: 100%;
   opacity: 0;
+  position: absolute;
   width: 100%;
 }
 
 .c0 {
   cursor: pointer;
   display: block;
-  font-size: 0.875rem;
-  padding-left: 24px;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -269,7 +274,7 @@ Array [
 }
 
 .c0:not(:first-of-type) {
-  margin-top: 16px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 input {
@@ -291,13 +296,13 @@ Array [
   align-self: center;
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: inline-block;
   height: 16px;
   left: 0;
-  margin-top: 2px;
   position: absolute;
-  top: 0;
+  top: 4px;
   width: 16px;
 }
 

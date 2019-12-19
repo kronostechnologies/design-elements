@@ -10,12 +10,12 @@ const Label = styled.label`
   font-size: 0.875rem;
   letter-spacing: 0.46px;
   line-height: 1.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--spacing-half);
 `;
 
 const Container = styled.div`
   & + & {
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-half);
   }
 `;
 
