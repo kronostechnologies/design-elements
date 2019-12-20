@@ -134,6 +134,7 @@ export const Select = ({
     const defaultOption = options.find(option => option.value === defaultValue);
     const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
     const [searchValue, setSearchValue] = useState('');
+    const [selectedOptionValue, setSelectedOptionValue] = useState('');
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
     const [autoFocus, setAutofocus] = useState(false);
@@ -181,6 +182,7 @@ export const Select = ({
         setOpen(false);
         setFocus(false);
         setSearchValue('');
+        setSelectedOptionValue(option.value);
         setSkipSelected(false);
         onChange && onChange(option);
         searchable && setAutofocus(false);
@@ -221,6 +223,8 @@ export const Select = ({
         }
     };
 
+    const handleBlur = () => !open && setFocus(false);
+
     return (
         <>
             <StyledFieldContainer
@@ -230,6 +234,11 @@ export const Select = ({
                 validationErrorMessage={validationErrorMessage}
             >
                 <InputWrapper
+                    role="combobox"
+                    aria-haspopup="listbox"
+                    aria-expanded={open}
+                    aria-owns={`listbox_${id}`}
+                    device={device}
                     disabled={disabled}
                     focus={focus}
                     onClick={disabled ? undefined : ()  => handleClick(false)}
@@ -237,12 +246,14 @@ export const Select = ({
                     valid={valid}
                 >
                     <StyledInput
+                        aria-controls={`listbox_${id}`}
+                        aria-activedescendant={selectedOptionValue ? `${selectedOptionValue}_${id}` : undefined}
                         disabled={disabled}
                         ref={inputRef}
                         type="text"
                         value={inputValue}
                         name={name}
-                        onBlur={() => setFocus(false)}
+                        onBlur={handleBlur}
                         onChange={handleInputChange}
                         onFocus={() => setFocus(true)}
                         onKeyDown={handleKeyDown}

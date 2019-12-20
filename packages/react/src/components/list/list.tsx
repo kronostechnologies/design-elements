@@ -112,7 +112,7 @@ export function List({
 
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedOptionId, setSelectedOptionId] = useState(
-        defaultValue ? `${defaultValue}-${ListId ? ListId : defaultSelectedIndex}` : undefined,
+        defaultValue ? `${defaultValue}_${ListId ? ListId : defaultSelectedIndex}` : undefined,
     );
 
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
@@ -121,7 +121,7 @@ export function List({
         options.map((option, index)  =>
             ({
                 ...option,
-                id: `${option.value}-${ListId ? ListId : index}`,
+                id: `${option.value}_${ListId ? ListId : index}`,
                 focusIndex: index,
                 ref: React.createRef<HTMLLIElement>(),
             }));
@@ -227,6 +227,7 @@ export function List({
         <Wrapper
             role="listbox"
             tabIndex={0}
+            id={ListId ? `listbox_${ListId}` : undefined}
             ref={listRef}
             onKeyPress={handleKeyDown}
             numberOfItemsVisible={numberOfItemsVisible}
