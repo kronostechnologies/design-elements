@@ -70,8 +70,13 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 <ul
+<<<<<<< HEAD
   aria-activedescendant="undefined_optionB"
   aria-labelledby="undefined_optionB"
+=======
+  aria-activedescendant="optionB_1"
+  aria-labelledby="optionB_1"
+>>>>>>> Adds accessibility standards
   className="c0"
   onKeyDown={[Function]}
   onKeyPress={[Function]}
@@ -82,7 +87,11 @@ exports[`List Matches the snapshot 1`] = `
     aria-label="Option A"
     aria-selected={false}
     className="c1"
+<<<<<<< HEAD
     id="undefined_optionA"
+=======
+    id="optionA_0"
+>>>>>>> Adds accessibility standards
     onClick={[Function]}
     role="option"
     selected={false}
@@ -93,7 +102,11 @@ exports[`List Matches the snapshot 1`] = `
     aria-label="Option B"
     aria-selected={true}
     className="c2"
+<<<<<<< HEAD
     id="undefined_optionB"
+=======
+    id="optionB_1"
+>>>>>>> Adds accessibility standards
     onClick={[Function]}
     role="option"
     selected={true}
@@ -111,7 +124,11 @@ exports[`List Matches the snapshot 1`] = `
     aria-label="Option C"
     aria-selected={false}
     className="c1"
+<<<<<<< HEAD
     id="undefined_optionC"
+=======
+    id="optionC_2"
+>>>>>>> Adds accessibility standards
     onClick={[Function]}
     role="option"
     selected={false}
@@ -122,7 +139,11 @@ exports[`List Matches the snapshot 1`] = `
     aria-label="Option D"
     aria-selected={false}
     className="c1"
+<<<<<<< HEAD
     id="undefined_optionD"
+=======
+    id="optionD_3"
+>>>>>>> Adds accessibility standards
     onClick={[Function]}
     role="option"
     selected={false}

@@ -215,7 +215,14 @@ label + .c2 {
 <div
   className="c0 c1"
 >
+<<<<<<< HEAD
   <label
+=======
+  <div
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    aria-owns="listbox_undefined"
+>>>>>>> Adds accessibility standards
     className="c2"
   >
     Select an option
@@ -229,6 +236,7 @@ label + .c2 {
     disabled={true}
     onClick={[Function]}
     role="combobox"
+<<<<<<< HEAD
   >
     <input
 <<<<<<< HEAD
@@ -283,6 +291,11 @@ label + .c2 {
       className="c4"
       disabled={true}
 =======
+=======
+  >
+    <input
+      aria-controls="listbox_undefined"
+>>>>>>> Adds accessibility standards
       className="c3"
       onBlur={[Function]}
 >>>>>>> PR changes
@@ -314,7 +327,7 @@ label + .c2 {
         aria-label="Ontario"
         aria-selected={false}
         className="c6"
-        id="on-0"
+        id="on_0"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -325,7 +338,7 @@ label + .c2 {
         aria-label="Quebec"
         aria-selected={false}
         className="c6"
-        id="qc-1"
+        id="qc_1"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -336,7 +349,7 @@ label + .c2 {
         aria-label="British Columbia"
         aria-selected={false}
         className="c6"
-        id="bc-2"
+        id="bc_2"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -347,7 +360,7 @@ label + .c2 {
         aria-label="Alberta"
         aria-selected={false}
         className="c6"
-        id="ab-3"
+        id="ab_3"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -358,7 +371,7 @@ label + .c2 {
         aria-label="Manitoba"
         aria-selected={false}
         className="c6"
-        id="mb-4"
+        id="mb_4"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -369,7 +382,7 @@ label + .c2 {
         aria-label="Saskatchewan"
         aria-selected={false}
         className="c6"
-        id="sk-5"
+        id="sk_5"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -384,8 +397,12 @@ label + .c2 {
         id=""
 =======
         className="c6"
+<<<<<<< HEAD
         id="ns-6"
 >>>>>>> PR changes
+=======
+        id="ns_6"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -396,7 +413,7 @@ label + .c2 {
         aria-label="New Brunswick"
         aria-selected={false}
         className="c6"
-        id="nb-7"
+        id="nb_7"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -407,7 +424,7 @@ label + .c2 {
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
         className="c6"
-        id="nl-8"
+        id="nl_8"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -418,7 +435,7 @@ label + .c2 {
         aria-label="Prince Edward Island"
         aria-selected={false}
         className="c6"
-        id="pe-9"
+        id="pe_9"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -429,7 +446,7 @@ label + .c2 {
         aria-label="Northwest Territories"
         aria-selected={false}
         className="c6"
-        id="nt-10"
+        id="nt_10"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -440,7 +457,7 @@ label + .c2 {
         aria-label="Nunavut"
         aria-selected={false}
         className="c6"
-        id="nu-11"
+        id="nu_11"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -451,7 +468,7 @@ label + .c2 {
         aria-label="Yukon"
         aria-selected={false}
         className="c6"
-        id="yt-12"
+        id="yt_12"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -607,10 +624,15 @@ exports[`Select has no label 1`] = `
   className="c0 c1"
 >
   <div
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    aria-owns="listbox_undefined"
     className="c2"
     onClick={[Function]}
+    role="combobox"
   >
     <input
+      aria-controls="listbox_undefined"
       className="c3"
       onBlur={[Function]}
       onChange={[Function]}
@@ -647,8 +669,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="on-0"
 >>>>>>> PR changes
+=======
+        id="on_0"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -668,8 +694,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="qc-1"
 >>>>>>> PR changes
+=======
+        id="qc_1"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -689,8 +719,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="bc-2"
 >>>>>>> PR changes
+=======
+        id="bc_2"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -710,8 +744,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="ab-3"
 >>>>>>> PR changes
+=======
+        id="ab_3"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -731,8 +769,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="mb-4"
 >>>>>>> PR changes
+=======
+        id="mb_4"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -752,8 +794,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="sk-5"
 >>>>>>> PR changes
+=======
+        id="sk_5"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -773,8 +819,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="ns-6"
 >>>>>>> PR changes
+=======
+        id="ns_6"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -794,8 +844,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="nb-7"
 >>>>>>> PR changes
+=======
+        id="nb_7"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -815,8 +869,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="nl-8"
 >>>>>>> PR changes
+=======
+        id="nl_8"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -836,8 +894,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="pe-9"
 >>>>>>> PR changes
+=======
+        id="pe_9"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -857,8 +919,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="nt-10"
 >>>>>>> PR changes
+=======
+        id="nt_10"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -868,6 +934,7 @@ exports[`Select has no label 1`] = `
       <li
         aria-label="Nunavut"
         aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         className="c8"
@@ -880,6 +947,10 @@ exports[`Select has no label 1`] = `
         className="c6"
         id="nu-11"
 >>>>>>> PR changes
+=======
+        className="c6"
+        id="nu_11"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -899,8 +970,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Renames Dropdown to Select
 =======
         className="c6"
+<<<<<<< HEAD
         id="yt-12"
 >>>>>>> PR changes
+=======
+        id="yt_12"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1265,10 +1340,15 @@ label + .c2 {
     Select an option
   </label>
   <div
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    aria-owns="listbox_undefined"
     className="c3"
     disabled={true}
+    role="combobox"
   >
     <input
+      aria-controls="listbox_undefined"
       className="c4"
       disabled={true}
       onBlur={[Function]}
@@ -1326,8 +1406,12 @@ label + .c2 {
         aria-label="Ontario"
         aria-selected={false}
         className="c7"
+<<<<<<< HEAD
         id="on-0"
 >>>>>>> PR changes
+=======
+        id="on_0"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         tabIndex={-1}
         type="button"
@@ -1347,9 +1431,13 @@ label + .c2 {
       <ul
         className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
         id="qc-1"
+=======
+        id="qc_1"
+>>>>>>> Adds accessibility standards
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1360,7 +1448,7 @@ label + .c2 {
         aria-label="British Columbia"
         aria-selected={false}
         className="c7"
-        id="bc-2"
+        id="bc_2"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1371,7 +1459,7 @@ label + .c2 {
         aria-label="Alberta"
         aria-selected={false}
         className="c7"
-        id="ab-3"
+        id="ab_3"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1382,7 +1470,7 @@ label + .c2 {
         aria-label="Manitoba"
         aria-selected={false}
         className="c7"
-        id="mb-4"
+        id="mb_4"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1393,7 +1481,7 @@ label + .c2 {
         aria-label="Saskatchewan"
         aria-selected={false}
         className="c7"
-        id="sk-5"
+        id="sk_5"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1404,7 +1492,7 @@ label + .c2 {
         aria-label="Nova Scotia"
         aria-selected={false}
         className="c7"
-        id="ns-6"
+        id="ns_6"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1415,7 +1503,7 @@ label + .c2 {
         aria-label="New Brunswick"
         aria-selected={false}
         className="c7"
-        id="nb-7"
+        id="nb_7"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1426,7 +1514,7 @@ label + .c2 {
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
         className="c7"
-        id="nl-8"
+        id="nl_8"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1437,7 +1525,7 @@ label + .c2 {
         aria-label="Prince Edward Island"
         aria-selected={false}
         className="c7"
-        id="pe-9"
+        id="pe_9"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1448,7 +1536,7 @@ label + .c2 {
         aria-label="Northwest Territories"
         aria-selected={false}
         className="c7"
-        id="nt-10"
+        id="nt_10"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1459,7 +1547,7 @@ label + .c2 {
         aria-label="Nunavut"
         aria-selected={false}
         className="c7"
-        id="nu-11"
+        id="nu_11"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1470,7 +1558,7 @@ label + .c2 {
         aria-label="Yukon"
         aria-selected={false}
         className="c7"
-        id="yt-12"
+        id="yt_12"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1669,6 +1757,7 @@ input + .c2 {
       Select an option
     </label>
     <div
+<<<<<<< HEAD
       aria-expanded={false}
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
@@ -1755,6 +1844,22 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
+=======
+<<<<<<< HEAD
+>>>>>>> PR changes
+=======
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="listbox_undefined"
+>>>>>>> Adds accessibility standards
+      className="c3"
+      onClick={[Function]}
+      role="combobox"
+    >
+      <input
+        aria-controls="listbox_undefined"
+        className="c4"
+>>>>>>> Adds accessibility standards
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -2326,8 +2431,12 @@ input + .c2 {
           aria-label="Ontario"
           aria-selected={false}
           className="c7"
+<<<<<<< HEAD
           id="on-0"
 >>>>>>> PR changes
+=======
+          id="on_0"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2343,11 +2452,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="qc"
 >>>>>>> Renames Dropdown to Select
 =======
           id="qc-1"
 >>>>>>> PR changes
+=======
+          id="qc_1"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2363,11 +2476,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="bc"
 >>>>>>> Renames Dropdown to Select
 =======
           id="bc-2"
 >>>>>>> PR changes
+=======
+          id="bc_2"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2383,11 +2500,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ab"
 >>>>>>> Renames Dropdown to Select
 =======
           id="ab-3"
 >>>>>>> PR changes
+=======
+          id="ab_3"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2403,11 +2524,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="mb"
 >>>>>>> Renames Dropdown to Select
 =======
           id="mb-4"
 >>>>>>> PR changes
+=======
+          id="mb_4"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2423,11 +2548,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="sk"
 >>>>>>> Renames Dropdown to Select
 =======
           id="sk-5"
 >>>>>>> PR changes
+=======
+          id="sk_5"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2443,11 +2572,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ns"
 >>>>>>> Renames Dropdown to Select
 =======
           id="ns-6"
 >>>>>>> PR changes
+=======
+          id="ns_6"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2463,11 +2596,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nb"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nb-7"
 >>>>>>> PR changes
+=======
+          id="nb_7"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2483,11 +2620,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nl"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nl-8"
 >>>>>>> PR changes
+=======
+          id="nl_8"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2503,11 +2644,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="pe"
 >>>>>>> Renames Dropdown to Select
 =======
           id="pe-9"
 >>>>>>> PR changes
+=======
+          id="pe_9"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2523,11 +2668,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nt"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nt-10"
 >>>>>>> PR changes
+=======
+          id="nt_10"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2543,11 +2692,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nu"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nu-11"
 >>>>>>> PR changes
+=======
+          id="nu_11"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2563,11 +2716,15 @@ input + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="yt"
 >>>>>>> Renames Dropdown to Select
 =======
           id="yt-12"
 >>>>>>> PR changes
+=======
+          id="yt_12"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3055,6 +3212,7 @@ label + .c2 {
     </label>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-expanded={false}
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
@@ -3106,10 +3264,17 @@ label + .c2 {
           className="c8"
           id="undefined_on"
 =======
+=======
+      aria-expanded={false}
+      aria-haspopup="listbox"
+      aria-owns="listbox_undefined"
+>>>>>>> Adds accessibility standards
       className="c3"
       onClick={[Function]}
+      role="combobox"
     >
       <input
+        aria-controls="listbox_undefined"
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -3142,11 +3307,15 @@ label + .c2 {
           aria-selected={false}
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="on"
 >>>>>>> Renames Dropdown to Select
 =======
           id="on-0"
 >>>>>>> PR changes
+=======
+          id="on_0"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3162,11 +3331,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="qc"
 >>>>>>> Renames Dropdown to Select
 =======
           id="qc-1"
 >>>>>>> PR changes
+=======
+          id="qc_1"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3182,11 +3355,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="bc"
 >>>>>>> Renames Dropdown to Select
 =======
           id="bc-2"
 >>>>>>> PR changes
+=======
+          id="bc_2"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3202,11 +3379,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ab"
 >>>>>>> Renames Dropdown to Select
 =======
           id="ab-3"
 >>>>>>> PR changes
+=======
+          id="ab_3"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3222,11 +3403,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="mb"
 >>>>>>> Renames Dropdown to Select
 =======
           id="mb-4"
 >>>>>>> PR changes
+=======
+          id="mb_4"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3242,11 +3427,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="sk"
 >>>>>>> Renames Dropdown to Select
 =======
           id="sk-5"
 >>>>>>> PR changes
+=======
+          id="sk_5"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3262,11 +3451,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ns"
 >>>>>>> Renames Dropdown to Select
 =======
           id="ns-6"
 >>>>>>> PR changes
+=======
+          id="ns_6"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3282,11 +3475,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nb"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nb-7"
 >>>>>>> PR changes
+=======
+          id="nb_7"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3302,11 +3499,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nl"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nl-8"
 >>>>>>> PR changes
+=======
+          id="nl_8"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3322,11 +3523,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="pe"
 >>>>>>> Renames Dropdown to Select
 =======
           id="pe-9"
 >>>>>>> PR changes
+=======
+          id="pe_9"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3342,11 +3547,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nt"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nt-10"
 >>>>>>> PR changes
+=======
+          id="nt_10"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3362,11 +3571,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nu"
 >>>>>>> Renames Dropdown to Select
 =======
           id="nu-11"
 >>>>>>> PR changes
+=======
+          id="nu_11"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3382,11 +3595,15 @@ label + .c2 {
 =======
           className="c7"
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="yt"
 >>>>>>> Renames Dropdown to Select
 =======
           id="yt-12"
 >>>>>>> PR changes
+=======
+          id="yt_12"
+>>>>>>> Adds accessibility standards
           onClick={[Function]}
           role="option"
           selected={false}
