@@ -1,25 +1,64 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 import { ToggleButtonGroup } from '@equisoft/design-elements-react';
 
 const buttonGroup = [
     {
-        value: 'zest1',
-        label: 'Zest 1',
-        disabled: true,
+        value: 'option1',
+        label: 'Option 1',
     },
     {
-        value: 'zest2',
-        label: 'Zest 2',
+        value: 'option2',
+        label: 'Option 2',
+    },
+    {
+        value: 'option3',
+        label: 'Option 3',
+    },
+    {
+        value: 'option4',
+        label: 'Option 4',
+    },
+];
+
+const defaultCheckedGroup = [
+    {
+        value: 'option1',
+        label: 'Option 1',
+    },
+    {
+        value: 'option2',
+        label: 'Option 2',
         defaultChecked: true,
     },
     {
-        value: 'zest3',
-        label: 'Zest 3',
+        value: 'option3',
+        label: 'Option 3',
     },
     {
-        value: 'zest4',
-        label: 'Zest 4',
+        value: 'option4',
+        label: 'Option 4',
+    },
+];
+
+const disabledGroup = [
+    {
+        value: 'option1',
+        label: 'Option 1',
+        disabled: true,
+    },
+    {
+        value: 'option2',
+        label: 'Option 2',
+    },
+    {
+        value: 'option3',
+        label: 'Option 3',
+        disabled: true,
+    },
+    {
+        value: 'option4',
+        label: 'Option 4',
     },
 ];
 
@@ -30,4 +69,17 @@ export default {
 
 export const toggleButtonGroup = () => (
     <ToggleButtonGroup groupName="Test" buttonGroup={buttonGroup}/>
+);
+export const defaultChecked = () => (
+    <ToggleButtonGroup groupName="Test2" buttonGroup={defaultCheckedGroup}/>
+);
+export const disabled = () => (
+    <ToggleButtonGroup groupName="Test3" buttonGroup={disabledGroup}/>
+);
+export const withCallback = () => (
+    <ToggleButtonGroup
+        groupName="Test4"
+        buttonGroup={buttonGroup}
+        onChange={(event: ChangeEvent<HTMLInputElement>) => console.log(`Toggled button value: ${event.target.value}`)}
+    />
 );
