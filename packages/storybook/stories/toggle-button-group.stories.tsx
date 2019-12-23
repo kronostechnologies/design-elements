@@ -11,6 +11,7 @@ const buttonGroup = [
     {
         value: 'zest2',
         label: 'Zest 2',
+        defaultChecked: true,
     },
     {
         value: 'zest3',

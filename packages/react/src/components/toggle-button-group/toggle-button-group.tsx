@@ -69,6 +69,7 @@ const ToggleButton = styled.div<ToggleButtonProps>`
 `;
 
 interface Button {
+    defaultChecked?: boolean;
     disabled?: boolean;
     label: string;
     value: string;
@@ -81,7 +82,8 @@ interface ToggleButtonGroupProps {
 }
 
 export const ToggleButtonGroup = ({ buttonGroup, groupName, onChange }: ToggleButtonGroupProps) => {
-    const [selectedValue, setSelectedValue] = useState();
+    const defaultCheck = buttonGroup.find(button => button.defaultChecked);
+    const [selectedValue, setSelectedValue] = useState(defaultCheck ? defaultCheck.value : '');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSelectedValue(event.target.value);
