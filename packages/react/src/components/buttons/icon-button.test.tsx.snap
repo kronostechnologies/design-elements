@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Add Button Button has primary styles 1`] = `
+exports[`Button Has mobile styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -39,9 +39,12 @@ exports[`Add Button Button has primary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 48px;
   background-color: #EF483E;
   border-color: #EF483E;
   color: #FFFFFF;
+  padding: 0;
+  width: 48px;
 }
 
 .c0:not(:disabled) {
@@ -64,23 +67,19 @@ exports[`Add Button Button has primary styles 1`] = `
   border-color: #FF847C;
 }
 
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
 <button
   className="c0"
-  label="Primary Button"
   onClick={[Function]}
 >
   <svg
-    className="c1"
+    color="currentColor"
+    height="20"
+    width="20"
   />
-  Primary Button
 </button>
 `;
 
-exports[`Add Button Button has secondary styles 1`] = `
+exports[`Button Has primary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -119,9 +118,91 @@ exports[`Add Button Button has secondary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 32px;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+  padding: 0;
+  width: 32px;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #FF847C;
+  border-color: #FF847C;
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  <svg
+    color="currentColor"
+    height="16"
+    width="16"
+  />
+</button>
+`;
+
+exports[`Button Has secondary styles 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
   background-color: transparent;
   border-color: #EF483E;
   color: #EF483E;
+  padding: 0;
+  width: 32px;
 }
 
 .c0:not(:disabled) {
@@ -146,23 +227,19 @@ exports[`Add Button Button has secondary styles 1`] = `
   color: #FF847C;
 }
 
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
 <button
   className="c0"
-  label="Secondary Button"
   onClick={[Function]}
 >
   <svg
-    className="c1"
+    color="currentColor"
+    height="16"
+    width="16"
   />
-  Secondary Button
 </button>
 `;
 
-exports[`Add Button Button has tertiary styles 1`] = `
+exports[`Button Has tertiary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -201,9 +278,12 @@ exports[`Add Button Button has tertiary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
+  padding: 0;
+  width: 32px;
 }
 
 .c0:not(:disabled) {
@@ -224,23 +304,19 @@ exports[`Add Button Button has tertiary styles 1`] = `
   color: #9CA7B4;
 }
 
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
 <button
   className="c0"
-  label="Tertiary Button"
   onClick={[Function]}
 >
   <svg
-    className="c1"
+    color="currentColor"
+    height="16"
+    width="16"
   />
-  Tertiary Button
 </button>
 `;
 
-exports[`Add Button Button is disabled 1`] = `
+exports[`Button Is disabled 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -279,9 +355,12 @@ exports[`Add Button Button is disabled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 32px;
   background-color: #EF483E;
   border-color: #EF483E;
   color: #FFFFFF;
+  padding: 0;
+  width: 32px;
 }
 
 .c0:not(:disabled) {
@@ -304,19 +383,15 @@ exports[`Add Button Button is disabled 1`] = `
   border-color: #FF847C;
 }
 
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
 <button
   className="c0"
   disabled={true}
-  label="Primary Button"
   onClick={[Function]}
 >
   <svg
-    className="c1"
+    color="currentColor"
+    height="16"
+    width="16"
   />
-  Primary Button
 </button>
 `;

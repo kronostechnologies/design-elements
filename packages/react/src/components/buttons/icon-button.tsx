@@ -3,22 +3,32 @@ import styled from 'styled-components';
 
 import { Icon, IconName } from '../icon//icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
-import { AbstractButton, AbstractButtonProps } from './abstract-button';
+import { AbstractButton } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
-interface ButtonProps extends AbstractButtonProps {
+interface ButtonProps {
     /**
      * Visual style
      * @default primary
      **/
     buttonType: ButtonType;
     /**
-     * Applies styles according to device
+     * Applies styles and sizes according to the device
      * @default desktop
      */
     device?: 'mobile' | 'desktop';
+    /**
+     * Disables button
+     * @default false
+     */
+    disabled?: boolean;
+    /**
+     * Name of the desired icon (refer to icon library)
+     */
     iconName: IconName;
+
+    onClick?(): void;
 }
 
 const StyledButton = styled(AbstractButton)<ButtonProps>`
@@ -36,13 +46,11 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     border-color: ${props.theme.main['secondary-4.3']};
                   }
 
-                  &:disabled {
-                    &,
-                    &:focus,
-                    &:hover {
-                      background-color: ${props.theme.main['secondary-4.2']};
-                      border-color: ${props.theme.main['secondary-4.2']};
-                    }
+                  &:disabled,
+                  &:disabled:focus,
+                  &:disabled:hover {
+                    background-color: ${props.theme.main['secondary-4.2']};
+                    border-color: ${props.theme.main['secondary-4.2']};
                   }
                 `;
           case 'secondary':
@@ -57,14 +65,12 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     color: ${props.theme.greys.white};
                   }
 
-                  &:disabled {
-                      &,
-                      &:focus,
-                      &:hover {
-                        background-color: transparent;
-                        border-color: ${props.theme.main['secondary-4.2']};
-                        color: ${props.theme.main['secondary-4.2']};
-                      }
+                  &:disabled,
+                  &:disabled:focus,
+                  &:disabled:hover {
+                    background-color: transparent;
+                    border-color: ${props.theme.main['secondary-4.2']};
+                    color: ${props.theme.main['secondary-4.2']};
                   }
               `;
           case 'tertiary':
@@ -77,12 +83,10 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     color: ${props.theme.greys.black};
                   }
 
-                  &:disabled {
-                    &,
-                    &:focus,
-                    &:hover {
+                  &:disabled,
+                  &:disabled:focus,
+                  &:disabled:hover {
                       color: ${props.theme.greys['mid-grey']};
-                    }
                   }
               `;
       }
@@ -93,7 +97,6 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
 `;
 
 export const IconButton = ({
-  children,
   device = 'desktop',
   iconName,
   onClick,

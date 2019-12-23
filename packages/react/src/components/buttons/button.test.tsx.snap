@@ -20,6 +20,10 @@ exports[`Button Has primary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -89,6 +93,10 @@ exports[`Button Has secondary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -160,6 +168,10 @@ exports[`Button Has tertiary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -227,6 +239,10 @@ exports[`Button Is disabled 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
