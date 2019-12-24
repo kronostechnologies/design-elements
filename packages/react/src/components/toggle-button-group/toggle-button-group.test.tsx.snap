@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButtonGroup Matches snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 div:first-child,
+.c0 input:first-child {
+  border-radius: 104px 0 0 104px;
+}
+
+.c0 div:last-child,
+.c0 input:last-child {
+  border-radius: 0 104px 104px 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
+  border-left: none;
+  box-sizing: border-box;
+  color: #9CA7B4;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 40px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1:first-child {
+  border-left: 1px solid #D9DDE2;
+}
+
+.c1 input {
+  cursor: default;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #0080A5;
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 40px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c2:first-child {
+  border-left: 1px solid #0080A5;
+}
+
+.c2 input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #D9DDE2;
+  border-left: none;
+  box-sizing: border-box;
+  color: #57666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 40px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c3:first-child {
+  border-left: 1px solid #D9DDE2;
+}
+
+.c3 input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c3:hover {
+  background-color: #D9DDE2;
+}
+
+<div
+  className="c0"
+>
+  <div
+    checked={false}
+    className="c1"
+    disabled={true}
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="Test4"
+      onChange={[Function]}
+      type="radio"
+      value="option1"
+    />
+    Option 1
+  </div>
+  <div
+    checked={true}
+    className="c2"
+  >
+    <input
+      checked={true}
+      name="Test4"
+      onChange={[Function]}
+      type="radio"
+      value="option2"
+    />
+    Option 2
+  </div>
+  <div
+    checked={false}
+    className="c3"
+  >
+    <input
+      checked={false}
+      name="Test4"
+      onChange={[Function]}
+      type="radio"
+      value="option3"
+    />
+    Option 3
+  </div>
+  <div
+    checked={false}
+    className="c3"
+  >
+    <input
+      checked={false}
+      name="Test4"
+      onChange={[Function]}
+      type="radio"
+      value="option4"
+    />
+    Option 4
+  </div>
+</div>
+`;

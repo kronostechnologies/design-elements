@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -6,12 +6,12 @@ const Container = styled.div`
 
   div:first-child,
   input:first-child {
-    border-radius: 100px 0 0 100px;
+    border-radius: 104px 0 0 104px;
   }
 
   div:last-child,
   input:last-child {
-    border-radius: 0 100px 100px 0;
+    border-radius: 0 104px 104px 0;
   }
 `;
 
@@ -34,6 +34,7 @@ const ToggleButton = styled.div<ToggleButtonProps>`
         }
     }};
   border: 1px solid ${props => props.checked ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
+  border-left: none;
   box-sizing: border-box;
   color:
     ${(props) => {
@@ -49,9 +50,13 @@ const ToggleButton = styled.div<ToggleButtonProps>`
   display: flex;
   font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
   height: ${props => props.device === 'mobile' ? '48px' : '40px'};
-  padding: 0 16px;
+  padding: 0 var(--spacing-2x);
   position: relative;
   width: fit-content;
+
+  &:first-child {
+    border-left: 1px solid ${props => props.checked ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
+  }
 
   /* stylelint-disable-next-line */
   input {
@@ -66,30 +71,34 @@ const ToggleButton = styled.div<ToggleButtonProps>`
   }
 
   &:hover {
-    ${props => props.checked || props.disabled ? '' : `background-color: ${props.theme.greys.grey}`}
+    ${props => props.checked || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}
   }
 `;
 
-interface Button {
-    defaultChecked?: boolean;
-    disabled?: boolean;
-    label: string;
-    value: string;
-}
-
 interface ToggleButtonGroupProps {
-    buttonGroup: Button[];
+    /**
+     * Takes an array of objects containing all the buttons needed
+     */
+    buttonGroup: {
+        defaultChecked?: boolean;
+        disabled?: boolean;
+        label: string;
+        value: string;
+    }[];
     /**
      * Applies styles and sizes according to the device
      * @default desktop
      */
     device?: 'mobile' | 'desktop';
+    /**
+     * Sets common name for all buttons
+     */
     groupName: string;
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, onChange }: ToggleButtonGroupProps) => {
-    const defaultCheck = buttonGroup.find(button => button.defaultChecked);
+    const defaultCheck = useMemo(() => buttonGroup.find(button => button.defaultChecked), [buttonGroup]);
     const [selectedValue, setSelectedValue] = useState(defaultCheck ? defaultCheck.value : '');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

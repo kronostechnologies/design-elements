@@ -68,16 +68,16 @@ export default {
 };
 
 export const toggleButtonGroup = () => (
-    <ToggleButtonGroup groupName="Test" buttonGroup={buttonGroup}/>
+    <ToggleButtonGroup groupName="Story1" buttonGroup={buttonGroup}/>
 );
 export const defaultChecked = () => (
-    <ToggleButtonGroup groupName="Test2" buttonGroup={defaultCheckedGroup}/>
+    <ToggleButtonGroup groupName="Story2" buttonGroup={defaultCheckedGroup}/>
 );
 export const disabled = () => (
-    <ToggleButtonGroup groupName="Test3" buttonGroup={disabledGroup}/>
+    <ToggleButtonGroup groupName="Story3" buttonGroup={disabledGroup}/>
 );
 export const mobile = () => (
-    <ToggleButtonGroup groupName="Test4" device="mobile" buttonGroup={buttonGroup}/>
+    <ToggleButtonGroup groupName="Story4" device="mobile" buttonGroup={buttonGroup}/>
 );
 export const withCallback = () => (
     <ToggleButtonGroup
