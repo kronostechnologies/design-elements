@@ -70,6 +70,10 @@ const ToggleButton = styled.div<ToggleButtonProps>`
     width: 100%;
   }
 
+  label {
+    text-align: center;
+  }
+
   &:hover {
     ${props => props.checked || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}
   }
@@ -107,7 +111,7 @@ export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, 
     };
 
     return (
-        <Container>
+        <Container role="radiogroup">
             {buttonGroup.map(button => (
                 <ToggleButton
                     checked={button.value === selectedValue}
@@ -116,13 +120,19 @@ export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, 
                     key={`${groupName}-${button.value}`}
                 >
                     <input
+                        aria-checked={button.value === selectedValue}
+                        aria-labelledby={`${groupName}-${button.value}`}
                         checked={button.value === selectedValue}
                         disabled={button.disabled}
                         name={groupName}
                         onChange={handleChange}
+                        role="radio"
                         type="radio"
                         value={button.value}
-                    />{button.label}
+                    />
+                    <label id={`${groupName}-${button.value}`}>
+                        {button.label}
+                    </label>
                 </ToggleButton>
             ))}
         </Container>

@@ -57,6 +57,10 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   width: 100%;
 }
 
+.c1 label {
+  text-align: center;
+}
+
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -94,6 +98,10 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.c2 label {
+  text-align: center;
 }
 
 .c3 {
@@ -135,12 +143,17 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   width: 100%;
 }
 
+.c3 label {
+  text-align: center;
+}
+
 .c3:hover {
   background-color: #D9DDE2;
 }
 
 <div
   className="c0"
+  role="radiogroup"
 >
   <div
     checked={false}
@@ -148,53 +161,81 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
     disabled={true}
   >
     <input
+      aria-checked={false}
+      aria-labelledby="Test4-option1"
       checked={false}
       disabled={true}
       name="Test4"
       onChange={[Function]}
+      role="radio"
       type="radio"
       value="option1"
     />
-    Option 1
+    <label
+      id="Test4-option1"
+    >
+      Option 1
+    </label>
   </div>
   <div
     checked={true}
     className="c2"
   >
     <input
+      aria-checked={true}
+      aria-labelledby="Test4-option2"
       checked={true}
       name="Test4"
       onChange={[Function]}
+      role="radio"
       type="radio"
       value="option2"
     />
-    Option 2
+    <label
+      id="Test4-option2"
+    >
+      Option 2
+    </label>
   </div>
   <div
     checked={false}
     className="c3"
   >
     <input
+      aria-checked={false}
+      aria-labelledby="Test4-option3"
       checked={false}
       name="Test4"
       onChange={[Function]}
+      role="radio"
       type="radio"
       value="option3"
     />
-    Option 3
+    <label
+      id="Test4-option3"
+    >
+      Option 3
+    </label>
   </div>
   <div
     checked={false}
     className="c3"
   >
     <input
+      aria-checked={false}
+      aria-labelledby="Test4-option4"
       checked={false}
       name="Test4"
       onChange={[Function]}
+      role="radio"
       type="radio"
       value="option4"
     />
-    Option 4
+    <label
+      id="Test4-option4"
+    >
+      Option 4
+    </label>
   </div>
 </div>
 `;
