@@ -17,6 +17,7 @@ const Container = styled.div`
 
 interface ToggleButtonProps {
     checked: boolean;
+    device: 'mobile' | 'desktop';
     disabled?: boolean;
 }
 
@@ -46,7 +47,8 @@ const ToggleButton = styled.div<ToggleButtonProps>`
     }};
   cursor: ${props => props.disabled ? 'default' : 'pointer'};
   display: flex;
-  height: 40px;
+  font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
+  height: ${props => props.device === 'mobile' ? '48px' : '40px'};
   padding: 0 16px;
   position: relative;
   width: fit-content;
@@ -76,12 +78,17 @@ interface Button {
 }
 
 interface ToggleButtonGroupProps {
-    groupName: string;
     buttonGroup: Button[];
+    /**
+     * Applies styles and sizes according to the device
+     * @default desktop
+     */
+    device?: 'mobile' | 'desktop';
+    groupName: string;
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const ToggleButtonGroup = ({ buttonGroup, groupName, onChange }: ToggleButtonGroupProps) => {
+export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, onChange }: ToggleButtonGroupProps) => {
     const defaultCheck = buttonGroup.find(button => button.defaultChecked);
     const [selectedValue, setSelectedValue] = useState(defaultCheck ? defaultCheck.value : '');
 
@@ -95,6 +102,7 @@ export const ToggleButtonGroup = ({ buttonGroup, groupName, onChange }: ToggleBu
             {buttonGroup.map(button => (
                 <ToggleButton
                     checked={button.value === selectedValue}
+                    device={device}
                     disabled={button.disabled}
                     key={`${groupName}-${button.value}`}
                 >

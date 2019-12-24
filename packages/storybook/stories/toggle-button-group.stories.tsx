@@ -76,9 +76,12 @@ export const defaultChecked = () => (
 export const disabled = () => (
     <ToggleButtonGroup groupName="Test3" buttonGroup={disabledGroup}/>
 );
+export const mobile = () => (
+    <ToggleButtonGroup groupName="Test4" device="mobile" buttonGroup={buttonGroup}/>
+);
 export const withCallback = () => (
     <ToggleButtonGroup
-        groupName="Test4"
+        groupName="Test5"
         buttonGroup={buttonGroup}
         onChange={(event: ChangeEvent<HTMLInputElement>) => console.log(`Toggled button value: ${event.target.value}`)}
     />
