@@ -63,10 +63,10 @@ interface IconProps {
     focusable?: boolean;
 }
 
-export function Icon({ name, size, focusable, ...props }: IconProps): ReactElement | null {
+export function Icon({ name, size, ...props }: IconProps): ReactElement | null {
     const Component = iconMapping[name];
 
-    return Component ? <Component focusable={focusable} height={size} width={size} {...props} /> : null;
+    return Component ? <Component height={size} width={size} {...props} /> : null;
 }
 
 Icon.defaultProps = {

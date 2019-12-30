@@ -7,6 +7,8 @@ import { AbstractButton } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
+type Type = 'submit' | 'button' | 'reset';
+
 interface ButtonProps {
     /**
      * Visual style
@@ -31,6 +33,11 @@ interface ButtonProps {
      * Sets aria-label
      */
     label: string;
+    /**
+     * Sets button type
+     * @default button
+     */
+    type?: Type;
 
     onClick?(): void;
 }
@@ -97,6 +104,7 @@ export const IconButton = ({
   iconName,
   label,
   onClick,
+  type = 'submit',
   ...props
 }: ButtonProps): ReactElement => {
     const handleClick = (): void => onClick && onClick();
@@ -108,6 +116,7 @@ export const IconButton = ({
           label={label}
           onClick={handleClick}
           device={device}
+          type={type}
           {...props}
         >
             <Icon name={iconName} size={device === 'mobile' ? '20' : '16'} focusable={false}/>

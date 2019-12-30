@@ -10,6 +10,7 @@ describe('Button', () => {
         const wrapper = mount(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     onClick={callback}
                     buttonType="primary"
@@ -25,6 +26,7 @@ describe('Button', () => {
         const wrapper = mount(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     onClick={callback}
                     buttonType="primary"
@@ -40,6 +42,7 @@ describe('Button', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     buttonType="primary"
                     disabled
@@ -54,6 +57,7 @@ describe('Button', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     buttonType="primary"
                 />,
@@ -67,6 +71,7 @@ describe('Button', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     buttonType="secondary"
                 />,
@@ -80,6 +85,7 @@ describe('Button', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     buttonType="tertiary"
                 />,
@@ -93,6 +99,7 @@ describe('Button', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <IconButton
+                    label="home"
                     iconName="home"
                     buttonType="primary"
                     device="mobile"

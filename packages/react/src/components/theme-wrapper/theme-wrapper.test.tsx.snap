@@ -67,6 +67,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  type="submit"
 >
   
 </button>
@@ -139,6 +140,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  type="submit"
 >
   
 </button>
