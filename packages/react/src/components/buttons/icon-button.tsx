@@ -27,6 +27,10 @@ interface ButtonProps {
      * Name of the desired icon (refer to icon library)
      */
     iconName: IconName;
+    /**
+     * Sets aria-label
+     */
+    label: string;
 
     onClick?(): void;
 }
@@ -38,19 +42,15 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
           case 'primary':
               return `
                   background-color: ${props.theme.main['secondary-4.1']};
-                  border-color: ${props.theme.main['secondary-4.1']};
+                  border: none;
                   color: ${props.theme.greys.white};
 
                   &:hover {
                     background-color: ${props.theme.main['secondary-4.3']};
-                    border-color: ${props.theme.main['secondary-4.3']};
                   }
 
-                  &:disabled,
-                  &:disabled:focus,
-                  &:disabled:hover {
+                  &:disabled {
                     background-color: ${props.theme.main['secondary-4.2']};
-                    border-color: ${props.theme.main['secondary-4.2']};
                   }
                 `;
           case 'secondary':
@@ -65,9 +65,7 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     color: ${props.theme.greys.white};
                   }
 
-                  &:disabled,
-                  &:disabled:focus,
-                  &:disabled:hover {
+                  &:disabled {
                     background-color: transparent;
                     border-color: ${props.theme.main['secondary-4.2']};
                     color: ${props.theme.main['secondary-4.2']};
@@ -76,16 +74,14 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
           case 'tertiary':
               return `
                   background-color: transparent;
-                  border-color: transparent;
+                  border: none;
                   color: ${props.theme.greys['dark-grey']};
 
                   &:hover {
                     color: ${props.theme.greys.black};
                   }
 
-                  &:disabled,
-                  &:disabled:focus,
-                  &:disabled:hover {
+                  &:disabled {
                       color: ${props.theme.greys['mid-grey']};
                   }
               `;
@@ -99,14 +95,22 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
 export const IconButton = ({
   device = 'desktop',
   iconName,
+  label,
   onClick,
   ...props
 }: ButtonProps): ReactElement => {
     const handleClick = (): void => onClick && onClick();
 
     return (
-        <StyledButton iconName={iconName} onClick={handleClick} device={device} {...props}>
-            <Icon name={iconName} size={device === 'mobile' ? '20' : '16'}/>
+        <StyledButton
+          aria-label={label}
+          iconName={iconName}
+          label={label}
+          onClick={handleClick}
+          device={device}
+          {...props}
+        >
+            <Icon name={iconName} size={device === 'mobile' ? '20' : '16'} focusable={false}/>
         </StyledButton>
     );
 };
