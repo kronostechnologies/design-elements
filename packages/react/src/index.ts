@@ -25,6 +25,7 @@ export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
+export { InlineMessage } from './components/inline-message/inline-message';
 export { RouteLink } from './components/route-link/route-link';
 export { Progress } from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
