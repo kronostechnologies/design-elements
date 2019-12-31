@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
+type MessageType = 'info' | 'success' | 'alert' | 'error';
+type DeviceType = 'mobile' | 'desktop';
+
 interface ContainerProps {
     device: DeviceType;
     theme: Theme;
@@ -60,26 +63,6 @@ const Heading = styled.span<{device: DeviceType}>`
   font-weight: var(--font-bold);
 `;
 
-type MessageType = 'info' | 'success' | 'alert' | 'error';
-
-type DeviceType = 'mobile' | 'desktop';
-
-interface InlineMessageProps {
-    /**
-     * Sets text message
-     **/
-    children: ReactNode;
-    /**
-     * Applies styles and sizes according to the device
-     * @default desktop
-     */
-    device?: DeviceType;
-    /**
-     * Sets message type
-     */
-    type: MessageType;
-}
-
 interface MessageTypeProps {
     iconName: IconName;
     title: string;
@@ -109,6 +92,22 @@ const handleType = (type: MessageType): MessageTypeProps => {
             };
     }
 };
+
+interface InlineMessageProps {
+    /**
+     * Sets text message
+     **/
+    children: ReactNode;
+    /**
+     * Applies styles and sizes according to the device
+     * @default desktop
+     */
+    device?: DeviceType;
+    /**
+     * Sets message type
+     */
+    type: MessageType;
+}
 
 export const InlineMessage = ({ children, device = 'desktop', type }: InlineMessageProps) => {
     const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
