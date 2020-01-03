@@ -19,7 +19,7 @@ interface ListProps {
     /**
      * Sets list id
      */
-    ListId?: string;
+    listId?: string;
     /**
      * { value: string; label?: string; }[]
      */
@@ -99,7 +99,7 @@ const CheckIndicator = styled(Check)`
 `;
 
 export function List({
-    ListId,
+    listId,
     options,
     onChange,
     onKeyDown,
@@ -112,7 +112,7 @@ export function List({
 
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedOptionId, setSelectedOptionId] = useState(
-        defaultValue ? `${defaultValue}_${ListId ? ListId : defaultSelectedIndex}` : undefined,
+        defaultValue ? `${listId ? listId : defaultSelectedIndex}_${defaultValue}` : undefined,
     );
 
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
@@ -121,7 +121,7 @@ export function List({
         options.map((option, index)  =>
             ({
                 ...option,
-                id: `${option.value}_${ListId ? ListId : index}`,
+                id: `${listId ? listId : index}_${option.value}`,
                 focusIndex: index,
                 ref: React.createRef<HTMLLIElement>(),
             }));
@@ -227,7 +227,7 @@ export function List({
         <Wrapper
             role="listbox"
             tabIndex={0}
-            id={ListId ? `listbox_${ListId}` : undefined}
+            id={listId ? `${listId}_listbox` : undefined}
             ref={listRef}
             onKeyPress={handleKeyDown}
             numberOfItemsVisible={numberOfItemsVisible}

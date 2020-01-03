@@ -205,13 +205,16 @@ export const Select = ({
     };
 
     const handleClickOutside = (event: MouseEvent): void => {
-        if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        const shouldClose =
+            wrapperRef.current === null ||
+            wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
+        if (shouldClose) {
             if (open) {
                 const checkSearchValue = options.find(option => option.label === inputValue);
                 checkSearchValue && setSearchValue('');
                 inputRef.current && inputRef.current.blur();
-                setOpen(!open);
             }
+            setOpen(false);
             setFocus(false);
         }
     };
@@ -266,7 +269,7 @@ export const Select = ({
                 <ListWrapper open={open}>
                     <List
                         autofocus={searchable ? autoFocus : open}
-                        ListId={id}
+                        listId={id}
                         numberOfItemsVisible={numberOfItemsVisible}
                         checkIndicator
                         defaultValue={defaultValue}
