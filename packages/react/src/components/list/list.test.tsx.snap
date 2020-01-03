@@ -71,12 +71,17 @@ exports[`List Matches the snapshot 1`] = `
 
 <ul
 <<<<<<< HEAD
+<<<<<<< HEAD
   aria-activedescendant="undefined_optionB"
   aria-labelledby="undefined_optionB"
 =======
   aria-activedescendant="optionB_1"
   aria-labelledby="optionB_1"
 >>>>>>> Adds accessibility standards
+=======
+  aria-activedescendant="1_optionB"
+  aria-labelledby="1_optionB"
+>>>>>>> PR requested changes
   className="c0"
   onKeyDown={[Function]}
   onKeyPress={[Function]}
@@ -88,10 +93,14 @@ exports[`List Matches the snapshot 1`] = `
     aria-selected={false}
     className="c1"
 <<<<<<< HEAD
+<<<<<<< HEAD
     id="undefined_optionA"
 =======
     id="optionA_0"
 >>>>>>> Adds accessibility standards
+=======
+    id="0_optionA"
+>>>>>>> PR requested changes
     onClick={[Function]}
     role="option"
     selected={false}
@@ -103,10 +112,14 @@ exports[`List Matches the snapshot 1`] = `
     aria-selected={true}
     className="c2"
 <<<<<<< HEAD
+<<<<<<< HEAD
     id="undefined_optionB"
 =======
     id="optionB_1"
 >>>>>>> Adds accessibility standards
+=======
+    id="1_optionB"
+>>>>>>> PR requested changes
     onClick={[Function]}
     role="option"
     selected={true}
@@ -125,10 +138,14 @@ exports[`List Matches the snapshot 1`] = `
     aria-selected={false}
     className="c1"
 <<<<<<< HEAD
+<<<<<<< HEAD
     id="undefined_optionC"
 =======
     id="optionC_2"
 >>>>>>> Adds accessibility standards
+=======
+    id="2_optionC"
+>>>>>>> PR requested changes
     onClick={[Function]}
     role="option"
     selected={false}
@@ -140,10 +157,14 @@ exports[`List Matches the snapshot 1`] = `
     aria-selected={false}
     className="c1"
 <<<<<<< HEAD
+<<<<<<< HEAD
     id="undefined_optionD"
 =======
     id="optionD_3"
 >>>>>>> Adds accessibility standards
+=======
+    id="3_optionD"
+>>>>>>> PR requested changes
     onClick={[Function]}
     role="option"
     selected={false}

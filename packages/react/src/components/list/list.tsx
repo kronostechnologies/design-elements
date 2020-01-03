@@ -23,7 +23,7 @@ interface ListProps {
     /**
      * Sets list id
      */
-    ListId?: string;
+    listId?: string;
     /**
      * { value: string; label?: string; }[]
      */
