@@ -102,7 +102,7 @@ interface ToggleButtonGroupProps {
 }
 
 export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, onChange }: ToggleButtonGroupProps) => {
-    const defaultCheck = useMemo(() => buttonGroup.find(button => button.defaultChecked), [buttonGroup]);
+    const defaultCheck = useMemo(() => buttonGroup.find(button => button.defaultChecked), []);
     const [selectedValue, setSelectedValue] = useState(defaultCheck ? defaultCheck.value : '');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -112,7 +112,7 @@ export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, 
 
     return (
         <Container role="radiogroup">
-            {buttonGroup.map(button => (
+            {buttonGroup.map((button, i) => (
                 <ToggleButton
                     checked={button.value === selectedValue}
                     device={device}
@@ -123,6 +123,7 @@ export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, 
                         aria-checked={button.value === selectedValue}
                         aria-labelledby={`${groupName}-${button.value}`}
                         checked={button.value === selectedValue}
+                        data-testid={`test-toggle-button-${i}`}
                         disabled={button.disabled}
                         name={groupName}
                         onChange={handleChange}

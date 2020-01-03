@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { ToggleButtonGroup } from './toggle-button-group';
 
@@ -32,7 +33,7 @@ describe('ToggleButtonGroup', () => {
             ThemeWrapped(<ToggleButtonGroup onChange={callback} buttonGroup={buttonGroup} groupName="Test1" />),
         );
 
-        wrapper.find('input').at(2).simulate('change');
+        getByTestId(wrapper, 'test-toggle-button-2').simulate('change');
         expect(callback).toHaveBeenCalled();
     });
 
@@ -41,7 +42,7 @@ describe('ToggleButtonGroup', () => {
             ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test2" />),
         );
 
-        expect(wrapper.find('input').at(1).prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'test-toggle-button-1').prop('checked')).toBe(true);
     });
 
     test('Is disabled', () => {
@@ -49,7 +50,7 @@ describe('ToggleButtonGroup', () => {
             ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test3" />),
         );
 
-        expect(wrapper.find('input').at(0).prop('disabled')).toBe(true);
+        expect(getByTestId(wrapper, 'test-toggle-button-0').prop('disabled')).toBe(true);
     });
 
     test('Matches snapshot', () => {
