@@ -7,42 +7,34 @@ import { ToggleButtonGroup } from './toggle-button-group';
 
 const buttonGroup = [
     {
-        value: 'option1',
         label: 'Option 1',
         disabled: true,
     },
     {
-        value: 'option2',
         label: 'Option 2',
-        defaultChecked: true,
+        defaultPressed: true,
     },
-    {
-        value: 'option3',
-        label: 'Option 3',
-    },
-    {
-        value: 'option4',
-        label: 'Option 4',
-    },
+    { label: 'Option 3' },
+    { label: 'Option 4' },
 ];
 
 describe('ToggleButtonGroup', () => {
-    test('onChange callback is called when changed', () => {
+    test('onClick callback is called when clicked', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            ThemeWrapped(<ToggleButtonGroup onChange={callback} buttonGroup={buttonGroup} groupName="Test1" />),
+            ThemeWrapped(<ToggleButtonGroup onClick={callback} buttonGroup={buttonGroup} groupName="Test1" />),
         );
 
-        getByTestId(wrapper, 'test-toggle-button-2').simulate('change');
+        getByTestId(wrapper, 'test-toggle-button-2').simulate('click');
         expect(callback).toHaveBeenCalled();
     });
 
-    test('Is default checked', () => {
+    test('Is default pressed', () => {
         const wrapper = mount(
             ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test2" />),
         );
 
-        expect(getByTestId(wrapper, 'test-toggle-button-1').prop('checked')).toBe(true);
+        expect(getByTestId(wrapper, 'test-toggle-button-1').prop('pressed')).toBe(true);
     });
 
     test('Is disabled', () => {

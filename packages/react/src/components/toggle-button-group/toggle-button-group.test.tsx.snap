@@ -8,14 +8,12 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   display: flex;
 }
 
-.c0 div:first-child,
-.c0 input:first-child {
-  border-radius: 104px 0 0 104px;
+.c0 button:first-child {
+  border-radius: 20px 0 0 20px;
 }
 
-.c0 div:last-child,
-.c0 input:last-child {
-  border-radius: 0 104px 104px 0;
+.c0 button:last-child {
+  border-radius: 0 20px 20px 0;
 }
 
 .c1 {
@@ -23,42 +21,24 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #FFFFFF;
   border: 1px solid #D9DDE2;
   border-left: none;
   box-sizing: border-box;
-  color: #9CA7B4;
+  color: #57666E;
   cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   font-size: 0.875rem;
   height: 40px;
   padding: 0 var(--spacing-2x);
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+
+.c1:disabled {
+  background-color: #F1F2F2;
+  color: #9CA7B4;
 }
 
 .c1:first-child {
   border-left: 1px solid #D9DDE2;
-}
-
-.c1 input {
-  cursor: default;
-  height: 100%;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.c1 label {
-  text-align: center;
 }
 
 .c2 {
@@ -72,36 +52,18 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   font-size: 0.875rem;
   height: 40px;
   padding: 0 var(--spacing-2x);
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+
+.c2:disabled {
+  background-color: #F1F2F2;
+  color: #9CA7B4;
 }
 
 .c2:first-child {
   border-left: 1px solid #0080A5;
-}
-
-.c2 input {
-  cursor: pointer;
-  height: 100%;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.c2 label {
-  text-align: center;
 }
 
 .c3 {
@@ -115,36 +77,18 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   box-sizing: border-box;
   color: #57666E;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   font-size: 0.875rem;
   height: 40px;
   padding: 0 var(--spacing-2x);
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+
+.c3:disabled {
+  background-color: #F1F2F2;
+  color: #9CA7B4;
 }
 
 .c3:first-child {
   border-left: 1px solid #D9DDE2;
-}
-
-.c3 input {
-  cursor: pointer;
-  height: 100%;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.c3 label {
-  text-align: center;
 }
 
 .c3:hover {
@@ -152,94 +96,54 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
 }
 
 <div
+  aria-label="Test4"
   className="c0"
-  role="radiogroup"
+  role="group"
 >
-  <div
-    checked={false}
+  <button
+    aria-label="Option 1"
+    aria-pressed={false}
     className="c1"
+    data-testid="test-toggle-button-0"
     disabled={true}
+    onClick={[Function]}
+    type="button"
+    value="Option 1"
   >
-    <input
-      aria-checked={false}
-      aria-labelledby="Test4-option1"
-      checked={false}
-      data-testid="test-toggle-button-0"
-      disabled={true}
-      name="Test4"
-      onChange={[Function]}
-      role="radio"
-      type="radio"
-      value="option1"
-    />
-    <label
-      id="Test4-option1"
-    >
-      Option 1
-    </label>
-  </div>
-  <div
-    checked={true}
+    Option 1
+  </button>
+  <button
+    aria-label="Option 2"
+    aria-pressed={true}
     className="c2"
+    data-testid="test-toggle-button-1"
+    onClick={[Function]}
+    type="button"
+    value="Option 2"
   >
-    <input
-      aria-checked={true}
-      aria-labelledby="Test4-option2"
-      checked={true}
-      data-testid="test-toggle-button-1"
-      name="Test4"
-      onChange={[Function]}
-      role="radio"
-      type="radio"
-      value="option2"
-    />
-    <label
-      id="Test4-option2"
-    >
-      Option 2
-    </label>
-  </div>
-  <div
-    checked={false}
+    Option 2
+  </button>
+  <button
+    aria-label="Option 3"
+    aria-pressed={false}
     className="c3"
+    data-testid="test-toggle-button-2"
+    onClick={[Function]}
+    type="button"
+    value="Option 3"
   >
-    <input
-      aria-checked={false}
-      aria-labelledby="Test4-option3"
-      checked={false}
-      data-testid="test-toggle-button-2"
-      name="Test4"
-      onChange={[Function]}
-      role="radio"
-      type="radio"
-      value="option3"
-    />
-    <label
-      id="Test4-option3"
-    >
-      Option 3
-    </label>
-  </div>
-  <div
-    checked={false}
+    Option 3
+  </button>
+  <button
+    aria-label="Option 4"
+    aria-pressed={false}
     className="c3"
+    data-testid="test-toggle-button-3"
+    onClick={[Function]}
+    type="button"
+    value="Option 4"
   >
-    <input
-      aria-checked={false}
-      aria-labelledby="Test4-option4"
-      checked={false}
-      data-testid="test-toggle-button-3"
-      name="Test4"
-      onChange={[Function]}
-      role="radio"
-      type="radio"
-      value="option4"
-    />
-    <label
-      id="Test4-option4"
-    >
-      Option 4
-    </label>
-  </div>
+    Option 4
+  </button>
 </div>
 `;
