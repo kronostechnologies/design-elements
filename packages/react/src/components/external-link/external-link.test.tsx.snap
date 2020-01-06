@@ -168,6 +168,7 @@ exports[`External Link with icon matches snapshot 1`] = `
 >
   <svg
     color="currentColor"
+    focusable={false}
     height="16"
     width="16"
   />
@@ -234,6 +235,7 @@ exports[`External Link without href matches snapshot 1`] = `
 >
   <svg
     color="currentColor"
+    focusable={false}
     height="16"
     width="16"
   />

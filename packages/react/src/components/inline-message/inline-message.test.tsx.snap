@@ -9,19 +9,20 @@ exports[`Inline Message Matches snapshot (desktop) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-width: 800px;
-  min-height: 88px;
   padding: var(--spacing-2x);
+  width: 100%;
 }
 
 .c0 svg {
   color: #094C6C;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c1 {
   box-sizing: border-box;
-  max-width: calc(100% - 16px);
-  padding-left: 12px;
+  padding-left: var(--spacing-2x);
 }
 
 .c1 p {
@@ -36,8 +37,8 @@ exports[`Inline Message Matches snapshot (desktop) 1`] = `
 }
 
 <div
+  aria-live="polite"
   className="c0"
-  type="info"
 >
   <svg
     color="currentColor"
@@ -53,9 +54,7 @@ exports[`Inline Message Matches snapshot (desktop) 1`] = `
     >
       Tips
     </span>
-    <p
-      aria-live="polite"
-    >
+    <p>
       Test
     </p>
   </div>
@@ -71,18 +70,19 @@ exports[`Inline Message Matches snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-width: 800px;
-  min-height: 88px;
   padding: var(--spacing-3x) var(--spacing-2x);
+  width: 100%;
 }
 
 .c0 svg {
   color: #A40C2E;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c1 {
   box-sizing: border-box;
-  max-width: calc(100% - 20px);
   padding-left: var(--spacing-2x);
 }
 
@@ -98,8 +98,8 @@ exports[`Inline Message Matches snapshot (mobile) 1`] = `
 }
 
 <div
+  aria-live="assertive"
   className="c0"
-  type="error"
 >
   <svg
     color="currentColor"
@@ -115,9 +115,7 @@ exports[`Inline Message Matches snapshot (mobile) 1`] = `
     >
       Error
     </span>
-    <p
-      aria-live="assertive"
-    >
+    <p>
       Test
     </p>
   </div>

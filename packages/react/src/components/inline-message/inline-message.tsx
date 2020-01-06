@@ -1,69 +1,48 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ComponentType, ReactNode, useMemo } from 'react';
 import styled from 'styled-components';
 
 import { Icon, IconName } from '../icon/icon';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 type MessageType = 'info' | 'success' | 'alert' | 'error';
 type DeviceType = 'mobile' | 'desktop';
 
-interface ContainerProps {
-    device: DeviceType;
-    theme: Theme;
-    type: MessageType;
-}
+const abstractContainer = (bgColor: string, color?: string) => styled.div<{device: DeviceType}>`
+    background-color: ${bgColor};
+    border: 1px solid ${props => color ? props.theme.notifications[color] : props.theme.main['primary-3']};
+    box-sizing: border-box;
+    display: flex;
+    padding: ${props => props.device === 'mobile' ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)'};
+    width: 100%;
 
-const Container = styled.div<ContainerProps>`
-  background-color:
-    ${(props) => {
-        if (props.type === 'info') return '#f5fdff';
-        else if (props.type === 'success') return '#f7faf4';
-        else if (props.type === 'alert') return '#fffce9';
-        else if (props.type === 'error') return '#fdf6f7';
-        else return '#f5fdff';
-    }};
-  border:
-    1px solid ${(props) => {
-        if (props.type === 'info') return props.theme.main['primary-3'];
-        else if (props.type === 'success') return props.theme.notifications['success-1.1'];
-        else if (props.type === 'alert') return props.theme.notifications['alert-3.1'];
-        else if (props.type === 'error') return props.theme.notifications['error-2.1'];
-    }};
-  box-sizing: border-box;
-  display: flex;
-  max-width: 800px;
-  min-height: 88px;
-  padding: ${props => props.device === 'mobile' ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)'};
-
-  svg {
-    color:
-      ${(props) => {
-          if (props.type === 'info') return props.theme.main['primary-3'];
-          else if (props.type === 'success') return props.theme.notifications['success-1.1'];
-          else if (props.type === 'alert') return props.theme.notifications['alert-3.1'];
-          else if (props.type === 'error') return props.theme.notifications['error-2.1'];
-      }};
-  }
+    svg {
+        color: ${props => color ? props.theme.notifications[color] : props.theme.main['primary-3']};
+        flex: 0 0 auto;
+    }
 `;
 
-const TextWrapper = styled.div<{device: DeviceType}>`
-  box-sizing: border-box;
-  max-width: ${props => props.device === 'mobile' ? 'calc(100% - 20px)' : 'calc(100% - 16px)'};
-  padding-left: ${props => props.device === 'mobile' ? 'var(--spacing-2x)' : '12px'};
+const InfoContainer = abstractContainer('#f5fdff');
+const SuccessContainer = abstractContainer('#f7faf4', 'success-1.1');
+const AlertContainer = abstractContainer('#fffce9', 'alert-3.1');
+const ErrorContainer = abstractContainer('#fdf6f7', 'error-2.1');
 
-  p {
-    font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
-    line-height: 24px;
-    margin: ${props => props.device === 'mobile' ? 'var(--spacing-2x)' : 'var(--spacing-1x)'} 0 0 0;
-  }
+const TextWrapper = styled.div<{device: DeviceType}>`
+    box-sizing: border-box;
+    padding-left: var(--spacing-2x);
+
+    p {
+        font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
+        line-height: 24px;
+        margin: ${props => props.device === 'mobile' ? 'var(--spacing-2x)' : 'var(--spacing-1x)'} 0 0 0;
+    }
 `;
 
 const Heading = styled.span<{device: DeviceType}>`
-  font-size: ${props => props.device === 'mobile' ? '1.125rem' : '1rem'};
-  font-weight: var(--font-bold);
+    font-size: ${props => props.device === 'mobile' ? '1.125rem' : '1rem'};
+    font-weight: var(--font-bold);
 `;
 
 interface MessageTypeProps {
+    container: ComponentType<{ device: DeviceType; }>;
     iconName: IconName;
     title: string;
 }
@@ -72,21 +51,25 @@ const handleType = (type: MessageType): MessageTypeProps => {
     switch (type) {
         case 'info':
             return {
+                container: InfoContainer,
                 iconName: 'star',
                 title: 'Tips',
             };
         case 'success':
             return {
+                container: SuccessContainer,
                 iconName: 'check',
                 title: 'Success',
             };
         case 'alert':
             return {
+                container: AlertContainer,
                 iconName: 'alertTriangle',
                 title: 'Alert',
             };
         case 'error':
             return {
+                container: ErrorContainer,
                 iconName: 'alertOctagon',
                 title: 'Error',
             };
@@ -104,20 +87,25 @@ interface InlineMessageProps {
      */
     device?: DeviceType;
     /**
+     * Sets custom message title
+     */
+    title?: string;
+    /**
      * Sets message type
      */
     type: MessageType;
 }
 
-export const InlineMessage = ({ children, device = 'desktop', type }: InlineMessageProps) => {
+export const InlineMessage = ({ children, device = 'desktop', title, type }: InlineMessageProps) => {
     const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
+    const Container = messageType.container;
 
     return (
-        <Container device={device} type={type}>
-            <Icon name={messageType.iconName} size={device === 'mobile' ? '20' : '16'} focusable={false}/>
+        <Container device={device} aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}>
+            <Icon name={messageType.iconName} size={device === 'mobile' ? '20' : '16'}/>
             <TextWrapper device={device}>
-                <Heading device={device}>{messageType.title}</Heading>
-                <p aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}>{children}</p>
+                <Heading device={device}>{title ? title : messageType.title}</Heading>
+                <p>{children}</p>
             </TextWrapper>
         </Container>
     );
