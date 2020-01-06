@@ -66,7 +66,6 @@ exports[`Button Has mobile styles 1`] = `
 <button
   aria-label="home"
   className="c0"
-  label="home"
   onClick={[Function]}
   type="submit"
 >
@@ -145,7 +144,6 @@ exports[`Button Has primary styles 1`] = `
 <button
   aria-label="home"
   className="c0"
-  label="home"
   onClick={[Function]}
   type="submit"
 >
@@ -228,7 +226,6 @@ exports[`Button Has secondary styles 1`] = `
 <button
   aria-label="home"
   className="c0"
-  label="home"
   onClick={[Function]}
   type="submit"
 >
@@ -307,7 +304,6 @@ exports[`Button Has tertiary styles 1`] = `
 <button
   aria-label="home"
   className="c0"
-  label="home"
   onClick={[Function]}
   type="submit"
 >
@@ -387,7 +383,6 @@ exports[`Button Is disabled 1`] = `
   aria-label="home"
   className="c0"
   disabled={true}
-  label="home"
   onClick={[Function]}
   type="submit"
 >

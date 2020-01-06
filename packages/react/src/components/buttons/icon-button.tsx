@@ -42,7 +42,13 @@ interface ButtonProps {
     onClick?(): void;
 }
 
-const StyledButton = styled(AbstractButton)<ButtonProps>`
+interface StyledButtonProps {
+    device: 'mobile' | 'desktop';
+    theme: Theme;
+    buttonType: ButtonType;
+}
+
+const StyledButton = styled(AbstractButton)<StyledButtonProps>`
   height: ${props => props.device === 'mobile' ? '48px' : '32px'};
   ${(props: { theme: Theme, buttonType: ButtonType }) => {
       switch (props.buttonType) {
@@ -112,8 +118,6 @@ export const IconButton = ({
     return (
         <StyledButton
           aria-label={label}
-          iconName={iconName}
-          label={label}
           onClick={handleClick}
           device={device}
           type={type}
