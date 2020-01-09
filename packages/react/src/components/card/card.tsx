@@ -8,8 +8,8 @@ const Card = styled.div`
   border-radius: var(--border-radius);
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin-bottom: var(--spacing-5x);
-  padding: var(--spacing-3x);
+  margin-bottom: var(--spacing-3x);
+  padding: var(--spacing-4x);
 `;
 
 export { Card };
