@@ -1,7 +1,8 @@
-import React, { KeyboardEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 
 import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
 
 export interface Option {
     value: string;
@@ -16,10 +17,7 @@ interface ListOption extends Option {
 }
 
 interface ListProps {
-    /**
-     * Sets list id
-     */
-    listId?: string;
+    id?: string;
     /**
      * { value: string; label?: string; }[]
      */
@@ -43,6 +41,14 @@ interface ListProps {
      * @default 4
      */
     numberOfItemsVisible?: number;
+    /**
+     * Sets the current focused element in the list
+     */
+    focusedValue?: string;
+    /**
+     * Sets the selected value (controlled input)
+     */
+    value?: string;
     /**
      * OnChange callback function, invoked when an option is selected
      */
@@ -99,7 +105,7 @@ const CheckIndicator = styled(Check)`
 `;
 
 export function List({
-    listId,
+    id = uuid(),
     options,
     onChange,
     onKeyDown,
@@ -107,24 +113,44 @@ export function List({
     defaultValue,
     numberOfItemsVisible = 4,
     autofocus = false,
+    focusedValue,
+    value,
 }: ListProps): ReactElement {
     const listRef = useRef<HTMLUListElement>(null);
 
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedOptionId, setSelectedOptionId] = useState(
-        defaultValue ? `${listId ? listId : defaultSelectedIndex}_${defaultValue}` : undefined,
+        defaultValue ? `${id}_${defaultValue}` : undefined,
     );
 
-    const [selectedFocusIndex, setSelectedFocusIndex] = useState(defaultValue ? defaultSelectedIndex : -1);
+    const [selectedFocusIndex, setSelectedFocusIndex] = useState(value || defaultValue ? defaultSelectedIndex : -1);
 
-    const list: ListOption[] | [] =
+    const list: ListOption[] = useMemo((): ListOption[] =>
         options.map((option, index)  =>
             ({
                 ...option,
-                id: `${listId ? listId : index}_${option.value}`,
+                id: `${id}_${option.value}`,
                 focusIndex: index,
                 ref: React.createRef<HTMLLIElement>(),
-            }));
+            }))
+    , [options]);
+
+    useEffect(() => {
+        if (value && list.length > 0) {
+            setValue(list[list.findIndex(option => option.value === value)]);
+        } else if (value === '') {
+            setSelectedOptionId('');
+            setSelectedFocusIndex(-1);
+        }
+    }, [value]);
+
+    useEffect(() => {
+        if (focusedValue) {
+            setSelectedFocusIndex(options.findIndex(option => option.value === focusedValue));
+        } else {
+            setSelectedFocusIndex(-1);
+        }
+    }, [focusedValue]);
 
     function isOptionSelected(option: ListOption): boolean {
         return selectedOptionId ? option.id === selectedOptionId : false;
@@ -138,14 +164,18 @@ export function List({
         return checkIndicator && isOptionSelected(option);
     }
 
-    function selectOption(option: ListOption): void {
-        const { id, focusIndex, value, label } = option;
+    function setValue(option: ListOption): void {
+        const optionIndex = options.findIndex(element => element.value === option.value);
+        setSelectedOptionId(`${id}_${option.value}`);
+        setSelectedFocusIndex(optionIndex);
+    }
 
-        setSelectedOptionId(id);
-        setSelectedFocusIndex(focusIndex);
+    function selectOption(option: ListOption): void {
+        setSelectedOptionId(option.id);
+        setSelectedFocusIndex(option.focusIndex);
 
         if (onChange) {
-            onChange({ value, label });
+            onChange(option);
         }
     }
 
@@ -153,7 +183,7 @@ export function List({
         return () => selectOption(option);
     }
 
-    function scrollIntoList(direction: 'up' | 'down'): void {
+    function scrollIntoList(direction: 'up' | 'down' | 'top' | 'bottom'): void {
         const currentOption = list[selectedFocusIndex];
 
         if (!listRef.current || !currentOption || !currentOption.ref.current) {
@@ -178,6 +208,11 @@ export function List({
                     listRef.current.scrollTop = listRef.current.scrollTop + itemRect.height;
                 }
                 break;
+            case 'top':
+                listRef.current.scrollTop = 0;
+                break;
+            case 'bottom':
+                listRef.current.scrollTop = listRect.bottom;
         }
     }
 
@@ -194,26 +229,26 @@ export function List({
                 break;
             case 'ArrowUp':
                 e.preventDefault();
-
-                const prevOption = list[selectedFocusIndex - 1];
+                const prevOption = selectedFocusIndex - 1 === -1 ? list[list.length - 1] : list[selectedFocusIndex - 1];
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
-                    scrollIntoList('up');
+                    selectedFocusIndex - 1 === -1 ? scrollIntoList('bottom') : scrollIntoList('up');
                 }
                 break;
             case 'ArrowDown':
                 e.preventDefault();
-
-                const nextOption = list[selectedFocusIndex + 1];
+                const nextOption = list.length === selectedFocusIndex + 1 ? list[0] : list[selectedFocusIndex + 1];
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
-                    scrollIntoList('down');
+                    nextOption.focusIndex === 0 ? scrollIntoList('top') : scrollIntoList('down');
                 }
                 break;
         }
-        if (onKeyDown) onKeyDown(e);
+        if (onKeyDown) {
+            onKeyDown(e);
+        }
     }
 
     useEffect(() => {
@@ -221,13 +256,13 @@ export function List({
             listRef.current.focus();
         }
         setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
-    }, [autofocus, options.length]);
+    }, [autofocus]);
 
     return (
         <Wrapper
             role="listbox"
             tabIndex={0}
-            id={listId ? `${listId}_listbox` : undefined}
+            id={id}
             ref={listRef}
             onKeyPress={handleKeyDown}
             numberOfItemsVisible={numberOfItemsVisible}

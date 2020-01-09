@@ -2,6 +2,7 @@ import { mount, ReactWrapper } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { List, Option } from './list';
+jest.mock('uuid/v4');
 
 describe('List', () => {
     let defaultValue: string;

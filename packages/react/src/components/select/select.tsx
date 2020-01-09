@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid';
 
@@ -28,11 +28,13 @@ const InputWrapper = styled.div<InputWrapperProps>`
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
     border:
         1px solid ${props => {
-            if (props.valid) {
+            if (props.disabled) {
+                return props.theme.greys.grey;
+            } else if (props.valid) {
                 if (props.focus) {
                     return props.theme.main['primary-1.1'];
                 } else {
-                    return props.theme.greys['dark-grey'];
+                    return props.theme.notifications['error-2.1'];
                 }
             } else {
                 return props.theme.notifications['error-2.1'];
@@ -44,7 +46,6 @@ const InputWrapper = styled.div<InputWrapperProps>`
     height: 32px;
     justify-content: space-between;
     margin-top: var(--spacing-1x);
-    ${props => props.disabled ? `border: 1px solid ${props.theme.greys.grey};` : ''}
     padding-right: var(--spacing-1x);
     width: 100%;
 
@@ -63,7 +64,7 @@ const StyledInput = styled.input<InputProps>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     caret-color: ${props => props.searchable ? 'unset' : 'transparent'};
-    font-size: calc(1rem - 2px);
+    font-size: 0.875rem;
     letter-spacing: 0.4px;
     max-height: 100%;
     padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
@@ -77,10 +78,6 @@ const StyledInput = styled.input<InputProps>`
         color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
         font-size: 0.875rem;
     }
-
-    &:focus {
-        outline: none;
-    }
 `;
 
 const ListWrapper = styled.div`
@@ -91,7 +88,6 @@ const ListWrapper = styled.div`
     ul {
         border-radius: var(--border-radius);
         box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-        outline: none;
     }
 `;
 
@@ -134,7 +130,8 @@ export const Select = ({
     const defaultOption = options.find(option => option.value === defaultValue);
     const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
     const [searchValue, setSearchValue] = useState('');
-    const [selectedOptionValue, setSelectedOptionValue] = useState('');
+    const [focusedValue, setFocusedValue] = useState();
+    const [selectedOptionValue, setSelectedOptionValue] = useState();
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
     const [autoFocus, setAutofocus] = useState(false);
@@ -143,36 +140,30 @@ export const Select = ({
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     const id = useMemo(uuid, []);
-    const filteredOptions = options.filter(option => option.label.toLowerCase().includes(searchValue.toLowerCase()));
+    const filteredOptions = options.filter(option => option.label.toLowerCase().startsWith(searchValue.toLowerCase()));
 
     useEffect(() => {
-        // @ts-ignore: MouseEvent type persisting error
         document.addEventListener('mouseup', handleClickOutside);
 
         return () => {
-            // @ts-ignore: MouseEvent type persisting error
             document.removeEventListener('mouseup', handleClickOutside);
         };
     }, [open]);
 
-    const handleClick = (esc: boolean = false) => {
+    const handleClick = () => {
         const checkSearchValue = options.find(option => option.label === inputValue);
-        if (esc) {
-            !checkSearchValue && setInputValue('');
-            setSearchValue('');
-            inputRef.current && inputRef.current.focus();
-            setOpen(false);
-        } else if (!open) {
+        if (!open) {
             setFocus(true);
-            if (searchable) inputRef.current && inputRef.current.focus();
             setOpen(!open);
+            if (searchable) inputRef.current && inputRef.current.focus();
         } else if (!searchable && open) {
-            checkSearchValue && setSearchValue('');
             inputRef.current && inputRef.current.focus();
+            autoFocus && setAutofocus(false);
             setOpen(!open);
         } else {
-            checkSearchValue && setSearchValue('');
+            checkSearchValue && setSelectedOptionValue(checkSearchValue.value);
             inputRef.current && inputRef.current.focus();
+            autoFocus && setAutofocus(false);
             setOpen(!open);
         }
     };
@@ -181,7 +172,7 @@ export const Select = ({
         setInputValue(option.label);
         setOpen(false);
         setFocus(false);
-        setSearchValue('');
+        searchable && setSearchValue(option.label);
         setSelectedOptionValue(option.value);
         setSkipSelected(false);
         onChange && onChange(option);
@@ -189,18 +180,46 @@ export const Select = ({
     };
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value);
-        setSearchValue(event.target.value);
+        if (searchable) {
+            const optionsArray = options.filter(option =>
+                option.label.toLowerCase().startsWith(event.target.value.toLowerCase()));
+
+            setInputValue(event.target.value);
+            setSearchValue(event.target.value);
+
+            if (event.target.value !== '' && optionsArray.length > 0) setFocusedValue(optionsArray[0].value);
+            else setSelectedOptionValue('');
+        }
     };
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.keyCode === 40 || event.keyCode === 38) {
-            open && setAutofocus(true);
-        } else if (event.keyCode === 13) {
-            event.preventDefault();
-            handleClick();
-        } else if (event.keyCode === 27) {
-            handleClick(true);
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>, list: boolean = false) => {
+        if (!list) {
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                open && setAutofocus(true);
+            } else if (event.key === 'Enter') {
+                event.preventDefault();
+                if (searchValue !== '') {
+                    handleChange(filteredOptions[0]);
+                }
+                handleClick();
+            } else if (event.key === 'Escape') {
+                setInputValue('');
+                setSearchValue('');
+                setFocusedValue('');
+                setSelectedOptionValue('');
+            }
+        } else if (event.key === 'Escape') {
+            setAutofocus(false);
+            setFocusedValue('');
+            setInputValue('');
+            setOpen(false);
+            setSearchValue('');
+            setSelectedOptionValue('');
+            inputRef.current && inputRef.current.focus();
+        } else if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown' && searchable) {
+            setAutofocus(false);
+            setFocusedValue('');
+            inputRef.current && inputRef.current.focus();
         }
     };
 
@@ -216,6 +235,7 @@ export const Select = ({
             }
             setOpen(false);
             setFocus(false);
+            setAutofocus(false);
         }
     };
 
@@ -244,13 +264,15 @@ export const Select = ({
                     device={device}
                     disabled={disabled}
                     focus={focus}
-                    onClick={disabled ? undefined : ()  => handleClick(false)}
+                    onClick={disabled ? undefined : handleClick}
                     ref={wrapperRef}
                     valid={valid}
                 >
                     <StyledInput
+                        aria-autocomplete="list"
+                        aria-multiline="false"
                         aria-controls={`listbox_${id}`}
-                        aria-activedescendant={selectedOptionValue ? `${selectedOptionValue}_${id}` : undefined}
+                        aria-activedescendant={selectedOptionValue ? `${id}_${selectedOptionValue}` : undefined}
                         disabled={disabled}
                         ref={inputRef}
                         type="text"
@@ -269,13 +291,15 @@ export const Select = ({
                 <ListWrapper open={open}>
                     <List
                         autofocus={searchable ? autoFocus : open}
-                        listId={id}
+                        id={id}
                         numberOfItemsVisible={numberOfItemsVisible}
                         checkIndicator
                         defaultValue={defaultValue}
                         options={filteredOptions}
                         onChange={handleChange}
-                        onKeyDown={handleKeyDown}
+                        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event, true)}
+                        focusedValue={focusedValue}
+                        value={selectedOptionValue}
                     />
                 </ListWrapper>
             </StyledFieldContainer>
