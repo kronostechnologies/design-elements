@@ -357,6 +357,7 @@ export const Select = ({
             setAutofocus(false);
             setOpen(false);
             setFocus(false);
+            setAutofocus(false);
         }
     };
 

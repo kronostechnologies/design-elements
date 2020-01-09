@@ -154,6 +154,7 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -193,6 +194,9 @@ label + .c2 {
 =======
 =======
 .c5 {
+=======
+.c4 {
+>>>>>>> Adds more keyboard functionalities
   display: none;
   position: absolute;
 >>>>>>> Renames Dropdown to Select
@@ -208,8 +212,11 @@ label + .c2 {
   border-radius: var(--border-radius);
 >>>>>>> Adds CSS variables
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+<<<<<<< HEAD
   outline: none;
 >>>>>>> Renames Dropdown to Select
+=======
+>>>>>>> Adds more keyboard functionalities
 }
 
 <div
@@ -317,7 +324,12 @@ label + .c2 {
     open={false}
   >
     <ul
+<<<<<<< HEAD
       className="c6"
+=======
+      className="c5"
+      data-testid="list"
+>>>>>>> Adds more keyboard functionalities
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -327,7 +339,7 @@ label + .c2 {
         aria-label="Ontario"
         aria-selected={false}
         className="c6"
-        id="0_on"
+        id="undefined_on"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -338,7 +350,7 @@ label + .c2 {
         aria-label="Quebec"
         aria-selected={false}
         className="c6"
-        id="1_qc"
+        id="undefined_qc"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -349,7 +361,7 @@ label + .c2 {
         aria-label="British Columbia"
         aria-selected={false}
         className="c6"
-        id="2_bc"
+        id="undefined_bc"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -360,7 +372,7 @@ label + .c2 {
         aria-label="Alberta"
         aria-selected={false}
         className="c6"
-        id="3_ab"
+        id="undefined_ab"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -371,7 +383,7 @@ label + .c2 {
         aria-label="Manitoba"
         aria-selected={false}
         className="c6"
-        id="4_mb"
+        id="undefined_mb"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -382,7 +394,7 @@ label + .c2 {
         aria-label="Saskatchewan"
         aria-selected={false}
         className="c6"
-        id="5_sk"
+        id="undefined_sk"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -399,6 +411,7 @@ label + .c2 {
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="ns-6"
 >>>>>>> PR changes
 =======
@@ -407,6 +420,9 @@ label + .c2 {
 =======
         id="6_ns"
 >>>>>>> PR requested changes
+=======
+        id="undefined_ns"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -417,7 +433,7 @@ label + .c2 {
         aria-label="New Brunswick"
         aria-selected={false}
         className="c6"
-        id="7_nb"
+        id="undefined_nb"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -428,7 +444,7 @@ label + .c2 {
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
         className="c6"
-        id="8_nl"
+        id="undefined_nl"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -439,7 +455,7 @@ label + .c2 {
         aria-label="Prince Edward Island"
         aria-selected={false}
         className="c6"
-        id="9_pe"
+        id="undefined_pe"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -450,7 +466,7 @@ label + .c2 {
         aria-label="Northwest Territories"
         aria-selected={false}
         className="c6"
-        id="10_nt"
+        id="undefined_nt"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -461,7 +477,7 @@ label + .c2 {
         aria-label="Nunavut"
         aria-selected={false}
         className="c6"
-        id="11_nu"
+        id="undefined_nu"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -472,7 +488,7 @@ label + .c2 {
         aria-label="Yukon"
         aria-selected={false}
         className="c6"
-        id="12_yt"
+        id="undefined_yt"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -608,10 +624,6 @@ exports[`Select has no label 1`] = `
   font-size: 0.875rem;
 }
 
-.c3:focus {
-  outline: none;
-}
-
 .c4 {
   display: none;
   position: absolute;
@@ -621,7 +633,6 @@ exports[`Select has no label 1`] = `
 .c4 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
 }
 
 <div
@@ -659,6 +670,7 @@ exports[`Select has no label 1`] = `
   >
     <ul
       className="c5"
+      data-testid="list"
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -675,6 +687,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="on-0"
 >>>>>>> PR changes
 =======
@@ -683,6 +696,9 @@ exports[`Select has no label 1`] = `
 =======
         id="0_on"
 >>>>>>> PR requested changes
+=======
+        id="undefined_on"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -704,6 +720,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="qc-1"
 >>>>>>> PR changes
 =======
@@ -712,6 +729,9 @@ exports[`Select has no label 1`] = `
 =======
         id="1_qc"
 >>>>>>> PR requested changes
+=======
+        id="undefined_qc"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -733,6 +753,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="bc-2"
 >>>>>>> PR changes
 =======
@@ -741,6 +762,9 @@ exports[`Select has no label 1`] = `
 =======
         id="2_bc"
 >>>>>>> PR requested changes
+=======
+        id="undefined_bc"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -762,6 +786,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="ab-3"
 >>>>>>> PR changes
 =======
@@ -770,6 +795,9 @@ exports[`Select has no label 1`] = `
 =======
         id="3_ab"
 >>>>>>> PR requested changes
+=======
+        id="undefined_ab"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -791,6 +819,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="mb-4"
 >>>>>>> PR changes
 =======
@@ -799,6 +828,9 @@ exports[`Select has no label 1`] = `
 =======
         id="4_mb"
 >>>>>>> PR requested changes
+=======
+        id="undefined_mb"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -820,6 +852,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="sk-5"
 >>>>>>> PR changes
 =======
@@ -828,6 +861,9 @@ exports[`Select has no label 1`] = `
 =======
         id="5_sk"
 >>>>>>> PR requested changes
+=======
+        id="undefined_sk"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -849,6 +885,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="ns-6"
 >>>>>>> PR changes
 =======
@@ -857,6 +894,9 @@ exports[`Select has no label 1`] = `
 =======
         id="6_ns"
 >>>>>>> PR requested changes
+=======
+        id="undefined_ns"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -885,8 +925,12 @@ exports[`Select has no label 1`] = `
 >>>>>>> Adds accessibility standards
 =======
         className="c6"
+<<<<<<< HEAD
         id="7_nb"
 >>>>>>> PR requested changes
+=======
+        id="undefined_nb"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -908,6 +952,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="nl-8"
 >>>>>>> PR changes
 =======
@@ -916,6 +961,9 @@ exports[`Select has no label 1`] = `
 =======
         id="8_nl"
 >>>>>>> PR requested changes
+=======
+        id="undefined_nl"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -937,6 +985,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="pe-9"
 >>>>>>> PR changes
 =======
@@ -945,6 +994,9 @@ exports[`Select has no label 1`] = `
 =======
         id="9_pe"
 >>>>>>> PR requested changes
+=======
+        id="undefined_pe"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -966,6 +1018,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="nt-10"
 >>>>>>> PR changes
 =======
@@ -974,6 +1027,9 @@ exports[`Select has no label 1`] = `
 =======
         id="10_nt"
 >>>>>>> PR requested changes
+=======
+        id="undefined_nt"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -999,11 +1055,15 @@ exports[`Select has no label 1`] = `
 =======
         className="c6"
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="nu_11"
 >>>>>>> Adds accessibility standards
 =======
         id="11_nu"
 >>>>>>> PR requested changes
+=======
+        id="undefined_nu"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1025,6 +1085,7 @@ exports[`Select has no label 1`] = `
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         id="yt-12"
 >>>>>>> PR changes
 =======
@@ -1033,6 +1094,9 @@ exports[`Select has no label 1`] = `
 =======
         id="12_yt"
 >>>>>>> PR requested changes
+=======
+        id="undefined_yt"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1324,6 +1388,7 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1338,6 +1403,8 @@ input + .c2 {
 
 .c6 {
 =======
+=======
+>>>>>>> Adds more keyboard functionalities
 .c4:focus {
   outline: none;
 }
@@ -1364,8 +1431,16 @@ label + .c2 {
 =======
 =======
 >>>>>>> Adds CSS variables
+<<<<<<< HEAD
 >>>>>>> Adds CSS variables
+<<<<<<< HEAD
 >>>>>>> Adds CSS variables
+=======
+=======
+=======
+>>>>>>> Adds more keyboard functionalities
+>>>>>>> Adds more keyboard functionalities
+>>>>>>> Adds more keyboard functionalities
 .c5 {
 >>>>>>> Renames Dropdown to Select
   display: none;
@@ -1381,8 +1456,11 @@ label + .c2 {
 .c5 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+<<<<<<< HEAD
   outline: none;
 >>>>>>> Renames Dropdown to Select
+=======
+>>>>>>> Adds more keyboard functionalities
 }
 
 <div
@@ -1428,6 +1506,7 @@ label + .c2 {
     open={false}
 >>>>>>> PR changes
   >
+<<<<<<< HEAD
     <label
       className="c2"
     >
@@ -1459,10 +1538,21 @@ label + .c2 {
       <button
         className="c5"
 =======
+=======
+    <ul
+      className="c6"
+      data-testid="list"
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      role="listbox"
+      tabIndex={0}
+    >
+>>>>>>> Adds more keyboard functionalities
       <li
         aria-label="Ontario"
         aria-selected={false}
         className="c7"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         id="on-0"
@@ -1501,14 +1591,25 @@ label + .c2 {
         id="qc_1"
 >>>>>>> Adds accessibility standards
 =======
+=======
+        id="undefined_on"
+        onClick={[Function]}
+        role="option"
+        selected={false}
+      >
+>>>>>>> Adds more keyboard functionalities
         Ontario
       </li>
       <li
         aria-label="Quebec"
         aria-selected={false}
         className="c7"
+<<<<<<< HEAD
         id="1_qc"
 >>>>>>> PR requested changes
+=======
+        id="undefined_qc"
+>>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1519,7 +1620,7 @@ label + .c2 {
         aria-label="British Columbia"
         aria-selected={false}
         className="c7"
-        id="2_bc"
+        id="undefined_bc"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1530,7 +1631,7 @@ label + .c2 {
         aria-label="Alberta"
         aria-selected={false}
         className="c7"
-        id="3_ab"
+        id="undefined_ab"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1541,7 +1642,7 @@ label + .c2 {
         aria-label="Manitoba"
         aria-selected={false}
         className="c7"
-        id="4_mb"
+        id="undefined_mb"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1552,7 +1653,7 @@ label + .c2 {
         aria-label="Saskatchewan"
         aria-selected={false}
         className="c7"
-        id="5_sk"
+        id="undefined_sk"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1563,7 +1664,7 @@ label + .c2 {
         aria-label="Nova Scotia"
         aria-selected={false}
         className="c7"
-        id="6_ns"
+        id="undefined_ns"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1574,7 +1675,7 @@ label + .c2 {
         aria-label="New Brunswick"
         aria-selected={false}
         className="c7"
-        id="7_nb"
+        id="undefined_nb"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1585,7 +1686,7 @@ label + .c2 {
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
         className="c7"
-        id="8_nl"
+        id="undefined_nl"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1596,7 +1697,7 @@ label + .c2 {
         aria-label="Prince Edward Island"
         aria-selected={false}
         className="c7"
-        id="9_pe"
+        id="undefined_pe"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1607,7 +1708,7 @@ label + .c2 {
         aria-label="Northwest Territories"
         aria-selected={false}
         className="c7"
-        id="10_nt"
+        id="undefined_nt"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1618,7 +1719,7 @@ label + .c2 {
         aria-label="Nunavut"
         aria-selected={false}
         className="c7"
-        id="11_nu"
+        id="undefined_nu"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1629,7 +1730,7 @@ label + .c2 {
         aria-label="Yukon"
         aria-selected={false}
         className="c7"
-        id="12_yt"
+        id="undefined_yt"
         onClick={[Function]}
         role="option"
         selected={false}
@@ -1797,6 +1898,7 @@ input + .c2 {
 }
 
 .c5 {
+<<<<<<< HEAD
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1809,6 +1911,8 @@ input + .c2 {
 }
 
 .c6 {
+=======
+>>>>>>> Adds more keyboard functionalities
   display: none;
   position: absolute;
   width: 100%;
@@ -1932,7 +2036,48 @@ input + .c2 {
         className="c4"
 >>>>>>> Adds accessibility standards
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+        onChange={[Function]}
+=======
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+>>>>>>> PR changes
+        onKeyDown={[Function]}
+        placeholder="Select an option"
+        required={true}
+        type="text"
+        value=""
+      />
+      <svg
+        color="currentColor"
+        height="24"
+        width="24"
+      />
+    </div>
+    <div
+      className="c5"
+      open={false}
+    >
+      <ul
+        className="c6"
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Renames Dropdown to Select
+=======
+>>>>>>> PR changes
+=======
+        data-testid="list"
+>>>>>>> Adds more keyboard functionalities
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        role="listbox"
+        tabIndex={0}
+      >
+        <li
+>>>>>>> Adds more keyboard functionalities
 <<<<<<< HEAD
 <<<<<<< HEAD
   border: 1px solid #D9DDE2;
@@ -2015,6 +2160,7 @@ input + .c2 {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c4:focus {
   outline: none;
 >>>>>>> Adds more keyboard functionalities
@@ -2024,6 +2170,11 @@ input + .c2 {
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
+=======
+<<<<<<< HEAD
+          id="on-0"
+>>>>>>> PR changes
+>>>>>>> Adds more keyboard functionalities
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2512,6 +2663,9 @@ input + .c2 {
 =======
           id="0_on"
 >>>>>>> PR requested changes
+=======
+          id="undefined_on"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2529,6 +2683,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="qc"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2540,6 +2695,9 @@ input + .c2 {
 =======
           id="1_qc"
 >>>>>>> PR requested changes
+=======
+          id="undefined_qc"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2557,6 +2715,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="bc"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2568,6 +2727,9 @@ input + .c2 {
 =======
           id="2_bc"
 >>>>>>> PR requested changes
+=======
+          id="undefined_bc"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2585,6 +2747,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ab"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2596,6 +2759,9 @@ input + .c2 {
 =======
           id="3_ab"
 >>>>>>> PR requested changes
+=======
+          id="undefined_ab"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2613,6 +2779,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="mb"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2624,6 +2791,9 @@ input + .c2 {
 =======
           id="4_mb"
 >>>>>>> PR requested changes
+=======
+          id="undefined_mb"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2641,6 +2811,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="sk"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2652,6 +2823,9 @@ input + .c2 {
 =======
           id="5_sk"
 >>>>>>> PR requested changes
+=======
+          id="undefined_sk"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2669,6 +2843,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ns"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2680,6 +2855,9 @@ input + .c2 {
 =======
           id="6_ns"
 >>>>>>> PR requested changes
+=======
+          id="undefined_ns"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2697,6 +2875,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nb"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2708,6 +2887,9 @@ input + .c2 {
 =======
           id="7_nb"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nb"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2725,6 +2907,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nl"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2736,6 +2919,9 @@ input + .c2 {
 =======
           id="8_nl"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nl"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2753,6 +2939,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="pe"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2764,6 +2951,9 @@ input + .c2 {
 =======
           id="9_pe"
 >>>>>>> PR requested changes
+=======
+          id="undefined_pe"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2781,6 +2971,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nt"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2792,6 +2983,9 @@ input + .c2 {
 =======
           id="10_nt"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nt"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2809,6 +3003,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nu"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2820,6 +3015,9 @@ input + .c2 {
 =======
           id="11_nu"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nu"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2837,6 +3035,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="yt"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2848,6 +3047,9 @@ input + .c2 {
 =======
           id="12_yt"
 >>>>>>> PR requested changes
+=======
+          id="undefined_yt"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3246,6 +3448,7 @@ input + .c2 {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c4:focus {
   outline: none;
 }
@@ -3259,6 +3462,8 @@ input + .c2 {
 >>>>>>> Adds more keyboard functionalities
 .c5 {
 =======
+=======
+>>>>>>> Adds more keyboard functionalities
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3277,6 +3482,8 @@ input + .c2 {
   outline: none;
 }
 
+=======
+>>>>>>> Adds more keyboard functionalities
 .c5 {
 >>>>>>> Renames Dropdown to Select
 >>>>>>> Renames Dropdown to Select
@@ -3313,6 +3520,7 @@ label + .c2 {
 .c5 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+<<<<<<< HEAD
   outline: none;
 <<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
@@ -3322,7 +3530,12 @@ label + .c2 {
 =======
 =======
 >>>>>>> Adds CSS variables
+<<<<<<< HEAD
 >>>>>>> Adds CSS variables
+=======
+=======
+>>>>>>> Adds more keyboard functionalities
+>>>>>>> Adds more keyboard functionalities
 }
 
 <div
@@ -3420,6 +3633,7 @@ label + .c2 {
     >
       <ul
         className="c6"
+        data-testid="list"
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         role="listbox"
@@ -3429,6 +3643,7 @@ label + .c2 {
           aria-label="Ontario"
           aria-selected={false}
           className="c7"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3443,6 +3658,9 @@ label + .c2 {
 =======
           id="0_on"
 >>>>>>> PR requested changes
+=======
+          id="undefined_on"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3460,6 +3678,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="qc"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3471,6 +3690,9 @@ label + .c2 {
 =======
           id="1_qc"
 >>>>>>> PR requested changes
+=======
+          id="undefined_qc"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3488,6 +3710,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="bc"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3499,6 +3722,9 @@ label + .c2 {
 =======
           id="2_bc"
 >>>>>>> PR requested changes
+=======
+          id="undefined_bc"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3516,6 +3742,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ab"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3527,6 +3754,9 @@ label + .c2 {
 =======
           id="3_ab"
 >>>>>>> PR requested changes
+=======
+          id="undefined_ab"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3544,6 +3774,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="mb"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3555,6 +3786,9 @@ label + .c2 {
 =======
           id="4_mb"
 >>>>>>> PR requested changes
+=======
+          id="undefined_mb"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3572,6 +3806,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="sk"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3583,6 +3818,9 @@ label + .c2 {
 =======
           id="5_sk"
 >>>>>>> PR requested changes
+=======
+          id="undefined_sk"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3600,6 +3838,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="ns"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3611,6 +3850,9 @@ label + .c2 {
 =======
           id="6_ns"
 >>>>>>> PR requested changes
+=======
+          id="undefined_ns"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3628,6 +3870,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nb"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3639,6 +3882,9 @@ label + .c2 {
 =======
           id="7_nb"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nb"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3656,6 +3902,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nl"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3667,6 +3914,9 @@ label + .c2 {
 =======
           id="8_nl"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nl"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3684,6 +3934,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="pe"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3695,6 +3946,9 @@ label + .c2 {
 =======
           id="9_pe"
 >>>>>>> PR requested changes
+=======
+          id="undefined_pe"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3712,6 +3966,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nt"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3723,6 +3978,9 @@ label + .c2 {
 =======
           id="10_nt"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nt"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3740,6 +3998,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="nu"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3751,6 +4010,9 @@ label + .c2 {
 =======
           id="11_nu"
 >>>>>>> PR requested changes
+=======
+          id="undefined_nu"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3768,6 +4030,7 @@ label + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="yt"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -3779,6 +4042,9 @@ label + .c2 {
 =======
           id="12_yt"
 >>>>>>> PR requested changes
+=======
+          id="undefined_yt"
+>>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
