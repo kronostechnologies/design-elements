@@ -35,7 +35,7 @@ interface ButtonProps {
     label: string;
     /**
      * Sets button type
-     * @default button
+     * @default submit
      */
     type?: Type;
 
@@ -49,60 +49,60 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-  height: ${props => props.device === 'mobile' ? '48px' : '32px'};
-  ${(props: { theme: Theme, buttonType: ButtonType }) => {
-      switch (props.buttonType) {
-          case 'primary':
-              return `
-                  background-color: ${props.theme.main['secondary-4.1']};
-                  border: none;
-                  color: ${props.theme.greys.white};
-
-                  &:hover {
-                    background-color: ${props.theme.main['secondary-4.3']};
-                  }
-
-                  &:disabled {
-                    background-color: ${props.theme.main['secondary-4.2']};
-                  }
-                `;
-          case 'secondary':
-              return `
-                  background-color: transparent;
-                  border-color: ${props.theme.main['secondary-4.1']};
-                  color: ${props.theme.main['secondary-4.1']};
-
-                  &:hover {
+    height: ${props => props.device === 'mobile' ? '48px' : '32px'};
+    ${(props: { theme: Theme, buttonType: ButtonType }) => {
+        switch (props.buttonType) {
+            case 'primary':
+                return `
                     background-color: ${props.theme.main['secondary-4.1']};
-                    border-color: ${props.theme.main['secondary-4.1']};
+                    border: none;
                     color: ${props.theme.greys.white};
-                  }
 
-                  &:disabled {
+                    &:hover {
+                      background-color: ${props.theme.main['secondary-4.3']};
+                    }
+
+                    &:disabled {
+                      background-color: ${props.theme.main['secondary-4.2']};
+                    }
+                  `;
+            case 'secondary':
+                return `
                     background-color: transparent;
-                    border-color: ${props.theme.main['secondary-4.2']};
-                    color: ${props.theme.main['secondary-4.2']};
-                  }
-              `;
-          case 'tertiary':
-              return `
-                  background-color: transparent;
-                  border: none;
-                  color: ${props.theme.greys['dark-grey']};
+                    border-color: ${props.theme.main['secondary-4.1']};
+                    color: ${props.theme.main['secondary-4.1']};
 
-                  &:hover {
-                    color: ${props.theme.greys.black};
-                  }
+                    &:hover {
+                      background-color: ${props.theme.main['secondary-4.1']};
+                      border-color: ${props.theme.main['secondary-4.1']};
+                      color: ${props.theme.greys.white};
+                    }
 
-                  &:disabled {
-                      color: ${props.theme.greys['mid-grey']};
-                  }
-              `;
-      }
-  }
-  }
-  padding: 0;
-  width: ${props => props.device === 'mobile' ? '48px' : '32px'};
+                    &:disabled {
+                      background-color: transparent;
+                      border-color: ${props.theme.main['secondary-4.2']};
+                      color: ${props.theme.main['secondary-4.2']};
+                    }
+                `;
+            case 'tertiary':
+                return `
+                    background-color: transparent;
+                    border: none;
+                    color: ${props.theme.greys['dark-grey']};
+
+                    &:hover {
+                      color: ${props.theme.greys.black};
+                    }
+
+                    &:disabled {
+                        color: ${props.theme.greys['mid-grey']};
+                    }
+                `;
+        }
+    }
+    }
+    padding: 0;
+    width: ${props => props.device === 'mobile' ? '48px' : '32px'};
 `;
 
 export const IconButton = ({
@@ -123,7 +123,7 @@ export const IconButton = ({
           type={type}
           {...props}
         >
-            <Icon name={iconName} size={device === 'mobile' ? '20' : '16'} focusable={false}/>
+            <Icon name={iconName} size={device === 'mobile' ? '20' : '16'}/>
         </StyledButton>
     );
 };

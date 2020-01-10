@@ -16,7 +16,7 @@ interface ButtonProps extends AbstractButtonProps {
     buttonType: ButtonType;
     /**
      * Sets button type
-     * @default button
+     * @default submit
      */
     type?: Type;
 }

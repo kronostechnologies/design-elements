@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement, ReactNode } from 'react';
 
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import styled from 'styled-components';
@@ -6,7 +6,7 @@ import { Button } from './button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
-type Type = 'submit' | 'button' | 'reset';
+type Type = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 
 const PlusIcon = styled(PlusSign)`
     margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
@@ -20,7 +20,7 @@ interface ButtonProps {
     buttonType: ButtonType;
     /**
      * Sets button type
-     * @default button
+     * @default submit
      */
     type?: Type;
     label?: string;

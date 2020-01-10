@@ -57,16 +57,12 @@ interface IconProps {
      * @default currentColor
      */
     color?: string;
-    /**
-     * Sets icon focusability for IE and Edge
-     */
-    focusable?: boolean;
 }
 
 export function Icon({ name, size, ...props }: IconProps): ReactElement | null {
     const Component = iconMapping[name];
 
-    return Component ? <Component height={size} width={size} {...props} /> : null;
+    return Component ? <Component height={size} focusable={false} width={size} {...props} /> : null;
 }
 
 Icon.defaultProps = {

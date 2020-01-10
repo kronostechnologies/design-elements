@@ -278,6 +278,7 @@ exports[`Route Link only icon matches snapshot (Link) 1`] = `
 >
   <svg
     color="currentColor"
+    focusable={false}
     height="16"
     width="16"
   />
@@ -344,6 +345,7 @@ exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
 >
   <svg
     color="currentColor"
+    focusable={false}
     height="16"
     width="16"
   />
@@ -409,6 +411,7 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
 >
   <svg
     color="currentColor"
+    focusable={false}
     height="16"
     width="16"
   />
@@ -476,6 +479,7 @@ exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
 >
   <svg
     color="currentColor"
+    focusable={false}
     height="16"
     width="16"
   />

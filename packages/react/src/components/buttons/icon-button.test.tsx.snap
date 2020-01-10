@@ -1,6 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Has mobile styles 1`] = `
+exports[`Icon Button Has disabled styles 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
+  background-color: #EF483E;
+  border: none;
+  color: #FFFFFF;
+  padding: 0;
+  width: 32px;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #D41F14;
+}
+
+.c0:disabled {
+  background-color: #FF847C;
+}
+
+<button
+  aria-label="home"
+  className="c0"
+  disabled={true}
+  onClick={[Function]}
+  type="submit"
+>
+  <svg
+    color="currentColor"
+    focusable={false}
+    height="16"
+    width="16"
+  />
+</button>
+`;
+
+exports[`Icon Button Has mobile styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -78,7 +157,7 @@ exports[`Button Has mobile styles 1`] = `
 </button>
 `;
 
-exports[`Button Has primary styles 1`] = `
+exports[`Icon Button Has primary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -156,7 +235,7 @@ exports[`Button Has primary styles 1`] = `
 </button>
 `;
 
-exports[`Button Has secondary styles 1`] = `
+exports[`Icon Button Has secondary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -238,7 +317,7 @@ exports[`Button Has secondary styles 1`] = `
 </button>
 `;
 
-exports[`Button Has tertiary styles 1`] = `
+exports[`Icon Button Has tertiary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -304,85 +383,6 @@ exports[`Button Has tertiary styles 1`] = `
 <button
   aria-label="home"
   className="c0"
-  onClick={[Function]}
-  type="submit"
->
-  <svg
-    color="currentColor"
-    focusable={false}
-    height="16"
-    width="16"
-  />
-</button>
-`;
-
-exports[`Button Is disabled 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 32px;
-  background-color: #EF483E;
-  border: none;
-  color: #FFFFFF;
-  padding: 0;
-  width: 32px;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #D41F14;
-}
-
-.c0:disabled {
-  background-color: #FF847C;
-}
-
-<button
-  aria-label="home"
-  className="c0"
-  disabled={true}
   onClick={[Function]}
   type="submit"
 >

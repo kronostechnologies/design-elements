@@ -1,23 +1,22 @@
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { IconButton } from './icon-button';
 
-describe('Button', () => {
+describe('Icon Button', () => {
     test('onClick callback is called when clicked', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    onClick={callback}
-                    buttonType="primary"
-                />,
-            ),
+        const wrapper = shallow(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="primary"
+                onClick={callback}
+            />,
         );
-        wrapper.find(IconButton).simulate('click');
+
+        wrapper.simulate('click');
         expect(callback).toHaveBeenCalled();
     });
 
@@ -32,13 +31,13 @@ describe('Button', () => {
                     buttonType="primary"
                     disabled
                 />,
-            ),
-        );
+        ));
+
         wrapper.find(IconButton).simulate('click');
         expect(callback).not.toHaveBeenCalled();
     });
 
-    test('Is disabled', () => {
+    test('Has disabled styles', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <IconButton
