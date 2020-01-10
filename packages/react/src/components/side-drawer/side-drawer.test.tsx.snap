@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Side Drawer has nested drawer 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  height: calc(100vh - 56px);
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  className="c0 side-drawer"
+  open={true}
+  origin="left"
+>
+  <div
+    className="c0 side-drawer"
+    open={true}
+    origin="right"
+  >
+    <p>
+      Test
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Side Drawer is closed on left side 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  height: calc(100vh - 56px);
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  className="c0 side-drawer"
+  open={false}
+  origin="left"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
+exports[`Side Drawer is closed on right side 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  height: calc(100vh - 56px);
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(100%);
+  -ms-transform: translate(100%);
+  transform: translate(100%);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  className="c0 side-drawer"
+  open={false}
+  origin="right"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
+exports[`Side Drawer is open 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  height: calc(100vh - 56px);
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  className="c0 side-drawer"
+  open={true}
+  origin="right"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
