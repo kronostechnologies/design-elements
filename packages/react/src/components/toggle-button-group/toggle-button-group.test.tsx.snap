@@ -108,7 +108,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
     disabled={true}
     onClick={[Function]}
     type="button"
-    value="Option 1"
+    value="option1"
   >
     Option 1
   </button>
@@ -119,7 +119,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
     data-testid="test-toggle-button-1"
     onClick={[Function]}
     type="button"
-    value="Option 2"
+    value="option2"
   >
     Option 2
   </button>
@@ -130,7 +130,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
     data-testid="test-toggle-button-2"
     onClick={[Function]}
     type="button"
-    value="Option 3"
+    value="option3"
   >
     Option 3
   </button>
@@ -141,7 +141,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
     data-testid="test-toggle-button-3"
     onClick={[Function]}
     type="button"
-    value="Option 4"
+    value="option4"
   >
     Option 4
   </button>

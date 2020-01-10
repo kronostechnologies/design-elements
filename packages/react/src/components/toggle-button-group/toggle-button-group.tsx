@@ -1,4 +1,4 @@
-import React, { MouseEvent, useMemo, useState } from 'react';
+import React, { MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -52,6 +52,7 @@ interface ToggleButtonGroupProps {
         defaultPressed?: boolean;
         disabled?: boolean;
         label: string;
+        value: string;
     }[];
     /**
      * Applies styles and sizes according to the device
@@ -66,8 +67,8 @@ interface ToggleButtonGroupProps {
 }
 
 export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, onClick }: ToggleButtonGroupProps) => {
-    const defaultPressedButton = useMemo(() => buttonGroup.find(button => button.defaultPressed), []);
-    const [selectedButton, setSelectedButton] = useState(defaultPressedButton ? defaultPressedButton.label : '');
+    const defaultPressedButton = buttonGroup.find(button => button.defaultPressed);
+    const [selectedButton, setSelectedButton] = useState(defaultPressedButton ? defaultPressedButton.value : '');
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
         selectedButton === event.currentTarget.value ?
@@ -81,15 +82,15 @@ export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, 
             {buttonGroup.map((button, i) => (
                 <ToggleButton
                   aria-label={button.label}
-                  aria-pressed={button.label === selectedButton}
-                  pressed={button.label === selectedButton}
+                  aria-pressed={button.value === selectedButton}
+                  pressed={button.value === selectedButton}
                   data-testid={`test-toggle-button-${i}`}
                   device={device}
                   disabled={button.disabled}
-                  key={`${groupName}-${button.label}`}
+                  key={`${groupName}-${button.value}`}
                   onClick={handleClick}
                   type="button"
-                  value={button.label}
+                  value={button.value}
                 >
                   {button.label}
                 </ToggleButton>
