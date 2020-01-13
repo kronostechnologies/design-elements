@@ -9,11 +9,11 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
 }
 
 .c0 button:first-child {
-  border-radius: 20px 0 0 20px;
+  border-radius: 24px 0 0 24px;
 }
 
 .c0 button:last-child {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 24px 24px 0;
 }
 
 .c1 {
@@ -29,6 +29,11 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   cursor: default;
   font-size: 0.875rem;
   height: 40px;
+  -webkit-letter-spacing: 0.46px;
+  -moz-letter-spacing: 0.46px;
+  -ms-letter-spacing: 0.46px;
+  letter-spacing: 0.46px;
+  margin-left: 0;
   padding: 0 var(--spacing-2x);
 }
 
@@ -39,6 +44,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
 
 .c1:first-child {
   border-left: 1px solid #D9DDE2;
+  margin: 0;
 }
 
 .c2 {
@@ -48,12 +54,17 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   align-items: center;
   background-color: #0080A5;
   border: 1px solid #0080A5;
-  border-left: none;
+  border-left: auto;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 0.875rem;
   height: 40px;
+  -webkit-letter-spacing: 0.46px;
+  -moz-letter-spacing: 0.46px;
+  -ms-letter-spacing: 0.46px;
+  letter-spacing: 0.46px;
+  margin-left: -1px;
   padding: 0 var(--spacing-2x);
 }
 
@@ -64,6 +75,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
 
 .c2:first-child {
   border-left: 1px solid #0080A5;
+  margin: 0;
 }
 
 .c3 {
@@ -79,6 +91,11 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
   cursor: pointer;
   font-size: 0.875rem;
   height: 40px;
+  -webkit-letter-spacing: 0.46px;
+  -moz-letter-spacing: 0.46px;
+  -ms-letter-spacing: 0.46px;
+  letter-spacing: 0.46px;
+  margin-left: 0;
   padding: 0 var(--spacing-2x);
 }
 
@@ -89,6 +106,7 @@ exports[`ToggleButtonGroup Matches snapshot 1`] = `
 
 .c3:first-child {
   border-left: 1px solid #D9DDE2;
+  margin: 0;
 }
 
 .c3:hover {

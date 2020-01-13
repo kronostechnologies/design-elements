@@ -1,4 +1,4 @@
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
@@ -15,26 +15,20 @@ const buttonGroup = [
 describe('ToggleButtonGroup', () => {
     test('onClick callback is called when clicked', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<ToggleButtonGroup onClick={callback} buttonGroup={buttonGroup} groupName="Test1" />),
-        );
+        const wrapper = shallow(<ToggleButtonGroup onClick={callback} buttonGroup={buttonGroup} groupName="Test1" />);
 
-        getByTestId(wrapper, 'test-toggle-button-2').simulate('click');
+        getByTestId(wrapper, 'test-toggle-button-2').simulate('click', { currentTarget: { value: 'test' } });
         expect(callback).toHaveBeenCalled();
     });
 
     test('Is default pressed', () => {
-        const wrapper = mount(
-            ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test2" />),
-        );
+        const wrapper = shallow(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test2" />);
 
         expect(getByTestId(wrapper, 'test-toggle-button-1').prop('pressed')).toBe(true);
     });
 
     test('Is disabled', () => {
-        const wrapper = mount(
-            ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test3" />),
-        );
+        const wrapper = shallow(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test3" />);
 
         expect(getByTestId(wrapper, 'test-toggle-button-0').prop('disabled')).toBe(true);
     });
