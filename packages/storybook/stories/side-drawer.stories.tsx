@@ -9,6 +9,7 @@ const Box = styled.div`
     border-radius: 8px;
     height: 20vh;
     margin-bottom: 16px;
+
     &:nth-child(2n) {
         background-color: #012639;
     }
