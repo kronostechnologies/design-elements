@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useEffect } from 'react';
+import React, { ReactElement, ReactNode, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../tokens/breakpoints';
 
@@ -9,19 +9,21 @@ type Origin = 'right' | 'left';
 interface ContainerProps {
     open: boolean;
     origin?: Origin;
+    width: string;
 }
 
 const Container = styled.div<ContainerProps>`
   background-color: ${props => props.theme.greys.white};
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   height: calc(100vh - 48px);
-  left: 0;
+  ${props => props.origin}: 0;
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
   top: 48px;
-  transform: translate(${props => props.open ? '0%' : props.origin === 'left' ? '-100%' : '100%'});
+  transform: translate(${props => props.open ? '0%' : props.origin === 'left' ? '-110%' : '110%'});
   transition: transform 300ms;
-  width: 100%;
+  width: ${props => props.width};
   z-index: 100;
 
   @media screen and (min-width: ${tabletMin}) {
@@ -45,11 +47,22 @@ interface SideDrawerProps {
     /** Use on nested drawers to prevent background scroll */
     nested?: boolean;
     open: boolean;
+    /**
+     * Sets drawer width
+     * @default 100%
+     **/
+    width: string;
 }
 
-export function SideDrawer({ children, nested, open, drawerOrigin }: SideDrawerProps): ReactElement {
+export function SideDrawer({ children, nested, open, drawerOrigin, width }: SideDrawerProps): ReactElement {
+    const drawerRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        if (open) document.body.style.overflow = `hidden`;
+        if (open && width === '100%' || width === '100vw') document.body.style.overflow = `hidden`;
+        else if (!open && drawerRef.current && drawerRef.current.scrollTop > 0) {
+            setTimeout(() => {
+                if (drawerRef.current) drawerRef.current.scrollTop = 0;
+            }, 300);
+        }
 
         return () => {
             if (!nested) document.body.style.overflow = `unset`;
@@ -61,6 +74,8 @@ export function SideDrawer({ children, nested, open, drawerOrigin }: SideDrawerP
           className="side-drawer"
           open={open}
           origin={drawerOrigin}
+          ref={drawerRef}
+          width={width}
         >
             {children}
         </Container>
@@ -69,4 +84,5 @@ export function SideDrawer({ children, nested, open, drawerOrigin }: SideDrawerP
 
 SideDrawer.defaultProps = {
     drawerOrigin: 'right',
+    width: '100%',
 };

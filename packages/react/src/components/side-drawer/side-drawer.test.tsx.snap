@@ -1,8 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Side Drawer has nested drawer 1`] = `
+.c1 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c1 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
 .c0 {
   background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 48px);
   left: 0;
   overflow-x: hidden;
@@ -25,6 +50,13 @@ exports[`Side Drawer has nested drawer 1`] = `
 }
 
 @media screen and (min-width:48rem) {
+  .c1 {
+    height: calc(100vh - 80px);
+    top: 80px;
+  }
+}
+
+@media screen and (min-width:48rem) {
   .c0 {
     height: calc(100vh - 80px);
     top: 80px;
@@ -35,11 +67,13 @@ exports[`Side Drawer has nested drawer 1`] = `
   className="c0 side-drawer"
   open={true}
   origin="left"
+  width="100%"
 >
   <div
-    className="c0 side-drawer"
+    className="c1 side-drawer"
     open={true}
     origin="right"
+    width="100%"
   >
     <p>
       Test
@@ -48,18 +82,63 @@ exports[`Side Drawer has nested drawer 1`] = `
 </div>
 `;
 
+exports[`Side Drawer has width set to 50% 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 50%;
+  z-index: 100;
+}
+
+.c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+@media screen and (min-width:48rem) {
+  .c0 {
+    height: calc(100vh - 80px);
+    top: 80px;
+  }
+}
+
+<div
+  className="c0 side-drawer"
+  open={true}
+  origin="right"
+  width="50%"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
 exports[`Side Drawer is closed on left side 1`] = `
 .c0 {
   background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 48px);
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
   top: 48px;
-  -webkit-transform: translate(-100%);
-  -ms-transform: translate(-100%);
-  transform: translate(-100%);
+  -webkit-transform: translate(-110%);
+  -ms-transform: translate(-110%);
+  transform: translate(-110%);
   -webkit-transition: -webkit-transform 300ms;
   -webkit-transition: transform 300ms;
   transition: transform 300ms;
@@ -83,6 +162,7 @@ exports[`Side Drawer is closed on left side 1`] = `
   className="c0 side-drawer"
   open={false}
   origin="left"
+  width="100%"
 >
   <p>
     Test
@@ -93,15 +173,16 @@ exports[`Side Drawer is closed on left side 1`] = `
 exports[`Side Drawer is closed on right side 1`] = `
 .c0 {
   background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 48px);
-  left: 0;
+  right: 0;
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
   top: 48px;
-  -webkit-transform: translate(100%);
-  -ms-transform: translate(100%);
-  transform: translate(100%);
+  -webkit-transform: translate(110%);
+  -ms-transform: translate(110%);
+  transform: translate(110%);
   -webkit-transition: -webkit-transform 300ms;
   -webkit-transition: transform 300ms;
   transition: transform 300ms;
@@ -125,6 +206,7 @@ exports[`Side Drawer is closed on right side 1`] = `
   className="c0 side-drawer"
   open={false}
   origin="right"
+  width="100%"
 >
   <p>
     Test
@@ -135,8 +217,9 @@ exports[`Side Drawer is closed on right side 1`] = `
 exports[`Side Drawer is open 1`] = `
 .c0 {
   background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 48px);
-  left: 0;
+  right: 0;
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
@@ -167,6 +250,7 @@ exports[`Side Drawer is open 1`] = `
   className="c0 side-drawer"
   open={true}
   origin="right"
+  width="100%"
 >
   <p>
     Test

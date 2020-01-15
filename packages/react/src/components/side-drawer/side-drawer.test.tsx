@@ -49,4 +49,15 @@ describe('Side Drawer', () => {
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });
+
+    test('has width set to 50%', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <SideDrawer open width="50%">
+                        <p>Test</p>
+                </SideDrawer>,
+            ),
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });

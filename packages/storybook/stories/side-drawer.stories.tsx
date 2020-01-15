@@ -20,7 +20,7 @@ export default {
     component: SideDrawer,
 };
 
-type DrawerType = 'normal' | 'withNestedDrawer' | 'nested' | 'scrollable' | 'left';
+type DrawerType = 'normal' | 'withNestedDrawer' | 'nested' | 'scrollable' | 'left' | 'variableWidth';
 
 const allDrawers = {
     normal: false,
@@ -28,6 +28,7 @@ const allDrawers = {
     nested: false,
     scrollable: false,
     left: false,
+    variableWidth: false,
 };
 
 const toggleDrawer = (drawer: DrawerType) => {
@@ -84,5 +85,15 @@ export const leftOrigin = () => (
             <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('left')}/>
         </SideDrawer>
         <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('left')}/>
+    </>
+);
+
+export const variableWidth = () => (
+    <>
+        <SideDrawer open={allDrawers.variableWidth} width="50%">
+            <h3>Drawer content</h3>
+            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('variableWidth')}/>
+        </SideDrawer>
+        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('variableWidth')}/>
     </>
 );
