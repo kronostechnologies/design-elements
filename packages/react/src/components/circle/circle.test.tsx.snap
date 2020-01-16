@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Circle Matches the snapshot 1`] = `
+.c0 {
+  display: block;
+}
+
 .c1 {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -8,10 +12,6 @@ exports[`Circle Matches the snapshot 1`] = `
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-}
-
-.c0 {
-  display: block;
 }
 
 <svg

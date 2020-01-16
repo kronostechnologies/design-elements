@@ -13,30 +13,30 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-  ${props => `
-    background: ${props.theme.greys.white};
-    border-color: ${props.theme.greys.grey};
-    color: ${props.theme.greys['mid-grey']};
-
-    &:disabled {
-        &,
-        &:focus,
-        &:hover {
-            background-color: ${props.theme.greys.grey};
-            border-color: ${props.theme.greys.grey};
-            color: ${props.theme.greys['mid-grey']};
-        }
+    ${props => `
+        background: ${props.theme.greys.white};
+        border-color: ${props.theme.greys.grey};
+        color: ${props.theme.greys['mid-grey']};
 
         &:disabled {
             &,
             &:focus,
             &:hover {
-                background-color: ${props.theme.greys['light-grey']};
+                background-color: ${props.theme.greys.grey};
                 border-color: ${props.theme.greys.grey};
                 color: ${props.theme.greys['mid-grey']};
             }
-        }
-    }`}
+
+            &:disabled {
+                &,
+                &:focus,
+                &:hover {
+                    background-color: ${props.theme.greys['light-grey']};
+                    border-color: ${props.theme.greys.grey};
+                    color: ${props.theme.greys['mid-grey']};
+                }
+            }
+        }`}
 `;
 
 const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {

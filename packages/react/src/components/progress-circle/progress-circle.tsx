@@ -13,50 +13,50 @@ interface ResultProps {
 }
 
 const Container = styled.div`
-  display: inline-block;
-  height: auto;
-  width: 100%;
+    display: inline-block;
+    height: auto;
+    width: 100%;
 `;
 
 const Wrapper = styled.div`
-  height: inherit;
-  margin-bottom: var(--spacing-1x);
-  position: relative;
-  width: inherit;
+    height: inherit;
+    margin-bottom: var(--spacing-1x);
+    position: relative;
+    width: inherit;
 `;
 
 const Result = styled.div`
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 
-  p {
-    color: ${(props: ResultProps) => props.theme.greys.black};
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-  }
+    p {
+        color: ${(props: ResultProps) => props.theme.greys.black};
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 const Label = styled.p`
-  color: ${(props: ResultProps) => props.theme.greys.black};
-  font-size: 1rem;
-  letter-spacing: 0.46px;
-  line-height: 1.5rem;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    color: ${(props: ResultProps) => props.theme.greys.black};
+    font-size: 1rem;
+    letter-spacing: 0.46px;
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 `;
 
 const StyledCircle = styled(Circle)`
-  height: auto;
-  min-height: 124px;
-  width: 100%;
+    height: auto;
+    min-height: 124px;
+    width: 100%;
 `;
 
 interface Props {

@@ -6,7 +6,7 @@ import { hiddenStyle } from '../visually-hidden/styles/visuallyhidden';
 import { Label } from './styles/choose';
 
 const Input = styled.input`
-  ${hiddenStyle}
+    ${hiddenStyle}
 `;
 
 interface ChooseInputProps {

@@ -6,12 +6,12 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
 const StyledTextArea = styled.textarea`
-  min-height: 6.5rem;
-  min-width: 100%;
-  ${props => inputsStyle(props.theme)}
-  outline: none;
-  overflow: auto;
-  resize: vertical;
+    min-height: 6.5rem;
+    min-width: 100%;
+    ${props => inputsStyle(props.theme)}
+    outline: none;
+    overflow: auto;
+    resize: vertical;
 `;
 
 export interface TextAreaProps {
