@@ -58,39 +58,39 @@ interface ItemProps {
 const itemHeight = 32;
 
 const Wrapper = styled.ul<WrapperProps>`
-  background-color: #fff;
-  list-style-type: none;
-  margin: 0;
-  max-height: ${({ numberOfItemsVisible }) => numberOfItemsVisible * itemHeight}px;
-  min-width: 200px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    max-height: ${({ numberOfItemsVisible }) => numberOfItemsVisible * itemHeight}px;
+    min-width: 200px;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%;
 `;
 
 const Item = styled.li<ItemProps>`
-  background-color: ${({ focused }) => focused ? '#d9dde2' : 'inherit'};
-  color: #000;
-  cursor: pointer;
-  font-size: 0.875rem;
-  height: ${itemHeight}px;
-  line-height: ${itemHeight}px;
-  overflow: hidden;
-  padding: 0 ${({ checkIndicator, selected }) => (checkIndicator ? (selected ? 0 : 28) : 16)}px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    background-color: ${({ focused }) => focused ? '#d9dde2' : 'inherit'};
+    color: #000;
+    cursor: pointer;
+    font-size: 0.875rem;
+    height: ${itemHeight}px;
+    line-height: ${itemHeight}px;
+    overflow: hidden;
+    padding: 0 ${({ checkIndicator, selected }) => (checkIndicator ? (selected ? 0 : 28) : 16)}px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
-  &:hover,
-  &:focus {
-    background-color: #d9dde2;
-  }
+    &:hover,
+    &:focus {
+        background-color: #d9dde2;
+    }
 `;
 
 const CheckIndicator = styled(Check)`
-  color: #637282;
-  height: 12px;
-  padding: 0 var(--spacing-1x);
-  width: 12px;
+    color: #637282;
+    height: 12px;
+    padding: 0 var(--spacing-1x);
+    width: 12px;
 `;
 
 export function List({

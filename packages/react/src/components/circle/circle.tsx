@@ -2,6 +2,17 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 
+const Svg = styled.svg`
+    display: block;
+`;
+
+const BackgroundCircle = styled.circle``;
+
+const FillCircle = styled.circle`
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+`;
+
 interface CircleProps {
     color: string;
     percent: number;
@@ -41,14 +52,3 @@ export function Circle({ color, percent, radius, stroke }: CircleProps): ReactEl
         </Svg>
     );
 }
-
-const BackgroundCircle = styled.circle``;
-
-const FillCircle = styled.circle`
-  transform: rotate(90deg);
-  transform-origin: 50% 50%;
-`;
-
-const Svg = styled.svg`
-  display: block;
-`;

@@ -13,83 +13,83 @@ import { inputsStyle } from '../text-input/styles/inputs';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const SearchWrapper = styled.div`
-  display: flex;
+    display: flex;
 
-  label {
-    bottom: 0.5rem;
-    color: ${props => props.theme.greys['dark-grey']};
-    display: inline-block;
-    height: 1rem;
-    left: 0.5rem;
-    margin: auto;
-    position: absolute;
-    top: 0.5rem;
-    width: 1rem;
-  }
+    label {
+        bottom: 0.5rem;
+        color: ${props => props.theme.greys['dark-grey']};
+        display: inline-block;
+        height: 1rem;
+        left: 0.5rem;
+        margin: auto;
+        position: absolute;
+        top: 0.5rem;
+        width: 1rem;
+    }
 `;
 
 const InnerWrapper = styled.div`
-  flex: 1 1 auto;
-  position: relative;
+    flex: 1 1 auto;
+    position: relative;
 `;
 
 const IcoSearch = styled(SearchIcon)`
-  color: ${(props: {theme: Theme, disabled?: boolean}) => (props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey'])};
-  height: 1rem;
-  width: 1rem;
+    color: ${(props: {theme: Theme, disabled?: boolean}) => (props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey'])};
+    height: 1rem;
+    width: 1rem;
 `;
 
 const IcoReset = styled(XIcon)`
-  color: ${props => props.theme.greys['dark-grey']};
-  height: 1.25rem;
-  width: 1.25rem;
+    color: ${props => props.theme.greys['dark-grey']};
+    height: 1.25rem;
+    width: 1.25rem;
 `;
 
 const Input = styled.input`
-  ${(props: {theme: Theme, hasButton?: boolean}) => {
-      return `
-      ${inputsStyle(props.theme)} /* Must be the first rule */
-      border-radius: ${props.hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
-      padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
+    ${(props: {theme: Theme, hasButton?: boolean}) => {
+        return `
+        ${inputsStyle(props.theme)} /* Must be the first rule */
+        border-radius: ${props.hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
+        padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 
-      label + & {
-        margin-top: 0;
-      }
+        label + & {
+          margin-top: 0;
+        }
 
-      &::-webkit-search-decoration,
-      &::-webkit-search-cancel-button,
-      &::-webkit-search-results-button,
-      &::-webkit-search-results-decoration {
-        display: none;
-      }
-    `;
-  }}
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+          display: none;
+        }
+      `;
+    }}
 `;
 
 const Reset = styled.button`
-  appearance: none;
-  background: transparent;
-  border: 0;
-  bottom: 0.5rem;
-  cursor: pointer;
-  display: none;
-  height: 1.25rem;
-  margin: auto;
-  padding: 0;
-  position: absolute;
-  right: 0.25rem;
-  top: 0.5rem;
-  width: 1.25rem;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    bottom: 0.5rem;
+    cursor: pointer;
+    display: none;
+    height: 1.25rem;
+    margin: auto;
+    padding: 0;
+    position: absolute;
+    right: 0.25rem;
+    top: 0.5rem;
+    width: 1.25rem;
 
-  input:valid + & {
-    display: inline-block;
-  }
+    input:valid + & {
+        display: inline-block;
+    }
 `;
 
 const SearchSubmit = styled(SearchButton)`
-  border-left: 0;
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  position: relative;
+    border-left: 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    position: relative;
 `;
 
 export interface SearchInputProps {

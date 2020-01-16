@@ -5,18 +5,18 @@ import { Bar } from '../bar/bar';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Label = styled.label`
-  color: ${(props: { theme: Theme }) => props.theme.greys.black};
-  display: block;
-  font-size: 0.875rem;
-  letter-spacing: 0.46px;
-  line-height: 1.5rem;
-  margin-bottom: var(--spacing-half);
+    color: ${(props: { theme: Theme }) => props.theme.greys.black};
+    display: block;
+    font-size: 0.875rem;
+    letter-spacing: 0.46px;
+    line-height: 1.5rem;
+    margin-bottom: var(--spacing-half);
 `;
 
 const Container = styled.div`
-  & + & {
-    margin-top: var(--spacing-half);
-  }
+    & + & {
+        margin-top: var(--spacing-half);
+    }
 `;
 
 interface Props {

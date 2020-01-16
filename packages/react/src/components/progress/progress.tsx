@@ -2,59 +2,59 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  align-items: center;
-  display: flex;
-  max-width: 160px;
+    align-items: center;
+    display: flex;
+    max-width: 160px;
 `;
 
 const StyledProgress = styled.progress`
-  appearance: none;
-  height: 4px;
-  margin: 6px;
-  min-width: 148px;
+    appearance: none;
+    height: 4px;
+    margin: 6px;
+    min-width: 148px;
 
-  &[value] {
-    &::-moz-progress-bar {
-      background-color: ${props => props.theme.main['primary-3']};
-    }
+    &[value] {
+        &::-moz-progress-bar {
+            background-color: ${props => props.theme.main['primary-3']};
+        }
 
-    &::-webkit-progress-bar {
-      background-color: ${props => props.theme.greys.grey};
-    }
+        &::-webkit-progress-bar {
+            background-color: ${props => props.theme.greys.grey};
+        }
 
-    &::-webkit-progress-value {
-      background-color: ${props => props.theme.main['primary-3']};
+        &::-webkit-progress-value {
+            background-color: ${props => props.theme.main['primary-3']};
+        }
     }
-  }
 `;
 
 const UL = styled.ul`
-  display: flex;
-  height: 16px;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  width: 160px;
+    display: flex;
+    height: 16px;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 160px;
 `;
 
 const AbstractStep = styled.li`
-  background-color: ${props => props.theme.main['primary-3']};
-  border-radius: 50%;
-  display: inline-block;
-  width: 16px;
+    background-color: ${props => props.theme.main['primary-3']};
+    border-radius: 50%;
+    display: inline-block;
+    width: 16px;
 `;
 
 const PastStep = AbstractStep;
 
 const CurrentStep = styled(AbstractStep)`
-  border: 4px solid ${props => props.theme.greys.grey};
-  width: 8px;
+    border: 4px solid ${props => props.theme.greys.grey};
+    width: 8px;
 `;
 
 const FutureStep = styled(AbstractStep)`
-  background-color: ${props => props.theme.greys.grey};
+    background-color: ${props => props.theme.greys.grey};
 `;
 
 const range = (value: number) => {

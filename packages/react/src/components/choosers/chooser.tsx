@@ -4,16 +4,16 @@ import { ChooseInput } from '../choose-input/choose-input';
 
 type GridProps = Pick<ChooserProps, 'inColumns'>;
 const Grid = styled.div<GridProps>`
-  align-items: stretch;
-  box-sizing: border-box;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: ${(props: GridProps) => props.inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none'};
-  width: auto;
+    align-items: stretch;
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: ${(props: GridProps) => props.inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none'};
+    width: auto;
 `;
 
 const Skip = styled.div`
-  margin: var(--spacing-2x) 0 0;
+    margin: var(--spacing-2x) 0 0;
 `;
 
 interface ChooserProps {
