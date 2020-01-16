@@ -64,12 +64,14 @@ exports[`Side Drawer has nested drawer 1`] = `
 }
 
 <div
+  aria-hidden={false}
   className="c0 side-drawer"
   open={true}
   origin="left"
   width="100%"
 >
   <div
+    aria-hidden={false}
     className="c1 side-drawer"
     open={true}
     origin="right"
@@ -115,6 +117,7 @@ exports[`Side Drawer has width set to 50% 1`] = `
 }
 
 <div
+  aria-hidden={false}
   className="c0 side-drawer"
   open={true}
   origin="right"
@@ -136,9 +139,9 @@ exports[`Side Drawer is closed on left side 1`] = `
   overflow-y: auto;
   position: fixed;
   top: 48px;
-  -webkit-transform: translate(-110%);
-  -ms-transform: translate(-110%);
-  transform: translate(-110%);
+  -webkit-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
   -webkit-transition: -webkit-transform 300ms;
   -webkit-transition: transform 300ms;
   transition: transform 300ms;
@@ -159,6 +162,7 @@ exports[`Side Drawer is closed on left side 1`] = `
 }
 
 <div
+  aria-hidden={true}
   className="c0 side-drawer"
   open={false}
   origin="left"
@@ -180,9 +184,9 @@ exports[`Side Drawer is closed on right side 1`] = `
   overflow-y: auto;
   position: fixed;
   top: 48px;
-  -webkit-transform: translate(110%);
-  -ms-transform: translate(110%);
-  transform: translate(110%);
+  -webkit-transform: translate(100%);
+  -ms-transform: translate(100%);
+  transform: translate(100%);
   -webkit-transition: -webkit-transform 300ms;
   -webkit-transition: transform 300ms;
   transition: transform 300ms;
@@ -203,6 +207,7 @@ exports[`Side Drawer is closed on right side 1`] = `
 }
 
 <div
+  aria-hidden={true}
   className="c0 side-drawer"
   open={false}
   origin="right"
@@ -247,6 +252,7 @@ exports[`Side Drawer is open 1`] = `
 }
 
 <div
+  aria-hidden={false}
   className="c0 side-drawer"
   open={true}
   origin="right"

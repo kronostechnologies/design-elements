@@ -1055,6 +1055,20 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
+"@equisoft/design-elements-react@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-1.0.1.tgz#2888acbf51d0fee5195418b3cc8bd92f315f7bb7"
+  integrity sha512-AlUzvDRl38KMSIBxm4aRGpuiEHvj+hAWy5gvtByr2CziDOKZ5YbFdik3W/x0suRXOtSqk1XabcIJ8KOmYmaf4w==
+  dependencies:
+    feather-icons "^4.21.0"
+    lodash-es "^4.17.14"
+    uuid "^3.3.3"
+
+"@equisoft/design-elements-web@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-1.0.1.tgz#1acd86a314d35c1ccd0c6e0ed5569c9428921215"
+  integrity sha512-H5q0xL6/0cxxvrHnw0MY7MPYNdBktUs25MJxD7OaBgN2+NOO4ReKglgQ9W6x9StYqnkesxm8cGciuDfCQi3e4w==
+
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@equisoft/tslint-config-react/-/tslint-config-react-0.0.3.tgz#3d0580d26386288397581710300bff5e1800cf1b"
@@ -3588,14 +3602,11 @@ core-js@^3.0.1, core-js@^3.0.4:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.3.5.tgz#58d20f48a95a07304b62ff752742b82b56431ed8"
   integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
 
-<<<<<<< HEAD
-=======
 core-js@^3.1.3:
   version "3.6.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
   integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
 
->>>>>>> Adds height media queries
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -4507,8 +4518,6 @@ fbjs@^0.8.0:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-<<<<<<< HEAD
-=======
 feather-icons@^4.21.0:
   version "4.25.0"
   resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.25.0.tgz#2073009bf7fee800a2da1d0a7d14b1ee98e77258"
@@ -4517,7 +4526,6 @@ feather-icons@^4.21.0:
     classnames "^2.2.5"
     core-js "^3.1.3"
 
->>>>>>> Adds height media queries
 figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
@@ -6121,6 +6129,11 @@ locate-path@^5.0.0:
   integrity sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
   dependencies:
     p-locate "^4.1.0"
+
+lodash-es@^4.17.14:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -9895,6 +9908,11 @@ uuid@^3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
+
+uuid@^3.3.3:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
+  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
