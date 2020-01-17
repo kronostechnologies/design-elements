@@ -59,7 +59,6 @@ exports[`List Matches the snapshot 1`] = `
   aria-activedescendant="undefined_optionB"
   aria-labelledby="undefined_optionB"
   className="c0"
-  data-testid="list"
   onKeyDown={[Function]}
   onKeyPress={[Function]}
   role="listbox"

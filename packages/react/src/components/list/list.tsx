@@ -254,6 +254,7 @@ export function List({
     useEffect(() => {
         if (autofocus && listRef.current) {
             listRef.current.focus();
+            listRef.current.scrollTop = 0;
         }
         setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
     }, [autofocus]);
