@@ -88,7 +88,6 @@ exports[`List Matches the snapshot 1`] = `
   aria-labelledby="undefined_optionB"
 >>>>>>> Adds more keyboard functionalities
   className="c0"
-  data-testid="list"
   onKeyDown={[Function]}
   onKeyPress={[Function]}
   role="listbox"

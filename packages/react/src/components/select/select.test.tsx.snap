@@ -301,8 +301,13 @@ label + .c2 {
 =======
   >
     <input
+      aria-autocomplete="list"
       aria-controls="listbox_undefined"
+<<<<<<< HEAD
 >>>>>>> Adds accessibility standards
+=======
+      aria-multiline="false"
+>>>>>>> Adds scroll position reset after selection
       className="c3"
       onBlur={[Function]}
 >>>>>>> PR changes
@@ -328,8 +333,11 @@ label + .c2 {
       className="c6"
 =======
       className="c5"
+<<<<<<< HEAD
       data-testid="list"
 >>>>>>> Adds more keyboard functionalities
+=======
+>>>>>>> Adds scroll position reset after selection
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -590,7 +598,7 @@ exports[`Select has no label 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
@@ -647,7 +655,9 @@ exports[`Select has no label 1`] = `
     role="combobox"
   >
     <input
+      aria-autocomplete="list"
       aria-controls="listbox_undefined"
+      aria-multiline="false"
       className="c3"
       onBlur={[Function]}
       onChange={[Function]}
@@ -670,7 +680,6 @@ exports[`Select has no label 1`] = `
   >
     <ul
       className="c5"
-      data-testid="list"
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -1273,10 +1282,14 @@ input + .c2 {
 =======
   background-color: #F1F2F2;
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
 =======
   border: 1px solid #57666E;
+=======
+  border: 1px solid #D9DDE2;
+>>>>>>> Adds scroll position reset after selection
   border-radius: var(--border-radius);
 >>>>>>> Adds CSS variables
 >>>>>>> Adds CSS variables
@@ -1306,7 +1319,6 @@ input + .c2 {
 >>>>>>> PR changes
 =======
   margin-top: var(--spacing-1x);
-  border: 1px solid #D9DDE2;
   padding-right: var(--spacing-1x);
 >>>>>>> Adds CSS variables
   width: 100%;
@@ -1338,9 +1350,13 @@ input + .c2 {
 >>>>>>> Adds CSS variables
   box-sizing: border-box;
   caret-color: transparent;
+<<<<<<< HEAD
 >>>>>>> PR changes
   font-size: calc(1rem - 2px);
 >>>>>>> Renames Dropdown to Select
+=======
+  font-size: 0.875rem;
+>>>>>>> Adds scroll position reset after selection
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
@@ -1483,7 +1499,9 @@ label + .c2 {
     role="combobox"
   >
     <input
+      aria-autocomplete="list"
       aria-controls="listbox_undefined"
+      aria-multiline="false"
       className="c4"
       disabled={true}
       onBlur={[Function]}
@@ -1541,7 +1559,6 @@ label + .c2 {
 =======
     <ul
       className="c6"
-      data-testid="list"
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -2032,7 +2049,9 @@ input + .c2 {
       role="combobox"
     >
       <input
+        aria-autocomplete="list"
         aria-controls="listbox_undefined"
+        aria-multiline="false"
         className="c4"
 >>>>>>> Adds accessibility standards
 <<<<<<< HEAD
@@ -2065,12 +2084,15 @@ input + .c2 {
         className="c6"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
 =======
 >>>>>>> PR changes
 =======
         data-testid="list"
 >>>>>>> Adds more keyboard functionalities
+=======
+>>>>>>> Adds scroll position reset after selection
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         role="listbox"
@@ -3397,9 +3419,13 @@ input + .c2 {
 >>>>>>> Adds CSS variables
   box-sizing: border-box;
   caret-color: transparent;
+<<<<<<< HEAD
 >>>>>>> PR changes
   font-size: calc(1rem - 2px);
 >>>>>>> Renames Dropdown to Select
+=======
+  font-size: 0.875rem;
+>>>>>>> Adds scroll position reset after selection
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
@@ -3610,7 +3636,9 @@ label + .c2 {
       role="combobox"
     >
       <input
+        aria-autocomplete="list"
         aria-controls="listbox_undefined"
+        aria-multiline="false"
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -3633,7 +3661,6 @@ label + .c2 {
     >
       <ul
         className="c6"
-        data-testid="list"
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         role="listbox"
