@@ -31,14 +31,14 @@ const InputWrapper = styled.div<InputWrapperProps>`
         1px solid ${props => {
             if (props.disabled) {
                 return props.theme.greys.grey;
-            } else if (props.valid) {
-                if (props.focus) {
+            } else {
+                if (!props.valid) {
+                    return props.theme.notifications['error-2.1'];
+                } else if (props.focus) {
                     return props.theme.main['primary-1.1'];
                 } else {
-                    return props.theme.notifications['error-2.1'];
+                    return props.theme.greys['dark-grey'];
                 }
-            } else {
-                return props.theme.notifications['error-2.1'];
             }
         }
     };
@@ -268,6 +268,7 @@ export const Select = ({
         <>
             <StyledFieldContainer
                 fieldId={id}
+                device={device}
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage}

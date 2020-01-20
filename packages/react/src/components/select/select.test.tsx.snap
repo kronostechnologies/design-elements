@@ -67,6 +67,7 @@ exports[`Select has mobile styles 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -91,6 +92,7 @@ exports[`Select has mobile styles 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -156,6 +158,7 @@ exports[`Select has mobile styles 1`] = `
     />
     <svg
       color="currentColor"
+      focusable={false}
       height="24"
       width="24"
     />
@@ -386,6 +389,7 @@ exports[`Select has no label 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -410,6 +414,7 @@ exports[`Select has no label 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -476,6 +481,7 @@ exports[`Select has no label 1`] = `
     />
     <svg
       color="currentColor"
+      focusable={false}
       height="24"
       width="24"
     />
@@ -737,6 +743,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -761,6 +768,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -866,6 +874,7 @@ label + .c2 {
     />
     <svg
       color="currentColor"
+      focusable={false}
       height="24"
       width="24"
     />
@@ -1126,6 +1135,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -1150,6 +1160,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -1221,6 +1232,7 @@ input + .c2 {
       />
       <svg
         color="currentColor"
+        focusable={false}
         height="24"
         width="24"
       />
@@ -1613,6 +1625,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -1637,6 +1650,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -1741,6 +1755,7 @@ label + .c2 {
       />
       <svg
         color="currentColor"
+        focusable={false}
         height="24"
         width="24"
       />
