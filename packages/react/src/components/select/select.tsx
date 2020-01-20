@@ -16,6 +16,7 @@ interface InputProps {
 
 interface InputWrapperProps extends InputProps {
     focus?: boolean;
+    containerOutline: boolean;
     valid: boolean;
 }
 
@@ -39,13 +40,15 @@ const InputWrapper = styled.div<InputWrapperProps>`
             } else {
                 return props.theme.notifications['error-2.1'];
             }
-        }};
+        }
+    };
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
     height: 32px;
     justify-content: space-between;
     margin-top: var(--spacing-1x);
+    outline: ${props => props.containerOutline ? '-webkit-focus-ring-color auto 5px' : 'none'};
     padding-right: var(--spacing-1x);
     width: 100%;
 
@@ -67,6 +70,7 @@ const StyledInput = styled.input<InputProps>`
     font-size: 0.875rem;
     letter-spacing: 0.4px;
     max-height: 100%;
+    outline: none;
     padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
     width: 100%;
 
@@ -126,6 +130,7 @@ export const Select = ({
     validationErrorMessage = 'You must select an option',
 }: SelectProps) => {
     const [focus, setFocus] = useState(false);
+    const [containerOutline, setContainerOutline] = useState(false);
     const [open, setOpen] = useState(false);
     const defaultOption = options.find(option => option.value === defaultValue);
     const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
@@ -188,7 +193,10 @@ export const Select = ({
             setSearchValue(event.target.value);
 
             if (event.target.value !== '' && optionsArray.length > 0) setFocusedValue(optionsArray[0].value);
-            else setSelectedOptionValue('');
+            else {
+                setSelectedOptionValue('');
+                setFocusedValue('');
+            }
         }
     };
 
@@ -246,7 +254,15 @@ export const Select = ({
         }
     };
 
-    const handleBlur = () => !open && setFocus(false);
+    const handleFocus = () => {
+        setFocus(true);
+        setContainerOutline(true);
+    };
+
+    const handleBlur = () => {
+        !open && setFocus(false);
+        setContainerOutline(false);
+    };
 
     return (
         <>
@@ -264,6 +280,7 @@ export const Select = ({
                     device={device}
                     disabled={disabled}
                     focus={focus}
+                    containerOutline={containerOutline}
                     onClick={disabled ? undefined : handleClick}
                     ref={wrapperRef}
                     valid={valid}
@@ -280,7 +297,7 @@ export const Select = ({
                         name={name}
                         onBlur={handleBlur}
                         onChange={handleInputChange}
-                        onFocus={() => setFocus(true)}
+                        onFocus={handleFocus}
                         onKeyDown={handleKeyDown}
                         placeholder={placeholder}
                         required={true}
