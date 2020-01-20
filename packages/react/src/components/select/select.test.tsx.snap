@@ -96,7 +96,11 @@ input + .c2 {
   outline: none;
 =======
   margin-top: var(--spacing-1x);
+<<<<<<< HEAD
 >>>>>>> Adds CSS variables
+=======
+  outline: none;
+>>>>>>> Adds mobile styles to field-container
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -122,9 +126,13 @@ input + .c2 {
   letter-spacing: 0.4px;
   max-height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   outline: none;
 =======
 >>>>>>> Adds CSS variables
+=======
+  outline: none;
+>>>>>>> Adds mobile styles to field-container
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -320,6 +328,7 @@ label + .c2 {
     />
     <svg
       color="currentColor"
+      focusable={false}
       height="24"
       width="24"
     />
@@ -580,6 +589,7 @@ exports[`Select has no label 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -604,6 +614,7 @@ exports[`Select has no label 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -670,6 +681,7 @@ exports[`Select has no label 1`] = `
     />
     <svg
       color="currentColor"
+      focusable={false}
       height="24"
       width="24"
     />
@@ -1319,6 +1331,7 @@ input + .c2 {
 >>>>>>> PR changes
 =======
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
 >>>>>>> Adds CSS variables
   width: 100%;
@@ -1371,9 +1384,13 @@ input + .c2 {
 =======
   max-height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 0.5rem 0 0.5rem 0.5rem;
 >>>>>>> PR changes
 =======
+=======
+  outline: none;
+>>>>>>> Adds mobile styles to field-container
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
 >>>>>>> Adds CSS variables
   width: 100%;
@@ -1515,6 +1532,7 @@ label + .c2 {
     />
     <svg
       color="currentColor"
+      focusable={false}
       height="24"
       width="24"
     />
@@ -2072,6 +2090,7 @@ input + .c2 {
       />
       <svg
         color="currentColor"
+        focusable={false}
         height="24"
         width="24"
       />
@@ -2528,6 +2547,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -2552,6 +2572,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
@@ -3384,6 +3405,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-1x);
+  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 <<<<<<< HEAD
@@ -3440,9 +3462,13 @@ input + .c2 {
 =======
   max-height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 0.5rem 0 0.5rem 0.5rem;
 >>>>>>> PR changes
 =======
+=======
+  outline: none;
+>>>>>>> Adds mobile styles to field-container
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
 >>>>>>> Adds CSS variables
   width: 100%;
@@ -3595,6 +3621,7 @@ label + .c2 {
         type="text"
         value=""
       />
+<<<<<<< HEAD
       <button
         className="c5"
         onClick={[Function]}
@@ -3608,6 +3635,14 @@ label + .c2 {
           width="24"
         />
       </button>
+=======
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="24"
+        width="24"
+      />
+>>>>>>> Adds mobile styles to field-container
     </div>
     <div
       className="c6"

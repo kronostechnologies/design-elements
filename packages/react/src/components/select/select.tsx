@@ -390,6 +390,7 @@ export const Select = ({
             <StyledFieldContainer
                 device={device}
                 fieldId={id}
+                device={device}
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage}
