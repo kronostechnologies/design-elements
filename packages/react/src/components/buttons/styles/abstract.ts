@@ -9,6 +9,7 @@ export const abstractStyle = `
     font-family: inherit;
     font-size: 0.75rem;
     font-weight: var(--font-bold);
+    justify-content: center;
     letter-spacing: 0.55px;
     min-height: 2rem;
     min-width: 2rem;

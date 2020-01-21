@@ -6,12 +6,19 @@ import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
+type Type = 'submit' | 'button' | 'reset';
+
 interface ButtonProps extends AbstractButtonProps {
     /**
      * Visual style
      * @default primary
      **/
     buttonType: ButtonType;
+    /**
+     * Sets button type
+     * @default submit
+     */
+    type?: Type;
 }
 
 const StyledButton = styled(AbstractButton)<ButtonProps>`
@@ -82,14 +89,14 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
 }
 `;
 
-export function Button({ children, onClick, ...props }: ButtonProps): ReactElement {
+export function Button({ children, onClick, type = 'submit', ...props }: ButtonProps): ReactElement {
     function handleClick(): void {
         onClick && onClick();
     }
 
     const label: string = props.label || '';
     return (
-        <StyledButton onClick={handleClick} {...props}>
+        <StyledButton onClick={handleClick} type={type} {...props}>
             {children}{label}
         </StyledButton>
     );

@@ -20,6 +20,10 @@ exports[`Add Button Button has primary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -68,6 +72,7 @@ exports[`Add Button Button has primary styles 1`] = `
   className="c0"
   label="Primary Button"
   onClick={[Function]}
+  type="submit"
 >
   <svg
     className="c1"
@@ -96,6 +101,10 @@ exports[`Add Button Button has secondary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -146,6 +155,7 @@ exports[`Add Button Button has secondary styles 1`] = `
   className="c0"
   label="Secondary Button"
   onClick={[Function]}
+  type="submit"
 >
   <svg
     className="c1"
@@ -174,6 +184,10 @@ exports[`Add Button Button has tertiary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -220,6 +234,7 @@ exports[`Add Button Button has tertiary styles 1`] = `
   className="c0"
   label="Tertiary Button"
   onClick={[Function]}
+  type="submit"
 >
   <svg
     className="c1"
@@ -248,6 +263,10 @@ exports[`Add Button Button is disabled 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -297,6 +316,7 @@ exports[`Add Button Button is disabled 1`] = `
   disabled={true}
   label="Primary Button"
   onClick={[Function]}
+  type="submit"
 >
   <svg
     className="c1"

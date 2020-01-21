@@ -20,6 +20,10 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -63,6 +67,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  type="submit"
 >
   
 </button>
@@ -88,6 +93,10 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-letter-spacing: 0.55px;
   -moz-letter-spacing: 0.55px;
   -ms-letter-spacing: 0.55px;
@@ -131,6 +140,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  type="submit"
 >
   
 </button>
