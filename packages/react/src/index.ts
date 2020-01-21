@@ -1,6 +1,7 @@
 // Buttons
 export { AddButton } from './components/buttons/add-button';
 export { Button } from './components/buttons/button';
+export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
 
 // Form Elements
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
