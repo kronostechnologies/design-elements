@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 
+import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
@@ -16,12 +17,14 @@ import Menu from 'feather-icons/dist/icons/menu.svg';
 import MoreHorizontal from 'feather-icons/dist/icons/more-horizontal.svg';
 import Phone from 'feather-icons/dist/icons/phone.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
+import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import Open from '../../icons/open.svg';
 
 const iconMapping = {
     alertTriangle: AlertTriangle,
+    alertOctagon: AlertOctagon,
     arrowLeft: ArrowLeft,
     check: Check,
     chevronDown: ChevronDown,
@@ -38,6 +41,7 @@ const iconMapping = {
     open: Open,
     phone: Phone,
     search: Search,
+    star: Star,
     trash: Trash,
     x: X,
 } as const;

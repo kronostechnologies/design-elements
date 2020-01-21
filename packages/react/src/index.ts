@@ -2,6 +2,7 @@
 export { AddButton } from './components/buttons/add-button';
 export { Button } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
+export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
 
 // Form Elements
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
@@ -26,6 +27,7 @@ export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
+export { InlineMessage } from './components/inline-message/inline-message';
 export { RouteLink } from './components/route-link/route-link';
 export { Progress } from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
