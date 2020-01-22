@@ -92,6 +92,7 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-top: var(--spacing-half);
   outline: none;
 =======
@@ -99,6 +100,9 @@ input + .c2 {
 <<<<<<< HEAD
 >>>>>>> Adds CSS variables
 =======
+=======
+  margin-top: var(--spacing-half);
+>>>>>>> Updates tests
   outline: none;
 >>>>>>> Adds mobile styles to field-container
   padding-right: var(--spacing-1x);
@@ -588,7 +592,7 @@ exports[`Select has no label 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -1317,6 +1321,7 @@ input + .c2 {
   justify-content: space-between;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
@@ -1331,6 +1336,9 @@ input + .c2 {
 >>>>>>> PR changes
 =======
   margin-top: var(--spacing-1x);
+=======
+  margin-top: var(--spacing-half);
+>>>>>>> Updates tests
   outline: none;
   padding-right: var(--spacing-1x);
 >>>>>>> Adds CSS variables
@@ -2546,7 +2554,7 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -3404,7 +3412,7 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;

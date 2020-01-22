@@ -393,6 +393,7 @@ export const Select = ({
                 device={device}
                 fieldId={id}
                 device={device}
+                fieldId={id}
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage}
