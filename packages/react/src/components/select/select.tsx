@@ -149,39 +149,34 @@ export const Select = ({
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('mouseup', handleClickOutside);
-        };
+        return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [open]);
 
     const handleClick = () => {
-        const checkSearchValue = options.find(option => option.label === inputValue);
+        const checkSearchValue = options.find(option =>
+            option.label.toLocaleLowerCase() === inputValue.toLocaleLowerCase());
         if (!open) {
             setFocus(true);
-            setOpen(!open);
             if (searchable) inputRef.current && inputRef.current.focus();
-        } else if (!searchable && open) {
-            inputRef.current && inputRef.current.focus();
-            autoFocus && setAutofocus(false);
-            setOpen(!open);
         } else {
             checkSearchValue && setSelectedOptionValue(checkSearchValue.value);
             inputRef.current && inputRef.current.focus();
-            autoFocus && setAutofocus(false);
-            setOpen(!open);
+            setAutofocus(false);
         }
+        setOpen(!open);
     };
 
     const handleChange = (option: Option): void => {
-        setInputValue(option.label);
         setOpen(false);
         setFocus(false);
-        searchable && setSearchValue(option.label);
-        setSelectedOptionValue(option.value);
         setSkipSelected(false);
+        setInputValue(option.label);
+        setSelectedOptionValue(option.value);
         onChange && onChange(option);
-        searchable && setAutofocus(false);
+        if (searchable) {
+            setAutofocus(false);
+            setSearchValue(option.label);
+        }
     };
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -189,41 +184,45 @@ export const Select = ({
             const optionsArray = options.filter(option =>
                 option.label.toLowerCase().startsWith(event.target.value.toLowerCase()));
 
-            setInputValue(event.target.value);
-            setSearchValue(event.target.value);
-
             if (event.target.value !== '' && optionsArray.length > 0) setFocusedValue(optionsArray[0].value);
             else {
                 setSelectedOptionValue('');
                 setFocusedValue('');
             }
+            setInputValue(event.target.value);
+            setSearchValue(event.target.value);
         }
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>, list: boolean = false) => {
         if (!list) {
-            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-                open && setAutofocus(true);
-            } else if (event.key === 'Enter') {
-                event.preventDefault();
-                if (searchValue !== '') {
-                    handleChange(filteredOptions[0]);
-                }
-                handleClick();
-            } else if (event.key === 'Escape') {
-                setInputValue('');
-                setSearchValue('');
-                setFocusedValue('');
-                setSelectedOptionValue('');
+            switch (event.key) {
+                case 'ArrowDown':
+                case 'ArrowUp':
+                    open && setAutofocus(true);
+                    break;
+                case 'Enter':
+                    event.preventDefault();
+                    if (searchValue !== '' && filteredOptions.length > 0 && open) {
+                        handleChange(filteredOptions[0]);
+                    }
+                    handleClick();
+                    break;
+                case 'Escape':
+                    setInputValue('');
+                    setSearchValue('');
+                    setFocusedValue('');
+                    setSelectedOptionValue('');
+                    break;
+                default:
+                    break;
             }
         } else if (event.key === 'Escape') {
-            setAutofocus(false);
-            setFocusedValue('');
             setInputValue('');
-            setOpen(false);
             setSearchValue('');
+            setFocusedValue('');
             setSelectedOptionValue('');
-            inputRef.current && inputRef.current.focus();
+            handleClick();
         } else if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown' && searchable) {
             setAutofocus(false);
             setFocusedValue('');
@@ -235,15 +234,10 @@ export const Select = ({
         const shouldClose =
             wrapperRef.current === null ||
             wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
-        if (shouldClose) {
-            if (open) {
-                const checkSearchValue = options.find(option => option.label === inputValue);
-                checkSearchValue && setSearchValue('');
-                inputRef.current && inputRef.current.blur();
-            }
-            setOpen(false);
+        if (shouldClose && open) {
+            handleClick();
             setFocus(false);
-            setAutofocus(false);
+            inputRef.current && inputRef.current.blur();
         }
     };
 
