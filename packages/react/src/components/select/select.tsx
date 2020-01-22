@@ -267,6 +267,8 @@ export const Select = ({
                 setInputValue(event.target.value);
                 setOpen(false);
             }
+            setInputValue(event.target.value);
+            setSearchValue(event.target.value);
         }
     };
 
@@ -357,7 +359,7 @@ export const Select = ({
             setAutofocus(false);
             setOpen(false);
             setFocus(false);
-            setAutofocus(false);
+            inputRef.current && inputRef.current.blur();
         }
     };
 
