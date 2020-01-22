@@ -1,7 +1,6 @@
+import { Select } from '@equisoft/design-elements-react';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-
-import { Select } from '@equisoft/design-elements-react';
 
 const Container = styled.div`
     height: 200px;

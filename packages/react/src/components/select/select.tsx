@@ -1,6 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid';
+import uuid from 'uuid/v4';
 
 import { ChooseInput } from '../choose-input/choose-input';
 import { FieldContainer } from '../field-container/field-container';
@@ -47,7 +47,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     display: flex;
     height: 32px;
     justify-content: space-between;
-    margin-top: var(--spacing-1x);
+    margin-top: var(--spacing-half);
     outline: ${props => props.containerOutline ? '-webkit-focus-ring-color auto 5px' : 'none'};
     padding-right: var(--spacing-1x);
     width: 100%;
@@ -84,8 +84,8 @@ const StyledInput = styled.input<InputProps>`
     }
 `;
 
-const ListWrapper = styled.div`
-    display: ${(props: {open?: boolean}) => props.open ? 'flex' : 'none'};
+const ListWrapper = styled.div<{open?: boolean}>`
+    display: ${props => props.open ? 'flex' : 'none'};
     position: absolute;
     width: 100%;
 
@@ -221,8 +221,8 @@ export const Select = ({
             setInputValue('');
             setSearchValue('');
             setFocusedValue('');
-            setSelectedOptionValue('');
             handleClick();
+            setSelectedOptionValue('');
         } else if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown' && searchable) {
             setAutofocus(false);
             setFocusedValue('');
@@ -261,66 +261,67 @@ export const Select = ({
     return (
         <>
             <StyledFieldContainer
-                fieldId={id}
                 device={device}
+                fieldId={id}
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage}
             >
                 <InputWrapper
-                    role="combobox"
-                    aria-haspopup="listbox"
                     aria-expanded={open}
+                    aria-haspopup="listbox"
                     aria-owns={`listbox_${id}`}
+                    containerOutline={containerOutline}
                     device={device}
                     disabled={disabled}
                     focus={focus}
-                    containerOutline={containerOutline}
                     onClick={disabled ? undefined : handleClick}
                     ref={wrapperRef}
+                    role="combobox"
                     valid={valid}
                 >
                     <StyledInput
-                        aria-autocomplete="list"
-                        aria-multiline="false"
-                        aria-controls={`listbox_${id}`}
                         aria-activedescendant={selectedOptionValue ? `${id}_${selectedOptionValue}` : undefined}
+                        aria-autocomplete="list"
+                        aria-controls={`listbox_${id}`}
+                        aria-multiline="false"
                         disabled={disabled}
-                        ref={inputRef}
-                        type="text"
-                        value={inputValue}
                         name={name}
                         onBlur={handleBlur}
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onKeyDown={handleKeyDown}
                         placeholder={placeholder}
-                        required={true}
+                        ref={inputRef}
+                        required={required}
                         searchable={searchable}
+                        type="text"
+                        value={inputValue}
                     />
                     <Icon name={open ? 'chevronUp' : 'chevronDown'}/>
                 </InputWrapper>
                 <ListWrapper open={open}>
                     <List
                         autofocus={searchable ? autoFocus : open}
+                        checkIndicator
+                        data-testid="list"
+                        defaultValue={defaultValue}
+                        focusedValue={focusedValue}
                         id={id}
                         numberOfItemsVisible={numberOfItemsVisible}
-                        checkIndicator
-                        defaultValue={defaultValue}
-                        options={filteredOptions}
                         onChange={handleChange}
                         onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event, true)}
-                        focusedValue={focusedValue}
+                        options={filteredOptions}
                         value={selectedOptionValue}
                     />
                 </ListWrapper>
             </StyledFieldContainer>
             {skipOption && (
                 <ChooseInput
-                    groupName={`${id}_skip`}
-                    onChange={handleSkipChange}
                     checked={skipSelected}
                     data-testid="select-skip-option"
+                    groupName={`${id}_skip`}
+                    onChange={handleSkipChange}
                     type="radio"
                     value={skipOption.value}
                 >

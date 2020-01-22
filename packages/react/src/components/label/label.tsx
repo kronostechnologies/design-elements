@@ -8,7 +8,7 @@ const StyledLabel = styled.label<{device: DeviceType}>`
     font-size: ${props => props.device === 'mobile' ? '0.875rem' : '0.75rem'};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
-    line-height: 1.25rem;
+    line-height: ${props => props.device === 'mobile' ? '1.5rem' : '1.25rem'};
     margin: 0;
     width: fit-content;
 

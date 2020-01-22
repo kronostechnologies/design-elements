@@ -1,4 +1,4 @@
-import { mount, ReactWrapper, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -28,18 +28,12 @@ const skipOption = {
     value: 'skip',
 };
 
-function getOptionByIndex(wrapper: ReactWrapper, index: number): ReactWrapper {
-    return wrapper.find('ul').childAt(index);
-}
-
 describe('Select', () => {
     test('onChange callback is called when selected value is changed', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<Select onChange={callback} options={provinces} />),
-        );
+        const wrapper = shallow(<Select onChange={callback} options={provinces} />);
 
-        getOptionByIndex(wrapper, 2).simulate('click');
+        getByTestId(wrapper, 'list').simulate('change', { value: 'ns', label: 'Nova Scotia' });
         expect(callback).toHaveBeenCalledTimes(1);
     });
 

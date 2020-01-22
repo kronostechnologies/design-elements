@@ -66,7 +66,7 @@ exports[`Select has mobile styles 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -388,7 +388,7 @@ exports[`Select has no label 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -742,7 +742,7 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -1134,7 +1134,7 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -1624,7 +1624,7 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: var(--spacing-1x);
+  margin-top: var(--spacing-half);
   outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
