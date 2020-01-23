@@ -27,14 +27,22 @@ exports[`Select has mobile styles 1`] = `
 }
 
 .c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: inherit;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1rem;
   height: 40px;
   line-height: 40px;
   overflow: hidden;
-  padding: 0 28px;
+  padding: 0 40px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -349,14 +357,22 @@ exports[`Select has no label 1`] = `
 }
 
 .c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: inherit;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 28px;
+  padding: 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -692,14 +708,22 @@ input + .c2 {
 }
 
 .c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: inherit;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 28px;
+  padding: 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1095,14 +1119,22 @@ input + .c2 {
 }
 
 .c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: inherit;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 28px;
+  padding: 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1547,14 +1579,22 @@ input + .c2 {
 }
 
 .c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: inherit;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 28px;
+  padding: 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

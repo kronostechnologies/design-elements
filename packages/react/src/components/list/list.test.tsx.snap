@@ -13,14 +13,22 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: inherit;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 28px;
+  padding: 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -31,9 +39,17 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #d9dde2;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
@@ -49,10 +65,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c3 {
-  color: #637282;
-  height: 12px;
   padding: 0 var(--spacing-1x);
-  width: 12px;
 }
 
 <ul
@@ -86,6 +99,10 @@ exports[`List Matches the snapshot 1`] = `
   >
     <svg
       className="c3"
+      color="#637282"
+      focusable={false}
+      height="18"
+      width="18"
     />
     Option B
   </li>

@@ -57,9 +57,12 @@ interface ListProps {
      */
     value?: string;
     /**
-     * OnChange callback function, invoked when an option is selected
+     * onChange callback function, invoked when an option is selected
      */
     onChange?(option: Option): void;
+    /**
+     * onKeyDown callback function, invoked when a key is pressed
+     */
     onKeyDown?(event: KeyboardEvent): void;
 }
 
@@ -95,7 +98,6 @@ const Item = styled.li<ItemProps>`
     color: #000;
     cursor: pointer;
     display: flex;
-    flex-shrink: 1;
     font-size: ${({ device }) => device === 'mobile' ? '1rem' : '0.875rem'};
     height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
     line-height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
