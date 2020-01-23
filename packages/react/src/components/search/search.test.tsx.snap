@@ -12,9 +12,12 @@ exports[`SearchGlobal Matches the snapshot 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+<<<<<<< HEAD
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+=======
+>>>>>>> Updates mobile styles
 }
 
 input + .c2 {
@@ -102,6 +105,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> Renames Dropdown to Select
@@ -139,6 +143,8 @@ input + .c2 {
 >>>>>>> Renames Dropdown to Select
 =======
 >>>>>>> Adds CSS variables
+=======
+>>>>>>> Updates mobile styles
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

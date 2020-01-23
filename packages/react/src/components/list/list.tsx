@@ -1,8 +1,10 @@
 import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 
-import Check from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
+import { Icon } from '../icon/icon';
+
+type DeviceType = 'mobile' | 'desktop';
 
 export interface Option {
     value: string;
@@ -37,6 +39,11 @@ interface ListProps {
      */
     defaultValue?: string;
     /**
+     * Applies styles and sizes according to the device
+     * @default desktop
+     */
+    device?: DeviceType;
+    /**
      * Number of visible items in the list before overflow
      * @default 4
      */
@@ -57,22 +64,25 @@ interface ListProps {
 }
 
 interface WrapperProps {
+    device: DeviceType;
     numberOfItemsVisible: number;
 }
 
 interface ItemProps {
+    device: DeviceType;
     selected: boolean;
     focused: boolean;
     checkIndicator: boolean;
 }
 
-const itemHeight = 32;
+const itemHeightDesktop = 32;
+const itemHeightMobile = 40;
 
 const Wrapper = styled.ul<WrapperProps>`
     background-color: #fff;
     list-style-type: none;
     margin: 0;
-    max-height: ${({ numberOfItemsVisible }) => numberOfItemsVisible * itemHeight}px;
+    max-height: ${({ numberOfItemsVisible, device }) => numberOfItemsVisible * (device === 'mobile' ? itemHeightMobile : itemHeightDesktop)}px;
     min-width: 200px;
     overflow-y: auto;
     padding: 0;
@@ -80,14 +90,17 @@ const Wrapper = styled.ul<WrapperProps>`
 `;
 
 const Item = styled.li<ItemProps>`
+    align-items: center;
     background-color: ${({ focused }) => focused ? '#d9dde2' : 'inherit'};
     color: #000;
     cursor: pointer;
-    font-size: 0.875rem;
-    height: ${itemHeight}px;
-    line-height: ${itemHeight}px;
+    display: flex;
+    flex-shrink: 1;
+    font-size: ${({ device }) => device === 'mobile' ? '1rem' : '0.875rem'};
+    height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
+    line-height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
     overflow: hidden;
-    padding: 0 ${({ checkIndicator, selected }) => (checkIndicator ? (selected ? 0 : 28) : 16)}px;
+    padding: 0 ${({ checkIndicator, selected, device }) => (checkIndicator ? (selected ? 0 : (device === 'mobile' ? 40 : 34)) : 16)}px;
     text-overflow: ellipsis;
     white-space: nowrap;
 
@@ -97,11 +110,8 @@ const Item = styled.li<ItemProps>`
     }
 `;
 
-const CheckIndicator = styled(Check)`
-    color: #637282;
-    height: 12px;
+const CheckIndicator = styled(Icon)`
     padding: 0 var(--spacing-1x);
-    width: 12px;
 `;
 
 export function List({
@@ -111,6 +121,7 @@ export function List({
     onKeyDown,
     checkIndicator = false,
     defaultValue,
+    device = 'desktop',
     numberOfItemsVisible = 4,
     autofocus = false,
     focusedValue,
@@ -262,6 +273,7 @@ export function List({
     return (
         <Wrapper
             role="listbox"
+            device={device}
             tabIndex={0}
             id={id}
             ref={listRef}
@@ -279,13 +291,15 @@ export function List({
                     id={option.id}
                     aria-label={option.label || option.value}
                     aria-selected={isOptionSelected(option)}
+                    device={device}
                     onClick={handleSelect(option)}
                     selected={isOptionSelected(option)}
                     focused={isOptionFocused(option)}
                     checkIndicator={checkIndicator}
                 >
                     <>
-                        {shouldDisplayCheckIndicator(option) && <CheckIndicator />}
+                        {shouldDisplayCheckIndicator(option) &&
+                            <CheckIndicator name="check" color="#637282" size={device === 'mobile' ? '24' : '18'}/>}
                         {option.label || option.value}
                     </>
                 </Item>

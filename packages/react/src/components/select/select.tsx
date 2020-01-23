@@ -8,13 +8,17 @@ import { Icon } from '../icon/icon';
 import { List } from '../list/list';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
+type DeviceType = 'mobile' | 'desktop';
+
 interface InputProps {
     searchable?: boolean;
+    device: DeviceType;
     disabled?: boolean;
     theme: Theme;
 }
 
 interface InputWrapperProps extends InputProps {
+    device: DeviceType;
     focus?: boolean;
     containerOutline: boolean;
     valid: boolean;
@@ -67,7 +71,7 @@ const StyledInput = styled.input<InputProps>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     caret-color: ${props => props.searchable ? 'unset' : 'transparent'};
-    font-size: 0.875rem;
+    font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
     letter-spacing: 0.4px;
     max-height: 100%;
     outline: none;
@@ -80,7 +84,7 @@ const StyledInput = styled.input<InputProps>`
 
     &::placeholder {
         color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
-        font-size: 0.875rem;
+        font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
     }
 `;
 
@@ -102,6 +106,14 @@ interface Option {
 
 interface SelectProps {
     defaultValue?: string;
+    /**
+     * Applies styles according to device
+     * @default desktop
+     */
+    device?: DeviceType;
+    /**
+     * Disables input
+     */
     disabled?: boolean;
     label?: string;
     name?: string;
@@ -285,6 +297,7 @@ export const Select = ({
                         aria-autocomplete="list"
                         aria-controls={`listbox_${id}`}
                         aria-multiline="false"
+                        device={device}
                         disabled={disabled}
                         name={name}
                         onBlur={handleBlur}
@@ -298,7 +311,7 @@ export const Select = ({
                         type="text"
                         value={inputValue}
                     />
-                    <Icon name={open ? 'chevronUp' : 'chevronDown'}/>
+                    <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '32' : '24'}/>
                 </InputWrapper>
                 <ListWrapper open={open}>
                     <List
@@ -306,6 +319,7 @@ export const Select = ({
                         checkIndicator
                         data-testid="list"
                         defaultValue={defaultValue}
+                        device={device}
                         focusedValue={focusedValue}
                         id={id}
                         numberOfItemsVisible={numberOfItemsVisible}

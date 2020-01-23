@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    height: 200px;
+    height: 240px;
 `;
 
 const provinces = [
