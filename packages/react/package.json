@@ -13,7 +13,7 @@
     "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' jest --max-workers=2 --reporters=default --reporters=jest-junit",
     "lint": "yarn tslint && yarn tslint:tests && yarn stylelint",
     "lint:ci": "mkdir -p build/lint/ts build/lint/style && yarn tslint:ci && yarn tslint:tests:ci && yarn stylelint:ci",
-    "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\"",
+    "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\" -e \"src/**/*.test.{ts,tsx}\"",
     "tslint:ci": "yarn tslint --format junit -o build/lint/ts/junit.xml",
     "tslint:tests": "tslint -p test/tsconfig.json -c test/tslint.json \"src/**/*.test.{ts,tsx}\"",
     "tslint:tests:ci": "yarn tslint:tests --format junit -o build/lint/ts/tests.xml",
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "feather-icons": "^4.21.0",
+    "react-swipeable": "~5.5.0",
     "uuid": "^3.3.3"
   },
   "peerDependencies": {
@@ -57,6 +58,7 @@
     "@equisoft/tslint-config": "^0.0.8",
     "@equisoft/tslint-config-react": "^0.0.3",
     "@svgr/webpack": "^4.3.2",
+    "@testing-library/react-hooks": "~3.2.1",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.18",
