@@ -109,10 +109,13 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Renames Dropdown to Select
 =======
 >>>>>>> Adds CSS variables
+=======
+>>>>>>> Updates mobile styles
 =======
 =======
 >>>>>>> Renames Dropdown to Select
@@ -160,6 +163,7 @@ input + .c2 {
 =======
 >>>>>>> Adds CSS variables
 =======
+<<<<<<< HEAD
 >>>>>>> Adds CSS variables
 =======
 >>>>>>> Updates mobile styles
@@ -178,6 +182,9 @@ input + .c2 {
 >>>>>>> Renames Dropdown to Select
 =======
 >>>>>>> Adds CSS variables
+=======
+>>>>>>> Updates mobile styles
+>>>>>>> Updates mobile styles
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
