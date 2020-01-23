@@ -22,6 +22,7 @@ export { List } from './components/list/list';
 
 // Miscellaneous
 export { Card } from './components/card/card';
+export * from './components/carousel/carousel';
 export { Chooser } from './components/choosers/chooser';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';

@@ -12,3 +12,15 @@ body {
   margin: 0;
   padding: 0;
 }
+
+button {
+  /* stylelint-disable property-no-vendor-prefix */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* stylelint-enable property-no-vendor-prefix */
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}

@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
+import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
 import ChevronUp from 'feather-icons/dist/icons/chevron-up.svg';
@@ -26,6 +27,7 @@ const iconMapping = {
     alertTriangle: AlertTriangle,
     alertOctagon: AlertOctagon,
     arrowLeft: ArrowLeft,
+    arrowRight: ArrowRight,
     check: Check,
     chevronDown: ChevronDown,
     chevronUp: ChevronUp,
