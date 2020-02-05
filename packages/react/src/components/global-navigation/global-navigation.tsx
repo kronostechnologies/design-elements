@@ -4,7 +4,7 @@ import { Icon, IconName } from '../icon/icon';
 import styled from 'styled-components';
 import { Popover } from '../popover/popover';
 
-const itemHeight = 56;
+const itemHeight = 48;
 const footerNavHeight = itemHeight * 2;
 const headerHeight = 48;
 const textColor = '#57666e';
@@ -45,7 +45,7 @@ export const NavigationItem = styled.li`
     > a,
     > button {
         align-items: center;
-        color: ${textColor};
+        color: ${props => props.theme.greys['dark-grey']};
         display: flex;
         justify-content: center;
         position: relative;
@@ -55,12 +55,12 @@ export const NavigationItem = styled.li`
             cursor: pointer;
 
             svg {
-                color: white;
+                color: ${props => props.theme.greys.white};
                 z-index: 1;
             }
 
             ::before {
-                background-color: #006c8a;
+                background-color: ${props => props.theme.main['primary-1.3']};
                 border-radius: 50%;
                 bottom: 12px;
                 content: "";
@@ -78,12 +78,12 @@ export const NavigationItem = styled.li`
             cursor: pointer;
 
             svg {
-                color: white;
+                color: ${props => props.theme.greys.white};
                 z-index: 1;
             }
 
             ::before {
-                background-color: #0080a5;
+                background-color: ${props => props.theme.main['primary-1.1']};
                 border-radius: 50%;
                 bottom: 12px;
                 content: "";
@@ -203,7 +203,7 @@ export function GlobalNavigation({
                         <Popover
                             position="right"
                             target={
-                                <button className="tutu">
+                                <button>
                                     <Icon name="helpCircle" size="16" />
                                 </button>
                             }

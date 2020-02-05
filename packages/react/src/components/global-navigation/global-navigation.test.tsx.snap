@@ -4,7 +4,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
 .c0 {
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
   display: grid;
-  grid-template-rows: 1fr 112px;
+  grid-template-rows: 1fr 96px;
   height: 100%;
   overflow: hidden;
   width: 56px;
@@ -12,7 +12,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
 
 .c1 {
   display: grid;
-  grid-template-rows: repeat(10,56px);
+  grid-template-rows: repeat(13,48px);
   margin: 0;
   padding: 0;
 }
@@ -22,7 +22,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
   -ms-flex-line-pack: end;
   align-content: end;
   display: grid;
-  grid-template-rows: repeat(2,56px);
+  grid-template-rows: repeat(2,48px);
   margin: 0;
   padding: 0;
 }
@@ -48,7 +48,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #57666e;
+  color: #57666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,13 +68,13 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
 
 .c2 > a:hover svg,
 .c2 > button:hover svg {
-  color: white;
+  color: #FFFFFF;
   z-index: 1;
 }
 
 .c2 > a:hover::before,
 .c2 > button:hover::before {
-  background-color: #006c8a;
+  background-color: #006C8A;
   border-radius: 50%;
   bottom: 12px;
   content: "";
@@ -97,7 +97,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
 .c2 > button:focus svg,
 .c2 > a.active svg,
 .c2 > button.active svg {
-  color: white;
+  color: #FFFFFF;
   z-index: 1;
 }
 
@@ -105,7 +105,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
 .c2 > button:focus::before,
 .c2 > a.active::before,
 .c2 > button.active::before {
-  background-color: #0080a5;
+  background-color: #0080A5;
   border-radius: 50%;
   bottom: 12px;
   content: "";
@@ -164,7 +164,7 @@ exports[`GlobalNavigation Matches the snapshot 1`] = `
         className="c2"
       >
         <button
-          className="tutu"
+          className=""
           onClick={[Function]}
         >
           <svg
