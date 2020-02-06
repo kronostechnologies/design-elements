@@ -1,12 +1,9 @@
-import React, { ReactElement, useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { IconButton } from '../buttons/icon-button';
+import { ExternalLink } from '../external-link/external-link';
 import { IconName } from '../icon/icon';
-
-const itemHeight = 48;
-const footerNavHeight = itemHeight * 2;
-const headerHeight = 48;
 
 const Wrapper = styled.div`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -15,8 +12,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    overflow: hidden;
-    padding: var(--spacing-2x) 12px;
+    padding: 12px;
     width: 56px;
 `;
 
@@ -32,7 +28,8 @@ export const NavigationItem = styled.li`
     display: flex;
     height: 32px;
     justify-content: center;
-    margin-bottom: 8px;
+    margin: var(--spacing-half) 0;
+    position: relative;
     width: 100%;
 `;
 
@@ -53,91 +50,113 @@ const StyledButton = styled(IconButton)`
     }
 `;
 
+const StyledDiv = styled.div`
+    background-color: ${props => props.theme.greys.white};
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    left: 40px;
+    position: absolute;
+    top: 0;
+
+    > a {
+        color: ${props => props.theme.greys.black} !important;
+        line-height: 24px;
+        padding: var(--spacing-half) var(--spacing-2x);
+
+        &:hover {
+            background-color: ${props => props.theme.greys.grey};
+            text-decoration: none !important;
+        }
+    }
+`;
+
 interface GlobalNavigationItem {
     icon: string;
-    title: string;
+    name: string;
     onClick(): void;
 }
 
 interface GlobalNavigationProps {
     // Item has an icon name, a title, and an onClick function
-    items: GlobalNavigationItem[];
-    // React element to be provided to fill the popover
-    footerNavPopoverContent: ReactElement;
+    mainItems: GlobalNavigationItem[];
+    // Item has an icon name, a title, and an onClick function
+    footerItems: GlobalNavigationItem[];
     // Number of items visible in the main nav section, if not provided this will take the space available
     maxItemsVisible?: number;
-    // Callback function triggered when Info Icon is clicked
-    onInfoIconClick(): void;
-}
-
-function useWindowSize(): { width: number, height: number }  {
-    const getSize = useCallback(() => {
-        return {
-            width: window.innerWidth,
-            height: window.innerHeight,
-        };
-    }, []);
-
-    const [windowSize, setWindowSize] = useState(getSize);
-
-    useEffect(() => {
-        function handleResize(): void {
-            setWindowSize(getSize());
-        }
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [getSize]);
-
-    return windowSize;
 }
 
 export function GlobalNavigation({
-    items = [],
-    maxItemsVisible,
+    mainItems,
+    footerItems,
 }: GlobalNavigationProps): ReactElement {
-    const [lastVisibleIndex, setLastVisibleIndex] = useState();
-    const [displayMore, setDisplayMore] = useState(false);
-    const { height: windowHeight } = useWindowSize();
+    const WrapperRef = useRef<HTMLDivElement>(null);
+    const [navItems, setNavItems] = useState(mainItems);
+    const [moreItems, setMoreItems] = useState<GlobalNavigationItem[]>();
+    const [overflow, setOverflow] = useState(false);
+    const [overflowOpen, setOverflowOpen] = useState(false);
+    const itemHeight = 40;
 
-    useLayoutEffect(() => {
-        // Number of items available vertically in the main nav section
-        const numberOfItemsAvailable =
-            maxItemsVisible || Math.floor((windowHeight - headerHeight - footerNavHeight) / itemHeight);
-        const isMaxItemsReached = items.length > numberOfItemsAvailable;
-        const lastIndex = numberOfItemsAvailable - 1;
-
-        setLastVisibleIndex(lastIndex);
-        setDisplayMore(isMaxItemsReached && lastVisibleIndex > 0);
-    }, [items.length, lastVisibleIndex, windowHeight]);
+    useEffect(() => {
+        if (WrapperRef.current === null) return;
+        const totalItemsHeight = (mainItems.length + footerItems.length) * itemHeight;
+        const wrapperHeight =  WrapperRef.current.clientHeight - 24;
+        if (totalItemsHeight >= wrapperHeight) {
+            const wrapperCapacity = Math.floor(wrapperHeight / itemHeight);
+            const visibleItems = wrapperCapacity - footerItems.length;
+            setNavItems(mainItems.filter((_, index) => index < visibleItems - 1));
+            setMoreItems(mainItems.filter((_, index) => index >= visibleItems - 1));
+            setOverflow(true);
+        } else {
+            setNavItems(mainItems);
+            setOverflow(false);
+        }
+    }, [mainItems]);
 
     return (
-        <Wrapper>
+        <Wrapper ref={WrapperRef}>
             <nav>
-                <Nav itemsVisible={lastVisibleIndex + (displayMore ? 2 : 1)}>
-                    {items
-                        .filter((_, index) => index <= lastVisibleIndex)
-                        .map((item, index) => (
-                            <NavigationItem key={index}>
-                                <StyledButton
-                                    onClick={item.onClick}
-                                    buttonType="tertiary"
-                                    iconName={item.icon as IconName}
-                                    label={item.title}
-                                />
-                            </NavigationItem>
+                <Nav>
+                    {navItems.map((item, index) => (
+                        <NavigationItem key={index}>
+                            <StyledButton
+                                buttonType="tertiary"
+                                iconName={item.icon as IconName}
+                                label={item.name}
+                                onClick={item.onClick}
+                            />
+                        </NavigationItem>
                     ))}
+                    {overflow && (
+                        <NavigationItem>
+                            <StyledButton
+                                buttonType="tertiary"
+                                iconName="moreVertical"
+                                label="show more"
+                                onClick={() => setOverflowOpen(!overflowOpen)}
+                            />
+                            <StyledDiv>
+                                {moreItems && overflowOpen && moreItems.map((moreItem, i) => (
+                                    <ExternalLink key={i} label={moreItem.name} onClick={() => setOverflowOpen(false)}/>
+                                ))}
+                            </StyledDiv>
+                        </NavigationItem>
+                    )}
                 </Nav>
             </nav>
             <footer>
                 <Nav>
-                    <NavigationItem>
-                        <StyledButton
-                            buttonType="tertiary"
-                            iconName="info"
-                            label="info"
-                        />
-                    </NavigationItem>
+                    {footerItems.map((item, index) => (
+                        <NavigationItem key={index}>
+                            <StyledButton
+                                buttonType="tertiary"
+                                iconName={item.icon as IconName}
+                                label={item.name}
+                                onClick={item.onClick}
+                            />
+                        </NavigationItem>
+                    ))}
                 </Nav>
             </footer>
         </Wrapper>
