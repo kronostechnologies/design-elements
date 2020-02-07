@@ -86,12 +86,14 @@ const StyledDiv = styled.div`
     position: absolute;
     top: 0;
 
-    > a {
+    > a { /* stylelint-disable-line */
         color: ${props => props.theme.greys.black} !important;
         line-height: 24px;
         padding: var(--spacing-half) var(--spacing-2x);
+        text-transform: capitalize;
+        width: max-content;
 
-        &:hover {
+        &:hover { /* stylelint-disable-line */
             background-color: ${props => props.theme.greys.grey};
             text-decoration: none !important;
         }
@@ -144,7 +146,7 @@ export function GlobalNavigation({
             setNavItems(mainItems);
             setOverflow(false);
         }
-    }, [mainItems]);
+    }, [mainItems, wrapperRef]);
 
     const handleClick = () => {
         overflowOpen && setOverflowOpen(false);
@@ -183,6 +185,7 @@ export function GlobalNavigation({
                     {overflow && (
                         <NavigationItem>
                             <StyledButton
+                                aria-label="Show more navigation elements"
                                 ref={buttonRef}
                                 buttonType="tertiary"
                                 iconName="moreVertical"

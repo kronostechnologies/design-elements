@@ -11,28 +11,28 @@ export default {
 const items = [
     {
         iconName: 'home',
-        name: 'test',
-        href: '/test1',
+        name: 'story 1',
+        href: '/story1',
     },
     {
         iconName: 'edit',
-        name: 'test',
-        href: '/test2',
+        name: 'story 2',
+        href: '/story2',
     },
     {
         iconName: 'mapPin',
-        name: 'test',
-        href: '/test3',
+        name: 'story 3',
+        href: '/story3',
     },
     {
         iconName: 'mail',
-        name: 'test',
-        href: '/test4',
+        name: 'story 4',
+        href: '/story4',
     },
     {
         iconName: 'phone',
-        name: 'test',
-        href: '/test5',
+        name: 'story 5',
+        href: '/story5',
     },
 ];
 
@@ -44,13 +44,13 @@ export const normal = () => (
             footerItems={[
                 {
                     iconName: 'info',
-                    name: 'test',
-                    href: '/test9',
+                    name: 'story 6',
+                    href: '/story6',
                 },
                 {
                     iconName: 'helpCircle',
-                    name: 'test',
-                    href: '/test10',
+                    name: 'story 7',
+                    href: '/story7',
                 },
             ]}
         />
@@ -65,13 +65,13 @@ export const withMoreIcon = () => (
             footerItems={[
                 {
                     iconName: 'info',
-                    name: 'test',
-                    href: '/test9',
+                    name: 'story 8',
+                    href: '/story8',
                 },
                 {
                     iconName: 'helpCircle',
-                    name: 'test',
-                    href: '/test10',
+                    name: 'story 9',
+                    href: '/story9',
                 },
             ]}
         />
