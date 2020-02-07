@@ -2,8 +2,8 @@ import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { IconButton } from '../buttons/icon-button';
-import { ExternalLink } from '../external-link/external-link';
 import { IconName } from '../icon/icon';
+import { RouteLink, RouterLinkProps } from '../route-link/route-link';
 
 const Wrapper = styled.div`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -31,6 +31,32 @@ export const NavigationItem = styled.li`
     margin: var(--spacing-half) 0;
     position: relative;
     width: 100%;
+
+    > a {
+        align-items: center;
+        border-radius: 1.6rem;
+        display: flex;
+        height: 32px;
+        justify-content: center;
+        text-align: center;
+        width: 32px;
+
+        &:hover {
+            background-color: ${props => props.theme.greys.grey};
+            color: ${props => props.theme.greys['dark-grey']};
+        }
+
+        &:focus,
+        &.active {
+            background-color: ${props => props.theme.main['primary-1.1']};
+            color: ${props => props.theme.greys.white} !important;
+
+            &:hover {
+                background-color: ${props => props.theme.main['primary-1.1']};
+                color: ${props => props.theme.greys.white};
+            }
+        }
+    }
 `;
 
 const StyledButton = styled(IconButton)`
@@ -73,9 +99,9 @@ const StyledDiv = styled.div`
 `;
 
 interface GlobalNavigationItem {
-    icon: string;
+    href: string;
+    iconName: string;
     name: string;
-    onClick(): void;
 }
 
 interface GlobalNavigationProps {
@@ -83,13 +109,13 @@ interface GlobalNavigationProps {
     mainItems: GlobalNavigationItem[];
     // Item has an icon name, a title, and an onClick function
     footerItems: GlobalNavigationItem[];
-    // Number of items visible in the main nav section, if not provided this will take the space available
-    maxItemsVisible?: number;
+    routerLink: RouterLinkProps;
 }
 
 export function GlobalNavigation({
     mainItems,
     footerItems,
+    routerLink,
 }: GlobalNavigationProps): ReactElement {
     const WrapperRef = useRef<HTMLDivElement>(null);
     const [navItems, setNavItems] = useState(mainItems);
@@ -120,11 +146,10 @@ export function GlobalNavigation({
                 <Nav>
                     {navItems.map((item, index) => (
                         <NavigationItem key={index}>
-                            <StyledButton
-                                buttonType="tertiary"
-                                iconName={item.icon as IconName}
-                                label={item.name}
-                                onClick={item.onClick}
+                            <RouteLink
+                                routerLink={routerLink}
+                                href={item.href}
+                                iconName={item.iconName as IconName}
                             />
                         </NavigationItem>
                     ))}
@@ -136,9 +161,14 @@ export function GlobalNavigation({
                                 label="show more"
                                 onClick={() => setOverflowOpen(!overflowOpen)}
                             />
-                            <StyledDiv>
+                            <StyledDiv onClick={() => setOverflowOpen(false)}>
                                 {moreItems && overflowOpen && moreItems.map((moreItem, i) => (
-                                    <ExternalLink key={i} label={moreItem.name} onClick={() => setOverflowOpen(false)}/>
+                                    <RouteLink
+                                        key={i}
+                                        routerLink={routerLink}
+                                        href={moreItem.href}
+                                        label={moreItem.name}
+                                    />
                                 ))}
                             </StyledDiv>
                         </NavigationItem>
@@ -149,11 +179,10 @@ export function GlobalNavigation({
                 <Nav>
                     {footerItems.map((item, index) => (
                         <NavigationItem key={index}>
-                            <StyledButton
-                                buttonType="tertiary"
-                                iconName={item.icon as IconName}
-                                label={item.name}
-                                onClick={item.onClick}
+                            <RouteLink
+                                routerLink={routerLink}
+                                href={item.href}
+                                iconName={item.iconName as IconName}
                             />
                         </NavigationItem>
                     ))}
