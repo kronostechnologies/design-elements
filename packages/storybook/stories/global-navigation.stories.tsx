@@ -10,17 +10,17 @@ export default {
 
 const items = [
     {
-        iconName: 'mail',
+        iconName: 'home',
         name: 'test',
         href: '/test1',
     },
     {
-        iconName: 'mail',
+        iconName: 'edit',
         name: 'test',
         href: '/test2',
     },
     {
-        iconName: 'mail',
+        iconName: 'mapPin',
         name: 'test',
         href: '/test3',
     },
@@ -30,24 +30,9 @@ const items = [
         href: '/test4',
     },
     {
-        iconName: 'mail',
+        iconName: 'phone',
         name: 'test',
         href: '/test5',
-    },
-    {
-        iconName: 'mail',
-        name: 'test',
-        href: '/test6',
-    },
-    {
-        iconName: 'mail',
-        name: 'test',
-        href: '/test7',
-    },
-    {
-        iconName: 'mail',
-        name: 'test',
-        href: '/test8',
     },
 ];
 
@@ -58,12 +43,33 @@ export const normal = () => (
             routerLink={NavLink}
             footerItems={[
                 {
-                    iconName: 'home',
+                    iconName: 'info',
                     name: 'test',
                     href: '/test9',
                 },
                 {
-                    iconName: 'home',
+                    iconName: 'helpCircle',
+                    name: 'test',
+                    href: '/test10',
+                },
+            ]}
+        />
+    </div>
+);
+
+export const withMoreIcon = () => (
+    <div style={{ height: '300px' }}>
+        <GlobalNavigation
+            mainItems={items}
+            routerLink={NavLink}
+            footerItems={[
+                {
+                    iconName: 'info',
+                    name: 'test',
+                    href: '/test9',
+                },
+                {
+                    iconName: 'helpCircle',
                     name: 'test',
                     href: '/test10',
                 },
