@@ -117,7 +117,8 @@ export function GlobalNavigation({
     footerItems,
     routerLink,
 }: GlobalNavigationProps): ReactElement {
-    const WrapperRef = useRef<HTMLDivElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
     const [navItems, setNavItems] = useState(mainItems);
     const [moreItems, setMoreItems] = useState<GlobalNavigationItem[]>();
     const [overflow, setOverflow] = useState(false);
@@ -125,9 +126,14 @@ export function GlobalNavigation({
     const itemHeight = 40;
 
     useEffect(() => {
-        if (WrapperRef.current === null) return;
+        document.addEventListener('mouseup', handleClickOutside);
+        return () => document.removeEventListener('mouseup', handleClickOutside);
+    }, [overflow, overflowOpen]);
+
+    useEffect(() => {
+        if (wrapperRef.current === null) return;
         const totalItemsHeight = (mainItems.length + footerItems.length) * itemHeight;
-        const wrapperHeight =  WrapperRef.current.clientHeight - 24;
+        const wrapperHeight =  wrapperRef.current.clientHeight - 24;
         if (totalItemsHeight >= wrapperHeight) {
             const wrapperCapacity = Math.floor(wrapperHeight / itemHeight);
             const visibleItems = wrapperCapacity - footerItems.length;
@@ -140,12 +146,33 @@ export function GlobalNavigation({
         }
     }, [mainItems]);
 
+    const handleClick = () => {
+        overflowOpen && setOverflowOpen(false);
+    };
+
+    const handleClickOutside = (event: MouseEvent): void => {
+        const shouldClose =
+            wrapperRef.current === null ||
+            wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
+        if (shouldClose && overflowOpen) {
+            setOverflowOpen(false);
+        }
+    };
+
+    const handleMoreButtonClick = () => {
+        if (overflowOpen) {
+            setOverflowOpen(false);
+            if (buttonRef.current === null) return;
+            buttonRef.current.blur();
+        } else setOverflowOpen(true);
+    };
+
     return (
-        <Wrapper ref={WrapperRef}>
+        <Wrapper ref={wrapperRef}>
             <nav>
                 <Nav>
                     {navItems.map((item, index) => (
-                        <NavigationItem key={index}>
+                        <NavigationItem key={index} onClick={handleClick}>
                             <RouteLink
                                 routerLink={routerLink}
                                 href={item.href}
@@ -156,15 +183,18 @@ export function GlobalNavigation({
                     {overflow && (
                         <NavigationItem>
                             <StyledButton
+                                ref={buttonRef}
                                 buttonType="tertiary"
                                 iconName="moreVertical"
                                 label="show more"
-                                onClick={() => setOverflowOpen(!overflowOpen)}
+                                onClick={handleMoreButtonClick}
                             />
-                            <StyledDiv onClick={() => setOverflowOpen(false)}>
-                                {moreItems && overflowOpen && moreItems.map((moreItem, i) => (
+                            <StyledDiv
+                                onClick={() => setOverflowOpen(false)}
+                            >
+                                {moreItems && overflowOpen && moreItems.map((moreItem, index) => (
                                     <RouteLink
-                                        key={i}
+                                        key={index}
                                         routerLink={routerLink}
                                         href={moreItem.href}
                                         label={moreItem.name}
@@ -178,7 +208,7 @@ export function GlobalNavigation({
             <footer>
                 <Nav>
                     {footerItems.map((item, index) => (
-                        <NavigationItem key={index}>
+                        <NavigationItem key={index} onClick={handleClick}>
                             <RouteLink
                                 routerLink={routerLink}
                                 href={item.href}

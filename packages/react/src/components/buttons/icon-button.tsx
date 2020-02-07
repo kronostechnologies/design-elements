@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { forwardRef, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 
 import { Icon, IconName } from '../icon//icon';
@@ -105,14 +105,14 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
     width: ${props => props.device === 'mobile' ? '48px' : '32px'};
 `;
 
-export const IconButton = ({
+export const IconButton = forwardRef(({
   device = 'desktop',
   iconName,
   label,
   onClick,
   type = 'submit',
   ...props
-}: ButtonProps): ReactElement => {
+}: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const handleClick = (): void => onClick && onClick();
 
     return (
@@ -120,10 +120,11 @@ export const IconButton = ({
           aria-label={label}
           onClick={handleClick}
           device={device}
+          ref={ref}
           type={type}
           {...props}
         >
             <Icon name={iconName} size={device === 'mobile' ? '20' : '16'}/>
         </StyledButton>
     );
-};
+});
