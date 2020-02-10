@@ -102,7 +102,17 @@ const Item = styled.li<ItemProps>`
     height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
     line-height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
     overflow: hidden;
-    padding: 0 ${({ checkIndicator, selected, device }) => (checkIndicator ? (selected ? 0 : (device === 'mobile' ? 40 : 34)) : 16)}px;
+    padding:
+        0 ${({ checkIndicator, selected, device }) => {
+            if (checkIndicator) {
+                if (selected) {
+                    return '0';
+                } else {
+                    if (device === 'mobile') return '40px';
+                    else return '34px';
+                }
+            } else return '16px';
+        }};
     text-overflow: ellipsis;
     white-space: nowrap;
 

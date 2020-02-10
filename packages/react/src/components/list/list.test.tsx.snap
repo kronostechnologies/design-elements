@@ -54,7 +54,7 @@ exports[`List Matches the snapshot 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 0px;
+  padding: 0 0;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
