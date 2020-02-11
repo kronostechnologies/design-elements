@@ -44,12 +44,17 @@ exports[`List Matches the snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #D9DDE2;
   color: #000000;
 =======
   background-color: #d9dde2;
   color: #000;
 >>>>>>> Adds Combobox component
+=======
+  background-color: #D9DDE2;
+  color: #000000;
+>>>>>>> Requested changes
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -71,9 +76,13 @@ exports[`List Matches the snapshot 1`] = `
 
 .c3 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   color: #57666E;
 =======
 >>>>>>> Adds Combobox component
+=======
+  color: #57666E;
+>>>>>>> Requested changes
   padding: 0 var(--spacing-1x);
 }
 
@@ -148,10 +157,14 @@ exports[`List Matches the snapshot 1`] = `
     <svg
       className="c3"
 <<<<<<< HEAD
+<<<<<<< HEAD
       color="currentColor"
 =======
       color="#637282"
 >>>>>>> Adds Combobox component
+=======
+      color="currentColor"
+>>>>>>> Requested changes
       focusable={false}
       height="18"
       width="18"

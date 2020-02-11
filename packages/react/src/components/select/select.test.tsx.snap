@@ -32,7 +32,11 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+<<<<<<< HEAD
 .c7 {
+=======
+.c5 {
+>>>>>>> Requested changes
   background-color: #FFFFFF;
   list-style-type: none;
   margin: 0;
@@ -84,8 +88,13 @@ input + .c2 {
   white-space: nowrap;
 }
 
+<<<<<<< HEAD
 .c8:hover,
 .c8:focus {
+=======
+.c6:hover,
+.c6:focus {
+>>>>>>> Requested changes
   background-color: #D9DDE2;
 }
 
@@ -562,6 +571,7 @@ label + .c2 {
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`Select has no label 1`] = `
 .c0 {
   margin: 0 0 var(--spacing-3x);
@@ -1183,6 +1193,7 @@ exports[`Select has no label 1`] = `
 `;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports[`Select invalid select has a different style 1`] = `
 Array [
   .c9 {
@@ -1197,6 +1208,11 @@ Array [
   margin: var(--spacing-half) 0 0;
 }
 
+=======
+=======
+>>>>>>> Requested changes
+exports[`Select is disabled 1`] = `
+>>>>>>> Requested changes
 .c2 {
   color: #000000;
   display: block;
@@ -1273,8 +1289,12 @@ input + .c2 {
   background-color: #FFFFFF;
 =======
 .c6 {
+<<<<<<< HEAD
   background-color: #fff;
 >>>>>>> Renames Dropdown to Select
+=======
+  background-color: #FFFFFF;
+>>>>>>> Requested changes
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -1304,7 +1324,7 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: inherit;
-  color: #000;
+  color: #000000;
   cursor: pointer;
 <<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
@@ -1338,8 +1358,12 @@ input + .c2 {
 =======
 .c7:hover,
 .c7:focus {
+<<<<<<< HEAD
   background-color: #d9dde2;
 >>>>>>> Renames Dropdown to Select
+=======
+  background-color: #D9DDE2;
+>>>>>>> Requested changes
 }
 
 .c1 {
@@ -1895,7 +1919,7 @@ input + .c2 {
 }
 
 .c6 {
-  background-color: #fff;
+  background-color: #FFFFFF;
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -1911,7 +1935,7 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: inherit;
-  color: #000;
+  color: #000000;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1928,7 +1952,7 @@ input + .c2 {
 
 .c7:hover,
 .c7:focus {
-  background-color: #d9dde2;
+  background-color: #D9DDE2;
 }
 
 .c1 {
@@ -3347,8 +3371,12 @@ input + .c2 {
   background-color: #FFFFFF;
 =======
 .c6 {
+<<<<<<< HEAD
   background-color: #fff;
 >>>>>>> Renames Dropdown to Select
+=======
+  background-color: #FFFFFF;
+>>>>>>> Requested changes
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -3370,7 +3398,7 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: inherit;
-  color: #000;
+  color: #000000;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3387,7 +3415,7 @@ input + .c2 {
 
 .c7:hover,
 .c7:focus {
-  background-color: #d9dde2;
+  background-color: #D9DDE2;
 }
 
 .c1 {
