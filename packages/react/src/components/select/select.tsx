@@ -28,24 +28,24 @@ const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
+const getBorderColor = ({ disabled, focus, theme, valid }: InputWrapperProps): string => {
+    if (disabled) {
+        return theme.greys.grey;
+    } else {
+        if (!valid) {
+            return theme.notifications['error-2.1'];
+        } else if (focus) {
+            return theme.main['primary-1.1'];
+        } else {
+            return theme.greys['dark-grey'];
+        }
+    }
+};
+
 const InputWrapper = styled.div<InputWrapperProps>`
     align-items: center;
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-    border:
-        1px solid ${props => {
-            if (props.disabled) {
-                return props.theme.greys.grey;
-            } else {
-                if (!props.valid) {
-                    return props.theme.notifications['error-2.1'];
-                } else if (props.focus) {
-                    return props.theme.main['primary-1.1'];
-                } else {
-                    return props.theme.greys['dark-grey'];
-                }
-            }
-        }
-    };
+    border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
@@ -152,12 +152,14 @@ export const Select = ({
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
     const [autoFocus, setAutofocus] = useState(false);
-
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
-
     const id = useMemo(uuid, []);
-    const filteredOptions = options.filter(option => option.label.toLowerCase().startsWith(searchValue.toLowerCase()));
+
+    const filterOptions = (optionsArray: Option[], value: string) => {
+        return optionsArray.filter(option => option.label.toLowerCase().startsWith(value.toLowerCase()));
+    };
+    const filteredOptions = filterOptions(options, searchValue);
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
@@ -166,10 +168,12 @@ export const Select = ({
 
     const handleClick = () => {
         const checkSearchValue = options.find(option =>
-            option.label.toLocaleLowerCase() === inputValue.toLocaleLowerCase());
+            option.label.toLowerCase() === inputValue.toLowerCase());
         if (!open) {
             setFocus(true);
-            if (searchable) inputRef.current && inputRef.current.focus();
+            if (searchable && inputRef.current) {
+                inputRef.current.focus();
+            }
         } else {
             checkSearchValue && setSelectedOptionValue(checkSearchValue.value);
             inputRef.current && inputRef.current.focus();
@@ -193,11 +197,11 @@ export const Select = ({
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (searchable) {
-            const optionsArray = options.filter(option =>
-                option.label.toLowerCase().startsWith(event.target.value.toLowerCase()));
+            const optionsArray = filterOptions(options, event.target.value);
 
-            if (event.target.value !== '' && optionsArray.length > 0) setFocusedValue(optionsArray[0].value);
-            else {
+            if (event.target.value !== '' && optionsArray.length > 0) {
+                setFocusedValue(optionsArray[0].value);
+            } else {
                 setSelectedOptionValue('');
                 setFocusedValue('');
             }
@@ -206,30 +210,32 @@ export const Select = ({
         }
     };
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>, list: boolean = false) => {
-        if (!list) {
-            switch (event.key) {
-                case 'ArrowDown':
-                case 'ArrowUp':
-                    open && setAutofocus(true);
-                    break;
-                case 'Enter':
-                    event.preventDefault();
-                    if (searchValue !== '' && filteredOptions.length > 0 && open) {
-                        handleChange(filteredOptions[0]);
-                    }
-                    handleClick();
-                    break;
-                case 'Escape':
-                    setInputValue('');
-                    setSearchValue('');
-                    setFocusedValue('');
-                    setSelectedOptionValue('');
-                    break;
-                default:
-                    break;
-            }
-        } else if (event.key === 'Escape') {
+    const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+        switch (event.key) {
+            case 'ArrowDown':
+            case 'ArrowUp':
+                open && setAutofocus(true);
+                break;
+            case 'Enter':
+                event.preventDefault();
+                if (searchValue !== '' && filteredOptions.length > 0 && open) {
+                    handleChange(filteredOptions[0]);
+                }
+                handleClick();
+                break;
+            case 'Escape':
+                setInputValue('');
+                setSearchValue('');
+                setFocusedValue('');
+                setSelectedOptionValue('');
+                break;
+            default:
+                break;
+        }
+    };
+
+    const handleListKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === 'Escape') {
             setInputValue('');
             setSearchValue('');
             setFocusedValue('');
@@ -248,7 +254,6 @@ export const Select = ({
             wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
         if (shouldClose && open) {
             handleClick();
-            setFocus(false);
             inputRef.current && inputRef.current.blur();
         }
     };
@@ -303,7 +308,7 @@ export const Select = ({
                         onBlur={handleBlur}
                         onChange={handleInputChange}
                         onFocus={handleFocus}
-                        onKeyDown={handleKeyDown}
+                        onKeyDown={handleInputKeyDown}
                         placeholder={placeholder}
                         ref={inputRef}
                         required={required}
@@ -324,7 +329,7 @@ export const Select = ({
                         id={id}
                         numberOfItemsVisible={numberOfItemsVisible}
                         onChange={handleChange}
-                        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyDown(event, true)}
+                        onKeyDown={handleListKeyDown}
                         options={filteredOptions}
                         value={selectedOptionValue}
                     />

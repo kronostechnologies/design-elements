@@ -8,6 +8,13 @@ interface Option {
     value: string;
 }
 
+// ----------------------------------------------------------------
+// Importer les types de SelectProps lorsque le PR de react-docgen
+// permettant de handle les imports sera merged
+//
+// PR: https://github.com/reactjs/react-docgen/pull/352
+// ----------------------------------------------------------------
+
 interface ComboboxProps {
     /**
      * The default selected option

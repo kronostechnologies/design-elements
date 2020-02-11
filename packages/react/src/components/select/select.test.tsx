@@ -34,7 +34,7 @@ describe('Select', () => {
         const wrapper = shallow(<Select onChange={callback} options={provinces} />);
 
         getByTestId(wrapper, 'list').simulate('change', { value: 'ns', label: 'Nova Scotia' });
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(callback).toHaveBeenCalledWith({ value: 'ns', label: 'Nova Scotia' });
     });
 
     test('matches the snapshot', () => {
@@ -80,11 +80,12 @@ describe('Select', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has no label', () => {
+    test('has mobile styles', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <Select
                     options={provinces}
+                    device="mobile"
                 />,
             ),
         ).toJSON();

@@ -1,6 +1,7 @@
 import { mount, ReactWrapper } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { List, Option } from './list';
 jest.mock('uuid/v4');
 
@@ -40,7 +41,9 @@ describe('List', () => {
 
     test('Correctly set the default option', () => {
         const wrapper = mount(
-            <List options={options} defaultValue={defaultValue} onChange={onChange} />,
+            ThemeWrapped(
+                <List options={options} defaultValue={defaultValue} onChange={onChange} />,
+            ),
         );
 
         expect(getOptionByIndex(wrapper, defaultValueIndex).prop('selected')).toEqual(true);
@@ -49,7 +52,9 @@ describe('List', () => {
 
     test('Calls onChange callback when an option is selected', () => {
         const wrapper = mount(
-            <List options={options} defaultValue={defaultValue} onChange={onChange} />,
+            ThemeWrapped(
+                <List options={options} defaultValue={defaultValue} onChange={onChange} />,
+            ),
         );
 
         getOptionByIndex(wrapper, 2).simulate('click');
@@ -59,7 +64,9 @@ describe('List', () => {
 
     test('Should have the check indicator if selected', () => {
         const wrapper = mount(
-            <List options={options} defaultValue={defaultValue} onChange={onChange} checkIndicator={true} />,
+            ThemeWrapped(
+                <List options={options} defaultValue={defaultValue} onChange={onChange} checkIndicator={true} />,
+            ),
         );
 
         expect(getOptionByIndex(wrapper, 3).find('svg')).toHaveLength(0);
@@ -71,13 +78,15 @@ describe('List', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            <List
-                options={options}
-                checkIndicator={true}
-                defaultValue={defaultValue}
-                onChange={onChange}
-                numberOfItemsVisible={3}
-            />,
+            ThemeWrapped(
+                <List
+                    options={options}
+                    checkIndicator={true}
+                    defaultValue={defaultValue}
+                    onChange={onChange}
+                    numberOfItemsVisible={3}
+                />,
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

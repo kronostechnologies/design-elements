@@ -82,7 +82,7 @@ const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
 const Wrapper = styled.ul<WrapperProps>`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.greys.white};
     list-style-type: none;
     margin: 0;
     max-height: ${({ numberOfItemsVisible, device }) => numberOfItemsVisible * (device === 'mobile' ? itemHeightMobile : itemHeightDesktop)}px;
@@ -92,37 +92,40 @@ const Wrapper = styled.ul<WrapperProps>`
     width: 100%;
 `;
 
+const getItemSidePadding = ({ checkIndicator, selected, device }: ItemProps): string => {
+    if (checkIndicator) {
+        if (selected) {
+            return '0';
+        } else if (device === 'mobile') {
+            return '40px';
+        }
+        return '34px';
+    }
+    return '16px';
+};
+
 const Item = styled.li<ItemProps>`
     align-items: center;
-    background-color: ${({ focused }) => focused ? '#d9dde2' : 'inherit'};
-    color: #000;
+    background-color: ${({ focused, theme }) => focused ? theme.greys.grey : 'inherit'};
+    color: ${({ theme }) => theme.greys.black};
     cursor: pointer;
     display: flex;
     font-size: ${({ device }) => device === 'mobile' ? '1rem' : '0.875rem'};
     height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
     line-height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
     overflow: hidden;
-    padding:
-        0 ${({ checkIndicator, selected, device }) => {
-            if (checkIndicator) {
-                if (selected) {
-                    return '0';
-                } else {
-                    if (device === 'mobile') return '40px';
-                    else return '34px';
-                }
-            } else return '16px';
-        }};
+    padding: 0 ${getItemSidePadding};
     text-overflow: ellipsis;
     white-space: nowrap;
 
     &:hover,
     &:focus {
-        background-color: #d9dde2;
+        background-color: ${({ theme }) => theme.greys.grey};
     }
 `;
 
 const CheckIndicator = styled(Icon)`
+    color: ${({ theme }) => theme.greys['dark-grey']};
     padding: 0 var(--spacing-1x);
 `;
 
@@ -140,14 +143,11 @@ export function List({
     value,
 }: ListProps): ReactElement {
     const listRef = useRef<HTMLUListElement>(null);
-
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
+    const [selectedFocusIndex, setSelectedFocusIndex] = useState(value || defaultValue ? defaultSelectedIndex : -1);
     const [selectedOptionId, setSelectedOptionId] = useState(
         defaultValue ? `${id}_${defaultValue}` : undefined,
     );
-
-    const [selectedFocusIndex, setSelectedFocusIndex] = useState(value || defaultValue ? defaultSelectedIndex : -1);
-
     const list: ListOption[] = useMemo((): ListOption[] =>
         options.map((option, index)  =>
             ({
@@ -160,7 +160,8 @@ export function List({
 
     useEffect(() => {
         if (value && list.length > 0) {
-            setValue(list[list.findIndex(option => option.value === value)]);
+            const newValue = list.find(option => option.value === value);
+            newValue && setValue(newValue);
         } else if (value === '') {
             setSelectedOptionId('');
             setSelectedFocusIndex(-1);
@@ -174,6 +175,14 @@ export function List({
             setSelectedFocusIndex(-1);
         }
     }, [focusedValue]);
+
+    useEffect(() => {
+        if (autofocus && listRef.current) {
+            listRef.current.focus();
+            listRef.current.scrollTop = 0;
+        }
+        setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
+    }, [autofocus]);
 
     function isOptionSelected(option: ListOption): boolean {
         return selectedOptionId ? option.id === selectedOptionId : false;
@@ -252,11 +261,11 @@ export function List({
                 break;
             case 'ArrowUp':
                 e.preventDefault();
-                const prevOption = selectedFocusIndex - 1 === -1 ? list[list.length - 1] : list[selectedFocusIndex - 1];
+                const prevOption = selectedFocusIndex === 0 ? list[list.length - 1] : list[selectedFocusIndex - 1];
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
-                    selectedFocusIndex - 1 === -1 ? scrollIntoList('bottom') : scrollIntoList('up');
+                    selectedFocusIndex === 0 ? scrollIntoList('bottom') : scrollIntoList('up');
                 }
                 break;
             case 'ArrowDown':
@@ -273,14 +282,6 @@ export function List({
             onKeyDown(e);
         }
     }
-
-    useEffect(() => {
-        if (autofocus && listRef.current) {
-            listRef.current.focus();
-            listRef.current.scrollTop = 0;
-        }
-        setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
-    }, [autofocus]);
 
     return (
         <Wrapper
@@ -311,7 +312,7 @@ export function List({
                 >
                     <>
                         {shouldDisplayCheckIndicator(option) &&
-                            <CheckIndicator name="check" color="#637282" size={device === 'mobile' ? '24' : '18'}/>}
+                            <CheckIndicator name="check" size={device === 'mobile' ? '24' : '18'}/>}
                         {option.label || option.value}
                     </>
                 </Item>
