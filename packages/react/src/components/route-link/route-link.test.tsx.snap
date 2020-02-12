@@ -41,10 +41,11 @@ exports[`Route Link disabled matches snapshot (Link) 1`] = `
 
 <a
   aria-disabled="true"
+  aria-label="Link"
   className="c0 navigation"
   disabled={true}
 >
-  Navigation Link
+  Link
 </a>
 `;
 
@@ -89,6 +90,7 @@ exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
 
 <a
   aria-disabled="true"
+  aria-label="Navigation Link"
   className="c0 navigation"
   disabled={true}
 >
@@ -149,11 +151,12 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 }
 
 <a
+  aria-label="Link"
   className="c0 navigation"
   href="/test"
   onClick={[Function]}
 >
-  Navigation Link
+  Link
 </a>
 `;
 
@@ -211,6 +214,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 
 <a
   aria-current={null}
+  aria-label="Navigation Link"
   className="c0 navigation"
   href="/test"
   onClick={[Function]}
@@ -272,6 +276,7 @@ exports[`Route Link only icon matches snapshot (Link) 1`] = `
 }
 
 <a
+  aria-label="Link"
   className="c0 navigation iconOnly"
   href="/test"
   onClick={[Function]}
@@ -339,6 +344,7 @@ exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
 
 <a
   aria-current={null}
+  aria-label="Navigation Link"
   className="c0 navigation iconOnly"
   href="/test"
   onClick={[Function]}
@@ -405,6 +411,7 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
 }
 
 <a
+  aria-label="Link"
   className="c0 navigation"
   href="/test"
   onClick={[Function]}
@@ -415,7 +422,7 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
     height="16"
     width="16"
   />
-  Navigation Link
+  Link
 </a>
 `;
 
@@ -473,6 +480,7 @@ exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
 
 <a
   aria-current={null}
+  aria-label="Navigation Link"
   className="c0 navigation"
   href="/test"
   onClick={[Function]}

@@ -52,13 +52,13 @@ describe('Global Navigation', () => {
                         footerItems={[
                             {
                                 iconName: 'info',
-                                name: 'story',
-                                href: '/story6',
+                                name: 'test',
+                                href: '/test6',
                             },
                             {
                                 iconName: 'helpCircle',
-                                name: 'story',
-                                href: '/story7',
+                                name: 'test',
+                                href: '/test7',
                             },
                         ]}
                     />
@@ -79,13 +79,13 @@ describe('Global Navigation', () => {
                         footerItems={[
                             {
                                 iconName: 'info',
-                                name: 'story',
-                                href: '/story6',
+                                name: 'test',
+                                href: '/test6',
                             },
                             {
                                 iconName: 'helpCircle',
-                                name: 'story',
-                                href: '/story7',
+                                name: 'test',
+                                href: '/test7',
                             },
                         ]}
                     />
