@@ -41,6 +41,7 @@ exports[`External Link disabled matches snapshot 1`] = `
 
 <a
   aria-disabled="true"
+  aria-label="External Link"
   className="c0 external"
   disabled={true}
 >
@@ -102,10 +103,78 @@ exports[`External Link matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
+  aria-label="External Link"
   className="c0 external"
   href="https://www.google.ca/"
 >
   External Link
+</a>
+`;
+
+exports[`External Link only icon matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: var(--spacing-1x);
+}
+
+.c0.iconOnly svg {
+  margin: 0;
+}
+
+.c0.external {
+  color: #0080a5;
+}
+
+.c0.external:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0.external:visited {
+  color: #094c6c;
+}
+
+.c0.external:visited svg {
+  color: #094c6c;
+}
+
+.c0.navigation {
+  color: #57666e;
+}
+
+.c0.navigation:hover {
+  color: #000;
+}
+
+.c0.navigation.active {
+  color: #0080a5;
+}
+
+<a
+  aria-disabled="false"
+  aria-label="External Link"
+  className="c0 external iconOnly"
+  href="/test"
+>
+  <svg
+    color="currentColor"
+    focusable={false}
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -163,8 +232,9 @@ exports[`External Link with icon matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
+  aria-label="External Link"
   className="c0 external"
-  href="#"
+  href="/test"
 >
   <svg
     color="currentColor"
@@ -230,6 +300,7 @@ exports[`External Link without href matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
+  aria-label="External Link"
   className="c0 external"
   href="javascript:void(0)"
 >
