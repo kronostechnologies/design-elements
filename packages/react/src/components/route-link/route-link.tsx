@@ -15,31 +15,41 @@ interface LinkProps {
     exact?: boolean;
     href: string;
     iconName?: IconName;
-    label?: string;
+    iconOnly?: boolean;
+    label: string;
     routerLink: RouterLinkProps;
 }
 
-export const RouteLink = ({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement => (
+export const RouteLink = ({
+  disabled,
+  exact,
+  href,
+  iconName,
+  iconOnly = false,
+  label,
+  routerLink }: LinkProps): ReactElement => (
   <>
     {disabled ?
       <StyledLink
-        disabled={disabled}
         aria-disabled="true"
-        className={`navigation${label ? '' : ' iconOnly'}`}
+        aria-label={label}
+        disabled={disabled}
+        className={`navigation${!iconOnly ? '' : ' iconOnly'}`}
       >
         {iconName && <Icon name={iconName} size="16"/>}
         {label}
       </StyledLink>
       :
       <StyledLink
+        aria-label={label}
         as={routerLink}
-        className={`navigation${label ? '' : ' iconOnly'}`}
+        className={`navigation${!iconOnly ? '' : ' iconOnly'}`}
         disabled={disabled}
         exact={exact}
         to={href}
       >
         {iconName && <Icon name={iconName} size="16"/>}
-        {label}
+        {!iconOnly && label}
       </StyledLink>
     }
   </>

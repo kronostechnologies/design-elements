@@ -176,9 +176,11 @@ export function GlobalNavigation({
                     {navItems.map((item, index) => (
                         <NavigationItem key={index} onClick={handleClick}>
                             <RouteLink
+                                label={item.name}
                                 routerLink={routerLink}
                                 href={item.href}
                                 iconName={item.iconName as IconName}
+                                iconOnly
                             />
                         </NavigationItem>
                     ))}
@@ -213,9 +215,11 @@ export function GlobalNavigation({
                     {footerItems.map((item, index) => (
                         <NavigationItem key={index} onClick={handleClick}>
                             <RouteLink
+                                label={item.name}
                                 routerLink={routerLink}
                                 href={item.href}
                                 iconName={item.iconName as IconName}
+                                iconOnly
                             />
                         </NavigationItem>
                     ))}
