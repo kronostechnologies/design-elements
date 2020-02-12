@@ -8,7 +8,7 @@ describe('External Link', () => {
     test('onClick callback is called when clicked', () => {
         const callback = jest.fn();
         const wrapper = mount(
-            <ExternalLink onClick={callback} href="#" label="External Link"/>,
+            <ExternalLink onClick={callback} href="/test" label="External Link"/>,
         );
 
         wrapper.find(ExternalLink).simulate('click');
@@ -23,7 +23,14 @@ describe('External Link', () => {
     });
     test('with icon matches snapshot', () => {
         const tree = renderer.create(
-                <ExternalLink href="#" label="External Link" iconName="mail"/>,
+                <ExternalLink href="/test" label="External Link" iconName="mail"/>,
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+    test('only icon matches snapshot', () => {
+        const tree = renderer.create(
+                <ExternalLink href="/test" label="External Link" iconName="mail" iconOnly/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -37,7 +44,7 @@ describe('External Link', () => {
     });
     test('disabled matches snapshot', () => {
         const tree = renderer.create(
-                <ExternalLink href="#" label="External Link" disabled/>,
+                <ExternalLink href="/test" label="External Link" disabled/>,
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

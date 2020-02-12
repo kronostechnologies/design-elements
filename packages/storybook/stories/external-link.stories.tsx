@@ -14,8 +14,8 @@ export const normal = () => (
 export const withIcon = () => (
     <ExternalLink label="External Link" iconName="mail"/>
 );
-export const onlyIcon = () => (
-    <ExternalLink iconName="mail"/>
+export const iconOnly = () => (
+    <ExternalLink label="External Link" iconName="mail" iconOnly/>
 );
 export const disabled = () => (
     <>
