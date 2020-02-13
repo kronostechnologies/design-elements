@@ -1,4 +1,4 @@
-import { GlobalNavigation } from '@equisoft/design-elements-react';
+import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ export default {
     decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
 };
 
-const items = [
+const items: GlobalNavigationItem[] = [
     {
         iconName: 'home',
         name: 'story 1',
