@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { IconButton } from '../buttons/icon-button';
-import { GlobalNavigation } from './global-navigation';
+import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 
 const setup = (children: ReactElement) => (
     <Router>
@@ -13,7 +13,7 @@ const setup = (children: ReactElement) => (
     </Router>
 );
 
-const items = [
+const items: GlobalNavigationItem[] = [
     {
         iconName: 'home',
         name: 'test',

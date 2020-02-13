@@ -26,8 +26,8 @@ export const withLink = () => (
 export const withIcon = () => (
     <RouteLink routerLink={NavLink} href="/story" label="Route Link" iconName="mail"/>
 );
-export const iconOnly = () => (
-    <RouteLink routerLink={NavLink} href="/story" label="Route Link" iconName="mail" iconOnly/>
+export const onlyIcon = () => (
+    <RouteLink routerLink={NavLink} href="/story" iconName="mail"/>
 );
 export const disabled = () => (
     <>

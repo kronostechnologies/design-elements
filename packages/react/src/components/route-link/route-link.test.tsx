@@ -24,15 +24,7 @@ describe('Route Link', () => {
         expect(tree).toMatchSnapshot();
     });
     test('only icon matches snapshot (NavLink)', () => {
-        const tree = setup(
-            <RouteLink
-                routerLink={NavLink}
-                href="/test"
-                label="Navigation Link"
-                iconName="mail"
-                iconOnly
-            />,
-        );
+        const tree = setup(<RouteLink routerLink={NavLink} href="/test" iconName="mail"/>);
 
         expect(tree).toMatchSnapshot();
     });
@@ -43,22 +35,22 @@ describe('Route Link', () => {
     });
 
     test('matches snapshot (Link)', () => {
-        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Link"/>);
+        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Navigation Link"/>);
 
         expect(tree).toMatchSnapshot();
     });
     test('with icon matches snapshot (Link)', () => {
-        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Link" iconName="mail"/>);
+        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Navigation Link" iconName="mail"/>);
 
         expect(tree).toMatchSnapshot();
     });
     test('only icon matches snapshot (Link)', () => {
-        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Link" iconName="mail" iconOnly/>);
+        const tree = setup(<RouteLink routerLink={Link} href="/test" iconName="mail"/>);
 
         expect(tree).toMatchSnapshot();
     });
     test('disabled matches snapshot (Link)', () => {
-        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Link" disabled/>);
+        const tree = setup(<RouteLink routerLink={Link} href="/test" label="Navigation Link" disabled/>);
 
         expect(tree).toMatchSnapshot();
     });
