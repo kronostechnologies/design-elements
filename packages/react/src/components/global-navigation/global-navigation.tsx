@@ -1,9 +1,10 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
+import { NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { IconButton } from '../buttons/icon-button';
-import { IconName } from '../icon/icon';
-import { RouteLink, RouterLinkProps } from '../route-link/route-link';
+import { Icon, IconName } from '../icon/icon';
+import { RouterLinkProps } from '../route-link/route-link';
 
 const Wrapper = styled.div<{padding: number}>`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -30,29 +31,30 @@ export const NavigationItem = styled.li`
     justify-content: center;
     margin: var(--spacing-1x) 0;
     position: relative;
+`;
 
-    > a {
-        align-items: center;
-        border-radius: 16px;
-        display: flex;
-        height: 32px;
-        justify-content: center;
-        width: 32px;
+const IconLink = styled.a<NavLinkProps>`
+    align-items: center;
+    border-radius: 16px;
+    color: ${({ theme }) => theme.greys['dark-grey']};
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+
+    &:hover {
+        background-color: ${props => props.theme.greys.grey};
+        color: ${props => props.theme.greys['dark-grey']};
+    }
+
+    &:focus,
+    &.active {
+        background-color: ${props => props.theme.main['primary-1.1']};
+        color: ${props => props.theme.greys.white} !important;
 
         &:hover {
-            background-color: ${props => props.theme.greys.grey};
-            color: ${props => props.theme.greys['dark-grey']};
-        }
-
-        &:focus,
-        &.active {
             background-color: ${props => props.theme.main['primary-1.1']};
-            color: ${props => props.theme.greys.white} !important;
-
-            &:hover {
-                background-color: ${props => props.theme.main['primary-1.1']};
-                color: ${props => props.theme.greys.white};
-            }
+            color: ${props => props.theme.greys.white};
         }
     }
 `;
@@ -79,25 +81,34 @@ const ShowMoreMenu = styled.div`
     border-radius: var(--border-radius);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     left: 40px;
     position: absolute;
     top: 0;
+`;
 
-    > a { /* stylelint-disable-line */
-        line-height: 24px;
-        padding: var(--spacing-half) var(--spacing-2x);
-        width: max-content;
+const MenuLink = styled.a<NavLinkProps>`
+    color: ${({ theme }) => theme.greys.black};
+    display: flex;
+    flex-grow: 1;
+    line-height: 24px;
+    padding: var(--spacing-half) var(--spacing-2x);
+    text-decoration: none;
+    width: max-content;
 
-        &:hover { /* stylelint-disable-line */
-            background-color: ${props => props.theme.greys.grey};
-        }
+    &:hover {
+        background-color: ${props => props.theme.greys.grey};
+    }
+
+    &.active {
+        font-weight: var(--font-bold);
     }
 `;
 
-interface GlobalNavigationItem {
+export interface GlobalNavigationItem {
+    exact?: boolean;
     href: string;
-    iconName: string;
+    iconName: IconName;
     name: string;
 }
 
@@ -172,13 +183,14 @@ export const GlobalNavigation = ({
                 <Nav>
                     {navItems.map((item) => (
                         <NavigationItem key={`${item.name}-${item.iconName}`} onClick={handleClick}>
-                            <RouteLink
-                                label={item.name}
-                                routerLink={routerLink}
-                                href={item.href}
-                                iconName={item.iconName as IconName}
-                                iconOnly
-                            />
+                            <IconLink
+                                as={routerLink}
+                                aria-label={item.name}
+                                exact={item.exact}
+                                to={item.href}
+                            >
+                                <Icon name={item.iconName} size="16"/>
+                            </IconLink>
                         </NavigationItem>
                     ))}
                     {overflow && (
@@ -195,12 +207,15 @@ export const GlobalNavigation = ({
                                 onClick={() => setOverflowOpen(false)}
                             >
                                 {moreItems && overflowOpen && moreItems.map((moreItem) => (
-                                    <RouteLink
+                                    <MenuLink
+                                        as={routerLink}
+                                        aria-label={moreItem.name}
+                                        exact={moreItem.exact}
                                         key={`${moreItem.name}-${moreItem.iconName}`}
-                                        routerLink={routerLink}
-                                        href={moreItem.href}
-                                        label={moreItem.name}
-                                    />
+                                        to={moreItem.href}
+                                    >
+                                        {moreItem.name}
+                                    </MenuLink>
                                 ))}
                             </ShowMoreMenu>
                         </NavigationItem>
@@ -211,13 +226,14 @@ export const GlobalNavigation = ({
                 <Nav>
                     {footerItems.map((item) => (
                         <NavigationItem key={`${item.name}-${item.iconName}`} onClick={handleClick}>
-                            <RouteLink
-                                label={item.name}
-                                routerLink={routerLink}
-                                href={item.href}
-                                iconName={item.iconName as IconName}
-                                iconOnly
-                            />
+                            <IconLink
+                                as={routerLink}
+                                aria-label={item.name}
+                                exact={item.exact}
+                                to={item.href}
+                            >
+                                <Icon name={item.iconName} size="16"/>
+                            </IconLink>
                         </NavigationItem>
                     ))}
                 </Nav>

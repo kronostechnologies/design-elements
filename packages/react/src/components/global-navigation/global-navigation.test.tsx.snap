@@ -1,57 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Global Navigation Matches snapshot 1`] = `
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c3 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c3.iconOnly svg {
-  margin: 0;
-}
-
-.c3.external {
-  color: #0080a5;
-}
-
-.c3.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c3.external:visited {
-  color: #094c6c;
-}
-
-.c3.external:visited svg {
-  color: #094c6c;
-}
-
-.c3.navigation {
-  color: #57666e;
-}
-
-.c3.navigation:hover {
-  color: #000;
-}
-
-.c3.navigation.active {
-  color: #0080a5;
-}
-
 .c0 {
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
@@ -101,12 +50,13 @@ exports[`Global Navigation Matches snapshot 1`] = `
   position: relative;
 }
 
-.c2 > a {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   border-radius: 16px;
+  color: #57666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -119,19 +69,19 @@ exports[`Global Navigation Matches snapshot 1`] = `
   width: 32px;
 }
 
-.c2 > a:hover {
+.c3:hover {
   background-color: #D9DDE2;
   color: #57666E;
 }
 
-.c2 > a:focus,
-.c2 > a.active {
+.c3:focus,
+.c3.active {
   background-color: #0080A5;
   color: #FFFFFF !important;
 }
 
-.c2 > a:focus:hover,
-.c2 > a.active:hover {
+.c3:focus:hover,
+.c3.active:hover {
   background-color: #0080A5;
   color: #FFFFFF;
 }
@@ -157,7 +107,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test1"
             onClick={[Function]}
           >
@@ -176,7 +126,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test2"
             onClick={[Function]}
           >
@@ -195,7 +145,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test3"
             onClick={[Function]}
           >
@@ -214,7 +164,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test4"
             onClick={[Function]}
           >
@@ -233,7 +183,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test5"
             onClick={[Function]}
           >
@@ -258,7 +208,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test6"
             onClick={[Function]}
           >
@@ -277,7 +227,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 navigation iconOnly"
+            className="c3"
             href="/test7"
             onClick={[Function]}
           >
