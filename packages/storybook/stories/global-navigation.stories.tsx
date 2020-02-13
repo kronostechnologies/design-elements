@@ -58,7 +58,7 @@ export const normal = () => (
 );
 
 export const withMoreIcon = () => (
-    <div style={{ height: '300px' }}>
+    <div style={{ height: '350px' }}>
         <GlobalNavigation
             mainItems={items}
             routerLink={NavLink}

@@ -5,14 +5,14 @@ import { IconButton } from '../buttons/icon-button';
 import { IconName } from '../icon/icon';
 import { RouteLink, RouterLinkProps } from '../route-link/route-link';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{padding: number}>`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    padding: 12px;
+    padding: ${({ padding }) => padding}px;
     width: 56px;
 `;
 
@@ -28,17 +28,15 @@ export const NavigationItem = styled.li`
     display: flex;
     height: 32px;
     justify-content: center;
-    margin: var(--spacing-half) 0;
+    margin: var(--spacing-1x) 0;
     position: relative;
-    width: 100%;
 
     > a {
         align-items: center;
-        border-radius: 1.6rem;
+        border-radius: 16px;
         display: flex;
         height: 32px;
         justify-content: center;
-        text-align: center;
         width: 32px;
 
         &:hover {
@@ -59,7 +57,7 @@ export const NavigationItem = styled.li`
     }
 `;
 
-const StyledButton = styled(IconButton)`
+const ShowMoreButton = styled(IconButton)`
     &:hover {
         background-color: ${props => props.theme.greys.grey};
         color: ${props => props.theme.greys['dark-grey']};
@@ -76,7 +74,7 @@ const StyledButton = styled(IconButton)`
     }
 `;
 
-const StyledDiv = styled.div`
+const ShowMoreMenu = styled.div`
     background-color: ${props => props.theme.greys.white};
     border-radius: var(--border-radius);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -87,15 +85,12 @@ const StyledDiv = styled.div`
     top: 0;
 
     > a { /* stylelint-disable-line */
-        color: ${props => props.theme.greys.black} !important;
         line-height: 24px;
         padding: var(--spacing-half) var(--spacing-2x);
-        text-transform: capitalize;
         width: max-content;
 
         &:hover { /* stylelint-disable-line */
             background-color: ${props => props.theme.greys.grey};
-            text-decoration: none !important;
         }
     }
 `;
@@ -115,18 +110,19 @@ interface GlobalNavigationProps {
     routerLink: RouterLinkProps;
 }
 
-export function GlobalNavigation({
+export const GlobalNavigation = ({
     mainItems,
     footerItems,
     routerLink,
-}: GlobalNavigationProps): ReactElement {
+}: GlobalNavigationProps): ReactElement => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [navItems, setNavItems] = useState(mainItems);
     const [moreItems, setMoreItems] = useState<GlobalNavigationItem[]>();
     const [overflow, setOverflow] = useState(false);
     const [overflowOpen, setOverflowOpen] = useState(false);
-    const itemHeight = 40;
+    const itemHeight = 48;
+    const wrapperPadding = 12;
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
@@ -136,9 +132,9 @@ export function GlobalNavigation({
     useEffect(() => {
         if (wrapperRef.current === null) return;
         const totalItemsHeight = (mainItems.length + footerItems.length) * itemHeight;
-        const wrapperHeight =  wrapperRef.current.clientHeight - 24;
-        if (totalItemsHeight >= wrapperHeight) {
-            const wrapperCapacity = Math.floor(wrapperHeight / itemHeight);
+        const wrapperInnerHeight =  wrapperRef.current.clientHeight - (wrapperPadding * 2);
+        if (totalItemsHeight >= wrapperInnerHeight) {
+            const wrapperCapacity = Math.floor(wrapperInnerHeight / itemHeight);
             const visibleItems = wrapperCapacity - footerItems.length;
             setNavItems(mainItems.filter((_, index) => index < visibleItems - 1));
             setMoreItems(mainItems.filter((_, index) => index >= visibleItems - 1));
@@ -171,7 +167,7 @@ export function GlobalNavigation({
     };
 
     return (
-        <Wrapper ref={wrapperRef}>
+        <Wrapper ref={wrapperRef} padding={wrapperPadding}>
             <nav>
                 <Nav>
                     {navItems.map((item) => (
@@ -187,7 +183,7 @@ export function GlobalNavigation({
                     ))}
                     {overflow && (
                         <NavigationItem>
-                            <StyledButton
+                            <ShowMoreButton
                                 aria-label="Show more navigation elements"
                                 ref={buttonRef}
                                 buttonType="tertiary"
@@ -195,7 +191,7 @@ export function GlobalNavigation({
                                 label="show more"
                                 onClick={handleMoreButtonClick}
                             />
-                            <StyledDiv
+                            <ShowMoreMenu
                                 onClick={() => setOverflowOpen(false)}
                             >
                                 {moreItems && overflowOpen && moreItems.map((moreItem) => (
@@ -206,7 +202,7 @@ export function GlobalNavigation({
                                         label={moreItem.name}
                                     />
                                 ))}
-                            </StyledDiv>
+                            </ShowMoreMenu>
                         </NavigationItem>
                     )}
                 </Nav>
@@ -228,4 +224,4 @@ export function GlobalNavigation({
             </footer>
         </Wrapper>
     );
-}
+};
