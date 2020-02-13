@@ -107,10 +107,11 @@ interface GlobalNavigationItem {
 }
 
 interface GlobalNavigationProps {
-    // Item has an icon name, a title, and an onClick function
+    /** Item has an icon name, a name, and a href */
     mainItems: GlobalNavigationItem[];
-    // Item has an icon name, a title, and an onClick function
+    /** Item has an icon name, a name, and a href */
     footerItems: GlobalNavigationItem[];
+    /** Takes Link or NavLink from react-router-dom */
     routerLink: RouterLinkProps;
 }
 
@@ -173,8 +174,8 @@ export function GlobalNavigation({
         <Wrapper ref={wrapperRef}>
             <nav>
                 <Nav>
-                    {navItems.map((item, index) => (
-                        <NavigationItem key={index} onClick={handleClick}>
+                    {navItems.map((item) => (
+                        <NavigationItem key={`${item.name}-${item.iconName}`} onClick={handleClick}>
                             <RouteLink
                                 label={item.name}
                                 routerLink={routerLink}
@@ -197,9 +198,9 @@ export function GlobalNavigation({
                             <StyledDiv
                                 onClick={() => setOverflowOpen(false)}
                             >
-                                {moreItems && overflowOpen && moreItems.map((moreItem, index) => (
+                                {moreItems && overflowOpen && moreItems.map((moreItem) => (
                                     <RouteLink
-                                        key={index}
+                                        key={`${moreItem.name}-${moreItem.iconName}`}
                                         routerLink={routerLink}
                                         href={moreItem.href}
                                         label={moreItem.name}
@@ -212,8 +213,8 @@ export function GlobalNavigation({
             </nav>
             <footer>
                 <Nav>
-                    {footerItems.map((item, index) => (
-                        <NavigationItem key={index} onClick={handleClick}>
+                    {footerItems.map((item) => (
+                        <NavigationItem key={`${item.name}-${item.iconName}`} onClick={handleClick}>
                             <RouteLink
                                 label={item.name}
                                 routerLink={routerLink}
