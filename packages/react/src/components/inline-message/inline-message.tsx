@@ -1,3 +1,4 @@
+import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
 import React, { ComponentType, ReactNode, useMemo } from 'react';
 import styled from 'styled-components';
 
@@ -6,7 +7,7 @@ import { Icon, IconName } from '../icon/icon';
 type MessageType = 'info' | 'success' | 'alert' | 'error';
 type DeviceType = 'mobile' | 'desktop';
 
-const abstractContainer = (bgColor: string, color?: string) => styled.div<{device: DeviceType}>`
+const abstractContainer = (bgColor: string, color?: keyof Theme['notifications']) => styled.div<{device: DeviceType}>`
     background-color: ${bgColor};
     border: 1px solid ${props => color ? props.theme.notifications[color] : props.theme.main['primary-3']};
     box-sizing: border-box;

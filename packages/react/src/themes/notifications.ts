@@ -1,4 +1,6 @@
-export const notifications = {
+import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
+
+export const notifications: Theme['notifications'] = {
     'success-1.1': '#008F37',
     'success-1.2': '#E5F7E9',
     'success-1.3': '#7FC98C',

@@ -1,20 +1,25 @@
 {
-    "extends": "./node_modules/@equisoft/tslint-config/tsconfig.standards.json",
-    "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "esModuleInterop": true,
-      "jsx": "react",
-      "allowSyntheticDefaultImports": true,
-      "noEmitOnError": true,
-      "sourceMap": true,
-      "baseUrl": "./stories/",
-      "paths": {}
-    },
-    "include": [
-      "stories", "custom.d.ts"
-    ],
-    "exclude": [
-      "node_modules", "scripts"
-    ]
-  }
+  "extends": "./node_modules/@equisoft/tslint-config/tsconfig.standards.json",
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "baseUrl": "./stories/",
+    "paths": {
+      "*": [
+        "../node_modules/@types/*",
+        "*"
+      ]
+    }
+  },
+  "include": [
+    "stories", "custom.d.ts"
+  ],
+  "exclude": [
+    "node_modules", "scripts"
+  ]
+}

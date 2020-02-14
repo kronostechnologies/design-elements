@@ -3,9 +3,11 @@ const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
     resolve: {
+        extensions: ['.ts', '.tsx'],
         alias: {
             'react': path.resolve(__dirname, '../node_modules/react'),
             'react-dom': path.resolve(__dirname, '../node_modules/react-dom'),
+            'styled-components': path.resolve(__dirname, '../node_modules/styled-components'),
         }
     },
 
@@ -21,7 +23,12 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader'
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: false,
+                    }
+                }],
             },
             {
                 test: /\.mdx$/,
