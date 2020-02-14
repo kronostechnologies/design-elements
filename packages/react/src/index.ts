@@ -29,7 +29,7 @@ export { Headband } from './components/headband/equisoft-default';
 export { Icon } from './components/icon/icon';
 export { InlineMessage } from './components/inline-message/inline-message';
 export { RouteLink } from './components/route-link/route-link';
-export { Progress } from './components/progress/progress';
+export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 
 // Results

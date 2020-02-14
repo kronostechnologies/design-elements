@@ -4,6 +4,9 @@
         "@equisoft/tslint-config-react"
     ],
     "rules": {
+        "no-implicit-dependencies": {
+            "options": [["@design-elements"]]
+        },
         "linebreak-style": [false],
         "variable-name": {
             "options": ["ban-keywords", "check-format", "allow-pascal-case"]
