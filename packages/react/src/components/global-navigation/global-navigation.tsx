@@ -2,7 +2,6 @@ import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { IconButton } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
 import { RouterLinkProps } from '../route-link/route-link';
 
@@ -31,41 +30,13 @@ const ShowMoreMenu = styled.div`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     display: none;
     flex-wrap: wrap;
-    left: 50px;
+    left: 48px;
     overflow: hidden;
     position: absolute;
     top: 0;
 `;
 
-const ShowMoreButton = styled(IconButton)`
-    &:hover {
-        background-color: ${props => props.theme.greys.grey};
-        color: ${props => props.theme.greys['dark-grey']};
-        cursor: default;
-    }
-`;
-
-export const NavigationItem = styled.li`
-    align-items: center;
-    display: flex;
-    height: 32px;
-    justify-content: center;
-    margin: var(--spacing-1x) 0;
-    position: relative;
-
-    &.moreMenu:hover {
-        ${ShowMoreMenu} {
-            display: flex;
-        }
-
-        ${ShowMoreButton} {
-            background-color: ${props => props.theme.greys.grey};
-            color: ${props => props.theme.greys['dark-grey']};
-        }
-    }
-`;
-
-const IconLink = styled.a<NavLinkProps>`
+const ShowMore = styled.span`
     align-items: center;
     border-radius: 16px;
     color: ${({ theme }) => theme.greys['dark-grey']};
@@ -78,7 +49,29 @@ const IconLink = styled.a<NavLinkProps>`
         background-color: ${props => props.theme.greys.grey};
         color: ${props => props.theme.greys['dark-grey']};
     }
+`;
 
+const NavigationItem = styled.li`
+    align-items: center;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    margin: var(--spacing-1x) 0;
+    position: relative;
+
+    &.moreMenu:hover {
+        ${ShowMoreMenu} {
+            display: flex;
+        }
+
+        ${ShowMore} {
+            background-color: ${props => props.theme.greys.grey};
+            color: ${props => props.theme.greys['dark-grey']};
+        }
+    }
+`;
+
+const IconLink = styled(ShowMore)<NavLinkProps>`
     &:focus,
     &.active {
         background-color: ${props => props.theme.main['primary-1.1']};
@@ -156,7 +149,7 @@ export const GlobalNavigation = ({
 
     return (
         <Wrapper ref={wrapperRef} padding={wrapperPadding}>
-            <nav>
+            <nav aria-label="App Navigation">
                 <Nav>
                     {navItems.map((item) => (
                         <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
@@ -172,12 +165,12 @@ export const GlobalNavigation = ({
                     ))}
                     {overflow && (
                         <NavigationItem className="moreMenu" onMouseEnter={() => setMoreMenu(true)}>
-                            <ShowMoreButton
+                            <ShowMore
                                 aria-label="Show more navigation elements"
-                                buttonType="tertiary"
-                                iconName="moreVertical"
-                                label="show more"
-                            />
+                                data-testid="showMoreIcon"
+                            >
+                                <Icon name="moreVertical" size="16"/>
+                            </ShowMore>
                             {moreMenu && (
                                 <ShowMoreMenu onClick={() => setMoreMenu(false)}>
                                     {moreItems && moreItems.map((moreItem) => (
@@ -197,7 +190,7 @@ export const GlobalNavigation = ({
                     )}
                 </Nav>
             </nav>
-            <footer>
+            <nav aria-label="App Navigation">
                 <Nav>
                     {footerItems.map((item) => (
                         <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
@@ -212,7 +205,7 @@ export const GlobalNavigation = ({
                         </NavigationItem>
                     ))}
                 </Nav>
-            </footer>
+            </nav>
         </Wrapper>
     );
 };
