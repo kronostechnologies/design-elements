@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -8,7 +8,7 @@ import { Icon } from '../icon/icon';
 import { List } from '../list/list';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
-type DeviceType = 'mobile' | 'desktop';
+type DeviceType = 'mobile' | 'desktop';
 
 interface InputProps {
     searchable?: boolean;
@@ -49,7 +49,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: flex;
-    height: 32px;
+    height: ${props => props.device === 'mobile' ? '40px' : '32px'};
     justify-content: space-between;
     margin-top: var(--spacing-half);
     outline: ${props => props.containerOutline ? '-webkit-focus-ring-color auto 5px' : 'none'};
@@ -105,6 +105,9 @@ interface Option {
 }
 
 interface SelectProps {
+    /**
+     * The default selected option
+     */
     defaultValue?: string;
     /**
      * Applies styles according to device
@@ -117,18 +120,43 @@ interface SelectProps {
     disabled?: boolean;
     label?: string;
     name?: string;
+    /**
+     * Number of visible items in the list before overflow
+     * @default 4
+     */
     numberOfItemsVisible?: number;
+    /**
+     * { value: string; label?: string; }[]
+     */
     options: Option[];
     placeholder?: string;
+    required?: boolean;
+    /**
+     * Adds search functionality
+     */
     searchable?: boolean;
+    /**
+     * Adds a skip button
+     */
     skipOption?: { label: string; value?: string };
+    /**
+     * Sets input validity
+     */
     valid?: boolean;
+    /**
+     * Sets error message
+     * @default You must select an option
+     */
     validationErrorMessage?: string;
+    /**
+     * OnChange callback function, invoked when an option is selected
+     */
     onChange?(option: Option): void;
 }
 
 export const Select = ({
     defaultValue,
+    device = 'desktop',
     disabled,
     label,
     onChange,
@@ -136,6 +164,7 @@ export const Select = ({
     name,
     numberOfItemsVisible = 4,
     placeholder = 'Select an option',
+    required,
     searchable,
     skipOption,
     valid = true,
@@ -159,6 +188,12 @@ export const Select = ({
     const filterOptions = (optionsArray: Option[], value: string) => {
         return optionsArray.filter(option => option.label.toLowerCase().startsWith(value.toLowerCase()));
     };
+
+    const findOption = (optionsArray: Option[], value: string) => (
+        optionsArray.find(option =>
+            option.label.toLowerCase() === value.toLowerCase())
+    );
+
     const filteredOptions = filterOptions(options, searchValue);
 
     useEffect(() => {
@@ -166,9 +201,8 @@ export const Select = ({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [open]);
 
-    const handleClick = () => {
-        const checkSearchValue = options.find(option =>
-            option.label.toLowerCase() === inputValue.toLowerCase());
+    const handleOpen = () => {
+        const checkSearchValue = findOption(options, inputValue);
         if (!open) {
             setFocus(true);
             if (searchable && inputRef.current) {
@@ -221,7 +255,7 @@ export const Select = ({
                 if (searchValue !== '' && filteredOptions.length > 0 && open) {
                     handleChange(filteredOptions[0]);
                 }
-                handleClick();
+                handleOpen();
                 break;
             case 'Escape':
                 setInputValue('');
@@ -239,7 +273,7 @@ export const Select = ({
             setInputValue('');
             setSearchValue('');
             setFocusedValue('');
-            handleClick();
+            handleOpen();
             setSelectedOptionValue('');
         } else if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown' && searchable) {
             setAutofocus(false);
@@ -253,8 +287,9 @@ export const Select = ({
             wrapperRef.current === null ||
             wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
         if (shouldClose && open) {
-            handleClick();
-            inputRef.current && inputRef.current.blur();
+            setAutofocus(false);
+            setOpen(false);
+            setFocus(false);
         }
     };
 
@@ -270,8 +305,15 @@ export const Select = ({
         setContainerOutline(true);
     };
 
-    const handleBlur = () => {
-        !open && setFocus(false);
+    const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+        const checkSearchValue = findOption(options, event.target.value);
+        if (checkSearchValue && checkSearchValue.value !== selectedOptionValue) {
+            setSelectedOptionValue(checkSearchValue.value);
+            onChange && onChange(checkSearchValue);
+        }
+        if (!open) {
+            setFocus(false);
+        }
         setContainerOutline(false);
     };
 
@@ -292,7 +334,7 @@ export const Select = ({
                     device={device}
                     disabled={disabled}
                     focus={focus}
-                    onClick={disabled ? undefined : handleClick}
+                    onClick={disabled ? undefined : handleOpen}
                     ref={wrapperRef}
                     role="combobox"
                     valid={valid}

@@ -51,7 +51,7 @@ describe('Select', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('is invalid', () => {
+    test('invalid select has a different style', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <Select
@@ -66,7 +66,7 @@ describe('Select', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('is disabled', () => {
+    test('disabled select has a different style', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <Select
@@ -80,7 +80,7 @@ describe('Select', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has mobile styles', () => {
+    test('mobile select has a different style', () => {
         const tree = renderer.create(
             ThemeWrapped(
                 <Select
