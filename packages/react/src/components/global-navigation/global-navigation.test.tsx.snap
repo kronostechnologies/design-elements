@@ -16,7 +16,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 12px;
+  padding: 12px 0;
   width: 56px;
 }
 
@@ -48,6 +48,18 @@ exports[`Global Navigation Matches snapshot 1`] = `
   justify-content: center;
   margin: var(--spacing-1x) 0;
   position: relative;
+}
+
+.c2.moreMenu:hover .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2.moreMenu:hover .c5 {
+  background-color: #D9DDE2;
+  color: #57666E;
 }
 
 .c3 {
@@ -102,7 +114,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
       >
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
@@ -121,7 +132,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
@@ -140,7 +150,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
@@ -159,7 +168,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
@@ -178,7 +186,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
@@ -203,7 +210,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
       >
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
@@ -222,7 +228,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
-          onClick={[Function]}
         >
           <a
             aria-current={null}
