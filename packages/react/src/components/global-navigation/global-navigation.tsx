@@ -7,6 +7,7 @@ import { Icon, IconName } from '../icon/icon';
 import { RouterLinkProps } from '../route-link/route-link';
 
 const Wrapper = styled.div<{padding: number}>`
+    background-color: ${({ theme }) => theme.greys.white};
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     display: flex;
@@ -133,7 +134,7 @@ export const GlobalNavigation = ({
     const [navItems, setNavItems] = useState(mainItems);
     const [moreItems, setMoreItems] = useState<GlobalNavigationItem[]>();
     const [overflow, setOverflow] = useState(false);
-    const [menu, setMenu] = useState(false);
+    const [moreMenu, setMoreMenu] = useState(false);
     const itemHeight = 48;
     const wrapperPadding = 12;
 
@@ -158,7 +159,7 @@ export const GlobalNavigation = ({
             <nav>
                 <Nav>
                     {navItems.map((item) => (
-                        <NavigationItem key={`${item.name}-${item.iconName}`}>
+                        <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
                             <IconLink
                                 as={routerLink}
                                 aria-label={item.name}
@@ -170,15 +171,15 @@ export const GlobalNavigation = ({
                         </NavigationItem>
                     ))}
                     {overflow && (
-                        <NavigationItem className="moreMenu" onMouseEnter={() => setMenu(true)}>
+                        <NavigationItem className="moreMenu" onMouseEnter={() => setMoreMenu(true)}>
                             <ShowMoreButton
                                 aria-label="Show more navigation elements"
                                 buttonType="tertiary"
                                 iconName="moreVertical"
                                 label="show more"
                             />
-                            {menu && (
-                                <ShowMoreMenu onClick={() => setMenu(false)}>
+                            {moreMenu && (
+                                <ShowMoreMenu onClick={() => setMoreMenu(false)}>
                                     {moreItems && moreItems.map((moreItem) => (
                                         <MenuLink
                                             as={routerLink}
@@ -199,7 +200,7 @@ export const GlobalNavigation = ({
             <footer>
                 <Nav>
                     {footerItems.map((item) => (
-                        <NavigationItem key={`${item.name}-${item.iconName}`}>
+                        <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
                             <IconLink
                                 as={routerLink}
                                 aria-label={item.name}

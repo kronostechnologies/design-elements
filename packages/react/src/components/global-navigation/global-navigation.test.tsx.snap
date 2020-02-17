@@ -2,6 +2,7 @@
 
 exports[`Global Navigation Matches snapshot 1`] = `
 .c0 {
+  background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   display: -webkit-box;
@@ -114,6 +115,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
       >
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
@@ -132,6 +134,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
@@ -150,6 +153,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
@@ -168,6 +172,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
@@ -186,6 +191,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
@@ -210,6 +216,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
       >
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
@@ -228,6 +235,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
         </li>
         <li
           className="c2"
+          title="test"
         >
           <a
             aria-current={null}
