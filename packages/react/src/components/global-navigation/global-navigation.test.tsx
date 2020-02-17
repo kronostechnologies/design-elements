@@ -4,7 +4,6 @@ import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { IconButton } from '../buttons/icon-button';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 
 const setup = (children: ReactElement) => (
@@ -42,7 +41,7 @@ const items: GlobalNavigationItem[] = [
 ];
 
 describe('Global Navigation', () => {
-    test('Has more icon button', () => {
+    test('Has showMore icon', () => {
         const wrapper = mount(
             setup(
                 <div style={{ height: '600px' }}>
@@ -66,7 +65,7 @@ describe('Global Navigation', () => {
             ),
         );
 
-        expect(wrapper.find(IconButton).length).toBe(1);
+        expect(wrapper.find('[data-testid="showMoreIcon"]').at(0).length).toBe(1);
     });
 
     test('Matches snapshot', () => {
