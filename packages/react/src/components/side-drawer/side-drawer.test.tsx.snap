@@ -49,17 +49,17 @@ exports[`Side Drawer has nested drawer 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c1 {
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 56px);
+    top: 56px;
   }
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c0 {
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 56px);
+    top: 56px;
   }
 }
 
@@ -109,10 +109,10 @@ exports[`Side Drawer has width set to 50% 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c0 {
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 56px);
+    top: 56px;
   }
 }
 
@@ -154,10 +154,10 @@ exports[`Side Drawer is closed on left side 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c0 {
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 56px);
+    top: 56px;
   }
 }
 
@@ -199,10 +199,10 @@ exports[`Side Drawer is closed on right side 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c0 {
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 56px);
+    top: 56px;
   }
 }
 
@@ -244,10 +244,10 @@ exports[`Side Drawer is open 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c0 {
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 56px);
+    top: 56px;
   }
 }
 
