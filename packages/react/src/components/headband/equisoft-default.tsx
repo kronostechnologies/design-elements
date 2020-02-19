@@ -2,13 +2,8 @@ import React, { ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import EquisoftIco from '../../logos/logo-equisoft-ico.svg';
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
-
 import { breakpoints } from '../../tokens/breakpoints';
-import { MediaView } from '../media-view/media-view';
-
-const desktopMin = `${(breakpoints.desktop / 16)}rem`;
 
 const Header = styled.header`
     align-items: center;
@@ -16,16 +11,19 @@ const Header = styled.header`
     box-sizing: border-box;
     color: ${props => props.theme.greys.white};
     display: flex;
-    min-height: 2.75rem;
-    padding: 0 var(--spacing-2x);
+    height: 48px;
+    justify-content: space-between;
+    padding: var(--spacing-1x) var(--spacing-2x);
 
-    @media screen and (min-width: ${desktopMin}) {
-        min-height: 5rem;
-        padding: 0 var(--spacing-3x);
+    @media screen and (max-width: ${breakpoints.desktop}px) {
+        height: 56px;
     }
 `;
 
-const Logo = styled.div``;
+const Brand = styled.a`
+    display: flex;
+    height: 100%;
+`;
 
 const HomeLink = styled(Link)`
     align-items: center;
@@ -34,18 +32,7 @@ const HomeLink = styled(Link)`
 `;
 
 const Equisoft = styled(EquisoftLogo)`
-    height: 40px;
-    width: 161px;
-`;
-
-const RightContent = styled.div`
-    flex-grow: 1;
-    margin-left: var(--spacing-2x);
-    text-align: right;
-
-    @media screen and (min-width: ${desktopMin}) {
-        margin-left: var(--spacing-3x);
-    }
+    height: 100%;
 `;
 
 interface HeadbandProps {
@@ -53,23 +40,15 @@ interface HeadbandProps {
     children: ReactNode;
 }
 
-export function Headband({ children }: HeadbandProps): ReactElement {
-    return (
-        <Header role="banner">
+export const Headband = ({ children }: HeadbandProps): ReactElement => (
+    <Header role="banner">
+        <Brand href="/" aria-label="Home" rel="index">
             <Logo>
-                <HomeLink to="/" aria-label="Home" rel="index">
-                    <MediaView maxWidth={breakpoints.desktop}>
-                        <EquisoftIco aria-hidden="true" focusable="false" />
-                    </MediaView>
-                    <MediaView minWidth={breakpoints.desktop}>
-                        <Equisoft aria-hidden="true" focusable="false" />
-                    </MediaView>
-                </HomeLink>
+                <Equisoft />
             </Logo>
-
-            <RightContent>
-                {children}
-            </RightContent>
-        </Header>
-    );
-}
+        </Brand>
+        <div>
+            {children}
+        </div>
+    </Header>
+);
