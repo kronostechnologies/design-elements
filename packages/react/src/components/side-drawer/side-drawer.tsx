@@ -2,8 +2,6 @@ import React, { ReactElement, ReactNode,  useEffect, useRef, useState } from 're
 import styled from 'styled-components';
 import { breakpoints } from '../../tokens/breakpoints';
 
-const desktopMin = `${(breakpoints.desktop / 16)}rem`;
-
 type Origin = 'right' | 'left';
 
 interface ContainerProps {
@@ -26,9 +24,9 @@ const Container = styled.div<ContainerProps>`
     width: ${props => props.width};
     z-index: 100;
 
-    @media screen and (min-width: ${desktopMin}) {
-        height: calc(100vh - 80px);
-        top: 80px;
+    @media screen and (max-width: ${breakpoints.desktop}px) {
+        height: calc(100vh - 56px);
+        top: 56px;
     }
 
     > .side-drawer {
@@ -44,6 +42,7 @@ interface SideDrawerProps {
      * @default right
      **/
     drawerOrigin: Origin;
+    id?: string;
     /** Use on nested drawers to prevent background scroll */
     nested?: boolean;
     open: boolean;
@@ -54,7 +53,7 @@ interface SideDrawerProps {
     width: string;
 }
 
-export function SideDrawer({ children, nested, open, drawerOrigin, width }: SideDrawerProps): ReactElement {
+export function SideDrawer({ children, id, nested, open, drawerOrigin, width }: SideDrawerProps): ReactElement {
     const [drawerOpen, setDrawerOpen] = useState(open);
     const drawerRef = useRef<HTMLDivElement>(null);
 
@@ -87,6 +86,7 @@ export function SideDrawer({ children, nested, open, drawerOrigin, width }: Side
         <Container
           aria-hidden={!drawerOpen}
           className="side-drawer"
+          id={id}
           open={drawerOpen}
           origin={drawerOrigin}
           ref={drawerRef}
