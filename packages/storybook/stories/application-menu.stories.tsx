@@ -2,12 +2,11 @@ import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Headband } from '@equisoft/design-elements-react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { ApplicationMenu } from '@equisoft/design-elements-react';
 
 export default {
-    title: 'Headband',
-    component: Headband,
+    title: 'Application Menu',
+    component: ApplicationMenu,
     decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
 };
 
@@ -26,12 +25,12 @@ const drawerContent = (
     </div>
 );
 
-export const equisoftDefault = () => (
-    <Headband routerLink={Link} mobileDrawerContent={drawerContent}>
+export const normal = () => (
+    <ApplicationMenu routerLink={Link} mobileDrawerContent={drawerContent}>
         <StyledDiv>
             <p>Hello world</p>
             <p>Hello world</p>
             <p>Hello world</p>
         </StyledDiv>
-    </Headband>
+    </ApplicationMenu>
 );
