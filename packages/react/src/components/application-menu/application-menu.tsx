@@ -61,7 +61,7 @@ interface HeadbandProps {
     routerLink: RouterLinkProps;
 }
 
-export const Headband = ({
+export const ApplicationMenu = ({
     children,
     logoHref = '/',
     mobileDrawerContent,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Headband Has burger button and side drawer 1`] = `
+exports[`Application Menu Has burger button and side drawer 1`] = `
 .c4 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -133,7 +133,7 @@ exports[`Headband Has burger button and side drawer 1`] = `
 </header>
 `;
 
-exports[`Headband Matches the snapshot 1`] = `
+exports[`Application Menu Matches the snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
