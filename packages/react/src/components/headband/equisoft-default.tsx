@@ -1,9 +1,11 @@
 import React, { ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
+import { LinkProps } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
 
 import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
 import { breakpoints } from '../../tokens/breakpoints';
 import { Icon } from '../icon/icon';
+import { RouterLinkProps } from '../route-link/route-link';
 import { SideDrawer } from '../side-drawer/side-drawer';
 
 const Header = styled.header`
@@ -20,7 +22,7 @@ const Header = styled.header`
     }
 `;
 
-const Logo = styled.a`
+const Logo = styled.a<LinkProps>`
     align-items: center;
     display: flex;
     font-size: 1.5rem;
@@ -48,11 +50,22 @@ const BurgerButton = styled.button`
 interface HeadbandProps {
     /** Right-side content */
     children: ReactNode;
+    /**
+     * Sets logo href
+     * @default /
+     **/
+    logoHref?: string;
     /** What will be displayed inside the mobile drawer */
     mobileDrawerContent: ReactNode;
+    /** Takes Link or NavLink from react-router-dom */
+    routerLink: RouterLinkProps;
 }
 
-export const Headband = ({ children, mobileDrawerContent }: HeadbandProps): ReactElement => {
+export const Headband = ({
+    children,
+    logoHref = '/',
+    mobileDrawerContent,
+    routerLink }: HeadbandProps): ReactElement => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth || document.documentElement.clientWidth);
     const [mobile, setMobile] = useState(screenWidth <= breakpoints.mobile);
@@ -80,7 +93,7 @@ export const Headband = ({ children, mobileDrawerContent }: HeadbandProps): Reac
 
     return (
         <Header role="banner">
-            <Logo href="/" aria-label="Home" rel="index">
+            <Logo to={logoHref} as={routerLink} aria-label="Home">
                 <Equisoft />
             </Logo>
             {mobile ? (
