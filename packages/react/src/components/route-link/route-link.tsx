@@ -6,7 +6,7 @@ import { StyledLink } from './styles/styled-link';
 
 type Nav = typeof NavLink;
 
-interface RouterLinkProps extends Nav {
+export interface RouterLinkProps extends Nav {
     displayName?: string;
 }
 
