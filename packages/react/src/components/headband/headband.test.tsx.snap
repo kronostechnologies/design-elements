@@ -1,5 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Headband Has burger button and side drawer 1`] = `
+.c4 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(100%);
+  -ms-transform: translate(100%);
+  transform: translate(100%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c4 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #012639;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 48px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 50%;
+  -ms-flex: 1 1 50%;
+  flex: 1 1 50%;
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  height: 100%;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width:992px) {
+  .c4 {
+    height: calc(100vh - 56px);
+    top: 56px;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .c0 {
+    height: 56px;
+  }
+}
+
+<header
+  className="c0"
+  role="banner"
+>
+  <a
+    aria-label="Home"
+    className="c1"
+    href="/"
+    onClick={[Function]}
+  >
+    <svg
+      className="c2"
+    />
+  </a>
+  <button
+    aria-controls="menu-drawer"
+    aria-expanded={false}
+    aria-label="Navigation"
+    className="c3"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      color="#FFFFFF"
+      focusable={false}
+      height="24"
+      width="24"
+    />
+  </button>
+  <div
+    aria-hidden={true}
+    className="c4 side-drawer"
+    id="menu-drawer"
+    open={false}
+    origin="right"
+    width="100%"
+  >
+    <p>
+      Test
+    </p>
+  </div>
+</header>
+`;
+
 exports[`Headband Matches the snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
@@ -8,13 +141,16 @@ exports[`Headband Matches the snapshot 1`] = `
   align-items: center;
   background: #012639;
   box-sizing: border-box;
-  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 2.75rem;
-  padding: 0 var(--spacing-2x);
+  height: 48px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: var(--spacing-1x) var(--spacing-2x);
 }
 
 .c1 {
@@ -27,32 +163,21 @@ exports[`Headband Matches the snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  height: 100%;
 }
 
 .c2 {
-  height: 40px;
-  width: 161px;
+  height: 100%;
 }
 
 .c3 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin-left: var(--spacing-2x);
-  text-align: right;
+  color: #FFFFFF;
 }
 
-@media screen and (min-width:64rem) {
+@media screen and (max-width:992px) {
   .c0 {
-    min-height: 5rem;
-    padding: 0 var(--spacing-3x);
-  }
-}
-
-@media screen and (min-width:64rem) {
-  .c3 {
-    margin-left: var(--spacing-3x);
+    height: 56px;
   }
 }
 
@@ -60,24 +185,18 @@ exports[`Headband Matches the snapshot 1`] = `
   class="c0"
   role="banner"
 >
-  <div
-    class=""
+  <a
+    aria-label="Home"
+    className="c1"
+    href="/"
+    onClick={[Function]}
   >
-    <a
-      aria-label="Home"
-      class="c1"
-      href="/"
-      rel="index"
-    >
-      <svg
-        aria-hidden="true"
-        class="c2"
-        focusable="false"
-      />
-    </a>
-  </div>
+    <svg
+      className="c2"
+    />
+  </a>
   <div
-    class="c3"
+    className="c3"
   >
     Hello, World!
   </div>
