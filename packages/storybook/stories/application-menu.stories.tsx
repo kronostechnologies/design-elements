@@ -34,3 +34,13 @@ export const normal = () => (
         </StyledDiv>
     </ApplicationMenu>
 );
+
+export const withAppName = () => (
+    <ApplicationMenu appName="analyze" routerLink={Link} mobileDrawerContent={drawerContent}>
+        <StyledDiv>
+            <p>Hello world</p>
+            <p>Hello world</p>
+            <p>Hello world</p>
+        </StyledDiv>
+    </ApplicationMenu>
+);

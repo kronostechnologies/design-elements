@@ -2,11 +2,11 @@ import React, { ReactElement, ReactNode, useContext, useEffect, useState } from 
 import { LinkProps } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
 
-import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
 import { breakpoints } from '../../tokens/breakpoints';
 import { Icon } from '../icon/icon';
 import { RouterLinkProps } from '../route-link/route-link';
 import { SideDrawer } from '../side-drawer/side-drawer';
+import { Logo, LogoName } from './logo';
 
 const Header = styled.header`
     align-items: center;
@@ -19,18 +19,15 @@ const Header = styled.header`
 
     @media screen and (max-width: ${breakpoints.desktop}px) {
         height: 56px;
+        padding: var(--spacing-2x);
     }
 `;
 
-const Logo = styled.a<LinkProps>`
+const LogoWrapper = styled.a<LinkProps>`
     align-items: center;
     display: flex;
     font-size: 1.5rem;
     font-weight: var(--font-bold);
-    height: 100%;
-`;
-
-const Equisoft = styled(EquisoftLogo)`
     height: 100%;
 `;
 
@@ -47,7 +44,11 @@ const BurgerButton = styled.button`
     padding: 0;
 `;
 
+type appNameType = 'default' | 'analyze';
+
 interface HeadbandProps {
+    /** Set the app name to get the proper logos */
+    appName?: appNameType;
     /** Right-side content */
     children: ReactNode;
     /**
@@ -62,6 +63,7 @@ interface HeadbandProps {
 }
 
 export const ApplicationMenu = ({
+    appName = 'default',
     children,
     logoHref = '/',
     mobileDrawerContent,
@@ -70,6 +72,7 @@ export const ApplicationMenu = ({
     const [screenWidth, setScreenWidth] = useState(window.innerWidth || document.documentElement.clientWidth);
     const [mobile, setMobile] = useState(screenWidth <= breakpoints.mobile);
     const themeContext = useContext(ThemeContext);
+    const productName = (mobile && appName !== 'default') ? `${appName}Mobile` as LogoName : appName;
 
     useEffect(() => {
         window.addEventListener('resize', handleScreenResize);
@@ -93,9 +96,9 @@ export const ApplicationMenu = ({
 
     return (
         <Header role="banner">
-            <Logo to={logoHref} as={routerLink} aria-label="Home">
-                <Equisoft />
-            </Logo>
+            <LogoWrapper to={logoHref} as={routerLink} aria-label="Home">
+                <Logo name={productName} />
+            </LogoWrapper>
             {mobile ? (
                 <>
                     <BurgerButton
