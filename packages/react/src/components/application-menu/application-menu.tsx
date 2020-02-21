@@ -19,6 +19,9 @@ const Header = styled.header`
 
     @media screen and (max-width: ${breakpoints.desktop}px) {
         height: 56px;
+    }
+
+    @media screen and (max-width: ${breakpoints.mobile}px) {
         padding: var(--spacing-2x);
     }
 `;
@@ -44,7 +47,9 @@ const BurgerButton = styled.button`
     padding: 0;
 `;
 
-type appNameType = 'default' | 'analyze';
+type appNameType =  'default'       | 'analyze' | 'apply'   |
+                    'centralize'    | 'connect' | 'design'  |
+                    'illustrate'    | 'manage'  | 'plan';
 
 interface HeadbandProps {
     /** Set the app name to get the proper logos */

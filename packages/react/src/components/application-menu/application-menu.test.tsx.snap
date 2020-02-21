@@ -85,6 +85,12 @@ exports[`Application Menu Has burger button and side drawer 1`] = `
   }
 }
 
+@media screen and (max-width:576px) {
+  .c0 {
+    padding: var(--spacing-2x);
+  }
+}
+
 <header
   className="c0"
   role="banner"
@@ -174,6 +180,12 @@ exports[`Application Menu Matches the snapshot 1`] = `
 @media screen and (max-width:992px) {
   .c0 {
     height: 56px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .c0 {
+    padding: var(--spacing-2x);
   }
 }
 
