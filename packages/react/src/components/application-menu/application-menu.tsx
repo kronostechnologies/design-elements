@@ -116,7 +116,7 @@ export const ApplicationMenu = ({
                     >
                         <Icon name="menu" color={themeContext.greys.white}/>
                     </BurgerButton>
-                    <SideDrawer id="menu-drawer" open={drawerOpen && screenWidth <= breakpoints.mobile}>
+                    <SideDrawer id="menu-drawer" open={drawerOpen}>
                         {mobileDrawerContent}
                     </SideDrawer>
                 </>

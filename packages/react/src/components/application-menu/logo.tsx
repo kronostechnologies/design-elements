@@ -36,7 +36,7 @@ const logoMapping = {
     manageMobile: EquisoftManageMobile,
     plan: EquisoftPlan,
     planMobile: EquisoftPlanMobile,
-} as const;
+};
 
 export type LogoName = keyof typeof logoMapping;
 
