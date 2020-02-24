@@ -19,6 +19,7 @@ const Header = styled.header`
 
     @media screen and (max-width: ${breakpoints.desktop}px) {
         height: 56px;
+        padding: 12px var(--spacing-2x);
     }
 
     @media screen and (max-width: ${breakpoints.mobile}px) {
@@ -34,10 +35,6 @@ const LogoWrapper = styled.a<LinkProps>`
     height: 100%;
 `;
 
-const Content = styled.div`
-    color: ${props => props.theme.greys.white};
-`;
-
 const BurgerButton = styled.button`
     appearance: none;
     background-color: transparent;
@@ -45,6 +42,10 @@ const BurgerButton = styled.button`
     cursor: pointer;
     margin: 0;
     padding: 0;
+`;
+
+const Content = styled.div`
+    color: ${props => props.theme.greys.white};
 `;
 
 type appNameType =  'default'       | 'analyze' | 'apply'   |

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Application Menu Has burger button and side drawer 1`] = `
+exports[`Application Menu Has burger button and side drawer when screen width is under 576px 1`] = `
 .c3 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -82,6 +82,7 @@ exports[`Application Menu Has burger button and side drawer 1`] = `
 @media screen and (max-width:992px) {
   .c0 {
     height: 56px;
+    padding: 12px var(--spacing-2x);
   }
 }
 
@@ -180,6 +181,7 @@ exports[`Application Menu Matches the snapshot 1`] = `
 @media screen and (max-width:992px) {
   .c0 {
     height: 56px;
+    padding: 12px var(--spacing-2x);
   }
 }
 
