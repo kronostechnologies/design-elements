@@ -53,9 +53,6 @@ exports[`Application Menu Has burger button and side drawer when screen width is
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 50%;
-  -ms-flex: 1 1 50%;
-  flex: 1 1 50%;
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
@@ -192,7 +189,7 @@ exports[`Application Menu Matches the snapshot 1`] = `
 }
 
 <header
-  class="c0"
+  className="c0"
   role="banner"
 >
   <a

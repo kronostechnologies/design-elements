@@ -63,7 +63,7 @@ interface HeadbandProps {
      **/
     logoHref?: string;
     /** What will be displayed inside the mobile drawer */
-    mobileDrawerContent: ReactNode;
+    mobileDrawerContent?: ReactNode;
     /** Takes Link or NavLink from react-router-dom */
     routerLink: RouterLinkProps;
 }
@@ -105,7 +105,7 @@ export const ApplicationMenu = ({
             <LogoWrapper to={logoHref} as={routerLink} aria-label="Home">
                 <Logo name={productName} />
             </LogoWrapper>
-            {mobile ? (
+            {mobile && mobileDrawerContent ? (
                 <>
                     <BurgerButton
                         aria-expanded={drawerOpen}
