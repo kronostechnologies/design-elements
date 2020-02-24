@@ -1,18 +1,12 @@
+import { ApplicationMenu } from '@equisoft/design-elements-react';
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-import { ApplicationMenu } from '@equisoft/design-elements-react';
 
 export default {
     title: 'Application Menu',
     component: ApplicationMenu,
     decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
 };
-
-const StyledDiv = styled.div`
-    display: flex;
-`;
 
 const drawerContent = (
     <div style={{ padding: '16px' }}>
@@ -27,20 +21,12 @@ const drawerContent = (
 
 export const normal = () => (
     <ApplicationMenu routerLink={Link} mobileDrawerContent={drawerContent}>
-        <StyledDiv>
             <p>Hello world</p>
-            <p>Hello world</p>
-            <p>Hello world</p>
-        </StyledDiv>
     </ApplicationMenu>
 );
 
 export const withAppName = () => (
     <ApplicationMenu appName="analyze" routerLink={Link} mobileDrawerContent={drawerContent}>
-        <StyledDiv>
             <p>Hello world</p>
-            <p>Hello world</p>
-            <p>Hello world</p>
-        </StyledDiv>
     </ApplicationMenu>
 );
