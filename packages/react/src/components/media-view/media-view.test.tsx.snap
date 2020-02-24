@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Media View Will render children 1`] = `
-<p>
-  Test Children
-</p>
-`;
-
-exports[`Media View Will return null 1`] = `null`;

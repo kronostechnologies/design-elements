@@ -25,7 +25,7 @@ describe('Application Menu', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Has burger button and side drawer', () => {
+    test('Has burger button and side drawer when screen width is under 576px', () => {
         Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 500 });
         const tree = setup(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)} routerLink={Link}>
