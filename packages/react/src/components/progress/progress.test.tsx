@@ -1,8 +1,8 @@
 import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { range } from '@design-elements/utils/range';
 import { shallow } from 'enzyme';
 import React from 'react';
-import { renderWithTheme } from '../../test-utils/theme-wrapped';
 import { Progress, ProgressStep } from './progress';
 
 describe('Progress Component', () => {
@@ -80,7 +80,7 @@ describe('Progress Component', () => {
         it('with labels', () => {
             const steps = generateSteps(3);
 
-            const wrapper = renderWithTheme(<Progress steps={steps} value={2} />);
+            const wrapper = renderWithProviders(<Progress steps={steps} value={2} />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -88,7 +88,7 @@ describe('Progress Component', () => {
         it('without labels', () => {
             const steps: ProgressStep[] = [{}, {}, {}];
 
-            const wrapper = renderWithTheme(<Progress steps={steps} value={2} />);
+            const wrapper = renderWithProviders(<Progress steps={steps} value={2} />);
 
             expect(wrapper).toMatchSnapshot();
         });
