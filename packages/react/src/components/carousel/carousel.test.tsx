@@ -1,8 +1,8 @@
 import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
 import React, { ReactNode } from 'react';
 import { mocked } from 'ts-jest/utils';
-import { renderWithTheme } from '../../test-utils/theme-wrapped';
 import { Carousel } from './carousel';
 import { useCarousel, UseCarouselResponse } from './use-carousel';
 
@@ -37,7 +37,7 @@ describe('Carousel', () => {
     });
 
     it('should match snapshot', () => {
-        const wrapper = renderWithTheme(<Carousel>{slides}</Carousel>);
+        const wrapper = renderWithProviders(<Carousel>{slides}</Carousel>);
 
         expect(wrapper).toMatchSnapshot();
     });

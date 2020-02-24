@@ -9,38 +9,11 @@ exports[`Headband Matches the snapshot 1`] = `
   background: #012639;
   box-sizing: border-box;
   color: #FFFFFF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: var(--spacing-2x);
+  grid-template-columns: 0.75fr 2fr 0.75fr;
   min-height: 2.75rem;
-  padding: 0.75rem var(--spacing-2x);
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1 1 50vw;
-  -ms-flex: 1 1 50vw;
-  flex: 1 1 50vw;
-}
-
-.c1,
-.c1:active,
-.c1:visited {
-  color: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  padding: 0 var(--spacing-2x);
 }
 
 .c2 {
@@ -52,11 +25,7 @@ exports[`Headband Matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 50%;
-  -ms-flex: 1 1 50%;
-  flex: 1 1 50%;
   font-size: 1.5rem;
-  font-weight: var(--font-bold);
 }
 
 .c3 {
@@ -65,70 +34,80 @@ exports[`Headband Matches the snapshot 1`] = `
 }
 
 .c4 {
-  display: block;
-  -webkit-flex: 1 1 50%;
-  -ms-flex: 1 1 50%;
-  flex: 1 1 50%;
+  text-align: center;
+}
+
+.c5 {
   font-size: 1.25rem;
   font-style: normal;
-  line-height: 1.5rem;
-  padding: 0 var(--spacing-3x);
+  line-height: 2rem;
+}
+
+.c6 {
+  text-align: right;
 }
 
 @media screen and (min-width:48rem) {
   .c0 {
+    grid-gap: var(--spacing-3x);
+    grid-template-columns: calc(161px + var(--spacing-3x)) 1fr calc(161px + var(--spacing-3x));
     min-height: 5rem;
-    padding: 1.25rem var(--spacing-3x);
+    padding: 0 var(--spacing-3x);
   }
 }
 
 @media screen and (min-width:48rem) {
   .c1 {
-    background: transparent;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    border-right: 1px solid #FFFFFF;
+    padding: 0 var(--spacing-3x) 0 0;
   }
 }
 
 @media screen and (min-width:48rem) {
   .c4 {
-    border-left: 1px solid #FFFFFF;
+    background: transparent;
+    margin-right: var(--spacing-3x);
+    text-align: left;
+  }
+}
+
+@media screen and (min-width:48rem) {
+  .c5 {
     font-size: 1rem;
-    line-height: 2.5rem;
-    margin: 0 0 0 var(--spacing-3x);
-    padding: 0 0 0 var(--spacing-3x);
+    line-height: 1.5rem;
   }
 }
 
 <header
-  className="c0"
+  class="c0"
   role="banner"
 >
-  <a
-    aria-label="Home"
-    className="c1"
-    href="/"
-    rel="index"
+  <div
+    class="c1"
   >
-    <div
-      className="c2"
+    <a
+      aria-label="Home"
+      class="c2"
+      href="/"
+      rel="index"
     >
       <svg
-        className="c3"
+        class="c3"
       />
-    </div>
+    </a>
+  </div>
+  <div
+    class="c4"
+  >
     <em
-      className="c4"
+      class="c5"
     >
       Benchmark
     </em>
-  </a>
-  <div>
+  </div>
+  <div
+    class="c6"
+  >
     Hello, World!
   </div>
 </header>

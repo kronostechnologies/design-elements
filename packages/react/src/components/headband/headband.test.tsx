@@ -1,17 +1,14 @@
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Headband } from './equisoft-default';
 
 describe('Headband', () => {
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <Headband appName="Benchmark">
-                    Hello, World!
-                </Headband>,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Headband appName="Benchmark">
+                Hello, World!
+            </Headband>,
+        );
 
         expect(tree).toMatchSnapshot();
     });
