@@ -31,9 +31,16 @@ const ShowMoreMenu = styled.div<{open?: boolean}>`
     display: ${({ open }) => open ? 'flex' : 'none'};
     flex-wrap: wrap;
     left: 48px;
-    overflow: hidden;
     position: absolute;
     top: 0;
+
+    & > :first-child {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+
+    & > :last-child {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
 `;
 
 const ShowMore = styled.button<{active?: boolean}>`
@@ -47,6 +54,11 @@ const ShowMore = styled.button<{active?: boolean}>`
     height: 32px;
     justify-content: center;
     width: 32px;
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        outline: none;
+    }
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};
@@ -84,6 +96,11 @@ const IconLink = styled(ShowMore)<NavLinkProps>`
             color: ${props => props.theme.greys.white};
         }
     }
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        outline: none;
+    }
 `;
 
 const MenuLink = styled.a<NavLinkProps>`
@@ -94,6 +111,11 @@ const MenuLink = styled.a<NavLinkProps>`
     padding: var(--spacing-half) var(--spacing-2x);
     text-decoration: none;
     width: max-content;
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        outline: none;
+    }
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};

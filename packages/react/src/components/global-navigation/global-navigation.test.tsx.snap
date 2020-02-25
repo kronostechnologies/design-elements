@@ -85,6 +85,11 @@ exports[`Global Navigation Matches snapshot 1`] = `
   width: 32px;
 }
 
+.c4:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
 .c4:hover {
   background-color: #D9DDE2;
   color: #57666E;
@@ -98,6 +103,11 @@ exports[`Global Navigation Matches snapshot 1`] = `
 .c4.active:hover {
   background-color: #0080A5;
   color: #FFFFFF;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 <div
