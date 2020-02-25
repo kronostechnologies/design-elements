@@ -51,6 +51,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
   outline: none;
   overflow: auto;
   resize: vertical;
@@ -104,7 +105,6 @@ input + .c1 {
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
-  width: 100%;
 }
 
 <div
@@ -179,6 +179,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
   outline: none;
   overflow: auto;
   resize: vertical;
@@ -232,7 +233,6 @@ input + .c1 {
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
-  width: 100%;
 }
 
 <div

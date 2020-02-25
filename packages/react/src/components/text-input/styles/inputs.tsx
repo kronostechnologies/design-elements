@@ -14,6 +14,7 @@ export const inputsStyle = (theme: Theme) => `
     margin: 0;
     outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
+    width: 100%;
 
     &::placeholder {
         color: ${theme.greys['dark-grey']};
@@ -36,6 +37,5 @@ export const inputsStyle = (theme: Theme) => `
     label + & {
         display: block;
         margin-top: var(--spacing-half);
-        width: 100%;
     }
 `;
