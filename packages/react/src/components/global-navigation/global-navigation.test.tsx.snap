@@ -68,8 +68,11 @@ exports[`Global Navigation Matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: transparent;
+  border: none;
   border-radius: 16px;
   color: #57666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,13 +90,11 @@ exports[`Global Navigation Matches snapshot 1`] = `
   color: #57666E;
 }
 
-.c4:focus,
 .c4.active {
   background-color: #0080A5;
   color: #FFFFFF !important;
 }
 
-.c4:focus:hover,
 .c4.active:hover {
   background-color: #0080A5;
   color: #FFFFFF;

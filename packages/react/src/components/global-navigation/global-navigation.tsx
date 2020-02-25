@@ -24,11 +24,11 @@ const Nav = styled.ul<{ itemsVisible?: number }>`
     padding: 0;
 `;
 
-const ShowMoreMenu = styled.div`
+const ShowMoreMenu = styled.div<{open?: boolean}>`
     background-color: ${props => props.theme.greys.white};
     border-radius: var(--border-radius);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-    display: none;
+    display: ${({ open }) => open ? 'flex' : 'none'};
     flex-wrap: wrap;
     left: 48px;
     overflow: hidden;
@@ -36,10 +36,13 @@ const ShowMoreMenu = styled.div`
     top: 0;
 `;
 
-const ShowMore = styled.span`
+const ShowMore = styled.button<{active?: boolean}>`
     align-items: center;
+    background-color: ${({ active, theme }) => active ? theme.greys.grey : 'transparent'};
+    border: none;
     border-radius: 16px;
     color: ${({ theme }) => theme.greys['dark-grey']};
+    cursor: pointer;
     display: flex;
     height: 32px;
     justify-content: center;
@@ -72,7 +75,6 @@ const NavigationItem = styled.li`
 `;
 
 const IconLink = styled(ShowMore)<NavLinkProps>`
-    &:focus,
     &.active {
         background-color: ${props => props.theme.main['primary-1.1']};
         color: ${props => props.theme.greys.white} !important;
@@ -127,9 +129,18 @@ export const GlobalNavigation = ({
     const [navItems, setNavItems] = useState(mainItems);
     const [moreItems, setMoreItems] = useState<GlobalNavigationItem[]>();
     const [overflow, setOverflow] = useState(false);
-    const [moreMenu, setMoreMenu] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
     const itemHeight = 48;
     const wrapperPadding = 12;
+
+    useEffect(() => {
+        if (overflow) {
+            if (wrapperRef.current === null) return;
+            document.addEventListener('mouseup', handleClickOutside);
+            return () => document.removeEventListener('mouseup', handleClickOutside);
+        }
+        return;
+    }, [overflow, menuOpen]);
 
     useEffect(() => {
         if (wrapperRef.current === null) return;
@@ -147,63 +158,69 @@ export const GlobalNavigation = ({
         }
     }, [mainItems, wrapperRef]);
 
+    const handleClickOutside = (event: MouseEvent): void => {
+        const shouldClose =
+            wrapperRef.current === null ||
+            wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
+        if (shouldClose && menuOpen) {
+            setMenuOpen(false);
+        }
+    };
+
+    const navItem = (item: GlobalNavigationItem): ReactElement => (
+        <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
+            <IconLink
+                as={routerLink}
+                aria-label={item.name}
+                exact={item.exact}
+                to={item.href}
+                onClick={() => setMenuOpen(false)}
+            >
+                <Icon name={item.iconName} size="16"/>
+            </IconLink>
+        </NavigationItem>
+    );
+
     return (
         <Wrapper ref={wrapperRef} padding={wrapperPadding}>
             <nav aria-label="App Navigation">
                 <Nav>
-                    {navItems.map((item) => (
-                        <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
-                            <IconLink
-                                as={routerLink}
-                                aria-label={item.name}
-                                exact={item.exact}
-                                to={item.href}
-                            >
-                                <Icon name={item.iconName} size="16"/>
-                            </IconLink>
-                        </NavigationItem>
-                    ))}
+                    {navItems.map(navItem)}
                     {overflow && (
-                        <NavigationItem className="moreMenu" onMouseEnter={() => setMoreMenu(true)}>
+                        <NavigationItem className="moreMenu">
                             <ShowMore
+                                active={menuOpen}
                                 aria-label="Show more navigation elements"
+                                aria-pressed={menuOpen}
+                                type="button"
                                 data-testid="showMoreIcon"
+                                onClick={() => setMenuOpen(!menuOpen)}
                             >
                                 <Icon name="moreVertical" size="16"/>
                             </ShowMore>
-                            {moreMenu && (
-                                <ShowMoreMenu onClick={() => setMoreMenu(false)}>
-                                    {moreItems && moreItems.map((moreItem) => (
-                                        <MenuLink
-                                            as={routerLink}
-                                            aria-label={moreItem.name}
-                                            exact={moreItem.exact}
-                                            key={`${moreItem.name}-${moreItem.iconName}`}
-                                            to={moreItem.href}
-                                        >
-                                            {moreItem.name}
-                                        </MenuLink>
-                                    ))}
-                                </ShowMoreMenu>
-                            )}
+                            <ShowMoreMenu
+                                open={menuOpen}
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                {moreItems && moreItems.map((moreItem) => (
+                                    <MenuLink
+                                        as={routerLink}
+                                        aria-label={moreItem.name}
+                                        exact={moreItem.exact}
+                                        key={`${moreItem.name}-${moreItem.iconName}`}
+                                        to={moreItem.href}
+                                    >
+                                        {moreItem.name}
+                                    </MenuLink>
+                                ))}
+                            </ShowMoreMenu>
                         </NavigationItem>
                     )}
                 </Nav>
             </nav>
             <nav aria-label="App Navigation">
                 <Nav>
-                    {footerItems.map((item) => (
-                        <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
-                            <IconLink
-                                as={routerLink}
-                                aria-label={item.name}
-                                exact={item.exact}
-                                to={item.href}
-                            >
-                                <Icon name={item.iconName} size="16"/>
-                            </IconLink>
-                        </NavigationItem>
-                    ))}
+                    {footerItems.map(navItem)}
                 </Nav>
             </nav>
         </Wrapper>
