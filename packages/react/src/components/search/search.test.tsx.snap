@@ -151,6 +151,7 @@ input + .c2 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 }
@@ -203,7 +204,6 @@ input + .c2 {
 label + .c5 {
   display: block;
   margin-top: var(--spacing-half);
-  width: 100%;
 }
 
 label + .c5 {

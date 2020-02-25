@@ -49,6 +49,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
 }
 
 .c2::-webkit-input-placeholder {
@@ -99,7 +100,6 @@ input + .c1 {
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
-  width: 100%;
 }
 
 <div
@@ -173,6 +173,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
 }
 
 .c2::-webkit-input-placeholder {
@@ -223,7 +224,6 @@ input + .c1 {
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
-  width: 100%;
 }
 
 <div
@@ -297,6 +297,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
 }
 
 .c2::-webkit-input-placeholder {
@@ -347,7 +348,6 @@ input + .c1 {
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
-  width: 100%;
 }
 
 <div
