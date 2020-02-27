@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
-import { Icon } from '../icon/icon';
-
+import uuid from 'uuid/v4';
 import { useTheme } from '../../hooks/use-theme';
+import { Icon } from '../icon/icon';
 
 const TooltipContainer = styled.div`
     background-color: ${({ theme }) => theme.greys.white};
@@ -151,6 +151,7 @@ interface TooltipProps {
 
 export const Tooltip = ({ children, hideArrow, ...props }: TooltipProps) => {
     const Theme = useTheme();
+    const tooltipId = uuid();
 
     return (
         <TooltipTrigger
@@ -162,7 +163,11 @@ export const Tooltip = ({ children, hideArrow, ...props }: TooltipProps) => {
                 getTooltipProps,
                 placement,
             }) => (
-                <TooltipContainer {...getTooltipProps({ ref: tooltipRef })}>
+                <TooltipContainer
+                    id={tooltipId}
+                    role="tooltip"
+                    {...getTooltipProps({ ref: tooltipRef })}
+                >
                     {!hideArrow && (
                         <TooltipArrow
                             {...getArrowProps({
@@ -176,7 +181,11 @@ export const Tooltip = ({ children, hideArrow, ...props }: TooltipProps) => {
             )}
         >
             {({ getTriggerProps, triggerRef }) => (
-                <StyledSpan {...getTriggerProps({ ref: triggerRef })}>
+                <StyledSpan
+                    aria-labelledby={tooltipId}
+                    tabIndex={0}
+                    {...getTriggerProps({ ref: triggerRef })}
+                >
                     <Icon name="helpCircle" size="16" color={Theme.greys['dark-grey']} />
                 </StyledSpan>
             )}
