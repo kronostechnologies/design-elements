@@ -8,32 +8,48 @@ export default {
 };
 
 export const normal = () => (
-    <Tooltip>
-        Tooltip Content
-    </Tooltip>
+    <div style={{ display: 'flex' }}>
+        <Tooltip placement="top">
+            Tooltip Content
+        </Tooltip>
+        <Tooltip placement="bottom">
+            Tooltip Content
+        </Tooltip>
+        <Tooltip placement="left">
+            Tooltip Content
+        </Tooltip>
+        <Tooltip>
+            Tooltip Content
+        </Tooltip>
+    </div>
 );
 
-export const click = () => (
-    <Tooltip trigger="click">
+export const mobile = () => (
+    <Tooltip device="mobile">
         Tooltip Content
     </Tooltip>
 );
-export const top = () => (
+export const topPlacement = () => (
     <Tooltip placement="top">
         Tooltip Content
     </Tooltip>
 );
-export const bottom = () => (
+export const bottomPlacement = () => (
     <Tooltip placement="bottom">
         Tooltip Content
     </Tooltip>
 );
-export const left = () => (
+export const leftPlacement = () => (
     <Tooltip placement="left">
         Tooltip Content
     </Tooltip>
 );
-export const rightClick = () => (
+export const clickTrigger = () => (
+    <Tooltip trigger="click">
+        Tooltip Content
+    </Tooltip>
+);
+export const rightClickTrigger = () => (
     <Tooltip trigger="right-click">
         Tooltip Content
     </Tooltip>
