@@ -8,24 +8,13 @@ export default {
 };
 
 export const normal = () => (
-    <div style={{ display: 'flex' }}>
-        <Tooltip placement="top">
-            Tooltip Content
-        </Tooltip>
-        <Tooltip placement="bottom">
-            Tooltip Content
-        </Tooltip>
-        <Tooltip placement="left">
-            Tooltip Content
-        </Tooltip>
-        <Tooltip>
-            Tooltip Content
-        </Tooltip>
-    </div>
+    <Tooltip>
+        Tooltip Content
+    </Tooltip>
 );
 
 export const defaultOpen = () => (
-    <Tooltip trigger="click" defaultOpen>
+    <Tooltip defaultOpen>
         Tooltip Content
     </Tooltip>
 );

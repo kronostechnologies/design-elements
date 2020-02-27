@@ -1,30 +1,31 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
+
 import { useTheme } from '../../hooks/use-theme';
 import { Icon } from '../icon/icon';
 
-const TooltipContainer = styled.div<{device?: DeviceType}>`
+export const TooltipContainer = styled.div<{mobile?: boolean}>`
     background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys.grey};
+    border: 1px solid ${({ theme }) => theme.greys['light-grey']};
     border-radius: var(--border-radius);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-size: ${({ device }) => device === 'mobile' ? '1rem' : '0.875rem'};
+    font-size: ${({ mobile }) => mobile ? '1rem' : '0.875rem'};
     justify-content: center;
-    line-height: ${({ device }) => device === 'mobile' ? '24px' : '20px'};
+    line-height: ${({ mobile }) => mobile ? '1.5rem' : '1.25rem'};
     margin: var(--spacing-1x);
     max-width: 327px;
-    min-height: ${({ device }) => device === 'mobile' ? '72px' : '32px'};
-    padding: ${({ device }) => device === 'mobile' ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
+    min-height: ${({ mobile }) => mobile ? '72px' : '32px'};
+    padding: ${({ mobile }) => mobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
     transition: opacity 300ms;
     z-index: 1000;
 `;
 
-const TooltipArrow = styled.div`
+export const TooltipArrow = styled.div`
     height: 1rem;
     position: absolute;
     width: 1rem;
@@ -57,7 +58,7 @@ const TooltipArrow = styled.div`
     }
 
     &[data-placement*='bottom']::before {
-        border-color: transparent transparent ${({ theme }) => theme.greys.grey} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.greys['light-grey']} transparent;
         border-width: 0 0.5rem 0.4rem 0.5rem;
         position: absolute;
         top: -1px;
@@ -77,7 +78,7 @@ const TooltipArrow = styled.div`
     }
 
     &[data-placement*='top']::before {
-        border-color: ${({ theme }) => theme.greys.grey} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.greys['light-grey']} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0 0.5rem;
         position: absolute;
         top: 1px;
@@ -96,7 +97,7 @@ const TooltipArrow = styled.div`
     }
 
     &[data-placement*='right']::before {
-        border-color: transparent ${({ theme }) => theme.greys.grey} transparent transparent;
+        border-color: transparent ${({ theme }) => theme.greys['light-grey']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
@@ -115,7 +116,7 @@ const TooltipArrow = styled.div`
     }
 
     &[data-placement*='left']::before {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys.grey};
+        border-color: transparent transparent transparent ${({ theme }) => theme.greys['light-grey']};
         border-width: 0.5rem 0 0.5rem 0.4em;
     }
 
@@ -138,9 +139,13 @@ type TriggerType = 'click' | 'hover' | 'right-click';
 type PlacementType = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
+    /**
+     * Applies styles and sizes according to the device
+     * @default desktop
+     */
     device?: DeviceType;
     /**
-     * Trigger event type. Alway click on mobile
+     * Trigger event type. Always click on mobile
      * @default hover
      **/
     trigger?: TriggerType;
@@ -155,7 +160,7 @@ interface TooltipProps {
     defaultOpen?: boolean;
 }
 
-export const Tooltip = ({ children, device, defaultOpen, ...props }: TooltipProps) => {
+export function Tooltip({ children, device = 'desktop', defaultOpen, ...props }: TooltipProps): ReactElement {
     const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = uuid();
@@ -174,7 +179,7 @@ export const Tooltip = ({ children, device, defaultOpen, ...props }: TooltipProp
                 placement,
             }) => (
                 <TooltipContainer
-                    device={device}
+                    mobile={device === 'mobile'}
                     id={tooltipId}
                     role="tooltip"
                     {...getTooltipProps({ ref: tooltipRef })}
@@ -202,4 +207,4 @@ export const Tooltip = ({ children, device, defaultOpen, ...props }: TooltipProp
             )}
         </TooltipTrigger>
     );
-};
+}
