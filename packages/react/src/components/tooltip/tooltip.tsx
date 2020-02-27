@@ -151,9 +151,11 @@ interface TooltipProps {
     placement?: PlacementType;
     /** Tootip text content */
     children: ReactNode;
+    /** Set tooltip open by default */
+    defaultOpen?: boolean;
 }
 
-export const Tooltip = ({ children, device, ...props }: TooltipProps) => {
+export const Tooltip = ({ children, device, defaultOpen, ...props }: TooltipProps) => {
     const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = uuid();
@@ -163,6 +165,7 @@ export const Tooltip = ({ children, device, ...props }: TooltipProps) => {
             {...props}
             placement={device === 'mobile' ? 'top' : props.placement}
             trigger={device === 'mobile' ? 'click' : props.trigger}
+            defaultTooltipShown={defaultOpen}
             tooltip={({
                 arrowRef,
                 tooltipRef,

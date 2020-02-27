@@ -24,6 +24,11 @@ export const normal = () => (
     </div>
 );
 
+export const defaultOpen = () => (
+    <Tooltip trigger="click" defaultOpen>
+        Tooltip Content
+    </Tooltip>
+);
 export const mobile = () => (
     <Tooltip device="mobile">
         Tooltip Content
