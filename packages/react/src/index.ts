@@ -32,6 +32,7 @@ export { InlineMessage } from './components/inline-message/inline-message';
 export { RouteLink } from './components/route-link/route-link';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
+export { Banner } from './components/banner/banner';
 
 // Results
 export { Legend } from './components/legend/legend';

@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Matches snapshot (desktop) 1`] = `
+.c3 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 7px 1em 0 1em;
+}
+
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 24px;
+  margin: 7px 1em auto 1em;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  padding: 0;
+}
+
+input:valid + .c2 {
+  display: inline-block;
+}
+
+.c0 {
+  background-color: #FFECB3;
+  color: #FF6F00;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  -webkit-letter-spacing: 0.2;
+  -moz-letter-spacing: 0.2;
+  -ms-letter-spacing: 0.2;
+  letter-spacing: 0.2;
+  line-height: 14px;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) 0;
+  width: 100%;
+}
+
+.c0 svg {
+  color: #FF6F00;
+}
+
+<div
+  className="c0"
+  data-testid="container"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      color="currentColor"
+      focusable={false}
+      height="24"
+      width="24"
+    />
+    <p>
+      WARNING! Lorem ipsum
+    </p>
+  </div>
+  <button
+    className="c2"
+    data-testid="closeButton"
+    onClick={[Function]}
+  >
+    <svg
+      color="currentColor"
+      focusable={false}
+      height="24"
+      width="24"
+    />
+    <span
+      aria-hidden="false"
+      className="c3"
+    >
+      Close
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Banner Matches snapshot (mobile) 1`] = `
+.c3 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 14px 1em 0 1em;
+}
+
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 24px;
+  margin: 14px 1em auto 1em;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  padding: 0;
+}
+
+input:valid + .c2 {
+  display: inline-block;
+}
+
+.c0 {
+  background-color: #A40C2E;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+  -webkit-letter-spacing: 0.46;
+  -moz-letter-spacing: 0.46;
+  -ms-letter-spacing: 0.46;
+  letter-spacing: 0.46;
+  line-height: 24px;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) 0;
+  width: 100%;
+}
+
+.c0 svg {
+  color: #FFFFFF;
+}
+
+<div
+  className="c0"
+  data-testid="container"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      color="currentColor"
+      focusable={false}
+      height="24"
+      width="24"
+    />
+    <p>
+      ERROR! Lorem ipsum
+    </p>
+  </div>
+  <button
+    className="c2"
+    data-testid="closeButton"
+    onClick={[Function]}
+  >
+    <svg
+      color="currentColor"
+      focusable={false}
+      height="24"
+      width="24"
+    />
+    <span
+      aria-hidden="false"
+      className="c3"
+    >
+      Close
+    </span>
+  </button>
+</div>
+`;
