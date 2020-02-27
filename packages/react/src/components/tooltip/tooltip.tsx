@@ -5,7 +5,7 @@ import uuid from 'uuid/v4';
 import { useTheme } from '../../hooks/use-theme';
 import { Icon } from '../icon/icon';
 
-const TooltipContainer = styled.div`
+const TooltipContainer = styled.div<{device?: DeviceType}>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys.grey};
     border-radius: var(--border-radius);
@@ -13,10 +13,13 @@ const TooltipContainer = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 32px;
+    font-size: ${({ device }) => device === 'mobile' ? '1rem' : '0.875rem'};
     justify-content: center;
+    line-height: ${({ device }) => device === 'mobile' ? '24px' : '20px'};
     margin: var(--spacing-1x);
-    padding: 0 var(--spacing-1x);
+    max-width: 327px;
+    min-height: ${({ device }) => device === 'mobile' ? '72px' : '32px'};
+    padding: ${({ device }) => device === 'mobile' ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
     transition: opacity 300ms;
     z-index: 1000;
 `;
@@ -130,32 +133,36 @@ const StyledSpan = styled.span`
     width: fit-content;
 `;
 
+type DeviceType = 'mobile' | 'desktop';
 type TriggerType = 'click' | 'hover' | 'right-click';
 type PlacementType = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
+    device?: DeviceType;
     /**
-     * Trigger event type
+     * Trigger event type. Alway click on mobile
      * @default hover
      **/
     trigger?: TriggerType;
     /**
-     * Tooltip placement
+     * Tooltip placement. Always top on mobile
      * @default right
      **/
     placement?: PlacementType;
     /** Tootip text content */
     children: ReactNode;
-    hideArrow?: boolean;
 }
 
-export const Tooltip = ({ children, hideArrow, ...props }: TooltipProps) => {
+export const Tooltip = ({ children, device, ...props }: TooltipProps) => {
+    const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = uuid();
 
     return (
         <TooltipTrigger
             {...props}
+            placement={device === 'mobile' ? 'top' : props.placement}
+            trigger={device === 'mobile' ? 'click' : props.trigger}
             tooltip={({
                 arrowRef,
                 tooltipRef,
@@ -164,6 +171,7 @@ export const Tooltip = ({ children, hideArrow, ...props }: TooltipProps) => {
                 placement,
             }) => (
                 <TooltipContainer
+                    device={device}
                     id={tooltipId}
                     role="tooltip"
                     {...getTooltipProps({ ref: tooltipRef })}
@@ -186,7 +194,7 @@ export const Tooltip = ({ children, hideArrow, ...props }: TooltipProps) => {
                     tabIndex={0}
                     {...getTriggerProps({ ref: triggerRef })}
                 >
-                    <Icon name="helpCircle" size="16" color={Theme.greys['dark-grey']} />
+                    <Icon name="helpCircle" size={device === 'mobile' ? '24' : '16'} color={Theme.greys['dark-grey']} />
                 </StyledSpan>
             )}
         </TooltipTrigger>
