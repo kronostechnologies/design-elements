@@ -1,6 +1,6 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
 import React, { ReactElement } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
     title: 'Global Navigation',
@@ -40,7 +40,6 @@ export const normal = () => (
     <div style={{ height: '600px' }}>
         <GlobalNavigation
             mainItems={items}
-            routerLink={NavLink}
             footerItems={[
                 {
                     iconName: 'info',
@@ -61,7 +60,6 @@ export const withMoreIcon = () => (
     <div style={{ height: '350px' }}>
         <GlobalNavigation
             mainItems={items}
-            routerLink={NavLink}
             footerItems={[
                 {
                     iconName: 'info',

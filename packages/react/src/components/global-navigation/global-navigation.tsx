@@ -1,9 +1,7 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
-import { NavLinkProps } from 'react-router-dom';
+import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
-
 import { Icon, IconName } from '../icon/icon';
-import { RouterLinkProps } from '../route-link/route-link';
 
 const Wrapper = styled.div<{padding: number}>`
     background-color: ${({ theme }) => theme.greys.white};
@@ -86,7 +84,7 @@ const NavigationItem = styled.li`
     }
 `;
 
-const IconLink = styled(ShowMore)<NavLinkProps>`
+const IconLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     &.active {
         background-color: ${props => props.theme.main['primary-1.1']};
         color: ${props => props.theme.greys.white} !important;
@@ -103,7 +101,7 @@ const IconLink = styled(ShowMore)<NavLinkProps>`
     }
 `;
 
-const MenuLink = styled.a<NavLinkProps>`
+const MenuLink = styled(NavLink)`
     color: ${({ theme }) => theme.greys.black};
     display: flex;
     flex-grow: 1;
@@ -138,14 +136,11 @@ interface GlobalNavigationProps {
     mainItems: GlobalNavigationItem[];
     /** Item has an icon name, a name, and a href */
     footerItems: GlobalNavigationItem[];
-    /** Takes Link or NavLink from react-router-dom */
-    routerLink: RouterLinkProps;
 }
 
 export const GlobalNavigation = ({
     mainItems,
     footerItems,
-    routerLink,
 }: GlobalNavigationProps): ReactElement => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const [navItems, setNavItems] = useState(mainItems);
@@ -192,7 +187,6 @@ export const GlobalNavigation = ({
     const navItem = (item: GlobalNavigationItem): ReactElement => (
         <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
             <IconLink
-                as={routerLink}
                 aria-label={item.name}
                 exact={item.exact}
                 to={item.href}
@@ -226,7 +220,6 @@ export const GlobalNavigation = ({
                             >
                                 {moreItems && moreItems.map((moreItem) => (
                                     <MenuLink
-                                        as={routerLink}
                                         aria-label={moreItem.name}
                                         exact={moreItem.exact}
                                         key={`${moreItem.name}-${moreItem.iconName}`}
