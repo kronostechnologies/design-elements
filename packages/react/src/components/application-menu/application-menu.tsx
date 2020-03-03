@@ -1,10 +1,9 @@
 import React, { ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
-import { LinkProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
 
 import { breakpoints } from '../../tokens/breakpoints';
 import { Icon } from '../icon/icon';
-import { RouterLinkProps } from '../route-link/route-link';
 import { SideDrawer } from '../side-drawer/side-drawer';
 import { Logo, LogoName } from './logo';
 
@@ -27,7 +26,7 @@ const Header = styled.header`
     }
 `;
 
-const LogoWrapper = styled.a<LinkProps>`
+const LogoWrapper = styled(Link)`
     align-items: center;
     display: flex;
     font-size: 1.5rem;
@@ -64,16 +63,13 @@ interface HeadbandProps {
     logoHref?: string;
     /** What will be displayed inside the mobile drawer */
     mobileDrawerContent?: ReactNode;
-    /** Takes Link or NavLink from react-router-dom */
-    routerLink: RouterLinkProps;
 }
 
 export const ApplicationMenu = ({
     appName = 'default',
     children,
     logoHref = '/',
-    mobileDrawerContent,
-    routerLink }: HeadbandProps): ReactElement => {
+    mobileDrawerContent }: HeadbandProps): ReactElement => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth || document.documentElement.clientWidth);
     const [mobile, setMobile] = useState(screenWidth <= breakpoints.mobile);
@@ -102,7 +98,7 @@ export const ApplicationMenu = ({
 
     return (
         <Header role="banner">
-            <LogoWrapper to={logoHref} as={routerLink} aria-label="Home">
+            <LogoWrapper to={logoHref} aria-label="Home">
                 <Logo name={productName} />
             </LogoWrapper>
             {mobile && mobileDrawerContent ? (

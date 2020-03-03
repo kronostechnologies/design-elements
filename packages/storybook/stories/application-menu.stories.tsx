@@ -1,6 +1,6 @@
 import { ApplicationMenu } from '@equisoft/design-elements-react';
 import React, { ReactElement } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
     title: 'Application Menu',
@@ -20,19 +20,19 @@ const drawerContent = (
 );
 
 export const normal = () => (
-    <ApplicationMenu routerLink={Link}>
+    <ApplicationMenu>
             <p>Hello world</p>
     </ApplicationMenu>
 );
 
 export const withAppName = () => (
-    <ApplicationMenu appName="analyze" routerLink={Link}>
+    <ApplicationMenu appName="analyze">
             <p>Hello world</p>
     </ApplicationMenu>
 );
 
 export const withMobileDrawer = () => (
-    <ApplicationMenu routerLink={Link} mobileDrawerContent={drawerContent}>
+    <ApplicationMenu mobileDrawerContent={drawerContent}>
             <p>Hello world</p>
     </ApplicationMenu>
 );
