@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React, { ReactElement } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
@@ -47,7 +47,6 @@ describe('Global Navigation', () => {
                 <div style={{ height: '600px' }}>
                     <GlobalNavigation
                         mainItems={items}
-                        routerLink={NavLink}
                         footerItems={[
                             {
                                 iconName: 'info',
@@ -74,7 +73,6 @@ describe('Global Navigation', () => {
                 <div style={{ height: '600px' }}>
                     <GlobalNavigation
                         mainItems={items}
-                        routerLink={NavLink}
                         footerItems={[
                             {
                                 iconName: 'info',
