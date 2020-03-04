@@ -38,13 +38,3 @@ export const leftPlacement = () => (
         Tooltip Content
     </Tooltip>
 );
-export const clickTrigger = () => (
-    <Tooltip trigger="click">
-        Tooltip Content
-    </Tooltip>
-);
-export const rightClickTrigger = () => (
-    <Tooltip trigger="right-click">
-        Tooltip Content
-    </Tooltip>
-);

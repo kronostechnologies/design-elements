@@ -17,6 +17,10 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 <span
   className="c0"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
   tabIndex={0}
@@ -47,7 +51,11 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 <span
   className="c0"
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
   onTouchEnd={[Function]}
   tabIndex={0}
 >
@@ -65,7 +73,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -80,7 +88,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  margin: var(--spacing-1x);
+  margin: var(--spacing-1x) 12px;
   max-width: 327px;
   min-height: 32px;
   padding: var(--spacing-1x);
@@ -207,7 +215,7 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #F1F2F2;
   border-radius: var(--border-radius);
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -222,7 +230,7 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.5rem;
-  margin: var(--spacing-1x);
+  margin: var(--spacing-1x) 12px;
   max-width: 327px;
   min-height: 72px;
   padding: var(--spacing-3x);

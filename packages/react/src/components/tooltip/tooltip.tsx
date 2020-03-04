@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { KeyboardEvent, MouseEvent, ReactElement, ReactNode, useState } from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
@@ -10,14 +10,14 @@ export const TooltipContainer = styled.div<{mobile?: boolean}>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['light-grey']};
     border-radius: var(--border-radius);
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     font-size: ${({ mobile }) => mobile ? '1rem' : '0.875rem'};
     justify-content: center;
     line-height: ${({ mobile }) => mobile ? '1.5rem' : '1.25rem'};
-    margin: var(--spacing-1x);
+    margin: var(--spacing-1x) 12px;
     max-width: 327px;
     min-height: ${({ mobile }) => mobile ? '72px' : '32px'};
     padding: ${({ mobile }) => mobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
@@ -135,7 +135,6 @@ const StyledSpan = styled.span`
 `;
 
 type DeviceType = 'mobile' | 'desktop';
-type TriggerType = 'click' | 'hover' | 'right-click';
 type PlacementType = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
@@ -144,11 +143,6 @@ interface TooltipProps {
      * @default desktop
      */
     device?: DeviceType;
-    /**
-     * Trigger event type. Always click on mobile
-     * @default hover
-     **/
-    trigger?: TriggerType;
     /**
      * Tooltip placement. Always top on mobile
      * @default right
@@ -164,13 +158,28 @@ export function Tooltip({ children, device = 'desktop', defaultOpen, ...props }:
     const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = uuid();
+    const [ariaHidden, setAriaHidden] = useState(defaultOpen ? false : true);
+    const [tooltipOpen, setTooltipOpen] = useState();
+    const isMobile = device === 'mobile';
+
+    const handleKeyDown = (event: KeyboardEvent<HTMLSpanElement>): void => {
+        if (!isMobile && event.key === 'Escape' && tooltipOpen) {
+            setTooltipOpen(undefined);
+        }
+    };
+
+    const handleVisibilityChange = (visible: boolean): void => {
+        setAriaHidden(!visible);
+    };
 
     return (
         <TooltipTrigger
             {...props}
-            placement={device === 'mobile' ? 'top' : props.placement}
-            trigger={device === 'mobile' ? 'click' : props.trigger}
+            placement={isMobile ? 'top' : props.placement}
+            trigger={isMobile ? 'click' : 'hover'}
             defaultTooltipShown={defaultOpen}
+            tooltipShown={tooltipOpen}
+            onVisibilityChange={handleVisibilityChange}
             tooltip={({
                 arrowRef,
                 tooltipRef,
@@ -179,6 +188,7 @@ export function Tooltip({ children, device = 'desktop', defaultOpen, ...props }:
                 placement,
             }) => (
                 <TooltipContainer
+                    aria-hidden={ariaHidden}
                     mobile={device === 'mobile'}
                     id={tooltipId}
                     role="tooltip"
@@ -198,11 +208,15 @@ export function Tooltip({ children, device = 'desktop', defaultOpen, ...props }:
         >
             {({ getTriggerProps, triggerRef }) => (
                 <StyledSpan
-                    aria-labelledby={tooltipId}
+                    aria-describedby={tooltipId}
                     tabIndex={0}
+                    onBlur={() => !isMobile && setTooltipOpen(undefined)}
+                    onFocus={() => !isMobile && setTooltipOpen(true)}
+                    onMouseDown={(event: MouseEvent<HTMLSpanElement>) => event.preventDefault()}
+                    onKeyDown={handleKeyDown}
                     {...getTriggerProps({ ref: triggerRef })}
                 >
-                    <Icon name="helpCircle" size={device === 'mobile' ? '24' : '16'} color={Theme.greys['dark-grey']} />
+                    <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
                 </StyledSpan>
             )}
         </TooltipTrigger>
