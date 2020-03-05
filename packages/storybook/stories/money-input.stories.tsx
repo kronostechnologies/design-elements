@@ -8,5 +8,5 @@ export default {
 };
 
 export const normal = () => (
-    <MoneyInput/>
+    <MoneyInput label="test" language="fr"/>
 );

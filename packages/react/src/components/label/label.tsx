@@ -9,6 +9,7 @@ const StyledLabel = styled.label`
     letter-spacing: 0.02rem;
     line-height: 1.25rem;
     margin: 0;
+    width: fit-content;
 
     input + & {
         margin-left: var(--spacing-half);
