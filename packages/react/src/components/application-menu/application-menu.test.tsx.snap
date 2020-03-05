@@ -91,7 +91,6 @@ exports[`Application Menu Has burger button and side drawer when screen width is
 
 <header
   className="c0"
-  role="banner"
 >
   <a
     aria-label="Home"
@@ -100,6 +99,8 @@ exports[`Application Menu Has burger button and side drawer when screen width is
     onClick={[Function]}
   >
     <svg
+      aria-hidden="true"
+      focusable="false"
       style={
         Object {
           "height": "100%",
@@ -190,7 +191,6 @@ exports[`Application Menu Matches the snapshot 1`] = `
 
 <header
   className="c0"
-  role="banner"
 >
   <a
     aria-label="Home"
@@ -199,6 +199,8 @@ exports[`Application Menu Matches the snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
+      aria-hidden="true"
+      focusable="false"
       style={
         Object {
           "height": "100%",
