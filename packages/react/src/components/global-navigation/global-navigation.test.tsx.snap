@@ -136,6 +136,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test1"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
@@ -155,6 +156,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test2"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
@@ -174,6 +176,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test3"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
@@ -193,6 +196,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test4"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
@@ -212,6 +216,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test5"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
@@ -239,6 +244,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test6"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
@@ -258,6 +264,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
             className="c3 c4"
             href="/test7"
             onClick={[Function]}
+            onFocus={[Function]}
           >
             <svg
               color="currentColor"
