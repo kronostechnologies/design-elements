@@ -5,7 +5,7 @@ import { Headband } from './equisoft-default';
 describe('Headband', () => {
     test('Matches the snapshot', () => {
         const tree = renderWithProviders(
-            <Headband appName="Benchmark">
+            <Headband>
                 Hello, World!
             </Headband>,
         );
