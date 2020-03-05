@@ -97,7 +97,7 @@ export const ApplicationMenu = ({
     };
 
     return (
-        <Header role="banner">
+        <Header>
             <LogoWrapper to={logoHref} aria-label="Home">
                 <Logo name={productName} />
             </LogoWrapper>
