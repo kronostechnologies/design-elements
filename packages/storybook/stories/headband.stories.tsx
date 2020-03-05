@@ -10,7 +10,7 @@ export default {
 };
 
 export const equisoftDefault = () => (
-    <Headband appName="Benchmark">
+    <Headband>
         {'Hello World!'}
     </Headband>
 );
