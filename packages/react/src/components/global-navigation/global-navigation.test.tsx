@@ -40,26 +40,25 @@ const items: GlobalNavigationItem[] = [
     },
 ];
 
+const footerItems: GlobalNavigationItem[] = [
+    {
+        iconName: 'info',
+        name: 'test',
+        href: '/test6',
+    },
+    {
+        iconName: 'helpCircle',
+        name: 'test',
+        href: '/test7',
+    },
+];
+
 describe('Global Navigation', () => {
     test('Has showMore icon', () => {
         const wrapper = mount(
             setup(
                 <div style={{ height: '600px' }}>
-                    <GlobalNavigation
-                        mainItems={items}
-                        footerItems={[
-                            {
-                                iconName: 'info',
-                                name: 'test',
-                                href: '/test6',
-                            },
-                            {
-                                iconName: 'helpCircle',
-                                name: 'test',
-                                href: '/test7',
-                            },
-                        ]}
-                    />
+                    <GlobalNavigation mainItems={items} footerItems={footerItems}/>
                 </div>,
             ),
         );
@@ -71,21 +70,7 @@ describe('Global Navigation', () => {
         const tree = renderer.create(
             setup(
                 <div style={{ height: '600px' }}>
-                    <GlobalNavigation
-                        mainItems={items}
-                        footerItems={[
-                            {
-                                iconName: 'info',
-                                name: 'test',
-                                href: '/test6',
-                            },
-                            {
-                                iconName: 'helpCircle',
-                                name: 'test',
-                                href: '/test7',
-                            },
-                        ]}
-                    />
+                    <GlobalNavigation mainItems={items} footerItems={footerItems}/>
                 </div>,
             ),
         );
