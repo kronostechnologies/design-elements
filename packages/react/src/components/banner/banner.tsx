@@ -8,26 +8,18 @@ type DeviceType = 'mobile' | 'desktop';
 
 const Container = styled.div<{messageType: MessageType, device: DeviceType}>`
     background-color: ${props => props.messageType === 'error' ? props.theme.notifications['error-2.1'] : props.theme.notifications['alert-3.3'] };
-
-    svg {
-        color: ${props => props.messageType === 'error' ? props.theme.greys.white : props.theme.greys.black };
-    }
-
     color: ${props => props.messageType === 'error' ? props.theme.greys.white : props.theme.greys.black };
     font-size: ${props => props.device === 'desktop' ? 0.75 : 1}rem;
     font-weight: ${props => props.device === 'desktop' ? 600 : 'var(--font-normal)' };
     letter-spacing: ${props => props.device === 'desktop' ? 0.2 : 0.46}px;
-    line-height: 1.25rem;
-    padding: ${props => props.device === 'desktop' ? 'var(--spacing-2x)' : 'var(--spacing-3x) var(--spacing-2x)'};
-    padding-right: 3em;
+    line-height: ${props => props.device === 'desktop' ? 1.25 : 1.5}rem;
+    padding: ${props => props.device === 'desktop' ? 'var(--spacing-2x) var(--spacing-6x)' : 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)'};
     position: relative;
 `;
 
 const Content = styled.div<{device: DeviceType}>`
     display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    position: relative;
+    justify-content: ${props => props.device === 'desktop' ? 'center' : ''};
 
     svg {
         flex-shrink: 0;
@@ -35,7 +27,6 @@ const Content = styled.div<{device: DeviceType}>`
     }
 
     p {
-        align-self: center;
         margin: 0;
     }
 `;
@@ -44,12 +35,13 @@ const CloseButton = styled.button<{device: DeviceType}>`
     appearance: none;
     background: transparent;
     border: 0;
+    color: currentColor;
     cursor: pointer;
     height: ${props => props.device === 'desktop' ? 32 : 48}px;
     padding: 0;
     position: absolute;
-    right: calc(${props => props.device === 'desktop' ? 'var(--spacing-2x) - 6px' : 'var(--spacing-1x) - 10px'});
-    top: calc(var(--spacing-2x) - ${props => props.device === 'desktop' ? 6 : 10}px);
+    right: ${props => props.device === 'desktop' ? '6px' : '0'};
+    top: 9px;
     width: ${props => props.device === 'desktop' ? 32 : 48}px;
 `;
 
