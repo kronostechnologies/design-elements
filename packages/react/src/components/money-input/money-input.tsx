@@ -23,7 +23,7 @@ interface Props {
     validationErrorMessage?: string;
     label?: string;
     value?: number | null;
-    language: Language;
+    language?: Language;
     precision?: number;
 
     onChange?(value: number | null, formattedValue: string): void;
@@ -37,7 +37,7 @@ export function MoneyInput({
     precision = 2,
     value = null,
     validationErrorMessage,
-    language }: Props): ReactElement {
+    language = 'fr' }: Props): ReactElement {
     const locale: Locale = `${language}-CA` as Locale;
     const inputElement = useRef<HTMLInputElement>(null);
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale));
@@ -130,7 +130,7 @@ export function MoneyInput({
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || language === 'en' ? 'Invalid number.' : 'Nombre invalide.'}
+                validationErrorMessage={validationErrorMessage || (language === 'en' ? 'Invalid number.' : 'Nombre invalide.')}
             />
         </InputWrapper>
     );
