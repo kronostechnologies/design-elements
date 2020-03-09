@@ -13,6 +13,9 @@ Array [
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input + .c1 {
@@ -104,6 +107,7 @@ input + .c1 {
 
 .c2:focus {
   border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 label + .c2 {
@@ -306,6 +310,9 @@ Array [
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input + .c1 {
@@ -397,6 +404,7 @@ input + .c1 {
 
 .c2:focus {
   border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 label + .c2 {
