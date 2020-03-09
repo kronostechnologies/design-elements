@@ -12,13 +12,14 @@ const Container = styled.div<{messageType: MessageType, device: DeviceType}>`
     font-size: ${props => props.device === 'desktop' ? 0.75 : 1}rem;
     font-weight: ${props => props.device === 'desktop' ? 600 : 'var(--font-normal)' };
     letter-spacing: ${props => props.device === 'desktop' ? 0.2 : 0.46}px;
-    line-height: ${props => props.device === 'desktop' ? 1.25 : 1.5}rem;
+    line-height: ${({ device }) => device === 'mobile' ? 24 : 20}px;
     padding: ${props => props.device === 'desktop' ? 'var(--spacing-2x) var(--spacing-6x)' : 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)'};
     position: relative;
 `;
 
 const Content = styled.div<{device: DeviceType}>`
     display: flex;
+    height: fit-content;
     justify-content: ${props => props.device === 'desktop' ? 'center' : ''};
 
     svg {

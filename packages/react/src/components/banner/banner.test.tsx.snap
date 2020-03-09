@@ -10,14 +10,9 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
-  line-height: 1.25rem;
-  padding: var(--spacing-2x);
-  padding-right: 3em;
+  line-height: 20px;
+  padding: var(--spacing-2x) var(--spacing-6x);
   position: relative;
-}
-
-.c0 svg {
-  color: #000000;
 }
 
 .c2 {
@@ -25,15 +20,13 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative;
 }
 
 .c2 svg {
@@ -44,9 +37,6 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
 }
 
 .c2 p {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
   margin: 0;
 }
 
@@ -56,12 +46,13 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   appearance: none;
   background: transparent;
   border: 0;
+  color: currentColor;
   cursor: pointer;
   height: 32px;
   padding: 0;
   position: absolute;
-  right: calc(var(--spacing-2x) - 6px);
-  top: calc(var(--spacing-2x) - 6px);
+  right: 6px;
+  top: 9px;
   width: 32px;
 }
 
@@ -110,14 +101,9 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   -moz-letter-spacing: 0.46px;
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
-  line-height: 1.25rem;
-  padding: var(--spacing-3x) var(--spacing-2x);
-  padding-right: 3em;
+  line-height: 24px;
+  padding: var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x);
   position: relative;
-}
-
-.c0 svg {
-  color: #FFFFFF;
 }
 
 .c2 {
@@ -125,15 +111,9 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .c2 svg {
@@ -144,9 +124,6 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
 }
 
 .c2 p {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
   margin: 0;
 }
 
@@ -156,12 +133,13 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   appearance: none;
   background: transparent;
   border: 0;
+  color: currentColor;
   cursor: pointer;
   height: 48px;
   padding: 0;
   position: absolute;
-  right: calc(var(--spacing-1x) - 10px);
-  top: calc(var(--spacing-2x) - 10px);
+  right: 0;
+  top: 9px;
   width: 48px;
 }
 
