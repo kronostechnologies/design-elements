@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchGlobal Matches the snapshot 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -77,23 +97,6 @@ exports[`SearchGlobal Matches the snapshot 1`] = `
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-}
-
-.c2 {
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-  margin: 0;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
 }
 
 .c0 {
@@ -199,6 +202,7 @@ input + .c2 {
 
 .c5:focus {
   border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 label + .c5 {

@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Field Container Invalid field snapshot 1`] = `
+.c2 {
+  color: #A40C2E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
+  margin: var(--spacing-half) 0 0;
+}
+
 .c1 {
   color: #000000;
   display: block;
@@ -12,22 +24,13 @@ exports[`Field Container Invalid field snapshot 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input + .c1 {
   margin-left: var(--spacing-half);
-}
-
-.c2 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
 }
 
 .c0 {
@@ -77,6 +80,9 @@ exports[`Field Container Valid field snapshot 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input + .c1 {

@@ -7,6 +7,7 @@ import { TextInput } from '../text-input/text-input';
 const InputWrapper = styled.div<{language: Language}>`
     input {
         text-align: ${({ language }) => language === 'en' ? 'left' : 'right'};
+        width: 128px;
     }
 `;
 
@@ -20,10 +21,22 @@ type Language = 'en' | 'fr';
 interface Props {
     disabled?: boolean;
     required?: boolean;
+    /**
+     * Message displayed in case of validation error
+     * @default Invalid number.
+     **/
     validationErrorMessage?: string;
     label?: string;
     value?: number | null;
+    /**
+     * Sets input locale and changes visual format accordingly
+     * @default fr
+     **/
     language?: Language;
+    /**
+     * Sets number of decimal
+     * @default 2
+     **/
     precision?: number;
 
     onChange?(value: number | null, formattedValue: string): void;
@@ -59,7 +72,7 @@ export function MoneyInput({
                 placeholder += '0';
             }
         }
-        return lang === 'en' ? `$ ${placeholder}` : `${placeholder} $`;
+        return lang === 'en' ? `$${placeholder}` : `${placeholder} $`;
     };
 
     useEffect(() => {
