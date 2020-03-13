@@ -173,17 +173,7 @@ export function List({
             const focusedValueIndex = options.findIndex(option => option.value === focusedValue);
             const currentOption = list[focusedValueIndex];
             setSelectedFocusIndex(focusedValueIndex);
-
-            if (!listRef.current || !currentOption || !currentOption.ref.current) {
-                return;
-            }
-
-            const listRect = listRef.current.getBoundingClientRect();
-            const itemRect = currentOption.ref.current.getBoundingClientRect();
-
-            if (listRect.height < (itemRect.height * (focusedValueIndex + 1))) {
-                if (listRef.current) listRef.current.scrollTop = itemRect.height * (focusedValueIndex + 1);
-            }
+            handleAutoScroll(currentOption, focusedValueIndex);
         } else {
             setSelectedFocusIndex(-1);
         }
@@ -226,6 +216,24 @@ export function List({
 
     function handleSelect(option: ListOption): () => void {
         return () => selectOption(option);
+    }
+
+    function handleAutoScroll(option: ListOption, focusedIndex: number): void {
+        if (!listRef.current || !option || !option.ref.current) {
+            return;
+        }
+
+        const listRect = listRef.current.getBoundingClientRect();
+        const itemRect = option.ref.current.getBoundingClientRect();
+
+        if (listRect.height < (itemRect.height * (focusedIndex + 1))) {
+            listRef.current.scrollTop = itemRect.height * (focusedIndex);
+        } else if (listRect.top - itemRect.top >= 0) {
+            const spaceDif = listRect.top - itemRect.top;
+            const numberOfItemsToScroll = spaceDif / itemRect.height;
+
+            listRef.current.scrollTop = listRef.current.scrollTop - (itemRect.height * numberOfItemsToScroll);
+        }
     }
 
     function scrollIntoList(direction: 'up' | 'down' | 'top' | 'bottom'): void {
