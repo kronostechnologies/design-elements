@@ -99,6 +99,7 @@ label + .c2 {
   >
     <input
       className="c2"
+      inputMode="numeric"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -209,6 +210,7 @@ label + .c2 {
   >
     <input
       className="c2"
+      inputMode="numeric"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
