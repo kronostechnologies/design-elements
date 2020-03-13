@@ -9,7 +9,7 @@
     "build": "webpack --config ./webpack/webpack.config.prod.js",
     "prepublishOnly": "yarn build",
     "start": "webpack --config ./webpack/webpack.config.dev.js",
-    "test": "jest",
+    "test": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest",
     "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' cross-env NODE_ICU_DATA='node_modules/full-icu' jest --max-workers=2 --reporters=default --reporters=jest-junit",
     "test:unit": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest --config=jest.config.js",
     "lint": "yarn tslint && yarn tslint:tests && yarn stylelint",
@@ -20,7 +20,7 @@
     "tslint:tests:ci": "yarn tslint:tests --format junit -o build/lint/ts/tests.xml",
     "stylelint": "stylelint \"./src/**/*.{ts,tsx}\"",
     "stylelint:ci": "stylelint --custom-formatter node_modules/stylelint-junit-formatter \"./src/**/*.{ts,tsx}\" > build/lint/style/junit.xml",
-    "test-update": "jest -u"
+    "test-update": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest -u"
   },
   "files": [
     "dist"

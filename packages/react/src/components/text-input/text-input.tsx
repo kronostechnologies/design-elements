@@ -9,12 +9,15 @@ const Input = styled.input`
     ${props => inputsStyle(props.theme)}
 `;
 
+type inputModeType = 'none' | 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search';
+
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
     'inputMode' | 'value'>;
 
 interface TextInputProps extends PartialInputProps {
     defaultValue?: string;
     disabled?: boolean;
+    inputMode?: inputModeType;
     label?: string;
     pattern?: string;
     placeholder?: string;
@@ -57,6 +60,7 @@ const TextInput = React.forwardRef(
         const {
             defaultValue,
             disabled,
+            inputMode,
             label,
             pattern,
             placeholder,
@@ -77,6 +81,7 @@ const TextInput = React.forwardRef(
                     defaultValue={defaultValue}
                     disabled={disabled}
                     id={id}
+                    inputMode={inputMode}
                     ref={ref}
                     onBlur={handleBlur}
                     onChange={handleChange}
