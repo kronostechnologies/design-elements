@@ -34,6 +34,7 @@ input + .c2 {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c7 {
 =======
 .c5 {
@@ -41,6 +42,9 @@ input + .c2 {
 =======
 .c6 {
 >>>>>>> Update handleBlur function
+=======
+.c7 {
+>>>>>>> Add combobox keyboard functionalities
   background-color: #FFFFFF;
   list-style-type: none;
   margin: 0;
@@ -53,6 +57,7 @@ input + .c2 {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c8 {
 =======
 .c6 {
@@ -60,6 +65,9 @@ input + .c2 {
 =======
 .c7 {
 >>>>>>> Update handleBlur function
+=======
+.c8 {
+>>>>>>> Add combobox keyboard functionalities
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -106,6 +114,7 @@ input + .c2 {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c8:hover,
 .c8:focus {
 =======
@@ -116,6 +125,10 @@ input + .c2 {
 .c7:hover,
 .c7:focus {
 >>>>>>> Update handleBlur function
+=======
+.c8:hover,
+.c8:focus {
+>>>>>>> Add combobox keyboard functionalities
   background-color: #D9DDE2;
 }
 
@@ -311,7 +324,22 @@ label + .c2 {
 }
 
 .c5 {
+<<<<<<< HEAD
 >>>>>>> Update handleBlur function
+=======
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+>>>>>>> Add combobox keyboard functionalities
   display: none;
   position: absolute;
 >>>>>>> Renames Dropdown to Select
@@ -321,6 +349,7 @@ label + .c2 {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c5 ul {
   border-radius: 0.25rem;
 =======
@@ -328,6 +357,9 @@ label + .c2 {
 =======
 .c5 ul {
 >>>>>>> Update handleBlur function
+=======
+.c6 ul {
+>>>>>>> Add combobox keyboard functionalities
   border-radius: var(--border-radius);
 >>>>>>> Adds CSS variables
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -370,10 +402,13 @@ label + .c2 {
     className="c3"
     disabled={true}
     onClick={[Function]}
+<<<<<<< HEAD
 =======
     className="c3"
     disabled={true}
 >>>>>>> Update handleBlur function
+=======
+>>>>>>> Add combobox keyboard functionalities
     role="combobox"
 <<<<<<< HEAD
   >
@@ -455,18 +490,26 @@ label + .c2 {
       type="text"
       value=""
     />
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="24"
-      width="24"
-    />
+    <button
+      className="c5"
+      disabled={true}
+      tabIndex={-1}
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="24"
+        width="24"
+      />
+    </button>
   </div>
   <div
-    className="c5"
+    className="c6"
     open={false}
   >
     <ul
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       className="c6"
@@ -480,6 +523,9 @@ label + .c2 {
 =======
       className="c6"
 >>>>>>> Update handleBlur function
+=======
+      className="c7"
+>>>>>>> Add combobox keyboard functionalities
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -488,7 +534,7 @@ label + .c2 {
       <li
         aria-label="Ontario"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_on"
         onClick={[Function]}
         role="option"
@@ -499,7 +545,7 @@ label + .c2 {
       <li
         aria-label="Quebec"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_qc"
         onClick={[Function]}
         role="option"
@@ -510,7 +556,7 @@ label + .c2 {
       <li
         aria-label="British Columbia"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_bc"
         onClick={[Function]}
         role="option"
@@ -521,7 +567,7 @@ label + .c2 {
       <li
         aria-label="Alberta"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_ab"
         onClick={[Function]}
         role="option"
@@ -532,7 +578,7 @@ label + .c2 {
       <li
         aria-label="Manitoba"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_mb"
         onClick={[Function]}
         role="option"
@@ -543,7 +589,7 @@ label + .c2 {
       <li
         aria-label="Saskatchewan"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_sk"
         onClick={[Function]}
         role="option"
@@ -554,6 +600,7 @@ label + .c2 {
       <li
         aria-label="Nova Scotia"
         aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         className="c7"
@@ -575,6 +622,9 @@ label + .c2 {
 =======
         className="c7"
 >>>>>>> Update handleBlur function
+=======
+        className="c8"
+>>>>>>> Add combobox keyboard functionalities
         id="undefined_ns"
 >>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
@@ -586,7 +636,7 @@ label + .c2 {
       <li
         aria-label="New Brunswick"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_nb"
         onClick={[Function]}
         role="option"
@@ -597,7 +647,7 @@ label + .c2 {
       <li
         aria-label="Newfoundland and Labrador"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_nl"
         onClick={[Function]}
         role="option"
@@ -608,7 +658,7 @@ label + .c2 {
       <li
         aria-label="Prince Edward Island"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_pe"
         onClick={[Function]}
         role="option"
@@ -619,7 +669,7 @@ label + .c2 {
       <li
         aria-label="Northwest Territories"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_nt"
         onClick={[Function]}
         role="option"
@@ -630,7 +680,7 @@ label + .c2 {
       <li
         aria-label="Nunavut"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_nu"
         onClick={[Function]}
         role="option"
@@ -641,7 +691,7 @@ label + .c2 {
       <li
         aria-label="Yukon"
         aria-selected={false}
-        className="c7"
+        className="c8"
         id="undefined_yt"
         onClick={[Function]}
         role="option"
@@ -656,7 +706,7 @@ label + .c2 {
 
 exports[`Select invalid select has a different style 1`] = `
 Array [
-  .c8 {
+  .c9 {
   color: #A40C2E;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
@@ -699,7 +749,7 @@ input + .c2 {
   border-color: #A40C2E;
 }
 
-.c6 {
+.c7 {
   background-color: #FFFFFF;
   list-style-type: none;
   margin: 0;
@@ -710,7 +760,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -731,8 +781,8 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c7:hover,
-.c7:focus {
+.c8:hover,
+.c8:focus {
   background-color: #D9DDE2;
 }
 
@@ -814,12 +864,24 @@ input + .c2 {
 }
 
 .c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
   display: none;
   position: absolute;
   width: 100%;
 }
 
-.c5 ul {
+.c6 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
 }
@@ -837,6 +899,7 @@ input + .c2 {
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
       className="c3"
+<<<<<<< HEAD
 <<<<<<< HEAD
       onBlur={[Function]}
       onChange={[Function]}
@@ -2331,8 +2394,60 @@ input + .c2 {
 >>>>>>> Adds more keyboard functionalities
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 1px solid #D9DDE2;
   border-radius: 0.25rem;
+=======
+=======
+      onClick={[Function]}
+      role="combobox"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox_undefined"
+        aria-multiline="false"
+        className="c4"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select an option"
+        type="text"
+        value=""
+      />
+      <button
+        className="c5"
+        onClick={[Function]}
+        tabIndex={-1}
+        type="button"
+      >
+        <svg
+          color="currentColor"
+          focusable={false}
+          height="24"
+          width="24"
+        />
+      </button>
+    </div>
+    <div
+      className="c6"
+      open={false}
+    >
+      <ul
+        className="c7"
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        role="listbox"
+        tabIndex={0}
+      >
+        <li
+>>>>>>> Add combobox keyboard functionalities
+          aria-label="Ontario"
+          aria-selected={false}
+          className="c8"
+          id="undefined_on"
+<<<<<<< HEAD
+>>>>>>> Add combobox keyboard functionalities
 =======
 >>>>>>> Adds scroll position reset after selection
   border: 1px solid #57666E;
@@ -2415,12 +2530,30 @@ input + .c2 {
 .c4:focus {
   outline: none;
 >>>>>>> Adds more keyboard functionalities
+<<<<<<< HEAD
 }
 
 <<<<<<< HEAD
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
+=======
+=======
+>>>>>>> Add combobox keyboard functionalities
+          onClick={[Function]}
+          role="option"
+          selected={false}
+        >
+          Ontario
+        </li>
+        <li
+          aria-label="Quebec"
+          aria-selected={false}
+<<<<<<< HEAD
+<<<<<<< HEAD
+          className="c8"
+          id="undefined_qc"
+>>>>>>> Add combobox keyboard functionalities
 =======
 <<<<<<< HEAD
           id="on-0"
@@ -2951,6 +3084,10 @@ input + .c2 {
 =======
           id="undefined_qc"
 >>>>>>> Adds more keyboard functionalities
+=======
+          className="c8"
+          id="undefined_qc"
+>>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2960,6 +3097,7 @@ input + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_bc"
@@ -2983,6 +3121,10 @@ input + .c2 {
 =======
           id="undefined_bc"
 >>>>>>> Adds more keyboard functionalities
+=======
+          className="c8"
+          id="undefined_bc"
+>>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2992,6 +3134,7 @@ input + .c2 {
         <li
           aria-label="Alberta"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_ab"
@@ -3015,6 +3158,10 @@ input + .c2 {
 =======
           id="undefined_ab"
 >>>>>>> Adds more keyboard functionalities
+=======
+          className="c8"
+          id="undefined_ab"
+>>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3024,6 +3171,7 @@ input + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_mb"
@@ -3047,6 +3195,10 @@ input + .c2 {
 =======
           id="undefined_mb"
 >>>>>>> Adds more keyboard functionalities
+=======
+          className="c8"
+          id="undefined_mb"
+>>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3056,6 +3208,7 @@ input + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_sk"
@@ -3077,6 +3230,9 @@ input + .c2 {
           id="5_sk"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_sk"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3088,6 +3244,7 @@ input + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_ns"
@@ -3109,6 +3266,9 @@ input + .c2 {
           id="6_ns"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_ns"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3120,6 +3280,7 @@ input + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nb"
@@ -3141,6 +3302,9 @@ input + .c2 {
           id="7_nb"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nb"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3152,6 +3316,7 @@ input + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nl"
@@ -3173,6 +3338,9 @@ input + .c2 {
           id="8_nl"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nl"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3184,6 +3352,7 @@ input + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_pe"
@@ -3205,6 +3374,9 @@ input + .c2 {
           id="9_pe"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_pe"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3216,6 +3388,7 @@ input + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nt"
@@ -3237,6 +3410,9 @@ input + .c2 {
           id="10_nt"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nt"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3248,6 +3424,7 @@ input + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nu"
@@ -3269,6 +3446,9 @@ input + .c2 {
           id="11_nu"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nu"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3280,6 +3460,7 @@ input + .c2 {
         <li
           aria-label="Yukon"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_yt"
@@ -3301,6 +3482,9 @@ input + .c2 {
           id="12_yt"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_yt"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3314,10 +3498,14 @@ input + .c2 {
     <div
       aria-live="polite"
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="c9"
 =======
       className="c8"
 >>>>>>> Renames Dropdown to Select
+=======
+      className="c9"
+>>>>>>> Add combobox keyboard functionalities
       id="undefined_invalid"
       role="alert"
     >
@@ -3469,8 +3657,11 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c6 {
 =======
+=======
+>>>>>>> Add combobox keyboard functionalities
 <<<<<<< HEAD
 .c7 {
 >>>>>>> Renames Dropdown to Select
@@ -3481,6 +3672,9 @@ input + .c2 {
   background-color: #fff;
 >>>>>>> Renames Dropdown to Select
 =======
+=======
+.c7 {
+>>>>>>> Add combobox keyboard functionalities
   background-color: #FFFFFF;
 >>>>>>> Requested changes
   list-style-type: none;
@@ -3493,12 +3687,18 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c7 {
 =======
+=======
+>>>>>>> Add combobox keyboard functionalities
 <<<<<<< HEAD
 .c8 {
 =======
 .c7 {
+=======
+.c8 {
+>>>>>>> Add combobox keyboard functionalities
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3519,6 +3719,7 @@ input + .c2 {
   white-space: nowrap;
 }
 
+<<<<<<< HEAD
 .c7:hover,
 .c7:focus {
   background-color: #D9DDE2;
@@ -3566,8 +3767,15 @@ input + .c2 {
   white-space: nowrap;
 }
 
+<<<<<<< HEAD
 .c7:hover,
 .c7:focus {
+=======
+=======
+>>>>>>> Add combobox keyboard functionalities
+.c8:hover,
+.c8:focus {
+>>>>>>> Add combobox keyboard functionalities
   background-color: #D9DDE2;
 }
 
@@ -3761,8 +3969,26 @@ input + .c2 {
 =======
 >>>>>>> Adds more keyboard functionalities
 .c5 {
+<<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
+<<<<<<< HEAD
 >>>>>>> Renames Dropdown to Select
+=======
+=======
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+>>>>>>> Add combobox keyboard functionalities
+>>>>>>> Add combobox keyboard functionalities
   display: none;
   position: absolute;
   width: 100%;
@@ -3772,12 +3998,15 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c5 ul {
 =======
 =======
 >>>>>>> Adds CSS variables
 =======
 >>>>>>> Update handleBlur function
+=======
+>>>>>>> Add combobox keyboard functionalities
 <<<<<<< HEAD
 .c6 ul {
 >>>>>>> Renames Dropdown to Select
@@ -3817,6 +4046,9 @@ label + .c2 {
 >>>>>>> Adds more keyboard functionalities
 =======
 .c5 ul {
+=======
+.c6 ul {
+>>>>>>> Add combobox keyboard functionalities
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
 >>>>>>> Update handleBlur function
@@ -3854,6 +4086,9 @@ label + .c2 {
         value=""
       />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add combobox keyboard functionalities
       <button
         className="c5"
         onClick={[Function]}
@@ -3867,6 +4102,7 @@ label + .c2 {
           width="24"
         />
       </button>
+<<<<<<< HEAD
 =======
       <svg
         color="currentColor"
@@ -3921,13 +4157,15 @@ label + .c2 {
         height="24"
         width="24"
       />
+=======
+>>>>>>> Add combobox keyboard functionalities
     </div>
     <div
-      className="c5"
+      className="c6"
       open={false}
     >
       <ul
-        className="c6"
+        className="c7"
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         role="listbox"
@@ -3936,6 +4174,7 @@ label + .c2 {
         <li
           aria-label="Ontario"
           aria-selected={false}
+<<<<<<< HEAD
           className="c7"
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3953,6 +4192,9 @@ label + .c2 {
           id="0_on"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_on"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3964,6 +4206,7 @@ label + .c2 {
         <li
           aria-label="Quebec"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_qc"
@@ -3985,6 +4228,9 @@ label + .c2 {
           id="1_qc"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_qc"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -3996,6 +4242,7 @@ label + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_bc"
@@ -4017,6 +4264,9 @@ label + .c2 {
           id="2_bc"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_bc"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4028,6 +4278,7 @@ label + .c2 {
         <li
           aria-label="Alberta"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_ab"
@@ -4049,6 +4300,9 @@ label + .c2 {
           id="3_ab"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_ab"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4060,6 +4314,7 @@ label + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_mb"
@@ -4081,6 +4336,9 @@ label + .c2 {
           id="4_mb"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_mb"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4092,6 +4350,7 @@ label + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_sk"
@@ -4113,6 +4372,9 @@ label + .c2 {
           id="5_sk"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_sk"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4124,6 +4386,7 @@ label + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_ns"
@@ -4145,6 +4408,9 @@ label + .c2 {
           id="6_ns"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_ns"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4156,6 +4422,7 @@ label + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nb"
@@ -4177,6 +4444,9 @@ label + .c2 {
           id="7_nb"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nb"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4188,6 +4458,7 @@ label + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nl"
@@ -4209,6 +4480,9 @@ label + .c2 {
           id="8_nl"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nl"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4220,6 +4494,7 @@ label + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_pe"
@@ -4241,6 +4516,9 @@ label + .c2 {
           id="9_pe"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_pe"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4252,6 +4530,7 @@ label + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nt"
@@ -4273,6 +4552,9 @@ label + .c2 {
           id="10_nt"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nt"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4284,6 +4566,7 @@ label + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_nu"
@@ -4305,6 +4588,9 @@ label + .c2 {
           id="11_nu"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_nu"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
@@ -4316,6 +4602,7 @@ label + .c2 {
         <li
           aria-label="Yukon"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
           id="undefined_yt"
@@ -4337,6 +4624,9 @@ label + .c2 {
           id="12_yt"
 >>>>>>> PR requested changes
 =======
+=======
+          className="c8"
+>>>>>>> Add combobox keyboard functionalities
           id="undefined_yt"
 >>>>>>> Adds more keyboard functionalities
           onClick={[Function]}

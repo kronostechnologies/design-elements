@@ -267,8 +267,6 @@ export const Select = ({
                 setInputValue(event.target.value);
                 setOpen(false);
             }
-            setInputValue(event.target.value);
-            setSearchValue(event.target.value);
         }
     };
 
