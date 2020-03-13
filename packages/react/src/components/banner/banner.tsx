@@ -12,7 +12,7 @@ const Container = styled.div<{messageType: MessageType, device: DeviceType}>`
     font-size: ${props => props.device === 'desktop' ? 0.75 : 1}rem;
     font-weight: ${props => props.device === 'desktop' ? 600 : 'var(--font-normal)' };
     letter-spacing: ${props => props.device === 'desktop' ? 0.2 : 0.46}px;
-    line-height: ${({ device }) => device === 'mobile' ? 24 : 20}px;
+    line-height: ${({ device }) => device === 'mobile' ? 1.5 : 1.25}rem;
     padding: ${props => props.device === 'desktop' ? 'var(--spacing-2x) var(--spacing-6x)' : 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)'};
     position: relative;
 `;
@@ -76,7 +76,13 @@ export const Banner = ({ children, type, device, hidden }: BannerProps) => {
 
     return visible ? (
         <Container data-testid="container" role="alert" messageType={type} device={concreteDevice}>
-            <CloseButton data-testid="closeButton" onClick={() => setVisible(false)} device={concreteDevice} aria-label="Close">
+            <CloseButton
+                data-testid="closeButton"
+                onClick={() => setVisible(false)}
+                device={concreteDevice}
+                aria-label="Close"
+                type="button"
+            >
                 <Icon name="x" size={device === 'mobile' ? '28' : '20'}/>
             </CloseButton>
             <Content device={concreteDevice}>

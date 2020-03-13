@@ -10,7 +10,7 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
-  line-height: 20px;
+  line-height: 1.25rem;
   padding: var(--spacing-2x) var(--spacing-6x);
   position: relative;
 }
@@ -66,6 +66,7 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
     className="c1"
     data-testid="closeButton"
     onClick={[Function]}
+    type="button"
   >
     <svg
       color="currentColor"
@@ -101,7 +102,7 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   -moz-letter-spacing: 0.46px;
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
-  line-height: 24px;
+  line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x);
   position: relative;
 }
@@ -153,6 +154,7 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
     className="c1"
     data-testid="closeButton"
     onClick={[Function]}
+    type="button"
   >
     <svg
       color="currentColor"
