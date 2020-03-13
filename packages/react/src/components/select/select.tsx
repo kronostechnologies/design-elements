@@ -88,6 +88,12 @@ const StyledInput = styled.input<InputProps>`
     }
 `;
 
+const Arrow = styled.button<{disabled?: boolean}>`
+    align-items: center;
+    cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
+    display: flex;
+`;
+
 const ListWrapper = styled.div<{open?: boolean}>`
     display: ${props => props.open ? 'flex' : 'none'};
     position: absolute;
@@ -207,6 +213,7 @@ export const Select = ({
             setFocus(true);
             if (searchable && inputRef.current) {
                 inputRef.current.focus();
+                setFocusedValue('');
             }
         } else {
             checkSearchValue && setSelectedOptionValue(checkSearchValue.value);
@@ -214,6 +221,15 @@ export const Select = ({
             setAutofocus(false);
         }
         setOpen(!open);
+    };
+
+    const handleInputClick = () => {
+        if (searchable) {
+            setFocusedValue('');
+        } else {
+            handleOpen();
+        }
+        setAutofocus(false);
     };
 
     const handleChange = (option: Option): void => {
@@ -231,37 +247,72 @@ export const Select = ({
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (searchable) {
-            const optionsArray = filterOptions(options, event.target.value);
+            if (event.target.value !== '') {
+                const optionsArray = filterOptions(options, event.target.value);
 
-            if (event.target.value !== '' && optionsArray.length > 0) {
-                setFocusedValue(optionsArray[0].value);
+                if (event.target.value !== '' && optionsArray.length > 0) {
+                    setFocusedValue(optionsArray[0].value);
+                } else {
+                    setSelectedOptionValue('');
+                    setFocusedValue('');
+                }
+                setInputValue(event.target.value);
+                setSearchValue(event.target.value);
+                setOpen(true);
             } else {
-                setSelectedOptionValue('');
                 setFocusedValue('');
+                setSearchValue('');
+                setInputValue(event.target.value);
+                setOpen(false);
             }
-            setInputValue(event.target.value);
-            setSearchValue(event.target.value);
         }
     };
 
     const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
-        switch (event.key) {
-            case 'ArrowDown':
-            case 'ArrowUp':
-                open && setAutofocus(true);
+        switch (event.keyCode) {
+            case 40 /* ArrowDown */:
+                if (!open) {
+                    handleOpen();
+                    setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
+                } else {
+                    if (searchValue !== '') {
+                        setTimeout(() => setFocusedValue(filteredOptions[1].value), 10);
+                    } else {
+                        setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
+                    }
+                }
+                setAutofocus(true);
                 break;
-            case 'Enter':
+            case 38 /* ArrowUp */:
+                if (!open) {
+                    handleOpen();
+                    setFocusedValue('');
+                } else if (autoFocus) {
+                    setAutofocus(false);
+                }
+                setTimeout(() => setFocusedValue(filteredOptions[filteredOptions.length - 1].value), 10);
+                setAutofocus(true);
+                break;
+            case 13 /* Enter */:
                 event.preventDefault();
                 if (searchValue !== '' && filteredOptions.length > 0 && open) {
                     handleChange(filteredOptions[0]);
                 }
-                handleOpen();
                 break;
-            case 'Escape':
+            case 32 /* Spacebar */:
+                if (!open) {
+                    event.preventDefault();
+                    handleOpen();
+                }
+                break;
+            case 27 /* Escape */:
                 setInputValue('');
                 setSearchValue('');
                 setFocusedValue('');
                 setSelectedOptionValue('');
+                if (open) {
+                    handleOpen();
+                }
                 break;
             default:
                 break;
@@ -334,10 +385,10 @@ export const Select = ({
                     device={device}
                     disabled={disabled}
                     focus={focus}
-                    onClick={disabled ? undefined : handleOpen}
                     ref={wrapperRef}
                     role="combobox"
                     valid={valid}
+                    onClick={handleInputClick}
                 >
                     <StyledInput
                         aria-activedescendant={selectedOptionValue ? `${id}_${selectedOptionValue}` : undefined}
@@ -358,7 +409,14 @@ export const Select = ({
                         type="text"
                         value={inputValue}
                     />
-                    <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '32' : '24'}/>
+                    <Arrow
+                        type="button"
+                        tabIndex={-1}
+                        onClick={disabled ? undefined : handleOpen}
+                        disabled={disabled}
+                    >
+                        <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '32' : '24'}/>
+                    </Arrow>
                 </InputWrapper>
                 <ListWrapper open={open}>
                     <List

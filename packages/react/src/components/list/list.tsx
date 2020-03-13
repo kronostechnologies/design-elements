@@ -170,7 +170,20 @@ export function List({
 
     useEffect(() => {
         if (focusedValue) {
-            setSelectedFocusIndex(options.findIndex(option => option.value === focusedValue));
+            const focusedValueIndex = options.findIndex(option => option.value === focusedValue);
+            const currentOption = list[focusedValueIndex];
+            setSelectedFocusIndex(focusedValueIndex);
+
+            if (!listRef.current || !currentOption || !currentOption.ref.current) {
+                return;
+            }
+
+            const listRect = listRef.current.getBoundingClientRect();
+            const itemRect = currentOption.ref.current.getBoundingClientRect();
+
+            if (listRect.height < (itemRect.height * (focusedValueIndex + 1))) {
+                if (listRef.current) listRef.current.scrollTop = itemRect.height * (focusedValueIndex + 1);
+            }
         } else {
             setSelectedFocusIndex(-1);
         }
@@ -245,6 +258,7 @@ export function List({
                 break;
             case 'bottom':
                 listRef.current.scrollTop = listRect.bottom;
+                break;
         }
     }
 
