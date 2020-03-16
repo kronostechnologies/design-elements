@@ -4,10 +4,11 @@ import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'r
 import styled from 'styled-components';
 import { TextInput } from '../text-input/text-input';
 
-const InputWrapper = styled.div<{language: Language}>`
+const InputWrapper = styled.div<{language: Language, width: number}>`
     input {
         text-align: ${({ language }) => language === 'en' ? 'left' : 'right'};
-        width: 128px;
+        transition: width 300ms;
+        width: ${({ width }) => width}px;
     }
 `;
 
@@ -53,6 +54,9 @@ export function MoneyInput({
     language = 'fr' }: Props): ReactElement {
     const locale: Locale = `${language}-CA` as Locale;
     const inputElement = useRef<HTMLInputElement>(null);
+    const defaultWidth = 116;
+    const [inputWidth, setInputWidth] = useState(defaultWidth);
+
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale));
     const [, setHasFocus] = useStateCallback(false, hasFocus => {
@@ -83,6 +87,14 @@ export function MoneyInput({
 
     function handleBlurEvent(): void {
         setHasFocus(false);
+        setTimeout(() => {
+            const currentValueLength = inputElement.current?.value.length;
+            const maxLength = 13;
+            if (currentValueLength && currentValueLength > maxLength) {
+                const diff = currentValueLength - maxLength;
+                setInputWidth(defaultWidth + (8 * diff));
+            }
+        }, 10);
     }
 
     function handleFocusEvent(): void {
@@ -90,6 +102,7 @@ export function MoneyInput({
         const roundedValueAsString = roundedValue === null ? '' : roundedValue.toString();
         setDisplayValue(roundedValueAsString);
         setHasFocus(true);
+        setInputWidth(defaultWidth);
     }
 
     function handleChangeEvent(event: ChangeEvent<HTMLInputElement>): void {
@@ -130,7 +143,7 @@ export function MoneyInput({
     }
 
     return (
-        <InputWrapper language={language}>
+        <InputWrapper language={language} width={inputWidth}>
             <TextInput
                 required={required}
                 disabled={disabled}

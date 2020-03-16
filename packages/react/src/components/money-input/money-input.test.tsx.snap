@@ -88,11 +88,14 @@ label + .c2 {
 
 .c0 input {
   text-align: left;
-  width: 128px;
+  -webkit-transition: width 300ms;
+  transition: width 300ms;
+  width: 116px;
 }
 
 <div
   className="c0"
+  width={116}
 >
   <div
     className="c1"
@@ -199,11 +202,14 @@ label + .c2 {
 
 .c0 input {
   text-align: right;
-  width: 128px;
+  -webkit-transition: width 300ms;
+  transition: width 300ms;
+  width: 116px;
 }
 
 <div
   className="c0"
+  width={116}
 >
   <div
     className="c1"
