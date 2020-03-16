@@ -19,7 +19,6 @@ const Container = styled.div<{messageType: MessageType, device: DeviceType}>`
 
 const Content = styled.div<{device: DeviceType}>`
     display: flex;
-    height: fit-content;
     justify-content: ${props => props.device === 'desktop' ? 'center' : ''};
 
     svg {
