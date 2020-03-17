@@ -1,12 +1,12 @@
-import { Context, createContext, useEffect, useState  } from 'react';
+import React, { createContext, ReactElement, ReactNode, useContext, useEffect, useState  } from 'react';
 import { breakpoints } from '../../tokens/breakpoints';
 
-type DeviceType = 'desktop' | 'tablet' | 'mobile';
+export type DeviceType = 'desktop' | 'tablet' | 'mobile';
+const DeviceContext = createContext<DeviceType>('desktop');
 
-function DeviceContextProvider(): Context<DeviceType> {
+function DeviceContextProvider({ children }: { children: ReactNode }): ReactElement {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth || document.documentElement.clientWidth);
     const [device, setDevice] = useState<DeviceType>('desktop');
-    const DeviceContext = createContext<DeviceType>(device);
 
     useEffect(() => {
         window.addEventListener('resize', handleScreenResize);
@@ -29,7 +29,12 @@ function DeviceContextProvider(): Context<DeviceType> {
         setScreenWidth(window.innerWidth || document.documentElement.clientWidth);
     };
 
-    return DeviceContext;
+    return (
+        <DeviceContext.Provider value={device}>
+            {children}
+        </DeviceContext.Provider>
+    );
 }
 
 export { DeviceContextProvider };
+export const useDeviceContext = () => useContext(DeviceContext);

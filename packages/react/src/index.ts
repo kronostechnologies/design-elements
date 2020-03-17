@@ -16,6 +16,7 @@ export { TextInput } from './components/text-input/text-input';
 
 // Context
 export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';
+export { DeviceContextProvider } from './components/device-context-provider/device-context-provider';
 
 // Lists
 export { List } from './components/list/list';
