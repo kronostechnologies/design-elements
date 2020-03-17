@@ -1,25 +1,25 @@
 import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
+import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
 type MessageType = 'warning' | 'error';
-type DeviceType = 'mobile' | 'desktop';
 
-const Container = styled.div<{messageType: MessageType, device: DeviceType}>`
+const Container = styled.div<{messageType: MessageType, isMobile: boolean}>`
     background-color: ${props => props.messageType === 'error' ? props.theme.notifications['error-2.1'] : props.theme.notifications['alert-3.3'] };
     color: ${props => props.messageType === 'error' ? props.theme.greys.white : props.theme.greys.black };
-    font-size: ${props => props.device === 'desktop' ? 0.75 : 1}rem;
-    font-weight: ${props => props.device === 'desktop' ? 600 : 'var(--font-normal)' };
-    letter-spacing: ${props => props.device === 'desktop' ? 0.2 : 0.46}px;
-    line-height: ${({ device }) => device === 'mobile' ? 1.5 : 1.25}rem;
-    padding: ${props => props.device === 'desktop' ? 'var(--spacing-2x) var(--spacing-6x)' : 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)'};
+    font-size: ${({ isMobile }) => isMobile ? 1 : 0.75}rem;
+    font-weight: ${({ isMobile }) => isMobile ? 'var(--font-normal)' : 600 };
+    letter-spacing: ${({ isMobile }) => isMobile ? 0.46 : 0.2}px;
+    line-height: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
+    padding: ${({ isMobile }) => isMobile ? 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x) var(--spacing-6x)'};
     position: relative;
 `;
 
-const Content = styled.div<{device: DeviceType}>`
+const Content = styled.div<{isMobile: boolean}>`
     display: flex;
-    justify-content: ${props => props.device === 'desktop' ? 'center' : ''};
+    justify-content: ${({ isMobile }) => isMobile ? '' : 'center'};
 
     svg {
         flex-shrink: 0;
@@ -31,18 +31,18 @@ const Content = styled.div<{device: DeviceType}>`
     }
 `;
 
-const CloseButton = styled.button<{device: DeviceType}>`
+const CloseButton = styled.button<{isMobile: boolean}>`
     appearance: none;
     background: transparent;
     border: 0;
     color: currentColor;
     cursor: pointer;
-    height: ${props => props.device === 'desktop' ? 32 : 48}px;
+    height: ${({ isMobile }) => isMobile ? 48 : 32}px;
     padding: 0;
     position: absolute;
-    right: ${props => props.device === 'desktop' ? '6px' : '0'};
+    right: ${({ isMobile }) => isMobile ? '0' : '6px'};
     top: 9px;
-    width: ${props => props.device === 'desktop' ? 32 : 48}px;
+    width: ${({ isMobile }) => isMobile ? 48 : 32}px;
 `;
 
 const GetIconName = (messageType: MessageType): IconName => {
@@ -69,23 +69,24 @@ interface BannerProps {
     hidden?: boolean;
 }
 
-export const Banner = ({ children, type, device, hidden }: BannerProps) => {
-    const concreteDevice = device || 'desktop';
+export const Banner = ({ children, type, hidden }: BannerProps) => {
+    const deviceContext = useDeviceContext();
+    const isMobile = deviceContext === 'mobile';
     const [visible, setVisible] = useState(!hidden);
 
     return visible ? (
-        <Container data-testid="container" role="alert" messageType={type} device={concreteDevice}>
+        <Container data-testid="container" role="alert" messageType={type} isMobile={isMobile}>
             <CloseButton
                 data-testid="closeButton"
                 onClick={() => setVisible(false)}
-                device={concreteDevice}
+                isMobile={isMobile}
                 aria-label="Close"
                 type="button"
             >
-                <Icon name="x" size={device === 'mobile' ? '28' : '20'}/>
+                <Icon name="x" size={isMobile ? '28' : '20'}/>
             </CloseButton>
-            <Content device={concreteDevice}>
-                <Icon name={GetIconName(type)} aria-hidden="true" size={device === 'mobile' ? '24' : '20'}/>
+            <Content isMobile={isMobile}>
+                <Icon name={GetIconName(type)} aria-hidden="true" size={isMobile ? '24' : '20'}/>
                 <p>{children}</p>
             </Content>
         </Container>
