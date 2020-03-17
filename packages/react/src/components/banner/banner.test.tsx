@@ -1,17 +1,19 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Banner } from './banner';
 
 describe('Banner', () => {
     test('Matches snapshot (desktop)', () => {
         const tree = renderer.create(
-            ThemeWrapped(
-                <Banner type="warning">
-                    WARNING! Lorem ipsum
-                </Banner>,
-            ),
+            DeviceContextWrapped(
+                ThemeWrapped(
+                    <Banner type="warning">
+                        WARNING! Lorem ipsum
+                    </Banner>,
+                ), 'desktop'),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -19,11 +21,12 @@ describe('Banner', () => {
 
     test('Matches snapshot (mobile)', () => {
         const tree = renderer.create(
-            ThemeWrapped(
-                <Banner type="error" device="mobile">
-                    ERROR! Lorem ipsum
-                </Banner>,
-            ),
+            DeviceContextWrapped(
+                ThemeWrapped(
+                    <Banner type="error" device="mobile">
+                        ERROR! Lorem ipsum
+                    </Banner>,
+                ), 'mobile'),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
