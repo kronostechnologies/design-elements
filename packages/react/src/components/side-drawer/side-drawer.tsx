@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode,  useEffect, useRef, useState } from 're
 import styled from 'styled-components';
 import { breakpoints } from '../../tokens/breakpoints';
 
-const tabletMin = `${(breakpoints.tablet / 16)}rem`;
+const desktopMin = `${(breakpoints.desktop / 16)}rem`;
 
 type Origin = 'right' | 'left';
 
@@ -26,7 +26,7 @@ const Container = styled.div<ContainerProps>`
     width: ${props => props.width};
     z-index: 100;
 
-    @media screen and (min-width: ${tabletMin}) {
+    @media screen and (min-width: ${desktopMin}) {
         height: calc(100vh - 80px);
         top: 80px;
     }

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactElement, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -69,7 +69,7 @@ interface BannerProps {
     hidden?: boolean;
 }
 
-export const Banner = ({ children, type, hidden }: BannerProps) => {
+export function Banner({ children, type, hidden }: BannerProps): ReactElement | null {
     const deviceContext = useDeviceContext();
     const isMobile = deviceContext === 'mobile';
     const [visible, setVisible] = useState(!hidden);
@@ -91,4 +91,4 @@ export const Banner = ({ children, type, hidden }: BannerProps) => {
             </Content>
         </Container>
     ) : null;
-};
+}
