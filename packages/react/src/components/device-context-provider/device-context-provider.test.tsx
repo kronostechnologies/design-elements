@@ -27,7 +27,7 @@ describe('Device Context Provider', () => {
     });
 
     test('Should return desktop', () => {
-        setScreenWidth(1000);
+        setScreenWidth(1100);
         const wrapper = setup();
         const element = wrapper.find('button');
 
@@ -43,7 +43,7 @@ describe('Device Context Provider', () => {
     });
 
     test('Should return mobile', () => {
-        setScreenWidth(500);
+        setScreenWidth(400);
         const wrapper = setup();
         const element = wrapper.find('button');
 
@@ -51,10 +51,10 @@ describe('Device Context Provider', () => {
     });
 
     test('Should return staticDevice value (tablet)', () => {
-        setScreenWidth(1000);
+        setScreenWidth(1200);
         const wrapper = setup('tablet');
         const element = wrapper.find('button');
 
         expect(element.props().value).toEqual('tablet');
     });
-})
+});

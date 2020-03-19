@@ -8,7 +8,7 @@ import EquisoftLogo from '../../logos/logo-equisoft-reversed.svg';
 import { breakpoints } from '../../tokens/breakpoints';
 import { MediaView } from '../media-view/media-view';
 
-const tabletMin = `${(breakpoints.tablet / 16)}rem`;
+const desktopMin = `${(breakpoints.desktop / 16)}rem`;
 
 const Header = styled.header`
     align-items: center;
@@ -19,7 +19,7 @@ const Header = styled.header`
     min-height: 2.75rem;
     padding: 0 var(--spacing-2x);
 
-    @media screen and (min-width: ${tabletMin}) {
+    @media screen and (min-width: ${desktopMin}) {
         min-height: 5rem;
         padding: 0 var(--spacing-3x);
     }
@@ -43,7 +43,7 @@ const RightContent = styled.div`
     margin-left: var(--spacing-2x);
     text-align: right;
 
-    @media screen and (min-width: ${tabletMin}) {
+    @media screen and (min-width: ${desktopMin}) {
         margin-left: var(--spacing-3x);
     }
 `;
@@ -58,10 +58,10 @@ export function Headband({ children }: HeadbandProps): ReactElement {
         <Header role="banner">
             <Logo>
                 <HomeLink to="/" aria-label="Home" rel="index">
-                    <MediaView maxWidth={breakpoints.tablet}>
+                    <MediaView maxWidth={breakpoints.desktop}>
                         <EquisoftIco aria-hidden="true" focusable="false" />
                     </MediaView>
-                    <MediaView minWidth={breakpoints.tablet}>
+                    <MediaView minWidth={breakpoints.desktop}>
                         <Equisoft aria-hidden="true" focusable="false" />
                     </MediaView>
                 </HomeLink>

@@ -49,14 +49,14 @@ exports[`Side Drawer has nested drawer 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:64rem) {
   .c1 {
     height: calc(100vh - 80px);
     top: 80px;
   }
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:64rem) {
   .c0 {
     height: calc(100vh - 80px);
     top: 80px;
@@ -109,7 +109,7 @@ exports[`Side Drawer has width set to 50% 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:64rem) {
   .c0 {
     height: calc(100vh - 80px);
     top: 80px;
@@ -154,7 +154,7 @@ exports[`Side Drawer is closed on left side 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:64rem) {
   .c0 {
     height: calc(100vh - 80px);
     top: 80px;
@@ -199,7 +199,7 @@ exports[`Side Drawer is closed on right side 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:64rem) {
   .c0 {
     height: calc(100vh - 80px);
     top: 80px;
@@ -244,7 +244,7 @@ exports[`Side Drawer is open 1`] = `
   top: 0;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:64rem) {
   .c0 {
     height: calc(100vh - 80px);
     top: 80px;

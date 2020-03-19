@@ -6,9 +6,10 @@ interface Props {
     children: ReactNode;
     staticDevice?: DeviceType;
 }
+
 const DeviceContext = createContext<DeviceType>('desktop');
 
-function DeviceContextProvider({ children, staticDevice }: Props): ReactElement {
+export const DeviceContextProvider = ({ children, staticDevice }: Props): ReactElement => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth || document.documentElement.clientWidth);
     const [device, setDevice] = useState<DeviceType>(staticDevice || 'desktop');
 
@@ -21,8 +22,8 @@ function DeviceContextProvider({ children, staticDevice }: Props): ReactElement 
         }, []);
 
         useEffect(() => {
-            const isDesktop = screenWidth > breakpoints.tablet;
-            const isTablet = screenWidth <= breakpoints.tablet && screenWidth > breakpoints.mobile;
+            const isDesktop = screenWidth >= breakpoints.desktop;
+            const isTablet = screenWidth < breakpoints.desktop && screenWidth > breakpoints.mobile;
             const isMobile = screenWidth <= breakpoints.mobile;
 
             if (isDesktop) setDevice('desktop');
@@ -40,7 +41,6 @@ function DeviceContextProvider({ children, staticDevice }: Props): ReactElement 
             {children}
         </DeviceContext.Provider>
     );
-}
+};
 
-export { DeviceContextProvider };
 export const useDeviceContext = () => useContext(DeviceContext);
