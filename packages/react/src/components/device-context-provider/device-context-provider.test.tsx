@@ -3,8 +3,8 @@ import React, { ReactElement } from 'react';
 import { DeviceContextProvider, DeviceType, useDeviceContext } from './device-context-provider';
 
 const TestComponent = (): ReactElement => {
-    const deviceContext = useDeviceContext();
-    return <button value={deviceContext} />;
+    const { device } = useDeviceContext();
+    return <button value={device} />;
 };
 
 const mountComponent = (staticDevice?: DeviceType) => (
