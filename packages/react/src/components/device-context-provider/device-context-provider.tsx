@@ -7,10 +7,51 @@ interface Props {
     staticDevice?: DeviceType;
 }
 
-const DeviceContext = createContext<DeviceType>('desktop');
+interface DeviceContextProps {
+    device: DeviceType;
+    isDesktop: boolean;
+    isTablet: boolean;
+    isMobile: boolean;
+}
+
+const getDeviceContext = (deviceName: DeviceType | undefined = undefined): DeviceContextProps => {
+    let isDesktop = false;
+    let isTablet = false;
+    let isMobile = false;
+    const defaultContext: DeviceContextProps = {
+        device: 'desktop',
+        isDesktop: true,
+        isTablet: false,
+        isMobile: false,
+    };
+
+    if (deviceName) {
+        if (deviceName === 'desktop') isDesktop = true;
+        else if (deviceName === 'tablet') isTablet = true;
+        else if (deviceName === 'mobile') isMobile = true;
+
+        return {
+            device: deviceName,
+            isDesktop: isDesktop,
+            isTablet: isTablet,
+            isMobile: isMobile,
+        };
+    } else return defaultContext;
+};
+
+const getDevice = (screenWidth: number): DeviceType => {
+    let currentDevice: DeviceType = 'desktop';
+    if (screenWidth >= breakpoints.desktop) currentDevice = 'desktop';
+    else if (screenWidth < breakpoints.desktop && screenWidth > breakpoints.mobile) currentDevice = 'tablet';
+    else if (screenWidth <= breakpoints.mobile) currentDevice = 'mobile';
+
+    return currentDevice;
+};
+
+const DeviceContext = createContext<DeviceContextProps>(getDeviceContext());
 
 export const DeviceContextProvider = ({ children, staticDevice }: Props): ReactElement => {
-    const [device, setDevice] = useState<DeviceType>(staticDevice || 'desktop');
+    const [device, setDevice] = useState<DeviceContextProps>(getDeviceContext(staticDevice));
 
     if (!staticDevice) {
         useEffect(() => {
@@ -20,15 +61,14 @@ export const DeviceContextProvider = ({ children, staticDevice }: Props): ReactE
                 window.removeEventListener('resize', handleScreenResize);
             };
         }, []);
+
+        const handleScreenResize = () => {
+            const screenWidth = (window.innerWidth || document.documentElement.clientWidth);
+            const currentDevice = getDevice(screenWidth);
+
+            setDevice(getDeviceContext(currentDevice));
+        };
     }
-
-    const handleScreenResize = (): void => {
-        const screenWidth = (window.innerWidth || document.documentElement.clientWidth);
-
-        if (screenWidth >= breakpoints.desktop) setDevice('desktop');
-        else if (screenWidth < breakpoints.desktop && screenWidth > breakpoints.mobile) setDevice('tablet');
-        else if (screenWidth <= breakpoints.mobile) setDevice('mobile');
-    };
 
     return (
         <DeviceContext.Provider value={device}>
