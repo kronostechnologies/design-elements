@@ -23,7 +23,7 @@ describe('Banner', () => {
         const tree = renderer.create(
             DeviceContextWrapped(
                 ThemeWrapped(
-                    <Banner type="error" device="mobile">
+                    <Banner type="error">
                         ERROR! Lorem ipsum
                     </Banner>,
                 ), 'mobile'),
