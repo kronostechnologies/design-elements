@@ -7,7 +7,7 @@ const TestComponent = (): ReactElement => {
     return <button value={deviceContext} />;
 };
 
-const setup = (staticDevice?: DeviceType) => (
+const mountComponent = (staticDevice?: DeviceType) => (
     mount(
         <DeviceContextProvider staticDevice={staticDevice}>
             <TestComponent/>
@@ -26,25 +26,25 @@ describe('Device Context Provider', () => {
         expect(element.props().value).toEqual('desktop');
     });
 
-    test('Should return desktop', () => {
+    test('Should return desktop when screen width is larger than 1024px', () => {
         setScreenWidth(1100);
-        const wrapper = setup();
+        const wrapper = mountComponent();
         const element = wrapper.find('button');
 
         expect(element.props().value).toEqual('desktop');
     });
 
-    test('Should return tablet', () => {
+    test('Should return tablet when screen width is larger than 480px and smaller than 1024px', () => {
         setScreenWidth(700);
-        const wrapper = setup();
+        const wrapper = mountComponent();
         const element = wrapper.find('button');
 
         expect(element.props().value).toEqual('tablet');
     });
 
-    test('Should return mobile', () => {
+    test('Should return mobile when screen width is smaller than 480px', () => {
         setScreenWidth(400);
-        const wrapper = setup();
+        const wrapper = mountComponent();
         const element = wrapper.find('button');
 
         expect(element.props().value).toEqual('mobile');
@@ -52,7 +52,7 @@ describe('Device Context Provider', () => {
 
     test('Should return staticDevice value (tablet)', () => {
         setScreenWidth(1200);
-        const wrapper = setup('tablet');
+        const wrapper = mountComponent('tablet');
         const element = wrapper.find('button');
 
         expect(element.props().value).toEqual('tablet');

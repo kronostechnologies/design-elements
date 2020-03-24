@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
-import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
 type MessageType = 'warning' | 'error';
@@ -57,11 +57,6 @@ const GetIconName = (messageType: MessageType): IconName => {
 interface BannerProps {
     children: ReactNode;
     type: MessageType;
-    /**
-     * Applies styles and sizes according to the device
-     * @default desktop
-     */
-    device?: DeviceType;
     /**
      * Hides the component
      * @default false
