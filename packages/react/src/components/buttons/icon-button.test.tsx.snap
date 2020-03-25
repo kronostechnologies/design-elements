@@ -60,7 +60,7 @@ exports[`Icon Button Has disabled styles 1`] = `
 }
 
 .c0:disabled {
-  background-color: #FF847C;
+  background-color: #F9B6B2;
 }
 
 <button
@@ -139,7 +139,7 @@ exports[`Icon Button Has mobile styles 1`] = `
 }
 
 .c0:disabled {
-  background-color: #FF847C;
+  background-color: #F9B6B2;
 }
 
 <button
@@ -217,7 +217,7 @@ exports[`Icon Button Has primary styles 1`] = `
 }
 
 .c0:disabled {
-  background-color: #FF847C;
+  background-color: #F9B6B2;
 }
 
 <button
@@ -298,8 +298,8 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c0:disabled {
   background-color: transparent;
-  border-color: #FF847C;
-  color: #FF847C;
+  border-color: #F9B6B2;
+  color: #F9B6B2;
 }
 
 <button
