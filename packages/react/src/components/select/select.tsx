@@ -265,7 +265,7 @@ export const Select = ({
                 }
                 setInputValue(event.target.value);
                 setSearchValue(event.target.value);
-                setOpen(true);
+                setOpen(optionsArray.length >= 1);
             } else {
                 setFocusedValue('');
                 setSearchValue('');
@@ -350,8 +350,6 @@ export const Select = ({
             if (suggestOption) {
                 setFocusedValue(suggestOption.value);
             }
-            setOpen(false);
-            setFocus(false);
         }
     };
 
@@ -363,7 +361,6 @@ export const Select = ({
             setAutofocus(false);
             setOpen(false);
             setFocus(false);
-            inputRef.current && inputRef.current.blur();
         }
     };
 
@@ -394,8 +391,6 @@ export const Select = ({
     return (
         <>
             <StyledFieldContainer
-                device={device}
-                fieldId={id}
                 device={device}
                 fieldId={id}
                 label={label}

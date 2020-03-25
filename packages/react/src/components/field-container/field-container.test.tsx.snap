@@ -9,6 +9,7 @@ exports[`Field Container Invalid field snapshot 1`] = `
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Updates mobile styles
 =======
@@ -21,6 +22,8 @@ exports[`Field Container Invalid field snapshot 1`] = `
 =======
 >>>>>>> Updates mobile styles
 >>>>>>> Updates mobile styles
+=======
+>>>>>>> Close combobox when there's no search results
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -36,6 +39,7 @@ exports[`Field Container Invalid field snapshot 1`] = `
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> Adds defaultValue prop
@@ -64,6 +68,8 @@ exports[`Field Container Invalid field snapshot 1`] = `
 >>>>>>> Adds CSS variables
 =======
 >>>>>>> Updates mobile styles
+=======
+>>>>>>> Close combobox when there's no search results
 .c1 {
   color: #000000;
   display: block;
@@ -86,6 +92,7 @@ input + .c1 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .c2 {
   color: #A40C2E;
@@ -180,10 +187,10 @@ input + .c1 {
 >>>>>>> Renames Dropdown to Select
 =======
 >>>>>>> Adds CSS variables
+=======
+>>>>>>> Close combobox when there's no search results
 }
 
-=======
->>>>>>> Updates mobile styles
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }

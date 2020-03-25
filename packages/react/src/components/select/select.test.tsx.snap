@@ -32,19 +32,7 @@ input + .c2 {
   border-color: #0080A5;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .c7 {
-=======
-.c5 {
->>>>>>> Requested changes
-=======
-.c6 {
->>>>>>> Update handleBlur function
-=======
-.c7 {
->>>>>>> Add combobox keyboard functionalities
   background-color: #FFFFFF;
   list-style-type: none;
   margin: 0;
@@ -55,19 +43,7 @@ input + .c2 {
   width: 100%;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .c8 {
-=======
-.c6 {
->>>>>>> Adds Combobox component
-=======
-.c7 {
->>>>>>> Update handleBlur function
-=======
-.c8 {
->>>>>>> Add combobox keyboard functionalities
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -75,60 +51,21 @@ input + .c2 {
   background-color: inherit;
   color: #000000;
   cursor: pointer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds Combobox component
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  font-size: 0.875rem;
-  height: 32px;
-  line-height: 32px;
-=======
-=======
->>>>>>> Adds Combobox component
-  font-size: 1rem;
-  height: 40px;
-  line-height: 40px;
->>>>>>> Updates mobile styles
-  overflow: hidden;
-<<<<<<< HEAD
-  padding: 0 34px;
-=======
-  padding: 0 40px;
->>>>>>> Adds Combobox component
-=======
   font-size: 0.875rem;
   height: 32px;
   line-height: 32px;
   overflow: hidden;
   padding: 0 34px;
->>>>>>> Update handleBlur function
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .c8:hover,
 .c8:focus {
-=======
-.c6:hover,
-.c6:focus {
->>>>>>> Requested changes
-=======
-.c7:hover,
-.c7:focus {
->>>>>>> Update handleBlur function
-=======
-.c8:hover,
-.c8:focus {
->>>>>>> Add combobox keyboard functionalities
   background-color: #D9DDE2;
 }
 
@@ -142,6 +79,7 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #FFFFFF;
   border: 1px solid #57666E;
 =======
@@ -158,6 +96,10 @@ input + .c2 {
   border: 1px solid #D9DDE2;
 >>>>>>> Update handleBlur function
 >>>>>>> Update handleBlur function
+=======
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
+>>>>>>> Close combobox when there's no search results
   border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
@@ -170,23 +112,7 @@ input + .c2 {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin-top: var(--spacing-half);
-  outline: none;
-=======
-  margin-top: var(--spacing-1x);
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-=======
-=======
-  margin-top: var(--spacing-half);
-<<<<<<< HEAD
->>>>>>> Updates tests
-  outline: none;
->>>>>>> Adds mobile styles to field-container
-=======
->>>>>>> Update focus styles
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -211,24 +137,15 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
   outline: none;
-=======
->>>>>>> Adds CSS variables
-=======
-  outline: none;
->>>>>>> Adds mobile styles to field-container
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
 }
 
 .c4:hover {
   cursor: default;
-<<<<<<< HEAD
 }
 
-<<<<<<< HEAD
 .c4::-webkit-input-placeholder {
   color: #9CA7B4;
   font-size: 0.875rem;
@@ -249,8 +166,6 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -272,106 +187,6 @@ input + .c2 {
 .c6 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-=======
-.c4::placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-=======
-.c3::-webkit-input-placeholder {
-  color: #57666E;
-  font-size: 1rem;
-=======
-}
-
-.c4::-webkit-input-placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
->>>>>>> Update handleBlur function
-}
-
-.c4::-moz-placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-.c4:-ms-input-placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-<<<<<<< HEAD
-.c3::placeholder {
-  color: #57666E;
-  font-size: 1rem;
->>>>>>> Updates mobile styles
-}
-
-.c4:focus {
-  outline: none;
-}
-
-<<<<<<< HEAD
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-<<<<<<< HEAD
-=======
-=======
-.c5 {
-=======
-.c4 {
->>>>>>> Adds more keyboard functionalities
-=======
-.c4::placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-.c5 {
-<<<<<<< HEAD
->>>>>>> Update handleBlur function
-=======
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c6 {
->>>>>>> Add combobox keyboard functionalities
-  display: none;
-  position: absolute;
->>>>>>> Renames Dropdown to Select
-  width: 100%;
->>>>>>> Renames Dropdown to Select
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c5 ul {
-  border-radius: 0.25rem;
-=======
-.c4 ul {
-=======
-.c5 ul {
->>>>>>> Update handleBlur function
-=======
-.c6 ul {
->>>>>>> Add combobox keyboard functionalities
-  border-radius: var(--border-radius);
->>>>>>> Adds CSS variables
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-<<<<<<< HEAD
-  outline: none;
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds more keyboard functionalities
 }
 
 .c6 ul:focus {
@@ -382,47 +197,21 @@ label + .c2 {
 <div
   className="c0 c1"
 >
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <label
-=======
-=======
   <label
     className="c2"
   >
     Select an option
   </label>
->>>>>>> Update handleBlur function
   <div
-    aria-expanded={false}
-    aria-haspopup="listbox"
-    aria-owns="listbox_undefined"
-<<<<<<< HEAD
->>>>>>> Adds accessibility standards
-    className="c2"
-  >
-    Select an option
-  </label>
-  <div
-<<<<<<< HEAD
     aria-expanded={false}
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
     className="c3"
     disabled={true}
     onClick={[Function]}
-<<<<<<< HEAD
-=======
-    className="c3"
-    disabled={true}
->>>>>>> Update handleBlur function
-=======
->>>>>>> Add combobox keyboard functionalities
     role="combobox"
-<<<<<<< HEAD
   >
     <input
-<<<<<<< HEAD
       aria-autocomplete="list"
       aria-controls="listbox_undefined"
       aria-multiline="false"
@@ -456,85 +245,6 @@ label + .c2 {
   >
     <ul
       className="c7"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      role="listbox"
-      tabIndex={0}
-    >
-      <li
-        aria-label="Ontario"
-        aria-selected={false}
-        className="c8"
-        id="undefined_on"
-=======
-    className="c3"
-    disabled={true}
-  >
-    <input
-      className="c4"
-      disabled={true}
-=======
-=======
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox_undefined"
-<<<<<<< HEAD
->>>>>>> Adds accessibility standards
-=======
-      aria-multiline="false"
-<<<<<<< HEAD
->>>>>>> Adds scroll position reset after selection
-      className="c3"
-=======
-      className="c4"
-      disabled={true}
->>>>>>> Update handleBlur function
-      onBlur={[Function]}
->>>>>>> PR changes
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select an option"
-      type="text"
-      value=""
-    />
-    <button
-      className="c5"
-      disabled={true}
-      tabIndex={-1}
-      type="button"
-    >
-      <svg
-        color="currentColor"
-        focusable={false}
-        height="24"
-        width="24"
-      />
-    </button>
-  </div>
-  <div
-    className="c6"
-    open={false}
-  >
-    <ul
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      className="c6"
-=======
-      className="c5"
-<<<<<<< HEAD
-      data-testid="list"
->>>>>>> Adds more keyboard functionalities
-=======
->>>>>>> Adds scroll position reset after selection
-=======
-      className="c6"
->>>>>>> Update handleBlur function
-=======
-      className="c7"
->>>>>>> Add combobox keyboard functionalities
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       role="listbox"
@@ -609,33 +319,8 @@ label + .c2 {
       <li
         aria-label="Nova Scotia"
         aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c7"
-        id=""
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="ns-6"
->>>>>>> PR changes
-=======
-        id="ns_6"
->>>>>>> Adds accessibility standards
-=======
-        id="6_ns"
->>>>>>> PR requested changes
-=======
-=======
-        className="c7"
->>>>>>> Update handleBlur function
-=======
         className="c8"
->>>>>>> Add combobox keyboard functionalities
         id="undefined_ns"
->>>>>>> Adds more keyboard functionalities
         onClick={[Function]}
         role="option"
         selected={false}
@@ -913,106 +598,43 @@ input + .c2 {
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
       className="c3"
-<<<<<<< HEAD
-<<<<<<< HEAD
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select an option"
-      required={true}
-      type="text"
-      value=""
-    />
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="24"
-      width="24"
-    />
-  </div>
-  <div
-    className="c4"
-    open={false}
-  >
-    <ul
-      className="c5"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      role="listbox"
-      tabIndex={0}
+      onClick={[Function]}
+      role="combobox"
     >
-      <li
-        aria-label="Ontario"
-        aria-selected={false}
-<<<<<<< HEAD
-        className="c7"
-        id="on"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="on-0"
->>>>>>> PR changes
-=======
-        id="on_0"
->>>>>>> Adds accessibility standards
-=======
-        id="0_on"
->>>>>>> PR requested changes
-=======
-        id="undefined_on"
->>>>>>> Adds more keyboard functionalities
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox_undefined"
+        aria-multiline="false"
+        className="c4"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select an option"
+        type="text"
+        value=""
+      />
+      <button
+        className="c5"
         onClick={[Function]}
-        role="option"
-        selected={false}
+        tabIndex={-1}
+        type="button"
       >
-        Ontario
-      </li>
-      <li
-        aria-label="Quebec"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_qc"
-=======
+        <svg
+          color="currentColor"
+          focusable={false}
+          height="24"
+          width="24"
+        />
+      </button>
+    </div>
+    <div
+      className="c6"
+      open={false}
+    >
+      <ul
         className="c7"
-        id="qc"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="qc-1"
->>>>>>> PR changes
-=======
-        id="qc_1"
->>>>>>> Adds accessibility standards
-=======
-        id="1_qc"
->>>>>>> PR requested changes
-=======
-        id="undefined_qc"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Quebec
-      </li>
-      <li
-        aria-label="British Columbia"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_bc"
-=======
-        className="c7"
         id="bc"
 >>>>>>> Renames Dropdown to Select
 =======
@@ -2449,17 +2071,19 @@ input + .c2 {
     >
       <ul
         className="c7"
+=======
+>>>>>>> Close combobox when there's no search results
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         role="listbox"
         tabIndex={0}
       >
         <li
->>>>>>> Add combobox keyboard functionalities
           aria-label="Ontario"
           aria-selected={false}
           className="c8"
           id="undefined_on"
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> Add combobox keyboard functionalities
 =======
@@ -2554,6 +2178,8 @@ label + .c2 {
 =======
 =======
 >>>>>>> Add combobox keyboard functionalities
+=======
+>>>>>>> Close combobox when there's no search results
           onClick={[Function]}
           role="option"
           selected={false}
@@ -2563,6 +2189,7 @@ label + .c2 {
         <li
           aria-label="Quebec"
           aria-selected={false}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           className="c8"
@@ -3099,9 +2726,10 @@ input + .c2 {
           id="undefined_qc"
 >>>>>>> Adds more keyboard functionalities
 =======
+=======
+>>>>>>> Close combobox when there's no search results
           className="c8"
           id="undefined_qc"
->>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3111,34 +2739,8 @@ input + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_bc"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="bc"
->>>>>>> Renames Dropdown to Select
-=======
-          id="bc-2"
->>>>>>> PR changes
-=======
-          id="bc_2"
->>>>>>> Adds accessibility standards
-=======
-          id="2_bc"
->>>>>>> PR requested changes
-=======
-          id="undefined_bc"
->>>>>>> Adds more keyboard functionalities
-=======
-          className="c8"
-          id="undefined_bc"
->>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3148,34 +2750,8 @@ input + .c2 {
         <li
           aria-label="Alberta"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_ab"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="ab"
->>>>>>> Renames Dropdown to Select
-=======
-          id="ab-3"
->>>>>>> PR changes
-=======
-          id="ab_3"
->>>>>>> Adds accessibility standards
-=======
-          id="3_ab"
->>>>>>> PR requested changes
-=======
-          id="undefined_ab"
->>>>>>> Adds more keyboard functionalities
-=======
-          className="c8"
-          id="undefined_ab"
->>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3185,34 +2761,8 @@ input + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_mb"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="mb"
->>>>>>> Renames Dropdown to Select
-=======
-          id="mb-4"
->>>>>>> PR changes
-=======
-          id="mb_4"
->>>>>>> Adds accessibility standards
-=======
-          id="4_mb"
->>>>>>> PR requested changes
-=======
-          id="undefined_mb"
->>>>>>> Adds more keyboard functionalities
-=======
-          className="c8"
-          id="undefined_mb"
->>>>>>> Add combobox keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3222,33 +2772,8 @@ input + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_sk"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="sk"
->>>>>>> Renames Dropdown to Select
-=======
-          id="sk-5"
->>>>>>> PR changes
-=======
-          id="sk_5"
->>>>>>> Adds accessibility standards
-=======
-          id="5_sk"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_sk"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3258,33 +2783,8 @@ input + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_ns"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="ns"
->>>>>>> Renames Dropdown to Select
-=======
-          id="ns-6"
->>>>>>> PR changes
-=======
-          id="ns_6"
->>>>>>> Adds accessibility standards
-=======
-          id="6_ns"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_ns"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3294,33 +2794,8 @@ input + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nb"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nb"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nb-7"
->>>>>>> PR changes
-=======
-          id="nb_7"
->>>>>>> Adds accessibility standards
-=======
-          id="7_nb"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nb"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3330,33 +2805,8 @@ input + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nl"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nl"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nl-8"
->>>>>>> PR changes
-=======
-          id="nl_8"
->>>>>>> Adds accessibility standards
-=======
-          id="8_nl"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nl"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3366,33 +2816,8 @@ input + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_pe"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="pe"
->>>>>>> Renames Dropdown to Select
-=======
-          id="pe-9"
->>>>>>> PR changes
-=======
-          id="pe_9"
->>>>>>> Adds accessibility standards
-=======
-          id="9_pe"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_pe"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3402,33 +2827,8 @@ input + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nt"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nt"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nt-10"
->>>>>>> PR changes
-=======
-          id="nt_10"
->>>>>>> Adds accessibility standards
-=======
-          id="10_nt"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nt"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3438,33 +2838,8 @@ input + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nu"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nu"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nu-11"
->>>>>>> PR changes
-=======
-          id="nu_11"
->>>>>>> Adds accessibility standards
-=======
-          id="11_nu"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nu"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3474,33 +2849,8 @@ input + .c2 {
         <li
           aria-label="Yukon"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_yt"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="yt"
->>>>>>> Renames Dropdown to Select
-=======
-          id="yt-12"
->>>>>>> PR changes
-=======
-          id="yt_12"
->>>>>>> Adds accessibility standards
-=======
-          id="12_yt"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_yt"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -3511,15 +2861,7 @@ input + .c2 {
     </div>
     <div
       aria-live="polite"
-<<<<<<< HEAD
-<<<<<<< HEAD
       className="c9"
-=======
-      className="c8"
->>>>>>> Renames Dropdown to Select
-=======
-      className="c9"
->>>>>>> Add combobox keyboard functionalities
       id="undefined_invalid"
       role="alert"
     >
@@ -3641,17 +2983,6 @@ Array [
   width: fit-content;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-input + .c2 {
-=======
-<<<<<<< HEAD
-input + .c1 {
->>>>>>> Renames Dropdown to Select
-  margin-left: var(--spacing-half);
-=======
-=======
->>>>>>> Adds CSS variables
 input + .c2 {
   margin-left: var(--spacing-half);
 }
@@ -3672,6 +3003,7 @@ input + .c2 {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c6 {
 =======
 =======
@@ -3687,10 +3019,10 @@ input + .c2 {
 >>>>>>> Renames Dropdown to Select
 =======
 =======
+=======
+>>>>>>> Close combobox when there's no search results
 .c7 {
->>>>>>> Add combobox keyboard functionalities
   background-color: #FFFFFF;
->>>>>>> Requested changes
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -3700,6 +3032,7 @@ input + .c2 {
   width: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .c7 {
@@ -3746,26 +3079,14 @@ input + .c2 {
 .c3 {
 >>>>>>> Renames Dropdown to Select
 >>>>>>> Renames Dropdown to Select
+=======
+.c8 {
+>>>>>>> Close combobox when there's no search results
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-<<<<<<< HEAD
   background-color: inherit;
-=======
-  background-color: #FFFFFF;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-  border: 1px solid #D9DDE2;
-<<<<<<< HEAD
-  border-radius: var(--border-radius);
-  box-shadow: none;
-  box-sizing: border-box;
->>>>>>> Renames Dropdown to Select
   color: #000000;
   cursor: pointer;
   display: -webkit-box;
@@ -3782,11 +3103,14 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c7:hover,
 .c7:focus {
 =======
 =======
 >>>>>>> Add combobox keyboard functionalities
+=======
+>>>>>>> Close combobox when there's no search results
 .c8:hover,
 .c8:focus {
 >>>>>>> Add combobox keyboard functionalities
@@ -3819,46 +3143,6 @@ input + .c2 {
   margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
-<<<<<<< HEAD
-=======
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-position: right 0.75rem center;
-  background-repeat: no-repeat;
-  background-size: 0.75rem;
-  position: relative;
-=======
-<<<<<<< HEAD
-  border-radius: 0.25rem;
-=======
-=======
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Update handleBlur function
-  border: 1px solid #57666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: var(--spacing-half);
-  outline: none;
-  padding-right: var(--spacing-1x);
-  width: 100%;
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
 }
 
 .c3:hover {
@@ -3872,51 +3156,17 @@ input + .c2 {
 .c4 {
   background-color: #FFFFFF;
   border: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
   font-size: 0.875rem;
-=======
-=======
-  border-radius: 0.25rem;
-=======
-  border-radius: var(--border-radius);
->>>>>>> Adds CSS variables
-  box-sizing: border-box;
-  caret-color: transparent;
-<<<<<<< HEAD
->>>>>>> PR changes
-  font-size: calc(1rem - 2px);
->>>>>>> Renames Dropdown to Select
-=======
-  font-size: 0.875rem;
->>>>>>> Adds scroll position reset after selection
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   max-height: 100%;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-=======
->>>>>>> Renames Dropdown to Select
-=======
-  max-height: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  padding: 0.5rem 0 0.5rem 0.5rem;
->>>>>>> PR changes
-=======
-=======
-  outline: none;
->>>>>>> Adds mobile styles to field-container
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
->>>>>>> Adds CSS variables
   width: 100%;
 }
 
@@ -3944,6 +3194,7 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3989,6 +3240,9 @@ input + .c2 {
 >>>>>>> Renames Dropdown to Select
 =======
 =======
+=======
+.c5 {
+>>>>>>> Close combobox when there's no search results
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4001,14 +3255,18 @@ input + .c2 {
 }
 
 .c6 {
+<<<<<<< HEAD
 >>>>>>> Add combobox keyboard functionalities
 >>>>>>> Add combobox keyboard functionalities
+=======
+>>>>>>> Close combobox when there's no search results
   display: none;
   position: absolute;
   width: 100%;
 >>>>>>> Renames Dropdown to Select
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4061,11 +3319,11 @@ label + .c2 {
 =======
 .c5 ul {
 =======
+=======
+>>>>>>> Close combobox when there's no search results
 .c6 ul {
->>>>>>> Add combobox keyboard functionalities
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
->>>>>>> Update handleBlur function
 }
 
 .c6 ul:focus {
@@ -4082,8 +3340,6 @@ label + .c2 {
       Select an option
     </label>
     <div
-<<<<<<< HEAD
-<<<<<<< HEAD
       aria-expanded={false}
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
@@ -4104,10 +3360,6 @@ label + .c2 {
         type="text"
         value=""
       />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Add combobox keyboard functionalities
       <button
         className="c5"
         onClick={[Function]}
@@ -4121,15 +3373,6 @@ label + .c2 {
           width="24"
         />
       </button>
-<<<<<<< HEAD
-=======
-      <svg
-        color="currentColor"
-        focusable={false}
-        height="24"
-        width="24"
-      />
->>>>>>> Adds mobile styles to field-container
     </div>
     <div
       className="c6"
@@ -4147,75 +3390,6 @@ label + .c2 {
           aria-selected={false}
           className="c8"
           id="undefined_on"
-=======
-=======
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
->>>>>>> Adds accessibility standards
-      className="c3"
-      onClick={[Function]}
-      role="combobox"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox_undefined"
-        aria-multiline="false"
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Select an option"
-        required={true}
-        type="text"
-        value=""
-      />
-      <svg
-        color="currentColor"
-        height="24"
-        width="24"
-      />
-=======
->>>>>>> Add combobox keyboard functionalities
-    </div>
-    <div
-      className="c6"
-      open={false}
-    >
-      <ul
-        className="c7"
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        role="listbox"
-        tabIndex={0}
-      >
-        <li
-          aria-label="Ontario"
-          aria-selected={false}
-<<<<<<< HEAD
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="on"
->>>>>>> Renames Dropdown to Select
-=======
-          id="on-0"
->>>>>>> PR changes
-=======
-          id="on_0"
->>>>>>> Adds accessibility standards
-=======
-          id="0_on"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_on"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4225,33 +3399,8 @@ label + .c2 {
         <li
           aria-label="Quebec"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_qc"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="qc"
->>>>>>> Renames Dropdown to Select
-=======
-          id="qc-1"
->>>>>>> PR changes
-=======
-          id="qc_1"
->>>>>>> Adds accessibility standards
-=======
-          id="1_qc"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_qc"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4261,33 +3410,8 @@ label + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_bc"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="bc"
->>>>>>> Renames Dropdown to Select
-=======
-          id="bc-2"
->>>>>>> PR changes
-=======
-          id="bc_2"
->>>>>>> Adds accessibility standards
-=======
-          id="2_bc"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_bc"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4297,33 +3421,8 @@ label + .c2 {
         <li
           aria-label="Alberta"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_ab"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="ab"
->>>>>>> Renames Dropdown to Select
-=======
-          id="ab-3"
->>>>>>> PR changes
-=======
-          id="ab_3"
->>>>>>> Adds accessibility standards
-=======
-          id="3_ab"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_ab"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4333,33 +3432,8 @@ label + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_mb"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="mb"
->>>>>>> Renames Dropdown to Select
-=======
-          id="mb-4"
->>>>>>> PR changes
-=======
-          id="mb_4"
->>>>>>> Adds accessibility standards
-=======
-          id="4_mb"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_mb"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4369,33 +3443,8 @@ label + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_sk"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="sk"
->>>>>>> Renames Dropdown to Select
-=======
-          id="sk-5"
->>>>>>> PR changes
-=======
-          id="sk_5"
->>>>>>> Adds accessibility standards
-=======
-          id="5_sk"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_sk"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4405,33 +3454,8 @@ label + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_ns"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="ns"
->>>>>>> Renames Dropdown to Select
-=======
-          id="ns-6"
->>>>>>> PR changes
-=======
-          id="ns_6"
->>>>>>> Adds accessibility standards
-=======
-          id="6_ns"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_ns"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4441,33 +3465,8 @@ label + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nb"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nb"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nb-7"
->>>>>>> PR changes
-=======
-          id="nb_7"
->>>>>>> Adds accessibility standards
-=======
-          id="7_nb"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nb"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4477,33 +3476,8 @@ label + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nl"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nl"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nl-8"
->>>>>>> PR changes
-=======
-          id="nl_8"
->>>>>>> Adds accessibility standards
-=======
-          id="8_nl"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nl"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4513,33 +3487,8 @@ label + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_pe"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="pe"
->>>>>>> Renames Dropdown to Select
-=======
-          id="pe-9"
->>>>>>> PR changes
-=======
-          id="pe_9"
->>>>>>> Adds accessibility standards
-=======
-          id="9_pe"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_pe"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4549,33 +3498,8 @@ label + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nt"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nt"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nt-10"
->>>>>>> PR changes
-=======
-          id="nt_10"
->>>>>>> Adds accessibility standards
-=======
-          id="10_nt"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nt"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4585,33 +3509,8 @@ label + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_nu"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="nu"
->>>>>>> Renames Dropdown to Select
-=======
-          id="nu-11"
->>>>>>> PR changes
-=======
-          id="nu_11"
->>>>>>> Adds accessibility standards
-=======
-          id="11_nu"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_nu"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4621,33 +3520,8 @@ label + .c2 {
         <li
           aria-label="Yukon"
           aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="c8"
           id="undefined_yt"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="yt"
->>>>>>> Renames Dropdown to Select
-=======
-          id="yt-12"
->>>>>>> PR changes
-=======
-          id="yt_12"
->>>>>>> Adds accessibility standards
-=======
-          id="12_yt"
->>>>>>> PR requested changes
-=======
-=======
-          className="c8"
->>>>>>> Add combobox keyboard functionalities
-          id="undefined_yt"
->>>>>>> Adds more keyboard functionalities
           onClick={[Function]}
           role="option"
           selected={false}
@@ -4752,336 +3626,6 @@ input[type="radio"]:disabled + .c0 {
     Skip this question
   </label>,
 ]
-`;
-
-exports[`Select mobile select has a different style 1`] = `
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
-.c0:focus {
-  border-color: #0080A5;
-}
-
-.c5 {
-  background-color: #FFFFFF;
-  list-style-type: none;
-  margin: 0;
-  max-height: 160px;
-  min-width: 200px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1rem;
-  height: 40px;
-  line-height: 40px;
-  overflow: hidden;
-  padding: 0 40px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c6:hover,
-.c6:focus {
-  background-color: #D9DDE2;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 40px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: var(--spacing-half);
-  outline: none;
-  padding-right: var(--spacing-1x);
-  width: 100%;
-}
-
-.c2:hover {
-  cursor: pointer;
-}
-
-.c2 svg {
-  color: #57666E;
-}
-
-.c3 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 1rem;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  max-height: 100%;
-  outline: none;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  width: 100%;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #57666E;
-  font-size: 1rem;
-}
-
-.c3::-moz-placeholder {
-  color: #57666E;
-  font-size: 1rem;
-}
-
-.c3:-ms-input-placeholder {
-  color: #57666E;
-  font-size: 1rem;
-}
-
-.c3::placeholder {
-  color: #57666E;
-  font-size: 1rem;
-}
-
-.c4 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c4 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-<div
-  className="c0 c1"
->
-  <div
-    aria-expanded={false}
-    aria-haspopup="listbox"
-    aria-owns="listbox_undefined"
-    className="c2"
-    onClick={[Function]}
-    role="combobox"
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox_undefined"
-      aria-multiline="false"
-      className="c3"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select an option"
-      type="text"
-      value=""
-    />
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="32"
-      width="32"
-    />
-  </div>
-  <div
-    className="c4"
-    open={false}
-  >
-    <ul
-      className="c5"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      role="listbox"
-      tabIndex={0}
-    >
-      <li
-        aria-label="Ontario"
-        aria-selected={false}
-        className="c6"
-        id="undefined_on"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Ontario
-      </li>
-      <li
-        aria-label="Quebec"
-        aria-selected={false}
-        className="c6"
-        id="undefined_qc"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Quebec
-      </li>
-      <li
-        aria-label="British Columbia"
-        aria-selected={false}
-        className="c6"
-        id="undefined_bc"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        British Columbia
-      </li>
-      <li
-        aria-label="Alberta"
-        aria-selected={false}
-        className="c6"
-        id="undefined_ab"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Alberta
-      </li>
-      <li
-        aria-label="Manitoba"
-        aria-selected={false}
-        className="c6"
-        id="undefined_mb"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Manitoba
-      </li>
-      <li
-        aria-label="Saskatchewan"
-        aria-selected={false}
-        className="c6"
-        id="undefined_sk"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Saskatchewan
-      </li>
-      <li
-        aria-label="Nova Scotia"
-        aria-selected={false}
-        className="c6"
-        id="undefined_ns"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nova Scotia
-      </li>
-      <li
-        aria-label="New Brunswick"
-        aria-selected={false}
-        className="c6"
-        id="undefined_nb"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        New Brunswick
-      </li>
-      <li
-        aria-label="Newfoundland and Labrador"
-        aria-selected={false}
-        className="c6"
-        id="undefined_nl"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Newfoundland and Labrador
-      </li>
-      <li
-        aria-label="Prince Edward Island"
-        aria-selected={false}
-        className="c6"
-        id="undefined_pe"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Prince Edward Island
-      </li>
-      <li
-        aria-label="Northwest Territories"
-        aria-selected={false}
-        className="c6"
-        id="undefined_nt"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Northwest Territories
-      </li>
-      <li
-        aria-label="Nunavut"
-        aria-selected={false}
-        className="c6"
-        id="undefined_nu"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nunavut
-      </li>
-      <li
-        aria-label="Yukon"
-        aria-selected={false}
-        className="c6"
-        id="undefined_yt"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Yukon
-      </li>
-    </ul>
-  </div>
-</div>
 `;
 
 exports[`Select mobile select has a different style 1`] = `

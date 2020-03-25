@@ -110,6 +110,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Renames Dropdown to Select
 =======
@@ -185,6 +186,8 @@ input + .c2 {
 =======
 >>>>>>> Updates mobile styles
 >>>>>>> Updates mobile styles
+=======
+>>>>>>> Close combobox when there's no search results
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
