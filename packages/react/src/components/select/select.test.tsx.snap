@@ -159,6 +159,7 @@ input + .c2 {
 >>>>>>> Update handleBlur function
 >>>>>>> Update handleBlur function
   border-radius: var(--border-radius);
+  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -180,9 +181,12 @@ input + .c2 {
 =======
 =======
   margin-top: var(--spacing-half);
+<<<<<<< HEAD
 >>>>>>> Updates tests
   outline: none;
 >>>>>>> Adds mobile styles to field-container
+=======
+>>>>>>> Update focus styles
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -368,6 +372,11 @@ label + .c2 {
 >>>>>>> Renames Dropdown to Select
 =======
 >>>>>>> Adds more keyboard functionalities
+}
+
+.c6 ul:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 <div
@@ -798,6 +807,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #A40C2E;
   border-radius: var(--border-radius);
+  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -809,7 +819,6 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-half);
-  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -884,6 +893,11 @@ input + .c2 {
 .c6 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+}
+
+.c6 ul:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 <div
@@ -3791,6 +3805,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
+  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3802,7 +3817,6 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-half);
-  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 <<<<<<< HEAD
@@ -4052,6 +4066,11 @@ label + .c2 {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
 >>>>>>> Update handleBlur function
+}
+
+.c6 ul:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 <div
@@ -5129,6 +5148,7 @@ exports[`Select mobile select has a different style 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
+  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5140,7 +5160,6 @@ exports[`Select mobile select has a different style 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-half);
-  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -5215,6 +5234,11 @@ exports[`Select mobile select has a different style 1`] = `
 .c5 ul {
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+}
+
+.c5 ul:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 <div

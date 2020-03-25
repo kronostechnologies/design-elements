@@ -47,12 +47,12 @@ const InputWrapper = styled.div<InputWrapperProps>`
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
+    box-shadow: ${props => props.containerOutline ? '0 0 0 2px rgba(0, 128, 165, 0.4)' : 'none'};
     box-sizing: border-box;
     display: flex;
     height: ${props => props.device === 'mobile' ? '40px' : '32px'};
     justify-content: space-between;
     margin-top: var(--spacing-half);
-    outline: ${props => props.containerOutline ? '-webkit-focus-ring-color auto 5px' : 'none'};
     padding-right: var(--spacing-1x);
     width: 100%;
 
@@ -102,6 +102,11 @@ const ListWrapper = styled.div<{open?: boolean}>`
     ul {
         border-radius: var(--border-radius);
         box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+            outline: none;
+        }
     }
 `;
 
@@ -266,6 +271,7 @@ export const Select = ({
                 setSearchValue('');
                 setInputValue(event.target.value);
                 setOpen(false);
+                setSelectedOptionValue('');
             }
         }
     };
