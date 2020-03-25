@@ -1789,19 +1789,19 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-1.0.1.tgz#2888acbf51d0fee5195418b3cc8bd92f315f7bb7"
-  integrity sha512-AlUzvDRl38KMSIBxm4aRGpuiEHvj+hAWy5gvtByr2CziDOKZ5YbFdik3W/x0suRXOtSqk1XabcIJ8KOmYmaf4w==
+"@equisoft/design-elements-react@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.1.tgz#b96de0532842af6c3fc10aa4e5ae30efd203aa95"
+  integrity sha512-iwXXZGqkTgjX/Em8ecx/2xSFJ9zejfBZubtoQzDRR5c+dwR7sfniIdq5DeJVRfP1QFnGJoRjzFdagaqAxZ5IfA==
   dependencies:
     feather-icons "^4.21.0"
-    lodash-es "^4.17.14"
+    react-swipeable "~5.5.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-1.0.1.tgz#1acd86a314d35c1ccd0c6e0ed5569c9428921215"
-  integrity sha512-H5q0xL6/0cxxvrHnw0MY7MPYNdBktUs25MJxD7OaBgN2+NOO4ReKglgQ9W6x9StYqnkesxm8cGciuDfCQi3e4w==
+"@equisoft/design-elements-web@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.1.tgz#d4ca15d278e636c06ab1d92cbc2fb9b64ce97a93"
+  integrity sha512-Pq332m+Nv1bvq453hXu1zuP/ioXeMwFzEONFTHYCHDen1Iupa5gmd1PSNGGQf3vM08bztVQUqRO/NUAjpY61/g==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
@@ -6922,11 +6922,6 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash-es@^4.17.14:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
-  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
-
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -8799,6 +8794,13 @@ react-sizeme@^2.6.7:
     invariant "^2.2.4"
     shallowequal "^1.1.0"
     throttle-debounce "^2.1.0"
+
+react-swipeable@~5.5.0:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-5.5.1.tgz#48ae6182deaf62f21d4b87469b60281dbd7c4a76"
+  integrity sha512-EQObuU3Qg3JdX3WxOn5reZvOSCpU4fwpUAs+NlXSN3y+qtsO2r8VGkVnOQzmByt3BSYj9EWYdUOUfi7vaMdZZw==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-syntax-highlighter@^11.0.2:
   version "11.0.2"

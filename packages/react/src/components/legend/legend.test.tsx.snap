@@ -23,7 +23,7 @@ exports[`Legend Matches the snapshot 1`] = `
 }
 
 .c1::before {
-  background-color: #7FBFD2;
+  background-color: #99CCDB;
   border-radius: 50%;
   content: '';
   height: 8px;
