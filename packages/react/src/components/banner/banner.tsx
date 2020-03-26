@@ -10,7 +10,7 @@ const Container = styled.div<{messageType: MessageType, isMobile: boolean}>`
     background-color: ${props => props.messageType === 'error' ? props.theme.notifications['error-2.1'] : props.theme.notifications['alert-3.3'] };
     color: ${props => props.messageType === 'error' ? props.theme.greys.white : props.theme.greys.black };
     font-size: ${({ isMobile }) => isMobile ? 1 : 0.75}rem;
-    font-weight: ${({ isMobile }) => isMobile ? 'var(--font-normal)' : 600 };
+    font-weight: ${({ isMobile }) => isMobile ? 'var(--font-normal)' : 'var(--font-semi-bold)' };
     letter-spacing: ${({ isMobile }) => isMobile ? 0.46 : 0.2}px;
     line-height: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
     padding: ${({ isMobile }) => isMobile ? 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x) var(--spacing-6x)'};
