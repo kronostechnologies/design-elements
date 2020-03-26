@@ -6,7 +6,11 @@ import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
 import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
+import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
+import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
 import ChevronUp from 'feather-icons/dist/icons/chevron-up.svg';
+import ChevronsLeft from 'feather-icons/dist/icons/chevrons-left.svg';
+import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
 import Copy from 'feather-icons/dist/icons/copy.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
@@ -31,7 +35,11 @@ const iconMapping = {
     arrowRight: ArrowRight,
     check: Check,
     chevronDown: ChevronDown,
+    chevronLeft: ChevronLeft,
+    chevronRight: ChevronRight,
     chevronUp: ChevronUp,
+    chevronsLeft: ChevronsLeft,
+    chevronsRight: ChevronsRight,
     copy: Copy,
     edit: Edit,
     helpCircle: HelpCircle,

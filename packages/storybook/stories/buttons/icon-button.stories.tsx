@@ -1,9 +1,10 @@
-import { IconButton } from '@equisoft/design-elements-react';
+import { DeviceContextProvider, IconButton } from '@equisoft/design-elements-react';
 import React from 'react';
 
 export default {
     title: 'Buttons/Icon',
     component: IconButton,
+    decorators: [(storyFn: () => React.ReactElement) => <DeviceContextProvider>{storyFn()}</DeviceContextProvider>],
 };
 
 export const iconButtons = () => (

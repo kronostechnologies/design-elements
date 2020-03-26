@@ -42,6 +42,7 @@ export { Tooltip } from './components/tooltip/tooltip';
 export { Legend } from './components/legend/legend';
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
+export { Pagination } from './components/pagination/pagination';
 
 // Themes
 export { equisoftTheme } from './themes/equisoft';

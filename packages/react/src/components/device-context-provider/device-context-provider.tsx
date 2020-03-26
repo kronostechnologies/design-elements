@@ -7,7 +7,7 @@ interface Props {
     staticDevice?: DeviceType;
 }
 
-interface DeviceContextProps {
+export interface DeviceContextProps {
     device: DeviceType;
     isDesktop: boolean;
     isTablet: boolean;
