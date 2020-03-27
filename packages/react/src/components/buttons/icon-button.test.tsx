@@ -1,6 +1,7 @@
 import { mount, shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { IconButton } from './icon-button';
 
@@ -96,13 +97,14 @@ describe('Icon Button', () => {
 
     test('Has mobile styles', () => {
         const tree = renderer.create(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    buttonType="primary"
-                    device="mobile"
-                />,
+            DeviceContextWrapped(
+                ThemeWrapped(
+                    <IconButton
+                        label="home"
+                        iconName="home"
+                        buttonType="primary"
+                    />,
+                ), 'mobile',
             ),
         ).toJSON();
 

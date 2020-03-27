@@ -13,13 +13,6 @@ export const iconButtons = () => (
         <IconButton label="map" buttonType={'tertiary'} iconName="mapPin"/>
     </>
 );
-export const mobile = () => (
-    <>
-        <IconButton label="home" buttonType={'primary'} iconName="home" device="mobile"/>
-        <IconButton label="mail" buttonType={'secondary'} iconName="mail" device="mobile"/>
-        <IconButton label="map" buttonType={'tertiary'} iconName="mapPin" device="mobile"/>
-    </>
-);
 export const disabled = () => (
     <>
         <IconButton label="home" buttonType={'primary'} iconName="home" disabled/>
