@@ -1,8 +1,8 @@
+import { DeviceContextWrapped } from '@design-elements/test-utils/device-context-wrapped';
+import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Banner } from './banner';
 
 describe('Banner', () => {
