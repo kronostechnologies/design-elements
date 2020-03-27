@@ -2,6 +2,7 @@ import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
 import { mount, ReactWrapper, render } from 'enzyme';
 import React, { Component, ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { DeviceContextProvider } from '../components/device-context-provider/device-context-provider';
 
 export function mountWithProviders<C extends Component, P = C['props'], S = C['state']>(
     component: ReactElement<P>,
@@ -20,7 +21,9 @@ export function renderWithProviders(
 function AllProviders({ children }: { children: ReactElement }): ReactElement {
     return (
         <MemoryRouter>
-            {ThemeWrapped(children)}
+            <DeviceContextProvider>
+                {ThemeWrapped(children)}
+            </DeviceContextProvider>
         </MemoryRouter>
     );
 }
