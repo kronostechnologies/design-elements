@@ -1,33 +1,28 @@
-import { DeviceContextWrapped } from '@design-elements/test-utils/device-context-wrapped';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
 import { mount } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { Banner } from './banner';
 
 describe('Banner', () => {
     test('Matches snapshot (desktop)', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(
-                    <Banner type="warning">
-                        WARNING! Lorem ipsum
-                    </Banner>,
-                ), 'desktop'),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Banner type="warning">
+                WARNING! Lorem ipsum
+            </Banner>,
+            'desktop',
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches snapshot (mobile)', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(
-                    <Banner type="error">
-                        ERROR! Lorem ipsum
-                    </Banner>,
-                ), 'mobile'),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Banner type="error">
+                ERROR! Lorem ipsum
+            </Banner>,
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });

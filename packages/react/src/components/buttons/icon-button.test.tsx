@@ -1,7 +1,6 @@
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { mount, shallow } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { IconButton } from './icon-button';
 
@@ -39,74 +38,63 @@ describe('Icon Button', () => {
     });
 
     test('Has disabled styles', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    buttonType="primary"
-                    disabled
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="primary"
+                disabled
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Has primary styles', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    buttonType="primary"
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="primary"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Has secondary styles', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    buttonType="secondary"
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="secondary"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Has tertiary styles', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    buttonType="tertiary"
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="tertiary"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Has mobile styles', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(
-                    <IconButton
-                        label="home"
-                        iconName="home"
-                        buttonType="primary"
-                    />,
-                ), 'mobile',
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <IconButton
+                label="home"
+                iconName="home"
+                buttonType="primary"
+            />,
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });

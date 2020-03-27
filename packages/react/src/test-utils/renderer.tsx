@@ -2,7 +2,7 @@ import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
 import { mount, ReactWrapper, render } from 'enzyme';
 import React, { Component, ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { DeviceContextProvider } from '../components/device-context-provider/device-context-provider';
+import { DeviceContextProvider, DeviceType } from '../components/device-context-provider/device-context-provider';
 
 export function mountWithProviders<C extends Component, P = C['props'], S = C['state']>(
     component: ReactElement<P>,
@@ -14,14 +14,15 @@ export function mountWithProviders<C extends Component, P = C['props'], S = C['s
 
 export function renderWithProviders(
     component: ReactElement,
+    device?: DeviceType,
 ): Cheerio {
-    return render(<AllProviders>{component}</AllProviders>);
+    return render(<AllProviders device={device}>{component}</AllProviders>);
 }
 
-function AllProviders({ children }: { children: ReactElement }): ReactElement {
+function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
     return (
         <MemoryRouter>
-            <DeviceContextProvider>
+            <DeviceContextProvider staticDevice={device}>
                 {ThemeWrapped(children)}
             </DeviceContextProvider>
         </MemoryRouter>

@@ -115,16 +115,15 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 <div
   aria-label="Test4"
-  className="c0"
+  class="c0"
   role="group"
 >
   <button
     aria-label="Option 1"
-    aria-pressed={false}
-    className="c1"
+    aria-pressed="false"
+    class="c1"
     data-testid="test-toggle-button-0"
-    disabled={true}
-    onClick={[Function]}
+    disabled=""
     type="button"
     value="option1"
   >
@@ -132,10 +131,9 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   </button>
   <button
     aria-label="Option 2"
-    aria-pressed={true}
-    className="c2"
+    aria-pressed="true"
+    class="c2"
     data-testid="test-toggle-button-1"
-    onClick={[Function]}
     type="button"
     value="option2"
   >
@@ -143,10 +141,9 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   </button>
   <button
     aria-label="Option 3"
-    aria-pressed={false}
-    className="c3"
+    aria-pressed="false"
+    class="c3"
     data-testid="test-toggle-button-2"
-    onClick={[Function]}
     type="button"
     value="option3"
   >
@@ -154,10 +151,9 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   </button>
   <button
     aria-label="Option 4"
-    aria-pressed={false}
-    className="c3"
+    aria-pressed="false"
+    class="c3"
     data-testid="test-toggle-button-3"
-    onClick={[Function]}
     type="button"
     value="option4"
   >
@@ -281,16 +277,15 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 <div
   aria-label="Test4"
-  className="c0"
+  class="c0"
   role="group"
 >
   <button
     aria-label="Option 1"
-    aria-pressed={false}
-    className="c1"
+    aria-pressed="false"
+    class="c1"
     data-testid="test-toggle-button-0"
-    disabled={true}
-    onClick={[Function]}
+    disabled=""
     type="button"
     value="option1"
   >
@@ -298,10 +293,9 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   </button>
   <button
     aria-label="Option 2"
-    aria-pressed={true}
-    className="c2"
+    aria-pressed="true"
+    class="c2"
     data-testid="test-toggle-button-1"
-    onClick={[Function]}
     type="button"
     value="option2"
   >
@@ -309,10 +303,9 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   </button>
   <button
     aria-label="Option 3"
-    aria-pressed={false}
-    className="c3"
+    aria-pressed="false"
+    class="c3"
     data-testid="test-toggle-button-2"
-    onClick={[Function]}
     type="button"
     value="option3"
   >
@@ -320,10 +313,9 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   </button>
   <button
     aria-label="Option 4"
-    aria-pressed={false}
-    className="c3"
+    aria-pressed="false"
+    class="c3"
     data-testid="test-toggle-button-3"
-    onClick={[Function]}
     type="button"
     value="option4"
   >

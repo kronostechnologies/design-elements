@@ -1,9 +1,7 @@
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { ToggleButtonGroup } from './toggle-button-group';
 
 const buttonGroup = [
@@ -35,20 +33,19 @@ describe('ToggleButtonGroup', () => {
     });
 
     test('Matches snapshot (desktop)', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />,
+            'desktop',
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches snapshot (mobile)', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
-                'mobile',
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />,
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });
