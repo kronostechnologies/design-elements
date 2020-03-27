@@ -36,10 +36,7 @@ describe('ToggleButtonGroup', () => {
 
     test('Matches snapshot (desktop)', () => {
         const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
-                'desktop',
-            ),
+            ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

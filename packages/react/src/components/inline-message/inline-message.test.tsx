@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { InlineMessage } from './inline-message';
 
@@ -18,10 +19,12 @@ describe('Inline Message', () => {
 
     test('Matches snapshot (mobile)', () => {
         const tree = renderer.create(
-            ThemeWrapped(
-                <InlineMessage type="error" device="mobile">
-                    Test
-                </InlineMessage>,
+            DeviceContextWrapped(
+                ThemeWrapped(
+                    <InlineMessage type="error">
+                        Test
+                    </InlineMessage>,
+                ), 'mobile',
             ),
         ).toJSON();
 
