@@ -1,6 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { ToggleButtonGroup } from './toggle-button-group';
@@ -33,9 +34,23 @@ describe('ToggleButtonGroup', () => {
         expect(getByTestId(wrapper, 'test-toggle-button-0').prop('disabled')).toBe(true);
     });
 
-    test('Matches snapshot', () => {
+    test('Matches snapshot (desktop)', () => {
         const tree = renderer.create(
-            ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
+            DeviceContextWrapped(
+                ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
+                'desktop',
+            ),
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches snapshot (mobile)', () => {
+        const tree = renderer.create(
+            DeviceContextWrapped(
+                ThemeWrapped(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test4" />),
+                'mobile',
+            ),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

@@ -1,5 +1,6 @@
 import React, { MouseEvent, useState } from 'react';
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const Container = styled.div`
     display: flex;
@@ -17,7 +18,7 @@ const Container = styled.div`
 
 interface ToggleButtonProps {
     pressed: boolean;
-    device: 'mobile' | 'desktop';
+    isMobile: boolean;
 }
 
 const ToggleButton = styled.button<ToggleButtonProps>`
@@ -28,8 +29,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     box-sizing: border-box;
     color: ${props => props.pressed ? props.theme.greys.white : props.theme.greys['dark-grey']};
     cursor: ${props => props.disabled ? 'default' : 'pointer'};
-    font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
-    height: ${props => props.device === 'mobile' ? '48px' : '40px'};
+    font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
+    height: ${props => props.isMobile ? '48px' : '40px'};
     letter-spacing: 0.46px;
     margin-left: ${props => props.pressed ? '-1px' : '0'};
     padding: 0 var(--spacing-2x);
@@ -60,18 +61,14 @@ interface ToggleButtonGroupProps {
         value: string;
     }[];
     /**
-     * Applies styles and sizes according to the device
-     * @default desktop
-     */
-    device?: 'mobile' | 'desktop';
-    /**
      * Sets common name for all buttons
      */
     groupName: string;
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, onClick }: ToggleButtonGroupProps) => {
+export const ToggleButtonGroup = ({ buttonGroup, groupName, onClick }: ToggleButtonGroupProps) => {
+    const { isMobile } = useDeviceContext();
     const defaultPressedButton = buttonGroup.find(button => button.defaultPressed);
     const [selectedButton, setSelectedButton] = useState(defaultPressedButton ? defaultPressedButton.value : '');
 
@@ -90,7 +87,7 @@ export const ToggleButtonGroup = ({ buttonGroup, device = 'desktop', groupName, 
                   aria-pressed={button.value === selectedButton}
                   pressed={button.value === selectedButton}
                   data-testid={`test-toggle-button-${i}`}
-                  device={device}
+                  isMobile={isMobile}
                   disabled={button.disabled}
                   key={`${groupName}-${button.value}`}
                   onClick={handleClick}
