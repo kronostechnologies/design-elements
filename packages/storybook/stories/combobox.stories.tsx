@@ -46,9 +46,6 @@ export const disabled = () => (
 export const invalid = () => (
     <Combobox label="Select an option" options={provinces} valid={false}/>
 );
-export const mobile = () => (
-    <Combobox label="Select an option" options={provinces} device="mobile"/>
-);
 export const required = () => (
     <form onSubmit={event => event.preventDefault()}>
         <Combobox label="Select an option" options={provinces} required/>

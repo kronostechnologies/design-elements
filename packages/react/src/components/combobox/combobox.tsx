@@ -1,8 +1,6 @@
 import React from 'react';
 import { Select } from '../select/select';
 
-type DeviceType = 'mobile' | 'desktop';
-
 interface Option {
     label: string;
     value: string;
@@ -20,11 +18,6 @@ interface ComboboxProps {
      * The default selected option
      */
     defaultValue?: string;
-    /**
-     * Applies styles according to device
-     * @default desktop
-     */
-    device?: DeviceType;
     /**
      * Disables input
      */

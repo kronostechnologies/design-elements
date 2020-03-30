@@ -2,6 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Select } from './select';
@@ -82,11 +83,12 @@ describe('Select', () => {
 
     test('mobile select has a different style', () => {
         const tree = renderer.create(
-            ThemeWrapped(
-                <Select
-                    options={provinces}
-                    device="mobile"
-                />,
+            DeviceContextWrapped(
+                ThemeWrapped(
+                    <Select
+                        options={provinces}
+                    />,
+                ), 'mobile',
             ),
         ).toJSON();
 

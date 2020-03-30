@@ -2,9 +2,8 @@ import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useStat
 
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
-
-type DeviceType = 'mobile' | 'desktop';
 
 export interface Option {
     value: string;
@@ -43,11 +42,6 @@ interface ListProps {
      */
     defaultValue?: string;
     /**
-     * Applies styles and sizes according to the device
-     * @default desktop
-     */
-    device?: DeviceType;
-    /**
      * Number of visible items in the list before overflow
      * @default 4
      */
@@ -71,12 +65,12 @@ interface ListProps {
 }
 
 interface WrapperProps {
-    device: DeviceType;
+    isMobile: boolean;
     numberOfItemsVisible: number;
 }
 
 interface ItemProps {
-    device: DeviceType;
+    isMobile: boolean;
     selected: boolean;
     focused: boolean;
     checkIndicator: boolean;
@@ -89,18 +83,18 @@ const Wrapper = styled.ul<WrapperProps>`
     background-color: ${({ theme }) => theme.greys.white};
     list-style-type: none;
     margin: 0;
-    max-height: ${({ numberOfItemsVisible, device }) => numberOfItemsVisible * (device === 'mobile' ? itemHeightMobile : itemHeightDesktop)}px;
+    max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
     min-width: 200px;
     overflow-y: auto;
     padding: 0;
     width: 100%;
 `;
 
-const getItemSidePadding = ({ checkIndicator, selected, device }: ItemProps): string => {
+const getItemSidePadding = ({ checkIndicator, selected, isMobile }: ItemProps): string => {
     if (checkIndicator) {
         if (selected) {
             return '0';
-        } else if (device === 'mobile') {
+        } else if (isMobile) {
             return '40px';
         }
         return '34px';
@@ -114,9 +108,9 @@ const Item = styled.li<ItemProps>`
     color: ${({ theme }) => theme.greys.black};
     cursor: pointer;
     display: flex;
-    font-size: ${({ device }) => device === 'mobile' ? '1rem' : '0.875rem'};
-    height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
-    line-height: ${({ device }) => device === 'mobile' ? itemHeightMobile : itemHeightDesktop}px;
+    font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
+    height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
+    line-height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
     overflow: hidden;
     padding: 0 ${getItemSidePadding};
     text-overflow: ellipsis;
@@ -140,12 +134,12 @@ export function List({
     onKeyDown,
     checkIndicator = false,
     defaultValue,
-    device = 'desktop',
     numberOfItemsVisible = 4,
     autofocus = false,
     focusedValue,
     value,
 }: ListProps): ReactElement {
+    const { isMobile } = useDeviceContext();
     const listRef = useRef<HTMLUListElement>(null);
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(value || defaultValue ? defaultSelectedIndex : -1);
@@ -312,7 +306,7 @@ export function List({
     return (
         <Wrapper
             role="listbox"
-            device={device}
+            isMobile={isMobile}
             tabIndex={0}
             id={id}
             ref={listRef}
@@ -330,7 +324,7 @@ export function List({
                     id={option.id}
                     aria-label={option.label || option.value}
                     aria-selected={isOptionSelected(option)}
-                    device={device}
+                    isMobile={isMobile}
                     onClick={handleSelect(option)}
                     selected={isOptionSelected(option)}
                     focused={isOptionFocused(option)}
@@ -338,7 +332,7 @@ export function List({
                 >
                     <>
                         {shouldDisplayCheckIndicator(option) &&
-                            <CheckIndicator name="check" size={device === 'mobile' ? '24' : '18'}/>}
+                            <CheckIndicator name="check" size={isMobile ? '24' : '18'}/>}
                         {option.label || option.value}
                     </>
                 </Item>

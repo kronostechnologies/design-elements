@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { DeviceType } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
@@ -18,8 +19,6 @@ const StyledDiv = styled.div`
         border-color: ${props => props.valid ? props.theme.main['primary-1.1'] : props.theme.notifications['error-2.1']};
     }
 `;
-
-export type DeviceType = 'mobile' | 'desktop';
 
 interface FieldContainerProps {
     children: ReactNode;

@@ -3,22 +3,21 @@ import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
 import { ChooseInput } from '../choose-input/choose-input';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { List } from '../list/list';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
-type DeviceType = 'mobile' | 'desktop';
-
 interface InputProps {
     searchable?: boolean;
-    device: DeviceType;
+    isMobile: boolean;
     disabled?: boolean;
     theme: Theme;
 }
 
 interface InputWrapperProps extends InputProps {
-    device: DeviceType;
+    isMobile: boolean;
     focus?: boolean;
     containerOutline: boolean;
     valid: boolean;
@@ -50,7 +49,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     box-shadow: ${props => props.containerOutline ? '0 0 0 2px rgba(0, 128, 165, 0.4)' : 'none'};
     box-sizing: border-box;
     display: flex;
-    height: ${props => props.device === 'mobile' ? '40px' : '32px'};
+    height: ${props => props.isMobile ? '40px' : '32px'};
     justify-content: space-between;
     margin-top: var(--spacing-half);
     padding-right: var(--spacing-1x);
@@ -71,7 +70,7 @@ const StyledInput = styled.input<InputProps>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     caret-color: ${props => props.searchable ? 'unset' : 'transparent'};
-    font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
+    font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
     letter-spacing: 0.4px;
     max-height: 100%;
     outline: none;
@@ -84,7 +83,7 @@ const StyledInput = styled.input<InputProps>`
 
     &::placeholder {
         color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
-        font-size: ${props => props.device === 'mobile' ? '1rem' : '0.875rem'};
+        font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
     }
 `;
 
@@ -120,11 +119,6 @@ interface SelectProps {
      * The default selected option
      */
     defaultValue?: string;
-    /**
-     * Applies styles according to device
-     * @default desktop
-     */
-    device?: DeviceType;
     /**
      * Disables input
      */
@@ -167,7 +161,6 @@ interface SelectProps {
 
 export const Select = ({
     defaultValue,
-    device = 'desktop',
     disabled,
     label,
     onChange,
@@ -181,6 +174,7 @@ export const Select = ({
     valid = true,
     validationErrorMessage = 'You must select an option',
 }: SelectProps) => {
+    const { device, isMobile } = useDeviceContext();
     const [focus, setFocus] = useState(false);
     const [containerOutline, setContainerOutline] = useState(false);
     const [open, setOpen] = useState(false);
@@ -402,7 +396,7 @@ export const Select = ({
                     aria-haspopup="listbox"
                     aria-owns={`listbox_${id}`}
                     containerOutline={containerOutline}
-                    device={device}
+                    isMobile={isMobile}
                     disabled={disabled}
                     focus={focus}
                     ref={wrapperRef}
@@ -415,7 +409,7 @@ export const Select = ({
                         aria-autocomplete={searchable ? 'both' : 'list'}
                         aria-controls={`listbox_${id}`}
                         aria-multiline="false"
-                        device={device}
+                        isMobile={isMobile}
                         disabled={disabled}
                         name={name}
                         onBlur={handleBlur}
@@ -444,7 +438,6 @@ export const Select = ({
                         checkIndicator
                         data-testid="list"
                         defaultValue={defaultValue}
-                        device={device}
                         focusedValue={focusedValue}
                         id={id}
                         numberOfItemsVisible={numberOfItemsVisible}

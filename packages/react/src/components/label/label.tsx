@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { DeviceType } from '../field-container/field-container';
+import { DeviceType } from '../device-context-provider/device-context-provider';
 
 const StyledLabel = styled.label<{device: DeviceType}>`
     color: ${props => props.theme.greys.black};
