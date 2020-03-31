@@ -1,29 +1,26 @@
-import React, { ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
+import React, { ReactElement, ReactNode, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
 
-import { breakpoints } from '../../tokens/breakpoints';
+import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { SideDrawer } from '../side-drawer/side-drawer';
 import { Logo, LogoName } from './logo';
 
-const Header = styled.header`
+const getPadding = (device: DeviceType): string => {
+    if (device === 'tablet') return '12px var(--spacing-2x)';
+    else if (device === 'mobile') return 'var(--spacing-2x)';
+    else return 'var(--spacing-1x) var(--spacing-2x)';
+};
+
+const Header = styled.header<{ device: DeviceType }>`
     align-items: center;
     background: ${props => props.theme.main['primary-2']};
     box-sizing: border-box;
     display: flex;
-    height: 48px;
+    height: ${({ device }) => device === 'desktop' ? 48 : 56}px;
     justify-content: space-between;
-    padding: var(--spacing-1x) var(--spacing-2x);
-
-    @media screen and (max-width: ${breakpoints.desktop}px) {
-        height: 56px;
-        padding: 12px var(--spacing-2x);
-    }
-
-    @media screen and (max-width: ${breakpoints.mobile}px) {
-        padding: var(--spacing-2x);
-    }
+    padding: ${({ device }) => getPadding(device)};
 `;
 
 const LogoWrapper = styled(Link)`
@@ -69,39 +66,19 @@ export const ApplicationMenu = ({
     appName = 'default',
     children,
     logoHref = '/',
-    mobileDrawerContent }: HeadbandProps): ReactElement => {
+    mobileDrawerContent }: HeadbandProps,
+): ReactElement => {
+    const { device, isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth || document.documentElement.clientWidth);
-    const [mobile, setMobile] = useState(screenWidth <= breakpoints.mobile);
     const themeContext = useContext(ThemeContext);
-    const productName = (mobile && appName !== 'default') ? `${appName}Mobile` as LogoName : appName;
-
-    useEffect(() => {
-        window.addEventListener('resize', handleScreenResize);
-        return () => {
-            window.removeEventListener('resize', handleScreenResize);
-        };
-    }, []);
-
-    useEffect(() => {
-        const isMobile = screenWidth <= breakpoints.mobile;
-
-        if (!isMobile) {
-            setDrawerOpen(false);
-        }
-        setMobile(isMobile);
-    }, [screenWidth]);
-
-    const handleScreenResize = (): void => {
-        setScreenWidth(window.innerWidth || document.documentElement.clientWidth);
-    };
+    const productName = (isMobile && appName !== 'default') ? `${appName}Mobile` as LogoName : appName;
 
     return (
-        <Header>
+        <Header device={device}>
             <LogoWrapper to={logoHref} aria-label="Home">
                 <Logo name={productName} />
             </LogoWrapper>
-            {mobile && mobileDrawerContent ? (
+            {isMobile && mobileDrawerContent ? (
                 <>
                     <BurgerButton
                         aria-expanded={drawerOpen}

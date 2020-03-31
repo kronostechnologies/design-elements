@@ -1,6 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Side Drawer has nested drawer 1`] = `
+exports[`Side Drawer Has different height when in mobile 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 56px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 50%;
+  z-index: 100;
+}
+
+.c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  aria-hidden={false}
+  className="c0 side-drawer"
+  open={true}
+  origin="right"
+  width="50%"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
+exports[`Side Drawer Has nested drawer 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -49,20 +87,6 @@ exports[`Side Drawer has nested drawer 1`] = `
   top: 0;
 }
 
-@media screen and (max-width:992px) {
-  .c1 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
-}
-
-@media screen and (max-width:992px) {
-  .c0 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
-}
-
 <div
   aria-hidden={false}
   className="c0 side-drawer"
@@ -84,7 +108,7 @@ exports[`Side Drawer has nested drawer 1`] = `
 </div>
 `;
 
-exports[`Side Drawer has width set to 50% 1`] = `
+exports[`Side Drawer Has width set to 50% 1`] = `
 .c0 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -109,13 +133,6 @@ exports[`Side Drawer has width set to 50% 1`] = `
   top: 0;
 }
 
-@media screen and (max-width:992px) {
-  .c0 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
-}
-
 <div
   aria-hidden={false}
   className="c0 side-drawer"
@@ -129,7 +146,7 @@ exports[`Side Drawer has width set to 50% 1`] = `
 </div>
 `;
 
-exports[`Side Drawer is closed on left side 1`] = `
+exports[`Side Drawer Is closed on left side 1`] = `
 .c0 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -154,13 +171,6 @@ exports[`Side Drawer is closed on left side 1`] = `
   top: 0;
 }
 
-@media screen and (max-width:992px) {
-  .c0 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
-}
-
 <div
   aria-hidden={true}
   className="c0 side-drawer"
@@ -174,7 +184,7 @@ exports[`Side Drawer is closed on left side 1`] = `
 </div>
 `;
 
-exports[`Side Drawer is closed on right side 1`] = `
+exports[`Side Drawer Is closed on right side 1`] = `
 .c0 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -199,13 +209,6 @@ exports[`Side Drawer is closed on right side 1`] = `
   top: 0;
 }
 
-@media screen and (max-width:992px) {
-  .c0 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
-}
-
 <div
   aria-hidden={true}
   className="c0 side-drawer"
@@ -219,7 +222,7 @@ exports[`Side Drawer is closed on right side 1`] = `
 </div>
 `;
 
-exports[`Side Drawer is open 1`] = `
+exports[`Side Drawer Is open 1`] = `
 .c0 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -242,13 +245,6 @@ exports[`Side Drawer is open 1`] = `
 .c0 > .side-drawer {
   height: 100%;
   top: 0;
-}
-
-@media screen and (max-width:992px) {
-  .c0 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
 }
 
 <div
