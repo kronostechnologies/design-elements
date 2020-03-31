@@ -47,5 +47,5 @@ interface LogoProps {
 export const Logo = ({ name = 'default' }: LogoProps): ReactElement | null => {
     const Component = logoMapping[name];
 
-    return Component ? <Component style={{ height: '100%' }} focusable="false" aria-hidden="true"/> : null;
+    return <Component style={{ height: '100%' }} focusable="false" aria-hidden="true"/>;
 };

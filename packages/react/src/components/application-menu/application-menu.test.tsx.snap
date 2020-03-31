@@ -1,30 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Application Menu Has burger button and side drawer when screen width is under 576px 1`] = `
-.c3 {
-  background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  height: calc(100vh - 48px);
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  top: 48px;
-  -webkit-transform: translate(100%);
-  -ms-transform: translate(100%);
-  transform: translate(100%);
-  -webkit-transition: -webkit-transform 300ms;
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
-  width: 100%;
-  z-index: 100;
-}
-
-.c3 > .side-drawer {
-  height: 100%;
-  top: 0;
-}
-
+exports[`Application Menu Matches the snapshot (desktop) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -59,6 +35,95 @@ exports[`Application Menu Has burger button and side drawer when screen width is
 }
 
 .c2 {
+  color: #FFFFFF;
+}
+
+<header
+  className="c0"
+>
+  <a
+    aria-label="Home"
+    className="c1"
+    href="/"
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    />
+  </a>
+  <div
+    className="c2"
+  >
+    Hello, World!
+  </div>
+</header>
+`;
+
+exports[`Application Menu Matches the snapshot (mobile) 1`] = `
+.c3 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 56px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(100%);
+  -ms-transform: translate(100%);
+  transform: translate(100%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c3 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #012639;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: var(--spacing-2x);
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  height: 100%;
+}
+
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -67,26 +132,6 @@ exports[`Application Menu Has burger button and side drawer when screen width is
   cursor: pointer;
   margin: 0;
   padding: 0;
-}
-
-@media screen and (max-width:992px) {
-  .c3 {
-    height: calc(100vh - 56px);
-    top: 56px;
-  }
-}
-
-@media screen and (max-width:992px) {
-  .c0 {
-    height: 56px;
-    padding: 12px var(--spacing-2x);
-  }
-}
-
-@media screen and (max-width:576px) {
-  .c0 {
-    padding: var(--spacing-2x);
-  }
 }
 
 <header
@@ -138,7 +183,31 @@ exports[`Application Menu Has burger button and side drawer when screen width is
 </header>
 `;
 
-exports[`Application Menu Matches the snapshot 1`] = `
+exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
+.c3 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 56px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 56px;
+  -webkit-transform: translate(100%);
+  -ms-transform: translate(100%);
+  transform: translate(100%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c3 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -150,12 +219,12 @@ exports[`Application Menu Matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 48px;
+  height: 56px;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: var(--spacing-1x) var(--spacing-2x);
+  padding: var(--spacing-2x);
 }
 
 .c1 {
@@ -173,20 +242,14 @@ exports[`Application Menu Matches the snapshot 1`] = `
 }
 
 .c2 {
-  color: #FFFFFF;
-}
-
-@media screen and (max-width:992px) {
-  .c0 {
-    height: 56px;
-    padding: 12px var(--spacing-2x);
-  }
-}
-
-@media screen and (max-width:576px) {
-  .c0 {
-    padding: var(--spacing-2x);
-  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 <header
@@ -208,10 +271,32 @@ exports[`Application Menu Matches the snapshot 1`] = `
       }
     />
   </a>
-  <div
+  <button
+    aria-controls="menu-drawer"
+    aria-expanded={false}
+    aria-label="Navigation"
     className="c2"
+    onClick={[Function]}
+    type="button"
   >
-    Hello, World!
+    <svg
+      color="#FFFFFF"
+      focusable={false}
+      height="24"
+      width="24"
+    />
+  </button>
+  <div
+    aria-hidden={true}
+    className="c3 side-drawer"
+    id="menu-drawer"
+    open={false}
+    origin="right"
+    width="100%"
+  >
+    <p>
+      Test
+    </p>
   </div>
 </header>
 `;
