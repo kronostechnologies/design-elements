@@ -1,12 +1,11 @@
 import React, { ReactElement } from 'react';
-import renderer from 'react-test-renderer';
 
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
+import { DeviceType } from '../device-context-provider/device-context-provider';
 import { SideDrawer } from './side-drawer';
 
-const renderComponent = (component: ReactElement) => {
-    return renderer.create(ThemeWrapped(component)).toJSON();
+const renderComponent = (component: ReactElement, device?: DeviceType) => {
+    return renderWithProviders(component, device);
 };
 
 describe('Side Drawer', () => {
@@ -64,12 +63,10 @@ describe('Side Drawer', () => {
 
     test('Has different height when in mobile', () => {
         const tree = renderComponent(
-            DeviceContextWrapped(
-                <SideDrawer open width="50%">
-                        <p>Test</p>
-                </SideDrawer>,
-                'mobile',
-            ),
+            <SideDrawer open width="50%">
+                    <p>Test</p>
+            </SideDrawer>,
+            'mobile',
         );
 
         expect(tree).toMatchSnapshot();
