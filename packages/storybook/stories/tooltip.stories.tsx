@@ -18,11 +18,6 @@ export const defaultOpen = () => (
         Tooltip Content
     </Tooltip>
 );
-export const mobile = () => (
-    <Tooltip device="mobile">
-        Tooltip Content
-    </Tooltip>
-);
 export const topPlacement = () => (
     <Tooltip placement="top">
         Tooltip Content

@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
 import { useTheme } from '../../hooks/use-theme';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
-export const TooltipContainer = styled.div<{mobile?: boolean}>`
+export const TooltipContainer = styled.div<{isMobile?: boolean}>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['light-grey']};
     border-radius: var(--border-radius);
@@ -14,13 +15,13 @@ export const TooltipContainer = styled.div<{mobile?: boolean}>`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-size: ${({ mobile }) => mobile ? '1rem' : '0.875rem'};
+    font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
     justify-content: center;
-    line-height: ${({ mobile }) => mobile ? '1.5rem' : '1.25rem'};
+    line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
     margin: var(--spacing-1x) 12px;
     max-width: 327px;
-    min-height: ${({ mobile }) => mobile ? '72px' : '32px'};
-    padding: ${({ mobile }) => mobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
+    min-height: ${({ isMobile }) => isMobile ? '72px' : '32px'};
+    padding: ${({ isMobile }) => isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
     transition: opacity 300ms;
     z-index: 1000;
 `;
@@ -134,15 +135,9 @@ const StyledSpan = styled.span`
     width: fit-content;
 `;
 
-type DeviceType = 'mobile' | 'desktop';
 type PlacementType = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
-    /**
-     * Applies styles and sizes according to the device
-     * @default desktop
-     */
-    device?: DeviceType;
     /**
      * Tooltip placement. Always top on mobile
      * @default right
@@ -154,13 +149,13 @@ interface TooltipProps {
     defaultOpen?: boolean;
 }
 
-export function Tooltip({ children, device = 'desktop', defaultOpen, ...props }: TooltipProps): ReactElement {
+export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): ReactElement {
+    const { isMobile } = useDeviceContext();
     const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = uuid();
     const [ariaHidden, setAriaHidden] = useState(defaultOpen ? false : true);
     const [tooltipOpen, setTooltipOpen] = useState();
-    const isMobile = device === 'mobile';
 
     const handleKeyDown = (event: KeyboardEvent<HTMLSpanElement>): void => {
         if (!isMobile && event.key === 'Escape' && tooltipOpen) {
@@ -189,7 +184,7 @@ export function Tooltip({ children, device = 'desktop', defaultOpen, ...props }:
             }) => (
                 <TooltipContainer
                     aria-hidden={ariaHidden}
-                    mobile={device === 'mobile'}
+                    isMobile={isMobile}
                     id={tooltipId}
                     role="tooltip"
                     {...getTooltipProps({ ref: tooltipRef })}
