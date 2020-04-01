@@ -32,7 +32,7 @@ const Page = styled.li<{ isSelected: boolean, deviceContext: DeviceContextProps 
     }
 
     &:focus {
-        box-shadow: 0 0 2px 2px ${props => props.theme.main['primary-1.2']};
+        box-shadow: 0 0 0 1px ${props => props.theme.main['primary-1.1']}, 0 0 0 3px ${props => props.theme.main['primary-1.2']};
         outline: none;
     }
 `;
@@ -61,7 +61,15 @@ const NavButton = (props: NavButtonProps) => {
 };
 
 const Container = styled.div`
+    align-items: center;
     display: flexbox;
+`;
+
+const ResultsLabel = styled.div<{ deviceContext: DeviceContextProps }>`
+    font-size: ${props => props.deviceContext.isMobile ? 1 : 0.9}rem;
+    font-weight: 400;
+    line-height: ${props => props.deviceContext.isMobile ? 32 : 24}px;
+    margin-right: 16px;
 `;
 
 interface PaginationProps {
@@ -94,6 +102,8 @@ export function Pagination({ defaultActivePage, totalPages, pagesShown, onPageCh
     const [currentPage, setCurrentPage] = useState(defaultActivePage ? clamp(defaultActivePage, 1, totalPages) : 1);
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
+    const firstLastNavActive = totalPages > 10;
+    const forwardBackwardNavActive = totalPages > 3 || concretePagesShown < totalPages;
 
     const changePage = (page: number) => {
         setCurrentPage(page);
@@ -118,39 +128,40 @@ export function Pagination({ defaultActivePage, totalPages, pagesShown, onPageCh
 
     return (
         <Container>
-            <NavButton
+            <ResultsLabel deviceContext={deviceContext}>1530 results</ResultsLabel>
+            {firstLastNavActive && <NavButton
                 deviceType={deviceContext}
                 data-testid="firstPageButton"
                 iconName="chevronsLeft"
                 label="first page"
                 enabled={canNavigatePrevious}
                 onClick={() => changePage(1)}
-            />
-            <NavButton
+            />}
+            {forwardBackwardNavActive && <NavButton
                 deviceType={deviceContext}
                 data-testid="previousPageButton"
                 iconName="chevronLeft"
                 label="previous page"
                 enabled={canNavigatePrevious}
                 onClick={() => changePage(+currentPage - 1)}
-            />
+            />}
             <Pages>{pages}</Pages>
-            <NavButton
+            {forwardBackwardNavActive && <NavButton
                 deviceType={deviceContext}
                 data-testid="nextPageButton"
                 iconName="chevronRight"
                 label="next page"
                 enabled={canNavigateNext}
                 onClick={() => changePage(+currentPage + 1)}
-            />
-            <NavButton
+            />}
+            {firstLastNavActive && <NavButton
                 deviceType={deviceContext}
                 data-testid="lastPageButton"
                 iconName="chevronsRight"
                 label="last page"
                 enabled={canNavigateNext}
                 onClick={() => changePage(totalPages)}
-            />
+            />}
         </Container>
     );
 }

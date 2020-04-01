@@ -8,5 +8,5 @@ export default {
 };
 
 export const normal = () => (
-    <Pagination totalPages={3} defaultActivePage={1} pagesShown={3} />
+    <Pagination totalPages={11} defaultActivePage={1} pagesShown={5} />
 );

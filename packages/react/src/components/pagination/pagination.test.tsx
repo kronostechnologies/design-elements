@@ -3,22 +3,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { calculateShownPageRange } from '../../utils/range';
 import { Pagination } from './pagination';
 
-jest.mock('../../utils/range');
-
-const mockedCalculatePageRange = calculateShownPageRange as jest.Mock;
-
 describe('Pagination', () => {
-    beforeEach(() => {
-        mockedCalculatePageRange.mockReturnValue({ begin: 1, end: 3 });
-    });
-
     test('Matches the mobile snapshot', () => {
         const tree = renderer.create(
             DeviceContextWrapped(
-                ThemeWrapped(<Pagination totalPages={3} />),
+                ThemeWrapped(<Pagination totalPages={12} />),
                 'mobile'),
         ).toJSON();
 
@@ -28,7 +19,7 @@ describe('Pagination', () => {
     test('Matches the desktop snapshot', () => {
         const tree = renderer.create(
             DeviceContextWrapped(
-                ThemeWrapped(<Pagination totalPages={3} />),
+                ThemeWrapped(<Pagination totalPages={12} />),
                 'desktop'),
         ).toJSON();
 
@@ -37,9 +28,8 @@ describe('Pagination', () => {
 
     describe('pages list', () => {
         test('should display pages', () => {
-            mockedCalculatePageRange.mockReturnValue({ begin: 12, end: 16 });
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} />),
+                ThemeWrapped(<Pagination totalPages={5} pagesShown={5} />),
             );
             const pages = wrapper.find('li');
 
@@ -65,7 +55,7 @@ describe('Pagination', () => {
         test('should move to first page when clicked', () => {
             const callback = jest.fn();
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={3} onPageChange={callback} />),
+                ThemeWrapped(<Pagination totalPages={11} defaultActivePage={3} onPageChange={callback} />),
             );
             const button = wrapper.find('[data-testid="firstPageButton"]').at(1);
 
@@ -78,7 +68,7 @@ describe('Pagination', () => {
 
         test('should be disabled when on first page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={1} />),
+                ThemeWrapped(<Pagination totalPages={11} defaultActivePage={1} />),
             );
             const button = wrapper.find('[data-testid="firstPageButton"]').at(1);
 
@@ -87,11 +77,20 @@ describe('Pagination', () => {
 
         test('should be enabled when on second page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={2} />),
+                ThemeWrapped(<Pagination totalPages={11} defaultActivePage={2} />),
             );
             const button = wrapper.find('[data-testid="firstPageButton"]').at(1);
 
             expect(button.prop('enabled')).toBeTruthy();
+        });
+
+        test('should not be rendered when there\'s less than 11 page', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={10} />),
+            );
+            const button = wrapper.find('[data-testid="firstPageButton"]').at(1);
+
+            expect(button.exists()).toBeFalsy();
         });
     });
 
@@ -99,7 +98,7 @@ describe('Pagination', () => {
         test('should move to previous page when clicked', () => {
             const callback = jest.fn();
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={3} onPageChange={callback} />),
+                ThemeWrapped(<Pagination totalPages={4} defaultActivePage={3} onPageChange={callback} />),
             );
             const button = wrapper.find('[data-testid="previousPageButton"]').at(1);
 
@@ -112,7 +111,7 @@ describe('Pagination', () => {
 
         test('should be disabled when on first page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={1} />),
+                ThemeWrapped(<Pagination totalPages={4} defaultActivePage={1} />),
             );
             const button = wrapper.find('[data-testid="previousPageButton"]').at(1);
 
@@ -121,11 +120,29 @@ describe('Pagination', () => {
 
         test('should be enabled when on second page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={2} />),
+                ThemeWrapped(<Pagination totalPages={4} defaultActivePage={2} />),
             );
             const button = wrapper.find('[data-testid="previousPageButton"]').at(1);
 
             expect(button.prop('enabled')).toBeTruthy();
+        });
+
+        test('should not be rendered when there\'s less than 4 page', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={3} />),
+            );
+            const button = wrapper.find('[data-testid="previousPageButton"]').at(1);
+
+            expect(button.exists()).toBeFalsy();
+        });
+
+        test('should always be visible when some pages are not shown', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={3} pagesShown={1} />),
+            );
+            const button = wrapper.find('[data-testid="previousPageButton"]').at(1);
+
+            expect(button.exists()).toBeTruthy();
         });
     });
 
@@ -133,7 +150,7 @@ describe('Pagination', () => {
         test('should move to next page when clicked', () => {
             const callback = jest.fn();
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={1} onPageChange={callback} />),
+                ThemeWrapped(<Pagination totalPages={4} defaultActivePage={1} onPageChange={callback} />),
             );
             const button = wrapper.find('[data-testid="nextPageButton"]').at(1);
 
@@ -146,7 +163,7 @@ describe('Pagination', () => {
 
         test('should be disabled when on last page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={3} />),
+                ThemeWrapped(<Pagination totalPages={4} defaultActivePage={4} />),
             );
             const button = wrapper.find('[data-testid="nextPageButton"]').at(1);
 
@@ -155,11 +172,29 @@ describe('Pagination', () => {
 
         test('should be enabled when on second page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={2} />),
+                ThemeWrapped(<Pagination totalPages={4} defaultActivePage={2} />),
             );
             const button = wrapper.find('[data-testid="nextPageButton"]').at(1);
 
             expect(button.prop('enabled')).toBeTruthy();
+        });
+
+        test('should not be rendered when there\'s less than 4 page', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={3} />),
+            );
+            const button = wrapper.find('[data-testid="nextPageButton"]').at(1);
+
+            expect(button.exists()).toBeFalsy();
+        });
+
+        test('should always be visible when some pages are not shown', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={3} pagesShown={1} />),
+            );
+            const button = wrapper.find('[data-testid="nextPageButton"]').at(1);
+
+            expect(button.exists()).toBeTruthy();
         });
     });
 
@@ -167,20 +202,21 @@ describe('Pagination', () => {
         test('should move to last page when clicked', () => {
             const callback = jest.fn();
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={1} onPageChange={callback} />),
+                ThemeWrapped(<Pagination totalPages={11} onPageChange={callback} />),
             );
+            wrapper.update();
             const button = wrapper.find('[data-testid="lastPageButton"]').at(1);
 
             button.simulate('click');
 
-            expect(callback).toHaveBeenCalledWith(3);
-            const page = wrapper.find('[data-testid="page-3"]').at(1);
+            expect(callback).toHaveBeenCalledWith(11);
+            const page = wrapper.find('[data-testid="page-11"]').at(1);
             expect(page.prop('isSelected')).toBeTruthy();
         });
 
         test('should be disabled when on last page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={3} />),
+                ThemeWrapped(<Pagination totalPages={11} defaultActivePage={11} />),
             );
             const button = wrapper.find('[data-testid="lastPageButton"]').at(1);
 
@@ -189,11 +225,20 @@ describe('Pagination', () => {
 
         test('should be enabled when on second page', () => {
             const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={2} />),
+                ThemeWrapped(<Pagination totalPages={11} defaultActivePage={2} />),
             );
             const button = wrapper.find('[data-testid="lastPageButton"]').at(1);
 
             expect(button.prop('enabled')).toBeTruthy();
+        });
+
+        test('should not be rendered when there\'s less than 11 page', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={10} />),
+            );
+            const button = wrapper.find('[data-testid="lastPageButton"]').at(1);
+
+            expect(button.exists()).toBeFalsy();
         });
     });
 });
