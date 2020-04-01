@@ -1,20 +1,12 @@
 import React, { ReactElement } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
 
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
+import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ApplicationMenu } from './application-menu';
 
-const renderComponent = (children: ReactElement) => (
-    renderer.create(
-        ThemeWrapped(
-            <Router>
-                {children}
-            </Router>,
-        ),
-    ).toJSON()
-);
+const renderComponent = (component: ReactElement, device?: DeviceType) => {
+    return renderWithProviders(component, device);
+};
 
 describe('Application Menu', () => {
     test('Matches the snapshot (desktop)', () => {
@@ -29,12 +21,10 @@ describe('Application Menu', () => {
 
     test('Matches the snapshot (mobile)', () => {
         const tree = renderComponent(
-            DeviceContextWrapped(
-                <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
-                    Hello, World!
-                </ApplicationMenu>,
-                'mobile',
-            ),
+            <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
+                Hello, World!
+            </ApplicationMenu>,
+            'mobile',
         );
 
         expect(tree).toMatchSnapshot();
@@ -42,12 +32,10 @@ describe('Application Menu', () => {
 
     test('mobileDrawerContent prop adds a side drawer and burger button in mobile', () => {
         const tree = renderComponent(
-            DeviceContextWrapped(
-                <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
-                    Hello, World!
-                </ApplicationMenu>,
-                'mobile',
-            ),
+            <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
+                Hello, World!
+            </ApplicationMenu>,
+            'mobile',
         );
 
         expect(tree).toMatchSnapshot();
