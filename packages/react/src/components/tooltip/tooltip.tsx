@@ -9,7 +9,7 @@ import { Icon } from '../icon/icon';
 
 export const TooltipContainer = styled.div<{isMobile?: boolean}>`
     background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['light-grey']};
+    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     box-sizing: border-box;
@@ -59,7 +59,7 @@ export const TooltipArrow = styled.div`
     }
 
     &[data-placement*='bottom']::before {
-        border-color: transparent transparent ${({ theme }) => theme.greys['light-grey']} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
         border-width: 0 0.5rem 0.4rem 0.5rem;
         position: absolute;
         top: -1px;
@@ -79,7 +79,7 @@ export const TooltipArrow = styled.div`
     }
 
     &[data-placement*='top']::before {
-        border-color: ${({ theme }) => theme.greys['light-grey']} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0 0.5rem;
         position: absolute;
         top: 1px;
@@ -98,7 +98,7 @@ export const TooltipArrow = styled.div`
     }
 
     &[data-placement*='right']::before {
-        border-color: transparent ${({ theme }) => theme.greys['light-grey']} transparent transparent;
+        border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
@@ -117,7 +117,7 @@ export const TooltipArrow = styled.div`
     }
 
     &[data-placement*='left']::before {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys['light-grey']};
+        border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
         border-width: 0.5rem 0 0.5rem 0.4em;
     }
 

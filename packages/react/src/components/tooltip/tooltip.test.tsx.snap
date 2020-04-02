@@ -71,7 +71,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #F1F2F2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
@@ -131,7 +131,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 }
 
 .c1[data-placement*='bottom']::before {
-  border-color: transparent transparent #F1F2F2 transparent;
+  border-color: transparent transparent #57666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
@@ -151,7 +151,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 }
 
 .c1[data-placement*='top']::before {
-  border-color: #F1F2F2 transparent transparent transparent;
+  border-color: #57666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
@@ -170,7 +170,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 }
 
 .c1[data-placement*='right']::before {
-  border-color: transparent #F1F2F2 transparent transparent;
+  border-color: transparent #57666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
@@ -189,7 +189,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 }
 
 .c1[data-placement*='left']::before {
-  border-color: transparent transparent transparent #F1F2F2;
+  border-color: transparent transparent transparent #57666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
@@ -213,7 +213,7 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 exports[`Tooltip TooltipContainer has mobile styles 1`] = `
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #F1F2F2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
@@ -273,7 +273,7 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
 }
 
 .c1[data-placement*='bottom']::before {
-  border-color: transparent transparent #F1F2F2 transparent;
+  border-color: transparent transparent #57666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
@@ -293,7 +293,7 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
 }
 
 .c1[data-placement*='top']::before {
-  border-color: #F1F2F2 transparent transparent transparent;
+  border-color: #57666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
@@ -312,7 +312,7 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
 }
 
 .c1[data-placement*='right']::before {
-  border-color: transparent #F1F2F2 transparent transparent;
+  border-color: transparent #57666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
@@ -331,7 +331,7 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
 }
 
 .c1[data-placement*='left']::before {
-  border-color: transparent transparent transparent #F1F2F2;
+  border-color: transparent transparent transparent #57666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
