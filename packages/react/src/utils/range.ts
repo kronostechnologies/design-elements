@@ -10,14 +10,13 @@ export function calculateShownPageRange(totalPages: number, pagesShown: number, 
     const pagesOnRight = Math.floor(pagesOnEachSide);
     let begin = currentPage - pagesOnLeft;
     let end = currentPage + pagesOnRight;
+    let rangeShift = 0;
     if (begin < 1) {
-        const delta = 1 - begin;
-        begin += delta;
-        end += delta;
+        rangeShift = 1 - begin;
     } else if (end > totalPages) {
-        const delta = totalPages - end;
-        begin += delta;
-        end += delta;
+        rangeShift = totalPages - end;
     }
+    begin += rangeShift;
+    end += rangeShift;
     return { begin, end };
 }

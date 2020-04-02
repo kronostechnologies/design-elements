@@ -51,6 +51,26 @@ describe('Pagination', () => {
         });
     });
 
+    describe('results label', () => {
+        test('should display the number of results when provided', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={3} numberOfResults={12345} />),
+            );
+            const label = wrapper.find('[data-testid="resultsLabel"]').at(1);
+
+            expect(label.exists()).toBeTruthy();
+            expect(label.text()).toEqual('12345 results');
+        });
+        test('should be hidden when number of results is not provided', () => {
+            const wrapper = mount(
+                ThemeWrapped(<Pagination totalPages={3} />),
+            );
+            const label = wrapper.find('[data-testid="resultsLabel"]').at(1);
+
+            expect(label.exists()).toBeFalsy();
+        });
+    });
+
     describe('first page button', () => {
         test('should move to first page when clicked', () => {
             const callback = jest.fn();

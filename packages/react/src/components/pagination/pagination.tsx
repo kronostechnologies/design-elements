@@ -67,27 +67,35 @@ const Container = styled.div`
 
 const ResultsLabel = styled.div<{ deviceContext: DeviceContextProps }>`
     font-size: ${props => props.deviceContext.isMobile ? 1 : 0.9}rem;
-    font-weight: 400;
     line-height: ${props => props.deviceContext.isMobile ? 32 : 24}px;
     margin-right: 16px;
 `;
 
 interface PaginationProps {
     /**
-     * selected page
-     * @default 1
-     */
-    defaultActivePage?: number;
-    /**
      * Total number of pages
      * @default desktop
      */
     totalPages: number;
     /**
+     * Displays the total number of results when provided
+     */
+    numberOfResults?: number;
+    /**
+     * Selected page
+     * @default 1
+     */
+    defaultActivePage?: number;
+    /**
      * Number of page shown
      * @default 3
      */
     pagesShown?: number;
+    /**
+     * Language
+     * @default en
+     */
+    lang?: 'en' | 'fr';
 
     /**
      * Function callback when page is changed
@@ -95,7 +103,8 @@ interface PaginationProps {
     onPageChange?(pageNumber: number): void;
 }
 
-export function Pagination({ defaultActivePage, totalPages, pagesShown, onPageChange }: PaginationProps): ReactElement {
+export function Pagination(
+    { totalPages, numberOfResults, defaultActivePage, pagesShown, lang, onPageChange }: PaginationProps): ReactElement {
     const deviceContext = useDeviceContext();
     const concretePagesShown = Math.min(pagesShown ? pagesShown : 3, totalPages);
     const pageChangeCallback = onPageChange ? onPageChange : () => undefined;
@@ -128,7 +137,9 @@ export function Pagination({ defaultActivePage, totalPages, pagesShown, onPageCh
 
     return (
         <Container>
-            <ResultsLabel deviceContext={deviceContext}>1530 results</ResultsLabel>
+            {numberOfResults !== undefined && <ResultsLabel deviceContext={deviceContext} data-testid="resultsLabel">
+                {numberOfResults} {lang === 'fr' ? 'résultats' : 'results'/* TODO refactor with i18n support */}
+            </ResultsLabel>}
             {firstLastNavActive && <NavButton
                 deviceType={deviceContext}
                 data-testid="firstPageButton"
