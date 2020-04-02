@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination Matches the desktop snapshot 1`] = `
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -47,28 +47,28 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 32px;
 }
 
-.c1:not(:disabled) {
+.c2:not(:disabled) {
   cursor: pointer;
 }
 
-.c1 > svg {
+.c2 > svg {
   color: inherit;
 }
 
-.c1:hover {
+.c2:hover {
   color: #000000;
 }
 
-.c1:disabled {
+.c2:disabled {
   color: #9CA7B4;
 }
 
-.c3 {
+.c4 {
   margin: 0 4px;
   padding: 0;
 }
 
-.c4 {
+.c5 {
   background-color: #0080A5;
   border-radius: 100%;
   color: #FFFFFF;
@@ -81,17 +81,17 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 24px;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: #0080A5;
   cursor: default;
 }
 
-.c4:focus {
+.c5:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
 }
 
-.c5 {
+.c6 {
   background-color: #FFFFFF;
   border-radius: 100%;
   color: #000000;
@@ -104,17 +104,17 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 24px;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: #D9DDE2;
   cursor: pointer;
 }
 
-.c5:focus {
+.c6:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
 }
 
-.c2 {
+.c3 {
   margin: -4px 0;
 }
 
@@ -124,6 +124,16 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1 {
+  display: -webkit-box;
   display: -webkit-flexbox;
   display: -ms-flexboxbox;
   display: flexbox;
@@ -132,99 +142,103 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 <div
   className="c0"
 >
-  <button
-    aria-label="first page"
-    className="c1 c2"
-    data-testid="firstPageButton"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
+  <div
+    className="c1"
   >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="16"
-      width="16"
-    />
-  </button>
-  <button
-    aria-label="previous page"
-    className="c1 c2"
-    data-testid="previousPageButton"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
-  >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="16"
-      width="16"
-    />
-  </button>
-  <ol
-    className="c3"
-  >
-    <li
+    <button
+      aria-label="first page"
+      className="c2 c3"
+      data-testid="firstPageButton"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="16"
+        width="16"
+      />
+    </button>
+    <button
+      aria-label="previous page"
+      className="c2 c3"
+      data-testid="previousPageButton"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="16"
+        width="16"
+      />
+    </button>
+    <ol
       className="c4"
-      data-testid="page-1"
-      onClick={[Function]}
-      tabIndex={0}
     >
-      1
-    </li>
-    <li
-      className="c5"
-      data-testid="page-2"
+      <li
+        className="c5"
+        data-testid="page-1"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        1
+      </li>
+      <li
+        className="c6"
+        data-testid="page-2"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        2
+      </li>
+      <li
+        className="c6"
+        data-testid="page-3"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        3
+      </li>
+    </ol>
+    <button
+      aria-label="next page"
+      className="c2 c3"
+      data-testid="nextPageButton"
+      disabled={false}
       onClick={[Function]}
-      tabIndex={0}
+      type="button"
     >
-      2
-    </li>
-    <li
-      className="c5"
-      data-testid="page-3"
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="16"
+        width="16"
+      />
+    </button>
+    <button
+      aria-label="last page"
+      className="c2 c3"
+      data-testid="lastPageButton"
+      disabled={false}
       onClick={[Function]}
-      tabIndex={0}
+      type="button"
     >
-      3
-    </li>
-  </ol>
-  <button
-    aria-label="next page"
-    className="c1 c2"
-    data-testid="nextPageButton"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="16"
-      width="16"
-    />
-  </button>
-  <button
-    aria-label="last page"
-    className="c1 c2"
-    data-testid="lastPageButton"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="16"
-      width="16"
-    />
-  </button>
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Pagination Matches the mobile snapshot 1`] = `
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -270,28 +284,28 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 48px;
 }
 
-.c1:not(:disabled) {
+.c2:not(:disabled) {
   cursor: pointer;
 }
 
-.c1 > svg {
+.c2 > svg {
   color: inherit;
 }
 
-.c1:hover {
+.c2:hover {
   color: #000000;
 }
 
-.c1:disabled {
+.c2:disabled {
   color: #9CA7B4;
 }
 
-.c3 {
+.c4 {
   margin: 0 4px;
   padding: 0;
 }
 
-.c4 {
+.c5 {
   background-color: #0080A5;
   border-radius: 100%;
   color: #FFFFFF;
@@ -304,17 +318,17 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 32px;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: #0080A5;
   cursor: default;
 }
 
-.c4:focus {
+.c5:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
 }
 
-.c5 {
+.c6 {
   background-color: #FFFFFF;
   border-radius: 100%;
   color: #000000;
@@ -327,17 +341,17 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 32px;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: #D9DDE2;
   cursor: pointer;
 }
 
-.c5:focus {
+.c6:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
 }
 
-.c2 {
+.c3 {
   margin: -8px 0;
 }
 
@@ -347,6 +361,16 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
   display: -webkit-flexbox;
   display: -ms-flexboxbox;
   display: flexbox;
@@ -355,93 +379,97 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 <div
   className="c0"
 >
-  <button
-    aria-label="first page"
-    className="c1 c2"
-    data-testid="firstPageButton"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
+  <div
+    className="c1"
   >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="20"
-      width="20"
-    />
-  </button>
-  <button
-    aria-label="previous page"
-    className="c1 c2"
-    data-testid="previousPageButton"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
-  >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="20"
-      width="20"
-    />
-  </button>
-  <ol
-    className="c3"
-  >
-    <li
+    <button
+      aria-label="first page"
+      className="c2 c3"
+      data-testid="firstPageButton"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="20"
+        width="20"
+      />
+    </button>
+    <button
+      aria-label="previous page"
+      className="c2 c3"
+      data-testid="previousPageButton"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="20"
+        width="20"
+      />
+    </button>
+    <ol
       className="c4"
-      data-testid="page-1"
-      onClick={[Function]}
-      tabIndex={0}
     >
-      1
-    </li>
-    <li
-      className="c5"
-      data-testid="page-2"
+      <li
+        className="c5"
+        data-testid="page-1"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        1
+      </li>
+      <li
+        className="c6"
+        data-testid="page-2"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        2
+      </li>
+      <li
+        className="c6"
+        data-testid="page-3"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        3
+      </li>
+    </ol>
+    <button
+      aria-label="next page"
+      className="c2 c3"
+      data-testid="nextPageButton"
+      disabled={false}
       onClick={[Function]}
-      tabIndex={0}
+      type="button"
     >
-      2
-    </li>
-    <li
-      className="c5"
-      data-testid="page-3"
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="20"
+        width="20"
+      />
+    </button>
+    <button
+      aria-label="last page"
+      className="c2 c3"
+      data-testid="lastPageButton"
+      disabled={false}
       onClick={[Function]}
-      tabIndex={0}
+      type="button"
     >
-      3
-    </li>
-  </ol>
-  <button
-    aria-label="next page"
-    className="c1 c2"
-    data-testid="nextPageButton"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="20"
-      width="20"
-    />
-  </button>
-  <button
-    aria-label="last page"
-    className="c1 c2"
-    data-testid="lastPageButton"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="20"
-      width="20"
-    />
-  </button>
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="20"
+        width="20"
+      />
+    </button>
+  </div>
 </div>
 `;

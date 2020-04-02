@@ -60,15 +60,22 @@ const NavButton = (props: NavButtonProps) => {
     );
 };
 
-const Container = styled.div`
+const Container = styled.div<{ deviceContext: DeviceContextProps }>`
     align-items: center;
-    display: flexbox;
+    display: flex;
+    flex-direction: ${props => props.deviceContext.isMobile ? 'column' : 'row' };
 `;
 
 const ResultsLabel = styled.div<{ deviceContext: DeviceContextProps }>`
     font-size: ${props => props.deviceContext.isMobile ? 1 : 0.9}rem;
     line-height: ${props => props.deviceContext.isMobile ? 32 : 24}px;
-    margin-right: 16px;
+    margin-bottom: ${props => props.deviceContext.isMobile ? '12px' : 0};
+    margin-right: 24px;
+    white-space: nowrap;
+`;
+
+const Navigation = styled.div`
+    display: flexbox;
 `;
 
 interface PaginationProps {
@@ -136,43 +143,45 @@ export function Pagination(
     }
 
     return (
-        <Container>
+        <Container deviceContext={deviceContext}>
             {numberOfResults !== undefined && <ResultsLabel deviceContext={deviceContext} data-testid="resultsLabel">
                 {numberOfResults} {lang === 'fr' ? 'résultats' : 'results'/* TODO refactor with i18n support */}
             </ResultsLabel>}
-            {firstLastNavActive && <NavButton
-                deviceType={deviceContext}
-                data-testid="firstPageButton"
-                iconName="chevronsLeft"
-                label="first page"
-                enabled={canNavigatePrevious}
-                onClick={() => changePage(1)}
-            />}
-            {forwardBackwardNavActive && <NavButton
-                deviceType={deviceContext}
-                data-testid="previousPageButton"
-                iconName="chevronLeft"
-                label="previous page"
-                enabled={canNavigatePrevious}
-                onClick={() => changePage(+currentPage - 1)}
-            />}
-            <Pages>{pages}</Pages>
-            {forwardBackwardNavActive && <NavButton
-                deviceType={deviceContext}
-                data-testid="nextPageButton"
-                iconName="chevronRight"
-                label="next page"
-                enabled={canNavigateNext}
-                onClick={() => changePage(+currentPage + 1)}
-            />}
-            {firstLastNavActive && <NavButton
-                deviceType={deviceContext}
-                data-testid="lastPageButton"
-                iconName="chevronsRight"
-                label="last page"
-                enabled={canNavigateNext}
-                onClick={() => changePage(totalPages)}
-            />}
+            <Navigation>
+                {firstLastNavActive && <NavButton
+                    deviceType={deviceContext}
+                    data-testid="firstPageButton"
+                    iconName="chevronsLeft"
+                    label="first page"
+                    enabled={canNavigatePrevious}
+                    onClick={() => changePage(1)}
+                />}
+                {forwardBackwardNavActive && <NavButton
+                    deviceType={deviceContext}
+                    data-testid="previousPageButton"
+                    iconName="chevronLeft"
+                    label="previous page"
+                    enabled={canNavigatePrevious}
+                    onClick={() => changePage(+currentPage - 1)}
+                />}
+                <Pages>{pages}</Pages>
+                {forwardBackwardNavActive && <NavButton
+                    deviceType={deviceContext}
+                    data-testid="nextPageButton"
+                    iconName="chevronRight"
+                    label="next page"
+                    enabled={canNavigateNext}
+                    onClick={() => changePage(+currentPage + 1)}
+                />}
+                {firstLastNavActive && <NavButton
+                    deviceType={deviceContext}
+                    data-testid="lastPageButton"
+                    iconName="chevronsRight"
+                    label="last page"
+                    enabled={canNavigateNext}
+                    onClick={() => changePage(totalPages)}
+                />}
+            </Navigation>
         </Container>
     );
 }
