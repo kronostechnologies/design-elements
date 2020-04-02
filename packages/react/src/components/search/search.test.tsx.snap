@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchGlobal Matches the snapshot 1`] = `
+<<<<<<< HEAD
 .c2 {
   color: #000000;
   display: block;
@@ -24,6 +25,8 @@ input + .c2 {
   margin-left: var(--spacing-half);
 }
 
+=======
+>>>>>>> Remove combobox component
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -111,6 +114,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Renames Dropdown to Select
 =======
@@ -130,6 +134,8 @@ input + .c2 {
 >>>>>>> Adds defaultValue prop
 =======
 >>>>>>> Adds CSS variables
+=======
+>>>>>>> Remove combobox component
 .c2 {
   color: #000000;
   display: block;
@@ -147,6 +153,7 @@ input + .c2 {
   margin-left: var(--spacing-half);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -188,6 +195,8 @@ input + .c2 {
 >>>>>>> Updates mobile styles
 =======
 >>>>>>> Close combobox when there's no search results
+=======
+>>>>>>> Remove combobox component
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

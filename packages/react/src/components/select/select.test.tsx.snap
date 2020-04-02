@@ -2243,7 +2243,11 @@ label + .c2 {
     aria-owns="listbox_undefined"
     className="c3"
     disabled={true}
+<<<<<<< HEAD
     role="combobox"
+=======
+    onClick={[Function]}
+>>>>>>> Remove combobox component
   >
     <input
       aria-autocomplete="list"
@@ -2428,6 +2432,7 @@ label + .c2 {
 
 exports[`Select is invalid 1`] = `
 Array [
+<<<<<<< HEAD
   .c8 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -2441,6 +2446,9 @@ Array [
 }
 
 .c2 {
+=======
+  .c2 {
+>>>>>>> Remove combobox component
   color: #000000;
   display: block;
   font-size: 0.75rem;
@@ -2455,6 +2463,18 @@ Array [
 
 input + .c2 {
   margin-left: var(--spacing-half);
+}
+
+.c9 {
+  color: #A40C2E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
+  margin: var(--spacing-half) 0 0;
 }
 
 .c0 {
@@ -3345,7 +3365,6 @@ label + .c2 {
       aria-owns="listbox_undefined"
       className="c3"
       onClick={[Function]}
-      role="combobox"
     >
       <input
         aria-autocomplete="list"
@@ -3794,7 +3813,6 @@ exports[`Select mobile select has a different style 1`] = `
     aria-owns="listbox_undefined"
     className="c2"
     onClick={[Function]}
-    role="combobox"
   >
     <input
       aria-autocomplete="list"

@@ -10,6 +10,7 @@ exports[`Field Container Invalid field snapshot 1`] = `
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Updates mobile styles
 =======
@@ -70,6 +71,8 @@ exports[`Field Container Invalid field snapshot 1`] = `
 >>>>>>> Updates mobile styles
 =======
 >>>>>>> Close combobox when there's no search results
+=======
+>>>>>>> Remove combobox component
 .c1 {
   color: #000000;
   display: block;
@@ -189,6 +192,18 @@ input + .c1 {
 >>>>>>> Adds CSS variables
 =======
 >>>>>>> Close combobox when there's no search results
+}
+
+.c2 {
+  color: #A40C2E;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
+  margin: var(--spacing-half) 0 0;
 }
 
 .c0 {

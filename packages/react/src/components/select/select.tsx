@@ -137,7 +137,7 @@ interface SelectProps {
     placeholder?: string;
     required?: boolean;
     /**
-     * Adds search functionality
+     * Adds search functionality with autocomplete
      */
     searchable?: boolean;
     /**
@@ -400,7 +400,7 @@ export const Select = ({
                     disabled={disabled}
                     focus={focus}
                     ref={wrapperRef}
-                    role="combobox"
+                    role={searchable ? 'combobox' : undefined}
                     valid={valid}
                     onClick={handleInputClick}
                 >
