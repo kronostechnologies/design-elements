@@ -63,59 +63,61 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   color: #9CA7B4;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 4px;
   padding: 0;
 }
 
-.c5 {
+.c4 {
   background-color: #0080A5;
   border-radius: 100%;
   color: #FFFFFF;
   display: inline-block;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: var(--font-normal);
+  height: 24px;
   line-height: 24px;
-  margin: 0 4px;
+  margin: 0 var(--spacing-half);
   text-align: center;
   width: 24px;
 }
 
-.c5:hover {
+.c4:hover {
   background-color: #0080A5;
   cursor: default;
 }
 
-.c5:focus {
+.c4:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
 }
 
-.c6 {
+.c5 {
   background-color: #FFFFFF;
   border-radius: 100%;
   color: #000000;
   display: inline-block;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: var(--font-normal);
+  height: 24px;
   line-height: 24px;
-  margin: 0 4px;
+  margin: 0 var(--spacing-half);
   text-align: center;
   width: 24px;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: #D9DDE2;
   cursor: pointer;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
-}
-
-.c3 {
-  margin: -4px 0;
 }
 
 .c0 {
@@ -133,21 +135,26 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
-  display: -webkit-flexbox;
-  display: -ms-flexboxbox;
-  display: flexbox;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
   className="c0"
 >
-  <div
+  <nav
+    aria-label="pagination"
     className="c1"
   >
     <button
       aria-label="first page"
-      className="c2 c3"
+      className="c2"
       data-testid="firstPageButton"
       disabled={true}
       onClick={[Function]}
@@ -162,7 +169,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
     </button>
     <button
       aria-label="previous page"
-      className="c2 c3"
+      className="c2"
       data-testid="previousPageButton"
       disabled={true}
       onClick={[Function]}
@@ -176,36 +183,51 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       />
     </button>
     <ol
-      className="c4"
+      className="c3"
     >
       <li
-        className="c5"
+        className="c4"
         data-testid="page-1"
         onClick={[Function]}
+        onKeyPress={[Function]}
         tabIndex={0}
       >
-        1
+        <a
+          aria-label="go to page 1"
+        >
+          1
+        </a>
       </li>
       <li
-        className="c6"
+        className="c5"
         data-testid="page-2"
         onClick={[Function]}
+        onKeyPress={[Function]}
         tabIndex={0}
       >
-        2
+        <a
+          aria-label="go to page 2"
+        >
+          2
+        </a>
       </li>
       <li
-        className="c6"
+        className="c5"
         data-testid="page-3"
         onClick={[Function]}
+        onKeyPress={[Function]}
         tabIndex={0}
       >
-        3
+        <a
+          aria-label="go to page 3"
+        >
+          3
+        </a>
       </li>
     </ol>
     <button
       aria-label="next page"
-      className="c2 c3"
+      className="c2"
       data-testid="nextPageButton"
       disabled={false}
       onClick={[Function]}
@@ -220,7 +242,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
     </button>
     <button
       aria-label="last page"
-      className="c2 c3"
+      className="c2"
       data-testid="lastPageButton"
       disabled={false}
       onClick={[Function]}
@@ -233,7 +255,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
         width="16"
       />
     </button>
-  </div>
+  </nav>
 </div>
 `;
 
@@ -300,59 +322,61 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   color: #9CA7B4;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 4px;
   padding: 0;
 }
 
-.c5 {
+.c4 {
   background-color: #0080A5;
   border-radius: 100%;
   color: #FFFFFF;
   display: inline-block;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--font-normal);
+  height: 32px;
   line-height: 32px;
-  margin: 0 4px;
+  margin: 0 var(--spacing-half);
   text-align: center;
   width: 32px;
 }
 
-.c5:hover {
+.c4:hover {
   background-color: #0080A5;
   cursor: default;
 }
 
-.c5:focus {
+.c4:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
 }
 
-.c6 {
+.c5 {
   background-color: #FFFFFF;
   border-radius: 100%;
   color: #000000;
   display: inline-block;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: var(--font-normal);
+  height: 32px;
   line-height: 32px;
-  margin: 0 4px;
+  margin: 0 var(--spacing-half);
   text-align: center;
   width: 32px;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: #D9DDE2;
   cursor: pointer;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
   outline: none;
-}
-
-.c3 {
-  margin: -8px 0;
 }
 
 .c0 {
@@ -370,21 +394,26 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
-  display: -webkit-flexbox;
-  display: -ms-flexboxbox;
-  display: flexbox;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
   className="c0"
 >
-  <div
+  <nav
+    aria-label="pagination"
     className="c1"
   >
     <button
       aria-label="first page"
-      className="c2 c3"
+      className="c2"
       data-testid="firstPageButton"
       disabled={true}
       onClick={[Function]}
@@ -399,7 +428,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
     </button>
     <button
       aria-label="previous page"
-      className="c2 c3"
+      className="c2"
       data-testid="previousPageButton"
       disabled={true}
       onClick={[Function]}
@@ -413,36 +442,51 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       />
     </button>
     <ol
-      className="c4"
+      className="c3"
     >
       <li
-        className="c5"
+        className="c4"
         data-testid="page-1"
         onClick={[Function]}
+        onKeyPress={[Function]}
         tabIndex={0}
       >
-        1
+        <a
+          aria-label="go to page 1"
+        >
+          1
+        </a>
       </li>
       <li
-        className="c6"
+        className="c5"
         data-testid="page-2"
         onClick={[Function]}
+        onKeyPress={[Function]}
         tabIndex={0}
       >
-        2
+        <a
+          aria-label="go to page 2"
+        >
+          2
+        </a>
       </li>
       <li
-        className="c6"
+        className="c5"
         data-testid="page-3"
         onClick={[Function]}
+        onKeyPress={[Function]}
         tabIndex={0}
       >
-        3
+        <a
+          aria-label="go to page 3"
+        >
+          3
+        </a>
       </li>
     </ol>
     <button
       aria-label="next page"
-      className="c2 c3"
+      className="c2"
       data-testid="nextPageButton"
       disabled={false}
       onClick={[Function]}
@@ -457,7 +501,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
     </button>
     <button
       aria-label="last page"
-      className="c2 c3"
+      className="c2"
       data-testid="lastPageButton"
       disabled={false}
       onClick={[Function]}
@@ -470,6 +514,6 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
         width="20"
       />
     </button>
-  </div>
+  </nav>
 </div>
 `;
