@@ -5,7 +5,7 @@ import {
 } from '@design-elements/components/device-context-provider/device-context-provider';
 import { IconName } from '@design-elements/components/icon/icon';
 import { clamp } from '@design-elements/utils/math';
-import { calculateShownPageRange } from '@design-elements/utils/range';
+import { calculateShownPageRange, range } from '@design-elements/utils/range';
 import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components';
 
@@ -109,16 +109,20 @@ interface PaginationProps {
     onPageChange?(pageNumber: number): void;
 }
 
-export function Pagination(
-    { totalPages, numberOfResults, defaultActivePage, pagesShown, lang, onPageChange }: PaginationProps): ReactElement {
+export function Pagination({ totalPages,
+                               numberOfResults,
+                               defaultActivePage = 1,
+                               pagesShown = 3,
+                               lang= 'en',
+                               onPageChange }: PaginationProps): ReactElement {
     const deviceContext = useDeviceContext();
-    const concretePagesShown = Math.min(pagesShown ? pagesShown : 3, totalPages);
+    const pagesDisplayed = Math.min(pagesShown, totalPages);
     const pageChangeCallback = onPageChange ? onPageChange : () => undefined;
-    const [currentPage, setCurrentPage] = useState(defaultActivePage ? clamp(defaultActivePage, 1, totalPages) : 1);
+    const [currentPage, setCurrentPage] = useState(clamp(defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
     const firstLastNavActive = totalPages > 10;
-    const forwardBackwardNavActive = totalPages > 3 || concretePagesShown < totalPages;
+    const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
     const changePage = (page: number) => {
         setCurrentPage(page);
@@ -131,11 +135,10 @@ export function Pagination(
         }
     };
 
-    const range = calculateShownPageRange(totalPages, concretePagesShown, currentPage);
-    const pages = [];
-    for (let i = range.begin; i <= range.end; i++) {
+    const { begin, end } = calculateShownPageRange(totalPages, pagesDisplayed, currentPage);
+    const pages = range(begin, end).map(i => {
         const id = 'page-' + i;
-        pages.push(
+        return (
             <Page
                 key={id}
                 data-testid={id}
@@ -145,8 +148,9 @@ export function Pagination(
                 deviceContext={deviceContext}
                 tabIndex={0}
             ><a aria-label={`go to page ${i}`}>{i}</a>
-            </Page>);
-    }
+            </Page>
+        );
+    });
 
     return (
         <Container deviceContext={deviceContext}>
