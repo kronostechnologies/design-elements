@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Global Navigation Matches snapshot 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 12px 0;
+  width: 56px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: var(--spacing-1x) 0;
+  position: relative;
+}
+
+.c2.moreMenu:hover .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2.moreMenu:hover .c3 {
+  background-color: #D9DDE2;
+  color: #57666E;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  color: #57666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 32px;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c4:hover {
+  background-color: #D9DDE2;
+  color: #57666E;
+}
+
+.c4.active {
+  background-color: #0080A5;
+  color: #FFFFFF !important;
+}
+
+.c4.active:hover {
+  background-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+<div
+  style={
+    Object {
+      "height": "600px",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <nav
+      aria-label="App Navigation"
+    >
+      <ul
+        className="c1"
+      >
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test1"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test2"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test3"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test4"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test5"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav
+      aria-label="App Navigation"
+    >
+      <ul
+        className="c1"
+      >
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test6"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+        <li
+          className="c2"
+          title="test"
+        >
+          <a
+            aria-current={null}
+            aria-label="test"
+            className="c3 c4"
+            href="/test7"
+            onClick={[Function]}
+            onFocus={[Function]}
+          >
+            <svg
+              color="currentColor"
+              focusable={false}
+              height="16"
+              width="16"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;

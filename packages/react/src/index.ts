@@ -29,6 +29,7 @@ export { Chooser } from './components/choosers/chooser';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { ApplicationMenu } from './components/application-menu/application-menu';
+export * from './components/global-navigation/global-navigation';
 export { Icon } from './components/icon/icon';
 export { InlineMessage } from './components/inline-message/inline-message';
 export { RouteLink } from './components/route-link/route-link';

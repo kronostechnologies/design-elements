@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { Icon, IconName } from '../icon/icon';
+import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 
 interface ExternalLinkProps {

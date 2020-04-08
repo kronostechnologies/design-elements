@@ -16,6 +16,7 @@ import Mail from 'feather-icons/dist/icons/mail.svg';
 import MapPin from 'feather-icons/dist/icons/map-pin.svg';
 import Menu from 'feather-icons/dist/icons/menu.svg';
 import MoreHorizontal from 'feather-icons/dist/icons/more-horizontal.svg';
+import MoreVertical from 'feather-icons/dist/icons/more-vertical.svg';
 import Phone from 'feather-icons/dist/icons/phone.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
@@ -40,6 +41,7 @@ const iconMapping = {
     mapPin: MapPin,
     menu: Menu,
     moreHorizontal: MoreHorizontal,
+    moreVertical: MoreVertical,
     open: Open,
     phone: Phone,
     search: Search,
