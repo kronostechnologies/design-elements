@@ -1,5 +1,5 @@
 import { useStateCallback } from '@design-elements/hooks/use-state-callback';
-import { formatCurrency } from '@design-elements/utils/currency';
+import { Currency, formatCurrency, Locale } from '@design-elements/utils/currency';
 import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TextInput } from '../text-input/text-input';
@@ -12,11 +12,15 @@ const InputWrapper = styled.div<{language: Language}>`
     }
 `;
 
-function safeFormatCurrency(value: number | null = null, precision: number, language: Locale): string {
-    return value === null ? '' : formatCurrency(value, precision, language);
+function safeFormatCurrency(
+    value: number | null = null,
+    precision: number,
+    locale: Locale,
+    currency: Currency,
+): string {
+    return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-type Locale = 'en-CA' | 'fr-CA';
 type Language = 'en' | 'fr';
 
 interface Props {
@@ -31,9 +35,14 @@ interface Props {
     value?: number | null;
     /**
      * Sets input locale and changes visual format accordingly
-     * @default fr
+     * @default fr-CA
      **/
-    language?: Language;
+    locale?: Locale;
+    /**
+     * Sets currency
+     * @default CAD
+     **/
+    currency?: Currency;
     /**
      * Sets number of decimal
      * @default 2
@@ -50,13 +59,13 @@ export function MoneyInput({
     precision = 2,
     value = null,
     validationErrorMessage,
-    language = 'fr',
+    locale = 'fr-CA',
+    currency = 'CAD',
  }: Props): ReactElement {
-    const locale: Locale = `${language}-CA` as Locale;
     const inputElement = useRef<HTMLInputElement>(null);
-
-    const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale));
-    const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale));
+    const language: Language = locale.split('-')[0] as Language;
+    const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
+    const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [, setHasFocus] = useStateCallback(false, hasFocus => {
         if (inputElement.current != null) {
             if (hasFocus) {
@@ -78,7 +87,7 @@ export function MoneyInput({
     };
 
     useEffect(() => {
-        const newValue = safeFormatCurrency(value, precision, locale);
+        const newValue = safeFormatCurrency(value, precision, locale, currency);
         setDisplayValue(newValue);
         setMaskedValue(newValue);
     }, [value]);
@@ -120,7 +129,7 @@ export function MoneyInput({
     function updateFormattedValue(rawValue: string): void {
         const amount: number | null = rawValue === '' ? null : Number(rawValue.replace(',', '.'));
         const roundedValue = roundValueToPrecision(amount);
-        const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale);
+        const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale, currency);
 
         setDisplayValue(newMaskedValue);
         if (maskedValue !== newMaskedValue) {

@@ -9,18 +9,21 @@ export default {
 export const normal = () => (
     <>
         <MoneyInput label="Entrez un montant"/>
-        <MoneyInput label="Choose a number" language="en"/>
+        <MoneyInput label="Choose a number" locale="en-CA"/>
     </>
 );
 
-export const english = () => (
-    <MoneyInput label="Choose a number" language="en"/>
+export const englishLocale = () => (
+    <MoneyInput label="Choose a number" locale="en-CA"/>
 );
 export const noLabel = () => (
     <MoneyInput/>
 );
 export const disabled = () => (
     <MoneyInput disabled label="Entrez un montant"/>
+);
+export const withCurrency = () => (
+    <MoneyInput label="Entrez un montant" currency="USD" precision={0}/>
 );
 export const withPrecision = () => (
     <MoneyInput label="Entrez un montant" precision={0}/>

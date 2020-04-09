@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CurrencyInput Component matches snapshot (en) 1`] = `
+exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c1 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -113,7 +113,120 @@ label + .c2 {
 </div>
 `;
 
-exports[`CurrencyInput Component matches snapshot (fr) 1`] = `
+exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
+.c1 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c1 input,
+.c1 select,
+.c1 textarea {
+  border-color: #D9DDE2;
+}
+
+.c1:focus {
+  border-color: #0080A5;
+}
+
+.c2 {
+  background: #FFFFFF;
+  border: 1px solid #D9DDE2;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.4rem;
+  margin: 0;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #57666E;
+}
+
+.c2::-moz-placeholder {
+  color: #57666E;
+}
+
+.c2:-ms-input-placeholder {
+  color: #57666E;
+}
+
+.c2::placeholder {
+  color: #57666E;
+}
+
+.c2:disabled {
+  background-color: #F1F2F2;
+  border-color: #D9DDE2;
+}
+
+.c2:disabled,
+.c2:disabled::-webkit-input-placeholder {
+  color: #9CA7B4;
+}
+
+.c2:disabled,
+.c2:disabled::-moz-placeholder {
+  color: #9CA7B4;
+}
+
+.c2:disabled,
+.c2:disabled:-ms-input-placeholder {
+  color: #9CA7B4;
+}
+
+.c2:disabled,
+.c2:disabled::placeholder {
+  color: #9CA7B4;
+}
+
+.c2:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+label + .c2 {
+  display: block;
+  margin-top: var(--spacing-half);
+}
+
+.c0 input {
+  text-align: left;
+  -webkit-transition: width 300ms;
+  transition: width 300ms;
+  width: 132px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <input
+      className="c2"
+      inputMode="numeric"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="$0,00"
+      type="text"
+      value="$100.00"
+    />
+  </div>
+</div>
+`;
+
+exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c1 {
   margin: 0 0 var(--spacing-3x);
 }
