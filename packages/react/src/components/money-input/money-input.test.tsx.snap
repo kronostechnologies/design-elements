@@ -90,12 +90,11 @@ label + .c2 {
   text-align: left;
   -webkit-transition: width 300ms;
   transition: width 300ms;
-  width: 116px;
+  width: 132px;
 }
 
 <div
   className="c0"
-  width={116}
 >
   <div
     className="c1"
@@ -204,12 +203,11 @@ label + .c2 {
   text-align: right;
   -webkit-transition: width 300ms;
   transition: width 300ms;
-  width: 116px;
+  width: 132px;
 }
 
 <div
   className="c0"
-  width={116}
 >
   <div
     className="c1"

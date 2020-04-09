@@ -9,12 +9,12 @@ export default {
 export const normal = () => (
     <>
         <MoneyInput label="Entrez un montant"/>
-        <MoneyInput label="Chose a number" language="en"/>
+        <MoneyInput label="Choose a number" language="en"/>
     </>
 );
 
 export const english = () => (
-    <MoneyInput label="Chose a number" language="en"/>
+    <MoneyInput label="Choose a number" language="en"/>
 );
 export const noLabel = () => (
     <MoneyInput/>
