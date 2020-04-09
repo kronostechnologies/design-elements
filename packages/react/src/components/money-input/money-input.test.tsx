@@ -31,10 +31,7 @@ describe('CurrencyInput Component', () => {
         const { container } = render(<MoneyInput precision={0} value={12345.25} />, { wrapper: themeProvider() });
         const input = getInputElement(container);
 
-        fireEvent.focus(input);
-        fireEvent.change(input, { target: { value: '12345.25' } });
-        fireEvent.blur(input);
-
+        simulateValueChange(input, '12345.25');
         expect(input.value).toMatchFormattedMoney('12 345 $');
     });
 
@@ -42,10 +39,7 @@ describe('CurrencyInput Component', () => {
         const { container } = render(<MoneyInput value={null} />, { wrapper: themeProvider() });
         const input = getInputElement(container);
 
-        fireEvent.focus(input);
-        fireEvent.change(input, { target: { value: '123.457' } });
-        fireEvent.blur(input);
-
+        simulateValueChange(input, '123.457');
         expect(input.value).toMatchFormattedMoney('123,46 $');
     });
 
@@ -53,10 +47,7 @@ describe('CurrencyInput Component', () => {
         const { container } = render(<MoneyInput locale="en-CA" />, { wrapper: themeProvider() });
         const input = getInputElement(container);
 
-        fireEvent.focus(input);
-        fireEvent.change(input, { target: { value: '12345' } });
-        fireEvent.blur(input);
-
+        simulateValueChange(input, '12345');
         expect(input.value).toMatchFormattedMoney('$12,345.00');
     });
 
@@ -90,11 +81,7 @@ describe('CurrencyInput Component', () => {
             { wrapper: themeProvider() });
         const input = getInputElement(container);
 
-        fireEvent.focus(input);
-        fireEvent.change(input, { target: { value: 12.345 } });
-        fireEvent.blur(input);
-
-        expect(input.value).toMatchFormattedMoney('$12');
+        simulateValueChange(input, '12.345');
         expect(handleChange).toBeCalledWith(12, '$12');
     });
 
@@ -112,10 +99,7 @@ describe('CurrencyInput Component', () => {
         const { container } = render(<MoneyInput precision={0} value={0} />, { wrapper: themeProvider() });
         const input = getInputElement(container);
 
-        fireEvent.focus(input);
-        fireEvent.change(input, { target: { value: '' } });
-        fireEvent.blur(input);
-
+        simulateValueChange(input, '');
         expect(input.value).toMatchFormattedMoney('');
     });
 
@@ -144,6 +128,12 @@ describe('CurrencyInput Component', () => {
     });
 
 });
+
+function simulateValueChange(input: HTMLInputElement, value: String): void {
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value } });
+    fireEvent.blur(input);
+}
 
 function getInputElement(container: HTMLElement): HTMLInputElement {
     // tslint:disable-next-line: no-unnecessary-type-assertion

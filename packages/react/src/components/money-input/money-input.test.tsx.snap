@@ -105,7 +105,7 @@ label + .c2 {
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="$0,00"
+      placeholder="$0.00"
       type="text"
       value="$100.00"
     />
@@ -218,7 +218,7 @@ label + .c2 {
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="$0,00"
+      placeholder="$0.00"
       type="text"
       value="$100.00"
     />
@@ -331,7 +331,7 @@ label + .c2 {
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="0,00 $"
+      placeholder="0,00 $"
       type="text"
       value="100,00 $"
     />

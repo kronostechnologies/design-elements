@@ -75,16 +75,6 @@ export function MoneyInput({
             }
         }
     });
-    const getPlaceholder = (lang: Language, decimal: number) => {
-        let placeholder = '0';
-        if (precision > 0) {
-            placeholder += ',';
-            for (let i = 0; i < decimal; i++) {
-                placeholder += '0';
-            }
-        }
-        return lang === 'en' ? `$${placeholder}` : `${placeholder} $`;
-    };
 
     useEffect(() => {
         const newValue = safeFormatCurrency(value, precision, locale, currency);
@@ -150,7 +140,7 @@ export function MoneyInput({
                 inputMode="numeric"
                 value={displayValue}
                 label={label}
-                placeholder={getPlaceholder(language, precision)}
+                placeholder={safeFormatCurrency(0, precision, locale, currency)}
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
