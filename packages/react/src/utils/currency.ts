@@ -1,7 +1,4 @@
-export type Currency = 'CAD' | 'USD';
-export type Locale = 'en-CA' | 'fr-CA' | 'en-US';
-
-export function formatCurrency(value: number, precision: number, locale?: Locale, currency: Currency = 'CAD'): string {
+export function formatCurrency(value: number, precision: number, locale?: string, currency: string = 'CAD'): string {
     return Intl
         .NumberFormat(locale, {
             style: 'currency',

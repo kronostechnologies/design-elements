@@ -1,5 +1,5 @@
 import { useStateCallback } from '@design-elements/hooks/use-state-callback';
-import { Currency, formatCurrency, Locale } from '@design-elements/utils/currency';
+import { formatCurrency } from '@design-elements/utils/currency';
 import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TextInput } from '../text-input/text-input';
@@ -15,8 +15,8 @@ const InputWrapper = styled.div<{language: Language}>`
 function safeFormatCurrency(
     value: number | null = null,
     precision: number,
-    locale: Locale,
-    currency: Currency,
+    locale: string,
+    currency: string,
 ): string {
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
@@ -37,12 +37,12 @@ interface Props {
      * Sets input locale and changes visual format accordingly
      * @default fr-CA
      **/
-    locale?: Locale;
+    locale?: string;
     /**
      * Sets currency
      * @default CAD
      **/
-    currency?: Currency;
+    currency?: string;
     /**
      * Sets number of decimal
      * @default 2
@@ -94,7 +94,7 @@ export function MoneyInput({
     }
 
     const getRoundedValue = (val: string): number | null => {
-        return val === '' ? null : roundValueToPrecision(Number(val));
+        return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')));
     };
 
     function handleChangeEvent(event: ChangeEvent<HTMLInputElement>): void {
