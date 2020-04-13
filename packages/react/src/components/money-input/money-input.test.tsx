@@ -7,7 +7,9 @@ jest.mock('uuid/v4');
 
 describe('CurrencyInput Component', () => {
     it('should remove formatting on focus', () => {
-        const { container } = render(<MoneyInput value={12345.25} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput value={12345.25} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         fireEvent.focus(input);
@@ -28,7 +30,9 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should remove fractions when precision is 0 and changing value', () => {
-        const { container } = render(<MoneyInput precision={0} value={12345.25} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput precision={0} value={12345.25} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         simulateValueChange(input, '12345.25');
@@ -36,7 +40,9 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should use precision when changing value', () => {
-        const { container } = render(<MoneyInput value={null} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput value={null} precision={2} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         simulateValueChange(input, '123.457');
@@ -44,7 +50,9 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should format according to locale when changing value', () => {
-        const { container } = render(<MoneyInput locale="en-CA" />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput locale="en-CA" />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         simulateValueChange(input, '12345');
@@ -52,21 +60,27 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should format provided value', () => {
-        const { container } = render(<MoneyInput value={12345.25} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput value={12345.25} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         expect(input.value).toMatchFormattedMoney('12 345,25 $');
     });
 
     it('should format to provided currency', () => {
-        const { container } = render(<MoneyInput value={12345.25} currency="USD" />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput value={12345.25} currency="USD" />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         expect(input.value).toMatchFormattedMoney('12 345,25 $ US');
     });
 
     it('should select all text on focus', () => {
-        const { container } = render(<MoneyInput value={12345} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput value={12345} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         fireEvent.focus(input);
@@ -75,10 +89,11 @@ describe('CurrencyInput Component', () => {
         expect(input.selectionEnd).toEqual(5);
     });
 
-    it('should respect fractions when calling change handler', () => {
+    it('should respect precision and locale when calling change handler', () => {
         const handleChange = jest.fn();
-        const { container } = render(<MoneyInput locale="en-CA" precision={0} value={0} onChange={handleChange} />,
-            { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput locale="en-CA" precision={0} value={0} onChange={handleChange} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         simulateValueChange(input, '12.345');
@@ -86,7 +101,9 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should allow 0 as a value', () => {
-        const { container } = render(<MoneyInput precision={0} value={0} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput precision={0} value={0} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         fireEvent.focus(input);
@@ -96,7 +113,9 @@ describe('CurrencyInput Component', () => {
     });
 
     it('should allow to be empty', () => {
-        const { container } = render(<MoneyInput precision={0} value={0} />, { wrapper: themeProvider() });
+        const { container } = render(
+            <MoneyInput precision={0} value={0} />, { wrapper: themeProvider() },
+        );
         const input = getInputElement(container);
 
         simulateValueChange(input, '');
