@@ -19,33 +19,53 @@ import EquisoftPlanMobile from '../../logos/plan/plan-reverse-mobile.svg';
 import EquisoftPlan from '../../logos/plan/plan-reverse.svg';
 
 const logoMapping = {
-    default: EquisoftDefault,
-    analyze: EquisoftAnalyze,
-    analyzeMobile: EquisoftAnalyzeMobile,
-    apply: EquisoftApply,
-    applyMobile: EquisoftApplyMobile,
-    centralize: EquisoftCentralize,
-    centralizeMobile: EquisoftCentralizeMobile,
-    connect: EquisoftConnect,
-    connectMobile: EquisoftConnectMobile,
-    design: EquisoftDesign,
-    designMobile: EquisoftDesignMobile,
-    illustrate: EquisoftIllustrate,
-    illustrateMobile: EquisoftIllustrateMobile,
-    manage: EquisoftManage,
-    manageMobile: EquisoftManageMobile,
-    plan: EquisoftPlan,
-    planMobile: EquisoftPlanMobile,
+    default: {
+        desktop: EquisoftDefault,
+        mobile: EquisoftDefault,
+    },
+    analyze: {
+        desktop: EquisoftAnalyze,
+        mobile: EquisoftAnalyzeMobile,
+    },
+    apply: {
+        desktop: EquisoftApply,
+        mobile: EquisoftApplyMobile,
+    },
+    centralize: {
+        desktop: EquisoftCentralize,
+        mobile: EquisoftCentralizeMobile,
+    },
+    connect: {
+        desktop: EquisoftConnect,
+        mobile: EquisoftConnectMobile,
+    },
+    design: {
+        desktop: EquisoftDesign,
+        mobile: EquisoftDesignMobile,
+    },
+    illustrate: {
+        desktop: EquisoftIllustrate,
+        mobile: EquisoftIllustrateMobile,
+    },
+    manage: {
+        desktop: EquisoftManage,
+        mobile: EquisoftManageMobile,
+    },
+    plan: {
+        desktop: EquisoftPlan,
+        mobile: EquisoftPlanMobile,
+    },
 };
 
 export type LogoName = keyof typeof logoMapping;
 
 interface LogoProps {
     name?: LogoName;
+    mobile?: boolean;
 }
 
-export const Logo = ({ name = 'default' }: LogoProps): ReactElement | null => {
-    const Component = logoMapping[name];
+export const Logo = ({ name = 'default', mobile = false }: LogoProps): ReactElement | null => {
+    const Component = logoMapping[name][mobile ? 'mobile' : 'desktop'];
 
     return <Component style={{ height: '100%' }} focusable="false" aria-hidden="true"/>;
 };
