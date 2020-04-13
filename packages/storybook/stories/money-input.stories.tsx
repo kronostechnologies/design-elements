@@ -23,7 +23,7 @@ export const disabled = () => (
     <MoneyInput disabled label="Entrez un montant"/>
 );
 export const withCurrency = () => (
-    <MoneyInput label="Entrez un montant" currency="USD" precision={0}/>
+    <MoneyInput label="Entrez un montant" currency="USD"/>
 );
 export const withPrecision = () => (
     <MoneyInput label="Entrez un montant" precision={0}/>

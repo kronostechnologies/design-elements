@@ -93,14 +93,18 @@ export function MoneyInput({
         setHasFocus(true);
     }
 
+    const getRoundedValue = (val: string): number | null => {
+        return val === '' ? null : roundValueToPrecision(Number(val));
+    };
+
     function handleChangeEvent(event: ChangeEvent<HTMLInputElement>): void {
         event.preventDefault();
 
-        const rawValue: string = event.target.value;
-        const roundedValue: number | null = rawValue === '' ? null : roundValueToPrecision(Number(rawValue));
+        const rawValue = event.target.value;
+        const roundedValue = getRoundedValue(rawValue);
 
         let nextDisplayValue: string;
-        if (roundedValue !== null) {
+        if (roundedValue !== null && rawValue.charAt(rawValue.length - 1) !== '.') {
             nextDisplayValue = roundedValue.toString();
         } else {
             const mask: RegExp = precision > 0 ? /[^0-9.,]/g : /[^0-9]/g;
@@ -117,8 +121,7 @@ export function MoneyInput({
     }
 
     function updateFormattedValue(rawValue: string): void {
-        const amount: number | null = rawValue === '' ? null : Number(rawValue.replace(',', '.'));
-        const roundedValue = roundValueToPrecision(amount);
+        const roundedValue = getRoundedValue(rawValue.replace(',', '.'));
         const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale, currency);
 
         setDisplayValue(newMaskedValue);
