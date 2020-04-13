@@ -44,13 +44,9 @@ const Content = styled.div`
     color: ${props => props.theme.greys.white};
 `;
 
-type appNameType =  'default'       | 'analyze' | 'apply'   |
-                    'centralize'    | 'connect' | 'design'  |
-                    'illustrate'    | 'manage'  | 'plan';
-
 interface HeadbandProps {
     /** Set the app name to get the proper logos */
-    appName?: appNameType;
+    appName?: LogoName;
     /** Right-side content */
     children: ReactNode;
     /**
@@ -71,12 +67,11 @@ export const ApplicationMenu = ({
     const { device, isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const themeContext = useContext(ThemeContext);
-    const productName = (isMobile && appName !== 'default') ? `${appName}Mobile` as LogoName : appName;
 
     return (
         <Header device={device}>
             <LogoWrapper to={logoHref} aria-label="Home">
-                <Logo name={productName} />
+                <Logo name={appName} mobile={isMobile} />
             </LogoWrapper>
             {isMobile && mobileDrawerContent ? (
                 <>
