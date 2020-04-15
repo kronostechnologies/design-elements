@@ -37,9 +37,6 @@ export const defaultChecked = () => (
 export const disabled = () => (
     <ToggleButtonGroup groupName="Story3" buttonGroup={disabledGroup}/>
 );
-export const mobile = () => (
-    <ToggleButtonGroup groupName="Story4" device="mobile" buttonGroup={buttonGroup}/>
-);
 export const withCallback = () => (
     <ToggleButtonGroup
         groupName="Test5"
