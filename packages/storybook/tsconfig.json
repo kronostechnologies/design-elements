@@ -6,7 +6,6 @@
     "esModuleInterop": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "noEmitOnError": true,
     "sourceMap": true,
     "baseUrl": "./stories/",
     "paths": {

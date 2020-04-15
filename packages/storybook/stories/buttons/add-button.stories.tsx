@@ -1,8 +1,5 @@
-import React from 'react';
-
 import { AddButton } from '@equisoft/design-elements-react';
-
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
+import React from 'react';
 
 export default {
     title: 'Buttons/Add',
@@ -10,50 +7,48 @@ export default {
 };
 
 export const addButtons = () => (
-    <div>
+    <>
         <AddButton
             label="Primary"
-            buttonType={'primary' as ButtonType}
+            buttonType="primary"
             disabled={false}
         />
         <AddButton
             label="Secondary"
-            buttonType={'secondary' as ButtonType}
+            buttonType="secondary"
             disabled={false}
         />
         <AddButton
             label="Tertiary"
-            buttonType={'tertiary' as ButtonType}
+            buttonType="tertiary"
             disabled={false}
         />
-    </div>
+    </>
 );
 export const disabled = () => (
-    <div>
+    <>
         <AddButton
             label="Primary"
-            buttonType={'primary' as ButtonType}
+            buttonType="primary"
             disabled={true}
         />
         <AddButton
             label="Secondary"
-            buttonType={'secondary' as ButtonType}
+            buttonType="secondary"
             disabled={true}
         />
         <AddButton
             label="Tertiary"
-            buttonType={'tertiary' as ButtonType}
+            buttonType="tertiary"
             disabled={true}
         />
-    </div>
+    </>
 );
 export const eventCallback = () => (
-    <div>
-        <AddButton
-            label="See Console For Callback"
-            buttonType={'primary' as ButtonType}
-            onClick={() => { console.log('The button has been clicked!'); }}
-            disabled={false}
-        />
-    </div>
+    <AddButton
+        label="See Console For Callback"
+        buttonType="primary"
+        onClick={() => { console.log('The button has been clicked!'); }}
+        disabled={false}
+    />
 );
