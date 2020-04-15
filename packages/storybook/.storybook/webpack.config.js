@@ -24,20 +24,17 @@ module.exports = {
             },
             {
                 test: /\.stories.tsx?$/,
-                use: [
-                    {
-                      loader: require.resolve('@storybook/source-loader'),
-                    }
-                  ],
-                  enforce: 'pre',
-                  include: path.resolve(__dirname, '../stories')
+                use: [{ loader: '@storybook/source-loader' }],
+                enforce: 'pre',
+                include: path.resolve(__dirname, '../stories')
             },
             {
                 test: /\.tsx?$/,
                 use: [{
                     loader: 'ts-loader',
                     options: {
-                        transpileOnly: true,
+                        transpileOnly: false,
+                        ignoreDiagnostics: [7005]
                     }
                 }],
             },

@@ -21,12 +21,10 @@ export const disabled = () => (
     </>
 );
 export const eventCallback = () => (
-    <>
-        <IconButton
-            label="home"
-            iconName="home"
-            onClick={() => { console.log('The button has been clicked!'); }}
-            buttonType={'primary'}
-        />
-    </>
+    <IconButton
+        label="home"
+        iconName="home"
+        onClick={() => { console.log('The button has been clicked!'); }}
+        buttonType={'primary'}
+    />
 );
