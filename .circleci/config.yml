@@ -24,7 +24,7 @@ commands:
     steps:
       - restore_cache:
           name: Restoring NodeJS dependencies cache (node_modules)
-          key: &yarn_cache 'v1-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
+          key: &yarn_cache 'v3-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
 
   node_deps_cache_save:
     parameters:
@@ -57,10 +57,6 @@ commands:
   git_config:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
-
-  yarn_prerelease_setup:
-    steps:
-      - run: yarn cache clean && yarn config set version-git-message "v%s [ci skip]"
 
   yarn_test:
     steps:
@@ -114,7 +110,9 @@ jobs:
           directory: << parameters.directory >>
       - persist_to_workspace:
           root: *working_directory
-          paths: '*/*/node_modules'
+          paths: 
+          - '*/*/node_modules'
+          - 'node_modules'
 
   yarn_lint:
     executor: "node"
@@ -183,7 +181,7 @@ jobs:
             - '*/*/.yalc'
             - '*/*/node_modules'
   
-  yarn_version_prerelease:
+  lerna_version_prerelease:
     executor: "node"
     parameters:
       display_name:
@@ -193,14 +191,13 @@ jobs:
     steps:
       - attach_at_working_directory
       - git_config
-      - yarn_prerelease_setup
       - add_ssh_keys:
           fingerprints:
             - "6f:f3:e3:bb:65:9a:a8:fd:b4:65:f1:9f:cf:7c:d2:b0"
       - run:
           name: 'Yalc push << parameters.display_name >>'
           working_directory: << parameters.working_directory >>
-          command: 'yarn version --prerelease && ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && git push --set-upstream origin dev/DE-105'
+          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && yarn cache clean && yarn lerna version prerelease --yes -m "chore(prerelease): %s [ci skip]"'
 
 
 workflows:
@@ -226,12 +223,6 @@ workflows:
           <<: *branch_filters
           requires:
             - web_node_install_deps
-      - yarn_version_prerelease:
-          requires:
-            - web_node_install_deps
-          display_name: 'web_version_prerelease'
-          <<: *branch_filters
-          working_directory: *web_directory
 
       ### REACT
       - node_install_deps:
@@ -258,12 +249,6 @@ workflows:
           <<: *branch_filters
           requires:
             - react_node_install_deps
-      - yarn_version_prerelease:
-          requires:
-            - react_yarn_build
-          display_name: 'react_version_prerelease'
-          <<: *branch_filters
-          working_directory: *react_directory
 
       ### STORYBOOK
       - node_install_deps:
@@ -291,9 +276,20 @@ workflows:
           <<: *branch_filters
           requires:
             - storybook_yalc_push
-      - yarn_version_prerelease:
-          requires:
-            - storybook_yarn_build
-          display_name: 'storybook_version_prereleases'
+      
+      ### PRERELEASE
+      - node_install_deps:
+          name: root_node_install_deps
+          directory: *working_directory
           <<: *branch_filters
-          working_directory: *storybook_directory
+          requires:
+            - prepare_workspace
+      - lerna_version_prerelease:
+          requires:
+            - root_node_install_deps
+            - storybook_yarn_build
+            - react_yarn_build
+            - web_yarn_lint
+          display_name: 'lerna_version_prerelease_version'
+          <<: *branch_filters
+          working_directory: *working_directory
