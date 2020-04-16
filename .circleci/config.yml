@@ -79,6 +79,21 @@ commands:
           name: 'Yalc push << parameters.display_name >>'
           command: 'yalc push'
           working_directory: << parameters.working_directory >>
+  
+  yarn_version_prerelease:
+    parameters:
+      display_name:
+        type: string
+      working_directory:
+        type: string
+    steps:
+      - attach_at_working_directory
+      - git_config
+      - yarn_prerelease_setup
+      - run:
+          name: 'Yalc push << parameters.display_name >>'
+          working_directory: << parameters.working_directory >>
+          command: 'yarn version --prerelease'
 
   yalc_add_packages:
     parameters:
@@ -183,7 +198,7 @@ jobs:
             - '*/*/.yalc'
             - '*/*/node_modules'
   
-  yarn_version_prerelease:
+  git_push:
     executor: "node"
     parameters:
       display_name:
@@ -193,14 +208,22 @@ jobs:
     steps:
       - attach_at_working_directory
       - git_config
-      - yarn_prerelease_setup
       - add_ssh_keys:
           fingerprints:
             - "6f:f3:e3:bb:65:9a:a8:fd:b4:65:f1:9f:cf:7c:d2:b0"
+      - yarn_version_prerelease:
+          display_name: 'web_version_prerelease'
+          working_directory: *web_directory
+      - yarn_version_prerelease:
+          display_name: 'react_version_prerelease'
+          working_directory: *react_directory
+      - yarn_version_prerelease:
+          display_name: 'storybook_version_prerelease'
+          working_directory: *storybook_directory
       - run:
           name: 'Yalc push << parameters.display_name >>'
           working_directory: << parameters.working_directory >>
-          command: 'yarn version --prerelease && ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && git push --set-upstream origin dev/DE-105'
+          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && git push --set-upstream origin dev/DE-105'
 
 
 workflows:
@@ -226,12 +249,6 @@ workflows:
           <<: *branch_filters
           requires:
             - web_node_install_deps
-      - yarn_version_prerelease:
-          requires:
-            - web_node_install_deps
-          display_name: 'web_version_prerelease'
-          <<: *branch_filters
-          working_directory: *web_directory
 
       ### REACT
       - node_install_deps:
@@ -258,12 +275,6 @@ workflows:
           <<: *branch_filters
           requires:
             - react_node_install_deps
-      - yarn_version_prerelease:
-          requires:
-            - react_yarn_build
-          display_name: 'react_version_prerelease'
-          <<: *branch_filters
-          working_directory: *react_directory
 
       ### STORYBOOK
       - node_install_deps:
@@ -291,9 +302,13 @@ workflows:
           <<: *branch_filters
           requires:
             - storybook_yalc_push
-      - yarn_version_prerelease:
+      
+      ### PRERELEASE
+      - git_push:
           requires:
             - storybook_yarn_build
-          display_name: 'storybook_version_prereleases'
+            - react_yarn_build
+            - web_yarn_lint
+          display_name: 'git_push_version'
           <<: *branch_filters
-          working_directory: *storybook_directory
+          working_directory: *working_directory
