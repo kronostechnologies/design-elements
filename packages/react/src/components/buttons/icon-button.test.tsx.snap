@@ -65,14 +65,13 @@ exports[`Icon Button Has disabled styles 1`] = `
 
 <button
   aria-label="home"
-  className="c0"
-  disabled={true}
-  onClick={[Function]}
+  class="c0"
+  disabled=""
   type="submit"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -144,13 +143,12 @@ exports[`Icon Button Has mobile styles 1`] = `
 
 <button
   aria-label="home"
-  className="c0"
-  onClick={[Function]}
+  class="c0"
   type="submit"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="20"
     width="20"
   />
@@ -222,13 +220,12 @@ exports[`Icon Button Has primary styles 1`] = `
 
 <button
   aria-label="home"
-  className="c0"
-  onClick={[Function]}
+  class="c0"
   type="submit"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -304,13 +301,12 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 <button
   aria-label="home"
-  className="c0"
-  onClick={[Function]}
+  class="c0"
   type="submit"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -382,13 +378,12 @@ exports[`Icon Button Has tertiary styles 1`] = `
 
 <button
   aria-label="home"
-  className="c0"
-  onClick={[Function]}
+  class="c0"
   type="submit"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />

@@ -23,20 +23,3 @@ export const inlineMessage = () => (
         </InlineMessage><br/>
     </>
 );
-
-export const mobile = () => (
-    <>
-        <InlineMessage device="mobile" type="info">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
-        <InlineMessage device="mobile" type="success">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
-        <InlineMessage device="mobile" type="alert">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
-        <InlineMessage device="mobile" type="error">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
-    </>
-);

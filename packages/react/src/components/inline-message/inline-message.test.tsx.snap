@@ -38,19 +38,19 @@ exports[`Inline Message Matches snapshot (desktop) 1`] = `
 
 <div
   aria-live="polite"
-  className="c0"
+  class="c0"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       Tips
     </span>
@@ -99,19 +99,19 @@ exports[`Inline Message Matches snapshot (mobile) 1`] = `
 
 <div
   aria-live="assertive"
-  className="c0"
+  class="c0"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="20"
     width="20"
   />
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       Error
     </span>

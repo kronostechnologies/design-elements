@@ -26,9 +26,9 @@ exports[`Side Drawer Has different height when in mobile 1`] = `
 }
 
 <div
-  aria-hidden={false}
-  className="c0 side-drawer"
-  open={true}
+  aria-hidden="false"
+  class="c0 side-drawer"
+  open=""
   origin="right"
   width="50%"
 >
@@ -88,16 +88,16 @@ exports[`Side Drawer Has nested drawer 1`] = `
 }
 
 <div
-  aria-hidden={false}
-  className="c0 side-drawer"
-  open={true}
+  aria-hidden="false"
+  class="c0 side-drawer"
+  open=""
   origin="left"
   width="100%"
 >
   <div
-    aria-hidden={false}
-    className="c1 side-drawer"
-    open={true}
+    aria-hidden="false"
+    class="c1 side-drawer"
+    open=""
     origin="right"
     width="100%"
   >
@@ -134,9 +134,9 @@ exports[`Side Drawer Has width set to 50% 1`] = `
 }
 
 <div
-  aria-hidden={false}
-  className="c0 side-drawer"
-  open={true}
+  aria-hidden="false"
+  class="c0 side-drawer"
+  open=""
   origin="right"
   width="50%"
 >
@@ -172,9 +172,8 @@ exports[`Side Drawer Is closed on left side 1`] = `
 }
 
 <div
-  aria-hidden={true}
-  className="c0 side-drawer"
-  open={false}
+  aria-hidden="true"
+  class="c0 side-drawer"
   origin="left"
   width="100%"
 >
@@ -210,9 +209,8 @@ exports[`Side Drawer Is closed on right side 1`] = `
 }
 
 <div
-  aria-hidden={true}
-  className="c0 side-drawer"
-  open={false}
+  aria-hidden="true"
+  class="c0 side-drawer"
   origin="right"
   width="100%"
 >
@@ -248,9 +246,9 @@ exports[`Side Drawer Is open 1`] = `
 }
 
 <div
-  aria-hidden={false}
-  className="c0 side-drawer"
-  open={true}
+  aria-hidden="false"
+  class="c0 side-drawer"
+  open=""
   origin="right"
   width="100%"
 >

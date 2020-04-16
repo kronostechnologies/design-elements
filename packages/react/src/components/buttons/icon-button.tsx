@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon//icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 import { AbstractButton } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
-
 type Type = 'submit' | 'button' | 'reset';
 
 interface ButtonProps {
@@ -15,11 +15,6 @@ interface ButtonProps {
      * @default primary
      **/
     buttonType: ButtonType;
-    /**
-     * Applies styles and sizes according to the device
-     * @default desktop
-     */
-    device?: 'mobile' | 'desktop';
     /**
      * Disables button
      * @default false
@@ -43,13 +38,13 @@ interface ButtonProps {
 }
 
 interface StyledButtonProps {
-    device: 'mobile' | 'desktop';
+    isMobile: boolean;
     theme: Theme;
     buttonType: ButtonType;
 }
 
 const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-    height: ${props => props.device === 'mobile' ? '48px' : '32px'};
+    height: ${({ isMobile }) => isMobile ? '48px' : '32px'};
     ${(props: { theme: Theme, buttonType: ButtonType }) => {
         switch (props.buttonType) {
             case 'primary':
@@ -102,28 +97,28 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
     }
     }
     padding: 0;
-    width: ${props => props.device === 'mobile' ? '48px' : '32px'};
+    width: ${({ isMobile }) => isMobile ? '48px' : '32px'};
 `;
 
 export const IconButton = ({
-  device = 'desktop',
   iconName,
   label,
   onClick,
   type = 'submit',
   ...props
 }: ButtonProps): ReactElement => {
+    const { isMobile } = useDeviceContext();
     const handleClick = (): void => onClick && onClick();
 
     return (
         <StyledButton
           aria-label={label}
           onClick={handleClick}
-          device={device}
+          isMobile={isMobile}
           type={type}
           {...props}
         >
-            <Icon name={iconName} size={device === 'mobile' ? '20' : '16'}/>
+            <Icon name={iconName} size={isMobile ? '20' : '16'}/>
         </StyledButton>
     );
 };
