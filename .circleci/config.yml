@@ -24,7 +24,7 @@ commands:
     steps:
       - restore_cache:
           name: Restoring NodeJS dependencies cache (node_modules)
-          key: &yarn_cache 'v1-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
+          key: &yarn_cache 'v3-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
 
   node_deps_cache_save:
     parameters:
@@ -129,7 +129,9 @@ jobs:
           directory: << parameters.directory >>
       - persist_to_workspace:
           root: *working_directory
-          paths: '*/*/node_modules'
+          paths: 
+          - '*/*/node_modules'
+          - 'node_modules'
 
   yarn_lint:
     executor: "node"
@@ -198,7 +200,7 @@ jobs:
             - '*/*/.yalc'
             - '*/*/node_modules'
   
-  git_push:
+  lerna_version_prerelease:
     executor: "node"
     parameters:
       display_name:
@@ -211,19 +213,10 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "6f:f3:e3:bb:65:9a:a8:fd:b4:65:f1:9f:cf:7c:d2:b0"
-      - yarn_version_prerelease:
-          display_name: 'web_version_prerelease'
-          working_directory: *web_directory
-      - yarn_version_prerelease:
-          display_name: 'react_version_prerelease'
-          working_directory: *react_directory
-      - yarn_version_prerelease:
-          display_name: 'storybook_version_prerelease'
-          working_directory: *storybook_directory
       - run:
           name: 'Yalc push << parameters.display_name >>'
           working_directory: << parameters.working_directory >>
-          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && git push --set-upstream origin dev/DE-105'
+          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && yarn cache clean && yarn lerna version prerelease --yes -m "chore(prerelease): %s [ci skip]"'
 
 
 workflows:
@@ -304,11 +297,18 @@ workflows:
             - storybook_yalc_push
       
       ### PRERELEASE
-      - git_push:
+      - node_install_deps:
+          name: root_node_install_deps
+          directory: *working_directory
+          <<: *branch_filters
           requires:
+            - prepare_workspace
+      - lerna_version_prerelease:
+          requires:
+            - root_node_install_deps
             - storybook_yarn_build
             - react_yarn_build
             - web_yarn_lint
-          display_name: 'git_push_version'
+          display_name: 'lerna_version_prerelease_version'
           <<: *branch_filters
           working_directory: *working_directory
