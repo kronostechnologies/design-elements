@@ -272,7 +272,6 @@ export function List({
         // ' ' is the space bar key
         switch (e.key) {
             case 'Enter':
-            case ' ':
                 e.preventDefault();
 
                 if (selectedFocusIndex >= 0) {
