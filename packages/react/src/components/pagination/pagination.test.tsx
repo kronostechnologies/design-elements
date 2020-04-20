@@ -1,27 +1,27 @@
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { mount } from 'enzyme';
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
+import React, { ReactElement } from 'react';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Pagination } from './pagination';
+
+const renderComponent = (component: ReactElement, device?: DeviceType) => {
+    return renderWithProviders(component, device);
+};
 
 describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(<Pagination totalPages={12} />),
-                'mobile'),
-        ).toJSON();
+        const tree = renderComponent(
+            <Pagination totalPages={12} />,
+            'mobile');
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches the desktop snapshot', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(<Pagination totalPages={12} />),
-                'desktop'),
-        ).toJSON();
+        const tree = renderComponent(
+            <Pagination totalPages={12} />,
+            'desktop');
 
         expect(tree).toMatchSnapshot();
     });
