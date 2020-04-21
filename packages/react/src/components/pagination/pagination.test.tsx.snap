@@ -68,7 +68,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 4px;
+  margin: 0 var(--spacing-half);
   padding: 0;
 }
 
@@ -92,7 +92,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c4:focus {
-  box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
@@ -116,7 +116,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c5:focus {
-  box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
@@ -153,6 +153,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
     class="c1"
   >
     <button
+      aria-disabled="true"
       aria-label="first page"
       class="c2"
       data-testid="firstPageButton"
@@ -167,6 +168,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       />
     </button>
     <button
+      aria-disabled="true"
       aria-label="previous page"
       class="c2"
       data-testid="previousPageButton"
@@ -189,6 +191,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
         tabindex="0"
       >
         <a
+          aria-current="page"
           aria-label="go to page 1"
         >
           1
@@ -218,6 +221,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       </li>
     </ol>
     <button
+      aria-disabled="false"
       aria-label="next page"
       class="c2"
       data-testid="nextPageButton"
@@ -231,6 +235,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       />
     </button>
     <button
+      aria-disabled="false"
       aria-label="last page"
       class="c2"
       data-testid="lastPageButton"
@@ -315,7 +320,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 4px;
+  margin: 0 var(--spacing-half);
   padding: 0;
 }
 
@@ -339,7 +344,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c4:focus {
-  box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
@@ -363,7 +368,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c5:focus {
-  box-shadow: 0 0 0 1px #0080A5,0 0 0 3px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
@@ -400,6 +405,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
     class="c1"
   >
     <button
+      aria-disabled="true"
       aria-label="first page"
       class="c2"
       data-testid="firstPageButton"
@@ -414,6 +420,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       />
     </button>
     <button
+      aria-disabled="true"
       aria-label="previous page"
       class="c2"
       data-testid="previousPageButton"
@@ -436,6 +443,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
         tabindex="0"
       >
         <a
+          aria-current="page"
           aria-label="go to page 1"
         >
           1
@@ -465,6 +473,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       </li>
     </ol>
     <button
+      aria-disabled="false"
       aria-label="next page"
       class="c2"
       data-testid="nextPageButton"
@@ -478,6 +487,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       />
     </button>
     <button
+      aria-disabled="false"
       aria-label="last page"
       class="c2"
       data-testid="lastPageButton"

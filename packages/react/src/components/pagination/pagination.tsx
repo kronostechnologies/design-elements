@@ -1,32 +1,30 @@
 import { IconButton } from '@design-elements/components/buttons/icon-button';
-import {
-    DeviceContextProps,
-    useDeviceContext,
-} from '@design-elements/components/device-context-provider/device-context-provider';
+import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 import { IconName } from '@design-elements/components/icon/icon';
 import { clamp } from '@design-elements/utils/math';
-import { calculateShownPageRange, range } from '@design-elements/utils/range';
+import { range } from '@design-elements/utils/range';
 import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components';
+import { calculateShownPageRange } from './util/pagination-util';
 
 const Pages = styled.ol`
     display: flex;
-    margin: 0 4px;
+    margin: 0 var(--spacing-half);
     padding: 0;
 `;
 
-const Page = styled.li<{ isSelected: boolean, deviceContext: DeviceContextProps }>`
+const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     background-color: ${props => props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white};
     border-radius: 100%;
     color: ${props => props.isSelected ? props.theme.greys.white : props.theme.greys.black};
     display: inline-block;
-    font-size: ${props => props.deviceContext.isMobile ? 1 : 0.9}rem;
+    font-size: ${props => props.isMobile ? 1 : 0.9}rem;
     font-weight: var(--font-normal);
-    height: ${props => props.deviceContext.isMobile ? 32 : 24}px;
-    line-height: ${props => props.deviceContext.isMobile ? 32 : 24}px;
+    height: ${props => props.isMobile ? 32 : 24}px;
+    line-height: ${props => props.isMobile ? 32 : 24}px;
     margin: 0 var(--spacing-half);
     text-align: center;
-    width: ${props => props.deviceContext.isMobile ? 32 : 24}px;
+    width: ${props => props.isMobile ? 32 : 24}px;
 
     &:hover {
         background-color: ${props => props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
@@ -34,13 +32,12 @@ const Page = styled.li<{ isSelected: boolean, deviceContext: DeviceContextProps 
     }
 
     &:focus {
-        box-shadow: 0 0 0 1px ${props => props.theme.main['primary-1.1']}, 0 0 0 3px ${props => props.theme.main['primary-1.2']};
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
         outline: none;
     }
 `;
 
 interface NavButtonProps {
-    deviceType: DeviceContextProps;
     iconName: IconName;
     label: string;
     enabled: boolean;
@@ -53,22 +50,24 @@ const NavButton = (props: NavButtonProps) => {
             {...props}
             type="button"
             buttonType="tertiary"
+            aria-disabled={!props.enabled}
             disabled={!props.enabled}
+            tab-index={props.enabled ? 0 : -1}
         />
     );
 };
 
-const Container = styled.div<{ deviceContext: DeviceContextProps }>`
+const Container = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
-    flex-direction: ${props => props.deviceContext.isMobile ? 'column' : 'row' };
+    flex-direction: ${props => props.isMobile ? 'column' : 'row' };
 `;
 
-const ResultsLabel = styled.div<{ deviceContext: DeviceContextProps }>`
-    font-size: ${props => props.deviceContext.isMobile ? 1 : 0.9}rem;
-    line-height: ${props => props.deviceContext.isMobile ? 32 : 24}px;
-    margin-bottom: ${props => props.deviceContext.isMobile ? '12px' : 0};
-    margin-right: ${props => props.deviceContext.isMobile ? 0 : '24px'};
+const ResultsLabel = styled.div<{ isMobile: boolean }>`
+    font-size: ${props => props.isMobile ? 1 : 0.9}rem;
+    line-height: ${props => props.isMobile ? 32 : 24}px;
+    margin-bottom: ${props => props.isMobile ? '12px' : 0};
+    margin-right: ${props => props.isMobile ? 0 : '24px'};
     white-space: nowrap;
 `;
 
@@ -109,19 +108,21 @@ interface PaginationProps {
     onPageChange?(pageNumber: number): void;
 }
 
-export function Pagination({ totalPages,
-                               numberOfResults,
-                               defaultActivePage = 1,
-                               pagesShown = 3,
-                               lang= 'en',
-                               onPageChange }: PaginationProps): ReactElement {
-    const deviceContext = useDeviceContext();
+export function Pagination({
+   totalPages,
+   numberOfResults,
+   defaultActivePage = 1,
+   pagesShown = 3,
+   lang= 'en',
+   onPageChange,
+}: PaginationProps): ReactElement {
+    const { isMobile } = useDeviceContext();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
     const pageChangeCallback = onPageChange ? onPageChange : () => undefined;
     const [currentPage, setCurrentPage] = useState(clamp(defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
-    const firstLastNavActive = totalPages > 10;
+    const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
     const changePage = (page: number) => {
@@ -145,21 +146,20 @@ export function Pagination({ totalPages,
                 isSelected={i === currentPage}
                 onClick={() => changePage(i)}
                 onKeyPress={(event) => handlePageKeyDown(event.key, i)}
-                deviceContext={deviceContext}
+                isMobile={isMobile}
                 tabIndex={0}
-            ><a aria-label={`go to page ${i}`}>{i}</a>
+            ><a aria-label={`go to page ${i}`} aria-current={i === currentPage ? 'page' : undefined}>{i}</a>
             </Page>
         );
     });
 
     return (
-        <Container deviceContext={deviceContext}>
-            {numberOfResults !== undefined && <ResultsLabel deviceContext={deviceContext} data-testid="resultsLabel">
+        <Container isMobile={isMobile}>
+            {numberOfResults !== undefined && <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
                 {numberOfResults} {lang === 'fr' ? 'résultats' : 'results'/* TODO refactor with i18n support */}
             </ResultsLabel>}
             <Navigation aria-label="pagination">
                 {firstLastNavActive && <NavButton
-                    deviceType={deviceContext}
                     data-testid="firstPageButton"
                     iconName="chevronsLeft"
                     label="first page"
@@ -167,7 +167,6 @@ export function Pagination({ totalPages,
                     onClick={() => changePage(1)}
                 />}
                 {forwardBackwardNavActive && <NavButton
-                    deviceType={deviceContext}
                     data-testid="previousPageButton"
                     iconName="chevronLeft"
                     label="previous page"
@@ -176,7 +175,6 @@ export function Pagination({ totalPages,
                 />}
                 <Pages>{pages}</Pages>
                 {forwardBackwardNavActive && <NavButton
-                    deviceType={deviceContext}
                     data-testid="nextPageButton"
                     iconName="chevronRight"
                     label="next page"
@@ -184,7 +182,6 @@ export function Pagination({ totalPages,
                     onClick={() => changePage(+currentPage + 1)}
                 />}
                 {firstLastNavActive && <NavButton
-                    deviceType={deviceContext}
                     data-testid="lastPageButton"
                     iconName="chevronsRight"
                     label="last page"
