@@ -62,6 +62,10 @@ interface ListProps {
      * onKeyDown callback function, invoked when a key is pressed
      */
     onKeyDown?(event: KeyboardEvent): void;
+    /**
+     * onFocusedValueChange callback function, invoked when focused value changes
+     */
+    onFocusedValueChange?(value: string | undefined): void;
 }
 
 interface WrapperProps {
@@ -131,6 +135,7 @@ export function List({
     id = uuid(),
     options,
     onChange,
+    onFocusedValueChange,
     onKeyDown,
     checkIndicator = false,
     defaultValue,
@@ -285,6 +290,11 @@ export function List({
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
                     selectedFocusIndex === 0 ? scrollIntoList('bottom') : scrollIntoList('up');
+
+                    if (onFocusedValueChange) {
+                        onFocusedValueChange(list[prevOption.focusIndex] ?
+                            list[prevOption.focusIndex].label : undefined);
+                    }
                 }
                 break;
             case 'ArrowDown':
@@ -294,9 +304,15 @@ export function List({
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
                     nextOption.focusIndex === 0 ? scrollIntoList('top') : scrollIntoList('down');
+
+                    if (onFocusedValueChange) {
+                        onFocusedValueChange(list[nextOption.focusIndex] ?
+                            list[nextOption.focusIndex].label : undefined);
+                    }
                 }
                 break;
         }
+
         if (onKeyDown) {
             onKeyDown(e);
         }

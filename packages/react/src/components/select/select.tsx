@@ -236,6 +236,7 @@ export const Select = ({
         setOpen(false);
         setFocus(false);
         setSkipSelected(false);
+        setFocusedValue('');
         setInputValue(option.label);
         setSelectedOptionValue(option.value);
         onChange && onChange(option);
@@ -276,7 +277,7 @@ export const Select = ({
             case 40 /* ArrowDown */:
                 if (!open) {
                     handleOpen();
-                    if (searchable) {
+                    if (searchable || !selectedOptionValue) {
                         setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
@@ -293,7 +294,7 @@ export const Select = ({
             case 38 /* ArrowUp */:
                 if (!open) {
                     handleOpen();
-                    if (searchable) {
+                    if (searchable || !selectedOptionValue) {
                         setTimeout(() => setFocusedValue(filteredOptions[filteredOptions.length - 1].value), 10);
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
@@ -391,6 +392,10 @@ export const Select = ({
         setContainerOutline(false);
     };
 
+    const handleFocusedValueChange = (value: string | undefined): void => {
+        value && setInputValue(value);
+    };
+
     return (
         <>
             <StyledFieldContainer
@@ -451,6 +456,7 @@ export const Select = ({
                         id={id}
                         numberOfItemsVisible={numberOfItemsVisible}
                         onChange={handleChange}
+                        onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
                         onKeyDown={handleListKeyDown}
                         options={filteredOptions}
                         value={selectedOptionValue}
