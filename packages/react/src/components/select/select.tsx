@@ -218,6 +218,7 @@ export const Select = ({
             checkSearchValue && setSelectedOptionValue(checkSearchValue.value);
             inputRef.current && inputRef.current.focus();
             setAutofocus(false);
+            setFocusedValue('');
         }
         setOpen(!open);
     };
@@ -275,7 +276,11 @@ export const Select = ({
             case 40 /* ArrowDown */:
                 if (!open) {
                     handleOpen();
-                    searchable && setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
+                    if (searchable) {
+                        setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
+                    } else {
+                        setTimeout(() => setFocusedValue(selectedOptionValue), 10);
+                    }
                 } else if (searchable) {
                     if (searchValue !== '') {
                         setTimeout(() => setFocusedValue(filteredOptions[1].value), 10);
@@ -288,11 +293,14 @@ export const Select = ({
             case 38 /* ArrowUp */:
                 if (!open) {
                     handleOpen();
-                    setFocusedValue('');
+                    if (searchable) {
+                        setTimeout(() => setFocusedValue(filteredOptions[filteredOptions.length - 1].value), 10);
+                    } else {
+                        setTimeout(() => setFocusedValue(selectedOptionValue), 10);
+                    }
                 } else if (autoFocus) {
                     setAutofocus(false);
                 }
-                searchable && setTimeout(() => setFocusedValue(filteredOptions[filteredOptions.length - 1].value), 10);
                 setAutofocus(true);
                 break;
             case 13 /* Enter */:
@@ -301,6 +309,7 @@ export const Select = ({
                     handleChange(filteredOptions[0]);
                 } else if (!open && !searchable) {
                     handleOpen();
+                    setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                 }
                 break;
             case 32 /* Spacebar */:
