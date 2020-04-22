@@ -155,8 +155,8 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
     const Theme = useTheme();
     const tooltipId = uuid();
     const tooltipTriggerId = `tooltip-trigger-${tooltipId}`;
-    const [ariaHidden, setAriaHidden] = useState(defaultOpen ? false : true);
-    const [tooltipOpen, setTooltipOpen] = useState();
+    const [isVisible, setIsVisible] = useState(defaultOpen);
+    const [controlledTooltipOpen, setControlledTooltipOpen] = useState();
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -164,19 +164,21 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
         return () => window.removeEventListener('keydown', handleKeyDown);
     });
 
+    const handleBLur = () => !isMobile && setControlledTooltipOpen(undefined);
+
+    const handleFocus = () => !isMobile && setControlledTooltipOpen(true);
+
     const handleKeyDown = (event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
         if (event.key === 'Escape' && !isMobile) {
-            !ariaHidden && document.getElementById(tooltipTriggerId)?.click();
+            isVisible && document.getElementById(tooltipTriggerId)?.click();
 
-            if (tooltipOpen) {
-                setTooltipOpen(undefined);
+            if (controlledTooltipOpen) {
+                setControlledTooltipOpen(undefined);
             }
         }
     };
 
-    const handleVisibilityChange = (visible: boolean): void => {
-        setAriaHidden(!visible);
-    };
+    const handleMouseDown = (event: MouseEvent<HTMLSpanElement>) => event.preventDefault();
 
     return (
         <TooltipTrigger
@@ -184,8 +186,8 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
             placement={isMobile ? 'top' : props.placement}
             trigger={isMobile ? 'click' : 'hover'}
             defaultTooltipShown={defaultOpen}
-            tooltipShown={tooltipOpen}
-            onVisibilityChange={handleVisibilityChange}
+            tooltipShown={controlledTooltipOpen}
+            onVisibilityChange={setIsVisible}
             tooltip={({
                 arrowRef,
                 tooltipRef,
@@ -194,7 +196,7 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
                 placement,
             }) => (
                 <TooltipContainer
-                    aria-hidden={ariaHidden}
+                    aria-hidden={!isVisible}
                     isMobile={isMobile}
                     id={tooltipId}
                     role="tooltip"
@@ -217,9 +219,9 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
                     aria-describedby={tooltipId}
                     id={tooltipTriggerId}
                     tabIndex={0}
-                    onBlur={() => !isMobile && setTooltipOpen(undefined)}
-                    onFocus={() => !isMobile && setTooltipOpen(true)}
-                    onMouseDown={(event: MouseEvent<HTMLSpanElement>) => event.preventDefault()}
+                    onBlur={handleBLur}
+                    onFocus={handleFocus}
+                    onMouseDown={handleMouseDown}
                     onKeyDown={handleKeyDown}
                     {...getTriggerProps({ ref: triggerRef })}
                 >
