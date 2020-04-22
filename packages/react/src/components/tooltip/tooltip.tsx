@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, MouseEvent, ReactElement, ReactNode, useState } from 'react';
+import React, { KeyboardEvent as ReactKeyboardEvent, MouseEvent, ReactElement, ReactNode, useEffect, useState } from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
@@ -154,12 +154,23 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
     const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = uuid();
+    const tooltipTriggerId = `tooltip-trigger-${tooltipId}`;
     const [ariaHidden, setAriaHidden] = useState(defaultOpen ? false : true);
     const [tooltipOpen, setTooltipOpen] = useState();
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLSpanElement>): void => {
-        if (!isMobile && event.key === 'Escape' && tooltipOpen) {
-            setTooltipOpen(undefined);
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    });
+
+    const handleKeyDown = (event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
+        if (event.key === 'Escape' && !isMobile) {
+            !ariaHidden && document.getElementById(tooltipTriggerId)?.click();
+
+            if (tooltipOpen) {
+                setTooltipOpen(undefined);
+            }
         }
     };
 
@@ -204,6 +215,7 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
             {({ getTriggerProps, triggerRef }) => (
                 <StyledSpan
                     aria-describedby={tooltipId}
+                    id={tooltipTriggerId}
                     tabIndex={0}
                     onBlur={() => !isMobile && setTooltipOpen(undefined)}
                     onFocus={() => !isMobile && setTooltipOpen(true)}

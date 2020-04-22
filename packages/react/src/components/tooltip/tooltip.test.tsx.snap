@@ -17,6 +17,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 <span
   className="c0"
+  id="tooltip-trigger-undefined"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
@@ -51,6 +52,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 <span
   className="c0"
+  id="tooltip-trigger-undefined"
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
