@@ -12,6 +12,9 @@ exports[`Label Matches the snapshot 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input + .c0 {

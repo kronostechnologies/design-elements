@@ -6,6 +6,7 @@ export { ToggleButtonGroup } from './components/toggle-button-group/toggle-butto
 
 // Form Elements
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
+export { MoneyInput } from './components/money-input/money-input';
 export { OptionButton } from './components/option-button/option-button';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';

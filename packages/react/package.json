@@ -9,8 +9,9 @@
     "build": "webpack --config ./webpack/webpack.config.prod.js",
     "prepublishOnly": "yarn build",
     "start": "webpack --config ./webpack/webpack.config.dev.js",
-    "test": "jest",
-    "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' jest --max-workers=2 --reporters=default --reporters=jest-junit",
+    "test": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest",
+    "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' cross-env NODE_ICU_DATA='node_modules/full-icu' jest --max-workers=2 --reporters=default --reporters=jest-junit",
+    "test:unit": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest --config=jest.config.js",
     "lint": "yarn tslint && yarn tslint:tests && yarn stylelint",
     "lint:ci": "mkdir -p build/lint/ts build/lint/style && yarn tslint:ci && yarn tslint:tests:ci && yarn stylelint:ci",
     "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\" -e \"src/**/*.test.{ts,tsx}\"",
@@ -19,7 +20,7 @@
     "tslint:tests:ci": "yarn tslint:tests --format junit -o build/lint/ts/tests.xml",
     "stylelint": "stylelint \"./src/**/*.{ts,tsx}\"",
     "stylelint:ci": "stylelint --custom-formatter node_modules/stylelint-junit-formatter \"./src/**/*.{ts,tsx}\" > build/lint/style/junit.xml",
-    "test-update": "jest -u"
+    "test-update": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest -u"
   },
   "files": [
     "dist"
@@ -58,6 +59,7 @@
     "@equisoft/tslint-config": "^0.0.8",
     "@equisoft/tslint-config-react": "^0.0.3",
     "@svgr/webpack": "^4.3.2",
+    "@testing-library/react": "^9.5.0",
     "@testing-library/react-hooks": "~3.2.1",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
@@ -68,9 +70,11 @@
     "@types/react-test-renderer": "^16.9.0",
     "@types/styled-components": "~4.4.2",
     "@types/uuid": "^3.4.5",
+    "cross-env": "^7.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "~3.4.4",
+    "full-icu": "^1.3.1",
     "jest": "^24.9.0",
     "jest-junit": "^9.0.0",
     "jest-styled-components": "^6.3.3",
