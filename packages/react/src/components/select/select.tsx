@@ -93,20 +93,9 @@ const Arrow = styled.button<{disabled?: boolean}>`
     display: flex;
 `;
 
-const ListWrapper = styled.div<{open?: boolean}>`
-    display: ${props => props.open ? 'flex' : 'none'};
+const StyledList = styled(List)`
     position: absolute;
     width: 100%;
-
-    ul {
-        border-radius: var(--border-radius);
-        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-
-        &:focus {
-            box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
-            outline: none;
-        }
-    }
 `;
 
 interface Option {
@@ -446,22 +435,21 @@ export const Select = ({
                         <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '32' : '24'}/>
                     </Arrow>
                 </InputWrapper>
-                <ListWrapper open={open}>
-                    <List
-                        autofocus={searchable ? autoFocus : open}
-                        checkIndicator
-                        data-testid="list"
-                        defaultValue={defaultValue}
-                        focusedValue={focusedValue}
-                        id={id}
-                        numberOfItemsVisible={numberOfItemsVisible}
-                        onChange={handleChange}
-                        onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
-                        onKeyDown={handleListKeyDown}
-                        options={filteredOptions}
-                        value={selectedOptionValue}
-                    />
-                </ListWrapper>
+                <StyledList
+                    autofocus={searchable ? autoFocus : open}
+                    visible={open}
+                    checkIndicator
+                    data-testid="list"
+                    defaultValue={defaultValue}
+                    focusedValue={focusedValue}
+                    id={id}
+                    numberOfItemsVisible={numberOfItemsVisible}
+                    onChange={handleChange}
+                    onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
+                    onKeyDown={handleListKeyDown}
+                    options={filteredOptions}
+                    value={selectedOptionValue}
+                />
             </StyledFieldContainer>
             {skipOption && (
                 <ChooseInput

@@ -91,4 +91,14 @@ describe('List', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('Is not visible', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <List options={options} visible={false} />,
+            ),
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
 });

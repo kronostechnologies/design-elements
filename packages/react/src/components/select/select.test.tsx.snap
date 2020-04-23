@@ -32,8 +32,14 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+.c6 {
+  display: none;
+}
+
 .c7 {
   background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -41,6 +47,11 @@ input + .c2 {
   overflow-y: auto;
   padding: 0;
   width: 100%;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 .c8 {
@@ -2172,6 +2183,7 @@ input + .c2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 label + .c2 {
   display: block;
   margin-top: var(--spacing-half);
@@ -2229,6 +2241,8 @@ label + .c2 {
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
 }
 
+=======
+>>>>>>> Refactor list component
 <div
   className="c0 c1"
 >
@@ -2272,14 +2286,20 @@ label + .c2 {
     />
   </div>
   <div
+<<<<<<< HEAD
     className="c5"
     open={false}
+=======
+    className="c6"
+    role="listbox"
+    tabIndex={-1}
+>>>>>>> Refactor list component
   >
     <ul
       className="c6"
       onKeyDown={[Function]}
       onKeyPress={[Function]}
-      role="listbox"
+      role="presentation"
       tabIndex={0}
     >
       <li
@@ -2492,7 +2512,16 @@ input + .c2 {
 }
 
 .c6 {
+<<<<<<< HEAD
+=======
+  display: none;
+}
+
+.c7 {
+>>>>>>> Refactor list component
   background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -2500,6 +2529,11 @@ input + .c2 {
   overflow-y: auto;
   padding: 0;
   width: 100%;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 .c8 {
@@ -2609,6 +2643,7 @@ input + .c2 {
   outline: none;
 }
 
+<<<<<<< HEAD
 .c5 {
   display: none;
   position: absolute;
@@ -2621,6 +2656,8 @@ input + .c2 {
   outline: none;
 }
 
+=======
+>>>>>>> Refactor list component
 <div
     className="c0 c1"
   >
@@ -2658,8 +2695,14 @@ input + .c2 {
       />
     </div>
     <div
+<<<<<<< HEAD
       className="c5"
       open={false}
+=======
+      className="c6"
+      role="listbox"
+      tabIndex={-1}
+>>>>>>> Refactor list component
     >
       <ul
         className="c6"
@@ -2669,7 +2712,7 @@ input + .c2 {
 >>>>>>> PR changes
         onKeyDown={[Function]}
         onKeyPress={[Function]}
-        role="listbox"
+        role="presentation"
         tabIndex={0}
       >
         <li
@@ -3024,6 +3067,7 @@ input + .c2 {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c6 {
 =======
 =======
@@ -3041,8 +3085,16 @@ input + .c2 {
 =======
 =======
 >>>>>>> Close combobox when there's no search results
+=======
+.c6 {
+  display: none;
+}
+
+>>>>>>> Refactor list component
 .c7 {
   background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -3052,6 +3104,7 @@ input + .c2 {
   width: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3100,6 +3153,13 @@ input + .c2 {
 >>>>>>> Renames Dropdown to Select
 >>>>>>> Renames Dropdown to Select
 =======
+=======
+.c7:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+>>>>>>> Refactor list component
 .c8 {
 >>>>>>> Close combobox when there's no search results
   -webkit-align-items: center;
@@ -3274,6 +3334,7 @@ input + .c2 {
   display: flex;
 }
 
+<<<<<<< HEAD
 .c6 {
 <<<<<<< HEAD
 >>>>>>> Add combobox keyboard functionalities
@@ -3351,6 +3412,8 @@ label + .c2 {
   outline: none;
 }
 
+=======
+>>>>>>> Refactor list component
 <div
     className="c0 c1"
   >
@@ -3395,13 +3458,14 @@ label + .c2 {
     </div>
     <div
       className="c6"
-      open={false}
+      role="listbox"
+      tabIndex={-1}
     >
       <ul
         className="c7"
         onKeyDown={[Function]}
         onKeyPress={[Function]}
-        role="listbox"
+        role="presentation"
         tabIndex={0}
       >
         <li
@@ -3662,8 +3726,14 @@ exports[`Select mobile select has a different style 1`] = `
   border-color: #0080A5;
 }
 
+.c5 {
+  display: none;
+}
+
 .c6 {
   background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 160px;
@@ -3671,6 +3741,11 @@ exports[`Select mobile select has a different style 1`] = `
   overflow-y: auto;
   padding: 0;
   width: 100%;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
 }
 
 .c7 {
@@ -3788,22 +3863,6 @@ exports[`Select mobile select has a different style 1`] = `
   display: flex;
 }
 
-.c5 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c5 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-.c5 ul:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  outline: none;
-}
-
 <div
   className="c0 c1"
 >
@@ -3843,13 +3902,14 @@ exports[`Select mobile select has a different style 1`] = `
   </div>
   <div
     className="c5"
-    open={false}
+    role="listbox"
+    tabIndex={-1}
   >
     <ul
       className="c6"
       onKeyDown={[Function]}
       onKeyPress={[Function]}
-      role="listbox"
+      role="presentation"
       tabIndex={0}
     >
       <li

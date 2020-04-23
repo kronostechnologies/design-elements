@@ -55,6 +55,10 @@ interface ListProps {
      */
     value?: string;
     /**
+     * @default true
+     */
+    visible?: boolean;
+    /**
      * onChange callback function, invoked when an option is selected
      */
     onChange?(option: Option): void;
@@ -83,8 +87,14 @@ interface ItemProps {
 const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
+const ListWrapper = styled.div<{visible?: boolean}>`
+    display: ${props => props.visible ? 'flex' : 'none'};
+`;
+
 const Wrapper = styled.ul<WrapperProps>`
     background-color: ${({ theme }) => theme.greys.white};
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     list-style-type: none;
     margin: 0;
     max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
@@ -92,6 +102,11 @@ const Wrapper = styled.ul<WrapperProps>`
     overflow-y: auto;
     padding: 0;
     width: 100%;
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        outline: none;
+    }
 `;
 
 const getItemSidePadding = ({ checkIndicator, selected, isMobile }: ItemProps): string => {
@@ -143,6 +158,7 @@ export function List({
     autofocus = false,
     focusedValue,
     value,
+    visible = true,
 }: ListProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const listRef = useRef<HTMLUListElement>(null);
@@ -319,39 +335,45 @@ export function List({
     }
 
     return (
-        <Wrapper
+        <ListWrapper
+            visible={visible}
             role="listbox"
-            isMobile={isMobile}
-            tabIndex={0}
-            id={id}
-            ref={listRef}
-            onKeyPress={handleKeyDown}
-            numberOfItemsVisible={numberOfItemsVisible}
+            tabIndex={-1}
             aria-activedescendant={selectedOptionId}
             aria-labelledby={selectedOptionId}
-            onKeyDown={handleKeyDown}
         >
-            {list.map(option => (
-                <Item
-                    key={option.id}
-                    ref={option.ref}
-                    role="option"
-                    id={option.id}
-                    aria-label={option.label || option.value}
-                    aria-selected={isOptionSelected(option)}
-                    isMobile={isMobile}
-                    onClick={handleSelect(option)}
-                    selected={isOptionSelected(option)}
-                    focused={isOptionFocused(option)}
-                    checkIndicator={checkIndicator}
-                >
-                    <>
-                        {shouldDisplayCheckIndicator(option) &&
-                            <CheckIndicator name="check" size={isMobile ? '24' : '18'}/>}
-                        {option.label || option.value}
-                    </>
-                </Item>
-            ))}
-        </Wrapper>
+            <Wrapper
+                role="presentation"
+                isMobile={isMobile}
+                tabIndex={0}
+                id={id}
+                ref={listRef}
+                onKeyPress={handleKeyDown}
+                numberOfItemsVisible={numberOfItemsVisible}
+                onKeyDown={handleKeyDown}
+            >
+                {list.map(option => (
+                    <Item
+                        key={option.id}
+                        ref={option.ref}
+                        role="option"
+                        id={option.id}
+                        aria-label={option.label || option.value}
+                        aria-selected={isOptionSelected(option)}
+                        isMobile={isMobile}
+                        onClick={handleSelect(option)}
+                        selected={isOptionSelected(option)}
+                        focused={isOptionFocused(option)}
+                        checkIndicator={checkIndicator}
+                    >
+                        <>
+                            {shouldDisplayCheckIndicator(option) &&
+                                <CheckIndicator name="check" size={isMobile ? '24' : '18'}/>}
+                            {option.label || option.value}
+                        </>
+                    </Item>
+                ))}
+            </Wrapper>
+        </ListWrapper>
     );
 }
