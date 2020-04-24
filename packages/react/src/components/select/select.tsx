@@ -183,7 +183,7 @@ export const Select = ({
         return optionsArray.filter(option => option.label.toLowerCase().startsWith(value.toLowerCase()));
     };
 
-    const findOption = (optionsArray: Option[], value: string) => (
+    const findOption = (optionsArray: Option[], value: string): Option | undefined => (
         optionsArray.find(option =>
             option.label.toLowerCase() === value.toLowerCase())
     );
@@ -195,8 +195,22 @@ export const Select = ({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [open]);
 
+    const resetField = () => {
+        setFocusedValue('');
+        setInputValue('');
+        setSelectedOptionValue('');
+        setSearchValue('');
+    };
+
+    const matchInputValueToOption = (): void => {
+        const matchingOption = findOption(options, inputValue);
+
+        if (matchingOption) {
+            setSelectedOptionValue(matchingOption.value);
+        }
+    };
+
     const handleOpen = () => {
-        const checkSearchValue = findOption(options, inputValue);
         if (!open) {
             setFocus(true);
             if (searchable && inputRef.current) {
@@ -204,7 +218,6 @@ export const Select = ({
                 setFocusedValue('');
             }
         } else {
-            checkSearchValue && setSelectedOptionValue(checkSearchValue.value);
             inputRef.current && inputRef.current.focus();
             setAutofocus(false);
             setFocusedValue('');
@@ -217,6 +230,7 @@ export const Select = ({
             setFocusedValue('');
         } else {
             handleOpen();
+            matchInputValueToOption();
         }
         setAutofocus(false);
     };
@@ -310,13 +324,11 @@ export const Select = ({
                 break;
             case 27 /* Escape */:
                 if (searchable) {
-                    setInputValue('');
-                    setSearchValue('');
-                    setFocusedValue('');
-                    setSelectedOptionValue('');
+                    resetField();
                 }
                 if (open) {
                     handleOpen();
+                    matchInputValueToOption();
                 }
                 break;
             default:
@@ -327,9 +339,9 @@ export const Select = ({
     const handleListKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Escape') {
             if (searchable) {
-                setInputValue('');
-                setSearchValue('');
-                setSelectedOptionValue('');
+                resetField();
+            } else {
+                matchInputValueToOption();
             }
             setFocusedValue('');
             handleOpen();
@@ -385,6 +397,11 @@ export const Select = ({
         value && setInputValue(value);
     };
 
+    const handleArrowClick = () => {
+        handleOpen();
+        matchInputValueToOption();
+    };
+
     return (
         <>
             <StyledFieldContainer
@@ -429,7 +446,7 @@ export const Select = ({
                     <Arrow
                         type="button"
                         tabIndex={-1}
-                        onClick={disabled ? undefined : handleOpen}
+                        onClick={disabled ? undefined : handleArrowClick}
                         disabled={disabled}
                     >
                         <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '32' : '24'}/>
