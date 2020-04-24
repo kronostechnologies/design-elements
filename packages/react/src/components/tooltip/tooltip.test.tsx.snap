@@ -16,19 +16,13 @@ exports[`Tooltip Has default desktop styles 1`] = `
 }
 
 <span
-  className="c0"
+  class="c0"
   id="tooltip-trigger-undefined"
-  onBlur={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  tabIndex={0}
+  tabindex="0"
 >
   <svg
     color="#57666E"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -51,19 +45,13 @@ exports[`Tooltip Has mobile styles 1`] = `
 }
 
 <span
-  className="c0"
+  class="c0"
   id="tooltip-trigger-undefined"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  onTouchEnd={[Function]}
-  tabIndex={0}
+  tabindex="0"
 >
   <svg
     color="#57666E"
-    focusable={false}
+    focusable="false"
     height="24"
     width="24"
   />
@@ -203,10 +191,10 @@ exports[`Tooltip TooltipContainer has desktop styles 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   Test Content
 </div>
@@ -345,10 +333,10 @@ exports[`Tooltip TooltipContainer has mobile styles 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   Test Content
 </div>

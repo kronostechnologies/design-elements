@@ -1,18 +1,11 @@
-import React, { ReactElement } from 'react';
-import renderer from 'react-test-renderer';
-
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
+import React from 'react';
 import { Tooltip, TooltipArrow, TooltipContainer } from './tooltip';
 jest.mock('uuid/v4');
 
-const renderComponent = (component: ReactElement) => {
-    return renderer.create(ThemeWrapped(component)).toJSON();
-};
-
 describe('Tooltip', () => {
     test('Has default desktop styles', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <Tooltip>
                 Test Content
             </Tooltip>,
@@ -22,20 +15,18 @@ describe('Tooltip', () => {
     });
 
     test('Has mobile styles', () => {
-        const tree = renderComponent(
-            DeviceContextWrapped(
-                <Tooltip>
-                    Test Content
-                </Tooltip>,
-                'mobile',
-            ),
+        const tree = renderWithProviders(
+            <Tooltip>
+                Test Content
+            </Tooltip>,
+            'mobile',
         );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('TooltipContainer has desktop styles', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <TooltipContainer>
                 <TooltipArrow />
                 Test Content
@@ -46,7 +37,7 @@ describe('Tooltip', () => {
     });
 
     test('TooltipContainer has mobile styles', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <TooltipContainer isMobile>
                 <TooltipArrow />
                 Test Content
