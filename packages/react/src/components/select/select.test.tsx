@@ -1,10 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
 
-import { DeviceContextWrapped } from '../../test-utils/device-context-wrapped';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Select } from './select';
 jest.mock('uuid/v4');
 
@@ -39,58 +37,49 @@ describe('Select', () => {
     });
 
     test('matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <Select
-                    label="Select an option"
-                    options={provinces}
-                    skipOption={skipOption}
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Select
+                label="Select an option"
+                options={provinces}
+                skipOption={skipOption}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('invalid select has a different style', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <Select
-                    label="Select an option"
-                    options={provinces}
-                    skipOption={skipOption}
-                    valid={false}
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Select
+                label="Select an option"
+                options={provinces}
+                skipOption={skipOption}
+                valid={false}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('disabled select has a different style', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <Select
-                    label="Select an option"
-                    options={provinces}
-                    disabled
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Select
+                label="Select an option"
+                options={provinces}
+                disabled
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('mobile select has a different style', () => {
-        const tree = renderer.create(
-            DeviceContextWrapped(
-                ThemeWrapped(
-                    <Select
-                        options={provinces}
-                    />,
-                ), 'mobile',
-            ),
-        ).toJSON();
+        const tree = renderWithProviders(
+            <Select
+                options={provinces}
+            />,
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });

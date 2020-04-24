@@ -12,6 +12,9 @@ exports[`Select disabled select has a different style 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input + .c2 {
@@ -89,28 +92,8 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
   background-color: #F1F2F2;
   border: 1px solid #D9DDE2;
-=======
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
->>>>>>> Adds CSS variables
-=======
-  background-color: #F1F2F2;
-  border: 1px solid #D9DDE2;
->>>>>>> Update handleBlur function
->>>>>>> Update handleBlur function
-=======
-  background-color: #F1F2F2;
-  border: 1px solid #D9DDE2;
->>>>>>> Close combobox when there's no search results
   border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
@@ -189,218 +172,169 @@ input + .c2 {
   display: flex;
 }
 
-.c6 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c6 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-.c6 ul:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  outline: none;
-}
-
 <div
-  className="c0 c1"
+  class="c0 c1"
 >
   <label
-    className="c2"
+    class="c2"
   >
     Select an option
   </label>
   <div
-    aria-expanded={false}
+    aria-expanded="false"
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
-    className="c3"
-    disabled={true}
-    onClick={[Function]}
-    role="combobox"
+    class="c3"
+    disabled=""
   >
     <input
       aria-autocomplete="list"
       aria-controls="listbox_undefined"
       aria-multiline="false"
-      className="c4"
-      disabled={true}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class="c4"
+      disabled=""
       placeholder="Select an option"
       type="text"
       value=""
     />
     <button
-      className="c5"
-      disabled={true}
-      tabIndex={-1}
+      class="c5"
+      disabled=""
+      tabindex="-1"
       type="button"
     >
       <svg
         color="currentColor"
-        focusable={false}
+        focusable="false"
         height="24"
         width="24"
       />
     </button>
   </div>
   <div
-    className="c6"
-    open={false}
+    class="c6"
+    role="listbox"
+    tabindex="-1"
   >
     <ul
-      className="c7"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      role="listbox"
-      tabIndex={0}
+      class="c7"
+      role="presentation"
+      tabindex="0"
     >
       <li
         aria-label="Ontario"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_on"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Ontario
       </li>
       <li
         aria-label="Quebec"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_qc"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Quebec
       </li>
       <li
         aria-label="British Columbia"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_bc"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         British Columbia
       </li>
       <li
         aria-label="Alberta"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_ab"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Alberta
       </li>
       <li
         aria-label="Manitoba"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_mb"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Manitoba
       </li>
       <li
         aria-label="Saskatchewan"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_sk"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Saskatchewan
       </li>
       <li
         aria-label="Nova Scotia"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_ns"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Nova Scotia
       </li>
       <li
         aria-label="New Brunswick"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_nb"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         New Brunswick
       </li>
       <li
         aria-label="Newfoundland and Labrador"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_nl"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Newfoundland and Labrador
       </li>
       <li
         aria-label="Prince Edward Island"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_pe"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Prince Edward Island
       </li>
       <li
         aria-label="Northwest Territories"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_nt"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Northwest Territories
       </li>
       <li
         aria-label="Nunavut"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_nu"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Nunavut
       </li>
       <li
         aria-label="Yukon"
-        aria-selected={false}
-        className="c8"
+        aria-selected="false"
+        class="c8"
         id="undefined_yt"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Yukon
       </li>
@@ -423,1475 +357,6 @@ Array [
   margin: var(--spacing-half) 0 0;
 }
 
-.c2 {
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-  margin: 0;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #A40C2E;
-}
-
-.c0:focus {
-  border-color: #A40C2E;
-}
-
-.c7 {
-  background-color: #FFFFFF;
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  min-width: 200px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-  padding: 0 34px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c8:hover,
-.c8:focus {
-  background-color: #D9DDE2;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #A40C2E;
-  border-radius: var(--border-radius);
-  box-shadow: none;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: var(--spacing-half);
-  padding-right: var(--spacing-1x);
-  width: 100%;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c3 svg {
-  color: #57666E;
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  max-height: 100%;
-  outline: none;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  width: 100%;
-}
-
-.c4:hover {
-  cursor: pointer;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4::-moz-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4:-ms-input-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4::placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c6 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c6 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-.c6 ul:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  outline: none;
-}
-
-<div
-    className="c0 c1"
-  >
-    <label
-      className="c2"
-    >
-      Select an option
-    </label>
-    <div
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
-      className="c3"
-      onClick={[Function]}
-      role="combobox"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox_undefined"
-        aria-multiline="false"
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Select an option"
-        type="text"
-        value=""
-      />
-      <button
-        className="c5"
-        onClick={[Function]}
-        tabIndex={-1}
-        type="button"
-      >
-        <svg
-          color="currentColor"
-          focusable={false}
-          height="24"
-          width="24"
-        />
-      </button>
-    </div>
-    <div
-      className="c6"
-      open={false}
-    >
-      <ul
-        className="c7"
-<<<<<<< HEAD
-        id="bc"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="bc-2"
->>>>>>> PR changes
-=======
-        id="bc_2"
->>>>>>> Adds accessibility standards
-=======
-        id="2_bc"
->>>>>>> PR requested changes
-=======
-        id="undefined_bc"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        British Columbia
-      </li>
-      <li
-        aria-label="Alberta"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_ab"
-=======
-        className="c7"
-        id="ab"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="ab-3"
->>>>>>> PR changes
-=======
-        id="ab_3"
->>>>>>> Adds accessibility standards
-=======
-        id="3_ab"
->>>>>>> PR requested changes
-=======
-        id="undefined_ab"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Alberta
-      </li>
-      <li
-        aria-label="Manitoba"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_mb"
-=======
-        className="c7"
-        id="mb"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="mb-4"
->>>>>>> PR changes
-=======
-        id="mb_4"
->>>>>>> Adds accessibility standards
-=======
-        id="4_mb"
->>>>>>> PR requested changes
-=======
-        id="undefined_mb"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Manitoba
-      </li>
-      <li
-        aria-label="Saskatchewan"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_sk"
-=======
-        className="c7"
-        id="sk"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="sk-5"
->>>>>>> PR changes
-=======
-        id="sk_5"
->>>>>>> Adds accessibility standards
-=======
-        id="5_sk"
->>>>>>> PR requested changes
-=======
-        id="undefined_sk"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Saskatchewan
-      </li>
-      <li
-        aria-label="Nova Scotia"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_ns"
-=======
-        className="c7"
-        id="ns"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="ns-6"
->>>>>>> PR changes
-=======
-        id="ns_6"
->>>>>>> Adds accessibility standards
-=======
-        id="6_ns"
->>>>>>> PR requested changes
-=======
-        id="undefined_ns"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nova Scotia
-      </li>
-      <li
-        aria-label="New Brunswick"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_nb"
-=======
-        className="c7"
-        id="nb"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-        id="nb-7"
->>>>>>> PR changes
-=======
-        id="nb_7"
->>>>>>> Adds accessibility standards
-=======
-        className="c6"
-<<<<<<< HEAD
-        id="7_nb"
->>>>>>> PR requested changes
-=======
-        id="undefined_nb"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        New Brunswick
-      </li>
-      <li
-        aria-label="Newfoundland and Labrador"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_nl"
-=======
-        className="c7"
-        id="nl"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="nl-8"
->>>>>>> PR changes
-=======
-        id="nl_8"
->>>>>>> Adds accessibility standards
-=======
-        id="8_nl"
->>>>>>> PR requested changes
-=======
-        id="undefined_nl"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Newfoundland and Labrador
-      </li>
-      <li
-        aria-label="Prince Edward Island"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_pe"
-=======
-        className="c7"
-        id="pe"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="pe-9"
->>>>>>> PR changes
-=======
-        id="pe_9"
->>>>>>> Adds accessibility standards
-=======
-        id="9_pe"
->>>>>>> PR requested changes
-=======
-        id="undefined_pe"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Prince Edward Island
-      </li>
-      <li
-        aria-label="Northwest Territories"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_nt"
-=======
-        className="c7"
-        id="nt"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="nt-10"
->>>>>>> PR changes
-=======
-        id="nt_10"
->>>>>>> Adds accessibility standards
-=======
-        id="10_nt"
->>>>>>> PR requested changes
-=======
-        id="undefined_nt"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Northwest Territories
-      </li>
-      <li
-        aria-label="Nunavut"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_nu"
-=======
-        className="c7"
-        id="nu"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-        id="nu-11"
->>>>>>> PR changes
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="nu_11"
->>>>>>> Adds accessibility standards
-=======
-        id="11_nu"
->>>>>>> PR requested changes
-=======
-        id="undefined_nu"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nunavut
-      </li>
-      <li
-        aria-label="Yukon"
-        aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="c8"
-        id="undefined_yt"
-=======
-        className="c7"
-        id="yt"
->>>>>>> Renames Dropdown to Select
-=======
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="yt-12"
->>>>>>> PR changes
-=======
-        id="yt_12"
->>>>>>> Adds accessibility standards
-=======
-        id="12_yt"
->>>>>>> PR requested changes
-=======
-        id="undefined_yt"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Yukon
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-exports[`Select invalid select has a different style 1`] = `
-Array [
-  .c9 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
-}
-
-=======
-=======
->>>>>>> Requested changes
-exports[`Select is disabled 1`] = `
->>>>>>> Requested changes
-.c2 {
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-=======
-exports[`Select is invalid 1`] = `
-Array [
-  .c2 {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
->>>>>>> Renames Dropdown to Select
-  margin: 0;
-}
-
-input + .c2 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  margin-left: var(--spacing-half);
-=======
-  margin-left: 0.5rem;
-=======
-  margin-left: var(--spacing-half);
->>>>>>> Adds CSS variables
->>>>>>> Adds CSS variables
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-=======
-  margin-left: 0.5rem;
-}
-
-.c8 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
-  margin: 0.25rem 0 0;
-}
-
-.c0 {
-  margin: 0 0 1.5rem;
->>>>>>> Renames Dropdown to Select
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #A40C2E;
-}
-
-.c0:focus {
-  border-color: #A40C2E;
-}
-
-<<<<<<< HEAD
-.c7 {
-  background-color: #FFFFFF;
-=======
-.c6 {
-<<<<<<< HEAD
-  background-color: #fff;
->>>>>>> Renames Dropdown to Select
-=======
-  background-color: #FFFFFF;
->>>>>>> Requested changes
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  min-width: 200px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-<<<<<<< HEAD
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-=======
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-=======
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
->>>>>>> Adds Combobox component
-  font-size: 0.875rem;
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  padding: 0 34px;
-=======
-  padding: 0 28px;
->>>>>>> Renames Dropdown to Select
-=======
-  padding: 0 34px;
->>>>>>> Adds Combobox component
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-<<<<<<< HEAD
-.c8:hover,
-.c8:focus {
-  background-color: #D9DDE2;
-=======
-.c7:hover,
-.c7:focus {
-<<<<<<< HEAD
-  background-color: #d9dde2;
->>>>>>> Renames Dropdown to Select
-=======
-  background-color: #D9DDE2;
->>>>>>> Requested changes
-}
-
-.c1 {
-  position: relative;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-<<<<<<< HEAD
-  background-color: #FFFFFF;
-  border: 1px solid #A40C2E;
-<<<<<<< HEAD
-  border-radius: var(--border-radius);
-=======
-  border-radius: 0.25rem;
->>>>>>> Renames Dropdown to Select
-=======
-  background-color: #F1F2F2;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  border: 1px solid #D9DDE2;
-  border-radius: 0.25rem;
-=======
-  border: 1px solid #57666E;
-=======
-  border: 1px solid #D9DDE2;
->>>>>>> Adds scroll position reset after selection
-  border-radius: var(--border-radius);
->>>>>>> Adds CSS variables
->>>>>>> Adds CSS variables
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  margin-top: var(--spacing-half);
-  outline: none;
-  padding-right: var(--spacing-1x);
-=======
-  margin-top: 8px;
-<<<<<<< HEAD
-  padding: 0.5rem;
->>>>>>> Renames Dropdown to Select
-=======
-  border: 1px solid #D9DDE2;
-  padding-right: 0.5rem;
->>>>>>> PR changes
-=======
-  margin-top: var(--spacing-1x);
-=======
-  margin-top: var(--spacing-half);
->>>>>>> Updates tests
-  outline: none;
-  padding-right: var(--spacing-1x);
->>>>>>> Adds CSS variables
-  width: 100%;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c3 svg {
-  color: #57666E;
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-=======
-=======
-  border-radius: 0.25rem;
-=======
-  border-radius: var(--border-radius);
->>>>>>> Adds CSS variables
-  box-sizing: border-box;
-  caret-color: transparent;
-<<<<<<< HEAD
->>>>>>> PR changes
-  font-size: calc(1rem - 2px);
->>>>>>> Renames Dropdown to Select
-=======
-  font-size: 0.875rem;
->>>>>>> Adds scroll position reset after selection
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  max-height: 100%;
-  outline: none;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-=======
->>>>>>> Renames Dropdown to Select
-=======
-  max-height: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  padding: 0.5rem 0 0.5rem 0.5rem;
->>>>>>> PR changes
-=======
-=======
-  outline: none;
->>>>>>> Adds mobile styles to field-container
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
->>>>>>> Adds CSS variables
-  width: 100%;
-}
-
-.c4:hover {
-  cursor: pointer;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4::-moz-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4:-ms-input-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4::placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c6 {
-=======
-=======
->>>>>>> Adds more keyboard functionalities
-.c4:focus {
-  outline: none;
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
->>>>>>> PR changes
-=======
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-=======
-=======
-=======
->>>>>>> Adds more keyboard functionalities
->>>>>>> Adds more keyboard functionalities
->>>>>>> Adds more keyboard functionalities
-.c5 {
->>>>>>> Renames Dropdown to Select
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-<<<<<<< HEAD
-.c6 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-=======
-.c5 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-<<<<<<< HEAD
-  outline: none;
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds more keyboard functionalities
-}
-
-<div
-<<<<<<< HEAD
-    className="c0 c1"
-=======
-  className="c0 c1"
->
-  <label
-    className="c2"
-  >
-    Select an option
-  </label>
-  <div
-    aria-expanded={false}
-    aria-haspopup="listbox"
-    aria-owns="listbox_undefined"
-    className="c3"
-    disabled={true}
-    role="combobox"
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox_undefined"
-      aria-multiline="false"
-      className="c4"
-      disabled={true}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select an option"
-      required={true}
-      type="text"
-      value=""
-    />
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="24"
-      width="24"
-    />
-  </div>
-  <div
-    className="c5"
-    open={false}
->>>>>>> PR changes
-  >
-<<<<<<< HEAD
-    <label
-      className="c2"
-    >
-<<<<<<< HEAD
-      Select an option
-    </label>
-    <div
-<<<<<<< HEAD
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
-      className="c3"
-      onClick={[Function]}
-      role="combobox"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox_undefined"
-        aria-multiline="false"
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Select an option"
-        type="text"
-        value=""
-      />
-      <button
-        className="c5"
-=======
-=======
-    <ul
-      className="c6"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      role="listbox"
-      tabIndex={0}
-    >
->>>>>>> Adds more keyboard functionalities
-      <li
-        aria-label="Ontario"
-        aria-selected={false}
-        className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id="on-0"
->>>>>>> PR changes
-=======
-        id="on_0"
->>>>>>> Adds accessibility standards
-=======
-        id="0_on"
->>>>>>> PR requested changes
-        onClick={[Function]}
-        tabIndex={-1}
-        type="button"
-      >
-<<<<<<< HEAD
-        <svg
-          color="currentColor"
-          focusable={false}
-          height="24"
-          width="24"
-        />
-      </button>
-    </div>
-    <div
-      className="c6"
-      open={false}
-    >
-      <ul
-        className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        id="qc-1"
-=======
-        id="qc_1"
->>>>>>> Adds accessibility standards
-=======
-=======
-        id="undefined_on"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
->>>>>>> Adds more keyboard functionalities
-        Ontario
-      </li>
-      <li
-        aria-label="Quebec"
-        aria-selected={false}
-        className="c7"
-<<<<<<< HEAD
-        id="1_qc"
->>>>>>> PR requested changes
-=======
-        id="undefined_qc"
->>>>>>> Adds more keyboard functionalities
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Quebec
-      </li>
-      <li
-        aria-label="British Columbia"
-        aria-selected={false}
-        className="c7"
-        id="undefined_bc"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        British Columbia
-      </li>
-      <li
-        aria-label="Alberta"
-        aria-selected={false}
-        className="c7"
-        id="undefined_ab"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Alberta
-      </li>
-      <li
-        aria-label="Manitoba"
-        aria-selected={false}
-        className="c7"
-        id="undefined_mb"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Manitoba
-      </li>
-      <li
-        aria-label="Saskatchewan"
-        aria-selected={false}
-        className="c7"
-        id="undefined_sk"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Saskatchewan
-      </li>
-      <li
-        aria-label="Nova Scotia"
-        aria-selected={false}
-        className="c7"
-        id="undefined_ns"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nova Scotia
-      </li>
-      <li
-        aria-label="New Brunswick"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nb"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        New Brunswick
-      </li>
-      <li
-        aria-label="Newfoundland and Labrador"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nl"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Newfoundland and Labrador
-      </li>
-      <li
-        aria-label="Prince Edward Island"
-        aria-selected={false}
-        className="c7"
-        id="undefined_pe"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Prince Edward Island
-      </li>
-      <li
-        aria-label="Northwest Territories"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nt"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Northwest Territories
-      </li>
-      <li
-        aria-label="Nunavut"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nu"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nunavut
-      </li>
-      <li
-        aria-label="Yukon"
-        aria-selected={false}
-        className="c7"
-        id="undefined_yt"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Yukon
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`Select is invalid 1`] = `
-Array [
-  .c8 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
-}
-
-.c2 {
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-  margin: 0;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #A40C2E;
-}
-
-.c0:focus {
-  border-color: #A40C2E;
-}
-
-.c6 {
-  background-color: #FFFFFF;
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  min-width: 200px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-  padding: 0 34px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c7:hover,
-.c7:focus {
-  background-color: #D9DDE2;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-<<<<<<< HEAD
-  border: 1px solid #57666E;
-=======
-  border: 1px solid #A40C2E;
->>>>>>> Update handleBlur function
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: var(--spacing-half);
-  outline: none;
-  padding-right: var(--spacing-1x);
-  width: 100%;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c3 svg {
-  color: #57666E;
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  max-height: 100%;
-  outline: none;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  width: 100%;
-}
-
-.c4:hover {
-  cursor: pointer;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4::-moz-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4:-ms-input-placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c4::placeholder {
-  color: #57666E;
-  font-size: 0.875rem;
-}
-
-.c5 {
-<<<<<<< HEAD
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c6 {
-=======
->>>>>>> Adds more keyboard functionalities
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c6 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-<div
-    className="c0 c1"
-  >
-    <label
-      className="c2"
-    >
-      Select an option
-    </label>
-    <div
-<<<<<<< HEAD
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
-      className="c3"
-exports[`Select is disabled 1`] = `
 .c2 {
   color: #000000;
   display: block;
@@ -1919,591 +384,6 @@ input + .c2 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
-}
-
-.c0:focus {
-  border-color: #0080A5;
-}
-
-.c7 {
-  background-color: #FFFFFF;
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  min-width: 200px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-  padding: 0 34px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c7:hover,
-.c7:focus {
-  background-color: #D9DDE2;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #F1F2F2;
-=======
-<<<<<<< HEAD
->>>>>>> PR changes
-=======
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
->>>>>>> Adds accessibility standards
-      className="c3"
-=======
->>>>>>> Update handleBlur function
-      onClick={[Function]}
-      role="combobox"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox_undefined"
-        aria-multiline="false"
-        className="c4"
->>>>>>> Adds accessibility standards
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        onChange={[Function]}
-=======
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
->>>>>>> PR changes
-        onKeyDown={[Function]}
-        placeholder="Select an option"
-        type="text"
-        value=""
-      />
-      <svg
-        color="currentColor"
-        focusable={false}
-        height="24"
-        width="24"
-      />
-    </div>
-    <div
-      className="c5"
-      open={false}
-    >
-      <ul
-        className="c6"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> PR changes
-=======
-        data-testid="list"
->>>>>>> Adds more keyboard functionalities
-=======
->>>>>>> Adds scroll position reset after selection
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        role="listbox"
-        tabIndex={0}
-      >
-        <li
->>>>>>> Adds more keyboard functionalities
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  border: 1px solid #D9DDE2;
-  border-radius: 0.25rem;
-=======
-=======
-      onClick={[Function]}
-      role="combobox"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox_undefined"
-        aria-multiline="false"
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Select an option"
-        type="text"
-        value=""
-      />
-      <button
-        className="c5"
-        onClick={[Function]}
-        tabIndex={-1}
-        type="button"
-      >
-        <svg
-          color="currentColor"
-          focusable={false}
-          height="24"
-          width="24"
-        />
-      </button>
-    </div>
-    <div
-      className="c6"
-      open={false}
-    >
-      <ul
-        className="c7"
-=======
->>>>>>> Close combobox when there's no search results
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        role="listbox"
-        tabIndex={0}
-      >
-        <li
-          aria-label="Ontario"
-          aria-selected={false}
-          className="c8"
-          id="undefined_on"
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Add combobox keyboard functionalities
-=======
->>>>>>> Adds scroll position reset after selection
-  border: 1px solid #57666E;
-=======
-  border: 1px solid #D9DDE2;
->>>>>>> Adds scroll position reset after selection
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-top: var(--spacing-half);
-  outline: none;
-  padding-right: var(--spacing-1x);
-  width: 100%;
-}
-
-.c3:hover {
-  cursor: default;
-}
-
-.c3 svg {
-  color: #9CA7B4;
-}
-
-.c4 {
-  background-color: #F1F2F2;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  max-height: 100%;
-  outline: none;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  width: 100%;
-}
-
-.c4:hover {
-  cursor: default;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-.c4::-moz-placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-.c4:-ms-input-placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-.c4::placeholder {
-  color: #9CA7B4;
-  font-size: 0.875rem;
-}
-
-<<<<<<< HEAD
-.c2:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c4:focus {
-  outline: none;
->>>>>>> Adds more keyboard functionalities
-<<<<<<< HEAD
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-=======
-=======
->>>>>>> Add combobox keyboard functionalities
-=======
->>>>>>> Close combobox when there's no search results
-          onClick={[Function]}
-          role="option"
-          selected={false}
-        >
-          Ontario
-        </li>
-        <li
-          aria-label="Quebec"
-          aria-selected={false}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          className="c8"
-          id="undefined_qc"
->>>>>>> Add combobox keyboard functionalities
-=======
-<<<<<<< HEAD
-          id="on-0"
->>>>>>> PR changes
->>>>>>> Adds more keyboard functionalities
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-=======
-=======
->>>>>>> Adds more keyboard functionalities
->>>>>>> Adds more keyboard functionalities
-.c5 {
-  display: none;
-  position: absolute;
-  width: 100%;
->>>>>>> Renames Dropdown to Select
-}
-
-.c5 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-=======
->>>>>>> Refactor list component
-<div
-  className="c0 c1"
->
-  <label
-    className="c2"
-  >
-    Select an option
-  </label>
-  <div
-    aria-expanded={false}
-    aria-haspopup="listbox"
-    aria-owns="listbox_undefined"
-    className="c3"
-    disabled={true}
-<<<<<<< HEAD
-    role="combobox"
-=======
-    onClick={[Function]}
->>>>>>> Remove combobox component
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox_undefined"
-      aria-multiline="false"
-      className="c4"
-      disabled={true}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select an option"
-      required={true}
-      type="text"
-      value=""
-    />
-    <svg
-      color="currentColor"
-      focusable={false}
-      height="24"
-      width="24"
-    />
-  </div>
-  <div
-<<<<<<< HEAD
-    className="c5"
-    open={false}
-=======
-    className="c6"
-    role="listbox"
-    tabIndex={-1}
->>>>>>> Refactor list component
-  >
-    <ul
-      className="c6"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      role="presentation"
-      tabIndex={0}
-    >
-      <li
-        aria-label="Ontario"
-        aria-selected={false}
-        className="c7"
-        id="undefined_on"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Ontario
-      </li>
-      <li
-        aria-label="Quebec"
-        aria-selected={false}
-        className="c7"
-        id="undefined_qc"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Quebec
-      </li>
-      <li
-        aria-label="British Columbia"
-        aria-selected={false}
-        className="c7"
-        id="undefined_bc"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        British Columbia
-      </li>
-      <li
-        aria-label="Alberta"
-        aria-selected={false}
-        className="c7"
-        id="undefined_ab"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Alberta
-      </li>
-      <li
-        aria-label="Manitoba"
-        aria-selected={false}
-        className="c7"
-        id="undefined_mb"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Manitoba
-      </li>
-      <li
-        aria-label="Saskatchewan"
-        aria-selected={false}
-        className="c7"
-        id="undefined_sk"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Saskatchewan
-      </li>
-      <li
-        aria-label="Nova Scotia"
-        aria-selected={false}
-        className="c7"
-        id="undefined_ns"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nova Scotia
-      </li>
-      <li
-        aria-label="New Brunswick"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nb"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        New Brunswick
-      </li>
-      <li
-        aria-label="Newfoundland and Labrador"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nl"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Newfoundland and Labrador
-      </li>
-      <li
-        aria-label="Prince Edward Island"
-        aria-selected={false}
-        className="c7"
-        id="undefined_pe"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Prince Edward Island
-      </li>
-      <li
-        aria-label="Northwest Territories"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nt"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Northwest Territories
-      </li>
-      <li
-        aria-label="Nunavut"
-        aria-selected={false}
-        className="c7"
-        id="undefined_nu"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Nunavut
-      </li>
-      <li
-        aria-label="Yukon"
-        aria-selected={false}
-        className="c7"
-        id="undefined_yt"
-        onClick={[Function]}
-        role="option"
-        selected={false}
-      >
-        Yukon
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`Select is invalid 1`] = `
-Array [
-<<<<<<< HEAD
-  .c8 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
-}
-
-.c2 {
-=======
-  .c2 {
->>>>>>> Remove combobox component
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-  margin: 0;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
-}
-
-.c9 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
-}
-
-.c0 {
-  margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
   border-color: #A40C2E;
 }
 
@@ -2512,13 +392,10 @@ input + .c2 {
 }
 
 .c6 {
-<<<<<<< HEAD
-=======
   display: none;
 }
 
 .c7 {
->>>>>>> Refactor list component
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -2574,6 +451,7 @@ input + .c2 {
   background-color: #FFFFFF;
   border: 1px solid #A40C2E;
   border-radius: var(--border-radius);
+  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2585,7 +463,6 @@ input + .c2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: var(--spacing-half);
-  outline: none;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -2604,7 +481,7 @@ input + .c2 {
   border-radius: var(--border-radius);
   box-sizing: border-box;
   caret-color: transparent;
-  font-size: calc(1rem - 2px);
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
   -ms-letter-spacing: 0.4px;
@@ -2639,284 +516,178 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-.c4:focus {
-  outline: none;
-}
-
-<<<<<<< HEAD
 .c5 {
-  display: none;
-  position: absolute;
-  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c5 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
-}
-
-=======
->>>>>>> Refactor list component
 <div
-    className="c0 c1"
+    class="c0 c1"
   >
     <label
-      className="c2"
+      class="c2"
     >
       Select an option
     </label>
     <div
->>>>>>> PR changes
-      className="c3"
-=======
->>>>>>> Update handleBlur function
-      onClick={[Function]}
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox_undefined"
+      class="c3"
     >
       <input
-        className="c4"
-<<<<<<< HEAD
-        onChange={[Function]}
-=======
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
->>>>>>> PR changes
-        onKeyDown={[Function]}
+        aria-autocomplete="list"
+        aria-controls="listbox_undefined"
+        aria-multiline="false"
+        class="c4"
         placeholder="Select an option"
-        required={true}
         type="text"
         value=""
       />
-      <svg
-        color="currentColor"
-        height="24"
-        width="24"
-      />
+      <button
+        class="c5"
+        tabindex="-1"
+        type="button"
+      >
+        <svg
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </button>
     </div>
     <div
-<<<<<<< HEAD
-      className="c5"
-      open={false}
-=======
-      className="c6"
+      class="c6"
       role="listbox"
-      tabIndex={-1}
->>>>>>> Refactor list component
+      tabindex="-1"
     >
       <ul
-        className="c6"
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> PR changes
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
+        class="c7"
         role="presentation"
-        tabIndex={0}
+        tabindex="0"
       >
         <li
-<<<<<<< HEAD
-<<<<<<< HEAD
           aria-label="Ontario"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_on"
-=======
-          aria-label="-"
-          aria-selected={false}
-          className="c7"
-          id=""
-          onClick={[Function]}
           role="option"
-          selected={false}
-        >
-          -
-        </li>
-        <li
-          aria-label="Ontario"
-          aria-selected={false}
-          className="c7"
-          id="on"
->>>>>>> Renames Dropdown to Select
-=======
-          aria-label="Ontario"
-          aria-selected={false}
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="on-0"
->>>>>>> PR changes
-=======
-          id="on_0"
->>>>>>> Adds accessibility standards
-=======
-          id="0_on"
->>>>>>> PR requested changes
-=======
-          id="undefined_on"
->>>>>>> Adds more keyboard functionalities
-          onClick={[Function]}
-          role="option"
-          selected={false}
         >
           Ontario
         </li>
         <li
           aria-label="Quebec"
-          aria-selected={false}
-<<<<<<< HEAD
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_qc"
-=======
-          className="c7"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          id="qc"
->>>>>>> Renames Dropdown to Select
-=======
-          id="qc-1"
->>>>>>> PR changes
-=======
-          id="qc_1"
->>>>>>> Adds accessibility standards
-=======
-          id="1_qc"
->>>>>>> PR requested changes
-=======
-          id="undefined_qc"
->>>>>>> Adds more keyboard functionalities
-=======
-=======
->>>>>>> Close combobox when there's no search results
-          className="c8"
-          id="undefined_qc"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Quebec
         </li>
         <li
           aria-label="British Columbia"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_bc"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           British Columbia
         </li>
         <li
           aria-label="Alberta"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_ab"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Alberta
         </li>
         <li
           aria-label="Manitoba"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_mb"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Manitoba
         </li>
         <li
           aria-label="Saskatchewan"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_sk"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Saskatchewan
         </li>
         <li
           aria-label="Nova Scotia"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_ns"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Nova Scotia
         </li>
         <li
           aria-label="New Brunswick"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nb"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           New Brunswick
         </li>
         <li
           aria-label="Newfoundland and Labrador"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nl"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Newfoundland and Labrador
         </li>
         <li
           aria-label="Prince Edward Island"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_pe"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Prince Edward Island
         </li>
         <li
           aria-label="Northwest Territories"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nt"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Northwest Territories
         </li>
         <li
           aria-label="Nunavut"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nu"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Nunavut
         </li>
         <li
           aria-label="Yukon"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_yt"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Yukon
         </li>
@@ -2924,7 +695,7 @@ input + .c2 {
     </div>
     <div
       aria-live="polite"
-      className="c9"
+      class="c9"
       id="undefined_invalid"
       role="alert"
     >
@@ -2943,10 +714,8 @@ input + .c2 {
 }
 
 <input
-    checked={false}
-    className="c0"
+    class="c0"
     name="undefined_skip"
-    onChange={[Function]}
     type="radio"
     value="skip"
   />,
@@ -3021,7 +790,7 @@ input[type="radio"]:disabled + .c0 {
 }
 
 <label
-    className="c0"
+    class="c0"
   >
     Skip this question
   </label>,
@@ -3064,33 +833,10 @@ input + .c2 {
   border-color: #0080A5;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c6 {
-=======
-=======
->>>>>>> Add combobox keyboard functionalities
-<<<<<<< HEAD
-.c7 {
->>>>>>> Renames Dropdown to Select
-  background-color: #FFFFFF;
-=======
-.c6 {
-<<<<<<< HEAD
-  background-color: #fff;
->>>>>>> Renames Dropdown to Select
-=======
-=======
-=======
->>>>>>> Close combobox when there's no search results
-=======
 .c6 {
   display: none;
 }
 
->>>>>>> Refactor list component
 .c7 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -3104,64 +850,12 @@ input + .c2 {
   width: 100%;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c7 {
-=======
-=======
->>>>>>> Add combobox keyboard functionalities
-<<<<<<< HEAD
-.c8 {
-=======
-.c7 {
-=======
-.c8 {
->>>>>>> Add combobox keyboard functionalities
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-  padding: 0 34px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-<<<<<<< HEAD
-.c7:hover,
-.c7:focus {
-  background-color: #D9DDE2;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c3 {
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-=======
-=======
 .c7:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
->>>>>>> Refactor list component
 .c8 {
->>>>>>> Close combobox when there's no search results
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3182,18 +876,8 @@ input + .c2 {
   white-space: nowrap;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c7:hover,
-.c7:focus {
-=======
-=======
->>>>>>> Add combobox keyboard functionalities
-=======
->>>>>>> Close combobox when there's no search results
 .c8:hover,
 .c8:focus {
->>>>>>> Add combobox keyboard functionalities
   background-color: #D9DDE2;
 }
 
@@ -3274,25 +958,6 @@ input + .c2 {
   font-size: 0.875rem;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c4:focus {
-  outline: none;
-}
-
-<<<<<<< HEAD
-.c2:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-=======
-=======
->>>>>>> Adds more keyboard functionalities
-.c5 {
-=======
-=======
->>>>>>> Adds more keyboard functionalities
 .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3305,309 +970,166 @@ input + .c2 {
   display: flex;
 }
 
-.c6 {
-=======
-.c4:focus {
-  outline: none;
-}
-
-=======
->>>>>>> Adds more keyboard functionalities
-.c5 {
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-=======
-=======
-=======
-.c5 {
->>>>>>> Close combobox when there's no search results
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-<<<<<<< HEAD
-.c6 {
-<<<<<<< HEAD
->>>>>>> Add combobox keyboard functionalities
->>>>>>> Add combobox keyboard functionalities
-=======
->>>>>>> Close combobox when there's no search results
-  display: none;
-  position: absolute;
-  width: 100%;
->>>>>>> Renames Dropdown to Select
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.c5 ul {
-=======
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Update handleBlur function
-=======
->>>>>>> Add combobox keyboard functionalities
-<<<<<<< HEAD
-.c6 ul {
->>>>>>> Renames Dropdown to Select
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-=======
-=======
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-<<<<<<< HEAD
-=======
-  width: 100%;
-=======
-=======
->>>>>>> Adds CSS variables
-.c5 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-<<<<<<< HEAD
-  outline: none;
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-=======
-=======
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-=======
-=======
->>>>>>> Adds more keyboard functionalities
->>>>>>> Adds more keyboard functionalities
-=======
-.c5 ul {
-=======
-=======
->>>>>>> Close combobox when there's no search results
-.c6 ul {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-.c6 ul:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  outline: none;
-}
-
-=======
->>>>>>> Refactor list component
 <div
-    className="c0 c1"
+    class="c0 c1"
   >
     <label
-      className="c2"
+      class="c2"
     >
       Select an option
     </label>
     <div
-      aria-expanded={false}
+      aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
-      className="c3"
-      onClick={[Function]}
+      class="c3"
     >
       <input
         aria-autocomplete="list"
         aria-controls="listbox_undefined"
         aria-multiline="false"
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        class="c4"
         placeholder="Select an option"
         type="text"
         value=""
       />
       <button
-        className="c5"
-        onClick={[Function]}
-        tabIndex={-1}
+        class="c5"
+        tabindex="-1"
         type="button"
       >
         <svg
           color="currentColor"
-          focusable={false}
+          focusable="false"
           height="24"
           width="24"
         />
       </button>
     </div>
     <div
-      className="c6"
+      class="c6"
       role="listbox"
-      tabIndex={-1}
+      tabindex="-1"
     >
       <ul
-        className="c7"
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
+        class="c7"
         role="presentation"
-        tabIndex={0}
+        tabindex="0"
       >
         <li
           aria-label="Ontario"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_on"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Ontario
         </li>
         <li
           aria-label="Quebec"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_qc"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Quebec
         </li>
         <li
           aria-label="British Columbia"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_bc"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           British Columbia
         </li>
         <li
           aria-label="Alberta"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_ab"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Alberta
         </li>
         <li
           aria-label="Manitoba"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_mb"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Manitoba
         </li>
         <li
           aria-label="Saskatchewan"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_sk"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Saskatchewan
         </li>
         <li
           aria-label="Nova Scotia"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_ns"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Nova Scotia
         </li>
         <li
           aria-label="New Brunswick"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nb"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           New Brunswick
         </li>
         <li
           aria-label="Newfoundland and Labrador"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nl"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Newfoundland and Labrador
         </li>
         <li
           aria-label="Prince Edward Island"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_pe"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Prince Edward Island
         </li>
         <li
           aria-label="Northwest Territories"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nt"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Northwest Territories
         </li>
         <li
           aria-label="Nunavut"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_nu"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Nunavut
         </li>
         <li
           aria-label="Yukon"
-          aria-selected={false}
-          className="c8"
+          aria-selected="false"
+          class="c8"
           id="undefined_yt"
-          onClick={[Function]}
           role="option"
-          selected={false}
         >
           Yukon
         </li>
@@ -3626,10 +1148,8 @@ label + .c2 {
 }
 
 <input
-    checked={false}
-    className="c0"
+    class="c0"
     name="undefined_skip"
-    onChange={[Function]}
     type="radio"
     value="skip"
   />,
@@ -3704,7 +1224,7 @@ input[type="radio"]:disabled + .c0 {
 }
 
 <label
-    className="c0"
+    class="c0"
   >
     Skip this question
   </label>,
@@ -3864,194 +1384,160 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 <div
-  className="c0 c1"
+  class="c0 c1"
 >
   <div
-    aria-expanded={false}
+    aria-expanded="false"
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
-    className="c2"
-    onClick={[Function]}
+    class="c2"
   >
     <input
       aria-autocomplete="list"
       aria-controls="listbox_undefined"
       aria-multiline="false"
-      className="c3"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class="c3"
       placeholder="Select an option"
       type="text"
       value=""
     />
     <button
-      className="c4"
-      onClick={[Function]}
-      tabIndex={-1}
+      class="c4"
+      tabindex="-1"
       type="button"
     >
       <svg
         color="currentColor"
-        focusable={false}
+        focusable="false"
         height="32"
         width="32"
       />
     </button>
   </div>
   <div
-    className="c5"
+    class="c5"
     role="listbox"
-    tabIndex={-1}
+    tabindex="-1"
   >
     <ul
-      className="c6"
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
+      class="c6"
       role="presentation"
-      tabIndex={0}
+      tabindex="0"
     >
       <li
         aria-label="Ontario"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_on"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Ontario
       </li>
       <li
         aria-label="Quebec"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_qc"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Quebec
       </li>
       <li
         aria-label="British Columbia"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_bc"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         British Columbia
       </li>
       <li
         aria-label="Alberta"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_ab"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Alberta
       </li>
       <li
         aria-label="Manitoba"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_mb"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Manitoba
       </li>
       <li
         aria-label="Saskatchewan"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_sk"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Saskatchewan
       </li>
       <li
         aria-label="Nova Scotia"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_ns"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Nova Scotia
       </li>
       <li
         aria-label="New Brunswick"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_nb"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         New Brunswick
       </li>
       <li
         aria-label="Newfoundland and Labrador"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_nl"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Newfoundland and Labrador
       </li>
       <li
         aria-label="Prince Edward Island"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_pe"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Prince Edward Island
       </li>
       <li
         aria-label="Northwest Territories"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_nt"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Northwest Territories
       </li>
       <li
         aria-label="Nunavut"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_nu"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Nunavut
       </li>
       <li
         aria-label="Yukon"
-        aria-selected={false}
-        className="c7"
+        aria-selected="false"
+        class="c7"
         id="undefined_yt"
-        onClick={[Function]}
         role="option"
-        selected={false}
       >
         Yukon
       </li>

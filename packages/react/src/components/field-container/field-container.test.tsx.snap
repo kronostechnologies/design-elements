@@ -1,30 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Field Container Invalid field snapshot 1`] = `
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Updates mobile styles
-=======
->>>>>>> Adds defaultValue prop
-=======
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
-=======
-=======
->>>>>>> Updates mobile styles
->>>>>>> Updates mobile styles
-=======
->>>>>>> Close combobox when there's no search results
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -37,42 +13,6 @@ exports[`Field Container Invalid field snapshot 1`] = `
   margin: var(--spacing-half) 0 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Updates mobile styles
-=======
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
-=======
->>>>>>> Updates mobile styles
-=======
-=======
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
-=======
-<<<<<<< HEAD
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Updates mobile styles
-=======
->>>>>>> Close combobox when there's no search results
-=======
->>>>>>> Remove combobox component
 .c1 {
   color: #000000;
   display: block;
@@ -91,119 +31,6 @@ exports[`Field Container Invalid field snapshot 1`] = `
 
 input + .c1 {
   margin-left: var(--spacing-half);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.c2 {
-  color: #A40C2E;
-=======
-.c1 {
-  color: #000000;
->>>>>>> Renames Dropdown to Select
-=======
-=======
->>>>>>> Adds CSS variables
-=======
-=======
-.c2 {
-  color: #A40C2E;
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
-=======
-.c1 {
-  color: #000000;
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-  font-size: 0.75rem;
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  margin: 0.25rem 0 0;
->>>>>>> Adds defaultValue prop
-=======
-  margin: 0;
->>>>>>> Renames Dropdown to Select
-=======
-=======
->>>>>>> Renames Dropdown to Select
-  margin: 0.25rem 0 0;
->>>>>>> Adds defaultValue prop
-=======
-  margin: 0;
->>>>>>> Renames Dropdown to Select
-}
-
-input + .c1 {
-  margin-left: 0.5rem;
-=======
->>>>>>> Adds CSS variables
-}
-
-<<<<<<< HEAD
-.c2 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
-<<<<<<< HEAD
-=======
-  font-weight: 400;
-  -webkit-letter-spacing: 0.0166em;
-  -moz-letter-spacing: 0.0166em;
-  -ms-letter-spacing: 0.0166em;
-  letter-spacing: 0.0166em;
-  line-height: 1.1666;
-<<<<<<< HEAD
-  margin: 0;
->>>>>>> Adds defaultValue prop
-}
-
-input + .c1 {
-  margin-left: 0.5rem;
-<<<<<<< HEAD
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Adds defaultValue prop
->>>>>>> Adds defaultValue prop
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
-=======
-  margin: 0.25rem 0 0;
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Close combobox when there's no search results
-}
-
-.c2 {
-  color: #A40C2E;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
 }
 
 .c0 {

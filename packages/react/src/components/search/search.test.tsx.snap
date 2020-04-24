@@ -1,7 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchGlobal Matches the snapshot 1`] = `
-<<<<<<< HEAD
 .c2 {
   color: #000000;
   display: block;
@@ -13,20 +12,15 @@ exports[`SearchGlobal Matches the snapshot 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
-<<<<<<< HEAD
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-=======
->>>>>>> Updates mobile styles
 }
 
 input + .c2 {
   margin-left: var(--spacing-half);
 }
 
-=======
->>>>>>> Remove combobox component
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -105,98 +99,6 @@ input + .c2 {
   width: 1px !important;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Updates mobile styles
-=======
-=======
->>>>>>> Renames Dropdown to Select
-<<<<<<< HEAD
-=======
->>>>>>> Adds CSS variables
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Remove combobox component
-.c2 {
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-  margin: 0;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds defaultValue prop
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
-=======
-  margin-left: 0.5rem;
-}
-
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
-=======
-<<<<<<< HEAD
->>>>>>> Adds CSS variables
-=======
->>>>>>> Updates mobile styles
-=======
-=======
->>>>>>> Adds defaultValue prop
->>>>>>> Adds defaultValue prop
-<<<<<<< HEAD
->>>>>>> Adds defaultValue prop
-=======
-=======
-  margin-left: 0.5rem;
-}
-
->>>>>>> Renames Dropdown to Select
->>>>>>> Renames Dropdown to Select
-=======
->>>>>>> Adds CSS variables
-=======
->>>>>>> Updates mobile styles
->>>>>>> Updates mobile styles
-=======
->>>>>>> Close combobox when there's no search results
-=======
->>>>>>> Remove combobox component
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
