@@ -48,7 +48,7 @@ export const invalid = () => (
 );
 export const required = () => (
     <form onSubmit={event => event.preventDefault()}>
-        <Select label="Select an option" options={provinces}/>
+        <Select required label="Select an option" options={provinces}/>
         <button type="submit">Submit</button>
     </form>
 );

@@ -92,6 +92,23 @@ describe('List', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Matches the snapshot (dropdown)', () => {
+        const tree = renderer.create(
+            ThemeWrapped(
+                <List
+                    options={options}
+                    checkIndicator={true}
+                    defaultValue={defaultValue}
+                    onChange={onChange}
+                    numberOfItemsVisible={3}
+                    dropdown
+                />,
+            ),
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('Is not visible', () => {
         const tree = renderer.create(
             ThemeWrapped(
