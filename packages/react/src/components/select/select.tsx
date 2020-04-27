@@ -481,6 +481,7 @@ export function Select({
                     onKeyDown={handleListKeyDown}
                     options={filteredOptions}
                     value={selectedOptionValue}
+                    dropdown
                 />
             </StyledFieldContainer>
             {skipOption && (

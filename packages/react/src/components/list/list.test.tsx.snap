@@ -3,6 +3,8 @@
 exports[`List Is not visible 1`] = `
 .c0 {
   display: none;
+  position: unset;
+  width: unset;
 }
 
 .c1 {
@@ -115,6 +117,8 @@ exports[`List Matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  position: unset;
+  width: unset;
 }
 
 .c1 {

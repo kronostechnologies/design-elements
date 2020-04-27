@@ -37,6 +37,8 @@ input + .c2 {
 
 .c6 {
   display: none;
+  position: absolute;
+  width: 100%;
 }
 
 .c7 {
@@ -393,6 +395,8 @@ input + .c2 {
 
 .c6 {
   display: none;
+  position: absolute;
+  width: 100%;
 }
 
 .c7 {
@@ -835,6 +839,8 @@ input + .c2 {
 
 .c6 {
   display: none;
+  position: absolute;
+  width: 100%;
 }
 
 .c7 {
@@ -1248,6 +1254,8 @@ exports[`Select mobile select has a different style 1`] = `
 
 .c5 {
   display: none;
+  position: absolute;
+  width: 100%;
 }
 
 .c6 {

@@ -42,6 +42,11 @@ interface ListProps {
      */
     defaultValue?: string;
     /**
+     * Add this if its used as a dropdown (Adds absolute positioning)
+     * @default false
+     */
+    dropdown?: boolean;
+    /**
      * Number of visible items in the list before overflow
      * @default 4
      */
@@ -84,11 +89,18 @@ interface ItemProps {
     checkIndicator: boolean;
 }
 
+interface ListWrapperProps {
+    visible: boolean;
+    isDropdown: boolean;
+}
+
 const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
-const ListWrapper = styled.div<{visible?: boolean}>`
+const ListWrapper = styled.div<ListWrapperProps>`
     display: ${props => props.visible ? 'flex' : 'none'};
+    position: ${props => props.isDropdown ? 'absolute' : 'unset'};
+    width: ${props => props.isDropdown ? '100%' : 'unset'};
 `;
 
 const Wrapper = styled.ul<WrapperProps>`
@@ -154,6 +166,7 @@ export function List({
     onKeyDown,
     checkIndicator = false,
     defaultValue,
+    dropdown = false,
     numberOfItemsVisible = 4,
     autofocus = false,
     focusedValue,
@@ -341,6 +354,7 @@ export function List({
             tabIndex={-1}
             aria-activedescendant={selectedOptionId}
             aria-labelledby={selectedOptionId}
+            isDropdown={dropdown}
         >
             <Wrapper
                 role="presentation"
