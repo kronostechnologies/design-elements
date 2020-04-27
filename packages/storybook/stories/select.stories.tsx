@@ -65,7 +65,7 @@ export const withoutLabel = () => (
     <Select options={provinces}/>
 );
 export const withSkip = () => (
-    <Select label="Select an option" options={provinces} skipOption={skipOption} searchable/>
+    <Select label="Select an option" options={provinces} skipOption={skipOption}/>
 );
 export const withTwoItemsVisible = () => (
     <Select label="Select an option" options={provinces} numberOfItemsVisible={2}/>

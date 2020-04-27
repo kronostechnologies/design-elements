@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -8,24 +8,6 @@ import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { List } from '../list/list';
 import { Theme } from '../theme-wrapper/theme-wrapper';
-
-interface InputProps {
-    searchable?: boolean;
-    isMobile: boolean;
-    disabled?: boolean;
-    theme: Theme;
-}
-
-interface InputWrapperProps extends InputProps {
-    isMobile: boolean;
-    focus?: boolean;
-    containerOutline: boolean;
-    valid: boolean;
-}
-
-const StyledFieldContainer = styled(FieldContainer)`
-    position: relative;
-`;
 
 const getBorderColor = ({ disabled, focus, theme, valid }: InputWrapperProps): string => {
     if (disabled) {
@@ -41,36 +23,40 @@ const getBorderColor = ({ disabled, focus, theme, valid }: InputWrapperProps): s
     }
 };
 
+const StyledFieldContainer = styled(FieldContainer)`
+    position: relative;
+`;
+
 const InputWrapper = styled.div<InputWrapperProps>`
     align-items: center;
-    background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+    background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
-    box-shadow: ${props => props.containerOutline ? '0 0 0 2px rgba(0, 128, 165, 0.4)' : 'none'};
+    box-shadow: ${({ containerOutline }) => containerOutline ? '0 0 0 2px rgba(0, 128, 165, 0.4)' : 'none'};
     box-sizing: border-box;
     display: flex;
-    height: ${props => props.isMobile ? '40px' : '32px'};
+    height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
     justify-content: space-between;
     margin-top: var(--spacing-half);
     padding-right: var(--spacing-1x);
     width: 100%;
 
     &:hover {
-        cursor: ${props => props.disabled ? 'default' : 'pointer'};
+        cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
     }
 
     svg {
-        color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
+        color: ${({ disabled, theme }) => disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey']};
     }
 `;
 
 const StyledInput = styled.input<InputProps>`
-    background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
+    background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
     border: none;
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    caret-color: ${props => props.searchable ? 'unset' : 'transparent'};
-    font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
+    caret-color: ${({ searchable }) => searchable ? 'unset' : 'transparent'};
+    font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
     letter-spacing: 0.4px;
     max-height: 100%;
     outline: none;
@@ -78,12 +64,12 @@ const StyledInput = styled.input<InputProps>`
     width: 100%;
 
     &:hover {
-        cursor: ${props => props.disabled ? 'default' : props.searchable ? 'text' : 'pointer'};
+        cursor: ${({ disabled, searchable }) => disabled ? 'default' : searchable ? 'text' : 'pointer'};
     }
 
     &::placeholder {
-        color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
-        font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
+        color: ${({ disabled, theme }) => disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey']};
+        font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
     }
 `;
 
@@ -97,6 +83,20 @@ const StyledList = styled(List)`
     position: absolute;
     width: 100%;
 `;
+
+interface InputProps {
+    searchable?: boolean;
+    isMobile: boolean;
+    disabled?: boolean;
+    theme: Theme;
+}
+
+interface InputWrapperProps extends InputProps {
+    isMobile: boolean;
+    focus?: boolean;
+    containerOutline: boolean;
+    valid: boolean;
+}
 
 interface Option {
     label: string;
@@ -148,7 +148,7 @@ interface SelectProps {
     onChange?(option: Option): void;
 }
 
-export const Select = ({
+export function Select({
     defaultValue,
     disabled,
     label,
@@ -162,32 +162,24 @@ export const Select = ({
     skipOption,
     valid = true,
     validationErrorMessage = 'You must select an option',
-}: SelectProps) => {
+}: SelectProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
-    const [focus, setFocus] = useState(false);
-    const [containerOutline, setContainerOutline] = useState(false);
-    const [open, setOpen] = useState(false);
+    const id = useMemo(uuid, []);
     const defaultOption = options.find(option => option.value === defaultValue);
-    const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
+
+    const [autoFocus, setAutofocus] = useState(false);
+    const [containerOutline, setContainerOutline] = useState(false);
+    const [focus, setFocus] = useState(false);
+    const [open, setOpen] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [focusedValue, setFocusedValue] = useState();
     const [selectedOptionValue, setSelectedOptionValue] = useState();
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
-    const [autoFocus, setAutofocus] = useState(false);
+    const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
+
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
-    const id = useMemo(uuid, []);
-
-    const filterOptions = (optionsArray: Option[], value: string) => {
-        return optionsArray.filter(option => option.label.toLowerCase().startsWith(value.toLowerCase()));
-    };
-
-    const findOption = (optionsArray: Option[], value: string): Option | undefined => (
-        optionsArray.find(option =>
-            option.label.toLowerCase() === value.toLowerCase())
-    );
-
     const filteredOptions = filterOptions(options, searchValue);
 
     useEffect(() => {
@@ -195,47 +187,55 @@ export const Select = ({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [open]);
 
-    const resetField = () => {
+    function filterOptions(optionsArray: Option[], value: string): Option[] {
+        return optionsArray.filter(option => option.label.toLowerCase().startsWith(value.toLowerCase()));
+    }
+
+    function findOption(optionsArray: Option[], value: string): Option | undefined {
+        return optionsArray.find(option => option.label.toLowerCase() === value.toLowerCase());
+    }
+
+    function focusFirstElementFromArray(array: Option[]): void {
+        setFocusedValue(array[0].value);
+    }
+
+    function focusLastElementFromArray(array: Option[]): void {
+        setFocusedValue(array[array.length - 1].value);
+    }
+
+    function resetField(): void {
         setFocusedValue('');
         setInputValue('');
         setSelectedOptionValue('');
         setSearchValue('');
-    };
+    }
 
-    const matchInputValueToOption = (): void => {
+    function matchInputValueToOption(): void {
         const matchingOption = findOption(options, inputValue);
 
         if (matchingOption) {
             setSelectedOptionValue(matchingOption.value);
         }
-    };
+    }
 
-    const handleOpen = () => {
+    function handleArrowClick(): void {
+        handleOpen();
+        matchInputValueToOption();
+    }
+
+    function handleBlur(event: FocusEvent<HTMLInputElement>): void {
+        const checkSearchValue = findOption(options, event.target.value);
+        if (checkSearchValue && checkSearchValue.value !== selectedOptionValue) {
+            setSelectedOptionValue(checkSearchValue.value);
+            onChange && onChange(checkSearchValue);
+        }
         if (!open) {
-            setFocus(true);
-            if (searchable && inputRef.current) {
-                inputRef.current.focus();
-                setFocusedValue('');
-            }
-        } else {
-            inputRef.current && inputRef.current.focus();
-            setAutofocus(false);
-            setFocusedValue('');
+            setFocus(false);
         }
-        setOpen(!open);
-    };
+        setContainerOutline(false);
+    }
 
-    const handleInputClick = () => {
-        if (searchable) {
-            setFocusedValue('');
-        } else {
-            handleOpen();
-            matchInputValueToOption();
-        }
-        setAutofocus(false);
-    };
-
-    const handleChange = (option: Option): void => {
+    function handleChange(option: Option): void {
         setOpen(false);
         setFocus(false);
         setSkipSelected(false);
@@ -249,39 +249,71 @@ export const Select = ({
         } else {
             inputRef.current && inputRef.current.focus();
         }
-    };
+    }
 
-    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    function handleClickOutside(event: MouseEvent): void {
+        const shouldClose =
+            wrapperRef.current === null ||
+            wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
+        if (shouldClose && open) {
+            setAutofocus(false);
+            setOpen(false);
+            setFocus(false);
+        }
+    }
+
+    function handleFocus(): void {
+        setFocus(true);
+        setContainerOutline(true);
+    }
+
+    function handleFocusedValueChange(value: string | undefined): void {
+        value && setInputValue(value);
+    }
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
         if (searchable) {
-            if (event.target.value !== '') {
-                const optionsArray = filterOptions(options, event.target.value);
+            const currentValue = event.target.value;
+            const optionsArray = filterOptions(options, currentValue);
 
-                if (event.target.value !== '' && optionsArray.length > 0) {
-                    setFocusedValue(optionsArray[0].value);
+            if (currentValue === '') {
+                setFocusedValue('');
+                setSearchValue('');
+                setInputValue(currentValue);
+                setOpen(false);
+                setSelectedOptionValue('');
+            } else {
+                setInputValue(currentValue);
+                setSearchValue(currentValue);
+                setOpen(optionsArray.length >= 1);
+
+                if (optionsArray.length > 0) {
+                    focusFirstElementFromArray(optionsArray);
                 } else {
                     setSelectedOptionValue('');
                     setFocusedValue('');
                 }
-                setInputValue(event.target.value);
-                setSearchValue(event.target.value);
-                setOpen(optionsArray.length >= 1);
-            } else {
-                setFocusedValue('');
-                setSearchValue('');
-                setInputValue(event.target.value);
-                setOpen(false);
-                setSelectedOptionValue('');
             }
         }
-    };
+    }
 
-    const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+    function handleInputClick(): void {
+        if (searchable) {
+            setFocusedValue('');
+        } else {
+            handleOpen();
+            matchInputValueToOption();
+        }
+        setAutofocus(false);
+    }
+
+    function handleInputKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         switch (event.keyCode) {
             case 40 /* ArrowDown */:
                 if (!open) {
                     handleOpen();
                     if (searchable || !selectedOptionValue) {
-                        setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
+                        setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                     }
@@ -289,7 +321,7 @@ export const Select = ({
                     if (searchValue !== '') {
                         setTimeout(() => setFocusedValue(filteredOptions[1].value), 10);
                     } else {
-                        setTimeout(() => setFocusedValue(filteredOptions[0].value), 10);
+                        setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
                     }
                 }
                 setAutofocus(true);
@@ -298,7 +330,7 @@ export const Select = ({
                 if (!open) {
                     handleOpen();
                     if (searchable || !selectedOptionValue) {
-                        setTimeout(() => setFocusedValue(filteredOptions[filteredOptions.length - 1].value), 10);
+                        setTimeout(() => focusLastElementFromArray(filteredOptions), 10);
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                     }
@@ -320,6 +352,9 @@ export const Select = ({
                 if (!open) {
                     event.preventDefault();
                     handleOpen();
+                    if (!searchable) {
+                        setTimeout(() => setFocusedValue(selectedOptionValue), 10);
+                    }
                 }
                 break;
             case 27 /* Escape */:
@@ -334,9 +369,9 @@ export const Select = ({
             default:
                 break;
         }
-    };
+    }
 
-    const handleListKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+    function handleListKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
             if (searchable) {
                 resetField();
@@ -356,51 +391,31 @@ export const Select = ({
                 setFocusedValue(suggestOption.value);
             }
         }
-    };
+    }
 
-    const handleClickOutside = (event: MouseEvent): void => {
-        const shouldClose =
-            wrapperRef.current === null ||
-            wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
-        if (shouldClose && open) {
-            setAutofocus(false);
-            setOpen(false);
-            setFocus(false);
+    function handleOpen(): void {
+        if (!disabled) {
+            if (!open) {
+                setFocus(true);
+                if (searchable && inputRef.current) {
+                    inputRef.current.focus();
+                    setFocusedValue('');
+                }
+            } else {
+                inputRef.current && inputRef.current.focus();
+                setAutofocus(false);
+                setFocusedValue('');
+            }
+            setOpen(!open);
         }
-    };
+    }
 
-    const handleSkipChange = () => {
+    function handleSkipChange(): void {
         if (!skipSelected) {
             setSkipSelected(true);
             setInputValue('');
         }
-    };
-
-    const handleFocus = () => {
-        setFocus(true);
-        setContainerOutline(true);
-    };
-
-    const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-        const checkSearchValue = findOption(options, event.target.value);
-        if (checkSearchValue && checkSearchValue.value !== selectedOptionValue) {
-            setSelectedOptionValue(checkSearchValue.value);
-            onChange && onChange(checkSearchValue);
-        }
-        if (!open) {
-            setFocus(false);
-        }
-        setContainerOutline(false);
-    };
-
-    const handleFocusedValueChange = (value: string | undefined): void => {
-        value && setInputValue(value);
-    };
-
-    const handleArrowClick = () => {
-        handleOpen();
-        matchInputValueToOption();
-    };
+    }
 
     return (
         <>
@@ -482,4 +497,4 @@ export const Select = ({
             )}
         </>
     );
-};
+}
