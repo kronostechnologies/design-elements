@@ -1789,19 +1789,19 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.1.tgz#b96de0532842af6c3fc10aa4e5ae30efd203aa95"
-  integrity sha512-iwXXZGqkTgjX/Em8ecx/2xSFJ9zejfBZubtoQzDRR5c+dwR7sfniIdq5DeJVRfP1QFnGJoRjzFdagaqAxZ5IfA==
+"@equisoft/design-elements-react@^2.0.2-alpha.51":
+  version "2.0.2-alpha.50"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.2-alpha.50.tgz#68b29529305ad18b3fe80525afe2e12b94283856"
+  integrity sha512-DZi17X99FuUUis9YoNV2j15pdZ5CVXe5LBZpVz1ANH4d4c6rp7ypo6xkYbQgMDRIIclQ/+1u2qGBEQBt87vyrA==
   dependencies:
     feather-icons "^4.21.0"
     react-swipeable "~5.5.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.1.tgz#d4ca15d278e636c06ab1d92cbc2fb9b64ce97a93"
-  integrity sha512-Pq332m+Nv1bvq453hXu1zuP/ioXeMwFzEONFTHYCHDen1Iupa5gmd1PSNGGQf3vM08bztVQUqRO/NUAjpY61/g==
+"@equisoft/design-elements-web@^2.0.2-alpha.51":
+  version "2.0.2-alpha.50"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.2-alpha.50.tgz#c9720f7014246fb5c697dfa63bef56e5f2fab4e5"
+  integrity sha512-K1FaJwlLdCNrT60c+slL+7hFNhbtZcHRJE/ivlnU8LxdBZlq1vPgjW1EQyV8eJzxMN+ktWdbGUk9ErOoP2vMIA==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
