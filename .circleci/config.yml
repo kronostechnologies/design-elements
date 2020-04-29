@@ -210,7 +210,7 @@ jobs:
       - attach_at_working_directory
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/design-elements/.npmrc
       - run:
           name: Publish package
           command: yarn lerna publish from-git --yes
