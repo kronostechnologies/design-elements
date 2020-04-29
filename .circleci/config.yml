@@ -312,6 +312,10 @@ workflows:
           working_directory: *working_directory
       - publish_to_npm:
           requires:
+            - root_node_install_deps
+            - storybook_yarn_build
+            - react_yarn_build
+            - web_yarn_lint
             - lerna_version_prerelease
           display_name: 'publish_to_npm'
           <<: *branch_filters
