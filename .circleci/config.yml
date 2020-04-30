@@ -231,6 +231,24 @@ jobs:
           working_directory: *react_directory
           command: npm publish
 
+  deploy:
+    executor: "node"
+    steps:
+      - attach_workspace:
+          at: ~/design-elements
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/design-elements/.npmrc
+      - run:
+          name: Publish storybook
+          command: cd packages/storybook/ && npm publish
+      - run:
+          name: Publish react
+          command: cd packages/react/ && npm publish
+      - run:
+          name: Publish web
+          command: cd packages/web/ && npm publish
+
 
 workflows:
   version: 2
@@ -326,9 +344,7 @@ workflows:
           display_name: 'lerna_version_prerelease_version'
           <<: *branch_filters
           working_directory: *working_directory
-      - publish_to_npm:
+      - deploy:
           requires:
             - lerna_version_prerelease
-          display_name: 'publish_to_npm'
           <<: *branch_filters
-          working_directory: *working_directory
