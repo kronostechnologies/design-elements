@@ -213,7 +213,7 @@ jobs:
             - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/design-elements/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$npm"
       - run:
           name: Git pull
           working_directory: << parameters.working_directory >>
@@ -229,6 +229,27 @@ jobs:
       - run:
           name: Publish React package
           working_directory: *react_directory
+          command: npm publish
+
+  deploy:
+    executor: "node"
+    steps:
+      - attach_workspace:
+          at: ~/design-elements
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=${npm}"
+      - run:
+          name: Publish storybook
+          working_directory: *storybook_directory
+          command: npm publish
+      - run:
+          name: Publish react
+          working_directory: *react_directory
+          command: npm publish
+      - run:
+          name: Publish web
+          working_directory: *web_directory
           command: npm publish
 
 
@@ -326,9 +347,7 @@ workflows:
           display_name: 'lerna_version_prerelease_version'
           <<: *branch_filters
           working_directory: *working_directory
-      - publish_to_npm:
+      - deploy:
           requires:
             - lerna_version_prerelease
-          display_name: 'publish_to_npm'
           <<: *branch_filters
-          working_directory: *working_directory
