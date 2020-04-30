@@ -208,12 +208,28 @@ jobs:
         type: string
     steps:
       - attach_at_working_directory
+      - add_ssh_keys:
+          fingerprints:
+            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/design-elements/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/design-elements/.npmrc
       - run:
-          name: Publish package
-          command: yarn lerna publish from-git --yes
+          name: Git pull
+          working_directory: << parameters.working_directory >>
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
+      - run:
+          name: Publish Storybook package
+          working_directory: *storybook_directory
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/design-elements/.npmrc && npm publish
+      - run:
+          name: Publish Web package
+          working_directory: *web_directory
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/design-elements/.npmrc && npm publish
+      - run:
+          name: Publish React package
+          working_directory: *react_directory
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/design-elements/.npmrc && npm publish
 
 
 workflows:
