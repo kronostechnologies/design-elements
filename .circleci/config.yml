@@ -208,12 +208,17 @@ jobs:
         type: string
     steps:
       - attach_at_working_directory
+      - add_ssh_keys:
+          fingerprints:
+            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
       - run:
           name: Authenticate with registry
+          working_directory: << parameters.working_directory >>
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/design-elements/.npmrc
       - run:
           name: Publish package
-          command: yarn lerna publish from-git --yes
+          working_directory: << parameters.working_directory >>
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull && yarn lerna publish from-git --yes
 
 
 workflows:
