@@ -198,40 +198,8 @@ jobs:
           name: 'Yalc push << parameters.display_name >>'
           working_directory: << parameters.working_directory >>
           command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && yarn cache clean && yarn lerna version prerelease --force-publish --yes -m "chore(prerelease): %s [ci skip]"'
-  
-  publish_to_npm:
-    executor: "node"
-    parameters:
-      display_name:
-        type: string
-      working_directory:
-        type: string
-    steps:
-      - attach_at_working_directory
-      - add_ssh_keys:
-          fingerprints:
-            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm"
-      - run:
-          name: Git pull
-          working_directory: << parameters.working_directory >>
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
-      - run:
-          name: Publish Storybook package
-          working_directory: *storybook_directory
-          command: npm publish
-      - run:
-          name: Publish Web package
-          working_directory: *web_directory
-          command: npm publish
-      - run:
-          name: Publish React package
-          working_directory: *react_directory
-          command: npm publish
 
-  deploy:
+  publish_to_npm:
     executor: "node"
     steps:
       - attach_workspace:
@@ -240,15 +208,15 @@ jobs:
           name: Authenticate with registry
           command: export NPM_TOKEN
       - run:
-          name: Publish storybook
+          name: Publish storybook package
           working_directory: *storybook_directory
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
       - run:
-          name: Publish react
+          name: Publish react package
           working_directory: *react_directory
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
       - run:
-          name: Publish web
+          name: Publish web package
           working_directory: *web_directory
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
 
@@ -347,7 +315,7 @@ workflows:
           display_name: 'lerna_version_prerelease_version'
           <<: *branch_filters
           working_directory: *working_directory
-      - deploy:
+      - publish_to_npm:
           context: npm
           requires:
             - lerna_version_prerelease
