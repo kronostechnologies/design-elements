@@ -20,7 +20,7 @@ const provinces = [
 ];
 
 const skipOption = {
-    label: 'Skip this questionnnasbtnnn',
+    label: 'Skip this questionnnasnnn',
     value: 'skip',
 };
 
