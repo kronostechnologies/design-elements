@@ -241,16 +241,8 @@ jobs:
           command: export NPM_TOKEN
       - run:
           name: Publish storybook
-          working_directory: *storybook_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
-      - run:
-          name: Publish react
-          working_directory: *react_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
-      - run:
-          name: Publish web
-          working_directory: *web_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
+          working_directory: *working_directory
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && yarn lerna publish
 
 
 workflows:
