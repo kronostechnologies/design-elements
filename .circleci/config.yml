@@ -197,7 +197,7 @@ jobs:
       - run:
           name: 'Yalc push << parameters.display_name >>'
           working_directory: << parameters.working_directory >>
-          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && yarn cache clean && yarn lerna version prerelease --yes -m "chore(prerelease): %s [ci skip]"'
+          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && yarn cache clean && yarn lerna version prerelease --force-publish --yes -m "chore(prerelease): %s [ci skip]"'
   
   publish_to_npm:
     executor: "node"
