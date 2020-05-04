@@ -256,9 +256,8 @@ export function Select({
             wrapperRef.current === null ||
             wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
         if (shouldClose && open) {
-            setAutofocus(false);
-            setOpen(false);
-            setFocus(false);
+            handleOpen();
+            inputRef.current && inputRef.current.blur();
         }
     }
 
@@ -334,6 +333,8 @@ export function Select({
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                     }
+                } else if (searchable) {
+                    setTimeout(() => focusLastElementFromArray(filteredOptions), 10);
                 } else if (autoFocus) {
                     setAutofocus(false);
                 }
@@ -380,6 +381,8 @@ export function Select({
             }
             setFocusedValue('');
             handleOpen();
+        } else if (event.key === 'ArrowUp' && !focusedValue) {
+            focusLastElementFromArray(options);
         } else if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown' && searchable) {
             setAutofocus(false);
             setFocusedValue('');
@@ -400,6 +403,8 @@ export function Select({
                 if (searchable && inputRef.current) {
                     inputRef.current.focus();
                     setFocusedValue('');
+                } else {
+                    setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                 }
             } else {
                 inputRef.current && inputRef.current.focus();
