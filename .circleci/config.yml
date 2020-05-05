@@ -57,6 +57,13 @@ commands:
   git_config:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
+
+  git_pull_master:
+    steps:
+     - run:
+          name: 'git pull master'
+          working_directory: *working_directory
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
   
   add_github_ssh_key:
     steps:
@@ -193,10 +200,7 @@ jobs:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
-      - run:
-          name: 'git pull'
-          working_directory: *working_directory
-          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105'
+      - git_pull_master
       - run:
           name: 'lerna_version_prerelease'
           working_directory: *working_directory
@@ -209,10 +213,7 @@ jobs:
           at: ~/design-elements
       - git_config
       - add_github_ssh_key
-      - run:
-          name: 'git pull'
-          working_directory: *working_directory
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
+      - git_pull_master
       - run:
           name: 'Publish react package'
           working_directory: *react_directory
