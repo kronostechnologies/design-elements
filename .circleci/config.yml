@@ -301,7 +301,6 @@ workflows:
             branches:
               only:
                 - dev/DE-105
-          name: lerna_version_prerelease
           requires:
             - root_node_install_deps
             - storybook_yarn_build
@@ -314,4 +313,4 @@ workflows:
                   - dev/DE-105
           context: npm
           requires:
-            - lerna_version_prerelease
+            - create_prerelease_versions
