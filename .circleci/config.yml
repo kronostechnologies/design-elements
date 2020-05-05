@@ -213,13 +213,6 @@ jobs:
           working_directory: *working_directory
           command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
       - run:
-          name: Authenticate with registry
-          command: export NPM_TOKEN
-      - run:
-          name: Publish storybook package
-          working_directory: *storybook_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
-      - run:
           name: Publish react package
           working_directory: *react_directory
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
