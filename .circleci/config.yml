@@ -204,6 +204,14 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/design-elements
+      - git_config
+      - add_ssh_keys:
+          fingerprints:
+            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
+      - run:
+          name: Git pull
+          working_directory: *working_directory
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
       - run:
           name: Authenticate with registry
           command: export NPM_TOKEN
