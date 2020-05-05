@@ -227,22 +227,17 @@ workflows:
 
   build:
     jobs:
-      - prepare_workspace: &branch_filters
-          filters:
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+      - prepare_workspace
 
       ### WEB
       - node_install_deps:
           name: web_node_install_deps
           directory: *web_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - yarn_lint:
           name: web_yarn_lint
           directory: *web_directory
-          <<: *branch_filters
           requires:
             - web_node_install_deps
 
@@ -250,25 +245,21 @@ workflows:
       - node_install_deps:
           name: react_node_install_deps
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - yarn_lint:
           name: react_yarn_lint
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - react_node_install_deps
       - yarn_test:
           name: react_yarn_test
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - react_node_install_deps
       - yarn_build:
           name: react_yarn_build
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - react_node_install_deps
 
@@ -276,7 +267,6 @@ workflows:
       - node_install_deps:
           name: storybook_node_install_deps
           directory: *storybook_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - yalc_push:
@@ -288,14 +278,12 @@ workflows:
       - yarn_lint:
           name: storybook_yarn_lint
           directory: *storybook_directory
-          <<: *branch_filters
           requires:
             - storybook_yalc_push
       - yarn_build:
           name: storybook_yarn_build
           directory: *storybook_directory
           use_workspace: true
-          <<: *branch_filters
           requires:
             - storybook_yalc_push
       
@@ -307,7 +295,6 @@ workflows:
                 - dev/DE-105
           name: root_node_install_deps
           directory: *working_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - lerna_version_prerelease:
@@ -322,7 +309,6 @@ workflows:
             - react_yarn_build
             - web_yarn_lint
           display_name: 'lerna_version_prerelease_version'
-          <<: *branch_filters
           working_directory: *working_directory
       - publish_to_npm:
           filters:
@@ -332,4 +318,3 @@ workflows:
           context: npm
           requires:
             - lerna_version_prerelease
-          <<: *branch_filters
