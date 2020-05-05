@@ -183,11 +183,6 @@ jobs:
   
   lerna_version_prerelease:
     executor: "node"
-    parameters:
-      display_name:
-        type: string
-      working_directory:
-        type: string
     steps:
       - attach_at_working_directory
       - git_config
@@ -195,9 +190,13 @@ jobs:
           fingerprints:
             - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
       - run:
-          name: 'Yalc push << parameters.display_name >>'
-          working_directory: << parameters.working_directory >>
-          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105 && yarn cache clean && yarn lerna version prerelease --force-publish --yes -m "chore(prerelease): %s [ci skip]"'
+          name: 'git pull'
+          working_directory: *working_directory
+          command: 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105'
+      - run:
+          name: 'lerna_version_prerelease'
+          working_directory: *working_directory
+          command: 'yarn cache clean && yarn lerna version prerelease --force-publish --yes -m "chore(prerelease): %s [ci skip]"'
 
   publish_to_npm:
     executor: "node"
@@ -308,8 +307,6 @@ workflows:
             - storybook_yarn_build
             - react_yarn_build
             - web_yarn_lint
-          display_name: 'lerna_version_prerelease_version'
-          working_directory: *working_directory
       - publish_to_npm:
           filters:
               branches:
