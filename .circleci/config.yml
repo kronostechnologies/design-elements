@@ -57,6 +57,12 @@ commands:
   git_config:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
+  
+  add_github_ssh_key:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
 
   yarn_test:
     steps:
@@ -186,9 +192,7 @@ jobs:
     steps:
       - attach_at_working_directory
       - git_config
-      - add_ssh_keys:
-          fingerprints:
-            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
+      - add_github_ssh_key
       - run:
           name: 'git pull'
           working_directory: *working_directory
@@ -204,9 +208,7 @@ jobs:
       - attach_workspace:
           at: ~/design-elements
       - git_config
-      - add_ssh_keys:
-          fingerprints:
-            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
+      - add_github_ssh_key
       - run:
           name: 'git pull'
           working_directory: *working_directory
