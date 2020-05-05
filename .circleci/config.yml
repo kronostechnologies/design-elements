@@ -181,7 +181,7 @@ jobs:
             - '*/*/.yalc'
             - '*/*/node_modules'
   
-  lerna_version_prerelease:
+  create_prerelease_versions:
     executor: "node"
     steps:
       - attach_at_working_directory
@@ -208,15 +208,15 @@ jobs:
           fingerprints:
             - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
       - run:
-          name: Git pull
+          name: 'git pull'
           working_directory: *working_directory
           command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
       - run:
-          name: Publish react package
+          name: 'Publish react package'
           working_directory: *react_directory
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
       - run:
-          name: Publish web package
+          name: 'Publish web package'
           working_directory: *web_directory
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
 
@@ -296,7 +296,7 @@ workflows:
           directory: *working_directory
           requires:
             - prepare_workspace
-      - lerna_version_prerelease:
+      - create_prerelease_versions:
           filters:
             branches:
               only:
