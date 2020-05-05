@@ -209,8 +209,7 @@ jobs:
   publish_to_npm:
     executor: "node"
     steps:
-      - attach_workspace:
-          at: ~/design-elements
+      - attach_at_working_directory
       - git_config
       - add_github_ssh_key
       - git_pull_master
