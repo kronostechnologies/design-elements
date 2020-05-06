@@ -63,7 +63,7 @@ commands:
      - run:
           name: 'git pull master'
           working_directory: *working_directory
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin master
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
   
   add_github_ssh_key:
     steps:
@@ -293,7 +293,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - dev/DE-105
           name: root_node_install_deps
           directory: *working_directory
           requires:
@@ -302,7 +302,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - dev/DE-105
           requires:
             - root_node_install_deps
             - storybook_yarn_build
@@ -312,7 +312,7 @@ workflows:
           filters:
               branches:
                 only:
-                  - master
+                  - dev/DE-105
           context: npm
           requires:
             - create_prerelease_versions
