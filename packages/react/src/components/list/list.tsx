@@ -270,6 +270,7 @@ export function List({
 
     function scrollIntoList(direction: 'up' | 'down' | 'top' | 'bottom'): void {
         const currentOption = list[selectedFocusIndex];
+        let itemIsOutOfRange = false;
 
         if (!listRef.current || !currentOption || !currentOption.ref.current) {
             return;
@@ -281,15 +282,25 @@ export function List({
         switch (direction) {
             case 'up':
                 const isPrevItemHidden = listRect.top - itemRect.top >= 0;
+                itemIsOutOfRange =
+                    (listRect.top - itemRect.top) <= -(numberOfItemsVisible * itemRect.height)
+                    || (listRect.top - itemRect.top) >= itemRect.height;
 
-                if (isPrevItemHidden) {
+                if (itemIsOutOfRange) {
+                    handleAutoScroll(list[selectedFocusIndex - 1], selectedFocusIndex - 1);
+                } else if (isPrevItemHidden) {
                     listRef.current.scrollTop = listRef.current.scrollTop - itemRect.height;
                 }
                 break;
             case 'down':
                 const isNextItemHidden = listRect.bottom - itemRect.bottom <= 0;
+                itemIsOutOfRange =
+                    (listRect.bottom - itemRect.bottom) >= (numberOfItemsVisible * itemRect.height)
+                    || (listRect.bottom - itemRect.bottom) <= -itemRect.height;
 
-                if (isNextItemHidden) {
+                if (itemIsOutOfRange) {
+                    handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
+                } else if (isNextItemHidden) {
                     listRef.current.scrollTop = listRef.current.scrollTop + itemRect.height;
                 }
                 break;

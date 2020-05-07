@@ -173,7 +173,7 @@ export function Select({
     const [open, setOpen] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [focusedValue, setFocusedValue] = useState();
-    const [selectedOptionValue, setSelectedOptionValue] = useState();
+    const [selectedOptionValue, setSelectedOptionValue] = useState(defaultValue);
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);
     const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
