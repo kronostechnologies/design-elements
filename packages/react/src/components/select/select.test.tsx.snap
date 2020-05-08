@@ -187,6 +187,7 @@ input + .c2 {
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
     class="c3"
+    data-testid="input-wrapper"
     disabled=""
   >
     <input
@@ -194,6 +195,7 @@ input + .c2 {
       aria-controls="listbox_undefined"
       aria-multiline="false"
       class="c4"
+      data-testid="input"
       disabled=""
       placeholder="Select an option"
       type="text"
@@ -201,6 +203,7 @@ input + .c2 {
     />
     <button
       class="c5"
+      data-testid="arrow"
       disabled=""
       tabindex="-1"
       type="button"
@@ -545,18 +548,21 @@ input + .c2 {
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
       class="c3"
+      data-testid="input-wrapper"
     >
       <input
         aria-autocomplete="list"
         aria-controls="listbox_undefined"
         aria-multiline="false"
         class="c4"
+        data-testid="input"
         placeholder="Select an option"
         type="text"
         value=""
       />
       <button
         class="c5"
+        data-testid="arrow"
         tabindex="-1"
         type="button"
       >
@@ -989,18 +995,21 @@ input + .c2 {
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
       class="c3"
+      data-testid="input-wrapper"
     >
       <input
         aria-autocomplete="list"
         aria-controls="listbox_undefined"
         aria-multiline="false"
         class="c4"
+        data-testid="input"
         placeholder="Select an option"
         type="text"
         value=""
       />
       <button
         class="c5"
+        data-testid="arrow"
         tabindex="-1"
         type="button"
       >
@@ -1399,18 +1408,21 @@ exports[`Select mobile select has a different style 1`] = `
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
     class="c2"
+    data-testid="input-wrapper"
   >
     <input
       aria-autocomplete="list"
       aria-controls="listbox_undefined"
       aria-multiline="false"
       class="c3"
+      data-testid="input"
       placeholder="Select an option"
       type="text"
       value=""
     />
     <button
       class="c4"
+      data-testid="arrow"
       tabindex="-1"
       type="button"
     >

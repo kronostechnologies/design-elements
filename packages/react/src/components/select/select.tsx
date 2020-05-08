@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -220,6 +220,7 @@ export function Select({
 
         if (matchingOption) {
             setSelectedOptionValue(matchingOption.value);
+            setInputValue(matchingOption.label);
         }
     }
 
@@ -228,12 +229,8 @@ export function Select({
         matchInputValueToOption();
     }
 
-    function handleBlur(event: FocusEvent<HTMLInputElement>): void {
-        const checkSearchValue = findOption(options, event.target.value);
-        if (checkSearchValue && checkSearchValue.value !== selectedOptionValue) {
-            setSelectedOptionValue(checkSearchValue.value);
-            onChange && onChange(checkSearchValue);
-        }
+    function handleBlur(): void {
+        matchInputValueToOption();
         if (!open) {
             setFocus(false);
         }
@@ -388,15 +385,17 @@ export function Select({
             handleOpen();
         } else if (event.key === 'ArrowUp' && !focusedValue) {
             focusLastElementFromArray(options);
-        } else if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown' && searchable) {
-            setAutofocus(false);
-            setFocusedValue('');
-            inputRef.current && inputRef.current.focus();
         } else if (event.keyCode > 64 && event.keyCode < 91) /* Check if key is a character */ {
-            const suggestOption =
+            if (searchable) {
+                setAutofocus(false);
+                setFocusedValue('');
+                inputRef.current && inputRef.current.focus();
+            } else {
+                const suggestOption =
                 options.find(option => option.label.toLowerCase().startsWith(event.key.toLowerCase()));
-            if (suggestOption) {
-                setFocusedValue(suggestOption.value);
+                if (suggestOption) {
+                    setFocusedValue(suggestOption.value);
+                }
             }
         }
     }
@@ -440,6 +439,7 @@ export function Select({
                     aria-expanded={open}
                     aria-haspopup="listbox"
                     aria-owns={`listbox_${id}`}
+                    data-testid="input-wrapper"
                     containerOutline={containerOutline}
                     isMobile={isMobile}
                     disabled={disabled}
@@ -454,6 +454,7 @@ export function Select({
                         aria-autocomplete={searchable ? 'both' : 'list'}
                         aria-controls={`listbox_${id}`}
                         aria-multiline="false"
+                        data-testid="input"
                         isMobile={isMobile}
                         disabled={disabled}
                         name={name}
@@ -470,6 +471,7 @@ export function Select({
                     />
                     <Arrow
                         type="button"
+                        data-testid="arrow"
                         tabIndex={-1}
                         onClick={disabled ? undefined : handleArrowClick}
                         disabled={disabled}
@@ -481,7 +483,7 @@ export function Select({
                     autofocus={searchable ? autoFocus : open}
                     visible={open}
                     checkIndicator
-                    data-testid="list"
+                    data-testid="listbox"
                     defaultValue={defaultValue}
                     focusedValue={focusedValue}
                     id={id}
