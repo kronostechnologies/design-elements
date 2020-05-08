@@ -58,6 +58,9 @@ export const searchable = () => (
 export const withCallback = () => (
     <Select label="Select an option" options={provinces} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
 );
+export const defaultOpen = () => (
+    <Select label="Select an option" options={provinces} defaultOpen/>
+);
 export const withDefaultValue = () => (
     <Select label="Select an option" options={provinces} defaultValue="qc"/>
 );

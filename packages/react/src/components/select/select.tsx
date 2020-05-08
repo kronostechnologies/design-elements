@@ -105,6 +105,10 @@ interface Option {
 
 interface SelectProps {
     /**
+     * @default false
+     */
+    defaultOpen?: boolean;
+    /**
      * The default selected option
      */
     defaultValue?: string;
@@ -149,6 +153,7 @@ interface SelectProps {
 }
 
 export function Select({
+    defaultOpen = false,
     defaultValue,
     disabled,
     label,
@@ -170,7 +175,7 @@ export function Select({
     const [autoFocus, setAutofocus] = useState(false);
     const [containerOutline, setContainerOutline] = useState(false);
     const [focus, setFocus] = useState(false);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(defaultOpen);
     const [searchValue, setSearchValue] = useState('');
     const [focusedValue, setFocusedValue] = useState();
     const [selectedOptionValue, setSelectedOptionValue] = useState(defaultValue);
