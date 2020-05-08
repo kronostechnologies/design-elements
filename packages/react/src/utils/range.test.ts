@@ -1,6 +1,6 @@
 import { range } from '@design-elements/utils/range';
 
-describe('ranges', () => {
+describe('range', () => {
     it('should contain start and end', () => {
         const result = range(-2, 2);
 

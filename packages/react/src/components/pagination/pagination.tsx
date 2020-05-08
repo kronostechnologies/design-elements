@@ -113,12 +113,11 @@ export function Pagination({
    numberOfResults,
    defaultActivePage = 1,
    pagesShown = 3,
-   lang= 'en',
-   onPageChange,
+   lang = 'en',
+   onPageChange = () => undefined,
 }: PaginationProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
-    const pageChangeCallback = onPageChange ? onPageChange : () => undefined;
     const [currentPage, setCurrentPage] = useState(clamp(defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
@@ -127,7 +126,7 @@ export function Pagination({
 
     const changePage = (page: number) => {
         setCurrentPage(page);
-        pageChangeCallback(page);
+        onPageChange(page);
     };
 
     const handlePageKeyDown = (key: string, page: number) => {
@@ -139,25 +138,28 @@ export function Pagination({
     const { begin, end } = calculateShownPageRange(totalPages, pagesDisplayed, currentPage);
     const pages = range(begin, end).map(i => {
         const id = 'page-' + i;
+        const isCurrentPage = i === currentPage;
         return (
             <Page
                 key={id}
                 data-testid={id}
-                isSelected={i === currentPage}
-                onClick={() => changePage(i)}
-                onKeyPress={(event) => handlePageKeyDown(event.key, i)}
+                isSelected={isCurrentPage}
+                onClick={isCurrentPage ? undefined : () => changePage(i)}
+                onKeyPress={event => handlePageKeyDown(event.key, i)}
                 isMobile={isMobile}
                 tabIndex={0}
-            ><a aria-label={`go to page ${i}`} aria-current={i === currentPage ? 'page' : undefined}>{i}</a>
+            ><a aria-label={`go to page ${i}`} aria-current={isCurrentPage ? 'page' : undefined}>{i}</a>
             </Page>
         );
     });
 
     return (
         <Container isMobile={isMobile}>
-            {numberOfResults !== undefined && <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                {numberOfResults} {lang === 'fr' ? 'résultats' : 'results'/* TODO refactor with i18n support */}
-            </ResultsLabel>}
+            {numberOfResults !== undefined && (
+                <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
+                    {numberOfResults} {lang === 'fr' ? 'résultats' : 'results'/* TODO refactor with i18n support */}
+                </ResultsLabel>
+            )}
             <Navigation aria-label="pagination">
                 {firstLastNavActive && <NavButton
                     data-testid="firstPageButton"
@@ -171,7 +173,7 @@ export function Pagination({
                     iconName="chevronLeft"
                     label="previous page"
                     enabled={canNavigatePrevious}
-                    onClick={() => changePage(+currentPage - 1)}
+                    onClick={() => changePage(currentPage - 1)}
                 />}
                 <Pages>{pages}</Pages>
                 {forwardBackwardNavActive && <NavButton
@@ -179,7 +181,7 @@ export function Pagination({
                     iconName="chevronRight"
                     label="next page"
                     enabled={canNavigateNext}
-                    onClick={() => changePage(+currentPage + 1)}
+                    onClick={() => changePage(currentPage + 1)}
                 />}
                 {firstLastNavActive && <NavButton
                     data-testid="lastPageButton"

@@ -1,7 +1,7 @@
 import { renderWithProviders } from '@design-elements/test-utils/renderer';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import React, { ReactElement } from 'react';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { findByTestId } from '../../test-utils/enzyme-selectors';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Pagination } from './pagination';
 
@@ -13,7 +13,8 @@ describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
         const tree = renderComponent(
             <Pagination totalPages={12} />,
-            'mobile');
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });
@@ -21,27 +22,24 @@ describe('Pagination', () => {
     test('Matches the desktop snapshot', () => {
         const tree = renderComponent(
             <Pagination totalPages={12} />,
-            'desktop');
+            'desktop',
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     describe('pages list', () => {
         test('should display pages', () => {
-            const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={5} pagesShown={5} />),
-            );
-            const pages = wrapper.find('li');
+            const wrapper = shallow(<Pagination totalPages={5} pagesShown={5} />);
+            const pages = findByTestId(wrapper, 'page-', '^');
 
             expect(pages).toHaveLength(5);
         });
 
         test('should go to page 2 when clicking on page 2', () => {
             const callback = jest.fn();
-            const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={1} onPageChange={callback} />),
-            );
-            const pageButton = wrapper.find('[data-testid="page-2"]').at(1);
+            const wrapper = shallow(<Pagination totalPages={3} defaultActivePage={1} onPageChange={callback} />);
+            const pageButton = findByTestId(wrapper, 'page-2');
 
             pageButton.simulate('click');
 
@@ -49,32 +47,26 @@ describe('Pagination', () => {
         });
 
         test('should highlight selected page', () => {
-            const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} defaultActivePage={3} />),
-            );
-            const pageButton = wrapper.find('[data-testid="page-3"]').at(1);
+            const wrapper = shallow(<Pagination totalPages={3} defaultActivePage={3} />);
+            const pageButton = findByTestId(wrapper, 'page-3');
 
-            expect(pageButton.prop('isSelected')).toBeTruthy();
+            expect(pageButton.prop('isSelected')).toBe(true);
         });
     });
 
     describe('results label', () => {
         test('should display the number of results when provided', () => {
-            const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} numberOfResults={12345} />),
-            );
-            const label = wrapper.find('[data-testid="resultsLabel"]').at(1);
+            const wrapper = shallow(<Pagination totalPages={3} numberOfResults={12345} />);
+            const label = findByTestId(wrapper, 'resultsLabel');
 
             expect(label.text()).toEqual('12345 results');
         });
 
         test('should be hidden when number of results is not provided', () => {
-            const wrapper = mount(
-                ThemeWrapped(<Pagination totalPages={3} />),
-            );
-            const label = wrapper.find('[data-testid="resultsLabel"]').at(1);
+            const wrapper = shallow(<Pagination totalPages={3} />);
+            const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.exists()).toBeFalsy();
+            expect(label.exists()).toBe(false);
         });
     });
 
@@ -89,10 +81,10 @@ describe('Pagination', () => {
             describe(testCase.id, () => {
                 test(`should go to page ${testCase.goesToPage} when clicked`, () => {
                     const callback = jest.fn();
-                    const wrapper = mount(
-                        ThemeWrapped(<Pagination totalPages={11} defaultActivePage={3} onPageChange={callback}/>),
+                    const wrapper = shallow(
+                        <Pagination totalPages={11} defaultActivePage={3} onPageChange={callback}/>,
                     );
-                    const button = wrapper.find(`[data-testid=\"${testCase.id}\"]`).at(1);
+                    const button = findByTestId(wrapper, testCase.id);
 
                     button.simulate('click');
 
@@ -100,30 +92,28 @@ describe('Pagination', () => {
                 });
 
                 test(`should be disabled when on page ${testCase.disabledWhenOnPage}`, () => {
-                    const wrapper = mount(
-                        ThemeWrapped(<Pagination totalPages={11} defaultActivePage={testCase.disabledWhenOnPage}/>),
+                    const wrapper = shallow(
+                        <Pagination totalPages={11} defaultActivePage={testCase.disabledWhenOnPage}/>,
                     );
-                    const button = wrapper.find(`[data-testid=\"${testCase.id}\"]`).at(1);
+                    const button = findByTestId(wrapper, testCase.id);
 
-                    expect(button.prop('enabled')).toBeFalsy();
+                    expect(button.prop('enabled')).toBe(false);
                 });
 
                 test(`should be enabled when on page ${testCase.enabledWhenOnPage}`, () => {
-                    const wrapper = mount(
-                        ThemeWrapped(<Pagination totalPages={11} defaultActivePage={testCase.enabledWhenOnPage}/>),
+                    const wrapper = shallow(
+                        <Pagination totalPages={11} defaultActivePage={testCase.enabledWhenOnPage}/>,
                     );
-                    const button = wrapper.find(`[data-testid=\"${testCase.id}\"]`).at(1);
+                    const button = findByTestId(wrapper, testCase.id);
 
-                    expect(button.prop('enabled')).toBeTruthy();
+                    expect(button.prop('enabled')).toBe(true);
                 });
 
                 test(`should not be rendered when there\'s less than ${testCase.stopRenderAt} page`, () => {
-                    const wrapper = mount(
-                        ThemeWrapped(<Pagination totalPages={testCase.stopRenderAt - 1}/>),
-                    );
-                    const button = wrapper.find(`[data-testid=\"${testCase.id}\"]`).at(1);
+                    const wrapper = shallow(<Pagination totalPages={testCase.stopRenderAt - 1}/>);
+                    const button = findByTestId(wrapper, testCase.id);
 
-                    expect(button.exists()).toBeFalsy();
+                    expect(button.exists()).toBe(false);
                 });
             });
         });
