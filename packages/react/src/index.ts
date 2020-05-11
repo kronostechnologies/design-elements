@@ -36,6 +36,7 @@ export { RouteLink } from './components/route-link/route-link';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { Banner } from './components/banner/banner';
+export { Tooltip } from './components/tooltip/tooltip';
 
 // Results
 export { Legend } from './components/legend/legend';

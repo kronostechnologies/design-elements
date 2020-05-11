@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "feather-icons": "^4.21.0",
+    "react-popper-tooltip": "^2.10.1",
     "react-swipeable": "~5.5.0",
     "uuid": "^3.3.3"
   },
