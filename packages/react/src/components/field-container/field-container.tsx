@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { DeviceType } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
@@ -21,6 +22,7 @@ const StyledDiv = styled.div`
 
 interface FieldContainerProps {
     children: ReactNode;
+    device?: DeviceType;
     fieldId: string;
     label?: string;
     valid: boolean;
@@ -28,11 +30,11 @@ interface FieldContainerProps {
 }
 
 export function FieldContainer(
-    { children, fieldId, label, valid, validationErrorMessage, ...props }: FieldContainerProps,
+    { children, device = 'desktop', fieldId, label, valid, validationErrorMessage, ...props }: FieldContainerProps,
 ): ReactElement {
     return (
         <StyledDiv {...props} valid={valid}>
-            {label && <Label forId={fieldId}>{label}</Label>}
+            {label && <Label device={device} forId={fieldId}>{label}</Label>}
             {children}
             {!valid && <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />}
         </StyledDiv>
