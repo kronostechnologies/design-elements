@@ -50,8 +50,10 @@
     "uuid": "^3.3.3"
   },
   "peerDependencies": {
+    "i18next": "^19.4.4",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
+    "react-i18next": "^11.4.0",
     "react-router-dom": "^5.1.2",
     "styled-components": ">= 4"
   },

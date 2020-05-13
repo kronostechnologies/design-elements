@@ -1,4 +1,5 @@
 import React, { ComponentType, ReactNode, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -93,6 +94,7 @@ interface InlineMessageProps {
 }
 
 export const InlineMessage = ({ children, title, type }: InlineMessageProps) => {
+    const { t } = useTranslation('inline-message');
     const { isMobile } = useDeviceContext();
     const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
     const Container = messageType.container;
@@ -101,7 +103,7 @@ export const InlineMessage = ({ children, title, type }: InlineMessageProps) => 
         <Container isMobile={isMobile} aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}>
             <Icon name={messageType.iconName} size={isMobile ? '20' : '16'}/>
             <TextWrapper isMobile={isMobile}>
-                <Heading isMobile={isMobile}>{title ? title : messageType.title}</Heading>
+                <Heading isMobile={isMobile}>{title ? title : t(messageType.title)}</Heading>
                 <p>{children}</p>
             </TextWrapper>
         </Container>
