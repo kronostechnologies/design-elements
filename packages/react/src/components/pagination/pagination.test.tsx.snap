@@ -1,0 +1,505 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Matches the desktop snapshot 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c2:not(:disabled) {
+  cursor: pointer;
+}
+
+.c2 > svg {
+  color: inherit;
+}
+
+.c2:hover {
+  color: #000000;
+}
+
+.c2:disabled {
+  color: #9CA7B4;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 var(--spacing-half);
+  padding: 0;
+}
+
+.c4 {
+  background-color: #0080A5;
+  border-radius: 100%;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: var(--font-normal);
+  height: 24px;
+  line-height: 24px;
+  margin: 0 var(--spacing-half);
+  text-align: center;
+  width: 24px;
+}
+
+.c4:hover {
+  background-color: #0080A5;
+  cursor: default;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  color: #000000;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: var(--font-normal);
+  height: 24px;
+  line-height: 24px;
+  margin: 0 var(--spacing-half);
+  text-align: center;
+  width: 24px;
+}
+
+.c5:hover {
+  background-color: #D9DDE2;
+  cursor: pointer;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  class="c0"
+>
+  <nav
+    aria-label="pagination"
+    class="c1"
+  >
+    <button
+      aria-disabled="true"
+      aria-label="first page"
+      class="c2"
+      data-testid="firstPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+    <button
+      aria-disabled="true"
+      aria-label="previous page"
+      class="c2"
+      data-testid="previousPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+    <ol
+      class="c3"
+    >
+      <li
+        class="c4"
+        data-testid="page-1"
+        tabindex="0"
+      >
+        <a
+          aria-current="page"
+          aria-label="go to page 1"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="c5"
+        data-testid="page-2"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 2"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="c5"
+        data-testid="page-3"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 3"
+        >
+          3
+        </a>
+      </li>
+    </ol>
+    <button
+      aria-disabled="false"
+      aria-label="next page"
+      class="c2"
+      data-testid="nextPageButton"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+    <button
+      aria-disabled="false"
+      aria-label="last page"
+      class="c2"
+      data-testid="lastPageButton"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Pagination Matches the mobile snapshot 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  color: #57666E;
+  padding: 0;
+  width: 48px;
+}
+
+.c2:not(:disabled) {
+  cursor: pointer;
+}
+
+.c2 > svg {
+  color: inherit;
+}
+
+.c2:hover {
+  color: #000000;
+}
+
+.c2:disabled {
+  color: #9CA7B4;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 var(--spacing-half);
+  padding: 0;
+}
+
+.c4 {
+  background-color: #0080A5;
+  border-radius: 100%;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  margin: 0 var(--spacing-half);
+  text-align: center;
+  width: 32px;
+}
+
+.c4:hover {
+  background-color: #0080A5;
+  cursor: default;
+}
+
+.c4:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  color: #000000;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  margin: 0 var(--spacing-half);
+  text-align: center;
+  width: 32px;
+}
+
+.c5:hover {
+  background-color: #D9DDE2;
+  cursor: pointer;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  class="c0"
+>
+  <nav
+    aria-label="pagination"
+    class="c1"
+  >
+    <button
+      aria-disabled="true"
+      aria-label="first page"
+      class="c2"
+      data-testid="firstPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+    <button
+      aria-disabled="true"
+      aria-label="previous page"
+      class="c2"
+      data-testid="previousPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+    <ol
+      class="c3"
+    >
+      <li
+        class="c4"
+        data-testid="page-1"
+        tabindex="0"
+      >
+        <a
+          aria-current="page"
+          aria-label="go to page 1"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="c5"
+        data-testid="page-2"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 2"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="c5"
+        data-testid="page-3"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 3"
+        >
+          3
+        </a>
+      </li>
+    </ol>
+    <button
+      aria-disabled="false"
+      aria-label="next page"
+      class="c2"
+      data-testid="nextPageButton"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+    <button
+      aria-disabled="false"
+      aria-label="last page"
+      class="c2"
+      data-testid="lastPageButton"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+  </nav>
+</div>
+`;
