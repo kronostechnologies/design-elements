@@ -44,7 +44,7 @@ commands:
     steps:
       - node_deps_cache_restore:
           directory: << parameters.directory >>
-      - run: test -d node_modules || yarn --non-interactive --no-progress
+      - run: test -d node_modules || yarn --non-interactive --no-progress --frozen-lockfile
       - node_deps_cache_save:
           directory: << parameters.directory >>
 
@@ -57,19 +57,21 @@ commands:
   git_config:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
-
+  
   git_pull_master:
     steps:
-     - run:
-          name: 'git pull master'
+      - run:
           working_directory: *working_directory
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin master
+          command: git pull origin master
   
   add_github_ssh_key:
     steps:
       - add_ssh_keys:
           fingerprints:
             - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
+      - run:
+          working_directory: *working_directory
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
   yarn_test:
     steps:
@@ -200,7 +202,6 @@ jobs:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
-      - git_pull_master
       - run:
           name: 'lerna_version_prerelease'
           working_directory: *working_directory
@@ -216,11 +217,15 @@ jobs:
       - run:
           name: 'Publish react package'
           working_directory: *react_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+            yarn publish --tag next
       - run:
           name: 'Publish web package'
           working_directory: *web_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+            yarn publish --tag next
 
 
 workflows:
@@ -310,9 +315,9 @@ workflows:
             - web_yarn_lint
       - publish_to_npm:
           filters:
-              branches:
-                only:
-                  - master
+            branches:
+              only:
+                - master
           context: npm
           requires:
             - create_prerelease_versions
