@@ -58,15 +58,20 @@ commands:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
   
+  git_pull_master:
+    steps:
+      - run:
+          working_directory: *working_directory
+          command: git pull origin dev/DE-105
+  
   add_github_ssh_key:
     steps:
       - add_ssh_keys:
           fingerprints:
             - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
       - run:
-          name: 'git pull master'
           working_directory: *working_directory
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts && git pull origin dev/DE-105
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
   yarn_test:
     steps:
@@ -208,6 +213,7 @@ jobs:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
+      - git_pull_master
       - run:
           name: 'Publish react package'
           working_directory: *react_directory
