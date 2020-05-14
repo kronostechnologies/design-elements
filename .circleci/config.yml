@@ -44,7 +44,7 @@ commands:
     steps:
       - node_deps_cache_restore:
           directory: << parameters.directory >>
-      - run: test -d node_modules || yarn --non-interactive --no-progress
+      - run: test -d node_modules || yarn --non-interactive --no-progress --frozen-lockfile
       - node_deps_cache_save:
           directory: << parameters.directory >>
 
@@ -304,12 +304,20 @@ workflows:
           requires:
             - prepare_workspace
       - create_prerelease_versions:
+          filters:
+            branches:
+              only:
+                - dev/DE-105
           requires:
             - root_node_install_deps
             - storybook_yarn_build
             - react_yarn_build
             - web_yarn_lint
       - publish_to_npm:
+          filters:
+            branches:
+              only:
+                - dev/DE-105
           context: npm
           requires:
             - create_prerelease_versions
