@@ -217,11 +217,15 @@ jobs:
       - run:
           name: 'Publish react package'
           working_directory: *react_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish --tag=next
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+            yarn publish --tag next
       - run:
           name: 'Publish web package'
           working_directory: *web_directory
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && npm publish --tag=next
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+            yarn publish --tag next
 
 
 workflows:
@@ -300,20 +304,12 @@ workflows:
           requires:
             - prepare_workspace
       - create_prerelease_versions:
-          filters:
-            branches:
-              only:
-                - dev/DE-105
           requires:
             - root_node_install_deps
             - storybook_yarn_build
             - react_yarn_build
             - web_yarn_lint
       - publish_to_npm:
-          filters:
-              branches:
-                only:
-                  - dev/DE-105
           context: npm
           requires:
             - create_prerelease_versions
