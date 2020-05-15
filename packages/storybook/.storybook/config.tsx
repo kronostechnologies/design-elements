@@ -7,7 +7,7 @@ import React from 'react';
 
 addDecorator(storyFn => (
     <DeviceContextProvider>
-        <IntlProvider>
+        <IntlProvider language="fr">
             <ThemeWrapper>
                 {storyFn()}
             </ThemeWrapper>
