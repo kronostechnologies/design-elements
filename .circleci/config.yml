@@ -24,7 +24,7 @@ commands:
     steps:
       - restore_cache:
           name: Restoring NodeJS dependencies cache (node_modules)
-          key: &yarn_cache 'v1-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
+          key: &yarn_cache 'v3-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
 
   node_deps_cache_save:
     parameters:
@@ -53,6 +53,25 @@ commands:
       - run: yarn lint:ci
       - store_test_results:
           path: build/lint
+  
+  git_config:
+    steps:
+      - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
+  
+  git_pull_master:
+    steps:
+      - run:
+          working_directory: *working_directory
+          command: git pull origin master
+  
+  add_github_ssh_key:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "a3:81:0b:19:67:3f:89:0a:e9:1b:1a:38:a6:02:0e:93"
+      - run:
+          working_directory: *working_directory
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
   yarn_test:
     steps:
@@ -106,7 +125,9 @@ jobs:
           directory: << parameters.directory >>
       - persist_to_workspace:
           root: *working_directory
-          paths: '*/*/node_modules'
+          paths: 
+          - '*/*/node_modules'
+          - 'node_modules'
 
   yarn_lint:
     executor: "node"
@@ -174,28 +195,55 @@ jobs:
           paths:
             - '*/*/.yalc'
             - '*/*/node_modules'
+  
+  create_prerelease_versions:
+    executor: "node"
+    steps:
+      - attach_at_working_directory
+      - git_config
+      - add_github_ssh_key
+      - run:
+          name: 'lerna_version_prerelease'
+          working_directory: *working_directory
+          command: 'yarn cache clean && yarn lerna version prerelease --force-publish --yes -m "chore(prerelease): %s [ci skip]"'
+
+  publish_to_npm:
+    executor: "node"
+    steps:
+      - attach_at_working_directory
+      - git_config
+      - add_github_ssh_key
+      - git_pull_master
+      - run:
+          name: 'Publish react package'
+          working_directory: *react_directory
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+            yarn publish --tag next
+      - run:
+          name: 'Publish web package'
+          working_directory: *web_directory
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+            yarn publish --tag next
+
 
 workflows:
   version: 2
 
   build:
     jobs:
-      - prepare_workspace: &branch_filters
-          filters:
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+      - prepare_workspace
 
       ### WEB
       - node_install_deps:
           name: web_node_install_deps
           directory: *web_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - yarn_lint:
           name: web_yarn_lint
           directory: *web_directory
-          <<: *branch_filters
           requires:
             - web_node_install_deps
 
@@ -203,25 +251,21 @@ workflows:
       - node_install_deps:
           name: react_node_install_deps
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - yarn_lint:
           name: react_yarn_lint
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - react_node_install_deps
       - yarn_test:
           name: react_yarn_test
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - react_node_install_deps
       - yarn_build:
           name: react_yarn_build
           directory: *react_directory
-          <<: *branch_filters
           requires:
             - react_node_install_deps
 
@@ -229,7 +273,6 @@ workflows:
       - node_install_deps:
           name: storybook_node_install_deps
           directory: *storybook_directory
-          <<: *branch_filters
           requires:
             - prepare_workspace
       - yalc_push:
@@ -241,13 +284,40 @@ workflows:
       - yarn_lint:
           name: storybook_yarn_lint
           directory: *storybook_directory
-          <<: *branch_filters
           requires:
             - storybook_yalc_push
       - yarn_build:
           name: storybook_yarn_build
           directory: *storybook_directory
           use_workspace: true
-          <<: *branch_filters
           requires:
             - storybook_yalc_push
+      
+      ### PRERELEASE
+      - node_install_deps:
+          filters:
+            branches:
+              only:
+                - master
+          name: root_node_install_deps
+          directory: *working_directory
+          requires:
+            - prepare_workspace
+      - create_prerelease_versions:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - root_node_install_deps
+            - storybook_yarn_build
+            - react_yarn_build
+            - web_yarn_lint
+      - publish_to_npm:
+          filters:
+            branches:
+              only:
+                - master
+          context: npm
+          requires:
+            - create_prerelease_versions
