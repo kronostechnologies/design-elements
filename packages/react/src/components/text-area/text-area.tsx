@@ -1,7 +1,9 @@
 import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
+
+import { i18n } from '../../i18n/i18n';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
@@ -38,6 +40,7 @@ interface ValidityProps {
 }
 
 export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps): ReactElement {
+    const { t } = useTranslation('text-area');
     const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
     const id = uuid();
 
@@ -68,7 +71,7 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
             fieldId={id}
             label={label}
             valid={validity}
-            validationErrorMessage={validationErrorMessage || 'This text area input is invalid'}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
             <StyledTextArea
                 defaultValue={defaultValue}
@@ -84,3 +87,15 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
         </FieldContainer>
     );
 }
+
+const Translation = {
+    en: {
+        validationErrorMessage: 'This text area input is invalid',
+    },
+    fr: {
+        validationErrorMessage: 'Cette zone texte est invalide',
+    },
+};
+
+i18n.addResources('en', 'text-area', Translation.en);
+i18n.addResources('fr', 'text-area', Translation.fr);
