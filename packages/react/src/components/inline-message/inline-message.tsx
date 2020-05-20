@@ -1,7 +1,8 @@
-import React, { ComponentType, ReactNode, useMemo } from 'react';
+import React, { ComponentType, ReactElement, ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
+import { i18n } from '../../i18n/i18n';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
@@ -93,7 +94,7 @@ interface InlineMessageProps {
     type: MessageType;
 }
 
-export const InlineMessage = ({ children, title, type }: InlineMessageProps) => {
+export function InlineMessage({ children, title, type }: InlineMessageProps): ReactElement {
     const { t } = useTranslation('inline-message');
     const { isMobile } = useDeviceContext();
     const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
@@ -108,4 +109,22 @@ export const InlineMessage = ({ children, title, type }: InlineMessageProps) => 
             </TextWrapper>
         </Container>
     );
+}
+
+const Translation = {
+    en: {
+        Tips: 'Tips',
+        Success: 'Success',
+        Alert: 'Alert',
+        Error: 'Error',
+    },
+    fr: {
+        Tips: 'Astuce',
+        Success: 'Succès',
+        Alert: 'Alerte',
+        Error: 'Erreur',
+    },
 };
+
+i18n.addResources('en', 'inline-message', Translation.en);
+i18n.addResources('fr', 'inline-message', Translation.fr);
