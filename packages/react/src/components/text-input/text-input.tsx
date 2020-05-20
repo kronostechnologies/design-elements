@@ -1,7 +1,9 @@
 import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
+
+import { i18n } from '../../i18n/i18n';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
 
@@ -32,8 +34,9 @@ interface TextInputProps extends PartialInputProps {
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
-const TextInput = React.forwardRef(
+export const TextInput = React.forwardRef(
     ({ onBlur, onChange, onFocus, ...props }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
+        const { t } = useTranslation('text-input', { useSuspense: false });
         const [{ validity }, setValidity] = useState({ validity: true });
         const id = uuid();
 
@@ -75,7 +78,7 @@ const TextInput = React.forwardRef(
                 fieldId={id}
                 label={label}
                 valid={validity}
-                validationErrorMessage={validationErrorMessage || 'This text input is invalid'}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             >
                 <Input
                     defaultValue={defaultValue}
@@ -94,6 +97,17 @@ const TextInput = React.forwardRef(
                 />
             </FieldContainer>
         );
-    });
+    },
+);
 
-export { TextInput };
+const Translation = {
+    en: {
+        validationErrorMessage: 'This input is invalid',
+    },
+    fr: {
+        validationErrorMessage: 'Ce champ est invalide',
+    },
+};
+
+i18n.addResources('en', 'text-input', Translation.en);
+i18n.addResources('fr', 'text-input', Translation.fr);
