@@ -19,28 +19,30 @@ interface LinkProps {
     routerLink: RouterLinkProps;
 }
 
-export const RouteLink = ({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement => (
-  <>
-    {disabled ?
-      <StyledLink
-        disabled={disabled}
-        aria-disabled="true"
-        className={`navigation${label ? '' : ' iconOnly'}`}
-      >
-        {iconName && <Icon name={iconName} size="16"/>}
-        {label}
-      </StyledLink>
-      :
-      <StyledLink
-        as={routerLink}
-        className={`navigation${label ? '' : ' iconOnly'}`}
-        disabled={disabled}
-        exact={exact}
-        to={href}
-      >
-        {iconName && <Icon name={iconName} size="16"/>}
-        {label}
-      </StyledLink>
-    }
-  </>
-);
+export function RouteLink({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement {
+    return (
+      <>
+        {disabled ?
+          <StyledLink
+            disabled={disabled}
+            aria-disabled="true"
+            className={`navigation${label ? '' : ' iconOnly'}`}
+          >
+            {iconName && <Icon name={iconName} size="16"/>}
+            {label}
+          </StyledLink>
+          :
+          <StyledLink
+            as={routerLink}
+            className={`navigation${label ? '' : ' iconOnly'}`}
+            disabled={disabled}
+            exact={exact}
+            to={href}
+          >
+            {iconName && <Icon name={iconName} size="16"/>}
+            {label}
+          </StyledLink>
+        }
+      </>
+    );
+}

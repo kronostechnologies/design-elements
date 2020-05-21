@@ -58,12 +58,12 @@ interface HeadbandProps {
     mobileDrawerContent?: ReactNode;
 }
 
-export const ApplicationMenu = ({
+export function ApplicationMenu({
     appName = 'default',
     children,
     logoHref = '/',
     mobileDrawerContent }: HeadbandProps,
-): ReactElement => {
+): ReactElement {
     const { device, isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const themeContext = useContext(ThemeContext);
@@ -96,4 +96,4 @@ export const ApplicationMenu = ({
             )}
         </Header>
     );
-};
+}
