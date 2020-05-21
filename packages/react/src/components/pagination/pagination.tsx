@@ -1,10 +1,13 @@
+import React, { ReactElement, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
+
 import { IconButton } from '@design-elements/components/buttons/icon-button';
 import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 import { IconName } from '@design-elements/components/icon/icon';
+import { i18n } from '@design-elements/i18n/i18n';
 import { clamp } from '@design-elements/utils/math';
 import { range } from '@design-elements/utils/range';
-import React, { ReactElement, useState } from 'react';
-import styled from 'styled-components';
 import { calculateShownPageRange } from './util/pagination-util';
 
 const Pages = styled.ol`
@@ -97,12 +100,6 @@ interface PaginationProps {
      */
     pagesShown?: number;
     /**
-     * Language
-     * @default en
-     */
-    lang?: 'en' | 'fr';
-
-    /**
      * Function callback when page is changed
      */
     onPageChange?(pageNumber: number): void;
@@ -113,9 +110,9 @@ export function Pagination({
    numberOfResults,
    defaultActivePage = 1,
    pagesShown = 3,
-   lang = 'en',
    onPageChange = () => undefined,
 }: PaginationProps): ReactElement {
+    const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
     const [currentPage, setCurrentPage] = useState(clamp(defaultActivePage, 1, totalPages));
@@ -157,7 +154,7 @@ export function Pagination({
         <Container isMobile={isMobile}>
             {numberOfResults !== undefined && (
                 <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                    {numberOfResults} {lang === 'fr' ? 'résultats' : 'results'/* TODO refactor with i18n support */}
+                    {numberOfResults} {t('results')}
                 </ResultsLabel>
             )}
             <Navigation aria-label="pagination">
@@ -194,3 +191,15 @@ export function Pagination({
         </Container>
     );
 }
+
+const Translation = {
+    en: {
+        results: 'results',
+    },
+    fr: {
+        results: 'résultats',
+    },
+};
+
+i18n.addResources('en', 'pagination', Translation.en);
+i18n.addResources('fr', 'pagination', Translation.fr);
