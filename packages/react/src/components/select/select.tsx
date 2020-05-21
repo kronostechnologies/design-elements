@@ -163,7 +163,7 @@ export function Select({
     options,
     name,
     numberOfItemsVisible = 4,
-    placeholder = 'Select an option',
+    placeholder,
     required,
     searchable,
     skipOption,
@@ -465,7 +465,7 @@ export function Select({
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onKeyDown={handleInputKeyDown}
-                        placeholder={placeholder}
+                        placeholder={placeholder || t('placeholder')}
                         ref={inputRef}
                         required={required}
                         searchable={searchable}
@@ -517,9 +517,11 @@ export function Select({
 
 const Translation = {
     en: {
+        placeholder: 'Select an option',
         validationErrorMessage: 'You must select an option',
     },
     fr: {
+        placeholder: 'Choisissez une option',
         validationErrorMessage: 'Vous devez choisir une option',
     },
 };

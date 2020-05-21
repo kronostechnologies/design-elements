@@ -60,6 +60,15 @@ export const TextInput = React.forwardRef(
             }
         }
 
+        function getInputTypePlaceholder(inputType: string | undefined): string {
+            switch (inputType) {
+                case 'email':
+                    return t(`placeholder-${inputType}`);
+                default:
+                    return t('placeholder');
+            }
+        }
+
         const {
             defaultValue,
             disabled,
@@ -90,7 +99,7 @@ export const TextInput = React.forwardRef(
                     onChange={handleChange}
                     onFocus={handleFocus}
                     pattern={pattern}
-                    placeholder={placeholder}
+                    placeholder={placeholder || getInputTypePlaceholder(type)}
                     required={required}
                     type={type || 'text'}
                     value={value}
@@ -102,9 +111,13 @@ export const TextInput = React.forwardRef(
 
 const Translation = {
     en: {
+        placeholder: 'Enter your text here',
+        'placeholder-email': 'you@example.com',
         validationErrorMessage: 'This input is invalid',
     },
     fr: {
+        placeholder: 'Entrez votre texte ici',
+        'placeholder-email': 'vous@exemple.com',
         validationErrorMessage: 'Ce champ est invalide',
     },
 };

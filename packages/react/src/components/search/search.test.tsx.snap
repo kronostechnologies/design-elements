@@ -273,6 +273,7 @@ input:valid + .c6 {
       className="c5"
       onChange={[Function]}
       onKeyDown={[Function]}
+      placeholder="Search"
       type="search"
       value="foo"
     />

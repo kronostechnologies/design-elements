@@ -80,7 +80,7 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
-                placeholder={placeholder}
+                placeholder={placeholder || t('placeholder')}
                 required={required}
                 value={value}
             />
@@ -90,9 +90,11 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
 
 const Translation = {
     en: {
+        placeholder: 'Enter your text here',
         validationErrorMessage: 'This text area input is invalid',
     },
     fr: {
+        placeholder: 'Entrez votre texte ici',
         validationErrorMessage: 'Cette zone texte n\'est pas valide',
     },
 };
