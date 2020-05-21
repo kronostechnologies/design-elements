@@ -100,13 +100,13 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
     width: ${({ isMobile }) => isMobile ? '48px' : '32px'};
 `;
 
-export const IconButton = ({
+export function IconButton({
   iconName,
   label,
   onClick,
   type = 'submit',
   ...props
-}: ButtonProps): ReactElement => {
+}: ButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const handleClick = (): void => onClick && onClick();
 
@@ -121,4 +121,4 @@ export const IconButton = ({
             <Icon name={iconName} size={isMobile ? '20' : '16'}/>
         </StyledButton>
     );
-};
+}
