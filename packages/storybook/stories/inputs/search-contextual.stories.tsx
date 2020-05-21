@@ -7,18 +7,11 @@ export default {
 };
 
 export const contextual = () => (
-    <SearchContextual
-        label="Search"
-        placeholder="Ex.: Miky Mike"
-    />
+    <SearchContextual label="Search"/>
 );
 
 export const disabled = () => (
-    <SearchContextual
-        label="Search"
-        disabled
-        placeholder="Ex.: Miky Mike"
-    />
+    <SearchContextual label="Search" disabled/>
 );
 export const eventCallback = () => (
     <SearchContextual
@@ -26,6 +19,5 @@ export const eventCallback = () => (
         onChange={event => {
             console.log(`Searching for: ${event.currentTarget.value}`);
         }}
-        placeholder="Ex.: Miky Mike"
     />
 );

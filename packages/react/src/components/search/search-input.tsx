@@ -1,16 +1,16 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
+import XIcon from 'feather-icons/dist/icons/x.svg';
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import XIcon from 'feather-icons/dist/icons/x.svg';
-
+import { i18n } from '@design-elements/i18n/i18n';
 import { SearchButton } from '../buttons/search-button';
-import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
-
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { Theme } from '../theme-wrapper/theme-wrapper';
+import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 
 const SearchWrapper = styled.div`
     display: flex;
@@ -105,6 +105,7 @@ export interface SearchInputProps {
 }
 
 export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: SearchInputProps) => {
+    const { t } = useTranslation('search-input');
     const [{ value }, setValue] = useState({ value: initialValue || '' });
     const id = uuid();
 
@@ -150,7 +151,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                     onKeyDown={handleKeyDown}
                     hasButton={hasButton}
                     id={id}
-                    placeholder={placeholder}
+                    placeholder={placeholder || t('placeholder')}
                     type="search"
                     value={value}
                 />
@@ -174,3 +175,15 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
         </SearchWrapper>
     );
 };
+
+const Translation = {
+    en: {
+        placeholder: 'Search',
+    },
+    fr: {
+        placeholder: 'Rechercher',
+    },
+};
+
+i18n.addResources('en', 'search-input', Translation.en);
+i18n.addResources('fr', 'search-input', Translation.fr);
