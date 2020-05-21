@@ -1,7 +1,10 @@
+import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
+
 import { useStateCallback } from '@design-elements/hooks/use-state-callback';
 import { formatCurrency } from '@design-elements/utils/currency';
-import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
+import { i18n } from '../../i18n/i18n';
 import { TextInput } from '../text-input/text-input';
 
 const InputWrapper = styled.div<{language: Language}>`
@@ -62,6 +65,7 @@ export function MoneyInput({
     locale = 'fr-CA',
     currency = 'CAD',
  }: Props): ReactElement {
+    const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
     const language: Language = locale.split('-')[0] as Language;
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
@@ -139,8 +143,20 @@ export function MoneyInput({
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || (language === 'en' ? 'Invalid number.' : 'Nombre invalide.')}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             />
         </InputWrapper>
     );
 }
+
+const Translation = {
+    en: {
+        validationErrorMessage: 'Invalid number',
+    },
+    fr: {
+        validationErrorMessage: 'Ce nombre n\'est pas valide',
+    },
+};
+
+i18n.addResources('en', 'money-input', Translation.en);
+i18n.addResources('fr', 'money-input', Translation.fr);

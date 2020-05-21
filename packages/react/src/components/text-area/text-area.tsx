@@ -93,7 +93,7 @@ const Translation = {
         validationErrorMessage: 'This text area input is invalid',
     },
     fr: {
-        validationErrorMessage: 'Cette zone texte est invalide',
+        validationErrorMessage: 'Cette zone texte n\'est pas valide',
     },
 };
 
