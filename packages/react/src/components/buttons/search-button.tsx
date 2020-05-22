@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
+import { i18n } from '@design-elements/i18n/i18n';
 import styled from 'styled-components';
 import { AbstractButton } from './abstract-button';
 
@@ -39,14 +41,25 @@ const StyledButton = styled(AbstractButton)`
         }`}
 `;
 
-const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {
+export const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {
+    const { t } = useTranslation('search-button');
     const handleClick = () => { onClick && onClick(); };
 
     return (
         <StyledButton className={className} disabled={disabled} onClick={handleClick}>
-            {children}{label}
+            {children}{label || t('label')}
         </StyledButton>
     );
 };
 
-export { SearchButton };
+const Translation = {
+    en: {
+        label: 'Search',
+    },
+    fr: {
+        label: 'Rechercher',
+    },
+};
+
+i18n.addResources('en', 'search-button', Translation.en);
+i18n.addResources('fr', 'search-button', Translation.fr);
