@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import { i18n } from '@design-elements/i18n/i18n';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
@@ -87,17 +86,3 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
         </FieldContainer>
     );
 }
-
-const Translation = {
-    en: {
-        placeholder: 'Enter your text here',
-        validationErrorMessage: 'This text area input is invalid',
-    },
-    fr: {
-        placeholder: 'Entrez votre texte ici',
-        validationErrorMessage: 'Cette zone texte n\'est pas valide',
-    },
-};
-
-i18n.addResources('en', 'text-area', Translation.en);
-i18n.addResources('fr', 'text-area', Translation.fr);

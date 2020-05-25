@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { useStateCallback } from '@design-elements/hooks/use-state-callback';
-import { i18n } from '@design-elements/i18n/i18n';
 import { formatCurrency } from '@design-elements/utils/currency';
 import { TextInput } from '../text-input/text-input';
 
@@ -148,15 +147,3 @@ export function MoneyInput({
         </InputWrapper>
     );
 }
-
-const Translation = {
-    en: {
-        validationErrorMessage: 'Invalid number',
-    },
-    fr: {
-        validationErrorMessage: 'Ce nombre n\'est pas valide',
-    },
-};
-
-i18n.addResources('en', 'money-input', Translation.en);
-i18n.addResources('fr', 'money-input', Translation.fr);

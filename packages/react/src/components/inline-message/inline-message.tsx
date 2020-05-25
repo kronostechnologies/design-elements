@@ -2,12 +2,9 @@ import React, { ComponentType, ReactElement, ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-import { i18n } from '@design-elements/i18n/i18n';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
-
-type MessageType = 'info' | 'success' | 'alert' | 'error';
 
 const abstractContainer = (bgColor: string, color?: keyof Theme['notifications']) => styled.div<{isMobile: boolean}>`
     background-color: ${bgColor};
@@ -44,10 +41,12 @@ const Heading = styled.span<{isMobile: boolean}>`
     font-weight: var(--font-bold);
 `;
 
+type MessageType = 'info' | 'success' | 'alert' | 'error';
+
 interface MessageTypeProps {
     container: ComponentType<{ isMobile: boolean; }>;
     iconName: IconName;
-    title: string;
+    title: 'Tips' | 'Success' | 'Alert' | 'Error';
 }
 
 const handleType = (type: MessageType): MessageTypeProps => {
@@ -110,21 +109,3 @@ export function InlineMessage({ children, title, type }: InlineMessageProps): Re
         </Container>
     );
 }
-
-const Translation = {
-    en: {
-        Tips: 'Tips',
-        Success: 'Success',
-        Alert: 'Alert',
-        Error: 'Error',
-    },
-    fr: {
-        Tips: 'Astuce',
-        Success: 'Succès',
-        Alert: 'Alerte',
-        Error: 'Erreur',
-    },
-};
-
-i18n.addResources('en', 'inline-message', Translation.en);
-i18n.addResources('fr', 'inline-message', Translation.fr);

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import { i18n } from '@design-elements/i18n/i18n';
 import { ChooseInput } from '../choose-input/choose-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
@@ -514,17 +513,3 @@ export function Select({
         </>
     );
 }
-
-const Translation = {
-    en: {
-        placeholder: 'Select an option',
-        validationErrorMessage: 'You must select an option',
-    },
-    fr: {
-        placeholder: 'Choisissez une option',
-        validationErrorMessage: 'Vous devez choisir une option',
-    },
-};
-
-i18n.addResources('en', 'select', Translation.en);
-i18n.addResources('fr', 'select', Translation.fr);

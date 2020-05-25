@@ -1609,9 +1609,9 @@
     regenerator-runtime "^0.13.2"
 
 "@babel/runtime@^7.9.2":
-  version "7.9.6"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
-  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  version "7.10.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
+  integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -1796,20 +1796,20 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.10":
-  version "2.0.3-alpha.10"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.10.tgz#3fa6e7743755a239cfce936318c3325be0cd7a2a"
-  integrity sha512-OxlPZDqAdpu1z5Nui8a6fHK0WCoyoAG73CpYwKLmrOn6EnAfu8BuOi56u2SQw9ixI0/DxxEbhTRpHUWbukjhdQ==
+"@equisoft/design-elements-react@^2.0.3-alpha.11":
+  version "2.0.3-alpha.11"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.11.tgz#b9574ed51bf705f9ae55a01e7630af49cd2c583c"
+  integrity sha512-htZU+SSDM/fiOc8C+BtjzYCBRti2K0KGJJ0NXOw18iHhYEPa+lQ+whzeeUOPkfDYiks5TQNxsUConvOZoDrgSA==
   dependencies:
     feather-icons "^4.21.0"
     react-popper-tooltip "^2.10.1"
     react-swipeable "~5.5.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.10":
-  version "2.0.3-alpha.10"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.10.tgz#51e3d87ed28b44492aa4c22dfd005d01265d3d64"
-  integrity sha512-cYZq6LPPiosa69IXTGoFHD+wwBy37kTUZywXSDIibztW7xBEvDW61sKLgubd8Ga4/I7n/Ay5NlTU7IrTGlsKmg==
+"@equisoft/design-elements-web@^2.0.3-alpha.11":
+  version "2.0.3-alpha.11"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.11.tgz#42402002b0af8f7c3cf762c9232bd12a2bd0623b"
+  integrity sha512-vM9FeBwUigk5gxf6CQ0HimPeXv6MzY7JxpZ1ahgJc6kttiNoH4G/I1oTc7Puf4qBBa+zhTvF2AdFRIIVFPvZUA==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
@@ -4386,9 +4386,9 @@ core-js@^3.0.1, core-js@^3.0.4:
   integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
 
 core-js@^3.1.3:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
-  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
+  integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -6372,9 +6372,9 @@ is-callable@^1.1.4:
   integrity sha512-r5p9sxJjYnArLjObpjA4xu5EKI3CuKHkJXMhT7kwbpUyIFD1n5PMAsoPvWnvtZiNz7LjkYDRZhd7FlI0eMijEA==
 
 is-callable@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.5.tgz#f7e46b596890456db74e7f6e976cb3273d06faab"
-  integrity sha512-ESKv5sMCJB2jnHTWZ3O5itG+O128Hsus4K4Qh1h2/cgn2vbgnLSVqfV46AeJA9D5EeeLa9w81KUXMtn34zhX+Q==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.0.tgz#83336560b54a38e35e3a2df7afd0454d691468bb"
+  integrity sha512-pyVD9AaGLxtg6srb2Ng6ynWJqkHU9bEM087AKck0w8QwDarTfNcpIYoU8x8Hv2Icm8u6kFJM18Dag8lyqGkviw==
 
 is-ci@^2.0.0:
   version "2.0.0"
