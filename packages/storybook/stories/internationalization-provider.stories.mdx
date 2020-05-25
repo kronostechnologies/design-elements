@@ -1,0 +1,44 @@
+import { InlineMessage, IntlProvider } from '@equisoft/design-elements-react';
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="Internationalization Provider" component={IntlProvider} />
+
+# Internationalization Provider
+
+The `IntlProvider` component allows you to translate static texts (labels, placeholders, error messages, etc) within the components. The provider currently handles **French** and **English**.
+
+## Import
+
+```js
+    import { IntlProvider } from '@equisoft/design-elements-react'
+```
+
+## Props
+
+<Props of={IntlProvider} />
+
+## Examples
+
+You can use components without the `IntlProvider`, in which case the default language is set to english.
+
+<Preview>
+  <Story name="Without Provider">
+    <InlineMessage type="info">
+        Here's a contextual notice with an icon and title.
+    </InlineMessage>
+  </Story>
+</Preview>
+
+Let's use the provider to translate the `InlineMessage` component to french.
+
+<Preview>
+  <Story name="With Provider">
+      <IntlProvider language="fr">
+            <InlineMessage type="info">
+                Here's a contextual notice with an icon and title.
+            </InlineMessage>
+      </IntlProvider>
+  </Story>
+</Preview>
+
+As you can see, the label changes but not the content. The reason is that the content is passed by the user and cannot be handled by the provider. A solution would be to implement an internationalization solution in your app.
