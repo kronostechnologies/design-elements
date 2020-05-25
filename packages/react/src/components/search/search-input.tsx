@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import { i18n } from '@design-elements/i18n/i18n';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -141,7 +140,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
             <InnerWrapper>
                 <Label forId={id}>
                     <IcoSearch disabled={disabled} />
-                    <VisuallyHidden>{label}</VisuallyHidden>
+                    <VisuallyHidden>{label || t('label')}</VisuallyHidden>
                 </Label>
 
                 <Input
@@ -167,7 +166,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                     <SearchSubmit
                         disabled={disabled}
                         className="primary"
-                        label={label}
+                        label={label || t('label')}
                         onClick={handleSearchButtonClick}
                     />
                 )
@@ -175,15 +174,3 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
         </SearchWrapper>
     );
 };
-
-const Translation = {
-    en: {
-        placeholder: 'Search',
-    },
-    fr: {
-        placeholder: 'Rechercher',
-    },
-};
-
-i18n.addResources('en', 'search-input', Translation.en);
-i18n.addResources('fr', 'search-input', Translation.fr);

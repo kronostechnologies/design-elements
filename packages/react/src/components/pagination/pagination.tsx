@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { IconButton } from '@design-elements/components/buttons/icon-button';
 import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 import { IconName } from '@design-elements/components/icon/icon';
-import { i18n } from '@design-elements/i18n/i18n';
 import { clamp } from '@design-elements/utils/math';
 import { range } from '@design-elements/utils/range';
 import { calculateShownPageRange } from './util/pagination-util';
@@ -191,15 +190,3 @@ export function Pagination({
         </Container>
     );
 }
-
-const Translation = {
-    en: {
-        results: 'results',
-    },
-    fr: {
-        results: 'résultats',
-    },
-};
-
-i18n.addResources('en', 'pagination', Translation.en);
-i18n.addResources('fr', 'pagination', Translation.fr);

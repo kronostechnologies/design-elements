@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
-import { i18n } from '@design-elements/i18n/i18n';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
 
@@ -108,19 +107,3 @@ export const TextInput = React.forwardRef(
         );
     },
 );
-
-const Translation = {
-    en: {
-        placeholder: 'Enter your text here',
-        'placeholder-email': 'you@example.com',
-        validationErrorMessage: 'This input is invalid',
-    },
-    fr: {
-        placeholder: 'Entrez votre texte ici',
-        'placeholder-email': 'vous@exemple.com',
-        validationErrorMessage: 'Ce champ est invalide',
-    },
-};
-
-i18n.addResources('en', 'text-input', Translation.en);
-i18n.addResources('fr', 'text-input', Translation.fr);
