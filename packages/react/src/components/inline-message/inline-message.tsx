@@ -2,7 +2,7 @@ import React, { ComponentType, ReactElement, ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-import { i18n } from '../../i18n/i18n';
+import { i18n } from '@design-elements/i18n/i18n';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
