@@ -9,7 +9,7 @@ import { AbstractButton } from './abstract-button';
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 type Type = 'submit' | 'button' | 'reset';
 
-interface ButtonProps {
+export interface ButtonProps {
     /**
      * Visual style
      * @default primary

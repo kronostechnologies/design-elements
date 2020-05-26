@@ -8,14 +8,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /.tsx$/,
-                loader: 'react-docgen-typescript-loader',
-                options: {
-                    shouldExtractLiteralValuesFromEnum: true,
-                },
-                exclude: /node_modules/,
-            },
-            {
                 test: /\.tsx?$/,
                 use: [
                     { loader: 'ts-loader' },
