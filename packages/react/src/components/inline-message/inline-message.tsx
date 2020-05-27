@@ -78,7 +78,7 @@ const handleType = (type: MessageType): MessageTypeProps => {
     }
 };
 
-interface InlineMessageProps {
+export interface InlineMessageProps {
     /**
      * Sets text message
      **/

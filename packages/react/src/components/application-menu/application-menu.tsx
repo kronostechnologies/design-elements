@@ -44,7 +44,7 @@ const Content = styled.div`
     color: ${props => props.theme.greys.white};
 `;
 
-interface HeadbandProps {
+export interface HeadbandProps {
     /** Set the app name to get the proper logos */
     appName?: LogoName;
     /** Right-side content */

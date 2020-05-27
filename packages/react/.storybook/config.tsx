@@ -22,4 +22,4 @@ addParameters({
     },
 });
 
-configure(require.context('../src/components/', true, /\.stories\.(tsx|mdx)$/), module);
+configure(require.context('../src/', true, /\.stories\.(tsx|mdx)$/), module);

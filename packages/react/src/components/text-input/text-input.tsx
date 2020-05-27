@@ -15,7 +15,7 @@ type inputModeType = 'none' | 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
     'inputMode' | 'value'>;
 
-interface TextInputProps extends PartialInputProps {
+export interface TextInputProps extends PartialInputProps {
     defaultValue?: string;
     disabled?: boolean;
     inputMode?: inputModeType;

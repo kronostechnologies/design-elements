@@ -50,7 +50,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     }
 `;
 
-interface ToggleButtonGroupProps {
+export interface ToggleButtonGroupProps {
     /**
      * Takes an array of objects containing all the buttons needed
      */

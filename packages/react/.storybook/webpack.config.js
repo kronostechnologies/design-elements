@@ -17,6 +17,17 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /.svg$/,
+                loader: '@svgr/webpack',
+                options: {
+                    svgoConfig: {
+                        plugins: {
+                            removeViewBox: false
+                        }
+                    }
+                },
+            },
+            {
                 test: /.tsx$/,
                 loader: 'react-docgen-typescript-loader',
                 options: {
@@ -36,14 +47,14 @@ module.exports = {
                 test: /\.stories.tsx?$/,
                 use: [{ loader: '@storybook/source-loader' }],
                 enforce: 'pre',
-                include: path.resolve(__dirname, '../src/components/')
+                include: path.resolve(__dirname, '../src/')
             },
             {
                 test: /\.tsx?$/,
                 use: [{
                     loader: 'ts-loader',
                     options: {
-                        transpileOnly: false,
+                        transpileOnly: true,
                         ignoreDiagnostics: [7005]
                     }
                 }],
@@ -64,17 +75,6 @@ module.exports = {
                         },
                     },
                 ]
-            },
-            {
-                test: /.svg$/,
-                loader: '@svgr/webpack',
-                options: {
-                    svgoConfig: {
-                        plugins: {
-                            removeViewBox: false
-                        }
-                    }
-                }
             },
         ]
     }

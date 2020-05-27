@@ -10,7 +10,7 @@ export interface RouterLinkProps extends Nav {
     displayName?: string;
 }
 
-interface LinkProps {
+export interface LinkProps {
     disabled?: boolean;
     exact?: boolean;
     href: string;

@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 
-interface ExternalLinkProps {
+export interface ExternalLinkProps {
     disabled?: boolean;
     href?: string;
     iconName?: IconName;
