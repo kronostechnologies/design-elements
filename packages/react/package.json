@@ -13,10 +13,11 @@
     "test": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest",
     "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' cross-env NODE_ICU_DATA='node_modules/full-icu' jest --max-workers=2 --reporters=default --reporters=jest-junit",
     "test:unit": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest --config=jest.config.js",
-    "lint": "yarn tslint && yarn tslint:tests && yarn stylelint",
+    "lint": "yarn tslint && yarn tslint:tests && yarn tslint:stories && yarn stylelint",
     "lint:ci": "mkdir -p build/lint/ts build/lint/style && yarn tslint:ci && yarn tslint:tests:ci && yarn stylelint:ci",
-    "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\" -e \"src/**/*.test.{ts,tsx}\" -e \"src/**/*.stories.{ts,tsx}\"",
+    "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\" -e \"src/**/*.test.{ts,tsx}\" -e \"src/**/*.stories.{ts,tsx}\"" ,
     "tslint:ci": "yarn tslint --format junit -o build/lint/ts/junit.xml",
+    "tslint:stories": "tslint -p stories/tsconfig.json -c stories/tslint.json \"src/**/*.stories.{ts,tsx}\"",
     "tslint:tests": "tslint -p test/tsconfig.json -c test/tslint.json \"src/**/*.test.{ts,tsx}\"",
     "tslint:tests:ci": "yarn tslint:tests --format junit -o build/lint/ts/tests.xml",
     "stylelint": "stylelint \"./src/**/*.{ts,tsx}\"",
@@ -45,6 +46,7 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "dependencies": {
+    "@storybook/react": "5.2.5",
     "feather-icons": "^4.21.0",
     "react-popper-tooltip": "^2.10.1",
     "react-swipeable": "~5.5.0",
