@@ -161,6 +161,9 @@ jobs:
       use_workspace:
         type: boolean
         default: false
+      storybook_build:
+        type: boolean
+        default: false
     working_directory: << parameters.directory >>
     steps:
       - attach_at_working_directory
@@ -169,7 +172,14 @@ jobs:
           steps:
             - node_deps_cache_restore:
                 directory: << parameters.directory >>
-      - run: yarn build
+      - when:
+          condition: << parameters.storybook_build >>
+          steps:
+            - run: yarn build:storybook
+      - unless:
+          condition: << parameters.storybook_build >>
+          steps:
+            - run: yarn build
       - persist_to_workspace:
           root: *working_directory
           paths:
@@ -184,12 +194,9 @@ jobs:
       - yalc_push:
           display_name: '@equisoft/design-elements-web'
           working_directory: *web_directory
-      - yalc_push:
-          display_name: '@equisoft/design-elements-react'
-          working_directory: *react_directory
       - yalc_add_packages:
-          packages: '@equisoft/design-elements-web @equisoft/design-elements-react'
-          working_directory: *storybook_directory
+          packages: '@equisoft/design-elements-web'
+          working_directory: *react_directory
       - persist_to_workspace:
           root: *working_directory
           paths:
@@ -268,27 +275,16 @@ workflows:
           directory: *react_directory
           requires:
             - react_node_install_deps
-
-      ### STORYBOOK
-      - node_install_deps:
-          name: storybook_node_install_deps
-          directory: *storybook_directory
-          requires:
-            - prepare_workspace
       - yalc_push:
           name: storybook_yalc_push
           requires:
-            - storybook_node_install_deps
+            - react_node_install_deps
             - web_yarn_lint
             - react_yarn_build
-      - yarn_lint:
-          name: storybook_yarn_lint
-          directory: *storybook_directory
-          requires:
-            - storybook_yalc_push
       - yarn_build:
           name: storybook_yarn_build
-          directory: *storybook_directory
+          directory: *react_directory
+          storybook_build: true
           use_workspace: true
           requires:
             - storybook_yalc_push
