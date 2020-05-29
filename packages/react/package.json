@@ -10,7 +10,7 @@
     "build:storybook": "start-storybook --smoke-test",
     "prepublishOnly": "yarn build",
     "start": "webpack --config ./webpack/webpack.config.dev.js",
-    "start-storybook": "start-storybook --docs",
+    "start:storybook": "start-storybook --docs",
     "test": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest",
     "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' cross-env NODE_ICU_DATA='node_modules/full-icu' jest --max-workers=2 --reporters=default --reporters=jest-junit",
     "test:unit": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest --config=jest.config.js",
