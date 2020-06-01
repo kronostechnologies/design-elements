@@ -8,9 +8,6 @@
         "quotemark": {
             "options": ["single", "jsx-double"]
         },
-        "jsx-no-lambda": [false],
-        "jsx-no-multiline-js": [false],
-        "jsx-boolean-value": [false],
         "no-console": false,
         "no-default-export": false
     }

@@ -12,7 +12,6 @@ export const inputs = () => (
             disabled={false}
             required={false}
             label="First Name"
-            placeholder="Ex.: John"
             type="text"
             defaultValue=""
             pattern=""
@@ -22,7 +21,6 @@ export const inputs = () => (
             disabled={false}
             required={false}
             label="Email"
-            placeholder="Ex.: name@example.com"
             type="email"
             defaultValue=""
             pattern=""
@@ -45,7 +43,6 @@ export const defaultValue = () => (
         disabled={false}
         required={false}
         label="Address"
-        placeholder="Enter text here"
         type="text"
         defaultValue="1234 Main Street"
         pattern=""

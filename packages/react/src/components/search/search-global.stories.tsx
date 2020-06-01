@@ -7,24 +7,15 @@ export default {
 };
 
 export const global = () => (
-    <SearchGlobal
-        label="Search"
-        placeholder="Ex.: Marquee Mark"
-    />
+    <SearchGlobal/>
 );
 export const disabled = () => (
-    <SearchGlobal
-        disabled
-        label="Search"
-        placeholder="Ex.: Sorry it's disabled"
-    />
+    <SearchGlobal disabled/>
 );
 export const eventCallback = () => (
     <SearchGlobal
-        label="Search"
         onSearch={value => {
             console.log(`Searching for: ${value}`);
         }}
-        placeholder="Ex.: Marquee Mark"
     />
 );
