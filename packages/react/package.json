@@ -18,7 +18,7 @@
     "lint:ci": "mkdir -p build/lint/ts build/lint/style && yarn tslint:ci && yarn tslint:tests:ci && yarn stylelint:ci",
     "tslint": "tslint -p tsconfig.json \"src/**/*.{ts,tsx}\" -e \"src/**/*.test.{ts,tsx}\" -e \"src/**/*.stories.{ts,tsx}\"" ,
     "tslint:ci": "yarn tslint --format junit -o build/lint/ts/junit.xml",
-    "tslint:stories": "tslint -p stories/tsconfig.json -c stories/tslint.json \"src/**/*.stories.{ts,tsx}\"",
+    "tslint:stories": "tslint -p .storybook/tsconfig.json -c .storybook/tslint.json \"src/**/*.stories.{ts,tsx}\"",
     "tslint:tests": "tslint -p test/tsconfig.json -c test/tslint.json \"src/**/*.test.{ts,tsx}\"",
     "tslint:tests:ci": "yarn tslint:tests --format junit -o build/lint/ts/tests.xml",
     "stylelint": "stylelint \"./src/**/*.{ts,tsx}\"",

@@ -19,12 +19,12 @@
     },
     "include": [
         "src/**/*",
-        "stories",
         "custom.d.ts"
     ],
     "exclude": [
         "node_modules/**/*",
         "**/*.test.ts?",
-        "**/test-utils/**/*"
+        "**/test-utils/**/*",
+        "**/*.stories.tsx"
     ]
 }
