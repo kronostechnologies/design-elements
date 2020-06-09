@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { Column, TableOptions, useTable } from 'react-table';
+import { Column, useTable } from 'react-table';
 import styled from 'styled-components';
 
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -9,8 +9,6 @@ interface TableWrapperProps {
     device: DeviceType;
     theme: Theme;
 }
-
-export type ColumnsProps = Column[];
 
 const TableWrapper = styled.div<TableWrapperProps>`
     table {
@@ -45,7 +43,14 @@ const TableWrapper = styled.div<TableWrapperProps>`
     }
 `;
 
-export function Table({ columns, data }: TableOptions<{}>): ReactElement {
+export type ColumnsProps = Column[];
+
+interface TableProps {
+    columns: ColumnsProps;
+    data: {}[];
+}
+
+export function Table({ columns, data }: TableProps): ReactElement {
     const { device } = useDeviceContext();
 
     const {
