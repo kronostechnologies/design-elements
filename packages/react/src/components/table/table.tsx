@@ -52,7 +52,6 @@ interface TableProps {
 
 export function Table({ columns, data }: TableProps): ReactElement {
     const { device } = useDeviceContext();
-
     const {
       getTableProps,
       getTableBodyProps,
@@ -74,12 +73,16 @@ export function Table({ columns, data }: TableProps): ReactElement {
                     ))}
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                    {rows.map((row, i) => {
+                    {rows.map(row => {
                         prepareRow(row);
                         return (
-                        <tr key={i} {...row.getRowProps()}>
-                            {row.cells.map((cell, index) => {
-                                return <td key={index} {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                        <tr key={row.id} {...row.getRowProps()}>
+                            {row.cells.map(cell => {
+                                return (
+                                    <td key={`${cell.column.id}-${cell.row.id}`} {...cell.getCellProps()}>
+                                        {cell.render('Cell')}
+                                    </td>
+                                );
                             })}
                         </tr>
                         );
