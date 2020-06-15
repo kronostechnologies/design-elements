@@ -28,6 +28,7 @@ import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import Open from '../../icons/open.svg';
+import Reorder from '../../icons/reorder.svg';
 
 const iconMapping = {
     alertTriangle: AlertTriangle,
@@ -54,6 +55,7 @@ const iconMapping = {
     moreVertical: MoreVertical,
     open: Open,
     phone: Phone,
+    reorder: Reorder,
     search: Search,
     star: Star,
     trash: Trash,
