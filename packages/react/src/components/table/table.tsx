@@ -1,13 +1,16 @@
 import React, { ReactElement } from 'react';
-import { Column, useTable } from 'react-table';
+import { Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
 
+import { useTheme } from '../../hooks/use-theme';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Theme } from '../theme-wrapper/theme-wrapper';
+import { Icon } from '../icon/icon';
+import { Theme as ThemeProps } from '../theme-wrapper/theme-wrapper';
 
 interface TableWrapperProps {
+    clickableRows: boolean;
     device: DeviceType;
-    theme: Theme;
+    theme: ThemeProps;
 }
 
 const TableWrapper = styled.div<TableWrapperProps>`
@@ -37,20 +40,40 @@ const TableWrapper = styled.div<TableWrapperProps>`
             }
         }
 
+        tbody tr {
+            ${({ clickableRows, theme }) => clickableRows ? `
+              :hover {
+                  background-color: ${theme.greys.grey};
+                  cursor: pointer;
+              }
+            ` : ''}
+        }
+
         tr:last-child td {
             border-bottom: 0;
         }
     }
 `;
 
-export type ColumnsProps = Column[];
+const StyledIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
+`;
 
+type CustomColumn = Column & { sort?: boolean };
+
+export type ColumnsProps = CustomColumn[];
+
+interface RowProps extends Row {
+    original: any;
+}
 interface TableProps {
     columns: ColumnsProps;
     data: {}[];
+    onRowClick?(row: RowProps): void;
 }
 
-export function Table({ columns, data }: TableProps): ReactElement {
+export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
+    const Theme = useTheme();
     const { device } = useDeviceContext();
     const {
       getTableProps,
@@ -58,38 +81,60 @@ export function Table({ columns, data }: TableProps): ReactElement {
       headerGroups,
       rows,
       prepareRow,
-    } = useTable({ columns, data });
+    } = useTable(
+        {
+            columns,
+            data,
+        },
+        useSortBy,
+    );
 
     return (
-        <TableWrapper device={device}>
-            <table {...getTableProps()}>
-                <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map(column => (
-                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                    {rows.map(row => {
-                        prepareRow(row);
+      <TableWrapper device={device} clickableRows={onRowClick !== undefined}>
+        <table {...getTableProps()}>
+          <thead>
+            {headerGroups.map(headerGroup => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map(column => {
+                    if (column.sort) {
                         return (
-                        <tr key={row.id} {...row.getRowProps()}>
-                            {row.cells.map(cell => {
-                                return (
-                                    <td key={`${cell.column.id}-${cell.row.id}`} {...cell.getCellProps()}>
-                                        {cell.render('Cell')}
-                                    </td>
-                                );
-                            })}
-                        </tr>
+                          <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                              {column.isSorted
+                                ? column.isSortedDesc
+                                  ? <StyledIcon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
+                                  : <StyledIcon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
+                                : <StyledIcon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
+                              {column.render('Header')}
+                            </div>
+                          </th>
+                        );
+                    } else {
+                        return (
+                            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                        );
+                    }
+                })}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map(
+                (row, i) => {
+                    prepareRow(row);
+                    return (
+                  <tr key={i} onClick={() => onRowClick && onRowClick(row)} {...row.getRowProps()}>
+                    {row.cells.map((cell, index) => {
+                        return (
+                        <td key={index} {...cell.getCellProps()}>{cell.render('Cell')}</td>
                         );
                     })}
-                </tbody>
-            </table>
-        </TableWrapper>
+                  </tr>
+                    ); },
+            )}
+          </tbody>
+        </table>
+      </TableWrapper>
     );
 }
 
