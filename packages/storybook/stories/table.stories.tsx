@@ -24,18 +24,60 @@ export const normal = () => {
 
     const data = [
         {
-            column1: 'Hello',
-            column2: 'World',
-            column3: 'Hello',
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
         },
         {
-            column1: 'Hello',
-            column2: 'World',
-            column3: 'Hello',
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
         },
     ];
     return (
         <Table columns={columns} data={data} />
+    );
+};
+
+export const rowClickCallback = () => {
+    const columns: ColumnsProps = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+        },
+    ];
+
+    const data = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+            href: '/home',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+            href: '/contact',
+        },
+    ];
+
+    return (
+        <Table
+            columns={columns}
+            data={data}
+            onRowClick={(row) => {
+                if (row.original.href) console.log(row.original.href);
+            }}
+        />
     );
 };
 
@@ -113,4 +155,39 @@ export const customColumns = () => {
     return (
         <Table columns={column} data={data} />
     );
-}
+};
+
+export const sortableRows = () => {
+    const columns: ColumnsProps = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            sort: true,
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+            sort: true,
+        },
+    ];
+
+    const data = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 20,
+        },
+    ];
+    return (
+        <Table columns={columns} data={data} />
+    );
+};

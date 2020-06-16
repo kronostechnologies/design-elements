@@ -7,12 +7,6 @@ import { DeviceType, useDeviceContext } from '../device-context-provider/device-
 import { Icon } from '../icon/icon';
 import { Theme as ThemeProps } from '../theme-wrapper/theme-wrapper';
 
-interface TableWrapperProps {
-    clickableRows: boolean;
-    device: DeviceType;
-    theme: ThemeProps;
-}
-
 const TableWrapper = styled.div<TableWrapperProps>`
     table {
         border-spacing: 0;
@@ -62,6 +56,12 @@ const StyledIcon = styled(Icon)`
 type CustomColumn = Column & { sort?: boolean };
 
 export type ColumnsProps = CustomColumn[];
+
+interface TableWrapperProps {
+    clickableRows: boolean;
+    device: DeviceType;
+    theme: ThemeProps;
+}
 
 interface RowProps extends Row {
     original: any;
