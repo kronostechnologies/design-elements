@@ -88,14 +88,14 @@ export const customTextAlignment = () => {
             accessor: 'column1',
         },
         {
-            Header: () => <div style={{ textAlign: 'center' }}>Column 2</div>,
-            Cell: ({ value }) => <div style={{ textAlign: 'center' }}>{value}</div>,
+            Header: 'Column 2',
             accessor: 'column2',
+            textAlign: 'center',
         },
         {
-            Header: () => <div style={{ textAlign: 'right' }}>Column 3</div>,
-            Cell: ({ value }) => <div style={{ textAlign: 'right' }}>{value}</div>,
+            Header: 'Column 3',
             accessor: 'column3',
+            textAlign: 'right',
         },
     ];
 
@@ -122,7 +122,7 @@ export const customColumns = () => {
         {
             Header: 'Category',
             accessor: 'category',
-            Cell: ({ value }) => (
+            Cell: ({ value }: any) => (
                 <div style={{ display: 'flex' }}>
                     <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
                     {value.tooltip && (<Tooltip>{value.tooltip}</Tooltip>)}
@@ -132,7 +132,7 @@ export const customColumns = () => {
         {
             Header: () => <div style={{ textAlign: 'right' }}>Amount ($)</div>,
             accessor: 'amount',
-            Cell: ({ value }) => <div style={{ textAlign: 'right' }}>{value}</div>,
+            Cell: ({ value }: any) => <div style={{ textAlign: 'right' }}>{value}</div>,
         },
     ];
 
