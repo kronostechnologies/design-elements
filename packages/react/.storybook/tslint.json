@@ -9,6 +9,7 @@
             "options": ["single", "jsx-double"]
         },
         "no-console": false,
-        "no-default-export": false
+        "no-default-export": false,
+        "no-implicit-dependencies": [true, "dev", ["@design-elements"]]
     }
 }

@@ -6,12 +6,6 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx'],
         plugins: [new TsconfigPathsPlugin()],
-        alias: {
-            'react': path.resolve(__dirname, '../node_modules/react'),
-            'react-dom': path.resolve(__dirname, '../node_modules/react-dom'),
-            'react-router-dom': path.resolve(__dirname, '../node_modules/react-router-dom'),
-            'styled-components': path.resolve(__dirname, '../node_modules/styled-components'),
-        }
     },
 
     module: {
@@ -54,7 +48,7 @@ module.exports = {
                 use: [{
                     loader: 'ts-loader',
                     options: {
-                        transpileOnly: true,
+                        transpileOnly: false,
                         ignoreDiagnostics: [7005]
                     }
                 }],

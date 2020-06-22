@@ -18,7 +18,7 @@ yarn add @equisoft/design-elements-react
 
 # Design Elements Storybook
 
-[Storybook](https://storybook.js.org) is the tool we currently use to document the [React](../react) implementation of Equisoft's Design Elements.
+[Storybook](https://storybook.js.org) is the tool we currently use to document the [React](.) implementation of Equisoft's Design Elements.
 
 To run this Storybook, run these commands in the following order:
 
