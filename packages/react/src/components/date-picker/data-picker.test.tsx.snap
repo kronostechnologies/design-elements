@@ -1,0 +1,583 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Datepicker is disabled 1`] = `
+Array [
+  .c0 {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+<label
+    className="c0"
+  >
+    date
+  </label>,
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .datePicker {
+  box-sizing: border-box;
+}
+
+.c0 .popper[data-placement^="bottom"] {
+  margin-top: 0;
+}
+
+.c0 .customHeader {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 var(--spacing-2x) 0;
+}
+
+.c0 .customHeader > button {
+  background-color: #FFFFFF;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.c0 .customHeader > button:focus {
+  outline: none;
+}
+
+.c0 .customHeader > button:hover {
+  cursor: pointer;
+}
+
+.c0 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  padding: 0;
+}
+
+.c0 .react-datepicker__month {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 24px;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border: 1px solid #0080A5;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
+  color: #0080A5 !important;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: 400;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
+  color: #000000;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 24px;
+}
+
+.c0 .react-datepicker__day-name {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+}
+
+.c0 .react-datepicker__portal .customHeader {
+  padding: 0 var(--spacing-1x) var(--spacing-3x);
+}
+
+.c0 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 2.25rem;
+  width: 35px;
+}
+
+.c0 .react-datepicker__portal .react-datepicker__day {
+  line-height: 2.5rem;
+  width: 40px;
+}
+
+.c0 .react-datepicker__portal .react-datepicker__month {
+  font-size: 1rem;
+}
+
+.c0 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c1.datePicker {
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: 32px;
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 109px;
+}
+
+.c1.datePicker::-webkit-input-placeholder {
+  color: #9CA7B4;
+}
+
+.c1.datePicker::-moz-placeholder {
+  color: #9CA7B4;
+}
+
+.c1.datePicker:-ms-input-placeholder {
+  color: #9CA7B4;
+}
+
+.c1.datePicker::placeholder {
+  color: #9CA7B4;
+}
+
+.c1.datePicker:focus {
+  border: 1px solid #0080A5;
+  outline: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #D9DDE2;
+  border-left: none;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  color: #9CA7B4;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 32px;
+}
+
+.c2:hover {
+  background-color: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <input
+          className="c1 datePicker"
+          disabled={true}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="AAAA-MM-JJ"
+          readOnly={false}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      className="c2 sideIcon"
+      disabled={true}
+      onMouseDown={[Function]}
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>,
+  .c0 {
+  color: #A40C2E;
+  display: none;
+  font-size: 0.75rem;
+  margin-top: var(--spacing-half);
+}
+
+<label
+    className="c0"
+  >
+    Invalid date format
+  </label>,
+]
+`;
+
+exports[`Datepicker matches snapshot 1`] = `
+Array [
+  .c0 {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+<label
+    className="c0"
+  >
+    date
+  </label>,
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .datePicker {
+  box-sizing: border-box;
+}
+
+.c0 .popper[data-placement^="bottom"] {
+  margin-top: 0;
+}
+
+.c0 .customHeader {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 var(--spacing-2x) 0;
+}
+
+.c0 .customHeader > button {
+  background-color: #FFFFFF;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.c0 .customHeader > button:focus {
+  outline: none;
+}
+
+.c0 .customHeader > button:hover {
+  cursor: pointer;
+}
+
+.c0 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  padding: 0;
+}
+
+.c0 .react-datepicker__month {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 24px;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border: 1px solid #0080A5;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
+  color: #0080A5 !important;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: 400;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
+  color: #000000;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c0 .react-datepicker__month .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 24px;
+}
+
+.c0 .react-datepicker__day-name {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+}
+
+.c0 .react-datepicker__portal .customHeader {
+  padding: 0 var(--spacing-1x) var(--spacing-3x);
+}
+
+.c0 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 2.25rem;
+  width: 35px;
+}
+
+.c0 .react-datepicker__portal .react-datepicker__day {
+  line-height: 2.5rem;
+  width: 40px;
+}
+
+.c0 .react-datepicker__portal .react-datepicker__month {
+  font-size: 1rem;
+}
+
+.c0 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c1.datePicker {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: 32px;
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 109px;
+}
+
+.c1.datePicker:focus {
+  border: 1px solid #0080A5;
+  outline: none;
+}
+
+.c1.datePicker:focus {
+  border: 1px solid #0080A5;
+  outline: none;
+}
+
+.c1.datePicker:focus {
+  border: 1px solid #0080A5;
+  outline: none;
+}
+
+.c1.datePicker:focus {
+  border: 1px solid #0080A5;
+  outline: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-left: none;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  color: #57666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 32px;
+}
+
+.c2:hover {
+  background-color: #D9DDE2;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <input
+          className="c1 datePicker"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="AAAA-MM-JJ"
+          readOnly={false}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      className="c2 sideIcon"
+      onMouseDown={[Function]}
+    >
+      <svg
+        color="currentColor"
+        focusable={false}
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>,
+  .c0 {
+  color: #A40C2E;
+  display: none;
+  font-size: 0.75rem;
+  margin-top: var(--spacing-half);
+}
+
+<label
+    className="c0"
+  >
+    Invalid date format
+  </label>,
+]
+`;
