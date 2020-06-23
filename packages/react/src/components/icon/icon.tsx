@@ -4,6 +4,7 @@ import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
 import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
+import Calendar from 'feather-icons/dist/icons/calendar.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
 import ChevronLeft from 'feather-icons/dist/icons/chevron-left.svg';
@@ -33,6 +34,7 @@ const iconMapping = {
     alertOctagon: AlertOctagon,
     arrowLeft: ArrowLeft,
     arrowRight: ArrowRight,
+    calendar: Calendar,
     check: Check,
     chevronDown: ChevronDown,
     chevronLeft: ChevronLeft,
