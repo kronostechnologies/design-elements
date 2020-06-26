@@ -110,7 +110,6 @@ const Wrapper = styled.ul<WrapperProps>`
     list-style-type: none;
     margin: 0;
     max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
-    min-width: 200px;
     overflow-y: auto;
     padding: 0;
     width: 100%;
