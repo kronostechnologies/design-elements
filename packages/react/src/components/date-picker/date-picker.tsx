@@ -103,7 +103,7 @@ const Container = styled.div`
         .react-datepicker__day--keyboard-selected {
             background-color: ${({ theme }) => theme.greys.white};
             border: 1px solid ${props => props.theme.main['primary-1.1']};
-            border-radius: 16px;
+            border-radius: 24px;
             box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
             box-sizing: border-box;
             color: ${props => props.theme.greys.black};
@@ -151,6 +151,7 @@ const Container = styled.div`
         }
 
         .react-datepicker__day {/* stylelint-disable-line */
+            height: 40px;
             line-height: 2.5rem;
             width: 40px;
         }
