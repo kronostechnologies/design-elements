@@ -1,4 +1,4 @@
-import React, { FocusEvent, useRef, useState } from 'react';
+import React, { FocusEvent, ReactElement, useRef, useState } from 'react';
 
 import { getMonth, getYear, Locale } from 'date-fns';
 import { range } from 'lodash';
@@ -307,8 +307,7 @@ interface DatepickerProps {
     onFocus?(event: React.FocusEvent<HTMLInputElement>): void;
 }
 
-export const Datepicker =
-  ({
+export function Datepicker({
     disabled,
     label,
     locale,
@@ -322,88 +321,88 @@ export const Datepicker =
     validationErrorMessage = 'Invalid date format',
     withPortal,
     ...props
-  }: DatepickerProps) => {
-      const [selectedDate, setSelectedDate] = useState(startDate);
-      const years =
-        range(minDate ? getYear(minDate) : 1920, maxDate ? getYear(maxDate) + 1 : getYear(new Date()) + 1, 1);
-      const yearsOptions: any[] = [];
-      // @ts-ignore
-      years.map(year => {
-          yearsOptions.push({ value: year.toString(), label: year.toString() });
-      });
-      locale && moment.locale(locale.code);
-      const months = moment.monthsShort();
-      const monthsOptions: any[] = [];
-      // @ts-ignore
-      months.map(month => {
-          monthsOptions.push({
-              value: month.toLowerCase(),
-              label: month.charAt(0).toUpperCase() + month.substring(0, 3).slice(1),
-          });
-      });
+}: DatepickerProps): ReactElement {
+    const [selectedDate, setSelectedDate] = useState(startDate);
+    const years =
+    range(minDate ? getYear(minDate) : 1920, maxDate ? getYear(maxDate) + 1 : getYear(new Date()) + 1, 1);
+    const yearsOptions: any[] = [];
+    // @ts-ignore
+    years.map(year => {
+        yearsOptions.push({ value: year.toString(), label: year.toString() });
+    });
+    locale && moment.locale(locale.code);
+    const months = moment.monthsShort();
+    const monthsOptions: any[] = [];
+    // @ts-ignore
+    months.map(month => {
+        monthsOptions.push({
+            value: month.toLowerCase(),
+            label: month.charAt(0).toUpperCase() + month.substring(0, 3).slice(1),
+        });
+    });
 
-      const dateInput = useRef<DatePicker>(null);
+    const dateInput = useRef<DatePicker>(null);
 
-      const handleClick = () => {
-          if (dateInput.current !== null) {
-              dateInput.current.props.open ? dateInput.current.setBlur() : dateInput.current.setFocus();
-          }
-      };
+    const handleClick = () => {
+        if (dateInput.current !== null) {
+            dateInput.current.props.open ? dateInput.current.setBlur() : dateInput.current.setFocus();
+        }
+    };
 
-      const handleChange = (date: Date) => {
-          setSelectedDate(date);
-          if (onChange) onChange(date);
-      };
+    const handleChange = (date: Date) => {
+        setSelectedDate(date);
+        if (onChange) onChange(date);
+    };
 
-      const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-          if (onBlur) onBlur(event);
-      };
+    const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+        if (onBlur) onBlur(event);
+    };
 
-      const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
-          if (onFocus) onFocus(event);
-      };
+    const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+        if (onFocus) onFocus(event);
+    };
 
-      return (
-      <>
-        <StyledLabel withPortal={withPortal}>{label}</StyledLabel>
-        <Container>
-          <StyledDatePicker
+    return (
+    <>
+    <StyledLabel withPortal={withPortal}>{label}</StyledLabel>
+    <Container>
+        <StyledDatePicker
             ref={dateInput}
             renderCustomHeader={({
-              date,
-              changeYear,
-              changeMonth,
-              decreaseMonth,
-              increaseMonth,
-              prevMonthButtonDisabled,
-              nextMonthButtonDisabled,
+                date,
+                changeYear,
+                changeMonth,
+                decreaseMonth,
+                increaseMonth,
+                prevMonthButtonDisabled,
+                nextMonthButtonDisabled,
             }) => (
-              <div className="customHeader">
+                <div className="customHeader">
                 <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                  <Icon name="chevronLeft" size={withPortal ? '26' : '20'} />
+                    <Icon name="chevronLeft" size={withPortal ? '26' : '20'} />
                 </button>
                 <SelectWrapper>
-                  <Select
-                    options={monthsOptions}
-                    onChange={options => {
-                        changeMonth(months.indexOf(options.label));
-                    }}
-                    value={months[getMonth(date)].toLowerCase()}
-                  />
+                    <Select
+                        options={monthsOptions}
+                        onChange={options => {
+                            changeMonth(months.indexOf(options.label));
+                        }}
+                        value={months[getMonth(date)].toLowerCase()}
+                    />
                 </SelectWrapper>
                 <SelectWrapper>
-                  <Select
-                    options={yearsOptions}
-                    onChange={options => {
-                        changeYear(parseInt(options.value, 10));
-                    }}
-                    value={getYear(date).toString()}
-                  />
+                    <Select
+                        options={yearsOptions}
+                        onChange={options => {
+                            changeYear(parseInt(options.value, 10));
+                        }}
+                        value={getYear(date).toString()}
+                    />
                 </SelectWrapper>
                 <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                  <Icon name="chevronRight" size={withPortal ? '26' : '20'} />
+                    <Icon name="chevronRight" size={withPortal ? '26' : '20'} />
                 </button>
-              </div>
+                </div>
             )}
             className="datePicker"
             dateFormat="yyyy-MM-dd"
@@ -421,14 +420,14 @@ export const Datepicker =
             valid={valid}
             withPortal={withPortal}
             {...props}
-          />
-          <SideIcon disabled={disabled} withPortal={withPortal} onMouseDown={handleClick} className="sideIcon">
-            <Icon name="calendar" size={withPortal ? '20' : '16'} />
-          </SideIcon>
-        </Container>
-        <ErrorLabel valid={valid}>
-          {validationErrorMessage}
-        </ErrorLabel>
-      </>
-      );
-  };
+        />
+        <SideIcon disabled={disabled} withPortal={withPortal} onMouseDown={handleClick} className="sideIcon">
+        <Icon name="calendar" size={withPortal ? '20' : '16'} />
+        </SideIcon>
+    </Container>
+    <ErrorLabel valid={valid}>
+        {validationErrorMessage}
+    </ErrorLabel>
+    </>
+    );
+}
