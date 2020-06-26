@@ -148,6 +148,10 @@ interface SelectProps {
      */
     validationErrorMessage?: string;
     /**
+     * Set the selected value
+     */
+    value?: string;
+    /**
      * OnChange callback function, invoked when an option is selected
      */
     onChange?(option: Option): void;
@@ -168,6 +172,7 @@ export function Select({
     skipOption,
     valid = true,
     validationErrorMessage,
+    value,
 }: SelectProps): ReactElement {
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
@@ -188,6 +193,14 @@ export function Select({
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const filteredOptions = filterOptions(options, searchValue);
+
+    useEffect(() => {
+        const WantedOption = options.find(option => option.value === value);
+        if (WantedOption) {
+            setFocusedValue(WantedOption.value);
+            setInputValue(WantedOption.label);
+        }
+    }, [value]);
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);

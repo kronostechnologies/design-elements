@@ -1,8 +1,9 @@
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 
+import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { renderWithProviders } from '@design-elements/test-utils/renderer';
-import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { ThemeWrapper } from '../theme-wrapper/theme-wrapper';
 import { Select } from './select';
 jest.mock('uuid/v4');
 
@@ -50,6 +51,16 @@ describe('Select', () => {
 
     test('input should have default value', () => {
         const wrapper = shallow(<Select options={provinces} defaultValue="qc" />);
+
+        expect(getByTestId(wrapper, 'input').props().value).toBe('Quebec');
+    });
+
+    test('input should have value', () => {
+        const wrapper = mount(
+            <ThemeWrapper>
+                <Select options={provinces} value="qc" />
+            </ThemeWrapper>,
+        );
 
         expect(getByTestId(wrapper, 'input').props().value).toBe('Quebec');
     });
