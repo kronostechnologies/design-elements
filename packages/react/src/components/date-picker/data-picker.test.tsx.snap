@@ -10,7 +10,7 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
     date
   </label>,
@@ -242,37 +242,30 @@ Array [
 }
 
 <div
-    className="c0"
+    class="c0"
   >
     <div
-      className="react-datepicker-wrapper"
+      class="react-datepicker-wrapper"
     >
       <div
-        className="react-datepicker__input-container"
+        class="react-datepicker__input-container"
       >
         <input
-          className="c1 datePicker"
-          disabled={true}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
+          class="c1 datePicker"
+          disabled=""
           placeholder="AAAA-MM-JJ"
-          readOnly={false}
           type="text"
           value=""
         />
       </div>
     </div>
     <button
-      className="c2 sideIcon"
-      disabled={true}
-      onMouseDown={[Function]}
+      class="c2 sideIcon"
+      disabled=""
     >
       <svg
         color="currentColor"
-        focusable={false}
+        focusable="false"
         height="16"
         width="16"
       />
@@ -286,7 +279,7 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
     Invalid date format
   </label>,
@@ -303,7 +296,7 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
     date
   </label>,
@@ -534,36 +527,28 @@ Array [
 }
 
 <div
-    className="c0"
+    class="c0"
   >
     <div
-      className="react-datepicker-wrapper"
+      class="react-datepicker-wrapper"
     >
       <div
-        className="react-datepicker__input-container"
+        class="react-datepicker__input-container"
       >
         <input
-          className="c1 datePicker"
-          disabled={false}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
+          class="c1 datePicker"
           placeholder="AAAA-MM-JJ"
-          readOnly={false}
           type="text"
           value=""
         />
       </div>
     </div>
     <button
-      className="c2 sideIcon"
-      onMouseDown={[Function]}
+      class="c2 sideIcon"
     >
       <svg
         color="currentColor"
-        focusable={false}
+        focusable="false"
         height="16"
         width="16"
       />
@@ -577,7 +562,7 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
     Invalid date format
   </label>,
