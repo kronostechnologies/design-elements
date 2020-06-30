@@ -1,14 +1,14 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const StyledLabel = styled.label<{device: DeviceType}>`
+const StyledLabel = styled.label<{isMobile: boolean}>`
     color: ${props => props.theme.greys.black};
     display: block;
-    font-size: ${props => props.device === 'mobile' ? '0.875rem' : '0.75rem'};
+    font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.75rem'};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
-    line-height: ${props => props.device === 'mobile' ? '1.5rem' : '1.25rem'};
+    line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
     margin: 0;
     width: fit-content;
 
@@ -19,14 +19,17 @@ const StyledLabel = styled.label<{device: DeviceType}>`
 
 interface LabelProps {
     children: ReactNode;
-    device?: DeviceType;
     forId: string;
 }
 
-const Label = ({ children, device = 'desktop', forId }: LabelProps) => (
-    <StyledLabel htmlFor={forId} device={device}>
-        {children}
-    </StyledLabel>
-);
+function Label({ children, forId }: LabelProps): ReactElement {
+    const { isMobile } = useDeviceContext();
+
+    return (
+        <StyledLabel htmlFor={forId} isMobile={isMobile}>
+            {children}
+        </StyledLabel>
+    );
+};
 
 export { Label };
