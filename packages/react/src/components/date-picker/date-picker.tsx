@@ -8,13 +8,14 @@ import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styled from 'styled-components';
 
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { Select } from '../select/select';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
-const StyledLabel = styled.label<{withPortal?: boolean}>`
+const StyledLabel = styled.label<{isMobile?: boolean}>`
     display: inline-block;
-    font-size: ${props => props.withPortal ? '0.875rem' : '0.75rem'};
+    font-size: ${props => props.isMobile ? '0.875rem' : '0.75rem'};
     margin-bottom: 6px;
     text-transform: capitalize;
 `;
@@ -170,6 +171,7 @@ const Container = styled.div`
 `;
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
+    isMobile: boolean;
     theme: Theme;
     valid?: boolean;
 }
@@ -183,7 +185,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         font-size: ${props => props.withPortal ? '1rem' : '0.875rem'};
         height: ${props => props.withPortal ? '40px' : '32px'};
         padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-        width: 109px;
+        width: ${({ isMobile }) => isMobile ? 113 : 109}px;
 
         &::placeholder {
             ${props => props.disabled ? `color: ${props.theme.greys['mid-grey']};` : ''}
@@ -204,7 +206,7 @@ const SelectWrapper = styled.div`
 interface SideIconProps {
     disabled?: boolean;
     theme: Theme;
-    withPortal?: boolean;
+    isMobile?: boolean;
 }
 
 const SideIcon = styled.button<SideIconProps>`
@@ -216,9 +218,9 @@ const SideIcon = styled.button<SideIconProps>`
     color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
     cursor: ${props => props.disabled ? 'default' : 'pointer'};
     display: flex;
-    height: ${props => props.withPortal ? '40px' : '32px'};
+    height: ${props => props.isMobile ? '40px' : '32px'};
     justify-content: center;
-    width: ${props => props.withPortal ? '40px' : '32px'};
+    width: ${props => props.isMobile ? '40px' : '32px'};
 
     &:hover {
         background-color: ${props => props.disabled ? 'none' : props.theme.greys.grey};
@@ -298,10 +300,6 @@ interface DatepickerProps {
      * Sets input value (controlled)
      */
     value?: string;
-    /**
-     * Sets portal mode
-     */
-    withPortal?: boolean;
 
     onBlur?(event: React.FocusEvent<HTMLInputElement>): void;
     onChange?(date: Date): void;
@@ -320,9 +318,9 @@ export function Datepicker({
     startDate,
     valid = true,
     validationErrorMessage = 'Invalid date format',
-    withPortal,
     ...props
 }: DatepickerProps): ReactElement {
+    const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
     const years =
     range(minDate ? getYear(minDate) : 1920, maxDate ? getYear(maxDate) + 1 : getYear(new Date()) + 1, 1);
@@ -364,71 +362,72 @@ export function Datepicker({
     };
 
     return (
-    <>
-    <StyledLabel withPortal={withPortal}>{label}</StyledLabel>
-    <Container>
-        <StyledDatePicker
-            ref={dateInput}
-            renderCustomHeader={({
-                date,
-                changeYear,
-                changeMonth,
-                decreaseMonth,
-                increaseMonth,
-                prevMonthButtonDisabled,
-                nextMonthButtonDisabled,
-            }) => (
-                <div className="customHeader">
-                <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                    <Icon name="chevronLeft" size={withPortal ? '26' : '20'} />
-                </button>
-                <SelectWrapper>
-                    <Select
-                        options={monthsOptions}
-                        onChange={options => {
-                            changeMonth(months.indexOf(options.label));
-                        }}
-                        value={months[getMonth(date)].toLowerCase()}
-                    />
-                </SelectWrapper>
-                <SelectWrapper>
-                    <Select
-                        options={yearsOptions}
-                        onChange={options => {
-                            changeYear(parseInt(options.value, 10));
-                        }}
-                        value={getYear(date).toString()}
-                    />
-                </SelectWrapper>
-                <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                    <Icon name="chevronRight" size={withPortal ? '26' : '20'} />
-                </button>
-                </div>
-            )}
-            className="datePicker"
-            dateFormat="yyyy-MM-dd"
-            disabled={disabled}
-            locale={locale}
-            maxDate={maxDate}
-            minDate={minDate}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            onFocus={handleFocus}
-            placeholderText="AAAA-MM-JJ"
-            popperClassName="popper"
-            selected={selectedDate}
-            showPopperArrow={false}
-            valid={valid}
-            withPortal={withPortal}
-            {...props}
-        />
-        <SideIcon disabled={disabled} withPortal={withPortal} onMouseDown={handleClick} className="sideIcon">
-        <Icon name="calendar" size={withPortal ? '20' : '16'} />
-        </SideIcon>
-    </Container>
-    <ErrorLabel valid={valid}>
-        {validationErrorMessage}
-    </ErrorLabel>
-    </>
+        <>
+            <StyledLabel isMobile={isMobile}>{label}</StyledLabel>
+            <Container>
+                <StyledDatePicker
+                    isMobile={isMobile}
+                    ref={dateInput}
+                    renderCustomHeader={({
+                        date,
+                        changeYear,
+                        changeMonth,
+                        decreaseMonth,
+                        increaseMonth,
+                        prevMonthButtonDisabled,
+                        nextMonthButtonDisabled,
+                    }) => (
+                        <div className="customHeader">
+                            <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                                <Icon name="chevronLeft" size={isMobile ? '26' : '20'} />
+                            </button>
+                            <SelectWrapper>
+                                <Select
+                                    options={monthsOptions}
+                                    onChange={options => {
+                                        changeMonth(months.indexOf(options.label));
+                                    }}
+                                    value={months[getMonth(date)].toLowerCase()}
+                                />
+                            </SelectWrapper>
+                            <SelectWrapper>
+                                <Select
+                                    options={yearsOptions}
+                                    onChange={options => {
+                                        changeYear(parseInt(options.value, 10));
+                                    }}
+                                    value={getYear(date).toString()}
+                                />
+                            </SelectWrapper>
+                            <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                                <Icon name="chevronRight" size={isMobile ? '26' : '20'} />
+                            </button>
+                        </div>
+                    )}
+                    className="datePicker"
+                    dateFormat="yyyy-MM-dd"
+                    disabled={disabled}
+                    locale={locale}
+                    maxDate={maxDate}
+                    minDate={minDate}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    onFocus={handleFocus}
+                    placeholderText="AAAA-MM-JJ"
+                    popperClassName="popper"
+                    selected={selectedDate}
+                    showPopperArrow={false}
+                    valid={valid}
+                    withPortal={isMobile}
+                    {...props}
+                />
+                <SideIcon disabled={disabled} isMobile={isMobile} onMouseDown={handleClick} className="sideIcon">
+                    <Icon name="calendar" size={isMobile ? '24' : '16'} />
+                </SideIcon>
+            </Container>
+            <ErrorLabel valid={valid}>
+                {validationErrorMessage}
+            </ErrorLabel>
+        </>
     );
 }
