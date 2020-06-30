@@ -34,9 +34,6 @@ export const maxDate = () => (
 export const minDate = () => (
     <Datepicker label="date" minDate={currentDate}/>
 );
-export const portal = () => (
-    <Datepicker label="date" withPortal/>
-);
 export const readOnly = () => (
     <Datepicker label="date" value="2002-02-02" readOnly/>
 );

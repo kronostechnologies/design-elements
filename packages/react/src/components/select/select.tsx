@@ -207,12 +207,12 @@ export function Select({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [open]);
 
-    function filterOptions(optionsArray: Option[], value: string): Option[] {
-        return optionsArray.filter(option => option.label.toLowerCase().startsWith(value.toLowerCase()));
+    function filterOptions(optionsArray: Option[], filterValue: string): Option[] {
+        return optionsArray.filter(option => option.label.toLowerCase().startsWith(filterValue.toLowerCase()));
     }
 
-    function findOption(optionsArray: Option[], value: string): Option | undefined {
-        return optionsArray.find(option => option.label.toLowerCase() === value.toLowerCase());
+    function findOption(optionsArray: Option[], findValue: string): Option | undefined {
+        return optionsArray.find(option => option.label.toLowerCase() === findValue.toLowerCase());
     }
 
     function focusFirstElementFromArray(array: Option[]): void {
@@ -283,8 +283,8 @@ export function Select({
         setContainerOutline(true);
     }
 
-    function handleFocusedValueChange(value: string | undefined): void {
-        value && setInputValue(value);
+    function handleFocusedValueChange(focusValue: string | undefined): void {
+        focusValue && setInputValue(focusValue);
     }
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
