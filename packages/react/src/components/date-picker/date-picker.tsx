@@ -1,4 +1,4 @@
-import React, { FocusEvent, ReactElement, useRef, useState } from 'react';
+import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
 
 import { getMonth, getYear, Locale } from 'date-fns';
 import { range } from 'lodash';
@@ -7,18 +7,13 @@ import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
 
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { Select } from '../select/select';
 import { Theme } from '../theme-wrapper/theme-wrapper';
-
-const StyledLabel = styled.label<{isMobile?: boolean}>`
-    display: inline-block;
-    font-size: ${props => props.isMobile ? '0.875rem' : '0.75rem'};
-    margin-bottom: 6px;
-    text-transform: capitalize;
-`;
 
 const Container = styled.div`
     align-items: center;
@@ -231,19 +226,6 @@ const SideIcon = styled.button<SideIconProps>`
     }
 `;
 
-interface ErrorLabelProps {
-    children: string | undefined;
-    theme: Theme;
-    valid?: boolean;
-}
-
-const ErrorLabel = styled.label<ErrorLabelProps>`
-    color: ${props => props.theme.notifications['error-2.1']};
-    display: ${(props: {children: string | undefined, valid?: boolean, theme: Theme}) => props.valid ? 'none' : 'inline-block'};
-    font-size: 0.75rem;
-    margin-top: var(--spacing-half);
-`;
-
 interface LocaleProps extends Locale {
     code?: string;
 }
@@ -322,6 +304,7 @@ export function Datepicker({
 }: DatepickerProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
+    const id = useMemo(uuid, []);
     const years =
     range(minDate ? getYear(minDate) : 1920, maxDate ? getYear(maxDate) + 1 : getYear(new Date()) + 1, 1);
     const yearsOptions: any[] = [];
@@ -362,8 +345,12 @@ export function Datepicker({
     };
 
     return (
-        <>
-            <StyledLabel isMobile={isMobile}>{label}</StyledLabel>
+        <FieldContainer
+            fieldId={id}
+            label={label}
+            valid={valid}
+            validationErrorMessage={validationErrorMessage}
+        >
             <Container>
                 <StyledDatePicker
                     isMobile={isMobile}
@@ -425,9 +412,6 @@ export function Datepicker({
                     <Icon name="calendar" size={isMobile ? '24' : '16'} />
                 </SideIcon>
             </Container>
-            <ErrorLabel valid={valid}>
-                {validationErrorMessage}
-            </ErrorLabel>
-        </>
+        </FieldContainer>
     );
 }

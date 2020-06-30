@@ -30,6 +30,6 @@ function Label({ children, forId }: LabelProps): ReactElement {
             {children}
         </StyledLabel>
     );
-};
+}
 
 export { Label };

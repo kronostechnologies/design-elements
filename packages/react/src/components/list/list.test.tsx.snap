@@ -14,6 +14,9 @@ exports[`List Is not visible 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 128px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -40,7 +43,7 @@ exports[`List Is not visible 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 16px;
+  padding: 0 8px 0 16px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -127,6 +130,9 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 96px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -153,7 +159,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 34px;
+  padding: 0 8px 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -179,7 +185,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 0;
+  padding: 0 8px 0 0;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -280,6 +286,9 @@ exports[`List Matches the snapshot 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 96px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -306,7 +315,7 @@ exports[`List Matches the snapshot 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 34px;
+  padding: 0 8px 0 34px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -332,7 +341,7 @@ exports[`List Matches the snapshot 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 0;
+  padding: 0 8px 0 0;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
