@@ -444,7 +444,6 @@ export function Select({
     return (
         <>
             <StyledFieldContainer
-                device={device}
                 fieldId={id}
                 label={label}
                 valid={valid}
