@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Datepicker } from './date-picker';
 
@@ -36,17 +36,13 @@ describe('Datepicker', () => {
     });
 
     test('matches snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<Datepicker label="date"/>),
-        ).toJSON();
+        const tree = renderWithProviders(<Datepicker label="date"/>);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('is disabled', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<Datepicker label="date" disabled/>),
-        ).toJSON();
+        const tree = renderWithProviders(<Datepicker label="date" disabled/>);
 
         expect(tree).toMatchSnapshot();
     });
