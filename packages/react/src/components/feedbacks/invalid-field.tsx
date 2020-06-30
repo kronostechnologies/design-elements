@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const Field = styled.div`
+const Field = styled.div<{ isMobile: boolean }>`
     color: ${props => props.theme.notifications['error-2.1']};
-    font-size: 0.75rem;
+    font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.75rem'};
     font-weight: var(--font-normal);
-    letter-spacing: 0.025rem;
-    line-height: 1.25rem;
+    letter-spacing: 0.02rem;
+    line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
     margin: var(--spacing-half) 0 0;
 `;
 
@@ -15,14 +16,19 @@ interface InvalidFieldProps {
     feedbackMsg: string;
 }
 
-const InvalidField = ({ controlId, feedbackMsg }: InvalidFieldProps) => (
-    <Field
-        role="alert"
-        aria-live="polite"
-        id={`${controlId}_invalid`}
-    >
-        {feedbackMsg}
-    </Field>
-);
+function InvalidField({ controlId, feedbackMsg }: InvalidFieldProps): ReactElement {
+    const { isMobile } = useDeviceContext();
+
+    return (
+        <Field
+            aria-live="polite"
+            id={`${controlId}_invalid`}
+            isMobile={isMobile}
+            role="alert"
+        >
+            {feedbackMsg}
+        </Field>
+    );
+}
 
 export { InvalidField };
