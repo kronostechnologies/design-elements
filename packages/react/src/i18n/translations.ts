@@ -1,5 +1,9 @@
 export const Translations = {
     en: {
+        datepicker: {
+            label: 'Date',
+            validationErrorMessage: 'Invalid date',
+        },
         'inline-message': {
             Tips: 'Tips',
             Success: 'Success',
@@ -31,6 +35,10 @@ export const Translations = {
         },
     },
     fr: {
+        datepicker: {
+            label: 'Date',
+            validationErrorMessage: 'Date non valide',
+        },
         'inline-message': {
             Tips: 'Astuce',
             Success: 'Succès',
