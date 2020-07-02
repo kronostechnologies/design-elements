@@ -1,4 +1,5 @@
 import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getMonth, getYear, Locale } from 'date-fns';
 import { range } from 'lodash';
@@ -239,7 +240,7 @@ interface DatepickerProps {
     /**
      * Sets input label
      */
-    label: string;
+    label?: string;
     /**
      * Sets localization. Currently available: en, es, fr.
      * @default en
@@ -299,9 +300,10 @@ export function Datepicker({
     onFocus,
     startDate,
     valid = true,
-    validationErrorMessage = 'Invalid date format',
+    validationErrorMessage,
     ...props
 }: DatepickerProps): ReactElement {
+    const { t } = useTranslation('datepicker');
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
     const id = useMemo(uuid, []);
@@ -347,9 +349,9 @@ export function Datepicker({
     return (
         <FieldContainer
             fieldId={id}
-            label={label}
+            label={label || t('label')}
             valid={valid}
-            validationErrorMessage={validationErrorMessage}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
             <Container>
                 <StyledDatePicker
