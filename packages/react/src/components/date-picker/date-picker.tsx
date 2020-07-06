@@ -1,12 +1,10 @@
+import { getMonth, getYear } from 'date-fns';
+import { enCA, enUS, frCA } from 'date-fns/locale';
 import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-
-import { getMonth, getYear, Locale } from 'date-fns';
-import { range } from 'lodash';
-import moment from 'moment';
-import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
+import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -15,6 +13,12 @@ import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { Select } from '../select/select';
 import { Theme } from '../theme-wrapper/theme-wrapper';
+import {
+    getLocale,
+    getLocaleMonthsOptions,
+    getLocaleMonthsShort,
+    getYearsOptions,
+} from './utils/date-picker-utils';
 
 const Container = styled.div`
     align-items: center;
@@ -166,12 +170,6 @@ const Container = styled.div`
     }
 `;
 
-interface StyledDatePickerProps extends ReactDatePickerProps {
-    isMobile: boolean;
-    theme: Theme;
-    valid?: boolean;
-}
-
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePicker {
         background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
@@ -199,12 +197,6 @@ const SelectWrapper = styled.div`
     width: 80px;
 `;
 
-interface SideIconProps {
-    disabled?: boolean;
-    theme: Theme;
-    isMobile?: boolean;
-}
-
 const SideIcon = styled.button<SideIconProps>`
     align-items: center;
     background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
@@ -227,8 +219,24 @@ const SideIcon = styled.button<SideIconProps>`
     }
 `;
 
-interface LocaleProps extends Locale {
-    code?: string;
+registerLocale('en-US', enUS);
+registerLocale('en-CA', enCA);
+registerLocale('fr-CA', frCA);
+
+const localeArray = [enUS, enCA, frCA];
+
+export type LocaleProps = 'fr-CA' | 'en-CA' | 'en-US';
+
+interface StyledDatePickerProps extends ReactDatePickerProps {
+    isMobile: boolean;
+    theme: Theme;
+    valid?: boolean;
+}
+
+interface SideIconProps {
+    disabled?: boolean;
+    theme: Theme;
+    isMobile?: boolean;
 }
 
 interface DatepickerProps {
@@ -306,25 +314,11 @@ export function Datepicker({
     const { t } = useTranslation('datepicker');
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
+    const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
+    const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
+    const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
+    const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
-    const years =
-    range(minDate ? getYear(minDate) : 1920, maxDate ? getYear(maxDate) + 1 : getYear(new Date()) + 1, 1);
-    const yearsOptions: any[] = [];
-    // @ts-ignore
-    years.map(year => {
-        yearsOptions.push({ value: year.toString(), label: year.toString() });
-    });
-    locale && moment.locale(locale.code);
-    const months = moment.monthsShort();
-    const monthsOptions: any[] = [];
-    // @ts-ignore
-    months.map(month => {
-        monthsOptions.push({
-            value: month.toLowerCase(),
-            label: month.charAt(0).toUpperCase() + month.substring(0, 3).slice(1),
-        });
-    });
-
     const dateInput = useRef<DatePicker>(null);
 
     const handleClick = () => {
@@ -376,7 +370,7 @@ export function Datepicker({
                                     onChange={options => {
                                         changeMonth(months.indexOf(options.label));
                                     }}
-                                    value={months[getMonth(date)].toLowerCase()}
+                                    value={monthsOptions[getMonth(date)].value}
                                 />
                             </SelectWrapper>
                             <SelectWrapper>

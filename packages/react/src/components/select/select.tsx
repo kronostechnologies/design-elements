@@ -197,7 +197,7 @@ export function Select({
     useEffect(() => {
         const WantedOption = options.find(option => option.value === value);
         if (WantedOption) {
-            setFocusedValue(WantedOption.value);
+            setSelectedOptionValue(WantedOption.value);
             setInputValue(WantedOption.label);
         }
     }, [value]);
