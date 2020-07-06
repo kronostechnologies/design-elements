@@ -99,7 +99,7 @@ interface InputWrapperProps extends InputProps {
     valid: boolean;
 }
 
-interface Option {
+export interface Option {
     label: string;
     value: string;
 }
