@@ -47,8 +47,13 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 `;
 
-const StyledIcon = styled(Icon)`
+const SortButton = styled.button`
+    cursor: pointer;
     margin-right: var(--spacing-1x);
+
+    &:focus {
+        outline: none;
+    }
 `;
 
 type CustomColumn = Column & {
@@ -96,20 +101,38 @@ export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
               {headerGroup.headers.map(column => {
                   if (column.sort) {
                       return (
-                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                          <div style={{ display: 'flex', alignItems: 'center', textAlign: column.textAlign }}>
-                            {column.isSorted
+                        <th
+                          {...column.getHeaderProps(column.getSortByToggleProps())}
+                          scope="col"
+                          aria-sort={
+                            column.isSorted
                               ? column.isSortedDesc
-                                ? <StyledIcon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
-                                : <StyledIcon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
-                              : <StyledIcon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
+                                ? 'descending'
+                                : 'ascending'
+                              : 'none'
+                          }
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', textAlign: column.textAlign }}>
+                            <SortButton>
+                              {column.isSorted
+                                ? column.isSortedDesc
+                                  ? <Icon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
+                                  : <Icon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
+                                : <Icon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
+                            </SortButton>
                             {column.render('Header')}
                           </div>
                         </th>
                       );
                   } else {
                       return (
-                          <th style={{ textAlign: column.textAlign }} {...column.getHeaderProps()}>{column.render('Header')}</th>
+                          <th
+                            scope="col"
+                            style={{ textAlign: column.textAlign }}
+                            {...column.getHeaderProps()}
+                          >
+                            {column.render('Header')}
+                          </th>
                       );
                   }
               })}

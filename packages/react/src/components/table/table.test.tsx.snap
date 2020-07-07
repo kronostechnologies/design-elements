@@ -44,6 +44,7 @@ exports[`Table has custom text alignment 1`] = `
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
         style="text-align:right"
       >
         Column 1
@@ -51,6 +52,7 @@ exports[`Table has custom text alignment 1`] = `
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
         style="text-align:center"
       >
         Column 2
@@ -156,12 +158,14 @@ exports[`Table has desktop styles 1`] = `
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
       >
         Column 1
       </th>
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
       >
         Column 2
       </th>
@@ -260,12 +264,14 @@ exports[`Table has mobile styles 1`] = `
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
       >
         Column 1
       </th>
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
       >
         Column 2
       </th>
@@ -354,7 +360,12 @@ exports[`Table has sorting styles 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
   margin-right: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <table
@@ -366,40 +377,50 @@ exports[`Table has sorting styles 1`] = `
       role="row"
     >
       <th
+        aria-sort="none"
         colspan="1"
         role="columnheader"
+        scope="col"
         style="cursor:pointer"
         title="Toggle SortBy"
       >
         <div
           style="display:flex;align-items:center"
         >
-          <svg
+          <button
             class="c1"
-            color="#57666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
+          >
+            <svg
+              color="#57666E"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
           Column 1
         </div>
       </th>
       <th
+        aria-sort="none"
         colspan="1"
         role="columnheader"
+        scope="col"
         style="cursor:pointer"
         title="Toggle SortBy"
       >
         <div
           style="display:flex;align-items:center;text-align:center"
         >
-          <svg
+          <button
             class="c1"
-            color="#57666E"
-            focusable="false"
-            height="16"
-            width="16"
-          />
+          >
+            <svg
+              color="#57666E"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
           Column 2
         </div>
       </th>
@@ -501,12 +522,14 @@ exports[`Table has tablet styles 1`] = `
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
       >
         Column 1
       </th>
       <th
         colspan="1"
         role="columnheader"
+        scope="col"
       >
         Column 2
       </th>
