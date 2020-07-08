@@ -3,6 +3,7 @@ import { enCA, enUS, frCA } from 'date-fns/locale';
 import {
     getLocale,
     getLocaleDateFormat,
+    getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
@@ -53,6 +54,20 @@ describe('Datepicker utils', () => {
             const result = getLocaleDateFormat();
 
             expect(result).toEqual('yyyy-MM-dd');
+        });
+    });
+
+    describe('get locale date placeholder', () => {
+        test('should return en-US date placeholder', () => {
+            const result = getLocaleDatePlaceholder('en-US');
+
+            expect(result).toEqual('MM/DD/YYYY');
+        });
+
+        test('should return en-CA date placeholder when no locale is passed', () => {
+            const result = getLocaleDatePlaceholder();
+
+            expect(result).toEqual('YYYY-MM-DD');
         });
     });
 

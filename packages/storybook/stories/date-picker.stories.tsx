@@ -24,6 +24,12 @@ export const normal = () => (
 export const disabled = () => (
     <Datepicker disabled/>
 );
+export const customDateFormat = () => (
+    <Datepicker dateFormat="dd/MM"/>
+);
+export const customPlaceholder = () => (
+    <Datepicker placeholder="Hello World"/>
+);
 export const invalid = () => (
     <Datepicker valid={false}/>
 );
