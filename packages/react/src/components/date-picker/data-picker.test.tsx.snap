@@ -282,7 +282,7 @@ input + .c1 {
         <input
           class="c3 datePicker"
           disabled=""
-          placeholder="AAAA-MM-JJ"
+          placeholder="YYYY-MM-DD"
           type="text"
           value=""
         />
@@ -583,7 +583,7 @@ input + .c1 {
       >
         <input
           class="c3 datePicker"
-          placeholder="AAAA-MM-JJ"
+          placeholder="YYYY-MM-DD"
           type="text"
           value=""
         />

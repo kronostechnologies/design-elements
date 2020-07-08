@@ -26,7 +26,11 @@ export function getLocaleDateFormat(locale?: LocaleProps): string {
         'fr-CA' : 'yyyy-MM-dd',
     };
 
-    return locale ? formats[locale] : 'yyyy-MM-dd';
+    return formats[locale || 'en-CA'];
+}
+
+export function getLocaleDatePlaceholder(locale?: LocaleProps): string {
+    return getLocaleDateFormat(locale).toUpperCase();
 }
 
 export function getLocaleMonthsOptions(locale: Locale): Option[] {

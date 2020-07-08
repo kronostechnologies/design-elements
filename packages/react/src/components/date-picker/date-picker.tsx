@@ -1,6 +1,6 @@
 import { getMonth, getYear } from 'date-fns';
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
+import React, { FocusEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
@@ -16,6 +16,7 @@ import { Theme } from '../theme-wrapper/theme-wrapper';
 import {
     getLocale,
     getLocaleDateFormat,
+    getLocaleDatePlaceholder,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
@@ -220,12 +221,6 @@ const SideIcon = styled.button<SideIconProps>`
     }
 `;
 
-registerLocale('en-US', enUS);
-registerLocale('en-CA', enCA);
-registerLocale('fr-CA', frCA);
-
-const localeArray = [enUS, enCA, frCA];
-
 export type LocaleProps = 'fr-CA' | 'en-CA' | 'en-US';
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
@@ -241,42 +236,29 @@ interface SideIconProps {
 }
 
 interface DatepickerProps {
-    /**
-     * Disables input
-     */
+    /** Sets date format (e.g.: dd/MM/yyyy). */
+    dateFormat?: string;
     disabled?: boolean;
     id?: string;
-    /**
-     * Sets input label
-     */
+    /** Sets input label */
     label?: string;
     /**
-     * Sets localization. Currently available: en, es, fr.
-     * @default en
+     * Sets localization
+     * @default en-CA
      */
     locale?: LocaleProps;
-    /**
-     * Sets max date
-     */
     maxDate?: Date | null;
-    /**
-     * Sets min date
-     */
     minDate?: Date | null;
+    /** Sets input name */
     name?: string;
-    /**
-     * Toggles calendar (controlled)
-     */
+    /** Toggles calendar (controlled) */
     open?: boolean;
+    placeholder?: string;
     readOnly?: boolean;
     required?: boolean;
-    /**
-     * Sets default selected date
-     */
+    /** Sets default selected date */
     startDate?: Date | null;
-    /**
-     * Sets calendar initially open (uncontrolled)
-     */
+    /** Sets calendar initially open (uncontrolled) */
     startOpen?: boolean;
     tabIndex?: number;
     /**
@@ -284,13 +266,9 @@ interface DatepickerProps {
      * @default true
      */
     valid?: boolean;
-    /**
-     * Sets error message
-     */
+    /** Sets error message */
     validationErrorMessage?: string;
-    /**
-     * Sets input value (controlled)
-     */
+    /** Sets input value (controlled) */
     value?: string;
 
     onBlur?(event: React.FocusEvent<HTMLInputElement>): void;
@@ -299,20 +277,23 @@ interface DatepickerProps {
 }
 
 export function Datepicker({
+    dateFormat,
     disabled,
     label,
-    locale,
+    locale = 'en-CA',
     maxDate,
     minDate,
     onBlur,
     onChange,
     onFocus,
+    placeholder,
     startDate,
     valid = true,
     validationErrorMessage,
     ...props
 }: DatepickerProps): ReactElement {
     const { t } = useTranslation('datepicker');
+    const localeArray = [enUS, enCA, frCA];
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
     const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
@@ -321,6 +302,10 @@ export function Datepicker({
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
     const dateInput = useRef<DatePicker>(null);
+
+    useEffect(() => {
+        registerLocale(locale, getLocale(localeArray, locale));
+    }, [locale]);
 
     const handleClick = () => {
         if (dateInput.current !== null) {
@@ -339,6 +324,16 @@ export function Datepicker({
 
     const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
         if (onFocus) onFocus(event);
+    };
+
+    const getPlaceholder = () => {
+        if (placeholder) {
+            return placeholder;
+        } else if (dateFormat) {
+            return dateFormat.toUpperCase();
+        } else {
+            return getLocaleDatePlaceholder(locale);
+        }
     };
 
     return (
@@ -389,7 +384,7 @@ export function Datepicker({
                         </div>
                     )}
                     className="datePicker"
-                    dateFormat={getLocaleDateFormat(locale)}
+                    dateFormat={dateFormat || getLocaleDateFormat(locale)}
                     disabled={disabled}
                     locale={locale}
                     maxDate={maxDate}
@@ -397,7 +392,7 @@ export function Datepicker({
                     onChange={handleChange}
                     onBlur={handleBlur}
                     onFocus={handleFocus}
-                    placeholderText="AAAA-MM-JJ"
+                    placeholderText={getPlaceholder()}
                     popperClassName="popper"
                     selected={selectedDate}
                     showPopperArrow={false}
