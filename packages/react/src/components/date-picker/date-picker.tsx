@@ -15,6 +15,7 @@ import { Select } from '../select/select';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 import {
     getLocale,
+    getLocaleDateFormat,
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
@@ -388,7 +389,7 @@ export function Datepicker({
                         </div>
                     )}
                     className="datePicker"
-                    dateFormat="yyyy-MM-dd"
+                    dateFormat={getLocaleDateFormat(locale)}
                     disabled={disabled}
                     locale={locale}
                     maxDate={maxDate}

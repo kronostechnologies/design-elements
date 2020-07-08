@@ -19,6 +19,16 @@ export function getLocaleMonthsShort(locale: Locale): string[] {
     return months;
 }
 
+export function getLocaleDateFormat(locale?: LocaleProps): string {
+    const formats = {
+        'en-US' : 'MM/dd/yyyy',
+        'en-CA' : 'yyyy-MM-dd',
+        'fr-CA' : 'yyyy-MM-dd',
+    };
+
+    return locale ? formats[locale] : 'yyyy-MM-dd';
+}
+
 export function getLocaleMonthsOptions(locale: Locale): Option[] {
     const monthsOptions: Option[] = [];
     for (let i = 0; i < 12; i++) {
