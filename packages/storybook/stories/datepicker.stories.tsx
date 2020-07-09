@@ -58,11 +58,11 @@ export const customLocale = () => (
     <Datepicker locale="fr-CA"/>
 );
 export const withOnChangeCallback = () => (
-    <Datepicker onChange={(date: any) => console.log(`[onChange] Date: ${date}`)}/>
+    <Datepicker onChange={(date) => console.log(`[onChange] Date: ${date}`)}/>
 );
 export const withOnBlurCallback = () => (
-    <Datepicker onBlur={(event: any) => console.log(`[onBlur] Value: ${event.target.value}`)}/>
+    <Datepicker onBlur={(event) => console.log(`[onBlur] Value: ${event.target.value}`)}/>
 );
 export const withOnFocusCallback = () => (
-    <Datepicker onFocus={(event: any) => console.log(`[onFocus] Value: ${event.target.value}`)}/>
+    <Datepicker onFocus={(event) => console.log(`[onFocus] Value: ${event.target.value}`)}/>
 );
