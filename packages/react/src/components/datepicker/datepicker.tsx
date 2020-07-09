@@ -321,14 +321,6 @@ export function Datepicker({
         if (onChange) onChange(date, event);
     };
 
-    const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-        if (onBlur) onBlur(event);
-    };
-
-    const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
-        if (onFocus) onFocus(event);
-    };
-
     const getPlaceholder = () => {
         if (placeholder) {
             return placeholder;
@@ -393,8 +385,8 @@ export function Datepicker({
                     maxDate={maxDate}
                     minDate={minDate}
                     onChange={handleChange}
-                    onBlur={handleBlur}
-                    onFocus={handleFocus}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
                     placeholderText={getPlaceholder()}
                     popperClassName="popper"
                     selected={selectedDate}
