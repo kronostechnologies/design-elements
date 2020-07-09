@@ -1,6 +1,6 @@
 import { getMonth, getYear } from 'date-fns';
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { FocusEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
@@ -20,7 +20,7 @@ import {
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
-} from './utils/date-picker-utils';
+} from './utils/datepicker-utils';
 
 const Container = styled.div`
     align-items: center;
@@ -61,6 +61,7 @@ const Container = styled.div`
     .react-datepicker__header {
         background-color: ${props => props.theme.greys.white};
         border-bottom: none;
+        margin-bottom: 2px;
         padding: 0;
     }
 
@@ -271,9 +272,9 @@ interface DatepickerProps {
     /** Sets input value (controlled) */
     value?: string;
 
-    onBlur?(event: React.FocusEvent<HTMLInputElement>): void;
-    onChange?(date: Date): void;
-    onFocus?(event: React.FocusEvent<HTMLInputElement>): void;
+    onBlur?(event: FocusEvent<HTMLInputElement>): void;
+    onChange?(date: Date, event: ChangeEvent<HTMLInputElement>): void;
+    onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
 export function Datepicker({
@@ -304,8 +305,10 @@ export function Datepicker({
     const dateInput = useRef<DatePicker>(null);
 
     useEffect(() => {
-        registerLocale(locale, getLocale(localeArray, locale));
-    }, [locale]);
+        registerLocale('en-CA', enCA);
+        registerLocale('en-US', enUS);
+        registerLocale('fr-CA', frCA);
+    }, []);
 
     const handleClick = () => {
         if (dateInput.current !== null) {
@@ -313,9 +316,9 @@ export function Datepicker({
         }
     };
 
-    const handleChange = (date: Date) => {
+    const handleChange = (date: Date, event: ChangeEvent<HTMLInputElement>) => {
         setSelectedDate(date);
-        if (onChange) onChange(date);
+        if (onChange) onChange(date, event);
     };
 
     const handleBlur = (event: FocusEvent<HTMLInputElement>) => {

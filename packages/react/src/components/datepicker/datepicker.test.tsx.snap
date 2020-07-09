@@ -91,6 +91,7 @@ input + .c1 {
 .c2 .react-datepicker__header {
   background-color: #FFFFFF;
   border-bottom: none;
+  margin-bottom: 2px;
   padding: 0;
 }
 
@@ -394,6 +395,7 @@ input + .c1 {
 .c2 .react-datepicker__header {
   background-color: #FFFFFF;
   border-bottom: none;
+  margin-bottom: 2px;
   padding: 0;
 }
 

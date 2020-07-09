@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { Datepicker } from './date-picker';
+import { Datepicker } from './datepicker';
 jest.mock('uuid/v4');
 
 describe('Datepicker', () => {

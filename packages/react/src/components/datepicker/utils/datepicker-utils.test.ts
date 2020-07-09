@@ -7,7 +7,7 @@ import {
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
-} from './date-picker-utils';
+} from './datepicker-utils';
 
 const minDate = new Date('2020-01-01 12:00');
 const maxDate = new Date('2020-01-04');

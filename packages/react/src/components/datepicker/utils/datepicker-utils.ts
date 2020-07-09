@@ -3,7 +3,7 @@ import { enCA } from 'date-fns/locale';
 import { range } from 'lodash';
 
 import { Option } from '../../select/select';
-import { LocaleProps } from '../date-picker';
+import { LocaleProps } from '../datepicker';
 
 export function getLocale(localeArray: Locale[], localeCode?: LocaleProps): Locale {
     const findLocale = localeArray.find(locale => locale.code === localeCode);
