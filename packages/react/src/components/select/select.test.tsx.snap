@@ -106,10 +106,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -135,6 +131,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  min-width: 0;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
@@ -469,10 +466,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -498,6 +491,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  min-width: 0;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
@@ -918,10 +912,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -947,6 +937,7 @@ input + .c2 {
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  min-width: 0;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;
@@ -1338,10 +1329,6 @@ exports[`Select mobile select has a different style 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 40px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
@@ -1367,6 +1354,7 @@ exports[`Select mobile select has a different style 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   max-height: 100%;
+  min-width: 0;
   outline: none;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
   width: 100%;

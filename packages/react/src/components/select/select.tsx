@@ -37,7 +37,6 @@ const InputWrapper = styled.div<InputWrapperProps>`
     box-sizing: border-box;
     display: flex;
     height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
-    justify-content: space-between;
     margin-top: var(--spacing-half);
     padding-right: var(--spacing-1x);
     width: 100%;
@@ -60,6 +59,7 @@ const StyledInput = styled.input<InputProps>`
     font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
     letter-spacing: 0.4px;
     max-height: 100%;
+    min-width: 0;
     outline: none;
     padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
     width: 100%;
