@@ -1,3 +1,4 @@
+import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { mount } from 'enzyme';
 import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
@@ -36,13 +37,61 @@ describe('Datepicker', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
+    test('month select value should change when month-back button is clicked', () => {
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
+        );
+
+        getByTestId(wrapper, 'month-back').simulate('click');
+        expect(getByTestId(wrapper, 'month-select').props().value).toBe('april');
+    });
+
+    test('month select value should change when month-forward button is clicked', () => {
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
+        );
+
+        getByTestId(wrapper, 'month-forward').simulate('click');
+        expect(getByTestId(wrapper, 'month-select').props().value).toBe('june');
+    });
+
+    test('year select value should change when month-back button is clicked on first month of the year', () => {
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker startDate={new Date('2000-01-12')} label="date" open/>),
+        );
+
+        getByTestId(wrapper, 'month-back').simulate('click');
+        expect(getByTestId(wrapper, 'year-select').props().value).toBe('1999');
+    });
+
+    test('year select value should change when month-forward button is clicked on last month of the year', () => {
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker startDate={new Date('2000-12-12')} label="date" open/>),
+        );
+
+        getByTestId(wrapper, 'month-forward').simulate('click');
+        expect(getByTestId(wrapper, 'year-select').props().value).toBe('2001');
+    });
+
     test('matches snapshot', () => {
         const tree = renderWithProviders(<Datepicker label="date"/>);
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('is disabled', () => {
+    test('matches snapshot (open)', () => {
+        const tree = renderWithProviders(<Datepicker label="date" open/>);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches snapshot (invalid)', () => {
+        const tree = renderWithProviders(<Datepicker label="date" valid={false}/>);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches snapshot (disabled)', () => {
         const tree = renderWithProviders(<Datepicker label="date" disabled/>);
 
         expect(tree).toMatchSnapshot();
