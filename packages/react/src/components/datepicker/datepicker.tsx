@@ -26,10 +26,6 @@ const Container = styled.div`
     align-items: center;
     display: flex;
 
-    .datePicker {
-        box-sizing: border-box;
-    }
-
     .popper {
         &[data-placement^="bottom"] {
             margin-top: 0;
@@ -40,10 +36,10 @@ const Container = styled.div`
         align-items: center;
         display: flex;
         justify-content: space-between;
-        padding: 0 0 var(--spacing-2x) 0;
+        padding-bottom: var(--spacing-2x);
 
         > button {
-            background-color: ${props => props.theme.greys.white};
+            background-color: ${({ theme }) => theme.greys.white};
             border: none;
             display: flex;
             padding: 0;
@@ -59,14 +55,13 @@ const Container = styled.div`
     }
 
     .react-datepicker__header {
-        background-color: ${props => props.theme.greys.white};
+        background-color: ${({ theme }) => theme.greys.white};
         border-bottom: none;
         margin-bottom: 2px;
         padding: 0;
     }
 
     .react-datepicker__month {
-        font-family: 'Open Sans', sans-serif;
         font-size: 0.875rem;
         margin: 0;
 
@@ -79,8 +74,8 @@ const Container = styled.div`
             width: 32px;
 
             &:hover {
-                background-color: ${props => props.theme.greys.grey};
-                border-radius: 24px;
+                background-color: ${({ theme }) => theme.greys.grey};
+                border-radius: 20px;
             }
 
             &:focus {
@@ -89,55 +84,54 @@ const Container = styled.div`
         }
 
         .react-datepicker__day--outside-month {
-            color: ${props => props.theme.greys['dark-grey']};
+            color: ${({ theme }) => theme.greys['dark-grey']};
 
             &.react-datepicker__day--selected {
-                color: ${props => props.theme.greys.white};
+                color: ${({ theme }) => theme.greys.white};
             }
         }
 
         .react-datepicker__day--disabled {
-            color: ${props => props.theme.greys['mid-grey']};
+            color: ${({ theme }) => theme.greys['mid-grey']};
 
             &:hover {
-                background-color: ${props => props.theme.greys.white};
+                background-color: ${({ theme }) => theme.greys.white};
             }
         }
 
         .react-datepicker__day--keyboard-selected {
             background-color: ${({ theme }) => theme.greys.white};
-            border: 1px solid ${props => props.theme.main['primary-1.1']};
-            border-radius: 24px;
+            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+            border-radius: 20px;
             box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
             box-sizing: border-box;
-            color: ${props => props.theme.greys.black};
+            color: ${({ theme }) => theme.greys.black};
 
             &.react-datepicker__day--today {
-                color: ${props => props.theme.main['primary-1.1']} !important;
+                color: ${({ theme }) => theme.main['primary-1.1']} !important;
             }
         }
 
         .react-datepicker__day--today {
-            color: ${props => props.theme.main['primary-1.1']};
-            font-weight: 400;
+            color: ${({ theme }) => theme.main['primary-1.1']};
+            font-weight: var(--font-normal);
 
             &.react-datepicker__day--keyboard-selected {
-                color: ${props => props.theme.greys.black};
+                color: ${({ theme }) => theme.greys.black};
             }
 
             &.react-datepicker__day--selected {
-                color: ${props => props.theme.greys.white};
+                color: ${({ theme }) => theme.greys.white};
             }
         }
 
         .react-datepicker__day--selected {
-            background-color: ${props => props.theme.main['primary-1.1']};
-            border-radius: 24px;
+            background-color: ${({ theme }) => theme.main['primary-1.1']};
+            border-radius: 20px;
         }
     }
 
     .react-datepicker__day-name {
-        font-family: 'Open Sans', sans-serif;
         font-size: 0.875rem;
         font-weight: var(--font-bold);
         text-transform: uppercase;
@@ -166,7 +160,7 @@ const Container = styled.div`
     }
 
     .react-datepicker {
-        border: 1px solid ${props => props.theme.greys.grey};
+        border: 1px solid ${({ theme }) => theme.greys.grey};
         box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
         font-family: 'Open Sans', sans-serif;
         padding: var(--spacing-3x) var(--spacing-2x);
@@ -175,21 +169,21 @@ const Container = styled.div`
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePicker {
-        background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-        border: 1px solid ${props => props.disabled ? props.theme.greys.grey : props.valid ? props.theme.greys['dark-grey'] : props.theme.notifications['error-2.1']};
+        background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
+        border: 1px solid ${({ disabled, theme, valid }) => getInputBorderColor(theme, disabled, valid)};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         font-family: inherit;
-        font-size: ${props => props.withPortal ? '1rem' : '0.875rem'};
-        height: ${props => props.withPortal ? '40px' : '32px'};
+        font-size: ${({ withPortal }) => withPortal ? '1rem' : '0.875rem'};
+        height: ${({ withPortal }) => withPortal ? '40px' : '32px'};
         padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
         width: ${({ isMobile }) => isMobile ? 113 : 109}px;
 
         &::placeholder {
-            ${props => props.disabled ? `color: ${props.theme.greys['mid-grey']};` : ''}
+            ${({ disabled, theme }) => disabled ? `color: ${theme.greys['mid-grey']};` : ''}
         }
 
         &:focus {
-            border: 1px solid ${props => props.valid ? props.theme.main['primary-1.1'] : props.theme.notifications['error-2.1']};
+            border: 1px solid ${({ theme, valid }) => valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
             outline: none;
         }
     }
@@ -202,19 +196,20 @@ const SelectWrapper = styled.div`
 
 const SideIcon = styled.button<SideIconProps>`
     align-items: center;
-    background-color: ${props => props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-    border: 1px solid ${props => props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
+    background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
+    border: 1px solid ${({ disabled, theme }) => disabled ? theme.greys.grey : theme.greys['dark-grey']};
     border-left: none;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    color: ${props => props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey']};
-    cursor: ${props => props.disabled ? 'default' : 'pointer'};
+    box-sizing: border-box;
+    color: ${({ disabled, theme }) => disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey']};
+    cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
     display: flex;
-    height: ${props => props.isMobile ? '40px' : '32px'};
+    height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
     justify-content: center;
-    width: ${props => props.isMobile ? '40px' : '32px'};
+    width: ${({ isMobile }) => isMobile ? '40px' : '32px'};
 
     &:hover {
-        background-color: ${props => props.disabled ? 'none' : props.theme.greys.grey};
+        background-color: ${({ disabled, theme }) => disabled ? 'none' : theme.greys.grey};
     }
 
     &:focus {
@@ -401,4 +396,14 @@ export function Datepicker({
             </Container>
         </FieldContainer>
     );
+}
+
+function getInputBorderColor(theme: Theme, disabled?: boolean,  valid?: boolean): string {
+    if (disabled) {
+        return theme.greys.grey;
+    } else if (valid) {
+        return theme.greys['dark-grey'];
+    } else {
+        return theme.notifications['error-2.1'];
+    }
 }
