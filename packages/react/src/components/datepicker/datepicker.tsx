@@ -1,6 +1,6 @@
 import { getMonth, getYear } from 'date-fns';
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { ChangeEvent, FocusEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
@@ -172,6 +172,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
         border: 1px solid ${({ disabled, theme, valid }) => getInputBorderColor(theme, disabled, valid)};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
+        box-sizing: border-box;
         font-family: inherit;
         font-size: ${({ withPortal }) => withPortal ? '1rem' : '0.875rem'};
         height: ${({ withPortal }) => withPortal ? '40px' : '32px'};
@@ -272,6 +273,10 @@ interface DatepickerProps {
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
+registerLocale('en-CA', enCA);
+registerLocale('en-US', enUS);
+registerLocale('fr-CA', frCA);
+
 export function Datepicker({
     dateFormat,
     disabled,
@@ -298,12 +303,6 @@ export function Datepicker({
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
     const dateInput = useRef<DatePicker>(null);
-
-    useEffect(() => {
-        registerLocale('en-CA', enCA);
-        registerLocale('en-US', enUS);
-        registerLocale('fr-CA', frCA);
-    }, []);
 
     const handleClick = () => {
         if (dateInput.current !== null) {
@@ -347,11 +346,12 @@ export function Datepicker({
                         nextMonthButtonDisabled,
                     }) => (
                         <div className="customHeader">
-                            <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                            <button data-testid="month-back" onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
                                 <Icon name="chevronLeft" size={isMobile ? '26' : '20'} />
                             </button>
                             <SelectWrapper>
                                 <Select
+                                    data-testid="month-select"
                                     options={monthsOptions}
                                     onChange={options => {
                                         changeMonth(months.indexOf(options.label));
@@ -361,6 +361,7 @@ export function Datepicker({
                             </SelectWrapper>
                             <SelectWrapper>
                                 <Select
+                                    data-testid="year-select"
                                     options={yearsOptions}
                                     onChange={options => {
                                         changeYear(parseInt(options.value, 10));
@@ -368,7 +369,11 @@ export function Datepicker({
                                     value={getYear(date).toString()}
                                 />
                             </SelectWrapper>
-                            <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                            <button
+                                data-testid="month-forward"
+                                onClick={increaseMonth}
+                                disabled={nextMonthButtonDisabled}
+                            >
                                 <Icon name="chevronRight" size={isMobile ? '26' : '20'} />
                             </button>
                         </div>
