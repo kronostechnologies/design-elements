@@ -1329,7 +1329,7 @@ exports[`Select mobile select has a different style 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 40px;
-  margin-top: var(--spacing-half);
+  margin-top: 0;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
