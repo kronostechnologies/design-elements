@@ -32,28 +32,6 @@ const Container = styled.div`
         }
     }
 
-    .customHeader {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: var(--spacing-2x);
-
-        > button {
-            background-color: ${({ theme }) => theme.greys.white};
-            border: none;
-            display: flex;
-            padding: 0;
-
-            &:focus {
-                outline: none;
-            }
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-    }
-
     .react-datepicker__header {
         background-color: ${({ theme }) => theme.greys.white};
         border-bottom: none;
@@ -138,6 +116,8 @@ const Container = styled.div`
     }
 
     .react-datepicker__portal {
+        background-color: rgba(0, 0, 0, 0.5);
+
         .customHeader {
             padding: 0 var(--spacing-1x) var(--spacing-3x);
         }
@@ -174,8 +154,8 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         box-sizing: border-box;
         font-family: inherit;
-        font-size: ${({ withPortal }) => withPortal ? '1rem' : '0.875rem'};
-        height: ${({ withPortal }) => withPortal ? '40px' : '32px'};
+        font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
+        height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
         padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
         width: ${({ isMobile }) => isMobile ? 113 : 109}px;
 
@@ -190,9 +170,31 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     }
 `;
 
-const SelectWrapper = styled.div`
-    height: 32px;
-    width: 80px;
+const CalendarHeader = styled.div<{ isMobile: boolean }>`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: ${({ isMobile }) => isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-2x)' };
+
+    > button {
+        background-color: ${({ theme }) => theme.greys.white};
+        border: none;
+        display: flex;
+        padding: 0;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+`;
+
+const SelectWrapper = styled.div<{ isMobile: boolean }>`
+    height: ${({ isMobile }) => isMobile ? 40 : 32}px;
+    width: ${({ isMobile }) => isMobile ? 88 : 80}px;
 `;
 
 const SideIcon = styled.button<SideIconProps>`
@@ -306,7 +308,12 @@ export function Datepicker({
 
     const handleClick = () => {
         if (dateInput.current !== null) {
-            dateInput.current.props.open ? dateInput.current.setBlur() : dateInput.current.setFocus();
+            if (dateInput.current.isCalendarOpen()) {
+                dateInput.current.setOpen(false);
+            } else {
+                dateInput.current.setOpen(true);
+                setTimeout(() => dateInput.current?.setFocus() , 10);
+            }
         }
     };
 
@@ -345,11 +352,16 @@ export function Datepicker({
                         prevMonthButtonDisabled,
                         nextMonthButtonDisabled,
                     }) => (
-                        <div className="customHeader">
-                            <button data-testid="month-back" onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                                <Icon name="chevronLeft" size={isMobile ? '26' : '20'} />
+                        <CalendarHeader isMobile={isMobile}>
+                            <button
+                                aria-label="Go to previous month"
+                                data-testid="month-back"
+                                onClick={decreaseMonth}
+                                disabled={prevMonthButtonDisabled}
+                            >
+                                <Icon name="chevronLeft" size={isMobile ? '26' : '16'} />
                             </button>
-                            <SelectWrapper>
+                            <SelectWrapper isMobile={isMobile}>
                                 <Select
                                     data-testid="month-select"
                                     options={monthsOptions}
@@ -359,7 +371,7 @@ export function Datepicker({
                                     value={monthsOptions[getMonth(date)].value}
                                 />
                             </SelectWrapper>
-                            <SelectWrapper>
+                            <SelectWrapper isMobile={isMobile}>
                                 <Select
                                     data-testid="year-select"
                                     options={yearsOptions}
@@ -370,13 +382,14 @@ export function Datepicker({
                                 />
                             </SelectWrapper>
                             <button
+                                aria-label="Go to next month"
                                 data-testid="month-forward"
                                 onClick={increaseMonth}
                                 disabled={nextMonthButtonDisabled}
                             >
-                                <Icon name="chevronRight" size={isMobile ? '26' : '20'} />
+                                <Icon name="chevronRight" size={isMobile ? '24' : '16'} />
                             </button>
-                        </div>
+                        </CalendarHeader>
                     )}
                     className="datePicker"
                     dateFormat={dateFormat || getLocaleDateFormat(locale)}
