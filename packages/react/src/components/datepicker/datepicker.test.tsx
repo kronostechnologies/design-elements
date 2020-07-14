@@ -1,6 +1,7 @@
 import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { mount } from 'enzyme';
 import React from 'react';
+
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Datepicker } from './datepicker';
@@ -73,14 +74,26 @@ describe('Datepicker', () => {
         expect(getByTestId(wrapper, 'year-select').props().value).toBe('2001');
     });
 
-    test('matches snapshot', () => {
-        const tree = renderWithProviders(<Datepicker label="date"/>);
+    test('matches snapshot (desktop)', () => {
+        const tree = renderWithProviders(<Datepicker label="date"/>, 'desktop');
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('matches snapshot (open)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" open/>);
+    test('matches snapshot (mobile)', () => {
+        const tree = renderWithProviders(<Datepicker label="date"/>, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches snapshot (open, desktop)', () => {
+        const tree = renderWithProviders(<Datepicker label="date" open/>, 'desktop');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches snapshot (open, mobile)', () => {
+        const tree = renderWithProviders(<Datepicker label="date" open/>, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
