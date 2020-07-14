@@ -1,8 +1,9 @@
 export const Translations = {
     en: {
         datepicker: {
-            label: 'Date',
             validationErrorMessage: 'Invalid date',
+            monthPreviousButtonLabel: 'Go to previous month',
+            monthNextButtonLabel: 'Go to next month',
         },
         'inline-message': {
             Tips: 'Tips',
@@ -36,8 +37,9 @@ export const Translations = {
     },
     fr: {
         datepicker: {
-            label: 'Date',
             validationErrorMessage: 'Date non valide',
+            monthPreviousButtonLabel: 'Aller au mois précédent',
+            monthNextButtonLabel: 'Aller au mois suivant',
         },
         'inline-message': {
             Tips: 'Astuce',
