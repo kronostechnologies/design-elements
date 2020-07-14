@@ -44,14 +44,13 @@
     "url": "https://github.com/kronostechnologies/design-elements/issues"
   },
   "dependencies": {
-    "css-loader": "^3.2.0",
-    "date-fns": "^2.7.0",
+    "css-loader": "^3.6.0",
+    "date-fns": "^2.14.0",
     "feather-icons": "^4.21.0",
-    "moment": "^2.24.0",
     "react-datepicker": "^3.0.0",
     "react-popper-tooltip": "^2.10.1",
     "react-swipeable": "~5.5.0",
-    "style-loader": "^1.0.0",
+    "style-loader": "^1.2.1",
     "uuid": "^3.3.3"
   },
   "peerDependencies": {
@@ -81,7 +80,7 @@
     "@types/react-test-renderer": "^16.9.0",
     "@types/styled-components": "~4.4.2",
     "@types/uuid": "^3.4.5",
-    "date-fns": "^2.7.0",
+    "date-fns": "^2.14.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -91,9 +90,7 @@
     "jest": "^24.9.0",
     "jest-junit": "^9.0.0",
     "jest-styled-components": "^6.3.3",
-    "moment": "^2.24.0",
     "react": "~16.9.0",
-    "react-datepicker": "^3.0.0",
     "react-docgen-typescript-loader": "^3.2.1",
     "react-dom": "~16.9.0",
     "react-i18next": "^11.4.0",
