@@ -490,7 +490,7 @@ export function Select({
                         onClick={disabled ? undefined : handleArrowClick}
                         disabled={disabled}
                     >
-                        <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '32' : '24'}/>
+                        <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '24' : '16'}/>
                     </Arrow>
                 </InputWrapper>
                 <StyledList
