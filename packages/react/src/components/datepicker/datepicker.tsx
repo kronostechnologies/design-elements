@@ -22,7 +22,7 @@ import {
     getYearsOptions,
 } from './utils/datepicker-utils';
 
-const Container = styled.div`
+const Container = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
 
@@ -35,7 +35,7 @@ const Container = styled.div`
     .react-datepicker__header {
         background-color: ${({ theme }) => theme.greys.white};
         border-bottom: none;
-        margin-bottom: 2px;
+        margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)'};
         padding: 0;
     }
 
@@ -112,7 +112,10 @@ const Container = styled.div`
     .react-datepicker__day-name {
         font-size: 0.875rem;
         font-weight: var(--font-bold);
+        line-height: 1.25rem;
+        margin: 0;
         text-transform: uppercase;
+        width: 32px;
     }
 
     .react-datepicker__portal {
@@ -124,8 +127,8 @@ const Container = styled.div`
 
         .react-datepicker__day-name {
             font-size: 1rem;
-            line-height: 2.25rem;
-            width: 35px;
+            line-height: 1.5rem;
+            width: 40px;
         }
 
         .react-datepicker__day {/* stylelint-disable-line */
@@ -165,6 +168,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
 
         &:focus {
             border: 1px solid ${({ theme, valid }) => valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
+            box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
             outline: none;
         }
     }
@@ -174,7 +178,7 @@ const CalendarHeader = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: ${({ isMobile }) => isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-2x)' };
+    padding: ${({ isMobile }) => isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-3x)' };
 
     > button {
         background-color: ${({ theme }) => theme.greys.white};
@@ -190,6 +194,10 @@ const CalendarHeader = styled.div<{ isMobile: boolean }>`
             cursor: pointer;
         }
     }
+`;
+
+const FlexContainer = styled.div`
+    display: flex;
 `;
 
 const SelectWrapper = styled.div<{ isMobile: boolean }>`
@@ -339,7 +347,7 @@ export function Datepicker({
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
-            <Container>
+            <Container isMobile={isMobile}>
                 <StyledDatePicker
                     isMobile={isMobile}
                     ref={dateInput}
@@ -361,26 +369,28 @@ export function Datepicker({
                             >
                                 <Icon name="chevronLeft" size={isMobile ? '26' : '16'} />
                             </button>
-                            <SelectWrapper isMobile={isMobile}>
-                                <Select
-                                    data-testid="month-select"
-                                    options={monthsOptions}
-                                    onChange={options => {
-                                        changeMonth(months.indexOf(options.label));
-                                    }}
-                                    value={monthsOptions[getMonth(date)].value}
-                                />
-                            </SelectWrapper>
-                            <SelectWrapper isMobile={isMobile}>
-                                <Select
-                                    data-testid="year-select"
-                                    options={yearsOptions}
-                                    onChange={options => {
-                                        changeYear(parseInt(options.value, 10));
-                                    }}
-                                    value={getYear(date).toString()}
-                                />
-                            </SelectWrapper>
+                            <FlexContainer>
+                                <SelectWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
+                                    <Select
+                                        data-testid="month-select"
+                                        options={monthsOptions}
+                                        onChange={options => {
+                                            changeMonth(months.indexOf(options.label));
+                                        }}
+                                        value={monthsOptions[getMonth(date)].value}
+                                    />
+                                </SelectWrapper>
+                                <SelectWrapper isMobile={isMobile}>
+                                    <Select
+                                        data-testid="year-select"
+                                        options={yearsOptions}
+                                        onChange={options => {
+                                            changeYear(parseInt(options.value, 10));
+                                        }}
+                                        value={getYear(date).toString()}
+                                    />
+                                </SelectWrapper>
+                            </FlexContainer>
                             <button
                                 aria-label={t('monthNextButtonLabel')}
                                 data-testid="month-next"
