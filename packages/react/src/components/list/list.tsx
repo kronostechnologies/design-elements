@@ -126,11 +126,11 @@ const getItemSidePadding = ({ checkIndicator, selected, isMobile }: ItemProps): 
         if (selected) {
             return '0';
         } else if (isMobile) {
-            return '40px';
+            return 'var(--spacing-5x)';
         }
-        return '34px';
+        return 'var(--spacing-4x)';
     }
-    return '16px';
+    return 'var(--spacing-2x)';
 };
 
 const Item = styled.li<ItemProps>`
@@ -393,7 +393,7 @@ export function List({
                     >
                         <>
                             {shouldDisplayCheckIndicator(option) &&
-                                <CheckIndicator name="check" size={isMobile ? '24' : '18'}/>}
+                                <CheckIndicator name="check" size={isMobile ? '24' : '16'}/>}
                             {option.label || option.value}
                         </>
                     </Item>

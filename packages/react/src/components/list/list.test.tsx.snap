@@ -43,7 +43,7 @@ exports[`List Is not visible 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 8px 0 16px;
+  padding: 0 8px 0 var(--spacing-2x);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -159,7 +159,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 8px 0 34px;
+  padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -238,8 +238,8 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
         className="c4"
         color="currentColor"
         focusable={false}
-        height="18"
-        width="18"
+        height="16"
+        width="16"
       />
       Option B
     </li>
@@ -315,7 +315,7 @@ exports[`List Matches the snapshot 1`] = `
   height: 32px;
   line-height: 32px;
   overflow: hidden;
-  padding: 0 8px 0 34px;
+  padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -394,8 +394,8 @@ exports[`List Matches the snapshot 1`] = `
         className="c4"
         color="currentColor"
         focusable={false}
-        height="18"
-        width="18"
+        height="16"
+        width="16"
       />
       Option B
     </li>
