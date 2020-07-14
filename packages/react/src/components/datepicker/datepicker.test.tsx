@@ -38,39 +38,39 @@ describe('Datepicker', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('month select value should change when month-back button is clicked', () => {
+    test('month select value should change when month-previous button is clicked', () => {
         const wrapper = mount(
             ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
         );
 
-        getByTestId(wrapper, 'month-back').simulate('click');
+        getByTestId(wrapper, 'month-previous').simulate('click');
         expect(getByTestId(wrapper, 'month-select').props().value).toBe('april');
     });
 
-    test('month select value should change when month-forward button is clicked', () => {
+    test('month select value should change when month-next button is clicked', () => {
         const wrapper = mount(
             ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
         );
 
-        getByTestId(wrapper, 'month-forward').simulate('click');
+        getByTestId(wrapper, 'month-next').simulate('click');
         expect(getByTestId(wrapper, 'month-select').props().value).toBe('june');
     });
 
-    test('year select value should change when month-back button is clicked on first month of the year', () => {
+    test('year select value should change when month-previous button is clicked on first month of the year', () => {
         const wrapper = mount(
             ThemeWrapped(<Datepicker startDate={new Date('2000-01-12')} label="date" open/>),
         );
 
-        getByTestId(wrapper, 'month-back').simulate('click');
+        getByTestId(wrapper, 'month-previous').simulate('click');
         expect(getByTestId(wrapper, 'year-select').props().value).toBe('1999');
     });
 
-    test('year select value should change when month-forward button is clicked on last month of the year', () => {
+    test('year select value should change when month-next button is clicked on last month of the year', () => {
         const wrapper = mount(
             ThemeWrapped(<Datepicker startDate={new Date('2000-12-12')} label="date" open/>),
         );
 
-        getByTestId(wrapper, 'month-forward').simulate('click');
+        getByTestId(wrapper, 'month-next').simulate('click');
         expect(getByTestId(wrapper, 'year-select').props().value).toBe('2001');
     });
 

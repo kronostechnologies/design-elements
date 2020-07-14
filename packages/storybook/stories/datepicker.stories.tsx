@@ -18,51 +18,51 @@ export default {
 };
 
 export const normal = () => (
-    <Datepicker/>
+    <Datepicker label="Date"/>
 );
 
 export const disabled = () => (
-    <Datepicker disabled/>
+    <Datepicker label="Date" disabled/>
 );
 export const customDateFormat = () => (
-    <Datepicker dateFormat="dd/MM"/>
+    <Datepicker label="Date" dateFormat="dd/MM"/>
 );
 export const customPlaceholder = () => (
-    <Datepicker placeholder="Hello World"/>
+    <Datepicker label="Date" placeholder="Hello World"/>
 );
 export const invalid = () => (
-    <Datepicker valid={false}/>
+    <Datepicker label="Date" valid={false}/>
 );
 export const maxDate = () => (
-    <Datepicker maxDate={upcomingDate}/>
+    <Datepicker label="Date" maxDate={upcomingDate}/>
 );
 export const minDate = () => (
-    <Datepicker minDate={currentDate}/>
+    <Datepicker label="Date" minDate={currentDate}/>
 );
 export const readOnly = () => (
-    <Datepicker value="2002-02-02" readOnly/>
+    <Datepicker label="Date" value="2002-02-02" readOnly/>
 );
 export const required = () => (
     <form onSubmit={(event: FormEvent) => event.preventDefault()}>
-        <Datepicker required/>
+        <Datepicker label="Date" required/>
         <button type="submit">Submit</button>
     </form>
 );
 export const startOpen = () => (
-    <Datepicker startOpen/>
+    <Datepicker label="Date" startOpen/>
 );
 export const startDate = () => (
-    <Datepicker startDate={new Date('1995-05-05')}/>
+    <Datepicker label="Date" startDate={new Date('1995-05-05')}/>
 );
 export const customLocale = () => (
-    <Datepicker locale="fr-CA"/>
+    <Datepicker label="Date" locale="fr-CA"/>
 );
 export const withOnChangeCallback = () => (
-    <Datepicker onChange={(date) => console.log(`[onChange] Date: ${date}`)}/>
+    <Datepicker label="Date" onChange={(date) => console.log(`[onChange] Date: ${date}`)}/>
 );
 export const withOnBlurCallback = () => (
-    <Datepicker onBlur={(event) => console.log(`[onBlur] Value: ${event.target.value}`)}/>
+    <Datepicker label="Date" onBlur={(event) => console.log(`[onBlur] Value: ${event.target.value}`)}/>
 );
 export const withOnFocusCallback = () => (
-    <Datepicker onFocus={(event) => console.log(`[onFocus] Value: ${event.target.value}`)}/>
+    <Datepicker label="Date" onFocus={(event) => console.log(`[onFocus] Value: ${event.target.value}`)}/>
 );

@@ -335,7 +335,7 @@ export function Datepicker({
     return (
         <FieldContainer
             fieldId={id}
-            label={label || t('label')}
+            label={label}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
@@ -354,8 +354,8 @@ export function Datepicker({
                     }) => (
                         <CalendarHeader isMobile={isMobile}>
                             <button
-                                aria-label="Go to previous month"
-                                data-testid="month-back"
+                                aria-label={t('monthPreviousButtonLabel')}
+                                data-testid="month-previous"
                                 onClick={decreaseMonth}
                                 disabled={prevMonthButtonDisabled}
                             >
@@ -382,8 +382,8 @@ export function Datepicker({
                                 />
                             </SelectWrapper>
                             <button
-                                aria-label="Go to next month"
-                                data-testid="month-forward"
+                                aria-label={t('monthNextButtonLabel')}
+                                data-testid="month-next"
                                 onClick={increaseMonth}
                                 disabled={nextMonthButtonDisabled}
                             >

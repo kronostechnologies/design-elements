@@ -1545,7 +1545,7 @@ input + .c1 {
                 >
                   <button
                     aria-label="Go to previous month"
-                    data-testid="month-back"
+                    data-testid="month-previous"
                   >
                     <svg
                       color="currentColor"
@@ -2675,7 +2675,7 @@ input + .c1 {
                   </div>
                   <button
                     aria-label="Go to next month"
-                    data-testid="month-forward"
+                    data-testid="month-next"
                   >
                     <svg
                       color="currentColor"
