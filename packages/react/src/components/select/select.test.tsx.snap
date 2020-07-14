@@ -210,8 +210,8 @@ input + .c2 {
       <svg
         color="currentColor"
         focusable="false"
-        height="24"
-        width="24"
+        height="16"
+        width="16"
       />
     </button>
   </div>
@@ -567,8 +567,8 @@ input + .c2 {
         <svg
           color="currentColor"
           focusable="false"
-          height="24"
-          width="24"
+          height="16"
+          width="16"
         />
       </button>
     </div>
@@ -1013,8 +1013,8 @@ input + .c2 {
         <svg
           color="currentColor"
           focusable="false"
-          height="24"
-          width="24"
+          height="16"
+          width="16"
         />
       </button>
     </div>
@@ -1425,8 +1425,8 @@ exports[`Select mobile select has a different style 1`] = `
       <svg
         color="currentColor"
         focusable="false"
-        height="32"
-        width="32"
+        height="24"
+        width="24"
       />
     </button>
   </div>
