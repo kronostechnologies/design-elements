@@ -1,7 +1,6 @@
+import { Datepicker } from '@equisoft/design-elements-react';
 import React, { FormEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-
-import { Datepicker } from '@equisoft/design-elements-react';
 
 const Container = styled.div`
     height: 400px;

@@ -1,6 +1,6 @@
 import { getMonth, getYear } from 'date-fns';
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { ChangeEvent, FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
+import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
@@ -23,90 +23,52 @@ import {
 } from './utils/datepicker-utils';
 
 const Container = styled.div<{ isMobile: boolean }>`
-    align-items: center;
     display: flex;
 
-    .popper {
-        &[data-placement^="bottom"] {
-            margin-top: 0;
-        }
+    .popper[data-placement^="bottom"] {
+        margin-top: 0;
     }
 
-    .react-datepicker__header {
-        background-color: ${({ theme }) => theme.greys.white};
-        border-bottom: none;
-        margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)'};
-        padding: 0;
+    .react-datepicker {
+        border: 1px solid ${({ theme }) => theme.greys.grey};
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        font-family: 'Open Sans', sans-serif;
+        padding: var(--spacing-3x) var(--spacing-2x);
     }
 
-    .react-datepicker__month {
-        font-size: 0.875rem;
+    .react-datepicker__day {
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        height: 32px;
+        line-height: 2rem;
         margin: 0;
+        width: 32px;
 
-        .react-datepicker__day {
-            border: 1px solid transparent;
-            box-sizing: border-box;
-            height: 32px;
-            line-height: 2rem;
-            margin: 0;
-            width: 32px;
-
-            &:hover {
-                background-color: ${({ theme }) => theme.greys.grey};
-                border-radius: 20px;
-            }
-
-            &:focus {
-                outline: none;
-            }
+        &:hover {
+            background-color: ${({ theme }) => theme.greys.grey};
+            border-radius: 20px;
         }
 
-        .react-datepicker__day--outside-month {
-            color: ${({ theme }) => theme.greys['dark-grey']};
-
-            &.react-datepicker__day--selected {
-                color: ${({ theme }) => theme.greys.white};
-            }
+        &:focus {
+            outline: none;
         }
+    }
 
-        .react-datepicker__day--disabled {
-            color: ${({ theme }) => theme.greys['mid-grey']};
+    .react-datepicker__day--disabled {
+        color: ${({ theme }) => theme.greys['mid-grey']};
 
-            &:hover {
-                background-color: ${({ theme }) => theme.greys.white};
-            }
-        }
-
-        .react-datepicker__day--keyboard-selected {
+        &:hover {
             background-color: ${({ theme }) => theme.greys.white};
-            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
-            border-radius: 20px;
-            box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
-            box-sizing: border-box;
-            color: ${({ theme }) => theme.greys.black};
-
-            &.react-datepicker__day--today {
-                color: ${({ theme }) => theme.main['primary-1.1']} !important;
-            }
         }
+    }
 
-        .react-datepicker__day--today {
-            color: ${({ theme }) => theme.main['primary-1.1']};
-            font-weight: var(--font-normal);
-
-            &.react-datepicker__day--keyboard-selected {
-                color: ${({ theme }) => theme.greys.black};
-            }
-
-            &.react-datepicker__day--selected {
-                color: ${({ theme }) => theme.greys.white};
-            }
-        }
-
-        .react-datepicker__day--selected {
-            background-color: ${({ theme }) => theme.main['primary-1.1']};
-            border-radius: 20px;
-        }
+    .react-datepicker__day--keyboard-selected {
+        background-color: ${({ theme }) => theme.greys.white};
+        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        border-radius: 20px;
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        box-sizing: border-box;
+        color: ${({ theme }) => theme.greys.black};
     }
 
     .react-datepicker__day-name {
@@ -118,12 +80,42 @@ const Container = styled.div<{ isMobile: boolean }>`
         width: 32px;
     }
 
+    .react-datepicker__day--outside-month {
+        color: ${({ theme }) => theme.greys['dark-grey']};
+
+        &.react-datepicker__day--selected {
+            color: ${({ theme }) => theme.greys.white};
+        }
+    }
+
+    .react-datepicker__day--selected {
+        background-color: ${({ theme }) => theme.main['primary-1.1']};
+        border-radius: 20px;
+    }
+
+    .react-datepicker__day--today {
+        color: ${({ theme }) => theme.main['primary-1.1']};
+        font-weight: var(--font-normal);
+
+        &.react-datepicker__day--selected {
+            color: ${({ theme }) => theme.greys.white};
+        }
+    }
+
+    .react-datepicker__header {
+        background-color: ${({ theme }) => theme.greys.white};
+        border-bottom: none;
+        margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)'};
+        padding: 0;
+    }
+
+    .react-datepicker__month {
+        font-size: ${({ isMobile }) => isMobile ? 1 : 0.875}rem;
+        margin: 0;
+    }
+
     .react-datepicker__portal {
         background-color: rgba(0, 0, 0, 0.5);
-
-        .customHeader {
-            padding: 0 var(--spacing-1x) var(--spacing-3x);
-        }
 
         .react-datepicker__day-name {
             font-size: 1rem;
@@ -131,27 +123,16 @@ const Container = styled.div<{ isMobile: boolean }>`
             width: 40px;
         }
 
-        .react-datepicker__day {/* stylelint-disable-line */
+        .react-datepicker__day {
             height: 40px;
             line-height: 2.5rem;
             width: 40px;
         }
-
-        .react-datepicker__month {
-            font-size: 1rem;
-        }
-    }
-
-    .react-datepicker {
-        border: 1px solid ${({ theme }) => theme.greys.grey};
-        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-        font-family: 'Open Sans', sans-serif;
-        padding: var(--spacing-3x) var(--spacing-2x);
     }
 `;
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
-    &.datePicker {
+    &.datePickerInput {
         background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
         border: 1px solid ${({ disabled, theme, valid }) => getInputBorderColor(theme, disabled, valid)};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -205,7 +186,7 @@ const SelectWrapper = styled.div<{ isMobile: boolean }>`
     width: ${({ isMobile }) => isMobile ? 88 : 80}px;
 `;
 
-const SideIcon = styled.button<SideIconProps>`
+const CalendarButton = styled.button<CalendarButtonProps>`
     align-items: center;
     background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
     border: 1px solid ${({ disabled, theme }) => disabled ? theme.greys.grey : theme.greys['dark-grey']};
@@ -236,7 +217,7 @@ interface StyledDatePickerProps extends ReactDatePickerProps {
     valid?: boolean;
 }
 
-interface SideIconProps {
+interface CalendarButtonProps {
     disabled?: boolean;
     theme: Theme;
     isMobile?: boolean;
@@ -279,7 +260,7 @@ interface DatepickerProps {
     value?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
-    onChange?(date: Date, event: ChangeEvent<HTMLInputElement>): void;
+    onChange?(date: Date): void;
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
@@ -312,22 +293,25 @@ export function Datepicker({
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
-    const dateInput = useRef<DatePicker>(null);
+    const dateInputRef = useRef<DatePicker>(null);
 
     const handleClick = () => {
-        if (dateInput.current !== null) {
-            if (dateInput.current.isCalendarOpen()) {
-                dateInput.current.setOpen(false);
+        if (dateInputRef.current !== null) {
+            if (dateInputRef.current.isCalendarOpen()) {
+                dateInputRef.current.setOpen(false);
             } else {
-                dateInput.current.setOpen(true);
-                setTimeout(() => dateInput.current?.setFocus() , 10);
+                dateInputRef.current.setOpen(true);
+                setTimeout(() => dateInputRef.current?.setFocus() , 10);
             }
         }
     };
 
-    const handleChange = (date: Date, event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (date: Date) => {
         setSelectedDate(date);
-        if (onChange) onChange(date, event);
+
+        if (onChange) {
+            onChange(date);
+        }
     };
 
     const getPlaceholder = () => {
@@ -350,7 +334,7 @@ export function Datepicker({
             <Container isMobile={isMobile}>
                 <StyledDatePicker
                     isMobile={isMobile}
-                    ref={dateInput}
+                    ref={dateInputRef}
                     renderCustomHeader={({
                         date,
                         changeYear,
@@ -401,7 +385,7 @@ export function Datepicker({
                             </button>
                         </CalendarHeader>
                     )}
-                    className="datePicker"
+                    className="datePickerInput"
                     dateFormat={dateFormat || getLocaleDateFormat(locale)}
                     disabled={disabled}
                     locale={locale}
@@ -418,9 +402,9 @@ export function Datepicker({
                     withPortal={isMobile}
                     {...props}
                 />
-                <SideIcon disabled={disabled} isMobile={isMobile} onMouseDown={handleClick} className="sideIcon">
+                <CalendarButton disabled={disabled} isMobile={isMobile} onMouseDown={handleClick}>
                     <Icon name="calendar" size={isMobile ? '24' : '16'} />
-                </SideIcon>
+                </CalendarButton>
             </Container>
         </FieldContainer>
     );
