@@ -61,7 +61,10 @@ const StyledInput = styled.input<InputProps>`
     max-height: 100%;
     min-width: 0;
     outline: none;
+    overflow: hidden;
     padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
 
     &:hover {

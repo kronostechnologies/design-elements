@@ -36,10 +36,6 @@ input + .c1 {
 }
 
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48,6 +44,79 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+}
+
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c2 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c2 .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c2 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border: 1px solid #0080A5;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c2 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
 }
 
 .c2 .react-datepicker__header {
@@ -62,86 +131,8 @@ input + .c1 {
   margin: 0;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day {
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  height: 32px;
-  line-height: 2rem;
-  margin: 0;
-  width: 32px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:hover {
-  background-color: #D9DDE2;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:focus {
-  outline: none;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month {
-  color: #57666E;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled {
-  color: #9CA7B4;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border: 1px solid #0080A5;
-  border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
-  color: #0080A5 !important;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today {
-  color: #0080A5;
-  font-weight: var(--font-normal);
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--selected {
-  background-color: #0080A5;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__day-name {
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  line-height: 1.25rem;
-  margin: 0;
-  text-transform: uppercase;
-  width: 32px;
-}
-
 .c2 .react-datepicker__portal {
   background-color: rgba(0,0,0,0.5);
-}
-
-.c2 .react-datepicker__portal .customHeader {
-  padding: 0 var(--spacing-1x) var(--spacing-3x);
 }
 
 .c2 .react-datepicker__portal .react-datepicker__day-name {
@@ -156,18 +147,7 @@ input + .c1 {
   width: 40px;
 }
 
-.c2 .react-datepicker__portal .react-datepicker__month {
-  font-size: 1rem;
-}
-
-.c2 .react-datepicker {
-  border: 1px solid #D9DDE2;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  font-family: 'Open Sans',sans-serif;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3.datePicker {
+.c3.datePickerInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -179,25 +159,25 @@ input + .c1 {
   width: 109px;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
@@ -253,7 +233,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePicker"
+          class="c3 datePickerInput"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -261,7 +241,7 @@ input + .c1 {
       </div>
     </div>
     <button
-      class="c4 sideIcon"
+      class="c4"
     >
       <svg
         color="currentColor"
@@ -310,10 +290,6 @@ input + .c1 {
 }
 
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,6 +298,79 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+}
+
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c2 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c2 .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c2 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border: 1px solid #0080A5;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c2 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
 }
 
 .c2 .react-datepicker__header {
@@ -336,86 +385,8 @@ input + .c1 {
   margin: 0;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day {
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  height: 32px;
-  line-height: 2rem;
-  margin: 0;
-  width: 32px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:hover {
-  background-color: #D9DDE2;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:focus {
-  outline: none;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month {
-  color: #57666E;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled {
-  color: #9CA7B4;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border: 1px solid #0080A5;
-  border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
-  color: #0080A5 !important;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today {
-  color: #0080A5;
-  font-weight: var(--font-normal);
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--selected {
-  background-color: #0080A5;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__day-name {
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  line-height: 1.25rem;
-  margin: 0;
-  text-transform: uppercase;
-  width: 32px;
-}
-
 .c2 .react-datepicker__portal {
   background-color: rgba(0,0,0,0.5);
-}
-
-.c2 .react-datepicker__portal .customHeader {
-  padding: 0 var(--spacing-1x) var(--spacing-3x);
 }
 
 .c2 .react-datepicker__portal .react-datepicker__day-name {
@@ -430,18 +401,7 @@ input + .c1 {
   width: 40px;
 }
 
-.c2 .react-datepicker__portal .react-datepicker__month {
-  font-size: 1rem;
-}
-
-.c2 .react-datepicker {
-  border: 1px solid #D9DDE2;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  font-family: 'Open Sans',sans-serif;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3.datePicker {
+.c3.datePickerInput {
   background-color: #F1F2F2;
   border: 1px solid #D9DDE2;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -453,23 +413,23 @@ input + .c1 {
   width: 109px;
 }
 
-.c3.datePicker::-webkit-input-placeholder {
+.c3.datePickerInput::-webkit-input-placeholder {
   color: #9CA7B4;
 }
 
-.c3.datePicker::-moz-placeholder {
+.c3.datePickerInput::-moz-placeholder {
   color: #9CA7B4;
 }
 
-.c3.datePicker:-ms-input-placeholder {
+.c3.datePickerInput:-ms-input-placeholder {
   color: #9CA7B4;
 }
 
-.c3.datePicker::placeholder {
+.c3.datePickerInput::placeholder {
   color: #9CA7B4;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
@@ -525,7 +485,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePicker"
+          class="c3 datePickerInput"
           disabled=""
           placeholder="YYYY-MM-DD"
           type="text"
@@ -534,7 +494,7 @@ input + .c1 {
       </div>
     </div>
     <button
-      class="c4 sideIcon"
+      class="c4"
       disabled=""
     >
       <svg
@@ -596,10 +556,6 @@ input + .c1 {
 }
 
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -608,6 +564,79 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+}
+
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c2 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c2 .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c2 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border: 1px solid #0080A5;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c2 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
 }
 
 .c2 .react-datepicker__header {
@@ -622,86 +651,8 @@ input + .c1 {
   margin: 0;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day {
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  height: 32px;
-  line-height: 2rem;
-  margin: 0;
-  width: 32px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:hover {
-  background-color: #D9DDE2;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:focus {
-  outline: none;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month {
-  color: #57666E;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled {
-  color: #9CA7B4;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border: 1px solid #0080A5;
-  border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
-  color: #0080A5 !important;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today {
-  color: #0080A5;
-  font-weight: var(--font-normal);
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--selected {
-  background-color: #0080A5;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__day-name {
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  line-height: 1.25rem;
-  margin: 0;
-  text-transform: uppercase;
-  width: 32px;
-}
-
 .c2 .react-datepicker__portal {
   background-color: rgba(0,0,0,0.5);
-}
-
-.c2 .react-datepicker__portal .customHeader {
-  padding: 0 var(--spacing-1x) var(--spacing-3x);
 }
 
 .c2 .react-datepicker__portal .react-datepicker__day-name {
@@ -716,18 +667,7 @@ input + .c1 {
   width: 40px;
 }
 
-.c2 .react-datepicker__portal .react-datepicker__month {
-  font-size: 1rem;
-}
-
-.c2 .react-datepicker {
-  border: 1px solid #D9DDE2;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  font-family: 'Open Sans',sans-serif;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3.datePicker {
+.c3.datePickerInput {
   background-color: #FFFFFF;
   border: 1px solid #A40C2E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -739,25 +679,25 @@ input + .c1 {
   width: 109px;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #A40C2E;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #A40C2E;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #A40C2E;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #A40C2E;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
@@ -813,7 +753,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePicker"
+          class="c3 datePickerInput"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -821,7 +761,7 @@ input + .c1 {
       </div>
     </div>
     <button
-      class="c4 sideIcon"
+      class="c4"
     >
       <svg
         color="currentColor"
@@ -878,10 +818,6 @@ input + .c1 {
 }
 
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -892,19 +828,14 @@ input + .c1 {
   margin-top: 0;
 }
 
-.c2 .react-datepicker__header {
-  background-color: #FFFFFF;
-  border-bottom: none;
-  margin-bottom: var(--spacing-1x);
-  padding: 0;
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
 }
 
-.c2 .react-datepicker__month {
-  font-size: 0.875rem;
-  margin: 0;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day {
+.c2 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
   height: 32px;
@@ -913,60 +844,30 @@ input + .c1 {
   width: 32px;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day:hover {
+.c2 .react-datepicker__day:hover {
   background-color: #D9DDE2;
   border-radius: 20px;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day:focus {
+.c2 .react-datepicker__day:focus {
   outline: none;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day--outside-month {
-  color: #57666E;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled {
+.c2 .react-datepicker__day--disabled {
   color: #9CA7B4;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day--disabled:hover {
+.c2 .react-datepicker__day--disabled:hover {
   background-color: #FFFFFF;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected {
+.c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
   border: 1px solid #0080A5;
   border-radius: 20px;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
-  color: #0080A5 !important;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today {
-  color: #0080A5;
-  font-weight: var(--font-normal);
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--selected {
-  background-color: #0080A5;
-  border-radius: 20px;
 }
 
 .c2 .react-datepicker__day-name {
@@ -978,12 +879,42 @@ input + .c1 {
   width: 32px;
 }
 
-.c2 .react-datepicker__portal {
-  background-color: rgba(0,0,0,0.5);
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
 }
 
-.c2 .react-datepicker__portal .customHeader {
-  padding: 0 var(--spacing-1x) var(--spacing-3x);
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-1x);
+  padding: 0;
+}
+
+.c2 .react-datepicker__month {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c2 .react-datepicker__portal {
+  background-color: rgba(0,0,0,0.5);
 }
 
 .c2 .react-datepicker__portal .react-datepicker__day-name {
@@ -998,18 +929,7 @@ input + .c1 {
   width: 40px;
 }
 
-.c2 .react-datepicker__portal .react-datepicker__month {
-  font-size: 1rem;
-}
-
-.c2 .react-datepicker {
-  border: 1px solid #D9DDE2;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  font-family: 'Open Sans',sans-serif;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3.datePicker {
+.c3.datePickerInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -1021,25 +941,25 @@ input + .c1 {
   width: 113px;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
@@ -1093,7 +1013,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePicker"
+          class="c3 datePickerInput"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1101,7 +1021,7 @@ input + .c1 {
       </div>
     </div>
     <button
-      class="c4 sideIcon"
+      class="c4"
     >
       <svg
         color="currentColor"
@@ -1247,7 +1167,10 @@ input + .c1 {
   max-height: 100%;
   min-width: 0;
   outline: none;
+  overflow: hidden;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
 }
 
@@ -1288,10 +1211,6 @@ input + .c1 {
 }
 
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1300,6 +1219,79 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+}
+
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c2 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c2 .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c2 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border: 1px solid #0080A5;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c2 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
 }
 
 .c2 .react-datepicker__header {
@@ -1314,86 +1306,8 @@ input + .c1 {
   margin: 0;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day {
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  height: 32px;
-  line-height: 2rem;
-  margin: 0;
-  width: 32px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:hover {
-  background-color: #D9DDE2;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day:focus {
-  outline: none;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month {
-  color: #57666E;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled {
-  color: #9CA7B4;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled:hover {
-  background-color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected {
-  background-color: #FFFFFF;
-  border: 1px solid #0080A5;
-  border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-  box-sizing: border-box;
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
-  color: #0080A5 !important;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today {
-  color: #0080A5;
-  font-weight: var(--font-normal);
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--selected {
-  background-color: #0080A5;
-  border-radius: 20px;
-}
-
-.c2 .react-datepicker__day-name {
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  line-height: 1.25rem;
-  margin: 0;
-  text-transform: uppercase;
-  width: 32px;
-}
-
 .c2 .react-datepicker__portal {
   background-color: rgba(0,0,0,0.5);
-}
-
-.c2 .react-datepicker__portal .customHeader {
-  padding: 0 var(--spacing-1x) var(--spacing-3x);
 }
 
 .c2 .react-datepicker__portal .react-datepicker__day-name {
@@ -1408,18 +1322,7 @@ input + .c1 {
   width: 40px;
 }
 
-.c2 .react-datepicker__portal .react-datepicker__month {
-  font-size: 1rem;
-}
-
-.c2 .react-datepicker {
-  border: 1px solid #D9DDE2;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  font-family: 'Open Sans',sans-serif;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3.datePicker {
+.c3.datePickerInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -1431,25 +1334,25 @@ input + .c1 {
   width: 109px;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
@@ -1551,7 +1454,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePicker"
+          class="c3 datePickerInput"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -2622,96 +2525,6 @@ input + .c1 {
                             >
                               2010
                             </li>
-                            <li
-                              aria-label="2011"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2011"
-                              role="option"
-                            >
-                              2011
-                            </li>
-                            <li
-                              aria-label="2012"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2012"
-                              role="option"
-                            >
-                              2012
-                            </li>
-                            <li
-                              aria-label="2013"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2013"
-                              role="option"
-                            >
-                              2013
-                            </li>
-                            <li
-                              aria-label="2014"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2014"
-                              role="option"
-                            >
-                              2014
-                            </li>
-                            <li
-                              aria-label="2015"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2015"
-                              role="option"
-                            >
-                              2015
-                            </li>
-                            <li
-                              aria-label="2016"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2016"
-                              role="option"
-                            >
-                              2016
-                            </li>
-                            <li
-                              aria-label="2017"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2017"
-                              role="option"
-                            >
-                              2017
-                            </li>
-                            <li
-                              aria-label="2018"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2018"
-                              role="option"
-                            >
-                              2018
-                            </li>
-                            <li
-                              aria-label="2019"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2019"
-                              role="option"
-                            >
-                              2019
-                            </li>
-                            <li
-                              aria-label="2020"
-                              aria-selected="false"
-                              class="c13"
-                              id="undefined_2020"
-                              role="option"
-                            >
-                              2020
-                            </li>
                           </ul>
                         </div>
                       </div>
@@ -2720,6 +2533,7 @@ input + .c1 {
                   <button
                     aria-label="Go to next month"
                     data-testid="month-next"
+                    disabled=""
                   >
                     <svg
                       color="currentColor"
@@ -2770,7 +2584,7 @@ input + .c1 {
                 </div>
               </div>
               <div
-                aria-label="month  2020-07"
+                aria-label="month  2010-10"
                 class="react-datepicker__month"
               >
                 <div
@@ -2778,8 +2592,26 @@ input + .c1 {
                 >
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Sunday, June 28th, 2020"
-                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    aria-label="Choose Sunday, September 26th, 2010"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, September 27th, 2010"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, September 28th, 2010"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
                     role="button"
                     tabindex="-1"
                   >
@@ -2787,7 +2619,7 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Monday, June 29th, 2020"
+                    aria-label="Choose Wednesday, September 29th, 2010"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
                     role="button"
                     tabindex="-1"
@@ -2796,7 +2628,7 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Tuesday, June 30th, 2020"
+                    aria-label="Choose Thursday, September 30th, 2010"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
                     role="button"
                     tabindex="-1"
@@ -2805,7 +2637,7 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Wednesday, July 1st, 2020"
+                    aria-label="Choose Friday, October 1st, 2010"
                     class="react-datepicker__day react-datepicker__day--001"
                     role="button"
                     tabindex="-1"
@@ -2814,30 +2646,12 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Thursday, July 2nd, 2020"
-                    class="react-datepicker__day react-datepicker__day--002"
+                    aria-label="Choose Saturday, October 2nd, 2010"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     2
-                  </div>
-                  <div
-                    aria-disabled="false"
-                    aria-label="Choose Friday, July 3rd, 2020"
-                    class="react-datepicker__day react-datepicker__day--003"
-                    role="button"
-                    tabindex="-1"
-                  >
-                    3
-                  </div>
-                  <div
-                    aria-disabled="false"
-                    aria-label="Choose Saturday, July 4th, 2020"
-                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--weekend"
-                    role="button"
-                    tabindex="-1"
-                  >
-                    4
                   </div>
                 </div>
                 <div
@@ -2845,8 +2659,26 @@ input + .c1 {
                 >
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Sunday, July 5th, 2020"
-                    class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend"
+                    aria-label="Choose Sunday, October 3rd, 2010"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, October 4th, 2010"
+                    class="react-datepicker__day react-datepicker__day--004"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, October 5th, 2010"
+                    class="react-datepicker__day react-datepicker__day--005"
                     role="button"
                     tabindex="-1"
                   >
@@ -2854,7 +2686,7 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Monday, July 6th, 2020"
+                    aria-label="Choose Wednesday, October 6th, 2010"
                     class="react-datepicker__day react-datepicker__day--006"
                     role="button"
                     tabindex="-1"
@@ -2863,7 +2695,7 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Tuesday, July 7th, 2020"
+                    aria-label="Choose Thursday, October 7th, 2010"
                     class="react-datepicker__day react-datepicker__day--007"
                     role="button"
                     tabindex="-1"
@@ -2872,7 +2704,7 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Wednesday, July 8th, 2020"
+                    aria-label="Choose Friday, October 8th, 2010"
                     class="react-datepicker__day react-datepicker__day--008"
                     role="button"
                     tabindex="-1"
@@ -2881,30 +2713,12 @@ input + .c1 {
                   </div>
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Thursday, July 9th, 2020"
-                    class="react-datepicker__day react-datepicker__day--009"
+                    aria-label="Choose Saturday, October 9th, 2010"
+                    class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     9
-                  </div>
-                  <div
-                    aria-disabled="false"
-                    aria-label="Choose Friday, July 10th, 2020"
-                    class="react-datepicker__day react-datepicker__day--010"
-                    role="button"
-                    tabindex="-1"
-                  >
-                    10
-                  </div>
-                  <div
-                    aria-disabled="false"
-                    aria-label="Choose Saturday, July 11th, 2020"
-                    class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--weekend"
-                    role="button"
-                    tabindex="-1"
-                  >
-                    11
                   </div>
                 </div>
                 <div
@@ -2912,200 +2726,267 @@ input + .c1 {
                 >
                   <div
                     aria-disabled="false"
-                    aria-label="Choose Sunday, July 12th, 2020"
-                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend"
+                    aria-label="Choose Sunday, October 10th, 2010"
+                    class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="0"
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 11th, 2010"
+                    class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 12th, 2010"
+                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     12
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Monday, July 13th, 2020"
-                    class="react-datepicker__day react-datepicker__day--013"
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 13th, 2010"
+                    class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     13
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Tuesday, July 14th, 2020"
-                    class="react-datepicker__day react-datepicker__day--014"
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 14th, 2010"
+                    class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     14
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Wednesday, July 15th, 2020"
-                    class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--keyboard-selected react-datepicker__day--today"
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 15th, 2010"
+                    class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
                     role="button"
-                    tabindex="0"
+                    tabindex="-1"
                   >
                     15
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Thursday, July 16th, 2020"
-                    class="react-datepicker__day react-datepicker__day--016"
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 16th, 2010"
+                    class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     16
                   </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Friday, July 17th, 2020"
-                    class="react-datepicker__day react-datepicker__day--017"
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 17th, 2010"
+                    class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     17
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Saturday, July 18th, 2020"
-                    class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--weekend"
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 18th, 2010"
+                    class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     18
                   </div>
-                </div>
-                <div
-                  class="react-datepicker__week"
-                >
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Sunday, July 19th, 2020"
-                    class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend"
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 19th, 2010"
+                    class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     19
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Monday, July 20th, 2020"
-                    class="react-datepicker__day react-datepicker__day--020"
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 20th, 2010"
+                    class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     20
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Tuesday, July 21st, 2020"
-                    class="react-datepicker__day react-datepicker__day--021"
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 21st, 2010"
+                    class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     21
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Wednesday, July 22nd, 2020"
-                    class="react-datepicker__day react-datepicker__day--022"
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 22nd, 2010"
+                    class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     22
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Thursday, July 23rd, 2020"
-                    class="react-datepicker__day react-datepicker__day--023"
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 23rd, 2010"
+                    class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     23
-                  </div>
-                  <div
-                    aria-disabled="false"
-                    aria-label="Choose Friday, July 24th, 2020"
-                    class="react-datepicker__day react-datepicker__day--024"
-                    role="button"
-                    tabindex="-1"
-                  >
-                    24
-                  </div>
-                  <div
-                    aria-disabled="false"
-                    aria-label="Choose Saturday, July 25th, 2020"
-                    class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--weekend"
-                    role="button"
-                    tabindex="-1"
-                  >
-                    25
                   </div>
                 </div>
                 <div
                   class="react-datepicker__week"
                 >
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Sunday, July 26th, 2020"
-                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend"
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 24th, 2010"
+                    class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 25th, 2010"
+                    class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 26th, 2010"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     26
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Monday, July 27th, 2020"
-                    class="react-datepicker__day react-datepicker__day--027"
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 27th, 2010"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     27
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Tuesday, July 28th, 2020"
-                    class="react-datepicker__day react-datepicker__day--028"
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 28th, 2010"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     28
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Wednesday, July 29th, 2020"
-                    class="react-datepicker__day react-datepicker__day--029"
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 29th, 2010"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
                     role="button"
                     tabindex="-1"
                   >
                     29
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Thursday, July 30th, 2020"
-                    class="react-datepicker__day react-datepicker__day--030"
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 30th, 2010"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     30
                   </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Friday, July 31st, 2020"
-                    class="react-datepicker__day react-datepicker__day--031"
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 31st, 2010"
+                    class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
                     role="button"
                     tabindex="-1"
                   >
                     31
                   </div>
                   <div
-                    aria-disabled="false"
-                    aria-label="Choose Saturday, August 1st, 2020"
-                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    aria-disabled="true"
+                    aria-label="Not available Monday, November 1st, 2010"
+                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
                     role="button"
                     tabindex="-1"
                   >
                     1
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, November 2nd, 2010"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    2
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, November 3rd, 2010"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, November 4th, 2010"
+                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, November 5th, 2010"
+                    class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, November 6th, 2010"
+                    class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    6
                   </div>
                 </div>
               </div>
@@ -3119,7 +3000,7 @@ input + .c1 {
       />
     </div>
     <button
-      class="c14 sideIcon"
+      class="c14"
     >
       <svg
         color="currentColor"
@@ -3168,10 +3049,6 @@ input + .c1 {
 }
 
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3182,19 +3059,14 @@ input + .c1 {
   margin-top: 0;
 }
 
-.c2 .react-datepicker__header {
-  background-color: #FFFFFF;
-  border-bottom: none;
-  margin-bottom: var(--spacing-1x);
-  padding: 0;
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
 }
 
-.c2 .react-datepicker__month {
-  font-size: 0.875rem;
-  margin: 0;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day {
+.c2 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
   height: 32px;
@@ -3203,60 +3075,30 @@ input + .c1 {
   width: 32px;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day:hover {
+.c2 .react-datepicker__day:hover {
   background-color: #D9DDE2;
   border-radius: 20px;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day:focus {
+.c2 .react-datepicker__day:focus {
   outline: none;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day--outside-month {
-  color: #57666E;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--outside-month.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--disabled {
+.c2 .react-datepicker__day--disabled {
   color: #9CA7B4;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day--disabled:hover {
+.c2 .react-datepicker__day--disabled:hover {
   background-color: #FFFFFF;
 }
 
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected {
+.c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
   border: 1px solid #0080A5;
   border-radius: 20px;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--keyboard-selected.react-datepicker__day--today {
-  color: #0080A5 !important;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today {
-  color: #0080A5;
-  font-weight: var(--font-normal);
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
-  color: #000000;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--today.react-datepicker__day--selected {
-  color: #FFFFFF;
-}
-
-.c2 .react-datepicker__month .react-datepicker__day--selected {
-  background-color: #0080A5;
-  border-radius: 20px;
 }
 
 .c2 .react-datepicker__day-name {
@@ -3268,12 +3110,42 @@ input + .c1 {
   width: 32px;
 }
 
-.c2 .react-datepicker__portal {
-  background-color: rgba(0,0,0,0.5);
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
 }
 
-.c2 .react-datepicker__portal .customHeader {
-  padding: 0 var(--spacing-1x) var(--spacing-3x);
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-1x);
+  padding: 0;
+}
+
+.c2 .react-datepicker__month {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c2 .react-datepicker__portal {
+  background-color: rgba(0,0,0,0.5);
 }
 
 .c2 .react-datepicker__portal .react-datepicker__day-name {
@@ -3288,18 +3160,7 @@ input + .c1 {
   width: 40px;
 }
 
-.c2 .react-datepicker__portal .react-datepicker__month {
-  font-size: 1rem;
-}
-
-.c2 .react-datepicker {
-  border: 1px solid #D9DDE2;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  font-family: 'Open Sans',sans-serif;
-  padding: var(--spacing-3x) var(--spacing-2x);
-}
-
-.c3.datePicker {
+.c3.datePickerInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -3311,25 +3172,25 @@ input + .c1 {
   width: 113px;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c3.datePicker:focus {
+.c3.datePickerInput:focus {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
@@ -3383,7 +3244,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePicker"
+          class="c3 datePickerInput"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -3391,7 +3252,7 @@ input + .c1 {
       </div>
     </div>
     <button
-      class="c4 sideIcon"
+      class="c4"
     >
       <svg
         color="currentColor"

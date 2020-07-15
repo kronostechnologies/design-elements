@@ -133,7 +133,10 @@ input + .c2 {
   max-height: 100%;
   min-width: 0;
   outline: none;
+  overflow: hidden;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
 }
 
@@ -493,7 +496,10 @@ input + .c2 {
   max-height: 100%;
   min-width: 0;
   outline: none;
+  overflow: hidden;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
 }
 
@@ -939,7 +945,10 @@ input + .c2 {
   max-height: 100%;
   min-width: 0;
   outline: none;
+  overflow: hidden;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
 }
 
@@ -1356,7 +1365,10 @@ exports[`Select mobile select has a different style 1`] = `
   max-height: 100%;
   min-width: 0;
   outline: none;
+  overflow: hidden;
   padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
 }
 

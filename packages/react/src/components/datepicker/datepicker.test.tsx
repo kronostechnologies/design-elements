@@ -87,13 +87,13 @@ describe('Datepicker', () => {
     });
 
     test('matches snapshot (open, desktop)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" open/>, 'desktop');
+        const tree = renderWithProviders(<Datepicker label="date" open maxDate={new Date('2010-10-10, 12:00')}/>, 'desktop');
 
         expect(tree).toMatchSnapshot();
     });
 
     test('matches snapshot (open, mobile)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" open/>, 'mobile');
+        const tree = renderWithProviders(<Datepicker label="date" open maxDate={new Date('2010-10-10, 12:00')}/>, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
