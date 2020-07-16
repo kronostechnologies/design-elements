@@ -10,33 +10,25 @@ describe('Table', () => {
 
         expect(tree).toMatchSnapshot();
     });
-});
 
-describe('Table', () => {
     test('has tablet styles', () => {
         const tree = renderTable(columns, 'tablet');
 
         expect(tree).toMatchSnapshot();
     });
-});
 
-describe('Table', () => {
     test('has mobile styles', () => {
         const tree = renderTable(columns, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
-});
 
-describe('Table', () => {
     test('has custom text alignment', () => {
         const tree = renderTable(columnsTextAligned);
 
         expect(tree).toMatchSnapshot();
     });
-});
 
-describe('Table', () => {
     test('has sorting styles', () => {
         const tree = renderTable(columnsSorted);
 
