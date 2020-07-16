@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { Column, Row, useSortBy, useTable } from 'react-table';
+import { Column, HeaderGroup, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
 
 import { useTheme } from '../../hooks/use-theme';
@@ -83,7 +83,6 @@ interface TableProps {
 }
 
 export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
-    const Theme = useTheme();
     const { device } = useDeviceContext();
     const {
       getTableProps,
@@ -98,44 +97,7 @@ export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => {
-                  if (column.sort) {
-                      return (
-                        <th
-                          {...column.getHeaderProps(column.getSortByToggleProps())}
-                          scope="col"
-                          aria-sort={
-                            column.isSorted
-                              ? column.isSortedDesc
-                                ? 'descending'
-                                : 'ascending'
-                              : 'none'
-                          }
-                        >
-                          <div style={{ display: 'flex', alignItems: 'center', textAlign: column.textAlign }}>
-                            <SortButton>
-                              {column.isSorted
-                                ? column.isSortedDesc
-                                  ? <Icon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
-                                  : <Icon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
-                                : <Icon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
-                            </SortButton>
-                            {column.render('Header')}
-                          </div>
-                        </th>
-                      );
-                  } else {
-                      return (
-                          <th
-                            scope="col"
-                            style={{ textAlign: column.textAlign }}
-                            {...column.getHeaderProps()}
-                          >
-                            {column.render('Header')}
-                          </th>
-                      );
-                  }
-              })}
+              {headerGroup.headers.map(getHeading)}
             </tr>
           ))}
         </thead>
@@ -159,6 +121,47 @@ export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
         </tbody>
       </StyledTable>
     );
+}
+
+function getHeading(column: HeaderGroup<{}>): ReactElement {
+    const Theme = useTheme();
+
+    if (column.sort) {
+        return (
+          <th
+            {...column.getHeaderProps(column.getSortByToggleProps())}
+            scope="col"
+            aria-sort={
+              column.isSorted
+                ? column.isSortedDesc
+                  ? 'descending'
+                  : 'ascending'
+                : 'none'
+            }
+          >
+            <div style={{ display: 'flex', alignItems: 'center', textAlign: column.textAlign }}>
+              <SortButton>
+                {column.isSorted
+                  ? column.isSortedDesc
+                    ? <Icon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
+                    : <Icon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
+                  : <Icon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
+              </SortButton>
+              {column.render('Header')}
+            </div>
+          </th>
+        );
+    } else {
+        return (
+            <th
+              scope="col"
+              style={{ textAlign: column.textAlign }}
+              {...column.getHeaderProps()}
+            >
+              {column.render('Header')}
+            </th>
+        );
+    }
 }
 
 function getThPadding(device: DeviceType): string {

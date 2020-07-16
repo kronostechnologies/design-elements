@@ -60,13 +60,13 @@ export const rowClickCallback = () => {
             column1: 'a',
             column2: 'a',
             column3: 'a',
-            href: '/home',
+            href: '/row1',
         },
         {
             column1: 'b',
             column2: 'b',
             column3: 'b',
-            href: '/contact',
+            href: '/row2',
         },
     ];
 
