@@ -227,6 +227,27 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
             yarn publish --tag next
 
+  update_github_pages_storybook_version:
+    executor: "node"
+    steps:
+      - attach_at_working_directory
+      - git_config
+      - add_github_ssh_key
+      - git_pull_master
+      - run:
+          name: 'Build Storybook'
+          working_directory: *storybook_directory
+          command: 'yarn build-storybook'
+      - run:
+          name: 'Commit changes'
+          working_directory: *working_directory
+          command: 'git add . && git commit -m "Update Github Pages Storybook version [ci skip]"'
+      - run:
+          name: 'Push to Github'
+          working_directory: *working_directory
+          command: 'git push --force'
+
+
 
 workflows:
   version: 2
@@ -292,6 +313,14 @@ workflows:
           use_workspace: true
           requires:
             - storybook_yalc_push
+      - update_github_pages_storybook_version:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - storybook_yarn_lint
+            - storybook_yarn_build
       
       ### PRERELEASE
       - node_install_deps:
