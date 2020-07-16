@@ -3,6 +3,7 @@
   "version": "2.0.3-alpha.21",
   "scripts": {
     "build": "start-storybook --smoke-test",
+    "build-storybook": "build-storybook -c .storybook -o ../../docs",
     "start": "start-storybook --docs",
     "lint": "yarn tslint",
     "lint:ci": "mkdir -p build/lint/ts && yarn tslint:ci",
