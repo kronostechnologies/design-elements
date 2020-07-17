@@ -3,9 +3,9 @@ import { enCA } from 'date-fns/locale';
 import { range } from 'lodash';
 
 import { Option } from '../../select/select';
-import { LocaleProps } from '../datepicker';
+import { SupportedLocale } from '../datepicker';
 
-export function getLocale(localeArray: Locale[], localeCode?: LocaleProps): Locale {
+export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): Locale {
     const findLocale = localeArray.find(locale => locale.code === localeCode);
     return findLocale || enCA;
 }
@@ -19,7 +19,7 @@ export function getLocaleMonthsShort(locale: Locale): string[] {
     return months;
 }
 
-export function getLocaleDateFormat(locale?: LocaleProps): string {
+export function getLocaleDateFormat(locale?: SupportedLocale): string {
     const formats = {
         'en-US' : 'MM/dd/yyyy',
         'en-CA' : 'yyyy-MM-dd',
@@ -29,7 +29,7 @@ export function getLocaleDateFormat(locale?: LocaleProps): string {
     return formats[locale || 'en-CA'];
 }
 
-export function getLocaleDatePlaceholder(locale?: LocaleProps): string {
+export function getLocaleDatePlaceholder(locale?: SupportedLocale): string {
     return getLocaleDateFormat(locale).toUpperCase();
 }
 

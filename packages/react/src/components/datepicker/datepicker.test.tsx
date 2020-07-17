@@ -14,7 +14,8 @@ describe('Datepicker', () => {
             ThemeWrapped(<Datepicker onChange={callback} label="date"/>),
         );
 
-        wrapper.find('input').simulate('change', { target: { value: '2002-02-02' } });
+        getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2002-02-02' } });
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
@@ -24,7 +25,8 @@ describe('Datepicker', () => {
             ThemeWrapped(<Datepicker onFocus={callback} label="date"/>),
         );
 
-        wrapper.find('input').simulate('focus');
+        getByTestId(wrapper, 'text-input').simulate('focus');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
@@ -34,7 +36,8 @@ describe('Datepicker', () => {
             ThemeWrapped(<Datepicker onBlur={callback} label="date"/>),
         );
 
-        wrapper.find('input').simulate('blur');
+        getByTestId(wrapper, 'text-input').simulate('blur');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
@@ -44,6 +47,7 @@ describe('Datepicker', () => {
         );
 
         getByTestId(wrapper, 'month-previous').simulate('click');
+
         expect(getByTestId(wrapper, 'month-select').props().value).toBe('april');
     });
 
@@ -53,6 +57,7 @@ describe('Datepicker', () => {
         );
 
         getByTestId(wrapper, 'month-next').simulate('click');
+
         expect(getByTestId(wrapper, 'month-select').props().value).toBe('june');
     });
 
@@ -62,6 +67,7 @@ describe('Datepicker', () => {
         );
 
         getByTestId(wrapper, 'month-previous').simulate('click');
+
         expect(getByTestId(wrapper, 'year-select').props().value).toBe('1999');
     });
 
@@ -71,6 +77,7 @@ describe('Datepicker', () => {
         );
 
         getByTestId(wrapper, 'month-next').simulate('click');
+
         expect(getByTestId(wrapper, 'year-select').props().value).toBe('2001');
     });
 
