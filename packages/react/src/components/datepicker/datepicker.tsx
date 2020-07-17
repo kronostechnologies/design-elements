@@ -209,7 +209,7 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     }
 `;
 
-export type LocaleProps = 'fr-CA' | 'en-CA' | 'en-US';
+export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;
@@ -234,7 +234,7 @@ interface DatepickerProps {
      * Sets localization
      * @default en-CA
      */
-    locale?: LocaleProps;
+    locale?: SupportedLocale;
     maxDate?: Date | null;
     minDate?: Date | null;
     /** Sets input name */
@@ -278,6 +278,7 @@ export function Datepicker({
     onBlur,
     onChange,
     onFocus,
+    open,
     placeholder,
     startDate,
     valid = true,
@@ -288,6 +289,7 @@ export function Datepicker({
     const localeArray = [enUS, enCA, frCA];
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
+    const [isOpened, setOpened] = useState(false);
     const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
     const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
@@ -295,22 +297,35 @@ export function Datepicker({
     const id = useMemo(uuid, []);
     const dateInputRef = useRef<DatePicker>(null);
 
-    const handleClick = () => {
-        if (dateInputRef.current !== null) {
-            if (dateInputRef.current.isCalendarOpen()) {
-                dateInputRef.current.setOpen(false);
-            } else {
-                dateInputRef.current.setOpen(true);
-                setTimeout(() => dateInputRef.current?.setFocus() , 10);
-            }
+    const handleCalendarButtonClick = () => {
+        if (isOpened) {
+            setOpened(false);
+        } else {
+            dateInputRef.current?.setFocus();
+            setOpened(true);
+
+            setTimeout(() => {
+                const dateToFocus: HTMLDivElement | null =
+                    document.querySelector('.react-datepicker__day[tabindex="0"]');
+                if (dateToFocus) dateToFocus.focus();
+            }, 10);
         }
     };
 
-    const handleChange = (date: Date) => {
+    const handleInputChange = (date: Date) => {
         setSelectedDate(date);
+        setOpened(false);
 
         if (onChange) {
             onChange(date);
+        }
+    };
+
+    const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
+        setOpened(false);
+
+        if (onFocus) {
+            onFocus(event);
         }
     };
 
@@ -333,6 +348,7 @@ export function Datepicker({
         >
             <Container isMobile={isMobile}>
                 <StyledDatePicker
+                    customInput={<input type="text" data-testid="text-input"/>}
                     isMobile={isMobile}
                     ref={dateInputRef}
                     renderCustomHeader={({
@@ -391,9 +407,11 @@ export function Datepicker({
                     locale={locale}
                     maxDate={maxDate}
                     minDate={minDate}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
+                    onClickOutside={() => setOpened(false)}
                     onBlur={onBlur}
-                    onFocus={onFocus}
+                    onFocus={handleInputFocus}
+                    open={open || isOpened}
                     placeholderText={getPlaceholder()}
                     popperClassName="popper"
                     selected={selectedDate}
@@ -402,7 +420,7 @@ export function Datepicker({
                     withPortal={isMobile}
                     {...props}
                 />
-                <CalendarButton disabled={disabled} isMobile={isMobile} onMouseDown={handleClick}>
+                <CalendarButton disabled={disabled} isMobile={isMobile} onMouseDown={handleCalendarButtonClick}>
                     <Icon name="calendar" size={isMobile ? '24' : '16'} />
                 </CalendarButton>
             </Container>
