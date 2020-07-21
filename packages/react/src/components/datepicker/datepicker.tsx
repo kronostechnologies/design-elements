@@ -1,4 +1,3 @@
-import { getMonth, getYear } from 'date-fns';
 import { enCA, enUS, frCA } from 'date-fns/locale';
 import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
@@ -11,8 +10,8 @@ import uuid from 'uuid/v4';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
-import { Select } from '../select/select';
 import { Theme } from '../theme-wrapper/theme-wrapper';
+import { CalendarHeader } from './calendar-header';
 import {
     getLocale,
     getLocaleDateFormat,
@@ -153,37 +152,6 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
             outline: none;
         }
     }
-`;
-
-const CalendarHeader = styled.div<{ isMobile: boolean }>`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: ${({ isMobile }) => isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-3x)' };
-
-    > button {
-        background-color: ${({ theme }) => theme.greys.white};
-        border: none;
-        display: flex;
-        padding: 0;
-
-        &:focus {
-            outline: none;
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`;
-
-const FlexContainer = styled.div`
-    display: flex;
-`;
-
-const SelectWrapper = styled.div<{ isMobile: boolean }>`
-    height: ${({ isMobile }) => isMobile ? 40 : 32}px;
-    width: ${({ isMobile }) => isMobile ? 88 : 80}px;
 `;
 
 const CalendarButton = styled.button<CalendarButtonProps>`
@@ -329,15 +297,15 @@ export function Datepicker({
         }
     };
 
-    const getPlaceholder = () => {
+    const getPlaceholder = useMemo(() => {
         if (placeholder) {
             return placeholder;
         } else if (dateFormat) {
             return dateFormat.toUpperCase();
         } else {
-            return getLocaleDatePlaceholder(locale);
+            return getLocaleDatePlaceholder(currentLocale);
         }
-    };
+    }, [placeholder, dateFormat, locale]);
 
     return (
         <FieldContainer
@@ -352,57 +320,17 @@ export function Datepicker({
                     isMobile={isMobile}
                     ref={dateInputRef}
                     renderCustomHeader={({
-                        date,
-                        changeYear,
-                        changeMonth,
-                        decreaseMonth,
-                        increaseMonth,
-                        prevMonthButtonDisabled,
-                        nextMonthButtonDisabled,
+                        ...customHeaderProps
                     }) => (
-                        <CalendarHeader isMobile={isMobile}>
-                            <button
-                                aria-label={t('monthPreviousButtonLabel')}
-                                data-testid="month-previous"
-                                onClick={decreaseMonth}
-                                disabled={prevMonthButtonDisabled}
-                            >
-                                <Icon name="chevronLeft" size={isMobile ? '26' : '16'} />
-                            </button>
-                            <FlexContainer>
-                                <SelectWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
-                                    <Select
-                                        data-testid="month-select"
-                                        options={monthsOptions}
-                                        onChange={options => {
-                                            changeMonth(months.indexOf(options.label));
-                                        }}
-                                        value={monthsOptions[getMonth(date)].value}
-                                    />
-                                </SelectWrapper>
-                                <SelectWrapper isMobile={isMobile}>
-                                    <Select
-                                        data-testid="year-select"
-                                        options={yearsOptions}
-                                        onChange={options => {
-                                            changeYear(parseInt(options.value, 10));
-                                        }}
-                                        value={getYear(date).toString()}
-                                    />
-                                </SelectWrapper>
-                            </FlexContainer>
-                            <button
-                                aria-label={t('monthNextButtonLabel')}
-                                data-testid="month-next"
-                                onClick={increaseMonth}
-                                disabled={nextMonthButtonDisabled}
-                            >
-                                <Icon name="chevronRight" size={isMobile ? '24' : '16'} />
-                            </button>
-                        </CalendarHeader>
+                        <CalendarHeader
+                            months={months}
+                            monthsOptions={monthsOptions}
+                            yearsOptions={yearsOptions}
+                            {...customHeaderProps}
+                        />
                     )}
                     className="datePickerInput"
-                    dateFormat={dateFormat || getLocaleDateFormat(locale)}
+                    dateFormat={dateFormat || getLocaleDateFormat(currentLocale)}
                     disabled={disabled}
                     locale={locale}
                     maxDate={maxDate}
@@ -412,7 +340,7 @@ export function Datepicker({
                     onBlur={onBlur}
                     onFocus={handleInputFocus}
                     open={open || isOpened}
-                    placeholderText={getPlaceholder()}
+                    placeholderText={getPlaceholder}
                     popperClassName="popper"
                     selected={selectedDate}
                     showPopperArrow={false}

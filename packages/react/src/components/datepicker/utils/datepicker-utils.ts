@@ -1,4 +1,3 @@
-import { getYear } from 'date-fns';
 import { enCA } from 'date-fns/locale';
 import { range } from 'lodash';
 
@@ -19,17 +18,26 @@ export function getLocaleMonthsShort(locale: Locale): string[] {
     return months;
 }
 
-export function getLocaleDateFormat(locale?: SupportedLocale): string {
-    const formats = {
-        'en-US' : 'MM/dd/yyyy',
-        'en-CA' : 'yyyy-MM-dd',
-        'fr-CA' : 'yyyy-MM-dd',
-    };
+export function getLocaleDateFormat(locale: Locale = enCA): string {
+    const formatObj = new Intl.DateTimeFormat(locale.code).formatToParts(new Date());
 
-    return formats[locale || 'en-CA'];
+    return formatObj
+        .map(obj => {
+            switch (obj.type) {
+                case 'day':
+                    return 'dd';
+                case 'month':
+                    return 'MM';
+                case 'year':
+                    return 'yyyy';
+                default:
+                    return obj.value;
+            }
+        })
+        .join('');
 }
 
-export function getLocaleDatePlaceholder(locale?: SupportedLocale): string {
+export function getLocaleDatePlaceholder(locale?: Locale): string {
     return getLocaleDateFormat(locale).toUpperCase();
 }
 
@@ -46,11 +54,15 @@ export function getLocaleMonthsOptions(locale: Locale): Option[] {
 }
 
 export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): Option[] {
-    const years = range(minDate ? getYear(minDate) : 1920, maxDate ? getYear(maxDate) + 1 : getYear(new Date()) + 1, 1);
-    const yearsOptions: Option[] = [];
-    years.map(year => {
-        yearsOptions.push({ value: year.toString(), label: year.toString() });
-    });
+    if (minDate && maxDate) {
+        if (minDate > maxDate) {
+            return [];
+        }
+    }
 
-    return yearsOptions;
+    const years = range(
+        minDate ? minDate.getUTCFullYear() : 1920,
+        maxDate ? maxDate.getUTCFullYear() + 1 : new Date().getUTCFullYear() + 1, 1);
+
+    return years.map(year => ({ value: year.toString(), label: year.toString() }));
 }

@@ -1796,20 +1796,20 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.12":
-  version "2.0.3-alpha.12"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.12.tgz#ed010b4b51952dd695e328cfa7ccbabb6a050e9d"
-  integrity sha512-wmlTstEVgaXkUNv4w1PzpIlX1g7iZd6XE9m8ceXY49ESsU6BqRQiW//V9D81dwKraAQSnqZP+wgkE4sL3Tar8Q==
+"@equisoft/design-elements-react@^2.0.3-alpha.13":
+  version "2.0.3-alpha.13"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.13.tgz#97e47656772ee8a20ef41f175409bc120bfd925f"
+  integrity sha512-/UsqRrFW3zhAfdM0EUWVGVlK+jkYRhQ0hJk8M+WOAQ5Iw9gLpLQtebkT35JL59IKR6Bb0pgW2fSTQ4wUq0b6EA==
   dependencies:
     feather-icons "^4.21.0"
     react-popper-tooltip "^2.10.1"
     react-swipeable "~5.5.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.12":
-  version "2.0.3-alpha.12"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.12.tgz#c032499c15649ae07555d5244516e3e87c2d074f"
-  integrity sha512-R9GJE+OSeuDrN75oL8JaF21E5eQ5HlxxgC/D2ze89fREh7xQOpzqTmy5+xyLrjAtxMqvHZByFD+oIZAA5Qw4PQ==
+"@equisoft/design-elements-web@^2.0.3-alpha.13":
+  version "2.0.3-alpha.13"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.13.tgz#032fe40120c4d5802386b37a177067dab21c13b8"
+  integrity sha512-k2//VBVUnv7GlL5ptFAvn9qK8Dl0m10frFrZ/hZtcnSnp8mjhqqcXh38YHn+igdDsAvO4ozHtUni3eM/dzhj7w==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
@@ -9130,9 +9130,9 @@ regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.3:
   integrity sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
 
 regenerator-runtime@^0.13.4:
-  version "0.13.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
-  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+  version "0.13.6"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.6.tgz#d236043c46ffab2968c1ef651803d8acdea8ed65"
+  integrity sha512-GmwlGiazQEbOwQWDdbbaP10i15pGtScYWLbMZuu+RKRz0cZ+g8IUONazBnaZqe7j1670IV1HgE4/8iy7CQPf4Q==
 
 regenerator-transform@^0.14.0:
   version "0.14.1"
