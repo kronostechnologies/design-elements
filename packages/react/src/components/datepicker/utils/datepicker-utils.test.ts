@@ -9,24 +9,9 @@ import {
     getYearsOptions,
 } from './datepicker-utils';
 
-const minDate = new Date('2020-01-01 12:00');
+const minDate = new Date('2020-01-01');
 const maxDate = new Date('2020-01-04');
 const localeArray = [enUS, enCA, frCA];
-const monthsArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const monthsOptions = [
-    { value: 'january', label: 'Jan' },
-    { value: 'february', label: 'Feb' },
-    { value: 'march', label: 'Mar' },
-    { value: 'april', label: 'Apr' },
-    { value: 'may', label: 'May' },
-    { value: 'june', label: 'Jun' },
-    { value: 'july', label: 'Jul' },
-    { value: 'august', label: 'Aug' },
-    { value: 'september', label: 'Sep' },
-    { value: 'october', label: 'Oct' },
-    { value: 'november', label: 'Nov' },
-    { value: 'december', label: 'Dec' },
-];
 
 describe('Datepicker utils', () => {
     describe('get locale', () => {
@@ -45,7 +30,7 @@ describe('Datepicker utils', () => {
 
     describe('get locale date format', () => {
         test('should return en-US date format', () => {
-            const result = getLocaleDateFormat('en-US');
+            const result = getLocaleDateFormat(enUS);
 
             expect(result).toEqual('MM/dd/yyyy');
         });
@@ -59,7 +44,7 @@ describe('Datepicker utils', () => {
 
     describe('get locale date placeholder', () => {
         test('should return en-US date placeholder', () => {
-            const result = getLocaleDatePlaceholder('en-US');
+            const result = getLocaleDatePlaceholder(enUS);
 
             expect(result).toEqual('MM/DD/YYYY');
         });
@@ -75,7 +60,8 @@ describe('Datepicker utils', () => {
         test('should return an array of abreviated months', () => {
             const result = getLocaleMonthsShort(enCA);
 
-            expect(result).toEqual(monthsArray);
+            expect(result)
+                .toEqual(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
         });
     });
 
@@ -83,7 +69,20 @@ describe('Datepicker utils', () => {
         test('should return an array month objects', () => {
             const result = getLocaleMonthsOptions(enCA);
 
-            expect(result).toEqual(monthsOptions);
+            expect(result).toEqual([
+                { value: 'january', label: 'Jan' },
+                { value: 'february', label: 'Feb' },
+                { value: 'march', label: 'Mar' },
+                { value: 'april', label: 'Apr' },
+                { value: 'may', label: 'May' },
+                { value: 'june', label: 'Jun' },
+                { value: 'july', label: 'Jul' },
+                { value: 'august', label: 'Aug' },
+                { value: 'september', label: 'Sep' },
+                { value: 'october', label: 'Oct' },
+                { value: 'november', label: 'Nov' },
+                { value: 'december', label: 'Dec' },
+            ]);
         });
     });
 
@@ -92,6 +91,12 @@ describe('Datepicker utils', () => {
             const result = getYearsOptions(minDate, maxDate);
 
             expect(result).toEqual([{ value: '2020', label: '2020' }]);
+        });
+
+        test('should return an empty array when minDate > maxDate', () => {
+            const result = getYearsOptions(maxDate, minDate);
+
+            expect(result).toEqual([]);
         });
     });
 });

@@ -1214,6 +1214,52 @@ input + .c1 {
   display: flex;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 var(--spacing-3x);
+}
+
+.c4 > button {
+  background-color: #FFFFFF;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.c4 > button:focus {
+  outline: none;
+}
+
+.c4 > button:hover {
+  cursor: pointer;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  height: 32px;
+  width: 80px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1360,52 +1406,6 @@ input + .c1 {
   border: 1px solid #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0 0 var(--spacing-3x);
-}
-
-.c4 > button {
-  background-color: #FFFFFF;
-  border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-}
-
-.c4 > button:focus {
-  outline: none;
-}
-
-.c4 > button:hover {
-  cursor: pointer;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c6 {
-  height: 32px;
-  width: 80px;
 }
 
 .c14 {
