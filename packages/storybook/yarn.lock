@@ -1796,20 +1796,20 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.11":
-  version "2.0.3-alpha.11"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.11.tgz#b9574ed51bf705f9ae55a01e7630af49cd2c583c"
-  integrity sha512-htZU+SSDM/fiOc8C+BtjzYCBRti2K0KGJJ0NXOw18iHhYEPa+lQ+whzeeUOPkfDYiks5TQNxsUConvOZoDrgSA==
+"@equisoft/design-elements-react@^2.0.3-alpha.12":
+  version "2.0.3-alpha.12"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.12.tgz#ed010b4b51952dd695e328cfa7ccbabb6a050e9d"
+  integrity sha512-wmlTstEVgaXkUNv4w1PzpIlX1g7iZd6XE9m8ceXY49ESsU6BqRQiW//V9D81dwKraAQSnqZP+wgkE4sL3Tar8Q==
   dependencies:
     feather-icons "^4.21.0"
     react-popper-tooltip "^2.10.1"
     react-swipeable "~5.5.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.11":
-  version "2.0.3-alpha.11"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.11.tgz#42402002b0af8f7c3cf762c9232bd12a2bd0623b"
-  integrity sha512-vM9FeBwUigk5gxf6CQ0HimPeXv6MzY7JxpZ1ahgJc6kttiNoH4G/I1oTc7Puf4qBBa+zhTvF2AdFRIIVFPvZUA==
+"@equisoft/design-elements-web@^2.0.3-alpha.12":
+  version "2.0.3-alpha.12"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.12.tgz#c032499c15649ae07555d5244516e3e87c2d074f"
+  integrity sha512-R9GJE+OSeuDrN75oL8JaF21E5eQ5HlxxgC/D2ze89fREh7xQOpzqTmy5+xyLrjAtxMqvHZByFD+oIZAA5Qw4PQ==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
