@@ -7,6 +7,7 @@ import {
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
+    setLocaleFirstDayOfWeek,
 } from './datepicker-utils';
 
 const minDate = new Date('2020-01-01');
@@ -97,6 +98,14 @@ describe('Datepicker utils', () => {
             const result = getYearsOptions(maxDate, minDate);
 
             expect(result).toEqual([]);
+        });
+    });
+
+    describe('set locale first day of week', () => {
+        test('should return locale with adjusted day of week', () => {
+            setLocaleFirstDayOfWeek(enCA, 4);
+
+            expect(enCA.options?.weekStartsOn).toEqual(4);
         });
     });
 });

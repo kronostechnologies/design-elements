@@ -2,7 +2,7 @@ import { enCA } from 'date-fns/locale';
 import { range } from 'lodash';
 
 import { Option } from '../../select/select';
-import { SupportedLocale } from '../datepicker';
+import { DayOfWeek, SupportedLocale } from '../datepicker';
 
 export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): Locale {
     const findLocale = localeArray.find(locale => locale.code === localeCode);
@@ -65,4 +65,12 @@ export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): 
         maxDate ? maxDate.getUTCFullYear() + 1 : new Date().getUTCFullYear() + 1, 1);
 
     return years.map(year => ({ value: year.toString(), label: year.toString() }));
+}
+
+export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): void {
+    if (locale.options) {
+        locale.options.weekStartsOn = dayOfWeek;
+    } else {
+        locale.options = { weekStartsOn: dayOfWeek };
+    }
 }

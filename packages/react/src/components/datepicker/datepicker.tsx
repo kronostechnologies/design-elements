@@ -1,5 +1,5 @@
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { FocusEvent, ReactElement, useMemo, useRef, useState } from 'react';
+import React, { FocusEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
@@ -19,6 +19,7 @@ import {
     getLocaleMonthsOptions,
     getLocaleMonthsShort,
     getYearsOptions,
+    setLocaleFirstDayOfWeek,
 } from './utils/datepicker-utils';
 
 const Container = styled.div<{ isMobile: boolean }>`
@@ -178,6 +179,7 @@ const CalendarButton = styled.button<CalendarButtonProps>`
 `;
 
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
+export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;
@@ -195,6 +197,7 @@ interface DatepickerProps {
     /** Sets date format (e.g.: dd/MM/yyyy). */
     dateFormat?: string;
     disabled?: boolean;
+    firstDayOfWeek?: DayOfWeek;
     id?: string;
     /** Sets input label */
     label?: string;
@@ -239,6 +242,7 @@ registerLocale('fr-CA', frCA);
 export function Datepicker({
     dateFormat,
     disabled,
+    firstDayOfWeek,
     label,
     locale = 'en-CA',
     maxDate,
@@ -264,6 +268,12 @@ export function Datepicker({
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
     const dateInputRef = useRef<DatePicker>(null);
+
+    useEffect(() => {
+        if (firstDayOfWeek) {
+            setLocaleFirstDayOfWeek(currentLocale, firstDayOfWeek);
+        }
+    }, [firstDayOfWeek]);
 
     const handleCalendarButtonClick = () => {
         if (isOpened) {
