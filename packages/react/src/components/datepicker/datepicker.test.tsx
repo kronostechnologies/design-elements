@@ -1,6 +1,7 @@
 import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { mount } from 'enzyme';
 import React from 'react';
+import DatePicker from 'react-datepicker';
 
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
@@ -39,6 +40,13 @@ describe('Datepicker', () => {
         getByTestId(wrapper, 'text-input').simulate('blur');
 
         expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('calendar should be opened when startOpen prop is truthy', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker startOpen/>));
+        const element = wrapper.find(DatePicker);
+
+        expect(element.props().open).toBeTruthy();
     });
 
     test('month select value should change when month-previous button is clicked', () => {
