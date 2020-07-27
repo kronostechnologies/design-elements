@@ -355,7 +355,7 @@ export function Datepicker({
                     selected={selectedDate}
                     showPopperArrow={false}
                     valid={valid}
-                    withPortal={isMobile}
+                    withPortal={isOpened ? isMobile : false}
                     {...props}
                 />
                 <CalendarButton disabled={disabled} isMobile={isMobile} onMouseDown={handleCalendarButtonClick}>
