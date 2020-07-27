@@ -253,6 +253,7 @@ export function Datepicker({
     open,
     placeholder,
     startDate,
+    startOpen,
     valid = true,
     validationErrorMessage,
     ...props
@@ -261,7 +262,7 @@ export function Datepicker({
     const localeArray = [enUS, enCA, frCA];
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
-    const [isOpened, setOpened] = useState(false);
+    const [isOpened, setOpened] = useState(startOpen || false);
     const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
     const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
@@ -354,6 +355,7 @@ export function Datepicker({
                     popperClassName="popper"
                     selected={selectedDate}
                     showPopperArrow={false}
+                    startOpen={startOpen}
                     valid={valid}
                     withPortal={isOpened ? isMobile : false}
                     {...props}
