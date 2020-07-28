@@ -360,7 +360,12 @@ export function Datepicker({
                     withPortal={isOpened ? isMobile : false}
                     {...props}
                 />
-                <CalendarButton disabled={disabled} isMobile={isMobile} onMouseDown={handleCalendarButtonClick}>
+                <CalendarButton
+                    type="button"
+                    disabled={disabled}
+                    isMobile={isMobile}
+                    onMouseDown={handleCalendarButtonClick}
+                >
                     <Icon name="calendar" size={isMobile ? '24' : '16'} />
                 </CalendarButton>
             </Container>
