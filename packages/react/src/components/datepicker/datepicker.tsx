@@ -353,6 +353,16 @@ export function Datepicker({
                     open={open || isOpened}
                     placeholderText={getPlaceholder}
                     popperClassName="popper"
+                    popperContainer={({ children }) => (
+                        <div
+                            aria-label={selectedDate?.toDateString() || 'Choose Date'}
+                            aria-live="polite"
+                            aria-modal={true}
+                            role="dialog"
+                        >
+                            {children}
+                        </div>
+                    )}
                     selected={selectedDate}
                     showPopperArrow={false}
                     startOpen={startOpen}
@@ -362,6 +372,7 @@ export function Datepicker({
                 />
                 <CalendarButton
                     type="button"
+                    aria-label={selectedDate ? `Choose date, The selected date is ${selectedDate}` : 'Choose date'}
                     disabled={disabled}
                     isMobile={isMobile}
                     onMouseDown={handleCalendarButtonClick}
