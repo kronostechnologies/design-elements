@@ -243,6 +243,7 @@ input + .c1 {
     </div>
     <button
       class="c4"
+      type="button"
     >
       <svg
         color="currentColor"
@@ -498,6 +499,7 @@ input + .c1 {
     <button
       class="c4"
       disabled=""
+      type="button"
     >
       <svg
         color="currentColor"
@@ -765,6 +767,7 @@ input + .c1 {
     </div>
     <button
       class="c4"
+      type="button"
     >
       <svg
         color="currentColor"
@@ -1028,6 +1031,7 @@ input + .c1 {
     </div>
     <button
       class="c4"
+      type="button"
     >
       <svg
         color="currentColor"
@@ -3008,6 +3012,7 @@ input + .c1 {
     </div>
     <button
       class="c14"
+      type="button"
     >
       <svg
         color="currentColor"
@@ -4988,6 +4993,7 @@ input + .c1 {
     </div>
     <button
       class="c14"
+      type="button"
     >
       <svg
         color="currentColor"
