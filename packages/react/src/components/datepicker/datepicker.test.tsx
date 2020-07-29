@@ -49,6 +49,33 @@ describe('Datepicker', () => {
         expect(element.props().open).toBeTruthy();
     });
 
+    test('calendar should open when calendar button is clicked', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker />));
+
+        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+
+        const element = wrapper.find(DatePicker);
+        expect(element.props().open).toBeTruthy();
+    });
+
+    test('calendar should open on calendar button keydown (Enter)', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker />));
+
+        getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: 'Enter' });
+
+        const element = wrapper.find(DatePicker);
+        expect(element.props().open).toBeTruthy();
+    });
+
+    test('calendar should open on calendar button keydown (Spacebar)', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker />));
+
+        getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: ' ' });
+
+        const element = wrapper.find(DatePicker);
+        expect(element.props().open).toBeTruthy();
+    });
+
     test('month select value should change when month-previous button is clicked', () => {
         const wrapper = mount(
             ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
