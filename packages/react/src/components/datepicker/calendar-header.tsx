@@ -29,6 +29,13 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     }
 `;
 
+const StyledButton = styled.button`
+    &:focus {
+        border-radius: var(--border-radius);
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+    }
+`;
+
 const FlexContainer = styled.div`
     display: flex;
 `;
@@ -72,14 +79,14 @@ export function CalendarHeader({
 
     return (
         <Wrapper isMobile={isMobile}>
-            <button
+            <StyledButton
                 aria-label={t('monthPreviousButtonLabel')}
                 data-testid="month-previous"
                 onClick={decreaseMonth}
                 disabled={prevMonthButtonDisabled}
             >
                 <Icon name="chevronLeft" size={isMobile ? '26' : '16'} />
-            </button>
+            </StyledButton>
             <FlexContainer>
                 <SelectWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
                     <Select
@@ -102,14 +109,14 @@ export function CalendarHeader({
                     />
                 </SelectWrapper>
             </FlexContainer>
-            <button
+            <StyledButton
                 aria-label={t('monthNextButtonLabel')}
                 data-testid="month-next"
                 onClick={increaseMonth}
                 disabled={nextMonthButtonDisabled}
             >
                 <Icon name="chevronRight" size={isMobile ? '24' : '16'} />
-            </button>
+            </StyledButton>
         </Wrapper>
     );
 }

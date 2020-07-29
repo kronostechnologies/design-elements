@@ -1,5 +1,5 @@
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { FocusEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { FocusEvent, KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 // tslint:disable-next-line:no-import-side-effect
 import 'react-datepicker/dist/react-datepicker.min.css';
@@ -22,7 +22,7 @@ import {
     setLocaleFirstDayOfWeek,
 } from './utils/datepicker-utils';
 
-const Container = styled.div<{ isMobile: boolean }>`
+const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     display: flex;
 
     .popper[data-placement^="bottom"] {
@@ -64,11 +64,18 @@ const Container = styled.div<{ isMobile: boolean }>`
 
     .react-datepicker__day--keyboard-selected {
         background-color: ${({ theme }) => theme.greys.white};
-        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
         border-radius: 20px;
-        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys.black};
+        ${({ isMobile, theme }) => isMobile && `
+            border: 1px solid ${theme.main['primary-1.1']};
+            box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        `}
+
+        &:focus {
+            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+            box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        }
     }
 
     .react-datepicker__day-name {
@@ -91,6 +98,15 @@ const Container = styled.div<{ isMobile: boolean }>`
     .react-datepicker__day--selected {
         background-color: ${({ theme }) => theme.main['primary-1.1']};
         border-radius: 20px;
+        ${({ isMobile }) => isMobile ? `
+            &[tabindex="0"] {
+                box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+            }
+        ` : `
+            &:focus {
+                box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+            }
+        `}
     }
 
     .react-datepicker__day--today {
@@ -174,7 +190,11 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     }
 
     &:focus {
+        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        border-left: none;
+        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
         outline: none;
+        z-index: 10;
     }
 `;
 
@@ -269,6 +289,7 @@ export function Datepicker({
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
     const dateInputRef = useRef<DatePicker>(null);
+    const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         if (firstDayOfWeek) {
@@ -276,18 +297,40 @@ export function Datepicker({
         }
     }, [firstDayOfWeek]);
 
+    const handleCalendarKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Escape') {
+            setOpened(false);
+        }
+    };
+
+    const handleCalendarSelect = () => {
+        calendarButtonRef.current?.focus();
+    };
+
+    const focusCalendarDate = () => {
+        setTimeout(() => {
+            const dateToFocus: HTMLDivElement | null =
+                document.querySelector('.react-datepicker__day[tabindex="0"]');
+            if (dateToFocus) dateToFocus.focus();
+        }, 10);
+    };
+
     const handleCalendarButtonClick = () => {
         if (isOpened) {
             setOpened(false);
         } else {
             dateInputRef.current?.setFocus();
             setOpened(true);
+            focusCalendarDate();
+        }
+    };
 
-            setTimeout(() => {
-                const dateToFocus: HTMLDivElement | null =
-                    document.querySelector('.react-datepicker__day[tabindex="0"]');
-                if (dateToFocus) dateToFocus.focus();
-            }, 10);
+    const handleCalendarButtonKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+        if (event.key === 'Enter' || event.key === ' ' /* Spacebar */) {
+            event.preventDefault();
+            dateInputRef.current?.setFocus();
+            setOpened(true);
+            focusCalendarDate();
         }
     };
 
@@ -347,9 +390,11 @@ export function Datepicker({
                     maxDate={maxDate}
                     minDate={minDate}
                     onChange={handleInputChange}
+                    onSelect={handleCalendarSelect}
                     onClickOutside={() => setOpened(false)}
                     onBlur={onBlur}
                     onFocus={handleInputFocus}
+                    onKeyDown={handleCalendarKeyDown}
                     open={open || isOpened}
                     placeholderText={getPlaceholder}
                     popperClassName="popper"
@@ -373,9 +418,13 @@ export function Datepicker({
                 <CalendarButton
                     type="button"
                     aria-label={selectedDate ? `Choose date, The selected date is ${selectedDate}` : 'Choose date'}
+                    data-testid="calendar-button"
                     disabled={disabled}
                     isMobile={isMobile}
+                    onKeyDown={handleCalendarButtonKeyDown}
                     onMouseDown={handleCalendarButtonClick}
+                    ref={calendarButtonRef}
+                    tabIndex={0}
                 >
                     <Icon name="calendar" size={isMobile ? '24' : '16'} />
                 </CalendarButton>

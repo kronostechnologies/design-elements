@@ -81,11 +81,16 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -108,6 +113,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected[tabindex="0"] {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -212,7 +221,11 @@ input + .c1 {
 }
 
 .c4:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -250,7 +263,8 @@ input + .c1 {
     <button
       aria-label="Choose date, The selected date is Thu May 04 1995 20:00:00 GMT-0400 (Eastern Daylight Time)"
       class="c4"
-      type="button"
+      data-testid="calendar-button"
+      tabindex="0"
     >
       <svg
         color="currentColor"
@@ -344,11 +358,14 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -371,6 +388,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -475,7 +496,11 @@ input + .c1 {
 }
 
 .c4:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -513,8 +538,8 @@ input + .c1 {
     <button
       aria-label="Choose date"
       class="c4"
-      disabled=""
-      type="button"
+      data-testid="calendar-button"
+      tabindex="0"
     >
       <svg
         color="currentColor"
@@ -608,11 +633,14 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -635,6 +663,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -737,7 +769,11 @@ input + .c1 {
 }
 
 .c4:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -776,7 +812,9 @@ input + .c1 {
     <button
       aria-label="Choose date"
       class="c4"
-      type="button"
+      data-testid="calendar-button"
+      disabled=""
+      tabindex="0"
     >
       <svg
         color="currentColor"
@@ -882,11 +920,14 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -909,6 +950,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -1013,7 +1058,11 @@ input + .c1 {
 }
 
 .c4:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -1051,7 +1100,8 @@ input + .c1 {
     <button
       aria-label="Choose date"
       class="c4"
-      type="button"
+      data-testid="calendar-button"
+      tabindex="0"
     >
       <svg
         color="currentColor"
@@ -1153,11 +1203,16 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -1180,6 +1235,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected[tabindex="0"] {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -1284,7 +1343,11 @@ input + .c1 {
 }
 
 .c4:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -1322,6 +1385,8 @@ input + .c1 {
     <button
       aria-label="Choose date"
       class="c4"
+      data-testid="calendar-button"
+      tabindex="0"
     >
       <div
         class="react-datepicker__tab-loop__start"
@@ -2908,13 +2973,13 @@ input + .c1 {
   border-color: #0080A5;
 }
 
-.c11 {
+.c12 {
   display: none;
   position: absolute;
   width: 100%;
 }
 
-.c12 {
+.c13 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -2929,12 +2994,12 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
+.c13:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c13 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2955,16 +3020,16 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c13:hover,
-.c13:focus {
+.c14:hover,
+.c14:focus {
   background-color: #D9DDE2;
 }
 
-.c7 {
+.c8 {
   position: relative;
 }
 
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2984,15 +3049,15 @@ input + .c1 {
   width: 100%;
 }
 
-.c8:hover {
+.c9:hover {
   cursor: pointer;
 }
 
-.c8 svg {
+.c9 svg {
   color: #57666E;
 }
 
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -3013,31 +3078,31 @@ input + .c1 {
   width: 100%;
 }
 
-.c9:hover {
+.c10:hover {
   cursor: pointer;
 }
 
-.c9::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c9::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c9:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c9::placeholder {
+.c10::placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3083,14 +3148,19 @@ input + .c1 {
   cursor: pointer;
 }
 
-.c5 {
+.c5:focus {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c6 {
+.c7 {
   height: 32px;
   width: 80px;
 }
@@ -3141,11 +3211,14 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -3168,6 +3241,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -3243,7 +3320,7 @@ input + .c1 {
   outline: none;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3267,12 +3344,16 @@ input + .c1 {
   width: 32px;
 }
 
-.c14:hover {
+.c15:hover {
   background-color: #D9DDE2;
 }
 
-.c14:focus {
+.c15:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -3333,6 +3414,7 @@ input + .c1 {
                   >
                     <button
                       aria-label="Go to previous month"
+                      class="c5"
                       data-testid="month-previous"
                     >
                       <svg
@@ -3343,34 +3425,34 @@ input + .c1 {
                       />
                     </button>
                     <div
-                      class="c5"
+                      class="c6"
                     >
                       <div
-                        class="c6"
+                        class="c7"
                         style="margin-right:8px"
                       >
                         <div
-                          class="c0 c7"
+                          class="c0 c8"
                         >
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
                             aria-owns="listbox_undefined"
-                            class="c8"
+                            class="c9"
                             data-testid="input-wrapper"
                           >
                             <input
                               aria-autocomplete="list"
                               aria-controls="listbox_undefined"
                               aria-multiline="false"
-                              class="c9"
+                              class="c10"
                               data-testid="input"
                               placeholder="Select an option"
                               type="text"
                               value=""
                             />
                             <button
-                              class="c10"
+                              class="c11"
                               data-testid="arrow"
                               tabindex="-1"
                               type="button"
@@ -3384,19 +3466,19 @@ input + .c1 {
                             </button>
                           </div>
                           <div
-                            class="c11"
+                            class="c12"
                             role="listbox"
                             tabindex="-1"
                           >
                             <ul
-                              class="c12"
+                              class="c13"
                               role="presentation"
                               tabindex="0"
                             >
                               <li
                                 aria-label="Jan"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_january"
                                 role="option"
                               >
@@ -3405,7 +3487,7 @@ input + .c1 {
                               <li
                                 aria-label="Feb"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_february"
                                 role="option"
                               >
@@ -3414,7 +3496,7 @@ input + .c1 {
                               <li
                                 aria-label="Mar"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_march"
                                 role="option"
                               >
@@ -3423,7 +3505,7 @@ input + .c1 {
                               <li
                                 aria-label="Apr"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_april"
                                 role="option"
                               >
@@ -3432,7 +3514,7 @@ input + .c1 {
                               <li
                                 aria-label="May"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_may"
                                 role="option"
                               >
@@ -3441,7 +3523,7 @@ input + .c1 {
                               <li
                                 aria-label="Jun"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_june"
                                 role="option"
                               >
@@ -3450,7 +3532,7 @@ input + .c1 {
                               <li
                                 aria-label="Jul"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_july"
                                 role="option"
                               >
@@ -3459,7 +3541,7 @@ input + .c1 {
                               <li
                                 aria-label="Aug"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_august"
                                 role="option"
                               >
@@ -3468,7 +3550,7 @@ input + .c1 {
                               <li
                                 aria-label="Sep"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_september"
                                 role="option"
                               >
@@ -3477,7 +3559,7 @@ input + .c1 {
                               <li
                                 aria-label="Oct"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_october"
                                 role="option"
                               >
@@ -3486,7 +3568,7 @@ input + .c1 {
                               <li
                                 aria-label="Nov"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_november"
                                 role="option"
                               >
@@ -3495,7 +3577,7 @@ input + .c1 {
                               <li
                                 aria-label="Dec"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_december"
                                 role="option"
                               >
@@ -3506,30 +3588,30 @@ input + .c1 {
                         </div>
                       </div>
                       <div
-                        class="c6"
+                        class="c7"
                       >
                         <div
-                          class="c0 c7"
+                          class="c0 c8"
                         >
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
                             aria-owns="listbox_undefined"
-                            class="c8"
+                            class="c9"
                             data-testid="input-wrapper"
                           >
                             <input
                               aria-autocomplete="list"
                               aria-controls="listbox_undefined"
                               aria-multiline="false"
-                              class="c9"
+                              class="c10"
                               data-testid="input"
                               placeholder="Select an option"
                               type="text"
                               value=""
                             />
                             <button
-                              class="c10"
+                              class="c11"
                               data-testid="arrow"
                               tabindex="-1"
                               type="button"
@@ -3543,19 +3625,19 @@ input + .c1 {
                             </button>
                           </div>
                           <div
-                            class="c11"
+                            class="c12"
                             role="listbox"
                             tabindex="-1"
                           >
                             <ul
-                              class="c12"
+                              class="c13"
                               role="presentation"
                               tabindex="0"
                             >
                               <li
                                 aria-label="1920"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1920"
                                 role="option"
                               >
@@ -3564,7 +3646,7 @@ input + .c1 {
                               <li
                                 aria-label="1921"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1921"
                                 role="option"
                               >
@@ -3573,7 +3655,7 @@ input + .c1 {
                               <li
                                 aria-label="1922"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1922"
                                 role="option"
                               >
@@ -3582,7 +3664,7 @@ input + .c1 {
                               <li
                                 aria-label="1923"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1923"
                                 role="option"
                               >
@@ -3591,7 +3673,7 @@ input + .c1 {
                               <li
                                 aria-label="1924"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1924"
                                 role="option"
                               >
@@ -3600,7 +3682,7 @@ input + .c1 {
                               <li
                                 aria-label="1925"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1925"
                                 role="option"
                               >
@@ -3609,7 +3691,7 @@ input + .c1 {
                               <li
                                 aria-label="1926"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1926"
                                 role="option"
                               >
@@ -3618,7 +3700,7 @@ input + .c1 {
                               <li
                                 aria-label="1927"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1927"
                                 role="option"
                               >
@@ -3627,7 +3709,7 @@ input + .c1 {
                               <li
                                 aria-label="1928"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1928"
                                 role="option"
                               >
@@ -3636,7 +3718,7 @@ input + .c1 {
                               <li
                                 aria-label="1929"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1929"
                                 role="option"
                               >
@@ -3645,7 +3727,7 @@ input + .c1 {
                               <li
                                 aria-label="1930"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1930"
                                 role="option"
                               >
@@ -3654,7 +3736,7 @@ input + .c1 {
                               <li
                                 aria-label="1931"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1931"
                                 role="option"
                               >
@@ -3663,7 +3745,7 @@ input + .c1 {
                               <li
                                 aria-label="1932"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1932"
                                 role="option"
                               >
@@ -3672,7 +3754,7 @@ input + .c1 {
                               <li
                                 aria-label="1933"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1933"
                                 role="option"
                               >
@@ -3681,7 +3763,7 @@ input + .c1 {
                               <li
                                 aria-label="1934"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1934"
                                 role="option"
                               >
@@ -3690,7 +3772,7 @@ input + .c1 {
                               <li
                                 aria-label="1935"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1935"
                                 role="option"
                               >
@@ -3699,7 +3781,7 @@ input + .c1 {
                               <li
                                 aria-label="1936"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1936"
                                 role="option"
                               >
@@ -3708,7 +3790,7 @@ input + .c1 {
                               <li
                                 aria-label="1937"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1937"
                                 role="option"
                               >
@@ -3717,7 +3799,7 @@ input + .c1 {
                               <li
                                 aria-label="1938"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1938"
                                 role="option"
                               >
@@ -3726,7 +3808,7 @@ input + .c1 {
                               <li
                                 aria-label="1939"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1939"
                                 role="option"
                               >
@@ -3735,7 +3817,7 @@ input + .c1 {
                               <li
                                 aria-label="1940"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1940"
                                 role="option"
                               >
@@ -3744,7 +3826,7 @@ input + .c1 {
                               <li
                                 aria-label="1941"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1941"
                                 role="option"
                               >
@@ -3753,7 +3835,7 @@ input + .c1 {
                               <li
                                 aria-label="1942"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1942"
                                 role="option"
                               >
@@ -3762,7 +3844,7 @@ input + .c1 {
                               <li
                                 aria-label="1943"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1943"
                                 role="option"
                               >
@@ -3771,7 +3853,7 @@ input + .c1 {
                               <li
                                 aria-label="1944"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1944"
                                 role="option"
                               >
@@ -3780,7 +3862,7 @@ input + .c1 {
                               <li
                                 aria-label="1945"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1945"
                                 role="option"
                               >
@@ -3789,7 +3871,7 @@ input + .c1 {
                               <li
                                 aria-label="1946"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1946"
                                 role="option"
                               >
@@ -3798,7 +3880,7 @@ input + .c1 {
                               <li
                                 aria-label="1947"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1947"
                                 role="option"
                               >
@@ -3807,7 +3889,7 @@ input + .c1 {
                               <li
                                 aria-label="1948"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1948"
                                 role="option"
                               >
@@ -3816,7 +3898,7 @@ input + .c1 {
                               <li
                                 aria-label="1949"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1949"
                                 role="option"
                               >
@@ -3825,7 +3907,7 @@ input + .c1 {
                               <li
                                 aria-label="1950"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1950"
                                 role="option"
                               >
@@ -3834,7 +3916,7 @@ input + .c1 {
                               <li
                                 aria-label="1951"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1951"
                                 role="option"
                               >
@@ -3843,7 +3925,7 @@ input + .c1 {
                               <li
                                 aria-label="1952"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1952"
                                 role="option"
                               >
@@ -3852,7 +3934,7 @@ input + .c1 {
                               <li
                                 aria-label="1953"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1953"
                                 role="option"
                               >
@@ -3861,7 +3943,7 @@ input + .c1 {
                               <li
                                 aria-label="1954"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1954"
                                 role="option"
                               >
@@ -3870,7 +3952,7 @@ input + .c1 {
                               <li
                                 aria-label="1955"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1955"
                                 role="option"
                               >
@@ -3879,7 +3961,7 @@ input + .c1 {
                               <li
                                 aria-label="1956"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1956"
                                 role="option"
                               >
@@ -3888,7 +3970,7 @@ input + .c1 {
                               <li
                                 aria-label="1957"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1957"
                                 role="option"
                               >
@@ -3897,7 +3979,7 @@ input + .c1 {
                               <li
                                 aria-label="1958"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1958"
                                 role="option"
                               >
@@ -3906,7 +3988,7 @@ input + .c1 {
                               <li
                                 aria-label="1959"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1959"
                                 role="option"
                               >
@@ -3915,7 +3997,7 @@ input + .c1 {
                               <li
                                 aria-label="1960"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1960"
                                 role="option"
                               >
@@ -3924,7 +4006,7 @@ input + .c1 {
                               <li
                                 aria-label="1961"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1961"
                                 role="option"
                               >
@@ -3933,7 +4015,7 @@ input + .c1 {
                               <li
                                 aria-label="1962"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1962"
                                 role="option"
                               >
@@ -3942,7 +4024,7 @@ input + .c1 {
                               <li
                                 aria-label="1963"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1963"
                                 role="option"
                               >
@@ -3951,7 +4033,7 @@ input + .c1 {
                               <li
                                 aria-label="1964"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1964"
                                 role="option"
                               >
@@ -3960,7 +4042,7 @@ input + .c1 {
                               <li
                                 aria-label="1965"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1965"
                                 role="option"
                               >
@@ -3969,7 +4051,7 @@ input + .c1 {
                               <li
                                 aria-label="1966"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1966"
                                 role="option"
                               >
@@ -3978,7 +4060,7 @@ input + .c1 {
                               <li
                                 aria-label="1967"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1967"
                                 role="option"
                               >
@@ -3987,7 +4069,7 @@ input + .c1 {
                               <li
                                 aria-label="1968"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1968"
                                 role="option"
                               >
@@ -3996,7 +4078,7 @@ input + .c1 {
                               <li
                                 aria-label="1969"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1969"
                                 role="option"
                               >
@@ -4005,7 +4087,7 @@ input + .c1 {
                               <li
                                 aria-label="1970"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1970"
                                 role="option"
                               >
@@ -4014,7 +4096,7 @@ input + .c1 {
                               <li
                                 aria-label="1971"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1971"
                                 role="option"
                               >
@@ -4023,7 +4105,7 @@ input + .c1 {
                               <li
                                 aria-label="1972"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1972"
                                 role="option"
                               >
@@ -4032,7 +4114,7 @@ input + .c1 {
                               <li
                                 aria-label="1973"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1973"
                                 role="option"
                               >
@@ -4041,7 +4123,7 @@ input + .c1 {
                               <li
                                 aria-label="1974"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1974"
                                 role="option"
                               >
@@ -4050,7 +4132,7 @@ input + .c1 {
                               <li
                                 aria-label="1975"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1975"
                                 role="option"
                               >
@@ -4059,7 +4141,7 @@ input + .c1 {
                               <li
                                 aria-label="1976"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1976"
                                 role="option"
                               >
@@ -4068,7 +4150,7 @@ input + .c1 {
                               <li
                                 aria-label="1977"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1977"
                                 role="option"
                               >
@@ -4077,7 +4159,7 @@ input + .c1 {
                               <li
                                 aria-label="1978"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1978"
                                 role="option"
                               >
@@ -4086,7 +4168,7 @@ input + .c1 {
                               <li
                                 aria-label="1979"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1979"
                                 role="option"
                               >
@@ -4095,7 +4177,7 @@ input + .c1 {
                               <li
                                 aria-label="1980"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1980"
                                 role="option"
                               >
@@ -4104,7 +4186,7 @@ input + .c1 {
                               <li
                                 aria-label="1981"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1981"
                                 role="option"
                               >
@@ -4113,7 +4195,7 @@ input + .c1 {
                               <li
                                 aria-label="1982"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1982"
                                 role="option"
                               >
@@ -4122,7 +4204,7 @@ input + .c1 {
                               <li
                                 aria-label="1983"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1983"
                                 role="option"
                               >
@@ -4131,7 +4213,7 @@ input + .c1 {
                               <li
                                 aria-label="1984"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1984"
                                 role="option"
                               >
@@ -4140,7 +4222,7 @@ input + .c1 {
                               <li
                                 aria-label="1985"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1985"
                                 role="option"
                               >
@@ -4149,7 +4231,7 @@ input + .c1 {
                               <li
                                 aria-label="1986"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1986"
                                 role="option"
                               >
@@ -4158,7 +4240,7 @@ input + .c1 {
                               <li
                                 aria-label="1987"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1987"
                                 role="option"
                               >
@@ -4167,7 +4249,7 @@ input + .c1 {
                               <li
                                 aria-label="1988"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1988"
                                 role="option"
                               >
@@ -4176,7 +4258,7 @@ input + .c1 {
                               <li
                                 aria-label="1989"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1989"
                                 role="option"
                               >
@@ -4185,7 +4267,7 @@ input + .c1 {
                               <li
                                 aria-label="1990"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1990"
                                 role="option"
                               >
@@ -4194,7 +4276,7 @@ input + .c1 {
                               <li
                                 aria-label="1991"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1991"
                                 role="option"
                               >
@@ -4203,7 +4285,7 @@ input + .c1 {
                               <li
                                 aria-label="1992"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1992"
                                 role="option"
                               >
@@ -4212,7 +4294,7 @@ input + .c1 {
                               <li
                                 aria-label="1993"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1993"
                                 role="option"
                               >
@@ -4221,7 +4303,7 @@ input + .c1 {
                               <li
                                 aria-label="1994"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1994"
                                 role="option"
                               >
@@ -4230,7 +4312,7 @@ input + .c1 {
                               <li
                                 aria-label="1995"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1995"
                                 role="option"
                               >
@@ -4239,7 +4321,7 @@ input + .c1 {
                               <li
                                 aria-label="1996"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1996"
                                 role="option"
                               >
@@ -4248,7 +4330,7 @@ input + .c1 {
                               <li
                                 aria-label="1997"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1997"
                                 role="option"
                               >
@@ -4257,7 +4339,7 @@ input + .c1 {
                               <li
                                 aria-label="1998"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1998"
                                 role="option"
                               >
@@ -4266,7 +4348,7 @@ input + .c1 {
                               <li
                                 aria-label="1999"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1999"
                                 role="option"
                               >
@@ -4275,7 +4357,7 @@ input + .c1 {
                               <li
                                 aria-label="2000"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2000"
                                 role="option"
                               >
@@ -4284,7 +4366,7 @@ input + .c1 {
                               <li
                                 aria-label="2001"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2001"
                                 role="option"
                               >
@@ -4293,7 +4375,7 @@ input + .c1 {
                               <li
                                 aria-label="2002"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2002"
                                 role="option"
                               >
@@ -4302,7 +4384,7 @@ input + .c1 {
                               <li
                                 aria-label="2003"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2003"
                                 role="option"
                               >
@@ -4311,7 +4393,7 @@ input + .c1 {
                               <li
                                 aria-label="2004"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2004"
                                 role="option"
                               >
@@ -4320,7 +4402,7 @@ input + .c1 {
                               <li
                                 aria-label="2005"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2005"
                                 role="option"
                               >
@@ -4329,7 +4411,7 @@ input + .c1 {
                               <li
                                 aria-label="2006"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2006"
                                 role="option"
                               >
@@ -4338,7 +4420,7 @@ input + .c1 {
                               <li
                                 aria-label="2007"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2007"
                                 role="option"
                               >
@@ -4347,7 +4429,7 @@ input + .c1 {
                               <li
                                 aria-label="2008"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2008"
                                 role="option"
                               >
@@ -4356,7 +4438,7 @@ input + .c1 {
                               <li
                                 aria-label="2009"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2009"
                                 role="option"
                               >
@@ -4365,7 +4447,7 @@ input + .c1 {
                               <li
                                 aria-label="2010"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2010"
                                 role="option"
                               >
@@ -4378,6 +4460,7 @@ input + .c1 {
                     </div>
                     <button
                       aria-label="Go to next month"
+                      class="c5"
                       data-testid="month-next"
                       disabled=""
                     >
@@ -4848,7 +4931,9 @@ input + .c1 {
     </div>
     <button
       aria-label="Choose date"
-      class="c14"
+      class="c15"
+      data-testid="calendar-button"
+      tabindex="0"
     >
       <svg
         color="currentColor"
@@ -4896,13 +4981,13 @@ input + .c1 {
   border-color: #0080A5;
 }
 
-.c11 {
+.c12 {
   display: none;
   position: absolute;
   width: 100%;
 }
 
-.c12 {
+.c13 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -4917,12 +5002,12 @@ input + .c1 {
   width: 100%;
 }
 
-.c12:focus {
+.c13:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c13 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4943,16 +5028,16 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c13:hover,
-.c13:focus {
+.c14:hover,
+.c14:focus {
   background-color: #D9DDE2;
 }
 
-.c7 {
+.c8 {
   position: relative;
 }
 
-.c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4972,15 +5057,15 @@ input + .c1 {
   width: 100%;
 }
 
-.c8:hover {
+.c9:hover {
   cursor: pointer;
 }
 
-.c8 svg {
+.c9 svg {
   color: #57666E;
 }
 
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -5001,31 +5086,31 @@ input + .c1 {
   width: 100%;
 }
 
-.c9:hover {
+.c10:hover {
   cursor: pointer;
 }
 
-.c9::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c9::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c9:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c9::placeholder {
+.c10::placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5071,14 +5156,19 @@ input + .c1 {
   cursor: pointer;
 }
 
-.c5 {
+.c5:focus {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c6 {
+.c7 {
   height: 40px;
   width: 88px;
 }
@@ -5129,11 +5219,16 @@ input + .c1 {
 
 .c2 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
-  border: 1px solid #0080A5;
   border-radius: 20px;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   box-sizing: border-box;
   color: #000000;
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day-name {
@@ -5156,6 +5251,10 @@ input + .c1 {
 .c2 .react-datepicker__day--selected {
   background-color: #0080A5;
   border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected[tabindex="0"] {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c2 .react-datepicker__day--today {
@@ -5231,7 +5330,7 @@ input + .c1 {
   outline: none;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5255,12 +5354,16 @@ input + .c1 {
   width: 40px;
 }
 
-.c14:hover {
+.c15:hover {
   background-color: #D9DDE2;
 }
 
-.c14:focus {
+.c15:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
+  z-index: 10;
 }
 
 <div
@@ -5321,6 +5424,7 @@ input + .c1 {
                   >
                     <button
                       aria-label="Go to previous month"
+                      class="c5"
                       data-testid="month-previous"
                     >
                       <svg
@@ -5331,34 +5435,34 @@ input + .c1 {
                       />
                     </button>
                     <div
-                      class="c5"
+                      class="c6"
                     >
                       <div
-                        class="c6"
+                        class="c7"
                         style="margin-right:8px"
                       >
                         <div
-                          class="c0 c7"
+                          class="c0 c8"
                         >
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
                             aria-owns="listbox_undefined"
-                            class="c8"
+                            class="c9"
                             data-testid="input-wrapper"
                           >
                             <input
                               aria-autocomplete="list"
                               aria-controls="listbox_undefined"
                               aria-multiline="false"
-                              class="c9"
+                              class="c10"
                               data-testid="input"
                               placeholder="Select an option"
                               type="text"
                               value=""
                             />
                             <button
-                              class="c10"
+                              class="c11"
                               data-testid="arrow"
                               tabindex="-1"
                               type="button"
@@ -5372,19 +5476,19 @@ input + .c1 {
                             </button>
                           </div>
                           <div
-                            class="c11"
+                            class="c12"
                             role="listbox"
                             tabindex="-1"
                           >
                             <ul
-                              class="c12"
+                              class="c13"
                               role="presentation"
                               tabindex="0"
                             >
                               <li
                                 aria-label="Jan"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_january"
                                 role="option"
                               >
@@ -5393,7 +5497,7 @@ input + .c1 {
                               <li
                                 aria-label="Feb"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_february"
                                 role="option"
                               >
@@ -5402,7 +5506,7 @@ input + .c1 {
                               <li
                                 aria-label="Mar"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_march"
                                 role="option"
                               >
@@ -5411,7 +5515,7 @@ input + .c1 {
                               <li
                                 aria-label="Apr"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_april"
                                 role="option"
                               >
@@ -5420,7 +5524,7 @@ input + .c1 {
                               <li
                                 aria-label="May"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_may"
                                 role="option"
                               >
@@ -5429,7 +5533,7 @@ input + .c1 {
                               <li
                                 aria-label="Jun"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_june"
                                 role="option"
                               >
@@ -5438,7 +5542,7 @@ input + .c1 {
                               <li
                                 aria-label="Jul"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_july"
                                 role="option"
                               >
@@ -5447,7 +5551,7 @@ input + .c1 {
                               <li
                                 aria-label="Aug"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_august"
                                 role="option"
                               >
@@ -5456,7 +5560,7 @@ input + .c1 {
                               <li
                                 aria-label="Sep"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_september"
                                 role="option"
                               >
@@ -5465,7 +5569,7 @@ input + .c1 {
                               <li
                                 aria-label="Oct"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_october"
                                 role="option"
                               >
@@ -5474,7 +5578,7 @@ input + .c1 {
                               <li
                                 aria-label="Nov"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_november"
                                 role="option"
                               >
@@ -5483,7 +5587,7 @@ input + .c1 {
                               <li
                                 aria-label="Dec"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_december"
                                 role="option"
                               >
@@ -5494,30 +5598,30 @@ input + .c1 {
                         </div>
                       </div>
                       <div
-                        class="c6"
+                        class="c7"
                       >
                         <div
-                          class="c0 c7"
+                          class="c0 c8"
                         >
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
                             aria-owns="listbox_undefined"
-                            class="c8"
+                            class="c9"
                             data-testid="input-wrapper"
                           >
                             <input
                               aria-autocomplete="list"
                               aria-controls="listbox_undefined"
                               aria-multiline="false"
-                              class="c9"
+                              class="c10"
                               data-testid="input"
                               placeholder="Select an option"
                               type="text"
                               value=""
                             />
                             <button
-                              class="c10"
+                              class="c11"
                               data-testid="arrow"
                               tabindex="-1"
                               type="button"
@@ -5531,19 +5635,19 @@ input + .c1 {
                             </button>
                           </div>
                           <div
-                            class="c11"
+                            class="c12"
                             role="listbox"
                             tabindex="-1"
                           >
                             <ul
-                              class="c12"
+                              class="c13"
                               role="presentation"
                               tabindex="0"
                             >
                               <li
                                 aria-label="1920"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1920"
                                 role="option"
                               >
@@ -5552,7 +5656,7 @@ input + .c1 {
                               <li
                                 aria-label="1921"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1921"
                                 role="option"
                               >
@@ -5561,7 +5665,7 @@ input + .c1 {
                               <li
                                 aria-label="1922"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1922"
                                 role="option"
                               >
@@ -5570,7 +5674,7 @@ input + .c1 {
                               <li
                                 aria-label="1923"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1923"
                                 role="option"
                               >
@@ -5579,7 +5683,7 @@ input + .c1 {
                               <li
                                 aria-label="1924"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1924"
                                 role="option"
                               >
@@ -5588,7 +5692,7 @@ input + .c1 {
                               <li
                                 aria-label="1925"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1925"
                                 role="option"
                               >
@@ -5597,7 +5701,7 @@ input + .c1 {
                               <li
                                 aria-label="1926"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1926"
                                 role="option"
                               >
@@ -5606,7 +5710,7 @@ input + .c1 {
                               <li
                                 aria-label="1927"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1927"
                                 role="option"
                               >
@@ -5615,7 +5719,7 @@ input + .c1 {
                               <li
                                 aria-label="1928"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1928"
                                 role="option"
                               >
@@ -5624,7 +5728,7 @@ input + .c1 {
                               <li
                                 aria-label="1929"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1929"
                                 role="option"
                               >
@@ -5633,7 +5737,7 @@ input + .c1 {
                               <li
                                 aria-label="1930"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1930"
                                 role="option"
                               >
@@ -5642,7 +5746,7 @@ input + .c1 {
                               <li
                                 aria-label="1931"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1931"
                                 role="option"
                               >
@@ -5651,7 +5755,7 @@ input + .c1 {
                               <li
                                 aria-label="1932"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1932"
                                 role="option"
                               >
@@ -5660,7 +5764,7 @@ input + .c1 {
                               <li
                                 aria-label="1933"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1933"
                                 role="option"
                               >
@@ -5669,7 +5773,7 @@ input + .c1 {
                               <li
                                 aria-label="1934"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1934"
                                 role="option"
                               >
@@ -5678,7 +5782,7 @@ input + .c1 {
                               <li
                                 aria-label="1935"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1935"
                                 role="option"
                               >
@@ -5687,7 +5791,7 @@ input + .c1 {
                               <li
                                 aria-label="1936"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1936"
                                 role="option"
                               >
@@ -5696,7 +5800,7 @@ input + .c1 {
                               <li
                                 aria-label="1937"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1937"
                                 role="option"
                               >
@@ -5705,7 +5809,7 @@ input + .c1 {
                               <li
                                 aria-label="1938"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1938"
                                 role="option"
                               >
@@ -5714,7 +5818,7 @@ input + .c1 {
                               <li
                                 aria-label="1939"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1939"
                                 role="option"
                               >
@@ -5723,7 +5827,7 @@ input + .c1 {
                               <li
                                 aria-label="1940"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1940"
                                 role="option"
                               >
@@ -5732,7 +5836,7 @@ input + .c1 {
                               <li
                                 aria-label="1941"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1941"
                                 role="option"
                               >
@@ -5741,7 +5845,7 @@ input + .c1 {
                               <li
                                 aria-label="1942"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1942"
                                 role="option"
                               >
@@ -5750,7 +5854,7 @@ input + .c1 {
                               <li
                                 aria-label="1943"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1943"
                                 role="option"
                               >
@@ -5759,7 +5863,7 @@ input + .c1 {
                               <li
                                 aria-label="1944"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1944"
                                 role="option"
                               >
@@ -5768,7 +5872,7 @@ input + .c1 {
                               <li
                                 aria-label="1945"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1945"
                                 role="option"
                               >
@@ -5777,7 +5881,7 @@ input + .c1 {
                               <li
                                 aria-label="1946"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1946"
                                 role="option"
                               >
@@ -5786,7 +5890,7 @@ input + .c1 {
                               <li
                                 aria-label="1947"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1947"
                                 role="option"
                               >
@@ -5795,7 +5899,7 @@ input + .c1 {
                               <li
                                 aria-label="1948"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1948"
                                 role="option"
                               >
@@ -5804,7 +5908,7 @@ input + .c1 {
                               <li
                                 aria-label="1949"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1949"
                                 role="option"
                               >
@@ -5813,7 +5917,7 @@ input + .c1 {
                               <li
                                 aria-label="1950"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1950"
                                 role="option"
                               >
@@ -5822,7 +5926,7 @@ input + .c1 {
                               <li
                                 aria-label="1951"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1951"
                                 role="option"
                               >
@@ -5831,7 +5935,7 @@ input + .c1 {
                               <li
                                 aria-label="1952"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1952"
                                 role="option"
                               >
@@ -5840,7 +5944,7 @@ input + .c1 {
                               <li
                                 aria-label="1953"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1953"
                                 role="option"
                               >
@@ -5849,7 +5953,7 @@ input + .c1 {
                               <li
                                 aria-label="1954"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1954"
                                 role="option"
                               >
@@ -5858,7 +5962,7 @@ input + .c1 {
                               <li
                                 aria-label="1955"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1955"
                                 role="option"
                               >
@@ -5867,7 +5971,7 @@ input + .c1 {
                               <li
                                 aria-label="1956"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1956"
                                 role="option"
                               >
@@ -5876,7 +5980,7 @@ input + .c1 {
                               <li
                                 aria-label="1957"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1957"
                                 role="option"
                               >
@@ -5885,7 +5989,7 @@ input + .c1 {
                               <li
                                 aria-label="1958"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1958"
                                 role="option"
                               >
@@ -5894,7 +5998,7 @@ input + .c1 {
                               <li
                                 aria-label="1959"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1959"
                                 role="option"
                               >
@@ -5903,7 +6007,7 @@ input + .c1 {
                               <li
                                 aria-label="1960"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1960"
                                 role="option"
                               >
@@ -5912,7 +6016,7 @@ input + .c1 {
                               <li
                                 aria-label="1961"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1961"
                                 role="option"
                               >
@@ -5921,7 +6025,7 @@ input + .c1 {
                               <li
                                 aria-label="1962"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1962"
                                 role="option"
                               >
@@ -5930,7 +6034,7 @@ input + .c1 {
                               <li
                                 aria-label="1963"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1963"
                                 role="option"
                               >
@@ -5939,7 +6043,7 @@ input + .c1 {
                               <li
                                 aria-label="1964"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1964"
                                 role="option"
                               >
@@ -5948,7 +6052,7 @@ input + .c1 {
                               <li
                                 aria-label="1965"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1965"
                                 role="option"
                               >
@@ -5957,7 +6061,7 @@ input + .c1 {
                               <li
                                 aria-label="1966"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1966"
                                 role="option"
                               >
@@ -5966,7 +6070,7 @@ input + .c1 {
                               <li
                                 aria-label="1967"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1967"
                                 role="option"
                               >
@@ -5975,7 +6079,7 @@ input + .c1 {
                               <li
                                 aria-label="1968"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1968"
                                 role="option"
                               >
@@ -5984,7 +6088,7 @@ input + .c1 {
                               <li
                                 aria-label="1969"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1969"
                                 role="option"
                               >
@@ -5993,7 +6097,7 @@ input + .c1 {
                               <li
                                 aria-label="1970"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1970"
                                 role="option"
                               >
@@ -6002,7 +6106,7 @@ input + .c1 {
                               <li
                                 aria-label="1971"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1971"
                                 role="option"
                               >
@@ -6011,7 +6115,7 @@ input + .c1 {
                               <li
                                 aria-label="1972"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1972"
                                 role="option"
                               >
@@ -6020,7 +6124,7 @@ input + .c1 {
                               <li
                                 aria-label="1973"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1973"
                                 role="option"
                               >
@@ -6029,7 +6133,7 @@ input + .c1 {
                               <li
                                 aria-label="1974"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1974"
                                 role="option"
                               >
@@ -6038,7 +6142,7 @@ input + .c1 {
                               <li
                                 aria-label="1975"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1975"
                                 role="option"
                               >
@@ -6047,7 +6151,7 @@ input + .c1 {
                               <li
                                 aria-label="1976"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1976"
                                 role="option"
                               >
@@ -6056,7 +6160,7 @@ input + .c1 {
                               <li
                                 aria-label="1977"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1977"
                                 role="option"
                               >
@@ -6065,7 +6169,7 @@ input + .c1 {
                               <li
                                 aria-label="1978"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1978"
                                 role="option"
                               >
@@ -6074,7 +6178,7 @@ input + .c1 {
                               <li
                                 aria-label="1979"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1979"
                                 role="option"
                               >
@@ -6083,7 +6187,7 @@ input + .c1 {
                               <li
                                 aria-label="1980"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1980"
                                 role="option"
                               >
@@ -6092,7 +6196,7 @@ input + .c1 {
                               <li
                                 aria-label="1981"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1981"
                                 role="option"
                               >
@@ -6101,7 +6205,7 @@ input + .c1 {
                               <li
                                 aria-label="1982"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1982"
                                 role="option"
                               >
@@ -6110,7 +6214,7 @@ input + .c1 {
                               <li
                                 aria-label="1983"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1983"
                                 role="option"
                               >
@@ -6119,7 +6223,7 @@ input + .c1 {
                               <li
                                 aria-label="1984"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1984"
                                 role="option"
                               >
@@ -6128,7 +6232,7 @@ input + .c1 {
                               <li
                                 aria-label="1985"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1985"
                                 role="option"
                               >
@@ -6137,7 +6241,7 @@ input + .c1 {
                               <li
                                 aria-label="1986"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1986"
                                 role="option"
                               >
@@ -6146,7 +6250,7 @@ input + .c1 {
                               <li
                                 aria-label="1987"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1987"
                                 role="option"
                               >
@@ -6155,7 +6259,7 @@ input + .c1 {
                               <li
                                 aria-label="1988"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1988"
                                 role="option"
                               >
@@ -6164,7 +6268,7 @@ input + .c1 {
                               <li
                                 aria-label="1989"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1989"
                                 role="option"
                               >
@@ -6173,7 +6277,7 @@ input + .c1 {
                               <li
                                 aria-label="1990"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1990"
                                 role="option"
                               >
@@ -6182,7 +6286,7 @@ input + .c1 {
                               <li
                                 aria-label="1991"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1991"
                                 role="option"
                               >
@@ -6191,7 +6295,7 @@ input + .c1 {
                               <li
                                 aria-label="1992"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1992"
                                 role="option"
                               >
@@ -6200,7 +6304,7 @@ input + .c1 {
                               <li
                                 aria-label="1993"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1993"
                                 role="option"
                               >
@@ -6209,7 +6313,7 @@ input + .c1 {
                               <li
                                 aria-label="1994"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1994"
                                 role="option"
                               >
@@ -6218,7 +6322,7 @@ input + .c1 {
                               <li
                                 aria-label="1995"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1995"
                                 role="option"
                               >
@@ -6227,7 +6331,7 @@ input + .c1 {
                               <li
                                 aria-label="1996"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1996"
                                 role="option"
                               >
@@ -6236,7 +6340,7 @@ input + .c1 {
                               <li
                                 aria-label="1997"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1997"
                                 role="option"
                               >
@@ -6245,7 +6349,7 @@ input + .c1 {
                               <li
                                 aria-label="1998"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1998"
                                 role="option"
                               >
@@ -6254,7 +6358,7 @@ input + .c1 {
                               <li
                                 aria-label="1999"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_1999"
                                 role="option"
                               >
@@ -6263,7 +6367,7 @@ input + .c1 {
                               <li
                                 aria-label="2000"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2000"
                                 role="option"
                               >
@@ -6272,7 +6376,7 @@ input + .c1 {
                               <li
                                 aria-label="2001"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2001"
                                 role="option"
                               >
@@ -6281,7 +6385,7 @@ input + .c1 {
                               <li
                                 aria-label="2002"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2002"
                                 role="option"
                               >
@@ -6290,7 +6394,7 @@ input + .c1 {
                               <li
                                 aria-label="2003"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2003"
                                 role="option"
                               >
@@ -6299,7 +6403,7 @@ input + .c1 {
                               <li
                                 aria-label="2004"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2004"
                                 role="option"
                               >
@@ -6308,7 +6412,7 @@ input + .c1 {
                               <li
                                 aria-label="2005"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2005"
                                 role="option"
                               >
@@ -6317,7 +6421,7 @@ input + .c1 {
                               <li
                                 aria-label="2006"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2006"
                                 role="option"
                               >
@@ -6326,7 +6430,7 @@ input + .c1 {
                               <li
                                 aria-label="2007"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2007"
                                 role="option"
                               >
@@ -6335,7 +6439,7 @@ input + .c1 {
                               <li
                                 aria-label="2008"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2008"
                                 role="option"
                               >
@@ -6344,7 +6448,7 @@ input + .c1 {
                               <li
                                 aria-label="2009"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2009"
                                 role="option"
                               >
@@ -6353,7 +6457,7 @@ input + .c1 {
                               <li
                                 aria-label="2010"
                                 aria-selected="false"
-                                class="c13"
+                                class="c14"
                                 id="undefined_2010"
                                 role="option"
                               >
@@ -6366,6 +6470,7 @@ input + .c1 {
                     </div>
                     <button
                       aria-label="Go to next month"
+                      class="c5"
                       data-testid="month-next"
                       disabled=""
                     >
@@ -6836,8 +6941,9 @@ input + .c1 {
     </div>
     <button
       aria-label="Choose date"
-      class="c14"
-      type="button"
+      class="c15"
+      data-testid="calendar-button"
+      tabindex="0"
     >
       <svg
         color="currentColor"
