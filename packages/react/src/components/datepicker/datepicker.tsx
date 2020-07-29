@@ -107,6 +107,10 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
                 box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
             }
         `}
+
+        &:hover {
+            color: ${({ theme }) => theme.greys.black};
+        }
     }
 
     .react-datepicker__day--today {
@@ -297,25 +301,26 @@ export function Datepicker({
         }
     }, [firstDayOfWeek]);
 
-    const handleCalendarKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
             setOpened(false);
         }
-    };
+    }
 
-    const handleCalendarSelect = () => {
+    function handleCalendarSelect(): void {
+        setOpened(false);
         calendarButtonRef.current?.focus();
-    };
+    }
 
-    const focusCalendarDate = () => {
+    function focusCalendarDate(): void {
         setTimeout(() => {
             const dateToFocus: HTMLDivElement | null =
                 document.querySelector('.react-datepicker__day[tabindex="0"]');
             if (dateToFocus) dateToFocus.focus();
         }, 10);
-    };
+    }
 
-    const handleCalendarButtonClick = () => {
+    function handleCalendarButtonClick(): void {
         if (isOpened) {
             setOpened(false);
         } else {
@@ -323,33 +328,33 @@ export function Datepicker({
             setOpened(true);
             focusCalendarDate();
         }
-    };
+    }
 
-    const handleCalendarButtonKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
         if (event.key === 'Enter' || event.key === ' ' /* Spacebar */) {
             event.preventDefault();
             dateInputRef.current?.setFocus();
             setOpened(true);
             focusCalendarDate();
         }
-    };
+    }
 
-    const handleInputChange = (date: Date) => {
+    function handleInputChange(date: Date): void {
         setSelectedDate(date);
         setOpened(false);
 
         if (onChange) {
             onChange(date);
         }
-    };
+    }
 
-    const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
+    function handleInputFocus(event: FocusEvent<HTMLInputElement>): void {
         setOpened(false);
 
         if (onFocus) {
             onFocus(event);
         }
-    };
+    }
 
     const getPlaceholder = useMemo(() => {
         if (placeholder) {
