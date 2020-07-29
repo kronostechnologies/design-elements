@@ -119,6 +119,10 @@ input + .c1 {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
 .c2 .react-datepicker__day--today {
   color: #0080A5;
   font-weight: var(--font-normal);
@@ -250,18 +254,18 @@ input + .c1 {
           data-testid="text-input"
           placeholder="YYYY-MM-DD"
           type="text"
-          value="1995-05-04"
+          value="1995-05-05"
         />
       </div>
     </div>
     <div
-      aria-label="Thu May 04 1995"
+      aria-label="Fri May 05 1995"
       aria-live="polite"
       aria-modal="true"
       role="dialog"
     />
     <button
-      aria-label="Choose date, The selected date is Thu May 04 1995 20:00:00 GMT-0400 (Eastern Daylight Time)"
+      aria-label="Choose date, The selected date is 1995-05-05"
       class="c4"
       data-testid="calendar-button"
       tabindex="0"
@@ -392,6 +396,10 @@ input + .c1 {
 
 .c2 .react-datepicker__day--selected:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
 }
 
 .c2 .react-datepicker__day--today {
@@ -667,6 +675,10 @@ input + .c1 {
 
 .c2 .react-datepicker__day--selected:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
 }
 
 .c2 .react-datepicker__day--today {
@@ -956,6 +968,10 @@ input + .c1 {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
 .c2 .react-datepicker__day--today {
   color: #0080A5;
   font-weight: var(--font-normal);
@@ -1239,6 +1255,10 @@ input + .c1 {
 
 .c2 .react-datepicker__day--selected[tabindex="0"] {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
 }
 
 .c2 .react-datepicker__day--today {
@@ -3245,6 +3265,10 @@ input + .c1 {
 
 .c2 .react-datepicker__day--selected:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
 }
 
 .c2 .react-datepicker__day--today {
@@ -5255,6 +5279,10 @@ input + .c1 {
 
 .c2 .react-datepicker__day--selected[tabindex="0"] {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
 }
 
 .c2 .react-datepicker__day--today {

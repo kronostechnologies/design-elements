@@ -129,7 +129,10 @@ describe('Datepicker', () => {
     });
 
     test('has startDate', () => {
-        const tree = renderWithProviders(<Datepicker label="date" startDate={new Date('1995-05-05')}/>, 'mobile');
+        const tree = renderWithProviders(
+            <Datepicker label="date" startDate={new Date('1995-05-05, 12:00')}/>,
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });
