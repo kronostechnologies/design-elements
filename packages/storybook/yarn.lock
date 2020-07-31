@@ -2430,10 +2430,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.16":
-  version "2.0.3-alpha.16"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.16.tgz#b249d80c08516b6c1a42a74da97ede77b6d51236"
-  integrity sha512-EZEkwlUh7dQtZ0dHwOKm8BOedXB7cm34Y6yo3TOBCM3k2ZMgeMm+wCztDJYwXiBZENR5urhgdGdVJPgfyBzK3g==
+"@equisoft/design-elements-react@^2.0.3-alpha.17":
+  version "2.0.3-alpha.17"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.17.tgz#089d1245b5a3e8e63ade2e7bd175b6835065cb32"
+  integrity sha512-cRUPPfkIL40adLKwttVEllEmnVVydrZxePcbIHb6JrQE+TGlXYNxE5GMgj6QvP2mnl0peANu0XyYvRXU05+jKw==
   dependencies:
     date-fns "^2.14.0"
     feather-icons "^4.21.0"
@@ -2442,10 +2442,10 @@
     react-swipeable "~5.5.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.16":
-  version "2.0.3-alpha.16"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.16.tgz#798a5adbcc94fb9376c02bfbf4d0e415f304de1e"
-  integrity sha512-JYU0uj7Aoyzaxpt+ZUQvNvDnZQnO7n5+lS/LLuHAnnmC1dOpZIsyOnfsdg/68+Ew3+LfRE51Mo0KresPt9zpsg==
+"@equisoft/design-elements-web@^2.0.3-alpha.17":
+  version "2.0.3-alpha.17"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.17.tgz#b7ff84460ec907267c8af58f48c9b85a814cb000"
+  integrity sha512-Q0gvpEHs2rTNz427uRQaTYGz6OzCc8HWYMq47QOvE1/KUCL2s18m5jtgzvC4YCaL+KIb1ks38ZDAth6o9PqYog==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"

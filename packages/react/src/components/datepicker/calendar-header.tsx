@@ -78,7 +78,7 @@ export function CalendarHeader({
     const { isMobile } = useDeviceContext();
 
     return (
-        <Wrapper isMobile={isMobile}>
+        <Wrapper isMobile={isMobile} data-testid="calendar-header">
             <StyledButton
                 aria-label={t('monthPreviousButtonLabel')}
                 data-testid="month-previous"
