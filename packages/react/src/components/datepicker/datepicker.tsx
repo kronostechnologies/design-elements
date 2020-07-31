@@ -286,7 +286,6 @@ export function Datepicker({
     const localeArray = [enUS, enCA, frCA];
     const { isMobile } = useDeviceContext();
     const [selectedDate, setSelectedDate] = useState(startDate);
-    const [isOpened, setOpened] = useState(startOpen || false);
     const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
     const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
@@ -303,12 +302,11 @@ export function Datepicker({
 
     function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
-            setOpened(false);
+            dateInputRef.current?.setOpen(false);
         }
     }
 
     function handleCalendarSelect(): void {
-        setOpened(false);
         calendarButtonRef.current?.focus();
     }
 
@@ -320,39 +318,43 @@ export function Datepicker({
         }, 10);
     }
 
-    function handleCalendarButtonClick(): void {
-        if (isOpened) {
-            setOpened(false);
+    function handleCalendarButtonMouseDown(): void {
+        if (dateInputRef.current?.isCalendarOpen()) {
+            dateInputRef.current?.setOpen(false);
         } else {
-            dateInputRef.current?.setFocus();
-            setOpened(true);
+            dateInputRef.current?.setOpen(true);
             focusCalendarDate();
         }
     }
 
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
         if (event.key === 'Enter' || event.key === ' ' /* Spacebar */) {
-            event.preventDefault();
-            dateInputRef.current?.setFocus();
-            setOpened(true);
+            dateInputRef.current?.setOpen(true);
             focusCalendarDate();
         }
     }
 
     function handleInputChange(date: Date): void {
         setSelectedDate(date);
-        setOpened(false);
 
         if (onChange) {
             onChange(date);
         }
     }
 
-    function handleInputFocus(event: FocusEvent<HTMLInputElement>): void {
-        setOpened(false);
+    function handleInputClick(): void {
+        dateInputRef.current?.setOpen(false, true);
+    }
 
-        if (onFocus) {
-            onFocus(event);
+    function handleInputBlur(event: FocusEvent<HTMLInputElement>): void {
+        const isCalendarOpen = dateInputRef.current?.isCalendarOpen();
+
+        if (isCalendarOpen !== undefined) {
+            dateInputRef.current?.setOpen(isCalendarOpen, false);
+        }
+
+        if (onBlur) {
+            onBlur(event);
         }
     }
 
@@ -396,11 +398,11 @@ export function Datepicker({
                     minDate={minDate}
                     onChange={handleInputChange}
                     onSelect={handleCalendarSelect}
-                    onClickOutside={() => setOpened(false)}
-                    onBlur={onBlur}
-                    onFocus={handleInputFocus}
+                    onBlur={handleInputBlur}
+                    onFocus={onFocus}
+                    onInputClick={handleInputClick}
                     onKeyDown={handleCalendarKeyDown}
-                    open={open || isOpened}
+                    open={open}
                     placeholderText={getPlaceholder}
                     popperClassName="popper"
                     popperContainer={({ children }) => (
@@ -413,21 +415,23 @@ export function Datepicker({
                             {children}
                         </div>
                     )}
+                    preventOpenOnFocus
                     selected={selectedDate}
                     showPopperArrow={false}
                     startOpen={startOpen}
                     valid={valid}
-                    withPortal={isOpened ? isMobile : false}
+                    withPortal={isMobile}
                     {...props}
                 />
                 <CalendarButton
                     type="button"
                     aria-label={selectedDate ? `Choose date, The selected date is ${selectedDate}` : 'Choose date'}
                     data-testid="calendar-button"
+                    type="button"
                     disabled={disabled}
                     isMobile={isMobile}
                     onKeyDown={handleCalendarButtonKeyDown}
-                    onMouseDown={handleCalendarButtonClick}
+                    onMouseDown={handleCalendarButtonMouseDown}
                     ref={calendarButtonRef}
                     tabIndex={0}
                 >
