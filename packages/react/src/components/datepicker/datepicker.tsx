@@ -291,6 +291,7 @@ export function Datepicker({
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const id = useMemo(uuid, []);
+    const calendarRef = useRef<HTMLDivElement>(null);
     const dateInputRef = useRef<DatePicker>(null);
     const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -302,7 +303,9 @@ export function Datepicker({
 
     function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
+            event.stopPropagation();
             dateInputRef.current?.setOpen(false);
+            calendarButtonRef.current?.focus();
         }
     }
 
@@ -312,10 +315,11 @@ export function Datepicker({
 
     function focusCalendarDate(): void {
         setTimeout(() => {
-            const dateToFocus: HTMLDivElement | null =
-                document.querySelector('.react-datepicker__day[tabindex="0"]');
+            const dateToFocus =
+                calendarRef.current?.querySelector('.react-datepicker__day[tabindex="0"]') as HTMLDivElement;
+
             if (dateToFocus) dateToFocus.focus();
-        }, 10);
+        }, 0);
     }
 
     function handleCalendarButtonMouseDown(): void {
@@ -328,7 +332,7 @@ export function Datepicker({
     }
 
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-        if (event.key === 'Enter' || event.key === ' ' /* Spacebar */) {
+        if (event.key === 'Enter' || event.key === ' ' /* Spacebar */) {
             dateInputRef.current?.setOpen(true);
             focusCalendarDate();
         }
@@ -390,6 +394,18 @@ export function Datepicker({
                             {...customHeaderProps}
                         />
                     )}
+                    calendarContainer={({ children }) => (
+                        <div
+                            aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
+                            aria-live="polite"
+                            aria-modal={true}
+                            className="react-datepicker"
+                            role="dialog"
+                            ref={calendarRef}
+                        >
+                            {children}
+                        </div>
+                    )}
                     className="datePickerInput"
                     dateFormat={dateFormat || getLocaleDateFormat(currentLocale)}
                     disabled={disabled}
@@ -405,16 +421,6 @@ export function Datepicker({
                     open={open}
                     placeholderText={getPlaceholder}
                     popperClassName="popper"
-                    popperContainer={({ children }) => (
-                        <div
-                            aria-label={selectedDate?.toDateString() || 'Choose Date'}
-                            aria-live="polite"
-                            aria-modal={true}
-                            role="dialog"
-                        >
-                            {children}
-                        </div>
-                    )}
                     preventOpenOnFocus
                     selected={selectedDate}
                     showPopperArrow={false}
@@ -424,8 +430,7 @@ export function Datepicker({
                     {...props}
                 />
                 <CalendarButton
-                    type="button"
-                    aria-label={selectedDate ? `Choose date, The selected date is ${selectedDate}` : 'Choose date'}
+                    aria-label={selectedDate ? `${t('calendarButtonSelectedLabel')} ${selectedDate.toLocaleDateString(locale)}` : t('calendarButtonLabel')}
                     data-testid="calendar-button"
                     type="button"
                     disabled={disabled}

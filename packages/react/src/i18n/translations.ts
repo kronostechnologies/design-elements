@@ -1,6 +1,9 @@
 export const Translations = {
     en: {
         datepicker: {
+            calendarButtonLabel: 'Choose date',
+            calendarButtonSelectedLabel: 'Choose date. The selected date is',
+            calendarContainerLabel: 'Choose date',
             validationErrorMessage: 'Invalid date',
             monthPreviousButtonLabel: 'Go to previous month',
             monthNextButtonLabel: 'Go to next month',
@@ -37,6 +40,9 @@ export const Translations = {
     },
     fr: {
         datepicker: {
+            calendarButtonLabel: 'Choisissez une date',
+            calendarButtonSelectedLabel: 'Choisissez une date. La date sélectionnée est',
+            calendarContainerLabel: 'Choisissez une date',
             validationErrorMessage: 'Date non valide',
             monthPreviousButtonLabel: 'Aller au mois précédent',
             monthNextButtonLabel: 'Aller au mois suivant',

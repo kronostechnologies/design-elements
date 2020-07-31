@@ -1,7 +1,6 @@
 import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { mount } from 'enzyme';
 import React from 'react';
-import DatePicker from 'react-datepicker';
 
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
@@ -42,11 +41,35 @@ describe('Datepicker', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
+    test('input value should format on blur', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker />));
+
+        getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2002 02 02' } });
+        getByTestId(wrapper, 'text-input').simulate('blur');
+
+        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
+    });
+
     test('calendar should be opened when startOpen prop is truthy', () => {
         const wrapper = mount(ThemeWrapped(<Datepicker startOpen/>));
-        const element = wrapper.find(DatePicker);
 
-        expect(element.props().open).toBeTruthy();
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
+    });
+
+    test('calendar should not open when input is clicked', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker />));
+
+        getByTestId(wrapper, 'text-input').simulate('click');
+
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
+    });
+
+    test('calendar should not open when input is focused', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker />));
+
+        getByTestId(wrapper, 'text-input').simulate('focus');
+
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
     });
 
     test('calendar should open when calendar button is clicked', () => {
@@ -54,8 +77,15 @@ describe('Datepicker', () => {
 
         getByTestId(wrapper, 'calendar-button').simulate('mousedown');
 
-        const element = wrapper.find(DatePicker);
-        expect(element.props().open).toBeTruthy();
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
+    });
+
+    test('calendar should close when calendar button is clicked (start open)', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker startOpen/>));
+
+        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeFalsy();
     });
 
     test('calendar should open on calendar button keydown (Enter)', () => {
@@ -63,8 +93,7 @@ describe('Datepicker', () => {
 
         getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: 'Enter' });
 
-        const element = wrapper.find(DatePicker);
-        expect(element.props().open).toBeTruthy();
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
     });
 
     test('calendar should open on calendar button keydown (Spacebar)', () => {
@@ -72,8 +101,7 @@ describe('Datepicker', () => {
 
         getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: ' ' });
 
-        const element = wrapper.find(DatePicker);
-        expect(element.props().open).toBeTruthy();
+        expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
     });
 
     test('month select value should change when month-previous button is clicked', () => {
@@ -144,7 +172,7 @@ describe('Datepicker', () => {
     });
 
     test('matches snapshot (open, mobile)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" open maxDate={new Date('2010-10-10, 12:00')}/>, 'mobile');
+        const tree = renderWithProviders(<Datepicker label="date" startOpen maxDate={new Date('2010-10-10, 12:00')}/>, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
