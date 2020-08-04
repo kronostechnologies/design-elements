@@ -203,6 +203,7 @@ export function Select({
 
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const listboxRef = useRef<HTMLDivElement>(null);
     const filteredOptions = filterOptions(options, searchValue);
 
     useEffect(() => {
@@ -280,10 +281,13 @@ export function Select({
     }
 
     function handleClickOutside(event: MouseEvent): void {
-        const shouldClose =
-            wrapperRef.current === null ||
-            wrapperRef.current && !wrapperRef.current.contains(event.target as Node);
-        if (shouldClose && open) {
+        const clickIsOutside = (
+            !wrapperRef.current?.contains(event.target as Node) &&
+            !listboxRef.current?.contains(event.target as Node)
+        );
+        const shouldClose = (wrapperRef.current === null || clickIsOutside) && open;
+
+        if (shouldClose) {
             handleOpen();
             inputRef.current && inputRef.current.blur();
         }
@@ -511,6 +515,7 @@ export function Select({
                 <StyledList
                     ariaLabelledBy={fieldId}
                     autofocus={searchable ? autoFocus : open}
+                    ref={listboxRef}
                     visible={open}
                     checkIndicator
                     data-testid="listbox"
