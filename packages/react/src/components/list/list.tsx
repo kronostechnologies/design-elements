@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo, useRef, useState } from 'react';
 
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
@@ -159,7 +159,7 @@ const CheckIndicator = styled(Icon)`
     padding: 0 var(--spacing-1x);
 `;
 
-export function List({
+export const List = forwardRef(({
     ariaLabelledBy,
     id = uuid(),
     options,
@@ -174,7 +174,7 @@ export function List({
     focusedValue,
     value,
     visible = true,
-}: ListProps): ReactElement {
+}: ListProps, ref: Ref<HTMLDivElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const listRef = useRef<HTMLUListElement>(null);
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
@@ -368,6 +368,7 @@ export function List({
             aria-activedescendant={selectedOptionId}
             aria-labelledby={ariaLabelledBy || selectedOptionId}
             isDropdown={dropdown}
+            ref={ref}
         >
             <Wrapper
                 role="presentation"
@@ -403,4 +404,4 @@ export function List({
             </Wrapper>
         </ListWrapper>
     );
-}
+});
