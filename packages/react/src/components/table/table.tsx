@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
-import { Column, HeaderGroup, Row, useSortBy, useTable } from 'react-table';
+import { Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
 
-import { useTheme } from '../../hooks/use-theme';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 import { Theme as ThemeProps } from '../theme-wrapper/theme-wrapper';
+import { SortableColumnHeading } from './sortable-column-heading';
+import { TableRow } from './table-row';
 
 const StyledTable = styled.table<StyledTableProps>`
     border-spacing: 0;
@@ -47,17 +47,8 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 `;
 
-const SortButton = styled.button`
-    cursor: pointer;
-    margin-right: var(--spacing-1x);
-
-    &:focus {
-        outline: none;
-    }
-`;
-
 type CustomColumn = Column & {
-    sort?: boolean,
+    sortable?: boolean,
     textAlign?: string,
 };
 
@@ -69,9 +60,10 @@ interface StyledTableProps {
     theme: ThemeProps;
 }
 
-interface RowProps extends Row {
+export interface RowProps extends Row {
     original: any;
 }
+
 interface TableProps {
     /** Array of Objects that defines your table columns.
      * See stories code or refer to react-table docs for more information */
@@ -104,53 +96,16 @@ export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
         <tbody {...getTableBodyProps()}>
           {rows.map(row => {
               prepareRow(row);
-              return (
-                <tr key={row.id} onClick={() => onRowClick && onRowClick(row)} {...row.getRowProps()}>
-                  {row.cells.map(cell => (
-                      <td
-                        key={`${cell.column.id}-${cell.row.id}`}
-                        style={{ textAlign: cell.column.textAlign }}
-                        {...cell.getCellProps()}
-                      >
-                        {cell.render('Cell')}
-                      </td>
-                  ))}
-                </tr>
-              );
+              return <TableRow key={row.id} row={row} onClick={onRowClick}/>;
           })}
         </tbody>
       </StyledTable>
     );
 }
 
-function getHeading(column: HeaderGroup<{}>): ReactElement {
-    const Theme = useTheme();
-
-    if (column.sort) {
-        return (
-          <th
-            {...column.getHeaderProps(column.getSortByToggleProps())}
-            scope="col"
-            aria-sort={
-              column.isSorted
-                ? column.isSortedDesc
-                  ? 'descending'
-                  : 'ascending'
-                : 'none'
-            }
-          >
-            <div style={{ display: 'flex', alignItems: 'center', textAlign: column.textAlign }}>
-              <SortButton>
-                {column.isSorted
-                  ? column.isSortedDesc
-                    ? <Icon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
-                    : <Icon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
-                  : <Icon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
-              </SortButton>
-              {column.render('Header')}
-            </div>
-          </th>
-        );
+function getHeading(column: Column<{}>): ReactElement {
+    if (column.sortable) {
+        return <SortableColumnHeading key={column.id} column={column}/>;
     } else {
         return (
             <th

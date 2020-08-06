@@ -327,6 +327,26 @@ exports[`Table has mobile styles 1`] = `
 `;
 
 exports[`Table has sorting styles 1`] = `
+.c2 {
+  cursor: pointer;
+  margin-right: var(--spacing-1x);
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   border-spacing: 0;
   width: 100%;
@@ -359,15 +379,6 @@ exports[`Table has sorting styles 1`] = `
   border-bottom: 0;
 }
 
-.c1 {
-  cursor: pointer;
-  margin-right: var(--spacing-1x);
-}
-
-.c1:focus {
-  outline: none;
-}
-
 <table
   class="c0"
   role="table"
@@ -385,10 +396,10 @@ exports[`Table has sorting styles 1`] = `
         title="Toggle SortBy"
       >
         <div
-          style="display:flex;align-items:center"
+          class="c1"
         >
           <button
-            class="c1"
+            class="c2"
           >
             <svg
               color="#57666E"
@@ -409,10 +420,10 @@ exports[`Table has sorting styles 1`] = `
         title="Toggle SortBy"
       >
         <div
-          style="display:flex;align-items:center;text-align:center"
+          class="c1"
         >
           <button
-            class="c1"
+            class="c2"
           >
             <svg
               color="#57666E"
@@ -439,7 +450,6 @@ exports[`Table has sorting styles 1`] = `
       </td>
       <td
         role="cell"
-        style="text-align:center"
       >
         World
       </td>
@@ -454,7 +464,6 @@ exports[`Table has sorting styles 1`] = `
       </td>
       <td
         role="cell"
-        style="text-align:center"
       >
         World
       </td>
@@ -469,7 +478,6 @@ exports[`Table has sorting styles 1`] = `
       </td>
       <td
         role="cell"
-        style="text-align:center"
       >
         World
       </td>

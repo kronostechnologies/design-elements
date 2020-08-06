@@ -166,12 +166,12 @@ export const sortableRows = () => {
         {
             Header: 'Column 2',
             accessor: 'column2',
-            sort: true,
+            sortable: true,
         },
         {
             Header: 'Column 3',
             accessor: 'column3',
-            sort: true,
+            sortable: true,
         },
     ];
 
