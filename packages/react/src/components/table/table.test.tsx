@@ -71,13 +71,12 @@ const columnsSorted = [
     {
         Header: 'Column 1',
         accessor: 'column1',
-        sort: true,
+        sortable: true,
     },
     {
         Header: 'Column 2',
         accessor: 'column2',
-        textAlign: 'center',
-        sort: true,
+        sortable: true,
     },
 ];
 
