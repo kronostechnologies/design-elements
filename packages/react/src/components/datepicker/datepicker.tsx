@@ -267,6 +267,7 @@ export function Datepicker({
     dateFormat,
     disabled,
     firstDayOfWeek,
+    id,
     label,
     locale = 'en-CA',
     maxDate,
@@ -290,8 +291,8 @@ export function Datepicker({
     const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
     const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
-    const id = useMemo(uuid, []);
     const calendarRef = useRef<HTMLDivElement>(null);
+    const fieldId = id || useMemo(uuid, []);
     const dateInputRef = useRef<DatePicker>(null);
     const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -374,7 +375,7 @@ export function Datepicker({
 
     return (
         <FieldContainer
-            fieldId={id}
+            fieldId={fieldId}
             label={label}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
@@ -383,6 +384,7 @@ export function Datepicker({
                 <StyledDatePicker
                     customInput={<input type="text" data-testid="text-input"/>}
                     isMobile={isMobile}
+                    id={fieldId}
                     ref={dateInputRef}
                     renderCustomHeader={({
                         ...customHeaderProps
