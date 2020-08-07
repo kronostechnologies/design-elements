@@ -1391,6 +1391,71 @@ input + .c1 {
 `;
 
 exports[`Datepicker matches snapshot (open, desktop) 1`] = `
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: #EF483E;
+  color: #EF483E;
+}
+
+.c15:not(:disabled) {
+  cursor: pointer;
+}
+
+.c15 > svg {
+  color: inherit;
+}
+
+.c15:hover {
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c15:disabled,
+.c15:disabled:focus,
+.c15:disabled:hover {
+  background-color: transparent;
+  border-color: #F9B6B2;
+  color: #F9B6B2;
+}
+
 .c1 {
   color: #000000;
   display: block;
@@ -1776,7 +1841,20 @@ input + .c1 {
   outline: none;
 }
 
-.c15 {
+.c14 {
+  clear: both;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: var(--spacing-1x);
+}
+
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1800,14 +1878,11 @@ input + .c1 {
   width: 32px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #D9DDE2;
 }
 
-.c15:focus {
-  border: 1px solid #0080A5;
-  border-left: none;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+.c16:focus {
   outline: none;
   z-index: 10;
 }
@@ -1851,7 +1926,7 @@ input + .c1 {
       >
         <div>
           <div
-            aria-label="Choose date"
+            aria-label="calendarContainerLabel"
             aria-live="polite"
             aria-modal="true"
             class="react-datepicker"
@@ -3375,6 +3450,18 @@ input + .c1 {
                 </div>
               </div>
             </div>
+            <div
+              class="c14"
+            >
+              <button
+                class="c15"
+                data-testid="today-button"
+                label="Today"
+                type="button"
+              >
+                Today
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -3384,10 +3471,7 @@ input + .c1 {
       />
     </div>
     <button
-      aria-label="Choose date"
-      class="c15"
-      data-testid="calendar-button"
-      tabindex="0"
+      class="c16"
       type="button"
     >
       <svg
@@ -3402,6 +3486,71 @@ input + .c1 {
 `;
 
 exports[`Datepicker matches snapshot (open, mobile) 1`] = `
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: #EF483E;
+  color: #EF483E;
+}
+
+.c15:not(:disabled) {
+  cursor: pointer;
+}
+
+.c15 > svg {
+  color: inherit;
+}
+
+.c15:hover {
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c15:disabled,
+.c15:disabled:focus,
+.c15:disabled:hover {
+  background-color: transparent;
+  border-color: #F9B6B2;
+  color: #F9B6B2;
+}
+
 .c1 {
   color: #000000;
   display: block;
@@ -3789,7 +3938,20 @@ input + .c1 {
   outline: none;
 }
 
-.c15 {
+.c14 {
+  clear: both;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: var(--spacing-1x);
+}
+
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3813,14 +3975,11 @@ input + .c1 {
   width: 40px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #D9DDE2;
 }
 
-.c15:focus {
-  border: 1px solid #0080A5;
-  border-left: none;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+.c16:focus {
   outline: none;
   z-index: 10;
 }
@@ -3853,7 +4012,7 @@ input + .c1 {
       >
         <div>
           <div
-            aria-label="Choose date"
+            aria-label="calendarContainerLabel"
             aria-live="polite"
             aria-modal="true"
             class="react-datepicker"
@@ -5377,15 +5536,24 @@ input + .c1 {
                 </div>
               </div>
             </div>
+            <div
+              class="c14"
+            >
+              <button
+                class="c15"
+                data-testid="today-button"
+                label="Today"
+                type="button"
+              >
+                Today
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <button
-      aria-label="Choose date"
-      class="c15"
-      data-testid="calendar-button"
-      tabindex="0"
+      class="c16"
       type="button"
     >
       <svg
