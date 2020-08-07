@@ -1391,7 +1391,2018 @@ input + .c1 {
 `;
 
 exports[`Datepicker matches snapshot (open, desktop) 1`] = `
+.c1 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #D9DDE2;
+}
+
+.c0:focus {
+  border-color: #0080A5;
+}
+
+.c12 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c13 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c13:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c14:hover,
+.c14:focus {
+  background-color: #D9DDE2;
+}
+
+.c8 {
+  position: relative;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  margin-top: 0;
+  padding-right: var(--spacing-1x);
+  width: 100%;
+}
+
+.c9:hover {
+  cursor: pointer;
+}
+
+.c9 svg {
+  color: #57666E;
+}
+
+.c10 {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  caret-color: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  max-height: 100%;
+  min-width: 0;
+  outline: none;
+  overflow: hidden;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.c10:hover {
+  cursor: pointer;
+}
+
+.c10::-webkit-input-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c10::-moz-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c10:-ms-input-placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c10::placeholder {
+  color: #57666E;
+  font-size: 0.875rem;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 var(--spacing-3x);
+}
+
+.c4 > button {
+  background-color: #FFFFFF;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.c4 > button:focus {
+  outline: none;
+}
+
+.c4 > button:hover {
+  cursor: pointer;
+}
+
+.c5:focus {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  height: 32px;
+  width: 80px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 .popper[data-placement^="bottom"] {
+  margin-top: 0;
+}
+
+.c2 .react-datepicker {
+  border: 1px solid #D9DDE2;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Open Sans',sans-serif;
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c2 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 2rem;
+  margin: 0;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day:hover {
+  background-color: #D9DDE2;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c2 .react-datepicker__day--disabled {
+  color: #9CA7B4;
+}
+
+.c2 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c2 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.c2 .react-datepicker__day--outside-month {
+  color: #57666E;
+}
+
+.c2 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__day--selected {
+  background-color: #0080A5;
+  border-radius: 20px;
+}
+
+.c2 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c2 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c2 .react-datepicker__day--today {
+  color: #0080A5;
+  font-weight: var(--font-normal);
+}
+
+.c2 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c2 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c2 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c2 .react-datepicker__portal {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.c2 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 40px;
+}
+
+.c2 .react-datepicker__portal .react-datepicker__day {
+  height: 40px;
+  line-height: 2.5rem;
+  width: 40px;
+}
+
+.c3.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: 32px;
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 109px;
+}
+
+.c3.datePickerInput:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c3.datePickerInput:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c3.datePickerInput:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
+.c3.datePickerInput:focus {
+  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+}
+
 .c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-left: none;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #57666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 32px;
+}
+
+.c15:hover {
+  background-color: #D9DDE2;
+}
+
+.c15:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+  z-index: 10;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+  >
+    date
+  </label>
+  <div
+    class="c2"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c3 datePickerInput"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="react-datepicker__tab-loop"
+    >
+      <div
+        class="react-datepicker__tab-loop__start"
+        tabindex="0"
+      />
+      <div
+        class="react-datepicker-popper popper"
+        style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+      >
+        <div>
+          <div
+            aria-label="Choose date"
+            aria-live="polite"
+            aria-modal="true"
+            class="react-datepicker"
+            role="dialog"
+          >
+            <div
+              class="react-datepicker__month-container"
+            >
+              <div
+                class="react-datepicker__header react-datepicker__header--custom"
+              >
+                <div
+                  class="c4"
+                  data-testid="calendar-header"
+                >
+                  <button
+                    aria-label="Go to previous month"
+                    class="c5"
+                    data-testid="month-previous"
+                  >
+                    <svg
+                      color="currentColor"
+                      focusable="false"
+                      height="16"
+                      width="16"
+                    />
+                  </button>
+                  <div
+                    class="c6"
+                  >
+                    <div
+                      class="c7"
+                      style="margin-right:8px"
+                    >
+                      <div
+                        class="c0 c8"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="listbox_undefined"
+                          class="c9"
+                          data-testid="input-wrapper"
+                        >
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="listbox_undefined"
+                            aria-multiline="false"
+                            class="c10"
+                            data-testid="input"
+                            placeholder="Select an option"
+                            type="text"
+                            value=""
+                          />
+                          <button
+                            class="c11"
+                            data-testid="arrow"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              color="currentColor"
+                              focusable="false"
+                              height="16"
+                              width="16"
+                            />
+                          </button>
+                        </div>
+                        <div
+                          class="c12"
+                          role="listbox"
+                          tabindex="-1"
+                        >
+                          <ul
+                            class="c13"
+                            role="presentation"
+                            tabindex="0"
+                          >
+                            <li
+                              aria-label="Jan"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_january"
+                              role="option"
+                            >
+                              Jan
+                            </li>
+                            <li
+                              aria-label="Feb"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_february"
+                              role="option"
+                            >
+                              Feb
+                            </li>
+                            <li
+                              aria-label="Mar"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_march"
+                              role="option"
+                            >
+                              Mar
+                            </li>
+                            <li
+                              aria-label="Apr"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_april"
+                              role="option"
+                            >
+                              Apr
+                            </li>
+                            <li
+                              aria-label="May"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_may"
+                              role="option"
+                            >
+                              May
+                            </li>
+                            <li
+                              aria-label="Jun"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_june"
+                              role="option"
+                            >
+                              Jun
+                            </li>
+                            <li
+                              aria-label="Jul"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_july"
+                              role="option"
+                            >
+                              Jul
+                            </li>
+                            <li
+                              aria-label="Aug"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_august"
+                              role="option"
+                            >
+                              Aug
+                            </li>
+                            <li
+                              aria-label="Sep"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_september"
+                              role="option"
+                            >
+                              Sep
+                            </li>
+                            <li
+                              aria-label="Oct"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_october"
+                              role="option"
+                            >
+                              Oct
+                            </li>
+                            <li
+                              aria-label="Nov"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_november"
+                              role="option"
+                            >
+                              Nov
+                            </li>
+                            <li
+                              aria-label="Dec"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_december"
+                              role="option"
+                            >
+                              Dec
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="c7"
+                    >
+                      <div
+                        class="c0 c8"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="listbox_undefined"
+                          class="c9"
+                          data-testid="input-wrapper"
+                        >
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="listbox_undefined"
+                            aria-multiline="false"
+                            class="c10"
+                            data-testid="input"
+                            placeholder="Select an option"
+                            type="text"
+                            value=""
+                          />
+                          <button
+                            class="c11"
+                            data-testid="arrow"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              color="currentColor"
+                              focusable="false"
+                              height="16"
+                              width="16"
+                            />
+                          </button>
+                        </div>
+                        <div
+                          class="c12"
+                          role="listbox"
+                          tabindex="-1"
+                        >
+                          <ul
+                            class="c13"
+                            role="presentation"
+                            tabindex="0"
+                          >
+                            <li
+                              aria-label="1920"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1920"
+                              role="option"
+                            >
+                              1920
+                            </li>
+                            <li
+                              aria-label="1921"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1921"
+                              role="option"
+                            >
+                              1921
+                            </li>
+                            <li
+                              aria-label="1922"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1922"
+                              role="option"
+                            >
+                              1922
+                            </li>
+                            <li
+                              aria-label="1923"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1923"
+                              role="option"
+                            >
+                              1923
+                            </li>
+                            <li
+                              aria-label="1924"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1924"
+                              role="option"
+                            >
+                              1924
+                            </li>
+                            <li
+                              aria-label="1925"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1925"
+                              role="option"
+                            >
+                              1925
+                            </li>
+                            <li
+                              aria-label="1926"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1926"
+                              role="option"
+                            >
+                              1926
+                            </li>
+                            <li
+                              aria-label="1927"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1927"
+                              role="option"
+                            >
+                              1927
+                            </li>
+                            <li
+                              aria-label="1928"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1928"
+                              role="option"
+                            >
+                              1928
+                            </li>
+                            <li
+                              aria-label="1929"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1929"
+                              role="option"
+                            >
+                              1929
+                            </li>
+                            <li
+                              aria-label="1930"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1930"
+                              role="option"
+                            >
+                              1930
+                            </li>
+                            <li
+                              aria-label="1931"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1931"
+                              role="option"
+                            >
+                              1931
+                            </li>
+                            <li
+                              aria-label="1932"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1932"
+                              role="option"
+                            >
+                              1932
+                            </li>
+                            <li
+                              aria-label="1933"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1933"
+                              role="option"
+                            >
+                              1933
+                            </li>
+                            <li
+                              aria-label="1934"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1934"
+                              role="option"
+                            >
+                              1934
+                            </li>
+                            <li
+                              aria-label="1935"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1935"
+                              role="option"
+                            >
+                              1935
+                            </li>
+                            <li
+                              aria-label="1936"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1936"
+                              role="option"
+                            >
+                              1936
+                            </li>
+                            <li
+                              aria-label="1937"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1937"
+                              role="option"
+                            >
+                              1937
+                            </li>
+                            <li
+                              aria-label="1938"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1938"
+                              role="option"
+                            >
+                              1938
+                            </li>
+                            <li
+                              aria-label="1939"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1939"
+                              role="option"
+                            >
+                              1939
+                            </li>
+                            <li
+                              aria-label="1940"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1940"
+                              role="option"
+                            >
+                              1940
+                            </li>
+                            <li
+                              aria-label="1941"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1941"
+                              role="option"
+                            >
+                              1941
+                            </li>
+                            <li
+                              aria-label="1942"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1942"
+                              role="option"
+                            >
+                              1942
+                            </li>
+                            <li
+                              aria-label="1943"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1943"
+                              role="option"
+                            >
+                              1943
+                            </li>
+                            <li
+                              aria-label="1944"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1944"
+                              role="option"
+                            >
+                              1944
+                            </li>
+                            <li
+                              aria-label="1945"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1945"
+                              role="option"
+                            >
+                              1945
+                            </li>
+                            <li
+                              aria-label="1946"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1946"
+                              role="option"
+                            >
+                              1946
+                            </li>
+                            <li
+                              aria-label="1947"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1947"
+                              role="option"
+                            >
+                              1947
+                            </li>
+                            <li
+                              aria-label="1948"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1948"
+                              role="option"
+                            >
+                              1948
+                            </li>
+                            <li
+                              aria-label="1949"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1949"
+                              role="option"
+                            >
+                              1949
+                            </li>
+                            <li
+                              aria-label="1950"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1950"
+                              role="option"
+                            >
+                              1950
+                            </li>
+                            <li
+                              aria-label="1951"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1951"
+                              role="option"
+                            >
+                              1951
+                            </li>
+                            <li
+                              aria-label="1952"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1952"
+                              role="option"
+                            >
+                              1952
+                            </li>
+                            <li
+                              aria-label="1953"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1953"
+                              role="option"
+                            >
+                              1953
+                            </li>
+                            <li
+                              aria-label="1954"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1954"
+                              role="option"
+                            >
+                              1954
+                            </li>
+                            <li
+                              aria-label="1955"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1955"
+                              role="option"
+                            >
+                              1955
+                            </li>
+                            <li
+                              aria-label="1956"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1956"
+                              role="option"
+                            >
+                              1956
+                            </li>
+                            <li
+                              aria-label="1957"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1957"
+                              role="option"
+                            >
+                              1957
+                            </li>
+                            <li
+                              aria-label="1958"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1958"
+                              role="option"
+                            >
+                              1958
+                            </li>
+                            <li
+                              aria-label="1959"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1959"
+                              role="option"
+                            >
+                              1959
+                            </li>
+                            <li
+                              aria-label="1960"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1960"
+                              role="option"
+                            >
+                              1960
+                            </li>
+                            <li
+                              aria-label="1961"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1961"
+                              role="option"
+                            >
+                              1961
+                            </li>
+                            <li
+                              aria-label="1962"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1962"
+                              role="option"
+                            >
+                              1962
+                            </li>
+                            <li
+                              aria-label="1963"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1963"
+                              role="option"
+                            >
+                              1963
+                            </li>
+                            <li
+                              aria-label="1964"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1964"
+                              role="option"
+                            >
+                              1964
+                            </li>
+                            <li
+                              aria-label="1965"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1965"
+                              role="option"
+                            >
+                              1965
+                            </li>
+                            <li
+                              aria-label="1966"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1966"
+                              role="option"
+                            >
+                              1966
+                            </li>
+                            <li
+                              aria-label="1967"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1967"
+                              role="option"
+                            >
+                              1967
+                            </li>
+                            <li
+                              aria-label="1968"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1968"
+                              role="option"
+                            >
+                              1968
+                            </li>
+                            <li
+                              aria-label="1969"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1969"
+                              role="option"
+                            >
+                              1969
+                            </li>
+                            <li
+                              aria-label="1970"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1970"
+                              role="option"
+                            >
+                              1970
+                            </li>
+                            <li
+                              aria-label="1971"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1971"
+                              role="option"
+                            >
+                              1971
+                            </li>
+                            <li
+                              aria-label="1972"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1972"
+                              role="option"
+                            >
+                              1972
+                            </li>
+                            <li
+                              aria-label="1973"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1973"
+                              role="option"
+                            >
+                              1973
+                            </li>
+                            <li
+                              aria-label="1974"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1974"
+                              role="option"
+                            >
+                              1974
+                            </li>
+                            <li
+                              aria-label="1975"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1975"
+                              role="option"
+                            >
+                              1975
+                            </li>
+                            <li
+                              aria-label="1976"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1976"
+                              role="option"
+                            >
+                              1976
+                            </li>
+                            <li
+                              aria-label="1977"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1977"
+                              role="option"
+                            >
+                              1977
+                            </li>
+                            <li
+                              aria-label="1978"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1978"
+                              role="option"
+                            >
+                              1978
+                            </li>
+                            <li
+                              aria-label="1979"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1979"
+                              role="option"
+                            >
+                              1979
+                            </li>
+                            <li
+                              aria-label="1980"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1980"
+                              role="option"
+                            >
+                              1980
+                            </li>
+                            <li
+                              aria-label="1981"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1981"
+                              role="option"
+                            >
+                              1981
+                            </li>
+                            <li
+                              aria-label="1982"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1982"
+                              role="option"
+                            >
+                              1982
+                            </li>
+                            <li
+                              aria-label="1983"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1983"
+                              role="option"
+                            >
+                              1983
+                            </li>
+                            <li
+                              aria-label="1984"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1984"
+                              role="option"
+                            >
+                              1984
+                            </li>
+                            <li
+                              aria-label="1985"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1985"
+                              role="option"
+                            >
+                              1985
+                            </li>
+                            <li
+                              aria-label="1986"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1986"
+                              role="option"
+                            >
+                              1986
+                            </li>
+                            <li
+                              aria-label="1987"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1987"
+                              role="option"
+                            >
+                              1987
+                            </li>
+                            <li
+                              aria-label="1988"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1988"
+                              role="option"
+                            >
+                              1988
+                            </li>
+                            <li
+                              aria-label="1989"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1989"
+                              role="option"
+                            >
+                              1989
+                            </li>
+                            <li
+                              aria-label="1990"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1990"
+                              role="option"
+                            >
+                              1990
+                            </li>
+                            <li
+                              aria-label="1991"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1991"
+                              role="option"
+                            >
+                              1991
+                            </li>
+                            <li
+                              aria-label="1992"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1992"
+                              role="option"
+                            >
+                              1992
+                            </li>
+                            <li
+                              aria-label="1993"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1993"
+                              role="option"
+                            >
+                              1993
+                            </li>
+                            <li
+                              aria-label="1994"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1994"
+                              role="option"
+                            >
+                              1994
+                            </li>
+                            <li
+                              aria-label="1995"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1995"
+                              role="option"
+                            >
+                              1995
+                            </li>
+                            <li
+                              aria-label="1996"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1996"
+                              role="option"
+                            >
+                              1996
+                            </li>
+                            <li
+                              aria-label="1997"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1997"
+                              role="option"
+                            >
+                              1997
+                            </li>
+                            <li
+                              aria-label="1998"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1998"
+                              role="option"
+                            >
+                              1998
+                            </li>
+                            <li
+                              aria-label="1999"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_1999"
+                              role="option"
+                            >
+                              1999
+                            </li>
+                            <li
+                              aria-label="2000"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2000"
+                              role="option"
+                            >
+                              2000
+                            </li>
+                            <li
+                              aria-label="2001"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2001"
+                              role="option"
+                            >
+                              2001
+                            </li>
+                            <li
+                              aria-label="2002"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2002"
+                              role="option"
+                            >
+                              2002
+                            </li>
+                            <li
+                              aria-label="2003"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2003"
+                              role="option"
+                            >
+                              2003
+                            </li>
+                            <li
+                              aria-label="2004"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2004"
+                              role="option"
+                            >
+                              2004
+                            </li>
+                            <li
+                              aria-label="2005"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2005"
+                              role="option"
+                            >
+                              2005
+                            </li>
+                            <li
+                              aria-label="2006"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2006"
+                              role="option"
+                            >
+                              2006
+                            </li>
+                            <li
+                              aria-label="2007"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2007"
+                              role="option"
+                            >
+                              2007
+                            </li>
+                            <li
+                              aria-label="2008"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2008"
+                              role="option"
+                            >
+                              2008
+                            </li>
+                            <li
+                              aria-label="2009"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2009"
+                              role="option"
+                            >
+                              2009
+                            </li>
+                            <li
+                              aria-label="2010"
+                              aria-selected="false"
+                              class="c14"
+                              id="undefined_2010"
+                              role="option"
+                            >
+                              2010
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    aria-label="Go to next month"
+                    class="c5"
+                    data-testid="month-next"
+                    disabled=""
+                  >
+                    <svg
+                      color="currentColor"
+                      focusable="false"
+                      height="16"
+                      width="16"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="react-datepicker__day-names"
+                >
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Su
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Mo
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Tu
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    We
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Th
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Fr
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Sa
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="month  2010-10"
+                class="react-datepicker__month"
+              >
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, September 26th, 2010"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, September 27th, 2010"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, September 28th, 2010"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Wednesday, September 29th, 2010"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Thursday, September 30th, 2010"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    30
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Friday, October 1st, 2010"
+                    class="react-datepicker__day react-datepicker__day--001"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Saturday, October 2nd, 2010"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    2
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, October 3rd, 2010"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, October 4th, 2010"
+                    class="react-datepicker__day react-datepicker__day--004"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, October 5th, 2010"
+                    class="react-datepicker__day react-datepicker__day--005"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Wednesday, October 6th, 2010"
+                    class="react-datepicker__day react-datepicker__day--006"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    6
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Thursday, October 7th, 2010"
+                    class="react-datepicker__day react-datepicker__day--007"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    7
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Friday, October 8th, 2010"
+                    class="react-datepicker__day react-datepicker__day--008"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    8
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Saturday, October 9th, 2010"
+                    class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    9
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, October 10th, 2010"
+                    class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="0"
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 11th, 2010"
+                    class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 12th, 2010"
+                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    12
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 13th, 2010"
+                    class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    13
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 14th, 2010"
+                    class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    14
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 15th, 2010"
+                    class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    15
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 16th, 2010"
+                    class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    16
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 17th, 2010"
+                    class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    17
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 18th, 2010"
+                    class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    18
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 19th, 2010"
+                    class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    19
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 20th, 2010"
+                    class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    20
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 21st, 2010"
+                    class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    21
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 22nd, 2010"
+                    class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    22
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 23rd, 2010"
+                    class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    23
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 24th, 2010"
+                    class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 25th, 2010"
+                    class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 26th, 2010"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 27th, 2010"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 28th, 2010"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 29th, 2010"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 30th, 2010"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    30
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 31st, 2010"
+                    class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    31
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, November 1st, 2010"
+                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, November 2nd, 2010"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    2
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, November 3rd, 2010"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, November 4th, 2010"
+                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, November 5th, 2010"
+                    class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, November 6th, 2010"
+                    class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    6
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-datepicker__tab-loop__end"
+        tabindex="0"
+      />
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c15"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1434,23 +3445,23 @@ exports[`Datepicker matches snapshot (open, desktop) 1`] = `
   color: #EF483E;
 }
 
-.c15:not(:disabled) {
+.c16:not(:disabled) {
   cursor: pointer;
 }
 
-.c15 > svg {
+.c16 > svg {
   color: inherit;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #EF483E;
   border-color: #EF483E;
   color: #FFFFFF;
 }
 
-.c15:disabled,
-.c15:disabled:focus,
-.c15:disabled:hover {
+.c16:disabled,
+.c16:disabled:focus,
+.c16:disabled:hover {
   background-color: transparent;
   border-color: #F9B6B2;
   color: #F9B6B2;
@@ -1841,7 +3852,7 @@ input + .c1 {
   outline: none;
 }
 
-.c14 {
+.c15 {
   clear: both;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1854,7 +3865,7 @@ input + .c1 {
   padding-top: var(--spacing-1x);
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1878,11 +3889,14 @@ input + .c1 {
   width: 32px;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: #D9DDE2;
 }
 
-.c16:focus {
+.c17:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
   z-index: 10;
 }
@@ -1905,7 +3919,7 @@ input + .c1 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c3 datePickerInput"
+          class="c3 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
           placeholder="YYYY-MM-DD"
           type="text"
@@ -1926,7 +3940,7 @@ input + .c1 {
       >
         <div>
           <div
-            aria-label="calendarContainerLabel"
+            aria-label="Choose date"
             aria-live="polite"
             aria-modal="true"
             class="react-datepicker"
@@ -3451,10 +5465,10 @@ input + .c1 {
               </div>
             </div>
             <div
-              class="c14"
+              class="c15"
             >
               <button
-                class="c15"
+                class="c16"
                 data-testid="today-button"
                 label="Today"
                 type="button"
@@ -3471,7 +5485,10 @@ input + .c1 {
       />
     </div>
     <button
-      class="c16"
+      aria-label="Choose date"
+      class="c17"
+      data-testid="calendar-button"
+      tabindex="0"
       type="button"
     >
       <svg
@@ -3486,71 +5503,6 @@ input + .c1 {
 `;
 
 exports[`Datepicker matches snapshot (open, mobile) 1`] = `
-.c15 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: #EF483E;
-  color: #EF483E;
-}
-
-.c15:not(:disabled) {
-  cursor: pointer;
-}
-
-.c15 > svg {
-  color: inherit;
-}
-
-.c15:hover {
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
-}
-
-.c15:disabled,
-.c15:disabled:focus,
-.c15:disabled:hover {
-  background-color: transparent;
-  border-color: #F9B6B2;
-  color: #F9B6B2;
-}
-
 .c1 {
   color: #000000;
   display: block;
@@ -3938,20 +5890,7 @@ input + .c1 {
   outline: none;
 }
 
-.c14 {
-  clear: both;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-top: var(--spacing-1x);
-}
-
-.c16 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3975,11 +5914,14 @@ input + .c1 {
   width: 40px;
 }
 
-.c16:hover {
+.c15:hover {
   background-color: #D9DDE2;
 }
 
-.c16:focus {
+.c15:focus {
+  border: 1px solid #0080A5;
+  border-left: none;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
   z-index: 10;
 }
@@ -4012,7 +5954,7 @@ input + .c1 {
       >
         <div>
           <div
-            aria-label="calendarContainerLabel"
+            aria-label="Choose date"
             aria-live="polite"
             aria-modal="true"
             class="react-datepicker"
@@ -5536,24 +7478,15 @@ input + .c1 {
                 </div>
               </div>
             </div>
-            <div
-              class="c14"
-            >
-              <button
-                class="c15"
-                data-testid="today-button"
-                label="Today"
-                type="button"
-              >
-                Today
-              </button>
-            </div>
           </div>
         </div>
       </div>
     </div>
     <button
-      class="c16"
+      aria-label="Choose date"
+      class="c15"
+      data-testid="calendar-button"
+      tabindex="0"
       type="button"
     >
       <svg

@@ -144,6 +144,14 @@ describe('Datepicker', () => {
         expect(getByTestId(wrapper, 'year-select').props().value).toBe('2001');
     });
 
+    test('today-button should select current date', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker startOpen hasTodayButton/>));
+
+        getByTestId(wrapper, 'today-button').simulate('click');
+
+        expect(getByTestId(wrapper, 'text-input').props().value).toBe(new Date().toLocaleDateString('en-CA'));
+    });
+
     test('matches snapshot (desktop)', () => {
         const tree = renderWithProviders(<Datepicker label="date"/>, 'desktop');
 
@@ -173,6 +181,12 @@ describe('Datepicker', () => {
 
     test('matches snapshot (open, mobile)', () => {
         const tree = renderWithProviders(<Datepicker label="date" startOpen maxDate={new Date('2010-10-10, 12:00')}/>, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches snapshot (open, hasTodayButton)', () => {
+        const tree = renderWithProviders(<Datepicker label="date" hasTodayButton startOpen maxDate={new Date('2010-10-10, 12:00')}/>);
 
         expect(tree).toMatchSnapshot();
     });
