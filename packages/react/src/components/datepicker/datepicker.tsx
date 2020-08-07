@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
+import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
@@ -173,6 +174,13 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
             outline: none;
         }
     }
+`;
+
+const TodayButtonWrapper = styled.div`
+    clear: both;
+    display: flex;
+    justify-content: center;
+    padding-top: var(--spacing-1x);
 `;
 
 const CalendarButton = styled.button<CalendarButtonProps>`
@@ -406,6 +414,15 @@ export function Datepicker({
                             ref={calendarRef}
                         >
                             {children}
+                            <TodayButtonWrapper>
+                                <Button
+                                    buttonType="secondary"
+                                    data-testid="today-button"
+                                    label={t('todayButtonLabel')}
+                                    type="button"
+                                    onClick={() => handleInputChange(new Date())}
+                                />
+                            </TodayButtonWrapper>
                         </div>
                     )}
                     className="datePickerInput"
