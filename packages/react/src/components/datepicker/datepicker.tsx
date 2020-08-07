@@ -359,6 +359,11 @@ export function Datepicker({
         dateInputRef.current?.setOpen(false, true);
     }
 
+    function handleTodayButtonClick(): void {
+        handleInputChange(new Date());
+        dateInputRef.current?.setOpen(false);
+    }
+
     function handleInputBlur(event: FocusEvent<HTMLInputElement>): void {
         const isCalendarOpen = dateInputRef.current?.isCalendarOpen();
 
@@ -420,7 +425,7 @@ export function Datepicker({
                                     data-testid="today-button"
                                     label={t('todayButtonLabel')}
                                     type="button"
-                                    onClick={() => handleInputChange(new Date())}
+                                    onClick={handleTodayButtonClick}
                                 />
                             </TodayButtonWrapper>
                         </div>
