@@ -424,6 +424,7 @@ export function Datepicker({
                             {hasTodayButton && (
                                 <TodayButtonWrapper>
                                     <Button
+                                        aria-label={t('todayButtonAriaLabel')}
                                         buttonType="secondary"
                                         data-testid="today-button"
                                         label={t('todayButtonLabel')}
