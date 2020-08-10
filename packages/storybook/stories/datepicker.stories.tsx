@@ -20,6 +20,9 @@ export const normal = () => (
     <Datepicker label="Date"/>
 );
 
+export const withTodayButton = () => (
+    <Datepicker label="Date" hasTodayButton/>
+);
 export const disabled = () => (
     <Datepicker label="Date" disabled/>
 );
