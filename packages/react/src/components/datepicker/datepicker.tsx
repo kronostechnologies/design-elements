@@ -230,6 +230,7 @@ interface DatepickerProps {
     dateFormat?: string;
     disabled?: boolean;
     firstDayOfWeek?: DayOfWeek;
+    hasTodayButton?: boolean;
     id?: string;
     /** Sets input label */
     label?: string;
@@ -275,6 +276,7 @@ export function Datepicker({
     dateFormat,
     disabled,
     firstDayOfWeek,
+    hasTodayButton,
     id,
     label,
     locale = 'en-CA',
@@ -419,15 +421,17 @@ export function Datepicker({
                             ref={calendarRef}
                         >
                             {children}
-                            <TodayButtonWrapper>
-                                <Button
-                                    buttonType="secondary"
-                                    data-testid="today-button"
-                                    label={t('todayButtonLabel')}
-                                    type="button"
-                                    onClick={handleTodayButtonClick}
-                                />
-                            </TodayButtonWrapper>
+                            {hasTodayButton && (
+                                <TodayButtonWrapper>
+                                    <Button
+                                        buttonType="secondary"
+                                        data-testid="today-button"
+                                        label={t('todayButtonLabel')}
+                                        type="button"
+                                        onClick={handleTodayButtonClick}
+                                    />
+                                </TodayButtonWrapper>
+                            )}
                         </div>
                     )}
                     className="datePickerInput"
