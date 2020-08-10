@@ -233,7 +233,10 @@ jobs:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
-      - git_pull_master
+      - run:
+          name: 'Checkout gh-pages branch'
+          working_directory: *working_directory
+          command: 'git checkout -b gh-pages'
       - run:
           name: 'Build Storybook'
           working_directory: *storybook_directory
@@ -243,9 +246,9 @@ jobs:
           working_directory: *working_directory
           command: 'git add . && git commit -m "Update Github Pages Storybook version [ci skip]"'
       - run:
-          name: 'Push to Github'
+          name: 'Push gh-pages branch'
           working_directory: *working_directory
-          command: 'git push --force'
+          command: 'git push --force --set-upstream origin gh-pages'
 
 
 
