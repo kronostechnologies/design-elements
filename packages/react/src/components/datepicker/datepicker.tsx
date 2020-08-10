@@ -178,9 +178,8 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
 
 const TodayButtonWrapper = styled.div`
     clear: both;
-    display: flex;
-    justify-content: center;
     padding-top: var(--spacing-1x);
+    text-align: center;
 `;
 
 const CalendarButton = styled.button<CalendarButtonProps>`
@@ -264,6 +263,8 @@ interface DatepickerProps {
     value?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
+    onCalendarClose?(): void;
+    onCalendarOpen?(): void;
     onChange?(date: Date): void;
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
@@ -283,6 +284,8 @@ export function Datepicker({
     maxDate,
     minDate,
     onBlur,
+    onCalendarClose,
+    onCalendarOpen,
     onChange,
     onFocus,
     open,
@@ -444,6 +447,8 @@ export function Datepicker({
                     onChange={handleInputChange}
                     onSelect={handleCalendarSelect}
                     onBlur={handleInputBlur}
+                    onCalendarClose={onCalendarClose}
+                    onCalendarOpen={onCalendarOpen}
                     onFocus={onFocus}
                     onInputClick={handleInputClick}
                     onKeyDown={handleCalendarKeyDown}

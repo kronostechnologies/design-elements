@@ -41,6 +41,28 @@ describe('Datepicker', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
+    test('onCalendarClose callback is called when calendar closes', () => {
+        const callback = jest.fn();
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker onCalendarClose={callback} startOpen label="date"/>),
+        );
+
+        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('onCalendarOpen callback is called when calendar opens', () => {
+        const callback = jest.fn();
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker onCalendarOpen={callback} label="date"/>),
+        );
+
+        getByTestId(wrapper, 'calendar-button').simulate('mousedown');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
     test('input value should format on blur', () => {
         const wrapper = mount(ThemeWrapped(<Datepicker />));
 

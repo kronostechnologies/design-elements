@@ -3854,15 +3854,8 @@ input + .c1 {
 
 .c15 {
   clear: both;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   padding-top: var(--spacing-1x);
+  text-align: center;
 }
 
 .c17 {
