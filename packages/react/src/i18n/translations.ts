@@ -27,6 +27,7 @@ export const Translations = {
             placeholder: 'Search',
         },
         select: {
+            inputAriaLabel: 'Select an option',
             placeholder: 'Select an option',
             validationErrorMessage: 'You must select an option',
         },
@@ -68,6 +69,7 @@ export const Translations = {
             placeholder: 'Rechercher',
         },
         select: {
+            inputAriaLabel: 'Choisissez une option',
             placeholder: 'Choisissez une option',
             validationErrorMessage: 'Vous devez choisir une option',
         },

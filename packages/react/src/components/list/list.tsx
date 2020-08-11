@@ -18,6 +18,7 @@ interface ListOption extends Option {
 }
 
 interface ListProps {
+    ariaLabelledBy?: string;
     id?: string;
     /**
      * Sets list id
@@ -159,6 +160,7 @@ const CheckIndicator = styled(Icon)`
 `;
 
 export function List({
+    ariaLabelledBy,
     id = uuid(),
     options,
     onChange,
@@ -364,7 +366,7 @@ export function List({
             role="listbox"
             tabIndex={-1}
             aria-activedescendant={selectedOptionId}
-            aria-labelledby={selectedOptionId}
+            aria-labelledby={ariaLabelledBy || selectedOptionId}
             isDropdown={dropdown}
         >
             <Wrapper
