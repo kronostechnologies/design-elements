@@ -90,6 +90,7 @@ export function CalendarHeader({
             <FlexContainer>
                 <SelectWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
                     <Select
+                        ariaLabel={t('monthSelectLabel')}
                         data-testid="month-select"
                         options={monthsOptions}
                         onChange={options => {
@@ -100,6 +101,7 @@ export function CalendarHeader({
                 </SelectWrapper>
                 <SelectWrapper isMobile={isMobile}>
                     <Select
+                        ariaLabel={t('yearSelectLabel')}
                         data-testid="year-select"
                         options={yearsOptions}
                         onChange={options => {

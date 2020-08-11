@@ -1899,7 +1899,7 @@ input + .c1 {
                           <input
                             aria-autocomplete="list"
                             aria-controls="listbox_undefined"
-                            aria-label="Select an option"
+                            aria-label="Select a month"
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
@@ -2060,7 +2060,7 @@ input + .c1 {
                           <input
                             aria-autocomplete="list"
                             aria-controls="listbox_undefined"
-                            aria-label="Select an option"
+                            aria-label="Select a year"
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
@@ -3985,7 +3985,7 @@ input + .c1 {
                           <input
                             aria-autocomplete="list"
                             aria-controls="listbox_undefined"
-                            aria-label="Select an option"
+                            aria-label="Select a month"
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
@@ -4146,7 +4146,7 @@ input + .c1 {
                           <input
                             aria-autocomplete="list"
                             aria-controls="listbox_undefined"
-                            aria-label="Select an option"
+                            aria-label="Select a year"
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
@@ -6004,7 +6004,7 @@ input + .c1 {
                           <input
                             aria-autocomplete="list"
                             aria-controls="listbox_undefined"
-                            aria-label="Select an option"
+                            aria-label="Select a month"
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
@@ -6165,7 +6165,7 @@ input + .c1 {
                           <input
                             aria-autocomplete="list"
                             aria-controls="listbox_undefined"
-                            aria-label="Select an option"
+                            aria-label="Select a year"
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"

@@ -9,6 +9,8 @@ export const Translations = {
             validationErrorMessage: 'Invalid date',
             monthPreviousButtonLabel: 'Go to previous month',
             monthNextButtonLabel: 'Go to next month',
+            monthSelectLabel: 'Select a month',
+            yearSelectLabel: 'Select a year',
         },
         'inline-message': {
             Tips: 'Tips',
@@ -51,6 +53,8 @@ export const Translations = {
             validationErrorMessage: 'Date non valide',
             monthPreviousButtonLabel: 'Aller au mois précédent',
             monthNextButtonLabel: 'Aller au mois suivant',
+            monthSelectLabel: 'Choisissez un mois',
+            yearSelectLabel: 'Choisissez une année',
         },
         'inline-message': {
             Tips: 'Astuce',
