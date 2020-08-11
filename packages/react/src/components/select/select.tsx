@@ -110,6 +110,10 @@ export interface Option {
 
 interface SelectProps {
     /**
+     * Sets input's aria-label
+     */
+    ariaLabel?: string;
+    /**
      * @default false
      */
     defaultOpen?: boolean;
@@ -121,6 +125,7 @@ interface SelectProps {
      * Disables input
      */
     disabled?: boolean;
+    id?: string;
     label?: string;
     name?: string;
     /**
@@ -162,9 +167,11 @@ interface SelectProps {
 }
 
 export function Select({
+    ariaLabel,
     defaultOpen = false,
     defaultValue,
     disabled,
+    id,
     label,
     onChange,
     options,
@@ -180,7 +187,7 @@ export function Select({
 }: SelectProps): ReactElement {
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
-    const id = useMemo(uuid, []);
+    const fieldId = id || useMemo(uuid, []);
     const defaultOption = options.find(option => option.value === defaultValue);
 
     const [autoFocus, setAutofocus] = useState(false);
@@ -448,7 +455,7 @@ export function Select({
     return (
         <>
             <StyledFieldContainer
-                fieldId={id}
+                fieldId={fieldId}
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
@@ -456,7 +463,7 @@ export function Select({
                 <InputWrapper
                     aria-expanded={open}
                     aria-haspopup="listbox"
-                    aria-owns={`listbox_${id}`}
+                    aria-owns={`listbox_${fieldId}`}
                     data-testid="input-wrapper"
                     containerOutline={containerOutline}
                     hasLabel={label !== undefined}
@@ -469,11 +476,13 @@ export function Select({
                     onClick={handleInputClick}
                 >
                     <StyledInput
-                        aria-activedescendant={selectedOptionValue ? `${id}_${selectedOptionValue}` : undefined}
+                        aria-label={ariaLabel || label || t('inputAriaLabel')}
+                        aria-activedescendant={selectedOptionValue ? `${fieldId}_${selectedOptionValue}` : undefined}
                         aria-autocomplete={searchable ? 'both' : 'list'}
-                        aria-controls={`listbox_${id}`}
+                        aria-controls={`listbox_${fieldId}`}
                         aria-multiline="false"
                         data-testid="input"
+                        id={fieldId}
                         isMobile={isMobile}
                         disabled={disabled}
                         name={name}
@@ -489,6 +498,7 @@ export function Select({
                         value={inputValue}
                     />
                     <Arrow
+                        aria-labelledby={fieldId}
                         type="button"
                         data-testid="arrow"
                         tabIndex={-1}
@@ -499,13 +509,14 @@ export function Select({
                     </Arrow>
                 </InputWrapper>
                 <StyledList
+                    ariaLabelledBy={fieldId}
                     autofocus={searchable ? autoFocus : open}
                     visible={open}
                     checkIndicator
                     data-testid="listbox"
                     defaultValue={defaultValue}
                     focusedValue={focusedValue}
-                    id={id}
+                    id={`listbox_${fieldId}`}
                     numberOfItemsVisible={numberOfItemsVisible}
                     onChange={handleChange}
                     onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
@@ -519,7 +530,7 @@ export function Select({
                 <ChooseInput
                     checked={skipSelected}
                     data-testid="select-skip-option"
-                    groupName={`${id}_skip`}
+                    groupName={`${fieldId}_skip`}
                     onChange={handleSkipChange}
                     type="radio"
                     value={skipOption.value}
