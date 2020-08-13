@@ -48,6 +48,7 @@
     "feather-icons": "^4.21.0",
     "react-datepicker": "^3.0.0",
     "react-popper-tooltip": "^2.10.1",
+    "react-shadow": "^18.2.5",
     "react-swipeable": "~5.5.0",
     "react-table": "^7.1.0",
     "uuid": "^3.3.3"
