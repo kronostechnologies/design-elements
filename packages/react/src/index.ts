@@ -39,6 +39,7 @@ export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { Banner } from './components/banner/banner';
 export { Tooltip } from './components/tooltip/tooltip';
+export { ShadowWrapper } from './components/shadow-wrapper/shadow-wrapper';
 
 // Results
 export { Legend } from './components/legend/legend';
