@@ -41,7 +41,7 @@ export const StyledLink = styled.a<ContainerProps>`
         color: ${props => props.disabled ? '#9ca7b4' : '#57666e'};
 
         &:hover {
-            ${props => props.disabled ? '' : 'color: #000;'}
+            ${props => props.disabled ? '' : 'color: #000;'}
         }
 
         &.active {

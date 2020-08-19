@@ -204,7 +204,7 @@ export function GlobalNavigation({
                 exact={item.exact}
                 to={item.href}
                 onClick={() => setMenuOpen(false)}
-                onFocus={() => setMenuOpen(false)}
+                onFocus={() => setMenuOpen(false)}
             >
                 <Icon name={item.iconName} size="16"/>
             </IconLink>

@@ -23,7 +23,7 @@ function safeFormatCurrency(
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-type Language = 'en' | 'fr';
+type Language = 'en' | 'fr';
 
 interface Props {
     disabled?: boolean;
@@ -96,7 +96,7 @@ export function MoneyInput({
         setHasFocus(true);
     }
 
-    function parseAndRound(val: string): number | null {
+    function parseAndRound(val: string): number | null {
         return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')));
     }
 
@@ -142,7 +142,7 @@ export function MoneyInput({
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             />
         </InputWrapper>
     );

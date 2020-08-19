@@ -58,7 +58,7 @@ export function SideDrawer({ children, id, nested, open, drawerOrigin, width }: 
         const drawer = drawerRef.current;
 
         // Prevents background scroll on full screen drawers
-        if (open && width === '100%' || width === '100vw') document.body.style.overflow = `hidden`;
+        if (open && width === '100%' || width === '100vw') document.body.style.overflow = `hidden`;
 
         if (drawer === null) return;
 

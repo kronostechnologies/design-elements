@@ -4,7 +4,7 @@ import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import styled from 'styled-components';
 import { Button } from './button';
 
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 type Type = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 

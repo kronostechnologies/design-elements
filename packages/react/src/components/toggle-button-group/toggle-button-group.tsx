@@ -46,7 +46,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     }
 
     &:hover {
-        ${props => props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}
+        ${props => props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}
     }
 `;
 

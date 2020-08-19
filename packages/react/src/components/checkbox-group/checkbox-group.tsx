@@ -2,7 +2,7 @@ import React, { ChangeEvent, ReactElement } from 'react';
 
 import CheckMark from 'feather-icons/dist/icons/check.svg';
 import styled from 'styled-components';
-import { Theme } from '../theme-wrapper/theme-wrapper';
+import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
