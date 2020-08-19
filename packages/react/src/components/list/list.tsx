@@ -75,7 +75,7 @@ interface ListProps {
     /**
      * onFocusedValueChange callback function, invoked when focused value changes
      */
-    onFocusedValueChange?(value: string | undefined): void;
+    onFocusedValueChange?(value: string | undefined): void;
 }
 
 interface WrapperProps {
@@ -366,7 +366,7 @@ export const List = forwardRef(({
             role="listbox"
             tabIndex={-1}
             aria-activedescendant={selectedOptionId}
-            aria-labelledby={ariaLabelledBy || selectedOptionId}
+            aria-labelledby={ariaLabelledBy || selectedOptionId}
             isDropdown={dropdown}
             ref={ref}
         >

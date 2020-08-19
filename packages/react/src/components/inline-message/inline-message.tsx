@@ -46,7 +46,7 @@ type MessageType = 'info' | 'success' | 'alert' | 'error';
 interface MessageTypeProps {
     container: ComponentType<{ isMobile: boolean; }>;
     iconName: IconName;
-    title: 'Tips' | 'Success' | 'Alert' | 'Error';
+    title: 'Tips' | 'Success' | 'Alert' | 'Error';
 }
 
 const handleType = (type: MessageType): MessageTypeProps => {

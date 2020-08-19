@@ -209,8 +209,8 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     }
 `;
 
-export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
-export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
+export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;
@@ -396,7 +396,7 @@ export function Datepicker({
             fieldId={fieldId}
             label={label}
             valid={valid}
-            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
             <Container isMobile={isMobile}>
                 <StyledDatePicker
@@ -416,7 +416,7 @@ export function Datepicker({
                     )}
                     calendarContainer={({ children }) => (
                         <div
-                            aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
+                            aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
                             aria-live="polite"
                             aria-modal={true}
                             className="react-datepicker"

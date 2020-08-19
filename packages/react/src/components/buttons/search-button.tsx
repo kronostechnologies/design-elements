@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import styled from 'styled-components';
-import { AbstractButton } from './abstract-button';
+import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
     label?: string;
