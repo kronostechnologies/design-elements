@@ -64,7 +64,7 @@ interface BannerProps {
     hidden?: boolean;
 }
 
-export function Banner({ children, type, hidden }: BannerProps): ReactElement | null {
+export function Banner({ children, type, hidden }: BannerProps): ReactElement | null {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
 

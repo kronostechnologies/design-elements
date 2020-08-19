@@ -1,7 +1,7 @@
 import React, { createContext, ReactElement, ReactNode, useContext, useEffect, useState  } from 'react';
 import { breakpoints } from '../../tokens/breakpoints';
 
-export type DeviceType = 'desktop' | 'tablet' | 'mobile';
+export type DeviceType = 'desktop' | 'tablet' | 'mobile';
 interface Props {
     children: ReactNode;
     staticDevice?: DeviceType;
@@ -14,7 +14,7 @@ export interface DeviceContextProps {
     isMobile: boolean;
 }
 
-const getDeviceContext = (deviceName: DeviceType | undefined = undefined): DeviceContextProps => {
+const getDeviceContext = (deviceName: DeviceType | undefined = undefined): DeviceContextProps => {
     let isDesktop = false;
     let isTablet = false;
     let isMobile = false;
@@ -42,7 +42,7 @@ const getDeviceContext = (deviceName: DeviceType | undefined = undefined): Devi
 const getDevice = (screenWidth: number): DeviceType => {
     let currentDevice: DeviceType = 'desktop';
     if (screenWidth >= breakpoints.desktop) currentDevice = 'desktop';
-    else if (screenWidth < breakpoints.desktop && screenWidth > breakpoints.mobile) currentDevice = 'tablet';
+    else if (screenWidth < breakpoints.desktop && screenWidth > breakpoints.mobile) currentDevice = 'tablet';
     else if (screenWidth <= breakpoints.mobile) currentDevice = 'mobile';
 
     return currentDevice;

@@ -20,7 +20,7 @@ export default {
     component: SideDrawer,
 };
 
-type DrawerType = 'normal' | 'withNestedDrawer' | 'nested' | 'scrollable' | 'left' | 'variableWidth';
+type DrawerType = 'normal' | 'withNestedDrawer' | 'nested' | 'scrollable' | 'left' | 'variableWidth';
 
 const allDrawers = {
     normal: false,

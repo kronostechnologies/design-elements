@@ -105,7 +105,7 @@ export interface SearchInputProps {
 
 export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: SearchInputProps) => {
     const { t } = useTranslation('search-input');
-    const [{ value }, setValue] = useState({ value: initialValue || '' });
+    const [{ value }, setValue] = useState({ value: initialValue || '' });
     const id = uuid();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -140,7 +140,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
             <InnerWrapper>
                 <Label forId={id}>
                     <IcoSearch disabled={disabled} />
-                    <VisuallyHidden>{label || t('label')}</VisuallyHidden>
+                    <VisuallyHidden>{label || t('label')}</VisuallyHidden>
                 </Label>
 
                 <Input
@@ -150,7 +150,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                     onKeyDown={handleKeyDown}
                     hasButton={hasButton}
                     id={id}
-                    placeholder={placeholder || t('placeholder')}
+                    placeholder={placeholder || t('placeholder')}
                     type="search"
                     value={value}
                 />
@@ -166,7 +166,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                     <SearchSubmit
                         disabled={disabled}
                         className="primary"
-                        label={label || t('label')}
+                        label={label || t('label')}
                         onClick={handleSearchButtonClick}
                     />
                 )

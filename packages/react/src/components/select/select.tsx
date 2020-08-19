@@ -208,7 +208,7 @@ export function Select({
 
     useEffect(() => {
         const WantedOption = options.find(option => option.value === value);
-        if (WantedOption) {
+        if (WantedOption) {
             setSelectedOptionValue(WantedOption.value);
             setInputValue(WantedOption.label);
         }
@@ -298,7 +298,7 @@ export function Select({
         setContainerOutline(true);
     }
 
-    function handleFocusedValueChange(focusValue: string | undefined): void {
+    function handleFocusedValueChange(focusValue: string | undefined): void {
         focusValue && setInputValue(focusValue);
     }
 
@@ -343,7 +343,7 @@ export function Select({
             case 40 /* ArrowDown */:
                 if (!open) {
                     handleOpen();
-                    if (searchable || !selectedOptionValue) {
+                    if (searchable || !selectedOptionValue) {
                         setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
@@ -462,7 +462,7 @@ export function Select({
                 fieldId={fieldId}
                 label={label}
                 valid={valid}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             >
                 <InputWrapper
                     aria-expanded={open}
@@ -480,7 +480,7 @@ export function Select({
                     onClick={handleInputClick}
                 >
                     <StyledInput
-                        aria-label={ariaLabel || label || t('inputAriaLabel')}
+                        aria-label={ariaLabel || label || t('inputAriaLabel')}
                         aria-activedescendant={selectedOptionValue ? `${fieldId}_${selectedOptionValue}` : undefined}
                         aria-autocomplete={searchable ? 'both' : 'list'}
                         aria-controls={`listbox_${fieldId}`}
@@ -494,7 +494,7 @@ export function Select({
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onKeyDown={handleInputKeyDown}
-                        placeholder={placeholder || t('placeholder')}
+                        placeholder={placeholder || t('placeholder')}
                         ref={inputRef}
                         required={required}
                         searchable={searchable}

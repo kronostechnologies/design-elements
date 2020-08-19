@@ -1,12 +1,12 @@
+import { range } from '@design-elements/utils/range';
 import { enCA } from 'date-fns/locale';
-import { range } from 'lodash';
 
 import { Option } from '../../select/select';
 import { DayOfWeek, SupportedLocale } from '../datepicker';
 
 export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): Locale {
     const findLocale = localeArray.find(locale => locale.code === localeCode);
-    return findLocale || enCA;
+    return findLocale || enCA;
 }
 
 export function getLocaleMonthsShort(locale: Locale): string[] {
@@ -53,16 +53,14 @@ export function getLocaleMonthsOptions(locale: Locale): Option[] {
     return monthsOptions;
 }
 
-export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): Option[] {
-    if (minDate && maxDate) {
-        if (minDate > maxDate) {
-            return [];
-        }
+export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): Option[] {
+    if (minDate && maxDate && minDate > maxDate) {
+        return [];
     }
 
     const years = range(
         minDate ? minDate.getUTCFullYear() : 1920,
-        maxDate ? maxDate.getUTCFullYear() + 1 : new Date().getUTCFullYear() + 1, 1);
+        maxDate ? maxDate.getUTCFullYear() + 1 : new Date().getUTCFullYear() + 1);
 
     return years.map(year => ({ value: year.toString(), label: year.toString() }));
 }
