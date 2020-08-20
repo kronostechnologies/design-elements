@@ -54,5 +54,3 @@ When reporting a bug, requesting a feature or submitting a pull request, **pleas
 
 ## About the Team
 This project is designed, coded and maintained by the interdisciplinary [Product Design Team](https://confluence.equisoft.com/display/PRODUCTDESIGN) based in Equisoft's Quebec City and Montreal offices.
-
-Our work is supervised by [Pierre-Luc Paquin](mailto:pierre-luc.paquin@equisoft.com), Equisoft's Tech Lead, Front-End, to ensure that the project serves apps needs and aligns with Equisoft's global Front-End strategy. [Pierre-Luc](mailto:pierre-luc.paquin@equisoft.com) also acts as Product Owner for the design system initiative, so don't hesitate to [contact him](mailto:pierre-luc.paquin@equisoft.com) today to know what Design Elements can do for you. 👨‍⚕️‍
