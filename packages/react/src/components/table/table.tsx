@@ -64,17 +64,17 @@ export interface RowProps extends Row {
     original: any;
 }
 
-interface TableProps {
+interface TableProps<T> {
     /** Array of Objects that defines your table columns.
      * See stories code or refer to react-table docs for more information */
     columns: ColumnsProps;
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
-    data: {}[];
+    data: T[];
     onRowClick?(row: RowProps): void;
 }
 
-export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
+export function Table<T>({ columns, data, onRowClick }: TableProps<T>): ReactElement {
     const { device } = useDeviceContext();
     const {
       getTableProps,
@@ -103,7 +103,7 @@ export function Table({ columns, data, onRowClick }: TableProps): ReactElement {
     );
 }
 
-function getHeading(column: Column<{}>): ReactElement {
+function getHeading(column: Column): ReactElement {
     if (column.sortable) {
         return <SortableColumnHeading key={column.id} column={column}/>;
     } else {
