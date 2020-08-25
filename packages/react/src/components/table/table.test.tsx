@@ -38,7 +38,7 @@ describe('Table', () => {
 
 const renderTable = (columnsArray: ColumnsProps, currentDevice?: DeviceType) => (
     renderWithProviders(
-        <Table columns={columnsArray} data={data}/>,
+        <Table<TestData> columns={columnsArray} data={data}/>,
         currentDevice,
     )
 );
@@ -80,7 +80,12 @@ const columnsSorted = [
     },
 ];
 
-const data = [
+interface TestData {
+    column1: string;
+    column2: string;
+}
+
+const data: TestData[] = [
     {
         column1: 'Hello',
         column2: 'World',
