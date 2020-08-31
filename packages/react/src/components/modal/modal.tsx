@@ -1,11 +1,9 @@
-import React, { ReactElement, ReactNode, useRef } from 'react';
-import Modal from 'react-modal';
+import React, { forwardRef, ReactElement, ReactNode, Ref, useImperativeHandle, useRef } from 'react';
+import ReactModal from 'react-modal';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
-import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 
-const StyledModal = styled(Modal)`
+const StyledModal = styled(ReactModal)`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
@@ -16,25 +14,8 @@ const StyledModal = styled(Modal)`
     width: 500px;
 `;
 
-const Header = styled.header`
-    margin-bottom: var(--spacing-3x);
-`;
-
-const Title = styled.h2`
-    font-size: 1.25rem;
-    font-weight: var(--font-normal);
-    height: 32px;
-    line-height: 24px;
-    margin-bottom: var(--spacing-2x);
-    margin-top: 0;
-`;
-
-const Subtitle = styled.h3`
-    font-size: 1rem;
-    font-weight: var(--font-normal);
-    height: 24px;
-    line-height: 22px;
-    margin: 0;
+const Header = styled.header<{ hasContent: boolean }>`
+    ${({ hasContent }) => hasContent && 'margin-bottom: var(--spacing-3x);'}
 `;
 
 const CloseIconButton = styled(IconButton)`
@@ -47,12 +28,6 @@ const Footer = styled.footer`
     margin-top: var(--spacing-4x);
 `;
 
-const ConfirmButton = styled(Button)`
-    margin-right: var(--spacing-1x);
-`;
-
-const CancelButton = styled(Button)``;
-
 const customStyles = {
     overlay : {
         alignItems: 'center',
@@ -63,43 +38,70 @@ const customStyles = {
 
 type Role = 'dialog' | 'alertdialog';
 
-interface ModalDialogProps {
+interface ModalProps {
     ariaDescribedby?: string;
+    ariaLabel?: string;
+    ariaLabelledBy?: string;
     children?: ReactNode;
+    /**
+     * Adds "x" iconButton to close modal
+     * @default true
+     */
+    hasCloseButton?: boolean;
     isOpen: boolean;
+    modalFooter?: ReactNode;
+    modalHeader?: ReactNode;
     /**
      * Sets modal role tag
      * @default dialog
      */
     role?: Role;
-    subtitle?: string;
-    title?: string;
     onRequestClose(): void;
 }
 
-export function ModalDialog({
+export const Modal = forwardRef(({
     ariaDescribedby,
+    ariaLabel,
+    ariaLabelledBy,
     children,
+    hasCloseButton = true,
     isOpen,
-    onRequestClose,
+    modalFooter,
+    modalHeader,
     role = 'dialog',
-    subtitle,
-    title,
-}: ModalDialogProps): ReactElement {
+    onRequestClose,
+}: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
     const modalRef = useRef(null);
-    const titleId = uuid();
+    useImperativeHandle(ref, () => modalRef.current, [modalRef]);
 
     function closeModal(): void {
         // @ts-ignore
         modalRef.current?.portal.requestClose();
     }
 
+    function getHeader(): ReactElement {
+        return (modalHeader || hasCloseButton) && (
+            <Header hasContent={modalHeader !== undefined}>
+                {modalHeader}
+                {hasCloseButton && (
+                    <CloseIconButton
+                        label="Close dialog"
+                        type="button"
+                        buttonType="tertiary"
+                        iconName="x"
+                        onClick={closeModal}
+                    />
+                )}
+            </Header>
+        );
+    }
+
     return(
         <>
             <StyledModal
                 aria={{
-                    labelledby: title ? titleId : undefined,
                     describedby: ariaDescribedby,
+                    labelledby: ariaLabelledBy,
                     modal: true,
                 }}
                 isOpen={isOpen}
@@ -107,19 +109,12 @@ export function ModalDialog({
                 ref={modalRef}
                 role={role}
                 style={customStyles}
-                contentLabel={title || undefined}
+                contentLabel={ariaLabel}
             >
-                <Header>
-                    {title && <Title id={titleId} tabIndex={-1}>{title}</Title>}
-                    {subtitle && <Subtitle tabIndex={-1}>{subtitle}</Subtitle>}
-                    <CloseIconButton label="Close dialog" buttonType="tertiary" iconName="x" onClick={closeModal}/>
-                </Header>
+                {getHeader()}
                 {children}
-                <Footer>
-                    <ConfirmButton label="Confirm" buttonType="primary"/>
-                    <CancelButton label="Cancel" buttonType="tertiary" onClick={closeModal}/>
-                </Footer>
+                {modalFooter && <Footer>{modalFooter}</Footer>}
             </StyledModal>
         </>
     );
-}
+});

@@ -40,7 +40,9 @@ export { SideDrawer } from './components/side-drawer/side-drawer';
 export { Banner } from './components/banner/banner';
 export { Tooltip } from './components/tooltip/tooltip';
 export * from './components/table/table';
-export { ModalDialog } from './components/modal-dialog/modal-dialog';
+export { Modal } from './components/modal/modal';
+export { ModalAlert } from './components/modal/modal-alert';
+export { ModalDialog } from './components/modal/modal-dialog';
 
 // Results
 export { Legend } from './components/legend/legend';
