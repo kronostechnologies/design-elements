@@ -8,11 +8,11 @@ module.exports = {
     resetMocks: true,
     moduleDirectories: [
         'src',
-        'node_modules'
+        'node_modules',
     ],
     moduleNameMapper: {
         '\\.svg': '<rootDir>/test/__mocks__/svg-mock.js',
-        '\\.css': '<rootDir>/test/__mocks__/style-mock.js',
+        '\\.s?css': '<rootDir>/test/__mocks__/style-mock.js',
         ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/src/' }),
     },
     roots: [

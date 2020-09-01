@@ -8,11 +8,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.s[ac]ss$/i,
                 use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' }
-                ]
+                    'to-string-loader',
+                    'css-loader',
+                    'sass-loader',
+                ],
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    'to-string-loader',
+                    'css-loader',
+                ],
             },
             {
                 test: /.tsx$/,
@@ -35,20 +43,23 @@ module.exports = {
                 options: {
                     svgoConfig: {
                         plugins: {
-                            removeViewBox: false
-                        }
-                    }
-                }
+                            removeViewBox: false,
+                        },
+                    },
+                },
             },
         ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         plugins: [new TsconfigPathsPlugin()],
+        alias: {
+            'react-onclickoutside': path.resolve(__dirname, '../patches/react-onclickoutside'), // TODO: Remove once https://github.com/Pomax/react-onclickoutside/pull/324 is released
+        },
     },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist'),
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
     },
 };
