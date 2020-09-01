@@ -1,10 +1,18 @@
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, { FocusEvent, KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+    FocusEvent,
+    KeyboardEvent,
+    MouseEvent,
+    ReactElement,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
-// tslint:disable-next-line:no-import-side-effect
-import 'react-datepicker/dist/react-datepicker.min.css';
+import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import uuid from 'uuid/v4';
 
 import { Button } from '../buttons/button';
@@ -41,13 +49,13 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         border: 1px solid transparent;
         box-sizing: border-box;
         height: 32px;
-        line-height: 2rem;
+        line-height: 30px;
         margin: 0;
         width: 32px;
 
         &:hover {
             background-color: ${({ theme }) => theme.greys.grey};
-            border-radius: 20px;
+            border-radius: 50%;
         }
 
         &:focus {
@@ -65,7 +73,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
 
     .react-datepicker__day--keyboard-selected {
         background-color: ${({ theme }) => theme.greys.white};
-        border-radius: 20px;
+        border-radius: 50%;
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys.black};
         ${({ isMobile, theme }) => isMobile && `
@@ -98,7 +106,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
 
     .react-datepicker__day--selected {
         background-color: ${({ theme }) => theme.main['primary-1.1']};
-        border-radius: 20px;
+        border-radius: 50%;
         ${({ isMobile }) => isMobile ? `
             &[tabindex="0"] {
                 box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
@@ -209,6 +217,10 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     }
 `;
 
+const ReactDatePickerStyles = createGlobalStyle`
+    ${datepickerCss}
+`;
+
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -263,9 +275,13 @@ interface DatepickerProps {
     value?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
+
     onCalendarClose?(): void;
+
     onCalendarOpen?(): void;
+
     onChange?(date: Date): void;
+
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
@@ -297,13 +313,13 @@ export function Datepicker({
     ...props
 }: DatepickerProps): ReactElement {
     const { t } = useTranslation('datepicker');
-    const localeArray = [enUS, enCA, frCA];
+    const localeArray = [ enUS, enCA, frCA ];
     const { isMobile } = useDeviceContext();
-    const [selectedDate, setSelectedDate] = useState(startDate);
-    const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
-    const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
-    const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
-    const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
+    const [ selectedDate, setSelectedDate ] = useState(startDate);
+    const currentLocale = useMemo(() => getLocale(localeArray, locale), [ locale ]);
+    const months = useMemo(() => getLocaleMonthsShort(currentLocale), [ currentLocale ]);
+    const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [ currentLocale ]);
+    const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [ minDate, maxDate ]);
     const calendarRef = useRef<HTMLDivElement>(null);
     const fieldId = id || useMemo(uuid, []);
     const dateInputRef = useRef<DatePicker>(null);
@@ -313,7 +329,7 @@ export function Datepicker({
         if (firstDayOfWeek) {
             setLocaleFirstDayOfWeek(currentLocale, firstDayOfWeek);
         }
-    }, [firstDayOfWeek]);
+    }, [ firstDayOfWeek ]);
 
     function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
@@ -332,11 +348,14 @@ export function Datepicker({
             const dateToFocus =
                 calendarRef.current?.querySelector('.react-datepicker__day[tabindex="0"]') as HTMLDivElement;
 
-            if (dateToFocus) dateToFocus.focus();
+            if (dateToFocus) {
+                dateToFocus.focus();
+            }
         }, 0);
     }
 
-    function handleCalendarButtonMouseDown(): void {
+    function handleCalendarButtonMouseDown(event: MouseEvent<HTMLButtonElement>): void {
+        event.stopPropagation();
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
         } else {
@@ -389,99 +408,104 @@ export function Datepicker({
         } else {
             return getLocaleDatePlaceholder(currentLocale);
         }
-    }, [placeholder, dateFormat, locale]);
+    }, [ placeholder, dateFormat, locale ]);
 
     return (
-        <FieldContainer
-            fieldId={fieldId}
-            label={label}
-            valid={valid}
-            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-        >
-            <Container isMobile={isMobile}>
-                <StyledDatePicker
-                    customInput={<input type="text" data-testid="text-input"/>}
-                    isMobile={isMobile}
-                    id={fieldId}
-                    ref={dateInputRef}
-                    renderCustomHeader={({
-                        ...customHeaderProps
-                    }) => (
-                        <CalendarHeader
-                            months={months}
-                            monthsOptions={monthsOptions}
-                            yearsOptions={yearsOptions}
-                            {...customHeaderProps}
-                        />
-                    )}
-                    calendarContainer={({ children }) => (
-                        <div
-                            aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
-                            aria-live="polite"
-                            aria-modal={true}
-                            className="react-datepicker"
-                            role="dialog"
-                            ref={calendarRef}
-                        >
-                            {children}
-                            {hasTodayButton && (
-                                <TodayButtonWrapper>
-                                    <Button
-                                        aria-label={t('todayButtonAriaLabel')}
-                                        buttonType="secondary"
-                                        data-testid="today-button"
-                                        label={t('todayButtonLabel')}
-                                        type="button"
-                                        onClick={handleTodayButtonClick}
-                                    />
-                                </TodayButtonWrapper>
-                            )}
-                        </div>
-                    )}
-                    className="datePickerInput"
-                    dateFormat={dateFormat || getLocaleDateFormat(currentLocale)}
-                    disabled={disabled}
-                    locale={locale}
-                    maxDate={maxDate}
-                    minDate={minDate}
-                    onChange={handleInputChange}
-                    onSelect={handleCalendarSelect}
-                    onBlur={handleInputBlur}
-                    onCalendarClose={onCalendarClose}
-                    onCalendarOpen={onCalendarOpen}
-                    onFocus={onFocus}
-                    onInputClick={handleInputClick}
-                    onKeyDown={handleCalendarKeyDown}
-                    open={open}
-                    placeholderText={getPlaceholder}
-                    popperClassName="popper"
-                    preventOpenOnFocus
-                    selected={selectedDate}
-                    showPopperArrow={false}
-                    startOpen={startOpen}
-                    valid={valid}
-                    withPortal={isMobile}
-                    {...props}
-                />
-                <CalendarButton
-                    aria-label={selectedDate ? `${t('calendarButtonSelectedLabel')} ${selectedDate.toLocaleDateString(locale)}` : t('calendarButtonLabel')}
-                    data-testid="calendar-button"
-                    type="button"
-                    disabled={disabled}
-                    isMobile={isMobile}
-                    onKeyDown={handleCalendarButtonKeyDown}
-                    onMouseDown={handleCalendarButtonMouseDown}
-                    ref={calendarButtonRef}
-                    tabIndex={0}
-                >
-                    <Icon name="calendar" size={isMobile ? '24' : '16'} />
-                </CalendarButton>
-            </Container>
-        </FieldContainer>
+        <>
+            <ReactDatePickerStyles />
+            <FieldContainer
+                fieldId={fieldId}
+                label={label}
+                valid={valid}
+                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            >
+                <Container isMobile={isMobile}>
+                    <StyledDatePicker
+                        customInput={<input type="text" data-testid="text-input" />}
+                        isMobile={isMobile}
+                        id={fieldId}
+                        ref={dateInputRef}
+                        renderCustomHeader={({
+                            ...customHeaderProps
+                        }) => (
+                            <CalendarHeader
+                                months={months}
+                                monthsOptions={monthsOptions}
+                                yearsOptions={yearsOptions}
+                                {...customHeaderProps}
+                            />
+                        )}
+                        calendarContainer={({ children }) => (
+                            <div
+                                aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
+                                aria-live="polite"
+                                aria-modal={true}
+                                className="react-datepicker"
+                                role="dialog"
+                                ref={calendarRef}
+                            >
+                                {children}
+                                {hasTodayButton && (
+                                    <TodayButtonWrapper>
+                                        <Button
+                                            aria-label={t('todayButtonAriaLabel')}
+                                            buttonType="secondary"
+                                            data-testid="today-button"
+                                            label={t('todayButtonLabel')}
+                                            type="button"
+                                            onClick={handleTodayButtonClick}
+                                        />
+                                    </TodayButtonWrapper>
+                                )}
+                            </div>
+                        )}
+                        className="datePickerInput"
+                        dateFormat={dateFormat || getLocaleDateFormat(currentLocale)}
+                        disabled={disabled}
+                        locale={locale}
+                        maxDate={maxDate}
+                        minDate={minDate}
+                        onChange={handleInputChange}
+                        onSelect={handleCalendarSelect}
+                        onBlur={handleInputBlur}
+                        onCalendarClose={onCalendarClose}
+                        onCalendarOpen={onCalendarOpen}
+                        onFocus={onFocus}
+                        onInputClick={handleInputClick}
+                        onKeyDown={handleCalendarKeyDown}
+                        open={open}
+                        placeholderText={getPlaceholder}
+                        popperClassName="popper"
+                        preventOpenOnFocus
+                        selected={selectedDate}
+                        showPopperArrow={false}
+                        startOpen={startOpen}
+                        valid={valid}
+                        withPortal={isMobile}
+                        {...props}
+                    />
+                    <CalendarButton
+                        aria-label={selectedDate
+                            ? `${t('calendarButtonSelectedLabel')} ${selectedDate.toLocaleDateString(locale)}`
+                            : t('calendarButtonLabel')}
+                        data-testid="calendar-button"
+                        type="button"
+                        disabled={disabled}
+                        isMobile={isMobile}
+                        onKeyDown={handleCalendarButtonKeyDown}
+                        onMouseDown={handleCalendarButtonMouseDown}
+                        ref={calendarButtonRef}
+                        tabIndex={0}
+                    >
+                        <Icon name="calendar" size={isMobile ? '24' : '16'} />
+                    </CalendarButton>
+                </Container>
+            </FieldContainer>
+        </>
     );
 }
 
-function getInputBorderColor(theme: Theme, disabled?: boolean,  valid?: boolean): string {
+function getInputBorderColor(theme: Theme, disabled?: boolean, valid?: boolean): string {
     if (disabled) {
         return theme.greys.grey;
     } else if (valid) {

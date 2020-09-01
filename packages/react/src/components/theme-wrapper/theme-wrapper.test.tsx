@@ -1,5 +1,6 @@
+import { ShadowWrapper } from '@design-elements/components/shadow-wrapper/shadow-wrapper';
+import { shallow } from 'enzyme';
 import React from 'react';
-
 import renderer from 'react-test-renderer';
 import { Button, testTheme } from '../..';
 import { ThemeWrapper } from './theme-wrapper';
@@ -23,5 +24,17 @@ describe('Theme Wrapper', () => {
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('should not use ShadowWrapper by default', () => {
+        const wrapper = shallow(<ThemeWrapper />);
+
+        expect(wrapper.find(ShadowWrapper)).toHaveLength(0);
+    });
+
+    test('should use ShadowWrapper when styles are isolated', () => {
+        const wrapper = shallow(<ThemeWrapper isolateStyles={true} />);
+
+        expect(wrapper.find(ShadowWrapper)).toHaveLength(1);
     });
 });

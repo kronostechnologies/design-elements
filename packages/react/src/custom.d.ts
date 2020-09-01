@@ -6,6 +6,17 @@ declare module '*.svg' {
     export default content;
 }
 
+declare module '*.scss' {
+    const content: string;
+    export default content;
+}
+
+declare module '!!style-loader*' {
+    function use(): void;
+
+    function unuse(): void;
+}
+
 declare module 'react-shadow/styled-components' {
     import * as React from 'react';
 
@@ -16,4 +27,9 @@ declare module 'react-shadow/styled-components' {
     const ReactShadowRoot: Root;
 
     export default ReactShadowRoot;
+}
+
+declare module '*.css' {
+    const content: string;
+    export default content;
 }

@@ -1,3 +1,4 @@
+import { mainCss } from '@design-elements/styles';
 import React, { ReactElement, ReactNode } from 'react';
 import root from 'react-shadow/styled-components';
 
@@ -12,5 +13,10 @@ interface ShadowWrapperProps {
 
 export function ShadowWrapper({ children, tagName = 'div' }: ShadowWrapperProps): ReactElement {
     const WrapperTag = root[tagName];
-    return <WrapperTag>{children}</WrapperTag>;
+    return (
+        <WrapperTag>
+            <style>{mainCss}</style>
+            {children}
+        </WrapperTag>
+    );
 }

@@ -6,3 +6,8 @@ import { extendExpectWithMoney } from './setup/extend-expect-with-money';
 
 extendExpectWithMoney();
 configure({ adapter: new Adapter() });
+
+jest.mock('@design-elements/styles/body.scss', () => ({
+    use: jest.fn(),
+    unuse: jest.fn(),
+}));
