@@ -2437,22 +2437,23 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.22":
-  version "2.0.3-alpha.22"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.22.tgz#483d9b9af84820199aec7d274da581b480081dc7"
-  integrity sha512-tPnEh6Ube3choM1v6RBbuN3g8MO029bVkbvDGeDFYyWIkRpaH5sJf7YeaUtE0N4OJZi9zDu8C3C2PEWLrFRnPQ==
+"@equisoft/design-elements-react@^2.0.3-alpha.23":
+  version "2.0.3-alpha.23"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.23.tgz#107527d2638964f36ae4fc39ef9126c4dfae769d"
+  integrity sha512-aHQyZ+1koyQmYeAF7C0vU0uAj4A0ILoqyrgCgOm0gNQyWv/SeeXBNQfmo77j7Fi05b9ssIrmEG2hfDE8dP0AWQ==
   dependencies:
     date-fns "^2.14.0"
     feather-icons "^4.21.0"
     react-datepicker "^3.0.0"
     react-popper-tooltip "^2.10.1"
     react-swipeable "~5.5.0"
+    react-table "^7.1.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.22":
-  version "2.0.3-alpha.22"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.22.tgz#a1d139084a1ef24efb1da9c4eee5fd4308200f8e"
-  integrity sha512-Dph2KQxDOmA/IMTbz8pFNUYUHSphLhLa+W2ZVnv5p4VPJoAVYg4bVAnQaTOktgx/US1Fj1Z6wINTybKANJJcQw==
+"@equisoft/design-elements-web@^2.0.3-alpha.23":
+  version "2.0.3-alpha.23"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.23.tgz#378270b82f997c5446680c9463ded7f5628fdfbf"
+  integrity sha512-x1vGeAAvCzDuElW1gXKEOSRLFgnCxWXru3jnNKMgrBggdyfCspC2VyK3wzsKxS0gKiVbCJ5Dwfa6CN6h0OvVAw==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
@@ -5430,11 +5431,6 @@ date-fns@^2.0.1, date-fns@^2.14.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.15.0.tgz#424de6b3778e4e69d3ff27046ec136af58ae5d5f"
   integrity sha512-ZCPzAMJZn3rNUvvQIMlXhDr4A+Ar07eLeGsGREoWU19a3Pqf5oYa+ccd+B3F6XVtQY6HANMFdOQ8A+ipFnvJdQ==
-
-date-fns@^2.8.1:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
-  integrity sha512-1zD+68jhFgDIM0rF05rcwYO8cExdNqxjq4xP1QKM60Q45mnO6zaMWB4tOzrIr4M4GSLntsKeE4c9Bdl2jhL/yw==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -10257,6 +10253,11 @@ react-syntax-highlighter@^11.0.2:
     lowlight "~1.11.0"
     prismjs "^1.8.4"
     refractor "^2.4.1"
+
+react-table@^7.1.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.5.0.tgz#87326d92cdffbbf970f49b395bcafc3f84989ddf"
+  integrity sha512-hLsbNqLJkkYiATVteM8mthP8y5vnLPB2qdi9FeGZjsvb2m5vxj6cavIgk35oulvBmYD6Kox0HFfI332HPZpC7w==
 
 react-textarea-autosize@^7.1.0:
   version "7.1.1"

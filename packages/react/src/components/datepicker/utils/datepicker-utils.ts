@@ -60,7 +60,7 @@ export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): O
 
     const years = range(
         minDate ? minDate.getUTCFullYear() : 1920,
-        maxDate ? maxDate.getUTCFullYear() + 1 : new Date().getUTCFullYear() + 1);
+        maxDate ? maxDate.getUTCFullYear() : new Date().getUTCFullYear());
 
     return years.map(year => ({ value: year.toString(), label: year.toString() }));
 }

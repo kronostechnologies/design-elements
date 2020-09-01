@@ -5,7 +5,12 @@
     ],
     "rules": {
         "no-implicit-dependencies": {
-            "options": [["@design-elements"]]
+          "options": [
+            [
+              "@design-elements",
+              "!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!."
+            ]
+          ]
         },
         "linebreak-style": [false],
         "variable-name": {
