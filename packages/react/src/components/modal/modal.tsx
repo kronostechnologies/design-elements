@@ -39,7 +39,10 @@ const customStyles = {
 type Role = 'dialog' | 'alertdialog';
 
 interface ModalProps {
+    appElementId?: string;
     ariaDescribedby?: string;
+    /** Boolean indicating if the appElement should be hidden. Defaults to true. */
+    ariaHideApp?: boolean;
     ariaLabel?: string;
     ariaLabelledBy?: string;
     children?: ReactNode;
@@ -60,7 +63,9 @@ interface ModalProps {
 }
 
 export const Modal = forwardRef(({
+    appElementId,
     ariaDescribedby,
+    ariaHideApp = true,
     ariaLabel,
     ariaLabelledBy,
     children,
@@ -72,6 +77,7 @@ export const Modal = forwardRef(({
     onRequestClose,
 }: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
     const modalRef = useRef(null);
+    appElementId && ReactModal.setAppElement(`#${appElementId}`);
     useImperativeHandle(ref, () => modalRef.current, [modalRef]);
 
     function closeModal(): void {
@@ -85,6 +91,7 @@ export const Modal = forwardRef(({
                 {modalHeader}
                 {hasCloseButton && (
                     <CloseIconButton
+                        data-testid="close-button"
                         label="Close dialog"
                         type="button"
                         buttonType="tertiary"
@@ -104,6 +111,7 @@ export const Modal = forwardRef(({
                     labelledby: ariaLabelledBy,
                     modal: true,
                 }}
+                ariaHideApp={ariaHideApp}
                 isOpen={isOpen}
                 onRequestClose={onRequestClose}
                 ref={modalRef}

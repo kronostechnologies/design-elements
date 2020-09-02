@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Matches snapshot (closed) 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="ReactModal__Body--open"
+  >
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open sc-iyvyFf ktPmVI"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class="sc-hwwEjo PsIOU"
+          >
+            <button
+              aria-label="Close dialog"
+              class="sc-bdVaJa sc-bxivhb eXSswJ sc-kPVwWT iBIATd"
+              data-testid="close-button"
+              type="button"
+            >
+              <svg
+                color="currentColor"
+                focusable="false"
+                height="16"
+                width="16"
+              />
+            </button>
+          </header>
+          Test Content
+        </div>
+      </div>
+    </div>
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div />
+    <div
+      class="ReactModalPortal"
+    />
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Modal Matches snapshot (opened) 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c1:not(:disabled) {
+  cursor: pointer;
+}
+
+.c1 > svg {
+  color: inherit;
+}
+
+.c1:hover {
+  color: #000000;
+}
+
+.c1:disabled {
+  color: #9CA7B4;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  padding: var(--spacing-4x);
+  position: relative;
+  width: 500px;
+}
+
+.c2 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+<body
+    class="ReactModal__Body--open"
+  >
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open c0"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class=""
+          >
+            <button
+              aria-label="Close dialog"
+              class="c1 c2"
+              data-testid="close-button"
+              type="button"
+            >
+              <svg
+                color="currentColor"
+                focusable="false"
+                height="16"
+                width="16"
+              />
+            </button>
+          </header>
+          Test Content
+        </div>
+      </div>
+    </div>
+    <div />
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open c0"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class=""
+          >
+            <button
+              aria-label="Close dialog"
+              class="c1 c2"
+              data-testid="close-button"
+              type="button"
+            >
+              <svg
+                color="currentColor"
+                focusable="false"
+                height="16"
+                width="16"
+              />
+            </button>
+          </header>
+          Test Content
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

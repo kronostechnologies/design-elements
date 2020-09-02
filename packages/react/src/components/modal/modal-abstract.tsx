@@ -5,6 +5,8 @@ import { getFooter, getHeader } from './utils';
 
 export interface ModalAbstractProps {
     ariaDescribedby?: string;
+    /** Boolean indicating if the appElement should be hidden. Defaults to true. */
+    ariaHideApp?: boolean;
     /** Is set to title value if title is set */
     ariaLabel?: string;
     children?: ReactNode;
