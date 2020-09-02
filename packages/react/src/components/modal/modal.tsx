@@ -1,4 +1,5 @@
 import React, { forwardRef, ReactElement, ReactNode, Ref, useImperativeHandle, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
@@ -76,6 +77,7 @@ export const Modal = forwardRef(({
     role = 'dialog',
     onRequestClose,
 }: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
+    const { t } = useTranslation('modal');
     const modalRef = useRef(null);
     appElementId && ReactModal.setAppElement(`#${appElementId}`);
     useImperativeHandle(ref, () => modalRef.current, [modalRef]);
@@ -92,7 +94,7 @@ export const Modal = forwardRef(({
                 {hasCloseButton && (
                     <CloseIconButton
                         data-testid="close-button"
-                        label="Close dialog"
+                        label={t('closeButtonLabel')}
                         type="button"
                         buttonType="tertiary"
                         iconName="x"

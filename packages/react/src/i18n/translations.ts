@@ -18,6 +18,13 @@ export const Translations = {
             Alert: 'Alert',
             Error: 'Error',
         },
+        modal: {
+            closeButtonLabel: 'Close dialog',
+        },
+        'modal-abstract': {
+            cancelButtonLabel: 'Cancel',
+            confirmButtonLabel: 'Confirm',
+        },
         'money-input': {
             validationErrorMessage: 'Invalid number',
         },
@@ -61,6 +68,13 @@ export const Translations = {
             Success: 'Succès',
             Alert: 'Alerte',
             Error: 'Erreur',
+        },
+        modal: {
+            closeButtonLabel: 'Fermer le dialogue',
+        },
+        'modal-abstract': {
+            cancelButtonLabel: 'Annuler',
+            confirmButtonLabel: 'Confirmer',
         },
         'money-input': {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
