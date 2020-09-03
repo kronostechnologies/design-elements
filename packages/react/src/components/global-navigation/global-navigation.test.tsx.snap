@@ -51,19 +51,19 @@ exports[`Global Navigation Matches snapshot 1`] = `
   position: relative;
 }
 
-.c2.moreMenu:hover .c5 {
+.c2.moreMenu:hover .sc-fzokvW {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2.moreMenu:hover .c3 {
+.c2.moreMenu:hover .{
   background-color: #D9DDE2;
   color: #57666E;
 }
 
-.c4 {
+.c3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -85,27 +85,27 @@ exports[`Global Navigation Matches snapshot 1`] = `
   width: 32px;
 }
 
-.c4:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
 
-.c4:hover {
+.c3:hover {
   background-color: #D9DDE2;
   color: #57666E;
 }
 
-.c4.active {
+.c3.active {
   background-color: #0080A5;
   color: #FFFFFF !important;
 }
 
-.c4.active:hover {
+.c3.active:hover {
   background-color: #0080A5;
   color: #FFFFFF;
 }
 
-.c4:focus {
+.c3:focus {
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
   outline: none;
 }
@@ -133,7 +133,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test1"
             onClick={[Function]}
             onFocus={[Function]}
@@ -153,7 +153,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test2"
             onClick={[Function]}
             onFocus={[Function]}
@@ -173,7 +173,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test3"
             onClick={[Function]}
             onFocus={[Function]}
@@ -193,7 +193,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test4"
             onClick={[Function]}
             onFocus={[Function]}
@@ -213,7 +213,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test5"
             onClick={[Function]}
             onFocus={[Function]}
@@ -241,7 +241,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test6"
             onClick={[Function]}
             onFocus={[Function]}
@@ -261,7 +261,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
           <a
             aria-current={null}
             aria-label="test"
-            className="c3 c4"
+            className="c3"
             href="/test7"
             onClick={[Function]}
             onFocus={[Function]}
