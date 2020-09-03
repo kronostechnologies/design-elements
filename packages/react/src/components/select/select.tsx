@@ -195,7 +195,7 @@ export function Select({
     const [focus, setFocus] = useState(false);
     const [open, setOpen] = useState(defaultOpen);
     const [searchValue, setSearchValue] = useState('');
-    const [focusedValue, setFocusedValue] = useState();
+    const [focusedValue, setFocusedValue] = useState<string>();
     const [selectedOptionValue, setSelectedOptionValue] = useState(defaultValue);
     const [skipSelected, setSkipSelected] =
         useState(skipOption && defaultValue ? defaultValue === skipOption.value : false);

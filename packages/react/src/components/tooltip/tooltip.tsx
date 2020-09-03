@@ -156,7 +156,7 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
     const tooltipId = uuid();
     const tooltipTriggerId = `tooltip-trigger-${tooltipId}`;
     const [isVisible, setIsVisible] = useState(defaultOpen);
-    const [controlledTooltipOpen, setControlledTooltipOpen] = useState();
+    const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);

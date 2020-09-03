@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 import { UseTableRowProps } from 'react-table';
 import { RowProps } from './table';
 
@@ -10,15 +10,17 @@ interface TableRowProps {
 export function TableRow({ row, onClick }: TableRowProps): ReactElement {
     return (
         <tr onClick={() => onClick && onClick(row)} {...row.getRowProps()}>
-            {row.cells.map(cell => (
-                <td
-                    key={`${cell.column.id}-${cell.row.id}`}
-                    style={{ textAlign: cell.column.textAlign }}
-                    {...cell.getCellProps()}
-                >
-                    {cell.render('Cell')}
-                </td>
-            ))}
+            {row.cells.map(cell => {
+                const style: CSSProperties = { textAlign: cell.column.textAlign };
+                return (
+                    <td
+                        style={style}
+                        {...{ ...cell.getCellProps(), key: `${cell.column.id}-${cell.row.id}` }}
+                    >
+                        {cell.render('Cell')}
+                    </td>
+                );
+            })}
         </tr>
     );
 }
