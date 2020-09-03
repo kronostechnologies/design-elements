@@ -49,7 +49,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         border: 1px solid transparent;
         box-sizing: border-box;
         height: 32px;
-        line-height: 32px;
+        line-height: 30px;
         margin: 0;
         width: 32px;
 
