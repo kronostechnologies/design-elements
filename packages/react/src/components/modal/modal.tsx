@@ -40,7 +40,7 @@ const customStyles = {
 type Role = 'dialog' | 'alertdialog';
 
 interface ModalProps {
-    appElementId?: string;
+    appElement?: string;
     ariaDescribedby?: string;
     /** Boolean indicating if the appElement should be hidden. Defaults to true. */
     ariaHideApp?: boolean;
@@ -64,7 +64,7 @@ interface ModalProps {
 }
 
 export const Modal = forwardRef(({
-    appElementId,
+    appElement,
     ariaDescribedby,
     ariaHideApp = true,
     ariaLabel,
@@ -79,7 +79,7 @@ export const Modal = forwardRef(({
 }: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
     const { t } = useTranslation('modal');
     const modalRef = useRef(null);
-    appElementId && ReactModal.setAppElement(`#${appElementId}`);
+    appElement && ReactModal.setAppElement(appElement);
     useImperativeHandle(ref, () => modalRef.current, [modalRef]);
 
     function closeModal(): void {
