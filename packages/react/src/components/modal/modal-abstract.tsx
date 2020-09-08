@@ -29,6 +29,7 @@ const ConfirmButton = styled(Button)`
 const CancelButton = styled(Button)``;
 
 export interface ModalAbstractProps {
+    appElement?: string;
     ariaDescribedby?: string;
     /** Boolean indicating if the appElement should be hidden. Defaults to true. */
     ariaHideApp?: boolean;

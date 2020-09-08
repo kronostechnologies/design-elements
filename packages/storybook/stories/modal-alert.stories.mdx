@@ -1,0 +1,113 @@
+import { Button, ModalAlert } from '@equisoft/design-elements-react';
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
+import { Fragment, useState } from 'react';
+
+<Meta title="Modal / Modal Alert" component={ModalAlert} />
+
+# Modal Alert
+
+The `ModalAlert` component allows you to easily set dialog modals up in your app.
+
+## Import
+
+```js
+    import { ModalAlert } from '@equisoft/design-elements-react'
+```
+
+## Accessibility
+
+It is important for users of screenreaders that other page content be hidden (via the aria-hidden attribute) while the modal is open. To allow `ModalAlert` to do this, you should set `appElement` prop to a query selector identifying the root of your app. For example, if your app content is located inside an element with the ID root, you should set the `appElement` prop like this:
+
+```jsx
+<ModalAlert
+    appElement="#root"
+    isOpen={modalIsOpen}
+    onRequestClose={() => setIsOpen(false)}
+>
+    Some Content
+</ModalAlert>
+```
+
+## Props
+
+<Props of={ModalAlert} />
+
+## Examples
+
+### Basic modal
+
+<Preview>
+  <Story name="Normal">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <ModalAlert
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onRequestClose={() => setIsOpen(false)}
+                        title="Heading 5"
+                        subtitle="Subtitle 1"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
+                    </ModalAlert>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
+### Confirm callback
+
+<Preview>
+  <Story name="Confirm callback">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            const handleConfirm = () => {
+                console.log('confirmed');
+                setIsOpen(false);
+            };
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <ModalAlert
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onConfirm={handleConfirm}
+                        onRequestClose={() => setIsOpen(false)}
+                        title="Heading 5"
+                        subtitle="Subtitle 1"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
+                    </ModalAlert>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
+### No titles
+
+<Preview>
+  <Story name="No titles">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <ModalAlert
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onRequestClose={() => setIsOpen(false)}
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
+                    </ModalAlert>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
