@@ -1,19 +1,17 @@
 import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
+import { mountWithProviders } from '@design-elements/test-utils/renderer';
 import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
 import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
 import React from 'react';
 import { Modal } from './modal';
 
 describe('Modal', () => {
     test('onRequestClose callback is called when close-button is clicked', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(
-                <Modal ariaHideApp={false} isOpen={true} onRequestClose={callback}>
-                    Test Content
-                </Modal>,
-            ),
+        const wrapper = mountWithProviders(
+            <Modal ariaHideApp={false} isOpen={true} onRequestClose={callback}>
+                Test Content
+            </Modal>,
         );
 
         getByTestId(wrapper, 'close-button').simulate('click');

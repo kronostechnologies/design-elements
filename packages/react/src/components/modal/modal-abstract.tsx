@@ -3,30 +3,40 @@ import React, { ReactElement, ReactNode, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
+
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Modal } from './modal';
 
-const Title = styled.h2`
-    font-size: 1.25rem;
+const Title = styled.h2<IsMobile>`
+    font-size: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
     font-weight: var(--font-normal);
-    height: 32px;
-    line-height: 24px;
-    margin-bottom: var(--spacing-2x);
-    margin-top: 0;
-`;
-
-const Subtitle = styled.h3`
-    font-size: 1rem;
-    font-weight: var(--font-normal);
-    height: 24px;
-    line-height: 22px;
+    line-height: ${({ isMobile }) => isMobile ? 36 : 32}px;
     margin: 0;
 `;
 
-const ConfirmButton = styled(Button)`
-    margin-right: var(--spacing-1x);
+const Subtitle = styled.h3<{ hasTitle: boolean, isMobile: boolean }>`
+    font-size: ${({ isMobile }) => isMobile ? 1.125 : 1}rem;
+    font-weight: var(--font-normal);
+    line-height: ${({ isMobile }) => isMobile ? 28 : 22}px;
+    margin: 0;
+    margin-top: ${({ hasTitle }) => hasTitle ? 'var(--spacing-3x)' : 0};
+`;
+
+const ButtonContainer = styled.div<IsMobile>`
+    display: flex;
+    flex-direction: ${({ isMobile }) => isMobile ? 'column' : 'unset'};
+`;
+
+const ConfirmButton = styled(Button)<IsMobile>`
+    margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 0};
+    margin-right: ${({ isMobile }) => isMobile ? 0 : 'var(--spacing-1x)'};
 `;
 
 const CancelButton = styled(Button)``;
+
+interface IsMobile {
+    isMobile: boolean;
+}
 
 export interface ModalAbstractProps {
     appElement?: string;
@@ -56,6 +66,7 @@ export function ModalAbstract({
     title,
     ...props
 }: Props): ReactElement {
+    const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-abstract');
     const modalRef = useRef(null);
     const titleId = uuid();
@@ -70,8 +81,10 @@ export function ModalAbstract({
         if (title || subtitle) {
             return (
                 <>
-                    {title && <Title id={titleId} tabIndex={-1}>{title}</Title>}
-                    {subtitle && <Subtitle tabIndex={-1}>{subtitle}</Subtitle>}
+                    {title && <Title isMobile={isMobile} id={titleId} tabIndex={-1}>{title}</Title>}
+                    {subtitle && (
+                        <Subtitle hasTitle={title !== undefined} isMobile={isMobile} tabIndex={-1}>{subtitle}</Subtitle>
+                    )}
                 </>
             );
         } else return undefined;
@@ -79,15 +92,16 @@ export function ModalAbstract({
 
     function getFooter(): ReactElement {
         return (
-            <>
+            <ButtonContainer isMobile={isMobile}>
                 <ConfirmButton
                     data-testid="confirm-button"
+                    isMobile={isMobile}
                     label={t('confirmButtonLabel')}
                     buttonType="primary"
                     onClick={onConfirm}
                 />
                 <CancelButton label={t('cancelButtonLabel')} buttonType="tertiary" onClick={closeModal}/>
-            </>
+            </ButtonContainer>
         );
     }
 

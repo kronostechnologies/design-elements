@@ -20,16 +20,16 @@ Object {
       >
         <div
           aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-iyvyFf ktPmVI"
+          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="sc-hwwEjo PsIOU"
+            class="sc-fznBMq felawV"
           >
             <button
               aria-label="Close dialog"
-              class="sc-bdVaJa sc-bxivhb eXSswJ sc-kPVwWT iBIATd"
+              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
               data-testid="close-button"
               type="button"
             >
@@ -178,7 +178,7 @@ Object {
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   padding: var(--spacing-4x);

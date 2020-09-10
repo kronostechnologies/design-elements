@@ -2,27 +2,29 @@ import React, { forwardRef, ReactElement, ReactNode, Ref, useImperativeHandle, u
 import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
-import { IconButton } from '../buttons/icon-button';
 
-const StyledModal = styled(ReactModal)`
+import { IconButton } from '../buttons/icon-button';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+
+const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    padding: var(--spacing-4x);
+    padding: ${getModalPadding};
     position: relative;
-    width: 500px;
+    width: ${({ isMobile }) => isMobile ? 344 : 500}px;
 `;
 
 const Header = styled.header<{ hasContent: boolean }>`
     ${({ hasContent }) => hasContent && 'margin-bottom: var(--spacing-3x);'}
 `;
 
-const CloseIconButton = styled(IconButton)`
+const CloseIconButton = styled(IconButton)<{ isMobile: boolean }>`
     position: absolute;
-    right: var(--spacing-1x);
-    top: var(--spacing-1x);
+    right: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)'};
+    top: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)'};
 `;
 
 const Footer = styled.footer`
@@ -38,6 +40,11 @@ const customStyles = {
 };
 
 type Role = 'dialog' | 'alertdialog';
+
+interface StyledModalProps {
+    hasCloseButton: boolean;
+    isMobile: boolean;
+}
 
 interface ModalProps {
     appElement?: string;
@@ -77,6 +84,7 @@ export const Modal = forwardRef(({
     role = 'dialog',
     onRequestClose,
 }: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
+    const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal');
     const modalRef = useRef(null);
     appElement && ReactModal.setAppElement(appElement);
@@ -94,6 +102,7 @@ export const Modal = forwardRef(({
                 {hasCloseButton && (
                     <CloseIconButton
                         data-testid="close-button"
+                        isMobile={isMobile}
                         label={t('closeButtonLabel')}
                         type="button"
                         buttonType="tertiary"
@@ -114,6 +123,8 @@ export const Modal = forwardRef(({
                     modal: true,
                 }}
                 ariaHideApp={ariaHideApp}
+                hasCloseButton={hasCloseButton}
+                isMobile={isMobile}
                 isOpen={isOpen}
                 onRequestClose={onRequestClose}
                 ref={modalRef}
@@ -128,3 +139,15 @@ export const Modal = forwardRef(({
         </>
     );
 });
+
+function getModalPadding({ hasCloseButton, isMobile }: StyledModalProps): string {
+    if (isMobile) {
+        if (hasCloseButton) {
+            return 'var(--spacing-6x) var(--spacing-2x) var(--spacing-2x)';
+        } else {
+            return 'var(--spacing-3x) var(--spacing-2x) var(--spacing-2x)';
+        }
+    } else {
+        return 'var(--spacing-4x)';
+    }
+}
