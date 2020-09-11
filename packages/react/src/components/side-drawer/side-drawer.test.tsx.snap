@@ -39,30 +39,6 @@ exports[`Side Drawer Has different height when in mobile 1`] = `
 `;
 
 exports[`Side Drawer Has nested drawer 1`] = `
-.c1 {
-  background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  height: calc(100vh - 48px);
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  top: 48px;
-  -webkit-transform: translate(0%);
-  -ms-transform: translate(0%);
-  transform: translate(0%);
-  -webkit-transition: -webkit-transform 300ms;
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
-  width: 100%;
-  z-index: 100;
-}
-
-.c1 > .side-drawer {
-  height: 100%;
-  top: 0;
-}
-
 .c0 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -83,6 +59,30 @@ exports[`Side Drawer Has nested drawer 1`] = `
 }
 
 .c0 > .side-drawer {
+  height: 100%;
+  top: 0;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c1 > .side-drawer {
   height: 100%;
   top: 0;
 }
