@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal Abstract Matches snapshot (closed) 1`] = `
+exports[`Modal-Abstract Matches snapshot (closed) 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body
@@ -19,14 +19,27 @@ Object {
         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
       >
         <div
+          aria-label="Title"
           aria-modal="true"
           class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="sc-fznBMq felawV"
+            class="sc-fznBMq gYYbvL"
           >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
             <button
               aria-label="Close dialog"
               class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
@@ -133,7 +146,7 @@ Object {
 }
 `;
 
-exports[`Modal Abstract Matches snapshot (not titles) 1`] = `
+exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body
@@ -152,14 +165,27 @@ Object {
         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
       >
         <div
+          aria-label="Title"
           aria-modal="true"
           class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="sc-fznBMq felawV"
+            class="sc-fznBMq gYYbvL"
           >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
             <button
               aria-label="Close dialog"
               class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
@@ -542,7 +568,7 @@ Object {
 }
 `;
 
-exports[`Modal Abstract Matches snapshot (only subtitle) 1`] = `
+exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body
@@ -561,14 +587,27 @@ Object {
         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
       >
         <div
+          aria-label="Title"
           aria-modal="true"
           class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="sc-fznBMq felawV"
+            class="sc-fznBMq gYYbvL"
           >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
             <button
               aria-label="Close dialog"
               class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
@@ -969,7 +1008,7 @@ Object {
 }
 `;
 
-exports[`Modal Abstract Matches snapshot (only title) 1`] = `
+exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body
@@ -988,14 +1027,27 @@ Object {
         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
       >
         <div
+          aria-label="Title"
           aria-modal="true"
           class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="sc-fznBMq felawV"
+            class="sc-fznBMq gYYbvL"
           >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
             <button
               aria-label="Close dialog"
               class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
@@ -1396,7 +1448,7 @@ Object {
 }
 `;
 
-exports[`Modal Abstract Matches snapshot (opened, alert) 1`] = `
+exports[`Modal-Abstract Matches snapshot (opened, alert, desktop) 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body
@@ -1415,14 +1467,27 @@ Object {
         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
       >
         <div
+          aria-label="Title"
           aria-modal="true"
           class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
           role="dialog"
           tabindex="-1"
         >
           <header
-            class="sc-fznBMq felawV"
+            class="sc-fznBMq gYYbvL"
           >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
             <button
               aria-label="Close dialog"
               class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
@@ -1470,7 +1535,669 @@ Object {
       style="position: absolute; opacity: 0;"
       tabindex="0"
     />
-    .c8 {
+    .c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c6:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c6:disabled,
+.c6:disabled:focus,
+.c6:disabled:hover {
+  background-color: #F9B6B2;
+  border-color: #F9B6B2;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+}
+
+.c8:not(:disabled) {
+  cursor: pointer;
+}
+
+.c8 > svg {
+  color: inherit;
+}
+
+.c8:hover {
+  color: #000000;
+}
+
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
+  color: #9CA7B4;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  padding: var(--spacing-4x);
+  position: relative;
+  width: 500px;
+}
+
+.c1 {
+  margin-bottom: var(--spacing-3x);
+}
+
+.c4 {
+  margin-top: var(--spacing-4x);
+}
+
+.c2 {
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 32px;
+  margin: 0;
+}
+
+.c3 {
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 22px;
+  margin: 0;
+  margin-top: var(--spacing-3x);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+}
+
+.c7 {
+  margin-bottom: 0;
+  margin-right: var(--spacing-1x);
+}
+
+<div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-label="Title"
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open c0"
+          role="alertdialog"
+          tabindex="-1"
+        >
+          <header
+            class="c1"
+          >
+            <h2
+              class="c2"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="c3"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
+          </header>
+          Test Content
+          <footer
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <button
+                class="c6 c7"
+                data-testid="confirm-button"
+                label="Confirm"
+                type="submit"
+              >
+                Confirm
+              </button>
+              <button
+                class="c8 "
+                label="Cancel"
+                type="submit"
+              >
+                Cancel
+              </button>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Modal-Abstract Matches snapshot (opened, alert, mobile) 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="ReactModal__Body--open"
+  >
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-label="Title"
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class="sc-fznBMq gYYbvL"
+          >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
+            <button
+              aria-label="Close dialog"
+              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
+              data-testid="close-button"
+              type="button"
+            >
+              <svg
+                color="currentColor"
+                focusable="false"
+                height="16"
+                width="16"
+              />
+            </button>
+          </header>
+          Test Content
+          <footer
+            class="sc-fzocqA dBtXr"
+          >
+            <div
+              class="sc-fzqKxP kWxAZi"
+            >
+              <button
+                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
+                data-testid="confirm-button"
+                label="Confirm"
+                type="submit"
+              >
+                Confirm
+              </button>
+              <button
+                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
+                label="Cancel"
+                type="submit"
+              >
+                Cancel
+              </button>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div />
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    .c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c6:hover {
+  background-color: #D41F14;
+  border-color: #D41F14;
+}
+
+.c6:disabled,
+.c6:disabled:focus,
+.c6:disabled:hover {
+  background-color: #F9B6B2;
+  border-color: #F9B6B2;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+}
+
+.c8:not(:disabled) {
+  cursor: pointer;
+}
+
+.c8 > svg {
+  color: inherit;
+}
+
+.c8:hover {
+  color: #000000;
+}
+
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
+  color: #9CA7B4;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  position: relative;
+  width: 344px;
+}
+
+.c1 {
+  margin-bottom: var(--spacing-3x);
+}
+
+.c4 {
+  margin-top: var(--spacing-4x);
+}
+
+.c2 {
+  font-size: 1.5rem;
+  font-weight: var(--font-normal);
+  line-height: 36px;
+  margin: 0;
+}
+
+.c3 {
+  font-size: 1.125rem;
+  font-weight: var(--font-normal);
+  line-height: 28px;
+  margin: 0;
+  margin-top: var(--spacing-3x);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  margin-bottom: var(--spacing-half);
+  margin-right: 0;
+}
+
+<div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-label="Title"
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open c0"
+          role="alertdialog"
+          tabindex="-1"
+        >
+          <header
+            class="c1"
+          >
+            <h2
+              class="c2"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="c3"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
+          </header>
+          Test Content
+          <footer
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <button
+                class="c6 c7"
+                data-testid="confirm-button"
+                label="Confirm"
+                type="submit"
+              >
+                Confirm
+              </button>
+              <button
+                class="c8 "
+                label="Cancel"
+                type="submit"
+              >
+                Cancel
+              </button>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1711,7 +2438,91 @@ Object {
   margin-right: var(--spacing-1x);
 }
 
-<div
+<body
+    class="ReactModal__Body--open"
+  >
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-label="Title"
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open c0"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class="c1"
+          >
+            <h2
+              class="c2"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="c3"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
+            <button
+              aria-label="Close dialog"
+              class="c4 c5"
+              data-testid="close-button"
+              type="button"
+            >
+              <svg
+                color="currentColor"
+                focusable="false"
+                height="16"
+                width="16"
+              />
+            </button>
+          </header>
+          Test Content
+          <footer
+            class="c6"
+          >
+            <div
+              class="c7"
+            >
+              <button
+                class="c8 c9"
+                data-testid="confirm-button"
+                label="Confirm"
+                type="submit"
+              >
+                Confirm
+              </button>
+              <button
+                class="c10 "
+                label="Cancel"
+                type="submit"
+              >
+                Cancel
+              </button>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div />
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
       class="ReactModalPortal"
     >
       <div
@@ -1837,10 +2648,94 @@ Object {
 }
 `;
 
-exports[`Modal Abstract Matches snapshot (opened, dialog) 1`] = `
+exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .c5 {
+  "baseElement": <body
+    class="ReactModal__Body--open"
+  >
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    <div
+      class="ReactModalPortal"
+    >
+      <div
+        class="ReactModal__Overlay ReactModal__Overlay--after-open"
+        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      >
+        <div
+          aria-label="Title"
+          aria-modal="true"
+          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class="sc-fznBMq gYYbvL"
+          >
+            <h2
+              class="sc-fzonZV ircelM"
+              tabindex="-1"
+            >
+              Title
+            </h2>
+            <h3
+              class="sc-fzqyOu frXsLc"
+              tabindex="-1"
+            >
+              Subtitle
+            </h3>
+            <button
+              aria-label="Close dialog"
+              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
+              data-testid="close-button"
+              type="button"
+            >
+              <svg
+                color="currentColor"
+                focusable="false"
+                height="16"
+                width="16"
+              />
+            </button>
+          </header>
+          Test Content
+          <footer
+            class="sc-fzocqA dBtXr"
+          >
+            <div
+              class="sc-fzqKxP kWxAZi"
+            >
+              <button
+                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
+                data-testid="confirm-button"
+                label="Confirm"
+                type="submit"
+              >
+                Confirm
+              </button>
+              <button
+                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
+                label="Cancel"
+                type="submit"
+              >
+                Cancel
+              </button>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div />
+    <div
+      data-react-modal-body-trap=""
+      style="position: absolute; opacity: 0;"
+      tabindex="0"
+    />
+    .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1883,27 +2778,27 @@ Object {
   color: #FFFFFF;
 }
 
-.c5:not(:disabled) {
+.c8:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c8 > svg {
   color: inherit;
 }
 
-.c5:hover {
+.c8:hover {
   background-color: #D41F14;
   border-color: #D41F14;
 }
 
-.c5:disabled,
-.c5:disabled:focus,
-.c5:disabled:hover {
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
   background-color: #F9B6B2;
   border-color: #F9B6B2;
 }
 
-.c7 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1946,25 +2841,25 @@ Object {
   color: #57666E;
 }
 
-.c7:not(:disabled) {
+.c10:not(:disabled) {
   cursor: pointer;
 }
 
-.c7 > svg {
+.c10 > svg {
   color: inherit;
 }
 
-.c7:hover {
+.c10:hover {
   color: #000000;
 }
 
-.c7:disabled,
-.c7:disabled:focus,
-.c7:disabled:hover {
+.c10:disabled,
+.c10:disabled:focus,
+.c10:disabled:hover {
   color: #9CA7B4;
 }
 
-.c1 {
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2002,27 +2897,27 @@ Object {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
+  height: 48px;
   background-color: transparent;
   border: none;
   color: #57666E;
   padding: 0;
-  width: 32px;
+  width: 48px;
 }
 
-.c1:not(:disabled) {
+.c4:not(:disabled) {
   cursor: pointer;
 }
 
-.c1 > svg {
+.c4 > svg {
   color: inherit;
 }
 
-.c1:hover {
+.c4:hover {
   color: #000000;
 }
 
-.c1:disabled {
+.c4:disabled {
   color: #9CA7B4;
 }
 
@@ -2032,127 +2927,56 @@ Object {
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
-  padding: var(--spacing-4x);
+  padding: var(--spacing-6x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
-  width: 500px;
+  width: 344px;
 }
 
-.c8 {
+.c1 {
   margin-bottom: var(--spacing-3x);
 }
 
-.c2 {
+.c5 {
   position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
+  right: var(--spacing-half);
+  top: var(--spacing-half);
 }
 
-.c3 {
+.c6 {
   margin-top: var(--spacing-4x);
 }
 
-.c9 {
-  font-size: 1.25rem;
+.c2 {
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
-  line-height: 32px;
+  line-height: 36px;
   margin: 0;
 }
 
-.c10 {
-  font-size: 1rem;
+.c3 {
+  font-size: 1.125rem;
   font-weight: var(--font-normal);
-  line-height: 22px;
+  line-height: 28px;
   margin: 0;
   margin-top: var(--spacing-3x);
 }
 
-.c4 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c6 {
-  margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+.c9 {
+  margin-bottom: var(--spacing-half);
+  margin-right: 0;
 }
 
-<body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="felawV"
-          >
-            <button
-              aria-label="Close dialog"
-              class="c1 c2"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="c3"
-          >
-            <div
-              class="c4"
-            >
-              <button
-                class="c5 c6"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c7 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
+<div
       class="ReactModalPortal"
     >
       <div
@@ -2167,43 +2991,43 @@ Object {
           tabindex="-1"
         >
           <header
-            class="c8"
+            class="c1"
           >
             <h2
-              class="c9"
+              class="c2"
               tabindex="-1"
             >
               Title
             </h2>
             <h3
-              class="c10"
+              class="c3"
               tabindex="-1"
             >
               Subtitle
             </h3>
             <button
               aria-label="Close dialog"
-              class="c1 c2"
+              class="c4 c5"
               data-testid="close-button"
               type="button"
             >
               <svg
                 color="currentColor"
                 focusable="false"
-                height="16"
-                width="16"
+                height="20"
+                width="20"
               />
             </button>
           </header>
           Test Content
           <footer
-            class="c3"
+            class="c6"
           >
             <div
-              class="c4"
+              class="c7"
             >
               <button
-                class="c5 c6"
+                class="c8 c9"
                 data-testid="confirm-button"
                 label="Confirm"
                 type="submit"
@@ -2211,7 +3035,7 @@ Object {
                 Confirm
               </button>
               <button
-                class="c7 "
+                class="c10 "
                 label="Cancel"
                 type="submit"
               >

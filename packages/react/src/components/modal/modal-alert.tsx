@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import { ModalAbstract, ModalAbstractProps } from './modal-abstract';
+import { AbstractProps, ModalAbstract } from './modal-abstract';
 
-export function ModalAlert({ ...props }: ModalAbstractProps): ReactElement {
+export function ModalAlert({ ...props }: AbstractProps): ReactElement {
     return <ModalAbstract modalType="alert" {...props}/>;
 }

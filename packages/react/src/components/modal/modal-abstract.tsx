@@ -1,11 +1,11 @@
-import { Button } from '@design-elements/components/buttons/button';
 import React, { ReactElement, ReactNode, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
+import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Modal } from './modal';
+import { Modal, ModalRef } from './modal';
 
 const Title = styled.h2<IsMobile>`
     font-size: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
@@ -38,10 +38,12 @@ interface IsMobile {
     isMobile: boolean;
 }
 
-export interface ModalAbstractProps {
+export interface AbstractProps {
+    /** Takes a query selector targetting the app Element. */
     appElement?: string;
     ariaDescribedby?: string;
-    /** Boolean indicating if the appElement should be hidden. Defaults to true. */
+    /** Boolean indicating if the appElement should be hidden. Defaults to true.
+     * Should only be used for test purposes. */
     ariaHideApp?: boolean;
     /** Is set to title value if title is set */
     ariaLabel?: string;
@@ -53,7 +55,7 @@ export interface ModalAbstractProps {
     onRequestClose(): void;
 }
 
-interface Props extends ModalAbstractProps {
+export interface ModalAbstractProps extends AbstractProps {
     modalType: 'dialog' | 'alert';
 }
 
@@ -65,15 +67,14 @@ export function ModalAbstract({
     subtitle,
     title,
     ...props
-}: Props): ReactElement {
+}: ModalAbstractProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-abstract');
-    const modalRef = useRef(null);
+    const modalRef: ModalRef = useRef(null);
     const titleId = uuid();
     const isDialog = modalType === 'dialog';
 
     function closeModal(): void {
-        // @ts-ignore
         modalRef.current?.portal.requestClose();
     }
 

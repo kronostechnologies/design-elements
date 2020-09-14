@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement, ReactNode, Ref, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, MutableRefObject, ReactElement, ReactNode, Ref, useImperativeHandle, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
@@ -39,17 +39,25 @@ const customStyles = {
     },
 };
 
-type Role = 'dialog' | 'alertdialog';
-
 interface StyledModalProps {
     hasCloseButton: boolean;
     isMobile: boolean;
 }
 
-interface ModalProps {
+interface ModalRefProps extends ReactModal {
+    portal: any;
+}
+
+export type ModalRef = MutableRefObject<ReactModal | ModalRefProps |  null>;
+
+type Role = 'dialog' | 'alertdialog';
+
+export interface ModalProps {
+    /** Takes a query selector targetting the app Element. */
     appElement?: string;
     ariaDescribedby?: string;
-    /** Boolean indicating if the appElement should be hidden. Defaults to true. */
+    /** Boolean indicating if the appElement should be hidden. Defaults to true.
+     * Should only be used for test purposes. */
     ariaHideApp?: boolean;
     ariaLabel?: string;
     ariaLabelledBy?: string;
@@ -86,32 +94,36 @@ export const Modal = forwardRef(({
 }: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal');
-    const modalRef = useRef(null);
-    appElement && ReactModal.setAppElement(appElement);
+    const modalRef: ModalRef = useRef(null);
     useImperativeHandle(ref, () => modalRef.current, [modalRef]);
 
+    if (appElement) {
+        ReactModal.setAppElement(appElement);
+    }
+
     function closeModal(): void {
-        // @ts-ignore
         modalRef.current?.portal.requestClose();
     }
 
-    function getHeader(): ReactElement {
-        return (modalHeader || hasCloseButton) && (
-            <Header hasContent={modalHeader !== undefined}>
-                {modalHeader}
-                {hasCloseButton && (
-                    <CloseIconButton
-                        data-testid="close-button"
-                        isMobile={isMobile}
-                        label={t('closeButtonLabel')}
-                        type="button"
-                        buttonType="tertiary"
-                        iconName="x"
-                        onClick={closeModal}
-                    />
-                )}
-            </Header>
-        );
+    function getHeader(): ReactElement | null {
+        if (modalHeader || hasCloseButton) {
+            return (
+                <Header hasContent={modalHeader !== undefined}>
+                    {modalHeader}
+                    {hasCloseButton && (
+                        <CloseIconButton
+                            data-testid="close-button"
+                            isMobile={isMobile}
+                            label={t('closeButtonLabel')}
+                            type="button"
+                            buttonType="tertiary"
+                            iconName="x"
+                            onClick={closeModal}
+                        />
+                    )}
+                </Header>
+            );
+        } else return null;
     }
 
     return(
