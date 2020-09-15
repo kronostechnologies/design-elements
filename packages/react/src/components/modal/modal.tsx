@@ -40,6 +40,7 @@ const customStyles = {
 };
 
 interface StyledModalProps {
+    disablePadding: boolean;
     hasCloseButton: boolean;
     isMobile: boolean;
 }
@@ -63,6 +64,11 @@ export interface ModalProps {
     ariaLabelledBy?: string;
     children?: ReactNode;
     /**
+     * Removes padding to give you a blank modal to work with.
+     * @default false
+     */
+    disablePadding?: boolean;
+    /**
      * Adds "x" iconButton to close modal
      * @default true
      */
@@ -85,6 +91,7 @@ export const Modal = forwardRef(({
     ariaLabel,
     ariaLabelledBy,
     children,
+    disablePadding = false,
     hasCloseButton = true,
     isOpen,
     modalFooter,
@@ -135,6 +142,7 @@ export const Modal = forwardRef(({
                     modal: true,
                 }}
                 ariaHideApp={ariaHideApp}
+                disablePadding={disablePadding}
                 hasCloseButton={hasCloseButton}
                 isMobile={isMobile}
                 isOpen={isOpen}
@@ -152,8 +160,10 @@ export const Modal = forwardRef(({
     );
 });
 
-function getModalPadding({ hasCloseButton, isMobile }: StyledModalProps): string {
-    if (isMobile) {
+function getModalPadding({ disablePadding, hasCloseButton, isMobile }: StyledModalProps): string {
+    if (disablePadding) {
+        return '0';
+    } else if (isMobile) {
         if (hasCloseButton) {
             return 'var(--spacing-6x) var(--spacing-2x) var(--spacing-2x)';
         } else {

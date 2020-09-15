@@ -57,6 +57,32 @@ It is important for users of screenreaders that other page content be hidden (vi
   </Story>
 </Preview>
 
+### Padding disabled
+
+The prop `disablePadding` removes padding to give you a blank modal to work with.
+
+<Preview>
+  <Story name="Padding disabled">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Modal
+                        appElement="#root"
+                        disablePadding
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onRequestClose={() => setIsOpen(false)}
+                    >
+                        <p id="story-description">A modal without padding</p>
+                    </Modal>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
 ### Without close button
 
 <Preview>

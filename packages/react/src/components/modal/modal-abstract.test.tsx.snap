@@ -1,239 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal-Abstract Matches snapshot (closed) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div />
-    <div
-      class="ReactModalPortal"
-    />
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+<body
+  class=""
+>
+  <div />
+  <div
+    class="ReactModalPortal"
+  />
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c5 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -456,206 +249,82 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class=""
         >
-          <header
-            class=""
+          <button
+            aria-label="Close dialog"
+            class="c1 c2"
+            data-testid="close-button"
+            type="button"
+          >
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
+        <footer
+          class="c3"
+        >
+          <div
+            class="c4"
           >
             <button
-              aria-label="Close dialog"
-              class="c1 c2"
-              data-testid="close-button"
-              type="button"
+              class="c5 c6"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
+              Confirm
             </button>
-          </header>
-          Test Content
-          <footer
-            class="c3"
-          >
-            <div
-              class="c4"
+            <button
+              class="c7 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
             >
-              <button
-                class="c5 c6"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c7 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c7 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -890,212 +559,88 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class="c1"
         >
-          <header
-            class="c1"
+          <h3
+            class="c2"
+            tabindex="-1"
           >
-            <h3
-              class="c2"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
+            Subtitle
+          </h3>
+          <button
+            aria-label="Close dialog"
+            class="c3 c4"
+            data-testid="close-button"
+            type="button"
+          >
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
+        <footer
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
             <button
-              aria-label="Close dialog"
-              class="c3 c4"
-              data-testid="close-button"
-              type="button"
+              class="c7 c8"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
+              Confirm
             </button>
-          </header>
-          Test Content
-          <footer
-            class="c5"
-          >
-            <div
-              class="c6"
+            <button
+              class="c9 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
             >
-              <button
-                class="c7 c8"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c9 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c7 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1329,213 +874,89 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-label="Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class="c1"
         >
-          <header
-            class="c1"
+          <h2
+            class="c2"
+            tabindex="-1"
           >
-            <h2
-              class="c2"
-              tabindex="-1"
-            >
-              Title
-            </h2>
+            Title
+          </h2>
+          <button
+            aria-label="Close dialog"
+            class="c3 c4"
+            data-testid="close-button"
+            type="button"
+          >
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
+        <footer
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
             <button
-              aria-label="Close dialog"
-              class="c3 c4"
-              data-testid="close-button"
-              type="button"
+              class="c7 c8"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
+              Confirm
             </button>
-          </header>
-          Test Content
-          <footer
-            class="c5"
-          >
-            <div
-              class="c6"
+            <button
+              class="c9 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
             >
-              <button
-                class="c7 c8"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c9 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (opened, alert, desktop) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c6 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1709,206 +1130,82 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-label="Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="alertdialog"
+        tabindex="-1"
       >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="alertdialog"
-          tabindex="-1"
+        <header
+          class="c1"
         >
-          <header
-            class="c1"
+          <h2
+            class="c2"
+            tabindex="-1"
           >
-            <h2
-              class="c2"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="c3"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-          </header>
-          Test Content
-          <footer
-            class="c4"
+            Title
+          </h2>
+          <h3
+            class="c3"
+            tabindex="-1"
           >
-            <div
-              class="c5"
+            Subtitle
+          </h3>
+        </header>
+        Test Content
+        <footer
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <button
+              class="c6 c7"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <button
-                class="c6 c7"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c8 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Confirm
+            </button>
+            <button
+              class="c8 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (opened, alert, mobile) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c6 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2082,122 +1379,68 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-label="Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="alertdialog"
+        tabindex="-1"
       >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="alertdialog"
-          tabindex="-1"
+        <header
+          class="c1"
         >
-          <header
-            class="c1"
+          <h2
+            class="c2"
+            tabindex="-1"
           >
-            <h2
-              class="c2"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="c3"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-          </header>
-          Test Content
-          <footer
-            class="c4"
+            Title
+          </h2>
+          <h3
+            class="c3"
+            tabindex="-1"
           >
-            <div
-              class="c5"
+            Subtitle
+          </h3>
+        </header>
+        Test Content
+        <footer
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <button
+              class="c6 c7"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <button
-                class="c6 c7"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c8 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Confirm
+            </button>
+            <button
+              class="c8 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": .c8 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2439,303 +1682,109 @@ Object {
 }
 
 <body
-    class="ReactModal__Body--open"
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="ReactModalPortal"
   >
     <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-label="Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class="c1"
         >
-          <header
-            class="c1"
+          <h2
+            class="c2"
+            tabindex="-1"
           >
-            <h2
-              class="c2"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="c3"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
+            Title
+          </h2>
+          <h3
+            class="c3"
+            tabindex="-1"
+          >
+            Subtitle
+          </h3>
+          <button
+            aria-label="Close dialog"
+            class="c4 c5"
+            data-testid="close-button"
+            type="button"
+          >
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
+        <footer
+          class="c6"
+        >
+          <div
+            class="c7"
+          >
             <button
-              aria-label="Close dialog"
-              class="c4 c5"
-              data-testid="close-button"
-              type="button"
+              class="c8 c9"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
+              Confirm
             </button>
-          </header>
-          Test Content
-          <footer
-            class="c6"
-          >
-            <div
-              class="c7"
+            <button
+              class="c10 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
             >
-              <button
-                class="c8 c9"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c10 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="c1"
-          >
-            <h2
-              class="c2"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="c3"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="c4 c5"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="c6"
-          >
-            <div
-              class="c7"
-            >
-              <button
-                class="c8 c9"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c10 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq gYYbvL"
-          >
-            <h2
-              class="sc-fzonZV ircelM"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="sc-fzqyOu frXsLc"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-          <footer
-            class="sc-fzocqA dBtXr"
-          >
-            <div
-              class="sc-fzqKxP kWxAZi"
-            >
-              <button
-                class="sc-AxjAm sc-AxirZ goQfrs sc-pANHa gsJoJY"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="sc-AxjAm sc-AxirZ eaUQrj sc-pIJJz kAkxel"
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c8 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2977,127 +2026,75 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-label="Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-label="Title"
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class="c1"
         >
-          <header
-            class="c1"
+          <h2
+            class="c2"
+            tabindex="-1"
           >
-            <h2
-              class="c2"
-              tabindex="-1"
-            >
-              Title
-            </h2>
-            <h3
-              class="c3"
-              tabindex="-1"
-            >
-              Subtitle
-            </h3>
+            Title
+          </h2>
+          <h3
+            class="c3"
+            tabindex="-1"
+          >
+            Subtitle
+          </h3>
+          <button
+            aria-label="Close dialog"
+            class="c4 c5"
+            data-testid="close-button"
+            type="button"
+          >
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="20"
+              width="20"
+            />
+          </button>
+        </header>
+        Test Content
+        <footer
+          class="c6"
+        >
+          <div
+            class="c7"
+          >
             <button
-              aria-label="Close dialog"
-              class="c4 c5"
-              data-testid="close-button"
-              type="button"
+              class="c8 c9"
+              data-testid="confirm-button"
+              label="Confirm"
+              type="submit"
             >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="20"
-                width="20"
-              />
+              Confirm
             </button>
-          </header>
-          Test Content
-          <footer
-            class="c6"
-          >
-            <div
-              class="c7"
+            <button
+              class="c10 "
+              data-testid="cancel-button"
+              label="Cancel"
+              type="submit"
             >
-              <button
-                class="c8 c9"
-                data-testid="confirm-button"
-                label="Confirm"
-                type="submit"
-              >
-                Confirm
-              </button>
-              <button
-                class="c10 "
-                label="Cancel"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div>
-          </footer>
-        </div>
+              Cancel
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;

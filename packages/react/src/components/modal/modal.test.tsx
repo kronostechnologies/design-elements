@@ -49,6 +49,12 @@ describe('Modal', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('Matches snapshot (disablePadding)', () => {
+        const tree = renderModal({ isOpen: true, disablePadding: true, ...defaultProps });
+
+        expect(tree).toMatchSnapshot();
+    });
 });
 
 const defaultProps = {
