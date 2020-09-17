@@ -2494,24 +2494,25 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.26":
-  version "2.0.3-alpha.26"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.26.tgz#7ac5bad272d509573140a711f0e6dfc404818a3e"
-  integrity sha512-dernKDoQvhlxJCFNBxym5FaQrv2PflWceFOOgnZv6P251Vy3wRzxB4cfaqJcWYNBmb3rzBDLGOZcW1jhi2zmIA==
+"@equisoft/design-elements-react@^2.0.3-alpha.27":
+  version "2.0.3-alpha.27"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.27.tgz#7d148573366ef88070b8238de33b43eb5ed0a38d"
+  integrity sha512-ZNjNmMJ+nRn2ZXe1wnOnaQueXpPGpbpYZpnficuqJn4mw5G5nj440oI0YNii/rlfVWMlqVi9rDKDA/+2KO00Hg==
   dependencies:
     date-fns "^2.14.0"
     feather-icons "^4.21.0"
     react-datepicker "^3.0.0"
+    react-is "~16.9.0"
     react-popper-tooltip "^2.10.1"
     react-shadow "^18.2.5"
     react-swipeable "~5.5.0"
     react-table "^7.1.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.26":
-  version "2.0.3-alpha.26"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.26.tgz#91981e0adf39a0fe92c8e92622f79f18c81e3690"
-  integrity sha512-iXBBJHDlu2RXEsEy5FywHyA977chHDdGIpH9YKkeu30wPn+Nz5KZzlFAaQqrDLg9GAJ6eSktF9dapVRRknvNeQ==
+"@equisoft/design-elements-web@^2.0.3-alpha.27":
+  version "2.0.3-alpha.27"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.27.tgz#677ec94bae6ca3aff24ac0fcb3e2746e7c54612f"
+  integrity sha512-RVqNtHEWeFiC1umTMHSl8YdCp4yc/RUZgTjOMR4M2DLYTS9pu1uekqVx6o0ijvNTf/+XqhOJlBczZqRpvcijSg==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
