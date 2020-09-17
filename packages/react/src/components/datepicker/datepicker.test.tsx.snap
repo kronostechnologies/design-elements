@@ -44,6 +44,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -318,6 +319,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -592,6 +594,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -878,6 +881,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -1160,6 +1164,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -1626,6 +1631,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -3706,6 +3712,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -5740,6 +5747,7 @@ input + .c1 {
 
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
+  z-index: 1000;
 }
 
 .c2 .react-datepicker {

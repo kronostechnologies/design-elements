@@ -36,6 +36,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
 
     .popper[data-placement^="bottom"] {
         margin-top: 0;
+        z-index: 1000;
     }
 
     .react-datepicker {
