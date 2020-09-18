@@ -39,8 +39,8 @@ exports[`Add Button Button has primary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -53,15 +53,19 @@ exports[`Add Button Button has primary styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #99CCDB;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c1 {
@@ -121,8 +125,8 @@ exports[`Add Button Button has secondary styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: transparent;
-  border-color: #EF483E;
-  color: #EF483E;
+  border-color: #0080A5;
+  color: #0080A5;
 }
 
 .c0:not(:disabled) {
@@ -134,17 +138,19 @@ exports[`Add Button Button has secondary styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
+  border-color: #005F7A;
+  color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #99CCDB;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: transparent;
-  border-color: #F9B6B2;
-  color: #F9B6B2;
+  border-color: #99CCDB;
+  color: #99CCDB;
 }
 
 .c1 {
@@ -217,12 +223,19 @@ exports[`Add Button Button has tertiary styles 1`] = `
 }
 
 .c0:hover {
+  background-color: #D9DDE2;
   color: #000000;
+}
+
+.c0:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #99CCDB;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -282,8 +295,8 @@ exports[`Add Button Button is disabled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -296,15 +309,19 @@ exports[`Add Button Button is disabled 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #99CCDB;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c1 {

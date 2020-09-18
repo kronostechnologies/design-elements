@@ -39,8 +39,8 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -53,15 +53,19 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #99CCDB;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 <button
@@ -112,8 +116,8 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #B3974B;
-  border-color: #B3974B;
+  background-color: #9EB3FF;
+  border-color: #9EB3FF;
   color: #FFFFFF;
 }
 
@@ -126,15 +130,19 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 }
 
 .c0:hover {
-  background-color: #FFD86B;
-  border-color: #FFD86B;
+  background-color: #8984E8;
+  border-color: #8984E8;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #84B4E8;
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: #736130;
-  border-color: #736130;
+  background-color: #84B4E8;
+  border-color: #84B4E8;
 }
 
 <button
