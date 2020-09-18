@@ -1,4 +1,4 @@
-import React, { forwardRef, MutableRefObject, ReactElement, ReactNode, Ref, useImperativeHandle, useRef } from 'react';
+import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
@@ -45,14 +45,6 @@ interface StyledModalProps {
     isMobile: boolean;
 }
 
-interface ModalRefProps extends ReactModal {
-    portal: any;
-}
-
-export type ModalRef = MutableRefObject<ReactModal | ModalRefProps |  null>;
-
-type Role = 'dialog' | 'alertdialog';
-
 export interface ModalProps {
     /** Takes a query selector targetting the app Element. */
     appElement?: string;
@@ -80,11 +72,17 @@ export interface ModalProps {
      * Sets modal role tag
      * @default dialog
      */
-    role?: Role;
+    role?: string;
+    /**
+     * Defines if the overlay click should close the modal
+     * @default true
+     */
+    shouldCloseOnOverlayClick?: boolean;
+    onClose?(): void;
     onRequestClose(): void;
 }
 
-export const Modal = forwardRef(({
+export function Modal({
     appElement,
     ariaDescribedby,
     ariaHideApp = true,
@@ -97,23 +95,28 @@ export const Modal = forwardRef(({
     modalFooter,
     modalHeader,
     role = 'dialog',
+    shouldCloseOnOverlayClick = true,
+    onClose,
     onRequestClose,
-}: ModalProps, ref: Ref<ReactModal | null>): ReactElement => {
+}: ModalProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal');
-    const modalRef: ModalRef = useRef(null);
-    useImperativeHandle(ref, () => modalRef.current, [modalRef]);
+    const [didMount, setDidMount] = useState(false);
+
+    useEffect(() => {
+        if (didMount && (onClose && !isOpen)) {
+            onClose();
+        } else {
+            setDidMount(true);
+        }
+    }, [isOpen]);
 
     if (appElement) {
         ReactModal.setAppElement(appElement);
     }
 
-    function closeModal(): void {
-        modalRef.current?.portal.requestClose();
-    }
-
-    function getHeader(): ReactElement | null {
-        if (modalHeader || hasCloseButton) {
+    function getHeader(): ReactElement | null {
+        if (modalHeader || hasCloseButton) {
             return (
                 <Header hasContent={modalHeader !== undefined}>
                     {modalHeader}
@@ -125,7 +128,7 @@ export const Modal = forwardRef(({
                             type="button"
                             buttonType="tertiary"
                             iconName="x"
-                            onClick={closeModal}
+                            onClick={onRequestClose}
                         />
                     )}
                 </Header>
@@ -147,10 +150,10 @@ export const Modal = forwardRef(({
                 isMobile={isMobile}
                 isOpen={isOpen}
                 onRequestClose={onRequestClose}
-                ref={modalRef}
                 role={role}
                 style={customStyles}
                 contentLabel={ariaLabel}
+                shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
             >
                 {getHeader()}
                 {children}
@@ -158,7 +161,7 @@ export const Modal = forwardRef(({
             </StyledModal>
         </>
     );
-});
+}
 
 function getModalPadding({ disablePadding, hasCloseButton, isMobile }: StyledModalProps): string {
     if (disablePadding) {

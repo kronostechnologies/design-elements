@@ -2,7 +2,7 @@ import { Button, Modal } from '@equisoft/design-elements-react';
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
 import { Fragment, useState } from 'react';
 
-<Meta title="Modal / Modal" component={Modal} />
+<Meta title="Modal / Modal" component={Modal} />
 
 # Modal
 
@@ -98,6 +98,30 @@ The prop `disablePadding` removes padding to give you a blank modal to work with
                         isOpen={modalIsOpen}
                         onRequestClose={() => setIsOpen(false)}
                     />
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
+### Close callback
+
+<Preview>
+  <Story name="Close callback">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Modal
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onClose={() => console.log('closed')}
+                        onRequestClose={() => setIsOpen(false)}
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Modal>
                 </Fragment>
             );
         }}

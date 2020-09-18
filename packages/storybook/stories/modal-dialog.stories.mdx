@@ -2,7 +2,7 @@ import { Button, ModalDialog } from '@equisoft/design-elements-react';
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
 import { Fragment, useState } from 'react';
 
-<Meta title="Modal / Modal Dialog" component={ModalDialog} />
+<Meta title="Modal / Modal Dialog" component={ModalDialog} />
 
 # Modal Dialog
 
@@ -77,6 +77,62 @@ It is important for users of screenreaders that other page content be hidden (vi
                         ariaDescribedby="story-description"
                         isOpen={modalIsOpen}
                         onConfirm={handleConfirm}
+                        onRequestClose={() => setIsOpen(false)}
+                        title="Heading 5"
+                        subtitle="Subtitle 1"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
+                    </ModalDialog>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
+### Cancel callback
+
+<Preview>
+  <Story name="Cancel callback">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            const handleCancel = () => {
+                console.log('canceled');
+                setIsOpen(false);
+            };
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <ModalDialog
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onCancel={handleCancel}
+                        onRequestClose={() => setIsOpen(false)}
+                        title="Heading 5"
+                        subtitle="Subtitle 1"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
+                    </ModalDialog>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
+### Close callback
+
+<Preview>
+  <Story name="Close callback">
+        {() => {
+            const [modalIsOpen, setIsOpen] = useState(false);
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <ModalDialog
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={modalIsOpen}
+                        onClose={() => console.log('closed')}
                         onRequestClose={() => setIsOpen(false)}
                         title="Heading 5"
                         subtitle="Subtitle 1"

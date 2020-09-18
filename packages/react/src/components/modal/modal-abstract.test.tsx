@@ -26,6 +26,26 @@ describe('Modal-Abstract', () => {
         expect(callback).toHaveBeenCalled();
     });
 
+    test('onCancel callback is called when cancel-button is clicked', () => {
+        const callback = jest.fn();
+        const { baseElement } = renderModal({
+            isOpen: true,
+            modalType: 'dialog',
+            onCancel: callback,
+            ...defaultProps,
+        });
+
+        fireEvent(
+            getByTestId(baseElement, 'cancel-button'),
+            new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+            }),
+        );
+
+        expect(callback).toHaveBeenCalled();
+    });
+
     test('Matches snapshot (opened, dialog, desktop)', () => {
         const { baseElement } = renderModal({ isOpen: true, modalType: 'dialog', ...defaultProps }, 'desktop');
 

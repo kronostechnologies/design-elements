@@ -1,167 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal Matches snapshot (closed) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq felawV"
-          >
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
-      </div>
-    </div>
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div />
-    <div
-      class="ReactModalPortal"
-    />
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+<body
+  class=""
+>
+  <div />
+  <div
+    class="ReactModalPortal"
+  />
+</body>
 `;
 
 exports[`Modal Matches snapshot (disablePadding) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq felawV"
-          >
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c1 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -241,147 +106,58 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class=""
         >
-          <header
-            class=""
+          <button
+            aria-label="Close dialog"
+            class="c1 c2"
+            data-testid="close-button"
+            type="button"
           >
-            <button
-              aria-label="Close dialog"
-              class="c1 c2"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq felawV"
-          >
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c0 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: 8px;
@@ -393,130 +169,41 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
-        >
-          Test Content
-        </div>
+        Test Content
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq felawV"
-          >
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c0 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: 8px;
@@ -528,82 +215,27 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
-        >
-          Test Content
-        </div>
+        Test Content
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal Matches snapshot (opened, desktop) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": .c1 {
+.c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -683,195 +315,72 @@ Object {
 }
 
 <body
-    class="ReactModal__Body--open"
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="ReactModalPortal"
   >
     <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class=""
         >
-          <header
-            class=""
+          <button
+            aria-label="Close dialog"
+            class="c1 c2"
+            data-testid="close-button"
+            type="button"
           >
-            <button
-              aria-label="Close dialog"
-              class="c1 c2"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
       </div>
     </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class=""
-          >
-            <button
-              aria-label="Close dialog"
-              class="c1 c2"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;
 
 exports[`Modal Matches snapshot (opened, mobile) 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    class="ReactModal__Body--open"
-  >
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    <div
-      class="ReactModalPortal"
-    >
-      <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-      >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open sc-fzppip hhvtdx"
-          role="dialog"
-          tabindex="-1"
-        >
-          <header
-            class="sc-fznBMq felawV"
-          >
-            <button
-              aria-label="Close dialog"
-              class="sc-AxjAm sc-AxhCb kfruHC sc-fznNvL daZjXQ"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="16"
-                width="16"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
-      </div>
-    </div>
-    <div />
-    <div
-      data-react-modal-body-trap=""
-      style="position: absolute; opacity: 0;"
-      tabindex="0"
-    />
-    .c1 {
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -951,91 +460,38 @@ Object {
 }
 
 <div
-      class="ReactModalPortal"
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
     >
       <div
-        class="ReactModal__Overlay ReactModal__Overlay--after-open"
-        style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
       >
-        <div
-          aria-modal="true"
-          class="ReactModal__Content ReactModal__Content--after-open c0"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class=""
         >
-          <header
-            class=""
+          <button
+            aria-label="Close dialog"
+            class="c1 c2"
+            data-testid="close-button"
+            type="button"
           >
-            <button
-              aria-label="Close dialog"
-              class="c1 c2"
-              data-testid="close-button"
-              type="button"
-            >
-              <svg
-                color="currentColor"
-                focusable="false"
-                height="20"
-                width="20"
-              />
-            </button>
-          </header>
-          Test Content
-        </div>
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="20"
+              width="20"
+            />
+          </button>
+        </header>
+        Test Content
       </div>
     </div>
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</body>
 `;

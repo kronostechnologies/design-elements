@@ -1,11 +1,11 @@
-import React, { ReactElement, ReactNode, useRef } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Modal, ModalRef } from './modal';
+import { Modal } from './modal';
 
 const Title = styled.h2<IsMobile>`
     font-size: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
@@ -39,7 +39,7 @@ interface IsMobile {
 }
 
 export interface AbstractProps {
-    /** Takes a query selector targetting the app Element. */
+    /** Takes a query selector targeting the app Element. */
     appElement?: string;
     ariaDescribedby?: string;
     /** Boolean indicating if the appElement should be hidden. Defaults to true.
@@ -51,35 +51,42 @@ export interface AbstractProps {
     isOpen: boolean;
     subtitle?: string;
     title?: string;
+    onCancel?(): void;
+    onClose?(): void;
     onConfirm?(): void;
     onRequestClose(): void;
 }
 
 export interface ModalAbstractProps extends AbstractProps {
-    modalType: 'dialog' | 'alert';
+    modalType: 'dialog' | 'alert';
 }
 
 export function ModalAbstract({
     ariaLabel,
     children,
     modalType,
+    onCancel,
     onConfirm,
+    onRequestClose,
     subtitle,
     title,
     ...props
 }: ModalAbstractProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-abstract');
-    const modalRef: ModalRef = useRef(null);
     const titleId = uuid();
     const isDialog = modalType === 'dialog';
 
-    function closeModal(): void {
-        modalRef.current?.portal.requestClose();
+    function handleCancel(): void {
+        if (onCancel) {
+            onCancel();
+        } else {
+            onRequestClose();
+        }
     }
 
-    function getHeader(): ReactElement | undefined {
-        if (title || subtitle) {
+    function getHeader(): ReactElement | undefined {
+        if (title || subtitle) {
             return (
                 <>
                     {title && <Title isMobile={isMobile} id={titleId} tabIndex={-1}>{title}</Title>}
@@ -101,7 +108,12 @@ export function ModalAbstract({
                     buttonType="primary"
                     onClick={onConfirm}
                 />
-                <CancelButton label={t('cancelButtonLabel')} buttonType="tertiary" onClick={closeModal}/>
+                <CancelButton
+                    data-testid="cancel-button"
+                    label={t('cancelButtonLabel')}
+                    buttonType="tertiary"
+                    onClick={handleCancel}
+                />
             </ButtonContainer>
         );
     }
@@ -111,10 +123,11 @@ export function ModalAbstract({
             ariaLabel={ariaLabel || title}
             ariaLabelledBy={title ? titleId : undefined}
             modalHeader={getHeader()}
-            hasCloseButton={isDialog ? true : false}
+            hasCloseButton={isDialog}
             modalFooter={getFooter()}
-            ref={modalRef}
             role={isDialog ? 'dialog' : 'alertdialog'}
+            shouldCloseOnOverlayClick={isDialog}
+            onRequestClose={onRequestClose}
             {...props}
         >
             {children}
