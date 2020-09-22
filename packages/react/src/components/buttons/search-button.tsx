@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
@@ -40,10 +41,11 @@ const StyledButton = styled(AbstractButton)`
 `;
 
 export const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {
+    const { isMobile } = useDeviceContext();
     const handleClick = () => { onClick && onClick(); };
 
     return (
-        <StyledButton className={className} disabled={disabled} onClick={handleClick}>
+        <StyledButton isMobile={isMobile} className={className} disabled={disabled} onClick={handleClick}>
             {children}{label}
         </StyledButton>
     );

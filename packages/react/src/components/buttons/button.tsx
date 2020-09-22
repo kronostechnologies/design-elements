@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
@@ -100,13 +101,15 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
 `;
 
 export function Button({ children, onClick, type = 'submit', ...props }: ButtonProps): ReactElement {
+    const { isMobile } = useDeviceContext();
+
     function handleClick(): void {
         onClick && onClick();
     }
 
     const label: string = props.label || '';
     return (
-        <StyledButton onClick={handleClick} type={type} {...props}>
+        <StyledButton isMobile={isMobile} onClick={handleClick} type={type} {...props}>
             {children}{label}
         </StyledButton>
     );
