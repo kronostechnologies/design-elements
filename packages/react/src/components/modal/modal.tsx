@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
@@ -36,11 +36,12 @@ const customStyles = {
         alignItems: 'center',
         display: 'flex',
         justifyContent: 'center',
+        zIndex: 10000,
     },
 };
 
 interface StyledModalProps {
-    disablePadding: boolean;
+    noPadding: boolean;
     hasCloseButton: boolean;
     isMobile: boolean;
 }
@@ -59,7 +60,7 @@ export interface ModalProps {
      * Removes padding to give you a blank modal to work with.
      * @default false
      */
-    disablePadding?: boolean;
+    noPadding?: boolean;
     /**
      * Adds "x" iconButton to close modal
      * @default true
@@ -78,7 +79,6 @@ export interface ModalProps {
      * @default true
      */
     shouldCloseOnOverlayClick?: boolean;
-    onClose?(): void;
     onRequestClose(): void;
 }
 
@@ -89,27 +89,17 @@ export function Modal({
     ariaLabel,
     ariaLabelledBy,
     children,
-    disablePadding = false,
+    noPadding = false,
     hasCloseButton = true,
     isOpen,
     modalFooter,
     modalHeader,
     role = 'dialog',
     shouldCloseOnOverlayClick = true,
-    onClose,
     onRequestClose,
 }: ModalProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal');
-    const [didMount, setDidMount] = useState(false);
-
-    useEffect(() => {
-        if (didMount && (onClose && !isOpen)) {
-            onClose();
-        } else {
-            setDidMount(true);
-        }
-    }, [isOpen]);
 
     if (appElement) {
         ReactModal.setAppElement(appElement);
@@ -118,7 +108,7 @@ export function Modal({
     function getHeader(): ReactElement | null {
         if (modalHeader || hasCloseButton) {
             return (
-                <Header hasContent={modalHeader !== undefined}>
+                <Header hasContent={!!modalHeader}>
                     {modalHeader}
                     {hasCloseButton && (
                         <CloseIconButton
@@ -145,7 +135,7 @@ export function Modal({
                     modal: true,
                 }}
                 ariaHideApp={ariaHideApp}
-                disablePadding={disablePadding}
+                noPadding={noPadding}
                 hasCloseButton={hasCloseButton}
                 isMobile={isMobile}
                 isOpen={isOpen}
@@ -163,8 +153,8 @@ export function Modal({
     );
 }
 
-function getModalPadding({ disablePadding, hasCloseButton, isMobile }: StyledModalProps): string {
-    if (disablePadding) {
+function getModalPadding({ noPadding, hasCloseButton, isMobile }: StyledModalProps): string {
+    if (noPadding) {
         return '0';
     } else if (isMobile) {
         if (hasCloseButton) {

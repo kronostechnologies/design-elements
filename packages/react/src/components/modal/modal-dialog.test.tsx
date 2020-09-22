@@ -2,26 +2,21 @@ import { renderPortalWithProviders } from '@design-elements/test-utils/portal-re
 import { fireEvent, getByTestId, RenderResult } from '@testing-library/react';
 import React from 'react';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ModalAbstract, ModalAbstractProps } from './modal-abstract';
+import { ModalDialog, ModalDialogProps } from './modal-dialog';
 jest.mock('uuid/v4');
 
-describe('Modal-Abstract', () => {
+describe('Modal-Dialog', () => {
     test('onConfirm callback is called when confirm-button is clicked', () => {
         const callback = jest.fn();
         const { baseElement } = renderModal({
+            ...withTitleAndSubtitle,
             isOpen: true,
-            modalType: 'dialog',
-            onConfirm: callback,
-            ...defaultProps,
+            confirmButton: {
+                onConfirm: callback,
+            },
         });
 
-        fireEvent(
-            getByTestId(baseElement, 'confirm-button'),
-            new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-            }),
-        );
+        fireEvent.click(getByTestId(baseElement, 'confirm-button'));
 
         expect(callback).toHaveBeenCalled();
     });
@@ -29,50 +24,32 @@ describe('Modal-Abstract', () => {
     test('onCancel callback is called when cancel-button is clicked', () => {
         const callback = jest.fn();
         const { baseElement } = renderModal({
+            ...withTitleAndSubtitle,
             isOpen: true,
-            modalType: 'dialog',
-            onCancel: callback,
-            ...defaultProps,
+            cancelButton: {
+                onCancel: callback,
+            },
         });
 
-        fireEvent(
-            getByTestId(baseElement, 'cancel-button'),
-            new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-            }),
-        );
+        fireEvent.click(getByTestId(baseElement, 'cancel-button'));
 
         expect(callback).toHaveBeenCalled();
     });
 
-    test('Matches snapshot (opened, dialog, desktop)', () => {
-        const { baseElement } = renderModal({ isOpen: true, modalType: 'dialog', ...defaultProps }, 'desktop');
+    test('Matches snapshot (opened, desktop)', () => {
+        const { baseElement } = renderModal({ ...withTitleAndSubtitle, isOpen: true }, 'desktop');
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (opened, dialog, mobile)', () => {
-        const { baseElement } = renderModal({ isOpen: true, modalType: 'dialog', ...defaultProps }, 'mobile');
-
-        expect(baseElement).toMatchSnapshot();
-    });
-
-    test('Matches snapshot (opened, alert, desktop)', () => {
-        const { baseElement } = renderModal({ isOpen: true, modalType: 'alert', ...defaultProps }, 'desktop');
-
-        expect(baseElement).toMatchSnapshot();
-    });
-
-    test('Matches snapshot (opened, alert, mobile)', () => {
-        const { baseElement } = renderModal({ isOpen: true, modalType: 'alert', ...defaultProps }, 'mobile');
+    test('Matches snapshot (opened, mobile)', () => {
+        const { baseElement } = renderModal({ ...withTitleAndSubtitle, isOpen: true }, 'mobile');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (only title)', () => {
         const { baseElement } = renderModal({
-            modalType: 'dialog',
             ariaHideApp: false,
             title: 'Title',
             isOpen: true,
@@ -84,7 +61,6 @@ describe('Modal-Abstract', () => {
 
     test('Matches snapshot (only subtitle)', () => {
         const { baseElement } = renderModal({
-            modalType: 'dialog',
             ariaHideApp: false,
             subtitle: 'Subtitle',
             isOpen: true,
@@ -96,7 +72,6 @@ describe('Modal-Abstract', () => {
 
     test('Matches snapshot (not titles)', () => {
         const { baseElement } = renderModal({
-            modalType: 'dialog',
             ariaHideApp: false,
             isOpen: true,
             onRequestClose: () => {},
@@ -105,24 +80,39 @@ describe('Modal-Abstract', () => {
         expect(baseElement).toMatchSnapshot();
     });
 
+    test('Matches snapshot (custom button labels)', () => {
+        const { baseElement } = renderModal({
+            ...withTitleAndSubtitle,
+            confirmButton: {
+                label: 'Test Confirm',
+            },
+            cancelButton: {
+                label: 'Test Cancel',
+            },
+            isOpen: true,
+        });
+
+        expect(baseElement).toMatchSnapshot();
+    });
+
     test('Matches snapshot (closed)', () => {
-        const { baseElement } = renderModal({ isOpen: false, modalType: 'dialog', ...defaultProps });
+        const { baseElement } = renderModal({ ...withTitleAndSubtitle, isOpen: false });
 
         expect(baseElement).toMatchSnapshot();
     });
 });
 
-const defaultProps = {
+const withTitleAndSubtitle = {
     ariaHideApp: false,
     title: 'Title',
     subtitle: 'Subtitle',
     onRequestClose: () => {},
 };
 
-function renderModal(props: ModalAbstractProps, device: DeviceType = 'desktop'): RenderResult {
+function renderModal(props: ModalDialogProps, device: DeviceType = 'desktop'): RenderResult {
     return renderPortalWithProviders(
-        <ModalAbstract {...props}>
+        <ModalDialog {...props}>
             Test Content
-        </ModalAbstract>, device,
+        </ModalDialog>, device,
     );
 }

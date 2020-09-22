@@ -1,4 +1,4 @@
-import { Button, Modal } from '@equisoft/design-elements-react';
+import { Button, Modal, useModal } from '@equisoft/design-elements-react';
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
 import { Fragment, useState } from 'react';
 
@@ -11,7 +11,7 @@ The `Modal` component allows you to easily set modals up in your app.
 ## Import
 
 ```js
-    import { Modal } from '@equisoft/design-elements-react'
+    import { Modal, useModal } from '@equisoft/design-elements-react'
 ```
 
 ## Accessibility
@@ -21,8 +21,8 @@ It is important for users of screenreaders that other page content be hidden (vi
 ```jsx
 <Modal
     appElement="#root"
-    isOpen={modalIsOpen}
-    onRequestClose={() => setIsOpen(false)}
+    isOpen={isModalOpen}
+    onRequestClose={closeModal}
 >
     Some Content
 </Modal>
@@ -39,15 +39,15 @@ It is important for users of screenreaders that other page content be hidden (vi
 <Preview>
   <Story name="Normal">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <Modal
                         appElement="#root"
                         ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
                     >
                         <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Modal>
@@ -59,21 +59,21 @@ It is important for users of screenreaders that other page content be hidden (vi
 
 ### Padding disabled
 
-The prop `disablePadding` removes padding to give you a blank modal to work with.
+The prop `noPadding` removes padding to give you a blank modal to work with.
 
 <Preview>
   <Story name="Padding disabled">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <Modal
                         appElement="#root"
-                        disablePadding
+                        noPadding
                         ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
                     >
                         <p id="story-description">A modal without padding</p>
                     </Modal>
@@ -88,40 +88,16 @@ The prop `disablePadding` removes padding to give you a blank modal to work with
 <Preview>
   <Story name="Without close button">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <Modal
                         appElement="#root"
                         hasCloseButton={false}
-                        isOpen={modalIsOpen}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
                     />
-                </Fragment>
-            );
-        }}
-  </Story>
-</Preview>
-
-### Close callback
-
-<Preview>
-  <Story name="Close callback">
-        {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
-            return (
-                <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
-                    <Modal
-                        appElement="#root"
-                        ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onClose={() => console.log('closed')}
-                        onRequestClose={() => setIsOpen(false)}
-                    >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Modal>
                 </Fragment>
             );
         }}

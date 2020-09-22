@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal-Abstract Matches snapshot (closed) 1`] = `
+exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
 <body
   class=""
 >
@@ -11,7 +11,355 @@ exports[`Modal-Abstract Matches snapshot (closed) 1`] = `
 </body>
 `;
 
-exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
+exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c8:not(:disabled) {
+  cursor: pointer;
+}
+
+.c8 > svg {
+  color: inherit;
+}
+
+.c8:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
+  background-color: #99CCDB;
+  border-color: #99CCDB;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+}
+
+.c10:not(:disabled) {
+  cursor: pointer;
+}
+
+.c10 > svg {
+  color: inherit;
+}
+
+.c10:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
+.c10:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c10:disabled,
+.c10:disabled:focus,
+.c10:disabled:hover {
+  background-color: transparent;
+  color: #9CA7B4;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.6rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.55px;
+  -moz-letter-spacing: 0.55px;
+  -ms-letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: var(--spacing-half) var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c4:not(:disabled) {
+  cursor: pointer;
+}
+
+.c4 > svg {
+  color: inherit;
+}
+
+.c4:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
+.c4:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c4:disabled {
+  background-color: transparent;
+  color: #9CA7B4;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  padding: var(--spacing-4x);
+  position: relative;
+  width: 500px;
+}
+
+.c1 {
+  margin-bottom: var(--spacing-3x);
+}
+
+.c5 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+.c6 {
+  margin-top: var(--spacing-4x);
+}
+
+.c2 {
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 32px;
+  margin: 0;
+}
+
+.c3 {
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 22px;
+  margin: 0;
+  margin-top: var(--spacing-3x);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+}
+
+.c9 {
+  margin-bottom: 0;
+  margin-right: var(--spacing-1x);
+}
+
+<div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+    >
+      <div
+        aria-label="Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
+      >
+        <header
+          class="c1"
+        >
+          <h2
+            class="c2"
+            tabindex="-1"
+          >
+            Title
+          </h2>
+          <h3
+            class="c3"
+            tabindex="-1"
+          >
+            Subtitle
+          </h3>
+          <button
+            aria-label="Close dialog"
+            class="c4 c5"
+            data-testid="close-button"
+            type="button"
+          >
+            <svg
+              color="currentColor"
+              focusable="false"
+              height="16"
+              width="16"
+            />
+          </button>
+        </header>
+        Test Content
+        <footer
+          class="c6"
+        >
+          <div
+            class="c7"
+          >
+            <button
+              class="c8 c9"
+              data-testid="confirm-button"
+              label="Test Confirm"
+              type="submit"
+            >
+              Test Confirm
+            </button>
+            <button
+              class="c10 "
+              data-testid="cancel-button"
+              label="Test Cancel"
+              type="submit"
+            >
+              Test Cancel
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 <body
   class="ReactModal__Body--open"
 >
@@ -64,8 +412,8 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -78,15 +426,19 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
 }
 
 .c5:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c5:disabled,
 .c5:disabled:focus,
 .c5:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c7 {
@@ -141,12 +493,19 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
 }
 
 .c7:hover {
+  background-color: #D9DDE2;
   color: #000000;
+}
+
+.c7:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c7:disabled,
 .c7:disabled:focus,
 .c7:disabled:hover {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -190,7 +549,7 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 32px;
@@ -205,10 +564,17 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
 }
 
 .c1:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c1:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c1:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -253,7 +619,7 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
   >
     <div
       class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-modal="true"
@@ -309,7 +675,7 @@ exports[`Modal-Abstract Matches snapshot (not titles) 1`] = `
 </body>
 `;
 
-exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
+exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 <body
   class="ReactModal__Body--open"
 >
@@ -362,8 +728,8 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -376,15 +742,19 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
 }
 
 .c7:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c7:disabled,
 .c7:disabled:focus,
 .c7:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c9 {
@@ -439,12 +809,19 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
 }
 
 .c9:hover {
+  background-color: #D9DDE2;
   color: #000000;
+}
+
+.c9:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c9:disabled,
 .c9:disabled:focus,
 .c9:disabled:hover {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -488,7 +865,7 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 32px;
@@ -503,10 +880,17 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
 }
 
 .c3:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c3:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c3:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -563,7 +947,7 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
   >
     <div
       class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-modal="true"
@@ -625,7 +1009,7 @@ exports[`Modal-Abstract Matches snapshot (only subtitle) 1`] = `
 </body>
 `;
 
-exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
+exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 <body
   class="ReactModal__Body--open"
 >
@@ -678,8 +1062,8 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -692,15 +1076,19 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
 }
 
 .c7:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c7:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c7:disabled,
 .c7:disabled:focus,
 .c7:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c9 {
@@ -755,12 +1143,19 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
 }
 
 .c9:hover {
+  background-color: #D9DDE2;
   color: #000000;
+}
+
+.c9:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c9:disabled,
 .c9:disabled:focus,
 .c9:disabled:hover {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -804,7 +1199,7 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 32px;
@@ -819,10 +1214,17 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
 }
 
 .c3:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c3:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c3:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -878,7 +1280,7 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
   >
     <div
       class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-label="Title"
@@ -941,84 +1343,7 @@ exports[`Modal-Abstract Matches snapshot (only title) 1`] = `
 </body>
 `;
 
-exports[`Modal-Abstract Matches snapshot (opened, alert, desktop) 1`] = `
-<body
-  class="ReactModal__Body--open"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
-}
-
-.c6:not(:disabled) {
-  cursor: pointer;
-}
-
-.c6 > svg {
-  color: inherit;
-}
-
-.c6:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
-}
-
-.c6:disabled,
-.c6:disabled:focus,
-.c6:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
-}
-
+exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1057,429 +1382,8 @@ exports[`Modal-Abstract Matches snapshot (opened, alert, desktop) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c8:not(:disabled) {
-  cursor: pointer;
-}
-
-.c8 > svg {
-  color: inherit;
-}
-
-.c8:hover {
-  color: #000000;
-}
-
-.c8:disabled,
-.c8:disabled:focus,
-.c8:disabled:hover {
-  color: #9CA7B4;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  padding: var(--spacing-4x);
-  position: relative;
-  width: 500px;
-}
-
-.c1 {
-  margin-bottom: var(--spacing-3x);
-}
-
-.c4 {
-  margin-top: var(--spacing-4x);
-}
-
-.c2 {
-  font-size: 1.25rem;
-  font-weight: var(--font-normal);
-  line-height: 32px;
-  margin: 0;
-}
-
-.c3 {
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  line-height: 22px;
-  margin: 0;
-  margin-top: var(--spacing-3x);
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
-}
-
-.c7 {
-  margin-bottom: 0;
-  margin-right: var(--spacing-1x);
-}
-
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-    >
-      <div
-        aria-label="Title"
-        aria-modal="true"
-        class="ReactModal__Content ReactModal__Content--after-open c0"
-        role="alertdialog"
-        tabindex="-1"
-      >
-        <header
-          class="c1"
-        >
-          <h2
-            class="c2"
-            tabindex="-1"
-          >
-            Title
-          </h2>
-          <h3
-            class="c3"
-            tabindex="-1"
-          >
-            Subtitle
-          </h3>
-        </header>
-        Test Content
-        <footer
-          class="c4"
-        >
-          <div
-            class="c5"
-          >
-            <button
-              class="c6 c7"
-              data-testid="confirm-button"
-              label="Confirm"
-              type="submit"
-            >
-              Confirm
-            </button>
-            <button
-              class="c8 "
-              data-testid="cancel-button"
-              label="Cancel"
-              type="submit"
-            >
-              Cancel
-            </button>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Abstract Matches snapshot (opened, alert, mobile) 1`] = `
-<body
-  class="ReactModal__Body--open"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
-}
-
-.c6:not(:disabled) {
-  cursor: pointer;
-}
-
-.c6 > svg {
-  color: inherit;
-}
-
-.c6:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
-}
-
-.c6:disabled,
-.c6:disabled:focus,
-.c6:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
-}
-
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c8:not(:disabled) {
-  cursor: pointer;
-}
-
-.c8 > svg {
-  color: inherit;
-}
-
-.c8:hover {
-  color: #000000;
-}
-
-.c8:disabled,
-.c8:disabled:focus,
-.c8:disabled:hover {
-  color: #9CA7B4;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
-  position: relative;
-  width: 344px;
-}
-
-.c1 {
-  margin-bottom: var(--spacing-3x);
-}
-
-.c4 {
-  margin-top: var(--spacing-4x);
-}
-
-.c2 {
-  font-size: 1.5rem;
-  font-weight: var(--font-normal);
-  line-height: 36px;
-  margin: 0;
-}
-
-.c3 {
-  font-size: 1.125rem;
-  font-weight: var(--font-normal);
-  line-height: 28px;
-  margin: 0;
-  margin-top: var(--spacing-3x);
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  margin-bottom: var(--spacing-half);
-  margin-right: 0;
-}
-
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
-    >
-      <div
-        aria-label="Title"
-        aria-modal="true"
-        class="ReactModal__Content ReactModal__Content--after-open c0"
-        role="alertdialog"
-        tabindex="-1"
-      >
-        <header
-          class="c1"
-        >
-          <h2
-            class="c2"
-            tabindex="-1"
-          >
-            Title
-          </h2>
-          <h3
-            class="c3"
-            tabindex="-1"
-          >
-            Subtitle
-          </h3>
-        </header>
-        Test Content
-        <footer
-          class="c4"
-        >
-          <div
-            class="c5"
-          >
-            <button
-              class="c6 c7"
-              data-testid="confirm-button"
-              label="Confirm"
-              type="submit"
-            >
-              Confirm
-            </button>
-            <button
-              class="c8 "
-              data-testid="cancel-button"
-              label="Cancel"
-              type="submit"
-            >
-              Cancel
-            </button>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -1492,15 +1396,19 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
 }
 
 .c8:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c8:disabled,
 .c8:disabled:focus,
 .c8:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c10 {
@@ -1555,12 +1463,19 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
 }
 
 .c10:hover {
+  background-color: #D9DDE2;
   color: #000000;
+}
+
+.c10:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c10:disabled,
 .c10:disabled:focus,
 .c10:disabled:hover {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -1604,7 +1519,7 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 32px;
@@ -1619,10 +1534,17 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
 }
 
 .c4:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c4:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c4:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -1700,7 +1622,7 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
   >
     <div
       class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-label="Title"
@@ -1769,7 +1691,7 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, desktop) 1`] = `
 </body>
 `;
 
-exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
+exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 <body
   class="ReactModal__Body--open"
 >
@@ -1822,8 +1744,8 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -1836,15 +1758,19 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
 }
 
 .c8:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c8:disabled,
 .c8:disabled:focus,
 .c8:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c10 {
@@ -1899,12 +1825,19 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
 }
 
 .c10:hover {
+  background-color: #D9DDE2;
   color: #000000;
+}
+
+.c10:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c10:disabled,
 .c10:disabled:focus,
 .c10:disabled:hover {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -1948,7 +1881,7 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
   user-select: none;
   height: 48px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 48px;
@@ -1963,10 +1896,17 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
 }
 
 .c4:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c4:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c4:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -2030,7 +1970,7 @@ exports[`Modal-Abstract Matches snapshot (opened, dialog, mobile) 1`] = `
   >
     <div
       class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-label="Title"

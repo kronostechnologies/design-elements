@@ -21,7 +21,7 @@ export const Translations = {
         modal: {
             closeButtonLabel: 'Close dialog',
         },
-        'modal-abstract': {
+        'modal-dialog': {
             cancelButtonLabel: 'Cancel',
             confirmButtonLabel: 'Confirm',
         },
@@ -72,7 +72,7 @@ export const Translations = {
         modal: {
             closeButtonLabel: 'Fermer le dialogue',
         },
-        'modal-abstract': {
+        'modal-dialog': {
             cancelButtonLabel: 'Annuler',
             confirmButtonLabel: 'Confirmer',
         },

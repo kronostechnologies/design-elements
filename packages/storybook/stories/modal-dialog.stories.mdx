@@ -1,4 +1,4 @@
-import { Button, ModalDialog } from '@equisoft/design-elements-react';
+import { Button, ModalDialog, useModal } from '@equisoft/design-elements-react';
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
 import { Fragment, useState } from 'react';
 
@@ -11,7 +11,7 @@ The `ModalDialog` component allows you to easily set dialog modals up in your ap
 ## Import
 
 ```js
-    import { ModalDialog } from '@equisoft/design-elements-react'
+    import { ModalDialog, useModal } from '@equisoft/design-elements-react'
 ```
 
 ## Accessibility
@@ -21,8 +21,8 @@ It is important for users of screenreaders that other page content be hidden (vi
 ```jsx
 <ModalDialog
     appElement="#root"
-    isOpen={modalIsOpen}
-    onRequestClose={() => setIsOpen(false)}
+    isOpen={isModalOpen}
+    onRequestClose={closeModal}
 >
     Some Content
 </ModalDialog>
@@ -39,15 +39,46 @@ It is important for users of screenreaders that other page content be hidden (vi
 <Preview>
   <Story name="Normal">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <ModalDialog
                         appElement="#root"
                         ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        title="Heading 5"
+                        subtitle="Subtitle 1"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
+                    </ModalDialog>
+                </Fragment>
+            );
+        }}
+  </Story>
+</Preview>
+
+### Custom button labels
+
+<Preview>
+  <Story name="Custom button labels">
+        {() => {
+            const { isModalOpen, closeModal, openModal } = useModal();
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
+                    <ModalDialog
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        confirmButton={{
+                            label: 'Custom Confirm'
+                        }}
+                        cancelButton={{
+                            label: 'Custom Cancel'
+                        }}
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
@@ -64,20 +95,22 @@ It is important for users of screenreaders that other page content be hidden (vi
 <Preview>
   <Story name="Confirm callback">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             const handleConfirm = () => {
                 console.log('confirmed');
-                setIsOpen(false);
+                closeModal();
             };
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <ModalDialog
                         appElement="#root"
                         ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onConfirm={handleConfirm}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        confirmButton={{
+                            onConfirm: handleConfirm,
+                        }}
+                        onRequestClose={closeModal}
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
@@ -94,46 +127,22 @@ It is important for users of screenreaders that other page content be hidden (vi
 <Preview>
   <Story name="Cancel callback">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             const handleCancel = () => {
                 console.log('canceled');
-                setIsOpen(false);
+                closeModal();
             };
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <ModalDialog
                         appElement="#root"
                         ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onCancel={handleCancel}
-                        onRequestClose={() => setIsOpen(false)}
-                        title="Heading 5"
-                        subtitle="Subtitle 1"
-                    >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
-                    </ModalDialog>
-                </Fragment>
-            );
-        }}
-  </Story>
-</Preview>
-
-### Close callback
-
-<Preview>
-  <Story name="Close callback">
-        {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
-            return (
-                <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
-                    <ModalDialog
-                        appElement="#root"
-                        ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onClose={() => console.log('closed')}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        cancelButton={{
+                            onCancel: handleCancel,
+                        }}
+                        onRequestClose={closeModal}
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
@@ -150,15 +159,15 @@ It is important for users of screenreaders that other page content be hidden (vi
 <Preview>
   <Story name="No titles">
         {() => {
-            const [modalIsOpen, setIsOpen] = useState(false);
+            const { isModalOpen, closeModal, openModal } = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={() => setIsOpen(true)}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <ModalDialog
                         appElement="#root"
                         ariaDescribedby="story-description"
-                        isOpen={modalIsOpen}
-                        onRequestClose={() => setIsOpen(false)}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
                     >
                         <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>

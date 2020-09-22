@@ -1,7 +1,6 @@
 import { renderPortalWithProviders } from '@design-elements/test-utils/portal-renderer';
-import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
-import { fireEvent, getByTestId, render, RenderResult } from '@testing-library/react';
-import React, { ReactElement } from 'react';
+import { fireEvent, getByTestId, RenderResult } from '@testing-library/react';
+import React from 'react';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Modal, ModalProps } from './modal';
 
@@ -10,63 +9,43 @@ describe('Modal', () => {
         const callback = jest.fn();
         const { baseElement } = renderModal({ isOpen: true, onRequestClose: callback, ariaHideApp: false }, 'desktop');
 
-        fireEvent(
-            getByTestId(baseElement, 'close-button'),
-            new MouseEvent('click', {
-                bubbles: true,
-                cancelable: true,
-            }),
-        );
-
-        expect(callback).toHaveBeenCalled();
-    });
-
-    test('onClose callback is called when modal is closed', () => {
-        const testElement = (isOpen: boolean): ReactElement => ThemeWrapped(
-            <Modal isOpen={isOpen} onClose={callback} {...defaultProps}>
-                Test Content
-            </Modal>,
-        );
-        const callback = jest.fn();
-        const { rerender } = render(testElement(true));
-
-        rerender(testElement(false));
+        fireEvent.click(getByTestId(baseElement, 'close-button'));
 
         expect(callback).toHaveBeenCalled();
     });
 
     test('Matches snapshot (opened, desktop)', () => {
-        const { baseElement } = renderModal({ isOpen: true, ...defaultProps }, 'desktop');
+        const { baseElement } = renderModal({ ...defaultProps, isOpen: true }, 'desktop');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (opened, mobile)', () => {
-        const { baseElement } = renderModal({ isOpen: true, ...defaultProps }, 'mobile');
+        const { baseElement } = renderModal({ ...defaultProps, isOpen: true }, 'mobile');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (no close button, desktop)', () => {
-        const { baseElement } = renderModal({ isOpen: true, hasCloseButton: false, ...defaultProps }, 'desktop');
+        const { baseElement } = renderModal({ ...defaultProps, isOpen: true, hasCloseButton: false }, 'desktop');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (no close button, mobile)', () => {
-        const { baseElement } = renderModal({ isOpen: true, hasCloseButton: false, ...defaultProps }, 'mobile');
+        const { baseElement } = renderModal({ ...defaultProps, isOpen: true, hasCloseButton: false }, 'mobile');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (closed)', () => {
-        const { baseElement } = renderModal({ isOpen: false, ...defaultProps });
+        const { baseElement } = renderModal({ ...defaultProps, isOpen: false });
 
         expect(baseElement).toMatchSnapshot();
     });
 
-    test('Matches snapshot (disablePadding)', () => {
-        const { baseElement } = renderModal({ isOpen: true, disablePadding: true, ...defaultProps });
+    test('Matches snapshot (noPadding)', () => {
+        const { baseElement } = renderModal({ ...defaultProps, isOpen: true, noPadding: true });
 
         expect(baseElement).toMatchSnapshot();
     });
