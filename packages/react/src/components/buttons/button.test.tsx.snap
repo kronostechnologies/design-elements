@@ -69,9 +69,8 @@ exports[`Button Has primary styles 1`] = `
 }
 
 <button
-  className="c0"
+  class="c0"
   label="Primary Button"
-  onClick={[Function]}
   type="submit"
 >
   Primary Button
@@ -147,9 +146,8 @@ exports[`Button Has secondary styles 1`] = `
 }
 
 <button
-  className="c0"
+  class="c0"
   label="Secondary Button"
-  onClick={[Function]}
   type="submit"
 >
   Secondary Button
@@ -226,9 +224,8 @@ exports[`Button Has tertiary styles 1`] = `
 }
 
 <button
-  className="c0"
+  class="c0"
   label="Tertiary Button"
-  onClick={[Function]}
   type="submit"
 >
   Tertiary Button
@@ -304,10 +301,9 @@ exports[`Button Is disabled 1`] = `
 }
 
 <button
-  className="c0"
-  disabled={true}
+  class="c0"
+  disabled=""
   label="Primary Button"
-  onClick={[Function]}
   type="submit"
 >
   Primary Button
