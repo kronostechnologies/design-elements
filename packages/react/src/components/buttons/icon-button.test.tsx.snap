@@ -39,7 +39,6 @@ exports[`Icon Button Has disabled styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: #0080A5;
   border: none;
   color: #FFFFFF;
@@ -121,7 +120,6 @@ exports[`Icon Button Has mobile styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 48px;
   background-color: #0080A5;
   border: none;
   color: #FFFFFF;
@@ -202,7 +200,6 @@ exports[`Icon Button Has primary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: #0080A5;
   border: none;
   color: #FFFFFF;
@@ -283,7 +280,6 @@ exports[`Icon Button Has secondary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: #0080A5;
   color: #0080A5;
@@ -366,7 +362,6 @@ exports[`Icon Button Has tertiary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;

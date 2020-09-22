@@ -1,14 +1,16 @@
-import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
+
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon/icon';
 import { Button } from './button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 
 type Type = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 
-const PlusIcon = styled(PlusSign)`
-    margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
+const PlusIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
 `;
 
 interface ButtonProps {
@@ -30,9 +32,11 @@ interface ButtonProps {
 }
 
 export function AddButton({ type = 'submit', ...props }: ButtonProps): ReactElement {
+    const { isMobile } = useDeviceContext();
+
     return (
         <Button type={type} {...props}>
-            <PlusIcon />
+            <PlusIcon name="plusSign" size={isMobile ? '24' : '16'} />
         </Button>
     );
 }
