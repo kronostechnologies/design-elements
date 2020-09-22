@@ -25,72 +25,37 @@ describe('Add Button', () => {
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
-    test('Button is disabled (desktop)', () => {
-        const tree = renderWithProviders(
-            <AddButton buttonType="primary" onClick={jest.fn()} disabled label="Primary Button" />,
-            'desktop',
-        );
+    test('has disabled styles', () => {
+        const tree = renderWithProviders(<AddButton buttonType="primary" onClick={jest.fn()} disabled label="Primary Button" />);
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('Button is disabled (mobile)', () => {
-        const tree = renderWithProviders(
-            <AddButton buttonType="primary" onClick={jest.fn()} disabled label="Primary Button" />,
-            'mobile',
-        );
+    test('has primary styles', () => {
+        const tree = renderWithProviders(<AddButton buttonType="primary" onClick={jest.fn()} label="Primary Button" />);
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('Button has primary styles (desktop)', () => {
-        const tree = renderWithProviders(
-            <AddButton buttonType="primary" onClick={jest.fn()} label="Primary Button" />,
-            'desktop',
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Button has primary styles (mobile)', () => {
-        const tree = renderWithProviders(
-            <AddButton buttonType="primary" onClick={jest.fn()} label="Primary Button" />,
-            'mobile',
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Button has secondary styles (desktop)', () => {
+    test('has secondary styles', () => {
         const tree = renderWithProviders(
             <AddButton buttonType="secondary" onClick={jest.fn()} label="Secondary Button" />,
-            'desktop',
         );
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('Button has secondary styles (mobile)', () => {
-        const tree = renderWithProviders(
-            <AddButton buttonType="secondary" onClick={jest.fn()} label="Secondary Button" />,
-            'mobile',
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Button has tertiary styles (desktop)', () => {
+    test('has tertiary styles', () => {
         const tree = renderWithProviders(
             <AddButton buttonType="tertiary" onClick={jest.fn()} label="Tertiary Button" />,
-            'desktop',
         );
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('Button has tertiary styles (mobile)', () => {
+    test('has mobile styles', () => {
         const tree = renderWithProviders(
-            <AddButton buttonType="tertiary" onClick={jest.fn()} label="Tertiary Button" />,
+            <AddButton buttonType="primary" onClick={jest.fn()} label="Primary Button" />,
             'mobile',
         );
 

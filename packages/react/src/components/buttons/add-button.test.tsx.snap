@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Add Button Button has primary styles (desktop) 1`] = `
+exports[`Add Button has disabled styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -74,6 +74,7 @@ exports[`Add Button Button has primary styles (desktop) 1`] = `
 
 <button
   class="c0"
+  disabled=""
   label="Primary Button"
   type="submit"
 >
@@ -84,7 +85,7 @@ exports[`Add Button Button has primary styles (desktop) 1`] = `
 </button>
 `;
 
-exports[`Add Button Button has primary styles (mobile) 1`] = `
+exports[`Add Button has mobile styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -164,7 +165,7 @@ exports[`Add Button Button has primary styles (mobile) 1`] = `
 </button>
 `;
 
-exports[`Add Button Button has secondary styles (desktop) 1`] = `
+exports[`Add Button has primary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -238,17 +239,17 @@ exports[`Add Button Button has secondary styles (desktop) 1`] = `
 
 <button
   class="c0"
-  label="Secondary Button"
+  label="Primary Button"
   type="submit"
 >
   <svg
     class="c1"
   />
-  Secondary Button
+  Primary Button
 </button>
 `;
 
-exports[`Add Button Button has secondary styles (mobile) 1`] = `
+exports[`Add Button has secondary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -266,22 +267,22 @@ exports[`Add Button Button has secondary styles (mobile) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 48px;
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.53px;
-  -moz-letter-spacing: 0.53px;
-  -ms-letter-spacing: 0.53px;
-  letter-spacing: 0.53px;
-  line-height: 1.5rem;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-3x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -330,7 +331,7 @@ exports[`Add Button Button has secondary styles (mobile) 1`] = `
 </button>
 `;
 
-exports[`Add Button Button has tertiary styles (desktop) 1`] = `
+exports[`Add Button has tertiary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
