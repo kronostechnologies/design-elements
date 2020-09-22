@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { LegacyAbstractButton } from './abstract-button';
+import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {
     label?: string;
@@ -11,7 +11,7 @@ interface ButtonProps {
     onClick?(): void;
 }
 
-const StyledButton = styled(LegacyAbstractButton)`
+const StyledButton = styled(AbstractButton)`
     ${props => `
         background: ${props.theme.greys.white};
         border-color: ${props.theme.greys.grey};
@@ -38,9 +38,9 @@ const StyledButton = styled(LegacyAbstractButton)`
         }`}
 `;
 
-export function SearchButton({ children, label, ...props }: ButtonProps): ReactElement {
+export function SearchButton({ children, label, className, disabled, onClick }: ButtonProps): ReactElement {
     return (
-        <StyledButton {...props}>
+        <StyledButton isMobile={false} className={className} disabled={disabled} onClick={onClick}>
             {children}{label}
         </StyledButton>
     );

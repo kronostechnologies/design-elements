@@ -69,7 +69,7 @@ exports[`Add Button has disabled styles 1`] = `
 }
 
 .c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
+  margin-right: var(--spacing-1x);
 }
 
 <button
@@ -79,6 +79,10 @@ exports[`Add Button has disabled styles 1`] = `
 >
   <svg
     class="c1"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
   />
   Primary Button
 </button>
@@ -123,8 +127,8 @@ exports[`Add Button has mobile styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -137,19 +141,23 @@ exports[`Add Button has mobile styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled,
 .c0:disabled:focus,
 .c0:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
+  background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 .c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
+  margin-right: var(--spacing-1x);
 }
 
 <button
@@ -158,12 +166,103 @@ exports[`Add Button has mobile styles 1`] = `
 >
   <svg
     class="c1"
+    color="currentColor"
+    focusable="false"
+    height="24"
+    width="24"
   />
   Primary Button
 </button>
 `;
 
 exports[`Add Button has primary styles 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c0:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover {
+  background-color: #99CCDB;
+  border-color: #99CCDB;
+}
+
+.c1 {
+  margin-right: var(--spacing-1x);
+}
+
+<button
+  class="c0"
+  type="submit"
+>
+  <svg
+    class="c1"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
+  Primary Button
+</button>
+`;
+
+exports[`Add Button has secondary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -232,7 +331,7 @@ exports[`Add Button has primary styles 1`] = `
 }
 
 .c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
+  margin-right: var(--spacing-1x);
 }
 
 <button
@@ -241,87 +340,10 @@ exports[`Add Button has primary styles 1`] = `
 >
   <svg
     class="c1"
-  />
-  Primary Button
-</button>
-`;
-
-exports[`Add Button has secondary styles 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  height: 32px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  line-height: 1rem;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: #EF483E;
-  color: #EF483E;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: transparent;
-  border-color: #F9B6B2;
-  color: #F9B6B2;
-}
-
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
-<button
-  class="c0"
-  type="submit"
->
-  <svg
-    class="c1"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
   />
   Secondary Button
 </button>
@@ -397,7 +419,7 @@ exports[`Add Button has tertiary styles 1`] = `
 }
 
 .c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
+  margin-right: var(--spacing-1x);
 }
 
 <button
@@ -406,251 +428,11 @@ exports[`Add Button has tertiary styles 1`] = `
 >
   <svg
     class="c1"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
   />
   Tertiary Button
-</button>
-`;
-
-exports[`Add Button Button has tertiary styles (mobile) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  height: 48px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.53px;
-  -moz-letter-spacing: 0.53px;
-  -ms-letter-spacing: 0.53px;
-  letter-spacing: 0.53px;
-  line-height: 1.5rem;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-3x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  color: #000000;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  color: #9CA7B4;
-}
-
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
-<button
-  class="c0"
-  label="Tertiary Button"
-  type="submit"
->
-  <svg
-    class="c1"
-  />
-  Tertiary Button
-</button>
-`;
-
-exports[`Add Button Button is disabled (desktop) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  height: 32px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  line-height: 1rem;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
-}
-
-.c0:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
-}
-
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
-<button
-  class="c0"
-  disabled=""
-  label="Primary Button"
-  type="submit"
->
-  <svg
-    class="c1"
-  />
-  Primary Button
-</button>
-`;
-
-exports[`Add Button Button is disabled (mobile) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: var(--font-bold);
-  height: 48px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.53px;
-  -moz-letter-spacing: 0.53px;
-  -ms-letter-spacing: 0.53px;
-  letter-spacing: 0.53px;
-  line-height: 1.5rem;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-3x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
-.c0 > svg {
-  color: inherit;
-}
-
-.c0:hover {
-  background-color: #D41F14;
-  border-color: #D41F14;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
-  background-color: #F9B6B2;
-  border-color: #F9B6B2;
-}
-
-.c1 {
-  margin: -1px var(--spacing-half) -1px calc(var(--spacing-half) * -1);
-}
-
-<button
-  class="c0"
-  disabled=""
-  label="Primary Button"
-  type="submit"
->
-  <svg
-    class="c1"
-  />
-  Primary Button
 </button>
 `;

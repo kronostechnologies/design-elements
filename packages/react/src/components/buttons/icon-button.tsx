@@ -44,7 +44,6 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-    height: ${({ isMobile }) => isMobile ? '48px' : '32px'};
     ${(props: { theme: Theme, buttonType: ButtonType }) => {
         switch (props.buttonType) {
             case 'primary':

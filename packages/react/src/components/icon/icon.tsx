@@ -23,6 +23,7 @@ import Menu from 'feather-icons/dist/icons/menu.svg';
 import MoreHorizontal from 'feather-icons/dist/icons/more-horizontal.svg';
 import MoreVertical from 'feather-icons/dist/icons/more-vertical.svg';
 import Phone from 'feather-icons/dist/icons/phone.svg';
+import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash.svg';
@@ -55,6 +56,7 @@ const iconMapping = {
     moreVertical: MoreVertical,
     open: Open,
     phone: Phone,
+    plusSign: PlusSign,
     reorder: Reorder,
     search: Search,
     star: Star,

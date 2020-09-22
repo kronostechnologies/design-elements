@@ -39,7 +39,6 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -298,7 +297,6 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 48px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
