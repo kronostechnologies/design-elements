@@ -73,13 +73,12 @@ exports[`Add Button Button has primary styles 1`] = `
 }
 
 <button
-  className="c0"
+  class="c0"
   label="Primary Button"
-  onClick={[Function]}
   type="submit"
 >
   <svg
-    className="c1"
+    class="c1"
   />
   Primary Button
 </button>
@@ -158,13 +157,12 @@ exports[`Add Button Button has secondary styles 1`] = `
 }
 
 <button
-  className="c0"
+  class="c0"
   label="Secondary Button"
-  onClick={[Function]}
   type="submit"
 >
   <svg
-    className="c1"
+    class="c1"
   />
   Secondary Button
 </button>
@@ -244,13 +242,12 @@ exports[`Add Button Button has tertiary styles 1`] = `
 }
 
 <button
-  className="c0"
+  class="c0"
   label="Tertiary Button"
-  onClick={[Function]}
   type="submit"
 >
   <svg
-    className="c1"
+    class="c1"
   />
   Tertiary Button
 </button>
@@ -329,14 +326,13 @@ exports[`Add Button Button is disabled 1`] = `
 }
 
 <button
-  className="c0"
-  disabled={true}
+  class="c0"
+  disabled=""
   label="Primary Button"
-  onClick={[Function]}
   type="submit"
 >
   <svg
-    className="c1"
+    class="c1"
   />
   Primary Button
 </button>
