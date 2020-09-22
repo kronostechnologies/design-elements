@@ -1,6 +1,5 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement, ReactNode } from 'react';
-
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Button } from './button';
 
@@ -30,11 +29,9 @@ interface ButtonProps {
     onClick?(): void;
 }
 
-export function AddButton({ onClick, type = 'submit', ...props }: ButtonProps): ReactElement {
-    const handleClick = () => { onClick && onClick(); };
-
+export function AddButton({ type = 'submit', ...props }: ButtonProps): ReactElement {
     return (
-        <Button onClick={handleClick} type={type} {...props}>
+        <Button type={type} {...props}>
             <PlusIcon />
         </Button>
     );
