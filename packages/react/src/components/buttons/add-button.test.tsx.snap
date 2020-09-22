@@ -75,7 +75,6 @@ exports[`Add Button has disabled styles 1`] = `
 <button
   class="c0"
   disabled=""
-  label="Primary Button"
   type="submit"
 >
   <svg
@@ -155,7 +154,6 @@ exports[`Add Button has mobile styles 1`] = `
 
 <button
   class="c0"
-  label="Primary Button"
   type="submit"
 >
   <svg
@@ -239,7 +237,6 @@ exports[`Add Button has primary styles 1`] = `
 
 <button
   class="c0"
-  label="Primary Button"
   type="submit"
 >
   <svg
@@ -321,7 +318,6 @@ exports[`Add Button has secondary styles 1`] = `
 
 <button
   class="c0"
-  label="Secondary Button"
   type="submit"
 >
   <svg
@@ -406,7 +402,6 @@ exports[`Add Button has tertiary styles 1`] = `
 
 <button
   class="c0"
-  label="Tertiary Button"
   type="submit"
 >
   <svg

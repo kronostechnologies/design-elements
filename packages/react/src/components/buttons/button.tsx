@@ -100,16 +100,11 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
 }
 `;
 
-export function Button({ children, onClick, type = 'submit', ...props }: ButtonProps): ReactElement {
+export function Button({ children, label, type = 'submit', ...props }: ButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
 
-    function handleClick(): void {
-        onClick && onClick();
-    }
-
-    const label: string = props.label || '';
     return (
-        <StyledButton isMobile={isMobile} onClick={handleClick} type={type} {...props}>
+        <StyledButton isMobile={isMobile} type={type} {...props}>
             {children}{label}
         </StyledButton>
     );
