@@ -1,8 +1,6 @@
-import React, { ReactNode } from 'react';
-
+import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { AbstractButton } from './abstract-button';
+import { LegacyAbstractButton } from './abstract-button';
 
 interface ButtonProps {
     label?: string;
@@ -13,7 +11,7 @@ interface ButtonProps {
     onClick?(): void;
 }
 
-const StyledButton = styled(AbstractButton)`
+const StyledButton = styled(LegacyAbstractButton)`
     ${props => `
         background: ${props.theme.greys.white};
         border-color: ${props.theme.greys.grey};
@@ -40,13 +38,10 @@ const StyledButton = styled(AbstractButton)`
         }`}
 `;
 
-export const SearchButton = ({ children, className, disabled, label, onClick }: ButtonProps) => {
-    const { isMobile } = useDeviceContext();
-    const handleClick = () => { onClick && onClick(); };
-
+export function SearchButton({ children, label, ...props }: ButtonProps): ReactElement {
     return (
-        <StyledButton isMobile={isMobile} className={className} disabled={disabled} onClick={handleClick}>
+        <StyledButton {...props}>
             {children}{label}
         </StyledButton>
     );
-};
+}

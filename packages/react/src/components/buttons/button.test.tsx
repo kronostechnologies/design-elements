@@ -21,37 +21,36 @@ describe('Button', () => {
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
-    test('Is disabled', () => {
+    test('has disabled styles', () => {
         const tree = renderWithProviders(
             <Button onClick={() => {}} buttonType="primary" disabled label="Primary Button" />,
-            'desktop',
         );
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('Has primary styles', () => {
+    test('has primary styles', () => {
+        const tree = renderWithProviders(<Button onClick={() => {}} buttonType="primary" label="Primary Button" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has secondary styles', () => {
+        const tree = renderWithProviders(<Button onClick={() => {}} buttonType="secondary" label="Secondary Button" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has tertiary styles', () => {
+        const tree = renderWithProviders(<Button onClick={() => {}} buttonType="tertiary" label="Tertiary Button" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has mobile styles', () => {
         const tree = renderWithProviders(
             <Button onClick={() => {}} buttonType="primary" label="Primary Button" />,
-            'desktop',
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Has secondary styles', () => {
-        const tree = renderWithProviders(
-            <Button onClick={() => {}} buttonType="secondary" label="Secondary Button" />,
-            'desktop',
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Has tertiary styles', () => {
-        const tree = renderWithProviders(
-            <Button onClick={() => {}} buttonType="tertiary" label="Tertiary Button" />,
-            'desktop',
+            'mobile',
         );
 
         expect(tree).toMatchSnapshot();
