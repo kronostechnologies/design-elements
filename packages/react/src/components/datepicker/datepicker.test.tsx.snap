@@ -5481,7 +5481,6 @@ input + .c1 {
                 aria-label="Choose today's date"
                 class="c16"
                 data-testid="today-button"
-                label="Today"
                 type="button"
               >
                 Today

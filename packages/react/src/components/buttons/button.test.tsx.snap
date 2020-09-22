@@ -71,7 +71,6 @@ exports[`Button has disabled styles 1`] = `
 <button
   class="c0"
   disabled=""
-  label="Primary Button"
   type="submit"
 >
   Primary Button
@@ -144,7 +143,6 @@ exports[`Button has mobile styles 1`] = `
 
 <button
   class="c0"
-  label="Primary Button"
   type="submit"
 >
   Primary Button
@@ -221,7 +219,6 @@ exports[`Button has primary styles 1`] = `
 
 <button
   class="c0"
-  label="Primary Button"
   type="submit"
 >
   Primary Button
@@ -296,7 +293,6 @@ exports[`Button has secondary styles 1`] = `
 
 <button
   class="c0"
-  label="Secondary Button"
   type="submit"
 >
   Secondary Button
@@ -374,7 +370,6 @@ exports[`Button has tertiary styles 1`] = `
 
 <button
   class="c0"
-  label="Tertiary Button"
   type="submit"
 >
   Tertiary Button
