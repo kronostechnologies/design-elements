@@ -1,40 +1,41 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { FieldContainer } from './field-container';
 
 describe('Field Container', () => {
-    test('Valid field snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <FieldContainer
-                    fieldId="test-id"
-                    label="test label"
-                    valid
-                    validationErrorMessage="This text area input is invalid"
-                >
-                    Children
-                </FieldContainer>,
-            ),
-        ).toJSON();
+    test('normal', () => {
+        const tree = renderWithProviders(
+            <FieldContainer valid {...defaultProps}>
+                Children
+            </FieldContainer>,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('Invalid field snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <FieldContainer
-                    fieldId="test-id"
-                    label="test label"
-                    valid={false}
-                    validationErrorMessage="This text area input is invalid"
-                >
-                    Children
-                </FieldContainer>,
-            ),
-        ).toJSON();
+    test('invalid', () => {
+        const tree = renderWithProviders(
+            <FieldContainer valid={false} {...defaultProps}>
+                Children
+            </FieldContainer>,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has no margin', () => {
+        const tree = renderWithProviders(
+            <FieldContainer valid disableMargin {...defaultProps}>
+                Children
+            </FieldContainer>,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 });
+
+const defaultProps = {
+    fieldId: 'test-id',
+    label: 'test label',
+    validationErrorMessage: 'This text area input is invalid',
+};

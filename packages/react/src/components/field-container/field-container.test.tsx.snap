@@ -1,6 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field Container Invalid field snapshot 1`] = `
+exports[`Field Container has no margin 1`] = `
+.c1 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0;
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #D9DDE2;
+}
+
+.c0:focus {
+  border-color: #0080A5;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    for="test-id"
+  >
+    test label
+  </label>
+  Children
+</div>
+`;
+
+exports[`Field Container invalid 1`] = `
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -48,18 +96,18 @@ input + .c1 {
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    htmlFor="test-id"
+    class="c1"
+    for="test-id"
   >
     test label
   </label>
   Children
   <div
     aria-live="polite"
-    className="c2"
+    class="c2"
     id="test-id_invalid"
     role="alert"
   >
@@ -68,7 +116,7 @@ input + .c1 {
 </div>
 `;
 
-exports[`Field Container Valid field snapshot 1`] = `
+exports[`Field Container normal 1`] = `
 .c1 {
   color: #000000;
   display: block;
@@ -104,11 +152,11 @@ input + .c1 {
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    htmlFor="test-id"
+    class="c1"
+    for="test-id"
   >
     test label
   </label>
