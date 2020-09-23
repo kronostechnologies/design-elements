@@ -19,6 +19,8 @@ export interface TextAreaProps {
     label: string;
     defaultValue?: string;
     disabled?: boolean;
+    /** Disables default margin */
+    disableMargin?: boolean;
     placeholder?: string;
     required?: boolean;
     /**
@@ -38,7 +40,13 @@ interface ValidityProps {
     validity: boolean;
 }
 
-export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps): ReactElement {
+export function TextArea({
+    disableMargin,
+    onBlur,
+    onChange,
+    onFocus,
+    ...props
+}: TextAreaProps): ReactElement {
     const { t } = useTranslation('text-area');
     const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
     const id = uuid();
@@ -67,6 +75,7 @@ export function TextArea({ onBlur, onChange, onFocus, ...props }: TextAreaProps)
 
     return (
         <FieldContainer
+            disableMargin={disableMargin}
             fieldId={id}
             label={label}
             valid={validity}

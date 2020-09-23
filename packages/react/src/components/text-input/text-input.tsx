@@ -18,6 +18,8 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
 interface TextInputProps extends PartialInputProps {
     defaultValue?: string;
     disabled?: boolean;
+    /** Disables default margin */
+    disableMargin?: boolean;
     inputMode?: inputModeType;
     label?: string;
     pattern?: string;
@@ -33,77 +35,82 @@ interface TextInputProps extends PartialInputProps {
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
-export const TextInput = React.forwardRef(
-    ({ onBlur, onChange, onFocus, ...props }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
-        const { t } = useTranslation('text-input', { useSuspense: false });
-        const [{ validity }, setValidity] = useState({ validity: true });
-        const id = uuid();
+export const TextInput = React.forwardRef(({
+    disableMargin,
+    onBlur,
+    onChange,
+    onFocus,
+    ...props
+}: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
+    const { t } = useTranslation('text-input', { useSuspense: false });
+    const [{ validity }, setValidity] = useState({ validity: true });
+    const id = uuid();
 
-        function handleBlur(event: FocusEvent<HTMLInputElement>): void {
-            setValidity({ validity: event.currentTarget.checkValidity() });
+    function handleBlur(event: FocusEvent<HTMLInputElement>): void {
+        setValidity({ validity: event.currentTarget.checkValidity() });
 
-            if (onBlur) {
-                onBlur(event);
-            }
+        if (onBlur) {
+            onBlur(event);
         }
+    }
 
-        function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-            if (onChange) {
-                onChange(event);
-            }
+    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+        if (onChange) {
+            onChange(event);
         }
+    }
 
-        function handleFocus(event: FocusEvent<HTMLInputElement>): void {
-            if (onFocus) {
-                onFocus(event);
-            }
+    function handleFocus(event: FocusEvent<HTMLInputElement>): void {
+        if (onFocus) {
+            onFocus(event);
         }
+    }
 
-        function getInputTypePlaceholder(inputType: string | undefined): string {
-            switch (inputType) {
-                case 'email':
-                    return t(`placeholder-${inputType}`);
-                default:
-                    return t('placeholder');
-            }
+    function getInputTypePlaceholder(inputType: string | undefined): string {
+        switch (inputType) {
+            case 'email':
+                return t(`placeholder-${inputType}`);
+            default:
+                return t('placeholder');
         }
+    }
 
-        const {
-            defaultValue,
-            disabled,
-            inputMode,
-            label,
-            pattern,
-            placeholder,
-            required,
-            type,
-            validationErrorMessage,
-            value,
-        } = props;
+    const {
+        defaultValue,
+        disabled,
+        inputMode,
+        label,
+        pattern,
+        placeholder,
+        required,
+        type,
+        validationErrorMessage,
+        value,
+    } = props;
 
-        return (
-            <FieldContainer
-                fieldId={id}
-                label={label}
-                valid={validity}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-            >
-                <Input
-                    defaultValue={defaultValue}
-                    disabled={disabled}
-                    id={id}
-                    inputMode={inputMode}
-                    ref={ref}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    pattern={pattern}
-                    placeholder={placeholder || getInputTypePlaceholder(type)}
-                    required={required}
-                    type={type || 'text'}
-                    value={value}
-                />
-            </FieldContainer>
-        );
-    },
-);
+    return (
+        <FieldContainer
+            disableMargin={disableMargin}
+            fieldId={id}
+            label={label}
+            valid={validity}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+        >
+            <Input
+                defaultValue={defaultValue}
+                disabled={disabled}
+                id={id}
+                inputMode={inputMode}
+                ref={ref}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                pattern={pattern}
+                placeholder={placeholder || getInputTypePlaceholder(type)}
+                required={required}
+                type={type || 'text'}
+                value={value}
+            />
+        </FieldContainer>
+    );
+});

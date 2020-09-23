@@ -125,6 +125,8 @@ interface SelectProps {
      * Disables input
      */
     disabled?: boolean;
+    /** Disables default margin */
+    disableMargin?: boolean;
     id?: string;
     label?: string;
     name?: string;
@@ -171,6 +173,7 @@ export function Select({
     defaultOpen = false,
     defaultValue,
     disabled,
+    disableMargin,
     id,
     label,
     onChange,
@@ -459,6 +462,7 @@ export function Select({
     return (
         <>
             <StyledFieldContainer
+                disableMargin={disableMargin}
                 fieldId={fieldId}
                 label={label}
                 valid={valid}

@@ -241,6 +241,8 @@ interface DatepickerProps {
     /** Sets date format (e.g.: dd/MM/yyyy). */
     dateFormat?: string;
     disabled?: boolean;
+    /** Disables default margin */
+    disableMargin?: boolean;
     firstDayOfWeek?: DayOfWeek;
     hasTodayButton?: boolean;
     id?: string;
@@ -293,6 +295,7 @@ registerLocale('fr-CA', frCA);
 export function Datepicker({
     dateFormat,
     disabled,
+    disableMargin,
     firstDayOfWeek,
     hasTodayButton,
     id,
@@ -415,6 +418,7 @@ export function Datepicker({
         <>
             <ReactDatePickerStyles />
             <FieldContainer
+                disableMargin={disableMargin}
                 fieldId={fieldId}
                 label={label}
                 valid={valid}
