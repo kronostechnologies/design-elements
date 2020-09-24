@@ -41,7 +41,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 32px;
@@ -56,10 +56,17 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c2:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c2:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c2:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 
@@ -293,7 +300,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   user-select: none;
   height: 48px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 48px;
@@ -308,10 +315,17 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c2:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c2:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c2:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 

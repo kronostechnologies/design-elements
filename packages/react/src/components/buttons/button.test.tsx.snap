@@ -58,7 +58,7 @@ exports[`Button Has primary styles 1`] = `
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled,
@@ -136,7 +136,7 @@ exports[`Button Has secondary styles 1`] = `
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled,
@@ -215,7 +215,7 @@ exports[`Button Has tertiary styles 1`] = `
 
 .c0:focus {
   border-color: #0080A5;
-  box-shadow: 0 0 0 2px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled,
@@ -293,7 +293,7 @@ exports[`Button Is disabled 1`] = `
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled,

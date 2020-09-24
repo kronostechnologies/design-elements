@@ -3469,7 +3469,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c16:focus {
-  box-shadow: 0 0 0 2px #99CCDB;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c16:disabled,
