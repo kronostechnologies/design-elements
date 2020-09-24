@@ -19,7 +19,7 @@ interface TextInputProps extends PartialInputProps {
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
-    disableMargin?: boolean;
+    noMargin?: boolean;
     inputMode?: inputModeType;
     label?: string;
     pattern?: string;
@@ -36,7 +36,7 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = React.forwardRef(({
-    disableMargin,
+    noMargin,
     onBlur,
     onChange,
     onFocus,
@@ -90,7 +90,7 @@ export const TextInput = React.forwardRef(({
 
     return (
         <FieldContainer
-            disableMargin={disableMargin}
+            noMargin={noMargin}
             fieldId={id}
             label={label}
             valid={validity}
