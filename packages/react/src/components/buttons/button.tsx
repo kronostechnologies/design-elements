@@ -35,7 +35,7 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                         border-color: ${props.theme.main['primary-1.3']};
                     }
                     &:focus {
-                        box-shadow: 0 0 0 2px ${props.theme.main['primary-1.2']};
+                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
@@ -58,7 +58,7 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                         color: ${props.theme.main['primary-1.3']};
                     }
                     &:focus {
-                        box-shadow: 0 0 0 2px ${props.theme.main['primary-1.2']};
+                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
@@ -82,7 +82,7 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     }
                     &:focus {
                         border-color: ${props.theme.main['primary-1.1']};
-                        box-shadow: 0 0 0 2px ${props.theme.main['primary-1.2']};
+                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
