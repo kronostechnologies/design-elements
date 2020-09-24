@@ -20,7 +20,7 @@ export interface TextAreaProps {
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
-    disableMargin?: boolean;
+    noMargin?: boolean;
     placeholder?: string;
     required?: boolean;
     /**
@@ -41,7 +41,7 @@ interface ValidityProps {
 }
 
 export function TextArea({
-    disableMargin,
+    noMargin,
     onBlur,
     onChange,
     onFocus,
@@ -75,7 +75,7 @@ export function TextArea({
 
     return (
         <FieldContainer
-            disableMargin={disableMargin}
+            noMargin={noMargin}
             fieldId={id}
             label={label}
             valid={validity}

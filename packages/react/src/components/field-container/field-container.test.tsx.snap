@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field Container has no margin 1`] = `
+exports[`Field Container matches snapshot 1`] = `
 .c1 {
   color: #000000;
   display: block;
@@ -22,7 +22,7 @@ input + .c1 {
 }
 
 .c0 {
-  margin: 0;
+  margin: 0 0 var(--spacing-3x);
 }
 
 .c0 input,
@@ -48,7 +48,7 @@ input + .c1 {
 </div>
 `;
 
-exports[`Field Container invalid 1`] = `
+exports[`Field Container should have invalid styles given valid prop is set to false 1`] = `
 .c2 {
   color: #A40C2E;
   font-size: 0.75rem;
@@ -116,7 +116,7 @@ input + .c1 {
 </div>
 `;
 
-exports[`Field Container normal 1`] = `
+exports[`Field Container should not have margins given noMargin prop is set to true 1`] = `
 .c1 {
   color: #000000;
   display: block;
@@ -138,7 +138,7 @@ input + .c1 {
 }
 
 .c0 {
-  margin: 0 0 var(--spacing-3x);
+  margin: 0;
 }
 
 .c0 input,

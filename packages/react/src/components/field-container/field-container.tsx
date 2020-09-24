@@ -6,7 +6,7 @@ import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const StyledDiv = styled.div<StyledDivProps>`
-    margin: ${({ disableMargin }) => disableMargin ? '0' : '0 0 var(--spacing-3x)'};
+    margin: ${({ noMargin }) => noMargin ? '0' : '0 0 var(--spacing-3x)'};
 
     input,
     select,
@@ -22,12 +22,12 @@ const StyledDiv = styled.div<StyledDivProps>`
 interface StyledDivProps {
     theme: Theme;
     valid: boolean;
-    disableMargin?: boolean;
+    noMargin?: boolean;
 }
 
 interface FieldContainerProps {
     children: ReactNode;
-    disableMargin?: boolean;
+    noMargin?: boolean;
     fieldId: string;
     label?: string;
     valid: boolean;

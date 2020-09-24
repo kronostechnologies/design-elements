@@ -242,7 +242,7 @@ interface DatepickerProps {
     dateFormat?: string;
     disabled?: boolean;
     /** Disables default margin */
-    disableMargin?: boolean;
+    noMargin?: boolean;
     firstDayOfWeek?: DayOfWeek;
     hasTodayButton?: boolean;
     id?: string;
@@ -295,7 +295,7 @@ registerLocale('fr-CA', frCA);
 export function Datepicker({
     dateFormat,
     disabled,
-    disableMargin,
+    noMargin,
     firstDayOfWeek,
     hasTodayButton,
     id,
@@ -418,7 +418,7 @@ export function Datepicker({
         <>
             <ReactDatePickerStyles />
             <FieldContainer
-                disableMargin={disableMargin}
+                noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
                 valid={valid}

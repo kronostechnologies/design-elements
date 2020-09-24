@@ -3,7 +3,7 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { FieldContainer } from './field-container';
 
 describe('Field Container', () => {
-    test('normal', () => {
+    test('matches snapshot', () => {
         const tree = renderWithProviders(
             <FieldContainer valid {...defaultProps}>
                 Children
@@ -13,7 +13,7 @@ describe('Field Container', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('invalid', () => {
+    test('should have invalid styles given valid prop is set to false', () => {
         const tree = renderWithProviders(
             <FieldContainer valid={false} {...defaultProps}>
                 Children
@@ -23,9 +23,9 @@ describe('Field Container', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has no margin', () => {
+    test('should not have margins given noMargin prop is set to true', () => {
         const tree = renderWithProviders(
-            <FieldContainer valid disableMargin {...defaultProps}>
+            <FieldContainer valid noMargin {...defaultProps}>
                 Children
             </FieldContainer>,
         );
