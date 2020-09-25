@@ -3451,8 +3451,8 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: transparent;
-  border-color: #EF483E;
-  color: #EF483E;
+  border-color: #0080A5;
+  color: #0080A5;
 }
 
 .c16:not(:disabled) {
@@ -3464,17 +3464,19 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c16:hover {
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
+  border-color: #005F7A;
+  color: #005F7A;
+}
+
+.c16:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c16:disabled,
 .c16:disabled:focus,
 .c16:disabled:hover {
-  background-color: transparent;
-  border-color: #F9B6B2;
-  color: #F9B6B2;
+  border-color: #99CCDB;
+  color: #99CCDB;
 }
 
 .c1 {

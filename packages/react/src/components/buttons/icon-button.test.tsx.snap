@@ -40,7 +40,7 @@ exports[`Icon Button Has disabled styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 32px;
-  background-color: #EF483E;
+  background-color: #0080A5;
   border: none;
   color: #FFFFFF;
   padding: 0;
@@ -56,11 +56,15 @@ exports[`Icon Button Has disabled styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
+  background-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled {
-  background-color: #F9B6B2;
+  background-color: #99CCDB;
 }
 
 <button
@@ -118,7 +122,7 @@ exports[`Icon Button Has mobile styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 48px;
-  background-color: #EF483E;
+  background-color: #0080A5;
   border: none;
   color: #FFFFFF;
   padding: 0;
@@ -134,11 +138,15 @@ exports[`Icon Button Has mobile styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
+  background-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled {
-  background-color: #F9B6B2;
+  background-color: #99CCDB;
 }
 
 <button
@@ -195,7 +203,7 @@ exports[`Icon Button Has primary styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 32px;
-  background-color: #EF483E;
+  background-color: #0080A5;
   border: none;
   color: #FFFFFF;
   padding: 0;
@@ -211,11 +219,15 @@ exports[`Icon Button Has primary styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #D41F14;
+  background-color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled {
-  background-color: #F9B6B2;
+  background-color: #99CCDB;
 }
 
 <button
@@ -273,8 +285,8 @@ exports[`Icon Button Has secondary styles 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border-color: #EF483E;
-  color: #EF483E;
+  border-color: #0080A5;
+  color: #0080A5;
   padding: 0;
   width: 32px;
 }
@@ -288,15 +300,17 @@ exports[`Icon Button Has secondary styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #EF483E;
-  border-color: #EF483E;
-  color: #FFFFFF;
+  border-color: #005F7A;
+  color: #005F7A;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c0:disabled {
-  background-color: transparent;
-  border-color: #F9B6B2;
-  color: #F9B6B2;
+  border-color: #99CCDB;
+  color: #99CCDB;
 }
 
 <button
@@ -354,7 +368,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
   user-select: none;
   height: 32px;
   background-color: transparent;
-  border: none;
+  border-color: transparent;
   color: #57666E;
   padding: 0;
   width: 32px;
@@ -369,10 +383,17 @@ exports[`Icon Button Has tertiary styles 1`] = `
 }
 
 .c0:hover {
+  background-color: #D9DDE2;
   color: #000000;
 }
 
+.c0:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
 .c0:disabled {
+  background-color: transparent;
   color: #9CA7B4;
 }
 

@@ -49,47 +49,59 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
         switch (props.buttonType) {
             case 'primary':
                 return `
-                    background-color: ${props.theme.main['secondary-4.1']};
+                    background-color: ${props.theme.main['primary-1.1']};
                     border: none;
                     color: ${props.theme.greys.white};
 
                     &:hover {
-                      background-color: ${props.theme.main['secondary-4.3']};
+                      background-color: ${props.theme.main['primary-1.3']};
+                    }
+
+                    &:focus {
+                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
-                      background-color: ${props.theme.main['secondary-4.2']};
+                      background-color: ${props.theme.main['primary-1.2']};
                     }
                   `;
             case 'secondary':
                 return `
                     background-color: transparent;
-                    border-color: ${props.theme.main['secondary-4.1']};
-                    color: ${props.theme.main['secondary-4.1']};
+                    border-color: ${props.theme.main['primary-1.1']};
+                    color: ${props.theme.main['primary-1.1']};
 
                     &:hover {
-                      background-color: ${props.theme.main['secondary-4.1']};
-                      border-color: ${props.theme.main['secondary-4.1']};
-                      color: ${props.theme.greys.white};
+                      border-color: ${props.theme.main['primary-1.3']};
+                      color: ${props.theme.main['primary-1.3']};
+                    }
+
+                    &:focus {
+                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
-                      background-color: transparent;
-                      border-color: ${props.theme.main['secondary-4.2']};
-                      color: ${props.theme.main['secondary-4.2']};
+                      border-color: ${props.theme.main['primary-1.2']};
+                      color: ${props.theme.main['primary-1.2']};
                     }
                 `;
             case 'tertiary':
                 return `
                     background-color: transparent;
-                    border: none;
+                    border-color: transparent;
                     color: ${props.theme.greys['dark-grey']};
 
                     &:hover {
+                      background-color: ${props.theme.greys.grey};
                       color: ${props.theme.greys.black};
+                    }
+                    &:focus {
+                        border-color: ${props.theme.main['primary-1.1']};
+                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
+                        background-color: transparent;
                         color: ${props.theme.greys['mid-grey']};
                     }
                 `;
