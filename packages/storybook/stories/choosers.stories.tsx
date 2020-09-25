@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Chooser } from '@equisoft/design-elements-react';
+import React from 'react';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },

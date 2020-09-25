@@ -1,6 +1,5 @@
-import React, { MouseEvent } from 'react';
-
 import { ToggleButtonGroup } from '@equisoft/design-elements-react';
+import React, { MouseEvent } from 'react';
 
 const buttonGroup = [
     { label: 'Option 1', value: 'option1' },

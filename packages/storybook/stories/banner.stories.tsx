@@ -1,10 +1,11 @@
-import { Banner, DeviceContextProvider } from '@equisoft/design-elements-react';
-import React, { ReactElement } from 'react';
+import { Banner } from '@equisoft/design-elements-react';
+import React from 'react';
+import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 export default {
     title: 'Banner',
     component: Banner,
-    decorators: [(storyFn: () => ReactElement) => <DeviceContextProvider>{storyFn()}</DeviceContextProvider>],
+    decorators: [DeviceContextDecorator],
 };
 
 export const banners = () => (

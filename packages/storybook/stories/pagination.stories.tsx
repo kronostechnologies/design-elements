@@ -1,10 +1,11 @@
-import { DeviceContextProvider, Pagination } from '@equisoft/design-elements-react';
+import { Pagination } from '@equisoft/design-elements-react';
 import React from 'react';
+import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 export default {
     title: 'Pagination',
     component: Pagination,
-    decorators: [(storyFn: () => React.ReactElement) => <DeviceContextProvider>{storyFn()}</DeviceContextProvider>],
+    decorators: [DeviceContextDecorator],
 };
 
 export const normal = () => (
