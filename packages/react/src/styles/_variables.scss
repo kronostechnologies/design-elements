@@ -15,4 +15,6 @@
   --spacing-7x: calc(7 * var(--spacing-base));
   // var for border-radius
   --border-radius: 4px;
+  // utils var
+  --focus-box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
 }

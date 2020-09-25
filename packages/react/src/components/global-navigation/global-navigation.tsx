@@ -32,7 +32,7 @@ const MenuLink = styled(NavLink)`
     width: max-content;
 
     &:focus {
-        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        box-shadow: var(--focus-box-shadow);
         outline: none;
     }
 
@@ -85,7 +85,7 @@ const ShowMore = styled.button<{active?: boolean}>`
     width: 32px;
 
     &:focus {
-        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        box-shadow: var(--focus-box-shadow);
         outline: none;
     }
 
@@ -127,7 +127,7 @@ const IconLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     }
 
     &:focus {
-        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        box-shadow: var(--focus-box-shadow);
         outline: none;
     }
 `;

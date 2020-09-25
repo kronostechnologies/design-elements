@@ -2252,10 +2252,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.30":
-  version "2.0.3-alpha.30"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.30.tgz#e5390c897f348b1f4f583c5ffc6cee74ee293cba"
-  integrity sha512-i4gpaeAOP7H1rpHGQ1QNmqeoYCola7ZvSUbMY1Rwb39229vBRr2IMFbQV5hf9o4+/WKh4+ieSMjf3GiRAqqU5Q==
+"@equisoft/design-elements-react@^2.0.3-alpha.31":
+  version "2.0.3-alpha.31"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.31.tgz#9c75be41509b15cd0411efac815d610958dca1c7"
+  integrity sha512-rnlYxdC9caiBv3ZrBtW/LLTi4Mi5dvQIuQWynRC/JRRokQszgUUNdAw1OglXFTHyrWnzjxm6xe/3T6xW/y/Jng==
   dependencies:
     date-fns "^2.14.0"
     feather-icons "^4.21.0"
@@ -2267,10 +2267,10 @@
     react-table "^7.1.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.30":
-  version "2.0.3-alpha.30"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.30.tgz#ec32fba937e1ac8225060c1705596b2244993ba0"
-  integrity sha512-s84mgRwOCM7s7URbL0IGBw4EFnR/MzLIJzZ06s9nBCX/McaBDo6uRV2nFPrmq43xQO82Bo/6PnmDzSOZEMYZAQ==
+"@equisoft/design-elements-web@^2.0.3-alpha.31":
+  version "2.0.3-alpha.31"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.31.tgz#625217a89ef90a932f26c5ca7b5cd1953ade6fd8"
+  integrity sha512-hMoJEGt+n38V/1pCDnHRYW4Tqm3VBFQkBtnXgfdVjoMCkV30rsmBWz7JIJpkkY7R7p7K8EITfe0Ugl5f7/OYlA==
 
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
