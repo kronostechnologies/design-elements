@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Tooltip } from '@equisoft/design-elements-react';
+import React from 'react';
 
 export default {
     title: 'Tooltip',

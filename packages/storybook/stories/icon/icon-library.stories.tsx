@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Icon } from '@equisoft/design-elements-react';
+import React, { ComponentType } from 'react';
 
 export default {
     title: 'Icon/library',
@@ -32,11 +31,13 @@ export const all = () => (
 );
 
 all.story = {
-    decorators: [(storyFn: () => React.ReactElement) => (
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-            {storyFn()}
-        </div>
-    )],
+    decorators: [
+        (Story: ComponentType) => (
+            <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const alertTriangle = () => (

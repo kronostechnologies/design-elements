@@ -1,11 +1,11 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
-import React, { ReactElement } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
+import { RouterDecorator } from './utils/router-decorator';
 
 export default {
     title: 'Global Navigation',
     component: GlobalNavigation,
-    decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
+    decorators: [RouterDecorator],
 };
 
 const items: GlobalNavigationItem[] = [

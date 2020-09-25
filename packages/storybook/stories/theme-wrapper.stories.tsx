@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Button, testTheme, ThemeWrapper } from '@equisoft/design-elements-react';
+import React from 'react';
 
 export default {
     title: 'Theme Wrapper',

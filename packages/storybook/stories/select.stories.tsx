@@ -1,6 +1,7 @@
 import { Select } from '@equisoft/design-elements-react';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { decorateWith } from './utils/decorator';
 
 const Container = styled.div`
     height: 240px;
@@ -30,7 +31,7 @@ const skipOption = {
 export default {
     title: 'Select',
     component: Select,
-    decorators: [(storyFn: () => ReactElement) => <Container>{storyFn()}</Container>],
+    decorators: [decorateWith(Container)],
 };
 
 export const normal = () => (

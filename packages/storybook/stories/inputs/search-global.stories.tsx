@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { SearchGlobal } from '@equisoft/design-elements-react';
+import React from 'react';
 
 export default {
     title: 'Search/Search Global',

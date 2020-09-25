@@ -1,7 +1,6 @@
-import React, { ChangeEvent } from 'react';
-
 import { RadioButtonGroup } from '@equisoft/design-elements-react';
 import { forceReRender } from '@storybook/react';
+import React, { ChangeEvent } from 'react';
 
 export default {
     title: 'Radio Button Group',

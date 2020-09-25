@@ -53,17 +53,17 @@ commands:
       - run: yarn lint:ci
       - store_test_results:
           path: build/lint
-  
+
   git_config:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
-  
+
   git_pull_master:
     steps:
       - run:
           working_directory: *working_directory
           command: git pull origin master
-  
+
   add_github_ssh_key:
     steps:
       - add_ssh_keys:
@@ -125,7 +125,7 @@ jobs:
           directory: << parameters.directory >>
       - persist_to_workspace:
           root: *working_directory
-          paths: 
+          paths:
           - '*/*/node_modules'
           - 'node_modules'
 
@@ -195,7 +195,7 @@ jobs:
           paths:
             - '*/*/.yalc'
             - '*/*/node_modules'
-  
+
   create_prerelease_versions:
     executor: "node"
     steps:
@@ -240,7 +240,7 @@ jobs:
       - run:
           name: 'Build Storybook'
           working_directory: *storybook_directory
-          command: 'yarn build-storybook'
+          command: 'yarn build'
       - run:
           name: 'Commit changes'
           working_directory: *working_directory
@@ -324,7 +324,7 @@ workflows:
           requires:
             - storybook_yarn_lint
             - storybook_yarn_build
-      
+
       ### PRERELEASE
       - node_install_deps:
           filters:

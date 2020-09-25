@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
-
 import { RouteLink } from '@equisoft/design-elements-react';
-import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { RouterDecorator } from './utils/router-decorator';
 
 export default {
     title: 'Route Link',
     component: RouteLink,
-    decorators: [(storyFn: () => ReactElement) => <Router>{storyFn()}</Router>],
+    decorators: [RouterDecorator],
 };
 
 export const normal = () => (

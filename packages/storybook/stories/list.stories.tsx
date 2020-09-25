@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { List } from '@equisoft/design-elements-react';
+import React from 'react';
 
 export default {
     title: 'List',

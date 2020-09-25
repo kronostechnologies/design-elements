@@ -1,8 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-
 import { Button, SideDrawer } from '@equisoft/design-elements-react';
 import { forceReRender } from '@storybook/react';
+import React from 'react';
+import styled from 'styled-components';
 
 const Box = styled.div`
     background-color: #094C6C;

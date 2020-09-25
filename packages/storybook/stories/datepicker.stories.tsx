@@ -1,6 +1,7 @@
 import { Datepicker } from '@equisoft/design-elements-react';
-import React, { FormEvent, ReactElement } from 'react';
+import React, { FormEvent } from 'react';
 import styled from 'styled-components';
+import { decorateWith } from './utils/decorator';
 
 const Container = styled.div`
     height: 400px;
@@ -13,7 +14,7 @@ upcomingDate.setDate(upcomingDate.getDate() + 5);
 export default {
     title: 'Datepicker',
     component: Datepicker,
-    decorators: [(storyFn: () => ReactElement) => <Container>{storyFn()}</Container>],
+    decorators: [decorateWith(Container)],
 };
 
 export const normal = () => (
