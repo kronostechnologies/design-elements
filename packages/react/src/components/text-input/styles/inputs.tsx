@@ -32,7 +32,7 @@ export const inputsStyle = (theme: Theme) => `
 
     &:focus {
         border-color: ${theme.main['primary-1.1']};
-        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        box-shadow: var(--focus-box-shadow);
     }
 
     label + & {

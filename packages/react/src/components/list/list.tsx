@@ -117,7 +117,7 @@ const Wrapper = styled.ul<WrapperProps>`
     width: 100%;
 
     &:focus {
-        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+        box-shadow: var(--focus-box-shadow);
         outline: none;
     }
 `;

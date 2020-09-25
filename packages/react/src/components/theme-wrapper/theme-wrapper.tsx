@@ -35,6 +35,9 @@ export interface Theme {
         'alert-3.2': string,
         'alert-3.3': string,
     };
+    tokens: {
+        'focus-box-shadow': string,
+    };
 }
 
 interface ThemeWrapperProps extends Omit<ThemeProviderProps<Theme>, 'theme'> {
