@@ -2267,11 +2267,6 @@
     react-table "^7.1.0"
     uuid "^3.3.3"
 
-"@equisoft/design-elements-web@^2.0.3-alpha.31":
-  version "2.0.3-alpha.31"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-web/-/design-elements-web-2.0.3-alpha.31.tgz#625217a89ef90a932f26c5ca7b5cd1953ade6fd8"
-  integrity sha512-hMoJEGt+n38V/1pCDnHRYW4Tqm3VBFQkBtnXgfdVjoMCkV30rsmBWz7JIJpkkY7R7p7K8EITfe0Ugl5f7/OYlA==
-
 "@equisoft/tslint-config-react@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@equisoft/tslint-config-react/-/tslint-config-react-0.0.3.tgz#3d0580d26386288397581710300bff5e1800cf1b"
