@@ -19,7 +19,6 @@
   "dependencies": {
     "@babel/plugin-proposal-dynamic-import": "^7.5.0",
     "@equisoft/design-elements-react": "^2.0.3-alpha.32",
-    "@equisoft/design-elements-web": "^2.0.3-alpha.32",
     "@storybook/react": "^6.0.21",
     "babel-loader": "^8.0.6",
     "css-loader": "^4.3.0",
