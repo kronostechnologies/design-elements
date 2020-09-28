@@ -13,7 +13,6 @@ Please visit each package's README for installation and usage details.
 To contribute to Design Elements or implement its components in your app, you will most likely have to get familiar with the following packages:
 
 - `/react/`: [React](https://reactjs.org/) implementation of Design Elements. This is our first delivery target.
-- `/web/` : Complementary [Sass](https://sass-lang.com/) snipets to be used alongside Design Elements components.  On the long term, our goal is for this folder to contain the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) implementation of Design Elements.
 - `/storybook/`: This package contains the [Storybook](https://storybook.js.org/) documentation for Design Elements' React components. This includes props documentation and components implementation examples.
 
 ### Quick start
@@ -32,10 +31,9 @@ make storybook
 
 ```bash
 # Building for production
-make build_web
 make build_react
 make build_storybook
-make build_all # runs all 3 above in the right order
+make build_all # runs all 2 above in the right order
 ```
 
 ## Contribution Guidelines
