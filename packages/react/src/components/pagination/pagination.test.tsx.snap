@@ -99,7 +99,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c4:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 
@@ -123,7 +123,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c5:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 
@@ -358,7 +358,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c4:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 
@@ -382,7 +382,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c5:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 

@@ -33,7 +33,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
-    box-shadow: ${({ containerOutline }) => containerOutline ? 'var(--focus-box-shadow)' : 'none'};
+    box-shadow: ${({ containerOutline, theme }) => containerOutline ? theme.tokens['focus-box-shadow'] : 'none'};
     box-sizing: border-box;
     display: flex;
     height: ${({ isMobile }) => isMobile ? '40px' : '32px'};

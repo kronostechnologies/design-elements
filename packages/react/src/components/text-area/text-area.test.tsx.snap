@@ -103,7 +103,7 @@ input + .c1 {
 
 .c2:focus {
   border-color: #0080A5;
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
 }
 
 label + .c2 {
@@ -235,7 +235,7 @@ input + .c1 {
 
 .c2:focus {
   border-color: #0080A5;
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
 }
 
 label + .c2 {

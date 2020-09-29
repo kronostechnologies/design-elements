@@ -79,12 +79,12 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         color: ${({ theme }) => theme.greys.black};
         ${({ isMobile, theme }) => isMobile && `
             border: 1px solid ${theme.main['primary-1.1']};
-            box-shadow: var(--focus-box-shadow);
+            box-shadow: ${theme.tokens['focus-box-shadow']};
         `}
 
         &:focus {
             border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
-            box-shadow: var(--focus-box-shadow);
+            box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         }
     }
 
@@ -108,13 +108,13 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     .react-datepicker__day--selected {
         background-color: ${({ theme }) => theme.main['primary-1.1']};
         border-radius: 50%;
-        ${({ isMobile }) => isMobile ? `
+        ${({ isMobile, theme }) => isMobile ? `
             &[tabindex="0"] {
-                box-shadow: var(--focus-box-shadow);
+                box-shadow: ${theme.tokens['focus-box-shadow']};
             }
         ` : `
             &:focus {
-                box-shadow: var(--focus-box-shadow);
+                box-shadow: ${theme.tokens['focus-box-shadow']};
             }
         `}
 
@@ -179,7 +179,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
 
         &:focus {
             border: 1px solid ${({ theme, valid }) => valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
-            box-shadow: var(--focus-box-shadow);
+            box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
             outline: none;
         }
     }
@@ -212,7 +212,7 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     &:focus {
         border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
         border-left: none;
-        box-shadow: var(--focus-box-shadow);
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
         z-index: 10;
     }
