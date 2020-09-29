@@ -23,7 +23,7 @@ exports[`List Is not visible 1`] = `
 }
 
 .c1:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 
@@ -139,7 +139,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 
@@ -295,7 +295,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1:focus {
-  box-shadow: var(--focus-box-shadow);
+  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
 }
 

@@ -32,7 +32,7 @@ const MenuLink = styled(NavLink)`
     width: max-content;
 
     &:focus {
-        box-shadow: var(--focus-box-shadow);
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
     }
 
@@ -85,7 +85,7 @@ const ShowMore = styled.button<{active?: boolean}>`
     width: 32px;
 
     &:focus {
-        box-shadow: var(--focus-box-shadow);
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
     }
 
@@ -127,7 +127,7 @@ const IconLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     }
 
     &:focus {
-        box-shadow: var(--focus-box-shadow);
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
     }
 `;

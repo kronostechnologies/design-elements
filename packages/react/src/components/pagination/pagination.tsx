@@ -34,7 +34,7 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     }
 
     &:focus {
-        box-shadow: var(--focus-box-shadow);
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
     }
 `;
