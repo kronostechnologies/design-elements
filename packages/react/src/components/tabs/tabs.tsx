@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useReducer } from 'react';
+import React, { KeyboardEvent, ReactElement, ReactNode, useReducer } from 'react';
 
 import uuid from 'uuid/v4';
 import { TabButton } from './tab-button';
@@ -57,9 +57,20 @@ function reducer(tabsSelectionState: TabSelectionState[], tabSelection: TabSelec
 export function Tabs({ tabs }: TabsProps): ReactElement {
     const [tabsState, setTabsState] = useReducer(reducer, tabs, initTabsSelection);
 
+    const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+        const selectedIndex = tabsState.findIndex(tabState => tabState.isSelected);
+        if (event.key === 'ArrowLeft' && selectedIndex > 0) {
+            const tabToSelect = tabsState[selectedIndex - 1];
+            setTabsState({ id: tabToSelect.id });
+        } else if (event.key === 'ArrowRight' && selectedIndex < tabsState.length - 1) {
+            const tabToSelect = tabsState[selectedIndex + 1];
+            setTabsState({ id: tabToSelect.id });
+        }
+    };
+
     return (
         <div>
-            <div role="tablist" aria-label="tabs label">
+            <div role="tablist" aria-label="tabs label" onKeyDown={handleKeyDown}>
                 {tabsState.map(tab => {
                     return <TabButton
                         key={tab.id}
