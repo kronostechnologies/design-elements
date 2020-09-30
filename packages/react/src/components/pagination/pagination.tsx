@@ -7,6 +7,8 @@ import { useDeviceContext } from '@design-elements/components/device-context-pro
 import { IconName } from '@design-elements/components/icon/icon';
 import { clamp } from '@design-elements/utils/math';
 import { range } from '@design-elements/utils/range';
+import { focus } from '@design-elements/utils/state';
+
 import { calculateShownPageRange } from './util/pagination-util';
 
 const Pages = styled.ol`
@@ -25,17 +27,13 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     height: ${props => props.isMobile ? 32 : 24}px;
     line-height: ${props => props.isMobile ? 32 : 24}px;
     margin: 0 var(--spacing-half);
+    ${focus}
     text-align: center;
     width: ${props => props.isMobile ? 32 : 24}px;
 
     &:hover {
         background-color: ${props => props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
         cursor: ${props => props.isSelected ? 'default' : 'pointer'};
-    }
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
     }
 `;
 

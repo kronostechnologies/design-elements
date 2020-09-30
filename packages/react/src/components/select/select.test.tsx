@@ -3,6 +3,7 @@ import React from 'react';
 
 import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { renderWithProviders } from '@design-elements/test-utils/renderer';
+
 import { ThemeWrapper } from '../theme-wrapper/theme-wrapper';
 import { Select } from './select';
 jest.mock('uuid/v4');
@@ -104,77 +105,77 @@ describe('Select', () => {
         test('ArrowUp should open listbox', () => {
             const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 38 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('ArrowUp should open listbox [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 38 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('ArrowDown should open listbox', () => {
             const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 40 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('ArrowDown should open listbox [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 40 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('Enter should open listbox', () => {
             const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 13, preventDefault: jest.fn() });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
-        test('ArrowDown should not open listbox [searchable]', () => {
+        test('Enter should not open listbox [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 13, preventDefault: jest.fn() });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeFalsy();
         });
 
         test('Spacebar should open listbox', () => {
             const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 32, preventDefault: jest.fn() });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Spacebar', preventDefault: jest.fn() });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('Spacebar should open listbox [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 32, preventDefault: jest.fn() });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Spacebar', preventDefault: jest.fn() });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('Escape should close listbox', () => {
             const wrapper = shallow(<Select options={provinces} defaultOpen />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 27 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeFalsy();
         });
 
         test('Escape should close listbox [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} defaultOpen searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 27 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeFalsy();
         });
 
         test('input value should be cleared when escape is pressed [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} defaultValue="qc" searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { keyCode: 27 });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
             expect(getByTestId(wrapper, 'input').props().value).toBe('');
         });
 
@@ -226,14 +227,14 @@ describe('Select', () => {
         test('should focus the first element starting with the letter N', () => {
             const wrapper = shallow(<Select options={provinces} defaultOpen />);
 
-            getByTestId(wrapper, 'listbox').simulate('keydown', { keyCode: 78, key: 'n' });
+            getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'n' });
             expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('ns');
         });
 
         test('should remove focus when a character is pressed [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} defaultOpen searchable />);
 
-            getByTestId(wrapper, 'listbox').simulate('keydown', { keyCode: 78, key: 'n' });
+            getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'n' });
             expect(getByTestId(wrapper, 'listbox').props().autofocus).toBeFalsy();
         });
 

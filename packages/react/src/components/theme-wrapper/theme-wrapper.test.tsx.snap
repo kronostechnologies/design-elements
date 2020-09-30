@@ -2,6 +2,7 @@
 
 exports[`Theme Wrapper Returns component with default theme 1`] = `
 .c0 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -44,6 +45,12 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -76,6 +83,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 
 exports[`Theme Wrapper Returns component with test theme 1`] = `
 .c0 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -116,6 +124,12 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   background-color: #9EB3FF;
   border-color: #9EB3FF;
   color: #FFFFFF;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #9EB3FF;
 }
 
 .c0:not(:disabled) {

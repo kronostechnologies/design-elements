@@ -3,6 +3,7 @@ import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
+import { focus } from '@design-elements/utils/state';
 import { useTheme } from '../../hooks/use-theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -132,6 +133,7 @@ export const TooltipArrow = styled.div`
 const StyledSpan = styled.span`
     align-items: center;
     display: flex;
+    ${focus}
     width: fit-content;
 `;
 

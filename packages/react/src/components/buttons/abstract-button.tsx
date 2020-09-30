@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/state';
 import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 import styled from 'styled-components';
 
@@ -12,6 +13,7 @@ export interface AbstractButtonProps extends PartialButtonProps {
 }
 
 export const AbstractButton = styled.button<{ isMobile: boolean }>`
+    ${focus}
     align-items: center;
     appearance: none;
     background: inherit;
@@ -40,4 +42,5 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     > svg {
         color: inherit;
     }
+const AbstractButton = styled.button`
 `;

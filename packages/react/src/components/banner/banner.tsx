@@ -1,6 +1,8 @@
 import React, { ReactElement, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
+import { focus } from '@design-elements/utils/state';
+
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -38,6 +40,7 @@ const CloseButton = styled.button<{isMobile: boolean}>`
     color: currentColor;
     cursor: pointer;
     height: ${({ isMobile }) => isMobile ? 48 : 32}px;
+    ${focus}
     padding: 0;
     position: absolute;
     right: ${({ isMobile }) => isMobile ? '0' : '6px'};

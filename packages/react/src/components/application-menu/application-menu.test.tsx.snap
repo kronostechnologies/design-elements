@@ -25,6 +25,7 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -32,6 +33,14 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
+  border: 1px transparent solid;
+  padding: var(--spacing-half);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c2 {
@@ -109,6 +118,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -116,6 +126,14 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
+  border: 1px transparent solid;
+  padding: var(--spacing-half);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c2 {
@@ -123,10 +141,16 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: none;
   cursor: pointer;
   margin: 0;
+  border: 1px transparent solid;
   padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 <header
@@ -220,6 +244,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-radius: var(--border-radius);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,6 +252,14 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
+  border: 1px transparent solid;
+  padding: var(--spacing-half);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c2 {
@@ -234,10 +267,16 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: none;
   cursor: pointer;
   margin: 0;
+  border: 1px transparent solid;
   padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 <header

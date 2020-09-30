@@ -1,6 +1,8 @@
 import React, { ChangeEvent, ReactElement } from 'react';
-
 import styled from 'styled-components';
+
+import { focus } from '@design-elements/utils/state';
+
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
@@ -50,6 +52,8 @@ const StyledLabel = styled.label `
                         width: 8px;
                     }
                 }
+
+                ${focus(props, '&:focus + .radioInput')}
             }
 
             .radioInput {

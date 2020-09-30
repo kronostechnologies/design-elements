@@ -60,6 +60,17 @@ Array [
   width: 8px;
 }
 
+.c0 input:focus {
+  outline: none;
+  border: none;
+}
+
+.c0 input:focus + .radioInput {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c0 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
@@ -136,6 +147,17 @@ Array [
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   width: 8px;
+}
+
+.c0 input:focus {
+  outline: none;
+  border: none;
+}
+
+.c0 input:focus + .radioInput {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c0 .radioInput {
@@ -216,6 +238,17 @@ Array [
   width: 8px;
 }
 
+.c0 input:focus {
+  outline: none;
+  border: none;
+}
+
+.c0 input:focus + .radioInput {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c0 .radioInput {
   background-color: #F1F2F2;
   border: 1px solid #D9DDE2;
@@ -294,6 +327,17 @@ Array [
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   width: 8px;
+}
+
+.c0 input:focus {
+  outline: none;
+  border: none;
+}
+
+.c0 input:focus + .radioInput {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c0 .radioInput {

@@ -2,6 +2,8 @@ import React, { ReactElement, ReactNode, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
 
+import { focus } from '@design-elements/utils/state';
+
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { SideDrawer } from '../side-drawer/side-drawer';
@@ -25,18 +27,21 @@ const Header = styled.header<{ device: DeviceType }>`
 
 const LogoWrapper = styled(Link)`
     align-items: center;
+    border-radius: var(--border-radius);
     display: flex;
     font-size: 1.5rem;
     font-weight: var(--font-bold);
     height: 100%;
+    ${focus}
+    padding: var(--spacing-half);
 `;
 
 const BurgerButton = styled.button`
     appearance: none;
     background-color: transparent;
-    border: none;
     cursor: pointer;
     margin: 0;
+    ${focus}
     padding: 0;
 `;
 
@@ -59,10 +64,11 @@ interface HeadbandProps {
 }
 
 export function ApplicationMenu({
-    appName = 'default',
-    children,
-    logoHref = '/',
-    mobileDrawerContent }: HeadbandProps,
+                                    appName = 'default',
+                                    children,
+                                    logoHref = '/',
+                                    mobileDrawerContent,
+                                }: HeadbandProps,
 ): ReactElement {
     const { device, isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -74,26 +80,26 @@ export function ApplicationMenu({
                 <Logo name={appName} mobile={isMobile} />
             </LogoWrapper>
             {isMobile && mobileDrawerContent ? (
-                <>
-                    <BurgerButton
-                        aria-expanded={drawerOpen}
-                        aria-controls="menu-drawer"
-                        aria-label="Navigation"
-                        type="button"
-                        onClick={() => setDrawerOpen(!drawerOpen)}
-                    >
-                        <Icon name="menu" color={themeContext.greys.white}/>
-                    </BurgerButton>
-                    <SideDrawer id="menu-drawer" open={drawerOpen}>
-                        {mobileDrawerContent}
-                    </SideDrawer>
-                </>
-            ) :
-            (
-                <Content>
-                    {children}
-                </Content>
-            )}
+                    <>
+                        <BurgerButton
+                            aria-expanded={drawerOpen}
+                            aria-controls="menu-drawer"
+                            aria-label="Navigation"
+                            type="button"
+                            onClick={() => setDrawerOpen(!drawerOpen)}
+                        >
+                            <Icon name="menu" color={themeContext.greys.white} />
+                        </BurgerButton>
+                        <SideDrawer id="menu-drawer" open={drawerOpen}>
+                            {mobileDrawerContent}
+                        </SideDrawer>
+                    </>
+                ) :
+                (
+                    <Content>
+                        {children}
+                    </Content>
+                )}
         </Header>
     );
 }

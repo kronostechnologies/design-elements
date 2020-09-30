@@ -2,6 +2,7 @@
 
 exports[`Button has disabled styles 1`] = `
 .c0 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -44,6 +45,12 @@ exports[`Button has disabled styles 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -79,6 +86,7 @@ exports[`Button has disabled styles 1`] = `
 
 exports[`Button has mobile styles 1`] = `
 .c0 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -121,6 +129,12 @@ exports[`Button has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -130,12 +144,9 @@ exports[`Button has mobile styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
-}
-
-.c0:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  background-color: #EF483E;
+  border-color: #EF483E;
+  color: #FFFFFF;
 }
 
 .c0:disabled,
@@ -155,6 +166,7 @@ exports[`Button has mobile styles 1`] = `
 
 exports[`Button has primary styles 1`] = `
 .c0 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -197,6 +209,12 @@ exports[`Button has primary styles 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -231,6 +249,7 @@ exports[`Button has primary styles 1`] = `
 
 exports[`Button has secondary styles 1`] = `
 .c0 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -271,6 +290,12 @@ exports[`Button has secondary styles 1`] = `
   background-color: transparent;
   border-color: #0080A5;
   color: #0080A5;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c0:not(:disabled) {

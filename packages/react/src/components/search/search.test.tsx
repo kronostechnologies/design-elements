@@ -23,7 +23,7 @@ describe('SearchGlobal', () => {
             ThemeWrapped(<SearchGlobal initialValue="bing" label="Search" onSearch={callback} />),
         );
 
-        wrapper.find('input').simulate('keyDown', { keyCode: 13 });
+        wrapper.find('input').simulate('keyDown', { key: 'Enter' });
         expect(callback).toHaveBeenCalledTimes(1);
     });
 

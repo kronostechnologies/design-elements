@@ -2,6 +2,7 @@
 
 exports[`Pagination Matches the desktop snapshot 1`] = `
 .c2 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -46,6 +47,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 32px;
 }
 
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c2:not(:disabled) {
   cursor: pointer;
 }
@@ -88,18 +95,20 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   height: 24px;
   line-height: 24px;
   margin: 0 var(--spacing-half);
+  border: 1px transparent solid;
   text-align: center;
   width: 24px;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c4:hover {
   background-color: #0080A5;
   cursor: default;
-}
-
-.c4:focus {
-  box-shadow: 0 0 0 2px #0080A566;
-  outline: none;
 }
 
 .c5 {
@@ -112,18 +121,20 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   height: 24px;
   line-height: 24px;
   margin: 0 var(--spacing-half);
+  border: 1px transparent solid;
   text-align: center;
   width: 24px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c5:hover {
   background-color: #D9DDE2;
   cursor: pointer;
-}
-
-.c5:focus {
-  box-shadow: 0 0 0 2px #0080A566;
-  outline: none;
 }
 
 .c0 {
@@ -260,6 +271,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 exports[`Pagination Matches the mobile snapshot 1`] = `
 .c2 {
+  border: 1px transparent solid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -304,6 +316,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 48px;
 }
 
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
+}
+
 .c2:not(:disabled) {
   cursor: pointer;
 }
@@ -346,18 +364,20 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   height: 32px;
   line-height: 32px;
   margin: 0 var(--spacing-half);
+  border: 1px transparent solid;
   text-align: center;
   width: 32px;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c4:hover {
   background-color: #0080A5;
   cursor: default;
-}
-
-.c4:focus {
-  box-shadow: 0 0 0 2px #0080A566;
-  outline: none;
 }
 
 .c5 {
@@ -370,18 +390,20 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   height: 32px;
   line-height: 32px;
   margin: 0 var(--spacing-half);
+  border: 1px transparent solid;
   text-align: center;
   width: 32px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 .c5:hover {
   background-color: #D9DDE2;
   cursor: pointer;
-}
-
-.c5:focus {
-  box-shadow: 0 0 0 2px #0080A566;
-  outline: none;
 }
 
 .c0 {

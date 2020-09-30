@@ -46,11 +46,18 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   color: currentColor;
   cursor: pointer;
   height: 32px;
+  border: 1px transparent solid;
   padding: 0;
   position: absolute;
   right: 6px;
   top: 9px;
   width: 32px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 <div
@@ -130,11 +137,18 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   color: currentColor;
   cursor: pointer;
   height: 48px;
+  border: 1px transparent solid;
   padding: 0;
   position: absolute;
   right: 0;
   top: 9px;
   width: 48px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  border: 1px solid #0080A5;
 }
 
 <div

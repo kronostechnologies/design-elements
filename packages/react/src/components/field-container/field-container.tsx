@@ -25,7 +25,7 @@ interface StyledDivProps {
     noMargin?: boolean;
 }
 
-interface FieldContainerProps {
+export interface FieldContainerProps {
     children: ReactNode;
     noMargin?: boolean;
     fieldId: string;

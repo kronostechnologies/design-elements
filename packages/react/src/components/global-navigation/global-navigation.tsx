@@ -1,6 +1,9 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
+
+import { focus } from '@design-elements/utils/state';
+
 import { Icon, IconName } from '../icon/icon';
 
 const Wrapper = styled.div<{padding: number}>`
@@ -27,14 +30,10 @@ const MenuLink = styled(NavLink)`
     display: flex;
     flex-grow: 1;
     line-height: 24px;
+    ${focus}
     padding: var(--spacing-half) var(--spacing-2x);
     text-decoration: none;
     width: max-content;
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};
@@ -82,12 +81,8 @@ const ShowMore = styled.button<{active?: boolean}>`
     display: flex;
     height: 32px;
     justify-content: center;
+    ${focus}
     width: 32px;
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};
@@ -126,10 +121,7 @@ const IconLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
         }
     }
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
+    ${focus}
 `;
 
 export interface GlobalNavigationItem {

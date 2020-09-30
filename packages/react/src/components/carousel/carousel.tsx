@@ -1,8 +1,11 @@
+import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
+
 import { Icon } from '@design-elements/components/icon/icon';
 import { useId } from '@design-elements/hooks/use-id';
 import { useTheme } from '@design-elements/hooks/use-theme';
-import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
-import styled, { DefaultTheme, StyledComponent } from 'styled-components';
+import { focus } from '@design-elements/utils/state';
+
 import { useCarousel } from './use-carousel';
 
 const Main = styled.section`
@@ -57,6 +60,7 @@ const Dot = styled.button<DotProps>`
     cursor: pointer;
     display: inline-block;
     height: 12px;
+    ${focus}
     width: 12px;
 
     & + & {
@@ -71,6 +75,7 @@ interface NavigationButtonProps {
 const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
     cursor: pointer;
     height: 32px;
+    ${focus}
     visibility: ${({ disabled }) => disabled ? 'hidden' : 'visible'};
     width: 32px;
 `;

@@ -1,5 +1,6 @@
 import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo, useRef, useState } from 'react';
 
+import { focus } from '@design-elements/utils/state';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -99,27 +100,24 @@ const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
 const ListWrapper = styled.div<ListWrapperProps>`
+    background-color: ${({ theme }) => theme.greys.white};
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     display: ${props => props.visible ? 'flex' : 'none'};
     position: ${props => props.isDropdown ? 'absolute' : 'unset'};
     width: ${props => props.isDropdown ? '100%' : 'unset'};
 `;
 
 const Wrapper = styled.ul<WrapperProps>`
-    background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     list-style-type: none;
     margin: 0;
     max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
     min-width: fit-content;
+    ${focus}
     overflow-y: auto;
     padding: 0;
     width: 100%;
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
 `;
 
 const getItemSidePadding = ({ checkIndicator, selected, isMobile }: ItemProps): string => {
