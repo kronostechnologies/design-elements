@@ -210,7 +210,6 @@ input + .c2 {
       class="c4"
       data-testid="input"
       disabled=""
-      placeholder="Select an option"
       type="text"
       value=""
     />
@@ -583,7 +582,6 @@ input + .c2 {
         aria-multiline="false"
         class="c4"
         data-testid="input"
-        placeholder="Select an option"
         type="text"
         value=""
       />
@@ -1050,7 +1048,6 @@ input + .c2 {
         aria-multiline="false"
         class="c4"
         data-testid="input"
-        placeholder="Select an option"
         type="text"
         value=""
       />
@@ -1483,7 +1480,6 @@ exports[`Select mobile select has a different style 1`] = `
       aria-multiline="false"
       class="c3"
       data-testid="input"
-      placeholder="Select an option"
       type="text"
       value=""
     />

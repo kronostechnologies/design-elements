@@ -1937,7 +1937,6 @@ input + .c1 {
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
-                            placeholder="Select an option"
                             type="text"
                             value=""
                           />
@@ -2098,7 +2097,6 @@ input + .c1 {
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
-                            placeholder="Select an option"
                             type="text"
                             value=""
                           />
@@ -4063,7 +4061,6 @@ input + .c1 {
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
-                            placeholder="Select an option"
                             type="text"
                             value=""
                           />
@@ -4224,7 +4221,6 @@ input + .c1 {
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
-                            placeholder="Select an option"
                             type="text"
                             value=""
                           />
@@ -6095,7 +6091,6 @@ input + .c1 {
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
-                            placeholder="Select an option"
                             type="text"
                             value=""
                           />
@@ -6256,7 +6251,6 @@ input + .c1 {
                             aria-multiline="false"
                             class="c10"
                             data-testid="input"
-                            placeholder="Select an option"
                             type="text"
                             value=""
                           />

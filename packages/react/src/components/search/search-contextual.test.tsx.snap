@@ -226,7 +226,6 @@ input:valid + .c6 {
       disabled={true}
       onChange={[Function]}
       onKeyDown={[Function]}
-      placeholder="Search"
       type="search"
       value=""
     />
@@ -473,7 +472,6 @@ input:valid + .c6 {
       className="c5"
       onChange={[Function]}
       onKeyDown={[Function]}
-      placeholder="Search"
       type="search"
       value=""
     />

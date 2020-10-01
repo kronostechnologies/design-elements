@@ -88,7 +88,7 @@ export function TextArea({
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
-                placeholder={placeholder || t('placeholder')}
+                placeholder={placeholder}
                 required={required}
                 value={value}
             />

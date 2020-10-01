@@ -66,15 +66,6 @@ export const TextInput = React.forwardRef(({
         }
     }
 
-    function getInputTypePlaceholder(inputType: string | undefined): string {
-        switch (inputType) {
-            case 'email':
-                return t(`placeholder-${inputType}`);
-            default:
-                return t('placeholder');
-        }
-    }
-
     const {
         defaultValue,
         disabled,
@@ -106,7 +97,7 @@ export const TextInput = React.forwardRef(({
                 onChange={handleChange}
                 onFocus={handleFocus}
                 pattern={pattern}
-                placeholder={placeholder || getInputTypePlaceholder(type)}
+                placeholder={placeholder}
                 required={required}
                 type={type || 'text'}
                 value={value}

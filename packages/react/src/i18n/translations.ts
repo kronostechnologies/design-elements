@@ -26,20 +26,15 @@ export const Translations = {
         },
         'search-input': {
             label: 'Search',
-            placeholder: 'Search',
         },
         select: {
             inputAriaLabel: 'Select an option',
-            placeholder: 'Select an option',
             validationErrorMessage: 'You must select an option',
         },
         'text-area': {
-            placeholder: 'Enter your text here',
             validationErrorMessage: 'This text area is invalid',
         },
         'text-input': {
-            placeholder: 'Enter your text here',
-            'placeholder-email': 'you@example.com',
             validationErrorMessage: 'This input is invalid',
         },
     },
@@ -70,20 +65,15 @@ export const Translations = {
         },
         'search-input': {
             label: 'Rechercher',
-            placeholder: 'Rechercher',
         },
         select: {
             inputAriaLabel: 'Choisissez une option',
-            placeholder: 'Choisissez une option',
             validationErrorMessage: 'Vous devez choisir une option',
         },
         'text-area': {
-            placeholder: 'Entrez votre texte ici',
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
         },
         'text-input': {
-            placeholder: 'Entrez votre texte ici',
-            'placeholder-email': 'vous@exemple.com',
             validationErrorMessage: 'Ce champ est invalide',
         },
     },

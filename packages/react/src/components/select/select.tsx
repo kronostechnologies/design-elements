@@ -498,7 +498,7 @@ export function Select({
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onKeyDown={handleInputKeyDown}
-                        placeholder={placeholder || t('placeholder')}
+                        placeholder={placeholder}
                         ref={inputRef}
                         required={required}
                         searchable={searchable}

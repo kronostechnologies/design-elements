@@ -21,6 +21,7 @@ export const inputs = () => (
             disabled={false}
             required={false}
             label="Email"
+            placeholder="you@example.com"
             type="email"
             defaultValue=""
             pattern=""
@@ -43,7 +44,6 @@ export const defaultValue = () => (
         disabled={false}
         required={false}
         label="Address"
-        placeholder="Enter text here"
         type="text"
         defaultValue="1234 Main Street"
         pattern=""
@@ -55,7 +55,6 @@ export const required = () => (
         disabled={false}
         required={true}
         label="Last Name (required)"
-        placeholder="Ex.: Doe"
         type="text"
         defaultValue=""
         pattern=""
@@ -67,7 +66,6 @@ export const eventCallbacks = () => (
         disabled={false}
         required={true}
         label="See console for callbacks"
-        placeholder="Ex.: Hello"
         type="text"
         defaultValue=""
         pattern=""
