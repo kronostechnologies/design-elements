@@ -50,3 +50,4 @@ export { Pagination } from './components/pagination/pagination';
 // Themes
 export { equisoftTheme } from './themes/equisoft';
 export { testTheme } from './themes/test-theme';
+export { injectMainCss } from './styles';

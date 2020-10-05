@@ -11,3 +11,7 @@ export function useMainCss(isolateStyles: boolean): void {
         return () => undefined;
     }, []);
 }
+
+export function injectMainCss(): void {
+    mainCss.use();
+}
