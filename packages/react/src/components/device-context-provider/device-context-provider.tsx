@@ -1,5 +1,5 @@
 import React, { createContext, ReactElement, ReactNode, useContext, useEffect, useState  } from 'react';
-import { breakpoints } from '../../tokens/breakpoints';
+import { breakpoints, Breakpoints } from '../../tokens/breakpoints';
 
 export type DeviceType = 'desktop' | 'tablet' | 'mobile';
 interface Props {
@@ -12,6 +12,7 @@ export interface DeviceContextProps {
     isDesktop: boolean;
     isTablet: boolean;
     isMobile: boolean;
+    breakpoints: Breakpoints;
 }
 
 const getDeviceContext = (deviceName: DeviceType | undefined = undefined): DeviceContextProps => {
@@ -23,6 +24,7 @@ const getDeviceContext = (deviceName: DeviceType | undefined = undefined): Devic
         isDesktop: true,
         isTablet: false,
         isMobile: false,
+        breakpoints,
     };
 
     if (deviceName) {
@@ -35,6 +37,7 @@ const getDeviceContext = (deviceName: DeviceType | undefined = undefined): Devic
             isDesktop: isDesktop,
             isTablet: isTablet,
             isMobile: isMobile,
+            breakpoints,
         };
     } else return defaultContext;
 };

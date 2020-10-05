@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 import styled from 'styled-components';
 
 import { IconButton } from '../buttons/icon-button';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.greys.white};
@@ -12,16 +12,23 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     border-radius: 8px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    max-width: 700px;
+    min-width: ${({ breakpoints, isMobile }) => isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`};
     padding: ${getModalPadding};
     position: relative;
-    width: ${({ isMobile }) => isMobile ? 344 : 500}px;
+    width: ${({ isMobile }) => isMobile ? `calc(100vw - var(--spacing-4x))` : '60vw'};
+
+    &:focus {
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']}, 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
 `;
 
 const Header = styled.header<{ hasContent: boolean }>`
     ${({ hasContent }) => hasContent && 'margin-bottom: var(--spacing-3x);'}
 `;
 
-const CloseIconButton = styled(IconButton)<{ isMobile: boolean }>`
+const CloseIconButton = styled(IconButton)<DeviceContextProps>`
     position: absolute;
     right: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)'};
     top: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)'};
@@ -40,10 +47,9 @@ const customStyles = {
     },
 };
 
-interface StyledModalProps {
+interface StyledModalProps extends DeviceContextProps {
     noPadding: boolean;
     hasCloseButton: boolean;
-    isMobile: boolean;
 }
 
 export interface ModalProps {
@@ -98,7 +104,7 @@ export function Modal({
     shouldCloseOnOverlayClick = true,
     onRequestClose,
 }: ModalProps): ReactElement {
-    const { isMobile } = useDeviceContext();
+    const device = useDeviceContext();
     const { t } = useTranslation('modal');
 
     if (appElement) {
@@ -106,21 +112,10 @@ export function Modal({
     }
 
     function getHeader(): ReactElement | null {
-        if (modalHeader || hasCloseButton) {
+        if (modalHeader) {
             return (
                 <Header hasContent={!!modalHeader}>
                     {modalHeader}
-                    {hasCloseButton && (
-                        <CloseIconButton
-                            data-testid="close-button"
-                            isMobile={isMobile}
-                            label={t('closeButtonLabel')}
-                            type="button"
-                            buttonType="tertiary"
-                            iconName="x"
-                            onClick={onRequestClose}
-                        />
-                    )}
                 </Header>
             );
         } else return null;
@@ -137,17 +132,28 @@ export function Modal({
                 ariaHideApp={ariaHideApp}
                 noPadding={noPadding}
                 hasCloseButton={hasCloseButton}
-                isMobile={isMobile}
                 isOpen={isOpen}
                 onRequestClose={onRequestClose}
                 role={role}
                 style={customStyles}
                 contentLabel={ariaLabel}
                 shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+                {...device}
             >
                 {getHeader()}
                 {children}
                 {modalFooter && <Footer>{modalFooter}</Footer>}
+                {hasCloseButton && (
+                    <CloseIconButton
+                        data-testid="close-button"
+                        label={t('closeButtonLabel')}
+                        type="button"
+                        buttonType="tertiary"
+                        iconName="x"
+                        onClick={onRequestClose}
+                        {...device}
+                    />
+                )}
             </StyledModal>
         </>
     );

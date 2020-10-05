@@ -10,14 +10,18 @@ import { Modal } from './modal';
 const Title = styled.h2<DeviceContextProps>`
     font-size: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
     font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => isMobile ? 36 : 32}px;
+    line-height: ${({ isMobile }) => isMobile ? 2.25 : 2}rem;
     margin: 0;
+
+    :focus {
+        outline: none;
+    }
 `;
 
 const Subtitle = styled.h3<{ hasTitle: boolean } & DeviceContextProps>`
     font-size: ${({ isMobile }) => isMobile ? 1.125 : 1}rem;
     font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => isMobile ? 28 : 22}px;
+    line-height: ${({ isMobile }) => isMobile ? 1.75 : 1.375}rem;
     margin: 0;
     margin-top: ${({ hasTitle }) => hasTitle ? 'var(--spacing-3x)' : 0};
 `;
@@ -28,7 +32,7 @@ const ButtonContainer = styled.div<DeviceContextProps>`
 `;
 
 const ConfirmButton = styled(Button)<DeviceContextProps>`
-    margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 0};
+    margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-1x)' : 0};
     margin-right: ${({ isMobile }) => isMobile ? 0 : 'var(--spacing-1x)'};
 `;
 
@@ -84,7 +88,7 @@ export function ModalDialog({
                 <>
                     {title && <Title id={titleId} tabIndex={-1} {...deviceContext}>{title}</Title>}
                     {subtitle && (
-                        <Subtitle hasTitle={title !== undefined} tabIndex={-1} {...deviceContext}>{subtitle}</Subtitle>
+                        <Subtitle hasTitle={title !== undefined} {...deviceContext}>{subtitle}</Subtitle>
                     )}
                 </>
             );
@@ -113,7 +117,7 @@ export function ModalDialog({
 
     return (
         <Modal
-            ariaLabel={ariaLabel || title}
+            ariaLabel={title ? undefined : ariaLabel}
             ariaLabelledBy={title ? titleId : undefined}
             modalHeader={getHeader()}
             hasCloseButton

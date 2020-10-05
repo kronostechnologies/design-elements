@@ -32,9 +32,16 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
   padding: var(--spacing-4x);
   position: relative;
-  width: 500px;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 <div
@@ -45,12 +52,18 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
         tabindex="-1"
       >
-        Test Content
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
       </div>
     </div>
   </div>
@@ -78,9 +91,16 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: initial;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
-  width: 344px;
+  width: calc(100vw - var(--spacing-4x));
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 <div
@@ -91,12 +111,18 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
         tabindex="-1"
       >
-        Test Content
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
       </div>
     </div>
   </div>
@@ -128,7 +154,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -137,26 +163,25 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -193,9 +218,16 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
   padding: 0;
   position: relative;
-  width: 500px;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 .c2 {
@@ -212,29 +244,31 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class=""
+        <p
+          id="modal-description"
         >
-          <button
-            aria-label="Close dialog"
-            class="c1 c2"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </header>
-        Test Content
+          Test Content
+        </p>
+        <button
+          aria-label="Close dialog"
+          class="c1 c2"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -252,7 +286,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -261,26 +295,25 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -317,9 +350,16 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
   padding: var(--spacing-4x);
   position: relative;
-  width: 500px;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 .c2 {
@@ -350,29 +390,31 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class=""
+        <p
+          id="modal-description"
         >
-          <button
-            aria-label="Close dialog"
-            class="c1 c2"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </header>
-        Test Content
+          Test Content
+        </p>
+        <button
+          aria-label="Close dialog"
+          class="c1 c2"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -404,35 +446,34 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: var(--font-bold);
+  height: 48px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-3x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 48px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -469,9 +510,16 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: initial;
   padding: var(--spacing-6x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
-  width: 344px;
+  width: calc(100vw - var(--spacing-4x));
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 .c2 {
@@ -488,29 +536,31 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
         tabindex="-1"
       >
-        <header
-          class=""
+        <p
+          id="modal-description"
         >
-          <button
-            aria-label="Close dialog"
-            class="c1 c2"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="20"
-              width="20"
-            />
-          </button>
-        </header>
-        Test Content
+          Test Content
+        </p>
+        <button
+          aria-label="Close dialog"
+          class="c1 c2"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="20"
+            width="20"
+          />
+        </button>
       </div>
     </div>
   </div>

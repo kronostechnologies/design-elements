@@ -50,10 +50,8 @@ describe('Modal-Dialog', () => {
 
     test('Matches snapshot (only title)', () => {
         const { baseElement } = renderModal({
-            ariaHideApp: false,
             title: 'Title',
             isOpen: true,
-            onRequestClose: () => {},
         });
 
         expect(baseElement).toMatchSnapshot();
@@ -61,10 +59,9 @@ describe('Modal-Dialog', () => {
 
     test('Matches snapshot (only subtitle)', () => {
         const { baseElement } = renderModal({
-            ariaHideApp: false,
+            ariaLabel: 'Test modal',
             subtitle: 'Subtitle',
             isOpen: true,
-            onRequestClose: () => {},
         });
 
         expect(baseElement).toMatchSnapshot();
@@ -72,9 +69,8 @@ describe('Modal-Dialog', () => {
 
     test('Matches snapshot (not titles)', () => {
         const { baseElement } = renderModal({
-            ariaHideApp: false,
+            ariaLabel: 'Test modal',
             isOpen: true,
-            onRequestClose: () => {},
         });
 
         expect(baseElement).toMatchSnapshot();
@@ -102,17 +98,23 @@ describe('Modal-Dialog', () => {
     });
 });
 
-const withTitleAndSubtitle = {
+interface ModalDialogPropsLite extends Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'> {}
+
+const defaultTestProps = {
+    ariaDescribedby: 'modal-description',
     ariaHideApp: false,
-    title: 'Title',
-    subtitle: 'Subtitle',
     onRequestClose: () => {},
 };
 
-function renderModal(props: ModalDialogProps, device: DeviceType = 'desktop'): RenderResult {
+const withTitleAndSubtitle = {
+    title: 'Title',
+    subtitle: 'Subtitle',
+};
+
+function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'): RenderResult {
     return renderPortalWithProviders(
-        <ModalDialog {...props}>
-            Test Content
+        <ModalDialog {...defaultTestProps} {...props}>
+            <p id="modal-description">Test Content</p>
         </ModalDialog>, device,
     );
 }

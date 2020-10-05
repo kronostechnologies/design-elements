@@ -26,7 +26,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
     style="position: absolute; opacity: 0;"
     tabindex="0"
   />
-  .c8 {
+  .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -36,7 +36,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -45,21 +45,21 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -67,6 +67,73 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   background-color: #0080A5;
   border-color: #0080A5;
   color: #FFFFFF;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c6:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6:disabled,
+.c6:disabled:focus,
+.c6:disabled:hover {
+  background-color: #99CCDB;
+  border-color: #99CCDB;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
 }
 
 .c8:not(:disabled) {
@@ -78,90 +145,23 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c8:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c8:focus {
+  border-color: #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c8:disabled,
 .c8:disabled:focus,
 .c8:disabled:hover {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
-}
-
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c10:not(:disabled) {
-  cursor: pointer;
-}
-
-.c10 > svg {
-  color: inherit;
-}
-
-.c10:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c10:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c10:disabled,
-.c10:disabled:focus,
-.c10:disabled:hover {
   background-color: transparent;
   color: #9CA7B4;
 }
 
-.c4 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -171,7 +171,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -180,26 +180,25 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -207,25 +206,25 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: 32px;
 }
 
-.c4:not(:disabled) {
+.c9:not(:disabled) {
   cursor: pointer;
 }
 
-.c4 > svg {
+.c9 > svg {
   color: inherit;
 }
 
-.c4:hover {
+.c9:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c4:focus {
+.c9:focus {
   border-color: #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
-.c4:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -236,41 +235,52 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
   padding: var(--spacing-4x);
   position: relative;
-  width: 500px;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 .c1 {
   margin-bottom: var(--spacing-3x);
 }
 
-.c5 {
+.c10 {
   position: absolute;
   right: var(--spacing-1x);
   top: var(--spacing-1x);
 }
 
-.c6 {
+.c4 {
   margin-top: var(--spacing-4x);
 }
 
 .c2 {
   font-size: 1.25rem;
   font-weight: var(--font-normal);
-  line-height: 32px;
+  line-height: 2rem;
   margin: 0;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c3 {
   font-size: 1rem;
   font-weight: var(--font-normal);
-  line-height: 22px;
+  line-height: 1.375rem;
   margin: 0;
   margin-top: var(--spacing-3x);
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -280,7 +290,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   flex-direction: unset;
 }
 
-.c9 {
+.c7 {
   margin-bottom: 0;
   margin-right: var(--spacing-1x);
 }
@@ -293,7 +303,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
-        aria-label="Title"
+        aria-describedby="modal-description"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
@@ -310,49 +320,50 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
           </h2>
           <h3
             class="c3"
-            tabindex="-1"
           >
             Subtitle
           </h3>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
-        Test Content
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
         <footer
-          class="c6"
+          class="c4"
         >
           <div
-            class="c7"
+            class="c5"
           >
             <button
-              class="c8 c9"
+              class="c6 c7"
               data-testid="confirm-button"
-              label="Test Confirm"
               type="submit"
             >
               Test Confirm
             </button>
             <button
-              class="c10 "
+              class="c8 "
               data-testid="cancel-button"
-              label="Test Cancel"
               type="submit"
             >
               Test Cancel
             </button>
           </div>
         </footer>
+        <button
+          aria-label="Close dialog"
+          class="c9 c10"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -360,6 +371,328 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  .c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c3:not(:disabled) {
+  cursor: pointer;
+}
+
+.c3 > svg {
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c3:disabled,
+.c3:disabled:focus,
+.c3:disabled:hover {
+  background-color: #99CCDB;
+  border-color: #99CCDB;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c5:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
+.c5:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c5:disabled,
+.c5:disabled:focus,
+.c5:disabled:hover {
+  background-color: transparent;
+  color: #9CA7B4;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c6:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
+.c6:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6:disabled {
+  background-color: transparent;
+  color: #9CA7B4;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
+  padding: var(--spacing-4x);
+  position: relative;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.c7 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+.c1 {
+  margin-top: var(--spacing-4x);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+}
+
+.c4 {
+  margin-bottom: 0;
+  margin-right: var(--spacing-1x);
+}
+
+<div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+    >
+      <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
+      >
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
+        <footer
+          class="c1"
+        >
+          <div
+            class="c2"
+          >
+            <button
+              class="c3 c4"
+              data-testid="confirm-button"
+              type="submit"
+            >
+              Confirm
+            </button>
+            <button
+              class="c5 "
+              data-testid="cancel-button"
+              type="submit"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
+        <button
+          aria-label="Close dialog"
+          class="c6 c7"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 <body
   class="ReactModal__Body--open"
 >
@@ -384,7 +717,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -393,21 +726,21 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -451,7 +784,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -460,21 +793,21 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -509,7 +842,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   color: #9CA7B4;
 }
 
-.c1 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -519,7 +852,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -528,26 +861,25 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 32px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -555,25 +887,25 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   width: 32px;
 }
 
-.c1:not(:disabled) {
+.c8:not(:disabled) {
   cursor: pointer;
 }
 
-.c1 > svg {
+.c8 > svg {
   color: inherit;
 }
 
-.c1:hover {
+.c8:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c1:focus {
+.c8:focus {
   border-color: #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
-.c1:disabled {
+.c8:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -584,350 +916,41 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
   padding: var(--spacing-4x);
   position: relative;
-  width: 500px;
+  width: 60vw;
 }
 
-.c2 {
-  position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
-}
-
-.c3 {
-  margin-top: var(--spacing-4x);
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
-}
-
-.c6 {
-  margin-bottom: 0;
-  margin-right: var(--spacing-1x);
-}
-
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
-    >
-      <div
-        aria-modal="true"
-        class="ReactModal__Content ReactModal__Content--after-open c0"
-        role="dialog"
-        tabindex="-1"
-      >
-        <header
-          class=""
-        >
-          <button
-            aria-label="Close dialog"
-            class="c1 c2"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </header>
-        Test Content
-        <footer
-          class="c3"
-        >
-          <div
-            class="c4"
-          >
-            <button
-              class="c5 c6"
-              data-testid="confirm-button"
-              label="Confirm"
-              type="submit"
-            >
-              Confirm
-            </button>
-            <button
-              class="c7 "
-              data-testid="cancel-button"
-              label="Cancel"
-              type="submit"
-            >
-              Cancel
-            </button>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
-<body
-  class="ReactModal__Body--open"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
-.c7 > svg {
-  color: inherit;
-}
-
-.c7:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
-}
-
-.c7:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c7:disabled,
-.c7:disabled:focus,
-.c7:disabled:hover {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
-}
-
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c9:not(:disabled) {
-  cursor: pointer;
-}
-
-.c9 > svg {
-  color: inherit;
-}
-
-.c9:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c9:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c9:disabled,
-.c9:disabled:focus,
-.c9:disabled:hover {
-  background-color: transparent;
-  color: #9CA7B4;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 32px;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 32px;
-}
-
-.c3:not(:disabled) {
-  cursor: pointer;
-}
-
-.c3 > svg {
-  color: inherit;
-}
-
-.c3:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c3:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #9CA7B4;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  padding: var(--spacing-4x);
-  position: relative;
-  width: 500px;
 }
 
 .c1 {
   margin-bottom: var(--spacing-3x);
 }
 
-.c4 {
+.c9 {
   position: absolute;
   right: var(--spacing-1x);
   top: var(--spacing-1x);
 }
 
-.c5 {
+.c3 {
   margin-top: var(--spacing-4x);
 }
 
 .c2 {
   font-size: 1rem;
   font-weight: var(--font-normal);
-  line-height: 22px;
+  line-height: 1.375rem;
   margin: 0;
   margin-top: 0;
 }
 
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -937,7 +960,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   flex-direction: unset;
 }
 
-.c8 {
+.c6 {
   margin-bottom: 0;
   margin-right: var(--spacing-1x);
 }
@@ -950,6 +973,8 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
@@ -960,49 +985,50 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         >
           <h3
             class="c2"
-            tabindex="-1"
           >
             Subtitle
           </h3>
-          <button
-            aria-label="Close dialog"
-            class="c3 c4"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
-        Test Content
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
         <footer
-          class="c5"
+          class="c3"
         >
           <div
-            class="c6"
+            class="c4"
           >
             <button
-              class="c7 c8"
+              class="c5 c6"
               data-testid="confirm-button"
-              label="Confirm"
               type="submit"
             >
               Confirm
             </button>
             <button
-              class="c9 "
+              class="c7 "
               data-testid="cancel-button"
-              label="Cancel"
               type="submit"
             >
               Cancel
             </button>
           </div>
         </footer>
+        <button
+          aria-label="Close dialog"
+          class="c8 c9"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -1024,7 +1050,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
     style="position: absolute; opacity: 0;"
     tabindex="0"
   />
-  .c7 {
+  .c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1034,7 +1060,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1043,21 +1069,21 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1065,6 +1091,73 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   background-color: #0080A5;
   border-color: #0080A5;
   color: #FFFFFF;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c5:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c5:disabled,
+.c5:disabled:focus,
+.c5:disabled:hover {
+  background-color: #99CCDB;
+  border-color: #99CCDB;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
 }
 
 .c7:not(:disabled) {
@@ -1076,19 +1169,352 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 }
 
 .c7:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c7:focus {
+  border-color: #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c7:disabled,
 .c7:disabled:focus,
 .c7:disabled:hover {
+  background-color: transparent;
+  color: #9CA7B4;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c8:not(:disabled) {
+  cursor: pointer;
+}
+
+.c8 > svg {
+  color: inherit;
+}
+
+.c8:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
+.c8:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c8:disabled {
+  background-color: transparent;
+  color: #9CA7B4;
+}
+
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #57666E;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
+  padding: var(--spacing-4x);
+  position: relative;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.c1 {
+  margin-bottom: var(--spacing-3x);
+}
+
+.c9 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+.c3 {
+  margin-top: var(--spacing-4x);
+}
+
+.c2 {
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+}
+
+.c6 {
+  margin-bottom: 0;
+  margin-right: var(--spacing-1x);
+}
+
+<div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+    >
+      <div
+        aria-describedby="modal-description"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open c0"
+        role="dialog"
+        tabindex="-1"
+      >
+        <header
+          class="c1"
+        >
+          <h2
+            class="c2"
+            tabindex="-1"
+          >
+            Title
+          </h2>
+        </header>
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
+        <footer
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <button
+              class="c5 c6"
+              data-testid="confirm-button"
+              type="submit"
+            >
+              Confirm
+            </button>
+            <button
+              class="c7 "
+              data-testid="cancel-button"
+              type="submit"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
+        <button
+          aria-label="Close dialog"
+          class="c8 c9"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c6:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6:disabled,
+.c6:disabled:focus,
+.c6:disabled:hover {
   background-color: #99CCDB;
   border-color: #99CCDB;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+}
+
+.c8:not(:disabled) {
+  cursor: pointer;
+}
+
+.c8 > svg {
+  color: inherit;
+}
+
+.c8:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
+.c8:focus {
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c8:disabled,
+.c8:disabled:focus,
+.c8:disabled:hover {
+  background-color: transparent;
+  color: #9CA7B4;
 }
 
 .c9 {
@@ -1101,7 +1527,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1110,21 +1536,21 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
+  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-2x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1132,6 +1558,8 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
+  padding: 0;
+  width: 32px;
 }
 
 .c9:not(:disabled) {
@@ -1152,78 +1580,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
-.c9:disabled,
-.c9:disabled:focus,
-.c9:disabled:hover {
-  background-color: transparent;
-  color: #9CA7B4;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 32px;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 32px;
-}
-
-.c3:not(:disabled) {
-  cursor: pointer;
-}
-
-.c3 > svg {
-  color: inherit;
-}
-
-.c3:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c3:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c3:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -1234,361 +1591,52 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
   padding: var(--spacing-4x);
   position: relative;
-  width: 500px;
+  width: 60vw;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 .c1 {
   margin-bottom: var(--spacing-3x);
-}
-
-.c4 {
-  position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
-}
-
-.c5 {
-  margin-top: var(--spacing-4x);
-}
-
-.c2 {
-  font-size: 1.25rem;
-  font-weight: var(--font-normal);
-  line-height: 32px;
-  margin: 0;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
-}
-
-.c8 {
-  margin-bottom: 0;
-  margin-right: var(--spacing-1x);
-}
-
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay ReactModal__Overlay--after-open"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
-    >
-      <div
-        aria-label="Title"
-        aria-modal="true"
-        class="ReactModal__Content ReactModal__Content--after-open c0"
-        role="dialog"
-        tabindex="-1"
-      >
-        <header
-          class="c1"
-        >
-          <h2
-            class="c2"
-            tabindex="-1"
-          >
-            Title
-          </h2>
-          <button
-            aria-label="Close dialog"
-            class="c3 c4"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
-        </header>
-        Test Content
-        <footer
-          class="c5"
-        >
-          <div
-            class="c6"
-          >
-            <button
-              class="c7 c8"
-              data-testid="confirm-button"
-              label="Confirm"
-              type="submit"
-            >
-              Confirm
-            </button>
-            <button
-              class="c9 "
-              data-testid="cancel-button"
-              label="Cancel"
-              type="submit"
-            >
-              Cancel
-            </button>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
-}
-
-.c8:not(:disabled) {
-  cursor: pointer;
-}
-
-.c8 > svg {
-  color: inherit;
-}
-
-.c8:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
-}
-
-.c8:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c8:disabled,
-.c8:disabled:focus,
-.c8:disabled:hover {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
 }
 
 .c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c10:not(:disabled) {
-  cursor: pointer;
-}
-
-.c10 > svg {
-  color: inherit;
-}
-
-.c10:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c10:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c10:disabled,
-.c10:disabled:focus,
-.c10:disabled:hover {
-  background-color: transparent;
-  color: #9CA7B4;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 32px;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 32px;
-}
-
-.c4:not(:disabled) {
-  cursor: pointer;
-}
-
-.c4 > svg {
-  color: inherit;
-}
-
-.c4:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c4:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c4:disabled {
-  background-color: transparent;
-  color: #9CA7B4;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #57666E;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  padding: var(--spacing-4x);
-  position: relative;
-  width: 500px;
-}
-
-.c1 {
-  margin-bottom: var(--spacing-3x);
-}
-
-.c5 {
   position: absolute;
   right: var(--spacing-1x);
   top: var(--spacing-1x);
 }
 
-.c6 {
+.c4 {
   margin-top: var(--spacing-4x);
 }
 
 .c2 {
   font-size: 1.25rem;
   font-weight: var(--font-normal);
-  line-height: 32px;
+  line-height: 2rem;
   margin: 0;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c3 {
   font-size: 1rem;
   font-weight: var(--font-normal);
-  line-height: 22px;
+  line-height: 1.375rem;
   margin: 0;
   margin-top: var(--spacing-3x);
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1598,7 +1646,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   flex-direction: unset;
 }
 
-.c9 {
+.c7 {
   margin-bottom: 0;
   margin-right: var(--spacing-1x);
 }
@@ -1625,7 +1673,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
-        aria-label="Title"
+        aria-describedby="modal-description"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
@@ -1642,49 +1690,50 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
           </h2>
           <h3
             class="c3"
-            tabindex="-1"
           >
             Subtitle
           </h3>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="16"
-              width="16"
-            />
-          </button>
         </header>
-        Test Content
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
         <footer
-          class="c6"
+          class="c4"
         >
           <div
-            class="c7"
+            class="c5"
           >
             <button
-              class="c8 c9"
+              class="c6 c7"
               data-testid="confirm-button"
-              label="Confirm"
               type="submit"
             >
               Confirm
             </button>
             <button
-              class="c10 "
+              class="c8 "
               data-testid="cancel-button"
-              label="Cancel"
               type="submit"
             >
               Cancel
             </button>
           </div>
         </footer>
+        <button
+          aria-label="Close dialog"
+          class="c9 c10"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -1706,7 +1755,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
     style="position: absolute; opacity: 0;"
     tabindex="0"
   />
-  .c8 {
+  .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1716,30 +1765,30 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: var(--font-bold);
+  height: 48px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-3x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1747,6 +1796,73 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   background-color: #0080A5;
   border-color: #0080A5;
   color: #FFFFFF;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c6:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+}
+
+.c6:disabled,
+.c6:disabled:focus,
+.c6:disabled:hover {
+  background-color: #99CCDB;
+  border-color: #99CCDB;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  height: 48px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
 }
 
 .c8:not(:disabled) {
@@ -1758,90 +1874,23 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c8:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c8:focus {
+  border-color: #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
 .c8:disabled,
 .c8:disabled:focus,
 .c8:disabled:hover {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
-}
-
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.6rem;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
-  min-height: 2rem;
-  min-width: 2rem;
-  outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-}
-
-.c10:not(:disabled) {
-  cursor: pointer;
-}
-
-.c10 > svg {
-  color: inherit;
-}
-
-.c10:hover {
-  background-color: #D9DDE2;
-  color: #000000;
-}
-
-.c10:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
-}
-
-.c10:disabled,
-.c10:disabled:focus,
-.c10:disabled:hover {
   background-color: transparent;
   color: #9CA7B4;
 }
 
-.c4 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1851,35 +1900,34 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   appearance: none;
   background: inherit;
   border: 1px solid;
-  border-radius: 1.6rem;
+  border-radius: 1.5rem;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: var(--font-bold);
+  height: 48px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-letter-spacing: 0.55px;
-  -moz-letter-spacing: 0.55px;
-  -ms-letter-spacing: 0.55px;
-  letter-spacing: 0.55px;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
   min-height: 2rem;
   min-width: 2rem;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-2x);
+  padding: 0 var(--spacing-3x);
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 48px;
   background-color: transparent;
   border-color: transparent;
   color: #57666E;
@@ -1887,25 +1935,25 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: 48px;
 }
 
-.c4:not(:disabled) {
+.c9:not(:disabled) {
   cursor: pointer;
 }
 
-.c4 > svg {
+.c9 > svg {
   color: inherit;
 }
 
-.c4:hover {
+.c9:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c4:focus {
+.c9:focus {
   border-color: #0080A5;
   box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
 }
 
-.c4:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -1916,41 +1964,52 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   border-radius: 8px;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
+  max-width: 700px;
+  min-width: initial;
   padding: var(--spacing-6x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
-  width: 344px;
+  width: calc(100vw - var(--spacing-4x));
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
 }
 
 .c1 {
   margin-bottom: var(--spacing-3x);
 }
 
-.c5 {
+.c10 {
   position: absolute;
   right: var(--spacing-half);
   top: var(--spacing-half);
 }
 
-.c6 {
+.c4 {
   margin-top: var(--spacing-4x);
 }
 
 .c2 {
   font-size: 1.5rem;
   font-weight: var(--font-normal);
-  line-height: 36px;
+  line-height: 2.25rem;
   margin: 0;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c3 {
   font-size: 1.125rem;
   font-weight: var(--font-normal);
-  line-height: 28px;
+  line-height: 1.75rem;
   margin: 0;
   margin-top: var(--spacing-3x);
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1960,8 +2019,8 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  margin-bottom: var(--spacing-half);
+.c7 {
+  margin-bottom: var(--spacing-1x);
   margin-right: 0;
 }
 
@@ -1973,7 +2032,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
-        aria-label="Title"
+        aria-describedby="modal-description"
         aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open c0"
         role="dialog"
@@ -1990,49 +2049,50 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
           </h2>
           <h3
             class="c3"
-            tabindex="-1"
           >
             Subtitle
           </h3>
-          <button
-            aria-label="Close dialog"
-            class="c4 c5"
-            data-testid="close-button"
-            type="button"
-          >
-            <svg
-              color="currentColor"
-              focusable="false"
-              height="20"
-              width="20"
-            />
-          </button>
         </header>
-        Test Content
+        <p
+          id="modal-description"
+        >
+          Test Content
+        </p>
         <footer
-          class="c6"
+          class="c4"
         >
           <div
-            class="c7"
+            class="c5"
           >
             <button
-              class="c8 c9"
+              class="c6 c7"
               data-testid="confirm-button"
-              label="Confirm"
               type="submit"
             >
               Confirm
             </button>
             <button
-              class="c10 "
+              class="c8 "
               data-testid="cancel-button"
-              label="Cancel"
               type="submit"
             >
               Cancel
             </button>
           </div>
         </footer>
+        <button
+          aria-label="Close dialog"
+          class="c9 c10"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            color="currentColor"
+            focusable="false"
+            height="20"
+            width="20"
+          />
+        </button>
       </div>
     </div>
   </div>

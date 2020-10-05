@@ -1,5 +1,5 @@
 import { Button, Modal, useModal } from '@equisoft/design-elements-react';
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Preview, ArgsTable, Story } from '@storybook/addon-docs/blocks';
 import { Fragment, useState } from 'react';
 
 <Meta title="Modal / Modal" component={Modal} />
@@ -30,7 +30,7 @@ It is important for users of screenreaders that other page content be hidden (vi
 
 ## Props
 
-<Props of={Modal} />
+<ArgsTable of={Modal} />
 
 ## Examples
 
@@ -45,6 +45,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                     <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <Modal
                         appElement="#root"
+                        ariaLabel="Modal label"
                         ariaDescribedby="story-description"
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}
@@ -70,8 +71,9 @@ The prop `noPadding` removes padding to give you a blank modal to work with.
                     <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <Modal
                         appElement="#root"
-                        noPadding
+                        ariaLabel="Modal label"
                         ariaDescribedby="story-description"
+                        noPadding
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}
                     >
@@ -94,6 +96,7 @@ The prop `noPadding` removes padding to give you a blank modal to work with.
                     <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <Modal
                         appElement="#root"
+                        ariaLabel="Modal label"
                         hasCloseButton={false}
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}

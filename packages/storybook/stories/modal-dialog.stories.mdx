@@ -1,5 +1,5 @@
 import { Button, ModalDialog, useModal } from '@equisoft/design-elements-react';
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Preview, ArgsTable, Story } from '@storybook/addon-docs/blocks';
 import { Fragment, useState } from 'react';
 
 <Meta title="Modal / Modal Dialog" component={ModalDialog} />
@@ -30,7 +30,7 @@ It is important for users of screenreaders that other page content be hidden (vi
 
 ## Props
 
-<Props of={ModalDialog} />
+<ArgsTable of={ModalDialog} />
 
 ## Examples
 
@@ -165,6 +165,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                     <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
                     <ModalDialog
                         appElement="#root"
+                        ariaLabel="Modal label"
                         ariaDescribedby="story-description"
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}
