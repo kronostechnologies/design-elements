@@ -1,6 +1,8 @@
-import { DeviceContextProvider, ThemeWrapper } from '@equisoft/design-elements-react';
+import { DeviceContextProvider, injectMainCss, ThemeWrapper } from '@equisoft/design-elements-react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import React from 'react';
+
+injectMainCss();
 
 export const decorators = [
     Story => (
