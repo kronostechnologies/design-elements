@@ -25,6 +25,12 @@ input + .c1 {
   margin: 0 0 var(--spacing-3x);
 }
 
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #57666E;
+}
+
 .c0:focus {
   border-color: #0080A5;
 }
@@ -149,6 +155,12 @@ input + .c1 {
 
 .c0 {
   margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #57666E;
 }
 
 .c0:focus {

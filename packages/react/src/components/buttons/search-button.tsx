@@ -12,28 +12,23 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-    ${props => `
-        background: ${props.theme.greys.white};
-        border-color: ${props.theme.greys.grey};
-        color: ${props.theme.greys['mid-grey']};
+    ${({ theme }) => `
+        background: ${theme.greys.white};
+        border-color: ${theme.greys['dark-grey']};
+        color: ${theme.greys['dark-grey']};
+
+        &:hover {
+            background-color: ${theme.greys.grey};
+            color: ${theme.greys.black};
+        }
 
         &:disabled {
             &,
             &:focus,
             &:hover {
-                background-color: ${props.theme.greys.grey};
-                border-color: ${props.theme.greys.grey};
-                color: ${props.theme.greys['mid-grey']};
-            }
-
-            &:disabled {
-                &,
-                &:focus,
-                &:hover {
-                    background-color: ${props.theme.greys['light-grey']};
-                    border-color: ${props.theme.greys.grey};
-                    color: ${props.theme.greys['mid-grey']};
-                }
+                background-color: ${theme.greys['light-grey']};
+                border-color: ${theme.greys.grey};
+                color: ${theme.greys['mid-grey']};
             }
         }`}
 `;

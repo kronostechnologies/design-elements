@@ -60,8 +60,8 @@ input + .c2 {
   -ms-user-select: none;
   user-select: none;
   background: #FFFFFF;
-  border-color: #D9DDE2;
-  color: #9CA7B4;
+  border-color: #57666E;
+  color: #57666E;
 }
 
 .c8:not(:disabled) {
@@ -72,17 +72,14 @@ input + .c2 {
   color: inherit;
 }
 
+.c8:hover {
+  background-color: #D9DDE2;
+  color: #000000;
+}
+
 .c8:disabled,
 .c8:disabled:focus,
 .c8:disabled:hover {
-  background-color: #D9DDE2;
-  border-color: #D9DDE2;
-  color: #9CA7B4;
-}
-
-.c8:disabled:disabled,
-.c8:disabled:disabled:focus,
-.c8:disabled:disabled:hover {
   background-color: #F1F2F2;
   border-color: #D9DDE2;
   color: #9CA7B4;

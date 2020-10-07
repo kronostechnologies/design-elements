@@ -8,6 +8,12 @@ import { Theme } from '../theme-wrapper/theme-wrapper';
 const StyledDiv = styled.div<StyledDivProps>`
     margin: ${({ noMargin }) => noMargin ? '0' : '0 0 var(--spacing-3x)'};
 
+    input,
+    select,
+    textarea {
+        border-color: ${({ theme, valid }) => valid ? theme.greys['dark-grey'] : theme.notifications['error-2.1']};
+    }
+
     &:focus {
         border-color: ${({ theme, valid }) => valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
     }
