@@ -5,6 +5,12 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   margin: 0 0 var(--spacing-3x);
 }
 
+.c1 input,
+.c1 select,
+.c1 textarea {
+  border-color: #57666E;
+}
+
 .c1:focus {
   border-color: #0080A5;
 }
@@ -112,6 +118,12 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   margin: 0 0 var(--spacing-3x);
 }
 
+.c1 input,
+.c1 select,
+.c1 textarea {
+  border-color: #57666E;
+}
+
 .c1:focus {
   border-color: #0080A5;
 }
@@ -217,6 +229,12 @@ label + .c2 {
 exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c1 {
   margin: 0 0 var(--spacing-3x);
+}
+
+.c1 input,
+.c1 select,
+.c1 textarea {
+  border-color: #57666E;
 }
 
 .c1:focus {
