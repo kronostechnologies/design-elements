@@ -25,12 +25,6 @@ input + .c2 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
 .c0:focus {
   border-color: #0080A5;
 }
@@ -388,12 +382,6 @@ input + .c2 {
 
 .c0 {
   margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #A40C2E;
 }
 
 .c0:focus {
@@ -841,12 +829,6 @@ input + .c2 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
 .c0:focus {
   border-color: #0080A5;
 }
@@ -1261,12 +1243,6 @@ input[type="radio"]:disabled + .c0 {
 exports[`Select mobile select has a different style 1`] = `
 .c0 {
   margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
 }
 
 .c0:focus {

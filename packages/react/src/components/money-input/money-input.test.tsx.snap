@@ -5,19 +5,13 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   margin: 0 0 var(--spacing-3x);
 }
 
-.c1 input,
-.c1 select,
-.c1 textarea {
-  border-color: #D9DDE2;
-}
-
 .c1:focus {
   border-color: #0080A5;
 }
 
 .c2 {
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
@@ -118,19 +112,13 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   margin: 0 0 var(--spacing-3x);
 }
 
-.c1 input,
-.c1 select,
-.c1 textarea {
-  border-color: #D9DDE2;
-}
-
 .c1:focus {
   border-color: #0080A5;
 }
 
 .c2 {
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;
@@ -231,19 +219,13 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   margin: 0 0 var(--spacing-3x);
 }
 
-.c1 input,
-.c1 select,
-.c1 textarea {
-  border-color: #D9DDE2;
-}
-
 .c1:focus {
   border-color: #0080A5;
 }
 
 .c2 {
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-shadow: none;
   box-sizing: border-box;

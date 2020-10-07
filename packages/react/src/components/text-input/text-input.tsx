@@ -7,7 +7,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input`
-    ${props => inputsStyle(props.theme)}
+    ${({ theme }) => inputsStyle(theme)}
 `;
 
 type inputModeType = 'none' | 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search';
