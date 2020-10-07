@@ -25,12 +25,6 @@ input + .c1 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
 .c0:focus {
   border-color: #0080A5;
 }
@@ -303,12 +297,6 @@ input + .c1 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
 .c0:focus {
   border-color: #0080A5;
 }
@@ -579,12 +567,6 @@ input + .c1 {
 
 .c0 {
   margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
 }
 
 .c0:focus {
@@ -871,12 +853,6 @@ input + .c1 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #A40C2E;
-}
-
 .c0:focus {
   border-color: #A40C2E;
 }
@@ -1157,12 +1133,6 @@ input + .c1 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
 .c0:focus {
   border-color: #0080A5;
 }
@@ -1433,12 +1403,6 @@ input + .c1 {
 
 .c0 {
   margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
 }
 
 .c0:focus {
@@ -3521,12 +3485,6 @@ input + .c1 {
   margin: 0 0 var(--spacing-3x);
 }
 
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
-}
-
 .c0:focus {
   border-color: #0080A5;
 }
@@ -5556,12 +5514,6 @@ input + .c1 {
 
 .c0 {
   margin: 0 0 var(--spacing-3x);
-}
-
-.c0 input,
-.c0 select,
-.c0 textarea {
-  border-color: #D9DDE2;
 }
 
 .c0:focus {

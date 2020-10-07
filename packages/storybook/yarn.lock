@@ -2252,10 +2252,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.34":
-  version "2.0.3-alpha.34"
-  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.34.tgz#a89ab59bda02737a63410024223b92229db400ca"
-  integrity sha512-iSkni/20niAkvmTDtLQSKCFxcKuQIdFbOL3l8e1XM5dILYW8VHiDmTfz86hK8lwfguYYpedAXsZdDkCJ70v39Q==
+"@equisoft/design-elements-react@^2.0.3-alpha.35":
+  version "2.0.3-alpha.35"
+  resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.35.tgz#a3ef733d8f51a29f30446140fd09ec670076529a"
+  integrity sha512-S71s6L1I3C2oBtPwyVeRxEDj9XLz7IEWD0lE+Gy1u3UF41H7f2dMU2Zvn5UL0b8vIG4MvMmwp66XmQhvPzKrXg==
   dependencies:
     date-fns "^2.14.0"
     feather-icons "^4.21.0"
