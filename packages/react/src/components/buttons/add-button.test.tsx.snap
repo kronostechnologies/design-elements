@@ -40,7 +40,6 @@ exports[`Add Button has disabled styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
-  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -50,7 +49,12 @@ exports[`Add Button has disabled styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:not(:disabled) {
@@ -67,7 +71,12 @@ exports[`Add Button has disabled styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -142,7 +151,6 @@ exports[`Add Button has mobile styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
-  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -152,7 +160,12 @@ exports[`Add Button has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:not(:disabled) {
@@ -169,7 +182,12 @@ exports[`Add Button has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -243,7 +261,6 @@ exports[`Add Button has primary styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
-  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -253,7 +270,12 @@ exports[`Add Button has primary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:not(:disabled) {
@@ -270,7 +292,12 @@ exports[`Add Button has primary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -354,7 +381,12 @@ exports[`Add Button has secondary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:not(:disabled) {
@@ -371,12 +403,16 @@ exports[`Add Button has secondary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
-  background-color: #EF483E;
-  border-color: #EF483E;
+  background-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -456,7 +492,12 @@ exports[`Add Button has tertiary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:not(:disabled) {
@@ -473,7 +514,12 @@ exports[`Add Button has tertiary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {

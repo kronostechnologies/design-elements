@@ -53,6 +53,7 @@ interface DotProps {
 
 const Dot = styled.button<DotProps>`
     background-color: ${({ active, theme }) => active ? theme.main['primary-1.1'] : theme.greys.grey};
+    border: 1px solid transparent;
     border-radius: 50%;
     box-sizing: border-box;
     cursor: pointer;
@@ -71,6 +72,7 @@ interface NavigationButtonProps {
 }
 
 const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
+    border: 1px solid transparent;
     cursor: pointer;
     height: 32px;
     ${focus}

@@ -58,6 +58,7 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c7 {
   background-color: #0080A5;
+  border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
   cursor: pointer;
@@ -72,7 +73,12 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c7:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c7 + .c6 {
@@ -81,6 +87,7 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c8 {
   background-color: #D9DDE2;
+  border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
   cursor: pointer;
@@ -95,7 +102,12 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c8:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c8:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8 + .c6 {
@@ -103,6 +115,7 @@ exports[`Carousel should match snapshot 1`] = `
 }
 
 .c1 {
+  border: 1px solid transparent;
   cursor: pointer;
   height: 32px;
   visibility: hidden;
@@ -115,10 +128,16 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c9 {
+  border: 1px solid transparent;
   cursor: pointer;
   height: 32px;
   visibility: visible;
@@ -131,7 +150,12 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c9:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c9:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 <section

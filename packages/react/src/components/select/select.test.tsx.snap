@@ -63,7 +63,12 @@ input + .c2 {
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c7:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8 {
@@ -433,7 +438,12 @@ input + .c2 {
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c7:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8 {
@@ -795,7 +805,12 @@ input[type="radio"]:checked + .c0 {
 input[type="checkbox"]:focus + .c0,
 input[type="radio"]:focus + .c0 {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c0,
@@ -890,7 +905,12 @@ input + .c2 {
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c7:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8 {
@@ -1244,7 +1264,12 @@ input[type="radio"]:checked + .c0 {
 input[type="checkbox"]:focus + .c0,
 input[type="radio"]:focus + .c0 {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c0,
@@ -1318,7 +1343,12 @@ exports[`Select mobile select has a different style 1`] = `
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c6:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c7 {

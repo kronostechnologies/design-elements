@@ -52,7 +52,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2:not(:disabled) {
@@ -63,14 +68,23 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   color: inherit;
 }
 
-.c2:hover {
-  background-color: #D9DDE2;
-  color: #000000;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
+  outline: none;
   border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c2:hover {
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c2:disabled {
@@ -107,7 +121,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c4:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c4:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c4:hover {
@@ -135,7 +154,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5:hover {
@@ -327,7 +351,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2:not(:disabled) {
@@ -338,14 +367,23 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   color: inherit;
 }
 
-.c2:hover {
-  background-color: #D9DDE2;
-  color: #000000;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
+  outline: none;
   border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c2:hover {
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c2:disabled {
@@ -382,7 +420,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c4:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c4:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c4:hover {
@@ -410,7 +453,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5:hover {

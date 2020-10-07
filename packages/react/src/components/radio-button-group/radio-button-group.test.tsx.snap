@@ -62,7 +62,12 @@ Array [
 
 .c0 input:focus + .radioInput {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0 input:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .radioInput {
@@ -145,7 +150,12 @@ Array [
 
 .c0 input:focus + .radioInput {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0 input:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .radioInput {
@@ -228,7 +238,12 @@ Array [
 
 .c0 input:focus + .radioInput {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0 input:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .radioInput {
@@ -313,7 +328,12 @@ Array [
 
 .c0 input:focus + .radioInput {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0 input:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .radioInput {

@@ -68,6 +68,7 @@ input + .c2 {
 .c7 {
   color: #57666E;
   height: 1.25rem;
+  margin: -1px;
   width: 1.25rem;
 }
 
@@ -98,7 +99,12 @@ input + .c2 {
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5::-webkit-input-placeholder {
@@ -163,6 +169,7 @@ label + .c5 {
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  border: 1px solid transparent;
   bottom: 0.5rem;
   cursor: pointer;
   display: none;
@@ -181,7 +188,12 @@ label + .c5 {
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c6:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 input:valid + .c6 {
@@ -305,6 +317,7 @@ input + .c2 {
 .c7 {
   color: #57666E;
   height: 1.25rem;
+  margin: -1px;
   width: 1.25rem;
 }
 
@@ -335,7 +348,12 @@ input + .c2 {
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5::-webkit-input-placeholder {
@@ -400,6 +418,7 @@ label + .c5 {
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  border: 1px solid transparent;
   bottom: 0.5rem;
   cursor: pointer;
   display: none;
@@ -418,7 +437,12 @@ label + .c5 {
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c6:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 input:valid + .c6 {

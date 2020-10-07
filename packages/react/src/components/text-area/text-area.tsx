@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
@@ -9,6 +10,7 @@ import { inputsStyle } from '../text-input/styles/inputs';
 const StyledTextArea = styled.textarea`
     min-height: 6.5rem;
     min-width: 100%;
+    ${focus}
     ${props => inputsStyle(props.theme)}
     outline: none;
     overflow: auto;

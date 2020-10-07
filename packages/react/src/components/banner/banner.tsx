@@ -34,7 +34,7 @@ const Content = styled.div<{isMobile: boolean}>`
 const CloseButton = styled.button<{isMobile: boolean}>`
     appearance: none;
     background: transparent;
-    border: 0;
+    border: 1px solid transparent;
     color: currentColor;
     cursor: pointer;
     height: ${({ isMobile }) => isMobile ? 48 : 32}px;
@@ -46,6 +46,7 @@ const CloseButton = styled.button<{isMobile: boolean}>`
     width: ${({ isMobile }) => isMobile ? 48 : 32}px;
 
     svg {
+        margin: -1px;
         vertical-align: middle;
     }
 `;

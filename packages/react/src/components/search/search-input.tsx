@@ -42,10 +42,12 @@ const IcoSearch = styled(SearchIcon)`
 const IcoReset = styled(XIcon)`
     color: ${props => props.theme.greys['dark-grey']};
     height: 1.25rem;
+    margin: -1px;
     width: 1.25rem;
 `;
 
 const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
+    ${focus}
     ${({ theme, hasButton }) => `
         ${inputsStyle(theme)} /* Must be the first rule */
         border-radius: ${hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
@@ -68,6 +70,7 @@ const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
 const Reset = styled.button`
     appearance: none;
     background: transparent;
+    border: 1px solid transparent;
     bottom: 0.5rem;
     cursor: pointer;
     display: none;

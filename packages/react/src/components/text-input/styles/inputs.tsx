@@ -1,9 +1,6 @@
-import { focus } from '@design-elements/utils/state';
 import { Theme } from '../../theme-wrapper/theme-wrapper';
 
 export const inputsStyle = (theme: Theme) => `
-    ${focus({ theme: theme })}
-
     background: ${theme.greys.white};
     border: 1px solid ${theme.greys.grey};
     border-radius: var(--border-radius);

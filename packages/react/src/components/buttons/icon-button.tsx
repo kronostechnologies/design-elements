@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
@@ -44,20 +45,16 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)<StyledButtonProps>`
+    ${focus}
     ${(props: { theme: Theme, buttonType: ButtonType }) => {
         switch (props.buttonType) {
             case 'primary':
                 return `
                     background-color: ${props.theme.main['primary-1.1']};
-                    border: none;
                     color: ${props.theme.greys.white};
 
                     &:hover {
                       background-color: ${props.theme.main['primary-1.3']};
-                    }
-
-                    &:focus {
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
@@ -75,10 +72,6 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
                       color: ${props.theme.main['primary-1.3']};
                     }
 
-                    &:focus {
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
-                    }
-
                     &:disabled {
                       border-color: ${props.theme.main['primary-1.2']};
                       color: ${props.theme.main['primary-1.2']};
@@ -93,10 +86,6 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
                     &:hover {
                       background-color: ${props.theme.greys.grey};
                       color: ${props.theme.greys.black};
-                    }
-                    &:focus {
-                        border-color: ${props.theme.main['primary-1.1']};
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {

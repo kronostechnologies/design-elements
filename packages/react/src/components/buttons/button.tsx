@@ -29,7 +29,6 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
             case 'primary':
                 return `
                     background-color: ${theme.main['primary-1.1']};
-                    border-color: ${theme.main['primary-1.1']};
                     color: ${theme.greys.white};
 
                     &:hover {
@@ -53,8 +52,7 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     color: ${theme.main['primary-1.1']};
 
                     &:hover {
-                        background-color: ${theme.main['secondary-4.1']};
-                        border-color: ${theme.main['secondary-4.1']};
+                        background-color: ${theme.main['primary-1.1']};
                         color: ${theme.greys.white};
                     }
 
