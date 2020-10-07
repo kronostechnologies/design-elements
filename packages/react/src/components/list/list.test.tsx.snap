@@ -18,7 +18,6 @@ exports[`List Is not visible 1`] = `
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  border: 1px transparent solid;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -26,8 +25,11 @@ exports[`List Is not visible 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {
@@ -137,7 +139,6 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  border: 1px transparent solid;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -145,8 +146,11 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {
@@ -296,7 +300,6 @@ exports[`List Matches the snapshot 1`] = `
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  border: 1px transparent solid;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -304,8 +307,11 @@ exports[`List Matches the snapshot 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {

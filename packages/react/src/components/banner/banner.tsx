@@ -1,8 +1,6 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ReactElement, ReactNode, useState } from 'react';
 import styled from 'styled-components';
-
-import { focus } from '@design-elements/utils/state';
-
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
@@ -46,6 +44,10 @@ const CloseButton = styled.button<{isMobile: boolean}>`
     right: ${({ isMobile }) => isMobile ? '0' : '6px'};
     top: 9px;
     width: ${({ isMobile }) => isMobile ? 48 : 32}px;
+
+    svg {
+        vertical-align: middle;
+    }
 `;
 
 const GetIconName = (messageType: MessageType): IconName => {

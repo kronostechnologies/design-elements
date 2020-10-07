@@ -1,11 +1,9 @@
-import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
-import styled, { DefaultTheme, StyledComponent } from 'styled-components';
-
 import { Icon } from '@design-elements/components/icon/icon';
 import { useId } from '@design-elements/hooks/use-id';
 import { useTheme } from '@design-elements/hooks/use-theme';
 import { focus } from '@design-elements/utils/state';
-
+import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useCarousel } from './use-carousel';
 
 const Main = styled.section`

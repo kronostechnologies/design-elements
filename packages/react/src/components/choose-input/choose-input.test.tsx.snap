@@ -66,16 +66,10 @@ input[type="radio"]:checked + .c0 {
   color: #FFFFFF;
 }
 
-.c0:focus {
-  outline: none;
-  border: none;
-}
-
 input[type="checkbox"]:focus + .c0,
 input[type="radio"]:focus + .c0 {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c0,

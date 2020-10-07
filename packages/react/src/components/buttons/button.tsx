@@ -1,5 +1,5 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ReactElement } from 'react';
-
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Theme } from '../theme-wrapper/theme-wrapper';
@@ -23,6 +23,7 @@ interface ButtonProps extends AbstractButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)<ButtonProps>`
+    ${focus}
     ${({ theme, buttonType }: { theme: Theme, buttonType: ButtonType }) => {
         switch (buttonType) {
             case 'primary':
@@ -34,9 +35,6 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     &:hover {
                         background-color: ${theme.main['primary-1.3']};
                         border-color: ${theme.main['primary-1.3']};
-                    }
-                    &:focus {
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {
@@ -78,10 +76,6 @@ const StyledButton = styled(AbstractButton)<ButtonProps>`
                     &:hover {
                         background-color: ${theme.greys.grey};
                         color: ${theme.greys.black};
-                    }
-                    &:focus {
-                        border-color: ${theme.main['primary-1.1']};
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
                     }
 
                     &:disabled {

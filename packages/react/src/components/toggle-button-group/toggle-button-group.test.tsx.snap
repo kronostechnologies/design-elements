@@ -34,19 +34,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   margin-left: 0;
-  border: 1px transparent solid;
   padding: 0 var(--spacing-2x);
-  z-index: 0;
-}
-
-.c1:not(:first-child),
-.c1:not(:focus) {
-  border-left: 1px solid transparent;
-}
-
-.c1:first-child {
-  border-left: 1px solid #D9DDE2;
-  margin: 0;
 }
 
 .c1:focus {
@@ -55,13 +43,21 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c1:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
+}
+
+.c1:first-child {
+  border-left: 1px solid #D9DDE2;
+  margin: 0;
 }
 
 .c2 {
@@ -82,19 +78,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   margin-left: -1px;
-  border: 1px transparent solid;
   padding: 0 var(--spacing-2x);
-  z-index: 0;
-}
-
-.c2:not(:first-child),
-.c2:not(:focus) {
-  border-left: 1px solid transparent;
-}
-
-.c2:first-child {
-  border-left: 1px solid #0080A5;
-  margin: 0;
 }
 
 .c2:focus {
@@ -103,13 +87,21 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 .c2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
+}
+
+.c2:first-child {
+  border-left: 1px solid #0080A5;
+  margin: 0;
 }
 
 .c3 {
@@ -130,19 +122,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   margin-left: 0;
-  border: 1px transparent solid;
   padding: 0 var(--spacing-2x);
-  z-index: 0;
-}
-
-.c3:not(:first-child),
-.c3:not(:focus) {
-  border-left: 1px solid transparent;
-}
-
-.c3:first-child {
-  border-left: 1px solid #D9DDE2;
-  margin: 0;
 }
 
 .c3:focus {
@@ -151,13 +131,21 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c3:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
+}
+
+.c3:first-child {
+  border-left: 1px solid #D9DDE2;
+  margin: 0;
 }
 
 .c3:hover {
@@ -247,19 +235,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   margin-left: 0;
-  border: 1px transparent solid;
   padding: 0 var(--spacing-2x);
-  z-index: 0;
-}
-
-.c1:not(:first-child),
-.c1:not(:focus) {
-  border-left: 1px solid transparent;
-}
-
-.c1:first-child {
-  border-left: 1px solid #D9DDE2;
-  margin: 0;
 }
 
 .c1:focus {
@@ -268,13 +244,21 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c1:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
+}
+
+.c1:first-child {
+  border-left: 1px solid #D9DDE2;
+  margin: 0;
 }
 
 .c2 {
@@ -295,19 +279,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   margin-left: -1px;
-  border: 1px transparent solid;
   padding: 0 var(--spacing-2x);
-  z-index: 0;
-}
-
-.c2:not(:first-child),
-.c2:not(:focus) {
-  border-left: 1px solid transparent;
-}
-
-.c2:first-child {
-  border-left: 1px solid #0080A5;
-  margin: 0;
 }
 
 .c2:focus {
@@ -316,13 +288,21 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 .c2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
+}
+
+.c2:first-child {
+  border-left: 1px solid #0080A5;
+  margin: 0;
 }
 
 .c3 {
@@ -343,19 +323,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   margin-left: 0;
-  border: 1px transparent solid;
   padding: 0 var(--spacing-2x);
-  z-index: 0;
-}
-
-.c3:not(:first-child),
-.c3:not(:focus) {
-  border-left: 1px solid transparent;
-}
-
-.c3:first-child {
-  border-left: 1px solid #D9DDE2;
-  margin: 0;
 }
 
 .c3:focus {
@@ -364,13 +332,21 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c3:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
+}
+
+.c3:first-child {
+  border-left: 1px solid #D9DDE2;
+  margin: 0;
 }
 
 .c3:hover {

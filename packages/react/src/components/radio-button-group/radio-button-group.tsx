@@ -1,8 +1,6 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-
-import { focus } from '@design-elements/utils/state';
-
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`

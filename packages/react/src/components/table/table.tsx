@@ -1,9 +1,7 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ReactElement } from 'react';
 import { Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
-
-import { focus } from '@design-elements/utils/state';
-
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Theme as ThemeProps } from '../theme-wrapper/theme-wrapper';
 import { SortableColumnHeading } from './sortable-column-heading';

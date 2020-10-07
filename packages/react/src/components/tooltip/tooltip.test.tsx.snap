@@ -10,7 +10,6 @@ exports[`Tooltip Has default desktop styles 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 1px transparent solid;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -18,8 +17,11 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 <span
@@ -46,7 +48,6 @@ exports[`Tooltip Has mobile styles 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 1px transparent solid;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -54,8 +55,11 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 <span

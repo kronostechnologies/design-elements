@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-
 import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
 import { focus } from '@design-elements/utils/state';
+import styled from 'styled-components';
 
 export const Label = styled.label`
-    ${({ theme }: { theme: Theme}) => {
+    ${({ theme }: { theme: Theme }) => {
         return `
             --border-radius: 8px;
 

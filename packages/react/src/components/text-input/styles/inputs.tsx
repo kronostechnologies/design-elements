@@ -1,10 +1,12 @@
+import { focus } from '@design-elements/utils/state';
 import { Theme } from '../../theme-wrapper/theme-wrapper';
 
 export const inputsStyle = (theme: Theme) => `
+    ${focus({ theme: theme })}
+
     background: ${theme.greys.white};
     border: 1px solid ${theme.greys.grey};
     border-radius: var(--border-radius);
-    box-shadow: none;
     box-sizing: border-box;
     color: ${theme.greys.black};
     font-family: inherit;
@@ -28,11 +30,6 @@ export const inputsStyle = (theme: Theme) => `
         &::placeholder {
             color: ${theme.greys['mid-grey']};
         }
-    }
-
-    &:focus {
-        border-color: ${theme.main['primary-1.1']};
-        box-shadow: ${theme.tokens['focus-box-shadow']};
     }
 
     label + & {

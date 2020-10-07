@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
 import { focus } from '@design-elements/utils/state';
+import styled from 'styled-components';
 
 interface ContainerProps {
     activeClassName?: string;

@@ -1,9 +1,7 @@
+import { focus } from '@design-elements/utils/state';
 import React, { ReactElement, ReactNode, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
-
-import { focus } from '@design-elements/utils/state';
-
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { SideDrawer } from '../side-drawer/side-drawer';
@@ -27,13 +25,11 @@ const Header = styled.header<{ device: DeviceType }>`
 
 const LogoWrapper = styled(Link)`
     align-items: center;
-    border-radius: var(--border-radius);
     display: flex;
     font-size: 1.5rem;
     font-weight: var(--font-bold);
     height: 100%;
     ${focus}
-    padding: var(--spacing-half);
 `;
 
 const BurgerButton = styled.button`
@@ -64,12 +60,11 @@ interface HeadbandProps {
 }
 
 export function ApplicationMenu({
-                                    appName = 'default',
-                                    children,
-                                    logoHref = '/',
-                                    mobileDrawerContent,
-                                }: HeadbandProps,
-): ReactElement {
+    appName = 'default',
+    children,
+    logoHref = '/',
+    mobileDrawerContent,
+}: HeadbandProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const themeContext = useContext(ThemeContext);

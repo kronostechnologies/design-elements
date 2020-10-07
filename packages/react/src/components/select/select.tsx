@@ -384,7 +384,7 @@ export function Select({
                     setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                 }
                 break;
-            case 'Spacebar':
+            case ' ':
                 if (!open) {
                     event.preventDefault();
                     handleOpen();

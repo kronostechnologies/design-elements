@@ -47,16 +47,10 @@ input[type="radio"]:checked + .c2 {
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
-  border: none;
-}
-
 input[type="checkbox"]:focus + .c2,
 input[type="radio"]:focus + .c2 {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c2,
@@ -177,16 +171,10 @@ input[type="radio"]:checked + .c2 {
   color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
-  border: none;
-}
-
 input[type="checkbox"]:focus + .c2,
 input[type="radio"]:focus + .c2 {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c2,

@@ -1,11 +1,10 @@
+import { focus } from '@design-elements/utils/state';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
-import { focus } from '@design-elements/utils/state';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -31,7 +30,7 @@ const SearchWrapper = styled.div`
 const InnerWrapper = styled.div`
     flex: 1 1 auto;
     position: relative;
-    z-index: 0;
+    z-index: 1;
 `;
 
 const IcoSearch = styled(SearchIcon)`
@@ -43,16 +42,13 @@ const IcoSearch = styled(SearchIcon)`
 const IcoReset = styled(XIcon)`
     color: ${props => props.theme.greys['dark-grey']};
     height: 1.25rem;
-    margin: -1px 0 0 -1px;
     width: 1.25rem;
 `;
 
-const Input = styled.input<{ hasButton?: boolean }>`
-    ${(props: {theme: Theme, hasButton?: boolean}) => {
-        return `
-        ${inputsStyle(props.theme)} /* Must be the first rule */
-        border-radius: ${props.hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
-        ${focus(props)}
+const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
+    ${({ theme, hasButton }) => `
+        ${inputsStyle(theme)} /* Must be the first rule */
+        border-radius: ${hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
         padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 
         label + & {
@@ -65,8 +61,8 @@ const Input = styled.input<{ hasButton?: boolean }>`
         &::-webkit-search-results-decoration {
           display: none;
         }
-      `;
-    }}
+      `
+    }
 `;
 
 const Reset = styled.button`
@@ -90,16 +86,13 @@ const Reset = styled.button`
 `;
 
 const SearchSubmit = styled(SearchButton)`
-    &:focus {
-        z-index: 1;
-    }
-
-    &:not(:focus) {
-        border-left: 1px solid transparent !important;
-    }
-
+    border-left: 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     position: relative;
+
+    &:focus {
+        z-index: 2;
+    }
 `;
 
 export interface SearchInputProps {

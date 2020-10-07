@@ -39,13 +39,10 @@ Array [
 }
 
 .c0 input {
-  height: 16px;
-  left: 0;
-  margin: 0;
+  height: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  width: 0;
 }
 
 .c0 input:checked + .box {
@@ -57,15 +54,9 @@ Array [
   opacity: 1;
 }
 
-.c0 input:focus {
-  outline: none;
-  border: none;
-}
-
 .c0 input:focus + .box {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .box {
@@ -135,13 +126,10 @@ Array [
 }
 
 .c0 input {
-  height: 16px;
-  left: 0;
-  margin: 0;
+  height: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  width: 0;
 }
 
 .c0 input:checked + .box {
@@ -153,15 +141,9 @@ Array [
   opacity: 1;
 }
 
-.c0 input:focus {
-  outline: none;
-  border: none;
-}
-
 .c0 input:focus + .box {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .box {
@@ -235,13 +217,10 @@ Array [
 }
 
 .c0 input {
-  height: 16px;
-  left: 0;
-  margin: 0;
+  height: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  width: 0;
 }
 
 .c0 input:checked + .box {
@@ -253,15 +232,9 @@ Array [
   opacity: 1;
 }
 
-.c0 input:focus {
-  outline: none;
-  border: none;
-}
-
 .c0 input:focus + .box {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .box {
@@ -329,13 +302,10 @@ Array [
 }
 
 .c0 input {
-  height: 16px;
-  left: 0;
-  margin: 0;
+  height: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  width: 0;
 }
 
 .c0 input:checked + .box {
@@ -347,15 +317,9 @@ Array [
   opacity: 1;
 }
 
-.c0 input:focus {
-  outline: none;
-  border: none;
-}
-
 .c0 input:focus + .box {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0 .box {

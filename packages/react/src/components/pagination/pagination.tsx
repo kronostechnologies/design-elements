@@ -1,14 +1,12 @@
-import React, { ReactElement, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
-
 import { IconButton } from '@design-elements/components/buttons/icon-button';
 import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 import { IconName } from '@design-elements/components/icon/icon';
 import { clamp } from '@design-elements/utils/math';
 import { range } from '@design-elements/utils/range';
 import { focus } from '@design-elements/utils/state';
-
+import React, { ReactElement, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 import { calculateShownPageRange } from './util/pagination-util';
 
 const Pages = styled.ol`

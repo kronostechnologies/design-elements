@@ -63,14 +63,16 @@ exports[`Carousel should match snapshot 1`] = `
   cursor: pointer;
   display: inline-block;
   height: 12px;
-  border: 1px transparent solid;
   width: 12px;
 }
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c7 + .c6 {
@@ -84,14 +86,16 @@ exports[`Carousel should match snapshot 1`] = `
   cursor: pointer;
   display: inline-block;
   height: 12px;
-  border: 1px transparent solid;
   width: 12px;
 }
 
 .c8:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8 + .c6 {
@@ -101,29 +105,33 @@ exports[`Carousel should match snapshot 1`] = `
 .c1 {
   cursor: pointer;
   height: 32px;
-  border: 1px transparent solid;
   visibility: hidden;
   width: 32px;
 }
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c9 {
   cursor: pointer;
   height: 32px;
-  border: 1px transparent solid;
   visibility: visible;
   width: 32px;
 }
 
 .c9:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 <section

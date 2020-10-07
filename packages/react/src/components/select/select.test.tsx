@@ -147,14 +147,14 @@ describe('Select', () => {
         test('Spacebar should open listbox', () => {
             const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Spacebar', preventDefault: jest.fn() });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 
         test('Spacebar should open listbox [searchable]', () => {
             const wrapper = shallow(<Select options={provinces} searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Spacebar', preventDefault: jest.fn() });
+            getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
             expect(getByTestId(wrapper, 'listbox').props().visible).toBeTruthy();
         });
 

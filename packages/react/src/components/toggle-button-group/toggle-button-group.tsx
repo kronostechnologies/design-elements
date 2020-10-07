@@ -1,8 +1,6 @@
+import { focus } from '@design-elements/utils/state';
 import React, { MouseEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
-
-import { focus } from '@design-elements/utils/state';
-
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const Container = styled.div`
@@ -25,16 +23,6 @@ interface ToggleButtonProps {
 }
 
 const ToggleButton = styled.button<ToggleButtonProps>`
-    &:not(:first-child),
-    &:not(:focus) {
-        border-left: 1px solid transparent;
-    }
-
-    &:first-child {
-        border-left: 1px solid ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
-        margin: 0;
-    }
-
     &:focus {
         z-index: 1;
     }
@@ -52,11 +40,15 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     margin-left: ${props => props.pressed ? '-1px' : '0'};
     ${focus}
     padding: 0 var(--spacing-2x);
-    z-index: 0;
 
     &:disabled {
         background-color: ${props => props.theme.greys['light-grey']};
         color: ${props => props.theme.greys['mid-grey']};
+    }
+
+    &:first-child {
+        border-left: 1px solid ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
+        margin: 0;
     }
 
     &:hover {

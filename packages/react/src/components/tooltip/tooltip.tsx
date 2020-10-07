@@ -1,9 +1,8 @@
+import { focus } from '@design-elements/utils/state';
 import React, { KeyboardEvent as ReactKeyboardEvent, MouseEvent, ReactElement, ReactNode, useEffect, useState } from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
-import { focus } from '@design-elements/utils/state';
 import { useTheme } from '../../hooks/use-theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';

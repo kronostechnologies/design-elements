@@ -4,16 +4,7 @@ import styled from 'styled-components';
 
 type PartialButtonProps = Pick<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'type'>;
 
-export interface AbstractButtonProps extends PartialButtonProps {
-    label?: string;
-    children?: ReactNode;
-    disabled?: boolean;
-
-    onClick?(): void;
-}
-
 export const AbstractButton = styled.button<{ isMobile: boolean }>`
-    ${focus}
     align-items: center;
     appearance: none;
     background: inherit;
@@ -30,6 +21,7 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     line-height: ${({ isMobile }) => isMobile ? 1.5 : 1}rem;
     min-height: 2rem;
     min-width: 2rem;
+    ${focus}
     outline: none;
     padding: ${({ isMobile }) => isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-2x);'};
     text-transform: uppercase;
@@ -42,5 +34,11 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     > svg {
         color: inherit;
     }
-const AbstractButton = styled.button`
 `;
+
+export interface AbstractButtonProps extends PartialButtonProps {
+    label?: string;
+    children?: ReactNode;
+    disabled?: boolean;
+    onClick?(): void;
+}

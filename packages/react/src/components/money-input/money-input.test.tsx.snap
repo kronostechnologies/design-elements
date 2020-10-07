@@ -19,7 +19,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
@@ -33,6 +32,15 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2::-webkit-input-placeholder {
@@ -74,11 +82,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-.c2:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
 }
 
 label + .c2 {
@@ -132,7 +135,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
@@ -146,6 +148,15 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2::-webkit-input-placeholder {
@@ -187,11 +198,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-.c2:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
 }
 
 label + .c2 {
@@ -245,7 +251,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   background: #FFFFFF;
   border: 1px solid #D9DDE2;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
@@ -259,6 +264,15 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2::-webkit-input-placeholder {
@@ -300,11 +314,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-.c2:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
 }
 
 label + .c2 {

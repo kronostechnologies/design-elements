@@ -25,13 +25,15 @@ exports[`Route Link disabled matches snapshot (Link) 1`] = `
 
 .c0.external {
   color: #7fbfd2;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:visited {
@@ -44,13 +46,15 @@ exports[`Route Link disabled matches snapshot (Link) 1`] = `
 
 .c0.navigation {
   color: #9ca7b4;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 <a
@@ -87,13 +91,15 @@ exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
 
 .c0.external {
   color: #7fbfd2;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:visited {
@@ -106,13 +112,15 @@ exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
 
 .c0.navigation {
   color: #9ca7b4;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 <a
@@ -149,13 +157,15 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 
 .c0.external {
   color: #0080a5;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:hover {
@@ -173,13 +183,15 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 
 .c0.navigation {
   color: #57666e;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.navigation:hover {
@@ -224,13 +236,15 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 
 .c0.external {
   color: #0080a5;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:hover {
@@ -248,13 +262,15 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 
 .c0.navigation {
   color: #57666e;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.navigation:hover {
@@ -300,13 +316,15 @@ exports[`Route Link only icon matches snapshot (Link) 1`] = `
 
 .c0.external {
   color: #0080a5;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:hover {
@@ -324,13 +342,15 @@ exports[`Route Link only icon matches snapshot (Link) 1`] = `
 
 .c0.navigation {
   color: #57666e;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.navigation:hover {
@@ -380,13 +400,15 @@ exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
 
 .c0.external {
   color: #0080a5;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:hover {
@@ -404,13 +426,15 @@ exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
 
 .c0.navigation {
   color: #57666e;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.navigation:hover {
@@ -461,13 +485,15 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
 
 .c0.external {
   color: #0080a5;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:hover {
@@ -485,13 +511,15 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
 
 .c0.navigation {
   color: #57666e;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.navigation:hover {
@@ -542,13 +570,15 @@ exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
 
 .c0.external {
   color: #0080a5;
-  border: 1px transparent solid;
 }
 
 .c0.external:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.external:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.external:hover {
@@ -566,13 +596,15 @@ exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
 
 .c0.navigation {
   color: #57666e;
-  border: 1px transparent solid;
 }
 
 .c0.navigation:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0.navigation:hover {

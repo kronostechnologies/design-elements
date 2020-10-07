@@ -82,15 +82,16 @@ exports[`Global Navigation Matches snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border: 1px transparent solid;
   width: 32px;
-  border: 1px transparent solid;
 }
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c3:hover {
@@ -110,8 +111,11 @@ exports[`Global Navigation Matches snapshot 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  border: 1px solid #0080A5;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566,0 0 0 1px #0080A5;
 }
 
 <div

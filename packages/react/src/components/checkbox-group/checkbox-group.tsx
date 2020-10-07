@@ -1,8 +1,7 @@
-import React, { ChangeEvent, ReactElement } from 'react';
-import styled from 'styled-components';
-
 import { focus } from '@design-elements/utils/state';
 import CheckMark from 'feather-icons/dist/icons/check.svg';
+import React, { ChangeEvent, ReactElement } from 'react';
+import styled from 'styled-components';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Legend = styled.legend`
@@ -35,13 +34,10 @@ const StyledLabel = styled.label`
             }
 
             input {
-                height: 16px;
-                left: 0;
-                margin: 0;
+                height: 0;
                 opacity: 0;
                 position: absolute;
-                top: 2px;
-                width: 16px;
+                width: 0;
 
                 &:checked + .box {
                     background-color: ${props.theme.main['primary-1.1']};
