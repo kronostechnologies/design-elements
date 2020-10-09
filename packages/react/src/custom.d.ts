@@ -17,18 +17,6 @@ declare module '!!style-loader*' {
     function unuse(): void;
 }
 
-declare module 'react-shadow/styled-components' {
-    import * as React from 'react';
-
-    interface Root {
-        [name: string]: React.ComponentType;
-    }
-
-    const ReactShadowRoot: Root;
-
-    export default ReactShadowRoot;
-}
-
 declare module '*.css' {
     const content: string;
     export default content;

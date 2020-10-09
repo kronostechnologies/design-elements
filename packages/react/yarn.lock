@@ -6841,10 +6841,10 @@ react-router@5.1.2:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-shadow@^18.2.5:
-  version "18.3.0"
-  resolved "https://registry.yarnpkg.com/react-shadow/-/react-shadow-18.3.0.tgz#9c02da30479eb7e535e7f6903caab80dd207d260"
-  integrity sha512-CXRSqK7wfjz4KxHhJ5miXZO0OwjuEMYla4V1oLnztza2lhOCN0mSEQAzxYv0P9u69ahjWJi4Fg+dcAoja8SQDA==
+react-shadow@^18.4.2:
+  version "18.4.2"
+  resolved "https://registry.yarnpkg.com/react-shadow/-/react-shadow-18.4.2.tgz#df96f1ca80e1d450b778bd3fc11aa09bd47af692"
+  integrity sha512-morQkJH3+RRboxr0L4I19PeNwGEHBH/8vc52JAA07/QA1x1wEINRzZYntLEc96VDAbQlo/xrI7HKdyIJsUKzmQ==
   dependencies:
     humps "^2.0.1"
     react-use "^15.3.3"
