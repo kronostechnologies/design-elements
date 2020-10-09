@@ -15,4 +15,5 @@
   --spacing-7x: calc(7 * var(--spacing-base));
   // var for border-radius
   --border-radius: 4px;
+  --border-radius-2x: calc(2 * var(--border-radius));
 }

@@ -9,7 +9,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
-    border-radius: 8px;
+    border-radius: var(--border-radius-2x);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     max-width: 700px;

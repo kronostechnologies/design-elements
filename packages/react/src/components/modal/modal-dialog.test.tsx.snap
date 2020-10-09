@@ -232,7 +232,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   max-width: 700px;
@@ -591,7 +591,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   max-width: 700px;
@@ -913,7 +913,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   max-width: 700px;
@@ -1256,7 +1256,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   max-width: 700px;
@@ -1588,7 +1588,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   max-width: 700px;
@@ -1961,7 +1961,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #57666E;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2x);
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   box-sizing: border-box;
   max-width: 700px;
