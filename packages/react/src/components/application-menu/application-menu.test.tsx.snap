@@ -151,6 +151,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   margin: 0;
   padding: 0;
@@ -289,6 +290,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   margin: 0;
   padding: 0;

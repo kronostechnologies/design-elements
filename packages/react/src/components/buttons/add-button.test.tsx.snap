@@ -40,6 +40,7 @@ exports[`Add Button has disabled styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -151,6 +152,7 @@ exports[`Add Button has mobile styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -261,6 +263,7 @@ exports[`Add Button has primary styles 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 

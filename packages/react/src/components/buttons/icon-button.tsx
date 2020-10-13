@@ -51,6 +51,7 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
             case 'primary':
                 return `
                     background-color: ${props.theme.main['primary-1.1']};
+                    border-color: ${props.theme.main['primary-1.1']};
                     color: ${props.theme.greys.white};
 
                     &:hover {

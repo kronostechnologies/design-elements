@@ -69,8 +69,8 @@ exports[`External Link disabled matches snapshot 1`] = `
 
 <a
   aria-disabled="true"
-  className="c0 external"
-  disabled={true}
+  class="c0 external"
+  disabled=""
 >
   External Link
 </a>
@@ -158,7 +158,7 @@ exports[`External Link matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
-  className="c0 external"
+  class="c0 external"
   href="https://www.google.ca/"
 >
   External Link
@@ -247,12 +247,12 @@ exports[`External Link with icon matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
-  className="c0 external"
+  class="c0 external"
   href="#"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -342,12 +342,12 @@ exports[`External Link without href matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
-  className="c0 external"
+  class="c0 external"
   href="javascript:void(0)"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />

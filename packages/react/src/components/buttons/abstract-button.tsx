@@ -4,6 +4,13 @@ import styled from 'styled-components';
 
 type PartialButtonProps = Pick<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'type'>;
 
+export interface AbstractButtonProps extends PartialButtonProps {
+    label?: string;
+    children?: ReactNode;
+    disabled?: boolean;
+    onClick?(): void;
+}
+
 export const AbstractButton = styled.button<{ isMobile: boolean }>`
     align-items: center;
     appearance: none;
@@ -35,10 +42,3 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
         color: inherit;
     }
 `;
-
-export interface AbstractButtonProps extends PartialButtonProps {
-    label?: string;
-    children?: ReactNode;
-    disabled?: boolean;
-    onClick?(): void;
-}

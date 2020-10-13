@@ -72,15 +72,15 @@ const ShowMoreMenu = styled.ul<{open?: boolean}>`
 const ShowMore = styled.button<{active?: boolean}>`
     align-items: center;
     background-color: ${({ active, theme }) => active ? theme.greys.grey : 'transparent'};
-    border: none;
+    border: 1px solid transparent;
     border-radius: 16px;
     color: ${({ theme }) => theme.greys['dark-grey']};
     cursor: pointer;
     display: flex;
-    height: 32px;
+    height: 34px;
     justify-content: center;
     ${focus}
-    width: 32px;
+    width: 34px;
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};

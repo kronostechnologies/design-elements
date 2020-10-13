@@ -46,7 +46,6 @@ const CloseButton = styled.button<{isMobile: boolean}>`
     width: ${({ isMobile }) => isMobile ? 48 : 32}px;
 
     svg {
-        margin: -1px;
         vertical-align: middle;
     }
 `;

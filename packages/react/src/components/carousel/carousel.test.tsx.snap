@@ -117,9 +117,9 @@ exports[`Carousel should match snapshot 1`] = `
 .c1 {
   border: 1px solid transparent;
   cursor: pointer;
-  height: 32px;
+  height: 34px;
   visibility: hidden;
-  width: 32px;
+  width: 34px;
 }
 
 .c1:focus {
@@ -139,9 +139,9 @@ exports[`Carousel should match snapshot 1`] = `
 .c9 {
   border: 1px solid transparent;
   cursor: pointer;
-  height: 32px;
+  height: 34px;
   visibility: visible;
-  width: 32px;
+  width: 34px;
 }
 
 .c9:focus {

@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/state';
 import { Theme } from '../../theme-wrapper/theme-wrapper';
 
 export const inputsStyle = (theme: Theme) => `
@@ -11,6 +12,7 @@ export const inputsStyle = (theme: Theme) => `
     letter-spacing: 0.025rem;
     line-height: 1.4rem;
     margin: 0;
+    ${focus({ theme })}
     outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
     width: 100%;

@@ -37,10 +37,6 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c1:focus {
-  z-index: 1;
-}
-
 .c1:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
@@ -49,6 +45,10 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 .c1:first-child {
   border-color: #D9DDE2;
   margin: 0;
+}
+
+.c1:focus {
+  z-index: 1;
 }
 
 .c1:focus {
@@ -86,10 +86,6 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c2:focus {
-  z-index: 1;
-}
-
 .c2:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
@@ -98,6 +94,10 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 .c2:first-child {
   border-color: #D9DDE2;
   margin: 0;
+}
+
+.c2:focus {
+  z-index: 1;
 }
 
 .c2:focus {
@@ -135,10 +135,6 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c3:focus {
-  z-index: 1;
-}
-
 .c3:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
@@ -147,6 +143,10 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 .c3:first-child {
   border-color: #D9DDE2;
   margin: 0;
+}
+
+.c3:focus {
+  z-index: 1;
 }
 
 .c3:focus {
@@ -253,10 +253,6 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c1:focus {
-  z-index: 1;
-}
-
 .c1:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
@@ -265,6 +261,10 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 .c1:first-child {
   border-color: #D9DDE2;
   margin: 0;
+}
+
+.c1:focus {
+  z-index: 1;
 }
 
 .c1:focus {
@@ -302,10 +302,6 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c2:focus {
-  z-index: 1;
-}
-
 .c2:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
@@ -314,6 +310,10 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 .c2:first-child {
   border-color: #D9DDE2;
   margin: 0;
+}
+
+.c2:focus {
+  z-index: 1;
 }
 
 .c2:focus {
@@ -351,10 +351,6 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   padding: 0 var(--spacing-2x);
 }
 
-.c3:focus {
-  z-index: 1;
-}
-
 .c3:disabled {
   background-color: #F1F2F2;
   color: #9CA7B4;
@@ -363,6 +359,10 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 .c3:first-child {
   border-color: #D9DDE2;
   margin: 0;
+}
+
+.c3:focus {
+  z-index: 1;
 }
 
 .c3:focus {

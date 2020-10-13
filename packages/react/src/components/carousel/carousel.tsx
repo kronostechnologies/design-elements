@@ -74,10 +74,10 @@ interface NavigationButtonProps {
 const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
     border: 1px solid transparent;
     cursor: pointer;
-    height: 32px;
+    height: 34px;
     ${focus}
     visibility: ${({ disabled }) => disabled ? 'hidden' : 'visible'};
-    width: 32px;
+    width: 34px;
 `;
 
 function LeftArrowIcon(): ReactElement {

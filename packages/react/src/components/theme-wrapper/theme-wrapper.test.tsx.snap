@@ -40,6 +40,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #0080A5;
+  border-color: #0080A5;
   color: #FFFFFF;
 }
 
@@ -137,6 +138,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   -ms-user-select: none;
   user-select: none;
   background-color: #9EB3FF;
+  border-color: #9EB3FF;
   color: #FFFFFF;
 }
 

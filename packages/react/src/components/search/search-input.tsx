@@ -47,7 +47,6 @@ const IcoReset = styled(XIcon)`
 `;
 
 const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
-    ${focus}
     ${({ theme, hasButton }) => `
         ${inputsStyle(theme)} /* Must be the first rule */
         border-radius: ${hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};

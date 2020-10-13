@@ -418,7 +418,7 @@ export function Select({
             handleOpen();
         } else if (event.key === 'ArrowUp' && !focusedValue) {
             focusLastElementFromArray(options);
-        } else if (/^[a-z]$/i.test(event.key)) /* Check if key is a character */ {
+        } else if (/^[\p{L}\p{N}]$/iu.test(event.key)) /* Check if key is a character */ {
             if (searchable) {
                 setAutofocus(false);
                 setFocusedValue('');

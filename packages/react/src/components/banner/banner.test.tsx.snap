@@ -68,7 +68,6 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
 }
 
 .c1 svg {
-  margin: -1px;
   vertical-align: middle;
 }
 
@@ -171,7 +170,6 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
 }
 
 .c1 svg {
-  margin: -1px;
   vertical-align: middle;
 }
 

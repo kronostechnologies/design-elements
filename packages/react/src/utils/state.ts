@@ -1,15 +1,9 @@
 import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
 
-const focus = ({ theme }: { theme: Theme }, selector?: string) => `
-    ${ !selector ?
-    `&:focus {
-            outline: none;
-        }` : ''
-    }
+export const focus = ({ theme }: { theme: Theme }, selector?: string) => `
+    ${ !selector ? `&:focus { outline: none; }` : '' }
 
-    ${ selector == null ?
-    '&:focus' : `${selector}`}
-    {
+    ${ selector == null ? '&:focus' : `${selector}`} {
         outline: none;
         border-color: ${theme.tokens['focus-border']};
         box-shadow: ${theme.tokens['focus-box-shadow']};
@@ -19,7 +13,3 @@ const focus = ({ theme }: { theme: Theme }, selector?: string) => `
         box-shadow: ${theme.tokens['focus-border-box-shadow']};
     }
 `;
-
-export {
-    focus,
-};

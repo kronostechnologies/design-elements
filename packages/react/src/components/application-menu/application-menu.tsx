@@ -35,6 +35,7 @@ const LogoWrapper = styled(Link)`
 const BurgerButton = styled.button`
     appearance: none;
     background-color: transparent;
+    border: 1px solid transparent;
     cursor: pointer;
     margin: 0;
     ${focus}

@@ -23,10 +23,6 @@ interface ToggleButtonProps {
 }
 
 const ToggleButton = styled.button<ToggleButtonProps>`
-    &:focus {
-        z-index: 1;
-    }
-
     align-items: center;
     background-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.white};
     border: 1px solid;
@@ -50,10 +46,13 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         margin: 0;
     }
 
+    &:focus {
+        z-index: 1;
+    }
+
     /* Order matters here, so I gotta ignore the stylelint order rule */
-    /* stylelint-disable */
+    /* stylelint-disable-next-line */
     ${focus}
-    /* stylelint-enable */
 
     &:hover {
         ${props => props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}

@@ -1,4 +1,3 @@
-import { focus } from '@design-elements/utils/state';
 import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
@@ -8,7 +7,6 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input`
-    ${focus}
     ${props => inputsStyle(props.theme)}
 `;
 
