@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Listbox Is hidden 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #57666E,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:active {
+  background-color: #D9DDE2;
+}
+
+<ul
+  class="c0"
+  data-testid="menu-list"
+  hidden=""
+  tabindex="0"
+>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionA"
+      href="/testA"
+    >
+      Option A
+    </a>
+  </li>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionB"
+      href="/testB"
+    >
+      Option B
+    </a>
+  </li>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionC"
+      href="/testC"
+    >
+      Option C
+    </a>
+  </li>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionD"
+      href="/testD"
+    >
+      Option D
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Listbox Matches the snapshot 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #57666E,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:active {
+  background-color: #D9DDE2;
+}
+
+<ul
+  class="c0"
+  data-testid="menu-list"
+  tabindex="0"
+>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionA"
+      href="/testA"
+    >
+      Option A
+    </a>
+  </li>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionB"
+      href="/testB"
+    >
+      Option B
+    </a>
+  </li>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionC"
+      href="/testC"
+    >
+      Option C
+    </a>
+  </li>
+  <li
+    class="c1"
+  >
+    <a
+      class="c2"
+      data-testid="listitem-optionD"
+      href="/testD"
+    >
+      Option D
+    </a>
+  </li>
+</ul>
+`;

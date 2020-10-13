@@ -55,6 +55,43 @@ describe('Listbox', () => {
         expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
     });
 
+    test('Calls listbox-item onSelect callback when item is clicked', () => {
+        const callback = jest.fn();
+        const wrapper = shallowWithTheme(
+            <Listbox
+                options={[
+                    {
+                        label: 'Option Test',
+                        value: 'optionTest',
+                        onSelect: callback,
+                    },
+                ]}
+            />);
+
+        getByTestId(wrapper, 'listitem-optionTest').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('Calls listbox-item onSelect callback when Enter key is pressed', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Listbox
+                options={[
+                    {
+                        label: 'Option Test',
+                        value: 'optionTest',
+                        onSelect: callback,
+                    },
+                ]}
+            />);
+
+        wrapper.setProps({ focusedValue: 'optionTest' }).update();
+        getByTestId(wrapper, 'listbox-list').simulate('keydown', { key: 'Enter' });
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
     test('Should have the check indicator if selected', () => {
         const wrapper = shallowWithTheme(<Listbox options={options} checkIndicator/>);
 
