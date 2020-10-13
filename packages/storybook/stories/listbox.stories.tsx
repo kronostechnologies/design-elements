@@ -1,9 +1,9 @@
-import { List } from '@equisoft/design-elements-react';
+import { Listbox } from '@equisoft/design-elements-react';
 import React from 'react';
 
 export default {
-    title: 'List',
-    component: List,
+    title: 'Listbox',
+    component: Listbox,
 };
 
 const options = [
@@ -34,23 +34,23 @@ const optionsWithoutLabel = [
     },
 ];
 
-export const list = () => (
-    <List
+export const normal = () => (
+    <Listbox
         options={options}
         onChange={option => console.log('onChange', option)}
     />
 );
 
-export const listWithAutofocus = () => (
-    <List
+export const listboxWithAutofocus = () => (
+    <Listbox
         options={options}
         onChange={option => console.log('onChange', option)}
         autofocus={true}
     />
 );
 
-export const listWithCheck = () => (
-    <List
+export const listboxWithCheck = () => (
+    <Listbox
         checkIndicator={true}
         defaultValue={'optionC'}
         options={options}
@@ -58,16 +58,16 @@ export const listWithCheck = () => (
     />
 );
 
-export const listWithThreeItemsVisible = () => (
-    <List
+export const listboxWithThreeItemsVisible = () => (
+    <Listbox
         options={options}
         onChange={option => console.log('onChange', option)}
         numberOfItemsVisible={3}
     />
 );
 
-export const listWithoutOptionLabel = () => (
-    <List
+export const listboxWithoutOptionLabel = () => (
+    <Listbox
         options={optionsWithoutLabel}
         onChange={option => console.log('onChange', option)}
         numberOfItemsVisible={3}

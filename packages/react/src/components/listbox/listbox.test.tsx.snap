@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List Is not visible 1`] = `
+exports[`Listbox Is not visible 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -24,6 +24,7 @@ exports[`List Is not visible 1`] = `
 }
 
 .c1:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -50,6 +51,7 @@ exports[`List Is not visible 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-normal);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -58,9 +60,8 @@ exports[`List Is not visible 1`] = `
   white-space: nowrap;
 }
 
-.c2:hover,
 .c2:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 <div
@@ -70,6 +71,7 @@ exports[`List Is not visible 1`] = `
 >
   <ul
     className="c1"
+    onBlur={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     role="presentation"
@@ -81,6 +83,7 @@ exports[`List Is not visible 1`] = `
       className="c2"
       id="undefined_optionA"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -92,6 +95,7 @@ exports[`List Is not visible 1`] = `
       className="c2"
       id="undefined_optionB"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -103,6 +107,7 @@ exports[`List Is not visible 1`] = `
       className="c2"
       id="undefined_optionC"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -114,6 +119,7 @@ exports[`List Is not visible 1`] = `
       className="c2"
       id="undefined_optionD"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -123,7 +129,7 @@ exports[`List Is not visible 1`] = `
 </div>
 `;
 
-exports[`List Matches the snapshot (dropdown) 1`] = `
+exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -150,6 +156,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -176,6 +183,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-normal);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -184,9 +192,8 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   white-space: nowrap;
 }
 
-.c2:hover,
 .c2:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c3 {
@@ -202,6 +209,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -210,9 +218,8 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
   white-space: nowrap;
 }
 
-.c3:hover,
 .c3:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c4 {
@@ -229,6 +236,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 >
   <ul
     className="c1"
+    onBlur={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     role="presentation"
@@ -240,6 +248,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
       className="c2"
       id="undefined_optionA"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -251,6 +260,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
       className="c3"
       id="undefined_optionB"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={true}
     >
@@ -269,6 +279,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
       className="c2"
       id="undefined_optionC"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -280,6 +291,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
       className="c2"
       id="undefined_optionD"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -289,7 +301,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 </div>
 `;
 
-exports[`List Matches the snapshot 1`] = `
+exports[`Listbox Matches the snapshot 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -316,6 +328,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1:focus {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -342,6 +355,7 @@ exports[`List Matches the snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-normal);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -350,9 +364,8 @@ exports[`List Matches the snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c2:hover,
 .c2:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c3 {
@@ -368,6 +381,7 @@ exports[`List Matches the snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -376,9 +390,8 @@ exports[`List Matches the snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c3:hover,
 .c3:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c4 {
@@ -395,6 +408,7 @@ exports[`List Matches the snapshot 1`] = `
 >
   <ul
     className="c1"
+    onBlur={[Function]}
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     role="presentation"
@@ -406,6 +420,7 @@ exports[`List Matches the snapshot 1`] = `
       className="c2"
       id="undefined_optionA"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -417,6 +432,7 @@ exports[`List Matches the snapshot 1`] = `
       className="c3"
       id="undefined_optionB"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={true}
     >
@@ -435,6 +451,7 @@ exports[`List Matches the snapshot 1`] = `
       className="c2"
       id="undefined_optionC"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >
@@ -446,6 +463,7 @@ exports[`List Matches the snapshot 1`] = `
       className="c2"
       id="undefined_optionD"
       onClick={[Function]}
+      onMouseMove={[Function]}
       role="option"
       selected={false}
     >

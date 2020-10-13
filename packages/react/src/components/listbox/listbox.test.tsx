@@ -2,10 +2,10 @@ import { mount, ReactWrapper } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { List, Option } from './list';
+import { Listbox, Option } from './listbox';
 jest.mock('uuid/v4');
 
-describe('List', () => {
+describe('Listbox', () => {
     let defaultValue: string;
     let defaultValueIndex: number;
     let options: Option[];
@@ -42,7 +42,7 @@ describe('List', () => {
     test('Correctly set the default option', () => {
         const wrapper = mount(
             ThemeWrapped(
-                <List options={options} defaultValue={defaultValue} onChange={onChange} />,
+                <Listbox options={options} defaultValue={defaultValue} onChange={onChange} />,
             ),
         );
 
@@ -53,7 +53,7 @@ describe('List', () => {
     test('Calls onChange callback when an option is selected', () => {
         const wrapper = mount(
             ThemeWrapped(
-                <List options={options} defaultValue={defaultValue} onChange={onChange} />,
+                <Listbox options={options} defaultValue={defaultValue} onChange={onChange} />,
             ),
         );
 
@@ -65,7 +65,7 @@ describe('List', () => {
     test('Should have the check indicator if selected', () => {
         const wrapper = mount(
             ThemeWrapped(
-                <List options={options} defaultValue={defaultValue} onChange={onChange} checkIndicator={true} />,
+                <Listbox options={options} defaultValue={defaultValue} onChange={onChange} checkIndicator={true} />,
             ),
         );
 
@@ -79,7 +79,7 @@ describe('List', () => {
     test('Matches the snapshot', () => {
         const tree = renderer.create(
             ThemeWrapped(
-                <List
+                <Listbox
                     options={options}
                     checkIndicator={true}
                     defaultValue={defaultValue}
@@ -95,7 +95,7 @@ describe('List', () => {
     test('Matches the snapshot (dropdown)', () => {
         const tree = renderer.create(
             ThemeWrapped(
-                <List
+                <Listbox
                     options={options}
                     checkIndicator={true}
                     defaultValue={defaultValue}
@@ -112,7 +112,7 @@ describe('List', () => {
     test('Is not visible', () => {
         const tree = renderer.create(
             ThemeWrapped(
-                <List options={options} visible={false} />,
+                <Listbox options={options} visible={false} />,
             ),
         ).toJSON();
 

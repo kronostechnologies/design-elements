@@ -62,6 +62,7 @@ input + .c2 {
 }
 
 .c7:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -88,6 +89,7 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-normal);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -96,9 +98,8 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c8:hover,
 .c8:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c1 {
@@ -456,7 +457,8 @@ input + .c2 {
   width: 100%;
 }
 
-.c10:focus {
+.c7:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -483,6 +485,7 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-normal);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -491,9 +494,8 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c11:hover,
-.c11:focus {
-  background-color: #D9DDE2;
+.c8:focus {
+  outline: none;
 }
 
 .c1 {
@@ -940,6 +942,7 @@ input + .c2 {
 }
 
 .c7:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -966,6 +969,7 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
+  font-weight: var(--font-normal);
   height: 32px;
   line-height: 32px;
   overflow: hidden;
@@ -974,9 +978,8 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c8:hover,
 .c8:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c1 {
@@ -1380,6 +1383,7 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 .c6:focus {
+  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -1406,6 +1410,7 @@ exports[`Select mobile select has a different style 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-size: 1rem;
+  font-weight: var(--font-normal);
   height: 40px;
   line-height: 40px;
   overflow: hidden;
@@ -1414,9 +1419,8 @@ exports[`Select mobile select has a different style 1`] = `
   white-space: nowrap;
 }
 
-.c7:hover,
 .c7:focus {
-  background-color: #D9DDE2;
+  outline: none;
 }
 
 .c1 {
