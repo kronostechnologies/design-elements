@@ -7,7 +7,7 @@ import { ChooseInput } from '../choose-input/choose-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
-import { List } from '../list/list';
+import { Listbox } from '../listbox/listbox';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const getBorderColor = ({ disabled, focus, theme, valid }: InputWrapperProps): string => {
@@ -82,7 +82,7 @@ const Arrow = styled.button<{disabled?: boolean}>`
     display: flex;
 `;
 
-const StyledList = styled(List)`
+const StyledListbox = styled(Listbox)`
     position: absolute;
     width: 100%;
 `;
@@ -129,7 +129,7 @@ interface SelectProps {
     label?: string;
     name?: string;
     /**
-     * Number of visible items in the list before overflow
+     * Number of visible items in the listbox before overflow
      * @default 4
      */
     numberOfItemsVisible?: number;
@@ -407,7 +407,7 @@ export function Select({
         }
     }
 
-    function handleListKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    function handleListboxKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
             if (searchable) {
                 resetField();
@@ -516,7 +516,7 @@ export function Select({
                         <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '24' : '16'}/>
                     </Arrow>
                 </InputWrapper>
-                <StyledList
+                <StyledListbox
                     ariaLabelledBy={fieldId}
                     autofocus={searchable ? autoFocus : open}
                     ref={listboxRef}
@@ -529,7 +529,7 @@ export function Select({
                     numberOfItemsVisible={numberOfItemsVisible}
                     onChange={handleChange}
                     onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
-                    onKeyDown={handleListKeyDown}
+                    onKeyDown={handleListboxKeyDown}
                     options={filteredOptions}
                     value={selectedOptionValue}
                     dropdown

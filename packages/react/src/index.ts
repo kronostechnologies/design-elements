@@ -22,7 +22,7 @@ export { DeviceContextProvider } from './components/device-context-provider/devi
 export { IntlProvider } from './components/internationalization-provider/internationalization-provider';
 
 // Lists
-export { List } from './components/list/list';
+export { Listbox } from './components/listbox/listbox';
 
 // Miscellaneous
 export { Card } from './components/card/card';

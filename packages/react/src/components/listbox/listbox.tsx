@@ -11,19 +11,15 @@ export interface Option {
     label?: string;
 }
 
-interface ListOption extends Option {
+interface ListboxOption extends Option {
     id: string;
     focusIndex: number;
     ref: React.RefObject<HTMLLIElement>;
 }
 
-interface ListProps {
+interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
-    /**
-     * Sets list id
-     */
-    listId?: string;
     /**
      * { value: string; label?: string; }[]
      */
@@ -48,12 +44,12 @@ interface ListProps {
      */
     dropdown?: boolean;
     /**
-     * Number of visible items in the list before overflow
+     * Number of visible items in the listbox before overflow
      * @default 4
      */
     numberOfItemsVisible?: number;
     /**
-     * Sets the current focused element in the list
+     * Sets the current focused element in the listbox
      */
     focusedValue?: string;
     /**
@@ -78,19 +74,20 @@ interface ListProps {
     onFocusedValueChange?(value: string | undefined): void;
 }
 
-interface WrapperProps {
+interface ListProps {
+    hasFocusedOption: boolean;
     isMobile: boolean;
     numberOfItemsVisible: number;
 }
 
-interface ItemProps {
+interface ListItemProps {
     isMobile: boolean;
     selected: boolean;
     focused: boolean;
     checkIndicator: boolean;
 }
 
-interface ListWrapperProps {
+interface BoxProps {
     visible: boolean;
     isDropdown: boolean;
 }
@@ -98,16 +95,14 @@ interface ListWrapperProps {
 const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
-const ListWrapper = styled.div<ListWrapperProps>`
-    background-color: ${({ theme }) => theme.greys.white};
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+const Box = styled.div<BoxProps>`
     display: ${props => props.visible ? 'flex' : 'none'};
     position: ${props => props.isDropdown ? 'absolute' : 'unset'};
     width: ${props => props.isDropdown ? '100%' : 'unset'};
 `;
 
-const Wrapper = styled.ul<WrapperProps>`
+const List = styled.ul<ListProps>`
+    background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
     list-style-type: none;
     margin: 0;
@@ -117,9 +112,14 @@ const Wrapper = styled.ul<WrapperProps>`
     overflow-y: auto;
     padding: 0;
     width: 100%;
+
+    &:focus {
+        box-shadow: ${({ hasFocusedOption, theme }) => hasFocusedOption ? '0 10px 20px 0 rgba(0, 0, 0, 0.19)' : `${theme.tokens['focus-box-shadow']}, 0 10px 20px 0 rgba(0, 0, 0, 0.19)`};
+        outline: none;
+    }
 `;
 
-const getItemSidePadding = ({ checkIndicator, selected, isMobile }: ItemProps): string => {
+const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItemProps): string => {
     if (checkIndicator) {
         if (selected) {
             return '0';
@@ -131,23 +131,23 @@ const getItemSidePadding = ({ checkIndicator, selected, isMobile }: ItemProps): 
     return 'var(--spacing-2x)';
 };
 
-const Item = styled.li<ItemProps>`
+const ListItem = styled.li<ListItemProps>`
     align-items: center;
     background-color: ${({ focused, theme }) => focused ? theme.greys.grey : 'inherit'};
     color: ${({ theme }) => theme.greys.black};
     cursor: pointer;
     display: flex;
     font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
+    font-weight: ${({ selected }) => selected ? 'var(--font-semi-bold)' : 'var(--font-normal)'};
     height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
     line-height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
     overflow: hidden;
-    padding: 0 ${({ isMobile }) => isMobile ? 16 : 8}px 0 ${getItemSidePadding};
+    padding: 0 ${({ isMobile }) => isMobile ? 16 : 8}px 0 ${getListItemSidePadding};
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    &:hover,
     &:focus {
-        background-color: ${({ theme }) => theme.greys.grey};
+        outline: none;
     }
 `;
 
@@ -156,7 +156,7 @@ const CheckIndicator = styled(Icon)`
     padding: 0 var(--spacing-1x);
 `;
 
-export const List = forwardRef(({
+export const Listbox = forwardRef(({
     ariaLabelledBy,
     id = uuid(),
     options,
@@ -171,7 +171,7 @@ export const List = forwardRef(({
     focusedValue,
     value,
     visible = true,
-}: ListProps, ref: Ref<HTMLDivElement>): ReactElement => {
+}: ListboxProps, ref: Ref<HTMLDivElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const listRef = useRef<HTMLUListElement>(null);
     const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
@@ -179,7 +179,7 @@ export const List = forwardRef(({
     const [selectedOptionId, setSelectedOptionId] = useState(
         defaultValue ? `${id}_${defaultValue}` : undefined,
     );
-    const list: ListOption[] = useMemo((): ListOption[] =>
+    const list: ListboxOption[] = useMemo((): ListboxOption[] =>
         options.map((option, index)  =>
             ({
                 ...option,
@@ -218,25 +218,25 @@ export const List = forwardRef(({
         setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
     }, [autofocus]);
 
-    function isOptionSelected(option: ListOption): boolean {
+    function isOptionSelected(option: ListboxOption): boolean {
         return selectedOptionId ? option.id === selectedOptionId : false;
     }
 
-    function isOptionFocused(option: ListOption): boolean {
+    function isOptionFocused(option: ListboxOption): boolean {
         return option.focusIndex === selectedFocusIndex;
     }
 
-    function shouldDisplayCheckIndicator(option: ListOption): boolean {
+    function shouldDisplayCheckIndicator(option: ListboxOption): boolean {
         return checkIndicator && isOptionSelected(option);
     }
 
-    function setValue(option: ListOption): void {
+    function setValue(option: ListboxOption): void {
         const optionIndex = options.findIndex(element => element.value === option.value);
         setSelectedOptionId(`${id}_${option.value}`);
         setSelectedFocusIndex(optionIndex);
     }
 
-    function selectOption(option: ListOption): void {
+    function selectOption(option: ListboxOption): void {
         setSelectedOptionId(option.id);
         setSelectedFocusIndex(option.focusIndex);
 
@@ -245,11 +245,15 @@ export const List = forwardRef(({
         }
     }
 
-    function handleSelect(option: ListOption): () => void {
+    function handleListItemClick(option: ListboxOption): () => void {
         return () => selectOption(option);
     }
 
-    function handleAutoScroll(option: ListOption, focusedIndex: number): void {
+    function handleListItemMouseMove(option: ListboxOption): void {
+        setSelectedFocusIndex(option.focusIndex);
+    }
+
+    function handleAutoScroll(option: ListboxOption, focusedIndex: number): void {
         if (!listRef.current || !option || !option.ref.current) {
             return;
         }
@@ -312,6 +316,10 @@ export const List = forwardRef(({
         }
     }
 
+    function handleBlur(): void {
+        setSelectedFocusIndex(-1);
+    }
+
     function handleKeyDown(e: KeyboardEvent<HTMLUListElement>): void {
         // ' ' is the space bar key
         switch (e.key) {
@@ -358,7 +366,7 @@ export const List = forwardRef(({
     }
 
     return (
-        <ListWrapper
+        <Box
             visible={visible}
             role="listbox"
             tabIndex={-1}
@@ -367,18 +375,20 @@ export const List = forwardRef(({
             isDropdown={dropdown}
             ref={ref}
         >
-            <Wrapper
+            <List
+                hasFocusedOption={selectedFocusIndex >= 0}
                 role="presentation"
                 isMobile={isMobile}
                 tabIndex={0}
                 id={id}
                 ref={listRef}
-                onKeyPress={handleKeyDown}
                 numberOfItemsVisible={numberOfItemsVisible}
+                onBlur={handleBlur}
                 onKeyDown={handleKeyDown}
+                onKeyPress={handleKeyDown}
             >
                 {list.map(option => (
-                    <Item
+                    <ListItem
                         key={option.id}
                         ref={option.ref}
                         role="option"
@@ -386,7 +396,8 @@ export const List = forwardRef(({
                         aria-label={option.label || option.value}
                         aria-selected={isOptionSelected(option)}
                         isMobile={isMobile}
-                        onClick={handleSelect(option)}
+                        onClick={handleListItemClick(option)}
+                        onMouseMove={() => handleListItemMouseMove(option)}
                         selected={isOptionSelected(option)}
                         focused={isOptionFocused(option)}
                         checkIndicator={checkIndicator}
@@ -396,9 +407,9 @@ export const List = forwardRef(({
                                 <CheckIndicator name="check" size={isMobile ? '24' : '16'}/>}
                             {option.label || option.value}
                         </>
-                    </Item>
+                    </ListItem>
                 ))}
-            </Wrapper>
-        </ListWrapper>
+            </List>
+        </Box>
     );
 });
