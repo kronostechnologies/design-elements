@@ -1,6 +1,6 @@
 import { ThemeWrapper } from '@design-elements/components/theme-wrapper/theme-wrapper';
 import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
-import { CommonWrapper, mount, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
+import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
 import React, { Component, ReactElement } from 'react';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
@@ -16,9 +16,11 @@ export function mountWithProviders<C extends Component, P = C['props'], S = C['s
 
 export function mountWithTheme<C extends Component, P = C['props'], S = C['state']>(
     component: ReactElement<P>,
+    options?: MountRendererProps,
 ): ReactWrapper<P, S, C> {
     return mount(component, {
         wrappingComponent: ThemeWrapper,
+        ...options,
     });
 }
 
