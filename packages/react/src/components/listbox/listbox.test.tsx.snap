@@ -2,16 +2,15 @@
 
 exports[`Listbox Is not visible 1`] = `
 .c0 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: none;
   position: unset;
   width: unset;
 }
 
 .c1 {
+  background-color: #FFFFFF;
   border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -24,18 +23,8 @@ exports[`Listbox Is not visible 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {
@@ -65,63 +54,54 @@ exports[`Listbox Is not visible 1`] = `
 }
 
 <div
-  className="c0"
+  aria-multiselectable="false"
+  class="c0"
   role="listbox"
-  tabIndex={-1}
+  tabindex="-1"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
+    class="c1"
+    data-testid="listbox-list"
     role="presentation"
-    tabIndex={0}
+    tabindex="0"
   >
     <li
       aria-label="Option A"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionA"
       id="undefined_optionA"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
     >
       Option A
     </li>
     <li
       aria-label="Option B"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionB"
       id="undefined_optionB"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
     >
       Option B
     </li>
     <li
       aria-label="Option C"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionC"
       id="undefined_optionC"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
     >
       Option C
     </li>
     <li
       aria-label="Option D"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionD"
       id="undefined_optionD"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
     >
       Option D
     </li>
@@ -131,9 +111,6 @@ exports[`Listbox Is not visible 1`] = `
 
 exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c0 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -143,179 +120,9 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1 {
-  border-radius: var(--border-radius);
-  list-style-type: none;
-  margin: 0;
-  max-height: 96px;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c1:focus {
-  box-shadow: 0 0 0 2px #0080A566,0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  height: 32px;
-  line-height: 32px;
-  overflow: hidden;
-  padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c4 {
-  color: #57666E;
-  padding: 0 var(--spacing-1x);
-}
-
-<div
-  aria-activedescendant="undefined_optionB"
-  aria-labelledby="undefined_optionB"
-  className="c0"
-  role="listbox"
-  tabIndex={-1}
->
-  <ul
-    className="c1"
-    onBlur={[Function]}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
-    role="presentation"
-    tabIndex={0}
-  >
-    <li
-      aria-label="Option A"
-      aria-selected={false}
-      className="c2"
-      id="undefined_optionA"
-      onClick={[Function]}
-      onMouseMove={[Function]}
-      role="option"
-      selected={false}
-    >
-      Option A
-    </li>
-    <li
-      aria-label="Option B"
-      aria-selected={true}
-      className="c3"
-      id="undefined_optionB"
-      onClick={[Function]}
-      onMouseMove={[Function]}
-      role="option"
-      selected={true}
-    >
-      <svg
-        className="c4"
-        color="currentColor"
-        focusable={false}
-        height="16"
-        width="16"
-      />
-      Option B
-    </li>
-    <li
-      aria-label="Option C"
-      aria-selected={false}
-      className="c2"
-      id="undefined_optionC"
-      onClick={[Function]}
-      onMouseMove={[Function]}
-      role="option"
-      selected={false}
-    >
-      Option C
-    </li>
-    <li
-      aria-label="Option D"
-      aria-selected={false}
-      className="c2"
-      id="undefined_optionD"
-      onClick={[Function]}
-      onMouseMove={[Function]}
-      role="option"
-      selected={false}
-    >
-      Option D
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`Listbox Matches the snapshot 1`] = `
-.c0 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: unset;
-  width: unset;
-}
-
-.c1 {
-  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 96px;
@@ -328,18 +135,8 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {
@@ -401,45 +198,41 @@ exports[`Listbox Matches the snapshot 1`] = `
 
 <div
   aria-activedescendant="undefined_optionB"
-  aria-labelledby="undefined_optionB"
-  className="c0"
+  aria-multiselectable="false"
+  class="c0"
   role="listbox"
-  tabIndex={-1}
+  tabindex="-1"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
+    class="c1"
+    data-testid="listbox-list"
     role="presentation"
-    tabIndex={0}
+    tabindex="0"
   >
     <li
       aria-label="Option A"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionA"
       id="undefined_optionA"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
     >
       Option A
     </li>
     <li
       aria-label="Option B"
-      aria-selected={true}
-      className="c3"
+      aria-selected="true"
+      class="c3"
+      data-testid="listitem-optionB"
       id="undefined_optionB"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={true}
+      selected=""
     >
       <svg
-        className="c4"
+        class="c4"
         color="currentColor"
-        focusable={false}
+        data-testid="check-icon"
+        focusable="false"
         height="16"
         width="16"
       />
@@ -447,25 +240,335 @@ exports[`Listbox Matches the snapshot 1`] = `
     </li>
     <li
       aria-label="Option C"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionC"
       id="undefined_optionC"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
     >
       Option C
     </li>
     <li
       aria-label="Option D"
-      aria-selected={false}
-      className="c2"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionD"
       id="undefined_optionD"
-      onClick={[Function]}
-      onMouseMove={[Function]}
       role="option"
-      selected={false}
+    >
+      Option D
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: unset;
+  width: unset;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c3 {
+  color: #57666E;
+  padding: 0 var(--spacing-1x);
+}
+
+<div
+  aria-multiselectable="true"
+  class="c0"
+  role="listbox"
+  tabindex="-1"
+>
+  <ul
+    class="c1"
+    data-testid="listbox-list"
+    role="presentation"
+    tabindex="0"
+  >
+    <li
+      aria-label="Option A"
+      aria-selected="true"
+      class="c2"
+      data-testid="listitem-optionA"
+      id="undefined_optionA"
+      role="option"
+      selected=""
+    >
+      <svg
+        class="c3"
+        color="currentColor"
+        data-testid="check-icon"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+      Option A
+    </li>
+    <li
+      aria-label="Option B"
+      aria-selected="false"
+      class="c4"
+      data-testid="listitem-optionB"
+      id="undefined_optionB"
+      role="option"
+    >
+      Option B
+    </li>
+    <li
+      aria-label="Option C"
+      aria-selected="true"
+      class="c2"
+      data-testid="listitem-optionC"
+      id="undefined_optionC"
+      role="option"
+      selected=""
+    >
+      <svg
+        class="c3"
+        color="currentColor"
+        data-testid="check-icon"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+      Option C
+    </li>
+    <li
+      aria-label="Option D"
+      aria-selected="false"
+      class="c4"
+      data-testid="listitem-optionD"
+      id="undefined_optionD"
+      role="option"
+    >
+      Option D
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Listbox Matches the snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: unset;
+  width: unset;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 96px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #D9DDE2;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c4 {
+  color: #57666E;
+  padding: 0 var(--spacing-1x);
+}
+
+<div
+  aria-activedescendant="undefined_optionB"
+  aria-multiselectable="false"
+  class="c0"
+  role="listbox"
+  tabindex="-1"
+>
+  <ul
+    class="c1"
+    data-testid="listbox-list"
+    role="presentation"
+    tabindex="0"
+  >
+    <li
+      aria-label="Option A"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionA"
+      id="undefined_optionA"
+      role="option"
+    >
+      Option A
+    </li>
+    <li
+      aria-label="Option B"
+      aria-selected="true"
+      class="c3"
+      data-testid="listitem-optionB"
+      id="undefined_optionB"
+      role="option"
+      selected=""
+    >
+      <svg
+        class="c4"
+        color="currentColor"
+        data-testid="check-icon"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+      Option B
+    </li>
+    <li
+      aria-label="Option C"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionC"
+      id="undefined_optionC"
+      role="option"
+    >
+      Option C
+    </li>
+    <li
+      aria-label="Option D"
+      aria-selected="false"
+      class="c2"
+      data-testid="listitem-optionD"
+      id="undefined_optionD"
+      role="option"
     >
       Option D
     </li>

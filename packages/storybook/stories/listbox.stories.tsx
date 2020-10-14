@@ -49,10 +49,20 @@ export const listboxWithAutofocus = () => (
     />
 );
 
+export const listboxWithMultiselect = () => (
+    <Listbox
+        checkIndicator
+        defaultValue={['optionA', 'optionC']}
+        multiselect
+        options={options}
+        onChange={option => console.log('onChange', option)}
+    />
+);
+
 export const listboxWithCheck = () => (
     <Listbox
         checkIndicator={true}
-        defaultValue={'optionC'}
+        defaultValue="optionC"
         options={options}
         onChange={option => console.log('onChange', option)}
     />

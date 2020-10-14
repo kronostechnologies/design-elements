@@ -1,9 +1,10 @@
-import { focus } from '@design-elements/utils/css-state';
 import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
+
+type Value = string | string[];
 
 export interface Option {
     value: string;
@@ -17,7 +18,7 @@ interface ListboxOption extends Option {
     ref: React.RefObject<HTMLLIElement>;
 }
 
-interface ListboxProps {
+export interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
     /**
@@ -35,14 +36,19 @@ interface ListboxProps {
      */
     checkIndicator?: boolean;
     /**
-     * The default selected option
+     * The default selected option. You may specify an array of strings when using multiselect feature.
      */
-    defaultValue?: string;
+    defaultValue?: Value;
     /**
      * Add this if its used as a dropdown (Adds absolute positioning)
      * @default false
      */
     dropdown?: boolean;
+    /**
+     * Activates mutliple selection feature
+     * @default false
+     */
+    multiselect?: boolean;
     /**
      * Number of visible items in the listbox before overflow
      * @default 4
@@ -55,7 +61,7 @@ interface ListboxProps {
     /**
      * Sets the selected value (controlled input)
      */
-    value?: string;
+    value?: Value;
     /**
      * @default true
      */
@@ -75,7 +81,6 @@ interface ListboxProps {
 }
 
 interface ListProps {
-    hasFocusedOption: boolean;
     isMobile: boolean;
     numberOfItemsVisible: number;
 }
@@ -104,17 +109,17 @@ const Box = styled.div<BoxProps>`
 const List = styled.ul<ListProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     list-style-type: none;
     margin: 0;
     max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
     min-width: fit-content;
-    ${focus}
     overflow-y: auto;
     padding: 0;
     width: 100%;
 
     &:focus {
-        box-shadow: ${({ hasFocusedOption, theme }) => hasFocusedOption ? '0 10px 20px 0 rgba(0, 0, 0, 0.19)' : `${theme.tokens['focus-box-shadow']}, 0 10px 20px 0 rgba(0, 0, 0, 0.19)`};
+        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
         outline: none;
     }
 `;
@@ -158,7 +163,7 @@ const CheckIndicator = styled(Icon)`
 
 export const Listbox = forwardRef(({
     ariaLabelledBy,
-    id = uuid(),
+    id = useMemo(uuid, []),
     options,
     onChange,
     onFocusedValueChange,
@@ -166,6 +171,7 @@ export const Listbox = forwardRef(({
     checkIndicator = false,
     defaultValue,
     dropdown = false,
+    multiselect = false,
     numberOfItemsVisible = 4,
     autofocus = false,
     focusedValue,
@@ -174,11 +180,9 @@ export const Listbox = forwardRef(({
 }: ListboxProps, ref: Ref<HTMLDivElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const listRef = useRef<HTMLUListElement>(null);
-    const defaultSelectedIndex = options.findIndex(option => option.value === defaultValue);
-    const [selectedFocusIndex, setSelectedFocusIndex] = useState(value || defaultValue ? defaultSelectedIndex : -1);
-    const [selectedOptionId, setSelectedOptionId] = useState(
-        defaultValue ? `${id}_${defaultValue}` : undefined,
-    );
+    const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(defaultValue));
+    const [selectedFocusIndex, setSelectedFocusIndex] =
+        useState(() => !multiselect ? options.findIndex(option =>  option.value === selectedOptionValue[0]) : -1);
     const list: ListboxOption[] = useMemo((): ListboxOption[] =>
         options.map((option, index)  =>
             ({
@@ -190,12 +194,8 @@ export const Listbox = forwardRef(({
     , [options]);
 
     useEffect(() => {
-        if (value && list.length > 0) {
-            const newValue = list.find(option => option.value === value);
-            newValue && setValue(newValue);
-        } else if (value === '') {
-            setSelectedOptionId('');
-            setSelectedFocusIndex(-1);
+        if (value !== undefined) {
+            setValue(value);
         }
     }, [value]);
 
@@ -215,11 +215,18 @@ export const Listbox = forwardRef(({
             listRef.current.focus();
             listRef.current.scrollTop = 0;
         }
-        setSelectedFocusIndex(selectedOptionId ? options.findIndex(option => option.value === selectedOptionId) : -1);
+
+        if (selectedOptionValue && !multiselect) {
+            setSelectedFocusIndex(options.findIndex(option => option.value === selectedOptionValue[0]));
+        }
     }, [autofocus]);
 
     function isOptionSelected(option: ListboxOption): boolean {
-        return selectedOptionId ? option.id === selectedOptionId : false;
+        if (multiselect) {
+            return selectedOptionValue.includes(option.value);
+        } else {
+            return selectedOptionValue.length > 0 && selectedOptionValue[0] === option.value;
+        }
     }
 
     function isOptionFocused(option: ListboxOption): boolean {
@@ -230,15 +237,27 @@ export const Listbox = forwardRef(({
         return checkIndicator && isOptionSelected(option);
     }
 
-    function setValue(option: ListboxOption): void {
-        const optionIndex = options.findIndex(element => element.value === option.value);
-        setSelectedOptionId(`${id}_${option.value}`);
-        setSelectedFocusIndex(optionIndex);
+    function setValue(newValue: Value): void {
+        setSelectedOptionValue(toArray(newValue));
+        if (newValue === []) {
+            setSelectedFocusIndex(-1);
+        } else if (list.length > 0 && !multiselect) {
+            setSelectedFocusIndex(options.findIndex(option => option.value === newValue[0]));
+        }
     }
 
     function selectOption(option: ListboxOption): void {
-        setSelectedOptionId(option.id);
         setSelectedFocusIndex(option.focusIndex);
+
+        if (multiselect) {
+            if (selectedOptionValue.includes(option.value)) {
+                setSelectedOptionValue(selectedOptionValue.filter(opt => opt !== option.value));
+            } else {
+                setSelectedOptionValue([...selectedOptionValue, option.value]);
+            }
+        } else {
+            setSelectedOptionValue([option.value]);
+        }
 
         if (onChange) {
             onChange(option);
@@ -316,10 +335,6 @@ export const Listbox = forwardRef(({
         }
     }
 
-    function handleBlur(): void {
-        setSelectedFocusIndex(-1);
-    }
-
     function handleKeyDown(e: KeyboardEvent<HTMLUListElement>): void {
         // ' ' is the space bar key
         switch (e.key) {
@@ -365,51 +380,71 @@ export const Listbox = forwardRef(({
         }
     }
 
+    function getAriaActiveDescendant(optionIndex: number): string | undefined {
+        if (optionIndex >= 0) {
+            return `${id}_${list[optionIndex].value}`;
+        } else {
+            return undefined;
+        }
+    }
+
     return (
         <Box
-            visible={visible}
-            role="listbox"
-            tabIndex={-1}
-            aria-activedescendant={selectedOptionId}
-            aria-labelledby={ariaLabelledBy || selectedOptionId}
+            aria-activedescendant={getAriaActiveDescendant(selectedFocusIndex)}
+            aria-labelledby={ariaLabelledBy}
+            aria-multiselectable={multiselect}
             isDropdown={dropdown}
             ref={ref}
+            role="listbox"
+            tabIndex={-1}
+            visible={visible}
         >
             <List
-                hasFocusedOption={selectedFocusIndex >= 0}
-                role="presentation"
-                isMobile={isMobile}
-                tabIndex={0}
+                data-testid="listbox-list"
                 id={id}
-                ref={listRef}
+                isMobile={isMobile}
                 numberOfItemsVisible={numberOfItemsVisible}
-                onBlur={handleBlur}
+                onBlur={() => setSelectedFocusIndex(-1)}
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyDown}
+                ref={listRef}
+                role="presentation"
+                tabIndex={0}
             >
                 {list.map(option => (
                     <ListItem
-                        key={option.id}
-                        ref={option.ref}
-                        role="option"
-                        id={option.id}
                         aria-label={option.label || option.value}
                         aria-selected={isOptionSelected(option)}
+                        checkIndicator={checkIndicator}
+                        data-testid={`listitem-${option.value}`}
+                        focused={isOptionFocused(option)}
+                        id={option.id}
                         isMobile={isMobile}
+                        key={option.id}
                         onClick={handleListItemClick(option)}
                         onMouseMove={() => handleListItemMouseMove(option)}
+                        ref={option.ref}
+                        role="option"
                         selected={isOptionSelected(option)}
-                        focused={isOptionFocused(option)}
-                        checkIndicator={checkIndicator}
                     >
-                        <>
-                            {shouldDisplayCheckIndicator(option) &&
-                                <CheckIndicator name="check" size={isMobile ? '24' : '16'}/>}
-                            {option.label || option.value}
-                        </>
+                        {shouldDisplayCheckIndicator(option) &&
+                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'}/>}
+                        {option.label || option.value}
                     </ListItem>
                 ))}
             </List>
         </Box>
     );
 });
+
+function toArray(val?: Value): string[] {
+    if (!val) {
+        return [];
+    }
+
+    if (Array.isArray(val)) {
+        return val;
+    }
+
+    return [val];
+}
