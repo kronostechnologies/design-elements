@@ -1,5 +1,6 @@
+import { ThemeWrapper } from '@design-elements/components/theme-wrapper/theme-wrapper';
 import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
-import { CommonWrapper, mount, ReactWrapper, render } from 'enzyme';
+import { CommonWrapper, mount, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
 import React, { Component, ReactElement } from 'react';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
@@ -13,11 +14,33 @@ export function mountWithProviders<C extends Component, P = C['props'], S = C['s
     });
 }
 
+export function mountWithTheme<C extends Component, P = C['props'], S = C['state']>(
+    component: ReactElement<P>,
+): ReactWrapper<P, S, C> {
+    return mount(component, {
+        wrappingComponent: ThemeWrapper,
+    });
+}
+
 export function renderWithProviders(
     component: ReactElement,
     device?: DeviceType,
 ): Cheerio {
     return render(<AllProviders device={device}>{component}</AllProviders>);
+}
+
+export function renderWithTheme(
+    component: ReactElement,
+): Cheerio {
+    return render(ThemeWrapped(component));
+}
+
+export function shallowWithTheme<C extends Component, P = C['props'], S = C['state']>(
+    component: ReactElement<P>,
+): ShallowWrapper<P, S, C> {
+    return shallow(component, {
+        wrappingComponent: ThemeWrapper,
+    });
 }
 
 export function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
