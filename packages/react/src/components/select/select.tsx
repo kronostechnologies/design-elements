@@ -162,6 +162,7 @@ interface SelectProps {
      * Set the selected value
      */
     value?: string;
+    hint?: string;
     /**
      * OnChange callback function, invoked when an option is selected
      */
@@ -187,6 +188,7 @@ export function Select({
     valid = true,
     validationErrorMessage,
     value,
+    hint,
 }: SelectProps): ReactElement {
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
@@ -467,6 +469,7 @@ export function Select({
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+                hint={hint}
             >
                 <InputWrapper
                     aria-expanded={open}

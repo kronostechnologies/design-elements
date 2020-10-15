@@ -30,6 +30,7 @@ export interface TextAreaProps {
     validationErrorMessage?: string;
     /** Only use if you want to control input value externally */
     value?: string;
+    hint?: string;
 
     onBlur?(event: FocusEvent<HTMLTextAreaElement>): void;
     onChange?(event: ChangeEvent<HTMLTextAreaElement>): void;
@@ -45,6 +46,7 @@ export function TextArea({
     onBlur,
     onChange,
     onFocus,
+    hint,
     ...props
 }: TextAreaProps): ReactElement {
     const { t } = useTranslation('text-area');
@@ -78,6 +80,7 @@ export function TextArea({
             noMargin={noMargin}
             fieldId={id}
             label={label}
+            hint={hint}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >

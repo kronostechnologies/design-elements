@@ -51,7 +51,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
   position: relative;
 }
 
-.c2.moreMenu:hover .sc-fzokvW {
+.c2.moreMenu:hover .sc-fzqzlV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

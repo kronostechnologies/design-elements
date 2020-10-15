@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
+import {useDeviceContext} from "@design-elements/components/device-context-provider/device-context-provider";
 
 const StyledDiv = styled.div<StyledDivProps>`
     margin: ${({ noMargin }) => noMargin ? '0' : '0 0 var(--spacing-3x)'};
@@ -25,6 +26,15 @@ interface StyledDivProps {
     noMargin?: boolean;
 }
 
+const StyledHint = styled.label<{isMobile: boolean}>`
+    color: ${props => props.theme.greys['dark-grey']};
+    font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.75rem'};
+    font-weight: var(--font-normal);
+    letter-spacing: 0.02rem;
+    line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
+    width: fit-content;
+`;
+
 export interface FieldContainerProps {
     children: ReactNode;
     noMargin?: boolean;
@@ -32,6 +42,7 @@ export interface FieldContainerProps {
     label?: string;
     valid: boolean;
     validationErrorMessage: string;
+    hint?: string;
 }
 
 export function FieldContainer({
@@ -40,11 +51,15 @@ export function FieldContainer({
     label,
     valid,
     validationErrorMessage,
+    hint,
     ...props
 }: FieldContainerProps): ReactElement {
+    const { isMobile } = useDeviceContext();
+
     return (
         <StyledDiv {...props} valid={valid}>
             {label && <Label forId={fieldId}>{label}</Label>}
+            {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
             {children}
             {!valid && <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />}
         </StyledDiv>

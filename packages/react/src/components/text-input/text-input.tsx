@@ -27,6 +27,7 @@ interface TextInputProps extends PartialInputProps {
     required?: boolean;
     type?: string;
     validationErrorMessage?: string;
+    hint?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
 
@@ -77,6 +78,7 @@ export const TextInput = React.forwardRef(({
         type,
         validationErrorMessage,
         value,
+        hint,
     } = props;
 
     return (
@@ -86,6 +88,7 @@ export const TextInput = React.forwardRef(({
             label={label}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            hint={hint}
         >
             <Input
                 defaultValue={defaultValue}

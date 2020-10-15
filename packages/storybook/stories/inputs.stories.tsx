@@ -16,6 +16,7 @@ export const inputs = () => (
             defaultValue=""
             pattern=""
             validationErrorMessage="Error message"
+            hint="Hint"
         />
         <TextInput
             disabled={false}
@@ -26,6 +27,7 @@ export const inputs = () => (
             defaultValue=""
             pattern=""
             validationErrorMessage="Error message"
+            hint="Hint"
         />
         <TextInput
             disabled={false}
@@ -36,6 +38,7 @@ export const inputs = () => (
             defaultValue=""
             pattern=""
             validationErrorMessage="Error message"
+            hint="Hint"
         />
     </div>
 );

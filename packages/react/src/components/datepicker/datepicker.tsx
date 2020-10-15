@@ -279,6 +279,7 @@ interface DatepickerProps {
     validationErrorMessage?: string;
     /** Sets input value (controlled) */
     value?: string;
+    hint?: string;
 
     onBlur?(event: FocusEvent<HTMLInputElement>): void;
 
@@ -317,6 +318,7 @@ export function Datepicker({
     startOpen,
     valid = true,
     validationErrorMessage,
+    hint,
     ...props
 }: DatepickerProps): ReactElement {
     const { t } = useTranslation('datepicker');
@@ -424,6 +426,7 @@ export function Datepicker({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                hint={hint}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             >

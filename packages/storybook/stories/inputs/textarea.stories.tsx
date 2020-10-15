@@ -9,6 +9,7 @@ export default {
 export const normal = () => (
     <TextArea
         label="Text area label"
+        hint="Hint"
         disabled={false}
         required={false}
     />

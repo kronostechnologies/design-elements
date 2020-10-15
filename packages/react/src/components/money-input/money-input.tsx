@@ -50,6 +50,7 @@ interface Props {
      * @default 2
      **/
     precision?: number;
+    hint?: string;
     onChange?(value: number | null, formattedValue: string): void;
 }
 
@@ -63,6 +64,7 @@ export function MoneyInput({
     validationErrorMessage,
     locale = 'fr-CA',
     currency = 'CAD',
+    hint,
  }: Props): ReactElement {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
@@ -143,6 +145,7 @@ export function MoneyInput({
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+                hint={hint}
             />
         </InputWrapper>
     );
