@@ -10,7 +10,26 @@ exports[`Invalid field Matches the snapshot 1`] = `
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
+  margin: 0 0 var(--spacing-half);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  margin: 0 0 0 var(--spacing-base);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 <div
@@ -19,6 +38,20 @@ exports[`Invalid field Matches the snapshot 1`] = `
   id="test-id_invalid"
   role="alert"
 >
-  Feedback Message
+  <div
+    className="c1"
+  >
+    <svg
+      color="currentColor"
+      focusable={false}
+      height="16"
+      width="16"
+    />
+  </div>
+  <label
+    className="c2"
+  >
+    Feedback Message
+  </label>
 </div>
 `;

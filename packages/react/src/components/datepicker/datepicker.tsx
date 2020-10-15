@@ -162,6 +162,10 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
             width: 40px;
         }
     }
+
+    label + & {
+        margin-top: var(--spacing-half);
+    }
 `;
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`

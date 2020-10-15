@@ -58,7 +58,26 @@ exports[`Field Container should have invalid styles given valid prop is set to f
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
+  margin: 0 0 var(--spacing-half);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  margin: 0 0 0 var(--spacing-base);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -104,15 +123,29 @@ input + .c1 {
   >
     test label
   </label>
-  Children
   <div
     aria-live="polite"
     class="c2"
     id="test-id_invalid"
     role="alert"
   >
-    This text area input is invalid
+    <div
+      class="c3"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </div>
+    <label
+      class="c4"
+    >
+      This text area input is invalid
+    </label>
   </div>
+  Children
 </div>
 `;
 

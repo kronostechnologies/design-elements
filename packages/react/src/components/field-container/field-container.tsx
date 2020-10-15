@@ -1,10 +1,10 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 import { Theme } from '../theme-wrapper/theme-wrapper';
-import {useDeviceContext} from "@design-elements/components/device-context-provider/device-context-provider";
 
 const StyledDiv = styled.div<StyledDivProps>`
     margin: ${({ noMargin }) => noMargin ? '0' : '0 0 var(--spacing-3x)'};
@@ -60,8 +60,8 @@ export function FieldContainer({
         <StyledDiv {...props} valid={valid}>
             {label && <Label forId={fieldId}>{label}</Label>}
             {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
-            {children}
             {!valid && <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />}
+            {children}
         </StyledDiv>
     );
 }
