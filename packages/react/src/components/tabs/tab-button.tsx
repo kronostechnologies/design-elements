@@ -1,88 +1,88 @@
-import { Icon, IconName } from '@design-elements/components/icon/icon';
-import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
-import { useTheme } from '@design-elements/hooks/use-theme';
 import React, { ReactElement, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
-    ${(props: {theme: Theme, isSelected: boolean}) => {
-        return `
-            min-width: 82px;
-            height: 48px;
-            ${props.isSelected ? `border-bottom: 4px solid ${props.theme.main['primary-1.1']};` : ''}
-            &:focus {
-                box-shadow: 0 0 0 3px ${props.theme.main['primary-1.1']} 66, 0 0 0 1px ${props.theme.main['primary-1.1']}
-            }
-            &:hover span {
-                color: ${props.theme.main['primary-2']};
-            }
-            &:hover svg {
-                color: ${props.theme.main['primary-2']};
-            }
-        `;
-    }}
-`;
+import { Icon, IconName } from '@design-elements/components/icon/icon';
+import { focus } from '@design-elements/utils/css-state';
 
-const StyledButtonDiv = styled.div`
+const StyledButton = styled.button<{isSelected: boolean}>`
     align-items: center;
+    cursor: pointer;
     display: flex;
-    height: 24px;
+    height: 48px;
     justify-content: center;
     line-height: 24px;
+    min-width: 82px;
+    ${focus}
+    ${({ isSelected, theme }) => isSelected ?
+        `::after {
+                content: '';
+                background-color: ${theme.main['primary-1.1']};
+                bottom: 0;
+                display: block;
+                height: 4px;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }` :
+        ''
+    }
     padding-left: 16px;
     padding-right: 16px;
-    text-align: center;
+    position: relative;
 `;
 
-const StyledButtonText = styled.span`
-    ${(props: {theme: Theme, isSelected: boolean}) => {
-        return `
-            ${props.isSelected ? `color: ${props.theme.main['primary-1.1']};` : `color: ${props.theme.greys['dark-grey']};`}
-            font-size: 14px;
-            ${props.isSelected ? 'font-family: OpenSans-SemiBold;' : 'font-family: OpenSans-Regular;'}
-            ${props.isSelected ? 'font-weight: 600;' : 'font-weight: normal;'}
-        `;
-    }}
+const StyledButtonText = styled.span<{isSelected: boolean}>`
+    color: ${({ isSelected, theme }) => isSelected ? `${theme.main['primary-1.1']}` : `${theme.greys['dark-grey']}`};
+    font-family: Open Sans, sans-serif;
+    font-size: 0.875rem;
+    -webkit-text-stroke-width: ${({ isSelected }) => isSelected ? '0.4px' : '0px'};
+
+    ${/* sc-select */ StyledButton}:hover & {
+        color: ${({ theme }) => theme.main['primary-2']};
+    }
 `;
 
-const LeftIcon = styled(Icon)`
-    padding-right: 5px;
+const LeftIcon = styled(Icon)<{$isSelected: boolean}>`
+    color: ${({ $isSelected, theme }) => $isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey']};
+    padding-right: var(--spacing-half);
+
+    ${/* sc-select */ StyledButton}:hover & {
+        color: ${({ theme }) => theme.main['primary-2']};
+    }
 `;
 
-const RightIcon = styled(Icon)`
-    padding-left: 5px;
-`;
+const RightIcon = styled(Icon)<{$isSelected: boolean}>`
+    color: ${({ $isSelected, theme }) => $isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey']};
+    padding-left: var(--spacing-half);
 
-export interface ButtonSelection {
-    id: string;
-    isPanelSelection: boolean;
-}
+    ${/* sc-select */ StyledButton}:hover & {
+        color: ${({ theme }) => theme.main['primary-2']};
+    }
+`;
 
 interface TabButtonProps {
     id: string;
     textValue: string;
-    leftIconName?: IconName;
-    rightIconName?: IconName;
+    leftIcon?: IconName;
+    rightIcon?: IconName;
     controlledPanelId: string;
     isSelected: boolean;
     isFocused: boolean;
-    selectionCallback(buttonSelection: ButtonSelection): void;
+    onClick(): void;
 }
 
-export function TabButton(
-    {
-        id,
-        textValue,
-        leftIconName ,
-        rightIconName ,
-        controlledPanelId,
-        isSelected ,
-        isFocused,
-        selectionCallback,
-    }: TabButtonProps,
-): ReactElement {
-    const theme = useTheme();
+export function TabButton({
+    id,
+    textValue,
+    leftIcon,
+    rightIcon,
+    controlledPanelId,
+    isSelected,
+    isFocused,
+    onClick,
+}: TabButtonProps): ReactElement {
     const buttonRef = useRef<HTMLButtonElement>(null);
+
     useEffect(() => {
         if (isFocused) {
             buttonRef?.current?.focus();
@@ -99,32 +99,33 @@ export function TabButton(
             aria-selected={isSelected}
             aria-controls={controlledPanelId}
             tabIndex={isSelected ? undefined : -1}
-            onClick={() => selectionCallback({ id: id, isPanelSelection: true })}
-            theme={theme}
+            onClick={onClick}
             isSelected={isSelected}
         >
-            <StyledButtonDiv>
-                {leftIconName != null &&
-                    <LeftIcon
-                        name={leftIconName}
-                        size="16"
-                        color={isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey']}
-                    />
-                }
-                <StyledButtonText isSelected={isSelected} >{textValue}</StyledButtonText>
-                {rightIconName != null &&
-                    <RightIcon
-                        name={rightIconName}
-                        size="16"
-                        color={isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey']}
-                    />
-                }
-            </StyledButtonDiv>
+            {leftIcon != null && (
+                <LeftIcon
+                    data-testid={'tab-button-left-icon'}
+                    $isSelected={isSelected}
+                    name={leftIcon}
+                    size="16"
+                />
+            )}
+            <StyledButtonText data-testid={'tab-button-text'} isSelected={isSelected}>
+                {textValue}
+            </StyledButtonText>
+            {rightIcon != null && (
+                <RightIcon
+                    data-testid={'tab-button-right-icon'}
+                    $isSelected={isSelected}
+                    name={rightIcon}
+                    size="16"
+                />
+            )}
         </StyledButton>
     );
 }
 
 TabButton.defaultProps = {
-    leftIconName: null,
-    rightIconName: null,
+    leftIcon: null,
+    rightIcon: null,
 };

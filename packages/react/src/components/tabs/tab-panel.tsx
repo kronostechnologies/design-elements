@@ -1,4 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
+import styled from 'styled-components';
+
+import { focus } from '@design-elements/utils/css-state';
 
 interface TabPanelProps {
     id: string;
@@ -6,9 +9,14 @@ interface TabPanelProps {
     associatedTabId: string;
     isSelected: boolean;
 }
+
+const StyledDiv = styled.div`
+    ${focus}
+`;
+
 export function TabPanel({ id, children, associatedTabId, isSelected }: TabPanelProps): ReactElement {
     return (
-        <div
+        <StyledDiv
             id={id}
             role="tabpanel"
             aria-labelledby={associatedTabId}
@@ -17,6 +25,6 @@ export function TabPanel({ id, children, associatedTabId, isSelected }: TabPanel
             hidden={!isSelected}
         >
             {children}
-        </div>
+        </StyledDiv>
     );
 }

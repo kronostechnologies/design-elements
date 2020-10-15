@@ -58,18 +58,18 @@ export const withIcons = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',
-            leftIconName: 'chevronUp',
+            leftIcon: 'chevronUp',
             panelContent: <Card>First panel</Card>,
         },
         {
             title: 'Second Button',
-            leftIconName: 'chevronLeft',
-            rightIconName: 'chevronRight',
+            leftIcon: 'chevronLeft',
+            rightIcon: 'chevronRight',
             panelContent: <Card>Second panel</Card>,
         },
         {
             title: 'Third Button',
-            rightIconName: 'chevronDown',
+            rightIcon: 'chevronDown',
             panelContent: <Card>Third panel</Card>,
         },
     ];
