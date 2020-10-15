@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useMemo } from 'react';
+import React, { ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
@@ -64,11 +64,13 @@ export function ModalDialog({
     onRequestClose,
     subtitle,
     title,
+    isOpen,
     ...props
 }: ModalDialogProps): ReactElement {
     const deviceContext = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
+    const titleRef: Ref<HTMLHeadingElement> = useRef(null);
 
     function handleConfirm(): void {
         confirmButton?.onConfirm?.();
@@ -86,7 +88,7 @@ export function ModalDialog({
         if (title || subtitle) {
             return (
                 <>
-                    {title && <Title id={titleId} tabIndex={-1} {...deviceContext}>{title}</Title>}
+                    {title && <Title id={titleId} ref={titleRef} tabIndex={-1} {...deviceContext}>{title}</Title>}
                     {subtitle && (
                         <Subtitle hasTitle={title !== undefined} {...deviceContext}>{subtitle}</Subtitle>
                     )}
@@ -123,7 +125,9 @@ export function ModalDialog({
             hasCloseButton
             modalFooter={getFooter()}
             role="dialog"
+            onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
+            isOpen={isOpen}
             {...props}
         >
             {children}

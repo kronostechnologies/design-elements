@@ -85,6 +85,10 @@ export interface ModalProps {
      * @default true
      */
     shouldCloseOnOverlayClick?: boolean;
+    /** Function that will run after the modal has opened */
+    onAfterOpen?(): void;
+    /** Function that will run after the modal has closed */
+    onAfterClose?(): void;
     onRequestClose(): void;
 }
 
@@ -102,6 +106,8 @@ export function Modal({
     modalHeader,
     role = 'dialog',
     shouldCloseOnOverlayClick = true,
+    onAfterOpen,
+    onAfterClose,
     onRequestClose,
 }: ModalProps): ReactElement {
     const device = useDeviceContext();
@@ -133,6 +139,8 @@ export function Modal({
                 noPadding={noPadding}
                 hasCloseButton={hasCloseButton}
                 isOpen={isOpen}
+                onAfterOpen={onAfterOpen}
+                onAfterClose={onAfterClose}
                 onRequestClose={onRequestClose}
                 role={role}
                 style={customStyles}
