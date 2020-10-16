@@ -51,6 +51,10 @@ input + .c1 {
 exports[`Field Container should have invalid styles given valid prop is set to false 1`] = `
 .c2 {
   color: #A40C2E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -59,10 +63,6 @@ exports[`Field Container should have invalid styles given valid prop is set to f
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0 0 var(--spacing-half);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c4 {
@@ -70,14 +70,14 @@ exports[`Field Container should have invalid styles given valid prop is set to f
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c1 {
