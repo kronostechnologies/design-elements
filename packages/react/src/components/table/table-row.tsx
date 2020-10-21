@@ -4,12 +4,17 @@ import { RowProps } from './table';
 
 interface TableRowProps {
     row: UseTableRowProps<{}>;
+
     onClick?(row: RowProps): void;
 }
 
 export function TableRow({ row, onClick }: TableRowProps): ReactElement {
     return (
-        <tr onClick={() => onClick && onClick(row)} {...row.getRowProps()}>
+        <tr
+            onClick={() => onClick && onClick(row)}
+            {...row.getRowProps()}
+            {...(onClick ? { tabIndex: 0, role: 'button' } : {})}
+        >
             {row.cells.map(cell => {
                 const style: CSSProperties = { textAlign: cell.column.textAlign };
                 return (

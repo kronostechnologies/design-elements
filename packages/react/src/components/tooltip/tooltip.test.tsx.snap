@@ -15,6 +15,20 @@ exports[`Tooltip Has default desktop styles 1`] = `
   width: fit-content;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 <span
   class="c0"
   id="tooltip-trigger-undefined"
@@ -42,6 +56,20 @@ exports[`Tooltip Has mobile styles 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 <span

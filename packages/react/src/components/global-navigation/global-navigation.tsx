@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
@@ -27,14 +28,10 @@ const MenuLink = styled(NavLink)`
     display: flex;
     flex-grow: 1;
     line-height: 24px;
+    ${focus}
     padding: var(--spacing-half) var(--spacing-2x);
     text-decoration: none;
     width: max-content;
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};
@@ -75,19 +72,15 @@ const ShowMoreMenu = styled.ul<{open?: boolean}>`
 const ShowMore = styled.button<{active?: boolean}>`
     align-items: center;
     background-color: ${({ active, theme }) => active ? theme.greys.grey : 'transparent'};
-    border: none;
+    border: 1px solid transparent;
     border-radius: 16px;
     color: ${({ theme }) => theme.greys['dark-grey']};
     cursor: pointer;
     display: flex;
-    height: 32px;
+    height: 34px;
     justify-content: center;
-    width: 32px;
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
+    ${focus}
+    width: 34px;
 
     &:hover {
         background-color: ${props => props.theme.greys.grey};
@@ -126,10 +119,7 @@ const IconLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
         }
     }
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
-        outline: none;
-    }
+    ${focus}
 `;
 
 export interface GlobalNavigationItem {

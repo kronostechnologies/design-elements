@@ -46,6 +46,20 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 32px;
 }
 
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c2:not(:disabled) {
   cursor: pointer;
 }
@@ -54,14 +68,23 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   color: inherit;
 }
 
-.c2:hover {
-  background-color: #D9DDE2;
-  color: #000000;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
+  outline: none;
   border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c2:hover {
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c2:disabled {
@@ -92,14 +115,23 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 24px;
 }
 
-.c4:hover {
-  background-color: #0080A5;
-  cursor: default;
+.c4:focus {
+  outline: none;
 }
 
 .c4:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c4:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c4:hover {
+  background-color: #0080A5;
+  cursor: default;
 }
 
 .c5 {
@@ -116,14 +148,23 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   width: 24px;
 }
 
-.c5:hover {
-  background-color: #D9DDE2;
-  cursor: pointer;
+.c5:focus {
+  outline: none;
 }
 
 .c5:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c5:hover {
+  background-color: #D9DDE2;
+  cursor: pointer;
 }
 
 .c0 {
@@ -304,6 +345,20 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 48px;
 }
 
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c2:not(:disabled) {
   cursor: pointer;
 }
@@ -312,14 +367,23 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   color: inherit;
 }
 
-.c2:hover {
-  background-color: #D9DDE2;
-  color: #000000;
+.c2:focus {
+  outline: none;
 }
 
 .c2:focus {
+  outline: none;
   border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c2:hover {
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c2:disabled {
@@ -350,14 +414,23 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 32px;
 }
 
-.c4:hover {
-  background-color: #0080A5;
-  cursor: default;
+.c4:focus {
+  outline: none;
 }
 
 .c4:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c4:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c4:hover {
+  background-color: #0080A5;
+  cursor: default;
 }
 
 .c5 {
@@ -374,14 +447,23 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   width: 32px;
 }
 
-.c5:hover {
-  background-color: #D9DDE2;
-  cursor: pointer;
+.c5:focus {
+  outline: none;
 }
 
 .c5:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c5:hover {
+  background-color: #D9DDE2;
+  cursor: pointer;
 }
 
 .c0 {

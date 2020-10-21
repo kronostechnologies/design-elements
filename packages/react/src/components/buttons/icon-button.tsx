@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
@@ -43,65 +44,54 @@ interface StyledButtonProps {
     buttonType: ButtonType;
 }
 
-const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-    ${(props: { theme: Theme, buttonType: ButtonType }) => {
-        switch (props.buttonType) {
+const StyledButton = styled(AbstractButton)<{ theme: Theme } & StyledButtonProps>`
+    ${focus}
+    ${({ theme, buttonType }) => {
+        switch (buttonType) {
             case 'primary':
                 return `
-                    background-color: ${props.theme.main['primary-1.1']};
-                    border: none;
-                    color: ${props.theme.greys.white};
+                    background-color: ${theme.main['primary-1.1']};
+                    border-color: ${theme.main['primary-1.1']};
+                    color: ${theme.greys.white};
 
                     &:hover {
-                      background-color: ${props.theme.main['primary-1.3']};
-                    }
-
-                    &:focus {
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+                      background-color: ${theme.main['primary-1.3']};
                     }
 
                     &:disabled {
-                      background-color: ${props.theme.main['primary-1.2']};
+                      background-color: ${theme.main['primary-1.2']};
                     }
                   `;
             case 'secondary':
                 return `
                     background-color: transparent;
-                    border-color: ${props.theme.main['primary-1.1']};
-                    color: ${props.theme.main['primary-1.1']};
+                    border-color: ${theme.main['primary-1.1']};
+                    color: ${theme.main['primary-1.1']};
 
                     &:hover {
-                      border-color: ${props.theme.main['primary-1.3']};
-                      color: ${props.theme.main['primary-1.3']};
-                    }
-
-                    &:focus {
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+                      border-color: ${theme.main['primary-1.3']};
+                      color: ${theme.main['primary-1.3']};
                     }
 
                     &:disabled {
-                      border-color: ${props.theme.main['primary-1.2']};
-                      color: ${props.theme.main['primary-1.2']};
+                      border-color: ${theme.main['primary-1.2']};
+                      color: ${theme.main['primary-1.2']};
                     }
                 `;
             case 'tertiary':
                 return `
                     background-color: transparent;
                     border-color: transparent;
-                    color: ${props.theme.greys['dark-grey']};
+                    color: ${theme.greys['dark-grey']};
 
                     &:hover {
-                      background-color: ${props.theme.greys.grey};
-                      color: ${props.theme.greys.black};
-                    }
-                    &:focus {
-                        border-color: ${props.theme.main['primary-1.1']};
-                        box-shadow: 0 0 0 2px rgba(0, 128, 165, 0.4);
+                      background-color: ${theme.greys.grey};
+                      color: ${theme.greys.black};
                     }
 
                     &:disabled {
                         background-color: transparent;
-                        color: ${props.theme.greys['mid-grey']};
+                        color: ${theme.greys['mid-grey']};
                     }
                 `;
         }

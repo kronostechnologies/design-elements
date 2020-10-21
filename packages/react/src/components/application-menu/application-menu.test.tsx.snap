@@ -34,6 +34,20 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   height: 100%;
 }
 
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c2 {
   color: #FFFFFF;
 }
@@ -118,15 +132,43 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   height: 100%;
 }
 
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   margin: 0;
   padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 <header
@@ -229,15 +271,43 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   height: 100%;
 }
 
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   margin: 0;
   padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c2:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 <header

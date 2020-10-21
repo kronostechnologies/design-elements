@@ -5,7 +5,7 @@ import uuid from 'uuid/v4';
 
 import { ChooseInput } from '../choose-input/choose-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer } from '../field-container/field-container';
+import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { List } from '../list/list';
 import { Theme } from '../theme-wrapper/theme-wrapper';
@@ -24,7 +24,7 @@ const getBorderColor = ({ disabled, focus, theme, valid }: InputWrapperProps): s
     }
 };
 
-const StyledFieldContainer = styled(FieldContainer)`
+const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
     position: relative;
 `;
 
@@ -342,8 +342,8 @@ export function Select({
     }
 
     function handleInputKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
-        switch (event.keyCode) {
-            case 40 /* ArrowDown */:
+        switch (event.key) {
+            case 'ArrowDown':
                 if (!open) {
                     handleOpen();
                     if (searchable || !selectedOptionValue) {
@@ -360,7 +360,7 @@ export function Select({
                 }
                 setAutofocus(true);
                 break;
-            case 38 /* ArrowUp */:
+            case 'ArrowUp':
                 if (!open) {
                     handleOpen();
                     if (searchable || !selectedOptionValue) {
@@ -375,7 +375,7 @@ export function Select({
                 }
                 setAutofocus(true);
                 break;
-            case 13 /* Enter */:
+            case 'Enter':
                 event.preventDefault();
                 if (searchValue !== '' && filteredOptions.length > 0 && open) {
                     handleChange(filteredOptions[0]);
@@ -384,7 +384,7 @@ export function Select({
                     setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                 }
                 break;
-            case 32 /* Spacebar */:
+            case ' ':
                 if (!open) {
                     event.preventDefault();
                     handleOpen();
@@ -393,7 +393,7 @@ export function Select({
                     }
                 }
                 break;
-            case 27 /* Escape */:
+            case 'Escape':
                 if (searchable) {
                     resetField();
                 }
@@ -418,7 +418,7 @@ export function Select({
             handleOpen();
         } else if (event.key === 'ArrowUp' && !focusedValue) {
             focusLastElementFromArray(options);
-        } else if (event.keyCode > 64 && event.keyCode < 91) /* Check if key is a character */ {
+        } else if (/^[\p{L}\p{N}]$/iu.test(event.key)) /* Check if key is a character */ {
             if (searchable) {
                 setAutofocus(false);
                 setFocusedValue('');

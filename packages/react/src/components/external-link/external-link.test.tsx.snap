@@ -27,6 +27,20 @@ exports[`External Link disabled matches snapshot 1`] = `
   color: #7fbfd2;
 }
 
+.c0.external:focus {
+  outline: none;
+}
+
+.c0.external:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.external:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.external:visited {
   color: #094c6c;
 }
@@ -39,10 +53,24 @@ exports[`External Link disabled matches snapshot 1`] = `
   color: #9ca7b4;
 }
 
+.c0.navigation:focus {
+  outline: none;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.navigation:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 <a
   aria-disabled="true"
-  className="c0 external"
-  disabled={true}
+  class="c0 external"
+  disabled=""
 >
   External Link
 </a>
@@ -75,6 +103,20 @@ exports[`External Link matches snapshot 1`] = `
   color: #0080a5;
 }
 
+.c0.external:focus {
+  outline: none;
+}
+
+.c0.external:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.external:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -92,6 +134,20 @@ exports[`External Link matches snapshot 1`] = `
   color: #57666e;
 }
 
+.c0.navigation:focus {
+  outline: none;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.navigation:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.navigation:hover {
   color: #000;
 }
@@ -102,7 +158,7 @@ exports[`External Link matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
-  className="c0 external"
+  class="c0 external"
   href="https://www.google.ca/"
 >
   External Link
@@ -136,6 +192,20 @@ exports[`External Link with icon matches snapshot 1`] = `
   color: #0080a5;
 }
 
+.c0.external:focus {
+  outline: none;
+}
+
+.c0.external:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.external:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -153,6 +223,20 @@ exports[`External Link with icon matches snapshot 1`] = `
   color: #57666e;
 }
 
+.c0.navigation:focus {
+  outline: none;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.navigation:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.navigation:hover {
   color: #000;
 }
@@ -163,12 +247,12 @@ exports[`External Link with icon matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
-  className="c0 external"
+  class="c0 external"
   href="#"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -203,6 +287,20 @@ exports[`External Link without href matches snapshot 1`] = `
   color: #0080a5;
 }
 
+.c0.external:focus {
+  outline: none;
+}
+
+.c0.external:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.external:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.external:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -220,6 +318,20 @@ exports[`External Link without href matches snapshot 1`] = `
   color: #57666e;
 }
 
+.c0.navigation:focus {
+  outline: none;
+}
+
+.c0.navigation:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0.navigation:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0.navigation:hover {
   color: #000;
 }
@@ -230,12 +342,12 @@ exports[`External Link without href matches snapshot 1`] = `
 
 <a
   aria-disabled="false"
-  className="c0 external"
+  class="c0 external"
   href="javascript:void(0)"
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />

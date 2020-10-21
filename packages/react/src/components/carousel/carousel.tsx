@@ -1,6 +1,7 @@
 import { Icon } from '@design-elements/components/icon/icon';
 import { useId } from '@design-elements/hooks/use-id';
 import { useTheme } from '@design-elements/hooks/use-theme';
+import { focus } from '@design-elements/utils/css-state';
 import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useCarousel } from './use-carousel';
@@ -52,11 +53,13 @@ interface DotProps {
 
 const Dot = styled.button<DotProps>`
     background-color: ${({ active, theme }) => active ? theme.main['primary-1.1'] : theme.greys.grey};
+    border: 1px solid transparent;
     border-radius: 50%;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
     height: 12px;
+    ${focus}
     width: 12px;
 
     & + & {
@@ -69,10 +72,12 @@ interface NavigationButtonProps {
 }
 
 const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
+    border: 1px solid transparent;
     cursor: pointer;
-    height: 32px;
+    height: 34px;
+    ${focus}
     visibility: ${({ disabled }) => disabled ? 'hidden' : 'visible'};
-    width: 32px;
+    width: 34px;
 `;
 
 function LeftArrowIcon(): ReactElement {

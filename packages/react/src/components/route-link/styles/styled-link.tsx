@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/css-state';
 import styled from 'styled-components';
 
 interface ContainerProps {
@@ -23,6 +24,7 @@ export const StyledLink = styled.a<ContainerProps>`
 
     &.external {
         color: ${props => props.disabled ? '#7fbfd2' : '#0080a5'};
+        ${focus}
 
         &:hover {
             ${props => props.disabled ? '' : 'text-decoration: underline'};
@@ -39,6 +41,7 @@ export const StyledLink = styled.a<ContainerProps>`
 
     &.navigation {
         color: ${props => props.disabled ? '#9ca7b4' : '#57666e'};
+        ${focus}
 
         &:hover {
             ${props => props.disabled ? '' : 'color: #000;'}

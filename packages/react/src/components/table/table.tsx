@@ -1,7 +1,7 @@
+import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import { Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
-
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Theme as ThemeProps } from '../theme-wrapper/theme-wrapper';
 import { SortableColumnHeading } from './sortable-column-heading';
@@ -35,6 +35,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
     tbody tr {
         ${({ clickableRows, theme }) => clickableRows ? `
+          ${focus({ theme })}
           :hover {
               background-color: ${theme.greys.grey};
               cursor: pointer;
@@ -71,49 +72,50 @@ interface TableProps<T> {
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
     data: T[];
+
     onRowClick?(row: RowProps): void;
 }
 
 export function Table<T>({ columns, data, onRowClick }: TableProps<T>): ReactElement {
     const { device } = useDeviceContext();
     const {
-      getTableProps,
-      getTableBodyProps,
-      headerGroups,
-      rows,
-      prepareRow,
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
     } = useTable({ columns, data }, useSortBy);
 
     return (
-      <StyledTable device={device} clickableRows={onRowClick !== undefined} {...getTableProps()}>
-        <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(getHeading)}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
-              prepareRow(row);
-              return <TableRow key={row.id} row={row} onClick={onRowClick}/>;
-          })}
-        </tbody>
-      </StyledTable>
+        <StyledTable device={device} clickableRows={onRowClick !== undefined} {...getTableProps()}>
+            <thead>
+            {headerGroups.map(headerGroup => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(getHeading)}
+                </tr>
+            ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+            {rows.map(row => {
+                prepareRow(row);
+                return <TableRow key={row.id} row={row} onClick={onRowClick} />;
+            })}
+            </tbody>
+        </StyledTable>
     );
 }
 
 function getHeading(column: Column): ReactElement {
     if (column.sortable) {
-        return <SortableColumnHeading key={column.id} column={column}/>;
+        return <SortableColumnHeading key={column.id} column={column} />;
     } else {
         return (
             <th
-              scope="col"
-              style={{ textAlign: column.textAlign }}
-              {...column.getHeaderProps()}
+                scope="col"
+                style={{ textAlign: column.textAlign }}
+                {...column.getHeaderProps()}
             >
-              {column.render('Header')}
+                {column.render('Header')}
             </th>
         );
     }

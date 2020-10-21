@@ -34,7 +34,7 @@ export const normal = () => (
 
 export const withASkipButton = () => (
     <Chooser
-        groupName="maritalStatus"
+        groupName="maritalStatusSkip"
         inColumns={false}
         options={maritalStatus}
         skipOption={skipOption}
@@ -49,14 +49,14 @@ export const withValue = () => (
 );
 export const inColumns = () => (
     <Chooser
-        groupName="ageRange"
+        groupName="ageRangeColumn"
         inColumns={true}
         options={ageRange}
     />
 );
 export const withCallback = () => (
     <Chooser
-        groupName="ageRange"
+        groupName="ageRangeCallback"
         inColumns={true}
         onChange={event => console.log(event)}
         options={ageRange}

@@ -64,6 +64,20 @@ input + .c2 {
   color: #57666E;
 }
 
+.c8:focus {
+  outline: none;
+}
+
+.c8:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c8:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c8:not(:disabled) {
   cursor: pointer;
 }
@@ -120,6 +134,7 @@ input + .c2 {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   position: relative;
+  z-index: 1;
 }
 
 .c3 {
@@ -131,6 +146,7 @@ input + .c2 {
 .c7 {
   color: #57666E;
   height: 1.25rem;
+  margin: -1px;
   width: 1.25rem;
 }
 
@@ -138,7 +154,6 @@ input + .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   color: #000000;
   font-family: inherit;
@@ -154,6 +169,20 @@ input + .c2 {
   width: 100%;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c5:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5::-webkit-input-placeholder {
@@ -197,11 +226,6 @@ input + .c2 {
   color: #9CA7B4;
 }
 
-.c5:focus {
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
 label + .c5 {
   display: block;
   margin-top: var(--spacing-half);
@@ -223,7 +247,7 @@ label + .c5 {
   -moz-appearance: none;
   appearance: none;
   background: transparent;
-  border: 0;
+  border: 1px solid transparent;
   bottom: 0.5rem;
   cursor: pointer;
   display: none;
@@ -236,6 +260,20 @@ label + .c5 {
   width: 1.25rem;
 }
 
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c6:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 input:valid + .c6 {
   display: inline-block;
 }
@@ -244,6 +282,10 @@ input:valid + .c6 {
   border-left: 0;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   position: relative;
+}
+
+.c9:focus {
+  z-index: 2;
 }
 
 <div

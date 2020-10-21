@@ -69,7 +69,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 16px;
   color: #57666E;
   cursor: pointer;
@@ -77,17 +77,26 @@ exports[`Global Navigation Matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: 34px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: 34px;
 }
 
 .c3:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c3:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c3:hover {
@@ -106,8 +115,17 @@ exports[`Global Navigation Matches snapshot 1`] = `
 }
 
 .c3:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c3:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 <div

@@ -2,15 +2,16 @@
 
 exports[`List Is not visible 1`] = `
 .c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: none;
   position: unset;
   width: unset;
 }
 
 .c1 {
-  background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -23,8 +24,17 @@ exports[`List Is not visible 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {
@@ -115,6 +125,9 @@ exports[`List Is not visible 1`] = `
 
 exports[`List Matches the snapshot (dropdown) 1`] = `
 .c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,9 +137,7 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 96px;
@@ -139,8 +150,17 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {
@@ -271,6 +291,9 @@ exports[`List Matches the snapshot (dropdown) 1`] = `
 
 exports[`List Matches the snapshot 1`] = `
 .c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -280,9 +303,7 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 96px;
@@ -295,8 +316,17 @@ exports[`List Matches the snapshot 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2 {

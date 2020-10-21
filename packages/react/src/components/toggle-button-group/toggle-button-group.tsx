@@ -1,3 +1,4 @@
+import { focus } from '@design-elements/utils/css-state';
 import React, { MouseEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -24,15 +25,15 @@ interface ToggleButtonProps {
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
     background-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.white};
-    border: 1px solid ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
-    border-left: ${props => props.pressed ? 'auto' : 'none'};
+    border: 1px solid;
+    border-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
+    border-left-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : 'transparent'};
     box-sizing: border-box;
     color: ${props => props.pressed ? props.theme.greys.white : props.theme.greys['dark-grey']};
     cursor: ${props => props.disabled ? 'default' : 'pointer'};
     font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
     height: ${props => props.isMobile ? '48px' : '40px'};
     letter-spacing: 0.46px;
-    margin-left: ${props => props.pressed ? '-1px' : '0'};
     padding: 0 var(--spacing-2x);
 
     &:disabled {
@@ -41,9 +42,17 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     }
 
     &:first-child {
-        border-left: 1px solid ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
+        border-color: ${props => props.theme.greys.grey};
         margin: 0;
     }
+
+    &:focus {
+        z-index: 1;
+    }
+
+    /* Order matters here, so I gotta ignore the stylelint order rule */
+    /* stylelint-disable-next-line */
+    ${focus}
 
     &:hover {
         ${props => props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}
@@ -64,6 +73,7 @@ interface ToggleButtonGroupProps {
      * Sets common name for all buttons
      */
     groupName: string;
+
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
@@ -74,8 +84,8 @@ export function ToggleButtonGroup({ buttonGroup, groupName, onClick }: ToggleBut
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
         selectedButton === event.currentTarget.value ?
-          setSelectedButton('') :
-          setSelectedButton(event.currentTarget.value);
+            setSelectedButton('') :
+            setSelectedButton(event.currentTarget.value);
         onClick && onClick(event);
     };
 
@@ -83,18 +93,18 @@ export function ToggleButtonGroup({ buttonGroup, groupName, onClick }: ToggleBut
         <Container role="group" aria-label={groupName}>
             {buttonGroup.map((button, i) => (
                 <ToggleButton
-                  aria-label={button.label}
-                  aria-pressed={button.value === selectedButton}
-                  pressed={button.value === selectedButton}
-                  data-testid={`test-toggle-button-${i}`}
-                  isMobile={isMobile}
-                  disabled={button.disabled}
-                  key={`${groupName}-${button.value}`}
-                  onClick={handleClick}
-                  type="button"
-                  value={button.value}
+                    aria-label={button.label}
+                    aria-pressed={button.value === selectedButton}
+                    pressed={button.value === selectedButton}
+                    data-testid={`test-toggle-button-${i}`}
+                    isMobile={isMobile}
+                    disabled={button.disabled}
+                    key={`${groupName}-${button.value}`}
+                    onClick={handleClick}
+                    type="button"
+                    value={button.value}
                 >
-                  {button.label}
+                    {button.label}
                 </ToggleButton>
             ))}
         </Container>

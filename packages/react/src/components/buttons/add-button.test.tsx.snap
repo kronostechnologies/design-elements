@@ -44,6 +44,20 @@ exports[`Add Button has disabled styles 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -52,13 +66,23 @@ exports[`Add Button has disabled styles 1`] = `
   color: inherit;
 }
 
-.c0:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c0:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
 }
 
 .c0:disabled,
@@ -132,6 +156,20 @@ exports[`Add Button has mobile styles 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -140,13 +178,23 @@ exports[`Add Button has mobile styles 1`] = `
   color: inherit;
 }
 
-.c0:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c0:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
 }
 
 .c0:disabled,
@@ -219,6 +267,20 @@ exports[`Add Button has primary styles 1`] = `
   color: #FFFFFF;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -227,13 +289,23 @@ exports[`Add Button has primary styles 1`] = `
   color: inherit;
 }
 
-.c0:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c0:hover {
+  background-color: #005F7A;
+  border-color: #005F7A;
 }
 
 .c0:disabled,
@@ -306,6 +378,20 @@ exports[`Add Button has secondary styles 1`] = `
   color: #0080A5;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -314,13 +400,23 @@ exports[`Add Button has secondary styles 1`] = `
   color: inherit;
 }
 
-.c0:hover {
-  border-color: #005F7A;
-  color: #005F7A;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c0:hover {
+  background-color: #0080A5;
+  color: #FFFFFF;
 }
 
 .c0:disabled,
@@ -393,6 +489,20 @@ exports[`Add Button has tertiary styles 1`] = `
   color: #57666E;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -401,14 +511,23 @@ exports[`Add Button has tertiary styles 1`] = `
   color: inherit;
 }
 
-.c0:hover {
-  background-color: #D9DDE2;
-  color: #000000;
+.c0:focus {
+  outline: none;
 }
 
 .c0:focus {
+  outline: none;
   border-color: #0080A5;
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c0:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c0:hover {
+  background-color: #D9DDE2;
+  color: #000000;
 }
 
 .c0:disabled,

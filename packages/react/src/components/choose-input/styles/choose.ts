@@ -1,16 +1,18 @@
+import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
+import { focus } from '@design-elements/utils/css-state';
 import styled from 'styled-components';
 
 export const Label = styled.label`
-    ${props => {
+    ${({ theme }: { theme: Theme }) => {
         return `
             --border-radius: 8px;
 
             align-items: center;
-            background: ${props.theme.greys.white};
-            border: 1px solid ${props.theme.greys['dark-grey']};
+            background: ${theme.greys.white};
+            border: 1px solid ${theme.greys['dark-grey']};
             border-radius: var(--border-radius);
             box-sizing: border-box;
-            color: ${props.theme.greys['dark-grey']};
+            color: ${theme.greys['dark-grey']};
             cursor: pointer;
             display: flex;
             font-size: 1rem;
@@ -23,27 +25,24 @@ export const Label = styled.label`
             transition: all 0.25s ease-in-out;
 
             &:hover {
-                background: ${props.theme.greys.grey};
-                border-color: ${props.theme.greys.grey};
+                background: ${theme.greys.grey};
+                border-color: ${theme.greys.grey};
             }
 
             input[type="checkbox"]:checked + &,
             input[type="radio"]:checked + & {
-                background: ${props.theme.main['primary-1.1']};
-                border-color: ${props.theme.main['primary-1.1']};
-                color: ${props.theme.greys.white};
+                background: ${theme.main['primary-1.1']};
+                border-color: ${theme.main['primary-1.1']};
+                color: ${theme.greys.white};
             }
 
-            input[type="checkbox"]:focus + &,
-            input[type="radio"]:focus + & {
-                border-color: ${props.theme.main['primary-1.1']};
-            }
+            ${focus({ theme }, 'input[type="checkbox"]:focus + &, input[type="radio"]:focus + &')}
 
             input[type="checkbox"]:disabled + &,
             input[type="radio"]:disabled + & {
-                background: ${props.theme.greys['light-grey']};
-                border-color: ${props.theme.greys.grey};
-                color: ${props.theme.greys['mid-grey']};
+                background: ${theme.greys['light-grey']};
+                border-color: ${theme.greys.grey};
+                color: ${theme.greys['mid-grey']};
                 cursor: auto;
             }
 

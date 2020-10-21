@@ -1446,15 +1446,16 @@ input + .c1 {
 }
 
 .c12 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: none;
   position: absolute;
   width: 100%;
 }
 
 .c13 {
-  background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -1467,8 +1468,17 @@ input + .c1 {
 }
 
 .c13:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c13:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c13:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c14 {
@@ -3473,6 +3483,20 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #0080A5;
 }
 
+.c16:focus {
+  outline: none;
+}
+
+.c16:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c16:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c16:not(:disabled) {
   cursor: pointer;
 }
@@ -3481,13 +3505,23 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: inherit;
 }
 
-.c16:hover {
-  border-color: #005F7A;
-  color: #005F7A;
+.c16:focus {
+  outline: none;
 }
 
 .c16:focus {
-  box-shadow: 0 0 0 2px rgba(0,128,165,0.4);
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c16:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c16:hover {
+  background-color: #0080A5;
+  color: #FFFFFF;
 }
 
 .c16:disabled,
@@ -3532,15 +3566,16 @@ input + .c1 {
 }
 
 .c12 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: none;
   position: absolute;
   width: 100%;
 }
 
 .c13 {
-  background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -3553,8 +3588,17 @@ input + .c1 {
 }
 
 .c13:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c13:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c13:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c14 {
@@ -5569,15 +5613,16 @@ input + .c1 {
 }
 
 .c12 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   display: none;
   position: absolute;
   width: 100%;
 }
 
 .c13 {
-  background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
   margin: 0;
   max-height: 160px;
@@ -5590,8 +5635,17 @@ input + .c1 {
 }
 
 .c13:focus {
-  box-shadow: 0 0 0 2px #0080A566;
   outline: none;
+}
+
+.c13:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c13:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c14 {

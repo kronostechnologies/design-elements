@@ -42,7 +42,7 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
-  border: 0;
+  border: 1px solid transparent;
   color: currentColor;
   cursor: pointer;
   height: 32px;
@@ -51,6 +51,24 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
   right: 6px;
   top: 9px;
   width: 32px;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 svg {
+  vertical-align: middle;
 }
 
 <div
@@ -126,7 +144,7 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
-  border: 0;
+  border: 1px solid transparent;
   color: currentColor;
   cursor: pointer;
   height: 48px;
@@ -135,6 +153,24 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
   right: 0;
   top: 9px;
   width: 48px;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
+.c1:not(input):not(textarea):not(button):focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 svg {
+  vertical-align: middle;
 }
 
 <div

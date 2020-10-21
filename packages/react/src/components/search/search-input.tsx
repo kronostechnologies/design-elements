@@ -1,10 +1,10 @@
+import { focus } from '@design-elements/utils/css-state';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -30,6 +30,7 @@ const SearchWrapper = styled.div`
 const InnerWrapper = styled.div`
     flex: 1 1 auto;
     position: relative;
+    z-index: 1;
 `;
 
 const IcoSearch = styled(SearchIcon)`
@@ -41,14 +42,14 @@ const IcoSearch = styled(SearchIcon)`
 const IcoReset = styled(XIcon)`
     color: ${props => props.theme.greys['dark-grey']};
     height: 1.25rem;
+    margin: -1px;
     width: 1.25rem;
 `;
 
-const Input = styled.input`
-    ${(props: {theme: Theme, hasButton?: boolean}) => {
-        return `
-        ${inputsStyle(props.theme)} /* Must be the first rule */
-        border-radius: ${props.hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
+const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
+    ${({ theme, hasButton }) => `
+        ${inputsStyle(theme)} /* Must be the first rule */
+        border-radius: ${hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
         padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 
         label + & {
@@ -61,19 +62,20 @@ const Input = styled.input`
         &::-webkit-search-results-decoration {
           display: none;
         }
-      `;
-    }}
+      `
+    }
 `;
 
 const Reset = styled.button`
     appearance: none;
     background: transparent;
-    border: 0;
+    border: 1px solid transparent;
     bottom: 0.5rem;
     cursor: pointer;
     display: none;
     height: 1.25rem;
     margin: auto;
+    ${focus}
     padding: 0;
     position: absolute;
     right: 0.25rem;
@@ -89,6 +91,10 @@ const SearchSubmit = styled(SearchButton)`
     border-left: 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     position: relative;
+
+    &:focus {
+        z-index: 2;
+    }
 `;
 
 export interface SearchInputProps {
@@ -118,7 +124,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (onSearch && event.keyCode === 13) {
+        if (onSearch && event.key === 'Enter') {
             onSearch(value);
         }
     };

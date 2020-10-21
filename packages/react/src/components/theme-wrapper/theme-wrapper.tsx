@@ -37,6 +37,8 @@ export interface Theme {
     };
     tokens: {
         'focus-box-shadow': string,
+        'focus-border-box-shadow': string,
+        'focus-border': string,
     };
 }
 
