@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';

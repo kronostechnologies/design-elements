@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -22,9 +22,9 @@ interface ButtonProps extends AbstractButtonProps {
     type?: Type;
 }
 
-const StyledButton = styled(AbstractButton)<ButtonProps>`
+const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
     ${focus}
-    ${({ theme, buttonType }: { theme: Theme, buttonType: ButtonType }) => {
+    ${({ theme, buttonType }) => {
         switch (buttonType) {
             case 'primary':
                 return `

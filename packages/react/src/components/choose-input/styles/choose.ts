@@ -1,5 +1,5 @@
 import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import styled from 'styled-components';
 
 export const Label = styled.label`

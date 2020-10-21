@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import { Theme } from '../../theme-wrapper/theme-wrapper';
 
 export const inputsStyle = (theme: Theme) => `

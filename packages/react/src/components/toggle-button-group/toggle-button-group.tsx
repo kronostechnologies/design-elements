@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import React, { MouseEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import { Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';

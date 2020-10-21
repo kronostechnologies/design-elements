@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../theme-wrapper/theme-wrapper';

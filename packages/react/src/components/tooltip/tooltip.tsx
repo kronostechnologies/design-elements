@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import React, { KeyboardEvent as ReactKeyboardEvent, MouseEvent, ReactElement, ReactNode, useEffect, useState } from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';

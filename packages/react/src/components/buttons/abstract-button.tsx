@@ -1,4 +1,4 @@
-import { focus } from '@design-elements/utils/state';
+import { focus } from '@design-elements/utils/css-state';
 import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 import styled from 'styled-components';
 
