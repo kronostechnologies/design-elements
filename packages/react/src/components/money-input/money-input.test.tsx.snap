@@ -8,7 +8,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c1 input,
 .c1 select,
 .c1 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c1:focus {
@@ -17,7 +17,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 
 .c2 {
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #000000;
@@ -129,7 +129,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c1 input,
 .c1 select,
 .c1 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c1:focus {
@@ -138,7 +138,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 
 .c2 {
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #000000;
@@ -250,7 +250,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c1 input,
 .c1 select,
 .c1 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c1:focus {
@@ -259,7 +259,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 
 .c2 {
   background: #FFFFFF;
-  border: 1px solid #D9DDE2;
+  border: 1px solid #57666E;
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #000000;

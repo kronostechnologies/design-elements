@@ -2252,7 +2252,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
-"@equisoft/design-elements-react@^2.0.3-alpha.34":
+"@equisoft/design-elements-react@^2.0.3-alpha.38":
   version "2.0.3-alpha.38"
   resolved "https://registry.yarnpkg.com/@equisoft/design-elements-react/-/design-elements-react-2.0.3-alpha.38.tgz#915194f6c447c0eba9c4ce2cd329dfbcbc679dc4"
   integrity sha512-5/xSWIsjyDBcNgfbAkJpmjCsTvLIM0SjyvaJbbv8slJB94WnxhqiSbJVhmJEjsz4OJOe4Xaw6EokkEIfH+wjCw==

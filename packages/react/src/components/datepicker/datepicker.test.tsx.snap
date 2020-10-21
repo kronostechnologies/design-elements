@@ -28,7 +28,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -42,9 +42,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -303,7 +306,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -317,9 +320,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -578,7 +584,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -592,9 +598,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -879,9 +888,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -1148,7 +1160,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -1162,9 +1174,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -1423,7 +1438,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -1639,9 +1654,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -3540,7 +3558,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -3756,9 +3774,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {
@@ -5584,7 +5605,7 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #D9DDE2;
+  border-color: #57666E;
 }
 
 .c0:focus {
@@ -5800,9 +5821,12 @@ input + .c1 {
   display: flex;
 }
 
+.c2 .popper {
+  z-index: 1000;
+}
+
 .c2 .popper[data-placement^="bottom"] {
   margin-top: 0;
-  z-index: 1000;
 }
 
 .c2 .react-datepicker {

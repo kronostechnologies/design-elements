@@ -11,7 +11,7 @@ const StyledDiv = styled.div<StyledDivProps>`
     input,
     select,
     textarea {
-        border-color: ${({ theme, valid }) => valid ? theme.greys.grey : theme.notifications['error-2.1']};
+        border-color: ${({ theme, valid }) => valid ? theme.greys['dark-grey'] : theme.notifications['error-2.1']};
     }
 
     &:focus {
