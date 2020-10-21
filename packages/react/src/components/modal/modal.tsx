@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
@@ -12,13 +12,24 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     border-radius: var(--border-radius-2x);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    max-height: calc(100vh - var(--spacing-2x));
     max-width: 700px;
     min-width: ${({ breakpoints, isMobile }) => isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`};
+    overflow-y: auto;
     padding: ${getModalPadding};
     position: relative;
-    width: ${({ isMobile }) => isMobile ? `calc(100vw - var(--spacing-4x))` : '60vw'};
+    width: ${({ isMobile }) => isMobile ? `calc(100vw - var(--spacing-2x))` : '60vw'};
+
+    /* Firefox overflow-y: scroll problem fix (skipped bottom padding)
+    https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */
+    &::after {
+        content: '';
+        display: block;
+        padding-bottom: ${getBottomPadding};
+    }
 
     &:focus {
+        border-color: ${({ theme }) => theme.tokens['focus-border']};
         box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']}, 0 6px 10px 0 rgba(0, 0, 0, 0.1);
         outline: none;
     }
@@ -113,6 +124,14 @@ export function Modal({
     const device = useDeviceContext();
     const { t } = useTranslation('modal');
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isOpen]);
+
     if (appElement) {
         ReactModal.setAppElement(appElement);
     }
@@ -172,11 +191,17 @@ function getModalPadding({ noPadding, hasCloseButton, isMobile }: StyledModalPro
         return '0';
     } else if (isMobile) {
         if (hasCloseButton) {
-            return 'var(--spacing-6x) var(--spacing-2x) var(--spacing-2x)';
+            return 'var(--spacing-6x) var(--spacing-2x) 0';
         } else {
-            return 'var(--spacing-3x) var(--spacing-2x) var(--spacing-2x)';
+            return 'var(--spacing-3x) var(--spacing-2x) 0';
         }
     } else {
-        return 'var(--spacing-4x)';
+        return 'var(--spacing-4x) var(--spacing-4x) 0';
     }
+}
+
+function getBottomPadding({ isMobile, noPadding }: StyledModalProps): string {
+    if (noPadding) return '0';
+    else if (isMobile) return 'var(--spacing-2x)';
+    else return 'var(--spacing-4x)';
 }
