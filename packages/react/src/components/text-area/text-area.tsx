@@ -1,5 +1,5 @@
+import { useTranslation } from '@design-elements/i18n/i18n';
 import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 

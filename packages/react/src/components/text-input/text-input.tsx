@@ -1,5 +1,5 @@
+import { useTranslation } from '@design-elements/i18n/i18n';
 import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -42,7 +42,7 @@ export const TextInput = React.forwardRef(({
     onFocus,
     ...props
 }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
-    const { t } = useTranslation('text-input', { useSuspense: false });
+    const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = uuid();
 

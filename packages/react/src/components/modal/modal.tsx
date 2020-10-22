@@ -1,5 +1,5 @@
+import { useTranslation } from '@design-elements/i18n/i18n';
 import React, { ReactElement, ReactNode, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 

@@ -1,6 +1,6 @@
+import { useTranslation } from '@design-elements/i18n/i18n';
 import { getMonth, getYear } from 'date-fns';
 import React, { ReactElement } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
