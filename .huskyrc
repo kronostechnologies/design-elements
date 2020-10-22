@@ -1,5 +1,0 @@
-{
-  "hooks": {
-    "post-checkout": "lerna bootstrap && lerna run build"
-  }
-}
