@@ -140,7 +140,7 @@ export function MoneyInput({
                 inputMode="numeric"
                 value={displayValue}
                 label={label}
-                placeholder="$"
+                placeholder={safeFormatCurrency(0, precision, locale, currency)}
                 onChange={handleChangeEvent}
                 onBlur={handleBlurEvent}
                 onFocus={handleFocusEvent}

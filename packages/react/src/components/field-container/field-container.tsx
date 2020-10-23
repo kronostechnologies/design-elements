@@ -20,7 +20,7 @@ const StyledDiv = styled.div<StyledDivProps>`
     }
 
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
-      margin-bottom: var(--spacing-half);
+        margin-bottom: var(--spacing-half);
     }
 `;
 
@@ -33,8 +33,8 @@ interface StyledDivProps {
 }
 
 const StyledHint = styled.span<{isMobile: boolean}>`
-    display: block;
     color: ${props => props.theme.greys['dark-grey']};
+    display: block;
     font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.75rem'};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
