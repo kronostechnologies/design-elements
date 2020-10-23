@@ -19,7 +19,7 @@ export function renderWithProviders(
     return render(<AllProviders device={device}>{component}</AllProviders>);
 }
 
-function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
+export function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
     return (
         <MemoryRouter>
             <DeviceContextProvider staticDevice={device}>

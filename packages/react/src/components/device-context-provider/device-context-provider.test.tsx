@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React, { ReactElement } from 'react';
+import { breakpoints } from '../../tokens/breakpoints';
 import { DeviceContextProvider, DeviceType, useDeviceContext } from './device-context-provider';
 
 const TestComponent = (): ReactElement => {
@@ -26,6 +27,7 @@ const getContextObject = (
         isDesktop: desktop,
         isTablet: tablet,
         isMobile: mobile,
+        breakpoints,
     };
 };
 
