@@ -149,11 +149,6 @@ input + .c2 {
 }
 
 label + .c5 {
-  display: block;
-  margin-top: var(--spacing-half);
-}
-
-label + .c5 {
   margin-top: 0;
 }
 
@@ -394,11 +389,6 @@ input + .c2 {
 .c5:disabled,
 .c5:disabled::placeholder {
   color: #9CA7B4;
-}
-
-label + .c5 {
-  display: block;
-  margin-top: var(--spacing-half);
 }
 
 label + .c5 {

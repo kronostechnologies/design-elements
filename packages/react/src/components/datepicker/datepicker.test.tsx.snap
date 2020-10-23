@@ -35,6 +35,10 @@ input + .c1 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -315,6 +319,10 @@ input + .c1 {
 
 .c0:focus {
   border-color: #0080A5;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
 }
 
 .c2 {
@@ -599,6 +607,10 @@ input + .c1 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -860,11 +872,10 @@ exports[`Datepicker matches snapshot (invalid) 1`] = `
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: 0 0 var(--spacing-half);
 }
 
 .c4 {
-  margin: 0 0 0 var(--spacing-base);
+  margin-left: var(--spacing-base);
 }
 
 .c3 {
@@ -910,6 +921,10 @@ input + .c1 {
 
 .c0:focus {
   border-color: #A40C2E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
 }
 
 .c5 {
@@ -1139,11 +1154,11 @@ label + .c5 {
         width="16"
       />
     </div>
-    <label
+    <span
       class="c4"
     >
       Invalid date
-    </label>
+    </span>
   </div>
   <div
     class="c5"
@@ -1214,6 +1229,10 @@ input + .c1 {
 
 .c0:focus {
   border-color: #0080A5;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
 }
 
 .c2 {
@@ -1498,7 +1517,29 @@ input + .c1 {
   border-color: #0080A5;
 }
 
-.c12 {
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c8 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c8 input,
+.c8 select,
+.c8 textarea {
+  border-color: #57666E;
+}
+
+.c8:focus {
+  border-color: #0080A5;
+}
+
+.c8 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c13 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -1507,7 +1548,7 @@ input + .c1 {
   width: 100%;
 }
 
-.c13 {
+.c14 {
   border-radius: var(--border-radius);
   list-style-type: none;
   margin: 0;
@@ -1520,21 +1561,21 @@ input + .c1 {
   width: 100%;
 }
 
-.c13:focus {
+.c14:focus {
   outline: none;
 }
 
-.c13:focus {
+.c14:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c13:not(input):not(textarea):not(button):focus {
+.c14:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1555,16 +1596,16 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c14:hover,
-.c14:focus {
+.c15:hover,
+.c15:focus {
   background-color: #D9DDE2;
 }
 
-.c8 {
+.c9 {
   position: relative;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1579,20 +1620,19 @@ input + .c1 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: 0;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
 
-.c9:hover {
+.c10:hover {
   cursor: pointer;
 }
 
-.c9 svg {
+.c10 svg {
   color: #57666E;
 }
 
-.c10 {
+.c11 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -1613,31 +1653,31 @@ input + .c1 {
   width: 100%;
 }
 
-.c10:hover {
+.c11:hover {
   cursor: pointer;
 }
 
-.c10::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10::placeholder {
+.c11::placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1867,7 +1907,7 @@ label + .c2 {
   outline: none;
 }
 
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1891,11 +1931,11 @@ label + .c2 {
   width: 32px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #D9DDE2;
 }
 
-.c15:focus {
+.c16:focus {
   border: 1px solid #0080A5;
   border-left: none;
   box-shadow: 0 0 0 2px #0080A566;
@@ -1978,13 +2018,13 @@ label + .c2 {
                       style="margin-right:8px"
                     >
                       <div
-                        class="c0 c8"
+                        class="c8 c9"
                       >
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-owns="listbox_undefined"
-                          class="c9"
+                          class="c10"
                           data-testid="input-wrapper"
                         >
                           <input
@@ -1992,13 +2032,13 @@ label + .c2 {
                             aria-controls="listbox_undefined"
                             aria-label="Select a month"
                             aria-multiline="false"
-                            class="c10"
+                            class="c11"
                             data-testid="input"
                             type="text"
                             value=""
                           />
                           <button
-                            class="c11"
+                            class="c12"
                             data-testid="arrow"
                             tabindex="-1"
                             type="button"
@@ -2012,12 +2052,12 @@ label + .c2 {
                           </button>
                         </div>
                         <div
-                          class="c12"
+                          class="c13"
                           role="listbox"
                           tabindex="-1"
                         >
                           <ul
-                            class="c13"
+                            class="c14"
                             id="listbox_undefined"
                             role="presentation"
                             tabindex="0"
@@ -2025,7 +2065,7 @@ label + .c2 {
                             <li
                               aria-label="Jan"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_january"
                               role="option"
                             >
@@ -2034,7 +2074,7 @@ label + .c2 {
                             <li
                               aria-label="Feb"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_february"
                               role="option"
                             >
@@ -2043,7 +2083,7 @@ label + .c2 {
                             <li
                               aria-label="Mar"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_march"
                               role="option"
                             >
@@ -2052,7 +2092,7 @@ label + .c2 {
                             <li
                               aria-label="Apr"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_april"
                               role="option"
                             >
@@ -2061,7 +2101,7 @@ label + .c2 {
                             <li
                               aria-label="May"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_may"
                               role="option"
                             >
@@ -2070,7 +2110,7 @@ label + .c2 {
                             <li
                               aria-label="Jun"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_june"
                               role="option"
                             >
@@ -2079,7 +2119,7 @@ label + .c2 {
                             <li
                               aria-label="Jul"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_july"
                               role="option"
                             >
@@ -2088,7 +2128,7 @@ label + .c2 {
                             <li
                               aria-label="Aug"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_august"
                               role="option"
                             >
@@ -2097,7 +2137,7 @@ label + .c2 {
                             <li
                               aria-label="Sep"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_september"
                               role="option"
                             >
@@ -2106,7 +2146,7 @@ label + .c2 {
                             <li
                               aria-label="Oct"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_october"
                               role="option"
                             >
@@ -2115,7 +2155,7 @@ label + .c2 {
                             <li
                               aria-label="Nov"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_november"
                               role="option"
                             >
@@ -2124,7 +2164,7 @@ label + .c2 {
                             <li
                               aria-label="Dec"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_december"
                               role="option"
                             >
@@ -2138,13 +2178,13 @@ label + .c2 {
                       class="c7"
                     >
                       <div
-                        class="c0 c8"
+                        class="c8 c9"
                       >
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-owns="listbox_undefined"
-                          class="c9"
+                          class="c10"
                           data-testid="input-wrapper"
                         >
                           <input
@@ -2152,13 +2192,13 @@ label + .c2 {
                             aria-controls="listbox_undefined"
                             aria-label="Select a year"
                             aria-multiline="false"
-                            class="c10"
+                            class="c11"
                             data-testid="input"
                             type="text"
                             value=""
                           />
                           <button
-                            class="c11"
+                            class="c12"
                             data-testid="arrow"
                             tabindex="-1"
                             type="button"
@@ -2172,12 +2212,12 @@ label + .c2 {
                           </button>
                         </div>
                         <div
-                          class="c12"
+                          class="c13"
                           role="listbox"
                           tabindex="-1"
                         >
                           <ul
-                            class="c13"
+                            class="c14"
                             id="listbox_undefined"
                             role="presentation"
                             tabindex="0"
@@ -2185,7 +2225,7 @@ label + .c2 {
                             <li
                               aria-label="1920"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1920"
                               role="option"
                             >
@@ -2194,7 +2234,7 @@ label + .c2 {
                             <li
                               aria-label="1921"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1921"
                               role="option"
                             >
@@ -2203,7 +2243,7 @@ label + .c2 {
                             <li
                               aria-label="1922"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1922"
                               role="option"
                             >
@@ -2212,7 +2252,7 @@ label + .c2 {
                             <li
                               aria-label="1923"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1923"
                               role="option"
                             >
@@ -2221,7 +2261,7 @@ label + .c2 {
                             <li
                               aria-label="1924"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1924"
                               role="option"
                             >
@@ -2230,7 +2270,7 @@ label + .c2 {
                             <li
                               aria-label="1925"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1925"
                               role="option"
                             >
@@ -2239,7 +2279,7 @@ label + .c2 {
                             <li
                               aria-label="1926"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1926"
                               role="option"
                             >
@@ -2248,7 +2288,7 @@ label + .c2 {
                             <li
                               aria-label="1927"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1927"
                               role="option"
                             >
@@ -2257,7 +2297,7 @@ label + .c2 {
                             <li
                               aria-label="1928"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1928"
                               role="option"
                             >
@@ -2266,7 +2306,7 @@ label + .c2 {
                             <li
                               aria-label="1929"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1929"
                               role="option"
                             >
@@ -2275,7 +2315,7 @@ label + .c2 {
                             <li
                               aria-label="1930"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1930"
                               role="option"
                             >
@@ -2284,7 +2324,7 @@ label + .c2 {
                             <li
                               aria-label="1931"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1931"
                               role="option"
                             >
@@ -2293,7 +2333,7 @@ label + .c2 {
                             <li
                               aria-label="1932"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1932"
                               role="option"
                             >
@@ -2302,7 +2342,7 @@ label + .c2 {
                             <li
                               aria-label="1933"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1933"
                               role="option"
                             >
@@ -2311,7 +2351,7 @@ label + .c2 {
                             <li
                               aria-label="1934"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1934"
                               role="option"
                             >
@@ -2320,7 +2360,7 @@ label + .c2 {
                             <li
                               aria-label="1935"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1935"
                               role="option"
                             >
@@ -2329,7 +2369,7 @@ label + .c2 {
                             <li
                               aria-label="1936"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1936"
                               role="option"
                             >
@@ -2338,7 +2378,7 @@ label + .c2 {
                             <li
                               aria-label="1937"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1937"
                               role="option"
                             >
@@ -2347,7 +2387,7 @@ label + .c2 {
                             <li
                               aria-label="1938"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1938"
                               role="option"
                             >
@@ -2356,7 +2396,7 @@ label + .c2 {
                             <li
                               aria-label="1939"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1939"
                               role="option"
                             >
@@ -2365,7 +2405,7 @@ label + .c2 {
                             <li
                               aria-label="1940"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1940"
                               role="option"
                             >
@@ -2374,7 +2414,7 @@ label + .c2 {
                             <li
                               aria-label="1941"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1941"
                               role="option"
                             >
@@ -2383,7 +2423,7 @@ label + .c2 {
                             <li
                               aria-label="1942"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1942"
                               role="option"
                             >
@@ -2392,7 +2432,7 @@ label + .c2 {
                             <li
                               aria-label="1943"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1943"
                               role="option"
                             >
@@ -2401,7 +2441,7 @@ label + .c2 {
                             <li
                               aria-label="1944"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1944"
                               role="option"
                             >
@@ -2410,7 +2450,7 @@ label + .c2 {
                             <li
                               aria-label="1945"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1945"
                               role="option"
                             >
@@ -2419,7 +2459,7 @@ label + .c2 {
                             <li
                               aria-label="1946"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1946"
                               role="option"
                             >
@@ -2428,7 +2468,7 @@ label + .c2 {
                             <li
                               aria-label="1947"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1947"
                               role="option"
                             >
@@ -2437,7 +2477,7 @@ label + .c2 {
                             <li
                               aria-label="1948"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1948"
                               role="option"
                             >
@@ -2446,7 +2486,7 @@ label + .c2 {
                             <li
                               aria-label="1949"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1949"
                               role="option"
                             >
@@ -2455,7 +2495,7 @@ label + .c2 {
                             <li
                               aria-label="1950"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1950"
                               role="option"
                             >
@@ -2464,7 +2504,7 @@ label + .c2 {
                             <li
                               aria-label="1951"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1951"
                               role="option"
                             >
@@ -2473,7 +2513,7 @@ label + .c2 {
                             <li
                               aria-label="1952"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1952"
                               role="option"
                             >
@@ -2482,7 +2522,7 @@ label + .c2 {
                             <li
                               aria-label="1953"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1953"
                               role="option"
                             >
@@ -2491,7 +2531,7 @@ label + .c2 {
                             <li
                               aria-label="1954"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1954"
                               role="option"
                             >
@@ -2500,7 +2540,7 @@ label + .c2 {
                             <li
                               aria-label="1955"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1955"
                               role="option"
                             >
@@ -2509,7 +2549,7 @@ label + .c2 {
                             <li
                               aria-label="1956"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1956"
                               role="option"
                             >
@@ -2518,7 +2558,7 @@ label + .c2 {
                             <li
                               aria-label="1957"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1957"
                               role="option"
                             >
@@ -2527,7 +2567,7 @@ label + .c2 {
                             <li
                               aria-label="1958"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1958"
                               role="option"
                             >
@@ -2536,7 +2576,7 @@ label + .c2 {
                             <li
                               aria-label="1959"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1959"
                               role="option"
                             >
@@ -2545,7 +2585,7 @@ label + .c2 {
                             <li
                               aria-label="1960"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1960"
                               role="option"
                             >
@@ -2554,7 +2594,7 @@ label + .c2 {
                             <li
                               aria-label="1961"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1961"
                               role="option"
                             >
@@ -2563,7 +2603,7 @@ label + .c2 {
                             <li
                               aria-label="1962"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1962"
                               role="option"
                             >
@@ -2572,7 +2612,7 @@ label + .c2 {
                             <li
                               aria-label="1963"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1963"
                               role="option"
                             >
@@ -2581,7 +2621,7 @@ label + .c2 {
                             <li
                               aria-label="1964"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1964"
                               role="option"
                             >
@@ -2590,7 +2630,7 @@ label + .c2 {
                             <li
                               aria-label="1965"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1965"
                               role="option"
                             >
@@ -2599,7 +2639,7 @@ label + .c2 {
                             <li
                               aria-label="1966"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1966"
                               role="option"
                             >
@@ -2608,7 +2648,7 @@ label + .c2 {
                             <li
                               aria-label="1967"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1967"
                               role="option"
                             >
@@ -2617,7 +2657,7 @@ label + .c2 {
                             <li
                               aria-label="1968"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1968"
                               role="option"
                             >
@@ -2626,7 +2666,7 @@ label + .c2 {
                             <li
                               aria-label="1969"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1969"
                               role="option"
                             >
@@ -2635,7 +2675,7 @@ label + .c2 {
                             <li
                               aria-label="1970"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1970"
                               role="option"
                             >
@@ -2644,7 +2684,7 @@ label + .c2 {
                             <li
                               aria-label="1971"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1971"
                               role="option"
                             >
@@ -2653,7 +2693,7 @@ label + .c2 {
                             <li
                               aria-label="1972"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1972"
                               role="option"
                             >
@@ -2662,7 +2702,7 @@ label + .c2 {
                             <li
                               aria-label="1973"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1973"
                               role="option"
                             >
@@ -2671,7 +2711,7 @@ label + .c2 {
                             <li
                               aria-label="1974"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1974"
                               role="option"
                             >
@@ -2680,7 +2720,7 @@ label + .c2 {
                             <li
                               aria-label="1975"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1975"
                               role="option"
                             >
@@ -2689,7 +2729,7 @@ label + .c2 {
                             <li
                               aria-label="1976"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1976"
                               role="option"
                             >
@@ -2698,7 +2738,7 @@ label + .c2 {
                             <li
                               aria-label="1977"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1977"
                               role="option"
                             >
@@ -2707,7 +2747,7 @@ label + .c2 {
                             <li
                               aria-label="1978"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1978"
                               role="option"
                             >
@@ -2716,7 +2756,7 @@ label + .c2 {
                             <li
                               aria-label="1979"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1979"
                               role="option"
                             >
@@ -2725,7 +2765,7 @@ label + .c2 {
                             <li
                               aria-label="1980"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1980"
                               role="option"
                             >
@@ -2734,7 +2774,7 @@ label + .c2 {
                             <li
                               aria-label="1981"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1981"
                               role="option"
                             >
@@ -2743,7 +2783,7 @@ label + .c2 {
                             <li
                               aria-label="1982"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1982"
                               role="option"
                             >
@@ -2752,7 +2792,7 @@ label + .c2 {
                             <li
                               aria-label="1983"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1983"
                               role="option"
                             >
@@ -2761,7 +2801,7 @@ label + .c2 {
                             <li
                               aria-label="1984"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1984"
                               role="option"
                             >
@@ -2770,7 +2810,7 @@ label + .c2 {
                             <li
                               aria-label="1985"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1985"
                               role="option"
                             >
@@ -2779,7 +2819,7 @@ label + .c2 {
                             <li
                               aria-label="1986"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1986"
                               role="option"
                             >
@@ -2788,7 +2828,7 @@ label + .c2 {
                             <li
                               aria-label="1987"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1987"
                               role="option"
                             >
@@ -2797,7 +2837,7 @@ label + .c2 {
                             <li
                               aria-label="1988"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1988"
                               role="option"
                             >
@@ -2806,7 +2846,7 @@ label + .c2 {
                             <li
                               aria-label="1989"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1989"
                               role="option"
                             >
@@ -2815,7 +2855,7 @@ label + .c2 {
                             <li
                               aria-label="1990"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1990"
                               role="option"
                             >
@@ -2824,7 +2864,7 @@ label + .c2 {
                             <li
                               aria-label="1991"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1991"
                               role="option"
                             >
@@ -2833,7 +2873,7 @@ label + .c2 {
                             <li
                               aria-label="1992"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1992"
                               role="option"
                             >
@@ -2842,7 +2882,7 @@ label + .c2 {
                             <li
                               aria-label="1993"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1993"
                               role="option"
                             >
@@ -2851,7 +2891,7 @@ label + .c2 {
                             <li
                               aria-label="1994"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1994"
                               role="option"
                             >
@@ -2860,7 +2900,7 @@ label + .c2 {
                             <li
                               aria-label="1995"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1995"
                               role="option"
                             >
@@ -2869,7 +2909,7 @@ label + .c2 {
                             <li
                               aria-label="1996"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1996"
                               role="option"
                             >
@@ -2878,7 +2918,7 @@ label + .c2 {
                             <li
                               aria-label="1997"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1997"
                               role="option"
                             >
@@ -2887,7 +2927,7 @@ label + .c2 {
                             <li
                               aria-label="1998"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1998"
                               role="option"
                             >
@@ -2896,7 +2936,7 @@ label + .c2 {
                             <li
                               aria-label="1999"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1999"
                               role="option"
                             >
@@ -2905,7 +2945,7 @@ label + .c2 {
                             <li
                               aria-label="2000"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2000"
                               role="option"
                             >
@@ -2914,7 +2954,7 @@ label + .c2 {
                             <li
                               aria-label="2001"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2001"
                               role="option"
                             >
@@ -2923,7 +2963,7 @@ label + .c2 {
                             <li
                               aria-label="2002"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2002"
                               role="option"
                             >
@@ -2932,7 +2972,7 @@ label + .c2 {
                             <li
                               aria-label="2003"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2003"
                               role="option"
                             >
@@ -2941,7 +2981,7 @@ label + .c2 {
                             <li
                               aria-label="2004"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2004"
                               role="option"
                             >
@@ -2950,7 +2990,7 @@ label + .c2 {
                             <li
                               aria-label="2005"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2005"
                               role="option"
                             >
@@ -2959,7 +2999,7 @@ label + .c2 {
                             <li
                               aria-label="2006"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2006"
                               role="option"
                             >
@@ -2968,7 +3008,7 @@ label + .c2 {
                             <li
                               aria-label="2007"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2007"
                               role="option"
                             >
@@ -2977,7 +3017,7 @@ label + .c2 {
                             <li
                               aria-label="2008"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2008"
                               role="option"
                             >
@@ -2986,7 +3026,7 @@ label + .c2 {
                             <li
                               aria-label="2009"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2009"
                               role="option"
                             >
@@ -2995,7 +3035,7 @@ label + .c2 {
                             <li
                               aria-label="2010"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2010"
                               role="option"
                             >
@@ -3478,7 +3518,7 @@ label + .c2 {
     </div>
     <button
       aria-label="Choose date"
-      class="c15"
+      class="c16"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -3495,7 +3535,7 @@ label + .c2 {
 `;
 
 exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3538,50 +3578,50 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   color: #0080A5;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c16:not(input):not(textarea):not(button):focus {
+.c17:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c16:not(:disabled) {
+.c17:not(:disabled) {
   cursor: pointer;
 }
 
-.c16 > svg {
+.c17 > svg {
   color: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c16:not(input):not(textarea):not(button):focus {
+.c17:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: #0080A5;
   color: #FFFFFF;
 }
 
-.c16:disabled,
-.c16:disabled:focus,
-.c16:disabled:hover {
+.c17:disabled,
+.c17:disabled:focus,
+.c17:disabled:hover {
   border-color: #99CCDB;
   color: #99CCDB;
 }
@@ -3620,7 +3660,29 @@ input + .c1 {
   border-color: #0080A5;
 }
 
-.c12 {
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c8 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c8 input,
+.c8 select,
+.c8 textarea {
+  border-color: #57666E;
+}
+
+.c8:focus {
+  border-color: #0080A5;
+}
+
+.c8 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c13 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -3629,7 +3691,7 @@ input + .c1 {
   width: 100%;
 }
 
-.c13 {
+.c14 {
   border-radius: var(--border-radius);
   list-style-type: none;
   margin: 0;
@@ -3642,21 +3704,21 @@ input + .c1 {
   width: 100%;
 }
 
-.c13:focus {
+.c14:focus {
   outline: none;
 }
 
-.c13:focus {
+.c14:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c13:not(input):not(textarea):not(button):focus {
+.c14:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3677,16 +3739,16 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c14:hover,
-.c14:focus {
+.c15:hover,
+.c15:focus {
   background-color: #D9DDE2;
 }
 
-.c8 {
+.c9 {
   position: relative;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3701,20 +3763,19 @@ input + .c1 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: 0;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
 
-.c9:hover {
+.c10:hover {
   cursor: pointer;
 }
 
-.c9 svg {
+.c10 svg {
   color: #57666E;
 }
 
-.c10 {
+.c11 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -3735,31 +3796,31 @@ input + .c1 {
   width: 100%;
 }
 
-.c10:hover {
+.c11:hover {
   cursor: pointer;
 }
 
-.c10::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c10::placeholder {
+.c11::placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3989,13 +4050,13 @@ label + .c2 {
   outline: none;
 }
 
-.c15 {
+.c16 {
   clear: both;
   padding-top: var(--spacing-1x);
   text-align: center;
 }
 
-.c17 {
+.c18 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4019,11 +4080,11 @@ label + .c2 {
   width: 32px;
 }
 
-.c17:hover {
+.c18:hover {
   background-color: #D9DDE2;
 }
 
-.c17:focus {
+.c18:focus {
   border: 1px solid #0080A5;
   border-left: none;
   box-shadow: 0 0 0 2px #0080A566;
@@ -4106,13 +4167,13 @@ label + .c2 {
                       style="margin-right:8px"
                     >
                       <div
-                        class="c0 c8"
+                        class="c8 c9"
                       >
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-owns="listbox_undefined"
-                          class="c9"
+                          class="c10"
                           data-testid="input-wrapper"
                         >
                           <input
@@ -4120,13 +4181,13 @@ label + .c2 {
                             aria-controls="listbox_undefined"
                             aria-label="Select a month"
                             aria-multiline="false"
-                            class="c10"
+                            class="c11"
                             data-testid="input"
                             type="text"
                             value=""
                           />
                           <button
-                            class="c11"
+                            class="c12"
                             data-testid="arrow"
                             tabindex="-1"
                             type="button"
@@ -4140,12 +4201,12 @@ label + .c2 {
                           </button>
                         </div>
                         <div
-                          class="c12"
+                          class="c13"
                           role="listbox"
                           tabindex="-1"
                         >
                           <ul
-                            class="c13"
+                            class="c14"
                             id="listbox_undefined"
                             role="presentation"
                             tabindex="0"
@@ -4153,7 +4214,7 @@ label + .c2 {
                             <li
                               aria-label="Jan"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_january"
                               role="option"
                             >
@@ -4162,7 +4223,7 @@ label + .c2 {
                             <li
                               aria-label="Feb"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_february"
                               role="option"
                             >
@@ -4171,7 +4232,7 @@ label + .c2 {
                             <li
                               aria-label="Mar"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_march"
                               role="option"
                             >
@@ -4180,7 +4241,7 @@ label + .c2 {
                             <li
                               aria-label="Apr"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_april"
                               role="option"
                             >
@@ -4189,7 +4250,7 @@ label + .c2 {
                             <li
                               aria-label="May"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_may"
                               role="option"
                             >
@@ -4198,7 +4259,7 @@ label + .c2 {
                             <li
                               aria-label="Jun"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_june"
                               role="option"
                             >
@@ -4207,7 +4268,7 @@ label + .c2 {
                             <li
                               aria-label="Jul"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_july"
                               role="option"
                             >
@@ -4216,7 +4277,7 @@ label + .c2 {
                             <li
                               aria-label="Aug"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_august"
                               role="option"
                             >
@@ -4225,7 +4286,7 @@ label + .c2 {
                             <li
                               aria-label="Sep"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_september"
                               role="option"
                             >
@@ -4234,7 +4295,7 @@ label + .c2 {
                             <li
                               aria-label="Oct"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_october"
                               role="option"
                             >
@@ -4243,7 +4304,7 @@ label + .c2 {
                             <li
                               aria-label="Nov"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_november"
                               role="option"
                             >
@@ -4252,7 +4313,7 @@ label + .c2 {
                             <li
                               aria-label="Dec"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_december"
                               role="option"
                             >
@@ -4266,13 +4327,13 @@ label + .c2 {
                       class="c7"
                     >
                       <div
-                        class="c0 c8"
+                        class="c8 c9"
                       >
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-owns="listbox_undefined"
-                          class="c9"
+                          class="c10"
                           data-testid="input-wrapper"
                         >
                           <input
@@ -4280,13 +4341,13 @@ label + .c2 {
                             aria-controls="listbox_undefined"
                             aria-label="Select a year"
                             aria-multiline="false"
-                            class="c10"
+                            class="c11"
                             data-testid="input"
                             type="text"
                             value=""
                           />
                           <button
-                            class="c11"
+                            class="c12"
                             data-testid="arrow"
                             tabindex="-1"
                             type="button"
@@ -4300,12 +4361,12 @@ label + .c2 {
                           </button>
                         </div>
                         <div
-                          class="c12"
+                          class="c13"
                           role="listbox"
                           tabindex="-1"
                         >
                           <ul
-                            class="c13"
+                            class="c14"
                             id="listbox_undefined"
                             role="presentation"
                             tabindex="0"
@@ -4313,7 +4374,7 @@ label + .c2 {
                             <li
                               aria-label="1920"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1920"
                               role="option"
                             >
@@ -4322,7 +4383,7 @@ label + .c2 {
                             <li
                               aria-label="1921"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1921"
                               role="option"
                             >
@@ -4331,7 +4392,7 @@ label + .c2 {
                             <li
                               aria-label="1922"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1922"
                               role="option"
                             >
@@ -4340,7 +4401,7 @@ label + .c2 {
                             <li
                               aria-label="1923"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1923"
                               role="option"
                             >
@@ -4349,7 +4410,7 @@ label + .c2 {
                             <li
                               aria-label="1924"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1924"
                               role="option"
                             >
@@ -4358,7 +4419,7 @@ label + .c2 {
                             <li
                               aria-label="1925"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1925"
                               role="option"
                             >
@@ -4367,7 +4428,7 @@ label + .c2 {
                             <li
                               aria-label="1926"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1926"
                               role="option"
                             >
@@ -4376,7 +4437,7 @@ label + .c2 {
                             <li
                               aria-label="1927"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1927"
                               role="option"
                             >
@@ -4385,7 +4446,7 @@ label + .c2 {
                             <li
                               aria-label="1928"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1928"
                               role="option"
                             >
@@ -4394,7 +4455,7 @@ label + .c2 {
                             <li
                               aria-label="1929"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1929"
                               role="option"
                             >
@@ -4403,7 +4464,7 @@ label + .c2 {
                             <li
                               aria-label="1930"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1930"
                               role="option"
                             >
@@ -4412,7 +4473,7 @@ label + .c2 {
                             <li
                               aria-label="1931"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1931"
                               role="option"
                             >
@@ -4421,7 +4482,7 @@ label + .c2 {
                             <li
                               aria-label="1932"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1932"
                               role="option"
                             >
@@ -4430,7 +4491,7 @@ label + .c2 {
                             <li
                               aria-label="1933"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1933"
                               role="option"
                             >
@@ -4439,7 +4500,7 @@ label + .c2 {
                             <li
                               aria-label="1934"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1934"
                               role="option"
                             >
@@ -4448,7 +4509,7 @@ label + .c2 {
                             <li
                               aria-label="1935"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1935"
                               role="option"
                             >
@@ -4457,7 +4518,7 @@ label + .c2 {
                             <li
                               aria-label="1936"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1936"
                               role="option"
                             >
@@ -4466,7 +4527,7 @@ label + .c2 {
                             <li
                               aria-label="1937"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1937"
                               role="option"
                             >
@@ -4475,7 +4536,7 @@ label + .c2 {
                             <li
                               aria-label="1938"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1938"
                               role="option"
                             >
@@ -4484,7 +4545,7 @@ label + .c2 {
                             <li
                               aria-label="1939"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1939"
                               role="option"
                             >
@@ -4493,7 +4554,7 @@ label + .c2 {
                             <li
                               aria-label="1940"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1940"
                               role="option"
                             >
@@ -4502,7 +4563,7 @@ label + .c2 {
                             <li
                               aria-label="1941"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1941"
                               role="option"
                             >
@@ -4511,7 +4572,7 @@ label + .c2 {
                             <li
                               aria-label="1942"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1942"
                               role="option"
                             >
@@ -4520,7 +4581,7 @@ label + .c2 {
                             <li
                               aria-label="1943"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1943"
                               role="option"
                             >
@@ -4529,7 +4590,7 @@ label + .c2 {
                             <li
                               aria-label="1944"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1944"
                               role="option"
                             >
@@ -4538,7 +4599,7 @@ label + .c2 {
                             <li
                               aria-label="1945"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1945"
                               role="option"
                             >
@@ -4547,7 +4608,7 @@ label + .c2 {
                             <li
                               aria-label="1946"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1946"
                               role="option"
                             >
@@ -4556,7 +4617,7 @@ label + .c2 {
                             <li
                               aria-label="1947"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1947"
                               role="option"
                             >
@@ -4565,7 +4626,7 @@ label + .c2 {
                             <li
                               aria-label="1948"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1948"
                               role="option"
                             >
@@ -4574,7 +4635,7 @@ label + .c2 {
                             <li
                               aria-label="1949"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1949"
                               role="option"
                             >
@@ -4583,7 +4644,7 @@ label + .c2 {
                             <li
                               aria-label="1950"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1950"
                               role="option"
                             >
@@ -4592,7 +4653,7 @@ label + .c2 {
                             <li
                               aria-label="1951"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1951"
                               role="option"
                             >
@@ -4601,7 +4662,7 @@ label + .c2 {
                             <li
                               aria-label="1952"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1952"
                               role="option"
                             >
@@ -4610,7 +4671,7 @@ label + .c2 {
                             <li
                               aria-label="1953"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1953"
                               role="option"
                             >
@@ -4619,7 +4680,7 @@ label + .c2 {
                             <li
                               aria-label="1954"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1954"
                               role="option"
                             >
@@ -4628,7 +4689,7 @@ label + .c2 {
                             <li
                               aria-label="1955"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1955"
                               role="option"
                             >
@@ -4637,7 +4698,7 @@ label + .c2 {
                             <li
                               aria-label="1956"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1956"
                               role="option"
                             >
@@ -4646,7 +4707,7 @@ label + .c2 {
                             <li
                               aria-label="1957"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1957"
                               role="option"
                             >
@@ -4655,7 +4716,7 @@ label + .c2 {
                             <li
                               aria-label="1958"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1958"
                               role="option"
                             >
@@ -4664,7 +4725,7 @@ label + .c2 {
                             <li
                               aria-label="1959"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1959"
                               role="option"
                             >
@@ -4673,7 +4734,7 @@ label + .c2 {
                             <li
                               aria-label="1960"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1960"
                               role="option"
                             >
@@ -4682,7 +4743,7 @@ label + .c2 {
                             <li
                               aria-label="1961"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1961"
                               role="option"
                             >
@@ -4691,7 +4752,7 @@ label + .c2 {
                             <li
                               aria-label="1962"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1962"
                               role="option"
                             >
@@ -4700,7 +4761,7 @@ label + .c2 {
                             <li
                               aria-label="1963"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1963"
                               role="option"
                             >
@@ -4709,7 +4770,7 @@ label + .c2 {
                             <li
                               aria-label="1964"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1964"
                               role="option"
                             >
@@ -4718,7 +4779,7 @@ label + .c2 {
                             <li
                               aria-label="1965"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1965"
                               role="option"
                             >
@@ -4727,7 +4788,7 @@ label + .c2 {
                             <li
                               aria-label="1966"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1966"
                               role="option"
                             >
@@ -4736,7 +4797,7 @@ label + .c2 {
                             <li
                               aria-label="1967"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1967"
                               role="option"
                             >
@@ -4745,7 +4806,7 @@ label + .c2 {
                             <li
                               aria-label="1968"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1968"
                               role="option"
                             >
@@ -4754,7 +4815,7 @@ label + .c2 {
                             <li
                               aria-label="1969"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1969"
                               role="option"
                             >
@@ -4763,7 +4824,7 @@ label + .c2 {
                             <li
                               aria-label="1970"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1970"
                               role="option"
                             >
@@ -4772,7 +4833,7 @@ label + .c2 {
                             <li
                               aria-label="1971"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1971"
                               role="option"
                             >
@@ -4781,7 +4842,7 @@ label + .c2 {
                             <li
                               aria-label="1972"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1972"
                               role="option"
                             >
@@ -4790,7 +4851,7 @@ label + .c2 {
                             <li
                               aria-label="1973"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1973"
                               role="option"
                             >
@@ -4799,7 +4860,7 @@ label + .c2 {
                             <li
                               aria-label="1974"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1974"
                               role="option"
                             >
@@ -4808,7 +4869,7 @@ label + .c2 {
                             <li
                               aria-label="1975"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1975"
                               role="option"
                             >
@@ -4817,7 +4878,7 @@ label + .c2 {
                             <li
                               aria-label="1976"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1976"
                               role="option"
                             >
@@ -4826,7 +4887,7 @@ label + .c2 {
                             <li
                               aria-label="1977"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1977"
                               role="option"
                             >
@@ -4835,7 +4896,7 @@ label + .c2 {
                             <li
                               aria-label="1978"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1978"
                               role="option"
                             >
@@ -4844,7 +4905,7 @@ label + .c2 {
                             <li
                               aria-label="1979"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1979"
                               role="option"
                             >
@@ -4853,7 +4914,7 @@ label + .c2 {
                             <li
                               aria-label="1980"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1980"
                               role="option"
                             >
@@ -4862,7 +4923,7 @@ label + .c2 {
                             <li
                               aria-label="1981"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1981"
                               role="option"
                             >
@@ -4871,7 +4932,7 @@ label + .c2 {
                             <li
                               aria-label="1982"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1982"
                               role="option"
                             >
@@ -4880,7 +4941,7 @@ label + .c2 {
                             <li
                               aria-label="1983"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1983"
                               role="option"
                             >
@@ -4889,7 +4950,7 @@ label + .c2 {
                             <li
                               aria-label="1984"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1984"
                               role="option"
                             >
@@ -4898,7 +4959,7 @@ label + .c2 {
                             <li
                               aria-label="1985"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1985"
                               role="option"
                             >
@@ -4907,7 +4968,7 @@ label + .c2 {
                             <li
                               aria-label="1986"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1986"
                               role="option"
                             >
@@ -4916,7 +4977,7 @@ label + .c2 {
                             <li
                               aria-label="1987"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1987"
                               role="option"
                             >
@@ -4925,7 +4986,7 @@ label + .c2 {
                             <li
                               aria-label="1988"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1988"
                               role="option"
                             >
@@ -4934,7 +4995,7 @@ label + .c2 {
                             <li
                               aria-label="1989"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1989"
                               role="option"
                             >
@@ -4943,7 +5004,7 @@ label + .c2 {
                             <li
                               aria-label="1990"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1990"
                               role="option"
                             >
@@ -4952,7 +5013,7 @@ label + .c2 {
                             <li
                               aria-label="1991"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1991"
                               role="option"
                             >
@@ -4961,7 +5022,7 @@ label + .c2 {
                             <li
                               aria-label="1992"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1992"
                               role="option"
                             >
@@ -4970,7 +5031,7 @@ label + .c2 {
                             <li
                               aria-label="1993"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1993"
                               role="option"
                             >
@@ -4979,7 +5040,7 @@ label + .c2 {
                             <li
                               aria-label="1994"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1994"
                               role="option"
                             >
@@ -4988,7 +5049,7 @@ label + .c2 {
                             <li
                               aria-label="1995"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1995"
                               role="option"
                             >
@@ -4997,7 +5058,7 @@ label + .c2 {
                             <li
                               aria-label="1996"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1996"
                               role="option"
                             >
@@ -5006,7 +5067,7 @@ label + .c2 {
                             <li
                               aria-label="1997"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1997"
                               role="option"
                             >
@@ -5015,7 +5076,7 @@ label + .c2 {
                             <li
                               aria-label="1998"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1998"
                               role="option"
                             >
@@ -5024,7 +5085,7 @@ label + .c2 {
                             <li
                               aria-label="1999"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1999"
                               role="option"
                             >
@@ -5033,7 +5094,7 @@ label + .c2 {
                             <li
                               aria-label="2000"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2000"
                               role="option"
                             >
@@ -5042,7 +5103,7 @@ label + .c2 {
                             <li
                               aria-label="2001"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2001"
                               role="option"
                             >
@@ -5051,7 +5112,7 @@ label + .c2 {
                             <li
                               aria-label="2002"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2002"
                               role="option"
                             >
@@ -5060,7 +5121,7 @@ label + .c2 {
                             <li
                               aria-label="2003"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2003"
                               role="option"
                             >
@@ -5069,7 +5130,7 @@ label + .c2 {
                             <li
                               aria-label="2004"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2004"
                               role="option"
                             >
@@ -5078,7 +5139,7 @@ label + .c2 {
                             <li
                               aria-label="2005"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2005"
                               role="option"
                             >
@@ -5087,7 +5148,7 @@ label + .c2 {
                             <li
                               aria-label="2006"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2006"
                               role="option"
                             >
@@ -5096,7 +5157,7 @@ label + .c2 {
                             <li
                               aria-label="2007"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2007"
                               role="option"
                             >
@@ -5105,7 +5166,7 @@ label + .c2 {
                             <li
                               aria-label="2008"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2008"
                               role="option"
                             >
@@ -5114,7 +5175,7 @@ label + .c2 {
                             <li
                               aria-label="2009"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2009"
                               role="option"
                             >
@@ -5123,7 +5184,7 @@ label + .c2 {
                             <li
                               aria-label="2010"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2010"
                               role="option"
                             >
@@ -5597,11 +5658,11 @@ label + .c2 {
               </div>
             </div>
             <div
-              class="c15"
+              class="c16"
             >
               <button
                 aria-label="Choose today's date"
-                class="c16"
+                class="c17"
                 data-testid="today-button"
                 type="button"
               >
@@ -5618,7 +5679,7 @@ label + .c2 {
     </div>
     <button
       aria-label="Choose date"
-      class="c17"
+      class="c18"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -5669,7 +5730,29 @@ input + .c1 {
   border-color: #0080A5;
 }
 
-.c12 {
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c8 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c8 input,
+.c8 select,
+.c8 textarea {
+  border-color: #57666E;
+}
+
+.c8:focus {
+  border-color: #0080A5;
+}
+
+.c8 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c13 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -5678,7 +5761,7 @@ input + .c1 {
   width: 100%;
 }
 
-.c13 {
+.c14 {
   border-radius: var(--border-radius);
   list-style-type: none;
   margin: 0;
@@ -5691,21 +5774,21 @@ input + .c1 {
   width: 100%;
 }
 
-.c13:focus {
+.c14:focus {
   outline: none;
 }
 
-.c13:focus {
+.c14:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c13:not(input):not(textarea):not(button):focus {
+.c14:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5726,16 +5809,16 @@ input + .c1 {
   white-space: nowrap;
 }
 
-.c14:hover,
-.c14:focus {
+.c15:hover,
+.c15:focus {
   background-color: #D9DDE2;
 }
 
-.c8 {
+.c9 {
   position: relative;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5750,20 +5833,19 @@ input + .c1 {
   display: -ms-flexbox;
   display: flex;
   height: 40px;
-  margin-top: 0;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
 
-.c9:hover {
+.c10:hover {
   cursor: pointer;
 }
 
-.c9 svg {
+.c10 svg {
   color: #57666E;
 }
 
-.c10 {
+.c11 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -5784,31 +5866,31 @@ input + .c1 {
   width: 100%;
 }
 
-.c10:hover {
+.c11:hover {
   cursor: pointer;
 }
 
-.c10::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c10::-moz-placeholder {
+.c11::-moz-placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c10:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c10::placeholder {
+.c11::placeholder {
   color: #57666E;
   font-size: 1rem;
 }
 
-.c11 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6040,7 +6122,7 @@ label + .c2 {
   outline: none;
 }
 
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6064,11 +6146,11 @@ label + .c2 {
   width: 40px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #D9DDE2;
 }
 
-.c15:focus {
+.c16:focus {
   border: 1px solid #0080A5;
   border-left: none;
   box-shadow: 0 0 0 2px #0080A566;
@@ -6140,13 +6222,13 @@ label + .c2 {
                       style="margin-right:8px"
                     >
                       <div
-                        class="c0 c8"
+                        class="c8 c9"
                       >
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-owns="listbox_undefined"
-                          class="c9"
+                          class="c10"
                           data-testid="input-wrapper"
                         >
                           <input
@@ -6154,13 +6236,13 @@ label + .c2 {
                             aria-controls="listbox_undefined"
                             aria-label="Select a month"
                             aria-multiline="false"
-                            class="c10"
+                            class="c11"
                             data-testid="input"
                             type="text"
                             value=""
                           />
                           <button
-                            class="c11"
+                            class="c12"
                             data-testid="arrow"
                             tabindex="-1"
                             type="button"
@@ -6174,12 +6256,12 @@ label + .c2 {
                           </button>
                         </div>
                         <div
-                          class="c12"
+                          class="c13"
                           role="listbox"
                           tabindex="-1"
                         >
                           <ul
-                            class="c13"
+                            class="c14"
                             id="listbox_undefined"
                             role="presentation"
                             tabindex="0"
@@ -6187,7 +6269,7 @@ label + .c2 {
                             <li
                               aria-label="Jan"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_january"
                               role="option"
                             >
@@ -6196,7 +6278,7 @@ label + .c2 {
                             <li
                               aria-label="Feb"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_february"
                               role="option"
                             >
@@ -6205,7 +6287,7 @@ label + .c2 {
                             <li
                               aria-label="Mar"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_march"
                               role="option"
                             >
@@ -6214,7 +6296,7 @@ label + .c2 {
                             <li
                               aria-label="Apr"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_april"
                               role="option"
                             >
@@ -6223,7 +6305,7 @@ label + .c2 {
                             <li
                               aria-label="May"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_may"
                               role="option"
                             >
@@ -6232,7 +6314,7 @@ label + .c2 {
                             <li
                               aria-label="Jun"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_june"
                               role="option"
                             >
@@ -6241,7 +6323,7 @@ label + .c2 {
                             <li
                               aria-label="Jul"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_july"
                               role="option"
                             >
@@ -6250,7 +6332,7 @@ label + .c2 {
                             <li
                               aria-label="Aug"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_august"
                               role="option"
                             >
@@ -6259,7 +6341,7 @@ label + .c2 {
                             <li
                               aria-label="Sep"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_september"
                               role="option"
                             >
@@ -6268,7 +6350,7 @@ label + .c2 {
                             <li
                               aria-label="Oct"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_october"
                               role="option"
                             >
@@ -6277,7 +6359,7 @@ label + .c2 {
                             <li
                               aria-label="Nov"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_november"
                               role="option"
                             >
@@ -6286,7 +6368,7 @@ label + .c2 {
                             <li
                               aria-label="Dec"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_december"
                               role="option"
                             >
@@ -6300,13 +6382,13 @@ label + .c2 {
                       class="c7"
                     >
                       <div
-                        class="c0 c8"
+                        class="c8 c9"
                       >
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-owns="listbox_undefined"
-                          class="c9"
+                          class="c10"
                           data-testid="input-wrapper"
                         >
                           <input
@@ -6314,13 +6396,13 @@ label + .c2 {
                             aria-controls="listbox_undefined"
                             aria-label="Select a year"
                             aria-multiline="false"
-                            class="c10"
+                            class="c11"
                             data-testid="input"
                             type="text"
                             value=""
                           />
                           <button
-                            class="c11"
+                            class="c12"
                             data-testid="arrow"
                             tabindex="-1"
                             type="button"
@@ -6334,12 +6416,12 @@ label + .c2 {
                           </button>
                         </div>
                         <div
-                          class="c12"
+                          class="c13"
                           role="listbox"
                           tabindex="-1"
                         >
                           <ul
-                            class="c13"
+                            class="c14"
                             id="listbox_undefined"
                             role="presentation"
                             tabindex="0"
@@ -6347,7 +6429,7 @@ label + .c2 {
                             <li
                               aria-label="1920"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1920"
                               role="option"
                             >
@@ -6356,7 +6438,7 @@ label + .c2 {
                             <li
                               aria-label="1921"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1921"
                               role="option"
                             >
@@ -6365,7 +6447,7 @@ label + .c2 {
                             <li
                               aria-label="1922"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1922"
                               role="option"
                             >
@@ -6374,7 +6456,7 @@ label + .c2 {
                             <li
                               aria-label="1923"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1923"
                               role="option"
                             >
@@ -6383,7 +6465,7 @@ label + .c2 {
                             <li
                               aria-label="1924"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1924"
                               role="option"
                             >
@@ -6392,7 +6474,7 @@ label + .c2 {
                             <li
                               aria-label="1925"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1925"
                               role="option"
                             >
@@ -6401,7 +6483,7 @@ label + .c2 {
                             <li
                               aria-label="1926"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1926"
                               role="option"
                             >
@@ -6410,7 +6492,7 @@ label + .c2 {
                             <li
                               aria-label="1927"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1927"
                               role="option"
                             >
@@ -6419,7 +6501,7 @@ label + .c2 {
                             <li
                               aria-label="1928"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1928"
                               role="option"
                             >
@@ -6428,7 +6510,7 @@ label + .c2 {
                             <li
                               aria-label="1929"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1929"
                               role="option"
                             >
@@ -6437,7 +6519,7 @@ label + .c2 {
                             <li
                               aria-label="1930"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1930"
                               role="option"
                             >
@@ -6446,7 +6528,7 @@ label + .c2 {
                             <li
                               aria-label="1931"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1931"
                               role="option"
                             >
@@ -6455,7 +6537,7 @@ label + .c2 {
                             <li
                               aria-label="1932"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1932"
                               role="option"
                             >
@@ -6464,7 +6546,7 @@ label + .c2 {
                             <li
                               aria-label="1933"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1933"
                               role="option"
                             >
@@ -6473,7 +6555,7 @@ label + .c2 {
                             <li
                               aria-label="1934"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1934"
                               role="option"
                             >
@@ -6482,7 +6564,7 @@ label + .c2 {
                             <li
                               aria-label="1935"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1935"
                               role="option"
                             >
@@ -6491,7 +6573,7 @@ label + .c2 {
                             <li
                               aria-label="1936"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1936"
                               role="option"
                             >
@@ -6500,7 +6582,7 @@ label + .c2 {
                             <li
                               aria-label="1937"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1937"
                               role="option"
                             >
@@ -6509,7 +6591,7 @@ label + .c2 {
                             <li
                               aria-label="1938"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1938"
                               role="option"
                             >
@@ -6518,7 +6600,7 @@ label + .c2 {
                             <li
                               aria-label="1939"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1939"
                               role="option"
                             >
@@ -6527,7 +6609,7 @@ label + .c2 {
                             <li
                               aria-label="1940"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1940"
                               role="option"
                             >
@@ -6536,7 +6618,7 @@ label + .c2 {
                             <li
                               aria-label="1941"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1941"
                               role="option"
                             >
@@ -6545,7 +6627,7 @@ label + .c2 {
                             <li
                               aria-label="1942"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1942"
                               role="option"
                             >
@@ -6554,7 +6636,7 @@ label + .c2 {
                             <li
                               aria-label="1943"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1943"
                               role="option"
                             >
@@ -6563,7 +6645,7 @@ label + .c2 {
                             <li
                               aria-label="1944"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1944"
                               role="option"
                             >
@@ -6572,7 +6654,7 @@ label + .c2 {
                             <li
                               aria-label="1945"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1945"
                               role="option"
                             >
@@ -6581,7 +6663,7 @@ label + .c2 {
                             <li
                               aria-label="1946"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1946"
                               role="option"
                             >
@@ -6590,7 +6672,7 @@ label + .c2 {
                             <li
                               aria-label="1947"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1947"
                               role="option"
                             >
@@ -6599,7 +6681,7 @@ label + .c2 {
                             <li
                               aria-label="1948"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1948"
                               role="option"
                             >
@@ -6608,7 +6690,7 @@ label + .c2 {
                             <li
                               aria-label="1949"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1949"
                               role="option"
                             >
@@ -6617,7 +6699,7 @@ label + .c2 {
                             <li
                               aria-label="1950"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1950"
                               role="option"
                             >
@@ -6626,7 +6708,7 @@ label + .c2 {
                             <li
                               aria-label="1951"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1951"
                               role="option"
                             >
@@ -6635,7 +6717,7 @@ label + .c2 {
                             <li
                               aria-label="1952"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1952"
                               role="option"
                             >
@@ -6644,7 +6726,7 @@ label + .c2 {
                             <li
                               aria-label="1953"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1953"
                               role="option"
                             >
@@ -6653,7 +6735,7 @@ label + .c2 {
                             <li
                               aria-label="1954"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1954"
                               role="option"
                             >
@@ -6662,7 +6744,7 @@ label + .c2 {
                             <li
                               aria-label="1955"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1955"
                               role="option"
                             >
@@ -6671,7 +6753,7 @@ label + .c2 {
                             <li
                               aria-label="1956"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1956"
                               role="option"
                             >
@@ -6680,7 +6762,7 @@ label + .c2 {
                             <li
                               aria-label="1957"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1957"
                               role="option"
                             >
@@ -6689,7 +6771,7 @@ label + .c2 {
                             <li
                               aria-label="1958"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1958"
                               role="option"
                             >
@@ -6698,7 +6780,7 @@ label + .c2 {
                             <li
                               aria-label="1959"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1959"
                               role="option"
                             >
@@ -6707,7 +6789,7 @@ label + .c2 {
                             <li
                               aria-label="1960"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1960"
                               role="option"
                             >
@@ -6716,7 +6798,7 @@ label + .c2 {
                             <li
                               aria-label="1961"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1961"
                               role="option"
                             >
@@ -6725,7 +6807,7 @@ label + .c2 {
                             <li
                               aria-label="1962"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1962"
                               role="option"
                             >
@@ -6734,7 +6816,7 @@ label + .c2 {
                             <li
                               aria-label="1963"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1963"
                               role="option"
                             >
@@ -6743,7 +6825,7 @@ label + .c2 {
                             <li
                               aria-label="1964"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1964"
                               role="option"
                             >
@@ -6752,7 +6834,7 @@ label + .c2 {
                             <li
                               aria-label="1965"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1965"
                               role="option"
                             >
@@ -6761,7 +6843,7 @@ label + .c2 {
                             <li
                               aria-label="1966"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1966"
                               role="option"
                             >
@@ -6770,7 +6852,7 @@ label + .c2 {
                             <li
                               aria-label="1967"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1967"
                               role="option"
                             >
@@ -6779,7 +6861,7 @@ label + .c2 {
                             <li
                               aria-label="1968"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1968"
                               role="option"
                             >
@@ -6788,7 +6870,7 @@ label + .c2 {
                             <li
                               aria-label="1969"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1969"
                               role="option"
                             >
@@ -6797,7 +6879,7 @@ label + .c2 {
                             <li
                               aria-label="1970"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1970"
                               role="option"
                             >
@@ -6806,7 +6888,7 @@ label + .c2 {
                             <li
                               aria-label="1971"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1971"
                               role="option"
                             >
@@ -6815,7 +6897,7 @@ label + .c2 {
                             <li
                               aria-label="1972"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1972"
                               role="option"
                             >
@@ -6824,7 +6906,7 @@ label + .c2 {
                             <li
                               aria-label="1973"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1973"
                               role="option"
                             >
@@ -6833,7 +6915,7 @@ label + .c2 {
                             <li
                               aria-label="1974"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1974"
                               role="option"
                             >
@@ -6842,7 +6924,7 @@ label + .c2 {
                             <li
                               aria-label="1975"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1975"
                               role="option"
                             >
@@ -6851,7 +6933,7 @@ label + .c2 {
                             <li
                               aria-label="1976"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1976"
                               role="option"
                             >
@@ -6860,7 +6942,7 @@ label + .c2 {
                             <li
                               aria-label="1977"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1977"
                               role="option"
                             >
@@ -6869,7 +6951,7 @@ label + .c2 {
                             <li
                               aria-label="1978"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1978"
                               role="option"
                             >
@@ -6878,7 +6960,7 @@ label + .c2 {
                             <li
                               aria-label="1979"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1979"
                               role="option"
                             >
@@ -6887,7 +6969,7 @@ label + .c2 {
                             <li
                               aria-label="1980"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1980"
                               role="option"
                             >
@@ -6896,7 +6978,7 @@ label + .c2 {
                             <li
                               aria-label="1981"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1981"
                               role="option"
                             >
@@ -6905,7 +6987,7 @@ label + .c2 {
                             <li
                               aria-label="1982"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1982"
                               role="option"
                             >
@@ -6914,7 +6996,7 @@ label + .c2 {
                             <li
                               aria-label="1983"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1983"
                               role="option"
                             >
@@ -6923,7 +7005,7 @@ label + .c2 {
                             <li
                               aria-label="1984"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1984"
                               role="option"
                             >
@@ -6932,7 +7014,7 @@ label + .c2 {
                             <li
                               aria-label="1985"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1985"
                               role="option"
                             >
@@ -6941,7 +7023,7 @@ label + .c2 {
                             <li
                               aria-label="1986"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1986"
                               role="option"
                             >
@@ -6950,7 +7032,7 @@ label + .c2 {
                             <li
                               aria-label="1987"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1987"
                               role="option"
                             >
@@ -6959,7 +7041,7 @@ label + .c2 {
                             <li
                               aria-label="1988"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1988"
                               role="option"
                             >
@@ -6968,7 +7050,7 @@ label + .c2 {
                             <li
                               aria-label="1989"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1989"
                               role="option"
                             >
@@ -6977,7 +7059,7 @@ label + .c2 {
                             <li
                               aria-label="1990"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1990"
                               role="option"
                             >
@@ -6986,7 +7068,7 @@ label + .c2 {
                             <li
                               aria-label="1991"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1991"
                               role="option"
                             >
@@ -6995,7 +7077,7 @@ label + .c2 {
                             <li
                               aria-label="1992"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1992"
                               role="option"
                             >
@@ -7004,7 +7086,7 @@ label + .c2 {
                             <li
                               aria-label="1993"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1993"
                               role="option"
                             >
@@ -7013,7 +7095,7 @@ label + .c2 {
                             <li
                               aria-label="1994"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1994"
                               role="option"
                             >
@@ -7022,7 +7104,7 @@ label + .c2 {
                             <li
                               aria-label="1995"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1995"
                               role="option"
                             >
@@ -7031,7 +7113,7 @@ label + .c2 {
                             <li
                               aria-label="1996"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1996"
                               role="option"
                             >
@@ -7040,7 +7122,7 @@ label + .c2 {
                             <li
                               aria-label="1997"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1997"
                               role="option"
                             >
@@ -7049,7 +7131,7 @@ label + .c2 {
                             <li
                               aria-label="1998"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1998"
                               role="option"
                             >
@@ -7058,7 +7140,7 @@ label + .c2 {
                             <li
                               aria-label="1999"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_1999"
                               role="option"
                             >
@@ -7067,7 +7149,7 @@ label + .c2 {
                             <li
                               aria-label="2000"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2000"
                               role="option"
                             >
@@ -7076,7 +7158,7 @@ label + .c2 {
                             <li
                               aria-label="2001"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2001"
                               role="option"
                             >
@@ -7085,7 +7167,7 @@ label + .c2 {
                             <li
                               aria-label="2002"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2002"
                               role="option"
                             >
@@ -7094,7 +7176,7 @@ label + .c2 {
                             <li
                               aria-label="2003"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2003"
                               role="option"
                             >
@@ -7103,7 +7185,7 @@ label + .c2 {
                             <li
                               aria-label="2004"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2004"
                               role="option"
                             >
@@ -7112,7 +7194,7 @@ label + .c2 {
                             <li
                               aria-label="2005"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2005"
                               role="option"
                             >
@@ -7121,7 +7203,7 @@ label + .c2 {
                             <li
                               aria-label="2006"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2006"
                               role="option"
                             >
@@ -7130,7 +7212,7 @@ label + .c2 {
                             <li
                               aria-label="2007"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2007"
                               role="option"
                             >
@@ -7139,7 +7221,7 @@ label + .c2 {
                             <li
                               aria-label="2008"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2008"
                               role="option"
                             >
@@ -7148,7 +7230,7 @@ label + .c2 {
                             <li
                               aria-label="2009"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2009"
                               role="option"
                             >
@@ -7157,7 +7239,7 @@ label + .c2 {
                             <li
                               aria-label="2010"
                               aria-selected="false"
-                              class="c14"
+                              class="c15"
                               id="listbox_undefined_2010"
                               role="option"
                             >
@@ -7636,7 +7718,7 @@ label + .c2 {
     </div>
     <button
       aria-label="Choose date"
-      class="c15"
+      class="c16"
       data-testid="calendar-button"
       tabindex="0"
       type="button"

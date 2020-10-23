@@ -15,6 +15,10 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   border-color: #0080A5;
 }
 
+.c1 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
@@ -87,11 +91,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
 }
 
 .c0 input {
@@ -136,6 +135,10 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   border-color: #0080A5;
 }
 
+.c1 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
@@ -208,11 +211,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
 }
 
 .c0 input {
@@ -257,6 +255,10 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   border-color: #0080A5;
 }
 
+.c1 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
@@ -329,11 +331,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
 }
 
 .c0 input {

@@ -35,6 +35,10 @@ input + .c1 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 <div
   class="c0"
 >
@@ -62,11 +66,10 @@ exports[`Field Container should have invalid styles given valid prop is set to f
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: 0 0 var(--spacing-half);
 }
 
 .c4 {
-  margin: 0 0 0 var(--spacing-base);
+  margin-left: var(--spacing-base);
 }
 
 .c3 {
@@ -114,6 +117,10 @@ input + .c1 {
   border-color: #A40C2E;
 }
 
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
 <div
   class="c0"
 >
@@ -139,11 +146,11 @@ input + .c1 {
         width="16"
       />
     </div>
-    <label
+    <span
       class="c4"
     >
       This text area input is invalid
-    </label>
+    </span>
   </div>
   Children
 </div>
@@ -182,6 +189,10 @@ input + .c1 {
 
 .c0:focus {
   border-color: #0080A5;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
 }
 
 <div

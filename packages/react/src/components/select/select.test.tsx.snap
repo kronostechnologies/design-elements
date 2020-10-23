@@ -35,6 +35,10 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c6 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -116,7 +120,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -376,11 +379,10 @@ Array [
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: 0 0 var(--spacing-half);
 }
 
 .c5 {
-  margin: 0 0 0 var(--spacing-base);
+  margin-left: var(--spacing-base);
 }
 
 .c4 {
@@ -426,6 +428,10 @@ input + .c2 {
 
 .c0:focus {
   border-color: #A40C2E;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
 }
 
 .c9 {
@@ -509,7 +515,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -603,11 +608,11 @@ input + .c2 {
           width="16"
         />
       </div>
-      <label
+      <span
         class="c5"
       >
         You must select an option
-      </label>
+      </span>
     </div>
     <div
       aria-expanded="false"
@@ -908,6 +913,10 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c6 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -989,7 +998,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -1345,6 +1353,10 @@ exports[`Select mobile select has a different style 1`] = `
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c5 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -1426,7 +1438,6 @@ exports[`Select mobile select has a different style 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 40px;
-  margin-top: 0;
   padding-right: var(--spacing-1x);
   width: 100%;
 }

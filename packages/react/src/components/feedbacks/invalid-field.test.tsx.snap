@@ -14,11 +14,10 @@ exports[`Invalid field Matches the snapshot 1`] = `
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: 0 0 var(--spacing-half);
 }
 
 .c2 {
-  margin: 0 0 0 var(--spacing-base);
+  margin-left: var(--spacing-base);
 }
 
 .c1 {
@@ -48,10 +47,10 @@ exports[`Invalid field Matches the snapshot 1`] = `
       width="16"
     />
   </div>
-  <label
+  <span
     className="c2"
   >
     Feedback Message
-  </label>
+  </span>
 </div>
 `;
