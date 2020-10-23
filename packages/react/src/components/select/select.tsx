@@ -37,7 +37,6 @@ const InputWrapper = styled.div<InputWrapperProps>`
     box-sizing: border-box;
     display: flex;
     height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
-    margin-top: ${({ hasLabel }) => hasLabel ? 'var(--spacing-half)' : '0'};
     padding-right: var(--spacing-1x);
     width: 100%;
 
@@ -96,7 +95,6 @@ interface InputProps {
 }
 
 interface InputWrapperProps extends InputProps {
-    hasLabel?: boolean;
     isMobile: boolean;
     focus?: boolean;
     containerOutline: boolean;
@@ -477,7 +475,6 @@ export function Select({
                     aria-owns={`listbox_${fieldId}`}
                     data-testid="input-wrapper"
                     containerOutline={containerOutline}
-                    hasLabel={label !== undefined}
                     isMobile={isMobile}
                     disabled={disabled}
                     focus={focus}

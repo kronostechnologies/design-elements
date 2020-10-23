@@ -10,11 +10,10 @@ const Field = styled.div<{ isMobile: boolean }>`
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
     line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
-    margin: 0 0 var(--spacing-half);
 `;
 
-const StyledLabel = styled.label<{isMobile: boolean}>`
-    margin: 0 0 0 var(--spacing-base);
+const StyledSpan = styled.span`
+    margin-left: var(--spacing-base);
 `;
 
 const StyledIcon = styled.div`
@@ -40,7 +39,7 @@ function InvalidField({ controlId, feedbackMsg }: InvalidFieldProps): ReactEleme
             <StyledIcon>
                 <Icon name="alertTriangle" size={isMobile ? '24' : '16'} />
             </StyledIcon>
-            <StyledLabel isMobile={isMobile}>{feedbackMsg}</StyledLabel>
+            <StyledSpan>{feedbackMsg}</StyledSpan>
         </Field>
     );
 }
