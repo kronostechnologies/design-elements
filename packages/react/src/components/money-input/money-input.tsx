@@ -1,9 +1,8 @@
-import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
-
 import { useStateCallback } from '@design-elements/hooks/use-state-callback';
+import { useTranslation } from '@design-elements/i18n/i18n';
 import { formatCurrency } from '@design-elements/utils/currency';
+import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { TextInput } from '../text-input/text-input';
 
 const InputWrapper = styled.div<{language: Language}>`

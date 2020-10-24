@@ -1,8 +1,8 @@
+import { useTranslation } from '@design-elements/i18n/i18n';
 import { focus } from '@design-elements/utils/css-state';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { SearchButton } from '../buttons/search-button';

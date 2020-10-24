@@ -1,12 +1,12 @@
+import { useTranslation } from '@design-elements/i18n/i18n';
 import React, { ComponentType, ReactElement, ReactNode, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
-const abstractContainer = (bgColor: string, color?: keyof Theme['notifications']) => styled.div<{isMobile: boolean}>`
+const abstractContainer = (bgColor: string, color?: keyof Theme['notifications']) => styled.div<{ isMobile: boolean }>`
     background-color: ${bgColor};
     border: 1px solid ${props => color ? props.theme.notifications[color] : props.theme.main['primary-3']};
     box-sizing: border-box;
@@ -25,7 +25,7 @@ const SuccessContainer = abstractContainer('#f7faf4', 'success-1.1');
 const AlertContainer = abstractContainer('#fffce9', 'alert-3.1');
 const ErrorContainer = abstractContainer('#fdf6f7', 'error-2.1');
 
-const TextWrapper = styled.div<{isMobile: boolean}>`
+const TextWrapper = styled.div<{ isMobile: boolean }>`
     box-sizing: border-box;
     padding-left: var(--spacing-2x);
 
@@ -36,7 +36,7 @@ const TextWrapper = styled.div<{isMobile: boolean}>`
     }
 `;
 
-const Heading = styled.span<{isMobile: boolean}>`
+const Heading = styled.span<{ isMobile: boolean }>`
     font-size: ${props => props.isMobile ? '1.125rem' : '1rem'};
     font-weight: var(--font-bold);
 `;
@@ -101,7 +101,7 @@ export function InlineMessage({ children, title, type }: InlineMessageProps): Re
 
     return (
         <Container isMobile={isMobile} aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}>
-            <Icon name={messageType.iconName} size={isMobile ? '20' : '16'}/>
+            <Icon name={messageType.iconName} size={isMobile ? '20' : '16'} />
             <TextWrapper isMobile={isMobile}>
                 <Heading isMobile={isMobile}>{title ? title : t(messageType.title)}</Heading>
                 <p>{children}</p>
