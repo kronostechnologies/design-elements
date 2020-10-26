@@ -2,8 +2,10 @@ import React, { ReactElement } from 'react';
 
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
+import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
 import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
+import ArrowUp from 'feather-icons/dist/icons/arrow-up.svg';
 import Calendar from 'feather-icons/dist/icons/calendar.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
@@ -34,8 +36,10 @@ import Reorder from '../../icons/reorder.svg';
 const iconMapping = {
     alertTriangle: AlertTriangle,
     alertOctagon: AlertOctagon,
+    arrowDown: ArrowDown,
     arrowLeft: ArrowLeft,
     arrowRight: ArrowRight,
+    arrowUp: ArrowUp,
     calendar: Calendar,
     check: Check,
     chevronDown: ChevronDown,

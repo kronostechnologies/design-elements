@@ -34,6 +34,14 @@ describe('Table', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('has striped styles', () => {
+        const tree = renderWithProviders(
+            <Table striped columns={columns} data={data}/>,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
 });
 
 const renderTable = (columnsArray: ColumnsProps, currentDevice?: DeviceType) => (

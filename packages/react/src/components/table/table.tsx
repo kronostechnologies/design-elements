@@ -1,7 +1,7 @@
 import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import { Column, Row, useSortBy, useTable } from 'react-table';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Theme as ThemeProps } from '../theme-wrapper/theme-wrapper';
 import { SortableColumnHeading } from './sortable-column-heading';
@@ -34,13 +34,19 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 
     tbody tr {
-        ${({ clickableRows, theme }) => clickableRows ? `
+        ${({ clickableRows, theme }) => clickableRows && css`
           ${focus({ theme })}
           :hover {
               background-color: ${theme.greys.grey};
               cursor: pointer;
           }
-        ` : ''}
+        `}
+
+        ${({ striped, theme }) => striped && css`
+          :nth-child(odd) {
+              background-color: ${theme.greys['colored-white']};
+          }
+        `}
     }
 
     tr:last-child td {
@@ -58,6 +64,7 @@ export type ColumnsProps = CustomColumn[];
 interface StyledTableProps {
     clickableRows: boolean;
     device: DeviceType;
+    striped: boolean;
     theme: ThemeProps;
 }
 
@@ -72,11 +79,16 @@ interface TableProps<T> {
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
     data: T[];
+    /**
+     * Adds striped rows
+     * @default false
+     **/
+    striped?: boolean;
 
     onRowClick?(row: RowProps): void;
 }
 
-export function Table<T>({ columns, data, onRowClick }: TableProps<T>): ReactElement {
+export function Table<T>({ columns, data, striped = false, onRowClick }: TableProps<T>): ReactElement {
     const { device } = useDeviceContext();
     const {
         getTableProps,
@@ -87,7 +99,7 @@ export function Table<T>({ columns, data, onRowClick }: TableProps<T>): ReactEle
     } = useTable({ columns, data }, useSortBy);
 
     return (
-        <StyledTable device={device} clickableRows={onRowClick !== undefined} {...getTableProps()}>
+        <StyledTable striped={striped} device={device} clickableRows={onRowClick !== undefined} {...getTableProps()}>
             <thead>
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
