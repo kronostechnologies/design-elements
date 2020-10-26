@@ -43,8 +43,8 @@ export function SortableColumnHeading({ column }: SortableColumnHeadingProps): R
             <SortButton>
               {column.isSorted
                 ? column.isSortedDesc
-                  ? <Icon name="chevronDown" size="16" color={Theme.greys['dark-grey']}/>
-                  : <Icon name="chevronUp" size="16" color={Theme.greys['dark-grey']}/>
+                  ? <Icon name="arrowDown" size="16" color={Theme.greys['dark-grey']}/>
+                  : <Icon name="arrowUp" size="16" color={Theme.greys['dark-grey']}/>
                 : <Icon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
             </SortButton>
             {column.render('Header')}

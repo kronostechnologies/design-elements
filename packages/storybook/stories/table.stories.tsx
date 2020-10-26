@@ -39,6 +39,44 @@ export const normal = () => {
     );
 };
 
+export const striped = () => {
+    const columns: ColumnsProps = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+        },
+    ];
+
+    const data = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+        {
+            column1: 'c',
+            column2: 'c',
+            column3: 'c',
+        },
+    ];
+    return (
+        <Table striped columns={columns} data={data} />
+    );
+};
+
 export const rowClickCallback = () => {
     const columns: ColumnsProps = [
         {
