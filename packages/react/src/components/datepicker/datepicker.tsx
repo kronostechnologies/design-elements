@@ -338,6 +338,10 @@ export function Datepicker({
         }
     }, [ firstDayOfWeek ]);
 
+    useEffect(() => {
+        startDate && setSelectedDate(startDate);
+    }, [ startDate ]);
+
     function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
             event.stopPropagation();

@@ -72,6 +72,15 @@ describe('Datepicker', () => {
         expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
     });
 
+    test('input value should format when startDate changes', () => {
+        const wrapper = mount(ThemeWrapped(<Datepicker startDate={new Date('2010-10-10, 12:00')} />));
+
+        wrapper.setProps({ children: <Datepicker startDate={new Date('2020-10-20, 12:00')} /> });
+        wrapper.update();
+
+        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2020-10-20');
+    });
+
     test('calendar should be opened when startOpen prop is truthy', () => {
         const wrapper = mount(ThemeWrapped(<Datepicker startOpen/>));
 
