@@ -20,6 +20,7 @@ export function TableRow({ row, onClick }: TableRowProps): ReactElement {
                 return (
                     <td
                         style={style}
+                        className={cell.column.className}
                         {...{ ...cell.getCellProps(), key: `${cell.column.id}-${cell.row.id}` }}
                     >
                         {cell.render('Cell')}
