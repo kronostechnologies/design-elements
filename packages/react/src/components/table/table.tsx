@@ -52,6 +52,14 @@ const StyledTable = styled.table<StyledTableProps>`
     tr:last-child td {
         border-bottom: 0;
     }
+
+    .number-column {
+        box-sizing: border-box;
+        color: ${({ theme }) => theme.greys['dark-grey']};
+        font-size: 0.75rem;
+        text-align: center;
+        width: 40px;
+    }
 `;
 
 type CustomColumn = Column & {
@@ -80,6 +88,11 @@ interface TableProps<T> {
      * See stories code or refer to react-table docs for more information */
     data: T[];
     /**
+     * Adds row numbers
+     * @default false
+     **/
+    rowNumbers?: boolean;
+    /**
      * Adds striped rows
      * @default false
      **/
@@ -88,8 +101,24 @@ interface TableProps<T> {
     onRowClick?(row: RowProps): void;
 }
 
-export function Table<T>({ columns, data, striped = false, onRowClick }: TableProps<T>): ReactElement {
+export function Table<T>({
+    columns,
+    data,
+    rowNumbers = false,
+    striped = false,
+    onRowClick,
+}: TableProps<T>): ReactElement {
     const { device } = useDeviceContext();
+
+    if (rowNumbers) {
+        columns.unshift({
+            Header: '',
+            id: 'number-column',
+            className: 'number-column',
+            Cell: (row) => <>{row.row.index + 1}</>,
+        });
+    }
+
     const {
         getTableProps,
         getTableBodyProps,
@@ -125,6 +154,7 @@ function getHeading(column: Column): ReactElement {
             <th
                 scope="col"
                 style={{ textAlign: column.textAlign }}
+                className={column.className}
                 {...column.getHeaderProps()}
             >
                 {column.render('Header')}
