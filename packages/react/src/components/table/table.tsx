@@ -13,11 +13,11 @@ const StyledTable = styled.table<StyledTableProps>`
 
     th {
         font-weight: var(--font-semi-bold);
-        padding: ${({ device }) => getThPadding(device)};
+        padding: ${({ device, rowType }) => getThPadding(device, rowType)};
     }
 
     td {
-        padding: ${({ device }) => getTdPadding(device)};
+        padding: ${({ device, rowType }) => getTdPadding(device, rowType)};
     }
 
     th,
@@ -62,6 +62,8 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 `;
 
+type RowType = 'small' | 'normal' | undefined;
+
 type CustomColumn = Column & {
     sortable?: boolean,
     textAlign?: string,
@@ -74,6 +76,7 @@ interface StyledTableProps {
     device: DeviceType;
     striped: boolean;
     theme: ThemeProps;
+    rowType: RowType;
 }
 
 export interface RowProps extends Row {
@@ -97,6 +100,11 @@ interface TableProps<T> {
      * @default false
      **/
     striped?: boolean;
+    /**
+     * Sets table type
+     * @default false
+     **/
+    rowType?: RowType;
 
     onRowClick?(row: RowProps): void;
 }
@@ -106,6 +114,7 @@ export function Table<T>({
     data,
     rowNumbers = false,
     striped = false,
+    rowType,
     onRowClick,
 }: TableProps<T>): ReactElement {
     const { device } = useDeviceContext();
@@ -128,7 +137,13 @@ export function Table<T>({
     } = useTable({ columns, data }, useSortBy);
 
     return (
-        <StyledTable striped={striped} device={device} clickableRows={onRowClick !== undefined} {...getTableProps()}>
+        <StyledTable
+            rowType={rowType}
+            striped={striped}
+            device={device}
+            clickableRows={onRowClick !== undefined}
+            {...getTableProps()}
+        >
             <thead>
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
@@ -163,7 +178,17 @@ function getHeading(column: Column): ReactElement {
     }
 }
 
-function getThPadding(device: DeviceType): string {
+function getThPadding(device: DeviceType, rowType: RowType): string {
+    if (rowType === 'small') {
+        switch (device) {
+            case 'desktop':
+                return 'var(--spacing-half) var(--spacing-1x)';
+            case 'tablet':
+                return 'var(--spacing-half) var(--spacing-1x)';
+            case 'mobile':
+                return 'var(--spacing-1x)';
+        }
+    }
     switch (device) {
         case 'desktop':
             return 'var(--spacing-1x) var(--spacing-2x)';
@@ -174,7 +199,17 @@ function getThPadding(device: DeviceType): string {
     }
 }
 
-function getTdPadding(device: DeviceType): string {
+function getTdPadding(device: DeviceType, rowType: RowType): string {
+    if (rowType === 'small') {
+        switch (device) {
+            case 'desktop':
+                return 'var(--spacing-1x)';
+            case 'tablet':
+                return 'var(--spacing-1x)';
+            case 'mobile':
+                return 'var(--spacing-2x) var(--spacing-1x)';
+        }
+    }
     switch (device) {
         case 'desktop':
             return 'var(--spacing-2x)';

@@ -42,6 +42,14 @@ describe('Table', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('has small rowType styles', () => {
+        const tree = renderWithProviders(
+            <Table rowType="small" columns={columns} data={data}/>,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
 });
 
 const renderTable = (columnsArray: ColumnsProps, currentDevice?: DeviceType) => (

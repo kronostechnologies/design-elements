@@ -33,6 +33,14 @@ exports[`Table has custom text alignment 1`] = `
   border-bottom: 0;
 }
 
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
+}
+
 <table
   class="c0"
   role="table"
@@ -147,6 +155,14 @@ exports[`Table has desktop styles 1`] = `
   border-bottom: 0;
 }
 
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
+}
+
 <table
   class="c0"
   role="table"
@@ -251,6 +267,128 @@ exports[`Table has mobile styles 1`] = `
 
 .c0 tr:last-child td {
   border-bottom: 0;
+}
+
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
+}
+
+<table
+  class="c0"
+  role="table"
+>
+  <thead>
+    <tr
+      role="row"
+    >
+      <th
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 1
+      </th>
+      <th
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 2
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    role="rowgroup"
+  >
+    <tr
+      role="row"
+    >
+      <td
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      role="row"
+    >
+      <td
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      role="row"
+    >
+      <td
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has small rowType styles 1`] = `
+.c0 {
+  border-spacing: 0;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-half) var(--spacing-1x);
+}
+
+.c0 td {
+  padding: var(--spacing-1x);
+}
+
+.c0 th,
+.c0 td {
+  border-bottom: 1px solid #D9DDE2;
+  font-size: 0.875rem;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 tr:last-child td {
+  border-bottom: 0;
+}
+
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
 }
 
 <table
@@ -377,6 +515,14 @@ exports[`Table has sorting styles 1`] = `
 
 .c0 tr:last-child td {
   border-bottom: 0;
+}
+
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
 }
 
 <table
@@ -523,6 +669,14 @@ exports[`Table has striped styles 1`] = `
   border-bottom: 0;
 }
 
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
+}
+
 <table
   class="c0"
   role="table"
@@ -627,6 +781,14 @@ exports[`Table has tablet styles 1`] = `
 
 .c0 tr:last-child td {
   border-bottom: 0;
+}
+
+.c0 .number-column {
+  box-sizing: border-box;
+  color: #57666E;
+  font-size: 0.75rem;
+  text-align: center;
+  width: 40px;
 }
 
 <table
