@@ -2,7 +2,7 @@ import React from 'react';
 
 import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ColumnsProps, Table } from './table';
+import { ColumnsProps, Table, TableProps } from './table';
 
 describe('Table', () => {
     test('has desktop styles', () => {
@@ -36,25 +36,41 @@ describe('Table', () => {
     });
 
     test('has striped styles', () => {
-        const tree = renderWithProviders(
-            <Table striped columns={columns} data={data}/>,
-        );
+        const tree = renderTable(columns, undefined, { striped: true });
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('has small rowType styles', () => {
-        const tree = renderWithProviders(
-            <Table rowType="small" columns={columns} data={data}/>,
-        );
+    test('has small rowSize styles', () => {
+        const tree = renderTable(columns, undefined, { rowSize: 'small' });
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has rowNumbers styles', () => {
+        const tree = renderTable(columns, undefined, { rowNumbers: true });
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has clickable rows styles', () => {
+        const tree = renderTable(columns, undefined, { onRowClick: jest.fn() });
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has error rows styles', () => {
+        const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData}/>);
 
         expect(tree).toMatchSnapshot();
     });
 });
 
-const renderTable = (columnsArray: ColumnsProps, currentDevice?: DeviceType) => (
+interface TablePropsLite extends Omit<TableProps<TestData>, 'columns' | 'data'> {}
+
+const renderTable = (columnsArray: ColumnsProps, currentDevice?: DeviceType, props?: TablePropsLite) => (
     renderWithProviders(
-        <Table<TestData> columns={columnsArray} data={data}/>,
+        <Table<TestData> columns={columnsArray} data={data} {...props}/>,
         currentDevice,
     )
 );
@@ -99,6 +115,7 @@ const columnsSorted = [
 interface TestData {
     column1: string;
     column2: string;
+    error?: boolean;
 }
 
 const data: TestData[] = [
@@ -113,5 +130,22 @@ const data: TestData[] = [
     {
         column1: 'Hello',
         column2: 'World',
+    },
+];
+
+const errorData: TestData[] = [
+    {
+        column1: 'Hello',
+        column2: 'World',
+        error: true,
+    },
+    {
+        column1: 'Hello',
+        column2: 'World',
+    },
+    {
+        column1: 'Hello',
+        column2: 'World',
+        error: true,
     },
 ];
