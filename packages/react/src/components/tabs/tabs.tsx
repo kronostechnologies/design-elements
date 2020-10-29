@@ -74,17 +74,29 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
     const [tabsState, setTabsState] = useReducer(reducer, tabs, initTabsSelection);
 
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
-        const selectedIndex = tabsState.findIndex(tabState => tabState.isButtonSelected);
-        if (event.key === 'ArrowLeft' && selectedIndex > 0) {
-            const tabToSelect = tabsState[selectedIndex - 1];
-            setTabsState({ id: tabToSelect.id, isPanelSelection: false });
-        } else if (event.key === 'ArrowRight' && selectedIndex < tabsState.length - 1) {
-            const tabToSelect = tabsState[selectedIndex + 1];
-            setTabsState({ id: tabToSelect.id, isPanelSelection: false });
-        } else if (event.key === 'Enter' || event.key === ' ') {
-            const tabToSelect = tabsState[selectedIndex];
-            setTabsState({ id: tabToSelect.id, isPanelSelection: true });
-            event.preventDefault();
+        let selectedIndex = tabsState.findIndex(tabState => tabState.isButtonSelected);
+        if (selectedIndex >= 0) {
+            if (event.key === 'ArrowLeft') {
+                selectedIndex = (selectedIndex === 0) ? tabsState.length - 1 : selectedIndex - 1;
+                const tabToSelect = tabsState[selectedIndex];
+                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
+            } else if (event.key === 'ArrowRight') {
+                selectedIndex = (selectedIndex === tabsState.length - 1) ? 0 : selectedIndex + 1;
+                const tabToSelect = tabsState[selectedIndex];
+                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
+            } else if (event.key === 'Home') {
+                const tabToSelect = tabsState[0];
+                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
+                event.preventDefault();
+            } else if (event.key === 'End') {
+                const tabToSelect = tabsState[tabsState.length - 1];
+                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
+                event.preventDefault();
+            } else if (event.key === 'Enter' || event.key === ' ') {
+                const tabToSelect = tabsState[selectedIndex];
+                setTabsState({ id: tabToSelect.id, isPanelSelection: true });
+                event.preventDefault();
+            }
         }
     }
 

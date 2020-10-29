@@ -179,6 +179,218 @@ describe('Tabs', () => {
         expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
         expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
     });
+
+    test('when the left arrow and the space keys are entered and first tab is active then it should display the last tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
+        tabButtonsDiv.simulate('keydown', { key: ' ' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+    });
+
+    test('when the left arrow and the enter keys are entered and first tab is active then it should display the last tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
+        tabButtonsDiv.simulate('keydown', { key: 'Enter' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+    });
+
+    test('when the right arrow and the space keys are entered and last tab is active then it should display the first tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+        getByTestId(wrapper, 'tab-button--3').simulate('click');
+
+        tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
+        tabButtonsDiv.simulate('keydown', { key: ' ' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+    });
+
+    test('when the right arrow and the enter keys are entered and last tab is active then it should display the first tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+        getByTestId(wrapper, 'tab-button--3').simulate('click');
+
+        tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
+        tabButtonsDiv.simulate('keydown', { key: 'Enter' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+    });
+
+    test('when the home and the space keys are entered then it should display the first tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+        getByTestId(wrapper, 'tab-button--3').simulate('click');
+
+        tabButtonsDiv.simulate('keydown', { key: 'Home' });
+        tabButtonsDiv.simulate('keydown', { key: ' ' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+    });
+
+    test('when the home and the enter keys are entered then it should display the first tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+        getByTestId(wrapper, 'tab-button--3').simulate('click');
+
+        tabButtonsDiv.simulate('keydown', { key: 'Home' });
+        tabButtonsDiv.simulate('keydown', { key: 'Enter' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+    });
+
+    test('when the end and the space keys are entered then it should display the last tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        tabButtonsDiv.simulate('keydown', { key: 'End' });
+        tabButtonsDiv.simulate('keydown', { key: ' ' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+    });
+
+    test('when the end and the enter keys are entered then it should display the last tab', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 3',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        tabButtonsDiv.simulate('keydown', { key: 'End' });
+        tabButtonsDiv.simulate('keydown', { key: 'Enter' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+    });
 });
 
 const simulateTabSelectionToTheRight = (tabButtonsDiv: CommonWrapper) => {
