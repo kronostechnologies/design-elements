@@ -36,7 +36,7 @@ export const Label = styled.label`
                 color: ${theme.greys.white};
             }
 
-            ${focus({ theme }, 'input[type="checkbox"]:focus + &, input[type="radio"]:focus + &')}
+            ${focus({ theme }, true, 'input[type="checkbox"]:focus + &, input[type="radio"]:focus + &')}
 
             input[type="checkbox"]:disabled + &,
             input[type="radio"]:disabled + & {

@@ -48,10 +48,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c2:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c2::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -168,10 +164,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c2:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c2::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -286,10 +278,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c2:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c2::-webkit-input-placeholder {

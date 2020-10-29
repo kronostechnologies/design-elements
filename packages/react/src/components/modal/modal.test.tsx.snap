@@ -221,10 +221,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c1:not(:disabled) {
   cursor: pointer;
 }
@@ -241,10 +237,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c1:hover {
@@ -385,10 +377,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c1:not(:disabled) {
   cursor: pointer;
 }
@@ -405,10 +393,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c1:hover {
@@ -579,10 +563,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c1:not(:disabled) {
   cursor: pointer;
 }
@@ -599,10 +579,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c1:hover {

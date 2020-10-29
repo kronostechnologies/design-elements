@@ -23,7 +23,7 @@ interface ButtonProps extends AbstractButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
-    ${focus}
+    ${props => focus(props, true)}
     ${({ theme, buttonType }) => {
         switch (buttonType) {
             case 'primary':

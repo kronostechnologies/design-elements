@@ -56,10 +56,6 @@ exports[`Icon Button Has disabled styles 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -76,10 +72,6 @@ exports[`Icon Button Has disabled styles 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -161,10 +153,6 @@ exports[`Icon Button Has mobile styles 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -181,10 +169,6 @@ exports[`Icon Button Has mobile styles 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -265,10 +249,6 @@ exports[`Icon Button Has primary styles 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -285,10 +265,6 @@ exports[`Icon Button Has primary styles 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -369,10 +345,6 @@ exports[`Icon Button Has secondary styles 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -389,10 +361,6 @@ exports[`Icon Button Has secondary styles 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
@@ -475,10 +443,6 @@ exports[`Icon Button Has tertiary styles 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c0:not(:disabled) {
   cursor: pointer;
 }
@@ -495,10 +459,6 @@ exports[`Icon Button Has tertiary styles 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c0:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c0:hover {
