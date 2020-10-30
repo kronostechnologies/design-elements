@@ -69,6 +69,7 @@ interface TabButtonProps {
     isSelected: boolean;
     isFocused: boolean;
     onClick(): void;
+    onFocus(): void;
 }
 
 export function TabButton({
@@ -80,6 +81,7 @@ export function TabButton({
     isSelected,
     isFocused,
     onClick,
+    onFocus,
 }: TabButtonProps): ReactElement {
     const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -100,6 +102,7 @@ export function TabButton({
             aria-controls={controlledPanelId}
             tabIndex={isSelected ? undefined : -1}
             onClick={onClick}
+            onFocus={onFocus}
             isSelected={isSelected}
         >
             {leftIcon != null && (

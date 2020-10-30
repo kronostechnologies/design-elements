@@ -43,7 +43,6 @@ function initTabsSelection(tabs: Tab[]): TabSelectionState[] {
 
     if (tabsSelectionState.length > 0) {
         tabsSelectionState[0].isPanelSelected = true;
-        tabsSelectionState[0].isButtonSelected = true;
     }
     return tabsSelectionState;
 }
@@ -78,26 +77,32 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
         if (selectedIndex >= 0) {
             if (event.key === 'ArrowLeft') {
                 selectedIndex = (selectedIndex === 0) ? tabsState.length - 1 : selectedIndex - 1;
-                const tabToSelect = tabsState[selectedIndex];
-                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
-            } else if (event.key === 'ArrowRight') {
+                selectTabByIndex(selectedIndex, false);
+            } else if (event.key === 'ArrowRight' || (event.key === 'Tab' && !isLastTabIndex(selectedIndex))) {
                 selectedIndex = (selectedIndex === tabsState.length - 1) ? 0 : selectedIndex + 1;
-                const tabToSelect = tabsState[selectedIndex];
-                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
-            } else if (event.key === 'Home') {
-                const tabToSelect = tabsState[0];
-                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
-                event.preventDefault();
-            } else if (event.key === 'End') {
-                const tabToSelect = tabsState[tabsState.length - 1];
-                setTabsState({ id: tabToSelect.id, isPanelSelection: false });
-                event.preventDefault();
+                selectTabByIndex(selectedIndex, false);
+            } else if (event.key === 'Home' && selectedIndex > 0) {
+                selectTabByIndex(0, false);
+            } else if (event.key === 'End' && !isLastTabIndex(selectedIndex)) {
+                selectTabByIndex(tabsState.length - 1, false);
             } else if (event.key === 'Enter' || event.key === ' ') {
-                const tabToSelect = tabsState[selectedIndex];
-                setTabsState({ id: tabToSelect.id, isPanelSelection: true });
+                selectTabByIndex(selectedIndex, true);
+            }
+
+            if (['Home', 'End', 'Enter', ' '].includes(event.key) ||
+                (event.key === 'Tab' && !isLastTabIndex(selectedIndex))) {
                 event.preventDefault();
             }
         }
+    }
+
+    function isLastTabIndex(selectedTabIndex: number): boolean {
+        return selectedTabIndex === tabsState.length - 1;
+    }
+
+    function selectTabByIndex(tabIndex: number, isPanelSelection: boolean): void {
+        const tabToSelect = tabsState[tabIndex];
+        setTabsState({ id: tabToSelect.id, isPanelSelection: isPanelSelection });
     }
 
     return (
@@ -120,6 +125,7 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
                         isSelected={tabState.isPanelSelected}
                         isFocused={tabState.isButtonSelected}
                         onClick={() => setTabsState({ id: tabState.id, isPanelSelection: true })}
+                        onFocus={() => setTabsState({ id: tabState.id, isPanelSelection: false })}
                     />
                 ))}
             </CenteredContentDiv>

@@ -106,6 +106,7 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
         const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
 
         tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
@@ -127,9 +128,98 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
         const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
 
         tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
+        tabButtonsDiv.simulate('keydown', { key: 'Enter' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+    });
+
+    test('when the tab and the space keys are entered and the active tab is not the last one it should display the panel to the right', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        tabButtonsDiv.simulate('keydown', { key: 'Tab' });
+        tabButtonsDiv.simulate('keydown', { key: ' ' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+    });
+
+    test('when the tab and the enter keys are entered and the active tab is not the last one it should display the panel to the right', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        tabButtonsDiv.simulate('keydown', { key: 'Tab' });
+        tabButtonsDiv.simulate('keydown', { key: 'Enter' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+    });
+
+    test('when the tab and the space keys are entered and the active tab is the last one it should not change the displayed panel', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        getByTestId(wrapper, 'tab-button--2').simulate('click');
+        tabButtonsDiv.simulate('keydown', { key: 'Tab' });
+        tabButtonsDiv.simulate('keydown', { key: ' ' });
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+    });
+
+    test('when the tab and the enter keys are entered and the active tab is the last one it should not change the displayed panel', () => {
+        const tabs: Tab[] = [
+            {
+                title: 'button 1',
+                panelContent: <div>content</div>,
+            },
+            {
+                title: 'button 2',
+                panelContent: <div>content</div>,
+            },
+        ];
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
+
+        getByTestId(wrapper, 'tab-button--2').simulate('click');
+        tabButtonsDiv.simulate('keydown', { key: 'Tab' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
         expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
@@ -196,6 +286,7 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
         const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
 
         tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
@@ -222,6 +313,7 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
         const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
 
         tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
@@ -356,6 +448,7 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
         const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
 
         tabButtonsDiv.simulate('keydown', { key: 'End' });
@@ -382,6 +475,7 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+        simulateFirstTabFocus(wrapper);
         const tabButtonsDiv = getByTestId(wrapper, 'tab-buttons-div');
 
         tabButtonsDiv.simulate('keydown', { key: 'End' });
@@ -393,12 +487,16 @@ describe('Tabs', () => {
     });
 });
 
-const simulateTabSelectionToTheRight = (tabButtonsDiv: CommonWrapper) => {
+function simulateTabSelectionToTheRight(tabButtonsDiv: CommonWrapper): void {
     tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
     tabButtonsDiv.simulate('keydown', { key: ' ' });
-};
+}
 
-const expectPanelToBeVisible = (wrapper: ReactWrapper, tabPanelTestId: string, isVisible: boolean) => {
+function simulateFirstTabFocus(wrapper: ReactWrapper): void {
+    getByTestId(wrapper, 'tab-button--1').simulate('click');
+}
+
+function expectPanelToBeVisible(wrapper: ReactWrapper, tabPanelTestId: string, isVisible: boolean): void {
     const tabPanel = getByTestId(wrapper, tabPanelTestId);
     expect(tabPanel.prop('isSelected')).toBe(isVisible);
-};
+}

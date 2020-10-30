@@ -62,6 +62,7 @@ function mountTabButtonWithProviders(textValue: string, leftIcon?: IconName, rig
             isSelected={true}
             isFocused={true}
             onClick={doNothing}
+            onFocus={doNothing}
         />,
     );
 }
