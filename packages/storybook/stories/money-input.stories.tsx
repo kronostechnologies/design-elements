@@ -8,8 +8,8 @@ export default {
 
 export const normal = () => (
     <>
-        <MoneyInput label="Entrez un montant"/>
-        <MoneyInput label="Choose a number" locale="en-CA"/>
+        <MoneyInput hint="Hint" label="Entrez un montant"/>
+        <MoneyInput hint="Hint" label="Choose a number" locale="en-CA"/>
     </>
 );
 

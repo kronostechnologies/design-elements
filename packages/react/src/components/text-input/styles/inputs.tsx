@@ -30,9 +30,4 @@ export const inputsStyle = (theme: Theme) => `
             color: ${theme.greys['mid-grey']};
         }
     }
-
-    label + & {
-        display: block;
-        margin-top: var(--spacing-half);
-    }
 `;

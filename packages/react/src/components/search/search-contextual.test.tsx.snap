@@ -149,11 +149,6 @@ input + .c2 {
 }
 
 label + .c5 {
-  display: block;
-  margin-top: var(--spacing-half);
-}
-
-label + .c5 {
   margin-top: 0;
 }
 
@@ -226,7 +221,6 @@ input:valid + .c6 {
       disabled={true}
       onChange={[Function]}
       onKeyDown={[Function]}
-      placeholder="Search"
       type="search"
       value=""
     />
@@ -398,11 +392,6 @@ input + .c2 {
 }
 
 label + .c5 {
-  display: block;
-  margin-top: var(--spacing-half);
-}
-
-label + .c5 {
   margin-top: 0;
 }
 
@@ -473,7 +462,6 @@ input:valid + .c6 {
       className="c5"
       onChange={[Function]}
       onKeyDown={[Function]}
-      placeholder="Search"
       type="search"
       value=""
     />

@@ -18,7 +18,7 @@ export default {
 };
 
 export const normal = () => (
-    <Datepicker label="Date"/>
+    <Datepicker label="Date" hint="Hint"/>
 );
 
 export const withTodayButton = () => (

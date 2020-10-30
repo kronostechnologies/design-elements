@@ -37,7 +37,6 @@ const InputWrapper = styled.div<InputWrapperProps>`
     box-sizing: border-box;
     display: flex;
     height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
-    margin-top: ${({ hasLabel }) => hasLabel ? 'var(--spacing-half)' : '0'};
     padding-right: var(--spacing-1x);
     width: 100%;
 
@@ -96,7 +95,6 @@ interface InputProps {
 }
 
 interface InputWrapperProps extends InputProps {
-    hasLabel?: boolean;
     isMobile: boolean;
     focus?: boolean;
     containerOutline: boolean;
@@ -162,6 +160,7 @@ interface SelectProps {
      * Set the selected value
      */
     value?: string;
+    hint?: string;
     /**
      * OnChange callback function, invoked when an option is selected
      */
@@ -187,6 +186,7 @@ export function Select({
     valid = true,
     validationErrorMessage,
     value,
+    hint,
 }: SelectProps): ReactElement {
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
@@ -467,6 +467,7 @@ export function Select({
                 label={label}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+                hint={hint}
             >
                 <InputWrapper
                     aria-expanded={open}
@@ -474,7 +475,6 @@ export function Select({
                     aria-owns={`listbox_${fieldId}`}
                     data-testid="input-wrapper"
                     containerOutline={containerOutline}
-                    hasLabel={label !== undefined}
                     isMobile={isMobile}
                     disabled={disabled}
                     focus={focus}
@@ -498,7 +498,7 @@ export function Select({
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onKeyDown={handleInputKeyDown}
-                        placeholder={placeholder || t('placeholder')}
+                        placeholder={placeholder}
                         ref={inputRef}
                         required={required}
                         searchable={searchable}

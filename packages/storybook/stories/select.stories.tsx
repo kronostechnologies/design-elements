@@ -35,7 +35,7 @@ export default {
 };
 
 export const normal = () => (
-    <Select label="Select an option" options={provinces}/>
+    <Select label="Select an option" hint="Hint" options={provinces}/>
 );
 
 export const customPlaceholder = () => (

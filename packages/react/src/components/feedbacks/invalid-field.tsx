@@ -1,14 +1,24 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon/icon';
 
 const Field = styled.div<{ isMobile: boolean }>`
     color: ${props => props.theme.notifications['error-2.1']};
+    display: flex;
     font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.75rem'};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
     line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
-    margin: var(--spacing-half) 0 0;
+`;
+
+const StyledSpan = styled.span`
+    margin-left: var(--spacing-base);
+`;
+
+const StyledIcon = styled.div`
+    align-items: center;
+    display: flex;
 `;
 
 interface InvalidFieldProps {
@@ -26,7 +36,10 @@ function InvalidField({ controlId, feedbackMsg }: InvalidFieldProps): ReactEleme
             isMobile={isMobile}
             role="alert"
         >
-            {feedbackMsg}
+            <StyledIcon>
+                <Icon name="alertTriangle" size={isMobile ? '24' : '16'} />
+            </StyledIcon>
+            <StyledSpan>{feedbackMsg}</StyledSpan>
         </Field>
     );
 }

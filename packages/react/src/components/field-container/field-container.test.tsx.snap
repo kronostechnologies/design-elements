@@ -35,6 +35,10 @@ input + .c1 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 <div
   class="c0"
 >
@@ -51,6 +55,10 @@ input + .c1 {
 exports[`Field Container should have invalid styles given valid prop is set to false 1`] = `
 .c2 {
   color: #A40C2E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -58,7 +66,21 @@ exports[`Field Container should have invalid styles given valid prop is set to f
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
+}
+
+.c4 {
+  margin-left: var(--spacing-base);
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c1 {
@@ -95,6 +117,10 @@ input + .c1 {
   border-color: #A40C2E;
 }
 
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
 <div
   class="c0"
 >
@@ -104,15 +130,29 @@ input + .c1 {
   >
     test label
   </label>
-  Children
   <div
     aria-live="polite"
     class="c2"
     id="test-id_invalid"
     role="alert"
   >
-    This text area input is invalid
+    <div
+      class="c3"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </div>
+    <span
+      class="c4"
+    >
+      This text area input is invalid
+    </span>
   </div>
+  Children
 </div>
 `;
 
@@ -149,6 +189,10 @@ input + .c1 {
 
 .c0:focus {
   border-color: #0080A5;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
 }
 
 <div

@@ -156,7 +156,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                     onKeyDown={handleKeyDown}
                     hasButton={hasButton}
                     id={id}
-                    placeholder={placeholder || t('placeholder')}
+                    placeholder={placeholder}
                     type="search"
                     value={value}
                 />

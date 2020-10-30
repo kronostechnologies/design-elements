@@ -16,15 +16,18 @@ export const inputs = () => (
             defaultValue=""
             pattern=""
             validationErrorMessage="Error message"
+            hint="Hint"
         />
         <TextInput
             disabled={false}
             required={false}
             label="Email"
+            placeholder="you@example.com"
             type="email"
             defaultValue=""
             pattern=""
             validationErrorMessage="Error message"
+            hint="Hint"
         />
         <TextInput
             disabled={false}
@@ -35,6 +38,7 @@ export const inputs = () => (
             defaultValue=""
             pattern=""
             validationErrorMessage="Error message"
+            hint="Hint"
         />
     </div>
 );
@@ -43,7 +47,6 @@ export const defaultValue = () => (
         disabled={false}
         required={false}
         label="Address"
-        placeholder="Enter text here"
         type="text"
         defaultValue="1234 Main Street"
         pattern=""
@@ -55,7 +58,6 @@ export const required = () => (
         disabled={false}
         required={true}
         label="Last Name (required)"
-        placeholder="Ex.: Doe"
         type="text"
         defaultValue=""
         pattern=""
@@ -67,7 +69,6 @@ export const eventCallbacks = () => (
         disabled={false}
         required={true}
         label="See console for callbacks"
-        placeholder="Ex.: Hello"
         type="text"
         defaultValue=""
         pattern=""

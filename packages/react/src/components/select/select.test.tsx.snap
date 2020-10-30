@@ -35,6 +35,10 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c6 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -116,7 +120,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -210,7 +213,6 @@ input + .c2 {
       class="c4"
       data-testid="input"
       disabled=""
-      placeholder="Select an option"
       type="text"
       value=""
     />
@@ -364,8 +366,12 @@ input + .c2 {
 
 exports[`Select invalid select has a different style 1`] = `
 Array [
-  .c9 {
+  .c3 {
   color: #A40C2E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -373,7 +379,21 @@ Array [
   -ms-letter-spacing: 0.02rem;
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin: var(--spacing-half) 0 0;
+}
+
+.c5 {
+  margin-left: var(--spacing-base);
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c2 {
@@ -410,7 +430,11 @@ input + .c2 {
   border-color: #A40C2E;
 }
 
-.c6 {
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c9 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
@@ -419,7 +443,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c7 {
+.c10 {
   border-radius: var(--border-radius);
   list-style-type: none;
   margin: 0;
@@ -432,21 +456,21 @@ input + .c2 {
   width: 100%;
 }
 
-.c7:focus {
+.c10:focus {
   outline: none;
 }
 
-.c7:focus {
+.c10:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c7:not(input):not(textarea):not(button):focus {
+.c10:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c8 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -467,8 +491,8 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c8:hover,
-.c8:focus {
+.c11:hover,
+.c11:focus {
   background-color: #D9DDE2;
 }
 
@@ -476,7 +500,7 @@ input + .c2 {
   position: relative;
 }
 
-.c3 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -491,20 +515,19 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
 }
 
-.c3:hover {
+.c6:hover {
   cursor: pointer;
 }
 
-.c3 svg {
+.c6 svg {
   color: #57666E;
 }
 
-.c4 {
+.c7 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -525,31 +548,31 @@ input + .c2 {
   width: 100%;
 }
 
-.c4:hover {
+.c7:hover {
   cursor: pointer;
 }
 
-.c4::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c4::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c4:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c4::placeholder {
+.c7::placeholder {
   color: #57666E;
   font-size: 0.875rem;
 }
 
-.c5 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -570,10 +593,32 @@ input + .c2 {
       Select an option
     </label>
     <div
+      aria-live="polite"
+      class="c3"
+      id="undefined_invalid"
+      role="alert"
+    >
+      <div
+        class="c4"
+      >
+        <svg
+          color="currentColor"
+          focusable="false"
+          height="16"
+          width="16"
+        />
+      </div>
+      <span
+        class="c5"
+      >
+        You must select an option
+      </span>
+    </div>
+    <div
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
-      class="c3"
+      class="c6"
       data-testid="input-wrapper"
     >
       <input
@@ -581,14 +626,13 @@ input + .c2 {
         aria-controls="listbox_undefined"
         aria-label="Select an option"
         aria-multiline="false"
-        class="c4"
+        class="c7"
         data-testid="input"
-        placeholder="Select an option"
         type="text"
         value=""
       />
       <button
-        class="c5"
+        class="c8"
         data-testid="arrow"
         tabindex="-1"
         type="button"
@@ -602,12 +646,12 @@ input + .c2 {
       </button>
     </div>
     <div
-      class="c6"
+      class="c9"
       role="listbox"
       tabindex="-1"
     >
       <ul
-        class="c7"
+        class="c10"
         id="listbox_undefined"
         role="presentation"
         tabindex="0"
@@ -615,7 +659,7 @@ input + .c2 {
         <li
           aria-label="Ontario"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_on"
           role="option"
         >
@@ -624,7 +668,7 @@ input + .c2 {
         <li
           aria-label="Quebec"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_qc"
           role="option"
         >
@@ -633,7 +677,7 @@ input + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_bc"
           role="option"
         >
@@ -642,7 +686,7 @@ input + .c2 {
         <li
           aria-label="Alberta"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_ab"
           role="option"
         >
@@ -651,7 +695,7 @@ input + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_mb"
           role="option"
         >
@@ -660,7 +704,7 @@ input + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_sk"
           role="option"
         >
@@ -669,7 +713,7 @@ input + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_ns"
           role="option"
         >
@@ -678,7 +722,7 @@ input + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_nb"
           role="option"
         >
@@ -687,7 +731,7 @@ input + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_nl"
           role="option"
         >
@@ -696,7 +740,7 @@ input + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_pe"
           role="option"
         >
@@ -705,7 +749,7 @@ input + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_nt"
           role="option"
         >
@@ -714,7 +758,7 @@ input + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_nu"
           role="option"
         >
@@ -723,21 +767,13 @@ input + .c2 {
         <li
           aria-label="Yukon"
           aria-selected="false"
-          class="c8"
+          class="c11"
           id="listbox_undefined_yt"
           role="option"
         >
           Yukon
         </li>
       </ul>
-    </div>
-    <div
-      aria-live="polite"
-      class="c9"
-      id="undefined_invalid"
-      role="alert"
-    >
-      You must select an option
     </div>
   </div>,
   .c0 {
@@ -877,6 +913,10 @@ input + .c2 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c6 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -958,7 +998,6 @@ input + .c2 {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  margin-top: var(--spacing-half);
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -1050,7 +1089,6 @@ input + .c2 {
         aria-multiline="false"
         class="c4"
         data-testid="input"
-        placeholder="Select an option"
         type="text"
         value=""
       />
@@ -1315,6 +1353,10 @@ exports[`Select mobile select has a different style 1`] = `
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c5 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
@@ -1396,7 +1438,6 @@ exports[`Select mobile select has a different style 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 40px;
-  margin-top: 0;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -1483,7 +1524,6 @@ exports[`Select mobile select has a different style 1`] = `
       aria-multiline="false"
       class="c3"
       data-testid="input"
-      placeholder="Select an option"
       type="text"
       value=""
     />

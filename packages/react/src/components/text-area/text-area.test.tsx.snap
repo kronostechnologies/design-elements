@@ -35,6 +35,10 @@ input + .c1 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   min-height: 6.5rem;
   min-width: 100%;
@@ -112,11 +116,6 @@ input + .c1 {
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
 }
 
 <div
@@ -175,6 +174,10 @@ input + .c1 {
   border-color: #0080A5;
 }
 
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   min-height: 6.5rem;
   min-width: 100%;
@@ -252,11 +255,6 @@ input + .c1 {
 .c2:disabled,
 .c2:disabled::placeholder {
   color: #9CA7B4;
-}
-
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
 }
 
 <div

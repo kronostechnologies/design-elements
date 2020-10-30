@@ -15,6 +15,10 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   border-color: #0080A5;
 }
 
+.c1 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
@@ -89,11 +93,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   color: #9CA7B4;
 }
 
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-}
-
 .c0 input {
   text-align: left;
   -webkit-transition: width 300ms;
@@ -113,7 +112,7 @@ label + .c2 {
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="$0.00"
+      placeholder="$"
       type="text"
       value="$100.00"
     />
@@ -136,6 +135,10 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   border-color: #0080A5;
 }
 
+.c1 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
@@ -210,11 +213,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   color: #9CA7B4;
 }
 
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-}
-
 .c0 input {
   text-align: left;
   -webkit-transition: width 300ms;
@@ -234,7 +232,7 @@ label + .c2 {
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="$0.00"
+      placeholder="$"
       type="text"
       value="$100.00"
     />
@@ -257,6 +255,10 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   border-color: #0080A5;
 }
 
+.c1 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
 .c2 {
   background: #FFFFFF;
   border: 1px solid #57666E;
@@ -331,11 +333,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   color: #9CA7B4;
 }
 
-label + .c2 {
-  display: block;
-  margin-top: var(--spacing-half);
-}
-
 .c0 input {
   text-align: right;
   -webkit-transition: width 300ms;
@@ -355,7 +352,7 @@ label + .c2 {
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="0,00 $"
+      placeholder="$"
       type="text"
       value="100,00 $"
     />
