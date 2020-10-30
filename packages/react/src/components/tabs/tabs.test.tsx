@@ -1,7 +1,7 @@
 import { CommonWrapper, ReactWrapper } from 'enzyme';
 import React from 'react';
 
-import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
@@ -71,8 +71,10 @@ describe('Tabs', () => {
             },
         ];
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
+        const secondTabPanel = findByTestId(wrapper, 'tab-panel--2');
+        expect(secondTabPanel.length).toBe(0);
     });
 
     test('when a button is selected only the selected panel should be displayed', () => {
@@ -90,8 +92,7 @@ describe('Tabs', () => {
 
         getByTestId(wrapper, 'tab-button--2').simulate('click');
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the right arrow and the space keys are entered it should display the panel to the right', () => {
@@ -112,8 +113,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the right arrow and the enter keys are entered it should display the panel to the right', () => {
@@ -134,8 +134,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the tab and the space keys are entered and the active tab is not the last one it should display the panel to the right', () => {
@@ -156,8 +155,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'Tab' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the tab and the enter keys are entered and the active tab is not the last one it should display the panel to the right', () => {
@@ -178,8 +176,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'Tab' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the tab and the space keys are entered and the active tab is the last one it should not change the displayed panel', () => {
@@ -200,8 +197,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'Tab' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the tab and the enter keys are entered and the active tab is the last one it should not change the displayed panel', () => {
@@ -222,8 +218,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'Tab' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--2');
     });
 
     test('when the left arrow and the space keys are entered it should display the panel to the left', () => {
@@ -244,8 +239,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
     });
 
     test('when the left arrow and the enter keys are entered it should display the panel to the left', () => {
@@ -266,8 +260,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
     });
 
     test('when the left arrow and the space keys are entered and first tab is active then it should display the last tab', () => {
@@ -292,9 +285,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3');
     });
 
     test('when the left arrow and the enter keys are entered and first tab is active then it should display the last tab', () => {
@@ -319,9 +310,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowLeft' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3');
     });
 
     test('when the right arrow and the space keys are entered and last tab is active then it should display the first tab', () => {
@@ -346,9 +335,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
     });
 
     test('when the right arrow and the enter keys are entered and last tab is active then it should display the first tab', () => {
@@ -373,9 +360,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
     });
 
     test('when the home and the space keys are entered then it should display the first tab', () => {
@@ -400,9 +385,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'Home' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
     });
 
     test('when the home and the enter keys are entered then it should display the first tab', () => {
@@ -427,9 +410,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'Home' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', true);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', false);
+        expectPanelToBeVisible(wrapper, 'tab-panel--1');
     });
 
     test('when the end and the space keys are entered then it should display the last tab', () => {
@@ -454,9 +435,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'End' });
         tabButtonsDiv.simulate('keydown', { key: ' ' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3');
     });
 
     test('when the end and the enter keys are entered then it should display the last tab', () => {
@@ -481,9 +460,7 @@ describe('Tabs', () => {
         tabButtonsDiv.simulate('keydown', { key: 'End' });
         tabButtonsDiv.simulate('keydown', { key: 'Enter' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel--1', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--2', false);
-        expectPanelToBeVisible(wrapper, 'tab-panel--3', true);
+        expectPanelToBeVisible(wrapper, 'tab-panel--3');
     });
 });
 
@@ -496,7 +473,7 @@ function simulateFirstTabFocus(wrapper: ReactWrapper): void {
     getByTestId(wrapper, 'tab-button--1').simulate('click');
 }
 
-function expectPanelToBeVisible(wrapper: ReactWrapper, tabPanelTestId: string, isVisible: boolean): void {
-    const tabPanel = getByTestId(wrapper, tabPanelTestId);
-    expect(tabPanel.prop('isSelected')).toBe(isVisible);
+function expectPanelToBeVisible(wrapper: ReactWrapper, tabPanelTestId: string): void {
+    const tabPanel = findByTestId(wrapper, tabPanelTestId);
+    expect(tabPanel.length > 0).toBeTruthy();
 }

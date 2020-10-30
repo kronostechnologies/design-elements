@@ -54,11 +54,9 @@ describe('TabButton', () => {
 function mountTabButtonWithProviders(textValue: string, leftIcon?: IconName, rightIcon?: IconName): ReactWrapper {
     return mountWithProviders(
         <TabButton
-            id="id"
             textValue={textValue}
             leftIcon={leftIcon}
             rightIcon={rightIcon}
-            controlledPanelId="controlledPanelId"
             isSelected={true}
             isFocused={true}
             onClick={doNothing}

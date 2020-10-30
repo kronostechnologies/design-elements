@@ -19,7 +19,6 @@ export interface Tab {
 
 interface TabSelectionState {
     id: string;
-    panelId: string;
     tab: Tab;
     isPanelSelected: boolean;
     isButtonSelected: boolean;
@@ -34,7 +33,6 @@ function initTabsSelection(tabs: Tab[]): TabSelectionState[] {
     const tabsSelectionState = tabs.map(tab => {
         return {
             id: uuid(),
-            panelId: uuid(),
             tab: tab,
             isPanelSelected: false,
             isButtonSelected: false,
@@ -55,7 +53,6 @@ function reducer(tabsSelectionState: TabSelectionState[], buttonSelection: Butto
 
         return {
             id: tabSelectionState.id,
-            panelId: tabSelectionState.panelId,
             tab: tabSelectionState.tab,
             isPanelSelected: isPanelSelected,
             isButtonSelected: buttonSelection.id === tabSelectionState.id,
@@ -116,12 +113,10 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
                 {tabsState.map((tabState, i) => (
                     <TabButton
                         key={tabState.id}
-                        id={tabState.id}
                         data-testid={`tab-button--${i + 1}`}
                         textValue={tabState.tab.title}
                         leftIcon={tabState.tab.leftIcon}
                         rightIcon={tabState.tab.rightIcon}
-                        controlledPanelId={tabState.panelId}
                         isSelected={tabState.isPanelSelected}
                         isFocused={tabState.isButtonSelected}
                         onClick={() => setTabsState({ id: tabState.id, isPanelSelection: true })}
@@ -130,14 +125,8 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
                 ))}
             </CenteredContentDiv>
 
-            {tabsState.map((tabState, i) => (
-                <TabPanel
-                    key={tabState.panelId}
-                    id={tabState.panelId}
-                    data-testid={`tab-panel--${i + 1}`}
-                    associatedTabId={tabState.id}
-                    isSelected={tabState.isPanelSelected}
-                >
+            {tabsState.map((tabState, i) => tabState.isPanelSelected && (
+                <TabPanel key={tabState.id} data-testid={`tab-panel--${i + 1}`}>
                     {tabState.tab.panelContent}
                 </TabPanel>
             ))}

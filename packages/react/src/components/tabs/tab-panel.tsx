@@ -4,27 +4,15 @@ import styled from 'styled-components';
 import { focus } from '@design-elements/utils/css-state';
 
 interface TabPanelProps {
-    id: string;
     children: ReactNode;
-    associatedTabId: string;
-    isSelected: boolean;
 }
 
 const StyledDiv = styled.div`
     ${focus}
 `;
 
-export function TabPanel({ id, children, associatedTabId, isSelected }: TabPanelProps): ReactElement {
+export function TabPanel({ children }: TabPanelProps): ReactElement {
     return (
-        <StyledDiv
-            id={id}
-            role="tabpanel"
-            aria-labelledby={associatedTabId}
-            tabIndex={0}
-            aria-hidden={!isSelected}
-            hidden={!isSelected}
-        >
-            {children}
-        </StyledDiv>
+        <StyledDiv tabIndex={0}>{children}</StyledDiv>
     );
 }

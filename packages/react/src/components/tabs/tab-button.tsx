@@ -61,11 +61,9 @@ const RightIcon = styled(Icon)<{$isSelected: boolean}>`
 `;
 
 interface TabButtonProps {
-    id: string;
     textValue: string;
     leftIcon?: IconName;
     rightIcon?: IconName;
-    controlledPanelId: string;
     isSelected: boolean;
     isFocused: boolean;
     onClick(): void;
@@ -73,11 +71,9 @@ interface TabButtonProps {
 }
 
 export function TabButton({
-    id,
     textValue,
     leftIcon,
     rightIcon,
-    controlledPanelId,
     isSelected,
     isFocused,
     onClick,
@@ -95,11 +91,7 @@ export function TabButton({
 
     return (
         <StyledButton
-            id={id}
             ref={buttonRef}
-            role="tab"
-            aria-selected={isSelected}
-            aria-controls={controlledPanelId}
             tabIndex={isSelected ? undefined : -1}
             onClick={onClick}
             onFocus={onFocus}
