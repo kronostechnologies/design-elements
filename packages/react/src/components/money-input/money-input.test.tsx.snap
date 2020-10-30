@@ -112,7 +112,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="$0.00"
+      placeholder="$"
       type="text"
       value="$100.00"
     />
@@ -232,7 +232,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="$0.00"
+      placeholder="$"
       type="text"
       value="$100.00"
     />
@@ -352,7 +352,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      placeholder="0,00 $"
+      placeholder="$"
       type="text"
       value="100,00 $"
     />
