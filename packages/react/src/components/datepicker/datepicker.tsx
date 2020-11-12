@@ -2,10 +2,12 @@ import { useTranslation } from '@design-elements/i18n/i18n';
 import { enCA, enUS, frCA } from 'date-fns/locale';
 import React, {
     FocusEvent,
+    forwardRef,
     KeyboardEvent,
     MouseEvent,
-    ReactElement,
+    Ref,
     useEffect,
+    useImperativeHandle,
     useMemo,
     useRef,
     useState,
@@ -244,6 +246,10 @@ interface CalendarButtonProps {
     isMobile?: boolean;
 }
 
+export interface DatepickerHandles {
+    reset(): void;
+}
+
 interface DatepickerProps {
     /** Sets date format (e.g.: dd/MM/yyyy). */
     dateFormat?: string;
@@ -300,7 +306,7 @@ registerLocale('en-CA', enCA);
 registerLocale('en-US', enUS);
 registerLocale('fr-CA', frCA);
 
-export function Datepicker({
+export const Datepicker = forwardRef(({
     dateFormat,
     disabled,
     noMargin,
@@ -324,7 +330,7 @@ export function Datepicker({
     validationErrorMessage,
     hint,
     ...props
-}: DatepickerProps): ReactElement {
+}: DatepickerProps, ref: Ref<DatepickerHandles>) => {
     const { t } = useTranslation('datepicker');
     const localeArray = [ enUS, enCA, frCA ];
     const { isMobile } = useDeviceContext();
@@ -337,6 +343,12 @@ export function Datepicker({
     const fieldId = id || useMemo(uuid, []);
     const dateInputRef = useRef<DatePicker>(null);
     const calendarButtonRef = useRef<HTMLButtonElement>(null);
+
+    useImperativeHandle(ref, () => ({
+        reset: () => {
+            setSelectedDate(startDate);
+        },
+    }));
 
     useEffect(() => {
         if (firstDayOfWeek) {
@@ -518,7 +530,7 @@ export function Datepicker({
             </FieldContainer>
         </>
     );
-}
+});
 
 function getInputBorderColor(theme: Theme, disabled?: boolean, valid?: boolean): string {
     if (disabled) {
