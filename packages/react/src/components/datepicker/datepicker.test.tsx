@@ -1,10 +1,10 @@
 import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { mount } from 'enzyme';
-import React from 'react';
+import React, { RefObject } from 'react';
 
-import { renderWithProviders } from '../../test-utils/renderer';
+import { actAndWaitForEffects, renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { Datepicker } from './datepicker';
+import { Datepicker, DatepickerHandles } from './datepicker';
 jest.mock('uuid/v4');
 
 describe('Datepicker', () => {
@@ -172,6 +172,34 @@ describe('Datepicker', () => {
         getByTestId(wrapper, 'today-button').simulate('click');
 
         expect(getByTestId(wrapper, 'text-input').props().value).toBe(new Date().toLocaleDateString('en-CA'));
+    });
+
+    test('should reset date to startDate when reset is called on ref', async () => {
+        const ref: RefObject<DatepickerHandles> = React.createRef();
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker ref={ref} startDate={new Date('2002-02-02, 12:00')} />),
+        );
+
+        getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2010-07-07' } });
+
+        await actAndWaitForEffects(wrapper, () => {
+            ref.current?.reset();
+        });
+
+        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
+    });
+
+    test('should set date when setDate is called on ref', async () => {
+        const ref: RefObject<DatepickerHandles> = React.createRef();
+        const wrapper = mount(
+            ThemeWrapped(<Datepicker ref={ref} />),
+        );
+
+        await actAndWaitForEffects(wrapper, () => {
+            ref.current?.setDate(new Date('2002-02-02, 12:00'));
+        });
+
+        expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
     });
 
     test('matches snapshot (desktop)', () => {

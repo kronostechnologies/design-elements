@@ -5,6 +5,7 @@ import React, {
     forwardRef,
     KeyboardEvent,
     MouseEvent,
+    ReactElement,
     Ref,
     useEffect,
     useImperativeHandle,
@@ -234,6 +235,11 @@ const ReactDatePickerStyles = createGlobalStyle`
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
+export interface DatepickerHandles {
+    reset(): void;
+    setDate(date: Date): void;
+}
+
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;
     theme: Theme;
@@ -244,10 +250,6 @@ interface CalendarButtonProps {
     disabled?: boolean;
     theme: Theme;
     isMobile?: boolean;
-}
-
-export interface DatepickerHandles {
-    reset(): void;
 }
 
 interface DatepickerProps {
@@ -330,7 +332,7 @@ export const Datepicker = forwardRef(({
     validationErrorMessage,
     hint,
     ...props
-}: DatepickerProps, ref: Ref<DatepickerHandles>) => {
+}: DatepickerProps, ref: Ref<DatepickerHandles>): ReactElement => {
     const { t } = useTranslation('datepicker');
     const localeArray = [ enUS, enCA, frCA ];
     const { isMobile } = useDeviceContext();
@@ -347,6 +349,9 @@ export const Datepicker = forwardRef(({
     useImperativeHandle(ref, () => ({
         reset: () => {
             setSelectedDate(startDate);
+        },
+        setDate: (date: Date) => {
+            setSelectedDate(date);
         },
     }));
 
