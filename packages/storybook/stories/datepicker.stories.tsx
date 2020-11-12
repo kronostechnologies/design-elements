@@ -1,5 +1,5 @@
-import { Datepicker } from '@equisoft/design-elements-react';
-import React, { FormEvent } from 'react';
+import { Button, Datepicker, DatepickerHandles } from '@equisoft/design-elements-react';
+import React, { FormEvent, useRef } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 
@@ -69,3 +69,17 @@ export const withOnBlurCallback = () => (
 export const withOnFocusCallback = () => (
     <Datepicker label="Date" onFocus={(event) => console.log(`[onFocus] Value: ${event.target.value}`)}/>
 );
+export const withDatepickerResetHandle = () => {
+    const datepickerRef = useRef<DatepickerHandles>(null);
+
+    function handleClick(): void {
+        datepickerRef.current?.reset();
+    }
+
+    return (
+        <>
+            <Datepicker ref={datepickerRef}/>
+            <Button buttonType="primary" label="reset" onClick={handleClick}/>
+        </>
+    );
+};
