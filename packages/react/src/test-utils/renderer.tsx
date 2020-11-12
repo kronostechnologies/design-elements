@@ -1,6 +1,7 @@
 import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
-import { mount, ReactWrapper, render } from 'enzyme';
+import { CommonWrapper, mount, ReactWrapper, render } from 'enzyme';
 import React, { Component, ReactElement } from 'react';
+import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
 import { DeviceContextProvider, DeviceType } from '../components/device-context-provider/device-context-provider';
 
@@ -27,4 +28,21 @@ export function AllProviders({ children, device }: { children: ReactElement, dev
             </DeviceContextProvider>
         </MemoryRouter>
     );
+}
+
+export async function actUpdate<C extends Component, P = C['props'], S = C['state']>(
+    wrapper: CommonWrapper<P, S, C>,
+): Promise<void> {
+    await act(async () => {
+        wrapper.update();
+    });
+}
+
+export async function actAndWaitForEffects<C extends Component, P = C['props'], S = C['state']>(
+    wrapper: ReactWrapper<P, S, C>,
+    action: () => void,
+): Promise<ReactWrapper<P, S, C>> {
+    await act(async () => action());
+    await actUpdate(wrapper);
+    return wrapper;
 }
