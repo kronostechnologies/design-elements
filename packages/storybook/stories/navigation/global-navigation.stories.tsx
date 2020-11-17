@@ -1,11 +1,11 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
-import { RouterDecorator } from './utils/router-decorator';
-import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
+import { RouterDecorator } from '../utils/router-decorator';
+import { ShadowDomDecorator } from '../utils/shadow-dom-decorator';
 
 export default {
-    title: 'Global Navigation',
+    title: 'Navigation/Global Navigation',
     component: GlobalNavigation,
     decorators: [RouterDecorator],
 };

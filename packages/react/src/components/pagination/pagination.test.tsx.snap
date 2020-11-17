@@ -195,6 +195,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -210,6 +211,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -262,6 +264,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -276,6 +279,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -481,6 +485,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"
@@ -496,6 +501,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"
@@ -548,6 +554,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"
@@ -562,6 +569,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"

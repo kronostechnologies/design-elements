@@ -37,10 +37,8 @@ export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
-export * from './components/global-navigation/global-navigation';
 export { Icon } from './components/icon/icon';
 export { InlineMessage } from './components/inline-message/inline-message';
-export { RouteLink } from './components/route-link/route-link';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { Banner } from './components/banner/banner';
@@ -52,6 +50,11 @@ export { Tag, Tags } from './components/tags/tags';
 export { SkipLink } from './components/skip-link/skip-link';
 export { useModal } from './components/modal/use-modal';
 export { UserProfile } from './components/user-profile/user-profile';
+
+// Navigation
+export { Breadcrumb } from './components/breadcrumb/breadcrumb';
+export * from './components/global-navigation/global-navigation';
+export { RouteLink } from './components/route-link/route-link';
 
 // Results
 export * from './components/legend/legend';

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb Snapshots Matches snapshot (Dropdown open with long text) 1`] = `
+<nav
+  aria-label="breadcrumb"
+>
+  <styled.ol>
+    <styled.li>
+      <RouteLink
+        data-testid="breadcrumb-link-index"
+        href="/index"
+        label="HOME"
+        routerLink={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+      />
+    </styled.li>
+    <styled.li>
+      <Styled(Component)
+        aria-expanded={true}
+        buttonType="tertiary"
+        data-testid="ellipse-button"
+        iconName="moreHorizontal"
+        label="breadcrumb-list"
+        onClick={[Function]}
+        type="button"
+      />
+      <Styled(Component)
+        data-testid="nav-menu"
+        focusedValue=""
+        hidden={false}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        options={
+          Array [
+            Object {
+              "href": "/route",
+              "label": "ROUTE",
+              "value": "route",
+            },
+            Object {
+              "href": "/three",
+              "label": "THREE",
+              "value": "three",
+            },
+          ]
+        }
+        ordered={true}
+      />
+    </styled.li>
+    <styled.li>
+      FOUR IS GOING TO BE TOO LONG FOR THE ACTUAL DROPDOWN SO IT WILL HAVE ELLIPSIS
+    </styled.li>
+  </styled.ol>
+</nav>
+`;
+
+exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
+<nav
+  aria-label="breadcrumb"
+>
+  <styled.ol>
+    <styled.li>
+      <RouteLink
+        data-testid="breadcrumb-link-index"
+        href="/index"
+        label="HOME"
+        routerLink={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+      />
+    </styled.li>
+    <styled.li>
+      <Styled(Component)
+        aria-expanded={false}
+        buttonType="tertiary"
+        data-testid="ellipse-button"
+        iconName="moreHorizontal"
+        label="breadcrumb-list"
+        onClick={[Function]}
+        type="button"
+      />
+      <Styled(Component)
+        data-testid="nav-menu"
+        focusedValue=""
+        hidden={true}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        options={
+          Array [
+            Object {
+              "href": "/route",
+              "label": "ROUTE",
+              "value": "route",
+            },
+          ]
+        }
+        ordered={true}
+      />
+    </styled.li>
+    <styled.li>
+      THREE
+    </styled.li>
+  </styled.ol>
+</nav>
+`;
+
+exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
+<nav
+  aria-label="breadcrumb"
+>
+  <styled.ol>
+    <styled.li>
+      <RouteLink
+        data-testid="breadcrumb-link-index"
+        href="/index"
+        label="HOME"
+        routerLink={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+      />
+    </styled.li>
+    <styled.li>
+      ROUTE
+    </styled.li>
+  </styled.ol>
+</nav>
+`;
+
+exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
+<nav
+  aria-label="breadcrumb"
+>
+  <styled.ol>
+    <styled.li>
+      HOME
+    </styled.li>
+  </styled.ol>
+</nav>
+`;
