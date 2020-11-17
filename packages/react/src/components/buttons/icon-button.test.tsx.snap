@@ -95,6 +95,7 @@ exports[`Icon Button Has disabled styles 1`] = `
   type="submit"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -197,6 +198,7 @@ exports[`Icon Button Has mobile styles 1`] = `
   type="submit"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="20"
@@ -299,6 +301,7 @@ exports[`Icon Button Has primary styles 1`] = `
   type="submit"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -401,6 +404,7 @@ exports[`Icon Button Has secondary styles 1`] = `
   type="submit"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -503,6 +507,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
   type="submit"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"

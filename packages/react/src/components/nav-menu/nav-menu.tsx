@@ -69,6 +69,7 @@ export interface NavMenuProps {
 
     /** onKeyDown callback function, invoked when a key is pressed */
     onKeyDown?(event: KeyboardEvent): void;
+    ordered?: boolean;
 }
 
 export const NavMenu = forwardRef(({
@@ -79,6 +80,7 @@ export const NavMenu = forwardRef(({
     hidden,
     onChange,
     onKeyDown,
+    ordered,
 }: NavMenuProps, ref: Ref<HTMLUListElement>): ReactElement => {
     const device = useDeviceContext();
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -114,6 +116,7 @@ export const NavMenu = forwardRef(({
 
     return (
         <List
+            as={ordered ? 'ol' : 'ul'}
             className={className}
             data-testid="menu-list"
             id={id}

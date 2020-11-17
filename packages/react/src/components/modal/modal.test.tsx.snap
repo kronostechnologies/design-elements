@@ -313,6 +313,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             color="currentColor"
             focusable="false"
             height="16"
@@ -488,6 +489,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             color="currentColor"
             focusable="false"
             height="16"
@@ -663,6 +665,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             color="currentColor"
             focusable="false"
             height="20"
