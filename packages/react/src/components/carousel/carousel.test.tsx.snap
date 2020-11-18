@@ -73,11 +73,7 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c7:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c7:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
@@ -102,11 +98,7 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c8:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c8:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
@@ -128,11 +120,7 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
@@ -150,11 +138,7 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c9:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c9:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 

@@ -59,11 +59,7 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
@@ -161,11 +157,7 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c1:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 

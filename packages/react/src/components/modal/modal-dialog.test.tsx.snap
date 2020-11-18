@@ -81,10 +81,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c6:not(:disabled) {
   cursor: pointer;
 }
@@ -101,10 +97,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c6:hover {
@@ -172,10 +164,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c8:not(:disabled) {
   cursor: pointer;
 }
@@ -192,10 +180,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8:hover {
@@ -265,10 +249,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c9:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c9:not(:disabled) {
   cursor: pointer;
 }
@@ -285,10 +265,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c9:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c9:hover {
@@ -520,10 +496,6 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c3:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c3:not(:disabled) {
   cursor: pointer;
 }
@@ -540,10 +512,6 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c3:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c3:hover {
@@ -611,10 +579,6 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c5:not(:disabled) {
   cursor: pointer;
 }
@@ -631,10 +595,6 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5:hover {
@@ -704,10 +664,6 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c6:not(:disabled) {
   cursor: pointer;
 }
@@ -724,10 +680,6 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c6:hover {
@@ -922,10 +874,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c5:not(:disabled) {
   cursor: pointer;
 }
@@ -942,10 +890,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5:hover {
@@ -1013,10 +957,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c7:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c7:not(:disabled) {
   cursor: pointer;
 }
@@ -1033,10 +973,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c7:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c7:hover {
@@ -1106,10 +1042,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c8:not(:disabled) {
   cursor: pointer;
 }
@@ -1126,10 +1058,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8:hover {
@@ -1345,10 +1273,6 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c5:not(:disabled) {
   cursor: pointer;
 }
@@ -1365,10 +1289,6 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c5:hover {
@@ -1436,10 +1356,6 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c7:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c7:not(:disabled) {
   cursor: pointer;
 }
@@ -1456,10 +1372,6 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c7:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c7:hover {
@@ -1529,10 +1441,6 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c8:not(:disabled) {
   cursor: pointer;
 }
@@ -1549,10 +1457,6 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8:hover {
@@ -1756,10 +1660,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c6:not(:disabled) {
   cursor: pointer;
 }
@@ -1776,10 +1676,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c6:hover {
@@ -1847,10 +1743,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c8:not(:disabled) {
   cursor: pointer;
 }
@@ -1867,10 +1759,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8:hover {
@@ -1940,10 +1828,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c9:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c9:not(:disabled) {
   cursor: pointer;
 }
@@ -1960,10 +1844,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c9:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c9:hover {
@@ -2210,10 +2090,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c6:not(:disabled) {
   cursor: pointer;
 }
@@ -2230,10 +2106,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c6:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c6:hover {
@@ -2301,10 +2173,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c8:not(:disabled) {
   cursor: pointer;
 }
@@ -2321,10 +2189,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c8:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c8:hover {
@@ -2394,10 +2258,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c9:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c9:not(:disabled) {
   cursor: pointer;
 }
@@ -2414,10 +2274,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c9:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 .c9:hover {

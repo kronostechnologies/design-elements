@@ -51,7 +51,7 @@ const StyledLabel = styled.label `
                     }
                 }
 
-                ${focus(props, '&:focus + .radioInput')}
+                ${focus(props, true, '&:focus + .radioInput')}
             }
 
             .radioInput {

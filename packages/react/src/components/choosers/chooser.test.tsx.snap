@@ -54,10 +54,6 @@ input[type="radio"]:focus + .c2 {
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c2:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 input[type="checkbox"]:disabled + .c2,
 input[type="radio"]:disabled + .c2 {
   background: #F1F2F2;
@@ -181,10 +177,6 @@ input[type="radio"]:focus + .c2 {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c2:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
 input[type="checkbox"]:disabled + .c2,

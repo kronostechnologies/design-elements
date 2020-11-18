@@ -48,7 +48,7 @@ const StyledLabel = styled.label`
                     }
                 }
 
-                ${focus(props, '&:focus + .box')}
+                ${focus(props, true, '&:focus + .box')}
             }
 
             .box {

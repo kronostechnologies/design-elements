@@ -12,7 +12,7 @@ export const inputsStyle = (theme: Theme) => `
     letter-spacing: 0.025rem;
     line-height: 1.4rem;
     margin: 0;
-    ${focus({ theme })}
+    ${focus({ theme }, true)}
     outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
     width: 100%;

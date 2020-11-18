@@ -103,10 +103,6 @@ input + .c2 {
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c5::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -183,11 +179,7 @@ label + .c5 {
 
 .c6:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c6:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
@@ -346,10 +338,6 @@ input + .c2 {
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c5:not(input):not(textarea):not(button):focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
 .c5::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -426,11 +414,7 @@ label + .c5 {
 
 .c6:focus {
   outline: none;
-  border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
-}
-
-.c6:not(input):not(textarea):not(button):focus {
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
