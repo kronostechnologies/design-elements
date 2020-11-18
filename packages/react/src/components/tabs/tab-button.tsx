@@ -9,25 +9,24 @@ const StyledButton = styled.button<{isSelected: boolean}>`
     cursor: pointer;
     display: flex;
     justify-content: center;
-    line-height: 24px;
+    line-height: 1.5rem;
     min-height: 48px;
     min-width: 82px;
     ${focus}
-    ${({ isSelected, theme }) => isSelected ?
-        `::after {
-                content: '';
-                background-color: ${theme.main['primary-1.1']};
-                bottom: 0;
-                display: block;
-                height: 4px;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }` :
-        ''
-    }
-    padding-left: 16px;
-    padding-right: 16px;
+    ${({ isSelected, theme }) => isSelected && `
+        ::after {
+            content: '';
+            background-color: ${theme.main['primary-1.1']};
+            bottom: 0;
+            display: block;
+            height: 4px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    `}
+    padding-left: var(--spacing-2x);
+    padding-right: var(--spacing-2x);
     position: relative;
 `;
 
@@ -61,9 +60,11 @@ const RightIcon = styled(Icon)<{$isSelected: boolean}>`
 `;
 
 interface TabButtonProps {
+    id: string;
+    panelId: string;
     children: string;
-    leftIcon?: IconName | null;
-    rightIcon?: IconName | null;
+    leftIcon?: IconName
+    rightIcon?: IconName;
     isSelected: boolean;
     isFocused: boolean;
     onClick(): void;
@@ -71,9 +72,11 @@ interface TabButtonProps {
 }
 
 export function TabButton({
+    id,
+    panelId,
     children,
-    leftIcon = null,
-    rightIcon = null,
+    leftIcon,
+    rightIcon,
     isSelected,
     isFocused,
     onClick,
@@ -83,14 +86,18 @@ export function TabButton({
 
     useEffect(() => {
         if (isFocused) {
-            buttonRef?.current?.focus();
+            buttonRef.current?.focus();
         } else {
-            buttonRef?.current?.blur();
+            buttonRef.current?.blur();
         }
     }, [isFocused]);
 
     return (
         <StyledButton
+            id={id}
+            aria-controls={panelId}
+            role="tab"
+            aria-selected={isSelected}
             ref={buttonRef}
             data-testid="tab-button"
             tabIndex={isSelected ? undefined : -1}
@@ -98,7 +105,7 @@ export function TabButton({
             onFocus={onFocus}
             isSelected={isSelected}
         >
-            {leftIcon != null && (
+            {leftIcon && (
                 <LeftIcon
                     data-testid="tab-button-left-icon"
                     $isSelected={isSelected}
@@ -109,7 +116,7 @@ export function TabButton({
             <StyledButtonText data-testid="tab-button-text" isSelected={isSelected}>
                 {children}
             </StyledButtonText>
-            {rightIcon != null && (
+            {rightIcon && (
                 <RightIcon
                     data-testid="tab-button-right-icon"
                     $isSelected={isSelected}

@@ -19,6 +19,7 @@ export interface Tab {
 
 interface TabSelectionState {
     id: string;
+    panelId: string;
     tab: Tab;
     isPanelSelected: boolean;
     isButtonSelected: boolean;
@@ -33,6 +34,7 @@ function initTabsSelection(tabs: Tab[]): TabSelectionState[] {
     const tabsSelectionState = tabs.map(tab => {
         return {
             id: uuid(),
+            panelId: uuid(),
             tab: tab,
             isPanelSelected: false,
             isButtonSelected: false,
@@ -53,6 +55,7 @@ function reducer(tabsSelectionState: TabSelectionState[], buttonSelection: Butto
 
         return {
             id: tabSelectionState.id,
+            panelId: tabSelectionState.panelId,
             tab: tabSelectionState.tab,
             isPanelSelected: isPanelSelected,
             isButtonSelected: buttonSelection.id === tabSelectionState.id,
@@ -68,7 +71,7 @@ const CenteredContentDiv = styled.div`
 
 export function Tabs({ tabs }: TabsProps): ReactElement {
     const [tabsState, setTabsState] = useReducer(reducer, tabs, initTabsSelection);
-    const [selectedPanelContent, setSelectedPanelContent] = useState(tabs[0].panelContent);
+    const [selectedTab, setSelectedTab] = useState(tabsState[0]);
 
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         let selectedIndex = tabsState.findIndex(tabState => tabState.isButtonSelected);
@@ -76,19 +79,22 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
             if (event.key === 'ArrowLeft') {
                 selectedIndex = (selectedIndex === 0) ? tabsState.length - 1 : selectedIndex - 1;
                 selectTabByIndex(selectedIndex, false);
-            } else if (event.key === 'ArrowRight' || (event.key === 'Tab' && !isLastTabIndex(selectedIndex))) {
+            } else if (event.key === 'ArrowRight') {
                 selectedIndex = (selectedIndex === tabsState.length - 1) ? 0 : selectedIndex + 1;
                 selectTabByIndex(selectedIndex, false);
             } else if (event.key === 'Home' && selectedIndex > 0) {
                 selectTabByIndex(0, false);
             } else if (event.key === 'End' && !isLastTabIndex(selectedIndex)) {
                 selectTabByIndex(tabsState.length - 1, false);
+            } else if (event.key === 'Tab' && !tabsState[selectedIndex].isPanelSelected) {
+                const selectedPanelIndex = tabsState.findIndex(tabState => tabState.isPanelSelected);
+                selectTabByIndex(selectedPanelIndex, false);
             } else if (event.key === 'Enter' || event.key === ' ') {
                 selectPanel(tabsState[selectedIndex]);
             }
 
             if (['Home', 'End', 'Enter', ' '].includes(event.key) ||
-                (event.key === 'Tab' && !isLastTabIndex(selectedIndex))) {
+                (event.key === 'Tab' && !tabsState[selectedIndex].isPanelSelected)) {
                 event.preventDefault();
             }
         }
@@ -104,7 +110,7 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
     }
 
     function selectPanel(tabState: TabSelectionState): void {
-        setSelectedPanelContent(tabState.tab.panelContent);
+        setSelectedTab(tabState);
         setTabsState({ id: tabState.id, isPanelSelection: true });
     }
 
@@ -118,6 +124,8 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
             >
                 {tabsState.map((tabState, i) => (
                     <TabButton
+                        id={tabState.id}
+                        panelId={tabState.panelId}
                         key={tabState.id}
                         data-testid={`tab-button-${i + 1}`}
                         leftIcon={tabState.tab.leftIcon}
@@ -131,7 +139,12 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
                     </TabButton>
                 ))}
             </CenteredContentDiv>
-            <TabPanel>{selectedPanelContent}</TabPanel>
+            <TabPanel
+                id={selectedTab.panelId}
+                buttonId={selectedTab.id}
+            >
+                {selectedTab.tab.panelContent}
+            </TabPanel>
         </div>
     );
 }

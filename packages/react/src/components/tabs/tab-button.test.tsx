@@ -5,7 +5,14 @@ import { mountWithProviders } from '../../test-utils/renderer';
 import { TabButton } from './tab-button';
 
 describe('TabButton', () => {
-    const focusedAndSelected = { isSelected: true, isFocused: true, onClick: doNothing, onFocus: doNothing };
+    const focusedAndSelected = {
+        id: 'aId',
+        panelId: 'aPanelId',
+        isSelected: true,
+        isFocused: true,
+        onClick: doNothing,
+        onFocus: doNothing
+    };
 
     test('should display button text', () => {
         const expectedButtonText = 'some text';
@@ -58,6 +65,8 @@ describe('TabButton', () => {
         const expectedOnClickCall = jest.fn();
         const wrapper = mountWithProviders(
             <TabButton
+                id="aId"
+                panelId="aPanelId"
                 isSelected={true}
                 isFocused={true}
                 onClick={expectedOnClickCall}
@@ -76,6 +85,8 @@ describe('TabButton', () => {
         const expectedOnFocusCall = jest.fn();
         const wrapper = mountWithProviders(
             <TabButton
+                id="aId"
+                panelId="aPanelId"
                 isSelected={true}
                 isFocused={true}
                 onClick={doNothing}
@@ -91,5 +102,4 @@ describe('TabButton', () => {
     });
 });
 
-function doNothing(): void {
-}
+function doNothing(): void {}

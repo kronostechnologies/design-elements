@@ -8,12 +8,7 @@ import { Tab, Tabs } from './tabs';
 describe('Tabs', () => {
     test('should display the first tab panel by default', () => {
         const expectedTabPanel = 'content';
-        const tabs: Tab[] = [
-            {
-                title: 'button',
-                panelContent: <div data-testid="tab-panel-1">{expectedTabPanel}</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(1);
 
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
@@ -22,16 +17,7 @@ describe('Tabs', () => {
     });
 
     test('should select the first button by default', () => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(2);
 
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
@@ -40,16 +26,7 @@ describe('Tabs', () => {
     });
 
     test('should only have one button selected at a time', () => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         const tabButton1 = getByTestId(wrapper, 'tab-button-1');
@@ -60,16 +37,7 @@ describe('Tabs', () => {
     });
 
     test('should only display selected panel', () => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(2);
 
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
@@ -79,16 +47,7 @@ describe('Tabs', () => {
     });
 
     test('when a button is selected only the selected panel should be displayed', () => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         getByTestId(wrapper, 'tab-button-2').simulate('click');
@@ -100,16 +59,7 @@ describe('Tabs', () => {
         ['space', ' '],
         ['enter', 'Enter'],
     ])('when the right arrow and the %s keys are entered it should display the panel to the right', (_, key) => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
         givenClickOnFirstTab(wrapper);
         const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
@@ -120,68 +70,26 @@ describe('Tabs', () => {
         expectPanelToBeVisible(wrapper, 'tab-panel-2');
     });
 
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the tab and the %s keys are entered and the active tab is not the last one it should display the panel to the right', (_, key) => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        givenClickOnFirstTab(wrapper);
-        const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
+    test(
+        'when the tab key is entered and the focus tab is not the active one it should select back the active one',
+        () => {
+            const tabs: Tab[] = givenTabs(3);
+            const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+            const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
+            getByTestId(wrapper, 'tab-button-2').simulate('click');
+            tabButtonsContainer.simulate('keydown', { key: 'ArrowRight' });
 
-        tabButtonsContainer.simulate('keydown', { key: 'Tab' });
-        tabButtonsContainer.simulate('keydown', { key: key });
+            tabButtonsContainer.simulate('keydown', { key: 'Tab' });
 
-        expectPanelToBeVisible(wrapper, 'tab-panel-2');
-    });
-
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the tab and the %s keys are entered and the active tab is the last one it should not change the displayed panel', (_, key) => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
-
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
-        tabButtonsContainer.simulate('keydown', { key: 'Tab' });
-        tabButtonsContainer.simulate('keydown', { key: key });
-
-        expectPanelToBeVisible(wrapper, 'tab-panel-2');
-    });
+            const tabButton = getByTestId(wrapper, 'tab-button-2');
+            expect(tabButton.prop('isSelected')).toBe(true);
+        });
 
     test.each([
         ['space', ' '],
         ['enter', 'Enter'],
     ])('when the left arrow and the %s keys are entered it should display the panel to the left', (_, key) => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(2);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
         const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
         simulateTabSelectionToTheRight(tabButtonsContainer);
@@ -198,20 +106,7 @@ describe('Tabs', () => {
     ])(
         'when the left arrow and the %s keys are entered and first tab is active then it should display the last tab',
         (_, key) => {
-            const tabs: Tab[] = [
-                {
-                    title: 'button 1',
-                    panelContent: <div data-testid="tab-panel-1">content</div>,
-                },
-                {
-                    title: 'button 2',
-                    panelContent: <div data-testid="tab-panel-2">content</div>,
-                },
-                {
-                    title: 'button 3',
-                    panelContent: <div data-testid="tab-panel-3">content</div>,
-                },
-            ];
+            const tabs: Tab[] = givenTabs(3);
             const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
             givenClickOnFirstTab(wrapper);
             const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
@@ -228,20 +123,7 @@ describe('Tabs', () => {
     ])(
         'when the right arrow and the %s keys are entered and last tab is active then it should display the first tab',
         (_, key) => {
-            const tabs: Tab[] = [
-                {
-                    title: 'button 1',
-                    panelContent: <div data-testid="tab-panel-1">content</div>,
-                },
-                {
-                    title: 'button 2',
-                    panelContent: <div data-testid="tab-panel-2">content</div>,
-                },
-                {
-                    title: 'button 3',
-                    panelContent: <div data-testid="tab-panel-3">content</div>,
-                },
-            ];
+            const tabs: Tab[] = givenTabs(3);
             const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
             const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
             getByTestId(wrapper, 'tab-button-3').simulate('click');
@@ -256,20 +138,7 @@ describe('Tabs', () => {
         ['space', ' '],
         ['enter', 'Enter'],
     ])('when the home and the %s keys are entered then it should display the first tab', (_, key) => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-            {
-                title: 'button 3',
-                panelContent: <div data-testid="tab-panel-3">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(3);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
         const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
         getByTestId(wrapper, 'tab-button-3').simulate('click');
@@ -284,20 +153,7 @@ describe('Tabs', () => {
         ['space', ' '],
         ['enter', 'Enter'],
     ])('when the end and the %s keys are entered then it should display the last tab', (_, key) => {
-        const tabs: Tab[] = [
-            {
-                title: 'button 1',
-                panelContent: <div data-testid="tab-panel-1">content</div>,
-            },
-            {
-                title: 'button 2',
-                panelContent: <div data-testid="tab-panel-2">content</div>,
-            },
-            {
-                title: 'button 3',
-                panelContent: <div data-testid="tab-panel-3">content</div>,
-            },
-        ];
+        const tabs: Tab[] = givenTabs(3);
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
         givenClickOnFirstTab(wrapper);
         const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
@@ -308,6 +164,18 @@ describe('Tabs', () => {
         expectPanelToBeVisible(wrapper, 'tab-panel-3');
     });
 });
+
+function givenTabs(amount: number): Tab[] {
+    const tabs: Tab[] = [];
+    for (let i = 1; i <= amount; i++) {
+        tabs.push({
+            title: `button ${i}`,
+            panelContent: <div data-testid={`tab-panel-${i}`}>content</div>,
+        });
+    }
+
+    return tabs;
+}
 
 function simulateTabSelectionToTheRight(tabButtonsDiv: CommonWrapper): void {
     tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
