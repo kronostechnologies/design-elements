@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, ReactNode, useReducer } from 'react';
+import React, { KeyboardEvent, ReactElement, ReactNode, useReducer, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -63,11 +63,12 @@ function reducer(tabsSelectionState: TabSelectionState[], buttonSelection: Butto
 const CenteredContentDiv = styled.div`
     align-items: center;
     display: flex;
-    padding-bottom: 5px;
+    padding-bottom: var(--spacing-1x);
 `;
 
 export function Tabs({ tabs }: TabsProps): ReactElement {
     const [tabsState, setTabsState] = useReducer(reducer, tabs, initTabsSelection);
+    const [selectedPanelContent, setSelectedPanelContent] = useState(tabs[0].panelContent);
 
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         let selectedIndex = tabsState.findIndex(tabState => tabState.isButtonSelected);
@@ -83,7 +84,7 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
             } else if (event.key === 'End' && !isLastTabIndex(selectedIndex)) {
                 selectTabByIndex(tabsState.length - 1, false);
             } else if (event.key === 'Enter' || event.key === ' ') {
-                selectTabByIndex(selectedIndex, true);
+                selectPanel(tabsState[selectedIndex]);
             }
 
             if (['Home', 'End', 'Enter', ' '].includes(event.key) ||
@@ -102,10 +103,15 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
         setTabsState({ id: tabToSelect.id, isPanelSelection: isPanelSelection });
     }
 
+    function selectPanel(tabState: TabSelectionState): void {
+        setSelectedPanelContent(tabState.tab.panelContent);
+        setTabsState({ id: tabState.id, isPanelSelection: true });
+    }
+
     return (
         <div>
             <CenteredContentDiv
-                data-testid="tab-buttons-div"
+                data-testid="tab-buttons-container"
                 role="tablist"
                 aria-label="tabs label"
                 onKeyDown={handleKeyDown}
@@ -113,23 +119,19 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
                 {tabsState.map((tabState, i) => (
                     <TabButton
                         key={tabState.id}
-                        data-testid={`tab-button--${i + 1}`}
-                        textValue={tabState.tab.title}
+                        data-testid={`tab-button-${i + 1}`}
                         leftIcon={tabState.tab.leftIcon}
                         rightIcon={tabState.tab.rightIcon}
                         isSelected={tabState.isPanelSelected}
                         isFocused={tabState.isButtonSelected}
-                        onClick={() => setTabsState({ id: tabState.id, isPanelSelection: true })}
+                        onClick={() => selectPanel(tabState)}
                         onFocus={() => setTabsState({ id: tabState.id, isPanelSelection: false })}
-                    />
+                    >
+                        {tabState.tab.title}
+                    </TabButton>
                 ))}
             </CenteredContentDiv>
-
-            {tabsState.map((tabState, i) => tabState.isPanelSelected && (
-                <TabPanel key={tabState.id} data-testid={`tab-panel--${i + 1}`}>
-                    {tabState.tab.panelContent}
-                </TabPanel>
-            ))}
+            <TabPanel>{selectedPanelContent}</TabPanel>
         </div>
     );
 }

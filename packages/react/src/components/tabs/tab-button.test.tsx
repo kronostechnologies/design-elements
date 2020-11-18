@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { ReactWrapper } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
-import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';
 
 describe('TabButton', () => {
+    const focusedAndSelected = { isSelected: true, isFocused: true, onClick: doNothing, onFocus: doNothing };
+
     test('should display button text', () => {
         const expectedButtonText = 'some text';
-        const wrapper = mountTabButtonWithProviders(expectedButtonText);
+        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>{expectedButtonText}</TabButton>);
 
         const tabPanel = getByTestId(wrapper, 'tab-button-text');
 
@@ -17,7 +17,7 @@ describe('TabButton', () => {
     });
 
     test('should not have a left icon in button when tab doesn\'t have a left icon name', () => {
-        const wrapper = mountTabButtonWithProviders('some text');
+        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
 
         const tabButtonLeftIcon = findByTestId(wrapper, 'tab-button-left-icon');
 
@@ -26,7 +26,9 @@ describe('TabButton', () => {
 
     test('should have a left icon in button when tab has a left icon name', () => {
         const expectedLeftIcon = 'chevronUp';
-        const wrapper = mountTabButtonWithProviders('some text', expectedLeftIcon);
+        const wrapper = mountWithProviders(
+            <TabButton {...focusedAndSelected} leftIcon={expectedLeftIcon}>some text</TabButton>,
+        );
 
         const tabButtonLeftIcon = getByTestId(wrapper, 'tab-button-left-icon');
 
@@ -34,7 +36,7 @@ describe('TabButton', () => {
     });
 
     test('should not have a right icon in button when tab doesn\'t have a right icon name', () => {
-        const wrapper = mountTabButtonWithProviders('some text');
+        const wrapper = mountWithProviders(<TabButton {...focusedAndSelected}>some text</TabButton>);
 
         const tabButtonRightIcon = findByTestId(wrapper, 'tab-button-right-icon');
 
@@ -43,28 +45,51 @@ describe('TabButton', () => {
 
     test('should have a right icon in button when tab has a right icon name', () => {
         const expectedRightIcon = 'chevronDown';
-        const wrapper = mountTabButtonWithProviders('some text', 'chevronUp', expectedRightIcon);
+        const wrapper = mountWithProviders(
+            <TabButton {...focusedAndSelected} rightIcon={expectedRightIcon}>some text</TabButton>,
+        );
 
         const tabButtonRightIcon = getByTestId(wrapper, 'tab-button-right-icon');
 
         expect(tabButtonRightIcon.prop('name')).toBe(expectedRightIcon);
     });
+
+    test('should call component onClick method when button is clicked', () => {
+        const expectedOnClickCall = jest.fn();
+        const wrapper = mountWithProviders(
+            <TabButton
+                isSelected={true}
+                isFocused={true}
+                onClick={expectedOnClickCall}
+                onFocus={doNothing}
+            >
+                some text
+            </TabButton>,
+        );
+
+        getByTestId(wrapper, 'tab-button').simulate('click');
+
+        expect(expectedOnClickCall).toHaveBeenCalled();
+    });
+
+    test('should call component onFocus method when button is focused', () => {
+        const expectedOnFocusCall = jest.fn();
+        const wrapper = mountWithProviders(
+            <TabButton
+                isSelected={true}
+                isFocused={true}
+                onClick={doNothing}
+                onFocus={expectedOnFocusCall}
+            >
+                some text
+            </TabButton>,
+        );
+
+        getByTestId(wrapper, 'tab-button').simulate('focus');
+
+        expect(expectedOnFocusCall).toHaveBeenCalled();
+    });
 });
 
-function mountTabButtonWithProviders(textValue: string, leftIcon?: IconName, rightIcon?: IconName): ReactWrapper {
-    return mountWithProviders(
-        <TabButton
-            textValue={textValue}
-            leftIcon={leftIcon}
-            rightIcon={rightIcon}
-            isSelected={true}
-            isFocused={true}
-            onClick={doNothing}
-            onFocus={doNothing}
-        />,
-    );
-}
-
 function doNothing(): void {
-    // doNothing
 }
