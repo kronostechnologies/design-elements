@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextInput Matches the snapshot [disabled = true] 1`] = `
-.c1 {
+.c2 {
   color: #000000;
   display: block;
   font-size: 0.75rem;
@@ -39,7 +39,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
@@ -58,54 +58,54 @@ input + .c1 {
   width: 100%;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #57666E;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #57666E;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #57666E;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #57666E;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #F1F2F2;
   border-color: #D9DDE2;
 }
 
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled::placeholder {
+.c3:disabled,
+.c3:disabled::placeholder {
   color: #9CA7B4;
 }
 
@@ -113,12 +113,12 @@ input + .c1 {
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 c2"
   >
     Telephone
   </label>
   <input
-    className="c2"
+    className="c3"
     defaultValue="foo"
     disabled={true}
     onBlur={[Function]}
@@ -132,7 +132,7 @@ input + .c1 {
 `;
 
 exports[`TextInput Matches the snapshot [required = true] 1`] = `
-.c1 {
+.c2 {
   color: #000000;
   display: block;
   font-size: 0.75rem;
@@ -170,7 +170,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
@@ -189,54 +189,54 @@ input + .c1 {
   width: 100%;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #57666E;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #57666E;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #57666E;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #57666E;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #F1F2F2;
   border-color: #D9DDE2;
 }
 
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled::placeholder {
+.c3:disabled,
+.c3:disabled::placeholder {
   color: #9CA7B4;
 }
 
@@ -244,12 +244,12 @@ input + .c1 {
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 c2"
   >
     Telephone
   </label>
   <input
-    className="c2"
+    className="c3"
     defaultValue="foo"
     onBlur={[Function]}
     onChange={[Function]}
@@ -263,7 +263,7 @@ input + .c1 {
 `;
 
 exports[`TextInput Matches the snapshot 1`] = `
-.c1 {
+.c2 {
   color: #000000;
   display: block;
   font-size: 0.75rem;
@@ -301,7 +301,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c2 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
@@ -320,54 +320,54 @@ input + .c1 {
   width: 100%;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #57666E;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #57666E;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #57666E;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #57666E;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #F1F2F2;
   border-color: #D9DDE2;
 }
 
-.c2:disabled,
-.c2:disabled::-webkit-input-placeholder {
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled::-moz-placeholder {
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled:-ms-input-placeholder {
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
   color: #9CA7B4;
 }
 
-.c2:disabled,
-.c2:disabled::placeholder {
+.c3:disabled,
+.c3:disabled::placeholder {
   color: #9CA7B4;
 }
 
@@ -375,12 +375,12 @@ input + .c1 {
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 c2"
   >
     Telephone
   </label>
   <input
-    className="c2"
+    className="c3"
     defaultValue="foo"
     onBlur={[Function]}
     onChange={[Function]}

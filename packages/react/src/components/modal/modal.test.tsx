@@ -1,5 +1,5 @@
 import { renderPortalWithProviders } from '@design-elements/test-utils/portal-renderer';
-import { fireEvent, getByTestId, RenderResult } from '@testing-library/react';
+import { fireEvent, RenderResult } from '@testing-library/react';
 import React from 'react';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Modal, ModalProps } from './modal';
@@ -7,13 +7,13 @@ import { Modal, ModalProps } from './modal';
 describe('Modal', () => {
     test('onRequestClose callback is called when close-button is clicked', () => {
         const callback = jest.fn();
-        const { baseElement } = renderPortalWithProviders(
+        const { getByTestId } = renderPortalWithProviders(
             <Modal isOpen onRequestClose={callback} ariaHideApp={false}>
                 <p id="modal-description">Test Content</p>
             </Modal>, 'desktop',
         );
 
-        fireEvent.click(getByTestId(baseElement, 'close-button'));
+        fireEvent.click(getByTestId('close-button'));
 
         expect(callback).toHaveBeenCalled();
     });
@@ -55,13 +55,15 @@ describe('Modal', () => {
     });
 });
 
-interface ModalPropsLite extends Omit<ModalProps, 'ariaDescribedby' | 'ariaLabel' | 'ariaHideApp' | 'onRequestClose'> {}
+interface ModalPropsLite extends Omit<ModalProps, 'ariaDescribedby' | 'ariaLabel' | 'ariaHideApp' | 'onRequestClose'> {
+}
 
 const defaultTestProps = {
     ariaDescribedby: 'modal-description',
     ariaLabel: 'Test modal',
     ariaHideApp: false,
-    onRequestClose: () => {},
+    onRequestClose: () => {
+    },
 };
 
 function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): RenderResult {

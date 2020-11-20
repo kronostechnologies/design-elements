@@ -39,11 +39,6 @@ exports[`Icon Button Has disabled styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
-  padding: 0;
-  width: 32px;
 }
 
 .c0:focus {
@@ -64,27 +59,35 @@ exports[`Icon Button Has disabled styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+  padding: 0;
+  width: 32px;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
 }
 
-.c0:disabled {
+.c1:disabled {
   background-color: #99CCDB;
 }
 
 <button
   aria-label="home"
-  class="c0"
+  class="c0 c1"
   disabled=""
   type="submit"
 >
@@ -136,11 +139,6 @@ exports[`Icon Button Has mobile styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
-  padding: 0;
-  width: 48px;
 }
 
 .c0:focus {
@@ -161,27 +159,35 @@ exports[`Icon Button Has mobile styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+  padding: 0;
+  width: 48px;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
 }
 
-.c0:disabled {
+.c1:disabled {
   background-color: #99CCDB;
 }
 
 <button
   aria-label="home"
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   <svg
@@ -232,11 +238,6 @@ exports[`Icon Button Has primary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
-  padding: 0;
-  width: 32px;
 }
 
 .c0:focus {
@@ -257,27 +258,35 @@ exports[`Icon Button Has primary styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+  padding: 0;
+  width: 32px;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
 }
 
-.c0:disabled {
+.c1:disabled {
   background-color: #99CCDB;
 }
 
 <button
   aria-label="home"
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   <svg
@@ -328,11 +337,6 @@ exports[`Icon Button Has secondary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: #0080A5;
-  color: #0080A5;
-  padding: 0;
-  width: 32px;
 }
 
 .c0:focus {
@@ -353,29 +357,37 @@ exports[`Icon Button Has secondary styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: transparent;
+  border-color: #0080A5;
+  color: #0080A5;
+  padding: 0;
+  width: 32px;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   border-color: #005F7A;
   color: #005F7A;
 }
 
-.c0:disabled {
+.c1:disabled {
   border-color: #99CCDB;
   color: #99CCDB;
 }
 
 <button
   aria-label="home"
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   <svg
@@ -426,11 +438,6 @@ exports[`Icon Button Has tertiary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 32px;
 }
 
 .c0:focus {
@@ -451,29 +458,37 @@ exports[`Icon Button Has tertiary styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c0:disabled {
+.c1:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
 
 <button
   aria-label="home"
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   <svg

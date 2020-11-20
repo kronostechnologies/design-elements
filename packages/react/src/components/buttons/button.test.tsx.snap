@@ -39,9 +39,6 @@ exports[`Button has disabled styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
 }
 
 .c0:focus {
@@ -62,30 +59,36 @@ exports[`Button has disabled styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
   border-color: #005F7A;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
 
 <button
-  class="c0"
+  class="c0 c1"
   disabled=""
   type="submit"
 >
@@ -132,9 +135,6 @@ exports[`Button has mobile styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
 }
 
 .c0:focus {
@@ -155,30 +155,36 @@ exports[`Button has mobile styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
   border-color: #005F7A;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
 
 <button
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   Primary Button
@@ -224,9 +230,6 @@ exports[`Button has primary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
 }
 
 .c0:focus {
@@ -247,30 +250,36 @@ exports[`Button has primary styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
   border-color: #005F7A;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
 
 <button
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   Primary Button
@@ -316,9 +325,6 @@ exports[`Button has secondary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: #0080A5;
-  color: #0080A5;
 }
 
 .c0:focus {
@@ -339,30 +345,36 @@ exports[`Button has secondary styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: transparent;
+  border-color: #0080A5;
+  color: #0080A5;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #0080A5;
   color: #FFFFFF;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   border-color: #99CCDB;
   color: #99CCDB;
 }
 
 <button
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   Secondary Button
@@ -408,9 +420,6 @@ exports[`Button has tertiary styles 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
 }
 
 .c0:focus {
@@ -431,30 +440,36 @@ exports[`Button has tertiary styles 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   background-color: transparent;
   color: #9CA7B4;
 }
 
 <button
-  class="c0"
+  class="c0 c1"
   type="submit"
 >
   Tertiary Button

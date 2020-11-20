@@ -30,15 +30,13 @@ export const all = () => (
     </>
 );
 
-all.story = {
-    decorators: [
-        (Story: ComponentType) => (
-            <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-                <Story />
-            </div>
-        ),
-    ],
-};
+all.decorators = [
+    (Story: ComponentType) => (
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <Story />
+        </div>
+    ),
+];
 
 export const alertTriangle = () => (
     <Icon name="alertTriangle" />

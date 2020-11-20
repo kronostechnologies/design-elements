@@ -8,7 +8,10 @@ variables:
 executors:
   node:
     docker:
-      - image: 'circleci/node:10.16.3'
+      - image: 'cimg/node:14.15.1'
+
+orbs:
+  eq: equisoft/build-tools@0.0.9
 
 commands:
   attach_at_working_directory:
@@ -16,40 +19,20 @@ commands:
       - attach_workspace:
           at: *working_directory
 
-  node_deps_cache_restore:
-    parameters:
-      directory:
-        type: string
-    steps:
-      - restore_cache:
-          name: Restoring NodeJS dependencies cache (node_modules)
-          key: &yarn_cache 'v3-yarn-<< parameters.directory >>-{{ checksum "yarn.lock" }}'
-
-  node_deps_cache_save:
-    parameters:
-      directory:
-        type: string
-    steps:
-      - save_cache:
-          name: Saving NodeJS dependencies cache (node_modules)
-          key: *yarn_cache
-          paths:
-            - 'node_modules'
-
   node_deps_install:
-    parameters:
-      directory:
-        type: string
     steps:
-      - node_deps_cache_restore:
-          directory: << parameters.directory >>
-      - run: test -d node_modules || yarn --non-interactive --no-progress --frozen-lockfile
-      - node_deps_cache_save:
-          directory: << parameters.directory >>
+      - eq/with-yarn-cache:
+          cache-version: 'v4'
 
   yarn_lint:
+    parameters:
+      directory:
+        type: string
     steps:
-      - run: yarn lint:ci
+      - run:
+          command: |
+            cd << parameters.directory >>
+            yarn lint:ci
       - store_test_results:
           path: build/lint
 
@@ -73,34 +56,16 @@ commands:
           command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
   yarn_test:
+    parameters:
+      directory:
+        type: string
     steps:
-      - run: yarn test:ci
+      - run:
+          command: |
+            cd << parameters.directory >>
+            yarn test:ci
       - store_test_results:
           path: build/tests
-
-  yalc_push:
-    parameters:
-      display_name:
-        type: string
-      working_directory:
-        type: string
-    steps:
-      - run:
-          name: 'Yalc push << parameters.display_name >>'
-          command: 'yalc push'
-          working_directory: << parameters.working_directory >>
-
-  yalc_add_packages:
-    parameters:
-      packages:
-        type: string
-      working_directory:
-        type: string
-    steps:
-      - run:
-          name: 'Yalc add << parameters.packages >>'
-          command: 'yalc add << parameters.packages >>'
-          working_directory: << parameters.working_directory >>
 
 jobs:
   prepare_workspace:
@@ -114,83 +79,55 @@ jobs:
 
   node_install_deps:
     executor: "node"
-    parameters:
-      directory:
-        type: string
-    working_directory: << parameters.directory >>
     steps:
       - attach_at_working_directory
-      - node_deps_install:
-          directory: << parameters.directory >>
+      - node_deps_install
       - persist_to_workspace:
           root: *working_directory
           paths:
-          - '*/*/node_modules'
-          - 'node_modules'
+            - '.yarn'
 
   yarn_lint:
     executor: "node"
     parameters:
       directory:
         type: string
-    working_directory: << parameters.directory >>
+    working_directory: *working_directory
     steps:
       - attach_at_working_directory
-      - node_deps_cache_restore:
-          directory: << parameters.directory >>
-      - yarn_lint
+      #- node_deps_install
+      #- yarn_lint: // TODO: Enable after switching to ESLint
+      #    directory: << parameters.directory >>
 
   yarn_test:
     executor: "node"
     parameters:
       directory:
         type: string
-    working_directory: << parameters.directory >>
+    working_directory: *working_directory
     steps:
       - attach_at_working_directory
-      - node_deps_cache_restore:
+      - node_deps_install
+      - yarn_test:
           directory: << parameters.directory >>
-      - yarn_test
 
   yarn_build:
     executor: "node"
     parameters:
       directory:
         type: string
-      use_workspace:
-        type: boolean
-        default: false
-    working_directory: << parameters.directory >>
+    working_directory: *working_directory
     steps:
       - attach_at_working_directory
-      - unless:
-          condition: << parameters.use_workspace >>
-          steps:
-            - node_deps_cache_restore:
-                directory: << parameters.directory >>
-      - run: yarn build
+      - node_deps_install
+      - run:
+          command: |
+            cd << parameters.directory >>
+            yarn build
       - persist_to_workspace:
           root: *working_directory
           paths:
             - '*/*/dist'
-
-  yalc_push:
-    executor: "node"
-    working_directory: *working_directory
-    steps:
-      - attach_at_working_directory
-      - run: sudo npm i -g yalc
-      - yalc_push:
-          display_name: '@equisoft/design-elements-react'
-          working_directory: *react_directory
-      - yalc_add_packages:
-          packages: '@equisoft/design-elements-react'
-          working_directory: *storybook_directory
-      - persist_to_workspace:
-          root: *working_directory
-          paths:
-            - '*/*/.yalc'
-            - '*/*/node_modules'
 
   create_prerelease_versions:
     executor: "node"
@@ -248,51 +185,39 @@ workflows:
   build:
     jobs:
       - prepare_workspace
-
-      ### REACT
       - node_install_deps:
-          name: react_node_install_deps
-          directory: *react_directory
           requires:
             - prepare_workspace
+
+      ### REACT
       - yarn_lint:
           name: react_yarn_lint
           directory: *react_directory
           requires:
-            - react_node_install_deps
+            - node_install_deps
       - yarn_test:
           name: react_yarn_test
           directory: *react_directory
           requires:
-            - react_node_install_deps
+            - node_install_deps
       - yarn_build:
           name: react_yarn_build
           directory: *react_directory
           requires:
-            - react_node_install_deps
+            - node_install_deps
 
       ### STORYBOOK
-      - node_install_deps:
-          name: storybook_node_install_deps
-          directory: *storybook_directory
-          requires:
-            - prepare_workspace
-      - yalc_push:
-          name: storybook_yalc_push
-          requires:
-            - storybook_node_install_deps
-            - react_yarn_build
       - yarn_lint:
           name: storybook_yarn_lint
           directory: *storybook_directory
           requires:
-            - storybook_yalc_push
+            - node_install_deps
       - yarn_build:
           name: storybook_yarn_build
           directory: *storybook_directory
-          use_workspace: true
           requires:
-            - storybook_yalc_push
+            - node_install_deps
+            - react_yarn_build
       - update_github_pages_storybook_version:
           filters:
             branches:
@@ -309,7 +234,6 @@ workflows:
               only:
                 - master
           name: root_node_install_deps
-          directory: *working_directory
           requires:
             - prepare_workspace
       - create_prerelease_versions:

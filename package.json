@@ -1,13 +1,7 @@
 {
-  "name": "root",
-  "author": "Equisoft Design",
-  "maintainers": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
-  ],
-  "contributors": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
-  ],
-  "devDependencies": {
-    "lerna": "^3.14.1"
-  }
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
 }
