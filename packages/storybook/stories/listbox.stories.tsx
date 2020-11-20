@@ -1,4 +1,4 @@
-import { Listbox, Option } from '@equisoft/design-elements-react';
+import { Listbox } from '@equisoft/design-elements-react';
 import React from 'react';
 
 export default {
@@ -6,7 +6,7 @@ export default {
     component: Listbox,
 };
 
-const options: Option[] = [
+const options = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -58,23 +58,6 @@ export const listboxWithMultiselect = () => (
         onChange={option => console.log('onChange', option)}
     />
 );
-
-export const listboxWithOnSelectCallback = () => {
-    const ListboxOptions: Option[] = [
-        {
-            label: 'Option A',
-            value: 'optionA',
-            onSelect: (option) => console.log(option),
-        },
-        {
-            label: 'Option B',
-            value: 'optionB',
-            onSelect: (option) => console.log(option),
-        },
-    ];
-
-    return <Listbox options={ListboxOptions}/>;
-};
 
 export const listboxWithCheck = () => (
     <Listbox

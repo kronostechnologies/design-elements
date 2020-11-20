@@ -6,4 +6,5 @@ export const tokens: Theme['tokens'] = {
     'focus-border-box-shadow': `0 0 0 3px ${main['primary-1.1']}66, 0 0 0 1px ${main['primary-1.1']}`,
     'focus-border-box-shadow-inset': `inset 0 0 0 3px ${main['primary-1.1']}66, inset 0 0 0 1px ${main['primary-1.1']}`,
     'focus-border': `${main['primary-1.1']}`,
+    'overlay-box-shadow': '0 10px 20px 0 rgba(0, 0, 0, 0.19)',
 };

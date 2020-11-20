@@ -28,6 +28,9 @@ export const Translations = {
         'money-input': {
             validationErrorMessage: 'Invalid number',
         },
+        'nav-menu-button': {
+            ariaLabel: 'Navigation menu',
+        },
         pagination: {
             results: 'results',
         },
@@ -73,6 +76,9 @@ export const Translations = {
         },
         'money-input': {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
+        },
+        'nav-menu-button': {
+            ariaLabel: 'Menu de navigation',
         },
         pagination: {
             results: 'résultats',
