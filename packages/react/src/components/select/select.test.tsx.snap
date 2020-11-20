@@ -1,64 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select disabled select has a different style 1`] = `
-.c6 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c8 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #57666E,0 10px 20px 0 rgba(0,0,0,0.19);
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c8:focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
-}
-
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
-  min-width: 0;
-  padding: 0 var(--spacing-1x) 0 var(--spacing-4x);
-}
-
-.c9 > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c9:focus {
-  outline: none;
-}
-
-.c9:active {
-  background-color: #D9DDE2;
-}
-
-.c2 {
+.c3 {
   color: #000000;
   display: block;
   font-size: 0.75rem;
@@ -94,6 +37,58 @@ input + .c2 {
 
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
+}
+
+.c7 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c8 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c9:focus {
+  outline: none;
 }
 
 .c1 {
@@ -184,11 +179,6 @@ input + .c2 {
   display: flex;
 }
 
-.c7 {
-  position: absolute;
-  width: 100%;
-}
-
 <div
   class="c0 c1"
 >
@@ -233,7 +223,7 @@ input + .c2 {
   </div>
   <div
     aria-multiselectable="false"
-    class="c6 c7"
+    class="c7"
     role="listbox"
     tabindex="-1"
   >
@@ -252,9 +242,7 @@ input + .c2 {
         id="listbox_undefined_on"
         role="option"
       >
-        <span>
-          Ontario
-        </span>
+        Ontario
       </li>
       <li
         aria-label="Quebec"
@@ -264,9 +252,7 @@ input + .c2 {
         id="listbox_undefined_qc"
         role="option"
       >
-        <span>
-          Quebec
-        </span>
+        Quebec
       </li>
       <li
         aria-label="British Columbia"
@@ -276,9 +262,7 @@ input + .c2 {
         id="listbox_undefined_bc"
         role="option"
       >
-        <span>
-          British Columbia
-        </span>
+        British Columbia
       </li>
       <li
         aria-label="Alberta"
@@ -288,9 +272,7 @@ input + .c2 {
         id="listbox_undefined_ab"
         role="option"
       >
-        <span>
-          Alberta
-        </span>
+        Alberta
       </li>
       <li
         aria-label="Manitoba"
@@ -300,9 +282,7 @@ input + .c2 {
         id="listbox_undefined_mb"
         role="option"
       >
-        <span>
-          Manitoba
-        </span>
+        Manitoba
       </li>
       <li
         aria-label="Saskatchewan"
@@ -312,9 +292,7 @@ input + .c2 {
         id="listbox_undefined_sk"
         role="option"
       >
-        <span>
-          Saskatchewan
-        </span>
+        Saskatchewan
       </li>
       <li
         aria-label="Nova Scotia"
@@ -324,9 +302,7 @@ input + .c2 {
         id="listbox_undefined_ns"
         role="option"
       >
-        <span>
-          Nova Scotia
-        </span>
+        Nova Scotia
       </li>
       <li
         aria-label="New Brunswick"
@@ -336,9 +312,7 @@ input + .c2 {
         id="listbox_undefined_nb"
         role="option"
       >
-        <span>
-          New Brunswick
-        </span>
+        New Brunswick
       </li>
       <li
         aria-label="Newfoundland and Labrador"
@@ -348,9 +322,7 @@ input + .c2 {
         id="listbox_undefined_nl"
         role="option"
       >
-        <span>
-          Newfoundland and Labrador
-        </span>
+        Newfoundland and Labrador
       </li>
       <li
         aria-label="Prince Edward Island"
@@ -360,9 +332,7 @@ input + .c2 {
         id="listbox_undefined_pe"
         role="option"
       >
-        <span>
-          Prince Edward Island
-        </span>
+        Prince Edward Island
       </li>
       <li
         aria-label="Northwest Territories"
@@ -372,9 +342,7 @@ input + .c2 {
         id="listbox_undefined_nt"
         role="option"
       >
-        <span>
-          Northwest Territories
-        </span>
+        Northwest Territories
       </li>
       <li
         aria-label="Nunavut"
@@ -384,9 +352,7 @@ input + .c2 {
         id="listbox_undefined_nu"
         role="option"
       >
-        <span>
-          Nunavut
-        </span>
+        Nunavut
       </li>
       <li
         aria-label="Yukon"
@@ -396,9 +362,7 @@ input + .c2 {
         id="listbox_undefined_yt"
         role="option"
       >
-        <span>
-          Yukon
-        </span>
+        Yukon
       </li>
     </ul>
   </div>
@@ -407,64 +371,7 @@ input + .c2 {
 
 exports[`Select invalid select has a different style 1`] = `
 Array [
-  .c9 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c11 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #57666E,0 10px 20px 0 rgba(0,0,0,0.19);
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c11:focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
-}
-
-.c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
-  min-width: 0;
-  padding: 0 var(--spacing-1x) 0 var(--spacing-4x);
-}
-
-.c12 > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c12:focus {
-  outline: none;
-}
-
-.c12:active {
-  background-color: #D9DDE2;
-}
-
-.c3 {
+  .c4 {
   color: #A40C2E;
   display: -webkit-box;
   display: -webkit-flex;
@@ -530,6 +437,58 @@ input + .c2 {
 
 .c0 > :nth-child(2) {
   margin-bottom: var(--spacing-half);
+}
+
+.c10 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c11 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c11:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c12:focus {
+  outline: none;
 }
 
 .c1 {
@@ -620,11 +579,6 @@ input + .c2 {
   display: flex;
 }
 
-.c10 {
-  position: absolute;
-  width: 100%;
-}
-
 <div
     class="c0 c1"
   >
@@ -688,7 +642,7 @@ input + .c2 {
     </div>
     <div
       aria-multiselectable="false"
-      class="c9 c10"
+      class="c10"
       role="listbox"
       tabindex="-1"
     >
@@ -707,9 +661,7 @@ input + .c2 {
           id="listbox_undefined_on"
           role="option"
         >
-          <span>
-            Ontario
-          </span>
+          Ontario
         </li>
         <li
           aria-label="Quebec"
@@ -719,9 +671,7 @@ input + .c2 {
           id="listbox_undefined_qc"
           role="option"
         >
-          <span>
-            Quebec
-          </span>
+          Quebec
         </li>
         <li
           aria-label="British Columbia"
@@ -731,9 +681,7 @@ input + .c2 {
           id="listbox_undefined_bc"
           role="option"
         >
-          <span>
-            British Columbia
-          </span>
+          British Columbia
         </li>
         <li
           aria-label="Alberta"
@@ -743,9 +691,7 @@ input + .c2 {
           id="listbox_undefined_ab"
           role="option"
         >
-          <span>
-            Alberta
-          </span>
+          Alberta
         </li>
         <li
           aria-label="Manitoba"
@@ -755,9 +701,7 @@ input + .c2 {
           id="listbox_undefined_mb"
           role="option"
         >
-          <span>
-            Manitoba
-          </span>
+          Manitoba
         </li>
         <li
           aria-label="Saskatchewan"
@@ -767,9 +711,7 @@ input + .c2 {
           id="listbox_undefined_sk"
           role="option"
         >
-          <span>
-            Saskatchewan
-          </span>
+          Saskatchewan
         </li>
         <li
           aria-label="Nova Scotia"
@@ -779,9 +721,7 @@ input + .c2 {
           id="listbox_undefined_ns"
           role="option"
         >
-          <span>
-            Nova Scotia
-          </span>
+          Nova Scotia
         </li>
         <li
           aria-label="New Brunswick"
@@ -791,9 +731,7 @@ input + .c2 {
           id="listbox_undefined_nb"
           role="option"
         >
-          <span>
-            New Brunswick
-          </span>
+          New Brunswick
         </li>
         <li
           aria-label="Newfoundland and Labrador"
@@ -803,9 +741,7 @@ input + .c2 {
           id="listbox_undefined_nl"
           role="option"
         >
-          <span>
-            Newfoundland and Labrador
-          </span>
+          Newfoundland and Labrador
         </li>
         <li
           aria-label="Prince Edward Island"
@@ -815,9 +751,7 @@ input + .c2 {
           id="listbox_undefined_pe"
           role="option"
         >
-          <span>
-            Prince Edward Island
-          </span>
+          Prince Edward Island
         </li>
         <li
           aria-label="Northwest Territories"
@@ -827,9 +761,7 @@ input + .c2 {
           id="listbox_undefined_nt"
           role="option"
         >
-          <span>
-            Northwest Territories
-          </span>
+          Northwest Territories
         </li>
         <li
           aria-label="Nunavut"
@@ -839,9 +771,7 @@ input + .c2 {
           id="listbox_undefined_nu"
           role="option"
         >
-          <span>
-            Nunavut
-          </span>
+          Nunavut
         </li>
         <li
           aria-label="Yukon"
@@ -851,9 +781,7 @@ input + .c2 {
           id="listbox_undefined_yt"
           role="option"
         >
-          <span>
-            Yukon
-          </span>
+          Yukon
         </li>
       </ul>
     </div>
@@ -957,64 +885,7 @@ input[type="radio"]:disabled + .c1 {
 
 exports[`Select matches the snapshot 1`] = `
 Array [
-  .c6 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c8 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #57666E,0 10px 20px 0 rgba(0,0,0,0.19);
-  list-style-type: none;
-  margin: 0;
-  max-height: 128px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c8:focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
-}
-
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
-  min-width: 0;
-  padding: 0 var(--spacing-1x) 0 var(--spacing-4x);
-}
-
-.c9 > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c9:focus {
-  outline: none;
-}
-
-.c9:active {
-  background-color: #D9DDE2;
-}
-
-.c2 {
+  .c3 {
   color: #000000;
   display: block;
   font-size: 0.75rem;
@@ -1050,6 +921,58 @@ input + .c2 {
 
 .c0 > :nth-child(1) {
   margin-bottom: var(--spacing-half);
+}
+
+.c7 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c8 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 128px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c8:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c9:focus {
+  outline: none;
 }
 
 .c1 {
@@ -1140,11 +1063,6 @@ input + .c2 {
   display: flex;
 }
 
-.c7 {
-  position: absolute;
-  width: 100%;
-}
-
 <div
     class="c0 c1"
   >
@@ -1186,7 +1104,7 @@ input + .c2 {
     </div>
     <div
       aria-multiselectable="false"
-      class="c6 c7"
+      class="c7"
       role="listbox"
       tabindex="-1"
     >
@@ -1205,9 +1123,7 @@ input + .c2 {
           id="listbox_undefined_on"
           role="option"
         >
-          <span>
-            Ontario
-          </span>
+          Ontario
         </li>
         <li
           aria-label="Quebec"
@@ -1217,9 +1133,7 @@ input + .c2 {
           id="listbox_undefined_qc"
           role="option"
         >
-          <span>
-            Quebec
-          </span>
+          Quebec
         </li>
         <li
           aria-label="British Columbia"
@@ -1229,9 +1143,7 @@ input + .c2 {
           id="listbox_undefined_bc"
           role="option"
         >
-          <span>
-            British Columbia
-          </span>
+          British Columbia
         </li>
         <li
           aria-label="Alberta"
@@ -1241,9 +1153,7 @@ input + .c2 {
           id="listbox_undefined_ab"
           role="option"
         >
-          <span>
-            Alberta
-          </span>
+          Alberta
         </li>
         <li
           aria-label="Manitoba"
@@ -1253,9 +1163,7 @@ input + .c2 {
           id="listbox_undefined_mb"
           role="option"
         >
-          <span>
-            Manitoba
-          </span>
+          Manitoba
         </li>
         <li
           aria-label="Saskatchewan"
@@ -1265,9 +1173,7 @@ input + .c2 {
           id="listbox_undefined_sk"
           role="option"
         >
-          <span>
-            Saskatchewan
-          </span>
+          Saskatchewan
         </li>
         <li
           aria-label="Nova Scotia"
@@ -1277,9 +1183,7 @@ input + .c2 {
           id="listbox_undefined_ns"
           role="option"
         >
-          <span>
-            Nova Scotia
-          </span>
+          Nova Scotia
         </li>
         <li
           aria-label="New Brunswick"
@@ -1289,9 +1193,7 @@ input + .c2 {
           id="listbox_undefined_nb"
           role="option"
         >
-          <span>
-            New Brunswick
-          </span>
+          New Brunswick
         </li>
         <li
           aria-label="Newfoundland and Labrador"
@@ -1301,9 +1203,7 @@ input + .c2 {
           id="listbox_undefined_nl"
           role="option"
         >
-          <span>
-            Newfoundland and Labrador
-          </span>
+          Newfoundland and Labrador
         </li>
         <li
           aria-label="Prince Edward Island"
@@ -1313,9 +1213,7 @@ input + .c2 {
           id="listbox_undefined_pe"
           role="option"
         >
-          <span>
-            Prince Edward Island
-          </span>
+          Prince Edward Island
         </li>
         <li
           aria-label="Northwest Territories"
@@ -1325,9 +1223,7 @@ input + .c2 {
           id="listbox_undefined_nt"
           role="option"
         >
-          <span>
-            Northwest Territories
-          </span>
+          Northwest Territories
         </li>
         <li
           aria-label="Nunavut"
@@ -1337,9 +1233,7 @@ input + .c2 {
           id="listbox_undefined_nu"
           role="option"
         >
-          <span>
-            Nunavut
-          </span>
+          Nunavut
         </li>
         <li
           aria-label="Yukon"
@@ -1349,9 +1243,7 @@ input + .c2 {
           id="listbox_undefined_yt"
           role="option"
         >
-          <span>
-            Yukon
-          </span>
+          Yukon
         </li>
       </ul>
     </div>
@@ -1454,63 +1346,6 @@ input[type="radio"]:disabled + .c1 {
 `;
 
 exports[`Select mobile select has a different style 1`] = `
-.c5 {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c7 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #57666E,0 10px 20px 0 rgba(0,0,0,0.19);
-  list-style-type: none;
-  margin: 0;
-  max-height: 160px;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.c7:focus {
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
-  outline: none;
-}
-
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  height: 40px;
-  line-height: 40px;
-  min-width: 0;
-  padding: 0 var(--spacing-2x) 0 var(--spacing-5x);
-}
-
-.c8 > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c8:focus {
-  outline: none;
-}
-
-.c8:active {
-  background-color: #D9DDE2;
-}
-
 .c0 {
   margin: 0 0 var(--spacing-3x);
 }
@@ -1527,6 +1362,58 @@ exports[`Select mobile select has a different style 1`] = `
 
 .c0 > :nth-child(0) {
   margin-bottom: var(--spacing-half);
+}
+
+.c5 {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c6 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #D9DDE2,0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  max-height: 160px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.c6:focus {
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: inherit;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  padding: 0 16px 0 var(--spacing-5x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7:focus {
+  outline: none;
 }
 
 .c1 {
@@ -1617,11 +1504,6 @@ exports[`Select mobile select has a different style 1`] = `
   display: flex;
 }
 
-.c6 {
-  position: absolute;
-  width: 100%;
-}
-
 <div
   class="c0 c1"
 >
@@ -1658,12 +1540,12 @@ exports[`Select mobile select has a different style 1`] = `
   </div>
   <div
     aria-multiselectable="false"
-    class="c5 c6"
+    class="c5"
     role="listbox"
     tabindex="-1"
   >
     <ul
-      class="c7"
+      class="c6"
       data-testid="listbox-list"
       id="listbox_undefined"
       role="presentation"
@@ -1672,158 +1554,132 @@ exports[`Select mobile select has a different style 1`] = `
       <li
         aria-label="Ontario"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-on"
         id="listbox_undefined_on"
         role="option"
       >
-        <span>
-          Ontario
-        </span>
+        Ontario
       </li>
       <li
         aria-label="Quebec"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-qc"
         id="listbox_undefined_qc"
         role="option"
       >
-        <span>
-          Quebec
-        </span>
+        Quebec
       </li>
       <li
         aria-label="British Columbia"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-bc"
         id="listbox_undefined_bc"
         role="option"
       >
-        <span>
-          British Columbia
-        </span>
+        British Columbia
       </li>
       <li
         aria-label="Alberta"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-ab"
         id="listbox_undefined_ab"
         role="option"
       >
-        <span>
-          Alberta
-        </span>
+        Alberta
       </li>
       <li
         aria-label="Manitoba"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-mb"
         id="listbox_undefined_mb"
         role="option"
       >
-        <span>
-          Manitoba
-        </span>
+        Manitoba
       </li>
       <li
         aria-label="Saskatchewan"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-sk"
         id="listbox_undefined_sk"
         role="option"
       >
-        <span>
-          Saskatchewan
-        </span>
+        Saskatchewan
       </li>
       <li
         aria-label="Nova Scotia"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-ns"
         id="listbox_undefined_ns"
         role="option"
       >
-        <span>
-          Nova Scotia
-        </span>
+        Nova Scotia
       </li>
       <li
         aria-label="New Brunswick"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-nb"
         id="listbox_undefined_nb"
         role="option"
       >
-        <span>
-          New Brunswick
-        </span>
+        New Brunswick
       </li>
       <li
         aria-label="Newfoundland and Labrador"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-nl"
         id="listbox_undefined_nl"
         role="option"
       >
-        <span>
-          Newfoundland and Labrador
-        </span>
+        Newfoundland and Labrador
       </li>
       <li
         aria-label="Prince Edward Island"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-pe"
         id="listbox_undefined_pe"
         role="option"
       >
-        <span>
-          Prince Edward Island
-        </span>
+        Prince Edward Island
       </li>
       <li
         aria-label="Northwest Territories"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-nt"
         id="listbox_undefined_nt"
         role="option"
       >
-        <span>
-          Northwest Territories
-        </span>
+        Northwest Territories
       </li>
       <li
         aria-label="Nunavut"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-nu"
         id="listbox_undefined_nu"
         role="option"
       >
-        <span>
-          Nunavut
-        </span>
+        Nunavut
       </li>
       <li
         aria-label="Yukon"
         aria-selected="false"
-        class="c8"
+        class="c7"
         data-testid="listitem-yt"
         id="listbox_undefined_yt"
         role="option"
       >
-        <span>
-          Yukon
-        </span>
+        Yukon
       </li>
     </ul>
   </div>

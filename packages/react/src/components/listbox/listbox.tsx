@@ -1,34 +1,30 @@
-import React, { forwardRef, KeyboardEvent, ReactElement, Ref, RefObject, useEffect, useMemo, useRef, useState } from 'react';
-import { Link, LinkProps } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
 type Value = string | string[];
 
-export interface Option {
-    href?: string;
+export interface ListboxOption {
+    value: string;
     // Option label, if not provided will be set with value
     label?: string;
-    value: string;
-    onSelect?(option?: Option): void;
 }
 
-interface ListboxOption extends Option {
+interface ListOption extends ListboxOption {
     id: string;
     focusIndex: number;
-    ref: RefObject<HTMLLIElement>;
-    anchorRef?: RefObject<HTMLAnchorElement>;
+    ref: React.RefObject<HTMLLIElement>;
 }
 
-export interface ListboxProps {
+interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
     /**
      * { value: string; label?: string; }[]
      */
-    options: Option[];
+    options: ListboxOption[];
     /**
      * Autofocus
      * @default false
@@ -39,7 +35,6 @@ export interface ListboxProps {
      * @default false
      */
     checkIndicator?: boolean;
-    className?: string;
     /**
      * The default selected option. You may specify an array of strings when using multiselect feature.
      */
@@ -49,8 +44,6 @@ export interface ListboxProps {
      * @default false
      */
     dropdown?: boolean;
-    /** Sets menu accessibility attributes */
-    menu?: boolean;
     /**
      * Activates mutliple selection feature
      * @default false
@@ -76,7 +69,7 @@ export interface ListboxProps {
     /**
      * onChange callback function, invoked when an option is selected
      */
-    onChange?(option: Option): void;
+    onChange?(option: ListboxOption): void;
     /**
      * onKeyDown callback function, invoked when a key is pressed
      */
@@ -116,10 +109,11 @@ const Box = styled.div<BoxProps>`
 const List = styled.ul<ListProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys['dark-grey']}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     list-style-type: none;
     margin: 0;
     max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
+    min-width: fit-content;
     overflow-y: auto;
     padding: 0;
     width: 100%;
@@ -142,12 +136,6 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     return 'var(--spacing-2x)';
 };
 
-const ellipsisStyles = css`
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-`;
-
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
     background-color: ${({ focused, theme }) => focused ? theme.greys.grey : 'inherit'};
@@ -158,26 +146,10 @@ const ListItem = styled.li<ListItemProps>`
     font-weight: ${({ selected }) => selected ? 'var(--font-semi-bold)' : 'var(--font-normal)'};
     height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
     line-height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
-    min-width: 0;
-    padding: 0 ${({ isMobile }) => isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)'} 0 ${getListItemSidePadding};
-
-    > span {
-        ${ellipsisStyles}
-    }
-
-    &:focus {
-        outline: none;
-    }
-
-    :active {
-        background-color: ${({ theme }) => theme.greys.grey};
-    }
-`;
-
-const ListItemLink = styled(Link)<LinkProps>`
-    color: ${({ theme }) => theme.greys.black};
-    ${ellipsisStyles}
-    text-decoration: none;
+    overflow: hidden;
+    padding: 0 ${({ isMobile }) => isMobile ? 16 : 8}px 0 ${getListItemSidePadding};
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &:focus {
         outline: none;
@@ -186,13 +158,11 @@ const ListItemLink = styled(Link)<LinkProps>`
 
 const CheckIndicator = styled(Icon)`
     color: ${({ theme }) => theme.greys['dark-grey']};
-    flex-shrink: 0;
     padding: 0 var(--spacing-1x);
 `;
 
 export const Listbox = forwardRef(({
     ariaLabelledBy,
-    className,
     id = useMemo(uuid, []),
     options,
     onChange,
@@ -201,7 +171,6 @@ export const Listbox = forwardRef(({
     checkIndicator = false,
     defaultValue,
     dropdown = false,
-    menu,
     multiselect = false,
     numberOfItemsVisible = 4,
     autofocus = false,
@@ -214,14 +183,13 @@ export const Listbox = forwardRef(({
     const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(defaultValue));
     const [selectedFocusIndex, setSelectedFocusIndex] =
         useState(() => !multiselect ? options.findIndex(option =>  option.value === selectedOptionValue[0]) : -1);
-    const list: ListboxOption[] = useMemo((): ListboxOption[] =>
+    const list: ListOption[] = useMemo((): ListOption[] =>
         options.map((option, index)  =>
             ({
                 ...option,
                 id: `${id}_${option.value}`,
                 focusIndex: index,
                 ref: React.createRef<HTMLLIElement>(),
-                anchorRef: option.href ? React.createRef<HTMLAnchorElement>() : undefined,
             }))
     , [options]);
 
@@ -253,7 +221,7 @@ export const Listbox = forwardRef(({
         }
     }, [autofocus]);
 
-    function isOptionSelected(option: ListboxOption): boolean {
+    function isOptionSelected(option: ListOption): boolean {
         if (multiselect) {
             return selectedOptionValue.includes(option.value);
         } else {
@@ -261,11 +229,11 @@ export const Listbox = forwardRef(({
         }
     }
 
-    function isOptionFocused(option: ListboxOption): boolean {
+    function isOptionFocused(option: ListOption): boolean {
         return option.focusIndex === selectedFocusIndex;
     }
 
-    function shouldDisplayCheckIndicator(option: ListboxOption): boolean {
+    function shouldDisplayCheckIndicator(option: ListOption): boolean {
         return checkIndicator && isOptionSelected(option);
     }
 
@@ -278,7 +246,7 @@ export const Listbox = forwardRef(({
         }
     }
 
-    function selectOption(option: ListboxOption): void {
+    function selectOption(option: ListOption): void {
         setSelectedFocusIndex(option.focusIndex);
 
         if (multiselect) {
@@ -296,19 +264,15 @@ export const Listbox = forwardRef(({
         }
     }
 
-    function handleListItemClick(option: ListboxOption): void {
-        selectOption(option);
-
-        if (option.onSelect) {
-            option.onSelect(option);
-        }
+    function handleListItemClick(option: ListOption): () => void {
+        return () => selectOption(option);
     }
 
-    function handleListItemMouseMove(option: ListboxOption): void {
+    function handleListItemMouseMove(option: ListOption): void {
         setSelectedFocusIndex(option.focusIndex);
     }
 
-    function handleAutoScroll(option: ListboxOption, focusedIndex: number): void {
+    function handleAutoScroll(option: ListOption, focusedIndex: number): void {
         if (!listRef.current || !option || !option.ref.current) {
             return;
         }
@@ -378,10 +342,7 @@ export const Listbox = forwardRef(({
                 e.preventDefault();
 
                 if (selectedFocusIndex >= 0) {
-                    const currentOption = list[selectedFocusIndex];
-
-                    handleListItemClick(currentOption);
-                    currentOption.href && currentOption.anchorRef?.current?.click();
+                    selectOption(list[selectedFocusIndex]);
                 }
                 break;
             case 'ArrowUp':
@@ -424,7 +385,6 @@ export const Listbox = forwardRef(({
             aria-activedescendant={list[selectedFocusIndex]?.id}
             aria-labelledby={ariaLabelledBy}
             aria-multiselectable={multiselect}
-            className={className}
             isDropdown={dropdown}
             ref={ref}
             role="listbox"
@@ -439,9 +399,9 @@ export const Listbox = forwardRef(({
                 onBlur={() => setSelectedFocusIndex(-1)}
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyDown}
-                tabIndex={0}
                 ref={listRef}
-                role={menu ? 'menu' : 'presentation'}
+                role="presentation"
+                tabIndex={0}
             >
                 {list.map(option => (
                     <ListItem
@@ -453,23 +413,15 @@ export const Listbox = forwardRef(({
                         id={option.id}
                         isMobile={isMobile}
                         key={option.id}
-                        onClick={() => handleListItemClick(option)}
+                        onClick={handleListItemClick(option)}
                         onMouseMove={() => handleListItemMouseMove(option)}
                         ref={option.ref}
-                        role={option.href ? undefined : (menu ? 'menuitem' : 'option')}
+                        role="option"
                         selected={isOptionSelected(option)}
                     >
                         {shouldDisplayCheckIndicator(option) &&
                             <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'}/>}
-                        {option.href ? (
-                            <ListItemLink
-                                innerRef={option.anchorRef}
-                                role={menu ? 'menuitem' : 'option'}
-                                to={option.href}
-                            >
-                                {option.label || option.value}
-                            </ListItemLink>
-                        ) : <span>{option.label || option.value}</span>}
+                        {option.label || option.value}
                     </ListItem>
                 ))}
             </List>

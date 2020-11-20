@@ -1,19 +1,20 @@
-import React, { KeyboardEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
 
-import { useFirstRender } from '@design-elements/utils/first-render';
+import { useTranslation } from '@design-elements/i18n/i18n';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
-import { Listbox, Option } from '../listbox/listbox';
+import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 import { Theme } from '../theme-wrapper/theme-wrapper';
 
-const Container = styled.div`
+const StyledNav = styled.nav`
     position: relative;
     width: fit-content;
 `;
 
-const StyledButton = styled(AbstractButton)<{ theme: Theme, expanded: boolean }>`
+const StyledButton = styled(AbstractButton)<StyledButtonProps>`
     background-color: ${({ expanded, theme }) => expanded ? theme.main['primary-3'] : 'transparent'};
     border-color: transparent;
     color: ${({ theme }) => theme.greys.white};
@@ -24,78 +25,94 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme, expanded: boolean }>
     &:hover {
         background-color: ${({ theme }) => theme.main['primary-3']};
     }
-
-    &:disabled {
-        &,
-        &:focus,
-        &:hover {
-            background-color: transparent;
-            color: ${({ theme }) => theme.greys['mid-grey']};
-        }
-    }
 `;
 
 const StyledIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
 `;
 
-const StyledListbox = styled(Listbox)`
+const StyledNavMenu = styled(NavMenu)`
     max-width: 350px;
     min-width: 200px;
     right: 0;
     width: initial;
 `;
 
+interface StyledButtonProps {
+    theme: Theme;
+    expanded: boolean;
+}
+
 interface MenuButtonProps {
+    /**
+     * Sets nav's description
+     * @default 'Navigation menu'
+     **/
+    ariaLabel?: string;
     /**
      * Sets menu open by default
      * @default false
      **/
     defaultOpen?: boolean;
+    id?: string;
     label: string;
-    options: Option[];
+    options: NavMenuOption[];
 }
 
-export function MenuButton({ defaultOpen = false, label, options }: MenuButtonProps): ReactElement {
-    const firstRender = useFirstRender();
+export function NavMenuButton({
+    ariaLabel,
+    defaultOpen = false,
+    id = useMemo(uuid, []),
+    label,
+    options,
+}: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
+    const { t } = useTranslation('nav-menu-button');
     const [focusedValue, setFocusedValue] = useState('');
     const [isOpen, setOpen] = useState(defaultOpen);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const listboxRef = useRef<HTMLDivElement>(null);
+    const navMenuRef = useRef<HTMLUListElement>(null);
+    const navRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!firstRender) {
-            setFocusedValue(isOpen ? options[0].value : '');
-        }
-
+        setFocusedValue(isOpen ? options[0].value : '');
         document.addEventListener('mouseup', handleClickOutside);
+
         return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [isOpen]);
+    }, [isOpen, options]);
 
     function handleClickOutside(event: MouseEvent): void {
         const clickIsOutside = (
             !buttonRef.current?.contains(event.target as Node) &&
-            !listboxRef.current?.contains(event.target as Node)
+            !navMenuRef.current?.contains(event.target as Node)
         );
-        const shouldClose = (listboxRef.current === null || clickIsOutside) && isOpen;
+        const shouldClose = (navMenuRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
             setOpen(false);
         }
     }
 
-    function handleListboxKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    function handleNavMenuKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
             setOpen(false);
             buttonRef.current?.focus();
         }
+
+        if (isOpen) {
+            setTimeout(() => {
+                const isFocusInsideNav = navRef.current?.contains(document.activeElement);
+
+                if (!isFocusInsideNav) {
+                    setOpen(false);
+                }
+            });
+        }
     }
 
     return (
-        <Container>
+        <StyledNav ref={navRef} id={id} aria-label={ariaLabel || t('ariaLabel')}>
             <StyledButton
-                aria-haspopup="true"
                 aria-expanded={isOpen}
                 data-testid="menu-button"
                 expanded={isOpen}
@@ -107,18 +124,15 @@ export function MenuButton({ defaultOpen = false, label, options }: MenuButtonPr
                 {label}
                 <StyledIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16"/>
             </StyledButton>
-            <StyledListbox
-                autofocus={isOpen}
-                data-testid="menu-listbox"
-                dropdown
+            <StyledNavMenu
+                data-testid="menu-navMenu"
                 focusedValue={focusedValue}
-                menu
                 onChange={() => setOpen(false)}
-                onKeyDown={handleListboxKeyDown}
+                onKeyDown={handleNavMenuKeyDown}
                 options={options}
-                ref={listboxRef}
-                visible={isOpen}
+                ref={navMenuRef}
+                hidden={!isOpen}
             />
-        </Container>
+        </StyledNav>
     );
 }

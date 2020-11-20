@@ -40,6 +40,7 @@ export interface Theme {
         'focus-border-box-shadow': string,
         'focus-border-box-shadow-inset': string,
         'focus-border': string,
+        'overlay-box-shadow': string,
     };
 }
 
