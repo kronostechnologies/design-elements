@@ -1,26 +1,26 @@
 {
-    "extends": [
-        "@equisoft/tslint-config",
-        "@equisoft/tslint-config-react"
-    ],
-    "rules": {
-        "no-implicit-dependencies": {
-          "options": [
-            [
-              "@design-elements",
-              "!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!."
-            ]
-          ]
-        },
-        "linebreak-style": [false],
-        "variable-name": {
-            "options": ["ban-keywords", "check-format", "allow-pascal-case"]
-        },
-        "quotemark": {
-            "options": ["single", "jsx-double"]
-        },
-        "jsx-no-lambda": [false],
-        "jsx-no-multiline-js": [false],
-        "jsx-boolean-value": [false]
-    }
+  "extends": [
+    "@equisoft/tslint-config",
+    "@equisoft/tslint-config-react"
+  ],
+  "rules": {
+    "no-implicit-dependencies": {
+      "options": [
+        [
+          "@design-elements",
+          "!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!."
+        ]
+      ]
+    },
+    "linebreak-style": [false],
+    "variable-name": {
+      "options": ["ban-keywords", "check-format", "allow-pascal-case"]
+    },
+    "quotemark": {
+      "options": ["single", "jsx-double"]
+    },
+    "jsx-no-lambda": [false],
+    "jsx-no-multiline-js": [false],
+    "jsx-boolean-value": [false]
+  }
 }

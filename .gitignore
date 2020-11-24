@@ -8,3 +8,10 @@ yarn-error.log
 .rpt2_cache/
 .yalc/
 yalc.lock
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

@@ -1,14 +1,15 @@
 import { renderPortalWithProviders } from '@design-elements/test-utils/portal-renderer';
-import { fireEvent, getByTestId, RenderResult } from '@testing-library/react';
+import { fireEvent, RenderResult } from '@testing-library/react';
 import React from 'react';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps } from './modal-dialog';
+
 jest.mock('uuid/v4');
 
 describe('Modal-Dialog', () => {
     test('onConfirm callback is called when confirm-button is clicked', () => {
         const callback = jest.fn();
-        const { baseElement } = renderModal({
+        const { getByTestId } = renderModal({
             ...withTitleAndSubtitle,
             isOpen: true,
             confirmButton: {
@@ -16,14 +17,14 @@ describe('Modal-Dialog', () => {
             },
         });
 
-        fireEvent.click(getByTestId(baseElement, 'confirm-button'));
+        fireEvent.click(getByTestId('confirm-button'));
 
         expect(callback).toHaveBeenCalled();
     });
 
     test('onCancel callback is called when cancel-button is clicked', () => {
         const callback = jest.fn();
-        const { baseElement } = renderModal({
+        const { getByTestId } = renderModal({
             ...withTitleAndSubtitle,
             isOpen: true,
             cancelButton: {
@@ -31,7 +32,7 @@ describe('Modal-Dialog', () => {
             },
         });
 
-        fireEvent.click(getByTestId(baseElement, 'cancel-button'));
+        fireEvent.click(getByTestId('cancel-button'));
 
         expect(callback).toHaveBeenCalled();
     });
@@ -98,12 +99,14 @@ describe('Modal-Dialog', () => {
     });
 });
 
-interface ModalDialogPropsLite extends Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'> {}
+interface ModalDialogPropsLite extends Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'> {
+}
 
 const defaultTestProps = {
     ariaDescribedby: 'modal-description',
     ariaHideApp: false,
-    onRequestClose: () => {},
+    onRequestClose: () => {
+    },
 };
 
 const withTitleAndSubtitle = {

@@ -204,11 +204,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 32px;
 }
 
 .c1:focus {
@@ -229,22 +224,30 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   color: inherit;
 }
 
-.c1:focus {
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c2:focus {
   outline: none;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -276,7 +279,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: var(--spacing-1x);
   top: var(--spacing-1x);
@@ -304,7 +307,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
         </p>
         <button
           aria-label="Close dialog"
-          class="c1 c2"
+          class="c1 c2 c3"
           data-testid="close-button"
           type="button"
         >
@@ -360,11 +363,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 32px;
 }
 
 .c1:focus {
@@ -385,22 +383,30 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   color: inherit;
 }
 
-.c1:focus {
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c2:focus {
   outline: none;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -432,7 +438,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: var(--spacing-1x);
   top: var(--spacing-1x);
@@ -475,7 +481,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
         </p>
         <button
           aria-label="Close dialog"
-          class="c1 c2"
+          class="c1 c2 c3"
           data-testid="close-button"
           type="button"
         >
@@ -546,11 +552,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
-  border-color: transparent;
-  color: #57666E;
-  padding: 0;
-  width: 48px;
 }
 
 .c1:focus {
@@ -571,22 +572,30 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   color: inherit;
 }
 
-.c1:focus {
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #57666E;
+  padding: 0;
+  width: 48px;
+}
+
+.c2:focus {
   outline: none;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: #D9DDE2;
   color: #000000;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }
@@ -618,7 +627,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   right: var(--spacing-half);
   top: var(--spacing-half);
@@ -646,7 +655,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
         </p>
         <button
           aria-label="Close dialog"
-          class="c1 c2"
+          class="c1 c2 c3"
           data-testid="close-button"
           type="button"
         >

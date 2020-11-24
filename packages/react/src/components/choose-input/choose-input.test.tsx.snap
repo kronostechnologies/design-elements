@@ -21,7 +21,7 @@ Array [
     type="radio"
     value="test value"
   />,
-  .c0 {
+  .c1 {
   --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -54,47 +54,47 @@ Array [
   transition: all 0.25s ease-in-out;
 }
 
-.c0:hover {
+.c1:hover {
   background: #D9DDE2;
   border-color: #D9DDE2;
 }
 
 input[type="checkbox"]:checked + .c0,
-input[type="radio"]:checked + .c0 {
+input[type="radio"]:checked + .c1 {
   background: #0080A5;
   border-color: #0080A5;
   color: #FFFFFF;
 }
 
 input[type="checkbox"]:focus + .c0,
-input[type="radio"]:focus + .c0 {
+input[type="radio"]:focus + .c1 {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
 input[type="checkbox"]:disabled + .c0,
-input[type="radio"]:disabled + .c0 {
+input[type="radio"]:disabled + .c1 {
   background: #F1F2F2;
   border-color: #D9DDE2;
   color: #9CA7B4;
   cursor: auto;
 }
 
-.c0 b {
+.c1 b {
   font-size: 1.5rem;
   font-weight: var(--font-normal);
   line-height: 2.5rem;
 }
 
-.c0 svg {
+.c1 svg {
   color: inherit;
   height: 3rem;
   width: 3rem;
 }
 
 <label
-    className="c0"
+    className="c0 c1"
   >
     Children
   </label>,

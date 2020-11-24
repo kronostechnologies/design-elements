@@ -39,9 +39,6 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #0080A5;
-  border-color: #0080A5;
-  color: #FFFFFF;
 }
 
 .c0:focus {
@@ -62,30 +59,36 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #0080A5;
+  border-color: #0080A5;
+  color: #FFFFFF;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #005F7A;
   border-color: #005F7A;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
 
 <button
-  className="c0"
+  className="c0 c1"
   type="submit"
 />
 `;
@@ -129,9 +132,6 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #9EB3FF;
-  border-color: #9EB3FF;
-  color: #FFFFFF;
 }
 
 .c0:focus {
@@ -152,30 +152,36 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   color: inherit;
 }
 
-.c0:focus {
+.c1 {
+  background-color: #9EB3FF;
+  border-color: #9EB3FF;
+  color: #FFFFFF;
+}
+
+.c1:focus {
   outline: none;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #8984E8;
   border-color: #8984E8;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
   background-color: #84B4E8;
   border-color: #84B4E8;
 }
 
 <button
-  className="c0"
+  className="c0 c1"
   type="submit"
 />
 `;

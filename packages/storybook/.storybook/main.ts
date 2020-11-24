@@ -1,4 +1,5 @@
 import * as path from 'path';
+import PnpWebpackPlugin from 'pnp-webpack-plugin';
 
 module.exports = {
     typescript: {
@@ -17,12 +18,9 @@ module.exports = {
         '@storybook/addon-docs',
     ],
     webpackFinal: (config) => {
-        config.resolve.alias = {
-            react: path.resolve(__dirname, '../node_modules/react'),
-            'react-dom': path.resolve(__dirname, '../node_modules/react-dom'),
-            'react-router-dom': path.resolve(__dirname, '../node_modules/react-router-dom'),
-            'styled-components': path.resolve(__dirname, '../node_modules/styled-components'),
-        };
+        config.resolve.plugins.push(PnpWebpackPlugin);
+        // @ts-ignore
+        config.resolveLoader.plugins.push(PnpWebpackPlugin.moduleLoader(module));
 
         return config;
     },

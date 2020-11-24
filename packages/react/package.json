@@ -25,17 +25,6 @@
   "files": [
     "dist"
   ],
-  "author": "Equisoft Design",
-  "maintainers": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
-    "Christian Roy <christian.roy@equisoft.com> (https://github.com/christian-roy)"
-  ],
-  "contributors": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
-    "Christian Roy <christian.roy@equisoft.com> (https://github.com/christian-roy)",
-    "Léane Mei Dostie-Chalifour <leane.dostie@equisoft.com> (https://github.com/leanedostie)",
-    "Keven Beaulieu <keven.beaulieu@equisoft.com> (https://github.com/kbeaulieu)"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kronostechnologies/design-elements.git"
@@ -46,8 +35,9 @@
   "dependencies": {
     "date-fns": "^2.14.0",
     "feather-icons": "^4.21.0",
+    "prop-types": "^15.7.2",
     "react-datepicker": "^3.0.0",
-    "react-is": "~16.9.0",
+    "react-is": "~16.13.1",
     "react-modal": "^3.11.2",
     "react-popper-tooltip": "^2.10.1",
     "react-shadow": "^18.4.2",
@@ -57,46 +47,50 @@
   },
   "peerDependencies": {
     "i18next": "^19.4.4",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-router-dom": "^5.1.2",
     "styled-components": ">= 4"
   },
   "devDependencies": {
     "@equisoft/stylelint-config-styled-components": "^0.2.0",
-    "@equisoft/tslint-config": "^0.0.8",
-    "@equisoft/tslint-config-react": "^0.0.3",
+    "@equisoft/typescript-config": "^2.0.0",
     "@svgr/webpack": "^4.3.2",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/react-hooks": "~3.2.1",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/react-hooks": "^3.4.2",
+    "@types/cheerio": "^0.22.22",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/feather-icons": "^4.7.0",
     "@types/jest": "^26.0.13",
     "@types/lodash": "^4.14.149",
-    "@types/react": "^16.9.49",
+    "@types/react": "~16.14.0",
     "@types/react-datepicker": "^2.9.4",
-    "@types/react-dom": "~16.9.0",
+    "@types/react-dom": "~16.9.9",
     "@types/react-modal": "^3.10.6",
     "@types/react-router-dom": "~5.1.3",
     "@types/react-table": "^7.0.19",
     "@types/react-test-renderer": "^16.9.0",
     "@types/styled-components": "^5.1.3",
+    "@types/testing-library__react-hooks": "^3.4.1",
     "@types/uuid": "^3.4.5",
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "~3.4.4",
+    "enzyme-to-json": "~3.6.1",
+    "expect": "^26.6.2",
     "full-icu": "^1.3.1",
     "i18next": "^19.4.4",
-    "jest": "^26.4.2",
-    "jest-junit": "^11.1.0",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
     "jest-styled-components": "^7.0.3",
-    "react": "~16.9.0",
-    "react-docgen-typescript-loader": "^3.2.1",
-    "react-dom": "~16.9.0",
+    "pnp-webpack-plugin": "^1.6.4",
+    "react": "~16.14.0",
+    "react-docgen-typescript-loader": "~3.7.2",
+    "react-dom": "~16.14.0",
     "react-router-dom": "^5.1.2",
-    "react-test-renderer": "^16.9.0",
+    "react-test-renderer": "~16.14.0",
     "sass": "~1.26.10",
     "sass-loader": "~10.0.1",
     "style-loader": "^1.2.1",
@@ -104,9 +98,8 @@
     "stylelint-junit-formatter": "^0.2.2",
     "to-string-loader": "~1.1.6",
     "ts-jest": "^26.3.0",
-    "ts-loader": "^6.1.2",
+    "ts-loader": "^8.0.11",
     "tsconfig-paths-webpack-plugin": "~3.2.0",
-    "tslint": "^5.18.0",
     "typescript": "^4.0.2",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
@@ -114,8 +107,5 @@
   },
   "jest-junit": {
     "outputDirectory": "build/tests"
-  },
-  "resolutions": {
-    "@types/react": "^16.9.49"
   }
 }

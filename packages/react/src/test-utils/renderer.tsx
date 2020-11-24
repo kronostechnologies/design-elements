@@ -25,13 +25,13 @@ export function mountWithTheme<C extends Component, P = C['props'], S = C['state
 export function renderWithProviders(
     component: ReactElement,
     device?: DeviceType,
-): Cheerio {
+): cheerio.Cheerio {
     return render(<AllProviders device={device}>{component}</AllProviders>);
 }
 
 export function renderWithTheme(
     component: ReactElement,
-): Cheerio {
+): cheerio.Cheerio {
     return render(ThemeWrapped(component));
 }
 

@@ -98,139 +98,30 @@ exports[`Progress Component Snapshots with labels 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c3::after {
+.c4::after {
   background-color: #094C6C;
   border-color: #094C6C;
   color: #FFFFFF;
 }
 
-.c3 > span {
-  color: #57666E;
-}
-
-.c4 {
-  color: #094C6C;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  position: relative;
-  text-align: center;
-  color: #094C6C;
-}
-
-.c4::after {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 0.25rem solid;
-  border-radius: 50%;
-  box-sizing: border-box;
-  content: counter(step);
-  counter-increment: step;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 2rem;
-  margin: 0 auto 0.625rem;
-  text-align: center;
-  width: 32px;
-}
-
 .c4 > span {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
-}
-
-.c4::after {
-  border-color: #094C6C;
-}
-
-.c4 span {
-  color: #094C6C;
-  font-weight: var(--font-bold);
+  color: #57666E;
 }
 
 .c5 {
   color: #094C6C;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+}
+
+.c5::after {
+  border-color: #094C6C;
+}
+
+.c5 span {
+  color: #094C6C;
   font-weight: var(--font-bold);
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  position: relative;
-  text-align: center;
 }
 
-.c5::after {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 0.25rem solid;
-  border-radius: 50%;
-  box-sizing: border-box;
-  content: counter(step);
-  counter-increment: step;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 2rem;
-  margin: 0 auto 0.625rem;
-  text-align: center;
-  width: 32px;
-}
-
-.c5 > span {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
-}
-
-.c5::after {
+.c6::after {
   border-color: #D9DDE2;
   color: #57666E;
 }
@@ -248,7 +139,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
     data-testid="progress-steps"
   >
     <li
-      class="c3"
+      class="c3 c4"
       data-testid="progress-step-past"
     >
       <span>
@@ -257,7 +148,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
     </li>
     <li
       aria-current="step"
-      class="c4"
+      class="c3 c5"
       data-testid="progress-step-current"
     >
       <span>
@@ -265,7 +156,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
       </span>
     </li>
     <li
-      class="c5"
+      class="c3 c6"
       data-testid="progress-step-future"
     >
       <span>
@@ -374,139 +265,30 @@ exports[`Progress Component Snapshots without labels 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-.c3::after {
+.c4::after {
   background-color: #094C6C;
   border-color: #094C6C;
   color: #FFFFFF;
 }
 
-.c3 > span {
-  color: #57666E;
-}
-
-.c4 {
-  color: #094C6C;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  position: relative;
-  text-align: center;
-  color: #094C6C;
-}
-
-.c4::after {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 0.25rem solid;
-  border-radius: 50%;
-  box-sizing: border-box;
-  content: counter(step);
-  counter-increment: step;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 2rem;
-  margin: 0 auto 0.625rem;
-  text-align: center;
-  width: 32px;
-}
-
 .c4 > span {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
-}
-
-.c4::after {
-  border-color: #094C6C;
-}
-
-.c4 span {
-  color: #094C6C;
-  font-weight: var(--font-bold);
+  color: #57666E;
 }
 
 .c5 {
   color: #094C6C;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+}
+
+.c5::after {
+  border-color: #094C6C;
+}
+
+.c5 span {
+  color: #094C6C;
   font-weight: var(--font-bold);
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  position: relative;
-  text-align: center;
 }
 
-.c5::after {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 0.25rem solid;
-  border-radius: 50%;
-  box-sizing: border-box;
-  content: counter(step);
-  counter-increment: step;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 32px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 2rem;
-  margin: 0 auto 0.625rem;
-  text-align: center;
-  width: 32px;
-}
-
-.c5 > span {
-  color: #000000;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
-}
-
-.c5::after {
+.c6::after {
   border-color: #D9DDE2;
   color: #57666E;
 }
@@ -524,20 +306,20 @@ exports[`Progress Component Snapshots without labels 1`] = `
     data-testid="progress-steps"
   >
     <li
-      class="c3"
+      class="c3 c4"
       data-testid="progress-step-past"
     >
       <span />
     </li>
     <li
       aria-current="step"
-      class="c4"
+      class="c3 c5"
       data-testid="progress-step-current"
     >
       <span />
     </li>
     <li
-      class="c5"
+      class="c3 c6"
       data-testid="progress-step-future"
     >
       <span />

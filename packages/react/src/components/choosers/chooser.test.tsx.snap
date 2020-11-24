@@ -2,7 +2,7 @@
 
 exports[`Chooser Matches the snapshot 1`] = `
 Array [
-  .c2 {
+  .c3 {
   --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -35,40 +35,40 @@ Array [
   transition: all 0.25s ease-in-out;
 }
 
-.c2:hover {
+.c3:hover {
   background: #D9DDE2;
   border-color: #D9DDE2;
 }
 
 input[type="checkbox"]:checked + .c2,
-input[type="radio"]:checked + .c2 {
+input[type="radio"]:checked + .c3 {
   background: #0080A5;
   border-color: #0080A5;
   color: #FFFFFF;
 }
 
 input[type="checkbox"]:focus + .c2,
-input[type="radio"]:focus + .c2 {
+input[type="radio"]:focus + .c3 {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
 input[type="checkbox"]:disabled + .c2,
-input[type="radio"]:disabled + .c2 {
+input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
   border-color: #D9DDE2;
   color: #9CA7B4;
   cursor: auto;
 }
 
-.c2 b {
+.c3 b {
   font-size: 1.5rem;
   font-weight: var(--font-normal);
   line-height: 2.5rem;
 }
 
-.c2 svg {
+.c3 svg {
   color: inherit;
   height: 3rem;
   width: 3rem;
@@ -109,7 +109,7 @@ input[type="radio"]:disabled + .c2 {
       value="single"
     />
     <label
-      className="c2"
+      className="c2 c3"
     >
       Single, living alone or with a roommate
     </label>
@@ -122,12 +122,12 @@ input[type="radio"]:disabled + .c2 {
       value="married"
     />
     <label
-      className="c2"
+      className="c2 c3"
     >
       Married or living with a spouse
     </label>
   </div>,
-  .c2 {
+  .c3 {
   --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -160,40 +160,40 @@ input[type="radio"]:disabled + .c2 {
   transition: all 0.25s ease-in-out;
 }
 
-.c2:hover {
+.c3:hover {
   background: #D9DDE2;
   border-color: #D9DDE2;
 }
 
 input[type="checkbox"]:checked + .c2,
-input[type="radio"]:checked + .c2 {
+input[type="radio"]:checked + .c3 {
   background: #0080A5;
   border-color: #0080A5;
   color: #FFFFFF;
 }
 
 input[type="checkbox"]:focus + .c2,
-input[type="radio"]:focus + .c2 {
+input[type="radio"]:focus + .c3 {
   outline: none;
   border-color: #0080A5;
   box-shadow: 0 0 0 2px #0080A566;
 }
 
 input[type="checkbox"]:disabled + .c2,
-input[type="radio"]:disabled + .c2 {
+input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
   border-color: #D9DDE2;
   color: #9CA7B4;
   cursor: auto;
 }
 
-.c2 b {
+.c3 b {
   font-size: 1.5rem;
   font-weight: var(--font-normal);
   line-height: 2.5rem;
 }
 
-.c2 svg {
+.c3 svg {
   color: inherit;
   height: 3rem;
   width: 3rem;
@@ -226,7 +226,7 @@ input[type="radio"]:disabled + .c2 {
       value="skip"
     />
     <label
-      className="c2"
+      className="c2 c3"
     >
       Would rather not say
     </label>

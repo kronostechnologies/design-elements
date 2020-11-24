@@ -1,4 +1,5 @@
 const path = require('path');
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const pkg = require('../package');
 
@@ -52,10 +53,18 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
-        plugins: [new TsconfigPathsPlugin()],
+        plugins: [
+            new TsconfigPathsPlugin(),
+            PnpWebpackPlugin,
+        ],
         alias: {
             'react-onclickoutside': path.resolve(__dirname, '../patches/react-onclickoutside'), // TODO: Remove once https://github.com/Pomax/react-onclickoutside/pull/324 is released
         },
+    },
+    resolveLoader: {
+        plugins: [
+            PnpWebpackPlugin.moduleLoader(module),
+        ],
     },
     output: {
         filename: 'bundle.js',

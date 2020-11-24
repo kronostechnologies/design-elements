@@ -154,7 +154,7 @@ function simulateValueChange(input: HTMLInputElement, value: String): void {
     fireEvent.blur(input);
 }
 
-function getInputElement(container: HTMLElement): HTMLInputElement {
+function getInputElement(container: Element): HTMLInputElement {
     // tslint:disable-next-line: no-unnecessary-type-assertion
     return container.querySelector('input') as HTMLInputElement;
 }
