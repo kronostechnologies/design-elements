@@ -1,0 +1,4 @@
+npmRegistries: 
+    //registry.npmjs.org:
+    npmAlwaysAuth: true
+    npmAuthToken: 
