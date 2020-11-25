@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Matches Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F8F9FA;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1.5rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5rem;
+}
+
+.c1 {
+  font-size: 0.625rem;
+  -webkit-letter-spacing: 0.17px;
+  -moz-letter-spacing: 0.17px;
+  -ms-letter-spacing: 0.17px;
+  letter-spacing: 0.17px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    class="c1"
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches mobile Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F8F9FA;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.5rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.c1 {
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.23px;
+  -moz-letter-spacing: 0.23px;
+  -ms-letter-spacing: 0.23px;
+  letter-spacing: 0.23px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    class="c1"
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
