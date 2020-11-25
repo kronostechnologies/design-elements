@@ -40,11 +40,11 @@ commands:
     steps:
       - run: git config --global user.email "na-qc@equisoft.com" && git config --global user.name "circleci"
 
-  git_pull_master:
+  git_pull_branch:
     steps:
       - run:
           working_directory: *working_directory
-          command: git pull origin master
+          command: git pull origin $CIRCLE_BRANCH
 
   add_github_ssh_key:
     steps:
@@ -82,10 +82,6 @@ jobs:
     steps:
       - attach_at_working_directory
       - node_deps_install
-      - persist_to_workspace:
-          root: *working_directory
-          paths:
-            - '.yarn'
 
   yarn_lint:
     executor: "node"
@@ -131,35 +127,51 @@ jobs:
 
   create_prerelease_versions:
     executor: "node"
+    working_directory: *working_directory
     steps:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
+      - node_deps_install
       - run:
-          name: 'lerna_version_prerelease'
-          working_directory: *working_directory
-          command: 'yarn cache clean && yarn lerna version prerelease --force-publish --yes -m "chore(prerelease): %s [ci skip]"'
+          name: 'version_prerelease'
+          command: |
+            yarn workspaces foreach -tv --include '@equisoft/*' version prerelease
+            git add .
+            export PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
+            git commit -m "chore(prerelease): %s [ci skip]"
+      - run:
+          name: 'tag and push'
+          working_directory: *react_directory
+          command: |
+            export PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
+            git tag -a "v${PACKAGE_VERSION}" -m "Prerelease v${PACKAGE_VERSION}"
+            git push --follow-tags origin $CIRCLE_BRANCH
 
   publish_to_npm:
     executor: "node"
+    working_directory: *working_directory
     steps:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
-      - git_pull_master
+      - git_pull_branch
+      - node_deps_install
       - run:
-          name: 'Publish react package'
+          name: 'Publish packages'
           working_directory: *react_directory
           command: |
             echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-            yarn publish --tag next
+            yarn npm publish --tag next --tolerate-republish
 
   update_github_pages_storybook_version:
     executor: "node"
+    working_directory: *working_directory
     steps:
       - attach_at_working_directory
       - git_config
       - add_github_ssh_key
+      - node_deps_install
       - run:
           name: 'Checkout gh-pages branch'
           working_directory: *working_directory
@@ -222,7 +234,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - dev/fix-deploy
           requires:
             - storybook_yarn_lint
             - storybook_yarn_build
@@ -232,7 +244,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - dev/fix-deploy
           name: root_node_install_deps
           requires:
             - prepare_workspace
@@ -240,7 +252,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - dev/fix-deploy
           requires:
             - root_node_install_deps
             - storybook_yarn_build
@@ -249,7 +261,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - dev/fix-deploy
           context: npm
           requires:
             - create_prerelease_versions

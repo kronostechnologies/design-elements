@@ -1,5 +1,5 @@
 {
-  "name": "@equisoft/kronos-crm-icons-root",
+  "name": "@equisoft/kronos-crm-icons",
   "author": "Equisoft Design",
   "maintainers": [
     "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "build": "./scripts/build.sh",
-    "doPublish": "./scripts/doPublish.sh"
+    "doPublish": "./scripts/doPublish.sh",
+    "prepublishOnly": "../scripts/prepublishOnly.sh"
   },
   "devDependencies": {
     "svgo": "^1.1.1"
