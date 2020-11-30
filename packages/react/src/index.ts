@@ -32,6 +32,7 @@ export * from './components/carousel/carousel';
 export { Chooser } from './components/choosers/chooser';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
+export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
 export * from './components/global-navigation/global-navigation';
 export { Icon } from './components/icon/icon';
