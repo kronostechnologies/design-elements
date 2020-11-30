@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading matches snapshot (large) 1`] = `
+.c0 {
+  font-size: 1.5rem;
+  font-weight: var(--font-normal);
+  line-height: 2.25rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h2
+  class="c0"
+>
+  Heading
+</h2>
+`;
+
+exports[`Heading matches snapshot (medium) 1`] = `
+.c0 {
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h3
+  class="c0"
+>
+  Heading
+</h3>
+`;
+
+exports[`Heading matches snapshot (no margin) 1`] = `
+.c0 {
+  font-size: 1.25rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 0;
+}
+
+<h3
+  class="c0"
+>
+  Heading
+</h3>
+`;
+
+exports[`Heading matches snapshot (small) 1`] = `
+.c0 {
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<h4
+  class="c0"
+>
+  Heading
+</h4>
+`;
+
+exports[`Heading matches snapshot (xlarge) 1`] = `
+.c0 {
+  font-size: 2rem;
+  font-weight: var(--font-normal);
+  line-height: 3rem;
+  margin: var(--spacing-4x) 0;
+}
+
+<h1
+  class="c0"
+>
+  Heading
+</h1>
+`;
