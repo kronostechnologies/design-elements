@@ -6,11 +6,13 @@ import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 
-const setup = (children: ReactElement) => (
-    <Router>
-        {ThemeWrapped(children)}
-    </Router>
-);
+function setup(children: ReactElement): ReactElement {
+    return (
+        <Router>
+            {ThemeWrapped(children)}
+        </Router>
+    );
+}
 
 const items: GlobalNavigationItem[] = [
     {
@@ -58,7 +60,7 @@ describe('Global Navigation', () => {
         const wrapper = mount(
             setup(
                 <div style={{ height: '600px' }}>
-                    <GlobalNavigation mainItems={items} footerItems={footerItems}/>
+                    <GlobalNavigation mainItems={items} footerItems={footerItems} />
                 </div>,
             ),
         );
@@ -70,7 +72,7 @@ describe('Global Navigation', () => {
         const tree = renderer.create(
             setup(
                 <div style={{ height: '600px' }}>
-                    <GlobalNavigation mainItems={items} footerItems={footerItems}/>
+                    <GlobalNavigation mainItems={items} footerItems={footerItems} />
                 </div>,
             ),
         );

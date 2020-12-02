@@ -9,7 +9,7 @@ describe('ProgressCircle', () => {
             ThemeWrapped(
                 <ProgressCircle
                     percent={66}
-                    color={'#304E63'}
+                    color="#304E63"
                     descriptionLabel="RRSP"
                     resultLabel="56 k$"
                 />,

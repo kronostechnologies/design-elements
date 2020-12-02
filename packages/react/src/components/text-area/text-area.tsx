@@ -9,7 +9,7 @@ import { inputsStyle } from '../text-input/styles/inputs';
 const StyledTextArea = styled.textarea`
     min-height: 6.5rem;
     min-width: 100%;
-    ${props => inputsStyle(props.theme)}
+    ${(props) => inputsStyle(props.theme)}
     outline: none;
     overflow: auto;
     resize: vertical;
@@ -26,7 +26,7 @@ export interface TextAreaProps {
     /**
     * Message displayed in case of validation error
     * @default This text area input is invalid
-    **/
+    */
     validationErrorMessage?: string;
     /** Only use if you want to control input value externally */
     value?: string;
@@ -73,7 +73,9 @@ export function TextArea({
         }
     }
 
-    const { defaultValue, disabled, label, placeholder, required, validationErrorMessage, value } = props;
+    const {
+        defaultValue, disabled, label, placeholder, required, validationErrorMessage, value,
+    } = props;
 
     return (
         <FieldContainer

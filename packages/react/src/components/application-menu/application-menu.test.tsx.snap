@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Application Menu Matches the snapshot (desktop) 1`] = `
+.c2 {
+  color: #FFFFFF;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -42,10 +46,6 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c2 {
-  color: #FFFFFF;
 }
 
 <header
@@ -95,6 +95,27 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   top: 0;
 }
 
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -133,27 +154,6 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c2 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
@@ -226,6 +226,27 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   top: 0;
 }
 
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -264,27 +285,6 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c2 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;

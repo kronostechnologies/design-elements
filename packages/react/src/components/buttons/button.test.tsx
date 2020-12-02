@@ -1,3 +1,4 @@
+import { doNothing } from '@design-elements/test-utils/callbacks';
 import { mountWithProviders, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
 import { Button } from './button';
@@ -14,7 +15,14 @@ describe('Button', () => {
 
     test('onClick callback cannot be called when disabled', () => {
         const callback = jest.fn();
-        const wrapper = mountWithProviders(<Button onClick={callback} buttonType="primary" disabled label="Primary Button" />);
+        const wrapper = mountWithProviders(
+            <Button
+                onClick={callback}
+                buttonType="primary"
+                disabled
+                label="Primary Button"
+            />,
+        );
 
         wrapper.find(Button).simulate('click');
 
@@ -23,33 +31,39 @@ describe('Button', () => {
 
     test('has disabled styles', () => {
         const tree = renderWithProviders(
-            <Button onClick={() => {}} buttonType="primary" disabled label="Primary Button" />,
+            <Button onClick={doNothing} buttonType="primary" disabled label="Primary Button" />,
         );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has primary styles', () => {
-        const tree = renderWithProviders(<Button onClick={() => {}} buttonType="primary" label="Primary Button" />);
+        const tree = renderWithProviders(<Button onClick={doNothing} buttonType="primary" label="Primary Button" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has secondary styles', () => {
-        const tree = renderWithProviders(<Button onClick={() => {}} buttonType="secondary" label="Secondary Button" />);
+        const tree = renderWithProviders(
+            <Button
+                onClick={doNothing}
+                buttonType="secondary"
+                label="Secondary Button"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has tertiary styles', () => {
-        const tree = renderWithProviders(<Button onClick={() => {}} buttonType="tertiary" label="Tertiary Button" />);
+        const tree = renderWithProviders(<Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has mobile styles', () => {
         const tree = renderWithProviders(
-            <Button onClick={() => {}} buttonType="primary" label="Primary Button" />,
+            <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
             'mobile',
         );
 

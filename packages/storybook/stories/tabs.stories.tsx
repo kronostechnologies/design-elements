@@ -1,4 +1,5 @@
-import { Card, ColumnsProps, Tab, Table, Tabs, TextArea } from '@equisoft/design-elements-react';
+import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,8 +7,13 @@ export default {
     component: Tabs,
 };
 
-export const normal = () => {
-    const contactTableColumns: ColumnsProps = [
+interface Data {
+    column1: string;
+    column2: string;
+}
+
+export const Normal: Story = () => {
+    const contactTableColumns: TableColumn<Data> = [
         {
             Header: 'First Name',
             accessor: 'column1',
@@ -18,7 +24,7 @@ export const normal = () => {
         },
     ];
 
-    const contactTableData = [
+    const contactTableData: Data[] = [
         {
             column1: 'First Name 1',
             column2: 'First Name 2',
@@ -54,7 +60,7 @@ export const normal = () => {
     );
 };
 
-export const withIcons = () => {
+export const WithIcons: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',

@@ -10,7 +10,7 @@ interface ContainerProps {
 
 export const StyledLink = styled.a<ContainerProps>`
     align-items: center;
-    cursor: ${props => props.disabled ? 'default' : 'pointer'};
+    cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
     display: inline-flex;
     text-decoration: none;
 
@@ -23,11 +23,11 @@ export const StyledLink = styled.a<ContainerProps>`
     }
 
     &.external {
-        color: ${props => props.disabled ? '#7fbfd2' : '#0080a5'};
+        color: ${(props) => (props.disabled ? '#7fbfd2' : '#0080a5')};
         ${focus}
 
         &:hover {
-            ${props => props.disabled ? '' : 'text-decoration: underline'};
+            ${(props) => (props.disabled ? '' : 'text-decoration: underline')};
         }
 
         &:visited {
@@ -40,15 +40,15 @@ export const StyledLink = styled.a<ContainerProps>`
     }
 
     &.navigation {
-        color: ${props => props.disabled ? '#9ca7b4' : '#57666e'};
+        color: ${(props) => (props.disabled ? '#9ca7b4' : '#57666e')};
         ${focus}
 
         &:hover {
-            ${props => props.disabled ? '' : 'color: #000;'}
+            ${(props) => (props.disabled ? '' : 'color: #000;')}
         }
 
         &.active {
-            ${props => props.disabled ? '' : 'color: #0080a5;'}
+            ${(props) => (props.disabled ? '' : 'color: #0080a5;')}
         }
     }
 `;

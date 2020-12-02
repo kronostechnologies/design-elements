@@ -2,10 +2,12 @@ import { range } from '@design-elements/utils/range';
 import { enCA } from 'date-fns/locale';
 
 import { Option } from '../../select/select';
-import { DayOfWeek, SupportedLocale } from '../datepicker';
+
+export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
+export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export function getLocale(localeArray: Locale[], localeCode?: SupportedLocale): Locale {
-    const findLocale = localeArray.find(locale => locale.code === localeCode);
+    const findLocale = localeArray.find((locale) => locale.code === localeCode);
     return findLocale || enCA;
 }
 
@@ -22,7 +24,7 @@ export function getLocaleDateFormat(locale: Locale = enCA): string {
     const formatObj = new Intl.DateTimeFormat(locale.code).formatToParts(new Date());
 
     return formatObj
-        .map(obj => {
+        .map((obj) => {
             switch (obj.type) {
                 case 'day':
                     return 'dd';
@@ -60,15 +62,12 @@ export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): O
 
     const years = range(
         minDate ? minDate.getUTCFullYear() : 1920,
-        maxDate ? maxDate.getUTCFullYear() : new Date().getUTCFullYear());
+        maxDate ? maxDate.getUTCFullYear() : new Date().getUTCFullYear(),
+    );
 
-    return years.map(year => ({ value: year.toString(), label: year.toString() }));
+    return years.map((year) => ({ value: year.toString(), label: year.toString() }));
 }
 
 export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): void {
-    if (locale.options) {
-        locale.options.weekStartsOn = dayOfWeek;
-    } else {
-        locale.options = { weekStartsOn: dayOfWeek };
-    }
+    Object.assign(locale.options, { weekStartsOn: dayOfWeek });
 }

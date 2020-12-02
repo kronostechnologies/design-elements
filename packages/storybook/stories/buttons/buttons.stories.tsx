@@ -1,4 +1,5 @@
 import { Button } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,24 +7,24 @@ export default {
     component: Button,
 };
 
-export const buttons = () => (
+export const Buttons: Story = () => (
     <>
         <Button label="Primary" buttonType="primary" disabled={false} />
         <Button label="Secondary" buttonType="secondary" disabled={false} />
         <Button label="Tertiary" buttonType="tertiary" disabled={false} />
     </>
 );
-export const disabled = () => (
+export const Disabled: Story = () => (
     <>
-        <Button label="Primary" buttonType="primary" disabled={true} />
-        <Button label="Secondary" buttonType="secondary" disabled={true} />
-        <Button label="Tertiary" buttonType="tertiary" disabled={true} />
+        <Button label="Primary" buttonType="primary" disabled />
+        <Button label="Secondary" buttonType="secondary" disabled />
+        <Button label="Tertiary" buttonType="tertiary" disabled />
     </>
 );
-export const eventCallback = () => (
+export const EventCallback: Story = () => (
     <Button
         label="See Console For Callback"
-        onClick={() => { console.log('The button has been clicked!'); }}
+        onClick={() => console.info('The button has been clicked!')}
         buttonType="primary"
         disabled={false}
     />

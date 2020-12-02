@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement } from 'react';
 import styled from 'styled-components';
 
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -17,7 +17,7 @@ interface ButtonProps {
     /**
      * Visual style
      * @default primary
-     **/
+     * */
     buttonType: ButtonType;
     /**
      * Sets button type
@@ -25,17 +25,28 @@ interface ButtonProps {
      */
     type?: Type;
     label?: string;
-    children?: ReactNode;
     disabled?: boolean;
 
     onClick?(): void;
 }
 
-export function AddButton({ type = 'submit', ...props }: ButtonProps): ReactElement {
+export function AddButton({
+    type = 'submit',
+    buttonType,
+    disabled,
+    label,
+    onClick,
+}: ButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
 
     return (
-        <Button type={type} {...props}>
+        <Button
+            type={type}
+            buttonType={buttonType}
+            onClick={onClick}
+            disabled={disabled}
+            label={label}
+        >
             <PlusIcon name="plusSign" size={isMobile ? '24' : '16'} />
         </Button>
     );

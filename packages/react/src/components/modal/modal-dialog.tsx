@@ -7,10 +7,12 @@ import { Button } from '../buttons/button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Modal } from './modal';
 
-const Title = styled.h2<DeviceContextProps>`
-    font-size: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
+type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
+
+const Title = styled.h2<MobileDeviceContextProps>`
+    font-size: ${({ isMobile }) => (isMobile ? 1.5 : 1.25)}rem;
     font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => isMobile ? 2.25 : 2}rem;
+    line-height: ${({ isMobile }) => (isMobile ? 2.25 : 2)}rem;
     margin: 0;
 
     :focus {
@@ -18,22 +20,22 @@ const Title = styled.h2<DeviceContextProps>`
     }
 `;
 
-const Subtitle = styled.h3<{ hasTitle: boolean } & DeviceContextProps>`
-    font-size: ${({ isMobile }) => isMobile ? 1.125 : 1}rem;
+const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
+    font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
     font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => isMobile ? 1.75 : 1.375}rem;
+    line-height: ${({ isMobile }) => (isMobile ? 1.75 : 1.375)}rem;
     margin: 0;
-    margin-top: ${({ hasTitle }) => hasTitle ? 'var(--spacing-3x)' : 0};
+    margin-top: ${({ hasTitle }) => (hasTitle ? 'var(--spacing-3x)' : 0)};
 `;
 
-const ButtonContainer = styled.div<DeviceContextProps>`
+const ButtonContainer = styled.div<MobileDeviceContextProps>`
     display: flex;
-    flex-direction: ${({ isMobile }) => isMobile ? 'column' : 'unset'};
+    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
 `;
 
-const ConfirmButton = styled(Button)<DeviceContextProps>`
-    margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-1x)' : 0};
-    margin-right: ${({ isMobile }) => isMobile ? 0 : 'var(--spacing-1x)'};
+const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
+    margin-bottom: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 0)};
+    margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
 `;
 
 const CancelButton = styled(Button)``;
@@ -53,21 +55,24 @@ export interface ModalDialogProps {
     isOpen: boolean;
     subtitle?: string;
     title?: string;
+
     onRequestClose(): void;
 }
 
 export function ModalDialog({
+    appElement,
+    ariaDescribedby,
+    ariaHideApp,
     ariaLabel,
+    cancelButton,
     children,
     confirmButton,
-    cancelButton,
+    isOpen,
     onRequestClose,
     subtitle,
     title,
-    isOpen,
-    ...props
 }: ModalDialogProps): ReactElement {
-    const deviceContext = useDeviceContext();
+    const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
@@ -88,24 +93,25 @@ export function ModalDialog({
         if (title || subtitle) {
             return (
                 <>
-                    {title && <Title id={titleId} ref={titleRef} tabIndex={-1} {...deviceContext}>{title}</Title>}
+                    {title && <Title id={titleId} ref={titleRef} tabIndex={-1} isMobile={isMobile}>{title}</Title>}
                     {subtitle && (
-                        <Subtitle hasTitle={title !== undefined} {...deviceContext}>{subtitle}</Subtitle>
+                        <Subtitle hasTitle={title !== undefined} isMobile={isMobile}>{subtitle}</Subtitle>
                     )}
                 </>
             );
-        } else return undefined;
+        }
+        return undefined;
     }
 
     function getFooter(): ReactElement {
         return (
-            <ButtonContainer {...deviceContext}>
+            <ButtonContainer isMobile={isMobile}>
                 <ConfirmButton
                     data-testid="confirm-button"
                     label={confirmButton?.label || t('confirmButtonLabel')}
                     buttonType="primary"
                     onClick={handleConfirm}
-                    {...deviceContext}
+                    isMobile={isMobile}
                 />
                 <CancelButton
                     data-testid="cancel-button"
@@ -119,6 +125,8 @@ export function ModalDialog({
 
     return (
         <Modal
+            ariaDescribedby={ariaDescribedby}
+            ariaHideApp={ariaHideApp}
             ariaLabel={title ? undefined : ariaLabel}
             ariaLabelledBy={title ? titleId : undefined}
             modalHeader={getHeader()}
@@ -128,7 +136,7 @@ export function ModalDialog({
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
             isOpen={isOpen}
-            {...props}
+            appElement={appElement}
         >
             {children}
         </Modal>

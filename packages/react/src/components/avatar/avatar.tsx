@@ -13,14 +13,14 @@ const StyledDiv = styled.div<{isMobile: boolean}>`
     background: ${({ theme }) => theme.greys['colored-white']};
     border-radius: 50%;
     display: flex;
-    height: ${({ isMobile }) => isMobile ? '2.5rem' : '1.5rem'};
+    height: ${({ isMobile }) => (isMobile ? '2.5rem' : '1.5rem')};
     justify-content: center;
-    width: ${({ isMobile }) => isMobile ? '2.5rem' : '1.5rem'};
+    width: ${({ isMobile }) => (isMobile ? '2.5rem' : '1.5rem')};
 `;
 
 const StyledSpan = styled.span<{isMobile: boolean}>`
-    font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.625rem'};
-    letter-spacing: ${({ isMobile }) => isMobile ? '0.23px' : '0.17px'};
+    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.625rem')};
+    letter-spacing: ${({ isMobile }) => (isMobile ? '0.23px' : '0.17px')};
 `;
 
 export function Avatar({ username }: AvatarProps): ReactElement {

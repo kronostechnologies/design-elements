@@ -311,7 +311,7 @@ exports[`External Link without href matches snapshot 1`] = `
 <a
   aria-disabled="false"
   class="c0 external"
-  href="javascript:void(0)"
+  href=""
 >
   <svg
     color="currentColor"

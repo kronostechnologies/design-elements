@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { TextArea } from './text-area';
 
@@ -56,7 +57,7 @@ describe('TextArea', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            ThemeWrapped(<TextArea onChange={() => {}}  onBlur={() => {}} {...defaultProps} />),
+            ThemeWrapped(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -64,7 +65,7 @@ describe('TextArea', () => {
 
     test('Is disabled', () => {
         const tree = renderer.create(
-            ThemeWrapped(<TextArea onChange={() => {}}  onBlur={() => {}} {...defaultProps} disabled />),
+            ThemeWrapped(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} disabled />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

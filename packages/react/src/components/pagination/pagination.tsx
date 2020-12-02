@@ -5,7 +5,7 @@ import { useTranslation } from '@design-elements/i18n/i18n';
 import { focus } from '@design-elements/utils/css-state';
 import { clamp } from '@design-elements/utils/math';
 import { range } from '@design-elements/utils/range';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { calculateShownPageRange } from './util/pagination-util';
 
@@ -16,22 +16,22 @@ const Pages = styled.ol`
 `;
 
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
-    background-color: ${props => props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white};
+    background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
     border-radius: 100%;
-    color: ${props => props.isSelected ? props.theme.greys.white : props.theme.greys.black};
+    color: ${(props) => (props.isSelected ? props.theme.greys.white : props.theme.greys.black)};
     display: inline-block;
-    font-size: ${props => props.isMobile ? 1 : 0.9}rem;
+    font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
-    height: ${props => props.isMobile ? 32 : 24}px;
-    line-height: ${props => props.isMobile ? 32 : 24}px;
+    height: ${(props) => (props.isMobile ? 32 : 24)}px;
+    line-height: ${(props) => (props.isMobile ? 32 : 24)}px;
     margin: 0 var(--spacing-half);
     ${focus}
     text-align: center;
-    width: ${props => props.isMobile ? 32 : 24}px;
+    width: ${(props) => (props.isMobile ? 32 : 24)}px;
 
     &:hover {
-        background-color: ${props => props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
-        cursor: ${props => props.isSelected ? 'default' : 'pointer'};
+        background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey)};
+        cursor: ${(props) => (props.isSelected ? 'default' : 'pointer')};
     }
 `;
 
@@ -39,33 +39,39 @@ interface NavButtonProps {
     iconName: IconName;
     label: string;
     enabled: boolean;
+
     onClick(): void;
 }
 
-const NavButton = (props: NavButtonProps) => {
-    return (
-        <IconButton
-            {...props}
-            type="button"
-            buttonType="tertiary"
-            aria-disabled={!props.enabled}
-            disabled={!props.enabled}
-            tab-index={props.enabled ? 0 : -1}
-        />
-    );
-};
+const NavButton: VoidFunctionComponent<NavButtonProps> = ({
+    enabled,
+    iconName,
+    label,
+    ...props
+}) => (
+    <IconButton
+        {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+        iconName={iconName}
+        label={label}
+        type="button"
+        buttonType="tertiary"
+        aria-disabled={!enabled}
+        disabled={!enabled}
+        tab-index={enabled ? 0 : -1}
+    />
+);
 
 const Container = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
-    flex-direction: ${props => props.isMobile ? 'column' : 'row' };
+    flex-direction: ${(props) => (props.isMobile ? 'column' : 'row')};
 `;
 
 const ResultsLabel = styled.div<{ isMobile: boolean }>`
-    font-size: ${props => props.isMobile ? 1 : 0.9}rem;
-    line-height: ${props => props.isMobile ? 32 : 24}px;
-    margin-bottom: ${props => props.isMobile ? '12px' : 0};
-    margin-right: ${props => props.isMobile ? 0 : '24px'};
+    font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
+    line-height: ${(props) => (props.isMobile ? 32 : 24)}px;
+    margin-bottom: ${(props) => (props.isMobile ? '12px' : 0)};
+    margin-right: ${(props) => (props.isMobile ? 0 : '24px')};
     white-space: nowrap;
 `;
 
@@ -94,6 +100,7 @@ interface PaginationProps {
      * @default 3
      */
     pagesShown?: number;
+
     /**
      * Function callback when page is changed
      */
@@ -101,11 +108,11 @@ interface PaginationProps {
 }
 
 export function Pagination({
-   totalPages,
-   numberOfResults,
-   defaultActivePage = 1,
-   pagesShown = 3,
-   onPageChange = () => undefined,
+    totalPages,
+    numberOfResults,
+    defaultActivePage = 1,
+    pagesShown = 3,
+    onPageChange = () => undefined,
 }: PaginationProps): ReactElement {
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
@@ -116,20 +123,20 @@ export function Pagination({
     const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
-    const changePage = (page: number) => {
+    function changePage(page: number): void {
         setCurrentPage(page);
         onPageChange(page);
-    };
+    }
 
-    const handlePageKeyDown = (key: string, page: number) => {
+    function handlePageKeyDown(key: string, page: number): void {
         if (key === 'Enter') {
             changePage(page);
         }
-    };
+    }
 
     const { begin, end } = calculateShownPageRange(totalPages, pagesDisplayed, currentPage);
-    const pages = range(begin, end).map(i => {
-        const id = 'page-' + i;
+    const pages = range(begin, end).map((i) => {
+        const id = `page-${i}`;
         const isCurrentPage = i === currentPage;
         return (
             <Page
@@ -137,10 +144,11 @@ export function Pagination({
                 data-testid={id}
                 isSelected={isCurrentPage}
                 onClick={isCurrentPage ? undefined : () => changePage(i)}
-                onKeyPress={event => handlePageKeyDown(event.key, i)}
+                onKeyPress={(event) => handlePageKeyDown(event.key, i)}
                 isMobile={isMobile}
                 tabIndex={0}
-            ><a aria-label={`go to page ${i}`} aria-current={isCurrentPage ? 'page' : undefined}>{i}</a>
+            >
+                <a aria-label={`go to page ${i}`} aria-current={isCurrentPage ? 'page' : undefined}>{i}</a>
             </Page>
         );
     });
@@ -149,39 +157,49 @@ export function Pagination({
         <Container isMobile={isMobile}>
             {numberOfResults !== undefined && (
                 <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                    {numberOfResults} {t('results')}
+                    {numberOfResults}
+                    {' '}
+                    {t('results')}
                 </ResultsLabel>
             )}
             <Navigation aria-label="pagination">
-                {firstLastNavActive && <NavButton
-                    data-testid="firstPageButton"
-                    iconName="chevronsLeft"
-                    label="first page"
-                    enabled={canNavigatePrevious}
-                    onClick={() => changePage(1)}
-                />}
-                {forwardBackwardNavActive && <NavButton
-                    data-testid="previousPageButton"
-                    iconName="chevronLeft"
-                    label="previous page"
-                    enabled={canNavigatePrevious}
-                    onClick={() => changePage(currentPage - 1)}
-                />}
+                {firstLastNavActive && (
+                    <NavButton
+                        data-testid="firstPageButton"
+                        iconName="chevronsLeft"
+                        label="first page"
+                        enabled={canNavigatePrevious}
+                        onClick={() => changePage(1)}
+                    />
+                )}
+                {forwardBackwardNavActive && (
+                    <NavButton
+                        data-testid="previousPageButton"
+                        iconName="chevronLeft"
+                        label="previous page"
+                        enabled={canNavigatePrevious}
+                        onClick={() => changePage(currentPage - 1)}
+                    />
+                )}
                 <Pages>{pages}</Pages>
-                {forwardBackwardNavActive && <NavButton
-                    data-testid="nextPageButton"
-                    iconName="chevronRight"
-                    label="next page"
-                    enabled={canNavigateNext}
-                    onClick={() => changePage(currentPage + 1)}
-                />}
-                {firstLastNavActive && <NavButton
-                    data-testid="lastPageButton"
-                    iconName="chevronsRight"
-                    label="last page"
-                    enabled={canNavigateNext}
-                    onClick={() => changePage(totalPages)}
-                />}
+                {forwardBackwardNavActive && (
+                    <NavButton
+                        data-testid="nextPageButton"
+                        iconName="chevronRight"
+                        label="next page"
+                        enabled={canNavigateNext}
+                        onClick={() => changePage(currentPage + 1)}
+                    />
+                )}
+                {firstLastNavActive && (
+                    <NavButton
+                        data-testid="lastPageButton"
+                        iconName="chevronsRight"
+                        label="last page"
+                        enabled={canNavigateNext}
+                        onClick={() => changePage(totalPages)}
+                    />
+                )}
             </Navigation>
         </Container>
     );

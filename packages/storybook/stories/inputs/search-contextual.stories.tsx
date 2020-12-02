@@ -1,4 +1,5 @@
 import { SearchContextual } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import * as React from 'react';
 
 export default {
@@ -6,17 +7,15 @@ export default {
     component: SearchContextual,
 };
 
-export const contextual = () => (
-    <SearchContextual/>
+export const Contextual: Story = () => (
+    <SearchContextual />
 );
 
-export const disabled = () => (
-    <SearchContextual disabled/>
+export const Disabled: Story = () => (
+    <SearchContextual disabled />
 );
-export const eventCallback = () => (
+export const EventCallback: Story = () => (
     <SearchContextual
-        onChange={event => {
-            console.log(`Searching for: ${event.currentTarget.value}`);
-        }}
+        onChange={(event) => console.info(`Searching for: ${event.currentTarget.value}`)}
     />
 );

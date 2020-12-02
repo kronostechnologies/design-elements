@@ -28,13 +28,13 @@ exports[`Bar Matches the snapshot 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
       color="#ccc"
     />
   </div>

@@ -1,4 +1,4 @@
-import { Theme } from '../components/theme-wrapper/theme-wrapper';
+import { Theme } from '@design-elements/themes/theme';
 import { greys } from './greys';
 import { notifications } from './notifications';
 import { tokens } from './tokens';

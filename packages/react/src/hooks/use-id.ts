@@ -5,7 +5,7 @@ const INITIAL_VALUE = 1;
 let lastId = INITIAL_VALUE;
 
 function nextId(localPrefix: string): string {
-    return `${localPrefix}${lastId++}`;
+    return `${localPrefix}${lastId++}`; // eslint-disable-line no-plusplus
 }
 
 function usePrevious(value: unknown): unknown {

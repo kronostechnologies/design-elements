@@ -5,6 +5,10 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { Progress, ProgressStep } from './progress';
 
+function generateSteps(count: number): ProgressStep[] {
+    return range(1, count).map((i) => ({ label: `Step ${i}` }));
+}
+
 describe('Progress Component', () => {
     it('should render all steps', () => {
         const steps = generateSteps(3);
@@ -22,7 +26,7 @@ describe('Progress Component', () => {
         const wrapper = shallow(<Progress steps={steps} value={1} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-steps');
 
-        const allStepsLabels = findByTestId(stepsWrapper, 'progress-step-', '^').map(w => w.text());
+        const allStepsLabels = findByTestId(stepsWrapper, 'progress-step-', '^').map((w) => w.text());
         expect(allStepsLabels).toEqual(expect.arrayContaining(['Step 1', 'Step 2', 'Step 3']));
     });
 
@@ -32,7 +36,7 @@ describe('Progress Component', () => {
         const wrapper = shallow(<Progress steps={steps} value={3} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-steps');
 
-        const pastSteps = findByTestId(stepsWrapper, 'progress-step-past').map(w => w.text());
+        const pastSteps = findByTestId(stepsWrapper, 'progress-step-past').map((w) => w.text());
         expect(pastSteps).toEqual(expect.arrayContaining(['Step 1', 'Step 2']));
     });
 
@@ -42,7 +46,7 @@ describe('Progress Component', () => {
         const wrapper = shallow(<Progress steps={steps} value={2} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-steps');
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map(w => w.text());
+        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map((w) => w.text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 2']));
     });
 
@@ -52,7 +56,7 @@ describe('Progress Component', () => {
         const wrapper = shallow(<Progress steps={steps} value={0} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-steps');
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map(w => w.text());
+        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map((w) => w.text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 1']));
     });
 
@@ -62,7 +66,7 @@ describe('Progress Component', () => {
         const wrapper = shallow(<Progress steps={steps} value={4} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-steps');
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map(w => w.text());
+        const currentStep = findByTestId(stepsWrapper, 'progress-step-current').map((w) => w.text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 3']));
     });
 
@@ -72,7 +76,7 @@ describe('Progress Component', () => {
         const wrapper = shallow(<Progress steps={steps} value={1} />);
         const stepsWrapper = getByTestId(wrapper, 'progress-steps');
 
-        const currentStep = findByTestId(stepsWrapper, 'progress-step-future').map(w => w.text());
+        const currentStep = findByTestId(stepsWrapper, 'progress-step-future').map((w) => w.text());
         expect(currentStep).toEqual(expect.arrayContaining(['Step 2', 'Step 3']));
     });
 
@@ -94,7 +98,3 @@ describe('Progress Component', () => {
         });
     });
 });
-
-function generateSteps(count: number): ProgressStep[] {
-    return range(1, count).map(i => ({ label: `Step ${i}` }));
-}

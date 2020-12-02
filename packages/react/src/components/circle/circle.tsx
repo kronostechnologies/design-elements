@@ -20,8 +20,10 @@ interface CircleProps {
     stroke: number;
 }
 
-export function Circle({ color, percent, radius, stroke }: CircleProps): ReactElement {
-    const normalizedRadius = radius - stroke / 2;
+export function Circle({
+    color, percent, radius, stroke,
+}: CircleProps): ReactElement {
+    const normalizedRadius = radius - (stroke / 2);
     const circumference = normalizedRadius * 2 * Math.PI;
     const strokeDashoffset = circumference - ((percent / 100) * circumference);
     const theme = useTheme();

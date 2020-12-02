@@ -1,5 +1,3 @@
-import React, { ReactElement } from 'react';
-
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
@@ -30,6 +28,7 @@ import Search from 'feather-icons/dist/icons/search.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash.svg';
 import X from 'feather-icons/dist/icons/x.svg';
+import React, { VoidFunctionComponent } from 'react';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
 
@@ -85,11 +84,28 @@ interface IconProps {
     color?: string;
 }
 
-export function Icon({ name, size, ...props }: IconProps): ReactElement | null {
+export const Icon: VoidFunctionComponent<IconProps> = ({
+    name,
+    size,
+    color,
+    ...props
+}: IconProps) => {
     const Component = iconMapping[name];
 
-    return Component ? <Component height={size} focusable={false} width={size} {...props} /> : null;
-}
+    if (!Component) {
+        return null;
+    }
+
+    return (
+        <Component
+            height={size}
+            focusable={false}
+            width={size}
+            color={color}
+            {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+        />
+    );
+};
 
 Icon.defaultProps = {
     size: '24',

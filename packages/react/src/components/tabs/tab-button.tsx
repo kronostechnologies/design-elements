@@ -1,8 +1,7 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-
 import { Icon, IconName } from '@design-elements/components/icon/icon';
 import { focus } from '@design-elements/utils/css-state';
+import React, { ReactElement, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 
 const StyledButton = styled.button<{isSelected: boolean}>`
     align-items: center;
@@ -31,10 +30,10 @@ const StyledButton = styled.button<{isSelected: boolean}>`
 `;
 
 const StyledButtonText = styled.span<{isSelected: boolean}>`
-    color: ${({ isSelected, theme }) => isSelected ? `${theme.main['primary-1.1']}` : `${theme.greys['dark-grey']}`};
+    color: ${({ isSelected, theme }) => (isSelected ? `${theme.main['primary-1.1']}` : `${theme.greys['dark-grey']}`)};
     font-family: Open Sans, sans-serif;
     font-size: 0.875rem;
-    -webkit-text-stroke-width: ${({ isSelected }) => isSelected ? '0.4px' : '0'};
+    -webkit-text-stroke-width: ${({ isSelected }) => (isSelected ? '0.4px' : '0')};
 
     ${/* sc-select */ StyledButton}:hover & {
         color: ${({ theme }) => theme.main['primary-2']};
@@ -42,7 +41,7 @@ const StyledButtonText = styled.span<{isSelected: boolean}>`
 `;
 
 const LeftIcon = styled(Icon)<{$isSelected: boolean}>`
-    color: ${({ $isSelected, theme }) => $isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey']};
+    color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
     padding-right: var(--spacing-half);
 
     ${/* sc-select */ StyledButton}:hover & {
@@ -51,7 +50,7 @@ const LeftIcon = styled(Icon)<{$isSelected: boolean}>`
 `;
 
 const RightIcon = styled(Icon)<{$isSelected: boolean}>`
-    color: ${({ $isSelected, theme }) => $isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey']};
+    color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
     padding-left: var(--spacing-half);
 
     ${/* sc-select */ StyledButton}:hover & {

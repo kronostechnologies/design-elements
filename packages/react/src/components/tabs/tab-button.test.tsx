@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { doNothing } from '../../test-utils/callbacks';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { TabButton } from './tab-button';
@@ -11,7 +11,7 @@ describe('TabButton', () => {
         isSelected: true,
         isFocused: true,
         onClick: doNothing,
-        onFocus: doNothing
+        onFocus: doNothing,
     };
 
     test('should display button text', () => {
@@ -67,8 +67,8 @@ describe('TabButton', () => {
             <TabButton
                 id="aId"
                 panelId="aPanelId"
-                isSelected={true}
-                isFocused={true}
+                isSelected
+                isFocused
                 onClick={expectedOnClickCall}
                 onFocus={doNothing}
             >
@@ -87,8 +87,8 @@ describe('TabButton', () => {
             <TabButton
                 id="aId"
                 panelId="aPanelId"
-                isSelected={true}
-                isFocused={true}
+                isSelected
+                isFocused
                 onClick={doNothing}
                 onFocus={expectedOnFocusCall}
             >
@@ -101,5 +101,3 @@ describe('TabButton', () => {
         expect(expectedOnFocusCall).toHaveBeenCalled();
     });
 });
-
-function doNothing(): void {}

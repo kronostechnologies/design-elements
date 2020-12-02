@@ -1,21 +1,25 @@
-import React, { KeyboardEvent, ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from '@design-elements/i18n/i18n';
+import { Theme } from '@design-elements/themes/theme';
+import React, { KeyboardEvent, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-
-import { useTranslation } from '@design-elements/i18n/i18n';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const StyledNav = styled.nav`
     position: relative;
     width: fit-content;
 `;
 
+interface StyledButtonProps {
+    theme: Theme;
+    expanded: boolean;
+}
+
 const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-    background-color: ${({ expanded, theme }) => expanded ? theme.main['primary-3'] : 'transparent'};
+    background-color: ${({ expanded, theme }) => (expanded ? theme.main['primary-3'] : 'transparent')};
     border-color: transparent;
     color: ${({ theme }) => theme.greys.white};
     font-size: 0.875rem;
@@ -38,21 +42,16 @@ const StyledNavMenu = styled(NavMenu)`
     width: initial;
 `;
 
-interface StyledButtonProps {
-    theme: Theme;
-    expanded: boolean;
-}
-
 interface MenuButtonProps {
     /**
      * Sets nav's description
      * @default 'Navigation menu'
-     **/
+     * */
     ariaLabel?: string;
     /**
      * Sets menu open by default
      * @default false
-     **/
+     * */
     defaultOpen?: boolean;
     id?: string;
     label: string;
@@ -62,36 +61,37 @@ interface MenuButtonProps {
 export function NavMenuButton({
     ariaLabel,
     defaultOpen = false,
-    id = useMemo(uuid, []),
+    id: providedId,
     label,
     options,
 }: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
+    const id = useMemo(() => providedId || uuid(), [providedId]);
     const [focusedValue, setFocusedValue] = useState('');
     const [isOpen, setOpen] = useState(defaultOpen);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const navMenuRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        setFocusedValue(isOpen ? options[0].value : '');
-        document.addEventListener('mouseup', handleClickOutside);
-
-        return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [isOpen, options]);
-
-    function handleClickOutside(event: MouseEvent): void {
+    const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = (
-            !buttonRef.current?.contains(event.target as Node) &&
-            !navMenuRef.current?.contains(event.target as Node)
+            !buttonRef.current?.contains(event.target as Node)
+            && !navMenuRef.current?.contains(event.target as Node)
         );
         const shouldClose = (navMenuRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
             setOpen(false);
         }
-    }
+    }, [isOpen]);
+
+    useEffect(() => {
+        setFocusedValue(isOpen ? options[0].value : '');
+        document.addEventListener('mouseup', handleClickOutside);
+
+        return () => document.removeEventListener('mouseup', handleClickOutside);
+    }, [handleClickOutside, isOpen, options]);
 
     function handleNavMenuKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
@@ -122,7 +122,7 @@ export function NavMenuButton({
                 type="button"
             >
                 {label}
-                <StyledIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16"/>
+                <StyledIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />
             </StyledButton>
             <StyledNavMenu
                 data-testid="menu-navMenu"

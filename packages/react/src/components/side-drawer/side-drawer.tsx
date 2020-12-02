@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode,  useEffect, useRef, useState } from 'react';
+import React, { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
@@ -11,18 +11,28 @@ interface ContainerProps {
     isDesktop: boolean;
 }
 
+function getTranslate({ open, origin }: ContainerProps): string {
+    if (open) {
+        return '0%';
+    }
+    if (origin === 'left') {
+        return '-100%';
+    }
+    return '100%';
+}
+
 const Container = styled.div<ContainerProps>`
-    background-color: ${props => props.theme.greys.white};
+    background-color: ${(props) => props.theme.greys.white};
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-    height: calc(100vh - ${({ isDesktop }) => isDesktop ? 48 : 56}px);
-    ${props => props.origin}: 0;
+    height: calc(100vh - ${({ isDesktop }) => (isDesktop ? 48 : 56)}px);
+    ${(props) => props.origin}: 0;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
-    top: ${({ isDesktop }) => isDesktop ? 48 : 56}px;
-    transform: translate(${props => props.open ? '0%' : props.origin === 'left' ? '-100%' : '100%'});
+    top: ${({ isDesktop }) => (isDesktop ? 48 : 56)}px;
+    transform: translate(${getTranslate});
     transition: transform 300ms;
-    width: ${props => props.width};
+    width: ${(props) => props.width};
     z-index: 100;
 
     > .side-drawer {
@@ -36,7 +46,7 @@ interface SideDrawerProps {
     /**
      * Drawer origin position
      * @default right
-     **/
+     */
     drawerOrigin: Origin;
     id?: string;
     /** Use on nested drawers to prevent background scroll */
@@ -45,11 +55,13 @@ interface SideDrawerProps {
     /**
      * Sets drawer width
      * @default 100%
-     **/
+     */
     width: string;
 }
 
-export function SideDrawer({ children, id, nested, open, drawerOrigin, width }: SideDrawerProps): ReactElement {
+export function SideDrawer({
+    children, id, nested, open, drawerOrigin, width,
+}: SideDrawerProps): ReactElement {
     const { isDesktop } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(open);
     const drawerRef = useRef<HTMLDivElement>(null);
@@ -58,9 +70,13 @@ export function SideDrawer({ children, id, nested, open, drawerOrigin, width }: 
         const drawer = drawerRef.current;
 
         // Prevents background scroll on full screen drawers
-        if (open && width === '100%' || width === '100vw') document.body.style.overflow = `hidden`;
+        if (open && (width === '100%' || width === '100vw')) {
+            document.body.style.overflow = 'hidden';
+        }
 
-        if (drawer === null) return;
+        if (drawer === null) {
+            return;
+        }
 
         // Sets display block / none before and after animations for accessibility
         if (open) {
@@ -69,26 +85,30 @@ export function SideDrawer({ children, id, nested, open, drawerOrigin, width }: 
         } else if (!open) {
             setDrawerOpen(false);
             setTimeout(() => {
-                if (drawer.scrollTop > 0) drawer.scrollTop = 0;
+                if (drawer.scrollTop > 0) {
+                    drawer.scrollTop = 0;
+                }
                 drawer.style.display = 'none';
             }, 300);
         }
 
         return () => {
-            if (!nested) document.body.style.overflow = `unset`;
+            if (!nested) {
+                document.body.style.overflow = 'unset';
+            }
         };
-    }, [open]);
+    }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <Container
-          aria-hidden={!drawerOpen}
-          className="side-drawer"
-          isDesktop={isDesktop}
-          id={id}
-          open={drawerOpen}
-          origin={drawerOrigin}
-          ref={drawerRef}
-          width={width}
+            aria-hidden={!drawerOpen}
+            className="side-drawer"
+            isDesktop={isDesktop}
+            id={id}
+            open={drawerOpen}
+            origin={drawerOrigin}
+            ref={drawerRef}
+            width={width}
         >
             {children}
         </Container>

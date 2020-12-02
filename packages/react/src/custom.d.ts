@@ -1,3 +1,5 @@
+/* eslint-disable import/no-default-export,@typescript-eslint/no-explicit-any */
+
 // This file exists to that TypeScript can recognize the SVG files as components / modules
 // Reference : https://stackoverflow.com/a/45887328
 

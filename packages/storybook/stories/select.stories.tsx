@@ -1,4 +1,5 @@
 import { Select } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -8,19 +9,19 @@ const Container = styled.div`
 `;
 
 const provinces = [
-    {  value: 'on', label: 'Ontario' },
-    {  value: 'qc', label: 'Quebec' },
-    {  value: 'bc', label: 'British Columbia' },
-    {  value: 'ab', label: 'Alberta' },
-    {  value: 'mb', label: 'Manitoba' },
-    {  value: 'sk', label: 'Saskatchewan' },
-    {  value: 'ns', label: 'Nova Scotia' },
-    {  value: 'nb', label: 'New Brunswick' },
-    {  value: 'nl', label: 'Newfoundland and Labrador' },
-    {  value: 'pe', label: 'Prince Edward Island' },
-    {  value: 'nt', label: 'Northwest Territories' },
-    {  value: 'nu', label: 'Nunavut' },
-    {  value: 'yt', label: 'Yukon' },
+    { value: 'on', label: 'Ontario' },
+    { value: 'qc', label: 'Quebec' },
+    { value: 'bc', label: 'British Columbia' },
+    { value: 'ab', label: 'Alberta' },
+    { value: 'mb', label: 'Manitoba' },
+    { value: 'sk', label: 'Saskatchewan' },
+    { value: 'ns', label: 'Nova Scotia' },
+    { value: 'nb', label: 'New Brunswick' },
+    { value: 'nl', label: 'Newfoundland and Labrador' },
+    { value: 'pe', label: 'Prince Edward Island' },
+    { value: 'nt', label: 'Northwest Territories' },
+    { value: 'nu', label: 'Nunavut' },
+    { value: 'yt', label: 'Yukon' },
 ];
 
 const skipOption = {
@@ -34,40 +35,44 @@ export default {
     decorators: [decorateWith(Container)],
 };
 
-export const normal = () => (
-    <Select label="Select an option" hint="Hint" options={provinces}/>
+export const Normal: Story = () => (
+    <Select label="Select an option" hint="Hint" options={provinces} />
 );
 
-export const customPlaceholder = () => (
-    <Select label="Select an option" options={provinces} placeholder="Custom placeholder"/>
+export const CustomPlaceholder: Story = () => (
+    <Select label="Select an option" options={provinces} placeholder="Custom placeholder" />
 );
-export const disabled = () => (
-    <Select label="Select an option" options={provinces} disabled/>
+export const Disabled: Story = () => (
+    <Select label="Select an option" options={provinces} disabled />
 );
-export const invalid = () => (
-    <Select label="Select an option" options={provinces} valid={false}/>
+export const Invalid: Story = () => (
+    <Select label="Select an option" options={provinces} valid={false} />
 );
-export const required = () => (
-    <form onSubmit={event => event.preventDefault()}>
-        <Select required label="Select an option" options={provinces}/>
+export const Required: Story = () => (
+    <form onSubmit={(event) => event.preventDefault()}>
+        <Select required label="Select an option" options={provinces} />
         <button type="submit">Submit</button>
     </form>
 );
-export const searchable = () => (
-    <Select label="Select an option" options={provinces} searchable/>
+export const Searchable: Story = () => (
+    <Select label="Select an option" options={provinces} searchable />
 );
-export const withCallback = () => (
-    <Select label="Select an option" options={provinces} onChange={(option) => console.log(`Label: ${option.label} | Value: ${option.value}`)}/>
+export const WithCallback: Story = () => (
+    <Select
+        label="Select an option"
+        options={provinces}
+        onChange={(option) => console.info(`Label: ${option.label} | Value: ${option.value}`)}
+    />
 );
-export const withDefaultValue = () => (
-    <Select label="Select an option" options={provinces} defaultValue="qc"/>
+export const WithDefaultValue: Story = () => (
+    <Select label="Select an option" options={provinces} defaultValue="qc" />
 );
-export const withoutLabel = () => (
-    <Select options={provinces}/>
+export const WithoutLabel: Story = () => (
+    <Select options={provinces} />
 );
-export const withSkip = () => (
-    <Select label="Select an option" options={provinces} skipOption={skipOption}/>
+export const WithSkip: Story = () => (
+    <Select label="Select an option" options={provinces} skipOption={skipOption} />
 );
-export const withTwoItemsVisible = () => (
-    <Select label="Select an option" options={provinces} numberOfItemsVisible={2}/>
+export const WithTwoItemsVisible: Story = () => (
+    <Select label="Select an option" options={provinces} numberOfItemsVisible={2} />
 );

@@ -11,7 +11,9 @@ interface SearchInputProps {
     onSearch?(value: string): void;
 }
 
-export function SearchGlobal({ disabled, initialValue, label, onSearch, placeholder }: SearchInputProps): ReactElement {
+export function SearchGlobal({
+    disabled, initialValue, label, onSearch, placeholder,
+}: SearchInputProps): ReactElement {
     return (
         <SearchInput
             disabled={disabled}

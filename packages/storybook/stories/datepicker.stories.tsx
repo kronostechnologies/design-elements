@@ -1,4 +1,5 @@
 import { Button, Datepicker, DatepickerHandles } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React, { FormEvent, useRef } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -17,74 +18,74 @@ export default {
     decorators: [decorateWith(Container)],
 };
 
-export const normal = () => (
-    <Datepicker label="Date" hint="Hint"/>
+export const Normal: Story = () => (
+    <Datepicker label="Date" hint="Hint" />
 );
 
-export const withTodayButton = () => (
-    <Datepicker label="Date" hasTodayButton/>
+export const WithTodayButton: Story = () => (
+    <Datepicker label="Date" hasTodayButton />
 );
 
-export const disabled = () => (
-    <Datepicker label="Date" disabled/>
+export const Disabled: Story = () => (
+    <Datepicker label="Date" disabled />
 );
 
-export const customDateFormat = () => (
-    <Datepicker label="Date" dateFormat="dd/MM"/>
+export const CustomDateFormat: Story = () => (
+    <Datepicker label="Date" dateFormat="dd/MM" />
 );
 
-export const customPlaceholder = () => (
-    <Datepicker label="Date" placeholder="Hello World"/>
+export const CustomPlaceholder: Story = () => (
+    <Datepicker label="Date" placeholder="Hello World" />
 );
 
-export const invalid = () => (
-    <Datepicker label="Date" valid={false}/>
+export const Invalid: Story = () => (
+    <Datepicker label="Date" valid={false} />
 );
 
-export const maxDate = () => (
-    <Datepicker label="Date" maxDate={upcomingDate}/>
+export const MaxDate: Story = () => (
+    <Datepicker label="Date" maxDate={upcomingDate} />
 );
 
-export const minDate = () => (
-    <Datepicker label="Date" minDate={currentDate}/>
+export const MinDate: Story = () => (
+    <Datepicker label="Date" minDate={currentDate} />
 );
 
-export const readOnly = () => (
-    <Datepicker label="Date" value="2002-02-02" readOnly/>
+export const ReadOnly: Story = () => (
+    <Datepicker label="Date" value="2002-02-02" readOnly />
 );
 
-export const required = () => (
+export const Required: Story = () => (
     <form onSubmit={(event: FormEvent) => event.preventDefault()}>
-        <Datepicker label="Date" required/>
+        <Datepicker label="Date" required />
         <button type="submit">Submit</button>
     </form>
 );
 
-export const startOpen = () => (
-    <Datepicker label="Date" startOpen/>
+export const StartOpen: Story = () => (
+    <Datepicker label="Date" startOpen />
 );
 
-export const startDate = () => (
-    <Datepicker label="Date" startDate={new Date('1995-05-05')}/>
+export const StartDate: Story = () => (
+    <Datepicker label="Date" startDate={new Date('1995-05-05')} />
 );
 
-export const customLocale = () => (
-    <Datepicker label="Date" locale="fr-CA"/>
+export const CustomLocale: Story = () => (
+    <Datepicker label="Date" locale="fr-CA" />
 );
 
-export const withOnChangeCallback = () => (
-    <Datepicker label="Date" onChange={(date) => console.log(`[onChange] Date: ${date}`)}/>
+export const WithOnChangeCallback: Story = () => (
+    <Datepicker label="Date" onChange={(date) => console.info(`[onChange] Date: ${date}`)} />
 );
 
-export const withOnBlurCallback = () => (
-    <Datepicker label="Date" onBlur={(event) => console.log(`[onBlur] Value: ${event.target.value}`)}/>
+export const WithOnBlurCallback: Story = () => (
+    <Datepicker label="Date" onBlur={(event) => console.info(`[onBlur] Value: ${event.target.value}`)} />
 );
 
-export const withOnFocusCallback = () => (
-    <Datepicker label="Date" onFocus={(event) => console.log(`[onFocus] Value: ${event.target.value}`)}/>
+export const WithOnFocusCallback: Story = () => (
+    <Datepicker label="Date" onFocus={(event) => console.info(`[onFocus] Value: ${event.target.value}`)} />
 );
 
-export const withDatepickerResetHandle = () => {
+export const WithDatepickerResetHandle: Story = () => {
     const datepickerRef = useRef<DatepickerHandles>(null);
 
     function handleClick(): void {
@@ -93,13 +94,13 @@ export const withDatepickerResetHandle = () => {
 
     return (
         <>
-            <Datepicker ref={datepickerRef}/>
-            <Button buttonType="primary" label="reset" onClick={handleClick}/>
+            <Datepicker ref={datepickerRef} />
+            <Button buttonType="primary" label="reset" onClick={handleClick} />
         </>
     );
 };
 
-export const withDatepickerSetDateHandle = () => {
+export const WithDatepickerSetDateHandle: Story = () => {
     const datepickerRef = useRef<DatepickerHandles>(null);
 
     function handleClick(): void {
@@ -108,8 +109,8 @@ export const withDatepickerSetDateHandle = () => {
 
     return (
         <>
-            <Datepicker ref={datepickerRef}/>
-            <Button buttonType="primary" label="Set to today" onClick={handleClick}/>
+            <Datepicker ref={datepickerRef} />
+            <Button buttonType="primary" label="Set to today" onClick={handleClick} />
         </>
     );
 };

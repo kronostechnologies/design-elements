@@ -1,4 +1,5 @@
 import { AddButton } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,7 +7,7 @@ export default {
     component: AddButton,
 };
 
-export const addButtons = () => (
+export const AddButtons: Story = () => (
     <>
         <AddButton
             label="Primary"
@@ -25,30 +26,30 @@ export const addButtons = () => (
         />
     </>
 );
-export const disabled = () => (
+export const Disabled: Story = () => (
     <>
         <AddButton
             label="Primary"
             buttonType="primary"
-            disabled={true}
+            disabled
         />
         <AddButton
             label="Secondary"
             buttonType="secondary"
-            disabled={true}
+            disabled
         />
         <AddButton
             label="Tertiary"
             buttonType="tertiary"
-            disabled={true}
+            disabled
         />
     </>
 );
-export const eventCallback = () => (
+export const EventCallback: Story = () => (
     <AddButton
         label="See Console For Callback"
         buttonType="primary"
-        onClick={() => { console.log('The button has been clicked!'); }}
+        onClick={() => console.info('The button has been clicked!')}
         disabled={false}
     />
 );

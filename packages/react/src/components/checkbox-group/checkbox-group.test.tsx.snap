@@ -10,7 +10,7 @@ Array [
 }
 
 <legend
-    className="c0"
+    class="c0"
   >
     Vehicule
   </legend>,
@@ -85,9 +85,8 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
-     
     Boat
     <input
       name="vehicule1"
@@ -95,10 +94,10 @@ Array [
       value="boat"
     />
     <span
-      className="box"
+      class="box"
     >
       <svg
-        className="c1 c2 checkMark"
+        class="c1 c2 checkMark"
       />
     </span>
   </label>,
@@ -173,21 +172,20 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
-     
     Plane
     <input
-      defaultChecked={true}
+      checked=""
       name="vehicule2"
       type="checkbox"
       value="plane"
     />
     <span
-      className="box"
+      class="box"
     >
       <svg
-        className="c1 c2 checkMark"
+        class="c1 c2 checkMark"
       />
     </span>
   </label>,
@@ -261,22 +259,21 @@ Array [
 }
 
 <label
-    className="c0"
-    disabled={true}
+    class="c0"
+    disabled=""
   >
-     
     Car
     <input
-      disabled={true}
+      disabled=""
       name="vehicule3"
       type="checkbox"
       value="car"
     />
     <span
-      className="box"
+      class="box"
     >
       <svg
-        className="c1 c2 checkMark"
+        class="c1 c2 checkMark"
       />
     </span>
   </label>,
@@ -351,9 +348,8 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
-     
     Bike
     <input
       name="vehicule4"
@@ -361,10 +357,10 @@ Array [
       value="bike"
     />
     <span
-      className="box"
+      class="box"
     >
       <svg
-        className="c1 c2 checkMark"
+        class="c1 c2 checkMark"
       />
     </span>
   </label>,

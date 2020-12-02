@@ -1,14 +1,19 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 
 import styled from 'styled-components';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const List = styled.ul`
     margin: 0;
     padding: 0;
 `;
 
-const Item = styled.li`
+export interface LegendItem {
+    name: string;
+    description: string;
+    color?: string;
+}
+
+const Item = styled.li<Pick<LegendItem, 'color'>>`
     display: flex;
     list-style: none;
     margin: 0 0 var(--spacing-1x);
@@ -21,7 +26,7 @@ const Item = styled.li`
     }
 
     ::before {
-        background-color: ${(props: {theme: Theme, color?: string}) => props.color || props.theme.main['primary-1.2']};
+        background-color: ${(props) => props.color || props.theme.main['primary-1.2']};
         border-radius: 50%;
         content: '';
         height: 8px;
@@ -31,21 +36,28 @@ const Item = styled.li`
 `;
 
 const Description = styled.span`
-    color: ${props => props.theme.greys['dark-grey']};
+    color: ${(props) => props.theme.greys['dark-grey']};
     display: block;
     font-size: 0.75rem;
     line-height: 1.25rem;
 `;
 
 interface LegendProps {
-    items: { name: string; description: string; color?: string }[];
+    items: LegendItem[];
 }
 
 export function Legend({ items }: LegendProps): ReactElement {
+    useEffect(() => {
+        const itemNames: string[] = items.map((item) => item.name);
+        if (new Set(itemNames).size !== items.length) {
+            throw new Error('Duplicate names used for items');
+        }
+    }, [items]);
+
     return (
         <List>
-            {items.map((item, i) => (
-                <Item color={item.color} key={`${item.name}-${i}`}>
+            {items.map((item) => (
+                <Item color={item.color} key={`${item.name}`}>
                     <div>
                         <p>{item.name}</p>
                         <Description>{item.description}</Description>

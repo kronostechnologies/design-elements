@@ -1,4 +1,5 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 import { RouterDecorator } from './utils/router-decorator';
 
@@ -36,7 +37,7 @@ const items: GlobalNavigationItem[] = [
     },
 ];
 
-export const normal = () => (
+export const Normal: Story = () => (
     <div style={{ height: '600px' }}>
         <GlobalNavigation
             mainItems={items}
@@ -56,7 +57,7 @@ export const normal = () => (
     </div>
 );
 
-export const withMoreIcon = () => (
+export const WithMoreIcon: Story = () => (
     <div style={{ height: '350px' }}>
         <GlobalNavigation
             mainItems={items}

@@ -1,5 +1,6 @@
-import mainCss from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./body.scss';
 import { useEffect } from 'react';
+// eslint-disable-next-line import/no-webpack-loader-syntax,import/no-unresolved
+import mainCss from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./body.scss';
 
 export function useMainCss(isolateStyles: boolean): void {
     useEffect(() => {
@@ -9,7 +10,7 @@ export function useMainCss(isolateStyles: boolean): void {
             return () => mainCss.unuse();
         }
         return () => undefined;
-    }, []);
+    }, [isolateStyles]);
 }
 
 export function injectMainCss(): void {

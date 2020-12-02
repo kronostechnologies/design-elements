@@ -1,4 +1,5 @@
 import { ExternalLink } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,22 +7,24 @@ export default {
     component: ExternalLink,
 };
 
-export const normal = () => (
-    <ExternalLink label="External Link"/>
+export const Normal: Story = () => (
+    <ExternalLink label="External Link" />
 );
 
-export const withIcon = () => (
-    <ExternalLink label="External Link" iconName="mail"/>
+export const WithIcon: Story = () => (
+    <ExternalLink label="External Link" iconName="mail" />
 );
-export const onlyIcon = () => (
-    <ExternalLink iconName="mail"/>
+export const OnlyIcon: Story = () => (
+    <ExternalLink iconName="mail" />
 );
-export const disabled = () => (
+export const Disabled: Story = () => (
     <>
-        <ExternalLink label="External Link" iconName="mail" disabled/><br/>
-        <ExternalLink label="External Link" disabled/><br/>
+        <ExternalLink label="External Link" iconName="mail" disabled />
+        <br />
+        <ExternalLink label="External Link" disabled />
+        <br />
     </>
 );
-export const withCallback = () => (
-    <ExternalLink label="External Link" onClick={() => console.log('Link clicked')}/>
+export const WithCallback: Story = () => (
+    <ExternalLink label="External Link" onClick={() => console.info('Link clicked')} />
 );

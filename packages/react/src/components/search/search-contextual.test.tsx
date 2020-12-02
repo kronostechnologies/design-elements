@@ -1,8 +1,10 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { SearchContextual } from './search-contextual';
+
 jest.mock('uuid/v4');
 
 describe('Search Contextual', () => {
@@ -17,7 +19,7 @@ describe('Search Contextual', () => {
 
     test('Matches the snapshot when disabled', () => {
         const tree = renderer.create(
-            ThemeWrapped(<SearchContextual label="Search" onChange={() => {}} disabled />),
+            ThemeWrapped(<SearchContextual label="Search" onChange={doNothing} disabled />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -25,7 +27,7 @@ describe('Search Contextual', () => {
 
     test('Matches the snapshot when enabled', () => {
         const tree = renderer.create(
-            ThemeWrapped(<SearchContextual label="Search" onChange={() => {}} />),
+            ThemeWrapped(<SearchContextual label="Search" onChange={doNothing} />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

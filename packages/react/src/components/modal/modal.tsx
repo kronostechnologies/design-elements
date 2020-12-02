@@ -6,6 +6,34 @@ import styled from 'styled-components';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
+interface StyledModalProps extends DeviceContextProps {
+    noPadding: boolean;
+    hasCloseButton: boolean;
+}
+
+function getModalPadding({ noPadding, hasCloseButton, isMobile }: StyledModalProps): string {
+    if (noPadding) {
+        return '0';
+    }
+    if (isMobile) {
+        if (hasCloseButton) {
+            return 'var(--spacing-6x) var(--spacing-2x) 0';
+        }
+        return 'var(--spacing-3x) var(--spacing-2x) 0';
+    }
+    return 'var(--spacing-4x) var(--spacing-4x) 0';
+}
+
+function getBottomPadding({ isMobile, noPadding }: StyledModalProps): string {
+    if (noPadding) {
+        return '0';
+    }
+    if (isMobile) {
+        return 'var(--spacing-2x)';
+    }
+    return 'var(--spacing-4x)';
+}
+
 const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
@@ -14,14 +42,17 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     box-sizing: border-box;
     max-height: calc(100vh - var(--spacing-2x));
     max-width: 700px;
-    min-width: ${({ breakpoints, isMobile }) => isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`};
+    min-width: ${({ breakpoints, isMobile }) => (isMobile
+        ? 'initial'
+        : `calc(${breakpoints.mobile}px - var(--spacing-4x))`)};
     overflow-y: auto;
     padding: ${getModalPadding};
     position: relative;
-    width: ${({ isMobile }) => isMobile ? `calc(100vw - var(--spacing-2x))` : '60vw'};
+    width: ${({ isMobile }) => (isMobile ? 'calc(100vw - var(--spacing-2x))' : '60vw')};
 
     /* Firefox overflow-y: scroll problem fix (skipped bottom padding)
     https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */
+
     &::after {
         content: '';
         display: block;
@@ -39,10 +70,10 @@ const Header = styled.header<{ hasContent: boolean }>`
     ${({ hasContent }) => hasContent && 'margin-bottom: var(--spacing-3x);'}
 `;
 
-const CloseIconButton = styled(IconButton)<DeviceContextProps>`
+const CloseIconButton = styled(IconButton)<Pick<DeviceContextProps, 'isMobile'>>`
     position: absolute;
-    right: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)'};
-    top: ${({ isMobile }) => isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)'};
+    right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)')};
+    top: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)')};
 `;
 
 const Footer = styled.footer`
@@ -50,18 +81,13 @@ const Footer = styled.footer`
 `;
 
 const customStyles = {
-    overlay : {
+    overlay: {
         alignItems: 'center',
         display: 'flex',
         justifyContent: 'center',
         zIndex: 10000,
     },
 };
-
-interface StyledModalProps extends DeviceContextProps {
-    noPadding: boolean;
-    hasCloseButton: boolean;
-}
 
 export interface ModalProps {
     /** Takes a query selector targetting the app Element. */
@@ -96,10 +122,13 @@ export interface ModalProps {
      * @default true
      */
     shouldCloseOnOverlayClick?: boolean;
+
     /** Function that will run after the modal has opened */
     onAfterOpen?(): void;
+
     /** Function that will run after the modal has closed */
     onAfterClose?(): void;
+
     onRequestClose(): void;
 }
 
@@ -143,10 +172,11 @@ export function Modal({
                     {modalHeader}
                 </Header>
             );
-        } else return null;
+        }
+        return null;
     }
 
-    return(
+    return (
         <>
             <StyledModal
                 aria={{
@@ -165,11 +195,14 @@ export function Modal({
                 style={customStyles}
                 contentLabel={ariaLabel}
                 shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-                {...device}
+                {...device /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 {getHeader()}
+
                 {children}
+
                 {modalFooter && <Footer>{modalFooter}</Footer>}
+
                 {hasCloseButton && (
                     <CloseIconButton
                         data-testid="close-button"
@@ -178,30 +211,10 @@ export function Modal({
                         buttonType="tertiary"
                         iconName="x"
                         onClick={onRequestClose}
-                        {...device}
+                        isMobile={device.isMobile}
                     />
                 )}
             </StyledModal>
         </>
     );
-}
-
-function getModalPadding({ noPadding, hasCloseButton, isMobile }: StyledModalProps): string {
-    if (noPadding) {
-        return '0';
-    } else if (isMobile) {
-        if (hasCloseButton) {
-            return 'var(--spacing-6x) var(--spacing-2x) 0';
-        } else {
-            return 'var(--spacing-3x) var(--spacing-2x) 0';
-        }
-    } else {
-        return 'var(--spacing-4x) var(--spacing-4x) 0';
-    }
-}
-
-function getBottomPadding({ isMobile, noPadding }: StyledModalProps): string {
-    if (noPadding) return '0';
-    else if (isMobile) return 'var(--spacing-2x)';
-    else return 'var(--spacing-4x)';
 }

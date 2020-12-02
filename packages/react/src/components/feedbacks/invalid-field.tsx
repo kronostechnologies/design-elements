@@ -4,12 +4,12 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Icon } from '../icon/icon';
 
 const Field = styled.div<{ isMobile: boolean }>`
-    color: ${props => props.theme.notifications['error-2.1']};
+    color: ${(props) => props.theme.notifications['error-2.1']};
     display: flex;
-    font-size: ${({ isMobile }) => isMobile ? '0.875rem' : '0.75rem'};
+    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
-    line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
+    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
 `;
 
 const StyledSpan = styled.span`

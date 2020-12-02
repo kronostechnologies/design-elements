@@ -7,28 +7,32 @@ const Container = styled.div`
     width: 100%;
 `;
 
+function getHalfStepLength(props: JSX.IntrinsicElements['progress']): number {
+    return 50 / (toInt(props.max, 1) + 1);
+}
+
 const StyledProgress = styled.progress`
     appearance: none;
-    background-color: ${props => props.theme.greys.grey};
+    background-color: ${(props) => props.theme.greys.grey};
     border: none;
     bottom: 1.5rem;
-    color: ${props => props.theme.main['primary-3']};
+    color: ${(props) => props.theme.main['primary-3']};
     height: 4px;
     left: ${getHalfStepLength}%;
     position: absolute;
-    width: ${props => `${100 - 2 * getHalfStepLength(props)}%`};
+    width: ${(props) => `${100 - (2 * getHalfStepLength(props))}%`};
 
     &[value] {
         &::-moz-progress-bar {
-            background-color: ${props => props.theme.main['primary-3']};
+            background-color: ${(props) => props.theme.main['primary-3']};
         }
 
         &::-webkit-progress-bar {
-            background-color: ${props => props.theme.greys.grey};
+            background-color: ${(props) => props.theme.greys.grey};
         }
 
         &::-webkit-progress-value {
-            background-color: ${props => props.theme.main['primary-3']};
+            background-color: ${(props) => props.theme.main['primary-3']};
         }
     }
 `;
@@ -44,7 +48,7 @@ const Steps = styled.ol`
 `;
 
 const Step = styled.li`
-    color: ${props => props.theme.main['primary-3']};
+    color: ${(props) => props.theme.main['primary-3']};
     display: flex;
     flex-direction: column;
     font-weight: var(--font-bold);
@@ -54,7 +58,7 @@ const Step = styled.li`
 
     ::after {
         align-items: center;
-        background-color: ${props => props.theme.greys.white};
+        background-color: ${(props) => props.theme.greys.white};
         border: 0.25rem solid;
         border-radius: 50%;
         box-sizing: border-box;
@@ -70,7 +74,7 @@ const Step = styled.li`
     }
 
     > span {
-        color: ${props => props.theme.greys.black};
+        color: ${(props) => props.theme.greys.black};
         font-size: 0.75rem;
         font-weight: var(--font-normal);
         letter-spacing: 0.2px;
@@ -81,33 +85,33 @@ const Step = styled.li`
 
 const PastStep = styled(Step)`
     ::after {
-        background-color: ${props => props.theme.main['primary-3']};
-        border-color: ${props => props.theme.main['primary-3']};
-        color: ${props => props.theme.greys.white};
+        background-color: ${(props) => props.theme.main['primary-3']};
+        border-color: ${(props) => props.theme.main['primary-3']};
+        color: ${(props) => props.theme.greys.white};
     }
 
     > span {
-        color: ${props => props.theme.greys['dark-grey']};
+        color: ${(props) => props.theme.greys['dark-grey']};
     }
 `;
 
 const CurrentStep = styled(Step).attrs({ 'aria-current': 'step' })`
-    color: ${props => props.theme.main['primary-3']};
+    color: ${(props) => props.theme.main['primary-3']};
 
     ::after {
-        border-color: ${props => props.theme.main['primary-3']};
+        border-color: ${(props) => props.theme.main['primary-3']};
     }
 
     span {
-        color: ${props => props.theme.main['primary-3']};
+        color: ${(props) => props.theme.main['primary-3']};
         font-weight: var(--font-bold);
     }
 `;
 
 const FutureStep = styled(Step)`
     ::after {
-        border-color: ${props => props.theme.greys.grey};
-        color: ${props => props.theme.greys['dark-grey']};
+        border-color: ${(props) => props.theme.greys.grey};
+        color: ${(props) => props.theme.greys['dark-grey']};
     }
 `;
 
@@ -140,10 +144,6 @@ function renderStep(step: ProgressStep, stepIndex: number, value: number): React
             <span>{step.label}</span>
         </StepComponent>
     );
-}
-
-function getHalfStepLength(props: JSX.IntrinsicElements['progress']): number {
-    return 50 / (toInt(props.max, 1) + 1);
 }
 
 export function Progress({ steps, value }: ProgressProps): ReactElement {

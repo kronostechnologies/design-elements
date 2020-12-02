@@ -35,6 +35,14 @@ export type CarouselAction =
     | CarouselDragAction
     | CarouselDoneAction;
 
+function previous(length: number, current: number): number {
+    return (current - 1 + length) % length;
+}
+
+function next(length: number, current: number): number {
+    return (current + 1) % length;
+}
+
 export function carouselReducer(state: CarouselState, action: CarouselAction): CarouselState {
     switch (action.type) {
         case 'jump':
@@ -66,12 +74,4 @@ export function carouselReducer(state: CarouselState, action: CarouselAction): C
         default:
             return state;
     }
-}
-
-function previous(length: number, current: number): number {
-    return (current - 1 + length) % length;
-}
-
-function next(length: number, current: number): number {
-    return (current + 1) % length;
 }

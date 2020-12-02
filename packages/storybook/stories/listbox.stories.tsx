@@ -1,4 +1,5 @@
 import { Listbox } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -34,52 +35,52 @@ const optionsWithoutLabel = [
     },
 ];
 
-export const normal = () => (
+export const Normal: Story = () => (
     <Listbox
         options={options}
-        onChange={option => console.log('onChange', option)}
+        onChange={(option) => console.info('onChange', option)}
     />
 );
 
-export const listboxWithAutofocus = () => (
+export const ListboxWithAutofocus: Story = () => (
     <Listbox
         options={options}
-        onChange={option => console.log('onChange', option)}
-        autofocus={true}
+        onChange={(option) => console.info('onChange', option)}
+        autofocus
     />
 );
 
-export const listboxWithMultiselect = () => (
+export const ListboxWithMultiselect: Story = () => (
     <Listbox
         checkIndicator
         defaultValue={['optionA', 'optionC']}
         multiselect
         options={options}
-        onChange={option => console.log('onChange', option)}
+        onChange={(option) => console.info('onChange', option)}
     />
 );
 
-export const listboxWithCheck = () => (
+export const ListboxWithCheck: Story = () => (
     <Listbox
-        checkIndicator={true}
+        checkIndicator
         defaultValue="optionC"
         options={options}
-        onChange={option => console.log('onChange', option)}
+        onChange={(option) => console.info('onChange', option)}
     />
 );
 
-export const listboxWithThreeItemsVisible = () => (
+export const ListboxWithThreeItemsVisible: Story = () => (
     <Listbox
         options={options}
-        onChange={option => console.log('onChange', option)}
+        onChange={(option) => console.info('onChange', option)}
         numberOfItemsVisible={3}
     />
 );
 
-export const listboxWithoutOptionLabel = () => (
+export const ListboxWithoutOptionLabel: Story = () => (
     <Listbox
         options={optionsWithoutLabel}
-        onChange={option => console.log('onChange', option)}
+        onChange={(option) => console.info('onChange', option)}
         numberOfItemsVisible={3}
     />
 );

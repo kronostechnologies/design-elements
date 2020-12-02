@@ -1,6 +1,6 @@
 import { CheckboxGroup } from '@equisoft/design-elements-react';
 
-import { forceReRender } from '@storybook/react';
+import { forceReRender, Story } from '@storybook/react';
 import React, { ChangeEvent } from 'react';
 
 export default {
@@ -10,8 +10,12 @@ export default {
 
 const Checkboxes = [
     { label: 'Boat', name: 'vehicule1', value: 'boat' },
-    { label: 'Plane', name: 'vehicule2', value: 'plane', defaultChecked: true },
-    { label: 'Car', name: 'vehicule3', value: 'car', disabled: true },
+    {
+        label: 'Plane', name: 'vehicule2', value: 'plane', defaultChecked: true,
+    },
+    {
+        label: 'Car', name: 'vehicule3', value: 'car', disabled: true,
+    },
     { label: 'Bike', name: 'vehicule4', value: 'bike' },
 ];
 
@@ -24,39 +28,61 @@ const CheckboxesControlled = [
 
 let checkedValues = ['blue', 'yellow'];
 
-const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+function handleChange(event: ChangeEvent<HTMLInputElement>): void {
     if (checkedValues.includes(event.target.value)) {
-        checkedValues = checkedValues.filter(value => value !== event.target.value);
+        checkedValues = checkedValues.filter((value) => value !== event.target.value);
         forceReRender();
     } else {
         checkedValues.push(event.target.value);
         forceReRender();
     }
-};
+}
 
-export const normal = () => (
+export const Normal: Story = () => (
     <CheckboxGroup label="Vehicule" checkboxGroup={Checkboxes} />
 );
 
-export const disabled = () => (
-    <CheckboxGroup checkboxGroup={[{ label: 'Car', name: 'vehicule', value: 'car', disabled: true }]} />
+export const Disabled: Story = () => (
+    <CheckboxGroup checkboxGroup={[
+        {
+            label: 'Car', name: 'vehicule', value: 'car', disabled: true,
+        },
+    ]}
+    />
 );
-export const controlled = () => {
+
+export const Controlled: Story = () => (
+    <CheckboxGroup
+        label="Colors"
+        checkboxGroup={CheckboxesControlled}
+        checkedValues={checkedValues}
+        onChange={handleChange}
+    />
+);
+
+export const DefaultChecked: Story = () => (
+    <CheckboxGroup checkboxGroup={[
+        {
+            label: 'Plane', name: 'vehicule', value: 'plane', defaultChecked: true,
+        },
+    ]}
+    />
+);
+
+export const Callback: Story = () => {
+    function onChange(event: React.ChangeEvent<HTMLInputElement>): void {
+        const checkedState: string = event.target.checked ? 'checked' : 'unchecked';
+        console.info(`Checkbox ${event.target.value} is ${checkedState}!`);
+    }
+
     return (
         <CheckboxGroup
-            label="Colors"
-            checkboxGroup={CheckboxesControlled}
-            checkedValues={checkedValues}
-            onChange={handleChange}
+            onChange={onChange}
+            checkboxGroup={[
+                {
+                    label: 'Bike', name: 'vehicule', value: 'bike', defaultChecked: false,
+                },
+            ]}
         />
     );
 };
-export const defaultChecked = () => (
-    <CheckboxGroup checkboxGroup={[{ label: 'Plane', name: 'vehicule', value: 'plane', defaultChecked: true }]} />
-);
-export const callback = () => (
-    <CheckboxGroup
-        onChange={(event) => console.log(`Checkbox ${event.target.value} is ${event.target.checked ? 'checked' : 'unchecked'}!`)}
-        checkboxGroup={[{ label: 'Bike', name: 'vehicule', value: 'bike', defaultChecked: false }]}
-    />
-);

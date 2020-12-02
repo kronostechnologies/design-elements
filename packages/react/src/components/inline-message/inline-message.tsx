@@ -1,43 +1,50 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
-import React, { ComponentType, ReactElement, ReactNode, useMemo } from 'react';
+import { Theme } from '@design-elements/themes/theme';
+import React, { ComponentType, FunctionComponent, ReactElement, ReactNode, useMemo } from 'react';
 import styled from 'styled-components';
 
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
-const abstractContainer = (bgColor: string, color?: keyof Theme['notifications']) => styled.div<{ isMobile: boolean }>`
-    background-color: ${bgColor};
-    border: 1px solid ${props => color ? props.theme.notifications[color] : props.theme.main['primary-3']};
-    box-sizing: border-box;
-    display: flex;
-    padding: ${props => props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)'};
-    width: 100%;
+type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
 
-    svg {
-        color: ${props => color ? props.theme.notifications[color] : props.theme.main['primary-3']};
-        flex: 0 0 auto;
-    }
-`;
+function abstractContainer(
+    bgColor: string,
+    color?: keyof Theme['notifications'],
+): FunctionComponent<MobileDeviceContextProps> {
+    return styled.div<MobileDeviceContextProps>`
+        background-color: ${bgColor};
+        border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
+        box-sizing: border-box;
+        display: flex;
+        padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)')};
+        width: 100%;
+
+        svg {
+            color: ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
+            flex: 0 0 auto;
+        }
+    `;
+}
 
 const InfoContainer = abstractContainer('#f5fdff');
 const SuccessContainer = abstractContainer('#f7faf4', 'success-1.1');
 const AlertContainer = abstractContainer('#fffce9', 'alert-3.1');
 const ErrorContainer = abstractContainer('#fdf6f7', 'error-2.1');
 
-const TextWrapper = styled.div<{ isMobile: boolean }>`
+const TextWrapper = styled.div<MobileDeviceContextProps>`
     box-sizing: border-box;
     padding-left: var(--spacing-2x);
 
     p {
-        font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
+        font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
         line-height: 24px;
-        margin: ${props => props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)'} 0 0 0;
+        margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)')} 0 0 0;
     }
 `;
 
-const Heading = styled.span<{ isMobile: boolean }>`
-    font-size: ${props => props.isMobile ? '1.125rem' : '1rem'};
+const Heading = styled.span<MobileDeviceContextProps>`
+    font-size: ${(props) => (props.isMobile ? '1.125rem' : '1rem')};
     font-weight: var(--font-bold);
 `;
 
@@ -81,7 +88,7 @@ const handleType = (type: MessageType): MessageTypeProps => {
 interface InlineMessageProps {
     /**
      * Sets text message
-     **/
+     */
     children: ReactNode;
     /**
      * Sets custom message title
@@ -103,7 +110,7 @@ export function InlineMessage({ children, title, type }: InlineMessageProps): Re
         <Container isMobile={isMobile} aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}>
             <Icon name={messageType.iconName} size={isMobile ? '20' : '16'} />
             <TextWrapper isMobile={isMobile}>
-                <Heading isMobile={isMobile}>{title ? title : t(messageType.title)}</Heading>
+                <Heading isMobile={isMobile}>{title || t(messageType.title)}</Heading>
                 <p>{children}</p>
             </TextWrapper>
         </Container>

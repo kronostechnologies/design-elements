@@ -1,4 +1,5 @@
 import { Icon } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React, { ComponentType } from 'react';
 
 export default {
@@ -6,7 +7,7 @@ export default {
     component: Icon,
 };
 
-export const all = () => (
+export const All: Story = () => (
     <>
         <Icon name="alertTriangle" />
         <Icon name="arrowLeft" />
@@ -30,86 +31,86 @@ export const all = () => (
     </>
 );
 
-all.decorators = [
-    (Story: ComponentType) => (
+All.decorators = [
+    (DecoratedStory: ComponentType) => (
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-            <Story />
+            <DecoratedStory />
         </div>
     ),
 ];
 
-export const alertTriangle = () => (
+export const AlertTriangle: Story = () => (
     <Icon name="alertTriangle" />
 );
 
-export const arrowLeft = () => (
+export const ArrowLeft: Story = () => (
     <Icon name="arrowLeft" />
 );
 
-export const check = () => (
+export const Check: Story = () => (
     <Icon name="check" />
 );
 
-export const chevronDown = () => (
+export const ChevronDown: Story = () => (
     <Icon name="chevronDown" />
 );
 
-export const chevronUp = () => (
+export const ChevronUp: Story = () => (
     <Icon name="chevronUp" />
 );
 
-export const copy = () => (
+export const Copy: Story = () => (
     <Icon name="copy" />
 );
 
-export const edit = () => (
+export const Edit: Story = () => (
     <Icon name="edit" />
 );
 
-export const helpCircle = () => (
+export const HelpCircle: Story = () => (
     <Icon name="helpCircle" />
 );
 
-export const home = () => (
+export const Home: Story = () => (
     <Icon name="home" />
 );
 
-export const info = () => (
+export const Info: Story = () => (
     <Icon name="info" />
 );
 
-export const mail = () => (
+export const Mail: Story = () => (
     <Icon name="mail" />
 );
 
-export const mapPin = () => (
+export const MapPin: Story = () => (
     <Icon name="mapPin" />
 );
 
-export const menu = () => (
+export const Menu: Story = () => (
     <Icon name="menu" />
 );
 
-export const moreHorizontal = () => (
+export const MoreHorizontal: Story = () => (
     <Icon name="moreHorizontal" />
 );
 
-export const open = () => (
+export const Open: Story = () => (
     <Icon name="open" />
 );
 
-export const phone = () => (
+export const Phone: Story = () => (
     <Icon name="phone" />
 );
 
-export const search = () => (
+export const Search: Story = () => (
     <Icon name="search" />
 );
 
-export const trash = () => (
+export const Trash: Story = () => (
     <Icon name="trash" />
 );
 
-export const x = () => (
+export const X: Story = () => (
     <Icon name="x" />
 );

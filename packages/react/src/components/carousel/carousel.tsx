@@ -52,7 +52,7 @@ interface DotProps {
 }
 
 const Dot = styled.button<DotProps>`
-    background-color: ${({ active, theme }) => active ? theme.main['primary-1.1'] : theme.greys.grey};
+    background-color: ${({ active, theme }) => (active ? theme.main['primary-1.1'] : theme.greys.grey)};
     border: 1px solid transparent;
     border-radius: 50%;
     box-sizing: border-box;
@@ -76,7 +76,7 @@ const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'but
     cursor: pointer;
     height: 34px;
     ${focus}
-    visibility: ${({ disabled }) => disabled ? 'hidden' : 'visible'};
+    visibility: ${({ disabled }) => (disabled ? 'hidden' : 'visible')};
     width: 34px;
 `;
 
@@ -111,13 +111,17 @@ function getChildrenAsArray(children: ReactNode): ReactNodeArray {
 }
 
 export function Carousel(
-    { autoTransitionDelay, initialSlide, children, header, loop, transitionTime, withArrows, ...props }: CarouselProps,
+    {
+        autoTransitionDelay, initialSlide, children, header, loop, transitionTime, withArrows, ...props
+    }: CarouselProps,
 ): ReactElement {
     const carouselId = useId('carousel-slides-');
 
     const childrenAsArray = getChildrenAsArray(children);
     const slidesCount = childrenAsArray.length;
-    const { active, setActive, handlers, style } = useCarousel({
+    const {
+        active, setActive, handlers, style,
+    } = useCarousel({
         autoTransitionDelay,
         initial: initialSlide,
         length: slidesCount,
@@ -127,31 +131,33 @@ export function Carousel(
 
     function renderDots(): ReactElement {
         return (
-            <Dots data-testid="carousel-dots">{childrenAsArray.map((_, i) => {
-                const isActive = i === active;
+            <Dots data-testid="carousel-dots">
+                {childrenAsArray.map((_, i) => {
+                    const isActive = i === active;
 
-                return (
-                    <Dot
-                        data-testid={`carousel-dot-${i}`}
-                        key={i}
-                        active={isActive}
-                        aria-controls={carouselId}
-                        aria-disabled={isActive}
-                        onClick={() => setActive(i)}
-                    />
-                );
-            })}
+                    return (
+                        <Dot
+                            data-testid={`carousel-dot-${i}`}
+                            key={i /* eslint-disable-line react/no-array-index-key */}
+                            active={isActive}
+                            aria-controls={carouselId}
+                            aria-disabled={isActive}
+                            onClick={() => setActive(i)}
+                        />
+                    );
+                })}
             </Dots>
         );
     }
 
     function renderSlides(): ReactElement {
         return (
+            // eslint-disable-next-line react/jsx-props-no-spreading
             <Slides id={carouselId} data-testid="carousel-slides" {...handlers.mouse} style={style} aria-live="polite">
                 <Slide
                     index={-1}
                     data-testid="carousel-slide--1"
-                    aria-hidden={true}
+                    aria-hidden
                 >
                     {childrenAsArray[slidesCount - 1]}
                 </Slide>
@@ -161,14 +167,14 @@ export function Carousel(
                         index={i}
                         data-testid={`carousel-slide-${i}`}
                         aria-hidden={i !== active}
-                        key={i}
+                        key={i /* eslint-disable-line react/no-array-index-key */}
                         aria-label={`${i + 1} of ${slidesCount}`}
                     >
                         {child}
                     </Slide>
                 ))}
 
-                <Slide index={slidesCount} data-testid={`carousel-slide-${slidesCount}`} aria-hidden={true}>
+                <Slide index={slidesCount} data-testid={`carousel-slide-${slidesCount}`} aria-hidden>
                     {childrenAsArray[0]}
                 </Slide>
             </Slides>

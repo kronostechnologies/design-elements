@@ -1,4 +1,5 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
+import { Theme } from '@design-elements/themes/theme';
 import { enCA, enUS, frCA } from 'date-fns/locale';
 import React, {
     FocusEvent,
@@ -22,9 +23,9 @@ import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 import { CalendarHeader } from './calendar-header';
 import {
+    DayOfWeek,
     getLocale,
     getLocaleDateFormat,
     getLocaleDatePlaceholder,
@@ -32,7 +33,20 @@ import {
     getLocaleMonthsShort,
     getYearsOptions,
     setLocaleFirstDayOfWeek,
+    SupportedLocale,
 } from './utils/datepicker-utils';
+
+interface StyledDatePickerProps extends ReactDatePickerProps {
+    isMobile: boolean;
+    theme: Theme;
+    valid?: boolean;
+}
+
+interface CalendarButtonProps {
+    disabled?: boolean;
+    theme: Theme;
+    isMobile?: boolean;
+}
 
 const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     display: flex;
@@ -83,11 +97,11 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         border-radius: 50%;
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys.black};
+
         ${({ isMobile, theme }) => isMobile && `
             border: 1px solid ${theme.main['primary-1.1']};
             box-shadow: ${theme.tokens['focus-box-shadow']};
         `}
-
         &:focus {
             border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
             box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
@@ -114,7 +128,8 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     .react-datepicker__day--selected {
         background-color: ${({ theme }) => theme.main['primary-1.1']};
         border-radius: 50%;
-        ${({ isMobile, theme }) => isMobile ? `
+
+        ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
                 box-shadow: ${theme.tokens['focus-box-shadow']};
             }
@@ -122,8 +137,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
             &:focus {
                 box-shadow: ${theme.tokens['focus-box-shadow']};
             }
-        `}
-
+        `)}
         &:hover {
             color: ${({ theme }) => theme.greys.black};
         }
@@ -141,12 +155,12 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     .react-datepicker__header {
         background-color: ${({ theme }) => theme.greys.white};
         border-bottom: none;
-        margin-bottom: ${({ isMobile }) => isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)'};
+        margin-bottom: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
         padding: 0;
     }
 
     .react-datepicker__month {
-        font-size: ${({ isMobile }) => isMobile ? 1 : 0.875}rem;
+        font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
         margin: 0;
     }
 
@@ -171,24 +185,41 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     }
 `;
 
+function getInputBorderColor({ theme, disabled, valid }: StyledDatePickerProps): string {
+    if (disabled) {
+        return theme.greys.grey;
+    }
+    if (valid) {
+        return theme.greys['dark-grey'];
+    }
+    return theme.notifications['error-2.1'];
+}
+
+function getInputFocusBorderColor({ theme, valid }: StyledDatePickerProps): string {
+    if (valid) {
+        return theme.main['primary-1.1'];
+    }
+    return theme.notifications['error-2.1'];
+}
+
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePickerInput {
-        background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
-        border: 1px solid ${({ disabled, theme, valid }) => getInputBorderColor(theme, disabled, valid)};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+        border: 1px solid ${getInputBorderColor};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         box-sizing: border-box;
         font-family: inherit;
-        font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
-        height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
+        font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+        height: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
         padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-        width: ${({ isMobile }) => isMobile ? 113 : 109}px;
+        width: ${({ isMobile }) => (isMobile ? 113 : 109)}px;
 
         &::placeholder {
-            ${({ disabled, theme }) => disabled ? `color: ${theme.greys['mid-grey']};` : ''}
+            ${({ disabled, theme }) => (disabled ? `color: ${theme.greys['mid-grey']};` : '')}
         }
 
         &:focus {
-            border: 1px solid ${({ theme, valid }) => valid ? theme.main['primary-1.1'] : theme.notifications['error-2.1']};
+            border: 1px solid ${getInputFocusBorderColor};
             box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
             outline: none;
         }
@@ -203,20 +234,20 @@ const TodayButtonWrapper = styled.div`
 
 const CalendarButton = styled.button<CalendarButtonProps>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => disabled ? theme.greys['light-grey'] : theme.greys.white};
-    border: 1px solid ${({ disabled, theme }) => disabled ? theme.greys.grey : theme.greys['dark-grey']};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
     border-left: none;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     box-sizing: border-box;
-    color: ${({ disabled, theme }) => disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey']};
-    cursor: ${({ disabled }) => disabled ? 'default' : 'pointer'};
+    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
-    height: ${({ isMobile }) => isMobile ? '40px' : '32px'};
+    height: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
     justify-content: center;
-    width: ${({ isMobile }) => isMobile ? '40px' : '32px'};
+    width: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
 
     &:hover {
-        background-color: ${({ disabled, theme }) => disabled ? 'none' : theme.greys.grey};
+        background-color: ${({ disabled, theme }) => (disabled ? 'none' : theme.greys.grey)};
     }
 
     &:focus {
@@ -232,24 +263,10 @@ const ReactDatePickerStyles = createGlobalStyle`
     ${datepickerCss}
 `;
 
-export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
-export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
-
 export interface DatepickerHandles {
     reset(): void;
+
     setDate(date: Date): void;
-}
-
-interface StyledDatePickerProps extends ReactDatePickerProps {
-    isMobile: boolean;
-    theme: Theme;
-    valid?: boolean;
-}
-
-interface CalendarButtonProps {
-    disabled?: boolean;
-    theme: Theme;
-    isMobile?: boolean;
 }
 
 interface DatepickerProps {
@@ -308,6 +325,8 @@ registerLocale('en-CA', enCA);
 registerLocale('en-US', enUS);
 registerLocale('fr-CA', frCA);
 
+const localeArray = [enUS, enCA, frCA];
+
 export const Datepicker = forwardRef(({
     dateFormat,
     disabled,
@@ -334,15 +353,14 @@ export const Datepicker = forwardRef(({
     ...props
 }: DatepickerProps, ref: Ref<DatepickerHandles>): ReactElement => {
     const { t } = useTranslation('datepicker');
-    const localeArray = [ enUS, enCA, frCA ];
     const { isMobile } = useDeviceContext();
-    const [ selectedDate, setSelectedDate ] = useState(startDate);
-    const currentLocale = useMemo(() => getLocale(localeArray, locale), [ locale ]);
-    const months = useMemo(() => getLocaleMonthsShort(currentLocale), [ currentLocale ]);
-    const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [ currentLocale ]);
-    const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [ minDate, maxDate ]);
+    const [selectedDate, setSelectedDate] = useState(startDate);
+    const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
+    const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
+    const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
+    const yearsOptions = useMemo(() => getYearsOptions(minDate, maxDate), [minDate, maxDate]);
     const calendarRef = useRef<HTMLDivElement>(null);
-    const fieldId = id || useMemo(uuid, []);
+    const fieldId = useMemo(() => id || uuid(), [id]);
     const dateInputRef = useRef<DatePicker>(null);
     const calendarButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -359,7 +377,7 @@ export const Datepicker = forwardRef(({
         if (firstDayOfWeek) {
             setLocaleFirstDayOfWeek(currentLocale, firstDayOfWeek);
         }
-    }, [ firstDayOfWeek ]);
+    }, [currentLocale, firstDayOfWeek]);
 
     function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
@@ -375,8 +393,8 @@ export const Datepicker = forwardRef(({
 
     function focusCalendarDate(): void {
         setTimeout(() => {
-            const dateToFocus =
-                calendarRef.current?.querySelector('.react-datepicker__day[tabindex="0"]') as HTMLDivElement;
+            const dateToFocus = calendarRef.current
+                ?.querySelector('.react-datepicker__day[tabindex="0"]') as HTMLDivElement;
 
             if (dateToFocus) {
                 dateToFocus.focus();
@@ -395,7 +413,7 @@ export const Datepicker = forwardRef(({
     }
 
     function handleCalendarButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-        if (event.key === 'Enter' || event.key === ' ' /* Spacebar */) {
+        if (event.key === 'Enter' || event.key === ' ' /* Space bar */) {
             dateInputRef.current?.setOpen(true);
             focusCalendarDate();
         }
@@ -433,12 +451,12 @@ export const Datepicker = forwardRef(({
     const getPlaceholder = useMemo(() => {
         if (placeholder) {
             return placeholder;
-        } else if (dateFormat) {
-            return dateFormat.toUpperCase();
-        } else {
-            return getLocaleDatePlaceholder(currentLocale);
         }
-    }, [ placeholder, dateFormat, locale ]);
+        if (dateFormat) {
+            return dateFormat.toUpperCase();
+        }
+        return getLocaleDatePlaceholder(currentLocale);
+    }, [currentLocale, placeholder, dateFormat]);
 
     return (
         <>
@@ -457,21 +475,19 @@ export const Datepicker = forwardRef(({
                         isMobile={isMobile}
                         id={fieldId}
                         ref={dateInputRef}
-                        renderCustomHeader={({
-                            ...customHeaderProps
-                        }) => (
+                        renderCustomHeader={(customHeaderProps) => (
                             <CalendarHeader
                                 months={months}
                                 monthsOptions={monthsOptions}
                                 yearsOptions={yearsOptions}
-                                {...customHeaderProps}
+                                {...customHeaderProps /* eslint-disable-line react/jsx-props-no-spreading */}
                             />
                         )}
                         calendarContainer={({ children }) => (
                             <div
                                 aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
                                 aria-live="polite"
-                                aria-modal={true}
+                                aria-modal
                                 className="react-datepicker"
                                 role="dialog"
                                 ref={calendarRef}
@@ -514,7 +530,7 @@ export const Datepicker = forwardRef(({
                         startOpen={startOpen}
                         valid={valid}
                         withPortal={isMobile}
-                        {...props}
+                        {...props /* eslint-disable-line react/jsx-props-no-spreading */}
                     />
                     <CalendarButton
                         aria-label={selectedDate
@@ -536,13 +552,3 @@ export const Datepicker = forwardRef(({
         </>
     );
 });
-
-function getInputBorderColor(theme: Theme, disabled?: boolean, valid?: boolean): string {
-    if (disabled) {
-        return theme.greys.grey;
-    } else if (valid) {
-        return theme.greys['dark-grey'];
-    } else {
-        return theme.notifications['error-2.1'];
-    }
-}

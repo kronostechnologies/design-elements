@@ -1,7 +1,8 @@
-import { Legend } from '@equisoft/design-elements-react';
+import { Legend, LegendItem } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
-const legendItems = [
+const legendItems: LegendItem[] = [
     {
         name: 'You',
         description: 'Data from your answers',
@@ -22,6 +23,7 @@ export default {
     title: 'Results/Legend',
     component: Legend,
 };
-export const normal = () => (
+
+export const Normal: Story = () => (
     <Legend items={legendItems} />
 );

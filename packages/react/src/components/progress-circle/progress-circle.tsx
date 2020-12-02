@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 
 import styled from 'styled-components';
+import { Theme } from '@design-elements/themes/theme';
 import { Circle } from '../circle/circle';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const RADIUS = 62;
 const STROKE = 8;
@@ -69,7 +69,9 @@ interface Props {
 }
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-export function ProgressCircle({ color, descriptionLabel, percent, resultLabel }: Props): ReactElement {
+export function ProgressCircle({
+    color, descriptionLabel, percent, resultLabel,
+}: Props): ReactElement {
     return (
         <Container>
             <Wrapper>

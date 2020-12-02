@@ -1,7 +1,7 @@
-import React from 'react';
-
 import { mount } from 'enzyme';
+import React from 'react';
 import renderer from 'react-test-renderer';
+import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { RadioButtonGroup } from './radio-button-group';
 
@@ -31,7 +31,7 @@ describe('Radio button', () => {
                     groupName="color"
                     checkedValue="red"
                     buttons={[{ label: 'Red', value: 'red' }]}
-                    onChange={() => {}}
+                    onChange={doNothing}
                 />,
             ),
         );

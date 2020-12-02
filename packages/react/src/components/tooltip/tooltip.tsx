@@ -1,5 +1,12 @@
 import { focus } from '@design-elements/utils/css-state';
-import React, { KeyboardEvent as ReactKeyboardEvent, MouseEvent, ReactElement, ReactNode, useEffect, useState } from 'react';
+import React, {
+    KeyboardEvent as ReactKeyboardEvent,
+    MouseEvent,
+    ReactElement,
+    ReactNode, useCallback,
+    useEffect, useMemo,
+    useState,
+} from 'react';
 import TooltipTrigger from 'react-popper-tooltip';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
@@ -7,7 +14,7 @@ import { useTheme } from '../../hooks/use-theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
-export const TooltipContainer = styled.div<{isMobile?: boolean}>`
+export const TooltipContainer = styled.div<{ isMobile?: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
@@ -15,13 +22,13 @@ export const TooltipContainer = styled.div<{isMobile?: boolean}>`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     justify-content: center;
-    line-height: ${({ isMobile }) => isMobile ? '1.5rem' : '1.25rem'};
+    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
     margin: var(--spacing-1x) 12px;
     max-width: 327px;
-    min-height: ${({ isMobile }) => isMobile ? '72px' : '32px'};
-    padding: ${({ isMobile }) => isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)'};
+    min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
     transition: opacity 300ms;
     z-index: 1000;
 `;
@@ -142,7 +149,7 @@ interface TooltipProps {
     /**
      * Tooltip placement. Always top on mobile
      * @default right
-     **/
+     */
     placement?: PlacementType;
     /** Tootip text content */
     children: ReactNode;
@@ -150,43 +157,54 @@ interface TooltipProps {
     defaultOpen?: boolean;
 }
 
-export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): ReactElement {
+export function Tooltip(props: TooltipProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const hideArrow = false;
     const Theme = useTheme();
-    const tooltipId = uuid();
-    const tooltipTriggerId = `tooltip-trigger-${tooltipId}`;
-    const [isVisible, setIsVisible] = useState(defaultOpen);
+    const tooltipId = useMemo(uuid, []);
+    const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
+    const [isVisible, setIsVisible] = useState(props.defaultOpen);
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
 
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown);
-
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    });
-
-    const handleBLur = () => !isMobile && setControlledTooltipOpen(undefined);
-
-    const handleFocus = () => !isMobile && setControlledTooltipOpen(true);
-
-    const handleKeyDown = (event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
+    const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
         if (event.key === 'Escape' && !isMobile) {
-            isVisible && document.getElementById(tooltipTriggerId)?.click();
+            if (isVisible) {
+                document.getElementById(tooltipTriggerId)?.click();
+            }
 
             if (controlledTooltipOpen) {
                 setControlledTooltipOpen(undefined);
             }
         }
-    };
+    }, [isMobile, isVisible, controlledTooltipOpen, tooltipTriggerId]);
 
-    const handleMouseDown = (event: MouseEvent<HTMLSpanElement>) => event.preventDefault();
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [handleKeyDown]);
+
+    function handleBLur(): void {
+        if (!isMobile) {
+            setControlledTooltipOpen(undefined);
+        }
+    }
+
+    function handleFocus(): void {
+        if (!isMobile) {
+            setControlledTooltipOpen(true);
+        }
+    }
+
+    function handleMouseDown(event: MouseEvent<HTMLSpanElement>): void {
+        event.preventDefault();
+    }
 
     return (
         <TooltipTrigger
-            {...props}
             placement={isMobile ? 'top' : props.placement}
             trigger={isMobile ? 'click' : 'hover'}
-            defaultTooltipShown={defaultOpen}
+            defaultTooltipShown={props.defaultOpen}
             tooltipShown={controlledTooltipOpen}
             onVisibilityChange={setIsVisible}
             tooltip={({
@@ -201,17 +219,17 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
                     isMobile={isMobile}
                     id={tooltipId}
                     role="tooltip"
-                    {...getTooltipProps({ ref: tooltipRef })}
+                    {...getTooltipProps({ ref: tooltipRef }) /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     {!hideArrow && (
                         <TooltipArrow
-                            {...getArrowProps({
+                            {...getArrowProps({ /* eslint-disable-line react/jsx-props-no-spreading */
                                 ref: arrowRef,
                                 'data-placement': placement,
                             })}
                         />
                     )}
-                    {children}
+                    {props.children}
                 </TooltipContainer>
             )}
         >
@@ -224,7 +242,7 @@ export function Tooltip({ children, defaultOpen, ...props }: TooltipProps): Reac
                     onFocus={handleFocus}
                     onMouseDown={handleMouseDown}
                     onKeyDown={handleKeyDown}
-                    {...getTriggerProps({ ref: triggerRef })}
+                    {...getTriggerProps({ ref: triggerRef }) /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
                 </StyledSpan>

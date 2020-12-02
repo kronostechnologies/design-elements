@@ -1,5 +1,6 @@
-import fonts from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./_fonts.scss';
 import { useEffect } from 'react';
+// eslint-disable-next-line import/no-webpack-loader-syntax,import/no-unresolved
+import fonts from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!./_fonts.scss';
 
 export function useFont(isolateStyles: boolean): void {
     useEffect(() => {
@@ -10,5 +11,5 @@ export function useFont(isolateStyles: boolean): void {
         }
 
         return () => undefined;
-    }, []);
+    }, [isolateStyles]);
 }

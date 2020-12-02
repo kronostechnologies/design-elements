@@ -1,11 +1,11 @@
+import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
+import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { mount, shallow } from 'enzyme';
 import React from 'react';
 
-import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
-
 import { ThemeWrapper } from '../theme-wrapper/theme-wrapper';
 import { Select } from './select';
+
 jest.mock('uuid/v4');
 
 const provinces = [
@@ -74,7 +74,7 @@ describe('Select', () => {
     });
 
     test('listbox should not open on click [searchable]', () => {
-        const wrapper = shallow(<Select options={provinces} searchable/>);
+        const wrapper = shallow(<Select options={provinces} searchable />);
 
         getByTestId(wrapper, 'input-wrapper').simulate('click');
         expect(getByTestId(wrapper, 'listbox').props().visible).toBeFalsy();
@@ -95,7 +95,7 @@ describe('Select', () => {
     });
 
     test('listbox should close when arrow is clicked', () => {
-        const wrapper = shallow(<Select options={provinces} defaultOpen/>);
+        const wrapper = shallow(<Select options={provinces} defaultOpen />);
 
         getByTestId(wrapper, 'arrow').simulate('click');
         expect(getByTestId(wrapper, 'listbox').props().visible).toBeFalsy();

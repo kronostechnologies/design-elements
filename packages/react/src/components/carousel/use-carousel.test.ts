@@ -15,8 +15,10 @@ describe('useCarousel', () => {
         it('should set active slide from initialSlide option on init', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 2 };
 
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
             await waitForNextUpdate();
 
             expect(result.current.active).toEqual(2);
@@ -26,8 +28,10 @@ describe('useCarousel', () => {
 
     it('should change active slide when setActive is called', async () => {
         const initialProps: UseCarouselOptions = { length: 5 };
-        const { result, waitForNextUpdate } =
-            renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+        const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+            useCarousel,
+            { initialProps },
+        );
 
         act(() => {
             result.current.setActive(3);
@@ -41,8 +45,10 @@ describe('useCarousel', () => {
     describe('onNext handler', () => {
         it('should set next slide as active', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 2 };
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
 
             act(() => {
                 result.current.handlers.onNext();
@@ -54,8 +60,10 @@ describe('useCarousel', () => {
 
         it('should not set next slide as active when loop is false and active slide is last', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 4, loop: false };
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
 
             act(() => {
                 result.current.handlers.onNext();
@@ -67,8 +75,10 @@ describe('useCarousel', () => {
 
         it('should set first slide as active when loop is true and active slide is last', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 4, loop: true };
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
 
             act(() => {
                 result.current.handlers.onNext();
@@ -82,8 +92,10 @@ describe('useCarousel', () => {
     describe('onPrevious handler', () => {
         it('should set previous slide as active when onPrevious handler is called', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 2 };
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
 
             act(() => {
                 result.current.handlers.onPrevious();
@@ -95,8 +107,10 @@ describe('useCarousel', () => {
 
         it('should not set last slide as active when loop is false and active slide is first', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 0, loop: false };
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
 
             act(() => {
                 result.current.handlers.onPrevious();
@@ -108,8 +122,10 @@ describe('useCarousel', () => {
 
         it('should set last slide as active when loop is true and active slide is first', async () => {
             const initialProps: UseCarouselOptions = { length: 5, initial: 0, loop: true };
-            const { result, waitForNextUpdate } =
-                renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+            const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+                useCarousel,
+                { initialProps },
+            );
 
             act(() => {
                 result.current.handlers.onPrevious();
@@ -125,8 +141,10 @@ describe('useCarousel', () => {
         const autoTransitionDelay = 2000;
         const transitionTime = 1;
         const initialProps: UseCarouselOptions = { length: 5, autoTransitionDelay, transitionTime };
-        const { result, waitForNextUpdate } =
-            renderHook<UseCarouselOptions, UseCarouselResponse>(useCarousel, { initialProps });
+        const { result, waitForNextUpdate } = renderHook<UseCarouselOptions, UseCarouselResponse>(
+            useCarousel,
+            { initialProps },
+        );
 
         act(() => {
             jest.runOnlyPendingTimers(); // Run autoTransition

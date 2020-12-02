@@ -44,11 +44,12 @@ describe('math', () => {
             ${-4}   | ${-3} | ${3}  | ${-3}
             ${-1}   | ${-3} | ${3}  | ${-1}
             ${4}    | ${-3} | ${3}  | ${3}
-        `('should return $expected when value is $value and bound are ($min, $max)',
-            ({ value, min, max, expected }) => {
-                const result = clamp(value, min, max);
+        `('should return $expected when value is $value and bound are ($min, $max)', ({
+            value, min, max, expected,
+        }) => {
+            const result = clamp(value, min, max);
 
-                expect(result).toEqual(expected);
-            });
+            expect(result).toEqual(expected);
+        });
     });
 });

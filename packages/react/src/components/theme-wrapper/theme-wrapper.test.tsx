@@ -33,7 +33,7 @@ describe('Theme Wrapper', () => {
     });
 
     test('should use ShadowWrapper when styles are isolated', () => {
-        const wrapper = shallow(<ThemeWrapper isolateStyles={true} />);
+        const wrapper = shallow(<ThemeWrapper isolateStyles />);
 
         expect(wrapper.find(ShadowWrapper)).toHaveLength(1);
     });

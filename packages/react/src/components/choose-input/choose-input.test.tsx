@@ -1,8 +1,10 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { ChooseInput } from './choose-input';
+
 jest.mock('uuid/v4');
 
 describe('Choose Input', () => {
@@ -29,7 +31,7 @@ describe('Choose Input', () => {
             ThemeWrapped(
                 <ChooseInput
                     groupName="maritalStatus"
-                    onChange={() => {}}
+                    onChange={doNothing}
                     type="radio"
                     value="test value"
                     defaultChecked

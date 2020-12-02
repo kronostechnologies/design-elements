@@ -91,9 +91,9 @@ jobs:
     working_directory: *working_directory
     steps:
       - attach_at_working_directory
-      #- node_deps_install
-      #- yarn_lint: // TODO: Enable after switching to ESLint
-      #    directory: << parameters.directory >>
+      - node_deps_install
+      - yarn_lint:
+          directory: << parameters.directory >>
 
   yarn_test:
     executor: "node"
