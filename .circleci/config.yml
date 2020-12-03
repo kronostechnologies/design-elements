@@ -138,14 +138,14 @@ jobs:
           command: |
             yarn workspaces foreach -tv --include '@equisoft/*' version prerelease
             git add .
-            git commit -m "chore(prerelease): %s [ci skip]"
       - run:
           name: 'tag and push'
           working_directory: *react_directory
           command: |
-            export PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
-            git tag "v${PACKAGE_VERSION}"
-            git push --follow-tags origin $CIRCLE_BRANCH
+            export PACKAGE_VERSION=v$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
+            git commit -m "chore(prerelease): ${PACKAGE_VERSION} [ci skip]"
+            git tag "${PACKAGE_VERSION}"
+            git push --tags origin $CIRCLE_BRANCH
 
   publish_to_npm:
     executor: "node"
