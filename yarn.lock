@@ -1859,17 +1859,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@equisoft/kronos-crm-icons-root@workspace:packages/kronos-crm-icons":
+"@equisoft/kronos-crm-icons@workspace:packages/kronos-crm-icons":
   version: 0.0.0-use.local
-  resolution: "@equisoft/kronos-crm-icons-root@workspace:packages/kronos-crm-icons"
+  resolution: "@equisoft/kronos-crm-icons@workspace:packages/kronos-crm-icons"
   dependencies:
     svgo: ^1.1.1
   languageName: unknown
   linkType: soft
 
-"@equisoft/kronos-fna-icons-root@workspace:packages/kronos-fna-icons":
+"@equisoft/kronos-fna-icons@workspace:packages/kronos-fna-icons":
   version: 0.0.0-use.local
-  resolution: "@equisoft/kronos-fna-icons-root@workspace:packages/kronos-fna-icons"
+  resolution: "@equisoft/kronos-fna-icons@workspace:packages/kronos-fna-icons"
   dependencies:
     svgo: ^1.1.1
   languageName: unknown

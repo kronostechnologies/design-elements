@@ -1,20 +1,13 @@
 {
-  "name": "@equisoft/kronos-fna-icons-root",
+  "name": "@equisoft/kronos-fna-icons",
   "author": "Equisoft Design",
-  "maintainers": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)"
-  ],
-  "contributors": [
-    "Pierre-Luc Paquin <pierre-luc.paquin@equisoft.com> (https://github.com/plpaquin)",
-    "Hugo Soucy <hugo.soucy@equisoft.com> (https://github.com/hs0ucy)",
-    "Larry Matte <larry.matte@equisoft.com> (https://github.com/larrymatte)"
-  ],
   "scripts": {
     "build": "./scripts/build.sh",
-    "doPublish": "./scripts/doPublish.sh"
+    "doPublish": "./scripts/doPublish.sh",
+    "prepublishOnly": "../scripts/prepublishOnly.sh"
   },
   "devDependencies": {
     "svgo": "^1.1.1"
   },
-  "version": "2.0.3-alpha.47"
+  "version": "2.0.3-alpha.48"
 }
