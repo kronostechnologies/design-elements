@@ -41,6 +41,9 @@ export const Translations = {
             inputAriaLabel: 'Select an option',
             validationErrorMessage: 'You must select an option',
         },
+        'stepper-input': {
+            validationErrorMessage: 'Invalid number',
+        },
         'text-area': {
             validationErrorMessage: 'This text area is invalid',
         },
@@ -89,6 +92,9 @@ export const Translations = {
         select: {
             inputAriaLabel: 'Choisissez une option',
             validationErrorMessage: 'Vous devez choisir une option',
+        },
+        'stepper-input': {
+            validationErrorMessage: 'Ce nombre n\'est pas valide',
         },
         'text-area': {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',

@@ -14,6 +14,7 @@ export { RadioButtonGroup } from './components/radio-button-group/radio-button-g
 export { SearchContextual } from './components/search/search-contextual';
 export { SearchGlobal } from './components/search/search-global';
 export { Select } from './components/select/select';
+export { StepperInput } from './components/stepper-input/stepper-input';
 export { TextArea } from './components/text-area/text-area';
 export { TextInput } from './components/text-input/text-input';
 export { Avatar } from './components/avatar/avatar';
