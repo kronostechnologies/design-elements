@@ -217,7 +217,10 @@ export function Select({
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
     const fieldId = useMemo(() => id || uuid(), [id]);
-    const defaultOption = options.find((option) => option.value === defaultValue);
+    const defaultOption = useMemo(
+        () => options.find((option) => option.value === defaultValue),
+        [defaultValue, options],
+    );
 
     const [autoFocus, setAutofocus] = useState(false);
     const [containerOutline, setContainerOutline] = useState(false);
@@ -234,15 +237,20 @@ export function Select({
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
-    const filteredOptions = filterOptions(options, searchValue);
+    const filteredOptions = useMemo(() => filterOptions(options, searchValue), [options, searchValue]);
+
+    const findOptionByValue: (needle?: string) => Option | undefined = useCallback(
+        (needle) => options.find((option) => option.value === needle),
+        [options],
+    );
 
     useEffect(() => {
-        const wantedOption = options.find((option) => option.value === value);
+        const wantedOption = findOptionByValue(value);
         if (wantedOption) {
             setSelectedOptionValue(wantedOption.value);
             setInputValue(wantedOption.label);
         }
-    }, [options, value]);
+    }, [findOptionByValue, options, value]);
 
     const handleOpen: () => void = useCallback(() => {
         if (!disabled) {
@@ -252,7 +260,7 @@ export function Select({
                     inputRef.current.focus();
                     setFocusedValue('');
                 } else {
-                    setTimeout(() => setFocusedValue(selectedOptionValue), 10);
+                    setFocusedValue(selectedOptionValue);
                 }
             } else {
                 inputRef.current?.focus();
@@ -300,14 +308,14 @@ export function Select({
         setSearchValue('');
     }
 
-    function matchInputValueToOption(): void {
+    const matchInputValueToOption: () => void = useCallback(() => {
         const matchingOption = findOption(options, inputValue);
 
         if (matchingOption) {
             setSelectedOptionValue(matchingOption.value);
             setInputValue(matchingOption.label);
         }
-    }
+    }, [inputValue, options]);
 
     function handleSkipChange(): void {
         if (!skipSelected) {
@@ -329,7 +337,7 @@ export function Select({
         setContainerOutline(false);
     }
 
-    function handleChange(option: Option): void {
+    const handleChange: (option: Option) => void = useCallback((option) => {
         setOpen(false);
         setFocus(false);
         setSkipSelected(false);
@@ -340,49 +348,52 @@ export function Select({
         if (searchable) {
             setAutofocus(false);
             setSearchValue(option.label);
-        } else {
-            inputRef.current?.focus();
         }
-    }
+        inputRef.current?.focus();
+    }, [onChange, searchable]);
 
     function handleFocus(): void {
         setFocus(true);
         setContainerOutline(true);
     }
 
-    function handleFocusedValueChange(focusValue: string | undefined): void {
-        if (focusValue) {
-            setInputValue(focusValue);
+    const handleFocusedValueChange: (option?: Option) => void = useCallback((option) => {
+        if (option) {
+            setInputValue(option.label);
         }
-    }
+    }, []);
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
         if (searchable) {
-            const currentValue = event.target.value;
-            const optionsArray = filterOptions(options, currentValue);
+            const newValue = event.currentTarget.value;
+            const newFilteredOptions = filterOptions(options, newValue);
 
-            if (currentValue === '') {
+            if (newValue === '') {
                 setFocusedValue('');
                 setSearchValue('');
-                setInputValue(currentValue);
+                setInputValue(newValue);
                 setOpen(false);
                 setSelectedOptionValue('');
             } else {
-                setInputValue(currentValue);
-                setSearchValue(currentValue);
-                setOpen(optionsArray.length >= 1);
-
-                if (optionsArray.length > 0) {
-                    focusFirstElementFromArray(optionsArray);
-                } else {
-                    setSelectedOptionValue('');
-                    setFocusedValue('');
-                }
+                setInputValue(newValue);
+                setSearchValue(newValue);
+                setOpen(newFilteredOptions.length >= 1);
             }
         }
     }
 
-    function handleInputClick(): void {
+    useEffect(() => {
+        if (open && (!focusedValue || !filteredOptions.find((option) => option.value === focusedValue))) {
+            if (filteredOptions.length > 0) {
+                focusFirstElementFromArray(filteredOptions);
+            } else {
+                setSelectedOptionValue('');
+                setFocusedValue('');
+            }
+        }
+    }, [focusedValue, filteredOptions, open]);
+
+    const handleInputClick: () => void = useCallback(() => {
         if (searchable) {
             setFocusedValue('');
         } else {
@@ -390,9 +401,9 @@ export function Select({
             matchInputValueToOption();
         }
         setAutofocus(false);
-    }
+    }, [handleOpen, matchInputValueToOption, searchable]);
 
-    function handleInputKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    const handleInputKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
         switch (event.key) {
             case 'ArrowDown':
                 if (!open) {
@@ -400,11 +411,12 @@ export function Select({
                     if (searchable || !selectedOptionValue) {
                         setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
                     } else {
-                        setTimeout(() => setFocusedValue(selectedOptionValue), 10);
+                        setFocusedValue(selectedOptionValue);
                     }
                 } else if (searchable) {
                     if (searchValue !== '') {
-                        setTimeout(() => setFocusedValue(filteredOptions[1].value), 10);
+                        const optionToSelect = filteredOptions.length > 1 ? filteredOptions[1] : filteredOptions[0];
+                        setTimeout(() => setFocusedValue(optionToSelect.value), 10);
                     } else {
                         setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
                     }
@@ -429,7 +441,10 @@ export function Select({
             case 'Enter':
                 event.preventDefault();
                 if (searchValue !== '' && filteredOptions.length > 0 && open) {
-                    handleChange(filteredOptions[0]);
+                    const optionToSelect = findOptionByValue(focusedValue);
+                    if (optionToSelect) {
+                        handleChange(optionToSelect);
+                    }
                 } else if (!open && !searchable) {
                     handleOpen();
                     setTimeout(() => setFocusedValue(selectedOptionValue), 10);
@@ -456,9 +471,21 @@ export function Select({
             default:
                 break;
         }
-    }
+    }, [
+        autoFocus,
+        filteredOptions,
+        handleChange,
+        handleOpen,
+        matchInputValueToOption,
+        open,
+        searchValue,
+        searchable,
+        selectedOptionValue,
+        findOptionByValue,
+        focusedValue,
+    ]);
 
-    function handleListboxKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    const handleListboxKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (event.key === 'Escape') {
             if (searchable) {
                 resetField();
@@ -482,7 +509,7 @@ export function Select({
                 }
             }
         }
-    }
+    }, [focusedValue, handleOpen, matchInputValueToOption, options, searchable]);
 
     return (
         <>
@@ -541,24 +568,25 @@ export function Select({
                         <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '24' : '16'} />
                     </Arrow>
                 </InputWrapper>
-                <StyledListbox
-                    ariaLabelledBy={fieldId}
-                    autofocus={searchable ? autoFocus : open}
-                    ref={listboxRef}
-                    visible={open}
-                    checkIndicator
-                    data-testid="listbox"
-                    defaultValue={defaultValue}
-                    focusedValue={focusedValue}
-                    id={`listbox_${fieldId}`}
-                    numberOfItemsVisible={numberOfItemsVisible}
-                    onChange={handleChange}
-                    onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
-                    onKeyDown={handleListboxKeyDown}
-                    options={filteredOptions}
-                    value={selectedOptionValue}
-                    dropdown
-                />
+                {open && (
+                    <StyledListbox
+                        ariaLabelledBy={fieldId}
+                        autofocus={searchable ? autoFocus : open}
+                        ref={listboxRef}
+                        checkIndicator
+                        data-testid="listbox"
+                        defaultValue={defaultValue}
+                        focusedValue={focusedValue}
+                        id={`listbox_${fieldId}`}
+                        numberOfItemsVisible={numberOfItemsVisible}
+                        onChange={handleChange}
+                        onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
+                        onKeyDown={handleListboxKeyDown}
+                        options={filteredOptions}
+                        value={selectedOptionValue}
+                        dropdown
+                    />
+                )}
             </StyledFieldContainer>
             {skipOption && (
                 <ChooseInput

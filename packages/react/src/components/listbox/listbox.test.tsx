@@ -140,10 +140,4 @@ describe('Listbox', () => {
 
         expect(tree).toMatchSnapshot();
     });
-
-    test('Is not visible', () => {
-        const tree = renderWithTheme(<Listbox options={options} visible={false} />);
-
-        expect(tree).toMatchSnapshot();
-    });
 });
