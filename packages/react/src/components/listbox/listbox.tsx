@@ -5,8 +5,8 @@ import React, {
     Ref,
     useCallback,
     useEffect,
+    useLayoutEffect,
     useMemo,
-    useRef,
     useState,
 } from 'react';
 import styled from 'styled-components';
@@ -72,10 +72,6 @@ interface ListboxProps {
      * Sets the selected value (controlled input)
      */
     value?: Value;
-    /**
-     * @default true
-     */
-    visible?: boolean;
 
     /**
      * onChange callback function, invoked when an option is selected
@@ -89,7 +85,7 @@ interface ListboxProps {
     /**
      * onFocusedValueChange callback function, invoked when focused value changes
      */
-    onFocusedValueChange?(value: string | undefined): void;
+    onFocusedValueChange?(option?: ListboxOption): void;
 }
 
 interface ListProps {
@@ -105,7 +101,6 @@ interface ListItemProps {
 }
 
 interface BoxProps {
-    visible: boolean;
     isDropdown: boolean;
 }
 
@@ -113,7 +108,7 @@ const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
 const Box = styled.div<BoxProps>`
-    display: ${(props) => (props.visible ? 'flex' : 'none')};
+    display: flex;
     position: ${(props) => (props.isDropdown ? 'absolute' : 'unset')};
     width: ${(props) => (props.isDropdown ? '100%' : 'unset')};
 `;
@@ -203,12 +198,12 @@ export const Listbox = forwardRef(({
     autofocus = false,
     focusedValue,
     value,
-    visible = true,
 }: ListboxProps, ref: Ref<HTMLDivElement>): ReactElement => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const { isMobile } = useDeviceContext();
-    const listRef = useRef<HTMLUListElement>(null);
-    const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(defaultValue));
+    const [listRef, setListRef] = useState<HTMLUListElement>();
+    const listRefCallback = useCallback((node: HTMLUListElement) => setListRef(node), []);
+    const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(value || defaultValue));
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
         ? options.findIndex((option) => option.value === selectedOptionValue[0])
         : -1));
@@ -236,23 +231,29 @@ export const Listbox = forwardRef(({
         }
     }, [setValue, value]);
 
-    function handleAutoScroll(option: ListOption, focusedIndex: number): void {
-        if (!listRef.current || !option || !option.ref.current) {
+    const handleAutoScroll: (option?: ListOption, focusedIndex?: number) => void = useCallback((
+        option,
+        focusedIndex,
+    ) => {
+        const itemRef: HTMLLIElement | null | undefined = option?.ref.current;
+        if (!listRef || !option || !itemRef || focusedIndex === undefined) {
             return;
         }
 
-        const listRect = listRef.current.getBoundingClientRect();
-        const itemRect = option.ref.current.getBoundingClientRect();
+        const listRect = listRef.getBoundingClientRect();
+        const itemRect = itemRef.getBoundingClientRect();
 
-        if (listRect.height < (itemRect.height * (focusedIndex + 1))) {
-            listRef.current.scrollTop = itemRect.height * (focusedIndex);
+        if (itemRef.offsetTop >= listRef.scrollTop + listRect.height) {
+            listRef.scrollTop = (itemRect.height * (focusedIndex + 1)) - listRect.height;
         } else if (listRect.top - itemRect.top >= 0) {
             const spaceDif = listRect.top - itemRect.top;
             const numberOfItemsToScroll = spaceDif / itemRect.height;
 
-            listRef.current.scrollTop -= (itemRect.height * numberOfItemsToScroll);
+            listRef.scrollTop -= (itemRect.height * numberOfItemsToScroll);
+        } else {
+            listRef.scrollTop = itemRef.offsetTop;
         }
-    }
+    }, [listRef]);
 
     useEffect(() => {
         if (focusedValue) {
@@ -263,35 +264,37 @@ export const Listbox = forwardRef(({
         } else {
             setSelectedFocusIndex(-1);
         }
-    }, [focusedValue, list, options]);
+    }, [focusedValue, list, options, handleAutoScroll]);
 
     useEffect(() => {
-        if (autofocus && listRef.current) {
-            listRef.current.focus();
-            listRef.current.scrollTop = 0;
+        if (autofocus && listRef) {
+            listRef.focus();
         }
 
         if (selectedOptionValue && !multiselect) {
-            setSelectedFocusIndex(options.findIndex((option) => option.value === selectedOptionValue[0]));
+            const newSelectedFocusIndex = options.findIndex((option) => option.value === selectedOptionValue[0]);
+            if (newSelectedFocusIndex !== -1) {
+                setSelectedFocusIndex(newSelectedFocusIndex);
+            }
         }
-    }, [autofocus, multiselect, options, selectedOptionValue]);
+    }, [autofocus, multiselect, options, selectedOptionValue, listRef]);
 
-    function isOptionSelected(option: ListOption): boolean {
+    const isOptionSelected: (option: ListOption) => boolean = useCallback((option) => {
         if (multiselect) {
             return selectedOptionValue.includes(option.value);
         }
         return selectedOptionValue.length > 0 && selectedOptionValue[0] === option.value;
-    }
+    }, [multiselect, selectedOptionValue]);
 
-    function isOptionFocused(option: ListOption): boolean {
-        return option.focusIndex === selectedFocusIndex;
-    }
+    const isOptionFocused: (option: ListOption) => boolean = useCallback(
+        (option) => option.focusIndex === selectedFocusIndex, [selectedFocusIndex],
+    );
 
-    function shouldDisplayCheckIndicator(option: ListOption): boolean {
-        return checkIndicator && isOptionSelected(option);
-    }
+    const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
+        (option) => checkIndicator && isOptionSelected(option), [checkIndicator, isOptionSelected],
+    );
 
-    function selectOption(option: ListOption): void {
+    const selectOption: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
 
         if (multiselect) {
@@ -304,67 +307,61 @@ export const Listbox = forwardRef(({
             setSelectedOptionValue([option.value]);
         }
 
-        if (onChange) {
-            onChange(option);
-        }
-    }
+        onChange?.(option);
+    }, [multiselect, onChange, selectedOptionValue]);
 
-    function handleListItemClick(option: ListOption): () => void {
-        return () => selectOption(option);
-    }
+    const handleListItemClick: (option: ListOption) => () => void = useCallback(
+        (option) => () => selectOption(option), [selectOption],
+    );
 
-    function handleListItemMouseMove(option: ListOption): void {
+    const handleListItemMouseMove: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
-    }
+    }, []);
 
-    function scrollIntoList(direction: 'up' | 'down' | 'top' | 'bottom'): void {
+    useLayoutEffect(() => {
         const currentOption = list[selectedFocusIndex];
-        let itemIsOutOfRange = false;
 
-        if (!listRef.current || !currentOption || !currentOption.ref.current) {
+        if (!listRef || !currentOption?.ref?.current) {
             return;
         }
 
-        const listRect = listRef.current.getBoundingClientRect();
+        const listRect = listRef.getBoundingClientRect();
         const itemRect = currentOption.ref.current.getBoundingClientRect();
+        const currentView = { from: listRect.y, to: listRect.y + listRect.height };
+        const currentItem = { from: itemRect.y, to: itemRect.y + itemRect.height };
 
-        switch (direction) {
+        let scrollDirection: 'up' | 'down' | null = null;
+        if (currentItem.from >= currentView.from && currentItem.to <= currentView.to) {
+            scrollDirection = null;
+        } else if (currentItem.from <= currentView.from) {
+            scrollDirection = 'up';
+        } else if (currentItem.to >= currentView.to) {
+            scrollDirection = 'down';
+        }
+
+        switch (scrollDirection) {
             case 'up': {
-                const isPrevItemHidden = listRect.top - itemRect.top >= 0;
-                itemIsOutOfRange = (listRect.top - itemRect.top) <= -(numberOfItemsVisible * itemRect.height)
-                    || (listRect.top - itemRect.top) >= itemRect.height;
-
-                if (itemIsOutOfRange) {
-                    handleAutoScroll(list[selectedFocusIndex - 1], selectedFocusIndex - 1);
-                } else if (isPrevItemHidden) {
-                    listRef.current.scrollTop -= itemRect.height;
-                }
+                handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
                 break;
             }
             case 'down': {
-                const isNextItemHidden = listRect.bottom - itemRect.bottom <= 0;
-                itemIsOutOfRange = (listRect.bottom - itemRect.bottom) >= (numberOfItemsVisible * itemRect.height)
-                    || (listRect.bottom - itemRect.bottom) <= -itemRect.height;
-
-                if (itemIsOutOfRange) {
-                    handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
-                } else if (isNextItemHidden) {
-                    listRef.current.scrollTop += itemRect.height;
-                }
+                handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
                 break;
             }
-            case 'top': {
-                listRef.current.scrollTop = 0;
-                break;
-            }
-            case 'bottom': {
-                listRef.current.scrollTop = listRect.bottom;
+            case null: {
                 break;
             }
         }
-    }
+    }, [list, numberOfItemsVisible, selectedFocusIndex, handleAutoScroll, listRef]);
 
-    function handleKeyDown(e: KeyboardEvent<HTMLUListElement>): void {
+    useEffect(() => {
+        const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
+        if (focusedValueIndex !== -1 && listRef) {
+            setSelectedFocusIndex(focusedValueIndex);
+        }
+    }, [options, focusedValue, listRef]);
+
+    const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
         // ' ' is the space bar key
         switch (e.key) {
             case 'Enter': {
@@ -381,14 +378,9 @@ export const Listbox = forwardRef(({
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
-                    if (selectedFocusIndex === 0) {
-                        scrollIntoList('bottom');
-                    } else {
-                        scrollIntoList('up');
-                    }
 
                     if (onFocusedValueChange) {
-                        onFocusedValueChange(list[prevOption.focusIndex]?.label);
+                        onFocusedValueChange(list[prevOption.focusIndex]);
                     }
                 }
                 break;
@@ -399,27 +391,20 @@ export const Listbox = forwardRef(({
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
-                    if (nextOption.focusIndex === 0) {
-                        scrollIntoList('top');
-                    } else {
-                        scrollIntoList('down');
-                    }
 
                     if (onFocusedValueChange) {
-                        onFocusedValueChange(list[nextOption.focusIndex]?.label);
+                        onFocusedValueChange(list[nextOption.focusIndex]);
                     }
                 }
                 break;
             }
         }
 
-        if (onKeyDown) {
-            onKeyDown(e);
-        }
-    }
+        onKeyDown?.(e);
+    }, [list, onFocusedValueChange, onKeyDown, selectedFocusIndex, selectOption]);
 
     function getAriaActiveDescendant(optionIndex: number): string | undefined {
-        if (optionIndex >= 0) {
+        if (optionIndex >= 0 && list[optionIndex]) {
             return `${id}_${list[optionIndex].value}`;
         }
         return undefined;
@@ -434,7 +419,6 @@ export const Listbox = forwardRef(({
             ref={ref}
             role="listbox"
             tabIndex={-1}
-            visible={visible}
         >
             <List
                 data-testid="listbox-list"
@@ -444,7 +428,7 @@ export const Listbox = forwardRef(({
                 onBlur={() => setSelectedFocusIndex(-1)}
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyDown}
-                ref={listRef}
+                ref={listRefCallback}
                 role="presentation"
                 tabIndex={0}
             >
@@ -464,8 +448,9 @@ export const Listbox = forwardRef(({
                         role="option"
                         selected={isOptionSelected(option)}
                     >
-                        {shouldDisplayCheckIndicator(option)
-                        && <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />}
+                        {shouldDisplayCheckIndicator(option) && (
+                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
+                        )}
                         {option.label || option.value}
                     </ListItem>
                 ))}
