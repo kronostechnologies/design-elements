@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
+.c0 {
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-6x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 button {
+  cursor: pointer;
+  border: 1px solid green;
+  background: green;
+  border-radius: 12px;
+  height: 24px;
+  width: 36px;
+  position: absolute;
+  left: 0;
+}
+
+.c0 button span {
+  background: white;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 16px;
+  position: absolute;
+  right: calc(100% - 19px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 16px;
+}
+
+.c0 button[aria-checked="false"] {
+  background: #9CA7B4;
+  border-color: #9CA7B4;
+}
+
+.c0 button[aria-checked="false"] span {
+  -webkit-transition: right .1s ease-in-out;
+  transition: right .1s ease-in-out;
+}
+
+.c0 button[aria-checked="true"] > span {
+  right: 3px;
+  -webkit-transition: right .1s ease-in-out;
+  transition: right .1s ease-in-out;
+}
+
+.c0 button:disabled {
+  background: #D9DDE2;
+  border-color: #D9DDE2;
+}
+
+.c0 button:disabled[aria-checked="true"] {
+  background: #99cead;
+  border-color: #99cead;
+}
+
+.c0 button:focus {
+  outline: none;
+}
+
+.c0 button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+<label
+  class="c0"
+>
+  Switch
+  <button
+    aria-checked="false"
+    aria-readonly="false"
+    role="switch"
+  >
+    <span />
+  </button>
+</label>
+`;
+
+exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
+.c0 {
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-left: var(--spacing-7x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 button {
+  cursor: pointer;
+  border: 1px solid green;
+  background: green;
+  border-radius: 16px;
+  height: 32px;
+  width: 48px;
+  position: absolute;
+  left: 0;
+}
+
+.c0 button span {
+  background: white;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 22px;
+  position: absolute;
+  right: calc(100% - 26px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 22px;
+}
+
+.c0 button[aria-checked="false"] {
+  background: #9CA7B4;
+  border-color: #9CA7B4;
+}
+
+.c0 button[aria-checked="false"] span {
+  -webkit-transition: right .1s ease-in-out;
+  transition: right .1s ease-in-out;
+}
+
+.c0 button[aria-checked="true"] > span {
+  right: 4px;
+  -webkit-transition: right .1s ease-in-out;
+  transition: right .1s ease-in-out;
+}
+
+.c0 button:disabled {
+  background: #D9DDE2;
+  border-color: #D9DDE2;
+}
+
+.c0 button:disabled[aria-checked="true"] {
+  background: #99cead;
+  border-color: #99cead;
+}
+
+.c0 button:focus {
+  outline: none;
+}
+
+.c0 button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+<label
+  class="c0"
+>
+  Switch
+  <button
+    aria-checked="false"
+    aria-readonly="false"
+    role="switch"
+  >
+    <span />
+  </button>
+</label>
+`;
+
+exports[`ToggleSwitch has disabled styles 1`] = `
+.c0 {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-6x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 button {
+  border: 1px solid green;
+  background: green;
+  border-radius: 12px;
+  height: 24px;
+  width: 36px;
+  position: absolute;
+  left: 0;
+}
+
+.c0 button span {
+  background: white;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 16px;
+  position: absolute;
+  right: calc(100% - 19px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 16px;
+}
+
+.c0 button[aria-checked="false"] {
+  background: #9CA7B4;
+  border-color: #9CA7B4;
+}
+
+.c0 button[aria-checked="false"] span {
+  -webkit-transition: right .1s ease-in-out;
+  transition: right .1s ease-in-out;
+}
+
+.c0 button[aria-checked="true"] > span {
+  right: 3px;
+  -webkit-transition: right .1s ease-in-out;
+  transition: right .1s ease-in-out;
+}
+
+.c0 button:disabled {
+  background: #D9DDE2;
+  border-color: #D9DDE2;
+}
+
+.c0 button:disabled[aria-checked="true"] {
+  background: #99cead;
+  border-color: #99cead;
+}
+
+.c0 button:focus {
+  outline: none;
+}
+
+.c0 button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+<label
+  class="c0"
+  disabled=""
+>
+  Switch
+  <button
+    aria-checked="false"
+    aria-readonly="true"
+    disabled=""
+    role="switch"
+  >
+    <span />
+  </button>
+</label>
+`;
