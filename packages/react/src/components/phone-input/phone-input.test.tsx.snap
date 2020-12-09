@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Phone Input Matches the snapshot 1`] = `
+<InputElement
+  alwaysShowMask={true}
+  defaultValue="555-555-5555"
+  mask="(999) 999-9999"
+  onChange={[Function]}
+>
+  <Component />
+</InputElement>
+`;
