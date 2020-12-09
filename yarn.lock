@@ -1974,6 +1974,7 @@ __metadata:
     "@types/react": ~17.0.0
     "@types/react-datepicker": ^3.1.2
     "@types/react-dom": ~17.0.0
+    "@types/react-input-mask": ^3.0.0
     "@types/react-modal": ^3.10.6
     "@types/react-router-dom": ~5.1.6
     "@types/react-table": ^7.0.26
@@ -2008,6 +2009,7 @@ __metadata:
     react-datepicker: ^3.3.0
     react-docgen-typescript-loader: ~3.7.2
     react-dom: ~17.0.1
+    react-input-mask: ^2.0.4
     react-is: ~17.0.1
     react-modal: ^3.12.1
     react-popper-tooltip: ^3.1.1
@@ -3777,6 +3779,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 7ca9351b6c2523327cd7afe40082a37034898f65e9d86700236682efed910ba7c9cec10e9a3b829aa7b804b18791a28743ce468fcb42e9a788bfc33b84137e45
+  languageName: node
+  linkType: hard
+
+"@types/react-input-mask@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/react-input-mask@npm:3.0.0"
+  dependencies:
+    "@types/react": "*"
+  checksum: 1921145c2feeb78299da051450db77008e2969cdde6dfb7cd5b8512424b81f6d9fc757f7d9bd0c5ffc49ecb801ea070bf4dbfd1f40bc9c1acd6dded5e0566539
   languageName: node
   linkType: hard
 
@@ -15020,6 +15031,19 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ">= 0.14.0"
   checksum: 265054ddd45ac37a0ee110af9f282bd6a54f54bb4a47d111d738051432ce5b975b810c7a8ef51fbcdc293dfc57b96ceaf57a9be8c6bc6e65e5045d7320e553d7
+  languageName: node
+  linkType: hard
+
+"react-input-mask@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "react-input-mask@npm:2.0.4"
+  dependencies:
+    invariant: ^2.2.4
+    warning: ^4.0.2
+  peerDependencies:
+    react: ">=0.14.0"
+    react-dom: ">=0.14.0"
+  checksum: d2eb641a036e87b5d8e9aacd3a0db0553b8fcc714d1acfe597d52e3c794035ef35b515e6ee00b3286f26fed99b8e246aeeb2f77163f312c70377aa19a882e6ec
   languageName: node
   linkType: hard
 

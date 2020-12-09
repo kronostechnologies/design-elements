@@ -14,22 +14,24 @@ import styled from 'styled-components';
 
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
+import { useDeviceContext } from "@design-elements/components/device-context-provider/device-context-provider";
 
-const Input = styled.input`
-    ${({ theme }) => inputsStyle(theme)}
+const Input = styled.input<{isMobile: boolean, inputWidth: string | undefined, inputHeight: string | undefined}>`
+    ${({ theme, isMobile, inputWidth, inputHeight }) => inputsStyle(theme, isMobile, inputWidth, inputHeight)}
 `;
 
 type inputModeType = 'none' | 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search';
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    'inputMode' | 'value'>;
+    'inputMode' | 'value' | 'defaultValue'>;
 
 interface TextInputProps extends PartialInputProps {
-    defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
     noMargin?: boolean;
     inputMode?: inputModeType;
+    inputWidth?: string;
+    inputHeight?: string;
     label?: string;
     pattern?: string;
     placeholder?: string;
@@ -47,11 +49,14 @@ interface TextInputProps extends PartialInputProps {
 
 export const TextInput = React.forwardRef(({
     noMargin,
+    inputWidth,
+    inputHeight,
     onBlur,
     onChange,
     onFocus,
     ...props
 }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
+    const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = useMemo(uuid, []);
@@ -100,6 +105,10 @@ export const TextInput = React.forwardRef(({
             hint={hint}
         >
             <Input
+                data-testid="text-input"
+                isMobile={isMobile}
+                inputWidth={inputWidth}
+                inputHeight={inputHeight}
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={id}
