@@ -31,9 +31,9 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
             background-color: ${theme.greys['colored-white']};
         }
     `} ${({ error, theme }) => error && css`
-        border: 1px solid ${theme.notifications['error-2.1']};
         /* TODO fix with next thematization theme.notifications.error4 */
         background-color: #fcf8f9;
+        border: 1px solid ${theme.notifications['error-2.1']};
     `}
 `;
 

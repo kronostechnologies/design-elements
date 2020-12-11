@@ -16,14 +16,17 @@ interface ChooserProps {
 }
 
 type GridProps = Pick<ChooserProps, 'inColumns'>;
+
+function getGridTemplateColumns({ inColumns }: GridProps): string {
+    return inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none';
+}
+
 const Grid = styled.div<GridProps>`
     align-items: stretch;
     box-sizing: border-box;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: ${(props: GridProps) => (props.inColumns
-        ? 'repeat(auto-fit, minmax(8.75rem, 1fr))'
-        : 'none')};
+    grid-template-columns: ${getGridTemplateColumns};
     width: auto;
 `;
 

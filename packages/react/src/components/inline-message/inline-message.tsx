@@ -23,8 +23,7 @@ function abstractContainer(
         svg {
             color: ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
             flex: 0 0 auto;
-        }
-    `;
+        }`;
 }
 
 const InfoContainer = abstractContainer('#f5fdff');

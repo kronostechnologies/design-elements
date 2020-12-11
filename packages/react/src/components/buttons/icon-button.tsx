@@ -96,6 +96,7 @@ const StyledButton = styled(AbstractButton)<AbstractButtonProps & StyledButtonPr
                 `;
         }
     }}
+
     padding: 0;
     width: ${({ isMobile }) => (isMobile ? '48px' : '32px')};
 `;

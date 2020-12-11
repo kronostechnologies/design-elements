@@ -113,15 +113,17 @@ const Box = styled.div<BoxProps>`
     width: ${(props) => (props.isDropdown ? '100%' : 'unset')};
 `;
 
+function getListMaxHeight({ numberOfItemsVisible, isMobile }: ListProps): number {
+    return numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop);
+}
+
 const List = styled.ul<ListProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     list-style-type: none;
     margin: 0;
-    max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile
-        ? itemHeightMobile
-        : itemHeightDesktop)}px;
+    max-height: ${getListMaxHeight}px;
     min-width: fit-content;
     overflow-y: auto;
     padding: 0;

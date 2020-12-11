@@ -10,7 +10,7 @@ interface ContainerProps {
 
 export const StyledLink = styled.a<ContainerProps>`
     align-items: center;
-    cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: inline-flex;
     text-decoration: none;
 
@@ -24,7 +24,8 @@ export const StyledLink = styled.a<ContainerProps>`
 
     &.external {
         color: ${(props) => (props.disabled ? '#7fbfd2' : '#0080a5')};
-        ${focus}
+
+        ${focus};
 
         &:hover {
             ${(props) => (props.disabled ? '' : 'text-decoration: underline')};
@@ -41,7 +42,8 @@ export const StyledLink = styled.a<ContainerProps>`
 
     &.navigation {
         color: ${(props) => (props.disabled ? '#9ca7b4' : '#57666e')};
-        ${focus}
+
+        ${focus};
 
         &:hover {
             ${(props) => (props.disabled ? '' : 'color: #000;')}
