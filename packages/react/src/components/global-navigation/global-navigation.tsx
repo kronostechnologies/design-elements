@@ -28,10 +28,11 @@ const MenuLink = styled(NavLink)`
     display: flex;
     flex-grow: 1;
     line-height: 24px;
-    ${focus}
     padding: var(--spacing-half) var(--spacing-2x);
     text-decoration: none;
     width: max-content;
+
+    ${focus};
 
     &:hover {
         background-color: ${(props) => props.theme.greys.grey};
@@ -79,8 +80,9 @@ const ShowMore = styled.button<{ active?: boolean }>`
     display: flex;
     height: 34px;
     justify-content: center;
-    ${focus}
     width: 34px;
+
+    ${focus};
 
     &:hover {
         background-color: ${(props) => props.theme.greys.grey};

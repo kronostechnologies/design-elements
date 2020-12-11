@@ -89,7 +89,6 @@ input + .c2 {
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
-  border-radius: undefined;
   padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 }
 
@@ -324,7 +323,6 @@ input + .c2 {
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
-  border-radius: undefined;
   padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 }
 

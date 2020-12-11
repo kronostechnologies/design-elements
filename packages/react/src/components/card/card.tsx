@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const Card = styled.div`
-    --border-radius: 8px;
-
     background: ${(props) => props.theme.greys.white};
     border: 1px solid ${(props) => props.theme.greys['light-grey']};
     border-radius: var(--border-radius);

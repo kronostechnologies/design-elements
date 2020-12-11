@@ -31,11 +31,12 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1)}rem;
     min-height: 2rem;
     min-width: 2rem;
-    ${(props) => focus(props, true)}
     outline: none;
     padding: ${({ isMobile }) => (isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-2x);')};
     text-transform: uppercase;
     user-select: none;
+
+    ${(props) => focus(props, true)};
 
     &:not(:disabled) {
         cursor: pointer;

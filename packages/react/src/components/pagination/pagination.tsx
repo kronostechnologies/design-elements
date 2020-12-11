@@ -25,9 +25,10 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     height: ${(props) => (props.isMobile ? 32 : 24)}px;
     line-height: ${(props) => (props.isMobile ? 32 : 24)}px;
     margin: 0 var(--spacing-half);
-    ${focus}
     text-align: center;
     width: ${(props) => (props.isMobile ? 32 : 24)}px;
+
+    ${focus};
 
     &:hover {
         background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey)};

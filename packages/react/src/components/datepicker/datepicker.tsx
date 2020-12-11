@@ -101,7 +101,8 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         ${({ isMobile, theme }) => isMobile && `
             border: 1px solid ${theme.main['primary-1.1']};
             box-shadow: ${theme.tokens['focus-box-shadow']};
-        `}
+        `};
+
         &:focus {
             border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
             box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
@@ -137,7 +138,8 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
             &:focus {
                 box-shadow: ${theme.tokens['focus-box-shadow']};
             }
-        `)}
+        `)};
+
         &:hover {
             color: ${({ theme }) => theme.greys.black};
         }

@@ -25,8 +25,8 @@ const Container = styled.div<ContainerProps>`
     background-color: ${(props) => props.theme.greys.white};
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     height: calc(100vh - ${({ isDesktop }) => (isDesktop ? 48 : 56)}px);
-    ${(props) => props.origin}: 0;
-    overflow-x: hidden;
+    ${({ origin }) => `${origin}: 0`};
+    overflow-x: hidden; /* stylelint-disable-line declaration-empty-line-before */
     overflow-y: auto;
     position: fixed;
     top: ${({ isDesktop }) => (isDesktop ? 48 : 56)}px;

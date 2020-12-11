@@ -40,8 +40,6 @@ input + .c1 {
 }
 
 .c3 {
-  min-height: 6.5rem;
-  min-width: 100%;
   background: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
@@ -58,6 +56,8 @@ input + .c1 {
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
+  min-height: 6.5rem;
+  min-width: 100%;
   outline: none;
   overflow: auto;
   resize: vertical;
@@ -175,8 +175,6 @@ input + .c1 {
 }
 
 .c3 {
-  min-height: 6.5rem;
-  min-width: 100%;
   background: #FFFFFF;
   border: 1px solid #57666E;
   border-radius: var(--border-radius);
@@ -193,6 +191,8 @@ input + .c1 {
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
+  min-height: 6.5rem;
+  min-width: 100%;
   outline: none;
   overflow: auto;
   resize: vertical;

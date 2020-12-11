@@ -13,11 +13,11 @@
     "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' cross-env NODE_ICU_DATA='node_modules/full-icu' jest --max-workers=2 --reporters=default --reporters=jest-junit",
     "test:unit": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest --config=jest.config.js",
     "lint": "yarn eslint && yarn stylelint",
-    "lint:ci": "mkdir -p build/lint/style && yarn eslint:ci",
+    "lint:ci": "yarn eslint:ci && yarn stylelint:ci",
     "eslint": "yarn g:eslint src/",
     "eslint:ci": "yarn eslint",
-    "stylelint": "stylelint \"./src/**/*.{ts,tsx}\"",
-    "stylelint:ci": "stylelint --custom-formatter node_modules/stylelint-junit-formatter \"./src/**/*.{ts,tsx}\" > build/lint/style/junit.xml",
+    "stylelint": "yarn g:stylelint \"./src/**/*.{ts,tsx}\"",
+    "stylelint:ci": "yarn stylelint",
     "test-update": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest -u"
   },
   "files": [
@@ -52,7 +52,6 @@
   },
   "devDependencies": {
     "@equisoft/eslint-config-typescript-react": "^2.0.1",
-    "@equisoft/stylelint-config-styled-components": "^0.2.0",
     "@equisoft/typescript-config": "^2.0.0",
     "@svgr/webpack": "^4.3.2",
     "@testing-library/react": "^11.2.2",
@@ -103,7 +102,7 @@
     "sass-loader": "~10.0.1",
     "style-loader": "^1.2.1",
     "styled-components": "^5.1.1",
-    "stylelint-junit-formatter": "^0.2.2",
+    "stylelint": "^13.8.0",
     "to-string-loader": "~1.1.6",
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.11",
