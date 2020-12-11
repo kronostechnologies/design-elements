@@ -50,10 +50,8 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         z-index: 1;
     }
 
-    /* Order matters here, so I gotta ignore the stylelint order rule */
-    /* stylelint-disable-next-line */
+    ${focus};
 
-    ${focus}
     &:hover {
         ${(props) => (props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`)}
     }

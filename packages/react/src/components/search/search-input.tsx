@@ -33,10 +33,16 @@ const InnerWrapper = styled.div`
     z-index: 1;
 `;
 
+function iconColor(props: { theme: Theme, disabled?: boolean }): string {
+    if (props.disabled) {
+        return props.theme.greys['mid-grey'];
+    }
+
+    return props.theme.greys['dark-grey'];
+}
+
 const IcoSearch = styled(SearchIcon)`
-    color: ${(props: { theme: Theme, disabled?: boolean }) => (props.disabled
-        ? props.theme.greys['mid-grey']
-        : props.theme.greys['dark-grey'])};
+    color: ${iconColor};
     height: 1rem;
     width: 1rem;
 `;
@@ -49,22 +55,22 @@ const IcoReset = styled(XIcon)`
 `;
 
 const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
-    ${({ theme, hasButton }) => `
-        ${inputsStyle(theme)} /* Must be the first rule */
-        border-radius: ${hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
-        padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
+    /* Must be the first rule */
+    ${({ theme }) => inputsStyle(theme)};
 
-        label + & {
-          margin-top: 0;
-        }
+    border-radius: ${({ hasButton }) => (hasButton ? 'var(--border-radius) 0 0 var(--border-radius)' : '')};
+    padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration {
-          display: none;
-        }
-`}
+    label + & {
+        margin-top: 0;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
+    }
 `;
 
 const Reset = styled.button`
@@ -76,7 +82,9 @@ const Reset = styled.button`
     display: none;
     height: 1.25rem;
     margin: auto;
-    ${focus}
+
+    ${focus};
+
     padding: 0;
     position: absolute;
     right: 0.25rem;

@@ -59,8 +59,9 @@ const Dot = styled.button<DotProps>`
     cursor: pointer;
     display: inline-block;
     height: 12px;
-    ${focus}
     width: 12px;
+
+    ${focus};
 
     & + & {
         margin-left: var(--spacing-1x);
@@ -75,9 +76,10 @@ const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'but
     border: 1px solid transparent;
     cursor: pointer;
     height: 34px;
-    ${focus}
     visibility: ${({ disabled }) => (disabled ? 'hidden' : 'visible')};
     width: 34px;
+
+    ${focus};
 `;
 
 function LeftArrowIcon(): ReactElement {

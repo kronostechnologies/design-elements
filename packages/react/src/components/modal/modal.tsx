@@ -34,6 +34,10 @@ function getBottomPadding({ isMobile, noPadding }: StyledModalProps): string {
     return 'var(--spacing-4x)';
 }
 
+function getModalMinWidth({ breakpoints, isMobile }: StyledModalProps): string {
+    return isMobile ? 'initial' : `calc(${breakpoints.mobile}px - var(--spacing-4x))`;
+}
+
 const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
@@ -42,9 +46,7 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     box-sizing: border-box;
     max-height: calc(100vh - var(--spacing-2x));
     max-width: 700px;
-    min-width: ${({ breakpoints, isMobile }) => (isMobile
-        ? 'initial'
-        : `calc(${breakpoints.mobile}px - var(--spacing-4x))`)};
+    min-width: ${getModalMinWidth};
     overflow-y: auto;
     padding: ${getModalPadding};
     position: relative;
@@ -81,7 +83,7 @@ const Footer = styled.footer`
 `;
 
 const customStyles = {
-    overlay: {
+    overlay: { /* stylelint-disable-line selector-type-no-unknown */
         alignItems: 'center',
         display: 'flex',
         justifyContent: 'center',
@@ -90,7 +92,7 @@ const customStyles = {
 };
 
 export interface ModalProps {
-    /** Takes a query selector targetting the app Element. */
+    /** Takes a query selector targeting the app Element. */
     appElement?: string;
     ariaDescribedby?: string;
     /** Boolean indicating if the appElement should be hidden. Defaults to true.

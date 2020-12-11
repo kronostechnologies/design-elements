@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Box = styled.div`
-    background-color: #094C6C;
+    background-color: #094c6c;
     border-radius: 8px;
     height: 20vh;
     margin-bottom: 16px;

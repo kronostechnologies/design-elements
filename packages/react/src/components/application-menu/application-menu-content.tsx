@@ -11,8 +11,9 @@ const BurgerButton = styled.button`
     border: 1px solid transparent;
     cursor: pointer;
     margin: 0;
-    ${focus}
     padding: 0;
+
+    ${focus};
 `;
 
 const Container = styled.div`

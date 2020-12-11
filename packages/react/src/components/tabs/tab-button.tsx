@@ -3,7 +3,7 @@ import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button<{isSelected: boolean}>`
+const StyledButton = styled.button<{ isSelected: boolean }>`
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -11,7 +11,9 @@ const StyledButton = styled.button<{isSelected: boolean}>`
     line-height: 1.5rem;
     min-height: 48px;
     min-width: 82px;
-    ${focus}
+
+    ${focus};
+
     ${({ isSelected, theme }) => isSelected && `
         ::after {
             content: '';
@@ -24,12 +26,13 @@ const StyledButton = styled.button<{isSelected: boolean}>`
             width: 100%;
         }
     `}
+
     padding-left: var(--spacing-2x);
     padding-right: var(--spacing-2x);
     position: relative;
 `;
 
-const StyledButtonText = styled.span<{isSelected: boolean}>`
+const StyledButtonText = styled.span<{ isSelected: boolean }>`
     color: ${({ isSelected, theme }) => (isSelected ? `${theme.main['primary-1.1']}` : `${theme.greys['dark-grey']}`)};
     font-family: Open Sans, sans-serif;
     font-size: 0.875rem;
@@ -40,7 +43,7 @@ const StyledButtonText = styled.span<{isSelected: boolean}>`
     }
 `;
 
-const LeftIcon = styled(Icon)<{$isSelected: boolean}>`
+const LeftIcon = styled(Icon)<{ $isSelected: boolean }>`
     color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
     padding-right: var(--spacing-half);
 
@@ -49,7 +52,7 @@ const LeftIcon = styled(Icon)<{$isSelected: boolean}>`
     }
 `;
 
-const RightIcon = styled(Icon)<{$isSelected: boolean}>`
+const RightIcon = styled(Icon)<{ $isSelected: boolean }>`
     color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
     padding-left: var(--spacing-half);
 
@@ -66,7 +69,9 @@ interface TabButtonProps {
     rightIcon?: IconName;
     isSelected: boolean;
     isFocused: boolean;
+
     onClick(): void;
+
     onFocus(): void;
 }
 

@@ -139,8 +139,9 @@ export const TooltipArrow = styled.div`
 const StyledSpan = styled.span`
     align-items: center;
     display: flex;
-    ${focus}
     width: fit-content;
+
+    ${focus};
 `;
 
 type PlacementType = 'top' | 'right' | 'bottom' | 'left';
