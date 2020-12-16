@@ -1,12 +1,12 @@
 import { Heading } from '@equisoft/design-elements-react';
-import React from 'react';
+import React, { VoidFunctionComponent } from 'react';
 
 export default {
     title: 'Heading',
     component: Heading,
 };
 
-export const normal = () => (
+export const Normal: VoidFunctionComponent = () => (
     <>
         <Heading type="xlarge">Heading (Xlarge)</Heading>
         <Heading type="large">Heading (Large)</Heading>
@@ -18,10 +18,10 @@ export const normal = () => (
     </>
 );
 
-export const withoutMargins = () => (
+export const WithoutMargins: VoidFunctionComponent = () => (
     <Heading type="medium" noMargin>Heading (Medium)</Heading>
 );
 
-export const withDifferentTag = () => (
+export const WithDifferentTag: VoidFunctionComponent = () => (
     <Heading type="medium" tag="h4">Heading (Medium)</Heading>
 );

@@ -24,25 +24,25 @@ interface ToggleButtonProps {
 
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
-    background-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.white};
+    background-color: ${(props) => (props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
     border: 1px solid;
-    border-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey};
-    border-left-color: ${props => props.pressed ? props.theme.main['primary-1.1'] : 'transparent'};
+    border-color: ${(props) => (props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey)};
+    border-left-color: ${(props) => (props.pressed ? props.theme.main['primary-1.1'] : 'transparent')};
     box-sizing: border-box;
-    color: ${props => props.pressed ? props.theme.greys.white : props.theme.greys['dark-grey']};
-    cursor: ${props => props.disabled ? 'default' : 'pointer'};
-    font-size: ${props => props.isMobile ? '1rem' : '0.875rem'};
-    height: ${props => props.isMobile ? '48px' : '40px'};
+    color: ${(props) => (props.pressed ? props.theme.greys.white : props.theme.greys['dark-grey'])};
+    cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
+    font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
+    height: ${(props) => (props.isMobile ? '48px' : '40px')};
     letter-spacing: 0.46px;
     padding: 0 var(--spacing-2x);
 
     &:disabled {
-        background-color: ${props => props.theme.greys['light-grey']};
-        color: ${props => props.theme.greys['mid-grey']};
+        background-color: ${(props) => props.theme.greys['light-grey']};
+        color: ${(props) => props.theme.greys['mid-grey']};
     }
 
     &:first-child {
-        border-color: ${props => props.theme.greys.grey};
+        border-color: ${(props) => props.theme.greys.grey};
         margin: 0;
     }
 
@@ -50,12 +50,10 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         z-index: 1;
     }
 
-    /* Order matters here, so I gotta ignore the stylelint order rule */
-    /* stylelint-disable-next-line */
-    ${focus}
+    ${focus};
 
     &:hover {
-        ${props => props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`}
+        ${(props) => (props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`)}
     }
 `;
 
@@ -79,15 +77,18 @@ interface ToggleButtonGroupProps {
 
 export function ToggleButtonGroup({ buttonGroup, groupName, onClick }: ToggleButtonGroupProps): ReactElement {
     const { isMobile } = useDeviceContext();
-    const defaultPressedButton = buttonGroup.find(button => button.defaultPressed);
+    const defaultPressedButton = buttonGroup.find((button) => button.defaultPressed);
     const [selectedButton, setSelectedButton] = useState(defaultPressedButton ? defaultPressedButton.value : '');
 
-    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-        selectedButton === event.currentTarget.value ?
-            setSelectedButton('') :
+    function handleClick(event: MouseEvent<HTMLButtonElement>): void {
+        if (selectedButton === event.currentTarget.value) {
+            setSelectedButton('');
+        } else {
             setSelectedButton(event.currentTarget.value);
-        onClick && onClick(event);
-    };
+        }
+
+        onClick?.(event);
+    }
 
     return (
         <Container role="group" aria-label={groupName}>

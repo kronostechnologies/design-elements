@@ -19,14 +19,16 @@ interface LinkProps {
     routerLink: RouterLinkProps;
 }
 
-export function RouteLink({ disabled, exact, href, iconName, label, routerLink }: LinkProps): ReactElement {
+export function RouteLink({
+    disabled, exact, href, iconName, label, routerLink,
+}: LinkProps): ReactElement {
     return disabled ? (
         <StyledLink
             disabled={disabled}
             aria-disabled="true"
             className={`navigation${label ? '' : ' iconOnly'}`}
         >
-            {iconName && <Icon name={iconName} size="16"/>}
+            {iconName && <Icon name={iconName} size="16" />}
             {label}
         </StyledLink>
     ) : (
@@ -37,7 +39,7 @@ export function RouteLink({ disabled, exact, href, iconName, label, routerLink }
             exact={exact}
             to={href}
         >
-            {iconName && <Icon name={iconName} size="16"/>}
+            {iconName && <Icon name={iconName} size="16" />}
             {label}
         </StyledLink>
     );

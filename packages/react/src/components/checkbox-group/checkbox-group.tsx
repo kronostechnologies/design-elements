@@ -2,7 +2,7 @@ import { focus } from '@design-elements/utils/css-state';
 import CheckMark from 'feather-icons/dist/icons/check.svg';
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../theme-wrapper/theme-wrapper';
+import { Theme } from '@design-elements/themes/theme';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
@@ -12,7 +12,7 @@ const Legend = styled.legend`
 `;
 
 const StyledCheckMark = styled(CheckMark)`
-    color: ${props => props.theme.greys.white};
+    color: ${(props) => props.theme.greys.white};
     height: 100%;
     opacity: 0;
     position: absolute;
@@ -20,8 +20,7 @@ const StyledCheckMark = styled(CheckMark)`
 `;
 
 const StyledLabel = styled.label`
-    ${(props: {theme: Theme, disabled: boolean | undefined}) => {
-        return `
+    ${(props: { theme: Theme, disabled: boolean | undefined }) => `
             ${props.disabled ? '' : 'cursor: pointer;'}
             display: block;
             line-height: 1.5rem;
@@ -68,8 +67,7 @@ const StyledLabel = styled.label`
             &:hover .box {
                 border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
             }
-        `;
-    }}
+        `}
 `;
 
 interface CheckboxProps {
@@ -82,18 +80,22 @@ interface CheckboxProps {
         defaultChecked?: boolean,
         disabled?: boolean,
     }[];
+
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function CheckboxGroup({ label, checkedValues, checkboxGroup, onChange }: CheckboxProps): ReactElement  {
+export function CheckboxGroup({
+    label, checkedValues, checkboxGroup, onChange,
+}: CheckboxProps): ReactElement {
     return (
         <>
             {label && <Legend>{label}</Legend>}
             {checkboxGroup.map((checkbox) => (
                 <StyledLabel
                     disabled={checkbox.disabled}
-                    key={checkbox.name + '-' + checkbox.value}
-                > {checkbox.label}
+                    key={`${checkbox.name}-${checkbox.value}`}
+                >
+                    {checkbox.label}
                     <input
                         type="checkbox"
                         name={checkbox.name}
@@ -103,7 +105,7 @@ export function CheckboxGroup({ label, checkedValues, checkboxGroup, onChange }:
                         disabled={checkbox.disabled}
                         onChange={onChange}
                     />
-                    <span className="box"><StyledCheckMark className="checkMark"/></span>
+                    <span className="box"><StyledCheckMark className="checkMark" /></span>
                 </StyledLabel>
             ))}
         </>

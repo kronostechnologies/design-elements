@@ -1,16 +1,10 @@
-import React, { ReactElement } from 'react';
-
 import { renderWithProviders } from '@design-elements/test-utils/renderer';
-import { DeviceType } from '../device-context-provider/device-context-provider';
+import React from 'react';
 import { ApplicationMenu } from './application-menu';
-
-const renderComponent = (component: ReactElement, device?: DeviceType) => {
-    return renderWithProviders(component, device);
-};
 
 describe('Application Menu', () => {
     test('Matches the snapshot (desktop)', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </ApplicationMenu>,
@@ -20,7 +14,7 @@ describe('Application Menu', () => {
     });
 
     test('Matches the snapshot (mobile)', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </ApplicationMenu>,
@@ -31,7 +25,7 @@ describe('Application Menu', () => {
     });
 
     test('mobileDrawerContent prop adds a side drawer and burger button in mobile', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
             </ApplicationMenu>,

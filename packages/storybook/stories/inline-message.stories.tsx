@@ -1,4 +1,5 @@
 import { InlineMessage } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,19 +7,23 @@ export default {
     component: InlineMessage,
 };
 
-export const inlineMessage = () => (
+export const AllMessageTypes: Story = () => (
     <>
         <InlineMessage type="info">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
+            Here&apos;s a contextual notice with an icon and title.
+        </InlineMessage>
+        <br />
         <InlineMessage type="success">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
+            Here&apos;s a contextual notice with an icon and title.
+        </InlineMessage>
+        <br />
         <InlineMessage type="alert">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
+            Here&apos;s a contextual notice with an icon and title.
+        </InlineMessage>
+        <br />
         <InlineMessage type="error">
-            Here's a contextual notice with an icon and title.
-        </InlineMessage><br/>
+            Here&apos;s a contextual notice with an icon and title.
+        </InlineMessage>
+        <br />
     </>
 );

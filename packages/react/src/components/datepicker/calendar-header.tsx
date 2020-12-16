@@ -11,7 +11,7 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: ${({ isMobile }) => isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-3x)' };
+    padding: ${({ isMobile }) => (isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-3x)')};
 
     > button {
         background-color: ${({ theme }) => theme.greys.white};
@@ -41,8 +41,8 @@ const FlexContainer = styled.div`
 `;
 
 const SelectWrapper = styled.div<{ isMobile: boolean }>`
-    height: ${({ isMobile }) => isMobile ? 40 : 32}px;
-    width: ${({ isMobile }) => isMobile ? 88 : 80}px;
+    height: ${({ isMobile }) => (isMobile ? 40 : 32)}px;
+    width: ${({ isMobile }) => (isMobile ? 88 : 80)}px;
 `;
 
 interface CalendarHeaderProps {
@@ -50,16 +50,16 @@ interface CalendarHeaderProps {
     months: string[];
     monthsOptions: Option[];
     nextMonthButtonDisabled: boolean;
-    nextYearButtonDisabled: boolean;
     prevMonthButtonDisabled: boolean;
-    prevYearButtonDisabled: boolean;
     yearsOptions: Option[];
+
     changeMonth(month: number): void;
+
     changeYear(year: number): void;
+
     decreaseMonth(): void;
-    decreaseYear(): void;
+
     increaseMonth(): void;
-    increaseYear(): void;
 }
 
 export function CalendarHeader({
@@ -93,7 +93,7 @@ export function CalendarHeader({
                         ariaLabel={t('monthSelectLabel')}
                         data-testid="month-select"
                         options={monthsOptions}
-                        onChange={options => {
+                        onChange={(options) => {
                             changeMonth(months.indexOf(options.label));
                         }}
                         value={monthsOptions[getMonth(date)].value}
@@ -104,7 +104,7 @@ export function CalendarHeader({
                         ariaLabel={t('yearSelectLabel')}
                         data-testid="year-select"
                         options={yearsOptions}
-                        onChange={options => {
+                        onChange={(options) => {
                             changeYear(parseInt(options.value, 10));
                         }}
                         value={getYear(date).toString()}

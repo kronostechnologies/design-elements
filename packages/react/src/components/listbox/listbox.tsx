@@ -1,4 +1,14 @@
-import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+    forwardRef,
+    KeyboardEvent,
+    ReactElement,
+    Ref,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useMemo,
+    useState,
+} from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -45,7 +55,7 @@ interface ListboxProps {
      */
     dropdown?: boolean;
     /**
-     * Activates mutliple selection feature
+     * Activates multiple selection feature
      * @default false
      */
     multiselect?: boolean;
@@ -62,10 +72,7 @@ interface ListboxProps {
      * Sets the selected value (controlled input)
      */
     value?: Value;
-    /**
-     * @default true
-     */
-    visible?: boolean;
+
     /**
      * onChange callback function, invoked when an option is selected
      */
@@ -74,10 +81,11 @@ interface ListboxProps {
      * onKeyDown callback function, invoked when a key is pressed
      */
     onKeyDown?(event: KeyboardEvent): void;
+
     /**
      * onFocusedValueChange callback function, invoked when focused value changes
      */
-    onFocusedValueChange?(value: string | undefined): void;
+    onFocusedValueChange?(option?: ListboxOption): void;
 }
 
 interface ListProps {
@@ -93,7 +101,6 @@ interface ListItemProps {
 }
 
 interface BoxProps {
-    visible: boolean;
     isDropdown: boolean;
 }
 
@@ -101,10 +108,14 @@ const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
 const Box = styled.div<BoxProps>`
-    display: ${props => props.visible ? 'flex' : 'none'};
-    position: ${props => props.isDropdown ? 'absolute' : 'unset'};
-    width: ${props => props.isDropdown ? '100%' : 'unset'};
+    display: flex;
+    position: ${(props) => (props.isDropdown ? 'absolute' : 'unset')};
+    width: ${(props) => (props.isDropdown ? '100%' : 'unset')};
 `;
+
+function getListMaxHeight({ numberOfItemsVisible, isMobile }: ListProps): number {
+    return numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop);
+}
 
 const List = styled.ul<ListProps>`
     background-color: ${({ theme }) => theme.greys.white};
@@ -112,7 +123,7 @@ const List = styled.ul<ListProps>`
     box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     list-style-type: none;
     margin: 0;
-    max-height: ${({ numberOfItemsVisible, isMobile }) => numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
+    max-height: ${getListMaxHeight}px;
     min-width: fit-content;
     overflow-y: auto;
     padding: 0;
@@ -128,7 +139,8 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     if (checkIndicator) {
         if (selected) {
             return '0';
-        } else if (isMobile) {
+        }
+        if (isMobile) {
             return 'var(--spacing-5x)';
         }
         return 'var(--spacing-4x)';
@@ -138,16 +150,16 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
 
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    background-color: ${({ focused, theme }) => focused ? theme.greys.grey : 'inherit'};
+    background-color: ${({ focused, theme }) => (focused ? theme.greys.grey : 'inherit')};
     color: ${({ theme }) => theme.greys.black};
     cursor: pointer;
     display: flex;
-    font-size: ${({ isMobile }) => isMobile ? '1rem' : '0.875rem'};
-    font-weight: ${({ selected }) => selected ? 'var(--font-semi-bold)' : 'var(--font-normal)'};
-    height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
-    line-height: ${({ isMobile }) => isMobile ? itemHeightMobile : itemHeightDesktop}px;
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+    font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
+    line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
     overflow: hidden;
-    padding: 0 ${({ isMobile }) => isMobile ? 16 : 8}px 0 ${getListItemSidePadding};
+    padding: 0 ${({ isMobile }) => (isMobile ? 16 : 8)}px 0 ${getListItemSidePadding};
     text-overflow: ellipsis;
     white-space: nowrap;
 
@@ -161,9 +173,21 @@ const CheckIndicator = styled(Icon)`
     padding: 0 var(--spacing-1x);
 `;
 
+function toArray(val?: Value): string[] {
+    if (!val) {
+        return [];
+    }
+
+    if (Array.isArray(val)) {
+        return val;
+    }
+
+    return [val];
+}
+
 export const Listbox = forwardRef(({
     ariaLabelledBy,
-    id = useMemo(uuid, []),
+    id: providedId,
     options,
     onChange,
     onFocusedValueChange,
@@ -176,82 +200,108 @@ export const Listbox = forwardRef(({
     autofocus = false,
     focusedValue,
     value,
-    visible = true,
 }: ListboxProps, ref: Ref<HTMLDivElement>): ReactElement => {
+    const id = useMemo(() => providedId || uuid(), [providedId]);
     const { isMobile } = useDeviceContext();
-    const listRef = useRef<HTMLUListElement>(null);
-    const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(defaultValue));
-    const [selectedFocusIndex, setSelectedFocusIndex] =
-        useState(() => !multiselect ? options.findIndex(option =>  option.value === selectedOptionValue[0]) : -1);
-    const list: ListOption[] = useMemo((): ListOption[] =>
-        options.map((option, index)  =>
-            ({
-                ...option,
-                id: `${id}_${option.value}`,
-                focusIndex: index,
-                ref: React.createRef<HTMLLIElement>(),
-            }))
-    , [options]);
+    const [listRef, setListRef] = useState<HTMLUListElement>();
+    const listRefCallback = useCallback((node: HTMLUListElement) => setListRef(node), []);
+    const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(value || defaultValue));
+    const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
+        ? options.findIndex((option) => option.value === selectedOptionValue[0])
+        : -1));
+    const list: ListOption[] = useMemo((): ListOption[] => options.map(
+        (option, index) => ({
+            ...option,
+            id: `${id}_${option.value}`,
+            focusIndex: index,
+            ref: React.createRef<HTMLLIElement>(),
+        }),
+    ), [id, options]);
+
+    const setValue: (newValue: Value) => void = useCallback((newValue) => {
+        setSelectedOptionValue(toArray(newValue));
+        if (newValue === []) {
+            setSelectedFocusIndex(-1);
+        } else if (list.length > 0 && !multiselect) {
+            setSelectedFocusIndex(options.findIndex((option) => option.value === newValue[0]));
+        }
+    }, [list.length, multiselect, options]);
 
     useEffect(() => {
         if (value !== undefined) {
             setValue(value);
         }
-    }, [value]);
+    }, [setValue, value]);
+
+    const handleAutoScroll: (option?: ListOption, focusedIndex?: number) => void = useCallback((
+        option,
+        focusedIndex,
+    ) => {
+        const itemRef: HTMLLIElement | null | undefined = option?.ref.current;
+        if (!listRef || !option || !itemRef || focusedIndex === undefined) {
+            return;
+        }
+
+        const listRect = listRef.getBoundingClientRect();
+        const itemRect = itemRef.getBoundingClientRect();
+
+        if (itemRef.offsetTop >= listRef.scrollTop + listRect.height) {
+            listRef.scrollTop = (itemRect.height * (focusedIndex + 1)) - listRect.height;
+        } else if (listRect.top - itemRect.top >= 0) {
+            const spaceDif = listRect.top - itemRect.top;
+            const numberOfItemsToScroll = spaceDif / itemRect.height;
+
+            listRef.scrollTop -= (itemRect.height * numberOfItemsToScroll);
+        } else {
+            listRef.scrollTop = itemRef.offsetTop;
+        }
+    }, [listRef]);
 
     useEffect(() => {
         if (focusedValue) {
-            const focusedValueIndex = options.findIndex(option => option.value === focusedValue);
+            const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
             const currentOption = list[focusedValueIndex];
             setSelectedFocusIndex(focusedValueIndex);
             handleAutoScroll(currentOption, focusedValueIndex);
         } else {
             setSelectedFocusIndex(-1);
         }
-    }, [focusedValue]);
+    }, [focusedValue, list, options, handleAutoScroll]);
 
     useEffect(() => {
-        if (autofocus && listRef.current) {
-            listRef.current.focus();
-            listRef.current.scrollTop = 0;
+        if (autofocus && listRef) {
+            listRef.focus();
         }
 
         if (selectedOptionValue && !multiselect) {
-            setSelectedFocusIndex(options.findIndex(option => option.value === selectedOptionValue[0]));
+            const newSelectedFocusIndex = options.findIndex((option) => option.value === selectedOptionValue[0]);
+            if (newSelectedFocusIndex !== -1) {
+                setSelectedFocusIndex(newSelectedFocusIndex);
+            }
         }
-    }, [autofocus]);
+    }, [autofocus, multiselect, options, selectedOptionValue, listRef]);
 
-    function isOptionSelected(option: ListOption): boolean {
+    const isOptionSelected: (option: ListOption) => boolean = useCallback((option) => {
         if (multiselect) {
             return selectedOptionValue.includes(option.value);
-        } else {
-            return selectedOptionValue.length > 0 && selectedOptionValue[0] === option.value;
         }
-    }
+        return selectedOptionValue.length > 0 && selectedOptionValue[0] === option.value;
+    }, [multiselect, selectedOptionValue]);
 
-    function isOptionFocused(option: ListOption): boolean {
-        return option.focusIndex === selectedFocusIndex;
-    }
+    const isOptionFocused: (option: ListOption) => boolean = useCallback(
+        (option) => option.focusIndex === selectedFocusIndex, [selectedFocusIndex],
+    );
 
-    function shouldDisplayCheckIndicator(option: ListOption): boolean {
-        return checkIndicator && isOptionSelected(option);
-    }
+    const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
+        (option) => checkIndicator && isOptionSelected(option), [checkIndicator, isOptionSelected],
+    );
 
-    function setValue(newValue: Value): void {
-        setSelectedOptionValue(toArray(newValue));
-        if (newValue === []) {
-            setSelectedFocusIndex(-1);
-        } else if (list.length > 0 && !multiselect) {
-            setSelectedFocusIndex(options.findIndex(option => option.value === newValue[0]));
-        }
-    }
-
-    function selectOption(option: ListOption): void {
+    const selectOption: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
 
         if (multiselect) {
             if (selectedOptionValue.includes(option.value)) {
-                setSelectedOptionValue(selectedOptionValue.filter(opt => opt !== option.value));
+                setSelectedOptionValue(selectedOptionValue.filter((opt) => opt !== option.value));
             } else {
                 setSelectedOptionValue([...selectedOptionValue, option.value]);
             }
@@ -259,137 +309,118 @@ export const Listbox = forwardRef(({
             setSelectedOptionValue([option.value]);
         }
 
-        if (onChange) {
-            onChange(option);
-        }
-    }
+        onChange?.(option);
+    }, [multiselect, onChange, selectedOptionValue]);
 
-    function handleListItemClick(option: ListOption): () => void {
-        return () => selectOption(option);
-    }
+    const handleListItemClick: (option: ListOption) => () => void = useCallback(
+        (option) => () => selectOption(option), [selectOption],
+    );
 
-    function handleListItemMouseMove(option: ListOption): void {
+    const handleListItemMouseMove: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
-    }
+    }, []);
 
-    function handleAutoScroll(option: ListOption, focusedIndex: number): void {
-        if (!listRef.current || !option || !option.ref.current) {
-            return;
-        }
-
-        const listRect = listRef.current.getBoundingClientRect();
-        const itemRect = option.ref.current.getBoundingClientRect();
-
-        if (listRect.height < (itemRect.height * (focusedIndex + 1))) {
-            listRef.current.scrollTop = itemRect.height * (focusedIndex);
-        } else if (listRect.top - itemRect.top >= 0) {
-            const spaceDif = listRect.top - itemRect.top;
-            const numberOfItemsToScroll = spaceDif / itemRect.height;
-
-            listRef.current.scrollTop = listRef.current.scrollTop - (itemRect.height * numberOfItemsToScroll);
-        }
-    }
-
-    function scrollIntoList(direction: 'up' | 'down' | 'top' | 'bottom'): void {
+    useLayoutEffect(() => {
         const currentOption = list[selectedFocusIndex];
-        let itemIsOutOfRange = false;
 
-        if (!listRef.current || !currentOption || !currentOption.ref.current) {
+        if (!listRef || !currentOption?.ref?.current) {
             return;
         }
 
-        const listRect = listRef.current.getBoundingClientRect();
+        const listRect = listRef.getBoundingClientRect();
         const itemRect = currentOption.ref.current.getBoundingClientRect();
+        const currentView = { from: listRect.y, to: listRect.y + listRect.height };
+        const currentItem = { from: itemRect.y, to: itemRect.y + itemRect.height };
 
-        switch (direction) {
-            case 'up':
-                const isPrevItemHidden = listRect.top - itemRect.top >= 0;
-                itemIsOutOfRange =
-                    (listRect.top - itemRect.top) <= -(numberOfItemsVisible * itemRect.height)
-                    || (listRect.top - itemRect.top) >= itemRect.height;
-
-                if (itemIsOutOfRange) {
-                    handleAutoScroll(list[selectedFocusIndex - 1], selectedFocusIndex - 1);
-                } else if (isPrevItemHidden) {
-                    listRef.current.scrollTop = listRef.current.scrollTop - itemRect.height;
-                }
-                break;
-            case 'down':
-                const isNextItemHidden = listRect.bottom - itemRect.bottom <= 0;
-                itemIsOutOfRange =
-                    (listRect.bottom - itemRect.bottom) >= (numberOfItemsVisible * itemRect.height)
-                    || (listRect.bottom - itemRect.bottom) <= -itemRect.height;
-
-                if (itemIsOutOfRange) {
-                    handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
-                } else if (isNextItemHidden) {
-                    listRef.current.scrollTop = listRef.current.scrollTop + itemRect.height;
-                }
-                break;
-            case 'top':
-                listRef.current.scrollTop = 0;
-                break;
-            case 'bottom':
-                listRef.current.scrollTop = listRect.bottom;
-                break;
+        let scrollDirection: 'up' | 'down' | null = null;
+        if (currentItem.from >= currentView.from && currentItem.to <= currentView.to) {
+            scrollDirection = null;
+        } else if (currentItem.from <= currentView.from) {
+            scrollDirection = 'up';
+        } else if (currentItem.to >= currentView.to) {
+            scrollDirection = 'down';
         }
-    }
 
-    function handleKeyDown(e: KeyboardEvent<HTMLUListElement>): void {
+        switch (scrollDirection) {
+            case 'up': {
+                handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
+                break;
+            }
+            case 'down': {
+                handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
+                break;
+            }
+            case null: {
+                break;
+            }
+        }
+    }, [list, numberOfItemsVisible, selectedFocusIndex, handleAutoScroll, listRef]);
+
+    useEffect(() => {
+        const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
+        if (focusedValueIndex !== -1 && listRef) {
+            setSelectedFocusIndex(focusedValueIndex);
+        }
+    }, [options, focusedValue, listRef]);
+
+    const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
         // ' ' is the space bar key
         switch (e.key) {
-            case 'Enter':
+            case 'Enter': {
                 e.preventDefault();
 
                 if (selectedFocusIndex >= 0) {
                     selectOption(list[selectedFocusIndex]);
                 }
                 break;
-            case 'ArrowUp':
+            }
+            case 'ArrowUp': {
                 e.preventDefault();
                 const prevOption = selectedFocusIndex === 0 ? list[list.length - 1] : list[selectedFocusIndex - 1];
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
-                    selectedFocusIndex === 0 ? scrollIntoList('bottom') : scrollIntoList('up');
 
                     if (onFocusedValueChange) {
-                        onFocusedValueChange(list[prevOption.focusIndex] ?
-                            list[prevOption.focusIndex].label : undefined);
+                        onFocusedValueChange(list[prevOption.focusIndex]);
                     }
                 }
                 break;
-            case 'ArrowDown':
+            }
+            case 'ArrowDown': {
                 e.preventDefault();
                 const nextOption = list.length === selectedFocusIndex + 1 ? list[0] : list[selectedFocusIndex + 1];
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
-                    nextOption.focusIndex === 0 ? scrollIntoList('top') : scrollIntoList('down');
 
                     if (onFocusedValueChange) {
-                        onFocusedValueChange(list[nextOption.focusIndex] ?
-                            list[nextOption.focusIndex].label : undefined);
+                        onFocusedValueChange(list[nextOption.focusIndex]);
                     }
                 }
                 break;
+            }
         }
 
-        if (onKeyDown) {
-            onKeyDown(e);
+        onKeyDown?.(e);
+    }, [list, onFocusedValueChange, onKeyDown, selectedFocusIndex, selectOption]);
+
+    function getAriaActiveDescendant(optionIndex: number): string | undefined {
+        if (optionIndex >= 0 && list[optionIndex]) {
+            return `${id}_${list[optionIndex].value}`;
         }
+        return undefined;
     }
 
     return (
         <Box
-            aria-activedescendant={list[selectedFocusIndex]?.id}
+            aria-activedescendant={getAriaActiveDescendant(selectedFocusIndex)}
             aria-labelledby={ariaLabelledBy}
             aria-multiselectable={multiselect}
             isDropdown={dropdown}
             ref={ref}
             role="listbox"
             tabIndex={-1}
-            visible={visible}
         >
             <List
                 data-testid="listbox-list"
@@ -399,11 +430,11 @@ export const Listbox = forwardRef(({
                 onBlur={() => setSelectedFocusIndex(-1)}
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyDown}
-                ref={listRef}
+                ref={listRefCallback}
                 role="presentation"
                 tabIndex={0}
             >
-                {list.map(option => (
+                {list.map((option) => (
                     <ListItem
                         aria-label={option.label || option.value}
                         aria-selected={isOptionSelected(option)}
@@ -419,8 +450,9 @@ export const Listbox = forwardRef(({
                         role="option"
                         selected={isOptionSelected(option)}
                     >
-                        {shouldDisplayCheckIndicator(option) &&
-                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'}/>}
+                        {shouldDisplayCheckIndicator(option) && (
+                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
+                        )}
                         {option.label || option.value}
                     </ListItem>
                 ))}
@@ -428,15 +460,3 @@ export const Listbox = forwardRef(({
         </Box>
     );
 });
-
-function toArray(val?: Value): string[] {
-    if (!val) {
-        return [];
-    }
-
-    if (Array.isArray(val)) {
-        return val;
-    }
-
-    return [val];
-}

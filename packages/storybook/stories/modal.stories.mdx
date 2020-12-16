@@ -1,6 +1,6 @@
-import { Button, Modal, useModal } from '@equisoft/design-elements-react';
-import { Meta, Preview, ArgsTable, Story } from '@storybook/addon-docs/blocks';
-import { Fragment, useState } from 'react';
+import {Button, Modal, useModal} from '@equisoft/design-elements-react';
+import {ArgsTable, Meta, Preview, Story} from '@storybook/addon-docs/blocks';
+import {Fragment} from 'react';
 
 <Meta title="Modal / Modal" component={Modal} />
 
@@ -37,12 +37,12 @@ It is important for users of screenreaders that other page content be hidden (vi
 ### Basic modal
 
 <Preview>
-  <Story name="Normal">
+    <Story name="Normal">
         {() => {
-            const { isModalOpen, closeModal, openModal } = useModal();
+            const {isModalOpen, closeModal, openModal} = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
                     <Modal
                         appElement="#root"
                         ariaLabel="Modal label"
@@ -55,7 +55,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                 </Fragment>
             );
         }}
-  </Story>
+    </Story>
 </Preview>
 
 ### Padding disabled
@@ -63,12 +63,12 @@ It is important for users of screenreaders that other page content be hidden (vi
 The prop `noPadding` removes padding to give you a blank modal to work with.
 
 <Preview>
-  <Story name="Padding disabled">
+    <Story name="Padding disabled">
         {() => {
-            const { isModalOpen, closeModal, openModal } = useModal();
+            const {isModalOpen, closeModal, openModal} = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
                     <Modal
                         appElement="#root"
                         ariaLabel="Modal label"
@@ -82,18 +82,18 @@ The prop `noPadding` removes padding to give you a blank modal to work with.
                 </Fragment>
             );
         }}
-  </Story>
+    </Story>
 </Preview>
 
 ### Without close button
 
 <Preview>
-  <Story name="Without close button">
+    <Story name="Without close button">
         {() => {
-            const { isModalOpen, closeModal, openModal } = useModal();
+            const {isModalOpen, closeModal, openModal} = useModal();
             return (
                 <Fragment>
-                    <Button label="Open Modal" buttonType="primary" onClick={openModal}/>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
                     <Modal
                         appElement="#root"
                         ariaLabel="Modal label"
@@ -104,5 +104,5 @@ The prop `noPadding` removes padding to give you a blank modal to work with.
                 </Fragment>
             );
         }}
-  </Story>
+    </Story>
 </Preview>

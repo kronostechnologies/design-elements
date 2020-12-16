@@ -1,12 +1,13 @@
 import { TextArea } from '@equisoft/design-elements-react';
-import React from 'react';
+import { Story } from '@storybook/react';
+import React, { SyntheticEvent } from 'react';
 
 export default {
     title: 'TextArea',
     component: TextArea,
 };
 
-export const normal = () => (
+export const Normal: Story = () => (
     <TextArea
         label="Text area label"
         hint="Hint"
@@ -14,7 +15,7 @@ export const normal = () => (
         required={false}
     />
 );
-export const controlledValue = () => (
+export const ControlledValue: Story = () => (
     <TextArea
         label="Text area label"
         value="This is the value"
@@ -22,41 +23,45 @@ export const controlledValue = () => (
         required={false}
     />
 );
-export const eventCallbacks = () => (
+
+export const EventCallbacks: Story = () => {
+    function handleEvent(event: SyntheticEvent<HTMLTextAreaElement>): void {
+        console.info(`Custom function called on ${event.type}. Current value: ${event.currentTarget.value}`);
+    }
+
+    return (
+        <TextArea
+            label="Text area label"
+            onChange={handleEvent}
+            onBlur={handleEvent}
+            onFocus={handleEvent}
+            disabled={false}
+            required={false}
+        />
+    );
+};
+
+export const Required: Story = () => (
     <TextArea
         label="Text area label"
-        onChange={event => {
-            console.log(`Custom function called on change. Current value: ${event.currentTarget.value}`);
-        }}
-        onBlur={event => {
-            console.log(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
-        }}
-        onFocus={event => {
-            console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
-        }}
+        disabled={false}
+        required
+    />
+);
+
+export const DefaultValue: Story = () => (
+    <TextArea
+        label="Text area label"
+        defaultValue="Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis,
+         est dui fermentum leo, quis tempor ligula erat quis odio."
         disabled={false}
         required={false}
     />
 );
-export const required = () => (
-    <TextArea
-        label="Text area label"
-        disabled={false}
-        required={true}
-    />
-);
-export const defaultValue = () => (
-    <TextArea
-        label="Text area label"
-        defaultValue={'Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.'}
-        disabled={false}
-        required={false}
-    />
-);
-export const disabled = () => (
+export const Disabled: Story = () => (
     <TextArea
         label="A label for the disabled text area"
-        disabled={true}
+        disabled
         required={false}
     />
 );

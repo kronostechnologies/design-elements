@@ -21,8 +21,10 @@ interface ChooseInputProps {
 }
 
 const ChooseInput = React.forwardRef(
-    ({ defaultChecked, checked, children, groupName, onChange, type, value }: ChooseInputProps,
-     ref: React.Ref<HTMLInputElement>) => {
+    ({
+        defaultChecked, checked, children, groupName, onChange, type, value,
+    }: ChooseInputProps,
+    ref: React.Ref<HTMLInputElement>) => {
         const id = uuid();
 
         function handleChange(event: ChangeEvent<HTMLInputElement>): void {

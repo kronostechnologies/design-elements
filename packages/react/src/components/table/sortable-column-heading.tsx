@@ -1,8 +1,7 @@
-import React, { ReactElement } from 'react';
+import { useTheme } from '@design-elements/hooks/use-theme';
+import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
 import { Column } from 'react-table';
 import styled from 'styled-components';
-
-import { useTheme } from '@design-elements/hooks/use-theme';
 import { Icon } from '../icon/icon';
 
 const SortButton = styled.button`
@@ -21,34 +20,48 @@ const StyledDiv = styled.div<{ textAlign: string }>`
 `;
 
 interface SortableColumnHeadingProps {
-    column: Column<{}>;
+    column: Column;
 }
 
+type SortState = 'ascending' | 'descending' | 'none';
+
+interface SortButtonIconProps {
+    sort: SortState;
+}
+
+const SortButtonIcon: VoidFunctionComponent<SortButtonIconProps> = ({ sort }) => {
+    const theme = useTheme();
+
+    switch (sort) {
+        case 'ascending':
+            return <Icon name="arrowUp" size="16" color={theme.greys['dark-grey']} />;
+        case 'descending':
+            return <Icon name="arrowDown" size="16" color={theme.greys['dark-grey']} />;
+        default:
+            return <Icon name="reorder" size="16" color={theme.greys['dark-grey']} />;
+    }
+};
+
 export function SortableColumnHeading({ column }: SortableColumnHeadingProps): ReactElement {
-    const Theme = useTheme();
+    const sortState: SortState = useMemo(() => {
+        if (column.isSorted) {
+            return column.isSortedDesc ? 'descending' : 'ascending';
+        }
+        return 'none';
+    }, [column]);
 
     return (
         <th
-          {...column.getHeaderProps(column.getSortByToggleProps())}
-          scope="col"
-          aria-sort={
-            column.isSorted
-              ? column.isSortedDesc
-                ? 'descending'
-                : 'ascending'
-              : 'none'
-          }
+            {...column.getHeaderProps(column.getSortByToggleProps()) /* eslint-disable-line react/jsx-props-no-spreading,max-len */}
+            scope="col"
+            aria-sort={sortState}
         >
-          <StyledDiv textAlign={column.textAlign}>
-            <SortButton>
-              {column.isSorted
-                ? column.isSortedDesc
-                  ? <Icon name="arrowDown" size="16" color={Theme.greys['dark-grey']}/>
-                  : <Icon name="arrowUp" size="16" color={Theme.greys['dark-grey']}/>
-                : <Icon name="reorder" size="16" color={Theme.greys['dark-grey']}/>}
-            </SortButton>
-            {column.render('Header')}
-          </StyledDiv>
+            <StyledDiv textAlign={column.textAlign}>
+                <SortButton>
+                    <SortButtonIcon sort={sortState} />
+                </SortButton>
+                {column.render('Header')}
+            </StyledDiv>
         </th>
     );
 }

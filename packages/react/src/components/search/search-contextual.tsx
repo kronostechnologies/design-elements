@@ -11,7 +11,10 @@ interface SearchInputProps {
 }
 
 export function SearchContextual(
-    { disabled, initialValue, label, onChange, placeholder }: SearchInputProps): ReactElement {
+    {
+        disabled, initialValue, label, onChange, placeholder,
+    }: SearchInputProps,
+): ReactElement {
     return (
         <SearchInput
             disabled={disabled}

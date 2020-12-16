@@ -1,4 +1,4 @@
 import { BrowserRouter } from 'react-router-dom';
-import { decorateWith } from './decorator';
+import { decorateWith, Decorator } from './decorator';
 
-export const RouterDecorator = decorateWith(BrowserRouter);
+export const RouterDecorator: Decorator = decorateWith(BrowserRouter);

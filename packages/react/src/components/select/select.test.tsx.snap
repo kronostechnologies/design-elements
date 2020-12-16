@@ -40,7 +40,10 @@ input + .c2 {
 }
 
 .c7 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   width: 100%;
 }
@@ -188,7 +191,7 @@ input + .c2 {
     Select an option
   </label>
   <div
-    aria-expanded="false"
+    aria-expanded="true"
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
     class="c4"
@@ -440,7 +443,10 @@ input + .c2 {
 }
 
 .c10 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   width: 100%;
 }
@@ -610,7 +616,7 @@ input + .c2 {
       </span>
     </div>
     <div
-      aria-expanded="false"
+      aria-expanded="true"
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
       class="c7"
@@ -924,7 +930,10 @@ input + .c2 {
 }
 
 .c7 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   width: 100%;
 }
@@ -1072,7 +1081,7 @@ input + .c2 {
       Select an option
     </label>
     <div
-      aria-expanded="false"
+      aria-expanded="true"
       aria-haspopup="listbox"
       aria-owns="listbox_undefined"
       class="c4"
@@ -1365,7 +1374,10 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 .c5 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   width: 100%;
 }
@@ -1508,7 +1520,7 @@ exports[`Select mobile select has a different style 1`] = `
   class="c0 c1"
 >
   <div
-    aria-expanded="false"
+    aria-expanded="true"
     aria-haspopup="listbox"
     aria-owns="listbox_undefined"
     class="c2"

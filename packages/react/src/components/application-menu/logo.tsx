@@ -67,5 +67,5 @@ interface LogoProps {
 export const Logo = ({ name = 'default', mobile = false }: LogoProps): ReactElement | null => {
     const Component = logoMapping[name][mobile ? 'mobile' : 'desktop'];
 
-    return <Component style={{ height: '100%' }} focusable="false" aria-hidden="true"/>;
+    return <Component style={{ height: '100%' }} focusable="false" aria-hidden="true" />;
 };

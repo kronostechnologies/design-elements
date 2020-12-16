@@ -1,11 +1,11 @@
+import { Theme } from '@design-elements/themes/theme';
 import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon//icon';
-import { Theme } from '../theme-wrapper/theme-wrapper';
-import { AbstractButton } from './abstract-button';
+import { Icon, IconName } from '../icon/icon';
+import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
 type Type = 'submit' | 'button' | 'reset';
@@ -14,7 +14,7 @@ interface ButtonProps {
     /**
      * Visual style
      * @default primary
-     **/
+     */
     buttonType: ButtonType;
     /**
      * Disables button
@@ -44,8 +44,8 @@ interface StyledButtonProps {
     buttonType: ButtonType;
 }
 
-const StyledButton = styled(AbstractButton)<{ theme: Theme } & StyledButtonProps>`
-    ${props => focus(props,  true)}
+const StyledButton = styled(AbstractButton)<AbstractButtonProps & StyledButtonProps>`
+    ${(props) => focus(props, true)};
     ${({ theme, buttonType }) => {
         switch (buttonType) {
             case 'primary':
@@ -55,13 +55,13 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & StyledButtonProps
                     color: ${theme.greys.white};
 
                     &:hover {
-                      background-color: ${theme.main['primary-1.3']};
+                        background-color: ${theme.main['primary-1.3']};
                     }
 
                     &:disabled {
-                      background-color: ${theme.main['primary-1.2']};
+                        background-color: ${theme.main['primary-1.2']};
                     }
-                  `;
+                `;
             case 'secondary':
                 return `
                     background-color: transparent;
@@ -69,13 +69,13 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & StyledButtonProps
                     color: ${theme.main['primary-1.1']};
 
                     &:hover {
-                      border-color: ${theme.main['primary-1.3']};
-                      color: ${theme.main['primary-1.3']};
+                        border-color: ${theme.main['primary-1.3']};
+                        color: ${theme.main['primary-1.3']};
                     }
 
                     &:disabled {
-                      border-color: ${theme.main['primary-1.2']};
-                      color: ${theme.main['primary-1.2']};
+                        border-color: ${theme.main['primary-1.2']};
+                        color: ${theme.main['primary-1.2']};
                     }
                 `;
             case 'tertiary':
@@ -85,8 +85,8 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & StyledButtonProps
                     color: ${theme.greys['dark-grey']};
 
                     &:hover {
-                      background-color: ${theme.greys.grey};
-                      color: ${theme.greys.black};
+                        background-color: ${theme.greys.grey};
+                        color: ${theme.greys.black};
                     }
 
                     &:disabled {
@@ -95,31 +95,35 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & StyledButtonProps
                     }
                 `;
         }
-    }
-    }
+    }}
+
     padding: 0;
-    width: ${({ isMobile }) => isMobile ? '48px' : '32px'};
+    width: ${({ isMobile }) => (isMobile ? '48px' : '32px')};
 `;
 
 export function IconButton({
-  iconName,
-  label,
-  onClick,
-  type = 'submit',
-  ...props
+    iconName,
+    label,
+    onClick,
+    type = 'submit',
+    buttonType,
+    disabled,
+    ...props
 }: ButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
-    const handleClick = (): void => onClick && onClick();
+    const handleClick = (): void => onClick?.();
 
     return (
         <StyledButton
-          aria-label={label}
-          onClick={handleClick}
-          isMobile={isMobile}
-          type={type}
-          {...props}
+            aria-label={label}
+            onClick={handleClick}
+            isMobile={isMobile}
+            type={type}
+            buttonType={buttonType}
+            disabled={disabled}
+            {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            <Icon name={iconName} size={isMobile ? '20' : '16'}/>
+            <Icon name={iconName} size={isMobile ? '20' : '16'} />
         </StyledButton>
     );
 }

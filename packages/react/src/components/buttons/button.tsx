@@ -1,8 +1,8 @@
+import { Theme } from '@design-elements/themes/theme';
 import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 import { AbstractButton, AbstractButtonProps } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
@@ -13,7 +13,7 @@ interface ButtonProps extends AbstractButtonProps {
     /**
      * Visual style
      * @default primary
-     **/
+     */
     buttonType: ButtonType;
     /**
      * Sets button type
@@ -23,7 +23,7 @@ interface ButtonProps extends AbstractButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
-    ${props => focus(props, true)}
+    ${(props) => focus(props, true)};
     ${({ theme, buttonType }) => {
         switch (buttonType) {
             case 'primary':
@@ -45,7 +45,7 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
                             border-color: ${theme.main['primary-1.2']};
                         }
                     }
-                  `;
+                `;
             case 'secondary':
                 return `
                     background-color: transparent;
@@ -87,16 +87,25 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
                     }
                 `;
         }
-    }
-}
+    }}
 `;
 
-export function Button({ children, label, type = 'submit', ...props }: ButtonProps): ReactElement {
+export function Button({
+    children, label, type = 'submit', buttonType, disabled, onClick, ...props
+}: ButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
 
     return (
-        <StyledButton isMobile={isMobile} type={type} {...props}>
-            {children}{label}
+        <StyledButton
+            isMobile={isMobile}
+            type={type}
+            buttonType={buttonType}
+            disabled={disabled}
+            onClick={onClick}
+            {...props /* eslint-disable-line react/jsx-props-no-spreading *//* To spread aria-* and data-* */}
+        >
+            {children}
+            {label}
         </StyledButton>
     );
 }

@@ -49,7 +49,7 @@ export { ModalDialog } from './components/modal/modal-dialog';
 export { useModal } from './components/modal/use-modal';
 
 // Results
-export { Legend } from './components/legend/legend';
+export * from './components/legend/legend';
 export { ProgressBar } from './components/progress-bar/progress-bar';
 export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';

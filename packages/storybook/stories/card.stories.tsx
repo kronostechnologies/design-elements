@@ -1,4 +1,5 @@
 import { Card } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import * as React from 'react';
 
 export default {
@@ -6,6 +7,6 @@ export default {
     component: Card,
 };
 
-export const normal = () => (
+export const Normal: Story = () => (
     <Card>Hello, World!</Card>
 );

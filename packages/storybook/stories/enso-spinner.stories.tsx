@@ -1,4 +1,5 @@
 import { EnsoSpinner } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,6 +7,6 @@ export default {
     component: EnsoSpinner,
 };
 
-export const enso = () => (
+export const Enso: Story = () => (
     <EnsoSpinner />
 );

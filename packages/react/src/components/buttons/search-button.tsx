@@ -33,10 +33,13 @@ const StyledButton = styled(AbstractButton)`
         }`}
 `;
 
-export function SearchButton({ children, label, className, disabled, onClick }: ButtonProps): ReactElement {
+export function SearchButton({
+    children, label, className, disabled, onClick,
+}: ButtonProps): ReactElement {
     return (
         <StyledButton isMobile={false} className={className} disabled={disabled} onClick={onClick}>
-            {children}{label}
+            {children}
+            {label}
         </StyledButton>
     );
 }

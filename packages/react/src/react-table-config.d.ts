@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
     UseSortByColumnOptions,
     UseSortByColumnProps,
@@ -12,19 +13,15 @@ declare module 'react-table' {
     extends UseSortByOptions<D>,
       Record<string, any> {}
 
-  export interface Hooks<D extends object = {}>
-    extends UseSortByHooks<D> {}
+  export type Hooks<D extends object = {}> = UseSortByHooks<D>
 
-  export interface TableInstance<D extends object = {}>
-    extends UseSortByInstanceProps<D> {}
+  export type TableInstance<D extends object = {}> = UseSortByInstanceProps<D>
 
-  export interface TableState<D extends object = {}>
-    extends UseSortByState<D> {}
+  export type TableState<D extends object = {}> = UseSortByState<D>
 
   export interface ColumnInterface<D extends object = {}>
     extends UseSortByColumnOptions<D>,
       Record<string, any> {}
 
-  export interface ColumnInstance<D extends object = {}>
-    extends UseSortByColumnProps<D> {}
+  export type ColumnInstance<D extends object = {}> = UseSortByColumnProps<D>
 }

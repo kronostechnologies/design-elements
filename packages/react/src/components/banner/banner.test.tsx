@@ -1,6 +1,4 @@
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
-import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
-import { mount } from 'enzyme';
+import { mountWithTheme, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
 import { Banner } from './banner';
 
@@ -28,8 +26,8 @@ describe('Banner', () => {
     });
 
     test('X button closes the component', () => {
-        const wrapper = mount(
-            ThemeWrapped(<Banner type="warning" >WARNING! test test</Banner>),
+        const wrapper = mountWithTheme(
+            <Banner type="warning">WARNING! test test</Banner>,
         );
 
         const close = wrapper.find('[data-testid="closeButton"]').at(1);
@@ -40,16 +38,16 @@ describe('Banner', () => {
 
     describe('Hidden property', () => {
         test('hides the component', () => {
-            const wrapper = mount(
-                ThemeWrapped(<Banner type="warning" hidden={true}>WARNING! test test</Banner>),
+            const wrapper = mountWithTheme(
+                <Banner type="warning" hidden>WARNING! test test</Banner>,
             );
 
             expect(wrapper.exists('[data-testid="container"]')).toBeFalsy();
         });
 
         test('does not hide by default', () => {
-            const wrapper = mount(
-                ThemeWrapped(<Banner type="warning">WARNING! test test</Banner>),
+            const wrapper = mountWithTheme(
+                <Banner type="warning">WARNING! test test</Banner>,
             );
 
             expect(wrapper.exists('[data-testid="container"]')).toBeTruthy();

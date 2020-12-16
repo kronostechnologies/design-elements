@@ -6,10 +6,22 @@ import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
 import { DeviceContextProvider, DeviceType } from '../components/device-context-provider/device-context-provider';
 
+export function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
+    return (
+        <MemoryRouter>
+            <DeviceContextProvider staticDevice={device}>
+                {ThemeWrapped(children)}
+            </DeviceContextProvider>
+        </MemoryRouter>
+    );
+}
+
 export function mountWithProviders<C extends Component, P = C['props'], S = C['state']>(
     component: ReactElement<P>,
+    options: MountRendererProps = {},
 ): ReactWrapper<P, S, C> {
     return mount(component, {
+        ...options,
         wrappingComponent: AllProviders,
     });
 }
@@ -43,16 +55,6 @@ export function shallowWithTheme<C extends Component, P = C['props'], S = C['sta
     return shallow(component, {
         wrappingComponent: ThemeWrapper,
     });
-}
-
-export function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
-    return (
-        <MemoryRouter>
-            <DeviceContextProvider staticDevice={device}>
-                {ThemeWrapped(children)}
-            </DeviceContextProvider>
-        </MemoryRouter>
-    );
 }
 
 export async function actUpdate<C extends Component, P = C['props'], S = C['state']>(

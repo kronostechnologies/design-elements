@@ -1,7 +1,7 @@
 // Source : https://gist.github.com/FlorianRappl/fee731eea985d983fc48d10c648ecb17
 
 import { clamp } from '@design-elements/utils/math';
-import { CSSProperties, Dispatch, useEffect, useReducer } from 'react';
+import { CSSProperties, Dispatch, useCallback, useEffect, useReducer } from 'react';
 import { EventData, SwipeableHandlers, useSwipeable } from 'react-swipeable';
 import { CarouselAction, carouselReducer, CarouselState } from './carousel-reducer';
 
@@ -39,101 +39,28 @@ const FORWARD = 1;
 const BACKWARD = -1;
 const PADDING_SLIDES = 2;
 
-export function useCarousel(
-    {
-        transitionTime = 0,
-        initial = 0,
-        autoTransitionDelay,
-        length,
-        loop = false,
-        trackMouse = false,
-        trackTouch = true,
-    }: UseCarouselOptions,
-): UseCarouselResponse {
-    const initialCarouselState: CarouselState = {
-        active: initial,
-        desired: initial,
-        offset: 0,
-        length,
-        loop,
-    };
-    const [state, dispatch] = useReducer(carouselReducer, initialCarouselState);
-    const swipeableHandlers: SwipeableHandlers = useSwipeable({
-        onSwiping(e: EventData): void {
-            if (canSwipe(e, state)) {
-                const maxOffset = getSlideWidth(e.event.currentTarget, state.length);
-                dispatch({
-                    type: 'drag',
-                    offset: clamp(-maxOffset, maxOffset, -e.deltaX),
-                });
-            }
-        },
-        onSwipedLeft(e: EventData): void {
-            onSwiped(e, dispatch, state, FORWARD);
-        },
-        onSwipedRight(e: EventData): void {
-            onSwiped(e, dispatch, state, BACKWARD);
-        },
-        trackMouse,
-        trackTouch,
-    });
-
-    function previousHandler(): void {
-        if (state.loop || !state.loop && state.active > 0) {
-            dispatch({ type: 'previous' });
-        }
-    }
-
-    function nextHandler(): void {
-        if (state.loop || !state.loop && state.active < state.length - 1) {
-            dispatch({ type: 'next' });
-        }
-    }
-
-    useEffect(() => {
-        if (autoTransitionDelay !== undefined && Number.isFinite(autoTransitionDelay)) {
-            const delay = Math.max(autoTransitionDelay, transitionTime);
-            const id = setTimeout(nextHandler, delay);
-            return () => clearTimeout(id);
-        }
-        return undefined;
-    }, [state.offset, state.active]);
-
-    useEffect(() => {
-        const id = setTimeout(() => dispatch({ type: 'done' }), transitionTime);
-        return () => clearTimeout(id);
-    }, [state.desired]);
-
-    const style: CSSProperties = {
-        marginLeft: `-${(state.active + 1) * 100}%`,
-        transform: 'translateX(0)',
-        width: `${100 * (length + 2)}%`,
-    };
-
-    if (state.desired !== state.active) {
-        updateStyleForTransitionToActive(state, style, transitionTime);
-    } else if (!isNaN(state.offset)) {
-        updateStyleForDraggingTransition(state, style, transitionTime);
-    }
-
-    return {
-        active: state.active,
-        handlers: {
-            mouse: swipeableHandlers,
-            onPrevious: previousHandler,
-            onNext: nextHandler,
-        },
-        setActive: desired => dispatch({ type: 'jump', desired }),
-        style,
-    };
-}
-
 function canSwipe(e: EventData, state: CarouselState): boolean {
     const direction = Math.sign(e.deltaX);
     const isDraggingLastForward = state.active === state.length - 1 && direction === FORWARD;
     const isDraggingFirstBackward = state.active === 0 && direction === BACKWARD;
 
-    return state.loop || !state.loop && !isDraggingFirstBackward && !isDraggingLastForward;
+    return state.loop || (!state.loop && !isDraggingFirstBackward && !isDraggingLastForward);
+}
+
+function getClientWidth(target: EventTarget | null): number {
+    return (target as HTMLElement).clientWidth;
+}
+
+function getSlideWidth(target: EventTarget | null, slidesCount: number): number {
+    return getClientWidth(target) / (slidesCount + PADDING_SLIDES);
+}
+
+function threshold(target: EventTarget | null, slidesCount: number): number {
+    if (target === null) {
+        return 0;
+    }
+
+    return getSlideWidth(target, slidesCount) / 3;
 }
 
 function onSwiped(
@@ -155,26 +82,12 @@ function onSwiped(
     }
 }
 
-function getSlideWidth(target: EventTarget | null, slidesCount: number): number {
-    return getClientWidth(target) / (slidesCount + PADDING_SLIDES);
-}
-
-function getClientWidth(target: EventTarget | null): number {
-    return (target as HTMLElement).clientWidth;
-}
-
-function threshold(target: EventTarget | null, slidesCount: number): number {
-    if (target === null) {
-        return 0;
-    }
-
-    return getSlideWidth(target, slidesCount) / 3;
-}
-
 function updateStyleForDraggingTransition(state: CarouselState, style: CSSProperties, transitionTime: number): void {
     if (state.offset !== 0) {
+        // eslint-disable-next-line no-param-reassign
         style.transform = `translateX(${state.offset}px)`;
     } else {
+        // eslint-disable-next-line no-param-reassign
         style.transition = `transform ${transitionTime}ms cubic-bezier(0.68, -0.55, 0.265, 1.55)`;
     }
 }
@@ -211,6 +124,99 @@ function updateStyleForTransitionToActive(state: CarouselState, style: CSSProper
     } else {
         shift = 100 * directionFromActive / (state.length + 2) * distance;
     }
+
+    // eslint-disable-next-line no-param-reassign
     style.transition = `transform ${transitionTime}ms ease`;
+    // eslint-disable-next-line no-param-reassign
     style.transform = `translateX(${shift}%)`;
+}
+
+export function useCarousel(
+    {
+        transitionTime = 0,
+        initial = 0,
+        autoTransitionDelay,
+        length,
+        loop = false,
+        trackMouse = false,
+        trackTouch = true,
+    }: UseCarouselOptions,
+): UseCarouselResponse {
+    const initialCarouselState: CarouselState = {
+        active: initial,
+        desired: initial,
+        offset: 0,
+        length,
+        loop,
+    };
+    const [state, dispatch] = useReducer(carouselReducer, initialCarouselState);
+    // noinspection JSUnusedGlobalSymbols
+    const swipeableHandlers: SwipeableHandlers = useSwipeable({
+        onSwiping(e: EventData): void {
+            if (canSwipe(e, state)) {
+                const maxOffset = getSlideWidth(e.event.currentTarget, state.length);
+                dispatch({
+                    type: 'drag',
+                    offset: clamp(-maxOffset, maxOffset, -e.deltaX),
+                });
+            }
+        },
+        onSwipedLeft(e: EventData): void {
+            onSwiped(e, dispatch, state, FORWARD);
+        },
+        onSwipedRight(e: EventData): void {
+            onSwiped(e, dispatch, state, BACKWARD);
+        },
+        trackMouse,
+        trackTouch,
+    });
+
+    const previousHandler: () => void = useCallback(() => {
+        if (state.loop || (!state.loop && state.active > 0)) {
+            dispatch({ type: 'previous' });
+        }
+    }, [state.loop, state.active]);
+
+    const nextHandler: () => void = useCallback(() => {
+        if (state.loop || (!state.loop && state.active < state.length - 1)) {
+            dispatch({ type: 'next' });
+        }
+    }, [state.active, state.loop, state.length]);
+
+    useEffect(() => {
+        if (autoTransitionDelay !== undefined && Number.isFinite(autoTransitionDelay)) {
+            const delay = Math.max(autoTransitionDelay, transitionTime);
+            const id = setTimeout(nextHandler, delay);
+            return () => clearTimeout(id);
+        }
+        return undefined;
+    }, [transitionTime, nextHandler, autoTransitionDelay, state.offset, state.active]);
+
+    useEffect(() => {
+        const id = setTimeout(() => dispatch({ type: 'done' }), transitionTime);
+        return () => clearTimeout(id);
+    }, [state.desired, transitionTime]);
+
+    const style: CSSProperties = {
+        marginLeft: `-${(state.active + 1) * 100}%`,
+        transform: 'translateX(0)',
+        width: `${100 * (length + 2)}%`,
+    };
+
+    if (state.desired !== state.active) {
+        updateStyleForTransitionToActive(state, style, transitionTime);
+    } else if (!Number.isNaN(state.offset)) {
+        updateStyleForDraggingTransition(state, style, transitionTime);
+    }
+
+    return {
+        active: state.active,
+        handlers: {
+            mouse: swipeableHandlers,
+            onPrevious: previousHandler,
+            onNext: nextHandler,
+        },
+        setActive: (desired) => dispatch({ type: 'jump', desired }),
+        style,
+    };
 }

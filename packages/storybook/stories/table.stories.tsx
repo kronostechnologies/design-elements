@@ -1,4 +1,5 @@
-import { ColumnsProps, Table, Tooltip } from '@equisoft/design-elements-react';
+import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,8 +7,14 @@ export default {
     component: Table,
 };
 
-export const normal = () => {
-    const columns: ColumnsProps = [
+interface Data {
+    column1: string;
+    column2: string;
+    column3: string;
+}
+
+export const Normal: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -22,7 +29,7 @@ export const normal = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -44,8 +51,8 @@ export const normal = () => {
     );
 };
 
-export const errorRows = () => {
-    const columns: ColumnsProps = [
+export const ErrorRows: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -60,7 +67,7 @@ export const errorRows = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -84,8 +91,8 @@ export const errorRows = () => {
     );
 };
 
-export const striped = () => {
-    const columns: ColumnsProps = [
+export const striped: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -100,7 +107,7 @@ export const striped = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -122,8 +129,8 @@ export const striped = () => {
     );
 };
 
-export const rowNumbers = () => {
-    const columns: ColumnsProps = [
+export const RowNumbers: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -138,7 +145,7 @@ export const rowNumbers = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -160,8 +167,8 @@ export const rowNumbers = () => {
     );
 };
 
-export const smallRows = () => {
-    const columns: ColumnsProps = [
+export const SmallRows: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -176,7 +183,7 @@ export const smallRows = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<Data>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -198,8 +205,8 @@ export const smallRows = () => {
     );
 };
 
-export const rowClickCallback = () => {
-    const columns: ColumnsProps = [
+export const RowClickCallback: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -214,14 +221,14 @@ export const rowClickCallback = () => {
         },
     ];
 
-    interface Data {
+    interface DataWithHref {
         column1: string;
         column2: string;
         column3: string;
         href: string;
     }
 
-    const data: Data[] = [
+    const data: TableRow<DataWithHref>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -237,19 +244,19 @@ export const rowClickCallback = () => {
     ];
 
     return (
-        <Table<Data>
+        <Table<DataWithHref>
             columns={columns}
             data={data}
             onRowClick={(row) => {
-                console.log('row: ', row);
-                console.log('href: ', row.original.href);
+                console.info('row: ', row);
+                console.info('href: ', row.original.href);
             }}
         />
     );
 };
 
-export const customTextAlignment = () => {
-    const columns: ColumnsProps = [
+export const CustomTextAlignment: Story = () => {
+    const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -266,7 +273,7 @@ export const customTextAlignment = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<Data>[] = [
         {
             column1: 'Hello',
             column2: 'World',
@@ -284,12 +291,20 @@ export const customTextAlignment = () => {
     );
 };
 
-export const customColumns = () => {
-    const columns: ColumnsProps = [
+export const CustomColumns: Story = () => {
+    interface ComplexData {
+        category: {
+            value: string;
+            tooltip?: string;
+        };
+        amount?: string;
+    }
+
+    const columns: TableColumn<ComplexData> = [
         {
             Header: 'Category',
             accessor: 'category',
-            Cell: ({ value }: any) => (
+            Cell: ({ value }) => (
                 <div style={{ display: 'flex' }}>
                     <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
                     {value.tooltip && (<Tooltip>{value.tooltip}</Tooltip>)}
@@ -299,19 +314,11 @@ export const customColumns = () => {
         {
             Header: () => <div style={{ textAlign: 'right' }}>Amount ($)</div>,
             accessor: 'amount',
-            Cell: ({ value }: any) => <div style={{ textAlign: 'right' }}>{value}</div>,
+            Cell: ({ value }) => <div style={{ textAlign: 'right' }}>{value}</div>,
         },
     ];
 
-    interface Data {
-        category: {
-            value: string;
-            tooltip?: string;
-        };
-        amount?: string;
-    }
-
-    const data: Data[] = [
+    const data: ComplexData[] = [
         {
             category: {
                 value: 'Safety fund',
@@ -328,12 +335,18 @@ export const customColumns = () => {
     ];
 
     return (
-        <Table<Data> columns={columns} data={data} />
+        <Table<ComplexData> columns={columns} data={data} />
     );
 };
 
-export const sortableRows = () => {
-    const columns: ColumnsProps = [
+export const SortableRows: Story = () => {
+    interface SortableData {
+        column1: string;
+        column2: string;
+        column3: number;
+    }
+
+    const columns: TableColumn<SortableData> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -350,7 +363,7 @@ export const sortableRows = () => {
         },
     ];
 
-    const data = [
+    const data: TableRow<SortableData>[] = [
         {
             column1: 'a',
             column2: 'a',
@@ -363,6 +376,6 @@ export const sortableRows = () => {
         },
     ];
     return (
-        <Table columns={columns} data={data} />
+        <Table<SortableData> columns={columns} data={data} />
     );
 };

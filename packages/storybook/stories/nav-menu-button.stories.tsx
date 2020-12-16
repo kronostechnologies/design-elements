@@ -1,5 +1,5 @@
 import { ApplicationMenu, NavMenuButton } from '@equisoft/design-elements-react';
-import React from 'react';
+import React, { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { RouterDecorator } from './utils/router-decorator';
 
@@ -8,22 +8,6 @@ export default {
     component: NavMenuButton,
     decorators: [RouterDecorator],
 };
-
-export const normal = () => (
-    <StyledDiv>
-        <ApplicationMenu>
-            <NavMenuButton label="Menu" options={options}/>
-        </ApplicationMenu>
-    </StyledDiv>
-);
-
-export const defaultOpen = () => (
-    <StyledDiv>
-        <ApplicationMenu>
-            <NavMenuButton defaultOpen label="Menu" options={options}/>
-        </ApplicationMenu>
-    </StyledDiv>
-);
 
 const options = [
     {
@@ -51,3 +35,19 @@ const options = [
 const StyledDiv = styled.div`
     height: 180px;
 `;
+
+export const Normal: VoidFunctionComponent = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton label="Menu" options={options} />
+        </ApplicationMenu>
+    </StyledDiv>
+);
+
+export const DefaultOpen: VoidFunctionComponent = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton defaultOpen label="Menu" options={options} />
+        </ApplicationMenu>
+    </StyledDiv>
+);

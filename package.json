@@ -3,5 +3,18 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "g:eslint": "./scripts/eslint.js",
+    "g:stylelint": "./scripts/stylelint.js"
+  },
+  "devDependencies": {
+    "@equisoft/stylelint-config": "^1.0.1",
+    "@types/eslint": "^7.2.6",
+    "@types/yargs": "^15.0.10",
+    "stylelint": "^13.8.0",
+    "stylelint-order": "^4.1.0",
+    "xmlbuilder": "^15.1.1",
+    "yargs": "^16.1.1"
+  }
 }

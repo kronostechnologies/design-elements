@@ -1,4 +1,5 @@
 import { TextInput } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,7 +7,7 @@ export default {
     component: TextInput,
 };
 
-export const inputs = () => (
+export const Inputs: Story = () => (
     <div>
         <TextInput
             disabled={false}
@@ -42,7 +43,7 @@ export const inputs = () => (
         />
     </div>
 );
-export const defaultValue = () => (
+export const DefaultValue: Story = () => (
     <TextInput
         disabled={false}
         required={false}
@@ -53,10 +54,10 @@ export const defaultValue = () => (
         validationErrorMessage="Error message"
     />
 );
-export const required = () => (
+export const Required: Story = () => (
     <TextInput
         disabled={false}
-        required={true}
+        required
         label="Last Name (required)"
         type="text"
         defaultValue=""
@@ -64,30 +65,30 @@ export const required = () => (
         validationErrorMessage="This field is required"
     />
 );
-export const eventCallbacks = () => (
+export const EventCallbacks: Story = () => (
     <TextInput
         disabled={false}
-        required={true}
+        required
         label="See console for callbacks"
         type="text"
         defaultValue=""
         pattern=""
         validationErrorMessage="Error message"
-        onChange={event => {
-            console.log(`Custom function called on change. Current value: ${event.currentTarget.value}`);
+        onChange={(event) => {
+            console.info(`Custom function called on change. Current value: ${event.currentTarget.value}`);
         }}
-        onBlur={event => {
-            console.log(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
+        onBlur={(event) => {
+            console.info(`Custom function called on blur. Current value: ${event.currentTarget.value}`);
         }}
-        onFocus={event => {
-            console.log(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
+        onFocus={(event) => {
+            console.info(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
         }}
     />
 );
-export const patternValidation = () => (
+export const PatternValidation: Story = () => (
     <TextInput
         disabled={false}
-        required={true}
+        required
         label="Telephone"
         placeholder="Ex.: 555-123-4567"
         type="tel"
@@ -96,9 +97,9 @@ export const patternValidation = () => (
         validationErrorMessage="Please enter a valid phone number"
     />
 );
-export const disabled = () => (
+export const Disabled: Story = () => (
     <TextInput
-        disabled={true}
+        disabled
         required={false}
         label="A disabled text input"
         placeholder="Sorry but this field is disabled"

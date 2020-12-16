@@ -4,6 +4,23 @@ import React, { ReactElement, useEffect } from 'react';
 import { getByTestId } from '../test-utils/enzyme-selectors';
 import { resetId, useId } from './use-id';
 
+function DummyComponent({ onRendered = () => undefined }: { onRendered?(): void }): ReactElement {
+    const id = useId('id-');
+
+    useEffect(onRendered);
+
+    return <>{id}</>;
+}
+
+function DummyContainer(): ReactElement {
+    return (
+        <>
+            <DummyComponent data-testid="dummy-1" />
+            <DummyComponent data-testid="dummy-2" />
+        </>
+    );
+}
+
 describe('useId', () => {
     beforeEach(() => {
         resetId();
@@ -37,20 +54,3 @@ describe('useId', () => {
         expect(onRendered).toHaveBeenCalledTimes(2);
     });
 });
-
-function DummyContainer(): ReactElement {
-    return (
-        <>
-            <DummyComponent data-testid="dummy-1" />
-            <DummyComponent data-testid="dummy-2" />
-        </>
-    );
-}
-
-function DummyComponent({ onRendered = () => undefined }: { onRendered?(): void }): ReactElement {
-    const id = useId('id-');
-
-    useEffect(onRendered);
-
-    return <>{id}</>;
-}

@@ -1,7 +1,7 @@
 import { focus } from '@design-elements/utils/css-state';
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../theme-wrapper/theme-wrapper';
+import { Theme } from '@design-elements/themes/theme';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
@@ -10,9 +10,8 @@ const Legend = styled.legend`
     padding: 0;
 `;
 
-const StyledLabel = styled.label `
-    ${(props: {theme: Theme, disabled?: boolean}) => {
-        return `
+const StyledLabel = styled.label`
+    ${(props: {theme: Theme, disabled?: boolean}) => `
             ${props.disabled ? '' : 'cursor: pointer;'};
             display: block;
             font-size: 0.875rem;
@@ -71,8 +70,7 @@ const StyledLabel = styled.label `
             &:hover .radioInput {
                 border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
             }
-            `;
-    }}
+            `}
 `;
 
 interface RadioButtonGroupProps {
@@ -90,15 +88,20 @@ interface RadioButtonGroupProps {
 }
 
 export function RadioButtonGroup(
-    { buttons, groupName, label, onChange, checkedValue }: RadioButtonGroupProps): ReactElement  {
+    {
+        buttons, groupName, label, onChange, checkedValue,
+    }: RadioButtonGroupProps,
+): ReactElement {
     return (
         <>
             {label && <Legend>{label}</Legend>}
             {buttons.map((button) => (
                 <StyledLabel
                     disabled={button.disabled}
-                    key={groupName + '-' + button.value}
-                > {button.label}
+                    key={`${groupName}-${button.value}`}
+                >
+                    {' '}
+                    {button.label}
                     <input
                         type="radio"
                         name={groupName}

@@ -1,13 +1,14 @@
-import { useStateCallback } from '@design-elements/hooks/use-state-callback';
 import { useTranslation } from '@design-elements/i18n/i18n';
 import { formatCurrency } from '@design-elements/utils/currency';
-import React, { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TextInput } from '../text-input/text-input';
 
-const InputWrapper = styled.div<{language: Language}>`
+type Language = 'en' | 'fr';
+
+const InputWrapper = styled.div<{ language: Language }>`
     input {
-        text-align: ${({ language }) => language === 'en' ? 'left' : 'right'};
+        text-align: ${({ language }) => (language === 'en' ? 'left' : 'right')};
         transition: width 300ms;
         width: 132px;
     }
@@ -22,35 +23,44 @@ function safeFormatCurrency(
     return value === null ? '' : formatCurrency(value, precision, locale, currency);
 }
 
-type Language = 'en' | 'fr';
-
 interface Props {
     disabled?: boolean;
     required?: boolean;
     /**
      * Message displayed in case of validation error
      * @default Invalid number.
-     **/
+     */
     validationErrorMessage?: string;
     label?: string;
     value?: number | null;
     /**
      * Sets input locale and changes visual format accordingly
      * @default fr-CA
-     **/
+     */
     locale?: string;
     /**
      * Sets currency
      * @default CAD
-     **/
+     */
     currency?: string;
     /**
      * Sets number of decimals
      * @default 2
-     **/
+     */
     precision?: number;
     hint?: string;
+
     onChange?(value: number | null, formattedValue: string): void;
+}
+
+function roundValueToPrecision(amount: number | null, precision: number): number | null {
+    return amount !== null && !Number.isNaN(amount)
+        ? Math.round(amount * (10 ** precision)) / (10 ** precision)
+        : null;
+}
+
+function parseAndRound(val: string, precision: number): number | null {
+    return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
 export function MoneyInput({
@@ -64,60 +74,16 @@ export function MoneyInput({
     locale = 'fr-CA',
     currency = 'CAD',
     hint,
- }: Props): ReactElement {
+}: Props): ReactElement {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
     const language: Language = locale.split('-')[0] as Language;
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));
-    const [, setHasFocus] = useStateCallback(false, hasFocus => {
-        if (inputElement.current != null) {
-            if (hasFocus) {
-                inputElement.current.select();
-            } else if (displayValue !== maskedValue) {
-                updateFormattedValue(inputElement.current.value);
-            }
-        }
-    });
+    const [hasFocus, setHasFocus] = useState<boolean>(false);
 
-    useEffect(() => {
-        const newValue = safeFormatCurrency(value, precision, locale, currency);
-        setDisplayValue(newValue);
-        setMaskedValue(newValue);
-    }, [value]);
-
-    function handleBlurEvent(): void {
-        setHasFocus(false);
-    }
-
-    function handleFocusEvent(): void {
-        const roundedValue = roundValueToPrecision(value);
-        const roundedValueAsString = roundedValue === null ? '' : roundedValue.toString();
-        setDisplayValue(roundedValueAsString);
-        setHasFocus(true);
-    }
-
-    function parseAndRound(val: string): number | null {
-        return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')));
-    }
-
-    function handleChangeEvent(event: ChangeEvent<HTMLInputElement>): void {
-        const rawValue = event.target.value;
-        const mask: RegExp = /[^0-9.,]/g;
-        const nextDisplayValue = rawValue.replace(mask, '');
-
-        event.preventDefault();
-        setDisplayValue(nextDisplayValue);
-    }
-
-    function roundValueToPrecision(amount: number | null): number | null {
-        return amount !== null && !isNaN(amount)
-            ? Math.round(amount * (10 ** precision)) / (10 ** precision)
-            : null;
-    }
-
-    function updateFormattedValue(rawValue: string): void {
-        const roundedValue = parseAndRound(rawValue);
+    const updateFormattedValue: (rawValue: string) => void = useCallback((rawValue) => {
+        const roundedValue = parseAndRound(rawValue, precision);
         const newMaskedValue: string = safeFormatCurrency(roundedValue, precision, locale, currency);
 
         setDisplayValue(newMaskedValue);
@@ -127,7 +93,47 @@ export function MoneyInput({
                 onChange(roundedValue, newMaskedValue);
             }
         }
-    }
+    }, [currency, locale, maskedValue, onChange, precision]);
+
+    useEffect(() => {
+        if (inputElement.current != null) {
+            if (!hasFocus && displayValue !== maskedValue) {
+                updateFormattedValue(inputElement.current.value);
+            }
+        }
+    }, [hasFocus, displayValue, maskedValue, updateFormattedValue]);
+
+    useEffect(() => {
+        if (hasFocus) {
+            inputElement.current?.select();
+        }
+    }, [hasFocus]);
+
+    useEffect(() => {
+        const newValue = safeFormatCurrency(value, precision, locale, currency);
+        setDisplayValue(newValue);
+        setMaskedValue(newValue);
+    }, [currency, locale, precision, value]);
+
+    const handleBlurEvent: () => void = useCallback(() => {
+        setHasFocus(false);
+    }, [setHasFocus]);
+
+    const handleFocusEvent: () => void = useCallback(() => {
+        const roundedValue = roundValueToPrecision(value, precision);
+        const roundedValueAsString = roundedValue === null ? '' : roundedValue.toString();
+        setDisplayValue(roundedValueAsString);
+        setHasFocus(true);
+    }, [setHasFocus, precision, value]);
+
+    const handleChangeEvent: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
+        const rawValue = event.target.value;
+        const mask = /[^0-9.,]/g;
+        const nextDisplayValue = rawValue.replace(mask, '');
+
+        event.preventDefault();
+        setDisplayValue(nextDisplayValue);
+    }, []);
 
     return (
         <InputWrapper language={language}>

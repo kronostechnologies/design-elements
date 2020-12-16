@@ -1,5 +1,5 @@
-import { InlineMessage, IntlProvider } from '@equisoft/design-elements-react';
-import { Meta, Preview, ArgsTable, Story } from '@storybook/addon-docs/blocks';
+import {InlineMessage, IntlProvider} from '@equisoft/design-elements-react';
+import {ArgsTable, Meta, Preview, Story} from '@storybook/addon-docs/blocks';
 
 <Meta title="Internationalization Provider" component={IntlProvider} />
 
@@ -22,23 +22,23 @@ The `IntlProvider` component allows you to translate static texts (labels, place
 You can use components without the `IntlProvider`, in which case the default language is set to **english**.
 
 <Preview>
-  <Story name="Without Provider">
-    <InlineMessage type="info">
-        Here's a contextual notice with an icon and title.
-    </InlineMessage>
-  </Story>
+    <Story name="Without Provider">
+        <InlineMessage type="info">
+            Here's a contextual notice with an icon and title.
+        </InlineMessage>
+    </Story>
 </Preview>
 
 Let's use the provider to translate the `InlineMessage` component to french.
 
 <Preview>
-  <Story name="With Provider">
-      <IntlProvider language="fr">
+    <Story name="With Provider">
+        <IntlProvider language="fr">
             <InlineMessage type="info">
                 Here's a contextual notice with an icon and title.
             </InlineMessage>
-      </IntlProvider>
-  </Story>
+        </IntlProvider>
+    </Story>
 </Preview>
 
 As you can see, the heading changes but not the content. The reason is that the content is passed by the user and cannot be handled by the provider.

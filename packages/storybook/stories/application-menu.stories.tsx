@@ -1,5 +1,7 @@
 import { ApplicationMenu } from '@equisoft/design-elements-react';
-import React from 'react';
+import { Story } from '@storybook/react';
+import React, { ReactElement } from 'react';
+import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
 
 export default {
@@ -8,7 +10,7 @@ export default {
     decorators: [RouterDecorator],
 };
 
-const drawerContent = (
+const drawerContent: ReactElement = (
     <div style={{ padding: '16px' }}>
         <h2>Section 1</h2>
         <hr />
@@ -19,20 +21,21 @@ const drawerContent = (
     </div>
 );
 
-export const normal = () => (
+export const Normal: Story = () => (
     <ApplicationMenu>
         <p>Hello world</p>
     </ApplicationMenu>
 );
 
-export const withAppName = () => (
+export const WithAppName: Story = () => (
     <ApplicationMenu appName="analyze">
         <p>Hello world</p>
     </ApplicationMenu>
 );
 
-export const withMobileDrawer = () => (
+export const WithMobileDrawer: Story = () => (
     <ApplicationMenu mobileDrawerContent={drawerContent}>
         <p>Hello world</p>
     </ApplicationMenu>
 );
+WithMobileDrawer.decorators = [MobileDecorator];

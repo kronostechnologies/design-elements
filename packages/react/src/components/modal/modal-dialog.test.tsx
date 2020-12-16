@@ -1,10 +1,32 @@
 import { renderPortalWithProviders } from '@design-elements/test-utils/portal-renderer';
 import { fireEvent, RenderResult } from '@testing-library/react';
 import React from 'react';
+import { doNothing } from '../../test-utils/callbacks';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps } from './modal-dialog';
 
 jest.mock('uuid/v4');
+
+type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'>;
+
+const defaultTestProps = {
+    ariaDescribedby: 'modal-description',
+    ariaHideApp: false,
+    onRequestClose: doNothing,
+};
+
+const withTitleAndSubtitle = {
+    title: 'Title',
+    subtitle: 'Subtitle',
+};
+
+function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'): RenderResult {
+    return renderPortalWithProviders(
+        <ModalDialog {...defaultTestProps} {...props}>
+            <p id="modal-description">Test Content</p>
+        </ModalDialog>, device,
+    );
+}
 
 describe('Modal-Dialog', () => {
     test('onConfirm callback is called when confirm-button is clicked', () => {
@@ -98,26 +120,3 @@ describe('Modal-Dialog', () => {
         expect(baseElement).toMatchSnapshot();
     });
 });
-
-interface ModalDialogPropsLite extends Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'> {
-}
-
-const defaultTestProps = {
-    ariaDescribedby: 'modal-description',
-    ariaHideApp: false,
-    onRequestClose: () => {
-    },
-};
-
-const withTitleAndSubtitle = {
-    title: 'Title',
-    subtitle: 'Subtitle',
-};
-
-function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'): RenderResult {
-    return renderPortalWithProviders(
-        <ModalDialog {...defaultTestProps} {...props}>
-            <p id="modal-description">Test Content</p>
-        </ModalDialog>, device,
-    );
-}

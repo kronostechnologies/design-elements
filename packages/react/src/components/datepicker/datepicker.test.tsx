@@ -1,18 +1,14 @@
 import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { mount } from 'enzyme';
+import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React, { RefObject } from 'react';
-
-import { actAndWaitForEffects, renderWithProviders } from '../../test-utils/renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Datepicker, DatepickerHandles } from './datepicker';
+
 jest.mock('uuid/v4');
 
 describe('Datepicker', () => {
     test('onChange callback is called when input changed', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker onChange={callback} label="date"/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker onChange={callback} label="date" />);
 
         getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2002-02-02' } });
 
@@ -21,9 +17,7 @@ describe('Datepicker', () => {
 
     test('onFocus callback is called when input focused', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker onFocus={callback} label="date"/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker onFocus={callback} label="date" />);
 
         getByTestId(wrapper, 'text-input').simulate('focus');
 
@@ -32,9 +26,7 @@ describe('Datepicker', () => {
 
     test('onBlur callback is called when input blurred', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker onBlur={callback} label="date"/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker onBlur={callback} label="date" />);
 
         getByTestId(wrapper, 'text-input').simulate('blur');
 
@@ -43,9 +35,7 @@ describe('Datepicker', () => {
 
     test('onCalendarClose callback is called when calendar closes', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker onCalendarClose={callback} startOpen label="date"/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker onCalendarClose={callback} startOpen label="date" />);
 
         getByTestId(wrapper, 'calendar-button').simulate('mousedown');
 
@@ -54,9 +44,7 @@ describe('Datepicker', () => {
 
     test('onCalendarOpen callback is called when calendar opens', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker onCalendarOpen={callback} label="date"/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker onCalendarOpen={callback} label="date" />);
 
         getByTestId(wrapper, 'calendar-button').simulate('mousedown');
 
@@ -64,7 +52,7 @@ describe('Datepicker', () => {
     });
 
     test('input value should format on blur', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker />));
+        const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2002 02 02' } });
         getByTestId(wrapper, 'text-input').simulate('blur');
@@ -73,13 +61,13 @@ describe('Datepicker', () => {
     });
 
     test('calendar should be opened when startOpen prop is truthy', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker startOpen/>));
+        const wrapper = mountWithTheme(<Datepicker startOpen />);
 
         expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
     });
 
     test('calendar should not open when input is clicked', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker />));
+        const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'text-input').simulate('click');
 
@@ -87,7 +75,7 @@ describe('Datepicker', () => {
     });
 
     test('calendar should not open when input is focused', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker />));
+        const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'text-input').simulate('focus');
 
@@ -95,7 +83,7 @@ describe('Datepicker', () => {
     });
 
     test('calendar should open when calendar button is clicked', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker />));
+        const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'calendar-button').simulate('mousedown');
 
@@ -103,7 +91,7 @@ describe('Datepicker', () => {
     });
 
     test('calendar should close when calendar button is clicked (start open)', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker startOpen/>));
+        const wrapper = mountWithTheme(<Datepicker startOpen />);
 
         getByTestId(wrapper, 'calendar-button').simulate('mousedown');
 
@@ -111,15 +99,15 @@ describe('Datepicker', () => {
     });
 
     test('calendar should open on calendar button keydown (Enter)', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker />));
+        const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: 'Enter' });
 
         expect(getByTestId(wrapper, 'calendar-header').exists()).toBeTruthy();
     });
 
-    test('calendar should open on calendar button keydown (Spacebar)', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker />));
+    test('calendar should open on calendar button keydown (Space bar)', () => {
+        const wrapper = mountWithTheme(<Datepicker />);
 
         getByTestId(wrapper, 'calendar-button').simulate('keydown', { key: ' ' });
 
@@ -127,9 +115,7 @@ describe('Datepicker', () => {
     });
 
     test('month select value should change when month-previous button is clicked', () => {
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-05-05')} label="date" open />);
 
         getByTestId(wrapper, 'month-previous').simulate('click');
 
@@ -137,9 +123,7 @@ describe('Datepicker', () => {
     });
 
     test('month select value should change when month-next button is clicked', () => {
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker startDate={new Date('2000-05-05')} label="date" open/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-05-05')} label="date" open />);
 
         getByTestId(wrapper, 'month-next').simulate('click');
 
@@ -147,9 +131,7 @@ describe('Datepicker', () => {
     });
 
     test('year select value should change when month-previous button is clicked on first month of the year', () => {
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker startDate={new Date('2000-01-12')} label="date" open/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-01-12')} label="date" open />);
 
         getByTestId(wrapper, 'month-previous').simulate('click');
 
@@ -157,9 +139,7 @@ describe('Datepicker', () => {
     });
 
     test('year select value should change when month-next button is clicked on last month of the year', () => {
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker startDate={new Date('2000-12-12')} label="date" open/>),
-        );
+        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-12-12')} label="date" open />);
 
         getByTestId(wrapper, 'month-next').simulate('click');
 
@@ -167,7 +147,7 @@ describe('Datepicker', () => {
     });
 
     test('today-button should select current date', () => {
-        const wrapper = mount(ThemeWrapped(<Datepicker startOpen hasTodayButton/>));
+        const wrapper = mountWithTheme(<Datepicker startOpen hasTodayButton />);
 
         getByTestId(wrapper, 'today-button').simulate('click');
 
@@ -176,9 +156,7 @@ describe('Datepicker', () => {
 
     test('should reset date to startDate when reset is called on ref', async () => {
         const ref: RefObject<DatepickerHandles> = React.createRef();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker ref={ref} startDate={new Date('2002-02-02, 12:00')} />),
-        );
+        const wrapper = mountWithTheme(<Datepicker ref={ref} startDate={new Date('2002-02-02, 12:00')} />);
 
         getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2010-07-07' } });
 
@@ -191,9 +169,7 @@ describe('Datepicker', () => {
 
     test('should set date when setDate is called on ref', async () => {
         const ref: RefObject<DatepickerHandles> = React.createRef();
-        const wrapper = mount(
-            ThemeWrapped(<Datepicker ref={ref} />),
-        );
+        const wrapper = mountWithTheme(<Datepicker ref={ref} />);
 
         await actAndWaitForEffects(wrapper, () => {
             ref.current?.setDate(new Date('2002-02-02, 12:00'));
@@ -203,20 +179,20 @@ describe('Datepicker', () => {
     });
 
     test('matches snapshot (desktop)', () => {
-        const tree = renderWithProviders(<Datepicker label="date"/>, 'desktop');
+        const tree = renderWithProviders(<Datepicker label="date" />, 'desktop');
 
         expect(tree).toMatchSnapshot();
     });
 
     test('matches snapshot (mobile)', () => {
-        const tree = renderWithProviders(<Datepicker label="date"/>, 'mobile');
+        const tree = renderWithProviders(<Datepicker label="date" />, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
 
     test('has startDate', () => {
         const tree = renderWithProviders(
-            <Datepicker label="date" startDate={new Date('1995-05-05, 12:00')}/>,
+            <Datepicker label="date" startDate={new Date('1995-05-05, 12:00')} />,
             'mobile',
         );
 
@@ -224,31 +200,39 @@ describe('Datepicker', () => {
     });
 
     test('matches snapshot (open, desktop)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" open maxDate={new Date('2010-10-10, 12:00')}/>, 'desktop');
+        const tree = renderWithProviders(
+            <Datepicker label="date" open maxDate={new Date('2010-10-10, 12:00')} />,
+            'desktop',
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('matches snapshot (open, mobile)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" startOpen maxDate={new Date('2010-10-10, 12:00')}/>, 'mobile');
+        const tree = renderWithProviders(
+            <Datepicker label="date" startOpen maxDate={new Date('2010-10-10, 12:00')} />,
+            'mobile',
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('matches snapshot (open, hasTodayButton)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" hasTodayButton startOpen maxDate={new Date('2010-10-10, 12:00')}/>);
+        const tree = renderWithProviders(
+            <Datepicker label="date" hasTodayButton startOpen maxDate={new Date('2010-10-10, 12:00')} />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('matches snapshot (invalid)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" valid={false}/>);
+        const tree = renderWithProviders(<Datepicker label="date" valid={false} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('matches snapshot (disabled)', () => {
-        const tree = renderWithProviders(<Datepicker label="date" disabled/>);
+        const tree = renderWithProviders(<Datepicker label="date" disabled />);
 
         expect(tree).toMatchSnapshot();
     });

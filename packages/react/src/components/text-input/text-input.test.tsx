@@ -1,8 +1,11 @@
-import { mount } from 'enzyme';
-import React, { ChangeEvent } from 'react';
+import { mount, ReactWrapper } from 'enzyme';
+import React, { ChangeEventHandler } from 'react';
 import renderer from 'react-test-renderer';
+import { doNothing } from '../../test-utils/callbacks';
+import { mountWithTheme } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { TextInput } from './text-input';
+
 jest.mock('uuid/v4');
 
 describe('TextInput', () => {
@@ -16,20 +19,18 @@ describe('TextInput', () => {
         pattern: '[0-9]{3}-?[0-9]{3}-?[0-9]{4}',
 
     };
-    const setup = (callback: ((event: ChangeEvent<HTMLInputElement>) => void) = () => {}) => {
+
+    function setup(callback: ChangeEventHandler = doNothing): ReactWrapper {
         const props = { ...initialProps };
-        const wrapper = mount (
-            ThemeWrapped(
-                <TextInput
-                    {...props}
-                    onChange={callback}
-                    onBlur={callback}
-                    onFocus={callback}
-                />,
-            ),
+        return mountWithTheme(
+            <TextInput
+                {...props}
+                onChange={callback}
+                onBlur={callback}
+                onFocus={callback}
+            />,
         );
-        return wrapper;
-    };
+    }
 
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
@@ -41,7 +42,7 @@ describe('TextInput', () => {
 
     test('onChange callback can\'t be called when input disabled', () => {
         const callback = jest.fn();
-        const wrapper = mount (
+        const wrapper = mount(
             ThemeWrapped(
                 <TextInput
                     {...initialProps}
@@ -65,7 +66,7 @@ describe('TextInput', () => {
 
     test('onBlur callback cannot be called when input disabled', () => {
         const callback = jest.fn();
-        const wrapper = mount (
+        const wrapper = mount(
             ThemeWrapped(
                 <TextInput
                     {...initialProps}

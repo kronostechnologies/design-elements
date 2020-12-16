@@ -1,53 +1,58 @@
 import { Button, MoneyInput } from '@equisoft/design-elements-react';
-import React from 'react';
+import { Story } from '@storybook/react';
+import React, { useState } from 'react';
 
 export default {
     title: 'Money Input',
     component: MoneyInput,
 };
 
-export const normal = () => (
+export const Normal: Story = () => (
     <>
-        <MoneyInput hint="Hint" label="Entrez un montant"/>
-        <MoneyInput hint="Hint" label="Choose a number" locale="en-CA"/>
+        <MoneyInput hint="Hint" label="Entrez un montant" />
+        <MoneyInput hint="Hint" label="Choose a number" locale="en-CA" />
     </>
 );
 
-export const englishLocale = () => (
-    <MoneyInput label="Choose a number" locale="en-CA"/>
+export const EnglishLocale: Story = () => (
+    <MoneyInput label="Choose a number" locale="en-CA" />
 );
-export const noLabel = () => (
-    <MoneyInput/>
+export const NoLabel: Story = () => (
+    <MoneyInput />
 );
-export const disabled = () => (
-    <MoneyInput disabled label="Entrez un montant"/>
+export const Disabled: Story = () => (
+    <MoneyInput disabled label="Entrez un montant" />
 );
-export const withCurrency = () => (
-    <MoneyInput label="Entrez un montant" currency="USD"/>
+export const WithCurrency: Story = () => (
+    <MoneyInput label="Entrez un montant" currency="USD" />
 );
-export const withPrecision = () => (
-    <MoneyInput label="Entrez un montant" precision={0}/>
+export const WithPrecision: Story = () => (
+    <MoneyInput label="Entrez un montant" precision={0} />
 );
-export const withValue = () => (
-    <MoneyInput label="Entrez un montant" value={350}/>
-);
-export const required = () => (
+export const ControlledWithValue: Story = () => {
+    const [value, setValue] = useState<number | null>(350);
+
+    return (
+        <MoneyInput label="Entrez un montant" value={value} onChange={setValue} />
+    );
+};
+export const Required: Story = () => (
     <form onSubmit={(event) => event.preventDefault()}>
-        <MoneyInput required label="Entrez un montant"/>
+        <MoneyInput required label="Entrez un montant" />
         <Button buttonType="primary" type="submit">Soumettre</Button>
     </form>
 );
-export const customErrorMessage = () => (
+export const CustomErrorMessage: Story = () => (
     <form onSubmit={(event) => event.preventDefault()}>
-        <MoneyInput required label="Entrez un montant" validationErrorMessage="Custom error message."/>
+        <MoneyInput required label="Entrez un montant" validationErrorMessage="Custom error message." />
     </form>
 );
-export const onChangeCallback = () => (
+export const OnChangeCallback: Story = () => (
     <MoneyInput
         label="Entrez un montant"
         onChange={(value, formattedValue) => {
-            console.log('value:', value);
-            console.log('formattedValue: ', formattedValue);
+            console.info('value:', value);
+            console.info('formattedValue: ', formattedValue);
         }}
     />
 );

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useMemo, VoidFunctionComponent } from 'react';
 
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
 const Input = styled.input`
-    ${props => {
-        return `
+    ${(props) => `
             position: absolute;
             z-index: -1;
 
@@ -28,8 +27,7 @@ const Input = styled.input`
                 border-color: ${props.theme.main['primary-1.1']};
                 color: ${props.theme.greys.white};
             }
-      `;
-    }}
+      `}
 `;
 
 interface OptionButtonProps {
@@ -39,15 +37,15 @@ interface OptionButtonProps {
     value: number;
 }
 
-const OptionButton = ({ checked, label, name, value }: OptionButtonProps) => {
-    const id = uuid();
+export const OptionButton: VoidFunctionComponent<OptionButtonProps> = ({
+    checked, label, name, value,
+}: OptionButtonProps) => {
+    const id = useMemo(uuid, []);
 
     return (
-      <div>
-          <Input checked={checked} id={id} name={name} type="radio" value={value} />
-          <label htmlFor={id}>{label}</label>
-      </div>
+        <div>
+            <Input checked={checked} id={id} name={name} type="radio" value={value} />
+            <label htmlFor={id}>{label}</label>
+        </div>
     );
 };
-
-export { OptionButton };

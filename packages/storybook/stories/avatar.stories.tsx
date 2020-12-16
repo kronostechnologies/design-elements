@@ -1,4 +1,5 @@
 import { Avatar } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
@@ -7,12 +8,8 @@ export default {
     component: Avatar,
 };
 
-export const desktop = () => {
-    return <Avatar username="Patrick B" />;
-};
-desktop.decorators = [DesktopDecorator];
+export const Desktop: Story = () => <Avatar username="Patrick B" />;
+Desktop.decorators = [DesktopDecorator];
 
-export const mobile = () => {
-    return <Avatar username="John" />;
-};
-mobile.decorators = [MobileDecorator];
+export const Mobile: Story = () => <Avatar username="John" />;
+Mobile.decorators = [MobileDecorator];

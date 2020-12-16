@@ -1,7 +1,6 @@
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
-import { mount, shallow } from 'enzyme';
+import { mountWithTheme, renderWithProviders } from '@design-elements/test-utils/renderer';
+import { shallow } from 'enzyme';
 import React from 'react';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { IconButton } from './icon-button';
 
 describe('Icon Button', () => {
@@ -22,16 +21,15 @@ describe('Icon Button', () => {
 
     test('onClick callback cannot be called when disabled', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(
-                <IconButton
-                    label="home"
-                    iconName="home"
-                    onClick={callback}
-                    buttonType="primary"
-                    disabled
-                />,
-        ));
+        const wrapper = mountWithTheme(
+            <IconButton
+                label="home"
+                iconName="home"
+                onClick={callback}
+                buttonType="primary"
+                disabled
+            />,
+        );
 
         wrapper.find(IconButton).simulate('click');
         expect(callback).not.toHaveBeenCalled();

@@ -4,7 +4,7 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 
-const Wrapper = styled.div<{padding: number}>`
+const Wrapper = styled.div<{ padding: number }>`
     background-color: ${({ theme }) => theme.greys.white};
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -28,13 +28,14 @@ const MenuLink = styled(NavLink)`
     display: flex;
     flex-grow: 1;
     line-height: 24px;
-    ${focus}
     padding: var(--spacing-half) var(--spacing-2x);
     text-decoration: none;
     width: max-content;
 
+    ${focus};
+
     &:hover {
-        background-color: ${props => props.theme.greys.grey};
+        background-color: ${(props) => props.theme.greys.grey};
     }
 
     &.active {
@@ -42,11 +43,11 @@ const MenuLink = styled(NavLink)`
     }
 `;
 
-const ShowMoreMenu = styled.ul<{open?: boolean}>`
-    background-color: ${props => props.theme.greys.white};
+const ShowMoreMenu = styled.ul<{ open?: boolean }>`
+    background-color: ${(props) => props.theme.greys.white};
     border-radius: var(--border-radius);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-    display: ${({ open }) => open ? 'flex' : 'none'};
+    display: ${({ open }) => (open ? 'flex' : 'none')};
     flex-wrap: wrap;
     left: 48px;
     list-style: none;
@@ -69,9 +70,9 @@ const ShowMoreMenu = styled.ul<{open?: boolean}>`
     }
 `;
 
-const ShowMore = styled.button<{active?: boolean}>`
+const ShowMore = styled.button<{ active?: boolean }>`
     align-items: center;
-    background-color: ${({ active, theme }) => active ? theme.greys.grey : 'transparent'};
+    background-color: ${({ active, theme }) => (active ? theme.greys.grey : 'transparent')};
     border: 1px solid transparent;
     border-radius: 16px;
     color: ${({ theme }) => theme.greys['dark-grey']};
@@ -79,12 +80,13 @@ const ShowMore = styled.button<{active?: boolean}>`
     display: flex;
     height: 34px;
     justify-content: center;
-    ${focus}
     width: 34px;
 
+    ${focus};
+
     &:hover {
-        background-color: ${props => props.theme.greys.grey};
-        color: ${props => props.theme.greys['dark-grey']};
+        background-color: ${(props) => props.theme.greys.grey};
+        color: ${(props) => props.theme.greys['dark-grey']};
     }
 `;
 
@@ -102,20 +104,20 @@ const NavigationItem = styled.li`
         }
 
         ${ShowMore} {
-            background-color: ${props => props.theme.greys.grey};
-            color: ${props => props.theme.greys['dark-grey']};
+            background-color: ${(props) => props.theme.greys.grey};
+            color: ${(props) => props.theme.greys['dark-grey']};
         }
     }
 `;
 
 const IconLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     &.active {
-        background-color: ${props => props.theme.main['primary-1.1']};
-        color: ${props => props.theme.greys.white} !important;
+        background-color: ${(props) => props.theme.main['primary-1.1']};
+        color: ${(props) => props.theme.greys.white} !important;
 
         &:hover {
-            background-color: ${props => props.theme.main['primary-1.1']};
-            color: ${props => props.theme.greys.white};
+            background-color: ${(props) => props.theme.main['primary-1.1']};
+            color: ${(props) => props.theme.greys.white};
         }
     }
 
@@ -148,21 +150,36 @@ export function GlobalNavigation({
     const itemHeight = 48;
     const wrapperPadding = 12;
 
+    function handleClickOutside(event: MouseEvent): void {
+        const wrapperRefIsNull = wrapperRef.current === null;
+        const wrapperContainsClick = wrapperRef.current?.contains(event.target as Node);
+        const shouldClose = wrapperRefIsNull || !wrapperContainsClick;
+
+        if (shouldClose) {
+            setMenuOpen(false);
+        }
+    }
+
     useEffect(() => {
         if (overflow) {
-            if (wrapperRef.current === null) return;
+            if (wrapperRef.current === null) {
+                return;
+            }
 
             document.addEventListener('mouseup', handleClickOutside);
             return () => document.removeEventListener('mouseup', handleClickOutside);
         }
-        return;
+
+        return undefined;
     }, [overflow]);
 
     useEffect(() => {
-        if (wrapperRef.current === null) return;
+        if (wrapperRef.current === null) {
+            return;
+        }
 
         const totalItemsHeight = (mainItems.length + footerItems.length) * itemHeight;
-        const wrapperInnerHeight =  wrapperRef.current.clientHeight - (wrapperPadding * 2);
+        const wrapperInnerHeight = wrapperRef.current.clientHeight - (wrapperPadding * 2);
 
         if (totalItemsHeight >= wrapperInnerHeight) {
             const wrapperCapacity = Math.floor(wrapperInnerHeight / itemHeight);
@@ -175,17 +192,7 @@ export function GlobalNavigation({
             setNavItems(mainItems);
             setOverflow(false);
         }
-    }, [mainItems, wrapperRef]);
-
-    const handleClickOutside = (event: MouseEvent): void => {
-        const wrapperRefIsNull = wrapperRef.current === null;
-        const wrapperContainsClick = wrapperRef.current?.contains(event.target as Node);
-        const shouldClose = wrapperRefIsNull || !wrapperContainsClick;
-
-        if (shouldClose) {
-            setMenuOpen(false);
-        }
-    };
+    }, [footerItems.length, mainItems, wrapperRef]);
 
     const navItem = (item: GlobalNavigationItem): ReactElement => (
         <NavigationItem key={`${item.name}-${item.iconName}`} title={item.name}>
@@ -196,7 +203,7 @@ export function GlobalNavigation({
                 onClick={() => setMenuOpen(false)}
                 onFocus={() => setMenuOpen(false)}
             >
-                <Icon name={item.iconName} size="16"/>
+                <Icon name={item.iconName} size="16" />
             </IconLink>
         </NavigationItem>
     );
@@ -217,7 +224,7 @@ export function GlobalNavigation({
                                 data-testid="showMoreIcon"
                                 onClick={() => setMenuOpen(!menuOpen)}
                             >
-                                <Icon name="moreVertical" size="16"/>
+                                <Icon name="moreVertical" size="16" />
                             </ShowMore>
                             <ShowMoreMenu
                                 open={menuOpen}

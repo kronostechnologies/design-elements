@@ -1,5 +1,11 @@
 import React, { ComponentType, ElementType, ReactElement } from 'react';
 
-export function decorateWith(Decorator: ElementType): (Story: ComponentType) => ReactElement {
-    return (Story: ComponentType) => <Decorator> <Story /> </Decorator>;
+export type Decorator = (Story: React.ComponentType) => ReactElement;
+
+export function decorateWith(Component: ElementType): Decorator {
+    return (Story: ComponentType) => (
+        <Component>
+            <Story />
+        </Component>
+    );
 }

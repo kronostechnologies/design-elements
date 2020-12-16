@@ -1,4 +1,4 @@
-import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
+import { Theme } from '@design-elements/themes/theme';
 import { main } from './main';
 
 export const tokens: Theme['tokens'] = {

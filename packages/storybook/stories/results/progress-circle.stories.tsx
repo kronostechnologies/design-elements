@@ -1,4 +1,5 @@
 import { ProgressCircle } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,7 +8,11 @@ export default {
     component: ProgressCircle,
 };
 
-export const small = () => (
+const SmallContainer = styled.div`
+    width: 124px;
+`;
+
+export const Small: Story = () => (
     <SmallContainer>
         <ProgressCircle
             descriptionLabel="RRSP"
@@ -18,7 +23,11 @@ export const small = () => (
     </SmallContainer>
 );
 
-export const large = () => (
+const LargeContainer = styled.div`
+    width: 168px;
+`;
+
+export const Large: Story = () => (
     <LargeContainer>
         <ProgressCircle
             descriptionLabel="RRSP"
@@ -28,11 +37,3 @@ export const large = () => (
         />
     </LargeContainer>
 );
-
-const SmallContainer = styled.div`
-    width: 124px;
-`;
-
-const LargeContainer = styled.div`
-    width: 168px;
-`;

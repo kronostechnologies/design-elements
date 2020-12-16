@@ -379,8 +379,8 @@ exports[`Table has desktop styles 1`] = `
 exports[`Table has error rows styles 1`] = `
 .c1 {
   border-top: 1px solid #D9DDE2;
-  border: 1px solid #A40C2E;
   background-color: #fcf8f9;
+  border: 1px solid #A40C2E;
 }
 
 .c2 {

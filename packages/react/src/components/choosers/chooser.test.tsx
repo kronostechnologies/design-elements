@@ -3,6 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Chooser } from './chooser';
+
 jest.mock('uuid/v4');
 
 describe('Chooser', () => {

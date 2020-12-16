@@ -7,9 +7,10 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 
 const StyledTextArea = styled.textarea`
+    ${(props) => inputsStyle(props.theme)};
+
     min-height: 6.5rem;
     min-width: 100%;
-    ${props => inputsStyle(props.theme)}
     outline: none;
     overflow: auto;
     resize: vertical;
@@ -24,16 +25,18 @@ export interface TextAreaProps {
     placeholder?: string;
     required?: boolean;
     /**
-    * Message displayed in case of validation error
-    * @default This text area input is invalid
-    **/
+     * Message displayed in case of validation error
+     * @default This text area input is invalid
+     */
     validationErrorMessage?: string;
     /** Only use if you want to control input value externally */
     value?: string;
     hint?: string;
 
     onBlur?(event: FocusEvent<HTMLTextAreaElement>): void;
+
     onChange?(event: ChangeEvent<HTMLTextAreaElement>): void;
+
     onFocus?(event: FocusEvent<HTMLTextAreaElement>): void;
 }
 
@@ -73,7 +76,9 @@ export function TextArea({
         }
     }
 
-    const { defaultValue, disabled, label, placeholder, required, validationErrorMessage, value } = props;
+    const {
+        defaultValue, disabled, label, placeholder, required, validationErrorMessage, value,
+    } = props;
 
     return (
         <FieldContainer

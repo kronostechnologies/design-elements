@@ -8,7 +8,10 @@ interface IntlProviderProps {
 
 export function IntlProvider({ children, language }: IntlProviderProps): ReactElement {
     useEffect(() => {
-        language && i18n.changeLanguage(language);
+        if (language) {
+            // noinspection JSIgnoredPromiseFromCall
+            i18n.changeLanguage(language);
+        }
     }, [language]);
 
     return children;

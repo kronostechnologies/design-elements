@@ -1,4 +1,5 @@
 import { ProgressBar } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,7 +7,7 @@ export default {
     component: ProgressBar,
 };
 
-export const normal = () => (
+export const Normal: Story = () => (
     <>
         <ProgressBar
             descriptionLabel="You"

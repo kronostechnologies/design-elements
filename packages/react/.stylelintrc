@@ -1,3 +1,0 @@
-{
-  "extends": ["@equisoft/stylelint-config-styled-components"]
-}

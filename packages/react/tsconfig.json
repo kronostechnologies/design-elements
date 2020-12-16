@@ -1,28 +1,27 @@
 {
-    "extends": "@equisoft/typescript-config/tsconfig.standards.json",
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "jsx": "react",
-        "allowSyntheticDefaultImports": true,
-        "noEmitOnError": true,
-        "sourceMap": true,
-        "baseUrl": "./src/",
-        "paths": {
-            "@design-elements/*": ["./*"]
-        },
-        "outDir": "./dist",
-        "declaration": true,
-        "declarationDir": "./dist"
+  "extends": "@equisoft/typescript-config/tsconfig.standards.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "@design-elements/*": ["./*"]
     },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules/**/*",
-        "**/*.test.ts?",
-        "**/test-utils/**/*"
-    ]
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.test.ts?",
+    "**/test-utils/**/*"
+  ]
 }

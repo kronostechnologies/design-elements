@@ -1,5 +1,13 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
-import React, { ChangeEvent, DetailedHTMLProps, FocusEvent, InputHTMLAttributes, ReactElement, useState } from 'react';
+import React, {
+    ChangeEvent,
+    DetailedHTMLProps,
+    FocusEvent,
+    InputHTMLAttributes,
+    ReactElement, useCallback,
+    useMemo,
+    useState,
+} from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 
@@ -45,27 +53,27 @@ export const TextInput = React.forwardRef(({
 }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
-    const id = uuid();
+    const id = useMemo(uuid, []);
 
-    function handleBlur(event: FocusEvent<HTMLInputElement>): void {
+    const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         setValidity({ validity: event.currentTarget.checkValidity() });
 
         if (onBlur) {
             onBlur(event);
         }
-    }
+    }, [onBlur]);
 
-    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+    const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (onChange) {
             onChange(event);
         }
-    }
+    }, [onChange]);
 
-    function handleFocus(event: FocusEvent<HTMLInputElement>): void {
+    const handleFocus: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (onFocus) {
             onFocus(event);
         }
-    }
+    }, [onFocus]);
 
     const {
         defaultValue,

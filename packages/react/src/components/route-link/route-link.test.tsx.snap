@@ -61,8 +61,8 @@ exports[`Route Link disabled matches snapshot (Link) 1`] = `
 
 <a
   aria-disabled="true"
-  className="c0 navigation"
-  disabled={true}
+  class="c0 navigation"
+  disabled=""
 >
   Navigation Link
 </a>
@@ -129,8 +129,8 @@ exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
 
 <a
   aria-disabled="true"
-  className="c0 navigation"
-  disabled={true}
+  class="c0 navigation"
+  disabled=""
 >
   Navigation Link
 </a>
@@ -209,9 +209,8 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 }
 
 <a
-  className="c0 navigation"
+  class="c0 navigation"
   href="/test"
-  onClick={[Function]}
 >
   Navigation Link
 </a>
@@ -290,10 +289,8 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 }
 
 <a
-  aria-current={null}
-  className="c0 navigation"
+  class="c0 navigation"
   href="/test"
-  onClick={[Function]}
 >
   Navigation Link
 </a>
@@ -372,13 +369,12 @@ exports[`Route Link only icon matches snapshot (Link) 1`] = `
 }
 
 <a
-  className="c0 navigation iconOnly"
+  class="c0 navigation iconOnly"
   href="/test"
-  onClick={[Function]}
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -458,14 +454,12 @@ exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
 }
 
 <a
-  aria-current={null}
-  className="c0 navigation iconOnly"
+  class="c0 navigation iconOnly"
   href="/test"
-  onClick={[Function]}
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -545,13 +539,12 @@ exports[`Route Link with icon matches snapshot (Link) 1`] = `
 }
 
 <a
-  className="c0 navigation"
+  class="c0 navigation"
   href="/test"
-  onClick={[Function]}
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />
@@ -632,14 +625,12 @@ exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
 }
 
 <a
-  aria-current={null}
-  className="c0 navigation"
+  class="c0 navigation"
   href="/test"
-  onClick={[Function]}
 >
   <svg
     color="currentColor"
-    focusable={false}
+    focusable="false"
     height="16"
     width="16"
   />

@@ -1,10 +1,9 @@
-import { Theme } from '@design-elements/components/theme-wrapper/theme-wrapper';
+import { Theme } from '@design-elements/themes/theme';
 import { focus } from '@design-elements/utils/css-state';
 import styled from 'styled-components';
 
 export const Label = styled.label`
-    ${({ theme }: { theme: Theme }) => {
-        return `
+    ${({ theme }: { theme: Theme }) => `
             --border-radius: 8px;
 
             align-items: center;
@@ -58,6 +57,5 @@ export const Label = styled.label`
                 height: 3rem;
                 width: 3rem;
             }
-        `;
-    }}
+        `}
 `;

@@ -3,7 +3,18 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { themeProvider, ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { MoneyInput } from './money-input';
+
 jest.mock('uuid/v4');
+
+function simulateValueChange(input: HTMLInputElement, value: String): void {
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value } });
+    fireEvent.blur(input);
+}
+
+function getInputElement(container: Element): HTMLInputElement {
+    return container.querySelector('input') as HTMLInputElement;
+}
 
 describe('CurrencyInput Component', () => {
     it('should remove formatting on focus', () => {
@@ -145,16 +156,4 @@ describe('CurrencyInput Component', () => {
 
         expect(tree).toMatchSnapshot();
     });
-
 });
-
-function simulateValueChange(input: HTMLInputElement, value: String): void {
-    fireEvent.focus(input);
-    fireEvent.change(input, { target: { value } });
-    fireEvent.blur(input);
-}
-
-function getInputElement(container: Element): HTMLInputElement {
-    // tslint:disable-next-line: no-unnecessary-type-assertion
-    return container.querySelector('input') as HTMLInputElement;
-}

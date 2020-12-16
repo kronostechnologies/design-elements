@@ -24,14 +24,14 @@ describe('Legend', () => {
 
     test('Is rendering all legends', () => {
         const wrapper = mount(
-            ThemeWrapped(<Legend items={legendItem}/>),
+            ThemeWrapped(<Legend items={legendItem} />),
         );
-        expect(wrapper.find(`li`).length).toBe(3);
+        expect(wrapper.find('li').length).toBe(3);
     });
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            ThemeWrapped(<Legend items={legendItem}/>),
+            ThemeWrapped(<Legend items={legendItem} />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

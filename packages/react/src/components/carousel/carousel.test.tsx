@@ -109,7 +109,7 @@ describe('Carousel', () => {
         describe('Loop', () => {
             it('should go backward when previous is clicked and first slide is active', () => {
                 useCarouselResponse.active = 0;
-                const wrapper = shallow(<Carousel loop={true}>{slides}</Carousel>);
+                const wrapper = shallow(<Carousel loop>{slides}</Carousel>);
 
                 getByTestId(wrapper, 'carousel-previous').simulate('click');
 
@@ -118,7 +118,7 @@ describe('Carousel', () => {
 
             it('should go forward when next is clicked and last slide is active', () => {
                 useCarouselResponse.active = numberOfSlides - 1;
-                const wrapper = shallow(<Carousel loop={true}>{slides}</Carousel>);
+                const wrapper = shallow(<Carousel loop>{slides}</Carousel>);
 
                 getByTestId(wrapper, 'carousel-next').simulate('click');
 

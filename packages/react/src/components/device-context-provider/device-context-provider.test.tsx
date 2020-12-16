@@ -1,46 +1,46 @@
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import React, { ReactElement } from 'react';
 import { breakpoints } from '../../tokens/breakpoints';
-import { DeviceContextProvider, DeviceType, useDeviceContext } from './device-context-provider';
+import { DeviceContextProps, DeviceContextProvider, DeviceType, useDeviceContext } from './device-context-provider';
 
 const TestComponent = (): ReactElement => {
     const deviceContext = useDeviceContext();
-    return <button test-context={deviceContext} />;
+    return <button type="button" data-test-context={deviceContext} />;
 };
 
-const mountComponent = (staticDevice?: DeviceType) => (
-    mount(
+function mountComponent(staticDevice?: DeviceType): ReactWrapper {
+    return mount(
         <DeviceContextProvider staticDevice={staticDevice}>
-            <TestComponent/>
+            <TestComponent />
         </DeviceContextProvider>,
-    )
-);
+    );
+}
 
-const getContextObject = (
+function getContextObject(
     device: DeviceType,
-    desktop: boolean,
-    tablet: boolean,
-    mobile: boolean,
-) => {
+    isDesktop: boolean,
+    isTablet: boolean,
+    isMobile: boolean,
+): DeviceContextProps {
     return {
-        device: device,
-        isDesktop: desktop,
-        isTablet: tablet,
-        isMobile: mobile,
+        device,
+        isDesktop,
+        isTablet,
+        isMobile,
         breakpoints,
     };
-};
+}
 
-const setScreenWidth = (width: number) => {
+function setScreenWidth(width: number): void {
     Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: width });
-};
+}
 
 describe('Device Context Provider', () => {
     test('Default value is desktop', () => {
-        const wrapper = mount(<TestComponent/>);
+        const wrapper = mount(<TestComponent />);
         const element = wrapper.find('button');
 
-        expect(element.prop('test-context')).toEqual(getContextObject('desktop', true, false, false));
+        expect(element.prop('data-test-context')).toEqual(getContextObject('desktop', true, false, false));
     });
 
     test('Should return desktop when screen width is larger than 1024px', () => {
@@ -48,7 +48,7 @@ describe('Device Context Provider', () => {
         const wrapper = mountComponent();
         const element = wrapper.find('button');
 
-        expect(element.prop('test-context')).toEqual(getContextObject('desktop', true, false, false));
+        expect(element.prop('data-test-context')).toEqual(getContextObject('desktop', true, false, false));
     });
 
     test('Should return tablet when screen width is larger than 480px and smaller than 1024px', () => {
@@ -56,7 +56,7 @@ describe('Device Context Provider', () => {
         const wrapper = mountComponent();
         const element = wrapper.find('button');
 
-        expect(element.prop('test-context')).toEqual(getContextObject('tablet', false, true, false));
+        expect(element.prop('data-test-context')).toEqual(getContextObject('tablet', false, true, false));
     });
 
     test('Should return mobile when screen width is smaller than 480px', () => {
@@ -64,7 +64,7 @@ describe('Device Context Provider', () => {
         const wrapper = mountComponent();
         const element = wrapper.find('button');
 
-        expect(element.prop('test-context')).toEqual(getContextObject('mobile', false, false, true));
+        expect(element.prop('data-test-context')).toEqual(getContextObject('mobile', false, false, true));
     });
 
     test('Should return staticDevice value (tablet)', () => {
@@ -72,6 +72,6 @@ describe('Device Context Provider', () => {
         const wrapper = mountComponent('tablet');
         const element = wrapper.find('button');
 
-        expect(element.prop('test-context')).toEqual(getContextObject('tablet', false, true, false));
+        expect(element.prop('data-test-context')).toEqual(getContextObject('tablet', false, true, false));
     });
 });

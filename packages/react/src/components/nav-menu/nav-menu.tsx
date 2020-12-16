@@ -2,7 +2,7 @@ import React, { forwardRef, KeyboardEvent, ReactElement, Ref, RefObject, useEffe
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider'
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const List = styled.ul`
     background-color: ${({ theme }) => theme.greys.white};
@@ -17,12 +17,16 @@ const List = styled.ul`
     width: 100%;
 `;
 
+interface ListItemLinkProps extends NavLinkProps {
+    $device: DeviceContextProps;
+}
+
 const ListItemLink = styled(NavLink)<ListItemLinkProps>`
     align-items: center;
     color: ${({ theme }) => theme.greys.black};
     display: flex;
-    font-size: ${({ $device: { isMobile, isTablet } }) => (isTablet || isMobile) ? '1rem' : '0.875rem'};
-    line-height: ${({ $device: { isMobile, isTablet } }) => (isTablet || isMobile) ? 2.5 : 2}rem;
+    font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
+    line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
     padding: 0 var(--spacing-2x);
     text-decoration: none;
@@ -52,10 +56,6 @@ interface ListOption extends NavMenuOption {
     ref: RefObject<HTMLAnchorElement>;
 }
 
-interface ListItemLinkProps extends NavLinkProps {
-    $device: DeviceContextProps;
-}
-
 export interface NavMenuProps {
     id?: string;
     options: NavMenuOption[];
@@ -63,15 +63,17 @@ export interface NavMenuProps {
     /** Sets the current focused element in the menu */
     focusedValue?: string;
     hidden?: boolean;
+
     /** onChange callback function, invoked when an option is selected */
     onChange?(option: NavMenuOption): void;
+
     /** onKeyDown callback function, invoked when a key is pressed */
     onKeyDown?(event: KeyboardEvent): void;
 }
 
 export const NavMenu = forwardRef(({
     className,
-    id = useMemo(uuid, []),
+    id: providedId,
     options,
     focusedValue,
     hidden,
@@ -79,20 +81,18 @@ export const NavMenu = forwardRef(({
     onKeyDown,
 }: NavMenuProps, ref: Ref<HTMLUListElement>): ReactElement => {
     const device = useDeviceContext();
-    const list: ListOption[] = useMemo((): ListOption[] =>
-        options.map((option, index)  =>
-            ({
-                ...option,
-                id: `${id}_${option.value}`,
-                focused: false,
-                focusIndex: index,
-                ref: React.createRef<HTMLAnchorElement>(),
-            }))
-    , [id, options]);
+    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const list: ListOption[] = useMemo((): ListOption[] => options.map((option, index) => ({
+        ...option,
+        id: `${id}_${option.value}`,
+        focused: false,
+        focusIndex: index,
+        ref: React.createRef<HTMLAnchorElement>(),
+    })), [id, options]);
 
     useEffect(() => {
         if (focusedValue) {
-            const currentOption = list.find(option => option.value === focusedValue);
+            const currentOption = list.find((option) => option.value === focusedValue);
             currentOption?.ref.current?.focus();
         }
     }, [focusedValue, list]);
@@ -120,7 +120,7 @@ export const NavMenu = forwardRef(({
             ref={ref}
             hidden={hidden}
         >
-            {list.map(option => (
+            {list.map((option) => (
                 <li key={option.id}>
                     <ListItemLink
                         data-testid={`listitem-${option.value}`}

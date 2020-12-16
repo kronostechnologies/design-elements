@@ -5,6 +5,32 @@ import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
+function givenTabs(amount: number): Tab[] {
+    const tabs: Tab[] = [];
+    for (let i = 1; i <= amount; i++) {
+        tabs.push({
+            title: `button ${i}`,
+            panelContent: <div data-testid={`tab-panel-${i}`}>content</div>,
+        });
+    }
+
+    return tabs;
+}
+
+function simulateTabSelectionToTheRight(tabButtonsDiv: CommonWrapper): void {
+    tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
+    tabButtonsDiv.simulate('keydown', { key: ' ' });
+}
+
+function givenClickOnFirstTab(wrapper: ReactWrapper): void {
+    getByTestId(wrapper, 'tab-button-1').simulate('click');
+}
+
+function expectPanelToBeVisible(wrapper: ReactWrapper, tabPanelTestId: string): void {
+    const tabPanel = findByTestId(wrapper, tabPanelTestId);
+    expect(tabPanel.isEmptyRender()).toBe(false);
+}
+
 describe('Tabs', () => {
     test('should display the first tab panel by default', () => {
         const expectedTabPanel = 'content';
@@ -65,13 +91,12 @@ describe('Tabs', () => {
         const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
 
         tabButtonsContainer.simulate('keydown', { key: 'ArrowRight' });
-        tabButtonsContainer.simulate('keydown', { key: key });
+        tabButtonsContainer.simulate('keydown', { key });
 
         expectPanelToBeVisible(wrapper, 'tab-panel-2');
     });
 
-    test(
-        'when the tab key is entered and the focus tab is not the active one it should select back the active one',
+    test('when the tab key is entered and the focus tab is not the active one it should select back the active one',
         () => {
             const tabs: Tab[] = givenTabs(3);
             const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
@@ -95,7 +120,7 @@ describe('Tabs', () => {
         simulateTabSelectionToTheRight(tabButtonsContainer);
 
         tabButtonsContainer.simulate('keydown', { key: 'ArrowLeft' });
-        tabButtonsContainer.simulate('keydown', { key: key });
+        tabButtonsContainer.simulate('keydown', { key });
 
         expectPanelToBeVisible(wrapper, 'tab-panel-1');
     });
@@ -103,8 +128,7 @@ describe('Tabs', () => {
     test.each([
         ['space', ' '],
         ['enter', 'Enter'],
-    ])(
-        'when the left arrow and the %s keys are entered and first tab is active then it should display the last tab',
+    ])('when the left arrow and the %s keys are entered and first tab is active then it should display the last tab',
         (_, key) => {
             const tabs: Tab[] = givenTabs(3);
             const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
@@ -112,7 +136,7 @@ describe('Tabs', () => {
             const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
 
             tabButtonsContainer.simulate('keydown', { key: 'ArrowLeft' });
-            tabButtonsContainer.simulate('keydown', { key: key });
+            tabButtonsContainer.simulate('keydown', { key });
 
             expectPanelToBeVisible(wrapper, 'tab-panel-3');
         });
@@ -129,10 +153,11 @@ describe('Tabs', () => {
             getByTestId(wrapper, 'tab-button-3').simulate('click');
 
             tabButtonsContainer.simulate('keydown', { key: 'ArrowRight' });
-            tabButtonsContainer.simulate('keydown', { key: key });
+            tabButtonsContainer.simulate('keydown', { key });
 
             expectPanelToBeVisible(wrapper, 'tab-panel-1');
-        });
+        },
+    );
 
     test.each([
         ['space', ' '],
@@ -144,7 +169,7 @@ describe('Tabs', () => {
         getByTestId(wrapper, 'tab-button-3').simulate('click');
 
         tabButtonsContainer.simulate('keydown', { key: 'Home' });
-        tabButtonsContainer.simulate('keydown', { key: key });
+        tabButtonsContainer.simulate('keydown', { key });
 
         expectPanelToBeVisible(wrapper, 'tab-panel-1');
     });
@@ -159,34 +184,8 @@ describe('Tabs', () => {
         const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
 
         tabButtonsContainer.simulate('keydown', { key: 'End' });
-        tabButtonsContainer.simulate('keydown', { key: key });
+        tabButtonsContainer.simulate('keydown', { key });
 
         expectPanelToBeVisible(wrapper, 'tab-panel-3');
     });
 });
-
-function givenTabs(amount: number): Tab[] {
-    const tabs: Tab[] = [];
-    for (let i = 1; i <= amount; i++) {
-        tabs.push({
-            title: `button ${i}`,
-            panelContent: <div data-testid={`tab-panel-${i}`}>content</div>,
-        });
-    }
-
-    return tabs;
-}
-
-function simulateTabSelectionToTheRight(tabButtonsDiv: CommonWrapper): void {
-    tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
-    tabButtonsDiv.simulate('keydown', { key: ' ' });
-}
-
-function givenClickOnFirstTab(wrapper: ReactWrapper): void {
-    getByTestId(wrapper, 'tab-button-1').simulate('click');
-}
-
-function expectPanelToBeVisible(wrapper: ReactWrapper, tabPanelTestId: string): void {
-    const tabPanel = findByTestId(wrapper, tabPanelTestId);
-    expect(tabPanel.isEmptyRender()).toBe(false);
-}

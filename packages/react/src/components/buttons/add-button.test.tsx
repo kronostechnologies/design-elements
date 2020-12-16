@@ -26,7 +26,14 @@ describe('Add Button', () => {
     });
 
     test('has disabled styles', () => {
-        const tree = renderWithProviders(<AddButton buttonType="primary" onClick={jest.fn()} disabled label="Primary Button" />);
+        const tree = renderWithProviders(
+            <AddButton
+                buttonType="primary"
+                onClick={jest.fn()}
+                disabled
+                label="Primary Button"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

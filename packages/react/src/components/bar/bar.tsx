@@ -1,7 +1,7 @@
-import React, { ReactText } from 'react';
+import { Theme } from '@design-elements/themes/theme';
+import React, { ReactText, VoidFunctionComponent } from 'react';
 
 import styled from 'styled-components';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Container = styled.div`
     p {
@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-    background-color: ${props => props.theme.greys.grey};
+    background-color: ${(props) => props.theme.greys.grey};
     border-radius: var(--border-radius);
     height: 0.5rem;
     margin-bottom: var(--spacing-half);
@@ -25,7 +25,7 @@ const StyledBar = styled.div`
     background: ${(props: { color?: string, percent: number }) => props.color};
     border-radius: var(--border-radius);
     height: 0.5rem;
-    width: ${props => Math.min(Math.max(props.percent, 0), 100)}%;
+    width: ${(props) => Math.min(Math.max(props.percent, 0), 100)}%;
 `;
 
 interface BarProps {
@@ -34,7 +34,7 @@ interface BarProps {
     endLabel: ReactText;
 }
 
-const Bar = ({ color, percent, endLabel }: BarProps) => (
+export const Bar: VoidFunctionComponent<BarProps> = ({ color, percent, endLabel }) => (
     <Container>
         <Progress>
             <StyledBar color={color} percent={percent} />
@@ -42,5 +42,3 @@ const Bar = ({ color, percent, endLabel }: BarProps) => (
         <p>{endLabel}</p>
     </Container>
 );
-
-export { Bar };

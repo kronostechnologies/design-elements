@@ -1,25 +1,42 @@
 import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, ReactNode, useState } from 'react';
-import styled from 'styled-components';
+import styled, { StyledProps } from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
 type MessageType = 'warning' | 'error';
 
-const Container = styled.div<{messageType: MessageType, isMobile: boolean}>`
-    background-color: ${props => props.messageType === 'error' ? props.theme.notifications['error-2.1'] : props.theme.notifications['alert-3.3'] };
-    color: ${props => props.messageType === 'error' ? props.theme.greys.white : props.theme.greys.black };
-    font-size: ${({ isMobile }) => isMobile ? 1 : 0.75}rem;
-    font-weight: ${({ isMobile }) => isMobile ? 'var(--font-normal)' : 'var(--font-semi-bold)' };
-    letter-spacing: ${({ isMobile }) => isMobile ? 0.46 : 0.2}px;
-    line-height: ${({ isMobile }) => isMobile ? 1.5 : 1.25}rem;
-    padding: ${({ isMobile }) => isMobile ? 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x) var(--spacing-6x)'};
+interface ContainerProps {
+    messageType: MessageType;
+    isMobile: boolean;
+}
+
+function getContainerBackgroundColor(props: StyledProps<ContainerProps>): string {
+    return props.messageType === 'error'
+        ? props.theme.notifications['error-2.1']
+        : props.theme.notifications['alert-3.3'];
+}
+
+function getContainerPadding({ isMobile }: ContainerProps): string {
+    return isMobile
+        ? 'var(--spacing-3x) var(--spacing-7x) var(--spacing-3x) var(--spacing-2x)'
+        : 'var(--spacing-2x) var(--spacing-6x)';
+}
+
+const Container = styled.div<ContainerProps>`
+    background-color: ${getContainerBackgroundColor};
+    color: ${(props) => (props.messageType === 'error' ? props.theme.greys.white : props.theme.greys.black)};
+    font-size: ${({ isMobile }) => (isMobile ? 1 : 0.75)}rem;
+    font-weight: ${({ isMobile }) => (isMobile ? 'var(--font-normal)' : 'var(--font-semi-bold)')};
+    letter-spacing: ${({ isMobile }) => (isMobile ? 0.46 : 0.2)}px;
+    line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1.25)}rem;
+    padding: ${getContainerPadding};
     position: relative;
 `;
 
-const Content = styled.div<{isMobile: boolean}>`
+const Content = styled.div<{ isMobile: boolean }>`
     display: flex;
-    justify-content: ${({ isMobile }) => isMobile ? '' : 'center'};
+    justify-content: ${({ isMobile }) => (isMobile ? '' : 'center')};
 
     svg {
         flex-shrink: 0;
@@ -31,19 +48,20 @@ const Content = styled.div<{isMobile: boolean}>`
     }
 `;
 
-const CloseButton = styled.button<{isMobile: boolean}>`
+const CloseButton = styled.button<{ isMobile: boolean }>`
     appearance: none;
     background: transparent;
     border: 1px solid transparent;
     color: currentColor;
     cursor: pointer;
-    height: ${({ isMobile }) => isMobile ? 48 : 32}px;
-    ${focus}
+    height: ${({ isMobile }) => (isMobile ? 48 : 32)}px;
     padding: 0;
     position: absolute;
-    right: ${({ isMobile }) => isMobile ? '0' : '6px'};
+    right: ${({ isMobile }) => (isMobile ? '0' : '6px')};
     top: 9px;
-    width: ${({ isMobile }) => isMobile ? 48 : 32}px;
+    width: ${({ isMobile }) => (isMobile ? 48 : 32)}px;
+
+    ${focus};
 
     svg {
         vertical-align: middle;
@@ -82,10 +100,10 @@ export function Banner({ children, type, hidden }: BannerProps): ReactElement | 
                 aria-label="Close"
                 type="button"
             >
-                <Icon name="x" size={isMobile ? '28' : '20'}/>
+                <Icon name="x" size={isMobile ? '28' : '20'} />
             </CloseButton>
             <Content isMobile={isMobile}>
-                <Icon name={GetIconName(type)} aria-hidden="true" size={isMobile ? '24' : '20'}/>
+                <Icon name={GetIconName(type)} aria-hidden="true" size={isMobile ? '24' : '20'} />
                 <p>{children}</p>
             </Content>
         </Container>

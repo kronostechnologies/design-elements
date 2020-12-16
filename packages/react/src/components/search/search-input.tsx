@@ -1,14 +1,14 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
+import { Theme } from '@design-elements/themes/theme';
 import { focus } from '@design-elements/utils/css-state';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 import { VisuallyHidden } from '../visually-hidden/visuallyhidden';
 
 const SearchWrapper = styled.div`
@@ -16,7 +16,7 @@ const SearchWrapper = styled.div`
 
     label {
         bottom: 0.5rem;
-        color: ${props => props.theme.greys['dark-grey']};
+        color: ${(props) => props.theme.greys['dark-grey']};
         display: inline-block;
         height: 1rem;
         left: 0.5rem;
@@ -33,36 +33,43 @@ const InnerWrapper = styled.div`
     z-index: 1;
 `;
 
+function iconColor(props: { theme: Theme, disabled?: boolean }): string {
+    if (props.disabled) {
+        return props.theme.greys['mid-grey'];
+    }
+
+    return props.theme.greys['dark-grey'];
+}
+
 const IcoSearch = styled(SearchIcon)`
-    color: ${(props: {theme: Theme, disabled?: boolean}) => (props.disabled ? props.theme.greys['mid-grey'] : props.theme.greys['dark-grey'])};
+    color: ${iconColor};
     height: 1rem;
     width: 1rem;
 `;
 
 const IcoReset = styled(XIcon)`
-    color: ${props => props.theme.greys['dark-grey']};
+    color: ${(props) => props.theme.greys['dark-grey']};
     height: 1.25rem;
     margin: -1px;
     width: 1.25rem;
 `;
 
 const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
-    ${({ theme, hasButton }) => `
-        ${inputsStyle(theme)} /* Must be the first rule */
-        border-radius: ${hasButton && 'var(--border-radius) 0 0 var(--border-radius)'};
-        padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
+    /* Must be the first rule */
+    ${({ theme }) => inputsStyle(theme)};
 
-        label + & {
-          margin-top: 0;
-        }
+    border-radius: ${({ hasButton }) => (hasButton ? 'var(--border-radius) 0 0 var(--border-radius)' : '')};
+    padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
 
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration {
-          display: none;
-        }
-      `
+    label + & {
+        margin-top: 0;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
     }
 `;
 
@@ -75,7 +82,9 @@ const Reset = styled.button`
     display: none;
     height: 1.25rem;
     margin: auto;
-    ${focus}
+
+    ${focus};
+
     padding: 0;
     position: absolute;
     right: 0.25rem;
@@ -109,37 +118,41 @@ export interface SearchInputProps {
     onSearch?(value: string): void;
 }
 
-export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: SearchInputProps) => {
+export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
+    initialValue, onChange, onSearch, ...props
+}: SearchInputProps) => {
     const { t } = useTranslation('search-input');
     const [{ value }, setValue] = useState({ value: initialValue || '' });
-    const id = uuid();
+    const id = useMemo(uuid, []);
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         const newValue = event.currentTarget.value;
         setValue({ value: newValue });
 
         if (onChange) {
             onChange(event);
         }
-    };
+    }, [onChange]);
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (onSearch && event.key === 'Enter') {
             onSearch(value);
         }
-    };
+    }, [onSearch, value]);
 
-    const handleReset = () => {
+    const handleReset: () => void = useCallback(() => {
         setValue({ value: '' });
-    };
+    }, []);
 
-    const handleSearchButtonClick = () => {
+    const handleSearchButtonClick: () => void = useCallback(() => {
         if (onSearch) {
             onSearch(value);
         }
-    };
+    }, [onSearch, value]);
 
-    const { disabled, hasButton, label, placeholder } = props;
+    const {
+        disabled, hasButton, label, placeholder,
+    } = props;
 
     return (
         <SearchWrapper>
@@ -167,8 +180,7 @@ export const SearchInput = ({ initialValue, onChange, onSearch, ...props }: Sear
                 </Reset>
             </InnerWrapper>
             {
-                hasButton &&
-                (
+                hasButton && (
                     <SearchSubmit
                         disabled={disabled}
                         className="primary"

@@ -1,9 +1,11 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { SearchButton } from '../buttons/search-button';
 import { SearchGlobal } from './search-global';
+
 jest.mock('uuid/v4');
 
 describe('SearchGlobal', () => {
@@ -39,7 +41,7 @@ describe('SearchGlobal', () => {
 
     test('Reset buttons clears input value', () => {
         const wrapper = mount(
-            ThemeWrapped(<SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />),
+            ThemeWrapped(<SearchGlobal initialValue="foo" label="Search" onSearch={doNothing} />),
         );
 
         const reset = wrapper.find('[data-testid="resetButton"]').at(1);
@@ -49,7 +51,7 @@ describe('SearchGlobal', () => {
 
     test('Matches the snapshot', () => {
         const tree = renderer.create(
-            ThemeWrapped(<SearchGlobal initialValue="foo" label="Search" onSearch={() => {}} />),
+            ThemeWrapped(<SearchGlobal initialValue="foo" label="Search" onSearch={doNothing} />),
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

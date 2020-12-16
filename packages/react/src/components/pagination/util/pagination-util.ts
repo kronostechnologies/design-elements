@@ -1,14 +1,6 @@
-export function calculateShownPageRange(
-    totalPages: number,
-    pagesShown: number,
-    currentPage: number,
-): PageRange {
-    const concretePagesShown = Math.min(totalPages, pagesShown);
-    const pagesOnEachSide = (concretePagesShown - 1) / 2;
-    const pagesOnLeft = Math.ceil(pagesOnEachSide);
-    const pagesOnRight = Math.floor(pagesOnEachSide);
-    const pageRange = { begin: currentPage - pagesOnLeft, end: currentPage + pagesOnRight };
-    return clampPageRange(pageRange, totalPages);
+interface PageRange {
+    begin: number;
+    end: number;
 }
 
 function clampPageRange(currentRange: PageRange, totalPages: number): PageRange {
@@ -22,7 +14,16 @@ function clampPageRange(currentRange: PageRange, totalPages: number): PageRange 
     return { begin: begin + rangeShift, end: end + rangeShift };
 }
 
-interface PageRange {
-    begin: number;
-    end: number;
+export function calculateShownPageRange(
+    totalPages: number,
+    pagesShown: number,
+    currentPage: number,
+): PageRange {
+    const concretePagesShown = Math.min(totalPages, pagesShown);
+    const pagesOnEachSide = (concretePagesShown - 1) / 2;
+    const pagesOnLeft = Math.ceil(pagesOnEachSide);
+    const pagesOnRight = Math.floor(pagesOnEachSide);
+    const pageRange = { begin: currentPage - pagesOnLeft, end: currentPage + pagesOnRight };
+
+    return clampPageRange(pageRange, totalPages);
 }

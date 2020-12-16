@@ -2,6 +2,12 @@ import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { FieldContainer } from './field-container';
 
+const defaultProps = {
+    fieldId: 'test-id',
+    label: 'test label',
+    validationErrorMessage: 'This text area input is invalid',
+};
+
 describe('Field Container', () => {
     test('matches snapshot', () => {
         const tree = renderWithProviders(
@@ -33,9 +39,3 @@ describe('Field Container', () => {
         expect(tree).toMatchSnapshot();
     });
 });
-
-const defaultProps = {
-    fieldId: 'test-id',
-    label: 'test label',
-    validationErrorMessage: 'This text area input is invalid',
-};

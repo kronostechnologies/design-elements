@@ -1,17 +1,12 @@
 import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { findByTestId } from '../../test-utils/enzyme-selectors';
-import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Pagination } from './pagination';
-
-const renderComponent = (component: ReactElement, device?: DeviceType) => {
-    return renderWithProviders(component, device);
-};
 
 describe('Pagination', () => {
     test('Matches the mobile snapshot', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <Pagination totalPages={12} />,
             'mobile',
         );
@@ -20,7 +15,7 @@ describe('Pagination', () => {
     });
 
     test('Matches the desktop snapshot', () => {
-        const tree = renderComponent(
+        const tree = renderWithProviders(
             <Pagination totalPages={12} />,
             'desktop',
         );
@@ -72,17 +67,26 @@ describe('Pagination', () => {
 
     describe('navigation buttons', () => {
         const testCases = [
-            { id: 'firstPageButton', goesToPage: 1, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 6 },
-            { id: 'previousPageButton', goesToPage: 2, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 4 },
-            { id: 'nextPageButton', goesToPage: 4, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 4 },
-            { id: 'lastPageButton', goesToPage: 11, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 6 }];
+            {
+                id: 'firstPageButton', goesToPage: 1, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 6,
+            },
+            {
+                id: 'previousPageButton', goesToPage: 2, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 4,
+            },
+            {
+                id: 'nextPageButton', goesToPage: 4, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 4,
+            },
+            {
+                id: 'lastPageButton', goesToPage: 11, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 6,
+            },
+        ];
 
-        testCases.forEach(testCase => {
+        testCases.forEach((testCase) => {
             describe(testCase.id, () => {
                 test(`should go to page ${testCase.goesToPage} when clicked`, () => {
                     const callback = jest.fn();
                     const wrapper = shallow(
-                        <Pagination totalPages={11} defaultActivePage={3} onPageChange={callback}/>,
+                        <Pagination totalPages={11} defaultActivePage={3} onPageChange={callback} />,
                     );
                     const button = findByTestId(wrapper, testCase.id);
 
@@ -93,7 +97,7 @@ describe('Pagination', () => {
 
                 test(`should be disabled when on page ${testCase.disabledWhenOnPage}`, () => {
                     const wrapper = shallow(
-                        <Pagination totalPages={11} defaultActivePage={testCase.disabledWhenOnPage}/>,
+                        <Pagination totalPages={11} defaultActivePage={testCase.disabledWhenOnPage} />,
                     );
                     const button = findByTestId(wrapper, testCase.id);
 
@@ -102,15 +106,15 @@ describe('Pagination', () => {
 
                 test(`should be enabled when on page ${testCase.enabledWhenOnPage}`, () => {
                     const wrapper = shallow(
-                        <Pagination totalPages={11} defaultActivePage={testCase.enabledWhenOnPage}/>,
+                        <Pagination totalPages={11} defaultActivePage={testCase.enabledWhenOnPage} />,
                     );
                     const button = findByTestId(wrapper, testCase.id);
 
                     expect(button.prop('enabled')).toBe(true);
                 });
 
-                test(`should not be rendered when there\'s less than ${testCase.stopRenderAt} page`, () => {
-                    const wrapper = shallow(<Pagination totalPages={testCase.stopRenderAt - 1}/>);
+                test(`should not be rendered when there's less than ${testCase.stopRenderAt} page`, () => {
+                    const wrapper = shallow(<Pagination totalPages={testCase.stopRenderAt - 1} />);
                     const button = findByTestId(wrapper, testCase.id);
 
                     expect(button.exists()).toBe(false);

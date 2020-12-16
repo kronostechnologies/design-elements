@@ -1,4 +1,5 @@
 import { ToggleButtonGroup } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React, { MouseEvent } from 'react';
 
 const buttonGroup = [
@@ -27,19 +28,19 @@ export default {
     component: ToggleButtonGroup,
 };
 
-export const toggleButtonGroup = () => (
-    <ToggleButtonGroup groupName="Story1" buttonGroup={buttonGroup}/>
+export const ButtonGroup: Story = () => (
+    <ToggleButtonGroup groupName="Story1" buttonGroup={buttonGroup} />
 );
-export const defaultChecked = () => (
-    <ToggleButtonGroup groupName="Story2" buttonGroup={defaultCheckedGroup}/>
+export const DefaultChecked: Story = () => (
+    <ToggleButtonGroup groupName="Story2" buttonGroup={defaultCheckedGroup} />
 );
-export const disabled = () => (
-    <ToggleButtonGroup groupName="Story3" buttonGroup={disabledGroup}/>
+export const Disabled: Story = () => (
+    <ToggleButtonGroup groupName="Story3" buttonGroup={disabledGroup} />
 );
-export const withCallback = () => (
+export const WithCallback: Story = () => (
     <ToggleButtonGroup
         groupName="Test5"
         buttonGroup={buttonGroup}
-        onClick={(event: MouseEvent<HTMLButtonElement>) => console.log(`Toggled button value: ${event.currentTarget.value}`)}
+        onClick={(event: MouseEvent<HTMLButtonElement>) => console.info(`Toggled button value: ${event.currentTarget.value}`)}
     />
 );

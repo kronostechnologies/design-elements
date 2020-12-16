@@ -1,5 +1,6 @@
 import { Chooser } from '@equisoft/design-elements-react';
-import React from 'react';
+import { Story } from '@storybook/react';
+import React, { useState } from 'react';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
@@ -24,7 +25,7 @@ export default {
     component: Chooser,
 };
 
-export const normal = () => (
+export const Normal: Story = () => (
     <Chooser
         groupName="maritalStatus"
         inColumns={false}
@@ -32,7 +33,7 @@ export const normal = () => (
     />
 );
 
-export const withASkipButton = () => (
+export const WithASkipButton: Story = () => (
     <Chooser
         groupName="maritalStatusSkip"
         inColumns={false}
@@ -40,25 +41,30 @@ export const withASkipButton = () => (
         skipOption={skipOption}
     />
 );
-export const withValue = () => (
-    <Chooser
-        groupName="ageRange"
-        options={ageRange}
-        value="35,49"
-    />
-);
-export const inColumns = () => (
+export const WithValue: Story = () => {
+    const [value, setValue] = useState('35,49');
+
+    return (
+        <Chooser
+            groupName="ageRange"
+            options={ageRange}
+            value={value}
+            onChange={(event) => setValue(event.currentTarget.value)}
+        />
+    );
+};
+export const InColumns: Story = () => (
     <Chooser
         groupName="ageRangeColumn"
-        inColumns={true}
+        inColumns
         options={ageRange}
     />
 );
-export const withCallback = () => (
+export const WithCallback: Story = () => (
     <Chooser
         groupName="ageRangeCallback"
-        inColumns={true}
-        onChange={event => console.log(event)}
+        inColumns
+        onChange={(event) => console.info(event)}
         options={ageRange}
     />
 );

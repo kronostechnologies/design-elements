@@ -1,8 +1,8 @@
+import { Theme } from '@design-elements/themes/theme';
 import React, { ReactElement, ReactText } from 'react';
 
 import styled from 'styled-components';
 import { Bar } from '../bar/bar';
-import { Theme } from '../theme-wrapper/theme-wrapper';
 
 const Label = styled.label`
     color: ${(props: { theme: Theme }) => props.theme.greys.black};
@@ -29,7 +29,9 @@ interface Props {
     descriptionLabel?: string;
 }
 
-export function ProgressBar({ color, descriptionLabel, resultLabel, percent }: Props): ReactElement {
+export function ProgressBar({
+    color, descriptionLabel, resultLabel, percent,
+}: Props): ReactElement {
     return (
         <Container>
             <Label>{descriptionLabel}</Label>

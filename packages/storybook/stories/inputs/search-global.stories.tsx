@@ -1,4 +1,5 @@
 import { SearchGlobal } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
@@ -6,16 +7,14 @@ export default {
     component: SearchGlobal,
 };
 
-export const global = () => (
-    <SearchGlobal/>
+export const Global: Story = () => (
+    <SearchGlobal />
 );
-export const disabled = () => (
-    <SearchGlobal disabled/>
+export const Disabled: Story = () => (
+    <SearchGlobal disabled />
 );
-export const eventCallback = () => (
+export const EventCallback: Story = () => (
     <SearchGlobal
-        onSearch={value => {
-            console.log(`Searching for: ${value}`);
-        }}
+        onSearch={(value) => console.info(`Searching for: ${value}`)}
     />
 );

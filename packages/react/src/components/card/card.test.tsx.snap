@@ -2,7 +2,6 @@
 
 exports[`Card Matches the snapshot 1`] = `
 .c0 {
-  --border-radius: 8px;
   background: #FFFFFF;
   border: 1px solid #F1F2F2;
   border-radius: var(--border-radius);
