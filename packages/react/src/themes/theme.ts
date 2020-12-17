@@ -35,4 +35,8 @@ export interface Theme {
         'focus-border': string;
         'overlay-box-shadow': string;
     };
+    greens: {
+        green: string;
+        'light-green': string;
+    }
 }

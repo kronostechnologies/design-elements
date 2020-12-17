@@ -1,114 +1,126 @@
 import { focus } from '@design-elements/utils/css-state';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-import { Theme } from '../theme-wrapper/theme-wrapper';
-import {useDeviceContext} from "@design-elements/components/device-context-provider/device-context-provider";
-import { useStateWithCallbackLazy } from "use-state-with-callback";
+import { Theme } from '@design-elements/themes/theme';
+import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 
-const StyledLabel = styled.label`
-    ${(props: {theme: Theme, disabled?: boolean, isMobile: boolean}) => {
-        return `
-            ${props.disabled ? '' : 'cursor: pointer;'}
-            display: block;
-            font-size: ${props.isMobile ? 1 : 0.875}rem;
-            line-height: ${props.isMobile ? 2 : 1.5}rem;
-            padding-left: ${props.isMobile ? 'var(--spacing-7x)' : 'var(--spacing-6x)'};
-            position: relative;
-            user-select: none;
+const StyledDiv = styled.div`
+    position: relative;
+`;
 
+interface StyledLabelProps {
+    theme: Theme;
+    isMobile: boolean;
+    disabled: boolean;
+}
+const StyledLabel = styled.label<StyledLabelProps>`
+    ${({ disabled }) => (disabled ? '' : 'cursor: pointer;')}
 
-            button {
-                ${props.disabled ? '' : 'cursor: pointer;'}
-                border: 1px solid green;
-                background: green;
-                border-radius: ${props.isMobile ? 16 : 12}px;
-                height: ${props.isMobile ? 32 : 24}px;
-                width: ${props.isMobile ? 48 : 36}px;
-                position: absolute;
-                left: 0;
+    color: ${({ theme }) => theme.greys.black};
+    display: block;
+    font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
+    left: ${({ isMobile }) => (isMobile ? 56 : 42)}px;
+    line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
+    position: relative;
+    user-select: none;
+`;
 
-                span {
-                    background: white;
-                    border-radius: 100%;
-                    box-sizing: border-box;
-                    height: ${props.isMobile ? 22 : 16}px;
-                    position: absolute;
-                    right: calc(100% - ${props.isMobile ? 26 : 19}px);
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: ${props.isMobile ? 22 : 16}px;
-                }
+interface StyledButton {
+    theme: Theme;
+    disabled: boolean;
+    isMobile: boolean
+}
+const StyledButton = styled.button<StyledButton>`
+    ${({ disabled }) => (disabled ? '' : 'cursor: pointer;')}
 
-                &[aria-checked="false"] {
-                    background: ${props.theme.greys['mid-grey']};
-                    border-color: ${props.theme.greys['mid-grey']};
+    background: ${({ theme }) => theme.greens.green};
+    border: 1px solid ${({ theme }) => theme.greens.green};
+    border-radius: ${({ isMobile }) => (isMobile ? 16 : 12)}px;
+    height: ${({ isMobile }) => (isMobile ? 32 : 24)}px;
+    position: absolute;
+    width: ${({ isMobile }) => (isMobile ? 48 : 36)}px;
 
-                    span {
-                        transition: right .1s ease-in-out;
-                    }
-                }
+    &[aria-checked="false"] {
+        background: ${({ theme }) => theme.greys['mid-grey']};
+        border-color: ${({ theme }) => theme.greys['mid-grey']};
 
-                &[aria-checked="true"] > span {
-                    right: ${props.isMobile ? 4 : 3}px;
-                    transition: right .1s ease-in-out;
-                }
+        span {
+            transition: right 0.1s ease-in-out;
+        }
+    }
 
-                &:disabled {
-                    background: ${props.theme.greys.grey};
-                    border-color: ${props.theme.greys.grey};
+    &[aria-checked="true"] > span {
+        right: ${({ isMobile }) => (isMobile ? 4 : 3)}px;
+        transition: right 0.1s ease-in-out;
+    }
 
-                    &[aria-checked="true"] {
-                        background: #99cead;
-                        border-color: #99cead;
-                    }
-                }
+    &:disabled {
+        background: ${({ theme }) => theme.greys.grey};
+        border-color: ${({ theme }) => theme.greys.grey};
 
-                ${focus(props)}
-            }
-        `;
-    }}
+        &[aria-checked="true"] {
+            background: ${({ theme }) => theme.greens['light-green']};
+            border-color: ${({ theme }) => theme.greens['light-green']};
+        }
+    }
+
+    ${(props) => focus(props)}
+`;
+
+interface StyledButtonSpanProps {
+    theme: Theme;
+    isMobile: boolean;
+}
+const StyledButtonSpan = styled.span<StyledButtonSpanProps>`
+    background: ${({ theme }) => theme.greys.white};
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: ${({ isMobile }) => (isMobile ? 22 : 16)}px;
+    position: absolute;
+    right: calc(100% - ${({ isMobile }) => (isMobile ? 26 : 19)}px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: ${({ isMobile }) => (isMobile ? 22 : 16)}px;
 `;
 
 interface ToggleSwitchProps {
     label: string;
     disabled?: boolean;
-    toggled?: boolean;
-    onToggle?(value: boolean): void;
+    toggled: boolean;
+    onToggle(value: boolean): void;
 }
 
-export function ToggleSwitch(props: ToggleSwitchProps): ReactElement  {
-    const { label, disabled, onToggle } = props;
-    const id = uuid();
+export function ToggleSwitch({
+    label, disabled, onToggle, toggled,
+} : ToggleSwitchProps): ReactElement {
     const { isMobile } = useDeviceContext();
-    const [toggled, setToggled] = useStateWithCallbackLazy(!!props.toggled);
+    const labelId = useMemo(uuid, []);
+    const buttonId = useMemo(uuid, []);
 
-    const handleClick = () => {
-        if (!disabled) {
-            setToggled(!toggled, (newToggled: boolean) => {
-                if (onToggle) {
-                    onToggle(newToggled);
-                }
-            });
-        }
+    const handleClick = (): void => {
+        onToggle?.(!toggled);
     };
 
     return (
-        <StyledLabel
-            disabled={disabled}
-            id={id}
-            isMobile={isMobile}
-        >{label}
-            <button
-                role="switch"
-                aria-readonly={!!disabled}
-                aria-checked={toggled}
-                aria-labelledby={id}
-                disabled={disabled}
-                onClick={handleClick}
-            >
-                <span/>
-            </button>
-        </StyledLabel>
+        <>
+            <StyledDiv>
+                <StyledButton
+                    id={buttonId}
+                    role="switch"
+                    aria-readonly={!!disabled}
+                    aria-checked={toggled}
+                    aria-labelledby={labelId}
+                    data-testid="test-toggle-switch"
+                    type="button"
+                    isMobile={isMobile}
+                    disabled={!!disabled}
+                    onClick={!disabled ? handleClick : undefined}
+                >
+                    <StyledButtonSpan isMobile={isMobile} />
+                </StyledButton>
+            </StyledDiv>
+            <StyledLabel id={labelId} htmlFor={buttonId} isMobile={isMobile} disabled={!!disabled}>{label}</StyledLabel>
+        </>
     );
 }

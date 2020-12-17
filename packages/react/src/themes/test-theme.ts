@@ -2,6 +2,7 @@ import { greys } from './greys';
 import { notifications } from './notifications';
 import { Theme } from './theme';
 import { tokens } from './tokens';
+import { greens } from './greens';
 
 export const testTheme: Theme = {
     main: {
@@ -17,4 +18,5 @@ export const testTheme: Theme = {
     greys,
     notifications,
     tokens,
+    greens,
 };
