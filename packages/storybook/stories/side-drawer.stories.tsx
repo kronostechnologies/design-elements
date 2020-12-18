@@ -1,6 +1,6 @@
 import { Button, SideDrawer } from '@equisoft/design-elements-react';
-import { forceReRender, Story } from '@storybook/react';
-import React from 'react';
+import { Story } from '@storybook/react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Box = styled.div`
@@ -19,81 +19,90 @@ export default {
     component: SideDrawer,
 };
 
-type DrawerType = 'normal' | 'withNestedDrawer' | 'nested' | 'scrollable' | 'left' | 'variableWidth';
+export const Normal: Story = () => {
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
 
-const allDrawers = {
-    normal: false,
-    withNestedDrawer: false,
-    nested: false,
-    scrollable: false,
-    left: false,
-    variableWidth: false,
+    return (
+        <>
+            <SideDrawer open={isDrawerOpen}>
+                <h3>Drawer Content</h3>
+                <Button label="Close drawer" buttonType="primary" onClick={() => setDrawerOpen(false)} />
+            </SideDrawer>
+            <Button label="Click to open side-drawer" buttonType="primary" onClick={() => setDrawerOpen(true)} />
+        </>
+    );
 };
 
-function toggleDrawer(drawer: DrawerType): void {
-    allDrawers[drawer] = !allDrawers[drawer];
-    forceReRender();
-}
+export const WithNestedDrawer: Story = () => {
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
+    const [isNestedDrawerOpen, setNestedDrawerOpen] = useState(false);
 
-export const Normal: Story = () => (
-    <>
-        <SideDrawer open={allDrawers.normal}>
-            <h3>Drawer Content</h3>
-            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('normal')} />
-        </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('normal')} />
-    </>
-);
-
-export const WithNestedDrawer: Story = () => (
-    <>
-        <SideDrawer open={allDrawers.withNestedDrawer}>
-            <h3>Drawer Content</h3>
-            <SideDrawer open={allDrawers.nested} nested>
-                <h3>Nested Drawer Content</h3>
-                <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('nested')} />
+    return (
+        <>
+            <SideDrawer open={isDrawerOpen}>
+                <h3>Drawer Content</h3>
+                <SideDrawer open={isNestedDrawerOpen} nested>
+                    <h3>Nested Drawer Content</h3>
+                    <Button label="Close drawer" buttonType="primary" onClick={() => setNestedDrawerOpen(false)} />
+                </SideDrawer>
+                <Button label="Open nested drawer" buttonType="primary" onClick={() => setNestedDrawerOpen(true)} />
+                <br />
+                <Button label="Close drawer" buttonType="primary" onClick={() => setDrawerOpen(false)} />
             </SideDrawer>
-            <Button label="Open nested drawer" buttonType="primary" onClick={() => toggleDrawer('nested')} />
-            <br />
-            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('withNestedDrawer')} />
-        </SideDrawer>
-        <Button
-            label="Click to open side-drawer"
-            buttonType="primary"
-            onClick={() => toggleDrawer('withNestedDrawer')}
-        />
-    </>
-);
+            <Button
+                label="Click to open side-drawer"
+                buttonType="primary"
+                onClick={() => setDrawerOpen(true)}
+            />
+        </>
+    );
+};
 
-export const Scrollable: Story = () => (
-    <>
-        <SideDrawer open={allDrawers.scrollable}>
-            <h3>Drawer with scrollable content</h3>
-            <div>
-                {[...Array(6).keys()].map((el) => <Box key={el} />)}
-            </div>
-            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('scrollable')} />
-        </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('scrollable')} />
-    </>
-);
+export const Scrollable: Story = () => {
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
 
-export const LeftOrigin: Story = () => (
-    <>
-        <SideDrawer open={allDrawers.left} drawerOrigin="left">
-            <h3>Drawer Content</h3>
-            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('left')} />
-        </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('left')} />
-    </>
-);
+    return (
+        <>
+            <SideDrawer open={isDrawerOpen}>
+                <h3>Drawer with scrollable content</h3>
+                <div>
+                    {[...Array(6).keys()].map((el) => <Box key={el} />)}
+                </div>
+                <Button label="Close drawer" buttonType="primary" onClick={() => setDrawerOpen(false)} />
+            </SideDrawer>
+            <Button label="Click to open side-drawer" buttonType="primary" onClick={() => setDrawerOpen(true)} />
+        </>
+    );
+};
 
-export const VariableWidth: Story = () => (
-    <>
-        <SideDrawer open={allDrawers.variableWidth} width="50%">
-            <h3>Drawer content</h3>
-            <Button label="Close drawer" buttonType="primary" onClick={() => toggleDrawer('variableWidth')} />
-        </SideDrawer>
-        <Button label="Click to open side-drawer" buttonType="primary" onClick={() => toggleDrawer('variableWidth')} />
-    </>
-);
+export const LeftOrigin: Story = () => {
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
+
+    return (
+        <>
+            <SideDrawer open={isDrawerOpen} drawerOrigin="left">
+                <h3>Drawer Content</h3>
+                <Button label="Close drawer" buttonType="primary" onClick={() => setDrawerOpen(false)} />
+            </SideDrawer>
+            <Button label="Click to open side-drawer" buttonType="primary" onClick={() => setDrawerOpen(true)} />
+        </>
+    );
+};
+
+export const VariableWidth: Story = () => {
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
+
+    return (
+        <>
+            <SideDrawer open={isDrawerOpen} width="50%">
+                <h3>Drawer content</h3>
+                <Button label="Close drawer" buttonType="primary" onClick={() => setDrawerOpen(false)} />
+            </SideDrawer>
+            <Button
+                label="Click to open side-drawer"
+                buttonType="primary"
+                onClick={() => setDrawerOpen(true)}
+            />
+        </>
+    );
+};
