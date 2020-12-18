@@ -64,6 +64,7 @@ const ShowMoreMenu = styled.ul<{ open?: boolean }>`
     & > :first-child a {
         border-radius: var(--border-radius) var(--border-radius) 0 0;
     }
+
     & > :last-child a {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
