@@ -50,8 +50,6 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
     letter-spacing: ${isMobile ? 0.02875 : 0.015}rem;
     line-height: 1.5rem;
     margin: 0;
-    ${focus({ theme }, true)}
-
     outline: none;
     padding: ${isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half) var(--spacing-1x)'};
     width: 100%;
@@ -69,4 +67,6 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
             color: ${theme.greys['mid-grey']};
         }
     }
+
+    ${focus({ theme }, true)}
 `;

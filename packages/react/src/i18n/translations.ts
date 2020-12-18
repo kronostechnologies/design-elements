@@ -44,6 +44,10 @@ export const Translations = {
         'stepper-input': {
             validationErrorMessage: 'Invalid number',
         },
+        'stepper-buttons': {
+            'increment-button-aria-label': 'Increase number',
+            'decrement-button-aria-label': 'Decrease number',
+        },
         'text-area': {
             validationErrorMessage: 'This text area is invalid',
         },
@@ -95,6 +99,10 @@ export const Translations = {
         },
         'stepper-input': {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
+        },
+        'stepper-buttons': {
+            'increment-button-aria-label': 'Augmenter le nombre',
+            'decrement-button-aria-label': 'Diminuer le nombre',
         },
         'text-area': {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
