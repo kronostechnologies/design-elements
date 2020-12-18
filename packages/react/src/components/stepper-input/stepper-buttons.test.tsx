@@ -1,10 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { StepperButtons } from './stepper-buttons';
-
-jest.mock('uuid/v4');
 
 describe('Stepper buttons', () => {
     test('onIncrement callback should be called when button-increment is clicked', () => {

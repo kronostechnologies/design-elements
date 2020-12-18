@@ -161,16 +161,6 @@ input + .c1 {
   z-index: 1;
 }
 
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
 .c4::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -212,6 +202,16 @@ input + .c1 {
   color: #9CA7B4;
 }
 
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
 .c4::-webkit-outer-spin-button,
 .c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -237,7 +237,6 @@ input + .c1 {
       class="c4"
       data-testid="stepper-input"
       disabled=""
-      id="points"
       name="points"
       type="number"
     />
@@ -245,12 +244,15 @@ input + .c1 {
       class="c5"
     >
       <button
+        aria-label="Increase number"
         class="c6"
         data-testid="stepper-button-increment"
         disabled=""
+        tabindex="-1"
         type="button"
       >
         <svg
+          aria-hidden="true"
           color="currentColor"
           focusable="false"
           height="16"
@@ -258,12 +260,15 @@ input + .c1 {
         />
       </button>
       <button
+        aria-label="Decrease number"
         class="c7"
         data-testid="stepper-button-decrement"
         disabled=""
+        tabindex="-1"
         type="button"
       >
         <svg
+          aria-hidden="true"
           color="currentColor"
           focusable="false"
           height="16"
@@ -466,16 +471,6 @@ input + .c1 {
   z-index: 1;
 }
 
-.c7:focus {
-  outline: none;
-}
-
-.c7:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
 .c7::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -515,6 +510,16 @@ input + .c1 {
 .c7:disabled,
 .c7:disabled::placeholder {
   color: #9CA7B4;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
 }
 
 .c7::-webkit-outer-spin-button,
@@ -563,7 +568,6 @@ input + .c1 {
     <input
       class="c7"
       data-testid="stepper-input"
-      id="points"
       name="points"
       type="number"
     />
@@ -571,11 +575,14 @@ input + .c1 {
       class="c8"
     >
       <button
+        aria-label="Increase number"
         class="c9"
         data-testid="stepper-button-increment"
+        tabindex="-1"
         type="button"
       >
         <svg
+          aria-hidden="true"
           color="currentColor"
           focusable="false"
           height="16"
@@ -583,11 +590,14 @@ input + .c1 {
         />
       </button>
       <button
+        aria-label="Decrease number"
         class="c10"
         data-testid="stepper-button-decrement"
+        tabindex="-1"
         type="button"
       >
         <svg
+          aria-hidden="true"
           color="currentColor"
           focusable="false"
           height="16"
@@ -671,16 +681,6 @@ input + .c1 {
   z-index: 1;
 }
 
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
 .c4::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -722,6 +722,16 @@ input + .c1 {
   color: #9CA7B4;
 }
 
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
 .c4::-webkit-outer-spin-button,
 .c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -746,7 +756,6 @@ input + .c1 {
     <input
       class="c4"
       data-testid="stepper-input"
-      id="points"
       name="points"
       type="number"
     />
@@ -915,16 +924,6 @@ input + .c1 {
   z-index: 1;
 }
 
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
-}
-
 .c4::-webkit-input-placeholder {
   color: #57666E;
 }
@@ -966,6 +965,16 @@ input + .c1 {
   color: #9CA7B4;
 }
 
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #0080A5;
+  box-shadow: 0 0 0 2px #0080A566;
+}
+
 .c4::-webkit-outer-spin-button,
 .c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -990,7 +999,6 @@ input + .c1 {
     <input
       class="c4"
       data-testid="stepper-input"
-      id="points"
       name="points"
       type="number"
     />
@@ -998,11 +1006,14 @@ input + .c1 {
       class="c5"
     >
       <button
+        aria-label="Increase number"
         class="c6"
         data-testid="stepper-button-increment"
+        tabindex="-1"
         type="button"
       >
         <svg
+          aria-hidden="true"
           color="currentColor"
           focusable="false"
           height="16"
@@ -1010,11 +1021,14 @@ input + .c1 {
         />
       </button>
       <button
+        aria-label="Decrease number"
         class="c7"
         data-testid="stepper-button-decrement"
+        tabindex="-1"
         type="button"
       >
         <svg
+          aria-hidden="true"
           color="currentColor"
           focusable="false"
           height="16"

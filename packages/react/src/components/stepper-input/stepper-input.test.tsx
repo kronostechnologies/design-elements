@@ -1,20 +1,20 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { StepperInput } from './stepper-input';
 
-jest.mock('uuid/v4');
+jest.mock('../../utils/uuid');
 
 describe('Stepper input', () => {
     test('onChange callback should be called when input value changes', () => {
         const callback = jest.fn();
         const wrapper = shallow(<StepperInput onChange={callback} />);
 
-        getByTestId(wrapper, 'stepper-input').simulate('change', { value: 3 });
+        getByTestId(wrapper, 'stepper-input').simulate('change', { target: { value: 3 } });
 
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(callback).toHaveBeenCalledWith(3);
     });
 
     test('onBlur callback should be called when input is blurred', () => {
