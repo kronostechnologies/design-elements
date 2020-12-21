@@ -61,11 +61,10 @@ const ShowMoreMenu = styled.ul<{ open?: boolean }>`
         flex-grow: 1;
     }
 
-    & > :first-child ${MenuLink} {
+    & > :first-child a {
         border-radius: var(--border-radius) var(--border-radius) 0 0;
     }
-
-    & > :last-child ${MenuLink} {
+    & > :last-child a {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
 `;
