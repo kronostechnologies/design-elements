@@ -2,7 +2,7 @@
 
 import { clamp } from '@design-elements/utils/math';
 import { CSSProperties, Dispatch, useCallback, useEffect, useReducer } from 'react';
-import { EventData, SwipeableHandlers, useSwipeable } from 'react-swipeable';
+import { SwipeableHandlers, SwipeEventData, useSwipeable } from 'react-swipeable';
 import { CarouselAction, carouselReducer, CarouselState } from './carousel-reducer';
 
 type PreviousDirection = -1;
@@ -39,8 +39,8 @@ const FORWARD = 1;
 const BACKWARD = -1;
 const PADDING_SLIDES = 2;
 
-function canSwipe(e: EventData, state: CarouselState): boolean {
-    const direction = Math.sign(e.deltaX);
+function canSwipe(e: SwipeEventData, state: CarouselState): boolean {
+    const direction = Math.sign(-e.deltaX);
     const isDraggingLastForward = state.active === state.length - 1 && direction === FORWARD;
     const isDraggingFirstBackward = state.active === 0 && direction === BACKWARD;
 
@@ -64,13 +64,13 @@ function threshold(target: EventTarget | null, slidesCount: number): number {
 }
 
 function onSwiped(
-    e: EventData,
+    e: SwipeEventData,
     dispatch: Dispatch<CarouselAction>,
     state: CarouselState,
     direction: CarouselDirection,
 ): void {
     if (canSwipe(e, state)) {
-        const delta = direction * e.deltaX;
+        const delta = direction * -e.deltaX;
         if (delta >= threshold(e.event.currentTarget, state.length)) {
             dispatch({ type: direction === FORWARD ? 'next' : 'previous' });
         } else {
@@ -150,21 +150,20 @@ export function useCarousel(
         loop,
     };
     const [state, dispatch] = useReducer(carouselReducer, initialCarouselState);
-    // noinspection JSUnusedGlobalSymbols
     const swipeableHandlers: SwipeableHandlers = useSwipeable({
-        onSwiping(e: EventData): void {
+        onSwiping(e: SwipeEventData): void {
             if (canSwipe(e, state)) {
                 const maxOffset = getSlideWidth(e.event.currentTarget, state.length);
                 dispatch({
                     type: 'drag',
-                    offset: clamp(-maxOffset, maxOffset, -e.deltaX),
+                    offset: clamp(-maxOffset, maxOffset, e.deltaX),
                 });
             }
         },
-        onSwipedLeft(e: EventData): void {
+        onSwipedLeft(e: SwipeEventData): void {
             onSwiped(e, dispatch, state, FORWARD);
         },
-        onSwipedRight(e: EventData): void {
+        onSwipedRight(e: SwipeEventData): void {
             onSwiped(e, dispatch, state, BACKWARD);
         },
         trackMouse,

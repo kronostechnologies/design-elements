@@ -25,3 +25,11 @@ export const Normal: Story = () => (
         </div>
     </>
 );
+
+export const IsolatedStyles: Story = () => (
+    <ThemeWrapper isolateStyles>
+        <Button label="Primary" buttonType="primary" />
+        <Button label="Secondary" buttonType="secondary" />
+        <Button label="Tertiary" buttonType="tertiary" />
+    </ThemeWrapper>
+);

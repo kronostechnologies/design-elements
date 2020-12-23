@@ -11,7 +11,6 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    'to-string-loader',
                     'css-loader',
                     'sass-loader',
                 ],
@@ -19,7 +18,6 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    'to-string-loader',
                     'css-loader',
                 ],
             },

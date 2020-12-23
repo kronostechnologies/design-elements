@@ -262,7 +262,7 @@ const CalendarButton = styled.button<CalendarButtonProps>`
 `;
 
 const ReactDatePickerStyles = createGlobalStyle`
-    ${datepickerCss}
+    ${datepickerCss.toString()}
 `;
 
 export interface DatepickerHandles {
