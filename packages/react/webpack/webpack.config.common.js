@@ -58,6 +58,11 @@ module.exports = {
         alias: {
             'react-onclickoutside': path.resolve(__dirname, '../patches/react-onclickoutside'), // TODO: Remove once https://github.com/Pomax/react-onclickoutside/pull/324 is released
         },
+        fallback: {
+            buffer: false,
+            events: false,
+            stream: require.resolve('stream-browserify'),
+        },
     },
     resolveLoader: {
         plugins: [
