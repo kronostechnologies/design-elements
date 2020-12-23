@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { getMonth, getYear } from 'date-fns';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';

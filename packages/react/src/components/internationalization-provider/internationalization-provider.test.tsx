@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { mount, ReactWrapper } from 'enzyme';
 import React, { ReactElement } from 'react';
 import { IntlProvider } from './internationalization-provider';

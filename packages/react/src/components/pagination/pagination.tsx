@@ -1,7 +1,7 @@
 import { IconButton } from '@design-elements/components/buttons/icon-button';
 import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
 import { IconName } from '@design-elements/components/icon/icon';
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { focus } from '@design-elements/utils/css-state';
 import { clamp } from '@design-elements/utils/math';
 import { range } from '@design-elements/utils/range';

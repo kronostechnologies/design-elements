@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { Theme } from '@design-elements/themes/theme';
 import React, { ComponentType, FunctionComponent, ReactElement, ReactNode, useMemo } from 'react';
 import styled from 'styled-components';

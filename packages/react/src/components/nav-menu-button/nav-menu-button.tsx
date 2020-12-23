@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { Theme } from '@design-elements/themes/theme';
 import React, { KeyboardEvent, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
