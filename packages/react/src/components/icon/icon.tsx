@@ -82,6 +82,7 @@ interface IconProps {
      * @default currentColor
      */
     color?: string;
+    className?: string;
 }
 
 export const Icon: VoidFunctionComponent<IconProps> = ({

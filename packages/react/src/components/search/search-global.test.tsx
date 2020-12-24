@@ -2,14 +2,14 @@ import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
-import { SearchContextual } from './search-contextual';
+import { SearchGlobal } from './search-global';
 
 jest.mock('@design-elements/utils/uuid');
 
-describe('Search Contextual', () => {
+describe('SearchGlobal', () => {
     it('should call onReset when search resets', () => {
         const onReset = jest.fn();
-        const wrapper = shallow(<SearchContextual onReset={onReset} />);
+        const wrapper = shallow(<SearchGlobal onReset={onReset} />);
 
         getByTestId(wrapper, 'search-input').invoke('onReset')();
 
@@ -20,7 +20,7 @@ describe('Search Contextual', () => {
         const onChange = jest.fn();
         const value = jest.fn();
         const event = jest.fn();
-        const wrapper = shallow(<SearchContextual onChange={onChange} />);
+        const wrapper = shallow(<SearchGlobal onChange={onChange} />);
 
         getByTestId(wrapper, 'search-input').invoke('onChange')(value, event);
 
@@ -30,24 +30,16 @@ describe('Search Contextual', () => {
     it('should call onSearch when search', () => {
         const onSearch = jest.fn();
         const value = jest.fn();
-        const wrapper = shallow(<SearchContextual onSearch={onSearch} />);
+        const wrapper = shallow(<SearchGlobal onSearch={onSearch} />);
 
         getByTestId(wrapper, 'search-input').invoke('onSearch')(value);
 
         expect(onSearch).toHaveBeenCalledWith(value);
     });
 
-    it('matches the snapshot when disabled', () => {
+    test('Matches the snapshot', () => {
         const wrapper = shallow(
-            <SearchContextual label="Search" disabled onChange={doNothing} onReset={doNothing} onSearch={doNothing} />,
-        );
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('matches the snapshot when enabled', () => {
-        const wrapper = shallow(
-            <SearchContextual label="Search" onChange={doNothing} onReset={doNothing} onSearch={doNothing} />,
+            <SearchGlobal defaultValue="foo" label="Search" onSearch={doNothing} />,
         );
 
         expect(wrapper).toMatchSnapshot();

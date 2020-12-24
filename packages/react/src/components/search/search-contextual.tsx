@@ -1,27 +1,14 @@
-import React, { ChangeEvent, ReactElement } from 'react';
-import { SearchInput } from './search-input';
+import React, { ReactElement } from 'react';
+import { CommonSearchProps, SearchInput } from './search-input';
 
-interface SearchInputProps {
-    disabled?: boolean;
-    initialValue?: string;
-    label?: string;
-    placeholder?: string;
+export type SearchContextualProps = CommonSearchProps
 
-    onChange?(event: ChangeEvent<HTMLInputElement>): void;
-}
-
-export function SearchContextual(
-    {
-        disabled, initialValue, label, onChange, placeholder,
-    }: SearchInputProps,
-): ReactElement {
+export function SearchContextual(props: SearchContextualProps): ReactElement {
     return (
         <SearchInput
-            disabled={disabled}
-            initialValue={initialValue}
-            label={label}
-            onChange={onChange}
-            placeholder={placeholder}
+            {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+            hasIcon
+            data-testid="search-input"
         />
     );
 }

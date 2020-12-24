@@ -14,8 +14,10 @@ export const Contextual: Story = () => (
 export const Disabled: Story = () => (
     <SearchContextual disabled />
 );
+
 export const EventCallback: Story = () => (
     <SearchContextual
-        onChange={(event) => console.info(`Searching for: ${event.currentTarget.value}`)}
+        onChange={(value) => console.info(`New value is : ${value}`)}
+        onReset={() => console.info('Reset clicked')}
     />
 );

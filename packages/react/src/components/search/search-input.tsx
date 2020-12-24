@@ -4,7 +4,7 @@ import { focus } from '@design-elements/utils/css-state';
 import { v4 as uuid } from '@design-elements/utils/uuid';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import React, { ChangeEvent, KeyboardEvent, useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
@@ -54,12 +54,24 @@ const IcoReset = styled(XIcon)`
     width: 1.25rem;
 `;
 
-const Input = styled.input<{ theme: Theme, hasButton?: boolean }>`
+interface InputProps {
+    theme: Theme;
+    hasButton: boolean;
+    hasIcon: boolean;
+    hasReset: boolean;
+}
+
+const Input = styled.input<InputProps>`
     /* Must be the first rule */
     ${({ theme }) => inputsStyle(theme)};
 
     border-radius: ${({ hasButton }) => (hasButton ? 'var(--border-radius) 0 0 var(--border-radius)' : '')};
-    padding: var(--spacing-half) 1.75rem var(--spacing-half) var(--spacing-4x);
+    border-right: 0;
+    height: 2rem;
+    padding-bottom: var(--spacing-half);
+    padding-left: ${({ hasIcon }) => (hasIcon ? '1.75rem' : 'var(--spacing-1x)')};
+    padding-right: ${({ hasReset }) => (hasReset ? '1.75rem' : 'var(--spacing-1x)')};
+    padding-top: var(--spacing-half);
 
     label + & {
         margin-top: 0;
@@ -97,7 +109,6 @@ const Reset = styled.button`
 `;
 
 const SearchSubmit = styled(SearchButton)`
-    border-left: 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     position: relative;
 
@@ -106,89 +117,111 @@ const SearchSubmit = styled(SearchButton)`
     }
 `;
 
-export interface SearchInputProps {
+export interface CommonSearchProps {
+    id?: string;
     disabled?: boolean;
-    hasButton?: boolean;
     label?: string;
-    initialValue?: string;
+    className?: string;
+    defaultValue?: string;
+    value?: string;
     placeholder?: string;
 
-    onChange?(event: ChangeEvent<HTMLInputElement>): void;
+    onChange?(value: string, event: ChangeEvent<HTMLInputElement>): void;
+
+    onReset?(): void;
 
     onSearch?(value: string): void;
 }
 
+export interface SearchInputProps extends CommonSearchProps {
+    hasButton?: boolean;
+    hasIcon?: boolean;
+}
+
 export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
-    initialValue, onChange, onSearch, ...props
+    defaultValue,
+    id: providedId,
+    onChange,
+    onReset,
+    onSearch,
+    value,
+    ...props
 }: SearchInputProps) => {
     const { t } = useTranslation('search-input');
-    const [{ value }, setValue] = useState({ value: initialValue || '' });
-    const id = useMemo(uuid, []);
+    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         const newValue = event.currentTarget.value;
-        setValue({ value: newValue });
 
-        if (onChange) {
-            onChange(event);
-        }
+        onChange?.(newValue, event);
     }, [onChange]);
 
-    const handleKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
-        if (onSearch && event.key === 'Enter') {
-            onSearch(value);
-        }
+    const searchCurrentValue: () => void = useCallback(() => {
+        onSearch?.(value || inputRef.current?.value || '');
     }, [onSearch, value]);
+
+    const handleKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
+        if (event.key === 'Enter') {
+            searchCurrentValue();
+        }
+    }, [searchCurrentValue]);
 
     const handleReset: () => void = useCallback(() => {
-        setValue({ value: '' });
-    }, []);
+        onReset?.();
+    }, [onReset]);
 
     const handleSearchButtonClick: () => void = useCallback(() => {
-        if (onSearch) {
-            onSearch(value);
-        }
-    }, [onSearch, value]);
+        searchCurrentValue();
+    }, [searchCurrentValue]);
 
     const {
-        disabled, hasButton, label, placeholder,
+        className, disabled, hasButton, hasIcon, label, placeholder,
     } = props;
 
     return (
-        <SearchWrapper>
+        <SearchWrapper className={className}>
             <InnerWrapper>
-                <Label forId={id}>
-                    <IcoSearch disabled={disabled} />
-                    <VisuallyHidden>{label || t('label')}</VisuallyHidden>
-                </Label>
+                {hasIcon && (
+                    <Label forId={id} data-testid="search-icon">
+                        <IcoSearch disabled={disabled} />
+                        <VisuallyHidden>{label || t('label')}</VisuallyHidden>
+                    </Label>
+                )}
 
                 <Input
+                    ref={inputRef}
                     autoComplete="on"
                     disabled={disabled}
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
-                    hasButton={hasButton}
+                    hasButton={!!hasButton}
+                    hasIcon={!!hasIcon}
+                    hasReset={!!onReset}
                     id={id}
                     placeholder={placeholder}
                     type="search"
+                    defaultValue={defaultValue}
                     value={value}
+                    data-testid="search-input"
                 />
 
-                <Reset data-testid="resetButton" onClick={handleReset}>
-                    <IcoReset />
-                    <VisuallyHidden>Reset</VisuallyHidden>
-                </Reset>
+                {onReset && (
+                    <Reset onClick={handleReset} data-testid="search-reset">
+                        <IcoReset />
+                        <VisuallyHidden>Reset</VisuallyHidden>
+                    </Reset>
+                )}
             </InnerWrapper>
-            {
-                hasButton && (
-                    <SearchSubmit
-                        disabled={disabled}
-                        className="primary"
-                        label={label || t('label')}
-                        onClick={handleSearchButtonClick}
-                    />
-                )
-            }
+
+            {hasButton && (
+                <SearchSubmit
+                    disabled={disabled}
+                    className="primary"
+                    onClick={handleSearchButtonClick}
+                    data-testid="search-button"
+                />
+            )}
         </SearchWrapper>
     );
 };
