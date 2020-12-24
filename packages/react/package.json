@@ -41,8 +41,7 @@
     "react-shadow": "^19.0.1",
     "react-swipeable": "~6.0.1",
     "react-table": "^7.6.2",
-    "stream-browserify": "^3.0.0",
-    "uuid": "^3.4.0"
+    "stream-browserify": "^3.0.0"
   },
   "peerDependencies": {
     "i18next": "^19",
@@ -71,7 +70,6 @@
     "@types/react-test-renderer": "^17.0.0",
     "@types/styled-components": "^5.1.7",
     "@types/testing-library__react-hooks": "^3.4.1",
-    "@types/uuid": "^3.4.9",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",

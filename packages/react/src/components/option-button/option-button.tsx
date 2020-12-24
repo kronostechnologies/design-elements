@@ -1,7 +1,7 @@
 import React, { useMemo, VoidFunctionComponent } from 'react';
 
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
+import { v4 as uuid } from '@design-elements/utils/uuid';
 
 const Input = styled.input`
     ${(props) => `

@@ -3,7 +3,7 @@ import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '@desi
 import React, { RefObject } from 'react';
 import { Datepicker, DatepickerHandles } from './datepicker';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 describe('Datepicker', () => {
     test('onChange callback is called when input changed', () => {

@@ -1,5 +1,6 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
 import { Theme } from '@design-elements/themes/theme';
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, {
     ChangeEvent,
     KeyboardEvent,
@@ -11,7 +12,6 @@ import React, {
     useState,
 } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 import { ChooseInput } from '../choose-input/choose-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

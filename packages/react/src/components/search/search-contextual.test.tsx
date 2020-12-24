@@ -5,7 +5,7 @@ import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { SearchContextual } from './search-contextual';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 describe('Search Contextual', () => {
     test('onChange Callback is called when changed', () => {

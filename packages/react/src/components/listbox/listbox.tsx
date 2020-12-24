@@ -1,3 +1,4 @@
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, {
     forwardRef,
     KeyboardEvent,
@@ -10,7 +11,6 @@ import React, {
     useState,
 } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
