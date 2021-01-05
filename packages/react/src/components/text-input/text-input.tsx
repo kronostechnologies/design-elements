@@ -1,15 +1,16 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, {
     ChangeEvent,
     DetailedHTMLProps,
     FocusEvent,
     InputHTMLAttributes,
-    ReactElement, useCallback,
+    ReactElement,
+    useCallback,
     useMemo,
     useState,
 } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';

@@ -1,7 +1,7 @@
 import { useTranslation } from '@design-elements/i18n/i18n';
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, { ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 import { Button } from '../buttons/button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';

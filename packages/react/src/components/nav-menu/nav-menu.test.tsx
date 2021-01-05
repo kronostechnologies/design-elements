@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { NavMenu } from './nav-menu';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 const options = [
     {

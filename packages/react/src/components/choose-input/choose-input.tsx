@@ -1,7 +1,7 @@
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, { ChangeEvent, ReactNode } from 'react';
 
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 import { hiddenStyle } from '../visually-hidden/styles/visuallyhidden';
 import { Label } from './styles/choose';
 

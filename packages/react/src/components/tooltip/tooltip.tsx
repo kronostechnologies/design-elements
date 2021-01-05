@@ -1,15 +1,17 @@
 import { focus } from '@design-elements/utils/css-state';
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, {
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,
     ReactElement,
-    ReactNode, useCallback,
-    useEffect, useMemo,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
     useState,
 } from 'react';
-import TooltipTrigger from 'react-popper-tooltip';
+import TooltipTrigger, { TooltipTriggerProps } from 'react-popper-tooltip';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 import { useTheme } from '../../hooks/use-theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -25,7 +27,6 @@ export const TooltipContainer = styled.div<{ isMobile?: boolean }>`
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
-    margin: var(--spacing-1x) 12px;
     max-width: 327px;
     min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
     padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
@@ -152,15 +153,23 @@ interface TooltipProps {
      * @default right
      */
     placement?: PlacementType;
-    /** Tootip text content */
+    /** Tooltip text content */
     children: ReactNode;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
 }
 
+const modifiers: TooltipTriggerProps['modifiers'] = [
+    {
+        name: 'offset',
+        options: {
+            offset: [0, 12],
+        },
+    },
+];
+
 export function Tooltip(props: TooltipProps): ReactElement {
     const { isMobile } = useDeviceContext();
-    const hideArrow = false;
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
@@ -208,6 +217,7 @@ export function Tooltip(props: TooltipProps): ReactElement {
             defaultTooltipShown={props.defaultOpen}
             tooltipShown={controlledTooltipOpen}
             onVisibilityChange={setIsVisible}
+            modifiers={modifiers}
             tooltip={({
                 arrowRef,
                 tooltipRef,
@@ -222,14 +232,12 @@ export function Tooltip(props: TooltipProps): ReactElement {
                     role="tooltip"
                     {...getTooltipProps({ ref: tooltipRef }) /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
-                    {!hideArrow && (
-                        <TooltipArrow
-                            {...getArrowProps({ /* eslint-disable-line react/jsx-props-no-spreading */
-                                ref: arrowRef,
-                                'data-placement': placement,
-                            })}
-                        />
-                    )}
+                    <TooltipArrow
+                        {...getArrowProps({ /* eslint-disable-line react/jsx-props-no-spreading */
+                            ref: arrowRef,
+                            'data-placement': placement,
+                        })}
+                    />
                     {props.children}
                 </TooltipContainer>
             )}

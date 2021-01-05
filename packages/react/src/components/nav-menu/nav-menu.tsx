@@ -1,7 +1,7 @@
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, { forwardRef, KeyboardEvent, ReactElement, Ref, RefObject, useEffect, useMemo } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const List = styled.ul`
