@@ -10,6 +10,7 @@ export interface RouterLinkProps extends Nav {
 }
 
 interface LinkProps {
+    className?: string;
     disabled?: boolean;
     exact?: boolean;
     href: string;
@@ -19,13 +20,15 @@ interface LinkProps {
 }
 
 export function RouteLink({
-    disabled, exact, href, iconName, label, routerLink,
+    className, disabled, exact, href, iconName, label, routerLink,
 }: LinkProps): ReactElement {
+    const getClassNames = (): string => ['navigation', className, !label && 'iconOnly'].filter(Boolean).join(' ');
+
     return disabled ? (
         <StyledLink
             disabled={disabled}
             aria-disabled="true"
-            className={`navigation${label ? '' : ' iconOnly'}`}
+            className={getClassNames()}
         >
             {iconName && <Icon name={iconName} size="16" />}
             {label}
@@ -33,7 +36,7 @@ export function RouteLink({
     ) : (
         <StyledLink
             as={routerLink}
-            className={`navigation${label ? '' : ' iconOnly'}`}
+            className={getClassNames()}
             disabled={disabled}
             exact={exact}
             to={href}

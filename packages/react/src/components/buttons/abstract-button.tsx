@@ -9,6 +9,7 @@ type PartialButtonProps =
 export interface AbstractButtonProps extends PartialButtonProps {
     label?: string;
     children?: ReactNode;
+    className?: string;
     disabled?: boolean;
 
     onClick?(): void;

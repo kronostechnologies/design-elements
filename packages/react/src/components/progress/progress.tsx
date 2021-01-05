@@ -120,6 +120,7 @@ export interface ProgressStep {
 }
 
 interface ProgressProps {
+    className?: string;
     steps: ProgressStep[];
     value: number;
 }
@@ -146,12 +147,12 @@ function renderStep(step: ProgressStep, stepIndex: number, value: number): React
     );
 }
 
-export function Progress({ steps, value }: ProgressProps): ReactElement {
+export function Progress({ className, steps, value }: ProgressProps): ReactElement {
     const max = steps.length;
     const zeroBasedValue = clamp(value, 1, max) - 1;
 
     return (
-        <Container>
+        <Container className={className}>
             <StyledProgress max={max - 1} value={zeroBasedValue} />
             <Steps data-testid="progress-steps">
                 {steps.map((step, stepIndex: number) => renderStep(step, stepIndex, zeroBasedValue))}

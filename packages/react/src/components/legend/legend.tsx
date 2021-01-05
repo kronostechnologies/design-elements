@@ -42,10 +42,11 @@ const Description = styled.span`
 `;
 
 interface LegendProps {
+    className?: string;
     items: LegendItem[];
 }
 
-export function Legend({ items }: LegendProps): ReactElement {
+export function Legend({ className, items }: LegendProps): ReactElement {
     useEffect(() => {
         const itemNames: string[] = items.map((item) => item.name);
         if (new Set(itemNames).size !== items.length) {
@@ -54,7 +55,7 @@ export function Legend({ items }: LegendProps): ReactElement {
     }, [items]);
 
     return (
-        <List>
+        <List className={className}>
             {items.map((item) => (
                 <Item color={item.color} key={`${item.name}`}>
                     <div>

@@ -125,16 +125,12 @@ const Arrow = styled.button<{ disabled?: boolean }>`
     display: flex;
 `;
 
-const StyledListbox = styled(Listbox)`
-    position: absolute;
-    width: 100%;
-`;
-
 interface SelectProps {
     /**
      * Sets input's aria-label
      */
     ariaLabel?: string;
+    className?: string;
     /**
      * @default false
      */
@@ -194,6 +190,7 @@ interface SelectProps {
 
 export function Select({
     ariaLabel,
+    className,
     defaultOpen = false,
     defaultValue,
     disabled,
@@ -513,6 +510,7 @@ export function Select({
     return (
         <>
             <StyledFieldContainer
+                className={className}
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
@@ -568,7 +566,7 @@ export function Select({
                     </Arrow>
                 </InputWrapper>
                 {open && (
-                    <StyledListbox
+                    <Listbox
                         ariaLabelledBy={fieldId}
                         autofocus={searchable ? autoFocus : open}
                         ref={listboxRef}

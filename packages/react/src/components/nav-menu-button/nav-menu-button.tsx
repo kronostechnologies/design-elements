@@ -48,6 +48,7 @@ interface MenuButtonProps {
      * @default 'Navigation menu'
      * */
     ariaLabel?: string;
+    className?: string;
     /**
      * Sets menu open by default
      * @default false
@@ -60,6 +61,7 @@ interface MenuButtonProps {
 
 export function NavMenuButton({
     ariaLabel,
+    className,
     defaultOpen = false,
     id: providedId,
     label,
@@ -113,7 +115,7 @@ export function NavMenuButton({
     }
 
     return (
-        <StyledNav ref={navRef} id={id} aria-label={ariaLabel || t('ariaLabel')}>
+        <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
             <StyledButton
                 aria-expanded={isOpen}
                 data-testid="menu-button"

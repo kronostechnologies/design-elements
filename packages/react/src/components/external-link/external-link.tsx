@@ -3,6 +3,7 @@ import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 
 interface ExternalLinkProps {
+    className?: string;
     disabled?: boolean;
     href?: string;
     iconName?: IconName;
@@ -13,7 +14,7 @@ interface ExternalLinkProps {
 }
 
 export function ExternalLink({
-    disabled, href = '', iconName, label, onClick, target,
+    className, disabled, href = '', iconName, label, onClick, target,
 }: ExternalLinkProps): ReactElement {
     const handleClick: (event: MouseEvent<HTMLAnchorElement>) => void = useCallback((event) => {
         if (!href) {
@@ -25,7 +26,7 @@ export function ExternalLink({
     return (
         <StyledLink
             aria-disabled={disabled ? 'true' : 'false'}
-            className={`external${label ? '' : ' iconOnly'}`}
+            className={['external', className, !label && 'iconOnly'].filter(Boolean).join(' ')}
             disabled={disabled}
             href={disabled ? undefined : href}
             onClick={disabled ? undefined : handleClick}

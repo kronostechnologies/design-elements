@@ -150,6 +150,7 @@ export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
 interface TooltipProps {
     /** Tooltip text content */
     children: ReactNode;
+    className?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
     /**
@@ -168,7 +169,9 @@ const modifiers: TooltipTriggerProps['modifiers'] = [
     },
 ];
 
-export function Tooltip({ children, defaultOpen, desktopPlacement = 'right' }: TooltipProps): ReactElement {
+export function Tooltip({
+    children, className, defaultOpen, desktopPlacement = 'right',
+}: TooltipProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
@@ -244,6 +247,7 @@ export function Tooltip({ children, defaultOpen, desktopPlacement = 'right' }: T
         >
             {({ getTriggerProps, triggerRef }) => (
                 <StyledSpan
+                    className={className}
                     aria-describedby={tooltipId}
                     id={tooltipTriggerId}
                     tabIndex={0}

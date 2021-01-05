@@ -35,7 +35,7 @@ const Container = styled.div<ContainerProps>`
     width: ${(props) => props.width};
     z-index: 100;
 
-    > .side-drawer {
+    & > & {
         height: 100%;
         top: 0;
     }
@@ -43,6 +43,7 @@ const Container = styled.div<ContainerProps>`
 
 interface SideDrawerProps {
     children: ReactNode;
+    className?: string;
     /**
      * Drawer origin position
      * @default right
@@ -60,7 +61,7 @@ interface SideDrawerProps {
 }
 
 export function SideDrawer({
-    children, id, nested, open, drawerOrigin, width,
+    children, className, id, nested, open, drawerOrigin, width,
 }: SideDrawerProps): ReactElement {
     const { isDesktop } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(open);
@@ -102,7 +103,7 @@ export function SideDrawer({
     return (
         <Container
             aria-hidden={!drawerOpen}
-            className="side-drawer"
+            className={className}
             isDesktop={isDesktop}
             id={id}
             open={drawerOpen}

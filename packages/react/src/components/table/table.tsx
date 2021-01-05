@@ -138,6 +138,7 @@ const StyledTable = styled.table<StyledTableProps>`
 `;
 
 export interface TableProps<T extends object> {
+    className?: string;
     /** Array of Objects that defines your table columns.
      * See stories code or refer to react-table docs for more information */
     columns: TableColumn<T>;
@@ -164,6 +165,7 @@ export interface TableProps<T extends object> {
 }
 
 export function Table<T extends object>({
+    className,
     columns,
     data,
     rowNumbers = false,
@@ -190,6 +192,7 @@ export function Table<T extends object>({
 
     return (
         <StyledTable
+            className={className}
             rowSize={rowSize}
             striped={striped}
             device={device}
