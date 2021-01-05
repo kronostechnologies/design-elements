@@ -2,7 +2,7 @@ import { useTranslation } from '@design-elements/i18n/i18n';
 import { Theme } from '@design-elements/themes/theme';
 import React, { KeyboardEvent, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';

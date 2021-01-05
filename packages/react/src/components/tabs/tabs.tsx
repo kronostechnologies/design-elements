@@ -1,6 +1,6 @@
+import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, { KeyboardEvent, ReactElement, ReactNode, useReducer, useState } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';

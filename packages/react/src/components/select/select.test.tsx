@@ -6,7 +6,7 @@ import React from 'react';
 import { ThemeWrapper } from '../theme-wrapper/theme-wrapper';
 import { Select } from './select';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 const provinces = [
     { value: 'on', label: 'Ontario' },

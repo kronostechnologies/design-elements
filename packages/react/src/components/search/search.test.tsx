@@ -6,7 +6,7 @@ import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { SearchButton } from '../buttons/search-button';
 import { SearchGlobal } from './search-global';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 describe('SearchGlobal', () => {
     test('Search callback is called when search button is clicked', () => {

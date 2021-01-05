@@ -3,7 +3,7 @@ import { mountWithTheme, renderWithTheme, shallowWithTheme } from '@design-eleme
 import React from 'react';
 import { Listbox } from './listbox';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 const options = [
     {
