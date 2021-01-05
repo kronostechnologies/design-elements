@@ -16,6 +16,7 @@ interface ButtonProps {
      * @default primary
      */
     buttonType: ButtonType;
+    className?: string;
     /**
      * Disables button
      * @default false
@@ -102,6 +103,7 @@ const StyledButton = styled(AbstractButton)<AbstractButtonProps & StyledButtonPr
 `;
 
 export function IconButton({
+    className,
     iconName,
     label,
     onClick,
@@ -116,6 +118,7 @@ export function IconButton({
     return (
         <StyledButton
             aria-label={label}
+            className={className}
             onClick={handleClick}
             isMobile={isMobile}
             type={type}

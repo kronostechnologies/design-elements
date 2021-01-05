@@ -42,6 +42,7 @@ const StyledHint = styled.span<{ isMobile: boolean }>`
 `;
 
 export interface FieldContainerProps {
+    className?: string;
     children: ReactNode;
     noMargin?: boolean;
     fieldId: string;
@@ -52,6 +53,7 @@ export interface FieldContainerProps {
 }
 
 export function FieldContainer({
+    className,
     children,
     fieldId,
     label,
@@ -65,6 +67,7 @@ export function FieldContainer({
 
     return (
         <StyledDiv
+            className={className}
             noMargin={noMargin}
             hasLabel={!!label}
             hasHint={!!hint}

@@ -40,6 +40,7 @@ interface HeadbandProps {
     appName?: LogoName;
     /** Right-side content */
     children: ReactNode;
+    className?: string;
     /**
      * Sets logo href
      * @default /
@@ -52,13 +53,14 @@ interface HeadbandProps {
 export function ApplicationMenu({
     appName = 'default',
     children,
+    className,
     logoHref = '/',
     mobileDrawerContent,
 }: HeadbandProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
 
     return (
-        <Header device={device}>
+        <Header className={className} device={device}>
             <LogoWrapper to={logoHref} aria-label="Home">
                 <Logo name={appName} mobile={isMobile} />
             </LogoWrapper>

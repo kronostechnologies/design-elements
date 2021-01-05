@@ -67,6 +67,7 @@ interface ToggleButtonGroupProps {
         label: string;
         value: string;
     }[];
+    className?: string;
     /**
      * Sets common name for all buttons
      */
@@ -75,7 +76,9 @@ interface ToggleButtonGroupProps {
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-export function ToggleButtonGroup({ buttonGroup, groupName, onClick }: ToggleButtonGroupProps): ReactElement {
+export function ToggleButtonGroup({
+    buttonGroup, className, groupName, onClick,
+}: ToggleButtonGroupProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const defaultPressedButton = buttonGroup.find((button) => button.defaultPressed);
     const [selectedButton, setSelectedButton] = useState(defaultPressedButton ? defaultPressedButton.value : '');
@@ -91,7 +94,7 @@ export function ToggleButtonGroup({ buttonGroup, groupName, onClick }: ToggleBut
     }
 
     return (
-        <Container role="group" aria-label={groupName}>
+        <Container className={className} role="group" aria-label={groupName}>
             {buttonGroup.map((button, i) => (
                 <ToggleButton
                     aria-label={button.label}

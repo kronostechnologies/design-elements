@@ -272,6 +272,7 @@ export interface DatepickerHandles {
 }
 
 interface DatepickerProps {
+    className?: string;
     /** Sets date format (e.g.: dd/MM/yyyy). */
     dateFormat?: string;
     disabled?: boolean;
@@ -330,6 +331,7 @@ registerLocale('fr-CA', frCA);
 const localeArray = [enUS, enCA, frCA];
 
 export const Datepicker = forwardRef(({
+    className,
     dateFormat,
     disabled,
     noMargin,
@@ -464,6 +466,7 @@ export const Datepicker = forwardRef(({
         <>
             <ReactDatePickerStyles />
             <FieldContainer
+                className={className}
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}

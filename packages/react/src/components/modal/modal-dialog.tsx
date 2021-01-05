@@ -49,9 +49,10 @@ export interface ModalDialogProps {
     ariaHideApp?: boolean;
     /** Is set to title value if title is set */
     ariaLabel?: string;
-    confirmButton?: { label?: string, onConfirm?(): void };
     cancelButton?: { label?: string, onCancel?(): void };
     children?: ReactNode;
+    className?: string;
+    confirmButton?: { label?: string, onConfirm?(): void };
     isOpen: boolean;
     subtitle?: string;
     title?: string;
@@ -66,6 +67,7 @@ export function ModalDialog({
     ariaLabel,
     cancelButton,
     children,
+    className,
     confirmButton,
     isOpen,
     onRequestClose,
@@ -129,6 +131,7 @@ export function ModalDialog({
             ariaHideApp={ariaHideApp}
             ariaLabel={title ? undefined : ariaLabel}
             ariaLabelledBy={title ? titleId : undefined}
+            className={className}
             modalHeader={getHeader()}
             hasCloseButton
             modalFooter={getFooter()}

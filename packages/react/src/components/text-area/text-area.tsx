@@ -17,6 +17,7 @@ const StyledTextArea = styled.textarea`
 `;
 
 export interface TextAreaProps {
+    className?: string;
     label: string;
     defaultValue?: string;
     disabled?: boolean;
@@ -45,6 +46,7 @@ interface ValidityProps {
 }
 
 export function TextArea({
+    className,
     noMargin,
     onBlur,
     onChange,
@@ -82,6 +84,7 @@ export function TextArea({
 
     return (
         <FieldContainer
+            className={className}
             noMargin={noMargin}
             fieldId={id}
             label={label}

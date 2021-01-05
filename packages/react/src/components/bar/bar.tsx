@@ -29,13 +29,16 @@ const StyledBar = styled.div`
 `;
 
 interface BarProps {
+    className?: string;
     color: string;
     percent: number;
     endLabel: ReactText;
 }
 
-export const Bar: VoidFunctionComponent<BarProps> = ({ color, percent, endLabel }) => (
-    <Container>
+export const Bar: VoidFunctionComponent<BarProps> = ({
+    className, color, percent, endLabel,
+}) => (
+    <Container className={className}>
         <Progress>
             <StyledBar color={color} percent={percent} />
         </Progress>

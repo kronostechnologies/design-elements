@@ -25,6 +25,7 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
     'inputMode' | 'value'>;
 
 interface TextInputProps extends PartialInputProps {
+    className?: string;
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
@@ -46,6 +47,7 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = React.forwardRef(({
+    className,
     noMargin,
     onBlur,
     onChange,
@@ -92,6 +94,7 @@ export const TextInput = React.forwardRef(({
 
     return (
         <FieldContainer
+            className={className}
             noMargin={noMargin}
             fieldId={id}
             label={label}

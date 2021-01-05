@@ -82,6 +82,7 @@ const Navigation = styled.nav`
 `;
 
 interface PaginationProps {
+    className?: string;
     /**
      * Total number of pages
      * @default desktop
@@ -109,6 +110,7 @@ interface PaginationProps {
 }
 
 export function Pagination({
+    className,
     totalPages,
     numberOfResults,
     defaultActivePage = 1,
@@ -155,7 +157,7 @@ export function Pagination({
     });
 
     return (
-        <Container isMobile={isMobile}>
+        <Container className={className} isMobile={isMobile}>
             {numberOfResults !== undefined && (
                 <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
                     {numberOfResults}

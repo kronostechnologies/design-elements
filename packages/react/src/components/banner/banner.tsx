@@ -79,6 +79,7 @@ const GetIconName = (messageType: MessageType): IconName => {
 
 interface BannerProps {
     children: ReactNode;
+    className?: string;
     type: MessageType;
     /**
      * Hides the component
@@ -87,12 +88,14 @@ interface BannerProps {
     hidden?: boolean;
 }
 
-export function Banner({ children, type, hidden }: BannerProps): ReactElement | null {
+export function Banner({
+    children, className, type, hidden,
+}: BannerProps): ReactElement | null {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
 
     return visible ? (
-        <Container data-testid="container" role="alert" messageType={type} isMobile={isMobile}>
+        <Container className={className} data-testid="container" role="alert" messageType={type} isMobile={isMobile}>
             <CloseButton
                 data-testid="closeButton"
                 onClick={() => setVisible(false)}

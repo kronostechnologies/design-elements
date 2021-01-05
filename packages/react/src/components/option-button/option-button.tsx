@@ -32,18 +32,19 @@ const Input = styled.input`
 
 interface OptionButtonProps {
     checked?: boolean;
+    className?: string;
     label: string;
     name: string;
     value: number;
 }
 
 export const OptionButton: VoidFunctionComponent<OptionButtonProps> = ({
-    checked, label, name, value,
+    checked, className, label, name, value,
 }: OptionButtonProps) => {
     const id = useMemo(uuid, []);
 
     return (
-        <div>
+        <div className={className}>
             <Input checked={checked} id={id} name={name} type="radio" value={value} />
             <label htmlFor={id}>{label}</label>
         </div>

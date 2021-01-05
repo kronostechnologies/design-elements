@@ -24,6 +24,7 @@ function safeFormatCurrency(
 }
 
 interface Props {
+    className?: string;
     disabled?: boolean;
     required?: boolean;
     /**
@@ -64,6 +65,7 @@ function parseAndRound(val: string, precision: number): number | null {
 }
 
 export function MoneyInput({
+    className,
     required,
     disabled,
     label,
@@ -138,6 +140,7 @@ export function MoneyInput({
     return (
         <InputWrapper language={language}>
             <TextInput
+                className={className}
                 required={required}
                 disabled={disabled}
                 ref={inputElement}

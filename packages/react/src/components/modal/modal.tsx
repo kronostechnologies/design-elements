@@ -101,6 +101,7 @@ export interface ModalProps {
     ariaLabel?: string;
     ariaLabelledBy?: string;
     children?: ReactNode;
+    className?: string;
     /**
      * Removes padding to give you a blank modal to work with.
      * @default false
@@ -141,6 +142,7 @@ export function Modal({
     ariaLabel,
     ariaLabelledBy,
     children,
+    className,
     noPadding = false,
     hasCloseButton = true,
     isOpen,
@@ -187,6 +189,7 @@ export function Modal({
                     modal: true,
                 }}
                 ariaHideApp={ariaHideApp}
+                className={className}
                 noPadding={noPadding}
                 hasCloseButton={hasCloseButton}
                 isOpen={isOpen}

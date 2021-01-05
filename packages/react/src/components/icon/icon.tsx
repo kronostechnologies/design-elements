@@ -70,6 +70,7 @@ const iconMapping = {
 export type IconName = keyof typeof iconMapping;
 
 interface IconProps {
+    className?: string;
     /** Name of the icon, has to be in IconName */
     name: IconName;
     /**
@@ -86,6 +87,7 @@ interface IconProps {
 }
 
 export const Icon: VoidFunctionComponent<IconProps> = ({
+    className,
     name,
     size,
     color,
@@ -99,6 +101,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
 
     return (
         <Component
+            className={className}
             height={size}
             focusable={false}
             width={size}

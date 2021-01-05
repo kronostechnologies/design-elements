@@ -95,6 +95,7 @@ function RightArrowIcon(): ReactElement {
 export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
     autoTransitionDelay?: number;
     children: ReactNode;
+    className?: string;
     header: ReactNode;
     initialSlide: number;
     loop: boolean;
@@ -114,7 +115,7 @@ function getChildrenAsArray(children: ReactNode): ReactNodeArray {
 
 export function Carousel(
     {
-        autoTransitionDelay, initialSlide, children, header, loop, transitionTime, withArrows, ...props
+        autoTransitionDelay, className, initialSlide, children, header, loop, transitionTime, withArrows, ...props
     }: CarouselProps,
 ): ReactElement {
     const carouselId = useId('carousel-slides-');
@@ -186,7 +187,7 @@ export function Carousel(
     const disablePrevious = !loop && active === 0;
     const disableNext = !loop && active === slidesCount - 1;
     return (
-        <Main aria-label={props['aria-label']} aria-roledescription="carousel">
+        <Main className={className} aria-label={props['aria-label']} aria-roledescription="carousel">
             {withArrows && (
                 <NavigationButton
                     onClick={!disablePrevious ? handlers.onPrevious : undefined}

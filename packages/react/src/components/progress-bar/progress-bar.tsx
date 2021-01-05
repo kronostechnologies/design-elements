@@ -20,6 +20,7 @@ const Container = styled.div`
 `;
 
 interface Props {
+    className?: string;
     /** [0 - 100] */
     percent: number;
     color: string;
@@ -30,10 +31,10 @@ interface Props {
 }
 
 export function ProgressBar({
-    color, descriptionLabel, resultLabel, percent,
+    className, color, descriptionLabel, resultLabel, percent,
 }: Props): ReactElement {
     return (
-        <Container>
+        <Container className={className}>
             <Label>{descriptionLabel}</Label>
             <Bar
                 color={color}

@@ -6,13 +6,17 @@ import styled from 'styled-components';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
-type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
+type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
+
+interface AbstractContainerProps extends MobileDeviceContext {
+    className?: string;
+}
 
 function abstractContainer(
     bgColor: string,
     color?: keyof Theme['notifications'],
-): FunctionComponent<MobileDeviceContextProps> {
-    return styled.div<MobileDeviceContextProps>`
+): FunctionComponent<AbstractContainerProps> {
+    return styled.div<AbstractContainerProps>`
         background-color: ${bgColor};
         border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
         box-sizing: border-box;
@@ -31,7 +35,7 @@ const SuccessContainer = abstractContainer('#f7faf4', 'success-1.1');
 const AlertContainer = abstractContainer('#fffce9', 'alert-3.1');
 const ErrorContainer = abstractContainer('#fdf6f7', 'error-2.1');
 
-const TextWrapper = styled.div<MobileDeviceContextProps>`
+const TextWrapper = styled.div<MobileDeviceContext>`
     box-sizing: border-box;
     padding-left: var(--spacing-2x);
 
@@ -42,7 +46,7 @@ const TextWrapper = styled.div<MobileDeviceContextProps>`
     }
 `;
 
-const Heading = styled.span<MobileDeviceContextProps>`
+const Heading = styled.span<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1.125rem' : '1rem')};
     font-weight: var(--font-bold);
 `;
@@ -50,7 +54,7 @@ const Heading = styled.span<MobileDeviceContextProps>`
 type MessageType = 'info' | 'success' | 'alert' | 'error';
 
 interface MessageTypeProps {
-    container: ComponentType<{ isMobile: boolean; }>;
+    container: ComponentType<AbstractContainerProps>;
     iconName: IconName;
     title: 'Tips' | 'Success' | 'Alert' | 'Error';
 }
@@ -85,6 +89,7 @@ const handleType = (type: MessageType): MessageTypeProps => {
 };
 
 interface InlineMessageProps {
+    className?: string;
     /**
      * Sets text message
      */
@@ -99,14 +104,20 @@ interface InlineMessageProps {
     type: MessageType;
 }
 
-export function InlineMessage({ children, title, type }: InlineMessageProps): ReactElement {
+export function InlineMessage({
+    className, children, title, type,
+}: InlineMessageProps): ReactElement {
     const { t } = useTranslation('inline-message');
     const { isMobile } = useDeviceContext();
     const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
     const Container = messageType.container;
 
     return (
-        <Container isMobile={isMobile} aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}>
+        <Container
+            className={className}
+            isMobile={isMobile}
+            aria-live={type === 'alert' || type === 'error' ? 'assertive' : 'polite'}
+        >
             <Icon name={messageType.iconName} size={isMobile ? '20' : '16'} />
             <TextWrapper isMobile={isMobile}>
                 <Heading isMobile={isMobile}>{title || t(messageType.title)}</Heading>

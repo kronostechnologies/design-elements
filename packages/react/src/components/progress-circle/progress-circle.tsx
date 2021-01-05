@@ -60,6 +60,7 @@ const StyledCircle = styled(Circle)`
 `;
 
 interface Props {
+    className?: string;
     color: string;
     /** Bottom label */
     descriptionLabel?: string;
@@ -70,10 +71,10 @@ interface Props {
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
 export function ProgressCircle({
-    color, descriptionLabel, percent, resultLabel,
+    className, color, descriptionLabel, percent, resultLabel,
 }: Props): ReactElement {
     return (
-        <Container>
+        <Container className={className}>
             <Wrapper>
                 <StyledCircle
                     radius={RADIUS}
