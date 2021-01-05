@@ -127,7 +127,7 @@ export const NavMenu = forwardRef(({
                         innerRef={option.ref}
                         $device={device}
                         to={option.href}
-                        onClick={() => onChange && onChange(option)}
+                        onClick={() => onChange?.(option)}
                         onKeyDown={(event) => handleKeyDown(event, option)}
                     >
                         {option.label || option.value}

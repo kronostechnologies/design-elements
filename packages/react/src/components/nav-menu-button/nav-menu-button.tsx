@@ -87,7 +87,9 @@ export function NavMenuButton({
     }, [isOpen]);
 
     useEffect(() => {
-        setFocusedValue(isOpen ? options[0].value : '');
+        if (options.length > 0) {
+            setFocusedValue(isOpen ? options[0].value : '');
+        }
         document.addEventListener('mouseup', handleClickOutside);
 
         return () => document.removeEventListener('mouseup', handleClickOutside);
