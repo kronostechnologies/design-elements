@@ -6,7 +6,7 @@ import { mountWithTheme } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { TextInput } from './text-input';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 describe('TextInput', () => {
     const initialProps = {

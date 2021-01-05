@@ -4,7 +4,7 @@ import React, { ReactElement } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { NavMenuButton } from './nav-menu-button';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 function setup(children: ReactElement): ReactElement {
     return (

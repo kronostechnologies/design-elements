@@ -5,7 +5,7 @@ import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { TextArea } from './text-area';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 describe('TextArea', () => {
     const defaultProps = {

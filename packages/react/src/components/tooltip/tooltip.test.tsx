@@ -2,7 +2,7 @@ import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
 import { Tooltip, TooltipArrow, TooltipContainer } from './tooltip';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 describe('Tooltip', () => {
     test('Has default desktop styles', () => {

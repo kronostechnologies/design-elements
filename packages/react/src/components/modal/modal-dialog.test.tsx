@@ -5,7 +5,7 @@ import { doNothing } from '../../test-utils/callbacks';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps } from './modal-dialog';
 
-jest.mock('uuid/v4');
+jest.mock('@design-elements/utils/uuid');
 
 type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'>;
 
