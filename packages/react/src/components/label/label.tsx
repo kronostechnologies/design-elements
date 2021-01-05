@@ -18,15 +18,16 @@ const StyledLabel = styled.label<{isMobile: boolean}>`
 `;
 
 interface LabelProps {
+    className?: string;
     children: ReactNode;
     forId: string;
 }
 
-function Label({ children, forId }: LabelProps): ReactElement {
+function Label({ className, children, forId }: LabelProps): ReactElement {
     const { isMobile } = useDeviceContext();
 
     return (
-        <StyledLabel htmlFor={forId} isMobile={isMobile}>
+        <StyledLabel className={className} htmlFor={forId} isMobile={isMobile}>
             {children}
         </StyledLabel>
     );

@@ -13,6 +13,7 @@ export interface Tab {
 }
 
 interface TabsProps {
+    className?: string;
     tabs: Tab[];
 }
 
@@ -66,7 +67,7 @@ const CenteredContentDiv = styled.div`
     padding-bottom: var(--spacing-1x);
 `;
 
-export function Tabs({ tabs }: TabsProps): ReactElement {
+export function Tabs({ className, tabs }: TabsProps): ReactElement {
     const [tabsState, setTabsState] = useReducer(reducer, tabs, initTabsSelection);
     const [selectedTab, setSelectedTab] = useState(tabsState[0]);
 
@@ -112,7 +113,7 @@ export function Tabs({ tabs }: TabsProps): ReactElement {
     }
 
     return (
-        <div>
+        <div className={className}>
             <CenteredContentDiv
                 data-testid="tab-buttons-container"
                 role="tablist"

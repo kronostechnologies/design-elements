@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Side Drawer Has different height when in mobile 1`] = `
-.c0 {
+.c1 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 56px);
@@ -20,14 +20,14 @@ exports[`Side Drawer Has different height when in mobile 1`] = `
   z-index: 100;
 }
 
-.c0 > .side-drawer {
+.c0 > .c0 {
   height: 100%;
   top: 0;
 }
 
 <div
   aria-hidden="false"
-  class="c0 side-drawer"
+  class="c0 c1"
   open=""
   origin="right"
   width="50%"
@@ -39,7 +39,7 @@ exports[`Side Drawer Has different height when in mobile 1`] = `
 `;
 
 exports[`Side Drawer Has nested drawer 1`] = `
-.c0 {
+.c1 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 48px);
@@ -58,11 +58,169 @@ exports[`Side Drawer Has nested drawer 1`] = `
   z-index: 100;
 }
 
-.c0 > .side-drawer {
+.c0 > .c0 {
   height: 100%;
   top: 0;
 }
 
+.c2 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .c0 {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  aria-hidden="false"
+  class="c0 c1"
+  open=""
+  origin="left"
+  width="100%"
+>
+  <div
+    aria-hidden="false"
+    class="c0 c2"
+    open=""
+    origin="right"
+    width="100%"
+  >
+    <p>
+      Test
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Side Drawer Has width set to 50% 1`] = `
+.c1 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 50%;
+  z-index: 100;
+}
+
+.c0 > .c0 {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  aria-hidden="false"
+  class="c0 c1"
+  open=""
+  origin="right"
+  width="50%"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
+exports[`Side Drawer Is closed on left side 1`] = `
+.c1 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .c0 {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  aria-hidden="true"
+  class="c0 c1"
+  origin="left"
+  width="100%"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
+exports[`Side Drawer Is closed on right side 1`] = `
+.c1 {
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  height: calc(100vh - 48px);
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 48px;
+  -webkit-transform: translate(100%);
+  -ms-transform: translate(100%);
+  transform: translate(100%);
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 100;
+}
+
+.c0 > .c0 {
+  height: 100%;
+  top: 0;
+}
+
+<div
+  aria-hidden="true"
+  class="c0 c1"
+  origin="right"
+  width="100%"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;
+
+exports[`Side Drawer Is open 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -82,172 +240,14 @@ exports[`Side Drawer Has nested drawer 1`] = `
   z-index: 100;
 }
 
-.c1 > .side-drawer {
+.c0 > .c0 {
   height: 100%;
   top: 0;
 }
 
 <div
   aria-hidden="false"
-  class="c0 side-drawer"
-  open=""
-  origin="left"
-  width="100%"
->
-  <div
-    aria-hidden="false"
-    class="c1 side-drawer"
-    open=""
-    origin="right"
-    width="100%"
-  >
-    <p>
-      Test
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Side Drawer Has width set to 50% 1`] = `
-.c0 {
-  background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  height: calc(100vh - 48px);
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  top: 48px;
-  -webkit-transform: translate(0%);
-  -ms-transform: translate(0%);
-  transform: translate(0%);
-  -webkit-transition: -webkit-transform 300ms;
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
-  width: 50%;
-  z-index: 100;
-}
-
-.c0 > .side-drawer {
-  height: 100%;
-  top: 0;
-}
-
-<div
-  aria-hidden="false"
-  class="c0 side-drawer"
-  open=""
-  origin="right"
-  width="50%"
->
-  <p>
-    Test
-  </p>
-</div>
-`;
-
-exports[`Side Drawer Is closed on left side 1`] = `
-.c0 {
-  background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  height: calc(100vh - 48px);
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  top: 48px;
-  -webkit-transform: translate(-100%);
-  -ms-transform: translate(-100%);
-  transform: translate(-100%);
-  -webkit-transition: -webkit-transform 300ms;
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
-  width: 100%;
-  z-index: 100;
-}
-
-.c0 > .side-drawer {
-  height: 100%;
-  top: 0;
-}
-
-<div
-  aria-hidden="true"
-  class="c0 side-drawer"
-  origin="left"
-  width="100%"
->
-  <p>
-    Test
-  </p>
-</div>
-`;
-
-exports[`Side Drawer Is closed on right side 1`] = `
-.c0 {
-  background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  height: calc(100vh - 48px);
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  top: 48px;
-  -webkit-transform: translate(100%);
-  -ms-transform: translate(100%);
-  transform: translate(100%);
-  -webkit-transition: -webkit-transform 300ms;
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
-  width: 100%;
-  z-index: 100;
-}
-
-.c0 > .side-drawer {
-  height: 100%;
-  top: 0;
-}
-
-<div
-  aria-hidden="true"
-  class="c0 side-drawer"
-  origin="right"
-  width="100%"
->
-  <p>
-    Test
-  </p>
-</div>
-`;
-
-exports[`Side Drawer Is open 1`] = `
-.c0 {
-  background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  height: calc(100vh - 48px);
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  top: 48px;
-  -webkit-transform: translate(0%);
-  -ms-transform: translate(0%);
-  transform: translate(0%);
-  -webkit-transition: -webkit-transform 300ms;
-  -webkit-transition: transform 300ms;
-  transition: transform 300ms;
-  width: 100%;
-  z-index: 100;
-}
-
-.c0 > .side-drawer {
-  height: 100%;
-  top: 0;
-}
-
-<div
-  aria-hidden="false"
-  class="c0 side-drawer"
+  class="c0 c1"
   open=""
   origin="right"
   width="100%"

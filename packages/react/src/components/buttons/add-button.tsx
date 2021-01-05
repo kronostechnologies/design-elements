@@ -2,6 +2,7 @@ import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement } from 're
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
+import { AbstractButtonProps } from './abstract-button';
 import { Button } from './button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
@@ -12,7 +13,7 @@ const PlusIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
 `;
 
-interface ButtonProps {
+interface ButtonProps extends Omit<AbstractButtonProps, 'children'> {
     /**
      * Visual style
      * @default primary
@@ -23,13 +24,10 @@ interface ButtonProps {
      * @default submit
      */
     type?: Type;
-    label?: string;
-    disabled?: boolean;
-
-    onClick?(): void;
 }
 
 export function AddButton({
+    className,
     type = 'submit',
     buttonType,
     disabled,
@@ -40,6 +38,7 @@ export function AddButton({
 
     return (
         <Button
+            className={className}
             type={type}
             buttonType={buttonType}
             onClick={onClick}

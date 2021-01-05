@@ -71,7 +71,7 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
 `;
 
 exports[`Application Menu Matches the snapshot (mobile) 1`] = `
-.c3 {
+.c4 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 56px);
@@ -90,7 +90,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   z-index: 100;
 }
 
-.c3 > .side-drawer {
+.c3 > .c3 {
   height: 100%;
   top: 0;
 }
@@ -189,7 +189,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   </button>
   <div
     aria-hidden="true"
-    class="c3 side-drawer"
+    class="c3 c4"
     id="menu-drawer"
     origin="right"
     width="100%"
@@ -202,7 +202,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
 `;
 
 exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
-.c3 {
+.c4 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
   height: calc(100vh - 56px);
@@ -221,7 +221,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   z-index: 100;
 }
 
-.c3 > .side-drawer {
+.c3 > .c3 {
   height: 100%;
   top: 0;
 }
@@ -320,7 +320,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   </button>
   <div
     aria-hidden="true"
-    class="c3 side-drawer"
+    class="c3 c4"
     id="menu-drawer"
     origin="right"
     width="100%"

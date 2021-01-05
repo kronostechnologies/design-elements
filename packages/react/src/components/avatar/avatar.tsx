@@ -4,6 +4,7 @@ import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 interface AvatarProps {
+    className?: string;
     username: string;
 }
 
@@ -22,12 +23,12 @@ const StyledSpan = styled.span<{isMobile: boolean}>`
     letter-spacing: ${({ isMobile }) => (isMobile ? '0.23px' : '0.17px')};
 `;
 
-export function Avatar({ username }: AvatarProps): ReactElement {
+export function Avatar({ className, username }: AvatarProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const initials = useMemo(() => getInitialsFromUsername(username), [username]);
 
     return (
-        <StyledDiv role="img" aria-label={username.concat(' avatar')} isMobile={isMobile}>
+        <StyledDiv className={className} role="img" aria-label={username.concat(' avatar')} isMobile={isMobile}>
             <StyledSpan data-testid="avatar-initials" isMobile={isMobile}>
                 {initials.length <= 2 && initials}
             </StyledSpan>

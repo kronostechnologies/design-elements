@@ -45,6 +45,7 @@ interface ListboxProps {
      * @default false
      */
     checkIndicator?: boolean;
+    className?: string;
     /**
      * The default selected option. You may specify an array of strings when using multiselect feature.
      */
@@ -193,6 +194,7 @@ export const Listbox = forwardRef(({
     onFocusedValueChange,
     onKeyDown,
     checkIndicator = false,
+    className,
     defaultValue,
     dropdown = false,
     multiselect = false,
@@ -417,6 +419,7 @@ export const Listbox = forwardRef(({
             aria-activedescendant={getAriaActiveDescendant(selectedFocusIndex)}
             aria-labelledby={ariaLabelledBy}
             aria-multiselectable={multiselect}
+            className={className}
             isDropdown={dropdown}
             ref={ref}
             role="listbox"

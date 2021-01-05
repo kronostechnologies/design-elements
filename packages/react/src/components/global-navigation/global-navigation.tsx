@@ -132,6 +132,7 @@ export interface GlobalNavigationItem {
 }
 
 interface GlobalNavigationProps {
+    className?: string;
     /** Item has an icon name, a name, and a href */
     mainItems: GlobalNavigationItem[];
     /** Item has an icon name, a name, and a href */
@@ -139,6 +140,7 @@ interface GlobalNavigationProps {
 }
 
 export function GlobalNavigation({
+    className,
     mainItems,
     footerItems,
 }: GlobalNavigationProps): ReactElement {
@@ -209,7 +211,7 @@ export function GlobalNavigation({
     );
 
     return (
-        <Wrapper ref={wrapperRef} padding={wrapperPadding}>
+        <Wrapper className={className} ref={wrapperRef} padding={wrapperPadding}>
             <nav aria-label="App Navigation">
                 <NavList>
                     {navItems.map(navItem)}
