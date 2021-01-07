@@ -1,0 +1,439 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags matches snapshot (deletable) 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  padding: 0 var(--spacing-1x);
+}
+
+.c1 + .c1 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: var(--spacing-1x);
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1 c2"
+  >
+    tag1
+    <button
+      aria-label="Remove tag1 from the list"
+      class="c3"
+      data-testid="tag1-delete-button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="#60666e"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag2
+    <button
+      aria-label="Remove tag2 from the list"
+      class="c3"
+      data-testid="tag2-delete-button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="#60666e"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag3
+    <button
+      aria-label="Remove tag3 from the list"
+      class="c3"
+      data-testid="tag3-delete-button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="#60666e"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`Tags matches snapshot (mobile, medium) 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  padding: 0 var(--spacing-1x);
+}
+
+.c1 + .c1 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1 c2"
+  >
+    tag1
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag2
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag3
+  </li>
+</ul>
+`;
+
+exports[`Tags matches snapshot (mobile, small) 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  padding: 0 var(--spacing-1x);
+}
+
+.c1 + .c1 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1 c2"
+  >
+    tag1
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag2
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag3
+  </li>
+</ul>
+`;
+
+exports[`Tags matches snapshot (size medium) 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  padding: 0 var(--spacing-1x);
+}
+
+.c1 + .c1 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1 c2"
+  >
+    tag1
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag2
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag3
+  </li>
+</ul>
+`;
+
+exports[`Tags matches snapshot (size small) 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  padding: 0 var(--spacing-half);
+}
+
+.c1 + .c1 {
+  margin-left: var(--spacing-1x);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1 c2"
+  >
+    tag1
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag2
+  </li>
+  <li
+    class="c1 c2"
+  >
+    tag3
+  </li>
+</ul>
+`;
+
+exports[`Tags matches snapshot (with icons) 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  padding: 0 var(--spacing-1x);
+}
+
+.c1 + .c1 {
+  margin-left: var(--spacing-1x);
+}
+
+.c3 {
+  color: #60666e;
+  margin-right: var(--spacing-1x);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1 c2"
+  >
+    <svg
+      aria-hidden="false"
+      aria-label="mail"
+      class="c3"
+      color="currentColor"
+      data-testid="tag1-icon"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    tag1
+  </li>
+  <li
+    class="c1 c2"
+  >
+    <svg
+      aria-hidden="false"
+      aria-label="home"
+      class="c3"
+      color="currentColor"
+      data-testid="tag2-icon"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    tag2
+  </li>
+  <li
+    class="c1 c2"
+  >
+    <svg
+      aria-hidden="false"
+      aria-label="calendar"
+      class="c3"
+      color="currentColor"
+      data-testid="tag3-icon"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    tag3
+  </li>
+</ul>
+`;
