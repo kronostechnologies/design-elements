@@ -48,6 +48,7 @@ export * from './components/tooltip/tooltip';
 export * from './components/table/table';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
+export { Tag, Tags } from './components/tags/tags';
 export { useModal } from './components/modal/use-modal';
 export { UserProfile } from './components/user-profile/user-profile';
 

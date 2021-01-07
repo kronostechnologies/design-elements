@@ -48,6 +48,9 @@ export const Translations = {
             'increment-button-aria-label': 'Increase number',
             'decrement-button-aria-label': 'Decrease number',
         },
+        'tag-medium': {
+            deleteButtonAriaLabel: 'Remove {{label}} from the list',
+        },
         'text-area': {
             validationErrorMessage: 'This text area is invalid',
         },
@@ -106,6 +109,9 @@ export const Translations = {
         'stepper-buttons': {
             'increment-button-aria-label': 'Augmenter le nombre',
             'decrement-button-aria-label': 'Diminuer le nombre',
+        },
+        'tag-medium': {
+            deleteButtonAriaLabel: 'Retirer {{label}} de la liste',
         },
         'text-area': {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
