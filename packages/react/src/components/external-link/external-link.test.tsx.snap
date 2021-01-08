@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`External Link disabled matches snapshot 1`] = `
+exports[`External Link matches snapshot (disabled) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -19,51 +19,219 @@ exports[`External Link disabled matches snapshot 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c0.iconOnly svg {
-  margin: 0;
+.c0:focus {
+  outline: none;
 }
 
-.c0.external {
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
   color: #7fbfd2;
 }
 
-.c0.external:focus {
-  outline: none;
+.c1:visited {
+  color: #094C6C;
 }
 
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #9ca7b4;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+.c1:visited svg {
+  color: #094C6C;
 }
 
 <a
   aria-disabled="true"
-  class="c0 external"
+  class="c0 c1"
   disabled=""
+  type="external"
 >
+  External Link
+</a>
+`;
+
+exports[`External Link matches snapshot (label and icon) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: var(--spacing-1x);
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #0080A5;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1:visited {
+  color: #094C6C;
+}
+
+.c1:visited svg {
+  color: #094C6C;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  href="#"
+  type="external"
+>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
+  External Link
+</a>
+`;
+
+exports[`External Link matches snapshot (only icon) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 0;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #0080A5;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1:visited {
+  color: #094C6C;
+}
+
+.c1:visited svg {
+  color: #094C6C;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  href="#"
+  type="external"
+>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
+</a>
+`;
+
+exports[`External Link matches snapshot (without href) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: var(--spacing-1x);
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #0080A5;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1:visited {
+  color: #094C6C;
+}
+
+.c1:visited svg {
+  color: #094C6C;
+}
+
+<a
+  aria-disabled="false"
+  class="c0 c1"
+  href=""
+  type="external"
+>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
   External Link
 </a>
 `;
@@ -87,238 +255,39 @@ exports[`External Link matches snapshot 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0.external:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c0.external:hover {
+.c1 {
+  color: #0080A5;
+}
+
+.c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c0.external:visited {
-  color: #094c6c;
+.c1:visited {
+  color: #094C6C;
 }
 
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
+.c1:visited svg {
+  color: #094C6C;
 }
 
 <a
   aria-disabled="false"
-  class="c0 external"
+  class="c0 c1"
   href="https://www.google.ca/"
+  type="external"
 >
-  External Link
-</a>
-`;
-
-exports[`External Link with icon matches snapshot 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
-  outline: none;
-}
-
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  aria-disabled="false"
-  class="c0 external"
-  href="#"
->
-  <svg
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
-  External Link
-</a>
-`;
-
-exports[`External Link without href matches snapshot 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
-  outline: none;
-}
-
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  aria-disabled="false"
-  class="c0 external"
-  href=""
->
-  <svg
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
   External Link
 </a>
 `;

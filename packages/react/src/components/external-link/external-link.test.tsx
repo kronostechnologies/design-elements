@@ -12,6 +12,7 @@ describe('External Link', () => {
         wrapper.find(ExternalLink).simulate('click');
         expect(callback).toHaveBeenCalledTimes(1);
     });
+
     test('matches snapshot', () => {
         const tree = renderWithProviders(
             <ExternalLink href="https://www.google.ca/" label="External Link" />,
@@ -19,21 +20,32 @@ describe('External Link', () => {
 
         expect(tree).toMatchSnapshot();
     });
-    test('with icon matches snapshot', () => {
+
+    test('matches snapshot (label and icon)', () => {
         const tree = renderWithProviders(
             <ExternalLink href="#" label="External Link" iconName="mail" />,
         );
 
         expect(tree).toMatchSnapshot();
     });
-    test('without href matches snapshot', () => {
+
+    test('matches snapshot (only icon)', () => {
+        const tree = renderWithProviders(
+            <ExternalLink href="#" iconName="mail" />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches snapshot (without href)', () => {
         const tree = renderWithProviders(
             <ExternalLink label="External Link" iconName="mail" />,
         );
 
         expect(tree).toMatchSnapshot();
     });
-    test('disabled matches snapshot', () => {
+
+    test('matches snapshot (disabled)', () => {
         const tree = renderWithProviders(
             <ExternalLink href="#" label="External Link" disabled />,
         );

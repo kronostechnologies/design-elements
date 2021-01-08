@@ -21,21 +21,24 @@ describe('Route Link', () => {
 
         expect(tree).toMatchSnapshot();
     });
-    test('with icon matches snapshot (NavLink)', () => {
+
+    test('matches snapshot (NavLink | label and icon)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={NavLink} href="/test" label="Navigation Link" iconName="mail" />),
         );
 
         expect(tree).toMatchSnapshot();
     });
-    test('only icon matches snapshot (NavLink)', () => {
+
+    test('matches snapshot (NavLink | only icon)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={NavLink} href="/test" iconName="mail" />),
         );
 
         expect(tree).toMatchSnapshot();
     });
-    test('disabled matches snapshot (NavLink)', () => {
+
+    test('matches snapshot (NavLink | disabled)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={NavLink} href="/test" label="Navigation Link" disabled />),
         );
@@ -50,21 +53,24 @@ describe('Route Link', () => {
 
         expect(tree).toMatchSnapshot();
     });
-    test('with icon matches snapshot (Link)', () => {
+
+    test('matches snapshot (Link | label and icon)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={Link} href="/test" label="Navigation Link" iconName="mail" />),
         );
 
         expect(tree).toMatchSnapshot();
     });
-    test('only icon matches snapshot (Link)', () => {
+
+    test('matches snapshot (Link | only icon)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={Link} href="/test" iconName="mail" />),
         );
 
         expect(tree).toMatchSnapshot();
     });
-    test('disabled matches snapshot (Link)', () => {
+
+    test('matches snapshot (Link | disabled)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={Link} href="/test" label="Navigation Link" disabled />),
         );
