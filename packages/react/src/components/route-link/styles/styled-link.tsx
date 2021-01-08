@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import { focus } from '../../../utils/css-state';
 
+type Type = 'external' | 'route';
+
 interface ContainerProps {
     activeClassName?: string;
     disabled?: boolean;
     exact?: boolean;
+    $hasLabel: boolean;
     to?: string;
+    type: Type;
 }
 
 export const StyledLink = styled.a<ContainerProps>`
@@ -15,42 +19,8 @@ export const StyledLink = styled.a<ContainerProps>`
     text-decoration: none;
 
     svg {
-        margin-right: var(--spacing-1x);
+        margin-right: ${({ $hasLabel }) => ($hasLabel ? 'var(--spacing-1x)' : '0')};
     }
 
-    &.iconOnly svg {
-        margin: 0;
-    }
-
-    &.external {
-        color: ${(props) => (props.disabled ? '#7fbfd2' : '#0080a5')};
-
-        ${focus};
-
-        &:hover {
-            ${(props) => (props.disabled ? '' : 'text-decoration: underline')};
-        }
-
-        &:visited {
-            color: #094c6c;
-
-            svg {
-                color: #094c6c;
-            }
-        }
-    }
-
-    &.navigation {
-        color: ${(props) => (props.disabled ? '#9ca7b4' : '#57666e')};
-
-        ${focus};
-
-        &:hover {
-            ${(props) => (props.disabled ? '' : 'color: #000;')}
-        }
-
-        &.active {
-            ${(props) => (props.disabled ? '' : 'color: #0080a5;')}
-        }
-    }
+    ${focus};
 `;
