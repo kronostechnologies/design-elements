@@ -226,7 +226,7 @@ export function Tooltip({
                 tooltipRef,
                 getArrowProps,
                 getTooltipProps,
-                placement: popperPlacement,
+                placement,
             }) => (
                 <TooltipContainer
                     aria-hidden={!isVisible}
@@ -238,7 +238,7 @@ export function Tooltip({
                     <TooltipArrow
                         {...getArrowProps({ /* eslint-disable-line react/jsx-props-no-spreading */
                             ref: arrowRef,
-                            'data-placement': popperPlacement,
+                            'data-placement': placement,
                         })}
                     />
                     {children}

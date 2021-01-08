@@ -35,7 +35,7 @@ const Container = styled.div<ContainerProps>`
     width: ${(props) => props.width};
     z-index: 100;
 
-    > .side-drawer {
+    & > & {
         height: 100%;
         top: 0;
     }
@@ -103,7 +103,7 @@ export function SideDrawer({
     return (
         <Container
             aria-hidden={!drawerOpen}
-            className={['side-drawer', className].filter(Boolean).join(' ')}
+            className={className}
             isDesktop={isDesktop}
             id={id}
             open={drawerOpen}
