@@ -18,8 +18,44 @@ describe('Avatar', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Matches small avatar Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Small} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches medium avatar Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Medium} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches large avatar Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Large} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('Matches mobile Snapshot', () => {
         const tree = renderWithProviders(<Avatar username="AB" />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile small avatar Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Small} />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile medium avatar Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Medium} />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile large avatar Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Large} />, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
