@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Route Link disabled matches snapshot (Link) 1`] = `
+exports[`Route Link matches snapshot (Link | disabled) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -19,62 +19,43 @@ exports[`Route Link disabled matches snapshot (Link) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #7fbfd2;
-}
-
-.c0.external:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0.external:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c0.external:visited {
-  color: #094c6c;
+.c1 {
+  color: #9CA7B4;
 }
 
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #9ca7b4;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+.c1[disabled] {
+  pointer-events: none;
 }
 
 <a
   aria-disabled="true"
-  class="c0 navigation"
+  class="c0 c1"
   disabled=""
+  href="/test"
+  tabindex="-1"
+  type="route"
 >
   Navigation Link
 </a>
 `;
 
-exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
+exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: default;
+  cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -87,52 +68,105 @@ exports[`Route Link disabled matches snapshot (NavLink) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #7fbfd2;
-}
-
-.c0.external:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0.external:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c0.external:visited {
-  color: #094c6c;
+.c1 {
+  color: #57666E;
 }
 
-.c0.external:visited svg {
-  color: #094c6c;
+.c1:hover {
+  color: #000000;
 }
 
-.c0.navigation {
-  color: #9ca7b4;
+.c1.active {
+  color: #0080A5;
 }
 
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+.c1[disabled] {
+  pointer-events: none;
 }
 
 <a
-  aria-disabled="true"
-  class="c0 navigation"
-  disabled=""
+  class="c0 c1"
+  href="/test"
+  tabindex="0"
+  type="route"
 >
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
   Navigation Link
+</a>
+`;
+
+exports[`Route Link matches snapshot (Link | only icon) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 0;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #57666E;
+}
+
+.c1:hover {
+  color: #000000;
+}
+
+.c1.active {
+  color: #0080A5;
+}
+
+.c1[disabled] {
+  pointer-events: none;
+}
+
+<a
+  class="c0 c1"
+  href="/test"
+  tabindex="0"
+  type="route"
+>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -155,64 +189,209 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0.external:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c1 {
+  color: #57666E;
 }
 
-.c0.external:visited {
-  color: #094c6c;
+.c1:hover {
+  color: #000000;
 }
 
-.c0.external:visited svg {
-  color: #094c6c;
+.c1.active {
+  color: #0080A5;
 }
 
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
+.c1[disabled] {
+  pointer-events: none;
 }
 
 <a
-  class="c0 navigation"
+  class="c0 c1"
   href="/test"
+  tabindex="0"
+  type="route"
 >
   Navigation Link
+</a>
+`;
+
+exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: var(--spacing-1x);
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #9CA7B4;
+}
+
+.c1[disabled] {
+  pointer-events: none;
+}
+
+<a
+  aria-disabled="true"
+  class="c0 c1"
+  disabled=""
+  href="/test"
+  tabindex="-1"
+  type="route"
+>
+  Navigation Link
+</a>
+`;
+
+exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: var(--spacing-1x);
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #57666E;
+}
+
+.c1:hover {
+  color: #000000;
+}
+
+.c1.active {
+  color: #0080A5;
+}
+
+.c1[disabled] {
+  pointer-events: none;
+}
+
+<a
+  class="c0 c1"
+  href="/test"
+  tabindex="0"
+  type="route"
+>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
+  Navigation Link
+</a>
+`;
+
+exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 svg {
+  margin-right: 0;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0080A566;
+  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+}
+
+.c1 {
+  color: #57666E;
+}
+
+.c1:hover {
+  color: #000000;
+}
+
+.c1.active {
+  color: #0080A5;
+}
+
+.c1[disabled] {
+  pointer-events: none;
+}
+
+<a
+  class="c0 c1"
+  href="/test"
+  tabindex="0"
+  type="route"
+>
+  <svg
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -235,405 +414,38 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0.external:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0080A566;
   box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
 }
 
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c1 {
+  color: #57666E;
 }
 
-.c0.external:visited {
-  color: #094c6c;
+.c1:hover {
+  color: #000000;
 }
 
-.c0.external:visited svg {
-  color: #094c6c;
+.c1.active {
+  color: #0080A5;
 }
 
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
+.c1[disabled] {
+  pointer-events: none;
 }
 
 <a
-  class="c0 navigation"
+  class="c0 c1"
   href="/test"
+  tabindex="0"
+  type="route"
 >
-  Navigation Link
-</a>
-`;
-
-exports[`Route Link only icon matches snapshot (Link) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
-  outline: none;
-}
-
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  class="c0 navigation iconOnly"
-  href="/test"
->
-  <svg
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
-</a>
-`;
-
-exports[`Route Link only icon matches snapshot (NavLink) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
-  outline: none;
-}
-
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  class="c0 navigation iconOnly"
-  href="/test"
->
-  <svg
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
-</a>
-`;
-
-exports[`Route Link with icon matches snapshot (Link) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
-  outline: none;
-}
-
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  class="c0 navigation"
-  href="/test"
->
-  <svg
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
-  Navigation Link
-</a>
-`;
-
-exports[`Route Link with icon matches snapshot (NavLink) 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
-.c0.iconOnly svg {
-  margin: 0;
-}
-
-.c0.external {
-  color: #0080a5;
-}
-
-.c0.external:focus {
-  outline: none;
-}
-
-.c0.external:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.external:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c0.external:visited {
-  color: #094c6c;
-}
-
-.c0.external:visited svg {
-  color: #094c6c;
-}
-
-.c0.navigation {
-  color: #57666e;
-}
-
-.c0.navigation:focus {
-  outline: none;
-}
-
-.c0.navigation:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
-}
-
-.c0.navigation:hover {
-  color: #000;
-}
-
-.c0.navigation.active {
-  color: #0080a5;
-}
-
-<a
-  class="c0 navigation"
-  href="/test"
->
-  <svg
-    color="currentColor"
-    focusable="false"
-    height="16"
-    width="16"
-  />
   Navigation Link
 </a>
 `;
