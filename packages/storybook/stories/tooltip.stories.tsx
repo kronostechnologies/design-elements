@@ -18,18 +18,22 @@ export const DefaultOpen: Story = () => (
         Tooltip Content
     </Tooltip>
 );
-export const TopPlacement: Story = () => (
-    <Tooltip placement="top">
-        Tooltip Content
-    </Tooltip>
-);
-export const BottomPlacement: Story = () => (
-    <Tooltip placement="bottom">
-        Tooltip Content
-    </Tooltip>
-);
-export const LeftPlacement: Story = () => (
-    <Tooltip placement="left">
-        Tooltip Content
-    </Tooltip>
+export const desktopPlacement: Story = () => (
+    <>
+        <Tooltip desktopPlacement="top">
+            Tooltip Content
+        </Tooltip>
+        <br />
+        <Tooltip desktopPlacement="left">
+            Tooltip Content
+        </Tooltip>
+        <br />
+        <Tooltip desktopPlacement="right">
+            Tooltip Content
+        </Tooltip>
+        <br />
+        <Tooltip desktopPlacement="bottom">
+            Tooltip Content
+        </Tooltip>
+    </>
 );
