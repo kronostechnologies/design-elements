@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { formatCurrency } from '@design-elements/utils/currency';
 import React, { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';

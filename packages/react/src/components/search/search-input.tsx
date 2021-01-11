@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { Theme } from '@design-elements/themes/theme';
 import { focus } from '@design-elements/utils/css-state';
 import { v4 as uuid } from '@design-elements/utils/uuid';

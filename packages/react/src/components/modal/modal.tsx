@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import React, { ReactElement, ReactNode, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';

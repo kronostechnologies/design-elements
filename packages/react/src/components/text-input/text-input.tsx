@@ -1,4 +1,4 @@
-import { useTranslation } from '@design-elements/i18n/i18n';
+import { useTranslation } from '@design-elements/i18n/use-translation';
 import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, {
     ChangeEvent,
