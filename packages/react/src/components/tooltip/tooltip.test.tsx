@@ -1,48 +1,49 @@
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
+import { mountWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
-import { Tooltip, TooltipArrow, TooltipContainer } from './tooltip';
+import { Tooltip } from './tooltip';
 
 jest.mock('@design-elements/utils/uuid');
 
 describe('Tooltip', () => {
     test('Has default desktop styles', () => {
-        const tree = renderWithProviders(
+        const tree = mountWithProviders(
             <Tooltip>
                 Test Content
             </Tooltip>,
+            { wrappingComponentProps: { device: 'desktop' } },
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Has default desktop styles (defaultOpen)', () => {
+        const tree = mountWithProviders(
+            <Tooltip defaultOpen>
+                Test Content
+            </Tooltip>,
+            { wrappingComponentProps: { device: 'desktop' } },
         );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Has mobile styles', () => {
-        const tree = renderWithProviders(
+        const tree = mountWithProviders(
             <Tooltip>
                 Test Content
             </Tooltip>,
-            'mobile',
+            { wrappingComponentProps: { device: 'mobile' } },
         );
 
         expect(tree).toMatchSnapshot();
     });
 
-    test('TooltipContainer has desktop styles', () => {
-        const tree = renderWithProviders(
-            <TooltipContainer>
-                <TooltipArrow />
+    test('Has mobile styles (defaultOpen)', () => {
+        const tree = mountWithProviders(
+            <Tooltip defaultOpen>
                 Test Content
-            </TooltipContainer>,
-        );
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('TooltipContainer has mobile styles', () => {
-        const tree = renderWithProviders(
-            <TooltipContainer isMobile>
-                <TooltipArrow />
-                Test Content
-            </TooltipContainer>,
+            </Tooltip>,
+            { wrappingComponentProps: { device: 'mobile' } },
         );
 
         expect(tree).toMatchSnapshot();

@@ -145,7 +145,7 @@ const StyledSpan = styled.span`
     ${focus};
 `;
 
-type PlacementType = 'top' | 'right' | 'bottom' | 'left';
+export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
     /** Tooltip text content */
@@ -156,7 +156,7 @@ interface TooltipProps {
      * Tooltip placement on desktop (always top on mobile)
      * @default right
      */
-    desktopPlacement?: PlacementType;
+    desktopPlacement?: TooltipPlacement;
 }
 
 const modifiers: TooltipTriggerProps['modifiers'] = [
@@ -168,7 +168,7 @@ const modifiers: TooltipTriggerProps['modifiers'] = [
     },
 ];
 
-export function Tooltip({ children, defaultOpen, desktopPlacement }: TooltipProps): ReactElement {
+export function Tooltip({ children, defaultOpen, desktopPlacement = 'right' }: TooltipProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);

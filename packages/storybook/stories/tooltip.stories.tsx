@@ -1,6 +1,13 @@
-import { Tooltip } from '@equisoft/design-elements-react';
+import { Select, Tooltip, TooltipPlacement } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { DesktopDecorator } from './utils/device-context-decorator';
+
+const StyledDiv = styled.div`
+    height: 240px;
+    max-width: 200px;
+`;
 
 export default {
     title: 'Tooltip',
@@ -18,22 +25,33 @@ export const DefaultOpen: Story = () => (
         Tooltip Content
     </Tooltip>
 );
-export const desktopPlacement: Story = () => (
-    <>
-        <Tooltip desktopPlacement="top">
-            Tooltip Content
-        </Tooltip>
-        <br />
-        <Tooltip desktopPlacement="left">
-            Tooltip Content
-        </Tooltip>
-        <br />
-        <Tooltip desktopPlacement="right">
-            Tooltip Content
-        </Tooltip>
-        <br />
-        <Tooltip desktopPlacement="bottom">
-            Tooltip Content
-        </Tooltip>
-    </>
-);
+
+export const DesktopPlacement: Story = () => {
+    const [placement, setPlacement] = useState<TooltipPlacement>('right');
+
+    interface Placements {
+        value: TooltipPlacement;
+        label: TooltipPlacement;
+    }
+    const placements: Placements[] = [
+        { value: 'top', label: 'top' },
+        { value: 'right', label: 'right' },
+        { value: 'bottom', label: 'bottom' },
+        { value: 'left', label: 'left' },
+    ];
+
+    return (
+        <StyledDiv>
+            <Select
+                defaultValue="right"
+                label="Desktop placement"
+                options={placements}
+                onChange={(option) => setPlacement(option.value as TooltipPlacement)}
+            />
+            <Tooltip desktopPlacement={placement}>
+                Tooltip Content
+            </Tooltip>
+        </StyledDiv>
+    );
+};
+DesktopPlacement.decorators = [DesktopDecorator];
