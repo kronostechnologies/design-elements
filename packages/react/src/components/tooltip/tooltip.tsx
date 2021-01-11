@@ -16,7 +16,7 @@ import { useTheme } from '../../hooks/use-theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
-export const TooltipContainer = styled.div<{ isMobile?: boolean }>`
+const TooltipContainer = styled.div<{ isMobile?: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
@@ -34,7 +34,7 @@ export const TooltipContainer = styled.div<{ isMobile?: boolean }>`
     z-index: 1000;
 `;
 
-export const TooltipArrow = styled.div`
+const TooltipArrow = styled.div`
     height: 1rem;
     position: absolute;
     width: 1rem;
@@ -148,15 +148,15 @@ const StyledSpan = styled.span`
 type PlacementType = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
-    /**
-     * Tooltip placement. Always top on mobile
-     * @default right
-     */
-    placement?: PlacementType;
     /** Tooltip text content */
     children: ReactNode;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
+    /**
+     * Tooltip placement on desktop (always top on mobile)
+     * @default right
+     */
+    desktopPlacement?: PlacementType;
 }
 
 const modifiers: TooltipTriggerProps['modifiers'] = [
@@ -168,12 +168,12 @@ const modifiers: TooltipTriggerProps['modifiers'] = [
     },
 ];
 
-export function Tooltip(props: TooltipProps): ReactElement {
+export function Tooltip({ children, defaultOpen, desktopPlacement }: TooltipProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
-    const [isVisible, setIsVisible] = useState(props.defaultOpen);
+    const [isVisible, setIsVisible] = useState(defaultOpen);
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
 
     const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
@@ -212,9 +212,9 @@ export function Tooltip(props: TooltipProps): ReactElement {
 
     return (
         <TooltipTrigger
-            placement={isMobile ? 'top' : props.placement}
+            placement={isMobile ? 'top' : desktopPlacement}
             trigger={isMobile ? 'click' : 'hover'}
-            defaultTooltipShown={props.defaultOpen}
+            defaultTooltipShown={defaultOpen}
             tooltipShown={controlledTooltipOpen}
             onVisibilityChange={setIsVisible}
             modifiers={modifiers}
@@ -238,7 +238,7 @@ export function Tooltip(props: TooltipProps): ReactElement {
                             'data-placement': placement,
                         })}
                     />
-                    {props.children}
+                    {children}
                 </TooltipContainer>
             )}
         >
