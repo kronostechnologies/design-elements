@@ -19,11 +19,10 @@ export function AllProviders({ children, device }: { children: ReactElement, dev
 export function mountWithProviders<C extends Component, P = C['props'], S = C['state']>(
     component: ReactElement<P>,
     options: MountRendererProps = {},
-    device?: DeviceType,
 ): ReactWrapper<P, S, C> {
     return mount(component, {
-        wrappingComponent: ({ children }) => AllProviders({ children, device }),
         ...options,
+        wrappingComponent: AllProviders,
     });
 }
 
