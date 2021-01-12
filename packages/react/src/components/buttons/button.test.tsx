@@ -61,6 +61,22 @@ describe('Button', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('has destructive styles', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="destructive" label="Destructive Button" />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has destructive styles (inversed)', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="destructive" label="Destructive Button" inversed />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('has mobile styles', () => {
         const tree = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
