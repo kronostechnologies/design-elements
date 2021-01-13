@@ -6,7 +6,6 @@ exports[`Avatar Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -23,6 +22,7 @@ exports[`Avatar Matches Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -57,7 +57,6 @@ exports[`Avatar Matches large avatar Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -74,6 +73,7 @@ exports[`Avatar Matches large avatar Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 5rem;
   width: 5rem;
 }
@@ -104,7 +104,6 @@ exports[`Avatar Matches medium avatar Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -121,6 +120,7 @@ exports[`Avatar Matches medium avatar Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 3rem;
   width: 3rem;
 }
@@ -151,7 +151,6 @@ exports[`Avatar Matches mobile Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -168,6 +167,7 @@ exports[`Avatar Matches mobile Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 2rem;
   width: 2rem;
 }
@@ -202,7 +202,6 @@ exports[`Avatar Matches mobile large avatar Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -219,6 +218,7 @@ exports[`Avatar Matches mobile large avatar Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 4.5rem;
   width: 4.5rem;
 }
@@ -249,7 +249,6 @@ exports[`Avatar Matches mobile medium avatar Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -266,6 +265,7 @@ exports[`Avatar Matches mobile medium avatar Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 3rem;
   width: 3rem;
 }
@@ -296,7 +296,6 @@ exports[`Avatar Matches mobile small avatar Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -313,6 +312,7 @@ exports[`Avatar Matches mobile small avatar Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 2.5rem;
   width: 2.5rem;
 }
@@ -347,7 +347,6 @@ exports[`Avatar Matches small avatar Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -364,6 +363,7 @@ exports[`Avatar Matches small avatar Snapshot 1`] = `
 }
 
 .c1 {
+  background: #F8F9FA;
   height: 2rem;
   width: 2rem;
 }
