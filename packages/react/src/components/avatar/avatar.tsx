@@ -1,134 +1,96 @@
 import React, { ReactElement, useMemo } from 'react';
-import styled from 'styled-components';
+import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { Theme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useTranslation } from '../../i18n/use-translation';
 
-export enum AvatarSize {
-    XSmall,
-    Small,
-    Medium,
-    Large
-}
+export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
 interface AvatarProps {
     className?: string;
     username: string;
     bgColor?: string;
+    imgSrc?: string;
     size?: AvatarSize;
 }
 
-const StyledDiv = styled.div`
+interface SizeStyleProps {
+    size: AvatarSize;
+    isMobile: boolean
+}
+
+function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterpolation<ThemeProps<Theme>> {
+    switch (size) {
+        case 'xsmall':
+            return css`
+                font-size: ${(isMobile ? '0.75' : '0.625')}rem;
+                height: ${(isMobile ? '32' : '24')}px;
+                letter-spacing: ${(isMobile ? '0.013' : '0.011')}rem;
+                width: ${(isMobile ? '32' : '24')}px;`;
+        case 'small':
+            return css`
+                font-size: ${(isMobile ? '0.875' : '0.75')}rem;
+                height: ${(isMobile ? '40' : '32')}px;
+                letter-spacing: ${(isMobile ? '0.014' : '0.013')}rem;
+                width: ${(isMobile ? '40' : '32')}px;`;
+        case 'medium':
+            return css`
+                font-size: 1rem;
+                height: 48px;
+                width: 48px;`;
+        case 'large':
+            return css`
+                font-size: 1.5rem;
+                height: ${(isMobile ? '72' : '80')}px;
+                width: ${(isMobile ? '72' : '80')}px;`;
+    }
+}
+
+interface StyledDivProps extends SizeStyleProps {
+    bgColor?: string;
+}
+
+const StyledDiv = styled.div<StyledDivProps>`
     align-items: center;
+    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['light-grey']};
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-`;
-
-const StyledSpan = styled.span`
     color: ${({ theme }) => theme.greys['dark-grey']};
+    display: flex;
+    font-weight: var(--font-semi-bold);
+    justify-content: center;
+    text-transform: capitalize;
+    ${getSpecificSizeStyle}
 `;
 
-const XSmallAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
-    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
-    height: ${({ isMobile }) => (isMobile ? '2rem' : '1.5rem')};
-    width: ${({ isMobile }) => (isMobile ? '2rem' : '1.5rem')};
+const StyledImg = styled.img<SizeStyleProps>`
+    border-radius: 50%;
+    object-fit: cover;
+    ${getSpecificSizeStyle}
 `;
 
-const SmallAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
-    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
-    height: ${({ isMobile }) => (isMobile ? '2.5rem' : '2rem')};
-    width: ${({ isMobile }) => (isMobile ? '2.5rem' : '2rem')};
-`;
-
-const MediumAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
-    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
-    height: ${({ isMobile }) => (isMobile ? '3rem' : '3rem')};
-    width: ${({ isMobile }) => (isMobile ? '3rem' : '3rem')};
-`;
-
-const LargeAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
-    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
-    height: ${({ isMobile }) => (isMobile ? '4.5rem' : '5rem')};
-    width: ${({ isMobile }) => (isMobile ? '4.5rem' : '5rem')};
-`;
-
-const XSmallAvatarSpan = styled(StyledSpan)<{isMobile: boolean}>`
-    font-size: ${({ isMobile }) => (isMobile ? '0.75rem' : '0.625rem')};
-    letter-spacing: ${({ isMobile }) => (isMobile ? '0.2px' : '0.17px')};
-`;
-
-const SmallAvatarSpan = styled(StyledSpan)<{isMobile: boolean}>`
-    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
-    letter-spacing: ${({ isMobile }) => (isMobile ? '0.23px' : '0.2px')};
-`;
-
-const MediumAvatarSpan = styled(StyledSpan)<{isMobile: boolean}>`
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '1rem')};
-`;
-
-const LargeAvatarSpan = styled(StyledSpan)<{isMobile: boolean}>`
-    font-size: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.5rem')};
-`;
-
-export function Avatar({ className, username, bgColor, size = AvatarSize.XSmall }: AvatarProps): ReactElement {
+export function Avatar({
+    className, username, bgColor, imgSrc, size = 'xsmall',
+}: AvatarProps): ReactElement {
+    const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
     const initials = useMemo(() => getInitialsFromUsername(username), [username]);
-    const ariaLabel = useMemo(() => username.concat(' avatar'), [username]);
+    const ariaLabel = useMemo(() => t('ariaLabel', { username }), [username, t]);
 
-    return (
-        <div>
-            {(() => {
-                switch (size) {
-                    case AvatarSize.XSmall:
-                        return <XSmallAvatarContainer
-                            role="img"
-                            aria-label={ariaLabel}
-                            className={className}
-                            bgColor={bgColor}
-                            isMobile={isMobile}
-                        >
-                            <XSmallAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
-                                {initials.length <= 2 && initials}
-                            </XSmallAvatarSpan>
-                        </XSmallAvatarContainer>;
-                    case AvatarSize.Small:
-                        return <SmallAvatarContainer
-                            role="img"
-                            aria-label={ariaLabel}
-                            className={className}
-                            bgColor={bgColor}
-                            isMobile={isMobile}
-                        >
-                            <SmallAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
-                                {initials.length <= 2 && initials}
-                            </SmallAvatarSpan>
-                        </SmallAvatarContainer>;
-                    case AvatarSize.Medium:
-                        return <MediumAvatarContainer
-                            role="img"
-                            aria-label={ariaLabel}
-                            className={className}
-                            bgColor={bgColor}
-                            isMobile={isMobile}
-                        >
-                            <MediumAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
-                                {initials.length <= 2 && initials}
-                            </MediumAvatarSpan>
-                        </MediumAvatarContainer>;
-                    case AvatarSize.Large:
-                        return <LargeAvatarContainer
-                            role="img"
-                            aria-label={ariaLabel}
-                            className={className}
-                            bgColor={bgColor}
-                            isMobile={isMobile}
-                        >
-                            <LargeAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
-                                {initials.length <= 2 && initials}
-                            </LargeAvatarSpan>
-                        </LargeAvatarContainer>;
-                }
-            })()}
-        </div>
+    return imgSrc ? (
+        <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />
+    ) : (
+        <StyledDiv
+            role="img"
+            aria-label={ariaLabel}
+            className={className}
+            bgColor={bgColor}
+            size={size}
+            isMobile={isMobile}
+        >
+            <span data-testid="avatar-initials">
+                {initials.length <= 2 && initials}
+            </span>
+        </StyledDiv>
     );
 }

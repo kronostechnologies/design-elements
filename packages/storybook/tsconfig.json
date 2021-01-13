@@ -10,6 +10,6 @@
     "baseUrl": "./stories/"
   },
   "include": [
-    "stories", "custom.d.ts"
+    "stories", "custom.d.ts", "asset.d.ts"
   ]
 }

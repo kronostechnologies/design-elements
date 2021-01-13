@@ -19,19 +19,19 @@ describe('Avatar', () => {
     });
 
     test('Matches small avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Small} />);
+        const tree = renderWithProviders(<Avatar username="AB" size="small" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches medium avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Medium} />);
+        const tree = renderWithProviders(<Avatar username="AB" size="medium" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches large avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Large} />);
+        const tree = renderWithProviders(<Avatar username="AB" size="large" />);
 
         expect(tree).toMatchSnapshot();
     });
@@ -43,19 +43,61 @@ describe('Avatar', () => {
     });
 
     test('Matches mobile small avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Small} />, 'mobile');
+        const tree = renderWithProviders(<Avatar username="AB" size="small" />, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches mobile medium avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Medium} />, 'mobile');
+        const tree = renderWithProviders(<Avatar username="AB" size="medium" />, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches mobile large avatar Snapshot', () => {
-        const tree = renderWithProviders(<Avatar username="AB" size={AvatarSize.Large} />, 'mobile');
+        const tree = renderWithProviders(<Avatar username="AB" size="large" />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches small avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches medium avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size="medium" imgSrc="anImage" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches large avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" imgSrc="anImage" />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile small avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size="small" imgSrc="anImage" />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile medium avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size="medium" imgSrc="anImage" />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches mobile large avatar with image Snapshot', () => {
+        const tree = renderWithProviders(<Avatar username="AB" size="large" imgSrc="anImage" />, 'mobile');
 
         expect(tree).toMatchSnapshot();
     });
