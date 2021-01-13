@@ -3,12 +3,6 @@ import styled from 'styled-components';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-interface AvatarProps {
-    className?: string;
-    username: string;
-    size?: AvatarSize;
-}
-
 export enum AvatarSize {
     XSmall,
     Small,
@@ -16,9 +10,15 @@ export enum AvatarSize {
     Large
 }
 
+interface AvatarProps {
+    className?: string;
+    username: string;
+    bgColor?: string;
+    size?: AvatarSize;
+}
+
 const StyledDiv = styled.div`
     align-items: center;
-    background: ${({ theme }) => theme.greys['colored-white']};
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -28,22 +28,26 @@ const StyledSpan = styled.span`
     color: ${({ theme }) => theme.greys['dark-grey']};
 `;
 
-const XSmallAvatarContainer = styled(StyledDiv)<{isMobile: boolean}>`
+const XSmallAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
+    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
     height: ${({ isMobile }) => (isMobile ? '2rem' : '1.5rem')};
     width: ${({ isMobile }) => (isMobile ? '2rem' : '1.5rem')};
 `;
 
-const SmallAvatarContainer = styled(StyledDiv)<{isMobile: boolean}>`
+const SmallAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
+    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
     height: ${({ isMobile }) => (isMobile ? '2.5rem' : '2rem')};
     width: ${({ isMobile }) => (isMobile ? '2.5rem' : '2rem')};
 `;
 
-const MediumAvatarContainer = styled(StyledDiv)<{isMobile: boolean}>`
+const MediumAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
+    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
     height: ${({ isMobile }) => (isMobile ? '3rem' : '3rem')};
     width: ${({ isMobile }) => (isMobile ? '3rem' : '3rem')};
 `;
 
-const LargeAvatarContainer = styled(StyledDiv)<{isMobile: boolean}>`
+const LargeAvatarContainer = styled(StyledDiv)<{bgColor: string | undefined, isMobile: boolean}>`
+    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['colored-white']};
     height: ${({ isMobile }) => (isMobile ? '4.5rem' : '5rem')};
     width: ${({ isMobile }) => (isMobile ? '4.5rem' : '5rem')};
 `;
@@ -66,7 +70,7 @@ const LargeAvatarSpan = styled(StyledSpan)<{isMobile: boolean}>`
     font-size: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.5rem')};
 `;
 
-export function Avatar({ className, username, size = AvatarSize.XSmall }: AvatarProps): ReactElement {
+export function Avatar({ className, username, bgColor, size = AvatarSize.XSmall }: AvatarProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const initials = useMemo(() => getInitialsFromUsername(username), [username]);
     const ariaLabel = useMemo(() => username.concat(' avatar'), [username]);
@@ -76,25 +80,49 @@ export function Avatar({ className, username, size = AvatarSize.XSmall }: Avatar
             {(() => {
                 switch (size) {
                     case AvatarSize.XSmall:
-                        return <XSmallAvatarContainer role="img" aria-label={ariaLabel} className={className} isMobile={isMobile}>
+                        return <XSmallAvatarContainer
+                            role="img"
+                            aria-label={ariaLabel}
+                            className={className}
+                            bgColor={bgColor}
+                            isMobile={isMobile}
+                        >
                             <XSmallAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
                                 {initials.length <= 2 && initials}
                             </XSmallAvatarSpan>
                         </XSmallAvatarContainer>;
                     case AvatarSize.Small:
-                        return <SmallAvatarContainer role="img" aria-label={ariaLabel} className={className} isMobile={isMobile}>
+                        return <SmallAvatarContainer
+                            role="img"
+                            aria-label={ariaLabel}
+                            className={className}
+                            bgColor={bgColor}
+                            isMobile={isMobile}
+                        >
                             <SmallAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
                                 {initials.length <= 2 && initials}
                             </SmallAvatarSpan>
                         </SmallAvatarContainer>;
                     case AvatarSize.Medium:
-                        return <MediumAvatarContainer role="img" aria-label={ariaLabel} className={className} isMobile={isMobile}>
+                        return <MediumAvatarContainer
+                            role="img"
+                            aria-label={ariaLabel}
+                            className={className}
+                            bgColor={bgColor}
+                            isMobile={isMobile}
+                        >
                             <MediumAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
                                 {initials.length <= 2 && initials}
                             </MediumAvatarSpan>
                         </MediumAvatarContainer>;
                     case AvatarSize.Large:
-                        return <LargeAvatarContainer role="img" aria-label={ariaLabel} className={className} isMobile={isMobile}>
+                        return <LargeAvatarContainer
+                            role="img"
+                            aria-label={ariaLabel}
+                            className={className}
+                            bgColor={bgColor}
+                            isMobile={isMobile}
+                        >
                             <LargeAvatarSpan data-testid="avatar-initials" isMobile={isMobile}>
                                 {initials.length <= 2 && initials}
                             </LargeAvatarSpan>

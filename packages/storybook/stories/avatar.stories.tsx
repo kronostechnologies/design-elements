@@ -31,3 +31,6 @@ mediumSizeMobileAvatar.decorators = [MobileDecorator];
 
 export const largeSizeMobileAvatar: Story = () => <Avatar username="John" size={AvatarSize.Large} />;
 largeSizeMobileAvatar.decorators = [MobileDecorator];
+
+export const avatarWithSpecificColor: Story = () => <Avatar username="John" size={AvatarSize.Medium} bgColor="#fcdf03" />;
+avatarWithSpecificColor.decorators = [DesktopDecorator];
