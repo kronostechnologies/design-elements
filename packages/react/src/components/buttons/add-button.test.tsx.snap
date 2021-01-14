@@ -402,6 +402,7 @@ exports[`Add Button has secondary styles 1`] = `
 .c1:disabled,
 .c1:disabled:focus,
 .c1:disabled:hover {
+  background-color: transparent;
   border-color: #99CCDB;
   color: #99CCDB;
 }
