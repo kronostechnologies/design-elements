@@ -61,6 +61,7 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
                         &,
                         &:focus,
                         &:hover {
+                            background-color: transparent;
                             border-color: ${theme.main['primary-1.2']};
                             color: ${theme.main['primary-1.2']};
                         }
