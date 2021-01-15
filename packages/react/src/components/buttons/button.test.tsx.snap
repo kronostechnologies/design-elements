@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button has destructive styles (inversed) 1`] = `
+exports[`Button has destructive styles (inverted) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -77,6 +77,7 @@ exports[`Button has destructive styles (inversed) 1`] = `
 
 .c1:hover {
   background-color: #FFFFFF;
+  border-color: #FFFFFF;
   color: #62071b;
 }
 
@@ -173,6 +174,7 @@ exports[`Button has destructive styles 1`] = `
 
 .c1:hover {
   background-color: #62071b;
+  border-color: #62071b;
   color: #FFFFFF;
 }
 

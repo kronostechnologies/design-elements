@@ -69,9 +69,9 @@ describe('Button', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has destructive styles (inversed)', () => {
+    test('has destructive styles (inverted)', () => {
         const tree = renderWithProviders(
-            <Button onClick={doNothing} buttonType="destructive" label="Destructive Button" inversed />,
+            <Button onClick={doNothing} buttonType="destructive" label="Destructive Button" inverted />,
         );
 
         expect(tree).toMatchSnapshot();

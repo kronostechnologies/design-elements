@@ -1,6 +1,7 @@
 import { Button } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import { InvertedBackground } from '../utils/inverted-background';
 
 export default {
     title: 'Buttons',
@@ -9,15 +10,17 @@ export default {
 
 export const Buttons: Story = () => (
     <>
-        <Button label="Primary" buttonType="primary" disabled={false} />
-        <Button label="Secondary" buttonType="secondary" disabled={false} />
-        <Button label="Tertiary" buttonType="tertiary" disabled={false} />
+        <Button label="Primary" buttonType="primary" />
+        <Button label="Secondary" buttonType="secondary" />
+        <Button label="Tertiary" buttonType="tertiary" />
         <Button label="Destructive" buttonType="destructive" />
     </>
 );
 
-export const Inversed: Story = () => (
-    <Button label="Destructive" buttonType="destructive" inversed />
+export const Inverted: Story = () => (
+    <InvertedBackground>
+        <Button label="Destructive" buttonType="destructive" inverted />
+    </InvertedBackground>
 );
 
 export const Disabled: Story = () => (
@@ -34,6 +37,5 @@ export const EventCallback: Story = () => (
         label="See Console For Callback"
         onClick={() => console.info('The button has been clicked!')}
         buttonType="primary"
-        disabled={false}
     />
 );

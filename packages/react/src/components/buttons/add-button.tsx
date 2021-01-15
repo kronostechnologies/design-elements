@@ -1,29 +1,30 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
-import { AbstractButtonProps } from './abstract-button';
 import { Button } from './button';
-
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
-
-type Type = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 
 const PlusIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
 `;
 
-interface ButtonProps extends Omit<AbstractButtonProps, 'children'> {
+type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+
+type Type = 'submit' | 'button' | 'reset';
+
+interface ButtonProps {
     /**
      * Visual style
      * @default primary
-     * */
-    buttonType: ButtonType;
-    /**
-     * Sets button type
-     * @default submit
      */
+    buttonType: ButtonType;
+    className?: string;
+    disabled?: boolean;
+    inverted?: boolean;
+    label?: string;
     type?: Type;
+
+    onClick?(): void;
 }
 
 export function AddButton({
@@ -31,6 +32,7 @@ export function AddButton({
     type = 'submit',
     buttonType,
     disabled,
+    inverted,
     label,
     onClick,
 }: ButtonProps): ReactElement {
@@ -43,6 +45,7 @@ export function AddButton({
             buttonType={buttonType}
             onClick={onClick}
             disabled={disabled}
+            inverted={inverted}
             label={label}
         >
             <PlusIcon name="plusSign" size={isMobile ? '24' : '16'} />
