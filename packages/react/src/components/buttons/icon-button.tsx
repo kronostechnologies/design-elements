@@ -1,12 +1,11 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
-import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
-import { AbstractButton, AbstractButtonProps } from './abstract-button';
+import { AbstractButton, getButtonTypeStyles } from './abstract-button';
 
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
+type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+
 type Type = 'submit' | 'button' | 'reset';
 
 interface ButtonProps {
@@ -16,11 +15,8 @@ interface ButtonProps {
      */
     buttonType: ButtonType;
     className?: string;
-    /**
-     * Disables button
-     * @default false
-     */
     disabled?: boolean;
+    inverted?: boolean;
     /**
      * Name of the desired icon (refer to icon library)
      */
@@ -29,75 +25,13 @@ interface ButtonProps {
      * Sets aria-label
      */
     label: string;
-    /**
-     * Sets button type
-     * @default submit
-     */
     type?: Type;
 
     onClick?(): void;
 }
 
-interface StyledButtonProps {
-    isMobile: boolean;
-    theme: Theme;
-    buttonType: ButtonType;
-}
-
-const StyledButton = styled(AbstractButton)<AbstractButtonProps & StyledButtonProps>`
-    ${(props) => focus(props, true)};
-    ${({ theme, buttonType }) => {
-        switch (buttonType) {
-            case 'primary':
-                return `
-                    background-color: ${theme.main['primary-1.1']};
-                    border-color: ${theme.main['primary-1.1']};
-                    color: ${theme.greys.white};
-
-                    &:hover {
-                        background-color: ${theme.main['primary-1.3']};
-                        border-color: ${theme.main['primary-1.3']};
-                    }
-
-                    &:disabled {
-                        background-color: ${theme.main['primary-1.2']};
-                        border-color: ${theme.main['primary-1.2']};
-                    }
-                `;
-            case 'secondary':
-                return `
-                    background-color: transparent;
-                    border-color: ${theme.main['primary-1.1']};
-                    color: ${theme.main['primary-1.1']};
-
-                    &:hover {
-                        border-color: ${theme.main['primary-1.3']};
-                        color: ${theme.main['primary-1.3']};
-                    }
-
-                    &:disabled {
-                        border-color: ${theme.main['primary-1.2']};
-                        color: ${theme.main['primary-1.2']};
-                    }
-                `;
-            case 'tertiary':
-                return `
-                    background-color: transparent;
-                    border-color: transparent;
-                    color: ${theme.greys['dark-grey']};
-
-                    &:hover {
-                        background-color: ${theme.greys.grey};
-                        color: ${theme.greys.black};
-                    }
-
-                    &:disabled {
-                        background-color: transparent;
-                        color: ${theme.greys['mid-grey']};
-                    }
-                `;
-        }
-    }}
+const StyledButton = styled(AbstractButton)`
+    ${getButtonTypeStyles}
 
     padding: 0;
     width: ${({ isMobile }) => (isMobile ? '48px' : '32px')};
