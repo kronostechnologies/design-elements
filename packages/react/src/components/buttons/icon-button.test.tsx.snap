@@ -79,10 +79,12 @@ exports[`Icon Button Has disabled styles 1`] = `
 
 .c1:hover {
   background-color: #005F7A;
+  border-color: #005F7A;
 }
 
 .c1:disabled {
   background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 <button
@@ -179,10 +181,12 @@ exports[`Icon Button Has mobile styles 1`] = `
 
 .c1:hover {
   background-color: #005F7A;
+  border-color: #005F7A;
 }
 
 .c1:disabled {
   background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 <button
@@ -278,10 +282,12 @@ exports[`Icon Button Has primary styles 1`] = `
 
 .c1:hover {
   background-color: #005F7A;
+  border-color: #005F7A;
 }
 
 .c1:disabled {
   background-color: #99CCDB;
+  border-color: #99CCDB;
 }
 
 <button
