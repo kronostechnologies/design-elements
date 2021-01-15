@@ -80,9 +80,7 @@ exports[`Add Button has disabled styles 1`] = `
   border-color: #005F7A;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1:disabled {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
@@ -187,9 +185,7 @@ exports[`Add Button has mobile styles 1`] = `
   border-color: #005F7A;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1:disabled {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
@@ -293,9 +289,7 @@ exports[`Add Button has primary styles 1`] = `
   border-color: #005F7A;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1:disabled {
   background-color: #99CCDB;
   border-color: #99CCDB;
 }
@@ -395,14 +389,11 @@ exports[`Add Button has secondary styles 1`] = `
 }
 
 .c1:hover {
-  background-color: #0080A5;
-  color: #FFFFFF;
+  border-color: #005F7A;
+  color: #005F7A;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
-  background-color: transparent;
+.c1:disabled {
   border-color: #99CCDB;
   color: #99CCDB;
 }
@@ -506,9 +497,7 @@ exports[`Add Button has tertiary styles 1`] = `
   color: #000000;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover {
+.c1:disabled {
   background-color: transparent;
   color: #9CA7B4;
 }

@@ -56,10 +56,12 @@ const StyledButton = styled(AbstractButton)<AbstractButtonProps & StyledButtonPr
 
                     &:hover {
                         background-color: ${theme.main['primary-1.3']};
+                        border-color: ${theme.main['primary-1.3']};
                     }
 
                     &:disabled {
                         background-color: ${theme.main['primary-1.2']};
+                        border-color: ${theme.main['primary-1.2']};
                     }
                 `;
             case 'secondary':

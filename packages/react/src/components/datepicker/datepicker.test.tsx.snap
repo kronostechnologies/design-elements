@@ -2595,14 +2595,11 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c17:hover {
-  background-color: #0080A5;
-  color: #FFFFFF;
+  border-color: #005F7A;
+  color: #005F7A;
 }
 
-.c17:disabled,
-.c17:disabled:focus,
-.c17:disabled:hover {
-  background-color: transparent;
+.c17:disabled {
   border-color: #99CCDB;
   color: #99CCDB;
 }

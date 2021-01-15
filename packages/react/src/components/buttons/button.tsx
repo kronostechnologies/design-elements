@@ -39,12 +39,8 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
                     }
 
                     &:disabled {
-                        &,
-                        &:focus,
-                        &:hover {
-                            background-color: ${theme.main['primary-1.2']};
-                            border-color: ${theme.main['primary-1.2']};
-                        }
+                        background-color: ${theme.main['primary-1.2']};
+                        border-color: ${theme.main['primary-1.2']};
                     }
                 `;
             case 'secondary':
@@ -54,18 +50,13 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
                     color: ${theme.main['primary-1.1']};
 
                     &:hover {
-                        background-color: ${theme.main['primary-1.1']};
-                        color: ${theme.greys.white};
+                        border-color: ${theme.main['primary-1.3']};
+                        color: ${theme.main['primary-1.3']};
                     }
 
                     &:disabled {
-                        &,
-                        &:focus,
-                        &:hover {
-                            background-color: transparent;
-                            border-color: ${theme.main['primary-1.2']};
-                            color: ${theme.main['primary-1.2']};
-                        }
+                        border-color: ${theme.main['primary-1.2']};
+                        color: ${theme.main['primary-1.2']};
                     }
                 `;
             case 'tertiary':
@@ -80,12 +71,8 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
                     }
 
                     &:disabled {
-                        &,
-                        &:focus,
-                        &:hover {
-                            background-color: transparent;
-                            color: ${theme.greys['mid-grey']};
-                        }
+                        background-color: transparent;
+                        color: ${theme.greys['mid-grey']};
                     }
                 `;
             case 'destructive':
