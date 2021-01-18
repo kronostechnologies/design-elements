@@ -29,7 +29,7 @@ export const Translations = {
             validationErrorMessage: 'Invalid number',
         },
         'nav-menu-button': {
-            ariaLabel: 'Navigation menu',
+            ariaLabel: 'Menu',
         },
         pagination: {
             results: 'results',
@@ -53,6 +53,9 @@ export const Translations = {
         },
         'text-input': {
             validationErrorMessage: 'This input is invalid',
+        },
+        'user-profile': {
+            ariaLabel: 'User menu',
         },
     },
     fr: {
@@ -85,7 +88,7 @@ export const Translations = {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
         },
         'nav-menu-button': {
-            ariaLabel: 'Menu de navigation',
+            ariaLabel: 'Menu',
         },
         pagination: {
             results: 'résultats',
@@ -109,6 +112,9 @@ export const Translations = {
         },
         'text-input': {
             validationErrorMessage: 'Ce champ est invalide',
+        },
+        'user-profile': {
+            ariaLabel: 'Menu utilisateur',
         },
     },
 };

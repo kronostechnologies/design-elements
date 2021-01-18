@@ -39,13 +39,21 @@ const options = [
 
 describe('NavMenuButton', () => {
     test('nav-menu is open when defaultOpen prop is set to true', () => {
-        const wrapper = shallowWithTheme(<NavMenuButton defaultOpen label="Test Button" options={options} />);
+        const wrapper = shallowWithTheme(
+            <NavMenuButton defaultOpen options={options}>
+                Test Button
+            </NavMenuButton>,
+        );
 
         expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
     });
 
     test('Opens nav-menu when menu-button is clicked', () => {
-        const wrapper = shallowWithTheme(<NavMenuButton label="Test Button" options={options} />);
+        const wrapper = shallowWithTheme(
+            <NavMenuButton options={options}>
+                Test Button
+            </NavMenuButton>,
+        );
 
         getByTestId(wrapper, 'menu-button').simulate('click');
 
@@ -53,7 +61,11 @@ describe('NavMenuButton', () => {
     });
 
     test('Focuses the first menu-item when menu opens', () => {
-        const wrapper = mountWithTheme(setup(<NavMenuButton label="Test Button" options={options} />));
+        const wrapper = mountWithTheme(setup(
+            <NavMenuButton options={options}>
+                Test Button
+            </NavMenuButton>,
+        ));
 
         getByTestId(wrapper, 'menu-button').simulate('click');
 
@@ -61,7 +73,11 @@ describe('NavMenuButton', () => {
     });
 
     test('Should close nav-menu when escape key is pressed in nav-menu', () => {
-        const wrapper = mountWithTheme(setup(<NavMenuButton defaultOpen label="Test Button" options={options} />));
+        const wrapper = mountWithTheme(setup(
+            <NavMenuButton defaultOpen options={options}>
+                Test Button
+            </NavMenuButton>,
+        ));
 
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
 
@@ -70,7 +86,11 @@ describe('NavMenuButton', () => {
 
     test('Focuses menu-button when escape key is pressed in nav-menu', () => {
         const wrapper = mountWithTheme(
-            setup(<NavMenuButton defaultOpen label="Test Button" options={options} />),
+            setup(
+                <NavMenuButton defaultOpen options={options}>
+                    Test Button
+                </NavMenuButton>,
+            ),
             { attachTo: document.body },
         );
 
@@ -80,13 +100,21 @@ describe('NavMenuButton', () => {
     });
 
     test('Matches Snapshot', () => {
-        const tree = renderWithTheme(setup(<NavMenuButton label="Test Button" options={options} />));
+        const tree = renderWithTheme(setup(
+            <NavMenuButton options={options}>
+                Test Button
+            </NavMenuButton>,
+        ));
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const tree = renderWithTheme(setup(<NavMenuButton defaultOpen label="Test Button" options={options} />));
+        const tree = renderWithTheme(setup(
+            <NavMenuButton defaultOpen options={options}>
+                Test Button
+            </NavMenuButton>,
+        ));
 
         expect(tree).toMatchSnapshot();
     });
