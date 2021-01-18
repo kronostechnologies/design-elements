@@ -49,6 +49,7 @@ export * from './components/table/table';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
 export { useModal } from './components/modal/use-modal';
+export { UserProfile } from './components/user-profile/user-profile';
 
 // Results
 export * from './components/legend/legend';

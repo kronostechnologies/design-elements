@@ -73,15 +73,8 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   color: #000000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
@@ -103,9 +96,6 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c0 {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .c2 {
@@ -133,7 +123,7 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 <nav
-  aria-label="Navigation menu"
+  aria-label="Menu"
   class="c0"
 >
   <button
@@ -144,6 +134,7 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   >
     Test Button
     <svg
+      aria-hidden="true"
       class="c3"
       color="currentColor"
       focusable="false"
@@ -268,15 +259,8 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 }
 
 .c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   color: #000000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
@@ -298,9 +282,6 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 
 .c0 {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .c2 {
@@ -328,7 +309,7 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 }
 
 <nav
-  aria-label="Navigation menu"
+  aria-label="Menu"
   class="c0"
 >
   <button
@@ -339,6 +320,7 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   >
     Test Button
     <svg
+      aria-hidden="true"
       class="c3"
       color="currentColor"
       focusable="false"

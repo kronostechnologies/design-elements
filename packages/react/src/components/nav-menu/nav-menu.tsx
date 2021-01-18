@@ -22,9 +22,8 @@ interface ListItemLinkProps extends NavLinkProps {
 }
 
 const ListItemLink = styled(NavLink)<ListItemLinkProps>`
-    align-items: center;
     color: ${({ theme }) => theme.greys.black};
-    display: flex;
+    display: block;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;

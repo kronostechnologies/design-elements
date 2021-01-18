@@ -21,6 +21,7 @@ exports[`Avatar Matches Snapshot 1`] = `
 }
 
 .c1 {
+  color: #60666e;
   font-size: 0.625rem;
   -webkit-letter-spacing: 0.17px;
   -moz-letter-spacing: 0.17px;
@@ -63,6 +64,7 @@ exports[`Avatar Matches mobile Snapshot 1`] = `
 }
 
 .c1 {
+  color: #60666e;
   font-size: 0.875rem;
   -webkit-letter-spacing: 0.23px;
   -moz-letter-spacing: 0.23px;

@@ -19,6 +19,8 @@ const StyledDiv = styled.div<{isMobile: boolean}>`
 `;
 
 const StyledSpan = styled.span<{isMobile: boolean}>`
+    /* TODO change colors when updating thematization */
+    color: #60666e;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.625rem')};
     letter-spacing: ${({ isMobile }) => (isMobile ? '0.23px' : '0.17px')};
 `;

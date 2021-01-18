@@ -15,15 +15,8 @@ exports[`NavMenu Is hidden 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   color: #000000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
@@ -102,15 +95,8 @@ exports[`NavMenu Matches the snapshot 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   color: #000000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
