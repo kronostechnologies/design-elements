@@ -1,6 +1,6 @@
-import { doNothing } from '@design-elements/test-utils/callbacks';
-import { mountWithTheme, renderWithTheme } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { doNothing } from '../../test-utils/callbacks';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { CheckboxGroup } from './checkbox-group';
 
 const checkboxGroup = [

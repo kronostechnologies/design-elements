@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { themeProvider, ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { MoneyInput } from './money-input';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 function simulateValueChange(input: HTMLInputElement, value: String): void {
     fireEvent.focus(input);

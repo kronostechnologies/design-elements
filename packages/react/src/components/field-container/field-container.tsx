@@ -1,8 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-
-import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from '../../themes';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';
 

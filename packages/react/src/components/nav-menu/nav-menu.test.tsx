@@ -1,10 +1,10 @@
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithTheme, shallowWithTheme } from '@design-elements/test-utils/renderer';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
 import { NavMenu } from './nav-menu';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 const options = [
     {

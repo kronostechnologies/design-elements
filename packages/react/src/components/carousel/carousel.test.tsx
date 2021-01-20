@@ -1,8 +1,8 @@
-import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
 import React, { ReactNode } from 'react';
 import { mocked } from 'ts-jest/utils';
+import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Carousel } from './carousel';
 import { useCarousel, UseCarouselResponse } from './use-carousel';
 

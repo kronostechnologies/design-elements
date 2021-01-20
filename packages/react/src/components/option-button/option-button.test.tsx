@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { OptionButton } from './option-button';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 describe('Option Button', () => {
     test('Is checked', () => {

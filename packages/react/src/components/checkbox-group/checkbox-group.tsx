@@ -1,8 +1,8 @@
-import { focus } from '@design-elements/utils/css-state';
 import CheckMark from 'feather-icons/dist/icons/check.svg';
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from '../../themes';
+import { focus } from '../../utils/css-state';
 
 const Legend = styled.legend`
     font-size: 0.75rem;

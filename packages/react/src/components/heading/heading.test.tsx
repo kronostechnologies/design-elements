@@ -1,7 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Heading, Tag, Type } from './heading';
 
 interface TestCases {

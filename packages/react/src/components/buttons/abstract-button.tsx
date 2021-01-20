@@ -1,6 +1,6 @@
-import { focus } from '@design-elements/utils/css-state';
 import { AriaAttributes, ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 import styled from 'styled-components';
+import { focus } from '../../utils/css-state';
 
 type PartialButtonProps =
     Pick<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'type'>

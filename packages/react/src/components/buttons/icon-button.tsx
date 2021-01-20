@@ -1,8 +1,7 @@
-import { Theme } from '@design-elements/themes/theme';
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-
+import { Theme } from '../../themes';
+import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { AbstractButton, AbstractButtonProps } from './abstract-button';

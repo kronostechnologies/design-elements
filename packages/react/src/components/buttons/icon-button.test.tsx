@@ -1,6 +1,6 @@
-import { mountWithTheme, renderWithProviders } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
 import React from 'react';
+import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { IconButton } from './icon-button';
 
 describe('Icon Button', () => {

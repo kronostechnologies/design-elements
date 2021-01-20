@@ -1,6 +1,6 @@
-import { DeviceType } from '@design-elements/components/device-context-provider/device-context-provider';
 import { render, RenderResult } from '@testing-library/react';
 import React, { ReactElement } from 'react';
+import { DeviceType } from '../components/device-context-provider/device-context-provider';
 import { AllProviders } from './renderer';
 
 export function renderPortalWithProviders(

@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-
 import { NavLink } from 'react-router-dom';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from './styles/styled-link';

@@ -1,6 +1,6 @@
-import { range } from '@design-elements/utils/range';
+import type { Locale } from 'date-fns';
 import { enCA } from 'date-fns/locale';
-
+import { range } from '../../../utils/range';
 import { Option } from '../../select/select';
 
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';

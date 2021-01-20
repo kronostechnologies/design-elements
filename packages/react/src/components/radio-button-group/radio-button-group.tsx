@@ -1,7 +1,7 @@
-import { focus } from '@design-elements/utils/css-state';
 import React, { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from '../../themes';
+import { focus } from '../../utils/css-state';
 
 const Legend = styled.legend`
     font-size: 0.75rem;
@@ -11,7 +11,7 @@ const Legend = styled.legend`
 `;
 
 const StyledLabel = styled.label`
-    ${(props: {theme: Theme, disabled?: boolean}) => `
+    ${(props: { theme: Theme, disabled?: boolean }) => `
             ${props.disabled ? '' : 'cursor: pointer;'};
             display: block;
             font-size: 0.875rem;
@@ -84,6 +84,7 @@ interface RadioButtonGroupProps {
         defaultChecked?: boolean,
         disabled?: boolean,
     }[];
+
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 

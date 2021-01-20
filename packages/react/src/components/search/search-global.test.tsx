@@ -1,10 +1,10 @@
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { SearchGlobal } from './search-global';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 describe('SearchGlobal', () => {
     it('should call onReset when search resets', () => {

@@ -1,7 +1,6 @@
 import { render } from 'enzyme';
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
-
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { RouteLink } from './route-link';
 

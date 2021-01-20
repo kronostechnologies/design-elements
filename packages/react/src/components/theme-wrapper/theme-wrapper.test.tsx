@@ -1,8 +1,8 @@
-import { ShadowWrapper } from '@design-elements/components/shadow-wrapper/shadow-wrapper';
 import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Button, testTheme } from '../..';
+import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 import { ThemeWrapper } from './theme-wrapper';
 
 describe('Theme Wrapper', () => {

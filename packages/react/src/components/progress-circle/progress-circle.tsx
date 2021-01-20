@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
-
 import styled from 'styled-components';
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from '../../themes';
 import { Circle } from '../circle/circle';
 
 const RADIUS = 62;

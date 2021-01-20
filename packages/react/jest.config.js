@@ -13,7 +13,6 @@ module.exports = {
     moduleNameMapper: {
         '\\.svg': '<rootDir>/test/__mocks__/svg-mock.js',
         '\\.s?css': '<rootDir>/test/__mocks__/style-mock.js',
-        ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/src/' }),
     },
     roots: [
         '<rootDir>/src',

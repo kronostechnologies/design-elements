@@ -1,9 +1,9 @@
-import { SearchInput } from '@design-elements/components/search/search-input';
-import { doNothing } from '@design-elements/test-utils/callbacks';
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { mountWithTheme } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
 import React from 'react';
+import { doNothing } from '../../test-utils/callbacks';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithTheme } from '../../test-utils/renderer';
+import { SearchInput } from './search-input';
 
 describe('SearchInput', () => {
     describe('icon', () => {

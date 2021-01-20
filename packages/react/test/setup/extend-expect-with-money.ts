@@ -3,7 +3,6 @@ import { AsymmetricMatcher } from 'expect/build/asymmetricMatchers';
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace jest {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore (Clashes with interface declared in https://github.com/styled-components/jest-styled-components)
         interface Matchers<R> {
             toMatchFormattedMoney(expected: string): R;

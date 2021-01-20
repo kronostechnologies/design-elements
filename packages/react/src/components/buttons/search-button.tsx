@@ -1,6 +1,6 @@
-import { Icon } from '@design-elements/components/icon/icon';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+import { Icon } from '../icon/icon';
 import { AbstractButton } from './abstract-button';
 
 interface ButtonProps {

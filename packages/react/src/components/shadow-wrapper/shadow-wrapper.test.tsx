@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { ShadowWrapper } from './shadow-wrapper';
 
-jest.mock('@design-elements/styles', () => ({
+jest.mock('../../styles', () => ({
     mainCss: 'main css',
 }));
 

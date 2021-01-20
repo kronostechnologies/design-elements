@@ -1,8 +1,8 @@
-import { findByTestId, getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
-import { range } from '@design-elements/utils/range';
 import { shallow } from 'enzyme';
 import React from 'react';
+import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { renderWithProviders } from '../../test-utils/renderer';
+import { range } from '../../utils/range';
 import { Progress, ProgressStep } from './progress';
 
 function generateSteps(count: number): ProgressStep[] {

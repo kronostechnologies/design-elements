@@ -1,11 +1,11 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { Theme } from '@design-elements/themes/theme';
-import { focus } from '@design-elements/utils/css-state';
-import { v4 as uuid } from '@design-elements/utils/uuid';
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
 import React, { ChangeEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
+import { Theme } from '../../themes';
+import { focus } from '../../utils/css-state';
+import { v4 as uuid } from '../../utils/uuid';
 import { SearchButton } from '../buttons/search-button';
 import { Label } from '../label/label';
 import { inputsStyle } from '../text-input/styles/inputs';

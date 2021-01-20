@@ -1,10 +1,10 @@
-import { ThemeWrapper } from '@design-elements/components/theme-wrapper/theme-wrapper';
-import { ThemeWrapped } from '@design-elements/test-utils/theme-wrapped';
 import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
 import React, { Component, ReactElement } from 'react';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
 import { DeviceContextProvider, DeviceType } from '../components/device-context-provider/device-context-provider';
+import { ThemeWrapper } from '../components/theme-wrapper/theme-wrapper';
+import { ThemeWrapped } from './theme-wrapped';
 
 export function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
     return (

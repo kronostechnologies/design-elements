@@ -1,4 +1,4 @@
-import { getInitialsFromUsername } from '@design-elements/utils/user';
+import { getInitialsFromUsername } from './user';
 
 describe('getInitialsFromUsername', () => {
     it('should be empty given an empty username', () => {

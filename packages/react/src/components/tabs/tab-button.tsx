@@ -1,7 +1,7 @@
-import { Icon, IconName } from '@design-elements/components/icon/icon';
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { focus } from '../../utils/css-state';
+import { Icon, IconName } from '../icon/icon';
 
 const StyledButton = styled.button<{ isSelected: boolean }>`
     align-items: center;

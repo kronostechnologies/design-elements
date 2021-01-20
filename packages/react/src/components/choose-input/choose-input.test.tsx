@@ -5,7 +5,7 @@ import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { ChooseInput } from './choose-input';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 describe('Choose Input', () => {
     test('onChange Callback is called when changed', () => {

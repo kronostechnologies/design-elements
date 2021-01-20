@@ -1,5 +1,5 @@
-import { renderWithTheme } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { renderWithTheme } from '../../test-utils/renderer';
 import { Bar } from './bar';
 
 describe('Bar', () => {

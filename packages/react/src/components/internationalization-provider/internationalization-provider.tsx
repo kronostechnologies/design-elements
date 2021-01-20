@@ -1,6 +1,6 @@
-import { createI18n } from '@design-elements/i18n/i18n';
 import { i18n as i18nType } from 'i18next';
 import React, { createContext, ReactElement, useContext, useEffect, useState } from 'react';
+import { createI18n } from '../../i18n/i18n';
 
 interface IntlProviderProps {
     children: ReactElement;

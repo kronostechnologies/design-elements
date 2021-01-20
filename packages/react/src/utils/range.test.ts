@@ -1,4 +1,4 @@
-import { range } from '@design-elements/utils/range';
+import { range } from './range';
 
 describe('range', () => {
     it('should contain start and end', () => {

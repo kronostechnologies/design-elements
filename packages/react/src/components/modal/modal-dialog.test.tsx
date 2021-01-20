@@ -1,11 +1,11 @@
-import { renderPortalWithProviders } from '@design-elements/test-utils/portal-renderer';
 import { fireEvent, RenderResult } from '@testing-library/react';
 import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
+import { renderPortalWithProviders } from '../../test-utils/portal-renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps } from './modal-dialog';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'>;
 

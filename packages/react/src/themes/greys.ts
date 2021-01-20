@@ -1,4 +1,4 @@
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from './theme';
 
 export const greys: Theme['greys'] = {
     white: '#FFFFFF',

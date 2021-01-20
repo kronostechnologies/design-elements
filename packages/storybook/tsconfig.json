@@ -8,7 +8,6 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": "./stories/",
-    "skipLibCheck": true,
     "paths": {
       "*": [
         "../node_modules/@types/*",

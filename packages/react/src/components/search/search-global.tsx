@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-
 import { CommonSearchProps, SearchInput } from './search-input';
 
 export type SearchGlobalProps = CommonSearchProps

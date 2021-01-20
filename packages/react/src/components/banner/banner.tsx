@@ -1,6 +1,6 @@
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, ReactNode, useState } from 'react';
 import styled, { StyledProps } from 'styled-components';
+import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 

@@ -1,9 +1,9 @@
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React, { RefObject } from 'react';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { Datepicker, DatepickerHandles } from './datepicker';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../..//utils/uuid');
 
 describe('Datepicker', () => {
     test('onChange callback is called when input changed', () => {

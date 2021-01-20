@@ -1,7 +1,7 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { formatCurrency } from '@design-elements/utils/currency';
 import React, { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
+import { formatCurrency } from '../../utils/currency';
 import { TextInput } from '../text-input/text-input';
 
 type Language = 'en' | 'fr';
