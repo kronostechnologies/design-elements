@@ -1,10 +1,8 @@
-import { ShadowWrapper } from '@design-elements/components/shadow-wrapper/shadow-wrapper';
-import { useStyle } from '@design-elements/styles';
-import { Theme } from '@design-elements/themes/theme';
 import React, { ReactElement, ReactNode } from 'react';
 import { ThemeProvider, ThemeProviderProps } from 'styled-components';
-
-import { equisoftTheme } from '../../themes/equisoft';
+import { useStyle } from '../../styles';
+import { equisoftTheme, Theme } from '../../themes';
+import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 interface ThemeWrapperProps extends Omit<ThemeProviderProps<Theme>, 'theme'> {
     isolateStyles?: boolean;

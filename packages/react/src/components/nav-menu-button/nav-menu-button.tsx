@@ -1,8 +1,8 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { Theme } from '@design-elements/themes/theme';
 import React, { KeyboardEvent, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { v4 as uuid } from '@design-elements/utils/uuid';
+import { useTranslation } from '../../i18n/use-translation';
+import { Theme } from '../../themes';
+import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';

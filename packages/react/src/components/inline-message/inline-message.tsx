@@ -1,8 +1,7 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { Theme } from '@design-elements/themes/theme';
 import React, { ComponentType, FunctionComponent, ReactElement, ReactNode, useMemo } from 'react';
 import styled from 'styled-components';
-
+import { useTranslation } from '../../i18n/use-translation';
+import { Theme } from '../../themes';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 

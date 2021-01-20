@@ -1,4 +1,4 @@
-import { clamp, isNumber, toInt } from '@design-elements/utils/math';
+import { clamp, isNumber, toInt } from './math';
 
 describe('math', () => {
     describe('isNumber', () => {

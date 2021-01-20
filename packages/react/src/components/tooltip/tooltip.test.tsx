@@ -1,8 +1,8 @@
-import { mountWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { mountWithProviders } from '../../test-utils/renderer';
 import { Tooltip } from './tooltip';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 describe('Tooltip', () => {
     test('Has default desktop styles', () => {

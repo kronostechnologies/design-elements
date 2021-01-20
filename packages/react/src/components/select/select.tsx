@@ -1,6 +1,3 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { Theme } from '@design-elements/themes/theme';
-import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, {
     ChangeEvent,
     KeyboardEvent,
@@ -12,7 +9,9 @@ import React, {
     useState,
 } from 'react';
 import styled from 'styled-components';
-
+import { useTranslation } from '../../i18n/use-translation';
+import { Theme } from '../../themes';
+import { v4 as uuid } from '../../utils/uuid';
 import { ChooseInput } from '../choose-input/choose-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';

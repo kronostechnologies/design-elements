@@ -1,6 +1,6 @@
-import { mainCss } from '@design-elements/styles';
 import React, { ReactElement, ReactNode } from 'react';
 import root from 'react-shadow/styled-components';
+import { mainCss } from '../../styles';
 
 interface ShadowWrapperProps {
     children: ReactNode;

@@ -1,6 +1,6 @@
-import { Theme } from '@design-elements/themes/theme';
-import { focus } from '@design-elements/utils/css-state';
 import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { Theme } from '../../../themes';
+import { focus } from '../../../utils/css-state';
 
 export const inputsStyle: (theme: Theme) => FlattenSimpleInterpolation = (theme: Theme) => css`
     background: ${theme.greys.white};

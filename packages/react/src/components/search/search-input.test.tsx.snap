@@ -59,6 +59,26 @@ exports[`SearchInput should match the snapshot 1`] = `
   color: inherit;
 }
 
+.c3 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c13 {
   background: #FFFFFF;
   border-color: #57666E;
@@ -84,26 +104,6 @@ exports[`SearchInput should match the snapshot 1`] = `
 .c14 {
   height: 16px;
   width: 16px;
-}
-
-.c3 {
-  color: #000000;
-  display: block;
-  font-size: 0.75rem;
-  font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.02rem;
-  -moz-letter-spacing: 0.02rem;
-  -ms-letter-spacing: 0.02rem;
-  letter-spacing: 0.02rem;
-  line-height: 1.25rem;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-input + .c2 {
-  margin-left: var(--spacing-half);
 }
 
 .c5 {

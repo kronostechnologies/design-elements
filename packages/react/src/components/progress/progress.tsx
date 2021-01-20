@@ -1,6 +1,6 @@
-import { clamp, toInt } from '@design-elements/utils/math';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+import { clamp, toInt } from '../../utils/math';
 
 const Container = styled.div`
     position: relative;

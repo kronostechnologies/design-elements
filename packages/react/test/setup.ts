@@ -11,7 +11,7 @@ React.useLayoutEffect = React.useEffect;
 extendExpectWithMoney();
 configure({ adapter: new Adapter() });
 
-jest.mock('@design-elements/styles/body.scss', () => ({
+jest.mock('any.scss', () => ({
     use: jest.fn(),
     unuse: jest.fn(),
     toString: () => 'body {}',

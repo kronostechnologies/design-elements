@@ -1,9 +1,9 @@
-import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
-import { Icon } from '@design-elements/components/icon/icon';
-import { SideDrawer } from '@design-elements/components/side-drawer/side-drawer';
-import { focus } from '@design-elements/utils/css-state';
 import React, { FunctionComponent, ReactNode, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
+import { focus } from '../../utils/css-state';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon/icon';
+import { SideDrawer } from '../side-drawer/side-drawer';
 
 const BurgerButton = styled.button`
     appearance: none;

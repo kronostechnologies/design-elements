@@ -1,5 +1,5 @@
-import { Theme } from '@design-elements/themes/theme';
 import { main } from './main';
+import { Theme } from './theme';
 
 export const tokens: Theme['tokens'] = {
     'focus-box-shadow': `0 0 0 2px ${main['primary-1.1']}66`,

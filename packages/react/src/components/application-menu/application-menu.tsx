@@ -1,9 +1,9 @@
-import { Content } from '@design-elements/components/application-menu/application-menu-content';
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { focus } from '../../utils/css-state';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Content } from './application-menu-content';
 import { Logo, LogoName } from './logo';
 
 const getPadding = (device: DeviceType): string => {

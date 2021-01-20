@@ -1,6 +1,6 @@
-import { doNothing } from '@design-elements/test-utils/callbacks';
-import { mountWithProviders, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { doNothing } from '../../test-utils/callbacks';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Button } from './button';
 
 describe('Button', () => {

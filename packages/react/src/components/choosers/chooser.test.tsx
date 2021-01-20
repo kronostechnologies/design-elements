@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { Chooser } from './chooser';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 describe('Chooser', () => {
     const maritalStatus = [

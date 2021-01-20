@@ -1,5 +1,5 @@
-import { mountWithTheme, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { Banner } from './banner';
 
 describe('Banner', () => {

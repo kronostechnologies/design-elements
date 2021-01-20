@@ -1,7 +1,6 @@
-import { Theme } from '@design-elements/themes/theme';
 import React, { ReactElement, ReactText } from 'react';
-
 import styled from 'styled-components';
+import { Theme } from '../../themes';
 import { Bar } from '../bar/bar';
 
 const Label = styled.label`

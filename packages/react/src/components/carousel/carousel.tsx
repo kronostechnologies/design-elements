@@ -1,9 +1,9 @@
-import { Icon } from '@design-elements/components/icon/icon';
-import { useId } from '@design-elements/hooks/use-id';
-import { useTheme } from '@design-elements/hooks/use-theme';
-import { focus } from '@design-elements/utils/css-state';
 import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
+import { useId } from '../../hooks/use-id';
+import { useTheme } from '../../hooks/use-theme';
+import { focus } from '../../utils/css-state';
+import { Icon } from '../icon/icon';
 import { useCarousel } from './use-carousel';
 
 const Main = styled.section`

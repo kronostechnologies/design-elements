@@ -1,5 +1,5 @@
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { SideDrawer } from './side-drawer';
 
 describe('Side Drawer', () => {

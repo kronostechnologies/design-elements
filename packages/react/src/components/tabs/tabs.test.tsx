@@ -1,6 +1,5 @@
 import { CommonWrapper, ReactWrapper } from 'enzyme';
 import React from 'react';
-
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';

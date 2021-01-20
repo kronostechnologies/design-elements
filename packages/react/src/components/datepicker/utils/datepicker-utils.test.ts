@@ -1,5 +1,4 @@
 import { enCA, enUS, frCA } from 'date-fns/locale';
-
 import {
     getLocale,
     getLocaleDateFormat,

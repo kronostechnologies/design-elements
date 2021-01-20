@@ -1,6 +1,6 @@
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Avatar } from './avatar';
 
 describe('Avatar', () => {

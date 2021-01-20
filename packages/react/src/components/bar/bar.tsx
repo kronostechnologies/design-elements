@@ -1,7 +1,6 @@
-import { Theme } from '@design-elements/themes/theme';
 import React, { ReactText, VoidFunctionComponent } from 'react';
-
 import styled from 'styled-components';
+import { Theme } from '../../themes';
 
 const Container = styled.div`
     p {

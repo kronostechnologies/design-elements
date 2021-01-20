@@ -1,8 +1,8 @@
 // Source : https://gist.github.com/FlorianRappl/fee731eea985d983fc48d10c648ecb17
 
-import { clamp } from '@design-elements/utils/math';
 import { CSSProperties, Dispatch, useCallback, useEffect, useReducer } from 'react';
 import { SwipeableHandlers, SwipeEventData, useSwipeable } from 'react-swipeable';
+import { clamp } from '../../utils/math';
 import { CarouselAction, carouselReducer, CarouselState } from './carousel-reducer';
 
 type PreviousDirection = -1;

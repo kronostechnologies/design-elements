@@ -1,9 +1,9 @@
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme, shallowWithTheme } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithTheme, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
 import { Listbox } from './listbox';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 const options = [
     {

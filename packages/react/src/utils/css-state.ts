@@ -1,4 +1,4 @@
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from '../themes';
 
 export const focus = ({ theme }: { theme: Theme }, hasBorder = false, selector?: string): string => `
     ${selector === undefined ? '&:focus { outline: none; }' : ''}

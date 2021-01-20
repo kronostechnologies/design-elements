@@ -1,6 +1,3 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { Theme } from '@design-elements/themes/theme';
-import { v4 as uuid } from '@design-elements/utils/uuid';
 import { enCA, enUS, frCA } from 'date-fns/locale';
 import React, {
     FocusEvent,
@@ -18,7 +15,9 @@ import React, {
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle } from 'styled-components';
-
+import { useTranslation } from '../../i18n/use-translation';
+import { Theme } from '../../themes';
+import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';

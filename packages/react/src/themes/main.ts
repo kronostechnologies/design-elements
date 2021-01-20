@@ -1,4 +1,4 @@
-import { Theme } from '@design-elements/themes/theme';
+import { Theme } from './theme';
 
 export const main: Theme['main'] = {
     'primary-1.1': '#0080A5',

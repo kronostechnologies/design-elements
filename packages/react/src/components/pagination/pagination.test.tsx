@@ -1,7 +1,7 @@
-import { renderWithProviders } from '@design-elements/test-utils/renderer';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { findByTestId } from '../../test-utils/enzyme-selectors';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Pagination } from './pagination';
 
 describe('Pagination', () => {

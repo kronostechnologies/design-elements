@@ -4,9 +4,8 @@ module.exports = {
         'plugin:import/typescript',
     ],
     rules: {
-        'import/no-unresolved': ['error', { ignore: ['^@design-elements'] }],
         'import/no-extraneous-dependencies': ['error',
-            { devDependencies: ['src/**/*.test.{ts,tsx}', 'src/test-utils/**/*'] },
+            { devDependencies: ['src/**/*.test.{ts,tsx}', 'src/test-utils/**/*', 'test/**/*'] },
         ],
     },
     settings: {

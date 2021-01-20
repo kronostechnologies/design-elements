@@ -1,9 +1,7 @@
-import {
-    useIntlContext,
-} from '@design-elements/components/internationalization-provider/internationalization-provider';
-import { UseTranslationResponse } from '@design-elements/i18n/i18n';
 import { TFunction } from 'i18next';
 import { useCallback, useEffect, useState } from 'react';
+import { useIntlContext } from '../components/internationalization-provider/internationalization-provider';
+import { UseTranslationResponse } from './i18n';
 
 interface UseTranslationState {
     t: TFunction;

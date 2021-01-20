@@ -1,6 +1,6 @@
-import { Theme } from '@design-elements/themes/theme';
-import { focus } from '@design-elements/utils/css-state';
 import styled from 'styled-components';
+import { Theme } from '../../../themes';
+import { focus } from '../../../utils/css-state';
 
 export const Label = styled.label`
     ${({ theme }: { theme: Theme }) => `

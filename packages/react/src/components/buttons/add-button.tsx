@@ -1,6 +1,5 @@
 import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement } from 'react';
 import styled from 'styled-components';
-
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { Button } from './button';

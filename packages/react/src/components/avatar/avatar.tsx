@@ -1,8 +1,7 @@
-import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
-import { getInitialsFromUsername } from '@design-elements/utils/user';
-
 import React, { ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
+import { getInitialsFromUsername } from '../../utils/user';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 interface AvatarProps {
     username: string;

@@ -1,5 +1,4 @@
 import React, { MouseEvent, ReactElement, useCallback } from 'react';
-
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 

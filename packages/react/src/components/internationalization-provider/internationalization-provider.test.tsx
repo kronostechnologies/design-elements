@@ -1,6 +1,6 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
 import { mount, ReactWrapper } from 'enzyme';
 import React, { ReactElement } from 'react';
+import { useTranslation } from '../../i18n/use-translation';
 import { IntlProvider } from './internationalization-provider';
 
 function TestButton(): ReactElement {

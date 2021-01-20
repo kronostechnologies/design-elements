@@ -1,5 +1,5 @@
-import { mountWithProviders, renderWithProviders } from '@design-elements/test-utils/renderer';
 import React from 'react';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { ExternalLink } from './external-link';
 
 describe('External Link', () => {

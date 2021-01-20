@@ -1,8 +1,7 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
-import { v4 as uuid } from '@design-elements/utils/uuid';
 import React, { ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
 import styled from 'styled-components';
-
+import { useTranslation } from '../../i18n/use-translation';
+import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Modal } from './modal';

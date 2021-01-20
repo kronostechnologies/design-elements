@@ -1,7 +1,7 @@
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
+import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
 const Wrapper = styled.div<{ padding: number }>`

@@ -1,6 +1,6 @@
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
+import { focus } from '../../utils/css-state';
 
 interface TabPanelProps {
     id: string,

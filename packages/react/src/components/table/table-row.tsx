@@ -1,7 +1,7 @@
-import { Theme } from '@design-elements/themes/theme';
 import React, { CSSProperties, ReactElement } from 'react';
 import { Row as ReactTableRow } from 'react-table';
 import styled, { css } from 'styled-components';
+import { Theme } from '../../themes';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Row<T extends object> extends ReactTableRow<T> {

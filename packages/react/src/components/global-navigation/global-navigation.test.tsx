@@ -2,7 +2,6 @@ import { mount } from 'enzyme';
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 

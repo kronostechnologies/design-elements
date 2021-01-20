@@ -1,7 +1,7 @@
-import { useTheme } from '@design-elements/hooks/use-theme';
 import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
 import { Column } from 'react-table';
 import styled from 'styled-components';
+import { useTheme } from '../../hooks/use-theme';
 import { Icon } from '../icon/icon';
 
 const SortButton = styled.button`

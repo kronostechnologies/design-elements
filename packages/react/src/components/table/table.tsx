@@ -1,7 +1,7 @@
-import { Theme as ThemeProps } from '@design-elements/themes/theme';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { CellProps, Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
+import { Theme } from '../../themes';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';
 import { TableRow } from './table-row';
@@ -12,7 +12,7 @@ interface StyledTableProps {
     clickableRows: boolean;
     device: DeviceType;
     striped: boolean;
-    theme: ThemeProps;
+    theme: Theme;
     rowSize?: RowSize;
 }
 

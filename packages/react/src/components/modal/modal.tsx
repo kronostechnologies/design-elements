@@ -1,8 +1,7 @@
-import { useTranslation } from '@design-elements/i18n/use-translation';
 import React, { ReactElement, ReactNode, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
-
+import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 

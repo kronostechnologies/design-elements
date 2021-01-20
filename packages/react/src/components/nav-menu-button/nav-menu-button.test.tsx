@@ -1,10 +1,10 @@
-import { getByTestId } from '@design-elements/test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme, shallowWithTheme } from '@design-elements/test-utils/renderer';
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithTheme, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
 import { NavMenuButton } from './nav-menu-button';
 
-jest.mock('@design-elements/utils/uuid');
+jest.mock('../../utils/uuid');
 
 function setup(children: ReactElement): ReactElement {
     return (
