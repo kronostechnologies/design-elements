@@ -22,7 +22,7 @@ commands:
   node_deps_install:
     steps:
       - eq/with-yarn-cache:
-          cache-version: 'v4'
+          cache-version: 'v5'
 
   yarn_lint:
     parameters:
@@ -222,7 +222,7 @@ workflows:
           name: storybook_yarn_lint
           directory: *storybook_directory
           requires:
-            - node_install_deps
+            - react_yarn_build
       - yarn_build:
           name: storybook_yarn_build
           directory: *storybook_directory

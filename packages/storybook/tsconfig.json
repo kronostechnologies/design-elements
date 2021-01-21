@@ -7,18 +7,9 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./stories/",
-    "paths": {
-      "*": [
-        "../node_modules/@types/*",
-        "*"
-      ]
-    }
+    "baseUrl": "./stories/"
   },
   "include": [
     "stories", "custom.d.ts"
-  ],
-  "exclude": [
-    "node_modules", "scripts"
   ]
 }
