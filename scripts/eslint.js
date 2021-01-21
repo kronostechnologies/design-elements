@@ -64,13 +64,15 @@ function getLintDecorator() {
             }),
     );
 
+    const errorsCount = results.reduce((errors, value) => errors + value.errorCount, 0);
+
     await Promise.allSettled(formatPromises)
         .then((formatResults) => {
             const rejected = formatResults.filter((result) => result.status === 'rejected');
             if (rejected.length) {
                 rejected.forEach((reason) => console.error('Failed to create output file.', reason));
                 process.exit(1);
-            } else if (formatResults.errorCount) {
+            } else if (errorsCount) {
                 return process.exit(2);
             } else {
                 return process.exit(0);
