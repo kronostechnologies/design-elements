@@ -786,7 +786,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       <body>
         <div
           aria-hidden="false"
-          class="izTDDe"
+          class="kwyqAo"
           role="tooltip"
           style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
         >
@@ -988,7 +988,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
           <body>
             <div
               aria-hidden="false"
-              class="izTDDe"
+              class="kwyqAo"
               role="tooltip"
               style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
             >
@@ -1172,12 +1172,12 @@ exports[`Tooltip Has mobile styles 1`] = `
       <body>
         <div
           aria-hidden="false"
-          class="sc-ljRboo izTDDe"
+          class="sc-httYMd kwyqAo"
           role="tooltip"
           style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
         >
           <div
-            class="sc-jmhFOf IDatV"
+            class="sc-cbDGPM bTFdKu"
             data-placement="right"
             style="position: absolute; top: 0px; transform: translate(0px, 0px);"
           />

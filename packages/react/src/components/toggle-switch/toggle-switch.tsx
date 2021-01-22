@@ -1,13 +1,13 @@
-import { focus } from '@design-elements/utils/css-state';
 import React, { ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
-import { Theme } from '@design-elements/themes/theme';
-import { useDeviceContext } from '@design-elements/components/device-context-provider/device-context-provider';
+import { v4 as uuid } from '../../utils/uuid';
+import { focus } from '../../utils/css-state';
+import { Theme } from '../../themes';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const StyledDiv = styled.div`
-    position: relative;
-`;
+/* TODO change when updating thematization */
+const green = '#008533';
+const lightGreen = '#8adda9';
 
 interface StyledLabelProps {
     theme: Theme;
@@ -18,54 +18,10 @@ const StyledLabel = styled.label<StyledLabelProps>`
     ${({ disabled }) => (disabled ? '' : 'cursor: pointer;')}
 
     color: ${({ theme }) => theme.greys.black};
-    display: block;
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
-    left: ${({ isMobile }) => (isMobile ? 56 : 42)}px;
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
-    position: relative;
+    margin-left: var(--spacing-1x);
     user-select: none;
-`;
-
-interface StyledButton {
-    theme: Theme;
-    disabled: boolean;
-    isMobile: boolean
-}
-const StyledButton = styled.button<StyledButton>`
-    ${({ disabled }) => (disabled ? '' : 'cursor: pointer;')}
-
-    background: ${({ theme }) => theme.greens.green};
-    border: 1px solid ${({ theme }) => theme.greens.green};
-    border-radius: ${({ isMobile }) => (isMobile ? 16 : 12)}px;
-    height: ${({ isMobile }) => (isMobile ? 32 : 24)}px;
-    position: absolute;
-    width: ${({ isMobile }) => (isMobile ? 48 : 36)}px;
-
-    &[aria-checked="false"] {
-        background: ${({ theme }) => theme.greys['mid-grey']};
-        border-color: ${({ theme }) => theme.greys['mid-grey']};
-
-        span {
-            transition: right 0.1s ease-in-out;
-        }
-    }
-
-    &[aria-checked="true"] > span {
-        right: ${({ isMobile }) => (isMobile ? 4 : 3)}px;
-        transition: right 0.1s ease-in-out;
-    }
-
-    &:disabled {
-        background: ${({ theme }) => theme.greys.grey};
-        border-color: ${({ theme }) => theme.greys.grey};
-
-        &[aria-checked="true"] {
-            background: ${({ theme }) => theme.greens['light-green']};
-            border-color: ${({ theme }) => theme.greens['light-green']};
-        }
-    }
-
-    ${(props) => focus(props)}
 `;
 
 interface StyledButtonSpanProps {
@@ -84,6 +40,50 @@ const StyledButtonSpan = styled.span<StyledButtonSpanProps>`
     width: ${({ isMobile }) => (isMobile ? 22 : 16)}px;
 `;
 
+interface StyledButtonProps {
+    theme: Theme;
+    isMobile: boolean
+}
+const StyledButton = styled.button<StyledButtonProps>`
+    &:not([disabled]) {
+        cursor: pointer;
+    }
+
+    background: ${green};
+    border: 1px solid ${green};
+    border-radius: ${({ isMobile }) => (isMobile ? 16 : 12)}px;
+    height: ${({ isMobile }) => (isMobile ? 32 : 24)}px;
+    position: relative;
+    vertical-align: middle;
+    width: ${({ isMobile }) => (isMobile ? 48 : 36)}px;
+
+    &[aria-checked="false"] {
+        background: ${({ theme }) => theme.greys['mid-grey']};
+        border-color: ${({ theme }) => theme.greys['mid-grey']};
+
+        ${StyledButtonSpan} {
+            transition: right 0.1s ease-in-out;
+        }
+    }
+
+    &[aria-checked="true"] > ${StyledButtonSpan} {
+        right: ${({ isMobile }) => (isMobile ? 4 : 3)}px;
+        transition: right 0.1s ease-in-out;
+    }
+
+    &:disabled {
+        background: ${({ theme }) => theme.greys.grey};
+        border-color: ${({ theme }) => theme.greys.grey};
+
+        &[aria-checked="true"] {
+            background: ${lightGreen};
+            border-color: ${lightGreen};
+        }
+    }
+
+    ${focus}
+`;
+
 interface ToggleSwitchProps {
     label: string;
     disabled?: boolean;
@@ -99,27 +99,27 @@ export function ToggleSwitch({
     const buttonId = useMemo(uuid, []);
 
     const handleClick = (): void => {
-        onToggle?.(!toggled);
+        onToggle(!toggled);
     };
 
     return (
         <>
-            <StyledDiv>
+            <>
                 <StyledButton
                     id={buttonId}
                     role="switch"
                     aria-readonly={!!disabled}
                     aria-checked={toggled}
                     aria-labelledby={labelId}
-                    data-testid="test-toggle-switch"
+                    data-testid="toggle-switch"
                     type="button"
                     isMobile={isMobile}
-                    disabled={!!disabled}
-                    onClick={!disabled ? handleClick : undefined}
+                    disabled={disabled}
+                    onClick={handleClick}
                 >
                     <StyledButtonSpan isMobile={isMobile} />
                 </StyledButton>
-            </StyledDiv>
+            </>
             <StyledLabel id={labelId} htmlFor={buttonId} isMobile={isMobile} disabled={!!disabled}>{label}</StyledLabel>
         </>
     );

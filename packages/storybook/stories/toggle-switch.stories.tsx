@@ -1,12 +1,13 @@
 import { ToggleSwitch } from '@equisoft/design-elements-react';
 import React, { useState } from 'react';
+import { Story } from '@storybook/react';
 
 export default {
     title: 'Toggle Switch',
     component: ToggleSwitch,
 };
 
-export const Normal = () => {
+export const Normal: Story = () => {
     const [toggled, setToggled] = useState(false);
 
     return (
@@ -14,7 +15,7 @@ export const Normal = () => {
     );
 };
 
-export const Toggled = () => {
+export const Toggled: Story = () => {
     const [toggled, setToggled] = useState(true);
 
     return (
@@ -22,10 +23,10 @@ export const Toggled = () => {
     );
 };
 
-export const Disabled = () => (
+export const Disabled: Story = () => (
     <>
-        <ToggleSwitch label="Switch" disabled toggled={false} onToggle={() => console.log('Should not be called!')} />
+        <ToggleSwitch label="Switch" disabled toggled={false} onToggle={() => console.info('Should not be called!')} />
         <br />
-        <ToggleSwitch label="Switch" disabled toggled onToggle={() => console.log('Should not be called!')} />
+        <ToggleSwitch label="Switch" disabled toggled onToggle={() => console.info('Should not be called!')} />
     </>
 );
