@@ -27,8 +27,7 @@ describe('ToggleSwitch', () => {
     });
 
     test('has disabled styles', () => {
-        const onToggle = (): void => undefined;
-        const tree = renderWithProviders(<ToggleSwitch disabled label="Switch" toggled onToggle={onToggle} />);
+        const tree = renderWithProviders(<ToggleSwitch disabled label="Switch" toggled onToggle={jest.fn()} />);
 
         expect(tree).toMatchSnapshot();
     });
