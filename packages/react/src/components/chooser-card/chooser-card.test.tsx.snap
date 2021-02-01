@@ -3,7 +3,7 @@
 exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666e;
+  border: 1px solid #60666E;
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
@@ -18,9 +18,8 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
 }
 
 .c2 {
-  color: #60666e;
+  color: #60666E;
   cursor: pointer;
-  display: block;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   -webkit-letter-spacing: initial;
@@ -37,28 +36,31 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
   user-select: none;
 }
 
-.c2:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
 .c7 {
-  color: #60666e;
+  color: #60666E;
   font-size: 0.875rem;
   padding-left: var(--spacing-4x);
 }
 
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #60666e;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
+  display: block;
   padding: var(--spacing-2x);
-  width: 352px;
+  width: 100%;
+}
+
+.c0:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c0:hover:not([disabled]) {
-  background-color: #dbdee1;
-  border-color: '#60666e';
+  background-color: #DBDEE1;
+  border-color: #60666E;
   cursor: pointer;
 }
 
@@ -96,11 +98,11 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
   width: 8px;
 }
 
-<div
+<label
   class="c0"
   data-testid="chooser-card-test-container"
 >
-  <label
+  <div
     class="c1 c2"
   >
     Test
@@ -116,20 +118,21 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
     <span
       class="c4 c5"
     />
-  </label>
+  </div>
   <div
+    aria-hidden="true"
     class="c6 c7"
     id="description-undefined"
   >
     Test description
   </div>
-</div>
+</label>
 `;
 
 exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666e;
+  border: 1px solid #60666E;
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
@@ -144,9 +147,8 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
 }
 
 .c2 {
-  color: #60666e;
+  color: #60666E;
   cursor: pointer;
-  display: block;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   -webkit-letter-spacing: initial;
@@ -163,28 +165,31 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
   user-select: none;
 }
 
-.c2:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
 .c7 {
-  color: #60666e;
+  color: #60666E;
   font-size: 0.875rem;
   padding-left: var(--spacing-4x);
 }
 
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #60666e;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
+  display: block;
   padding: var(--spacing-2x);
-  width: 352px;
+  width: 100%;
+}
+
+.c0:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c0:hover:not([disabled]) {
-  background-color: #dbdee1;
-  border-color: '#60666e';
+  background-color: #DBDEE1;
+  border-color: #60666E;
   cursor: pointer;
 }
 
@@ -222,11 +227,11 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
   width: 8px;
 }
 
-<div
+<label
   class="c0"
   data-testid="chooser-card-test-container"
 >
-  <label
+  <div
     class="c1 c2"
   >
     Test
@@ -241,20 +246,21 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
     <span
       class="c4 c5"
     />
-  </label>
+  </div>
   <div
+    aria-hidden="true"
     class="c6 c7"
     id="description-undefined"
   >
     Test description
   </div>
-</div>
+</label>
 `;
 
 exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
 .c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666e;
+  border: 1px solid #60666E;
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
@@ -269,9 +275,8 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
 }
 
 .c2 {
-  color: #60666e;
+  color: #60666E;
   cursor: pointer;
-  display: block;
   font-size: 1.125rem;
   font-weight: var(--font-semi-bold);
   -webkit-letter-spacing: initial;
@@ -288,28 +293,31 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
   user-select: none;
 }
 
-.c2:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
 .c7 {
-  color: #60666e;
+  color: #60666E;
   font-size: 1rem;
   padding-left: var(--spacing-5x);
 }
 
 .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #60666e;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
+  display: block;
   padding: var(--spacing-3x) var(--spacing-2x);
-  width: 328px;
+  width: 100%;
+}
+
+.c0:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c0:hover:not([disabled]) {
-  background-color: #dbdee1;
-  border-color: '#60666e';
+  background-color: #DBDEE1;
+  border-color: #60666E;
   cursor: pointer;
 }
 
@@ -347,11 +355,11 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
   width: 8px;
 }
 
-<div
+<label
   class="c0"
   data-testid="chooser-card-test-container"
 >
-  <label
+  <div
     class="c1 c2"
   >
     Test
@@ -366,20 +374,21 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
     <span
       class="c4 c5"
     />
-  </label>
+  </div>
   <div
+    aria-hidden="true"
     class="c6 c7"
     id="description-undefined"
   >
     Test description
   </div>
-</div>
+</label>
 `;
 
 exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
 .c5 {
   background-color: #F1F2F2;
-  border: 1px solid #dbdee1;
+  border: 1px solid #DBDEE1;
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
@@ -394,9 +403,8 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
 }
 
 .c2 {
-  color: #b7bbc2;
+  color: #B7BBC2;
   cursor: default;
-  display: block;
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   -webkit-letter-spacing: initial;
@@ -413,28 +421,31 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
   user-select: none;
 }
 
-.c2:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
 .c7 {
-  color: #b7bbc2;
+  color: #B7BBC2;
   font-size: 0.875rem;
   padding-left: var(--spacing-4x);
 }
 
 .c0 {
   background-color: #F1F2F2;
-  border: 1px solid #dbdee1;
+  border: 1px solid #DBDEE1;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
+  display: block;
   padding: var(--spacing-2x);
-  width: 352px;
+  width: 100%;
+}
+
+.c0:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c0:hover:not([disabled]) {
-  background-color: #dbdee1;
-  border-color: '#60666e';
+  background-color: #DBDEE1;
+  border-color: #60666E;
   cursor: pointer;
 }
 
@@ -472,12 +483,12 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
   width: 8px;
 }
 
-<div
+<label
   class="c0"
   data-testid="chooser-card-test-container"
   disabled=""
 >
-  <label
+  <div
     class="c1 c2"
     disabled=""
   >
@@ -495,13 +506,14 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
       class="c4 c5"
       disabled=""
     />
-  </label>
+  </div>
   <div
+    aria-hidden="true"
     class="c6 c7"
     disabled=""
     id="description-undefined"
   >
     Test description
   </div>
-</div>
+</label>
 `;

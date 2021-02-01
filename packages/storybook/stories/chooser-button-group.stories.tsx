@@ -1,4 +1,4 @@
-import { Chooser } from '@equisoft/design-elements-react';
+import { ChooserButtonGroup } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 
@@ -21,12 +21,12 @@ const skipOption = {
 };
 
 export default {
-    title: 'Choosers',
-    component: Chooser,
+    title: 'Chooser Button Group',
+    component: ChooserButtonGroup,
 };
 
 export const Normal: Story = () => (
-    <Chooser
+    <ChooserButtonGroup
         groupName="maritalStatus"
         inColumns={false}
         options={maritalStatus}
@@ -34,7 +34,7 @@ export const Normal: Story = () => (
 );
 
 export const WithASkipButton: Story = () => (
-    <Chooser
+    <ChooserButtonGroup
         groupName="maritalStatusSkip"
         inColumns={false}
         options={maritalStatus}
@@ -45,7 +45,7 @@ export const WithValue: Story = () => {
     const [value, setValue] = useState('35,49');
 
     return (
-        <Chooser
+        <ChooserButtonGroup
             groupName="ageRange"
             options={ageRange}
             value={value}
@@ -54,14 +54,14 @@ export const WithValue: Story = () => {
     );
 };
 export const InColumns: Story = () => (
-    <Chooser
+    <ChooserButtonGroup
         groupName="ageRangeColumn"
         inColumns
         options={ageRange}
     />
 );
 export const WithCallback: Story = () => (
-    <Chooser
+    <ChooserButtonGroup
         groupName="ageRangeCallback"
         inColumns
         onChange={(event) => console.info(event)}

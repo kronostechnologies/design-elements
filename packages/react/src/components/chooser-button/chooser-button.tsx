@@ -8,7 +8,7 @@ const Input = styled.input`
     ${hiddenStyle}
 `;
 
-interface ChooseInputProps {
+interface ChooserButtonProps {
     defaultChecked?: boolean;
     checked?: boolean;
     children: ReactNode;
@@ -19,11 +19,11 @@ interface ChooseInputProps {
     onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-const ChooseInput = React.forwardRef(
+const ChooserButton = React.forwardRef(
     (
         {
             defaultChecked, checked, children, groupName, onChange, type, value,
-        }: ChooseInputProps,
+        }: ChooserButtonProps,
         ref: React.Ref<HTMLInputElement>,
     ) => {
         const id = uuid();
@@ -50,4 +50,4 @@ const ChooseInput = React.forwardRef(
     },
 );
 
-export { ChooseInput };
+export { ChooserButton };

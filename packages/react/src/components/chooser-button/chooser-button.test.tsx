@@ -3,23 +3,23 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { ChooseInput } from './choose-input';
+import { ChooserButton } from './chooser-button';
 
 jest.mock('../../utils/uuid');
 
-describe('Choose Input', () => {
+describe('Chooser Button', () => {
     test('onChange Callback is called when changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
             ThemeWrapped(
-                <ChooseInput
+                <ChooserButton
                     groupName="maritalStatus"
                     onChange={callback}
                     type="radio"
                     value="test value"
                 >
                     Children
-                </ChooseInput>,
+                </ChooserButton>,
             ),
         );
         wrapper.find('input').simulate('change');
@@ -29,7 +29,7 @@ describe('Choose Input', () => {
     test('Matches the snapshot', () => {
         const tree = renderer.create(
             ThemeWrapped(
-                <ChooseInput
+                <ChooserButton
                     groupName="maritalStatus"
                     onChange={doNothing}
                     type="radio"
@@ -37,7 +37,7 @@ describe('Choose Input', () => {
                     defaultChecked
                 >
                     Children
-                </ChooseInput>,
+                </ChooserButton>,
             ),
         ).toJSON();
 

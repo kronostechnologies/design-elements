@@ -9,9 +9,7 @@ interface RadioInputProps {
 
 export const RadioInput = styled.span<RadioInputProps>`
     background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-
-    /* TODO fix with next thematization */
-    border: 1px solid ${({ disabled }) => (disabled ? '#dbdee1' : '#60666e')};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -23,28 +21,25 @@ export const RadioInput = styled.span<RadioInputProps>`
     width: ${({ isMobile }) => (isMobile ? 24 : 16)}px;
 `;
 
-interface LabelProps {
+interface InputContainerProps {
     disabled?: boolean;
     isMobile: boolean;
-    isSelected?: boolean;
+    isChecked?: boolean;
     theme: Theme;
 }
 
-function getContentColor({ disabled, isSelected, theme }: LabelProps): string {
+function getContentColor({ disabled, isChecked, theme }: InputContainerProps): string {
     if (disabled) {
-        // TODO fix with next thematization
-        return '#b7bbc2';
-    } if (isSelected) {
+        return theme.greys['mid-grey'];
+    } if (isChecked) {
         return theme.main['primary-2'];
     }
-    // TODO fix with next thematization
-    return '#60666e';
+    return theme.greys['dark-grey'];
 }
 
-export const Label = styled.label<LabelProps>`
+export const InputContainer = styled.div<InputContainerProps>`
     color: ${getContentColor};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-    display: block;
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
     font-weight: var(--font-semi-bold);
     letter-spacing: initial;
@@ -53,16 +48,12 @@ export const Label = styled.label<LabelProps>`
     padding-left: ${({ isMobile }) => (isMobile ? 'var(--spacing-5x)' : 'var(--spacing-4x)')};
     position: relative;
     user-select: none;
-
-    &:not(:first-of-type) {
-        margin-top: var(--spacing-1x);
-    }
 `;
 
 interface DescriptionProps {
     disabled?: boolean;
     isMobile: boolean;
-    isSelected?: boolean;
+    isChecked?: boolean;
     theme: Theme;
 }
 
@@ -72,58 +63,55 @@ export const Description = styled.div<DescriptionProps>`
     padding-left: ${({ isMobile }) => (isMobile ? 'var(--spacing-5x)' : 'var(--spacing-4x)')};
 `;
 
-interface ContainerProps {
+interface LabelProps {
     disabled?: boolean;
-    isFocused: boolean;
     isMobile: boolean;
-    isSelected?: boolean;
+    isChecked?: boolean;
     theme: Theme;
 }
 
-function getContainerBorderColor({ disabled, isSelected, theme }: ContainerProps): string {
+function getLabelBorderColor({ disabled, isChecked, theme }: LabelProps): string {
     if (disabled) {
-        /* TODO fix with next thematization */
-        return '#dbdee1';
-    } if (isSelected) {
+        return theme.greys.grey;
+    } if (isChecked) {
         return theme.main['primary-2'];
     }
-    /* TODO fix with next thematization */
-    return '#60666e';
+    return theme.greys['dark-grey'];
 }
 
-function getContainerBackgroundColor({ disabled, isSelected, theme }: ContainerProps): string {
+function getLabelBackgroundColor({ disabled, isChecked, theme }: LabelProps): string {
     if (disabled) {
         return theme.greys['light-grey'];
-    } if (isSelected) {
+    } if (isChecked) {
         /* TODO fix with next thematization */
         return '#e0f0f9';
     }
     return theme.greys.white;
 }
 
-export const Container = styled.div<ContainerProps>`
-    background-color: ${getContainerBackgroundColor};
-    border: 1px solid ${getContainerBorderColor};
+export const Label = styled.label<LabelProps>`
+    background-color: ${getLabelBackgroundColor};
+    border: 1px solid ${getLabelBorderColor};
     border-radius: var(--border-radius-2x);
     box-sizing: border-box;
+    display: block;
     padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)')};
-    width: ${({ isMobile }) => (isMobile ? 328 : 352)}px;
+    width: 100%;
+
+    &:focus-within {
+        ${({ theme }) => focus({ theme }, false, '&')}
+    }
 
     &:hover:not([disabled]) {
-        /* TODO fix with next thematization */
-        background-color: #dbdee1;
-
-        /* TODO fix with next thematization */
-        border-color: '#60666e';
+        background-color: ${({ theme }) => theme.greys.grey};
+        border-color: ${({ theme }) => theme.greys['dark-grey']};
         cursor: pointer;
 
         ${Description},
-        ${Label} {
+        ${InputContainer} {
             color: ${({ theme }) => theme.greys.black};
         }
     }
-
-    ${({ theme, isFocused }) => isFocused && focus({ theme }, false, '&')}
 `;
 
 export const HiddenInput = styled.input<{ isMobile: boolean }>`
@@ -136,11 +124,8 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
     width: ${({ isMobile }) => (isMobile ? 24 : 16)}px;
 
     &:checked + ${RadioInput} {
-        /* TODO fix with next thematization */
-        background-color: #006296;
-
-        /* TODO fix with next thematization */
-        border: 1px solid #006296;
+        background-color: ${({ theme }) => theme.main['primary-1.1']};
+        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
 
         &::after {
             background-color: ${({ theme }) => theme.greys.white};
