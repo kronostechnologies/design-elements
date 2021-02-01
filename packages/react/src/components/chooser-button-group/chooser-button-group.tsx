@@ -2,7 +2,7 @@ import React, { ChangeEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import { ChooseInput } from '../choose-input/choose-input';
 
-interface ChooserProps {
+interface ChooserButtonGroupProps {
     groupName: string;
     options: { label: string; value?: string }[];
     /** Optional button to allow user to skip question */
@@ -15,7 +15,7 @@ interface ChooserProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-type GridProps = Pick<ChooserProps, 'inColumns'>;
+type GridProps = Pick<ChooserButtonGroupProps, 'inColumns'>;
 
 function getGridTemplateColumns({ inColumns }: GridProps): string {
     return inColumns ? 'repeat(auto-fit, minmax(8.75rem, 1fr))' : 'none';
@@ -34,9 +34,9 @@ const Skip = styled.div`
     margin: var(--spacing-2x) 0 0;
 `;
 
-export function Chooser({
+export function ChooserButtonGroup({
     inColumns, groupName, onChange, options, skipOption, value,
-}: ChooserProps): ReactElement {
+}: ChooserButtonGroupProps): ReactElement {
     const [isControlled] = useState(value !== undefined);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {

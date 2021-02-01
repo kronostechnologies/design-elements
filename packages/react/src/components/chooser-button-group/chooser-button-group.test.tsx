@@ -2,11 +2,11 @@ import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { Chooser } from './chooser';
+import { ChooserButtonGroup } from './chooser-button-group';
 
 jest.mock('../../utils/uuid');
 
-describe('Chooser', () => {
+describe('Chooser Button Group', () => {
     const maritalStatus = [
         { value: 'single', label: 'Single, living alone or with a roommate' },
         { value: 'married', label: 'Married or living with a spouse' },
@@ -17,11 +17,11 @@ describe('Chooser', () => {
         value: 'skip',
     };
 
-    test('onChange callback is called when chooser is changed', () => {
+    test('onChange callback is called when chooser-button is changed', () => {
         const callback = jest.fn();
         const wrapper = mount(
             ThemeWrapped(
-                <Chooser
+                <ChooserButtonGroup
                     inColumns
                     groupName="maritalStatus"
                     options={maritalStatus}
@@ -38,7 +38,7 @@ describe('Chooser', () => {
     test('Matches the snapshot', () => {
         const tree = renderer.create(
             ThemeWrapped(
-                <Chooser
+                <ChooserButtonGroup
                     inColumns
                     groupName="maritalStatus"
                     options={maritalStatus}

@@ -33,7 +33,7 @@ export { Listbox, ListboxOption } from './components/listbox/listbox';
 export { Card } from './components/card/card';
 export { CardLink } from './components/card-link/card-link';
 export * from './components/carousel/carousel';
-export { Chooser } from './components/choosers/chooser';
+export { ChooserButtonGroup } from './components/chooser-button-group/chooser-button-group';
 export { ChooserCard } from './components/chooser-card/chooser-card';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
