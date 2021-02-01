@@ -2,6 +2,7 @@ import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, us
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import * as S from './styled-components';
+import { eventIsInside } from '../../utils/events';
 
 interface ChooserCardProps {
     checked?: boolean;
@@ -34,12 +35,11 @@ export function ChooserCard({
     const { isMobile } = useDeviceContext();
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const inputRef = useRef<HTMLInputElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [isInputFocused, setInputFocus] = useState(false);
+    const containerRef = useRef<HTMLLabelElement>(null);
     const [isInputChecked, setInputCheck] = useState(defaultChecked);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !containerRef.current?.contains(event.target as Node);
+        const clickIsOutside = !eventIsInside(event, containerRef.current);
 
         if (clickIsOutside && inputRef.current) {
             setTimeout(() => setInputCheck(inputRef.current?.checked));
@@ -52,38 +52,29 @@ export function ChooserCard({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside]);
 
-    function handleClick(): void {
-        inputRef.current?.click();
-        inputRef.current?.focus();
-    }
-
     function handleChange(event: ChangeEvent<HTMLInputElement>): void {
         setInputCheck(inputRef.current?.checked);
         onChange?.(event);
     }
 
     function handleBlur(): void {
-        setInputFocus(false);
         setTimeout(() => setInputCheck(inputRef.current?.checked));
     }
 
     return (
-        <S.Container
+        <S.Label
             className={className}
             data-testid={`chooser-card-${value}-container`}
             disabled={disabled}
-            isFocused={isInputFocused}
             isMobile={isMobile}
-            isSelected={isInputChecked}
+            isChecked={isInputChecked}
             ref={containerRef}
-            onClick={handleClick}
             onMouseDown={(e) => e.preventDefault()}
         >
-            <S.Label
+            <S.InputContainer
                 disabled={disabled}
-                htmlFor={id}
                 isMobile={isMobile}
-                isSelected={isInputChecked}
+                isChecked={isInputChecked}
                 key={`${name}-${value}`}
             >
                 {label}
@@ -102,14 +93,13 @@ export function ChooserCard({
                     value={value}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    onFocus={() => setInputFocus(true)}
                     onMouseDown={(e) => e.preventDefault()}
                 />
                 <S.RadioInput disabled={disabled} isMobile={isMobile} />
-            </S.Label>
-            <S.Description disabled={disabled} id={`description-${id}`} isMobile={isMobile} isSelected={isInputChecked}>
+            </S.InputContainer>
+            <S.Description aria-hidden disabled={disabled} id={`description-${id}`} isMobile={isMobile} isChecked={isInputChecked}>
                 {children}
             </S.Description>
-        </S.Container>
+        </S.Label>
     );
 }

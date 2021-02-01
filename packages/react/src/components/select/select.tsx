@@ -13,7 +13,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { ChooseInput } from '../choose-input/choose-input';
+import { ChooserButton } from '../chooser-button/chooser-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
@@ -584,7 +584,7 @@ export function Select({
                 )}
             </StyledFieldContainer>
             {skipOption && (
-                <ChooseInput
+                <ChooserButton
                     checked={skipSelected}
                     data-testid="select-skip-option"
                     groupName={`${fieldId}_skip`}
@@ -593,7 +593,7 @@ export function Select({
                     value={skipOption.value}
                 >
                     {skipOption.label}
-                </ChooseInput>
+                </ChooserButton>
             )}
         </>
     );

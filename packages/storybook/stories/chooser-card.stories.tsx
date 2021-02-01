@@ -1,13 +1,6 @@
 import { ChooserCard } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const FlexContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-`;
 
 export default {
     title: 'Chooser Card',
@@ -15,7 +8,7 @@ export default {
 };
 
 export const Normal: Story = () => (
-    <FlexContainer>
+    <>
         <ChooserCard name="story1" label="Card 1" value="card1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
@@ -24,11 +17,11 @@ export const Normal: Story = () => (
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </ChooserCard>
-    </FlexContainer>
+    </>
 );
 
 export const DefaultChecked: Story = () => (
-    <FlexContainer>
+    <>
         <ChooserCard name="story2" label="Card 1" value="card1" defaultChecked>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
@@ -37,14 +30,14 @@ export const DefaultChecked: Story = () => (
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </ChooserCard>
-    </FlexContainer>
+    </>
 );
 
 export const Controlled: Story = () => {
     const [value, setValue] = useState('');
 
     return (
-        <FlexContainer>
+        <>
             <ChooserCard
                 checked={value === 'card1'}
                 onChange={(event) => setValue(event.target.value)}
@@ -65,7 +58,7 @@ export const Controlled: Story = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec commodo nulla sapien, at condimentum ipsum tristique id.
             </ChooserCard>
-        </FlexContainer>
+        </>
     );
 };
 
@@ -74,11 +67,10 @@ export const Disabled: Story = () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec commodo nulla sapien, at condimentum ipsum tristique id.
     </ChooserCard>
-
 );
 
 export const onChangeCallback: Story = () => (
-    <FlexContainer>
+    <>
         <ChooserCard
             name="story5"
             label="Card 1"
@@ -97,5 +89,5 @@ export const onChangeCallback: Story = () => (
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </ChooserCard>
-    </FlexContainer>
+    </>
 );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Choose Input Matches the snapshot 1`] = `
+exports[`Chooser Button Matches the snapshot 1`] = `
 Array [
   .c0 {
   border: 0 !important;

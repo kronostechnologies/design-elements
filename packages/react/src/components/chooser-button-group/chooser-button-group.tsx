@@ -1,6 +1,6 @@
 import React, { ChangeEvent, ReactElement, useState } from 'react';
 import styled from 'styled-components';
-import { ChooseInput } from '../choose-input/choose-input';
+import { ChooserButton } from '../chooser-button/chooser-button';
 
 interface ChooserButtonGroupProps {
     groupName: string;
@@ -46,7 +46,7 @@ export function ChooserButtonGroup({
     };
 
     const chooserOptions = options.map((option) => (
-        <ChooseInput
+        <ChooserButton
             key={option.value}
             groupName={groupName}
             onChange={handleChange}
@@ -55,7 +55,7 @@ export function ChooserButtonGroup({
             value={option.value}
         >
             {option.label}
-        </ChooseInput>
+        </ChooserButton>
     ));
 
     return (
@@ -66,7 +66,7 @@ export function ChooserButtonGroup({
 
             {skipOption && (
                 <Skip>
-                    <ChooseInput
+                    <ChooserButton
                         groupName={groupName}
                         onChange={handleChange}
                         type="radio"
@@ -74,7 +74,7 @@ export function ChooserButtonGroup({
                         value={skipOption.value}
                     >
                         {skipOption.label}
-                    </ChooseInput>
+                    </ChooserButton>
                 </Skip>
             )}
         </>
