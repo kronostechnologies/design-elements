@@ -29,6 +29,7 @@ interface TextInputProps extends PartialInputProps {
     disabled?: boolean;
     /** Disables default margin */
     noMargin?: boolean;
+    id?: string;
     inputMode?: inputModeType;
     label?: string;
     pattern?: string;
@@ -47,6 +48,7 @@ interface TextInputProps extends PartialInputProps {
 
 export const TextInput = React.forwardRef(({
     className,
+    id: providedId,
     noMargin,
     onBlur,
     onChange,
@@ -55,7 +57,7 @@ export const TextInput = React.forwardRef(({
 }: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
-    const id = useMemo(uuid, []);
+    const id = useMemo(() => providedId || uuid(), [providedId]);
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         setValidity({ validity: event.currentTarget.checkValidity() });
