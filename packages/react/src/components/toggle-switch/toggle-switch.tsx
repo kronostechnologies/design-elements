@@ -104,22 +104,20 @@ export function ToggleSwitch({
 
     return (
         <>
-            <>
-                <StyledButton
-                    id={buttonId}
-                    role="switch"
-                    aria-readonly={!!disabled}
-                    aria-checked={toggled}
-                    aria-labelledby={labelId}
-                    data-testid="toggle-switch"
-                    type="button"
-                    isMobile={isMobile}
-                    disabled={disabled}
-                    onClick={handleClick}
-                >
-                    <StyledButtonSpan isMobile={isMobile} />
-                </StyledButton>
-            </>
+            <StyledButton
+                id={buttonId}
+                role="switch"
+                aria-readonly={!!disabled}
+                aria-checked={toggled}
+                aria-labelledby={labelId}
+                data-testid="toggle-switch"
+                type="button"
+                isMobile={isMobile}
+                disabled={disabled}
+                onClick={handleClick}
+            >
+                <StyledButtonSpan isMobile={isMobile} />
+            </StyledButton>
             <StyledLabel id={labelId} htmlFor={buttonId} isMobile={isMobile} disabled={!!disabled}>{label}</StyledLabel>
         </>
     );

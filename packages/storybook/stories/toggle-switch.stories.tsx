@@ -11,7 +11,7 @@ export const Normal: Story = () => {
     const [toggled, setToggled] = useState(false);
 
     return (
-        <ToggleSwitch label="Switch" toggled={toggled} onToggle={(value: boolean) => setToggled(value)} />
+        <ToggleSwitch label="Switch" toggled={toggled} onToggle={setToggled} />
     );
 };
 
@@ -19,7 +19,7 @@ export const Toggled: Story = () => {
     const [toggled, setToggled] = useState(true);
 
     return (
-        <ToggleSwitch label="Switch" toggled={toggled} onToggle={(value: boolean) => setToggled(value)} />
+        <ToggleSwitch label="Switch" toggled={toggled} onToggle={setToggled} />
     );
 };
 
