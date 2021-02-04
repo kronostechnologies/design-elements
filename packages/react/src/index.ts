@@ -19,6 +19,7 @@ export { TextArea } from './components/text-area/text-area';
 export { TextInput } from './components/text-input/text-input';
 export { Avatar } from './components/avatar/avatar';
 export { Tab, Tabs } from './components/tabs/tabs';
+export { ToggleSwitch } from './components/toggle-switch/toggle-switch';
 
 // Context
 export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';
