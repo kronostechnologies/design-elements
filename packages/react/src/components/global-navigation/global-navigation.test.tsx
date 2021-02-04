@@ -4,6 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
+import { ButtonProps } from '../buttons/icon-button';
+import { findByTestId } from '../../test-utils/enzyme-selectors';
 
 function setup(children: ReactElement): ReactElement {
     return (
@@ -16,27 +18,27 @@ function setup(children: ReactElement): ReactElement {
 const items: GlobalNavigationItem[] = [
     {
         iconName: 'home',
-        name: 'test',
+        name: 'home',
         href: '/test1',
     },
     {
         iconName: 'edit',
-        name: 'test',
+        name: 'edit',
         href: '/test2',
     },
     {
         iconName: 'mapPin',
-        name: 'test',
+        name: 'map',
         href: '/test3',
     },
     {
         iconName: 'mail',
-        name: 'test',
+        name: 'mail',
         href: '/test4',
     },
     {
         iconName: 'phone',
-        name: 'test',
+        name: 'phone',
         href: '/test5',
     },
 ];
@@ -44,15 +46,22 @@ const items: GlobalNavigationItem[] = [
 const footerItems: GlobalNavigationItem[] = [
     {
         iconName: 'info',
-        name: 'test',
+        name: 'info',
         href: '/test6',
     },
     {
         iconName: 'helpCircle',
-        name: 'test',
+        name: 'help',
         href: '/test7',
     },
 ];
+
+const coreActionButton: ButtonProps = {
+    buttonType: 'primary',
+    iconName: 'plusSign',
+    label: 'add',
+    type: 'button',
+};
 
 describe('Global Navigation', () => {
     test('Has showMore icon', () => {
@@ -64,14 +73,26 @@ describe('Global Navigation', () => {
             ),
         );
 
-        expect(wrapper.find('[data-testid="showMoreIcon"]').at(0).length).toBe(1);
+        expect(findByTestId(wrapper, 'showMoreIcon').exists()).toBe(true);
+    });
+
+    test('Has CoreActionButton when needed', () => {
+        const wrapper = mount(
+            setup(
+                <div style={{ height: '600px' }}>
+                    <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />
+                </div>,
+            ),
+        );
+
+        expect(findByTestId(wrapper, 'coreActionButton').exists()).toBe(true);
     });
 
     test('Matches snapshot', () => {
         const tree = renderer.create(
             setup(
                 <div style={{ height: '600px' }}>
-                    <GlobalNavigation mainItems={items} footerItems={footerItems} />
+                    <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />
                 </div>,
             ),
         );

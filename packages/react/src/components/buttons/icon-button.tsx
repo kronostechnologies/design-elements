@@ -8,7 +8,7 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
 type Type = 'submit' | 'button' | 'reset';
 
-interface ButtonProps {
+export interface ButtonProps {
     /**
      * Visual style
      * @default primary
