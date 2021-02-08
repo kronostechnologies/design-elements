@@ -66,7 +66,6 @@ const Input = styled.input<InputProps>`
     ${({ theme }) => inputsStyle(theme)}
 
     border-radius: ${({ hasButton }) => (hasButton ? 'var(--border-radius) 0 0 var(--border-radius)' : '')};
-    border-right: 0;
     height: 2rem;
     padding-bottom: var(--spacing-half);
     padding-left: ${({ hasIcon }) => (hasIcon ? '1.75rem' : 'var(--spacing-1x)')};
