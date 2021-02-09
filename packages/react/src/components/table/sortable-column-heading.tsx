@@ -50,7 +50,12 @@ export function SortableColumnHeading({ column }: SortableColumnHeadingProps): R
         return 'none';
     }, [column]);
 
-    const style: CSSProperties = { textAlign: column.textAlign, width: column.width, minWidth: column.minWidth, maxWidth: column.maxWidth };
+    const style: CSSProperties = {
+        textAlign: column.textAlign,
+        width: column.width,
+        minWidth: column.minWidth,
+        maxWidth: column.maxWidth,
+    };
     return (
         <th
             {...column.getHeaderProps(column.getSortByToggleProps()) /* eslint-disable-line react/jsx-props-no-spreading,max-len */}

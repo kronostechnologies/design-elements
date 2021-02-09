@@ -32,7 +32,12 @@ function getHeading(column: Column): ReactElement {
     if (column.sortable) {
         return <SortableColumnHeading key={column.id} column={column} />;
     }
-    const style: CSSProperties = { textAlign: column.textAlign, width: column.width, minWidth: column.minWidth, maxWidth: column.maxWidth };
+    const style: CSSProperties = {
+        textAlign: column.textAlign,
+        width: column.width,
+        minWidth: column.minWidth,
+        maxWidth: column.maxWidth,
+    };
     return (
         <th
             scope="col"
