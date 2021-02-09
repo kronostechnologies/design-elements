@@ -21,16 +21,18 @@ export const LinkedPagination: Story = () => {
     const [currentPage, setCurrentPage] = useState(1);
     return (
         <>
-            <Pagination 
+            <Pagination
                 totalPages={5}
                 numberOfResults={100}
                 onPageChange={(page: number) => setCurrentPage(page)}
-                activePage={currentPage} />
-            <Pagination 
+                activePage={currentPage}
+            />
+            <Pagination
                 totalPages={5}
                 numberOfResults={100}
                 onPageChange={(page: number) => setCurrentPage(page)}
-                activePage={currentPage} />
+                activePage={currentPage}
+            />
         </>
     );
 };
