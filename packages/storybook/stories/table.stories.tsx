@@ -255,6 +255,52 @@ export const RowClickCallback: Story = () => {
     );
 };
 
+export const FixedWidthTable: Story = () => {
+    const columns: TableColumn<Data> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+            width: 10,
+            minWidth: 10,
+            maxWidth: 10,
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            width: 100,
+            minWidth: 100,
+            maxWidth: 100,
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+            width: 10,
+            minWidth: 10,
+            maxWidth: 10,
+        },
+    ];
+
+    const data: TableRow<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+    ];
+
+    return (
+        <Table<Data>
+            columns={columns}
+            data={data}
+        />
+    );
+};
+
 export const CustomTextAlignment: Story = () => {
     const columns: TableColumn<Data> = [
         {
