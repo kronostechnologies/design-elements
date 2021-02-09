@@ -111,7 +111,7 @@ interface PaginationProps {
     /**
      * The current active page of the pagination
      */
-    activePage?: number; 
+    activePage?: number;
 }
 
 export function Pagination({
@@ -137,7 +137,7 @@ export function Pagination({
         if (activePage) {
             setCurrentPage(activePage);
         }
-    }, [activePage])
+    }, [activePage]);
 
     function changePage(page: number): void {
         setCurrentPage(page);
