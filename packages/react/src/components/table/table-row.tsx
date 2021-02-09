@@ -57,7 +57,7 @@ export function TableRow<T extends object>({
             {...(onClick ? { tabIndex: 0, role: 'button' } : {}) /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {row.cells.map((cell) => {
-                const style: CSSProperties = { textAlign: cell.column.textAlign };
+                const style: CSSProperties = { textAlign: cell.column.textAlign, width: cell.column.width, minWidth: cell.column.minWidth, maxWidth: cell.column.maxWidth };
                 return (
                     <td
                         style={style}

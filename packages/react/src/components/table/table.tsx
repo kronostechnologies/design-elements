@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { CSSProperties, ReactElement, useEffect, useState } from 'react';
 import { CellProps, Column, Row, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
@@ -32,10 +32,11 @@ function getHeading(column: Column): ReactElement {
     if (column.sortable) {
         return <SortableColumnHeading key={column.id} column={column} />;
     }
+    const style: CSSProperties = { textAlign: column.textAlign, width: column.width, minWidth: column.minWidth, maxWidth: column.maxWidth };
     return (
         <th
             scope="col"
-            style={{ textAlign: column.textAlign }}
+            style={style}
             className={column.className}
             {...column.getHeaderProps() /* eslint-disable-line react/jsx-props-no-spreading */}
         >

@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
+import React, { CSSProperties, ReactElement, useMemo, VoidFunctionComponent } from 'react';
 import { Column } from 'react-table';
 import styled from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
@@ -50,9 +50,11 @@ export function SortableColumnHeading({ column }: SortableColumnHeadingProps): R
         return 'none';
     }, [column]);
 
+    const style: CSSProperties = { textAlign: column.textAlign, width: column.width, minWidth: column.minWidth, maxWidth: column.maxWidth };
     return (
         <th
             {...column.getHeaderProps(column.getSortByToggleProps()) /* eslint-disable-line react/jsx-props-no-spreading,max-len */}
+            style={style}
             scope="col"
             aria-sort={sortState}
         >
