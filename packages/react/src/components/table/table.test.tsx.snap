@@ -1005,7 +1005,7 @@ exports[`Table has sorting styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="cursor:pointer;width:150px;min-width:0;max-width:9007199254740991px"
         title="Toggle SortBy"
       >
         <div
@@ -1029,7 +1029,7 @@ exports[`Table has sorting styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="cursor:pointer;width:150px;min-width:0;max-width:9007199254740991px"
         title="Toggle SortBy"
       >
         <div

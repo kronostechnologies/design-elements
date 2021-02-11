@@ -21,7 +21,7 @@ const StyledDiv = styled.div<{ textAlign: string }>`
 
 interface SortableColumnHeadingProps {
     column: Column;
-    style?: CSSProperties; 
+    style?: CSSProperties;
 }
 
 type SortState = 'ascending' | 'descending' | 'none';
@@ -51,7 +51,7 @@ export function SortableColumnHeading({ column, style }: SortableColumnHeadingPr
         return 'none';
     }, [column]);
 
-    let headerProps = column.getHeaderProps(column.getSortByToggleProps()); /* eslint-disable-line react/jsx-props-no-spreading,max-len */
+    let headerProps = column.getHeaderProps(column.getSortByToggleProps());
     // We want all the styles, so we merge them together with deconstructing.
     headerProps = {
         ...headerProps,
@@ -65,7 +65,7 @@ export function SortableColumnHeading({ column, style }: SortableColumnHeadingPr
         <th
             scope="col"
             aria-sort={sortState}
-            {...headerProps}
+            {...headerProps}  /* eslint-disable-line react/jsx-props-no-spreading,max-len */
         >
             <StyledDiv textAlign={column.textAlign}>
                 <SortButton>
