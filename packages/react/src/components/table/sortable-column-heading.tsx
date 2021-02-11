@@ -65,7 +65,7 @@ export function SortableColumnHeading({ column, style }: SortableColumnHeadingPr
         <th
             scope="col"
             aria-sort={sortState}
-            {...headerProps}  /* eslint-disable-line react/jsx-props-no-spreading,max-len */
+            {...headerProps /* eslint-disable-line react/jsx-props-no-spreading,max-len */}
         >
             <StyledDiv textAlign={column.textAlign}>
                 <SortButton>
