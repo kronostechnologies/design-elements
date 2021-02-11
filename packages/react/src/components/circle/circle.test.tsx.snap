@@ -26,7 +26,7 @@ exports[`Circle Matches the snapshot 1`] = `
     cy={73}
     fill="transparent"
     r={69}
-    stroke="#D9DDE2"
+    stroke="#DBDEE1"
     strokeLinecap="round"
     strokeWidth={8}
   />

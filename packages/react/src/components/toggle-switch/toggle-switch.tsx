@@ -5,10 +5,6 @@ import { focus } from '../../utils/css-state';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-/* TODO change when updating thematization */
-const green = '#008533';
-const lightGreen = '#8adda9';
-
 interface StyledLabelProps {
     theme: Theme;
     isMobile: boolean;
@@ -28,6 +24,7 @@ interface StyledButtonSpanProps {
     theme: Theme;
     isMobile: boolean;
 }
+
 const StyledButtonSpan = styled.span<StyledButtonSpanProps>`
     background: ${({ theme }) => theme.greys.white};
     border-radius: 100%;
@@ -44,13 +41,14 @@ interface StyledButtonProps {
     theme: Theme;
     isMobile: boolean
 }
+
 const StyledButton = styled.button<StyledButtonProps>`
     &:not([disabled]) {
         cursor: pointer;
     }
 
-    background: ${green};
-    border: 1px solid ${green};
+    background: ${({ theme }) => theme.notifications['success-1.1']};
+    border: 1px solid ${({ theme }) => theme.notifications['success-1.1']};
     border-radius: ${({ isMobile }) => (isMobile ? 16 : 12)}px;
     height: ${({ isMobile }) => (isMobile ? 32 : 24)}px;
     position: relative;
@@ -76,8 +74,8 @@ const StyledButton = styled.button<StyledButtonProps>`
         border-color: ${({ theme }) => theme.greys.grey};
 
         &[aria-checked="true"] {
-            background: ${lightGreen};
-            border-color: ${lightGreen};
+            background: ${({ theme }) => theme.notifications['success-1.3']};
+            border-color: ${({ theme }) => theme.notifications['success-1.3']};
         }
     }
 

@@ -47,8 +47,8 @@ exports[`Button has destructive styles (inverted) 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -62,7 +62,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
 .c1 {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
-  color: #A40C2E;
+  color: #CD2C23;
 }
 
 .c1:focus {
@@ -71,8 +71,8 @@ exports[`Button has destructive styles (inverted) 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
@@ -144,8 +144,8 @@ exports[`Button has destructive styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -157,8 +157,8 @@ exports[`Button has destructive styles 1`] = `
 }
 
 .c1 {
-  background-color: #A40C2E;
-  border-color: #A40C2E;
+  background-color: #CD2C23;
+  border-color: #CD2C23;
   color: #FFFFFF;
 }
 
@@ -168,8 +168,8 @@ exports[`Button has destructive styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
@@ -241,8 +241,8 @@ exports[`Button has disabled styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -254,8 +254,8 @@ exports[`Button has disabled styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -265,18 +265,18 @@ exports[`Button has disabled styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -335,8 +335,8 @@ exports[`Button has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -348,8 +348,8 @@ exports[`Button has mobile styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -359,18 +359,18 @@ exports[`Button has mobile styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -428,8 +428,8 @@ exports[`Button has primary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -441,8 +441,8 @@ exports[`Button has primary styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -452,18 +452,18 @@ exports[`Button has primary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -521,8 +521,8 @@ exports[`Button has secondary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -535,8 +535,8 @@ exports[`Button has secondary styles 1`] = `
 
 .c1 {
   background-color: transparent;
-  border-color: #0080A5;
-  color: #0080A5;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c1:focus {
@@ -545,18 +545,18 @@ exports[`Button has secondary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  border-color: #005F7A;
-  color: #005F7A;
+  border-color: #003A5A;
+  color: #003A5A;
 }
 
 .c1:disabled {
-  border-color: #99CCDB;
-  color: #99CCDB;
+  border-color: #84C6EA;
+  color: #84C6EA;
 }
 
 <button
@@ -614,8 +614,8 @@ exports[`Button has tertiary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -629,7 +629,7 @@ exports[`Button has tertiary styles 1`] = `
 .c1 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:focus {
@@ -638,18 +638,18 @@ exports[`Button has tertiary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c1:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 <button

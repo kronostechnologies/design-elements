@@ -47,8 +47,8 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c2:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c2:not(:disabled) {
@@ -62,7 +62,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 .c3 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
   padding: 0;
   width: 32px;
 }
@@ -73,18 +73,18 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c3:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c3:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c3:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c4 {
@@ -97,7 +97,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c5 {
-  background-color: #0080A5;
+  background-color: #006296;
   border-radius: 100%;
   color: #FFFFFF;
   display: inline-block;
@@ -116,12 +116,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c5:hover {
-  background-color: #0080A5;
+  background-color: #006296;
   cursor: default;
 }
 
@@ -145,12 +145,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c6:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   cursor: pointer;
 }
 
@@ -333,8 +333,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c2:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c2:not(:disabled) {
@@ -348,7 +348,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 .c3 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
   padding: 0;
   width: 48px;
 }
@@ -359,18 +359,18 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c3:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c3:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c3:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c4 {
@@ -383,7 +383,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c5 {
-  background-color: #0080A5;
+  background-color: #006296;
   border-radius: 100%;
   color: #FFFFFF;
   display: inline-block;
@@ -402,12 +402,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c5:hover {
-  background-color: #0080A5;
+  background-color: #006296;
   cursor: default;
 }
 
@@ -431,12 +431,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c6:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   cursor: pointer;
 }
 

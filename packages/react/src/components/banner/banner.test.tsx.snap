@@ -59,8 +59,8 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 svg {
@@ -104,7 +104,7 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
 
 exports[`Banner Matches snapshot (mobile) 1`] = `
 .c0 {
-  background-color: #A40C2E;
+  background-color: #CD2C23;
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: var(--font-normal);
@@ -157,8 +157,8 @@ exports[`Banner Matches snapshot (mobile) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 svg {

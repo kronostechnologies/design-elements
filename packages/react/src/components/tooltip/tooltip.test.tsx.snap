@@ -3,7 +3,7 @@
 exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
@@ -62,7 +62,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='bottom']::before {
-  border-color: transparent transparent #57666E transparent;
+  border-color: transparent transparent #60666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
@@ -82,7 +82,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='top']::before {
-  border-color: #57666E transparent transparent transparent;
+  border-color: #60666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
@@ -101,7 +101,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='right']::before {
-  border-color: transparent #57666E transparent transparent;
+  border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
@@ -120,7 +120,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='left']::before {
-  border-color: transparent transparent transparent #57666E;
+  border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
@@ -151,8 +151,8 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <Tooltip
@@ -189,7 +189,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       <body>
         .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
@@ -248,7 +248,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='bottom']::before {
-  border-color: transparent transparent #57666E transparent;
+  border-color: transparent transparent #60666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
@@ -268,7 +268,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='top']::before {
-  border-color: #57666E transparent transparent transparent;
+  border-color: #60666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
@@ -287,7 +287,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='right']::before {
-  border-color: transparent #57666E transparent transparent;
+  border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
@@ -306,7 +306,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='left']::before {
-  border-color: transparent transparent transparent #57666E;
+  border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
@@ -359,12 +359,12 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
             tabIndex={0}
           >
             <Icon
-              color="#57666E"
+              color="#60666E"
               name="helpCircle"
               size="16"
             >
               <svg
-                color="#57666E"
+                color="#60666E"
                 focusable={false}
                 height="16"
                 width="16"
@@ -517,8 +517,8 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <Tooltip>
@@ -578,12 +578,12 @@ exports[`Tooltip Has default desktop styles 1`] = `
             tabIndex={0}
           >
             <Icon
-              color="#57666E"
+              color="#60666E"
               name="helpCircle"
               size="16"
             >
               <svg
-                color="#57666E"
+                color="#60666E"
                 focusable={false}
                 height="16"
                 width="16"
@@ -600,7 +600,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 .c1 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
@@ -659,7 +659,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='bottom']::before {
-  border-color: transparent transparent #57666E transparent;
+  border-color: transparent transparent #60666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
@@ -679,7 +679,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='top']::before {
-  border-color: #57666E transparent transparent transparent;
+  border-color: #60666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
@@ -698,7 +698,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='right']::before {
-  border-color: transparent #57666E transparent transparent;
+  border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
@@ -717,7 +717,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c2[data-placement*='left']::before {
-  border-color: transparent transparent transparent #57666E;
+  border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
@@ -748,8 +748,8 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <Tooltip
@@ -786,7 +786,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       <body>
         <div
           aria-hidden="false"
-          class="kwyqAo"
+          class="krwOeI"
           role="tooltip"
           style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
         >
@@ -799,7 +799,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
         </div>
         .c0 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
@@ -858,7 +858,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='bottom']::before {
-  border-color: transparent transparent #57666E transparent;
+  border-color: transparent transparent #60666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
@@ -878,7 +878,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='top']::before {
-  border-color: #57666E transparent transparent transparent;
+  border-color: #60666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
@@ -897,7 +897,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='right']::before {
-  border-color: transparent #57666E transparent transparent;
+  border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
@@ -916,7 +916,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c1[data-placement*='left']::before {
-  border-color: transparent transparent transparent #57666E;
+  border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
@@ -969,12 +969,12 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
             tabIndex={0}
           >
             <Icon
-              color="#57666E"
+              color="#60666E"
               name="helpCircle"
               size="24"
             >
               <svg
-                color="#57666E"
+                color="#60666E"
                 focusable={false}
                 height="24"
                 width="24"
@@ -988,7 +988,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
           <body>
             <div
               aria-hidden="false"
-              class="kwyqAo"
+              class="krwOeI"
               role="tooltip"
               style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
             >
@@ -1136,8 +1136,8 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <Tooltip>
@@ -1172,12 +1172,12 @@ exports[`Tooltip Has mobile styles 1`] = `
       <body>
         <div
           aria-hidden="false"
-          class="sc-httYMd kwyqAo"
+          class="sc-httYMd krwOeI"
           role="tooltip"
           style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
         >
           <div
-            class="sc-cbDGPM bTFdKu"
+            class="sc-cbDGPM dldrsC"
             data-placement="right"
             style="position: absolute; top: 0px; transform: translate(0px, 0px);"
           />
@@ -1213,12 +1213,12 @@ exports[`Tooltip Has mobile styles 1`] = `
             tabIndex={0}
           >
             <Icon
-              color="#57666E"
+              color="#60666E"
               name="helpCircle"
               size="24"
             >
               <svg
-                color="#57666E"
+                color="#60666E"
                 focusable={false}
                 height="24"
                 width="24"

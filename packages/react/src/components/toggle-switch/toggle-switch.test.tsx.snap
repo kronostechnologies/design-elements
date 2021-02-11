@@ -31,8 +31,8 @@ Array [
 }
 
 .c0[aria-checked="false"] {
-  background: #9CA7B4;
-  border-color: #9CA7B4;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0[aria-checked="false"] .c1 {
@@ -47,13 +47,13 @@ Array [
 }
 
 .c0:disabled {
-  background: #D9DDE2;
-  border-color: #D9DDE2;
+  background: #DBDEE1;
+  border-color: #DBDEE1;
 }
 
 .c0:disabled[aria-checked="true"] {
-  background: #8adda9;
-  border-color: #8adda9;
+  background: #8ADDA9;
+  border-color: #8ADDA9;
 }
 
 .c0:focus {
@@ -62,8 +62,8 @@ Array [
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <button
@@ -129,8 +129,8 @@ Array [
 }
 
 .c0[aria-checked="false"] {
-  background: #9CA7B4;
-  border-color: #9CA7B4;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0[aria-checked="false"] .c1 {
@@ -145,13 +145,13 @@ Array [
 }
 
 .c0:disabled {
-  background: #D9DDE2;
-  border-color: #D9DDE2;
+  background: #DBDEE1;
+  border-color: #DBDEE1;
 }
 
 .c0:disabled[aria-checked="true"] {
-  background: #8adda9;
-  border-color: #8adda9;
+  background: #8ADDA9;
+  border-color: #8ADDA9;
 }
 
 .c0:focus {
@@ -160,8 +160,8 @@ Array [
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <button
@@ -227,8 +227,8 @@ Array [
 }
 
 .c0[aria-checked="false"] {
-  background: #9CA7B4;
-  border-color: #9CA7B4;
+  background: #B7BBC2;
+  border-color: #B7BBC2;
 }
 
 .c0[aria-checked="false"] .c1 {
@@ -243,13 +243,13 @@ Array [
 }
 
 .c0:disabled {
-  background: #D9DDE2;
-  border-color: #D9DDE2;
+  background: #DBDEE1;
+  border-color: #DBDEE1;
 }
 
 .c0:disabled[aria-checked="true"] {
-  background: #8adda9;
-  border-color: #8adda9;
+  background: #8ADDA9;
+  border-color: #8ADDA9;
 }
 
 .c0:focus {
@@ -258,8 +258,8 @@ Array [
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <button

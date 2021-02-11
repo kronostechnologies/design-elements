@@ -3,7 +3,7 @@
 exports[`Inline Message Matches snapshot (desktop) 1`] = `
 .c0 {
   background-color: #f5fdff;
-  border: 1px solid #094C6C;
+  border: 1px solid #004E78;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -14,7 +14,7 @@ exports[`Inline Message Matches snapshot (desktop) 1`] = `
 }
 
 .c0 svg {
-  color: #094C6C;
+  color: #004E78;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -64,7 +64,7 @@ exports[`Inline Message Matches snapshot (desktop) 1`] = `
 exports[`Inline Message Matches snapshot (mobile) 1`] = `
 .c0 {
   background-color: #fdf6f7;
-  border: 1px solid #A40C2E;
+  border: 1px solid #CD2C23;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -75,7 +75,7 @@ exports[`Inline Message Matches snapshot (mobile) 1`] = `
 }
 
 .c0 svg {
-  color: #A40C2E;
+  color: #CD2C23;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;

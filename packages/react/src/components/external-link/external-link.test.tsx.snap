@@ -25,8 +25,8 @@ exports[`External Link matches snapshot (disabled) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
@@ -34,11 +34,11 @@ exports[`External Link matches snapshot (disabled) 1`] = `
 }
 
 .c1:visited {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c1:visited svg {
-  color: #094C6C;
+  color: #004E78;
 }
 
 <a
@@ -76,12 +76,12 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1:hover {
@@ -90,11 +90,11 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 }
 
 .c1:visited {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c1:visited svg {
-  color: #094C6C;
+  color: #004E78;
 }
 
 <a
@@ -138,12 +138,12 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1:hover {
@@ -152,11 +152,11 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 }
 
 .c1:visited {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c1:visited svg {
-  color: #094C6C;
+  color: #004E78;
 }
 
 <a
@@ -199,12 +199,12 @@ exports[`External Link matches snapshot (without href) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1:hover {
@@ -213,11 +213,11 @@ exports[`External Link matches snapshot (without href) 1`] = `
 }
 
 .c1:visited {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c1:visited svg {
-  color: #094C6C;
+  color: #004E78;
 }
 
 <a
@@ -261,12 +261,12 @@ exports[`External Link matches snapshot 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1:hover {
@@ -275,11 +275,11 @@ exports[`External Link matches snapshot 1`] = `
 }
 
 .c1:visited {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c1:visited svg {
-  color: #094C6C;
+  color: #004E78;
 }
 
 <a

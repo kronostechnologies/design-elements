@@ -47,8 +47,8 @@ exports[`Icon Button Has disabled styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -60,8 +60,8 @@ exports[`Icon Button Has disabled styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
   padding: 0;
   width: 32px;
@@ -73,18 +73,18 @@ exports[`Icon Button Has disabled styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -149,8 +149,8 @@ exports[`Icon Button Has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -162,8 +162,8 @@ exports[`Icon Button Has mobile styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
   padding: 0;
   width: 48px;
@@ -175,18 +175,18 @@ exports[`Icon Button Has mobile styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -250,8 +250,8 @@ exports[`Icon Button Has primary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -263,8 +263,8 @@ exports[`Icon Button Has primary styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
   padding: 0;
   width: 32px;
@@ -276,18 +276,18 @@ exports[`Icon Button Has primary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -351,8 +351,8 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -365,8 +365,8 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c1 {
   background-color: transparent;
-  border-color: #0080A5;
-  color: #0080A5;
+  border-color: #006296;
+  color: #006296;
   padding: 0;
   width: 32px;
 }
@@ -377,18 +377,18 @@ exports[`Icon Button Has secondary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  border-color: #005F7A;
-  color: #005F7A;
+  border-color: #003A5A;
+  color: #003A5A;
 }
 
 .c1:disabled {
-  border-color: #99CCDB;
-  color: #99CCDB;
+  border-color: #84C6EA;
+  color: #84C6EA;
 }
 
 <button
@@ -452,8 +452,8 @@ exports[`Icon Button Has tertiary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -467,7 +467,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
 .c1 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
   padding: 0;
   width: 32px;
 }
@@ -478,18 +478,18 @@ exports[`Icon Button Has tertiary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c1:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 <button
