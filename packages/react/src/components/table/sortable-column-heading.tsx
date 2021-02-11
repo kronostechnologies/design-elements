@@ -21,6 +21,7 @@ const StyledDiv = styled.div<{ textAlign: string }>`
 
 interface SortableColumnHeadingProps {
     column: Column;
+    style?: CSSProperties; 
 }
 
 type SortState = 'ascending' | 'descending' | 'none';
@@ -42,7 +43,7 @@ const SortButtonIcon: VoidFunctionComponent<SortButtonIconProps> = ({ sort }) =>
     }
 };
 
-export function SortableColumnHeading({ column }: SortableColumnHeadingProps): ReactElement {
+export function SortableColumnHeading({ column, style }: SortableColumnHeadingProps): ReactElement {
     const sortState: SortState = useMemo(() => {
         if (column.isSorted) {
             return column.isSortedDesc ? 'descending' : 'ascending';
@@ -50,18 +51,21 @@ export function SortableColumnHeading({ column }: SortableColumnHeadingProps): R
         return 'none';
     }, [column]);
 
-    const style: CSSProperties = {
-        textAlign: column.textAlign,
-        width: column.width,
-        minWidth: column.minWidth,
-        maxWidth: column.maxWidth,
+    let headerProps = column.getHeaderProps(column.getSortByToggleProps()); /* eslint-disable-line react/jsx-props-no-spreading,max-len */
+    // We want all the styles, so we merge them together with deconstructing.
+    headerProps = {
+        ...headerProps,
+        style: {
+            ...headerProps.style,
+            ...style,
+        },
     };
+
     return (
         <th
-            {...column.getHeaderProps(column.getSortByToggleProps()) /* eslint-disable-line react/jsx-props-no-spreading,max-len */}
-            style={style}
             scope="col"
             aria-sort={sortState}
+            {...headerProps}
         >
             <StyledDiv textAlign={column.textAlign}>
                 <SortButton>

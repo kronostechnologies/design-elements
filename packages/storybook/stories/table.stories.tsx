@@ -255,7 +255,7 @@ export const RowClickCallback: Story = () => {
     );
 };
 
-export const FixedWidthTable: Story = () => {
+export const FixedWidth: Story = () => {
     const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',

@@ -19,6 +19,7 @@ interface StyledTableProps {
 type CustomColumn<T extends object> = Column<T> & {
     sortable?: boolean,
     textAlign?: string,
+    className?: string,
 };
 
 export type TableColumn<T extends object = {}> = CustomColumn<T>[];
@@ -29,15 +30,17 @@ interface CustomRowProps {
 }
 
 function getHeading(column: Column): ReactElement {
-    if (column.sortable) {
-        return <SortableColumnHeading key={column.id} column={column} />;
-    }
     const style: CSSProperties = {
         textAlign: column.textAlign,
         width: column.width,
         minWidth: column.minWidth,
         maxWidth: column.maxWidth,
     };
+
+    if (column.sortable) {
+        return <SortableColumnHeading key={column.id} column={column} style={style} />;
+    }
+
     return (
         <th
             scope="col"
