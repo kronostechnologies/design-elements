@@ -47,8 +47,8 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:not(:disabled) {
@@ -61,7 +61,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
@@ -86,12 +86,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c9:focus {
-  box-shadow: inset 0 0 0 3px #0080A566,inset 0 0 0 1px #0080A5;
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
   outline: none;
 }
 
 .c9:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
 }
 
 .c0 {
@@ -99,7 +99,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c2 {
-  background-color: #094C6C;
+  background-color: #004E78;
   border-color: transparent;
   color: #FFFFFF;
   font-size: 0.875rem;
@@ -108,7 +108,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c2:hover {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c6 {
@@ -127,7 +127,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -277,8 +277,8 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:not(:disabled) {
@@ -291,7 +291,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
@@ -316,12 +316,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c9:focus {
-  box-shadow: inset 0 0 0 3px #0080A566,inset 0 0 0 1px #0080A5;
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
   outline: none;
 }
 
 .c9:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
 }
 
 .c0 {
@@ -338,7 +338,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c2:hover {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c6 {
@@ -357,7 +357,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -508,8 +508,8 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 
 .c2:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c2:not(:disabled) {
@@ -522,7 +522,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 
 .c7 {
   background-color: #FFFFFF;
-  border: 1px solid #57666E;
+  border: 1px solid #60666E;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   list-style-type: none;
@@ -547,12 +547,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c9:focus {
-  box-shadow: inset 0 0 0 3px #0080A566,inset 0 0 0 1px #0080A5;
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
   outline: none;
 }
 
 .c9:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
 }
 
 .c0 {
@@ -569,7 +569,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c3:hover {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c8 {
@@ -584,7 +584,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;

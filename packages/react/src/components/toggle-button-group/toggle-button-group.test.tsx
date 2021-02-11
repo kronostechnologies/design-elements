@@ -5,7 +5,7 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { ToggleButtonGroup } from './toggle-button-group';
 
 const buttonGroup = [
-    { label: 'Option 1', value: 'option1', disabled: true },
+    { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2', defaultPressed: true },
     { label: 'Option 3', value: 'option3' },
     { label: 'Option 4', value: 'option4' },
@@ -24,12 +24,6 @@ describe('ToggleButtonGroup', () => {
         const wrapper = shallow(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test2" />);
 
         expect(getByTestId(wrapper, 'test-toggle-button-1').prop('pressed')).toBe(true);
-    });
-
-    test('Is disabled', () => {
-        const wrapper = shallow(<ToggleButtonGroup buttonGroup={buttonGroup} groupName="Test3" />);
-
-        expect(getByTestId(wrapper, 'test-toggle-button-0').prop('disabled')).toBe(true);
     });
 
     test('Matches snapshot (desktop)', () => {
