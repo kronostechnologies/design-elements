@@ -9,11 +9,11 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 }
 
 .c0 button:first-child {
-  border-radius: 24px 0 0 24px;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 .c0 button:last-child {
-  border-radius: 0 24px 24px 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
 .c1 {
@@ -23,27 +23,22 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid;
-  border-color: #DBDEE1;
-  border-left-color: transparent;
+  border-color: #B7BBC2;
+  border-right: 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: default;
+  cursor: pointer;
   font-size: 0.875rem;
   height: 40px;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
   padding: 0 var(--spacing-2x);
 }
 
-.c1:disabled {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-.c1:first-child {
-  border-color: #DBDEE1;
+.c1:last-child {
+  border-right: 1px solid #B7BBC2;
   margin: 0;
 }
 
@@ -57,8 +52,18 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
+  border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+  border-color: #60666E;
+  color: #000000;
+}
+
+.c1:hover + button {
+  border-left-color: #60666E;
 }
 
 .c2 {
@@ -66,93 +71,43 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #006296;
+  background-color: #e0f0f9;
   border: 1px solid;
+  border-color: #012639;
+  border-right: 1px solid;
+  box-sizing: border-box;
+  color: #012639;
+  cursor: pointer;
+  font-size: 0.875rem;
+  height: 40px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  padding: 0 var(--spacing-2x);
+}
+
+.c2 + button {
+  border-left: 0;
+}
+
+.c2:last-child {
+  border-right: 1px solid #012639;
+  margin: 0;
+}
+
+.c2:focus {
+  z-index: 1;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
   border-color: #006296;
-  border-left-color: #006296;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-size: 0.875rem;
-  height: 40px;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
-  padding: 0 var(--spacing-2x);
-}
-
-.c2:disabled {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-.c2:first-child {
-  border-color: #DBDEE1;
-  margin: 0;
-}
-
-.c2:focus {
-  z-index: 1;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
   box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid;
-  border-color: #DBDEE1;
-  border-left-color: transparent;
-  box-sizing: border-box;
-  color: #60666E;
-  cursor: pointer;
-  font-size: 0.875rem;
-  height: 40px;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
-  padding: 0 var(--spacing-2x);
-}
-
-.c3:disabled {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-.c3:first-child {
-  border-color: #DBDEE1;
-  margin: 0;
-}
-
-.c3:focus {
-  z-index: 1;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
-}
-
-.c3:hover {
-  background-color: #DBDEE1;
 }
 
 <div
@@ -165,7 +120,6 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-0"
-    disabled=""
     type="button"
     value="option1"
   >
@@ -184,7 +138,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   <button
     aria-label="Option 3"
     aria-pressed="false"
-    class="c3"
+    class="c1"
     data-testid="test-toggle-button-2"
     type="button"
     value="option3"
@@ -194,7 +148,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   <button
     aria-label="Option 4"
     aria-pressed="false"
-    class="c3"
+    class="c1"
     data-testid="test-toggle-button-3"
     type="button"
     value="option4"
@@ -213,11 +167,11 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 }
 
 .c0 button:first-child {
-  border-radius: 24px 0 0 24px;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 .c0 button:last-child {
-  border-radius: 0 24px 24px 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
 .c1 {
@@ -227,27 +181,22 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid;
-  border-color: #DBDEE1;
-  border-left-color: transparent;
+  border-color: #B7BBC2;
+  border-right: 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: default;
+  cursor: pointer;
   font-size: 1rem;
   height: 48px;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
   padding: 0 var(--spacing-2x);
 }
 
-.c1:disabled {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-.c1:first-child {
-  border-color: #DBDEE1;
+.c1:last-child {
+  border-right: 1px solid #B7BBC2;
   margin: 0;
 }
 
@@ -261,8 +210,18 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 
 .c1:focus {
   outline: none;
+  border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+  border-color: #60666E;
+  color: #000000;
+}
+
+.c1:hover + button {
+  border-left-color: #60666E;
 }
 
 .c2 {
@@ -270,93 +229,43 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #006296;
+  background-color: #e0f0f9;
   border: 1px solid;
+  border-color: #012639;
+  border-right: 1px solid;
+  box-sizing: border-box;
+  color: #012639;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 48px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  padding: 0 var(--spacing-2x);
+}
+
+.c2 + button {
+  border-left: 0;
+}
+
+.c2:last-child {
+  border-right: 1px solid #012639;
+  margin: 0;
+}
+
+.c2:focus {
+  z-index: 1;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
   border-color: #006296;
-  border-left-color: #006296;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-size: 1rem;
-  height: 48px;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
-  padding: 0 var(--spacing-2x);
-}
-
-.c2:disabled {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-.c2:first-child {
-  border-color: #DBDEE1;
-  margin: 0;
-}
-
-.c2:focus {
-  z-index: 1;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
   box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid;
-  border-color: #DBDEE1;
-  border-left-color: transparent;
-  box-sizing: border-box;
-  color: #60666E;
-  cursor: pointer;
-  font-size: 1rem;
-  height: 48px;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
-  padding: 0 var(--spacing-2x);
-}
-
-.c3:disabled {
-  background-color: #F1F2F2;
-  color: #B7BBC2;
-}
-
-.c3:first-child {
-  border-color: #DBDEE1;
-  margin: 0;
-}
-
-.c3:focus {
-  z-index: 1;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
-}
-
-.c3:hover {
-  background-color: #DBDEE1;
 }
 
 <div
@@ -369,7 +278,6 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
     aria-pressed="false"
     class="c1"
     data-testid="test-toggle-button-0"
-    disabled=""
     type="button"
     value="option1"
   >
@@ -388,7 +296,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   <button
     aria-label="Option 3"
     aria-pressed="false"
-    class="c3"
+    class="c1"
     data-testid="test-toggle-button-2"
     type="button"
     value="option3"
@@ -398,7 +306,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   <button
     aria-label="Option 4"
     aria-pressed="false"
-    class="c3"
+    class="c1"
     data-testid="test-toggle-button-3"
     type="button"
     value="option4"

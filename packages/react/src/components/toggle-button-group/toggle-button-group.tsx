@@ -1,5 +1,5 @@
 import React, { MouseEvent, ReactElement, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
@@ -8,11 +8,11 @@ const Container = styled.div`
 
     button {
         &:first-child {
-            border-radius: 24px 0 0 24px;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
         }
 
         &:last-child {
-            border-radius: 0 24px 24px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
     }
 `;
@@ -22,27 +22,27 @@ interface ToggleButtonProps {
     isMobile: boolean;
 }
 
+const outOfThemeColor = '#e0f0f9'; // TODO: Eventually put somewhere in theme
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
-    background-color: ${(props) => (props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
+    background-color: ${(props) => (props.pressed ? outOfThemeColor : props.theme.greys.white)};
     border: 1px solid;
-    border-color: ${(props) => (props.pressed ? props.theme.main['primary-1.1'] : props.theme.greys.grey)};
-    border-left-color: ${(props) => (props.pressed ? props.theme.main['primary-1.1'] : 'transparent')};
+    border-color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : props.theme.greys['mid-grey'])};
+    border-right: ${(props) => (props.pressed ? '1px solid' : 0)};
     box-sizing: border-box;
-    color: ${(props) => (props.pressed ? props.theme.greys.white : props.theme.greys['dark-grey'])};
-    cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
+    color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : props.theme.greys['dark-grey'])};
+    cursor: pointer;
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
     height: ${(props) => (props.isMobile ? '48px' : '40px')};
-    letter-spacing: 0.46px;
+    letter-spacing: 0.02875rem;
     padding: 0 var(--spacing-2x);
 
-    &:disabled {
-        background-color: ${(props) => props.theme.greys['light-grey']};
-        color: ${(props) => props.theme.greys['mid-grey']};
-    }
+    ${(props) => props.pressed && css`
+        & + button { border-left: 0; }
+    `}
 
-    &:first-child {
-        border-color: ${(props) => props.theme.greys.grey};
+    &:last-child {
+        border-right: 1px solid ${(props) => (props.pressed ? props.theme.main['primary-2'] : props.theme.greys['mid-grey'])};
         margin: 0;
     }
 
@@ -50,11 +50,19 @@ const ToggleButton = styled.button<ToggleButtonProps>`
         z-index: 1;
     }
 
-    ${focus};
+    ${(theme) => focus(theme, true)};
 
-    &:hover {
-        ${(props) => (props.pressed || props.disabled ? '' : `background-color: ${props.theme.greys.grey};`)}
-    }
+    ${(props) => !props.pressed && css`
+        &:hover {
+            background-color: ${props.theme.greys.grey};
+            border-color: ${props.theme.greys['dark-grey']};
+            color: ${props.theme.greys.black};
+
+            & + button {
+                border-left-color: ${props.theme.greys['dark-grey']};
+            }
+        }
+    `}
 `;
 
 interface ToggleButtonGroupProps {
@@ -63,7 +71,6 @@ interface ToggleButtonGroupProps {
      */
     buttonGroup: {
         defaultPressed?: boolean;
-        disabled?: boolean;
         label: string;
         value: string;
     }[];
@@ -102,7 +109,6 @@ export function ToggleButtonGroup({
                     pressed={button.value === selectedButton}
                     data-testid={`test-toggle-button-${i}`}
                     isMobile={isMobile}
-                    disabled={button.disabled}
                     key={`${groupName}-${button.value}`}
                     onClick={handleClick}
                     type="button"
