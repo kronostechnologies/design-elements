@@ -25,12 +25,12 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c1[disabled] {
@@ -74,12 +74,12 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:hover {
@@ -87,7 +87,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 }
 
 .c1.active {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1[disabled] {
@@ -135,12 +135,12 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:hover {
@@ -148,7 +148,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 }
 
 .c1.active {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1[disabled] {
@@ -195,12 +195,12 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:hover {
@@ -208,7 +208,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 }
 
 .c1.active {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1[disabled] {
@@ -250,12 +250,12 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c1[disabled] {
@@ -299,12 +299,12 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:hover {
@@ -312,7 +312,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 }
 
 .c1.active {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1[disabled] {
@@ -360,12 +360,12 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:hover {
@@ -373,7 +373,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 }
 
 .c1.active {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1[disabled] {
@@ -420,12 +420,12 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:hover {
@@ -433,7 +433,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 }
 
 .c1.active {
-  color: #0080A5;
+  color: #006296;
 }
 
 .c1[disabled] {

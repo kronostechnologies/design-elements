@@ -6,7 +6,7 @@ exports[`Enso Spinner Matches the snapshot 1`] = `
   animation: roll 1s infinite;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  fill: #0080A5;
+  fill: #006296;
   height: 80px;
   width: 83px;
 }

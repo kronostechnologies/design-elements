@@ -28,11 +28,11 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #57666E;
+  border-color: #60666E;
 }
 
 .c0:focus {
-  border-color: #0080A5;
+  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {
@@ -54,7 +54,7 @@ input + .c1 {
 
 exports[`Field Container should have invalid styles given valid prop is set to false 1`] = `
 .c3 {
-  color: #A40C2E;
+  color: #CD2C23;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,11 +110,11 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #A40C2E;
+  border-color: #CD2C23;
 }
 
 .c0:focus {
-  border-color: #A40C2E;
+  border-color: #CD2C23;
 }
 
 .c0 > :nth-child(2) {
@@ -184,11 +184,11 @@ input + .c1 {
 .c0 input,
 .c0 select,
 .c0 textarea {
-  border-color: #57666E;
+  border-color: #60666E;
 }
 
 .c0:focus {
-  border-color: #0080A5;
+  border-color: #006296;
 }
 
 .c0 > :nth-child(1) {

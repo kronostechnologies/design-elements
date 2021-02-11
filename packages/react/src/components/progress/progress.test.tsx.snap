@@ -10,10 +10,10 @@ exports[`Progress Component Snapshots with labels 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   border: none;
   bottom: 1.5rem;
-  color: #094C6C;
+  color: #004E78;
   height: 4px;
   left: 16.666666666666668%;
   position: absolute;
@@ -21,15 +21,15 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c1[value]::-moz-progress-bar {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c1[value]::-webkit-progress-bar {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
 }
 
 .c1[value]::-webkit-progress-value {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c2 {
@@ -43,7 +43,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c3 {
-  color: #094C6C;
+  color: #004E78;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -99,31 +99,31 @@ exports[`Progress Component Snapshots with labels 1`] = `
 }
 
 .c4::after {
-  background-color: #094C6C;
-  border-color: #094C6C;
+  background-color: #004E78;
+  border-color: #004E78;
   color: #FFFFFF;
 }
 
 .c4 > span {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c5 {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c5::after {
-  border-color: #094C6C;
+  border-color: #004E78;
 }
 
 .c5 span {
-  color: #094C6C;
+  color: #004E78;
   font-weight: var(--font-bold);
 }
 
 .c6::after {
-  border-color: #D9DDE2;
-  color: #57666E;
+  border-color: #DBDEE1;
+  color: #60666E;
 }
 
 <div
@@ -177,10 +177,10 @@ exports[`Progress Component Snapshots without labels 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   border: none;
   bottom: 1.5rem;
-  color: #094C6C;
+  color: #004E78;
   height: 4px;
   left: 16.666666666666668%;
   position: absolute;
@@ -188,15 +188,15 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c1[value]::-moz-progress-bar {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c1[value]::-webkit-progress-bar {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
 }
 
 .c1[value]::-webkit-progress-value {
-  background-color: #094C6C;
+  background-color: #004E78;
 }
 
 .c2 {
@@ -210,7 +210,7 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c3 {
-  color: #094C6C;
+  color: #004E78;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -266,31 +266,31 @@ exports[`Progress Component Snapshots without labels 1`] = `
 }
 
 .c4::after {
-  background-color: #094C6C;
-  border-color: #094C6C;
+  background-color: #004E78;
+  border-color: #004E78;
   color: #FFFFFF;
 }
 
 .c4 > span {
-  color: #57666E;
+  color: #60666E;
 }
 
 .c5 {
-  color: #094C6C;
+  color: #004E78;
 }
 
 .c5::after {
-  border-color: #094C6C;
+  border-color: #004E78;
 }
 
 .c5 span {
-  color: #094C6C;
+  color: #004E78;
   font-weight: var(--font-bold);
 }
 
 .c6::after {
-  border-color: #D9DDE2;
-  color: #57666E;
+  border-color: #DBDEE1;
+  color: #60666E;
 }
 
 <div

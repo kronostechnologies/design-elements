@@ -13,7 +13,7 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 }
 
 .c3 {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
   height: 0.5rem;
   margin-bottom: var(--spacing-half);

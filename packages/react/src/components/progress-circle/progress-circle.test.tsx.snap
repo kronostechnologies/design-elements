@@ -85,7 +85,7 @@ exports[`ProgressCircle Matches the snapshot 1`] = `
         cy={62}
         fill="transparent"
         r={58}
-        stroke="#D9DDE2"
+        stroke="#DBDEE1"
         strokeLinecap="round"
         strokeWidth={8}
       />

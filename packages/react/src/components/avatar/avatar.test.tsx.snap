@@ -6,7 +6,7 @@ exports[`Avatar Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -49,7 +49,7 @@ exports[`Avatar Matches mobile Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #FAFAFA;
   border-radius: 50%;
   display: -webkit-box;
   display: -webkit-flex;
