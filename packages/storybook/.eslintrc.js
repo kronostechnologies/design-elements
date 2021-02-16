@@ -12,6 +12,9 @@ module.exports = {
             },
         },
     ],
+    rules: {
+      'linebreak-style': 'off',
+    },
     settings: {
         'import/resolver': {
             typescript: {
