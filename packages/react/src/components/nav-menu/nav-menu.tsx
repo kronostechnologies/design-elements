@@ -43,6 +43,7 @@ const ListItemLink = styled(NavLink)<ListItemLinkProps>`
 `;
 
 export interface NavMenuOption {
+    exact?: boolean;
     href: string;
     // Option label, if not provided will be set with value
     label?: string;
@@ -123,6 +124,7 @@ export const NavMenu = forwardRef(({
                 <li key={option.id}>
                     <ListItemLink
                         data-testid={`listitem-${option.value}`}
+                        exact={option.exact}
                         innerRef={option.ref}
                         $device={device}
                         to={option.href}
