@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, VoidFunctionComponent, useEffect } from 'react';
+import React, { ReactElement, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
@@ -132,12 +132,9 @@ export function Pagination({
     const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
-    useEffect(() => {
-        // activePage will only be used if defined to not override defaultActivePage behavior
-        if (activePage) {
-            setCurrentPage(activePage);
-        }
-    }, [activePage]);
+    if (activePage && currentPage !== activePage) {
+        setCurrentPage(activePage);
+    }
 
     function changePage(page: number): void {
         setCurrentPage(page);
