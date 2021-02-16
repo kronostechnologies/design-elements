@@ -1,8 +1,7 @@
-import React, { ReactElement, useMemo, VoidFunctionComponent } from 'react';
+import React, { ReactElement, useMemo } from 'react';
 import { Column } from 'react-table';
 import styled from 'styled-components';
-import { useTheme } from '../../hooks/use-theme';
-import { Icon } from '../icon/icon';
+import { SortButtonIcon, SortState } from './sort-button-icon';
 
 const SortButton = styled.button`
     cursor: pointer;
@@ -23,32 +22,13 @@ interface SortableColumnHeadingProps {
     column: Column;
 }
 
-type SortState = 'ascending' | 'descending' | 'none';
-
-interface SortButtonIconProps {
-    sort: SortState;
-}
-
-const SortButtonIcon: VoidFunctionComponent<SortButtonIconProps> = ({ sort }) => {
-    const theme = useTheme();
-
-    switch (sort) {
-        case 'ascending':
-            return <Icon name="arrowUp" size="16" color={theme.greys['dark-grey']} />;
-        case 'descending':
-            return <Icon name="arrowDown" size="16" color={theme.greys['dark-grey']} />;
-        default:
-            return <Icon name="reorder" size="16" color={theme.greys['dark-grey']} />;
-    }
-};
-
 export function SortableColumnHeading({ column }: SortableColumnHeadingProps): ReactElement {
     const sortState: SortState = useMemo(() => {
         if (column.isSorted) {
             return column.isSortedDesc ? 'descending' : 'ascending';
         }
         return 'none';
-    }, [column]);
+    }, [column.isSorted, column.isSortedDesc]);
 
     return (
         <th
@@ -58,7 +38,7 @@ export function SortableColumnHeading({ column }: SortableColumnHeadingProps): R
         >
             <StyledDiv textAlign={column.textAlign}>
                 <SortButton>
-                    <SortButtonIcon sort={sortState} />
+                    <SortButtonIcon sort={sortState} data-testid="sort-icon" />
                 </SortButton>
                 {column.render('Header')}
             </StyledDiv>
