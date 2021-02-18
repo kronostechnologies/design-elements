@@ -88,7 +88,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
   position: relative;
 }
 
-.c2.moreMenu:hover .sc-dkmKpi {
+.c2.moreMenu:hover .sc-gIRixj {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

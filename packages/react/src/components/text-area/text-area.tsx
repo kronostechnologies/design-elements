@@ -1,9 +1,10 @@
-import React, { ChangeEvent, FocusEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, FocusEvent, ReactElement, useState, useMemo } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
+import { Theme } from '../../themes';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -15,6 +16,13 @@ const StyledTextArea = styled.textarea`
     resize: vertical;
 `;
 
+const Counter = styled.div<{ valid: boolean, theme: Theme }>`
+    color: ${({ valid, theme }) => (valid ? `${theme.greys['dark-grey']}` : `${theme.notifications['error-2.1']}`)};
+    font-size: 0.75rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.25rem;
+`;
+
 export interface TextAreaProps {
     className?: string;
     label: string;
@@ -24,6 +32,7 @@ export interface TextAreaProps {
     noMargin?: boolean;
     placeholder?: string;
     required?: boolean;
+    maxLength?: number;
     /**
      * Message displayed in case of validation error
      * @default This text area input is invalid
@@ -40,8 +49,14 @@ export interface TextAreaProps {
     onFocus?(event: FocusEvent<HTMLTextAreaElement>): void;
 }
 
-interface ValidityProps {
-    validity: boolean;
+function getInitialValue(value?: string, defaultValue?: string): number {
+    if (value) {
+        return value.length;
+    }
+    if (defaultValue) {
+        return defaultValue.length;
+    }
+    return 0;
 }
 
 export function TextArea({
@@ -51,14 +66,25 @@ export function TextArea({
     onChange,
     onFocus,
     hint,
-    ...props
+    defaultValue,
+    disabled,
+    label,
+    placeholder,
+    required,
+    validationErrorMessage,
+    value,
+    maxLength,
 }: TextAreaProps): ReactElement {
     const { t } = useTranslation('text-area');
-    const [{ validity }, setValidity] = useState<ValidityProps>({ validity: true });
-    const id = uuid();
+    const [validity, setValidity] = useState(true);
+    const [inputValueLength, setInputValueLength] = useState(getInitialValue(value, defaultValue));
+    const idTextArea = useMemo(uuid, []);
+    const idCounter = useMemo(uuid, []);
 
     function handleBlur(event: FocusEvent<HTMLTextAreaElement>): void {
-        setValidity({ validity: event.currentTarget.checkValidity() });
+        if (maxLength === undefined || inputValueLength <= maxLength) {
+            setValidity(event.currentTarget.checkValidity());
+        }
 
         if (onBlur) {
             onBlur(event);
@@ -66,6 +92,15 @@ export function TextArea({
     }
 
     function handleChange(event: ChangeEvent<HTMLTextAreaElement>): void {
+        const valueLength = event.currentTarget.value.length;
+        setInputValueLength(valueLength);
+
+        if (maxLength && valueLength > maxLength) {
+            setValidity(false);
+        } else if (!validity) {
+            setValidity(true);
+        }
+
         if (onChange) {
             onChange(event);
         }
@@ -77,24 +112,33 @@ export function TextArea({
         }
     }
 
-    const {
-        defaultValue, disabled, label, placeholder, required, validationErrorMessage, value,
-    } = props;
+    function getValidationErrorMessage(): string {
+        if (validationErrorMessage) {
+            return validationErrorMessage;
+        }
+        if (maxLength && inputValueLength > maxLength) {
+            return t('maxLengthValidationErrorMessage');
+        }
+        return t('validationErrorMessage');
+    }
 
     return (
         <FieldContainer
+            data-testid="container"
             className={className}
             noMargin={noMargin}
-            fieldId={id}
+            fieldId={idTextArea}
             label={label}
             hint={hint}
             valid={validity}
-            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            validationErrorMessage={getValidationErrorMessage()}
         >
             <StyledTextArea
+                data-testid="textarea"
                 defaultValue={defaultValue}
                 disabled={disabled}
-                id={id}
+                id={idTextArea}
+                aria-describedby={maxLength ? idCounter : undefined}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
@@ -102,6 +146,17 @@ export function TextArea({
                 required={required}
                 value={value}
             />
+            {maxLength && (
+                <Counter
+                    data-testid="char-counter"
+                    aria-live="polite"
+                    aria-hidden="true"
+                    id={idCounter}
+                    valid={inputValueLength <= maxLength}
+                >
+                    {t('characters', { current: inputValueLength, max: maxLength })}
+                </Counter>
+            )}
         </FieldContainer>
     );
 }
