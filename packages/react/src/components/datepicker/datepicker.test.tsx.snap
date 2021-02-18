@@ -2531,6 +2531,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

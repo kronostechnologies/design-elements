@@ -8,6 +8,7 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     background: inherit;
     border: 1px solid;
     border-radius: 1.5rem;
+    box-sizing: border-box;
     color: inherit;
     display: inline-flex;
     font-family: inherit;

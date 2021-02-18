@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SkipLink Matches Snapshot 1`] = `
+exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -12,6 +12,7 @@ exports[`SkipLink Matches Snapshot 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -47,8 +48,8 @@ exports[`SkipLink Matches Snapshot 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -59,32 +60,118 @@ exports[`SkipLink Matches Snapshot 1`] = `
   color: inherit;
 }
 
-.c1 {
-  background-color: #FFFFFF;
+.c1:not(:focus) {
   -webkit-clip: rect(1px,1px,1px,1px);
   clip: rect(1px,1px,1px,1px);
-  color: #006296;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
   height: 1px;
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
   overflow: hidden;
   position: absolute;
-  text-transform: unset;
   white-space: nowrap;
   width: 1px;
 }
 
 .c1:focus {
-  -webkit-clip: auto;
-  clip: auto;
-  height: auto;
-  overflow: auto;
+  background-color: #FFFFFF;
+  color: #006296;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
   position: absolute;
-  width: auto;
+  text-transform: unset;
+}
+
+<a
+  class="c0 c1"
+  href="test"
+>
+  Test
+</a>
+`;
+
+exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  height: 48px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c1:not(:focus) {
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c1:focus {
+  background-color: #FFFFFF;
+  color: #006296;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  position: absolute;
+  text-transform: unset;
 }
 
 <a
