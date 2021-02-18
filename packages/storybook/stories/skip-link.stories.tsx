@@ -13,7 +13,7 @@ const Navigation = styled.nav`
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     color: ${({ theme }) => theme.greys.white};
     display: flex;
-    height: 50px;
+    height: 56px;
     justify-content: center;
     width: 100%;
 `;

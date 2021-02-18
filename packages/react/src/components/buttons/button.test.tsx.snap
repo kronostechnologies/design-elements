@@ -12,6 +12,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -109,6 +110,7 @@ exports[`Button has destructive styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -206,6 +208,7 @@ exports[`Button has disabled styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -300,6 +303,7 @@ exports[`Button has mobile styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -393,6 +397,7 @@ exports[`Button has primary styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -486,6 +491,7 @@ exports[`Button has secondary styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -579,6 +585,7 @@ exports[`Button has tertiary styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

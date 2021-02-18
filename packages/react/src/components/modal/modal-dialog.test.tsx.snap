@@ -39,6 +39,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -343,6 +344,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -610,6 +612,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -898,6 +901,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1174,6 +1178,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1493,6 +1498,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

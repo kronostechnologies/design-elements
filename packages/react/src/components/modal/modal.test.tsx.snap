@@ -177,6 +177,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -336,6 +337,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -525,6 +527,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
