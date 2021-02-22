@@ -260,23 +260,17 @@ export const FixedWidth: Story = () => {
         {
             Header: 'Column 1',
             accessor: 'column1',
-            width: 10,
-            minWidth: 10,
-            maxWidth: 10,
+            width: 50,
         },
         {
             Header: 'Column 2',
             accessor: 'column2',
             width: 100,
-            minWidth: 100,
-            maxWidth: 100,
         },
         {
             Header: 'Column 3',
             accessor: 'column3',
-            width: 10,
-            minWidth: 10,
-            maxWidth: 10,
+            width: 20,
         },
     ];
 

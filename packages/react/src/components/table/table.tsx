@@ -33,8 +33,8 @@ function getHeading(column: Column): ReactElement {
     const style: CSSProperties = {
         textAlign: column.textAlign,
         width: column.width,
+        maxWidth: column.width,
         minWidth: column.minWidth,
-        maxWidth: column.maxWidth,
     };
 
     if (column.sortable) {

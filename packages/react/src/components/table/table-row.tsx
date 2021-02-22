@@ -60,9 +60,10 @@ export function TableRow<T extends object>({
                 const style: CSSProperties = {
                     textAlign: cell.column.textAlign,
                     width: cell.column.width,
+                    maxWidth: cell.column.width,
                     minWidth: cell.column.minWidth,
-                    maxWidth: cell.column.maxWidth,
                 };
+
                 return (
                     <td
                         style={style}
