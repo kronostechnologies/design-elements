@@ -32,6 +32,12 @@ describe('TextInput', () => {
         );
     }
 
+    test('input has name property when name prop is set on TextInput', () => {
+        const wrapper = mountWithTheme(<TextInput label="test" name="test" />);
+
+        expect(wrapper.find('input').prop('name')).toBe('test');
+    });
+
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
         const wrapper = setup(callback);
