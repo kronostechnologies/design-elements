@@ -19,12 +19,13 @@ export const Normal: Story = () => (
 
 export const ControlledPagination: Story = () => {
     const [currentPage, setCurrentPage] = useState(1);
+
     return (
         <>
             <Pagination
                 totalPages={5}
                 numberOfResults={100}
-                onPageChange={(page: number) => setCurrentPage(page)}
+                onPageChange={setCurrentPage}
                 activePage={currentPage}
             />
         </>
