@@ -65,7 +65,7 @@ exports[`Table has clickable rows styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -73,7 +73,7 @@ exports[`Table has clickable rows styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -89,13 +89,13 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -107,13 +107,13 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -125,13 +125,13 @@ exports[`Table has clickable rows styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -194,7 +194,7 @@ exports[`Table has custom text alignment 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="text-align:right;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:right;width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -202,7 +202,7 @@ exports[`Table has custom text alignment 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="text-align:center;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:center;width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -217,13 +217,13 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         role="cell"
-        style="text-align:right;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:right;width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="text-align:center;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:center;width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -234,13 +234,13 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         role="cell"
-        style="text-align:right;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:right;width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="text-align:center;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:center;width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -251,13 +251,13 @@ exports[`Table has custom text alignment 1`] = `
     >
       <td
         role="cell"
-        style="text-align:right;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:right;width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="text-align:center;width:150px;min-width:0;max-width:9007199254740991px"
+        style="text-align:center;width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -320,7 +320,7 @@ exports[`Table has desktop styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -328,7 +328,7 @@ exports[`Table has desktop styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -343,13 +343,13 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -360,13 +360,13 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -377,13 +377,13 @@ exports[`Table has desktop styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -452,7 +452,7 @@ exports[`Table has error rows styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -460,7 +460,7 @@ exports[`Table has error rows styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -475,13 +475,13 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -492,13 +492,13 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -509,13 +509,13 @@ exports[`Table has error rows styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -578,7 +578,7 @@ exports[`Table has mobile styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -586,7 +586,7 @@ exports[`Table has mobile styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -601,13 +601,13 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -618,13 +618,13 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -635,13 +635,13 @@ exports[`Table has mobile styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -705,13 +705,13 @@ exports[`Table has rowNumbers styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       />
       <th
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -719,7 +719,7 @@ exports[`Table has rowNumbers styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -735,19 +735,19 @@ exports[`Table has rowNumbers styles 1`] = `
       <td
         class="eq-table__number-column"
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         1
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -759,19 +759,19 @@ exports[`Table has rowNumbers styles 1`] = `
       <td
         class="eq-table__number-column"
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         2
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -783,19 +783,19 @@ exports[`Table has rowNumbers styles 1`] = `
       <td
         class="eq-table__number-column"
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         3
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -858,7 +858,7 @@ exports[`Table has small rowSize styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -866,7 +866,7 @@ exports[`Table has small rowSize styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -881,13 +881,13 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -898,13 +898,13 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -915,13 +915,13 @@ exports[`Table has small rowSize styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1005,7 +1005,7 @@ exports[`Table has sorting styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="cursor:pointer;width:150px;min-width:0;max-width:9007199254740991px"
+        style="cursor:pointer;width:150px;max-width:150px;min-width:0"
         title="Toggle SortBy"
       >
         <div
@@ -1029,7 +1029,7 @@ exports[`Table has sorting styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="cursor:pointer;width:150px;min-width:0;max-width:9007199254740991px"
+        style="cursor:pointer;width:150px;max-width:150px;min-width:0"
         title="Toggle SortBy"
       >
         <div
@@ -1059,13 +1059,13 @@ exports[`Table has sorting styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1076,13 +1076,13 @@ exports[`Table has sorting styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1093,13 +1093,13 @@ exports[`Table has sorting styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1166,7 +1166,7 @@ exports[`Table has striped styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -1174,7 +1174,7 @@ exports[`Table has striped styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -1189,13 +1189,13 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1206,13 +1206,13 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1223,13 +1223,13 @@ exports[`Table has striped styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1292,7 +1292,7 @@ exports[`Table has tablet styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 1
       </th>
@@ -1300,7 +1300,7 @@ exports[`Table has tablet styles 1`] = `
         colspan="1"
         role="columnheader"
         scope="col"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Column 2
       </th>
@@ -1315,13 +1315,13 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1332,13 +1332,13 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
@@ -1349,13 +1349,13 @@ exports[`Table has tablet styles 1`] = `
     >
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         Hello
       </td>
       <td
         role="cell"
-        style="width:150px;min-width:0;max-width:9007199254740991px"
+        style="width:150px;max-width:150px;min-width:0"
       >
         World
       </td>
