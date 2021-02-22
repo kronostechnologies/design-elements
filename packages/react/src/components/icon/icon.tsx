@@ -1,4 +1,5 @@
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
+import User from 'feather-icons/dist/icons/user.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
@@ -64,6 +65,7 @@ const iconMapping = {
     search: Search,
     star: Star,
     trash: Trash,
+    user: User,
     x: X,
 } as const;
 
