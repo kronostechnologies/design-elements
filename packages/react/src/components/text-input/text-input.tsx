@@ -21,7 +21,7 @@ const Input = styled.input`
 type inputModeType = 'none' | 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search';
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    'inputMode' | 'value'>;
+    'inputMode' | 'name' | 'value'>;
 
 interface TextInputProps extends PartialInputProps {
     className?: string;
@@ -49,6 +49,7 @@ interface TextInputProps extends PartialInputProps {
 export const TextInput = React.forwardRef(({
     className,
     id: providedId,
+    name,
     noMargin,
     onBlur,
     onChange,
@@ -108,6 +109,7 @@ export const TextInput = React.forwardRef(({
                 disabled={disabled}
                 id={id}
                 inputMode={inputMode}
+                name={name}
                 ref={ref}
                 onBlur={handleBlur}
                 onChange={handleChange}
