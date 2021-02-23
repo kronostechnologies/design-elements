@@ -11,6 +11,7 @@ import React, {
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { ChooseInput } from '../choose-input/choose-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -268,10 +269,7 @@ export function Select({
     }, [disabled, open, searchable, selectedOptionValue]);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = (
-            !wrapperRef.current?.contains(event.target as Node)
-            && !listboxRef.current?.contains(event.target as Node)
-        );
+        const clickIsOutside = !eventIsInside(event, wrapperRef.current, listboxRef.current);
         const shouldClose = (wrapperRef.current === null || clickIsOutside) && open;
 
         if (shouldClose) {
