@@ -2,6 +2,7 @@ import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-element
 import { Story } from '@storybook/react';
 import React from 'react';
 import { RouterDecorator } from './utils/router-decorator';
+import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 export default {
     title: 'Global Navigation',
@@ -76,3 +77,24 @@ export const WithMoreIcon: Story = () => (
         />
     </div>
 );
+
+export const WithMoreIconInShadowDom: Story = () => (
+    <div style={{ height: '350px' }}>
+        <GlobalNavigation
+            mainItems={items}
+            footerItems={[
+                {
+                    iconName: 'info',
+                    name: 'story 8',
+                    href: '/story8',
+                },
+                {
+                    iconName: 'helpCircle',
+                    name: 'story 9',
+                    href: '/story9',
+                },
+            ]}
+        />
+    </div>
+);
+WithMoreIconInShadowDom.decorators = [ShadowDomDecorator];

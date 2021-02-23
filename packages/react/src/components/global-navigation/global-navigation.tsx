@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
+import { eventIsInside } from '../../utils/events';
 import { Icon, IconName } from '../icon/icon';
 
 const Wrapper = styled.div<{ padding: number }>`
@@ -154,7 +155,7 @@ export function GlobalNavigation({
 
     function handleClickOutside(event: MouseEvent): void {
         const wrapperRefIsNull = wrapperRef.current === null;
-        const wrapperContainsClick = wrapperRef.current?.contains(event.target as Node);
+        const wrapperContainsClick = eventIsInside(event, wrapperRef.current);
         const shouldClose = wrapperRefIsNull || !wrapperContainsClick;
 
         if (shouldClose) {

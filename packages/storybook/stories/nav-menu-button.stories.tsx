@@ -2,8 +2,9 @@ import { ApplicationMenu, NavMenuButton } from '@equisoft/design-elements-react'
 import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
-import { RouterDecorator } from './utils/router-decorator';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
+import { RouterDecorator } from './utils/router-decorator';
+import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 export default {
     title: 'Nav Menu Button',
@@ -46,6 +47,15 @@ export const Desktop: Story = () => (
     </StyledDiv>
 );
 Desktop.decorators = [DesktopDecorator];
+
+export const DesktopInsideShadowDom: Story = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton options={options}>Menu</NavMenuButton>
+        </ApplicationMenu>
+    </StyledDiv>
+);
+Desktop.decorators = [DesktopDecorator, ShadowDomDecorator];
 
 export const Mobile: Story = () => (
     <StyledDiv>

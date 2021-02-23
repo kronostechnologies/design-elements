@@ -11,6 +11,7 @@ import React, {
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -67,7 +68,7 @@ interface MenuButtonProps {
      * Sets chevron icon
      * @default true
      * */
-    hasIcon?:boolean;
+    hasIcon?: boolean;
     id?: string;
     options: NavMenuOption[];
 }
@@ -91,10 +92,7 @@ export function NavMenuButton({
     const navRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = (
-            !buttonRef.current?.contains(event.target as Node)
-            && !navMenuRef.current?.contains(event.target as Node)
-        );
+        const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
         const shouldClose = (navMenuRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
