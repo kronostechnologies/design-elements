@@ -27,6 +27,7 @@ export const All: Story = () => (
         <Icon name="phone" />
         <Icon name="search" />
         <Icon name="trash" />
+        <Icon name="user" />
         <Icon name="x" />
     </>
 );
@@ -109,6 +110,10 @@ export const Search: Story = () => (
 
 export const Trash: Story = () => (
     <Icon name="trash" />
+);
+
+export const User: Story = () => (
+    <Icon name="user" />
 );
 
 export const X: Story = () => (
