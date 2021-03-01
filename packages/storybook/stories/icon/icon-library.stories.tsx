@@ -16,6 +16,7 @@ export const All: Story = () => (
         <Icon name="chevronUp" />
         <Icon name="copy" />
         <Icon name="edit" />
+        <Icon name="files" />
         <Icon name="helpCircle" />
         <Icon name="home" />
         <Icon name="info" />
@@ -66,6 +67,10 @@ export const Copy: Story = () => (
 
 export const Edit: Story = () => (
     <Icon name="edit" />
+);
+
+export const Files: Story = () => (
+    <Icon name="files" />
 );
 
 export const HelpCircle: Story = () => (
