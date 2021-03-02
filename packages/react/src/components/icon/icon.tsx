@@ -32,6 +32,7 @@ import X from 'feather-icons/dist/icons/x.svg';
 import React, { VoidFunctionComponent } from 'react';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
+import Files from '../../icons/files.svg';
 
 const iconMapping = {
     alertTriangle: AlertTriangle,
@@ -50,6 +51,7 @@ const iconMapping = {
     chevronsRight: ChevronsRight,
     copy: Copy,
     edit: Edit,
+    files: Files,
     helpCircle: HelpCircle,
     home: Home,
     info: Info,
