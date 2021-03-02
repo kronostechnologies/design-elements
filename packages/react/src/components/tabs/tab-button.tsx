@@ -11,6 +11,8 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
     line-height: 1.5rem;
     min-height: 48px;
     min-width: 82px;
+    z-index: 1;
+    bottom: -1px;
 
     ${focus};
 

@@ -64,7 +64,8 @@ function reducer(tabsSelectionState: TabSelectionState[], buttonSelection: Butto
 const CenteredContentDiv = styled.div`
     align-items: center;
     display: flex;
-    padding-bottom: var(--spacing-1x);
+    margin-bottom: var(--spacing-1x);
+    border-bottom: 1px solid ${({ theme }) => theme.greys['dark-grey']};
 `;
 
 export function Tabs({ className, tabs }: TabsProps): ReactElement {
