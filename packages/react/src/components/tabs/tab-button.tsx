@@ -5,14 +5,13 @@ import { Icon, IconName } from '../icon/icon';
 
 const StyledButton = styled.button<{ isSelected: boolean }>`
     align-items: center;
+    bottom: -1px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
     min-height: 48px;
     min-width: 82px;
-    z-index: 1;
-    bottom: -1px;
 
     ${focus};
 
@@ -32,6 +31,7 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
     padding-left: var(--spacing-2x);
     padding-right: var(--spacing-2x);
     position: relative;
+    z-index: 1;
 `;
 
 const StyledButtonText = styled.span<{ isSelected: boolean }>`
