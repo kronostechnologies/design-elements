@@ -63,7 +63,7 @@ function reducer(tabsSelectionState: TabSelectionState[], buttonSelection: Butto
 
 const CenteredContentDiv = styled.div`
     align-items: center;
-    border-bottom: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
     display: flex;
     margin-bottom: var(--spacing-1x);
 `;
