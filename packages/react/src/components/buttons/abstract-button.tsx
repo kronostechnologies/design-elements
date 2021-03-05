@@ -14,11 +14,10 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     font-family: inherit;
     font-size: ${({ isMobile }) => (isMobile ? 0.875 : 0.75)}rem;
     font-weight: var(--font-bold);
-    height: ${({ isMobile }) => (isMobile ? 48 : 32)}px;
     justify-content: center;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.53 : 0.4)}px;
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1)}rem;
-    min-height: 2rem;
+    min-height: ${({ isMobile }) => (isMobile ? 48 : 32)}px;
     min-width: 2rem;
     outline: none;
     padding: ${({ isMobile }) => (isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-2x);')};
