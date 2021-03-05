@@ -33,7 +33,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : props.theme.greys['dark-grey'])};
     cursor: pointer;
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
-    height: ${(props) => (props.isMobile ? '48px' : '40px')};
+    min-height: ${(props) => (props.isMobile ? '48px' : '40px')};
     letter-spacing: 0.02875rem;
     padding: 0 var(--spacing-2x);
 
