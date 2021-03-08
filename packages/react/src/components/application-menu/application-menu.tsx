@@ -33,6 +33,9 @@ const LogoWrapper = styled(Link)`
     font-weight: var(--font-bold);
     height: 100%;
     ${focus}
+    > * {
+        height: 100%;
+    }
 `;
 
 interface HeadbandProps {
@@ -48,6 +51,8 @@ interface HeadbandProps {
     logoHref?: string;
     /** What will be displayed inside the mobile drawer */
     mobileDrawerContent?: ReactNode;
+
+    customLogo?: ReactNode;
 }
 
 export function ApplicationMenu({
@@ -56,13 +61,14 @@ export function ApplicationMenu({
     className,
     logoHref = '/',
     mobileDrawerContent,
+    customLogo,
 }: HeadbandProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
 
     return (
         <Header className={className} device={device}>
             <LogoWrapper to={logoHref} aria-label="Home">
-                <Logo name={appName} mobile={isMobile} />
+                { customLogo ?? <Logo name={appName} mobile={isMobile} /> }
             </LogoWrapper>
 
             <Content mobileDrawerContent={mobileDrawerContent}>
