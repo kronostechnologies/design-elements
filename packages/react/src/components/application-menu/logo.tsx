@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 
+import Custom from '../../logos/custom/custom.svg';
+import CustomMobile from '../../logos/custom/custom-mobile.svg';
 import EquisoftAnalyzeMobile from '../../logos/analyze/analyze-reverse-mobile.svg';
 import EquisoftAnalyze from '../../logos/analyze/analyze-reverse.svg';
 import EquisoftApplyMobile from '../../logos/apply/apply-reverse-mobile.svg';
@@ -54,6 +56,10 @@ const logoMapping = {
     plan: {
         desktop: EquisoftPlan,
         mobile: EquisoftPlanMobile,
+    },
+    custom: {
+        desktop: Custom,
+        mobile: CustomMobile,
     },
 };
 
