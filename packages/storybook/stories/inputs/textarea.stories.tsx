@@ -65,3 +65,12 @@ export const Disabled: Story = () => (
         required={false}
     />
 );
+
+export const MaxLength: Story = () => (
+    <TextArea
+        label="Text area label"
+        disabled={false}
+        required
+        maxLength={25}
+    />
+);

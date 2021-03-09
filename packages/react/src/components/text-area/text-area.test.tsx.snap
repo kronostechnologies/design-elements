@@ -116,6 +116,7 @@ input + .c1 {
 
 <div
   className="c0"
+  data-testid="container"
 >
   <label
     className="c1 c2"
@@ -124,6 +125,7 @@ input + .c1 {
   </label>
   <textarea
     className="c3"
+    data-testid="textarea"
     defaultValue="foo"
     disabled={true}
     onBlur={[Function]}
@@ -251,6 +253,7 @@ input + .c1 {
 
 <div
   className="c0"
+  data-testid="container"
 >
   <label
     className="c1 c2"
@@ -259,6 +262,7 @@ input + .c1 {
   </label>
   <textarea
     className="c3"
+    data-testid="textarea"
     defaultValue="foo"
     onBlur={[Function]}
     onChange={[Function]}
