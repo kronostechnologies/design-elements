@@ -6,6 +6,7 @@ import { StyledLink } from '../route-link/styles/styled-link';
 
 const ExternalIcon = styled(Icon)`
     margin-left: var(--spacing-half);
+    margin-right: 0;
 `;
 
 const Link = styled(StyledLink)`
@@ -16,10 +17,10 @@ const Link = styled(StyledLink)`
     }
 
     &:visited {
-        color: #62a;
+        color: #62a; /* TODO change colors when updating thematization */
 
         svg {
-            color: #62a;
+            color: #62a; /* TODO change colors when updating thematization */
         }
     }
 `;
@@ -56,7 +57,7 @@ export function ExternalLink({
             target={target}
             type="external"
         >
-            {iconName && <Icon name={iconName} size="16" />}
+            {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}
             {label}
             <ExternalIcon name="externalLink" size="16" />
         </Link>
