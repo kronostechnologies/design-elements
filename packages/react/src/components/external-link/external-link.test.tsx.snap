@@ -6,13 +6,14 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #84C6EA;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0 svg {
@@ -29,16 +30,20 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c1 {
-  color: #7fbfd2;
+  color: #84C6EA;
 }
 
 .c1:visited {
-  color: #004E78;
+  color: #62a;
 }
 
 .c1:visited svg {
-  color: #004E78;
+  color: #62a;
 }
 
 <a
@@ -48,6 +53,13 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   type="external"
 >
   External Link
+  <svg
+    class="c2"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -57,13 +69,14 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0 svg {
@@ -80,21 +93,24 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c1 {
   color: #006296;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #003A5A;
 }
 
 .c1:visited {
-  color: #004E78;
+  color: #62a;
 }
 
 .c1:visited svg {
-  color: #004E78;
+  color: #62a;
 }
 
 <a
@@ -110,6 +126,13 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
     width="16"
   />
   External Link
+  <svg
+    class="c2"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -119,13 +142,14 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0 svg {
@@ -142,21 +166,24 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c1 {
   color: #006296;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #003A5A;
 }
 
 .c1:visited {
-  color: #004E78;
+  color: #62a;
 }
 
 .c1:visited svg {
-  color: #004E78;
+  color: #62a;
 }
 
 <a
@@ -171,6 +198,13 @@ exports[`External Link matches snapshot (only icon) 1`] = `
     height="16"
     width="16"
   />
+  <svg
+    class="c2"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -180,13 +214,14 @@ exports[`External Link matches snapshot (without href) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0 svg {
@@ -203,21 +238,24 @@ exports[`External Link matches snapshot (without href) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c1 {
   color: #006296;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #003A5A;
 }
 
 .c1:visited {
-  color: #004E78;
+  color: #62a;
 }
 
 .c1:visited svg {
-  color: #004E78;
+  color: #62a;
 }
 
 <a
@@ -233,6 +271,13 @@ exports[`External Link matches snapshot (without href) 1`] = `
     width="16"
   />
   External Link
+  <svg
+    class="c2"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;
 
@@ -242,13 +287,14 @@ exports[`External Link matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0 svg {
@@ -265,21 +311,24 @@ exports[`External Link matches snapshot 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c2 {
+  margin-left: var(--spacing-half);
+}
+
 .c1 {
   color: #006296;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #003A5A;
 }
 
 .c1:visited {
-  color: #004E78;
+  color: #62a;
 }
 
 .c1:visited svg {
-  color: #004E78;
+  color: #62a;
 }
 
 <a
@@ -289,5 +338,12 @@ exports[`External Link matches snapshot 1`] = `
   type="external"
 >
   External Link
+  <svg
+    class="c2"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
 </a>
 `;

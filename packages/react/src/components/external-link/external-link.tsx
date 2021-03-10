@@ -4,18 +4,22 @@ import styled from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 
+const ExternalIcon = styled(Icon)`
+    margin-left: var(--spacing-half);
+`;
+
 const Link = styled(StyledLink)`
-    color: ${({ disabled, theme }) => (disabled ? '#7fbfd2' : theme.main['primary-1.1'])};
+    color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
 
     &:hover {
-        ${({ disabled }) => (disabled ? '' : 'text-decoration: underline')};
+        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)}
     }
 
     &:visited {
-        color: ${({ theme }) => theme.main['primary-3']};
+        color: #62a;
 
         svg {
-            color: ${({ theme }) => theme.main['primary-3']};
+            color: #62a;
         }
     }
 `;
@@ -54,6 +58,7 @@ export function ExternalLink({
         >
             {iconName && <Icon name={iconName} size="16" />}
             {label}
+            <ExternalIcon name="externalLink" size="16" />
         </Link>
     );
 }

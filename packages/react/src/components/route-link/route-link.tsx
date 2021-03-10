@@ -6,10 +6,10 @@ import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from './styles/styled-link';
 
 const Link = styled(StyledLink)`
-    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+    color: ${({ disabled, theme }) => (disabled ? '#84c6ea' : theme.main['primary-1.1'])};
 
     &:hover {
-        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.greys.black};`)}
+        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)}
     }
 
     &.active {
