@@ -89,6 +89,7 @@ interface IconProps {
      * @default currentColor
      */
     color?: string;
+    role?: string;
 }
 
 export const Icon: VoidFunctionComponent<IconProps> = ({
@@ -96,6 +97,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
     name,
     size,
     color,
+    role,
     ...props
 }: IconProps) => {
     const Component = iconMapping[name];
@@ -111,6 +113,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
             focusable={false}
             width={size}
             color={color}
+            role={role}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );

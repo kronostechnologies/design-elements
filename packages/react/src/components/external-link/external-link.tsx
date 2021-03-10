@@ -37,7 +37,7 @@ interface ExternalLinkProps {
 }
 
 export function ExternalLink({
-    className, disabled, href = '', iconName, label, onClick, target,
+    className, disabled, href = '', iconName, label, onClick, target = '_blank',
 }: ExternalLinkProps): ReactElement {
     const handleClick: (event: MouseEvent<HTMLAnchorElement>) => void = useCallback((event) => {
         if (!href) {
@@ -59,7 +59,7 @@ export function ExternalLink({
         >
             {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}
             {label}
-            <ExternalIcon name="externalLink" size="16" />
+            <ExternalIcon aria-label="open in new window" name="externalLink" role="img" size="16" />
         </Link>
     );
 }

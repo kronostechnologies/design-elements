@@ -103,6 +103,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -165,6 +166,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -332,6 +334,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -394,6 +397,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"

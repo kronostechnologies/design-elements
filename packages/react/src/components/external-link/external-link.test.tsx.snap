@@ -51,14 +51,17 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   aria-disabled="true"
   class="c0 c1"
   disabled=""
+  target="_blank"
   type="external"
 >
   External Link
   <svg
+    aria-label="open in new window"
     class="c2"
     color="currentColor"
     focusable="false"
     height="16"
+    role="img"
     width="16"
   />
 </a>
@@ -119,6 +122,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   aria-disabled="false"
   class="c0 c1"
   href="#"
+  target="_blank"
   type="external"
 >
   <svg
@@ -130,10 +134,12 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   />
   External Link
   <svg
+    aria-label="open in new window"
     class="c2"
     color="currentColor"
     focusable="false"
     height="16"
+    role="img"
     width="16"
   />
 </a>
@@ -194,6 +200,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   aria-disabled="false"
   class="c0 c1"
   href="#"
+  target="_blank"
   type="external"
 >
   <svg
@@ -204,10 +211,12 @@ exports[`External Link matches snapshot (only icon) 1`] = `
     width="16"
   />
   <svg
+    aria-label="open in new window"
     class="c2"
     color="currentColor"
     focusable="false"
     height="16"
+    role="img"
     width="16"
   />
 </a>
@@ -268,6 +277,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
   aria-disabled="false"
   class="c0 c1"
   href=""
+  target="_blank"
   type="external"
 >
   <svg
@@ -279,10 +289,12 @@ exports[`External Link matches snapshot (without href) 1`] = `
   />
   External Link
   <svg
+    aria-label="open in new window"
     class="c2"
     color="currentColor"
     focusable="false"
     height="16"
+    role="img"
     width="16"
   />
 </a>
@@ -343,14 +355,17 @@ exports[`External Link matches snapshot 1`] = `
   aria-disabled="false"
   class="c0 c1"
   href="https://www.google.ca/"
+  target="_blank"
   type="external"
 >
   External Link
   <svg
+    aria-label="open in new window"
     class="c2"
     color="currentColor"
     focusable="false"
     height="16"
+    role="img"
     width="16"
   />
 </a>
