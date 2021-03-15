@@ -1,5 +1,6 @@
 import React, { MouseEvent, ReactElement, useCallback } from 'react';
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
@@ -9,8 +10,9 @@ const ExternalIcon = styled(Icon)`
     margin-right: 0;
 `;
 
-const Link = styled(StyledLink)`
+const Link = styled(StyledLink)<{isMobile: boolean}>`
     color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
 
     &:hover {
         ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)}
@@ -39,6 +41,7 @@ interface ExternalLinkProps {
 export function ExternalLink({
     className, disabled, href = '', iconName, label, onClick, target = '_blank',
 }: ExternalLinkProps): ReactElement {
+    const { isMobile } = useDeviceContext();
     const handleClick: (event: MouseEvent<HTMLAnchorElement>) => void = useCallback((event) => {
         if (!href) {
             event.preventDefault();
@@ -53,6 +56,7 @@ export function ExternalLink({
             disabled={disabled}
             $hasLabel={!!label}
             href={disabled ? undefined : href}
+            isMobile={isMobile}
             onClick={disabled ? undefined : handleClick}
             target={target}
             type="external"
