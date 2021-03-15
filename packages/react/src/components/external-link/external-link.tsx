@@ -1,21 +1,32 @@
 import React, { MouseEvent, ReactElement, useCallback } from 'react';
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 
-const Link = styled(StyledLink)`
-    color: ${({ disabled, theme }) => (disabled ? '#7fbfd2' : theme.main['primary-1.1'])};
+const LeftIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
+`;
+
+const ExternalIcon = styled(Icon)`
+    margin-left: var(--spacing-half);
+    margin-right: 0;
+`;
+
+const Link = styled(StyledLink)<{isMobile: boolean}>`
+    color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
 
     &:hover {
-        ${({ disabled }) => (disabled ? '' : 'text-decoration: underline')};
+        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)}
     }
 
     &:visited {
-        color: ${({ theme }) => theme.main['primary-3']};
+        color: #62a; /* TODO change colors when updating thematization */
 
         svg {
-            color: ${({ theme }) => theme.main['primary-3']};
+            color: #62a; /* TODO change colors when updating thematization */
         }
     }
 `;
@@ -32,8 +43,9 @@ interface ExternalLinkProps {
 }
 
 export function ExternalLink({
-    className, disabled, href = '', iconName, label, onClick, target,
+    className, disabled, href = '', iconName, label, onClick, target = '_blank',
 }: ExternalLinkProps): ReactElement {
+    const { isMobile } = useDeviceContext();
     const handleClick: (event: MouseEvent<HTMLAnchorElement>) => void = useCallback((event) => {
         if (!href) {
             event.preventDefault();
@@ -48,12 +60,14 @@ export function ExternalLink({
             disabled={disabled}
             $hasLabel={!!label}
             href={disabled ? undefined : href}
+            isMobile={isMobile}
             onClick={disabled ? undefined : handleClick}
             target={target}
             type="external"
         >
-            {iconName && <Icon name={iconName} size="16" />}
+            {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
             {label}
+            <ExternalIcon aria-label="open in new window" name="externalLink" role="img" size="16" />
         </Link>
     );
 }
