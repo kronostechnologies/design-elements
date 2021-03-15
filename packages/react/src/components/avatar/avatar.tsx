@@ -1,39 +1,96 @@
 import React, { ReactElement, useMemo } from 'react';
-import styled from 'styled-components';
+import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { Theme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useTranslation } from '../../i18n/use-translation';
+
+export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
 interface AvatarProps {
     className?: string;
     username: string;
+    bgColor?: string;
+    imgSrc?: string;
+    size?: AvatarSize;
 }
 
-const StyledDiv = styled.div<{isMobile: boolean}>`
+interface SizeStyleProps {
+    size: AvatarSize;
+    isMobile: boolean
+}
+
+function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterpolation<ThemeProps<Theme>> {
+    switch (size) {
+        case 'xsmall':
+            return css`
+                font-size: ${(isMobile ? '0.75' : '0.625')}rem;
+                height: ${(isMobile ? '32' : '24')}px;
+                letter-spacing: ${(isMobile ? '0.013' : '0.011')}rem;
+                width: ${(isMobile ? '32' : '24')}px;`;
+        case 'small':
+            return css`
+                font-size: ${(isMobile ? '0.875' : '0.75')}rem;
+                height: ${(isMobile ? '40' : '32')}px;
+                letter-spacing: ${(isMobile ? '0.014' : '0.013')}rem;
+                width: ${(isMobile ? '40' : '32')}px;`;
+        case 'medium':
+            return css`
+                font-size: 1rem;
+                height: 48px;
+                width: 48px;`;
+        case 'large':
+            return css`
+                font-size: 1.5rem;
+                height: ${(isMobile ? '72' : '80')}px;
+                width: ${(isMobile ? '72' : '80')}px;`;
+    }
+}
+
+interface StyledDivProps extends SizeStyleProps {
+    bgColor?: string;
+}
+
+const StyledDiv = styled.div<StyledDivProps>`
     align-items: center;
-    background: ${({ theme }) => theme.greys['colored-white']};
+    background: ${({ bgColor, theme }) => bgColor ?? theme.greys['light-grey']};
     border-radius: 50%;
+    color: ${({ theme }) => theme.greys['dark-grey']};
     display: flex;
-    height: ${({ isMobile }) => (isMobile ? '2.5rem' : '1.5rem')};
+    font-weight: var(--font-semi-bold);
     justify-content: center;
-    width: ${({ isMobile }) => (isMobile ? '2.5rem' : '1.5rem')};
+    text-transform: capitalize;
+    ${getSpecificSizeStyle}
 `;
 
-const StyledSpan = styled.span<{isMobile: boolean}>`
-    /* TODO change colors when updating thematization */
-    color: #60666e;
-    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.625rem')};
-    letter-spacing: ${({ isMobile }) => (isMobile ? '0.23px' : '0.17px')};
+const StyledImg = styled.img<SizeStyleProps>`
+    border-radius: 50%;
+    object-fit: cover;
+    ${getSpecificSizeStyle}
 `;
 
-export function Avatar({ className, username }: AvatarProps): ReactElement {
+export function Avatar({
+    className, username, bgColor, imgSrc, size = 'xsmall',
+}: AvatarProps): ReactElement {
+    const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
     const initials = useMemo(() => getInitialsFromUsername(username), [username]);
+    const ariaLabel = useMemo(() => t('ariaLabel', { username }), [username, t]);
 
-    return (
-        <StyledDiv className={className} role="img" aria-label={username.concat(' avatar')} isMobile={isMobile}>
-            <StyledSpan data-testid="avatar-initials" isMobile={isMobile}>
+    return imgSrc ? (
+        <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />
+    ) : (
+        <StyledDiv
+            role="img"
+            aria-label={ariaLabel}
+            className={className}
+            bgColor={bgColor}
+            size={size}
+            isMobile={isMobile}
+        >
+            <span data-testid="avatar-initials">
                 {initials.length <= 2 && initials}
-            </StyledSpan>
+            </span>
         </StyledDiv>
     );
 }

@@ -63,6 +63,9 @@ export const Translations = {
         'user-profile': {
             ariaLabel: 'User menu',
         },
+        avatar: {
+            ariaLabel: '{{username}} avatar',
+        },
     },
     fr: {
         datepicker: {
@@ -127,6 +130,9 @@ export const Translations = {
         },
         'user-profile': {
             ariaLabel: 'Menu utilisateur',
+        },
+        avatar: {
+            ariaLabel: 'Avatar de {{username}}',
         },
     },
 };
