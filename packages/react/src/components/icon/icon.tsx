@@ -15,6 +15,7 @@ import ChevronsLeft from 'feather-icons/dist/icons/chevrons-left.svg';
 import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
 import Copy from 'feather-icons/dist/icons/copy.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
+import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
@@ -51,6 +52,7 @@ const iconMapping = {
     chevronsRight: ChevronsRight,
     copy: Copy,
     edit: Edit,
+    externalLink: ExternalLink,
     files: Files,
     helpCircle: HelpCircle,
     home: Home,
@@ -87,6 +89,7 @@ interface IconProps {
      * @default currentColor
      */
     color?: string;
+    role?: string;
 }
 
 export const Icon: VoidFunctionComponent<IconProps> = ({
@@ -94,6 +97,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
     name,
     size,
     color,
+    role,
     ...props
 }: IconProps) => {
     const Component = iconMapping[name];
@@ -109,6 +113,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
             focusable={false}
             width={size}
             color={color}
+            role={role}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );
