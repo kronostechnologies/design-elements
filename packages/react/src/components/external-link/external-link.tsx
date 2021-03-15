@@ -5,6 +5,10 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 
+const LeftIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
+`;
+
 const ExternalIcon = styled(Icon)`
     margin-left: var(--spacing-half);
     margin-right: 0;
@@ -61,7 +65,7 @@ export function ExternalLink({
             target={target}
             type="external"
         >
-            {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}
+            {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
             {label}
             <ExternalIcon aria-label="open in new window" name="externalLink" role="img" size="16" />
         </Link>

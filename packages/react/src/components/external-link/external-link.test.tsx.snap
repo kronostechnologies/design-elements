@@ -16,10 +16,6 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -84,10 +80,6 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -99,6 +91,10 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 }
 
 .c2 {
+  margin-right: var(--spacing-1x);
+}
+
+.c3 {
   margin-left: var(--spacing-half);
   margin-right: 0;
 }
@@ -129,6 +125,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 >
   <svg
     aria-hidden="true"
+    class="c2"
     color="currentColor"
     focusable="false"
     height="16"
@@ -137,7 +134,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   External Link
   <svg
     aria-label="open in new window"
-    class="c2"
+    class="c3"
     color="currentColor"
     focusable="false"
     height="16"
@@ -163,10 +160,6 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: 0;
-}
-
 .c0:focus {
   outline: none;
 }
@@ -178,6 +171,10 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 }
 
 .c2 {
+  margin-right: var(--spacing-1x);
+}
+
+.c3 {
   margin-left: var(--spacing-half);
   margin-right: 0;
 }
@@ -208,6 +205,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 >
   <svg
     aria-hidden="true"
+    class="c2"
     color="currentColor"
     focusable="false"
     height="16"
@@ -215,7 +213,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   />
   <svg
     aria-label="open in new window"
-    class="c2"
+    class="c3"
     color="currentColor"
     focusable="false"
     height="16"
@@ -241,10 +239,6 @@ exports[`External Link matches snapshot (without href) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -256,6 +250,10 @@ exports[`External Link matches snapshot (without href) 1`] = `
 }
 
 .c2 {
+  margin-right: var(--spacing-1x);
+}
+
+.c3 {
   margin-left: var(--spacing-half);
   margin-right: 0;
 }
@@ -286,6 +284,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
 >
   <svg
     aria-hidden="true"
+    class="c2"
     color="currentColor"
     focusable="false"
     height="16"
@@ -294,7 +293,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
   External Link
   <svg
     aria-label="open in new window"
-    class="c2"
+    class="c3"
     color="currentColor"
     focusable="false"
     height="16"
@@ -318,10 +317,6 @@ exports[`External Link matches snapshot 1`] = `
   display: inline-flex;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
 }
 
 .c0:focus {

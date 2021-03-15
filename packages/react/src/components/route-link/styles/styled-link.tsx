@@ -19,9 +19,5 @@ export const StyledLink = styled.a<ContainerProps>`
     display: inline-flex;
     text-decoration: underline;
 
-    svg {
-        margin-right: ${({ $hasLabel }) => ($hasLabel ? 'var(--spacing-1x)' : '0')};
-    }
-
     ${focus};
 `;

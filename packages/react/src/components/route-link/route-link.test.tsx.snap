@@ -16,10 +16,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -33,6 +29,10 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
 .c1 {
   color: #84C6EA;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:visited {
@@ -75,10 +75,6 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -92,6 +88,10 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 .c1 {
   color: #006296;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
@@ -143,10 +143,6 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: 0;
-}
-
 .c0:focus {
   outline: none;
 }
@@ -160,6 +156,10 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 .c1 {
   color: #006296;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: 0;
 }
 
 .c1:hover {
@@ -210,10 +210,6 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -227,6 +223,10 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 .c1 {
   color: #006296;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
@@ -271,10 +271,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -288,6 +284,10 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
 .c1 {
   color: #84C6EA;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:visited {
@@ -330,10 +330,6 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -347,6 +343,10 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 .c1 {
   color: #006296;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
@@ -398,10 +398,6 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: 0;
-}
-
 .c0:focus {
   outline: none;
 }
@@ -415,6 +411,10 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 .c1 {
   color: #006296;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: 0;
 }
 
 .c1:hover {
@@ -465,10 +465,6 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   text-decoration: underline;
 }
 
-.c0 svg {
-  margin-right: var(--spacing-1x);
-}
-
 .c0:focus {
   outline: none;
 }
@@ -482,6 +478,10 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 .c1 {
   color: #006296;
   font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
