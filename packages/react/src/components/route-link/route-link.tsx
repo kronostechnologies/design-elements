@@ -15,14 +15,14 @@ const Link = styled(StyledLink)<{isMobile: boolean, $hasLabel: boolean}>`
     }
 
     &:hover {
-        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)}
+        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)};
     }
 
     &:visited {
-        color: #62a; /* TODO change colors when updating thematization */
+        ${({ disabled }) => (disabled ? '' : 'color: #62a;')};
 
         svg {
-            color: #62a; /* TODO change colors when updating thematization */
+            ${({ disabled }) => (disabled ? '' : 'color: #62a;')}
         }
     }
 

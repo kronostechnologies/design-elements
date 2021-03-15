@@ -35,14 +35,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c1:visited {
-  color: #62a;
-}
-
-.c1:visited svg {
-  color: #62a;
-}
-
 .c1[disabled] {
   pointer-events: none;
 }
@@ -288,14 +280,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
 
 .c1 svg {
   margin-right: var(--spacing-1x);
-}
-
-.c1:visited {
-  color: #62a;
-}
-
-.c1:visited svg {
-  color: #62a;
 }
 
 .c1[disabled] {
