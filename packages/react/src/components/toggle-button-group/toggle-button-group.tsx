@@ -27,7 +27,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
     background-color: ${(props) => (props.pressed ? outOfThemeColor : props.theme.greys.white)};
     border: 1px solid;
-    border-color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : '#878f9a')};
+    border-color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : '#878f9a')}; /* TODO change colors when updating thematization */
     border-right: ${(props) => (props.pressed ? '1px solid' : 0)};
     box-sizing: border-box;
     color: ${(props) => (props.pressed ? props.theme.main['primary-2'] : props.theme.greys['dark-grey'])};
@@ -42,7 +42,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     `}
 
     &:last-child {
-        border-right: 1px solid ${(props) => (props.pressed ? props.theme.main['primary-2'] : '#878f9a')};
+        border-right: 1px solid ${(props) => (props.pressed ? props.theme.main['primary-2'] : '#878f9a')}; /* TODO change colors when updating thematization */
         margin: 0;
     }
 
