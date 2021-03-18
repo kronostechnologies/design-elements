@@ -1,73 +1,46 @@
-import InputMask, { Props } from 'react-input-mask';
-import React, { ChangeEvent, FocusEvent, ReactElement } from 'react';
-
-import { TextInput } from '../text-input/text-input';
-import { useDeviceContext } from "@design-elements/components/device-context-provider/device-context-provider";
+import React, {useState, ChangeEvent, ReactElement} from 'react';
+import styled from 'styled-components';
+import { formatFromPattern } from "./phone-input-value-formater";
 
 interface PhoneInputProps {
     defaultValue?: string;
-    value?: string;
-    disabled?: boolean;
-    /** Disables default margin */
-    noMargin?: boolean;
-    label?: string;
-    required?: boolean;
-    validationErrorMessage?: string;
-    hint?: string;
-
-    onBlur?(event: FocusEvent<HTMLInputElement>): void;
-
-    onChange?(event: ChangeEvent<HTMLInputElement>): void;
-
-    onFocus?(event: FocusEvent<HTMLInputElement>): void;
+    value: string;
+    pattern: string;
 }
 
-export function PhoneInput({
-        defaultValue,
-        disabled,
-        hint,
-        label,
-        noMargin,
-        onBlur,
-        onChange,
-        onFocus,
-        required,
-        validationErrorMessage,
-        value
-}: PhoneInputProps): ReactElement {
-    const { isMobile } = useDeviceContext();
-    const requiredInputPattern = "([(][0-9]{3}[)]\\s[0-9]{3}[-][0-9]{4})";
-    const optionalInputPattern = "([(][0-9]{3}[)]\\s[0-9]{3}[-][0-9]{4})|([(][_]{3}[)]\\s[_]{3}[-][_]{4})";
+function removeNonDigits(value: string): string {
+    return value.replace(/\D/g, '');
+}
 
-    function onInputMaskChange(event: ChangeEvent<HTMLInputElement>): void {
-        onChange?.(event);
+const Container = styled.div`
+    position: relative;
+`;
+
+const FormattedPhone = styled.div`
+    background-color: #fff;
+    left: 1px;
+    pointer-events: none;
+    position: absolute;
+    top: 1px;
+    width: 98%;
+`;
+
+export function PhoneInput({value, pattern}: PhoneInputProps): ReactElement {
+    const [numberValue, setNumberValue] = useState(removeNonDigits(value));
+    const [formattedValue, setFormattedValue] = useState(formatFromPattern(pattern, numberValue));
+
+    function handleChange(e: ChangeEvent<HTMLInputElement>): void {
+        const newValue = e.currentTarget.value;
+        const newFormattedValue = formatFromPattern(pattern, newValue);
+
+        setFormattedValue(newFormattedValue);
+        setNumberValue(removeNonDigits(newValue));
     }
 
     return (
-        <InputMask
-            mask="(999) 999-9999"
-            alwaysShowMask={true}
-            onChange={onInputMaskChange}
-            onBlur={onBlur}
-            onFocus={onFocus}
-            disabled={disabled}
-            value={value}
-            defaultValue={defaultValue}
-        >
-            {(maskProps: Props) => <TextInput
-                type="tel"
-                inputWidth={ isMobile ? '10.25rem' : '7.5rem' }
-                inputHeight={ isMobile ? '2.5rem' : '2rem' }
-                required={required}
-                label={label}
-                hint={hint}
-                pattern={ required ? requiredInputPattern : optionalInputPattern }
-                validationErrorMessage={validationErrorMessage}
-                noMargin={noMargin}
-                disabled={disabled}
-                value={maskProps.value}
-                defaultValue={maskProps.defaultValue}
-            />}
-        </InputMask>
-    );
+        <Container>
+            <FormattedPhone>{formattedValue}</FormattedPhone>
+            <input type="tel" value={numberValue} onChange={handleChange}/>
+        </Container>
+    )
 }

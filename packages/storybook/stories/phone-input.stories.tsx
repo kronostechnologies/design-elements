@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { PhoneInput } from '@equisoft/design-elements-react';
-import { DesktopDecorator, MobileDecorator } from "./utils/device-context-decorator";
+import { DesktopDecorator } from "./utils/device-context-decorator";
 
 export default {
     title: 'Phone Input',
@@ -9,10 +9,10 @@ export default {
 };
 
 export const normal = () => (
-    <PhoneInput hint="Hint" label="Label" />
+    <PhoneInput pattern="(XXX) XXX-XXXX" value="" />
 );
 normal.decorators = [DesktopDecorator];
-
+/*
 export const filledPhoneInput = () => (
     <PhoneInput hint="Hint" label="Label" defaultValue="555-555-5555" />
 );
@@ -48,4 +48,4 @@ eventCallbacks.decorators = [DesktopDecorator];
 export const mobile = () => (
     <PhoneInput hint="Hint" label="Label" />
 );
-mobile.decorators = [MobileDecorator];
+mobile.decorators = [MobileDecorator];*/
