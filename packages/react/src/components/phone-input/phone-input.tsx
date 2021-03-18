@@ -1,73 +1,94 @@
-import InputMask, { Props } from 'react-input-mask';
-import React, { ChangeEvent, FocusEvent, ReactElement } from 'react';
-
+import React, { useState, ChangeEvent, ReactElement, useMemo } from 'react';
+import styled from 'styled-components';
+import { formatFromPattern, removeNonDigits } from './phone-input-value-formater';
 import { TextInput } from '../text-input/text-input';
-import { useDeviceContext } from "@design-elements/components/device-context-provider/device-context-provider";
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 interface PhoneInputProps {
-    defaultValue?: string;
-    value?: string;
-    disabled?: boolean;
-    /** Disables default margin */
-    noMargin?: boolean;
-    label?: string;
-    required?: boolean;
-    validationErrorMessage?: string;
-    hint?: string;
-
-    onBlur?(event: FocusEvent<HTMLInputElement>): void;
-
-    onChange?(event: ChangeEvent<HTMLInputElement>): void;
-
-    onFocus?(event: FocusEvent<HTMLInputElement>): void;
+    value: string;
+    pattern: string;
 }
 
-export function PhoneInput({
-        defaultValue,
-        disabled,
-        hint,
-        label,
-        noMargin,
-        onBlur,
-        onChange,
-        onFocus,
-        required,
-        validationErrorMessage,
-        value
-}: PhoneInputProps): ReactElement {
-    const { isMobile } = useDeviceContext();
-    const requiredInputPattern = "([(][0-9]{3}[)]\\s[0-9]{3}[-][0-9]{4})";
-    const optionalInputPattern = "([(][0-9]{3}[)]\\s[0-9]{3}[-][0-9]{4})|([(][_]{3}[)]\\s[_]{3}[-][_]{4})";
+const MaskContainer = styled.div<{isMobile: boolean}>`
+    background: transparent;
+    color: ${({ theme }) => theme.greys['dark-grey']};
+    font-family: inherit;
+    font-size: ${({ isMobile }) => (isMobile ? '1' : '0.875')}rem;
+    left: 2px;
+    letter-spacing: ${({ isMobile }) => (isMobile ? '0.02875' : '0.015')}rem;
+    line-height: 1.5rem;
+    margin: 0;
+    outline: none;
+    padding: var(--spacing-half) var(--spacing-1x);
+    pointer-events: none;
+    position: absolute;
+    top: 1px;
+`;
 
-    function onInputMaskChange(event: ChangeEvent<HTMLInputElement>): void {
-        onChange?.(event);
+const Container = styled.div`
+    position: relative;
+
+    &:focus-within ${MaskContainer} {
+        color: ${({ theme }) => theme.greys.black};
+    }
+`;
+
+const InputDuplicatedValue = styled.span`
+    color: transparent;
+`;
+
+// Don't forget to change the MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX also when changing placeholder char value.
+const PLACEHOLDER_CHAR = '_';
+const MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX = /_/g;
+
+function getNumberMaxLengthFromPattern(pattern: string): number {
+    const occurrences = pattern.match(MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX) || [];
+    return occurrences.length;
+}
+
+function getLastNumericCharOccurrenceIndex(startIndex: number, value: string): number {
+    let currentIndex = startIndex;
+    while (value.charAt(currentIndex).match(/\D/g)) {
+        currentIndex -= 1;
+    }
+
+    return currentIndex;
+}
+
+export function PhoneInput({ value, pattern }: PhoneInputProps): ReactElement {
+    const { isMobile } = useDeviceContext();
+    const [numberValue, setNumberValue] = useState(removeNonDigits(value));
+    const [maskValue, setMaskValue] = useState(formatFromPattern(pattern, PLACEHOLDER_CHAR, numberValue));
+    const numberMaxLength = useMemo(() => getNumberMaxLengthFromPattern(pattern), [pattern]);
+
+    function handleChange(e: ChangeEvent<HTMLInputElement>): void {
+        const valueWithoutNonDigits = removeNonDigits(e.currentTarget.value);
+        const newValue = valueWithoutNonDigits.substr(0, numberMaxLength);
+        const newFormattedValue = formatFromPattern(pattern, PLACEHOLDER_CHAR, newValue);
+        const indexOfFirstMaskChar = newFormattedValue.indexOf(PLACEHOLDER_CHAR);
+
+        if (indexOfFirstMaskChar === -1) {
+            setMaskValue('');
+            setNumberValue(newFormattedValue);
+        } else {
+            const lastNumericCharOccurrenceIndex = getLastNumericCharOccurrenceIndex(
+                indexOfFirstMaskChar - 1,
+                newFormattedValue,
+            );
+
+            const splitIndex = lastNumericCharOccurrenceIndex + 1;
+            setMaskValue(newFormattedValue.slice(splitIndex));
+            setNumberValue(newFormattedValue.slice(0, splitIndex));
+        }
     }
 
     return (
-        <InputMask
-            mask="(999) 999-9999"
-            alwaysShowMask={true}
-            onChange={onInputMaskChange}
-            onBlur={onBlur}
-            onFocus={onFocus}
-            disabled={disabled}
-            value={value}
-            defaultValue={defaultValue}
-        >
-            {(maskProps: Props) => <TextInput
-                type="tel"
-                inputWidth={ isMobile ? '10.25rem' : '7.5rem' }
-                inputHeight={ isMobile ? '2.5rem' : '2rem' }
-                required={required}
-                label={label}
-                hint={hint}
-                pattern={ required ? requiredInputPattern : optionalInputPattern }
-                validationErrorMessage={validationErrorMessage}
-                noMargin={noMargin}
-                disabled={disabled}
-                value={maskProps.value}
-                defaultValue={maskProps.defaultValue}
-            />}
-        </InputMask>
+        <Container>
+            <MaskContainer isMobile={isMobile}>
+                <InputDuplicatedValue>{numberValue}</InputDuplicatedValue>
+                <span>{maskValue}</span>
+            </MaskContainer>
+            <TextInput type="tel" value={numberValue} onChange={handleChange} />
+        </Container>
     );
 }

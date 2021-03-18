@@ -15,10 +15,9 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
-import { useDeviceContext } from "@design-elements/components/device-context-provider/device-context-provider";
 
-const Input = styled.input<{isMobile: boolean, inputWidth: string | undefined, inputHeight: string | undefined}>`
-    ${({ theme, isMobile, inputWidth, inputHeight }) => inputsStyle(theme, isMobile, inputWidth, inputHeight)}
+const Input = styled.input`
+    ${({ theme }) => inputsStyle(theme)}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,

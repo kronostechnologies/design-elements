@@ -3,16 +3,9 @@ import { Theme } from '../../../themes';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
-export const inputsStyle: (
+export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInterpolation = (
     theme: Theme,
-    isMobile?: boolean,
-    inputWidth?: string,
-    inputHeight?: string
-) => FlattenSimpleInterpolation = (
-  theme: Theme,
-  isMobile: boolean = false,
-  inputWidth: string | undefined = undefined,
-  inputHeight: string | undefined = undefined
+    isMobile = false,
 ) => css`
     background: ${theme.greys.white};
     border: 1px solid ${theme.greys['dark-grey']};
@@ -21,13 +14,11 @@ export const inputsStyle: (
     color: ${theme.greys.black};
     font-family: inherit;
     font-size: ${isMobile ? '1rem' : '0.875rem'};
-    letter-spacing: ${isMobile ? `0.02875rem` : '0.015rem'};
+    letter-spacing: ${isMobile ? '0.02875rem' : '0.015rem'};
     line-height: 1.5rem;
     margin: 0;
     outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
-    ${inputHeight ? `height:${inputHeight};` : ''}
-    ${inputWidth ? `width:${inputWidth};` : ''}
 
     ${focus({ theme }, true)};
 

@@ -103,7 +103,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
   >
     <input
       className="c2"
-      data-testid="text-input"
       inputMode="numeric"
       onBlur={[Function]}
       onChange={[Function]}
@@ -219,7 +218,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
   >
     <input
       className="c2"
-      data-testid="text-input"
       inputMode="numeric"
       onBlur={[Function]}
       onChange={[Function]}
@@ -335,7 +333,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
   >
     <input
       className="c2"
-      data-testid="text-input"
       inputMode="numeric"
       onBlur={[Function]}
       onChange={[Function]}

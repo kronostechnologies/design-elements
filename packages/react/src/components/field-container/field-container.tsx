@@ -75,7 +75,13 @@ export function FieldContainer({
         >
             {label && <Label data-testid="text-input-label" forId={fieldId}>{label}</Label>}
             {hint && <StyledHint data-testid="text-input-hint" isMobile={isMobile}>{hint}</StyledHint>}
-            {!valid && <InvalidField data-testid="text-input-error-msg" controlId={fieldId} feedbackMsg={validationErrorMessage} />}
+            {!valid && (
+                <InvalidField
+                    data-testid="text-input-error-msg"
+                    controlId={fieldId}
+                    feedbackMsg={validationErrorMessage}
+                />
+            )}
             {children}
         </StyledDiv>
     );
