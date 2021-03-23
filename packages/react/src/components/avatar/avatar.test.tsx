@@ -101,4 +101,22 @@ describe('Avatar', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('Should use user icon when username is empty on desktop', () => {
+        const tree = renderWithProviders(<Avatar username="" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Should use bigger user icon when username is empty on mobile', () => {
+        const tree = renderWithProviders(<Avatar username="" />, 'mobile');
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Should use user icon when username is undefined', () => {
+        const tree = renderWithProviders(<Avatar />);
+
+        expect(tree).toMatchSnapshot();
+    });
 });

@@ -435,3 +435,141 @@ exports[`Avatar Matches small avatar with image Snapshot 1`] = `
   src="anImage"
 />
 `;
+
+exports[`Avatar Should use bigger user icon when username is empty on mobile 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  height: 32px;
+  -webkit-letter-spacing: 0.013rem;
+  -moz-letter-spacing: 0.013rem;
+  -ms-letter-spacing: 0.013rem;
+  letter-spacing: 0.013rem;
+  width: 32px;
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    <svg
+      color="currentColor"
+      focusable="false"
+      height="24"
+      width="24"
+    />
+  </span>
+</div>
+`;
+
+exports[`Avatar Should use user icon when username is empty on desktop 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: 24px;
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: 24px;
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    <svg
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </span>
+</div>
+`;
+
+exports[`Avatar Should use user icon when username is undefined 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: 24px;
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: 24px;
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    <svg
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </span>
+</div>
+`;

@@ -4,12 +4,13 @@ import { Theme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { useTranslation } from '../../i18n/use-translation';
+import { Icon } from '../icon/icon';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
 interface AvatarProps {
     className?: string;
-    username: string;
+    username?: string;
     bgColor?: string;
     imgSrc?: string;
     size?: AvatarSize;
@@ -74,8 +75,15 @@ export function Avatar({
 }: AvatarProps): ReactElement {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
-    const initials = useMemo(() => getInitialsFromUsername(username), [username]);
+    const initials = useMemo(() => {
+        if (username === undefined) {
+            return '';
+        }
+
+        return getInitialsFromUsername(username);
+    }, [username]);
     const ariaLabel = useMemo(() => t('ariaLabel', { username }), [username, t]);
+    const hasInitials = initials.length <= 2 && initials.length > 0;
 
     return imgSrc ? (
         <StyledImg src={imgSrc} alt={ariaLabel} className={className} size={size} isMobile={isMobile} />
@@ -89,7 +97,7 @@ export function Avatar({
             isMobile={isMobile}
         >
             <span data-testid="avatar-initials">
-                {initials.length <= 2 && initials}
+                {hasInitials ? initials : <Icon name="user" size={isMobile ? '24' : '16'} />}
             </span>
         </StyledDiv>
     );

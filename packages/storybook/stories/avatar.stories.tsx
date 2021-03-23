@@ -38,3 +38,9 @@ avatarWithSpecificColor.decorators = [DesktopDecorator];
 
 export const avatarWithImage: Story = () => <Avatar username="John" size="large" imgSrc={AvatarImg} />;
 avatarWithImage.decorators = [DesktopDecorator];
+
+export const EmptyUsername: Story = () => <Avatar username="" />;
+EmptyUsername.decorators = [DesktopDecorator];
+
+export const WithoutUsernameMobile: Story = () => <Avatar />;
+WithoutUsernameMobile.decorators = [MobileDecorator];
