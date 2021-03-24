@@ -78,6 +78,7 @@ interface ListboxProps {
      * onChange callback function, invoked when an option is selected
      */
     onChange?(option: ListboxOption): void;
+
     /**
      * onKeyDown callback function, invoked when a key is pressed
      */
@@ -148,6 +149,11 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     }
     return 'var(--spacing-2x)';
 };
+
+const ListSeparator = styled.li`
+    border-top: 2px solid ${({ theme }) => theme.greys.grey};
+    margin: var(--spacing-half) var(--spacing-2x);
+`;
 
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
@@ -437,7 +443,9 @@ export const Listbox = forwardRef(({
                 role="presentation"
                 tabIndex={0}
             >
-                {list.map((option) => (
+                {list.map((option) => (option.value === 'hr' ? (
+                    <ListSeparator />
+                ) : (
                     <ListItem
                         aria-label={option.label || option.value}
                         aria-selected={isOptionSelected(option)}
@@ -458,7 +466,7 @@ export const Listbox = forwardRef(({
                         )}
                         {option.label || option.value}
                     </ListItem>
-                ))}
+                )))}
             </List>
         </Box>
     );

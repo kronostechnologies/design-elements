@@ -35,10 +35,33 @@ const optionsWithoutLabel = [
     },
 ];
 
+const optionsWithSeparator = [
+    {
+        value: 'optionA',
+    },
+    {
+        value: 'hr',
+    },
+    {
+        value: 'optionB',
+    },
+    {
+        value: 'optionC',
+    },
+];
+
 export const Normal: Story = () => (
     <Listbox
         options={options}
         onChange={(option) => console.info('onChange', option)}
+    />
+);
+
+export const ListboxWithSeparators: Story = () => (
+    <Listbox
+        options={optionsWithSeparator}
+        onChange={(option) => console.info('onChange', option)}
+        autofocus
     />
 );
 
