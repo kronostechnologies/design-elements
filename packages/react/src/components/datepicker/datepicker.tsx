@@ -382,18 +382,6 @@ export const Datepicker = forwardRef(({
         }
     }, [currentLocale, firstDayOfWeek]);
 
-    function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
-        if (event.key === 'Escape') {
-            event.stopPropagation();
-            dateInputRef.current?.setOpen(false);
-            calendarButtonRef.current?.focus();
-        }
-    }
-
-    function handleCalendarSelect(): void {
-        calendarButtonRef.current?.focus();
-    }
-
     function focusCalendarDate(): void {
         setTimeout(() => {
             const dateToFocus = calendarRef.current
@@ -403,6 +391,26 @@ export const Datepicker = forwardRef(({
                 dateToFocus.focus();
             }
         }, 0);
+    }
+
+    function handleCalendarKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
+        switch (event.key) {
+            case 'ArrowUp':
+            case 'ArrowDown':
+            case 'ArrowLeft':
+            case 'ArrowRight':
+                focusCalendarDate();
+                break;
+            case 'Escape':
+                event.stopPropagation();
+                dateInputRef.current?.setOpen(false);
+                calendarButtonRef.current?.focus();
+                break;
+        }
+    }
+
+    function handleCalendarSelect(): void {
+        calendarButtonRef.current?.focus();
     }
 
     function handleCalendarButtonMouseDown(event: MouseEvent<HTMLButtonElement>): void {
