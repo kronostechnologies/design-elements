@@ -55,6 +55,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
 }
 
 .c3:focus {
@@ -118,6 +119,7 @@ input + .c1 {
   </label>
   <input
     className="c3"
+    data-testid="text-input"
     defaultValue="foo"
     disabled={true}
     onBlur={[Function]}
@@ -185,6 +187,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
 }
 
 .c3:focus {
@@ -248,6 +251,7 @@ input + .c1 {
   </label>
   <input
     className="c3"
+    data-testid="text-input"
     defaultValue="foo"
     onBlur={[Function]}
     onChange={[Function]}
@@ -315,6 +319,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
 }
 
 .c3:focus {
@@ -378,6 +383,7 @@ input + .c1 {
   </label>
   <input
     className="c3"
+    data-testid="text-input"
     defaultValue="foo"
     onBlur={[Function]}
     onChange={[Function]}

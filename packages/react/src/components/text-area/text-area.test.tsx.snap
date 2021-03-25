@@ -55,6 +55,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
   min-height: 6.5rem;
   min-width: 100%;
   outline: none;
@@ -191,6 +192,7 @@ input + .c1 {
   margin: 0;
   outline: none;
   padding: var(--spacing-half) var(--spacing-1x);
+  width: 100%;
   min-height: 6.5rem;
   min-width: 100%;
   outline: none;

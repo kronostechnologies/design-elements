@@ -1,36 +1,49 @@
-import React, { useState, ChangeEvent, ReactElement, useMemo } from 'react';
+import React, {
+    useState,
+    ChangeEvent,
+    ReactElement,
+    useMemo,
+    useRef,
+    KeyboardEvent,
+    useLayoutEffect,
+    MouseEvent, useCallback,
+} from 'react';
 import styled from 'styled-components';
-import { formatFromPattern, removeNonDigits } from './phone-input-value-formater';
+import {
+    findNextInsertPositionFromPatternInputDiff,
+    getPreviousPlaceholderIndex,
+    hasAnyDecimalChar,
+} from './phone-input-char-finder';
+import { formatFromPattern, removeNonDigits, removeDigitOnMaskCharRemoval } from './phone-input-value-formater';
 import { TextInput } from '../text-input/text-input';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './phone-input-value-parser';
 
 interface PhoneInputProps {
-    value: string;
     pattern: string;
+    defaultValue?: string;
+    required?: boolean;
+    disabled?: boolean;
+    label?: string;
+    hint?: string;
 }
 
-const MaskContainer = styled.div<{isMobile: boolean}>`
+const MaskContainer = styled.div<{ isMobile: boolean }>`
     background: transparent;
+    bottom: 1px;
     color: ${({ theme }) => theme.greys['dark-grey']};
     font-family: inherit;
     font-size: ${({ isMobile }) => (isMobile ? '1' : '0.875')}rem;
     left: 2px;
     letter-spacing: ${({ isMobile }) => (isMobile ? '0.02875' : '0.015')}rem;
     line-height: 1.5rem;
-    margin: 0;
-    outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
     pointer-events: none;
     position: absolute;
-    top: 1px;
 `;
 
 const Container = styled.div`
     position: relative;
-
-    &:focus-within ${MaskContainer} {
-        color: ${({ theme }) => theme.greys.black};
-    }
 `;
 
 const InputDuplicatedValue = styled.span`
@@ -41,54 +54,166 @@ const InputDuplicatedValue = styled.span`
 const PLACEHOLDER_CHAR = '_';
 const MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX = /_/g;
 
-function getNumberMaxLengthFromPattern(pattern: string): number {
+function getPhoneNumberMaxLengthFromPattern(pattern: string): number {
     const occurrences = pattern.match(MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX) || [];
     return occurrences.length;
 }
 
-function getLastNumericCharOccurrenceIndex(startIndex: number, value: string): number {
-    let currentIndex = startIndex;
-    while (value.charAt(currentIndex).match(/\D/g)) {
-        currentIndex -= 1;
-    }
-
-    return currentIndex;
+function formatDefaultValue(defaultValue: string, pattern: string, phoneNumberMaxLength: number): string {
+    const inputValueWithoutNonDigits = removeNonDigits(defaultValue);
+    const trimmedInputValue = trimCharAfterMaxLength(inputValueWithoutNonDigits, phoneNumberMaxLength);
+    return formatFromPattern(pattern, PLACEHOLDER_CHAR, trimmedInputValue);
 }
 
-export function PhoneInput({ value, pattern }: PhoneInputProps): ReactElement {
+export function PhoneInput({
+    pattern,
+    defaultValue,
+    required,
+    disabled,
+    label,
+    hint,
+}: PhoneInputProps): ReactElement {
     const { isMobile } = useDeviceContext();
-    const [numberValue, setNumberValue] = useState(removeNonDigits(value));
-    const [maskValue, setMaskValue] = useState(formatFromPattern(pattern, PLACEHOLDER_CHAR, numberValue));
-    const numberMaxLength = useMemo(() => getNumberMaxLengthFromPattern(pattern), [pattern]);
+    const phoneNumberMaxLength = useMemo(() => getPhoneNumberMaxLengthFromPattern(pattern), [pattern]);
+    const formattedDefaultValue = useMemo(
+        () => formatDefaultValue(defaultValue ?? '', pattern, phoneNumberMaxLength),
+        [defaultValue, pattern, phoneNumberMaxLength],
+    );
+    const indexOfFirstMaskCharInDefaultValue = useMemo(
+        () => formattedDefaultValue.indexOf(PLACEHOLDER_CHAR), [formattedDefaultValue],
+    );
+    const splitDefaultValue = useMemo(
+        () => getValueFromSplitIndex(formattedDefaultValue, indexOfFirstMaskCharInDefaultValue),
+        [formattedDefaultValue, indexOfFirstMaskCharInDefaultValue],
+    );
+    const [phoneInputValue, setPhoneInputValue] = useState(splitDefaultValue);
+    const splitMaskValue = useMemo(
+        () => getMaskFromSplitIndex(formattedDefaultValue, indexOfFirstMaskCharInDefaultValue, pattern),
+        [formattedDefaultValue, indexOfFirstMaskCharInDefaultValue, pattern],
+    );
+    const [phoneInputMaskValue, setPhoneInputMaskValue] = useState(splitMaskValue);
+    const [selectionPosition, setSelectionPosition] = useState(0);
+    const [isTextHighlighted, setIsTextHighlighted] = useState(false);
+    const [lastEnteredKey, setLastEnteredKey] = useState('');
+    const inputRef = useRef<HTMLInputElement>(null);
+    // Only used as useLayoutEffect deps, in order to trigger the hook on each onChange event
+    const [changeId, setChangeId] = useState(0);
 
-    function handleChange(e: ChangeEvent<HTMLInputElement>): void {
-        const valueWithoutNonDigits = removeNonDigits(e.currentTarget.value);
-        const newValue = valueWithoutNonDigits.substr(0, numberMaxLength);
-        const newFormattedValue = formatFromPattern(pattern, PLACEHOLDER_CHAR, newValue);
-        const indexOfFirstMaskChar = newFormattedValue.indexOf(PLACEHOLDER_CHAR);
+    const hasBackspaceJustBeenEntered = useCallback(() => lastEnteredKey === 'Backspace', [lastEnteredKey]);
+    const hasDeleteJustBeenEntered = useCallback(() => lastEnteredKey === 'Delete', [lastEnteredKey]);
 
-        if (indexOfFirstMaskChar === -1) {
-            setMaskValue('');
-            setNumberValue(newFormattedValue);
-        } else {
-            const lastNumericCharOccurrenceIndex = getLastNumericCharOccurrenceIndex(
-                indexOfFirstMaskChar - 1,
-                newFormattedValue,
+    useLayoutEffect(() => {
+        inputRef.current?.setSelectionRange(selectionPosition, selectionPosition);
+    }, [changeId, selectionPosition]);
+
+    const formatChange = useCallback((currentValue: string, currentSelectionIndex: number) => {
+        const inputValueWithoutNonDigits = removeNonDigits(currentValue);
+        const trimmedInputValue = trimCharAfterMaxLength(inputValueWithoutNonDigits, phoneNumberMaxLength);
+        const isChangeACharRemoval = hasBackspaceJustBeenEntered() || hasDeleteJustBeenEntered();
+        const hasNoChangeAfterFormat = trimmedInputValue === removeNonDigits(phoneInputValue);
+
+        const newInputValue = (!isTextHighlighted && isChangeACharRemoval && hasNoChangeAfterFormat)
+            ? removeDigitOnMaskCharRemoval(
+                trimmedInputValue,
+                currentValue,
+                currentSelectionIndex,
+                hasBackspaceJustBeenEntered(),
+            )
+            : trimmedInputValue;
+
+        return formatFromPattern(pattern, PLACEHOLDER_CHAR, newInputValue);
+    }, [
+        hasBackspaceJustBeenEntered,
+        hasDeleteJustBeenEntered,
+        isTextHighlighted,
+        pattern,
+        phoneInputValue,
+        phoneNumberMaxLength,
+    ]);
+
+    function isSelectionOnValueBorders(selection: number, value: string): boolean {
+        return selection === 0 || selection > value.length;
+    }
+
+    function isDigitSelectedInValue(selection: number, newValue: string): boolean {
+        return hasAnyDecimalChar(newValue[selection - 1]);
+    }
+
+    const getNewSelectionPosition = useCallback((currentSelection: number, currentValue: string, newValue: string) => {
+        let newSelectionPosition: number;
+        if (hasDeleteJustBeenEntered() || isTextHighlighted) {
+            newSelectionPosition = currentSelection;
+        } else if (hasBackspaceJustBeenEntered()) {
+            const previousPlaceholderIndex = getPreviousPlaceholderIndex(
+                pattern,
+                currentSelection + 1,
+                PLACEHOLDER_CHAR,
             );
 
-            const splitIndex = lastNumericCharOccurrenceIndex + 1;
-            setMaskValue(newFormattedValue.slice(splitIndex));
-            setNumberValue(newFormattedValue.slice(0, splitIndex));
+            newSelectionPosition = (previousPlaceholderIndex === -1) ? 0 : previousPlaceholderIndex;
+        } else if (isSelectionOnValueBorders(currentSelection, newValue)
+            || isDigitSelectedInValue(currentSelection, newValue)
+        ) {
+            newSelectionPosition = currentSelection;
+        } else {
+            const newPosition = findNextInsertPositionFromPatternInputDiff(currentValue, pattern, PLACEHOLDER_CHAR);
+            newSelectionPosition = (newPosition === -1) ? currentSelection : newPosition;
         }
-    }
+
+        return newSelectionPosition;
+    }, [hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered, isTextHighlighted, pattern]);
+
+    const handleChange = useCallback(({ currentTarget }: ChangeEvent<HTMLInputElement>) => {
+        const inputValue = currentTarget.value;
+        const currentSelection = currentTarget.selectionStart ?? 0;
+        const newFormattedValue = formatChange(inputValue, currentSelection);
+        const indexOfFirstMaskCharInNewValue = newFormattedValue.indexOf(PLACEHOLDER_CHAR);
+
+        const splitPhoneInputValue = getValueFromSplitIndex(newFormattedValue, indexOfFirstMaskCharInNewValue);
+        setPhoneInputValue(splitPhoneInputValue);
+        const splitPhoneInputMask = getMaskFromSplitIndex(newFormattedValue, indexOfFirstMaskCharInNewValue, pattern);
+        setPhoneInputMaskValue(splitPhoneInputMask);
+
+        const newSelectionPosition = getNewSelectionPosition(currentSelection, inputValue, newFormattedValue);
+        setSelectionPosition(newSelectionPosition);
+
+        if (isTextHighlighted) {
+            setIsTextHighlighted(!isTextHighlighted);
+        }
+
+        setChangeId(changeId + 1);
+    }, [changeId, formatChange, getNewSelectionPosition, isTextHighlighted, pattern]);
+
+    const handleMouseUp = useCallback(({ currentTarget }: MouseEvent<HTMLInputElement>) => {
+        const selectionStart = currentTarget.selectionStart;
+        const selectionEnd = currentTarget.selectionEnd;
+        const isHighlighted = selectionStart !== null && selectionEnd !== null && selectionStart !== selectionEnd;
+        setIsTextHighlighted(isHighlighted);
+    }, []);
+
+    const handleKeyDown = useCallback(({ key }: KeyboardEvent<HTMLInputElement>) => {
+        setLastEnteredKey(key);
+    }, []);
 
     return (
         <Container>
-            <MaskContainer isMobile={isMobile}>
-                <InputDuplicatedValue>{numberValue}</InputDuplicatedValue>
-                <span>{maskValue}</span>
+            <MaskContainer aria-hidden="true" isMobile={isMobile}>
+                <InputDuplicatedValue>{phoneInputValue}</InputDuplicatedValue>
+                <span>{phoneInputMaskValue}</span>
             </MaskContainer>
-            <TextInput type="tel" value={numberValue} onChange={handleChange} />
+            <TextInput
+                data-testid='text-input'
+                ref={inputRef}
+                type="tel"
+                value={phoneInputValue}
+                required={required}
+                disabled={disabled}
+                hint={hint}
+                label={label}
+                onChange={handleChange}
+                onMouseUp={handleMouseUp}
+                onKeyDown={handleKeyDown}
+            />
         </Container>
     );
 }

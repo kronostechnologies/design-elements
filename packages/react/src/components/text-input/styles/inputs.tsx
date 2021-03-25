@@ -19,6 +19,7 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
     margin: 0;
     outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
+    width: 100%;
 
     ${focus({ theme }, true)};
 
