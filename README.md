@@ -17,11 +17,9 @@ To contribute to Design Elements or implement its components in your app, you wi
 
 ### Quick start
 
-TL;DR: Run `make build_all` to begin.
+**Note to Windows users**: If you have `make` installed, you can run it with `make -f Makefile` instead of `make`. If it doesn't work, your best bet is to look at the Makefile and run the commands separately
 
-All the packages are linked together using yarn. This is messy, and it breaks often. When in doubt, run `make build_all` to reset (also, run it the first time you open the project). To understand how this all works, open the _Makefile_, duh.
-
-Other commands:
+All the packages are linked together using yarn 2.
 
 ```bash
 # Running stuff for dev, usually 1 per terminal. Watches files and rebuilds as needed.
@@ -33,7 +31,6 @@ make storybook
 # Building for production
 make build_react
 make build_storybook
-make build_all # runs all 2 above in the right order
 ```
 
 ## Contribution Guidelines
