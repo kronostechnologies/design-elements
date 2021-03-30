@@ -1,6 +1,7 @@
 import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import styled from 'styled-components';
 
 export default {
     title: 'Table',
@@ -48,6 +49,59 @@ export const Normal: Story = () => {
     ];
     return (
         <Table columns={columns} data={data} />
+    );
+};
+
+export const WithColumnClassnames: Story = () => {
+    const StyledTable = styled(({ className, columns, data }) => <Table<Data> className={className} columns={columns} data={data} />)`
+        .column-1 {
+            box-sizing: border-box;
+            width: 150px;
+        }
+
+        .column-2 {
+            box-sizing: border-box;
+            width: 300px;
+        }
+`;
+
+    const columns: TableColumn<Data> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+            className: 'column-1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            className: 'column-2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+            className: 'column-3',
+        },
+    ];
+
+    const data: TableRow<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+    ];
+    return (
+        <StyledTable columns={columns} data={data} />
     );
 };
 
