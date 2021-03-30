@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-storybook",
-  "version": "2.0.3-alpha.92",
+  "version": "2.0.3-alpha.93",
   "scripts": {
     "build": "build-storybook -c .storybook -o ../../docs",
     "start": "start-storybook --docs",
