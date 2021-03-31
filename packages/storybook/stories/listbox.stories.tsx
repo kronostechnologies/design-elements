@@ -1,6 +1,7 @@
 import { Listbox } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import { ListboxSeparator } from '../../react/src/components/listbox/listbox';
 
 export default {
     title: 'Listbox',
@@ -39,9 +40,7 @@ const optionsWithSeparator = [
     {
         value: 'optionA',
     },
-    {
-        value: 'hr',
-    },
+    ListboxSeparator,
     {
         value: 'optionB',
     },

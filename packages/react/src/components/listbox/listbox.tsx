@@ -22,8 +22,11 @@ export interface ListboxOption {
     label?: string;
 }
 
+export const ListboxSeparator: ListboxOption = Object.freeze<ListboxOption>({ value: 'hr' });
+
 interface ListOption extends ListboxOption {
     id: string;
+    separator: boolean;
     focusIndex: number;
     ref: React.RefObject<HTMLLIElement>;
 }
@@ -221,6 +224,7 @@ export const Listbox = forwardRef(({
         (option, index) => ({
             ...option,
             id: `${id}_${option.value}`,
+            separator: option.value === 'hr',
             focusIndex: index,
             ref: React.createRef<HTMLLIElement>(),
         }),
@@ -384,7 +388,13 @@ export const Listbox = forwardRef(({
             }
             case 'ArrowUp': {
                 e.preventDefault();
-                const prevOption = selectedFocusIndex === 0 ? list[list.length - 1] : list[selectedFocusIndex - 1];
+
+                let prevIndex = selectedFocusIndex;
+                do {
+                    prevIndex -= prevIndex;
+                    if (prevIndex < 0) prevIndex = list.length - 1;
+                } while (list[prevIndex].separator);
+                const prevOption = list[prevIndex];
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
@@ -397,7 +407,13 @@ export const Listbox = forwardRef(({
             }
             case 'ArrowDown': {
                 e.preventDefault();
-                const nextOption = list.length === selectedFocusIndex + 1 ? list[0] : list[selectedFocusIndex + 1];
+
+                let nextIndex = selectedFocusIndex;
+                do {
+                    nextIndex += nextIndex;
+                    if (nextIndex >= list.length) nextIndex = 0;
+                } while (list[nextIndex].separator);
+                const nextOption = list[nextIndex];
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
@@ -443,8 +459,8 @@ export const Listbox = forwardRef(({
                 role="presentation"
                 tabIndex={0}
             >
-                {list.map((option) => (option.value === 'hr' ? (
-                    <ListSeparator />
+                {list.map((option) => (option.separator ? (
+                    <ListSeparator key={`list-separator-${option.focusIndex}`} />
                 ) : (
                     <ListItem
                         aria-label={option.label || option.value}
