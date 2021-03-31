@@ -1,33 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
-.c1 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-size: 0.875rem;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.25rem;
-  max-width: 327px;
-  min-height: 32px;
-  padding: var(--spacing-1x);
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
-  z-index: 1000;
-}
-
 .c2 {
   height: 1rem;
   position: absolute;
@@ -53,141 +26,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: 0;
 }
 
-.c2[data-placement*='bottom'] {
-  height: 1rem;
-  left: 0;
-  margin-top: -0.4rem;
-  top: 0;
-  width: 1rem;
-}
-
-.c2[data-placement*='bottom']::before {
-  border-color: transparent transparent #60666E transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
-  position: absolute;
-  top: -1px;
-}
-
-.c2[data-placement*='bottom']::after {
-  border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
-}
-
-.c2[data-placement*='top'] {
-  bottom: 0;
-  height: 1rem;
-  left: 0;
-  margin-bottom: -1rem;
-  width: 1rem;
-}
-
-.c2[data-placement*='top']::before {
-  border-color: #60666E transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
-  position: absolute;
-  top: 1px;
-}
-
-.c2[data-placement*='top']::after {
-  border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
-}
-
-.c2[data-placement*='right'] {
-  height: 1rem;
-  left: 0;
-  margin-left: -0.7rem;
-  width: 1rem;
-}
-
-.c2[data-placement*='right']::before {
-  border-color: transparent #60666E transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-}
-
-.c2[data-placement*='right']::after {
-  border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-  left: 6px;
-  top: 0;
-}
-
-.c2[data-placement*='left'] {
-  height: 1rem;
-  margin-right: -0.7rem;
-  right: 0;
-  width: 1rem;
-}
-
-.c2[data-placement*='left']::before {
-  border-color: transparent transparent transparent #60666E;
-  border-width: 0.5rem 0 0.5rem 0.4em;
-}
-
-.c2[data-placement*='left']::after {
-  border-color: transparent transparent transparent #FFFFFF;
-  border-width: 0.5rem 0 0.5rem 0.4em;
-  left: 3px;
-  top: 0;
-}
-
 .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
-}
-
-<Tooltip
-  defaultOpen={true}
->
-  <TooltipTrigger
-    closeOnReferenceHidden={true}
-    defaultTooltipShown={true}
-    delayHide={0}
-    delayShow={0}
-    followCursor={false}
-    modifiers={
-      Array [
-        Object {
-          "name": "offset",
-          "options": Object {
-            "offset": Array [
-              0,
-              12,
-            ],
-          },
-        },
-      ]
-    }
-    mutationObserverOptions={
-      Object {
-        "childList": true,
-        "subtree": true,
-      }
-    }
-    onVisibilityChange={[Function]}
-    placement="right"
-    portalContainer={
-      <body>
-        .c0 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -214,32 +53,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   z-index: 1000;
 }
 
-.c1 {
-  height: 1rem;
-  position: absolute;
-  width: 1rem;
-}
-
-.c1::before {
-  border-style: solid;
-  content: '';
-  display: block;
-  height: 0;
-  margin: auto;
-  width: 0;
-}
-
-.c1::after {
-  border-style: solid;
-  content: '';
-  display: block;
-  height: 0;
-  margin: auto;
-  position: absolute;
-  width: 0;
-}
-
-.c1[data-placement*='bottom'] {
+.c0[data-popper-placement*='bottom'] > .c1 {
   height: 1rem;
   left: 0;
   margin-top: -0.4rem;
@@ -247,19 +61,19 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-placement*='bottom']::before {
+.c0[data-popper-placement*='bottom'] > .c1::before {
   border-color: transparent transparent #60666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
 }
 
-.c1[data-placement*='bottom']::after {
+.c0[data-popper-placement*='bottom'] > .c1::after {
   border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
 }
 
-.c1[data-placement*='top'] {
+.c0[data-popper-placement*='top'] > .c1 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -267,232 +81,153 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-placement*='top']::before {
+.c0[data-popper-placement*='top'] > .c1::before {
   border-color: #60666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
 }
 
-.c1[data-placement*='top']::after {
+.c0[data-popper-placement*='top'] > .c1::after {
   border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
 }
 
-.c1[data-placement*='right'] {
+.c0[data-popper-placement*='right'] > .c1 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c1[data-placement*='right']::before {
+.c0[data-popper-placement*='right'] > .c1::before {
   border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
-.c1[data-placement*='right']::after {
+.c0[data-popper-placement*='right'] > .c1::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
   left: 6px;
   top: 0;
 }
 
-.c1[data-placement*='left'] {
+.c0[data-popper-placement*='left'] > .c1 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c1[data-placement*='left']::before {
+.c0[data-popper-placement*='left'] > .c1::before {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
-.c1[data-placement*='left']::after {
+.c0[data-popper-placement*='left'] > .c1::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;
   top: 0;
 }
 
-<div
-          aria-hidden="false"
-          class="c0"
-          role="tooltip"
-          style="position: absolute; left: 0px; top: 0px;"
-        >
-          <div
-            class="c1"
-            data-placement="right"
-          />
-          Test Content
-        </div>
-      </body>
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<Tooltip
+  defaultOpen={true}
+>
+  <styled.div
+    aria-hidden={false}
+    data-popper-interactive={false}
+    isMobile={false}
+    role="tooltip"
+    style={
+      Object {
+        "left": "0",
+        "position": "absolute",
+        "top": "0",
+      }
     }
-    tooltip={[Function]}
-    trigger="hover"
-    usePortal={true}
   >
-    <Manager>
-      <Reference>
-        <styled.span
-          id="tooltip-trigger-undefined"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="c0"
-            id="tooltip-trigger-undefined"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-          >
-            <Icon
-              color="#60666E"
-              name="helpCircle"
-              size="16"
-            >
-              <svg
-                color="#60666E"
-                focusable={false}
-                height="16"
-                width="16"
-              />
-            </Icon>
-          </span>
-        </styled.span>
-      </Reference>
-      <Portal
-        containerInfo={
-          <body>
-            <div
-              aria-hidden="false"
-              class="c1"
-              role="tooltip"
-              style="position: absolute; left: 0px; top: 0px;"
-            >
-              <div
-                class="c2"
-                data-placement="right"
-              />
-              Test Content
-            </div>
-          </body>
+    <div
+      aria-hidden={false}
+      className="c0"
+      data-popper-interactive={false}
+      role="tooltip"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
         }
+      }
+    >
+      <styled.div
+        data-popper-arrow={true}
+        style={Object {}}
       >
-        <Popper
-          defaultTooltipShown={true}
-          delayHide={0}
-          delayShow={0}
-          modifiers={
-            Array [
-              Object {
-                "enabled": false,
-                "fn": [Function],
-                "name": "followCursor",
-                "phase": "main",
-              },
-              Object {
-                "name": "offset",
-                "options": Object {
-                  "offset": Array [
-                    0,
-                    12,
-                  ],
-                },
-              },
-            ]
-          }
-          onVisibilityChange={[Function]}
-          placement="right"
-        >
-          <Tooltip
-            arrowProps={
-              Object {
-                "ref": [Function],
-                "style": undefined,
-              }
-            }
-            clearScheduled={[Function]}
-            closeOnReferenceHidden={true}
-            hideTooltip={[Function]}
-            innerRef={[Function]}
-            isReferenceHidden={null}
-            mutationObserverOptions={
-              Object {
-                "childList": true,
-                "subtree": true,
-              }
-            }
-            placement="right"
-            style={
-              Object {
-                "left": "0",
-                "position": "absolute",
-                "top": "0",
-              }
-            }
-            tooltip={[Function]}
-            trigger="hover"
-            update={[Function]}
-          >
-            <styled.div
-              aria-hidden={false}
-              isMobile={false}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              role="tooltip"
-              style={
-                Object {
-                  "left": "0",
-                  "position": "absolute",
-                  "top": "0",
-                }
-              }
-            >
-              <div
-                aria-hidden={false}
-                className="c1"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                role="tooltip"
-                style={
-                  Object {
-                    "left": "0",
-                    "position": "absolute",
-                    "top": "0",
-                  }
-                }
-              >
-                <styled.div
-                  data-placement="right"
-                  style={Object {}}
-                >
-                  <div
-                    className="c2"
-                    data-placement="right"
-                    style={Object {}}
-                  />
-                </styled.div>
-                Test Content
-              </div>
-            </styled.div>
-          </Tooltip>
-        </Popper>
-      </Portal>
-    </Manager>
-  </TooltipTrigger>
+        <div
+          className="c1 c2"
+          data-popper-arrow={true}
+          style={Object {}}
+        />
+      </styled.div>
+      Test Content
+    </div>
+  </styled.div>
+  <styled.span
+    id="tooltip-trigger-undefined"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="c3"
+      id="tooltip-trigger-undefined"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      tabIndex={0}
+    >
+      <Icon
+        color="#60666E"
+        name="helpCircle"
+        size="16"
+      >
+        <svg
+          color="#60666E"
+          focusable={false}
+          height="16"
+          width="16"
+        />
+      </Icon>
+    </span>
+  </styled.span>
 </Tooltip>
 `;
 
@@ -522,109 +257,41 @@ exports[`Tooltip Has default desktop styles 1`] = `
 }
 
 <Tooltip>
-  <TooltipTrigger
-    closeOnReferenceHidden={true}
-    defaultTooltipShown={false}
-    delayHide={0}
-    delayShow={0}
-    followCursor={false}
-    modifiers={
-      Array [
-        Object {
-          "name": "offset",
-          "options": Object {
-            "offset": Array [
-              0,
-              12,
-            ],
-          },
-        },
-      ]
-    }
-    mutationObserverOptions={
-      Object {
-        "childList": true,
-        "subtree": true,
-      }
-    }
-    onVisibilityChange={[Function]}
-    placement="right"
-    portalContainer={<body />}
-    tooltip={[Function]}
-    trigger="hover"
-    usePortal={true}
+  <styled.span
+    id="tooltip-trigger-undefined"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    tabIndex={0}
   >
-    <Manager>
-      <Reference>
-        <styled.span
-          id="tooltip-trigger-undefined"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="c0"
-            id="tooltip-trigger-undefined"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-          >
-            <Icon
-              color="#60666E"
-              name="helpCircle"
-              size="16"
-            >
-              <svg
-                color="#60666E"
-                focusable={false}
-                height="16"
-                width="16"
-              />
-            </Icon>
-          </span>
-        </styled.span>
-      </Reference>
-    </Manager>
-  </TooltipTrigger>
+    <span
+      className="c0"
+      id="tooltip-trigger-undefined"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      tabIndex={0}
+    >
+      <Icon
+        color="#60666E"
+        name="helpCircle"
+        size="16"
+      >
+        <svg
+          color="#60666E"
+          focusable={false}
+          height="16"
+          width="16"
+        />
+      </Icon>
+    </span>
+  </styled.span>
 </Tooltip>
 `;
 
 exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
-.c1 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-size: 1rem;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  max-width: 327px;
-  min-height: 72px;
-  padding: var(--spacing-3x);
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
-  z-index: 1000;
-}
-
 .c2 {
   height: 1rem;
   position: absolute;
@@ -650,154 +317,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: 0;
 }
 
-.c2[data-placement*='bottom'] {
-  height: 1rem;
-  left: 0;
-  margin-top: -0.4rem;
-  top: 0;
-  width: 1rem;
-}
-
-.c2[data-placement*='bottom']::before {
-  border-color: transparent transparent #60666E transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
-  position: absolute;
-  top: -1px;
-}
-
-.c2[data-placement*='bottom']::after {
-  border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
-}
-
-.c2[data-placement*='top'] {
-  bottom: 0;
-  height: 1rem;
-  left: 0;
-  margin-bottom: -1rem;
-  width: 1rem;
-}
-
-.c2[data-placement*='top']::before {
-  border-color: #60666E transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
-  position: absolute;
-  top: 1px;
-}
-
-.c2[data-placement*='top']::after {
-  border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
-}
-
-.c2[data-placement*='right'] {
-  height: 1rem;
-  left: 0;
-  margin-left: -0.7rem;
-  width: 1rem;
-}
-
-.c2[data-placement*='right']::before {
-  border-color: transparent #60666E transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-}
-
-.c2[data-placement*='right']::after {
-  border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-  left: 6px;
-  top: 0;
-}
-
-.c2[data-placement*='left'] {
-  height: 1rem;
-  margin-right: -0.7rem;
-  right: 0;
-  width: 1rem;
-}
-
-.c2[data-placement*='left']::before {
-  border-color: transparent transparent transparent #60666E;
-  border-width: 0.5rem 0 0.5rem 0.4em;
-}
-
-.c2[data-placement*='left']::after {
-  border-color: transparent transparent transparent #FFFFFF;
-  border-width: 0.5rem 0 0.5rem 0.4em;
-  left: 3px;
-  top: 0;
-}
-
 .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
-}
-
-<Tooltip
-  defaultOpen={true}
->
-  <TooltipTrigger
-    closeOnReferenceHidden={true}
-    defaultTooltipShown={true}
-    delayHide={0}
-    delayShow={0}
-    followCursor={false}
-    modifiers={
-      Array [
-        Object {
-          "name": "offset",
-          "options": Object {
-            "offset": Array [
-              0,
-              12,
-            ],
-          },
-        },
-      ]
-    }
-    mutationObserverOptions={
-      Object {
-        "childList": true,
-        "subtree": true,
-      }
-    }
-    onVisibilityChange={[Function]}
-    placement="top"
-    portalContainer={
-      <body>
-        <div
-          aria-hidden="false"
-          class="loDfWu"
-          role="tooltip"
-          style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
-        >
-          <div
-            class="c2"
-            data-placement="right"
-            style="position: absolute; top: 0px; transform: translate(0px, 0px);"
-          />
-          Test Content
-        </div>
-        .c0 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -824,32 +344,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   z-index: 1000;
 }
 
-.c1 {
-  height: 1rem;
-  position: absolute;
-  width: 1rem;
-}
-
-.c1::before {
-  border-style: solid;
-  content: '';
-  display: block;
-  height: 0;
-  margin: auto;
-  width: 0;
-}
-
-.c1::after {
-  border-style: solid;
-  content: '';
-  display: block;
-  height: 0;
-  margin: auto;
-  position: absolute;
-  width: 0;
-}
-
-.c1[data-placement*='bottom'] {
+.c0[data-popper-placement*='bottom'] > .c1 {
   height: 1rem;
   left: 0;
   margin-top: -0.4rem;
@@ -857,19 +352,19 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-placement*='bottom']::before {
+.c0[data-popper-placement*='bottom'] > .c1::before {
   border-color: transparent transparent #60666E transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
   position: absolute;
   top: -1px;
 }
 
-.c1[data-placement*='bottom']::after {
+.c0[data-popper-placement*='bottom'] > .c1::after {
   border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.4rem 0.5rem;
 }
 
-.c1[data-placement*='top'] {
+.c0[data-popper-placement*='top'] > .c1 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -877,241 +372,153 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-placement*='top']::before {
+.c0[data-popper-placement*='top'] > .c1::before {
   border-color: #60666E transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
   position: absolute;
   top: 1px;
 }
 
-.c1[data-placement*='top']::after {
+.c0[data-popper-placement*='top'] > .c1::after {
   border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.4rem 0.5rem 0 0.5rem;
 }
 
-.c1[data-placement*='right'] {
+.c0[data-popper-placement*='right'] > .c1 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c1[data-placement*='right']::before {
+.c0[data-popper-placement*='right'] > .c1::before {
   border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
-.c1[data-placement*='right']::after {
+.c0[data-popper-placement*='right'] > .c1::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
   left: 6px;
   top: 0;
 }
 
-.c1[data-placement*='left'] {
+.c0[data-popper-placement*='left'] > .c1 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c1[data-placement*='left']::before {
+.c0[data-popper-placement*='left'] > .c1::before {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
-.c1[data-placement*='left']::after {
+.c0[data-popper-placement*='left'] > .c1::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;
   top: 0;
 }
 
-<div
-          aria-hidden="false"
-          class="c0"
-          role="tooltip"
-          style="position: absolute; left: 0px; top: 0px;"
-        >
-          <div
-            class="c1"
-            data-placement="top"
-          />
-          Test Content
-        </div>
-      </body>
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<Tooltip
+  defaultOpen={true}
+>
+  <styled.div
+    aria-hidden={false}
+    data-popper-interactive={false}
+    isMobile={true}
+    role="tooltip"
+    style={
+      Object {
+        "left": "0",
+        "position": "absolute",
+        "top": "0",
+      }
     }
-    tooltip={[Function]}
-    trigger="click"
-    usePortal={true}
   >
-    <Manager>
-      <Reference>
-        <styled.span
-          id="tooltip-trigger-undefined"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="c0"
-            id="tooltip-trigger-undefined"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
-            tabIndex={0}
-          >
-            <Icon
-              color="#60666E"
-              name="helpCircle"
-              size="24"
-            >
-              <svg
-                color="#60666E"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </span>
-        </styled.span>
-      </Reference>
-      <Portal
-        containerInfo={
-          <body>
-            <div
-              aria-hidden="false"
-              class="loDfWu"
-              role="tooltip"
-              style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
-            >
-              <div
-                class="c2"
-                data-placement="right"
-                style="position: absolute; top: 0px; transform: translate(0px, 0px);"
-              />
-              Test Content
-            </div>
-            <div
-              aria-hidden="false"
-              class="c1"
-              role="tooltip"
-              style="position: absolute; left: 0px; top: 0px;"
-            >
-              <div
-                class="c2"
-                data-placement="top"
-              />
-              Test Content
-            </div>
-          </body>
+    <div
+      aria-hidden={false}
+      className="c0"
+      data-popper-interactive={false}
+      role="tooltip"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
         }
+      }
+    >
+      <styled.div
+        data-popper-arrow={true}
+        style={Object {}}
       >
-        <Popper
-          defaultTooltipShown={true}
-          delayHide={0}
-          delayShow={0}
-          modifiers={
-            Array [
-              Object {
-                "enabled": false,
-                "fn": [Function],
-                "name": "followCursor",
-                "phase": "main",
-              },
-              Object {
-                "name": "offset",
-                "options": Object {
-                  "offset": Array [
-                    0,
-                    12,
-                  ],
-                },
-              },
-            ]
-          }
-          onVisibilityChange={[Function]}
-          placement="top"
-        >
-          <Tooltip
-            arrowProps={
-              Object {
-                "ref": [Function],
-                "style": undefined,
-              }
-            }
-            clearScheduled={[Function]}
-            closeOnReferenceHidden={true}
-            hideTooltip={[Function]}
-            innerRef={[Function]}
-            isReferenceHidden={null}
-            mutationObserverOptions={
-              Object {
-                "childList": true,
-                "subtree": true,
-              }
-            }
-            placement="top"
-            style={
-              Object {
-                "left": "0",
-                "position": "absolute",
-                "top": "0",
-              }
-            }
-            tooltip={[Function]}
-            trigger="click"
-            update={[Function]}
-          >
-            <styled.div
-              aria-hidden={false}
-              isMobile={true}
-              role="tooltip"
-              style={
-                Object {
-                  "left": "0",
-                  "position": "absolute",
-                  "top": "0",
-                }
-              }
-            >
-              <div
-                aria-hidden={false}
-                className="c1"
-                role="tooltip"
-                style={
-                  Object {
-                    "left": "0",
-                    "position": "absolute",
-                    "top": "0",
-                  }
-                }
-              >
-                <styled.div
-                  data-placement="top"
-                  style={Object {}}
-                >
-                  <div
-                    className="c2"
-                    data-placement="top"
-                    style={Object {}}
-                  />
-                </styled.div>
-                Test Content
-              </div>
-            </styled.div>
-          </Tooltip>
-        </Popper>
-      </Portal>
-    </Manager>
-  </TooltipTrigger>
+        <div
+          className="c1 c2"
+          data-popper-arrow={true}
+          style={Object {}}
+        />
+      </styled.div>
+      Test Content
+    </div>
+  </styled.div>
+  <styled.span
+    id="tooltip-trigger-undefined"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="c3"
+      id="tooltip-trigger-undefined"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      tabIndex={0}
+    >
+      <Icon
+        color="#60666E"
+        name="helpCircle"
+        size="24"
+      >
+        <svg
+          color="#60666E"
+          focusable={false}
+          height="24"
+          width="24"
+        />
+      </Icon>
+    </span>
+  </styled.span>
 </Tooltip>
 `;
 
@@ -1141,93 +548,36 @@ exports[`Tooltip Has mobile styles 1`] = `
 }
 
 <Tooltip>
-  <TooltipTrigger
-    closeOnReferenceHidden={true}
-    defaultTooltipShown={false}
-    delayHide={0}
-    delayShow={0}
-    followCursor={false}
-    modifiers={
-      Array [
-        Object {
-          "name": "offset",
-          "options": Object {
-            "offset": Array [
-              0,
-              12,
-            ],
-          },
-        },
-      ]
-    }
-    mutationObserverOptions={
-      Object {
-        "childList": true,
-        "subtree": true,
-      }
-    }
-    onVisibilityChange={[Function]}
-    placement="top"
-    portalContainer={
-      <body>
-        <div
-          aria-hidden="false"
-          class="sc-hjWSAi loDfWu"
-          role="tooltip"
-          style="position: absolute; left: 0px; top: 0px; transform: translate(12px, 0px);"
-        >
-          <div
-            class="sc-gVgnHT KNrTB"
-            data-placement="right"
-            style="position: absolute; top: 0px; transform: translate(0px, 0px);"
-          />
-          Test Content
-        </div>
-      </body>
-    }
-    tooltip={[Function]}
-    trigger="click"
-    usePortal={true}
+  <styled.span
+    id="tooltip-trigger-undefined"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    tabIndex={0}
   >
-    <Manager>
-      <Reference>
-        <styled.span
-          id="tooltip-trigger-undefined"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="c0"
-            id="tooltip-trigger-undefined"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
-            tabIndex={0}
-          >
-            <Icon
-              color="#60666E"
-              name="helpCircle"
-              size="24"
-            >
-              <svg
-                color="#60666E"
-                focusable={false}
-                height="24"
-                width="24"
-              />
-            </Icon>
-          </span>
-        </styled.span>
-      </Reference>
-    </Manager>
-  </TooltipTrigger>
+    <span
+      className="c0"
+      id="tooltip-trigger-undefined"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      tabIndex={0}
+    >
+      <Icon
+        color="#60666E"
+        name="helpCircle"
+        size="24"
+      >
+        <svg
+          color="#60666E"
+          focusable={false}
+          height="24"
+          width="24"
+        />
+      </Icon>
+    </span>
+  </styled.span>
 </Tooltip>
 `;
