@@ -2938,12 +2938,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@equisoft/design-elements-tokens@workspace:packages/tokens":
-  version: 0.0.0-use.local
-  resolution: "@equisoft/design-elements-tokens@workspace:packages/tokens"
-  languageName: unknown
-  linkType: soft
-
 "@equisoft/eslint-config-react@npm:2.0.2":
   version: 2.0.2
   resolution: "@equisoft/eslint-config-react@npm:2.0.2"

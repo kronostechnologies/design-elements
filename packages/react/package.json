@@ -1,6 +1,6 @@
 {
   "name": "@equisoft/design-elements-react",
-  "version": "2.0.3-alpha.95",
+  "version": "0.0.0",
   "description": "React implementation of the Equisoft design system.",
   "license": "MIT",
   "main": "dist/bundle.js",
@@ -9,16 +9,14 @@
     "build": "webpack --config ./webpack/webpack.config.prod.js",
     "prepublishOnly": "yarn build",
     "start": "webpack --config ./webpack/webpack.config.dev.js",
-    "test": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest",
-    "test:ci": "JEST_JUNIT_OUTPUT='build/tests/jest/junit.xml' cross-env NODE_ICU_DATA='node_modules/full-icu' jest --max-workers=2 --reporters=default --reporters=jest-junit",
-    "test:unit": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest --config=jest.config.js",
+    "test": "jest --config=jest.config.js",
+    "test:ci": "yarn test --max-workers=2 --ci",
     "lint": "yarn eslint && yarn stylelint",
-    "lint:ci": "yarn eslint:ci && yarn stylelint:ci",
     "eslint": "yarn g:eslint src/",
     "eslint:ci": "yarn eslint",
     "stylelint": "yarn g:stylelint \"./src/**/*.{ts,tsx}\"",
     "stylelint:ci": "yarn stylelint",
-    "test-update": "cross-env NODE_ICU_DATA='node_modules/full-icu' jest -u"
+    "test-update": "jest -u"
   },
   "files": [
     "dist"
@@ -107,8 +105,5 @@
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",
     "webpack-merge": "^5.7.3"
-  },
-  "jest-junit": {
-    "outputDirectory": "build/tests"
   }
 }

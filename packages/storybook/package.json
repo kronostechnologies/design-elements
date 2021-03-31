@@ -1,11 +1,10 @@
 {
   "name": "@equisoft/design-elements-storybook",
-  "version": "2.0.3-alpha.95",
+  "version": "0.0.0",
   "scripts": {
-    "build": "build-storybook -c .storybook -o ../../docs",
+    "build": "build-storybook -c .storybook -o ./dist",
     "start": "start-storybook --docs",
-    "lint": "yarn eslint",
-    "lint:ci": "yarn eslint:ci && yarn stylelint:ci",
+    "lint": "yarn eslint && yarn stylelint",
     "eslint": "yarn g:eslint stories/",
     "eslint:ci": "yarn eslint",
     "stylelint": "yarn g:stylelint \"./stories/**/*.{ts,tsx}\"",
