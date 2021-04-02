@@ -18,7 +18,7 @@ jobs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
     steps:
       - id: skip_check
-        uses: fkirc/skip-duplicate-actions@v3.3.0
+        uses: fkirc/skip-duplicate-actions@v3.4.0
         with:
           concurrent_skipping: same_content
           do_not_skip: >-
@@ -63,11 +63,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
         with:
           before_install: ${ASDF_DIR}/plugins/nodejs/bin/import-release-team-keyring
 
@@ -154,11 +151,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
@@ -227,11 +221,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
@@ -293,11 +284,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
@@ -375,11 +363,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
@@ -490,11 +475,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
@@ -570,11 +552,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
@@ -643,11 +622,8 @@ jobs:
             ${ASDF_DIR}/installs
             ${ASDF_DIR}/plugins
 
-      - name: Install asdf-vm plugins
-        uses: asdf-vm/actions/plugins-add@v1.1.0
-
       - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1
+        uses: asdf-vm/actions/install@v1.1.0
 
       # Setup Yarn
       - name: Lookup Yarn version
