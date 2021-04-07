@@ -21,14 +21,12 @@ export const ControlledPagination: Story = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     return (
-        <>
-            <Pagination
-                totalPages={5}
-                numberOfResults={100}
-                onPageChange={setCurrentPage}
-                activePage={currentPage}
-            />
-        </>
+        <Pagination
+            totalPages={5}
+            numberOfResults={100}
+            onPageChange={setCurrentPage}
+            activePage={currentPage}
+        />
     );
 };
 

@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, VoidFunctionComponent } from 'react';
+import React, { ReactElement, useState, VoidFunctionComponent, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
@@ -132,9 +132,11 @@ export function Pagination({
     const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
-    if (activePage && currentPage !== activePage) {
-        setCurrentPage(activePage);
-    }
+    useEffect(() => {
+        if (activePage && currentPage !== activePage) {
+            setCurrentPage(activePage);
+        }
+    }, [activePage, currentPage]);
 
     function changePage(page: number): void {
         setCurrentPage(page);
