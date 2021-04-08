@@ -119,7 +119,7 @@ jobs:
             fi
 
             latest=$(curl -sS https://registry.npmjs.org/@equisoft/design-elements-react | jq -r '."dist-tags".latest')
-            next_version="$(npx semver -i "${latest}")-qualifier.$(date -u "+%Y%m%d%H%M%S")"
+            next_version="$(npx semver -i "${latest}")-${qualifier}.$(date -u "+%Y%m%d%H%M%S")"
           elif [[ $GITHUB_REF == refs/pull/* ]]; then
             qualifier=pr-1234
           fi
@@ -443,7 +443,7 @@ jobs:
           NPM_TAG: ${{ needs.setup.outputs.qualifier }}
         run: |
           echo -e "npmRegistries: \n  //registry.yarnpkg.com:\n    npmAlwaysAuth: true\n    npmAuthToken: ${NPM_TOKEN}" > ~/.yarnrc.yml
-          yarn npm publish --tag "{$NPM_TAG}" --tolerate-republish
+          yarn npm publish --tag "${NPM_TAG}" --tolerate-republish
 
   storybook_eslint:
     name: "Storybook: ESLint"
