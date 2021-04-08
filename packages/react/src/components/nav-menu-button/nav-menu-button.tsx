@@ -17,6 +17,7 @@ import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
+import { useShadowWrapperRefContext } from '../shadow-wrapper/shadow-wrapper';
 
 const StyledNav = styled.nav`
     position: relative;
@@ -90,6 +91,7 @@ export function NavMenuButton({
     const buttonRef = useRef<HTMLButtonElement>(null);
     const navMenuRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
+    const shadowWrapperRef = useShadowWrapperRefContext();
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
@@ -117,7 +119,8 @@ export function NavMenuButton({
 
         if (isOpen) {
             setTimeout(() => {
-                const isFocusInsideNav = navRef.current?.contains(document.activeElement);
+                const focusedElement = shadowWrapperRef?.current?.shadowRoot?.activeElement || document.activeElement;
+                const isFocusInsideNav = focusedElement && navRef.current?.contains(focusedElement);
 
                 if (!isFocusInsideNav) {
                     setOpen(false);
