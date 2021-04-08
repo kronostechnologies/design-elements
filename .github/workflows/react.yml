@@ -1,0 +1,817 @@
+name: React
+
+on:
+  pull_request: { }
+  push:
+    branches:
+      - master
+    tags:
+      - v*.*.*
+      - v*.*.*-alpha.*
+      - v*.*.*-beta.*
+
+jobs:
+  pre_checks:
+    name: Pre-checks
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@v3.4.0
+        with:
+          concurrent_skipping: same_content
+          do_not_skip: >-
+            [
+              "push",
+              "schedule",
+              "workflow_dispatch"
+            ]
+          paths_ignore: >-
+            [
+              "icons-scripts/**",
+              "packages/kronos-crm-icons/**",
+              "packages/kronos-fna-icons/**"
+            ]
+
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    needs:
+      - pre_checks
+    if: ${{ needs.pre_checks.outputs.should_skip != 'true' }}
+
+    outputs:
+      deploy: ${{ steps.versions.outputs.deploy }}
+      next_version: ${{ steps.versions.outputs.next_version }}
+      qualifier: ${{ steps.versions.outputs.qualifier }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+        with:
+          before_install: ${ASDF_DIR}/plugins/nodejs/bin/import-release-team-keyring
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install Yarn dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # App details
+      - name: Find version details
+        id: versions
+        run: |
+          qualifier=dev
+          next_version=0.0.0
+          deploy=false
+
+          if [[ $GITHUB_REF == refs/tags/v*.*.* ]]; then
+            next_version=${GITHUB_REF#refs/tags/v}
+            deploy=true
+
+            if [[ $next_version == *-*.* ]]; then
+              qualifier=$(echo "${next_version}" | sed -n 's/.*-\(.*\)\..*/\1/p')
+            else
+              qualifier=latest
+            fi
+          elif [[ $GITHUB_REF == refs/heads/* ]]; then
+            branch_name=$(echo "${GITHUB_REF#refs/heads/}" | sed -r 's#/+#-#g')
+            if [ "master" = "${branch_name}" ]; then
+              qualifier=snapshot
+              deploy=true
+            else
+              qualifier="branch-${branch_name}"
+            fi
+
+            latest=$(curl -sS https://registry.npmjs.org/@equisoft/design-elements-react | jq -r '."dist-tags".latest')
+            next_version="$(npx semver -i "${latest}")-qualifier.$(date -u "+%Y%m%d%H%M%S")"
+          elif [[ $GITHUB_REF == refs/pull/* ]]; then
+            qualifier=pr-1234
+          fi
+
+          echo "::set-output name=next_version::${next_version}"
+          echo "::set-output name=qualifier::${qualifier}"
+          echo "::set-output name=deploy::${deploy}"
+
+  react_eslint:
+    name: "React: ESLint"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # ESLint
+      - name: Lint Javascript and Typescript
+        working-directory: ./packages/react
+        run: yarn eslint:ci
+
+      - name: Upload ESLint results
+        uses: actions/upload-artifact@v2
+        if: ${{ success() || failure() }}
+        with:
+          name: eslint.junit.xml
+          path: packages/react/build/eslint/junit.xml
+          if-no-files-found: error
+
+      - name: Create annotations
+        if: ${{ always() }}
+        uses: ataylorme/eslint-annotate-action@1.1.2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          report-json: packages/react/build/eslint/report.json
+
+  react_stylelint:
+    name: "React: Stylelint"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # Stylelint
+      - name: Lint styles
+        working-directory: ./packages/react
+        run: yarn stylelint:ci
+
+      - name: Upload Stylelint results
+        uses: actions/upload-artifact@v2
+        if: ${{ success() || failure() }}
+        with:
+          name: stylelint.junit.xml
+          path: packages/react/build/lint/style/junit.xml
+          if-no-files-found: error
+
+  react_unit_tests:
+    name: "React: Unit tests"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # Tests
+      - name: Unit tests
+        working-directory: ./packages/react
+        run: yarn test:ci
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        if: ${{ success() || failure() }}
+        with:
+          name: react-test-results.junit.xml
+          path: packages/react/build/jest/junit.xml
+          if-no-files-found: error
+      - name: Upload test coverage results
+        uses: actions/upload-artifact@v2
+        if: ${{ success() || failure() }}
+        with:
+          name: react-test-coverage.clover.xml
+          path: packages/react/build/jest/coverage/clover.xml
+          if-no-files-found: error
+
+      - name: Create annotations
+        if: ${{ always() }}
+        uses: IgnusG/jest-report-action@v2.3.3
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          check-name: "React: Unit tests report"
+          junit-file: build/jest/junit.xml
+          working-directory: packages/react/
+
+  react_compile:
+    name: "React: Compile"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # Compile
+      - name: Update package version
+        env:
+          VERSION: ${{ needs.setup.outputs.next_version }}
+        run: |
+          contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
+
+      - name: Compile
+        working-directory: ./packages/react
+        run: yarn build
+
+      - name: Store react package
+        uses: actions/upload-artifact@v2
+        with:
+          name: react_dist
+          path: packages/react/dist/
+          retention-days: 1
+          if-no-files-found: error
+
+  react_deploy:
+    name: "React: Deploy"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+      - react_eslint
+      - react_stylelint
+      - react_unit_tests
+      - react_compile
+    if: ${{ needs.setup.outputs.deploy == 'true' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download
+        uses: actions/download-artifact@v2
+        with:
+          name: react_dist
+          path: packages/react/dist/
+
+      - name: Update package version
+        env:
+          VERSION: ${{ needs.setup.outputs.next_version }}
+        run: |
+          contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
+
+      - name: Publish to npmjs
+        working-directory: ./packages/react
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TAG: ${{ needs.setup.outputs.qualifier }}
+        run: |
+          echo -e "npmRegistries: \n  //registry.yarnpkg.com:\n    npmAlwaysAuth: true\n    npmAuthToken: ${NPM_TOKEN}" > ~/.yarnrc.yml
+          yarn npm publish --tag "{$NPM_TAG}" --tolerate-republish
+
+  storybook_eslint:
+    name: "Storybook: ESLint"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+      - react_compile
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download React Dist
+        uses: actions/download-artifact@v2
+        with:
+          name: react_dist
+          path: packages/react/dist/
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # ESLint
+      - name: Lint Javascript and Typescript
+        working-directory: ./packages/storybook
+        run: yarn eslint:ci
+
+      - name: Upload ESLint results
+        uses: actions/upload-artifact@v2
+        if: ${{ success() || failure() }}
+        with:
+          name: eslint.junit.xml
+          path: packages/storybook/build/eslint/junit.xml
+          if-no-files-found: error
+
+      - name: Create annotations
+        if: ${{ always() }}
+        uses: ataylorme/eslint-annotate-action@1.1.2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          report-json: packages/storybook/build/eslint/report.json
+
+  storybook_stylelint:
+    name: "Storybook: Stylelint"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+      - react_compile
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download React Dist
+        uses: actions/download-artifact@v2
+        with:
+          name: react_dist
+          path: packages/react/dist/
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # Stylelint
+      - name: Lint styles
+        working-directory: ./packages/storybook
+        run: yarn stylelint:ci
+
+      - name: Upload Stylelint results
+        uses: actions/upload-artifact@v2
+        if: ${{ success() || failure() }}
+        with:
+          name: stylelint.junit.xml
+          path: packages/storybook/build/lint/style/junit.xml
+          if-no-files-found: error
+
+  storybook_compile:
+    name: "Storybook: Compile"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+      - react_compile
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download React Dist
+        uses: actions/download-artifact@v2
+        with:
+          name: react_dist
+          path: packages/react/dist/
+
+      # Setup asdf-vm
+      - name: Install asdf-vm
+        uses: asdf-vm/actions/setup@v1.1.0
+
+      - name: Cache asdf tooling
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
+          restore-keys: ${{ runner.os }}-asdf-
+          path: |
+            ${ASDF_DIR}/installs
+            ${ASDF_DIR}/plugins
+
+      - name: Install asdf-vm tools
+        uses: asdf-vm/actions/install@v1.1.0
+
+      # Setup Yarn
+      - name: Lookup Yarn version
+        id: yarn-plugin
+        run: |
+          echo "::set-output name=asdf-version::$(asdf current yarn)"
+          echo "::set-output name=version::$(yarn --version)"
+
+      - name: Find Yarn cache directory path
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache Yarn packages
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        uses: actions/cache@v2.1.4
+        with:
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn2-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+
+      - name: Install javascript dependencies
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        run: yarn install --immutable
+
+      # Compile
+      - name: Update package version
+        env:
+          VERSION: ${{ needs.setup.outputs.next_version }}
+        run: |
+          contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
+          contents="$(jq ".version = \"${VERSION}\"" ./packages/storybook/package.json)" && echo "${contents}" > ./packages/storybook/package.json
+
+      - name: Compile
+        working-directory: ./packages/storybook
+        run: yarn build
+
+      - name: Store storybook package
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook_dist
+          path: packages/storybook/dist/
+          retention-days: 1
+          if-no-files-found: error
+
+  storybook_deploy:
+    name: "Storybook: Deploy"
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+      - react_deploy
+      - storybook_eslint
+      - storybook_stylelint
+      - storybook_compile
+    if: ${{ needs.setup.outputs.deploy == 'true' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook_dist
+          path: packages/storybook/dist/
+
+      - name: Update package version
+        env:
+          VERSION: ${{ needs.setup.outputs.next_version }}
+        run: |
+          contents="$(jq ".version = \"${VERSION}\"" ./packages/react/package.json)" && echo "${contents}" > ./packages/react/package.json
+          contents="$(jq ".version = \"${VERSION}\"" ./packages/storybook/package.json)" && echo "${contents}" > ./packages/storybook/package.json
+
+      - name: Resolve documentation target
+        id: target
+        env:
+          QUALIFIER: ${{ needs.setup.outputs.qualifier }}
+          VERSION: ${{ needs.setup.outputs.next_version }}
+        run: |
+          if [ "${QUALIFIER}" == "snapshot" ]; then
+              echo "::set-output name=folder::${QUALIFIER}"
+              echo "::set-output name=commit::docs: update snapshot to ${GITHUB_SHA}"
+          else
+              echo "::set-output name=folder::${VERSION}"
+              echo "::set-output name=commit::docs: add v${VERSION}"
+          fi
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          commit-message: ${{ steps.target.outputs.commit }}
+          folder: packages/storybook/dist/
+          git-config-email: na-qc@equisoft.com
+          git-config-name: kronostechnologies-build
+          target-folder: ${{ steps.target.outputs.folder }}
+
+      - name: Update latest
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        if: ${{ needs.setup.outputs.qualifier == 'latest' }}
+        with:
+          branch: gh-pages
+          commit-message: "docs: update latest doc to ${{ needs.setup.outputs.next_version }}"
+          folder: packages/storybook/dist/
+          git-config-email: na-qc@equisoft.com
+          git-config-name: kronostechnologies-build
+          target-folder: latest
+
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+      - react_eslint
+      - react_stylelint
+      - react_unit_tests
+      - react_compile
+      - storybook_eslint
+      - storybook_stylelint
+      - storybook_compile
+      - storybook_deploy
+    if: ${{ failure() }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Find workflow status
+        id: workflow
+        run: |
+          STATUS=success
+          if [[ "${{ contains(needs.*.result, 'cancelled')  }}" == "true" ]]; then
+            STATUS=cancelled
+          elif [[ "${{ contains(needs.*.result, 'failure')  }}" == "true" ]]; then
+            STATUS=failure
+          fi
+
+          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          if [[ "$DEFAULT_BRANCH" == "" ]]; then
+            # Schedule triggers have no `github.event` contexts
+            DEFAULT_BRANCH="${GITHUB_REF#refs/heads/}"
+          fi
+
+          echo ::set-output name=status::$STATUS
+          echo ::set-output name=post_status::$(git merge-base --is-ancestor "$GITHUB_SHA" "origin/$DEFAULT_BRANCH" && echo 'true' || echo 'false')
+
+      - name: Post status to Slack
+        if: steps.workflow.outputs.post_status == 'true'
+        uses: 8398a7/action-slack@v3
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.OPS_CI_WEBHOOK_URL }}
+        with:
+          author_name: CI Results
+          fields: repo,commit,author,ref,workflow,message
+          status: custom
+          custom_payload: |
+            {
+              attachments: [{
+                color: '${{ steps.workflow.outputs.status }}' === 'success' ? 'good' : '${{ steps.workflow.outputs.status }}' === 'failure' ? 'danger' : '#999999',
+                text: `${process.env.AS_WORKFLOW} workflow ${{ steps.workflow.outputs.status }}!`,
+                fields: [
+                  {
+                    title: 'Repo',
+                    value: `${process.env.AS_REPO}`,
+                    short: true
+                  },
+                  {
+                    title: 'Author',
+                    value: `${process.env.AS_AUTHOR}`,
+                    short: true
+                  },
+                  {
+                    title: 'Ref',
+                    value: `${process.env.AS_REF}`,
+                    short: true
+                  },
+                  {
+                    title: 'Commit',
+                    value: `${process.env.AS_COMMIT}`,
+                    short: true
+                  },
+                  {
+                    title: 'Description',
+                    value: `${process.env.AS_MESSAGE}`,
+                    short: false
+                  }
+                ]
+              }]
+            }
