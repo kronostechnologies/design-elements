@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, VoidFunctionComponent } from 'react';
+import React, { ReactElement, useState, VoidFunctionComponent, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
@@ -107,6 +107,11 @@ interface PaginationProps {
      * Function callback when page is changed
      */
     onPageChange?(pageNumber: number): void;
+
+    /**
+     * The current active page of the pagination
+     */
+    activePage?: number;
 }
 
 export function Pagination({
@@ -116,15 +121,22 @@ export function Pagination({
     defaultActivePage = 1,
     pagesShown = 3,
     onPageChange = () => undefined,
+    activePage,
 }: PaginationProps): ReactElement {
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
-    const [currentPage, setCurrentPage] = useState(clamp(defaultActivePage, 1, totalPages));
+    const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
     const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
+
+    useEffect(() => {
+        if (activePage && currentPage !== activePage) {
+            setCurrentPage(activePage);
+        }
+    }, [activePage, currentPage]);
 
     function changePage(page: number): void {
         setCurrentPage(page);

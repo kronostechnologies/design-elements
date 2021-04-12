@@ -7,6 +7,7 @@ module.exports = {
         'import/no-extraneous-dependencies': ['error',
             { devDependencies: ['src/**/*.test.{ts,tsx}', 'src/test-utils/**/*', 'test/**/*'] },
         ],
+        'linebreak-style': 'off',
     },
     settings: {
         'import/resolver': {
