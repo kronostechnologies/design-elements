@@ -126,7 +126,7 @@ export function Pagination({
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
-    const [currentPage, setCurrentPage] = useState(clamp(defaultActivePage, 1, totalPages));
+    const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
     const firstLastNavActive = totalPages > 5;
