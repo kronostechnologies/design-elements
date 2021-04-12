@@ -1,8 +1,9 @@
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { getByTestId, findByTestId } from '../../test-utils/enzyme-selectors';
 import { TextArea } from './text-area';
 
 jest.mock('../../utils/uuid');
@@ -69,5 +70,36 @@ describe('TextArea', () => {
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
+    });
+    test('should flag input as invalid when length exceeds maxLength', () => {
+        const wrapper = shallow(
+            <TextArea label="Test Input" maxLength={20} />,
+        );
+
+        getByTestId(wrapper, 'textarea')
+            .simulate('change', { currentTarget: { value: 'This text is longer than input length' } });
+
+        const container = getByTestId(wrapper, 'container');
+        const charCounter = getByTestId(wrapper, 'char-counter');
+        expect(container.prop('valid')).toBe(false);
+        expect(charCounter.prop('valid')).toBe(false);
+    });
+
+    test('should display character count when maxLength is provided', () => {
+        const wrapper = shallow(
+            <TextArea label="Test Input" defaultValue="Default input text" maxLength={20} />,
+        );
+
+        const charCounter = getByTestId(wrapper, 'char-counter');
+        expect(charCounter.text()).toContain('18/20');
+    });
+
+    test('should not display character count when maxLength is not provided', () => {
+        const wrapper = shallow(
+            <TextArea label="Test Input" defaultValue="Default input text" />,
+        );
+
+        const charCounter = findByTestId(wrapper, 'char-counter');
+        expect(charCounter.exists()).toBe(false);
     });
 });

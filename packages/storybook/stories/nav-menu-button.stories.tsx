@@ -1,7 +1,10 @@
 import { ApplicationMenu, NavMenuButton } from '@equisoft/design-elements-react';
-import React, { VoidFunctionComponent } from 'react';
+import { Story } from '@storybook/react';
+import React from 'react';
 import styled from 'styled-components';
+import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
+import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 export default {
     title: 'Nav Menu Button',
@@ -36,18 +39,37 @@ const StyledDiv = styled.div`
     height: 180px;
 `;
 
-export const Normal: VoidFunctionComponent = () => (
+export const Desktop: Story = () => (
     <StyledDiv>
         <ApplicationMenu>
-            <NavMenuButton label="Menu" options={options} />
+            <NavMenuButton options={options}>Menu</NavMenuButton>
         </ApplicationMenu>
     </StyledDiv>
 );
+Desktop.decorators = [DesktopDecorator];
 
-export const DefaultOpen: VoidFunctionComponent = () => (
+export const DesktopInsideShadowDom: Story = () => (
     <StyledDiv>
         <ApplicationMenu>
-            <NavMenuButton defaultOpen label="Menu" options={options} />
+            <NavMenuButton options={options}>Menu</NavMenuButton>
+        </ApplicationMenu>
+    </StyledDiv>
+);
+Desktop.decorators = [DesktopDecorator, ShadowDomDecorator];
+
+export const Mobile: Story = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton options={options}>Menu</NavMenuButton>
+        </ApplicationMenu>
+    </StyledDiv>
+);
+Mobile.decorators = [MobileDecorator];
+
+export const DefaultOpen: Story = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton defaultOpen options={options}>Menu</NavMenuButton>
         </ApplicationMenu>
     </StyledDiv>
 );

@@ -2,8 +2,10 @@ import React, {
     ChangeEvent,
     DetailedHTMLProps,
     FocusEvent,
+    forwardRef,
     InputHTMLAttributes,
     ReactElement,
+    Ref,
     useCallback,
     useMemo,
     useState,
@@ -18,10 +20,8 @@ const Input = styled.input`
     ${({ theme }) => inputsStyle(theme)}
 `;
 
-type inputModeType = 'none' | 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search';
-
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    'inputMode' | 'value'>;
+    'inputMode' | 'name' | 'value'>;
 
 interface TextInputProps extends PartialInputProps {
     className?: string;
@@ -30,7 +30,6 @@ interface TextInputProps extends PartialInputProps {
     /** Disables default margin */
     noMargin?: boolean;
     id?: string;
-    inputMode?: inputModeType;
     label?: string;
     pattern?: string;
     placeholder?: string;
@@ -46,15 +45,26 @@ interface TextInputProps extends PartialInputProps {
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
 }
 
-export const TextInput = React.forwardRef(({
+export const TextInput = forwardRef(({
     className,
+    defaultValue,
+    disabled,
+    hint,
     id: providedId,
+    inputMode,
+    label,
+    name,
     noMargin,
+    pattern,
+    placeholder,
+    required,
+    type,
+    validationErrorMessage,
+    value,
     onBlur,
     onChange,
     onFocus,
-    ...props
-}: TextInputProps, ref: React.Ref<HTMLInputElement>): ReactElement => {
+}: TextInputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -79,20 +89,6 @@ export const TextInput = React.forwardRef(({
         }
     }, [onFocus]);
 
-    const {
-        defaultValue,
-        disabled,
-        inputMode,
-        label,
-        pattern,
-        placeholder,
-        required,
-        type,
-        validationErrorMessage,
-        value,
-        hint,
-    } = props;
-
     return (
         <FieldContainer
             className={className}
@@ -108,6 +104,7 @@ export const TextInput = React.forwardRef(({
                 disabled={disabled}
                 id={id}
                 inputMode={inputMode}
+                name={name}
                 ref={ref}
                 onBlur={handleBlur}
                 onChange={handleChange}

@@ -8,31 +8,13 @@ import React, {
     useMemo,
     useState,
 } from 'react';
-import TooltipTrigger, { TooltipTriggerProps } from 'react-popper-tooltip';
+import { PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
-
-const TooltipContainer = styled.div<{ isMobile?: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    justify-content: center;
-    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
-    max-width: 327px;
-    min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
-    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
-    transition: opacity 300ms;
-    z-index: 1000;
-`;
 
 const TooltipArrow = styled.div`
     height: 1rem;
@@ -57,8 +39,26 @@ const TooltipArrow = styled.div`
         position: absolute;
         width: 0;
     }
+`;
 
-    &[data-placement*='bottom'] {
+const TooltipContainer = styled.div<{ isMobile?: boolean }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+    justify-content: center;
+    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
+    max-width: 327px;
+    min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
+    transition: opacity 300ms;
+    z-index: 1000;
+
+    &[data-popper-placement*='bottom'] > ${TooltipArrow} {
         height: 1rem;
         left: 0;
         margin-top: -0.4rem;
@@ -66,19 +66,19 @@ const TooltipArrow = styled.div`
         width: 1rem;
     }
 
-    &[data-placement*='bottom']::before {
+    &[data-popper-placement*='bottom'] > ${TooltipArrow}::before {
         border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
         border-width: 0 0.5rem 0.4rem 0.5rem;
         position: absolute;
         top: -1px;
     }
 
-    &[data-placement*='bottom']::after {
+    &[data-popper-placement*='bottom'] > ${TooltipArrow}::after {
         border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
         border-width: 0 0.5rem 0.4rem 0.5rem;
     }
 
-    &[data-placement*='top'] {
+    &[data-popper-placement*='top'] > ${TooltipArrow} {
         bottom: 0;
         height: 1rem;
         left: 0;
@@ -86,50 +86,50 @@ const TooltipArrow = styled.div`
         width: 1rem;
     }
 
-    &[data-placement*='top']::before {
+    &[data-popper-placement*='top'] > ${TooltipArrow}::before {
         border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0 0.5rem;
         position: absolute;
         top: 1px;
     }
 
-    &[data-placement*='top']::after {
+    &[data-popper-placement*='top'] > ${TooltipArrow}::after {
         border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0 0.5rem;
     }
 
-    &[data-placement*='right'] {
+    &[data-popper-placement*='right'] > ${TooltipArrow} {
         height: 1rem;
         left: 0;
         margin-left: -0.7rem;
         width: 1rem;
     }
 
-    &[data-placement*='right']::before {
+    &[data-popper-placement*='right'] > ${TooltipArrow}::before {
         border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
-    &[data-placement*='right']::after {
+    &[data-popper-placement*='right'] > ${TooltipArrow}::after {
         border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
         left: 6px;
         top: 0;
     }
 
-    &[data-placement*='left'] {
+    &[data-popper-placement*='left'] > ${TooltipArrow} {
         height: 1rem;
         margin-right: -0.7rem;
         right: 0;
         width: 1rem;
     }
 
-    &[data-placement*='left']::before {
+    &[data-popper-placement*='left'] > ${TooltipArrow}::before {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
         border-width: 0.5rem 0 0.5rem 0.4em;
     }
 
-    &[data-placement*='left']::after {
+    &[data-popper-placement*='left'] > ${TooltipArrow}::after {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
         border-width: 0.5rem 0 0.5rem 0.4em;
         left: 3px;
@@ -160,7 +160,7 @@ interface TooltipProps {
     desktopPlacement?: TooltipPlacement;
 }
 
-const modifiers: TooltipTriggerProps['modifiers'] = [
+const modifiers: PopperOptions['modifiers'] = [
     {
         name: 'offset',
         options: {
@@ -178,6 +178,13 @@ export function Tooltip({
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
     const [isVisible, setIsVisible] = useState(defaultOpen);
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
+    const popperTooltip = usePopperTooltip({
+        defaultVisible: defaultOpen,
+        placement: isMobile ? 'top' : desktopPlacement,
+        onVisibleChange: setIsVisible,
+        trigger: isMobile ? 'click' : 'hover',
+        visible: controlledTooltipOpen,
+    }, { modifiers });
 
     const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
         if (event.key === 'Escape' && !isMobile) {
@@ -214,52 +221,35 @@ export function Tooltip({
     }
 
     return (
-        <TooltipTrigger
-            placement={isMobile ? 'top' : desktopPlacement}
-            trigger={isMobile ? 'click' : 'hover'}
-            defaultTooltipShown={defaultOpen}
-            tooltipShown={controlledTooltipOpen}
-            onVisibilityChange={setIsVisible}
-            modifiers={modifiers}
-            tooltip={({
-                arrowRef,
-                tooltipRef,
-                getArrowProps,
-                getTooltipProps,
-                placement,
-            }) => (
+        <>
+            {popperTooltip.visible && (
                 <TooltipContainer
                     aria-hidden={!isVisible}
                     isMobile={isMobile}
                     id={tooltipId}
                     role="tooltip"
-                    {...getTooltipProps({ ref: tooltipRef }) /* eslint-disable-line react/jsx-props-no-spreading */}
+                    ref={popperTooltip.setTooltipRef}
+                    {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 >
                     <TooltipArrow
-                        {...getArrowProps({ /* eslint-disable-line react/jsx-props-no-spreading */
-                            ref: arrowRef,
-                            'data-placement': placement,
-                        })}
+                        {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                     />
                     {children}
                 </TooltipContainer>
             )}
-        >
-            {({ getTriggerProps, triggerRef }) => (
-                <StyledSpan
-                    className={className}
-                    aria-describedby={tooltipId}
-                    id={tooltipTriggerId}
-                    tabIndex={0}
-                    onBlur={handleBLur}
-                    onFocus={handleFocus}
-                    onMouseDown={handleMouseDown}
-                    onKeyDown={handleKeyDown}
-                    {...getTriggerProps({ ref: triggerRef }) /* eslint-disable-line react/jsx-props-no-spreading */}
-                >
-                    <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
-                </StyledSpan>
-            )}
-        </TooltipTrigger>
+            <StyledSpan
+                className={className}
+                aria-describedby={tooltipId}
+                id={tooltipTriggerId}
+                tabIndex={0}
+                onBlur={handleBLur}
+                onFocus={handleFocus}
+                onMouseDown={handleMouseDown}
+                onKeyDown={handleKeyDown}
+                ref={popperTooltip.setTriggerRef}
+            >
+                <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
+            </StyledSpan>
+        </>
     );
 }

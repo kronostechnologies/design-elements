@@ -57,7 +57,7 @@ exports[`Carousel should match snapshot 1`] = `
 }
 
 .c7 {
-  background-color: #0080A5;
+  background-color: #006296;
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
@@ -73,8 +73,8 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c6 + .c6 {
@@ -82,7 +82,7 @@ exports[`Carousel should match snapshot 1`] = `
 }
 
 .c8 {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   border: 1px solid transparent;
   border-radius: 50%;
   box-sizing: border-box;
@@ -98,8 +98,8 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c8:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c6 + .c6 {
@@ -120,8 +120,8 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c9 {
@@ -138,8 +138,8 @@ exports[`Carousel should match snapshot 1`] = `
 
 .c9:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <section
@@ -155,7 +155,7 @@ exports[`Carousel should match snapshot 1`] = `
     type="button"
   >
     <svg
-      color="#57666E"
+      color="#60666E"
       focusable="false"
       height="100%"
       width="100%"
@@ -297,7 +297,7 @@ exports[`Carousel should match snapshot 1`] = `
     type="button"
   >
     <svg
-      color="#57666E"
+      color="#60666E"
       focusable="false"
       height="100%"
       width="100%"

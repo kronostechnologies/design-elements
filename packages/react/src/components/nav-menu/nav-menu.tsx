@@ -22,9 +22,8 @@ interface ListItemLinkProps extends NavLinkProps {
 }
 
 const ListItemLink = styled(NavLink)<ListItemLinkProps>`
-    align-items: center;
     color: ${({ theme }) => theme.greys.black};
-    display: flex;
+    display: block;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
@@ -44,6 +43,7 @@ const ListItemLink = styled(NavLink)<ListItemLinkProps>`
 `;
 
 export interface NavMenuOption {
+    exact?: boolean;
     href: string;
     // Option label, if not provided will be set with value
     label?: string;
@@ -69,6 +69,7 @@ export interface NavMenuProps {
 
     /** onKeyDown callback function, invoked when a key is pressed */
     onKeyDown?(event: KeyboardEvent): void;
+    ordered?: boolean;
 }
 
 export const NavMenu = forwardRef(({
@@ -79,6 +80,7 @@ export const NavMenu = forwardRef(({
     hidden,
     onChange,
     onKeyDown,
+    ordered,
 }: NavMenuProps, ref: Ref<HTMLUListElement>): ReactElement => {
     const device = useDeviceContext();
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -114,6 +116,7 @@ export const NavMenu = forwardRef(({
 
     return (
         <List
+            as={ordered ? 'ol' : 'ul'}
             className={className}
             data-testid="menu-list"
             id={id}
@@ -124,6 +127,7 @@ export const NavMenu = forwardRef(({
                 <li key={option.id}>
                     <ListItemLink
                         data-testid={`listitem-${option.value}`}
+                        exact={option.exact}
                         innerRef={option.ref}
                         $device={device}
                         to={option.href}

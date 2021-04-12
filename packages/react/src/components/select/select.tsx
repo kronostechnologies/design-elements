@@ -11,8 +11,9 @@ import React, {
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { ChooseInput } from '../choose-input/choose-input';
+import { ChooserButton } from '../chooser-button/chooser-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
@@ -268,10 +269,7 @@ export function Select({
     }, [disabled, open, searchable, selectedOptionValue]);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = (
-            !wrapperRef.current?.contains(event.target as Node)
-            && !listboxRef.current?.contains(event.target as Node)
-        );
+        const clickIsOutside = !eventIsInside(event, wrapperRef.current, listboxRef.current);
         const shouldClose = (wrapperRef.current === null || clickIsOutside) && open;
 
         if (shouldClose) {
@@ -586,7 +584,7 @@ export function Select({
                 )}
             </StyledFieldContainer>
             {skipOption && (
-                <ChooseInput
+                <ChooserButton
                     checked={skipSelected}
                     data-testid="select-skip-option"
                     groupName={`${fieldId}_skip`}
@@ -595,7 +593,7 @@ export function Select({
                     value={skipOption.value}
                 >
                     {skipOption.label}
-                </ChooseInput>
+                </ChooserButton>
             )}
         </>
     );

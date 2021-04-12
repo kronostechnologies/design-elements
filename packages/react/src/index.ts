@@ -31,16 +31,16 @@ export { Listbox, ListboxOption } from './components/listbox/listbox';
 
 // Miscellaneous
 export { Card } from './components/card/card';
+export { CardLink } from './components/card-link/card-link';
 export * from './components/carousel/carousel';
-export { Chooser } from './components/choosers/chooser';
+export { ChooserButtonGroup } from './components/chooser-button-group/chooser-button-group';
+export { ChooserCard } from './components/chooser-card/chooser-card';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
-export * from './components/global-navigation/global-navigation';
 export { Icon } from './components/icon/icon';
 export { InlineMessage } from './components/inline-message/inline-message';
-export { RouteLink } from './components/route-link/route-link';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { Banner } from './components/banner/banner';
@@ -48,7 +48,15 @@ export * from './components/tooltip/tooltip';
 export * from './components/table/table';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
+export { Tag, Tags } from './components/tags/tags';
+export { SkipLink } from './components/skip-link/skip-link';
 export { useModal } from './components/modal/use-modal';
+export { UserProfile } from './components/user-profile/user-profile';
+
+// Navigation
+export { Breadcrumb } from './components/breadcrumb/breadcrumb';
+export * from './components/global-navigation/global-navigation';
+export { RouteLink } from './components/route-link/route-link';
 
 // Results
 export * from './components/legend/legend';

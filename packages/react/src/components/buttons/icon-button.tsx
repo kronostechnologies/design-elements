@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Ref, forwardRef } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
@@ -37,7 +37,7 @@ const StyledButton = styled(AbstractButton)`
     width: ${({ isMobile }) => (isMobile ? '48px' : '32px')};
 `;
 
-export function IconButton({
+export const IconButton = forwardRef(({
     className,
     iconName,
     label,
@@ -46,12 +46,13 @@ export function IconButton({
     buttonType,
     disabled,
     ...props
-}: ButtonProps): ReactElement {
+}: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const handleClick = (): void => onClick?.();
 
     return (
         <StyledButton
+            ref={ref}
             aria-label={label}
             className={className}
             onClick={handleClick}
@@ -61,7 +62,11 @@ export function IconButton({
             disabled={disabled}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            <Icon name={iconName} size={isMobile ? '20' : '16'} />
+            <Icon
+                aria-hidden="true"
+                name={iconName}
+                size={isMobile ? '20' : '16'}
+            />
         </StyledButton>
     );
-}
+});

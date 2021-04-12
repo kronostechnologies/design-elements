@@ -63,8 +63,9 @@ function reducer(tabsSelectionState: TabSelectionState[], buttonSelection: Butto
 
 const CenteredContentDiv = styled.div`
     align-items: center;
+    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
     display: flex;
-    padding-bottom: var(--spacing-1x);
+    margin-bottom: var(--spacing-1x);
 `;
 
 export function Tabs({ className, tabs }: TabsProps): ReactElement {

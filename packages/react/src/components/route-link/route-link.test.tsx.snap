@@ -6,17 +6,14 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #84C6EA;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -25,12 +22,17 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #9CA7B4;
+  color: #84C6EA;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1[disabled] {
@@ -55,17 +57,14 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -74,20 +73,29 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
-  color: #000000;
+  color: #003A5A;
 }
 
-.c1.active {
-  color: #0080A5;
+.c1:visited {
+  color: #62a;
+}
+
+.c1:visited svg {
+  color: #62a;
 }
 
 .c1[disabled] {
@@ -101,6 +109,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -116,17 +125,14 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -135,20 +141,29 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: 0;
 }
 
 .c1:hover {
-  color: #000000;
+  color: #003A5A;
 }
 
-.c1.active {
-  color: #0080A5;
+.c1:visited {
+  color: #62a;
+}
+
+.c1:visited svg {
+  color: #62a;
 }
 
 .c1[disabled] {
@@ -162,6 +177,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -176,17 +192,14 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -195,20 +208,29 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
-  color: #000000;
+  color: #003A5A;
 }
 
-.c1.active {
-  color: #0080A5;
+.c1:visited {
+  color: #62a;
+}
+
+.c1:visited svg {
+  color: #62a;
 }
 
 .c1[disabled] {
@@ -231,17 +253,14 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #84C6EA;
   cursor: default;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -250,12 +269,17 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #9CA7B4;
+  color: #84C6EA;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1[disabled] {
@@ -280,17 +304,14 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -299,20 +320,29 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
-  color: #000000;
+  color: #003A5A;
 }
 
-.c1.active {
-  color: #0080A5;
+.c1:visited {
+  color: #62a;
+}
+
+.c1:visited svg {
+  color: #62a;
 }
 
 .c1[disabled] {
@@ -326,6 +356,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -341,17 +372,14 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -360,20 +388,29 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: 0;
 }
 
 .c1:hover {
-  color: #000000;
+  color: #003A5A;
 }
 
-.c1.active {
-  color: #0080A5;
+.c1:visited {
+  color: #62a;
+}
+
+.c1:visited svg {
+  color: #62a;
 }
 
 .c1[disabled] {
@@ -387,6 +424,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   type="route"
 >
   <svg
+    aria-hidden="true"
     color="currentColor"
     focusable="false"
     height="16"
@@ -401,17 +439,14 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #006296;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0 svg {
-  margin-right: var(--spacing-1x);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0:focus {
@@ -420,20 +455,29 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c1 {
-  color: #57666E;
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c1 svg {
+  margin-right: var(--spacing-1x);
 }
 
 .c1:hover {
-  color: #000000;
+  color: #003A5A;
 }
 
-.c1.active {
-  color: #0080A5;
+.c1:visited {
+  color: #62a;
+}
+
+.c1:visited svg {
+  color: #62a;
 }
 
 .c1[disabled] {

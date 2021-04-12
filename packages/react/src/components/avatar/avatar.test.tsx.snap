@@ -6,26 +6,26 @@ exports[`Avatar Matches Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #F1F2F2;
   border-radius: 50%;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 1.5rem;
+  font-weight: var(--font-semi-bold);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 1.5rem;
-}
-
-.c1 {
+  text-transform: capitalize;
   font-size: 0.625rem;
-  -webkit-letter-spacing: 0.17px;
-  -moz-letter-spacing: 0.17px;
-  -ms-letter-spacing: 0.17px;
-  letter-spacing: 0.17px;
+  height: 24px;
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: 24px;
 }
 
 <div
@@ -34,12 +34,117 @@ exports[`Avatar Matches Snapshot 1`] = `
   role="img"
 >
   <span
-    class="c1"
     data-testid="avatar-initials"
   >
     AB
   </span>
 </div>
+`;
+
+exports[`Avatar Matches large avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  height: 80px;
+  width: 80px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches large avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 1.5rem;
+  height: 80px;
+  width: 80px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Matches medium avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  height: 48px;
+  width: 48px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches medium avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 1rem;
+  height: 48px;
+  width: 48px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
 `;
 
 exports[`Avatar Matches mobile Snapshot 1`] = `
@@ -48,26 +153,26 @@ exports[`Avatar Matches mobile Snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8F9FA;
+  background: #F1F2F2;
   border-radius: 50%;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2.5rem;
+  font-weight: var(--font-semi-bold);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 2.5rem;
-}
-
-.c1 {
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.23px;
-  -moz-letter-spacing: 0.23px;
-  -ms-letter-spacing: 0.23px;
-  letter-spacing: 0.23px;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  height: 32px;
+  -webkit-letter-spacing: 0.013rem;
+  -moz-letter-spacing: 0.013rem;
+  -ms-letter-spacing: 0.013rem;
+  letter-spacing: 0.013rem;
+  width: 32px;
 }
 
 <div
@@ -76,10 +181,395 @@ exports[`Avatar Matches mobile Snapshot 1`] = `
   role="img"
 >
   <span
-    class="c1"
     data-testid="avatar-initials"
   >
     AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches mobile avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 0.75rem;
+  height: 32px;
+  -webkit-letter-spacing: 0.013rem;
+  -moz-letter-spacing: 0.013rem;
+  -ms-letter-spacing: 0.013rem;
+  letter-spacing: 0.013rem;
+  width: 32px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Matches mobile large avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  height: 72px;
+  width: 72px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches mobile large avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 1.5rem;
+  height: 72px;
+  width: 72px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Matches mobile medium avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  height: 48px;
+  width: 48px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches mobile medium avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 1rem;
+  height: 48px;
+  width: 48px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Matches mobile small avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  height: 40px;
+  -webkit-letter-spacing: 0.014rem;
+  -moz-letter-spacing: 0.014rem;
+  -ms-letter-spacing: 0.014rem;
+  letter-spacing: 0.014rem;
+  width: 40px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches mobile small avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 0.875rem;
+  height: 40px;
+  -webkit-letter-spacing: 0.014rem;
+  -moz-letter-spacing: 0.014rem;
+  -ms-letter-spacing: 0.014rem;
+  letter-spacing: 0.014rem;
+  width: 40px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Matches small avatar Snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  height: 32px;
+  -webkit-letter-spacing: 0.013rem;
+  -moz-letter-spacing: 0.013rem;
+  -ms-letter-spacing: 0.013rem;
+  letter-spacing: 0.013rem;
+  width: 32px;
+}
+
+<div
+  aria-label="AB avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    AB
+  </span>
+</div>
+`;
+
+exports[`Avatar Matches small avatar with image Snapshot 1`] = `
+.c0 {
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 0.75rem;
+  height: 32px;
+  -webkit-letter-spacing: 0.013rem;
+  -moz-letter-spacing: 0.013rem;
+  -ms-letter-spacing: 0.013rem;
+  letter-spacing: 0.013rem;
+  width: 32px;
+}
+
+<img
+  alt="AB avatar"
+  class="c0"
+  src="anImage"
+/>
+`;
+
+exports[`Avatar Should use bigger user icon when username is empty on mobile 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  height: 32px;
+  -webkit-letter-spacing: 0.013rem;
+  -moz-letter-spacing: 0.013rem;
+  -ms-letter-spacing: 0.013rem;
+  letter-spacing: 0.013rem;
+  width: 32px;
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    <svg
+      color="currentColor"
+      focusable="false"
+      height="24"
+      width="24"
+    />
+  </span>
+</div>
+`;
+
+exports[`Avatar Should use user icon when username is empty on desktop 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: 24px;
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: 24px;
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    <svg
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </span>
+</div>
+`;
+
+exports[`Avatar Should use user icon when username is undefined 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F1F2F2;
+  border-radius: 50%;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--font-semi-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.625rem;
+  height: 24px;
+  -webkit-letter-spacing: 0.011rem;
+  -moz-letter-spacing: 0.011rem;
+  -ms-letter-spacing: 0.011rem;
+  letter-spacing: 0.011rem;
+  width: 24px;
+}
+
+<div
+  aria-label=" avatar"
+  class="c0"
+  role="img"
+>
+  <span
+    data-testid="avatar-initials"
+  >
+    <svg
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
   </span>
 </div>
 `;

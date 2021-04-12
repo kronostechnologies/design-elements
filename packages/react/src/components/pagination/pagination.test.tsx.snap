@@ -12,6 +12,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -20,7 +21,6 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -30,7 +30,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -47,8 +47,8 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c2:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c2:not(:disabled) {
@@ -62,7 +62,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 .c3 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
   padding: 0;
   width: 32px;
 }
@@ -73,18 +73,18 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c3:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c3:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c3:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c4 {
@@ -97,7 +97,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c5 {
-  background-color: #0080A5;
+  background-color: #006296;
   border-radius: 100%;
   color: #FFFFFF;
   display: inline-block;
@@ -116,12 +116,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c5:hover {
-  background-color: #0080A5;
+  background-color: #006296;
   cursor: default;
 }
 
@@ -145,12 +145,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c6:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   cursor: pointer;
 }
 
@@ -195,6 +195,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -210,6 +211,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -262,6 +264,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -276,6 +279,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="16"
@@ -298,6 +302,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -306,7 +311,6 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
-  height: 48px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -316,7 +320,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   -ms-letter-spacing: 0.53px;
   letter-spacing: 0.53px;
   line-height: 1.5rem;
-  min-height: 2rem;
+  min-height: 48px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -333,8 +337,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c2:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c2:not(:disabled) {
@@ -348,7 +352,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 .c3 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
   padding: 0;
   width: 48px;
 }
@@ -359,18 +363,18 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c3:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c3:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c3:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c4 {
@@ -383,7 +387,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c5 {
-  background-color: #0080A5;
+  background-color: #006296;
   border-radius: 100%;
   color: #FFFFFF;
   display: inline-block;
@@ -402,12 +406,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c5:hover {
-  background-color: #0080A5;
+  background-color: #006296;
   cursor: default;
 }
 
@@ -431,12 +435,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c6:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c6:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   cursor: pointer;
 }
 
@@ -481,6 +485,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"
@@ -496,6 +501,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"
@@ -548,6 +554,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"
@@ -562,6 +569,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         color="currentColor"
         focusable="false"
         height="20"

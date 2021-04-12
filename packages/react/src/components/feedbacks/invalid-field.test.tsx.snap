@@ -2,7 +2,7 @@
 
 exports[`Invalid field Matches the snapshot 1`] = `
 .c0 {
-  color: #A40C2E;
+  color: #CD2C23;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

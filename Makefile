@@ -1,11 +1,15 @@
-build_react:
-	cd packages/react && yarn && yarn link && yarn build
-build_storybook:
-	cd packages/storybook && yarn && yarn link @equisoft/design-elements-react && yarn build
-build_all: build_react build_storybook
+.PHONY: yarn
+yarn:
+	yarn
 
-react:
-	cd packages/react && yarn start
+.PHONY: build_react
+build_react: yarn
+	cd packages/react; yarn build;
 
-storybook:
-	cd packages/storybook && yarn start
+.PHONY: react
+react: yarn
+	cd packages/react; yarn start;
+
+.PHONY: storybook
+storybook: yarn
+	cd packages/storybook; yarn start;

@@ -12,6 +12,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -20,7 +21,6 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -30,7 +30,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -47,8 +47,8 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -60,8 +60,8 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -71,18 +71,18 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 <button
@@ -103,6 +103,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -111,7 +112,6 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -121,7 +121,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -138,8 +138,8 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -162,8 +162,8 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {

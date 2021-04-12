@@ -1,11 +1,39 @@
 const path = require('path');
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const { compilerOptions } = require('./tsconfig');
 
 module.exports = {
     preset: 'ts-jest',
+
+    reporters: [
+        'default',
+        [
+            'jest-junit',
+            {
+                outputDirectory: 'build/jest/',
+                outputName: 'junit.xml',
+                suiteNameTemplate: '{filepath}',
+                classNameTemplate: '{classname}',
+                titleTemplate: '{title}',
+            },
+        ],
+    ],
+
+    collectCoverage: true,
+    collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}'],
+    coverageDirectory: 'build/jest/coverage',
+    coveragePathIgnorePatterns: [
+        '.+\\.d\\.ts$',
+    ],
+    coverageProvider: 'v8',
+    coverageReporters: [
+        // Supported reporters: https://istanbul.js.org/docs/advanced/alternative-reporters/
+        'text',
+        'html',
+        'clover', // ADR-05
+    ],
+
     clearMocks: true,
     resetMocks: true,
+    errorOnDeprecated: true,
     moduleDirectories: [
         'src',
         'node_modules',

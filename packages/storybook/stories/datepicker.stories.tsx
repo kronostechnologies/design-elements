@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import React, { FormEvent, useRef } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
+import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
     height: 400px;
@@ -21,6 +22,11 @@ export default {
 export const Normal: Story = () => (
     <Datepicker label="Date" hint="Hint" />
 );
+
+export const InsideShadowDom: Story = () => (
+    <Datepicker label="Date" hint="Hint" />
+);
+InsideShadowDom.decorators = [ShadowDomDecorator];
 
 export const WithTodayButton: Story = () => (
     <Datepicker label="Date" hasTodayButton />

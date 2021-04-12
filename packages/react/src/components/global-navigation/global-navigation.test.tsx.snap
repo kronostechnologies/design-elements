@@ -41,7 +41,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 16px;
-  color: #57666E;
+  color: #60666E;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -61,13 +61,13 @@ exports[`Global Navigation Matches snapshot 1`] = `
 
 .c4:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 .c4:hover {
-  background-color: #D9DDE2;
-  color: #57666E;
+  background-color: #DBDEE1;
+  color: #60666E;
 }
 
 .c2 {
@@ -88,25 +88,18 @@ exports[`Global Navigation Matches snapshot 1`] = `
   position: relative;
 }
 
-.c2.moreMenu:hover .sc-dtTInj {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c2.moreMenu:hover .c3 {
-  background-color: #D9DDE2;
-  color: #57666E;
+  background-color: #DBDEE1;
+  color: #60666E;
 }
 
 .c5.active {
-  background-color: #0080A5;
+  background-color: #006296;
   color: #FFFFFF !important;
 }
 
 .c5.active:hover {
-  background-color: #0080A5;
+  background-color: #006296;
   color: #FFFFFF;
 }
 
@@ -116,8 +109,8 @@ exports[`Global Navigation Matches snapshot 1`] = `
 
 .c5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0080A566;
-  box-shadow: 0 0 0 3px #0080A566,0 0 0 1px #0080A5;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
 <div

@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
+import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
     height: 240px;
@@ -38,6 +39,11 @@ export default {
 export const Normal: Story = () => (
     <Select label="Select an option" hint="Hint" options={provinces} />
 );
+
+export const InsideShadowDom: Story = () => (
+    <Select label="Select an option" hint="Hint" options={provinces} />
+);
+InsideShadowDom.decorators = [ShadowDomDecorator];
 
 export const CustomPlaceholder: Story = () => (
     <Select label="Select an option" options={provinces} placeholder="Custom placeholder" />

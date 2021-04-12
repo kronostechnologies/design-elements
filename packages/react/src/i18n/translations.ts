@@ -29,7 +29,7 @@ export const Translations = {
             validationErrorMessage: 'Invalid number',
         },
         'nav-menu-button': {
-            ariaLabel: 'Navigation menu',
+            ariaLabel: 'Menu',
         },
         pagination: {
             results: 'results',
@@ -48,11 +48,23 @@ export const Translations = {
             'increment-button-aria-label': 'Increase number',
             'decrement-button-aria-label': 'Decrease number',
         },
+        'tag-medium': {
+            deleteButtonAriaLabel: 'Remove {{label}} from the list',
+        },
         'text-area': {
             validationErrorMessage: 'This text area is invalid',
+            maxLengthValidationErrorMessage:
+            'The number of characters exceeds the maximum allowed. You must shorten the description.',
+            characters: '{{current}}/{{max}} characters',
         },
         'text-input': {
             validationErrorMessage: 'This input is invalid',
+        },
+        'user-profile': {
+            ariaLabel: 'User menu',
+        },
+        avatar: {
+            ariaLabel: '{{username}} avatar',
         },
     },
     fr: {
@@ -85,7 +97,7 @@ export const Translations = {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
         },
         'nav-menu-button': {
-            ariaLabel: 'Menu de navigation',
+            ariaLabel: 'Menu',
         },
         pagination: {
             results: 'résultats',
@@ -104,11 +116,23 @@ export const Translations = {
             'increment-button-aria-label': 'Augmenter le nombre',
             'decrement-button-aria-label': 'Diminuer le nombre',
         },
+        'tag-medium': {
+            deleteButtonAriaLabel: 'Retirer {{label}} de la liste',
+        },
         'text-area': {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
+            maxLengthValidationErrorMessage:
+            'Le nombre de caractères dépasse le maximum autorisé. Vous devez raccourcir la description.',
+            characters: '{{current}}/{{max}} caractères',
         },
         'text-input': {
             validationErrorMessage: 'Ce champ est invalide',
+        },
+        'user-profile': {
+            ariaLabel: 'Menu utilisateur',
+        },
+        avatar: {
+            ariaLabel: 'Avatar de {{username}}',
         },
     },
 };

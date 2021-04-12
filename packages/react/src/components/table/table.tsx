@@ -19,9 +19,10 @@ interface StyledTableProps {
 type CustomColumn<T extends object> = Column<T> & {
     sortable?: boolean,
     textAlign?: string,
+    className?: string,
 };
 
-export type TableColumn<T extends object = {}> = CustomColumn<T>[];
+export type TableColumn<T extends object> = CustomColumn<T>[];
 export type TableRow<T> = T & { error?: boolean };
 
 interface CustomRowProps {

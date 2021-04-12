@@ -12,6 +12,7 @@ exports[`Add Button has disabled styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -20,7 +21,6 @@ exports[`Add Button has disabled styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -30,7 +30,7 @@ exports[`Add Button has disabled styles 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -47,8 +47,8 @@ exports[`Add Button has disabled styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -60,8 +60,8 @@ exports[`Add Button has disabled styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -71,18 +71,18 @@ exports[`Add Button has disabled styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c2 {
@@ -117,6 +117,7 @@ exports[`Add Button has mobile styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -125,7 +126,6 @@ exports[`Add Button has mobile styles 1`] = `
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: var(--font-bold);
-  height: 48px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -135,7 +135,7 @@ exports[`Add Button has mobile styles 1`] = `
   -ms-letter-spacing: 0.53px;
   letter-spacing: 0.53px;
   line-height: 1.5rem;
-  min-height: 2rem;
+  min-height: 48px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -152,8 +152,8 @@ exports[`Add Button has mobile styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -165,8 +165,8 @@ exports[`Add Button has mobile styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -176,18 +176,18 @@ exports[`Add Button has mobile styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c2 {
@@ -221,6 +221,7 @@ exports[`Add Button has primary styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -229,7 +230,6 @@ exports[`Add Button has primary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -239,7 +239,7 @@ exports[`Add Button has primary styles 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -256,8 +256,8 @@ exports[`Add Button has primary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -269,8 +269,8 @@ exports[`Add Button has primary styles 1`] = `
 }
 
 .c1 {
-  background-color: #0080A5;
-  border-color: #0080A5;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -280,18 +280,18 @@ exports[`Add Button has primary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #005F7A;
-  border-color: #005F7A;
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
 .c1:disabled {
-  background-color: #99CCDB;
-  border-color: #99CCDB;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c2 {
@@ -325,6 +325,7 @@ exports[`Add Button has secondary styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -333,7 +334,6 @@ exports[`Add Button has secondary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -343,7 +343,7 @@ exports[`Add Button has secondary styles 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -360,8 +360,8 @@ exports[`Add Button has secondary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -374,8 +374,8 @@ exports[`Add Button has secondary styles 1`] = `
 
 .c1 {
   background-color: transparent;
-  border-color: #0080A5;
-  color: #0080A5;
+  border-color: #006296;
+  color: #006296;
 }
 
 .c1:focus {
@@ -384,18 +384,18 @@ exports[`Add Button has secondary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  border-color: #005F7A;
-  color: #005F7A;
+  border-color: #003A5A;
+  color: #003A5A;
 }
 
 .c1:disabled {
-  border-color: #99CCDB;
-  color: #99CCDB;
+  border-color: #84C6EA;
+  color: #84C6EA;
 }
 
 .c2 {
@@ -429,6 +429,7 @@ exports[`Add Button has tertiary styles 1`] = `
   background: inherit;
   border: 1px solid;
   border-radius: 1.5rem;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -437,7 +438,6 @@ exports[`Add Button has tertiary styles 1`] = `
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: var(--font-bold);
-  height: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -447,7 +447,7 @@ exports[`Add Button has tertiary styles 1`] = `
   -ms-letter-spacing: 0.4px;
   letter-spacing: 0.4px;
   line-height: 1rem;
-  min-height: 2rem;
+  min-height: 32px;
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -464,8 +464,8 @@ exports[`Add Button has tertiary styles 1`] = `
 
 .c0:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0:not(:disabled) {
@@ -479,7 +479,7 @@ exports[`Add Button has tertiary styles 1`] = `
 .c1 {
   background-color: transparent;
   border-color: transparent;
-  color: #57666E;
+  color: #60666E;
 }
 
 .c1:focus {
@@ -488,18 +488,18 @@ exports[`Add Button has tertiary styles 1`] = `
 
 .c1:focus {
   outline: none;
-  border-color: #0080A5;
-  box-shadow: 0 0 0 2px #0080A566;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c1:hover {
-  background-color: #D9DDE2;
+  background-color: #DBDEE1;
   color: #000000;
 }
 
 .c1:disabled {
   background-color: transparent;
-  color: #9CA7B4;
+  color: #B7BBC2;
 }
 
 .c2 {

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chooser Button Matches the snapshot 1`] = `
+Array [
+  .c0 {
+  border: 0 !important;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+<input
+    className="c0"
+    defaultChecked={true}
+    name="maritalStatus"
+    onChange={[Function]}
+    type="radio"
+    value="test value"
+  />,
+  .c1 {
+  --border-radius: 8px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  min-height: 3rem;
+  padding: var(--spacing-1x);
+  text-align: center;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.c1:hover {
+  background: #DBDEE1;
+  border-color: #DBDEE1;
+}
+
+input[type="checkbox"]:checked + .c0,
+input[type="radio"]:checked + .c1 {
+  background: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+input[type="checkbox"]:focus + .c0,
+input[type="radio"]:focus + .c1 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+input[type="checkbox"]:disabled + .c0,
+input[type="radio"]:disabled + .c1 {
+  background: #F1F2F2;
+  border-color: #DBDEE1;
+  color: #B7BBC2;
+  cursor: auto;
+}
+
+.c1 b {
+  font-size: 1.5rem;
+  font-weight: var(--font-normal);
+  line-height: 2.5rem;
+}
+
+.c1 svg {
+  color: inherit;
+  height: 3rem;
+  width: 3rem;
+}
+
+<label
+    className="c0 c1"
+  >
+    Children
+  </label>,
+]
+`;

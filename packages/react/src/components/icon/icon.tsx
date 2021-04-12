@@ -1,4 +1,5 @@
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
+import User from 'feather-icons/dist/icons/user.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
@@ -14,6 +15,7 @@ import ChevronsLeft from 'feather-icons/dist/icons/chevrons-left.svg';
 import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
 import Copy from 'feather-icons/dist/icons/copy.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
+import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
@@ -31,6 +33,7 @@ import X from 'feather-icons/dist/icons/x.svg';
 import React, { VoidFunctionComponent } from 'react';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
+import Files from '../../icons/files.svg';
 
 const iconMapping = {
     alertTriangle: AlertTriangle,
@@ -49,6 +52,8 @@ const iconMapping = {
     chevronsRight: ChevronsRight,
     copy: Copy,
     edit: Edit,
+    externalLink: ExternalLink,
+    files: Files,
     helpCircle: HelpCircle,
     home: Home,
     info: Info,
@@ -64,6 +69,7 @@ const iconMapping = {
     search: Search,
     star: Star,
     trash: Trash,
+    user: User,
     x: X,
 } as const;
 
@@ -83,6 +89,7 @@ interface IconProps {
      * @default currentColor
      */
     color?: string;
+    role?: string;
 }
 
 export const Icon: VoidFunctionComponent<IconProps> = ({
@@ -90,6 +97,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
     name,
     size,
     color,
+    role,
     ...props
 }: IconProps) => {
     const Component = iconMapping[name];
@@ -105,6 +113,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
             focusable={false}
             width={size}
             color={color}
+            role={role}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         />
     );

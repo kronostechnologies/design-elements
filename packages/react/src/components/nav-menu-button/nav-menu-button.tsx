@@ -1,7 +1,17 @@
-import React, { KeyboardEvent, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+    KeyboardEvent,
+    ReactElement,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -10,7 +20,6 @@ import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 
 const StyledNav = styled.nav`
     position: relative;
-    width: fit-content;
 `;
 
 interface StyledButtonProps {
@@ -45,26 +54,32 @@ const StyledNavMenu = styled(NavMenu)`
 interface MenuButtonProps {
     /**
      * Sets nav's description
-     * @default 'Navigation menu'
+     * @default 'Menu'
      * */
     ariaLabel?: string;
+    children: ReactNode;
     className?: string;
     /**
      * Sets menu open by default
      * @default false
      * */
     defaultOpen?: boolean;
+    /**
+     * Sets chevron icon
+     * @default true
+     * */
+    hasIcon?: boolean;
     id?: string;
-    label: string;
     options: NavMenuOption[];
 }
 
 export function NavMenuButton({
     ariaLabel,
+    children,
     className,
     defaultOpen = false,
+    hasIcon = true,
     id: providedId,
-    label,
     options,
 }: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
@@ -77,10 +92,7 @@ export function NavMenuButton({
     const navRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = (
-            !buttonRef.current?.contains(event.target as Node)
-            && !navMenuRef.current?.contains(event.target as Node)
-        );
+        const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
         const shouldClose = (navMenuRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
@@ -125,8 +137,8 @@ export function NavMenuButton({
                 ref={buttonRef}
                 type="button"
             >
-                {label}
-                <StyledIcon name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />
+                {children}
+                {hasIcon && <StyledIcon aria-hidden="true" name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />}
             </StyledButton>
             <StyledNavMenu
                 data-testid="menu-navMenu"
