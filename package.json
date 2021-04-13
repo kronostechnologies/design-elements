@@ -6,12 +6,15 @@
   ],
   "scripts": {
     "g:eslint": "./scripts/eslint.js",
-    "g:stylelint": "./scripts/stylelint.js"
+    "g:stylelint": "./scripts/stylelint.js",
+    "changelog": "conventional-changelog --config ./.conventional-changelog.config.js -i CHANGELOG.md -s -r 1"
   },
   "devDependencies": {
     "@equisoft/stylelint-config": "^1.0.1",
     "@types/eslint": "^7.2.8",
     "@types/yargs": "^16.0.1",
+    "conventional-changelog-cli": "^2.1.1",
+    "conventional-changelog-conventionalcommits": "^4.5.0",
     "eslint": "^7.23.0",
     "stylelint": "^13.12.0",
     "stylelint-order": "^4.1.0",
