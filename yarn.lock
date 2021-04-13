@@ -16420,12 +16420,12 @@ jest-styled-components@^7.0.3:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^1.15.0, react-docgen-typescript@npm:^1.20.1":
-  version: 1.20.5
-  resolution: "react-docgen-typescript@npm:1.20.5"
+"react-docgen-typescript@npm:^1.22.0":
+  version: 1.22.0
+  resolution: "react-docgen-typescript@npm:1.22.0"
   peerDependencies:
     typescript: ">= 3.x"
-  checksum: 10e55a318345d6739caee4511c0701d4f3203b2c8e8bda8f4adee0f5e9e032b8f0bdc77d8fbe2c440badd02f5cac8832e34dd01d0a8e1fbd86ed357719020edc
+  checksum: 9053aa68010167b74e0094c2b85653d477e9a7989d7d83491e8382e8b91df6117eab3e37af43b0f206c137624f2be00e68c413502e85cca2d1ac673ab8e1a478
   languageName: node
   linkType: hard
 

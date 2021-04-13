@@ -25,6 +25,7 @@ module.exports = {
                 loader: 'react-docgen-typescript-loader',
                 options: {
                     shouldExtractLiteralValuesFromEnum: true,
+                    tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
                 },
                 exclude: /node_modules/,
             },
