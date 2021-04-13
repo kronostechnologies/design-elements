@@ -1,9 +1,8 @@
 import { i18n as i18nType } from 'i18next';
-import React, { createContext, ReactElement, useContext, useEffect, useState } from 'react';
+import React, { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
 import { createI18n } from '../../i18n/i18n';
 
-interface IntlProviderProps {
-    children: ReactElement;
+export interface IntlProviderProps {
     language?: string;
 }
 
@@ -13,7 +12,7 @@ interface IntlContextProps {
 
 const IntlContext = createContext<IntlContextProps>({ i18n: createI18n() });
 
-export function IntlProvider({ children, language }: IntlProviderProps): ReactElement {
+export const IntlProvider: FunctionComponent<IntlProviderProps> = ({ children, language }) => {
     const [i18n] = useState(createI18n);
 
     useEffect(() => {
@@ -28,7 +27,7 @@ export function IntlProvider({ children, language }: IntlProviderProps): ReactEl
             {children}
         </IntlContext.Provider>
     );
-}
+};
 
 export function useIntlContext(): IntlContextProps {
     return useContext(IntlContext);

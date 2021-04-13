@@ -1,15 +1,15 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { ThemeProvider, ThemeProviderProps } from 'styled-components';
+import React, { FunctionComponent, ReactNode } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { equisoftTheme, Theme } from '../../themes';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
-interface ThemeWrapperProps extends Omit<ThemeProviderProps<Theme>, 'theme'> {
+export interface ThemeWrapperProps {
     isolateStyles?: boolean;
     theme?: Theme;
 }
 
-export function ThemeWrapper({ children, isolateStyles = false, theme }: ThemeWrapperProps): ReactElement {
+export const ThemeWrapper: FunctionComponent<ThemeWrapperProps> = ({ children, isolateStyles = false, theme }) => {
     let selectedTheme = theme;
     if (selectedTheme) {
         if (Object.entries(selectedTheme).length === 0 && selectedTheme.constructor === Object) {
@@ -33,4 +33,4 @@ export function ThemeWrapper({ children, isolateStyles = false, theme }: ThemeWr
             {content}
         </ThemeProvider>
     );
-}
+};
