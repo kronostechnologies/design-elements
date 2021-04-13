@@ -22,9 +22,10 @@ module.exports = {
             },
             {
                 test: /.tsx$/,
-                loader: 'react-docgen-typescript-loader',
+                loader: '@storybook-addons/react-docgen-typescript-loader',
                 options: {
                     shouldExtractLiteralValuesFromEnum: true,
+                    shouldRemoveUndefinedFromOptional: true,
                     tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
                 },
                 exclude: /node_modules/,

@@ -51,6 +51,7 @@
   "devDependencies": {
     "@equisoft/eslint-config-typescript-react": "^2.0.2",
     "@equisoft/typescript-config": "^2.0.0",
+    "@storybook-addons/react-docgen-typescript-loader": "^3.8.0",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.1",
@@ -90,7 +91,6 @@
     "jest-styled-components": "patch:jest-styled-components@^7.0.3#./patches/jest-styled-components.diff",
     "pnp-webpack-plugin": "^1.6.4",
     "react": "~17.0.2",
-    "react-docgen-typescript-loader": "~3.7.2",
     "react-dom": "~17.0.2",
     "react-router-dom": "^5.2.0",
     "react-test-renderer": "~17.0.2",

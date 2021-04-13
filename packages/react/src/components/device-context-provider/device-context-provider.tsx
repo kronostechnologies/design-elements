@@ -62,6 +62,9 @@ const getDevice = (screenWidth: number): DeviceType => {
 
 const DeviceContext = createContext<DeviceContextProps>(getDeviceContext());
 
+/**
+ * @deprecated Use {@link DesignSystem} instead
+ */
 export const DeviceContextProvider: FunctionComponent<DeviceContextProviderProps> = ({ children, staticDevice }) => {
     const [device, setDevice] = useState<DeviceContextProps>(getDeviceContext(staticDevice));
 
