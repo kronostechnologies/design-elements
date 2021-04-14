@@ -10,6 +10,7 @@ module.exports = {
         reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
             shouldExtractLiteralValuesFromEnum: true,
+            shouldRemoveUndefinedFromOptional: true,
         },
     },
     stories: ['../stories/**/*.stories.@(tsx|mdx)'],

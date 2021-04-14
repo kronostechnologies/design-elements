@@ -3,6 +3,9 @@ import React, { createContext, FunctionComponent, useContext, useEffect, useStat
 import { createI18n } from '../../i18n/i18n';
 
 export interface IntlProviderProps {
+    /**
+     * @default en
+     */
     language?: string;
 }
 
@@ -12,6 +15,9 @@ interface IntlContextProps {
 
 const IntlContext = createContext<IntlContextProps>({ i18n: createI18n() });
 
+/**
+ * @deprecated Use {@link DesignSystem} instead
+ */
 export const IntlProvider: FunctionComponent<IntlProviderProps> = ({ children, language }) => {
     const [i18n] = useState(createI18n);
 

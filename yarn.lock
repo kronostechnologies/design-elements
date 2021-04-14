@@ -2813,6 +2813,7 @@ __metadata:
   dependencies:
     "@equisoft/eslint-config-typescript-react": ^2.0.2
     "@equisoft/typescript-config": ^2.0.0
+    "@storybook-addons/react-docgen-typescript-loader": ^3.8.0
     "@svgr/webpack": ^5.5.0
     "@testing-library/react": ^11.2.6
     "@testing-library/react-hooks": ^5.1.1
@@ -2856,7 +2857,6 @@ __metadata:
     prop-types: ^15.7.2
     react: ~17.0.2
     react-datepicker: ^3.7.0
-    react-docgen-typescript-loader: ~3.7.2
     react-dom: ~17.0.2
     react-is: ~17.0.2
     react-modal: ^3.12.1
@@ -3471,6 +3471,19 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^1.7.0
   checksum: 64458b908773638dda08b555a00e6fbbbc679735348291dc1b7f437ada2f60242537fdc48e4ee82d2573d86984ec87e755b66a96c0ed9ebf0f46b4c6687ccde2
+  languageName: node
+  linkType: hard
+
+"@storybook-addons/react-docgen-typescript-loader@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "@storybook-addons/react-docgen-typescript-loader@npm:3.8.0"
+  dependencies:
+    "@webpack-contrib/schema-utils": ^1.0.0-beta.0
+    loader-utils: ^1.2.3
+    react-docgen-typescript: ^1.20.1
+  peerDependencies:
+    typescript: "*"
+  checksum: 658683836d470cefc3dde469bb540907bbd3ec56d5f395eed27a79a53fa2e28feaf9de45198eca912b2dbbff301aad264b2fa6f833aedfdd39ceca8324916476
   languageName: node
   linkType: hard
 
@@ -16391,7 +16404,7 @@ jest-styled-components@^7.0.3:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript-loader@npm:^3.7.2, react-docgen-typescript-loader@npm:~3.7.2":
+"react-docgen-typescript-loader@npm:^3.7.2":
   version: 3.7.2
   resolution: "react-docgen-typescript-loader@npm:3.7.2"
   dependencies:

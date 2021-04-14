@@ -5,10 +5,17 @@ import { equisoftTheme, Theme } from '../../themes';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 export interface ThemeWrapperProps {
+    /**
+     * When true, components are mounted in the Shadow DOM
+     * @default false
+     */
     isolateStyles?: boolean;
     theme?: Theme;
 }
 
+/**
+ * @deprecated Use {@link DesignSystem} instead
+ */
 export const ThemeWrapper: FunctionComponent<ThemeWrapperProps> = ({ children, isolateStyles = false, theme }) => {
     let selectedTheme = theme;
     if (selectedTheme) {
