@@ -1,10 +1,9 @@
-import React, { createContext, ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
+import React, { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
 import { breakpoints, Breakpoints } from '../../tokens/breakpoints';
 
 export type DeviceType = 'desktop' | 'tablet' | 'mobile';
 
-interface Props {
-    children: ReactNode;
+export interface DeviceContextProviderProps {
     staticDevice?: DeviceType;
 }
 
@@ -63,7 +62,7 @@ const getDevice = (screenWidth: number): DeviceType => {
 
 const DeviceContext = createContext<DeviceContextProps>(getDeviceContext());
 
-export const DeviceContextProvider = ({ children, staticDevice }: Props): ReactElement => {
+export const DeviceContextProvider: FunctionComponent<DeviceContextProviderProps> = ({ children, staticDevice }) => {
     const [device, setDevice] = useState<DeviceContextProps>(getDeviceContext(staticDevice));
 
     function handleScreenResize(): void {

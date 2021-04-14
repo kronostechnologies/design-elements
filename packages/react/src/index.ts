@@ -68,3 +68,5 @@ export { Pagination } from './components/pagination/pagination';
 export { equisoftTheme } from './themes/equisoft';
 export { testTheme } from './themes/test-theme';
 export { injectMainCss } from './styles';
+
+export * from './components/design-system';
