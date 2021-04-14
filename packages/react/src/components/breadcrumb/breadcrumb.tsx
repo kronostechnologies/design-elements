@@ -6,8 +6,10 @@ import { IconButton } from '../buttons/icon-button';
 import { RouteLink } from '../route-link/route-link';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 
+export type BreadcrumbElement = NavMenuOption;
+
 interface BreadcrumbProps {
-    history: NavMenuOption[];
+    history: BreadcrumbElement[];
 }
 
 const StyledOL = styled.ol`

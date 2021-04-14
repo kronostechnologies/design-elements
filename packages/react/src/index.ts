@@ -54,7 +54,7 @@ export { useModal } from './components/modal/use-modal';
 export { UserProfile } from './components/user-profile/user-profile';
 
 // Navigation
-export { Breadcrumb } from './components/breadcrumb/breadcrumb';
+export { Breadcrumb, BreadcrumbElement } from './components/breadcrumb/breadcrumb';
 export * from './components/global-navigation/global-navigation';
 export { RouteLink } from './components/route-link/route-link';
 
