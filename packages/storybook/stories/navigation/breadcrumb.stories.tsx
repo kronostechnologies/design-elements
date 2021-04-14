@@ -1,9 +1,9 @@
-import React from 'react';
+import { Breadcrumb, BreadcrumbElement } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import { Breadcrumb } from '@equisoft/design-elements-react';
+import React from 'react';
 import { RouterDecorator } from '../utils/router-decorator';
 
-const routeMap = (length: number): any => {
+const routeMap = (length: number): BreadcrumbElement[] => {
     const routes = [];
     for (let i = 1; i <= length; i++) {
         routes.push({
