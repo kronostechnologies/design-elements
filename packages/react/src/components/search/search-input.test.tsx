@@ -128,6 +128,16 @@ describe('SearchInput', () => {
             const searchInput = getByTestId(wrapper, 'search-input');
             expect(searchInput.getDOMNode<HTMLInputElement>().value).toBe(value);
         });
+        it('should call onClick when input is clicked', () => {
+            const onClick = jest.fn();
+            const wrapper = shallow(
+                <SearchInput onClick={onClick} />,
+            );
+
+            getByTestId(wrapper, 'search-input').simulate('click');
+
+            expect(onClick).toHaveBeenCalledTimes(1);
+        });
     });
 
     it('should match the snapshot', () => {
