@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 import { RouterDecorator } from '../utils/router-decorator';
 import { ShadowDomDecorator } from '../utils/shadow-dom-decorator';
+import { ButtonProps } from '../../../react/dist/components/buttons/icon-button';
 
 export default {
     title: 'Navigation/Global Navigation',
@@ -13,47 +14,57 @@ export default {
 const items: GlobalNavigationItem[] = [
     {
         iconName: 'home',
-        name: 'story 1',
-        href: '/story1',
+        name: 'home',
+        href: '/test1',
     },
     {
         iconName: 'edit',
-        name: 'story 2',
-        href: '/story2',
+        name: 'edit',
+        href: '/test2',
     },
     {
         iconName: 'mapPin',
-        name: 'story 3',
-        href: '/story3',
+        name: 'map',
+        href: '/test3',
     },
     {
         iconName: 'mail',
-        name: 'story 4',
-        href: '/story4',
+        name: 'mail',
+        href: '/test4',
     },
     {
         iconName: 'phone',
-        name: 'story 5',
-        href: '/story5',
+        name: 'phone',
+        href: '/test5',
     },
 ];
+
+const footerItems: GlobalNavigationItem[] = [
+    {
+        iconName: 'info',
+        name: 'info',
+        href: '/test6',
+    },
+    {
+        iconName: 'helpCircle',
+        name: 'help',
+        href: '/test7',
+    },
+];
+
+const coreActionButton: ButtonProps = {
+    buttonType: 'primary',
+    iconName: 'plusSign',
+    label: 'add',
+    onClick: () => console.info('The button has been clicked!'),
+};
 
 export const Normal: Story = () => (
     <div style={{ height: '600px' }}>
         <GlobalNavigation
+            coreActionButton={coreActionButton}
             mainItems={items}
-            footerItems={[
-                {
-                    iconName: 'info',
-                    name: 'story 6',
-                    href: '/story6',
-                },
-                {
-                    iconName: 'helpCircle',
-                    name: 'story 7',
-                    href: '/story7',
-                },
-            ]}
+            footerItems={footerItems}
         />
     </div>
 );
@@ -62,18 +73,7 @@ export const WithMoreIcon: Story = () => (
     <div style={{ height: '350px' }}>
         <GlobalNavigation
             mainItems={items}
-            footerItems={[
-                {
-                    iconName: 'info',
-                    name: 'story 8',
-                    href: '/story8',
-                },
-                {
-                    iconName: 'helpCircle',
-                    name: 'story 9',
-                    href: '/story9',
-                },
-            ]}
+            footerItems={footerItems}
         />
     </div>
 );
@@ -82,18 +82,7 @@ export const WithMoreIconInShadowDom: Story = () => (
     <div style={{ height: '350px' }}>
         <GlobalNavigation
             mainItems={items}
-            footerItems={[
-                {
-                    iconName: 'info',
-                    name: 'story 8',
-                    href: '/story8',
-                },
-                {
-                    iconName: 'helpCircle',
-                    name: 'story 9',
-                    href: '/story9',
-                },
-            ]}
+            footerItems={footerItems}
         />
     </div>
 );
