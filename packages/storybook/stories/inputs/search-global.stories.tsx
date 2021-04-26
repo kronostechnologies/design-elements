@@ -8,7 +8,7 @@ export default {
 };
 
 export const Global: Story = () => (
-    <SearchGlobal />
+    <SearchGlobal/>
 );
 export const Disabled: Story = () => (
     <SearchGlobal disabled />
