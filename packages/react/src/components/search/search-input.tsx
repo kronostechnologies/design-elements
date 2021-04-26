@@ -1,6 +1,7 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import React, { ChangeEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
+import React, { FocusEvent, ChangeEvent, KeyboardEvent, useCallback,
+    useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -130,6 +131,8 @@ export interface CommonSearchProps {
 
     onReset?(): void;
 
+    onInputFocus?(event: FocusEvent<HTMLInputElement>): void;
+
     onSearch?(value: string): void;
 }
 
@@ -145,6 +148,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     onReset,
     onSearch,
     value,
+    onInputFocus,
     ...props
 }: SearchInputProps) => {
     const { t } = useTranslation('search-input');
@@ -194,6 +198,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                     autoComplete="on"
                     disabled={disabled}
                     onChange={handleChange}
+                    onFocus={onInputFocus}
                     onKeyDown={handleKeyDown}
                     hasButton={!!hasButton}
                     hasIcon={!!hasIcon}
@@ -213,7 +218,6 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                     </Reset>
                 )}
             </InnerWrapper>
-
             {hasButton && (
                 <SearchSubmit
                     disabled={disabled}

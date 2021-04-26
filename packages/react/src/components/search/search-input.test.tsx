@@ -128,6 +128,16 @@ describe('SearchInput', () => {
             const searchInput = getByTestId(wrapper, 'search-input');
             expect(searchInput.getDOMNode<HTMLInputElement>().value).toBe(value);
         });
+        it('should call onFocus when input is clicked', () => {
+            const onInputFocus = jest.fn();
+            const wrapper = shallow(
+                <SearchInput onInputFocus={onInputFocus} />,
+            );
+
+            getByTestId(wrapper, 'search-input').simulate('focus');
+
+            expect(onInputFocus).toHaveBeenCalledTimes(1);
+        });
     });
 
     it('should match the snapshot', () => {
