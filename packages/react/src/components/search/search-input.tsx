@@ -131,7 +131,7 @@ export interface CommonSearchProps {
 
     onReset?(): void;
 
-    onFocus?(event: FocusEvent<HTMLInputElement>): void;
+    onInputFocus?(event: FocusEvent<HTMLInputElement>): void;
 
     onSearch?(value: string): void;
 }
@@ -148,7 +148,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     onReset,
     onSearch,
     value,
-    onFocus,
+    onInputFocus,
     ...props
 }: SearchInputProps) => {
     const { t } = useTranslation('search-input');
@@ -198,7 +198,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                     autoComplete="on"
                     disabled={disabled}
                     onChange={handleChange}
-                    onFocus={onFocus}
+                    onFocus={onInputFocus}
                     onKeyDown={handleKeyDown}
                     hasButton={!!hasButton}
                     hasIcon={!!hasIcon}
