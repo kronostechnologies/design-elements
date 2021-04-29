@@ -1,26 +1,41 @@
-import React, { ReactElement, ReactNode, useEffect } from 'react';
+import React, { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
-interface StyledModalProps extends DeviceContextProps {
+interface StyledModalProps extends Pick<DeviceContextProps, 'breakpoints' | 'isMobile'> {
     noPadding: boolean;
     hasCloseButton: boolean;
 }
 
-function getModalPadding({ noPadding, hasCloseButton, isMobile }: StyledModalProps): string {
+interface ContentProps extends Pick<DeviceContextProps, 'isMobile'> {
+    noPadding: boolean;
+    hasCloseButton: boolean;
+}
+
+function getLateralPadding({ noPadding, isMobile }: ContentProps): string {
+    if (noPadding) {
+        return '0';
+    }
+    if (isMobile) {
+        return 'var(--spacing-2x)';
+    }
+    return 'var(--spacing-4x)';
+}
+
+function getTopPadding({ hasCloseButton, noPadding, isMobile }: ContentProps): string {
     if (noPadding) {
         return '0';
     }
     if (isMobile) {
         if (hasCloseButton) {
-            return 'var(--spacing-6x) var(--spacing-2x) 0';
+            return 'var(--spacing-6x)';
         }
-        return 'var(--spacing-3x) var(--spacing-2x) 0';
+        return 'var(--spacing-3x)';
     }
-    return 'var(--spacing-4x) var(--spacing-4x) 0';
+    return 'var(--spacing-4x)';
 }
 
 function getBottomPadding({ isMobile, noPadding }: StyledModalProps): string {
@@ -43,11 +58,11 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     border-radius: var(--border-radius-2x);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     max-height: calc(100vh - var(--spacing-2x));
     max-width: 700px;
     min-width: ${getModalMinWidth};
-    overflow-y: auto;
-    padding: ${getModalPadding};
     position: relative;
     width: ${({ isMobile }) => (isMobile ? 'calc(100vw - var(--spacing-2x))' : '60vw')};
 
@@ -67,8 +82,24 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     }
 `;
 
-const Header = styled.header<{ hasContent: boolean }>`
-    ${({ hasContent }) => hasContent && 'margin-bottom: var(--spacing-3x);'}
+const Main = styled.main<ContentProps>`
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 0 ${getLateralPadding};
+    padding-top: ${getTopPadding};
+`;
+
+interface HeaderProps extends ContentProps {
+    isTopScrolled?: boolean;
+}
+const Header = styled.header<HeaderProps>`
+    /* TODO change colors when updating thematization */
+    border-bottom: 1px solid ${({ isTopScrolled }) => (isTopScrolled ? '#878f9a' : 'transparent')};
+    padding: ${getTopPadding} ${getLateralPadding} var(--spacing-3x);
+
+    & + ${Main} {
+        padding-top: 0;
+    }
 `;
 
 const CloseIconButton = styled(IconButton)<Pick<DeviceContextProps, 'isMobile'>>`
@@ -77,8 +108,13 @@ const CloseIconButton = styled(IconButton)<Pick<DeviceContextProps, 'isMobile'>>
     top: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)')};
 `;
 
-const Footer = styled.footer`
-    margin-top: var(--spacing-4x);
+interface FooterProps extends ContentProps {
+    isBottomScrolled?: boolean;
+}
+const Footer = styled.footer<FooterProps>`
+    /* TODO change colors when updating thematization */
+    border-top: 1px solid ${({ isBottomScrolled }) => (isBottomScrolled ? '#878f9a' : 'transparent')};
+    padding: var(--spacing-4x) ${getLateralPadding} 0;
 `;
 
 const customStyles = {
@@ -153,8 +189,24 @@ export function Modal({
     onAfterClose,
     onRequestClose,
 }: ModalProps): ReactElement {
-    const device = useDeviceContext();
+    const [mainRef, setMainRef] = useState<HTMLUListElement>();
+    const [topScroll, setTopScroll] = useState(0);
+    const [bottomScroll, setBottomScroll] = useState(0);
+    const { breakpoints, isMobile } = useDeviceContext();
+    const mainRefCallback = useCallback((node: HTMLUListElement) => setMainRef(node), []);
     const { t } = useTranslation('modal');
+
+    const handleScroll = useCallback((): void => {
+        if (mainRef) {
+            const bottom = mainRef.scrollHeight - mainRef.clientHeight;
+
+            setBottomScroll(bottom - mainRef.scrollTop);
+            setTopScroll(mainRef.scrollTop);
+            return;
+        }
+        setBottomScroll(0);
+        setTopScroll(0);
+    }, [mainRef]);
 
     useEffect(() => {
         if (isOpen) {
@@ -164,19 +216,17 @@ export function Modal({
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        handleScroll();
+        mainRef?.addEventListener('scroll', handleScroll);
+
+        return () => {
+            mainRef?.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll, mainRef]);
+
     if (appElement) {
         ReactModal.setAppElement(appElement);
-    }
-
-    function getHeader(): ReactElement | null {
-        if (modalHeader) {
-            return (
-                <Header hasContent={!!modalHeader}>
-                    {modalHeader}
-                </Header>
-            );
-        }
-        return null;
     }
 
     return (
@@ -199,13 +249,41 @@ export function Modal({
                 style={customStyles}
                 contentLabel={ariaLabel}
                 shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-                {...device /* eslint-disable-line react/jsx-props-no-spreading */}
+                breakpoints={breakpoints}
+                isMobile={isMobile}
             >
-                {getHeader()}
+                {modalHeader && (
+                    <Header
+                        hasCloseButton={hasCloseButton}
+                        isMobile={isMobile}
+                        isTopScrolled={topScroll > 0}
+                        noPadding={noPadding}
+                    >
+                        {modalHeader}
+                    </Header>
+                )}
 
-                {children}
+                {children && (
+                    <Main
+                        hasCloseButton={hasCloseButton}
+                        isMobile={isMobile}
+                        noPadding={noPadding}
+                        ref={mainRefCallback}
+                    >
+                        {children}
+                    </Main>
+                )}
 
-                {modalFooter && <Footer>{modalFooter}</Footer>}
+                {modalFooter && (
+                    <Footer
+                        hasCloseButton={hasCloseButton}
+                        isBottomScrolled={bottomScroll > 0}
+                        isMobile={isMobile}
+                        noPadding={noPadding}
+                    >
+                        {modalFooter}
+                    </Footer>
+                )}
 
                 {hasCloseButton && (
                     <CloseIconButton
@@ -215,7 +293,7 @@ export function Modal({
                         buttonType="tertiary"
                         iconName="x"
                         onClick={onRequestClose}
-                        isMobile={device.isMobile}
+                        isMobile={isMobile}
                     />
                 )}
             </StyledModal>

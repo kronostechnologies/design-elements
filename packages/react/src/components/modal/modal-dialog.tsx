@@ -5,19 +5,9 @@ import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Modal } from './modal';
+import { Heading } from '../heading/heading';
 
 type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
-
-const Title = styled.h2<MobileDeviceContextProps>`
-    font-size: ${({ isMobile }) => (isMobile ? 1.5 : 1.25)}rem;
-    font-weight: var(--font-normal);
-    line-height: ${({ isMobile }) => (isMobile ? 2.25 : 2)}rem;
-    margin: 0;
-
-    :focus {
-        outline: none;
-    }
-`;
 
 const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
@@ -52,6 +42,7 @@ export interface ModalDialogProps {
     children?: ReactNode;
     className?: string;
     confirmButton?: { label?: string, onConfirm?(): void };
+    footerContent?: ReactElement;
     isOpen: boolean;
     subtitle?: string;
     title?: string;
@@ -68,6 +59,7 @@ export function ModalDialog({
     children,
     className,
     confirmButton,
+    footerContent,
     isOpen,
     onRequestClose,
     subtitle,
@@ -94,7 +86,17 @@ export function ModalDialog({
         if (title || subtitle) {
             return (
                 <>
-                    {title && <Title id={titleId} ref={titleRef} tabIndex={-1} isMobile={isMobile}>{title}</Title>}
+                    {title && (
+                        <Heading
+                            id={titleId}
+                            ref={titleRef}
+                            type={isMobile ? 'medium' : 'large'}
+                            tag="h2"
+                            noMargin
+                        >
+                            {title}
+                        </Heading>
+                    )}
                     {subtitle && (
                         <Subtitle hasTitle={title !== undefined} isMobile={isMobile}>{subtitle}</Subtitle>
                     )}
@@ -133,7 +135,7 @@ export function ModalDialog({
             className={className}
             modalHeader={getHeader()}
             hasCloseButton
-            modalFooter={getFooter()}
+            modalFooter={footerContent || getFooter()}
             role="dialog"
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
