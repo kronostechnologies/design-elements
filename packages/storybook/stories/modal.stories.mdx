@@ -106,3 +106,53 @@ The prop `noPadding` removes padding to give you a blank modal to work with.
         }}
     </Story>
 </Preview>
+
+### With header
+
+<Preview>
+    <Story name="With header">
+        {() => {
+            const {isModalOpen, closeModal, openModal} = useModal();
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
+                    <Modal
+                        appElement="#root"
+                        ariaLabel="Modal label"
+                        ariaDescribedby="story-description"
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        modalHeader={<b>Header content</b>}
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Modal>
+                </Fragment>
+            );
+        }}
+    </Story>
+</Preview>
+
+### With footer
+
+<Preview>
+    <Story name="With footer">
+        {() => {
+            const {isModalOpen, closeModal, openModal} = useModal();
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
+                    <Modal
+                        appElement="#root"
+                        ariaLabel="Modal label"
+                        ariaDescribedby="story-description"
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        modalFooter={<b>Footer content</b>}
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Modal>
+                </Fragment>
+            );
+        }}
+    </Story>
+</Preview>

@@ -119,4 +119,11 @@ describe('Modal-Dialog', () => {
 
         expect(baseElement).toMatchSnapshot();
     });
+
+    test('Matches snapshot (custom footer content)', () => {
+        const customContent = <p>Custom content</p>;
+        const { baseElement } = renderModal({ isOpen: true, footerContent: customContent });
+
+        expect(baseElement).toMatchSnapshot();
+    });
 });
