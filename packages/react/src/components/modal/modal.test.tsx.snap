@@ -63,8 +63,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 <div
@@ -148,8 +147,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-2x);
-  padding-top: var(--spacing-3x);
+  padding: var(--spacing-3x) var(--spacing-2x) 0;
 }
 
 <div
@@ -319,8 +317,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 0;
-  padding-top: 0;
+  padding: 0 0 0;
 }
 
 .c4 {
@@ -495,8 +492,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -701,8 +697,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-2x);
-  padding-top: var(--spacing-6x);
+  padding: var(--spacing-6x) var(--spacing-2x) 0;
 }
 
 .c4 {

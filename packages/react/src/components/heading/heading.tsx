@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
 export type Type = 'xlarge' | 'large' | 'medium' | 'small';
@@ -8,6 +8,7 @@ interface HeadingProps {
     bold?: boolean;
     children?: ReactNode;
     className?: string;
+    id?: string;
     noMargin?: boolean;
     tag?: Tag;
     type: Type;
@@ -59,14 +60,15 @@ function getComponent(type: Type): StyledComponent<'h1' | 'h2' | 'h3' | 'h4', De
     }
 }
 
-export function Heading({
+export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(({
     bold,
     className,
     children,
+    id,
     noMargin,
     tag,
     type,
-}: HeadingProps): ReactElement {
+}, ref) => {
     const HeadingComponent = getComponent(type);
 
     return (
@@ -74,9 +76,11 @@ export function Heading({
             as={tag}
             bold={bold}
             className={className}
+            id={id}
             noMargin={noMargin}
+            ref={ref}
         >
             {children}
         </HeadingComponent>
     );
-}
+});
