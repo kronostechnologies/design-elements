@@ -15,7 +15,7 @@ interface ContentProps extends Pick<DeviceContextProps, 'isMobile'> {
     hasCloseButton: boolean;
 }
 
-function getLateralPadding({ noPadding, isMobile }: ContentProps): string {
+function getPadding({ noPadding, isMobile }: ContentProps): string {
     if (noPadding) {
         return '0';
     }
@@ -34,16 +34,6 @@ function getTopPadding({ hasCloseButton, noPadding, isMobile }: ContentProps): s
             return 'var(--spacing-6x)';
         }
         return 'var(--spacing-3x)';
-    }
-    return 'var(--spacing-4x)';
-}
-
-function getBottomPadding({ isMobile, noPadding }: StyledModalProps): string {
-    if (noPadding) {
-        return '0';
-    }
-    if (isMobile) {
-        return 'var(--spacing-2x)';
     }
     return 'var(--spacing-4x)';
 }
@@ -72,7 +62,7 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     &::after {
         content: '';
         display: block;
-        padding-bottom: ${getBottomPadding};
+        padding-bottom: ${getPadding};
     }
 
     &:focus {
@@ -85,8 +75,7 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
 const Main = styled.main<ContentProps>`
     max-height: 100%;
     overflow-y: auto;
-    padding: 0 ${getLateralPadding};
-    padding-top: ${getTopPadding};
+    padding: ${getTopPadding} ${getPadding} 0;
 `;
 
 interface HeaderProps extends ContentProps {
@@ -95,7 +84,7 @@ interface HeaderProps extends ContentProps {
 const Header = styled.header<HeaderProps>`
     /* TODO change colors when updating thematization */
     border-bottom: 1px solid ${({ isTopScrolled }) => (isTopScrolled ? '#878f9a' : 'transparent')};
-    padding: ${getTopPadding} ${getLateralPadding} var(--spacing-3x);
+    padding: ${getTopPadding} ${getPadding} var(--spacing-3x);
 
     & + ${Main} {
         padding-top: 0;
@@ -114,7 +103,7 @@ interface FooterProps extends ContentProps {
 const Footer = styled.footer<FooterProps>`
     /* TODO change colors when updating thematization */
     border-top: 1px solid ${({ isBottomScrolled }) => (isBottomScrolled ? '#878f9a' : 'transparent')};
-    padding: var(--spacing-4x) ${getLateralPadding} 0;
+    padding: var(--spacing-4x) ${getPadding} 0;
 `;
 
 const customStyles = {
@@ -202,10 +191,10 @@ export function Modal({
 
             setBottomScroll(bottom - mainRef.scrollTop);
             setTopScroll(mainRef.scrollTop);
-            return;
+        } else {
+            setBottomScroll(0);
+            setTopScroll(0);
         }
-        setBottomScroll(0);
-        setTopScroll(0);
     }, [mainRef]);
 
     useEffect(() => {
@@ -220,9 +209,7 @@ export function Modal({
         handleScroll();
         mainRef?.addEventListener('scroll', handleScroll);
 
-        return () => {
-            mainRef?.removeEventListener('scroll', handleScroll);
-        };
+        return () => mainRef?.removeEventListener('scroll', handleScroll);
     }, [handleScroll, mainRef]);
 
     if (appElement) {

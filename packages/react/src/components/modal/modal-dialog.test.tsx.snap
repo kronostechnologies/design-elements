@@ -208,8 +208,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c5 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c1 {
@@ -471,8 +470,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c5 {
@@ -725,8 +723,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c9 {
@@ -1010,8 +1007,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c4 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c1 {
@@ -1328,8 +1324,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 .c4 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c1 {
@@ -1622,8 +1617,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c5 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-4x);
-  padding-top: var(--spacing-4x);
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c1 {
@@ -1959,8 +1953,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c5 {
   max-height: 100%;
   overflow-y: auto;
-  padding: 0 var(--spacing-2x);
-  padding-top: var(--spacing-6x);
+  padding: var(--spacing-6x) var(--spacing-2x) 0;
 }
 
 .c1 {
