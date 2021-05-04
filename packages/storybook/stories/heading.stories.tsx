@@ -15,6 +15,8 @@ export const Normal: VoidFunctionComponent = () => (
         <Heading type="medium" bold>Heading (Medium bold)</Heading>
         <Heading type="small">Heading (Small)</Heading>
         <Heading type="small" bold>Heading (Small bold)</Heading>
+        <Heading type="subtitle">Heading (Subtitle)</Heading>
+        <Heading type="subtitle" bold>Heading (Subtitle bold)</Heading>
     </>
 );
 
