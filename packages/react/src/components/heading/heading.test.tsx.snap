@@ -8,11 +8,17 @@ exports[`Heading matches snapshot (large) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<h2
-  class="c0"
+<ForwardRef
+  type="large"
 >
-  Heading
-</h2>
+  <styled.h2>
+    <h2
+      className="c0"
+    >
+      Heading
+    </h2>
+  </styled.h2>
+</ForwardRef>
 `;
 
 exports[`Heading matches snapshot (medium) 1`] = `
@@ -23,11 +29,17 @@ exports[`Heading matches snapshot (medium) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<h3
-  class="c0"
+<ForwardRef
+  type="medium"
 >
-  Heading
-</h3>
+  <styled.h3>
+    <h3
+      className="c0"
+    >
+      Heading
+    </h3>
+  </styled.h3>
+</ForwardRef>
 `;
 
 exports[`Heading matches snapshot (no margin) 1`] = `
@@ -38,11 +50,20 @@ exports[`Heading matches snapshot (no margin) 1`] = `
   margin: 0;
 }
 
-<h3
-  class="c0"
+<ForwardRef
+  noMargin={true}
+  type="medium"
 >
-  Heading
-</h3>
+  <styled.h3
+    noMargin={true}
+  >
+    <h3
+      className="c0"
+    >
+      Heading
+    </h3>
+  </styled.h3>
+</ForwardRef>
 `;
 
 exports[`Heading matches snapshot (small) 1`] = `
@@ -53,11 +74,39 @@ exports[`Heading matches snapshot (small) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<h4
-  class="c0"
+<ForwardRef
+  type="small"
 >
-  Heading
-</h4>
+  <styled.h4>
+    <h4
+      className="c0"
+    >
+      Heading
+    </h4>
+  </styled.h4>
+</ForwardRef>
+`;
+
+exports[`Heading matches snapshot (subtitle) 1`] = `
+.c0 {
+  color: #60666E;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+  margin: var(--spacing-3x) 0;
+}
+
+<ForwardRef
+  type="subtitle"
+>
+  <styled.h2>
+    <h2
+      className="c0"
+    >
+      Heading
+    </h2>
+  </styled.h2>
+</ForwardRef>
 `;
 
 exports[`Heading matches snapshot (xlarge) 1`] = `
@@ -68,9 +117,15 @@ exports[`Heading matches snapshot (xlarge) 1`] = `
   margin: var(--spacing-4x) 0;
 }
 
-<h1
-  class="c0"
+<ForwardRef
+  type="xlarge"
 >
-  Heading
-</h1>
+  <styled.h1>
+    <h1
+      className="c0"
+    >
+      Heading
+    </h1>
+  </styled.h1>
+</ForwardRef>
 `;
