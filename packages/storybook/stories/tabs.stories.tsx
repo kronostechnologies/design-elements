@@ -84,3 +84,24 @@ export const WithIcons: Story = () => {
         <Tabs tabs={tabs} />
     );
 };
+
+export const WithForceRenderTabPanels: Story = () => {
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            panelContent: <Card>First panel</Card>,
+        },
+        {
+            title: 'Second Button',
+            panelContent: <Card>Second panel</Card>,
+        },
+        {
+            title: 'Third Button',
+            panelContent: <Card>Third panel</Card>,
+        },
+    ];
+
+    return (
+        <Tabs tabs={tabs} forceRenderTabPanels />
+    );
+};
