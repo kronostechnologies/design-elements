@@ -55,7 +55,7 @@ export const DesktopInsideShadowDom: Story = () => (
         </ApplicationMenu>
     </StyledDiv>
 );
-Desktop.decorators = [DesktopDecorator, ShadowDomDecorator];
+DesktopInsideShadowDom.decorators = [DesktopDecorator, ShadowDomDecorator];
 
 export const Mobile: Story = () => (
     <StyledDiv>
