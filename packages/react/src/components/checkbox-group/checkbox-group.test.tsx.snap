@@ -14,53 +14,25 @@ Array [
   >
     Vehicule
   </legend>,
-  .c2 {
+  .c5 {
   color: #FFFFFF;
+  display: none;
   height: 100%;
-  opacity: 0;
+  left: 0;
   position: absolute;
   width: 100%;
 }
 
-.c0 {
-  cursor: pointer;
-  display: block;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-3x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
-.c0 input {
-  height: 0;
-  opacity: 0;
+.c7 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
   position: absolute;
-  width: 0;
+  width: 100%;
 }
 
-.c0 input:checked + .box {
-  background-color: #006296;
-  border: 1px solid #006296;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
-}
-
-.c0 input:focus + .box {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
-}
-
-.c0 .box {
+.c3 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -76,12 +48,56 @@ Array [
   width: 16px;
 }
 
-.c0:hover .box {
+.c3:hover {
   border: 1px solid #006296;
 }
 
-.c3 input:checked + .box .c1 {
-  opacity: 1;
+.c1 {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.c1:checked + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:checked + .c2 > .c4 {
+  display: block;
+}
+
+.c1:indeterminate + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:indeterminate + .c2 > .c6 {
+  display: block;
+}
+
+.c1:focus + .c2 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0 {
+  cursor: pointer;
+  display: block;
+  line-height: 1.5rem;
+  min-height: 24px;
+  padding-left: var(--spacing-3x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: var(--spacing-1x);
 }
 
 <label
@@ -89,65 +105,49 @@ Array [
   >
     Boat
     <input
+      class="c1"
       name="vehicule1"
       type="checkbox"
       value="boat"
     />
     <span
-      class="box"
+      class="c2 c3"
     >
       <svg
-        class="c1 c2 checkMark"
+        class="c4 c5"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+      <svg
+        class="c6 c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
       />
     </span>
   </label>,
-  .c2 {
+  .c5 {
   color: #FFFFFF;
+  display: none;
   height: 100%;
-  opacity: 0;
+  left: 0;
   position: absolute;
   width: 100%;
 }
 
-.c0 {
-  cursor: pointer;
-  display: block;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-3x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
-.c0 input {
-  height: 0;
-  opacity: 0;
+.c7 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
   position: absolute;
-  width: 0;
+  width: 100%;
 }
 
-.c0 input:checked + .box {
-  background-color: #006296;
-  border: 1px solid #006296;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
-}
-
-.c0 input:focus + .box {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
-}
-
-.c0 .box {
+.c3 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -163,12 +163,56 @@ Array [
   width: 16px;
 }
 
-.c0:hover .box {
+.c3:hover {
   border: 1px solid #006296;
 }
 
-.c3 input:checked + .box .c1 {
-  opacity: 1;
+.c1 {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.c1:checked + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:checked + .c2 > .c4 {
+  display: block;
+}
+
+.c1:indeterminate + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:indeterminate + .c2 > .c6 {
+  display: block;
+}
+
+.c1:focus + .c2 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0 {
+  cursor: pointer;
+  display: block;
+  line-height: 1.5rem;
+  min-height: 24px;
+  padding-left: var(--spacing-3x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: var(--spacing-1x);
 }
 
 <label
@@ -177,68 +221,49 @@ Array [
     Plane
     <input
       checked=""
+      class="c1"
       name="vehicule2"
       type="checkbox"
       value="plane"
     />
     <span
-      class="box"
+      class="c2 c3"
     >
       <svg
-        class="c1 c2 checkMark"
+        class="c4 c5"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+      <svg
+        class="c6 c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
       />
     </span>
   </label>,
-  .c2 {
+  .c5 {
   color: #FFFFFF;
+  display: none;
   height: 100%;
-  opacity: 0;
+  left: 0;
   position: absolute;
   width: 100%;
 }
 
-.c3 input:checked + .box .c1 {
-  opacity: 1;
-}
-
-.c0 {
-  display: block;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-3x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
-.c0 input {
-  height: 0;
-  opacity: 0;
+.c7 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
   position: absolute;
-  width: 0;
+  width: 100%;
 }
 
-.c0 input:checked + .box {
-  background-color: #006296;
-  border: 1px solid #006296;
-}
-
-.c0 input:checked + .box .c1 {
-  opacity: 1;
-}
-
-.c0 input:focus + .box {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
-}
-
-.c0 .box {
+.c3 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -254,41 +279,46 @@ Array [
   width: 16px;
 }
 
-.c0:hover .box {
+.c3:hover {
   border: 1px solid #DBDEE1;
 }
 
-<label
-    class="c0"
-    disabled=""
-  >
-    Car
-    <input
-      disabled=""
-      name="vehicule3"
-      type="checkbox"
-      value="car"
-    />
-    <span
-      class="box"
-    >
-      <svg
-        class="c1 c2 checkMark"
-      />
-    </span>
-  </label>,
-  .c2 {
-  color: #FFFFFF;
-  height: 100%;
+.c1 {
+  height: 0;
   opacity: 0;
   position: absolute;
-  width: 100%;
+  width: 0;
+}
+
+.c1:checked + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:checked + .c2 > .c4 {
+  display: block;
+}
+
+.c1:indeterminate + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:indeterminate + .c2 > .c6 {
+  display: block;
+}
+
+.c1:focus + .c2 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
 }
 
 .c0 {
-  cursor: pointer;
+  cursor: default;
   display: block;
   line-height: 1.5rem;
+  min-height: 24px;
   padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
@@ -301,29 +331,57 @@ Array [
   margin-top: var(--spacing-1x);
 }
 
-.c0 input {
-  height: 0;
-  opacity: 0;
+<label
+    class="c0"
+    disabled=""
+  >
+    Car
+    <input
+      class="c1"
+      disabled=""
+      name="vehicule3"
+      type="checkbox"
+      value="car"
+    />
+    <span
+      class="c2 c3"
+      disabled=""
+    >
+      <svg
+        class="c4 c5"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+      <svg
+        class="c6 c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+    </span>
+  </label>,
+  .c5 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
   position: absolute;
-  width: 0;
+  width: 100%;
 }
 
-.c0 input:checked + .box {
-  background-color: #006296;
-  border: 1px solid #006296;
+.c7 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
-.c0 input:checked + .box .c1 {
-  opacity: 1;
-}
-
-.c0 input:focus + .box {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
-}
-
-.c0 .box {
+.c3 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -339,12 +397,56 @@ Array [
   width: 16px;
 }
 
-.c0:hover .box {
+.c3:hover {
   border: 1px solid #006296;
 }
 
-.c3 input:checked + .box .c1 {
-  opacity: 1;
+.c1 {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.c1:checked + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:checked + .c2 > .c4 {
+  display: block;
+}
+
+.c1:indeterminate + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:indeterminate + .c2 > .c6 {
+  display: block;
+}
+
+.c1:focus + .c2 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0 {
+  cursor: pointer;
+  display: block;
+  line-height: 1.5rem;
+  min-height: 24px;
+  padding-left: var(--spacing-3x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: var(--spacing-1x);
 }
 
 <label
@@ -352,15 +454,27 @@ Array [
   >
     Bike
     <input
+      class="c1"
       name="vehicule4"
       type="checkbox"
       value="bike"
     />
     <span
-      class="box"
+      class="c2 c3"
     >
       <svg
-        class="c1 c2 checkMark"
+        class="c4 c5"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+      <svg
+        class="c6 c7"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
       />
     </span>
   </label>,
