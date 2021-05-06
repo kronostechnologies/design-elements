@@ -6,6 +6,7 @@ export { NavMenuButton } from './components/nav-menu-button/nav-menu-button';
 export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
 
 // Form Elements
+export { Checkbox } from './components/checkbox/checkbox';
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
 export { Datepicker, DatepickerHandles } from './components/datepicker/datepicker';
 export { MoneyInput } from './components/money-input/money-input';

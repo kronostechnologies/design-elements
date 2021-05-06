@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox matches snapshot 1`] = `
+.c5 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c7 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c3 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 16px;
+}
+
+.c3:hover {
+  border: 1px solid #006296;
+}
+
+.c1 {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.c1:checked + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:checked + .c2 > .c4 {
+  display: block;
+}
+
+.c1:indeterminate + .c2 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c1:indeterminate + .c2 > .c6 {
+  display: block;
+}
+
+.c1:focus + .c2 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0 {
+  cursor: pointer;
+  display: block;
+  line-height: 1.5rem;
+  min-height: 24px;
+  padding-left: var(--spacing-3x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: var(--spacing-1x);
+}
+
+<ForwardRef
+  label="Boat"
+  name="vehicule"
+  value="boat"
+>
+  <styled.label
+    hasLabel={true}
+    key="vehicule-boat"
+  >
+    <label
+      className="c0"
+    >
+      Boat
+      <styled.input
+        name="vehicule"
+        type="checkbox"
+        value="boat"
+      >
+        <input
+          className="c1"
+          name="vehicule"
+          type="checkbox"
+          value="boat"
+        />
+      </styled.input>
+      <styled.span>
+        <span
+          className="c2 c3"
+        >
+          <Styled(Icon)>
+            <Icon
+              className="c4 c5"
+              color="currentColor"
+              name="check"
+              size="24"
+            >
+              <svg
+                className="c4 c5"
+                color="currentColor"
+                focusable={false}
+                height="24"
+                width="24"
+              />
+            </Icon>
+          </Styled(Icon)>
+          <Styled(Icon)>
+            <Icon
+              className="c6 c7"
+              color="currentColor"
+              name="minus"
+              size="24"
+            >
+              <svg
+                className="c6 c7"
+                color="currentColor"
+                focusable={false}
+                height="24"
+                width="24"
+              />
+            </Icon>
+          </Styled(Icon)>
+        </span>
+      </styled.span>
+    </label>
+  </styled.label>
+</ForwardRef>
+`;
