@@ -17,6 +17,7 @@ import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
+import { getRootDocument } from '../../utils/dom';
 
 const StyledNav = styled.nav`
     position: relative;
@@ -117,7 +118,8 @@ export function NavMenuButton({
 
         if (isOpen) {
             setTimeout(() => {
-                const isFocusInsideNav = navRef.current?.contains(document.activeElement);
+                const focusedElement = getRootDocument(navRef.current)?.activeElement;
+                const isFocusInsideNav = navRef.current?.contains(focusedElement || null);
 
                 if (!isFocusInsideNav) {
                     setOpen(false);
