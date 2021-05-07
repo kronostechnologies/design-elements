@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
+    UseRowSelectHooks,
+    UseRowSelectInstanceProps,
+    UseRowSelectOptions,
+    UseRowSelectRowProps,
+    UseRowSelectState,
     UseSortByColumnOptions,
     UseSortByColumnProps,
     UseSortByHooks,
@@ -9,21 +14,29 @@ import {
 } from 'react-table';
 
 declare module 'react-table' {
-  export interface TableOptions<D extends object>
-    extends UseSortByOptions<D>,
-      Record<string, any> {}
+    export interface TableOptions<D extends object>
+        extends UseSortByOptions<D>,
+        UseRowSelectOptions<D>,
+        Record<string, any> {}
 
-  export type Hooks<D extends object = {}> = UseSortByHooks<D>
+    export interface Hooks<D extends object = {}>
+        extends UseSortByHooks<D>,
+        UseRowSelectHooks<D> {}
 
-  export type TableInstance<D extends object = {}> = UseSortByInstanceProps<D>
+    export interface TableInstance<D extends object = {}>
+        extends UseSortByInstanceProps<D>,
+        UseRowSelectInstanceProps<D> {}
 
-  /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
-  export interface TableState<D extends object = {}>
-    extends UseSortByState<D> {}
+    export interface TableState<D extends object = {}>
+        extends UseSortByState<D>,
+        UseRowSelectState<D> {}
 
-  export interface ColumnInterface<D extends object = {}>
-    extends UseSortByColumnOptions<D>,
-      Record<string, any> {}
+    export interface ColumnInterface<D extends object = {}>
+        extends UseSortByColumnOptions<D>,
+        Record<string, any> {}
 
-  export type ColumnInstance<D extends object = {}> = UseSortByColumnProps<D>
+    export type ColumnInstance<D extends object = {}> = UseSortByColumnProps<D>;
+
+    /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+    export interface Row<D extends object = {}> extends UseRowSelectRowProps<D> {}
 }

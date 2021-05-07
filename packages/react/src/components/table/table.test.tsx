@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Table, TableColumn, TableProps } from './table';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
@@ -19,11 +19,11 @@ const data: TestData[] = [
     },
     {
         column1: 'Hello',
-        column2: 'World',
+        column2: 'Planet',
     },
     {
         column1: 'Hello',
-        column2: 'World',
+        column2: 'Galaxy',
     },
 ];
 
@@ -100,6 +100,70 @@ describe('Table', () => {
         expect(getByTestId(wrapper, 'sort-icon').prop('sort')).toBe('ascending');
     });
 
+    test('onRowClick callback is called when a row is clicked', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                selectableRows
+                columns={columns}
+                data={data}
+                onRowClick={callback}
+            />,
+        );
+
+        getByTestId(wrapper, 'table-row-0').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('onSelectedRowsChange callback is called on first render', () => {
+        const callback = jest.fn();
+
+        mountWithTheme(
+            <Table<TestData>
+                selectableRows
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={callback}
+            />,
+        );
+
+        expect(callback).toHaveBeenCalledTimes(1);
+        expect(callback).toHaveBeenCalledWith([]);
+    });
+
+    test('onSelectedRowsChange callback is called when row-checkbox is checked', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                selectableRows
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={callback}
+            />,
+        );
+
+        getByTestId(wrapper, 'row-checkbox-0').find('input').simulate('change', { target: { checked: true } });
+
+        expect(callback).nthCalledWith(2, [data[0]]);
+    });
+
+    test('onSelectedRowsChange callback is called with all rows when row-checkbox-all is checked', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Table<TestData>
+                selectableRows
+                columns={columns}
+                data={data}
+                onSelectedRowsChange={callback}
+            />,
+        );
+
+        getByTestId(wrapper, 'row-checkbox-all').find('input').simulate('change', { target: { checked: true } });
+
+        expect(callback).nthCalledWith(2, data);
+    });
+
     test('has desktop styles', () => {
         const tree = renderTable(columns, 'desktop');
 
@@ -156,6 +220,12 @@ describe('Table', () => {
 
     test('has error rows styles', () => {
         const tree = renderWithProviders(<Table<TestData> columns={columns} data={errorData} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has selectable rows styles', () => {
+        const tree = renderWithProviders(<Table<TestData> selectableRows columns={columns} data={data} />);
 
         expect(tree).toMatchSnapshot();
     });
