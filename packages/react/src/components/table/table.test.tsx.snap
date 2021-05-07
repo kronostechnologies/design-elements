@@ -44,7 +44,7 @@ exports[`Table has clickable rows styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -82,6 +82,7 @@ exports[`Table has clickable rows styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="button"
       tabindex="0"
     >
@@ -98,6 +99,7 @@ exports[`Table has clickable rows styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="button"
       tabindex="0"
     >
@@ -109,11 +111,12 @@ exports[`Table has clickable rows styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="button"
       tabindex="0"
     >
@@ -125,7 +128,7 @@ exports[`Table has clickable rows styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -165,7 +168,7 @@ exports[`Table has custom text alignment 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -205,6 +208,7 @@ exports[`Table has custom text alignment 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -222,6 +226,7 @@ exports[`Table has custom text alignment 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -234,11 +239,12 @@ exports[`Table has custom text alignment 1`] = `
         role="cell"
         style="text-align:center"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -251,7 +257,7 @@ exports[`Table has custom text alignment 1`] = `
         role="cell"
         style="text-align:center"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -291,7 +297,7 @@ exports[`Table has desktop styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -329,6 +335,7 @@ exports[`Table has desktop styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -344,6 +351,7 @@ exports[`Table has desktop styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -354,11 +362,12 @@ exports[`Table has desktop styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -369,7 +378,7 @@ exports[`Table has desktop styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -415,7 +424,7 @@ exports[`Table has error rows styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -453,6 +462,7 @@ exports[`Table has error rows styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -468,6 +478,7 @@ exports[`Table has error rows styles 1`] = `
     </tr>
     <tr
       class="c2"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -483,6 +494,7 @@ exports[`Table has error rows styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -533,7 +545,7 @@ exports[`Table has mobile styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -571,6 +583,7 @@ exports[`Table has mobile styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -586,6 +599,7 @@ exports[`Table has mobile styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -596,11 +610,12 @@ exports[`Table has mobile styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -611,7 +626,7 @@ exports[`Table has mobile styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -651,7 +666,7 @@ exports[`Table has rowNumbers styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -669,7 +684,7 @@ exports[`Table has rowNumbers styles 1`] = `
       role="row"
     >
       <th
-        class="eq-table__number-column"
+        class="eq-table__util-column"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -695,10 +710,11 @@ exports[`Table has rowNumbers styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
-        class="eq-table__number-column"
+        class="eq-table__util-column"
         role="cell"
       >
         1
@@ -716,13 +732,275 @@ exports[`Table has rowNumbers styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
-        class="eq-table__number-column"
+        class="eq-table__util-column"
         role="cell"
       >
         2
+      </td>
+      <td
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        role="cell"
+      >
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c1"
+      data-testid="table-row-2"
+      role="row"
+    >
+      <td
+        class="eq-table__util-column"
+        role="cell"
+      >
+        3
+      </td>
+      <td
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        role="cell"
+      >
+        Galaxy
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has selectable rows styles 1`] = `
+.c6 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c8 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 16px;
+}
+
+.c4:hover {
+  border: 1px solid #006296;
+}
+
+.c2 {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.c2:checked + .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c2:checked + .c3 > .c5 {
+  display: block;
+}
+
+.c2:indeterminate + .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c2:indeterminate + .c3 > .c7 {
+  display: block;
+}
+
+.c2:focus + .c3 {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c1 {
+  cursor: pointer;
+  display: block;
+  line-height: 1.5rem;
+  min-height: 24px;
+  padding-left: 16px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:not(:first-of-type) {
+  margin-top: var(--spacing-1x);
+}
+
+.c9 {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  min-width: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+<table
+  class="c0"
+  role="table"
+>
+  <thead>
+    <tr
+      role="row"
+    >
+      <th
+        class="eq-table__util-column"
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        <label
+          class="c1"
+        >
+          <input
+            class="c2"
+            type="checkbox"
+          />
+          <span
+            class="c3 c4"
+          >
+            <svg
+              class="c5 c6"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+            <svg
+              class="c7 c8"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+        </label>
+      </th>
+      <th
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 1
+      </th>
+      <th
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 2
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    role="rowgroup"
+  >
+    <tr
+      class="c9"
+      data-testid="table-row-0"
+      role="row"
+    >
+      <td
+        class="eq-table__util-column"
+        role="cell"
+      >
+        <label
+          class="c1"
+        >
+          <input
+            class="c2"
+            type="checkbox"
+          />
+          <span
+            class="c3 c4"
+          >
+            <svg
+              class="c5 c6"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+            <svg
+              class="c7 c8"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+        </label>
       </td>
       <td
         role="cell"
@@ -736,14 +1014,40 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c9"
+      data-testid="table-row-1"
       role="row"
     >
       <td
-        class="eq-table__number-column"
+        class="eq-table__util-column"
         role="cell"
       >
-        3
+        <label
+          class="c1"
+        >
+          <input
+            class="c2"
+            type="checkbox"
+          />
+          <span
+            class="c3 c4"
+          >
+            <svg
+              class="c5 c6"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+            <svg
+              class="c7 c8"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+        </label>
       </td>
       <td
         role="cell"
@@ -753,7 +1057,54 @@ exports[`Table has rowNumbers styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c9"
+      data-testid="table-row-2"
+      role="row"
+    >
+      <td
+        class="eq-table__util-column"
+        role="cell"
+      >
+        <label
+          class="c1"
+        >
+          <input
+            class="c2"
+            type="checkbox"
+          />
+          <span
+            class="c3 c4"
+          >
+            <svg
+              class="c5 c6"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+            <svg
+              class="c7 c8"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
+        </label>
+      </td>
+      <td
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        role="cell"
+      >
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -793,7 +1144,7 @@ exports[`Table has small rowSize styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -831,6 +1182,7 @@ exports[`Table has small rowSize styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -846,6 +1198,7 @@ exports[`Table has small rowSize styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -856,11 +1209,12 @@ exports[`Table has small rowSize styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -871,7 +1225,7 @@ exports[`Table has small rowSize styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -931,7 +1285,7 @@ exports[`Table has sorting styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -1003,6 +1357,7 @@ exports[`Table has sorting styles 1`] = `
   >
     <tr
       class="c3"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -1018,6 +1373,7 @@ exports[`Table has sorting styles 1`] = `
     </tr>
     <tr
       class="c3"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -1028,11 +1384,12 @@ exports[`Table has sorting styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c3"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -1043,7 +1400,7 @@ exports[`Table has sorting styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -1087,7 +1444,7 @@ exports[`Table has striped styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -1125,6 +1482,7 @@ exports[`Table has striped styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -1140,6 +1498,7 @@ exports[`Table has striped styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -1150,11 +1509,12 @@ exports[`Table has striped styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -1165,7 +1525,7 @@ exports[`Table has striped styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
@@ -1205,7 +1565,7 @@ exports[`Table has tablet styles 1`] = `
   border-right: 0;
 }
 
-.c0 .eq-table__number-column {
+.c0 .eq-table__util-column {
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
@@ -1243,6 +1603,7 @@ exports[`Table has tablet styles 1`] = `
   >
     <tr
       class="c1"
+      data-testid="table-row-0"
       role="row"
     >
       <td
@@ -1258,6 +1619,7 @@ exports[`Table has tablet styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-1"
       role="row"
     >
       <td
@@ -1268,11 +1630,12 @@ exports[`Table has tablet styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Planet
       </td>
     </tr>
     <tr
       class="c1"
+      data-testid="table-row-2"
       role="row"
     >
       <td
@@ -1283,7 +1646,7 @@ exports[`Table has tablet styles 1`] = `
       <td
         role="cell"
       >
-        World
+        Galaxy
       </td>
     </tr>
   </tbody>
