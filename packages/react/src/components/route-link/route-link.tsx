@@ -6,9 +6,9 @@ import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from './styles/styled-link';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const Link = styled(StyledLink)<{isMobile: boolean, $hasLabel: boolean}>`
+const Link = styled(StyledLink)<{ $isMobile: boolean, $hasLabel: boolean }>`
     color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
 
     svg {
         margin-right: ${({ $hasLabel }) => ($hasLabel ? 'var(--spacing-1x)' : '0')};
@@ -60,7 +60,7 @@ export function RouteLink({
             disabled={disabled}
             exact={exact}
             $hasLabel={!!label}
-            isMobile={isMobile}
+            $isMobile={isMobile}
             tabIndex={disabled ? -1 : 0}
             to={href}
             type="route"
