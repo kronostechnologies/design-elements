@@ -9,6 +9,7 @@ import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 export type BreadcrumbElement = NavMenuOption;
 
 interface BreadcrumbProps {
+    className?: string;
     history: BreadcrumbElement[];
 }
 
@@ -40,7 +41,7 @@ const StyledIconButton = styled(IconButton)`
     vertical-align: middle;
 `;
 
-export function Breadcrumb({ history }: BreadcrumbProps): ReactElement {
+export function Breadcrumb({ className, history }: BreadcrumbProps): ReactElement {
     const [isOpen, setOpen] = useState(false);
     const [focusedValue, setFocusedValue] = useState('');
 
@@ -87,7 +88,7 @@ export function Breadcrumb({ history }: BreadcrumbProps): ReactElement {
     }
 
     return (
-        <nav aria-label="breadcrumb" ref={navRef}>
+        <nav aria-label="breadcrumb" className={className} ref={navRef}>
             <StyledOL>
                 {history.length > 1 && (
                     <StyledLi>
