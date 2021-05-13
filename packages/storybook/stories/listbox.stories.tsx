@@ -42,7 +42,7 @@ export const Normal: Story = () => (
     />
 );
 
-export const ListboxWithAutofocus: Story = () => (
+export const WithAutofocus: Story = () => (
     <Listbox
         options={options}
         onChange={(option) => console.info('onChange', option)}
@@ -50,7 +50,7 @@ export const ListboxWithAutofocus: Story = () => (
     />
 );
 
-export const ListboxWithMultiselect: Story = () => (
+export const WithMultiselect: Story = () => (
     <Listbox
         checkIndicator
         defaultValue={['optionA', 'optionC']}
@@ -60,7 +60,7 @@ export const ListboxWithMultiselect: Story = () => (
     />
 );
 
-export const ListboxWithCheck: Story = () => (
+export const WithCheck: Story = () => (
     <Listbox
         checkIndicator
         defaultValue="optionC"
@@ -69,7 +69,7 @@ export const ListboxWithCheck: Story = () => (
     />
 );
 
-export const ListboxWithThreeItemsVisible: Story = () => (
+export const WithThreeItemsVisible: Story = () => (
     <Listbox
         options={options}
         onChange={(option) => console.info('onChange', option)}
@@ -77,10 +77,40 @@ export const ListboxWithThreeItemsVisible: Story = () => (
     />
 );
 
-export const ListboxWithoutOptionLabel: Story = () => (
+export const WithoutOptionLabel: Story = () => (
     <Listbox
         options={optionsWithoutLabel}
         onChange={(option) => console.info('onChange', option)}
         numberOfItemsVisible={3}
     />
 );
+
+export const WithoutDisabledOptions: Story = () => {
+    const disabledOptions = [
+        {
+            label: 'Option A',
+            value: 'optionA',
+        },
+        {
+            label: 'Option B',
+            value: 'optionB',
+            disabled: true,
+        },
+        {
+            label: 'Option C',
+            value: 'optionC',
+            disabled: true,
+        },
+        {
+            label: 'Option D',
+            value: 'optionD',
+        },
+    ];
+
+    return (
+        <Listbox
+            options={disabledOptions}
+            onChange={(option) => console.info('onChange', option)}
+        />
+    );
+};

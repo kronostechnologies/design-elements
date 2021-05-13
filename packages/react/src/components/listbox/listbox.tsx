@@ -9,7 +9,7 @@ import React, {
     useMemo,
     useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -17,6 +17,7 @@ import { Icon } from '../icon/icon';
 type Value = string | string[];
 
 export interface ListboxOption {
+    disabled?: boolean;
     value: string;
     // Option label, if not provided will be set with value
     label?: string;
@@ -95,6 +96,7 @@ interface ListProps {
 }
 
 interface ListItemProps {
+    disabled?: boolean;
     isMobile: boolean;
     selected: boolean;
     focused: boolean;
@@ -167,6 +169,12 @@ const ListItem = styled.li<ListItemProps>`
     &:focus {
         outline: none;
     }
+
+    ${({ disabled, theme }) => disabled && css`
+        background-color: ${theme.greys.white};
+        color: ${theme.greys['mid-grey']};
+        cursor: default;
+    `}
 `;
 
 const CheckIndicator = styled(Icon)`
@@ -314,6 +322,44 @@ export const Listbox = forwardRef(({
         onChange?.(option);
     }, [multiselect, onChange, selectedOptionValue]);
 
+    const getPrevOptionFromFocusIndex = useCallback((index: number): ListOption => (
+        index === 0 ? list[list.length - 1] : list[index - 1]
+    ), [list]);
+
+    const getPrevSelectableOption = useCallback((focusIndex: number): ListOption => {
+        let option = getPrevOptionFromFocusIndex(focusIndex);
+
+        if (option.disabled) {
+            let i = 0;
+
+            while (option.disabled && i < list.length) {
+                option = getPrevOptionFromFocusIndex(option.focusIndex);
+                i += 1;
+            }
+        }
+
+        return option;
+    }, [list, getPrevOptionFromFocusIndex]);
+
+    const getNextOptionFromFocusIndex = useCallback((index: number): ListOption => (
+        list.length === index + 1 ? list[0] : list[index + 1]
+    ), [list]);
+
+    const getNextSelectableOption = useCallback((focusIndex: number): ListOption => {
+        let option = getNextOptionFromFocusIndex(focusIndex);
+
+        if (option.disabled) {
+            let i = 0;
+
+            while (option.disabled && i < list.length) {
+                option = getNextOptionFromFocusIndex(option.focusIndex);
+                i += 1;
+            }
+        }
+
+        return option;
+    }, [list, getNextOptionFromFocusIndex]);
+
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
         (option) => () => selectOption(option), [selectOption],
     );
@@ -378,7 +424,7 @@ export const Listbox = forwardRef(({
             }
             case 'ArrowUp': {
                 e.preventDefault();
-                const prevOption = selectedFocusIndex === 0 ? list[list.length - 1] : list[selectedFocusIndex - 1];
+                const prevOption = getPrevSelectableOption(selectedFocusIndex);
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
@@ -391,7 +437,7 @@ export const Listbox = forwardRef(({
             }
             case 'ArrowDown': {
                 e.preventDefault();
-                const nextOption = list.length === selectedFocusIndex + 1 ? list[0] : list[selectedFocusIndex + 1];
+                const nextOption = getNextSelectableOption(selectedFocusIndex);
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
@@ -405,7 +451,15 @@ export const Listbox = forwardRef(({
         }
 
         onKeyDown?.(e);
-    }, [list, onFocusedValueChange, onKeyDown, selectedFocusIndex, selectOption]);
+    }, [
+        list,
+        onFocusedValueChange,
+        onKeyDown,
+        selectedFocusIndex,
+        selectOption,
+        getPrevSelectableOption,
+        getNextSelectableOption,
+    ]);
 
     function getAriaActiveDescendant(optionIndex: number): string | undefined {
         if (optionIndex >= 0 && list[optionIndex]) {
@@ -439,15 +493,17 @@ export const Listbox = forwardRef(({
             >
                 {list.map((option) => (
                     <ListItem
+                        aria-disabled={option.disabled}
                         aria-label={option.label || option.value}
                         aria-selected={isOptionSelected(option)}
                         checkIndicator={checkIndicator}
                         data-testid={`listitem-${option.value}`}
+                        disabled={option.disabled}
                         focused={isOptionFocused(option)}
                         id={option.id}
                         isMobile={isMobile}
                         key={option.id}
-                        onClick={handleListItemClick(option)}
+                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
                         onMouseMove={() => handleListItemMouseMove(option)}
                         ref={option.ref}
                         role="option"

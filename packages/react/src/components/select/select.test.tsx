@@ -4,6 +4,7 @@ import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ThemeWrapper } from '../theme-wrapper/theme-wrapper';
 import { Select } from './select';
+import { mountWithTheme } from '../../test-utils/renderer';
 
 jest.mock('../../utils/uuid');
 
@@ -21,6 +22,13 @@ const provinces = [
     { value: 'nt', label: 'Northwest Territories' },
     { value: 'nu', label: 'Nunavut' },
     { value: 'yt', label: 'Yukon' },
+];
+
+const disabledOptions = [
+    { value: '1', label: 'Option 1', disabled: true },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' },
+    { value: '4', label: 'Option 4', disabled: true },
 ];
 
 const skipOption = {
@@ -121,6 +129,22 @@ describe('Select', () => {
             expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
         });
 
+        test('ArrowUp should focus last element in listbox', () => {
+            const wrapper = mountWithTheme(<Select options={provinces} />);
+
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+
+            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('yt');
+        });
+
+        test('ArrowUp should focus last enabled element in listbox when there is disabled options', () => {
+            const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+
+            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('3');
+        });
+
         test('ArrowDown should open listbox', () => {
             const wrapper = shallow(<Select options={provinces} />);
 
@@ -133,6 +157,22 @@ describe('Select', () => {
 
             getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
             expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+        });
+
+        test('ArrowDown should focus first element in listbox', () => {
+            const wrapper = mountWithTheme(<Select options={provinces} />);
+
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+
+            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('on');
+        });
+
+        test('ArrowDown should focus first enabled element in listbox when there is disabled options', () => {
+            const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+
+            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+
+            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('2');
         });
 
         test('Enter should open listbox', () => {

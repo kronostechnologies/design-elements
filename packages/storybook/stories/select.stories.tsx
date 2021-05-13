@@ -82,3 +82,14 @@ export const WithSkip: Story = () => (
 export const WithTwoItemsVisible: Story = () => (
     <Select label="Select an option" options={provinces} numberOfItemsVisible={2} />
 );
+
+export const WithDisabledOptions: Story = () => {
+    const disabledOptions = [
+        { value: 'option1', label: 'Option 1', disabled: true },
+        { value: 'option2', label: 'Option 2' },
+        { value: 'option3', label: 'Option 3' },
+        { value: 'option4', label: 'Option 4', disabled: true },
+    ];
+
+    return <Select label="Select an option" options={disabledOptions} />;
+};

@@ -17,7 +17,7 @@ import { ChooserButton } from '../chooser-button/chooser-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
-import { Listbox } from '../listbox/listbox';
+import { Listbox, ListboxOption } from '../listbox/listbox';
 
 interface InputProps {
     searchable?: boolean;
@@ -33,9 +33,8 @@ interface InputWrapperProps extends InputProps {
     valid: boolean;
 }
 
-export interface Option {
+export interface Option extends ListboxOption {
     label: string;
-    value: string;
 }
 
 function getBorderColor({
@@ -288,11 +287,19 @@ export function Select({
     }
 
     function focusFirstElementFromArray(array: Option[]): void {
-        setFocusedValue(array[0].value);
+        const firstArrayElement = array.find((element) => !element.disabled);
+
+        if (firstArrayElement) {
+            setFocusedValue(firstArrayElement.value);
+        }
     }
 
     function focusLastElementFromArray(array: Option[]): void {
-        setFocusedValue(array[array.length - 1].value);
+        const lastArrayElement = [...array].reverse().find((element) => !element.disabled);
+
+        if (lastArrayElement) {
+            setFocusedValue(lastArrayElement.value);
+        }
     }
 
     function resetField(): void {
@@ -403,7 +410,7 @@ export function Select({
                 if (!open) {
                     handleOpen();
                     if (searchable || !selectedOptionValue) {
-                        setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
+                        focusFirstElementFromArray(filteredOptions);
                     } else {
                         setFocusedValue(selectedOptionValue);
                     }
@@ -421,7 +428,7 @@ export function Select({
                 if (!open) {
                     handleOpen();
                     if (searchable || !selectedOptionValue) {
-                        setTimeout(() => focusLastElementFromArray(filteredOptions), 10);
+                        focusLastElementFromArray(filteredOptions);
                     } else {
                         setTimeout(() => setFocusedValue(selectedOptionValue), 10);
                     }

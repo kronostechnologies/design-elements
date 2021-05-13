@@ -22,6 +22,11 @@ const options = [
         label: 'Option D',
         value: 'optionD',
     },
+    {
+        label: 'Option Disabled',
+        value: 'optionDisabled',
+        disabled: true,
+    },
 ];
 
 describe('Listbox', () => {
@@ -55,9 +60,9 @@ describe('Listbox', () => {
         expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(true);
     });
 
-    test('Calls onChange callback when an option is selected', () => {
+    test('should call onChange callback when an option is selected', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<Listbox options={options} defaultValue="optionB" onChange={callback} />);
+        const wrapper = shallowWithTheme(<Listbox options={options} onChange={callback} />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
@@ -115,6 +120,49 @@ describe('Listbox', () => {
         wrapper.setProps({ value: undefined }).update();
 
         expect(getByTestId(wrapper, 'listitem-optionA').props().selected).toBe(true);
+    });
+
+    describe('disabled option', () => {
+        const disabledOptionTestId = 'listitem-optionDisabled';
+
+        test('should not call onChange callback when disabled item is clicked', () => {
+            const callback = jest.fn();
+            const wrapper = shallowWithTheme(<Listbox options={options} onChange={callback} />);
+
+            getByTestId(wrapper, disabledOptionTestId).simulate('click');
+
+            expect(callback).toHaveBeenCalledTimes(0);
+        });
+
+        test('should have aria-disabled attribute set to true', () => {
+            const wrapper = shallowWithTheme(<Listbox options={options} />);
+
+            expect(getByTestId(wrapper, disabledOptionTestId).prop('aria-disabled')).toBe(true);
+        });
+
+        test('should be skipped when navigating with keyboard (ArrowDown)', () => {
+            const callback = jest.fn();
+            const wrapper = mountWithTheme(
+                <Listbox options={options} focusedValue="optionD" onFocusedValueChange={callback} />,
+            );
+
+            getByTestId(wrapper, 'listbox-list').simulate('keydown', { key: 'ArrowDown', preventDefault: jest.fn() });
+
+            expect(callback).toHaveBeenCalledTimes(1);
+            expect(callback).toHaveBeenCalledWith(expect.objectContaining(options[0]));
+        });
+
+        test('should be skipped when navigating with keyboard (ArrowUp)', () => {
+            const callback = jest.fn();
+            const wrapper = mountWithTheme(
+                <Listbox options={options} focusedValue="optionA" onFocusedValueChange={callback} />,
+            );
+
+            getByTestId(wrapper, 'listbox-list').simulate('keydown', { key: 'ArrowUp', preventDefault: jest.fn() });
+
+            expect(callback).toHaveBeenCalledTimes(1);
+            expect(callback).toHaveBeenCalledWith(expect.objectContaining(options[3]));
+        });
     });
 
     test('Matches the snapshot', () => {
