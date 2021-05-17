@@ -1,5 +1,5 @@
-import React, { ReactElement, useEffect, useState } from 'react';
-import { CellProps, Column, Row, useSortBy, useTable } from 'react-table';
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import { CellProps, Column, Row, TableState, useSortBy, useTable } from 'react-table';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -7,6 +7,8 @@ import { SortableColumnHeading } from './sortable-column-heading';
 import { TableRow } from './table-row';
 
 type RowSize = 'small' | 'medium';
+
+type ColumnSort = 'asc' | 'desc';
 
 interface StyledTableProps {
     clickableRows: boolean;
@@ -17,6 +19,7 @@ interface StyledTableProps {
 }
 
 type CustomColumn<T extends object> = Column<T> & {
+    defaultSort?: ColumnSort;
     sortable?: boolean,
     textAlign?: string,
     className?: string,
@@ -183,13 +186,34 @@ export function Table<T extends object>({
         setRenderedColumns(getRenderedColumns(rowNumbers, columns));
     }, [columns, rowNumbers]);
 
+    const getInitialState = useCallback((): TableState<T> | undefined => {
+        const defaultSortColumn = columns.find(({ defaultSort }) => !!defaultSort);
+
+        if (defaultSortColumn) {
+            const { id, accessor, defaultSort } = defaultSortColumn;
+
+            return {
+                sortBy: [{
+                    id: id || accessor as string,
+                    desc: defaultSort === 'desc',
+                }],
+            };
+        }
+        return undefined;
+    }, [columns]);
+
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
-    } = useTable<T>({ columns: renderedColumns, data }, useSortBy);
+    } = useTable<T>({
+        columns: renderedColumns,
+        data,
+        initialState: getInitialState(),
+        disableMultiSort: true,
+    }, useSortBy);
 
     return (
         <StyledTable
