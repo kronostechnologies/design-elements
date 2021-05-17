@@ -949,7 +949,7 @@ exports[`Table has sorting styles 1`] = `
       role="row"
     >
       <th
-        aria-sort="none"
+        aria-sort="ascending"
         colspan="1"
         role="columnheader"
         scope="col"

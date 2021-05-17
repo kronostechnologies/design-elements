@@ -17,7 +17,9 @@ declare module 'react-table' {
 
   export type TableInstance<D extends object = {}> = UseSortByInstanceProps<D>
 
-  export type TableState<D extends object = {}> = UseSortByState<D>
+  /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+  export interface TableState<D extends object = {}>
+    extends UseSortByState<D> {}
 
   export interface ColumnInterface<D extends object = {}>
     extends UseSortByColumnOptions<D>,

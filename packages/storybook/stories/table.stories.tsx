@@ -409,6 +409,7 @@ export const SortableRows: Story = () => {
             Header: 'Column 2',
             accessor: 'column2',
             sortable: true,
+            defaultSort: 'asc',
         },
         {
             Header: 'Column 3',

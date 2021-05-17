@@ -1,7 +1,8 @@
 import React from 'react';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { Table, TableColumn, TableProps } from './table';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 interface TestData {
     column1: string;
@@ -66,6 +67,7 @@ const columnsSorted: TableColumn<TestData> = [
         Header: 'Column 1',
         accessor: 'column1',
         sortable: true,
+        defaultSort: 'asc',
     },
     {
         Header: 'Column 2',
@@ -92,6 +94,12 @@ const errorData: TestData[] = [
 ];
 
 describe('Table', () => {
+    test('column sorting should be set to defaultSort value when defaultSort is set', () => {
+        const wrapper = mountWithProviders(<Table columns={columnsSorted} data={data} />);
+
+        expect(getByTestId(wrapper, 'sort-icon').prop('sort')).toBe('ascending');
+    });
+
     test('has desktop styles', () => {
         const tree = renderTable(columns, 'desktop');
 
