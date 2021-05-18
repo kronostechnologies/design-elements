@@ -3,6 +3,7 @@ export { AddButton } from './components/buttons/add-button';
 export { Button } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
 export { NavMenuOption } from './components/nav-menu/nav-menu';
+export { MenuButton } from './components/menu-button/menu-button';
 export { NavMenuButton } from './components/nav-menu-button/nav-menu-button';
 export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';
 export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
