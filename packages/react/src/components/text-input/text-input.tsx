@@ -21,7 +21,7 @@ const Input = styled.input`
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-    'inputMode' | 'name' | 'value'>;
+    'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
 interface TextInputProps extends PartialInputProps {
     className?: string;
@@ -61,6 +61,7 @@ export const TextInput = forwardRef(({
     type,
     validationErrorMessage,
     value,
+    autoComplete,
     onBlur,
     onChange,
     onFocus,
@@ -100,6 +101,7 @@ export const TextInput = forwardRef(({
             hint={hint}
         >
             <Input
+                autoComplete={autoComplete}
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={id}
