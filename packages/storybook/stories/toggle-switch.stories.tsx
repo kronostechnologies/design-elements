@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Story } from '@storybook/react';
 
 export default {
-    title: 'Toggle Switch',
+    title: 'Controls/Toggle Switch',
     component: ToggleSwitch,
 };
 

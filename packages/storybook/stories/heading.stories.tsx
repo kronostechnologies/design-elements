@@ -2,7 +2,7 @@ import { Heading } from '@equisoft/design-elements-react';
 import React, { VoidFunctionComponent } from 'react';
 
 export default {
-    title: 'Heading',
+    title: 'Text/Heading',
     component: Heading,
 };
 

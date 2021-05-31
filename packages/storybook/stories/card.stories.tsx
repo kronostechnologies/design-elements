@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import * as React from 'react';
 
 export default {
-    title: 'Card',
+    title: 'Structure/Card',
     component: Card,
 };
 

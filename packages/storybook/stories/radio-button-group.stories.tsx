@@ -3,7 +3,7 @@ import { forceReRender, Story } from '@storybook/react';
 import React, { ChangeEvent } from 'react';
 
 export default {
-    title: 'Radio Button Group',
+    title: 'Controls/Radio Button Group',
     component: RadioButtonGroup,
 };
 

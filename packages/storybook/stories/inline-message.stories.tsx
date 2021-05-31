@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
-    title: 'Inline Message',
+    title: 'Feedback/Inline Message',
     component: InlineMessage,
 };
 

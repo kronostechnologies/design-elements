@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
-    title: 'Listbox',
+    title: 'Controls/Listbox',
     component: Listbox,
 };
 

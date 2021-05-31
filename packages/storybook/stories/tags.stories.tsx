@@ -2,7 +2,7 @@ import { Tag, Tags } from '@equisoft/design-elements-react';
 import React, { ReactElement, useState } from 'react';
 
 export default {
-    title: 'Tags',
+    title: 'Feedback/Tags',
     component: Tags,
 };
 

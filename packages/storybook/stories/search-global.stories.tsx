@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
-    title: 'Search/Search Global',
+    title: 'Controls/Search Global',
     component: SearchGlobal,
 };
 

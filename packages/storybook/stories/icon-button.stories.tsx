@@ -1,10 +1,10 @@
 import { IconButton } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
-import { InvertedBackground } from '../utils/inverted-background';
+import { InvertedBackground } from './utils/inverted-background';
 
 export default {
-    title: 'Buttons/Icon',
+    title: 'Controls/Icon Button',
     component: IconButton,
 };
 

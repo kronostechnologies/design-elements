@@ -7,7 +7,7 @@ import { RouterDecorator } from './utils/router-decorator';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 export default {
-    title: 'Nav Menu Button',
+    title: 'Navigation/Nav Menu Button',
     component: NavMenuButton,
     decorators: [RouterDecorator],
 };

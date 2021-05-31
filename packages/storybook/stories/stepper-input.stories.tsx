@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Story } from '@storybook/react';
 
 export default {
-    title: 'Stepper input',
+    title: 'Controls/Stepper input',
     component: StepperInput,
 };
 

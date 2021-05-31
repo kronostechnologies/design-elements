@@ -6,7 +6,7 @@ import { RouterDecorator } from './utils/router-decorator';
 import CustomLogoSvg from './assets/customLogo.svg';
 
 export default {
-    title: 'Application Menu',
+    title: 'Structure/Application Menu',
     component: ApplicationMenu,
     decorators: [RouterDecorator],
 };
