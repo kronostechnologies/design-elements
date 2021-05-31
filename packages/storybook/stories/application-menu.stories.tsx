@@ -5,7 +5,7 @@ import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
 
 export default {
-    title: 'Application Menu',
+    title: 'Structure/Application Menu',
     component: ApplicationMenu,
     decorators: [RouterDecorator],
 };

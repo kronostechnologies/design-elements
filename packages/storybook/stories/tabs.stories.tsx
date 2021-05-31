@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
-    title: 'Tabs',
+    title: 'Disclosure/Tabs',
     component: Tabs,
 };
 

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Pagination',
+    title: 'Navigation/Pagination',
     component: Pagination,
     decorators: [DeviceContextDecorator],
 };

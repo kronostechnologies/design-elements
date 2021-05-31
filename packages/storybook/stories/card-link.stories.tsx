@@ -4,7 +4,7 @@ import React from 'react';
 import { RouterDecorator } from './utils/router-decorator';
 
 export default {
-    title: 'Card Link',
+    title: 'Navigation/Card Link',
     component: CardLink,
     decorators: [RouterDecorator],
 };

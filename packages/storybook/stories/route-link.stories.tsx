@@ -2,7 +2,7 @@ import { RouteLink } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { RouterDecorator } from '../utils/router-decorator';
+import { RouterDecorator } from './utils/router-decorator';
 
 export default {
     title: 'Navigation/Route Link',

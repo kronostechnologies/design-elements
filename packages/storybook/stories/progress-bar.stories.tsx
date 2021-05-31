@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
-    title: 'Results/Progress Bar',
+    title: 'Data/Progress Bar',
     component: ProgressBar,
 };
 

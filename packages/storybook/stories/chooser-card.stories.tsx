@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 
 export default {
-    title: 'Chooser Card',
+    title: 'Controls/Chooser Card',
     component: ChooserCard,
 };
 

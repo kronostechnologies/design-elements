@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React, { SyntheticEvent } from 'react';
 
 export default {
-    title: 'TextArea',
+    title: 'Controls/Text Area',
     component: TextArea,
 };
 

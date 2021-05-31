@@ -4,7 +4,7 @@ import React from 'react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Banner',
+    title: 'Feedback/Banner',
     component: Banner,
     decorators: [DeviceContextDecorator],
 };

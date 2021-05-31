@@ -15,6 +15,11 @@ export const decorators = [
 ];
 
 export const parameters = {
+    options: {
+        storySort: {
+            method: 'alphabetical'
+        }
+    },
     docs: {
         container: DocsContainer,
         page: DocsPage,

@@ -31,7 +31,7 @@ const skipOption = {
 };
 
 export default {
-    title: 'Select',
+    title: 'Controls/Select',
     component: Select,
     decorators: [decorateWith(Container)],
 };

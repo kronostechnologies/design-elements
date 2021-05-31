@@ -4,7 +4,7 @@ import { forceReRender, Story } from '@storybook/react';
 import React, { ChangeEvent } from 'react';
 
 export default {
-    title: 'Checkbox Group',
+    title: 'Controls/Checkbox Group',
     component: CheckboxGroup,
 };
 

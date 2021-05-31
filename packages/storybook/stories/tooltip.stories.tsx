@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Tooltip',
+    title: 'Disclosure/Tooltip',
     component: Tooltip,
 };
 

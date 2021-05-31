@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 
 export default {
-    title: 'Spinners',
+    title: 'Feedback/Enso Spinner',
     component: EnsoSpinner,
 };
 

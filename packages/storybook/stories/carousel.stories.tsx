@@ -4,7 +4,7 @@ import React, { ReactNodeArray } from 'react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Carousel',
+    title: 'Disclosure/Carousel',
     component: Carousel,
 };
 

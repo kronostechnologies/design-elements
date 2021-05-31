@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 
 export default {
-    title: 'Money Input',
+    title: 'Controls/Money Input',
     component: MoneyInput,
 };
 
