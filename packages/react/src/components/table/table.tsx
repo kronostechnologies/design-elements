@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
-import { CellProps, Column, Row, TableState, useSortBy, useTable } from 'react-table';
+import { CellProps, Column, Row, TableState, useSortBy, useTable, UseSortByColumnOptions } from 'react-table';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -18,7 +18,7 @@ interface StyledTableProps {
     rowSize?: RowSize;
 }
 
-type CustomColumn<T extends object> = Column<T> & {
+type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     defaultSort?: ColumnSort;
     sortable?: boolean,
     textAlign?: string,

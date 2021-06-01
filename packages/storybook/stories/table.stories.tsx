@@ -260,7 +260,14 @@ export const SmallRows: Story = () => {
 };
 
 export const RowClickCallback: Story = () => {
-    const columns: TableColumn<Data> = [
+    interface DataWithHref {
+        column1: string;
+        column2: string;
+        column3: string;
+        href: string;
+    }
+
+    const columns: TableColumn<DataWithHref> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -274,13 +281,6 @@ export const RowClickCallback: Story = () => {
             accessor: 'column3',
         },
     ];
-
-    interface DataWithHref {
-        column1: string;
-        column2: string;
-        column3: string;
-        href: string;
-    }
 
     const data: TableRow<DataWithHref>[] = [
         {
