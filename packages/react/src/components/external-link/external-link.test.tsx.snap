@@ -26,6 +26,16 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c2 {
   margin-left: var(--spacing-half);
   margin-right: 0;
@@ -85,6 +95,16 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 }
 
 .c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #00629666;
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
@@ -170,6 +190,16 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c2 {
   margin-right: var(--spacing-1x);
 }
@@ -244,6 +274,16 @@ exports[`External Link matches snapshot (without href) 1`] = `
 }
 
 .c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #00629666;
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
@@ -324,6 +364,16 @@ exports[`External Link matches snapshot 1`] = `
 }
 
 .c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #00629666;
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
