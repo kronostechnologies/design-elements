@@ -20,4 +20,10 @@ export const StyledLink = styled.a<ContainerProps>`
     text-decoration: underline;
 
     ${focus};
+
+    &:focus:not(:focus-visible) {
+        box-shadow: none;
+    }
+
+    ${({ theme }) => focus({ theme }, false, '&:focus-visible')}
 `;
