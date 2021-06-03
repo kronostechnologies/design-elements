@@ -1,8 +1,9 @@
 import { ApplicationMenu } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, VoidFunctionComponent } from 'react';
 import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
+import CustomLogoSvg from './assets/customLogo.svg';
 
 export default {
     title: 'Application Menu',
@@ -29,6 +30,14 @@ export const Normal: Story = () => (
 
 export const WithAppName: Story = () => (
     <ApplicationMenu appName="analyze">
+        <p>Hello world</p>
+    </ApplicationMenu>
+);
+
+const CustomLogo: VoidFunctionComponent = () => <img src={CustomLogoSvg} />;
+
+export const WithCustomLogo: Story = () => (
+    <ApplicationMenu customLogo={<CustomLogo />}>
         <p>Hello world</p>
     </ApplicationMenu>
 );
