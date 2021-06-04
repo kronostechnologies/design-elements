@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table has clickable rows styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c1:focus {
   border-color: #006296;
   box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
@@ -17,7 +13,8 @@ exports[`Table has clickable rows styles 1`] = `
 }
 
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -31,17 +28,23 @@ exports[`Table has clickable rows styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -53,6 +56,27 @@ exports[`Table has clickable rows styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -62,6 +86,7 @@ exports[`Table has clickable rows styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -69,6 +94,7 @@ exports[`Table has clickable rows styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -82,16 +108,19 @@ exports[`Table has clickable rows styles 1`] = `
   >
     <tr
       class="c1"
+      data-error="false"
       data-testid="table-row-0"
       role="button"
       tabindex="0"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -99,16 +128,19 @@ exports[`Table has clickable rows styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-error="false"
       data-testid="table-row-1"
       role="button"
       tabindex="0"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -116,16 +148,19 @@ exports[`Table has clickable rows styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-error="false"
       data-testid="table-row-2"
       role="button"
       tabindex="0"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -136,12 +171,9 @@ exports[`Table has clickable rows styles 1`] = `
 `;
 
 exports[`Table has custom text alignment 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -155,17 +187,23 @@ exports[`Table has custom text alignment 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -177,6 +215,27 @@ exports[`Table has custom text alignment 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -186,6 +245,7 @@ exports[`Table has custom text alignment 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -194,6 +254,7 @@ exports[`Table has custom text alignment 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -207,17 +268,20 @@ exports[`Table has custom text alignment 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
         style="text-align:right"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
         style="text-align:center"
       >
@@ -225,17 +289,20 @@ exports[`Table has custom text alignment 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
         style="text-align:right"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
         style="text-align:center"
       >
@@ -243,17 +310,20 @@ exports[`Table has custom text alignment 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
         style="text-align:right"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
         style="text-align:center"
       >
@@ -265,12 +335,9 @@ exports[`Table has custom text alignment 1`] = `
 `;
 
 exports[`Table has desktop styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -284,17 +351,23 @@ exports[`Table has desktop styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -306,6 +379,27 @@ exports[`Table has desktop styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -315,6 +409,7 @@ exports[`Table has desktop styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -322,6 +417,7 @@ exports[`Table has desktop styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -334,48 +430,57 @@ exports[`Table has desktop styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -387,17 +492,12 @@ exports[`Table has desktop styles 1`] = `
 
 exports[`Table has error rows styles 1`] = `
 .c1 {
-  border-top: 1px solid #DBDEE1;
   background-color: #fcf8f9;
-  border: 1px solid #CD2C23;
-}
-
-.c2 {
-  border-top: 1px solid #DBDEE1;
 }
 
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -411,17 +511,23 @@ exports[`Table has error rows styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -433,6 +539,27 @@ exports[`Table has error rows styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -442,6 +569,7 @@ exports[`Table has error rows styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -449,6 +577,7 @@ exports[`Table has error rows styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -462,31 +591,37 @@ exports[`Table has error rows styles 1`] = `
   >
     <tr
       class="c1"
+      data-error="true"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c2"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -494,15 +629,18 @@ exports[`Table has error rows styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-error="true"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -513,12 +651,9 @@ exports[`Table has error rows styles 1`] = `
 `;
 
 exports[`Table has mobile styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -532,17 +667,23 @@ exports[`Table has mobile styles 1`] = `
   padding: var(--spacing-3x) 0;
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 1rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -554,6 +695,27 @@ exports[`Table has mobile styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -563,6 +725,7 @@ exports[`Table has mobile styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -570,6 +733,7 @@ exports[`Table has mobile styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -582,48 +746,57 @@ exports[`Table has mobile styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -634,12 +807,9 @@ exports[`Table has mobile styles 1`] = `
 `;
 
 exports[`Table has rowNumbers styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -653,17 +823,23 @@ exports[`Table has rowNumbers styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -673,6 +849,27 @@ exports[`Table has rowNumbers styles 1`] = `
   min-width: 40px;
   text-align: center;
   width: 40px;
+}
+
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
 }
 
 <table
@@ -690,6 +887,7 @@ exports[`Table has rowNumbers styles 1`] = `
         scope="col"
       />
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -697,6 +895,7 @@ exports[`Table has rowNumbers styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -709,7 +908,8 @@ exports[`Table has rowNumbers styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
@@ -720,18 +920,21 @@ exports[`Table has rowNumbers styles 1`] = `
         1
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
@@ -742,18 +945,21 @@ exports[`Table has rowNumbers styles 1`] = `
         2
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
@@ -764,11 +970,13 @@ exports[`Table has rowNumbers styles 1`] = `
         3
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -865,12 +1073,9 @@ exports[`Table has selectable rows styles 1`] = `
   margin-top: var(--spacing-1x);
 }
 
-.c9 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -884,17 +1089,23 @@ exports[`Table has selectable rows styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -904,6 +1115,27 @@ exports[`Table has selectable rows styles 1`] = `
   min-width: 40px;
   text-align: center;
   width: 40px;
+}
+
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
 }
 
 <table
@@ -948,6 +1180,7 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -955,6 +1188,7 @@ exports[`Table has selectable rows styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -967,7 +1201,8 @@ exports[`Table has selectable rows styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c9"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
@@ -1003,18 +1238,21 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c9"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
@@ -1050,18 +1288,21 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c9"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
@@ -1097,11 +1338,13 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1112,12 +1355,9 @@ exports[`Table has selectable rows styles 1`] = `
 `;
 
 exports[`Table has small rowSize styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -1131,17 +1371,23 @@ exports[`Table has small rowSize styles 1`] = `
   padding: var(--spacing-1x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -1153,6 +1399,27 @@ exports[`Table has small rowSize styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -1162,6 +1429,7 @@ exports[`Table has small rowSize styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1169,6 +1437,7 @@ exports[`Table has small rowSize styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1181,48 +1450,57 @@ exports[`Table has small rowSize styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1253,12 +1531,9 @@ exports[`Table has sorting styles 1`] = `
   display: flex;
 }
 
-.c3 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -1272,17 +1547,23 @@ exports[`Table has sorting styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -1292,6 +1573,27 @@ exports[`Table has sorting styles 1`] = `
   min-width: 40px;
   text-align: center;
   width: 40px;
+}
+
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
 }
 
 <table
@@ -1356,48 +1658,57 @@ exports[`Table has sorting styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c3"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c3"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c3"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1408,16 +1719,13 @@ exports[`Table has sorting styles 1`] = `
 `;
 
 exports[`Table has striped styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c1:nth-child(odd) {
   background-color: #FAFAFA;
 }
 
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -1431,17 +1739,23 @@ exports[`Table has striped styles 1`] = `
   padding: var(--spacing-2x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -1453,6 +1767,27 @@ exports[`Table has striped styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -1462,6 +1797,7 @@ exports[`Table has striped styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1469,6 +1805,7 @@ exports[`Table has striped styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1482,15 +1819,18 @@ exports[`Table has striped styles 1`] = `
   >
     <tr
       class="c1"
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -1498,15 +1838,18 @@ exports[`Table has striped styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -1514,15 +1857,18 @@ exports[`Table has striped styles 1`] = `
     </tr>
     <tr
       class="c1"
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1533,12 +1879,9 @@ exports[`Table has striped styles 1`] = `
 `;
 
 exports[`Table has tablet styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-}
-
 .c0 {
-  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
@@ -1552,17 +1895,23 @@ exports[`Table has tablet styles 1`] = `
   padding: var(--spacing-3x) var(--spacing-1x);
 }
 
+.c0 th.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #FFFFFF;
+}
+
+.c0 td.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .c0 th,
 .c0 td {
   font-size: 1rem;
   line-height: 24px;
   margin: 0;
   text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
 }
 
 .c0 .eq-table__util-column {
@@ -1574,6 +1923,27 @@ exports[`Table has tablet styles 1`] = `
   width: 40px;
 }
 
+.c0 tr:first-child[data-error=false] td,
+.c0 tr[data-error=false] + tr td {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c0 tr[data-error=false] + tr[data-error=true] td {
+  border-top: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td {
+  border-bottom: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:first-child {
+  border-left: 1px solid #CD2C23;
+}
+
+.c0 tr[data-error=true] td:last-child {
+  border-right: 1px solid #CD2C23;
+}
+
 <table
   class="c0"
   role="table"
@@ -1583,6 +1953,7 @@ exports[`Table has tablet styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1590,6 +1961,7 @@ exports[`Table has tablet styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1602,48 +1974,57 @@ exports[`Table has tablet styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-0"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-1"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
       </td>
     </tr>
     <tr
-      class="c1"
+      class=""
+      data-error="false"
       data-testid="table-row-2"
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy

@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState, useRef } from 'react';
 import {
     CellProps,
     Column,
@@ -11,7 +11,7 @@ import {
     useTable,
     Hooks,
 } from 'react-table';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';
@@ -35,6 +35,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     sortable?: boolean,
     textAlign?: string,
     className?: string,
+    sticky?: boolean,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -42,23 +43,32 @@ export type TableRow<T> = T & { error?: boolean };
 
 interface CustomRowProps {
     error?: boolean;
+    sticky?: boolean,
 }
 
 const utilColumnClassName = 'eq-table__util-column';
 
-function getHeading(column: Column): ReactElement {
+const StyledHeader = styled.th<{ sticky: boolean }>`
+    ${({ sticky }) => sticky && css`   
+        position: sticky;
+        background-color: ${({ theme }) => theme.greys.white};
+    `}
+`;
+
+function getHeading(column: Column, stickyHeader?: boolean): ReactElement {
     if (column.sortable) {
         return <SortableColumnHeading key={column.id} column={column} />;
     }
     return (
-        <th
+        <StyledHeader
+            className={column.className}
             scope="col"
             style={{ textAlign: column.textAlign }}
-            className={column.className}
+            sticky={stickyHeader}
             {...column.getHeaderProps() /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {column.render('Header')}
-        </th>
+        </StyledHeader>
     );
 }
 
@@ -119,30 +129,79 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
     return columns;
 }
 
-const StyledTable = styled.table<StyledTableProps>`
-    border-collapse: collapse;
+function calculateStickyPosition<T extends object>(
+    renderedColumns: TableColumn<T>,
+    data: T[] & CustomRowProps[],
+    stickyHeader: boolean,
+    tableRef: React.RefObject<HTMLTableElement>,
+): void {
+    if (tableRef.current === null) {
+        return;
+    }
+    const headerCells = tableRef.current.getElementsByTagName('th');
+    const rows = tableRef.current.getElementsByTagName('tr');
+
+    // sticky column
+    let totalLeft = 0;
+    renderedColumns.forEach((column, index) => {
+        if (column.sticky) {
+            const headerCell = headerCells[index];
+            headerCell.style.setProperty('left', `${totalLeft}px`);
+            headerCell.style.setProperty('z-index', '2');
+
+            Array.from(rows).forEach((row) => {
+                row.cells[index].style.setProperty('left', `${totalLeft}px`);
+                headerCell.style.setProperty('z-index', '2');
+            });
+
+            totalLeft += headerCell.clientWidth;
+        }
+    });
+
+    // sticky row
+    let totalTop = 0;
+    if (stickyHeader) {
+        Array.from(headerCells).forEach((headerCell, index) => {
+            headerCell.style.setProperty('top', '0');
+            headerCell.style.setProperty('z-index', renderedColumns[index].sticky ? '3' : '2');
+        });
+        const headerRow = rows[0];
+        totalTop = headerRow.clientHeight;
+    }
+    data.forEach((dataRow, index) => {
+        if ((dataRow as CustomRowProps).sticky) {
+            const row = rows[index + 1];
+            Array.from(row.cells).forEach((cell, cellIndex) => {
+                cell.style.setProperty('top', `${totalTop}px`);
+                cell.style.setProperty('z-index', renderedColumns[cellIndex].sticky ? '3' : '2');
+            });
+            totalTop += row.clientHeight;
+        }
+    });
+}
+
+const StyledTable = styled.table<StyledTableProps & { theme: Theme }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    border-collapse: separate;
     border-spacing: 0;
     width: 100%;
-
+            
     th {
         font-weight: var(--font-semi-bold);
         padding: ${({ device, rowSize }) => getThPadding(device, rowSize)};
     }
-
+    
     td {
         padding: ${({ device, rowSize }) => getTdPadding(device, rowSize)};
     }
-
+    
     th,
     td {
         font-size: ${({ device }) => (device === 'desktop' ? 0.875 : 1)}rem;
         line-height: 24px;
         margin: 0;
         text-align: left;
-
-        :last-child {
-            border-right: 0;
-        }
+        border: none;
     }
 
     .${utilColumnClassName} {
@@ -153,6 +212,68 @@ const StyledTable = styled.table<StyledTableProps>`
         text-align: center;
         width: 40px;
     }
+    
+    /** Rows borders **/
+    
+    tr td {
+        border-top: 1px solid ${({ theme }) => theme.greys.grey};
+    }
+    
+    // errors rows
+    tr[data-error] td {
+        border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        :first-child {
+            border-left: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        }
+        :last-child {
+            border-right: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        }
+    }
+    tr[data-error] + tr:not(:focus) td  {
+         border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+    }
+  
+    // add bottom row to last sticky row
+    tr[data-laststicky] td {
+        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+    }
+    tr[data-laststicky][data-error] td {
+        border-bottom: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+    }
+ 
+    // focus row
+    tr:focus td, tr[data-error]:focus td, tr[data-laststicky]:focus td {
+        border-top: 1px solid yellow;
+        border-bottom: 1px solid green;
+        :first-child {
+            border-left: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        }
+        :last-child {
+            border-right: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        }
+    }
+    
+    // remove top border from row next to last sticky row and next to focused row
+    tr[data-laststicky] + tr:not(:focus) td, tr[data-laststicky][data-error] + tr:not(:focus) td, tr[data-error]:focus + tr td, tr:focus + tr td {
+         border-top: none;
+    }
+    
+    tr:focus {
+        position: relative;
+        &:after {
+            content: “”;
+            border: 1px solid black;
+            border-color: #006296;
+            box-shadow: inset 0 0 0 3px #00629666, inset 0 0 0 1px #006296;
+            outline: none;
+            position: absolute;
+            left: 0;
+            z-index: 3;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    } 
 `;
 
 function useSelectableRows<T extends object>(selectableRows?: boolean): (hooks: Hooks<T>) => void {
@@ -179,7 +300,7 @@ function useSelectableRows<T extends object>(selectableRows?: boolean): (hooks: 
 
 type PartialTableState<T extends object> = Omit<TableState<T>, 'selectedRowIds'>;
 
-export interface TableProps<T extends object> {
+export interface TableProps<T extends CustomRowProps> {
     className?: string;
     /** Array of Objects that defines your table columns.
      * See stories code or refer to react-table docs for more information */
@@ -204,6 +325,8 @@ export interface TableProps<T extends object> {
      */
     striped?: boolean;
 
+    stickyHeader?: boolean;
+
     onRowClick?(row: Row<T>): void;
 
     onSelectedRowsChange?(selectedRows: T[]): void;
@@ -219,7 +342,9 @@ export function Table<T extends object>({
     striped = false,
     onRowClick,
     onSelectedRowsChange,
+    stickyHeader = false,
 }: TableProps<T>): ReactElement {
+    const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [renderedColumns, setRenderedColumns] = useState<TableColumn<T>>(
         () => getRenderedColumns(rowNumbers, columns),
@@ -244,6 +369,12 @@ export function Table<T extends object>({
         }
         return undefined;
     }, [columns]);
+
+    useEffect(() => {
+        calculateStickyPosition(renderedColumns, data, stickyHeader, tableRef);
+    }, [renderedColumns, data, stickyHeader, tableRef]);
+
+    // window.addEventListener('resize', calculateStickyPosition);
 
     const {
         getTableProps,
@@ -270,6 +401,13 @@ export function Table<T extends object>({
         }
     }, [selectableRows, selectedFlatRows, onSelectedRowsChange]);
 
+    let i = rows.length - 1;
+    let lastStickyRowIndex = -1;
+    while (i >= 0 && lastStickyRowIndex < 0) {
+        if ((rows[i].original as CustomRowProps).sticky) lastStickyRowIndex = i;
+        i -= 1;
+    }
+
     return (
         <StyledTable
             className={className}
@@ -278,16 +416,17 @@ export function Table<T extends object>({
             device={device}
             clickableRows={onRowClick !== undefined}
             {...getTableProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+            ref={tableRef}
         >
             <thead>
                 {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                        {headerGroup.headers.map(getHeading)}
+                        {headerGroup.headers.map((column) => getHeading(column, stickyHeader))}
                     </tr>
                 ))}
             </thead>
             <tbody {...getTableBodyProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                {rows.map((row: Row<T>, i: number) => {
+                {rows.map((row: Row<T>, j: number) => {
                     prepareRow(row);
                     return (
                         <TableRow<T>
@@ -296,7 +435,9 @@ export function Table<T extends object>({
                             key={row.id}
                             row={row}
                             onClick={onRowClick}
-                            viewIndex={i}
+                            viewIndex={j}
+                            sticky={!!(row.original as CustomRowProps).sticky}
+                            lastSticky={j === lastStickyRowIndex}
                         />
                     );
                 })}
@@ -304,3 +445,61 @@ export function Table<T extends object>({
         </StyledTable>
     );
 }
+
+/**
+ tr:focus td {
+        ${({ theme }) => getRowBorder(theme.tokens['focus-border'], { leftAndRight: true })}
+    }
+ tr:focus + tr td  {
+         border-top: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+    }
+
+ // Second row when first is sticky
+ tr:first-child[data-sticky] + tr td {
+         border-top: none;
+    }
+
+ tr:first-child[data-error=false] td, tr[data-error=false]:not(:focus) + tr td {
+        border-top: 1px solid ${({ theme }) => theme.greys.grey};
+    }
+
+ // Error rows
+
+ tr[data-error=true] td:before {
+        border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+    }
+ tr[data-error=true] td:after {
+        border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+    }
+
+ tr:first-child[data-error=true] td, tr[data-error=false] + tr[data-error=true] td {
+        border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+    }
+
+ tr[data-error=true] td {
+        border-bottom: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+
+        :first-child {
+            border-left: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        }
+        :last-child {
+            border-right: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        }
+    }
+
+ // Focus rows
+ tr:first-child[data-clickable=true]:focus td, tr:not(:focus) + tr[data-clickable=true]:focus td {
+        border-top: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+    }
+
+ tr[data-clickable=true]:focus td {
+        border-bottom: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+
+        :first-child {
+            border-left: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        }
+        :last-child {
+            border-right: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        }
+    }
+ * */
