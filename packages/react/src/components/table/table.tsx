@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState, useRef } from 'react';
 import {
     CellProps,
     Column,
@@ -11,7 +11,7 @@ import {
     useTable,
     Hooks,
 } from 'react-table';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';
@@ -35,6 +35,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     sortable?: boolean,
     textAlign?: string,
     className?: string,
+    sticky?: boolean,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -42,23 +43,32 @@ export type TableRow<T> = T & { error?: boolean };
 
 interface CustomRowProps {
     error?: boolean;
+    sticky?: boolean,
 }
 
 const utilColumnClassName = 'eq-table__util-column';
 
-function getHeading(column: Column): ReactElement {
+const StyledHeader = styled.th<{ sticky: boolean }>`
+    ${({ sticky }) => sticky && css`   
+        position: sticky;
+        background-color: ${({ theme }) => theme.greys.white};
+    `}
+`;
+
+function getHeading(column: Column, stickyHeader?: boolean): ReactElement {
     if (column.sortable) {
         return <SortableColumnHeading key={column.id} column={column} />;
     }
     return (
-        <th
+        <StyledHeader
+            className={column.className}
             scope="col"
             style={{ textAlign: column.textAlign }}
-            className={column.className}
+            sticky={stickyHeader}
             {...column.getHeaderProps() /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {column.render('Header')}
-        </th>
+        </StyledHeader>
     );
 }
 
@@ -119,30 +129,28 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
     return columns;
 }
 
-const StyledTable = styled.table<StyledTableProps>`
-    border-collapse: collapse;
+const StyledTable = styled.table<StyledTableProps & { theme: Theme }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    border-collapse: separate;
     border-spacing: 0;
     width: 100%;
-
+            
     th {
         font-weight: var(--font-semi-bold);
         padding: ${({ device, rowSize }) => getThPadding(device, rowSize)};
     }
-
+    
     td {
         padding: ${({ device, rowSize }) => getTdPadding(device, rowSize)};
     }
-
+    
     th,
     td {
         font-size: ${({ device }) => (device === 'desktop' ? 0.875 : 1)}rem;
         line-height: 24px;
         margin: 0;
         text-align: left;
-
-        :last-child {
-            border-right: 0;
-        }
+        border: none;
     }
 
     .${utilColumnClassName} {
@@ -152,6 +160,26 @@ const StyledTable = styled.table<StyledTableProps>`
         min-width: 40px;
         text-align: center;
         width: 40px;
+    }
+    
+    /** Rows borders **/
+    tr:first-child[data-error=false] td, tr[data-error=false] + tr td {
+        border-top: 1px solid ${({ theme }) => theme.greys.grey};
+    }
+    
+    tr:first-child[data-error=true] td, tr[data-error=false] + tr[data-error=true] td {
+        border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+    }
+    
+    tr[data-error=true] td {
+        border-bottom: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        
+        :first-child {
+            border-left: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        }
+        :last-child {
+            border-right: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
+        }
     }
 `;
 
@@ -179,7 +207,7 @@ function useSelectableRows<T extends object>(selectableRows?: boolean): (hooks: 
 
 type PartialTableState<T extends object> = Omit<TableState<T>, 'selectedRowIds'>;
 
-export interface TableProps<T extends object> {
+export interface TableProps<T extends CustomRowProps> {
     className?: string;
     /** Array of Objects that defines your table columns.
      * See stories code or refer to react-table docs for more information */
@@ -204,6 +232,8 @@ export interface TableProps<T extends object> {
      */
     striped?: boolean;
 
+    stickyHeader?: boolean;
+
     onRowClick?(row: Row<T>): void;
 
     onSelectedRowsChange?(selectedRows: T[]): void;
@@ -219,7 +249,9 @@ export function Table<T extends object>({
     striped = false,
     onRowClick,
     onSelectedRowsChange,
+    stickyHeader = false,
 }: TableProps<T>): ReactElement {
+    const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [renderedColumns, setRenderedColumns] = useState<TableColumn<T>>(
         () => getRenderedColumns(rowNumbers, columns),
@@ -244,6 +276,52 @@ export function Table<T extends object>({
         }
         return undefined;
     }, [columns]);
+
+    useEffect(() => {
+        if (tableRef.current === null) {
+            return;
+        }
+        const headerCells = tableRef.current.getElementsByTagName('th');
+        const rows = tableRef.current.getElementsByTagName('tr');
+
+        // sticky column
+        let totalLeft = 0;
+        renderedColumns.forEach((column, index) => {
+            if (column.sticky) {
+                const headerCell = headerCells[index];
+                headerCell.style.setProperty('left', `${totalLeft}px`);
+                headerCell.style.setProperty('z-index', '2');
+
+                Array.from(rows).forEach((row) => {
+                    row.cells[index].style.setProperty('left', `${totalLeft}px`);
+                    headerCell.style.setProperty('z-index', '2');
+                });
+
+                totalLeft += headerCell.clientWidth;
+            }
+        });
+
+        // sticky row
+        let totalTop = 0;
+        if (stickyHeader) {
+            Array.from(headerCells).forEach((headerCell, index) => {
+                headerCell.style.setProperty('top', '0');
+                headerCell.style.setProperty('z-index', renderedColumns[index].sticky ? '3' : '2');
+            });
+            const headerRow = rows[0];
+            totalTop = headerRow.clientHeight;
+        }
+        data.forEach((dataRow, index) => {
+            if ((dataRow as CustomRowProps).sticky) {
+                const row = rows[index + 1];
+                Array.from(row.cells).forEach((cell, cellIndex) => {
+                    cell.style.setProperty('top', `${totalTop}px`);
+                    cell.style.setProperty('z-index', renderedColumns[cellIndex].sticky ? '3' : '2');
+                });
+                totalTop += row.clientHeight;
+            }
+        });
+    }, [renderedColumns, data, stickyHeader, tableRef]);
 
     const {
         getTableProps,
@@ -278,11 +356,12 @@ export function Table<T extends object>({
             device={device}
             clickableRows={onRowClick !== undefined}
             {...getTableProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+            ref={tableRef}
         >
             <thead>
                 {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                        {headerGroup.headers.map(getHeading)}
+                        {headerGroup.headers.map((column) => getHeading(column, stickyHeader))}
                     </tr>
                 ))}
             </thead>
@@ -297,6 +376,7 @@ export function Table<T extends object>({
                             row={row}
                             onClick={onRowClick}
                             viewIndex={i}
+                            sticky={!!(row.original as CustomRowProps).sticky}
                         />
                     );
                 })}

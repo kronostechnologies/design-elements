@@ -8,10 +8,10 @@ interface StyledTableRowProps {
     error: boolean;
     selected: boolean;
     striped?: boolean;
+    sticky?: boolean;
 }
 
-const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
-    border-top: 1px solid ${({ theme }) => theme.greys.grey};
+const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme}>`    
     ${({ error, striped, theme }) => striped && !error && css`
         :nth-child(odd) {
             background-color: ${theme.greys['colored-white']};
@@ -26,7 +26,9 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         }
 
         :hover {
-            background-color: ${theme.greys.grey};
+            td {
+                background-color: ${theme.greys.grey};
+            }
             cursor: pointer;
         }
     `}
@@ -36,10 +38,20 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         background-color: #e0f0f9;
     `}
 
-    ${({ error, theme }) => error && css`
+    ${({ error }) => error && css`
         /* TODO fix with next thematization theme.notifications.error4 */
         background-color: #fcf8f9;
-        border: 1px solid ${theme.notifications['error-2.1']};
+    `}
+    
+    // Background color to allow sticky columns/rows
+    :not(:hover) td {
+        background-color: ${({ theme, error }) => (error ? 'inherit' : theme.greys.white)};
+    }
+`;
+
+const StyledCell = styled.td<{ sticky?: boolean }>`
+    ${({ sticky }) => (sticky) && css`
+        position: sticky;
     `}
 `;
 
@@ -51,7 +63,7 @@ interface TableRowProps<T extends object> extends Omit<StyledTableRowProps, 'cli
 }
 
 export function TableRow<T extends object>({
-    error, row, striped, viewIndex, onClick,
+    error, row, striped, viewIndex, onClick, sticky,
 }: TableRowProps<T>): ReactElement {
     return (
         <StyledTableRow
@@ -61,14 +73,17 @@ export function TableRow<T extends object>({
             selected={row.isSelected}
             striped={striped}
             onClick={() => onClick && onClick(row)}
+            data-error={error}
             {...row.getRowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             {...(onClick ? { tabIndex: 0, role: 'button' } : {}) /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {row.cells.map((cell) => {
                 const style: CSSProperties = { textAlign: cell.column.textAlign };
+                const isSticky = sticky || cell.column.sticky;
                 return (
-                    <td
+                    <StyledCell
                         style={style}
+                        sticky={isSticky}
                         className={cell.column.className}
                         {...{ /* eslint-disable-line react/jsx-props-no-spreading */
                             ...cell.getCellProps(),
@@ -76,7 +91,7 @@ export function TableRow<T extends object>({
                         }}
                     >
                         {cell.render('Cell', { viewIndex })}
-                    </td>
+                    </StyledCell>
                 );
             })}
         </StyledTableRow>

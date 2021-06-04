@@ -8,6 +8,20 @@ export default {
     component: Table,
 };
 
+interface Data1 {
+    column0: string;
+    column1: string;
+    column2: string;
+    column3: string;
+    column4: string;
+    column5: string;
+    column6: string;
+    column7: string;
+    column8: string;
+    column9: string;
+    column10: string;
+}
+
 interface Data {
     column1: string;
     column2: string;
@@ -15,40 +29,90 @@ interface Data {
 }
 
 export const Normal: Story = () => {
-    const columns: TableColumn<Data> = [
-        {
+    const getColumns = () : TableColumn<Data1> => {
+        const columns: TableColumn<Data1> = [{
+            Header: 'Column 0',
+            accessor: 'column0',
+            sticky: true,
+        }, {
             Header: 'Column 1',
             accessor: 'column1',
-        },
-        {
+            sticky: true,
+        }, {
             Header: 'Column 2',
             accessor: 'column2',
-        },
-        {
+        }, {
             Header: 'Column 3',
             accessor: 'column3',
-        },
-    ];
+        }, {
+            Header: 'Column 4',
+            accessor: 'column4',
+        }, {
+            Header: 'Column 5',
+            accessor: 'column5',
+        }, {
+            Header: 'Column 6',
+            accessor: 'column6',
+        }, {
+            Header: 'Column 7',
+            accessor: 'column7',
+        }, {
+            Header: 'Column 8',
+            accessor: 'column8',
+        }, {
+            Header: 'Column 9',
+            accessor: 'column9',
+        }, {
+            Header: 'Column 10',
+            accessor: 'column10',
+            sticky: 'right',
+        }];
+        return columns;
+    };
 
-    const data: TableRow<Data>[] = [
-        {
-            column1: 'a',
-            column2: 'a',
-            column3: 'a',
-        },
-        {
-            column1: 'b',
-            column2: 'b',
-            column3: 'b',
-        },
-        {
-            column1: 'a',
-            column2: 'a',
-            column3: 'a',
-        },
-    ];
+    const getData = (): TableRow<Data1>[] => {
+        const dataList: TableRow<Data1>[] = [];
+        let count = 1;
+        const max = 100;
+        while (count < max) {
+            const data = `${count}`;
+            dataList.push({
+                sticky: (count < 5),
+                error: (count === 1 || count === 4 || count === 6),
+                column0: data,
+                column1: data,
+                column2: data,
+                column3: data,
+                column4: data,
+                column5: data,
+                column6: data,
+                column7: data,
+                column8: data,
+                column9: data,
+                column10: data,
+            });
+            count += 1;
+        }
+        return dataList;
+    };
+
+    const Wrap = styled.div`
+    width: 800px;
+    height: 400px;
+    overflow: scroll;
+`;
+
     return (
-        <Table columns={columns} data={data} />
+        <Wrap>
+            <Table
+                columns={getColumns()}
+                data={getData()}
+                stickyHeader
+                onRowClick={(row) => {
+                    console.info('row: ', row);
+                }}
+            />
+        </Wrap>
     );
 };
 
