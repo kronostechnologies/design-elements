@@ -9,7 +9,7 @@ module.exports = config({
         { type: 'docs', section: 'Docs', hidden: false },
         { type: 'chore', section: 'Other', hidden: true },
         { type: 'style', section: 'Other', hidden: true },
-        { type: 'refactor', section: 'Other', hidden: true },
+        { type: 'refactor', section: 'Other', hidden: false },
         { type: 'perf', section: 'Other', hidden: true },
         { type: 'test', section: 'Other', hidden: true },
     ],
