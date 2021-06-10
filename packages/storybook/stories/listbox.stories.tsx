@@ -85,7 +85,7 @@ export const WithoutOptionLabel: Story = () => (
     />
 );
 
-export const WithoutDisabledOptions: Story = () => {
+export const WithDisabledOptions: Story = () => {
     const disabledOptions = [
         {
             label: 'Option A',

@@ -87,9 +87,9 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #B7BBC2;
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -102,9 +102,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-color: #FFFFFF;
-  color: #B7BBC2;
-  cursor: default;
 }
 
 .c5:focus {
@@ -281,9 +278,9 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #B7BBC2;
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,9 +293,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-color: #FFFFFF;
-  color: #B7BBC2;
-  cursor: default;
 }
 
 .c5:focus {
@@ -483,9 +477,9 @@ exports[`Listbox Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #B7BBC2;
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -498,9 +492,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-color: #FFFFFF;
-  color: #B7BBC2;
-  cursor: default;
 }
 
 .c5:focus {

@@ -109,124 +109,134 @@ describe('Select', () => {
     });
 
     describe('input', () => {
-        test('ArrowUp should open listbox', () => {
-            const wrapper = shallow(<Select options={provinces} />);
+        describe('ArrowUp', () => {
+            test('should open listbox', () => {
+                const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
 
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
+
+            test('should open listbox when Select is searchable', () => {
+                const wrapper = shallow(<Select options={provinces} searchable />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
+
+            test('should focus last element in listbox', () => {
+                const wrapper = mountWithTheme(<Select options={provinces} />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+
+                expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('yt');
+            });
+
+            test('should focus last enabled element in listbox when there is disabled options', () => {
+                const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+
+                expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('3');
+            });
         });
 
-        test('ArrowUp should open listbox when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
+        describe('ArrowDown', () => {
+            test('should open listbox', () => {
+                const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
 
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
+
+            test('should open listbox when Select is searchable', () => {
+                const wrapper = shallow(<Select options={provinces} searchable />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
+
+            test('should focus first element in listbox', () => {
+                const wrapper = mountWithTheme(<Select options={provinces} />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+
+                expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('on');
+            });
+
+            test('should focus first enabled element in listbox when there is disabled options', () => {
+                const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+
+                expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('2');
+            });
         });
 
-        test('ArrowUp should focus last element in listbox', () => {
-            const wrapper = mountWithTheme(<Select options={provinces} />);
+        describe('Enter', () => {
+            test('should open listbox', () => {
+                const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
 
-            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('yt');
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
+
+            test('should not open listbox when Select is searchable', () => {
+                const wrapper = shallow(<Select options={provinces} searchable />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
+
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+            });
         });
 
-        test('ArrowUp should focus last enabled element in listbox when there is disabled options', () => {
-            const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+        describe('Spacebar', () => {
+            test('should open listbox', () => {
+                const wrapper = shallow(<Select options={provinces} />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
 
-            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('3');
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
+
+            test('should open listbox when Select is searchable', () => {
+                const wrapper = shallow(<Select options={provinces} searchable />);
+
+                getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
+
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
+            });
         });
 
-        test('ArrowDown should open listbox', () => {
-            const wrapper = shallow(<Select options={provinces} />);
+        describe('Escape', () => {
+            test('should close listbox', () => {
+                const wrapper = shallow(<Select options={provinces} defaultOpen />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
 
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
-        });
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+            });
 
-        test('ArrowDown should open listbox when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
+            test('should close listbox when Select is searchable', () => {
+                const wrapper = shallow(<Select options={provinces} defaultOpen searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
 
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
-        });
+                expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+            });
 
-        test('ArrowDown should focus first element in listbox', () => {
-            const wrapper = mountWithTheme(<Select options={provinces} />);
+            test('should clear input value when Select is searchable', () => {
+                const wrapper = shallow(<Select options={provinces} defaultValue="qc" searchable />);
 
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
+                getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
 
-            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('on');
-        });
-
-        test('ArrowDown should focus first enabled element in listbox when there is disabled options', () => {
-            const wrapper = mountWithTheme(<Select options={disabledOptions} />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
-
-            expect(getByTestId(wrapper, 'listbox').props().focusedValue).toBe('2');
-        });
-
-        test('Enter should open listbox', () => {
-            const wrapper = shallow(<Select options={provinces} />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
-
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
-        });
-
-        test('Enter should not open listbox when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
-
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
-        });
-
-        test('Spacebar should open listbox', () => {
-            const wrapper = shallow(<Select options={provinces} />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
-
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
-        });
-
-        test('Spacebar should open listbox when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
-
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
-        });
-
-        test('Escape should close listbox', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
-
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
-        });
-
-        test('Escape should close listbox when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen searchable />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
-
-            expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
-        });
-
-        test('input value should be cleared when escape is pressed when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} defaultValue="qc" searchable />);
-
-            getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
-
-            expect(getByTestId(wrapper, 'input').props().value).toBe('');
+                expect(getByTestId(wrapper, 'input').props().value).toBe('');
+            });
         });
 
         test('listbox should open when search entry has matching result(s) when Select is searchable', () => {

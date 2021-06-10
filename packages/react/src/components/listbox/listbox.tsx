@@ -9,7 +9,9 @@ import React, {
     useMemo,
     useState,
 } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { Theme } from 'themes';
+import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -101,6 +103,7 @@ interface ListItemProps {
     selected: boolean;
     focused: boolean;
     checkIndicator: boolean;
+    theme: Theme;
 }
 
 interface BoxProps {
@@ -151,11 +154,21 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     return 'var(--spacing-2x)';
 };
 
+function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps): string {
+    if (disabled) {
+        return theme.greys.white;
+    }
+    if (focused) {
+        return theme.greys.grey;
+    }
+    return 'inherit';
+}
+
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    background-color: ${({ focused, theme }) => (focused ? theme.greys.grey : 'inherit')};
-    color: ${({ theme }) => theme.greys.black};
-    cursor: pointer;
+    background-color: ${getListItemBackgroundColor};
+    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
@@ -169,12 +182,6 @@ const ListItem = styled.li<ListItemProps>`
     &:focus {
         outline: none;
     }
-
-    ${({ disabled, theme }) => disabled && css`
-        background-color: ${theme.greys.white};
-        color: ${theme.greys['mid-grey']};
-        cursor: default;
-    `}
 `;
 
 const CheckIndicator = styled(Icon)`
@@ -322,43 +329,15 @@ export const Listbox = forwardRef(({
         onChange?.(option);
     }, [multiselect, onChange, selectedOptionValue]);
 
-    const getPrevOptionFromFocusIndex = useCallback((index: number): ListOption => (
-        index === 0 ? list[list.length - 1] : list[index - 1]
-    ), [list]);
+    const getPrevSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
+        const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
+        return getPreviousElementInArray(enabledItems, enabledItems.findIndex((x) => x.focusIndex === focusIndex));
+    }, [list]);
 
-    const getPrevSelectableOption = useCallback((focusIndex: number): ListOption => {
-        let option = getPrevOptionFromFocusIndex(focusIndex);
-
-        if (option.disabled) {
-            let i = 0;
-
-            while (option.disabled && i < list.length) {
-                option = getPrevOptionFromFocusIndex(option.focusIndex);
-                i += 1;
-            }
-        }
-
-        return option;
-    }, [list, getPrevOptionFromFocusIndex]);
-
-    const getNextOptionFromFocusIndex = useCallback((index: number): ListOption => (
-        list.length === index + 1 ? list[0] : list[index + 1]
-    ), [list]);
-
-    const getNextSelectableOption = useCallback((focusIndex: number): ListOption => {
-        let option = getNextOptionFromFocusIndex(focusIndex);
-
-        if (option.disabled) {
-            let i = 0;
-
-            while (option.disabled && i < list.length) {
-                option = getNextOptionFromFocusIndex(option.focusIndex);
-                i += 1;
-            }
-        }
-
-        return option;
-    }, [list, getNextOptionFromFocusIndex]);
+    const getNextSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
+        const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
+        return getNextElementInArray(enabledItems, enabledItems.findIndex((x) => x.focusIndex === focusIndex));
+    }, [list]);
 
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
         (option) => () => selectOption(option), [selectOption],
