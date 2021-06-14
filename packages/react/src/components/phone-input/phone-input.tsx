@@ -26,6 +26,7 @@ interface PhoneInputProps {
     disabled?: boolean;
     label?: string;
     hint?: string;
+    name?: string;
 }
 
 const MaskContainer = styled.div<{ isMobile: boolean }>`
@@ -50,9 +51,8 @@ const InputDuplicatedValue = styled.span`
     color: transparent;
 `;
 
-// Don't forget to change the MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX also when changing placeholder char value.
 const PLACEHOLDER_CHAR = '_';
-const MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX = /_/g;
+const MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX = new RegExp(`${PLACEHOLDER_CHAR}`, 'g');
 
 function getPhoneNumberMaxLengthFromPattern(pattern: string): number {
     const occurrences = pattern.match(MATCH_ALL_PLACEHOLDER_CHAR_OCCURRENCE_REGEX) || [];
@@ -72,6 +72,7 @@ export function PhoneInput({
     disabled,
     label,
     hint,
+    name,
 }: PhoneInputProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const phoneNumberMaxLength = useMemo(() => getPhoneNumberMaxLengthFromPattern(pattern), [pattern]);
@@ -101,6 +102,10 @@ export function PhoneInput({
 
     const hasBackspaceJustBeenEntered = useCallback(() => lastEnteredKey === 'Backspace', [lastEnteredKey]);
     const hasDeleteJustBeenEntered = useCallback(() => lastEnteredKey === 'Delete', [lastEnteredKey]);
+    const isLastKeyEnteredInvalid = useCallback(() => Number.isNaN(Number(lastEnteredKey))
+        && !hasBackspaceJustBeenEntered()
+        && !hasDeleteJustBeenEntered(),
+    [lastEnteredKey, hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered]);
 
     useLayoutEffect(() => {
         inputRef.current?.setSelectionRange(selectionPosition, selectionPosition);
@@ -141,7 +146,10 @@ export function PhoneInput({
 
     const getNewSelectionPosition = useCallback((currentSelection: number, currentValue: string, newValue: string) => {
         let newSelectionPosition: number;
-        if (hasDeleteJustBeenEntered() || isTextHighlighted) {
+
+        if (isLastKeyEnteredInvalid()) {
+            newSelectionPosition = currentSelection - 1;
+        } else if (hasDeleteJustBeenEntered() || isTextHighlighted) {
             newSelectionPosition = currentSelection;
         } else if (hasBackspaceJustBeenEntered()) {
             const previousPlaceholderIndex = getPreviousPlaceholderIndex(
@@ -161,7 +169,7 @@ export function PhoneInput({
         }
 
         return newSelectionPosition;
-    }, [hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered, isTextHighlighted, pattern]);
+    }, [isLastKeyEnteredInvalid, hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered, isTextHighlighted, pattern]);
 
     const handleChange = useCallback(({ currentTarget }: ChangeEvent<HTMLInputElement>) => {
         const inputValue = currentTarget.value;
@@ -205,6 +213,7 @@ export function PhoneInput({
                 data-testid='text-input'
                 ref={inputRef}
                 type="tel"
+                name={name}
                 value={phoneInputValue}
                 required={required}
                 disabled={disabled}
