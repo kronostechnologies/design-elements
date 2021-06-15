@@ -260,7 +260,14 @@ export const SmallRows: Story = () => {
 };
 
 export const RowClickCallback: Story = () => {
-    const columns: TableColumn<Data> = [
+    interface DataWithHref {
+        column1: string;
+        column2: string;
+        column3: string;
+        href: string;
+    }
+
+    const columns: TableColumn<DataWithHref> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
@@ -274,13 +281,6 @@ export const RowClickCallback: Story = () => {
             accessor: 'column3',
         },
     ];
-
-    interface DataWithHref {
-        column1: string;
-        column2: string;
-        column3: string;
-        href: string;
-    }
 
     const data: TableRow<DataWithHref>[] = [
         {
@@ -432,5 +432,44 @@ export const SortableRows: Story = () => {
     ];
     return (
         <Table<SortableData> columns={columns} data={data} />
+    );
+};
+
+export const SelectableRows: Story = () => {
+    interface SelectableData {
+        column1: string;
+        column2: string;
+        column3: number;
+    }
+
+    const columns: TableColumn<SelectableData> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+        },
+    ];
+
+    const data: TableRow<SelectableData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 20,
+        },
+    ];
+    return (
+        <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
     );
 };

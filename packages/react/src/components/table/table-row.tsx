@@ -1,15 +1,12 @@
 import React, { CSSProperties, ReactElement } from 'react';
-import { Row as ReactTableRow } from 'react-table';
+import { Row } from 'react-table';
 import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface Row<T extends object> extends ReactTableRow<T> {
-}
 
 interface StyledTableRowProps {
     clickable: boolean;
     error: boolean;
+    selected: boolean;
     striped?: boolean;
 }
 
@@ -19,7 +16,9 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         :nth-child(odd) {
             background-color: ${theme.greys['colored-white']};
         }
-    `} ${({ clickable, theme }) => clickable && css`
+    `}
+
+    ${({ clickable, theme }) => clickable && css`
         :focus {
             border-color: ${theme.tokens['focus-border']};
             box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
@@ -30,14 +29,21 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
             background-color: ${theme.greys.grey};
             cursor: pointer;
         }
-    `}  ${({ error, theme }) => error && css`
+    `}
+
+    ${({ selected }) => selected && css`
+        /* TODO fix with next thematization */
+        background-color: #e0f0f9;
+    `}
+
+    ${({ error, theme }) => error && css`
         /* TODO fix with next thematization theme.notifications.error4 */
         background-color: #fcf8f9;
         border: 1px solid ${theme.notifications['error-2.1']};
     `}
 `;
 
-interface TableRowProps<T extends object> extends Omit<StyledTableRowProps, 'clickable'> {
+interface TableRowProps<T extends object> extends Omit<StyledTableRowProps, 'clickable' | 'selected'> {
     row: Row<T>;
     viewIndex: number;
 
@@ -50,7 +56,9 @@ export function TableRow<T extends object>({
     return (
         <StyledTableRow
             clickable={!!onClick}
+            data-testid={`table-row-${row.index}`}
             error={error}
+            selected={row.isSelected}
             striped={striped}
             onClick={() => onClick && onClick(row)}
             {...row.getRowProps() /* eslint-disable-line react/jsx-props-no-spreading */}

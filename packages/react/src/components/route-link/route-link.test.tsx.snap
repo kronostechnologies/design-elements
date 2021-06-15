@@ -26,6 +26,16 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c1 {
   color: #84C6EA;
   font-size: 0.875rem;
@@ -72,6 +82,16 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 }
 
 .c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #00629666;
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
@@ -145,6 +165,16 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c1 {
   color: #006296;
   font-size: 0.875rem;
@@ -212,6 +242,16 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c1 {
   color: #006296;
   font-size: 0.875rem;
@@ -273,6 +313,16 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c1 {
   color: #84C6EA;
   font-size: 0.875rem;
@@ -319,6 +369,16 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 }
 
 .c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #00629666;
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
@@ -392,6 +452,16 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
 .c1 {
   color: #006296;
   font-size: 0.875rem;
@@ -454,6 +524,16 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 }
 
 .c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #00629666;
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
