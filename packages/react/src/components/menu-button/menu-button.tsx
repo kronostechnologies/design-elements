@@ -4,11 +4,11 @@ import { usePopperTooltip } from 'react-popper-tooltip';
 import { Menu, MenuOption } from '../menu/menu';
 import { Button, ButtonType } from '../buttons/button';
 import { Icon } from '../icon/icon';
+import { menuDimensions } from '../../tokens/menuDimensions';
 
 const StyledMenu = styled(Menu)`
-    max-width: 350px;
-    min-width: 200px;
-    width: initial;
+    max-width: ${menuDimensions.maxWidth};
+    min-width: ${menuDimensions.minWidth};
 `;
 
 const StyledIcon = styled(Icon)`
@@ -50,7 +50,7 @@ export const MenuButton: FunctionComponent<Props> = ({ buttonType, defaultOpen, 
     }
 
     return (
-        <div className="App">
+        <div>
             <Button
                 data-testid="menu-button"
                 type="button"
@@ -62,8 +62,8 @@ export const MenuButton: FunctionComponent<Props> = ({ buttonType, defaultOpen, 
             >
                 Trigger
                 <StyledIcon
-                    ria-hidden="true"
-                    data-testid="caret-icon"
+                    aria-hidden="true"
+                    data-testid="chevron-icon"
                     name={visible ? 'chevronUp' : 'chevronDown'}
                     size="16"
                 />

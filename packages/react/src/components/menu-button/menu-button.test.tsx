@@ -71,17 +71,17 @@ describe('MenuButton', () => {
         expect(getByTestId(wrapper, 'menu').exists()).toBe(false);
     });
 
-    describe('caret icon', () => {
+    describe('chevron icon', () => {
         it('should point downwards when menu is not open', () => {
             const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options} />);
 
-            expect(getByTestId(wrapper, 'caret-icon').prop('name')).toBe('chevronDown');
+            expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronDown');
         });
 
         it('should point upwards when menu is open', () => {
             const wrapper = mountWithTheme(<MenuButton buttonType="primary" defaultOpen options={options} />);
 
-            expect(getByTestId(wrapper, 'caret-icon').prop('name')).toBe('chevronUp');
+            expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronUp');
         });
     });
 });
