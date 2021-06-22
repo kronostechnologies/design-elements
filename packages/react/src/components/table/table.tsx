@@ -163,10 +163,12 @@ const StyledTable = styled.table<StyledTableProps & { theme: Theme }>`
     }
     
     /** Rows borders **/
-    tr:first-child[data-error=false] td, tr[data-error=false] + tr td {
+    
+    tr:first-child[data-error=false] td, tr[data-error=false]:not(:focus) + tr td {
         border-top: 1px solid ${({ theme }) => theme.greys.grey};
     }
     
+    // Error rows
     tr:first-child[data-error=true] td, tr[data-error=false] + tr[data-error=true] td {
         border-top: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
     }
@@ -181,6 +183,22 @@ const StyledTable = styled.table<StyledTableProps & { theme: Theme }>`
             border-right: 1px solid ${({ theme }) => theme.notifications['error-2.1']};
         }
     }
+    
+    // Focus rows
+    tr:first-child[data-clickable=true]:focus td, tr:not(:focus) + tr[data-clickable=true]:focus td {
+        border-top: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+    }
+    
+    tr[data-clickable=true]:focus td {
+        border-bottom: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        
+        :first-child {
+            border-left: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        }
+        :last-child {
+            border-right: 1px solid ${({ theme }) => theme.tokens['focus-border']};
+        }
+    }    
 `;
 
 function useSelectableRows<T extends object>(selectableRows?: boolean): (hooks: Hooks<T>) => void {

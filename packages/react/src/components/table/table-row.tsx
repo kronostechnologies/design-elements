@@ -44,9 +44,15 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme}>`
     `}
     
     // Background color to allow sticky columns/rows
-    :not(:hover) td {
-        background-color: ${({ theme, error }) => (error ? 'inherit' : theme.greys.white)};
-    }
+    ${({ clickable, theme, error }) => (clickable ? css`
+        :not(:hover) td {
+            background-color: ${(error ? 'inherit' : theme.greys.white)};
+        }
+    ` : css`
+        td {
+            background-color: ${(error ? 'inherit' : theme.greys.white)};
+        }
+    `)}
 `;
 
 const StyledCell = styled.td<{ sticky?: boolean }>`
@@ -73,6 +79,7 @@ export function TableRow<T extends object>({
             selected={row.isSelected}
             striped={striped}
             onClick={() => onClick && onClick(row)}
+            data-clickable={!!onClick}
             data-error={error}
             {...row.getRowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             {...(onClick ? { tabIndex: 0, role: 'button' } : {}) /* eslint-disable-line react/jsx-props-no-spreading */}

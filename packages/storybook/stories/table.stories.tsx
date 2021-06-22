@@ -78,7 +78,7 @@ export const Normal: Story = () => {
             const data = `${count}`;
             dataList.push({
                 sticky: (count < 5),
-                error: (count === 1 || count === 4 || count === 6),
+                error: (count === 1 || count === 3 || count === 4 || count === 5),
                 column0: data,
                 column1: data,
                 column2: data,
