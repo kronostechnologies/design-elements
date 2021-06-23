@@ -97,17 +97,30 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #006296;
-  border-radius: 100%;
+  border-radius: 16px;
+  box-sizing: border-box;
   color: #FFFFFF;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 0.9rem;
   font-weight: var(--font-normal);
   height: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   line-height: 24px;
   margin: 0 var(--spacing-half);
+  min-width: 24px;
+  padding: 0 var(--spacing-1x);
   text-align: center;
-  width: 24px;
 }
 
 .c5:focus {
@@ -126,17 +139,346 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 }
 
 .c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #FFFFFF;
-  border-radius: 100%;
+  border-radius: 16px;
+  box-sizing: border-box;
   color: #000000;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 0.9rem;
   font-weight: var(--font-normal);
   height: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   line-height: 24px;
   margin: 0 var(--spacing-half);
+  min-width: 24px;
+  padding: 0 var(--spacing-1x);
   text-align: center;
-  width: 24px;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+  cursor: pointer;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  class="c0"
+>
+  <nav
+    aria-label="pagination"
+    class="c1"
+  >
+    <button
+      aria-disabled="true"
+      aria-label="first page"
+      class="c2 c3"
+      data-testid="firstPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+    <button
+      aria-disabled="true"
+      aria-label="previous page"
+      class="c2 c3"
+      data-testid="previousPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+    <ol
+      class="c4"
+    >
+      <li
+        class="c5"
+        data-testid="page-1"
+        tabindex="0"
+      >
+        <a
+          aria-current="page"
+          aria-label="go to page 1"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="c6"
+        data-testid="page-2"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 2"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="c6"
+        data-testid="page-3"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 3"
+        >
+          3
+        </a>
+      </li>
+    </ol>
+    <button
+      aria-disabled="false"
+      aria-label="next page"
+      class="c2 c3"
+      data-testid="nextPageButton"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+    <button
+      aria-disabled="false"
+      aria-label="last page"
+      class="c2 c3"
+      data-testid="lastPageButton"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Pagination Matches the desktop snapshot with multiples digits page numbers 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c2:not(:disabled) {
+  cursor: pointer;
+}
+
+.c2 > svg {
+  color: inherit;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c3:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 var(--spacing-half);
+  padding: 0;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #006296;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: var(--font-normal);
+  height: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0 var(--spacing-half);
+  min-width: 24px;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c5:hover {
+  background-color: #006296;
+  cursor: default;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #000000;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: var(--font-normal);
+  height: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0 var(--spacing-half);
+  min-width: 24px;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
 }
 
 .c6:focus {
@@ -387,17 +729,30 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #006296;
-  border-radius: 100%;
+  border-radius: 16px;
+  box-sizing: border-box;
   color: #FFFFFF;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 1rem;
   font-weight: var(--font-normal);
   height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   line-height: 32px;
   margin: 0 var(--spacing-half);
+  min-width: 32px;
+  padding: 0 var(--spacing-1x);
   text-align: center;
-  width: 32px;
 }
 
 .c5:focus {
@@ -416,17 +771,346 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 }
 
 .c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #FFFFFF;
-  border-radius: 100%;
+  border-radius: 16px;
+  box-sizing: border-box;
   color: #000000;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 1rem;
   font-weight: var(--font-normal);
   height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   line-height: 32px;
   margin: 0 var(--spacing-half);
+  min-width: 32px;
+  padding: 0 var(--spacing-1x);
   text-align: center;
-  width: 32px;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+  cursor: pointer;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  class="c0"
+>
+  <nav
+    aria-label="pagination"
+    class="c1"
+  >
+    <button
+      aria-disabled="true"
+      aria-label="first page"
+      class="c2 c3"
+      data-testid="firstPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+    <button
+      aria-disabled="true"
+      aria-label="previous page"
+      class="c2 c3"
+      data-testid="previousPageButton"
+      disabled=""
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+    <ol
+      class="c4"
+    >
+      <li
+        class="c5"
+        data-testid="page-1"
+        tabindex="0"
+      >
+        <a
+          aria-current="page"
+          aria-label="go to page 1"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="c6"
+        data-testid="page-2"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 2"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="c6"
+        data-testid="page-3"
+        tabindex="0"
+      >
+        <a
+          aria-label="go to page 3"
+        >
+          3
+        </a>
+      </li>
+    </ol>
+    <button
+      aria-disabled="false"
+      aria-label="next page"
+      class="c2 c3"
+      data-testid="nextPageButton"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+    <button
+      aria-disabled="false"
+      aria-label="last page"
+      class="c2 c3"
+      data-testid="lastPageButton"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="20"
+        width="20"
+      />
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Pagination Matches the mobile snapshot with multiples digits page numbers 1`] = `
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
+  min-height: 48px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c2:not(:disabled) {
+  cursor: pointer;
+}
+
+.c2 > svg {
+  color: inherit;
+}
+
+.c3 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 48px;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c3:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 var(--spacing-half);
+  padding: 0;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #006296;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 32px;
+  margin: 0 var(--spacing-half);
+  min-width: 32px;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c5:hover {
+  background-color: #006296;
+  cursor: default;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #000000;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 32px;
+  margin: 0 var(--spacing-half);
+  min-width: 32px;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
 }
 
 .c6:focus {
