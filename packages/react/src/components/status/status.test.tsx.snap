@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status matches snapshot (blocked) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  background-color: #CD2C23;
+  border: none;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 10px;
+  margin-right: calc(var(--spacing-base) * 1.5);
+  width: 10px;
+}
+
+<Status
+  label="blocked"
+  type="blocked"
+>
+  <styled.div
+    type="blocked"
+  >
+    <div
+      className="c0"
+      type="blocked"
+    >
+      <styled.div
+        type="blocked"
+      >
+        <div
+          className="c1"
+          type="blocked"
+        />
+      </styled.div>
+      <span>
+        blocked
+      </span>
+    </div>
+  </styled.div>
+</Status>
+`;
+
+exports[`Status matches snapshot (disabled) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #60666E;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 10px;
+  margin-right: calc(var(--spacing-base) * 1.5);
+  width: 10px;
+}
+
+<Status
+  label="disabled"
+  type="disabled"
+>
+  <styled.div
+    type="disabled"
+  >
+    <div
+      className="c0"
+      type="disabled"
+    >
+      <styled.div
+        type="disabled"
+      >
+        <div
+          className="c1"
+          type="disabled"
+        />
+      </styled.div>
+      <span>
+        disabled
+      </span>
+    </div>
+  </styled.div>
+</Status>
+`;
+
+exports[`Status matches snapshot (enabled) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  background-color: #008533;
+  border: none;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 10px;
+  margin-right: calc(var(--spacing-base) * 1.5);
+  width: 10px;
+}
+
+<Status
+  label="enabled"
+  type="enabled"
+>
+  <styled.div
+    type="enabled"
+  >
+    <div
+      className="c0"
+      type="enabled"
+    >
+      <styled.div
+        type="enabled"
+      >
+        <div
+          className="c1"
+          type="enabled"
+        />
+      </styled.div>
+      <span>
+        enabled
+      </span>
+    </div>
+  </styled.div>
+</Status>
+`;
