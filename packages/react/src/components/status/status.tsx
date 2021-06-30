@@ -33,12 +33,13 @@ const Circle = styled.div<{ type: StatusType }>`
 `;
 
 interface Props {
+    className?: string;
     label: string;
     type: StatusType;
 }
 
-export const Status: VoidFunctionComponent<Props> = ({ label, type }) => (
-    <Wrapper type={type}>
+export const Status: VoidFunctionComponent<Props> = ({ className, label, type }) => (
+    <Wrapper className={className} type={type}>
         <Circle type={type} />
         <span>{label}</span>
     </Wrapper>
