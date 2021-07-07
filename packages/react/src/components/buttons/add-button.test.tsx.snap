@@ -373,7 +373,7 @@ exports[`Add Button has secondary styles 1`] = `
 }
 
 .c1 {
-  background-color: transparent;
+  background-color: #FFFFFF;
   border-color: #006296;
   color: #006296;
 }

@@ -60,7 +60,7 @@ const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<
 `;
 
 const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ theme }) => css`
-    background-color: transparent;
+    background-color: ${theme.greys.white};
     border-color: ${theme.main['primary-1.1']};
     color: ${theme.main['primary-1.1']};
 
