@@ -1,9 +1,9 @@
 import { ApplicationMenu } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { ReactElement, VoidFunctionComponent } from 'react';
+import CustomLogoSvg from './assets/customLogo.svg';
 import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
-import CustomLogoSvg from './assets/customLogo.svg';
 
 export default {
     title: 'Structure/Application Menu',
@@ -48,3 +48,9 @@ export const WithMobileDrawer: Story = () => (
     </ApplicationMenu>
 );
 WithMobileDrawer.decorators = [MobileDecorator];
+
+export const WithSkipLink: Story = () => (
+    <ApplicationMenu skipLinkHref="#">
+        <p>Hello world</p>
+    </ApplicationMenu>
+);
