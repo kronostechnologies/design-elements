@@ -18,6 +18,7 @@ export { Select } from './components/select/select';
 export { StepperInput } from './components/stepper-input/stepper-input';
 export { TextArea } from './components/text-area/text-area';
 export { TextInput } from './components/text-input/text-input';
+export { PhoneInput } from './components/phone-input/phone-input';
 export { Avatar } from './components/avatar/avatar';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { ToggleSwitch } from './components/toggle-switch/toggle-switch';

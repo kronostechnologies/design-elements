@@ -3,20 +3,24 @@ import { Theme } from '../../../themes';
 import { focus } from '../../../utils/css-state';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 
-export const inputsStyle: (theme: Theme) => FlattenSimpleInterpolation = (theme: Theme) => css`
+export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInterpolation = (
+    theme: Theme,
+    isMobile = false,
+) => css`
     background: ${theme.greys.white};
     border: 1px solid ${theme.greys['dark-grey']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: ${theme.greys.black};
     font-family: inherit;
-    font-size: 0.875rem;
-    letter-spacing: 0.025rem;
-    line-height: 1.4rem;
+    font-size: ${isMobile ? '1rem' : '0.875rem'};
+    letter-spacing: ${isMobile ? '0.02875rem' : '0.015rem'};
+    line-height: 1.5rem;
     margin: 0;
     outline: none;
     padding: var(--spacing-half) var(--spacing-1x);
     width: 100%;
+
     ${focus({ theme }, true)};
 
     &::placeholder {

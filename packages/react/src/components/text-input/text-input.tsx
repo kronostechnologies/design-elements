@@ -3,7 +3,9 @@ import React, {
     DetailedHTMLProps,
     FocusEvent,
     forwardRef,
+    KeyboardEvent,
     InputHTMLAttributes,
+    MouseEvent,
     ReactElement,
     Ref,
     useCallback,
@@ -13,11 +15,12 @@ import React, {
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
 
-const Input = styled.input`
-    ${({ theme }) => inputsStyle(theme)}
+const Input = styled.input<{ isMobile: boolean }>`
+    ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
 `;
 
 type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -43,6 +46,12 @@ interface TextInputProps extends PartialInputProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 
     onFocus?(event: FocusEvent<HTMLInputElement>): void;
+
+    onKeyUp?(event: KeyboardEvent<HTMLInputElement>): void;
+
+    onKeyDown?(event: KeyboardEvent<HTMLInputElement>): void;
+
+    onMouseUp?(event: MouseEvent<HTMLInputElement>): void;
 }
 
 export const TextInput = forwardRef(({
@@ -65,7 +74,11 @@ export const TextInput = forwardRef(({
     onBlur,
     onChange,
     onFocus,
+    onKeyUp,
+    onKeyDown,
+    onMouseUp,
 }: TextInputProps, ref: Ref<HTMLInputElement>): ReactElement => {
+    const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -102,6 +115,8 @@ export const TextInput = forwardRef(({
         >
             <Input
                 autoComplete={autoComplete}
+                data-testid="text-input"
+                isMobile={isMobile}
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={id}
@@ -111,6 +126,9 @@ export const TextInput = forwardRef(({
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
+                onMouseUp={onMouseUp}
+                onKeyUp={onKeyUp}
+                onKeyDown={onKeyDown}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={required}

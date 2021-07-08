@@ -73,9 +73,15 @@ export function FieldContainer({
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label forId={fieldId}>{label}</Label>}
-            {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
-            {!valid && <InvalidField controlId={fieldId} feedbackMsg={validationErrorMessage} />}
+            {label && <Label data-testid="text-input-label" forId={fieldId}>{label}</Label>}
+            {hint && <StyledHint data-testid="text-input-hint" isMobile={isMobile}>{hint}</StyledHint>}
+            {!valid && (
+                <InvalidField
+                    data-testid="text-input-error-msg"
+                    controlId={fieldId}
+                    feedbackMsg={validationErrorMessage}
+                />
+            )}
             {children}
         </StyledDiv>
     );
