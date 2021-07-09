@@ -1,0 +1,1153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-3x);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover {
+  background-color: #dbdee1;
+  border-color: #60666E;
+  cursor: pointer;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
+.c3 {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: calc(24px - var(--spacing-1x) / 2);
+  margin-bottom: 1px;
+  margin-left: var(--spacing-1x);
+  padding: var(--spacing-half);
+  vertical-align: middle;
+}
+
+.c3:hover {
+  background-color: #dbdee1;
+}
+
+.c3:hover .c4 {
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1 .c2 {
+  margin-right: calc(-1 * var(--spacing-half));
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+  <button
+    aria-label="deleteButtonAriaLabel"
+    class="c2 c3"
+    data-testid="Test-delete-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c4 "
+      color="#60666e"
+      focusable="false"
+      height="12"
+      width="12"
+    />
+  </button>
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
+.c2 {
+  color: #60666e;
+  display: inline-block;
+  height: calc(24px - var(--spacing-1x) / 2);
+  margin-right: var(--spacing-1x);
+  vertical-align: middle;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 12px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="c2"
+    color="currentColor"
+    data-testid="Test-icon"
+    height="12"
+    role="img"
+    width="12"
+  />
+  Test
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: calc(312px / 0.875 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-3x);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover {
+  background-color: #dbdee1;
+  border-color: #60666E;
+  cursor: pointer;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
+.c3 {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: calc(24px - var(--spacing-1x) / 2);
+  margin-bottom: 1px;
+  margin-left: var(--spacing-1x);
+  padding: var(--spacing-half);
+  vertical-align: middle;
+}
+
+.c3:hover {
+  background-color: #dbdee1;
+}
+
+.c3:hover .c4 {
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1 .c2 {
+  margin-right: calc(-1 * var(--spacing-half));
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+  <button
+    aria-label="deleteButtonAriaLabel"
+    class="c2 c3"
+    data-testid="Test-delete-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c4 "
+      color="#60666e"
+      focusable="false"
+      height="12"
+      width="12"
+    />
+  </button>
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
+.c2 {
+  color: #60666e;
+  display: inline-block;
+  height: calc(24px - var(--spacing-1x) / 2);
+  margin-right: var(--spacing-1x);
+  vertical-align: middle;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 12px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="c2"
+    color="currentColor"
+    data-testid="Test-icon"
+    height="12"
+    role="img"
+    width="12"
+  />
+  Test
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: calc(312px / 0.875 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover {
+  background-color: #dbdee1;
+  border-color: #60666E;
+  cursor: pointer;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
+.c3 {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: calc(16px - var(--spacing-half) / 2);
+  margin-bottom: 1px;
+  margin-left: var(--spacing-1x);
+  padding: var(--spacing-half);
+  vertical-align: middle;
+}
+
+.c3:hover {
+  background-color: #dbdee1;
+}
+
+.c3:hover .c4 {
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1 .c2 {
+  margin-right: calc(-1 * var(--spacing-half));
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+  <button
+    aria-label="deleteButtonAriaLabel"
+    class="c2 c3"
+    data-testid="Test-delete-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c4 "
+      color="#60666e"
+      focusable="false"
+      height="12"
+      width="12"
+    />
+  </button>
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
+.c2 {
+  color: #60666e;
+  display: inline-block;
+  height: calc(16px - var(--spacing-half) / 2);
+  margin-right: var(--spacing-1x);
+  vertical-align: middle;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 12px);
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="c2"
+    color="currentColor"
+    data-testid="Test-icon"
+    height="12"
+    role="img"
+    width="12"
+  />
+  Test
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (desktop) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (desktop) 2`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.875 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:hover {
+  background-color: #dbdee1;
+  border-color: #60666E;
+  cursor: pointer;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  Test
+</button>
+`;
+
+exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
+.c3 {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: calc(16px - var(--spacing-half) / 2);
+  margin-bottom: 1px;
+  margin-left: var(--spacing-1x);
+  padding: var(--spacing-half);
+  vertical-align: middle;
+}
+
+.c3:hover {
+  background-color: #dbdee1;
+}
+
+.c3:hover .c4 {
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1 .c2 {
+  margin-right: calc(-1 * var(--spacing-half));
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+  <button
+    aria-label="deleteButtonAriaLabel"
+    class="c2 c3"
+    data-testid="Test-delete-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c4 "
+      color="#60666e"
+      focusable="false"
+      height="12"
+      width="12"
+    />
+  </button>
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
+.c2 {
+  color: #60666e;
+  display: inline-block;
+  height: calc(16px - var(--spacing-half) / 2);
+  margin-right: var(--spacing-1x);
+  vertical-align: middle;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 12px);
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  <svg
+    aria-hidden="false"
+    aria-label="home"
+    class="c2"
+    color="currentColor"
+    data-testid="Test-icon"
+    height="12"
+    role="img"
+    width="12"
+  />
+  Test
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: calc(312px / 0.75 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
+
+exports[`Tag Tag small matches snapshot (mobile) 2`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  max-width: calc(312px / 0.875 + 0px);
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 + .c0 {
+  margin-left: var(--spacing-1x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+<span
+  class="c0 c1"
+>
+  Test
+</span>
+`;
