@@ -21,7 +21,9 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  overflow: hidden;
   padding: var(--spacing-1x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -136,7 +138,9 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  overflow: hidden;
   padding: var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -271,7 +275,9 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  overflow: hidden;
   padding: var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {

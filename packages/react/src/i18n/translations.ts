@@ -1,5 +1,8 @@
 export const Translations = {
     en: {
+        avatar: {
+            ariaLabel: '{{username}} avatar',
+        },
         datepicker: {
             calendarButtonLabel: 'Choose date',
             calendarButtonSelectedLabel: 'Choose date. The selected date is',
@@ -41,6 +44,9 @@ export const Translations = {
             inputAriaLabel: 'Select an option',
             validationErrorMessage: 'You must select an option',
         },
+        'skip-link': {
+            label: 'Skip to main content',
+        },
         'stepper-input': {
             validationErrorMessage: 'Invalid number',
         },
@@ -54,7 +60,7 @@ export const Translations = {
         'text-area': {
             validationErrorMessage: 'This text area is invalid',
             maxLengthValidationErrorMessage:
-            'The number of characters exceeds the maximum allowed. You must shorten the description.',
+                'The number of characters exceeds the maximum allowed. You must shorten the description.',
             characters: '{{current}}/{{max}} characters',
         },
         'text-input': {
@@ -63,11 +69,11 @@ export const Translations = {
         'user-profile': {
             ariaLabel: 'User menu',
         },
-        avatar: {
-            ariaLabel: '{{username}} avatar',
-        },
     },
     fr: {
+        avatar: {
+            ariaLabel: 'Avatar de {{username}}',
+        },
         datepicker: {
             calendarButtonLabel: 'Choisissez une date',
             calendarButtonSelectedLabel: 'Choisissez une date. La date sélectionnée est',
@@ -109,6 +115,9 @@ export const Translations = {
             inputAriaLabel: 'Choisissez une option',
             validationErrorMessage: 'Vous devez choisir une option',
         },
+        'skip-link': {
+            label: 'Passer au contenu principal',
+        },
         'stepper-input': {
             validationErrorMessage: 'Ce nombre n\'est pas valide',
         },
@@ -122,7 +131,7 @@ export const Translations = {
         'text-area': {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
             maxLengthValidationErrorMessage:
-            'Le nombre de caractères dépasse le maximum autorisé. Vous devez raccourcir la description.',
+                'Le nombre de caractères dépasse le maximum autorisé. Vous devez raccourcir la description.',
             characters: '{{current}}/{{max}} caractères',
         },
         'text-input': {
@@ -130,9 +139,6 @@ export const Translations = {
         },
         'user-profile': {
             ariaLabel: 'Menu utilisateur',
-        },
-        avatar: {
-            ariaLabel: 'Avatar de {{username}}',
         },
     },
 };

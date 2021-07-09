@@ -1,9 +1,11 @@
+import { shallow } from 'enzyme';
 import React from 'react';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ApplicationMenu } from './application-menu';
 
 describe('Application Menu', () => {
-    test('Matches the snapshot (desktop)', () => {
+    it('Matches the snapshot (desktop)', () => {
         const tree = renderWithProviders(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
@@ -13,7 +15,7 @@ describe('Application Menu', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Matches the snapshot (mobile)', () => {
+    it('Matches the snapshot (mobile)', () => {
         const tree = renderWithProviders(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
@@ -24,7 +26,7 @@ describe('Application Menu', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('mobileDrawerContent prop adds a side drawer and burger button in mobile', () => {
+    it('mobileDrawerContent prop adds a side drawer and burger button in mobile', () => {
         const tree = renderWithProviders(
             <ApplicationMenu mobileDrawerContent={(<p>Test</p>)}>
                 Hello, World!
@@ -33,5 +35,17 @@ describe('Application Menu', () => {
         );
 
         expect(tree).toMatchSnapshot();
+    });
+
+    it('should have a SkipLink when skipLinkHref is provided', () => {
+        const wrapper = shallow(
+            <ApplicationMenu skipLinkHref="some href">
+                Hello, World!
+            </ApplicationMenu>,
+        );
+
+        const skipLink = getByTestId(wrapper, 'skip-link');
+
+        expect(skipLink.exists()).toBe(true);
     });
 });

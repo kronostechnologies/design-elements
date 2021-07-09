@@ -30,7 +30,7 @@ const Main = styled.main`
 
 export const Normal: VoidFunctionComponent = () => (
     <>
-        <SkipLink href="#main">Skip to main content</SkipLink>
+        <SkipLink href="#main" />
         <Navigation>
             <p tabIndex={0}>Navigation</p>
         </Navigation>

@@ -59,18 +59,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   color: inherit;
 }
 
-.c1:not(:focus) {
-  -webkit-clip: rect(1px,1px,1px,1px);
-  clip: rect(1px,1px,1px,1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.c1:focus {
-  background-color: #FFFFFF;
+.c1 {
   color: #006296;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -78,15 +67,29 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   -moz-letter-spacing: 0.015rem;
   -ms-letter-spacing: 0.015rem;
   letter-spacing: 0.015rem;
+  overflow: hidden;
   position: absolute;
   text-transform: unset;
+  white-space: nowrap;
+}
+
+.c1:not(:focus) {
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px;
+  width: 1px;
+}
+
+.c1:focus {
+  background-color: #FFFFFF;
+  position: absolute;
 }
 
 <a
   class="c0 c1"
   href="test"
 >
-  Test
+  Skip to main content
 </a>
 `;
 
@@ -149,18 +152,7 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   color: inherit;
 }
 
-.c1:not(:focus) {
-  -webkit-clip: rect(1px,1px,1px,1px);
-  clip: rect(1px,1px,1px,1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.c1:focus {
-  background-color: #FFFFFF;
+.c1 {
   color: #006296;
   font-size: 1rem;
   font-weight: var(--font-normal);
@@ -168,14 +160,28 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   -moz-letter-spacing: 0.015rem;
   -ms-letter-spacing: 0.015rem;
   letter-spacing: 0.015rem;
+  overflow: hidden;
   position: absolute;
   text-transform: unset;
+  white-space: nowrap;
+}
+
+.c1:not(:focus) {
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  height: 1px;
+  width: 1px;
+}
+
+.c1:focus {
+  background-color: #FFFFFF;
+  position: absolute;
 }
 
 <a
   class="c0 c1"
   href="test"
 >
-  Test
+  Skip to main content
 </a>
 `;
