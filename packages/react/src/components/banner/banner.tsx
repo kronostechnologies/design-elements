@@ -13,8 +13,8 @@ interface ContainerProps {
 
 function getContainerBackgroundColor(props: StyledProps<ContainerProps>): string {
     return props.messageType === 'error'
-        ? props.theme.notifications['error-2.1']
-        : props.theme.notifications['alert-3.3'];
+        ? props.theme.notifications['alert-2.1']
+        : props.theme.notifications['warning-3.3'];
 }
 
 function getContainerPadding({ isMobile }: ContainerProps): string {

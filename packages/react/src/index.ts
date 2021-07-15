@@ -43,7 +43,7 @@ export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
 export { Icon } from './components/icon/icon';
-export { InlineMessage } from './components/inline-message/inline-message';
+export { SectionalBanner } from './components/sectional-banner/sectional-banner';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { Banner } from './components/banner/banner';

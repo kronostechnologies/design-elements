@@ -138,9 +138,9 @@ const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolat
     inverted,
     theme,
 }) => css`
-    background-color: ${inverted ? theme.greys.white : theme.notifications['error-2.1']};
-    border-color: ${inverted ? theme.greys.white : theme.notifications['error-2.1']};
-    color: ${inverted ? theme.notifications['error-2.1'] : theme.greys.white};
+    background-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
+    border-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
+    color: ${inverted ? theme.notifications['alert-2.1'] : theme.greys.white};
 
     &:hover {
         /* TODO change colors when updating thematization */

@@ -10,7 +10,7 @@ describe('Tooltip', () => {
             <Tooltip>
                 Test Content
             </Tooltip>,
-            { wrappingComponentProps: { device: 'desktop' } },
+            { wrappingComponentProps: { staticDevice: 'desktop' } },
         );
 
         expect(tree).toMatchSnapshot();
@@ -21,7 +21,7 @@ describe('Tooltip', () => {
             <Tooltip defaultOpen>
                 Test Content
             </Tooltip>,
-            { wrappingComponentProps: { device: 'desktop' } },
+            { wrappingComponentProps: { staticDevice: 'desktop' } },
         );
 
         expect(tree).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('Tooltip', () => {
             <Tooltip>
                 Test Content
             </Tooltip>,
-            { wrappingComponentProps: { device: 'mobile' } },
+            { wrappingComponentProps: { staticDevice: 'mobile' } },
         );
 
         expect(tree).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('Tooltip', () => {
             <Tooltip defaultOpen>
                 Test Content
             </Tooltip>,
-            { wrappingComponentProps: { device: 'mobile' } },
+            { wrappingComponentProps: { staticDevice: 'mobile' } },
         );
 
         expect(tree).toMatchSnapshot();

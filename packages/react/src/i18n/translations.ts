@@ -15,12 +15,6 @@ export const Translations = {
             monthSelectLabel: 'Select a month',
             yearSelectLabel: 'Select a year',
         },
-        'inline-message': {
-            Tips: 'Tips',
-            Success: 'Success',
-            Alert: 'Alert',
-            Error: 'Error',
-        },
         modal: {
             closeButtonLabel: 'Close dialog',
         },
@@ -39,6 +33,13 @@ export const Translations = {
         },
         'search-input': {
             label: 'Search',
+        },
+        'sectional-banner': {
+            Alert: 'Alert',
+            Error: 'Error',
+            Success: 'Success',
+            Info: 'Information',
+            dismissLabel: 'Dismiss banner',
         },
         select: {
             inputAriaLabel: 'Select an option',
@@ -86,12 +87,6 @@ export const Translations = {
             monthSelectLabel: 'Choisissez un mois',
             yearSelectLabel: 'Choisissez une année',
         },
-        'inline-message': {
-            Tips: 'Astuce',
-            Success: 'Succès',
-            Alert: 'Alerte',
-            Error: 'Erreur',
-        },
         modal: {
             closeButtonLabel: 'Fermer le dialogue',
         },
@@ -110,6 +105,13 @@ export const Translations = {
         },
         'search-input': {
             label: 'Rechercher',
+        },
+        'sectional-banner': {
+            Alert: 'Alerte',
+            Error: 'Erreur',
+            Success: 'Succès',
+            Info: 'Information',
+            dismissLabel: 'Rejeter la bannière',
         },
         select: {
             inputAriaLabel: 'Choisissez une option',

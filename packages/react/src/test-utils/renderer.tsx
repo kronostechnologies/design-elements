@@ -1,24 +1,29 @@
 import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
-import React, { Component, ReactElement } from 'react';
+import React, { Component, FunctionComponent, ReactElement } from 'react';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
-import { DeviceContextProvider, DeviceType } from '../components/device-context-provider/device-context-provider';
+import { DesignSystem, DesignSystemProps } from '../components/design-system';
+import { DeviceType } from '../components/device-context-provider/device-context-provider';
 import { ThemeWrapper } from '../components/theme-wrapper/theme-wrapper';
 import { ThemeWrapped } from './theme-wrapped';
 
-export function AllProviders({ children, device }: { children: ReactElement, device?: DeviceType }): ReactElement {
-    return (
-        <MemoryRouter>
-            <DeviceContextProvider staticDevice={device}>
-                {ThemeWrapped(children)}
-            </DeviceContextProvider>
-        </MemoryRouter>
-    );
+export const AllProviders: FunctionComponent<DesignSystemProps> = ({ children, staticDevice }) => (
+    <MemoryRouter>
+        <DesignSystem staticDevice={staticDevice}>
+            {children}
+        </DesignSystem>
+    </MemoryRouter>
+);
+
+interface WrappingComponentProps {
+    wrappingComponentProps?: DesignSystemProps;
 }
+
+type Options = MountRendererProps & WrappingComponentProps;
 
 export function mountWithProviders<C extends Component, P = C['props'], S = C['state']>(
     component: ReactElement<P>,
-    options: MountRendererProps = {},
+    options: Options = {},
 ): ReactWrapper<P, S, C> {
     return mount(component, {
         ...options,
@@ -40,7 +45,7 @@ export function renderWithProviders(
     component: ReactElement,
     device?: DeviceType,
 ): cheerio.Cheerio {
-    return render(<AllProviders device={device}>{component}</AllProviders>);
+    return render(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }
 
 export function renderWithTheme(

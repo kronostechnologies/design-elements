@@ -11,7 +11,7 @@ function getBackgroundColor(type: StatusType, theme: Theme): string {
         case 'disabled':
             return theme.greys.white;
         case 'blocked':
-            return theme.notifications['error-2.1'];
+            return theme.notifications['alert-2.1'];
     }
 }
 
