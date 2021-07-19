@@ -35,3 +35,9 @@ export const WithoutResults: Story = () => (
         <Pagination totalPages={11} />
     </>
 );
+
+export const With4DigitsNumberOfPages: Story = () => (
+    <>
+        <Pagination totalPages={1000} />
+    </>
+);

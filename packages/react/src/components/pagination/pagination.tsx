@@ -16,17 +16,21 @@ const Pages = styled.ol`
 `;
 
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
+    align-items: center;
     background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
-    border-radius: 100%;
+    border-radius: 16px;
+    box-sizing: border-box;
     color: ${(props) => (props.isSelected ? props.theme.greys.white : props.theme.greys.black)};
-    display: inline-block;
+    display: inline-flex;
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
     height: ${(props) => (props.isMobile ? 32 : 24)}px;
+    justify-content: center;
     line-height: ${(props) => (props.isMobile ? 32 : 24)}px;
     margin: 0 var(--spacing-half);
+    min-width: ${(props) => (props.isMobile ? 32 : 24)}px;
+    padding: 0 var(--spacing-1x);
     text-align: center;
-    width: ${(props) => (props.isMobile ? 32 : 24)}px;
 
     ${focus};
 
@@ -153,6 +157,7 @@ export function Pagination({
     const pages = range(begin, end).map((i) => {
         const id = `page-${i}`;
         const isCurrentPage = i === currentPage;
+
         return (
             <Page
                 key={id}

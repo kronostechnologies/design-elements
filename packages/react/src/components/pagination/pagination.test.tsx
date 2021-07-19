@@ -23,6 +23,24 @@ describe('Pagination', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Matches the mobile snapshot with multiples digits page numbers', () => {
+        const tree = renderWithProviders(
+            <Pagination totalPages={1000} />,
+            'mobile',
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches the desktop snapshot with multiples digits page numbers', () => {
+        const tree = renderWithProviders(
+            <Pagination totalPages={1000} />,
+            'desktop',
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     describe('pages list', () => {
         test('should display pages', () => {
             const wrapper = shallow(<Pagination totalPages={5} pagesShown={5} />);
