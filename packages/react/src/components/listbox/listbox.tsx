@@ -10,6 +10,8 @@ import React, {
     useState,
 } from 'react';
 import styled from 'styled-components';
+import { Theme } from 'themes';
+import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -17,6 +19,7 @@ import { Icon } from '../icon/icon';
 type Value = string | string[];
 
 export interface ListboxOption {
+    disabled?: boolean;
     value: string;
     // Option label, if not provided will be set with value
     label?: string;
@@ -95,10 +98,12 @@ interface ListProps {
 }
 
 interface ListItemProps {
+    disabled?: boolean;
     isMobile: boolean;
     selected: boolean;
     focused: boolean;
     checkIndicator: boolean;
+    theme: Theme;
 }
 
 interface BoxProps {
@@ -149,11 +154,21 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     return 'var(--spacing-2x)';
 };
 
+function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps): string {
+    if (disabled) {
+        return theme.greys.white;
+    }
+    if (focused) {
+        return theme.greys.grey;
+    }
+    return 'inherit';
+}
+
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    background-color: ${({ focused, theme }) => (focused ? theme.greys.grey : 'inherit')};
-    color: ${({ theme }) => theme.greys.black};
-    cursor: pointer;
+    background-color: ${getListItemBackgroundColor};
+    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
@@ -314,6 +329,16 @@ export const Listbox = forwardRef(({
         onChange?.(option);
     }, [multiselect, onChange, selectedOptionValue]);
 
+    const getPrevSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
+        const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
+        return getPreviousElementInArray(enabledItems, enabledItems.findIndex((x) => x.focusIndex === focusIndex));
+    }, [list]);
+
+    const getNextSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
+        const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
+        return getNextElementInArray(enabledItems, enabledItems.findIndex((x) => x.focusIndex === focusIndex));
+    }, [list]);
+
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
         (option) => () => selectOption(option), [selectOption],
     );
@@ -378,7 +403,7 @@ export const Listbox = forwardRef(({
             }
             case 'ArrowUp': {
                 e.preventDefault();
-                const prevOption = selectedFocusIndex === 0 ? list[list.length - 1] : list[selectedFocusIndex - 1];
+                const prevOption = getPrevSelectableOption(selectedFocusIndex);
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
@@ -391,7 +416,7 @@ export const Listbox = forwardRef(({
             }
             case 'ArrowDown': {
                 e.preventDefault();
-                const nextOption = list.length === selectedFocusIndex + 1 ? list[0] : list[selectedFocusIndex + 1];
+                const nextOption = getNextSelectableOption(selectedFocusIndex);
 
                 if (nextOption) {
                     setSelectedFocusIndex(nextOption.focusIndex);
@@ -405,7 +430,15 @@ export const Listbox = forwardRef(({
         }
 
         onKeyDown?.(e);
-    }, [list, onFocusedValueChange, onKeyDown, selectedFocusIndex, selectOption]);
+    }, [
+        list,
+        onFocusedValueChange,
+        onKeyDown,
+        selectedFocusIndex,
+        selectOption,
+        getPrevSelectableOption,
+        getNextSelectableOption,
+    ]);
 
     function getAriaActiveDescendant(optionIndex: number): string | undefined {
         if (optionIndex >= 0 && list[optionIndex]) {
@@ -439,15 +472,17 @@ export const Listbox = forwardRef(({
             >
                 {list.map((option) => (
                     <ListItem
+                        aria-disabled={option.disabled}
                         aria-label={option.label || option.value}
                         aria-selected={isOptionSelected(option)}
                         checkIndicator={checkIndicator}
                         data-testid={`listitem-${option.value}`}
+                        disabled={option.disabled}
                         focused={isOptionFocused(option)}
                         id={option.id}
                         isMobile={isMobile}
                         key={option.id}
-                        onClick={handleListItemClick(option)}
+                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
                         onMouseMove={() => handleListItemMouseMove(option)}
                         ref={option.ref}
                         role="option"

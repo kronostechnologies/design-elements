@@ -82,6 +82,32 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   outline: none;
 }
 
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  color: #B7BBC2;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5:focus {
+  outline: none;
+}
+
 .c4 {
   color: #60666E;
   padding: 0 var(--spacing-1x);
@@ -148,6 +174,18 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       role="option"
     >
       Option D
+    </li>
+    <li
+      aria-disabled="true"
+      aria-label="Option Disabled"
+      aria-selected="false"
+      class="c5"
+      data-testid="listitem-optionDisabled"
+      disabled=""
+      id="undefined_optionDisabled"
+      role="option"
+    >
+      Option Disabled
     </li>
   </ul>
 </div>
@@ -235,6 +273,32 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   outline: none;
 }
 
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  color: #B7BBC2;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5:focus {
+  outline: none;
+}
+
 .c3 {
   color: #60666E;
   padding: 0 var(--spacing-1x);
@@ -309,6 +373,18 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       role="option"
     >
       Option D
+    </li>
+    <li
+      aria-disabled="true"
+      aria-label="Option Disabled"
+      aria-selected="false"
+      class="c5"
+      data-testid="listitem-optionDisabled"
+      disabled=""
+      id="undefined_optionDisabled"
+      role="option"
+    >
+      Option Disabled
     </li>
   </ul>
 </div>
@@ -396,6 +472,32 @@ exports[`Listbox Matches the snapshot 1`] = `
   outline: none;
 }
 
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  color: #B7BBC2;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0 8px 0 var(--spacing-4x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5:focus {
+  outline: none;
+}
+
 .c4 {
   color: #60666E;
   padding: 0 var(--spacing-1x);
@@ -462,6 +564,18 @@ exports[`Listbox Matches the snapshot 1`] = `
       role="option"
     >
       Option D
+    </li>
+    <li
+      aria-disabled="true"
+      aria-label="Option Disabled"
+      aria-selected="false"
+      class="c5"
+      data-testid="listitem-optionDisabled"
+      disabled=""
+      id="undefined_optionDisabled"
+      role="option"
+    >
+      Option Disabled
     </li>
   </ul>
 </div>
