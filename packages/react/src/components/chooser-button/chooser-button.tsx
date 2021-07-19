@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactNode } from 'react';
+import React, { ChangeEvent, ChangeEventHandler, ReactNode, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 import { hiddenStyle } from '../visually-hidden/styles/visuallyhidden';
@@ -26,11 +26,11 @@ const ChooserButton = React.forwardRef(
         }: ChooserButtonProps,
         ref: React.Ref<HTMLInputElement>,
     ) => {
-        const id = uuid();
+        const id = useMemo(() => uuid(), []);
 
-        function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+        const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
             onChange(event);
-        }
+        }, [onChange]);
 
         return (
             <>
