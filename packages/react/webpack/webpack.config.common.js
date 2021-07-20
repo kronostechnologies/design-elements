@@ -1,5 +1,6 @@
 const path = require('path');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
+const ReactDocgenTypescriptPlugin = require('react-docgen-typescript-plugin').default;
 const pkg = require('../package');
 
 module.exports = {
@@ -19,16 +20,6 @@ module.exports = {
                 use: [
                     'css-loader',
                 ],
-            },
-            {
-                test: /.tsx$/,
-                loader: '@storybook-addons/react-docgen-typescript-loader',
-                options: {
-                    shouldExtractLiteralValuesFromEnum: true,
-                    shouldRemoveUndefinedFromOptional: true,
-                    tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
-                },
-                exclude: /node_modules/,
             },
             {
                 test: /\.tsx?$/,
@@ -64,6 +55,13 @@ module.exports = {
             stream: require.resolve('stream-browserify'),
         },
     },
+    plugins: [
+        new ReactDocgenTypescriptPlugin({
+            shouldExtractLiteralValuesFromEnum: true,
+            shouldRemoveUndefinedFromOptional: true,
+            tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+        }),
+    ],
     resolveLoader: {
         plugins: [
             PnpWebpackPlugin.moduleLoader(module),

@@ -1916,7 +1916,8 @@ label + .c3 {
       />
       <div
         class="react-datepicker-popper popper"
-        style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+        data-placement="bottom-start"
+        style="position:absolute;left:0;top:0"
       >
         <div>
           <div
@@ -3043,7 +3044,8 @@ label + .c3 {
       />
       <div
         class="react-datepicker-popper popper"
-        style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+        data-placement="bottom-start"
+        style="position:absolute;left:0;top:0"
       >
         <div>
           <div
