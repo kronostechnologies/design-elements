@@ -41,13 +41,13 @@ const TooltipArrow = styled.div`
     }
 `;
 
-const TooltipContainer = styled.div<{ isMobile?: boolean }>`
+const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     box-sizing: border-box;
-    display: flex;
+    display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     justify-content: center;
@@ -222,21 +222,6 @@ export function Tooltip({
 
     return (
         <>
-            {popperTooltip.visible && (
-                <TooltipContainer
-                    aria-hidden={!isVisible}
-                    isMobile={isMobile}
-                    id={tooltipId}
-                    role="tooltip"
-                    ref={popperTooltip.setTooltipRef}
-                    {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
-                >
-                    <TooltipArrow
-                        {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
-                    />
-                    {children}
-                </TooltipContainer>
-            )}
             <StyledSpan
                 className={className}
                 aria-describedby={tooltipId}
@@ -250,6 +235,21 @@ export function Tooltip({
             >
                 <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
             </StyledSpan>
+
+            <TooltipContainer
+                aria-hidden={!isVisible}
+                isMobile={isMobile}
+                id={tooltipId}
+                role="tooltip"
+                ref={popperTooltip.setTooltipRef}
+                visible={popperTooltip.visible}
+                {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+            >
+                <TooltipArrow
+                    {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+                />
+                {children}
+            </TooltipContainer>
         </>
     );
 }
