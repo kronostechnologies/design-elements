@@ -1,4 +1,4 @@
-import { ApplicationMenu } from '@equisoft/design-elements-react';
+import { ApplicationMenu, UserProfile } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { ReactElement, VoidFunctionComponent } from 'react';
 import CustomLogoSvg from './assets/customLogo.svg';
@@ -52,5 +52,19 @@ WithMobileDrawer.decorators = [MobileDecorator];
 export const WithSkipLink: Story = () => (
     <ApplicationMenu skipLinkHref="#">
         <p>Hello world</p>
+    </ApplicationMenu>
+);
+
+export const WithSkipLinkAndUserProfile: Story = () => (
+    <ApplicationMenu skipLinkHref="#">
+        <p>Hello world</p>
+        <UserProfile
+            username=""
+            options={[{
+                value: 'Something',
+                href: '#',
+            },
+            ]}
+        />
     </ApplicationMenu>
 );

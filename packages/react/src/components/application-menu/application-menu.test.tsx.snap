@@ -2,7 +2,19 @@
 
 exports[`Application Menu Matches the snapshot (desktop) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 > * + * {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -21,7 +33,6 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  overflow: hidden;
   padding: var(--spacing-1x) var(--spacing-2x);
   position: relative;
 }
@@ -138,7 +149,6 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  overflow: hidden;
   padding: var(--spacing-2x);
   position: relative;
 }
@@ -275,7 +285,6 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  overflow: hidden;
   padding: var(--spacing-2x);
   position: relative;
 }

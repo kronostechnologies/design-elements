@@ -17,7 +17,13 @@ const BurgerButton = styled.button`
 `;
 
 const Container = styled.div`
+    align-items: center;
     color: ${(props) => props.theme.greys.white};
+    display: flex;
+
+    > * + * {
+        margin-left: var(--spacing-1x);
+    }
 `;
 
 interface Props {

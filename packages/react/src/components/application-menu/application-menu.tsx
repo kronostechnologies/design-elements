@@ -24,7 +24,6 @@ const Header = styled.header<{ device: DeviceType }>`
     display: flex;
     height: ${({ device }) => (device === 'desktop' ? 48 : 56)}px;
     justify-content: space-between;
-    overflow: hidden;
     padding: ${({ device }) => getPadding(device)};
     position: relative;
 `;
@@ -50,7 +49,7 @@ const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMo
     &:not(:focus) {
         clip: unset;
         height: auto;
-        top: -50%;
+        top: -100%;
         width: auto;
     }
 
