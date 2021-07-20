@@ -186,12 +186,20 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     >
       <styled.div
         data-popper-arrow={true}
-        style={Object {}}
+        style={
+          Object {
+            "position": "absolute",
+          }
+        }
       >
         <div
           className="c1 c2"
           data-popper-arrow={true}
-          style={Object {}}
+          style={
+            Object {
+              "position": "absolute",
+            }
+          }
         />
       </styled.div>
       Test Content
@@ -477,12 +485,20 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     >
       <styled.div
         data-popper-arrow={true}
-        style={Object {}}
+        style={
+          Object {
+            "position": "absolute",
+          }
+        }
       >
         <div
           className="c1 c2"
           data-popper-arrow={true}
-          style={Object {}}
+          style={
+            Object {
+              "position": "absolute",
+            }
+          }
         />
       </styled.div>
       Test Content

@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     preset: 'ts-jest',
+    testEnvironment: 'jsdom',
 
     reporters: [
         'default',
