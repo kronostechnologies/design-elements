@@ -66,15 +66,15 @@ const SuccessContainer = abstractContainer('#f6fbf8', 'success-1.1');
 const WarningContainer = abstractContainer('#fffbf5', 'warning-3.1', 'warning-3.4');
 const AlertContainer = abstractContainer('#fdf6f7', 'alert-2.1');
 
+const Message = styled.p<MobileDeviceContext>`
+    font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
+    margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)')} 0 0 0;
+`;
+
 const TextWrapper = styled.div<MobileDeviceContext>`
     box-sizing: border-box;
     grid-area: content;
     padding-left: var(--spacing-2x);
-
-    > p {
-        font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
-        margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)')} 0 0 0;
-    }
 `;
 
 type DismissButtonProps = MobileDeviceContext & { $marginTop: number }
@@ -106,17 +106,17 @@ const StyledActionButton = styled(Button)`
 
 type ActionButtonProps = {
     label: string;
-    isErrorType: boolean;
+    isAlertType: boolean;
     onClick?(): void;
 }
 
 const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
     label,
-    isErrorType,
+    isAlertType,
     onClick,
 }) => (
     <StyledActionButton
-        buttonType={isErrorType ? 'destructive' : 'primary'}
+        buttonType={isAlertType ? 'destructive' : 'primary'}
         data-testid="button"
         label={label}
         type="button"
@@ -172,6 +172,7 @@ function handleType(type: MessageType): MessageTypeProps {
 interface SectionalBannerProps {
     buttonLabel?: string;
     className?: string;
+    children: string;
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
@@ -186,7 +187,7 @@ function isAlert(messageType: MessageType): messageType is 'alert' {
     return messageType === 'alert';
 }
 
-export const SectionalBanner: FunctionComponent<SectionalBannerProps> = ({
+export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     buttonLabel,
     className,
     children,
@@ -199,7 +200,7 @@ export const SectionalBanner: FunctionComponent<SectionalBannerProps> = ({
     const { isMobile } = useDeviceContext();
     const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
     const Container = messageType.container;
-    const isErrorType = isAlert(type);
+    const isAlertType = isAlert(type);
 
     const iconSize = isMobile ? 24 : 20;
     const lineHeight = getLineHeight(isMobile);
@@ -222,10 +223,10 @@ export const SectionalBanner: FunctionComponent<SectionalBannerProps> = ({
 
             <TextWrapper isMobile={isMobile}>
                 <Heading isMobile={isMobile}>{title || t(messageType.title)}</Heading>
-                <p>{children}</p>
+                <Message isMobile={isMobile}>{children}</Message>
                 {!isMobile && buttonLabel && (
                     <ActionButton
-                        isErrorType={isErrorType}
+                        isAlertType={isAlertType}
                         label={buttonLabel}
                         onClick={onButtonClicked}
                         data-testid="desktop-button"
@@ -235,14 +236,14 @@ export const SectionalBanner: FunctionComponent<SectionalBannerProps> = ({
 
             {isMobile && buttonLabel && (
                 <ActionButton
-                    isErrorType={isErrorType}
+                    isAlertType={isAlertType}
                     label={buttonLabel}
                     onClick={onButtonClicked}
                     data-testid="mobile-button"
                 />
             )}
 
-            {!isErrorType && onDismiss && (
+            {!isAlertType && onDismiss && (
                 <DismissIconButton
                     onClick={onDismiss}
                     label={t('dismissLabel')}

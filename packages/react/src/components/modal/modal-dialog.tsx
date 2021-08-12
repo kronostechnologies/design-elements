@@ -90,7 +90,7 @@ export function ModalDialog({
                         <Heading
                             id={titleId}
                             ref={titleRef}
-                            type={isMobile ? 'medium' : 'large'}
+                            type={isMobile ? 'large' : 'medium'}
                             tag="h2"
                             noMargin
                         >

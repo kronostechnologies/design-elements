@@ -36,7 +36,7 @@ export const Translations = {
         },
         'sectional-banner': {
             Alert: 'Alert',
-            Error: 'Error',
+            Warning: 'Warning',
             Success: 'Success',
             Info: 'Information',
             dismissLabel: 'Dismiss banner',
@@ -108,7 +108,7 @@ export const Translations = {
         },
         'sectional-banner': {
             Alert: 'Alerte',
-            Error: 'Erreur',
+            Warning: 'Attention',
             Success: 'Succès',
             Info: 'Information',
             dismissLabel: 'Rejeter la bannière',
