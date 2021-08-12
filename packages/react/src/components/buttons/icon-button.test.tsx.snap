@@ -199,8 +199,8 @@ exports[`Icon Button Has mobile styles 1`] = `
     aria-hidden="true"
     color="currentColor"
     focusable="false"
-    height="20"
-    width="20"
+    height="24"
+    width="24"
   />
 </button>
 `;

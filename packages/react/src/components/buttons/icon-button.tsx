@@ -64,7 +64,7 @@ export const IconButton = forwardRef(({
             <Icon
                 aria-hidden="true"
                 name={iconName}
-                size={isMobile ? '20' : '16'}
+                size={isMobile ? '24' : '16'}
             />
         </StyledButton>
     );

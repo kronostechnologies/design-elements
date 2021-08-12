@@ -874,8 +874,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
     <button
@@ -890,8 +890,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
     <ol
@@ -943,8 +943,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
     <button
@@ -958,8 +958,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
   </nav>
@@ -1196,8 +1196,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
     <button
@@ -1212,8 +1212,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
     <ol
@@ -1265,8 +1265,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
     <button
@@ -1280,8 +1280,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
         aria-hidden="true"
         color="currentColor"
         focusable="false"
-        height="20"
-        width="20"
+        height="24"
+        width="24"
       />
     </button>
   </nav>
