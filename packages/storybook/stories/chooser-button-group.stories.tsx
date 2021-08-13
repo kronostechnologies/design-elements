@@ -1,14 +1,15 @@
 import { ChooserButtonGroup } from '@equisoft/design-elements-react';
+import { ChooserButtonOption } from '@equisoft/design-elements-react/dist/components/chooser-button-group/chooser-button-group'; // eslint-disable-line max-len
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
-const maritalStatus = [
+const maritalStatus: ChooserButtonOption[] = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
     { value: 'married', label: 'Married or living with a spouse' },
 ];
 
-const ageRange = [
+const ageRange: ChooserButtonOption[] = [
     { value: '0,24', label: 'Less than 24 years old' },
     { value: '25,34', label: '25 to 34 years old' },
     { value: '35,49', label: '35 to 49 years old' },
@@ -16,7 +17,7 @@ const ageRange = [
     { value: '65+', label: '65+ years old' },
 ];
 
-const skipOption = {
+const skipOption: ChooserButtonOption = {
     value: 'skip',
     label: 'Would rather not say',
 };
@@ -43,14 +44,14 @@ export const WithASkipButton: Story = () => (
     />
 );
 export const WithValue: Story = () => {
-    const [value, setValue] = useState('35,49');
+    const [selectedOption, setSelectedOption] = useState(ageRange[2]);
 
     return (
         <ChooserButtonGroup
             groupName="ageRange"
             options={ageRange}
-            value={value}
-            onChange={(event) => setValue(event.currentTarget.value)}
+            value={selectedOption.value}
+            onChange={(option) => setSelectedOption(option)}
         />
     );
 };
@@ -65,7 +66,7 @@ export const WithCallback: Story = () => (
     <ChooserButtonGroup
         groupName="ageRangeCallback"
         inColumns
-        onChange={(event) => console.info(event)}
+        onChange={(option) => console.info(option)}
         options={ageRange}
     />
 );
