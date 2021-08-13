@@ -1,10 +1,12 @@
 import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Disclosure/Tabs',
     component: Tabs,
+    parameters: rawCodeParameters,
 };
 
 interface Data {

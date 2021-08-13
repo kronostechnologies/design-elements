@@ -17,11 +17,15 @@ export const decorators = [
 export const parameters = {
     options: {
         storySort: {
-            method: 'alphabetical'
-        }
+            method: 'alphabetical',
+        },
     },
     docs: {
         container: DocsContainer,
         page: DocsPage,
+        source: {
+            type: 'dynamic',
+            excludeDecorators: true,
+        },
     },
 };

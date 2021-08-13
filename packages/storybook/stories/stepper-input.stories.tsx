@@ -1,6 +1,7 @@
 import { StepperInput } from '@equisoft/design-elements-react';
 import React, { useState } from 'react';
 import { Story } from '@storybook/react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Stepper input',
@@ -20,6 +21,7 @@ export const Controlled: Story = () => {
         <StepperInput label="Stepper input" onChange={setInputValue} value={inputValue} />
     );
 };
+Controlled.parameters = rawCodeParameters;
 
 export const WithDefaultValue: Story = () => (
     <StepperInput label="Stepper input" defaultValue={0} />
@@ -48,3 +50,4 @@ export const Disabled: Story = () => (
 export const WithOnChangeCallback: Story = () => (
     <StepperInput label="Stepper input" onChange={(value) => console.info(value)} />
 );
+WithOnChangeCallback.parameters = rawCodeParameters;

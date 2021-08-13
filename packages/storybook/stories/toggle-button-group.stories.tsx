@@ -1,6 +1,7 @@
 import { ToggleButtonGroup } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { MouseEvent } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 const buttonGroup = [
     { label: 'Option 1', value: 'option1' },
@@ -44,3 +45,4 @@ export const WithCallback: Story = () => (
         onClick={(event: MouseEvent<HTMLButtonElement>) => console.info(`Toggled button value: ${event.currentTarget.value}`)}
     />
 );
+WithCallback.parameters = rawCodeParameters;

@@ -2,6 +2,7 @@ import { Pagination } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Navigation/Pagination',
@@ -29,15 +30,12 @@ export const ControlledPagination: Story = () => {
         />
     );
 };
+ControlledPagination.parameters = rawCodeParameters;
 
 export const WithoutResults: Story = () => (
-    <>
-        <Pagination totalPages={11} />
-    </>
+    <Pagination totalPages={11} />
 );
 
 export const With4DigitsNumberOfPages: Story = () => (
-    <>
-        <Pagination totalPages={1000} />
-    </>
+    <Pagination totalPages={1000} />
 );

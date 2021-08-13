@@ -26,7 +26,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Dropdown open with long text) 1`
       />
     </styled.li>
     <styled.li>
-      <Styled(Component)
+      <Styled(IconButton)
         aria-expanded={true}
         buttonType="tertiary"
         data-testid="ellipse-button"
@@ -35,7 +35,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Dropdown open with long text) 1`
         onClick={[Function]}
         type="button"
       />
-      <Styled(Component)
+      <Styled(NavMenu)
         data-testid="nav-menu"
         focusedValue=""
         hidden={false}
@@ -91,7 +91,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
       />
     </styled.li>
     <styled.li>
-      <Styled(Component)
+      <Styled(IconButton)
         aria-expanded={false}
         buttonType="tertiary"
         data-testid="ellipse-button"
@@ -100,7 +100,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
         onClick={[Function]}
         type="button"
       />
-      <Styled(Component)
+      <Styled(NavMenu)
         data-testid="nav-menu"
         focusedValue=""
         hidden={true}

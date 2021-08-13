@@ -138,3 +138,5 @@ export const TextInput = forwardRef(({
         </FieldContainer>
     );
 });
+
+TextInput.displayName = 'TextInput';

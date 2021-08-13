@@ -2,6 +2,7 @@ import { Button, SideDrawer } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { rawCodeParameters } from './utils/parameters';
 
 const Box = styled.div`
     background-color: #094c6c;
@@ -17,6 +18,7 @@ const Box = styled.div`
 export default {
     title: 'Structure/Side Drawer',
     component: SideDrawer,
+    parameters: rawCodeParameters,
 };
 
 export const Normal: Story = () => {

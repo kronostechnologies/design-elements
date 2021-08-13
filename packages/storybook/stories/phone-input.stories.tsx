@@ -5,7 +5,7 @@ import { PhoneInput } from '@equisoft/design-elements-react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Phone Input',
+    title: 'Controls/Phone Input',
     component: PhoneInput,
 };
 

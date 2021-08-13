@@ -1,6 +1,7 @@
 import { SearchGlobal } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Search Global',
@@ -18,3 +19,4 @@ export const EventCallback: Story = () => (
         onSearch={(value) => console.info(`Searching for: ${value}`)}
     />
 );
+EventCallback.parameters = rawCodeParameters;

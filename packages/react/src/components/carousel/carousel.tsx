@@ -94,6 +94,9 @@ function RightArrowIcon(): ReactElement {
 
 export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
     autoTransitionDelay?: number;
+    /**
+     * Anything React can render. Each root element will be rendered as a slide.
+     */
     children: ReactNode;
     className?: string;
     header: ReactNode;

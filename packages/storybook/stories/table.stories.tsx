@@ -2,10 +2,12 @@ import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements
 import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Structure/Table',
     component: Table,
+    parameters: rawCodeParameters,
 };
 
 interface Data {
@@ -53,7 +55,9 @@ export const Normal: Story = () => {
 };
 
 export const WithColumnClassnames: Story = () => {
-    const StyledTable = styled(({ className, columns, data }) => <Table<Data> className={className} columns={columns} data={data} />)`
+    const StyledTable = styled(({ className, columns, data }) => (
+        <Table<Data> className={className} columns={columns} data={data} />
+    ))`
         .column-1 {
             box-sizing: border-box;
             width: 150px;
@@ -62,8 +66,7 @@ export const WithColumnClassnames: Story = () => {
         .column-2 {
             box-sizing: border-box;
             width: 300px;
-        }
-`;
+        }`;
 
     const columns: TableColumn<Data> = [
         {

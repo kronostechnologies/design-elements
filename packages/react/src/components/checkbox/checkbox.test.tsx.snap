@@ -87,7 +87,7 @@ exports[`Checkbox matches snapshot 1`] = `
   margin-top: var(--spacing-1x);
 }
 
-<ForwardRef
+<Checkbox
   label="Boat"
   name="vehicule"
   value="boat"
@@ -152,5 +152,5 @@ exports[`Checkbox matches snapshot 1`] = `
       </styled.span>
     </label>
   </styled.label>
-</ForwardRef>
+</Checkbox>
 `;

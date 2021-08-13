@@ -70,3 +70,5 @@ export const IconButton = forwardRef(({
         </StyledButton>
     );
 });
+
+IconButton.displayName = 'IconButton';

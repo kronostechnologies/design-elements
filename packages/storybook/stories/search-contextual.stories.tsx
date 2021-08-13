@@ -1,6 +1,7 @@
 import { SearchContextual } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import * as React from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Search Contextual',
@@ -21,3 +22,4 @@ export const EventCallback: Story = () => (
         onReset={() => console.info('Reset clicked')}
     />
 );
+EventCallback.parameters = rawCodeParameters;
