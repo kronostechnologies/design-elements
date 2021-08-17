@@ -381,6 +381,21 @@ describe('Select', () => {
         expect(skipOptionWrapper.props().checked).toBe(false);
     });
 
+    test('should call onChange when skipOption is selected', () => {
+        const onChange = jest.fn();
+        const wrapper = shallow(
+            <Select
+                options={[]}
+                skipOption={skipOption}
+                onChange={onChange}
+            />,
+        );
+
+        getByTestId(wrapper, 'select-skip-option').simulate('change');
+
+        expect(onChange).toBeCalled();
+    });
+
     test('should not display skip option when no skipOption is provided', () => {
         const wrapper = shallow(<Select options={[]} />);
 

@@ -154,7 +154,7 @@ interface SelectProps {
      */
     numberOfItemsVisible?: number;
     /**
-     * { value: string; label?: string; }[]
+     * { value: string; label: string; }[]
      */
     options: Option[];
     placeholder?: string;
@@ -319,9 +319,10 @@ export function Select({
     }, [inputValue, options]);
 
     function handleSkipChange(): void {
-        if (!skipSelected) {
+        if (!skipSelected && skipOption) {
             setSkipSelected(true);
             setInputValue('');
+            onChange?.({ label: skipOption.label, value: skipOption.value ?? skipOption.label });
         }
     }
 
