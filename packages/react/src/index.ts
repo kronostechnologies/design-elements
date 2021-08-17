@@ -72,4 +72,7 @@ export { equisoftTheme } from './themes/equisoft';
 export { testTheme } from './themes/test-theme';
 export { injectMainCss } from './styles';
 
+// Hooks
+export { useTheme } from './hooks/use-theme';
+
 export * from './components/design-system';
