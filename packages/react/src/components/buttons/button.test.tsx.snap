@@ -78,7 +78,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
 .c1:hover {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
-  color: #62071b;
+  color: #7B1A15;
 }
 
 .c1:disabled,
@@ -86,7 +86,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
 .c1:disabled:hover {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
-  color: #ea8da3;
+  color: #F99D99;
 }
 
 <button
@@ -173,16 +173,16 @@ exports[`Button has destructive styles 1`] = `
 }
 
 .c1:hover {
-  background-color: #62071b;
-  border-color: #62071b;
+  background-color: #7B1A15;
+  border-color: #7B1A15;
   color: #FFFFFF;
 }
 
 .c1:disabled,
 .c1:disabled:focus,
 .c1:disabled:hover {
-  background-color: #ea8da3;
-  border-color: #ea8da3;
+  background-color: #F99D99;
+  border-color: #F99D99;
   color: #FFFFFF;
 }
 
@@ -381,6 +381,101 @@ exports[`Button has mobile styles 1`] = `
 </button>
 `;
 
+exports[`Button has primary styles (inverted) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #006296;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c1:hover {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #003A5A;
+}
+
+.c1:disabled {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #84C6EA;
+}
+
+<button
+  class="c0 c1"
+  type="submit"
+>
+  Primary Button
+</button>
+`;
+
 exports[`Button has primary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
@@ -471,6 +566,104 @@ exports[`Button has primary styles 1`] = `
   type="submit"
 >
   Primary Button
+</button>
+`;
+
+exports[`Button has secondary styles (inverted) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c1:hover {
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c1:disabled {
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c1:focus {
+  background-color: #012639;
+  border-color: #006296 color:#FFFFFF;
+}
+
+<button
+  class="c0 c1"
+  type="submit"
+>
+  Secondary Button
 </button>
 `;
 
@@ -567,6 +760,105 @@ exports[`Button has secondary styles 1`] = `
 </button>
 `;
 
+exports[`Button has tertiary styles (inverted) 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c1 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c1:hover {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c1:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+<button
+  class="c0 c1"
+  type="submit"
+>
+  Tertiary Button
+</button>
+`;
+
 exports[`Button has tertiary styles 1`] = `
 .c0 {
   -webkit-align-items: center;
@@ -650,6 +942,12 @@ exports[`Button has tertiary styles 1`] = `
 .c1:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c1:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 <button

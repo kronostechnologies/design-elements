@@ -18,12 +18,6 @@ export const Buttons: Story = () => (
     </>
 );
 
-export const Inverted: Story = () => (
-    <InvertedBackground>
-        <Button label="Destructive" buttonType="destructive" inverted />
-    </InvertedBackground>
-);
-
 export const Disabled: Story = () => (
     <>
         <Button label="Primary" buttonType="primary" disabled />
@@ -31,6 +25,23 @@ export const Disabled: Story = () => (
         <Button label="Tertiary" buttonType="tertiary" disabled />
         <Button label="Destructive" buttonType="destructive" disabled />
     </>
+);
+
+export const Inverted: Story = () => (
+    <InvertedBackground>
+        <Button label="Primary" buttonType="primary" inverted />
+        <Button label="Secondary" buttonType="secondary" inverted />
+        <Button label="Tertiary" buttonType="tertiary" inverted />
+        <Button label="Destructive" buttonType="destructive" inverted />
+    </InvertedBackground>
+);
+export const InvertedDisabled: Story = () => (
+    <InvertedBackground>
+        <Button label="Primary" buttonType="primary" inverted disabled />
+        <Button label="Secondary" buttonType="secondary" inverted disabled />
+        <Button label="Tertiary" buttonType="tertiary" inverted disabled />
+        <Button label="Destructive" buttonType="destructive" inverted disabled />
+    </InvertedBackground>
 );
 
 export const EventCallback: Story = () => (

@@ -43,51 +43,65 @@ interface ButtonTypeStyles {
     theme: Theme;
 }
 
-const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ theme }) => css`
-    background-color: ${theme.main['primary-1.1']};
-    border-color: ${theme.main['primary-1.1']};
-    color: ${theme.greys.white};
+const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
+    background-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
+    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
+    color: ${inverted ? theme.main['primary-1.1'] : theme.greys.white};
 
     &:hover {
-        background-color: ${theme.main['primary-1.3']};
-        border-color: ${theme.main['primary-1.3']};
+        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
+        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
+        ${inverted && `color: ${theme.main['primary-1.3']}`}
     }
 
     &:disabled {
-        background-color: ${theme.main['primary-1.2']};
-        border-color: ${theme.main['primary-1.2']};
+        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
+        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
+        ${inverted && `color: ${theme.main['primary-1.2']}`}
     }
 `;
 
-const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ theme }) => css`
-    background-color: ${theme.greys.white};
-    border-color: ${theme.main['primary-1.1']};
-    color: ${theme.main['primary-1.1']};
+const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
+    background-color: ${inverted ? 'transparent' : theme.greys.white};
+    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
+    color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
 
     &:hover {
-        border-color: ${theme.main['primary-1.3']};
-        color: ${theme.main['primary-1.3']};
+        border-color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
+        color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
     }
 
     &:disabled {
-        border-color: ${theme.main['primary-1.2']};
-        color: ${theme.main['primary-1.2']};
+        border-color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
+        color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
     }
+
+    ${inverted && `&:focus {
+        background-color: ${theme.main['primary-2']};
+        border-color: ${theme.main['primary-1.1']}
+        color: ${theme.greys.white};
+    }`}
 `;
 
-const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ theme }) => css`
+const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
     background-color: transparent;
     border-color: transparent;
-    color: ${theme.greys['dark-grey']};
+    color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
 
     &:hover {
-        background-color: ${theme.greys.grey};
-        color: ${theme.greys.black};
+        background-color: ${inverted ? theme.main['primary-1.3'] : theme.greys.grey};
+        color: ${inverted ? theme.greys.white : theme.greys.black};
     }
 
     &:disabled {
         background-color: transparent;
-        color: ${theme.greys['mid-grey']};
+        color: ${inverted ? theme.main['primary-1.3'] : theme.greys['mid-grey']};
+    }
+
+    &:focus {
+        background-color: ${inverted ? theme.main['primary-2'] : theme.greys.white};
+        border-color: ${theme.main['primary-1.1']};
+        color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
     }
 `;
 
@@ -98,9 +112,9 @@ const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolat
 
     &:hover {
         /* TODO change colors when updating thematization */
-        background-color: ${inverted ? theme.greys.white : '#62071b'};
-        border-color: ${inverted ? theme.greys.white : '#62071b'};
-        color: ${inverted ? '#62071b' : theme.greys.white};
+        background-color: ${inverted ? theme.greys.white : '#7B1A15'};
+        border-color: ${inverted ? theme.greys.white : '#7B1A15'};
+        color: ${inverted ? '#7B1A15' : theme.greys.white};
     }
 
     &:disabled {
@@ -108,9 +122,9 @@ const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolat
         &:focus,
         &:hover {
             /* TODO change colors when updating thematization */
-            background-color: ${inverted ? theme.greys.white : '#ea8da3'};
-            border-color: ${inverted ? theme.greys.white : '#ea8da3'};
-            color: ${inverted ? '#ea8da3' : theme.greys.white};
+            background-color: ${inverted ? theme.greys.white : '#F99D99'};
+            border-color: ${inverted ? theme.greys.white : '#F99D99'};
+            color: ${inverted ? '#F99D99' : theme.greys.white};
         }
     }
 `;
