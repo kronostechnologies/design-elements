@@ -1,6 +1,7 @@
 import { TextArea } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { SyntheticEvent } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Text Area',
@@ -40,6 +41,7 @@ export const EventCallbacks: Story = () => {
         />
     );
 };
+EventCallbacks.parameters = rawCodeParameters;
 
 export const Required: Story = () => (
     <TextArea

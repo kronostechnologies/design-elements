@@ -1,6 +1,7 @@
 import { RadioButtonGroup } from '@equisoft/design-elements-react';
-import { forceReRender, Story } from '@storybook/react';
-import React, { ChangeEvent } from 'react';
+import { Story } from '@storybook/react';
+import React, { ChangeEvent, useState } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Radio Button Group',
@@ -14,22 +15,6 @@ const buttons = [
     { label: 'Saturn', value: 'saturn' },
 ];
 
-const buttonsControlled = [
-    { label: 'Blue', value: 'blue' },
-    { label: 'Red', value: 'red' },
-    { label: 'Green', value: 'green', disabled: true },
-    { label: 'Yellow', value: 'yellow' },
-];
-
-let checkedValue = 'red';
-
-function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-    if (checkedValue !== event.target.value) {
-        checkedValue = event.target.value;
-    }
-    forceReRender();
-}
-
 export const Normal: Story = () => (
     <RadioButtonGroup label="Planets" groupName="planets" buttons={buttons} />
 );
@@ -42,15 +27,31 @@ export const DefaultChecked: Story = () => (
     <RadioButtonGroup groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]} />
 );
 
-export const Controlled: Story = () => (
-    <RadioButtonGroup
-        label="Colors"
-        groupName="colors"
-        checkedValue={checkedValue}
-        buttons={buttonsControlled}
-        onChange={handleChange}
-    />
-);
+export const Controlled: Story = () => {
+    const [value, setValue] = useState('red');
+
+    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+        if (value !== event.target.value) {
+            setValue(event.target.value);
+        }
+    }
+
+    return (
+        <RadioButtonGroup
+            label="Colors"
+            groupName="colors"
+            checkedValue={value}
+            buttons={[
+                { label: 'Blue', value: 'blue' },
+                { label: 'Red', value: 'red' },
+                { label: 'Green', value: 'green', disabled: true },
+                { label: 'Yellow', value: 'yellow' },
+            ]}
+            onChange={handleChange}
+        />
+    );
+};
+Controlled.parameters = rawCodeParameters;
 
 export const Callback: Story = () => {
     function onChange(event: React.ChangeEvent<HTMLInputElement>): void {
@@ -69,3 +70,4 @@ export const Callback: Story = () => {
         />
     );
 };
+Callback.parameters = rawCodeParameters;

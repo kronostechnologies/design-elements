@@ -498,3 +498,5 @@ export const Listbox = forwardRef(({
         </Box>
     );
 });
+
+Listbox.displayName = 'Listbox';

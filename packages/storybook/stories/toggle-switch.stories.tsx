@@ -1,10 +1,12 @@
 import { ToggleSwitch } from '@equisoft/design-elements-react';
-import React, { useState } from 'react';
 import { Story } from '@storybook/react';
+import React, { useState } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Toggle Switch',
     component: ToggleSwitch,
+    parameters: rawCodeParameters,
 };
 
 export const Normal: Story = () => {

@@ -564,3 +564,5 @@ export const Datepicker = forwardRef(({
         </>
     );
 });
+
+Datepicker.displayName = 'Datepicker';

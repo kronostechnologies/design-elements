@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { DesktopDecorator } from './utils/device-context-decorator';
+import { rawCodeParameters } from './utils/parameters';
 
 const StyledDiv = styled.div`
     height: 240px;
@@ -55,3 +56,4 @@ export const DesktopPlacement: Story = () => {
     );
 };
 DesktopPlacement.decorators = [DesktopDecorator];
+DesktopPlacement.parameters = rawCodeParameters;

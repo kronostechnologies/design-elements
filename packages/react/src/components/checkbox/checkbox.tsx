@@ -149,3 +149,5 @@ export const Checkbox: FunctionComponent<Props> = forwardRef(({
         </StyledLabel>
     );
 });
+
+Checkbox.displayName = 'Checkbox';

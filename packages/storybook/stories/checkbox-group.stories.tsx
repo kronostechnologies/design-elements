@@ -2,6 +2,7 @@ import { CheckboxGroup } from '@equisoft/design-elements-react';
 
 import { forceReRender, Story } from '@storybook/react';
 import React, { ChangeEvent } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Checkbox Group',
@@ -86,3 +87,4 @@ export const Callback: Story = () => {
         />
     );
 };
+Callback.parameters = rawCodeParameters;

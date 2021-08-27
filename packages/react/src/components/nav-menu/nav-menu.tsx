@@ -141,3 +141,5 @@ export const NavMenu = forwardRef(({
         </List>
     );
 });
+
+NavMenu.displayName = 'NavMenu';

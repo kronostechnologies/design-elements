@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
+import { rawCodeParameters } from './utils/parameters';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
@@ -48,21 +49,26 @@ InsideShadowDom.decorators = [ShadowDomDecorator];
 export const CustomPlaceholder: Story = () => (
     <Select label="Select an option" options={provinces} placeholder="Custom placeholder" />
 );
+
 export const Disabled: Story = () => (
     <Select label="Select an option" options={provinces} disabled />
 );
+
 export const Invalid: Story = () => (
     <Select label="Select an option" options={provinces} valid={false} />
 );
+
 export const Required: Story = () => (
     <form onSubmit={(event) => event.preventDefault()}>
         <Select required label="Select an option" options={provinces} />
         <button type="submit">Submit</button>
     </form>
 );
+
 export const Searchable: Story = () => (
     <Select label="Select an option" options={provinces} searchable />
 );
+
 export const WithCallback: Story = () => (
     <Select
         label="Select an option"
@@ -70,15 +76,20 @@ export const WithCallback: Story = () => (
         onChange={(option) => console.info(`Label: ${option.label} | Value: ${option.value}`)}
     />
 );
+WithCallback.parameters = rawCodeParameters;
+
 export const WithDefaultValue: Story = () => (
     <Select label="Select an option" options={provinces} defaultValue="qc" />
 );
+
 export const WithoutLabel: Story = () => (
     <Select options={provinces} />
 );
+
 export const WithSkip: Story = () => (
     <Select label="Select an option" options={provinces} skipOption={skipOption} />
 );
+
 export const WithTwoItemsVisible: Story = () => (
     <Select label="Select an option" options={provinces} numberOfItemsVisible={2} />
 );

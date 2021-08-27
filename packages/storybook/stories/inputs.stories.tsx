@@ -1,6 +1,7 @@
 import { TextInput } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Text Input',
@@ -43,6 +44,7 @@ export const Inputs: Story = () => (
         />
     </div>
 );
+
 export const DefaultValue: Story = () => (
     <TextInput
         disabled={false}
@@ -54,6 +56,7 @@ export const DefaultValue: Story = () => (
         validationErrorMessage="Error message"
     />
 );
+
 export const Required: Story = () => (
     <TextInput
         disabled={false}
@@ -65,6 +68,7 @@ export const Required: Story = () => (
         validationErrorMessage="This field is required"
     />
 );
+
 export const EventCallbacks: Story = () => (
     <TextInput
         disabled={false}
@@ -85,6 +89,8 @@ export const EventCallbacks: Story = () => (
         }}
     />
 );
+EventCallbacks.parameters = rawCodeParameters;
+
 export const PatternValidation: Story = () => (
     <TextInput
         disabled={false}
@@ -97,6 +103,7 @@ export const PatternValidation: Story = () => (
         validationErrorMessage="Please enter a valid phone number"
     />
 );
+
 export const Disabled: Story = () => (
     <TextInput
         disabled

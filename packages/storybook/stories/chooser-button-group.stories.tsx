@@ -1,6 +1,7 @@
 import { ChooserButtonGroup } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 const maritalStatus = [
     { value: 'single', label: 'Single, living alone or with a roommate' },
@@ -68,3 +69,4 @@ export const WithCallback: Story = () => (
         options={ageRange}
     />
 );
+WithCallback.parameters = rawCodeParameters;

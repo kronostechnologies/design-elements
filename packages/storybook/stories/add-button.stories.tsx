@@ -2,6 +2,7 @@ import { AddButton } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
 import { InvertedBackground } from './utils/inverted-background';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Add Button',
@@ -39,3 +40,4 @@ export const EventCallback: Story = () => (
         onClick={() => console.info('The button has been clicked!')}
     />
 );
+EventCallback.parameters = rawCodeParameters;
