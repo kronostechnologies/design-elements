@@ -52,7 +52,7 @@ export function UserProfile({
             ariaLabel={ariaLabel || t('ariaLabel')}
             className={className}
             defaultOpen={defaultOpen}
-            hasIcon={!isMobile}
+            hasCaret={!isMobile}
             id={id}
             isMobile={isMobile}
             options={options}

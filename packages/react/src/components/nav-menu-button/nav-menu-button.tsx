@@ -15,7 +15,7 @@ import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { Icon, IconName } from '../icon/icon';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 import { getRootDocument } from '../../utils/dom';
 
@@ -26,6 +26,7 @@ const StyledNav = styled.nav`
 interface StyledButtonProps {
     theme: Theme;
     expanded: boolean;
+    iconOnly?: boolean;
 }
 
 const StyledButton = styled(AbstractButton)<StyledButtonProps>`
@@ -34,6 +35,8 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
     color: ${({ theme }) => theme.greys.white};
     font-size: 0.875rem;
     font-weight: var(--font-normal);
+    ${({ iconOnly }) => (iconOnly ? 'padding: 0;' : '')}
+
     text-transform: unset;
 
     &:hover {
@@ -41,8 +44,12 @@ const StyledButton = styled(AbstractButton)<StyledButtonProps>`
     }
 `;
 
-const StyledIcon = styled(Icon)`
+const StyledRightIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
+`;
+
+const StyledLeftIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
 `;
 
 const StyledNavMenu = styled(NavMenu)`
@@ -58,7 +65,7 @@ interface MenuButtonProps {
      * @default 'Menu'
      * */
     ariaLabel?: string;
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
     /**
      * Sets menu open by default
@@ -69,7 +76,9 @@ interface MenuButtonProps {
      * Sets chevron icon
      * @default true
      * */
-    hasIcon?: boolean;
+    hasCaret?: boolean;
+    iconName?: IconName;
+    iconOnly?: boolean;
     id?: string;
     options: NavMenuOption[];
 }
@@ -79,7 +88,9 @@ export function NavMenuButton({
     children,
     className,
     defaultOpen = false,
-    hasIcon = true,
+    hasCaret = true,
+    iconName,
+    iconOnly = false,
     id: providedId,
     options,
 }: MenuButtonProps): ReactElement {
@@ -134,13 +145,26 @@ export function NavMenuButton({
                 aria-expanded={isOpen}
                 data-testid="menu-button"
                 expanded={isOpen}
+                iconOnly={iconOnly}
                 isMobile={isMobile}
                 onClick={() => setOpen(!isOpen)}
                 ref={buttonRef}
                 type="button"
             >
-                {children}
-                {hasIcon && <StyledIcon aria-hidden="true" name={isOpen ? 'chevronUp' : 'chevronDown'} size="16" />}
+                {iconOnly && iconName && <Icon name={iconName} size="16" />}
+                {!iconOnly && (
+                    <>
+                        {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
+                        {children}
+                        {hasCaret && (
+                            <StyledRightIcon
+                                aria-hidden="true"
+                                name={isOpen ? 'chevronUp' : 'chevronDown'}
+                                size="16"
+                            />
+                        )}
+                    </>
+                )}
             </StyledButton>
             <StyledNavMenu
                 data-testid="menu-navMenu"

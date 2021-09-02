@@ -47,6 +47,24 @@ export const Desktop: Story = () => (
 );
 Desktop.decorators = [DesktopDecorator];
 
+export const DesktopIconOnly: Story = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton iconOnly iconName="home" options={options} />
+        </ApplicationMenu>
+    </StyledDiv>
+);
+DesktopIconOnly.decorators = [DesktopDecorator];
+
+export const DesktopWithIcon: Story = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton iconName="home" options={options}>Home</NavMenuButton>
+        </ApplicationMenu>
+    </StyledDiv>
+);
+DesktopWithIcon.decorators = [DesktopDecorator];
+
 export const DesktopInsideShadowDom: Story = () => (
     <ApplicationMenu>
         <NavMenuButton options={options}>Menu</NavMenuButton>
