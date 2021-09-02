@@ -5,6 +5,7 @@ import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
 import ArrowRight from 'feather-icons/dist/icons/arrow-right.svg';
 import ArrowUp from 'feather-icons/dist/icons/arrow-up.svg';
+import Bell from 'feather-icons/dist/icons/bell.svg';
 import Calendar from 'feather-icons/dist/icons/calendar.svg';
 import Check from 'feather-icons/dist/icons/check.svg';
 import ChevronDown from 'feather-icons/dist/icons/chevron-down.svg';
@@ -34,6 +35,7 @@ import Trash from 'feather-icons/dist/icons/trash.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import React, { VoidFunctionComponent } from 'react';
 import Bento from '../../icons/bento.svg';
+import Equisoft from '../../logos/logo-equisoft-ico.svg';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
 import Files from '../../icons/files.svg';
@@ -45,6 +47,7 @@ const iconMapping = {
     arrowLeft: ArrowLeft,
     arrowRight: ArrowRight,
     arrowUp: ArrowUp,
+    bell: Bell,
     bento: Bento,
     calendar: Calendar,
     check: Check,
@@ -56,6 +59,7 @@ const iconMapping = {
     chevronsRight: ChevronsRight,
     copy: Copy,
     edit: Edit,
+    equisoft: Equisoft,
     externalLink: ExternalLink,
     files: Files,
     helpCircle: HelpCircle,
