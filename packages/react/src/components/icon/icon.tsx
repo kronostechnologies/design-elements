@@ -28,10 +28,12 @@ import MoreVertical from 'feather-icons/dist/icons/more-vertical.svg';
 import Phone from 'feather-icons/dist/icons/phone.svg';
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
+import Settings from 'feather-icons/dist/icons/settings.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
 import Trash from 'feather-icons/dist/icons/trash.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import React, { VoidFunctionComponent } from 'react';
+import Bento from '../../icons/bento.svg';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
 import Files from '../../icons/files.svg';
@@ -43,6 +45,7 @@ const iconMapping = {
     arrowLeft: ArrowLeft,
     arrowRight: ArrowRight,
     arrowUp: ArrowUp,
+    bento: Bento,
     calendar: Calendar,
     check: Check,
     chevronDown: ChevronDown,
@@ -69,6 +72,7 @@ const iconMapping = {
     plusSign: PlusSign,
     reorder: Reorder,
     search: Search,
+    settings: Settings,
     star: Star,
     trash: Trash,
     user: User,
