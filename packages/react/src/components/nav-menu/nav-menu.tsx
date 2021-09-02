@@ -28,16 +28,17 @@ const Label = styled.span`
     white-space: nowrap;
 `;
 
-const StartIcon = styled(Icon).attrs({ size: '16' })`
+const iconSize = '16';
+const StartIcon = styled(Icon).attrs({ size: iconSize })`
     color: ${({ theme }) => theme.greys['dark-grey']};
     margin-right: var(--spacing-1x);
-    min-width: 16px;
+    min-width: ${iconSize}px;
 `;
 
-const EndIcon = styled(Icon).attrs({ size: '16' })`
+const EndIcon = styled(Icon).attrs({ size: iconSize })`
     color: ${({ theme }) => theme.greys['dark-grey']};
     margin-left: var(--spacing-1x);
-    min-width: 16px;
+    min-width: ${iconSize}px;
 `;
 
 const ListItemLink = styled(NavLink)<ListItemLinkProps>`

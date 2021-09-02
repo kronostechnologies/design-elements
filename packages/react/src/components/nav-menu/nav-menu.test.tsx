@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { NavMenu, NavMenuOption } from './nav-menu';
 
 jest.mock('../../utils/uuid');
@@ -51,7 +51,7 @@ const optionWithEndIcon: NavMenuOption[] = [
 describe('NavMenu', () => {
     test('Calls onChange callback when an option is clicked', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<NavMenu options={options} onChange={callback} />);
+        const wrapper = shallow(<NavMenu options={options} onChange={callback} />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
@@ -60,7 +60,7 @@ describe('NavMenu', () => {
 
     test('Calls onChange callback when enter key is pressed on option', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<NavMenu options={options} onChange={callback} />);
+        const wrapper = shallow(<NavMenu options={options} onChange={callback} />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('keydown', {
             key: 'Enter',
@@ -73,7 +73,7 @@ describe('NavMenu', () => {
 
     test('Calls onKeyDown callback when a key is pressed on option', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<NavMenu options={options} onKeyDown={callback} />);
+        const wrapper = shallow(<NavMenu options={options} onKeyDown={callback} />);
 
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: '' });
 
