@@ -87,6 +87,12 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   color: #B7BBC2;
 }
 
+.c3:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -401,6 +407,12 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 .c3:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c3:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c4 {
@@ -719,6 +731,12 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   color: #B7BBC2;
 }
 
+.c3:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1033,6 +1051,12 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 .c3:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c3:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c4 {

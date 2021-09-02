@@ -502,6 +502,12 @@ exports[`Add Button has tertiary styles 1`] = `
   color: #B7BBC2;
 }
 
+.c1:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c2 {
   margin-right: var(--spacing-1x);
 }

@@ -138,6 +138,12 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #B7BBC2;
 }
 
+.c11:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c12 {
   background-color: transparent;
   border-color: transparent;
@@ -164,6 +170,12 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 .c12:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c12:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c2 {
@@ -435,6 +447,12 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   color: #B7BBC2;
 }
 
+.c4:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -660,6 +678,12 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   color: #B7BBC2;
 }
 
+.c7:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c8 {
   background-color: transparent;
   border-color: transparent;
@@ -686,6 +710,12 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 .c8:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c8:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c0 {
@@ -944,6 +974,12 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #B7BBC2;
 }
 
+.c10:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c11 {
   background-color: transparent;
   border-color: transparent;
@@ -970,6 +1006,12 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 .c11:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c11:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c0 {
@@ -1254,6 +1296,12 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   color: #B7BBC2;
 }
 
+.c10:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c11 {
   background-color: transparent;
   border-color: transparent;
@@ -1280,6 +1328,12 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 .c11:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c11:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c2 {
@@ -1547,6 +1601,12 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #B7BBC2;
 }
 
+.c11:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c12 {
   background-color: transparent;
   border-color: transparent;
@@ -1573,6 +1633,12 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 .c12:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c12:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c2 {
@@ -1883,6 +1949,12 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #B7BBC2;
 }
 
+.c11:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
 .c12 {
   background-color: transparent;
   border-color: transparent;
@@ -1909,6 +1981,12 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c12:disabled {
   background-color: transparent;
   color: #B7BBC2;
+}
+
+.c12:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
 }
 
 .c2 {

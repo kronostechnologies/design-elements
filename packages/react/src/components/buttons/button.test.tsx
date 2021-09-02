@@ -38,7 +38,17 @@ describe('Button', () => {
     });
 
     test('has primary styles', () => {
-        const tree = renderWithProviders(<Button onClick={doNothing} buttonType="primary" label="Primary Button" />);
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has primary styles (inverted)', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="primary" label="Primary Button" inverted />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
@@ -55,8 +65,24 @@ describe('Button', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('has secondary styles (inverted)', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="secondary" label="Secondary Button" inverted />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('has tertiary styles', () => {
         const tree = renderWithProviders(<Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has tertiary styles (inverted)', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="tertiary" label="Tertiary Button" inverted />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
