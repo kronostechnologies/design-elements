@@ -14,17 +14,28 @@ exports[`NavMenu Is hidden 1`] = `
   width: 100%;
 }
 
+.c2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c1:focus {
@@ -47,7 +58,11 @@ exports[`NavMenu Is hidden 1`] = `
       data-testid="listitem-optionA"
       href="/testA"
     >
-      Option A
+      <span
+        class="c2"
+      >
+        Option A
+      </span>
     </a>
   </li>
   <li>
@@ -56,7 +71,11 @@ exports[`NavMenu Is hidden 1`] = `
       data-testid="listitem-optionB"
       href="/testB"
     >
-      Option B
+      <span
+        class="c2"
+      >
+        Option B
+      </span>
     </a>
   </li>
   <li>
@@ -65,7 +84,11 @@ exports[`NavMenu Is hidden 1`] = `
       data-testid="listitem-optionC"
       href="/testC"
     >
-      Option C
+      <span
+        class="c2"
+      >
+        Option C
+      </span>
     </a>
   </li>
   <li>
@@ -74,7 +97,11 @@ exports[`NavMenu Is hidden 1`] = `
       data-testid="listitem-optionD"
       href="/testD"
     >
-      Option D
+      <span
+        class="c2"
+      >
+        Option D
+      </span>
     </a>
   </li>
 </ul>
@@ -94,17 +121,28 @@ exports[`NavMenu Matches the snapshot 1`] = `
   width: 100%;
 }
 
+.c2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c1:focus {
@@ -126,7 +164,11 @@ exports[`NavMenu Matches the snapshot 1`] = `
       data-testid="listitem-optionA"
       href="/testA"
     >
-      Option A
+      <span
+        class="c2"
+      >
+        Option A
+      </span>
     </a>
   </li>
   <li>
@@ -135,7 +177,11 @@ exports[`NavMenu Matches the snapshot 1`] = `
       data-testid="listitem-optionB"
       href="/testB"
     >
-      Option B
+      <span
+        class="c2"
+      >
+        Option B
+      </span>
     </a>
   </li>
   <li>
@@ -144,7 +190,11 @@ exports[`NavMenu Matches the snapshot 1`] = `
       data-testid="listitem-optionC"
       href="/testC"
     >
-      Option C
+      <span
+        class="c2"
+      >
+        Option C
+      </span>
     </a>
   </li>
   <li>
@@ -153,7 +203,11 @@ exports[`NavMenu Matches the snapshot 1`] = `
       data-testid="listitem-optionD"
       href="/testD"
     >
-      Option D
+      <span
+        class="c2"
+      >
+        Option D
+      </span>
     </a>
   </li>
 </ul>

@@ -72,17 +72,28 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   width: 100%;
 }
 
+.c9 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c8:focus {
@@ -194,7 +205,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
         data-testid="listitem-optionA"
         href="/testa"
       >
-        Option A
+        <span
+          class="c9"
+        >
+          Option A
+        </span>
       </a>
     </li>
     <li>
@@ -203,7 +218,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
         data-testid="listitem-optionB"
         href="/testb"
       >
-        Option B
+        <span
+          class="c9"
+        >
+          Option B
+        </span>
       </a>
     </li>
     <li>
@@ -212,7 +231,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
         data-testid="listitem-optionC"
         href="/testc"
       >
-        Option C
+        <span
+          class="c9"
+        >
+          Option C
+        </span>
       </a>
     </li>
     <li>
@@ -221,7 +244,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
         data-testid="listitem-optionD"
         href="/testd"
       >
-        Option D
+        <span
+          class="c9"
+        >
+          Option D
+        </span>
       </a>
     </li>
   </ul>
@@ -300,17 +327,28 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   width: 100%;
 }
 
+.c9 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c8:focus {
@@ -423,7 +461,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
         data-testid="listitem-optionA"
         href="/testa"
       >
-        Option A
+        <span
+          class="c9"
+        >
+          Option A
+        </span>
       </a>
     </li>
     <li>
@@ -432,7 +474,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
         data-testid="listitem-optionB"
         href="/testb"
       >
-        Option B
+        <span
+          class="c9"
+        >
+          Option B
+        </span>
       </a>
     </li>
     <li>
@@ -441,7 +487,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
         data-testid="listitem-optionC"
         href="/testc"
       >
-        Option C
+        <span
+          class="c9"
+        >
+          Option C
+        </span>
       </a>
     </li>
     <li>
@@ -450,7 +500,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
         data-testid="listitem-optionD"
         href="/testd"
       >
-        Option D
+        <span
+          class="c9"
+        >
+          Option D
+        </span>
       </a>
     </li>
   </ul>
@@ -529,17 +583,28 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   width: 100%;
 }
 
+.c9 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1rem;
   line-height: 2.5rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x);
   -webkit-text-decoration: none;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c8:focus {
@@ -646,7 +711,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
         data-testid="listitem-optionA"
         href="/testa"
       >
-        Option A
+        <span
+          class="c9"
+        >
+          Option A
+        </span>
       </a>
     </li>
     <li>
@@ -655,7 +724,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
         data-testid="listitem-optionB"
         href="/testb"
       >
-        Option B
+        <span
+          class="c9"
+        >
+          Option B
+        </span>
       </a>
     </li>
     <li>
@@ -664,7 +737,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
         data-testid="listitem-optionC"
         href="/testc"
       >
-        Option C
+        <span
+          class="c9"
+        >
+          Option C
+        </span>
       </a>
     </li>
     <li>
@@ -673,7 +750,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
         data-testid="listitem-optionD"
         href="/testd"
       >
-        Option D
+        <span
+          class="c9"
+        >
+          Option D
+        </span>
       </a>
     </li>
   </ul>

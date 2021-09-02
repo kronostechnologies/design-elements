@@ -1,4 +1,4 @@
-import { ApplicationMenu, NavMenuButton } from '@equisoft/design-elements-react';
+import { ApplicationMenu, NavMenuButton, NavMenuOption } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
@@ -17,11 +17,12 @@ export default {
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
 
-const options = [
+const options: NavMenuOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
         href: '/testa',
+        endIcon: 'externalLink'
     },
     {
         label: 'Option B',
@@ -34,6 +35,7 @@ const options = [
         href: '/testc',
     },
     {
+        startIcon: 'home',
         label: 'Option D',
         value: 'optionD',
         href: '/testd',
