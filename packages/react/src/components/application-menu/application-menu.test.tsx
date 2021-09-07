@@ -48,4 +48,18 @@ describe('Application Menu', () => {
 
         expect(skipLink.exists()).toBe(true);
     });
+
+    describe('logo', () => {
+        it('should use react-router-link when usesReactRouter is true', () => {
+            const wrapper = shallow(<ApplicationMenu usesReactRouter>test</ApplicationMenu>);
+
+            expect(getByTestId(wrapper, 'logo-react-router-link').exists()).toBe(true);
+        });
+
+        it('should use html-link when usesReactRouter is false', () => {
+            const wrapper = shallow(<ApplicationMenu usesReactRouter={false}>test</ApplicationMenu>);
+
+            expect(getByTestId(wrapper, 'logo-html-link').exists()).toBe(true);
+        });
+    });
 });

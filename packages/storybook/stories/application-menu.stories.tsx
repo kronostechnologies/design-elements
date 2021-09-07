@@ -68,3 +68,9 @@ export const WithSkipLinkAndUserProfile: Story = () => (
         />
     </ApplicationMenu>
 );
+
+export const WithoutReactRouter: Story = () => (
+    <ApplicationMenu usesReactRouter={false} logoHref="https://www.google.com/">
+        <p>Hello world</p>
+    </ApplicationMenu>
+);
