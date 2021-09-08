@@ -85,7 +85,7 @@ describe('CurrencyInput Component', () => {
         );
         const input = getInputElement(container);
 
-        expect(input.value).toMatchFormattedMoney('12 345,25 $ US');
+        expect(input.value).toMatchFormattedMoney('12 345,25 $');
     });
 
     it('should select all text on focus', () => {

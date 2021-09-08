@@ -3969,7 +3969,6 @@ __metadata:
     jest: ^27.0.6
     jest-junit: ^12.2.0
     jest-styled-components: ^7.0.5
-    pnp-webpack-plugin: ^1.6.4
     prop-types: ^15.7.2
     react: ~17.0.2
     react-datepicker: ^4.1.1
@@ -3991,6 +3990,7 @@ __metadata:
     stylelint: ^13.13.1
     ts-jest: ^27.0.3
     ts-loader: ^9.2.3
+    ts-mockito: ^2.6.1
     typescript: ~4.3.5
     webpack: ^5.45.1
     webpack-cli: ^4.7.2
@@ -15349,7 +15349,7 @@ jest-styled-components@^7.0.5:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.x, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
+"lodash@npm:4.x, lodash@npm:^4.17.21, lodash@npm:^4.17.5, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 4983720b9abca930a4a46f18db163d7dad8dd00dbed6db0cc7b499b33b717cce69f80928b27bbb1ff2cbd3b19d251ee90669a8b5ea466072ca81c2ebe91e7468
@@ -21196,6 +21196,15 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"ts-mockito@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "ts-mockito@npm:2.6.1"
+  dependencies:
+    lodash: ^4.17.5
+  checksum: 68a0a57c151550aa6a778aa2f58c8f0a8af0b187d5d7d1a8da4a830ff8be4db2583d7ff57fefcf37a0e6f7c3c94df26771b9f9db34ddddae6a70152ef889071c
+  languageName: node
+  linkType: hard
+
 "ts-pnp@npm:^1.1.6":
   version: 1.2.0
   resolution: "ts-pnp@npm:1.2.0"
@@ -21375,7 +21384,7 @@ typescript@*:
 
 "typescript@patch:typescript@*#builtin<compat/typescript>":
   version: 4.1.2
-  resolution: "typescript@patch:typescript@npm%3A4.1.2#builtin<compat/typescript>::version=4.1.2&hash=ddfc1b"
+  resolution: "typescript@patch:typescript@npm%3A4.1.2#builtin<compat/typescript>::version=4.1.2&hash=8133ad"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -21385,11 +21394,11 @@ typescript@*:
 
 "typescript@patch:typescript@~4.3.5#builtin<compat/typescript>":
   version: 4.3.5
-  resolution: "typescript@patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=ddfc1b"
+  resolution: "typescript@patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=8133ad"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 7f0b8343f71ecac18095be1476b398aca420ab60dc207cc1efe078f381eef5527b80a518297720257114cdbda65612f8839e4b63e85dc95e67ac5cbbade8bdf0
+  checksum: 7e9040a3ee8b62c9f499fdaeeb2ea143c079e88fadeba562ce2f7ee878cf3eba9cf6097bf8a4ead0de4b35582f71a4866d9f475af9b064fde430d55d9fc6aaac
   languageName: node
   linkType: hard
 

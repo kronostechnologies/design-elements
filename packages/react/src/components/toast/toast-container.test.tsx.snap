@@ -1,0 +1,1149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastContainer should match snapshot (error) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c4:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c4:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: var(--border-radius);
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-height: 56px;
+  padding: var(--spacing-2x);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 400px;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
+  background: #CD2C23;
+}
+
+.c2 {
+  color: #FFFFFF;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: var(--spacing-2x);
+  padding-right: var(--spacing-4x);
+  position: relative;
+}
+
+.c3 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: #FFFFFF;
+  margin-top: calc(-1 * var(--spacing-half));
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover {
+  background-color: #7b1a15;
+  color: #FFFFFF;
+}
+
+.c1 {
+  height: 24px;
+}
+
+<ToastContainer
+  id="an id"
+  message="a message"
+  position="bottom-right"
+  type="error"
+>
+  <styled.div
+    isMobile={false}
+    position="bottom-right"
+    role="status"
+    type="error"
+  >
+    <div
+      className="c0"
+      role="status"
+      type="error"
+    >
+      <Styled(Icon)
+        color="#FFFFFF"
+        isMobile={false}
+        name="alertOctagon"
+        size="20"
+        type="error"
+      >
+        <Icon
+          aria-label="error"
+          className="c1"
+          color="#FFFFFF"
+          focusable={true}
+          isMobile={false}
+          name="alertOctagon"
+          size="20"
+          type="error"
+        >
+          <svg
+            aria-label="error"
+            className="c1"
+            color="#FFFFFF"
+            focusable={true}
+            height="20"
+            isMobile={false}
+            type="error"
+            width="20"
+          />
+        </Icon>
+      </Styled(Icon)>
+      <styled.p
+        $isMobile={false}
+        color="#FFFFFF"
+      >
+        <p
+          className="c2"
+          color="#FFFFFF"
+        >
+          a message
+          <Styled(IconButton)
+            $color="#FFFFFF"
+            $isMobile={false}
+            $type="error"
+            data-testid="dismiss"
+            label="Dismiss notification"
+            onClick={[Function]}
+          >
+            <IconButton
+              buttonType="tertiary"
+              className="c3"
+              data-testid="dismiss"
+              iconName="x"
+              label="Dismiss notification"
+              onClick={[Function]}
+            >
+              <Styled(AbstractButton)
+                aria-label="Dismiss notification"
+                buttonType="tertiary"
+                className="c3"
+                data-testid="dismiss"
+                isMobile={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <AbstractButton
+                  aria-label="Dismiss notification"
+                  buttonType="tertiary"
+                  className="c4 c3"
+                  data-testid="dismiss"
+                  isMobile={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  <styled.button
+                    aria-label="Dismiss notification"
+                    buttonType="tertiary"
+                    className="c4 c3"
+                    data-testid="dismiss"
+                    isMobile={false}
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    <button
+                      aria-label="Dismiss notification"
+                      className="c5 c4 c3"
+                      data-testid="dismiss"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      <Icon
+                        aria-hidden="true"
+                        color="currentColor"
+                        name="x"
+                        size="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          color="currentColor"
+                          focusable={false}
+                          height="16"
+                          width="16"
+                        />
+                      </Icon>
+                    </button>
+                  </styled.button>
+                </AbstractButton>
+              </Styled(AbstractButton)>
+            </IconButton>
+          </Styled(IconButton)>
+        </p>
+      </styled.p>
+    </div>
+  </styled.div>
+</ToastContainer>
+`;
+
+exports[`ToastContainer should match snapshot (information) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c4:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c4:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: var(--border-radius);
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-height: 56px;
+  padding: var(--spacing-2x);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 400px;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
+  background: #602FA0;
+}
+
+.c2 {
+  color: #FFFFFF;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: var(--spacing-2x);
+  padding-right: var(--spacing-4x);
+  position: relative;
+}
+
+.c3 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: #FFFFFF;
+  margin-top: calc(-1 * var(--spacing-half));
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover {
+  background-color: #3a1c60;
+  color: #FFFFFF;
+}
+
+.c1 {
+  height: 24px;
+}
+
+<ToastContainer
+  id="an id"
+  message="a message"
+  position="bottom-right"
+  type="information"
+>
+  <styled.div
+    isMobile={false}
+    position="bottom-right"
+    role="status"
+    type="information"
+  >
+    <div
+      className="c0"
+      role="status"
+      type="information"
+    >
+      <Styled(Icon)
+        color="#FFFFFF"
+        isMobile={false}
+        name="info"
+        size="20"
+        type="information"
+      >
+        <Icon
+          aria-label="info"
+          className="c1"
+          color="#FFFFFF"
+          focusable={true}
+          isMobile={false}
+          name="info"
+          size="20"
+          type="information"
+        >
+          <svg
+            aria-label="info"
+            className="c1"
+            color="#FFFFFF"
+            focusable={true}
+            height="20"
+            isMobile={false}
+            type="information"
+            width="20"
+          />
+        </Icon>
+      </Styled(Icon)>
+      <styled.p
+        $isMobile={false}
+        color="#FFFFFF"
+      >
+        <p
+          className="c2"
+          color="#FFFFFF"
+        >
+          a message
+          <Styled(IconButton)
+            $color="#FFFFFF"
+            $isMobile={false}
+            $type="information"
+            data-testid="dismiss"
+            label="Dismiss notification"
+            onClick={[Function]}
+          >
+            <IconButton
+              buttonType="tertiary"
+              className="c3"
+              data-testid="dismiss"
+              iconName="x"
+              label="Dismiss notification"
+              onClick={[Function]}
+            >
+              <Styled(AbstractButton)
+                aria-label="Dismiss notification"
+                buttonType="tertiary"
+                className="c3"
+                data-testid="dismiss"
+                isMobile={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <AbstractButton
+                  aria-label="Dismiss notification"
+                  buttonType="tertiary"
+                  className="c4 c3"
+                  data-testid="dismiss"
+                  isMobile={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  <styled.button
+                    aria-label="Dismiss notification"
+                    buttonType="tertiary"
+                    className="c4 c3"
+                    data-testid="dismiss"
+                    isMobile={false}
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    <button
+                      aria-label="Dismiss notification"
+                      className="c5 c4 c3"
+                      data-testid="dismiss"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      <Icon
+                        aria-hidden="true"
+                        color="currentColor"
+                        name="x"
+                        size="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          color="currentColor"
+                          focusable={false}
+                          height="16"
+                          width="16"
+                        />
+                      </Icon>
+                    </button>
+                  </styled.button>
+                </AbstractButton>
+              </Styled(AbstractButton)>
+            </IconButton>
+          </Styled(IconButton)>
+        </p>
+      </styled.p>
+    </div>
+  </styled.div>
+</ToastContainer>
+`;
+
+exports[`ToastContainer should match snapshot (success) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c4:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c4:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: var(--border-radius);
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-height: 56px;
+  padding: var(--spacing-2x);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 400px;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
+  background: #008533;
+}
+
+.c2 {
+  color: #FFFFFF;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: var(--spacing-2x);
+  padding-right: var(--spacing-4x);
+  position: relative;
+}
+
+.c3 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: #FFFFFF;
+  margin-top: calc(-1 * var(--spacing-half));
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover {
+  background-color: #004f1e;
+  color: #FFFFFF;
+}
+
+.c1 {
+  height: 24px;
+}
+
+<ToastContainer
+  id="an id"
+  message="a message"
+  position="bottom-right"
+  type="success"
+>
+  <styled.div
+    isMobile={false}
+    position="bottom-right"
+    role="status"
+    type="success"
+  >
+    <div
+      className="c0"
+      role="status"
+      type="success"
+    >
+      <Styled(Icon)
+        color="#FFFFFF"
+        isMobile={false}
+        name="check"
+        size="20"
+        type="success"
+      >
+        <Icon
+          aria-label="success"
+          className="c1"
+          color="#FFFFFF"
+          focusable={true}
+          isMobile={false}
+          name="check"
+          size="20"
+          type="success"
+        >
+          <svg
+            aria-label="success"
+            className="c1"
+            color="#FFFFFF"
+            focusable={true}
+            height="20"
+            isMobile={false}
+            type="success"
+            width="20"
+          />
+        </Icon>
+      </Styled(Icon)>
+      <styled.p
+        $isMobile={false}
+        color="#FFFFFF"
+      >
+        <p
+          className="c2"
+          color="#FFFFFF"
+        >
+          a message
+          <Styled(IconButton)
+            $color="#FFFFFF"
+            $isMobile={false}
+            $type="success"
+            data-testid="dismiss"
+            label="Dismiss notification"
+            onClick={[Function]}
+          >
+            <IconButton
+              buttonType="tertiary"
+              className="c3"
+              data-testid="dismiss"
+              iconName="x"
+              label="Dismiss notification"
+              onClick={[Function]}
+            >
+              <Styled(AbstractButton)
+                aria-label="Dismiss notification"
+                buttonType="tertiary"
+                className="c3"
+                data-testid="dismiss"
+                isMobile={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <AbstractButton
+                  aria-label="Dismiss notification"
+                  buttonType="tertiary"
+                  className="c4 c3"
+                  data-testid="dismiss"
+                  isMobile={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  <styled.button
+                    aria-label="Dismiss notification"
+                    buttonType="tertiary"
+                    className="c4 c3"
+                    data-testid="dismiss"
+                    isMobile={false}
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    <button
+                      aria-label="Dismiss notification"
+                      className="c5 c4 c3"
+                      data-testid="dismiss"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      <Icon
+                        aria-hidden="true"
+                        color="currentColor"
+                        name="x"
+                        size="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          color="currentColor"
+                          focusable={false}
+                          height="16"
+                          width="16"
+                        />
+                      </Icon>
+                    </button>
+                  </styled.button>
+                </AbstractButton>
+              </Styled(AbstractButton)>
+            </IconButton>
+          </Styled(IconButton)>
+        </p>
+      </styled.p>
+    </div>
+  </styled.div>
+</ToastContainer>
+`;
+
+exports[`ToastContainer should match snapshot (warning) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c4 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c4:hover {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c4:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c4:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: var(--border-radius);
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-height: 56px;
+  padding: var(--spacing-2x);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 400px;
+  -webkit-animation: dlEaXy 0.25s ease-out;
+  animation: dlEaXy 0.25s ease-out;
+  background: #FFB302;
+}
+
+.c2 {
+  color: #000000;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: var(--spacing-2x);
+  padding-right: var(--spacing-4x);
+  position: relative;
+}
+
+.c3 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: #000000;
+  margin-top: calc(-1 * var(--spacing-half));
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3:hover {
+  background-color: #A36D00;
+  color: #000000;
+}
+
+.c1 {
+  height: 24px;
+}
+
+<ToastContainer
+  id="an id"
+  message="a message"
+  position="bottom-right"
+  type="warning"
+>
+  <styled.div
+    isMobile={false}
+    position="bottom-right"
+    role="status"
+    type="warning"
+  >
+    <div
+      className="c0"
+      role="status"
+      type="warning"
+    >
+      <Styled(Icon)
+        color="#000000"
+        isMobile={false}
+        name="alertTriangle"
+        size="20"
+        type="warning"
+      >
+        <Icon
+          aria-label="warning"
+          className="c1"
+          color="#000000"
+          focusable={true}
+          isMobile={false}
+          name="alertTriangle"
+          size="20"
+          type="warning"
+        >
+          <svg
+            aria-label="warning"
+            className="c1"
+            color="#000000"
+            focusable={true}
+            height="20"
+            isMobile={false}
+            type="warning"
+            width="20"
+          />
+        </Icon>
+      </Styled(Icon)>
+      <styled.p
+        $isMobile={false}
+        color="#000000"
+      >
+        <p
+          className="c2"
+          color="#000000"
+        >
+          a message
+          <Styled(IconButton)
+            $color="#000000"
+            $isMobile={false}
+            $type="warning"
+            data-testid="dismiss"
+            label="Dismiss notification"
+            onClick={[Function]}
+          >
+            <IconButton
+              buttonType="tertiary"
+              className="c3"
+              data-testid="dismiss"
+              iconName="x"
+              label="Dismiss notification"
+              onClick={[Function]}
+            >
+              <Styled(AbstractButton)
+                aria-label="Dismiss notification"
+                buttonType="tertiary"
+                className="c3"
+                data-testid="dismiss"
+                isMobile={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                <AbstractButton
+                  aria-label="Dismiss notification"
+                  buttonType="tertiary"
+                  className="c4 c3"
+                  data-testid="dismiss"
+                  isMobile={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  <styled.button
+                    aria-label="Dismiss notification"
+                    buttonType="tertiary"
+                    className="c4 c3"
+                    data-testid="dismiss"
+                    isMobile={false}
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    <button
+                      aria-label="Dismiss notification"
+                      className="c5 c4 c3"
+                      data-testid="dismiss"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      <Icon
+                        aria-hidden="true"
+                        color="currentColor"
+                        name="x"
+                        size="16"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          color="currentColor"
+                          focusable={false}
+                          height="16"
+                          width="16"
+                        />
+                      </Icon>
+                    </button>
+                  </styled.button>
+                </AbstractButton>
+              </Styled(AbstractButton)>
+            </IconButton>
+          </Styled(IconButton)>
+        </p>
+      </styled.p>
+    </div>
+  </styled.div>
+</ToastContainer>
+`;

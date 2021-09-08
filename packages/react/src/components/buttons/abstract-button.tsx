@@ -1,6 +1,6 @@
 import React, { EventHandler, forwardRef, MouseEvent, Ref, useCallback } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes/theme';
+import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
 
 type AbstractButtonProps = { isMobile: boolean }

@@ -1,9 +1,9 @@
-import React, { ReactElement, ReactNode } from 'react';
-import root from 'react-shadow/styled-components';
+import React, { FunctionComponent } from 'react';
+import { createProxy } from 'react-shadow';
+import { StyleSheetManager } from 'styled-components';
 import { mainCss } from '../../styles';
 
 interface ShadowWrapperProps {
-    children: ReactNode;
     /**
      * Sets host element tag
      * @default div
@@ -11,12 +11,24 @@ interface ShadowWrapperProps {
     tagName?: string;
 }
 
-export function ShadowWrapper({ children, tagName = 'div' }: ShadowWrapperProps): ReactElement {
-    const WrapperTag = root[tagName];
+const reactShadow = createProxy(
+    {},
+    'styled-components',
+    ({ root, children }) => (
+        <StyleSheetManager target={root}>
+            <>{children}</>
+        </StyleSheetManager>
+    ),
+);
+
+export const ShadowWrapper: FunctionComponent<ShadowWrapperProps> = (
+    { children, tagName = 'div' },
+) => {
+    const WrapperTag = reactShadow[tagName];
     return (
         <WrapperTag>
             <style>{mainCss}</style>
             {children}
         </WrapperTag>
     );
-}
+};

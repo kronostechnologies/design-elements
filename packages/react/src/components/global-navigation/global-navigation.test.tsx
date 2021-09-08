@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
-import { ButtonProps } from '../buttons/icon-button';
+import { IconButtonProps } from '../buttons/icon-button';
 import { findByTestId } from '../../test-utils/enzyme-selectors';
 
 function setup(children: ReactElement): ReactElement {
@@ -56,7 +56,7 @@ const footerItems: GlobalNavigationItem[] = [
     },
 ];
 
-const coreActionButton: ButtonProps = {
+const coreActionButton: IconButtonProps = {
     buttonType: 'primary',
     iconName: 'plusSign',
     label: 'add',

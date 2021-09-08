@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { DeviceContextProvider, DeviceContextProviderProps } from './device-context-provider/device-context-provider';
 import { IntlProvider, IntlProviderProps } from './internationalization-provider/internationalization-provider';
 import { ThemeWrapper, ThemeWrapperProps } from './theme-wrapper/theme-wrapper';
+import { ToastProvider } from './toast/toast-provider';
 
 export type DesignSystemProps = ThemeWrapperProps & DeviceContextProviderProps & IntlProviderProps;
 
@@ -9,7 +10,9 @@ export const DesignSystem: FunctionComponent<DesignSystemProps> = (props) => (
     <DeviceContextProvider staticDevice={props.staticDevice}>
         <ThemeWrapper theme={props.theme} isolateStyles={props.isolateStyles}>
             <IntlProvider language={props.language}>
-                {props.children}
+                <ToastProvider>
+                    {props.children}
+                </ToastProvider>
             </IntlProvider>
         </ThemeWrapper>
     </DeviceContextProvider>

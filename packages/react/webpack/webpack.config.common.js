@@ -1,5 +1,4 @@
 const path = require('path');
-const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const ReactDocgenTypescriptPlugin = require('react-docgen-typescript-plugin').default;
 const pkg = require('../package');
 
@@ -43,9 +42,6 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
-        plugins: [
-            PnpWebpackPlugin,
-        ],
         alias: {
             'react-onclickoutside': path.resolve(__dirname, '../patches/react-onclickoutside'), // TODO: Remove once https://github.com/Pomax/react-onclickoutside/pull/324 is released
         },
@@ -62,11 +58,6 @@ module.exports = {
             tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
         }),
     ],
-    resolveLoader: {
-        plugins: [
-            PnpWebpackPlugin.moduleLoader(module),
-        ],
-    },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist'),
