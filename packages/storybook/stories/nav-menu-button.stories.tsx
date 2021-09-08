@@ -61,6 +61,21 @@ const optionsWithIcons: NavMenuOption[] = [
     },
 ];
 
+const optionsWithHtmlLinks: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testa',
+        isHtmlLink: true,
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testb',
+        isHtmlLink: true,
+    },
+];
+
 export const Desktop: Story = () => (
     <ApplicationMenu>
         <NavMenuButton options={options}>Menu</NavMenuButton>
@@ -109,5 +124,11 @@ export const DefaultOpen: Story = () => (
 export const WithOptionIcons: Story = () => (
     <ApplicationMenu>
         <NavMenuButton options={optionsWithIcons}>Menu</NavMenuButton>
+    </ApplicationMenu>
+);
+
+export const WithHtmlLinks: Story = () => (
+    <ApplicationMenu>
+        <NavMenuButton options={optionsWithHtmlLinks}>Menu</NavMenuButton>
     </ApplicationMenu>
 );

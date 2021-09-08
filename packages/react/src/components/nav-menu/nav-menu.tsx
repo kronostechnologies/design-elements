@@ -1,6 +1,6 @@
 import React, { forwardRef, KeyboardEvent, ReactElement, Ref, RefObject, useEffect, useMemo } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -18,7 +18,7 @@ const List = styled.ul`
     width: 100%;
 `;
 
-interface ListItemLinkProps extends NavLinkProps {
+interface LinkProps {
     $device: DeviceContextProps;
 }
 
@@ -41,7 +41,7 @@ const EndIcon = styled(Icon).attrs({ size: iconSize })`
     min-width: ${iconSize}px;
 `;
 
-const ListItemLink = styled(NavLink)<ListItemLinkProps>`
+const linkStyles = css<LinkProps>`
     align-items: center;
     color: ${({ theme }) => theme.greys.black};
     display: flex;
@@ -66,10 +66,19 @@ const ListItemLink = styled(NavLink)<ListItemLinkProps>`
     }
 `;
 
+export const ReactRouterNavLink = styled(NavLink)<LinkProps & NavLinkProps>`
+    ${linkStyles};
+`;
+
+export const HtmlLink = styled.a<LinkProps>`
+    ${linkStyles};
+`;
+
 export interface NavMenuOption {
     endIcon?: IconName;
     exact?: boolean;
     href: string;
+    isHtmlLink?: boolean;
     // Option label, if not provided will be set with value
     label?: string;
     startIcon?: IconName;
@@ -149,23 +158,45 @@ export const NavMenu = forwardRef(({
             ref={ref}
             hidden={hidden}
         >
-            {list.map((option) => (
-                <li key={option.id}>
-                    <ListItemLink
-                        data-testid={`listitem-${option.value}`}
-                        exact={option.exact}
-                        innerRef={option.ref}
-                        $device={device}
-                        to={option.href}
-                        onClick={() => onChange?.(option)}
-                        onKeyDown={(event) => handleKeyDown(event, option)}
-                    >
+            {list.map((option) => {
+                const testId = `listitem-${option.value}`;
+                const label = (
+                    <>
                         {option.startIcon && <StartIcon data-testid="start-icon" name={option.startIcon} />}
                         <Label>{option.label || option.value}</Label>
                         {option.endIcon && <EndIcon data-testid="end-icon" name={option.endIcon} />}
-                    </ListItemLink>
-                </li>
-            ))}
+                    </>
+                );
+
+                return (
+                    <li key={option.id}>
+                        {option.isHtmlLink ? (
+                            <HtmlLink
+                                data-testid={testId}
+                                ref={option.ref}
+                                $device={device}
+                                href={option.href}
+                                onClick={() => onChange?.(option)}
+                                onKeyDown={(event) => handleKeyDown(event, option)}
+                            >
+                                {label}
+                            </HtmlLink>
+                        ) : (
+                            <ReactRouterNavLink
+                                data-testid={testId}
+                                exact={option.exact}
+                                innerRef={option.ref}
+                                $device={device}
+                                to={option.href}
+                                onClick={() => onChange?.(option)}
+                                onKeyDown={(event) => handleKeyDown(event, option)}
+                            >
+                                {label}
+                            </ReactRouterNavLink>
+                        )}
+                    </li>
+                );
+            })}
         </List>
     );
 });
