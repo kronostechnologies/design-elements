@@ -19,6 +19,12 @@ const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
     margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
 `;
 
+const Prefix = styled.span`
+    color: ${({ theme }) => theme.greys['mid-grey']};
+    font-size: 0.875rem;
+    margin-right: var(--spacing-1x);
+`;
+
 interface UserProfileProps {
     /**
      * Sets nav's description
@@ -33,6 +39,7 @@ interface UserProfileProps {
     defaultOpen?: boolean;
     id?: string;
     username: string;
+    usernamePrefix?: string;
     options: NavMenuOption[];
 }
 
@@ -43,6 +50,7 @@ export function UserProfile({
     id,
     options,
     username,
+    usernamePrefix,
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
@@ -58,6 +66,7 @@ export function UserProfile({
             options={options}
         >
             <StyledAvatar isMobile={isMobile} username={username} />
+            {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
             {!isMobile && username}
         </StyledNavMenuButton>
     );

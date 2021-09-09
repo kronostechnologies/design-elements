@@ -1,6 +1,8 @@
+import { shallow } from 'enzyme';
 import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { UserProfile } from './user-profile';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 jest.mock('../../utils/uuid');
 
@@ -28,6 +30,12 @@ const options = [
 ];
 
 describe('UserProfile', () => {
+    test('should have prefix when usernamePrefix is defined', () => {
+        const wrapper = shallow(<UserProfile username="Test" usernamePrefix="prefix" options={options} />);
+
+        expect(getByTestId(wrapper, 'username-prefix').exists()).toBe(true);
+    });
+
     test('Matches Snapshot (desktop)', () => {
         const tree = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'desktop');
 
@@ -42,6 +50,18 @@ describe('UserProfile', () => {
 
     test('Matches Snapshot (defaultOpen)', () => {
         const tree = renderWithProviders(<UserProfile defaultOpen username="Test Button" options={options} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches Snapshot (with username prefix)', () => {
+        const tree = renderWithProviders(
+            <UserProfile
+                usernamePrefix="prefix"
+                username="Test Button"
+                options={options}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
