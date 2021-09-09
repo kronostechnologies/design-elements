@@ -1,4 +1,4 @@
-import { ApplicationMenu, NavMenuButton } from '@equisoft/design-elements-react';
+import { ApplicationMenu, NavMenuButton, NavMenuOption } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
@@ -17,7 +17,7 @@ export default {
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
 
-const options = [
+const options: NavMenuOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -37,6 +37,27 @@ const options = [
         label: 'Option D',
         value: 'optionD',
         href: '/testd',
+    },
+];
+
+const optionsWithIcons: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testa',
+        startIcon: 'home',
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testb',
+        endIcon: 'externalLink',
+    },
+    {
+        label: 'Option C',
+        value: 'optionC',
+        href: '/testc',
+        endIcon: 'externalLink',
     },
 ];
 
@@ -82,5 +103,11 @@ Mobile.decorators = [MobileDecorator];
 export const DefaultOpen: Story = () => (
     <ApplicationMenu>
         <NavMenuButton defaultOpen options={options}>Menu</NavMenuButton>
+    </ApplicationMenu>
+);
+
+export const WithOptionIcons: Story = () => (
+    <ApplicationMenu>
+        <NavMenuButton options={optionsWithIcons}>Menu</NavMenuButton>
     </ApplicationMenu>
 );

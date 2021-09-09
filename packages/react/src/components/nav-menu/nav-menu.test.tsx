@@ -1,12 +1,13 @@
+import { shallow } from 'enzyme';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
-import { NavMenu } from './nav-menu';
+import { mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
+import { NavMenu, NavMenuOption } from './nav-menu';
 
 jest.mock('../../utils/uuid');
 
-const options = [
+const options: NavMenuOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -29,10 +30,28 @@ const options = [
     },
 ];
 
+const optionWithStartIcon: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testA',
+        startIcon: 'home',
+    },
+];
+
+const optionWithEndIcon: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testA',
+        endIcon: 'home',
+    },
+];
+
 describe('NavMenu', () => {
     test('Calls onChange callback when an option is clicked', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<NavMenu options={options} onChange={callback} />);
+        const wrapper = shallow(<NavMenu options={options} onChange={callback} />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
@@ -41,7 +60,7 @@ describe('NavMenu', () => {
 
     test('Calls onChange callback when enter key is pressed on option', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<NavMenu options={options} onChange={callback} />);
+        const wrapper = shallow(<NavMenu options={options} onChange={callback} />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('keydown', {
             key: 'Enter',
@@ -54,11 +73,23 @@ describe('NavMenu', () => {
 
     test('Calls onKeyDown callback when a key is pressed on option', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<NavMenu options={options} onKeyDown={callback} />);
+        const wrapper = shallow(<NavMenu options={options} onKeyDown={callback} />);
 
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: '' });
 
         expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('Should have start-icon when startIcon prop is defined', () => {
+        const wrapper = shallow(<NavMenu options={optionWithStartIcon} />);
+
+        expect(getByTestId(wrapper, 'start-icon').exists()).toBe(true);
+    });
+
+    test('Should have end-icon when endIcon prop is defined', () => {
+        const wrapper = shallow(<NavMenu options={optionWithEndIcon} />);
+
+        expect(getByTestId(wrapper, 'end-icon').exists()).toBe(true);
     });
 
     test('Should update focused value when focusedValue prop changes', () => {

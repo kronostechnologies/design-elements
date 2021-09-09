@@ -1,6 +1,7 @@
 import React, { forwardRef, KeyboardEvent, ReactElement, Ref, RefObject, useEffect, useMemo } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
+import { Icon, IconName } from '../icon/icon';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 
@@ -21,16 +22,34 @@ interface ListItemLinkProps extends NavLinkProps {
     $device: DeviceContextProps;
 }
 
+const Label = styled.span`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+`;
+
+const iconSize = '16';
+const StartIcon = styled(Icon).attrs({ size: iconSize })`
+    color: ${({ theme }) => theme.greys['dark-grey']};
+    margin-right: var(--spacing-1x);
+    min-width: ${iconSize}px;
+`;
+
+const EndIcon = styled(Icon).attrs({ size: iconSize })`
+    color: ${({ theme }) => theme.greys['dark-grey']};
+    margin-left: var(--spacing-1x);
+    min-width: ${iconSize}px;
+`;
+
 const ListItemLink = styled(NavLink)<ListItemLinkProps>`
+    align-items: center;
     color: ${({ theme }) => theme.greys.black};
-    display: block;
+    display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
     padding: 0 var(--spacing-2x);
     text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     &:focus {
         box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
@@ -39,14 +58,21 @@ const ListItemLink = styled(NavLink)<ListItemLinkProps>`
 
     :hover {
         background-color: ${({ theme }) => theme.greys.grey};
+
+        ${StartIcon},
+        ${EndIcon} {
+            color: ${({ theme }) => theme.greys.black};
+        }
     }
 `;
 
 export interface NavMenuOption {
+    endIcon?: IconName;
     exact?: boolean;
     href: string;
     // Option label, if not provided will be set with value
     label?: string;
+    startIcon?: IconName;
     value: string;
 }
 
@@ -134,7 +160,9 @@ export const NavMenu = forwardRef(({
                         onClick={() => onChange?.(option)}
                         onKeyDown={(event) => handleKeyDown(event, option)}
                     >
-                        {option.label || option.value}
+                        {option.startIcon && <StartIcon data-testid="start-icon" name={option.startIcon} />}
+                        <Label>{option.label || option.value}</Label>
+                        {option.endIcon && <EndIcon data-testid="end-icon" name={option.endIcon} />}
                     </ListItemLink>
                 </li>
             ))}
