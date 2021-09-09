@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { MouseEvent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -24,7 +24,7 @@ interface ButtonProps {
     label?: string;
     type?: Type;
 
-    onClick?(): void;
+    onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
 export function AddButton({

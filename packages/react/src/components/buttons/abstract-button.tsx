@@ -1,8 +1,12 @@
+import React, { EventHandler, forwardRef, MouseEvent, Ref, useCallback } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes/theme';
 import { focus } from '../../utils/css-state';
 
-export const AbstractButton = styled.button<{ isMobile: boolean }>`
+type AbstractButtonProps = { isMobile: boolean }
+    & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const StyledButton = styled.button<AbstractButtonProps>`
     align-items: center;
     appearance: none;
     background: inherit;
@@ -35,6 +39,22 @@ export const AbstractButton = styled.button<{ isMobile: boolean }>`
     }
 `;
 
+export const AbstractButton = forwardRef((
+    { children, onClick, ...props }: AbstractButtonProps,
+    ref: Ref<HTMLButtonElement>,
+) => {
+    const handleClick: EventHandler<MouseEvent<HTMLButtonElement>> = useCallback((event) => {
+        event.stopPropagation();
+        onClick?.(event);
+    }, [onClick]);
+
+    return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <StyledButton onClick={handleClick} ref={ref} {...props}>{children}</StyledButton>
+    );
+});
+AbstractButton.displayName = 'AbstractButton';
+
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
 interface ButtonTypeStyles {
@@ -43,7 +63,10 @@ interface ButtonTypeStyles {
     theme: Theme;
 }
 
-const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
+const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+    inverted,
+    theme,
+}) => css`
     background-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
     border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
     color: ${inverted ? theme.main['primary-1.1'] : theme.greys.white};
@@ -61,7 +84,10 @@ const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<
     }
 `;
 
-const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
+const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+    inverted,
+    theme,
+}) => css`
     background-color: ${inverted ? 'transparent' : theme.greys.white};
     border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
     color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
@@ -83,7 +109,10 @@ const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolatio
     }`}
 `;
 
-const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
+const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+    inverted,
+    theme,
+}) => css`
     background-color: transparent;
     border-color: transparent;
     color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
@@ -105,7 +134,10 @@ const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation
     }
 `;
 
-const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({ inverted, theme }) => css`
+const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+    inverted,
+    theme,
+}) => css`
     background-color: ${inverted ? theme.greys.white : theme.notifications['error-2.1']};
     border-color: ${inverted ? theme.greys.white : theme.notifications['error-2.1']};
     color: ${inverted ? theme.notifications['error-2.1'] : theme.greys.white};

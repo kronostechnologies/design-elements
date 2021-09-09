@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { MouseEvent, ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -21,7 +21,7 @@ interface ButtonProps {
     label?: string;
     type?: Type;
 
-    onClick?(): void;
+    onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
 const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`

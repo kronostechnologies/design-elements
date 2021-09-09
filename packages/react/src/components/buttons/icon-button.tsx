@@ -1,4 +1,4 @@
-import React, { ReactElement, Ref, forwardRef } from 'react';
+import React, { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
@@ -27,11 +27,11 @@ export interface ButtonProps {
     label: string;
     type?: Type;
 
-    onClick?(): void;
+    onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
 const StyledButton = styled(AbstractButton)`
-    ${getButtonTypeStyles}
+    ${getButtonTypeStyles};
 
     padding: 0;
     width: ${({ isMobile }) => (isMobile ? '48px' : '32px')};
@@ -48,14 +48,13 @@ export const IconButton = forwardRef(({
     ...props
 }: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
-    const handleClick = (): void => onClick?.();
 
     return (
         <StyledButton
             ref={ref}
             aria-label={label}
             className={className}
-            onClick={handleClick}
+            onClick={onClick}
             isMobile={isMobile}
             type={type}
             buttonType={buttonType}
