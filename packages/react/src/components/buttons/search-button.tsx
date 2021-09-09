@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { MouseEvent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../icon/icon';
 import { AbstractButton } from './abstract-button';
@@ -7,7 +7,7 @@ interface ButtonProps {
     className: string;
     disabled?: boolean;
 
-    onClick?(): void;
+    onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
 const StyledButton = styled(AbstractButton)`
