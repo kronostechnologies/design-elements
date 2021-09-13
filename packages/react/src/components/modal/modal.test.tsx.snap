@@ -715,13 +715,13 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c1 {
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-6x) var(--spacing-2x) 0;
+  padding: var(--spacing-2x) var(--spacing-2x) 0;
 }
 
 .c4 {
   position: absolute;
   right: var(--spacing-half);
-  top: var(--spacing-half);
+  top: var(--spacing-1x);
 }
 
 <div

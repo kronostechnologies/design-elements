@@ -33,7 +33,9 @@ describe('SectionalBanner', () => {
                 <SectionalBanner
                     type="alert"
                     onDismiss={jest.fn()}
-                />,
+                >
+                    Test
+                </SectionalBanner>,
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
@@ -48,7 +50,9 @@ describe('SectionalBanner', () => {
                     type="alert"
                     buttonLabel="some button"
                     onButtonClicked={jest.fn()}
-                />,
+                >
+                    Test
+                </SectionalBanner>,
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
@@ -64,7 +68,9 @@ describe('SectionalBanner', () => {
                 <SectionalBanner
                     type="info"
                     onDismiss={onDismiss}
-                />,
+                >
+                    Test
+                </SectionalBanner>,
                 { wrappingComponentProps: { staticDevice: device } },
             );
 
@@ -80,7 +86,9 @@ describe('SectionalBanner', () => {
                     type="info"
                     buttonLabel="some button"
                     onButtonClicked={onButtonClicked}
-                />,
+                >
+                    Test
+                </SectionalBanner>,
                 { wrappingComponentProps: { staticDevice: device } },
             );
 

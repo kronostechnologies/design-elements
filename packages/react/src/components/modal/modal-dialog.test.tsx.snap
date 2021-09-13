@@ -179,9 +179,9 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
-  line-height: 2.25rem;
+  line-height: 2rem;
   margin: 0;
 }
 
@@ -1337,9 +1337,9 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 }
 
 .c2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
-  line-height: 2.25rem;
+  line-height: 2rem;
   margin: 0;
 }
 
@@ -1642,9 +1642,9 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: var(--font-normal);
-  line-height: 2.25rem;
+  line-height: 2rem;
   margin: 0;
 }
 
@@ -1990,9 +1990,9 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
-  line-height: 2rem;
+  line-height: 2.25rem;
   margin: 0;
 }
 
@@ -2031,12 +2031,12 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c5 {
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-6x) var(--spacing-2x) 0;
+  padding: var(--spacing-2x) var(--spacing-2x) 0;
 }
 
 .c1 {
   border-bottom: 1px solid transparent;
-  padding: var(--spacing-6x) var(--spacing-2x) var(--spacing-3x);
+  padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
 }
 
 .c1 + .c4 {
@@ -2046,7 +2046,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 .c13 {
   position: absolute;
   right: var(--spacing-half);
-  top: var(--spacing-half);
+  top: var(--spacing-1x);
 }
 
 .c6 {

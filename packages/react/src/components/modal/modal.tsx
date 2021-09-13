@@ -31,7 +31,7 @@ function getTopPadding({ hasCloseButton, noPadding, isMobile }: ContentProps): s
     }
     if (isMobile) {
         if (hasCloseButton) {
-            return 'var(--spacing-6x)';
+            return 'var(--spacing-2x)';
         }
         return 'var(--spacing-3x)';
     }
@@ -94,7 +94,7 @@ const Header = styled.header<HeaderProps>`
 const CloseIconButton = styled(IconButton)<Pick<DeviceContextProps, 'isMobile'>>`
     position: absolute;
     right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)')};
-    top: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)')};
+    top: var(--spacing-1x);
 `;
 
 interface FooterProps extends ContentProps {
