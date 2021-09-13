@@ -44,7 +44,7 @@ function getBorderColor({
         return theme.greys.grey;
     }
     if (!valid) {
-        return theme.notifications['error-2.1'];
+        return theme.notifications['alert-2.1'];
     }
     if (focus) {
         return theme.main['primary-1.1'];

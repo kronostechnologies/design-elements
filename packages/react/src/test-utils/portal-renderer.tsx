@@ -7,5 +7,5 @@ export function renderPortalWithProviders(
     component: ReactElement,
     device?: DeviceType,
 ): RenderResult {
-    return render(<AllProviders device={device}>{component}</AllProviders>);
+    return render(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }

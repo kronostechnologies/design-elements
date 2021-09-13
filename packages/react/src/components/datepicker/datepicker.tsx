@@ -193,14 +193,14 @@ function getInputBorderColor({ theme, disabled, valid }: StyledDatePickerProps):
     if (valid) {
         return theme.greys['dark-grey'];
     }
-    return theme.notifications['error-2.1'];
+    return theme.notifications['alert-2.1'];
 }
 
 function getInputFocusBorderColor({ theme, valid }: StyledDatePickerProps): string {
     if (valid) {
         return theme.main['primary-1.1'];
     }
-    return theme.notifications['error-2.1'];
+    return theme.notifications['alert-2.1'];
 }
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`

@@ -19,14 +19,16 @@ export interface Theme {
         'black': string;
     };
     notifications: {
+        'info-1.1': string;
         'success-1.1': string;
         'success-1.2': string;
         'success-1.3': string;
-        'error-2.1': string;
-        'error-2.2': string;
-        'alert-3.1': string;
-        'alert-3.2': string;
-        'alert-3.3': string;
+        'alert-2.1': string;
+        'alert-2.2': string;
+        'warning-3.1': string;
+        'warning-3.2': string;
+        'warning-3.3': string;
+        'warning-3.4': string;
     };
     tokens: {
         'focus-box-shadow': string;
