@@ -51,7 +51,7 @@ export * from './components/tooltip/tooltip';
 export * from './components/table/table';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
-export { Tag, Tags } from './components/tags/tags';
+export { Tag, TagProps, TagValue } from './components/tag/tag';
 export { Status } from './components/status/status';
 export { SkipLink } from './components/skip-link/skip-link';
 export { useModal } from './components/modal/use-modal';
