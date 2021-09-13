@@ -1,18 +1,23 @@
-import React, { ChangeEvent, ReactElement, useState } from 'react';
+import React, { ReactElement, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { ChooserButton } from '../chooser-button/chooser-button';
 
+export interface ChooserButtonOption {
+    label: string;
+    value?: string
+}
+
 interface ChooserButtonGroupProps {
     groupName: string;
-    options: { label: string; value?: string }[];
+    options: ChooserButtonOption[];
     /** Optional button to allow user to skip question */
-    skipOption?: { label: string; value?: string };
+    skipOption?: ChooserButtonOption;
     /** Set inputs in columns layout */
     inColumns?: boolean;
     /** Only use if you want to control input value externally */
     value?: string | null;
 
-    onChange?(event: ChangeEvent<HTMLInputElement>): void;
+    onChange?(option: ChooserButtonOption): void;
 }
 
 type GridProps = Pick<ChooserButtonGroupProps, 'inColumns'>;
@@ -39,24 +44,24 @@ export function ChooserButtonGroup({
 }: ChooserButtonGroupProps): ReactElement {
     const [isControlled] = useState(value !== undefined);
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const handleChange = useCallback((option: ChooserButtonOption): void => {
         if (onChange) {
-            onChange(event);
+            onChange(option);
         }
-    };
+    }, [onChange]);
 
-    const chooserOptions = options.map((option) => (
+    const chooserOptions = useMemo(() => options.map((option) => (
         <ChooserButton
             key={option.value}
             groupName={groupName}
-            onChange={handleChange}
+            onChange={() => handleChange(option)}
             type="radio"
             checked={isControlled ? value === option.value : undefined}
             value={option.value}
         >
             {option.label}
         </ChooserButton>
-    ));
+    )), [groupName, handleChange, isControlled, options, value]);
 
     return (
         <>
@@ -68,7 +73,7 @@ export function ChooserButtonGroup({
                 <Skip>
                     <ChooserButton
                         groupName={groupName}
-                        onChange={handleChange}
+                        onChange={() => handleChange(skipOption)}
                         type="radio"
                         checked={isControlled ? value === skipOption.value : undefined}
                         value={skipOption.value}
