@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
-import { NavMenu, NavMenuOption } from './nav-menu';
+import { NavMenu, NavMenuOption, HtmlLink, ReactRouterNavLink } from './nav-menu';
 
 jest.mock('../../utils/uuid');
 
@@ -45,6 +45,21 @@ const optionWithEndIcon: NavMenuOption[] = [
         value: 'optionA',
         href: '/testA',
         endIcon: 'home',
+    },
+];
+
+const optionsWithHtmlLinks: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testA',
+        isHtmlLink: true,
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testB',
+        isHtmlLink: true,
     },
 ];
 
@@ -90,6 +105,18 @@ describe('NavMenu', () => {
         const wrapper = shallow(<NavMenu options={optionWithEndIcon} />);
 
         expect(getByTestId(wrapper, 'end-icon').exists()).toBe(true);
+    });
+
+    test('Should use react-router links by default', () => {
+        const wrapper = shallow(<NavMenu options={options} />);
+
+        expect(wrapper.find(ReactRouterNavLink).length).toBe(options.length);
+    });
+
+    test('Should use html links when isHtmlLink is set to true', () => {
+        const wrapper = shallow(<NavMenu options={optionsWithHtmlLinks} />);
+
+        expect(wrapper.find(HtmlLink).length).toBe(optionsWithHtmlLinks.length);
     });
 
     test('Should update focused value when focusedValue prop changes', () => {
