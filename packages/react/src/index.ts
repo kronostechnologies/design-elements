@@ -26,7 +26,7 @@ export { ToggleSwitch } from './components/toggle-switch/toggle-switch';
 
 // Context
 export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';
-export { DeviceContextProvider } from './components/device-context-provider/device-context-provider';
+export { DeviceContextProvider, useDeviceContext } from './components/device-context-provider/device-context-provider';
 export { IntlProvider } from './components/internationalization-provider/internationalization-provider';
 
 // Lists
