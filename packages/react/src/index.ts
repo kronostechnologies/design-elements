@@ -56,6 +56,8 @@ export { Status } from './components/status/status';
 export { SkipLink } from './components/skip-link/skip-link';
 export { useModal } from './components/modal/use-modal';
 export { UserProfile } from './components/user-profile/user-profile';
+export { ToastType } from './components/toast/toast-type';
+export { useToast } from './hooks/use-toast';
 
 // Navigation
 export { Breadcrumb, BreadcrumbElement } from './components/breadcrumb/breadcrumb';

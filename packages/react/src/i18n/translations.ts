@@ -67,6 +67,9 @@ export const Translations = {
         'text-input': {
             validationErrorMessage: 'This input is invalid',
         },
+        toast: {
+            dismissButtonLabel: 'Dismiss notification',
+        },
         'user-profile': {
             ariaLabel: 'User menu',
         },
@@ -138,6 +141,9 @@ export const Translations = {
         },
         'text-input': {
             validationErrorMessage: 'Ce champ est invalide',
+        },
+        toast: {
+            dismissButtonLabel: 'Rejeter la notification',
         },
         'user-profile': {
             ariaLabel: 'Menu utilisateur',

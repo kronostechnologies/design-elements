@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { eventIsInside } from '../../utils/events';
 import { Icon, IconName } from '../icon/icon';
-import { ButtonProps, IconButton } from '../buttons/icon-button';
+import { IconButtonProps, IconButton } from '../buttons/icon-button';
 
 /* TODO change when updating thematization */
 const lightBlue = '#E0F0F9';
@@ -155,7 +155,7 @@ export interface GlobalNavigationItem {
 
 interface GlobalNavigationProps {
     className?: string;
-    coreActionButton?: ButtonProps;
+    coreActionButton?: IconButtonProps;
     /** Item has an icon name, a name, and a href */
     mainItems: GlobalNavigationItem[];
     /** Item has an icon name, a name, and a href */

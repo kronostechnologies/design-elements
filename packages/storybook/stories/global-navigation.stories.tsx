@@ -1,9 +1,9 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
+import { IconButtonProps } from '../../react/dist/components/buttons/icon-button';
 import { RouterDecorator } from './utils/router-decorator';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
-import { ButtonProps } from '../../react/dist/components/buttons/icon-button';
 
 export default {
     title: 'Structure/Global Navigation',
@@ -52,7 +52,7 @@ const footerItems: GlobalNavigationItem[] = [
     },
 ];
 
-const coreActionButton: ButtonProps = {
+const coreActionButton: IconButtonProps = {
     buttonType: 'primary',
     iconName: 'plusSign',
     label: 'add',

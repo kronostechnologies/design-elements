@@ -1,5 +1,6 @@
 import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
-import React, { Component, FunctionComponent, ReactElement } from 'react';
+import React, { Component, FunctionComponent, ReactElement, ReactPortal } from 'react';
+import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
 import { DesignSystem, DesignSystemProps } from '../components/design-system';
@@ -45,7 +46,13 @@ export function renderWithProviders(
     component: ReactElement,
     device?: DeviceType,
 ): cheerio.Cheerio {
-    return render(<AllProviders staticDevice={device}>{component}</AllProviders>);
+    const oldPortal = ReactDOM.createPortal;
+    ReactDOM.createPortal = () => null as unknown as ReactPortal;
+    try {
+        return render(<AllProviders staticDevice={device}>{component}</AllProviders>);
+    } finally {
+        ReactDOM.createPortal = oldPortal;
+    }
 }
 
 export function renderWithTheme(

@@ -81,7 +81,7 @@ const iconMapping = {
 
 export type IconName = keyof typeof iconMapping;
 
-interface IconProps {
+export interface IconProps {
     className?: string;
     /** Name of the icon, has to be in IconName */
     name: IconName;

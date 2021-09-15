@@ -8,7 +8,7 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
 type Type = 'submit' | 'button' | 'reset';
 
-export interface ButtonProps {
+export interface IconButtonProps {
     /**
      * Visual style
      * @default primary
@@ -46,7 +46,7 @@ export const IconButton = forwardRef(({
     buttonType,
     disabled,
     ...props
-}: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
+}: IconButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
 
     return (
