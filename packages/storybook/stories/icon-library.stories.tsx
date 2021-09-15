@@ -15,7 +15,10 @@ export const All: Story = () => (
         <Icon name="chevronDown" />
         <Icon name="chevronUp" />
         <Icon name="copy" />
+        <Icon name="bell" />
+        <Icon name="bento" />
         <Icon name="edit" />
+        <Icon name="equisoft" />
         <Icon name="files" />
         <Icon name="helpCircle" />
         <Icon name="home" />

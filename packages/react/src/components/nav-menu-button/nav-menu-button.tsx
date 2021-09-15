@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { eventIsInside } from '../../utils/events';
+import { useStateWithCallback } from '../../utils/useStateWithCallback.hook';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -81,6 +82,8 @@ interface MenuButtonProps {
     iconOnly?: boolean;
     id?: string;
     options: NavMenuOption[];
+    onMenuVisibilityChanged?(isOpen: boolean): void;
+    onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
 export function NavMenuButton({
@@ -93,12 +96,15 @@ export function NavMenuButton({
     iconOnly = false,
     id: providedId,
     options,
+    onMenuVisibilityChanged,
+    onMenuOptionSelected,
 }: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const [focusedValue, setFocusedValue] = useState('');
-    const [isOpen, setOpen] = useState(defaultOpen);
+    const [isOpen, setOpen] = useStateWithCallback(defaultOpen, onMenuVisibilityChanged);
+
     const buttonRef = useRef<HTMLButtonElement>(null);
     const navMenuRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
@@ -110,7 +116,7 @@ export function NavMenuButton({
         if (shouldClose) {
             setOpen(false);
         }
-    }, [isOpen]);
+    }, [isOpen, setOpen]);
 
     useEffect(() => {
         if (options.length > 0) {
@@ -121,7 +127,7 @@ export function NavMenuButton({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside, isOpen, options]);
 
-    function handleNavMenuKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    const handleNavMenuKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Escape') {
             setOpen(false);
             buttonRef.current?.focus();
@@ -137,8 +143,15 @@ export function NavMenuButton({
                 }
             });
         }
-    }
+    };
 
+    const handleOnMenuVisibilityChange: (option: NavMenuOption) => void = (option: NavMenuOption) => {
+        if (onMenuOptionSelected) {
+            onMenuOptionSelected(option);
+        }
+
+        setOpen(false);
+    };
     return (
         <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
             <StyledButton
@@ -169,7 +182,7 @@ export function NavMenuButton({
             <StyledNavMenu
                 data-testid="menu-navMenu"
                 focusedValue={focusedValue}
-                onChange={() => setOpen(false)}
+                onChange={handleOnMenuVisibilityChange}
                 onKeyDown={handleNavMenuKeyDown}
                 options={options}
                 ref={navMenuRef}
