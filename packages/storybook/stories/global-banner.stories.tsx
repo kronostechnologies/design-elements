@@ -11,12 +11,12 @@ export default {
 
 export const GlobalBanners: Story = () => (
     <>
-        <GlobalBanner type="error">ERROR! Lorem ipsum dolor sit amet</GlobalBanner>
+        <GlobalBanner label="Attention." type="alert">Vous utilisez présentement...</GlobalBanner>
         <br />
-        <GlobalBanner type="warning">
-            WARNING! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
+        <GlobalBanner label="Personnification en cours." type="warning">
+            WARNING! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </GlobalBanner>
         <br />
+        <GlobalBanner label="Mot de passe expiré." type="info">info</GlobalBanner>
     </>
 );

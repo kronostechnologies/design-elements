@@ -1,11 +1,12 @@
 import React from 'react';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { GlobalBanner } from './global-banner';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 describe('GlobalBanner', () => {
     test('Matches snapshot (desktop)', () => {
         const tree = renderWithProviders(
-            <GlobalBanner type="warning">
+            <GlobalBanner label="Test" type="warning">
                 WARNING! Lorem ipsum
             </GlobalBanner>,
             'desktop',
@@ -16,7 +17,7 @@ describe('GlobalBanner', () => {
 
     test('Matches snapshot (mobile)', () => {
         const tree = renderWithProviders(
-            <GlobalBanner type="error">
+            <GlobalBanner label="Test" type="alert">
                 ERROR! Lorem ipsum
             </GlobalBanner>,
             'mobile',
@@ -25,32 +26,31 @@ describe('GlobalBanner', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('X button closes the component', () => {
+    test('Ignore button hides the banner', () => {
         const wrapper = mountWithTheme(
-            <GlobalBanner type="warning">WARNING! test test</GlobalBanner>,
+            <GlobalBanner label="Test" type="warning">WARNING! test test</GlobalBanner>,
         );
 
-        const close = wrapper.find('[data-testid="closeButton"]').at(1);
-        close.simulate('click');
+        getByTestId(wrapper, 'ignore-button').simulate('click');
 
-        expect(wrapper.exists('[data-testid="container"]')).toBeFalsy();
+        expect(getByTestId(wrapper, 'container').exists()).toBe(false);
     });
 
     describe('Hidden property', () => {
         test('hides the component', () => {
             const wrapper = mountWithTheme(
-                <GlobalBanner type="warning" hidden>WARNING! test test</GlobalBanner>,
+                <GlobalBanner label="Test" type="warning" hidden>WARNING! test test</GlobalBanner>,
             );
 
-            expect(wrapper.exists('[data-testid="container"]')).toBeFalsy();
+            expect(getByTestId(wrapper, 'container').exists()).toBe(false);
         });
 
         test('does not hide by default', () => {
             const wrapper = mountWithTheme(
-                <GlobalBanner type="warning">WARNING! test test</GlobalBanner>,
+                <GlobalBanner label="Test" type="warning">WARNING! test test</GlobalBanner>,
             );
 
-            expect(wrapper.exists('[data-testid="container"]')).toBeTruthy();
+            expect(getByTestId(wrapper, 'container').exists()).toBe(true);
         });
     });
 });
