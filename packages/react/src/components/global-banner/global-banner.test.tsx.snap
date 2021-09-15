@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Banner Matches snapshot (desktop) 1`] = `
+exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
 .c0 {
   background-color: #FFB302;
   color: #000000;
@@ -102,7 +102,7 @@ exports[`Banner Matches snapshot (desktop) 1`] = `
 </div>
 `;
 
-exports[`Banner Matches snapshot (mobile) 1`] = `
+exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
 .c0 {
   background-color: #CD2C23;
   color: #FFFFFF;

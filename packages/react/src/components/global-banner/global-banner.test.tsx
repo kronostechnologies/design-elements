@@ -1,13 +1,13 @@
 import React from 'react';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { Banner } from './banner';
+import { GlobalBanner } from './global-banner';
 
-describe('Banner', () => {
+describe('GlobalBanner', () => {
     test('Matches snapshot (desktop)', () => {
         const tree = renderWithProviders(
-            <Banner type="warning">
+            <GlobalBanner type="warning">
                 WARNING! Lorem ipsum
-            </Banner>,
+            </GlobalBanner>,
             'desktop',
         );
 
@@ -16,9 +16,9 @@ describe('Banner', () => {
 
     test('Matches snapshot (mobile)', () => {
         const tree = renderWithProviders(
-            <Banner type="error">
+            <GlobalBanner type="error">
                 ERROR! Lorem ipsum
-            </Banner>,
+            </GlobalBanner>,
             'mobile',
         );
 
@@ -27,7 +27,7 @@ describe('Banner', () => {
 
     test('X button closes the component', () => {
         const wrapper = mountWithTheme(
-            <Banner type="warning">WARNING! test test</Banner>,
+            <GlobalBanner type="warning">WARNING! test test</GlobalBanner>,
         );
 
         const close = wrapper.find('[data-testid="closeButton"]').at(1);
@@ -39,7 +39,7 @@ describe('Banner', () => {
     describe('Hidden property', () => {
         test('hides the component', () => {
             const wrapper = mountWithTheme(
-                <Banner type="warning" hidden>WARNING! test test</Banner>,
+                <GlobalBanner type="warning" hidden>WARNING! test test</GlobalBanner>,
             );
 
             expect(wrapper.exists('[data-testid="container"]')).toBeFalsy();
@@ -47,7 +47,7 @@ describe('Banner', () => {
 
         test('does not hide by default', () => {
             const wrapper = mountWithTheme(
-                <Banner type="warning">WARNING! test test</Banner>,
+                <GlobalBanner type="warning">WARNING! test test</GlobalBanner>,
             );
 
             expect(wrapper.exists('[data-testid="container"]')).toBeTruthy();

@@ -1,22 +1,22 @@
-import { Banner } from '@equisoft/design-elements-react';
+import { GlobalBanner } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React from 'react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Feedback/Banner',
-    component: Banner,
+    title: 'Feedback/GlobalBanner',
+    component: GlobalBanner,
     decorators: [DeviceContextDecorator],
 };
 
-export const Banners: Story = () => (
+export const GlobalBanners: Story = () => (
     <>
-        <Banner type="error">ERROR! Lorem ipsum dolor sit amet</Banner>
+        <GlobalBanner type="error">ERROR! Lorem ipsum dolor sit amet</GlobalBanner>
         <br />
-        <Banner type="warning">
+        <GlobalBanner type="warning">
             WARNING! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua.
-        </Banner>
+        </GlobalBanner>
         <br />
     </>
 );

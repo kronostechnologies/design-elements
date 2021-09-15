@@ -77,7 +77,7 @@ const GetIconName = (messageType: MessageType): IconName => {
     }
 };
 
-interface BannerProps {
+interface Props {
     children: ReactNode;
     className?: string;
     type: MessageType;
@@ -88,9 +88,9 @@ interface BannerProps {
     hidden?: boolean;
 }
 
-export function Banner({
+export function GlobalBanner({
     children, className, type, hidden,
-}: BannerProps): ReactElement | null {
+}: Props): ReactElement | null {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
 
