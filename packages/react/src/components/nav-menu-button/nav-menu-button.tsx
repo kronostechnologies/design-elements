@@ -81,6 +81,8 @@ interface MenuButtonProps {
     iconOnly?: boolean;
     id?: string;
     options: NavMenuOption[];
+    onMenuVisibilityChanged?(isOpen: boolean): void;
+    onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
 export function NavMenuButton({
@@ -93,12 +95,19 @@ export function NavMenuButton({
     iconOnly = false,
     id: providedId,
     options,
+    onMenuVisibilityChanged,
+    onMenuOptionSelected,
 }: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const [focusedValue, setFocusedValue] = useState('');
     const [isOpen, setOpen] = useState(defaultOpen);
+
+    useEffect(() => {
+        onMenuVisibilityChanged?.(isOpen);
+    }, [isOpen, onMenuVisibilityChanged]);
+
     const buttonRef = useRef<HTMLButtonElement>(null);
     const navMenuRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
@@ -121,7 +130,7 @@ export function NavMenuButton({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside, isOpen, options]);
 
-    function handleNavMenuKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    const handleNavMenuKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Escape') {
             setOpen(false);
             buttonRef.current?.focus();
@@ -137,7 +146,12 @@ export function NavMenuButton({
                 }
             });
         }
-    }
+    };
+
+    const handleOnMenuOptionSelected: (option: NavMenuOption) => void = (option: NavMenuOption) => {
+        onMenuOptionSelected?.(option);
+        setOpen(false);
+    };
 
     return (
         <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
@@ -169,7 +183,7 @@ export function NavMenuButton({
             <StyledNavMenu
                 data-testid="menu-navMenu"
                 focusedValue={focusedValue}
-                onChange={() => setOpen(false)}
+                onChange={handleOnMenuOptionSelected}
                 onKeyDown={handleNavMenuKeyDown}
                 options={options}
                 ref={navMenuRef}
