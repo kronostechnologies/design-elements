@@ -76,20 +76,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install Yarn dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # App details
@@ -162,20 +162,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # ESLint
@@ -232,20 +232,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # Stylelint
@@ -295,20 +295,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # Tests
@@ -374,20 +374,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # Compile
@@ -486,20 +486,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # ESLint
@@ -563,20 +563,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # Stylelint
@@ -633,20 +633,20 @@ jobs:
           echo "::set-output name=version::$(yarn --version)"
 
       - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         uses: actions/cache@v2.1.4
         with:
-          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn2-
+          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn3-
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 
       - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '2.') }}
+        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
         run: yarn install --immutable
 
       # Compile
