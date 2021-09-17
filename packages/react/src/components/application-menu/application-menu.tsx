@@ -1,6 +1,6 @@
 import React, { ComponentProps, ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SkipLink } from '../skip-link/skip-link';
@@ -28,7 +28,7 @@ const Header = styled.header<{ device: DeviceType }>`
     position: relative;
 `;
 
-const LogoWrapper = styled(Link)`
+const LinkStyles = css`
     align-items: center;
     display: flex;
     font-size: 1.5rem;
@@ -39,6 +39,14 @@ const LogoWrapper = styled(Link)`
     > * {
         height: 100%;
     }
+`;
+
+const ReactRouterLink = styled(Link).attrs({ 'aria-label': 'Home' })`
+    ${LinkStyles}
+`;
+
+const HtmlLink = styled.a.attrs({ 'aria-label': 'Home' })`
+    ${LinkStyles}
 `;
 
 const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMobile?: boolean }>`
@@ -64,6 +72,7 @@ interface ApplicationMenuProps {
     /** Right-side content */
     children: ReactNode;
     className?: string;
+    customLogo?: ReactNode;
     /**
      * Sets logo href
      * @default /
@@ -72,20 +81,21 @@ interface ApplicationMenuProps {
     /** What will be displayed inside the mobile drawer */
     mobileDrawerContent?: ReactNode;
     skipLinkHref?: string;
-
-    customLogo?: ReactNode;
+    usesReactRouter?: boolean;
 }
 
 export function ApplicationMenu({
     appName = 'default',
     children,
     className,
+    customLogo,
     logoHref = '/',
     mobileDrawerContent,
     skipLinkHref,
-    customLogo,
+    usesReactRouter = true,
 }: ApplicationMenuProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
+    const appLogo = customLogo ?? <Logo name={appName} mobile={isMobile} />;
 
     return (
         <Header className={className} device={device}>
@@ -93,9 +103,11 @@ export function ApplicationMenu({
                 <StyledSkipLink data-testid="skip-link" href={skipLinkHref} />
             )}
 
-            <LogoWrapper to={logoHref} aria-label="Home">
-                {customLogo ?? <Logo name={appName} mobile={isMobile} />}
-            </LogoWrapper>
+            {usesReactRouter ? (
+                <ReactRouterLink data-testid="logo-react-router-link" to={logoHref}>{appLogo}</ReactRouterLink>
+            ) : (
+                <HtmlLink data-testid="logo-html-link" href={logoHref}>{appLogo}</HtmlLink>
+            )}
 
             <Content mobileDrawerContent={mobileDrawerContent}>
                 {children}

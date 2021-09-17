@@ -71,6 +71,7 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   <a
     aria-label="Home"
     class="c1"
+    data-testid="logo-react-router-link"
     href="/"
   >
     <svg
@@ -187,6 +188,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   <a
     aria-label="Home"
     class="c1"
+    data-testid="logo-react-router-link"
     href="/"
   >
     <svg
@@ -323,6 +325,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   <a
     aria-label="Home"
     class="c1"
+    data-testid="logo-react-router-link"
     href="/"
   >
     <svg
