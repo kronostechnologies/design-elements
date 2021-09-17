@@ -11,6 +11,11 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .c2 > * + * {

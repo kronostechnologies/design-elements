@@ -20,6 +20,8 @@ const Container = styled.div`
     align-items: center;
     color: ${(props) => props.theme.greys.white};
     display: flex;
+    justify-content: flex-end;
+    width: 100%;
 
     > * + * {
         margin-left: var(--spacing-1x);
