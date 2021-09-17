@@ -1,10 +1,11 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, MouseEvent, useState } from 'react';
 import styled, { css, StyledProps } from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Button } from '../buttons/button';
 import { Icon, IconName } from '../icon/icon';
 
-type MessageType = 'alert' | 'warning' | 'info';
+export type MessageType = 'alert' | 'warning' | 'info';
 
 interface ContainerProps {
     messageType: MessageType;
@@ -166,7 +167,13 @@ const GetIconName = (messageType: MessageType): IconName => {
     }
 };
 
+export interface ActionButton {
+    label: string;
+    onClick(event: MouseEvent<HTMLButtonElement>): void;
+}
+
 interface Props {
+    actionButton?: ActionButton;
     className?: string;
     /**
      * Hides the component
@@ -175,9 +182,11 @@ interface Props {
      hidden?: boolean;
     label: string;
     type: MessageType;
+
 }
 
 export const GlobalBanner: FunctionComponent<Props> = ({
+    actionButton,
     children,
     className,
     hidden,
@@ -186,6 +195,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
 }) => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
+    const { t } = useTranslation('global-banner');
 
     return visible ? (
         <Container
@@ -212,14 +222,26 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                 </span>
             </Content>
             <ButtonContainer isMobile={isMobile} messageType={type}>
-                <ActionButton messageType={type}>Default</ActionButton>
-                <IgnoreButton
-                    data-testid="ignore-button"
-                    messageType={type}
-                    onClick={() => setVisible(false)}
-                >
-                    Ignorer
-                </IgnoreButton>
+                {actionButton && (
+                    <ActionButton
+                        data-testid="action-button"
+                        messageType={type}
+                        onClick={actionButton.onClick}
+                        type="button"
+                    >
+                        {actionButton.label}
+                    </ActionButton>
+                )}
+                {type !== 'alert' && (
+                    <IgnoreButton
+                        data-testid="ignore-button"
+                        messageType={type}
+                        onClick={() => setVisible(false)}
+                        type="button"
+                    >
+                        {t('ignore')}
+                    </IgnoreButton>
+                )}
             </ButtonContainer>
         </Container>
     ) : null;
