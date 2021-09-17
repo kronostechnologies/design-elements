@@ -84,6 +84,7 @@ describe('NavMenuButton', () => {
             <NavMenuButton defaultOpen options={options}>
                 Test Button
             </NavMenuButton>,
+            { attachTo: document.body },
         );
 
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
@@ -128,7 +129,7 @@ describe('NavMenuButton', () => {
         const navMenuOption = getByTestId(wrapper, `listitem-${options[0].value}`);
         navMenuOption.simulate('click');
 
-        expect(onMenuOptionSelected).toHaveBeenCalledWith(options[0]);
+        expect(onMenuOptionSelected).toHaveBeenCalledWith(expect.objectContaining(options[0]));
     });
 
     test('Matches Snapshot', () => {
