@@ -34,13 +34,19 @@ function getContainerColor({ messageType, theme }: StyledProps<ContainerProps>):
 
 function getContainerPadding({ isMobile }: ContainerProps): string {
     return isMobile
-        ? 'var(--spacing-3x) var(--spacing-2x)'
+        ? 'var(--spacing-3x) var(--spacing-2x) var(--spacing-2x)'
         : 'var(--spacing-1x) var(--spacing-2x)';
 }
 
 const Label = styled.b<{ isMobile: boolean }>`
-    font-weight: ${({ isMobile }) => (isMobile ? 'var(--font-normal)' : 'var(--font-semi-bold)')};
-    margin-right: var(--spacing-1x);
+    display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
+    font-weight: var(--font-semi-bold);
+
+    ${({ isMobile }) => (isMobile ? css`
+        margin-bottom: var(--spacing-half);
+    ` : css`
+        margin-right: var(--spacing-1x);
+    `)}
 `;
 
 const Container = styled.section<ContainerProps>`
@@ -48,6 +54,7 @@ const Container = styled.section<ContainerProps>`
     background-color: ${getContainerBackgroundColor};
     color: ${getContainerColor};
     display: flex;
+    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.46 : 0.2)}px;
@@ -61,13 +68,18 @@ const Content = styled.div<{ isMobile: boolean }>`
     justify-content: ${({ isMobile }) => (isMobile ? '' : 'center')};
 
     span {
+        letter-spacing: 0.015rem;
         margin: 0;
     }
+
+    ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
 
-const StyledIcon = styled(Icon)`
+const StyledIcon = styled(Icon)<{ isMobile: boolean }>`
     flex-shrink: 0;
     margin-right: var(--spacing-1x);
+
+    ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
 
 interface ButtonProps {
@@ -122,11 +134,24 @@ const IgnoreButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: tr
     }
 `;
 
-const ButtonContainer = styled.div<{ messageType: MessageType }>`
+interface ButtonContainerProps {
+    isMobile: boolean;
+    messageType: MessageType;
+}
+
+const ButtonContainer = styled.div<ButtonContainerProps>`
+    display: flex;
+    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
+    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : '0')};
     min-width: fit-content;
+    width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
 
     * + * {
-        margin-left: var(--spacing-1x);
+        ${({ isMobile }) => (isMobile ? css`
+            margin-top: var(--spacing-1x);
+        ` : css`
+            margin-left: var(--spacing-1x);
+        `)}
     }
 `;
 
@@ -176,6 +201,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                 <StyledIcon
                     aria-label={type}
                     focusable
+                    isMobile={isMobile}
                     name={GetIconName(type)}
                     role="img"
                     size={isMobile ? '24' : '16'}
@@ -185,9 +211,13 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {children}
                 </span>
             </Content>
-            <ButtonContainer messageType={type}>
+            <ButtonContainer isMobile={isMobile} messageType={type}>
                 <ActionButton messageType={type}>Default</ActionButton>
-                <IgnoreButton data-testid="ignore-button" messageType={type} onClick={() => setVisible(false)}>
+                <IgnoreButton
+                    data-testid="ignore-button"
+                    messageType={type}
+                    onClick={() => setVisible(false)}
+                >
                     Ignorer
                 </IgnoreButton>
             </ButtonContainer>

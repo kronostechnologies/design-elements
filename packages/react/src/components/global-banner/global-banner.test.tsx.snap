@@ -123,6 +123,7 @@ exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
 }
 
 .c3 {
+  display: inline;
   font-weight: var(--font-semi-bold);
   margin-right: var(--spacing-1x);
 }
@@ -138,6 +139,9 @@ exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   font-size: 0.875rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -167,6 +171,10 @@ exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
 }
 
 .c1 span {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
   margin: 0;
 }
 
@@ -180,6 +188,10 @@ exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
 .c7 {
   border-color: #000000;
   color: #000000;
+}
+
+.c7:focus {
+  color: #FFFFFF;
 }
 
 .c7:hover {
@@ -196,29 +208,41 @@ exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 0;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  width: unset;
 }
 
 .c4 * + * {
   margin-left: var(--spacing-1x);
 }
 
-<div
+<section
+  aria-atomic="true"
+  aria-live="polite"
   class="c0"
   data-testid="container"
-  role="alert"
+  role="status"
 >
   <div
     class="c1"
   >
     <svg
-      aria-hidden="true"
+      aria-label="warning"
       class="c2"
       color="currentColor"
-      focusable="false"
+      focusable="true"
       height="16"
+      role="img"
       width="16"
     />
     <span>
@@ -247,7 +271,7 @@ exports[`GlobalBanner Matches snapshot (desktop) 1`] = `
       Ignorer
     </button>
   </div>
-</div>
+</section>
 `;
 
 exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
@@ -373,8 +397,9 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
 }
 
 .c3 {
-  font-weight: var(--font-normal);
-  margin-right: var(--spacing-1x);
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--spacing-half);
 }
 
 .c0 {
@@ -388,6 +413,9 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   font-size: 1rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -398,7 +426,7 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
   -ms-letter-spacing: 0.46px;
   letter-spacing: 0.46px;
   line-height: 1.5rem;
-  padding: var(--spacing-3x) var(--spacing-2x);
+  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
 }
 
 .c1 {
@@ -410,9 +438,16 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .c1 span {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
   margin: 0;
 }
 
@@ -421,6 +456,9 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-right: var(--spacing-1x);
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .c7:hover {
@@ -433,29 +471,41 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: var(--spacing-3x);
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  width: 100%;
 }
 
 .c4 * + * {
-  margin-left: var(--spacing-1x);
+  margin-top: var(--spacing-1x);
 }
 
-<div
+<section
+  aria-atomic="true"
+  aria-live="polite"
   class="c0"
   data-testid="container"
-  role="alert"
+  role="status"
 >
   <div
     class="c1"
   >
     <svg
-      aria-hidden="true"
+      aria-label="alert"
       class="c2"
       color="currentColor"
-      focusable="false"
+      focusable="true"
       height="24"
+      role="img"
       width="24"
     />
     <span>
@@ -484,5 +534,5 @@ exports[`GlobalBanner Matches snapshot (mobile) 1`] = `
       Ignorer
     </button>
   </div>
-</div>
+</section>
 `;
