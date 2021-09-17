@@ -1,18 +1,13 @@
-import React, { ReactElement } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
+import {
+    mountWithProviders,
+    renderWithProviders,
+    shallowWithTheme,
+} from '../../test-utils/renderer';
 import { NavMenuButton } from './nav-menu-button';
 
 jest.mock('../../utils/uuid');
-
-function setup(children: ReactElement): ReactElement {
-    return (
-        <Router>
-            {children}
-        </Router>
-    );
-}
 
 const options = [
     {
@@ -61,11 +56,11 @@ describe('NavMenuButton', () => {
     });
 
     test('Focuses the first menu-item when menu opens', () => {
-        const wrapper = mountWithTheme(setup(
+        const wrapper = mountWithProviders(
             <NavMenuButton options={options}>
                 Test Button
             </NavMenuButton>,
-        ));
+        );
 
         getByTestId(wrapper, 'menu-button').simulate('click');
 
@@ -73,11 +68,11 @@ describe('NavMenuButton', () => {
     });
 
     test('Should close nav-menu when escape key is pressed in nav-menu', () => {
-        const wrapper = mountWithTheme(setup(
+        const wrapper = mountWithProviders(
             <NavMenuButton defaultOpen options={options}>
                 Test Button
             </NavMenuButton>,
-        ));
+        );
 
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
 
@@ -85,12 +80,10 @@ describe('NavMenuButton', () => {
     });
 
     test('Focuses menu-button when escape key is pressed in nav-menu', () => {
-        const wrapper = mountWithTheme(
-            setup(
-                <NavMenuButton defaultOpen options={options}>
-                    Test Button
-                </NavMenuButton>,
-            ),
+        const wrapper = mountWithProviders(
+            <NavMenuButton defaultOpen options={options}>
+                Test Button
+            </NavMenuButton>,
             { attachTo: document.body },
         );
 
@@ -99,22 +92,62 @@ describe('NavMenuButton', () => {
         expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
     });
 
+    test('Should call onMenuVisibilityChanged when nav-menu closes', () => {
+        const onMenuVisibilityChanged = jest.fn();
+        const wrapper = mountWithProviders(
+            <NavMenuButton defaultOpen options={options} onMenuVisibilityChanged={onMenuVisibilityChanged}>
+                Test Button
+            </NavMenuButton>,
+        );
+
+        getByTestId(wrapper, 'menu-button').simulate('click');
+
+        expect(onMenuVisibilityChanged).toHaveBeenCalledWith(false);
+    });
+
+    test('Should call onMenuVisibilityChanged when nav-menu opens', () => {
+        const onMenuVisibilityChanged = jest.fn();
+        const wrapper = mountWithProviders(
+            <NavMenuButton options={options} onMenuVisibilityChanged={onMenuVisibilityChanged}>
+                Test Button
+            </NavMenuButton>,
+        );
+
+        getByTestId(wrapper, 'menu-button').simulate('click');
+
+        expect(onMenuVisibilityChanged).toHaveBeenCalledWith(true);
+    });
+
+    test('Should call onMenuOptionsSelected when an option is selected in the nav-menu', () => {
+        const onMenuOptionSelected = jest.fn();
+        const wrapper = mountWithProviders(
+            <NavMenuButton options={options} onMenuOptionSelected={onMenuOptionSelected}>
+                Test Button
+            </NavMenuButton>,
+        );
+
+        const navMenuOption = getByTestId(wrapper, `listitem-${options[0].value}`);
+        navMenuOption.simulate('click');
+
+        expect(onMenuOptionSelected).toHaveBeenCalledWith(expect.objectContaining(options[0]));
+    });
+
     test('Matches Snapshot', () => {
-        const tree = renderWithTheme(setup(
+        const tree = renderWithProviders(
             <NavMenuButton options={options}>
                 Test Button
             </NavMenuButton>,
-        ));
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches Snapshot (defaultOpen)', () => {
-        const tree = renderWithTheme(setup(
+        const tree = renderWithProviders(
             <NavMenuButton defaultOpen options={options}>
                 Test Button
             </NavMenuButton>,
-        ));
+        );
 
         expect(tree).toMatchSnapshot();
     });
