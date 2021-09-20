@@ -1,14 +1,16 @@
 import React, { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconName } from '../icon/icon';
+import { Icon, IconName, IconProps } from '../icon/icon';
 import { AbstractButton, getButtonTypeStyles } from './abstract-button';
+import { AvatarProps } from '../avatar/avatar';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
 type Type = 'submit' | 'button' | 'reset';
 
 export interface IconButtonProps {
+    children?: ReactElement<IconProps | AvatarProps>;
     /**
      * Visual style
      * @default primary
@@ -39,6 +41,7 @@ const StyledButton = styled(AbstractButton)`
 `;
 
 export const IconButton = forwardRef(({
+    children,
     className,
     iconName,
     label,
@@ -64,11 +67,13 @@ export const IconButton = forwardRef(({
             disabled={disabled}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            <Icon
-                aria-hidden="true"
-                name={iconName}
-                size={isMobile ? '24' : '16'}
-            />
+            { children || (
+                <Icon
+                    aria-hidden="true"
+                    name={iconName}
+                    size={isMobile ? '24' : '16'}
+                />
+            )}
         </StyledButton>
     );
 });

@@ -15,14 +15,15 @@ exports[`Lozenge Matches the snapshot 1`] = `
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
-  padding: 0 var(--spacing-1x);
+  padding: 0 var(--spacing-half);
   text-overflow: ellipsis;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-<div
+<span
   className="c0"
 >
   Hello World
-</div>
+</span>
 `;

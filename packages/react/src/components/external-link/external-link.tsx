@@ -31,7 +31,7 @@ const Link = styled(StyledLink)<{isMobile: boolean}>`
     }
 `;
 
-interface ExternalLinkProps {
+export interface ExternalLinkProps {
     className?: string;
     disabled?: boolean;
     href?: string;

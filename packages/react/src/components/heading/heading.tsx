@@ -4,7 +4,7 @@ import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 export type Type = 'xlarge' | 'large' | 'medium' | 'small' | 'subtitle';
 export type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
-interface HeadingProps {
+export interface HeadingProps {
     bold?: boolean;
     children?: ReactNode;
     className?: string;
