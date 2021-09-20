@@ -25,6 +25,7 @@ export const GlobalBanners: Story = () => (
         </GlobalBanner>
         <br />
         <GlobalBanner
+            actionButton={actionButton}
             label="Warning."
             type="warning"
         >
@@ -32,6 +33,7 @@ export const GlobalBanners: Story = () => (
         </GlobalBanner>
         <br />
         <GlobalBanner
+            actionButton={actionButton}
             label="Info."
             type="info"
         >
@@ -47,5 +49,15 @@ export const WithActionButton: Story = () => (
         type="warning"
     >
         Press action button or click ignore button to dismiss.
+    </GlobalBanner>
+);
+
+export const WithoutDismissButton: Story = () => (
+    <GlobalBanner
+        label="Without dismiss button."
+        type="warning"
+        isDismissable={false}
+    >
+        Cannot dismiss me.
     </GlobalBanner>
 );

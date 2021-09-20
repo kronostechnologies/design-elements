@@ -8,11 +8,11 @@ const defaultActionButton: ActionButton = {
     onClick: jest.fn(),
 };
 
-const messageTypeArray: MessageType[] = ['alert', 'warning', 'info'];
+const messageTypesArray: MessageType[] = ['alert', 'warning', 'info'];
 
 describe('GlobalBanner', () => {
-    messageTypeArray.forEach((type): void => {
-        test(`Matches snapshot (desktop, ${type})`, () => {
+    messageTypesArray.forEach((type) => {
+        test(`matches snapshot (desktop, ${type})`, () => {
             const tree = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} label={type} type={type}>
                     Test content
@@ -23,7 +23,7 @@ describe('GlobalBanner', () => {
             expect(tree).toMatchSnapshot();
         });
 
-        test(`Matches snapshot (mobile, ${type})`, () => {
+        test(`matches snapshot (mobile, ${type})`, () => {
             const tree = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} label={type} type={type}>
                     Test content
@@ -35,7 +35,7 @@ describe('GlobalBanner', () => {
         });
     });
 
-    test('Should call action-button onClick callback when action-button is clicked', () => {
+    test('should call action-button onClick callback when action-button is clicked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
             <GlobalBanner
@@ -55,7 +55,7 @@ describe('GlobalBanner', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Ignore-button hides the banner', () => {
+    test('ignore-button hides the banner', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
                 actionButton={defaultActionButton}
@@ -66,12 +66,39 @@ describe('GlobalBanner', () => {
             </GlobalBanner>,
         );
 
-        getByTestId(wrapper, 'ignore-button').simulate('click');
+        getByTestId(wrapper, 'dismiss-button').simulate('click');
 
         expect(getByTestId(wrapper, 'container').exists()).toBe(false);
     });
 
-    describe('Hidden property', () => {
+    test('should not have dismiss-button when type is alert', () => {
+        const wrapper = mountWithTheme(
+            <GlobalBanner
+                label="Test"
+                type="alert"
+            >
+                Test content
+            </GlobalBanner>,
+        );
+
+        expect(getByTestId(wrapper, 'ignore-button').exists()).toBe(false);
+    });
+
+    test('should not have ignore-button when isDismissable is set to false', () => {
+        const wrapper = mountWithTheme(
+            <GlobalBanner
+                label="Test"
+                type="info"
+                isDismissable={false}
+            >
+                Test content
+            </GlobalBanner>,
+        );
+
+        expect(getByTestId(wrapper, 'ignore-button').exists()).toBe(false);
+    });
+
+    describe('hidden property', () => {
         test('hides the component', () => {
             const wrapper = mountWithTheme(
                 <GlobalBanner

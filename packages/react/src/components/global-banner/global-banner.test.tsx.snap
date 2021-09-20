@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
-.c5 {
+exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,56 +41,56 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c5:not(:disabled) {
+.c6:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c6 > svg {
   color: inherit;
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c6:hover {
+.c7:hover {
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c6:disabled {
+.c7:disabled {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c6:focus {
+.c7:focus {
   background-color: #012639;
   border-color: #006296 color:#FFFFFF;
 }
 
-.c3 {
+.c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
   margin-right: var(--spacing-1x);
@@ -115,10 +115,10 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
 }
@@ -138,14 +138,6 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
   justify-content: center;
 }
 
-.c1 span {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
 .c2 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -153,12 +145,20 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c7:hover {
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8:hover {
   border-color: #f99d99;
   color: #f99d99;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -173,7 +173,7 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
   width: unset;
 }
 
-.c4 * + * {
+.c5 * + * {
   margin-left: var(--spacing-1x);
 }
 
@@ -191,14 +191,15 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
       aria-label="alert"
       class="c2"
       color="currentColor"
-      focusable="true"
       height="16"
       role="img"
       width="16"
     />
-    <span>
+    <span
+      class="c3"
+    >
       <b
-        class="c3"
+        class="c4"
       >
         alert
       </b>
@@ -206,10 +207,10 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
     </span>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <button
-      class="c5 c6 c7"
+      class="c6 c7 c8"
       data-testid="action-button"
       type="button"
     >
@@ -219,8 +220,8 @@ exports[`GlobalBanner Matches snapshot (desktop, alert) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
-.c5 {
+exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -260,88 +261,88 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c5:not(:disabled) {
+.c6:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c6 > svg {
   color: inherit;
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c6:hover {
+.c7:hover {
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c6:disabled {
+.c7:disabled {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c6:focus {
+.c7:focus {
   background-color: #012639;
   border-color: #006296 color:#FFFFFF;
 }
 
-.c8 {
+.c9 {
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c8:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #003A5A;
 }
 
-.c8:focus {
+.c9:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-.c3 {
+.c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
   margin-right: var(--spacing-1x);
@@ -366,10 +367,10 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
 }
@@ -389,14 +390,6 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
   justify-content: center;
 }
 
-.c1 span {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
 .c2 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -404,16 +397,24 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c7:hover {
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8:hover {
   border-color: #cfc1e3;
   color: #cfc1e3;
 }
 
-.c9:hover {
+.c10:hover {
   background-color: #3a1c60;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -428,7 +429,7 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
   width: unset;
 }
 
-.c4 * + * {
+.c5 * + * {
   margin-left: var(--spacing-1x);
 }
 
@@ -446,14 +447,15 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
       aria-label="info"
       class="c2"
       color="currentColor"
-      focusable="true"
       height="16"
       role="img"
       width="16"
     />
-    <span>
+    <span
+      class="c3"
+    >
       <b
-        class="c3"
+        class="c4"
       >
         info
       </b>
@@ -461,18 +463,18 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
     </span>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <button
-      class="c5 c6 c7"
+      class="c6 c7 c8"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c5 c8 c9"
-      data-testid="ignore-button"
+      class="c6 c9 c10"
+      data-testid="dismiss-button"
       type="button"
     >
       Ignore
@@ -481,8 +483,8 @@ exports[`GlobalBanner Matches snapshot (desktop, info) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
-.c5 {
+exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -522,88 +524,88 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c5:not(:disabled) {
+.c6:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c6 > svg {
   color: inherit;
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c6:hover {
+.c7:hover {
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c6:disabled {
+.c7:disabled {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c6:focus {
+.c7:focus {
   background-color: #012639;
   border-color: #006296 color:#FFFFFF;
 }
 
-.c8 {
+.c9 {
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c8:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #003A5A;
 }
 
-.c8:focus {
+.c9:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-.c3 {
+.c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
   margin-right: var(--spacing-1x);
@@ -628,10 +630,10 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
 }
@@ -651,14 +653,6 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
   justify-content: center;
 }
 
-.c1 span {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
-}
-
 .c2 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -666,29 +660,37 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-.c7 {
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8 {
   border-color: #000000;
   color: #000000;
 }
 
-.c7:focus {
+.c8:focus {
   color: #FFFFFF;
 }
 
-.c7:hover {
+.c8:hover {
   border-color: #ffdd99;
   color: #ffdd99;
 }
 
-.c9 {
+.c10 {
   color: #000000;
 }
 
-.c9:hover {
-  background-color: #a36d00;
+.c10:hover {
+  background-color: #A36D00;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -703,7 +705,7 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
   width: unset;
 }
 
-.c4 * + * {
+.c5 * + * {
   margin-left: var(--spacing-1x);
 }
 
@@ -721,14 +723,15 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
       aria-label="warning"
       class="c2"
       color="currentColor"
-      focusable="true"
       height="16"
       role="img"
       width="16"
     />
-    <span>
+    <span
+      class="c3"
+    >
       <b
-        class="c3"
+        class="c4"
       >
         warning
       </b>
@@ -736,18 +739,18 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
     </span>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <button
-      class="c5 c6 c7"
+      class="c6 c7 c8"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c5 c8 c9"
-      data-testid="ignore-button"
+      class="c6 c9 c10"
+      data-testid="dismiss-button"
       type="button"
     >
       Ignore
@@ -756,8 +759,8 @@ exports[`GlobalBanner Matches snapshot (desktop, warning) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
-.c5 {
+exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -797,56 +800,56 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c5:not(:disabled) {
+.c6:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c6 > svg {
   color: inherit;
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c6:hover {
+.c7:hover {
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c6:disabled {
+.c7:disabled {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c6:focus {
+.c7:focus {
   background-color: #012639;
   border-color: #006296 color:#FFFFFF;
 }
 
-.c3 {
+.c4 {
   display: block;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
@@ -871,10 +874,10 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
 }
@@ -888,17 +891,13 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
-}
-
-.c1 span {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
 }
 
 .c2 {
@@ -911,12 +910,20 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
   align-self: flex-start;
 }
 
-.c7:hover {
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8:hover {
   border-color: #f99d99;
   color: #f99d99;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -931,7 +938,7 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
   width: 100%;
 }
 
-.c4 * + * {
+.c5 * + * {
   margin-top: var(--spacing-1x);
 }
 
@@ -949,14 +956,15 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
       aria-label="alert"
       class="c2"
       color="currentColor"
-      focusable="true"
       height="24"
       role="img"
       width="24"
     />
-    <span>
+    <span
+      class="c3"
+    >
       <b
-        class="c3"
+        class="c4"
       >
         alert
       </b>
@@ -964,10 +972,10 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
     </span>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <button
-      class="c5 c6 c7"
+      class="c6 c7 c8"
       data-testid="action-button"
       type="button"
     >
@@ -977,8 +985,8 @@ exports[`GlobalBanner Matches snapshot (mobile, alert) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
-.c5 {
+exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1018,88 +1026,88 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c5:not(:disabled) {
+.c6:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c6 > svg {
   color: inherit;
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c6:hover {
+.c7:hover {
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c6:disabled {
+.c7:disabled {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c6:focus {
+.c7:focus {
   background-color: #012639;
   border-color: #006296 color:#FFFFFF;
 }
 
-.c8 {
+.c9 {
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c8:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #003A5A;
 }
 
-.c8:focus {
+.c9:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-.c3 {
+.c4 {
   display: block;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
@@ -1124,10 +1132,10 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
 }
@@ -1141,17 +1149,13 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
-}
-
-.c1 span {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
 }
 
 .c2 {
@@ -1164,16 +1168,24 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
   align-self: flex-start;
 }
 
-.c7:hover {
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8:hover {
   border-color: #cfc1e3;
   color: #cfc1e3;
 }
 
-.c9:hover {
+.c10:hover {
   background-color: #3a1c60;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1188,7 +1200,7 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
   width: 100%;
 }
 
-.c4 * + * {
+.c5 * + * {
   margin-top: var(--spacing-1x);
 }
 
@@ -1206,14 +1218,15 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
       aria-label="info"
       class="c2"
       color="currentColor"
-      focusable="true"
       height="24"
       role="img"
       width="24"
     />
-    <span>
+    <span
+      class="c3"
+    >
       <b
-        class="c3"
+        class="c4"
       >
         info
       </b>
@@ -1221,18 +1234,18 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
     </span>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <button
-      class="c5 c6 c7"
+      class="c6 c7 c8"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c5 c8 c9"
-      data-testid="ignore-button"
+      class="c6 c9 c10"
+      data-testid="dismiss-button"
       type="button"
     >
       Ignore
@@ -1241,8 +1254,8 @@ exports[`GlobalBanner Matches snapshot (mobile, info) 1`] = `
 </section>
 `;
 
-exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
-.c5 {
+exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1282,88 +1295,88 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
   user-select: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c5:not(:disabled) {
+.c6:not(:disabled) {
   cursor: pointer;
 }
 
-.c5 > svg {
+.c6 > svg {
   color: inherit;
 }
 
-.c6 {
+.c7 {
   background-color: transparent;
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c6:hover {
+.c7:hover {
   border-color: #84C6EA;
   color: #84C6EA;
 }
 
-.c6:disabled {
+.c7:disabled {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c6:focus {
+.c7:focus {
   background-color: #012639;
   border-color: #006296 color:#FFFFFF;
 }
 
-.c8 {
+.c9 {
   background-color: transparent;
   border-color: transparent;
   color: #FFFFFF;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #00629666;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #003A5A;
   color: #FFFFFF;
 }
 
-.c8:disabled {
+.c9:disabled {
   background-color: transparent;
   color: #003A5A;
 }
 
-.c8:focus {
+.c9:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-.c3 {
+.c4 {
   display: block;
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--spacing-half);
@@ -1388,10 +1401,10 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
 }
@@ -1405,17 +1418,13 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
-}
-
-.c1 span {
-  -webkit-letter-spacing: 0.015rem;
-  -moz-letter-spacing: 0.015rem;
-  -ms-letter-spacing: 0.015rem;
-  letter-spacing: 0.015rem;
-  margin: 0;
 }
 
 .c2 {
@@ -1428,29 +1437,37 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
   align-self: flex-start;
 }
 
-.c7 {
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8 {
   border-color: #000000;
   color: #000000;
 }
 
-.c7:focus {
+.c8:focus {
   color: #FFFFFF;
 }
 
-.c7:hover {
+.c8:hover {
   border-color: #ffdd99;
   color: #ffdd99;
 }
 
-.c9 {
+.c10 {
   color: #000000;
 }
 
-.c9:hover {
-  background-color: #a36d00;
+.c10:hover {
+  background-color: #A36D00;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1465,7 +1482,7 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
   width: 100%;
 }
 
-.c4 * + * {
+.c5 * + * {
   margin-top: var(--spacing-1x);
 }
 
@@ -1483,14 +1500,15 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
       aria-label="warning"
       class="c2"
       color="currentColor"
-      focusable="true"
       height="24"
       role="img"
       width="24"
     />
-    <span>
+    <span
+      class="c3"
+    >
       <b
-        class="c3"
+        class="c4"
       >
         warning
       </b>
@@ -1498,18 +1516,18 @@ exports[`GlobalBanner Matches snapshot (mobile, warning) 1`] = `
     </span>
   </div>
   <div
-    class="c4"
+    class="c5"
   >
     <button
-      class="c5 c6 c7"
+      class="c6 c7 c8"
       data-testid="action-button"
       type="button"
     >
       Test button
     </button>
     <button
-      class="c5 c8 c9"
-      data-testid="ignore-button"
+      class="c6 c9 c10"
+      data-testid="dismiss-button"
       type="button"
     >
       Ignore

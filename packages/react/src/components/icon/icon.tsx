@@ -100,7 +100,6 @@ export interface IconProps {
      */
     color?: string;
     role?: string;
-    focusable?: boolean;
 }
 
 export const Icon: VoidFunctionComponent<IconProps> = ({
@@ -109,7 +108,6 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
     size,
     color,
     role,
-    focusable = false,
     ...props
 }: IconProps) => {
     const Component = iconMapping[name];
@@ -122,7 +120,7 @@ export const Icon: VoidFunctionComponent<IconProps> = ({
         <Component
             className={className}
             height={size}
-            focusable={focusable}
+            focusable={false}
             width={size}
             color={color}
             role={role}

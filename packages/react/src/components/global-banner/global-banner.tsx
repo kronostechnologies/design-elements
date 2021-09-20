@@ -58,7 +58,7 @@ const Container = styled.section<ContainerProps>`
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     justify-content: space-between;
-    letter-spacing: ${({ isMobile }) => (isMobile ? 0.46 : 0.2)}px;
+    letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
     padding: ${getContainerPadding};
 `;
@@ -66,21 +66,21 @@ const Container = styled.section<ContainerProps>`
 const Content = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
-    justify-content: ${({ isMobile }) => (isMobile ? '' : 'center')};
-
-    span {
-        letter-spacing: 0.015rem;
-        margin: 0;
-    }
+    justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
 
     ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
 
-const StyledIcon = styled(Icon)<{ isMobile: boolean }>`
+const StyledIcon = styled(Icon)<React.SVGProps<SVGSVGElement> & { $isMobile: boolean }>`
     flex-shrink: 0;
     margin-right: var(--spacing-1x);
 
-    ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
+    ${({ $isMobile }) => $isMobile && css`align-self: flex-start;`};
+`;
+
+const Text = styled.span`
+    letter-spacing: 0.015rem;
+    margin: 0;
 `;
 
 interface ButtonProps {
@@ -88,6 +88,7 @@ interface ButtonProps {
 }
 
 function getActionButtonHoverColor({ messageType }: StyledProps<ButtonProps>): string {
+    /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
             return '#f99d99';
@@ -114,33 +115,29 @@ const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: t
     }
 `;
 
-function getIgnoreButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
+function getDismissButtonHoverBackgroundColor({ messageType, theme }: StyledProps<ButtonProps>): string {
+    /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
             return '#7b1a15';
         case 'warning':
-            return '#a36d00';
+            return theme.notifications['warning-3.4'];
         case 'info':
             return '#3a1c60';
     }
 }
 
-const IgnoreButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
+const DismissButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
     ${({ messageType }) => messageType === 'warning' && css`
         color: ${({ theme }) => theme.greys.black};
     `}
 
     &:hover {
-        background-color: ${getIgnoreButtonHoverBackgroundColor};
+        background-color: ${getDismissButtonHoverBackgroundColor};
     }
 `;
 
-interface ButtonContainerProps {
-    isMobile: boolean;
-    messageType: MessageType;
-}
-
-const ButtonContainer = styled.div<ButtonContainerProps>`
+const ButtonContainer = styled.div<{ isMobile: boolean }>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
     margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : '0')};
@@ -175,11 +172,11 @@ export interface ActionButton {
 interface Props {
     actionButton?: ActionButton;
     className?: string;
+    hidden?: boolean;
     /**
-     * Hides the component
-     * @default false
+     * Adds an ignore-button. Note that alert type banners are not dismissable.
      */
-     hidden?: boolean;
+    isDismissable?: boolean;
     label: string;
     type: MessageType;
 
@@ -190,12 +187,15 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     children,
     className,
     hidden,
+    isDismissable = true,
     label,
     type,
 }) => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
+    const hasDismissButton = type !== 'alert' && isDismissable;
+    const hasButtons = hasDismissButton || actionButton;
 
     return visible ? (
         <Container
@@ -210,39 +210,41 @@ export const GlobalBanner: FunctionComponent<Props> = ({
             <Content isMobile={isMobile}>
                 <StyledIcon
                     aria-label={type}
-                    focusable
-                    isMobile={isMobile}
+                    focusable={undefined}
+                    $isMobile={isMobile}
                     name={GetIconName(type)}
                     role="img"
                     size={isMobile ? '24' : '16'}
                 />
-                <span>
+                <Text>
                     <Label isMobile={isMobile}>{label}</Label>
                     {children}
-                </span>
+                </Text>
             </Content>
-            <ButtonContainer isMobile={isMobile} messageType={type}>
-                {actionButton && (
-                    <ActionButton
-                        data-testid="action-button"
-                        messageType={type}
-                        onClick={actionButton.onClick}
-                        type="button"
-                    >
-                        {actionButton.label}
-                    </ActionButton>
-                )}
-                {type !== 'alert' && (
-                    <IgnoreButton
-                        data-testid="ignore-button"
-                        messageType={type}
-                        onClick={() => setVisible(false)}
-                        type="button"
-                    >
-                        {t('ignore')}
-                    </IgnoreButton>
-                )}
-            </ButtonContainer>
+            {hasButtons && (
+                <ButtonContainer isMobile={isMobile}>
+                    {actionButton && (
+                        <ActionButton
+                            data-testid="action-button"
+                            messageType={type}
+                            onClick={actionButton.onClick}
+                            type="button"
+                        >
+                            {actionButton.label}
+                        </ActionButton>
+                    )}
+                    {hasDismissButton && (
+                        <DismissButton
+                            data-testid="dismiss-button"
+                            messageType={type}
+                            onClick={() => setVisible(false)}
+                            type="button"
+                        >
+                            {t('ignore')}
+                        </DismissButton>
+                    )}
+                </ButtonContainer>
+            )}
         </Container>
     ) : null;
 };
