@@ -4,6 +4,7 @@ export { Button } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
 export { NavMenuOption } from './components/nav-menu/nav-menu';
 export { NavMenuButton } from './components/nav-menu-button/nav-menu-button';
+export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';
 export { ToggleButtonGroup } from './components/toggle-button-group/toggle-button-group';
 
 // Form Elements
@@ -42,6 +43,7 @@ export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
+export { DropdownMenu } from './components/dropdown-menu/dropdown-menu';
 export { Icon } from './components/icon/icon';
 export { SectionalBanner } from './components/sectional-banner/sectional-banner';
 export * from './components/progress/progress';

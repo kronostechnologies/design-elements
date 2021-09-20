@@ -6,7 +6,7 @@ import { ChooserButtonGroup } from './chooser-button-group';
 
 jest.mock('../../utils/uuid');
 
-describe('Chooser Button Group', () => {
+describe('Chooser Button GroupItem', () => {
     const maritalStatus = [
         { value: 'single', label: 'Single, living alone or with a roommate' },
         { value: 'married', label: 'Married or living with a spouse' },

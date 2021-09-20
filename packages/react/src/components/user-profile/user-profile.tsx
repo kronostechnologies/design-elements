@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Avatar } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { NavMenuButton } from '../nav-menu-button/nav-menu-button';
-import { NavMenuOption } from '../nav-menu/nav-menu';
+import { DropdownMenuButton } from '../dropdown-menu-button/dropdown-menu-button';
+import { GroupItem, LabelItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
 
-const StyledNavMenuButton = styled(NavMenuButton)<{ isMobile: boolean }>`
+const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean }>`
     button {
         ${({ isMobile }) => isMobile && css`
             height: fit-content;
@@ -17,12 +17,6 @@ const StyledNavMenuButton = styled(NavMenuButton)<{ isMobile: boolean }>`
 
 const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
     margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
-`;
-
-const Prefix = styled.span`
-    color: ${({ theme }) => theme.greys['mid-grey']};
-    font-size: 0.875rem;
-    margin-right: var(--spacing-1x);
 `;
 
 interface UserProfileProps {
@@ -38,9 +32,10 @@ interface UserProfileProps {
      * */
     defaultOpen?: boolean;
     id?: string;
+    actions: NavItemProps[];
     username: string;
+    userEmail?: string;
     usernamePrefix?: string;
-    options: NavMenuOption[];
 }
 
 export function UserProfile({
@@ -48,26 +43,36 @@ export function UserProfile({
     className,
     defaultOpen = false,
     id,
-    options,
+    actions,
     username,
+    userEmail,
     usernamePrefix,
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
 
     return (
-        <StyledNavMenuButton
+        <StyledDropdownMenuButton
             ariaLabel={ariaLabel || t('ariaLabel')}
             className={className}
             defaultOpen={defaultOpen}
             hasCaret={!isMobile}
             id={id}
+            icon={<StyledAvatar isMobile={isMobile} username={username} />}
             isMobile={isMobile}
-            options={options}
+            {...(isMobile ? {} : {
+                label: username,
+                prefix: usernamePrefix,
+            })}
         >
-            <StyledAvatar isMobile={isMobile} username={username} />
-            {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
-            {!isMobile && username}
-        </StyledNavMenuButton>
+            <GroupItem id="user-label">
+                <LabelItem label={username} description={userEmail} />
+            </GroupItem>
+            <GroupItem id="user-actions">
+                {actions.map((action) => (
+                    <NavItem id={action.id} value={action.value} to={action.to} label={action.label} />
+                ))}
+            </GroupItem>
+        </StyledDropdownMenuButton>
     );
 }

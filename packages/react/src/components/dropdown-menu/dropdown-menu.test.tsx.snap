@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu Is hidden 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c1 {
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.875rem;
+  height: 100%;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0 var(--spacing-1x);
+}
+
+.c3 span {
+  line-height: 1.25rem;
+  margin: auto 0;
+}
+
+.c3 span:nth-of-type(2) {
+  color: #60666E;
+  font-size: 0.75rem;
+}
+
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.875rem;
+  height: 2.5rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: var(--spacing-1x) var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:focus {
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  outline: none;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+}
+
+<div
+  class="c0"
+  data-testid="menu-list"
+  hidden=""
+>
+  <ul
+    class="c1"
+    role="group"
+  >
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionA"
+        href="/testA"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option A
+          </span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionB"
+        href="/testB"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option B
+          </span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionC"
+        href="/testC"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option C
+          </span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionD"
+        href="/testD"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option D
+          </span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DropdownMenu Matches the snapshot 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c1 {
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 0.875rem;
+  height: 100%;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0 var(--spacing-1x);
+}
+
+.c3 span {
+  line-height: 1.25rem;
+  margin: auto 0;
+}
+
+.c3 span:nth-of-type(2) {
+  color: #60666E;
+  font-size: 0.75rem;
+}
+
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.875rem;
+  height: 2.5rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: var(--spacing-1x) var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:focus {
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  outline: none;
+}
+
+.c2:hover {
+  background-color: #DBDEE1;
+}
+
+<div
+  class="c0"
+  data-testid="menu-list"
+>
+  <ul
+    class="c1"
+    role="group"
+  >
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionA"
+        href="/testA"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option A
+          </span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionB"
+        href="/testB"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option B
+          </span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionC"
+        href="/testC"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option C
+          </span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        data-testid="listitem-optionD"
+        href="/testD"
+      >
+        <div
+          class="c3"
+        >
+          <span>
+            Option D
+          </span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
