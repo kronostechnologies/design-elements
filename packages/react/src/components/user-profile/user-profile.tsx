@@ -41,6 +41,8 @@ interface UserProfileProps {
     username: string;
     usernamePrefix?: string;
     options: NavMenuOption[];
+    onMenuVisibilityChanged?(isOpen: boolean): void;
+    onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
 export function UserProfile({
@@ -51,6 +53,8 @@ export function UserProfile({
     options,
     username,
     usernamePrefix,
+    onMenuOptionSelected,
+    onMenuVisibilityChanged,
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
@@ -64,6 +68,8 @@ export function UserProfile({
             id={id}
             isMobile={isMobile}
             options={options}
+            onMenuOptionSelected={onMenuOptionSelected}
+            onMenuVisibilityChanged={onMenuVisibilityChanged}
         >
             <StyledAvatar isMobile={isMobile} username={username} />
             {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
