@@ -115,6 +115,15 @@ export const Mobile: Story = () => (
 );
 Mobile.decorators = [MobileDecorator];
 
+export const MobileIconOnly: Story = () => (
+    <StyledDiv>
+        <ApplicationMenu>
+            <NavMenuButton iconOnly iconName="home" options={options} />
+        </ApplicationMenu>
+    </StyledDiv>
+);
+MobileIconOnly.decorators = [MobileDecorator];
+
 export const DefaultOpen: Story = () => (
     <ApplicationMenu>
         <NavMenuButton defaultOpen options={options}>Menu</NavMenuButton>
