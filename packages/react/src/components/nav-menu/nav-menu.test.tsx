@@ -130,6 +130,46 @@ describe('NavMenu', () => {
         expect(document.activeElement).toBe(getByTestId(wrapper, 'listitem-optionB').getDOMNode());
     });
 
+    test('calls option.onClick when an htmlLink is clicked', () => {
+        const onClick = jest.fn();
+        const wrapper = mountWithProviders(
+            <NavMenu options={[
+                {
+                    label: 'Option A',
+                    value: 'optionA',
+                    href: '/testA',
+                    onClick,
+                    isHtmlLink: true,
+                },
+            ]}
+            />,
+        );
+
+        getByTestId(wrapper, 'listitem-optionA').simulate('click');
+
+        expect(onClick).toHaveBeenCalledTimes(1);
+    });
+
+    test('calls option.onClick when an ReactRouterNavLink is clicked', () => {
+        const onClick = jest.fn();
+        const wrapper = mountWithProviders(
+            <NavMenu options={[
+                {
+                    label: 'Option A',
+                    value: 'optionA',
+                    href: '/testA',
+                    onClick,
+                    isHtmlLink: false,
+                },
+            ]}
+            />,
+        );
+
+        getByTestId(wrapper, 'listitem-optionA').simulate('click');
+
+        expect(onClick).toHaveBeenCalledTimes(1);
+    });
+
     test('Matches the snapshot', () => {
         const tree = renderWithTheme(
             <Router>

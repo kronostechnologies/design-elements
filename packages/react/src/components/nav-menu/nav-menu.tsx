@@ -1,4 +1,13 @@
-import React, { forwardRef, KeyboardEvent, ReactElement, Ref, RefObject, useEffect, useMemo } from 'react';
+import React, {
+    forwardRef,
+    KeyboardEvent,
+    MouseEvent,
+    ReactElement,
+    Ref,
+    RefObject,
+    useEffect,
+    useMemo,
+} from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
@@ -83,6 +92,7 @@ export interface NavMenuOption {
     label?: string;
     startIcon?: IconName;
     value: string;
+    onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
 
 interface ListOption extends NavMenuOption {
@@ -168,6 +178,11 @@ export const NavMenu = forwardRef(({
                     </>
                 );
 
+                function handleOnClick(e: MouseEvent<HTMLAnchorElement>): void {
+                    onChange?.(option);
+                    option.onClick?.(e);
+                }
+
                 return (
                     <li key={option.id}>
                         {option.isHtmlLink ? (
@@ -176,7 +191,7 @@ export const NavMenu = forwardRef(({
                                 ref={option.ref}
                                 $device={device}
                                 href={option.href}
-                                onClick={() => onChange?.(option)}
+                                onClick={handleOnClick}
                                 onKeyDown={(event) => handleKeyDown(event, option)}
                             >
                                 {label}
@@ -188,7 +203,7 @@ export const NavMenu = forwardRef(({
                                 innerRef={option.ref}
                                 $device={device}
                                 to={option.href}
-                                onClick={() => onChange?.(option)}
+                                onClick={handleOnClick}
                                 onKeyDown={(event) => handleKeyDown(event, option)}
                             >
                                 {label}
