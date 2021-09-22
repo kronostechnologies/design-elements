@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lozenge Matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #878f9a;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  padding: 0 var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<div
+  className="c0"
+>
+  Hello World
+</div>
+`;
