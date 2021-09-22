@@ -69,7 +69,7 @@ export const DeviceContextProvider: FunctionComponent<DeviceContextProviderProps
     const [device, setDevice] = useState<DeviceContextProps>(getDeviceContext(staticDevice));
 
     function handleScreenResize(): void {
-        const screenWidth = (window.innerWidth || document.documentElement.clientWidth);
+        const screenWidth = (window.outerWidth || document.documentElement.clientWidth);
         const currentDevice = getDevice(screenWidth);
 
         setDevice(getDeviceContext(currentDevice));
