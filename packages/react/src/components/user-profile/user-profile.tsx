@@ -63,6 +63,7 @@ export function UserProfile({
         <StyledNavMenuButton
             ariaLabel={ariaLabel || t('ariaLabel')}
             className={className}
+            data-testid="user-profile"
             defaultOpen={defaultOpen}
             hasCaret={!isMobile}
             id={id}
@@ -72,8 +73,12 @@ export function UserProfile({
             onMenuVisibilityChanged={onMenuVisibilityChanged}
         >
             <StyledAvatar isMobile={isMobile} username={username} />
-            {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
-            {!isMobile && username}
+            {!isMobile && (
+                <>
+                    {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
+                    {username}
+                </>
+            )}
         </StyledNavMenuButton>
     );
 }
