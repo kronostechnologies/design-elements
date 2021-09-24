@@ -157,6 +157,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 <Tooltip
   defaultOpen={true}
+  label="Test Content"
 >
   <styled.span
     id="tooltip-trigger-undefined"
@@ -192,6 +193,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   <styled.div
     aria-hidden={false}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={false}
     role="tooltip"
     style={
@@ -207,6 +209,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       aria-hidden={false}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
@@ -392,7 +395,9 @@ exports[`Tooltip Has default desktop styles 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
-<Tooltip>
+<Tooltip
+  label="Test Content"
+>
   <styled.span
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
@@ -427,6 +432,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   <styled.div
     aria-hidden={true}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={false}
     role="tooltip"
     style={
@@ -442,6 +448,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
       aria-hidden={true}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
@@ -632,6 +639,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 <Tooltip
   defaultOpen={true}
+  label="Test Content"
 >
   <styled.span
     id="tooltip-trigger-undefined"
@@ -667,6 +675,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   <styled.div
     aria-hidden={false}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={true}
     role="tooltip"
     style={
@@ -682,6 +691,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       aria-hidden={false}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
@@ -867,7 +877,9 @@ exports[`Tooltip Has mobile styles 1`] = `
   box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
 }
 
-<Tooltip>
+<Tooltip
+  label="Test Content"
+>
   <styled.span
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
@@ -902,6 +914,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   <styled.div
     aria-hidden={true}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={true}
     role="tooltip"
     style={
@@ -917,6 +930,7 @@ exports[`Tooltip Has mobile styles 1`] = `
       aria-hidden={true}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {

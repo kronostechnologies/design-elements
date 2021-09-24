@@ -1,4 +1,4 @@
-import { Select, Tooltip, TooltipPlacement } from '@equisoft/design-elements-react';
+import { Select, Tooltip, TooltipPlacement, NavMenuButton, NavMenuOption, IconButton } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -16,15 +16,51 @@ export default {
 };
 
 export const Normal: Story = () => (
-    <Tooltip>
-        Tooltip Content
-    </Tooltip>
+    <Tooltip label="Tooltip Content" />
 );
 
 export const DefaultOpen: Story = () => (
-    <Tooltip defaultOpen>
-        Tooltip Content
+    <Tooltip defaultOpen label="Tooltip Content" />
+);
+
+export const WithChildElement: Story = () => (
+    <Tooltip label="Go to settings page">
+        <IconButton buttonType="primary" label="settings" iconName="settings" />
     </Tooltip>
+);
+
+const options: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testa',
+        isHtmlLink: true,
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testb',
+        isHtmlLink: true,
+    },
+];
+
+const MenuTooltipContainer = styled.div`
+    padding-bottom: 100px;
+    padding-left: 150px;
+`;
+
+const StyledNavMenuButton = styled(NavMenuButton)`
+    button {
+        background-color: ${({ theme }) => theme.main['primary-1.1']};
+    }
+`;
+
+export const MenuTooltip: Story = () => (
+    <MenuTooltipContainer>
+        <Tooltip label="Menu">
+            <StyledNavMenuButton options={options} />
+        </Tooltip>
+    </MenuTooltipContainer>
 );
 
 export const DesktopPlacement: Story = () => {
@@ -49,9 +85,7 @@ export const DesktopPlacement: Story = () => {
                 options={placements}
                 onChange={(option) => setPlacement(option.value as TooltipPlacement)}
             />
-            <Tooltip desktopPlacement={placement}>
-                Tooltip Content
-            </Tooltip>
+            <Tooltip desktopPlacement={placement} label="Tooltip Content" />
         </StyledDiv>
     );
 };

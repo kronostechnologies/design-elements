@@ -1,7 +1,7 @@
 import React, {
     KeyboardEvent as ReactKeyboardEvent,
+    VoidFunctionComponent,
     MouseEvent,
-    ReactElement,
     ReactNode,
     useCallback,
     useEffect,
@@ -148,8 +148,8 @@ const StyledSpan = styled.span`
 export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
-    /** Tooltip text content */
-    children: ReactNode;
+    /** Element to add a tooltip to */
+    children?: ReactNode;
     className?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
@@ -158,6 +158,8 @@ interface TooltipProps {
      * @default right
      */
     desktopPlacement?: TooltipPlacement;
+    /** Tooltip text content */
+    label: string;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -169,9 +171,9 @@ const modifiers: PopperOptions['modifiers'] = [
     },
 ];
 
-export function Tooltip({
-    children, className, defaultOpen, desktopPlacement = 'right',
-}: TooltipProps): ReactElement {
+export const Tooltip: VoidFunctionComponent<TooltipProps> = ({
+    children, className, defaultOpen, label, desktopPlacement = 'right',
+}) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
@@ -233,10 +235,17 @@ export function Tooltip({
                 onKeyDown={handleKeyDown}
                 ref={popperTooltip.setTriggerRef}
             >
-                <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
+                {children || (
+                    <Icon
+                        name="helpCircle"
+                        size={isMobile ? '24' : '16'}
+                        color={Theme.greys['dark-grey']}
+                    />
+                )}
             </StyledSpan>
 
             <TooltipContainer
+                data-testid="tooltip-content-container"
                 aria-hidden={!isVisible}
                 isMobile={isMobile}
                 id={tooltipId}
@@ -248,8 +257,8 @@ export function Tooltip({
                 <TooltipArrow
                     {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                {children}
+                {label}
             </TooltipContainer>
         </>
     );
-}
+};
