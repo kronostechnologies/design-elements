@@ -87,6 +87,7 @@ interface MenuButtonProps {
     iconOnly?: boolean;
     id?: string;
     options: NavMenuOption[];
+    title?: string;
     onMenuVisibilityChanged?(isOpen: boolean): void;
     onMenuOptionSelected?(option: NavMenuOption): void;
 }
@@ -101,6 +102,7 @@ export function NavMenuButton({
     iconOnly = false,
     id: providedId,
     options,
+    title,
     onMenuVisibilityChanged,
     onMenuOptionSelected,
 }: MenuButtonProps): ReactElement {
@@ -173,6 +175,7 @@ export function NavMenuButton({
                     isMobile={isMobile}
                     onClick={handleButtonClick}
                     ref={buttonRef}
+                    title={title}
                     type="button"
                 >
                     {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
@@ -194,6 +197,7 @@ export function NavMenuButton({
                     iconName={iconName}
                     onClick={handleButtonClick}
                     ref={buttonRef}
+                    title={title}
                     type="button"
                 />
             )}
