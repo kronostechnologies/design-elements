@@ -25,6 +25,7 @@ export interface IconButtonProps {
      * Sets aria-label
      */
     label?: string;
+    title?: string;
     type?: Type;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
@@ -45,6 +46,7 @@ export const IconButton = forwardRef(({
     type = 'submit',
     buttonType,
     disabled,
+    title,
     ...props
 }: IconButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
@@ -56,6 +58,7 @@ export const IconButton = forwardRef(({
             className={className}
             onClick={onClick}
             isMobile={isMobile}
+            title={title}
             type={type}
             buttonType={buttonType}
             disabled={disabled}
