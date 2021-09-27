@@ -8,9 +8,8 @@ import React, {
     useRef,
     useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { AbstractButton } from '../buttons/abstract-button';
@@ -18,30 +17,37 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Icon, IconName } from '../icon/icon';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 import { getRootDocument } from '../../utils/dom';
+import { IconButton } from '../buttons/icon-button';
 
 const StyledNav = styled.nav`
     position: relative;
 `;
 
 interface StyledButtonProps {
-    theme: Theme;
     expanded: boolean;
-    iconOnly?: boolean;
 }
 
-const StyledButton = styled(AbstractButton)<StyledButtonProps>`
+const buttonColors = css<StyledButtonProps>`
     background-color: ${({ expanded, theme }) => (expanded ? theme.main['primary-3'] : 'transparent')};
-    border-color: transparent;
+    border-color: ${({ expanded, theme }) => (expanded ? theme.main['primary-3'] : 'transparent')};
     color: ${({ theme }) => theme.greys.white};
-    font-size: 0.875rem;
-    font-weight: var(--font-normal);
-    ${({ iconOnly }) => (iconOnly ? 'padding: 0;' : '')}
-
-    text-transform: unset;
 
     &:hover {
         background-color: ${({ theme }) => theme.main['primary-3']};
+        border-color: ${({ theme }) => theme.main['primary-3']};
     }
+`;
+
+const StyledButton = styled(AbstractButton)<StyledButtonProps>`
+    ${buttonColors}
+
+    font-size: 0.875rem;
+    font-weight: var(--font-normal);
+    text-transform: unset;
+`;
+
+const StyledIconButton = styled(IconButton).attrs({ buttonType: 'primary' })<StyledButtonProps>`
+    ${buttonColors}
 `;
 
 const StyledRightIcon = styled(Icon)`
@@ -153,33 +159,44 @@ export function NavMenuButton({
         setOpen(false);
     };
 
+    const handleButtonClick = (): void => {
+        setOpen(!isOpen);
+    };
+
     return (
         <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
-            <StyledButton
-                aria-expanded={isOpen}
-                data-testid="menu-button"
-                expanded={isOpen}
-                iconOnly={iconOnly}
-                isMobile={isMobile}
-                onClick={() => setOpen(!isOpen)}
-                ref={buttonRef}
-                type="button"
-            >
-                {iconOnly && iconName && <Icon name={iconName} size="16" />}
-                {!iconOnly && (
-                    <>
-                        {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
-                        {children}
-                        {hasCaret && (
-                            <StyledRightIcon
-                                aria-hidden="true"
-                                name={isOpen ? 'chevronUp' : 'chevronDown'}
-                                size="16"
-                            />
-                        )}
-                    </>
-                )}
-            </StyledButton>
+            {!iconOnly && (
+                <StyledButton
+                    aria-expanded={isOpen}
+                    data-testid="menu-button"
+                    expanded={isOpen}
+                    isMobile={isMobile}
+                    onClick={handleButtonClick}
+                    ref={buttonRef}
+                    type="button"
+                >
+                    {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
+                    {children}
+                    {hasCaret && (
+                        <StyledRightIcon
+                            aria-hidden="true"
+                            name={isOpen ? 'chevronUp' : 'chevronDown'}
+                            size="16"
+                        />
+                    )}
+                </StyledButton>
+            )}
+            {iconOnly && iconName && (
+                <StyledIconButton
+                    aria-expanded={isOpen}
+                    data-testid="menu-button"
+                    expanded={isOpen}
+                    iconName={iconName}
+                    onClick={handleButtonClick}
+                    ref={buttonRef}
+                    type="button"
+                />
+            )}
             <StyledNavMenu
                 data-testid="menu-navMenu"
                 focusedValue={focusedValue}

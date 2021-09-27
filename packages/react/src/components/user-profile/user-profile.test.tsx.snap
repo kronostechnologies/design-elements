@@ -111,7 +111,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c2 {
   background-color: #004E78;
-  border-color: transparent;
+  border-color: #004E78;
   color: #FFFFFF;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
@@ -120,6 +120,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c2:hover {
   background-color: #004E78;
+  border-color: #004E78;
 }
 
 .c5 {
@@ -375,6 +376,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 
 .c2:hover {
   background-color: #004E78;
+  border-color: #004E78;
 }
 
 .c5 {
@@ -631,6 +633,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 
 .c3:hover {
   background-color: #004E78;
+  border-color: #004E78;
 }
 
 .c7 {
@@ -881,6 +884,7 @@ exports[`UserProfile Matches Snapshot (with username prefix) 1`] = `
 
 .c2:hover {
   background-color: #004E78;
+  border-color: #004E78;
 }
 
 .c6 {

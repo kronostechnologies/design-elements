@@ -1,11 +1,12 @@
+import { shallow } from 'enzyme';
 import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import {
     mountWithProviders,
     renderWithProviders,
-    shallowWithTheme,
 } from '../../test-utils/renderer';
 import { NavMenuButton } from './nav-menu-button';
+import { IconButton } from '../buttons/icon-button';
 
 jest.mock('../../utils/uuid');
 
@@ -32,39 +33,106 @@ const options = [
     },
 ];
 
+const buttonTypes = ['normal', 'iconOnly'] as const;
+
 describe('NavMenuButton', () => {
+    buttonTypes.forEach((type) => {
+        const isIconOnly = type === 'iconOnly';
+
+        test(`Opens nav-menu when menu-button is clicked (${type})`, () => {
+            const wrapper = shallow(
+                <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
+                    Test Button
+                </NavMenuButton>,
+            );
+
+            getByTestId(wrapper, 'menu-button').simulate('click');
+
+            expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
+        });
+
+        test(`Focuses the first menu-item when menu opens (${type})`, () => {
+            const wrapper = mountWithProviders(
+                <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
+                    Test Button
+                </NavMenuButton>,
+            );
+
+            getByTestId(wrapper, 'menu-button').simulate('click');
+
+            expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
+        });
+
+        test(`Focuses menu-button when escape key is pressed in nav-menu (${type})`, () => {
+            const wrapper = mountWithProviders(
+                <NavMenuButton defaultOpen options={options} iconOnly={isIconOnly} iconName="home">
+                    Test Button
+                </NavMenuButton>,
+                { attachTo: document.body },
+            );
+
+            getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
+
+            expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
+            wrapper.unmount();
+        });
+
+        test(`Should call onMenuVisibilityChanged when nav-menu closes (${type})`, () => {
+            const onMenuVisibilityChanged = jest.fn();
+            const wrapper = mountWithProviders(
+                <NavMenuButton
+                    defaultOpen
+                    options={options}
+                    iconOnly={isIconOnly}
+                    iconName="home"
+                    onMenuVisibilityChanged={onMenuVisibilityChanged}
+                >
+                    Test Button
+                </NavMenuButton>,
+            );
+
+            getByTestId(wrapper, 'menu-button').simulate('click');
+
+            expect(onMenuVisibilityChanged).toHaveBeenCalledWith(false);
+        });
+
+        test(`Should call onMenuVisibilityChanged when nav-menu opens (${type})`, () => {
+            const onMenuVisibilityChanged = jest.fn();
+            const wrapper = mountWithProviders(
+                <NavMenuButton
+                    options={options}
+                    iconOnly={isIconOnly}
+                    iconName="home"
+                    onMenuVisibilityChanged={onMenuVisibilityChanged}
+                >
+                    Test Button
+                </NavMenuButton>,
+            );
+
+            getByTestId(wrapper, 'menu-button').simulate('click');
+
+            expect(onMenuVisibilityChanged).toHaveBeenCalledWith(true);
+        });
+    });
+
+    test('Should use IconButton component when iconOnly is true', () => {
+        const wrapper = shallow(
+            <NavMenuButton options={options} iconOnly iconName="home">
+                Test Button
+            </NavMenuButton>,
+        );
+
+        expect(wrapper.find(IconButton).exists()).toBe(false);
+    });
+
     test('nav-menu is open when defaultOpen prop is set to true', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = shallow(
             <NavMenuButton defaultOpen options={options}>
                 Test Button
             </NavMenuButton>,
         );
 
         expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
-    });
-
-    test('Opens nav-menu when menu-button is clicked', () => {
-        const wrapper = shallowWithTheme(
-            <NavMenuButton options={options}>
-                Test Button
-            </NavMenuButton>,
-        );
-
-        getByTestId(wrapper, 'menu-button').simulate('click');
-
-        expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
-    });
-
-    test('Focuses the first menu-item when menu opens', () => {
-        const wrapper = mountWithProviders(
-            <NavMenuButton options={options}>
-                Test Button
-            </NavMenuButton>,
-        );
-
-        getByTestId(wrapper, 'menu-button').simulate('click');
-
-        expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
     });
 
     test('Should close nav-menu when escape key is pressed in nav-menu', () => {
@@ -77,45 +145,6 @@ describe('NavMenuButton', () => {
         getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
 
         expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(true);
-    });
-
-    test('Focuses menu-button when escape key is pressed in nav-menu', () => {
-        const wrapper = mountWithProviders(
-            <NavMenuButton defaultOpen options={options}>
-                Test Button
-            </NavMenuButton>,
-            { attachTo: document.body },
-        );
-
-        getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
-
-        expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
-    });
-
-    test('Should call onMenuVisibilityChanged when nav-menu closes', () => {
-        const onMenuVisibilityChanged = jest.fn();
-        const wrapper = mountWithProviders(
-            <NavMenuButton defaultOpen options={options} onMenuVisibilityChanged={onMenuVisibilityChanged}>
-                Test Button
-            </NavMenuButton>,
-        );
-
-        getByTestId(wrapper, 'menu-button').simulate('click');
-
-        expect(onMenuVisibilityChanged).toHaveBeenCalledWith(false);
-    });
-
-    test('Should call onMenuVisibilityChanged when nav-menu opens', () => {
-        const onMenuVisibilityChanged = jest.fn();
-        const wrapper = mountWithProviders(
-            <NavMenuButton options={options} onMenuVisibilityChanged={onMenuVisibilityChanged}>
-                Test Button
-            </NavMenuButton>,
-        );
-
-        getByTestId(wrapper, 'menu-button').simulate('click');
-
-        expect(onMenuVisibilityChanged).toHaveBeenCalledWith(true);
     });
 
     test('Should call onMenuOptionsSelected when an option is selected in the nav-menu', () => {

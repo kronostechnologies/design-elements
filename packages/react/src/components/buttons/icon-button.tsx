@@ -24,7 +24,7 @@ export interface IconButtonProps {
     /**
      * Sets aria-label
      */
-    label: string;
+    label?: string;
     type?: Type;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
