@@ -15,6 +15,9 @@ export const Translations = {
             monthSelectLabel: 'Select a month',
             yearSelectLabel: 'Select a year',
         },
+        'global-banner': {
+            ignore: 'Ignore',
+        },
         modal: {
             closeButtonLabel: 'Close dialog',
         },
@@ -89,6 +92,9 @@ export const Translations = {
             monthNextButtonLabel: 'Aller au mois suivant',
             monthSelectLabel: 'Choisissez un mois',
             yearSelectLabel: 'Choisissez une année',
+        },
+        'global-banner': {
+            ignore: 'Ignorer',
         },
         modal: {
             closeButtonLabel: 'Fermer le dialogue',
