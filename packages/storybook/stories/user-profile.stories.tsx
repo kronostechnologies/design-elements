@@ -48,6 +48,10 @@ const options = [
     },
 ];
 
+export const Normal: Story = () => (
+    <UserProfile options={options} username="John Doe" />
+);
+
 export const Desktop: Story = () => (
     <UserProfile options={options} username="John Doe" />
 );

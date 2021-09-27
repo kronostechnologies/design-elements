@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { UserProfile } from './user-profile';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 
@@ -30,10 +30,26 @@ const options = [
 ];
 
 describe('UserProfile', () => {
+    test('should contain username', () => {
+        const username = 'John Doe';
+        const wrapper = shallow(<UserProfile username={username} options={options} />);
+
+        expect(getByTestId(wrapper, 'user-profile').text()).toBe(username);
+    });
+
     test('should have prefix when usernamePrefix is defined', () => {
         const wrapper = shallow(<UserProfile username="Test" usernamePrefix="prefix" options={options} />);
 
         expect(getByTestId(wrapper, 'username-prefix').exists()).toBe(true);
+    });
+
+    test('should not have prefix when usernamePrefix is defined given device is mobile', () => {
+        const wrapper = mountWithProviders(
+            <UserProfile username="Test" usernamePrefix="prefix" options={options} />,
+            { wrappingComponentProps: { staticDevice: 'mobile' } },
+        );
+
+        expect(getByTestId(wrapper, 'username-prefix').exists()).toBe(false);
     });
 
     test('Matches Snapshot (desktop)', () => {
