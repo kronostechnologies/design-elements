@@ -81,4 +81,16 @@ describe('UserProfile', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('Matches Snapshot (with avatarUsername)', () => {
+        const tree = renderWithProviders(
+            <UserProfile
+                username="Test Button"
+                avatarUsername="Avatar Username"
+                options={options}
+            />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
 });

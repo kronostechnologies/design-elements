@@ -66,6 +66,15 @@ export const WithUsernamePrefix: Story = () => (
     <UserProfile options={options} username="John Doe" usernamePrefix="Connected as" />
 );
 Desktop.decorators = [DesktopDecorator];
+export const WithAvatarUsername: Story = () => (
+    <UserProfile
+        options={options}
+        avatarUsername="Avatar Username"
+        username="John Doe"
+        usernamePrefix="Connected as"
+    />
+);
+Desktop.decorators = [DesktopDecorator];
 
 export const DefaultOpen: Story = () => (
     <UserProfile options={options} username="Jonh Doe" defaultOpen />

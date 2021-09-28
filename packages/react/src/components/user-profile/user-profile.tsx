@@ -39,6 +39,7 @@ interface UserProfileProps {
     defaultOpen?: boolean;
     id?: string;
     username: string;
+    avatarUsername?: string;
     usernamePrefix?: string;
     options: NavMenuOption[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
@@ -52,6 +53,7 @@ export function UserProfile({
     id,
     options,
     username,
+    avatarUsername,
     usernamePrefix,
     onMenuOptionSelected,
     onMenuVisibilityChanged,
@@ -72,7 +74,7 @@ export function UserProfile({
             onMenuOptionSelected={onMenuOptionSelected}
             onMenuVisibilityChanged={onMenuVisibilityChanged}
         >
-            <StyledAvatar isMobile={isMobile} username={username} />
+            <StyledAvatar data-testid="avatar" isMobile={isMobile} username={avatarUsername ?? username} />
             {!isMobile && (
                 <>
                     {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
