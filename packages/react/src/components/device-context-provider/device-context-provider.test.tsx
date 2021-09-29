@@ -32,7 +32,7 @@ function getContextObject(
 }
 
 function setScreenWidth(width: number): void {
-    Object.defineProperty(window, 'outerWidth', { writable: true, configurable: true, value: width });
+    Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: width });
 }
 
 describe('Device Context Provider', () => {
