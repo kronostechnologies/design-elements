@@ -1,10 +1,12 @@
-import React, { ReactElement } from 'react';
+import React, { MouseEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { AbstractButton } from '../buttons/abstract-button';
+import { defaultButtonStyles } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const StyledLink = styled(AbstractButton).attrs({ as: 'a' })<{ href: string }>`
+const StyledLink = styled.a<{ isMobile: boolean }>`
+    ${defaultButtonStyles}
+
     color: ${({ theme }) => theme.main['primary-1.1']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     font-weight: var(--font-normal);
@@ -29,11 +31,23 @@ const StyledLink = styled(AbstractButton).attrs({ as: 'a' })<{ href: string }>`
 interface SkipLinkProps {
     className?: string;
     href: string;
+    onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
 
-export function SkipLink({ className, href }: SkipLinkProps): ReactElement {
+export const SkipLink: VoidFunctionComponent<SkipLinkProps> = ({
+    className, href, onClick,
+}) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('skip-link');
 
-    return <StyledLink className={className} href={href} isMobile={isMobile}>{t('label')}</StyledLink>;
-}
+    return (
+        <StyledLink
+            className={className}
+            href={href}
+            isMobile={isMobile}
+            onClick={onClick}
+        >
+            {t('label')}
+        </StyledLink>
+    );
+};

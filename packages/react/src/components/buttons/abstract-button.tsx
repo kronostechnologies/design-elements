@@ -1,12 +1,9 @@
-import React, { EventHandler, forwardRef, MouseEvent, Ref, useCallback } from 'react';
+import React, { ButtonHTMLAttributes, EventHandler, forwardRef, MouseEvent, Ref, useCallback } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
 
-type AbstractButtonProps = { isMobile: boolean }
-    & React.ButtonHTMLAttributes<HTMLButtonElement>;
-
-const StyledButton = styled.button<AbstractButtonProps>`
+export const defaultButtonStyles = css<{ isMobile: boolean }>`
     align-items: center;
     appearance: none;
     background: inherit;
@@ -37,6 +34,14 @@ const StyledButton = styled.button<AbstractButtonProps>`
     > svg {
         color: inherit;
     }
+`;
+
+interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    isMobile: boolean;
+}
+
+const StyledButton = styled.button<AbstractButtonProps>`
+    ${defaultButtonStyles}
 `;
 
 export const AbstractButton = forwardRef((

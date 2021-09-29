@@ -1,8 +1,18 @@
+import { shallow } from 'enzyme';
 import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { SkipLink } from './skip-link';
 
 describe('SkipLink', () => {
+    test('should call onClick callback when clicked', () => {
+        const callback = jest.fn();
+        const wrapper = shallow(<SkipLink href="test" onClick={callback} />);
+
+        wrapper.simulate('click');
+
+        expect(callback).toHaveBeenCalled();
+    });
+
     test('Matches Snapshot (Desktop)', () => {
         const tree = renderWithProviders(<SkipLink href="test" />, 'desktop');
 
