@@ -17,6 +17,7 @@ import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
 import Copy from 'feather-icons/dist/icons/copy.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
+import Eye from 'feather-icons/dist/icons/eye.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
@@ -61,6 +62,7 @@ const iconMapping = {
     edit: Edit,
     equisoft: Equisoft,
     externalLink: ExternalLink,
+    eye: Eye,
     files: Files,
     helpCircle: HelpCircle,
     home: Home,
