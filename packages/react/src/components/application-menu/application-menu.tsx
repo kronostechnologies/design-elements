@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { SkipLink } from '../skip-link/skip-link';
+import { SkipLink, SkipLinkProps } from '../skip-link/skip-link';
 import { Content } from './application-menu-content';
 import { Logo, LogoName } from './logo';
 
@@ -80,7 +80,7 @@ interface ApplicationMenuProps {
     logoHref?: string;
     /** What will be displayed inside the mobile drawer */
     mobileDrawerContent?: ReactNode;
-    skipLinkHref?: string;
+    skipLink?: SkipLinkProps,
     usesReactRouter?: boolean;
 }
 
@@ -91,7 +91,7 @@ export function ApplicationMenu({
     customLogo,
     logoHref = '/',
     mobileDrawerContent,
-    skipLinkHref,
+    skipLink,
     usesReactRouter = true,
 }: ApplicationMenuProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
@@ -99,8 +99,9 @@ export function ApplicationMenu({
 
     return (
         <Header className={className} device={device}>
-            {skipLinkHref && (
-                <StyledSkipLink data-testid="skip-link" href={skipLinkHref} />
+            {skipLink && (
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                <StyledSkipLink data-testid="skip-link" {...skipLink} />
             )}
 
             {usesReactRouter ? (

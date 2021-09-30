@@ -3,6 +3,7 @@ import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { ApplicationMenu } from './application-menu';
+import { SkipLinkProps } from '../skip-link/skip-link';
 
 describe('Application Menu', () => {
     it('Matches the snapshot (desktop)', () => {
@@ -37,16 +38,33 @@ describe('Application Menu', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('should have a SkipLink when skipLinkHref is provided', () => {
-        const wrapper = shallow(
-            <ApplicationMenu skipLinkHref="some href">
-                Hello, World!
-            </ApplicationMenu>,
-        );
+    describe('SkipLink', () => {
+        it('should not exist when skipLink is not defined', () => {
+            const wrapper = shallow(
+                <ApplicationMenu>
+                    Test
+                </ApplicationMenu>,
+            );
 
-        const skipLink = getByTestId(wrapper, 'skip-link');
+            expect(getByTestId(wrapper, 'skip-link').exists()).toBe(false);
+        });
 
-        expect(skipLink.exists()).toBe(true);
+        it('should receive props when skipLink is defined', () => {
+            const skipLink: SkipLinkProps = {
+                href: '#test',
+                onClick: jest.fn(),
+            };
+
+            const wrapper = shallow(
+                <ApplicationMenu skipLink={skipLink}>
+                    Test
+                </ApplicationMenu>,
+            );
+
+            const skipLinkRef = getByTestId(wrapper, 'skip-link');
+            expect(skipLinkRef.prop('href')).toBe(skipLink.href);
+            expect(skipLinkRef.prop('onClick')).toBe(skipLink.onClick);
+        });
     });
 
     describe('logo', () => {

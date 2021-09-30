@@ -28,7 +28,7 @@ const StyledLink = styled.a<{ isMobile: boolean }>`
     }
 `;
 
-interface SkipLinkProps {
+export interface SkipLinkProps {
     className?: string;
     href: string;
     onClick?(event: MouseEvent<HTMLAnchorElement>): void;
