@@ -50,13 +50,13 @@ export const WithMobileDrawer: Story = () => (
 WithMobileDrawer.decorators = [MobileDecorator];
 
 export const WithSkipLink: Story = () => (
-    <ApplicationMenu skipLinkHref="#">
+    <ApplicationMenu skipLink={{ href: '#' }}>
         <p>Hello world</p>
     </ApplicationMenu>
 );
 
 export const WithSkipLinkAndUserProfile: Story = () => (
-    <ApplicationMenu skipLinkHref="#">
+    <ApplicationMenu skipLink={{ href: '#' }}>
         <p>Hello world</p>
         <UserProfile
             username=""
