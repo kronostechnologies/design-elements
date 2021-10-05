@@ -8,7 +8,7 @@ exports[`Heading matches snapshot (large) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<ForwardRef
+<Heading
   type="large"
 >
   <styled.h2>
@@ -18,7 +18,7 @@ exports[`Heading matches snapshot (large) 1`] = `
       Heading
     </h2>
   </styled.h2>
-</ForwardRef>
+</Heading>
 `;
 
 exports[`Heading matches snapshot (medium) 1`] = `
@@ -29,7 +29,7 @@ exports[`Heading matches snapshot (medium) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<ForwardRef
+<Heading
   type="medium"
 >
   <styled.h3>
@@ -39,7 +39,7 @@ exports[`Heading matches snapshot (medium) 1`] = `
       Heading
     </h3>
   </styled.h3>
-</ForwardRef>
+</Heading>
 `;
 
 exports[`Heading matches snapshot (no margin) 1`] = `
@@ -50,7 +50,7 @@ exports[`Heading matches snapshot (no margin) 1`] = `
   margin: 0;
 }
 
-<ForwardRef
+<Heading
   noMargin={true}
   type="medium"
 >
@@ -63,7 +63,7 @@ exports[`Heading matches snapshot (no margin) 1`] = `
       Heading
     </h3>
   </styled.h3>
-</ForwardRef>
+</Heading>
 `;
 
 exports[`Heading matches snapshot (small) 1`] = `
@@ -74,7 +74,7 @@ exports[`Heading matches snapshot (small) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<ForwardRef
+<Heading
   type="small"
 >
   <styled.h4>
@@ -84,7 +84,7 @@ exports[`Heading matches snapshot (small) 1`] = `
       Heading
     </h4>
   </styled.h4>
-</ForwardRef>
+</Heading>
 `;
 
 exports[`Heading matches snapshot (subtitle) 1`] = `
@@ -96,7 +96,7 @@ exports[`Heading matches snapshot (subtitle) 1`] = `
   margin: var(--spacing-3x) 0;
 }
 
-<ForwardRef
+<Heading
   type="subtitle"
 >
   <styled.h2>
@@ -106,7 +106,7 @@ exports[`Heading matches snapshot (subtitle) 1`] = `
       Heading
     </h2>
   </styled.h2>
-</ForwardRef>
+</Heading>
 `;
 
 exports[`Heading matches snapshot (xlarge) 1`] = `
@@ -117,7 +117,7 @@ exports[`Heading matches snapshot (xlarge) 1`] = `
   margin: var(--spacing-4x) 0;
 }
 
-<ForwardRef
+<Heading
   type="xlarge"
 >
   <styled.h1>
@@ -127,5 +127,5 @@ exports[`Heading matches snapshot (xlarge) 1`] = `
       Heading
     </h1>
   </styled.h1>
-</ForwardRef>
+</Heading>
 `;
