@@ -65,6 +65,11 @@ const StyledNavMenu = styled(NavMenu)`
     width: initial;
 `;
 
+function getFirstFocusableElement(array: NavMenuOption[]): NavMenuOption {
+    const focusableElements = array.filter((element) => !element.disabled);
+    return focusableElements[0];
+}
+
 interface MenuButtonProps {
     /**
      * Sets nav's description
@@ -131,7 +136,9 @@ export function NavMenuButton({
 
     useEffect(() => {
         if (options.length > 0) {
-            setFocusedValue(isOpen ? options[0].value : '');
+            const firstFocusableElement = getFirstFocusableElement(options);
+
+            setFocusedValue(isOpen ? firstFocusableElement.value : '');
         }
         document.addEventListener('mouseup', handleClickOutside);
 

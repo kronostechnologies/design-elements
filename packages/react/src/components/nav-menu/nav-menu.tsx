@@ -27,10 +27,6 @@ const List = styled.ul`
     width: 100%;
 `;
 
-interface LinkProps {
-    $device: DeviceContextProps;
-}
-
 const Label = styled.span`
     overflow: hidden;
     text-overflow: ellipsis;
@@ -49,6 +45,11 @@ const EndIcon = styled(Icon).attrs({ size: iconSize })`
     margin-left: var(--spacing-1x);
     min-width: ${iconSize}px;
 `;
+
+interface LinkProps {
+    $device: DeviceContextProps;
+    disabled?: boolean;
+}
 
 const linkStyles = css<LinkProps>`
     align-items: center;
@@ -73,6 +74,11 @@ const linkStyles = css<LinkProps>`
             color: ${({ theme }) => theme.greys.black};
         }
     }
+
+    &[disabled] {
+        color: ${({ theme }) => theme.greys['mid-grey']};
+        pointer-events: none;
+    }
 `;
 
 export const ReactRouterNavLink = styled(NavLink)<LinkProps & NavLinkProps>`
@@ -84,6 +90,7 @@ export const HtmlLink = styled.a<LinkProps>`
 `;
 
 export interface NavMenuOption {
+    disabled?: boolean;
     endIcon?: IconName;
     exact?: boolean;
     href: string;
@@ -190,8 +197,9 @@ export const NavMenu = forwardRef(({
                                 data-testid={testId}
                                 ref={option.ref}
                                 $device={device}
-                                href={option.href}
-                                onClick={handleOnClick}
+                                href={option.disabled ? undefined : option.href}
+                                disabled={option.disabled}
+                                onClick={option.disabled ? undefined : handleOnClick}
                                 onKeyDown={(event) => handleKeyDown(event, option)}
                             >
                                 {label}
@@ -202,8 +210,10 @@ export const NavMenu = forwardRef(({
                                 exact={option.exact}
                                 innerRef={option.ref}
                                 $device={device}
+                                tabIndex={option.disabled ? -1 : 0}
                                 to={option.href}
-                                onClick={handleOnClick}
+                                disabled={option.disabled}
+                                onClick={option.disabled ? undefined : handleOnClick}
                                 onKeyDown={(event) => handleKeyDown(event, option)}
                             >
                                 {label}
