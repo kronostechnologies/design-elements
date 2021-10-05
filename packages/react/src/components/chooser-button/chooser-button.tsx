@@ -19,7 +19,7 @@ interface ChooserButtonProps {
     onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-const ChooserButton = React.forwardRef(
+export const ChooserButton = React.forwardRef(
     (
         {
             defaultChecked, checked, children, groupName, onChange, type, value,
@@ -50,4 +50,4 @@ const ChooserButton = React.forwardRef(
     },
 );
 
-export { ChooserButton };
+ChooserButton.displayName = 'ChooserButton';
