@@ -51,7 +51,7 @@ input[type="checkbox"]:focus + .c2,
 input[type="radio"]:focus + .c3 {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 input[type="checkbox"]:disabled + .c2,
@@ -176,7 +176,7 @@ input[type="checkbox"]:focus + .c2,
 input[type="radio"]:focus + .c3 {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 input[type="checkbox"]:disabled + .c2,

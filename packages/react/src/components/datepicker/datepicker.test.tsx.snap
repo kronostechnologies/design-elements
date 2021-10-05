@@ -93,12 +93,12 @@ input + .c1 {
   box-sizing: border-box;
   color: #000000;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -124,7 +124,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected[tabindex="0"] {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -186,25 +186,25 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -239,7 +239,7 @@ label + .c3 {
 .c6:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -382,7 +382,7 @@ input + .c1 {
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -408,7 +408,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -470,25 +470,25 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -523,7 +523,7 @@ label + .c3 {
 .c6:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -668,7 +668,7 @@ input + .c1 {
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -694,7 +694,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -772,7 +772,7 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -807,7 +807,7 @@ label + .c3 {
 .c6:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -984,7 +984,7 @@ input + .c1 {
 
 .c7 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7 .react-datepicker__day-name {
@@ -1010,7 +1010,7 @@ input + .c1 {
 }
 
 .c7 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7 .react-datepicker__day--selected:hover {
@@ -1072,25 +1072,25 @@ label + .c6 {
 
 .c8.datePickerInput:focus {
   border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c8.datePickerInput:focus {
   border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c8.datePickerInput:focus {
   border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c8.datePickerInput:focus {
   border: 1px solid #CD2C23;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -1125,7 +1125,7 @@ label + .c6 {
 .c9:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -1289,12 +1289,12 @@ input + .c1 {
   box-sizing: border-box;
   color: #000000;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -1320,7 +1320,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected[tabindex="0"] {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -1382,25 +1382,25 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -1435,7 +1435,7 @@ label + .c3 {
 .c6:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -1663,7 +1663,7 @@ input + .c1 {
 
 .c7:focus {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c8 {
@@ -1735,7 +1735,7 @@ input + .c1 {
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -1761,7 +1761,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -1823,25 +1823,25 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -1876,7 +1876,7 @@ label + .c3 {
 .c15:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -2568,7 +2568,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 .c16:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c16:not(:disabled) {
@@ -2592,7 +2592,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 .c17:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c17:hover {
@@ -2785,7 +2785,7 @@ input + .c1 {
 
 .c7:focus {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c8 {
@@ -2857,7 +2857,7 @@ input + .c1 {
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -2883,7 +2883,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected:focus {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -2945,25 +2945,25 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -3004,7 +3004,7 @@ label + .c3 {
 .c18:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }
@@ -3841,7 +3841,7 @@ input + .c1 {
 
 .c7:focus {
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c8 {
@@ -3910,12 +3910,12 @@ input + .c1 {
   box-sizing: border-box;
   color: #000000;
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day-name {
@@ -3941,7 +3941,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__day--selected[tabindex="0"] {
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4 .react-datepicker__day--selected:hover {
@@ -4003,25 +4003,25 @@ label + .c3 {
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
 .c5.datePickerInput:focus {
   border: 1px solid #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
@@ -4056,7 +4056,7 @@ label + .c3 {
 .c15:focus {
   border: 1px solid #006296;
   border-left: none;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
 }

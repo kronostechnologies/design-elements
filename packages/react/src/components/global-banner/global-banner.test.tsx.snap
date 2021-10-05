@@ -48,7 +48,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -72,7 +72,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -156,6 +156,10 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 .c8:hover {
   border-color: #f99d99;
   color: #f99d99;
+}
+
+.c8:focus {
+  background-color: #CD2C23;
 }
 
 .c5 {
@@ -268,7 +272,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -292,7 +296,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -323,7 +327,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -408,6 +412,14 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 .c8:hover {
   border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c8:focus {
+  background-color: #60666E;
+}
+
+.c10:focus {
+  background-color: #60666E;
 }
 
 .c10:hover {
@@ -531,7 +543,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -555,7 +567,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -586,7 +598,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -671,6 +683,14 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c8:hover {
   border-color: #cfc1e3;
   color: #cfc1e3;
+}
+
+.c8:focus {
+  background-color: #602FA0;
+}
+
+.c10:focus {
+  background-color: #602FA0;
 }
 
 .c10:hover {
@@ -794,7 +814,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -818,7 +838,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -849,7 +869,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -937,20 +957,36 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c8:focus {
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c8:hover {
-  border-color: #ffdd99;
-  color: #ffdd99;
+  border-color: #9e6900;
+  color: #9e6900;
+}
+
+.c8:focus {
+  background-color: #FFB302;
 }
 
 .c10 {
   color: #000000;
 }
 
+.c10:focus {
+  color: #000000;
+}
+
 .c10:hover {
-  background-color: #A36D00;
+  color: #FFFFFF;
+}
+
+.c10:focus {
+  background-color: #FFB302;
+}
+
+.c10:hover {
+  background-color: #9e6900;
 }
 
 .c5 {
@@ -1070,7 +1106,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -1094,7 +1130,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -1184,6 +1220,10 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 .c8:hover {
   border-color: #f99d99;
   color: #f99d99;
+}
+
+.c8:focus {
+  background-color: #CD2C23;
 }
 
 .c5 {
@@ -1296,7 +1336,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -1320,7 +1360,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -1351,7 +1391,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -1442,6 +1482,14 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 .c8:hover {
   border-color: #B7BBC2;
   color: #B7BBC2;
+}
+
+.c8:focus {
+  background-color: #60666E;
+}
+
+.c10:focus {
+  background-color: #60666E;
 }
 
 .c10:hover {
@@ -1565,7 +1613,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -1589,7 +1637,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -1620,7 +1668,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -1711,6 +1759,14 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c8:hover {
   border-color: #cfc1e3;
   color: #cfc1e3;
+}
+
+.c8:focus {
+  background-color: #602FA0;
+}
+
+.c10:focus {
+  background-color: #602FA0;
 }
 
 .c10:hover {
@@ -1834,7 +1890,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -1858,7 +1914,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -1889,7 +1945,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -1983,20 +2039,36 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c8:focus {
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c8:hover {
-  border-color: #ffdd99;
-  color: #ffdd99;
+  border-color: #9e6900;
+  color: #9e6900;
+}
+
+.c8:focus {
+  background-color: #FFB302;
 }
 
 .c10 {
   color: #000000;
 }
 
+.c10:focus {
+  color: #000000;
+}
+
 .c10:hover {
-  background-color: #A36D00;
+  color: #FFFFFF;
+}
+
+.c10:focus {
+  background-color: #FFB302;
+}
+
+.c10:hover {
+  background-color: #9e6900;
 }
 
 .c5 {

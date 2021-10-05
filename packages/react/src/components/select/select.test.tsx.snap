@@ -64,7 +64,7 @@ input + .c2 {
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -467,7 +467,7 @@ input + .c2 {
 }
 
 .c11:focus {
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -858,7 +858,7 @@ input[type="checkbox"]:focus + .c0,
 input[type="radio"]:focus + .c1 {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 input[type="checkbox"]:disabled + .c0,
@@ -954,7 +954,7 @@ input + .c2 {
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -1323,7 +1323,7 @@ input[type="checkbox"]:focus + .c0,
 input[type="radio"]:focus + .c1 {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 input[type="checkbox"]:disabled + .c0,
@@ -1398,7 +1398,7 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 .c6:focus {
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 

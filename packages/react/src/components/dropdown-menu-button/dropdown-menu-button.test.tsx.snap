@@ -48,7 +48,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 .c1:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:not(:disabled) {
@@ -80,8 +80,8 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c10:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c10:focus:not(:focus-visible) {
@@ -90,8 +90,8 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c10:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c13 {
@@ -129,7 +129,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c12:focus {
-  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 
@@ -202,7 +202,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c7:focus {
-  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 
@@ -449,7 +449,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c1:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:not(:disabled) {
@@ -481,8 +481,8 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 
 .c10:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c10:focus:not(:focus-visible) {
@@ -491,8 +491,8 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 
 .c10:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c13 {
@@ -530,7 +530,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c12:focus {
-  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 
@@ -603,7 +603,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c7:focus {
-  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 

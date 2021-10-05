@@ -48,7 +48,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 .c5:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c5:not(:disabled) {
@@ -74,7 +74,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 .c4:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4:hover {
@@ -335,7 +335,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
 .c5:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c5:not(:disabled) {
@@ -361,7 +361,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
 .c4:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4:hover {
@@ -622,7 +622,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 .c5:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c5:not(:disabled) {
@@ -648,7 +648,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 .c4:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4:hover {
@@ -909,7 +909,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 .c5:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c5:not(:disabled) {
@@ -935,7 +935,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 .c4:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c4:hover {

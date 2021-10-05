@@ -45,7 +45,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 .c2:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c2::-webkit-input-placeholder {
@@ -162,7 +162,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 .c2:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c2::-webkit-input-placeholder {
@@ -279,7 +279,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 .c2:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c2::-webkit-input-placeholder {
