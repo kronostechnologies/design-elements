@@ -8,6 +8,7 @@ module.exports = {
             { devDependencies: ['src/**/*.test.{ts,tsx}', 'src/test-utils/**/*', 'test/**/*'] },
         ],
         'linebreak-style': 'off',
+        'react/jsx-no-bind': 'off',
     },
     settings: {
         'import/resolver': {
