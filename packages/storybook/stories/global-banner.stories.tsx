@@ -39,6 +39,13 @@ export const GlobalBanners: Story = () => (
         >
             Info message.
         </GlobalBanner>
+        <br />
+        <GlobalBanner
+            actionButton={actionButton}
+            label="Default."
+        >
+            Default global banner.
+        </GlobalBanner>
     </>
 );
 

@@ -5,7 +5,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Button } from '../buttons/button';
 import { Icon, IconName } from '../icon/icon';
 
-export type MessageType = 'alert' | 'warning' | 'info';
+export type MessageType = 'alert' | 'warning' | 'info' | 'default';
 
 interface ContainerProps {
     messageType: MessageType;
@@ -20,6 +20,8 @@ function getContainerBackgroundColor({ messageType, theme }: StyledProps<Contain
             return theme.notifications['warning-3.3'];
         case 'info':
             return theme.notifications['info-1.1'];
+        case 'default':
+            return theme.greys['dark-grey'];
     }
 }
 
@@ -27,6 +29,7 @@ function getContainerColor({ messageType, theme }: StyledProps<ContainerProps>):
     switch (messageType) {
         case 'alert':
         case 'info':
+        case 'default':
             return theme.greys.white;
         case 'warning':
             return theme.greys.black;
@@ -87,7 +90,7 @@ interface ButtonProps {
     messageType: MessageType;
 }
 
-function getActionButtonHoverColor({ messageType }: StyledProps<ButtonProps>): string {
+function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
@@ -96,6 +99,8 @@ function getActionButtonHoverColor({ messageType }: StyledProps<ButtonProps>): s
             return '#ffdd99';
         case 'info':
             return '#cfc1e3';
+        case 'default':
+            return theme.greys['mid-grey'];
     }
 }
 
@@ -124,6 +129,8 @@ function getDismissButtonHoverBackgroundColor({ messageType, theme }: StyledProp
             return theme.notifications['warning-3.4'];
         case 'info':
             return '#3a1c60';
+        case 'default':
+            return '#878f9a';
     }
 }
 
@@ -158,6 +165,7 @@ const GetIconName = (messageType: MessageType): IconName => {
         case 'alert':
             return 'alertOctagon';
         case 'warning':
+        case 'default':
             return 'alertTriangle';
         case 'info':
             return 'info';
@@ -178,7 +186,7 @@ interface Props {
      */
     isDismissable?: boolean;
     label: string;
-    type: MessageType;
+    type?: MessageType;
 
 }
 
@@ -189,7 +197,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     hidden,
     isDismissable = true,
     label,
-    type,
+    type = 'default',
 }) => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);

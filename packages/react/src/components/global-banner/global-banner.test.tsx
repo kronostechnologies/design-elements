@@ -8,7 +8,7 @@ const defaultActionButton: ActionButton = {
     onClick: jest.fn(),
 };
 
-const messageTypesArray: MessageType[] = ['alert', 'warning', 'info'];
+const messageTypesArray: MessageType[] = ['alert', 'warning', 'info', 'default'];
 
 describe('GlobalBanner', () => {
     messageTypesArray.forEach((type) => {
@@ -44,7 +44,6 @@ describe('GlobalBanner', () => {
                     onClick: callback,
                 }}
                 label="Test"
-                type="warning"
             >
                 Test
             </GlobalBanner>,
@@ -60,7 +59,6 @@ describe('GlobalBanner', () => {
             <GlobalBanner
                 actionButton={defaultActionButton}
                 label="Test"
-                type="warning"
             >
                 WARNING! test test
             </GlobalBanner>,
@@ -88,7 +86,6 @@ describe('GlobalBanner', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
                 label="Test"
-                type="info"
                 isDismissable={false}
             >
                 Test content
@@ -104,7 +101,6 @@ describe('GlobalBanner', () => {
                 <GlobalBanner
                     actionButton={defaultActionButton}
                     label="Test"
-                    type="warning"
                     hidden
                 >
                     WARNING! test test
@@ -119,7 +115,6 @@ describe('GlobalBanner', () => {
                 <GlobalBanner
                     actionButton={defaultActionButton}
                     label="Test"
-                    type="warning"
                 >
                     WARNING! test test
                 </GlobalBanner>,
