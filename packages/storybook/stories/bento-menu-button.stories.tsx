@@ -36,6 +36,7 @@ const products: NavItemProps[] = [
         href: 'analyze',
         label: 'Equisoft/Analyze',
         description: 'Short app description',
+        disabled: true,
     },
     {
         value: 'google',
@@ -55,6 +56,7 @@ const resources: ExternalItemProps[] = [
     {
         href: 'https://www.moncomparateurfinancier.com/',
         label: 'Mon comparateur financier',
+        disabled: true,
     },
     {
         href: 'https://www.google.com/',

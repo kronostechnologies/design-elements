@@ -41,6 +41,7 @@ const options = [
         label: 'Option C',
         value: 'optionC',
         href: '/testc',
+        disabled: true,
     },
     {
         label: 'Google',

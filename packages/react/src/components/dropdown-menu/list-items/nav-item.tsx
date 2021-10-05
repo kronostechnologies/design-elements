@@ -14,12 +14,15 @@ export interface NavItemProps {
     lozenge?: string;
     exact?: boolean;
     isHtmlLink?: boolean;
-    onClick?(event: MouseEvent<HTMLLIElement>): void;
+    disabled?: boolean;
+    onClick?(event: MouseEvent): void;
 }
 
 interface LinkProps {
     $hasIcon?: boolean;
     $device: DeviceContextProps;
+    disabled?: boolean;
+    onClick?(event: MouseEvent): void;
 }
 
 const NavItemStyle = css<LinkProps>`
@@ -39,7 +42,15 @@ const NavItemStyle = css<LinkProps>`
     }
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ disabled, theme }) => (disabled ? 'transparent' : theme.greys.grey)};
+    }
+
+    &[disabled],
+    &[disabled] * {
+        color: ${({ theme }) => theme.greys['mid-grey']};
+        cursor: default;
+        fill: ${({ theme }) => theme.greys['mid-grey']};
+        pointer-events: none;
     }
 `;
 
@@ -58,19 +69,23 @@ export const NavItem = forwardRef(({
     exact,
     iconName,
     label,
+    disabled,
     onClick,
     isHtmlLink = false,
     lozenge,
 }: NavItemProps, ref: Ref<HTMLAnchorElement>): ReactElement => {
     const device = useDeviceContext();
     return (
-        <li onClick={onClick}>
+        <li>
             {isHtmlLink && (
                 <HtmlLink
+                    aria-disabled={disabled ? 'true' : 'false'}
                     ref={ref}
                     $hasIcon={!!iconName}
                     $device={device}
+                    disabled={disabled}
                     href={href}
+                    onClick={disabled ? undefined : onClick}
                 >
                     <ItemContent
                         device={device}
@@ -83,12 +98,16 @@ export const NavItem = forwardRef(({
             )}
             {!isHtmlLink && (
                 <StyledNavItem
+                    aria-disabled={disabled ? 'true' : 'false'}
+                    tabIndex={disabled ? -1 : 0}
                     ref={ref}
                     to={href}
                     $hasIcon={!!iconName}
                     $device={device}
                     data-testid={`listitem-${value}`}
+                    disabled={disabled}
                     exact={exact}
+                    onClick={disabled ? undefined : onClick}
                 >
                     <ItemContent
                         device={device}

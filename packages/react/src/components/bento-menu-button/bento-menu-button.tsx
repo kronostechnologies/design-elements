@@ -76,7 +76,8 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                                 description={product.description}
                                 isHtmlLink={product.isHtmlLink}
                                 lozenge={product.lozenge}
-                                onClick={close}
+                                disabled={product.disabled}
+                                onClick={product.disabled ? undefined : close}
                             />
                         ))}
                     </GroupItem>
@@ -87,6 +88,7 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                                 key={`external-${external.label}`}
                                 href={external.href}
                                 label={external.label}
+                                disabled={external.disabled}
                             />
                         ))}
                     </GroupItem>
