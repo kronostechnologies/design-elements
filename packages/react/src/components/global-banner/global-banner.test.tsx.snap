@@ -956,10 +956,6 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #000000;
 }
 
-.c8:focus {
-  color: #000000;
-}
-
 .c8:hover {
   border-color: #9e6900;
   color: #9e6900;
@@ -967,6 +963,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 .c8:focus {
   background-color: #FFB302;
+  color: #000000;
 }
 
 .c10 {
@@ -974,19 +971,13 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c10:focus {
+  background-color: #FFB302;
   color: #000000;
 }
 
 .c10:hover {
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  background-color: #FFB302;
-}
-
-.c10:hover {
   background-color: #9e6900;
+  color: #FFFFFF;
 }
 
 .c5 {
@@ -2038,10 +2029,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #000000;
 }
 
-.c8:focus {
-  color: #000000;
-}
-
 .c8:hover {
   border-color: #9e6900;
   color: #9e6900;
@@ -2049,6 +2036,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 .c8:focus {
   background-color: #FFB302;
+  color: #000000;
 }
 
 .c10 {
@@ -2056,19 +2044,13 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c10:focus {
+  background-color: #FFB302;
   color: #000000;
 }
 
 .c10:hover {
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  background-color: #FFB302;
-}
-
-.c10:hover {
   background-color: #9e6900;
+  color: #FFFFFF;
 }
 
 .c5 {

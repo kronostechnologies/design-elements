@@ -12,7 +12,7 @@ interface ContainerProps {
     isMobile: boolean;
 }
 
-function getContainerBackgroundColor({ messageType, theme }: StyledProps<ContainerProps>): string {
+function getContainerBackgroundColor({ messageType, theme }: StyledProps<{ messageType: MessageType }>): string {
     switch (messageType) {
         case 'alert':
             return theme.notifications['alert-2.1'];
@@ -96,7 +96,7 @@ function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonPro
         case 'alert':
             return '#f99d99';
         case 'warning':
-            return '#ffdd99';
+            return '#9e6900';
         case 'info':
             return '#cfc1e3';
         case 'default':
@@ -105,28 +105,29 @@ function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonPro
 }
 
 const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ messageType }) => messageType === 'warning' && css`
-        border-color: ${({ theme }) => theme.greys.black};
-        color: ${({ theme }) => theme.greys.black};
-
-        &:focus {
-            color: ${({ theme }) => theme.greys.white};
-        }
+    ${({ messageType, theme }) => messageType === 'warning' && css`
+        border-color: ${theme.greys.black};
+        color: ${theme.greys.black};
     `}
 
     &:hover {
         border-color: ${getActionButtonHoverColor};
         color: ${getActionButtonHoverColor};
     }
+
+    &:focus {
+        background-color: ${getContainerBackgroundColor};
+        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+    }
 `;
 
-function getDismissButtonHoverBackgroundColor({ messageType, theme }: StyledProps<ButtonProps>): string {
+function getDismissButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
             return '#7b1a15';
         case 'warning':
-            return theme.notifications['warning-3.4'];
+            return '#9e6900';
         case 'info':
             return '#3a1c60';
         case 'default':
@@ -135,12 +136,16 @@ function getDismissButtonHoverBackgroundColor({ messageType, theme }: StyledProp
 }
 
 const DismissButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
-    ${({ messageType }) => messageType === 'warning' && css`
-        color: ${({ theme }) => theme.greys.black};
-    `}
+    ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+
+    &:focus {
+        background-color: ${getContainerBackgroundColor};
+        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+    }
 
     &:hover {
         background-color: ${getDismissButtonHoverBackgroundColor};
+        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.white};`}
     }
 `;
 
