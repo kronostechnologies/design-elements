@@ -1,12 +1,13 @@
-import React, { ReactElement } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { ReactElement, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Avatar } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { NavMenuButton } from '../nav-menu-button/nav-menu-button';
-import { NavMenuOption } from '../nav-menu/nav-menu';
+import { DropdownMenuButton } from '../dropdown-menu-button/dropdown-menu-button';
+import { GroupItem, LabelItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
 
-const StyledNavMenuButton = styled(NavMenuButton)<{ isMobile: boolean }>`
+const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean }>`
     button {
         ${({ isMobile }) => isMobile && css`
             height: fit-content;
@@ -17,12 +18,6 @@ const StyledNavMenuButton = styled(NavMenuButton)<{ isMobile: boolean }>`
 
 const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
     margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
-`;
-
-const Prefix = styled.span`
-    color: ${({ theme }) => theme.greys['mid-grey']};
-    font-size: 0.875rem;
-    margin-right: var(--spacing-1x);
 `;
 
 interface UserProfileProps {
@@ -38,11 +33,10 @@ interface UserProfileProps {
      * */
     defaultOpen?: boolean;
     id?: string;
+    options: NavItemProps[];
     username: string;
-    usernamePrefix?: string;
-    options: NavMenuOption[];
+    userEmail?: string;
     onMenuVisibilityChanged?(isOpen: boolean): void;
-    onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
 export function UserProfile({
@@ -52,33 +46,47 @@ export function UserProfile({
     id,
     options,
     username,
-    usernamePrefix,
-    onMenuOptionSelected,
+    userEmail,
     onMenuVisibilityChanged,
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
-
+    const firstItemRef = useRef<HTMLAnchorElement>(null);
     return (
-        <StyledNavMenuButton
+        <StyledDropdownMenuButton
             ariaLabel={ariaLabel || t('ariaLabel')}
             className={className}
             data-testid="user-profile"
             defaultOpen={defaultOpen}
             hasCaret={!isMobile}
             id={id}
+            icon={<StyledAvatar isMobile={isMobile} username={username} />}
             isMobile={isMobile}
-            options={options}
-            onMenuOptionSelected={onMenuOptionSelected}
+            {...(isMobile ? {} : {
+                label: username,
+            })}
             onMenuVisibilityChanged={onMenuVisibilityChanged}
-        >
-            <StyledAvatar isMobile={isMobile} username={username} />
-            {!isMobile && (
+            firstItemRef={firstItemRef}
+            render={(close) => (
                 <>
-                    {usernamePrefix && <Prefix data-testid="username-prefix">{usernamePrefix}</Prefix>}
-                    {username}
+                    <GroupItem id="user-label">
+                        <LabelItem label={username} description={userEmail} />
+                    </GroupItem>
+                    <GroupItem id="user-actions">
+                        {options.map((action, idx) => (
+                            <NavItem
+                                ref={idx === 0 ? firstItemRef : undefined}
+                                key={action.value}
+                                value={action.value}
+                                href={action.href}
+                                label={action.label}
+                                isHtmlLink={action.isHtmlLink}
+                                onClick={close}
+                            />
+                        ))}
+                    </GroupItem>
                 </>
             )}
-        </StyledNavMenuButton>
+        />
     );
 }

@@ -1,0 +1,804 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c1:not(:disabled) {
+  cursor: pointer;
+}
+
+.c1 > svg {
+  color: inherit;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10:focus {
+  outline: none;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c10:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c13 {
+  margin-left: var(--spacing-half);
+  margin-right: 0;
+}
+
+.c11 {
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c11:hover {
+  color: #003A5A;
+}
+
+.c11:visited {
+  color: #62a;
+}
+
+.c11:visited svg {
+  color: #62a;
+}
+
+.c12 {
+  color: #000000;
+  display: block;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: 0 var(--spacing-2x) 0 var(--spacing-3x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c12:focus {
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  outline: none;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c6 {
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.c6:not(:last-child)::after {
+  border-bottom: 1px solid #DBDEE1;
+  content: "";
+  display: block;
+  margin: 0 var(--spacing-2x);
+}
+
+.c9 {
+  line-height: 1.5rem;
+  margin: auto 0;
+  margin-right: var(--spacing-1x);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  padding-left: var(--spacing-half);
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c7:focus {
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  outline: none;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c2 {
+  background-color: #004E78;
+  border-color: #004E78;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  padding: 0 var(--spacing-half);
+  text-transform: unset;
+}
+
+.c2:hover {
+  background-color: #004E78;
+  border-color: #004E78;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c5 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
+<nav
+  aria-label="Menu"
+  class="c0"
+>
+  <button
+    aria-expanded="true"
+    class="c1 c2"
+    data-testid="menu-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c3"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </button>
+  <div
+    class="c4 c5"
+    data-testid="menu-list"
+  >
+    <ul
+      aria-labelledby="firstGroup"
+      class="c6"
+      role="group"
+    >
+      <li>
+        <a
+          class="c7"
+          data-testid="listitem-optionA"
+          href="/testA"
+        >
+          <span
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              optionA
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="c7"
+          data-testid="listitem-optionB"
+          href="/testB"
+        >
+          <span
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              optionB
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="c7"
+          data-testid="listitem-optionC"
+          href="/testC"
+        >
+          <span
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              optionC
+            </span>
+          </span>
+        </a>
+      </li>
+    </ul>
+    <ul
+      aria-labelledby="secondGroup"
+      class="c6"
+      role="group"
+    >
+      <li>
+        <a
+          aria-disabled="false"
+          class="c10 c11 c12"
+          href="https://external-link.com/a"
+          target="_blank"
+          type="external"
+        >
+          ExternalA
+          <svg
+            aria-label="open in new window"
+            class="c13"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            role="img"
+            width="16"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c10 c11 c12"
+          href="https://external-link.com/b"
+          target="_blank"
+          type="external"
+        >
+          ExternalB
+          <svg
+            aria-label="open in new window"
+            class="c13"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            role="img"
+            width="16"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c10 c11 c12"
+          href="https://external-link.com/c"
+          target="_blank"
+          type="external"
+        >
+          ExternalC
+          <svg
+            aria-label="open in new window"
+            class="c13"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            role="img"
+            width="16"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`DropdownMenuButton Matches Snapshot 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #00629666;
+}
+
+.c1:not(:disabled) {
+  cursor: pointer;
+}
+
+.c1 > svg {
+  color: inherit;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10:focus {
+  outline: none;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c10:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+}
+
+.c13 {
+  margin-left: var(--spacing-half);
+  margin-right: 0;
+}
+
+.c11 {
+  color: #006296;
+  font-size: 0.875rem;
+}
+
+.c11:hover {
+  color: #003A5A;
+}
+
+.c11:visited {
+  color: #62a;
+}
+
+.c11:visited svg {
+  color: #62a;
+}
+
+.c12 {
+  color: #000000;
+  display: block;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: 0 var(--spacing-2x) 0 var(--spacing-3x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c12:focus {
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  outline: none;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c6 {
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.c6:not(:last-child)::after {
+  border-bottom: 1px solid #DBDEE1;
+  content: "";
+  display: block;
+  margin: 0 var(--spacing-2x);
+}
+
+.c9 {
+  line-height: 1.5rem;
+  margin: auto 0;
+  margin-right: var(--spacing-1x);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  padding-left: var(--spacing-half);
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c7:focus {
+  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  outline: none;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  padding: 0 var(--spacing-half);
+  text-transform: unset;
+}
+
+.c2:hover {
+  background-color: #004E78;
+  border-color: #004E78;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
+}
+
+.c5 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
+<nav
+  aria-label="Menu"
+  class="c0"
+>
+  <button
+    aria-expanded="false"
+    class="c1 c2"
+    data-testid="menu-button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c3"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </button>
+  <div
+    class="c4 c5"
+    data-testid="menu-list"
+    hidden=""
+  >
+    <ul
+      aria-labelledby="firstGroup"
+      class="c6"
+      role="group"
+    >
+      <li>
+        <a
+          class="c7"
+          data-testid="listitem-optionA"
+          href="/testA"
+        >
+          <span
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              optionA
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="c7"
+          data-testid="listitem-optionB"
+          href="/testB"
+        >
+          <span
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              optionB
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="c7"
+          data-testid="listitem-optionC"
+          href="/testC"
+        >
+          <span
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              optionC
+            </span>
+          </span>
+        </a>
+      </li>
+    </ul>
+    <ul
+      aria-labelledby="secondGroup"
+      class="c6"
+      role="group"
+    >
+      <li>
+        <a
+          aria-disabled="false"
+          class="c10 c11 c12"
+          href="https://external-link.com/a"
+          target="_blank"
+          type="external"
+        >
+          ExternalA
+          <svg
+            aria-label="open in new window"
+            class="c13"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            role="img"
+            width="16"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c10 c11 c12"
+          href="https://external-link.com/b"
+          target="_blank"
+          type="external"
+        >
+          ExternalB
+          <svg
+            aria-label="open in new window"
+            class="c13"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            role="img"
+            width="16"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          aria-disabled="false"
+          class="c10 c11 c12"
+          href="https://external-link.com/c"
+          target="_blank"
+          type="external"
+        >
+          ExternalC
+          <svg
+            aria-label="open in new window"
+            class="c13"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            role="img"
+            width="16"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;

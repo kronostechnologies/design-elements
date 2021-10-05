@@ -59,7 +59,7 @@ export const WithSkipLinkAndUserProfile: Story = () => (
     <ApplicationMenu skipLink={{ href: '#' }}>
         <p>Hello world</p>
         <UserProfile
-            username=""
+            username="Mon user"
             options={[{
                 value: 'Something',
                 href: '#',

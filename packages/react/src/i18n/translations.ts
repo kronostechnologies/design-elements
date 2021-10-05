@@ -3,6 +3,10 @@ export const Translations = {
         avatar: {
             ariaLabel: '{{username}} avatar',
         },
+        bento: {
+            productsLabel: 'Products',
+            externalsLabel: 'Resources',
+        },
         datepicker: {
             calendarButtonLabel: 'Choose date',
             calendarButtonSelectedLabel: 'Choose date. The selected date is',
@@ -80,6 +84,10 @@ export const Translations = {
     fr: {
         avatar: {
             ariaLabel: 'Avatar de {{username}}',
+        },
+        bento: {
+            productsLabel: 'Produits',
+            externalsLabel: 'Ressources',
         },
         datepicker: {
             calendarButtonLabel: 'Choisissez une date',

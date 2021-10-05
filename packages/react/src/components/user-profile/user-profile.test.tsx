@@ -1,12 +1,12 @@
-import { shallow } from 'enzyme';
 import React from 'react';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { UserProfile } from './user-profile';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { NavItemProps } from '../dropdown-menu/list-items';
 
 jest.mock('../../utils/uuid');
 
-const options = [
+const options: NavItemProps[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -32,24 +32,9 @@ const options = [
 describe('UserProfile', () => {
     test('should contain username', () => {
         const username = 'John Doe';
-        const wrapper = shallow(<UserProfile username={username} options={options} />);
+        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
 
-        expect(getByTestId(wrapper, 'user-profile').text()).toBe(username);
-    });
-
-    test('should have prefix when usernamePrefix is defined', () => {
-        const wrapper = shallow(<UserProfile username="Test" usernamePrefix="prefix" options={options} />);
-
-        expect(getByTestId(wrapper, 'username-prefix').exists()).toBe(true);
-    });
-
-    test('should not have prefix when usernamePrefix is defined given device is mobile', () => {
-        const wrapper = mountWithProviders(
-            <UserProfile username="Test" usernamePrefix="prefix" options={options} />,
-            { wrappingComponentProps: { staticDevice: 'mobile' } },
-        );
-
-        expect(getByTestId(wrapper, 'username-prefix').exists()).toBe(false);
+        expect(getByTestId(wrapper, 'menu-button').contains(username)).toBe(true);
     });
 
     test('Matches Snapshot (desktop)', () => {
@@ -66,18 +51,6 @@ describe('UserProfile', () => {
 
     test('Matches Snapshot (defaultOpen)', () => {
         const tree = renderWithProviders(<UserProfile defaultOpen username="Test Button" options={options} />);
-
-        expect(tree).toMatchSnapshot();
-    });
-
-    test('Matches Snapshot (with username prefix)', () => {
-        const tree = renderWithProviders(
-            <UserProfile
-                usernamePrefix="prefix"
-                username="Test Button"
-                options={options}
-            />,
-        );
 
         expect(tree).toMatchSnapshot();
     });

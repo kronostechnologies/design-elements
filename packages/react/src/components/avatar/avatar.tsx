@@ -8,7 +8,7 @@ import { Icon } from '../icon/icon';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'
 
-interface AvatarProps {
+export interface AvatarProps {
     className?: string;
     username?: string;
     bgColor?: string;

@@ -4,10 +4,8 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 
 const MAXIMUM_LENGTH = '312px';
 
-const StyledLozenge = styled.div<{ isMobile: boolean }>`
+const StyledLozenge = styled.span<{ isMobile: boolean }>`
     align-items: center;
-
-    /* TODO change colors when updating thematization */
     background-color: ${({ theme }) => theme.greys['light-grey']};
     border: 1px solid #878f9a;
     border-radius: ${({ isMobile }) => (isMobile ? 'var(--border-radius)' : 'var(--border-radius-half)')};
@@ -17,8 +15,9 @@ const StyledLozenge = styled.div<{ isMobile: boolean }>`
     line-height: ${({ isMobile }) => (isMobile ? '1.375rem' : '0.875rem')};
     max-width: ${MAXIMUM_LENGTH};
     overflow: hidden;
-    padding: 0 var(--spacing-1x);
+    padding: 0 var(--spacing-half);
     text-overflow: ellipsis;
+    text-transform: uppercase;
     white-space: nowrap;
 `;
 
