@@ -25,7 +25,7 @@ const StyledIcon = styled(Icon)`
 `;
 
 const StyledSpan = styled.span`
-    line-height: 1.5rem;
+    line-height: 1.25rem;
     margin: auto 0;
     margin-right: var(--spacing-1x);
     overflow: hidden;

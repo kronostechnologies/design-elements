@@ -122,13 +122,23 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
-.c20 {
+.c21 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-left: var(--spacing-half);
   margin-right: 0;
 }
 
 .c17 {
   color: #006296;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
 }
 
@@ -144,9 +154,18 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   color: #62a;
 }
 
+.c20 {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .c19 {
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x) 0 var(--spacing-3x);
@@ -213,7 +232,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 }
 
 .c15 {
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
   overflow: hidden;
@@ -330,8 +349,8 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 
 .c1 .c6 .c9 {
   margin: 0;
+  margin-bottom: var(--spacing-1x);
   padding: 0 var(--spacing-4x);
-  padding-bottom: calc(var(--spacing-1x) + var(--spacing-half));
 }
 
 .c1 .c6 ul:not(:last-child)::after,
@@ -374,7 +393,6 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
     <ul
       aria-labelledby="product-links"
       class="c11"
-      role="group"
     >
       <li>
         <a
@@ -494,7 +512,6 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
     <ul
       aria-labelledby="external-links"
       class="c11"
-      role="group"
     >
       <li>
         <a
@@ -504,10 +521,14 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
           target="_blank"
           type="external"
         >
-          Option A
+          <span
+            class="c20"
+          >
+            Option A
+          </span>
           <svg
             aria-label="open in new window"
-            class="c20"
+            class="c21"
             color="currentColor"
             focusable="false"
             height="16"

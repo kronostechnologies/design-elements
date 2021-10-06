@@ -73,7 +73,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c11 {
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
   overflow: hidden;
@@ -285,28 +285,24 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
     <ul
       aria-labelledby="user-label"
       class="c8"
-      role="group"
     >
-      <li>
-        <label
-          class="c9"
+      <li
+        class="c9"
+      >
+        <span
+          class="c10"
         >
           <span
-            class="c10"
+            class="c11"
           >
-            <span
-              class="c11"
-            >
-              Test Button
-            </span>
+            Test Button
           </span>
-        </label>
+        </span>
       </li>
     </ul>
     <ul
       aria-labelledby="user-actions"
       class="c8"
-      role="group"
     >
       <li>
         <a
@@ -462,7 +458,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 }
 
 .c11 {
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
   overflow: hidden;
@@ -675,28 +671,24 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
     <ul
       aria-labelledby="user-label"
       class="c8"
-      role="group"
     >
-      <li>
-        <label
-          class="c9"
+      <li
+        class="c9"
+      >
+        <span
+          class="c10"
         >
           <span
-            class="c10"
+            class="c11"
           >
-            <span
-              class="c11"
-            >
-              Test Button
-            </span>
+            Test Button
           </span>
-        </label>
+        </span>
       </li>
     </ul>
     <ul
       aria-labelledby="user-actions"
       class="c8"
-      role="group"
     >
       <li>
         <a
@@ -880,7 +872,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 }
 
 .c12 {
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
   overflow: hidden;
@@ -1083,28 +1075,24 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
     <ul
       aria-labelledby="user-label"
       class="c9"
-      role="group"
     >
-      <li>
-        <label
-          class="c10"
+      <li
+        class="c10"
+      >
+        <span
+          class="c11"
         >
           <span
-            class="c11"
+            class="c12"
           >
-            <span
-              class="c12"
-            >
-              Test Button
-            </span>
+            Test Button
           </span>
-        </label>
+        </span>
       </li>
     </ul>
     <ul
       aria-labelledby="user-actions"
       class="c9"
-      role="group"
     >
       <li>
         <a
