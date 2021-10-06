@@ -59,6 +59,21 @@ export const WithActionButton: Story = () => (
     </GlobalBanner>
 );
 
+export const WithSecondaryActionButton: Story = () => (
+    <GlobalBanner
+        actionButton={actionButton}
+        secondaryActionButton={{
+            label: 'Secondary action',
+            onClick: () => console.info('clicked secondary action button'),
+        }}
+        isDismissable={false}
+        label="With action button."
+        type="warning"
+    >
+        Press action button or click ignore button to dismiss.
+    </GlobalBanner>
+);
+
 export const WithoutDismissButton: Story = () => (
     <GlobalBanner
         label="Without dismiss button."

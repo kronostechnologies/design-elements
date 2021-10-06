@@ -54,6 +54,25 @@ describe('GlobalBanner', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
+    test('should call secondary-action-button onClick callback when secondary-action-button is clicked', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <GlobalBanner
+                secondaryActionButton={{
+                    label: 'Test button',
+                    onClick: callback,
+                }}
+                label="Test"
+            >
+                Test
+            </GlobalBanner>,
+        );
+
+        getByTestId(wrapper, 'secondary-action-button').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
     test('ignore-button hides the banner', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner

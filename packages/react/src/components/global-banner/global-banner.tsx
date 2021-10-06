@@ -121,7 +121,7 @@ const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: t
     }
 `;
 
-function getDismissButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
+function getTertiaryButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
@@ -135,7 +135,7 @@ function getDismissButtonHoverBackgroundColor({ messageType }: StyledProps<Butto
     }
 }
 
-const DismissButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
+const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
     ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
 
     &:focus {
@@ -144,7 +144,7 @@ const DismissButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: t
     }
 
     &:hover {
-        background-color: ${getDismissButtonHoverBackgroundColor};
+        background-color: ${getTertiaryButtonHoverBackgroundColor};
         ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.white};`}
     }
 `;
@@ -184,6 +184,7 @@ export interface ActionButton {
 
 interface Props {
     actionButton?: ActionButton;
+    secondaryActionButton?: ActionButton;
     className?: string;
     hidden?: boolean;
     /**
@@ -202,13 +203,14 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     hidden,
     isDismissable = true,
     label,
+    secondaryActionButton,
     type = 'default',
 }) => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
     const hasDismissButton = type !== 'alert' && isDismissable;
-    const hasButtons = hasDismissButton || actionButton;
+    const hasButtons = hasDismissButton || actionButton || secondaryActionButton;
 
     return visible ? (
         <Container
@@ -246,15 +248,25 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                             {actionButton.label}
                         </ActionButton>
                     )}
+                    {secondaryActionButton && (
+                        <TertiaryButton
+                            data-testid="secondary-action-button"
+                            messageType={type}
+                            onClick={secondaryActionButton.onClick}
+                            type="button"
+                        >
+                            {secondaryActionButton.label}
+                        </TertiaryButton>
+                    )}
                     {hasDismissButton && (
-                        <DismissButton
+                        <TertiaryButton
                             data-testid="dismiss-button"
                             messageType={type}
                             onClick={() => setVisible(false)}
                             type="button"
                         >
                             {t('ignore')}
-                        </DismissButton>
+                        </TertiaryButton>
                     )}
                 </ButtonContainer>
             )}
