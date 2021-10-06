@@ -13,7 +13,8 @@ module.exports = {
         },
     ],
     rules: {
-      'linebreak-style': 'off',
+        'linebreak-style': 'off',
+        'react/jsx-no-bind': 'off',
     },
     settings: {
         'import/resolver': {

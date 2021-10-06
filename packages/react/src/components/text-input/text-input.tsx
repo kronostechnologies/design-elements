@@ -3,8 +3,8 @@ import React, {
     DetailedHTMLProps,
     FocusEvent,
     forwardRef,
-    KeyboardEvent,
     InputHTMLAttributes,
+    KeyboardEvent,
     MouseEvent,
     ReactElement,
     Ref,
@@ -13,6 +13,7 @@ import React, {
     useState,
 } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -77,11 +78,13 @@ export const TextInput = forwardRef(({
     onKeyUp,
     onKeyDown,
     onMouseUp,
+    ...otherProps
 }: TextInputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: true });
     const id = useMemo(() => providedId || uuid(), [providedId]);
+    const dataAttributes = useDataAttributes(otherProps);
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         setValidity({ validity: event.currentTarget.checkValidity() });
@@ -134,6 +137,7 @@ export const TextInput = forwardRef(({
                 required={required}
                 type={type || 'text'}
                 value={value}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </FieldContainer>
     );

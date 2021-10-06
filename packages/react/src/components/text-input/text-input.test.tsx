@@ -1,7 +1,8 @@
-import { mount, ReactWrapper } from 'enzyme';
+import { mount, ReactWrapper, shallow } from 'enzyme';
 import React, { ChangeEventHandler } from 'react';
 import renderer from 'react-test-renderer';
 import { doNothing } from '../../test-utils/callbacks';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { TextInput } from './text-input';
@@ -31,6 +32,16 @@ describe('TextInput', () => {
             />,
         );
     }
+
+    test('can override data-testid on input', () => {
+        const aCustomTestId = 'my-test-id';
+        const aValue = 'a value';
+        const wrapper = shallow(<TextInput label="test" name="test" value={aValue} data-testid={aCustomTestId} />);
+
+        const inputWrapper = getByTestId(wrapper, aCustomTestId);
+
+        expect(inputWrapper.prop('value')).toBe(aValue);
+    });
 
     test('input has name property when name prop is set on TextInput', () => {
         const wrapper = mountWithTheme(<TextInput label="test" name="test" />);
