@@ -40,7 +40,6 @@ export const GroupItem: VoidFunctionComponent<GroupItemProps> = ({
         <StyledGroup
             aria-labelledby={id}
             as={ordered ? 'ol' : 'ul'}
-            role="group"
         >
             {children}
         </StyledGroup>

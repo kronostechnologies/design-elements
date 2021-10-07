@@ -14,7 +14,7 @@ interface LabelContainerStyledProps {
     $device: DeviceContextProps;
 }
 
-export const StyledLabelItem = styled.label<LabelContainerStyledProps>`
+export const StyledListItem = styled.li<LabelContainerStyledProps>`
     color: ${({ theme }) => theme.greys.black};
     display: block;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
@@ -32,16 +32,14 @@ export const LabelItem = ({
 }: LabelItemProps): ReactElement => {
     const device = useDeviceContext();
     return (
-        <li>
-            <StyledLabelItem $device={device}>
-                <ItemContent
-                    device={device}
-                    label={label}
-                    description={description}
-                    iconName={iconName}
-                    smallLabel
-                />
-            </StyledLabelItem>
-        </li>
+        <StyledListItem $device={device}>
+            <ItemContent
+                device={device}
+                label={label}
+                description={description}
+                iconName={iconName}
+                smallLabel
+            />
+        </StyledListItem>
     );
 };

@@ -36,13 +36,23 @@ exports[`DropdownMenu Is hidden 1`] = `
   box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
-.c8 {
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-left: var(--spacing-half);
   margin-right: 0;
 }
 
 .c6 {
   color: #006296;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
 }
 
@@ -58,9 +68,18 @@ exports[`DropdownMenu Is hidden 1`] = `
   color: #62a;
 }
 
+.c8 {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .c7 {
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x) 0 var(--spacing-3x);
@@ -99,7 +118,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c4 {
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
   overflow: hidden;
@@ -185,7 +204,6 @@ exports[`DropdownMenu Is hidden 1`] = `
   <ul
     aria-labelledby="firstGroup"
     class="c1"
-    role="group"
   >
     <li>
       <a
@@ -248,7 +266,6 @@ exports[`DropdownMenu Is hidden 1`] = `
   <ul
     aria-labelledby="secondGroup"
     class="c1"
-    role="group"
   >
     <li>
       <a
@@ -258,10 +275,14 @@ exports[`DropdownMenu Is hidden 1`] = `
         target="_blank"
         type="external"
       >
-        ExternalA
+        <span
+          class="c8"
+        >
+          ExternalA
+        </span>
         <svg
           aria-label="open in new window"
-          class="c8"
+          class="c9"
           color="currentColor"
           focusable="false"
           height="16"
@@ -278,10 +299,14 @@ exports[`DropdownMenu Is hidden 1`] = `
         target="_blank"
         type="external"
       >
-        ExternalB
+        <span
+          class="c8"
+        >
+          ExternalB
+        </span>
         <svg
           aria-label="open in new window"
-          class="c8"
+          class="c9"
           color="currentColor"
           focusable="false"
           height="16"
@@ -298,10 +323,14 @@ exports[`DropdownMenu Is hidden 1`] = `
         target="_blank"
         type="external"
       >
-        ExternalC
+        <span
+          class="c8"
+        >
+          ExternalC
+        </span>
         <svg
           aria-label="open in new window"
-          class="c8"
+          class="c9"
           color="currentColor"
           focusable="false"
           height="16"
@@ -350,13 +379,23 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
-.c8 {
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   margin-left: var(--spacing-half);
   margin-right: 0;
 }
 
 .c6 {
   color: #006296;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
 }
 
@@ -372,9 +411,18 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   color: #62a;
 }
 
+.c8 {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .c7 {
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 2rem;
   overflow: hidden;
   padding: 0 var(--spacing-2x) 0 var(--spacing-3x);
@@ -413,7 +461,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c4 {
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
   overflow: hidden;
@@ -498,7 +546,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   <ul
     aria-labelledby="firstGroup"
     class="c1"
-    role="group"
   >
     <li>
       <a
@@ -561,7 +608,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   <ul
     aria-labelledby="secondGroup"
     class="c1"
-    role="group"
   >
     <li>
       <a
@@ -571,10 +617,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         target="_blank"
         type="external"
       >
-        ExternalA
+        <span
+          class="c8"
+        >
+          ExternalA
+        </span>
         <svg
           aria-label="open in new window"
-          class="c8"
+          class="c9"
           color="currentColor"
           focusable="false"
           height="16"
@@ -591,10 +641,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         target="_blank"
         type="external"
       >
-        ExternalB
+        <span
+          class="c8"
+        >
+          ExternalB
+        </span>
         <svg
           aria-label="open in new window"
-          class="c8"
+          class="c9"
           color="currentColor"
           focusable="false"
           height="16"
@@ -611,10 +665,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         target="_blank"
         type="external"
       >
-        ExternalC
+        <span
+          class="c8"
+        >
+          ExternalC
+        </span>
         <svg
           aria-label="open in new window"
-          class="c8"
+          class="c9"
           color="currentColor"
           focusable="false"
           height="16"

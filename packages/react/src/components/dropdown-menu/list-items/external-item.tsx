@@ -16,7 +16,7 @@ interface ExternalItemsStyledProps extends ExternalItemProps {
 
 export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>`
     color: ${({ theme }) => theme.greys.black};
-    display: block;
+    display: flex;
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
     padding: 0 var(--spacing-2x) 0 var(--spacing-3x);

@@ -10,12 +10,15 @@ const LeftIcon = styled(Icon)`
 `;
 
 const ExternalIcon = styled(Icon)`
+    align-self: center;
+    flex-shrink: 0;
     margin-left: var(--spacing-half);
     margin-right: 0;
 `;
 
 const Link = styled(StyledLink)<{isMobile: boolean}>`
     color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
+    display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
 
     &:hover {
@@ -29,6 +32,12 @@ const Link = styled(StyledLink)<{isMobile: boolean}>`
             color: #62a; /* TODO change colors when updating thematization */
         }
     }
+`;
+
+const StyledLabel = styled.span`
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export interface ExternalLinkProps {
@@ -66,7 +75,7 @@ export function ExternalLink({
             type="external"
         >
             {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
-            {label}
+            <StyledLabel>{label}</StyledLabel>
             <ExternalIcon aria-label="open in new window" name="externalLink" role="img" size="16" />
         </Link>
     );

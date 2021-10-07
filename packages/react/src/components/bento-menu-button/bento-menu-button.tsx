@@ -32,8 +32,8 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
 
         ${StyledHeading} {
             margin: 0;
+            margin-bottom: var(--spacing-1x);
             padding: 0 var(--spacing-4x);
-            padding-bottom: calc(var(--spacing-1x) + var(--spacing-half));
         }
 
         ul:not(:last-child)::after,
