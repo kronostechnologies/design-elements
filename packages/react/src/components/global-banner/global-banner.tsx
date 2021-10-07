@@ -64,6 +64,7 @@ const Container = styled.section<ContainerProps>`
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
     padding: ${getContainerPadding};
+    position: relative;
 `;
 
 const Content = styled.div<{ isMobile: boolean }>`
