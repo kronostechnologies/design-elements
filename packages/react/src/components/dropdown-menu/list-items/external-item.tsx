@@ -7,6 +7,7 @@ export interface ExternalItemProps extends ExternalLinkProps {
     label: string;
     href: string;
     disabled?: boolean;
+    target?: string;
     onClick?(): void;
 }
 
@@ -44,6 +45,7 @@ export const ExternalItem = ({
     href,
     label,
     disabled,
+    target,
     onClick,
 }: ExternalItemProps): ReactElement => {
     const device = useDeviceContext();
@@ -55,6 +57,7 @@ export const ExternalItem = ({
                 href={href}
                 label={label}
                 disabled={disabled}
+                target={target}
             />
         </li>
     );

@@ -67,6 +67,7 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                         {productLinks.map((product, idx) => (
                             <NavItem
                                 ref={idx === 0 ? firstItemRef : undefined}
+                                target="_blank"
                                 data-testid={`product-${product.value}`}
                                 key={`product-${product.value}`}
                                 value={product.value}
