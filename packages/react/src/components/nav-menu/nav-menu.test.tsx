@@ -63,6 +63,21 @@ const optionsWithHtmlLinks: NavMenuOption[] = [
     },
 ];
 
+const optionsDisabled: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testA',
+        disabled: true,
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testB',
+        disabled: true,
+    },
+];
+
 describe('NavMenu', () => {
     test('Calls onChange callback when an option is clicked', () => {
         const callback = jest.fn();
@@ -71,6 +86,15 @@ describe('NavMenu', () => {
         getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
         expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('Does not call onChange callback when a disabled option is clicked', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithProviders(<NavMenu options={optionsDisabled} onChange={callback} />);
+
+        getByTestId(wrapper, 'listitem-optionA').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(0);
     });
 
     test('Calls onChange callback when enter key is pressed on option', () => {

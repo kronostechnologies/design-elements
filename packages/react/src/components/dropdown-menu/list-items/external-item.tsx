@@ -6,6 +6,7 @@ import { ExternalLink, ExternalLinkProps } from '../../external-link/external-li
 export interface ExternalItemProps extends ExternalLinkProps {
     label: string;
     href: string;
+    disabled?: boolean;
     onClick?(): void;
 }
 
@@ -31,11 +32,18 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
     }
+
+    &[disabled] {
+        color: ${({ theme }) => theme.greys['mid-grey']};
+        fill: ${({ theme }) => theme.greys['mid-grey']};
+        pointer-events: none;
+    }
 `;
 
 export const ExternalItem = ({
     href,
     label,
+    disabled,
     onClick,
 }: ExternalItemProps): ReactElement => {
     const device = useDeviceContext();
@@ -46,6 +54,7 @@ export const ExternalItem = ({
                 data-testid={`listitem-${label}`}
                 href={href}
                 label={label}
+                disabled={disabled}
             />
         </li>
     );

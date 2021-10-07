@@ -12,11 +12,13 @@ const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemPr
             <NavItem value="optionA" href="/testA" />
             <NavItem value="optionB" href="/testB" />
             <NavItem value="optionC" href="/testC" />
+            <NavItem value="optionD" disabled href="/testD" />
         </GroupItem>
         <GroupItem id="secondGroup">
             <ExternalItem label="ExternalA" href="https://external-link.com/a" />
             <ExternalItem label="ExternalB" href="https://external-link.com/b" />
             <ExternalItem label="ExternalC" href="https://external-link.com/c" />
+            <ExternalItem label="ExternalD" disabled href="https://external-link.com/D" />
         </GroupItem>
     </>
 );

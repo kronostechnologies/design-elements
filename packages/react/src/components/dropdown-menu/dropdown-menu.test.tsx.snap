@@ -79,6 +79,12 @@ exports[`DropdownMenu Is hidden 1`] = `
   background-color: #DBDEE1;
 }
 
+.c7[disabled] {
+  color: #B7BBC2;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c1 {
   margin: 0;
   overflow-y: auto;
@@ -152,6 +158,14 @@ exports[`DropdownMenu Is hidden 1`] = `
   background-color: #DBDEE1;
 }
 
+.c2[disabled],
+.c2[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -175,9 +189,11 @@ exports[`DropdownMenu Is hidden 1`] = `
   >
     <li>
       <a
+        aria-disabled="false"
         class="c2"
         data-testid="listitem-optionA"
         href="/testA"
+        tabindex="0"
       >
         <span
           class="c3"
@@ -192,9 +208,11 @@ exports[`DropdownMenu Is hidden 1`] = `
     </li>
     <li>
       <a
+        aria-disabled="false"
         class="c2"
         data-testid="listitem-optionB"
         href="/testB"
+        tabindex="0"
       >
         <span
           class="c3"
@@ -209,9 +227,11 @@ exports[`DropdownMenu Is hidden 1`] = `
     </li>
     <li>
       <a
+        aria-disabled="false"
         class="c2"
         data-testid="listitem-optionC"
         href="/testC"
+        tabindex="0"
       >
         <span
           class="c3"
@@ -373,6 +393,12 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
+.c7[disabled] {
+  color: #B7BBC2;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c1 {
   margin: 0;
   overflow-y: auto;
@@ -446,6 +472,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
+.c2[disabled],
+.c2[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c0 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -468,9 +502,11 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   >
     <li>
       <a
+        aria-disabled="false"
         class="c2"
         data-testid="listitem-optionA"
         href="/testA"
+        tabindex="0"
       >
         <span
           class="c3"
@@ -485,9 +521,11 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
     </li>
     <li>
       <a
+        aria-disabled="false"
         class="c2"
         data-testid="listitem-optionB"
         href="/testB"
+        tabindex="0"
       >
         <span
           class="c3"
@@ -502,9 +540,11 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
     </li>
     <li>
       <a
+        aria-disabled="false"
         class="c2"
         data-testid="listitem-optionC"
         href="/testC"
+        tabindex="0"
       >
         <span
           class="c3"

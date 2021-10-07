@@ -167,6 +167,14 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   background-color: #DBDEE1;
 }
 
+.c12[disabled],
+.c12[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c6 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -302,9 +310,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
     >
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionA"
           href="/testa"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -319,9 +329,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionB"
           href="/testb"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -336,9 +348,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionC"
           href="/testc"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -353,9 +367,11 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionD"
           href="/testd"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -540,6 +556,14 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   background-color: #DBDEE1;
 }
 
+.c12[disabled],
+.c12[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c6 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -676,9 +700,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
     >
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionA"
           href="/testa"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -693,9 +719,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionB"
           href="/testb"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -710,9 +738,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionC"
           href="/testc"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -727,9 +757,11 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionD"
           href="/testd"
+          tabindex="0"
         >
           <span
             class="c13"
@@ -942,6 +974,14 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   background-color: #DBDEE1;
 }
 
+.c13[disabled],
+.c13[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c7 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -1068,9 +1108,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
     >
       <li>
         <a
+          aria-disabled="false"
           class="c13"
           data-testid="listitem-optionA"
           href="/testa"
+          tabindex="0"
         >
           <span
             class="c14"
@@ -1085,9 +1127,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c13"
           data-testid="listitem-optionB"
           href="/testb"
+          tabindex="0"
         >
           <span
             class="c14"
@@ -1102,9 +1146,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c13"
           data-testid="listitem-optionC"
           href="/testc"
+          tabindex="0"
         >
           <span
             class="c14"
@@ -1119,9 +1165,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c13"
           data-testid="listitem-optionD"
           href="/testd"
+          tabindex="0"
         >
           <span
             class="c14"

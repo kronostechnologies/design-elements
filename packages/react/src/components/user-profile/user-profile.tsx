@@ -81,6 +81,7 @@ export function UserProfile({
                                 href={action.href}
                                 label={action.label}
                                 isHtmlLink={action.isHtmlLink}
+                                disabled={action.disabled}
                                 onClick={close}
                             />
                         ))}

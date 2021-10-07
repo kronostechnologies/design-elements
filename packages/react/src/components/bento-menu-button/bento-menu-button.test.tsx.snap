@@ -165,6 +165,12 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
+.c19[disabled] {
+  color: #B7BBC2;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c8 {
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
@@ -266,6 +272,14 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
+.c12[disabled],
+.c12[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -364,9 +378,11 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
     >
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionA"
           href="/testa"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -389,9 +405,11 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionB"
           href="/testb"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -414,9 +432,11 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionC"
           href="/testc"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
@@ -439,9 +459,11 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
       </li>
       <li>
         <a
+          aria-disabled="false"
           class="c12"
           data-testid="listitem-optionD"
           href="/testd"
+          tabindex="0"
         >
           <svg
             aria-hidden="true"
