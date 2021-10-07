@@ -53,7 +53,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 .c1:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover {
@@ -107,7 +107,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
 .c2:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 <div
@@ -211,7 +211,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 .c1:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover {
@@ -265,7 +265,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
 .c2:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 <div

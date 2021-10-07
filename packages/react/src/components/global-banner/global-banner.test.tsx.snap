@@ -48,7 +48,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -72,7 +72,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -158,6 +158,10 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   color: #f99d99;
 }
 
+.c8:focus {
+  background-color: #CD2C23;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -220,6 +224,277 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 </section>
 `;
 
+exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c7 {
+  background-color: transparent;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c7:hover {
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c7:disabled {
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c7:focus {
+  background-color: #012639;
+  border-color: #006296 color:#FFFFFF;
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c9:hover {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c9:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c9:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c4 {
+  display: inline;
+  font-weight: var(--font-semi-bold);
+  margin-right: var(--spacing-1x);
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #60666E;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.5rem;
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c2 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: var(--spacing-1x);
+}
+
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8:hover {
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c8:focus {
+  background-color: #60666E;
+}
+
+.c10:focus {
+  background-color: #60666E;
+}
+
+.c10:hover {
+  background-color: #878f9a;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: unset;
+}
+
+.c5 * + * {
+  margin-left: var(--spacing-1x);
+}
+
+<section
+  aria-atomic="true"
+  aria-live="polite"
+  class="c0"
+  data-testid="container"
+  role="status"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-label="default"
+      class="c2"
+      color="currentColor"
+      height="16"
+      role="img"
+      width="16"
+    />
+    <span
+      class="c3"
+    >
+      <b
+        class="c4"
+      >
+        default
+      </b>
+      Test content
+    </span>
+  </div>
+  <div
+    class="c5"
+  >
+    <button
+      class="c6 c7 c8"
+      data-testid="action-button"
+      type="button"
+    >
+      Test button
+    </button>
+    <button
+      class="c6 c9 c10"
+      data-testid="dismiss-button"
+      type="button"
+    >
+      Ignore
+    </button>
+  </div>
+</section>
+`;
+
 exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c6 {
   -webkit-align-items: center;
@@ -268,7 +543,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -292,7 +567,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -323,7 +598,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -408,6 +683,14 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 .c8:hover {
   border-color: #cfc1e3;
   color: #cfc1e3;
+}
+
+.c8:focus {
+  background-color: #602FA0;
+}
+
+.c10:focus {
+  background-color: #602FA0;
 }
 
 .c10:hover {
@@ -531,7 +814,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -555,7 +838,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -586,7 +869,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -673,21 +956,28 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   color: #000000;
 }
 
-.c8:focus {
-  color: #FFFFFF;
+.c8:hover {
+  border-color: #9e6900;
+  color: #9e6900;
 }
 
-.c8:hover {
-  border-color: #ffdd99;
-  color: #ffdd99;
+.c8:focus {
+  background-color: #FFB302;
+  color: #000000;
 }
 
 .c10 {
   color: #000000;
 }
 
+.c10:focus {
+  background-color: #FFB302;
+  color: #000000;
+}
+
 .c10:hover {
-  background-color: #A36D00;
+  background-color: #9e6900;
+  color: #FFFFFF;
 }
 
 .c5 {
@@ -807,7 +1097,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -831,7 +1121,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -923,6 +1213,10 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   color: #f99d99;
 }
 
+.c8:focus {
+  background-color: #CD2C23;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -985,6 +1279,283 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 </section>
 `;
 
+exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.53px;
+  -moz-letter-spacing: 0.53px;
+  -ms-letter-spacing: 0.53px;
+  letter-spacing: 0.53px;
+  line-height: 1.5rem;
+  min-height: 48px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:not(:disabled) {
+  cursor: pointer;
+}
+
+.c6 > svg {
+  color: inherit;
+}
+
+.c7 {
+  background-color: transparent;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c7:hover {
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c7:disabled {
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c7:focus {
+  background-color: #012639;
+  border-color: #006296 color:#FFFFFF;
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c9:hover {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c9:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c9:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c4 {
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--spacing-half);
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #60666E;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 1rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: unset;
+  -webkit-justify-content: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.c2 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: var(--spacing-1x);
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.c3 {
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  margin: 0;
+}
+
+.c8:hover {
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c8:focus {
+  background-color: #60666E;
+}
+
+.c10:focus {
+  background-color: #60666E;
+}
+
+.c10:hover {
+  background-color: #878f9a;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: var(--spacing-3x);
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 100%;
+}
+
+.c5 * + * {
+  margin-top: var(--spacing-1x);
+}
+
+<section
+  aria-atomic="true"
+  aria-live="polite"
+  class="c0"
+  data-testid="container"
+  role="status"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-label="default"
+      class="c2"
+      color="currentColor"
+      height="24"
+      role="img"
+      width="24"
+    />
+    <span
+      class="c3"
+    >
+      <b
+        class="c4"
+      >
+        default
+      </b>
+      Test content
+    </span>
+  </div>
+  <div
+    class="c5"
+  >
+    <button
+      class="c6 c7 c8"
+      data-testid="action-button"
+      type="button"
+    >
+      Test button
+    </button>
+    <button
+      class="c6 c9 c10"
+      data-testid="dismiss-button"
+      type="button"
+    >
+      Ignore
+    </button>
+  </div>
+</section>
+`;
+
 exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c6 {
   -webkit-align-items: center;
@@ -1033,7 +1604,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -1057,7 +1628,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -1088,7 +1659,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -1179,6 +1750,14 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 .c8:hover {
   border-color: #cfc1e3;
   color: #cfc1e3;
+}
+
+.c8:focus {
+  background-color: #602FA0;
+}
+
+.c10:focus {
+  background-color: #602FA0;
 }
 
 .c10:hover {
@@ -1302,7 +1881,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c6:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c6:not(:disabled) {
@@ -1326,7 +1905,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7:hover {
@@ -1357,7 +1936,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c9:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c9:hover {
@@ -1450,21 +2029,28 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   color: #000000;
 }
 
-.c8:focus {
-  color: #FFFFFF;
+.c8:hover {
+  border-color: #9e6900;
+  color: #9e6900;
 }
 
-.c8:hover {
-  border-color: #ffdd99;
-  color: #ffdd99;
+.c8:focus {
+  background-color: #FFB302;
+  color: #000000;
 }
 
 .c10 {
   color: #000000;
 }
 
+.c10:focus {
+  background-color: #FFB302;
+  color: #000000;
+}
+
 .c10:hover {
-  background-color: #A36D00;
+  background-color: #9e6900;
+  color: #FFFFFF;
 }
 
 .c5 {

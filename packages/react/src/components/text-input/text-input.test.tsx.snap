@@ -65,7 +65,7 @@ input + .c1 {
 .c3:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -197,7 +197,7 @@ input + .c1 {
 .c3:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {
@@ -329,7 +329,7 @@ input + .c1 {
 .c3:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3::-webkit-input-placeholder {

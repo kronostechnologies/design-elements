@@ -48,7 +48,7 @@ exports[`SearchInput should match the snapshot 1`] = `
 .c13:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13:not(:disabled) {
@@ -190,7 +190,7 @@ input + .c2 {
 .c7:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c7::-webkit-input-placeholder {
@@ -269,8 +269,8 @@ label + .c6 {
 
 .c9:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 input:valid + .c8 {

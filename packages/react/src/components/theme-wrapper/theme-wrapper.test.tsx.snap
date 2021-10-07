@@ -48,7 +48,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 .c0:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0:not(:disabled) {
@@ -72,7 +72,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 .c1:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover {
@@ -140,7 +140,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 .c0:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0:not(:disabled) {
@@ -164,7 +164,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 .c1:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c1:hover {

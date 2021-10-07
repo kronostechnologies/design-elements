@@ -59,7 +59,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
 .c0:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0:not(:disabled) {
@@ -149,7 +149,7 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
 .c0:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c0:not(:disabled) {

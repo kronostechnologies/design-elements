@@ -8,13 +8,13 @@ const defaultActionButton: ActionButton = {
     onClick: jest.fn(),
 };
 
-const messageTypesArray: MessageType[] = ['alert', 'warning', 'info'];
+const messageTypesArray: MessageType[] = ['alert', 'warning', 'info', 'default'];
 
 describe('GlobalBanner', () => {
     messageTypesArray.forEach((type) => {
         test(`matches snapshot (desktop, ${type})`, () => {
             const tree = renderWithProviders(
-                <GlobalBanner actionButton={defaultActionButton} label={type} type={type}>
+                <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'desktop',
@@ -25,7 +25,7 @@ describe('GlobalBanner', () => {
 
         test(`matches snapshot (mobile, ${type})`, () => {
             const tree = renderWithProviders(
-                <GlobalBanner actionButton={defaultActionButton} label={type} type={type}>
+                <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'mobile',
@@ -44,7 +44,6 @@ describe('GlobalBanner', () => {
                     onClick: callback,
                 }}
                 label="Test"
-                type="warning"
             >
                 Test
             </GlobalBanner>,
@@ -55,12 +54,31 @@ describe('GlobalBanner', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('ignore-button hides the banner', () => {
+    test('should call secondary-action-button onClick callback when secondary-action-button is clicked', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <GlobalBanner
+                secondaryActionButton={{
+                    label: 'Test button',
+                    onClick: callback,
+                }}
+                label="Test"
+            >
+                Test
+            </GlobalBanner>,
+        );
+
+        getByTestId(wrapper, 'secondary-action-button').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('dimiss-button hides the banner', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
                 actionButton={defaultActionButton}
                 label="Test"
-                type="warning"
+                dismissable
             >
                 WARNING! test test
             </GlobalBanner>,
@@ -76,26 +94,26 @@ describe('GlobalBanner', () => {
             <GlobalBanner
                 label="Test"
                 type="alert"
+                dismissable
             >
                 Test content
             </GlobalBanner>,
         );
 
-        expect(getByTestId(wrapper, 'ignore-button').exists()).toBe(false);
+        expect(getByTestId(wrapper, 'dimiss-button').exists()).toBe(false);
     });
 
-    test('should not have ignore-button when isDismissable is set to false', () => {
+    test('should not have dimiss-button when dismissable is set to false', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
                 label="Test"
-                type="info"
-                isDismissable={false}
+                dismissable={false}
             >
                 Test content
             </GlobalBanner>,
         );
 
-        expect(getByTestId(wrapper, 'ignore-button').exists()).toBe(false);
+        expect(getByTestId(wrapper, 'dimiss-button').exists()).toBe(false);
     });
 
     describe('hidden property', () => {
@@ -104,7 +122,6 @@ describe('GlobalBanner', () => {
                 <GlobalBanner
                     actionButton={defaultActionButton}
                     label="Test"
-                    type="warning"
                     hidden
                 >
                     WARNING! test test
@@ -119,7 +136,6 @@ describe('GlobalBanner', () => {
                 <GlobalBanner
                     actionButton={defaultActionButton}
                     label="Test"
-                    type="warning"
                 >
                     WARNING! test test
                 </GlobalBanner>,

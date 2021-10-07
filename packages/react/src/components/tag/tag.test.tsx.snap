@@ -36,8 +36,8 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1:focus {
@@ -46,8 +46,8 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <button
@@ -84,8 +84,8 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1 {
@@ -121,8 +121,8 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -185,8 +185,8 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -236,8 +236,8 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -277,8 +277,8 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -324,8 +324,8 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1:focus {
@@ -334,8 +334,8 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <button
@@ -372,8 +372,8 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1 {
@@ -409,8 +409,8 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -473,8 +473,8 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -524,8 +524,8 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -565,8 +565,8 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -612,8 +612,8 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1:focus {
@@ -622,8 +622,8 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <button
@@ -660,8 +660,8 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1 {
@@ -697,8 +697,8 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -761,8 +761,8 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -812,8 +812,8 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -853,8 +853,8 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -900,8 +900,8 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1:focus {
@@ -910,8 +910,8 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <button
@@ -948,8 +948,8 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 
 .c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c1 {
@@ -985,8 +985,8 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -1049,8 +1049,8 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -1100,8 +1100,8 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span
@@ -1141,8 +1141,8 @@ exports[`Tag Tag small matches snapshot (mobile) 2`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 <span

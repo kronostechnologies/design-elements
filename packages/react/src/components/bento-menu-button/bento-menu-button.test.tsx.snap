@@ -48,7 +48,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 .c2:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c2:not(:disabled) {
@@ -74,7 +74,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 .c3:focus {
   outline: none;
   border-color: #006296;
-  box-shadow: 0 0 0 2px #00629666;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c3:hover {
@@ -108,8 +108,8 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 
 .c16:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c16:focus:not(:focus-visible) {
@@ -118,8 +118,8 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 
 .c16:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #00629666;
-  box-shadow: 0 0 0 3px #00629666,0 0 0 1px #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
 }
 
 .c20 {
@@ -157,7 +157,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 }
 
 .c19:focus {
-  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 
@@ -258,7 +258,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 }
 
 .c12:focus {
-  box-shadow: inset 0 0 0 3px #00629666,inset 0 0 0 1px #006296;
+  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 

@@ -5,14 +5,14 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Button } from '../buttons/button';
 import { Icon, IconName } from '../icon/icon';
 
-export type MessageType = 'alert' | 'warning' | 'info';
+export type MessageType = 'alert' | 'warning' | 'info' | 'default';
 
 interface ContainerProps {
     messageType: MessageType;
     isMobile: boolean;
 }
 
-function getContainerBackgroundColor({ messageType, theme }: StyledProps<ContainerProps>): string {
+function getContainerBackgroundColor({ messageType, theme }: StyledProps<{ messageType: MessageType }>): string {
     switch (messageType) {
         case 'alert':
             return theme.notifications['alert-2.1'];
@@ -20,6 +20,8 @@ function getContainerBackgroundColor({ messageType, theme }: StyledProps<Contain
             return theme.notifications['warning-3.3'];
         case 'info':
             return theme.notifications['info-1.1'];
+        case 'default':
+            return theme.greys['dark-grey'];
     }
 }
 
@@ -27,6 +29,7 @@ function getContainerColor({ messageType, theme }: StyledProps<ContainerProps>):
     switch (messageType) {
         case 'alert':
         case 'info':
+        case 'default':
             return theme.greys.white;
         case 'warning':
             return theme.greys.black;
@@ -87,53 +90,62 @@ interface ButtonProps {
     messageType: MessageType;
 }
 
-function getActionButtonHoverColor({ messageType }: StyledProps<ButtonProps>): string {
+function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
             return '#f99d99';
         case 'warning':
-            return '#ffdd99';
+            return '#9e6900';
         case 'info':
             return '#cfc1e3';
+        case 'default':
+            return theme.greys['mid-grey'];
     }
 }
 
 const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ messageType }) => messageType === 'warning' && css`
-        border-color: ${({ theme }) => theme.greys.black};
-        color: ${({ theme }) => theme.greys.black};
-
-        &:focus {
-            color: ${({ theme }) => theme.greys.white};
-        }
+    ${({ messageType, theme }) => messageType === 'warning' && css`
+        border-color: ${theme.greys.black};
+        color: ${theme.greys.black};
     `}
 
     &:hover {
         border-color: ${getActionButtonHoverColor};
         color: ${getActionButtonHoverColor};
     }
+
+    &:focus {
+        background-color: ${getContainerBackgroundColor};
+        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+    }
 `;
 
-function getDismissButtonHoverBackgroundColor({ messageType, theme }: StyledProps<ButtonProps>): string {
+function getTertiaryButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (messageType) {
         case 'alert':
             return '#7b1a15';
         case 'warning':
-            return theme.notifications['warning-3.4'];
+            return '#9e6900';
         case 'info':
             return '#3a1c60';
+        case 'default':
+            return '#878f9a';
     }
 }
 
-const DismissButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
-    ${({ messageType }) => messageType === 'warning' && css`
-        color: ${({ theme }) => theme.greys.black};
-    `}
+const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
+    ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+
+    &:focus {
+        background-color: ${getContainerBackgroundColor};
+        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+    }
 
     &:hover {
-        background-color: ${getDismissButtonHoverBackgroundColor};
+        background-color: ${getTertiaryButtonHoverBackgroundColor};
+        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.white};`}
     }
 `;
 
@@ -158,6 +170,7 @@ const GetIconName = (messageType: MessageType): IconName => {
         case 'alert':
             return 'alertOctagon';
         case 'warning':
+        case 'default':
             return 'alertTriangle';
         case 'info':
             return 'info';
@@ -171,14 +184,15 @@ export interface ActionButton {
 
 interface Props {
     actionButton?: ActionButton;
+    secondaryActionButton?: ActionButton;
     className?: string;
     hidden?: boolean;
     /**
      * Adds an ignore-button. Note that alert type banners are not dismissable.
      */
-    isDismissable?: boolean;
+    dismissable?: boolean;
     label: string;
-    type: MessageType;
+    type?: MessageType;
 
 }
 
@@ -187,15 +201,16 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     children,
     className,
     hidden,
-    isDismissable = true,
+    dismissable = false,
     label,
-    type,
+    secondaryActionButton,
+    type = 'default',
 }) => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
-    const hasDismissButton = type !== 'alert' && isDismissable;
-    const hasButtons = hasDismissButton || actionButton;
+    const hasDismissButton = type !== 'alert' && dismissable;
+    const hasButtons = hasDismissButton || actionButton || secondaryActionButton;
 
     return visible ? (
         <Container
@@ -233,15 +248,25 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                             {actionButton.label}
                         </ActionButton>
                     )}
+                    {secondaryActionButton && (
+                        <TertiaryButton
+                            data-testid="secondary-action-button"
+                            messageType={type}
+                            onClick={secondaryActionButton.onClick}
+                            type="button"
+                        >
+                            {secondaryActionButton.label}
+                        </TertiaryButton>
+                    )}
                     {hasDismissButton && (
-                        <DismissButton
+                        <TertiaryButton
                             data-testid="dismiss-button"
                             messageType={type}
                             onClick={() => setVisible(false)}
                             type="button"
                         >
                             {t('ignore')}
-                        </DismissButton>
+                        </TertiaryButton>
                     )}
                 </ButtonContainer>
             )}
