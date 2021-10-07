@@ -1,16 +1,19 @@
 import React from 'react';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { BentoMenuButton } from './bento-menu-button';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
 
 jest.mock('../../utils/uuid');
 
+const productA: NavItemProps = {
+    label: 'Option A',
+    value: 'optionA',
+    href: '/testa',
+};
+
 const products: NavItemProps[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testa',
-    },
+    productA,
     {
         label: 'Option B',
         value: 'optionB',
@@ -28,11 +31,13 @@ const products: NavItemProps[] = [
     },
 ];
 
+const externalOptionA: ExternalItemProps = {
+    label: 'Option A',
+    href: '/testa',
+};
+
 const externals: ExternalItemProps[] = [
-    {
-        label: 'Option A',
-        href: '/testa',
-    },
+    externalOptionA,
 ];
 
 describe('BentoMenuButton', () => {
@@ -42,5 +47,30 @@ describe('BentoMenuButton', () => {
         );
 
         expect(tree).toMatchSnapshot();
+    });
+
+    it('should call product on click when a product is clicked', () => {
+        const onClick = jest.fn();
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={[{ ...productA, onClick }]} externalLinks={externals} />,
+        );
+
+        const product = getByTestId(wrapper, `product-${productA.value}`);
+        product.simulate('click');
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    it('should call external link on click when an external link is clicked', () => {
+        const onClick = jest.fn();
+        externalOptionA.onClick = onClick;
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={[{ ...externalOptionA, onClick }]} />,
+        );
+
+        const externalLink = getByTestId(wrapper, `external-${externalOptionA.label}`);
+        externalLink.simulate('click');
+
+        expect(onClick).toHaveBeenCalled();
     });
 });

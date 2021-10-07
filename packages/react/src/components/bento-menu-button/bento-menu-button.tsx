@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { FunctionComponent, useRef } from 'react';
+import React, { FunctionComponent, useRef, MouseEvent } from 'react';
 import styled from 'styled-components';
 import { ExternalItem, ExternalItemProps, GroupItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
 import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';
@@ -64,22 +64,34 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
             render={(close) => (
                 <>
                     <GroupItem label={t('productsLabel')} id="product-links">
-                        {productLinks.map((product, idx) => (
-                            <NavItem
-                                ref={idx === 0 ? firstItemRef : undefined}
-                                data-testid={`product-${product.value}`}
-                                key={`product-${product.value}`}
-                                value={product.value}
-                                label={product.label}
-                                href={product.href}
-                                iconName={product.iconName || 'equisoft'}
-                                description={product.description}
-                                isHtmlLink={product.isHtmlLink}
-                                lozenge={product.lozenge}
-                                disabled={product.disabled}
-                                onClick={product.disabled ? undefined : close}
-                            />
-                        ))}
+                        {productLinks.map((product, idx) => {
+                            const handleOnClick = (event: MouseEvent): void => {
+                                if (product.onClick) {
+                                    product.onClick(event);
+                                }
+
+                                if (!product.disabled) {
+                                    close();
+                                }
+                            };
+
+                            return (
+                                <NavItem
+                                    ref={idx === 0 ? firstItemRef : undefined}
+                                    data-testid={`product-${product.value}`}
+                                    key={`product-${product.value}`}
+                                    value={product.value}
+                                    label={product.label}
+                                    href={product.href}
+                                    iconName={product.iconName || 'equisoft'}
+                                    description={product.description}
+                                    isHtmlLink={product.isHtmlLink}
+                                    lozenge={product.lozenge}
+                                    disabled={product.disabled}
+                                    onClick={handleOnClick}
+                                />
+                            );
+                        })}
                     </GroupItem>
                     <GroupItem label={t('externalsLabel')} id="external-links">
                         {externalLinks.map((external) => (
@@ -88,6 +100,7 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                                 key={`external-${external.label}`}
                                 href={external.href}
                                 label={external.label}
+                                onClick={external?.onClick}
                                 disabled={external.disabled}
                             />
                         ))}
