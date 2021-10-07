@@ -14,7 +14,7 @@ describe('GlobalBanner', () => {
     messageTypesArray.forEach((type) => {
         test(`matches snapshot (desktop, ${type})`, () => {
             const tree = renderWithProviders(
-                <GlobalBanner actionButton={defaultActionButton} label={type} type={type}>
+                <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'desktop',
@@ -25,7 +25,7 @@ describe('GlobalBanner', () => {
 
         test(`matches snapshot (mobile, ${type})`, () => {
             const tree = renderWithProviders(
-                <GlobalBanner actionButton={defaultActionButton} label={type} type={type}>
+                <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>
                     Test content
                 </GlobalBanner>,
                 'mobile',
@@ -73,11 +73,12 @@ describe('GlobalBanner', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('ignore-button hides the banner', () => {
+    test('dimiss-button hides the banner', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
                 actionButton={defaultActionButton}
                 label="Test"
+                dismissable
             >
                 WARNING! test test
             </GlobalBanner>,
@@ -93,25 +94,26 @@ describe('GlobalBanner', () => {
             <GlobalBanner
                 label="Test"
                 type="alert"
+                dismissable
             >
                 Test content
             </GlobalBanner>,
         );
 
-        expect(getByTestId(wrapper, 'ignore-button').exists()).toBe(false);
+        expect(getByTestId(wrapper, 'dimiss-button').exists()).toBe(false);
     });
 
-    test('should not have ignore-button when isDismissable is set to false', () => {
+    test('should not have dimiss-button when dismissable is set to false', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
                 label="Test"
-                isDismissable={false}
+                dismissable={false}
             >
                 Test content
             </GlobalBanner>,
         );
 
-        expect(getByTestId(wrapper, 'ignore-button').exists()).toBe(false);
+        expect(getByTestId(wrapper, 'dimiss-button').exists()).toBe(false);
     });
 
     describe('hidden property', () => {

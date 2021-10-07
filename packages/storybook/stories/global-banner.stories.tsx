@@ -28,6 +28,7 @@ export const GlobalBanners: Story = () => (
             actionButton={actionButton}
             label="Warning."
             type="warning"
+            dismissable
         >
             Warning message.
         </GlobalBanner>
@@ -36,6 +37,7 @@ export const GlobalBanners: Story = () => (
             actionButton={actionButton}
             label="Info."
             type="info"
+            dismissable
         >
             Info message.
         </GlobalBanner>
@@ -43,6 +45,7 @@ export const GlobalBanners: Story = () => (
         <GlobalBanner
             actionButton={actionButton}
             label="Default."
+            dismissable
         >
             Default global banner.
         </GlobalBanner>
@@ -66,7 +69,6 @@ export const WithSecondaryActionButton: Story = () => (
             label: 'Secondary action',
             onClick: () => console.info('clicked secondary action button'),
         }}
-        isDismissable={false}
         label="With action button."
         type="warning"
     >
@@ -74,11 +76,11 @@ export const WithSecondaryActionButton: Story = () => (
     </GlobalBanner>
 );
 
-export const WithoutDismissButton: Story = () => (
+export const WithDismissButton: Story = () => (
     <GlobalBanner
         label="Without dismiss button."
         type="warning"
-        isDismissable={false}
+        dismissable
     >
         Cannot dismiss me.
     </GlobalBanner>

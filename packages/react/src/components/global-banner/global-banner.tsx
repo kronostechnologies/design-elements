@@ -190,7 +190,7 @@ interface Props {
     /**
      * Adds an ignore-button. Note that alert type banners are not dismissable.
      */
-    isDismissable?: boolean;
+    dismissable?: boolean;
     label: string;
     type?: MessageType;
 
@@ -201,7 +201,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     children,
     className,
     hidden,
-    isDismissable = true,
+    dismissable = false,
     label,
     secondaryActionButton,
     type = 'default',
@@ -209,7 +209,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
-    const hasDismissButton = type !== 'alert' && isDismissable;
+    const hasDismissButton = type !== 'alert' && dismissable;
     const hasButtons = hasDismissButton || actionButton || secondaryActionButton;
 
     return visible ? (
