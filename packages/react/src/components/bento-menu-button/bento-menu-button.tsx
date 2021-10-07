@@ -77,7 +77,10 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                                 isHtmlLink={product.isHtmlLink}
                                 lozenge={product.lozenge}
                                 disabled={product.disabled}
-                                onClick={product.disabled ? undefined : close}
+                                onClick={product.disabled ? undefined : (event) => {
+                                    product.onClick?.(event);
+                                    close();
+                                }}
                             />
                         ))}
                     </GroupItem>
@@ -89,6 +92,10 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                                 href={external.href}
                                 label={external.label}
                                 disabled={external.disabled}
+                                onClick={external.disabled ? undefined : () => {
+                                    external.onClick?.();
+                                    close();
+                                }}
                             />
                         ))}
                     </GroupItem>

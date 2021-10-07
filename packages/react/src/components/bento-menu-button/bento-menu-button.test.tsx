@@ -1,20 +1,25 @@
 import React from 'react';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { BentoMenuButton } from './bento-menu-button';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 jest.mock('../../utils/uuid');
 
+const onClick = jest.fn();
 const products: NavItemProps[] = [
     {
         label: 'Option A',
         value: 'optionA',
         href: '/testa',
+        onClick,
     },
     {
         label: 'Option B',
         value: 'optionB',
         href: '/testb',
+        onClick,
+        disabled: true,
     },
     {
         label: 'Option C',
@@ -32,10 +37,61 @@ const externals: ExternalItemProps[] = [
     {
         label: 'Option A',
         href: '/testa',
+        onClick,
+    },
+    {
+        label: 'Option B',
+        href: '/testb',
+        disabled: true,
+        onClick,
     },
 ];
 
 describe('BentoMenuButton', () => {
+    beforeEach(() => {
+        onClick.mockReset();
+    });
+
+    it('should call product on click when a product is clicked', () => {
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+
+        const productA = getByTestId(wrapper, 'product-optionA');
+        productA.invoke('onClick')();
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    it('should not call product on click when a product is disabled', () => {
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+
+        const productB = getByTestId(wrapper, 'product-optionB');
+        expect(productB.prop('onClick')).toBe(undefined);
+    });
+
+    it('should call external on click when a external is clicked', () => {
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+
+        const externalA = getByTestId(wrapper, 'external-Option A');
+        externalA.invoke('onClick')();
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    it('should not call external on click when a external is disabled', () => {
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+
+        const externalB = getByTestId(wrapper, 'external-Option B');
+        expect(externalB.prop('onClick')).toBe(undefined);
+    });
+
     test('Matches Snapshot', () => {
         const tree = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,

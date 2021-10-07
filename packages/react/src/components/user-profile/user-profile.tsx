@@ -75,6 +75,7 @@ export function UserProfile({
                     <GroupItem id="user-actions">
                         {options.map((action, idx) => (
                             <NavItem
+                                data-testid={`action-${action.value}`}
                                 ref={idx === 0 ? firstItemRef : undefined}
                                 key={action.value}
                                 value={action.value}
@@ -82,7 +83,10 @@ export function UserProfile({
                                 label={action.label}
                                 isHtmlLink={action.isHtmlLink}
                                 disabled={action.disabled}
-                                onClick={close}
+                                onClick={action.disabled ? undefined : (event) => {
+                                    action.onClick?.(event);
+                                    close();
+                                }}
                             />
                         ))}
                     </GroupItem>
