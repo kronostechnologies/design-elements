@@ -1,6 +1,6 @@
 import React from 'react';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { ActionButton, GlobalBanner, MessageType } from './global-banner';
+import { ActionButton, GlobalBanner, GlobalBannerType } from './global-banner';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 const defaultActionButton: ActionButton = {
@@ -8,10 +8,10 @@ const defaultActionButton: ActionButton = {
     onClick: jest.fn(),
 };
 
-const messageTypesArray: MessageType[] = ['alert', 'warning', 'info', 'default'];
+const bannerTypesArray: GlobalBannerType[] = ['alert', 'warning', 'info', 'default'];
 
 describe('GlobalBanner', () => {
-    messageTypesArray.forEach((type) => {
+    bannerTypesArray.forEach((type) => {
         test(`matches snapshot (desktop, ${type})`, () => {
             const tree = renderWithProviders(
                 <GlobalBanner actionButton={defaultActionButton} dismissable label={type} type={type}>

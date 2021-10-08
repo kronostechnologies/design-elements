@@ -5,15 +5,15 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Button } from '../buttons/button';
 import { Icon, IconName } from '../icon/icon';
 
-export type MessageType = 'alert' | 'warning' | 'info' | 'default';
+export type GlobalBannerType = 'alert' | 'warning' | 'info' | 'default';
 
 interface ContainerProps {
-    messageType: MessageType;
+    bannerType: GlobalBannerType;
     isMobile: boolean;
 }
 
-function getContainerBackgroundColor({ messageType, theme }: StyledProps<{ messageType: MessageType }>): string {
-    switch (messageType) {
+function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
+    switch (bannerType) {
         case 'alert':
             return theme.notifications['alert-2.1'];
         case 'warning':
@@ -25,8 +25,8 @@ function getContainerBackgroundColor({ messageType, theme }: StyledProps<{ messa
     }
 }
 
-function getContainerColor({ messageType, theme }: StyledProps<ContainerProps>): string {
-    switch (messageType) {
+function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): string {
+    switch (bannerType) {
         case 'alert':
         case 'info':
         case 'default':
@@ -88,12 +88,12 @@ const Text = styled.span`
 `;
 
 interface ButtonProps {
-    messageType: MessageType;
+    bannerType: GlobalBannerType;
 }
 
-function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonProps>): string {
+function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
-    switch (messageType) {
+    switch (bannerType) {
         case 'alert':
             return '#f99d99';
         case 'warning':
@@ -106,7 +106,7 @@ function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonPro
 }
 
 const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ messageType, theme }) => messageType === 'warning' && css`
+    ${({ bannerType, theme }) => bannerType === 'warning' && css`
         border-color: ${theme.greys.black};
         color: ${theme.greys.black};
     `}
@@ -118,13 +118,13 @@ const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: t
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
     }
 `;
 
-function getTertiaryButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
+function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
-    switch (messageType) {
+    switch (bannerType) {
         case 'alert':
             return '#7b1a15';
         case 'warning':
@@ -137,16 +137,16 @@ function getTertiaryButtonHoverBackgroundColor({ messageType }: StyledProps<Butt
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
-    ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+    ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.white};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.white};`}
     }
 `;
 
@@ -166,8 +166,8 @@ const ButtonContainer = styled.div<{ isMobile: boolean }>`
     }
 `;
 
-const GetIconName = (messageType: MessageType): IconName => {
-    switch (messageType) {
+const GetIconName = (bannerType: GlobalBannerType): IconName => {
+    switch (bannerType) {
         case 'alert':
             return 'alertOctagon';
         case 'warning':
@@ -193,7 +193,7 @@ interface Props {
      */
     dismissable?: boolean;
     label: string;
-    type?: MessageType;
+    type?: GlobalBannerType;
 
 }
 
@@ -220,7 +220,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
             className={className}
             data-testid="container"
             isMobile={isMobile}
-            messageType={type}
+            bannerType={type}
             role="status"
         >
             <Content isMobile={isMobile}>
@@ -242,7 +242,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {actionButton && (
                         <ActionButton
                             data-testid="action-button"
-                            messageType={type}
+                            bannerType={type}
                             onClick={actionButton.onClick}
                             type="button"
                         >
@@ -252,7 +252,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {secondaryActionButton && (
                         <TertiaryButton
                             data-testid="secondary-action-button"
-                            messageType={type}
+                            bannerType={type}
                             onClick={secondaryActionButton.onClick}
                             type="button"
                         >
@@ -262,7 +262,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {hasDismissButton && (
                         <TertiaryButton
                             data-testid="dismiss-button"
-                            messageType={type}
+                            bannerType={type}
                             onClick={() => setVisible(false)}
                             type="button"
                         >

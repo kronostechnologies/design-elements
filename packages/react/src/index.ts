@@ -48,7 +48,7 @@ export { Icon } from './components/icon/icon';
 export { SectionalBanner } from './components/sectional-banner/sectional-banner';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
-export { GlobalBanner } from './components/global-banner/global-banner';
+export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
 export * from './components/table/table';
 export { Modal } from './components/modal/modal';
