@@ -121,6 +121,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -377,6 +378,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -648,6 +650,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -919,6 +922,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
   padding: var(--spacing-1x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -1170,6 +1174,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -1432,6 +1437,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -1709,6 +1715,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
@@ -1986,6 +1993,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  position: relative;
 }
 
 .c1 {
