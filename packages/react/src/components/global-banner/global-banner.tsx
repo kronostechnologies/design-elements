@@ -39,7 +39,7 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
 function getContainerPadding({ isMobile }: ContainerProps): string {
     return isMobile
         ? 'var(--spacing-3x) var(--spacing-2x) var(--spacing-2x)'
-        : 'var(--spacing-1x) var(--spacing-2x)';
+        : ' 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x)';
 }
 
 const Label = styled.b<{ isMobile: boolean }>`
@@ -53,16 +53,22 @@ const Label = styled.b<{ isMobile: boolean }>`
     `)}
 `;
 
+const Message = styled.span`
+    display: inline-block;
+`;
+
 const Container = styled.section<ContainerProps>`
     align-items: center;
     background-color: ${getContainerBackgroundColor};
     color: ${getContainerColor};
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
+    flex-wrap: ${({ isMobile }) => (isMobile ? 'nowrap' : 'wrap')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
+    margin-top: ${({ isMobile }) => (isMobile ? '0' : 'calc(var(--spacing-1x) * -1)')};
     padding: ${getContainerPadding};
     position: relative;
 `;
@@ -71,6 +77,8 @@ const Content = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
     justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
+    margin-top: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
+    position: relative;
 
     ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
@@ -79,7 +87,11 @@ const StyledIcon = styled(Icon)<React.SVGProps<SVGSVGElement> & { $isMobile: boo
     flex-shrink: 0;
     margin-right: var(--spacing-1x);
 
-    ${({ $isMobile }) => $isMobile && css`align-self: flex-start;`};
+    ${({ $isMobile }) => ($isMobile ? css`align-self: flex-start;` : css`
+        left: calc(var(--spacing-3x) * -1);
+        position: absolute;
+        top: var(--spacing-half);
+    `)};
 `;
 
 const Text = styled.span`
@@ -153,7 +165,7 @@ const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: 
 const ButtonContainer = styled.div<{ isMobile: boolean }>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
-    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : '0')};
+    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
     min-width: fit-content;
     width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
 
@@ -234,7 +246,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                 />
                 <Text>
                     <Label isMobile={isMobile}>{label}</Label>
-                    {children}
+                    <Message>{children}</Message>
                 </Text>
             </Content>
             {hasButtons && (
