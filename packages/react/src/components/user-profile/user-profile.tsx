@@ -20,6 +20,10 @@ const StyledAvatar = styled(Avatar)<{ isMobile: boolean }>`
     margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
 `;
 
+export function getFirstFocusableItem(options: NavItemProps[]): NavItemProps | undefined {
+    return options.find((opt) => !opt.disabled);
+}
+
 interface UserProfileProps {
     /**
      * Sets nav's description
@@ -51,7 +55,9 @@ export function UserProfile({
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
+    const firstFocusableItem = getFirstFocusableItem(options);
     const firstItemRef = useRef<HTMLAnchorElement>(null);
+
     return (
         <StyledDropdownMenuButton
             ariaLabel={ariaLabel || t('ariaLabel')}
@@ -73,10 +79,10 @@ export function UserProfile({
                         <LabelItem label={username} description={userEmail} />
                     </GroupItem>
                     <GroupItem id="user-actions">
-                        {options.map((action, idx) => (
+                        {options.map((action) => (
                             <NavItem
                                 data-testid={`action-${action.value}`}
-                                ref={idx === 0 ? firstItemRef : undefined}
+                                ref={firstFocusableItem === action ? firstItemRef : undefined}
                                 key={action.value}
                                 value={action.value}
                                 href={action.href}
