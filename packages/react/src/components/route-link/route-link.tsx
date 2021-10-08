@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { MouseEvent, ReactElement } from 'react';
 import styled from 'styled-components';
 
 import { NavLink } from 'react-router-dom';
@@ -45,10 +45,19 @@ interface LinkProps {
     iconName?: IconName;
     label?: string;
     routerLink: RouterLinkProps;
+
+    onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
 
 export function RouteLink({
-    className, disabled, exact, href, iconName, label, routerLink,
+    className,
+    disabled,
+    exact,
+    href,
+    iconName,
+    label,
+    routerLink,
+    onClick,
 }: LinkProps): ReactElement {
     const { isMobile } = useDeviceContext();
 
@@ -64,6 +73,7 @@ export function RouteLink({
             tabIndex={disabled ? -1 : 0}
             to={href}
             type="route"
+            onClick={onClick}
         >
             {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}
             {label}

@@ -1,4 +1,4 @@
-import { render } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
@@ -13,6 +13,22 @@ function renderWithRouter(children: ReactElement): cheerio.Cheerio {
 }
 
 describe('Route Link', () => {
+    it('calls onClick callback when clicked', () => {
+        const callback = jest.fn();
+        const wrapper = shallow(
+            <RouteLink
+                routerLink={NavLink}
+                href="/test"
+                label="Navigation Link"
+                onClick={callback}
+            />,
+        );
+
+        wrapper.simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
     test('matches snapshot (NavLink)', () => {
         const tree = renderWithRouter(
             ThemeWrapped(<RouteLink routerLink={NavLink} href="/test" label="Navigation Link" />),
