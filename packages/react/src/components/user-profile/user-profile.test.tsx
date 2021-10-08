@@ -6,16 +6,20 @@ import { NavItemProps } from '../dropdown-menu/list-items';
 
 jest.mock('../../utils/uuid');
 
+const onClick = jest.fn();
 const options: NavItemProps[] = [
     {
         label: 'Option A',
         value: 'optionA',
         href: '/testa',
+        onClick,
     },
     {
         label: 'Option B',
         value: 'optionB',
         href: '/testb',
+        onClick,
+        disabled: true,
     },
     {
         label: 'Option C',
@@ -30,11 +34,33 @@ const options: NavItemProps[] = [
 ];
 
 describe('UserProfile', () => {
+    beforeEach(() => {
+        onClick.mockReset();
+    });
+
     test('should contain username', () => {
         const username = 'John Doe';
         const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
 
         expect(getByTestId(wrapper, 'menu-button').contains(username)).toBe(true);
+    });
+
+    test('should call on click when an option is clicked', () => {
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
+
+        const actionA = getByTestId(wrapper, 'action-optionA');
+        actionA.invoke('onClick')();
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    test('should not call on click when an option is disabled', () => {
+        const username = 'John Doe';
+        const wrapper = mountWithProviders(<UserProfile username={username} options={options} />);
+
+        const actionB = getByTestId(wrapper, 'action-optionB');
+        expect(actionB.prop('onClick')).toBe(undefined);
     });
 
     test('Matches Snapshot (desktop)', () => {
