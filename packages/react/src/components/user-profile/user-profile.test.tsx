@@ -1,6 +1,6 @@
 import React from 'react';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { UserProfile } from './user-profile';
+import { UserProfile, getFirstFocusableItem } from './user-profile';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { NavItemProps } from '../dropdown-menu/list-items';
 
@@ -36,6 +36,49 @@ const options: NavItemProps[] = [
 describe('UserProfile', () => {
     beforeEach(() => {
         onClick.mockReset();
+    });
+
+    describe('getFirstFocusableItem', () => {
+        test('should return first item that is not disabled', () => {
+            const testOptions: NavItemProps[] = [
+                {
+                    label: 'Option A',
+                    value: 'optionA',
+                    href: '/testa',
+                    disabled: true,
+                },
+                {
+                    label: 'Option B',
+                    value: 'optionB',
+                    href: '/testb',
+                },
+            ];
+
+            const result = getFirstFocusableItem(testOptions);
+
+            expect(result).toBe(testOptions[1]);
+        });
+
+        test('should return undefined when every items are disabled', () => {
+            const testOptions: NavItemProps[] = [
+                {
+                    label: 'Option A',
+                    value: 'optionA',
+                    href: '/testa',
+                    disabled: true,
+                },
+                {
+                    label: 'Option B',
+                    value: 'optionB',
+                    href: '/testb',
+                    disabled: true,
+                },
+            ];
+
+            const result = getFirstFocusableItem(testOptions);
+
+            expect(result).toBe(undefined);
+        });
     });
 
     test('should contain username', () => {

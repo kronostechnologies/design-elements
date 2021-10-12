@@ -5,15 +5,15 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Button } from '../buttons/button';
 import { Icon, IconName } from '../icon/icon';
 
-export type MessageType = 'alert' | 'warning' | 'info' | 'default';
+export type GlobalBannerType = 'alert' | 'warning' | 'info' | 'default';
 
 interface ContainerProps {
-    messageType: MessageType;
+    bannerType: GlobalBannerType;
     isMobile: boolean;
 }
 
-function getContainerBackgroundColor({ messageType, theme }: StyledProps<{ messageType: MessageType }>): string {
-    switch (messageType) {
+function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
+    switch (bannerType) {
         case 'alert':
             return theme.notifications['alert-2.1'];
         case 'warning':
@@ -25,8 +25,8 @@ function getContainerBackgroundColor({ messageType, theme }: StyledProps<{ messa
     }
 }
 
-function getContainerColor({ messageType, theme }: StyledProps<ContainerProps>): string {
-    switch (messageType) {
+function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): string {
+    switch (bannerType) {
         case 'alert':
         case 'info':
         case 'default':
@@ -39,7 +39,7 @@ function getContainerColor({ messageType, theme }: StyledProps<ContainerProps>):
 function getContainerPadding({ isMobile }: ContainerProps): string {
     return isMobile
         ? 'var(--spacing-3x) var(--spacing-2x) var(--spacing-2x)'
-        : 'var(--spacing-1x) var(--spacing-2x)';
+        : ' 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x)';
 }
 
 const Label = styled.b<{ isMobile: boolean }>`
@@ -53,16 +53,22 @@ const Label = styled.b<{ isMobile: boolean }>`
     `)}
 `;
 
+const Message = styled.span`
+    display: inline-block;
+`;
+
 const Container = styled.section<ContainerProps>`
     align-items: center;
     background-color: ${getContainerBackgroundColor};
     color: ${getContainerColor};
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
+    flex-wrap: ${({ isMobile }) => (isMobile ? 'nowrap' : 'wrap')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
+    margin-top: ${({ isMobile }) => (isMobile ? '0' : 'calc(var(--spacing-1x) * -1)')};
     padding: ${getContainerPadding};
     position: relative;
 `;
@@ -71,6 +77,8 @@ const Content = styled.div<{ isMobile: boolean }>`
     align-items: center;
     display: flex;
     justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
+    margin-top: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
+    position: relative;
 
     ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
@@ -79,7 +87,11 @@ const StyledIcon = styled(Icon)<React.SVGProps<SVGSVGElement> & { $isMobile: boo
     flex-shrink: 0;
     margin-right: var(--spacing-1x);
 
-    ${({ $isMobile }) => $isMobile && css`align-self: flex-start;`};
+    ${({ $isMobile }) => ($isMobile ? css`align-self: flex-start;` : css`
+        left: calc(var(--spacing-3x) * -1);
+        position: absolute;
+        top: var(--spacing-half);
+    `)};
 `;
 
 const Text = styled.span`
@@ -88,12 +100,12 @@ const Text = styled.span`
 `;
 
 interface ButtonProps {
-    messageType: MessageType;
+    bannerType: GlobalBannerType;
 }
 
-function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonProps>): string {
+function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
-    switch (messageType) {
+    switch (bannerType) {
         case 'alert':
             return '#f99d99';
         case 'warning':
@@ -106,7 +118,7 @@ function getActionButtonHoverColor({ messageType, theme }: StyledProps<ButtonPro
 }
 
 const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ messageType, theme }) => messageType === 'warning' && css`
+    ${({ bannerType, theme }) => bannerType === 'warning' && css`
         border-color: ${theme.greys.black};
         color: ${theme.greys.black};
     `}
@@ -118,13 +130,13 @@ const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: t
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
     }
 `;
 
-function getTertiaryButtonHoverBackgroundColor({ messageType }: StyledProps<ButtonProps>): string {
+function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
-    switch (messageType) {
+    switch (bannerType) {
         case 'alert':
             return '#7b1a15';
         case 'warning':
@@ -137,23 +149,23 @@ function getTertiaryButtonHoverBackgroundColor({ messageType }: StyledProps<Butt
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
-    ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+    ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.black};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        ${({ messageType, theme }) => messageType === 'warning' && css`color: ${theme.greys.white};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.white};`}
     }
 `;
 
 const ButtonContainer = styled.div<{ isMobile: boolean }>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
-    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : '0')};
+    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
     min-width: fit-content;
     width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
 
@@ -166,8 +178,8 @@ const ButtonContainer = styled.div<{ isMobile: boolean }>`
     }
 `;
 
-const GetIconName = (messageType: MessageType): IconName => {
-    switch (messageType) {
+const GetIconName = (bannerType: GlobalBannerType): IconName => {
+    switch (bannerType) {
         case 'alert':
             return 'alertOctagon';
         case 'warning':
@@ -193,7 +205,7 @@ interface Props {
      */
     dismissable?: boolean;
     label: string;
-    type?: MessageType;
+    type?: GlobalBannerType;
 
 }
 
@@ -220,7 +232,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
             className={className}
             data-testid="container"
             isMobile={isMobile}
-            messageType={type}
+            bannerType={type}
             role="status"
         >
             <Content isMobile={isMobile}>
@@ -234,7 +246,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                 />
                 <Text>
                     <Label isMobile={isMobile}>{label}</Label>
-                    {children}
+                    <Message>{children}</Message>
                 </Text>
             </Content>
             {hasButtons && (
@@ -242,7 +254,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {actionButton && (
                         <ActionButton
                             data-testid="action-button"
-                            messageType={type}
+                            bannerType={type}
                             onClick={actionButton.onClick}
                             type="button"
                         >
@@ -252,7 +264,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {secondaryActionButton && (
                         <TertiaryButton
                             data-testid="secondary-action-button"
-                            messageType={type}
+                            bannerType={type}
                             onClick={secondaryActionButton.onClick}
                             type="button"
                         >
@@ -262,7 +274,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
                     {hasDismissButton && (
                         <TertiaryButton
                             data-testid="dismiss-button"
-                            messageType={type}
+                            bannerType={type}
                             onClick={() => setVisible(false)}
                             type="button"
                         >
