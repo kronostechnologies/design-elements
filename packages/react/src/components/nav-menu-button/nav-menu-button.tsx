@@ -12,42 +12,39 @@ import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
 import { getRootDocument } from '../../utils/dom';
 import { IconButton } from '../buttons/icon-button';
+import { Button, ButtonType } from '../buttons/button';
+import { Theme } from '../../themes';
+
+interface ExpandedProps {
+    $expanded: boolean;
+}
 
 const StyledNav = styled.nav`
     position: relative;
 `;
 
-interface StyledButtonProps {
-    expanded: boolean;
-}
-
-const buttonColors = css<StyledButtonProps>`
-    background-color: ${({ expanded, theme }) => (expanded ? theme.main['primary-3'] : 'transparent')};
-    border-color: ${({ expanded, theme }) => (expanded ? theme.main['primary-3'] : 'transparent')};
-    color: ${({ theme }) => theme.greys.white};
-
-    &:hover {
-        background-color: ${({ theme }) => theme.main['primary-3']};
-        border-color: ${({ theme }) => theme.main['primary-3']};
-    }
+const ExpandedStyle = css<{ $expanded: boolean, theme: Theme }>`
+    ${({ $expanded, theme }) => $expanded && `
+        background-color: ${theme.main['primary-1.3']};
+        border-color: ${theme.main['primary-1.3']};
+    `}
 `;
 
-const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-    ${buttonColors}
+const StyledButton = styled(Button)<ExpandedProps & { isMobile: boolean }>`
+    ${ExpandedStyle}
 
     font-size: 0.875rem;
     font-weight: var(--font-normal);
     text-transform: unset;
 `;
 
-const StyledIconButton = styled(IconButton).attrs({ buttonType: 'primary' })<StyledButtonProps>`
-    ${buttonColors}
+const StyledIconButton = styled(IconButton)<ExpandedProps>`
+    ${ExpandedStyle}
 `;
 
 const StyledRightIcon = styled(Icon)`
@@ -93,6 +90,8 @@ interface MenuButtonProps {
     id?: string;
     options: NavMenuOption[];
     title?: string;
+    buttonType?: ButtonType;
+    inverted?: boolean;
     onMenuVisibilityChanged?(isOpen: boolean): void;
     onMenuOptionSelected?(option: NavMenuOption): void;
 }
@@ -108,6 +107,8 @@ export function NavMenuButton({
     id: providedId,
     options,
     title,
+    buttonType = 'tertiary',
+    inverted = true,
     onMenuVisibilityChanged,
     onMenuOptionSelected,
 }: MenuButtonProps): ReactElement {
@@ -178,12 +179,14 @@ export function NavMenuButton({
                 <StyledButton
                     aria-expanded={isOpen}
                     data-testid="menu-button"
-                    expanded={isOpen}
+                    $expanded={isOpen}
                     isMobile={isMobile}
                     onClick={handleButtonClick}
                     ref={buttonRef}
                     title={title}
                     type="button"
+                    buttonType={buttonType}
+                    inverted={inverted}
                 >
                     {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
                     {children}
@@ -200,12 +203,14 @@ export function NavMenuButton({
                 <StyledIconButton
                     aria-expanded={isOpen}
                     data-testid="menu-button"
-                    expanded={isOpen}
+                    $expanded={isOpen}
                     iconName={iconName}
                     onClick={handleButtonClick}
                     ref={buttonRef}
                     title={title}
                     type="button"
+                    buttonType={buttonType}
+                    inverted={inverted}
                 />
             )}
             <StyledNavMenu

@@ -14,6 +14,7 @@ export const All: Story = () => (
         <Icon name="check" />
         <Icon name="chevronDown" />
         <Icon name="chevronUp" />
+        <Icon name="contracts" />
         <Icon name="copy" />
         <Icon name="bell" />
         <Icon name="bento" />
@@ -65,6 +66,10 @@ export const ChevronDown: Story = () => (
 
 export const ChevronUp: Story = () => (
     <Icon name="chevronUp" />
+);
+
+export const Contracts: Story = () => (
+    <Icon name="contracts" />
 );
 
 export const Copy: Story = () => (
