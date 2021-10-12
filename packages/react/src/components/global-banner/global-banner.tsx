@@ -68,7 +68,6 @@ const Container = styled.section<ContainerProps>`
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
-    margin-top: ${({ isMobile }) => (isMobile ? '0' : 'calc(var(--spacing-1x) * -1)')};
     padding: ${getContainerPadding};
     position: relative;
 `;
