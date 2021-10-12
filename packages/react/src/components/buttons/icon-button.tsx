@@ -1,4 +1,4 @@
-import React, { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
+import React, { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
@@ -31,6 +31,8 @@ export interface IconButtonProps {
     type?: Type;
 
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
+
+    onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
 const StyledButton = styled(AbstractButton)`
@@ -45,11 +47,12 @@ export const IconButton = forwardRef(({
     className,
     iconName,
     label,
-    onClick,
     type = 'submit',
     buttonType,
     disabled,
     title,
+    onClick,
+    onKeyDown,
     ...props
 }: IconButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
@@ -59,12 +62,13 @@ export const IconButton = forwardRef(({
             ref={ref}
             aria-label={label}
             className={className}
-            onClick={onClick}
             isMobile={isMobile}
             title={title}
             type={type}
             buttonType={buttonType}
             disabled={disabled}
+            onClick={onClick}
+            onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             { children || (

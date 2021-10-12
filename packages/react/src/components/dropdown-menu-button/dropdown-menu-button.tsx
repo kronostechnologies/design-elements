@@ -139,6 +139,23 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         return removeEventListenerCallback;
     }, [handleClickOutside, isOpen, firstItemRef]);
 
+    function handleCurrentFocus(): void {
+        setTimeout(() => {
+            const focusedElement = getRootDocument(navRef.current)?.activeElement;
+            const isFocusInsideNav = navRef.current?.contains(focusedElement || null);
+
+            if (!isFocusInsideNav) {
+                setOpen(false);
+            }
+        });
+    }
+
+    function handleButtonKeyDown({ key }: KeyboardEvent<HTMLButtonElement>): void {
+        if (isOpen && key === 'Tab') {
+            handleCurrentFocus();
+        }
+    }
+
     function handleNavMenuKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         if (event.key === 'Escape') {
             setOpen(false);
@@ -146,14 +163,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         }
 
         if (isOpen) {
-            setTimeout(() => {
-                const focusedElement = getRootDocument(navRef.current)?.activeElement;
-                const isFocusInsideNav = navRef.current?.contains(focusedElement || null);
-
-                if (!isFocusInsideNav) {
-                    setOpen(false);
-                }
-            });
+            handleCurrentFocus();
         }
     }
 
@@ -166,6 +176,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     $expanded={isOpen}
                     isMobile={isMobile}
                     onClick={() => setOpen(!isOpen)}
+                    onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
                     type="button"
@@ -188,6 +199,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     data-testid="menu-button"
                     $expanded={isOpen}
                     onClick={() => setOpen(!isOpen)}
+                    onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
                     type="button"

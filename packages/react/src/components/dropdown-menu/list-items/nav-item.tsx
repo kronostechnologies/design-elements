@@ -89,6 +89,7 @@ export const NavItem = forwardRef(({
                     href={href}
                     target={target}
                     onClick={disabled ? undefined : onClick}
+                    tabIndex={disabled ? -1 : 0}
                 >
                     <ItemContent
                         device={device}
