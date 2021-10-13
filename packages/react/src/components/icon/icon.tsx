@@ -1,5 +1,4 @@
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
-import User from 'feather-icons/dist/icons/user.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
 import ArrowLeft from 'feather-icons/dist/icons/arrow-left.svg';
@@ -32,11 +31,15 @@ import PlusSign from 'feather-icons/dist/icons/plus.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
-import Trash from 'feather-icons/dist/icons/trash.svg';
+import Transfer from 'feather-icons/dist/icons/refresh-cw.svg';
+import Trash from 'feather-icons/dist/icons/trash-2.svg';
+import User from 'feather-icons/dist/icons/user.svg';
+import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import React, { VoidFunctionComponent } from 'react';
 import Bento from '../../icons/bento.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
+import History from '../../icons/history.svg';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
 import Files from '../../icons/files.svg';
@@ -65,6 +68,7 @@ const iconMapping = {
     eye: Eye,
     files: Files,
     helpCircle: HelpCircle,
+    history: History,
     home: Home,
     info: Info,
     mail: Mail,
@@ -80,8 +84,10 @@ const iconMapping = {
     search: Search,
     settings: Settings,
     star: Star,
+    transfer: Transfer,
     trash: Trash,
     user: User,
+    users: Users,
     x: X,
 } as const;
 

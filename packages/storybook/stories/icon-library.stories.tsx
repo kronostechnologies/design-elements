@@ -21,6 +21,7 @@ export const All: Story = () => (
         <Icon name="equisoft" />
         <Icon name="files" />
         <Icon name="helpCircle" />
+        <Icon name="history" />
         <Icon name="home" />
         <Icon name="info" />
         <Icon name="mail" />
@@ -30,8 +31,10 @@ export const All: Story = () => (
         <Icon name="open" />
         <Icon name="phone" />
         <Icon name="search" />
+        <Icon name="transfer" />
         <Icon name="trash" />
         <Icon name="user" />
+        <Icon name="users" />
         <Icon name="x" />
     </>
 );
@@ -80,6 +83,10 @@ export const HelpCircle: Story = () => (
     <Icon name="helpCircle" />
 );
 
+export const History: Story = () => (
+    <Icon name="history" />
+);
+
 export const Home: Story = () => (
     <Icon name="home" />
 );
@@ -120,8 +127,16 @@ export const Trash: Story = () => (
     <Icon name="trash" />
 );
 
+export const Trasnfer: Story = () => (
+    <Icon name="transfer" />
+);
+
 export const User: Story = () => (
     <Icon name="user" />
+);
+
+export const Users: Story = () => (
+    <Icon name="users" />
 );
 
 export const X: Story = () => (
