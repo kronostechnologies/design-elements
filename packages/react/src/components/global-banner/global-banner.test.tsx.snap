@@ -127,7 +127,6 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  margin-top: calc(var(--spacing-1x) * -1);
   padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
   position: relative;
 }
@@ -401,7 +400,6 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  margin-top: calc(var(--spacing-1x) * -1);
   padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
   position: relative;
 }
@@ -690,7 +688,6 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  margin-top: calc(var(--spacing-1x) * -1);
   padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
   position: relative;
 }
@@ -979,7 +976,6 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  margin-top: calc(var(--spacing-1x) * -1);
   padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
   position: relative;
 }
@@ -1248,7 +1244,6 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  margin-top: 0;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
 }
@@ -1525,7 +1520,6 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  margin-top: 0;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
 }
@@ -1817,7 +1811,6 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  margin-top: 0;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
 }
@@ -2109,7 +2102,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  margin-top: 0;
   padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
   position: relative;
 }
