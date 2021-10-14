@@ -59,7 +59,39 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: inherit;
 }
 
-.c4 {
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -72,13 +104,13 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -96,16 +128,16 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: none;
 }
 
-.c6:focus {
+.c7:focus {
   box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
 }
 
-.c6[disabled] {
+.c7[disabled] {
   color: #B7BBC2;
   pointer-events: none;
 }
@@ -114,25 +146,19 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   position: relative;
 }
 
-.c2 {
-  background-color: #004E78;
-  border-color: #004E78;
-  color: #FFFFFF;
+.c3 {
+  background-color: #003A5A;
+  border-color: #003A5A;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   text-transform: unset;
 }
 
-.c2:hover {
-  background-color: #004E78;
-  border-color: #004E78;
-}
-
-.c3 {
+.c4 {
   margin-left: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   max-width: 350px;
   min-width: 200px;
   right: 0;
@@ -145,14 +171,14 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 >
   <button
     aria-expanded="true"
-    class="c1 c2"
+    class="c1 c2 c3"
     data-testid="menu-button"
     type="button"
   >
     Test Button
     <svg
       aria-hidden="true"
-      class="c3"
+      class="c4"
       color="currentColor"
       focusable="false"
       height="16"
@@ -160,18 +186,18 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
     />
   </button>
   <ul
-    class="c4 c5"
+    class="c5 c6"
     data-testid="menu-list"
   >
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionA"
         href="/testa"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option A
         </span>
@@ -179,13 +205,13 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
     </li>
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionB"
         href="/testb"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option B
         </span>
@@ -193,13 +219,13 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
     </li>
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionC"
         href="/testc"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option C
         </span>
@@ -207,13 +233,13 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
     </li>
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionD"
         href="/testd"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option D
         </span>
@@ -282,7 +308,39 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   color: inherit;
 }
 
-.c4 {
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -295,13 +353,13 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   width: 100%;
 }
 
-.c7 {
+.c8 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -319,16 +377,16 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   text-decoration: none;
 }
 
-.c6:focus {
+.c7:focus {
   box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
 }
 
-.c6[disabled] {
+.c7[disabled] {
   color: #B7BBC2;
   pointer-events: none;
 }
@@ -337,25 +395,17 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   position: relative;
 }
 
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
+.c3 {
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   text-transform: unset;
 }
 
-.c2:hover {
-  background-color: #004E78;
-  border-color: #004E78;
-}
-
-.c3 {
+.c4 {
   margin-left: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   max-width: 350px;
   min-width: 200px;
   right: 0;
@@ -368,14 +418,14 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 >
   <button
     aria-expanded="false"
-    class="c1 c2"
+    class="c1 c2 c3"
     data-testid="menu-button"
     type="button"
   >
     Test Button
     <svg
       aria-hidden="true"
-      class="c3"
+      class="c4"
       color="currentColor"
       focusable="false"
       height="16"
@@ -383,19 +433,19 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
     />
   </button>
   <ul
-    class="c4 c5"
+    class="c5 c6"
     data-testid="menu-list"
     hidden=""
   >
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionA"
         href="/testa"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option A
         </span>
@@ -403,13 +453,13 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
     </li>
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionB"
         href="/testb"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option B
         </span>
@@ -417,13 +467,13 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
     </li>
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionC"
         href="/testc"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option C
         </span>
@@ -431,13 +481,13 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
     </li>
     <li>
       <a
-        class="c6"
+        class="c7"
         data-testid="listitem-optionD"
         href="/testd"
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c8"
         >
           Option D
         </span>

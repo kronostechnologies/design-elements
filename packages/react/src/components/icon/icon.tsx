@@ -38,6 +38,7 @@ import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import React, { VoidFunctionComponent } from 'react';
 import Bento from '../../icons/bento.svg';
+import Contracts from '../../icons/contracts.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
 import History from '../../icons/history.svg';
 import Open from '../../icons/open.svg';
@@ -61,6 +62,7 @@ const iconMapping = {
     chevronUp: ChevronUp,
     chevronsLeft: ChevronsLeft,
     chevronsRight: ChevronsRight,
+    contracts: Contracts,
     copy: Copy,
     edit: Edit,
     equisoft: Equisoft,

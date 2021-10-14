@@ -43,7 +43,7 @@ export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
 export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
-export { DropdownMenu } from './components/dropdown-menu/dropdown-menu';
+export { DropdownMenuButton } from './components/dropdown-menu-button/dropdown-menu-button';
 export { Icon } from './components/icon/icon';
 export { SectionalBanner } from './components/sectional-banner/sectional-banner';
 export * from './components/progress/progress';

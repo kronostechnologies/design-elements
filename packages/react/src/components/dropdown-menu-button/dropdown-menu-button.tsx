@@ -9,10 +9,8 @@ import React, {
 } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
-import { AbstractButton } from '../buttons/abstract-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconProps } from '../icon/icon';
 import { DropdownMenu } from '../dropdown-menu/dropdown-menu';
@@ -20,38 +18,34 @@ import { GroupItemProps } from '../dropdown-menu/list-items';
 import { getRootDocument } from '../../utils/dom';
 import { AvatarProps } from '../avatar/avatar';
 import { IconButton } from '../buttons/icon-button';
+import { Button, ButtonType } from '../buttons/button';
+import { Theme } from '../../themes';
 
 const StyledNav = styled.nav`
     position: relative;
 `;
 
-interface StyledButtonProps {
-    theme: Theme;
+interface ExpandedProps {
     $expanded: boolean;
 }
 
-const buttonColors = css<StyledButtonProps>`
-    background-color: ${({ $expanded, theme }) => ($expanded ? theme.main['primary-3'] : 'transparent')};
-    border-color: ${({ $expanded, theme }) => ($expanded ? theme.main['primary-3'] : 'transparent')};
-    color: ${({ theme }) => theme.greys.white};
-
-    &:hover {
-        background-color: ${({ theme }) => theme.main['primary-3']};
-        border-color: ${({ theme }) => theme.main['primary-3']};
-    }
+const ExpandedStyle = css<{ $expanded: boolean, theme: Theme }>`
+    ${({ $expanded, theme }) => $expanded && `
+        background-color: ${theme.main['primary-1.3']};
+        border-color: ${theme.main['primary-1.3']};
+    `}
 `;
 
-const StyledButton = styled(AbstractButton)<StyledButtonProps>`
-    ${buttonColors}
+const StyledButton = styled(Button)<ExpandedProps & { isMobile: boolean }>`
+    ${ExpandedStyle}
 
     font-size: 0.875rem;
     font-weight: var(--font-normal);
-    padding: 0 var(--spacing-half);
     text-transform: unset;
 `;
 
-const StyledIconButton = styled(IconButton).attrs({ buttonType: 'primary' })<StyledButtonProps>`
-    ${buttonColors}
+const StyledIconButton = styled(IconButton)<ExpandedProps>`
+    ${ExpandedStyle}
 `;
 
 const StyledRightIcon = styled(Icon)`
@@ -85,6 +79,8 @@ interface MenuButtonProps {
      * @default true
      * */
     hasCaret?: boolean;
+    buttonType?: ButtonType;
+    inverted?: boolean;
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
     firstItemRef?: RefObject<HTMLAnchorElement>;
@@ -99,6 +95,8 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     defaultOpen = false,
     hasCaret = true,
     icon,
+    buttonType = 'tertiary',
+    inverted = true,
     render,
     firstItemRef,
     onMenuVisibilityChanged,
@@ -180,6 +178,8 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     ref={buttonRef}
                     title={title}
                     type="button"
+                    buttonType={buttonType}
+                    inverted={inverted}
                 >
                     {icon}
                     {label}
@@ -203,6 +203,8 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     ref={buttonRef}
                     title={title}
                     type="button"
+                    buttonType={buttonType}
+                    inverted={inverted}
                 >
                     {icon}
                 </StyledIconButton>

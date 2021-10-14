@@ -104,6 +104,8 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
             )}
             hasCaret={false}
             icon={<Icon name="bento" size={isMobile ? '24' : '16'} />}
+            buttonType="tertiary"
+            inverted
             firstItemRef={firstItemRef}
         />
     );

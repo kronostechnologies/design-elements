@@ -62,7 +62,7 @@ AbstractButton.displayName = 'AbstractButton';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
-interface ButtonTypeStyles {
+export interface ButtonTypeStyles {
     buttonType: ButtonType;
     inverted?: boolean;
     theme: Theme;
