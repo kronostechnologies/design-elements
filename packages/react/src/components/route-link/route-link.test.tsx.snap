@@ -23,7 +23,7 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -33,7 +33,7 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -84,7 +84,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -94,7 +94,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -162,7 +162,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -172,7 +172,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -239,7 +239,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -249,7 +249,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -310,7 +310,7 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -320,7 +320,7 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -371,7 +371,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -381,7 +381,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -449,7 +449,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -459,7 +459,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {
@@ -526,7 +526,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -536,7 +536,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
 .c0:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 {

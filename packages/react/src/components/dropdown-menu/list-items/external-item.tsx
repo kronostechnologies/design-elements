@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { ExternalLink, ExternalLinkProps } from '../../external-link/external-link';
+import { focus } from '../../../utils/css-state';
 
 export interface ExternalItemProps extends ExternalLinkProps {
     label: string;
@@ -25,10 +26,7 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
-        outline: none;
-    }
+    ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};

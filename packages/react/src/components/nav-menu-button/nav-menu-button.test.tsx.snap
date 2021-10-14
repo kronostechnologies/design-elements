@@ -75,7 +75,8 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:hover {
+.c2:hover,
+.c2[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -129,8 +130,13 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c7:focus {
-  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {
@@ -147,8 +153,6 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c3 {
-  background-color: #003A5A;
-  border-color: #003A5A;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   text-transform: unset;
@@ -172,6 +176,7 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   <button
     aria-expanded="true"
     class="c1 c2 c3"
+    data-expanded="true"
     data-testid="menu-button"
     type="button"
   >
@@ -324,7 +329,8 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:hover {
+.c2:hover,
+.c2[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -378,8 +384,13 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 }
 
 .c7:focus {
-  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {
@@ -419,6 +430,7 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   <button
     aria-expanded="false"
     class="c1 c2 c3"
+    data-expanded="false"
     data-testid="menu-button"
     type="button"
   >

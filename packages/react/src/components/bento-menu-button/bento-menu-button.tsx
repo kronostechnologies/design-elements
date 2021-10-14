@@ -48,11 +48,13 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
 `;
 
 interface BentoMenuButtonProps {
+    title?: string,
     productLinks: NavItemProps[];
     externalLinks: ExternalItemProps[];
 }
 
 export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
+    title,
     productLinks,
     externalLinks,
 }) => {
@@ -102,6 +104,7 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                     </GroupItem>
                 </>
             )}
+            title={title}
             hasCaret={false}
             icon={<Icon name="bento" size={isMobile ? '24' : '16'} />}
             buttonType="tertiary"

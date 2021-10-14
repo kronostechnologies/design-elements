@@ -2,6 +2,7 @@ import React, { CSSProperties, ReactElement } from 'react';
 import { Row } from 'react-table';
 import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
+import { focus } from '../../utils/css-state';
 
 interface StyledTableRowProps {
     clickable: boolean;
@@ -18,13 +19,9 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         }
     `}
 
-    ${({ clickable, theme }) => clickable && css`
-        :focus {
-            border-color: ${theme.tokens['focus-border']};
-            box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
-            outline: none;
-        }
+    ${(props) => focus(props, undefined, undefined, true)}
 
+    ${({ clickable, theme }) => clickable && css`
         :hover {
             background-color: ${theme.greys.grey};
             cursor: pointer;

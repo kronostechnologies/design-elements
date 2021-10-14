@@ -63,7 +63,7 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
 .c1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 > * {
@@ -136,7 +136,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
 .c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0 {
@@ -180,7 +180,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
 .c1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 > * {
@@ -273,7 +273,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
 .c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c0 {
@@ -317,7 +317,7 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
 .c1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c1 > * {

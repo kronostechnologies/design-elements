@@ -75,7 +75,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -316,7 +317,8 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -347,7 +349,8 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c10:hover {
+.c10:hover,
+.c10[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -604,7 +607,8 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -635,7 +639,8 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c10:hover {
+.c10:hover,
+.c10[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -892,7 +897,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -923,7 +929,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c10:hover {
+.c10:hover,
+.c10[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1192,7 +1199,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -1436,7 +1444,8 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -1467,7 +1476,8 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c10:hover {
+.c10:hover,
+.c10[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1727,7 +1737,8 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -1758,7 +1769,8 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c10:hover {
+.c10:hover,
+.c10[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -2018,7 +2030,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover {
+.c8:hover,
+.c8[data-expanded="true"] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -2049,7 +2062,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c10:hover {
+.c10:hover,
+.c10[data-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }

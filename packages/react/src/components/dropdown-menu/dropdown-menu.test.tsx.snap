@@ -23,7 +23,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 .c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -33,7 +33,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 .c5:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c9 {
@@ -90,8 +90,13 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c7:focus {
-  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {
@@ -169,8 +174,13 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c2:focus {
-  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c2:hover {
@@ -366,7 +376,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 .c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c5:focus:not(:focus-visible) {
@@ -376,7 +386,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 .c5:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c9 {
@@ -433,8 +443,13 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c7:focus {
-  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c7:hover {
@@ -512,8 +527,13 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c2:focus {
-  box-shadow: inset 0 0 0 3px #84C6EA,inset 0 0 0 1px #006296;
   outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
 .c2:hover {
