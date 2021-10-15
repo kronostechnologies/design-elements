@@ -77,7 +77,8 @@ exports[`Global Navigation Matches snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:hover {
+.c2:hover,
+.c2[data-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -145,7 +146,7 @@ exports[`Global Navigation Matches snapshot 1`] = `
 .c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c6:hover {

@@ -26,7 +26,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -217,7 +217,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 
@@ -416,7 +416,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
   outline: none;
 }
 

@@ -122,7 +122,7 @@ describe('NavMenuButton', () => {
             </NavMenuButton>,
         );
 
-        expect(wrapper.find(IconButton).exists()).toBe(false);
+        expect(wrapper.find(IconButton).exists()).toBe(true);
     });
 
     test('nav-menu is open when defaultOpen prop is set to true', () => {

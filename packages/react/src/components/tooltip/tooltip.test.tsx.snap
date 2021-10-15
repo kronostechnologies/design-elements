@@ -152,7 +152,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <Tooltip
@@ -389,7 +389,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <Tooltip>
@@ -627,7 +627,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <Tooltip
@@ -864,7 +864,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 .c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 <Tooltip>

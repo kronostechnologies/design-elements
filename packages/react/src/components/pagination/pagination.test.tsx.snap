@@ -77,7 +77,8 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:hover {
+.c3:hover,
+.c3[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -136,7 +137,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 .c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c5:hover {
@@ -178,7 +179,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 .c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c6:hover {
@@ -399,7 +400,8 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:hover {
+.c3:hover,
+.c3[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -458,7 +460,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 .c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c5:hover {
@@ -500,7 +502,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 .c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c6:hover {
@@ -721,7 +723,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:hover {
+.c3:hover,
+.c3[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -780,7 +783,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 .c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c5:hover {
@@ -822,7 +825,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 .c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c6:hover {
@@ -1043,7 +1046,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:hover {
+.c3:hover,
+.c3[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -1102,7 +1106,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 .c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c5:hover {
@@ -1144,7 +1148,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 .c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: 0 0 0 3px #84C6EA,0 0 0 1px #006296;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
 .c6:hover {

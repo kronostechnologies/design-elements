@@ -320,7 +320,8 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:hover {
+.c3:hover,
+.c3[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -501,7 +502,8 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c4:hover {
+.c4:hover,
+.c4[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -736,7 +738,8 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:hover {
+.c3:hover,
+.c3[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }

@@ -77,7 +77,8 @@ exports[`Icon Button Has disabled styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:hover {
+.c1:hover,
+.c1[data-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -180,7 +181,8 @@ exports[`Icon Button Has mobile styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:hover {
+.c1:hover,
+.c1[data-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -282,7 +284,8 @@ exports[`Icon Button Has primary styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:hover {
+.c1:hover,
+.c1[data-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -384,7 +387,8 @@ exports[`Icon Button Has secondary styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:hover {
+.c1:hover,
+.c1[data-expanded="true"] {
   border-color: #003A5A;
   color: #003A5A;
 }
@@ -486,7 +490,8 @@ exports[`Icon Button Has tertiary styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:hover {
+.c1:hover,
+.c1[data-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }

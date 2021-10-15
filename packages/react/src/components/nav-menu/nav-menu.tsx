@@ -13,6 +13,7 @@ import styled, { css } from 'styled-components';
 import { Icon, IconName } from '../icon/icon';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
+import { focus } from '../../utils/css-state';
 
 const List = styled.ul`
     background-color: ${({ theme }) => theme.greys.white};
@@ -61,11 +62,7 @@ const linkStyles = css<LinkProps>`
     padding: 0 var(--spacing-2x);
     text-decoration: none;
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
-        outline: none;
-    }
-
+    ${(props) => focus(props, undefined, undefined, true)}
     :hover {
         background-color: ${({ theme }) => theme.greys.grey};
 

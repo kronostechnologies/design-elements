@@ -4,6 +4,7 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { IconName } from '../../icon/icon';
 import { ItemContent } from './item-content';
+import { focus } from '../../../utils/css-state';
 
 export interface NavItemProps {
     value: string;
@@ -37,10 +38,7 @@ const NavItemStyle = css<LinkProps>`
     text-decoration: none;
     white-space: nowrap;
 
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
-        outline: none;
-    }
+    ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
         background-color: ${({ disabled, theme }) => (disabled ? 'transparent' : theme.greys.grey)};

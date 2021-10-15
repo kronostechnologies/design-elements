@@ -7,7 +7,7 @@ import React, {
     useRef,
     useState, VoidFunctionComponent,
 } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
@@ -19,33 +19,15 @@ import { getRootDocument } from '../../utils/dom';
 import { AvatarProps } from '../avatar/avatar';
 import { IconButton } from '../buttons/icon-button';
 import { Button, ButtonType } from '../buttons/button';
-import { Theme } from '../../themes';
 
 const StyledNav = styled.nav`
     position: relative;
 `;
 
-interface ExpandedProps {
-    $expanded: boolean;
-}
-
-const ExpandedStyle = css<{ $expanded: boolean, theme: Theme }>`
-    ${({ $expanded, theme }) => $expanded && `
-        background-color: ${theme.main['primary-1.3']};
-        border-color: ${theme.main['primary-1.3']};
-    `}
-`;
-
-const StyledButton = styled(Button)<ExpandedProps & { isMobile: boolean }>`
-    ${ExpandedStyle}
-
+const StyledButton = styled(Button)<{ isMobile: boolean }>`
     font-size: 0.875rem;
     font-weight: var(--font-normal);
     text-transform: unset;
-`;
-
-const StyledIconButton = styled(IconButton)<ExpandedProps>`
-    ${ExpandedStyle}
 `;
 
 const StyledRightIcon = styled(Icon)`
@@ -170,8 +152,8 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
             {!isIconOnly && (
                 <StyledButton
                     aria-expanded={isOpen}
+                    data-expanded={isOpen}
                     data-testid="menu-button"
-                    $expanded={isOpen}
                     isMobile={isMobile}
                     onClick={() => setOpen(!isOpen)}
                     onKeyDown={handleButtonKeyDown}
@@ -193,11 +175,11 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                 </StyledButton>
             )}
             {isIconOnly && (
-                <StyledIconButton
+                <IconButton
                     iconName="moreHorizontal"
                     aria-expanded={isOpen}
+                    data-expanded={isOpen}
                     data-testid="menu-button"
-                    $expanded={isOpen}
                     onClick={() => setOpen(!isOpen)}
                     onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
@@ -207,7 +189,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     inverted={inverted}
                 >
                     {icon}
-                </StyledIconButton>
+                </IconButton>
             )}
             <StyledDropdownMenu
                 ref={navMenuRef}
