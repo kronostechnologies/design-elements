@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownMenu Is hidden 1`] = `
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -16,27 +16,27 @@ exports[`DropdownMenu Is hidden 1`] = `
   text-decoration: underline;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c5:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c5:focus-visible {
+.c6:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c9 {
+.c10 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -47,7 +47,7 @@ exports[`DropdownMenu Is hidden 1`] = `
   margin-right: 0;
 }
 
-.c6 {
+.c7 {
   color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
@@ -56,25 +56,25 @@ exports[`DropdownMenu Is hidden 1`] = `
   font-size: 0.875rem;
 }
 
-.c6:hover {
+.c7:hover {
   color: #003A5A;
 }
 
-.c6:visited {
+.c7:visited {
   color: #62a;
 }
 
-.c6:visited svg {
+.c7:visited svg {
   color: #62a;
 }
 
-.c8 {
+.c9 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c7 {
+.c8 {
   color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
@@ -89,21 +89,21 @@ exports[`DropdownMenu Is hidden 1`] = `
   white-space: nowrap;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c7:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c7[disabled] {
+.c8[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
@@ -123,6 +123,18 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+.c5 {
   line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
@@ -226,11 +238,15 @@ exports[`DropdownMenu Is hidden 1`] = `
         <span
           class="c3"
         >
-          <span
+          <div
             class="c4"
           >
-            optionA
-          </span>
+            <span
+              class="c5"
+            >
+              optionA
+            </span>
+          </div>
         </span>
       </a>
     </li>
@@ -245,11 +261,15 @@ exports[`DropdownMenu Is hidden 1`] = `
         <span
           class="c3"
         >
-          <span
+          <div
             class="c4"
           >
-            optionB
-          </span>
+            <span
+              class="c5"
+            >
+              optionB
+            </span>
+          </div>
         </span>
       </a>
     </li>
@@ -264,11 +284,15 @@ exports[`DropdownMenu Is hidden 1`] = `
         <span
           class="c3"
         >
-          <span
+          <div
             class="c4"
           >
-            optionC
-          </span>
+            <span
+              class="c5"
+            >
+              optionC
+            </span>
+          </div>
         </span>
       </a>
     </li>
@@ -280,19 +304,19 @@ exports[`DropdownMenu Is hidden 1`] = `
     <li>
       <a
         aria-disabled="false"
-        class="c5 c6 c7"
+        class="c6 c7 c8"
         href="https://external-link.com/a"
         target="_blank"
         type="external"
       >
         <span
-          class="c8"
+          class="c9"
         >
           ExternalA
         </span>
         <svg
           aria-label="open in new window"
-          class="c9"
+          class="c10"
           color="currentColor"
           focusable="false"
           height="16"
@@ -304,19 +328,19 @@ exports[`DropdownMenu Is hidden 1`] = `
     <li>
       <a
         aria-disabled="false"
-        class="c5 c6 c7"
+        class="c6 c7 c8"
         href="https://external-link.com/b"
         target="_blank"
         type="external"
       >
         <span
-          class="c8"
+          class="c9"
         >
           ExternalB
         </span>
         <svg
           aria-label="open in new window"
-          class="c9"
+          class="c10"
           color="currentColor"
           focusable="false"
           height="16"
@@ -328,19 +352,19 @@ exports[`DropdownMenu Is hidden 1`] = `
     <li>
       <a
         aria-disabled="false"
-        class="c5 c6 c7"
+        class="c6 c7 c8"
         href="https://external-link.com/c"
         target="_blank"
         type="external"
       >
         <span
-          class="c8"
+          class="c9"
         >
           ExternalC
         </span>
         <svg
           aria-label="open in new window"
-          class="c9"
+          class="c10"
           color="currentColor"
           focusable="false"
           height="16"
@@ -354,7 +378,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 `;
 
 exports[`DropdownMenu Matches the snapshot 1`] = `
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -369,27 +393,27 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c5:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c5:focus-visible {
+.c6:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c9 {
+.c10 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -400,7 +424,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   margin-right: 0;
 }
 
-.c6 {
+.c7 {
   color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
@@ -409,25 +433,25 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   font-size: 0.875rem;
 }
 
-.c6:hover {
+.c7:hover {
   color: #003A5A;
 }
 
-.c6:visited {
+.c7:visited {
   color: #62a;
 }
 
-.c6:visited svg {
+.c7:visited svg {
   color: #62a;
 }
 
-.c8 {
+.c9 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c7 {
+.c8 {
   color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
@@ -442,21 +466,21 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c7:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c7[disabled] {
+.c8[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
@@ -476,6 +500,18 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+.c5 {
   line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
@@ -578,11 +614,15 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         <span
           class="c3"
         >
-          <span
+          <div
             class="c4"
           >
-            optionA
-          </span>
+            <span
+              class="c5"
+            >
+              optionA
+            </span>
+          </div>
         </span>
       </a>
     </li>
@@ -597,11 +637,15 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         <span
           class="c3"
         >
-          <span
+          <div
             class="c4"
           >
-            optionB
-          </span>
+            <span
+              class="c5"
+            >
+              optionB
+            </span>
+          </div>
         </span>
       </a>
     </li>
@@ -616,11 +660,15 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         <span
           class="c3"
         >
-          <span
+          <div
             class="c4"
           >
-            optionC
-          </span>
+            <span
+              class="c5"
+            >
+              optionC
+            </span>
+          </div>
         </span>
       </a>
     </li>
@@ -632,19 +680,19 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
     <li>
       <a
         aria-disabled="false"
-        class="c5 c6 c7"
+        class="c6 c7 c8"
         href="https://external-link.com/a"
         target="_blank"
         type="external"
       >
         <span
-          class="c8"
+          class="c9"
         >
           ExternalA
         </span>
         <svg
           aria-label="open in new window"
-          class="c9"
+          class="c10"
           color="currentColor"
           focusable="false"
           height="16"
@@ -656,19 +704,19 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
     <li>
       <a
         aria-disabled="false"
-        class="c5 c6 c7"
+        class="c6 c7 c8"
         href="https://external-link.com/b"
         target="_blank"
         type="external"
       >
         <span
-          class="c8"
+          class="c9"
         >
           ExternalB
         </span>
         <svg
           aria-label="open in new window"
-          class="c9"
+          class="c10"
           color="currentColor"
           focusable="false"
           height="16"
@@ -680,19 +728,19 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
     <li>
       <a
         aria-disabled="false"
-        class="c5 c6 c7"
+        class="c6 c7 c8"
         href="https://external-link.com/c"
         target="_blank"
         type="external"
       >
         <span
-          class="c8"
+          class="c9"
         >
           ExternalC
         </span>
         <svg
           aria-label="open in new window"
-          class="c9"
+          class="c10"
           color="currentColor"
           focusable="false"
           height="16"
