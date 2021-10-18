@@ -218,7 +218,6 @@ exports[`Global Navigation Matches snapshot 1`] = `
         aria-label="add"
         className="c1 c2 c3"
         data-testid="coreActionButton"
-        onClick={[Function]}
         type="button"
       >
         <svg

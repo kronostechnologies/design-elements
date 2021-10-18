@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchInput should match the snapshot 1`] = `
-.c13 {
+.c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,21 +41,21 @@ exports[`SearchInput should match the snapshot 1`] = `
   user-select: none;
 }
 
-.c13:focus {
+.c12:focus {
   outline: none;
 }
 
-.c13:focus {
+.c12:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c13:not(:disabled) {
+.c12:not(:disabled) {
   cursor: pointer;
 }
 
-.c13 > svg {
+.c12 > svg {
   color: inherit;
 }
 
@@ -79,7 +79,7 @@ input + .c2 {
   margin-left: var(--spacing-half);
 }
 
-.c12 {
+.c13 {
   background: #FFFFFF;
   border-color: #60666E;
   color: #60666E;
@@ -88,14 +88,14 @@ input + .c2 {
   width: 2rem;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: #DBDEE1;
   color: #000000;
 }
 
-.c12:disabled,
-.c12:disabled:focus,
-.c12:disabled:hover {
+.c13:disabled,
+.c13:disabled:focus,
+.c13:disabled:hover {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
@@ -410,49 +410,35 @@ input:valid + .c8 {
           disabled={true}
           onClick={[Function]}
         >
-          <Styled(AbstractButton)
+          <Styled(styled.button)
             className="c11 primary"
             disabled={true}
             isMobile={false}
             onClick={[Function]}
           >
-            <AbstractButton
-              className="c12 c11 primary"
+            <button
+              className="c12 c13 c11 primary"
               disabled={true}
-              isMobile={false}
               onClick={[Function]}
             >
-              <styled.button
-                className="c12 c11 primary"
-                disabled={true}
-                isMobile={false}
-                onClick={[Function]}
-              >
-                <button
-                  className="c13 c12 c11 primary"
-                  disabled={true}
-                  onClick={[Function]}
+              <Styled(Icon)>
+                <Icon
+                  className="c14"
+                  color="currentColor"
+                  name="search"
+                  size="24"
                 >
-                  <Styled(Icon)>
-                    <Icon
-                      className="c14"
-                      color="currentColor"
-                      name="search"
-                      size="24"
-                    >
-                      <svg
-                        className="c14"
-                        color="currentColor"
-                        focusable={false}
-                        height="24"
-                        width="24"
-                      />
-                    </Icon>
-                  </Styled(Icon)>
-                </button>
-              </styled.button>
-            </AbstractButton>
-          </Styled(AbstractButton)>
+                  <svg
+                    className="c14"
+                    color="currentColor"
+                    focusable={false}
+                    height="24"
+                    width="24"
+                  />
+                </Icon>
+              </Styled(Icon)>
+            </button>
+          </Styled(styled.button)>
         </SearchButton>
       </Styled(SearchButton)>
     </div>
