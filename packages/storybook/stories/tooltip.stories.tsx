@@ -1,4 +1,5 @@
 import {
+    ApplicationMenu,
     IconButton,
     NavMenuOption,
     NavMenuButton,
@@ -10,11 +11,11 @@ import { Story } from '@storybook/react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { DesktopDecorator } from './utils/device-context-decorator';
+import { RouterDecorator } from './utils/router-decorator';
 import { rawCodeParameters } from './utils/parameters';
 
-const StyledDiv = styled.div`
-    height: 240px;
-    max-width: 200px;
+const Container = styled.div`
+    height: 100px;
 `;
 
 export default {
@@ -30,45 +31,22 @@ export const DefaultOpen: Story = () => (
     <Tooltip defaultOpen label="Tooltip Content" />
 );
 
+export const Delayed: Story = () => (
+    <Tooltip label="Tooltip Content" delayed />
+);
+
 export const WithChildElement: Story = () => (
-    <Tooltip label="Go to settings page">
-        <IconButton buttonType="primary" label="settings" iconName="settings" />
-    </Tooltip>
-);
-
-const options: NavMenuOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testa',
-        isHtmlLink: true,
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testb',
-        isHtmlLink: true,
-    },
-];
-
-const MenuTooltipContainer = styled.div`
-    padding-bottom: 100px;
-    padding-left: 150px;
-`;
-
-const StyledNavMenuButton = styled(NavMenuButton)`
-    button {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
-    }
-`;
-
-export const MenuTooltip: Story = () => (
-    <MenuTooltipContainer>
-        <Tooltip label="Menu">
-            <StyledNavMenuButton options={options} />
+    <Container>
+        <Tooltip label="Go to settings page" desktopPlacement="bottom">
+            <IconButton buttonType="primary" label="settings" iconName="settings" />
         </Tooltip>
-    </MenuTooltipContainer>
+    </Container>
 );
+
+const StyledDiv = styled.div`
+    height: 240px;
+    max-width: 200px;
+`;
 
 export const DesktopPlacement: Story = () => {
     const [placement, setPlacement] = useState<TooltipPlacement>('right');
@@ -98,3 +76,34 @@ export const DesktopPlacement: Story = () => {
 };
 DesktopPlacement.decorators = [DesktopDecorator];
 DesktopPlacement.parameters = rawCodeParameters;
+
+const options: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testa',
+        isHtmlLink: true,
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testb',
+        isHtmlLink: true,
+    },
+];
+
+export const WithNavMenuButton: Story = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    return (
+        <Container>
+            <ApplicationMenu>
+                <Tooltip label="Label" desktopPlacement="bottom" disabled={isMenuOpen}>
+                    <NavMenuButton iconOnly iconName="info" options={options} onMenuVisibilityChanged={setMenuOpen} />
+                </Tooltip>
+            </ApplicationMenu>
+        </Container>
+    );
+};
+
+WithNavMenuButton.decorators = [RouterDecorator];

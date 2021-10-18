@@ -46,11 +46,13 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     box-sizing: border-box;
+    color: ${({ theme }) => theme.greys.black};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
+    margin: 0;
     max-width: 327px;
     min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
     padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
@@ -155,6 +157,8 @@ interface TooltipProps {
      * @default right
      */
     desktopPlacement?: TooltipPlacement;
+    /** Adds delay to tooltip */
+    delayed?: boolean;
     disabled?: boolean;
     /** Tooltip text content */
     label: string;
@@ -168,11 +172,13 @@ const modifiers: PopperOptions['modifiers'] = [
         },
     },
 ];
+const titleDelay = 250;
 
 export const Tooltip: FunctionComponent<TooltipProps> = ({
     children,
     className,
     defaultOpen,
+    delayed,
     disabled,
     label,
     desktopPlacement = 'right',
@@ -182,9 +188,10 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
     const [isVisible, setIsVisible] = useState(defaultOpen);
+    const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
 
-    function getTooltipTriggerType(): TriggerType | null {
+    const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
             return null;
         }
@@ -192,23 +199,41 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
             return 'click';
         }
         return 'hover';
-    }
+    }, [disabled, isMobile]);
+
     const popperTooltip = usePopperTooltip({
         defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
         onVisibleChange: setIsVisible,
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
+        delayShow: delayed ? titleDelay : undefined,
     }, { modifiers });
+
+    const openTooltip = useCallback((): void => {
+        if (delayed) {
+            setTooltipTimeout(() => setTimeout(() => setControlledTooltipOpen(true), titleDelay));
+        } else {
+            setControlledTooltipOpen(true);
+        }
+    }, [delayed]);
+
+    const closeTooltip = useCallback((): void => {
+        if (delayed && tooltipTimeout) {
+            clearTimeout(tooltipTimeout);
+            setTooltipTimeout(undefined);
+        }
+        setControlledTooltipOpen(false);
+    }, [delayed, tooltipTimeout, setControlledTooltipOpen]);
 
     const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
         if (event.key === 'Escape' && !isMobile) {
             if (isVisible) {
                 document.getElementById(tooltipTriggerId)?.click();
             }
-            setControlledTooltipOpen(false);
+            closeTooltip();
         }
-    }, [isMobile, isVisible, tooltipTriggerId]);
+    }, [closeTooltip, isMobile, isVisible, tooltipTriggerId]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -218,11 +243,11 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 
     useEffect(() => {
         if (disabled) {
-            setControlledTooltipOpen(false);
+            closeTooltip();
         } else {
             setControlledTooltipOpen(undefined);
         }
-    }, [disabled]);
+    }, [closeTooltip, disabled]);
 
     useEffect(() => {
         if (isMobile) {
@@ -230,33 +255,33 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
         }
     }, [isMobile]);
 
-    function handleBLur(): void {
+    const handleBLur = useCallback((): void => {
         if (!isMobile) {
-            setControlledTooltipOpen(false);
+            closeTooltip();
         }
-    }
+    }, [isMobile, closeTooltip]);
 
-    function handleFocus(): void {
+    const handleFocus = useCallback((): void => {
         if (!isMobile) {
-            setControlledTooltipOpen(true);
+            openTooltip();
         }
-    }
+    }, [isMobile, openTooltip]);
 
-    function handleMouseDown(event: MouseEvent<HTMLSpanElement>): void {
+    const handleMouseDown = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
         event.preventDefault();
-    }
+    }, []);
 
-    function handleMouseEnter(): void {
+    const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
-            setControlledTooltipOpen(true);
+            openTooltip();
         }
-    }
+    }, [isMobile, openTooltip]);
 
-    function handleMouseLeave(): void {
+    const handleMouseLeave = useCallback((): void => {
         if (!isMobile) {
-            setControlledTooltipOpen(false);
+            closeTooltip();
         }
-    }
+    }, [isMobile, closeTooltip]);
 
     return (
         <>
