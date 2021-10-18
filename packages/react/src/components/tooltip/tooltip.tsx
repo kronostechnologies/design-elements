@@ -7,7 +7,7 @@ import React, {
     useMemo,
     useState,
 } from 'react';
-import { PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
+import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 import { focus } from '../../utils/css-state';
@@ -155,6 +155,7 @@ interface TooltipProps {
      * @default right
      */
     desktopPlacement?: TooltipPlacement;
+    disabled?: boolean;
     /** Tooltip text content */
     label: string;
 }
@@ -169,7 +170,12 @@ const modifiers: PopperOptions['modifiers'] = [
 ];
 
 export const Tooltip: FunctionComponent<TooltipProps> = ({
-    children, className, defaultOpen, label, desktopPlacement = 'right',
+    children,
+    className,
+    defaultOpen,
+    disabled,
+    label,
+    desktopPlacement = 'right',
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -177,12 +183,22 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
     const [isVisible, setIsVisible] = useState(defaultOpen);
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
+
+    function getTooltipTriggerType(): TriggerType | null {
+        if (disabled) {
+            return null;
+        }
+        if (isMobile) {
+            return 'click';
+        }
+        return 'hover';
+    }
     const popperTooltip = usePopperTooltip({
         defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
         onVisibleChange: setIsVisible,
-        trigger: isMobile ? 'click' : 'hover',
-        visible: controlledTooltipOpen,
+        trigger: getTooltipTriggerType(),
+        visible: disabled ? false : controlledTooltipOpen,
     }, { modifiers });
 
     const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
@@ -192,7 +208,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
             }
 
             if (controlledTooltipOpen) {
-                setControlledTooltipOpen(undefined);
+                setControlledTooltipOpen(false);
             }
         }
     }, [isMobile, isVisible, controlledTooltipOpen, tooltipTriggerId]);
@@ -203,9 +219,23 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
 
+    useEffect(() => {
+        if (disabled) {
+            setControlledTooltipOpen(false);
+        } else {
+            setControlledTooltipOpen(undefined);
+        }
+    }, [disabled]);
+
+    useEffect(() => {
+        if (isMobile) {
+            setControlledTooltipOpen(undefined);
+        }
+    }, [isMobile]);
+
     function handleBLur(): void {
         if (!isMobile) {
-            setControlledTooltipOpen(undefined);
+            setControlledTooltipOpen(false);
         }
     }
 
@@ -222,10 +252,11 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
     return (
         <>
             <StyledSpan
+                data-testid="tooltip"
                 className={className}
                 aria-describedby={tooltipId}
                 id={tooltipTriggerId}
-                tabIndex={0}
+                tabIndex={(children || disabled) ? -1 : 0}
                 onBlur={handleBLur}
                 onFocus={handleFocus}
                 onMouseDown={handleMouseDown}
