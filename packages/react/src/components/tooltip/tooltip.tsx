@@ -206,12 +206,9 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
             if (isVisible) {
                 document.getElementById(tooltipTriggerId)?.click();
             }
-
-            if (controlledTooltipOpen) {
-                setControlledTooltipOpen(false);
-            }
+            setControlledTooltipOpen(false);
         }
-    }, [isMobile, isVisible, controlledTooltipOpen, tooltipTriggerId]);
+    }, [isMobile, isVisible, tooltipTriggerId]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -249,6 +246,18 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
         event.preventDefault();
     }
 
+    function handleMouseEnter(): void {
+        if (!isMobile) {
+            setControlledTooltipOpen(true);
+        }
+    }
+
+    function handleMouseLeave(): void {
+        if (!isMobile) {
+            setControlledTooltipOpen(false);
+        }
+    }
+
     return (
         <>
             <StyledSpan
@@ -260,6 +269,8 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
                 onBlur={handleBLur}
                 onFocus={handleFocus}
                 onMouseDown={handleMouseDown}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 onKeyDown={handleKeyDown}
                 ref={popperTooltip.setTriggerRef}
             >

@@ -160,20 +160,26 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   label="Test Content"
 >
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -399,20 +405,26 @@ exports[`Tooltip Has default desktop styles 1`] = `
   label="Test Content"
 >
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -642,20 +654,26 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   label="Test Content"
 >
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -881,20 +899,26 @@ exports[`Tooltip Has mobile styles 1`] = `
   label="Test Content"
 >
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon

@@ -7,6 +7,74 @@ import { Tooltip } from './tooltip';
 jest.mock('../../utils/uuid');
 
 describe('Tooltip', () => {
+    describe('desktop', () => {
+        test('opens on mouseEnter', () => {
+            const wrapper = mountWithProviders(
+                <Tooltip label="Test Content" />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('mouseenter');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(true);
+        });
+
+        test('closes on mouseLeave given tooltip is open', () => {
+            const wrapper = mountWithProviders(
+                <Tooltip label="Test Content" defaultOpen />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('mouseleave');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+        });
+
+        test('does not open on mouseEnter given tooltip is disabled', () => {
+            const wrapper = mountWithProviders(
+                <Tooltip label="Test Content" disabled />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('mouseenter');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+        });
+
+        test('opens on focus', () => {
+            const wrapper = mountWithProviders(
+                <Tooltip label="Test Content" />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('focus');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(true);
+        });
+
+        test('closes on blur given tooltip is open', () => {
+            const wrapper = mountWithProviders(
+                <Tooltip label="Test Content" defaultOpen />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('blur');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+        });
+
+        test('does not open on focus given tooltip is disabled', () => {
+            const wrapper = mountWithProviders(
+                <Tooltip label="Test Content" disabled />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('focus');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+        });
+    });
+
     test('Has default desktop styles', () => {
         const tree = mountWithProviders(
             <Tooltip label="Test Content" />,
