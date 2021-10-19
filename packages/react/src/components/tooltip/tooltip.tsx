@@ -1,14 +1,13 @@
 import React, {
+    FunctionComponent,
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,
-    ReactElement,
-    ReactNode,
     useCallback,
     useEffect,
     useMemo,
     useState,
 } from 'react';
-import { PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
+import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 import { focus } from '../../utils/css-state';
@@ -47,11 +46,13 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     box-sizing: border-box;
+    color: ${({ theme }) => theme.greys.black};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
+    margin: 0;
     max-width: 327px;
     min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
     padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
@@ -148,8 +149,6 @@ const StyledSpan = styled.span`
 export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
 
 interface TooltipProps {
-    /** Tooltip text content */
-    children: ReactNode;
     className?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
@@ -158,6 +157,11 @@ interface TooltipProps {
      * @default right
      */
     desktopPlacement?: TooltipPlacement;
+    /** Adds delay to tooltip */
+    delayed?: boolean;
+    disabled?: boolean;
+    /** Tooltip text content */
+    label: string;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -168,35 +172,68 @@ const modifiers: PopperOptions['modifiers'] = [
         },
     },
 ];
+const titleDelay = 250;
 
-export function Tooltip({
-    children, className, defaultOpen, desktopPlacement = 'right',
-}: TooltipProps): ReactElement {
+export const Tooltip: FunctionComponent<TooltipProps> = ({
+    children,
+    className,
+    defaultOpen,
+    delayed,
+    disabled,
+    label,
+    desktopPlacement = 'right',
+}) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
     const [isVisible, setIsVisible] = useState(defaultOpen);
+    const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
+
+    const getTooltipTriggerType = useCallback((): TriggerType | null => {
+        if (disabled) {
+            return null;
+        }
+        if (isMobile) {
+            return 'click';
+        }
+        return 'hover';
+    }, [disabled, isMobile]);
+
     const popperTooltip = usePopperTooltip({
         defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
         onVisibleChange: setIsVisible,
-        trigger: isMobile ? 'click' : 'hover',
-        visible: controlledTooltipOpen,
+        trigger: getTooltipTriggerType(),
+        visible: disabled ? false : controlledTooltipOpen,
+        delayShow: delayed ? titleDelay : undefined,
     }, { modifiers });
+
+    const openTooltip = useCallback((): void => {
+        if (delayed) {
+            setTooltipTimeout(() => setTimeout(() => setControlledTooltipOpen(true), titleDelay));
+        } else {
+            setControlledTooltipOpen(true);
+        }
+    }, [delayed]);
+
+    const closeTooltip = useCallback((): void => {
+        if (delayed && tooltipTimeout) {
+            clearTimeout(tooltipTimeout);
+            setTooltipTimeout(undefined);
+        }
+        setControlledTooltipOpen(false);
+    }, [delayed, tooltipTimeout, setControlledTooltipOpen]);
 
     const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
         if (event.key === 'Escape' && !isMobile) {
             if (isVisible) {
                 document.getElementById(tooltipTriggerId)?.click();
             }
-
-            if (controlledTooltipOpen) {
-                setControlledTooltipOpen(undefined);
-            }
+            closeTooltip();
         }
-    }, [isMobile, isVisible, controlledTooltipOpen, tooltipTriggerId]);
+    }, [closeTooltip, isMobile, isVisible, tooltipTriggerId]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -204,39 +241,75 @@ export function Tooltip({
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
 
-    function handleBLur(): void {
-        if (!isMobile) {
+    useEffect(() => {
+        if (disabled) {
+            closeTooltip();
+        } else {
             setControlledTooltipOpen(undefined);
         }
-    }
+    }, [closeTooltip, disabled]);
 
-    function handleFocus(): void {
-        if (!isMobile) {
-            setControlledTooltipOpen(true);
+    useEffect(() => {
+        if (isMobile) {
+            setControlledTooltipOpen(undefined);
         }
-    }
+    }, [isMobile]);
 
-    function handleMouseDown(event: MouseEvent<HTMLSpanElement>): void {
+    const handleBLur = useCallback((): void => {
+        if (!isMobile) {
+            closeTooltip();
+        }
+    }, [isMobile, closeTooltip]);
+
+    const handleFocus = useCallback((): void => {
+        if (!isMobile) {
+            openTooltip();
+        }
+    }, [isMobile, openTooltip]);
+
+    const handleMouseDown = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
         event.preventDefault();
-    }
+    }, []);
+
+    const handleMouseEnter = useCallback((): void => {
+        if (!isMobile) {
+            openTooltip();
+        }
+    }, [isMobile, openTooltip]);
+
+    const handleMouseLeave = useCallback((): void => {
+        if (!isMobile) {
+            closeTooltip();
+        }
+    }, [isMobile, closeTooltip]);
 
     return (
         <>
             <StyledSpan
+                data-testid="tooltip"
                 className={className}
                 aria-describedby={tooltipId}
                 id={tooltipTriggerId}
-                tabIndex={0}
+                tabIndex={(children || disabled) ? -1 : 0}
                 onBlur={handleBLur}
                 onFocus={handleFocus}
                 onMouseDown={handleMouseDown}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 onKeyDown={handleKeyDown}
                 ref={popperTooltip.setTriggerRef}
             >
-                <Icon name="helpCircle" size={isMobile ? '24' : '16'} color={Theme.greys['dark-grey']} />
+                {children || (
+                    <Icon
+                        name="helpCircle"
+                        size={isMobile ? '24' : '16'}
+                        color={Theme.greys['dark-grey']}
+                    />
+                )}
             </StyledSpan>
 
             <TooltipContainer
+                data-testid="tooltip-content-container"
                 aria-hidden={!isVisible}
                 isMobile={isMobile}
                 id={tooltipId}
@@ -248,8 +321,8 @@ export function Tooltip({
                 <TooltipArrow
                     {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                {children}
+                {label}
             </TooltipContainer>
         </>
     );
-}
+};

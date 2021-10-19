@@ -364,7 +364,7 @@ export const CustomColumns: Story = () => {
             Cell: ({ value }) => (
                 <div style={{ display: 'flex' }}>
                     <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
-                    {value.tooltip && (<Tooltip>{value.tooltip}</Tooltip>)}
+                    {value.tooltip && (<Tooltip label={value.tooltip} />)}
                 </div>
             ),
         },

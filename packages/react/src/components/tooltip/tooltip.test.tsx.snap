@@ -32,6 +32,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
+  color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -45,6 +46,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
+  margin: 0;
   max-width: 327px;
   min-height: 32px;
   padding: var(--spacing-1x);
@@ -157,22 +159,29 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 <Tooltip
   defaultOpen={true}
+  label="Test Content"
 >
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -192,6 +201,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   <styled.div
     aria-hidden={false}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={false}
     role="tooltip"
     style={
@@ -207,6 +217,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       aria-hidden={false}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
@@ -272,6 +283,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
+  color: #000000;
   display: none;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -282,6 +294,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
+  margin: 0;
   max-width: 327px;
   min-height: 32px;
   padding: var(--spacing-1x);
@@ -392,22 +405,30 @@ exports[`Tooltip Has default desktop styles 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<Tooltip>
+<Tooltip
+  label="Test Content"
+>
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -427,6 +448,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   <styled.div
     aria-hidden={true}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={false}
     role="tooltip"
     style={
@@ -442,6 +464,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
       aria-hidden={true}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
@@ -507,6 +530,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
+  color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -520,6 +544,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.5rem;
+  margin: 0;
   max-width: 327px;
   min-height: 72px;
   padding: var(--spacing-3x);
@@ -632,22 +657,29 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 <Tooltip
   defaultOpen={true}
+  label="Test Content"
 >
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -667,6 +699,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   <styled.div
     aria-hidden={false}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={true}
     role="tooltip"
     style={
@@ -682,6 +715,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       aria-hidden={false}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
@@ -747,6 +781,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   border-radius: var(--border-radius);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
   box-sizing: border-box;
+  color: #000000;
   display: none;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -757,6 +792,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.5rem;
+  margin: 0;
   max-width: 327px;
   min-height: 72px;
   padding: var(--spacing-3x);
@@ -867,22 +903,30 @@ exports[`Tooltip Has mobile styles 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<Tooltip>
+<Tooltip
+  label="Test Content"
+>
   <styled.span
+    data-testid="tooltip"
     id="tooltip-trigger-undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     tabIndex={0}
   >
     <span
       className="c0"
+      data-testid="tooltip"
       id="tooltip-trigger-undefined"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
     >
       <Icon
@@ -902,6 +946,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   <styled.div
     aria-hidden={true}
     data-popper-interactive={false}
+    data-testid="tooltip-content-container"
     isMobile={true}
     role="tooltip"
     style={
@@ -917,6 +962,7 @@ exports[`Tooltip Has mobile styles 1`] = `
       aria-hidden={true}
       className="c1"
       data-popper-interactive={false}
+      data-testid="tooltip-content-container"
       role="tooltip"
       style={
         Object {
