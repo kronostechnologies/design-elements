@@ -211,12 +211,12 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
     }, { modifiers });
 
     const openTooltip = useCallback((): void => {
-        if (delayed) {
+        if (delayed && !disabled) {
             setTooltipTimeout(() => setTimeout(() => setControlledTooltipOpen(true), titleDelay));
         } else {
             setControlledTooltipOpen(true);
         }
-    }, [delayed]);
+    }, [delayed, disabled]);
 
     const closeTooltip = useCallback((): void => {
         if (delayed && tooltipTimeout) {
@@ -244,8 +244,6 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
     useEffect(() => {
         if (disabled) {
             closeTooltip();
-        } else {
-            setControlledTooltipOpen(undefined);
         }
     }, [closeTooltip, disabled]);
 
