@@ -24,6 +24,12 @@ const StyledIcon = styled(Icon)`
     padding: var(--spacing-1x);
 `;
 
+const StyledDiv = styled.div`
+    align-items: center;
+    display: flex;
+    max-width: 100%;
+`;
+
 const StyledSpan = styled.span`
     line-height: 1.25rem;
     margin: auto 0;
@@ -42,7 +48,7 @@ const Description = styled(StyledSpan)<{ $device: DeviceContextProps }>`
 `;
 
 const StyledLozenge = styled(Lozenge)`
-    order: 2;
+    min-width: fit-content;
 `;
 
 interface LabelContainerProps {
@@ -81,9 +87,11 @@ export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({
     <>
         { iconName && <StyledIcon aria-hidden="true" size="22" name={iconName} /> }
         <LabelContainer $device={device} $smallLabel={smallLabel}>
-            <StyledSpan>{label}</StyledSpan>
+            <StyledDiv>
+                <StyledSpan>{label}</StyledSpan>
+                {lozenge && <StyledLozenge>{lozenge}</StyledLozenge>}
+            </StyledDiv>
             { description && <Description $device={device}>{description}</Description> }
-            { lozenge && <StyledLozenge>{lozenge}</StyledLozenge>}
         </LabelContainer>
     </>
 );

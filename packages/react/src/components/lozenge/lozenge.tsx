@@ -21,9 +21,14 @@ const StyledLozenge = styled.span<{ isMobile: boolean }>`
     white-space: nowrap;
 `;
 
-export const Lozenge: FunctionComponent = ({
+interface Props {
+    className?: string;
+}
+
+export const Lozenge: FunctionComponent<Props> = ({
     children,
+    className,
 }) => {
     const { isMobile } = useDeviceContext();
-    return <StyledLozenge isMobile={isMobile}>{children}</StyledLozenge>;
+    return <StyledLozenge className={className} isMobile={isMobile}>{children}</StyledLozenge>;
 };

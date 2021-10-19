@@ -94,7 +94,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -109,27 +109,27 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c16:focus:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c16:focus-visible {
+.c17:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c22 {
+.c23 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -144,27 +144,27 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c22:focus {
+.c23:focus {
   outline: none;
 }
 
-.c22:focus {
+.c23:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c22:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c22:focus-visible {
+.c23:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c21 {
+.c22 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -175,7 +175,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   margin-right: 0;
 }
 
-.c17 {
+.c18 {
   color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
@@ -184,19 +184,19 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   font-size: 0.875rem;
 }
 
-.c17:hover {
+.c18:hover {
   color: #003A5A;
 }
 
-.c17:visited {
+.c18:visited {
   color: #62a;
 }
 
-.c17:visited svg {
+.c18:visited svg {
   color: #62a;
 }
 
-.c23 {
+.c24 {
   color: #84C6EA;
   display: -webkit-box;
   display: -webkit-flex;
@@ -205,21 +205,21 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   font-size: 0.875rem;
 }
 
-.c23:visited {
+.c24:visited {
   color: #62a;
 }
 
-.c23:visited svg {
+.c24:visited svg {
   color: #62a;
 }
 
-.c20 {
+.c21 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c19 {
+.c20 {
   color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
@@ -234,21 +234,21 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c19:focus {
+.c20:focus {
   outline: none;
 }
 
-.c19:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c19:hover {
+.c20:hover {
   background-color: #DBDEE1;
 }
 
-.c19[disabled] {
+.c20[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
@@ -296,6 +296,18 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 }
 
 .c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+.c15 {
   line-height: 1.25rem;
   margin: auto 0;
   margin-right: var(--spacing-1x);
@@ -368,7 +380,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   pointer-events: none;
 }
 
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -387,22 +399,22 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c15:focus {
+.c16:focus {
   outline: none;
 }
 
-.c15:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: transparent;
 }
 
-.c15[disabled],
-.c15[disabled] * {
+.c16[disabled],
+.c16[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -441,7 +453,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   width: initial;
 }
 
-.c1 .c5 .c18 {
+.c1 .c5 .c19 {
   line-height: 1.5rem;
   padding: var(--spacing-half) var(--spacing-4x);
 }
@@ -514,18 +526,22 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
           <span
             class="c13"
           >
-            <span
+            <div
               class="c14"
             >
-              Option A
-            </span>
+              <span
+                class="c15"
+              >
+                Option A
+              </span>
+            </div>
           </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c15"
+          class="c16"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
@@ -543,11 +559,15 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
           <span
             class="c13"
           >
-            <span
+            <div
               class="c14"
             >
-              Option B
-            </span>
+              <span
+                class="c15"
+              >
+                Option B
+              </span>
+            </div>
           </span>
         </a>
       </li>
@@ -571,11 +591,15 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
           <span
             class="c13"
           >
-            <span
+            <div
               class="c14"
             >
-              Option C
-            </span>
+              <span
+                class="c15"
+              >
+                Option C
+              </span>
+            </div>
           </span>
         </a>
       </li>
@@ -599,11 +623,15 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
           <span
             class="c13"
           >
-            <span
+            <div
               class="c14"
             >
-              Option D
-            </span>
+              <span
+                class="c15"
+              >
+                Option D
+              </span>
+            </div>
           </span>
         </a>
       </li>
@@ -621,19 +649,19 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c16 c17 c18 c19"
+          class="c17 c18 c19 c20"
           href="/testa"
           target="_blank"
           type="external"
         >
           <span
-            class="c20"
+            class="c21"
           >
             Option A
           </span>
           <svg
             aria-label="open in new window"
-            class="c21"
+            class="c22"
             color="currentColor"
             focusable="false"
             height="16"
@@ -645,19 +673,19 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="true"
-          class="c22 c23 c18 c19"
+          class="c23 c24 c19 c20"
           disabled=""
           target="_blank"
           type="external"
         >
           <span
-            class="c20"
+            class="c21"
           >
             Option B
           </span>
           <svg
             aria-label="open in new window"
-            class="c21"
+            class="c22"
             color="currentColor"
             focusable="false"
             height="16"
