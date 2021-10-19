@@ -98,7 +98,7 @@ export const WithNavMenuButton: Story = () => {
     return (
         <Container>
             <ApplicationMenu>
-                <Tooltip label="Label" desktopPlacement="bottom" disabled={isMenuOpen}>
+                <Tooltip label="Label" desktopPlacement="bottom" disabled={isMenuOpen} delayed>
                     <NavMenuButton iconOnly iconName="info" options={options} onMenuVisibilityChanged={setMenuOpen} />
                 </Tooltip>
             </ApplicationMenu>
