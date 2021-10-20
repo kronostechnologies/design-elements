@@ -246,6 +246,16 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   background-color: #DBDEE1;
 }
 
+.c15:visited {
+  color: #000000;
+  fill: #000000;
+}
+
+.c15:visited svg {
+  color: #000000;
+  fill: #000000;
+}
+
 .c15[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
@@ -894,6 +904,16 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 
 .c15:hover {
   background-color: #DBDEE1;
+}
+
+.c15:visited {
+  color: #000000;
+  fill: #000000;
+}
+
+.c15:visited svg {
+  color: #000000;
+  fill: #000000;
 }
 
 .c15[disabled] {

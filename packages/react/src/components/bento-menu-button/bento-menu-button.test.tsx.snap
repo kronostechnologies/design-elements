@@ -248,6 +248,16 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
+.c20:visited {
+  color: #000000;
+  fill: #000000;
+}
+
+.c20:visited svg {
+  color: #000000;
+  fill: #000000;
+}
+
 .c20[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
