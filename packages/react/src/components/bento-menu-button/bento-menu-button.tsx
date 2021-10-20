@@ -51,12 +51,14 @@ interface BentoMenuButtonProps {
     title?: string,
     productLinks: NavItemProps[];
     externalLinks: ExternalItemProps[];
+    onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
 export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
     title,
     productLinks,
     externalLinks,
+    onMenuVisibilityChanged,
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('bento');
@@ -110,6 +112,7 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
             buttonType="tertiary"
             inverted
             firstItemRef={firstItemRef}
+            onMenuVisibilityChanged={onMenuVisibilityChanged}
         />
     );
 };
