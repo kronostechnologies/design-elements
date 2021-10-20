@@ -32,6 +32,16 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
         background-color: ${({ theme }) => theme.greys.grey};
     }
 
+    &:visited {
+        color: ${({ theme }) => theme.greys.black};
+        fill: ${({ theme }) => theme.greys.black};
+
+        svg {
+            color: ${({ theme }) => theme.greys.black};
+            fill: ${({ theme }) => theme.greys.black};
+        }
+    }
+
     &[disabled] {
         color: ${({ theme }) => theme.greys['mid-grey']};
         fill: ${({ theme }) => theme.greys['mid-grey']};
