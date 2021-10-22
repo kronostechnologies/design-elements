@@ -1,4 +1,4 @@
-import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render, shallow, ShallowWrapper } from 'enzyme';
+import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render } from 'enzyme';
 import React, { Component, FunctionComponent, ReactElement, ReactPortal } from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
@@ -59,14 +59,6 @@ export function renderWithTheme(
     component: ReactElement,
 ): cheerio.Cheerio {
     return render(ThemeWrapped(component));
-}
-
-export function shallowWithTheme<C extends Component, P = C['props'], S = C['state']>(
-    component: ReactElement<P>,
-): ShallowWrapper<P, S, C> {
-    return shallow(component, {
-        wrappingComponent: ThemeWrapper,
-    });
 }
 
 export async function actUpdate<C extends Component, P = C['props'], S = C['state']>(

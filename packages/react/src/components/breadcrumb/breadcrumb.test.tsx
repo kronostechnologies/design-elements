@@ -1,9 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import {
-    mountWithProviders,
-    shallowWithTheme,
-} from '../../test-utils/renderer';
+import { mountWithProviders } from '../../test-utils/renderer';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { Breadcrumb } from './breadcrumb';
 
@@ -21,7 +18,7 @@ describe('Breadcrumb', () => {
                 href: '/home',
                 value: 'index',
             }];
-            const breadcrumb = shallowWithTheme(
+            const breadcrumb = shallow(
                 <Breadcrumb history={history} />,
             );
 
@@ -32,7 +29,7 @@ describe('Breadcrumb', () => {
             const history = [...defaultHistory];
             history.pop();
 
-            const breadcrumb = shallowWithTheme(
+            const breadcrumb = shallow(
                 <Breadcrumb history={history} />,
             );
 
@@ -40,7 +37,7 @@ describe('Breadcrumb', () => {
         });
 
         test('Matches snapshot (Three or more entries)', () => {
-            const breadcrumb = shallowWithTheme(
+            const breadcrumb = shallow(
                 <Breadcrumb history={defaultHistory} />,
             );
 
