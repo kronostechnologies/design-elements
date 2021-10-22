@@ -44,6 +44,11 @@ export interface ModalDialogProps {
     confirmButton?: { label?: string, onConfirm?(): void };
     footerContent?: ReactElement;
     isOpen: boolean;
+    /**
+     * Defines if the overlay click should close the modal
+     * @default true
+     */
+    shouldCloseOnOverlayClick?: boolean;
     subtitle?: string;
     title?: string;
 
@@ -62,6 +67,7 @@ export function ModalDialog({
     footerContent,
     isOpen,
     onRequestClose,
+    shouldCloseOnOverlayClick = true,
     subtitle,
     title,
 }: ModalDialogProps): ReactElement {
@@ -141,6 +147,7 @@ export function ModalDialog({
             onRequestClose={onRequestClose}
             isOpen={isOpen}
             appElement={appElement}
+            shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
         >
             {children}
         </Modal>
