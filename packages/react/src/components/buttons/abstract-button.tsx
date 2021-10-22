@@ -1,3 +1,4 @@
+import React, { ButtonHTMLAttributes, EventHandler, forwardRef, MouseEvent, Ref, useCallback } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
@@ -35,9 +36,29 @@ export const defaultButtonStyles = css<{ isMobile: boolean }>`
     }
 `;
 
-export const AbstractButton = styled.button<{ isMobile: boolean }>`
+interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    isMobile: boolean;
+}
+
+const StyledButton = styled.button<AbstractButtonProps>`
     ${defaultButtonStyles}
 `;
+
+export const AbstractButton = forwardRef((
+    { children, onClick, ...props }: AbstractButtonProps,
+    ref: Ref<HTMLButtonElement>,
+) => {
+    const handleClick: EventHandler<MouseEvent<HTMLButtonElement>> = useCallback((event) => {
+        event.stopPropagation();
+        onClick?.(event);
+    }, [onClick]);
+
+    return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <StyledButton onClick={handleClick} ref={ref} {...props}>{children}</StyledButton>
+    );
+});
+AbstractButton.displayName = 'AbstractButton';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
