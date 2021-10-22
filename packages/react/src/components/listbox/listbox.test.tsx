@@ -1,6 +1,7 @@
+import { shallow } from 'enzyme';
 import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme, shallowWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { Listbox } from './listbox';
 
 jest.mock('../../utils/uuid');
@@ -31,19 +32,19 @@ const options = [
 
 describe('Listbox', () => {
     test('Correctly set the default option', () => {
-        const wrapper = shallowWithTheme(<Listbox options={options} defaultValue="optionB" />);
+        const wrapper = shallow(<Listbox options={options} defaultValue="optionB" />);
 
         expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(true);
     });
 
     test('Correctly set the default option with array', () => {
-        const wrapper = shallowWithTheme(<Listbox options={options} defaultValue={['optionB']} />);
+        const wrapper = shallow(<Listbox options={options} defaultValue={['optionB']} />);
 
         expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toEqual(true);
     });
 
     test('Correctly set the default option to the first array element given multiselect is set to false', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = shallow(
             <Listbox options={options} defaultValue={['optionA', 'optionB']} multiselect={false} />,
         );
 
@@ -52,7 +53,7 @@ describe('Listbox', () => {
     });
 
     test('Correctly set the default options given multiselect is set to true', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = shallow(
             <Listbox options={options} defaultValue={['optionA', 'optionB']} multiselect />,
         );
 
@@ -62,7 +63,7 @@ describe('Listbox', () => {
 
     test('should call onChange callback when an option is selected', () => {
         const callback = jest.fn();
-        const wrapper = shallowWithTheme(<Listbox options={options} onChange={callback} />);
+        const wrapper = shallow(<Listbox options={options} onChange={callback} />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
@@ -70,7 +71,7 @@ describe('Listbox', () => {
     });
 
     test('Options should not be selected when no defaultValue is provided', () => {
-        const wrapper = shallowWithTheme(<Listbox options={options} />);
+        const wrapper = shallow(<Listbox options={options} />);
 
         expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(false);
         expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(false);
@@ -79,7 +80,7 @@ describe('Listbox', () => {
     });
 
     test('Should have the check indicator if selected', () => {
-        const wrapper = shallowWithTheme(<Listbox options={options} checkIndicator />);
+        const wrapper = shallow(<Listbox options={options} checkIndicator />);
 
         expect(getByTestId(wrapper, 'listitem-optionC').find('[data-testid="check-icon"]')).toHaveLength(0);
 
@@ -89,7 +90,7 @@ describe('Listbox', () => {
     });
 
     test('Should allow multiple selections given multiselect is set to true', () => {
-        const wrapper = shallowWithTheme(<Listbox options={options} defaultValue={['optionA']} multiselect />);
+        const wrapper = shallow(<Listbox options={options} defaultValue={['optionA']} multiselect />);
 
         getByTestId(wrapper, 'listitem-optionC').simulate('click');
 
@@ -98,7 +99,7 @@ describe('Listbox', () => {
     });
 
     test('Should unselect option given multiselect is set to true and option is selected', () => {
-        const wrapper = shallowWithTheme(<Listbox options={options} defaultValue={['optionA']} multiselect />);
+        const wrapper = shallow(<Listbox options={options} defaultValue={['optionA']} multiselect />);
 
         getByTestId(wrapper, 'listitem-optionA').simulate('click');
 
@@ -127,7 +128,7 @@ describe('Listbox', () => {
 
         test('should not call onChange callback when disabled item is clicked', () => {
             const callback = jest.fn();
-            const wrapper = shallowWithTheme(<Listbox options={options} onChange={callback} />);
+            const wrapper = shallow(<Listbox options={options} onChange={callback} />);
 
             getByTestId(wrapper, disabledOptionTestId).simulate('click');
 
@@ -135,7 +136,7 @@ describe('Listbox', () => {
         });
 
         test('should have aria-disabled attribute set to true', () => {
-            const wrapper = shallowWithTheme(<Listbox options={options} />);
+            const wrapper = shallow(<Listbox options={options} />);
 
             expect(getByTestId(wrapper, disabledOptionTestId).prop('aria-disabled')).toBe(true);
         });

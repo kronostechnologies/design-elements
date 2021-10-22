@@ -1,6 +1,7 @@
+import { shallow } from 'enzyme';
 import React, { ReactElement } from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithProviders, shallowWithTheme } from '../../test-utils/renderer';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { DropdownMenuButton } from './dropdown-menu-button';
 import { ExternalItem, GroupItem, GroupItemProps, NavItem } from '../dropdown-menu/list-items';
 
@@ -25,7 +26,7 @@ const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemPr
 
 describe('DropdownMenuButton', () => {
     test('dropdown-menu is open when defaultOpen prop is set to true', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = shallow(
             <DropdownMenuButton defaultOpen render={TestGroups} />,
         );
 
@@ -33,7 +34,7 @@ describe('DropdownMenuButton', () => {
     });
 
     test('Opens dropdown-menu when menu-button is clicked', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = shallow(
             <DropdownMenuButton render={() => <></>} />,
         );
 
