@@ -118,15 +118,16 @@ export function NavMenuButton({
     }, [isOpen]);
 
     useEffect(() => {
-        if (options.length > 0) {
-            const firstFocusableElement = getFirstFocusableElement(options);
-
-            setFocusedValue(isOpen ? firstFocusableElement.value : '');
+        if (!isOpen) {
+            setFocusedValue('');
         }
+
         document.addEventListener('mouseup', handleClickOutside);
 
-        return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [handleClickOutside, isOpen, options]);
+        return () => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
+    }, [handleClickOutside, isOpen]);
 
     const handleNavMenuKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Escape') {
@@ -155,6 +156,15 @@ export function NavMenuButton({
         setOpen(!isOpen);
     };
 
+    const handleButtonKeyDown = (event: KeyboardEvent): void => {
+        if ((event.key === 'Enter' || event.key === ' ') && !isOpen) {
+            setTimeout(() => {
+                const firstFocusableElement = getFirstFocusableElement(options);
+                setFocusedValue(firstFocusableElement.value);
+            });
+        }
+    };
+
     return (
         <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
             {!iconOnly && (
@@ -164,6 +174,7 @@ export function NavMenuButton({
                     data-testid="menu-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
+                    onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
                     type="button"
@@ -188,6 +199,7 @@ export function NavMenuButton({
                     data-testid="menu-button"
                     iconName={iconName}
                     onClick={handleButtonClick}
+                    onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
                     type="button"

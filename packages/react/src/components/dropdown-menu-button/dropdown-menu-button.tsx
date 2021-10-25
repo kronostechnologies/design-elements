@@ -108,16 +108,17 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
-        const removeEventListenerCallback = (): void => document.removeEventListener('mouseup', handleClickOutside);
 
-        firstItemRef?.current?.focus();
+        const removeEventListenerCallback = (): void => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
 
         if (!isOpen) {
             return removeEventListenerCallback;
         }
 
         return removeEventListenerCallback;
-    }, [handleClickOutside, isOpen, firstItemRef]);
+    }, [buttonRef, handleClickOutside, isOpen]);
 
     function handleCurrentFocus(): void {
         setTimeout(() => {
@@ -130,9 +131,15 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         });
     }
 
-    function handleButtonKeyDown({ key }: KeyboardEvent<HTMLButtonElement>): void {
-        if (isOpen && key === 'Tab') {
+    function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
+        if (isOpen && event.key === 'Tab') {
             handleCurrentFocus();
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+            setTimeout(() => {
+                firstItemRef?.current?.focus();
+            });
         }
     }
 

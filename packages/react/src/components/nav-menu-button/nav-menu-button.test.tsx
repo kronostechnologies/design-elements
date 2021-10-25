@@ -51,16 +51,32 @@ describe('NavMenuButton', () => {
             expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
         });
 
-        test(`Focuses the first menu-item when menu opens (${type})`, () => {
+        test(`Focuses the first menu-item when menu opens with Enter (${type})`, () => {
             const wrapper = mountWithProviders(
                 <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
                 </NavMenuButton>,
             );
 
-            getByTestId(wrapper, 'menu-button').simulate('click');
+            getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
 
-            expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
+            setTimeout(() => {
+                expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
+            });
+        });
+
+        test(`Focuses the first menu-item when menu opens with Space (${type})`, () => {
+            const wrapper = mountWithProviders(
+                <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
+                    Test Button
+                </NavMenuButton>,
+            );
+
+            getByTestId(wrapper, 'menu-button').simulate('keydown', { key: ' ' });
+
+            setTimeout(() => {
+                expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
+            });
         });
 
         test(`Focuses menu-button when escape key is pressed in nav-menu (${type})`, () => {
