@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MouseEvent, useState } from 'react';
+import React, { forwardRef, FunctionComponent, MouseEvent, Ref, useState } from 'react';
 import styled, { css, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -208,7 +208,7 @@ interface Props {
 
 }
 
-export const GlobalBanner: FunctionComponent<Props> = ({
+export const GlobalBanner: FunctionComponent<Props> = forwardRef(({
     actionButton,
     children,
     className,
@@ -217,7 +217,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
     label,
     secondaryActionButton,
     type = 'default',
-}) => {
+}, ref: Ref<HTMLElement>) => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
@@ -226,6 +226,7 @@ export const GlobalBanner: FunctionComponent<Props> = ({
 
     return visible ? (
         <Container
+            ref={ref}
             aria-atomic="true"
             aria-live="polite"
             className={className}
@@ -284,4 +285,4 @@ export const GlobalBanner: FunctionComponent<Props> = ({
             )}
         </Container>
     ) : null;
-};
+});
