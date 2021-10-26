@@ -1,6 +1,8 @@
 import React, {
     KeyboardEvent,
-    ReactElement, RefObject,
+    MouseEvent as ReactMouseEvent,
+    ReactElement,
+    RefObject,
     useCallback,
     useEffect,
     useMemo,
@@ -108,10 +110,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
-
-        const removeEventListenerCallback = (): void => {
-            document.removeEventListener('mouseup', handleClickOutside);
-        };
+        const removeEventListenerCallback = (): void => document.removeEventListener('mouseup', handleClickOutside);
 
         if (!isOpen) {
             return removeEventListenerCallback;
@@ -135,12 +134,17 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
         if (isOpen && event.key === 'Tab') {
             handleCurrentFocus();
         }
+    }
 
-        if (event.key === 'Enter' || event.key === ' ') {
+    function handleButtonClick(event: ReactMouseEvent<HTMLButtonElement>): void {
+        const isKeyboardActivated = event.detail === 0;
+
+        if (isKeyboardActivated) {
             setTimeout(() => {
                 firstItemRef?.current?.focus();
             });
         }
+        setOpen(!isOpen);
     }
 
     function handleNavMenuKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
@@ -162,7 +166,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     data-expanded={isOpen}
                     data-testid="menu-button"
                     isMobile={isMobile}
-                    onClick={() => setOpen(!isOpen)}
+                    onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
@@ -187,7 +191,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     aria-expanded={isOpen}
                     data-expanded={isOpen}
                     data-testid="menu-button"
-                    onClick={() => setOpen(!isOpen)}
+                    onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
