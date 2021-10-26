@@ -95,6 +95,7 @@ export interface NavMenuOption {
     // Option label, if not provided will be set with value
     label?: string;
     startIcon?: IconName;
+    target?: string;
     value: string;
     onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
@@ -198,6 +199,7 @@ export const NavMenu = forwardRef(({
                                 disabled={option.disabled}
                                 onClick={option.disabled ? undefined : handleOnClick}
                                 onKeyDown={(event) => handleKeyDown(event, option)}
+                                target={option.target}
                             >
                                 {label}
                             </HtmlLink>
@@ -212,6 +214,7 @@ export const NavMenu = forwardRef(({
                                 disabled={option.disabled}
                                 onClick={option.disabled ? undefined : handleOnClick}
                                 onKeyDown={(event) => handleKeyDown(event, option)}
+                                target={option.target}
                             >
                                 {label}
                             </ReactRouterNavLink>
