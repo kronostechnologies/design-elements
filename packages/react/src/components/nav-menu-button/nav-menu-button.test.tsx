@@ -40,7 +40,7 @@ describe('NavMenuButton', () => {
         const isIconOnly = type === 'iconOnly';
 
         test(`Opens nav-menu when menu-button is clicked (${type})`, () => {
-            const wrapper = shallow(
+            const wrapper = mountWithProviders(
                 <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
                 </NavMenuButton>,

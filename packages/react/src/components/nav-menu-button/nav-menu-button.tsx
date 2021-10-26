@@ -1,5 +1,6 @@
 import React, {
     KeyboardEvent,
+    MouseEvent as ReactMouseEvent,
     ReactElement,
     ReactNode,
     useCallback,
@@ -152,17 +153,16 @@ export function NavMenuButton({
         setOpen(false);
     };
 
-    const handleButtonClick = (): void => {
-        setOpen(!isOpen);
-    };
+    const handleButtonClick = (event: ReactMouseEvent<HTMLButtonElement>): void => {
+        const isKeyboardActivated = event.detail === 0;
 
-    const handleButtonKeyDown = (event: KeyboardEvent): void => {
-        if ((event.key === 'Enter' || event.key === ' ') && !isOpen) {
+        if (isKeyboardActivated) {
             setTimeout(() => {
                 const firstFocusableElement = getFirstFocusableElement(options);
                 setFocusedValue(firstFocusableElement.value);
             });
         }
+        setOpen(!isOpen);
     };
 
     return (
@@ -174,7 +174,6 @@ export function NavMenuButton({
                     data-testid="menu-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
-                    onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
                     type="button"
@@ -199,7 +198,6 @@ export function NavMenuButton({
                     data-testid="menu-button"
                     iconName={iconName}
                     onClick={handleButtonClick}
-                    onKeyDown={handleButtonKeyDown}
                     ref={buttonRef}
                     title={title}
                     type="button"
