@@ -34,7 +34,7 @@ describe('DropdownMenuButton', () => {
     });
 
     test('Opens dropdown-menu when menu-button is clicked', () => {
-        const wrapper = shallow(
+        const wrapper = mountWithProviders(
             <DropdownMenuButton render={() => <></>} />,
         );
 

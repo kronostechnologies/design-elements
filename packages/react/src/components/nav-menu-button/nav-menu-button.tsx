@@ -1,5 +1,6 @@
 import React, {
     KeyboardEvent,
+    MouseEvent as ReactMouseEvent,
     ReactElement,
     ReactNode,
     useCallback,
@@ -118,15 +119,16 @@ export function NavMenuButton({
     }, [isOpen]);
 
     useEffect(() => {
-        if (options.length > 0) {
-            const firstFocusableElement = getFirstFocusableElement(options);
-
-            setFocusedValue(isOpen ? firstFocusableElement.value : '');
+        if (!isOpen) {
+            setFocusedValue('');
         }
+
         document.addEventListener('mouseup', handleClickOutside);
 
-        return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [handleClickOutside, isOpen, options]);
+        return () => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        };
+    }, [handleClickOutside, isOpen]);
 
     const handleNavMenuKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Escape') {
@@ -151,7 +153,15 @@ export function NavMenuButton({
         setOpen(false);
     };
 
-    const handleButtonClick = (): void => {
+    const handleButtonClick = (event: ReactMouseEvent<HTMLButtonElement>): void => {
+        const isKeyboardActivated = event.detail === 0;
+
+        if (isKeyboardActivated) {
+            setTimeout(() => {
+                const firstFocusableElement = getFirstFocusableElement(options);
+                setFocusedValue(firstFocusableElement.value);
+            });
+        }
         setOpen(!isOpen);
     };
 
