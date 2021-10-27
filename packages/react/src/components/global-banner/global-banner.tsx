@@ -1,4 +1,4 @@
-import React, { forwardRef, FunctionComponent, MouseEvent, Ref, useState } from 'react';
+import React, { forwardRef, ReactElement, ReactNode, MouseEvent, Ref, useState } from 'react';
 import styled, { css, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -198,6 +198,7 @@ interface Props {
     actionButton?: ActionButton;
     secondaryActionButton?: ActionButton;
     className?: string;
+    children: ReactNode;
     hidden?: boolean;
     /**
      * Adds an ignore-button. Note that alert type banners are not dismissable.
@@ -205,10 +206,9 @@ interface Props {
     dismissable?: boolean;
     label: string;
     type?: GlobalBannerType;
-
 }
 
-export const GlobalBanner: FunctionComponent<Props> = forwardRef(({
+export const GlobalBanner = forwardRef(({
     actionButton,
     children,
     className,
@@ -217,7 +217,7 @@ export const GlobalBanner: FunctionComponent<Props> = forwardRef(({
     label,
     secondaryActionButton,
     type = 'default',
-}, ref: Ref<HTMLElement>) => {
+}: Props, ref: Ref<HTMLElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
