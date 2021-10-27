@@ -217,7 +217,7 @@ export const GlobalBanner = forwardRef(({
     label,
     secondaryActionButton,
     type = 'default',
-}: Props, ref: Ref<HTMLElement>): ReactElement => {
+}: Props, ref: Ref<HTMLElement>): ReactElement | null => {
     const { isMobile } = useDeviceContext();
     const [visible, setVisible] = useState(!hidden);
     const { t } = useTranslation('global-banner');
