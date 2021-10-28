@@ -299,7 +299,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
             >
                 {children || (
                     <Icon
-                        name="helpCircle"
+                        name="info"
                         size={isMobile ? '24' : '16'}
                         color={Theme.greys['dark-grey']}
                     />
