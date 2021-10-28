@@ -186,7 +186,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     >
       <Icon
         color="#60666E"
-        name="helpCircle"
+        name="info"
         size="16"
       >
         <svg
@@ -433,7 +433,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
     >
       <Icon
         color="#60666E"
-        name="helpCircle"
+        name="info"
         size="16"
       >
         <svg
@@ -684,7 +684,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     >
       <Icon
         color="#60666E"
-        name="helpCircle"
+        name="info"
         size="24"
       >
         <svg
@@ -931,7 +931,7 @@ exports[`Tooltip Has mobile styles 1`] = `
     >
       <Icon
         color="#60666E"
-        name="helpCircle"
+        name="info"
         size="24"
       >
         <svg
