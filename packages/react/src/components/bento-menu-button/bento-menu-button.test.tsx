@@ -92,6 +92,22 @@ describe('BentoMenuButton', () => {
         expect(externalB.prop('onClick')).toBe(undefined);
     });
 
+    it('should not show Products section when productLinks array is empty', () => {
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={[]} externalLinks={externals} />,
+        );
+
+        expect(getByTestId(wrapper, 'products-group').exists()).toBe(false);
+    });
+
+    it('should not show Resources section when externalLinks array is empty', () => {
+        const wrapper = mountWithProviders(
+            <BentoMenuButton productLinks={products} externalLinks={[]} />,
+        );
+
+        expect(getByTestId(wrapper, 'resources-group').exists()).toBe(false);
+    });
+
     test('Matches Snapshot', () => {
         const tree = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
