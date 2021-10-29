@@ -515,6 +515,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
     <ul
       aria-labelledby="product-links"
       class="c10"
+      data-testid="products-group"
     >
       <li>
         <a
@@ -655,6 +656,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
     <ul
       aria-labelledby="external-links"
       class="c10"
+      data-testid="resources-group"
     >
       <li>
         <a

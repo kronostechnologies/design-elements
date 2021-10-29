@@ -67,43 +67,47 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
         <StyledDropdownMenuButton
             render={(close) => (
                 <>
-                    <GroupItem label={t('productsLabel')} id="product-links">
-                        {productLinks.map((product, idx) => (
-                            <NavItem
-                                ref={idx === 0 ? firstItemRef : undefined}
-                                target="_blank"
-                                data-testid={`product-${product.value}`}
-                                key={`product-${product.value}`}
-                                value={product.value}
-                                label={product.label}
-                                href={product.href}
-                                iconName={product.iconName || 'equisoft'}
-                                description={product.description}
-                                isHtmlLink={product.isHtmlLink}
-                                lozenge={product.lozenge}
-                                disabled={product.disabled}
-                                onClick={product.disabled ? undefined : (event) => {
-                                    product.onClick?.(event);
-                                    close();
-                                }}
-                            />
-                        ))}
-                    </GroupItem>
-                    <GroupItem label={t('externalsLabel')} id="external-links">
-                        {externalLinks.map((external) => (
-                            <ExternalItem
-                                data-testid={`external-${external.label}`}
-                                key={`external-${external.label}`}
-                                href={external.href}
-                                label={external.label}
-                                disabled={external.disabled}
-                                onClick={external.disabled ? undefined : () => {
-                                    external.onClick?.();
-                                    close();
-                                }}
-                            />
-                        ))}
-                    </GroupItem>
+                    {productLinks.length > 0 && (
+                        <GroupItem label={t('productsLabel')} id="product-links" data-testid="products-group">
+                            {productLinks.map((product, idx) => (
+                                <NavItem
+                                    ref={idx === 0 ? firstItemRef : undefined}
+                                    target="_blank"
+                                    data-testid={`product-${product.value}`}
+                                    key={`product-${product.value}`}
+                                    value={product.value}
+                                    label={product.label}
+                                    href={product.href}
+                                    iconName={product.iconName || 'equisoft'}
+                                    description={product.description}
+                                    isHtmlLink={product.isHtmlLink}
+                                    lozenge={product.lozenge}
+                                    disabled={product.disabled}
+                                    onClick={product.disabled ? undefined : (event) => {
+                                        product.onClick?.(event);
+                                        close();
+                                    }}
+                                />
+                            ))}
+                        </GroupItem>
+                    )}
+                    {externalLinks.length > 0 && (
+                        <GroupItem label={t('externalsLabel')} id="external-links" data-testid="resources-group">
+                            {externalLinks.map((external) => (
+                                <ExternalItem
+                                    data-testid={`external-${external.label}`}
+                                    key={`external-${external.label}`}
+                                    href={external.href}
+                                    label={external.label}
+                                    disabled={external.disabled}
+                                    onClick={external.disabled ? undefined : () => {
+                                        external.onClick?.();
+                                        close();
+                                    }}
+                                />
+                            ))}
+                        </GroupItem>
+                    )}
                 </>
             )}
             title={title}

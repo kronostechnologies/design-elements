@@ -2,6 +2,7 @@ import React, { ReactElement, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { NavItemProps } from './nav-item';
 import { Heading, HeadingProps } from '../../heading/heading';
+import { useDataAttributes } from '../../../hooks/use-data-attributes';
 
 export interface GroupItemProps {
     id?: string;
@@ -34,14 +35,20 @@ export const GroupItem: VoidFunctionComponent<GroupItemProps> = ({
     children,
     ordered,
     label,
-}) => (
-    <>
-        {label && <StyledHeading id={id} type='small' tag='h3' bold>{label}</StyledHeading>}
-        <StyledGroup
-            aria-labelledby={id}
-            as={ordered ? 'ol' : 'ul'}
-        >
-            {children}
-        </StyledGroup>
-    </>
-);
+    ...otherProps
+}) => {
+    const dataAttributes = useDataAttributes(otherProps);
+
+    return (
+        <>
+            {label && <StyledHeading id={id} type='small' tag='h3' bold>{label}</StyledHeading>}
+            <StyledGroup
+                aria-labelledby={id}
+                as={ordered ? 'ol' : 'ul'}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+            >
+                {children}
+            </StyledGroup>
+        </>
+    );
+};
