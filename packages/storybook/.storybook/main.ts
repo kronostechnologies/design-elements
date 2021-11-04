@@ -13,7 +13,10 @@ module.exports = {
             shouldRemoveUndefinedFromOptional: true,
         },
     },
-    stories: ['../stories/**/*.stories.@(tsx|mdx)'],
+    stories: [
+        '../stories/0-intro.stories.mdx',
+        '../stories/**/*.stories.@(tsx|mdx)',
+    ],
     addons: [
         '@storybook/preset-scss',
         '@storybook/addon-docs',
