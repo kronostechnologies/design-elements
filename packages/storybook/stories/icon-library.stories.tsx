@@ -29,6 +29,7 @@ export const All: Story = () => (
         <Icon name="mapPin" />
         <Icon name="menu" />
         <Icon name="moreHorizontal" />
+        <Icon name="organization" />
         <Icon name="open" />
         <Icon name="phone" />
         <Icon name="search" />
@@ -114,6 +115,10 @@ export const Menu: Story = () => (
 
 export const MoreHorizontal: Story = () => (
     <Icon name="moreHorizontal" />
+);
+
+export const Organization: Story = () => (
+    <Icon name="organization" />
 );
 
 export const Open: Story = () => (
