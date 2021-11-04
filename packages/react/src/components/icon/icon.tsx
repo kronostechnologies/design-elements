@@ -41,6 +41,7 @@ import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
 import History from '../../icons/history.svg';
+import Organization from '../../icons/organization.svg';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
 import Files from '../../icons/files.svg';
@@ -79,6 +80,7 @@ const iconMapping = {
     minus: Minus,
     moreHorizontal: MoreHorizontal,
     moreVertical: MoreVertical,
+    organization: Organization,
     open: Open,
     phone: Phone,
     plusSign: PlusSign,
