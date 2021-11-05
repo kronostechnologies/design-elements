@@ -37,6 +37,7 @@ interface UserProfileProps {
      * */
     defaultOpen?: boolean;
     id?: string;
+    isDiv?: boolean;
     options: NavItemProps[];
     username: string;
     userEmail?: string;
@@ -48,10 +49,11 @@ export function UserProfile({
     className,
     defaultOpen = false,
     id,
-    options,
-    username,
-    userEmail,
+    isDiv = false,
     onMenuVisibilityChanged,
+    options,
+    userEmail,
+    username,
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
@@ -67,6 +69,7 @@ export function UserProfile({
             hasCaret={!isMobile}
             id={id}
             icon={<StyledAvatar isMobile={isMobile} username={username} />}
+            isDiv={isDiv}
             isMobile={isMobile}
             {...(isMobile ? {} : {
                 label: username,

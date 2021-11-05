@@ -108,6 +108,14 @@ describe('BentoMenuButton', () => {
         expect(getByTestId(wrapper, 'resources-group').exists()).toBe(false);
     });
 
+    test('Matches Snapshot (isDiv)', () => {
+        const tree = renderWithProviders(
+            <BentoMenuButton isDiv productLinks={products} externalLinks={externals} />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('Matches Snapshot', () => {
         const tree = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
