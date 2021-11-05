@@ -51,7 +51,7 @@ interface MenuButtonProps {
      * @default 'Menu'
      * */
     ariaLabel?: string;
-    render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
+    buttonAriaLabel?: string;
     className?: string;
     /**
      * Sets menu open by default
@@ -69,6 +69,7 @@ interface MenuButtonProps {
     id?: string;
     isDiv?: boolean;
     firstItemRef?: RefObject<HTMLAnchorElement>;
+    render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
@@ -77,6 +78,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     title,
     ariaLabel,
     isDiv = false,
+    buttonAriaLabel,
     className,
     defaultOpen = false,
     hasCaret = true,
@@ -163,15 +165,16 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
 
     return (
         <StyledNav
-            data-testid="dropdown-container"
-            as={containerTag}
-            ref={navRef}
-            className={className}
-            id={id}
             aria-label={ariaLabel || t('ariaLabel')}
+            as={containerTag}
+            className={className}
+            data-testid="menu-button-wrapper"
+            id={id}
+            ref={navRef}
         >
             {!isIconOnly && (
                 <StyledButton
+                    aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
                     data-expanded={isOpen}
                     data-testid="menu-button"
@@ -198,6 +201,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
             {isIconOnly && (
                 <IconButton
                     iconName="moreHorizontal"
+                    aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
                     data-expanded={isOpen}
                     data-testid="menu-button"

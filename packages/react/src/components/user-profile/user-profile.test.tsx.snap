@@ -332,7 +332,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 <nav
   aria-label="User menu"
   class="c0 "
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="true"
@@ -822,7 +822,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 <nav
   aria-label="User menu"
   class="c0 "
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="false"
@@ -1313,7 +1313,7 @@ exports[`UserProfile Matches Snapshot (isDiv) 1`] = `
 <div
   aria-label="User menu"
   class="c0 "
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="false"
@@ -1803,7 +1803,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 <nav
   aria-label="User menu"
   class="c0 c1"
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="false"

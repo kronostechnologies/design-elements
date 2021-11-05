@@ -30,6 +30,7 @@ interface UserProfileProps {
      * @default 'User menu'
      * */
     ariaLabel?: string;
+    buttonAriaLabel?: string;
     className?: string;
     /**
      * Sets menu open by default
@@ -46,6 +47,7 @@ interface UserProfileProps {
 
 export function UserProfile({
     ariaLabel,
+    buttonAriaLabel,
     className,
     defaultOpen = false,
     id,
@@ -63,6 +65,7 @@ export function UserProfile({
     return (
         <StyledDropdownMenuButton
             ariaLabel={ariaLabel || t('ariaLabel')}
+            buttonAriaLabel={buttonAriaLabel}
             className={className}
             data-testid="user-profile"
             defaultOpen={defaultOpen}

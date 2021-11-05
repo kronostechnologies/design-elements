@@ -25,6 +25,22 @@ const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemPr
 );
 
 describe('DropdownMenuButton', () => {
+    test('adds aria-label to menu-button-wrapper when ariaLabel is defined', () => {
+        const ariaLabel = 'test-aria-label';
+
+        const wrapper = shallow(<DropdownMenuButton ariaLabel={ariaLabel} render={TestGroups} />);
+
+        expect(getByTestId(wrapper, 'menu-button-wrapper').prop('aria-label')).toBe(ariaLabel);
+    });
+
+    test('adds aria-label to menu-button when buttonAriaLabel is defined', () => {
+        const ariaLabel = 'test-aria-label';
+
+        const wrapper = shallow(<DropdownMenuButton buttonAriaLabel={ariaLabel} render={TestGroups} />);
+
+        expect(getByTestId(wrapper, 'menu-button').prop('aria-label')).toBe(ariaLabel);
+    });
+
     test('dropdown-menu is open when defaultOpen prop is set to true', () => {
         const wrapper = shallow(
             <DropdownMenuButton defaultOpen render={TestGroups} />,
@@ -69,7 +85,7 @@ describe('DropdownMenuButton', () => {
             <DropdownMenuButton isDiv render={TestGroups} />,
         );
 
-        const dropDownContainer = getByTestId(wrapper, 'dropdown-container');
+        const dropDownContainer = getByTestId(wrapper, 'menu-button-wrapper');
         expect(dropDownContainer.prop('as')).toEqual('div');
     });
 
