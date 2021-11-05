@@ -77,3 +77,9 @@ export const Mobile: Story = () => (
     </ApplicationMenu>
 );
 Mobile.decorators = [MobileDecorator];
+
+export const WithDivContainer: Story = () => (
+    <ApplicationMenu>
+        <BentoMenuButton isDiv productLinks={products} externalLinks={resources} />
+    </ApplicationMenu>
+);

@@ -30,6 +30,7 @@ interface UserProfileProps {
      * @default 'User menu'
      * */
     ariaLabel?: string;
+    as?: string;
     className?: string;
     /**
      * Sets menu open by default
@@ -45,13 +46,14 @@ interface UserProfileProps {
 
 export function UserProfile({
     ariaLabel,
+    as = "nav",
     className,
     defaultOpen = false,
     id,
-    options,
-    username,
-    userEmail,
     onMenuVisibilityChanged,
+    options,
+    userEmail,
+    username,
 }: UserProfileProps): ReactElement {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
@@ -67,6 +69,7 @@ export function UserProfile({
             hasCaret={!isMobile}
             id={id}
             icon={<StyledAvatar isMobile={isMobile} username={username} />}
+            as={as}
             isMobile={isMobile}
             {...(isMobile ? {} : {
                 label: username,
