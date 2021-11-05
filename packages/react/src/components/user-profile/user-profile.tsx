@@ -38,7 +38,8 @@ interface UserProfileProps {
      * */
     defaultOpen?: boolean;
     id?: string;
-    isDiv?: boolean;
+    /** Set wrapper element tag */
+    tag?: 'div' | 'nav';
     options: NavItemProps[];
     username: string;
     userEmail?: string;
@@ -51,7 +52,7 @@ export function UserProfile({
     className,
     defaultOpen = false,
     id,
-    isDiv = false,
+    tag,
     onMenuVisibilityChanged,
     options,
     userEmail,
@@ -72,7 +73,7 @@ export function UserProfile({
             hasCaret={!isMobile}
             id={id}
             icon={<StyledAvatar isMobile={isMobile} username={username} />}
-            isDiv={isDiv}
+            tag={tag}
             isMobile={isMobile}
             {...(isMobile ? {} : {
                 label: username,

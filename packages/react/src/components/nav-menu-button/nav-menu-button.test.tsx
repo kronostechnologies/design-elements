@@ -199,6 +199,34 @@ describe('NavMenuButton', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Renders div container tag when "tag" prop is set to div', () => {
+        const wrapper = mountWithProviders(
+            <NavMenuButton tag="div" options={options}>Test Button</NavMenuButton>,
+        );
+
+        const navMenuContainer = getByTestId(wrapper, 'navmenu-container');
+        expect(navMenuContainer.prop('as')).toEqual('div');
+    });
+
+    test('Renders nav container tag when "tag" props is set to nav', () => {
+        const wrapper = mountWithProviders(
+            <NavMenuButton tag="nav" options={options}>Test Button</NavMenuButton>,
+        );
+
+        const navMenuContainer = getByTestId(wrapper, 'navmenu-container');
+        expect(navMenuContainer.prop('as')).toEqual('nav');
+    });
+
+    test('Matches Snapshot (tag="nav")', () => {
+        const tree = renderWithProviders(
+            <NavMenuButton tag="nav" options={options}>
+                Test Button
+            </NavMenuButton>,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('Matches Snapshot (defaultOpen)', () => {
         const tree = renderWithProviders(
             <NavMenuButton defaultOpen options={options}>

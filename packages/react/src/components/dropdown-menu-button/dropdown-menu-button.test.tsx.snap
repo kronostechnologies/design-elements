@@ -445,10 +445,10 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   width: initial;
 }
 
-<nav
-  aria-label="Menu"
+<div
+  aria-label=""
   class="c0"
-  data-testid="menu-button-wrapper"
+  data-testid="dropdown-container"
 >
   <button
     aria-expanded="true"
@@ -694,7 +694,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
       </li>
     </ul>
   </div>
-</nav>
+</div>
 `;
 
 exports[`DropdownMenuButton Matches Snapshot 1`] = `
@@ -1142,10 +1142,10 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   width: initial;
 }
 
-<nav
-  aria-label="Menu"
+<div
+  aria-label=""
   class="c0"
-  data-testid="menu-button-wrapper"
+  data-testid="dropdown-container"
 >
   <button
     aria-expanded="false"
@@ -1392,5 +1392,5 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
       </li>
     </ul>
   </div>
-</nav>
+</div>
 `;

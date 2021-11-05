@@ -108,9 +108,9 @@ describe('BentoMenuButton', () => {
         expect(getByTestId(wrapper, 'resources-group').exists()).toBe(false);
     });
 
-    test('Matches Snapshot (isDiv)', () => {
+    test('Matches Snapshot (tag="nav")', () => {
         const tree = renderWithProviders(
-            <BentoMenuButton isDiv productLinks={products} externalLinks={externals} />,
+            <BentoMenuButton tag="nav" productLinks={products} externalLinks={externals} />,
         );
 
         expect(tree).toMatchSnapshot();

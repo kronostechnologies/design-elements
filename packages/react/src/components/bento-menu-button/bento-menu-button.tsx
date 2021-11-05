@@ -50,21 +50,22 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
 interface BentoMenuButtonProps {
     ariaLabel?: string;
     buttonAriaLabel?: string;
-    title?: string,
-    productLinks: NavItemProps[];
     externalLinks: ExternalItemProps[];
-    isDiv?: boolean;
+    /** Set wrapper element tag */
+    tag?: 'div' | 'nav';
     onMenuVisibilityChanged?(isOpen: boolean): void;
+    productLinks: NavItemProps[];
+    title?: string,
 }
 
 export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
     ariaLabel,
     buttonAriaLabel,
-    title,
-    productLinks,
     externalLinks,
-    isDiv = false,
+    tag,
     onMenuVisibilityChanged,
+    productLinks,
+    title,
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('bento');
@@ -116,9 +117,9 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
                     )}
                 </>
             )}
-            isDiv={isDiv}
             ariaLabel={ariaLabel}
             buttonAriaLabel={buttonAriaLabel}
+            tag={tag}
             title={title}
             hasCaret={false}
             icon={<Icon name="bento" size={isMobile ? '24' : '16'} />}

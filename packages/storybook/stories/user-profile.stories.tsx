@@ -65,8 +65,8 @@ export const Mobile: Story = () => (
 );
 Mobile.decorators = [MobileDecorator];
 
-export const WithDivContainer: Story = () => (
-    <UserProfile isDiv options={options} username="John Doe" />
+export const WithNavContainer: Story = () => (
+    <UserProfile tag="nav" options={options} username="John Doe" />
 );
 
 export const DefaultOpen: Story = () => (

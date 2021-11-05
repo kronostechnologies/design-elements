@@ -20,7 +20,7 @@ import { getRootDocument } from '../../utils/dom';
 import { IconButton } from '../buttons/icon-button';
 import { Button, ButtonType } from '../buttons/button';
 
-const StyledNav = styled.nav`
+const StyledDiv = styled.div`
     position: relative;
 `;
 
@@ -56,6 +56,7 @@ interface MenuButtonProps {
      * @default 'Menu'
      * */
     ariaLabel?: string;
+    tag?: 'div' | 'nav';
     buttonAriaLabel?: string;
     children?: ReactNode;
     className?: string;
@@ -81,8 +82,10 @@ interface MenuButtonProps {
 }
 
 export function NavMenuButton({
+    tag,
     ariaLabel,
     buttonAriaLabel,
+    buttonType = 'tertiary',
     children,
     className,
     defaultOpen = false,
@@ -90,18 +93,18 @@ export function NavMenuButton({
     iconName,
     iconOnly = false,
     id: providedId,
+    inverted = true,
+    onMenuOptionSelected,
+    onMenuVisibilityChanged,
     options,
     title,
-    buttonType = 'tertiary',
-    inverted = true,
-    onMenuVisibilityChanged,
-    onMenuOptionSelected,
 }: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const [focusedValue, setFocusedValue] = useState('');
     const [isOpen, setOpen] = useState(defaultOpen);
+    const containerAriaLabel = tag === 'div' ? '' : ariaLabel || t('ariaLabel');
 
     useEffect(() => {
         onMenuVisibilityChanged?.(isOpen);
@@ -168,7 +171,14 @@ export function NavMenuButton({
     };
 
     return (
-        <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
+        <StyledDiv
+            data-testid="navmenu-container"
+            as={tag}
+            ref={navRef}
+            className={className}
+            id={id}
+            aria-label={containerAriaLabel}
+        >
             {!iconOnly && (
                 <StyledButton
                     aria-label={buttonAriaLabel}
@@ -218,6 +228,6 @@ export function NavMenuButton({
                 ref={navMenuRef}
                 hidden={!isOpen}
             />
-        </StyledNav>
+        </StyledDiv>
     );
 }

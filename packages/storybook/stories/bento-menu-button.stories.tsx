@@ -78,8 +78,8 @@ export const Mobile: Story = () => (
 );
 Mobile.decorators = [MobileDecorator];
 
-export const WithDivContainer: Story = () => (
+export const WithNavContainer: Story = () => (
     <ApplicationMenu>
-        <BentoMenuButton isDiv productLinks={products} externalLinks={resources} />
+        <BentoMenuButton tag="nav" productLinks={products} externalLinks={resources} />
     </ApplicationMenu>
 );
