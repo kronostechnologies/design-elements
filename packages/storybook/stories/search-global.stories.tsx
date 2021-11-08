@@ -1,6 +1,6 @@
 import { SearchGlobal } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -14,9 +14,24 @@ export const Global: Story = () => (
 export const Disabled: Story = () => (
     <SearchGlobal disabled />
 );
-export const EventCallback: Story = () => (
+export const EventCallbacks: Story = () => (
     <SearchGlobal
+        onChange={(value) => console.info(`New value is : ${value}`)}
         onSearch={(value) => console.info(`Searching for: ${value}`)}
+        onInputFocus={() => console.info('Input focused')}
     />
 );
-EventCallback.parameters = rawCodeParameters;
+EventCallbacks.parameters = rawCodeParameters;
+
+export const WithReset: Story = () => {
+    const [value, setValue] = useState('');
+
+    return (
+        <SearchGlobal
+            value={value}
+            onChange={setValue}
+            onReset={() => setValue('')}
+        />
+    );
+};
+WithReset.parameters = rawCodeParameters;

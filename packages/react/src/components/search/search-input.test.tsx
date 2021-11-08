@@ -62,10 +62,16 @@ describe('SearchInput', () => {
     });
 
     describe('reset', () => {
+        it('should display reset when onReset and value are provided', () => {
+            const wrapper = shallow(<SearchInput onReset={jest.fn()} value="test" />);
+
+            expect(getByTestId(wrapper, 'search-reset').length).toBe(1);
+        });
+
         it('should call onReset when reset is clicked', () => {
             const onReset = jest.fn();
             const wrapper = shallow(
-                <SearchInput onReset={onReset} />,
+                <SearchInput onReset={onReset} value="test" />,
             );
 
             getByTestId(wrapper, 'search-reset').invoke('onClick')();
@@ -74,13 +80,15 @@ describe('SearchInput', () => {
         });
 
         it('should not display reset when onReset is not provided', () => {
-            const wrapper = shallow(
-                <SearchInput />,
-            );
+            const wrapper = shallow(<SearchInput />);
 
-            const searchButton = getByTestId(wrapper, 'search-reset');
+            expect(getByTestId(wrapper, 'search-reset').length).toBe(0);
+        });
 
-            expect(searchButton.length).toBe(0);
+        it('should not display reset when onReset is provided but not value', () => {
+            const wrapper = shallow(<SearchInput onReset={jest.fn()} />);
+
+            expect(getByTestId(wrapper, 'search-reset').length).toBe(0);
         });
     });
 

@@ -211,7 +211,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                     data-testid="search-input"
                 />
 
-                {onReset && (
+                {(onReset && value) && (
                     <Reset onClick={handleReset} data-testid="search-reset">
                         <IcoReset />
                         <VisuallyHidden>Reset</VisuallyHidden>
