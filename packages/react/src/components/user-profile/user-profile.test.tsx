@@ -112,6 +112,12 @@ describe('UserProfile', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('Matches Snapshot (isDiv)', () => {
+        const tree = renderWithProviders(<UserProfile isDiv username="Test Button" options={options} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('Matches Snapshot (mobile)', () => {
         const tree = renderWithProviders(<UserProfile username="Test Button" options={options} />, 'mobile');
 

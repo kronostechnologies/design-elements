@@ -67,6 +67,7 @@ interface MenuButtonProps {
     inverted?: boolean;
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
+    isDiv?: boolean;
     firstItemRef?: RefObject<HTMLAnchorElement>;
     onMenuVisibilityChanged?(isOpen: boolean): void;
 }
@@ -75,6 +76,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     label,
     title,
     ariaLabel,
+    isDiv = false,
     className,
     defaultOpen = false,
     hasCaret = true,
@@ -94,6 +96,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     const navMenuRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
     const isIconOnly = icon && !label && !hasCaret;
+    const containerTag = isDiv ? 'div' : 'nav';
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
@@ -159,7 +162,14 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     }
 
     return (
-        <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
+        <StyledNav
+            data-testid="dropdown-container"
+            as={containerTag}
+            ref={navRef}
+            className={className}
+            id={id}
+            aria-label={ariaLabel || t('ariaLabel')}
+        >
             {!isIconOnly && (
                 <StyledButton
                     aria-expanded={isOpen}

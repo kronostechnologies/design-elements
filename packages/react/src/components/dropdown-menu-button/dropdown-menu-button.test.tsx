@@ -64,6 +64,15 @@ describe('DropdownMenuButton', () => {
         expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
     });
 
+    test('Renders div container tag when isDiv is true', () => {
+        const wrapper = mountWithProviders(
+            <DropdownMenuButton isDiv render={TestGroups} />,
+        );
+
+        const dropDownContainer = getByTestId(wrapper, 'dropdown-container');
+        expect(dropDownContainer.prop('as')).toEqual('div');
+    });
+
     test('Matches Snapshot', () => {
         const tree = renderWithProviders(
             <DropdownMenuButton render={TestGroups} />,
