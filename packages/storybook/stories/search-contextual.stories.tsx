@@ -1,6 +1,6 @@
 import { SearchContextual } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -16,10 +16,24 @@ export const Disabled: Story = () => (
     <SearchContextual disabled />
 );
 
-export const EventCallback: Story = () => (
+export const EventCallbacks: Story = () => (
     <SearchContextual
         onChange={(value) => console.info(`New value is : ${value}`)}
-        onReset={() => console.info('Reset clicked')}
+        onSearch={(value) => console.info(`Searching for: ${value}`)}
+        onInputFocus={() => console.info('Input focused')}
     />
 );
-EventCallback.parameters = rawCodeParameters;
+EventCallbacks.parameters = rawCodeParameters;
+
+export const WithReset: Story = () => {
+    const [value, setValue] = useState('');
+
+    return (
+        <SearchContextual
+            value={value}
+            onChange={setValue}
+            onReset={() => setValue('')}
+        />
+    );
+};
+WithReset.parameters = rawCodeParameters;
