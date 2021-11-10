@@ -7,6 +7,9 @@ export const Translations = {
             productsLabel: 'Products',
             externalsLabel: 'Resources',
         },
+        common: {
+            opensInNewTabScreenReader: '(opens in a new tab)',
+        },
         datepicker: {
             calendarButtonLabel: 'Choose date',
             calendarButtonSelectedLabel: 'Choose date. The selected date is',
@@ -88,6 +91,9 @@ export const Translations = {
         bento: {
             productsLabel: 'Produits',
             externalsLabel: 'Ressources',
+        },
+        common: {
+            opensInNewTabScreenReader: '(ouvre dans un nouvel onglet)',
         },
         datepicker: {
             calendarButtonLabel: 'Choisissez une date',

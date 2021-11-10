@@ -1,5 +1,6 @@
 import React, { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const StyledSpan = styled.span`
     border: 0;
@@ -16,6 +17,11 @@ interface Props {
     label: string;
 }
 
-export const ScreenReaderOnlyText: VoidFunctionComponent<Props> = ({ label }) => (
-    <StyledSpan>{label}</StyledSpan>
-);
+export const ScreenReaderOnlyText: VoidFunctionComponent<Props> = ({ label, ...otherProps }) => {
+    const dataAttributes = useDataAttributes(otherProps);
+
+    return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <StyledSpan {...dataAttributes}>{label}</StyledSpan>
+    );
+};

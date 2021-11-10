@@ -5,6 +5,8 @@ import { DeviceContextProps, useDeviceContext } from '../../device-context-provi
 import { IconName } from '../../icon/icon';
 import { ItemContent } from './item-content';
 import { focus } from '../../../utils/css-state';
+import { ScreenReaderOnlyText } from '../../screen-reader-only-text/ScreenReaderOnlyText';
+import { useTranslation } from '../../../i18n/use-translation';
 
 export interface NavItemProps {
     value: string;
@@ -75,6 +77,9 @@ export const NavItem = forwardRef(({
     target,
 }: NavItemProps, ref: Ref<HTMLAnchorElement>): ReactElement => {
     const device = useDeviceContext();
+    const { t } = useTranslation('common');
+    const opensInNewTab = target === '_blank';
+
     return (
         <li>
             {isHtmlLink && (
@@ -96,6 +101,9 @@ export const NavItem = forwardRef(({
                         iconName={iconName}
                         lozenge={lozenge}
                     />
+                    {opensInNewTab && (
+                        <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
+                    )}
                 </HtmlLink>
             )}
             {!isHtmlLink && (
@@ -119,6 +127,9 @@ export const NavItem = forwardRef(({
                         iconName={iconName}
                         lozenge={lozenge}
                     />
+                    {opensInNewTab && (
+                        <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
+                    )}
                 </StyledNavItem>
             )}
         </li>
