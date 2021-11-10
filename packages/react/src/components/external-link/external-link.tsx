@@ -79,7 +79,7 @@ export function ExternalLink({
         >
             {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
             <StyledLabel>{label}</StyledLabel>
-            <ExternalIcon aria-label="open in new window" name="externalLink" role="img" size="16" />
+            <ExternalIcon aria-label={t('opensInNewTab')} name="externalLink" role="img" size="16" />
             {opensInNewTab && (
                 <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
             )}

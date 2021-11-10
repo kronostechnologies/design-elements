@@ -8,6 +8,7 @@ export const Translations = {
             externalsLabel: 'Resources',
         },
         common: {
+            opensInNewTab: 'opens in a new tab',
             opensInNewTabScreenReader: '(opens in a new tab)',
         },
         datepicker: {
@@ -93,6 +94,7 @@ export const Translations = {
             externalsLabel: 'Ressources',
         },
         common: {
+            opensInNewTab: 'ouvre dans un nouvel onglet',
             opensInNewTabScreenReader: '(ouvre dans un nouvel onglet)',
         },
         datepicker: {
