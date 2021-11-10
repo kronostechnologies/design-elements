@@ -1,5 +1,6 @@
 {
   "name": "@equisoft/kronos-fna-icons",
+  "license": "UNLICENSED",
   "author": "Equisoft Design",
   "scripts": {
     "build": "./scripts/build.sh",
