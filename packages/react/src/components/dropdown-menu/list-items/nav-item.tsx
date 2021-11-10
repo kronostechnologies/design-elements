@@ -80,6 +80,12 @@ export const NavItem = forwardRef(({
     const { t } = useTranslation('common');
     const opensInNewTab = target === '_blank';
 
+    function renderScreenReaderOnlyText(): ReactElement {
+        return (
+            <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
+        );
+    }
+
     return (
         <li>
             {isHtmlLink && (
@@ -101,9 +107,7 @@ export const NavItem = forwardRef(({
                         iconName={iconName}
                         lozenge={lozenge}
                     />
-                    {opensInNewTab && (
-                        <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
-                    )}
+                    {opensInNewTab && renderScreenReaderOnlyText()}
                 </HtmlLink>
             )}
             {!isHtmlLink && (
@@ -127,9 +131,7 @@ export const NavItem = forwardRef(({
                         iconName={iconName}
                         lozenge={lozenge}
                     />
-                    {opensInNewTab && (
-                        <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
-                    )}
+                    {opensInNewTab && renderScreenReaderOnlyText()}
                 </StyledNavItem>
             )}
         </li>

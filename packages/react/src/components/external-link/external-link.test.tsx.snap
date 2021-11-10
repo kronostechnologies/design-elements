@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`External Link matches snapshot (disabled) 1`] = `
+.c4 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -34,18 +46,6 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c4 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 .c3 {
@@ -95,7 +95,7 @@ exports[`External Link matches snapshot (disabled) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="open in new window"
+    aria-label="opens in a new tab"
     class="c3"
     color="currentColor"
     focusable="false"
@@ -113,6 +113,18 @@ exports[`External Link matches snapshot (disabled) 1`] = `
 `;
 
 exports[`External Link matches snapshot (label and icon) 1`] = `
+.c5 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -146,18 +158,6 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 .c2 {
@@ -223,7 +223,7 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="open in new window"
+    aria-label="opens in a new tab"
     class="c4"
     color="currentColor"
     focusable="false"
@@ -241,6 +241,18 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 `;
 
 exports[`External Link matches snapshot (only icon) 1`] = `
+.c5 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -274,18 +286,6 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 .c2 {
@@ -349,7 +349,7 @@ exports[`External Link matches snapshot (only icon) 1`] = `
     class="c3"
   />
   <svg
-    aria-label="open in new window"
+    aria-label="opens in a new tab"
     class="c4"
     color="currentColor"
     focusable="false"
@@ -367,6 +367,18 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 `;
 
 exports[`External Link matches snapshot (without href) 1`] = `
+.c5 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -400,18 +412,6 @@ exports[`External Link matches snapshot (without href) 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c5 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 .c2 {
@@ -477,7 +477,7 @@ exports[`External Link matches snapshot (without href) 1`] = `
     External Link
   </span>
   <svg
-    aria-label="open in new window"
+    aria-label="opens in a new tab"
     class="c4"
     color="currentColor"
     focusable="false"
@@ -495,6 +495,18 @@ exports[`External Link matches snapshot (without href) 1`] = `
 `;
 
 exports[`External Link matches snapshot 1`] = `
+.c4 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -528,18 +540,6 @@ exports[`External Link matches snapshot 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
-}
-
-.c4 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 .c3 {
@@ -593,7 +593,7 @@ exports[`External Link matches snapshot 1`] = `
     External Link
   </span>
   <svg
-    aria-label="open in new window"
+    aria-label="opens in a new tab"
     class="c3"
     color="currentColor"
     focusable="false"

@@ -4,7 +4,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const StyledSpan = styled.span`
     border: 0;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
     overflow: hidden;
