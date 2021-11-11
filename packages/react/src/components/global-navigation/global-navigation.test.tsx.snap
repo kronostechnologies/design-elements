@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Global Navigation Matches snapshot 1`] = `
+exports[`Global Navigation matches snapshot 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -204,27 +204,22 @@ exports[`Global Navigation Matches snapshot 1`] = `
 }
 
 <div
-  style={
-    Object {
-      "height": "600px",
-    }
-  }
+  style="height:600px"
 >
   <div
-    className="c0"
+    class="c0"
   >
     <div>
       <button
         aria-label="add"
-        className="c1 c2 c3"
-        data-testid="coreActionButton"
-        onClick={[Function]}
+        class="c1 c2 c3"
+        data-testid="core-action-button"
         type="button"
       >
         <svg
           aria-hidden="true"
           color="currentColor"
-          focusable={false}
+          focusable="false"
           height="16"
           width="16"
         />
@@ -233,123 +228,113 @@ exports[`Global Navigation Matches snapshot 1`] = `
         aria-label="App Navigation"
       >
         <ul
-          className="c4"
+          class="c4"
         >
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="home-home-link"
               href="/test1"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 home
               </span>
             </a>
           </li>
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="edit-edit-link"
               href="/test2"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 edit
               </span>
             </a>
           </li>
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="map-mapPin-link"
               href="/test3"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 map
               </span>
             </a>
           </li>
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="mail-mail-link"
               href="/test4"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 mail
               </span>
             </a>
           </li>
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="phone-phone-link"
               href="/test5"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 phone
               </span>
@@ -360,57 +345,53 @@ exports[`Global Navigation Matches snapshot 1`] = `
     </div>
     <div>
       <hr
-        className="c9"
+        class="c9"
       />
       <nav
         aria-label="App Navigation"
       >
         <ul
-          className="c4"
+          class="c4"
         >
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="info-info-link"
               href="/test6"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 info
               </span>
             </a>
           </li>
           <li
-            className="c5"
+            class="c5"
           >
             <a
-              aria-current={null}
-              className="c6 c7"
+              class="c6 c7"
+              data-testid="help-helpCircle-link"
               href="/test7"
-              onClick={[Function]}
-              onFocus={[Function]}
             >
               <svg
                 aria-hidden="true"
                 color="currentColor"
-                focusable={false}
+                focusable="false"
                 height="20"
                 width="20"
               />
               <span
-                className="c8"
+                class="c8"
               >
                 help
               </span>

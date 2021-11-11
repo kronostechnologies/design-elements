@@ -1,19 +1,9 @@
-import { mount } from 'enzyme';
-import React, { ReactElement } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { shallow } from 'enzyme';
+import React from 'react';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 import { IconButtonProps } from '../buttons/icon-button';
-import { findByTestId } from '../../test-utils/enzyme-selectors';
-
-function setup(children: ReactElement): ReactElement {
-    return (
-        <Router>
-            {ThemeWrapped(children)}
-        </Router>
-    );
-}
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 const items: GlobalNavigationItem[] = [
     {
@@ -64,37 +54,67 @@ const coreActionButton: IconButtonProps = {
 };
 
 describe('Global Navigation', () => {
-    test('Has showMore icon', () => {
-        const wrapper = mount(
-            setup(
-                <div style={{ height: '600px' }}>
-                    <GlobalNavigation mainItems={items} footerItems={footerItems} />
-                </div>,
-            ),
+    test('opens show-more-menu when show-more-button is clicked', () => {
+        const wrapper = mountWithProviders(
+            <div style={{ height: '600px' }}>
+                <GlobalNavigation mainItems={items} footerItems={footerItems} />
+            </div>,
         );
 
-        expect(findByTestId(wrapper, 'showMoreIcon').exists()).toBe(true);
+        getByTestId(wrapper, 'show-more-button').simulate('click');
+
+        expect(getByTestId(wrapper, 'show-more-menu').prop('open')).toBe(true);
     });
 
-    test('Has CoreActionButton when needed', () => {
-        const wrapper = mount(
-            setup(
-                <div style={{ height: '600px' }}>
-                    <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />
-                </div>,
-            ),
+    test('calls onClick callback when item-link is clicked', () => {
+        const callback = jest.fn();
+        const testItem: GlobalNavigationItem[] = [
+            {
+                iconName: 'home',
+                name: 'home',
+                href: '/test1',
+                onClick: callback,
+            },
+        ];
+        const wrapper = shallow(<GlobalNavigation mainItems={testItem} footerItems={footerItems} />);
+
+        getByTestId(wrapper, 'home-home-link').simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('calls onClick callback when item-link is clicked inside show-more-menu', () => {
+        const callback = jest.fn();
+        const lastItem: GlobalNavigationItem = {
+            iconName: 'info',
+            name: 'info',
+            href: '/info',
+            onClick: callback,
+        };
+        const wrapper = mountWithProviders(
+            <div style={{ height: '600px' }}>
+                <GlobalNavigation mainItems={[...items, lastItem]} footerItems={footerItems} />
+            </div>,
         );
 
-        expect(findByTestId(wrapper, 'coreActionButton').exists()).toBe(true);
+        getByTestId(wrapper, `${lastItem.name}-${lastItem.iconName}-menu-link`).simulate('click');
+
+        expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Matches snapshot', () => {
-        const tree = renderer.create(
-            setup(
-                <div style={{ height: '600px' }}>
-                    <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />
-                </div>,
-            ),
+    test('has core-action-button when needed', () => {
+        const wrapper = shallow(
+            <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />,
+        );
+
+        expect(getByTestId(wrapper, 'core-action-button').exists()).toBe(true);
+    });
+
+    test('matches snapshot', () => {
+        const tree = renderWithProviders(
+            <div style={{ height: '600px' }}>
+                <GlobalNavigation mainItems={items} footerItems={footerItems} coreActionButton={coreActionButton} />
+            </div>,
         );
 
         expect(tree).toMatchSnapshot();
