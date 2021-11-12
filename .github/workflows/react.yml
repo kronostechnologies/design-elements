@@ -10,6 +10,9 @@ on:
       - v*.*.*-alpha.*
       - v*.*.*-beta.*
 
+env:
+  working_directory: .
+
 jobs:
   pre_checks:
     name: Pre-checks
@@ -50,49 +53,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
+          working-directory: ${{ env.working_directory }}
 
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-        with:
-          before_install: ${ASDF_DIR}/plugins/nodejs/bin/import-release-team-keyring
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install Yarn dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
-
-      # App details
       - name: Find version details
         id: versions
         run: |
@@ -138,45 +106,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # ESLint
       - name: Lint Javascript and Typescript
@@ -208,45 +144,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # Stylelint
       - name: Lint styles
@@ -271,45 +175,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # Tests
       - name: Unit tests
@@ -350,45 +222,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # Compile
       - name: Update package version
@@ -462,45 +302,13 @@ jobs:
           name: react_dist
           path: packages/react/dist/
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # ESLint
       - name: Lint Javascript and Typescript
@@ -539,45 +347,13 @@ jobs:
           name: react_dist
           path: packages/react/dist/
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # Stylelint
       - name: Lint styles
@@ -609,45 +385,13 @@ jobs:
           name: react_dist
           path: packages/react/dist/
 
-      # Setup asdf-vm
-      - name: Install asdf-vm
-        uses: asdf-vm/actions/setup@v1.1.0
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.12
 
-      - name: Cache asdf tooling
-        uses: actions/cache@v2.1.4
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.12
         with:
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: ${{ runner.os }}-asdf-
-          path: |
-            ${ASDF_DIR}/installs
-            ${ASDF_DIR}/plugins
-
-      - name: Install asdf-vm tools
-        uses: asdf-vm/actions/install@v1.1.0
-
-      # Setup Yarn
-      - name: Lookup Yarn version
-        id: yarn-plugin
-        run: |
-          echo "::set-output name=asdf-version::$(asdf current yarn)"
-          echo "::set-output name=version::$(yarn --version)"
-
-      - name: Find Yarn cache directory path
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache Yarn packages
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        uses: actions/cache@v2.1.4
-        with:
-          key: ${{ runner.os }}-yarn3-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn3-
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-
-      - name: Install javascript dependencies
-        if: ${{ startsWith(steps.yarn-plugin.outputs.version, '3.') }}
-        run: yarn install --immutable
+          working-directory: ${{ env.working_directory }}
 
       # Compile
       - name: Update package version
@@ -745,73 +489,11 @@ jobs:
       - storybook_stylelint
       - storybook_compile
       - storybook_deploy
-    if: ${{ failure() }}
+    if: needs.setup.outputs.deploy == 'true'
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Post workflow status
+        uses: kronostechnologies/actions/notify-workflow-status@v0.0.12
         with:
-          fetch-depth: 0
-
-      - name: Find workflow status
-        id: workflow
-        run: |
-          STATUS=success
-          if [[ "${{ contains(needs.*.result, 'cancelled')  }}" == "true" ]]; then
-            STATUS=cancelled
-          elif [[ "${{ contains(needs.*.result, 'failure')  }}" == "true" ]]; then
-            STATUS=failure
-          fi
-
-          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
-          if [[ "$DEFAULT_BRANCH" == "" ]]; then
-            # Schedule triggers have no `github.event` contexts
-            DEFAULT_BRANCH="${GITHUB_REF#refs/heads/}"
-          fi
-
-          echo ::set-output name=status::$STATUS
-          echo ::set-output name=post_status::$(git merge-base --is-ancestor "$GITHUB_SHA" "origin/$DEFAULT_BRANCH" && echo 'true' || echo 'false')
-
-      - name: Post status to Slack
-        if: steps.workflow.outputs.post_status == 'true'
-        uses: 8398a7/action-slack@v3
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.OPS_CI_WEBHOOK_URL }}
-        with:
-          author_name: CI Results
-          fields: repo,commit,author,ref,workflow,message
-          status: custom
-          custom_payload: |
-            {
-              attachments: [{
-                color: '${{ steps.workflow.outputs.status }}' === 'success' ? 'good' : '${{ steps.workflow.outputs.status }}' === 'failure' ? 'danger' : '#999999',
-                text: `${process.env.AS_WORKFLOW} workflow ${{ steps.workflow.outputs.status }}!`,
-                fields: [
-                  {
-                    title: 'Repo',
-                    value: `${process.env.AS_REPO}`,
-                    short: true
-                  },
-                  {
-                    title: 'Author',
-                    value: `${process.env.AS_AUTHOR}`,
-                    short: true
-                  },
-                  {
-                    title: 'Ref',
-                    value: `${process.env.AS_REF}`,
-                    short: true
-                  },
-                  {
-                    title: 'Commit',
-                    value: `${process.env.AS_COMMIT}`,
-                    short: true
-                  },
-                  {
-                    title: 'Description',
-                    value: `${process.env.AS_MESSAGE}`,
-                    short: false
-                  }
-                ]
-              }]
-            }
+          needs: ${{ toJSON(needs) }}
+          slack-webhook-url: ${{ secrets.OPS_CI_WEBHOOK_URL }}
