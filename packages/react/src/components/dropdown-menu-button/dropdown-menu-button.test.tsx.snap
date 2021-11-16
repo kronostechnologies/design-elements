@@ -436,7 +436,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 <nav
   aria-label="Menu"
   class="c0"
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="true"
@@ -1097,7 +1097,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 <nav
   aria-label="Menu"
   class="c0"
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="false"

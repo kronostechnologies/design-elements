@@ -486,7 +486,7 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
 <div
   aria-label="Menu"
   class="c0 c1"
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="false"
@@ -1198,7 +1198,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 <nav
   aria-label="Menu"
   class="c0 c1"
-  data-testid="dropdown-container"
+  data-testid="menu-button-wrapper"
 >
   <button
     aria-expanded="false"
