@@ -1,4 +1,6 @@
+import { shallow } from 'enzyme';
 import React from 'react';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { ExternalLink } from './external-link';
 
@@ -11,6 +13,12 @@ describe('External Link', () => {
 
         wrapper.find(ExternalLink).simulate('click');
         expect(callback).toHaveBeenCalledTimes(1);
+    });
+
+    test('displays screen-reader-only text when link opens in a new tab (target="_blank")', () => {
+        const wrapper = shallow(<ExternalLink href="#" label="External Link" target="_blank" />);
+
+        expect(getByTestId(wrapper, 'screen-reader-text').exists()).toBe(true);
     });
 
     test('matches snapshot', () => {

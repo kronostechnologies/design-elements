@@ -92,6 +92,18 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
+.c18 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -127,7 +139,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c18 {
+.c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -142,21 +154,21 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   text-decoration: underline;
 }
 
-.c18:focus {
+.c19:focus {
   outline: none;
 }
 
-.c18:focus {
+.c19:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c18:focus:not(:focus-visible) {
+.c19:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c18:focus-visible {
+.c19:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -194,7 +206,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #62a;
 }
 
-.c19 {
+.c20 {
   color: #84C6EA;
   display: -webkit-box;
   display: -webkit-flex;
@@ -203,11 +215,11 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   font-size: 0.875rem;
 }
 
-.c19:visited {
+.c20:visited {
   color: #62a;
 }
 
-.c19:visited svg {
+.c20:visited svg {
   color: #62a;
 }
 
@@ -574,7 +586,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             ExternalA
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -582,6 +594,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
@@ -598,7 +616,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             ExternalB
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -606,6 +624,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
@@ -622,7 +646,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             ExternalC
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -630,12 +654,18 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c18 c19 c15"
+          class="c19 c20 c15"
           disabled=""
           target="_blank"
           type="external"
@@ -646,7 +676,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             ExternalD
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -654,6 +684,12 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
     </ul>
@@ -753,6 +789,18 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
+.c18 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -788,7 +836,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c18 {
+.c19 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -803,21 +851,21 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c18:focus {
+.c19:focus {
   outline: none;
 }
 
-.c18:focus {
+.c19:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c18:focus:not(:focus-visible) {
+.c19:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c18:focus-visible {
+.c19:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -855,7 +903,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #62a;
 }
 
-.c19 {
+.c20 {
   color: #84C6EA;
   display: -webkit-box;
   display: -webkit-flex;
@@ -864,11 +912,11 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   font-size: 0.875rem;
 }
 
-.c19:visited {
+.c20:visited {
   color: #62a;
 }
 
-.c19:visited svg {
+.c20:visited svg {
   color: #62a;
 }
 
@@ -1236,7 +1284,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             ExternalA
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -1244,6 +1292,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
@@ -1260,7 +1314,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             ExternalB
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -1268,6 +1322,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
@@ -1284,7 +1344,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             ExternalC
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -1292,12 +1352,18 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c18 c19 c15"
+          class="c19 c20 c15"
           disabled=""
           target="_blank"
           type="external"
@@ -1308,7 +1374,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             ExternalD
           </span>
           <svg
-            aria-label="open in new window"
+            aria-label="opens in a new tab"
             class="c17"
             color="currentColor"
             focusable="false"
@@ -1316,6 +1382,12 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
             role="img"
             width="16"
           />
+          <span
+            class="c18"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
     </ul>

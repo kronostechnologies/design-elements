@@ -14,6 +14,8 @@ import { Icon, IconName } from '../icon/icon';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { focus } from '../../utils/css-state';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
+import { useTranslation } from '../../i18n/use-translation';
 
 const List = styled.ul`
     background-color: ${({ theme }) => theme.greys.white};
@@ -133,6 +135,7 @@ export const NavMenu = forwardRef(({
     ordered,
 }: NavMenuProps, ref: Ref<HTMLUListElement>): ReactElement => {
     const device = useDeviceContext();
+    const { t } = useTranslation('common');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const list: ListOption[] = useMemo((): ListOption[] => options.map((option, index) => ({
         ...option,
@@ -175,6 +178,7 @@ export const NavMenu = forwardRef(({
         >
             {list.map((option) => {
                 const testId = `listitem-${option.value}`;
+                const opensInNewTab = option.target === '_blank';
                 const label = (
                     <>
                         {option.startIcon && <StartIcon data-testid="start-icon" name={option.startIcon} />}
@@ -186,6 +190,15 @@ export const NavMenu = forwardRef(({
                 function handleOnClick(e: MouseEvent<HTMLAnchorElement>): void {
                     onChange?.(option);
                     option.onClick?.(e);
+                }
+
+                function renderScreenReaderOnlyText(): ReactElement {
+                    return (
+                        <ScreenReaderOnlyText
+                            data-testid={`${testId}-screen-reader-text`}
+                            label={t('opensInNewTabScreenReader')}
+                        />
+                    );
                 }
 
                 return (
@@ -202,6 +215,7 @@ export const NavMenu = forwardRef(({
                                 target={option.target}
                             >
                                 {label}
+                                {opensInNewTab && renderScreenReaderOnlyText()}
                             </HtmlLink>
                         ) : (
                             <ReactRouterNavLink
@@ -217,6 +231,7 @@ export const NavMenu = forwardRef(({
                                 target={option.target}
                             >
                                 {label}
+                                {opensInNewTab && renderScreenReaderOnlyText()}
                             </ReactRouterNavLink>
                         )}
                     </li>

@@ -94,7 +94,19 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c18 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -109,27 +121,27 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   text-decoration: underline;
 }
 
-.c17:focus {
+.c18:focus {
   outline: none;
 }
 
-.c17:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c17:focus:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c17:focus-visible {
+.c18:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c23 {
+.c24 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -144,27 +156,27 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   text-decoration: underline;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c23:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c23:focus-visible {
+.c24:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c22 {
+.c23 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -175,7 +187,7 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   margin-right: 0;
 }
 
-.c18 {
+.c19 {
   color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
@@ -184,19 +196,19 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   font-size: 0.875rem;
 }
 
-.c18:hover {
+.c19:hover {
   color: #003A5A;
 }
 
-.c18:visited {
+.c19:visited {
   color: #62a;
 }
 
-.c18:visited svg {
+.c19:visited svg {
   color: #62a;
 }
 
-.c24 {
+.c25 {
   color: #84C6EA;
   display: -webkit-box;
   display: -webkit-flex;
@@ -205,21 +217,21 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   font-size: 0.875rem;
 }
 
-.c24:visited {
+.c25:visited {
   color: #62a;
 }
 
-.c24:visited svg {
+.c25:visited svg {
   color: #62a;
 }
 
-.c21 {
+.c22 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c20 {
+.c21 {
   color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
@@ -234,31 +246,31 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   white-space: nowrap;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: #DBDEE1;
 }
 
-.c20:visited {
+.c21:visited {
   color: #000000;
   fill: #000000;
 }
 
-.c20:visited svg {
+.c21:visited svg {
   color: #000000;
   fill: #000000;
 }
 
-.c20[disabled] {
+.c21[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
@@ -390,7 +402,7 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   pointer-events: none;
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -409,22 +421,22 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   white-space: nowrap;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: transparent;
 }
 
-.c16[disabled],
-.c16[disabled] * {
+.c17[disabled],
+.c17[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -463,7 +475,7 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
   width: initial;
 }
 
-.c1 .c5 .c19 {
+.c1 .c5 .c20 {
   line-height: 1.5rem;
   padding: var(--spacing-half) var(--spacing-4x);
 }
@@ -548,12 +560,18 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
               </span>
             </div>
           </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c16"
+          class="c17"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
@@ -580,6 +598,12 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
                 Option B
               </span>
             </div>
+          </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
           </span>
         </a>
       </li>
@@ -613,6 +637,12 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
               </span>
             </div>
           </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
@@ -645,6 +675,12 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
               </span>
             </div>
           </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
     </ul>
@@ -662,49 +698,61 @@ exports[`BentoMenuButton Matches Snapshot (isDiv) 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c17 c18 c19 c20"
+          class="c18 c19 c20 c21"
           href="/testa"
           target="_blank"
           type="external"
         >
           <span
-            class="c21"
+            class="c22"
           >
             Option A
           </span>
           <svg
-            aria-label="open in new window"
-            class="c22"
+            aria-label="opens in a new tab"
+            class="c23"
             color="currentColor"
             focusable="false"
             height="16"
             role="img"
             width="16"
           />
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c23 c24 c19 c20"
+          class="c24 c25 c20 c21"
           disabled=""
           target="_blank"
           type="external"
         >
           <span
-            class="c21"
+            class="c22"
           >
             Option B
           </span>
           <svg
-            aria-label="open in new window"
-            class="c22"
+            aria-label="opens in a new tab"
+            class="c23"
             color="currentColor"
             focusable="false"
             height="16"
             role="img"
             width="16"
           />
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
     </ul>
@@ -806,7 +854,19 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c18 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -821,27 +881,27 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c17:focus {
+.c18:focus {
   outline: none;
 }
 
-.c17:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c17:focus:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c17:focus-visible {
+.c18:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c23 {
+.c24 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -856,27 +916,27 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c23:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c23:focus-visible {
+.c24:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c22 {
+.c23 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -887,7 +947,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   margin-right: 0;
 }
 
-.c18 {
+.c19 {
   color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
@@ -896,19 +956,19 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   font-size: 0.875rem;
 }
 
-.c18:hover {
+.c19:hover {
   color: #003A5A;
 }
 
-.c18:visited {
+.c19:visited {
   color: #62a;
 }
 
-.c18:visited svg {
+.c19:visited svg {
   color: #62a;
 }
 
-.c24 {
+.c25 {
   color: #84C6EA;
   display: -webkit-box;
   display: -webkit-flex;
@@ -917,21 +977,21 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   font-size: 0.875rem;
 }
 
-.c24:visited {
+.c25:visited {
   color: #62a;
 }
 
-.c24:visited svg {
+.c25:visited svg {
   color: #62a;
 }
 
-.c21 {
+.c22 {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c20 {
+.c21 {
   color: #000000;
   display: -webkit-box;
   display: -webkit-flex;
@@ -946,31 +1006,31 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: #DBDEE1;
 }
 
-.c20:visited {
+.c21:visited {
   color: #000000;
   fill: #000000;
 }
 
-.c20:visited svg {
+.c21:visited svg {
   color: #000000;
   fill: #000000;
 }
 
-.c20[disabled] {
+.c21[disabled] {
   color: #B7BBC2;
   fill: #B7BBC2;
   pointer-events: none;
@@ -1102,7 +1162,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   pointer-events: none;
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1121,22 +1181,22 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: transparent;
 }
 
-.c16[disabled],
-.c16[disabled] * {
+.c17[disabled],
+.c17[disabled] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -1175,7 +1235,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   width: initial;
 }
 
-.c1 .c5 .c19 {
+.c1 .c5 .c20 {
   line-height: 1.5rem;
   padding: var(--spacing-half) var(--spacing-4x);
 }
@@ -1260,12 +1320,18 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
               </span>
             </div>
           </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c16"
+          class="c17"
           data-testid="listitem-optionB"
           disabled=""
           href="/testb"
@@ -1292,6 +1358,12 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
                 Option B
               </span>
             </div>
+          </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
           </span>
         </a>
       </li>
@@ -1325,6 +1397,12 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
               </span>
             </div>
           </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
@@ -1357,6 +1435,12 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
               </span>
             </div>
           </span>
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
     </ul>
@@ -1374,49 +1458,61 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
       <li>
         <a
           aria-disabled="false"
-          class="c17 c18 c19 c20"
+          class="c18 c19 c20 c21"
           href="/testa"
           target="_blank"
           type="external"
         >
           <span
-            class="c21"
+            class="c22"
           >
             Option A
           </span>
           <svg
-            aria-label="open in new window"
-            class="c22"
+            aria-label="opens in a new tab"
+            class="c23"
             color="currentColor"
             focusable="false"
             height="16"
             role="img"
             width="16"
           />
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
       <li>
         <a
           aria-disabled="true"
-          class="c23 c24 c19 c20"
+          class="c24 c25 c20 c21"
           disabled=""
           target="_blank"
           type="external"
         >
           <span
-            class="c21"
+            class="c22"
           >
             Option B
           </span>
           <svg
-            aria-label="open in new window"
-            class="c22"
+            aria-label="opens in a new tab"
+            class="c23"
             color="currentColor"
             focusable="false"
             height="16"
             role="img"
             width="16"
           />
+          <span
+            class="c16"
+            data-testid="screen-reader-text"
+          >
+            (opens in a new tab)
+          </span>
         </a>
       </li>
     </ul>

@@ -39,6 +39,22 @@ const optionWithStartIcon: NavMenuOption[] = [
     },
 ];
 
+const optionsWithTargetBlank: NavMenuOption[] = [
+    {
+        label: 'Option A',
+        value: 'optionA',
+        href: '/testA',
+        target: '_blank',
+    },
+    {
+        label: 'Option B',
+        value: 'optionB',
+        href: '/testB',
+        target: '_blank',
+        isHtmlLink: true,
+    },
+];
+
 const optionWithEndIcon: NavMenuOption[] = [
     {
         label: 'Option A',
@@ -79,6 +95,20 @@ const optionsDisabled: NavMenuOption[] = [
 ];
 
 describe('NavMenu', () => {
+    test('displays screen-reader-only text when router link opens in a new tab (target="_blank")', () => {
+        const wrapper = shallow(<NavMenu options={optionsWithTargetBlank} />);
+
+        const navMenuOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionA-screen-reader-text');
+        expect(navMenuOptionScreenReaderText.exists()).toBe(true);
+    });
+
+    test('displays screen-reader-only text when html link opens in a new tab (target="_blank")', () => {
+        const wrapper = shallow(<NavMenu options={optionsWithTargetBlank} />);
+
+        const navMenuOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionB-screen-reader-text');
+        expect(navMenuOptionScreenReaderText.exists()).toBe(true);
+    });
+
     test('Calls onChange callback when an option is clicked', () => {
         const callback = jest.fn();
         const wrapper = shallow(<NavMenu options={options} onChange={callback} />);

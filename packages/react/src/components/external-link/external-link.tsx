@@ -1,9 +1,10 @@
 import React, { MouseEvent, ReactElement, useCallback } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
+import { useTranslation } from '../../i18n/use-translation';
 
 const LeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
@@ -55,6 +56,8 @@ export function ExternalLink({
     className, disabled, href = '', iconName, label, onClick, target = '_blank',
 }: ExternalLinkProps): ReactElement {
     const { isMobile } = useDeviceContext();
+    const { t } = useTranslation('common');
+    const opensInNewTab = target === '_blank';
     const handleClick: (event: MouseEvent<HTMLAnchorElement>) => void = useCallback((event) => {
         if (!href) {
             event.preventDefault();
@@ -76,7 +79,10 @@ export function ExternalLink({
         >
             {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
             <StyledLabel>{label}</StyledLabel>
-            <ExternalIcon aria-label="open in new window" name="externalLink" role="img" size="16" />
+            <ExternalIcon aria-label={t('opensInNewTab')} name="externalLink" role="img" size="16" />
+            {opensInNewTab && (
+                <ScreenReaderOnlyText data-testid="screen-reader-text" label={t('opensInNewTabScreenReader')} />
+            )}
         </Link>
     );
 }

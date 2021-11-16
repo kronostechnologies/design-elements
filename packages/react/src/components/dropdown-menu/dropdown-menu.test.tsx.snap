@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownMenu Is hidden 1`] = `
+.c11 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -325,7 +337,7 @@ exports[`DropdownMenu Is hidden 1`] = `
           ExternalA
         </span>
         <svg
-          aria-label="open in new window"
+          aria-label="opens in a new tab"
           class="c10"
           color="currentColor"
           focusable="false"
@@ -333,6 +345,12 @@ exports[`DropdownMenu Is hidden 1`] = `
           role="img"
           width="16"
         />
+        <span
+          class="c11"
+          data-testid="screen-reader-text"
+        >
+          (opens in a new tab)
+        </span>
       </a>
     </li>
     <li>
@@ -349,7 +367,7 @@ exports[`DropdownMenu Is hidden 1`] = `
           ExternalB
         </span>
         <svg
-          aria-label="open in new window"
+          aria-label="opens in a new tab"
           class="c10"
           color="currentColor"
           focusable="false"
@@ -357,6 +375,12 @@ exports[`DropdownMenu Is hidden 1`] = `
           role="img"
           width="16"
         />
+        <span
+          class="c11"
+          data-testid="screen-reader-text"
+        >
+          (opens in a new tab)
+        </span>
       </a>
     </li>
     <li>
@@ -373,7 +397,7 @@ exports[`DropdownMenu Is hidden 1`] = `
           ExternalC
         </span>
         <svg
-          aria-label="open in new window"
+          aria-label="opens in a new tab"
           class="c10"
           color="currentColor"
           focusable="false"
@@ -381,6 +405,12 @@ exports[`DropdownMenu Is hidden 1`] = `
           role="img"
           width="16"
         />
+        <span
+          class="c11"
+          data-testid="screen-reader-text"
+        >
+          (opens in a new tab)
+        </span>
       </a>
     </li>
   </ul>
@@ -388,6 +418,18 @@ exports[`DropdownMenu Is hidden 1`] = `
 `;
 
 exports[`DropdownMenu Matches the snapshot 1`] = `
+.c11 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -711,7 +753,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           ExternalA
         </span>
         <svg
-          aria-label="open in new window"
+          aria-label="opens in a new tab"
           class="c10"
           color="currentColor"
           focusable="false"
@@ -719,6 +761,12 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           role="img"
           width="16"
         />
+        <span
+          class="c11"
+          data-testid="screen-reader-text"
+        >
+          (opens in a new tab)
+        </span>
       </a>
     </li>
     <li>
@@ -735,7 +783,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           ExternalB
         </span>
         <svg
-          aria-label="open in new window"
+          aria-label="opens in a new tab"
           class="c10"
           color="currentColor"
           focusable="false"
@@ -743,6 +791,12 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           role="img"
           width="16"
         />
+        <span
+          class="c11"
+          data-testid="screen-reader-text"
+        >
+          (opens in a new tab)
+        </span>
       </a>
     </li>
     <li>
@@ -759,7 +813,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           ExternalC
         </span>
         <svg
-          aria-label="open in new window"
+          aria-label="opens in a new tab"
           class="c10"
           color="currentColor"
           focusable="false"
@@ -767,6 +821,12 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
           role="img"
           width="16"
         />
+        <span
+          class="c11"
+          data-testid="screen-reader-text"
+        >
+          (opens in a new tab)
+        </span>
       </a>
     </li>
   </ul>
