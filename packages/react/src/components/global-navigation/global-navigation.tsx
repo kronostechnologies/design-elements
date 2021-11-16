@@ -151,6 +151,7 @@ export interface GlobalNavigationItem {
     href: string;
     iconName: IconName;
     name: string;
+    onClick?(): void;
 }
 
 interface GlobalNavigationProps {
@@ -182,6 +183,11 @@ export function GlobalNavigation({
         if (shouldClose) {
             setMenuOpen(false);
         }
+    }
+
+    function handleItemClick(callback?: () => void): void {
+        callback?.();
+        setMenuOpen(false);
     }
 
     useEffect(() => {
@@ -234,9 +240,10 @@ export function GlobalNavigation({
     const navItem = (item: GlobalNavigationItem): ReactElement => (
         <NavigationItem key={`${item.name}-${item.iconName}`}>
             <ItemLink
+                data-testid={`${item.name}-${item.iconName}-link`}
                 exact={item.exact}
                 to={item.href}
-                onClick={() => setMenuOpen(false)}
+                onClick={() => handleItemClick(item.onClick)}
                 onFocus={() => setMenuOpen(false)}
             >
                 <Icon aria-hidden="true" name={item.iconName} size="20" />
@@ -251,7 +258,7 @@ export function GlobalNavigation({
                 {coreActionButton && (
                     <CoreActionButton
                         {...coreActionButton /* eslint-disable-line react/jsx-props-no-spreading */}
-                        data-testid="coreActionButton"
+                        data-testid="core-action-button"
                     />
                 )}
                 <nav aria-label="App Navigation">
@@ -264,20 +271,19 @@ export function GlobalNavigation({
                                     aria-expanded={menuOpen}
                                     aria-haspopup="true"
                                     type="button"
-                                    data-testid="showMoreIcon"
+                                    data-testid="show-more-button"
                                     onClick={() => setMenuOpen(!menuOpen)}
                                 >
                                     <Icon name="moreVertical" size="16" />
                                 </ShowMore>
-                                <ShowMoreMenu
-                                    open={menuOpen}
-                                    onClick={() => setMenuOpen(false)}
-                                >
+                                <ShowMoreMenu open={menuOpen} data-testid="show-more-menu">
                                     {moreItems && moreItems.map((moreItem) => (
                                         <li key={`${moreItem.name}-${moreItem.iconName}`}>
                                             <MenuLink
+                                                data-testid={`${moreItem.name}-${moreItem.iconName}-menu-link`}
                                                 exact={moreItem.exact}
                                                 to={moreItem.href}
+                                                onClick={() => handleItemClick(moreItem.onClick)}
                                             >
                                                 {moreItem.name}
                                             </MenuLink>

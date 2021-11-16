@@ -4,6 +4,7 @@ import React from 'react';
 import { IconButtonProps } from '../../react/dist/components/buttons/icon-button';
 import { RouterDecorator } from './utils/router-decorator';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Structure/Global Navigation',
@@ -87,3 +88,38 @@ export const WithMoreIconInShadowDom: Story = () => (
     </div>
 );
 WithMoreIconInShadowDom.decorators = [ShadowDomDecorator];
+
+export const WithCallbacks: Story = () => {
+    const callbackItems: GlobalNavigationItem[] = [
+        {
+            iconName: 'home',
+            name: 'home',
+            href: '/test1',
+            onClick: () => console.info('clicked'),
+        },
+        {
+            iconName: 'edit',
+            name: 'edit',
+            href: '/test2',
+            onClick: () => console.info('clicked'),
+        },
+    ];
+
+    const callbackFooterItems: GlobalNavigationItem[] = [
+        {
+            iconName: 'info',
+            name: 'info',
+            href: '/test3',
+            onClick: () => console.info('clicked'),
+        },
+    ];
+    return (
+        <div style={{ height: '300px' }}>
+            <GlobalNavigation
+                mainItems={callbackItems}
+                footerItems={callbackFooterItems}
+            />
+        </div>
+    );
+};
+WithCallbacks.parameters = rawCodeParameters;
