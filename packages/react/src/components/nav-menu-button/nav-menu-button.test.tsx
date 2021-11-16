@@ -39,6 +39,18 @@ describe('NavMenuButton', () => {
     buttonTypes.forEach((type) => {
         const isIconOnly = type === 'iconOnly';
 
+        test(`Adds aria-label to menu-button when buttonAriaLabel is defined (${type})`, () => {
+            const ariaLabel = 'test-aria-label';
+
+            const wrapper = shallow(
+                <NavMenuButton buttonAriaLabel={ariaLabel} options={options} iconOnly={isIconOnly} iconName="home">
+                    Test Button
+                </NavMenuButton>,
+            );
+
+            expect(getByTestId(wrapper, 'menu-button').prop('aria-label')).toBe(ariaLabel);
+        });
+
         test(`Opens nav-menu when menu-button is clicked (${type})`, () => {
             const wrapper = mountWithProviders(
                 <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">

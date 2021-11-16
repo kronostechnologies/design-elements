@@ -56,6 +56,7 @@ interface MenuButtonProps {
      * @default 'Menu'
      * */
     ariaLabel?: string;
+    buttonAriaLabel?: string;
     children?: ReactNode;
     className?: string;
     /**
@@ -81,6 +82,7 @@ interface MenuButtonProps {
 
 export function NavMenuButton({
     ariaLabel,
+    buttonAriaLabel,
     children,
     className,
     defaultOpen = false,
@@ -169,6 +171,7 @@ export function NavMenuButton({
         <StyledNav ref={navRef} className={className} id={id} aria-label={ariaLabel || t('ariaLabel')}>
             {!iconOnly && (
                 <StyledButton
+                    aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
                     data-expanded={isOpen}
                     data-testid="menu-button"
@@ -193,6 +196,7 @@ export function NavMenuButton({
             )}
             {iconOnly && iconName && (
                 <IconButton
+                    aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
                     data-expanded={isOpen}
                     data-testid="menu-button"
