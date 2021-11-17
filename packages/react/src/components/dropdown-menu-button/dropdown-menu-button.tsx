@@ -22,7 +22,7 @@ import { AvatarProps } from '../avatar/avatar';
 import { IconButton } from '../buttons/icon-button';
 import { Button, ButtonType } from '../buttons/button';
 
-const StyledNav = styled.nav`
+const StyledDiv = styled.div`
     position: relative;
 `;
 
@@ -51,6 +51,8 @@ interface MenuButtonProps {
      * @default 'Menu'
      * */
     ariaLabel?: string;
+    /** Set wrapper element tag */
+    tag?: 'div' | 'nav';
     buttonAriaLabel?: string;
     className?: string;
     /**
@@ -67,28 +69,27 @@ interface MenuButtonProps {
     inverted?: boolean;
     icon?: ReactElement<IconProps | AvatarProps>;
     id?: string;
-    isDiv?: boolean;
     firstItemRef?: RefObject<HTMLAnchorElement>;
-    render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
+    render?(close: () => void): ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
 export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
-    label,
-    title,
     ariaLabel,
-    isDiv = false,
+    tag,
     buttonAriaLabel,
+    buttonType = 'tertiary',
     className,
     defaultOpen = false,
+    firstItemRef,
     hasCaret = true,
     icon,
-    buttonType = 'tertiary',
-    inverted = true,
-    render,
-    firstItemRef,
-    onMenuVisibilityChanged,
     id: providedId,
+    inverted = true,
+    label,
+    onMenuVisibilityChanged,
+    render,
+    title,
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
@@ -98,7 +99,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     const navMenuRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
     const isIconOnly = icon && !label && !hasCaret;
-    const containerTag = isDiv ? 'div' : 'nav';
+    const containerAriaLabel = (tag === 'div' || tag === undefined) ? '' : ariaLabel || t('ariaLabel');
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
@@ -164,13 +165,13 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     }
 
     return (
-        <StyledNav
-            aria-label={ariaLabel || t('ariaLabel')}
-            as={containerTag}
-            className={className}
-            data-testid="menu-button-wrapper"
-            id={id}
+        <StyledDiv
+            data-testid="dropdown-container"
+            as={tag}
             ref={navRef}
+            className={className}
+            id={id}
+            aria-label={containerAriaLabel}
         >
             {!isIconOnly && (
                 <StyledButton
@@ -224,6 +225,6 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
             >
                 {render?.(() => setOpen(false))}
             </StyledDropdownMenu>
-        </StyledNav>
+        </StyledDiv>
     );
 };

@@ -150,6 +150,12 @@ export const DefaultOpen: Story = () => (
     </ApplicationMenu>
 );
 
+export const WithNavContainer: Story = () => (
+    <ApplicationMenu>
+        <NavMenuButton tag="nav" options={options}>Menu</NavMenuButton>
+    </ApplicationMenu>
+);
+
 export const WithOptionIcons: Story = () => (
     <ApplicationMenu>
         <NavMenuButton options={optionsWithIcons}>Menu</NavMenuButton>
