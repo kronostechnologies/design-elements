@@ -7,9 +7,10 @@ const MAXIMUM_LENGTH = '312px';
 const StyledLozenge = styled.span<{ isMobile: boolean }>`
     align-items: center;
     background-color: ${({ theme }) => theme.greys['light-grey']};
-    border: 1px solid #878f9a;
+    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: ${({ isMobile }) => (isMobile ? 'var(--border-radius)' : 'var(--border-radius-half)')};
     box-sizing: border-box;
+    color: ${({ theme }) => theme.greys['dark-grey']};
     display: inline-block;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     line-height: ${({ isMobile }) => (isMobile ? '1.375rem' : '0.875rem')};
