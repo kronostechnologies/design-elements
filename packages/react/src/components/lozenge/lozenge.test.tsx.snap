@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Lozenge Matches the snapshot 1`] = `
+exports[`Lozenge matches the snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -11,7 +11,10 @@ exports[`Lozenge Matches the snapshot 1`] = `
   border-radius: var(--border-radius-half);
   box-sizing: border-box;
   color: #60666E;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 0.75rem;
   line-height: 0.875rem;
   max-width: 312px;
@@ -20,6 +23,9 @@ exports[`Lozenge Matches the snapshot 1`] = `
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 <span
