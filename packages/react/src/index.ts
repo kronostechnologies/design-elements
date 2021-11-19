@@ -24,6 +24,7 @@ export { PhoneInput } from './components/phone-input/phone-input';
 export { Avatar } from './components/avatar/avatar';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { ToggleSwitch } from './components/toggle-switch/toggle-switch';
+export { PasswordCreationInput } from './components/password-creation-input/password-creation-input';
 
 // Context
 export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';

@@ -42,6 +42,18 @@ export const Translations = {
         pagination: {
             results: 'results',
         },
+        'password-creation-input': {
+            'password-is': 'Password strength: ',
+            'min-8-characters': 'Minimum 8 characters',
+            'min-1-lower-case': 'At least one lowercase',
+            'min-1-upper-case': 'At least one uppercase',
+            'create-password': 'Create password',
+            weak: 'Weak',
+            fair: 'Fair',
+            good: 'Good',
+            strong: 'Strong',
+            'show-password': 'Show password in plain text.',
+        },
         'search-input': {
             label: 'Search',
         },
@@ -127,6 +139,18 @@ export const Translations = {
         },
         pagination: {
             results: 'résultats',
+        },
+        'password-creation-input': {
+            'password-is': 'La password est: ',
+            'min-8-characters': 'Minimum 8 charactères',
+            'min-1-lower-case': 'Au moins une minuscule',
+            'min-1-upper-case': 'Au moins une majuscule',
+            'create-password': 'Créer un mot de passe',
+            weak: 'Faible',
+            fair: 'Raisonnable',
+            good: 'Bon',
+            strong: 'Fort',
+            'show-password': 'Montrer le mot de passe.',
         },
         'search-input': {
             label: 'Rechercher',

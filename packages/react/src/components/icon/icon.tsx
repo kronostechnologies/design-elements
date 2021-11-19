@@ -13,10 +13,12 @@ import ChevronRight from 'feather-icons/dist/icons/chevron-right.svg';
 import ChevronUp from 'feather-icons/dist/icons/chevron-up.svg';
 import ChevronsLeft from 'feather-icons/dist/icons/chevrons-left.svg';
 import ChevronsRight from 'feather-icons/dist/icons/chevrons-right.svg';
+import Circle from 'feather-icons/dist/icons/circle.svg';
 import Copy from 'feather-icons/dist/icons/copy.svg';
 import Edit from 'feather-icons/dist/icons/edit-2.svg';
 import ExternalLink from 'feather-icons/dist/icons/external-link.svg';
 import Eye from 'feather-icons/dist/icons/eye.svg';
+import EyeOff from 'feather-icons/dist/icons/eye-off.svg';
 import HelpCircle from 'feather-icons/dist/icons/help-circle.svg';
 import Home from 'feather-icons/dist/icons/home.svg';
 import Info from 'feather-icons/dist/icons/info.svg';
@@ -63,12 +65,14 @@ const iconMapping = {
     chevronUp: ChevronUp,
     chevronsLeft: ChevronsLeft,
     chevronsRight: ChevronsRight,
+    circle: Circle,
     contracts: Contracts,
     copy: Copy,
     edit: Edit,
     equisoft: Equisoft,
     externalLink: ExternalLink,
     eye: Eye,
+    eyeOff: EyeOff,
     files: Files,
     helpCircle: HelpCircle,
     history: History,
