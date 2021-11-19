@@ -24,9 +24,10 @@ const StyledIcon = styled.div`
 interface InvalidFieldProps {
     controlId: string;
     feedbackMsg: string;
+    noIcon?: boolean;
 }
 
-function InvalidField({ controlId, feedbackMsg }: InvalidFieldProps): ReactElement {
+function InvalidField({ controlId, feedbackMsg, noIcon }: InvalidFieldProps): ReactElement {
     const { isMobile } = useDeviceContext();
 
     return (
@@ -36,9 +37,9 @@ function InvalidField({ controlId, feedbackMsg }: InvalidFieldProps): ReactEleme
             isMobile={isMobile}
             role="alert"
         >
-            <StyledIcon>
-                <Icon name="alertTriangle" size={isMobile ? '24' : '16'} />
-            </StyledIcon>
+            {!noIcon && (
+                <StyledIcon><Icon name="alertTriangle" size={isMobile ? '24' : '16'} /></StyledIcon>
+            )}
             <StyledSpan>{feedbackMsg}</StyledSpan>
         </Field>
     );

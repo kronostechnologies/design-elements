@@ -24,6 +24,12 @@ export { PhoneInput } from './components/phone-input/phone-input';
 export { Avatar } from './components/avatar/avatar';
 export { Tab, Tabs } from './components/tabs/tabs';
 export { ToggleSwitch } from './components/toggle-switch/toggle-switch';
+export { PasswordCreationInput } from './components/password-creation-input/password-creation-input';
+export {
+    hasALowerCaseLetter,
+    hasAnUpperCaseLetter,
+    hasMinLength as isLongEnough,
+} from './components/password-creation-input/validation-condition';
 
 // Context
 export { ThemeWrapper } from './components/theme-wrapper/theme-wrapper';
