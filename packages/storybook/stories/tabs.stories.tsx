@@ -1,5 +1,6 @@
-import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
+import { Card, Tab, Table, TableColumn, Tabs, TextArea, TextInput } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
+import { ChangeEvent, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -104,5 +105,31 @@ export const WithForceRenderTabPanels: Story = () => {
 
     return (
         <Tabs tabs={tabs} forceRenderTabPanels />
+    );
+};
+
+export const Debug: Story = () => {
+    const [result, setResult] = useState('initialValue');
+
+    const tabs = [
+        { title: 'Results', panelContent: <>{result}</> },
+        { title: 'Editor', panelContent: 'Content editor' },
+    ];
+
+    return (
+        <div style={{ padding: '16px' }}>
+            <TextInput
+                label='Result'
+                value={result}
+                type="text"
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setResult(e.target.value)}
+            />
+            <p>
+                Result:
+                {' '}
+                {result}
+            </p>
+            <Tabs tabs={tabs} forceRenderTabPanels />
+        </div>
     );
 };

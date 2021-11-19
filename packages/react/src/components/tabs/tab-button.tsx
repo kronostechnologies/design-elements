@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef } from 'react';
+import { KeyboardEvent, ReactElement, forwardRef, Ref } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
@@ -70,66 +70,52 @@ interface TabButtonProps {
     leftIcon?: IconName
     rightIcon?: IconName;
     isSelected: boolean;
-    isFocused: boolean;
 
     onClick(): void;
 
-    onFocus(): void;
+    onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
-export function TabButton({
+export const TabButton = forwardRef(({
     id,
     panelId,
     children,
     leftIcon,
     rightIcon,
     isSelected,
-    isFocused,
     onClick,
-    onFocus,
-}: TabButtonProps): ReactElement {
-    const buttonRef = useRef<HTMLButtonElement>(null);
-
-    useEffect(() => {
-        if (isFocused) {
-            buttonRef.current?.focus();
-        } else {
-            buttonRef.current?.blur();
-        }
-    }, [isFocused]);
-
-    return (
-        <StyledButton
-            id={id}
-            aria-controls={panelId}
-            role="tab"
-            aria-selected={isSelected}
-            ref={buttonRef}
-            data-testid="tab-button"
-            tabIndex={isSelected ? undefined : -1}
-            onClick={onClick}
-            onFocus={onFocus}
-            isSelected={isSelected}
-        >
-            {leftIcon && (
-                <LeftIcon
-                    data-testid="tab-button-left-icon"
-                    $isSelected={isSelected}
-                    name={leftIcon}
-                    size="16"
-                />
-            )}
-            <StyledButtonText data-testid="tab-button-text" isSelected={isSelected}>
-                {children}
-            </StyledButtonText>
-            {rightIcon && (
-                <RightIcon
-                    data-testid="tab-button-right-icon"
-                    $isSelected={isSelected}
-                    name={rightIcon}
-                    size="16"
-                />
-            )}
-        </StyledButton>
-    );
-}
+    onKeyDown,
+}: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => (
+    <StyledButton
+        id={id}
+        aria-controls={panelId}
+        role="tab"
+        aria-selected={isSelected}
+        ref={ref}
+        data-testid="tab-button"
+        tabIndex={isSelected ? undefined : -1}
+        isSelected={isSelected}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+    >
+        {leftIcon && (
+            <LeftIcon
+                data-testid="tab-button-left-icon"
+                $isSelected={isSelected}
+                name={leftIcon}
+                size="16"
+            />
+        )}
+        <StyledButtonText data-testid="tab-button-text" isSelected={isSelected}>
+            {children}
+        </StyledButtonText>
+        {rightIcon && (
+            <RightIcon
+                data-testid="tab-button-right-icon"
+                $isSelected={isSelected}
+                name={rightIcon}
+                size="16"
+            />
+        )}
+    </StyledButton>
+));
