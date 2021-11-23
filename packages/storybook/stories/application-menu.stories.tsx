@@ -42,6 +42,12 @@ export const WithCustomLogo: Story = () => (
     </ApplicationMenu>
 );
 
+export const WithAppTitleDesktop: Story = () => (
+    <ApplicationMenu appTitleDesktop="App title">
+        <p>Hello world</p>
+    </ApplicationMenu>
+);
+
 export const WithMobileDrawer: Story = () => (
     <ApplicationMenu mobileDrawerContent={drawerContent}>
         <p>Hello world</p>

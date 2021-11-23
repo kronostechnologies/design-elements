@@ -54,6 +54,8 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1:focus {
@@ -171,6 +173,8 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1:focus {
@@ -308,6 +312,8 @@ exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   height: 100%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1:focus {
