@@ -96,7 +96,7 @@ const DismissIconButton = styled(IconButton)
 
 const Heading = styled.span<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1.125rem' : '1rem')};
-    font-weight: var(--font-bold);
+    font-weight: var(--font-semi-bold);
 `;
 
 const StyledActionButton = styled(Button)`
