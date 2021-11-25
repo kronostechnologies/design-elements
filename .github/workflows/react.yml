@@ -128,8 +128,8 @@ jobs:
           if-no-files-found: error
 
       - name: Create annotations
-        if: ${{ always() }}
         uses: ataylorme/eslint-annotate-action@1.1.2
+        if: "!cancelled() && github.actor != 'dependabot[bot]'"
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           report-json: packages/react/build/eslint/report.json
@@ -204,8 +204,8 @@ jobs:
           if-no-files-found: error
 
       - name: Create annotations
-        if: ${{ always() }}
         uses: IgnusG/jest-report-action@v2.3.3
+        if: "!cancelled() && github.actor != 'dependabot[bot]'"
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
           check-name: "React: Unit tests report"
@@ -324,8 +324,8 @@ jobs:
           if-no-files-found: error
 
       - name: Create annotations
-        if: ${{ always() }}
         uses: ataylorme/eslint-annotate-action@1.1.2
+        if: "!cancelled() && github.actor != 'dependabot[bot]'"
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           report-json: packages/storybook/build/eslint/report.json
