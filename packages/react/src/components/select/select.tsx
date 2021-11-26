@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { eventIsInside } from '../../utils/events';
+import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { ChooserButton } from '../chooser-button/chooser-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -498,7 +499,7 @@ export function Select({
             handleOpen();
         } else if (event.key === 'ArrowUp' && !focusedValue) {
             focusLastElementFromArray(options);
-        } else if (/^[\p{L}\p{N}]$/iu.test(event.key)) /* Check if key is a character */ {
+        } else if (isLetterOrNumber(event.key)) /* Check if key is a character */ {
             if (searchable) {
                 setAutofocus(false);
                 setFocusedValue('');

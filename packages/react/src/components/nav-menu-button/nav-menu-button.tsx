@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { menuDimensions } from '../../tokens/menuDimensions';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -39,8 +40,8 @@ const StyledLeftIcon = styled(Icon)`
 `;
 
 const StyledNavMenu = styled(NavMenu)`
-    max-width: 350px;
-    min-width: 200px;
+    max-width: ${menuDimensions.maxWidth};
+    min-width: ${menuDimensions.minWidth};
     right: 0;
     width: initial;
 `;
