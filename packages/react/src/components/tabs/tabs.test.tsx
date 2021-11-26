@@ -1,6 +1,8 @@
-import { CommonWrapper, ReactWrapper } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
+import ReactDOM from 'react-dom';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders } from '../../test-utils/renderer';
+import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
+import { mountWithProviders, mountWithTheme } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
 function givenTabs(amount: number): Tab[] {
@@ -13,15 +15,6 @@ function givenTabs(amount: number): Tab[] {
     }
 
     return tabs;
-}
-
-function simulateTabSelectionToTheRight(tabButtonsDiv: CommonWrapper): void {
-    tabButtonsDiv.simulate('keydown', { key: 'ArrowRight' });
-    tabButtonsDiv.simulate('keydown', { key: ' ' });
-}
-
-function givenClickOnFirstTab(wrapper: ReactWrapper): void {
-    getByTestId(wrapper, 'tab-button-1').simulate('click');
 }
 
 function expectPanelToBeRendered(wrapper: ReactWrapper, tabPanelTestId: string): void {
@@ -63,7 +56,7 @@ describe('Tabs', () => {
     test('should only render the selected panel by default', () => {
         const tabs: Tab[] = givenTabs(2);
 
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />);
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
         expectPanelToBeRendered(wrapper, 'tab-panel-1');
         expect(getByTestId(wrapper, 'tab-panel-2').exists()).toBe(false);
@@ -87,18 +80,14 @@ describe('Tabs', () => {
         expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(false);
     });
 
-    test(
-        'tab panels should stay mounted after they are first rendered given forceRenderTabPanels is set to true',
-        () => {
-            const tabs: Tab[] = givenTabs(2);
-            const wrapper = mountWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />);
+    test('tab-panels should all be initially mounted when forceRenderTabPanels is set to true', () => {
+        const tabs: Tab[] = givenTabs(2);
 
-            getByTestId(wrapper, 'tab-button-2').simulate('click');
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />);
 
-            expectPanelToBeRendered(wrapper, 'tab-panel-1');
-            expectPanelToBeRendered(wrapper, 'tab-panel-2');
-        },
-    );
+        expectPanelToBeRendered(wrapper, 'tab-panel-1');
+        expectPanelToBeRendered(wrapper, 'tab-panel-2');
+    });
 
     test('when a button is selected only the selected panel should be displayed', () => {
         const tabs: Tab[] = givenTabs(2);
@@ -109,111 +98,101 @@ describe('Tabs', () => {
         expectPanelToBeRendered(wrapper, 'tab-panel-2');
     });
 
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the right arrow and the %s keys are entered it should display the panel to the right', (_, key) => {
-        const tabs: Tab[] = givenTabs(2);
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        givenClickOnFirstTab(wrapper);
-        const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
+    describe('focus', () => {
+        const divElement = document.createElement('div');
 
-        tabButtonsContainer.simulate('keydown', { key: 'ArrowRight' });
-        tabButtonsContainer.simulate('keydown', { key });
+        beforeAll(() => {
+            document.body.appendChild(divElement);
+        });
 
-        expectPanelToBeRendered(wrapper, 'tab-panel-2');
-    });
+        afterEach(() => {
+            ReactDOM.unmountComponentAtNode(divElement);
+        });
 
-    test('when the tab key is entered and the focus tab is not the active one it should select back the active one',
-        () => {
+        it('should go to the next tab-button when ArrowRight key is pressed on a tab-button', () => {
+            const tabs = givenTabs(2);
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
+
+            getByTestId(wrapper, 'tab-button-1').simulate('keydown', { key: 'ArrowRight' });
+
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-2'));
+        });
+
+        it('should go to the first tab-button when ArrowRight key is pressed on last tab-button', () => {
             const tabs: Tab[] = givenTabs(3);
-            const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-            const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
+
+            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'ArrowRight' });
+
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-1'));
+        });
+
+        it('should go to the previous tab-button when ArrowLeft key is pressed on a tab-button', () => {
+            const tabs: Tab[] = givenTabs(3);
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
+
+            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'ArrowLeft' });
+
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-2'));
+        });
+
+        it('should go to the last tab-button when ArrowLeft key is pressed on first tab-button', () => {
+            const tabs: Tab[] = givenTabs(3);
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
+
+            getByTestId(wrapper, 'tab-button-1').simulate('keydown', { key: 'ArrowLeft' });
+
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-3'));
+        });
+
+        it('should go to the selected tab-button when Tab key is pressed on a tab-button that is not selected', () => {
+            const tabs: Tab[] = givenTabs(3);
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
             getByTestId(wrapper, 'tab-button-2').simulate('click');
-            tabButtonsContainer.simulate('keydown', { key: 'ArrowRight' });
 
-            tabButtonsContainer.simulate('keydown', { key: 'Tab' });
+            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'Tab' });
 
-            const tabButton = getByTestId(wrapper, 'tab-button-2');
-            expect(tabButton.prop('isSelected')).toBe(true);
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-2'));
         });
 
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the left arrow and the %s keys are entered it should display the panel to the left', (_, key) => {
-        const tabs: Tab[] = givenTabs(2);
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
-        simulateTabSelectionToTheRight(tabButtonsContainer);
-
-        tabButtonsContainer.simulate('keydown', { key: 'ArrowLeft' });
-        tabButtonsContainer.simulate('keydown', { key });
-
-        expectPanelToBeRendered(wrapper, 'tab-panel-1');
-    });
-
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the left arrow and the %s keys are entered and first tab is active then it should display the last tab',
-        (_, key) => {
+        it('should go to the first tab-button when Home key is pressed on a tab-button', () => {
             const tabs: Tab[] = givenTabs(3);
-            const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-            givenClickOnFirstTab(wrapper);
-            const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
-
-            tabButtonsContainer.simulate('keydown', { key: 'ArrowLeft' });
-            tabButtonsContainer.simulate('keydown', { key });
-
-            expectPanelToBeRendered(wrapper, 'tab-panel-3');
-        });
-
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])(
-        'when the right arrow and the %s keys are entered and last tab is active then it should display the first tab',
-        (_, key) => {
-            const tabs: Tab[] = givenTabs(3);
-            const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-            const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
             getByTestId(wrapper, 'tab-button-3').simulate('click');
 
-            tabButtonsContainer.simulate('keydown', { key: 'ArrowRight' });
-            tabButtonsContainer.simulate('keydown', { key });
+            getByTestId(wrapper, 'tab-button-3').simulate('keydown', { key: 'Home' });
 
-            expectPanelToBeRendered(wrapper, 'tab-panel-1');
-        },
-    );
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-1'));
+        });
 
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the home and the %s keys are entered then it should display the first tab', (_, key) => {
-        const tabs: Tab[] = givenTabs(3);
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
-        getByTestId(wrapper, 'tab-button-3').simulate('click');
+        it('should go to the last tab-button when End key is pressed on a tab-button', () => {
+            const tabs: Tab[] = givenTabs(3);
+            const wrapper = mountWithTheme(
+                <Tabs tabs={tabs} />,
+                { attachTo: divElement },
+            );
 
-        tabButtonsContainer.simulate('keydown', { key: 'Home' });
-        tabButtonsContainer.simulate('keydown', { key });
+            getByTestId(wrapper, 'tab-button-1').simulate('keydown', { key: 'End' });
 
-        expectPanelToBeRendered(wrapper, 'tab-panel-1');
-    });
-
-    test.each([
-        ['space', ' '],
-        ['enter', 'Enter'],
-    ])('when the end and the %s keys are entered then it should display the last tab', (_, key) => {
-        const tabs: Tab[] = givenTabs(3);
-        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
-        givenClickOnFirstTab(wrapper);
-        const tabButtonsContainer = getByTestId(wrapper, 'tab-buttons-container');
-
-        tabButtonsContainer.simulate('keydown', { key: 'End' });
-        tabButtonsContainer.simulate('keydown', { key });
-
-        expectPanelToBeRendered(wrapper, 'tab-panel-3');
+            expectFocusToBeOn(getByTestId(wrapper, 'tab-button-3'));
+        });
     });
 });

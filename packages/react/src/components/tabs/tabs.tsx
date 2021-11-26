@@ -1,10 +1,17 @@
-import { createRef, KeyboardEvent, ReactElement, ReactNode, RefObject, useMemo, useState } from 'react';
+import { createRef, KeyboardEvent, ReactNode, RefObject, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
+
+const CenteredContentDiv = styled.div`
+    align-items: center;
+    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
+    display: flex;
+    margin-bottom: var(--spacing-1x);
+`;
 
 export interface Tab {
     title: string;
@@ -19,20 +26,13 @@ interface TabItem extends Tab {
     buttonRef: RefObject<HTMLButtonElement>;
 }
 
-interface TabsProps {
+interface Props {
     className?: string;
     forceRenderTabPanels?: boolean;
     tabs: Tab[];
 }
 
-const CenteredContentDiv = styled.div`
-    align-items: center;
-    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
-    display: flex;
-    margin-bottom: var(--spacing-1x);
-`;
-
-export function Tabs({ className, forceRenderTabPanels, tabs }: TabsProps): ReactElement {
+export const Tabs: VoidFunctionComponent<Props> = ({ className, forceRenderTabPanels, tabs }) => {
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
             ...tab,
@@ -41,47 +41,53 @@ export function Tabs({ className, forceRenderTabPanels, tabs }: TabsProps): Reac
             buttonRef: createRef<HTMLButtonElement>(),
         }),
     ), [tabs]);
-    const [selectedTabId, setSelectedTabId] = useState(tabItems[0].id);
+    const [selectedTab, setSelectedTab] = useState(tabItems[0]);
 
     function isTabSelected(tabId: string): boolean {
-        return selectedTabId === tabId;
+        return selectedTab.id === tabId;
     }
 
-    function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>, id: string): void {
-        const currentlyFocusedButtonTabIndex = tabItems.findIndex((tab) => tab.id === id);
+    function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>, currentlyFocusedTab: TabItem): void {
+        const currentlyFocusedTabIndex = tabItems.findIndex((tab) => tab.id === currentlyFocusedTab.id);
 
         switch (event.key) {
             case 'ArrowRight': {
-                const nextTabButton = getNextElementInArray(tabItems, currentlyFocusedButtonTabIndex)
+                const nextTabButton = getNextElementInArray(tabItems, currentlyFocusedTabIndex)
                     ?.buttonRef.current;
                 nextTabButton?.focus();
                 break;
             }
             case 'ArrowLeft': {
-                const previousTabButton = getPreviousElementInArray(tabItems, currentlyFocusedButtonTabIndex)
+                const previousTabButton = getPreviousElementInArray(tabItems, currentlyFocusedTabIndex)
                     ?.buttonRef.current;
                 previousTabButton?.focus();
                 break;
             }
             case 'Tab': {
-                const selectedTabButton = tabItems.find((tab) => isTabSelected(tab.id))?.buttonRef.current;
-                const focusIsCurrentlyOnSelectedTabButton = selectedTabId
-                    === tabItems[currentlyFocusedButtonTabIndex].id;
+                const focusIsCurrentlyOnSelectedTabButton = isTabSelected(currentlyFocusedTab.id);
 
-                if (selectedTabButton && !focusIsCurrentlyOnSelectedTabButton) {
+                if (!focusIsCurrentlyOnSelectedTabButton) {
                     event.preventDefault();
-                    selectedTabButton?.focus();
+                    selectedTab?.buttonRef.current?.focus();
                 }
                 break;
             }
             case 'Home': {
-                event.preventDefault();
-                tabItems[0].buttonRef.current?.focus();
+                const focusIsCurrentlyOnFirstTabButton = tabItems[0].id === currentlyFocusedTab.id;
+
+                if (!focusIsCurrentlyOnFirstTabButton) {
+                    event.preventDefault();
+                    tabItems[0].buttonRef.current?.focus();
+                }
                 break;
             }
             case 'End': {
-                event.preventDefault();
-                tabItems[tabItems.length - 1].buttonRef.current?.focus();
+                const focusIsCurrentlyOnLastTabButton = tabItems[tabItems.length - 1].id === currentlyFocusedTab.id;
+
+                if (!focusIsCurrentlyOnLastTabButton) {
+                    event.preventDefault();
+                    tabItems[tabItems.length - 1].buttonRef.current?.focus();
+                }
                 break;
             }
             default:
@@ -92,7 +98,6 @@ export function Tabs({ className, forceRenderTabPanels, tabs }: TabsProps): Reac
     return (
         <div className={className}>
             <CenteredContentDiv
-                data-testid="tab-buttons-container"
                 role="tablist"
                 aria-label="tabs label"
             >
@@ -106,19 +111,18 @@ export function Tabs({ className, forceRenderTabPanels, tabs }: TabsProps): Reac
                         rightIcon={tabItem.rightIcon}
                         isSelected={isTabSelected(tabItem.id)}
                         ref={tabItem.buttonRef}
-                        onClick={() => setSelectedTabId(tabItem.id)}
-                        onKeyDown={(event) => handleButtonKeyDown(event, tabItem.id)}
+                        onClick={() => setSelectedTab(tabItem)}
+                        onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
                     >
                         {tabItem.title}
                     </TabButton>
                 ))}
             </CenteredContentDiv>
-            {tabItems.map((tabItem, i) => {
+            {tabItems.map((tabItem) => {
                 if (forceRenderTabPanels || isTabSelected(tabItem.id)) {
                     return (
                         <TabPanel
                             id={tabItem.panelId}
-                            data-testid={`tab-panel-container-${i + 1}`}
                             buttonId={tabItem.id}
                             key={tabItem.panelId}
                             hidden={!isTabSelected(tabItem.id)}
@@ -131,4 +135,4 @@ export function Tabs({ className, forceRenderTabPanels, tabs }: TabsProps): Reac
             })}
         </div>
     );
-}
+};
