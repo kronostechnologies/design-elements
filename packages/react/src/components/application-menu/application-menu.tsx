@@ -34,6 +34,7 @@ const LinkStyles = css`
     font-size: 1.5rem;
     font-weight: var(--font-bold);
     height: 100%;
+    text-decoration: none;
 
     ${focus}
     > * {
@@ -47,6 +48,18 @@ const ReactRouterLink = styled(Link).attrs({ 'aria-label': 'Home' })`
 
 const HtmlLink = styled.a.attrs({ 'aria-label': 'Home' })`
     ${LinkStyles}
+`;
+
+const StyledSpan = styled.span`
+    border-left: 1px solid ${({ theme }) => theme.main['primary-1.3']};
+    color: ${({ theme }) => theme.greys.white};
+    font-size: 1rem;
+    font-weight: var(--font-normal);
+    height: unset;
+    line-height: 1.5rem;
+    margin-left: var(--spacing-2x);
+    padding-left: var(--spacing-2x);
+    width: max-content;
 `;
 
 const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMobile?: boolean }>`
@@ -69,6 +82,8 @@ const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMo
 interface ApplicationMenuProps {
     /** Set the app name to get the proper logos */
     appName?: LogoName;
+    /** Sets app title which appears next to logo on desktop */
+    appTitleDesktop?: string;
     /** Right-side content */
     children: ReactNode;
     className?: string;
@@ -86,6 +101,7 @@ interface ApplicationMenuProps {
 
 export function ApplicationMenu({
     appName = 'default',
+    appTitleDesktop,
     children,
     className,
     customLogo,
@@ -97,6 +113,17 @@ export function ApplicationMenu({
     const { device, isMobile } = useDeviceContext();
     const appLogo = customLogo ?? <Logo name={appName} mobile={isMobile} />;
 
+    function renderLogoContent(): ReactElement {
+        return (
+            <>
+                {appLogo}
+                {(!isMobile && appTitleDesktop) && (
+                    <StyledSpan data-testid="app-title">{appTitleDesktop}</StyledSpan>
+                )}
+            </>
+        );
+    }
+
     return (
         <Header className={className} device={device}>
             {skipLink && (
@@ -105,9 +132,13 @@ export function ApplicationMenu({
             )}
 
             {usesReactRouter ? (
-                <ReactRouterLink data-testid="logo-react-router-link" to={logoHref}>{appLogo}</ReactRouterLink>
+                <ReactRouterLink data-testid="logo-react-router-link" to={logoHref}>
+                    {renderLogoContent()}
+                </ReactRouterLink>
             ) : (
-                <HtmlLink data-testid="logo-html-link" href={logoHref}>{appLogo}</HtmlLink>
+                <HtmlLink data-testid="logo-html-link" href={logoHref}>
+                    {renderLogoContent()}
+                </HtmlLink>
             )}
 
             <Content mobileDrawerContent={mobileDrawerContent}>

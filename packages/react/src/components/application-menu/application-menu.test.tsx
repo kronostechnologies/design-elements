@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders, mountWithProviders } from '../../test-utils/renderer';
 import { ApplicationMenu } from './application-menu';
 import { SkipLinkProps } from '../skip-link/skip-link';
 
@@ -78,6 +78,24 @@ describe('Application Menu', () => {
             const wrapper = shallow(<ApplicationMenu usesReactRouter={false}>test</ApplicationMenu>);
 
             expect(getByTestId(wrapper, 'logo-html-link').exists()).toBe(true);
+        });
+
+        it('contains app-title when appTitleDesktop prop is set given device is desktop', () => {
+            const wrapper = mountWithProviders(
+                <ApplicationMenu appTitleDesktop="test">test</ApplicationMenu>,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            expect(getByTestId(wrapper, 'app-title').exists()).toBe(true);
+        });
+
+        it('does not contain app-title when device is mobile', () => {
+            const wrapper = mountWithProviders(
+                <ApplicationMenu appTitleDesktop="test">test</ApplicationMenu>,
+                { wrappingComponentProps: { staticDevice: 'mobile' } },
+            );
+
+            expect(getByTestId(wrapper, 'app-title').exists()).toBe(false);
         });
     });
 });
