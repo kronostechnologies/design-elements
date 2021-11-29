@@ -16,3 +16,7 @@ export const Mobile: Story = () => (
     <Lozenge>This is to highlight some text</Lozenge>
 );
 Mobile.decorators = [MobileDecorator];
+
+export const WithIcon: Story = () => (
+    <Lozenge icon="eye">With icon</Lozenge>
+);
