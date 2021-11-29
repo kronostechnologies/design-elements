@@ -1,5 +1,5 @@
 export function getInitialsFromUsername(username: string): string {
-    const usernameWithoutNonAlphaCharacters = username.replace(/[^a-zA-Z\s]/g, '');
+    const usernameWithoutNonAlphaCharacters = username.normalize('NFD').replace(/[^a-zA-Z\s]/g, '');
     if (usernameWithoutNonAlphaCharacters.length === 0) {
         return '';
     }
