@@ -95,7 +95,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -191,7 +191,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -386,7 +386,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -595,7 +595,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"
@@ -804,7 +804,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   >
     <div
       class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
     >
       <div
         aria-describedby="modal-description"

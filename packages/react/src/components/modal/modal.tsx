@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -106,15 +106,6 @@ const Footer = styled.footer<FooterProps>`
     padding: var(--spacing-4x) ${getPadding} 0;
 `;
 
-const customStyles = {
-    overlay: { /* stylelint-disable-line selector-type-no-unknown */
-        alignItems: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        zIndex: 10000,
-    },
-};
-
 export interface ModalProps {
     /** Takes a query selector targeting the app Element. */
     appElement?: string;
@@ -184,6 +175,16 @@ export function Modal({
     const { breakpoints, isMobile } = useDeviceContext();
     const mainRefCallback = useCallback((node: HTMLUListElement) => setMainRef(node), []);
     const { t } = useTranslation('modal');
+    const theme = useTheme();
+    const customStyles = {
+        overlay: { /* stylelint-disable-line selector-type-no-unknown */
+            alignItems: 'center',
+            backgroundColor: theme.tokens['modal-overlay-background-color'],
+            display: 'flex',
+            justifyContent: 'center',
+            zIndex: 10000,
+        },
+    };
 
     const handleScroll = useCallback((): void => {
         if (mainRef) {
