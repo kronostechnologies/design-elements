@@ -49,6 +49,22 @@ describe('TextInput', () => {
         expect(wrapper.find('input').prop('name')).toBe('test');
     });
 
+    test('should be valid by default', () => {
+        const wrapper = shallow(<TextInput {...initialProps} />);
+
+        const container = getByTestId(wrapper, 'field-container');
+        expect(container.prop('valid')).toBe(true);
+    });
+
+    test('should set as invalid when invalid event is triggered', () => {
+        const wrapper = shallow(<TextInput {...initialProps} />);
+
+        getByTestId(wrapper, 'text-input').simulate('invalid');
+
+        const container = getByTestId(wrapper, 'field-container');
+        expect(container.prop('valid')).toBe(false);
+    });
+
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
         const wrapper = setup(callback);

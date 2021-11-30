@@ -101,6 +101,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 >
   <div
     className="c1"
+    data-testid="field-container"
   >
     <input
       className="c2"
@@ -109,6 +110,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onInvalid={[Function]}
       placeholder="$"
       type="text"
       value="$100.00"
@@ -218,6 +220,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 >
   <div
     className="c1"
+    data-testid="field-container"
   >
     <input
       className="c2"
@@ -226,6 +229,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onInvalid={[Function]}
       placeholder="$"
       type="text"
       value="$100.00"
@@ -335,6 +339,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 >
   <div
     className="c1"
+    data-testid="field-container"
   >
     <input
       className="c2"
@@ -343,6 +348,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onInvalid={[Function]}
       placeholder="$"
       type="text"
       value="100,00 $"
