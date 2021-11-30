@@ -37,6 +37,7 @@ import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
 import { VoidFunctionComponent } from 'react';
+import AlertFilled from '../../icons/alert-filled.svg';
 import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
@@ -45,8 +46,10 @@ import Organization from '../../icons/organization.svg';
 import Open from '../../icons/open.svg';
 import Reorder from '../../icons/reorder.svg';
 import Files from '../../icons/files.svg';
+import WarningFilled from '../../icons/warning-filled.svg';
 
 const iconMapping = {
+    alertFilled: AlertFilled,
     alertTriangle: AlertTriangle,
     alertOctagon: AlertOctagon,
     arrowDown: ArrowDown,
@@ -92,6 +95,7 @@ const iconMapping = {
     trash: Trash,
     user: User,
     users: Users,
+    warningFilled: WarningFilled,
     x: X,
 } as const;
 
