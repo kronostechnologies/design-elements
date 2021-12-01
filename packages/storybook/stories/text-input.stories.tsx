@@ -1,6 +1,6 @@
-import { TextInput } from '@equisoft/design-elements-react';
+import { Button, TextInput } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
+import React, { FormEventHandler } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -116,3 +116,23 @@ export const Disabled: Story = () => (
         validationErrorMessage="Error message"
     />
 );
+
+export const RequiredInForm: Story = () => {
+    const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+        event.preventDefault();
+        event.currentTarget.checkValidity();
+    };
+
+    return (
+        <form noValidate onSubmit={handleSubmit}>
+            <TextInput
+                disabled={false}
+                required
+                label="Last Name (required)"
+                type="text"
+                validationErrorMessage="This field is required"
+            />
+            <Button type="submit" buttonType="primary">Submit</Button>
+        </form>
+    );
+};

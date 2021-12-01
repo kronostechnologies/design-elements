@@ -111,6 +111,7 @@ input + .c1 {
 
 <div
   className="c0"
+  data-testid="field-container"
 >
   <label
     className="c1 c2"
@@ -125,6 +126,7 @@ input + .c1 {
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+    onInvalid={[Function]}
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
     type="tel"
@@ -243,6 +245,7 @@ input + .c1 {
 
 <div
   className="c0"
+  data-testid="field-container"
 >
   <label
     className="c1 c2"
@@ -256,6 +259,7 @@ input + .c1 {
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+    onInvalid={[Function]}
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
     required={true}
@@ -375,6 +379,7 @@ input + .c1 {
 
 <div
   className="c0"
+  data-testid="field-container"
 >
   <label
     className="c1 c2"
@@ -388,6 +393,7 @@ input + .c1 {
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+    onInvalid={[Function]}
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
     type="tel"

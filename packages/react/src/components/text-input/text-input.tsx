@@ -2,6 +2,7 @@ import React, {
     ChangeEvent,
     DetailedHTMLProps,
     FocusEvent,
+    FormEventHandler,
     forwardRef,
     InputHTMLAttributes,
     KeyboardEvent,
@@ -94,6 +95,10 @@ export const TextInput = forwardRef(({
         }
     }, [onBlur]);
 
+    const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
+        setValidity({ validity: false });
+    }, []);
+
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (onChange) {
             onChange(event);
@@ -115,6 +120,7 @@ export const TextInput = forwardRef(({
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
+            data-testid="field-container"
         >
             <Input
                 autoComplete={autoComplete}
@@ -132,6 +138,7 @@ export const TextInput = forwardRef(({
                 onMouseUp={onMouseUp}
                 onKeyUp={onKeyUp}
                 onKeyDown={onKeyDown}
+                onInvalid={handleOnInvalid}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={required}
