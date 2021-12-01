@@ -134,9 +134,34 @@ It is important for users of screenreaders that other page content be hidden (vi
                         ariaDescribedby="story-description"
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}
-                        title="Heading 5"
+                        title="With title icon"
                         titleIcon="warningFilled"
-                        subtitle="Subtitle 1"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                            fringilla tellus nec auctor gravida.</p>
+                    </ModalDialog>
+                </Fragment>
+            );
+        }}
+    </Story>
+</Preview>
+
+### Without close button
+
+<Preview>
+    <Story name="Without close button">
+        {() => {
+            const {isModalOpen, closeModal, openModal} = useModal();
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
+                    <ModalDialog
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        hasCloseButton={false}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        title="Without close button"
                     >
                         <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>

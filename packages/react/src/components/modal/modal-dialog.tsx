@@ -45,10 +45,10 @@ const HeadingWrapper = styled.div`
 `;
 
 const TitleIcon = styled(Icon)`
+    left: -32px;
     margin-top: calc(var(--spacing-half) * 1.5);
     position: absolute;
     top: 0;
-    left: -32px;
 `;
 
 export interface ModalDialogProps {
@@ -65,6 +65,7 @@ export interface ModalDialogProps {
     className?: string;
     confirmButton?: { label?: string, onConfirm?(): void };
     footerContent?: ReactElement;
+    hasCloseButton?: boolean;
     isOpen: boolean;
     /**
      * Defines if the overlay click should close the modal
@@ -88,6 +89,7 @@ export function ModalDialog({
     className,
     confirmButton,
     footerContent,
+    hasCloseButton,
     isOpen,
     shouldCloseOnOverlayClick = true,
     subtitle,
@@ -114,7 +116,7 @@ export function ModalDialog({
     }
 
     function getHeader(): ReactElement | undefined {
-        const HeadingWrapperComponent = titleIcon ? HeadingWrapper : Fragment;
+        const HeadingWrapperComponent = hasTitleIcon ? HeadingWrapper : Fragment;
 
         if (title || subtitle) {
             return (
@@ -172,7 +174,7 @@ export function ModalDialog({
             ariaLabelledBy={title ? titleId : undefined}
             className={className}
             modalHeader={getHeader()}
-            hasCloseButton
+            hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
             role="dialog"
             onAfterOpen={() => titleRef.current?.focus()}
