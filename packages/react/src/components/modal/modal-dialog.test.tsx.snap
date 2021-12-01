@@ -206,9 +206,9 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
-  line-height: 2rem;
+  line-height: 2.25rem;
   margin: 0;
 }
 
@@ -303,7 +303,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c0"
+        class="ReactModal__Content c0 "
         role="dialog"
         tabindex="-1"
       >
@@ -552,7 +552,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c0"
+        class="ReactModal__Content c0 "
         role="dialog"
         tabindex="-1"
       >
@@ -848,7 +848,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
         aria-describedby="modal-description"
         aria-label="Test modal"
         aria-modal="true"
-        class="ReactModal__Content c0"
+        class="ReactModal__Content c0 "
         role="dialog"
         tabindex="-1"
       >
@@ -1176,7 +1176,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
         aria-describedby="modal-description"
         aria-label="Test modal"
         aria-modal="true"
-        class="ReactModal__Content c0"
+        class="ReactModal__Content c0 "
         role="dialog"
         tabindex="-1"
       >
@@ -1422,9 +1422,9 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 }
 
 .c2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
-  line-height: 2rem;
+  line-height: 2.25rem;
   margin: 0;
 }
 
@@ -1511,7 +1511,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c0"
+        class="ReactModal__Content c0 "
         role="dialog"
         tabindex="-1"
       >
@@ -1738,9 +1738,9 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: var(--font-normal);
-  line-height: 2rem;
+  line-height: 2.25rem;
   margin: 0;
 }
 
@@ -1854,7 +1854,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c1"
+        class="ReactModal__Content c1 "
         role="dialog"
         tabindex="-1"
       >
@@ -2202,7 +2202,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c0"
+        class="ReactModal__Content c0 "
         role="dialog"
         tabindex="-1"
       >

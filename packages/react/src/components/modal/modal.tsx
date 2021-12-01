@@ -218,73 +218,71 @@ export function Modal({
     }
 
     return (
-        <>
-            <StyledModal
-                aria={{
-                    describedby: ariaDescribedby,
-                    labelledby: ariaLabelledBy,
-                    modal: true,
-                }}
-                ariaHideApp={ariaHideApp}
-                className={className}
-                noPadding={noPadding}
-                hasCloseButton={hasCloseButton}
-                isOpen={isOpen}
-                onAfterOpen={onAfterOpen}
-                onAfterClose={onAfterClose}
-                onRequestClose={onRequestClose}
-                role={role}
-                style={customStyles}
-                contentLabel={ariaLabel}
-                shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-                breakpoints={breakpoints}
-                isMobile={isMobile}
-            >
-                {modalHeader && (
-                    <Header
-                        hasCloseButton={hasCloseButton}
-                        isMobile={isMobile}
-                        isTopScrolled={topScroll > 0}
-                        noPadding={noPadding}
-                    >
-                        {modalHeader}
-                    </Header>
-                )}
+        <StyledModal
+            aria={{
+                describedby: ariaDescribedby,
+                labelledby: ariaLabelledBy,
+                modal: true,
+            }}
+            ariaHideApp={ariaHideApp}
+            className={className}
+            noPadding={noPadding}
+            hasCloseButton={hasCloseButton}
+            isOpen={isOpen}
+            onAfterOpen={onAfterOpen}
+            onAfterClose={onAfterClose}
+            onRequestClose={onRequestClose}
+            role={role}
+            style={customStyles}
+            contentLabel={ariaLabel}
+            shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+            breakpoints={breakpoints}
+            isMobile={isMobile}
+        >
+            {modalHeader && (
+                <Header
+                    hasCloseButton={hasCloseButton}
+                    isMobile={isMobile}
+                    isTopScrolled={topScroll > 0}
+                    noPadding={noPadding}
+                >
+                    {modalHeader}
+                </Header>
+            )}
 
-                {children && (
-                    <Main
-                        hasCloseButton={hasCloseButton}
-                        isMobile={isMobile}
-                        noPadding={noPadding}
-                        ref={mainRefCallback}
-                    >
-                        {children}
-                    </Main>
-                )}
+            {children && (
+                <Main
+                    hasCloseButton={hasCloseButton}
+                    isMobile={isMobile}
+                    noPadding={noPadding}
+                    ref={mainRefCallback}
+                >
+                    {children}
+                </Main>
+            )}
 
-                {modalFooter && (
-                    <Footer
-                        hasCloseButton={hasCloseButton}
-                        isBottomScrolled={bottomScroll > 0}
-                        isMobile={isMobile}
-                        noPadding={noPadding}
-                    >
-                        {modalFooter}
-                    </Footer>
-                )}
+            {modalFooter && (
+                <Footer
+                    hasCloseButton={hasCloseButton}
+                    isBottomScrolled={bottomScroll > 0}
+                    isMobile={isMobile}
+                    noPadding={noPadding}
+                >
+                    {modalFooter}
+                </Footer>
+            )}
 
-                {hasCloseButton && (
-                    <CloseIconButton
-                        data-testid="close-button"
-                        label={t('closeButtonLabel')}
-                        type="button"
-                        buttonType="tertiary"
-                        iconName="x"
-                        onClick={onRequestClose}
-                        isMobile={isMobile}
-                    />
-                )}
-            </StyledModal>
-        </>
+            {hasCloseButton && (
+                <CloseIconButton
+                    data-testid="close-button"
+                    label={t('closeButtonLabel')}
+                    type="button"
+                    buttonType="tertiary"
+                    iconName="x"
+                    onClick={onRequestClose}
+                    isMobile={isMobile}
+                />
+            )}
+        </StyledModal>
     );
 }
