@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { IconButton } from './icon-button';
 

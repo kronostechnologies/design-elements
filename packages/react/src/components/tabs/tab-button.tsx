@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';

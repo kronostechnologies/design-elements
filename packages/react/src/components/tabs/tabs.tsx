@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactElement, ReactNode, useCallback, useReducer } from 'react';
+import { KeyboardEvent, ReactElement, ReactNode, useCallback, useReducer } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconName } from '../icon/icon';

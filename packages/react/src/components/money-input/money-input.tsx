@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';

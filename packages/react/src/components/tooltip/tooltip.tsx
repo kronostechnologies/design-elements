@@ -1,4 +1,4 @@
-import React, {
+import {
     FunctionComponent,
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,

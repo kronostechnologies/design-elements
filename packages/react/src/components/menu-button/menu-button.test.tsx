@@ -1,4 +1,3 @@
-import React from 'react';
 import { MenuButton } from './menu-button';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { waitForComponentToPaint } from '../../test-utils/enzyme-utils';

@@ -1,5 +1,5 @@
 import { render, RenderResult } from '@testing-library/react';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { DeviceType } from '../components/device-context-provider/device-context-provider';
 import { AllProviders } from './renderer';
 

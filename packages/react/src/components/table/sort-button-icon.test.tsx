@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { mocked } from 'ts-jest/utils';
 import { useTheme } from '../../hooks/use-theme';
 import { equisoftTheme } from '../../themes';

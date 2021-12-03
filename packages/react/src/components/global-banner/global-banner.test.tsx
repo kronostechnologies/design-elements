@@ -1,4 +1,3 @@
-import React from 'react';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { ActionButton, GlobalBanner, GlobalBannerType } from './global-banner';
 import { getByTestId } from '../../test-utils/enzyme-selectors';

@@ -1,4 +1,5 @@
-import React, {
+import {
+    createRef,
     forwardRef,
     KeyboardEvent,
     ReactElement,
@@ -231,7 +232,7 @@ export const Listbox = forwardRef(({
             ...option,
             id: `${id}_${option.value}`,
             focusIndex: index,
-            ref: React.createRef<HTMLLIElement>(),
+            ref: createRef<HTMLLIElement>(),
         }),
     ), [id, options]);
 

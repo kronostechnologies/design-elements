@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import { createRef, RefObject } from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { Datepicker, DatepickerHandles } from './datepicker';
@@ -155,7 +155,7 @@ describe('Datepicker', () => {
     });
 
     test('should reset date to startDate when reset is called on ref', async () => {
-        const ref: RefObject<DatepickerHandles> = React.createRef();
+        const ref: RefObject<DatepickerHandles> = createRef();
         const wrapper = mountWithTheme(<Datepicker ref={ref} startDate={new Date('2002-02-02, 12:00')} />);
 
         getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2010-07-07' } });
@@ -168,7 +168,7 @@ describe('Datepicker', () => {
     });
 
     test('should set date when setDate is called on ref', async () => {
-        const ref: RefObject<DatepickerHandles> = React.createRef();
+        const ref: RefObject<DatepickerHandles> = createRef();
         const wrapper = mountWithTheme(<Datepicker ref={ref} />);
 
         await actAndWaitForEffects(wrapper, () => {

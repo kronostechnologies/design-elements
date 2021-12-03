@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement, ReactNode, MouseEvent, Ref, useState } from 'react';
+import { forwardRef, ReactElement, ReactNode, MouseEvent, Ref, useState } from 'react';
 import styled, { css, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

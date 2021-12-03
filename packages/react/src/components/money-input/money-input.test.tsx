@@ -1,5 +1,4 @@
 import { fireEvent, render } from '@testing-library/react';
-import React from 'react';
 import renderer from 'react-test-renderer';
 import { themeProvider, ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { MoneyInput } from './money-input';

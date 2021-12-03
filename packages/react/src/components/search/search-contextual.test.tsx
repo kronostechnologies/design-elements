@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { SearchContextual } from './search-contextual';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { UserProfile, getFirstFocusableItem } from './user-profile';
 import { getByTestId } from '../../test-utils/enzyme-selectors';

@@ -1,4 +1,4 @@
-import React, { ReactElement, VoidFunctionComponent } from 'react';
+import { ReactElement, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { NavItemProps } from './nav-item';
 import { Heading, HeadingProps } from '../../heading/heading';

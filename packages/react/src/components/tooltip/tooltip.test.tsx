@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon } from '../..';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';

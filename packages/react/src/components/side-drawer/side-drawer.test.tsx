@@ -1,4 +1,3 @@
-import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { SideDrawer } from './side-drawer';
 

@@ -1,4 +1,4 @@
-import React, { VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent } from 'react';
 import { useToasts } from '../../hooks/use-toasts';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithProviders } from '../../test-utils/renderer';

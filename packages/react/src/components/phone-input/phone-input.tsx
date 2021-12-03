@@ -1,4 +1,4 @@
-import React, {
+import {
     useState,
     ChangeEvent,
     ReactElement,
@@ -6,7 +6,8 @@ import React, {
     useRef,
     KeyboardEvent,
     useLayoutEffect,
-    MouseEvent, useCallback,
+    MouseEvent,
+    useCallback,
 } from 'react';
 import styled from 'styled-components';
 import {

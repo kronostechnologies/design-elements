@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
 export type Type = 'xlarge' | 'large' | 'medium' | 'small' | 'subtitle';

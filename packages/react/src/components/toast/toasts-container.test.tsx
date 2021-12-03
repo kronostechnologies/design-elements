@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { mocked } from 'ts-jest/utils';
 import { useToasts } from '../../hooks/use-toasts';
 import { getByTestId } from '../../test-utils/enzyme-selectors';

@@ -1,4 +1,4 @@
-import React, { ComponentProps, ComponentType, ReactElement } from 'react';
+import { ComponentProps, ComponentType, ReactElement } from 'react';
 import { equisoftTheme, ThemeWrapper } from '..';
 
 type ThemeProps = Pick<ComponentProps<typeof ThemeWrapper>, 'children'>;

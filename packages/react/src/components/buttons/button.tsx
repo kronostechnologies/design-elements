@@ -1,4 +1,4 @@
-import React, { forwardRef, MouseEvent, KeyboardEvent, ReactElement, ReactNode, Ref } from 'react';
+import { forwardRef, MouseEvent, KeyboardEvent, ReactElement, ReactNode, Ref } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

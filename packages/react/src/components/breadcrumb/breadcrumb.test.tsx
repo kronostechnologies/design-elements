@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { Breadcrumb } from './breadcrumb';

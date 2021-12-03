@@ -1,4 +1,4 @@
-import React, { forwardRef, KeyboardEvent, ReactElement, Ref, useMemo } from 'react';
+import { forwardRef, KeyboardEvent, ReactElement, Ref, useMemo } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 import { GroupItemProps } from './list-items';

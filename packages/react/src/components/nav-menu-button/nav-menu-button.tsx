@@ -1,4 +1,4 @@
-import React, {
+import {
     KeyboardEvent,
     MouseEvent as ReactMouseEvent,
     ReactElement,

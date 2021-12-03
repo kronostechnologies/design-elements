@@ -1,4 +1,4 @@
-import React, { FunctionComponent, KeyboardEvent, useState } from 'react';
+import { FunctionComponent, KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 import { usePopperTooltip } from 'react-popper-tooltip';
 import { Menu, MenuOption } from '../menu/menu';

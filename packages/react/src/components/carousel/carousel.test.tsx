@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { mocked } from 'ts-jest/utils';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';

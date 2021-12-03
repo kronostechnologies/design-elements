@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import React, { ReactElement, useRef } from 'react';
+import { ReactElement, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Avatar } from '../avatar/avatar';
@@ -75,6 +74,7 @@ export function UserProfile({
             icon={<StyledAvatar isMobile={isMobile} username={username} />}
             tag={tag}
             isMobile={isMobile}
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...(isMobile ? {} : {
                 label: username,
             })}

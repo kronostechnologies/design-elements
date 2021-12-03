@@ -1,4 +1,3 @@
-import React from 'react';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { Heading, Tag, Type } from './heading';
 

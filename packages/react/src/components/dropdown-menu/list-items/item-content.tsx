@@ -1,4 +1,4 @@
-import React, { VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { DeviceContextProps } from '../../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../../icon/icon';

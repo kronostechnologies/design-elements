@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { DeviceContextProvider, DeviceContextProviderProps } from './device-context-provider/device-context-provider';
 import { IntlProvider, IntlProviderProps } from './internationalization-provider/internationalization-provider';
 import { ThemeWrapper, ThemeWrapperProps } from './theme-wrapper/theme-wrapper';

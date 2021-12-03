@@ -1,4 +1,4 @@
-import React, { ReactText, VoidFunctionComponent } from 'react';
+import { ReactText, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { Circle } from '../circle/circle';

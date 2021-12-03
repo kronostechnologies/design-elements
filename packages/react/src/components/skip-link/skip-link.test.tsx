@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { SkipLink } from './skip-link';
 

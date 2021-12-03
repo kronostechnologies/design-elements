@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';

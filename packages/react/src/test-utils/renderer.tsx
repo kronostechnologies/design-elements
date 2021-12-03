@@ -1,5 +1,5 @@
 import { CommonWrapper, mount, MountRendererProps, ReactWrapper, render } from 'enzyme';
-import React, { Component, FunctionComponent, ReactElement, ReactPortal } from 'react';
+import { Component, FunctionComponent, ReactElement, ReactPortal } from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';

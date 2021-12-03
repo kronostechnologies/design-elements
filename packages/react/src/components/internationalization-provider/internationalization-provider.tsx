@@ -1,5 +1,5 @@
 import { i18n as i18nType } from 'i18next';
-import React, { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
+import { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
 import { createI18n } from '../../i18n/i18n';
 
 export interface IntlProviderProps {

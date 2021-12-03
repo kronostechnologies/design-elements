@@ -1,5 +1,4 @@
 import { ReactWrapper } from 'enzyme';
-import React from 'react';
 import ReactDOM from 'react-dom';
 import { Menu } from './menu';
 import { mountWithTheme } from '../../test-utils/renderer';

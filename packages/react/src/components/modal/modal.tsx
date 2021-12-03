@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
+import { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';

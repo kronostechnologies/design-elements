@@ -1,4 +1,4 @@
-import React, { VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent } from 'react';
 import { useTheme } from '../../hooks/use-theme';
 import { Icon } from '../icon/icon';
 

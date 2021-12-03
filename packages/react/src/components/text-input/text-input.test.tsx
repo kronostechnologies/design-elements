@@ -1,5 +1,5 @@
 import { mount, ReactWrapper, shallow } from 'enzyme';
-import React, { ChangeEventHandler } from 'react';
+import { ChangeEventHandler } from 'react';
 import renderer from 'react-test-renderer';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';

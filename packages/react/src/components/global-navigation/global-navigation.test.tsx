@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 import { IconButtonProps } from '../buttons/icon-button';

@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from 'react';
+import { ReactElement, useMemo } from 'react';
 import { Column } from 'react-table';
 import styled from 'styled-components';
 import { SortButtonIcon, SortState } from './sort-button-icon';

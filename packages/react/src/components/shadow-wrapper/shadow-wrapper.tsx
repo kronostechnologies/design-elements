@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { createProxy } from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
 import { mainCss } from '../../styles';

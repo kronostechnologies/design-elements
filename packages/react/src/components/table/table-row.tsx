@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import { Row } from 'react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';

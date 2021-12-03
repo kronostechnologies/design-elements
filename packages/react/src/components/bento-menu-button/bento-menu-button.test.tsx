@@ -1,4 +1,3 @@
-import React from 'react';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { BentoMenuButton } from './bento-menu-button';
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';

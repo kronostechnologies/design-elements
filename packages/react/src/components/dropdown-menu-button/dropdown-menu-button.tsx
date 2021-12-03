@@ -1,4 +1,4 @@
-import React, {
+import {
     KeyboardEvent,
     MouseEvent as ReactMouseEvent,
     ReactElement,
@@ -7,7 +7,8 @@ import React, {
     useEffect,
     useMemo,
     useRef,
-    useState, VoidFunctionComponent,
+    useState,
+    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
