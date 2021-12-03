@@ -4,7 +4,7 @@
     "target": "ES2016",
     "module": "commonjs",
     "esModuleInterop": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": "./stories/"

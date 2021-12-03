@@ -1,6 +1,6 @@
 import { SectionalBanner } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { MobileDecorator } from './utils/device-context-decorator';

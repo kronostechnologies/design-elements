@@ -1,5 +1,5 @@
 import { Button, useToast } from '@equisoft/design-elements-react';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {

@@ -15,6 +15,8 @@ module.exports = {
     rules: {
         'linebreak-style': 'off',
         'react/jsx-no-bind': 'off',
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
     },
     settings: {
         'import/resolver': {

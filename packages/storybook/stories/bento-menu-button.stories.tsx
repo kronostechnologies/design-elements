@@ -1,6 +1,5 @@
 import { ApplicationMenu, BentoMenuButton } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';

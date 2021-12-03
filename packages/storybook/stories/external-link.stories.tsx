@@ -1,6 +1,5 @@
 import { ExternalLink } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {

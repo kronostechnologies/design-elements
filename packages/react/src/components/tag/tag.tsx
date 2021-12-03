@@ -2,6 +2,7 @@ import {
     ButtonHTMLAttributes,
     DetailedHTMLProps,
     MouseEventHandler,
+    SVGProps,
     useCallback,
     VoidFunctionComponent,
 } from 'react';
@@ -108,7 +109,7 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): s
     return $isMobile || isMedium($tagSize) ? 'var(--border-radius)' : 'var(--border-radius-half)';
 }
 
-const StyledIcon = styled(Icon)<React.SVGProps<SVGSVGElement> & IconOrButtonProps>`
+const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
     /* TODO change when updating thematization */
     color: #60666e;
     display: inline-block;

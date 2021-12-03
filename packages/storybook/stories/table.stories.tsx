@@ -1,6 +1,5 @@
 import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 

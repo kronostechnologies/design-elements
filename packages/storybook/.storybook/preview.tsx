@@ -1,6 +1,5 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
-import React from 'react';
 
 injectMainCss();
 

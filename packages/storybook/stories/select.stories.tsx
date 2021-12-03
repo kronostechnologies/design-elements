@@ -1,6 +1,5 @@
 import { Select } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
