@@ -3,26 +3,39 @@
 exports[`Table has clickable rows styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
 .c1:focus {
-  outline: none;
+  position: relative;
 }
 
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
+.c1:focus::after {
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+  content: "";
+  height: calc(100% + 3px);
+  left: 0;
+  outline: none;
+  position: absolute;
+  top: -2px;
+  width: 100%;
+  z-index: 3;
 }
 
 .c1:hover {
-  background-color: #DBDEE1;
   cursor: pointer;
+}
+
+.c1:hover td {
+  background-color: #DBDEE1;
+}
+
+.c1:not(:hover) td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -66,6 +79,7 @@ exports[`Table has clickable rows styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -73,6 +87,7 @@ exports[`Table has clickable rows styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -91,11 +106,13 @@ exports[`Table has clickable rows styles 1`] = `
       tabindex="0"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -108,11 +125,13 @@ exports[`Table has clickable rows styles 1`] = `
       tabindex="0"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -125,11 +144,13 @@ exports[`Table has clickable rows styles 1`] = `
       tabindex="0"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -142,21 +163,15 @@ exports[`Table has clickable rows styles 1`] = `
 exports[`Table has custom text alignment 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -200,6 +215,7 @@ exports[`Table has custom text alignment 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -208,6 +224,7 @@ exports[`Table has custom text alignment 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -226,12 +243,14 @@ exports[`Table has custom text alignment 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
         style="text-align:right"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
         style="text-align:center"
       >
@@ -244,12 +263,14 @@ exports[`Table has custom text alignment 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
         style="text-align:right"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
         style="text-align:center"
       >
@@ -262,12 +283,14 @@ exports[`Table has custom text alignment 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
         style="text-align:right"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
         style="text-align:center"
       >
@@ -281,21 +304,15 @@ exports[`Table has custom text alignment 1`] = `
 exports[`Table has desktop styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -339,6 +356,7 @@ exports[`Table has desktop styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -346,6 +364,7 @@ exports[`Table has desktop styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -363,11 +382,13 @@ exports[`Table has desktop styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -379,11 +400,13 @@ exports[`Table has desktop styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -395,11 +418,13 @@ exports[`Table has desktop styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -412,37 +437,46 @@ exports[`Table has desktop styles 1`] = `
 exports[`Table has error rows styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  position: relative;
   background-color: #fcf8f9;
-  border: 1px solid #CD2C23;
 }
 
-.c1:focus {
+.c1::after {
+  box-shadow: inset 0 0 0 1px #CD2C23;
+  content: "";
+  height: calc(100% + 1px);
+  left: 0;
   outline: none;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
 }
 
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td:first-child::after {
+  border-left: 1px solid #CD2C23;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.c1 td {
+  background-color: inherit;
 }
 
 .c2 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c2 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -486,6 +520,7 @@ exports[`Table has error rows styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -493,6 +528,7 @@ exports[`Table has error rows styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -510,11 +546,13 @@ exports[`Table has error rows styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -526,11 +564,13 @@ exports[`Table has error rows styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -542,11 +582,13 @@ exports[`Table has error rows styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -559,21 +601,15 @@ exports[`Table has error rows styles 1`] = `
 exports[`Table has mobile styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -617,6 +653,7 @@ exports[`Table has mobile styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -624,6 +661,7 @@ exports[`Table has mobile styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -641,11 +679,13 @@ exports[`Table has mobile styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -657,11 +697,13 @@ exports[`Table has mobile styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -673,11 +715,13 @@ exports[`Table has mobile styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -690,21 +734,15 @@ exports[`Table has mobile styles 1`] = `
 exports[`Table has rowNumbers styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -754,6 +792,7 @@ exports[`Table has rowNumbers styles 1`] = `
         scope="col"
       />
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -761,6 +800,7 @@ exports[`Table has rowNumbers styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -784,11 +824,13 @@ exports[`Table has rowNumbers styles 1`] = `
         1
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -806,11 +848,13 @@ exports[`Table has rowNumbers styles 1`] = `
         2
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -828,11 +872,13 @@ exports[`Table has rowNumbers styles 1`] = `
         3
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -931,21 +977,15 @@ exports[`Table has selectable rows styles 1`] = `
 
 .c9 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c9:focus {
-  outline: none;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c9 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -1022,6 +1062,7 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1029,6 +1070,7 @@ exports[`Table has selectable rows styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1077,11 +1119,13 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -1124,11 +1168,13 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -1171,11 +1217,13 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </td>
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1188,21 +1236,15 @@ exports[`Table has selectable rows styles 1`] = `
 exports[`Table has small rowSize styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -1246,6 +1288,7 @@ exports[`Table has small rowSize styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1253,6 +1296,7 @@ exports[`Table has small rowSize styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1270,11 +1314,13 @@ exports[`Table has small rowSize styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -1286,11 +1332,13 @@ exports[`Table has small rowSize styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -1302,11 +1350,13 @@ exports[`Table has small rowSize styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1339,21 +1389,15 @@ exports[`Table has sorting styles 1`] = `
 
 .c3 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c3 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -1455,11 +1499,13 @@ exports[`Table has sorting styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -1471,11 +1517,13 @@ exports[`Table has sorting styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -1487,11 +1535,13 @@ exports[`Table has sorting styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1501,28 +1551,23 @@ exports[`Table has sorting styles 1`] = `
 </table>
 `;
 
-exports[`Table has striped styles 1`] = `
+exports[`Table has sticky column styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:nth-child(odd) {
-  background-color: #FAFAFA;
+.c1 td {
+  background-color: inherit;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c2 {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -1566,6 +1611,7 @@ exports[`Table has striped styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1573,6 +1619,309 @@ exports[`Table has striped styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 2
+      </th>
+      <th
+        class=""
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 3
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    role="rowgroup"
+  >
+    <tr
+      class="c1"
+      data-testid="table-row-0"
+      role="row"
+    >
+      <td
+        class="c2"
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class="c2"
+        role="cell"
+      >
+        Big
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c1"
+      data-testid="table-row-1"
+      role="row"
+    >
+      <td
+        class="c2"
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class="c2"
+        role="cell"
+      >
+        Big
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c1"
+      data-testid="table-row-2"
+      role="row"
+    >
+      <td
+        class="c2"
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class="c2"
+        role="cell"
+      >
+        Big
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has sticky header styles 1`] = `
+.c2 {
+  border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
+}
+
+.c2 td {
+  background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  min-width: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+<table
+  class="c0"
+  role="table"
+>
+  <thead>
+    <tr
+      role="row"
+    >
+      <th
+        class="c1"
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 1
+      </th>
+      <th
+        class="c1"
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 2
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    role="rowgroup"
+  >
+    <tr
+      class="c2"
+      data-testid="table-row-0"
+      role="row"
+    >
+      <td
+        class=""
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c2"
+      data-testid="table-row-1"
+      role="row"
+    >
+      <td
+        class=""
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c2"
+      data-testid="table-row-2"
+      role="row"
+    >
+      <td
+        class=""
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        Galaxy
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has striped styles 1`] = `
+.c1 {
+  border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
+}
+
+.c1:nth-child(odd) {
+  background-color: #FAFAFA;
+}
+
+.c1 td {
+  background-color: inherit;
+}
+
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  min-width: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+<table
+  class="c0"
+  role="table"
+>
+  <thead>
+    <tr
+      role="row"
+    >
+      <th
+        class=""
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 1
+      </th>
+      <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1590,11 +1939,13 @@ exports[`Table has striped styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -1606,11 +1957,13 @@ exports[`Table has striped styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -1622,11 +1975,13 @@ exports[`Table has striped styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy
@@ -1639,21 +1994,15 @@ exports[`Table has striped styles 1`] = `
 exports[`Table has tablet styles 1`] = `
 .c1 {
   border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c1:focus {
-  outline: none;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #84C6EA;
-  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+.c1 td {
+  background-color: inherit;
 }
 
 .c0 {
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -1697,6 +2046,7 @@ exports[`Table has tablet styles 1`] = `
       role="row"
     >
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1704,6 +2054,7 @@ exports[`Table has tablet styles 1`] = `
         Column 1
       </th>
       <th
+        class=""
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1721,11 +2072,13 @@ exports[`Table has tablet styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         World
@@ -1737,11 +2090,13 @@ exports[`Table has tablet styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Planet
@@ -1753,11 +2108,13 @@ exports[`Table has tablet styles 1`] = `
       role="row"
     >
       <td
+        class=""
         role="cell"
       >
         Hello
       </td>
       <td
+        class=""
         role="cell"
       >
         Galaxy

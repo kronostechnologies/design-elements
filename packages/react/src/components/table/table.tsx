@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import {
     CellProps,
     Column,
@@ -11,12 +11,13 @@ import {
     useTable,
     Hooks,
 } from 'react-table';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';
 import { TableRow } from './table-row';
 import { Checkbox } from '../checkbox/checkbox';
+import { calculateStickyPosition } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium';
 
@@ -35,6 +36,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     sortable?: boolean,
     textAlign?: string,
     className?: string,
+    sticky?: boolean,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -46,19 +48,27 @@ interface CustomRowProps {
 
 const utilColumnClassName = 'eq-table__util-column';
 
-function getHeading(column: Column): ReactElement {
+const StyledHeader = styled.th<{ sticky: boolean }>`
+    ${({ sticky }) => sticky && css`
+        background-color: ${({ theme }) => theme.greys.white};
+        position: sticky;
+    `}
+`;
+
+function getHeading(column: Column, stickyHeader?: boolean): ReactElement {
     if (column.sortable) {
         return <SortableColumnHeading key={column.id} column={column} />;
     }
     return (
-        <th
+        <StyledHeader
+            className={column.className}
             scope="col"
             style={{ textAlign: column.textAlign }}
-            className={column.className}
+            sticky={stickyHeader}
             {...column.getHeaderProps() /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {column.render('Header')}
-        </th>
+        </StyledHeader>
     );
 }
 
@@ -121,7 +131,6 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
 
 const StyledTable = styled.table<StyledTableProps>`
     border-collapse: collapse;
-    border-spacing: 0;
     width: 100%;
 
     th {
@@ -204,6 +213,8 @@ export interface TableProps<T extends object> {
      */
     striped?: boolean;
 
+    stickyHeader?: boolean;
+
     onRowClick?(row: Row<T>): void;
 
     onSelectedRowsChange?(selectedRows: T[]): void;
@@ -219,7 +230,9 @@ export function Table<T extends object>({
     striped = false,
     onRowClick,
     onSelectedRowsChange,
+    stickyHeader = false,
 }: TableProps<T>): ReactElement {
+    const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [renderedColumns, setRenderedColumns] = useState<TableColumn<T>>(
         () => getRenderedColumns(rowNumbers, columns),
@@ -228,6 +241,19 @@ export function Table<T extends object>({
     useEffect(() => {
         setRenderedColumns(getRenderedColumns(rowNumbers, columns));
     }, [columns, rowNumbers]);
+
+    const stickyColumns = renderedColumns.map((column) => !!column.sticky);
+    useEffect(() => {
+        calculateStickyPosition(stickyColumns, stickyHeader, tableRef);
+
+        const handleResize = (): void => calculateStickyPosition(
+            stickyColumns,
+            stickyHeader,
+            tableRef,
+        );
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [stickyColumns, stickyHeader, tableRef]);
 
     const getInitialState = useCallback((): PartialTableState<T> | undefined => {
         const defaultSortColumn = columns.find(({ defaultSort }) => !!defaultSort);
@@ -278,11 +304,12 @@ export function Table<T extends object>({
             device={device}
             clickableRows={onRowClick !== undefined}
             {...getTableProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+            ref={tableRef}
         >
             <thead>
                 {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                        {headerGroup.headers.map(getHeading)}
+                        {headerGroup.headers.map((column) => getHeading(column, stickyHeader))}
                     </tr>
                 ))}
             </thead>

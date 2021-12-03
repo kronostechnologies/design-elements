@@ -1,14 +1,48 @@
 import React, { CSSProperties, ReactElement } from 'react';
 import { Row } from 'react-table';
-import styled, { css } from 'styled-components';
+import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
-import { focus } from '../../utils/css-state';
 
 interface StyledTableRowProps {
     clickable: boolean;
     error: boolean;
     selected: boolean;
     striped?: boolean;
+}
+
+function getRowBackgroundColor({
+    theme, selected, error,
+}: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
+    if (selected) {
+        return css`
+            /* TODO fix with next thematization */
+            background-color: #e0f0f9;`;
+    }
+    if (error) {
+        return css`
+            /* TODO fix with next thematization theme.notifications.error4 */
+            background-color: #fcf8f9;`;
+    }
+    return css`background-color: ${theme.greys.white};`;
+}
+
+function getCellBackgroundCss({
+    theme, clickable,
+}: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
+    if (clickable) {
+        return css`
+            :hover td {
+                background-color: ${theme.greys.grey};
+            }
+
+            :not(:hover) td {
+                background-color: inherit;
+            }`;
+    }
+    return css`
+        td {
+            background-color: inherit;
+        }`;
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
@@ -19,24 +53,60 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         }
     `}
 
-    ${(props) => focus(props, undefined, undefined, true)}
-
     ${({ clickable, theme }) => clickable && css`
+        :focus {
+            position: relative;
+
+            &::after {
+                box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
+                content: "";
+                height: calc(100% + 3px);
+                left: 0;
+                outline: none;
+                position: absolute;
+                top: -2px;
+                width: 100%;
+                z-index: 3;
+            }
+        }
+
         :hover {
-            background-color: ${theme.greys.grey};
             cursor: pointer;
         }
     `}
 
-    ${({ selected }) => selected && css`
-        /* TODO fix with next thematization */
-        background-color: #e0f0f9;
+    ${({ error, theme }) => error && css`
+        position: relative;
+
+        &::after {
+            box-shadow: inset 0 0 0 1px ${theme.notifications['alert-2.1']};
+            content: "";
+            height: calc(100% + 1px);
+            left: 0;
+            outline: none;
+            position: absolute;
+            width: 100%;
+            z-index: 3;
+        }
+
+        td:first-child::after {
+            border-left: 1px solid ${theme.notifications['alert-2.1']};
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 3;
+        }
     `}
 
-    ${({ error, theme }) => error && css`
-        /* TODO fix with next thematization theme.notifications.error4 */
-        background-color: #fcf8f9;
-        border: 1px solid ${theme.notifications['alert-2.1']};
+    ${getRowBackgroundColor}
+    ${getCellBackgroundCss}
+`;
+
+const StyledCell = styled.td<{ sticky?: boolean }>`
+    ${({ sticky }) => (sticky) && css`
+        position: sticky;
     `}
 `;
 
@@ -64,8 +134,9 @@ export function TableRow<T extends object>({
             {row.cells.map((cell) => {
                 const style: CSSProperties = { textAlign: cell.column.textAlign };
                 return (
-                    <td
+                    <StyledCell
                         style={style}
+                        sticky={cell.column.sticky}
                         className={cell.column.className}
                         {...{ /* eslint-disable-line react/jsx-props-no-spreading */
                             ...cell.getCellProps(),
@@ -73,7 +144,7 @@ export function TableRow<T extends object>({
                         }}
                     >
                         {cell.render('Cell', { viewIndex })}
-                    </td>
+                    </StyledCell>
                 );
             })}
         </StyledTableRow>

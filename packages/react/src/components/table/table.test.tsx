@@ -10,6 +10,12 @@ interface TestData {
     error?: boolean;
 }
 
+interface TestData3Columns {
+    column1: string;
+    column2: string;
+    column3: string;
+}
+
 type TablePropsLite = Omit<TableProps<TestData>, 'columns' | 'data'>;
 
 const data: TestData[] = [
@@ -76,6 +82,23 @@ const columnsSorted: TableColumn<TestData> = [
     },
 ];
 
+const columnsSticky: TableColumn<TestData3Columns> = [
+    {
+        Header: 'Column 1',
+        accessor: 'column1',
+        sticky: true,
+    },
+    {
+        Header: 'Column 2',
+        accessor: 'column2',
+        sticky: true,
+    },
+    {
+        Header: 'Column 3',
+        accessor: 'column3',
+    },
+];
+
 const errorData: TestData[] = [
     {
         column1: 'Hello',
@@ -90,6 +113,24 @@ const errorData: TestData[] = [
         column1: 'Hello',
         column2: 'World',
         error: true,
+    },
+];
+
+const stickyColumnsData: TestData3Columns[] = [
+    {
+        column1: 'Hello',
+        column2: 'Big',
+        column3: 'World',
+    },
+    {
+        column1: 'Hello',
+        column2: 'Big',
+        column3: 'World',
+    },
+    {
+        column1: 'Hello',
+        column2: 'Big',
+        column3: 'World',
     },
 ];
 
@@ -226,6 +267,18 @@ describe('Table', () => {
 
     test('has selectable rows styles', () => {
         const tree = renderWithProviders(<Table<TestData> selectableRows columns={columns} data={data} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has sticky header styles', () => {
+        const tree = renderWithProviders(<Table<TestData> stickyHeader columns={columns} data={data} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has sticky column styles', () => {
+        const tree = renderWithProviders(<Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} />);
 
         expect(tree).toMatchSnapshot();
     });
