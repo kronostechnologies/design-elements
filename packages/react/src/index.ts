@@ -56,7 +56,7 @@ export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
 export { Tag, TagProps, TagValue } from './components/tag/tag';
 export { Lozenge } from './components/lozenge/lozenge';
-export { Status } from './components/status/status';
+export { Status, StatusTypes } from './components/status/status';
 export { SkipLink } from './components/skip-link/skip-link';
 export { useModal } from './components/modal/use-modal';
 export { UserProfile } from './components/user-profile/user-profile';

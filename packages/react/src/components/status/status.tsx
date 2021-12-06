@@ -2,9 +2,9 @@ import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 
-export type StatusType = 'enabled' | 'disabled' | 'blocked';
+export type StatusTypes = 'enabled' | 'disabled' | 'blocked';
 
-function getBackgroundColor(type: StatusType, theme: Theme): string {
+function getBackgroundColor(type: StatusTypes, theme: Theme): string {
     switch (type) {
         case 'enabled':
             return theme.notifications['success-1.1'];
@@ -15,14 +15,14 @@ function getBackgroundColor(type: StatusType, theme: Theme): string {
     }
 }
 
-const Wrapper = styled.div<{ type: StatusType }>`
+const Wrapper = styled.div<{ type: StatusTypes }>`
     align-items: center;
     display: flex;
 
     ${({ type, theme }) => type === 'disabled' && `color: ${theme.greys['dark-grey']}`}
 `;
 
-const Circle = styled.div<{ type: StatusType }>`
+const Circle = styled.div<{ type: StatusTypes }>`
     background-color: ${({ type, theme }) => getBackgroundColor(type, theme)};
     border: ${({ type, theme }) => (type === 'disabled' ? `1px solid ${theme.greys['dark-grey']}` : 'none')};
     border-radius: 50%;
@@ -35,7 +35,7 @@ const Circle = styled.div<{ type: StatusType }>`
 interface Props {
     className?: string;
     label: string;
-    type: StatusType;
+    type: StatusTypes;
 }
 
 export const Status: VoidFunctionComponent<Props> = ({ className, label, type }) => (
