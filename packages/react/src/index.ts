@@ -46,7 +46,7 @@ export { Heading } from './components/heading/heading';
 export { ApplicationMenu } from './components/application-menu/application-menu';
 export { DropdownMenuButton } from './components/dropdown-menu-button/dropdown-menu-button';
 export { Icon } from './components/icon/icon';
-export { SectionalBanner } from './components/sectional-banner/sectional-banner';
+export { SectionalBanner, SectionalBannerTypes } from './components/sectional-banner/sectional-banner';
 export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
