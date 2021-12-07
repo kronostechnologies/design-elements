@@ -1,6 +1,7 @@
 {
   "name": "@equisoft/design-elements-storybook",
   "version": "0.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "build-storybook -c .storybook -o ./dist",
     "start": "start-storybook --docs",

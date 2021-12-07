@@ -2,7 +2,7 @@
   "name": "@equisoft/design-elements-react",
   "version": "0.0.0",
   "description": "React implementation of the Equisoft design system.",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "dist/bundle.js",
   "types": "./dist/index.d.ts",
   "scripts": {

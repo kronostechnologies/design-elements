@@ -1,0 +1,33 @@
+on: pull_request
+
+name: Compliance
+
+jobs:
+  license:
+    name: Validate licences compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup asdf-vm
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.18
+
+      - name: Install NPM dependencies
+        uses: kronostechnologies/actions/yarn-install@v0.0.18
+
+      - name: Run license audit
+        id: audit
+        shell: bash
+        run: yarn checkLicense
+
+      - name: Upload results
+        if: "!cancelled()"
+        uses: actions/upload-artifact@v2
+        with:
+          name: license-audit.xml
+          if-no-files-found: error
+          retention-days: 5
+          path: ./build/license/license.xml
