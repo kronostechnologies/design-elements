@@ -10,3 +10,7 @@ export async function waitForComponentToPaint<P = {}>(
         wrapper.update();
     });
 }
+
+export function expectFocusToBeOn(element: ReactWrapper): void {
+    expect(document.activeElement).toBe(element.getDOMNode());
+}

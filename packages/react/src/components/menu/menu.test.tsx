@@ -1,8 +1,8 @@
-import { ReactWrapper } from 'enzyme';
 import ReactDOM from 'react-dom';
 import { Menu } from './menu';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
 
 const options = [
     {
@@ -34,10 +34,6 @@ const optionsWithSubMenu = [
         onClick: jest.fn(),
     },
 ];
-
-function expectFocusToBeOn(element: ReactWrapper): void {
-    expect(document.activeElement).toBe(element.getDOMNode());
-}
 
 describe('Menu', () => {
     it('should call onClick callback when option is clicked', () => {

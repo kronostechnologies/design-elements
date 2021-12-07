@@ -67,9 +67,7 @@ describe('TabButton', () => {
                 id="aId"
                 panelId="aPanelId"
                 isSelected
-                isFocused
                 onClick={expectedOnClickCall}
-                onFocus={doNothing}
             >
                 some text
             </TabButton>,
@@ -78,25 +76,5 @@ describe('TabButton', () => {
         getByTestId(wrapper, 'tab-button').simulate('click');
 
         expect(expectedOnClickCall).toHaveBeenCalled();
-    });
-
-    test('should call component onFocus method when button is focused', () => {
-        const expectedOnFocusCall = jest.fn();
-        const wrapper = mountWithProviders(
-            <TabButton
-                id="aId"
-                panelId="aPanelId"
-                isSelected
-                isFocused
-                onClick={doNothing}
-                onFocus={expectedOnFocusCall}
-            >
-                some text
-            </TabButton>,
-        );
-
-        getByTestId(wrapper, 'tab-button').simulate('focus');
-
-        expect(expectedOnFocusCall).toHaveBeenCalled();
     });
 });
