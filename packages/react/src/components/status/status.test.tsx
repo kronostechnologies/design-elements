@@ -1,4 +1,3 @@
-import React from 'react';
 import { Status, StatusType } from './status';
 import { mountWithTheme } from '../../test-utils/renderer';
 

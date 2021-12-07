@@ -1,4 +1,4 @@
-import React, { MouseEvent, VoidFunctionComponent } from 'react';
+import { MouseEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { defaultButtonStyles } from '../buttons/abstract-button';

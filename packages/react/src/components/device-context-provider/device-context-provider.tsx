@@ -1,4 +1,4 @@
-import React, { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
+import { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
 import { breakpoints, Breakpoints } from '../../tokens/breakpoints';
 
 export type DeviceType = 'desktop' | 'tablet' | 'mobile';

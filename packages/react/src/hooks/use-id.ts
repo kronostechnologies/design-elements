@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 
 const INITIAL_VALUE = 1;
 
@@ -9,8 +9,8 @@ function nextId(localPrefix: string): string {
 }
 
 function usePrevious(value: unknown): unknown {
-    const ref = React.useRef<unknown>();
-    React.useEffect(() => {
+    const ref = useRef<unknown>();
+    useEffect(() => {
         ref.current = value;
     });
     return ref.current;
@@ -21,7 +21,7 @@ export function resetId(): void {
 }
 
 export function useId(prefix: string): string {
-    const idRef = React.useRef<string>(prefix);
+    const idRef = useRef<string>(prefix);
     const prevPrefix = usePrevious(prefix);
 
     if (prevPrefix !== prefix) {

@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithTheme } from '../../test-utils/renderer';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Status } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 

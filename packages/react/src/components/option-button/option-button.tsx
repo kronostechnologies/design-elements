@@ -1,4 +1,4 @@
-import React, { useMemo, VoidFunctionComponent } from 'react';
+import { useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 

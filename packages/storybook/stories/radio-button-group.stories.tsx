@@ -1,6 +1,6 @@
 import { RadioButtonGroup } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -54,7 +54,7 @@ export const Controlled: Story = () => {
 Controlled.parameters = rawCodeParameters;
 
 export const Callback: Story = () => {
-    function onChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    function onChange(event: ChangeEvent<HTMLInputElement>): void {
         const checkedState: string = event.target.checked ? 'checked' : 'unchecked';
         console.info(`Radio button ${event.target.value} is ${checkedState}!`);
     }

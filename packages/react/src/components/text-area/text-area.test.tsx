@@ -1,5 +1,4 @@
 import { mount, shallow } from 'enzyme';
-import React from 'react';
 import renderer from 'react-test-renderer';
 import { doNothing } from '../../test-utils/callbacks';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';

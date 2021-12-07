@@ -1,4 +1,3 @@
-import React from 'react';
 import { Column } from 'react-table';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme } from '../../test-utils/renderer';

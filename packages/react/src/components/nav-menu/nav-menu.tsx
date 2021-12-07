@@ -1,4 +1,5 @@
-import React, {
+import {
+    createRef,
     forwardRef,
     KeyboardEvent,
     MouseEvent,
@@ -142,7 +143,7 @@ export const NavMenu = forwardRef(({
         id: `${id}_${option.value}`,
         focused: false,
         focusIndex: index,
-        ref: React.createRef<HTMLAnchorElement>(),
+        ref: createRef<HTMLAnchorElement>(),
     })), [id, options]);
 
     useEffect(() => {

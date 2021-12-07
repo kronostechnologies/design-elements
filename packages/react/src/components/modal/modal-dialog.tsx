@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
+import { ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';

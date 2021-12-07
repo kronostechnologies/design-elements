@@ -1,4 +1,3 @@
-import React from 'react';
 import { shallow } from 'enzyme';
 import { NavItem } from './nav-item';
 import { getByTestId } from '../../../test-utils/enzyme-selectors';

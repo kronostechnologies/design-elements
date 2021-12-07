@@ -1,7 +1,6 @@
 import { CheckboxGroup } from '@equisoft/design-elements-react';
-
 import { forceReRender, Story } from '@storybook/react';
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -71,7 +70,7 @@ export const DefaultChecked: Story = () => (
 );
 
 export const Callback: Story = () => {
-    function onChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    function onChange(event: ChangeEvent<HTMLInputElement>): void {
         const checkedState: string = event.target.checked ? 'checked' : 'unchecked';
         console.info(`Checkbox ${event.target.value} is ${checkedState}!`);
     }

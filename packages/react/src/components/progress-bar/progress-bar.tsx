@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactText } from 'react';
+import { ReactElement, ReactText } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { Bar } from '../bar/bar';

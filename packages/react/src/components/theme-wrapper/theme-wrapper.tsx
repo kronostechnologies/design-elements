@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { equisoftTheme, Theme } from '../../themes';

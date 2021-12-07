@@ -1,6 +1,5 @@
 import { Legend, LegendItem } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React from 'react';
 
 const legendItems: LegendItem[] = [
     {

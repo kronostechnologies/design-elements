@@ -1,8 +1,10 @@
-import React, {
+import {
+    createRef,
     forwardRef,
     KeyboardEvent,
     ReactElement,
     Ref,
+    RefObject,
     useCallback,
     useEffect,
     useLayoutEffect,
@@ -28,7 +30,7 @@ export interface ListboxOption {
 interface ListOption extends ListboxOption {
     id: string;
     focusIndex: number;
-    ref: React.RefObject<HTMLLIElement>;
+    ref: RefObject<HTMLLIElement>;
 }
 
 interface ListboxProps {
@@ -231,7 +233,7 @@ export const Listbox = forwardRef(({
             ...option,
             id: `${id}_${option.value}`,
             focusIndex: index,
-            ref: React.createRef<HTMLLIElement>(),
+            ref: createRef<HTMLLIElement>(),
         }),
     ), [id, options]);
 

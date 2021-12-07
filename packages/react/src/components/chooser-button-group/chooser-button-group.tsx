@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useMemo, useState } from 'react';
+import { ReactElement, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { ChooserButton } from '../chooser-button/chooser-button';
 

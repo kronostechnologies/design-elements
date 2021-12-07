@@ -1,6 +1,6 @@
 import { ChooserCard } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {

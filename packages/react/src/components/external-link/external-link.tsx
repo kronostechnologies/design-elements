@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactElement, useCallback } from 'react';
+import { MouseEvent, ReactElement, useCallback } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';

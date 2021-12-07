@@ -1,4 +1,4 @@
-import React, { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTheme } from '../../hooks/use-theme';

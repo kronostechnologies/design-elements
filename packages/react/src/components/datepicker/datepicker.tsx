@@ -1,5 +1,5 @@
 import { enCA, enUS, frCA } from 'date-fns/locale';
-import React, {
+import {
     FocusEvent,
     forwardRef,
     KeyboardEvent,

@@ -36,7 +36,7 @@ import Trash from 'feather-icons/dist/icons/trash-2.svg';
 import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
 import X from 'feather-icons/dist/icons/x.svg';
-import React, { VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent } from 'react';
 import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback } from 'react';
 import { v4 as uuid } from '../../utils/uuid';
 import { ToastContext } from './toast-context';
 import { ToastType } from './toast-type';

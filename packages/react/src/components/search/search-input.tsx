@@ -1,7 +1,14 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import React, { FocusEvent, ChangeEvent, KeyboardEvent, useCallback,
-    useMemo, useRef, VoidFunctionComponent } from 'react';
+import {
+    FocusEvent,
+    ChangeEvent,
+    KeyboardEvent,
+    useCallback,
+    useMemo,
+    useRef,
+    VoidFunctionComponent,
+} from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';

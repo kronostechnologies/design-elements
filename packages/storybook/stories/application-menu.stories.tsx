@@ -1,6 +1,6 @@
 import { ApplicationMenu, UserProfile } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { ReactElement, VoidFunctionComponent } from 'react';
+import { ReactElement, VoidFunctionComponent } from 'react';
 import CustomLogoSvg from './assets/customLogo.svg';
 import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';

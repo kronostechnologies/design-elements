@@ -1,4 +1,4 @@
-import React, { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
+import { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';

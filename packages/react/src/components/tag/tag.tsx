@@ -1,4 +1,11 @@
-import React, { MouseEventHandler, useCallback, VoidFunctionComponent } from 'react';
+import {
+    ButtonHTMLAttributes,
+    DetailedHTMLProps,
+    MouseEventHandler,
+    SVGProps,
+    useCallback,
+    VoidFunctionComponent,
+} from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -32,7 +39,7 @@ interface ContainerProps {
     $hasIcon: boolean;
     $isMobile: boolean;
     $tagSize: TagSize;
-    type?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
+    type?: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 }
 
 function getFontSize({ $isMobile }: ContainerProps): number {
@@ -102,7 +109,7 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): s
     return $isMobile || isMedium($tagSize) ? 'var(--border-radius)' : 'var(--border-radius-half)';
 }
 
-const StyledIcon = styled(Icon)<React.SVGProps<SVGSVGElement> & IconOrButtonProps>`
+const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
     /* TODO change when updating thematization */
     color: #60666e;
     display: inline-block;

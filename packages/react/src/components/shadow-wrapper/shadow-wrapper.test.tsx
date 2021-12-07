@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { ShadowWrapper } from './shadow-wrapper';
 
 jest.mock('../../styles', () => ({

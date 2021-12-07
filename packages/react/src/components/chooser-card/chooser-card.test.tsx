@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders, mountWithTheme } from '../../test-utils/renderer';
 import { ChooserCard } from './chooser-card';

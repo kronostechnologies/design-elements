@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, ReactElement, useState, useMemo } from 'react';
+import { ChangeEvent, FocusEvent, ReactElement, useState, useMemo } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';

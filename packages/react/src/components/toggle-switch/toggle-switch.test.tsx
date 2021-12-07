@@ -1,4 +1,3 @@
-import React from 'react';
 import { shallow } from 'enzyme';
 import { mountWithProviders, renderWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { ToggleSwitch } from './toggle-switch';

@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { DropdownMenuButton } from './dropdown-menu-button';

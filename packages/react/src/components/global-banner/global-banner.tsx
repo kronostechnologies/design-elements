@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement, ReactNode, MouseEvent, Ref, useState } from 'react';
+import { forwardRef, ReactElement, ReactNode, MouseEvent, Ref, SVGProps, useState } from 'react';
 import styled, { css, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -82,7 +82,7 @@ const Content = styled.div<{ isMobile: boolean }>`
     ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
 
-const StyledIcon = styled(Icon)<React.SVGProps<SVGSVGElement> & { $isMobile: boolean }>`
+const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & { $isMobile: boolean }>`
     flex-shrink: 0;
     margin-right: var(--spacing-1x);
 

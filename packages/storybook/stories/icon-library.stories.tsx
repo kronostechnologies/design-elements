@@ -1,6 +1,6 @@
 import { Icon } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { ComponentType } from 'react';
+import { ComponentType } from 'react';
 
 export default {
     title: 'Icons/Library',

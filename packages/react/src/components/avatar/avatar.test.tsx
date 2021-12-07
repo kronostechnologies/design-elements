@@ -1,4 +1,3 @@
-import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Avatar } from './avatar';

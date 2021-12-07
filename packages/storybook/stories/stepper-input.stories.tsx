@@ -1,5 +1,5 @@
 import { StepperInput } from '@equisoft/design-elements-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Story } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 

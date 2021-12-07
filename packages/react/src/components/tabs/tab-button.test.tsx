@@ -1,4 +1,3 @@
-import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';

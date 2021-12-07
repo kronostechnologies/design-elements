@@ -1,5 +1,5 @@
 import { mount, ReactWrapper } from 'enzyme';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { breakpoints } from '../../tokens/breakpoints';
 import { DeviceContextProps, DeviceContextProvider, DeviceType, useDeviceContext } from './device-context-provider';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { Checkbox } from './checkbox';

@@ -1,6 +1,6 @@
 import { Carousel } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { ReactNodeArray } from 'react';
+import { ReactNodeArray } from 'react';
 import styled from 'styled-components';
 
 export default {

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { FunctionComponent, useRef } from 'react';
+import { FunctionComponent, useRef } from 'react';
 import styled from 'styled-components';
 import { ExternalItem, ExternalItemProps, GroupItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
 import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';

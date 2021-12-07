@@ -1,4 +1,3 @@
-import React from 'react';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { AddButton } from './add-button';
 

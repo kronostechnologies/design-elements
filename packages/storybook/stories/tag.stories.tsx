@@ -1,6 +1,6 @@
 import { Tag, TagProps, TagValue } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import React, { ReactElement, useState } from 'react';
+import { ReactElement, useState } from 'react';
 
 export default {
     title: 'Feedback/Tag',

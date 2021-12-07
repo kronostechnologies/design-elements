@@ -1,5 +1,5 @@
 import { DeviceContextProvider } from '@equisoft/design-elements-react';
-import React, { ComponentType } from 'react';
+import { ComponentType } from 'react';
 import { decorateWith, Decorator } from './decorator';
 
 export const DeviceContextDecorator: Decorator = decorateWith(DeviceContextProvider);

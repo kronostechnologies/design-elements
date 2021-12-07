@@ -1,4 +1,3 @@
-import React from 'react';
 import { Lozenge } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import { MobileDecorator } from './utils/device-context-decorator';

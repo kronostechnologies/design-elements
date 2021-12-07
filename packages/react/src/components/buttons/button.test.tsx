@@ -1,4 +1,3 @@
-import React from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { Button } from './button';

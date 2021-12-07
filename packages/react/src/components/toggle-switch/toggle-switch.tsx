@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from 'react';
+import { ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 import { focus } from '../../utils/css-state';

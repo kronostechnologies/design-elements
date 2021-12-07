@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { MenuButton } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';

@@ -1,5 +1,4 @@
 import { mount } from 'enzyme';
-import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { ChooserButtonGroup } from './chooser-button-group';

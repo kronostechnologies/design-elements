@@ -1,4 +1,3 @@
-import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';

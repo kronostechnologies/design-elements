@@ -1,4 +1,4 @@
-import React, { ComponentProps, ReactElement, ReactNode } from 'react';
+import { ComponentProps, ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import EquisoftAnalyzeMobile from '../../logos/analyze/analyze-reverse-mobile.svg';
 import EquisoftAnalyze from '../../logos/analyze/analyze-reverse.svg';

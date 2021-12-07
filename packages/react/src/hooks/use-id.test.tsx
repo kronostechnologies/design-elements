@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { mount } from 'enzyme';
-import React, { ReactElement, useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { getByTestId } from '../test-utils/enzyme-selectors';
 import { resetId, useId } from './use-id';
 
