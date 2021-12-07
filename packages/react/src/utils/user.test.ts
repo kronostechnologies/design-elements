@@ -48,7 +48,7 @@ describe('getInitialsFromUsername', () => {
         expect(initials).toBe('JD');
     });
 
-    it('should be a normalized string given a username having accentend chars as first letters of first and last name', () => {
+    it('should be both first characters even with accented characters', () => {
         const initials = getInitialsFromUsername('Édouard Åhlund');
 
         expect(initials).toBe('EA');
