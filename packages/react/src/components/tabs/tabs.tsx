@@ -10,7 +10,6 @@ const CenteredContentDiv = styled.div<{ $isGlobal?: boolean }>`
     align-items: center;
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     display: flex;
-    margin-bottom: var(--spacing-1x);
     padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 var(--spacing-2x)')};
 `;
 

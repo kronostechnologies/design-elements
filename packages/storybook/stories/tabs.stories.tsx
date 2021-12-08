@@ -1,5 +1,6 @@
 import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
+import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -83,6 +84,42 @@ export const Global: Story = () => {
 
     return (
         <Tabs global tabs={tabs} />
+    );
+};
+
+export const InCard: Story = () => {
+    const StyledCard = styled(Card)`
+        background-color: ${({ theme }) => theme.greys['light-grey']};
+    `;
+
+    const TabPanel = styled.div`
+        background-color: ${({ theme }) => theme.greys.white};
+        padding: var(--spacing-2x);
+    `;
+
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            leftIcon: 'chevronUp',
+            panelContent: <TabPanel>First panel</TabPanel>,
+        },
+        {
+            title: 'Second Button',
+            leftIcon: 'chevronLeft',
+            rightIcon: 'chevronRight',
+            panelContent: <TabPanel>Second panel</TabPanel>,
+        },
+        {
+            title: 'Third Button',
+            rightIcon: 'chevronDown',
+            panelContent: <TabPanel>Third panel</TabPanel>,
+        },
+    ];
+
+    return (
+        <StyledCard noPadding>
+            <Tabs tabs={tabs} />
+        </StyledCard>
     );
 };
 
