@@ -1,10 +1,11 @@
 import { KeyboardEvent, ReactElement, forwardRef, Ref } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
 const StyledButton = styled.button<{ isSelected: boolean }>`
     align-items: center;
+    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
     bottom: -1px;
     cursor: pointer;
     display: flex;
@@ -12,10 +13,17 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
     line-height: 1.5rem;
     min-height: 48px;
     min-width: 82px;
+    padding: 0 var(--spacing-2x);
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+        background-color: ${({ theme }) => theme.greys.grey};
+    }
 
     ${focus};
 
-    ${({ isSelected, theme }) => isSelected && `
+    /* ${({ isSelected, theme }) => isSelected && `
         ::after {
             content: '';
             background-color: ${theme.main['primary-1.1']};
@@ -26,23 +34,23 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
             position: absolute;
             width: 100%;
         }
-    `}
+    `} */
 
-    padding-left: var(--spacing-2x);
-    padding-right: var(--spacing-2x);
-    position: relative;
-    z-index: 1;
+    ${({ isSelected, theme }) => isSelected && css`
+        background-color: ${theme.greys.white};
+
+        /* TODO change with next thematization */
+        border: 1px solid #878f9a;
+        border-bottom: 1px solid transparent;
+        border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+    `}
 `;
 
 const StyledButtonText = styled.span<{ isSelected: boolean }>`
-    color: ${({ isSelected, theme }) => (isSelected ? `${theme.main['primary-1.1']}` : `${theme.greys['dark-grey']}`)};
-    font-family: Open Sans, sans-serif;
+    color: ${({ theme }) => theme.greys.black};
+    font-family: var(--font-family);
     font-size: 0.875rem;
-    -webkit-text-stroke-width: ${({ isSelected }) => (isSelected ? '0.4px' : '0')};
-
-    ${/* sc-select */ StyledButton}:hover & {
-        color: ${({ theme }) => theme.main['primary-2']};
-    }
+    font-weight: ${({ isSelected }) => (isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
 `;
 
 const LeftIcon = styled(Icon)<{ $isSelected: boolean }>`

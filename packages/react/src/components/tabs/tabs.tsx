@@ -11,6 +11,7 @@ const CenteredContentDiv = styled.div`
     border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
     display: flex;
     margin-bottom: var(--spacing-1x);
+    padding: 0 var(--spacing-2x);
 `;
 
 export interface Tab {
