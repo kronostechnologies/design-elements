@@ -1,6 +1,6 @@
 import { KeyboardEvent, ReactElement, forwardRef, Ref } from 'react';
 import styled, { css } from 'styled-components';
-import { focus } from '../../utils/css-state';
+import { focus, focusVisibleReset } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
 interface $isSelected {
@@ -24,15 +24,17 @@ const StyledButton = styled.button<$isSelected & { $isGlobal?: boolean; }>`
         background-color: ${({ theme }) => theme.greys.grey};
     }
 
-    ${focus};
+    ${focus}
+    ${({ theme }) => focus({ theme }, false, ':focus-visible')}
+    ${focusVisibleReset}
 
     ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
         z-index: 1;
 
         ::after {
-            content: '';
             background-color: ${theme.main['primary-1.1']};
             bottom: 0;
+            content: '';
             display: block;
             height: 4px;
             left: 0;
