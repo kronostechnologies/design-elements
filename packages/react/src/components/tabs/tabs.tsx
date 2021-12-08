@@ -6,12 +6,12 @@ import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 
-const CenteredContentDiv = styled.div`
+const CenteredContentDiv = styled.div<{ $isGlobal?: boolean }>`
     align-items: center;
-    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
+    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     display: flex;
     margin-bottom: var(--spacing-1x);
-    padding: 0 var(--spacing-2x);
+    padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 var(--spacing-2x)')};
 `;
 
 export interface Tab {
@@ -30,10 +30,13 @@ interface TabItem extends Tab {
 interface Props {
     className?: string;
     forceRenderTabPanels?: boolean;
+    global?: boolean;
     tabs: Tab[];
 }
 
-export const Tabs: VoidFunctionComponent<Props> = ({ className, forceRenderTabPanels, tabs }) => {
+export const Tabs: VoidFunctionComponent<Props> = ({
+    className, global, forceRenderTabPanels, tabs,
+}) => {
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
             ...tab,
@@ -101,9 +104,11 @@ export const Tabs: VoidFunctionComponent<Props> = ({ className, forceRenderTabPa
             <CenteredContentDiv
                 role="tablist"
                 aria-label="tabs label"
+                $isGlobal={global}
             >
                 {tabItems.map((tabItem, i) => (
                     <TabButton
+                        global={global}
                         id={tabItem.id}
                         panelId={tabItem.panelId}
                         key={tabItem.panelId}

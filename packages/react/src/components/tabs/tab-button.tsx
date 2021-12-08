@@ -3,9 +3,13 @@ import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
 
-const StyledButton = styled.button<{ isSelected: boolean }>`
+interface $isSelected {
+    $isSelected: boolean;
+}
+
+const StyledButton = styled.button<$isSelected & { $isGlobal?: boolean; }>`
     align-items: center;
-    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
+    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     bottom: -1px;
     cursor: pointer;
     display: flex;
@@ -15,7 +19,6 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
     min-width: 82px;
     padding: 0 var(--spacing-2x);
     position: relative;
-    z-index: 1;
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
@@ -23,7 +26,9 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
 
     ${focus};
 
-    /* ${({ isSelected, theme }) => isSelected && `
+    ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
+        z-index: 1;
+
         ::after {
             content: '';
             background-color: ${theme.main['primary-1.1']};
@@ -34,47 +39,41 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
             position: absolute;
             width: 100%;
         }
-    `} */
+    `}
 
-    ${({ isSelected, theme }) => isSelected && css`
+    ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
         background-color: ${theme.greys.white};
 
         /* TODO change with next thematization */
         border: 1px solid #878f9a;
         border-bottom: 1px solid transparent;
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+        z-index: 1;
     `}
 `;
 
-const StyledButtonText = styled.span<{ isSelected: boolean }>`
+const StyledButtonText = styled.span<$isSelected>`
     color: ${({ theme }) => theme.greys.black};
     font-family: var(--font-family);
     font-size: 0.875rem;
-    font-weight: ${({ isSelected }) => (isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
 `;
 
-const LeftIcon = styled(Icon)<{ $isSelected: boolean }>`
-    color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
+const LeftIcon = styled(Icon)<$isSelected>`
+    color: ${({ theme }) => theme.greys.black};
     padding-right: var(--spacing-half);
-
-    ${/* sc-select */ StyledButton}:hover & {
-        color: ${({ theme }) => theme.main['primary-2']};
-    }
 `;
 
-const RightIcon = styled(Icon)<{ $isSelected: boolean }>`
-    color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
+const RightIcon = styled(Icon)<$isSelected>`
+    color: ${({ theme }) => theme.greys.black};
     padding-left: var(--spacing-half);
-
-    ${/* sc-select */ StyledButton}:hover & {
-        color: ${({ theme }) => theme.main['primary-2']};
-    }
 `;
 
 interface TabButtonProps {
+    global?: boolean;
     id: string;
-    panelId: string;
     children: string;
+    panelId: string;
     leftIcon?: IconName
     rightIcon?: IconName;
     isSelected: boolean;
@@ -85,6 +84,7 @@ interface TabButtonProps {
 }
 
 export const TabButton = forwardRef(({
+    global,
     id,
     panelId,
     children,
@@ -102,7 +102,8 @@ export const TabButton = forwardRef(({
         ref={ref}
         data-testid="tab-button"
         tabIndex={isSelected ? undefined : -1}
-        isSelected={isSelected}
+        $isGlobal={global}
+        $isSelected={isSelected}
         onClick={onClick}
         onKeyDown={onKeyDown}
     >
@@ -114,7 +115,7 @@ export const TabButton = forwardRef(({
                 size="16"
             />
         )}
-        <StyledButtonText data-testid="tab-button-text" isSelected={isSelected}>
+        <StyledButtonText data-testid="tab-button-text" $isSelected={isSelected}>
             {children}
         </StyledButtonText>
         {rightIcon && (

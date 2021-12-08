@@ -61,6 +61,31 @@ export const Normal: Story = () => {
     );
 };
 
+export const Global: Story = () => {
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            leftIcon: 'chevronUp',
+            panelContent: <Card>First panel</Card>,
+        },
+        {
+            title: 'Second Button',
+            leftIcon: 'chevronLeft',
+            rightIcon: 'chevronRight',
+            panelContent: <Card>Second panel</Card>,
+        },
+        {
+            title: 'Third Button',
+            rightIcon: 'chevronDown',
+            panelContent: <Card>Third panel</Card>,
+        },
+    ];
+
+    return (
+        <Tabs global tabs={tabs} />
+    );
+};
+
 export const WithIcons: Story = () => {
     const tabs: Tab[] = [
         {
