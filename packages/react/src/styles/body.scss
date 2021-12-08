@@ -4,7 +4,7 @@
 body {
   background: rgb(248, 248, 250);
   color: rgb(0, 0, 0);
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-family);
   font-size: 0.875rem;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.015rem;
@@ -14,7 +14,7 @@ body {
 
 :host {
   color: rgb(0, 0, 0);
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-family);
   font-size: 0.875rem;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.025rem;
