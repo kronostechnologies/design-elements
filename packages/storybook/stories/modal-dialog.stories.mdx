@@ -120,6 +120,58 @@ It is important for users of screenreaders that other page content be hidden (vi
     </Story>
 </Preview>
 
+### With title icon
+
+<Preview>
+    <Story name="With title icon">
+        {() => {
+            const {isModalOpen, closeModal, openModal} = useModal();
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
+                    <ModalDialog
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        title="With title icon"
+                        titleIcon="warningFilled"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                            fringilla tellus nec auctor gravida.</p>
+                    </ModalDialog>
+                </Fragment>
+            );
+        }}
+    </Story>
+</Preview>
+
+### Without close button
+
+<Preview>
+    <Story name="Without close button">
+        {() => {
+            const {isModalOpen, closeModal, openModal} = useModal();
+            return (
+                <Fragment>
+                    <Button label="Open Modal" buttonType="primary" onClick={openModal} />
+                    <ModalDialog
+                        appElement="#root"
+                        ariaDescribedby="story-description"
+                        hasCloseButton={false}
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        title="Without close button"
+                    >
+                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                            fringilla tellus nec auctor gravida.</p>
+                    </ModalDialog>
+                </Fragment>
+            );
+        }}
+    </Story>
+</Preview>
+
 ### Confirm callback
 
 <Preview>

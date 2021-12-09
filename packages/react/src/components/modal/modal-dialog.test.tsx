@@ -3,6 +3,8 @@ import { doNothing } from '../../test-utils/callbacks';
 import { renderPortalWithProviders } from '../../test-utils/portal-renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps } from './modal-dialog';
+import { getByTestId as enzymeGetByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders } from '../../test-utils/renderer';
 
 jest.mock('../../utils/uuid');
 
@@ -56,6 +58,30 @@ describe('Modal-Dialog', () => {
         fireEvent.click(getByTestId('cancel-button'));
 
         expect(callback).toHaveBeenCalled();
+    });
+
+    test('has title-icon when titleIcon and title props are defined', () => {
+        const wrapper = mountWithProviders(
+            <ModalDialog ariaHideApp={false} title="test" titleIcon="home" isOpen onRequestClose={jest.fn()}>
+                <p id="modal-description">Test Content</p>
+            </ModalDialog>,
+            { attachTo: document.body },
+        );
+
+        expect(enzymeGetByTestId(wrapper, 'title-icon').exists()).toBe(true);
+        wrapper.detach();
+    });
+
+    test('does not have title-icon when titleIcon is defined but not title', () => {
+        const wrapper = mountWithProviders(
+            <ModalDialog ariaHideApp={false} titleIcon="home" isOpen onRequestClose={jest.fn()}>
+                <p id="modal-description">Test Content</p>
+            </ModalDialog>,
+            { attachTo: document.body },
+        );
+
+        expect(enzymeGetByTestId(wrapper, 'title-icon').exists()).toBe(false);
+        wrapper.detach();
     });
 
     test('Matches snapshot (opened, desktop)', () => {

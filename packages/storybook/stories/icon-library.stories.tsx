@@ -9,6 +9,7 @@ export default {
 
 export const All: Story = () => (
     <>
+        <Icon name="alertFilled" />
         <Icon name="alertTriangle" />
         <Icon name="arrowLeft" />
         <Icon name="check" />
@@ -37,6 +38,7 @@ export const All: Story = () => (
         <Icon name="trash" />
         <Icon name="user" />
         <Icon name="users" />
+        <Icon name="warningFilled" />
         <Icon name="x" />
     </>
 );

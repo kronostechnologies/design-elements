@@ -1,13 +1,20 @@
-import { ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
-import styled from 'styled-components';
+import { Fragment, ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
+import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Modal } from './modal';
 import { Heading } from '../heading/heading';
+import { Icon, IconName } from '../icon/icon';
 
 type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
+
+const StyledModal = styled(Modal)<{ $hasTitleIcon: boolean }>`
+    ${({ $hasTitleIcon }) => $hasTitleIcon && css`
+        padding-left: var(--spacing-4x);
+    `}
+`;
 
 const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
@@ -17,9 +24,13 @@ const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
     margin-top: ${({ hasTitle }) => (hasTitle ? 'var(--spacing-3x)' : 0)};
 `;
 
-const ButtonContainer = styled.div<MobileDeviceContextProps>`
+const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: boolean }>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
+
+    ${({ isMobile, $hasTitleIcon }) => (isMobile && $hasTitleIcon) && css`
+        margin-left: calc(var(--spacing-4x) * -1);
+    `}
 `;
 
 const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
@@ -28,6 +39,17 @@ const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
 `;
 
 const CancelButton = styled(Button)``;
+
+const HeadingWrapper = styled.div`
+    position: relative;
+`;
+
+const TitleIcon = styled(Icon)`
+    left: -32px;
+    margin-top: calc(var(--spacing-half) * 1.5);
+    position: absolute;
+    top: 0;
+`;
 
 export interface ModalDialogProps {
     /** Takes a query selector targeting the app Element. */
@@ -43,6 +65,7 @@ export interface ModalDialogProps {
     className?: string;
     confirmButton?: { label?: string, onConfirm?(): void };
     footerContent?: ReactElement;
+    hasCloseButton?: boolean;
     isOpen: boolean;
     /**
      * Defines if the overlay click should close the modal
@@ -51,6 +74,7 @@ export interface ModalDialogProps {
     shouldCloseOnOverlayClick?: boolean;
     subtitle?: string;
     title?: string;
+    titleIcon?: IconName;
 
     onRequestClose(): void;
 }
@@ -65,16 +89,19 @@ export function ModalDialog({
     className,
     confirmButton,
     footerContent,
+    hasCloseButton,
     isOpen,
-    onRequestClose,
     shouldCloseOnOverlayClick = true,
     subtitle,
     title,
+    titleIcon,
+    onRequestClose,
 }: ModalDialogProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
+    const hasTitleIcon = !!(title && titleIcon);
 
     function handleConfirm(): void {
         confirmButton?.onConfirm?.();
@@ -89,19 +116,26 @@ export function ModalDialog({
     }
 
     function getHeader(): ReactElement | undefined {
+        const HeadingWrapperComponent = hasTitleIcon ? HeadingWrapper : Fragment;
+
         if (title || subtitle) {
             return (
                 <>
                     {title && (
-                        <Heading
-                            id={titleId}
-                            ref={titleRef}
-                            type={isMobile ? 'large' : 'medium'}
-                            tag="h2"
-                            noMargin
-                        >
-                            {title}
-                        </Heading>
+                        <HeadingWrapperComponent>
+                            {titleIcon && (
+                                <TitleIcon name={titleIcon} size="24" data-testid="title-icon" />
+                            )}
+                            <Heading
+                                id={titleId}
+                                ref={titleRef}
+                                type="large"
+                                tag="h2"
+                                noMargin
+                            >
+                                {title}
+                            </Heading>
+                        </HeadingWrapperComponent>
                     )}
                     {subtitle && (
                         <Subtitle hasTitle={title !== undefined} isMobile={isMobile}>{subtitle}</Subtitle>
@@ -114,7 +148,7 @@ export function ModalDialog({
 
     function getFooter(): ReactElement {
         return (
-            <ButtonContainer isMobile={isMobile}>
+            <ButtonContainer isMobile={isMobile} $hasTitleIcon={hasTitleIcon}>
                 <ConfirmButton
                     data-testid="confirm-button"
                     label={confirmButton?.label || t('confirmButtonLabel')}
@@ -133,14 +167,14 @@ export function ModalDialog({
     }
 
     return (
-        <Modal
+        <StyledModal
             ariaDescribedby={ariaDescribedby}
             ariaHideApp={ariaHideApp}
             ariaLabel={title ? undefined : ariaLabel}
             ariaLabelledBy={title ? titleId : undefined}
             className={className}
             modalHeader={getHeader()}
-            hasCloseButton
+            hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
             role="dialog"
             onAfterOpen={() => titleRef.current?.focus()}
@@ -148,8 +182,9 @@ export function ModalDialog({
             isOpen={isOpen}
             appElement={appElement}
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+            $hasTitleIcon={hasTitleIcon}
         >
             {children}
-        </Modal>
+        </StyledModal>
     );
 }
