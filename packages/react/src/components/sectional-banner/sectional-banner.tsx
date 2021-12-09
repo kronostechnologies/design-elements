@@ -14,7 +14,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { Icon, IconName } from '../icon/icon';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
-type MessageType = 'info' | 'success' | 'warning' | 'alert';
+export type SectionalBannerTypes = 'info' | 'success' | 'warning' | 'alert';
 type Role = 'status' | 'alert';
 type Live = 'polite' | 'assertive';
 
@@ -130,7 +130,7 @@ const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
     />
 );
 
-interface MessageTypeProps {
+interface BannerTypeProps {
     ariaLive: Live;
     container: ComponentType<AbstractContainerProps>;
     iconName: IconName;
@@ -138,7 +138,7 @@ interface MessageTypeProps {
     title: 'Info' | 'Success' | 'Warning' | 'Alert';
 }
 
-function handleType(type: MessageType): MessageTypeProps {
+function handleType(type: SectionalBannerTypes): BannerTypeProps {
     switch (type) {
         case 'info':
             return {
@@ -182,15 +182,15 @@ interface SectionalBannerProps {
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
-    type: MessageType;
+    type: SectionalBannerTypes;
 
     onButtonClicked?(): void;
 
     onDismiss?(): void;
 }
 
-function isAlert(messageType: MessageType): messageType is 'alert' {
-    return messageType === 'alert';
+function isAlert(bannerType: SectionalBannerTypes): bannerType is 'alert' {
+    return bannerType === 'alert';
 }
 
 export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
@@ -204,8 +204,8 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
 }) => {
     const { t } = useTranslation('sectional-banner');
     const { isMobile } = useDeviceContext();
-    const messageType: MessageTypeProps = useMemo(() => handleType(type), [type]);
-    const Container = messageType.container;
+    const bannerType: BannerTypeProps = useMemo(() => handleType(type), [type]);
+    const Container = bannerType.container;
     const isAlertType = isAlert(type);
 
     const iconSize = isMobile ? 24 : 20;
@@ -216,19 +216,19 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
         <Container
             className={className}
             isMobile={isMobile}
-            aria-live={messageType.ariaLive}
+            aria-live={bannerType.ariaLive}
             aria-atomic="true"
-            role={messageType.role}
+            role={bannerType.role}
         >
             <BannerIcon
-                name={messageType.iconName}
+                name={bannerType.iconName}
                 size={iconSize.toString()}
                 aria-hidden="true"
                 $marginTop={marginTop}
             />
 
             <TextWrapper isMobile={isMobile}>
-                <Heading isMobile={isMobile}>{title || t(messageType.title)}</Heading>
+                <Heading isMobile={isMobile}>{title || t(bannerType.title)}</Heading>
                 <Message isMobile={isMobile}>{children}</Message>
                 {!isMobile && buttonLabel && (
                     <ActionButton
