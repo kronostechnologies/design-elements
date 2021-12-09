@@ -35,6 +35,7 @@ export interface Theme {
         'focus-border-box-shadow': string;
         'focus-border-box-shadow-inset': string;
         'focus-border': string;
+        'modal-overlay-background-color': string;
         'overlay-box-shadow': string;
     };
 }
