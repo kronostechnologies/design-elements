@@ -282,7 +282,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TAG: ${{ needs.setup.outputs.qualifier }}
         run: |
-          echo -e "npmRegistries: \n  //registry.yarnpkg.com:\n    npmAlwaysAuth: true\n    npmAuthToken: ${NPM_TOKEN}" > ~/.yarnrc.yml
+          echo -e "npmRegistries: \n  //registry.yarnpkg.com:\n    npmAlwaysAuth: true\n    npmAuthToken: ${NPM_TOKEN}" >> ~/.yarnrc.yml
           yarn npm publish --tag "${NPM_TAG}" --tolerate-republish
 
   storybook_eslint:
