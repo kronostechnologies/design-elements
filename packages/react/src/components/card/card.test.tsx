@@ -1,13 +1,20 @@
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { shallow } from 'enzyme';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { renderWithProviders } from '../../test-utils/renderer';
 import { Card } from './card';
 
 describe('Card', () => {
-    test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<Card>Hello World</Card>),
-        ).toJSON();
+    test('adds data-testid', () => {
+        const testId = 'test-id';
 
-        expect(tree).toMatchSnapshot();
+        const wrapper = shallow(<Card data-testid={testId}>Test</Card>);
+
+        expect(getByTestId(wrapper, testId).exists()).toBe(true);
+    });
+
+    test('Matches the snapshot', () => {
+        const wrapper = renderWithProviders(<Card>Hello World</Card>);
+
+        expect(wrapper).toMatchSnapshot();
     });
 });

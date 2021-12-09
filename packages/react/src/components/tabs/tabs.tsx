@@ -6,7 +6,7 @@ import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 
-const CenteredContentDiv = styled.div<{ $isGlobal?: boolean }>`
+const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     align-items: center;
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     display: flex;
@@ -100,7 +100,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
     return (
         <div className={className}>
-            <CenteredContentDiv
+            <TabButtonsContainer
                 role="tablist"
                 aria-label="tabs label"
                 $isGlobal={global}
@@ -122,7 +122,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                         {tabItem.title}
                     </TabButton>
                 ))}
-            </CenteredContentDiv>
+            </TabButtonsContainer>
             {tabItems.map((tabItem) => {
                 if (forceRenderTabPanels || isTabSelected(tabItem.id)) {
                     return (

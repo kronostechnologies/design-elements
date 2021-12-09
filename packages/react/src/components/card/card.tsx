@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const StyledDiv = styled.div<{ $noPadding?: boolean }>`
     background: ${(props) => props.theme.greys.white};
@@ -16,8 +17,22 @@ interface Props {
     noPadding?: boolean;
 }
 
-export const Card: FunctionComponent<Props> = ({ children, className, noPadding }) => (
-    <StyledDiv className={className} $noPadding={noPadding}>
-        {children}
-    </StyledDiv>
-);
+export const Card: FunctionComponent<Props> = ({
+    children,
+    className,
+    noPadding,
+    ...otherProps
+}) => {
+    const dataAttributes = useDataAttributes(otherProps);
+
+    return (
+        <StyledDiv
+            className={className}
+            $noPadding={noPadding}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...dataAttributes}
+        >
+            {children}
+        </StyledDiv>
+    );
+};

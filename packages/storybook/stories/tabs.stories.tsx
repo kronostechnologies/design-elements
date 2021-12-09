@@ -9,6 +9,15 @@ export default {
     parameters: rawCodeParameters,
 };
 
+const StyledCard = styled(Card)`
+    background-color: ${({ theme }) => theme.greys['light-grey']};
+`;
+
+const TabPanel = styled.div`
+    background-color: ${({ theme }) => theme.greys.white};
+    padding: var(--spacing-2x);
+`;
+
 interface Data {
     column1: string;
     column2: string;
@@ -88,15 +97,6 @@ export const Global: Story = () => {
 };
 
 export const InCard: Story = () => {
-    const StyledCard = styled(Card)`
-        background-color: ${({ theme }) => theme.greys['light-grey']};
-    `;
-
-    const TabPanel = styled.div`
-        background-color: ${({ theme }) => theme.greys.white};
-        padding: var(--spacing-2x);
-    `;
-
     const tabs: Tab[] = [
         {
             title: 'First Button',

@@ -2,12 +2,18 @@ import { KeyboardEvent, ReactElement, forwardRef, Ref } from 'react';
 import styled, { css } from 'styled-components';
 import { focus, focusVisibleReset } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-interface $isSelected {
+interface IsSelected {
     $isSelected: boolean;
 }
 
-const StyledButton = styled.button<$isSelected & { $isGlobal?: boolean; }>`
+interface StyledButtonProps extends IsSelected {
+    $isGlobal?: boolean;
+    $isMobile: boolean;
+}
+
+const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     bottom: -1px;
@@ -15,7 +21,7 @@ const StyledButton = styled.button<$isSelected & { $isGlobal?: boolean; }>`
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
-    min-height: 48px;
+    min-height: ${({ $isMobile }) => ($isMobile ? 56 : 48)}px;
     min-width: 82px;
     padding: 0 var(--spacing-2x);
     position: relative;
@@ -27,6 +33,10 @@ const StyledButton = styled.button<$isSelected & { $isGlobal?: boolean; }>`
     ${focus}
     ${({ theme }) => focus({ theme }, false, ':focus-visible')}
     ${focusVisibleReset}
+
+    &:focus {
+        z-index: 1;
+    }
 
     ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
         z-index: 1;
@@ -54,20 +64,23 @@ const StyledButton = styled.button<$isSelected & { $isGlobal?: boolean; }>`
     `}
 `;
 
-const StyledButtonText = styled.span<$isSelected>`
+const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
     color: ${({ theme }) => theme.greys.black};
     font-family: var(--font-family);
-    font-size: 0.875rem;
+    font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    line-height: 1.5rem;
 `;
 
-const LeftIcon = styled(Icon)<$isSelected>`
+const LeftIcon = styled(Icon)<IsSelected>`
     color: ${({ theme }) => theme.greys.black};
+    min-width: fit-content;
     padding-right: var(--spacing-half);
 `;
 
-const RightIcon = styled(Icon)<$isSelected>`
+const RightIcon = styled(Icon)<IsSelected>`
     color: ${({ theme }) => theme.greys.black};
+    min-width: fit-content;
     padding-left: var(--spacing-half);
 `;
 
@@ -95,38 +108,43 @@ export const TabButton = forwardRef(({
     isSelected,
     onClick,
     onKeyDown,
-}: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => (
-    <StyledButton
-        id={id}
-        aria-controls={panelId}
-        role="tab"
-        aria-selected={isSelected}
-        ref={ref}
-        data-testid="tab-button"
-        tabIndex={isSelected ? undefined : -1}
-        $isGlobal={global}
-        $isSelected={isSelected}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
-    >
-        {leftIcon && (
-            <LeftIcon
-                data-testid="tab-button-left-icon"
-                $isSelected={isSelected}
-                name={leftIcon}
-                size="16"
-            />
-        )}
-        <StyledButtonText data-testid="tab-button-text" $isSelected={isSelected}>
-            {children}
-        </StyledButtonText>
-        {rightIcon && (
-            <RightIcon
-                data-testid="tab-button-right-icon"
-                $isSelected={isSelected}
-                name={rightIcon}
-                size="16"
-            />
-        )}
-    </StyledButton>
-));
+}: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
+    const { isMobile } = useDeviceContext();
+
+    return (
+        <StyledButton
+            id={id}
+            aria-controls={panelId}
+            role="tab"
+            aria-selected={isSelected}
+            ref={ref}
+            data-testid="tab-button"
+            tabIndex={isSelected ? undefined : -1}
+            $isGlobal={global}
+            $isMobile={isMobile}
+            $isSelected={isSelected}
+            onClick={onClick}
+            onKeyDown={onKeyDown}
+        >
+            {leftIcon && (
+                <LeftIcon
+                    data-testid="tab-button-left-icon"
+                    $isSelected={isSelected}
+                    name={leftIcon}
+                    size="16"
+                />
+            )}
+            <StyledButtonText data-testid="tab-button-text" $isSelected={isSelected} $isMobile={isMobile}>
+                {children}
+            </StyledButtonText>
+            {rightIcon && (
+                <RightIcon
+                    data-testid="tab-button-right-icon"
+                    $isSelected={isSelected}
+                    name={rightIcon}
+                    size="16"
+                />
+            )}
+        </StyledButton>
+    );
+});
