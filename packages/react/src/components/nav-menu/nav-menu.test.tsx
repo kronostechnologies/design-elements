@@ -2,7 +2,8 @@ import { shallow } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
-import { NavMenu, NavMenuOption, HtmlLink, ReactRouterNavLink } from './nav-menu';
+import { NavMenu } from './nav-menu';
+import { NavMenuOption } from './nav-menu-option';
 
 jest.mock('../../utils/uuid');
 
@@ -29,55 +30,6 @@ const options: NavMenuOption[] = [
     },
 ];
 
-const optionWithStartIcon: NavMenuOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testA',
-        startIcon: 'home',
-    },
-];
-
-const optionsWithTargetBlank: NavMenuOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testA',
-        target: '_blank',
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testB',
-        target: '_blank',
-        isHtmlLink: true,
-    },
-];
-
-const optionWithEndIcon: NavMenuOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testA',
-        endIcon: 'home',
-    },
-];
-
-const optionsWithHtmlLinks: NavMenuOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testA',
-        isHtmlLink: true,
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testB',
-        isHtmlLink: true,
-    },
-];
-
 const optionsDisabled: NavMenuOption[] = [
     {
         label: 'Option A',
@@ -94,25 +46,11 @@ const optionsDisabled: NavMenuOption[] = [
 ];
 
 describe('NavMenu', () => {
-    test('displays screen-reader-only text when router link opens in a new tab (target="_blank")', () => {
-        const wrapper = shallow(<NavMenu options={optionsWithTargetBlank} />);
-
-        const navMenuOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionA-screen-reader-text');
-        expect(navMenuOptionScreenReaderText.exists()).toBe(true);
-    });
-
-    test('displays screen-reader-only text when html link opens in a new tab (target="_blank")', () => {
-        const wrapper = shallow(<NavMenu options={optionsWithTargetBlank} />);
-
-        const navMenuOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionB-screen-reader-text');
-        expect(navMenuOptionScreenReaderText.exists()).toBe(true);
-    });
-
     test('Calls onChange callback when an option is clicked', () => {
         const callback = jest.fn();
         const wrapper = shallow(<NavMenu options={options} onChange={callback} />);
 
-        getByTestId(wrapper, 'listitem-optionC').simulate('click');
+        getByTestId(wrapper, 'listitem-optionC').simulate('select');
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
@@ -121,7 +59,7 @@ describe('NavMenu', () => {
         const callback = jest.fn();
         const wrapper = mountWithProviders(<NavMenu options={optionsDisabled} onChange={callback} />);
 
-        getByTestId(wrapper, 'listitem-optionA').simulate('click');
+        getByTestId(wrapper, 'listitem-optionA').simulate('select');
 
         expect(callback).toHaveBeenCalledTimes(0);
     });
@@ -148,30 +86,6 @@ describe('NavMenu', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Should have start-icon when startIcon prop is defined', () => {
-        const wrapper = shallow(<NavMenu options={optionWithStartIcon} />);
-
-        expect(getByTestId(wrapper, 'start-icon').exists()).toBe(true);
-    });
-
-    test('Should have end-icon when endIcon prop is defined', () => {
-        const wrapper = shallow(<NavMenu options={optionWithEndIcon} />);
-
-        expect(getByTestId(wrapper, 'end-icon').exists()).toBe(true);
-    });
-
-    test('Should use react-router links by default', () => {
-        const wrapper = shallow(<NavMenu options={options} />);
-
-        expect(wrapper.find(ReactRouterNavLink).length).toBe(options.length);
-    });
-
-    test('Should use html links when isHtmlLink is set to true', () => {
-        const wrapper = shallow(<NavMenu options={optionsWithHtmlLinks} />);
-
-        expect(wrapper.find(HtmlLink).length).toBe(optionsWithHtmlLinks.length);
-    });
-
     test('Should update focused value when focusedValue prop changes', () => {
         const wrapper = mountWithProviders(
             <NavMenu options={options} />,
@@ -180,47 +94,7 @@ describe('NavMenu', () => {
 
         wrapper.setProps({ focusedValue: 'optionB' }).update();
 
-        expect(document.activeElement).toBe(getByTestId(wrapper, 'listitem-optionB').getDOMNode());
-    });
-
-    test('calls option.onClick when an htmlLink is clicked', () => {
-        const onClick = jest.fn();
-        const wrapper = mountWithProviders(
-            <NavMenu options={[
-                {
-                    label: 'Option A',
-                    value: 'optionA',
-                    href: '/testA',
-                    onClick,
-                    isHtmlLink: true,
-                },
-            ]}
-            />,
-        );
-
-        getByTestId(wrapper, 'listitem-optionA').simulate('click');
-
-        expect(onClick).toHaveBeenCalledTimes(1);
-    });
-
-    test('calls option.onClick when an ReactRouterNavLink is clicked', () => {
-        const onClick = jest.fn();
-        const wrapper = mountWithProviders(
-            <NavMenu options={[
-                {
-                    label: 'Option A',
-                    value: 'optionA',
-                    href: '/testA',
-                    onClick,
-                    isHtmlLink: false,
-                },
-            ]}
-            />,
-        );
-
-        getByTestId(wrapper, 'listitem-optionA').simulate('click');
-
-        expect(onClick).toHaveBeenCalledTimes(1);
+        expect(document.activeElement).toBe(getByTestId(wrapper, 'listitem-optionB-link').getDOMNode());
     });
 
     test('Matches the snapshot', () => {

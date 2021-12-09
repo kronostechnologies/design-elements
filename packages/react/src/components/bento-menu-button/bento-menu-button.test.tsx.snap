@@ -78,7 +78,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c3:hover,
-.c3[data-expanded="true"] {
+.c3[aria-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -503,7 +503,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   <button
     aria-expanded="false"
     class="c2 c3"
-    data-expanded="false"
     data-testid="menu-button"
     type="button"
   >
@@ -838,7 +837,7 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
 }
 
 .c3:hover,
-.c3[data-expanded="true"] {
+.c3[aria-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1263,7 +1262,6 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   <button
     aria-expanded="false"
     class="c2 c3"
-    data-expanded="false"
     data-testid="menu-button"
     type="button"
   >

@@ -1,7 +1,7 @@
-import { Status, StatusTypes } from './status';
+import { Status, StatusType } from './status';
 import { mountWithTheme } from '../../test-utils/renderer';
 
-const statusTypesArray: StatusTypes[] = ['enabled', 'disabled', 'blocked'];
+const statusTypesArray: StatusType[] = ['enabled', 'disabled', 'blocked'];
 
 describe('Status', () => {
     statusTypesArray.forEach((type) => (

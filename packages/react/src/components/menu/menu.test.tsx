@@ -1,41 +1,53 @@
 import ReactDOM from 'react-dom';
-import { Menu } from './menu';
-import { mountWithTheme } from '../../test-utils/renderer';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
+import { mountWithTheme } from '../../test-utils/renderer';
+import { Menu, MenuOption } from './menu';
 
-const options = [
-    {
-        label: 'Mango',
-        onClick: jest.fn(),
-    },
-    {
-        label: 'Pineapple',
-        onClick: jest.fn(),
-    },
-    {
-        label: 'Lime',
-        onClick: jest.fn(),
-    },
-];
+function givenOptions(): MenuOption[] {
+    return [
+        {
+            label: 'Mango',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Pineapple',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Lime',
+            onClick: jest.fn(),
+        },
+    ];
+}
 
-const optionsWithSubMenu = [
-    {
-        label: 'Mango',
-        onClick: jest.fn(),
-        options,
-    },
-    {
-        label: 'Pineapple',
-        onClick: jest.fn(),
-    },
-    {
-        label: 'Lime',
-        onClick: jest.fn(),
-    },
-];
+function givenOptionsWithSubMenu(subMenuForFirstOption: MenuOption[]): MenuOption[] {
+    return [
+        {
+            label: 'Mango',
+            onClick: jest.fn(),
+            options: subMenuForFirstOption,
+        },
+        {
+            label: 'Pineapple',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Lime',
+            onClick: jest.fn(),
+        },
+    ];
+}
 
 describe('Menu', () => {
+    let options: MenuOption[];
+    let optionsWithSubMenu: MenuOption[];
+
+    beforeEach(() => {
+        options = givenOptions();
+        optionsWithSubMenu = givenOptionsWithSubMenu(options);
+    });
+
     it('should call onClick callback when option is clicked', () => {
         const wrapper = mountWithTheme(<Menu options={options} />);
 

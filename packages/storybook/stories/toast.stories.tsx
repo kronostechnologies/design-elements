@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Feedback/Toast',
+    title: 'Notification/Toast',
     component: useToast,
     parameters: rawCodeParameters,
 };

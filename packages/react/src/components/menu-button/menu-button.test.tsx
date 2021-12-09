@@ -1,24 +1,33 @@
-import { MenuButton } from './menu-button';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { waitForComponentToPaint } from '../../test-utils/enzyme-utils';
 import { mountWithTheme } from '../../test-utils/renderer';
+import { MenuOption } from '../menu/menu';
+import { MenuButton } from './menu-button';
 
-const options = [
-    {
-        label: 'Option 1',
-        onClick: jest.fn(),
-    },
-    {
-        label: 'Option 2',
-        onClick: jest.fn(),
-    },
-    {
-        label: 'Option 3',
-        onClick: jest.fn(),
-    },
-];
+function givenOptions(): MenuOption[] {
+    return [
+        {
+            label: 'Option 1',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Option 2',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Option 3',
+            onClick: jest.fn(),
+        },
+    ];
+}
 
 describe('MenuButton', () => {
+    let options: MenuOption[];
+
+    beforeEach(() => {
+        options = givenOptions();
+    });
+
     it('should open menu when menu-button is clicked', () => {
         const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options} />);
         waitForComponentToPaint(wrapper);

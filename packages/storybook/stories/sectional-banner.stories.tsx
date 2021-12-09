@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 export default {
-    title: 'Feedback/Sectional Banner',
+    title: 'Notification/Sectional Banner',
     component: SectionalBanner,
     decorators: [decorateWith(Container)],
 };

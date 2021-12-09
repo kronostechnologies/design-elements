@@ -2,7 +2,7 @@ import { EnsoSpinner } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 
 export default {
-    title: 'Feedback/Enso Spinner',
+    title: 'Notification/Enso Spinner',
     component: EnsoSpinner,
 };
 

@@ -1,8 +1,8 @@
-import { forwardRef, ReactElement, ReactNode, MouseEvent, Ref, SVGProps, useState } from 'react';
+import { forwardRef, MouseEvent, ReactElement, ReactNode, Ref, SVGProps, useState } from 'react';
 import styled, { css, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Button } from '../buttons/button';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
 export type GlobalBannerType = 'alert' | 'warning' | 'info' | 'default';
@@ -17,7 +17,7 @@ function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ banner
         case 'alert':
             return theme.notifications['alert-2.1'];
         case 'warning':
-            return theme.notifications['warning-3.3'];
+            return theme.notifications['warning-3.1'];
         case 'info':
             return theme.notifications['info-1.1'];
         case 'default':
@@ -116,11 +116,11 @@ function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProp
     }
 }
 
-const ActionButton = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
+const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
     ${({ bannerType, theme }) => bannerType === 'warning' && css`
         border-color: ${theme.greys.black};
         color: ${theme.greys.black};
-    `}
+    `};
 
     &:hover {
         border-color: ${getActionButtonHoverColor};
@@ -148,7 +148,7 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<Butto
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
-    ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
+    ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
@@ -177,7 +177,7 @@ const ButtonContainer = styled.div<{ isMobile: boolean }>`
     }
 `;
 
-const GetIconName = (bannerType: GlobalBannerType): IconName => {
+const getIconName = (bannerType: GlobalBannerType): IconName => {
     switch (bannerType) {
         case 'alert':
             return 'alertOctagon';
@@ -191,6 +191,7 @@ const GetIconName = (bannerType: GlobalBannerType): IconName => {
 
 export interface ActionButton {
     label: string;
+
     onClick(event: MouseEvent<HTMLButtonElement>): void;
 }
 
@@ -240,7 +241,7 @@ export const GlobalBanner = forwardRef(({
                     aria-label={type}
                     focusable={undefined}
                     $isMobile={isMobile}
-                    name={GetIconName(type)}
+                    name={getIconName(type)}
                     role="img"
                     size={isMobile ? '24' : '16'}
                 />
@@ -249,18 +250,20 @@ export const GlobalBanner = forwardRef(({
                     <Message>{children}</Message>
                 </Text>
             </Content>
+
             {hasButtons && (
                 <ButtonContainer isMobile={isMobile}>
                     {actionButton && (
-                        <ActionButton
+                        <ActionButtonComponent
                             data-testid="action-button"
                             bannerType={type}
                             onClick={actionButton.onClick}
                             type="button"
                         >
                             {actionButton.label}
-                        </ActionButton>
+                        </ActionButtonComponent>
                     )}
+
                     {secondaryActionButton && (
                         <TertiaryButton
                             data-testid="secondary-action-button"
@@ -271,6 +274,7 @@ export const GlobalBanner = forwardRef(({
                             {secondaryActionButton.label}
                         </TertiaryButton>
                     )}
+
                     {hasDismissButton && (
                         <TertiaryButton
                             data-testid="dismiss-button"
@@ -286,3 +290,5 @@ export const GlobalBanner = forwardRef(({
         </Container>
     ) : null;
 });
+
+GlobalBanner.displayName = 'GlobalBanner';

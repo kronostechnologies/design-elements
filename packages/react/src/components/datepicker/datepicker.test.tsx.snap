@@ -2596,7 +2596,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c17:hover,
-.c17[data-expanded="true"] {
+.c17[aria-expanded="true"] {
   border-color: #003A5A;
   color: #003A5A;
 }
