@@ -252,6 +252,7 @@ jobs:
   react_deploy:
     name: "React: Deploy"
     runs-on: ubuntu-latest
+    environment: npm-deployment
     needs:
       - setup
       - react_eslint
