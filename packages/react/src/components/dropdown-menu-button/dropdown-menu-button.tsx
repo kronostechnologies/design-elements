@@ -178,7 +178,6 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                 <StyledButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
-                    data-expanded={isOpen}
                     data-testid="menu-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
@@ -205,7 +204,6 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
                     iconName="moreHorizontal"
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
-                    data-expanded={isOpen}
                     data-testid="menu-button"
                     onClick={handleButtonClick}
                     onKeyDown={handleButtonKeyDown}

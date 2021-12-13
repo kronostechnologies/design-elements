@@ -26,7 +26,7 @@ export default {
     ],
 };
 
-const options = [
+const options: NavItemProps[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -49,7 +49,7 @@ const options = [
         href: 'https://www.google.ca',
         isHtmlLink: true,
     },
-] as NavItemProps[];
+];
 
 export const Normal: Story = () => (
     <UserProfile options={options} username="John Doe" />

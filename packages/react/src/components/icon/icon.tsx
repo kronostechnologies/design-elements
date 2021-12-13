@@ -28,10 +28,10 @@ import MoreHorizontal from 'feather-icons/dist/icons/more-horizontal.svg';
 import MoreVertical from 'feather-icons/dist/icons/more-vertical.svg';
 import Phone from 'feather-icons/dist/icons/phone.svg';
 import PlusSign from 'feather-icons/dist/icons/plus.svg';
+import Transfer from 'feather-icons/dist/icons/refresh-cw.svg';
 import Search from 'feather-icons/dist/icons/search.svg';
 import Settings from 'feather-icons/dist/icons/settings.svg';
 import Star from 'feather-icons/dist/icons/star.svg';
-import Transfer from 'feather-icons/dist/icons/refresh-cw.svg';
 import Trash from 'feather-icons/dist/icons/trash-2.svg';
 import User from 'feather-icons/dist/icons/user.svg';
 import Users from 'feather-icons/dist/icons/users.svg';
@@ -40,13 +40,13 @@ import { VoidFunctionComponent } from 'react';
 import AlertFilled from '../../icons/alert-filled.svg';
 import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
-import Equisoft from '../../logos/logo-equisoft-ico.svg';
-import History from '../../icons/history.svg';
-import Organization from '../../icons/organization.svg';
-import Open from '../../icons/open.svg';
-import Reorder from '../../icons/reorder.svg';
 import Files from '../../icons/files.svg';
+import History from '../../icons/history.svg';
+import Open from '../../icons/open.svg';
+import Organization from '../../icons/organization.svg';
+import Reorder from '../../icons/reorder.svg';
 import WarningFilled from '../../icons/warning-filled.svg';
+import Equisoft from '../../logos/logo-equisoft-ico.svg';
 
 const iconMapping = {
     alertFilled: AlertFilled,

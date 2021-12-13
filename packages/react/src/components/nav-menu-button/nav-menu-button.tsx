@@ -12,14 +12,15 @@ import {
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../tokens/menuDimensions';
+import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
+import { Button, ButtonType } from '../buttons/button';
+import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
-import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
-import { getRootDocument } from '../../utils/dom';
-import { IconButton } from '../buttons/icon-button';
-import { Button, ButtonType } from '../buttons/button';
+import { NavMenu } from '../nav-menu/nav-menu';
+import { NavMenuOption } from '../nav-menu/nav-menu-option';
 
 const StyledDiv = styled.div`
     position: relative;
@@ -184,7 +185,6 @@ export function NavMenuButton({
                 <StyledButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
-                    data-expanded={isOpen}
                     data-testid="menu-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
@@ -209,7 +209,6 @@ export function NavMenuButton({
                 <IconButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
-                    data-expanded={isOpen}
                     data-testid="menu-button"
                     iconName={iconName}
                     onClick={handleButtonClick}

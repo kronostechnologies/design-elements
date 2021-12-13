@@ -1,54 +1,61 @@
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { BentoMenuButton } from './bento-menu-button';
-import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
+import { BentoMenuButton } from './bento-menu-button';
 
 jest.mock('../../utils/uuid');
 
-const onClick = jest.fn();
-const products: NavItemProps[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testa',
-        onClick,
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testb',
-        onClick,
-        disabled: true,
-    },
-    {
-        label: 'Option C',
-        value: 'optionC',
-        href: '/testc',
-    },
-    {
-        label: 'Option D',
-        value: 'optionD',
-        href: '/testd',
-    },
-];
+function givenProducts(): NavItemProps[] {
+    return [
+        {
+            label: 'Option A',
+            value: 'optionA',
+            href: '/testa',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Option B',
+            value: 'optionB',
+            href: '/testb',
+            onClick: jest.fn(),
+            disabled: true,
+        },
+        {
+            label: 'Option C',
+            value: 'optionC',
+            href: '/testc',
+        },
+        {
+            label: 'Option D',
+            value: 'optionD',
+            href: '/testd',
+        },
+    ];
+}
 
-const externals: ExternalItemProps[] = [
-    {
-        label: 'Option A',
-        href: '/testa',
-        onClick,
-    },
-    {
-        label: 'Option B',
-        href: '/testb',
-        disabled: true,
-        onClick,
-    },
-];
+function givenExternals(): ExternalItemProps[] {
+    return [
+        {
+            label: 'Option A',
+            href: '/testa',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Option B',
+            href: '/testb',
+            disabled: true,
+            onClick: jest.fn(),
+        },
+    ];
+}
 
 describe('BentoMenuButton', () => {
+    let products: NavItemProps[];
+    let externals: ExternalItemProps[];
+
     beforeEach(() => {
-        onClick.mockReset();
+        products = givenProducts();
+        externals = givenExternals();
     });
 
     it('should call product on click when a product is clicked', () => {
@@ -59,7 +66,7 @@ describe('BentoMenuButton', () => {
         const productA = getByTestId(wrapper, 'product-optionA');
         productA.invoke('onClick')();
 
-        expect(onClick).toHaveBeenCalled();
+        expect(products[0].onClick).toHaveBeenCalled();
     });
 
     it('should not call product on click when a product is disabled', () => {
@@ -79,7 +86,7 @@ describe('BentoMenuButton', () => {
         const externalA = getByTestId(wrapper, 'external-Option A');
         externalA.invoke('onClick')();
 
-        expect(onClick).toHaveBeenCalled();
+        expect(externals[0].onClick).toHaveBeenCalled();
     });
 
     it('should not call external on click when a external is disabled', () => {

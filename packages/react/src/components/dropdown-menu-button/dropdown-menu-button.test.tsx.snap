@@ -76,7 +76,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c2:hover,
-.c2[data-expanded="true"] {
+.c2[aria-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -453,7 +453,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   <button
     aria-expanded="true"
     class="c1 c2 c3"
-    data-expanded="true"
     data-testid="menu-button"
     type="button"
   >
@@ -773,7 +772,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 }
 
 .c2:hover,
-.c2[data-expanded="true"] {
+.c2[aria-expanded="true"] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1150,7 +1149,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   <button
     aria-expanded="false"
     class="c1 c2 c3"
-    data-expanded="false"
     data-testid="menu-button"
     type="button"
   >

@@ -78,7 +78,7 @@ exports[`Global Navigation matches snapshot 1`] = `
 }
 
 .c2:hover,
-.c2[data-expanded="true"] {
+.c2[aria-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }

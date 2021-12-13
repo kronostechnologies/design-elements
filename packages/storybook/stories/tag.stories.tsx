@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { ReactElement, useState } from 'react';
 
 export default {
-    title: 'Feedback/Tag',
+    title: 'Notification/Tag',
     component: Tag,
 };
 

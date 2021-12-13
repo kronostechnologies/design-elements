@@ -14,7 +14,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { Icon, IconName } from '../icon/icon';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
-export type SectionalBannerTypes = 'info' | 'success' | 'warning' | 'alert';
+export type SectionalBannerType = 'info' | 'success' | 'warning' | 'alert';
 type Role = 'status' | 'alert';
 type Live = 'polite' | 'assertive';
 
@@ -138,7 +138,7 @@ interface BannerTypeProps {
     title: 'Info' | 'Success' | 'Warning' | 'Alert';
 }
 
-function handleType(type: SectionalBannerTypes): BannerTypeProps {
+function handleType(type: SectionalBannerType): BannerTypeProps {
     switch (type) {
         case 'info':
             return {
@@ -182,14 +182,14 @@ interface SectionalBannerProps {
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
-    type: SectionalBannerTypes;
+    type: SectionalBannerType;
 
     onButtonClicked?(): void;
 
     onDismiss?(): void;
 }
 
-function isAlert(bannerType: SectionalBannerTypes): bannerType is 'alert' {
+function isAlert(bannerType: SectionalBannerType): bannerType is 'alert' {
     return bannerType === 'alert';
 }
 

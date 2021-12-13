@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons/icon-button';
+import { NavMenuOption } from '../nav-menu/nav-menu-option';
 import { RouteLink } from '../route-link/route-link';
-import { NavMenu, NavMenuOption } from '../nav-menu/nav-menu';
+import { NavMenu } from '../nav-menu/nav-menu';
 
 export type BreadcrumbElement = NavMenuOption;
 

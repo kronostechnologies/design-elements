@@ -76,7 +76,7 @@ exports[`Add Button has disabled styles 1`] = `
 }
 
 .c1:hover,
-.c1[data-expanded="true"] {
+.c1[aria-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -182,7 +182,7 @@ exports[`Add Button has mobile styles 1`] = `
 }
 
 .c1:hover,
-.c1[data-expanded="true"] {
+.c1[aria-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -287,7 +287,7 @@ exports[`Add Button has primary styles 1`] = `
 }
 
 .c1:hover,
-.c1[data-expanded="true"] {
+.c1[aria-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -392,7 +392,7 @@ exports[`Add Button has secondary styles 1`] = `
 }
 
 .c1:hover,
-.c1[data-expanded="true"] {
+.c1[aria-expanded="true"] {
   border-color: #003A5A;
   color: #003A5A;
 }
@@ -497,7 +497,7 @@ exports[`Add Button has tertiary styles 1`] = `
 }
 
 .c1:hover,
-.c1[data-expanded="true"] {
+.c1[aria-expanded="true"] {
   background-color: #DBDEE1;
   color: #000000;
 }

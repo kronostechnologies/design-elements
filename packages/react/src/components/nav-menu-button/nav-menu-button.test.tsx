@@ -98,7 +98,7 @@ describe('NavMenuButton', () => {
                 { attachTo: document.body },
             );
 
-            getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
+            getByTestId(wrapper, 'listitem-optionA-link').simulate('keydown', { key: 'Escape' });
 
             expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
             wrapper.unmount();
@@ -169,7 +169,7 @@ describe('NavMenuButton', () => {
             </NavMenuButton>,
         );
 
-        getByTestId(wrapper, 'listitem-optionA').simulate('keydown', { key: 'Escape' });
+        getByTestId(wrapper, 'listitem-optionA-link').simulate('keydown', { key: 'Escape' });
 
         expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(true);
     });
@@ -182,7 +182,7 @@ describe('NavMenuButton', () => {
             </NavMenuButton>,
         );
 
-        const navMenuOption = getByTestId(wrapper, `listitem-${options[0].value}`);
+        const navMenuOption = getByTestId(wrapper, `listitem-${options[0].value}-link`);
         navMenuOption.simulate('click');
 
         expect(onMenuOptionSelected).toHaveBeenCalledWith(expect.objectContaining(options[0]));
