@@ -51,7 +51,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -66,7 +66,7 @@ It is important for users of screenreaders that other page content be hidden (vi
     <Story name="Scrollable">
         {() => {
             const {isModalOpen, closeModal, openModal} = useModal();
-            const paragraph = <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus molestie dignissim. Praesent nec vehicula erat. Duis sollicitudin maximus tristique. Donec eu erat congue, eleifend felis in, suscipit nibh. Nunc luctus orci vel nunc sodales, iaculis ultricies libero posuere. Suspendisse vel turpis lacus. Cras accumsan leo eu sem hendrerit, et rutrum nisl vehicula. Vivamus nec sapien ut nibh convallis ullamcorper. Nulla fringilla non ante sed posuere. Integer tincidunt nisi sed augue eleifend dignissim. Donec nec velit tellus. Nam nec lectus a ligula finibus tempus varius a felis. Ut lorem turpis, ultrices in vestibulum at, elementum et nunc. Cras rutrum ultricies nisi a congue. Ut et aliquam mi.</p>;
+            const Paragraph = () => <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus molestie dignissim. Praesent nec vehicula erat. Duis sollicitudin maximus tristique. Donec eu erat congue, eleifend felis in, suscipit nibh. Nunc luctus orci vel nunc sodales, iaculis ultricies libero posuere. Suspendisse vel turpis lacus. Cras accumsan leo eu sem hendrerit, et rutrum nisl vehicula. Vivamus nec sapien ut nibh convallis ullamcorper. Nulla fringilla non ante sed posuere. Integer tincidunt nisi sed augue eleifend dignissim. Donec nec velit tellus. Nam nec lectus a ligula finibus tempus varius a felis. Ut lorem turpis, ultrices in vestibulum at, elementum et nunc. Cras rutrum ultricies nisi a congue. Ut et aliquam mi.</p>;
             return (
                 <Fragment>
                     <Button label="Open Modal" buttonType="primary" onClick={openModal} />
@@ -79,7 +79,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         subtitle="Subtitle 1"
                     >
                         <div id="story-description">
-                            {[...Array(10).keys()].map((el) => paragraph)}
+                            {[...Array(10).keys()].map((el, i) => <Paragraph key={i}/>)}
                         </div>
                     </ModalDialog>
                 </Fragment>
@@ -111,7 +111,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -137,7 +137,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         title="With title icon"
                         titleIcon="warningFilled"
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -163,7 +163,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         onRequestClose={closeModal}
                         title="Without close button"
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -196,7 +196,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -229,7 +229,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         title="Heading 5"
                         subtitle="Subtitle 1"
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -254,7 +254,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>
@@ -281,7 +281,7 @@ It is important for users of screenreaders that other page content be hidden (vi
                         subtitle="Subtitle 1"
                         footerContent={<b>Custom Content</b>}
                     >
-                        <p id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
                 </Fragment>

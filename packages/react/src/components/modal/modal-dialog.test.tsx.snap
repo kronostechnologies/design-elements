@@ -267,7 +267,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c6 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
 .c3 {
@@ -539,7 +539,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 
 .c2 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
 <div
@@ -819,7 +819,7 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 
 .c2 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
 .c3 {
@@ -1139,7 +1139,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c5 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
 .c2 {
@@ -1483,7 +1483,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 
 .c5 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
 .c6 {
@@ -1799,7 +1799,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c7 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -2166,7 +2166,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c6 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-2x) 0;
+  padding: var(--spacing-5x) var(--spacing-2x) 0;
 }
 
 .c3 {
