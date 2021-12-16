@@ -1,8 +1,11 @@
+import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { waitForComponentToPaint } from '../../test-utils/enzyme-utils';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { MenuOption } from '../menu/menu';
 import { MenuButton } from './menu-button';
+import { Button } from '../buttons/button';
+import { IconButton } from '../buttons/icon-button';
 
 function givenOptions(): MenuOption[] {
     return [
@@ -26,6 +29,18 @@ describe('MenuButton', () => {
 
     beforeEach(() => {
         options = givenOptions();
+    });
+
+    it('should return Button component by default', () => {
+        const wrapper = shallow(<MenuButton label="test" buttonType="primary" options={options} />);
+
+        expect(getByTestId(wrapper, 'menu-button').type()).toBe(Button);
+    });
+
+    it('should return IconButton component when iconName prop is defined', () => {
+        const wrapper = shallow(<MenuButton label="test" iconName="home" buttonType="primary" options={options} />);
+
+        expect(getByTestId(wrapper, 'menu-button').type()).toBe(IconButton);
     });
 
     it('should open menu when menu-button is clicked', () => {

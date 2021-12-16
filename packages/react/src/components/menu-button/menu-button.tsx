@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { usePopperTooltip } from 'react-popper-tooltip';
 import { Menu, MenuOption } from '../menu/menu';
 import { Button, ButtonType } from '../buttons/button';
-import { Icon } from '../icon/icon';
+import { Icon, IconName } from '../icon/icon';
+import { IconButton } from '../buttons/icon-button';
 import { menuDimensions } from '../../tokens/menuDimensions';
 
 const StyledMenu = styled(Menu)`
@@ -18,12 +19,13 @@ const StyledIcon = styled(Icon)`
 interface Props {
     buttonType: ButtonType;
     defaultOpen?: boolean;
-    label: string;
+    iconName?: IconName;
+    label?: string;
     options: MenuOption[];
 }
 
 export const MenuButton: FunctionComponent<Props> = ({
-    buttonType, defaultOpen, label, options,
+    buttonType, defaultOpen, iconName, label, options,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
@@ -54,23 +56,36 @@ export const MenuButton: FunctionComponent<Props> = ({
 
     return (
         <div>
-            <Button
-                data-testid="menu-button"
-                type="button"
-                aria-haspopup="menu"
-                aria-expanded={visible}
-                buttonType={buttonType}
-                onClick={() => setControlledVisible(!controlledVisible)}
-                ref={setTriggerRef}
-            >
-                {label}
-                <StyledIcon
-                    aria-hidden="true"
-                    data-testid="chevron-icon"
-                    name={visible ? 'chevronUp' : 'chevronDown'}
-                    size="16"
+            {iconName ? (
+                <IconButton
+                    data-testid="menu-button"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded={visible}
+                    buttonType={buttonType}
+                    iconName={iconName}
+                    onClick={() => setControlledVisible(!controlledVisible)}
+                    ref={setTriggerRef}
                 />
-            </Button>
+            ) : (
+                <Button
+                    data-testid="menu-button"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded={visible}
+                    buttonType={buttonType}
+                    onClick={() => setControlledVisible(!controlledVisible)}
+                    ref={setTriggerRef}
+                >
+                    {label}
+                    <StyledIcon
+                        aria-hidden="true"
+                        data-testid="chevron-icon"
+                        name={visible ? 'chevronUp' : 'chevronDown'}
+                        size="16"
+                    />
+                </Button>
+            )}
             {visible && (
                 <StyledMenu
                     initialFocusIndex={0}

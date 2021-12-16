@@ -81,6 +81,10 @@ export const Normal: Story = () => (
     </>
 );
 
+export const IconButton: Story = () => (
+    <MenuButton iconName="moreVertical" options={options} buttonType="primary" />
+);
+
 export const DefaultOpen: Story = () => (
     <MenuButton label="Button" options={options} defaultOpen buttonType="primary" />
 );
