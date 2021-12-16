@@ -74,21 +74,21 @@ const submenuOptions = [
 
 export const Normal: Story = () => (
     <>
-        <MenuButton options={options} buttonType="primary" />
-        <MenuButton options={options} buttonType="secondary" />
-        <MenuButton options={options} buttonType="tertiary" />
-        <MenuButton options={options} buttonType="destructive" />
+        <MenuButton label="Button" options={options} buttonType="primary" />
+        <MenuButton label="Button" options={options} buttonType="secondary" />
+        <MenuButton label="Button" options={options} buttonType="tertiary" />
+        <MenuButton label="Button" options={options} buttonType="destructive" />
     </>
 );
 
 export const DefaultOpen: Story = () => (
-    <MenuButton options={options} defaultOpen buttonType="primary" />
+    <MenuButton label="Button" options={options} defaultOpen buttonType="primary" />
 );
 
 export const WithSubmenu: Story = () => (
-    <MenuButton options={submenuOptions} buttonType="primary" />
+    <MenuButton label="Button" options={submenuOptions} buttonType="primary" />
 );
 
 export const Scrollable: Story = () => (
-    <MenuButton options={scrollableOptions} buttonType="primary" />
+    <MenuButton label="Button" options={scrollableOptions} buttonType="primary" />
 );

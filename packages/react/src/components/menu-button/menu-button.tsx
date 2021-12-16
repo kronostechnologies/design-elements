@@ -18,10 +18,13 @@ const StyledIcon = styled(Icon)`
 interface Props {
     buttonType: ButtonType;
     defaultOpen?: boolean;
+    label: string;
     options: MenuOption[];
 }
 
-export const MenuButton: FunctionComponent<Props> = ({ buttonType, defaultOpen, options }) => {
+export const MenuButton: FunctionComponent<Props> = ({
+    buttonType, defaultOpen, label, options,
+}) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
         getTooltipProps,
@@ -60,7 +63,7 @@ export const MenuButton: FunctionComponent<Props> = ({ buttonType, defaultOpen, 
                 onClick={() => setControlledVisible(!controlledVisible)}
                 ref={setTriggerRef}
             >
-                Trigger
+                {label}
                 <StyledIcon
                     aria-hidden="true"
                     data-testid="chevron-icon"
