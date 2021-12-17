@@ -282,6 +282,7 @@ interface DatepickerProps {
     id?: string;
     /** Sets input label */
     label?: string;
+    tooltipLabel?: string;
     /**
      * Sets localization
      * @default en-CA
@@ -338,6 +339,7 @@ export const Datepicker = forwardRef(({
     hasTodayButton,
     id,
     label,
+    tooltipLabel,
     locale = 'en-CA',
     maxDate,
     minDate,
@@ -477,6 +479,7 @@ export const Datepicker = forwardRef(({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                tooltipLabel={tooltipLabel}
                 hint={hint}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
