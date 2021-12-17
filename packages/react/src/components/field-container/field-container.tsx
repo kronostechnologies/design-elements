@@ -49,6 +49,7 @@ export interface FieldContainerProps {
     valid: boolean;
     validationErrorMessage: string;
     hint?: string;
+    tooltipLabel?: string;
 }
 
 export function FieldContainer({
@@ -60,6 +61,7 @@ export function FieldContainer({
     validationErrorMessage,
     hint,
     noMargin,
+    tooltipLabel,
     ...props
 }: FieldContainerProps): ReactElement {
     const { isMobile } = useDeviceContext();
@@ -73,8 +75,8 @@ export function FieldContainer({
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label data-testid="text-input-label" forId={fieldId}>{label}</Label>}
-            {hint && <StyledHint data-testid="text-input-hint" isMobile={isMobile}>{hint}</StyledHint>}
+            {label && <Label data-testid="field-label" forId={fieldId} tooltipLabel={tooltipLabel}>{label}</Label>}
+            {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
                     data-testid="text-input-error-msg"

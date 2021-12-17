@@ -2,8 +2,15 @@
 
 exports[`Stepper input matches snapshot (disabled) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -312,8 +319,15 @@ exports[`Stepper input matches snapshot (invalid) 1`] = `
 }
 
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -611,8 +625,15 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot (mobile) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -765,8 +786,15 @@ input + .c1 {
 
 exports[`Stepper input matches snapshot 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;

@@ -1,5 +1,7 @@
-import { renderWithProviders } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { FieldContainer } from './field-container';
+import { Tooltip } from '../tooltip/tooltip';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 const defaultProps = {
     fieldId: 'test-id',
@@ -8,6 +10,16 @@ const defaultProps = {
 };
 
 describe('Field Container', () => {
+    test('label has tooltip when tooltipLabel prop is defined', () => {
+        const wrapper = mountWithTheme(
+            <FieldContainer tooltipLabel="test" valid {...defaultProps}>
+                Children
+            </FieldContainer>,
+        );
+
+        expect(getByTestId(wrapper, 'field-label').find(Tooltip).exists()).toBe(true);
+    });
+
     test('matches snapshot', () => {
         const tree = renderWithProviders(
             <FieldContainer valid {...defaultProps}>

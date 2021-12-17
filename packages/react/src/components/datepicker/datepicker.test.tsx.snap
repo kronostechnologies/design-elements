@@ -2,8 +2,15 @@
 
 exports[`Datepicker has startDate 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -288,8 +295,15 @@ label + .c3 {
 
 exports[`Datepicker matches snapshot (desktop) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -574,8 +588,15 @@ label + .c3 {
 
 exports[`Datepicker matches snapshot (disabled) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -890,8 +911,15 @@ exports[`Datepicker matches snapshot (invalid) 1`] = `
 }
 
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -1198,8 +1226,15 @@ label + .c6 {
 
 exports[`Datepicker matches snapshot (mobile) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -1484,8 +1519,15 @@ label + .c3 {
 
 exports[`Datepicker matches snapshot (open, desktop) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -2609,8 +2651,15 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -3667,8 +3716,15 @@ label + .c3 {
 
 exports[`Datepicker matches snapshot (open, mobile) 1`] = `
 .c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
