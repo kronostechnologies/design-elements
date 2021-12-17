@@ -75,7 +75,7 @@ export function FieldContainer({
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label data-testid="field-label" forId={fieldId} tooltipLabel={tooltipLabel}>{label}</Label>}
+            {label && <Label forId={fieldId} tooltipLabel={tooltipLabel}>{label}</Label>}
             {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
