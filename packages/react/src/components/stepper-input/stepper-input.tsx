@@ -59,6 +59,7 @@ interface StepperInputProps extends PartialStepperInputProps {
     max?: number;
     min?: number;
     noMargin?: boolean;
+    tooltipLabel?: string;
     valid?: boolean;
     validationErrorMessage?: string;
     value?: Value;
@@ -81,6 +82,7 @@ export function StepperInput({
     min,
     noMargin,
     step,
+    tooltipLabel,
     valid = true,
     validationErrorMessage,
     value,
@@ -128,6 +130,7 @@ export function StepperInput({
             fieldId={fieldId}
             hint={hint}
             label={label}
+            tooltipLabel={tooltipLabel}
             noMargin={noMargin}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}

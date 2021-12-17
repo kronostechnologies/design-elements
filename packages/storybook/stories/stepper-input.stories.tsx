@@ -12,8 +12,11 @@ export const Normal: Story = () => (
     <StepperInput label="Stepper input" />
 );
 
-type Value = number | undefined | null;
+export const WithTooltip: Story = () => (
+    <StepperInput label="Stepper input" tooltipLabel="Tooltip text content" />
+);
 
+type Value = number | undefined | null;
 export const Controlled: Story = () => {
     const [inputValue, setInputValue] = useState<Value>(null);
 
