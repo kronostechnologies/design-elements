@@ -57,6 +57,14 @@ export const DefaultValue: Story = () => (
     />
 );
 
+export const WithTooltip: Story = () => (
+    <TextInput
+        label="Address"
+        tooltipLabel="Tooltip text content"
+        type="text"
+    />
+);
+
 export const Required: Story = () => (
     <TextInput
         disabled={false}

@@ -36,6 +36,7 @@ interface TextInputProps extends PartialInputProps {
     noMargin?: boolean;
     id?: string;
     label?: string;
+    tooltipLabel?: string;
     pattern?: string;
     placeholder?: string;
     required?: boolean;
@@ -64,6 +65,7 @@ export const TextInput = forwardRef(({
     id: providedId,
     inputMode,
     label,
+    tooltipLabel,
     name,
     noMargin,
     pattern,
@@ -117,6 +119,7 @@ export const TextInput = forwardRef(({
             noMargin={noMargin}
             fieldId={id}
             label={label}
+            tooltipLabel={tooltipLabel}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}
