@@ -159,6 +159,7 @@ interface SelectProps {
      * Adds a skip button
      */
     skipOption?: { label: string; value?: string };
+    tooltipLabel?: string;
     /**
      * Sets input validity
      */
@@ -197,6 +198,7 @@ export function Select({
     required,
     searchable,
     skipOption,
+    tooltipLabel,
     valid = true,
     validationErrorMessage,
     value,
@@ -510,6 +512,7 @@ export function Select({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                tooltipLabel={tooltipLabel}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
                 hint={hint}
