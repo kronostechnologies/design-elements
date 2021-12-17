@@ -16,6 +16,17 @@ export const Normal: Story = () => (
         required={false}
     />
 );
+
+export const WithTooltip: Story = () => (
+    <TextArea
+        label="Text area label"
+        tooltipLabel="Tooltip text content"
+        hint="Hint"
+        disabled={false}
+        required={false}
+    />
+);
+
 export const ControlledValue: Story = () => (
     <TextArea
         label="Text area label"

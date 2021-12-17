@@ -26,6 +26,7 @@ const Counter = styled.div<{ valid: boolean, theme: Theme }>`
 export interface TextAreaProps {
     className?: string;
     label: string;
+    tooltipLabel?: string;
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
@@ -71,6 +72,7 @@ export function TextArea({
     label,
     placeholder,
     required,
+    tooltipLabel,
     validationErrorMessage,
     value,
     maxLength,
@@ -129,6 +131,7 @@ export function TextArea({
             noMargin={noMargin}
             fieldId={idTextArea}
             label={label}
+            tooltipLabel={tooltipLabel}
             hint={hint}
             valid={validity}
             validationErrorMessage={getValidationErrorMessage()}
