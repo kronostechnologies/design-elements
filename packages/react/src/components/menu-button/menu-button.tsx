@@ -20,12 +20,11 @@ interface Props {
     buttonType: ButtonType;
     defaultOpen?: boolean;
     iconName?: IconName;
-    label?: string;
     options: MenuOption[];
 }
 
 export const MenuButton: FunctionComponent<Props> = ({
-    buttonType, defaultOpen, iconName, label, options,
+    buttonType, children, defaultOpen, iconName, options,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
@@ -77,7 +76,7 @@ export const MenuButton: FunctionComponent<Props> = ({
                     onClick={() => setControlledVisible(!controlledVisible)}
                     ref={setTriggerRef}
                 >
-                    {label}
+                    {children}
                     <StyledIcon
                         aria-hidden="true"
                         data-testid="chevron-icon"
