@@ -1,8 +1,11 @@
+import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { waitForComponentToPaint } from '../../test-utils/enzyme-utils';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { MenuOption } from '../menu/menu';
 import { MenuButton } from './menu-button';
+import { Button } from '../buttons/button';
+import { IconButton } from '../buttons/icon-button';
 
 function givenOptions(): MenuOption[] {
     return [
@@ -28,8 +31,20 @@ describe('MenuButton', () => {
         options = givenOptions();
     });
 
+    it('should return Button component by default', () => {
+        const wrapper = shallow(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+
+        expect(getByTestId(wrapper, 'menu-button').type()).toBe(Button);
+    });
+
+    it('should return IconButton component when iconName prop is defined', () => {
+        const wrapper = shallow(<MenuButton iconName="home" buttonType="primary" options={options}>Test</MenuButton>);
+
+        expect(getByTestId(wrapper, 'menu-button').type()).toBe(IconButton);
+    });
+
     it('should open menu when menu-button is clicked', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options} />);
+        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
         waitForComponentToPaint(wrapper);
 
         getByTestId(wrapper, 'menu-button').simulate('click');
@@ -38,13 +53,21 @@ describe('MenuButton', () => {
     });
 
     it('should be default open when defaultOpen prop is set to true', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" defaultOpen options={options} />);
+        const wrapper = mountWithTheme(
+            <MenuButton buttonType="primary" defaultOpen options={options}>
+                Test
+            </MenuButton>,
+        );
 
         expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
     });
 
     it('should close menu when escape key is pressed inside menu', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" defaultOpen options={options} />);
+        const wrapper = mountWithTheme(
+            <MenuButton buttonType="primary" defaultOpen options={options}>
+                Test
+            </MenuButton>,
+        );
 
         getByTestId(wrapper, 'menu').simulate('keydown', { key: 'Escape' });
 
@@ -53,7 +76,7 @@ describe('MenuButton', () => {
 
     it('should focus menu-button when escape key is pressed inside menu', () => {
         const wrapper = mountWithTheme(
-            <MenuButton buttonType="primary" defaultOpen options={options} />,
+            <MenuButton buttonType="primary" defaultOpen options={options}>Test</MenuButton>,
             { attachTo: document.body },
         );
 
@@ -64,7 +87,11 @@ describe('MenuButton', () => {
     });
 
     it('should close menu when tab key is pressed inside menu', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" defaultOpen options={options} />);
+        const wrapper = mountWithTheme(
+            <MenuButton buttonType="primary" defaultOpen options={options}>
+                Test
+            </MenuButton>,
+        );
 
         getByTestId(wrapper, 'menu').simulate('keydown', { key: 'Tab' });
 
@@ -72,7 +99,11 @@ describe('MenuButton', () => {
     });
 
     it('should close menu when an option is selected inside menu', () => {
-        const wrapper = mountWithTheme(<MenuButton buttonType="primary" defaultOpen options={options} />);
+        const wrapper = mountWithTheme(
+            <MenuButton buttonType="primary" defaultOpen options={options}>
+                Test
+            </MenuButton>,
+        );
 
         getByTestId(wrapper, 'menu-option-0').simulate('click');
 
@@ -81,13 +112,21 @@ describe('MenuButton', () => {
 
     describe('chevron icon', () => {
         it('should point downwards when menu is not open', () => {
-            const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options} />);
+            const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
 
             expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronDown');
         });
 
         it('should point upwards when menu is open', () => {
-            const wrapper = mountWithTheme(<MenuButton buttonType="primary" defaultOpen options={options} />);
+            const wrapper = mountWithTheme(
+                <MenuButton
+                    buttonType="primary"
+                    defaultOpen
+                    options={options}
+                >
+                    Test
+                </MenuButton>,
+            );
 
             expect(getByTestId(wrapper, 'chevron-icon').prop('name')).toBe('chevronUp');
         });
