@@ -18,13 +18,14 @@ const StyledIcon = styled(Icon)`
 
 interface Props {
     buttonType: ButtonType;
+    className?: string;
     defaultOpen?: boolean;
     iconName?: IconName;
     options: MenuOption[];
 }
 
 export const MenuButton: FunctionComponent<Props> = ({
-    buttonType, children, defaultOpen, iconName, options,
+    buttonType, children, className, defaultOpen, iconName, options,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
@@ -54,7 +55,7 @@ export const MenuButton: FunctionComponent<Props> = ({
     }
 
     return (
-        <div>
+        <div className={className}>
             {iconName ? (
                 <IconButton
                     data-testid="menu-button"
