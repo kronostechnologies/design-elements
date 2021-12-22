@@ -373,6 +373,13 @@ describe('Select', () => {
         expect(skipOptionWrapper.props().checked).toBe(true);
     });
 
+    test('should select skip option when value is skip value', () => {
+        const wrapper = mountWithTheme(<Select options={[]} skipOption={skipOption} value={skipOption.value} />);
+
+        const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
+        expect(skipOptionWrapper.props().checked).toBe(true);
+    });
+
     test('should not select skip option when defaultValue is different than skip value', () => {
         const wrapper = shallow(<Select options={[]} skipOption={skipOption} defaultValue="not skip value" />);
 

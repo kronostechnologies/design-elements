@@ -1,5 +1,7 @@
 import { Select } from '@equisoft/design-elements-react';
+import { Option } from '@equisoft/design-elements-react/dist/components/select/select';
 import { Story } from '@storybook/react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
@@ -102,4 +104,22 @@ export const WithDisabledOptions: Story = () => {
     ];
 
     return <Select label="Select an option" options={disabledOptions} />;
+};
+
+export const ControlledWithSkipSelected: Story = () => {
+    const [value, setValue] = useState(skipOption.value);
+
+    const handleChange: (option: Option) => void = (option) => {
+        setValue(option.value);
+    };
+
+    return (
+        <Select
+            label="Select an option"
+            options={provinces}
+            skipOption={skipOption}
+            onChange={handleChange}
+            value={value}
+        />
+    );
 };
