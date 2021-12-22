@@ -1,13 +1,4 @@
-import {
-    ChangeEvent,
-    KeyboardEvent,
-    ReactElement,
-    useCallback,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { ChangeEvent, KeyboardEvent, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -214,10 +205,6 @@ export function Select({
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
     const fieldId = useMemo(() => id || uuid(), [id]);
-    const defaultOption = useMemo(
-        () => options.find((option) => option.value === defaultValue),
-        [defaultValue, options],
-    );
 
     const [autoFocus, setAutofocus] = useState(false);
     const [containerOutline, setContainerOutline] = useState(false);
@@ -225,12 +212,11 @@ export function Select({
     const [open, setOpen] = useState(defaultOpen);
     const [searchValue, setSearchValue] = useState('');
     const [focusedValue, setFocusedValue] = useState<string>();
-    const [selectedOptionValue, setSelectedOptionValue] = useState(defaultValue);
-    const [skipSelected, setSkipSelected] = useState(skipOption && defaultValue
-        ? defaultValue === skipOption.value
-        : false);
-    const [inputValue, setInputValue] = useState(defaultValue && defaultOption ? defaultOption.label : '');
-
+    const [selectedOptionValue, setSelectedOptionValue] = useState(defaultValue || value);
+    const skipSelected = useMemo(
+        () => skipOption && skipOption.value === selectedOptionValue,
+        [selectedOptionValue, skipOption],
+    );
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
@@ -240,14 +226,18 @@ export function Select({
         (needle) => options.find((option) => option.value === needle),
         [options],
     );
+    const [inputValue, setInputValue] = useState(() => findOptionByValue(selectedOptionValue)?.label ?? '');
 
     useEffect(() => {
         const wantedOption = findOptionByValue(value);
         if (wantedOption) {
             setSelectedOptionValue(wantedOption.value);
             setInputValue(wantedOption.label);
+        } else if (skipOption && skipOption.value === value) {
+            setSelectedOptionValue(skipOption.value);
+            setInputValue('');
         }
-    }, [findOptionByValue, options, value]);
+    }, [findOptionByValue, options, skipOption, skipSelected, value]);
 
     const handleOpen: () => void = useCallback(() => {
         if (!disabled) {
@@ -321,7 +311,7 @@ export function Select({
 
     function handleSkipChange(): void {
         if (!skipSelected && skipOption) {
-            setSkipSelected(true);
+            setSelectedOptionValue(skipOption.value);
             setInputValue('');
             onChange?.({ label: skipOption.label, value: skipOption.value ?? skipOption.label });
         }
@@ -343,7 +333,6 @@ export function Select({
     const handleChange: (option: Option) => void = useCallback((option) => {
         setOpen(false);
         setFocus(false);
-        setSkipSelected(false);
         setFocusedValue('');
         setInputValue(option.label);
         setSelectedOptionValue(option.value);
