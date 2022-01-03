@@ -168,3 +168,24 @@ export const WithForceRenderTabPanels: Story = () => {
         <Tabs tabs={tabs} forceRenderTabPanels />
     );
 };
+
+export const Contained: Story = () => {
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            panelContent: <span>First panel</span>,
+        },
+        {
+            title: 'Second Button',
+            panelContent: <span>Second panel</span>,
+        },
+        {
+            title: 'Third Button',
+            panelContent: <span>Third panel</span>,
+        },
+    ];
+
+    return (
+        <Tabs tabs={tabs} contained />
+    );
+};

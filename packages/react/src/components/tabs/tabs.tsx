@@ -28,13 +28,15 @@ interface TabItem extends Tab {
 
 interface Props {
     className?: string;
+    /** Not available in global mode */
+    contained?: boolean;
     forceRenderTabPanels?: boolean;
     global?: boolean;
     tabs: Tab[];
 }
 
 export const Tabs: VoidFunctionComponent<Props> = ({
-    className, global, forceRenderTabPanels, tabs,
+    className, contained, global, forceRenderTabPanels, tabs,
 }) => {
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
@@ -127,10 +129,11 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                 if (forceRenderTabPanels || isTabSelected(tabItem.id)) {
                     return (
                         <TabPanel
-                            id={tabItem.panelId}
                             buttonId={tabItem.id}
-                            key={tabItem.panelId}
+                            contained={contained && !global}
                             hidden={!isTabSelected(tabItem.id)}
+                            id={tabItem.panelId}
+                            key={tabItem.panelId}
                         >
                             {tabItem.panelContent}
                         </TabPanel>
