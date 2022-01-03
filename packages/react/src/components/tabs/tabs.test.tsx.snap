@@ -8,6 +8,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   align-items: center;
   border-bottom: none;
   bottom: -1px;
+  color: #1B1C1E;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,7 +51,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 }
 
 .c1:focus {
-  z-index: 1;
+  z-index: 2;
 }
 
 .c1::after {
@@ -71,6 +72,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
   align-items: center;
   border-bottom: none;
   bottom: -1px;
+  color: #1B1C1E;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -112,7 +114,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
 }
 
 .c3:focus {
-  z-index: 1;
+  z-index: 2;
 }
 
 .c2 {
@@ -129,6 +131,11 @@ exports[`Tabs matches snapshot (global) 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
+}
+
+.c5 {
+  border: none;
+  border-top: none;
 }
 
 .c5:focus {
@@ -238,6 +245,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   align-items: center;
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
+  color: #878f9a;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -256,6 +264,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   border: 1px solid #878f9a;
   border-bottom: 1px solid transparent;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #1b1c1e;
   z-index: 1;
 }
 
@@ -284,7 +293,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 }
 
 .c1:focus {
-  z-index: 1;
+  z-index: 2;
 }
 
 .c3 {
@@ -294,6 +303,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   align-items: center;
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
+  color: #878f9a;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -335,7 +345,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
 }
 
 .c3:focus {
-  z-index: 1;
+  z-index: 2;
 }
 
 .c2 {
@@ -352,6 +362,11 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
+}
+
+.c5 {
+  border: none;
+  border-top: none;
 }
 
 .c5:focus {
@@ -384,7 +399,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 var(--spacing-2x);
+  padding: 0 0 0 var(--spacing-4x);
 }
 
 <div>
@@ -461,6 +476,7 @@ exports[`Tabs matches snapshot 1`] = `
   align-items: center;
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
+  color: #878f9a;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -479,6 +495,7 @@ exports[`Tabs matches snapshot 1`] = `
   border: 1px solid #878f9a;
   border-bottom: 1px solid transparent;
   border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #1b1c1e;
   z-index: 1;
 }
 
@@ -507,7 +524,7 @@ exports[`Tabs matches snapshot 1`] = `
 }
 
 .c1:focus {
-  z-index: 1;
+  z-index: 2;
 }
 
 .c3 {
@@ -517,6 +534,7 @@ exports[`Tabs matches snapshot 1`] = `
   align-items: center;
   border-bottom: 1px solid #878f9a;
   bottom: -1px;
+  color: #878f9a;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -558,7 +576,7 @@ exports[`Tabs matches snapshot 1`] = `
 }
 
 .c3:focus {
-  z-index: 1;
+  z-index: 2;
 }
 
 .c2 {
@@ -575,6 +593,11 @@ exports[`Tabs matches snapshot 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   line-height: 1.5rem;
+}
+
+.c5 {
+  border: none;
+  border-top: none;
 }
 
 .c5:focus {
@@ -607,7 +630,7 @@ exports[`Tabs matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 var(--spacing-2x);
+  padding: 0 0 0 var(--spacing-4x);
 }
 
 <div>

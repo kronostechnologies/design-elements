@@ -17,6 +17,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     bottom: -1px;
+    color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -35,7 +36,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     ${focusVisibleReset}
 
     &:focus {
-        z-index: 1;
+        z-index: 2;
     }
 
     ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
@@ -55,11 +56,10 @@ const StyledButton = styled.button<StyledButtonProps>`
 
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
         background-color: ${theme.greys.white};
-
-        /* TODO change with next thematization */
-        border: 1px solid #878f9a;
+        border: 1px solid #878f9a; /* TODO change colors when updating thematization */
         border-bottom: 1px solid transparent;
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+        color: #1b1c1e; /* TODO change colors when updating thematization */
         z-index: 1;
     `}
 `;

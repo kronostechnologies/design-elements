@@ -10,7 +10,7 @@ const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     align-items: center;
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     display: flex;
-    padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 var(--spacing-2x)')};
+    padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 0 0 var(--spacing-4x)')};
 `;
 
 export interface Tab {
