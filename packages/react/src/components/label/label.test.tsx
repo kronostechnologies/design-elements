@@ -5,8 +5,8 @@ import { Label } from './label';
 import { Tooltip } from '../tooltip/tooltip';
 
 describe('Label', () => {
-    test('contains tooltip when tooltipLabel prop is defined', () => {
-        const wrapper = mountWithTheme(<Label forId="test" tooltipLabel="test">Test</Label>);
+    test('contains tooltip when tooltip prop is defined', () => {
+        const wrapper = mountWithTheme(<Label forId="test" tooltip={{ label: 'test' }}>Test</Label>);
 
         expect(wrapper.find(Tooltip).exists()).toBe(true);
     });

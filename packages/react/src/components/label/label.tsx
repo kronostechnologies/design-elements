@@ -1,12 +1,16 @@
-import { ReactElement, ReactNode } from 'react';
+import { Fragment, ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Tooltip } from '../tooltip/tooltip';
+import { Tooltip, TooltipProps } from '../tooltip/tooltip';
+
+const StyledDiv = styled.div`
+    align-items: center;
+    display: flex;
+`;
 
 const StyledLabel = styled.label<{isMobile: boolean}>`
-    align-items: center;
     color: ${(props) => props.theme.greys.black};
-    display: flex;
+    display: block;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
     letter-spacing: 0.02rem;
@@ -27,19 +31,23 @@ interface LabelProps {
     className?: string;
     children: ReactNode;
     forId: string;
-    tooltipLabel?: string;
+    tooltip?: TooltipProps;
 }
 
 function Label({
-    className, children, forId, tooltipLabel,
+    className, children, forId, tooltip,
 }: LabelProps): ReactElement {
+    const WrapperComponent = tooltip ? StyledDiv : Fragment;
     const { isMobile } = useDeviceContext();
 
     return (
-        <StyledLabel className={className} htmlFor={forId} isMobile={isMobile}>
-            {children}
-            {tooltipLabel && <StyledTooltip label={tooltipLabel} />}
-        </StyledLabel>
+        <WrapperComponent>
+            <StyledLabel className={className} htmlFor={forId} isMobile={isMobile}>
+                {children}
+            </StyledLabel>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            {tooltip && <StyledTooltip {...tooltip} />}
+        </WrapperComponent>
     );
 }
 

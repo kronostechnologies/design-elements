@@ -18,7 +18,7 @@ export const Normal: Story = () => (
 export const WithTooltip: Story = () => (
     <TextArea
         label="Text area label"
-        tooltipLabel="Tooltip text content"
+        tooltip={{ label: 'Tooltip text content' }}
         hint="Hint"
     />
 );

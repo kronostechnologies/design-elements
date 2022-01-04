@@ -148,7 +148,7 @@ const StyledSpan = styled.span`
 
 export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
 
-interface TooltipProps {
+export interface TooltipProps {
     className?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;

@@ -5,6 +5,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { Theme } from '../../themes';
+import { TooltipProps } from '../tooltip/tooltip';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -26,7 +27,7 @@ const Counter = styled.div<{ valid: boolean, theme: Theme }>`
 export interface TextAreaProps {
     className?: string;
     label: string;
-    tooltipLabel?: string;
+    tooltip?: TooltipProps;
     defaultValue?: string;
     disabled?: boolean;
     /** Disables default margin */
@@ -72,7 +73,7 @@ export function TextArea({
     label,
     placeholder,
     required,
-    tooltipLabel,
+    tooltip,
     validationErrorMessage,
     value,
     maxLength,
@@ -131,7 +132,7 @@ export function TextArea({
             noMargin={noMargin}
             fieldId={idTextArea}
             label={label}
-            tooltipLabel={tooltipLabel}
+            tooltip={tooltip}
             hint={hint}
             valid={validity}
             validationErrorMessage={getValidationErrorMessage()}

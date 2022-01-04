@@ -13,7 +13,7 @@ export const Normal: Story = () => (
 );
 
 export const WithTooltip: Story = () => (
-    <StepperInput label="Stepper input" tooltipLabel="Tooltip text content" />
+    <StepperInput label="Stepper input" tooltip={{ label: 'Tooltip text content' }} />
 );
 
 type Value = number | undefined | null;

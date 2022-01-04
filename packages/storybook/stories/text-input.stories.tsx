@@ -44,7 +44,7 @@ export const DefaultValue: Story = () => (
 export const WithTooltip: Story = () => (
     <TextInput
         label="Address"
-        tooltipLabel="Tooltip text content"
+        tooltip={{ label: 'Tooltip text content' }}
         type="text"
     />
 );
