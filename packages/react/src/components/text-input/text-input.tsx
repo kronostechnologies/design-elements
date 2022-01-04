@@ -20,6 +20,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from './styles/inputs';
+import { TooltipProps } from '../tooltip/tooltip';
 
 const Input = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
@@ -36,6 +37,7 @@ interface TextInputProps extends PartialInputProps {
     noMargin?: boolean;
     id?: string;
     label?: string;
+    tooltip?: TooltipProps;
     pattern?: string;
     placeholder?: string;
     required?: boolean;
@@ -64,6 +66,7 @@ export const TextInput = forwardRef(({
     id: providedId,
     inputMode,
     label,
+    tooltip,
     name,
     noMargin,
     pattern,
@@ -117,6 +120,7 @@ export const TextInput = forwardRef(({
             noMargin={noMargin}
             fieldId={id}
             label={label}
+            tooltip={tooltip}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
             hint={hint}

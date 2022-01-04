@@ -42,6 +42,10 @@ export const Normal: Story = () => (
     <Select label="Select an option" hint="Hint" options={provinces} />
 );
 
+export const WithTooltip: Story = () => (
+    <Select label="Select an option" tooltip={{ label: 'Tooltip text content' }} hint="Hint" options={provinces} />
+);
+
 export const InsideShadowDom: Story = () => (
     <Select label="Select an option" hint="Hint" options={provinces} />
 );

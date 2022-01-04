@@ -10,6 +10,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
+import { TooltipProps } from '../tooltip/tooltip';
 
 interface InputProps {
     searchable?: boolean;
@@ -159,6 +160,7 @@ interface SelectProps {
      * Adds a skip button
      */
     skipOption?: { label: string; value?: string };
+    tooltip?: TooltipProps;
     /**
      * Sets input validity
      */
@@ -197,6 +199,7 @@ export function Select({
     required,
     searchable,
     skipOption,
+    tooltip,
     valid = true,
     validationErrorMessage,
     value,
@@ -510,6 +513,7 @@ export function Select({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                tooltip={tooltip}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
                 hint={hint}

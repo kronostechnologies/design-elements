@@ -16,6 +16,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { FieldContainer } from '../field-container/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
 import { StepperButtons } from './stepper-buttons';
+import { TooltipProps } from '../tooltip/tooltip';
 
 const Wrapper = styled.div`
     display: flex;
@@ -59,6 +60,7 @@ interface StepperInputProps extends PartialStepperInputProps {
     max?: number;
     min?: number;
     noMargin?: boolean;
+    tooltip?: TooltipProps;
     valid?: boolean;
     validationErrorMessage?: string;
     value?: Value;
@@ -81,6 +83,7 @@ export function StepperInput({
     min,
     noMargin,
     step,
+    tooltip,
     valid = true,
     validationErrorMessage,
     value,
@@ -128,6 +131,7 @@ export function StepperInput({
             fieldId={fieldId}
             hint={hint}
             label={label}
+            tooltip={tooltip}
             noMargin={noMargin}
             valid={valid}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}

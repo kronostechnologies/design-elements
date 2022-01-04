@@ -13,7 +13,7 @@ import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs/blocks';
 
 Simply add the provider in your App component. It should be something like this:
 ```typescript jsx
-import { DesignSystem } from '@equisoft/design-elements-react'; 
+import { DesignSystem } from '@equisoft/design-elements-react';
 import { VoidFunctionComponent } from 'react';
 import { Router } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
@@ -38,7 +38,7 @@ export const App: VoidFunctionComponent = () => (
 
 ## Theming
 
-For most cases, you won't need to provide a theme, as the DesignSystem uses Equisoft's theme by default. However, it's  
+For most cases, you won't need to provide a theme, as the DesignSystem uses Equisoft's theme by default. However, it's
 possible to override the theme, or parts of the theme. For more details, take a look at the [Theme definition](https://github.com/kronostechnologies/design-elements/blob/master/packages/react/src/themes/theme.ts).
 
 <Canvas>
@@ -46,17 +46,17 @@ possible to override the theme, or parts of the theme. For more details, take a 
     <DesignSystem theme={testTheme}>
         <div>
             <h3>Custom theme</h3>
-            <Button label="Primary" buttonType="primary" disabled={false} />
-            <Button label="Secondary" buttonType="secondary" disabled={false} />
-            <Button label="Tertiary" buttonType="tertiary" disabled={false} />
+            <Button label="Primary" buttonType="primary" />
+            <Button label="Secondary" buttonType="secondary" />
+            <Button label="Tertiary" buttonType="tertiary" />
         </div>
     </DesignSystem>
     <DesignSystem>
     <div>
         <h3>Default Equisoft theme</h3>
-        <Button label="Primary" buttonType="primary" disabled={false} />
-        <Button label="Secondary" buttonType="secondary" disabled={false} />
-        <Button label="Tertiary" buttonType="tertiary" disabled={false} />
+        <Button label="Primary" buttonType="primary" />
+        <Button label="Secondary" buttonType="secondary" />
+        <Button label="Tertiary" buttonType="tertiary" />
     </div>
     </DesignSystem>
 </>
@@ -64,9 +64,9 @@ possible to override the theme, or parts of the theme. For more details, take a 
 
 ## Internationalization
 
-If your application supports multiple languages, you simply need to sync the selected language in your application with 
+If your application supports multiple languages, you simply need to sync the selected language in your application with
 the `DesignSystem` provider's `language` prop. The default language is **english**.
-The following sample shows that the provider only translates the messages 
+The following sample shows that the provider only translates the messages
 related to the design system. For a more complex example, take a look at the [webapp-boilerplate](https://github.com/kronostechnologies/webapp-boilerplate/tree/master/web/src/browser).
 
 <Canvas>

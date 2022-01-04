@@ -25,6 +25,10 @@ export const Normal: Story = () => (
     <Datepicker label="Date" hint="Hint" />
 );
 
+export const WithTooltip: Story = () => (
+    <Datepicker label="Date" tooltip={{ label: 'Tooltip text content' }} hint="Hint" />
+);
+
 export const InsideShadowDom: Story = () => (
     <Datepicker label="Date" hint="Hint" />
 );

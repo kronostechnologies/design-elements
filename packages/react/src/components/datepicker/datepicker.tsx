@@ -34,6 +34,7 @@ import {
     setLocaleFirstDayOfWeek,
     SupportedLocale,
 } from './utils/datepicker-utils';
+import { TooltipProps } from '../tooltip/tooltip';
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;
@@ -282,6 +283,7 @@ interface DatepickerProps {
     id?: string;
     /** Sets input label */
     label?: string;
+    tooltip?: TooltipProps;
     /**
      * Sets localization
      * @default en-CA
@@ -338,6 +340,7 @@ export const Datepicker = forwardRef(({
     hasTodayButton,
     id,
     label,
+    tooltip,
     locale = 'en-CA',
     maxDate,
     minDate,
@@ -477,6 +480,7 @@ export const Datepicker = forwardRef(({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                tooltip={tooltip}
                 hint={hint}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}

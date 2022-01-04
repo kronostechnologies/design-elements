@@ -52,7 +52,7 @@ export const Normal: Story = () => {
         },
         {
             title: 'Note',
-            panelContent: <TextArea label="Notes" disabled={false} required={false} />,
+            panelContent: <TextArea label="Notes" />,
         },
     ];
 
