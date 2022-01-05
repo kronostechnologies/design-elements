@@ -98,31 +98,28 @@ input[type="radio"]:disabled + .c3 {
 }
 
 <div
-    className="c0"
+    class="c0"
   >
     <input
-      checked={false}
-      className="c1"
+      class="c1"
       name="maritalStatus"
-      onChange={[Function]}
       type="radio"
       value="single"
     />
     <label
-      className="c2 c3"
+      class="c2 c3"
     >
       Single, living alone or with a roommate
     </label>
     <input
-      checked={true}
-      className="c1"
+      checked=""
+      class="c1"
       name="maritalStatus"
-      onChange={[Function]}
       type="radio"
       value="married"
     />
     <label
-      className="c2 c3"
+      class="c2 c3"
     >
       Married or living with a spouse
     </label>
@@ -215,18 +212,16 @@ input[type="radio"]:disabled + .c3 {
 }
 
 <div
-    className="c0"
+    class="c0"
   >
     <input
-      checked={false}
-      className="c1"
+      class="c1"
       name="maritalStatus"
-      onChange={[Function]}
       type="radio"
       value="skip"
     />
     <label
-      className="c2 c3"
+      class="c2 c3"
     >
       Would rather not say
     </label>

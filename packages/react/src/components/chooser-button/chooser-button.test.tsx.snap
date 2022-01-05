@@ -14,10 +14,9 @@ Array [
 }
 
 <input
-    className="c0"
-    defaultChecked={true}
+    checked=""
+    class="c0"
     name="maritalStatus"
-    onChange={[Function]}
     type="radio"
     value="test value"
   />,
@@ -94,7 +93,7 @@ input[type="radio"]:disabled + .c1 {
 }
 
 <label
-    className="c0 c1"
+    class="c0 c1"
   >
     Children
   </label>,

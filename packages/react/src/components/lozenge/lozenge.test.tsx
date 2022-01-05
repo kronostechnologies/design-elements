@@ -1,8 +1,7 @@
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { Lozenge } from './lozenge';
+import { renderWithTheme } from '../../test-utils/renderer';
 
 describe('Lozenge', () => {
     test('has icon when icon prop is specified', () => {
@@ -12,9 +11,7 @@ describe('Lozenge', () => {
     });
 
     test('matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<Lozenge>Hello World</Lozenge>),
-        ).toJSON();
+        const tree = renderWithTheme(<Lozenge>Hello World</Lozenge>);
 
         expect(tree).toMatchSnapshot();
     });

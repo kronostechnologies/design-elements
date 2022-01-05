@@ -12,6 +12,6 @@ exports[`Enso Spinner Matches the snapshot 1`] = `
 }
 
 <svg
-  className="c0"
+  class="c0"
 />
 `;

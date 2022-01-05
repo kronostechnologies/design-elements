@@ -97,20 +97,16 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     data-testid="field-container"
   >
     <input
-      className="c2"
+      class="c2"
       data-testid="text-input"
-      inputMode="numeric"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onInvalid={[Function]}
+      inputmode="numeric"
       placeholder="$"
       type="text"
       value="$100.00"
@@ -216,20 +212,16 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     data-testid="field-container"
   >
     <input
-      className="c2"
+      class="c2"
       data-testid="text-input"
-      inputMode="numeric"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onInvalid={[Function]}
+      inputmode="numeric"
       placeholder="$"
       type="text"
       value="$100.00"
@@ -335,20 +327,16 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     data-testid="field-container"
   >
     <input
-      className="c2"
+      class="c2"
       data-testid="text-input"
-      inputMode="numeric"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onInvalid={[Function]}
+      inputmode="numeric"
       placeholder="$"
       type="text"
       value="100,00 $"

@@ -1,19 +1,16 @@
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { renderWithTheme } from '../../test-utils/renderer';
 import { ProgressCircle } from './progress-circle';
 
 describe('ProgressCircle', () => {
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <ProgressCircle
-                    percent={66}
-                    color="#304E63"
-                    descriptionLabel="RRSP"
-                    resultLabel="56 k$"
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithTheme(
+            <ProgressCircle
+                percent={66}
+                color="#304E63"
+                descriptionLabel="RRSP"
+                resultLabel="56 k$"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

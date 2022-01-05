@@ -10,7 +10,7 @@ Array [
 }
 
 <legend
-    className="c0"
+    class="c0"
   >
     Planets
   </legend>,
@@ -85,17 +85,16 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
-     
-    Earth
+     Earth
     <input
       name="planets"
       type="radio"
       value="earth"
     />
     <span
-      className="radioInput"
+      class="radioInput"
     />
   </label>,
   .c0 {
@@ -169,18 +168,17 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
-     
-    Mars
+     Mars
     <input
-      defaultChecked={true}
+      checked=""
       name="planets"
       type="radio"
       value="mars"
     />
     <span
-      className="radioInput"
+      class="radioInput"
     />
   </label>,
   .c0 {
@@ -253,19 +251,18 @@ Array [
 }
 
 <label
-    className="c0"
-    disabled={true}
+    class="c0"
+    disabled=""
   >
-     
-    Pluto
+     Pluto
     <input
-      disabled={true}
+      disabled=""
       name="planets"
       type="radio"
       value="pluto"
     />
     <span
-      className="radioInput"
+      class="radioInput"
     />
   </label>,
   .c0 {
@@ -339,17 +336,16 @@ Array [
 }
 
 <label
-    className="c0"
+    class="c0"
   >
-     
-    Saturn
+     Saturn
     <input
       name="planets"
       type="radio"
       value="saturn"
     />
     <span
-      className="radioInput"
+      class="radioInput"
     />
   </label>,
 ]

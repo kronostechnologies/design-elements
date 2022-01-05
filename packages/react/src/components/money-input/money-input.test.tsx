@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import { themeProvider, ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { renderWithTheme } from '../../test-utils/renderer';
+import { themeProvider } from '../../test-utils/theme-provider';
 import { MoneyInput } from './money-input';
 
 jest.mock('../../utils/uuid');
@@ -133,25 +133,19 @@ describe('CurrencyInput Component', () => {
     });
 
     it('matches snapshot (fr-CA)', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<MoneyInput value={100} />),
-        ).toJSON();
+        const tree = renderWithTheme(<MoneyInput value={100} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     it('matches snapshot (en-CA)', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<MoneyInput value={100} locale="en-CA" />),
-        ).toJSON();
+        const tree = renderWithTheme(<MoneyInput value={100} locale="en-CA" />);
 
         expect(tree).toMatchSnapshot();
     });
 
     it('matches snapshot (en-US)', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<MoneyInput value={100} locale="en-CA" />),
-        ).toJSON();
+        const tree = renderWithTheme(<MoneyInput value={100} locale="en-CA" />);
 
         expect(tree).toMatchSnapshot();
     });

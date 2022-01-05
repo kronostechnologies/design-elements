@@ -22,8 +22,8 @@ input + .c0 {
 }
 
 <label
-  className="c0 c1"
-  htmlFor="test-id"
+  class="c0 c1"
+  for="test-id"
 >
   Children
 </label>

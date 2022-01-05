@@ -1,6 +1,4 @@
-import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { ChooserButtonGroup } from './chooser-button-group';
 
 jest.mock('../../utils/uuid');
@@ -18,34 +16,31 @@ describe('Chooser Button GroupItem', () => {
 
     test('onChange callback is called when chooser-button is changed', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(
-                <ChooserButtonGroup
-                    inColumns
-                    groupName="maritalStatus"
-                    options={maritalStatus}
-                    skipOption={skipOption}
-                    onChange={callback}
-                />,
-            ),
+        const wrapper = mountWithTheme(
+            <ChooserButtonGroup
+                inColumns
+                groupName="maritalStatus"
+                options={maritalStatus}
+                skipOption={skipOption}
+                onChange={callback}
+            />,
         );
 
         wrapper.find('input').at(0).simulate('change');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <ChooserButtonGroup
-                    inColumns
-                    groupName="maritalStatus"
-                    options={maritalStatus}
-                    skipOption={skipOption}
-                    value="married"
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithTheme(
+            <ChooserButtonGroup
+                inColumns
+                groupName="maritalStatus"
+                options={maritalStatus}
+                skipOption={skipOption}
+                value="married"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
