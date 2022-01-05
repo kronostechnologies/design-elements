@@ -1,13 +1,13 @@
-import renderer from 'react-test-renderer';
+import { render } from 'enzyme';
 import { VisuallyHidden } from './visuallyhidden';
 
 describe('Visually hidden', () => {
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
+        const tree = render(
             <VisuallyHidden>
                 Hidden
             </VisuallyHidden>,
-        ).toJSON();
+        );
 
         expect(tree).toMatchSnapshot();
     });

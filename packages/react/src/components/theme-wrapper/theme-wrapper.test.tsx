@@ -1,26 +1,25 @@
-import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { render, shallow } from 'enzyme';
 import { Button, testTheme } from '../..';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 import { ThemeWrapper } from './theme-wrapper';
 
 describe('Theme Wrapper', () => {
     test('Returns component with default theme', () => {
-        const tree = renderer.create(
+        const tree = render(
             <ThemeWrapper>
                 <Button buttonType="primary" />
             </ThemeWrapper>,
-        ).toJSON();
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Returns component with test theme', () => {
-        const tree = renderer.create(
+        const tree = render(
             <ThemeWrapper theme={testTheme}>
                 <Button buttonType="primary" />
             </ThemeWrapper>,
-        ).toJSON();
+        );
 
         expect(tree).toMatchSnapshot();
     });
