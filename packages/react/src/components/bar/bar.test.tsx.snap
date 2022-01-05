@@ -3,10 +3,10 @@
 exports[`Bar Matches the snapshot 1`] = `
 .c0 p {
   color: #000000;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
   line-height: 1.5rem;
   margin: 0;
   text-align: right;

@@ -5,7 +5,7 @@ import { Theme } from '../../themes';
 const Container = styled.div`
     p {
         color: ${(props: { theme: Theme }) => props.theme.greys.black};
-        letter-spacing: 0.46px;
+        letter-spacing: 0.02875rem;
         line-height: 1.5rem;
         margin: 0;
         text-align: right;

@@ -97,8 +97,8 @@ const ToastWrapper = styled.div<ToastWrapperProps>`
 const StyledMessage = styled.p<{ color: string, $isMobile: boolean }>`
     color: ${({ color }) => color};
     flex: 1;
-    font-size: ${({ $isMobile }) => ($isMobile ? '18px' : '16px')};
-    line-height: ${({ $isMobile }) => ($isMobile ? '28px' : '24px')};
+    font-size: ${({ $isMobile }) => ($isMobile ? 1.125 : 1)}rem;
+    line-height: ${({ $isMobile }) => ($isMobile ? 1.75 : 1.5)}rem;
     margin: 0;
     padding-left: var(--spacing-2x);
     padding-right: var(--spacing-4x);

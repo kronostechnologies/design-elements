@@ -7,20 +7,19 @@ exports[`Option Button Is checked 1`] = `
 }
 
 .c0 + label {
-  --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-2x);
   color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 24px;
+  font-size: 1.5rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -55,20 +54,19 @@ exports[`Option Button Matches the snapshot 1`] = `
 }
 
 .c0 + label {
-  --border-radius: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #DBDEE1;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-2x);
   color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 24px;
+  font-size: 1.5rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

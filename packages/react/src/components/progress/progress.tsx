@@ -77,7 +77,7 @@ const Step = styled.li`
         color: ${(props) => props.theme.greys.black};
         font-size: 0.75rem;
         font-weight: var(--font-normal);
-        letter-spacing: 0.2px;
+        letter-spacing: 0.0125rem;
         line-height: 1.25rem;
         margin-bottom: var(--spacing-1x);
     }

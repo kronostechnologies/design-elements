@@ -23,7 +23,7 @@ export const defaultButtonStyles = css<{ isMobile: boolean }>`
     font-size: ${({ isMobile }) => (isMobile ? 0.875 : 0.75)}rem;
     font-weight: var(--font-bold);
     justify-content: center;
-    letter-spacing: ${({ isMobile }) => (isMobile ? 0.53 : 0.4)}px;
+    letter-spacing: ${({ isMobile }) => (isMobile ? 0.033125 : 0.025)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1)}rem;
     min-height: ${({ isMobile }) => (isMobile ? 48 : 32)}px;
     min-width: 2rem;
