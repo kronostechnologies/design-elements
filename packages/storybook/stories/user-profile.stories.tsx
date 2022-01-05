@@ -1,10 +1,9 @@
+import { GlobalHeader, NavItemProps, UserProfile } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import { ComponentType } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
-import { Story } from '@storybook/react';
-import { ApplicationMenu, UserProfile } from '@equisoft/design-elements-react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
-import { NavItemProps } from '../../react/src/components/dropdown-menu/list-items';
 
 const StyledDiv = styled.div`
     height: 200px;
@@ -17,9 +16,9 @@ export default {
         (StoryComponent: ComponentType) => (
             <Router>
                 <StyledDiv>
-                    <ApplicationMenu>
+                    <GlobalHeader>
                         <StoryComponent />
-                    </ApplicationMenu>
+                    </GlobalHeader>
                 </StyledDiv>
             </Router>
         ),

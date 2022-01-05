@@ -2,10 +2,10 @@ import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { waitForComponentToPaint } from '../../test-utils/enzyme-utils';
 import { mountWithTheme } from '../../test-utils/renderer';
-import { MenuOption } from '../menu/menu';
-import { MenuButton } from './menu-button';
 import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
+import { MenuOption } from '../menu/menu';
+import { MenuButton } from './menu-button';
 
 function givenOptions(): MenuOption[] {
     return [

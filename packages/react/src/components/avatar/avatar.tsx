@@ -1,9 +1,9 @@
 import { ReactElement, useMemo } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { getInitialsFromUsername } from '../../utils/user';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { useTranslation } from '../../i18n/use-translation';
 import { Icon } from '../icon/icon';
 
 export type AvatarSize = 'xsmall' | 'small' | 'medium' | 'large'

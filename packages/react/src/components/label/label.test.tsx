@@ -1,6 +1,6 @@
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
-import { Label } from './label';
 import { Tooltip } from '../tooltip/tooltip';
+import { Label } from './label';
 
 describe('Label', () => {
     test('contains tooltip when tooltip prop is defined', () => {

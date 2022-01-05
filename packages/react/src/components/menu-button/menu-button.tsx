@@ -1,11 +1,11 @@
 import { FunctionComponent, KeyboardEvent, useState } from 'react';
-import styled from 'styled-components';
 import { usePopperTooltip } from 'react-popper-tooltip';
-import { Menu, MenuOption } from '../menu/menu';
-import { Button, ButtonType } from '../buttons/button';
-import { Icon, IconName } from '../icon/icon';
-import { IconButton } from '../buttons/icon-button';
+import styled from 'styled-components';
 import { menuDimensions } from '../../tokens/menuDimensions';
+import { Button, ButtonType } from '../buttons/button';
+import { IconButton } from '../buttons/icon-button';
+import { Icon, IconName } from '../icon/icon';
+import { Menu, MenuOption } from '../menu/menu';
 
 const StyledMenu = styled(Menu)`
     max-width: ${menuDimensions.maxWidth};

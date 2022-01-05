@@ -1,7 +1,7 @@
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { UserProfile, getFirstFocusableItem } from './user-profile';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { NavItemProps } from '../dropdown-menu/list-items';
+import { getFirstFocusableItem, UserProfile } from './user-profile';
 
 jest.mock('../../utils/uuid');
 

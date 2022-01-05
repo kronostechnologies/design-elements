@@ -1,10 +1,9 @@
-import { ApplicationMenu, BentoMenuButton } from '@equisoft/design-elements-react';
+import { BentoMenuButton, ExternalItemProps, GlobalHeader, NavItemProps } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
-import { ExternalItemProps, NavItemProps } from '../../react/src/components/dropdown-menu/list-items';
 
 const StyledDiv = styled.div`
     height: 540px;
@@ -64,21 +63,21 @@ const resources: ExternalItemProps[] = [
 ];
 
 export const Desktop: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <BentoMenuButton productLinks={products} externalLinks={resources} />
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 Desktop.decorators = [DesktopDecorator];
 
 export const Mobile: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <BentoMenuButton productLinks={products} externalLinks={resources} />
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 Mobile.decorators = [MobileDecorator];
 
 export const WithNavContainer: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <BentoMenuButton tag="nav" productLinks={products} externalLinks={resources} />
-    </ApplicationMenu>
+    </GlobalHeader>
 );

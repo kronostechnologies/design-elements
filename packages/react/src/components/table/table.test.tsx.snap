@@ -889,15 +889,6 @@ exports[`Table has rowNumbers styles 1`] = `
 `;
 
 exports[`Table has selectable rows styles 1`] = `
-.c9 {
-  border-top: 1px solid #DBDEE1;
-  background-color: #FFFFFF;
-}
-
-.c9 td {
-  background-color: inherit;
-}
-
 .c6 {
   color: #FFFFFF;
   display: none;
@@ -982,6 +973,15 @@ exports[`Table has selectable rows styles 1`] = `
 
 .c1:not(:first-of-type) {
   margin-top: var(--spacing-1x);
+}
+
+.c9 {
+  border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
+}
+
+.c9 td {
+  background-color: inherit;
 }
 
 .c0 {

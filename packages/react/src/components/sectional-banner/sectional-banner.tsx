@@ -1,10 +1,4 @@
-import {
-    ComponentProps,
-    ComponentType,
-    FunctionComponent,
-    useMemo,
-    VoidFunctionComponent,
-} from 'react';
+import { ComponentProps, ComponentType, FunctionComponent, useMemo, VoidFunctionComponent } from 'react';
 import styled, { css, ThemedCssFunction } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';

@@ -12,16 +12,16 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
+import { AvatarProps } from '../avatar/avatar';
+import { Button, ButtonType } from '../buttons/button';
+import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon, IconProps } from '../icon/icon';
 import { DropdownMenu } from '../dropdown-menu/dropdown-menu';
 import { GroupItemProps } from '../dropdown-menu/list-items';
-import { getRootDocument } from '../../utils/dom';
-import { AvatarProps } from '../avatar/avatar';
-import { IconButton } from '../buttons/icon-button';
-import { Button, ButtonType } from '../buttons/button';
+import { Icon, IconProps } from '../icon/icon';
 
 const StyledDiv = styled.div`
     position: relative;

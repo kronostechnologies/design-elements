@@ -1,4 +1,4 @@
-import { ApplicationMenu, NavMenuButton, NavMenuOption } from '@equisoft/design-elements-react';
+import { GlobalHeader, NavMenuButton, NavMenuOption } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -96,79 +96,79 @@ const optionsDisabled: NavMenuOption[] = [
 ];
 
 export const Desktop: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton options={options}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 Desktop.decorators = [DesktopDecorator];
 
 export const DesktopIconOnly: Story = () => (
     <StyledDiv>
-        <ApplicationMenu>
+        <GlobalHeader>
             <NavMenuButton iconOnly iconName="home" options={options} />
-        </ApplicationMenu>
+        </GlobalHeader>
     </StyledDiv>
 );
 DesktopIconOnly.decorators = [DesktopDecorator];
 
 export const DesktopWithIcon: Story = () => (
     <StyledDiv>
-        <ApplicationMenu>
+        <GlobalHeader>
             <NavMenuButton iconName="home" options={options}>Home</NavMenuButton>
-        </ApplicationMenu>
+        </GlobalHeader>
     </StyledDiv>
 );
 DesktopWithIcon.decorators = [DesktopDecorator];
 
 export const DesktopInsideShadowDom: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton options={options}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 DesktopInsideShadowDom.decorators = [DesktopDecorator, ShadowDomDecorator];
 
 export const Mobile: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton options={options}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 Mobile.decorators = [MobileDecorator];
 
 export const MobileIconOnly: Story = () => (
     <StyledDiv>
-        <ApplicationMenu>
+        <GlobalHeader>
             <NavMenuButton iconOnly iconName="home" options={options} />
-        </ApplicationMenu>
+        </GlobalHeader>
     </StyledDiv>
 );
 MobileIconOnly.decorators = [MobileDecorator];
 
 export const DefaultOpen: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton defaultOpen options={options}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithNavContainer: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton tag="nav" options={options}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithOptionIcons: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton options={optionsWithIcons}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithHtmlLinks: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton options={optionsWithHtmlLinks}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithDisabledOptions: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <NavMenuButton options={optionsDisabled}>Menu</NavMenuButton>
-    </ApplicationMenu>
+    </GlobalHeader>
 );

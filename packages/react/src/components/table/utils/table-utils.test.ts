@@ -1,6 +1,4 @@
-import {
-    calculateStickyColumns, calculateStickyHeader,
-} from './table-utils';
+import { calculateStickyColumns, calculateStickyHeader } from './table-utils';
 
 function getTable(): HTMLTableElement {
     const table: HTMLTableElement = document.createElement('table');

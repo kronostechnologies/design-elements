@@ -2,6 +2,7 @@ import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import {
     CellProps,
     Column,
+    Hooks,
     Row,
     TableState,
     useRowSelect,
@@ -9,14 +10,13 @@ import {
     useSortBy,
     UseSortByColumnOptions,
     useTable,
-    Hooks,
 } from 'react-table';
 import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
+import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SortableColumnHeading } from './sortable-column-heading';
 import { TableRow } from './table-row';
-import { Checkbox } from '../checkbox/checkbox';
 import { calculateStickyPosition } from './utils/table-utils';
 
 type RowSize = 'small' | 'medium';

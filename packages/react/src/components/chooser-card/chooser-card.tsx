@@ -1,17 +1,8 @@
-import {
-    ChangeEvent,
-    ReactElement,
-    ReactNode,
-    useCallback,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import * as S from './styled-components';
-import { eventIsInside } from '../../utils/events';
 
 interface ChooserCardProps {
     checked?: boolean;

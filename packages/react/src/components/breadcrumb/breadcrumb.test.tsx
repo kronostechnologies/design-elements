@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
-import { mountWithProviders } from '../../test-utils/renderer';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders } from '../../test-utils/renderer';
 import { Breadcrumb } from './breadcrumb';
 
 const defaultHistory = [

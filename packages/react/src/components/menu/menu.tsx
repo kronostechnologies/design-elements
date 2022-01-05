@@ -1,8 +1,8 @@
 import {
     createRef,
-    KeyboardEvent,
     forwardRef,
     Fragment,
+    KeyboardEvent,
     ReactElement,
     Ref,
     RefObject,
@@ -12,10 +12,10 @@ import {
     useState,
 } from 'react';
 import styled from 'styled-components';
-import { v4 as uuid } from '../../utils/uuid';
-import { isLetterOrNumber } from '../../utils/regex';
-import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
+import { isLetterOrNumber } from '../../utils/regex';
+import { v4 as uuid } from '../../utils/uuid';
+import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
 function getMaxHeight(numberOfVisibleItems: number): string {

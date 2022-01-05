@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { SkipLink, SkipLinkProps } from '../skip-link/skip-link';
-import { Content } from './application-menu-content';
+import { Content } from './global-header-content';
 import { Logo, LogoName } from './logo';
 
 const getPadding = (device: DeviceType): string => {
@@ -79,7 +79,7 @@ const StyledSkipLink = styled(SkipLink)<ComponentProps<typeof SkipLink> & { isMo
     }
 `;
 
-interface ApplicationMenuProps {
+interface GlobalHeaderProps {
     /** Set the app name to get the proper logos */
     appName?: LogoName;
     /** Sets app title which appears next to logo on desktop */
@@ -99,7 +99,7 @@ interface ApplicationMenuProps {
     usesReactRouter?: boolean;
 }
 
-export function ApplicationMenu({
+export function GlobalHeader({
     appName = 'default',
     appTitleDesktop,
     children,
@@ -109,7 +109,7 @@ export function ApplicationMenu({
     mobileDrawerContent,
     skipLink,
     usesReactRouter = true,
-}: ApplicationMenuProps): ReactElement {
+}: GlobalHeaderProps): ReactElement {
     const { device, isMobile } = useDeviceContext();
     const appLogo = customLogo ?? <Logo name={appName} mobile={isMobile} />;
 

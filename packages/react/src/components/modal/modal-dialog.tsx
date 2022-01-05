@@ -4,9 +4,9 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Modal } from './modal';
 import { Heading } from '../heading/heading';
 import { Icon, IconName } from '../icon/icon';
+import { Modal } from './modal';
 
 type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
 

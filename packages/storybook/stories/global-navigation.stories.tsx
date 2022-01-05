@@ -1,9 +1,9 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import { IconButtonProps } from '../../react/dist/components/buttons/icon-button';
+import { rawCodeParameters } from './utils/parameters';
 import { RouterDecorator } from './utils/router-decorator';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
-import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Structure/Global Navigation',

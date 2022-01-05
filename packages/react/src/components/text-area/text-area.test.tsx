@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
-import { getByTestId, findByTestId } from '../../test-utils/enzyme-selectors';
-import { TextArea } from './text-area';
+import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { TextArea } from './text-area';
 
 jest.mock('../../utils/uuid');
 

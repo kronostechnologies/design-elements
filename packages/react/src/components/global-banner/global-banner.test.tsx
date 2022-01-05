@@ -1,6 +1,6 @@
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { ActionButton, GlobalBanner, GlobalBannerType } from './global-banner';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 const defaultActionButton: ActionButton = {
     label: 'Test button',

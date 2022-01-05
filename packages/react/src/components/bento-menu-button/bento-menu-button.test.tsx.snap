@@ -94,6 +94,28 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
 .c18 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -441,28 +463,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
 }
 
 .c1 .c5 {
@@ -853,6 +853,28 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
+.c4 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
 .c18 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1200,28 +1222,6 @@ exports[`BentoMenuButton Matches Snapshot 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c4 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
 }
 
 .c1 .c5 {
