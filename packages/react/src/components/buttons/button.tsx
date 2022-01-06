@@ -9,6 +9,7 @@ export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 type Type = 'submit' | 'button' | 'reset';
 
 interface ButtonProps {
+    autofocus?: boolean;
     /**
      * Visual style
      * @default primary
@@ -32,12 +33,13 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
 `;
 
 export const Button = forwardRef(({
-    children, className, label, title, type = 'submit', buttonType, disabled, onClick, onKeyDown, ...props
+    autofocus, children, className, label, title, type = 'submit', buttonType, disabled, onClick, onKeyDown, ...props
 }: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
 
     return (
         <StyledButton
+            autoFocus={autofocus}
             ref={ref}
             title={title}
             isMobile={isMobile}

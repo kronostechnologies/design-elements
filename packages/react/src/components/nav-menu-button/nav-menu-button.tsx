@@ -58,6 +58,7 @@ interface MenuButtonProps {
      * @default 'Menu'
      * */
     ariaLabel?: string;
+    autofocus?: boolean;
     tag?: 'div' | 'nav';
     buttonAriaLabel?: string;
     children?: ReactNode;
@@ -86,6 +87,7 @@ interface MenuButtonProps {
 export function NavMenuButton({
     tag,
     ariaLabel,
+    autofocus,
     buttonAriaLabel,
     buttonType = 'tertiary',
     children,
@@ -185,6 +187,7 @@ export function NavMenuButton({
                 <StyledButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    autofocus={autofocus}
                     data-testid="menu-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
@@ -209,6 +212,7 @@ export function NavMenuButton({
                 <IconButton
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
+                    autofocus={autofocus}
                     data-testid="menu-button"
                     iconName={iconName}
                     onClick={handleButtonClick}

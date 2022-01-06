@@ -17,6 +17,7 @@ const StyledIcon = styled(Icon)`
 `;
 
 interface Props {
+    autofocus?: boolean;
     buttonType: ButtonType;
     className?: string;
     defaultOpen?: boolean;
@@ -25,7 +26,7 @@ interface Props {
 }
 
 export const MenuButton: FunctionComponent<Props> = ({
-    buttonType, children, className, defaultOpen, iconName, options,
+    autofocus, buttonType, children, className, defaultOpen, iconName, options,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
@@ -58,6 +59,7 @@ export const MenuButton: FunctionComponent<Props> = ({
         <div className={className}>
             {iconName ? (
                 <IconButton
+                    autofocus={autofocus}
                     data-testid="menu-button"
                     type="button"
                     aria-haspopup="menu"
@@ -69,6 +71,7 @@ export const MenuButton: FunctionComponent<Props> = ({
                 />
             ) : (
                 <Button
+                    autofocus={autofocus}
                     data-testid="menu-button"
                     type="button"
                     aria-haspopup="menu"
