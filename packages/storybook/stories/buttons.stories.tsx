@@ -1,7 +1,16 @@
-import { Button } from '@equisoft/design-elements-react';
+import { Button, Icon } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
+import styled from 'styled-components';
 import { InvertedBackground } from './utils/inverted-background';
 import { rawCodeParameters } from './utils/parameters';
+
+const PlusIcon = styled(Icon).attrs({ name: 'plusSign', size: '16' })`
+    margin-right: var(--spacing-1x);
+`;
+
+const ChevronDownIcon = styled(Icon).attrs({ name: 'chevronDown', size: '16' })`
+    margin-left: var(--spacing-1x);
+`;
 
 export default {
     title: 'Controls/Button',
@@ -51,3 +60,28 @@ export const EventCallback: Story = () => (
     />
 );
 EventCallback.parameters = rawCodeParameters;
+
+export const WithIcons: Story = () => (
+    <>
+        <Button buttonType="primary">
+            <PlusIcon />
+            Primary
+            <ChevronDownIcon />
+        </Button>
+        <Button buttonType="secondary">
+            <PlusIcon />
+            Secondary
+            <ChevronDownIcon />
+        </Button>
+        <Button buttonType="tertiary">
+            <PlusIcon />
+            Tertiary
+            <ChevronDownIcon />
+        </Button>
+        <Button buttonType="destructive">
+            <PlusIcon />
+            Destructive
+            <ChevronDownIcon />
+        </Button>
+    </>
+);
