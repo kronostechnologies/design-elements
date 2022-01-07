@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "build-storybook -c .storybook -o ./dist",
-    "start": "start-storybook --docs",
+    "build": "build-storybook -c .storybook -o ./dist -s public",
+    "start": "start-storybook -s public --docs",
     "lint": "yarn eslint && yarn stylelint",
     "eslint": "yarn g:eslint stories/",
     "eslint:ci": "yarn eslint",
