@@ -1,30 +1,28 @@
 import { useMemo, VoidFunctionComponent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
 
 const Input = styled.input`
-    ${(props) => `
+    ${({ theme }) => css`
             position: absolute;
             z-index: -1;
 
             + label {
-                --border-radius: 8px;
-
                 align-items: center;
-                background-color: ${props.theme.greys.white};
-                border: 1px solid ${props.theme.greys.grey};
-                border-radius: var(--border-radius);
-                color: ${props.theme.greys['dark-grey']};
+                background-color: ${theme.greys.white};
+                border: 1px solid ${theme.greys.grey};
+                border-radius: var(--border-radius-2x);
+                color: ${theme.greys['dark-grey']};
                 display: flex;
-                font-size: 24px;
+                font-size: 1.5rem;
                 justify-content: center;
                 min-height: 40px;
             }
 
             &:checked + label {
-                background-color: ${props.theme.main['primary-1.1']};
-                border-color: ${props.theme.main['primary-1.1']};
-                color: ${props.theme.greys.white};
+                background-color: ${theme.main['primary-1.1']};
+                border-color: ${theme.main['primary-1.1']};
+                color: ${theme.greys.white};
             }
       `}
 `;

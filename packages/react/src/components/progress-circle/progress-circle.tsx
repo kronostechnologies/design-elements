@@ -45,7 +45,7 @@ const Result = styled.div`
 const Label = styled.p`
     color: ${(props: ResultProps) => props.theme.greys.black};
     font-size: 1rem;
-    letter-spacing: 0.46px;
+    letter-spacing: 0.02875rem;
     line-height: 1.5rem;
     margin: 0;
     padding: 0;

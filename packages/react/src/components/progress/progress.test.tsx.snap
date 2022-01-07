@@ -90,10 +90,10 @@ exports[`Progress Component Snapshots with labels 1`] = `
   color: #000000;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.25rem;
   margin-bottom: var(--spacing-1x);
 }
@@ -257,10 +257,10 @@ exports[`Progress Component Snapshots without labels 1`] = `
   color: #000000;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
   line-height: 1.25rem;
   margin-bottom: var(--spacing-1x);
 }

@@ -92,7 +92,7 @@ const StyledInput = styled.input<InputProps>`
     box-sizing: border-box;
     caret-color: ${({ searchable }) => (searchable ? 'unset' : 'transparent')};
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    letter-spacing: 0.4px;
+    letter-spacing: 0.025rem;
     max-height: 100%;
     min-width: 0;
     outline: none;
@@ -147,7 +147,7 @@ interface SelectProps {
      */
     numberOfItemsVisible?: number;
     /**
-     * { value: string; label: string; }[]
+     * { disabled?: boolean, value: string; label: string; }[]
      */
     options: Option[];
     placeholder?: string;
