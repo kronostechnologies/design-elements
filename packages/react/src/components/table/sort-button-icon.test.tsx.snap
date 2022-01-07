@@ -3,7 +3,7 @@
 exports[`SortButtonIcon should display arrow down when sort is descending 1`] = `
 <Icon
   color="#60666E"
-  name="arrowDown"
+  name="arrowUp"
   size="16"
 />
 `;
@@ -11,7 +11,7 @@ exports[`SortButtonIcon should display arrow down when sort is descending 1`] = 
 exports[`SortButtonIcon should display arrow up when sort is ascending 1`] = `
 <Icon
   color="#60666E"
-  name="arrowUp"
+  name="arrowDown"
   size="16"
 />
 `;
