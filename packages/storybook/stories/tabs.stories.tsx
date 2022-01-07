@@ -9,12 +9,7 @@ export default {
     parameters: rawCodeParameters,
 };
 
-const StyledCard = styled(Card)`
-    background-color: ${({ theme }) => theme.greys['light-grey']};
-`;
-
-const TabPanel = styled.div`
-    background-color: ${({ theme }) => theme.greys.white};
+const StyledDiv = styled.div`
     padding: var(--spacing-2x);
 `;
 
@@ -49,20 +44,28 @@ export const Normal: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'Contact',
-            panelContent: <Table columns={contactTableColumns} data={contactTableData} />,
+            panelContent: (
+                <StyledDiv>
+                    <Table columns={contactTableColumns} data={contactTableData} />
+                </StyledDiv>
+            ),
         },
         {
             title: 'Calendar',
             panelContent: (
-                <div>
+                <StyledDiv>
                     <Card>Monday : Doing something meaningful</Card>
                     <Card>Tuesday : Doing something else</Card>
-                </div>
+                </StyledDiv>
             ),
         },
         {
             title: 'Note',
-            panelContent: <TextArea label="Notes" />,
+            panelContent: (
+                <StyledDiv>
+                    <TextArea label="Notes" />
+                </StyledDiv>
+            ),
         },
     ];
 
@@ -76,18 +79,18 @@ export const Global: Story = () => {
         {
             title: 'First Button',
             leftIcon: 'chevronUp',
-            panelContent: <Card>First panel</Card>,
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
             title: 'Second Button',
             leftIcon: 'chevronLeft',
             rightIcon: 'chevronRight',
-            panelContent: <Card>Second panel</Card>,
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
             title: 'Third Button',
             rightIcon: 'chevronDown',
-            panelContent: <Card>Third panel</Card>,
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
@@ -96,50 +99,23 @@ export const Global: Story = () => {
     );
 };
 
-export const InCard: Story = () => {
-    const tabs: Tab[] = [
-        {
-            title: 'First Button',
-            leftIcon: 'chevronUp',
-            panelContent: <TabPanel>First panel</TabPanel>,
-        },
-        {
-            title: 'Second Button',
-            leftIcon: 'chevronLeft',
-            rightIcon: 'chevronRight',
-            panelContent: <TabPanel>Second panel</TabPanel>,
-        },
-        {
-            title: 'Third Button',
-            rightIcon: 'chevronDown',
-            panelContent: <TabPanel>Third panel</TabPanel>,
-        },
-    ];
-
-    return (
-        <StyledCard noPadding>
-            <Tabs tabs={tabs} />
-        </StyledCard>
-    );
-};
-
 export const WithIcons: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',
             leftIcon: 'chevronUp',
-            panelContent: <Card>First panel</Card>,
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
             title: 'Second Button',
             leftIcon: 'chevronLeft',
             rightIcon: 'chevronRight',
-            panelContent: <Card>Second panel</Card>,
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
             title: 'Third Button',
             rightIcon: 'chevronDown',
-            panelContent: <Card>Third panel</Card>,
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
@@ -152,15 +128,15 @@ export const WithForceRenderTabPanels: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',
-            panelContent: <Card>First panel</Card>,
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
             title: 'Second Button',
-            panelContent: <Card>Second panel</Card>,
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
             title: 'Third Button',
-            panelContent: <Card>Third panel</Card>,
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
@@ -173,15 +149,15 @@ export const Contained: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',
-            panelContent: <span>First panel</span>,
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
             title: 'Second Button',
-            panelContent: <span>Second panel</span>,
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
             title: 'Third Button',
-            panelContent: <span>Third panel</span>,
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
