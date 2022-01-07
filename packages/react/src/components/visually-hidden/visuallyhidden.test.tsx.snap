@@ -14,7 +14,7 @@ exports[`Visually hidden Matches the snapshot 1`] = `
 
 <span
   aria-hidden="false"
-  className="c0"
+  class="c0"
 >
   Hidden
 </span>

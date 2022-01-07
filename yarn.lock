@@ -3944,7 +3944,6 @@ __metadata:
     "@types/react-modal": ^3.12.1
     "@types/react-router-dom": ~5.1.8
     "@types/react-table": ^7.7.2
-    "@types/react-test-renderer": ^17.0.1
     "@types/styled-components": ^5.1.11
     "@types/testing-library__react-hooks": ^4.0.0
     "@typescript-eslint/eslint-plugin": ^4.33.0
@@ -3981,7 +3980,6 @@ __metadata:
     react-shadow: ^19.0.2
     react-swipeable: ~6.1.2
     react-table: ^7.7.0
-    react-test-renderer: ~17.0.2
     sass: ~1.35.2
     sass-loader: ~12.1.0
     stream-browserify: ^3.0.0
@@ -6421,15 +6419,6 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 54767cc32d6da64228bd924fff8221e6ad9227505995b458b72990d49e7758694c7dfb2b85842ac304d7c95348737d2f2d19291f8f108de62e58339b14934f89
-  languageName: node
-  linkType: hard
-
-"@types/react-test-renderer@npm:^17.0.1":
-  version: 17.0.1
-  resolution: "@types/react-test-renderer@npm:17.0.1"
-  dependencies:
-    "@types/react": "*"
-  checksum: ecaae8df36cd8cfeb89080d52534856acc3789bad9a6e369ff5119426377c827b4e5b5daa638507f2c1c2fd6c994bf45de288a698143178cd4049c2cd8b77b35
   languageName: node
   linkType: hard
 
@@ -18521,20 +18510,6 @@ jest-styled-components@^7.0.5:
   peerDependencies:
     react: 17.0.1
   checksum: 38613fc094a203d96671e21d9449348ccb8fa5962da6176dcb159500f461158974769e30de22e921ac910a944351e30b5016b7ba1e313155ba40461a8afc8af5
-  languageName: node
-  linkType: hard
-
-"react-test-renderer@npm:~17.0.2":
-  version: 17.0.2
-  resolution: "react-test-renderer@npm:17.0.2"
-  dependencies:
-    object-assign: ^4.1.1
-    react-is: ^17.0.2
-    react-shallow-renderer: ^16.13.1
-    scheduler: ^0.20.2
-  peerDependencies:
-    react: 17.0.2
-  checksum: e6b5c6ed2a0bde2c34f1ab9523ff9bc4c141a271daf730d6b852374e83acc0155d58ab71a318251e953ebfa65b8bebb9c5dce3eba1ccfcbef7cc4e1e8261c401
   languageName: node
   linkType: hard
 

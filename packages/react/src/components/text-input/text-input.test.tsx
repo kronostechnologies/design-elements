@@ -1,10 +1,8 @@
-import { mount, ReactWrapper, shallow } from 'enzyme';
+import { ReactWrapper, shallow } from 'enzyme';
 import { ChangeEventHandler } from 'react';
-import renderer from 'react-test-renderer';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme } from '../../test-utils/renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
 
 jest.mock('../../utils/uuid');
@@ -39,7 +37,6 @@ describe('TextInput', () => {
         const wrapper = shallow(<TextInput label="test" name="test" value={aValue} data-testid={aCustomTestId} />);
 
         const inputWrapper = getByTestId(wrapper, aCustomTestId);
-
         expect(inputWrapper.prop('value')).toBe(aValue);
     });
 
@@ -70,22 +67,22 @@ describe('TextInput', () => {
         const wrapper = setup(callback);
 
         wrapper.find('input').simulate('change', { target: { value: 'bar' } });
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('onChange callback can\'t be called when input disabled', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(
-                <TextInput
-                    {...initialProps}
-                    onFocus={callback}
-                    disabled
-                />,
-            ),
+        const wrapper = mountWithTheme(
+            <TextInput
+                {...initialProps}
+                onFocus={callback}
+                disabled
+            />,
         );
 
         wrapper.find('input').simulate('change');
+
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
@@ -94,22 +91,22 @@ describe('TextInput', () => {
         const wrapper = setup(callback);
 
         wrapper.find('input').simulate('blur');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('onBlur callback cannot be called when input disabled', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(
-                <TextInput
-                    {...initialProps}
-                    onFocus={callback}
-                    disabled
-                />,
-            ),
+        const wrapper = mountWithTheme(
+            <TextInput
+                {...initialProps}
+                onFocus={callback}
+                disabled
+            />,
         );
 
         wrapper.find('input').simulate('blur');
+
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
@@ -118,58 +115,53 @@ describe('TextInput', () => {
         const wrapper = setup(callback);
 
         wrapper.find('input').simulate('focus');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <TextInput
-                    label="Telephone"
-                    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-                    placeholder="Ex.: 555-123-4567"
-                    type="tel"
-                    validationErrorMessage="Please enter a valid phone number"
-                    defaultValue="foo"
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches the snapshot [disabled = true]', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <TextInput
-                    label="Telephone"
-                    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-                    placeholder="Ex.: 555-123-4567"
-                    type="tel"
-                    validationErrorMessage="Please enter a valid phone number"
-                    defaultValue="foo"
-                    disabled
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                disabled
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Matches the snapshot [required = true]', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <TextInput
-                    label="Telephone"
-                    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-                    placeholder="Ex.: 555-123-4567"
-                    type="tel"
-                    validationErrorMessage="Please enter a valid phone number"
-                    defaultValue="foo"
-                    required
-                />,
-            ),
-        ).toJSON();
+        const tree = renderWithTheme(
+            <TextInput
+                label="Telephone"
+                pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                placeholder="Ex.: 555-123-4567"
+                type="tel"
+                validationErrorMessage="Please enter a valid phone number"
+                defaultValue="foo"
+                required
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

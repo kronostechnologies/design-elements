@@ -59,6 +59,17 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: inherit;
 }
 
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
 .c2 {
   background-color: transparent;
   border-color: transparent;
@@ -92,16 +103,25 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #FFFFFF;
 }
 
-.c18 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
 }
 
 .c13 {
@@ -172,6 +192,18 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c18 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .c17 {
@@ -411,38 +443,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
 }
 
 <div
@@ -755,6 +755,17 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: inherit;
 }
 
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
 .c2 {
   background-color: transparent;
   border-color: transparent;
@@ -788,16 +799,25 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: #FFFFFF;
 }
 
-.c18 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
 }
 
 .c13 {
@@ -868,6 +888,18 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c18 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .c17 {
@@ -1107,38 +1139,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
 }
 
 <div

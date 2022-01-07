@@ -1,11 +1,9 @@
-import renderer from 'react-test-renderer';
+import { render } from 'enzyme';
 import { Icon } from './icon';
 
 describe('Icon', () => {
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            <Icon name="home" />,
-        ).toJSON();
+        const tree = render(<Icon name="home" />);
 
         expect(tree).toMatchSnapshot();
     });

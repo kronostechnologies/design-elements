@@ -44,21 +44,21 @@ exports[`ProgressBar Matches the snapshot 1`] = `
 }
 
 <div
-  className="c0 "
+  class="c0 "
 >
   <label
-    className="c1"
+    class="c1"
   >
     You
   </label>
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
         color="rgb(101,226,255)"
       />
     </div>

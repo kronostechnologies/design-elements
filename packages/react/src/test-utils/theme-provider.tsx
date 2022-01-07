@@ -14,11 +14,3 @@ export function ThemeProvider({ children }: ThemeProps): ReactElement {
 export function themeProvider(): ComponentType {
     return ThemeProvider as ComponentType;
 }
-
-export function ThemeWrapped(children: ReactElement): ReactElement {
-    return (
-        <ThemeWrapper theme={equisoftTheme}>
-            {children}
-        </ThemeWrapper>
-    );
-}

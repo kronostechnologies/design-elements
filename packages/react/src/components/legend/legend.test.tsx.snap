@@ -89,24 +89,24 @@ exports[`Legend Matches the snapshot 1`] = `
 }
 
 <ul
-  className="c0"
+  class="c0"
 >
   <li
-    className="c1"
+    class="c1"
   >
     <div>
       <p>
         You
       </p>
       <span
-        className="c2"
+        class="c2"
       >
         Data from your answers
       </span>
     </div>
   </li>
   <li
-    className="c3"
+    class="c3"
     color="#000014"
   >
     <div>
@@ -114,14 +114,14 @@ exports[`Legend Matches the snapshot 1`] = `
         Equisoft Peers
       </p>
       <span
-        className="c2"
+        class="c2"
       >
         Private Equisoft data
       </span>
     </div>
   </li>
   <li
-    className="c4"
+    class="c4"
     color="#304E63"
   >
     <div>
@@ -129,7 +129,7 @@ exports[`Legend Matches the snapshot 1`] = `
         General Peers
       </p>
       <span
-        className="c2"
+        class="c2"
       >
         Publicly accessible data
       </span>

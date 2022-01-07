@@ -15,32 +15,32 @@ exports[`Circle Matches the snapshot 1`] = `
 }
 
 <svg
-  className="c0"
+  class="c0"
   height="100%"
   viewBox="0 0 146 146"
   width="100%"
 >
   <circle
-    className=""
-    cx={73}
-    cy={73}
+    class=""
+    cx="73"
+    cy="73"
     fill="transparent"
-    r={69}
+    r="69"
     stroke="#DBDEE1"
-    strokeLinecap="round"
-    strokeWidth={8}
+    stroke-linecap="round"
+    stroke-width="8"
   />
   <circle
-    className="c1"
-    cx={73}
-    cy={73}
+    class="c1"
+    cx="73"
+    cy="73"
     fill="transparent"
-    r={69}
+    r="69"
     stroke="#ccc"
-    strokeDasharray="433.53978619539146 433.53978619539146"
-    strokeDashoffset={195.09290378792613}
-    strokeLinecap="round"
-    strokeWidth={8}
+    stroke-dasharray="433.53978619539146 433.53978619539146"
+    stroke-dashoffset="195.09290378792613"
+    stroke-linecap="round"
+    stroke-width="8"
   />
 </svg>
 `;

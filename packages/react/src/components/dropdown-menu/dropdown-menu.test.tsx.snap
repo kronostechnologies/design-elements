@@ -1,16 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownMenu Is hidden 1`] = `
-.c11 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
   position: absolute;
-  width: 1px;
+  width: 100%;
 }
 
 .c6 {
@@ -46,6 +45,18 @@ exports[`DropdownMenu Is hidden 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c11 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .c10 {
@@ -227,17 +238,6 @@ exports[`DropdownMenu Is hidden 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
 }
 
 <div
@@ -418,16 +418,15 @@ exports[`DropdownMenu Is hidden 1`] = `
 `;
 
 exports[`DropdownMenu Matches the snapshot 1`] = `
-.c11 {
-  border: 0;
-  -webkit-clip: rect(0,0,0,0);
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
   position: absolute;
-  width: 1px;
+  width: 100%;
 }
 
 .c6 {
@@ -463,6 +462,18 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c11 {
+  border: 0;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .c10 {
@@ -644,17 +655,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
 }
 
 <div

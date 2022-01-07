@@ -36,11 +36,11 @@ exports[`Option Button Is checked 1`] = `
 
 <div>
   <input
-    checked={true}
-    className="c0"
+    checked=""
+    class="c0"
     name="test"
     type="radio"
-    value={2}
+    value="2"
   />
   <label>
     option
@@ -84,10 +84,10 @@ exports[`Option Button Matches the snapshot 1`] = `
 
 <div>
   <input
-    className="c0"
+    class="c0"
     name="test"
     type="radio"
-    value={2}
+    value="2"
   />
   <label>
     option

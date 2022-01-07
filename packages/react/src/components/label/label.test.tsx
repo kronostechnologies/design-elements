@@ -1,6 +1,4 @@
-import renderer from 'react-test-renderer';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
-import { mountWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { Label } from './label';
 import { Tooltip } from '../tooltip/tooltip';
 
@@ -12,13 +10,11 @@ describe('Label', () => {
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(
-                <Label forId="test-id">
-                    Children
-                </Label>,
-            ),
-        ).toJSON();
+        const tree = renderWithTheme(
+            <Label forId="test-id">
+                Children
+            </Label>,
+        );
 
         expect(tree).toMatchSnapshot();
     });

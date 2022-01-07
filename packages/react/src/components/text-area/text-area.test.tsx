@@ -1,9 +1,8 @@
-import { mount, shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
-import { ThemeWrapped } from '../../test-utils/theme-wrapped';
 import { getByTestId, findByTestId } from '../../test-utils/enzyme-selectors';
 import { TextArea } from './text-area';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 
 jest.mock('../../utils/uuid');
 
@@ -17,59 +16,52 @@ describe('TextArea', () => {
     };
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<TextArea onChange={callback} {...defaultProps} />),
-        );
+        const wrapper = mountWithTheme(<TextArea onChange={callback} {...defaultProps} />);
 
         wrapper.find('textarea').simulate('change', { target: { value: 'bar' } });
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('onBlur callback is called when content is blurred', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<TextArea onBlur={callback} {...defaultProps} />),
-        );
+        const wrapper = mountWithTheme(<TextArea onBlur={callback} {...defaultProps} />);
 
         wrapper.find('textarea').simulate('blur');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('onFocus callback is called when content is focused', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<TextArea onFocus={callback} {...defaultProps} />),
-        );
+        const wrapper = mountWithTheme(<TextArea onFocus={callback} {...defaultProps} />);
 
         wrapper.find('textarea').simulate('focus');
+
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
     test('onFocus callback cannot be called when disabled', () => {
         const callback = jest.fn();
-        const wrapper = mount(
-            ThemeWrapped(<TextArea onBlur={callback} {...defaultProps} disabled />),
-        );
+        const wrapper = mountWithTheme(<TextArea onBlur={callback} {...defaultProps} disabled />);
 
         wrapper.find('textarea').simulate('focus');
+
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} />),
-        ).toJSON();
+        const tree = renderWithTheme(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} />);
 
         expect(tree).toMatchSnapshot();
     });
 
     test('Is disabled', () => {
-        const tree = renderer.create(
-            ThemeWrapped(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} disabled />),
-        ).toJSON();
+        const tree = renderWithTheme(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} disabled />);
 
         expect(tree).toMatchSnapshot();
     });
+
     test('should flag input as invalid when length exceeds maxLength', () => {
         const wrapper = shallow(
             <TextArea label="Test Input" maxLength={20} />,

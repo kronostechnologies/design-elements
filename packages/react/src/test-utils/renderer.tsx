@@ -3,10 +3,10 @@ import { Component, FunctionComponent, ReactElement, ReactPortal } from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
+import { render as testingLibRender, RenderResult } from '@testing-library/react';
 import { DesignSystem, DesignSystemProps } from '../components/design-system';
 import { DeviceType } from '../components/device-context-provider/device-context-provider';
 import { ThemeWrapper } from '../components/theme-wrapper/theme-wrapper';
-import { ThemeWrapped } from './theme-wrapped';
 
 export const AllProviders: FunctionComponent<DesignSystemProps> = ({ children, staticDevice }) => (
     <MemoryRouter>
@@ -58,7 +58,11 @@ export function renderWithProviders(
 export function renderWithTheme(
     component: ReactElement,
 ): cheerio.Cheerio {
-    return render(ThemeWrapped(component));
+    return render(
+        <ThemeWrapper>
+            {component}
+        </ThemeWrapper>,
+    );
 }
 
 export async function actUpdate<C extends Component, P = C['props'], S = C['state']>(
@@ -76,4 +80,11 @@ export async function actAndWaitForEffects<C extends Component, P = C['props'], 
     await act(async () => action());
     await actUpdate(wrapper);
     return wrapper;
+}
+
+export function renderPortalWithProviders(
+    component: ReactElement,
+    device?: DeviceType,
+): RenderResult {
+    return testingLibRender(<AllProviders staticDevice={device}>{component}</AllProviders>);
 }

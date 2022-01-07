@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithTheme } from '../../test-utils/renderer';
 import { Card } from './card';
 
 describe('Card', () => {
@@ -13,7 +13,7 @@ describe('Card', () => {
     });
 
     test('Matches the snapshot', () => {
-        const wrapper = renderWithProviders(<Card>Hello World</Card>);
+        const wrapper = renderWithTheme(<Card>Hello World</Card>);
 
         expect(wrapper).toMatchSnapshot();
     });

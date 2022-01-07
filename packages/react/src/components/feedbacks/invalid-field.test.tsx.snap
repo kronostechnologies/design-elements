@@ -33,22 +33,22 @@ exports[`Invalid field Matches the snapshot 1`] = `
 
 <div
   aria-live="polite"
-  className="c0"
+  class="c0"
   id="test-id_invalid"
   role="alert"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <svg
       color="currentColor"
-      focusable={false}
+      focusable="false"
       height="16"
       width="16"
     />
   </div>
   <span
-    className="c2"
+    class="c2"
   >
     Feedback Message
   </span>
