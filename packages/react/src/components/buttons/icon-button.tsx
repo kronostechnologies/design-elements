@@ -10,6 +10,7 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 type Type = 'submit' | 'button' | 'reset';
 
 export interface IconButtonProps {
+    autofocus?: boolean;
     children?: ReactElement<IconProps | AvatarProps>;
     /**
      * Visual style
@@ -43,6 +44,7 @@ const StyledButton = styled(AbstractButton)`
 `;
 
 export const IconButton = forwardRef(({
+    autofocus,
     children,
     className,
     iconName,
@@ -60,6 +62,7 @@ export const IconButton = forwardRef(({
     return (
         <StyledButton
             ref={ref}
+            autoFocus={autofocus}
             aria-label={label}
             className={className}
             isMobile={isMobile}
