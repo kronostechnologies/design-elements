@@ -6,11 +6,11 @@ import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';
 import { TabPanel } from './tab-panel';
 
-const CenteredContentDiv = styled.div`
+const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
     align-items: center;
-    border-bottom: 1px solid #878f9a; /* TODO change colors when updating thematization */
+    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     display: flex;
-    margin-bottom: var(--spacing-1x);
+    padding: ${({ $isGlobal }) => ($isGlobal ? '0' : '0 0 0 var(--spacing-4x)')};
 `;
 
 export interface Tab {
@@ -28,11 +28,16 @@ interface TabItem extends Tab {
 
 interface Props {
     className?: string;
+    /** Not available in global mode */
+    contained?: boolean;
     forceRenderTabPanels?: boolean;
+    global?: boolean;
     tabs: Tab[];
 }
 
-export const Tabs: VoidFunctionComponent<Props> = ({ className, forceRenderTabPanels, tabs }) => {
+export const Tabs: VoidFunctionComponent<Props> = ({
+    className, contained, global, forceRenderTabPanels, tabs,
+}) => {
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
             ...tab,
@@ -97,12 +102,14 @@ export const Tabs: VoidFunctionComponent<Props> = ({ className, forceRenderTabPa
 
     return (
         <div className={className}>
-            <CenteredContentDiv
+            <TabButtonsContainer
                 role="tablist"
                 aria-label="tabs label"
+                $isGlobal={global}
             >
                 {tabItems.map((tabItem, i) => (
                     <TabButton
+                        global={global}
                         id={tabItem.id}
                         panelId={tabItem.panelId}
                         key={tabItem.panelId}
@@ -117,15 +124,16 @@ export const Tabs: VoidFunctionComponent<Props> = ({ className, forceRenderTabPa
                         {tabItem.title}
                     </TabButton>
                 ))}
-            </CenteredContentDiv>
+            </TabButtonsContainer>
             {tabItems.map((tabItem) => {
                 if (forceRenderTabPanels || isTabSelected(tabItem.id)) {
                     return (
                         <TabPanel
-                            id={tabItem.panelId}
                             buttonId={tabItem.id}
-                            key={tabItem.panelId}
+                            contained={contained && !global}
                             hidden={!isTabSelected(tabItem.id)}
+                            id={tabItem.panelId}
+                            key={tabItem.panelId}
                         >
                             {tabItem.panelContent}
                         </TabPanel>

@@ -1,5 +1,6 @@
 import { Card, Tab, Table, TableColumn, Tabs, TextArea } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
+import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -7,6 +8,10 @@ export default {
     component: Tabs,
     parameters: rawCodeParameters,
 };
+
+const StyledDiv = styled.div`
+    padding: var(--spacing-2x);
+`;
 
 interface Data {
     column1: string;
@@ -39,20 +44,28 @@ export const Normal: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'Contact',
-            panelContent: <Table columns={contactTableColumns} data={contactTableData} />,
+            panelContent: (
+                <StyledDiv>
+                    <Table columns={contactTableColumns} data={contactTableData} />
+                </StyledDiv>
+            ),
         },
         {
             title: 'Calendar',
             panelContent: (
-                <div>
+                <StyledDiv>
                     <Card>Monday : Doing something meaningful</Card>
                     <Card>Tuesday : Doing something else</Card>
-                </div>
+                </StyledDiv>
             ),
         },
         {
             title: 'Note',
-            panelContent: <TextArea label="Notes" />,
+            panelContent: (
+                <StyledDiv>
+                    <TextArea label="Notes" />
+                </StyledDiv>
+            ),
         },
     ];
 
@@ -61,23 +74,48 @@ export const Normal: Story = () => {
     );
 };
 
-export const WithIcons: Story = () => {
+export const Global: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',
             leftIcon: 'chevronUp',
-            panelContent: <Card>First panel</Card>,
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
             title: 'Second Button',
             leftIcon: 'chevronLeft',
             rightIcon: 'chevronRight',
-            panelContent: <Card>Second panel</Card>,
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
             title: 'Third Button',
             rightIcon: 'chevronDown',
-            panelContent: <Card>Third panel</Card>,
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
+        },
+    ];
+
+    return (
+        <Tabs global tabs={tabs} />
+    );
+};
+
+export const WithIcons: Story = () => {
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            leftIcon: 'chevronUp',
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
+        },
+        {
+            title: 'Second Button',
+            leftIcon: 'chevronLeft',
+            rightIcon: 'chevronRight',
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
+        },
+        {
+            title: 'Third Button',
+            rightIcon: 'chevronDown',
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
@@ -90,19 +128,40 @@ export const WithForceRenderTabPanels: Story = () => {
     const tabs: Tab[] = [
         {
             title: 'First Button',
-            panelContent: <Card>First panel</Card>,
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
         },
         {
             title: 'Second Button',
-            panelContent: <Card>Second panel</Card>,
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
         },
         {
             title: 'Third Button',
-            panelContent: <Card>Third panel</Card>,
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
         },
     ];
 
     return (
         <Tabs tabs={tabs} forceRenderTabPanels />
+    );
+};
+
+export const Contained: Story = () => {
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
+        },
+        {
+            title: 'Second Button',
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
+        },
+        {
+            title: 'Third Button',
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
+        },
+    ];
+
+    return (
+        <Tabs tabs={tabs} contained />
     );
 };

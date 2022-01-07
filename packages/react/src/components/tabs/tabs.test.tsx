@@ -2,7 +2,7 @@ import { ReactWrapper } from 'enzyme';
 import ReactDOM from 'react-dom';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
-import { mountWithProviders, mountWithTheme } from '../../test-utils/renderer';
+import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
 function givenTabs(amount: number): Tab[] {
@@ -21,6 +21,8 @@ function expectPanelToBeRendered(wrapper: ReactWrapper, tabPanelTestId: string):
     const tabPanel = findByTestId(wrapper, tabPanelTestId);
     expect(tabPanel.isEmptyRender()).toBe(false);
 }
+
+jest.mock('../../utils/uuid');
 
 describe('Tabs', () => {
     test('should display the first tab panel by default', () => {
@@ -96,6 +98,30 @@ describe('Tabs', () => {
         getByTestId(wrapper, 'tab-button-2').simulate('click');
 
         expectPanelToBeRendered(wrapper, 'tab-panel-2');
+    });
+
+    test('matches snapshot', () => {
+        const tabs: Tab[] = givenTabs(2);
+
+        const wrapper = renderWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('matches snapshot (global)', () => {
+        const tabs: Tab[] = givenTabs(2);
+
+        const wrapper = renderWithProviders(<Tabs tabs={tabs} global forceRenderTabPanels />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('matches snapshot (mobile)', () => {
+        const tabs: Tab[] = givenTabs(2);
+
+        const wrapper = renderWithProviders(<Tabs tabs={tabs} forceRenderTabPanels />, 'mobile');
+
+        expect(wrapper).toMatchSnapshot();
     });
 
     describe('focus', () => {

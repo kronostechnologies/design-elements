@@ -62,7 +62,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     .react-datepicker {
         border: 1px solid ${({ theme }) => theme.greys.grey};
         box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-        font-family: 'Open Sans', sans-serif;
+        font-family: var(--font-family);
         padding: var(--spacing-3x) var(--spacing-2x);
     }
 

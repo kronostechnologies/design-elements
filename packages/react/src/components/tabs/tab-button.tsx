@@ -1,25 +1,51 @@
 import { KeyboardEvent, ReactElement, forwardRef, Ref } from 'react';
-import styled from 'styled-components';
-import { focus } from '../../utils/css-state';
+import styled, { css } from 'styled-components';
+import { focus, focusVisibleReset } from '../../utils/css-state';
 import { Icon, IconName } from '../icon/icon';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const StyledButton = styled.button<{ isSelected: boolean }>`
+interface IsSelected {
+    $isSelected: boolean;
+}
+
+interface StyledButtonProps extends IsSelected {
+    $isGlobal?: boolean;
+    $isMobile: boolean;
+}
+
+const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
+    border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     bottom: -1px;
+    color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
     cursor: pointer;
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
-    min-height: 48px;
+    min-height: ${({ $isMobile }) => ($isMobile ? 56 : 48)}px;
     min-width: 82px;
+    padding: 0 var(--spacing-2x);
+    position: relative;
 
-    ${focus};
+    &:hover {
+        background-color: ${({ theme }) => theme.greys.grey};
+    }
 
-    ${({ isSelected, theme }) => isSelected && `
+    ${focus}
+    ${({ theme }) => focus({ theme }, false, ':focus-visible')}
+    ${focusVisibleReset}
+
+    &:focus {
+        z-index: 2;
+    }
+
+    ${({ $isGlobal, $isSelected, theme }) => ($isGlobal && $isSelected) && css`
+        z-index: 1;
+
         ::after {
-            content: '';
             background-color: ${theme.main['primary-1.1']};
             bottom: 0;
+            content: '';
             display: block;
             height: 4px;
             left: 0;
@@ -28,45 +54,41 @@ const StyledButton = styled.button<{ isSelected: boolean }>`
         }
     `}
 
-    padding-left: var(--spacing-2x);
-    padding-right: var(--spacing-2x);
-    position: relative;
-    z-index: 1;
+    ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
+        background-color: ${theme.greys.white};
+        border: 1px solid #878f9a; /* TODO change colors when updating thematization */
+        border-bottom: 1px solid transparent;
+        border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+        color: #1b1c1e; /* TODO change colors when updating thematization */
+        z-index: 1;
+    `}
 `;
 
-const StyledButtonText = styled.span<{ isSelected: boolean }>`
-    color: ${({ isSelected, theme }) => (isSelected ? `${theme.main['primary-1.1']}` : `${theme.greys['dark-grey']}`)};
-    font-family: Open Sans, sans-serif;
-    font-size: 0.875rem;
-    -webkit-text-stroke-width: ${({ isSelected }) => (isSelected ? '0.4px' : '0')};
-
-    ${/* sc-select */ StyledButton}:hover & {
-        color: ${({ theme }) => theme.main['primary-2']};
-    }
+const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
+    color: ${({ theme }) => theme.greys.black};
+    font-family: var(--font-family);
+    font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
+    font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
+    line-height: 1.5rem;
 `;
 
-const LeftIcon = styled(Icon)<{ $isSelected: boolean }>`
-    color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
+const LeftIcon = styled(Icon)<IsSelected>`
+    color: ${({ theme }) => theme.greys.black};
+    min-width: fit-content;
     padding-right: var(--spacing-half);
-
-    ${/* sc-select */ StyledButton}:hover & {
-        color: ${({ theme }) => theme.main['primary-2']};
-    }
 `;
 
-const RightIcon = styled(Icon)<{ $isSelected: boolean }>`
-    color: ${({ $isSelected, theme }) => ($isSelected ? theme.main['primary-1.1'] : theme.greys['dark-grey'])};
+const RightIcon = styled(Icon)<IsSelected>`
+    color: ${({ theme }) => theme.greys.black};
+    min-width: fit-content;
     padding-left: var(--spacing-half);
-
-    ${/* sc-select */ StyledButton}:hover & {
-        color: ${({ theme }) => theme.main['primary-2']};
-    }
 `;
 
 interface TabButtonProps {
+    global?: boolean;
     id: string;
-    panelId: string;
     children: string;
+    panelId: string;
     leftIcon?: IconName
     rightIcon?: IconName;
     isSelected: boolean;
@@ -77,6 +99,7 @@ interface TabButtonProps {
 }
 
 export const TabButton = forwardRef(({
+    global,
     id,
     panelId,
     children,
@@ -85,37 +108,43 @@ export const TabButton = forwardRef(({
     isSelected,
     onClick,
     onKeyDown,
-}: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => (
-    <StyledButton
-        id={id}
-        aria-controls={panelId}
-        role="tab"
-        aria-selected={isSelected}
-        ref={ref}
-        data-testid="tab-button"
-        tabIndex={isSelected ? undefined : -1}
-        isSelected={isSelected}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
-    >
-        {leftIcon && (
-            <LeftIcon
-                data-testid="tab-button-left-icon"
-                $isSelected={isSelected}
-                name={leftIcon}
-                size="16"
-            />
-        )}
-        <StyledButtonText data-testid="tab-button-text" isSelected={isSelected}>
-            {children}
-        </StyledButtonText>
-        {rightIcon && (
-            <RightIcon
-                data-testid="tab-button-right-icon"
-                $isSelected={isSelected}
-                name={rightIcon}
-                size="16"
-            />
-        )}
-    </StyledButton>
-));
+}: TabButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
+    const { isMobile } = useDeviceContext();
+
+    return (
+        <StyledButton
+            id={id}
+            aria-controls={panelId}
+            role="tab"
+            aria-selected={isSelected}
+            ref={ref}
+            data-testid="tab-button"
+            tabIndex={isSelected ? undefined : -1}
+            $isGlobal={global}
+            $isMobile={isMobile}
+            $isSelected={isSelected}
+            onClick={onClick}
+            onKeyDown={onKeyDown}
+        >
+            {leftIcon && (
+                <LeftIcon
+                    data-testid="tab-button-left-icon"
+                    $isSelected={isSelected}
+                    name={leftIcon}
+                    size="16"
+                />
+            )}
+            <StyledButtonText data-testid="tab-button-text" $isSelected={isSelected} $isMobile={isMobile}>
+                {children}
+            </StyledButtonText>
+            {rightIcon && (
+                <RightIcon
+                    data-testid="tab-button-right-icon"
+                    $isSelected={isSelected}
+                    name={rightIcon}
+                    size="16"
+                />
+            )}
+        </StyledButton>
+    );
+});

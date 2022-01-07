@@ -1,0 +1,700 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs matches snapshot (global) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: none;
+  bottom: -1px;
+  color: #1B1C1E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-height: 48px;
+  min-width: 82px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  z-index: 1;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus {
+  z-index: 2;
+}
+
+.c1::after {
+  background-color: #006296;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: none;
+  bottom: -1px;
+  color: #1B1C1E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-height: 48px;
+  min-width: 82px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+}
+
+.c3:hover {
+  background-color: #DBDEE1;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3:focus {
+  z-index: 2;
+}
+
+.c2 {
+  color: #000000;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+}
+
+.c4 {
+  color: #000000;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+}
+
+.c5 {
+  border: none;
+  border-top: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c5:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c5:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+<div>
+  <div
+    aria-label="tabs label"
+    class="c0"
+    role="tablist"
+  >
+    <button
+      aria-selected="true"
+      class="c1"
+      data-testid="tab-button"
+      id="button 1-0"
+      role="tab"
+    >
+      <span
+        class="c2"
+        data-testid="tab-button-text"
+      >
+        button 1
+      </span>
+    </button>
+    <button
+      aria-selected="false"
+      class="c3"
+      data-testid="tab-button"
+      id="button 2-1"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="c4"
+        data-testid="tab-button-text"
+      >
+        button 2
+      </span>
+    </button>
+  </div>
+  <div
+    aria-hidden="false"
+    aria-labelledby="button 1-0"
+    class="c5"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-testid="tab-panel-1"
+    >
+      content
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    aria-labelledby="button 2-1"
+    class="c5"
+    hidden=""
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-testid="tab-panel-2"
+    >
+      content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs matches snapshot (mobile) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #878f9a;
+  bottom: -1px;
+  color: #878f9a;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-height: 56px;
+  min-width: 82px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #878f9a;
+  border-bottom: 1px solid transparent;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #1b1c1e;
+  z-index: 1;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus {
+  z-index: 2;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #878f9a;
+  bottom: -1px;
+  color: #878f9a;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-height: 56px;
+  min-width: 82px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+}
+
+.c3:hover {
+  background-color: #DBDEE1;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3:focus {
+  z-index: 2;
+}
+
+.c2 {
+  color: #000000;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+}
+
+.c4 {
+  color: #000000;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+}
+
+.c5 {
+  border: none;
+  border-top: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c5:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c5:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #878f9a;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0 0 var(--spacing-4x);
+}
+
+<div>
+  <div
+    aria-label="tabs label"
+    class="c0"
+    role="tablist"
+  >
+    <button
+      aria-selected="true"
+      class="c1"
+      data-testid="tab-button"
+      id="button 1-0"
+      role="tab"
+    >
+      <span
+        class="c2"
+        data-testid="tab-button-text"
+      >
+        button 1
+      </span>
+    </button>
+    <button
+      aria-selected="false"
+      class="c3"
+      data-testid="tab-button"
+      id="button 2-1"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="c4"
+        data-testid="tab-button-text"
+      >
+        button 2
+      </span>
+    </button>
+  </div>
+  <div
+    aria-hidden="false"
+    aria-labelledby="button 1-0"
+    class="c5"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-testid="tab-panel-1"
+    >
+      content
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    aria-labelledby="button 2-1"
+    class="c5"
+    hidden=""
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-testid="tab-panel-2"
+    >
+      content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs matches snapshot 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #878f9a;
+  bottom: -1px;
+  color: #878f9a;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-height: 48px;
+  min-width: 82px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #878f9a;
+  border-bottom: 1px solid transparent;
+  border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
+  color: #1b1c1e;
+  z-index: 1;
+}
+
+.c1:hover {
+  background-color: #DBDEE1;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus {
+  z-index: 2;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #878f9a;
+  bottom: -1px;
+  color: #878f9a;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-height: 48px;
+  min-width: 82px;
+  padding: 0 var(--spacing-2x);
+  position: relative;
+}
+
+.c3:hover {
+  background-color: #DBDEE1;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3:focus {
+  z-index: 2;
+}
+
+.c2 {
+  color: #000000;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.5rem;
+}
+
+.c4 {
+  color: #000000;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: 1.5rem;
+}
+
+.c5 {
+  border: none;
+  border-top: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c5:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c5:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #878f9a;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0 0 var(--spacing-4x);
+}
+
+<div>
+  <div
+    aria-label="tabs label"
+    class="c0"
+    role="tablist"
+  >
+    <button
+      aria-selected="true"
+      class="c1"
+      data-testid="tab-button"
+      id="button 1-0"
+      role="tab"
+    >
+      <span
+        class="c2"
+        data-testid="tab-button-text"
+      >
+        button 1
+      </span>
+    </button>
+    <button
+      aria-selected="false"
+      class="c3"
+      data-testid="tab-button"
+      id="button 2-1"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="c4"
+        data-testid="tab-button-text"
+      >
+        button 2
+      </span>
+    </button>
+  </div>
+  <div
+    aria-hidden="false"
+    aria-labelledby="button 1-0"
+    class="c5"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-testid="tab-panel-1"
+    >
+      content
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    aria-labelledby="button 2-1"
+    class="c5"
+    hidden=""
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-testid="tab-panel-2"
+    >
+      content
+    </div>
+  </div>
+</div>
+`;
