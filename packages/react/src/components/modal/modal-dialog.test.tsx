@@ -1,9 +1,9 @@
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { doNothing } from '../../test-utils/callbacks';
-import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ModalDialog, ModalDialogProps } from './modal-dialog';
 import { getByTestId as enzymeGetByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderPortalWithProviders } from '../../test-utils/renderer';
+import { DeviceType } from '../device-context-provider/device-context-provider';
+import { ModalDialog, ModalDialogProps } from './modal-dialog';
 
 jest.mock('../../utils/uuid');
 

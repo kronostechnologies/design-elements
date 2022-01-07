@@ -1,10 +1,10 @@
 import { MouseEvent, ReactElement } from 'react';
-import styled from 'styled-components';
 
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from './styles/styled-link';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 const Link = styled(StyledLink)<{ $isMobile: boolean, $hasLabel: boolean }>`
     color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};

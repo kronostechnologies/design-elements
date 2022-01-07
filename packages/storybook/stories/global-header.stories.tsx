@@ -1,4 +1,4 @@
-import { ApplicationMenu, UserProfile } from '@equisoft/design-elements-react';
+import { GlobalHeader, UserProfile } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import { ReactElement, VoidFunctionComponent } from 'react';
 import CustomLogoSvg from './assets/customLogo.svg';
@@ -6,8 +6,8 @@ import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
 
 export default {
-    title: 'Structure/Application Menu',
-    component: ApplicationMenu,
+    title: 'Structure/Global Header',
+    component: GlobalHeader,
     decorators: [RouterDecorator],
 };
 
@@ -23,46 +23,46 @@ const drawerContent: ReactElement = (
 );
 
 export const Normal: Story = () => (
-    <ApplicationMenu>
+    <GlobalHeader>
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithAppName: Story = () => (
-    <ApplicationMenu appName="analyze">
+    <GlobalHeader appName="analyze">
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 const CustomLogo: VoidFunctionComponent = () => <img src={CustomLogoSvg} />;
 
 export const WithCustomLogo: Story = () => (
-    <ApplicationMenu customLogo={<CustomLogo />}>
+    <GlobalHeader customLogo={<CustomLogo />}>
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithAppTitleDesktop: Story = () => (
-    <ApplicationMenu appTitleDesktop="App title">
+    <GlobalHeader appTitleDesktop="App title">
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithMobileDrawer: Story = () => (
-    <ApplicationMenu mobileDrawerContent={drawerContent}>
+    <GlobalHeader mobileDrawerContent={drawerContent}>
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 WithMobileDrawer.decorators = [MobileDecorator];
 
 export const WithSkipLink: Story = () => (
-    <ApplicationMenu skipLink={{ href: '#' }}>
+    <GlobalHeader skipLink={{ href: '#' }}>
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithSkipLinkAndUserProfile: Story = () => (
-    <ApplicationMenu skipLink={{ href: '#' }}>
+    <GlobalHeader skipLink={{ href: '#' }}>
         <p>Hello world</p>
         <UserProfile
             username="Mon user"
@@ -72,11 +72,11 @@ export const WithSkipLinkAndUserProfile: Story = () => (
             },
             ]}
         />
-    </ApplicationMenu>
+    </GlobalHeader>
 );
 
 export const WithoutReactRouter: Story = () => (
-    <ApplicationMenu usesReactRouter={false} logoHref="https://www.google.com/">
+    <GlobalHeader usesReactRouter={false} logoHref="https://www.google.com/">
         <p>Hello world</p>
-    </ApplicationMenu>
+    </GlobalHeader>
 );

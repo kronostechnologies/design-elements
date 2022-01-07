@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithProviders, mountWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { ChooserCard } from './chooser-card';
 
 jest.mock('../../utils/uuid');

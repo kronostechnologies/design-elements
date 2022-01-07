@@ -1,8 +1,8 @@
-import { KeyboardEvent, ReactElement, forwardRef, Ref } from 'react';
+import { forwardRef, KeyboardEvent, ReactElement, Ref } from 'react';
 import styled, { css } from 'styled-components';
 import { focus, focusVisibleReset } from '../../utils/css-state';
-import { Icon, IconName } from '../icon/icon';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon, IconName } from '../icon/icon';
 
 interface IsSelected {
     $isSelected: boolean;

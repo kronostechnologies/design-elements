@@ -1,10 +1,10 @@
 import { MouseEvent, ReactElement, useCallback } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from '../route-link/styles/styled-link';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { useTranslation } from '../../i18n/use-translation';
 
 const LeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);

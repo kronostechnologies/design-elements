@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Icon } from '../icon/icon';
+import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
+import { Icon } from '../icon/icon';
 
 const StyledIcon = styled(Icon)`
     color: ${({ theme }) => theme.greys['dark-grey']};

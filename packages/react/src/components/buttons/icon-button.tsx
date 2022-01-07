@@ -1,9 +1,9 @@
 import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
+import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
 import { AbstractButton, getButtonTypeStyles } from './abstract-button';
-import { AvatarProps } from '../avatar/avatar';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 

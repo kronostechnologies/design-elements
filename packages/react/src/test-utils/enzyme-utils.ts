@@ -1,5 +1,5 @@
-import { act } from 'react-dom/test-utils';
 import { ReactWrapper } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 export async function waitForComponentToPaint<P = {}>(
     wrapper: ReactWrapper<P>,

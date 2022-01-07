@@ -1,10 +1,10 @@
-import { ChangeEvent, FocusEvent, ReactElement, useState, useMemo } from 'react';
+import { ChangeEvent, FocusEvent, ReactElement, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { Theme } from '../../themes';
 import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
-import { Theme } from '../../themes';
 import { TooltipProps } from '../tooltip/tooltip';
 
 const StyledTextArea = styled.textarea`

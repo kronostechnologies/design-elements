@@ -1,22 +1,14 @@
-import {
-    ChangeEvent,
-    DetailedHTMLProps,
-    InputHTMLAttributes,
-    ReactElement,
-    RefObject,
-    useRef,
-    useMemo,
-} from 'react';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactElement, RefObject, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes/theme';
+import { Theme } from '../../themes';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { responsiveInputsStyle } from '../text-input/styles/inputs';
-import { StepperButtons } from './stepper-buttons';
 import { TooltipProps } from '../tooltip/tooltip';
+import { StepperButtons } from './stepper-buttons';
 
 const Wrapper = styled.div`
     display: flex;

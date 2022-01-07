@@ -1,6 +1,5 @@
-import { Story } from '@storybook/react';
-
 import { PhoneInput } from '@equisoft/design-elements-react';
+import { Story } from '@storybook/react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
 export default {

@@ -1,11 +1,11 @@
-import { ReactElement, KeyboardEvent, useState, useRef, useCallback, useEffect } from 'react';
+import { KeyboardEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons/icon-button';
+import { NavMenu } from '../nav-menu/nav-menu';
 import { NavMenuOption } from '../nav-menu/nav-menu-option';
 import { RouteLink } from '../route-link/route-link';
-import { NavMenu } from '../nav-menu/nav-menu';
 
 export type BreadcrumbElement = NavMenuOption;
 

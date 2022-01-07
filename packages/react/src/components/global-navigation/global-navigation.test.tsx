@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
-import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
-import { IconButtonProps } from '../buttons/icon-button';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
+import { IconButtonProps } from '../buttons/icon-button';
+import { GlobalNavigation, GlobalNavigationItem } from './global-navigation';
 
 const items: GlobalNavigationItem[] = [
     {

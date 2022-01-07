@@ -2,8 +2,8 @@ import { shallow } from 'enzyme';
 import { ReactElement } from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
-import { DropdownMenuButton } from './dropdown-menu-button';
 import { ExternalItem, GroupItem, GroupItemProps, NavItem } from '../dropdown-menu/list-items';
+import { DropdownMenuButton } from './dropdown-menu-button';
 
 jest.mock('../../utils/uuid');
 

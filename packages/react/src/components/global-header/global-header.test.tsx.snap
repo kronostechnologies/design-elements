@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Application Menu Matches the snapshot (desktop) 1`] = `
+exports[`Global Header Matches the snapshot (desktop) 1`] = `
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -95,7 +95,7 @@ exports[`Application Menu Matches the snapshot (desktop) 1`] = `
 </header>
 `;
 
-exports[`Application Menu Matches the snapshot (mobile) 1`] = `
+exports[`Global Header Matches the snapshot (mobile) 1`] = `
 .c4 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
@@ -234,7 +234,7 @@ exports[`Application Menu Matches the snapshot (mobile) 1`] = `
 </header>
 `;
 
-exports[`Application Menu mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
+exports[`Global Header mobileDrawerContent prop adds a side drawer and burger button in mobile 1`] = `
 .c4 {
   background-color: #FFFFFF;
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);

@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { ToggleSwitch } from './toggle-switch';
-import { getByTestId } from '../../test-utils/enzyme-selectors';
 
 jest.mock('../../utils/uuid');
 

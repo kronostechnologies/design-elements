@@ -1,8 +1,8 @@
 import {
-    ApplicationMenu,
+    GlobalHeader,
     IconButton,
-    NavMenuOption,
     NavMenuButton,
+    NavMenuOption,
     Select,
     Tooltip,
     TooltipPlacement,
@@ -11,8 +11,8 @@ import { Story } from '@storybook/react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { DesktopDecorator } from './utils/device-context-decorator';
-import { RouterDecorator } from './utils/router-decorator';
 import { rawCodeParameters } from './utils/parameters';
+import { RouterDecorator } from './utils/router-decorator';
 
 const Container = styled.div`
     height: 100px;
@@ -97,11 +97,11 @@ export const WithNavMenuButton: Story = () => {
 
     return (
         <Container>
-            <ApplicationMenu>
+            <GlobalHeader>
                 <Tooltip label="Label" desktopPlacement="bottom" disabled={isMenuOpen} delayed>
                     <NavMenuButton iconOnly iconName="info" options={options} onMenuVisibilityChanged={setMenuOpen} />
                 </Tooltip>
-            </ApplicationMenu>
+            </GlobalHeader>
         </Container>
     );
 };

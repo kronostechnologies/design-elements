@@ -1,8 +1,8 @@
 import { ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
-import { v4 as uuid } from '../../utils/uuid';
-import { focus } from '../../utils/css-state';
 import { Theme } from '../../themes';
+import { focus } from '../../utils/css-state';
+import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
 interface StyledLabelProps {

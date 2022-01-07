@@ -59,71 +59,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: inherit;
 }
 
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c2:hover,
-.c2[aria-expanded="true"] {
-  background-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c2:disabled {
-  background-color: transparent;
-  color: #003A5A;
-}
-
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
-}
-
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -443,6 +378,71 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded="true"] {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
 }
 
 <div
@@ -755,71 +755,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   color: inherit;
 }
 
-.c5 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
-  color: #000000;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-}
-
-.c2 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #FFFFFF;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c2:hover,
-.c2[aria-expanded="true"] {
-  background-color: #003A5A;
-  color: #FFFFFF;
-}
-
-.c2:disabled {
-  background-color: transparent;
-  color: #003A5A;
-}
-
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c0 {
-  position: relative;
-}
-
-.c3 {
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  text-transform: unset;
-}
-
-.c4 {
-  margin-left: var(--spacing-1x);
-}
-
-.c6 {
-  max-width: 350px;
-  min-width: 200px;
-  right: 0;
-  width: initial;
-}
-
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1139,6 +1074,71 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   cursor: default;
   fill: #B7BBC2;
   pointer-events: none;
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded="true"] {
+  background-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  color: #003A5A;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  color: #000000;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
 }
 
 <div

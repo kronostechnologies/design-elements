@@ -3,8 +3,8 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { eventIsInside } from '../../utils/events';
+import { IconButton, IconButtonProps } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
-import { IconButtonProps, IconButton } from '../buttons/icon-button';
 
 /* TODO change when updating thematization */
 const lightBlue = '#E0F0F9';

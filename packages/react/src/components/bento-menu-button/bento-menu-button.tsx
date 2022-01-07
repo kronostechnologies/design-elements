@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { FunctionComponent, useRef } from 'react';
 import styled from 'styled-components';
-import { ExternalItem, ExternalItemProps, GroupItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
-import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';
-import { StyledExternalLink } from '../dropdown-menu/list-items/external-item';
-import { DropdownMenuButton, StyledDropdownMenu } from '../dropdown-menu-button/dropdown-menu-button';
-import { Icon } from '../icon/icon';
 import { useTranslation } from '../../i18n/use-translation';
-import { StyledHeading } from '../dropdown-menu/list-items/group-item';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { DropdownMenuButton, StyledDropdownMenu } from '../dropdown-menu-button/dropdown-menu-button';
+import { ExternalItem, ExternalItemProps, GroupItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
+import { StyledExternalLink } from '../dropdown-menu/list-items/external-item';
+import { StyledHeading } from '../dropdown-menu/list-items/group-item';
+import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';
+import { Icon } from '../icon/icon';
 
 const StyledDropdownMenuButton = styled(DropdownMenuButton)`
     ${StyledDropdownMenu} {

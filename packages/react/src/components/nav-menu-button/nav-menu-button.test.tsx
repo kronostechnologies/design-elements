@@ -1,11 +1,8 @@
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import {
-    mountWithProviders,
-    renderWithProviders,
-} from '../../test-utils/renderer';
-import { NavMenuButton } from './nav-menu-button';
+import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { IconButton } from '../buttons/icon-button';
+import { NavMenuButton } from './nav-menu-button';
 
 jest.mock('../../utils/uuid');
 

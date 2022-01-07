@@ -22,6 +22,7 @@ import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
+import { TooltipProps } from '../tooltip/tooltip';
 import { CalendarHeader } from './calendar-header';
 import {
     DayOfWeek,
@@ -34,7 +35,6 @@ import {
     setLocaleFirstDayOfWeek,
     SupportedLocale,
 } from './utils/datepicker-utils';
-import { TooltipProps } from '../tooltip/tooltip';
 
 interface StyledDatePickerProps extends ReactDatePickerProps {
     isMobile: boolean;

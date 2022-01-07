@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
-import { NavItem } from './nav-item';
 import { getByTestId } from '../../../test-utils/enzyme-selectors';
+import { NavItem } from './nav-item';
 
 describe('NavItem', () => {
     it('displays screen-reader-only text when router link opens in a new tab (target="_blank")', () => {

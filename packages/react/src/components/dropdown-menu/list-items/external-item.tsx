@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
+import { focus } from '../../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { ExternalLink, ExternalLinkProps } from '../../external-link/external-link';
-import { focus } from '../../../utils/css-state';
 
 export interface ExternalItemProps extends ExternalLinkProps {
     label: string;

@@ -1,12 +1,4 @@
-import {
-    ChangeEvent,
-    forwardRef,
-    FunctionComponent,
-    Ref,
-    useEffect,
-    useImperativeHandle,
-    useRef,
-} from 'react';
+import { ChangeEvent, forwardRef, FunctionComponent, Ref, useEffect, useImperativeHandle, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon } from '../icon/icon';

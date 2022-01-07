@@ -19,8 +19,8 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
-import { inputsStyle } from './styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
+import { inputsStyle } from './styles/inputs';
 
 const Input = styled.input<{ isMobile: boolean }>`
     ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}

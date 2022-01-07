@@ -1,23 +1,23 @@
 import {
-    useState,
     ChangeEvent,
+    KeyboardEvent,
+    MouseEvent,
     ReactElement,
+    useCallback,
+    useLayoutEffect,
     useMemo,
     useRef,
-    KeyboardEvent,
-    useLayoutEffect,
-    MouseEvent,
-    useCallback,
+    useState,
 } from 'react';
 import styled from 'styled-components';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { TextInput } from '../text-input/text-input';
 import {
     findNextInsertPositionFromPatternInputDiff,
     getPreviousPlaceholderIndex,
     hasAnyDecimalChar,
 } from './phone-input-char-finder';
-import { formatFromPattern, removeNonDigits, removeDigitOnMaskCharRemoval } from './phone-input-value-formater';
-import { TextInput } from '../text-input/text-input';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { formatFromPattern, removeDigitOnMaskCharRemoval, removeNonDigits } from './phone-input-value-formater';
 import { getMaskFromSplitIndex, getValueFromSplitIndex, trimCharAfterMaxLength } from './phone-input-value-parser';
 
 interface PhoneInputProps {

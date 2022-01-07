@@ -1,5 +1,5 @@
-import { Status, StatusType } from './status';
 import { mountWithTheme } from '../../test-utils/renderer';
+import { Status, StatusType } from './status';
 
 const statusTypesArray: StatusType[] = ['enabled', 'disabled', 'blocked'];
 

@@ -1,12 +1,12 @@
 import { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
-import styled, { css } from 'styled-components';
 import { NavLink, NavLinkProps } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import { useTranslation } from '../../../i18n/use-translation';
+import { focus } from '../../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../../device-context-provider/device-context-provider';
 import { IconName } from '../../icon/icon';
-import { ItemContent } from './item-content';
-import { focus } from '../../../utils/css-state';
 import { ScreenReaderOnlyText } from '../../screen-reader-only-text/ScreenReaderOnlyText';
-import { useTranslation } from '../../../i18n/use-translation';
+import { ItemContent } from './item-content';
 
 export interface NavItemProps {
     value: string;
