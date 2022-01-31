@@ -13,4 +13,4 @@ jobs:
           fetch-depth: 0
 
       - name: Run secret scanner
-        uses: kronostechnologies/actions/scan-secrets@v0.0.18
+        uses: kronostechnologies/actions/scan-secrets@v0.0.21
