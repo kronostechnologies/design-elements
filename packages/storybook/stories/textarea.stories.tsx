@@ -10,6 +10,7 @@ export default {
 
 export const Normal: Story = () => (
     <TextArea
+        data-testid="some-data-test-id"
         label="Text area label"
         hint="Hint"
     />

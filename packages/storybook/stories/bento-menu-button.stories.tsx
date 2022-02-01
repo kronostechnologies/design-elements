@@ -64,7 +64,7 @@ const resources: ExternalItemProps[] = [
 
 export const Desktop: Story = () => (
     <GlobalHeader>
-        <BentoMenuButton productLinks={products} externalLinks={resources} />
+        <BentoMenuButton data-testid="some-bento-data-testid" productLinks={products} externalLinks={resources} />
     </GlobalHeader>
 );
 Desktop.decorators = [DesktopDecorator];

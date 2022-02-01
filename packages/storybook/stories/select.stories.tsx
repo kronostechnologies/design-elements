@@ -39,7 +39,7 @@ export default {
 };
 
 export const Normal: Story = () => (
-    <Select label="Select an option" hint="Hint" options={provinces} />
+    <Select data-testid="some-data-test-id" label="Select an option" hint="Hint" options={provinces} />
 );
 
 export const WithTooltip: Story = () => (

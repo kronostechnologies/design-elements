@@ -1,5 +1,6 @@
 import { doNothing } from '../../test-utils/callbacks';
 import { mountWithTheme } from '../../test-utils/renderer';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { Checkbox } from './checkbox';
 
 const defaultProps = {
@@ -9,6 +10,15 @@ const defaultProps = {
 };
 
 describe('Checkbox', () => {
+    test('has controllable data-testid', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <Checkbox data-testid="some-data-testid" {...defaultProps} onChange={callback} />,
+        );
+
+        expect(getByTestId(wrapper, 'some-data-testid').exists()).toBe(true);
+    });
+
     test('onChange callback should be called when checkbox is checked / unchecked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(<Checkbox {...defaultProps} onChange={callback} />);

@@ -178,6 +178,18 @@ describe('Datepicker', () => {
         expect(getByTestId(wrapper, 'text-input').props().value).toBe('2002-02-02');
     });
 
+    test('has controllable data-testid)', () => {
+        const wrapper = mountWithTheme(<Datepicker data-testid="some-data-test-id" label="date" />);
+
+        expect(getByTestId(wrapper, 'some-data-test-id').exists()).toBeTruthy();
+    });
+
+    test('matches snapshot (data-testid)', () => {
+        const tree = renderWithProviders(<Datepicker data-testid="some-data-test-id" label="date" />, 'desktop');
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('matches snapshot (desktop)', () => {
         const tree = renderWithProviders(<Datepicker label="date" />, 'desktop');
 

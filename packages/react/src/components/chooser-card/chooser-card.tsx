@@ -2,6 +2,7 @@ import { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, 
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import * as S from './styled-components';
 
 interface ChooserCardProps {
@@ -31,12 +32,14 @@ export function ChooserCard({
     required,
     value,
     onChange,
+    ...otherProps
 }: ChooserCardProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLLabelElement>(null);
     const [isInputChecked, setInputCheck] = useState(defaultChecked);
+    const dataAttributes = useDataAttributes(otherProps);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, containerRef.current);
@@ -94,6 +97,7 @@ export function ChooserCard({
                     onBlur={handleBlur}
                     onChange={handleChange}
                     onMouseDown={(e) => e.preventDefault()}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
                 <S.RadioInput disabled={disabled} isMobile={isMobile} />
             </S.InputContainer>

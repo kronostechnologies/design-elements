@@ -1,5 +1,6 @@
 import { ReactElement, useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { ChooserButton } from '../chooser-button/chooser-button';
 
 export interface ChooserButtonOption {
@@ -40,8 +41,16 @@ const Skip = styled.div`
 `;
 
 export function ChooserButtonGroup({
-    inColumns, groupName, onChange, options, skipOption, value,
+    inColumns,
+    groupName,
+    onChange,
+    options,
+    skipOption,
+    value,
+    ...props
 }: ChooserButtonGroupProps): ReactElement {
+    const dataAttributes = useDataAttributes(props);
+    const dataTestId = dataAttributes['data-testid'] ?? 'chooser-button-group';
     const [isControlled] = useState(value !== undefined);
 
     const handleChange = useCallback((option: ChooserButtonOption): void => {
@@ -72,6 +81,7 @@ export function ChooserButtonGroup({
             {skipOption && (
                 <Skip>
                     <ChooserButton
+                        data-testid={`${dataTestId}-${skipOption.value}`}
                         groupName={groupName}
                         onChange={() => handleChange(skipOption)}
                         type="radio"

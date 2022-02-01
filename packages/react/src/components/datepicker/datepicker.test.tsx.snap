@@ -290,6 +290,296 @@ label + .c3 {
 </div>
 `;
 
+exports[`Datepicker matches snapshot (data-testid) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^="bottom"] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 30px;
+  margin: 0;
+  width: 32px;
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 40px;
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: 40px;
+  line-height: 2.5rem;
+  width: 40px;
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: 32px;
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 109px;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-left: none;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 32px;
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+}
+
+.c6:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="some-data-test-id"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c6"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Datepicker matches snapshot (desktop) 1`] = `
 .c2 {
   color: #000000;
@@ -1997,7 +2287,7 @@ label + .c3 {
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
-                            data-testid="input"
+                            data-testid="month-select"
                             type="text"
                             value="Oct"
                           />
@@ -2037,7 +2327,7 @@ label + .c3 {
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
-                            data-testid="input"
+                            data-testid="year-select"
                             type="text"
                             value="2010"
                           />
@@ -3132,7 +3422,7 @@ label + .c3 {
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
-                            data-testid="input"
+                            data-testid="month-select"
                             type="text"
                             value="Oct"
                           />
@@ -3172,7 +3462,7 @@ label + .c3 {
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
-                            data-testid="input"
+                            data-testid="year-select"
                             type="text"
                             value="2010"
                           />
@@ -4178,7 +4468,7 @@ label + .c3 {
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
-                            data-testid="input"
+                            data-testid="month-select"
                             type="text"
                             value="Oct"
                           />
@@ -4218,7 +4508,7 @@ label + .c3 {
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
-                            data-testid="input"
+                            data-testid="year-select"
                             type="text"
                             value="2010"
                           />

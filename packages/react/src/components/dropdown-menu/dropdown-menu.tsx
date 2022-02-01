@@ -1,5 +1,6 @@
 import { forwardRef, KeyboardEvent, ReactElement, Ref, useMemo } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { v4 as uuid } from '../../utils/uuid';
 import { GroupItemProps } from './list-items';
 
@@ -28,8 +29,10 @@ export const DropdownMenu = forwardRef(({
     id: providedId,
     hidden,
     onKeyDown,
+    ...otherProps
 }: DropdownMenuProps, ref: Ref<HTMLDivElement>): ReactElement => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
+    const dataAttributes = useDataAttributes(otherProps);
 
     return (
         <List
@@ -39,6 +42,7 @@ export const DropdownMenu = forwardRef(({
             id={id}
             hidden={hidden}
             onKeyDownCapture={(event: KeyboardEvent<HTMLDivElement>) => onKeyDown?.(event)}
+            {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {children}
         </List>

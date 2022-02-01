@@ -260,7 +260,7 @@ input + .c1 {
   </label>
   <textarea
     class="c3"
-    data-testid="textarea"
+    data-testid="some-data-testid"
     placeholder="Enter your comment"
     required=""
   >

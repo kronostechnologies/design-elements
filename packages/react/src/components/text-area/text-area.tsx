@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { v4 as uuid } from '../../utils/uuid';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -77,12 +78,14 @@ export function TextArea({
     validationErrorMessage,
     value,
     maxLength,
+    ...otherProps
 }: TextAreaProps): ReactElement {
     const { t } = useTranslation('text-area');
     const [validity, setValidity] = useState(true);
     const [inputValueLength, setInputValueLength] = useState(getInitialValue(value, defaultValue));
     const idTextArea = useMemo(uuid, []);
     const idCounter = useMemo(uuid, []);
+    const dataAttributes = useDataAttributes(otherProps);
 
     function handleBlur(event: FocusEvent<HTMLTextAreaElement>): void {
         if (maxLength === undefined || inputValueLength <= maxLength) {
@@ -149,6 +152,7 @@ export function TextArea({
                 placeholder={placeholder}
                 required={required}
                 value={value}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
             {maxLength && (
                 <Counter

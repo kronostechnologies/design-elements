@@ -10,7 +10,7 @@ export default {
 
 export const Normal: Story = () => (
     <>
-        <ChooserCard name="story1" label="Card 1" value="card1">
+        <ChooserCard data-testid="some-data-testid" name="story1" label="Card 1" value="card1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
         </ChooserCard>

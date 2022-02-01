@@ -1,6 +1,7 @@
 import { useMemo, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const Input = styled.input`
     ${({ theme }) => css`
@@ -36,13 +37,26 @@ interface OptionButtonProps {
 }
 
 export const OptionButton: VoidFunctionComponent<OptionButtonProps> = ({
-    checked, className, label, name, value,
+    checked,
+    className,
+    label,
+    name,
+    value,
+    ...otherProps
 }: OptionButtonProps) => {
     const id = useMemo(uuid, []);
+    const dataAttributes = useDataAttributes(otherProps);
 
     return (
         <div className={className}>
-            <Input checked={checked} id={id} name={name} type="radio" value={value} />
+            <Input
+                checked={checked}
+                id={id}
+                name={name}
+                type="radio"
+                value={value}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+            />
             <label htmlFor={id}>{label}</label>
         </div>
     );

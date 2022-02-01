@@ -1,6 +1,7 @@
 import { ChangeEvent, ChangeEventHandler, forwardRef, ReactNode, Ref, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from '../../utils/uuid';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { hiddenStyle } from '../visually-hidden/styles/visuallyhidden';
 import { Label } from './styles/choose';
 
@@ -22,11 +23,19 @@ interface ChooserButtonProps {
 export const ChooserButton = forwardRef(
     (
         {
-            defaultChecked, checked, children, groupName, onChange, type, value,
+            defaultChecked,
+            checked,
+            children,
+            groupName,
+            onChange,
+            type,
+            value,
+            ...otherProps
         }: ChooserButtonProps,
         ref: Ref<HTMLInputElement>,
     ) => {
         const id = useMemo(() => uuid(), []);
+        const dataAttributes = useDataAttributes(otherProps);
 
         const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
             onChange(event);
@@ -43,6 +52,7 @@ export const ChooserButton = forwardRef(
                     ref={ref}
                     type={type}
                     value={value}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
                 <Label htmlFor={id}>{children}</Label>
             </>

@@ -1039,6 +1039,7 @@ exports[`Table has selectable rows styles 1`] = `
         >
           <input
             class="c2"
+            data-testid="row-checkbox-all"
             type="checkbox"
           />
           <span
@@ -1096,6 +1097,7 @@ exports[`Table has selectable rows styles 1`] = `
         >
           <input
             class="c2"
+            data-testid="row-checkbox-0"
             type="checkbox"
           />
           <span
@@ -1145,6 +1147,7 @@ exports[`Table has selectable rows styles 1`] = `
         >
           <input
             class="c2"
+            data-testid="row-checkbox-1"
             type="checkbox"
           />
           <span
@@ -1194,6 +1197,7 @@ exports[`Table has selectable rows styles 1`] = `
         >
           <input
             class="c2"
+            data-testid="row-checkbox-2"
             type="checkbox"
           />
           <span

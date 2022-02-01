@@ -2,6 +2,7 @@ import { ChangeEvent, forwardRef, FunctionComponent, Ref, useEffect, useImperati
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon } from '../icon/icon';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const checkboxWidth = '16px';
 
@@ -111,10 +112,12 @@ export const Checkbox: FunctionComponent<Props> = forwardRef(({
     name,
     value,
     onChange,
+    ...otherProps
 }, ref: Ref<HTMLInputElement | null>) => {
     const checkboxRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(ref, () => checkboxRef.current, [checkboxRef]);
+    const dataAttributes = useDataAttributes(otherProps);
 
     useEffect(() => {
         if (checkboxRef.current) {
@@ -141,6 +144,7 @@ export const Checkbox: FunctionComponent<Props> = forwardRef(({
                 defaultChecked={defaultChecked}
                 disabled={disabled}
                 onChange={onChange}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
             <CustomCheckbox disabled={disabled}>
                 <CheckMarkIcon />

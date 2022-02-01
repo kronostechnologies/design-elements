@@ -1,5 +1,6 @@
 import { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Checkbox } from '../checkbox/checkbox';
 
 const Legend = styled.legend`
@@ -24,8 +25,15 @@ interface CheckboxProps {
 }
 
 export function CheckboxGroup({
-    label, checkedValues, checkboxGroup, onChange,
+    label,
+    checkedValues,
+    checkboxGroup,
+    onChange,
+    ...props
 }: CheckboxProps): ReactElement {
+    const dataAttributes = useDataAttributes(props);
+    const dataTestId = dataAttributes['data-testid'] ?? 'checkboxGroup';
+
     return (
         <>
             {label && <Legend>{label}</Legend>}
@@ -39,6 +47,7 @@ export function CheckboxGroup({
                 <Checkbox
                     key={`${name}-${value}`}
                     checked={checkedValues?.includes(value)}
+                    data-testid={`${dataTestId}-${value}`}
                     defaultChecked={defaultChecked}
                     disabled={disabled}
                     label={checkboxLabel}

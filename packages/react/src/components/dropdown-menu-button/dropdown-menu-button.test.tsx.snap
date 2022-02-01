@@ -467,7 +467,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   </button>
   <div
     class="c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-dropdownMenu"
   >
     <ul
       aria-labelledby="firstGroup"
@@ -1163,7 +1163,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   </button>
   <div
     class="c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-dropdownMenu"
     hidden=""
   >
     <ul

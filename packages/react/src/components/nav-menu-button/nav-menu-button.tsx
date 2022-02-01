@@ -11,6 +11,7 @@ import {
 } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { menuDimensions } from '../../tokens/menuDimensions';
 import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
@@ -102,6 +103,7 @@ export function NavMenuButton({
     onMenuVisibilityChanged,
     options,
     title,
+    ...props
 }: MenuButtonProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
@@ -109,6 +111,7 @@ export function NavMenuButton({
     const [focusedValue, setFocusedValue] = useState('');
     const [isOpen, setOpen] = useState(defaultOpen);
     const containerAriaLabel = tag === 'div' ? '' : ariaLabel || t('ariaLabel');
+    const dataAttributes = useDataAttributes(props);
 
     useEffect(() => {
         onMenuVisibilityChanged?.(isOpen);
@@ -196,6 +199,8 @@ export function NavMenuButton({
                     type="button"
                     buttonType={buttonType}
                     inverted={inverted}
+                    // eslint-disable-next-line react/jsx-props-no-spreading
+                    {...dataAttributes}
                 >
                     {iconName && <StyledLeftIcon aria-hidden="true" name={iconName} size="16" />}
                     {children}

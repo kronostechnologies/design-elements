@@ -55,6 +55,14 @@ describe('Select', () => {
         expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
     });
 
+    test('input should have controllable data-test-id', () => {
+        const wrapper = shallow(
+            <Select data-testid="a-controlled-id" options={provinces} defaultValue="qc" />,
+        );
+
+        expect(getByTestId(wrapper, 'a-controlled-id').props().value).toBe('Quebec');
+    });
+
     test('input should have default value', () => {
         const wrapper = shallow(<Select options={provinces} defaultValue="qc" />);
 

@@ -2,6 +2,7 @@ import { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } f
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { TextInput } from '../text-input/text-input';
 
 type Language = 'en' | 'fr';
@@ -76,6 +77,7 @@ export function MoneyInput({
     locale = 'fr-CA',
     currency = 'CAD',
     hint,
+    ...otherProps
 }: Props): ReactElement {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
@@ -83,6 +85,7 @@ export function MoneyInput({
     const [displayValue, setDisplayValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [maskedValue, setMaskedValue] = useState(safeFormatCurrency(value, precision, locale, currency));
     const [hasFocus, setHasFocus] = useState<boolean>(false);
+    const dataAttributes = useDataAttributes(otherProps);
 
     const updateFormattedValue: (rawValue: string) => void = useCallback((rawValue) => {
         const roundedValue = parseAndRound(rawValue, precision);
@@ -154,6 +157,7 @@ export function MoneyInput({
                 onFocus={handleFocusEvent}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
                 hint={hint}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </InputWrapper>
     );

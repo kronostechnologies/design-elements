@@ -216,6 +216,7 @@ input[type="radio"]:disabled + .c3 {
   >
     <input
       class="c1"
+      data-testid="chooser-button-group-skip"
       name="maritalStatus"
       type="radio"
       value="skip"
