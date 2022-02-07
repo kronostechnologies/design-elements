@@ -13,10 +13,10 @@ jobs:
           fetch-depth: 0
 
       - name: Setup asdf-vm
-        uses: kronostechnologies/actions/with-asdf-vm@v0.0.18
+        uses: kronostechnologies/actions/with-asdf-vm@v0.0.22
 
       - name: Install NPM dependencies
-        uses: kronostechnologies/actions/yarn-install@v0.0.18
+        uses: kronostechnologies/actions/yarn-install@v0.0.22
 
       - name: Run license audit
         id: audit
