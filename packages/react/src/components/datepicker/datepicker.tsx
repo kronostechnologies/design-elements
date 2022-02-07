@@ -109,6 +109,10 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         }
     }
 
+    .react-datepicker__day-names {
+        margin: 0;
+    }
+
     .react-datepicker__day-name {
         font-size: 0.875rem;
         font-weight: var(--font-bold);

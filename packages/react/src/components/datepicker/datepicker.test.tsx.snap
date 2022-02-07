@@ -101,6 +101,10 @@ input + .c1 {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
 .c4 .react-datepicker__day-name {
   font-size: 0.875rem;
   font-weight: var(--font-bold);
@@ -383,6 +387,10 @@ input + .c1 {
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
 }
 
 .c4 .react-datepicker__day-name {
@@ -669,6 +677,10 @@ input + .c1 {
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
 }
 
 .c4 .react-datepicker__day-name {
@@ -987,6 +999,10 @@ input + .c1 {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c7 .react-datepicker__day-names {
+  margin: 0;
+}
+
 .c7 .react-datepicker__day-name {
   font-size: 0.875rem;
   font-weight: var(--font-bold);
@@ -1295,6 +1311,10 @@ input + .c1 {
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
 }
 
 .c4 .react-datepicker__day-name {
@@ -1736,6 +1756,10 @@ input + .c1 {
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
 }
 
 .c4 .react-datepicker__day-name {
@@ -2863,6 +2887,10 @@ input + .c1 {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
 .c4 .react-datepicker__day-name {
   font-size: 0.875rem;
   font-weight: var(--font-bold);
@@ -3921,6 +3949,10 @@ input + .c1 {
 .c4 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
 }
 
 .c4 .react-datepicker__day-name {
