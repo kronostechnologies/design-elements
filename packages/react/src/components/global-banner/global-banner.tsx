@@ -1,4 +1,14 @@
-import { forwardRef, MouseEvent, ReactElement, ReactNode, Ref, SVGProps, useState } from 'react';
+import {
+    forwardRef,
+    MouseEvent,
+    ReactElement,
+    ReactNode,
+    Ref,
+    SVGProps,
+    useState,
+    useCallback,
+    MouseEventHandler,
+} from 'react';
 import styled, { css, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Button } from '../buttons/button';
@@ -206,6 +216,7 @@ interface Props {
      */
     dismissable?: boolean;
     label: string;
+    onDismiss?(): void;
     type?: GlobalBannerType;
 }
 
@@ -216,6 +227,7 @@ export const GlobalBanner = forwardRef(({
     hidden,
     dismissable = false,
     label,
+    onDismiss,
     secondaryActionButton,
     type = 'default',
 }: Props, ref: Ref<HTMLElement>): ReactElement | null => {
@@ -224,6 +236,11 @@ export const GlobalBanner = forwardRef(({
     const { t } = useTranslation('global-banner');
     const hasDismissButton = type !== 'alert' && dismissable;
     const hasButtons = hasDismissButton || actionButton || secondaryActionButton;
+
+    const handleDismiss: MouseEventHandler = useCallback(() => {
+        onDismiss?.();
+        setVisible(false);
+    }, [onDismiss]);
 
     return visible ? (
         <Container
@@ -279,7 +296,7 @@ export const GlobalBanner = forwardRef(({
                         <TertiaryButton
                             data-testid="dismiss-button"
                             bannerType={type}
-                            onClick={() => setVisible(false)}
+                            onClick={handleDismiss}
                             type="button"
                         >
                             {t('ignore')}

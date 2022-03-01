@@ -84,3 +84,14 @@ export const WithDismissButton: Story = () => (
         Cannot dismiss me.
     </GlobalBanner>
 );
+
+export const WithOnDismissCallback: Story = () => (
+    <GlobalBanner
+        label="With dismiss button and onDismiss callback."
+        type="info"
+        onDismiss={() => console.info('onDismiss callback !')}
+        dismissable
+    >
+        You can dismiss me and onDismiss callback will be called
+    </GlobalBanner>
+);

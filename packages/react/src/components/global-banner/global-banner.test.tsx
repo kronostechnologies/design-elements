@@ -88,6 +88,24 @@ describe('GlobalBanner', () => {
         expect(getByTestId(wrapper, 'container').exists()).toBe(false);
     });
 
+    test('dimiss-button calls onDismiss', () => {
+        const onDismiss = jest.fn();
+        const wrapper = mountWithTheme(
+            <GlobalBanner
+                actionButton={defaultActionButton}
+                label="Test"
+                onDismiss={onDismiss}
+                dismissable
+            >
+                WARNING! test test
+            </GlobalBanner>,
+        );
+
+        getByTestId(wrapper, 'dismiss-button').simulate('click');
+
+        expect(onDismiss).toHaveBeenCalled();
+    });
+
     test('should not have dismiss-button when type is alert', () => {
         const wrapper = mountWithTheme(
             <GlobalBanner
