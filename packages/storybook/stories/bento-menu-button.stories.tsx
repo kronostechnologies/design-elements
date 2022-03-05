@@ -81,3 +81,24 @@ export const WithNavContainer: Story = () => (
         <BentoMenuButton tag="nav" productLinks={products} externalLinks={resources} />
     </GlobalHeader>
 );
+
+export const WithCustomProductGroups: Story = () => (
+    <GlobalHeader>
+        <BentoMenuButton
+            tag="nav"
+            productGroups={[
+                {
+                    name: 'groupA',
+                    label: 'Label Group A',
+                    productLinks: [products[0], products[1]],
+                },
+                {
+                    name: 'groupB',
+                    label: 'Label Group B',
+                    productLinks: [products[2], products[3]],
+                },
+            ]}
+            externalLinks={resources}
+        />
+    </GlobalHeader>
+);

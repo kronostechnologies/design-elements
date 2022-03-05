@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { DropdownMenuButton, StyledDropdownMenu } from '../dropdown-menu-button/dropdown-menu-button';
-import { ExternalItem, ExternalItemProps, GroupItem, NavItem, NavItemProps } from '../dropdown-menu/list-items';
+import { ExternalItem, ExternalItemProps, GroupItem, NavItemProps } from '../dropdown-menu/list-items';
 import { StyledExternalLink } from '../dropdown-menu/list-items/external-item';
 import { StyledHeading } from '../dropdown-menu/list-items/group-item';
 import { HtmlLink, StyledNavItem } from '../dropdown-menu/list-items/nav-item';
 import { Icon } from '../icon/icon';
+import { ProductGroup, ProductGroupProps } from './product-group';
 
 const StyledDropdownMenuButton = styled(DropdownMenuButton)`
     ${StyledDropdownMenu} {
@@ -54,7 +55,8 @@ interface BentoMenuButtonProps {
     /** Set wrapper element tag */
     tag?: 'div' | 'nav';
     onMenuVisibilityChanged?(isOpen: boolean): void;
-    productLinks: NavItemProps[];
+    productGroups?: ProductGroupProps[];
+    productLinks?: NavItemProps[];
     title?: string,
 }
 
@@ -64,39 +66,42 @@ export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
     externalLinks,
     tag,
     onMenuVisibilityChanged,
+    productGroups,
     productLinks,
     title,
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('bento');
     const firstItemRef = useRef<HTMLAnchorElement>(null);
+    if (productGroups && productLinks) {
+        throw new Error('invalid props. bento-menu-button cannot have both productLinks and productGroups.');
+    }
+
+    let productLinkGroups = productGroups ?? [];
+    if (productLinks && !productGroups) {
+        if (productLinks.length > 0) {
+            productLinkGroups = [{
+                label: t('productsLabel'),
+                name: 'product',
+                productLinks,
+            }];
+        }
+    }
+
     return (
         <StyledDropdownMenuButton
             render={(close) => (
                 <>
-                    {productLinks.length > 0 && (
-                        <GroupItem label={t('productsLabel')} id="product-links" data-testid="products-group">
-                            {productLinks.map((product, idx) => (
-                                <NavItem
-                                    ref={idx === 0 ? firstItemRef : undefined}
-                                    target="_blank"
-                                    data-testid={`product-${product.value}`}
-                                    key={`product-${product.value}`}
-                                    value={product.value}
-                                    label={product.label}
-                                    href={product.href}
-                                    iconName={product.iconName || 'equisoft'}
-                                    description={product.description}
-                                    isHtmlLink={product.isHtmlLink}
-                                    lozenge={product.lozenge}
-                                    disabled={product.disabled}
-                                    onClick={product.disabled ? undefined : (event) => {
-                                        product.onClick?.(event);
-                                        close();
-                                    }}
-                                />
-                            ))}
-                        </GroupItem>
+                    {productLinkGroups.length > 0 && (
+                        productLinkGroups.map((productLinkGroup) => (
+                            <ProductGroup
+                                firstItemRef={firstItemRef}
+                                label={productLinkGroup.label}
+                                name={productLinkGroup.name}
+                                onClick={close}
+                                productLinks={productLinkGroup.productLinks}
+                            />
+                        ))
                     )}
                     {externalLinks.length > 0 && (
                         <GroupItem label={t('externalsLabel')} id="external-links" data-testid="resources-group">
