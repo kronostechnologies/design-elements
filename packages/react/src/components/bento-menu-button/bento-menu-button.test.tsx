@@ -33,6 +33,22 @@ function givenProducts(): NavItemProps[] {
     ];
 }
 
+function givenOtherProducts(): NavItemProps[] {
+    return [
+        {
+            label: 'Option E',
+            value: 'optionE',
+            href: '/teste',
+            onClick: jest.fn(),
+        },
+        {
+            label: 'Option F',
+            value: 'optionF',
+            href: '/testf',
+        },
+    ];
+}
+
 function givenExternals(): ExternalItemProps[] {
     return [
         {
@@ -114,6 +130,31 @@ describe('BentoMenuButton', () => {
         expect(getByTestId(wrapper, 'resources-group').exists()).toBe(false);
     });
 
+    test('should throw exception if both productGroups and productLinks are passed', () => {
+        const productGroupA = {
+            label: 'Product Group A',
+            name: 'A',
+            productLinks: products,
+        };
+        const productGroupB = {
+            label: 'Product Group A',
+            name: 'A',
+            productLinks: givenOtherProducts(),
+        };
+
+        const callback = (): void => {
+            renderWithProviders(
+                <BentoMenuButton
+                    productGroups={[productGroupA, productGroupB]}
+                    productLinks={products}
+                    externalLinks={externals}
+                />,
+            );
+        };
+
+        expect(callback).toThrow(Error);
+    });
+
     test('Matches Snapshot (tag="nav")', () => {
         const tree = renderWithProviders(
             <BentoMenuButton tag="nav" productLinks={products} externalLinks={externals} />,
@@ -122,9 +163,31 @@ describe('BentoMenuButton', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Matches Snapshot', () => {
+    test('Matches Snapshot (productLinks and externalLinks)', () => {
         const tree = renderWithProviders(
             <BentoMenuButton productLinks={products} externalLinks={externals} />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Matches Snapshot (productGroups and externalLinks)', () => {
+        const productGroupA = {
+            label: 'Product Group A',
+            name: 'A',
+            productLinks: products,
+        };
+        const productGroupB = {
+            label: 'Product Group A',
+            name: 'A',
+            productLinks: givenOtherProducts(),
+        };
+
+        const tree = renderWithProviders(
+            <BentoMenuButton
+                productGroups={[productGroupA, productGroupB]}
+                externalLinks={externals}
+            />,
         );
 
         expect(tree).toMatchSnapshot();
