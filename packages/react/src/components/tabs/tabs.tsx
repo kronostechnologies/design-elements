@@ -1,4 +1,12 @@
-import { createRef, KeyboardEvent, ReactNode, RefObject, useMemo, useState, VoidFunctionComponent } from 'react';
+import {
+    createRef,
+    KeyboardEvent,
+    ReactNode,
+    RefObject,
+    useMemo,
+    useState,
+    VoidFunctionComponent,
+} from 'react';
 import styled from 'styled-components';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
@@ -18,12 +26,14 @@ export interface Tab {
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
+    onBeforeUnload?: () => boolean;
 }
 
 interface TabItem extends Tab {
     id: string;
     panelId: string;
     buttonRef: RefObject<HTMLButtonElement>;
+    onBeforeUnload?: () => boolean;
 }
 
 interface Props {
@@ -47,6 +57,16 @@ export const Tabs: VoidFunctionComponent<Props> = ({
         }),
     ), [tabs]);
     const [selectedTab, setSelectedTab] = useState(tabItems[0]);
+
+    function handleTabSelected(tabItem: TabItem): void {
+        if (selectedTab?.onBeforeUnload) {
+            if (selectedTab.onBeforeUnload?.()) {
+                setSelectedTab(tabItem);
+            }
+        } else {
+            setSelectedTab(tabItem);
+        }
+    }
 
     function isTabSelected(tabId: string): boolean {
         return selectedTab.id === tabId;
@@ -118,7 +138,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
                         rightIcon={tabItem.rightIcon}
                         isSelected={isTabSelected(tabItem.id)}
                         ref={tabItem.buttonRef}
-                        onClick={() => setSelectedTab(tabItem)}
+                        onClick={() => handleTabSelected(tabItem)}
                         onKeyDown={(event) => handleButtonKeyDown(event, tabItem)}
                     >
                         {tabItem.title}

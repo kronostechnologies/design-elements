@@ -82,6 +82,46 @@ describe('Tabs', () => {
         expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(false);
     });
 
+    test('tab panel should not change if onBeforeUnload cancels tab selection', () => {
+        const tabs: Tab[] = givenTabs(2);
+        const shouldConfirmTabUnload = false;
+        tabs[0] = {
+            ...tabs[0],
+            onBeforeUnload: () => shouldConfirmTabUnload,
+        };
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+
+        getByTestId(wrapper, 'tab-button-2').simulate('click');
+
+        expectPanelToBeRendered(wrapper, 'tab-panel-1');
+    });
+
+    test('tab panel should change if no onBeforeUnload callback was provided', () => {
+        const tabs: Tab[] = givenTabs(2);
+        tabs[0] = {
+            ...tabs[0],
+        };
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+
+        getByTestId(wrapper, 'tab-button-2').simulate('click');
+
+        expectPanelToBeRendered(wrapper, 'tab-panel-2');
+    });
+
+    test('tab panel should change if onBeforeUnload confirms tab selection', () => {
+        const tabs: Tab[] = givenTabs(2);
+        const shouldConfirmTabOnClick = true;
+        tabs[0] = {
+            ...tabs[0],
+            onBeforeUnload: () => shouldConfirmTabOnClick,
+        };
+        const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
+
+        getByTestId(wrapper, 'tab-button-2').simulate('click');
+
+        expectPanelToBeRendered(wrapper, 'tab-panel-2');
+    });
+
     test('tab-panels should all be initially mounted when forceRenderTabPanels is set to true', () => {
         const tabs: Tab[] = givenTabs(2);
 
