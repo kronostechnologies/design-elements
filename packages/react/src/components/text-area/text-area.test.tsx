@@ -50,8 +50,19 @@ describe('TextArea', () => {
         expect(callback).toHaveBeenCalledTimes(0);
     });
 
+    test('onFocus callback cannot be called when disabled', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(<TextArea onBlur={callback} {...defaultProps} disabled />);
+
+        wrapper.find('textarea').simulate('focus');
+
+        expect(callback).toHaveBeenCalledTimes(0);
+    });
+
     test('Matches the snapshot', () => {
-        const tree = renderWithTheme(<TextArea onChange={doNothing} onBlur={doNothing} {...defaultProps} />);
+        const tree = renderWithTheme(
+            <TextArea data-testid="some-data-testid" onChange={doNothing} onBlur={doNothing} {...defaultProps} />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

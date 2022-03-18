@@ -29,6 +29,7 @@ export default {
 
 export const Normal: Story = () => (
     <ChooserButtonGroup
+        data-testid='chooser-button-group'
         groupName="maritalStatus"
         inColumns={false}
         options={maritalStatus}

@@ -4,6 +4,7 @@ import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 interface StyledLabelProps {
     theme: Theme;
@@ -90,11 +91,16 @@ interface ToggleSwitchProps {
 }
 
 export function ToggleSwitch({
-    label, disabled, onToggle, toggled,
+    label,
+    disabled,
+    onToggle,
+    toggled,
+    ...otherProps
 } : ToggleSwitchProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const labelId = useMemo(uuid, []);
     const buttonId = useMemo(uuid, []);
+    const dataAttributes = useDataAttributes(otherProps);
 
     const handleClick = (): void => {
         onToggle(!toggled);
@@ -113,6 +119,7 @@ export function ToggleSwitch({
                 isMobile={isMobile}
                 disabled={disabled}
                 onClick={handleClick}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 <StyledButtonSpan isMobile={isMobile} />
             </StyledButton>

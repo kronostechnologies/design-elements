@@ -279,6 +279,7 @@ interface DatepickerProps {
     className?: string;
     /** Sets date format (e.g.: dd/MM/yyyy). */
     dateFormat?: string;
+    'data-testid'?: string;
     disabled?: boolean;
     /** Disables default margin */
     noMargin?: boolean;
@@ -339,15 +340,15 @@ export const Datepicker = forwardRef(({
     className,
     dateFormat,
     disabled,
-    noMargin,
     firstDayOfWeek,
     hasTodayButton,
+    hint,
     id,
     label,
-    tooltip,
     locale = 'en-CA',
     maxDate,
     minDate,
+    noMargin,
     onBlur,
     onCalendarClose,
     onCalendarOpen,
@@ -357,9 +358,9 @@ export const Datepicker = forwardRef(({
     placeholder,
     startDate,
     startOpen,
+    tooltip,
     valid = true,
     validationErrorMessage,
-    hint,
     ...props
 }: DatepickerProps, ref: Ref<DatepickerHandles>): ReactElement => {
     const { t } = useTranslation('datepicker');
@@ -491,7 +492,12 @@ export const Datepicker = forwardRef(({
             >
                 <Container isMobile={isMobile}>
                     <StyledDatePicker
-                        customInput={<input type="text" data-testid="text-input" />}
+                        customInput={(
+                            <input
+                                type="text"
+                                data-testid={props['data-testid'] ?? 'text-input'}
+                            />
+                        )}
                         isMobile={isMobile}
                         id={fieldId}
                         ref={dateInputRef}

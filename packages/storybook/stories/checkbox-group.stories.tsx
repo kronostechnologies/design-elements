@@ -39,7 +39,7 @@ function handleChange(event: ChangeEvent<HTMLInputElement>): void {
 }
 
 export const Normal: Story = () => (
-    <CheckboxGroup label="Vehicule" checkboxGroup={Checkboxes} />
+    <CheckboxGroup data-testid='some-checkbox-group-data-testid' label="Vehicule" checkboxGroup={Checkboxes} />
 );
 
 export const Disabled: Story = () => (

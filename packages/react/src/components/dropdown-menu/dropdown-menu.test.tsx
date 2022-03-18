@@ -1,3 +1,4 @@
+import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { DropdownMenu } from './dropdown-menu';
@@ -44,5 +45,13 @@ describe('DropdownMenu', () => {
         );
 
         expect(tree).toMatchSnapshot();
+    });
+
+    test('has controllable data-testid', () => {
+        const tree = shallow(
+            <DropdownMenu data-testid="some-data-testid" hidden>{TestGroups}</DropdownMenu>,
+        );
+
+        expect(getByTestId(tree, 'some-data-testid').exists()).toBe(true);
     });
 });

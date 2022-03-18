@@ -11,6 +11,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
@@ -91,6 +92,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     onMenuVisibilityChanged,
     render,
     title,
+    ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
@@ -101,6 +103,8 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
     const navRef = useRef<HTMLDivElement>(null);
     const isIconOnly = icon && !label && !hasCaret;
     const containerAriaLabel = (tag === 'div' || tag === undefined) ? '' : ariaLabel || t('ariaLabel');
+    const dataAttributes = useDataAttributes(otherProps);
+    const dataTestId = dataAttributes['data-testid'] ?? 'menu-dropdownMenu';
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
@@ -218,7 +222,7 @@ export const DropdownMenuButton: VoidFunctionComponent<MenuButtonProps> = ({
             )}
             <StyledDropdownMenu
                 ref={navMenuRef}
-                data-testid="menu-dropdownMenu"
+                data-testid={dataTestId}
                 onKeyDown={handleNavMenuKeyDown}
                 hidden={!isOpen}
             >

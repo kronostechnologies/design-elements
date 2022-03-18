@@ -10,7 +10,7 @@ export default {
 
 export const Normal: Story = () => (
     <>
-        <MoneyInput hint="Hint" label="Entrez un montant" />
+        <MoneyInput data-testid='some-data-testid' hint="Hint" label="Entrez un montant" />
         <MoneyInput hint="Hint" label="Choose a number" locale="en-CA" />
     </>
 );

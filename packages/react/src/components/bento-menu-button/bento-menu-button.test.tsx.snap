@@ -515,7 +515,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   </button>
   <div
     class="c4 c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-dropdownMenu"
     hidden=""
   >
     <h3
@@ -1362,7 +1362,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   </button>
   <div
     class="c4 c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-dropdownMenu"
     hidden=""
   >
     <h3
@@ -2121,7 +2121,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   </button>
   <div
     class="c4 c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-dropdownMenu"
     hidden=""
   >
     <h3

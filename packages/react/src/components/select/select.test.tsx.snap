@@ -805,6 +805,7 @@ input + .c2 {
 
 <input
     class="c0"
+    data-testid="select-skip-option"
     name="undefined_skip"
     type="radio"
     value="skip"
@@ -1270,6 +1271,7 @@ input + .c2 {
 
 <input
     class="c0"
+    data-testid="select-skip-option"
     name="undefined_skip"
     type="radio"
     value="skip"

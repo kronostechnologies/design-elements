@@ -7,6 +7,7 @@ import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { ChooserButton } from '../chooser-button/chooser-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
@@ -204,10 +205,12 @@ export function Select({
     validationErrorMessage,
     value,
     hint,
+    ...otherProps
 }: SelectProps): ReactElement {
     const { t } = useTranslation('select');
     const { device, isMobile } = useDeviceContext();
     const fieldId = useMemo(() => id || uuid(), [id]);
+    const dataAttributes = useDataAttributes(otherProps);
 
     const [autoFocus, setAutofocus] = useState(false);
     const [containerOutline, setContainerOutline] = useState(false);
@@ -553,6 +556,7 @@ export function Select({
                         searchable={searchable}
                         type="text"
                         value={inputValue}
+                        {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                     />
                     <Arrow
                         aria-labelledby={fieldId}

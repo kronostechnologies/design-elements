@@ -13,7 +13,7 @@ export const Normal: Story = () => {
     const [toggled, setToggled] = useState(false);
 
     return (
-        <ToggleSwitch label="Switch" toggled={toggled} onToggle={setToggled} />
+        <ToggleSwitch data-testid='some-data-testid' label="Switch" toggled={toggled} onToggle={setToggled} />
     );
 };
 

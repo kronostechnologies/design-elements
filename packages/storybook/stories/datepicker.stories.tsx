@@ -22,7 +22,7 @@ export default {
 };
 
 export const Normal: Story = () => (
-    <Datepicker label="Date" hint="Hint" />
+    <Datepicker label="Date" data-testid="a-data-test-id" hint="Hint" />
 );
 
 export const WithTooltip: Story = () => (

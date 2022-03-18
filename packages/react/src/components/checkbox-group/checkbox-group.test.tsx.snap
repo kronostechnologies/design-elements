@@ -106,6 +106,7 @@ Array [
     Boat
     <input
       class="c1"
+      data-testid="checkboxGroup-boat"
       name="vehicule1"
       type="checkbox"
       value="boat"
@@ -222,6 +223,7 @@ Array [
     <input
       checked=""
       class="c1"
+      data-testid="checkboxGroup-plane"
       name="vehicule2"
       type="checkbox"
       value="plane"
@@ -338,6 +340,7 @@ Array [
     Car
     <input
       class="c1"
+      data-testid="checkboxGroup-car"
       disabled=""
       name="vehicule3"
       type="checkbox"
@@ -455,6 +458,7 @@ Array [
     Bike
     <input
       class="c1"
+      data-testid="checkboxGroup-bike"
       name="vehicule4"
       type="checkbox"
       value="bike"

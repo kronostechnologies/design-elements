@@ -8,7 +8,7 @@ export default {
 
 export const Normal: Story = () => (
     <>
-        <Checkbox name="checkbox1" value="no label" />
+        <Checkbox data-testid="some-checkbox-data-testid" name="checkbox1" value="no label" />
         <Checkbox label="Normal" name="checkbox2" value="normal" />
         <Checkbox label="Disabled" name="checkbox3" value="disabled" disabled />
         <Checkbox label="Checked" name="checkbox4" value="checked" checked />

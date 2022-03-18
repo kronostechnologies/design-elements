@@ -97,7 +97,7 @@ const optionsDisabled: NavMenuOption[] = [
 
 export const Desktop: Story = () => (
     <GlobalHeader>
-        <NavMenuButton options={options}>Menu</NavMenuButton>
+        <NavMenuButton data-testid="some-data-testid" options={options}>Menu</NavMenuButton>
     </GlobalHeader>
 );
 Desktop.decorators = [DesktopDecorator];

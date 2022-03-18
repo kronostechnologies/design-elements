@@ -363,7 +363,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   </button>
   <div
     class="c7 c8"
-    data-testid="menu-list"
+    data-testid="user-profile"
   >
     <ul
       aria-labelledby="user-label"
@@ -852,7 +852,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   </button>
   <div
     class="c7 c8"
-    data-testid="menu-list"
+    data-testid="user-profile"
     hidden=""
   >
     <ul
@@ -1332,7 +1332,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   </button>
   <div
     class="c6 c7"
-    data-testid="menu-list"
+    data-testid="user-profile"
     hidden=""
   >
     <ul
@@ -1822,7 +1822,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   </button>
   <div
     class="c7 c8"
-    data-testid="menu-list"
+    data-testid="user-profile"
     hidden=""
   >
     <ul
