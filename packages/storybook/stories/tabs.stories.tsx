@@ -165,3 +165,36 @@ export const Contained: Story = () => {
         <Tabs tabs={tabs} contained />
     );
 };
+
+export const UnloadTabCallback: Story = () => {
+    const tabs: Tab[] = [
+        {
+            title: 'First Button',
+            panelContent: <StyledDiv>First tab content</StyledDiv>,
+            onBeforeUnload: () => {
+                console.info('cannot change tab because callback return false');
+                return false;
+            },
+        },
+        {
+            title: 'Second Button',
+            panelContent: <StyledDiv>Second tab content</StyledDiv>,
+            onBeforeUnload: () => {
+                console.info('second tab unload confirmed');
+                return true;
+            },
+        },
+        {
+            title: 'Third Button',
+            panelContent: <StyledDiv>Third tab content</StyledDiv>,
+            onBeforeUnload: () => {
+                console.info('third tab unload confirmed');
+                return true;
+            },
+        },
+    ];
+
+    return (
+        <Tabs tabs={tabs} contained />
+    );
+};
