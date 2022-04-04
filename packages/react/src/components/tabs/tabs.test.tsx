@@ -2,7 +2,12 @@ import { ReactWrapper } from 'enzyme';
 import ReactDOM from 'react-dom';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { expectFocusToBeOn } from '../../test-utils/enzyme-utils';
-import { mountWithProviders, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
+import {
+    actAndWaitForEffects,
+    mountWithProviders,
+    mountWithTheme,
+    renderWithProviders,
+} from '../../test-utils/renderer';
 import { Tab, Tabs } from './tabs';
 
 function givenTabs(amount: number): Tab[] {
@@ -82,44 +87,52 @@ describe('Tabs', () => {
         expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(false);
     });
 
-    test('tab panel should not change if onBeforeUnload cancels tab selection', () => {
+    test('tab panel should not change if onBeforeUnload cancels tab selection', async () => {
         const tabs: Tab[] = givenTabs(2);
-        const shouldConfirmTabUnload = false;
+        const shouldConfirmTabUnload = Promise.resolve(false);
         tabs[0] = {
             ...tabs[0],
             onBeforeUnload: () => shouldConfirmTabUnload,
         };
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
+        await actAndWaitForEffects(wrapper, () => {
+            getByTestId(wrapper, 'tab-button-2').prop('onClick')();
+        });
 
-        expectPanelToBeRendered(wrapper, 'tab-panel-1');
+        expect(getByTestId(wrapper, 'tab-panel-1').exists()).toBe(true);
     });
 
-    test('tab panel should change if no onBeforeUnload callback was provided', () => {
+    test('tab panel should change if no onBeforeUnload callback was provided', async () => {
         const tabs: Tab[] = givenTabs(2);
         tabs[0] = {
             ...tabs[0],
         };
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
+        await actAndWaitForEffects(wrapper, () => {
+            const tabButton = getByTestId(wrapper, 'tab-button-2');
+            tabButton.prop('onClick')();
+        });
 
-        expectPanelToBeRendered(wrapper, 'tab-panel-2');
+        expect(getByTestId(wrapper, 'tab-panel-2').exists()).toBeTruthy();
     });
 
-    test('tab panel should change if onBeforeUnload confirms tab selection', () => {
+    test('tab panel should change if onBeforeUnload confirms tab selection', async () => {
         const tabs: Tab[] = givenTabs(2);
-        const shouldConfirmTabOnClick = true;
+        const shouldConfirmTabOnClick = Promise.resolve(true);
         tabs[0] = {
             ...tabs[0],
             onBeforeUnload: () => shouldConfirmTabOnClick,
         };
         const wrapper = mountWithProviders(<Tabs tabs={tabs} />);
 
-        getByTestId(wrapper, 'tab-button-2').simulate('click');
+        await actAndWaitForEffects(wrapper, () => {
+            const tabButton2 = getByTestId(wrapper, 'tab-button-2');
+            tabButton2.prop('onClick')();
+        });
 
-        expectPanelToBeRendered(wrapper, 'tab-panel-2');
+        expect(getByTestId(wrapper, 'tab-panel-2').exists()).toBeTruthy();
     });
 
     test('tab-panels should all be initially mounted when forceRenderTabPanels is set to true', () => {

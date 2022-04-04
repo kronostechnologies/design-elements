@@ -26,14 +26,14 @@ export interface Tab {
     leftIcon?: IconName;
     rightIcon?: IconName;
     panelContent: ReactNode;
-    onBeforeUnload?: () => boolean;
+    onBeforeUnload?(): Promise<boolean>;
 }
 
 interface TabItem extends Tab {
     id: string;
     panelId: string;
     buttonRef: RefObject<HTMLButtonElement>;
-    onBeforeUnload?: () => boolean;
+    onBeforeUnload?(): Promise<boolean>;
 }
 
 interface Props {
@@ -58,9 +58,10 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     ), [tabs]);
     const [selectedTab, setSelectedTab] = useState(tabItems[0]);
 
-    function handleTabSelected(tabItem: TabItem): void {
+    async function handleTabSelected(tabItem: TabItem): Promise<void> {
         if (selectedTab?.onBeforeUnload) {
-            if (selectedTab.onBeforeUnload?.()) {
+            const isConfirmed = await selectedTab.onBeforeUnload();
+            if (isConfirmed) {
                 setSelectedTab(tabItem);
             }
         } else {
