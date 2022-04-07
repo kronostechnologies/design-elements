@@ -11,9 +11,12 @@ import {
     useLayoutEffect,
     useMemo,
     useState,
+    useImperativeHandle,
 } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
+
+import { ListGroupLabel } from '../list-group-label/list-group-label';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -34,13 +37,18 @@ interface ListOption extends ListboxOption {
     ref: RefObject<HTMLLIElement>;
 }
 
+export interface ListboxGroup {
+    label?: string;
+    options: ListboxOption[];
+}
+
 interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
     /**
      * { value: string; label?: string; }[]
      */
-    options: ListboxOption[];
+    options: ListboxOption[] | ListboxGroup[];
     /**
      * Autofocus
      * @default false
@@ -96,11 +104,6 @@ interface ListboxProps {
     onFocusedValueChange?(option?: ListboxOption): void;
 }
 
-interface ListProps {
-    isMobile: boolean;
-    numberOfItemsVisible: number;
-}
-
 interface ListItemProps {
     disabled?: boolean;
     isMobile: boolean;
@@ -112,37 +115,64 @@ interface ListItemProps {
 
 interface BoxProps {
     isDropdown: boolean;
+    isMobile: boolean;
+    numberOfItemsVisible: number;
+    groups: ListboxGroup[],
+    onKeyPress?(e: KeyboardEvent<HTMLDivElement>): void;
+    onKeyDown?(e: KeyboardEvent<HTMLDivElement>): void;
+    onBlur?(): void;
 }
 
 const itemHeightDesktop = 32;
 const itemHeightMobile = 40;
 
-const Box = styled.div<BoxProps>`
-    display: flex;
-    position: ${(props) => (props.isDropdown ? 'absolute' : 'unset')};
-    width: ${(props) => (props.isDropdown ? '100%' : 'unset')};
-`;
+const separatorHeight = 17;
+const separatorLabelHeight = 16.5;
+function getListMaxHeight({ numberOfItemsVisible, groups, isMobile }: BoxProps): string | null {
+    if (!numberOfItemsVisible) {
+        return null;
+    }
 
-function getListMaxHeight({ numberOfItemsVisible, isMobile }: ListProps): number {
-    return numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop);
+    let items = 0;
+    const separatorsHeight = groups.reduce((total, group) => {
+        const labelHeight = group.label ? separatorLabelHeight : 0;
+        items += group.options.length;
+        return items < numberOfItemsVisible ? total + separatorHeight + labelHeight : total + labelHeight;
+    }, 0);
+
+    return `${(numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop)) + separatorsHeight}px`;
 }
 
-const List = styled.ul<ListProps>`
-    background-color: ${({ theme }) => theme.greys.white};
+const Box = styled.div<BoxProps>`
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgb(0 0 0 / 19%);
-    list-style-type: none;
-    margin: 0;
-    max-height: ${getListMaxHeight}px;
-    min-width: fit-content;
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgba(0 0 0 / 19%);
+    display: flex;
+    flex-direction: column;
+    max-height: ${getListMaxHeight};
     overflow-y: auto;
-    padding: 0;
-    width: 100%;
-    z-index: 1000;
+    position: ${(props) => (props.isDropdown ? 'absolute' : 'unset')};
+    width: ${(props) => (props.isDropdown ? '100%' : 'unset')};
 
     &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgb(0 0 0 / 19%);
+        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgba(0 0 0 / 19%);
         outline: none;
+    }
+`;
+
+const ListGroup = styled.ul`
+    background-color: ${({ theme }) => theme.greys.white};
+    list-style-type: none;
+    margin: 0;
+    min-width: fit-content;
+    padding: 0;
+    width: 100%;
+
+    &:not(:last-child)::after {
+        border-bottom: solid 1px ${({ theme }) => theme.greys.grey};
+        content: "";
+        display: block;
+        margin: var(--spacing-base);
+        position: relative;
     }
 `;
 
@@ -167,6 +197,10 @@ function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps)
         return theme.greys.grey;
     }
     return 'inherit';
+}
+
+function isListOption(options: ListboxOption[] | ListboxGroup[]): options is ListboxOption[] {
+    return 'value' in options[0];
 }
 
 const ListItem = styled.li<ListItemProps>`
@@ -225,29 +259,49 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 }, ref: Ref<HTMLDivElement>) => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const { isMobile } = useDeviceContext();
-    const [listRef, setListRef] = useState<HTMLUListElement>();
-    const listRefCallback = useCallback((node: HTMLUListElement) => setListRef(node), []);
+    const [listRef, setListRef] = useState<HTMLDivElement>();
+    const [groups] = useState<ListboxGroup[]>(() => (
+        isListOption(options) ? [{ options }] : options
+    ));
     const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(value || defaultValue));
-    const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
-        ? options.findIndex((option) => option.value === selectedOptionValue[0])
-        : -1));
-    const list: ListOption[] = useMemo((): ListOption[] => options.map(
-        (option, index) => ({
+    const listRefCallback = useCallback((node: HTMLDivElement) => setListRef(node), []);
+    useImperativeHandle<HTMLDivElement | null, HTMLDivElement | null>(ref, () => listRef || null);
+    const list: ListOption[] = useMemo((): ListOption[] => {
+        const optionMapper = (option: ListboxOption, index: number): ListOption => ({
             ...option,
             id: `${id}_${option.value}`,
             focusIndex: index,
             ref: createRef<HTMLLIElement>(),
-        }),
-    ), [id, options]);
+        });
+
+        if (isListOption(options)) {
+            return options.map((option, index) => optionMapper(option, index));
+        }
+
+        let listOptions: ListOption[] = [];
+        let currentIndex = 0;
+        options.forEach((group) => {
+            listOptions = listOptions.concat(group.options.map(
+                (option, index) => optionMapper(option, currentIndex + index),
+            ));
+            currentIndex += group.options.length;
+        });
+
+        return listOptions;
+    }, [id, options]);
+
+    const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
+        ? list.findIndex((option) => option.value === selectedOptionValue[0])
+        : -1));
 
     const setValue: (newValue: Value) => void = useCallback((newValue) => {
         setSelectedOptionValue(toArray(newValue));
         if (Array.isArray(newValue) && newValue.length === 0) {
             setSelectedFocusIndex(-1);
         } else if (list.length > 0 && !multiselect) {
-            setSelectedFocusIndex(options.findIndex((option) => option.value === newValue[0]));
+            setSelectedFocusIndex(list.findIndex((option) => option.value === newValue[0]));
         }
-    }, [list.length, multiselect, options]);
+    }, [list, multiselect]);
 
     useEffect(() => {
         if (value !== undefined) {
@@ -268,7 +322,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         const itemRect = itemRef.getBoundingClientRect();
 
         if (itemRef.offsetTop >= listRef.scrollTop + listRect.height) {
-            listRef.scrollTop = (itemRect.height * (focusedIndex + 1)) - listRect.height;
+            listRef.scrollTop = (itemRect.height * (focusedIndex + 1)) - listRect.height + 64;
         } else if (listRect.top - itemRect.top >= 0) {
             const spaceDif = listRect.top - itemRect.top;
             const numberOfItemsToScroll = spaceDif / itemRect.height;
@@ -281,14 +335,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     useEffect(() => {
         if (focusedValue) {
-            const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
+            const focusedValueIndex = list.findIndex((option) => option.value === focusedValue);
             const currentOption = list[focusedValueIndex];
             setSelectedFocusIndex(focusedValueIndex);
             handleAutoScroll(currentOption, focusedValueIndex);
         } else {
             setSelectedFocusIndex(-1);
         }
-    }, [focusedValue, list, options, handleAutoScroll]);
+    }, [focusedValue, list, handleAutoScroll]);
 
     useEffect(() => {
         if (autofocus && listRef) {
@@ -296,12 +350,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         }
 
         if (selectedOptionValue && !multiselect) {
-            const newSelectedFocusIndex = options.findIndex((option) => option.value === selectedOptionValue[0]);
+            const newSelectedFocusIndex = list.findIndex((option) => option.value === selectedOptionValue[0]);
             if (newSelectedFocusIndex !== -1) {
                 setSelectedFocusIndex(newSelectedFocusIndex);
             }
         }
-    }, [autofocus, multiselect, options, selectedOptionValue, listRef]);
+    }, [autofocus, multiselect, list, selectedOptionValue, listRef]);
 
     const isOptionSelected: (option: ListOption) => boolean = useCallback((option) => {
         if (multiselect) {
@@ -310,15 +364,13 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         return selectedOptionValue.length > 0 && selectedOptionValue[0] === option.value;
     }, [multiselect, selectedOptionValue]);
 
-    const isOptionFocused: (option: ListOption) => boolean = useCallback(
-        (option) => option.focusIndex === selectedFocusIndex,
-        [selectedFocusIndex],
-    );
+    const isOptionFocused: (option: ListOption) => boolean = useCallback((option) => (
+        option.focusIndex === selectedFocusIndex
+    ), [selectedFocusIndex]);
 
-    const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
-        (option) => checkIndicator && isOptionSelected(option),
-        [checkIndicator, isOptionSelected],
-    );
+    const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback((option) => (
+        checkIndicator && isOptionSelected(option)
+    ), [checkIndicator, isOptionSelected]);
 
     const selectOption: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
@@ -335,6 +387,11 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
         onChange?.(option);
     }, [multiselect, onChange, selectedOptionValue]);
+
+    const getGroupElements: (groupIndex: number) => ListOption[] = useCallback((groupIndex) => {
+        const previousGroupLength = groupIndex > 0 ? groups[groupIndex - 1].options.length : 0;
+        return list.slice(previousGroupLength, previousGroupLength + groups[groupIndex].options.length);
+    }, [list, groups]);
 
     const getPrevSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
         const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
@@ -392,13 +449,13 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [list, numberOfItemsVisible, selectedFocusIndex, handleAutoScroll, listRef]);
 
     useEffect(() => {
-        const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
+        const focusedValueIndex = list.findIndex((option) => option.value === focusedValue);
         if (focusedValueIndex !== -1 && listRef) {
             setSelectedFocusIndex(focusedValueIndex);
         }
-    }, [options, focusedValue, listRef]);
+    }, [list, focusedValue, listRef]);
 
-    const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
+    const handleKeyDown: (e: KeyboardEvent<HTMLDivElement>) => void = useCallback((e) => {
         // ' ' is the space bar key
         switch (e.key) {
             case 'Enter': {
@@ -462,47 +519,48 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
             aria-multiselectable={multiselect}
             className={className}
             isDropdown={dropdown}
-            ref={ref}
+            isMobile={isMobile}
+            numberOfItemsVisible={numberOfItemsVisible}
+            ref={listRefCallback}
             role="listbox"
-            tabIndex={-1}
+            tabIndex={0}
+            groups={groups}
+            onKeyDown={handleKeyDown}
+            onKeyPress={handleKeyDown}
+            onBlur={() => setSelectedFocusIndex(-1)}
         >
-            <List
-                data-testid="listbox-list"
-                id={id}
-                isMobile={isMobile}
-                numberOfItemsVisible={numberOfItemsVisible}
-                onBlur={() => setSelectedFocusIndex(-1)}
-                onKeyDown={handleKeyDown}
-                onKeyPress={handleKeyDown}
-                ref={listRefCallback}
-                role="presentation"
-                tabIndex={0}
-            >
-                {list.map((option) => (
-                    <ListItem
-                        aria-disabled={option.disabled}
-                        aria-label={option.label || option.value}
-                        aria-selected={isOptionSelected(option)}
-                        checkIndicator={checkIndicator}
-                        data-testid={`listitem-${option.value}`}
-                        disabled={option.disabled}
-                        focused={isOptionFocused(option)}
-                        id={option.id}
-                        isMobile={isMobile}
-                        key={option.id}
-                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
-                        onMouseMove={() => handleListItemMouseMove(option)}
-                        ref={option.ref}
-                        role="option"
-                        selected={isOptionSelected(option)}
-                    >
-                        {shouldDisplayCheckIndicator(option) && (
-                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
-                        )}
-                        {option.label || option.value}
-                    </ListItem>
-                ))}
-            </List>
+            {groups.map((group, index) => (
+                <ListGroup
+                    aria-labelledby={`group-${index}`}
+                    data-testid="listbox-list"
+                    role="group"
+                >
+                    {group.label && <ListGroupLabel isMobile={isMobile} label={group.label} />}
+                    {getGroupElements(index).map((option) => (
+                        <ListItem
+                            aria-disabled={option.disabled}
+                            aria-selected={isOptionSelected(option)}
+                            checkIndicator={checkIndicator}
+                            data-testid={`listitem-${option.value}`}
+                            disabled={option.disabled}
+                            focused={isOptionFocused(option)}
+                            id={option.id}
+                            isMobile={isMobile}
+                            key={option.id}
+                            onClick={!option.disabled ? handleListItemClick(option) : undefined}
+                            onMouseMove={() => handleListItemMouseMove(option)}
+                            ref={option.ref}
+                            role="option"
+                            selected={isOptionSelected(option)}
+                        >
+                            {shouldDisplayCheckIndicator(option) && (
+                                <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
+                            )}
+                            {option.label || option.value}
+                        </ListItem>
+                    ))}
+                </ListGroup>
+            ))}
         </Box>
     );
 });

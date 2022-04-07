@@ -34,9 +34,58 @@ const optionsWithoutLabel = [
     },
 ];
 
+const groupsWithoutLabel = [
+    {
+        label: 'Group 1',
+        options: [
+            {
+                label: 'Option A',
+                value: 'optionA',
+            },
+            {
+                label: 'Option B',
+                value: 'optionB',
+            },
+        ],
+    },
+    {
+        label: 'Group 2',
+        options: [
+            {
+                label: 'Option C',
+                value: 'optionC',
+            },
+            {
+                label: 'Option D',
+                value: 'optionD',
+            },
+            {
+                label: 'Option E',
+                value: 'optionE',
+            },
+        ],
+    },
+    {
+        label: 'Group 3',
+        options: [
+            {
+                label: 'Option F',
+                value: 'optionF',
+            },
+        ],
+    },
+];
+
 export const Normal: Story = () => (
     <Listbox
         options={options}
+        onChange={(option) => console.info('onChange', option)}
+    />
+);
+
+export const NormalWithGroup: Story = () => (
+    <Listbox
+        options={groupsWithoutLabel}
         onChange={(option) => console.info('onChange', option)}
     />
 );
@@ -52,7 +101,6 @@ export const WithAutofocus: Story = () => (
 export const WithMultiselect: Story = () => (
     <Listbox
         checkIndicator
-        defaultValue={['optionA', 'optionC']}
         multiselect
         options={options}
         onChange={(option) => console.info('onChange', option)}
@@ -76,11 +124,18 @@ export const WithThreeItemsVisible: Story = () => (
     />
 );
 
+export const WithThreeItemsVisibleWithGroups: Story = () => (
+    <Listbox
+        options={groupsWithoutLabel}
+        onChange={(option) => console.info('onChange', option)}
+        numberOfItemsVisible={3}
+    />
+);
+
 export const WithoutOptionLabel: Story = () => (
     <Listbox
         options={optionsWithoutLabel}
         onChange={(option) => console.info('onChange', option)}
-        numberOfItemsVisible={3}
     />
 );
 

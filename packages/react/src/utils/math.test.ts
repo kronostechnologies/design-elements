@@ -11,7 +11,7 @@ describe('math', () => {
             ${100}          | ${true}
             ${100.25}       | ${true}
             ${Infinity}     | ${false}
-        `('should return $expected when value is $value', ({ value, expected }) => {
+        `('should return $expected when value is $value', ({ value, expected }: { value: number, expected: boolean }) => {
             const result = isNumber(value);
 
             expect(result).toEqual(expected);
@@ -46,7 +46,7 @@ describe('math', () => {
             ${4}    | ${-3} | ${3}  | ${3}
         `('should return $expected when value is $value and bound are ($min, $max)', ({
             value, min, max, expected,
-        }) => {
+        }: { value: number, min: number, max: number, expected: number }) => {
             const result = clamp(value, min, max);
 
             expect(result).toEqual(expected);

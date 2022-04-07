@@ -2,33 +2,43 @@
 
 exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c0 {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 96px;
+  overflow-y: auto;
   position: absolute;
   width: 100%;
 }
 
+.c0:focus {
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
-  max-height: 96px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  overflow-y: auto;
   padding: 0;
   width: 100%;
-  z-index: 1000;
 }
 
-.c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
-  outline: none;
+.c1:not(:last-child):after {
+  content: "";
+  border-bottom: solid 1px #DBDEE1;
+  display: block;
+  margin: var(--spacing-base);
+  position: relative;
 }
 
 .c2 {
@@ -119,16 +129,15 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   aria-multiselectable="false"
   class="c0"
   role="listbox"
-  tabindex="-1"
+  tabindex="0"
 >
   <ul
+    aria-labelledby="group-0"
     class="c1"
     data-testid="listbox-list"
-    role="presentation"
-    tabindex="0"
+    role="group"
   >
     <li
-      aria-label="Option A"
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionA"
@@ -138,7 +147,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       Option A
     </li>
     <li
-      aria-label="Option B"
       aria-selected="true"
       class="c3"
       data-testid="listitem-optionB"
@@ -157,7 +165,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       Option B
     </li>
     <li
-      aria-label="Option C"
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionC"
@@ -167,7 +174,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       Option C
     </li>
     <li
-      aria-label="Option D"
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionD"
@@ -178,7 +184,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option Disabled"
       aria-selected="false"
       class="c5"
       data-testid="listitem-optionDisabled"
@@ -194,33 +199,43 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 
 exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c0 {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 128px;
+  overflow-y: auto;
   position: unset;
   width: unset;
 }
 
+.c0:focus {
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
-  max-height: 128px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  overflow-y: auto;
   padding: 0;
   width: 100%;
-  z-index: 1000;
 }
 
-.c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
-  outline: none;
+.c1:not(:last-child):after {
+  content: "";
+  border-bottom: solid 1px #DBDEE1;
+  display: block;
+  margin: var(--spacing-base);
+  position: relative;
 }
 
 .c2 {
@@ -310,16 +325,15 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   aria-multiselectable="true"
   class="c0"
   role="listbox"
-  tabindex="-1"
+  tabindex="0"
 >
   <ul
+    aria-labelledby="group-0"
     class="c1"
     data-testid="listbox-list"
-    role="presentation"
-    tabindex="0"
+    role="group"
   >
     <li
-      aria-label="Option A"
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionA"
@@ -338,7 +352,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       Option A
     </li>
     <li
-      aria-label="Option B"
       aria-selected="false"
       class="c4"
       data-testid="listitem-optionB"
@@ -348,7 +361,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       Option B
     </li>
     <li
-      aria-label="Option C"
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionC"
@@ -367,7 +379,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       Option C
     </li>
     <li
-      aria-label="Option D"
       aria-selected="false"
       class="c4"
       data-testid="listitem-optionD"
@@ -378,7 +389,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option Disabled"
       aria-selected="false"
       class="c5"
       data-testid="listitem-optionDisabled"
@@ -394,33 +404,43 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 
 exports[`Listbox Matches the snapshot 1`] = `
 .c0 {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 96px;
+  overflow-y: auto;
   position: unset;
   width: unset;
 }
 
+.c0:focus {
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+}
+
 .c1 {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
-  max-height: 96px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  overflow-y: auto;
   padding: 0;
   width: 100%;
-  z-index: 1000;
 }
 
-.c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
-  outline: none;
+.c1:not(:last-child):after {
+  content: "";
+  border-bottom: solid 1px #DBDEE1;
+  display: block;
+  margin: var(--spacing-base);
+  position: relative;
 }
 
 .c2 {
@@ -511,16 +531,15 @@ exports[`Listbox Matches the snapshot 1`] = `
   aria-multiselectable="false"
   class="c0"
   role="listbox"
-  tabindex="-1"
+  tabindex="0"
 >
   <ul
+    aria-labelledby="group-0"
     class="c1"
     data-testid="listbox-list"
-    role="presentation"
-    tabindex="0"
+    role="group"
   >
     <li
-      aria-label="Option A"
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionA"
@@ -530,7 +549,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       Option A
     </li>
     <li
-      aria-label="Option B"
       aria-selected="true"
       class="c3"
       data-testid="listitem-optionB"
@@ -549,7 +567,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       Option B
     </li>
     <li
-      aria-label="Option C"
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionC"
@@ -559,7 +576,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       Option C
     </li>
     <li
-      aria-label="Option D"
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionD"
@@ -570,7 +586,6 @@ exports[`Listbox Matches the snapshot 1`] = `
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option Disabled"
       aria-selected="false"
       class="c5"
       data-testid="listitem-optionDisabled"
