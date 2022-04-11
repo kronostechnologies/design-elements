@@ -120,7 +120,7 @@ jobs:
         run: yarn eslint:ci
 
       - name: Upload ESLint results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ success() || failure() }}
         with:
           name: eslint.junit.xml
@@ -158,7 +158,7 @@ jobs:
         run: yarn stylelint:ci
 
       - name: Upload Stylelint results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ success() || failure() }}
         with:
           name: stylelint.junit.xml
@@ -189,14 +189,14 @@ jobs:
         run: yarn test:ci
 
       - name: Upload test results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ success() || failure() }}
         with:
           name: react-test-results.junit.xml
           path: packages/react/build/jest/junit.xml
           if-no-files-found: error
       - name: Upload test coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ success() || failure() }}
         with:
           name: react-test-coverage.clover.xml
@@ -242,7 +242,7 @@ jobs:
         run: yarn build
 
       - name: Store react package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: react_dist
           path: packages/react/dist/
@@ -317,7 +317,7 @@ jobs:
         run: yarn eslint:ci
 
       - name: Upload ESLint results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ success() || failure() }}
         with:
           name: eslint.junit.xml
@@ -362,7 +362,7 @@ jobs:
         run: yarn stylelint:ci
 
       - name: Upload Stylelint results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ success() || failure() }}
         with:
           name: stylelint.junit.xml
@@ -407,7 +407,7 @@ jobs:
         run: yarn build
 
       - name: Store storybook package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: storybook_dist
           path: packages/storybook/dist/
