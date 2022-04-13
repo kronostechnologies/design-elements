@@ -1,3 +1,4 @@
+import AlertCircle from 'feather-icons/dist/icons/alert-circle.svg';
 import AlertOctagon from 'feather-icons/dist/icons/alert-octagon.svg';
 import AlertTriangle from 'feather-icons/dist/icons/alert-triangle.svg';
 import ArrowDown from 'feather-icons/dist/icons/arrow-down.svg';
@@ -49,6 +50,7 @@ import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
 
 const iconMapping = {
+    alertCircle: AlertCircle,
     alertFilled: AlertFilled,
     alertTriangle: AlertTriangle,
     alertOctagon: AlertOctagon,
