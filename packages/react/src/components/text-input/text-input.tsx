@@ -22,7 +22,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
 
-const Input = styled.input<{ isMobile: boolean }>`
+const Input = styled.input<{ isMobile: boolean; }>`
     ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
 `;
 
@@ -30,6 +30,8 @@ type PartialInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputEle
     'inputMode' | 'name' | 'value' | 'autoComplete'>;
 
 interface TextInputProps extends PartialInputProps {
+    ariaDescribedBy?: string;
+    ariaInvalid?: boolean;
     className?: string;
     defaultValue?: string;
     disabled?: boolean;
@@ -59,6 +61,8 @@ interface TextInputProps extends PartialInputProps {
 }
 
 export const TextInput = forwardRef(({
+    ariaDescribedBy,
+    ariaInvalid,
     className,
     defaultValue,
     disabled,
@@ -127,6 +131,8 @@ export const TextInput = forwardRef(({
             data-testid="field-container"
         >
             <Input
+                aria-describedby={ariaDescribedBy}
+                aria-invalid={ariaInvalid}
                 autoComplete={autoComplete}
                 data-testid="text-input"
                 isMobile={isMobile}

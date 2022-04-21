@@ -10,6 +10,7 @@ export const Translations = {
         common: {
             opensInNewTab: 'opens in a new tab',
             opensInNewTabScreenReader: '(opens in a new tab)',
+            error: 'Error',
         },
         datepicker: {
             calendarButtonLabel: 'Choose date',
@@ -41,6 +42,19 @@ export const Translations = {
         },
         pagination: {
             results: 'results',
+        },
+        'password-creation-input': {
+            'password-strength': 'Password strength: ',
+            'min-8-characters': 'Minimum 8 characters',
+            'min-1-lower-case': 'At least one lower case',
+            'min-1-upper-case': 'At least one upper case',
+            'create-password': 'Create password',
+            weak: 'Weak',
+            fair: 'Fair',
+            good: 'Good',
+            strong: 'Strong',
+            'show-password': 'Show password in plain text.',
+            'hide-password': 'Hide password.',
         },
         'search-input': {
             label: 'Search',
@@ -96,6 +110,7 @@ export const Translations = {
         common: {
             opensInNewTab: 'ouvre dans un nouvel onglet',
             opensInNewTabScreenReader: '(ouvre dans un nouvel onglet)',
+            error: 'Erreur',
         },
         datepicker: {
             calendarButtonLabel: 'Choisissez une date',
@@ -127,6 +142,19 @@ export const Translations = {
         },
         pagination: {
             results: 'résultats',
+        },
+        'password-creation-input': {
+            'password-strength': 'Force du mot de passe : ',
+            'min-8-characters': 'Minimum 8 caractères',
+            'min-1-lower-case': 'Au moins une minuscule',
+            'min-1-upper-case': 'Au moins une majuscule',
+            'create-password': 'Créer un mot de passe',
+            weak: 'Faible',
+            fair: 'Raisonnable',
+            good: 'Bon',
+            strong: 'Fort',
+            'show-password': 'Montrer le mot de passe.',
+            'hide-password': 'Cacher le mot de passe.',
         },
         'search-input': {
             label: 'Rechercher',

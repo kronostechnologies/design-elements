@@ -42,27 +42,29 @@ const StyledHint = styled.span<{ isMobile: boolean }>`
 `;
 
 export interface FieldContainerProps {
-    className?: string;
     children: ReactNode;
-    noMargin?: boolean;
+    className?: string;
     fieldId: string;
+    hint?: string;
     label?: string;
+    noInvalidFieldIcon?: boolean;
+    noMargin?: boolean;
+    tooltip?: TooltipProps;
     valid: boolean;
     validationErrorMessage: string;
-    hint?: string;
-    tooltip?: TooltipProps;
 }
 
 export function FieldContainer({
-    className,
     children,
+    className,
     fieldId,
-    label,
-    valid,
-    validationErrorMessage,
     hint,
+    label,
+    noInvalidFieldIcon,
     noMargin,
     tooltip,
+    valid,
+    validationErrorMessage,
     ...props
 }: FieldContainerProps): ReactElement {
     const { isMobile } = useDeviceContext();
@@ -83,6 +85,7 @@ export function FieldContainer({
                     data-testid="text-input-error-msg"
                     controlId={fieldId}
                     feedbackMsg={validationErrorMessage}
+                    noIcon={noInvalidFieldIcon}
                 />
             )}
             {children}
