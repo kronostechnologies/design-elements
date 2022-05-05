@@ -100,6 +100,9 @@ export const All: Story = () => (
             <IconItem name="mapPin">
                 <Icon name="mapPin" />
             </IconItem>
+            <IconItem name="megaphone">
+                <Icon name="megaphone" />
+            </IconItem>
             <IconItem name="menu">
                 <Icon name="menu" />
             </IconItem>

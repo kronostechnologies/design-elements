@@ -45,6 +45,7 @@ import Bento from '../../icons/bento.svg';
 import Contracts from '../../icons/contracts.svg';
 import Files from '../../icons/files.svg';
 import History from '../../icons/history.svg';
+import Megaphone from '../../icons/megaphone.svg';
 import Open from '../../icons/open.svg';
 import Organization from '../../icons/organization.svg';
 import Reorder from '../../icons/reorder.svg';
@@ -85,6 +86,7 @@ const iconMapping = {
     info: Info,
     mail: Mail,
     mapPin: MapPin,
+    megaphone: Megaphone,
     menu: Menu,
     minus: Minus,
     moreHorizontal: MoreHorizontal,
