@@ -2,6 +2,7 @@ module.exports = {
     extends: [
         '@equisoft/eslint-config-typescript-react',
         'plugin:import/typescript',
+        'plugin:storybook/recommended',
     ],
     overrides: [
         {

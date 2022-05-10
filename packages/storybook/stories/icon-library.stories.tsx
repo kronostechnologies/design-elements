@@ -1,4 +1,5 @@
 import { Icon } from '@equisoft/design-elements-react';
+import { IconGallery, IconItem } from '@storybook/addon-docs';
 import { Story } from '@storybook/react';
 import { ComponentType } from 'react';
 
