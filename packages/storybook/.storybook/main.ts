@@ -1,11 +1,12 @@
 import * as path from 'path';
-import PnpWebpackPlugin from 'pnp-webpack-plugin';
 
 module.exports = {
     typescript: {
         check: true,
         checkOptions: {
-            configFile: path.resolve(__dirname, '../tsconfig.json'),
+            typescript: {
+                configFile: path.resolve(__dirname, '../tsconfig.json'),
+            },
         },
         reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
@@ -21,23 +22,30 @@ module.exports = {
         '@storybook/preset-scss',
         '@storybook/addon-docs',
     ],
-    webpackFinal: (config) => {
-        config.resolve.plugins.push(PnpWebpackPlugin);
-        // @ts-ignore
-        config.resolveLoader.plugins.push(PnpWebpackPlugin.moduleLoader(module));
-
-        return config;
-    },
+    webpackFinal: async (config) => ({
+        ...config,
+        resolve: {
+            ...config.resolve,
+            fallback: {
+                ...config.resolve?.fallback,
+                assert: require.resolve('assert/'),
+            },
+        },
+    }),
     babel: async (options) => ({
         ...options,
         presets: [
-          ...options.presets,
-          [
-        '@babel/preset-react', {
-          runtime: 'automatic',
-        },
-            'preset-react-jsx-transform'
-          ],
+            ...options.presets,
+            [
+                '@babel/preset-react',
+                {
+                    runtime: 'automatic',
+                },
+                'preset-react-jsx-transform',
+            ],
         ],
     }),
+    core: {
+        builder: 'webpack5',
+    },
 };
