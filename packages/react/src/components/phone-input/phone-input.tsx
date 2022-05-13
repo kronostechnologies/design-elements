@@ -207,7 +207,6 @@ export function PhoneInput({
     }, []);
 
     const dataAttributes = useDataAttributes(otherProps);
-    const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'phone-text-input';
 
     return (
         <Container>
@@ -216,7 +215,7 @@ export function PhoneInput({
                 <span>{phoneInputMaskValue}</span>
             </MaskContainer>
             <TextInput
-                data-testid={dataTestId}
+                data-testid="phone-text-input"
                 ref={inputRef}
                 type="tel"
                 name={name}

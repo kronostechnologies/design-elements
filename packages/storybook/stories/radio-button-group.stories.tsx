@@ -16,7 +16,12 @@ const buttons = [
 ];
 
 export const Normal: Story = () => (
-    <RadioButtonGroup label="Planets" groupName="planets" buttons={buttons} />
+    <RadioButtonGroup
+        data-testid='radio-button-group-id'
+        label="Planets"
+        groupName="planets"
+        buttons={buttons}
+    />
 );
 
 export const Disabled: Story = () => (

@@ -1,5 +1,6 @@
 import { ChangeEvent, ReactElement } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
 
@@ -90,9 +91,17 @@ interface RadioButtonGroupProps {
 
 export function RadioButtonGroup(
     {
-        buttons, groupName, label, onChange, checkedValue,
+        buttons,
+        groupName,
+        label,
+        onChange,
+        checkedValue,
+        ...otherProps
     }: RadioButtonGroupProps,
 ): ReactElement {
+    const dataAttributes = useDataAttributes(otherProps);
+    const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
+
     return (
         <>
             {label && <Legend>{label}</Legend>}
@@ -104,6 +113,7 @@ export function RadioButtonGroup(
                     {' '}
                     {button.label}
                     <input
+                        data-testid={`${dataTestId}-${button.value}`}
                         type="radio"
                         name={groupName}
                         value={button.value}
