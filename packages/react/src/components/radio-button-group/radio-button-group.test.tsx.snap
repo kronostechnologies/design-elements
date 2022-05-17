@@ -89,6 +89,7 @@ Array [
   >
      Earth
     <input
+      data-testid="radio-button-group-earth"
       name="planets"
       type="radio"
       value="earth"
@@ -173,6 +174,7 @@ Array [
      Mars
     <input
       checked=""
+      data-testid="radio-button-group-mars"
       name="planets"
       type="radio"
       value="mars"
@@ -256,6 +258,7 @@ Array [
   >
      Pluto
     <input
+      data-testid="radio-button-group-pluto"
       disabled=""
       name="planets"
       type="radio"
@@ -340,6 +343,7 @@ Array [
   >
      Saturn
     <input
+      data-testid="radio-button-group-saturn"
       name="planets"
       type="radio"
       value="saturn"

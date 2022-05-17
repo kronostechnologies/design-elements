@@ -7,7 +7,14 @@ export default {
     component: PhoneInput,
 };
 
-export const Normal: Story = () => <PhoneInput pattern='(___) ___-____' hint='Hint' label='Label' />;
+export const Normal: Story = () => (
+    <PhoneInput
+        data-testid='custom-data-test-id'
+        pattern='(___) ___-____'
+        hint='Hint'
+        label='Label'
+    />
+);
 Normal.decorators = [DesktopDecorator];
 
 export const Mobile: Story = () => <PhoneInput pattern='(___) ___-____' />;

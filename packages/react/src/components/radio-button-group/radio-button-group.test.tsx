@@ -1,3 +1,4 @@
+import { getByTestId } from 'test-utils/enzyme-selectors';
 import { doNothing } from '../../test-utils/callbacks';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { RadioButtonGroup } from './radio-button-group';
@@ -10,6 +11,22 @@ const Buttons = [
 ];
 
 describe('Radio button', () => {
+    test('should have controllable data-testid', () => {
+        const callback = jest.fn();
+        const dataTestId = 'radio-button-group-id';
+        const wrapper = mountWithTheme(
+            <RadioButtonGroup
+                data-testid={dataTestId}
+                label="Planets"
+                groupName="planets"
+                buttons={Buttons}
+                onChange={callback}
+            />,
+        );
+
+        expect(getByTestId(wrapper, `${dataTestId}-${Buttons[0].value}`).exists()).toBe(true);
+    });
+
     test('onChange callback is called when changed', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(

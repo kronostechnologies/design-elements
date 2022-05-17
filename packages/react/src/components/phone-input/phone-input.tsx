@@ -10,6 +10,7 @@ import {
     useState,
 } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { TextInput } from '../text-input/text-input';
 import {
@@ -74,6 +75,7 @@ export function PhoneInput({
     label,
     hint,
     name,
+    ...otherProps
 }: PhoneInputProps): ReactElement {
     const { isMobile } = useDeviceContext();
     const phoneNumberMaxLength = useMemo(() => getPhoneNumberMaxLengthFromPattern(pattern), [pattern]);
@@ -204,6 +206,8 @@ export function PhoneInput({
         setLastEnteredKey(key);
     }, []);
 
+    const dataAttributes = useDataAttributes(otherProps);
+
     return (
         <Container>
             <MaskContainer aria-hidden="true" isMobile={isMobile}>
@@ -211,7 +215,7 @@ export function PhoneInput({
                 <span>{phoneInputMaskValue}</span>
             </MaskContainer>
             <TextInput
-                data-testid='text-input'
+                data-testid="phone-text-input"
                 ref={inputRef}
                 type="tel"
                 name={name}
@@ -223,6 +227,7 @@ export function PhoneInput({
                 onChange={handleChange}
                 onMouseUp={handleMouseUp}
                 onKeyDown={handleKeyDown}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             />
         </Container>
     );
