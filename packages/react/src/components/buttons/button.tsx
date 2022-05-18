@@ -33,7 +33,7 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
 `;
 
 export const Button = forwardRef(({
-    autofocus, children, className, label, title, type = 'submit', buttonType, disabled, onClick, onKeyDown, ...props
+    autofocus, children, className, label, title, type = 'button', buttonType, disabled, onClick, onKeyDown, ...props
 }: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
 
