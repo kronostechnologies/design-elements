@@ -88,7 +88,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 
 <button
   class="c0 c1"
-  type="submit"
+  type="button"
 />
 `;
 
@@ -180,6 +180,6 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 
 <button
   class="c0 c1"
-  type="submit"
+  type="button"
 />
 `;

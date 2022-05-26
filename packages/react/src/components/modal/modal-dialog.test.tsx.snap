@@ -339,14 +339,14 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
             <button
               class="c8 c9 c10"
               data-testid="confirm-button"
-              type="submit"
+              type="button"
             >
               Test Confirm
             </button>
             <button
               class="c8 c11 "
               data-testid="cancel-button"
-              type="submit"
+              type="button"
             >
               Test Cancel
             </button>
@@ -870,14 +870,14 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
             <button
               class="c4 c5 c6"
               data-testid="confirm-button"
-              type="submit"
+              type="button"
             >
               Confirm
             </button>
             <button
               class="c4 c7 "
               data-testid="cancel-button"
-              type="submit"
+              type="button"
             >
               Cancel
             </button>
@@ -1207,14 +1207,14 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
             <button
               class="c7 c8 c9"
               data-testid="confirm-button"
-              type="submit"
+              type="button"
             >
               Confirm
             </button>
             <button
               class="c7 c10 "
               data-testid="cancel-button"
-              type="submit"
+              type="button"
             >
               Cancel
             </button>
@@ -1542,14 +1542,14 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
             <button
               class="c7 c8 c9"
               data-testid="confirm-button"
-              type="submit"
+              type="button"
             >
               Confirm
             </button>
             <button
               class="c7 c10 "
               data-testid="cancel-button"
-              type="submit"
+              type="button"
             >
               Cancel
             </button>
@@ -1890,14 +1890,14 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
             <button
               class="c9 c10 c11"
               data-testid="confirm-button"
-              type="submit"
+              type="button"
             >
               Confirm
             </button>
             <button
               class="c9 c12 "
               data-testid="cancel-button"
-              type="submit"
+              type="button"
             >
               Cancel
             </button>
@@ -2238,14 +2238,14 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
             <button
               class="c8 c9 c10"
               data-testid="confirm-button"
-              type="submit"
+              type="button"
             >
               Confirm
             </button>
             <button
               class="c8 c11 "
               data-testid="cancel-button"
-              type="submit"
+              type="button"
             >
               Cancel
             </button>
