@@ -226,7 +226,16 @@ export function Select({
     const inputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
-    const filteredOptions = useMemo(() => filterOptions(options, searchValue), [options, searchValue]);
+    const [shouldFilterOptions, setShouldFilterOptions] = useState<boolean | undefined>(searchable);
+    const filteredOptions = useMemo(
+        () => {
+            if (!shouldFilterOptions) {
+                return options;
+            }
+            return filterOptions(options, searchValue);
+        },
+        [options, searchValue, shouldFilterOptions],
+    );
 
     const findOptionByValue: (needle?: string) => Option | undefined = useCallback(
         (needle) => options.find((option) => option.value === needle),
@@ -342,6 +351,7 @@ export function Select({
         setFocusedValue('');
         setInputValue(option.label);
         setSelectedOptionValue(option.value);
+        setShouldFilterOptions(false);
         onChange?.(option);
         if (searchable) {
             setAutofocus(false);
@@ -365,6 +375,9 @@ export function Select({
         if (searchable) {
             const newValue = event.currentTarget.value;
             const newFilteredOptions = filterOptions(options, newValue);
+            if (inputValue !== newValue) {
+                setShouldFilterOptions(true);
+            }
 
             if (newValue === '') {
                 setFocusedValue('');
