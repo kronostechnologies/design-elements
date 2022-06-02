@@ -61,6 +61,7 @@ input + .c2 {
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c8:focus {
@@ -464,6 +465,7 @@ input + .c2 {
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c11:focus {
@@ -952,6 +954,7 @@ input + .c2 {
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c8:focus {
@@ -1397,6 +1400,7 @@ exports[`Select mobile select has a different style 1`] = `
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c6:focus {
