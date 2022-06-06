@@ -9,48 +9,50 @@ const BadgeRoot = styled.span`
 
 type BadgePosition = 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left';
 
-const positionStyles: {[name: string]: CSSObject} = {
-    topRight: {
-        right: 0,
-        top: 0,
-        transform: 'translate(50%, -50%)',
-    },
-    bottomRight: {
-        bottom: 0,
-        right: 0,
-        transform: 'translate(50%, 50%)',
-    },
-    topLeft: {
-        left: 0,
-        top: 0,
-        transform: 'translate(-50%, -50%)',
-    },
-    bottomLeft: {
-        bottom: 0,
-        left: 0,
-        transform: 'translate(-50%, 50%)',
-    },
-};
-
 function capitalize(string: string): string {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function getPositionRules(position: BadgePosition): CSSObject {
+function toCssLength(value: number, unit = 'px'): string {
+    return value === 0 ? '0' : `${value}${unit}`;
+}
+
+function getPositionRules(position: BadgePosition, offsetX = 0, offsetY = 0): CSSObject {
+    const positionRules: {[name: string]: CSSObject} = {
+        topRight: {
+            right: toCssLength(-offsetX),
+            top: toCssLength(offsetY),
+            transform: 'translate(50%, -50%)',
+        },
+        bottomRight: {
+            bottom: toCssLength(-offsetY),
+            right: toCssLength(-offsetX),
+            transform: 'translate(50%, 50%)',
+        },
+        topLeft: {
+            left: toCssLength(offsetX),
+            top: toCssLength(offsetY),
+            transform: 'translate(-50%, -50%)',
+        },
+        bottomLeft: {
+            bottom: toCssLength(-offsetY),
+            left: toCssLength(offsetX),
+            transform: 'translate(-50%, 50%)',
+        },
+    };
+
     const [vertical, horizontal] = position.split('-', 2);
     const positionName = `${vertical}${capitalize(horizontal)}`;
 
-    return positionStyles[positionName];
+    return positionRules[positionName];
 }
 
 function getAnimationRules(position: BadgePosition): SimpleInterpolation {
     const baseTransform = getPositionRules(position).transform || '';
 
     const bounceKeyframes = keyframes`
-        10% { transform: ${baseTransform} translateY(-5px); }
-        20% { transform: ${baseTransform}; }
-        27% { transform: ${baseTransform} translateY(-3px); }
-        34% { transform: ${baseTransform}; }`;
+        10% { transform: ${baseTransform} translateY(-4px); }
+        20% { transform: ${baseTransform}; }`;
 
     return css`
         animation: ${bounceKeyframes} 2s ease-in infinite;
@@ -63,6 +65,8 @@ function getAnimationRules(position: BadgePosition): SimpleInterpolation {
 export const BadgeCircle = styled.span<{
     $animate?: boolean;
     $position: BadgePosition;
+    $offsetX: number;
+    $offsetY: number;
 }>`
     align-content: center;
     align-items: center;
@@ -80,7 +84,7 @@ export const BadgeCircle = styled.span<{
     padding: 0 0.25rem;
     position: absolute;
     text-align: center;
-    ${({ $position }) => getPositionRules($position)}
+    ${({ $position, $offsetX, $offsetY }) => getPositionRules($position, $offsetX, $offsetY)}
     ${({ $animate, $position }) => $animate && getAnimationRules($position)}
 `;
 
@@ -95,6 +99,10 @@ interface BadgeProps {
     className?: string;
     /** The largest value to display, beyond which a + sign is shown */
     maxValue?: number;
+    /** Horizontal offset from the base position (in px) */
+    offsetX?: number;
+    /** Vertical offset from the base position (in px) */
+    offsetY?: number;
     position?: BadgePosition;
     /** When false, the badge is displayed as a small dot */
     showValue?: boolean;
@@ -109,6 +117,8 @@ export const Badge: FunctionComponent<BadgeProps> = ({
     animate = false,
     maxValue = 99,
     position = 'top-right',
+    offsetX = 0,
+    offsetY = 0,
     showValue = true,
     showZero = false,
     value,
@@ -121,7 +131,13 @@ export const Badge: FunctionComponent<BadgeProps> = ({
         <BadgeRoot>
             {children}
             {visible && (
-                <BadgeShape className={className} $animate={animate} $position={position}>
+                <BadgeShape
+                    className={className}
+                    $animate={animate}
+                    $position={position}
+                    $offsetX={offsetX}
+                    $offsetY={offsetY}
+                >
                     {showValue ? text : ''}
                 </BadgeShape>
             )}

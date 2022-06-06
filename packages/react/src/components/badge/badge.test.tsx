@@ -64,6 +64,23 @@ describe('Badge', () => {
         expect(animationValue).not.toBe('');
     });
 
+    it('is positioned according to the offset props', () => {
+        const offsetX = 10;
+        const offsetY = 10;
+
+        const wrapper = mountWithTheme(
+            <Badge value={1} position="top-right" offsetX={offsetX} offsetY={offsetY} />,
+        );
+
+        const badgeNode = wrapper.find(BadgeCircle).getDOMNode();
+        const badgeStyle = getComputedStyle(badgeNode);
+
+        expect(badgeStyle.getPropertyValue('top')).toEqual(`${offsetY}px`);
+        expect(badgeStyle.getPropertyValue('right')).toEqual(`-${offsetX}px`);
+        expect(badgeStyle.getPropertyValue('bottom')).toEqual('');
+        expect(badgeStyle.getPropertyValue('left')).toEqual('');
+    });
+
     test('matches the snapshot', () => {
         const tree = renderWithTheme(
             <>
