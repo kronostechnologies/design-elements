@@ -6,6 +6,7 @@ module.exports = {
     ignorePackages: [
         'async-foreach', // missing -> MIT
         'axe-core', // Used by eslint-plugin-jsx-a11y
+        'browser-assert', // missing -> MIT
         'caniuse-lite', // missing -> CC-BY-4
         'domutils', // missing -> BSD-2
         'fast-shallow-equal', // missing -> Unlicense
