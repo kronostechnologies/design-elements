@@ -19,7 +19,7 @@
     "eslint": "^7.31.0",
     "stylelint": "^13.13.1",
     "stylelint-order": "^4.1.0",
-    "typescript": "~4.4.3",
+    "typescript": "~4.7.3",
     "xmlbuilder": "^15.1.1",
     "yargs": "^17.0.1"
   },
@@ -28,5 +28,5 @@
     "react-docgen-typescript": "^2.0.0",
     "webpack": "^5"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.1"
 }
