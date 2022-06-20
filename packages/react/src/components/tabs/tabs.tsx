@@ -22,6 +22,7 @@ const TabButtonsContainer = styled.div<{ $isGlobal?: boolean; }>`
 `;
 
 export interface Tab {
+    id?: string;
     title: string;
     leftIcon?: IconName;
     rightIcon?: IconName;
@@ -51,7 +52,7 @@ export const Tabs: VoidFunctionComponent<Props> = ({
     const tabItems: TabItem[] = useMemo((): TabItem[] => tabs.map(
         (tab, i) => ({
             ...tab,
-            id: `${tab.title}-${i}`,
+            id: tab.id ?? `${i}`,
             panelId: uuid(),
             buttonRef: createRef<HTMLButtonElement>(),
         }),

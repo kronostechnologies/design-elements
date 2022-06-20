@@ -14,6 +14,7 @@ function givenTabs(amount: number): Tab[] {
     const tabs: Tab[] = [];
     for (let i = 1; i <= amount; i++) {
         tabs.push({
+            id: `tab-${i}`,
             title: `button ${i}`,
             panelContent: <div data-testid={`tab-panel-${i}`}>content</div>,
         });
