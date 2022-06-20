@@ -1,7 +1,7 @@
-import { shallow } from 'enzyme';
+import { ReactWrapper, shallow } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { Select } from './select';
+import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
+import { Option, Select } from './select';
 
 jest.mock('../../utils/uuid');
 
@@ -32,6 +32,18 @@ const skipOption = {
     label: 'Skip this question',
     value: 'skip',
 };
+
+async function clickArrow(wrapper: ReactWrapper): Promise<void> {
+    await actAndWaitForEffects(wrapper, () => {
+        getByTestId(wrapper, 'arrow').simulate('click');
+    });
+}
+
+async function selectOption(wrapper: ReactWrapper, option: Option): Promise<void> {
+    await actAndWaitForEffects(wrapper, () => {
+        getByTestId(wrapper, `listitem-${option.value}`).simulate('click');
+    });
+}
 
 describe('Select', () => {
     test('onChange callback is called when selected value is changed', () => {
@@ -408,6 +420,45 @@ describe('Select', () => {
         getByTestId(wrapper, 'select-skip-option').simulate('change');
 
         expect(onChange).toBeCalled();
+    });
+
+    test('should not filter options when an option is already selected', async () => {
+        const onChange = jest.fn();
+        const wrapper = mountWithTheme(
+            <Select
+                options={provinces}
+                onChange={onChange}
+            />,
+        );
+        await clickArrow(wrapper);
+        await selectOption(wrapper, provinces[0]);
+        await clickArrow(wrapper);
+
+        const listBox = getByTestId(wrapper, 'listbox');
+        expect(listBox.prop('options')).toBe(provinces);
+    });
+
+    test('should filter options again when you search after having a selected option', async () => {
+        const onChange = jest.fn();
+        const wrapper = mountWithTheme(
+            <Select
+                options={provinces}
+                onChange={onChange}
+            />,
+        );
+        await clickArrow(wrapper);
+        await selectOption(wrapper, provinces[0]);
+        await clickArrow(wrapper);
+
+        await actAndWaitForEffects(wrapper, () => {
+            getByTestId(wrapper, 'input').simulate(
+                'change',
+                { currentTarget: { value: provinces[0].label } },
+            );
+        });
+
+        const listBox = getByTestId(wrapper, 'listbox');
+        expect(listBox.prop('options')).toBe(provinces);
     });
 
     test('should not display skip option when no skipOption is provided', () => {
