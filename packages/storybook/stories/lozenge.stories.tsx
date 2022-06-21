@@ -1,5 +1,7 @@
 import { Lozenge } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
+import styled from 'styled-components';
+import { decorateWith } from './utils/decorator';
 import { MobileDecorator } from './utils/device-context-decorator';
 
 export default {
@@ -15,6 +17,25 @@ export const Mobile: Story = () => (
     <Lozenge>This is to highlight some text</Lozenge>
 );
 Mobile.decorators = [MobileDecorator];
+
+const TypeDecorator = styled.div`
+    > :not(:first-child) {
+        margin-left: 1rem;
+    }
+`;
+
+export const Type: Story = () => (
+    <>
+        <Lozenge>default</Lozenge>
+        <Lozenge type='success'>success</Lozenge>
+        <Lozenge type='alert'>alert</Lozenge>
+        <Lozenge type='warning'>warning</Lozenge>
+        <Lozenge type='info'>info</Lozenge>
+        <Lozenge type='disabled'>disabled</Lozenge>
+    </>
+);
+
+Type.decorators = [decorateWith(TypeDecorator)];
 
 export const WithIcon: Story = () => (
     <Lozenge icon="eye">With icon</Lozenge>
