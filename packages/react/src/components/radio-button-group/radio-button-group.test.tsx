@@ -53,7 +53,14 @@ describe('Radio button', () => {
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderWithTheme(<RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons} />);
+        const tree = renderWithTheme(
+            <RadioButtonGroup
+                id='test-id'
+                label="Planets"
+                groupName="planets"
+                buttons={Buttons}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });
