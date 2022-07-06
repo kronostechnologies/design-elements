@@ -1,5 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Lozenge alert matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFAFB;
+  border: 1px solid #CD2C23;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  color: #CD2C23;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+<span
+  class="c0"
+>
+  alert
+</span>
+`;
+
+exports[`Lozenge info matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f9f7fb;
+  border: 1px solid #602FA0;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  color: #602FA0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+<span
+  class="c0"
+>
+  info
+</span>
+`;
+
 exports[`Lozenge matches the snapshot 1`] = `
 .c0 {
   -webkit-align-items: center;
@@ -16,6 +88,7 @@ exports[`Lozenge matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
+  font-weight: var(--font-semi-bold);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
@@ -32,5 +105,77 @@ exports[`Lozenge matches the snapshot 1`] = `
   class="c0"
 >
   Hello World
+</span>
+`;
+
+exports[`Lozenge success matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F6FCF8;
+  border: 1px solid #008533;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  color: #008533;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+<span
+  class="c0"
+>
+  success
+</span>
+`;
+
+exports[`Lozenge warning matches the snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFF9F5;
+  border: 1px solid #F5A200;
+  border-radius: var(--border-radius-half);
+  box-sizing: border-box;
+  color: #F5A200;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 0.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  padding: 0 var(--spacing-half);
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+<span
+  class="c0"
+>
+  warning
 </span>
 `;
