@@ -26,7 +26,8 @@ const TypeDecorator = styled.div`
 
 export const Type: Story = () => (
     <>
-        <Lozenge>default</Lozenge>
+        <Lozenge>default no type</Lozenge>
+        <Lozenge type='default'>default</Lozenge>
         <Lozenge type='success'>success</Lozenge>
         <Lozenge type='alert'>alert</Lozenge>
         <Lozenge type='warning'>warning</Lozenge>

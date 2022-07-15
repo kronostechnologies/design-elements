@@ -6,7 +6,7 @@ import { Icon, IconName } from '../icon/icon';
 
 const MAXIMUM_LENGTH = '312px';
 
-export type LozengeType = 'success' | 'alert' | 'warning' | 'info' | 'disabled';
+export type LozengeType = 'default' | 'success' | 'alert' | 'warning' | 'info' | 'disabled';
 
 interface StyledLozengeProps {
     $isMobile: boolean;
@@ -27,6 +27,7 @@ function getLozengeBackgroundColor({ $type, theme }: StyledLozengeProps): string
         case 'info':
             // TODO: add this color in default themes
             return '#f9f7fb';
+        case 'default':
         default:
             return theme.greys['light-grey'];
     }
@@ -44,6 +45,7 @@ function getLozengeBorderColor({ $type, theme }: StyledLozengeProps): string {
             return theme.notifications['warning-3.1'];
         case 'info':
             return theme.notifications['info-1.1'];
+        case 'default':
         default:
             return theme.greys['dark-grey'];
     }
@@ -61,6 +63,7 @@ function getLozengeColor({ $type, theme }: StyledLozengeProps): string {
             return theme.notifications['warning-3.1'];
         case 'info':
             return theme.notifications['info-1.1'];
+        case 'default':
         default:
             return theme.greys['dark-grey'];
     }
@@ -75,7 +78,7 @@ const StyledLozenge = styled.span<StyledLozengeProps>`
     color: ${getLozengeColor};
     display: inline-flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
-    font-weight: var(--font-semi-bold);
+    font-weight: var(--font-normal);
     line-height: ${({ $isMobile }) => ($isMobile ? '1.375rem' : '0.875rem')};
     max-width: ${MAXIMUM_LENGTH};
     overflow: hidden;
