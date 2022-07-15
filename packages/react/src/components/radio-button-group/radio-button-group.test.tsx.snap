@@ -1,20 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio button Matches the snapshot 1`] = `
-Array [
-  .c0 {
+.c2 {
+  color: #000000;
+  display: block;
   font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
   line-height: 1.25rem;
-  margin-bottom: var(--spacing-1x);
-  padding: 0;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-<legend
-    class="c0"
-  >
-    Planets
-  </legend>,
-  .c0 {
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 div + label {
+  margin-top: var(--spacing-1x);
+}
+
+.c3 {
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
@@ -27,11 +38,11 @@ Array [
   user-select: none;
 }
 
-.c0:not(:first-of-type) {
+.c3:not(:first-of-type) {
   margin-top: var(--spacing-1x);
 }
 
-.c0 input {
+.c3 input {
   height: 16px;
   left: 0;
   margin: 0;
@@ -41,12 +52,12 @@ Array [
   width: 16px;
 }
 
-.c0 input:checked + .radioInput {
+.c3 input:checked + .radioInput {
   background-color: #006296;
   border: 1px solid #006296;
 }
 
-.c0 input:checked + .radioInput::after {
+.c3 input:checked + .radioInput::after {
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
@@ -60,13 +71,13 @@ Array [
   width: 8px;
 }
 
-.c0 input:focus + .radioInput {
+.c3 input:focus + .radioInput {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0 .radioInput {
+.c3 .radioInput {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
@@ -80,26 +91,11 @@ Array [
   width: 16px;
 }
 
-.c0:hover .radioInput {
+.c3:hover .radioInput {
   border: 1px solid #006296;
 }
 
-<label
-    class="c0"
-  >
-     Earth
-    <input
-      data-testid="radio-button-group-earth"
-      name="planets"
-      type="radio"
-      value="earth"
-    />
-    <span
-      class="radioInput"
-    />
-  </label>,
-  .c0 {
-  cursor: pointer;
+.c4 {
   display: block;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -111,11 +107,11 @@ Array [
   user-select: none;
 }
 
-.c0:not(:first-of-type) {
+.c4:not(:first-of-type) {
   margin-top: var(--spacing-1x);
 }
 
-.c0 input {
+.c4 input {
   height: 16px;
   left: 0;
   margin: 0;
@@ -125,12 +121,12 @@ Array [
   width: 16px;
 }
 
-.c0 input:checked + .radioInput {
+.c4 input:checked + .radioInput {
   background-color: #006296;
   border: 1px solid #006296;
 }
 
-.c0 input:checked + .radioInput::after {
+.c4 input:checked + .radioInput::after {
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
@@ -144,97 +140,13 @@ Array [
   width: 8px;
 }
 
-.c0 input:focus + .radioInput {
+.c4 input:focus + .radioInput {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0 .radioInput {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 16px;
-  left: 0;
-  margin-top: var(--spacing-half);
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-
-.c0:hover .radioInput {
-  border: 1px solid #006296;
-}
-
-<label
-    class="c0"
-  >
-     Mars
-    <input
-      checked=""
-      data-testid="radio-button-group-mars"
-      name="planets"
-      type="radio"
-      value="mars"
-    />
-    <span
-      class="radioInput"
-    />
-  </label>,
-  .c0 {
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-3x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
-.c0 input {
-  height: 16px;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 2px;
-  width: 16px;
-}
-
-.c0 input:checked + .radioInput {
-  background-color: #006296;
-  border: 1px solid #006296;
-}
-
-.c0 input:checked + .radioInput::after {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  content: "";
-  height: 8px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 8px;
-}
-
-.c0 input:focus + .radioInput {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0 .radioInput {
+.c4 .radioInput {
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
   border-radius: 50%;
@@ -248,12 +160,50 @@ Array [
   width: 16px;
 }
 
-.c0:hover .radioInput {
+.c4:hover .radioInput {
   border: 1px solid #DBDEE1;
 }
 
-<label
-    class="c0"
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    for="test-id"
+  >
+    Planets
+  </label>
+  <label
+    class="c3"
+  >
+     Earth
+    <input
+      data-testid="radio-button-group-earth"
+      name="planets"
+      type="radio"
+      value="earth"
+    />
+    <span
+      class="radioInput"
+    />
+  </label>
+  <label
+    class="c3"
+  >
+     Mars
+    <input
+      checked=""
+      data-testid="radio-button-group-mars"
+      name="planets"
+      type="radio"
+      value="mars"
+    />
+    <span
+      class="radioInput"
+    />
+  </label>
+  <label
+    class="c4"
     disabled=""
   >
      Pluto
@@ -267,79 +217,9 @@ Array [
     <span
       class="radioInput"
     />
-  </label>,
-  .c0 {
-  cursor: pointer;
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  padding-left: var(--spacing-3x);
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
-.c0 input {
-  height: 16px;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 2px;
-  width: 16px;
-}
-
-.c0 input:checked + .radioInput {
-  background-color: #006296;
-  border: 1px solid #006296;
-}
-
-.c0 input:checked + .radioInput::after {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  content: "";
-  height: 8px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 8px;
-}
-
-.c0 input:focus + .radioInput {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0 .radioInput {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 16px;
-  left: 0;
-  margin-top: var(--spacing-half);
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-
-.c0:hover .radioInput {
-  border: 1px solid #006296;
-}
-
-<label
-    class="c0"
+  </label>
+  <label
+    class="c3"
   >
      Saturn
     <input
@@ -351,6 +231,6 @@ Array [
     <span
       class="radioInput"
     />
-  </label>,
-]
+  </label>
+</div>
 `;

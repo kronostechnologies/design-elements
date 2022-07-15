@@ -32,6 +32,16 @@ export const DefaultChecked: Story = () => (
     <RadioButtonGroup groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]} />
 );
 
+export const WithTooltip: Story = () => (
+    <RadioButtonGroup
+        data-testid='radio-button-group-id'
+        label="Planets"
+        tooltip={{ label: 'Tooltip text content' }}
+        groupName="planets"
+        buttons={buttons}
+    />
+);
+
 export const Controlled: Story = () => {
     const [value, setValue] = useState('red');
 
