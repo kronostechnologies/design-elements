@@ -16,6 +16,12 @@ describe('Lozenge', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('default matches the snapshot', () => {
+        const tree = renderWithTheme(<Lozenge type='default'>default</Lozenge>);
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('success matches the snapshot', () => {
         const tree = renderWithTheme(<Lozenge type='success'>success</Lozenge>);
 
