@@ -78,7 +78,7 @@ const StyledLozenge = styled.span<StyledLozengeProps>`
     color: ${getLozengeColor};
     display: inline-flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
-    font-weight: var(--font-semi-bold);
+    font-weight: var(--font-normal);
     line-height: ${({ $isMobile }) => ($isMobile ? '1.375rem' : '0.875rem')};
     max-width: ${MAXIMUM_LENGTH};
     overflow: hidden;

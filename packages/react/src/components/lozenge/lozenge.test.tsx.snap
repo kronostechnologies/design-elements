@@ -16,7 +16,7 @@ exports[`Lozenge alert matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-normal);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
@@ -52,7 +52,7 @@ exports[`Lozenge default matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-normal);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
@@ -88,7 +88,7 @@ exports[`Lozenge info matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-normal);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
@@ -124,7 +124,7 @@ exports[`Lozenge matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-normal);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
@@ -160,7 +160,7 @@ exports[`Lozenge success matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-normal);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
@@ -196,7 +196,7 @@ exports[`Lozenge warning matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.75rem;
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-normal);
   line-height: 0.875rem;
   max-width: 312px;
   overflow: hidden;
