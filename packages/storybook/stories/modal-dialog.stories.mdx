@@ -1,6 +1,8 @@
 import {Button, ModalDialog, useModal} from '@equisoft/design-elements-react';
 import {ArgsTable, Meta, Preview, Story} from '@storybook/addon-docs';
-import {Fragment} from 'react';
+import {Fragment, useCallback, useState} from 'react'; 
+import styled from 'styled-components';
+import {ShadowDomDecorator} from "./utils/shadow-dom-decorator";
 
 <Meta title="Disclosure/Modal Dialog" component={ModalDialog} />
 
@@ -284,6 +286,47 @@ It is important for users of screenreaders that other page content be hidden (vi
                         <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                             fringilla tellus nec auctor gravida.</p>
                     </ModalDialog>
+                </Fragment>
+            );
+        }}
+    </Story>
+</Preview>
+
+### Within Shadow DOM
+
+export const AbsoluteDiv = styled.div`
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+`;
+
+<Preview>
+    <Story name="Within Shadow DOM" decorators={[ShadowDomDecorator]}>
+        {() => {
+            const {isModalOpen, closeModal, openModal} = useModal();
+            const [parentElement, setParentElement] = useState();
+            const ref = useCallback(setParentElement, []);
+            
+            return (
+                <Fragment>
+                    <AbsoluteDiv ref={ref} />
+                    
+                    {parentElement && [
+                        <Button label="Open Modal" buttonType="primary" onClick={openModal} />,
+                        
+                        <ModalDialog
+                            appElement="#root"
+                            ariaDescribedby="story-description"
+                            isOpen={isModalOpen}
+                            onRequestClose={closeModal}
+                            parentSelector={() => parentElement}
+                            title="Heading 5"
+                            subtitle="Subtitle 1"
+                        >
+                            <p style={{ margin: 0 }} id="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                fringilla tellus nec auctor gravida.</p>
+                        </ModalDialog>
+                    ]}
                 </Fragment>
             );
         }}
