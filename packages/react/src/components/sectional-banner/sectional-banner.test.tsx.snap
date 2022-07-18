@@ -1,5 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SectionalBanner should match snapshot (custom message) 1`] = `
+.c2 {
+  grid-area: icon;
+  margin-top: 2px;
+}
+
+.c0 {
+  background-color: #f9f7fb;
+  border: 1px solid #602FA0;
+  box-sizing: border-box;
+  line-height: 24px;
+  padding: var(--spacing-2x);
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c1 {
+  color: #602FA0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  font-size: 0.875rem;
+  margin: var(--spacing-1x) 0 0 0;
+}
+
+.c3 {
+  box-sizing: border-box;
+  grid-area: content;
+  padding-left: var(--spacing-2x);
+}
+
+.c4 {
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+}
+
+<div
+  aria-atomic="true"
+  aria-live="polite"
+  class="c0"
+  role="status"
+>
+  <svg
+    aria-hidden="true"
+    class="c1 c2"
+    color="currentColor"
+    focusable="false"
+    height="20"
+    width="20"
+  />
+  <div
+    class="c3"
+  >
+    <span
+      class="c4"
+    >
+      Information
+    </span>
+    <div
+      class="c5"
+    >
+      <p>
+        Some sub title
+      </p>
+      <ul>
+        <li>
+          Some bullet point
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 .c2 {
   grid-area: icon;

@@ -1,4 +1,4 @@
-import { ComponentProps, ComponentType, FunctionComponent, useMemo, VoidFunctionComponent } from 'react';
+import { ComponentProps, ComponentType, FunctionComponent, ReactNode, useMemo, VoidFunctionComponent } from 'react';
 import styled, { css, ThemedCssFunction } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -172,7 +172,7 @@ function handleType(type: SectionalBannerType): BannerTypeProps {
 interface SectionalBannerProps {
     buttonLabel?: string;
     className?: string;
-    children: string;
+    children: ReactNode;
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
@@ -205,6 +205,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     const iconSize = isMobile ? 24 : 20;
     const lineHeight = getLineHeight(isMobile);
     const marginTop = (lineHeight - iconSize) / 2;
+    const messageTag = (typeof children === 'string') ? 'p' : 'div';
 
     return (
         <Container
@@ -223,7 +224,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
 
             <TextWrapper isMobile={isMobile}>
                 <Heading isMobile={isMobile}>{title || t(bannerType.title)}</Heading>
-                <Message isMobile={isMobile}>{children}</Message>
+                <Message isMobile={isMobile} as={messageTag}>{children}</Message>
                 {!isMobile && buttonLabel && (
                     <ActionButton
                         isAlertType={isAlertType}
