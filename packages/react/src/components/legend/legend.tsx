@@ -1,4 +1,4 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -46,7 +46,7 @@ interface LegendProps {
     items: LegendItem[];
 }
 
-export function Legend({ className, items }: LegendProps): ReactElement {
+export const Legend: VoidFunctionComponent<LegendProps> = ({ className, items }) => {
     useEffect(() => {
         const itemNames: string[] = items.map((item) => item.name);
         if (new Set(itemNames).size !== items.length) {
@@ -66,4 +66,4 @@ export function Legend({ className, items }: LegendProps): ReactElement {
             ))}
         </List>
     );
-}
+};

@@ -11,32 +11,32 @@ export default {
 export const Desktop: Story = () => <Avatar username="Patrick B" />;
 Desktop.decorators = [DesktopDecorator];
 
-export const smallSizeAvatar: Story = () => <Avatar username="Patrick B" size="small" />;
-smallSizeAvatar.decorators = [DesktopDecorator];
+export const SmallSizeAvatar: Story = () => <Avatar username="Patrick B" size="small" />;
+SmallSizeAvatar.decorators = [DesktopDecorator];
 
-export const mediumSizeAvatar: Story = () => <Avatar username="Patrick B" size="medium" />;
-mediumSizeAvatar.decorators = [DesktopDecorator];
+export const MediumSizeAvatar: Story = () => <Avatar username="Patrick B" size="medium" />;
+MediumSizeAvatar.decorators = [DesktopDecorator];
 
-export const largeSizeAvatar: Story = () => <Avatar username="Patrick B" size="large" />;
-largeSizeAvatar.decorators = [DesktopDecorator];
+export const LargeSizeAvatar: Story = () => <Avatar username="Patrick B" size="large" />;
+LargeSizeAvatar.decorators = [DesktopDecorator];
 
 export const Mobile: Story = () => <Avatar username="John" />;
 Mobile.decorators = [MobileDecorator];
 
-export const smallSizeMobileAvatar: Story = () => <Avatar username="John" size="small" />;
-smallSizeMobileAvatar.decorators = [MobileDecorator];
+export const SmallSizeMobileAvatar: Story = () => <Avatar username="John" size="small" />;
+SmallSizeMobileAvatar.decorators = [MobileDecorator];
 
-export const mediumSizeMobileAvatar: Story = () => <Avatar username="John" size="medium" />;
-mediumSizeMobileAvatar.decorators = [MobileDecorator];
+export const MediumSizeMobileAvatar: Story = () => <Avatar username="John" size="medium" />;
+MediumSizeMobileAvatar.decorators = [MobileDecorator];
 
-export const largeSizeMobileAvatar: Story = () => <Avatar username="John" size="large" />;
-largeSizeMobileAvatar.decorators = [MobileDecorator];
+export const LargeSizeMobileAvatar: Story = () => <Avatar username="John" size="large" />;
+LargeSizeMobileAvatar.decorators = [MobileDecorator];
 
-export const avatarWithSpecificColor: Story = () => <Avatar username="John" size="medium" bgColor="#fcdf03" />;
-avatarWithSpecificColor.decorators = [DesktopDecorator];
+export const AvatarWithSpecificColor: Story = () => <Avatar username="John" size="medium" bgColor="#fcdf03" />;
+AvatarWithSpecificColor.decorators = [DesktopDecorator];
 
-export const avatarWithImage: Story = () => <Avatar username="John" size="large" imgSrc={AvatarImg} />;
-avatarWithImage.decorators = [DesktopDecorator];
+export const AvatarWithImage: Story = () => <Avatar username="John" size="large" imgSrc={AvatarImg} />;
+AvatarWithImage.decorators = [DesktopDecorator];
 
 export const EmptyUsername: Story = () => <Avatar username="" />;
 EmptyUsername.decorators = [DesktopDecorator];

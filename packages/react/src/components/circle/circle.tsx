@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 
@@ -20,9 +20,9 @@ interface CircleProps {
     stroke: number;
 }
 
-export function Circle({
+export const Circle: VoidFunctionComponent<CircleProps> = ({
     color, percent, radius, stroke,
-}: CircleProps): ReactElement {
+}) => {
     const normalizedRadius = radius - (stroke / 2);
     const circumference = normalizedRadius * 2 * Math.PI;
     const strokeDashoffset = circumference - ((percent / 100) * circumference);
@@ -53,4 +53,4 @@ export function Circle({
             />
         </Svg>
     );
-}
+};

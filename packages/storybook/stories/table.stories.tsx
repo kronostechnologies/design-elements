@@ -1,5 +1,6 @@
 import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -53,20 +54,21 @@ export const Normal: Story = () => {
     );
 };
 
+const StyledTable = styled(
+    ({ className, columns, data }) => (<Table<Data> className={className} columns={columns} data={data} />),
+)`
+    .column-1 {
+        box-sizing: border-box;
+        width: 150px;
+    }
+
+    .column-2 {
+        box-sizing: border-box;
+        width: 300px;
+    }
+`;
+
 export const WithColumnClassnames: Story = () => {
-    const StyledTable = styled(({ className, columns, data }) => (
-        <Table<Data> className={className} columns={columns} data={data} />
-    ))`
-        .column-1 {
-            box-sizing: border-box;
-            width: 150px;
-        }
-
-        .column-2 {
-            box-sizing: border-box;
-            width: 300px;
-        }`;
-
     const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
@@ -147,7 +149,7 @@ export const ErrorRows: Story = () => {
     );
 };
 
-export const striped: Story = () => {
+export const Striped: Story = () => {
     const columns: TableColumn<Data> = [
         {
             Header: 'Column 1',
@@ -347,30 +349,45 @@ export const CustomTextAlignment: Story = () => {
     );
 };
 
-export const CustomColumns: Story = () => {
-    interface ComplexData {
-        category: {
-            value: string;
-            tooltip?: string;
-        };
-        amount?: string;
-    }
+interface ComplexData {
+    category: {
+        value: string;
+        tooltip?: string;
+    };
+    amount?: string;
+}
 
+interface CategoryCellProps {
+    value: ComplexData['category'];
+}
+
+const CategoryCell: VoidFunctionComponent<CategoryCellProps> = ({ value }) => (
+    <div style={{ display: 'flex' }}>
+        <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
+        {value.tooltip && (<Tooltip label={value.tooltip} />)}
+    </div>
+);
+
+interface AmountCellProps {
+    value: ComplexData['amount'];
+}
+
+const AmountHeader: VoidFunctionComponent = () => <div style={{ textAlign: 'right' }}>Amount ($)</div>;
+const AmountCell: VoidFunctionComponent<AmountCellProps> = ({ value }) => (
+    <div style={{ textAlign: 'right' }}>{value}</div>
+);
+
+export const CustomColumns: Story = () => {
     const columns: TableColumn<ComplexData> = [
         {
             Header: 'Category',
             accessor: 'category',
-            Cell: ({ value }) => (
-                <div style={{ display: 'flex' }}>
-                    <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
-                    {value.tooltip && (<Tooltip label={value.tooltip} />)}
-                </div>
-            ),
+            Cell: CategoryCell,
         },
         {
-            Header: () => <div style={{ textAlign: 'right' }}>Amount ($)</div>,
+            Header: AmountHeader,
             accessor: 'amount',
-            Cell: ({ value }) => <div style={{ textAlign: 'right' }}>{value}</div>,
+            Cell: AmountCell,
         },
     ];
 
@@ -493,6 +510,11 @@ interface StickyData {
     column14: string;
     column15: string,
 }
+
+const Wrap = styled.div`
+    height: 200px;
+    overflow: scroll;
+`;
 
 export const Sticky: Story = () => {
     const columns: TableColumn<StickyData> = [
@@ -716,11 +738,6 @@ export const Sticky: Story = () => {
             column15: 'i',
         },
     ];
-
-    const Wrap = styled.div`
-        height: 200px;
-        overflow: scroll;
-`;
 
     return (
         <Wrap>

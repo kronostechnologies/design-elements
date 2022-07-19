@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
@@ -48,7 +48,7 @@ interface SideDrawerProps {
      * Drawer origin position
      * @default right
      */
-    drawerOrigin: Origin;
+    drawerOrigin?: Origin;
     id?: string;
     /** Use on nested drawers to prevent background scroll */
     nested?: boolean;
@@ -57,12 +57,18 @@ interface SideDrawerProps {
      * Sets drawer width
      * @default 100%
      */
-    width: string;
+    width?: string;
 }
 
-export function SideDrawer({
-    children, className, id, nested, open, drawerOrigin, width,
-}: SideDrawerProps): ReactElement {
+export const SideDrawer: FunctionComponent<SideDrawerProps> = ({
+    children,
+    className,
+    drawerOrigin = 'right',
+    id,
+    nested,
+    open,
+    width = '100%',
+}) => {
     const { isDesktop } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(open);
     const drawerRef = useRef<HTMLDivElement>(null);
@@ -114,9 +120,4 @@ export function SideDrawer({
             {children}
         </Container>
     );
-}
-
-SideDrawer.defaultProps = {
-    drawerOrigin: 'right',
-    width: '100%',
 };

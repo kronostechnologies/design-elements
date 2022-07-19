@@ -1,4 +1,4 @@
-import { KeyboardEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { KeyboardEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
@@ -42,7 +42,7 @@ const StyledIconButton = styled(IconButton)`
     vertical-align: middle;
 `;
 
-export function Breadcrumb({ className, history }: BreadcrumbProps): ReactElement {
+export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, history }) => {
     const [isOpen, setOpen] = useState(false);
     const [focusedValue, setFocusedValue] = useState('');
 
@@ -129,4 +129,4 @@ export function Breadcrumb({ className, history }: BreadcrumbProps): ReactElemen
             </StyledOL>
         </nav>
     );
-}
+};

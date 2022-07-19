@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
@@ -50,13 +50,11 @@ interface CardLinkProps {
     replace?: boolean;
 }
 
-export function CardLink({
+export const CardLink: VoidFunctionComponent<CardLinkProps> = ({
     className, href, label, replace,
-}: CardLinkProps): ReactElement {
-    return (
-        <StyledLink className={className} replace={replace} title={label} to={href}>
-            {label}
-            <StyledIcon aria-hidden name="chevronRight" size="16" />
-        </StyledLink>
-    );
-}
+}) => (
+    <StyledLink className={className} replace={replace} title={label} to={href}>
+        {label}
+        <StyledIcon aria-hidden name="chevronRight" size="16" />
+    </StyledLink>
+);

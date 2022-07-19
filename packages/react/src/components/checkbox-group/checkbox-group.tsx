@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactElement } from 'react';
+import { ChangeEvent, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Checkbox } from '../checkbox/checkbox';
@@ -24,13 +24,13 @@ interface CheckboxProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function CheckboxGroup({
+export const CheckboxGroup: VoidFunctionComponent<CheckboxProps> = ({
     label,
     checkedValues,
     checkboxGroup,
     onChange,
     ...props
-}: CheckboxProps): ReactElement {
+}) => {
     const dataAttributes = useDataAttributes(props);
     const dataTestId = dataAttributes['data-testid'] ?? 'checkboxGroup';
 
@@ -58,4 +58,4 @@ export function CheckboxGroup({
             ))}
         </>
     );
-}
+};

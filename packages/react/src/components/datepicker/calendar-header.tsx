@@ -1,5 +1,5 @@
 import { getMonth, getYear } from 'date-fns';
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -61,7 +61,7 @@ interface CalendarHeaderProps {
     increaseMonth(): void;
 }
 
-export function CalendarHeader({
+export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
     changeMonth,
     changeYear,
     date,
@@ -72,7 +72,7 @@ export function CalendarHeader({
     nextMonthButtonDisabled,
     prevMonthButtonDisabled,
     yearsOptions,
-}: CalendarHeaderProps): ReactElement {
+}) => {
     const { t } = useTranslation('datepicker');
     const { isMobile } = useDeviceContext();
 
@@ -120,4 +120,4 @@ export function CalendarHeader({
             </StyledButton>
         </Wrapper>
     );
-}
+};

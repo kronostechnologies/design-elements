@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement } from 'react';
+import { MouseEvent, VoidFunctionComponent } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -49,7 +49,7 @@ interface LinkProps {
     onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
 
-export function RouteLink({
+export const RouteLink: VoidFunctionComponent<LinkProps> = ({
     className,
     disabled,
     exact,
@@ -58,7 +58,7 @@ export function RouteLink({
     label,
     routerLink,
     onClick,
-}: LinkProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
 
     return (
@@ -79,4 +79,4 @@ export function RouteLink({
             {label}
         </Link>
     );
-}
+};

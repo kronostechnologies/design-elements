@@ -22,7 +22,7 @@ const TooltipArrow = styled.div`
 
     &::before {
         border-style: solid;
-        content: '';
+        content: "";
         display: block;
         height: 0;
         margin: auto;

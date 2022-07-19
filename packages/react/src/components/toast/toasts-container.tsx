@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, VoidFunctionComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
@@ -71,9 +71,9 @@ const Portal: FunctionComponent<PortalProps> = ({ children, shadowRoot }) => {
     return ReactDOM.createPortal(children, rootDocument);
 };
 
-export function ToastsContainer({
+export const ToastsContainer: VoidFunctionComponent<ToastProps> = ({
     position,
-}: ToastProps): ReactElement {
+}) => {
     const { toasts } = useToasts();
     const { isMobile } = useDeviceContext();
     const shadowRoot = useShadowRoot();
@@ -96,4 +96,4 @@ export function ToastsContainer({
             </ToastListWrapper>
         </Portal>
     );
-}
+};

@@ -1,4 +1,4 @@
-import { ReactElement, useMemo } from 'react';
+import { useMemo, VoidFunctionComponent } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -18,7 +18,7 @@ export interface AvatarProps {
 
 interface SizeStyleProps {
     size: AvatarSize;
-    isMobile: boolean
+    isMobile: boolean;
 }
 
 function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterpolation<ThemeProps<Theme>> {
@@ -70,9 +70,9 @@ const StyledImg = styled.img<SizeStyleProps>`
     ${getSpecificSizeStyle}
 `;
 
-export function Avatar({
+export const Avatar: VoidFunctionComponent<AvatarProps> = ({
     className, username, bgColor, imgSrc, size = 'xsmall',
-}: AvatarProps): ReactElement {
+}) => {
     const { t } = useTranslation('avatar');
     const { isMobile } = useDeviceContext();
     const initials = useMemo(() => {
@@ -101,4 +101,4 @@ export function Avatar({
             </span>
         </StyledDiv>
     );
-}
+};

@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactElement, useMemo } from 'react';
+import { ChangeEvent, useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
@@ -93,18 +93,16 @@ interface RadioButtonGroupProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function RadioButtonGroup(
-    {
-        id: providedId,
-        buttons,
-        groupName,
-        label,
-        tooltip,
-        onChange,
-        checkedValue,
-        ...otherProps
-    }: RadioButtonGroupProps,
-): ReactElement {
+export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
+    id: providedId,
+    buttons,
+    groupName,
+    label,
+    tooltip,
+    onChange,
+    checkedValue,
+    ...otherProps
+}) => {
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -134,4 +132,4 @@ export function RadioButtonGroup(
             ))}
         </StyledDiv>
     );
-}
+};

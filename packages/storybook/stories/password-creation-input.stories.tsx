@@ -6,11 +6,13 @@ import {
     hasAnUpperCaseLetter,
     hasALowerCaseLetter,
 } from '@equisoft/design-elements-react';
+import { LanguageSwitchDecorator } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Controls/Password Creation Input',
     component: PasswordCreationInput,
+    decorators: [LanguageSwitchDecorator],
 };
 
 export const Normal: Story = () => (

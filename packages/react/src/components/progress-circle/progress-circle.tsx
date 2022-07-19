@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { Circle } from '../circle/circle';
@@ -69,23 +69,21 @@ interface Props {
 }
 
 // Source: https://css-tricks.com/building-progress-ring-quickly/
-export function ProgressCircle({
+export const ProgressCircle: VoidFunctionComponent<Props> = ({
     className, color, descriptionLabel, percent, resultLabel,
-}: Props): ReactElement {
-    return (
-        <Container className={className}>
-            <Wrapper>
-                <StyledCircle
-                    radius={RADIUS}
-                    stroke={STROKE}
-                    percent={percent}
-                    color={color}
-                />
-                <Result>
-                    <p>{resultLabel}</p>
-                </Result>
-            </Wrapper>
-            {descriptionLabel && <Label>{descriptionLabel}</Label>}
-        </Container>
-    );
-}
+}) => (
+    <Container className={className}>
+        <Wrapper>
+            <StyledCircle
+                radius={RADIUS}
+                stroke={STROKE}
+                percent={percent}
+                color={color}
+            />
+            <Result>
+                <p>{resultLabel}</p>
+            </Result>
+        </Wrapper>
+        {descriptionLabel && <Label>{descriptionLabel}</Label>}
+    </Container>
+);

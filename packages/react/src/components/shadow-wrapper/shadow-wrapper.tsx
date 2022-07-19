@@ -16,7 +16,7 @@ const reactShadow = createProxy(
     'styled-components',
     ({ root, children }) => (
         <StyleSheetManager target={root}>
-            <>{children}</>
+            {children}
         </StyleSheetManager>
     ),
 );

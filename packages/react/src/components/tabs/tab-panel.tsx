@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import { focus, focusVisibleReset } from '../../utils/css-state';
 
@@ -19,24 +19,22 @@ const StyledDiv = styled.div<{ $contained?: boolean }>`
     ${focusVisibleReset}
 `;
 
-export function TabPanel({
+export const TabPanel: FunctionComponent<TabPanelProps> = ({
     buttonId,
     children,
     contained,
     hidden,
     id,
-}: TabPanelProps): ReactElement {
-    return (
-        <StyledDiv
-            $contained={contained}
-            aria-hidden={hidden}
-            aria-labelledby={buttonId}
-            hidden={hidden}
-            id={id}
-            role="tabpanel"
-            tabIndex={0}
-        >
-            {children}
-        </StyledDiv>
-    );
-}
+}) => (
+    <StyledDiv
+        $contained={contained}
+        aria-hidden={hidden}
+        aria-labelledby={buttonId}
+        hidden={hidden}
+        id={id}
+        role="tabpanel"
+        tabIndex={0}
+    >
+        {children}
+    </StyledDiv>
+);

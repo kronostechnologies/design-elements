@@ -1,4 +1,4 @@
-import { ReactElement, ReactText } from 'react';
+import { ReactText, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { Bar } from '../bar/bar';
@@ -29,17 +29,15 @@ interface Props {
     descriptionLabel?: string;
 }
 
-export function ProgressBar({
+export const ProgressBar: VoidFunctionComponent<Props> = ({
     className, color, descriptionLabel, resultLabel, percent,
-}: Props): ReactElement {
-    return (
-        <Container className={className}>
-            <Label>{descriptionLabel}</Label>
-            <Bar
-                color={color}
-                endLabel={resultLabel}
-                percent={percent}
-            />
-        </Container>
-    );
-}
+}) => (
+    <Container className={className}>
+        <Label>{descriptionLabel}</Label>
+        <Bar
+            color={color}
+            endLabel={resultLabel}
+            percent={percent}
+        />
+    </Container>
+);

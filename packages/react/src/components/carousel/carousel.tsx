@@ -1,4 +1,4 @@
-import { AriaAttributes, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import { AriaAttributes, FunctionComponent, ReactElement, ReactNode, VoidFunctionComponent } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTheme } from '../../hooks/use-theme';
@@ -82,15 +82,15 @@ const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'but
     ${focus};
 `;
 
-function LeftArrowIcon(): ReactElement {
+const LeftArrowIcon: VoidFunctionComponent = (): ReactElement => {
     const theme = useTheme();
     return <Icon name="arrowLeft" size="100%" color={theme.greys['dark-grey']} />;
-}
+};
 
-function RightArrowIcon(): ReactElement {
+const RightArrowIcon: VoidFunctionComponent = (): ReactElement => {
     const theme = useTheme();
     return <Icon name="arrowRight" size="100%" color={theme.greys['dark-grey']} />;
-}
+};
 
 export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
     autoTransitionDelay?: number;
@@ -99,14 +99,14 @@ export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
      */
     children: ReactNode;
     className?: string;
-    header: ReactNode;
-    initialSlide: number;
-    loop: boolean;
-    transitionTime: number;
-    withArrows: boolean;
+    header?: ReactNode;
+    initialSlide?: number;
+    loop?: boolean;
+    transitionTime?: number;
+    withArrows?: boolean;
 }
 
-function getChildrenAsArray(children: ReactNode): ReactNodeArray {
+function getChildrenAsArray(children: ReactNode): ReactNode[] {
     if (!children) {
         return [];
     }
@@ -116,11 +116,17 @@ function getChildrenAsArray(children: ReactNode): ReactNodeArray {
     return [children];
 }
 
-export function Carousel(
-    {
-        autoTransitionDelay, className, initialSlide, children, header, loop, transitionTime, withArrows, ...props
-    }: CarouselProps,
-): ReactElement {
+export const Carousel: FunctionComponent<CarouselProps> = ({
+    autoTransitionDelay,
+    className,
+    initialSlide = 0,
+    children,
+    header = null,
+    loop = false,
+    transitionTime = 400,
+    withArrows = true,
+    ...props
+}) => {
     const carouselId = useId('carousel-slides-');
 
     const childrenAsArray = getChildrenAsArray(children);
@@ -224,12 +230,4 @@ export function Carousel(
             )}
         </Main>
     );
-}
-
-Carousel.defaultProps = {
-    initialSlide: 0,
-    header: null,
-    loop: false,
-    transitionTime: 400,
-    withArrows: true,
 };

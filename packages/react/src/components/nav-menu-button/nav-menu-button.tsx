@@ -1,7 +1,7 @@
 import {
+    FunctionComponent,
     KeyboardEvent,
     MouseEvent as ReactMouseEvent,
-    ReactElement,
     ReactNode,
     useCallback,
     useEffect,
@@ -10,8 +10,8 @@ import {
     useState,
 } from 'react';
 import styled from 'styled-components';
-import { useTranslation } from '../../i18n/use-translation';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
+import { useTranslation } from '../../i18n/use-translation';
 import { menuDimensions } from '../../tokens/menuDimensions';
 import { getRootDocument } from '../../utils/dom';
 import { eventIsInside } from '../../utils/events';
@@ -85,7 +85,7 @@ interface MenuButtonProps {
     onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
-export function NavMenuButton({
+export const NavMenuButton: FunctionComponent<MenuButtonProps> = ({
     tag,
     ariaLabel,
     autofocus,
@@ -104,7 +104,7 @@ export function NavMenuButton({
     options,
     title,
     ...props
-}: MenuButtonProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('nav-menu-button');
     const id = useMemo(() => providedId || uuid(), [providedId]);
@@ -239,4 +239,4 @@ export function NavMenuButton({
             />
         </StyledDiv>
     );
-}
+};

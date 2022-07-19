@@ -1,4 +1,4 @@
-import { ReactElement, useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { ChooserButton } from '../chooser-button/chooser-button';
@@ -40,7 +40,7 @@ const Skip = styled.div`
     margin: var(--spacing-2x) 0 0;
 `;
 
-export function ChooserButtonGroup({
+export const ChooserButtonGroup: VoidFunctionComponent<ChooserButtonGroupProps> = ({
     inColumns,
     groupName,
     onChange,
@@ -48,7 +48,7 @@ export function ChooserButtonGroup({
     skipOption,
     value,
     ...props
-}: ChooserButtonGroupProps): ReactElement {
+}) => {
     const dataAttributes = useDataAttributes(props);
     const dataTestId = dataAttributes['data-testid'] ?? 'chooser-button-group';
     const [isControlled] = useState(value !== undefined);
@@ -94,4 +94,4 @@ export function ChooserButtonGroup({
             )}
         </>
     );
-}
+};
