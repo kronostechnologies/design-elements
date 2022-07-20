@@ -130,6 +130,7 @@ export interface ModalProps {
     isOpen: boolean;
     modalFooter?: ReactNode;
     modalHeader?: ReactNode;
+    parentSelector?: () => HTMLElement;
     /**
      * Sets modal role tag
      * @default dialog
@@ -163,6 +164,7 @@ export function Modal({
     isOpen,
     modalFooter,
     modalHeader,
+    parentSelector,
     role = 'dialog',
     shouldCloseOnOverlayClick = true,
     onAfterOpen,
@@ -232,6 +234,7 @@ export function Modal({
             onAfterOpen={onAfterOpen}
             onAfterClose={onAfterClose}
             onRequestClose={onRequestClose}
+            parentSelector={parentSelector}
             role={role}
             style={customStyles}
             contentLabel={ariaLabel}

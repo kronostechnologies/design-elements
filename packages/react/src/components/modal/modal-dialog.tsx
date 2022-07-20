@@ -67,6 +67,7 @@ export interface ModalDialogProps {
     footerContent?: ReactElement;
     hasCloseButton?: boolean;
     isOpen: boolean;
+    parentSelector?: () => HTMLElement;
     /**
      * Defines if the overlay click should close the modal
      * @default true
@@ -91,6 +92,7 @@ export function ModalDialog({
     footerContent,
     hasCloseButton,
     isOpen,
+    parentSelector,
     shouldCloseOnOverlayClick = true,
     subtitle,
     title,
@@ -176,6 +178,7 @@ export function ModalDialog({
             modalHeader={getHeader()}
             hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
+            parentSelector={parentSelector}
             role="dialog"
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
