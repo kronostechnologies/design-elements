@@ -15,6 +15,20 @@ describe('SectionalBanner', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    it('should match snapshot (custom message)', () => {
+        const tree = renderWithProviders(
+            <SectionalBanner type="info">
+                <p>Some sub title</p>
+                <ul>
+                    <li>Some bullet point</li>
+                </ul>
+            </SectionalBanner>,
+            'desktop',
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     it('should match snapshot (mobile)', () => {
         const tree = renderWithProviders(
             <SectionalBanner type="info">
