@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -94,6 +94,7 @@ const StyledIcon = styled(Icon)<{ $isMobile: boolean }>`
 `;
 
 interface Props {
+    children: ReactElement | string;
     className?: string;
     type?: LozengeType;
     icon?: IconName;
