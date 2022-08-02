@@ -1,16 +1,31 @@
-on: pull_request
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
+      - dev/updates
 
 name: Security
 
 jobs:
-  secrets:
-    name: Scan secret leaks
+  security:
+    name: CodeQL scan
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - working-directory: packages/react
+            name: React
+          - working-directory: packages/storybook
+            name: Storybook
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Run secret scanner
-        uses: kronostechnologies/actions/scan-secrets@v0.0.23
+      - name: CodeQL
+        uses: equisoft-actions/codeql@v1
+        with:
+          category: ${{ matrix.name }}
+          languages: typescript,javascript
+          working-directory: ${{ matrix.working-directory }}

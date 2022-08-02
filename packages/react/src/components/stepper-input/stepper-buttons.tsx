@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 
 import { useTranslation } from '../../i18n/use-translation';
@@ -39,7 +39,7 @@ const buttonStyles = css`
 `;
 
 const IncrementButton = styled.button`
-    ${buttonStyles}
+    ${buttonStyles};
 
     border-bottom: none;
     border-radius: 0 var(--border-radius) 0 0;
@@ -47,7 +47,7 @@ const IncrementButton = styled.button`
 `;
 
 const DecrementButton = styled.button`
-    ${buttonStyles}
+    ${buttonStyles};
 
     border-radius: 0 0 var(--border-radius) 0;
     height: calc(50% + 1px);
@@ -59,7 +59,7 @@ interface StepperButtonsProps {
     onDecrement?(): void;
 }
 
-export function StepperButtons({ disabled, onIncrement, onDecrement }: StepperButtonsProps): ReactElement {
+export const StepperButtons: VoidFunctionComponent<StepperButtonsProps> = ({ disabled, onIncrement, onDecrement }) => {
     const { t } = useTranslation('stepper-buttons');
 
     return (
@@ -86,4 +86,4 @@ export function StepperButtons({ disabled, onIncrement, onDecrement }: StepperBu
             </DecrementButton>
         </Wrapper>
     );
-}
+};

@@ -1,5 +1,5 @@
 import { Button, useToast } from '@equisoft/design-elements-react';
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -8,7 +8,7 @@ export default {
     parameters: rawCodeParameters,
 };
 
-export function ShowToast(): ReactElement {
+export const ShowToast: VoidFunctionComponent = () => {
     const { showToast } = useToast();
     return (
         <>
@@ -22,4 +22,4 @@ export function ShowToast(): ReactElement {
             <Button label="Error" buttonType="destructive" onClick={() => showToast('error', 'An error message!')} />
         </>
     );
-}
+};

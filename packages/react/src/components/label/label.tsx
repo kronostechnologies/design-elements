@@ -1,4 +1,4 @@
-import { Fragment, ReactElement, ReactNode } from 'react';
+import { Fragment, FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
@@ -29,14 +29,13 @@ const StyledTooltip = styled(Tooltip)`
 
 interface LabelProps {
     className?: string;
-    children: ReactNode;
     forId: string;
     tooltip?: TooltipProps;
 }
 
-function Label({
+const Label: FunctionComponent<LabelProps> = ({
     className, children, forId, tooltip,
-}: LabelProps): ReactElement {
+}) => {
     const WrapperComponent = tooltip ? StyledDiv : Fragment;
     const { isMobile } = useDeviceContext();
 
@@ -49,6 +48,6 @@ function Label({
             {tooltip && <StyledTooltip {...tooltip} />}
         </WrapperComponent>
     );
-}
+};
 
 export { Label };

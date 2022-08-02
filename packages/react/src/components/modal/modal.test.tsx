@@ -17,7 +17,8 @@ function renderModal(props: ModalPropsLite, device: DeviceType = 'desktop'): Ren
     return renderPortalWithProviders(
         <Modal {...defaultTestProps} {...props}>
             <p id="modal-description">Test Content</p>
-        </Modal>, device,
+        </Modal>,
+        device,
     );
 }
 
@@ -27,7 +28,8 @@ describe('Modal', () => {
         const { getByTestId } = renderPortalWithProviders(
             <Modal isOpen onRequestClose={callback} ariaHideApp={false}>
                 <p id="modal-description">Test Content</p>
-            </Modal>, 'desktop',
+            </Modal>,
+            'desktop',
         );
 
         fireEvent.click(getByTestId('close-button'));

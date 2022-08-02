@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, useCallback } from 'react';
+import { MouseEvent, useCallback, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -52,9 +52,9 @@ export interface ExternalLinkProps {
     onClick?(): void;
 }
 
-export function ExternalLink({
+export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
     className, disabled, href = '', iconName, label, onClick, target = '_blank',
-}: ExternalLinkProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('common');
     const opensInNewTab = target === '_blank';
@@ -85,4 +85,4 @@ export function ExternalLink({
             )}
         </Link>
     );
-}
+};

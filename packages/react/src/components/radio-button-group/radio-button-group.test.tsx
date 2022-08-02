@@ -1,5 +1,5 @@
-import { getByTestId } from 'test-utils/enzyme-selectors';
 import { doNothing } from '../../test-utils/callbacks';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { RadioButtonGroup } from './radio-button-group';
 

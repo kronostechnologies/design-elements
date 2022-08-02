@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState, VoidFunctionComponent } from 'react';
+import { useEffect, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
@@ -118,7 +118,7 @@ interface PaginationProps {
     activePage?: number;
 }
 
-export function Pagination({
+export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     className,
     totalPages,
     numberOfResults,
@@ -126,7 +126,7 @@ export function Pagination({
     pagesShown = 3,
     onPageChange = () => undefined,
     activePage,
-}: PaginationProps): ReactElement {
+}) => {
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
@@ -223,4 +223,4 @@ export function Pagination({
             </Navigation>
         </Container>
     );
-}
+};

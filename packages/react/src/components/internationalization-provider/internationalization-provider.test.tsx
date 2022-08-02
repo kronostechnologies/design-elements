@@ -1,12 +1,12 @@
 import { mount, ReactWrapper } from 'enzyme';
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import { useTranslation } from '../../i18n/use-translation';
 import { IntlProvider } from './internationalization-provider';
 
-function TestButton(): ReactElement {
+const TestButton: VoidFunctionComponent = () => {
     const { i18n } = useTranslation();
     return <button type="button" value={i18n.language} />;
-}
+};
 
 function mountComponentWithIntlProvider(language?: string): ReactWrapper {
     return mount(

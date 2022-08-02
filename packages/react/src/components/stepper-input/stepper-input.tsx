@@ -1,6 +1,13 @@
-import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactElement, RefObject, useMemo, useRef } from 'react';
+import {
+    ChangeEvent,
+    DetailedHTMLProps,
+    InputHTMLAttributes,
+    RefObject,
+    useMemo,
+    useRef,
+    VoidFunctionComponent,
+} from 'react';
 import styled from 'styled-components';
-
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { v4 as uuid } from '../../utils/uuid';
@@ -65,7 +72,7 @@ function triggerChangeEventOnRef(ref: RefObject<HTMLInputElement>): void {
     ref.current?.dispatchEvent(new Event('change', { bubbles: true }));
 }
 
-export function StepperInput({
+export const StepperInput: VoidFunctionComponent<StepperInputProps> = ({
     defaultValue,
     disabled,
     hint,
@@ -82,7 +89,7 @@ export function StepperInput({
     onBlur,
     onChange,
     onFocus,
-}: StepperInputProps): ReactElement {
+}) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const { t } = useTranslation('stepper-input');
     const device = useDeviceContext();
@@ -156,4 +163,4 @@ export function StepperInput({
             </Wrapper>
         </FieldContainer>
     );
-}
+};

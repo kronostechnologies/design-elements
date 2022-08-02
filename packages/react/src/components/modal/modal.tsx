@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
+import { FunctionComponent, ReactNode, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import styled, { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -151,7 +151,7 @@ export interface ModalProps {
     onRequestClose(): void;
 }
 
-export function Modal({
+export const Modal: FunctionComponent<ModalProps> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp = true,
@@ -170,7 +170,7 @@ export function Modal({
     onAfterOpen,
     onAfterClose,
     onRequestClose,
-}: ModalProps): ReactElement {
+}) => {
     const [mainRef, setMainRef] = useState<HTMLUListElement>();
     const [topScroll, setTopScroll] = useState(0);
     const [bottomScroll, setBottomScroll] = useState(0);
@@ -288,4 +288,4 @@ export function Modal({
             )}
         </StyledModal>
     );
-}
+};

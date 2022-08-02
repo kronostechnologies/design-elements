@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement, ReactNode } from 'react';
+import { ComponentProps, FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
@@ -99,7 +99,7 @@ interface GlobalHeaderProps {
     usesReactRouter?: boolean;
 }
 
-export function GlobalHeader({
+export const GlobalHeader: FunctionComponent<GlobalHeaderProps> = ({
     appName = 'default',
     appTitleDesktop,
     children,
@@ -109,7 +109,7 @@ export function GlobalHeader({
     mobileDrawerContent,
     skipLink,
     usesReactRouter = true,
-}: GlobalHeaderProps): ReactElement {
+}) => {
     const { device, isMobile } = useDeviceContext();
     const appLogo = customLogo ?? <Logo name={appName} mobile={isMobile} />;
 
@@ -146,4 +146,4 @@ export function GlobalHeader({
             </Content>
         </Header>
     );
-}
+};

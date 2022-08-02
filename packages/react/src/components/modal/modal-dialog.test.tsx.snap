@@ -1,12 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
-<body
-  class=""
-  style="overflow: unset;"
->
-  <div />
-  .c0 {
+.c0 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -14,7 +9,12 @@ exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
   right: var(--spacing-2x);
 }
 
-<div
+<body
+  class=""
+  style="overflow: unset;"
+>
+  <div />
+  <div
     class="c0"
     data-testid="toasts"
   />
@@ -25,6 +25,254 @@ exports[`Modal-Dialog Matches snapshot (closed) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c9:not(:disabled) {
+  cursor: pointer;
+}
+
+.c9 > svg {
+  color: inherit;
+}
+
+.c13 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c13:focus {
+  outline: none;
+}
+
+.c13:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c13:hover,
+.c13[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c13:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c13:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c10 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c10:focus {
+  outline: none;
+}
+
+.c10:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c10:hover,
+.c10[aria-expanded="true"] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+}
+
+.c10:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+}
+
+.c12 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c12:focus {
+  outline: none;
+}
+
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c12:hover,
+.c12[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c12:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c12:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c3 {
+  font-size: 1.5rem;
+  font-weight: var(--font-normal);
+  line-height: 2.25rem;
+  margin: 0;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
+  position: relative;
+  width: 60vw;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-4x);
+}
+
+.c1:focus {
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.c6 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
+.c2 {
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-4x) var(--spacing-4x) var(--spacing-3x);
+}
+
+.c2 + .c5 {
+  padding-top: 0;
+}
+
+.c14 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+.c7 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
+}
+
+.c4 {
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 1.375rem;
+  margin: var(--spacing-3x) 0 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+}
+
+.c11 {
+  margin-bottom: 0;
+  margin-right: var(--spacing-1x);
+}
+
 <body
   class="ReactModal__Body--open"
   style="overflow: hidden;"
@@ -35,15 +283,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
     tabindex="0"
   />
   <div />
-  .c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-<div
+  <div
     class="c0"
     data-testid="toasts"
   />
@@ -52,7 +292,618 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
     style="position: absolute; opacity: 0;"
     tabindex="0"
   />
-  .c8 {
+  <div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+    >
+      <div
+        aria-describedby="modal-description"
+        aria-modal="true"
+        class="ReactModal__Content c1 "
+        role="dialog"
+        tabindex="-1"
+      >
+        <header
+          class="c2"
+        >
+          <h2
+            class="c3"
+          >
+            Title
+          </h2>
+          <h3
+            class="c4"
+          >
+            Subtitle
+          </h3>
+        </header>
+        <main
+          class="c5 c6"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <button
+              class="c9 c10 c11"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Test Confirm
+            </button>
+            <button
+              class="c9 c12 "
+              data-testid="cancel-button"
+              type="button"
+            >
+              Test Cancel
+            </button>
+          </div>
+        </footer>
+        <button
+          aria-label="Close dialog"
+          class="c9 c13 c14"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4:not(:disabled) {
+  cursor: pointer;
+}
+
+.c4 > svg {
+  color: inherit;
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c5:hover,
+.c5[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c5:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c5:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
+  position: relative;
+  width: 60vw;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-4x);
+}
+
+.c1:focus {
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.c2 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
+.c6 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+.c3 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
+}
+
+<body
+  class="ReactModal__Body--open"
+  style="overflow: hidden;"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    class="c0"
+    data-testid="toasts"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+    >
+      <div
+        aria-describedby="modal-description"
+        aria-modal="true"
+        class="ReactModal__Content c1 "
+        role="dialog"
+        tabindex="-1"
+      >
+        <main
+          class="c2"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c3"
+        >
+          <p>
+            Custom content
+          </p>
+        </footer>
+        <button
+          aria-label="Close dialog"
+          class="c4 c5 c6"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: 32px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c5:not(:disabled) {
+  cursor: pointer;
+}
+
+.c5 > svg {
+  color: inherit;
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c9:hover,
+.c9[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c9:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c9:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
+.c6 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6:hover,
+.c6[aria-expanded="true"] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+}
+
+.c6:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+}
+
+.c8:focus {
+  outline: none;
+}
+
+.c8:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c8:hover,
+.c8[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c8:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c8:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius-2x);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-2x));
+  max-width: 700px;
+  min-width: calc(480px - var(--spacing-4x));
+  position: relative;
+  width: 60vw;
+}
+
+.c1::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--spacing-4x);
+}
+
+.c1:focus {
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.c2 {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
+}
+
+.c10 {
+  position: absolute;
+  right: var(--spacing-1x);
+  top: var(--spacing-1x);
+}
+
+.c3 {
+  border-top: 1px solid transparent;
+  padding: var(--spacing-5x) var(--spacing-4x) 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: unset;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+}
+
+.c7 {
+  margin-bottom: 0;
+  margin-right: var(--spacing-1x);
+}
+
+<body
+  class="ReactModal__Body--open"
+  style="overflow: hidden;"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    class="c0"
+    data-testid="toasts"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
+    >
+      <div
+        aria-describedby="modal-description"
+        aria-label="Test modal"
+        aria-modal="true"
+        class="ReactModal__Content c1 "
+        role="dialog"
+        tabindex="-1"
+      >
+        <main
+          class="c2"
+        >
+          <p
+            id="modal-description"
+          >
+            Test Content
+          </p>
+        </main>
+        <footer
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <button
+              class="c5 c6 c7"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
+            </button>
+            <button
+              class="c5 c8 "
+              data-testid="cancel-button"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
+        <button
+          aria-label="Close dialog"
+          class="c5 c9 c10"
+          data-testid="close-button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            color="currentColor"
+            focusable="false"
+            height="16"
+            width="16"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -145,6 +996,14 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #60666E;
 }
 
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: var(--spacing-2x);
+}
+
 .c9 {
   background-color: #006296;
   border-color: #006296;
@@ -205,14 +1064,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #60666E;
 }
 
-.c2 {
-  font-size: 1.5rem;
-  font-weight: var(--font-normal);
-  line-height: 2.25rem;
-  margin: 0;
-}
-
-.c0 {
+.c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
@@ -232,13 +1084,13 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   width: 60vw;
 }
 
-.c0::after {
+.c1::after {
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
   outline: none;
@@ -250,12 +1102,12 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
-.c1 {
+.c2 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x) var(--spacing-3x);
 }
 
-.c1 + .c4 {
+.c2 + .c4 {
   padding-top: 0;
 }
 
@@ -274,8 +1126,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.375rem;
-  margin: 0;
-  margin-top: var(--spacing-3x);
+  margin: 0 0 0;
 }
 
 .c7 {
@@ -293,7 +1144,26 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   margin-right: var(--spacing-1x);
 }
 
-<div
+<body
+  class="ReactModal__Body--open"
+  style="overflow: hidden;"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    class="c0"
+    data-testid="toasts"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
     class="ReactModalPortal"
   >
     <div
@@ -302,19 +1172,15 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
     >
       <div
         aria-describedby="modal-description"
+        aria-label="Test modal"
         aria-modal="true"
-        class="ReactModal__Content c0 "
+        class="ReactModal__Content c1 "
         role="dialog"
         tabindex="-1"
       >
         <header
-          class="c1"
+          class="c2"
         >
-          <h2
-            class="c2"
-          >
-            Title
-          </h2>
           <h3
             class="c3"
           >
@@ -341,14 +1207,14 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
               data-testid="confirm-button"
               type="button"
             >
-              Test Confirm
+              Confirm
             </button>
             <button
               class="c8 c11 "
               data-testid="cancel-button"
               type="button"
             >
-              Test Cancel
+              Cancel
             </button>
           </div>
         </footer>
@@ -372,566 +1238,8 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 </body>
 `;
 
-exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
-<body
-  class="ReactModal__Body--open"
-  style="overflow: hidden;"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  .c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-<div
-    class="c0"
-    data-testid="toasts"
-  />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: 32px;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-.c3:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:not(:disabled) {
-  cursor: pointer;
-}
-
-.c3 > svg {
-  color: inherit;
-}
-
-.c4 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: 32px;
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4:hover,
-.c4[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c4:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c4:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c0::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c0:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
-  outline: none;
-}
-
-.c1 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c5 {
-  position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
-}
-
-.c2 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
-}
-
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
-    >
-      <div
-        aria-describedby="modal-description"
-        aria-modal="true"
-        class="ReactModal__Content c0 "
-        role="dialog"
-        tabindex="-1"
-      >
-        <main
-          class="c1"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c2"
-        >
-          <p>
-            Custom content
-          </p>
-        </footer>
-        <button
-          aria-label="Close dialog"
-          class="c3 c4 c5"
-          data-testid="close-button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
-<body
-  class="ReactModal__Body--open"
-  style="overflow: hidden;"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  .c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-<div
-    class="c0"
-    data-testid="toasts"
-  />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: 32px;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c4:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4:not(:disabled) {
-  cursor: pointer;
-}
-
-.c4 > svg {
-  color: inherit;
-}
-
+exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 .c8 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: 32px;
-}
-
-.c8:focus {
-  outline: none;
-}
-
-.c8:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c8:hover,
-.c8[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c8:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c8:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c5 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c5:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c5:hover,
-.c5[aria-expanded="true"] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-}
-
-.c5:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-}
-
-.c7 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c7:focus {
-  outline: none;
-}
-
-.c7:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:hover,
-.c7[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c7:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c7:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c0::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c0:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
-  outline: none;
-}
-
-.c1 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c9 {
-  position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
-}
-
-.c2 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
-}
-
-.c6 {
-  margin-bottom: 0;
-  margin-right: var(--spacing-1x);
-}
-
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
-    >
-      <div
-        aria-describedby="modal-description"
-        aria-label="Test modal"
-        aria-modal="true"
-        class="ReactModal__Content c0 "
-        role="dialog"
-        tabindex="-1"
-      >
-        <main
-          class="c1"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c2"
-        >
-          <div
-            class="c3"
-          >
-            <button
-              class="c4 c5 c6"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c4 c7 "
-              data-testid="cancel-button"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
-        </footer>
-        <button
-          aria-label="Close dialog"
-          class="c4 c8 c9"
-          data-testid="close-button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
-<body
-  class="ReactModal__Body--open"
-  style="overflow: hidden;"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  .c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-<div
-    class="c0"
-    data-testid="toasts"
-  />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -971,287 +1279,60 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   user-select: none;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
+.c8:not(:disabled) {
   cursor: pointer;
 }
 
-.c7 > svg {
+.c8 > svg {
   color: inherit;
-}
-
-.c11 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: 32px;
-}
-
-.c11:focus {
-  outline: none;
-}
-
-.c11:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c11:hover,
-.c11[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c11:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c11:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c8 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c8:focus {
-  outline: none;
-}
-
-.c8:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c8:hover,
-.c8[aria-expanded="true"] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-}
-
-.c8:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c10:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c10:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c0 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c0::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c0:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
-  outline: none;
-}
-
-.c4 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c1 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) var(--spacing-3x);
-}
-
-.c1 + .c3 {
-  padding-top: 0;
 }
 
 .c12 {
-  position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 32px;
 }
 
-.c5 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
+.c12:focus {
+  outline: none;
 }
 
-.c2 {
-  font-size: 1rem;
-  font-weight: var(--font-normal);
-  line-height: 1.375rem;
-  margin: 0;
-  margin-top: 0;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
+.c12:hover,
+.c12[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
-.c9 {
-  margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+.c12:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-<div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
-    >
-      <div
-        aria-describedby="modal-description"
-        aria-label="Test modal"
-        aria-modal="true"
-        class="ReactModal__Content c0 "
-        role="dialog"
-        tabindex="-1"
-      >
-        <header
-          class="c1"
-        >
-          <h3
-            class="c2"
-          >
-            Subtitle
-          </h3>
-        </header>
-        <main
-          class="c3 c4"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c5"
-        >
-          <div
-            class="c6"
-          >
-            <button
-              class="c7 c8 c9"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c7 c10 "
-              data-testid="cancel-button"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
-        </footer>
-        <button
-          aria-label="Close dialog"
-          class="c7 c11 c12"
-          data-testid="close-button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
-`;
+.c12:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
 
-exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
-<body
-  class="ReactModal__Body--open"
-  style="overflow: hidden;"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  .c0 {
+.c0 {
   box-sizing: border-box;
   position: fixed;
   z-index: 100000;
@@ -1259,79 +1340,37 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   right: var(--spacing-2x);
 }
 
-<div
-    class="c0"
-    data-testid="toasts"
-  />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: inherit;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: var(--font-bold);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  line-height: 1rem;
-  min-height: 32px;
-  min-width: 2rem;
-  outline: none;
-  padding: 0 var(--spacing-2x);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.c9 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
-.c7:focus {
+.c9:focus {
   outline: none;
 }
 
-.c7:focus {
+.c9:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
+.c9:hover,
+.c9[aria-expanded="true"] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c7 > svg {
-  color: inherit;
+.c9:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c11 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-  padding: 0;
-  width: 32px;
 }
 
 .c11:focus {
@@ -1361,74 +1400,14 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   color: #60666E;
 }
 
-.c8 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c8:focus {
-  outline: none;
-}
-
-.c8:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c8:hover,
-.c8[aria-expanded="true"] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-}
-
-.c8:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-}
-
-.c10 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c10:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c10:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c2 {
+.c3 {
   font-size: 1.5rem;
   font-weight: var(--font-normal);
   line-height: 2.25rem;
   margin: 0;
 }
 
-.c0 {
+.c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
@@ -1448,45 +1427,45 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   width: 60vw;
 }
 
-.c0::after {
+.c1::after {
   content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
   outline: none;
 }
 
-.c4 {
+.c5 {
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
-.c1 {
+.c2 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-4x) var(--spacing-4x) var(--spacing-3x);
 }
 
-.c1 + .c3 {
+.c2 + .c4 {
   padding-top: 0;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   right: var(--spacing-1x);
   top: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   border-top: 1px solid transparent;
   padding: var(--spacing-5x) var(--spacing-4x) 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1496,12 +1475,31 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   flex-direction: unset;
 }
 
-.c9 {
+.c10 {
   margin-bottom: 0;
   margin-right: var(--spacing-1x);
 }
 
-<div
+<body
+  class="ReactModal__Body--open"
+  style="overflow: hidden;"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    class="c0"
+    data-testid="toasts"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
     class="ReactModalPortal"
   >
     <div
@@ -1511,21 +1509,21 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c0 "
+        class="ReactModal__Content c1 "
         role="dialog"
         tabindex="-1"
       >
         <header
-          class="c1"
+          class="c2"
         >
           <h2
-            class="c2"
+            class="c3"
           >
             Title
           </h2>
         </header>
         <main
-          class="c3 c4"
+          class="c4 c5"
         >
           <p
             id="modal-description"
@@ -1534,20 +1532,20 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
           </p>
         </main>
         <footer
-          class="c5"
+          class="c6"
         >
           <div
-            class="c6"
+            class="c7"
           >
             <button
-              class="c7 c8 c9"
+              class="c8 c9 c10"
               data-testid="confirm-button"
               type="button"
             >
               Confirm
             </button>
             <button
-              class="c7 c10 "
+              class="c8 c11 "
               data-testid="cancel-button"
               type="button"
             >
@@ -1557,7 +1555,7 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
         </footer>
         <button
           aria-label="Close dialog"
-          class="c7 c11 c12"
+          class="c8 c12 c13"
           data-testid="close-button"
           type="button"
         >
@@ -1806,8 +1804,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-normal);
   line-height: 1.375rem;
-  margin: 0;
-  margin-top: var(--spacing-3x);
+  margin: var(--spacing-3x) 0 0;
 }
 
 .c8 {
@@ -1924,34 +1921,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 `;
 
 exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
-<body
-  class="ReactModal__Body--open"
-  style="overflow: hidden;"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  .c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: 0;
-}
-
-<div
-    class="c0"
-    data-testid="toasts"
-  />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  .c8 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1991,30 +1961,98 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   user-select: none;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:not(:disabled) {
+.c9:not(:disabled) {
   cursor: pointer;
 }
 
-.c8 > svg {
+.c9 > svg {
   color: inherit;
+}
+
+.c13 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: 48px;
+}
+
+.c13:focus {
+  outline: none;
+}
+
+.c13:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c13:hover,
+.c13[aria-expanded="true"] {
+  background-color: #DBDEE1;
+  color: #000000;
+}
+
+.c13:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c13:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #60666E;
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100000;
+  bottom: var(--spacing-2x);
+  right: 0;
+}
+
+.c10 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c10:focus {
+  outline: none;
+}
+
+.c10:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c10:hover,
+.c10[aria-expanded="true"] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+}
+
+.c10:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c12 {
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
-  padding: 0;
-  width: 48px;
 }
 
 .c12:focus {
@@ -2044,74 +2082,14 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   color: #60666E;
 }
 
-.c9 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c9:focus {
-  outline: none;
-}
-
-.c9:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c9:hover,
-.c9[aria-expanded="true"] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-}
-
-.c9:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-}
-
-.c11 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c11:focus {
-  outline: none;
-}
-
-.c11:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c11:hover,
-.c11[aria-expanded="true"] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c11:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c11:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c2 {
+.c3 {
   font-size: 1.5rem;
   font-weight: var(--font-normal);
   line-height: 2.25rem;
   margin: 0;
 }
 
-.c0 {
+.c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius-2x);
@@ -2131,53 +2109,52 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   width: calc(100vw - var(--spacing-2x));
 }
 
-.c0::after {
+.c1::after {
   content: '';
   display: block;
   padding-bottom: var(--spacing-2x);
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgba(0,0,0,0.1);
   outline: none;
 }
 
-.c5 {
+.c6 {
   max-height: 100%;
   overflow-y: auto;
   padding: var(--spacing-2x) var(--spacing-2x) 0;
 }
 
-.c1 {
+.c2 {
   border-bottom: 1px solid transparent;
   padding: var(--spacing-2x) var(--spacing-2x) var(--spacing-3x);
 }
 
-.c1 + .c4 {
+.c2 + .c5 {
   padding-top: 0;
 }
 
-.c13 {
+.c14 {
   position: absolute;
   right: var(--spacing-half);
   top: var(--spacing-1x);
 }
 
-.c6 {
+.c7 {
   border-top: 1px solid transparent;
   padding: var(--spacing-5x) var(--spacing-2x) 0;
 }
 
-.c3 {
+.c4 {
   font-size: 1.125rem;
   font-weight: var(--font-normal);
   line-height: 1.75rem;
-  margin: 0;
-  margin-top: var(--spacing-3x);
+  margin: var(--spacing-3x) 0 0;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2187,12 +2164,31 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c11 {
   margin-bottom: var(--spacing-1x);
   margin-right: 0;
 }
 
-<div
+<body
+  class="ReactModal__Body--open"
+  style="overflow: hidden;"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    class="c0"
+    data-testid="toasts"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
     class="ReactModalPortal"
   >
     <div
@@ -2202,26 +2198,26 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
       <div
         aria-describedby="modal-description"
         aria-modal="true"
-        class="ReactModal__Content c0 "
+        class="ReactModal__Content c1 "
         role="dialog"
         tabindex="-1"
       >
         <header
-          class="c1"
+          class="c2"
         >
           <h2
-            class="c2"
+            class="c3"
           >
             Title
           </h2>
           <h3
-            class="c3"
+            class="c4"
           >
             Subtitle
           </h3>
         </header>
         <main
-          class="c4 c5"
+          class="c5 c6"
         >
           <p
             id="modal-description"
@@ -2230,20 +2226,20 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
           </p>
         </main>
         <footer
-          class="c6"
+          class="c7"
         >
           <div
-            class="c7"
+            class="c8"
           >
             <button
-              class="c8 c9 c10"
+              class="c9 c10 c11"
               data-testid="confirm-button"
               type="button"
             >
               Confirm
             </button>
             <button
-              class="c8 c11 "
+              class="c9 c12 "
               data-testid="cancel-button"
               type="button"
             >
@@ -2253,7 +2249,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
         </footer>
         <button
           aria-label="Close dialog"
-          class="c8 c12 c13"
+          class="c9 c13 c14"
           data-testid="close-button"
           type="button"
         >

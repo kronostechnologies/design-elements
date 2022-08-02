@@ -121,7 +121,7 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
                 Header: '',
                 accessor,
                 className: utilColumnClassName,
-                Cell: ({ viewIndex }: CellProps<T, unknown>) => <>{viewIndex + 1}</>,
+                Cell: ({ viewIndex }: CellProps<T, unknown>) => (viewIndex + 1),
             },
             ...columns,
         ];
@@ -220,7 +220,7 @@ export interface TableProps<T extends object> {
     onSelectedRowsChange?(selectedRows: T[]): void;
 }
 
-export function Table<T extends object>({
+export const Table = <T extends object>({
     className,
     columns,
     data,
@@ -231,7 +231,7 @@ export function Table<T extends object>({
     onRowClick,
     onSelectedRowsChange,
     stickyHeader = false,
-}: TableProps<T>): ReactElement {
+}: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
     const [renderedColumns, setRenderedColumns] = useState<TableColumn<T>>(
@@ -265,7 +265,8 @@ export function Table<T extends object>({
                 sortBy: [{
                     id: id || accessor as string,
                     desc: defaultSort === 'desc',
-                }],
+                },
+                ],
             };
         }
         return undefined;
@@ -330,4 +331,4 @@ export function Table<T extends object>({
             </tbody>
         </StyledTable>
     );
-}
+};

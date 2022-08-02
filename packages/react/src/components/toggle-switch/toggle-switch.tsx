@@ -1,10 +1,10 @@
-import { ReactElement, useMemo } from 'react';
+import { useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 interface StyledLabelProps {
     theme: Theme;
@@ -90,13 +90,13 @@ interface ToggleSwitchProps {
     onToggle(value: boolean): void;
 }
 
-export function ToggleSwitch({
+export const ToggleSwitch: VoidFunctionComponent<ToggleSwitchProps> = ({
     label,
     disabled,
     onToggle,
     toggled,
     ...otherProps
-} : ToggleSwitchProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const labelId = useMemo(uuid, []);
     const buttonId = useMemo(uuid, []);
@@ -126,4 +126,4 @@ export function ToggleSwitch({
             <StyledLabel id={labelId} htmlFor={buttonId} isMobile={isMobile} disabled={!!disabled}>{label}</StyledLabel>
         </>
     );
-}
+};

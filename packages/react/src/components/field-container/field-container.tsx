@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -42,7 +42,6 @@ const StyledHint = styled.span<{ isMobile: boolean }>`
 `;
 
 export interface FieldContainerProps {
-    children: ReactNode;
     className?: string;
     fieldId: string;
     hint?: string;
@@ -54,7 +53,7 @@ export interface FieldContainerProps {
     validationErrorMessage: string;
 }
 
-export function FieldContainer({
+export const FieldContainer : FunctionComponent<FieldContainerProps> = ({
     children,
     className,
     fieldId,
@@ -66,7 +65,7 @@ export function FieldContainer({
     valid,
     validationErrorMessage,
     ...props
-}: FieldContainerProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
 
     return (
@@ -91,4 +90,4 @@ export function FieldContainer({
             {children}
         </StyledDiv>
     );
-}
+};
