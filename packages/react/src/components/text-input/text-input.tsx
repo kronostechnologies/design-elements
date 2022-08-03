@@ -8,6 +8,7 @@ import {
     KeyboardEvent,
     MouseEvent,
     ReactElement,
+    ReactEventHandler,
     Ref,
     useCallback,
     useMemo,
@@ -58,6 +59,8 @@ interface TextInputProps extends PartialInputProps {
     onKeyDown?(event: KeyboardEvent<HTMLInputElement>): void;
 
     onMouseUp?(event: MouseEvent<HTMLInputElement>): void;
+
+    onSelect?: ReactEventHandler<HTMLInputElement>;
 }
 
 export const TextInput = forwardRef(({
@@ -86,6 +89,7 @@ export const TextInput = forwardRef(({
     onKeyUp,
     onKeyDown,
     onMouseUp,
+    onSelect,
     ...otherProps
 }: TextInputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
@@ -118,6 +122,12 @@ export const TextInput = forwardRef(({
         }
     }, [onFocus]);
 
+    const handleOnSelect: ReactEventHandler<HTMLInputElement> = useCallback((event) => {
+        if (onSelect) {
+            onSelect(event);
+        }
+    }, [onSelect]);
+
     return (
         <FieldContainer
             className={className}
@@ -149,6 +159,7 @@ export const TextInput = forwardRef(({
                 onKeyUp={onKeyUp}
                 onKeyDown={onKeyDown}
                 onInvalid={handleOnInvalid}
+                onSelect={handleOnSelect}
                 pattern={pattern}
                 placeholder={placeholder}
                 required={required}

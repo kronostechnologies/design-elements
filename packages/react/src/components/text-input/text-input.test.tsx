@@ -119,6 +119,19 @@ describe('TextInput', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
+    test('onSelect callback is called when text is selected', () => {
+        const callback = jest.fn();
+        const wrapper = mountWithTheme(
+            <TextInput
+                onSelect={callback}
+            />,
+        );
+
+        wrapper.find('input').simulate('select');
+
+        expect(callback).toHaveBeenCalledTimes(1);
+    });
+
     test('Matches the snapshot', () => {
         const tree = renderWithTheme(
             <TextInput

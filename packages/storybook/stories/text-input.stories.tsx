@@ -72,6 +72,9 @@ export const EventCallbacks: Story = () => (
         onFocus={(event) => {
             console.info(`Custom function called on focus. Current value: ${event.currentTarget.value}`);
         }}
+        onSelect={(event) => {
+            console.info(`Custom function called on select. Current value: ${event.currentTarget.value}`);
+        }}
     />
 );
 EventCallbacks.parameters = rawCodeParameters;
