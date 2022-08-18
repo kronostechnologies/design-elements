@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search Contextual matches the snapshot when disabled 1`] = `
-<SearchInput
+<ForwardRef
   data-testid="search-input"
   disabled={true}
   hasIcon={true}
@@ -13,7 +13,7 @@ exports[`Search Contextual matches the snapshot when disabled 1`] = `
 `;
 
 exports[`Search Contextual matches the snapshot when enabled 1`] = `
-<SearchInput
+<ForwardRef
   data-testid="search-input"
   hasIcon={true}
   label="Search"

@@ -1,6 +1,15 @@
 import SearchIcon from 'feather-icons/dist/icons/search.svg';
 import XIcon from 'feather-icons/dist/icons/x.svg';
-import { ChangeEvent, FocusEvent, KeyboardEvent, useCallback, useMemo, useRef, VoidFunctionComponent } from 'react';
+import {
+    ChangeEvent,
+    FocusEvent,
+    forwardRef,
+    KeyboardEvent,
+    useCallback,
+    useImperativeHandle,
+    useMemo,
+    useRef,
+} from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -140,7 +149,7 @@ export interface SearchInputProps extends CommonSearchProps {
     hasIcon?: boolean;
 }
 
-export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
+export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
     defaultValue,
     id: providedId,
     onChange,
@@ -149,10 +158,11 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     value,
     onInputFocus,
     ...props
-}: SearchInputProps) => {
+}, ref) => {
     const { t } = useTranslation('search-input');
     const id = useMemo(() => providedId || uuid(), [providedId]);
-    const inputRef = useRef<HTMLInputElement>(null);
+    const innerInputRef = useRef<HTMLInputElement>(null);
+    useImperativeHandle(ref, () => innerInputRef.current as HTMLInputElement);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         const newValue = event.currentTarget.value;
@@ -161,7 +171,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
     }, [onChange]);
 
     const searchCurrentValue: () => void = useCallback(() => {
-        onSearch?.(value || inputRef.current?.value || '');
+        onSearch?.(value || innerInputRef.current?.value || '');
     }, [onSearch, value]);
 
     const handleKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
@@ -193,7 +203,7 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
                 )}
 
                 <Input
-                    ref={inputRef}
+                    ref={innerInputRef}
                     autoComplete="on"
                     disabled={disabled}
                     onChange={handleChange}
@@ -227,4 +237,4 @@ export const SearchInput: VoidFunctionComponent<SearchInputProps> = ({
             )}
         </SearchWrapper>
     );
-};
+});

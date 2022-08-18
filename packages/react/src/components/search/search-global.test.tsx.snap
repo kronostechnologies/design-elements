@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchGlobal Matches the snapshot 1`] = `
-<SearchInput
+<ForwardRef
   data-testid="search-input"
   defaultValue="foo"
   hasButton={true}

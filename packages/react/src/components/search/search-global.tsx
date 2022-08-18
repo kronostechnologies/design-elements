@@ -1,12 +1,15 @@
-import { VoidFunctionComponent } from 'react';
+import { forwardRef } from 'react';
 import { CommonSearchProps, SearchInput } from './search-input';
 
 export type SearchGlobalProps = CommonSearchProps
 
-export const SearchGlobal: VoidFunctionComponent<SearchGlobalProps> = (props) => (
-    <SearchInput
-        {...props /* eslint-disable-line react/jsx-props-no-spreading */}
-        hasButton
-        data-testid="search-input"
-    />
+export const SearchGlobal = forwardRef<HTMLInputElement, SearchGlobalProps>(
+    (props, ref) => (
+        <SearchInput
+            {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+            hasButton
+            data-testid="search-input"
+            ref={ref}
+        />
+    ),
 );
