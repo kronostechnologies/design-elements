@@ -1,4 +1,4 @@
-import { Fragment, ReactElement, ReactNode, Ref, useMemo, useRef } from 'react';
+import { Fragment, ReactElement, ReactNode, Ref, useMemo, useRef, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
@@ -20,8 +20,7 @@ const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
     font-weight: var(--font-normal);
     line-height: ${({ isMobile }) => (isMobile ? 1.75 : 1.375)}rem;
-    margin: 0;
-    margin-top: ${({ hasTitle }) => (hasTitle ? 'var(--spacing-3x)' : 0)};
+    margin: ${({ hasTitle }) => (hasTitle ? 'var(--spacing-3x)' : 0)} 0 0;
 `;
 
 const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: boolean }>`
@@ -67,6 +66,7 @@ export interface ModalDialogProps {
     footerContent?: ReactElement;
     hasCloseButton?: boolean;
     isOpen: boolean;
+    parentSelector?: () => HTMLElement;
     /**
      * Defines if the overlay click should close the modal
      * @default true
@@ -79,7 +79,7 @@ export interface ModalDialogProps {
     onRequestClose(): void;
 }
 
-export function ModalDialog({
+export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp,
@@ -91,12 +91,13 @@ export function ModalDialog({
     footerContent,
     hasCloseButton,
     isOpen,
+    parentSelector,
     shouldCloseOnOverlayClick = true,
     subtitle,
     title,
     titleIcon,
     onRequestClose,
-}: ModalDialogProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
@@ -176,6 +177,7 @@ export function ModalDialog({
             modalHeader={getHeader()}
             hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
+            parentSelector={parentSelector}
             role="dialog"
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
@@ -187,4 +189,4 @@ export function ModalDialog({
             {children}
         </StyledModal>
     );
-}
+};

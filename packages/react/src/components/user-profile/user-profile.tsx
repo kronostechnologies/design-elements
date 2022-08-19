@@ -1,4 +1,4 @@
-import { ReactElement, useRef } from 'react';
+import { useRef, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Avatar } from '../avatar/avatar';
@@ -45,7 +45,7 @@ interface UserProfileProps {
     onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
-export function UserProfile({
+export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
     ariaLabel,
     buttonAriaLabel,
     className,
@@ -56,7 +56,7 @@ export function UserProfile({
     options,
     userEmail,
     username,
-}: UserProfileProps): ReactElement {
+}) => {
     const { t } = useTranslation('user-profile');
     const { isMobile } = useDeviceContext();
     const firstFocusableItem = getFirstFocusableItem(options);
@@ -107,4 +107,4 @@ export function UserProfile({
             )}
         />
     );
-}
+};

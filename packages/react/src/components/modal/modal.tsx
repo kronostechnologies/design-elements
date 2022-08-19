@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
+import { FunctionComponent, ReactNode, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import styled, { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -130,6 +130,7 @@ export interface ModalProps {
     isOpen: boolean;
     modalFooter?: ReactNode;
     modalHeader?: ReactNode;
+    parentSelector?: () => HTMLElement;
     /**
      * Sets modal role tag
      * @default dialog
@@ -150,7 +151,7 @@ export interface ModalProps {
     onRequestClose(): void;
 }
 
-export function Modal({
+export const Modal: FunctionComponent<ModalProps> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp = true,
@@ -163,12 +164,13 @@ export function Modal({
     isOpen,
     modalFooter,
     modalHeader,
+    parentSelector,
     role = 'dialog',
     shouldCloseOnOverlayClick = true,
     onAfterOpen,
     onAfterClose,
     onRequestClose,
-}: ModalProps): ReactElement {
+}) => {
     const [mainRef, setMainRef] = useState<HTMLUListElement>();
     const [topScroll, setTopScroll] = useState(0);
     const [bottomScroll, setBottomScroll] = useState(0);
@@ -232,6 +234,7 @@ export function Modal({
             onAfterOpen={onAfterOpen}
             onAfterClose={onAfterClose}
             onRequestClose={onRequestClose}
+            parentSelector={parentSelector}
             role={role}
             style={customStyles}
             contentLabel={ariaLabel}
@@ -285,4 +288,4 @@ export function Modal({
             )}
         </StyledModal>
     );
-}
+};

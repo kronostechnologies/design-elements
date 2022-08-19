@@ -1,4 +1,4 @@
-import { ReactElement, useMemo } from 'react';
+import { useMemo, VoidFunctionComponent } from 'react';
 import styled, {
     css,
     FlattenInterpolation,
@@ -206,13 +206,13 @@ interface ToastContainerProps {
     position: ToastPosition;
 }
 
-export function ToastContainer({
+export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
     id,
     className,
     type,
     message,
     position,
-}: ToastContainerProps): ReactElement {
+}) => {
     const { t } = useTranslation('toast');
     const toastIconName = useMemo(() => getToastIconName(type), [type]);
     const theme = useTheme();
@@ -236,4 +236,4 @@ export function ToastContainer({
             </StyledMessage>
         </ToastWrapper>
     );
-}
+};

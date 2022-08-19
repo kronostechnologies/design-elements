@@ -1,8 +1,8 @@
-import { ChangeEvent, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { formatCurrency } from '../../utils/currency';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { TextInput } from '../text-input/text-input';
 
 type Language = 'en' | 'fr';
@@ -16,7 +16,7 @@ const InputWrapper = styled.div<{ language: Language }>`
 `;
 
 function safeFormatCurrency(
-    value: number | null = null,
+    value: number | null,
     precision: number,
     locale: string,
     currency: string,
@@ -65,7 +65,7 @@ function parseAndRound(val: string, precision: number): number | null {
     return val === '' ? null : roundValueToPrecision(Number(val.replace(',', '.')), precision);
 }
 
-export function MoneyInput({
+export const MoneyInput: VoidFunctionComponent<Props> = ({
     className,
     required,
     disabled,
@@ -78,7 +78,7 @@ export function MoneyInput({
     currency = 'CAD',
     hint,
     ...otherProps
-}: Props): ReactElement {
+}) => {
     const { t } = useTranslation('money-input');
     const inputElement = useRef<HTMLInputElement>(null);
     const language: Language = locale.split('-')[0] as Language;
@@ -161,4 +161,4 @@ export function MoneyInput({
             />
         </InputWrapper>
     );
-}
+};

@@ -3,7 +3,10 @@ const ReactDocgenTypescriptPlugin = require('react-docgen-typescript-plugin').de
 const pkg = require('../package');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: {
+        bundle: './src/index.ts',
+        theme: './src/theme.ts',
+    },
     externals: Object.keys(pkg.peerDependencies),
     module: {
         rules: [
@@ -59,7 +62,7 @@ module.exports = {
         }),
     ],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),
         libraryTarget: 'umd',
     },

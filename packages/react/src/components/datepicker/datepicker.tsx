@@ -2,10 +2,12 @@ import { enCA, enUS, frCA } from 'date-fns/locale';
 import {
     FocusEvent,
     forwardRef,
+    FunctionComponent,
     KeyboardEvent,
     MouseEvent,
     ReactElement,
     Ref,
+    useCallback,
     useEffect,
     useImperativeHandle,
     useMemo,
@@ -438,22 +440,22 @@ export const Datepicker = forwardRef(({
         }
     }
 
-    function handleInputChange(date: Date): void {
+    const handleInputChange: (date: Date) => void = useCallback((date) => {
         setSelectedDate(date);
 
         if (onChange) {
             onChange(date);
         }
-    }
+    }, [onChange]);
 
     function handleInputClick(): void {
         dateInputRef.current?.setOpen(false, true);
     }
 
-    function handleTodayButtonClick(): void {
+    const handleTodayButtonClick: () => void = useCallback(() => {
         handleInputChange(new Date());
         dateInputRef.current?.setOpen(false);
-    }
+    }, [handleInputChange]);
 
     function handleInputBlur(event: FocusEvent<HTMLInputElement>): void {
         const isCalendarOpen = dateInputRef.current?.isCalendarOpen();
@@ -476,6 +478,32 @@ export const Datepicker = forwardRef(({
         }
         return getLocaleDatePlaceholder(currentLocale);
     }, [currentLocale, placeholder, dateFormat]);
+
+    // eslint-disable-next-line react/function-component-definition,react/no-unstable-nested-components
+    const CalendarContainer: FunctionComponent = useMemo(() => ({ children }) => (
+        <div
+            aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
+            aria-live="polite"
+            aria-modal
+            className="react-datepicker"
+            role="dialog"
+            ref={calendarRef}
+        >
+            {children}
+            {hasTodayButton && (
+                <TodayButtonWrapper>
+                    <Button
+                        aria-label={t('todayButtonAriaLabel')}
+                        buttonType="secondary"
+                        data-testid="today-button"
+                        label={t('todayButtonLabel')}
+                        type="button"
+                        onClick={handleTodayButtonClick}
+                    />
+                </TodayButtonWrapper>
+            )}
+        </div>
+    ), [handleTodayButtonClick, hasTodayButton, locale, selectedDate, t]);
 
     return (
         <>
@@ -509,30 +537,7 @@ export const Datepicker = forwardRef(({
                                 {...customHeaderProps /* eslint-disable-line react/jsx-props-no-spreading */}
                             />
                         )}
-                        calendarContainer={({ children }) => (
-                            <div
-                                aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
-                                aria-live="polite"
-                                aria-modal
-                                className="react-datepicker"
-                                role="dialog"
-                                ref={calendarRef}
-                            >
-                                {children}
-                                {hasTodayButton && (
-                                    <TodayButtonWrapper>
-                                        <Button
-                                            aria-label={t('todayButtonAriaLabel')}
-                                            buttonType="secondary"
-                                            data-testid="today-button"
-                                            label={t('todayButtonLabel')}
-                                            type="button"
-                                            onClick={handleTodayButtonClick}
-                                        />
-                                    </TodayButtonWrapper>
-                                )}
-                            </div>
-                        )}
+                        calendarContainer={CalendarContainer}
                         className="datePickerInput"
                         dateFormat={dateFormat || getLocaleDateFormat(currentLocale)}
                         disabled={disabled}

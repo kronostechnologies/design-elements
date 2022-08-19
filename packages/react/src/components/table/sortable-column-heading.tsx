@@ -1,4 +1,4 @@
-import { ReactElement, useMemo } from 'react';
+import { useMemo, VoidFunctionComponent } from 'react';
 import { Column } from 'react-table';
 import styled from 'styled-components';
 import { SortButtonIcon, SortState } from './sort-button-icon';
@@ -22,7 +22,7 @@ interface SortableColumnHeadingProps {
     column: Column;
 }
 
-export function SortableColumnHeading({ column }: SortableColumnHeadingProps): ReactElement {
+export const SortableColumnHeading: VoidFunctionComponent<SortableColumnHeadingProps> = ({ column }) => {
     const sortState: SortState = useMemo(() => {
         if (column.isSorted) {
             return column.isSortedDesc ? 'descending' : 'ascending';
@@ -44,4 +44,4 @@ export function SortableColumnHeading({ column }: SortableColumnHeadingProps): R
             </StyledDiv>
         </th>
     );
-}
+};

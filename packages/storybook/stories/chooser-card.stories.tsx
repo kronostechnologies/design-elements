@@ -71,7 +71,7 @@ export const Disabled: Story = () => (
     </ChooserCard>
 );
 
-export const onChangeCallback: Story = () => (
+export const OnChangeCallback: Story = () => (
     <>
         <ChooserCard
             name="story5"
@@ -93,4 +93,4 @@ export const onChangeCallback: Story = () => (
         </ChooserCard>
     </>
 );
-onChangeCallback.parameters = rawCodeParameters;
+OnChangeCallback.parameters = rawCodeParameters;

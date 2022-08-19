@@ -1,20 +1,85 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 
 const MAXIMUM_LENGTH = '312px';
 
-const StyledLozenge = styled.span<{ isMobile: boolean }>`
+export type LozengeType = 'default' | 'success' | 'alert' | 'warning' | 'info' | 'disabled';
+
+interface StyledLozengeProps {
+    $isMobile: boolean;
+    $type?: LozengeType;
+    theme: Theme;
+}
+
+function getLozengeBackgroundColor({ $type, theme }: StyledLozengeProps): string {
+    switch ($type) {
+        case 'success':
+            return theme.notifications['success-1.2'];
+        case 'disabled':
+            return theme.greys['light-grey'];
+        case 'alert':
+            return theme.notifications['alert-2.2'];
+        case 'warning':
+            return theme.notifications['warning-3.2'];
+        case 'info':
+            // TODO: add this color in default themes
+            return '#f9f7fb';
+        case 'default':
+        default:
+            return theme.greys['light-grey'];
+    }
+}
+
+function getLozengeBorderColor({ $type, theme }: StyledLozengeProps): string {
+    switch ($type) {
+        case 'success':
+            return theme.notifications['success-1.1'];
+        case 'disabled':
+            return theme.greys['mid-grey'];
+        case 'alert':
+            return theme.notifications['alert-2.1'];
+        case 'warning':
+            return theme.notifications['warning-3.1'];
+        case 'info':
+            return theme.notifications['info-1.1'];
+        case 'default':
+        default:
+            return theme.greys['dark-grey'];
+    }
+}
+
+function getLozengeColor({ $type, theme }: StyledLozengeProps): string {
+    switch ($type) {
+        case 'success':
+            return theme.notifications['success-1.1'];
+        case 'disabled':
+            return theme.greys['mid-grey'];
+        case 'alert':
+            return theme.notifications['alert-2.1'];
+        case 'warning':
+            return theme.notifications['warning-3.1'];
+        case 'info':
+            return theme.notifications['info-1.1'];
+        case 'default':
+        default:
+            return theme.greys['dark-grey'];
+    }
+}
+
+const StyledLozenge = styled.span<StyledLozengeProps>`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys['light-grey']};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
-    border-radius: ${({ isMobile }) => (isMobile ? 'var(--border-radius)' : 'var(--border-radius-half)')};
+    background-color: ${getLozengeBackgroundColor};
+    border: 1px solid ${getLozengeBorderColor};
+    border-radius: ${({ $isMobile }) => ($isMobile ? 'var(--border-radius)' : 'var(--border-radius-half)')};
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${getLozengeColor};
     display: inline-flex;
-    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
-    line-height: ${({ isMobile }) => (isMobile ? '1.375rem' : '0.875rem')};
+    font-size: ${({ $isMobile }) => ($isMobile ? '0.875rem' : '0.75rem')};
+    font-weight: var(--font-normal);
+    line-height: ${({ $isMobile }) => ($isMobile ? '1.375rem' : '0.875rem')};
     max-width: ${MAXIMUM_LENGTH};
     overflow: hidden;
     padding: 0 var(--spacing-half);
@@ -24,12 +89,13 @@ const StyledLozenge = styled.span<{ isMobile: boolean }>`
     width: fit-content;
 `;
 
-const StyledIcon = styled(Icon)<{ isMobile: boolean }>`
-    margin-right: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
+const StyledIcon = styled(Icon)<{ $isMobile: boolean }>`
+    margin-right: ${({ $isMobile }) => ($isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
 `;
 
 interface Props {
     className?: string;
+    type?: LozengeType;
     icon?: IconName;
 }
 
@@ -37,16 +103,21 @@ export const Lozenge: FunctionComponent<Props> = ({
     children,
     className,
     icon,
+    type,
 }) => {
     const { isMobile } = useDeviceContext();
     return (
-        <StyledLozenge className={className} isMobile={isMobile}>
+        <StyledLozenge
+            $type={type}
+            className={className}
+            $isMobile={isMobile}
+        >
             {icon && (
                 <StyledIcon
                     data-testid="lozenge-icon"
                     name={icon}
                     size={isMobile ? '16' : '12'}
-                    isMobile={isMobile}
+                    $isMobile={isMobile}
                 />
             )}
             {children}

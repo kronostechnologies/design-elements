@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
@@ -27,7 +27,7 @@ interface InvalidFieldProps {
     noIcon?: boolean;
 }
 
-function InvalidField({ controlId, feedbackMsg, noIcon }: InvalidFieldProps): ReactElement {
+const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, feedbackMsg, noIcon }) => {
     const { isMobile } = useDeviceContext();
 
     return (
@@ -43,6 +43,6 @@ function InvalidField({ controlId, feedbackMsg, noIcon }: InvalidFieldProps): Re
             <StyledSpan>{feedbackMsg}</StyledSpan>
         </Field>
     );
-}
+};
 
 export { InvalidField };

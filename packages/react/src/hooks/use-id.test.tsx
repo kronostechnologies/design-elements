@@ -1,25 +1,24 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { mount } from 'enzyme';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement, useEffect, VoidFunctionComponent } from 'react';
 import { getByTestId } from '../test-utils/enzyme-selectors';
 import { resetId, useId } from './use-id';
 
-function DummyComponent({ onRendered = () => undefined }: { onRendered?(): void }): ReactElement {
+const DummyComponent = ({ onRendered = () => undefined }: { onRendered?(): void }): ReactElement => {
     const id = useId('id-');
 
     useEffect(onRendered);
 
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{id}</>;
-}
+};
 
-function DummyContainer(): ReactElement {
-    return (
-        <>
-            <DummyComponent data-testid="dummy-1" />
-            <DummyComponent data-testid="dummy-2" />
-        </>
-    );
-}
+const DummyContainer: VoidFunctionComponent = () => (
+    <>
+        <DummyComponent data-testid="dummy-1" />
+        <DummyComponent data-testid="dummy-2" />
+    </>
+);
 
 describe('useId', () => {
     beforeEach(() => {

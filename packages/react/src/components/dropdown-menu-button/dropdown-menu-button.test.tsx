@@ -51,7 +51,7 @@ describe('DropdownMenuButton', () => {
 
     test('Opens dropdown-menu when menu-button is clicked', () => {
         const wrapper = mountWithProviders(
-            <DropdownMenuButton render={() => <></>} />,
+            <DropdownMenuButton render={() => <div />} />,
         );
 
         getByTestId(wrapper, 'menu-button').simulate('click');

@@ -94,5 +94,15 @@ export const WithButton: Story = () => {
     );
 };
 
+export const WithCustomMessage: Story = () => (
+    <SectionalBanner type="alert" title="Some title">
+        <p>Some sub title</p>
+        <ul>
+            <li>Some bullet points</li>
+            <li>Some bullet points</li>
+        </ul>
+    </SectionalBanner>
+);
+
 export const MobileWithButton = WithButton.bind({});
 MobileWithButton.decorators = [MobileDecorator];

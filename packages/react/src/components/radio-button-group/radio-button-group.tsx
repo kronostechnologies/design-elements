@@ -1,14 +1,16 @@
-import { ChangeEvent, ReactElement } from 'react';
+import { ChangeEvent, useMemo, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
+import { v4 as uuid } from '../../utils/uuid';
+import { Label } from '../label/label';
+import { TooltipProps } from '../tooltip/tooltip';
 
-const Legend = styled.legend`
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    margin-bottom: var(--spacing-1x);
-    padding: 0;
+const StyledDiv = styled.div`
+        div + label {
+            margin-top: var(--spacing-1x);
+        }
 `;
 
 const StyledLabel = styled.label`
@@ -75,7 +77,9 @@ const StyledLabel = styled.label`
 `;
 
 interface RadioButtonGroupProps {
+    id?: string;
     label?: string;
+    tooltip?: TooltipProps;
     /** Sets the name property of all buttons */
     groupName: string;
     checkedValue?: string;
@@ -89,22 +93,23 @@ interface RadioButtonGroupProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function RadioButtonGroup(
-    {
-        buttons,
-        groupName,
-        label,
-        onChange,
-        checkedValue,
-        ...otherProps
-    }: RadioButtonGroupProps,
-): ReactElement {
+export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
+    id: providedId,
+    buttons,
+    groupName,
+    label,
+    tooltip,
+    onChange,
+    checkedValue,
+    ...otherProps
+}) => {
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
+    const id = useMemo(() => providedId || uuid(), [providedId]);
 
     return (
-        <>
-            {label && <Legend>{label}</Legend>}
+        <StyledDiv>
+            {label && <Label forId={id} tooltip={tooltip}>{label}</Label>}
             {buttons.map((button) => (
                 <StyledLabel
                     disabled={button.disabled}
@@ -125,6 +130,6 @@ export function RadioButtonGroup(
                     <span className="radioInput" />
                 </StyledLabel>
             ))}
-        </>
+        </StyledDiv>
     );
-}
+};

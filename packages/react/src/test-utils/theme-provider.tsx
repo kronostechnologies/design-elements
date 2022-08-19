@@ -1,15 +1,13 @@
-import { ComponentProps, ComponentType, ReactElement } from 'react';
+import { ComponentProps, ComponentType, FunctionComponent, ReactElement } from 'react';
 import { equisoftTheme, ThemeWrapper } from '..';
 
 type ThemeProps = Pick<ComponentProps<typeof ThemeWrapper>, 'children'>;
 
-export function ThemeProvider({ children }: ThemeProps): ReactElement {
-    return (
-        <ThemeWrapper theme={equisoftTheme}>
-            {children}
-        </ThemeWrapper>
-    );
-}
+export const ThemeProvider: FunctionComponent<ThemeProps> = ({ children }: ThemeProps): ReactElement => (
+    <ThemeWrapper theme={equisoftTheme}>
+        {children}
+    </ThemeWrapper>
+);
 
 export function themeProvider(): ComponentType {
     return ThemeProvider as ComponentType;

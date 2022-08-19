@@ -1,9 +1,10 @@
 import {
     createRef,
     forwardRef,
+    ForwardRefExoticComponent,
     KeyboardEvent,
-    ReactElement,
     Ref,
+    RefAttributes,
     RefObject,
     useCallback,
     useEffect,
@@ -12,7 +13,7 @@ import {
     useState,
 } from 'react';
 import styled from 'styled-components';
-import { Theme } from 'themes';
+import { Theme } from '../../themes';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -136,6 +137,7 @@ const List = styled.ul<ListProps>`
     overflow-y: auto;
     padding: 0;
     width: 100%;
+    z-index: 1000;
 
     &:focus {
         box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
@@ -203,7 +205,7 @@ function toArray(val?: Value): string[] {
     return [val];
 }
 
-export const Listbox = forwardRef(({
+export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTMLDivElement>> = forwardRef(({
     ariaLabelledBy,
     id: providedId,
     options,
@@ -219,7 +221,7 @@ export const Listbox = forwardRef(({
     autofocus = false,
     focusedValue,
     value,
-}: ListboxProps, ref: Ref<HTMLDivElement>): ReactElement => {
+}, ref: Ref<HTMLDivElement>) => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const { isMobile } = useDeviceContext();
     const [listRef, setListRef] = useState<HTMLUListElement>();
@@ -308,11 +310,13 @@ export const Listbox = forwardRef(({
     }, [multiselect, selectedOptionValue]);
 
     const isOptionFocused: (option: ListOption) => boolean = useCallback(
-        (option) => option.focusIndex === selectedFocusIndex, [selectedFocusIndex],
+        (option) => option.focusIndex === selectedFocusIndex,
+        [selectedFocusIndex],
     );
 
     const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
-        (option) => checkIndicator && isOptionSelected(option), [checkIndicator, isOptionSelected],
+        (option) => checkIndicator && isOptionSelected(option),
+        [checkIndicator, isOptionSelected],
     );
 
     const selectOption: (option: ListOption) => void = useCallback((option) => {
@@ -342,7 +346,8 @@ export const Listbox = forwardRef(({
     }, [list]);
 
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
-        (option) => () => selectOption(option), [selectOption],
+        (option) => () => selectOption(option),
+        [selectOption],
     );
 
     const handleListItemMouseMove: (option: ListOption) => void = useCallback((option) => {

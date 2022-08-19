@@ -1,9 +1,9 @@
-import { ChangeEvent, FocusEvent, ReactElement, useMemo, useState } from 'react';
+import { ChangeEvent, FocusEvent, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { v4 as uuid } from '../../utils/uuid';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
@@ -62,7 +62,7 @@ function getInitialValue(value?: string, defaultValue?: string): number {
     return 0;
 }
 
-export function TextArea({
+export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
     className,
     noMargin,
     onBlur,
@@ -79,7 +79,7 @@ export function TextArea({
     value,
     maxLength,
     ...otherProps
-}: TextAreaProps): ReactElement {
+}) => {
     const { t } = useTranslation('text-area');
     const [validity, setValidity] = useState(true);
     const [inputValueLength, setInputValueLength] = useState(getInitialValue(value, defaultValue));
@@ -167,4 +167,4 @@ export function TextArea({
             )}
         </FieldContainer>
     );
-}
+};

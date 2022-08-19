@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState, VoidFunctionComponent } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 import { focus } from '../../utils/css-state';
@@ -151,6 +151,7 @@ export interface GlobalNavigationItem {
     href: string;
     iconName: IconName;
     name: string;
+
     onClick?(): void;
 }
 
@@ -163,12 +164,12 @@ interface GlobalNavigationProps {
     footerItems: GlobalNavigationItem[];
 }
 
-export function GlobalNavigation({
+export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
     className,
     mainItems,
     footerItems,
     coreActionButton,
-}: GlobalNavigationProps): ReactElement {
+}) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const [navItems, setNavItems] = useState(mainItems);
     const [moreItems, setMoreItems] = useState<GlobalNavigationItem[]>();
@@ -222,8 +223,7 @@ export function GlobalNavigation({
             let visibleItemsHeight = 0;
             let visibleItemsCount = 0;
             while (visibleItemsHeight < heightAvailableForItems - footerNavElementHeight
-                    && visibleItemsCount < mainItems.length
-            ) {
+            && visibleItemsCount < mainItems.length) {
                 visibleItemsHeight += mainNavElementItems[visibleItemsCount].clientHeight;
                 visibleItemsCount += 1;
             }
@@ -306,4 +306,4 @@ export function GlobalNavigation({
 
         </Wrapper>
     );
-}
+};

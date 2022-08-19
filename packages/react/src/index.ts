@@ -40,6 +40,7 @@ export { IntlProvider } from './components/internationalization-provider/interna
 export { Listbox, ListboxOption } from './components/listbox/listbox';
 
 // Miscellaneous
+export { Badge } from './components/badge/badge';
 export { Card } from './components/card/card';
 export { CardLink } from './components/card-link/card-link';
 export * from './components/carousel/carousel';

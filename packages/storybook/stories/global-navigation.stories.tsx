@@ -1,6 +1,6 @@
 import { GlobalNavigation, GlobalNavigationItem } from '@equisoft/design-elements-react';
+import { IconButtonProps } from '@equisoft/design-elements-react/dist/components/buttons/icon-button';
 import { Story } from '@storybook/react';
-import { IconButtonProps } from '../../react/dist/components/buttons/icon-button';
 import { rawCodeParameters } from './utils/parameters';
 import { RouterDecorator } from './utils/router-decorator';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';

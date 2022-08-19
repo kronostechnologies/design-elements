@@ -24,7 +24,8 @@ function renderModal(props: ModalDialogPropsLite, device: DeviceType = 'desktop'
     return renderPortalWithProviders(
         <ModalDialog {...defaultTestProps} {...props}>
             <p id="modal-description">Test Content</p>
-        </ModalDialog>, device,
+        </ModalDialog>,
+        device,
     );
 }
 

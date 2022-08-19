@@ -1,5 +1,5 @@
-import { getByTestId } from 'test-utils/enzyme-selectors';
 import { doNothing } from '../../test-utils/callbacks';
+import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { RadioButtonGroup } from './radio-button-group';
 
@@ -53,7 +53,14 @@ describe('Radio button', () => {
     });
 
     test('Matches the snapshot', () => {
-        const tree = renderWithTheme(<RadioButtonGroup label="Planets" groupName="planets" buttons={Buttons} />);
+        const tree = renderWithTheme(
+            <RadioButtonGroup
+                id='test-id'
+                label="Planets"
+                groupName="planets"
+                buttons={Buttons}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

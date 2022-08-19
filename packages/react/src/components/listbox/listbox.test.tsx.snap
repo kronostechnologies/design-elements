@@ -23,6 +23,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c1:focus {
@@ -214,6 +215,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c1:focus {
@@ -413,6 +415,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   overflow-y: auto;
   padding: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .c1:focus {

@@ -13,15 +13,17 @@ jobs:
           fetch-depth: 0
 
       - name: Setup asdf-vm
-        uses: kronostechnologies/actions/with-asdf-vm@v0.0.23
+        uses: equisoft-actions/with-asdf-vm@v1
 
       - name: Install NPM dependencies
-        uses: kronostechnologies/actions/yarn-install@v0.0.23
+        uses: equisoft-actions/yarn-install@v1
 
       - name: Run license audit
         id: audit
         shell: bash
-        run: yarn checkLicense
+        run: |
+          yarn workspaces focus -A --production
+          yarn checkLicense
 
       - name: Upload results
         if: "!cancelled()"

@@ -1,8 +1,17 @@
-import { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+    ChangeEvent,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    VoidFunctionComponent,
+} from 'react';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { useDataAttributes } from '../../hooks/use-data-attributes';
 import * as S from './styled-components';
 
 interface ChooserCardProps {
@@ -20,7 +29,7 @@ interface ChooserCardProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export function ChooserCard({
+export const ChooserCard : VoidFunctionComponent<ChooserCardProps> = ({
     checked,
     children,
     className,
@@ -33,7 +42,7 @@ export function ChooserCard({
     value,
     onChange,
     ...otherProps
-}: ChooserCardProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -106,4 +115,4 @@ export function ChooserCard({
             </S.Description>
         </S.Label>
     );
-}
+};

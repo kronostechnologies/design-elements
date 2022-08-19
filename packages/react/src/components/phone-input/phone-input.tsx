@@ -2,12 +2,12 @@ import {
     ChangeEvent,
     KeyboardEvent,
     MouseEvent,
-    ReactElement,
     useCallback,
     useLayoutEffect,
     useMemo,
     useRef,
     useState,
+    VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
@@ -67,7 +67,7 @@ function formatDefaultValue(defaultValue: string, pattern: string, phoneNumberMa
     return formatFromPattern(pattern, PLACEHOLDER_CHAR, trimmedInputValue);
 }
 
-export function PhoneInput({
+export const PhoneInput: VoidFunctionComponent<PhoneInputProps> = ({
     pattern,
     defaultValue,
     required,
@@ -76,7 +76,7 @@ export function PhoneInput({
     hint,
     name,
     ...otherProps
-}: PhoneInputProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const phoneNumberMaxLength = useMemo(() => getPhoneNumberMaxLengthFromPattern(pattern), [pattern]);
     const formattedDefaultValue = useMemo(
@@ -84,7 +84,8 @@ export function PhoneInput({
         [defaultValue, pattern, phoneNumberMaxLength],
     );
     const indexOfFirstMaskCharInDefaultValue = useMemo(
-        () => formattedDefaultValue.indexOf(PLACEHOLDER_CHAR), [formattedDefaultValue],
+        () => formattedDefaultValue.indexOf(PLACEHOLDER_CHAR),
+        [formattedDefaultValue],
     );
     const splitDefaultValue = useMemo(
         () => getValueFromSplitIndex(formattedDefaultValue, indexOfFirstMaskCharInDefaultValue),
@@ -105,10 +106,10 @@ export function PhoneInput({
 
     const hasBackspaceJustBeenEntered = useCallback(() => lastEnteredKey === 'Backspace', [lastEnteredKey]);
     const hasDeleteJustBeenEntered = useCallback(() => lastEnteredKey === 'Delete', [lastEnteredKey]);
-    const isLastKeyEnteredInvalid = useCallback(() => Number.isNaN(Number(lastEnteredKey))
-        && !hasBackspaceJustBeenEntered()
-        && !hasDeleteJustBeenEntered(),
-    [lastEnteredKey, hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered]);
+    const isLastKeyEnteredInvalid = useCallback(
+        () => Number.isNaN(Number(lastEnteredKey)) && !hasBackspaceJustBeenEntered() && !hasDeleteJustBeenEntered(),
+        [lastEnteredKey, hasBackspaceJustBeenEntered, hasDeleteJustBeenEntered],
+    );
 
     useLayoutEffect(() => {
         inputRef.current?.setSelectionRange(selectionPosition, selectionPosition);
@@ -231,4 +232,4 @@ export function PhoneInput({
             />
         </Container>
     );
-}
+};

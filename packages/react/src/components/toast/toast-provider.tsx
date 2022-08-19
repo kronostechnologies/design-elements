@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback, useMemo } from 'react';
 import { v4 as uuid } from '../../utils/uuid';
 import { ToastContext } from './toast-context';
 import { ToastType } from './toast-type';
@@ -36,8 +36,10 @@ export const ToastProvider: FunctionComponent = ({ children }) => {
         return id;
     }, [dispatch, removeToast]);
 
+    const value = useMemo(() => ({ toasts, addToast, removeToast }), [addToast, removeToast, toasts]);
+
     return (
-        <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
+        <ToastContext.Provider value={value}>
             <ToastsContainer position="bottom-right" />
             {children}
         </ToastContext.Provider>

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { clamp, toInt } from '../../utils/math';
 
@@ -147,7 +147,7 @@ function renderStep(step: ProgressStep, stepIndex: number, value: number): React
     );
 }
 
-export function Progress({ className, steps, value }: ProgressProps): ReactElement {
+export const Progress:VoidFunctionComponent<ProgressProps> = ({ className, steps, value }) => {
     const max = steps.length;
     const zeroBasedValue = clamp(value, 1, max) - 1;
 
@@ -159,4 +159,4 @@ export function Progress({ className, steps, value }: ProgressProps): ReactEleme
             </Steps>
         </Container>
     );
-}
+};

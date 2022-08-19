@@ -11,15 +11,5 @@ module.exports = {
         'react/jsx-no-bind': 'off',
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
-    },
-    settings: {
-        'import/resolver': {
-            typescript: {
-                project: [
-                    './tsconfig.json',
-                    './tsconfig.test.json',
-                ],
-            },
-        },
-    },
+    }
 };

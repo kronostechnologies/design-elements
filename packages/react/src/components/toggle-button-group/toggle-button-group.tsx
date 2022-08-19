@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, useState } from 'react';
+import { MouseEvent, useState, VoidFunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -83,9 +83,9 @@ interface ToggleButtonGroupProps {
     onClick?(event: MouseEvent<HTMLButtonElement>): void;
 }
 
-export function ToggleButtonGroup({
+export const ToggleButtonGroup: VoidFunctionComponent<ToggleButtonGroupProps> = ({
     buttonGroup, className, groupName, onClick,
-}: ToggleButtonGroupProps): ReactElement {
+}) => {
     const { isMobile } = useDeviceContext();
     const defaultPressedButton = buttonGroup.find((button) => button.defaultPressed);
     const [selectedButton, setSelectedButton] = useState(defaultPressedButton ? defaultPressedButton.value : '');
@@ -119,4 +119,4 @@ export function ToggleButtonGroup({
             ))}
         </Container>
     );
-}
+};

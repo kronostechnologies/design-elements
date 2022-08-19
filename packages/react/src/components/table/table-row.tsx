@@ -117,9 +117,13 @@ interface TableRowProps<T extends object> extends Omit<StyledTableRowProps, 'cli
     onClick?(row: Row<T>): void;
 }
 
-export function TableRow<T extends object>({
-    error, row, striped, viewIndex, onClick,
-}: TableRowProps<T>): ReactElement {
+export const TableRow = <T extends object>({
+    error,
+    onClick,
+    row,
+    striped,
+    viewIndex,
+}: TableRowProps<T>): ReactElement => { // eslint-disable-line arrow-body-style
     return (
         <StyledTableRow
             clickable={!!onClick}
@@ -149,4 +153,4 @@ export function TableRow<T extends object>({
             })}
         </StyledTableRow>
     );
-}
+};
