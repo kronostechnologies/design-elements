@@ -1,6 +1,6 @@
 import { SearchGlobal } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import { createRef, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -38,7 +38,7 @@ WithReset.parameters = rawCodeParameters;
 
 export const WithForwardRef: Story = () => {
     const [value, setValue] = useState('');
-    const ref = createRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement>();
     useEffect(() => {
         if (ref.current) {
             console.info('ref.value: ', ref.current.value);

@@ -149,7 +149,7 @@ export interface SearchInputProps extends CommonSearchProps {
     hasIcon?: boolean;
 }
 
-export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
+export const SearchInput = forwardRef(({
     defaultValue,
     id: providedId,
     onChange,
@@ -158,7 +158,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
     value,
     onInputFocus,
     ...props
-}, ref) => {
+}: SearchInputProps, ref) => {
     const { t } = useTranslation('search-input');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const innerInputRef = useRef<HTMLInputElement>(null);
@@ -238,3 +238,5 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
         </SearchWrapper>
     );
 });
+
+SearchInput.displayName = 'SearchInput';

@@ -3,8 +3,8 @@ import { CommonSearchProps, SearchInput } from './search-input';
 
 export type SearchGlobalProps = CommonSearchProps
 
-export const SearchGlobal = forwardRef<HTMLInputElement, SearchGlobalProps>(
-    (props, ref) => (
+export const SearchGlobal = forwardRef(
+    (props: SearchGlobalProps, ref) => (
         <SearchInput
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
             hasButton
@@ -13,3 +13,5 @@ export const SearchGlobal = forwardRef<HTMLInputElement, SearchGlobalProps>(
         />
     ),
 );
+
+SearchGlobal.displayName = 'Button';
