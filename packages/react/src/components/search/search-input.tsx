@@ -5,6 +5,7 @@ import {
     FocusEvent,
     forwardRef,
     KeyboardEvent,
+    Ref,
     useCallback,
     useImperativeHandle,
     useMemo,
@@ -158,11 +159,11 @@ export const SearchInput = forwardRef(({
     value,
     onInputFocus,
     ...props
-}: SearchInputProps, ref) => {
+}: SearchInputProps, ref: Ref<HTMLInputElement | null>) => {
     const { t } = useTranslation('search-input');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const innerInputRef = useRef<HTMLInputElement>(null);
-    useImperativeHandle(ref, () => innerInputRef.current as HTMLInputElement);
+    useImperativeHandle(ref, () => innerInputRef.current);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         const newValue = event.currentTarget.value;
