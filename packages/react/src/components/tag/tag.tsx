@@ -1,10 +1,11 @@
 import {
     ButtonHTMLAttributes,
     DetailedHTMLProps,
+    forwardRef,
     MouseEventHandler,
+    Ref,
     SVGProps,
     useCallback,
-    VoidFunctionComponent,
 } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -194,14 +195,14 @@ const Container = styled.span<ContainerProps>`
     ${focus};
 `;
 
-export const Tag: VoidFunctionComponent<TagProps> = ({
+export const Tag = forwardRef(({
     className,
     iconName,
     onClick,
     onDelete,
     size = 'medium',
     value,
-}) => {
+}: TagProps, ref: Ref<HTMLElement>) => {
     if (onClick && onDelete) {
         throw new Error('Only one of onClick or onDelete can be provided.');
     }
@@ -221,6 +222,7 @@ export const Tag: VoidFunctionComponent<TagProps> = ({
 
     return (
         <Container
+            ref={ref}
             as={onClick ? 'button' : 'span'}
             className={className}
             onClick={handleClick}
@@ -261,4 +263,6 @@ export const Tag: VoidFunctionComponent<TagProps> = ({
             )}
         </Container>
     );
-};
+});
+
+Tag.displayName = 'Tag';

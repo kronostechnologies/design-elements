@@ -1,6 +1,7 @@
 import { Tag, TagProps, TagValue } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useRef, useState } from 'react';
+import { rawCodeParameters } from './utils/parameters';
 
 export default {
     title: 'Notification/Tag',
@@ -81,3 +82,13 @@ export const Clickable: Story = () => {
         </>
     );
 };
+
+export const WithRef: Story = () => {
+    const ref = useRef(null);
+
+    return (
+        <Tag ref={ref} key="small" iconName="copy" size="small" value={{ label: 'Tag 1' }} />
+    );
+};
+
+WithRef.parameters = rawCodeParameters;
