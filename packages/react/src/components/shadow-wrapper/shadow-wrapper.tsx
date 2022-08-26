@@ -16,7 +16,11 @@ const reactShadow = createProxy(
     'styled-components',
     ({ root, children }) => (
         <StyleSheetManager target={root}>
-            {children}
+            {/* Fragment is needed as children can be multiple reactNode while StyleSheetManager supports only one */}
+            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+            <>
+                {children}
+            </>
         </StyleSheetManager>
     ),
 );
