@@ -1,5 +1,5 @@
 import { forwardRef, MouseEvent, ReactElement, Ref } from 'react';
-import { NavLink, NavLinkProps } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useTranslation } from '../../../i18n/use-translation';
 import { focus } from '../../../utils/css-state';
@@ -55,7 +55,7 @@ const NavItemStyle = css<LinkProps>`
     }
 `;
 
-export const StyledNavItem = styled(NavLink)<LinkProps & NavLinkProps>`
+export const StyledNavItem = styled(NavLink)<LinkProps>`
     ${NavItemStyle}
 `;
 
