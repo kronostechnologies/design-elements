@@ -1,5 +1,6 @@
 import { createRef, forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
+import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { v4 as uuid } from '../../utils/uuid';
 import { ListOption, NavMenuItem } from './nav-menu-item';
 import { NavMenuOption } from './nav-menu-option';
@@ -43,8 +44,11 @@ export const NavMenu = forwardRef(({
     onChange,
     onKeyDown,
     ordered,
+    ...rest
 }: NavMenuProps, ref: Ref<HTMLUListElement>): ReactElement => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
+    const dataAttributes = useDataAttributes(rest);
+    const dataTestId = dataAttributes['data-testid'] ?? 'menu-list';
     const list: ListOption[] = useMemo((): ListOption[] => options.map((option, index) => ({
         ...option,
         id: `${id}_${option.value}`,
@@ -75,7 +79,7 @@ export const NavMenu = forwardRef(({
         <List
             as={ordered ? 'ol' : 'ul'}
             className={className}
-            data-testid="menu-list"
+            data-testid={dataTestId}
             id={id}
             ref={ref}
             hidden={hidden}

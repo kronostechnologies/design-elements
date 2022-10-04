@@ -15,7 +15,7 @@ export interface NavItemProps {
     iconName?: IconName;
     label?: string;
     lozenge?: string;
-    exact?: boolean;
+    end?: boolean;
     isHtmlLink?: boolean;
     disabled?: boolean;
     target?: string;
@@ -67,13 +67,13 @@ export const NavItem = forwardRef(({
     href,
     value,
     description,
-    exact,
     iconName,
     label,
     disabled,
     onClick,
     isHtmlLink = false,
     lozenge,
+    end,
     target,
 }: NavItemProps, ref: Ref<HTMLAnchorElement>): ReactElement => {
     const device = useDeviceContext();
@@ -120,7 +120,7 @@ export const NavItem = forwardRef(({
                     $device={device}
                     data-testid={`listitem-${value}`}
                     disabled={disabled}
-                    exact={exact}
+                    end={end}
                     target={target}
                     onClick={disabled ? undefined : onClick}
                 >

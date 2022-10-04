@@ -147,7 +147,7 @@ const CoreActionButton = styled(IconButton)`
 `;
 
 export interface GlobalNavigationItem {
-    exact?: boolean;
+    end?: boolean;
     href: string;
     iconName: IconName;
     name: string;
@@ -241,7 +241,7 @@ export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
         <NavigationItem key={`${item.name}-${item.iconName}`}>
             <ItemLink
                 data-testid={`${item.name}-${item.iconName}-link`}
-                exact={item.exact}
+                end={item.end}
                 to={item.href}
                 onClick={() => handleItemClick(item.onClick)}
                 onFocus={() => setMenuOpen(false)}
@@ -281,7 +281,7 @@ export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
                                         <li key={`${moreItem.name}-${moreItem.iconName}`}>
                                             <MenuLink
                                                 data-testid={`${moreItem.name}-${moreItem.iconName}-menu-link`}
-                                                exact={moreItem.exact}
+                                                end={moreItem.end}
                                                 to={moreItem.href}
                                                 onClick={() => handleItemClick(moreItem.onClick)}
                                             >

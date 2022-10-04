@@ -6,7 +6,7 @@ type Type = 'external' | 'route';
 interface ContainerProps {
     activeClassName?: string;
     disabled?: boolean;
-    exact?: boolean;
+    end?: boolean;
     $hasLabel: boolean;
     to?: string;
     type: Type;

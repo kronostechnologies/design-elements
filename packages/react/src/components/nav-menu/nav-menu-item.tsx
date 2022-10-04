@@ -158,8 +158,8 @@ export const NavMenuItem: VoidFunctionComponent<NavMenuItemProps> = ({
             ) : (
                 <ReactRouterNavLink
                     data-testid={testId}
-                    exact={option.exact}
-                    innerRef={option.ref}
+                    end={option.end}
+                    ref={option.ref}
                     $device={device}
                     tabIndex={option.disabled ? -1 : 0}
                     to={option.href}

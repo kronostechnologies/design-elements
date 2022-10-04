@@ -192,7 +192,7 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
   </button>
   <ul
     class="c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-navMenu"
   >
     <li
       data-testid="listitem-optionA"
@@ -454,7 +454,7 @@ exports[`NavMenuButton Matches Snapshot (tag="nav") 1`] = `
   </button>
   <ul
     class="c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-navMenu"
     hidden=""
   >
     <li
@@ -717,7 +717,7 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
   </button>
   <ul
     class="c5 c6"
-    data-testid="menu-list"
+    data-testid="menu-navMenu"
     hidden=""
   >
     <li
