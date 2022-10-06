@@ -21,7 +21,11 @@ export default {
 };
 
 export const Default: Story = () => (
-    <Breadcrumb history={routeMap(5)} />
+    <Breadcrumb history={routeMap(15)} />
+);
+
+export const ThreeElements: Story = () => (
+    <Breadcrumb history={routeMap(3)} />
 );
 
 export const Root: Story = () => (
