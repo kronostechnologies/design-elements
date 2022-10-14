@@ -4,7 +4,7 @@ import { IconName } from '../icon/icon';
 export interface NavMenuOption {
     disabled?: boolean;
     endIcon?: IconName;
-    exact?: boolean;
+    end?: boolean;
     href: string;
     isHtmlLink?: boolean;
     // Option label, if not provided will be set with value

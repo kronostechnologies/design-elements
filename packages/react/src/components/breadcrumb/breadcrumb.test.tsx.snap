@@ -13,13 +13,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (Dropdown open with long text) 1`
         routerLink={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "propTypes": Object {
-              "innerRef": [Function],
-              "onClick": [Function],
-              "replace": [Function],
-              "target": [Function],
-              "to": [Function],
-            },
             "render": [Function],
           }
         }
@@ -78,13 +71,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
         routerLink={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "propTypes": Object {
-              "innerRef": [Function],
-              "onClick": [Function],
-              "replace": [Function],
-              "target": [Function],
-              "to": [Function],
-            },
             "render": [Function],
           }
         }
@@ -138,13 +124,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
         routerLink={
           Object {
             "$$typeof": Symbol(react.forward_ref),
-            "propTypes": Object {
-              "innerRef": [Function],
-              "onClick": [Function],
-              "replace": [Function],
-              "target": [Function],
-              "to": [Function],
-            },
             "render": [Function],
           }
         }

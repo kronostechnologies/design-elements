@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
+import { actAndWaitForEffects, mountWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { NavMenu } from './nav-menu';
 import { NavMenuOption } from './nav-menu-option';
 
@@ -86,13 +86,15 @@ describe('NavMenu', () => {
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    test('Should update focused value when focusedValue prop changes', () => {
+    test('Should update focused value when focusedValue prop changes', async () => {
         const wrapper = mountWithProviders(
             <NavMenu options={options} />,
             { attachTo: document.body },
         );
 
-        wrapper.setProps({ focusedValue: 'optionB' }).update();
+        await actAndWaitForEffects(wrapper, () => {
+            wrapper.setProps({ focusedValue: 'optionB' });
+        });
 
         expect(document.activeElement).toBe(getByTestId(wrapper, 'listitem-optionB-link').getDOMNode());
     });

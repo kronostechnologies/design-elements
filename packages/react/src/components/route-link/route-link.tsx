@@ -1,6 +1,6 @@
 import { MouseEvent, VoidFunctionComponent } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link as ReactRouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
@@ -31,20 +31,14 @@ const Link = styled(StyledLink)<{ $isMobile: boolean, $hasLabel: boolean }>`
     }
 `;
 
-type Nav = typeof NavLink;
-
-export interface RouterLinkProps extends Nav {
-    displayName?: string;
-}
-
 interface LinkProps {
     className?: string;
     disabled?: boolean;
-    exact?: boolean;
+    end?: boolean;
     href: string;
     iconName?: IconName;
     label?: string;
-    routerLink: RouterLinkProps;
+    routerLink: typeof NavLink | typeof ReactRouterLink;
 
     onClick?(event: MouseEvent<HTMLAnchorElement>): void;
 }
@@ -52,7 +46,7 @@ interface LinkProps {
 export const RouteLink: VoidFunctionComponent<LinkProps> = ({
     className,
     disabled,
-    exact,
+    end,
     href,
     iconName,
     label,
@@ -67,7 +61,7 @@ export const RouteLink: VoidFunctionComponent<LinkProps> = ({
             as={routerLink}
             className={className}
             disabled={disabled}
-            exact={exact}
+            end={end}
             $hasLabel={!!label}
             $isMobile={isMobile}
             tabIndex={disabled ? -1 : 0}
