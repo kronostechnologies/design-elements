@@ -40,22 +40,19 @@ Array [
   border-color: #DBDEE1;
 }
 
-input[type="checkbox"]:checked + .c2,
-input[type="radio"]:checked + .c3 {
+input[type="checkbox"]:checked + .c2,input[type="radio"]:checked + .c3 {
   background: #006296;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-input[type="checkbox"]:focus + .c2,
-input[type="radio"]:focus + .c3 {
+input[type="checkbox"]:focus + .c2,input[type="radio"]:focus + .c3 {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-input[type="checkbox"]:disabled + .c2,
-input[type="radio"]:disabled + .c3 {
+input[type="checkbox"]:disabled + .c2,input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
@@ -162,22 +159,19 @@ input[type="radio"]:disabled + .c3 {
   border-color: #DBDEE1;
 }
 
-input[type="checkbox"]:checked + .c2,
-input[type="radio"]:checked + .c3 {
+input[type="checkbox"]:checked + .c2,input[type="radio"]:checked + .c3 {
   background: #006296;
   border-color: #006296;
   color: #FFFFFF;
 }
 
-input[type="checkbox"]:focus + .c2,
-input[type="radio"]:focus + .c3 {
+input[type="checkbox"]:focus + .c2,input[type="radio"]:focus + .c3 {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-input[type="checkbox"]:disabled + .c2,
-input[type="radio"]:disabled + .c3 {
+input[type="checkbox"]:disabled + .c2,input[type="radio"]:disabled + .c3 {
   background: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-svgo --config=./.svgo.yml -f ./src -o ./dist --disable=removeViewBox --enable=removeDimensions
+svgo --config=./svgo.config.js -f ./src -o ./dist

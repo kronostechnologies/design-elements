@@ -84,6 +84,7 @@ interface ListboxProps {
      * onChange callback function, invoked when an option is selected
      */
     onChange?(option: ListboxOption): void;
+
     /**
      * onKeyDown callback function, invoked when a key is pressed
      */
@@ -241,7 +242,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     const setValue: (newValue: Value) => void = useCallback((newValue) => {
         setSelectedOptionValue(toArray(newValue));
-        if (newValue === []) {
+        if (Array.isArray(newValue) && newValue.length === 0) {
             setSelectedFocusIndex(-1);
         } else if (list.length > 0 && !multiselect) {
             setSelectedFocusIndex(options.findIndex((option) => option.value === newValue[0]));
