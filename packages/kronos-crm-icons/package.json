@@ -8,7 +8,7 @@
     "prepublishOnly": "../scripts/prepublishOnly.sh"
   },
   "devDependencies": {
-    "svgo": "^2.3.1"
+    "svgo": "^3.0.0"
   },
   "version": "2.0.3-alpha.95"
 }

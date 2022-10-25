@@ -64,8 +64,7 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
   cursor: pointer;
 }
 
-.c0:hover:not([disabled]) .c6,
-.c0:hover:not([disabled]) .c1 {
+.c0:hover:not([disabled]) .c6,.c0:hover:not([disabled]) .c1 {
   color: #000000;
 }
 
@@ -193,8 +192,7 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
   cursor: pointer;
 }
 
-.c0:hover:not([disabled]) .c6,
-.c0:hover:not([disabled]) .c1 {
+.c0:hover:not([disabled]) .c6,.c0:hover:not([disabled]) .c1 {
   color: #000000;
 }
 
@@ -321,8 +319,7 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
   cursor: pointer;
 }
 
-.c0:hover:not([disabled]) .c6,
-.c0:hover:not([disabled]) .c1 {
+.c0:hover:not([disabled]) .c6,.c0:hover:not([disabled]) .c1 {
   color: #000000;
 }
 
@@ -449,8 +446,7 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
   cursor: pointer;
 }
 
-.c0:hover:not([disabled]) .c6,
-.c0:hover:not([disabled]) .c1 {
+.c0:hover:not([disabled]) .c6,.c0:hover:not([disabled]) .c1 {
   color: #000000;
 }
 

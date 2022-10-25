@@ -486,8 +486,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   padding: 0 var(--spacing-4x);
 }
 
-.c1 .c5 ul:not(:last-child)::after,
-.c1 .c5 ol:not(:last-child)::after {
+.c1 .c5 ul:not(:last-child)::after,.c1 .c5 ol:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: "";
   display: block;
@@ -1333,8 +1332,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   padding: 0 var(--spacing-4x);
 }
 
-.c1 .c5 ul:not(:last-child)::after,
-.c1 .c5 ol:not(:last-child)::after {
+.c1 .c5 ul:not(:last-child)::after,.c1 .c5 ol:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: "";
   display: block;
@@ -2092,8 +2090,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   padding: 0 var(--spacing-4x);
 }
 
-.c1 .c5 ul:not(:last-child)::after,
-.c1 .c5 ol:not(:last-child)::after {
+.c1 .c5 ul:not(:last-child)::after,.c1 .c5 ol:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
   content: "";
   display: block;

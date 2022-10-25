@@ -2405,6 +2405,7 @@ label + .c3 {
               <div
                 aria-label="month  2010-10"
                 class="react-datepicker__month"
+                role="listbox"
               >
                 <div
                   class="react-datepicker__week"
@@ -2412,8 +2413,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, September 26th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     26
@@ -2421,8 +2423,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Monday, September 27th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     27
@@ -2430,8 +2433,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Tuesday, September 28th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     28
@@ -2439,8 +2443,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Wednesday, September 29th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     29
@@ -2448,8 +2453,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Thursday, September 30th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     30
@@ -2457,8 +2463,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Friday, October 1st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--001"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     1
@@ -2466,8 +2473,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Saturday, October 2nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     2
@@ -2479,8 +2487,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, October 3rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     3
@@ -2488,8 +2497,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Monday, October 4th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--004"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     4
@@ -2497,8 +2507,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Tuesday, October 5th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--005"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     5
@@ -2506,8 +2517,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Wednesday, October 6th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--006"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     6
@@ -2515,8 +2527,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Thursday, October 7th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--007"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     7
@@ -2524,8 +2537,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Friday, October 8th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--008"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     8
@@ -2533,8 +2547,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Saturday, October 9th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     9
@@ -2546,8 +2561,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, October 10th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="0"
                   >
                     10
@@ -2555,8 +2571,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 11th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     11
@@ -2564,8 +2581,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 12th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     12
@@ -2573,8 +2591,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 13th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     13
@@ -2582,8 +2601,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 14th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     14
@@ -2591,8 +2611,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 15th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     15
@@ -2600,8 +2621,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 16th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     16
@@ -2613,8 +2635,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 17th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     17
@@ -2622,8 +2645,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 18th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     18
@@ -2631,8 +2655,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 19th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     19
@@ -2640,8 +2665,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 20th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     20
@@ -2649,8 +2675,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 21st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     21
@@ -2658,8 +2685,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 22nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     22
@@ -2667,8 +2695,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 23rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     23
@@ -2680,8 +2709,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 24th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     24
@@ -2689,8 +2719,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 25th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     25
@@ -2698,8 +2729,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 26th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     26
@@ -2707,8 +2739,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 27th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     27
@@ -2716,8 +2749,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 28th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     28
@@ -2725,8 +2759,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 29th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     29
@@ -2734,8 +2769,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 30th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     30
@@ -2747,8 +2783,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 31st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     31
@@ -2756,8 +2793,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, November 1st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     1
@@ -2765,8 +2803,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, November 2nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     2
@@ -2774,8 +2813,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, November 3rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     3
@@ -2783,8 +2823,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, November 4th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     4
@@ -2792,8 +2833,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, November 5th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     5
@@ -2801,8 +2843,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, November 6th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     6
@@ -3540,6 +3583,7 @@ label + .c3 {
               <div
                 aria-label="month  2010-10"
                 class="react-datepicker__month"
+                role="listbox"
               >
                 <div
                   class="react-datepicker__week"
@@ -3547,8 +3591,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, September 26th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     26
@@ -3556,8 +3601,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Monday, September 27th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     27
@@ -3565,8 +3611,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Tuesday, September 28th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     28
@@ -3574,8 +3621,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Wednesday, September 29th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     29
@@ -3583,8 +3631,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Thursday, September 30th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     30
@@ -3592,8 +3641,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Friday, October 1st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--001"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     1
@@ -3601,8 +3651,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Saturday, October 2nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     2
@@ -3614,8 +3665,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, October 3rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     3
@@ -3623,8 +3675,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Monday, October 4th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--004"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     4
@@ -3632,8 +3685,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Tuesday, October 5th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--005"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     5
@@ -3641,8 +3695,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Wednesday, October 6th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--006"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     6
@@ -3650,8 +3705,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Thursday, October 7th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--007"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     7
@@ -3659,8 +3715,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Friday, October 8th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--008"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     8
@@ -3668,8 +3725,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Saturday, October 9th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     9
@@ -3681,8 +3739,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, October 10th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="0"
                   >
                     10
@@ -3690,8 +3749,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 11th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     11
@@ -3699,8 +3759,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 12th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     12
@@ -3708,8 +3769,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 13th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     13
@@ -3717,8 +3779,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 14th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     14
@@ -3726,8 +3789,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 15th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     15
@@ -3735,8 +3799,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 16th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     16
@@ -3748,8 +3813,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 17th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     17
@@ -3757,8 +3823,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 18th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     18
@@ -3766,8 +3833,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 19th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     19
@@ -3775,8 +3843,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 20th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     20
@@ -3784,8 +3853,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 21st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     21
@@ -3793,8 +3863,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 22nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     22
@@ -3802,8 +3873,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 23rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     23
@@ -3815,8 +3887,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 24th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     24
@@ -3824,8 +3897,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 25th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     25
@@ -3833,8 +3907,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 26th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     26
@@ -3842,8 +3917,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 27th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     27
@@ -3851,8 +3927,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 28th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     28
@@ -3860,8 +3937,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 29th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     29
@@ -3869,8 +3947,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 30th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     30
@@ -3882,8 +3961,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 31st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     31
@@ -3891,8 +3971,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, November 1st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     1
@@ -3900,8 +3981,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, November 2nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     2
@@ -3909,8 +3991,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, November 3rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     3
@@ -3918,8 +4001,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, November 4th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     4
@@ -3927,8 +4011,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, November 5th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     5
@@ -3936,8 +4021,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, November 6th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     6
@@ -4586,6 +4672,7 @@ label + .c3 {
               <div
                 aria-label="month  2010-10"
                 class="react-datepicker__month"
+                role="listbox"
               >
                 <div
                   class="react-datepicker__week"
@@ -4593,8 +4680,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, September 26th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     26
@@ -4602,8 +4690,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Monday, September 27th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     27
@@ -4611,8 +4700,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Tuesday, September 28th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     28
@@ -4620,8 +4710,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Wednesday, September 29th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     29
@@ -4629,8 +4720,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Thursday, September 30th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     30
@@ -4638,8 +4730,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Friday, October 1st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--001"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     1
@@ -4647,8 +4740,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Saturday, October 2nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     2
@@ -4660,8 +4754,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, October 3rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     3
@@ -4669,8 +4764,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Monday, October 4th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--004"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     4
@@ -4678,8 +4774,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Tuesday, October 5th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--005"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     5
@@ -4687,8 +4784,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Wednesday, October 6th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--006"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     6
@@ -4696,8 +4794,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Thursday, October 7th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--007"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     7
@@ -4705,8 +4804,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Friday, October 8th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--008"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     8
@@ -4714,8 +4814,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Saturday, October 9th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     9
@@ -4727,8 +4828,9 @@ label + .c3 {
                   <div
                     aria-disabled="false"
                     aria-label="Choose Sunday, October 10th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="0"
                   >
                     10
@@ -4736,8 +4838,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 11th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     11
@@ -4745,8 +4848,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 12th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     12
@@ -4754,8 +4858,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 13th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     13
@@ -4763,8 +4868,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 14th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     14
@@ -4772,8 +4878,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 15th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     15
@@ -4781,8 +4888,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 16th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     16
@@ -4794,8 +4902,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 17th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     17
@@ -4803,8 +4912,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 18th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     18
@@ -4812,8 +4922,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 19th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     19
@@ -4821,8 +4932,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 20th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     20
@@ -4830,8 +4942,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 21st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     21
@@ -4839,8 +4952,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 22nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     22
@@ -4848,8 +4962,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 23rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     23
@@ -4861,8 +4976,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 24th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     24
@@ -4870,8 +4986,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, October 25th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     25
@@ -4879,8 +4996,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, October 26th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     26
@@ -4888,8 +5006,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, October 27th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     27
@@ -4897,8 +5016,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, October 28th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     28
@@ -4906,8 +5026,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, October 29th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     29
@@ -4915,8 +5036,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, October 30th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     30
@@ -4928,8 +5050,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Sunday, October 31st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     31
@@ -4937,8 +5060,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Monday, November 1st, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     1
@@ -4946,8 +5070,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Tuesday, November 2nd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     2
@@ -4955,8 +5080,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Wednesday, November 3rd, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     3
@@ -4964,8 +5090,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Thursday, November 4th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     4
@@ -4973,8 +5100,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Friday, November 5th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     5
@@ -4982,8 +5110,9 @@ label + .c3 {
                   <div
                     aria-disabled="true"
                     aria-label="Not available Saturday, November 6th, 2010"
+                    aria-selected="false"
                     class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
-                    role="button"
+                    role="option"
                     tabindex="-1"
                   >
                     6
