@@ -14,7 +14,7 @@ exports[`CardLink Matches Snapshot 1`] = `
 .c0 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius-2x);
-  box-shadow: inset 0 0 0 1px #DBDEE1,0 1px 4px 0 rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 0 1px #DBDEE1,0 1px 4px 0 rgb(0 0 0 / 20%);
   box-sizing: border-box;
   color: #000000;
   display: block;
@@ -33,7 +33,7 @@ exports[`CardLink Matches Snapshot 1`] = `
 
 .c0:hover {
   background-color: #DBDEE1;
-  box-shadow: inset 0 0 0 1px #60666E,0 1px 4px 0 rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 0 1px #60666E,0 1px 4px 0 rgb(0 0 0 / 20%);
 }
 
 .c0:hover .c1 {

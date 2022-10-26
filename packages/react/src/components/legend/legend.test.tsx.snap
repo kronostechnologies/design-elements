@@ -25,7 +25,7 @@ exports[`Legend Matches the snapshot 1`] = `
 .c1::before {
   background-color: #84C6EA;
   border-radius: 50%;
-  content: '';
+  content: "";
   height: 8px;
   margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
   width: 8px;
@@ -50,7 +50,7 @@ exports[`Legend Matches the snapshot 1`] = `
 .c3::before {
   background-color: #000014;
   border-radius: 50%;
-  content: '';
+  content: "";
   height: 8px;
   margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
   width: 8px;
@@ -75,7 +75,7 @@ exports[`Legend Matches the snapshot 1`] = `
 .c4::before {
   background-color: #304E63;
   border-radius: 50%;
-  content: '';
+  content: "";
   height: 8px;
   margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
   width: 8px;

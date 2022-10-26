@@ -21,7 +21,9 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
         right: 0;
         width: initial;
 
-        ${StyledNavItem}, ${HtmlLink} {
+        /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
+        ${StyledNavItem},
+        ${HtmlLink} {
             height: 2.75rem;
             padding: var(--spacing-1x) var(--spacing-4x);
         }
@@ -32,8 +34,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
         }
 
         ${StyledHeading} {
-            margin: 0;
-            margin-bottom: var(--spacing-1x);
+            margin: 0 0 var(--spacing-1x);
             padding: 0 var(--spacing-4x);
         }
 

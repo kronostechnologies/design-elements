@@ -41,7 +41,7 @@ const StyledInput = styled.input<StyledInputProps>`
         margin: 0;
     }
 
-    &[type=number] {
+    &[type="number"] {
         -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
     }
 `;

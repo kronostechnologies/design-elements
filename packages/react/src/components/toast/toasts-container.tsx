@@ -24,19 +24,23 @@ function getToastPosition({
         case 'top-right':
             return css`
                 right: ${lateralPosition};
-                top: var(--spacing-2x);`;
+                top: var(--spacing-2x);
+            `;
         case 'bottom-right':
             return css`
                 bottom: var(--spacing-2x);
-                right: ${lateralPosition};`;
+                right: ${lateralPosition};
+            `;
         case 'top-left':
             return css`
                 left: ${lateralPosition};
-                top: var(--spacing-2x);`;
+                top: var(--spacing-2x);
+            `;
         case 'bottom-left':
             return css`
                 bottom: var(--spacing-2x);
-                left: ${lateralPosition};`;
+                left: ${lateralPosition};
+            `;
     }
 }
 

@@ -58,7 +58,7 @@ const StyledInput = styled(TextInput)`
     flex: 1;
     margin-bottom: 0;
 
-    input {
+    input { /* stylelint-disable-line no-descending-specificity */
         ::-ms-reveal {
             display: none;
         }

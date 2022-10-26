@@ -28,23 +28,27 @@ function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterp
                 font-size: ${(isMobile ? '0.75' : '0.625')}rem;
                 height: ${(isMobile ? '32' : '24')}px;
                 letter-spacing: ${(isMobile ? '0.013' : '0.011')}rem;
-                width: ${(isMobile ? '32' : '24')}px;`;
+                width: ${(isMobile ? '32' : '24')}px;
+            `;
         case 'small':
             return css`
                 font-size: ${(isMobile ? '0.875' : '0.75')}rem;
                 height: ${(isMobile ? '40' : '32')}px;
                 letter-spacing: ${(isMobile ? '0.014' : '0.013')}rem;
-                width: ${(isMobile ? '40' : '32')}px;`;
+                width: ${(isMobile ? '40' : '32')}px;
+            `;
         case 'medium':
             return css`
                 font-size: 1rem;
                 height: 48px;
-                width: 48px;`;
+                width: 48px;
+            `;
         case 'large':
             return css`
                 font-size: 1.5rem;
                 height: ${(isMobile ? '72' : '80')}px;
-                width: ${(isMobile ? '72' : '80')}px;`;
+                width: ${(isMobile ? '72' : '80')}px;
+            `;
     }
 }
 

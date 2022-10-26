@@ -100,7 +100,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   border-radius: var(--border-radius);
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -114,8 +114,8 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: dlEaXy 0.25s ease-out;
-  animation: dlEaXy 0.25s ease-out;
+  -webkit-animation: etjUAa 0.25s ease-out;
+  animation: etjUAa 0.25s ease-out;
   background: #CD2C23;
 }
 
@@ -388,7 +388,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   border-radius: var(--border-radius);
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -402,8 +402,8 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: dlEaXy 0.25s ease-out;
-  animation: dlEaXy 0.25s ease-out;
+  -webkit-animation: etjUAa 0.25s ease-out;
+  animation: etjUAa 0.25s ease-out;
   background: #602FA0;
 }
 
@@ -676,7 +676,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   border-radius: var(--border-radius);
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -690,8 +690,8 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: dlEaXy 0.25s ease-out;
-  animation: dlEaXy 0.25s ease-out;
+  -webkit-animation: etjUAa 0.25s ease-out;
+  animation: etjUAa 0.25s ease-out;
   background: #008533;
 }
 
@@ -964,7 +964,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   border-radius: var(--border-radius);
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -978,8 +978,8 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   width: 400px;
-  -webkit-animation: dlEaXy 0.25s ease-out;
-  animation: dlEaXy 0.25s ease-out;
+  -webkit-animation: etjUAa 0.25s ease-out;
+  animation: etjUAa 0.25s ease-out;
   background: #FFB302;
 }
 

@@ -107,6 +107,7 @@ export const Label = styled.label<LabelProps>`
         border-color: ${({ theme }) => theme.greys['dark-grey']};
         cursor: pointer;
 
+        /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
         ${Description},
         ${InputContainer} {
             color: ${({ theme }) => theme.greys.black};

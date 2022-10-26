@@ -33,10 +33,12 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
             grid-template-areas:
                 "icon content"
                 "button button";
-            grid-template-columns: auto 1fr;`;
+            grid-template-columns: auto 1fr;
+        `;
     }
     return css`
-        display: flex;`;
+        display: flex;
+    `;
 }
 
 function abstractContainer(
@@ -58,7 +60,8 @@ function abstractContainer(
         ${BannerIcon} {
             color: ${(props) => (iconColor ? props.theme.notifications[iconColor] : props.theme.main['primary-3'])};
             flex: 0 0 auto;
-        }`;
+        }
+    `;
 }
 
 const InfoContainer = abstractContainer('#f9f7fb', 'info-1.1');

@@ -46,7 +46,7 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius-2x);
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -60,14 +60,14 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */
 
     &::after {
-        content: '';
+        content: "";
         display: block;
         padding-bottom: ${getPadding};
     }
 
     &:focus {
         border-color: ${({ theme }) => theme.tokens['focus-border']};
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']}, 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
         outline: none;
     }
 `;

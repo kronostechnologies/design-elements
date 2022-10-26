@@ -51,7 +51,7 @@ input + .c2 {
 .c8 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -65,7 +65,7 @@ input + .c2 {
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
@@ -455,7 +455,7 @@ input + .c2 {
 .c11 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -469,7 +469,7 @@ input + .c2 {
 }
 
 .c11:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
@@ -941,7 +941,7 @@ input + .c2 {
 .c8 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -955,7 +955,7 @@ input + .c2 {
 }
 
 .c8:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
@@ -1384,7 +1384,7 @@ exports[`Select mobile select has a different style 1`] = `
 .c6 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 160px;
@@ -1398,7 +1398,7 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 .c6:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 

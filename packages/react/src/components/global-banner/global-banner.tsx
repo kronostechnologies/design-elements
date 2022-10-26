@@ -1,15 +1,15 @@
 import {
     forwardRef,
     MouseEvent,
+    MouseEventHandler,
     ReactElement,
     ReactNode,
     Ref,
     SVGProps,
-    useState,
     useCallback,
-    MouseEventHandler,
+    useState,
 } from 'react';
-import styled, { css, StyledProps } from 'styled-components';
+import styled, { css, SimpleInterpolation, StyledProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -20,6 +20,10 @@ export type GlobalBannerType = 'alert' | 'warning' | 'info' | 'default';
 interface ContainerProps {
     bannerType: GlobalBannerType;
     isMobile: boolean;
+}
+
+interface IsMobileProps {
+    $isMobile: boolean;
 }
 
 function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
@@ -72,8 +76,7 @@ const Container = styled.section<ContainerProps>`
     background-color: ${getContainerBackgroundColor};
     color: ${getContainerColor};
     display: flex;
-    flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
-    flex-wrap: ${({ isMobile }) => (isMobile ? 'nowrap' : 'wrap')};
+    flex-flow: ${({ isMobile }) => (isMobile ? 'column nowrap' : 'row rap')};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
@@ -84,23 +87,32 @@ const Container = styled.section<ContainerProps>`
 
 const Content = styled.div<{ isMobile: boolean }>`
     align-items: center;
+    align-self: ${({ isMobile }) => (isMobile ? 'flex-start' : null)};
     display: flex;
     justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
     margin-top: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
     position: relative;
-
-    ${({ isMobile }) => isMobile && css`align-self: flex-start;`};
 `;
 
-const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & { $isMobile: boolean }>`
-    flex-shrink: 0;
-    margin-right: var(--spacing-1x);
+function getIconPosition(props: IsMobileProps): SimpleInterpolation {
+    if (props.$isMobile) {
+        return css`
+            align-self: flex-start;
+        `;
+    }
 
-    ${({ $isMobile }) => ($isMobile ? css`align-self: flex-start;` : css`
+    return css`
         left: calc(var(--spacing-3x) * -1);
         position: absolute;
         top: var(--spacing-half);
-    `)};
+    `;
+}
+
+const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IsMobileProps>`
+    flex-shrink: 0;
+    margin-right: var(--spacing-1x);
+
+    ${getIconPosition};
 `;
 
 const Text = styled.span`
@@ -127,7 +139,8 @@ function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProp
 }
 
 const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
-    ${({ bannerType, theme }) => bannerType === 'warning' && css`
+    /* stylelint-disable-next-line declaration-colon-newline-after */
+    ${({ bannerType, theme }) => (bannerType === 'warning') && css`
         border-color: ${theme.greys.black};
         color: ${theme.greys.black};
     `};
@@ -139,7 +152,9 @@ const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', in
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
+        ${({ bannerType, theme }) => bannerType === 'warning' && css`
+            color: ${theme.greys.black};
+        `}
     }
 `;
 
@@ -158,16 +173,16 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<Butto
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
-    ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`};
+    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.black};`}
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        ${({ bannerType, theme }) => bannerType === 'warning' && css`color: ${theme.greys.white};`}
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.white};
     }
 `;
 

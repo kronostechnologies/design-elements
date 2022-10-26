@@ -12,7 +12,7 @@ const lightGrey = '#D9DDE2';
 
 const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.greys.white};
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@ const MenuLink = styled(NavLink)`
 const ShowMoreMenu = styled.ul<{ open?: boolean }>`
     background-color: ${(props) => props.theme.greys.white};
     border-radius: var(--border-radius);
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     display: ${({ open }) => (open ? 'flex' : 'none')};
     flex-wrap: wrap;
     left: 72px;
@@ -96,13 +96,12 @@ const ShowMore = styled.button<{ active?: boolean }>`
         background-color: ${(props) => props.theme.greys.grey};
         color: ${(props) => props.theme.greys.black};
     }
-
 `;
 
 const NavigationItem = styled.li`
     position: relative;
 
-    &.moreMenu:hover {
+    &:hover {
         ${ShowMoreMenu} {
             display: flex;
         }
@@ -265,7 +264,7 @@ export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
                     <NavList>
                         {navItems.map(navItem)}
                         {overflow && (
-                            <NavigationItem className="moreMenu">
+                            <NavigationItem>
                                 <ShowMore
                                     aria-label="Show more navigation elements"
                                     aria-expanded={menuOpen}

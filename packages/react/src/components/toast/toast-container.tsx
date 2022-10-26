@@ -28,20 +28,24 @@ function getToastContainerBackground({ theme, type }: ToastWrapperProps): Flatte
     switch (type) {
         case 'information':
             return css`
-                background: ${theme.notifications['info-1.1']};`;
+                background: ${theme.notifications['info-1.1']};
+            `;
         case 'success':
             return css`
-                background: ${theme.notifications['success-1.1']};`;
+                background: ${theme.notifications['success-1.1']};
+            `;
         case 'warning':
             return css`
-                background: ${theme.notifications['warning-3.3']};`;
+                background: ${theme.notifications['warning-3.3']};
+            `;
         case 'error':
             return css`
-                background: ${theme.notifications['alert-2.1']};`;
+                background: ${theme.notifications['alert-2.1']};
+            `;
     }
 }
 
-const toastInLeft = keyframes`
+const toastInLeft = keyframes` /* stylelint-disable-line keyframes-name-pattern */
     from {
         transform: translateX(-100%);
     }
@@ -51,7 +55,7 @@ const toastInLeft = keyframes`
     }
 `;
 
-const toastInRight = keyframes`
+const toastInRight = keyframes` /* stylelint-disable-line keyframes-name-pattern */
     from {
         transform: translateX(100%);
     }
@@ -65,23 +69,27 @@ function getToastPosition({ position }: ToastWrapperProps): FlattenInterpolation
     switch (position) {
         case 'top-right':
             return css`
-                animation: ${toastInRight} 0.25s ease-out;`;
+                animation: ${toastInRight} 0.25s ease-out;
+            `;
         case 'bottom-right':
             return css`
-                animation: ${toastInRight} 0.25s ease-out;`;
+                animation: ${toastInRight} 0.25s ease-out;
+            `;
         case 'top-left':
             return css`
-                animation: ${toastInLeft} 0.25s ease-out;`;
+                animation: ${toastInLeft} 0.25s ease-out;
+            `;
         case 'bottom-left':
             return css`
-                animation: ${toastInLeft} 0.25s ease-out;`;
+                animation: ${toastInLeft} 0.25s ease-out;
+            `;
     }
 }
 
 const ToastWrapper = styled.div<ToastWrapperProps>`
     align-items: flex-start;
     border-radius: var(--border-radius);
-    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
     box-sizing: border-box;
     display: flex;
     flex: 1;
@@ -116,19 +124,23 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
         case 'information':
             return css`
                 background-color: #3a1c60; /* TODO: theme */
-                color: ${theme.greys.white};`;
+                color: ${theme.greys.white};
+            `;
         case 'success':
             return css`
                 background-color: #004f1e; /* TODO: theme */
-                color: ${theme.greys.white};`;
+                color: ${theme.greys.white};
+            `;
         case 'warning':
             return css`
                 background-color: ${theme.notifications['warning-3.4']};
-                color: ${theme.greys.black};`;
+                color: ${theme.greys.black};
+            `;
         case 'error':
             return css`
                 background-color: #7b1a15; /* TODO: theme */
-                color: ${theme.greys.white};`;
+                color: ${theme.greys.white};
+            `;
     }
 }
 

@@ -1,0 +1,36 @@
+diff --git a/src/utils/tagged-template-literal.js b/src/utils/tagged-template-literal.js
+index 2fdaa204a2a4a34c007a2dfee2248ea3da6ccc1e..51cf89600ce8cde83ffe8362a30f58bb287ffcaa 100644
+--- a/src/utils/tagged-template-literal.js
++++ b/src/utils/tagged-template-literal.js
+@@ -82,11 +82,11 @@ const parseInterpolationTag = (expression, id, absolutePath) => {
+ 
+         case 'block':
+         case 'declaration':
+-          substitute = `-styled-mixin${id}: dummyValue;`
++          substitute = `--styled-mixin${id}: dummyValue;`
+           break
+ 
+         case 'property':
+-          substitute = `-styled-mixin${id}`
++          substitute = `--styled-mixin${id}`
+           break
+ 
+         case 'value':
+@@ -141,7 +141,7 @@ const interleave = (quasis, expressions, absolutePath) => {
+       substitute = '$dummyValue'
+     } else if (nextChar === ':') {
+       // Before a colon, then guess as property
+-      substitute = `-styled-mixin${count}`
++      substitute = `--styled-mixin${count}`
+       count += 1
+     } else if (isLastDeclarationCompleted(css)) {
+       /** This block assumes that if you put an interpolation in the position
+@@ -150,7 +150,7 @@ const interleave = (quasis, expressions, absolutePath) => {
+        * be completed by another interpolation / completed by following text
+        * in the literal
+        */
+-      substitute = `-styled-mixin${count}: dummyValue`
++      substitute = `--styled-mixin${count}: dummyValue`
+       count += 1
+       if (nextNonWhitespaceChar(nextText) !== ';') {
+         substitute += ';'

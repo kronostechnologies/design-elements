@@ -27,7 +27,7 @@ const Item = styled.li<Pick<LegendItem, 'color'>>`
     ::before {
         background-color: ${(props) => props.color || props.theme.main['primary-1.2']};
         border-radius: 50%;
-        content: '';
+        content: "";
         height: 8px;
         margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
         width: 8px;
