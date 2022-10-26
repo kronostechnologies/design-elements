@@ -90,7 +90,7 @@ exports[`Global Navigation matches snapshot 1`] = `
 
 .c0 {
   background-color: #FFFFFF;
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;

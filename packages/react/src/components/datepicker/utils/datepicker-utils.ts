@@ -69,5 +69,6 @@ export function getYearsOptions(minDate?: Date | null, maxDate?: Date | null): O
 }
 
 export function setLocaleFirstDayOfWeek(locale: Locale, dayOfWeek?: DayOfWeek): void {
-    Object.assign(locale.options || {}, <Locale['options']>{ weekStartsOn: dayOfWeek });
+    const optionsOverride: Locale['options'] = { weekStartsOn: dayOfWeek };
+    Object.assign(locale.options || {}, optionsOverride);
 }

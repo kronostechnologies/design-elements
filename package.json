@@ -5,21 +5,20 @@
     "packages/*"
   ],
   "scripts": {
-    "g:stylelint": "stylelint --config .stylelintrc.js --custom-formatter scripts/stylelint-formatter.js",
+    "g:stylelint": "stylelint --config .stylelintrc.js --custom-formatter @equisoft/stylelint-config/formatter",
     "changelog": "conventional-changelog --config ./.conventional-changelog.config.js -i CHANGELOG.md -s -r 1",
     "checkLicense": "yarn licenses audit --config=licenses.config.js --output-file=./build/license/license.xml --summary"
   },
   "devDependencies": {
-    "@equisoft/stylelint-config": "^1.0.1",
-    "@types/eslint": "^8.4.7",
+    "@equisoft/stylelint-config": "^2.1.1",
+    "@types/eslint": "^8.4.8",
     "@types/yargs": "^17.0.13",
     "conventional-changelog-cli": "^2.2.2",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^8.26.0",
-    "stylelint": "^13.13.1",
-    "stylelint-junit-formatter": "^0.2.2",
-    "stylelint-order": "^4.1.0",
-    "stylelint-sarif-formatter": "^1.0.7",
+    "postcss": "^8.4.18",
+    "stylelint": "^14.14.0",
+    "stylelint-order": "^5.0.0",
     "typescript": "~4.8.4",
     "xmlbuilder": "^15.1.1",
     "yargs": "^17.6.0"
@@ -28,7 +27,8 @@
     "@types/react": "^17",
     "react-docgen-typescript": "^2.0.0",
     "@types/react-router-dom": "5.1.8",
-    "webpack": "^5"
+    "webpack": "^5",
+    "stylelint-processor-styled-components@~1.10.0": "patch:stylelint-processor-styled-components@npm%3A1.10.0#./.yarn/patches/stylelint-processor-styled-components-npm-1.10.0-17c51326cc.patch"
   },
   "packageManager": "yarn@3.2.4"
 }

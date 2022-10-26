@@ -18,7 +18,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: '';
+  content: "";
   display: block;
   height: 0;
   margin: auto;
@@ -30,7 +30,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
   color: #000000;
   display: -webkit-box;
@@ -55,7 +55,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   z-index: 1000;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2 {
+.c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
   margin-top: -0.4rem;
@@ -63,19 +63,19 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::before {
+.c1[data-popper-placement*="bottom"] > .c2::before {
   border-color: transparent transparent #60666E transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
   position: absolute;
   top: -1px;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::after {
+.c1[data-popper-placement*="bottom"] > .c2::after {
   border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2 {
+.c1[data-popper-placement*="top"] > .c2 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -83,50 +83,50 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2::before {
+.c1[data-popper-placement*="top"] > .c2::before {
   border-color: #60666E transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
   position: absolute;
   top: 1px;
 }
 
-.c1[data-popper-placement*='top'] > .c2::after {
+.c1[data-popper-placement*="top"] > .c2::after {
   border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2 {
+.c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='right'] > .c2::before {
+.c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2::after {
+.c1[data-popper-placement*="right"] > .c2::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
   left: 6px;
   top: 0;
 }
 
-.c1[data-popper-placement*='left'] > .c2 {
+.c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='left'] > .c2::before {
+.c1[data-popper-placement*="left"] > .c2::before {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
-.c1[data-popper-placement*='left'] > .c2::after {
+.c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;
@@ -269,7 +269,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: '';
+  content: "";
   display: block;
   height: 0;
   margin: auto;
@@ -281,7 +281,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
   color: #000000;
   display: none;
@@ -303,7 +303,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
   z-index: 1000;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2 {
+.c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
   margin-top: -0.4rem;
@@ -311,19 +311,19 @@ exports[`Tooltip Has default desktop styles 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::before {
+.c1[data-popper-placement*="bottom"] > .c2::before {
   border-color: transparent transparent #60666E transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
   position: absolute;
   top: -1px;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::after {
+.c1[data-popper-placement*="bottom"] > .c2::after {
   border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2 {
+.c1[data-popper-placement*="top"] > .c2 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -331,50 +331,50 @@ exports[`Tooltip Has default desktop styles 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2::before {
+.c1[data-popper-placement*="top"] > .c2::before {
   border-color: #60666E transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
   position: absolute;
   top: 1px;
 }
 
-.c1[data-popper-placement*='top'] > .c2::after {
+.c1[data-popper-placement*="top"] > .c2::after {
   border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2 {
+.c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='right'] > .c2::before {
+.c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2::after {
+.c1[data-popper-placement*="right"] > .c2::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
   left: 6px;
   top: 0;
 }
 
-.c1[data-popper-placement*='left'] > .c2 {
+.c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='left'] > .c2::before {
+.c1[data-popper-placement*="left"] > .c2::before {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
-.c1[data-popper-placement*='left'] > .c2::after {
+.c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;
@@ -516,7 +516,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: '';
+  content: "";
   display: block;
   height: 0;
   margin: auto;
@@ -528,7 +528,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
   color: #000000;
   display: -webkit-box;
@@ -553,7 +553,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   z-index: 1000;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2 {
+.c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
   margin-top: -0.4rem;
@@ -561,19 +561,19 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::before {
+.c1[data-popper-placement*="bottom"] > .c2::before {
   border-color: transparent transparent #60666E transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
   position: absolute;
   top: -1px;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::after {
+.c1[data-popper-placement*="bottom"] > .c2::after {
   border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2 {
+.c1[data-popper-placement*="top"] > .c2 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -581,50 +581,50 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2::before {
+.c1[data-popper-placement*="top"] > .c2::before {
   border-color: #60666E transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
   position: absolute;
   top: 1px;
 }
 
-.c1[data-popper-placement*='top'] > .c2::after {
+.c1[data-popper-placement*="top"] > .c2::after {
   border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2 {
+.c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='right'] > .c2::before {
+.c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2::after {
+.c1[data-popper-placement*="right"] > .c2::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
   left: 6px;
   top: 0;
 }
 
-.c1[data-popper-placement*='left'] > .c2 {
+.c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='left'] > .c2::before {
+.c1[data-popper-placement*="left"] > .c2::before {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
-.c1[data-popper-placement*='left'] > .c2::after {
+.c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;
@@ -767,7 +767,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: '';
+  content: "";
   display: block;
   height: 0;
   margin: auto;
@@ -779,7 +779,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
   color: #000000;
   display: none;
@@ -801,7 +801,7 @@ exports[`Tooltip Has mobile styles 1`] = `
   z-index: 1000;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2 {
+.c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
   margin-top: -0.4rem;
@@ -809,19 +809,19 @@ exports[`Tooltip Has mobile styles 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::before {
+.c1[data-popper-placement*="bottom"] > .c2::before {
   border-color: transparent transparent #60666E transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
   position: absolute;
   top: -1px;
 }
 
-.c1[data-popper-placement*='bottom'] > .c2::after {
+.c1[data-popper-placement*="bottom"] > .c2::after {
   border-color: transparent transparent #FFFFFF transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
+  border-width: 0 0.5rem 0.4rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2 {
+.c1[data-popper-placement*="top"] > .c2 {
   bottom: 0;
   height: 1rem;
   left: 0;
@@ -829,50 +829,50 @@ exports[`Tooltip Has mobile styles 1`] = `
   width: 1rem;
 }
 
-.c1[data-popper-placement*='top'] > .c2::before {
+.c1[data-popper-placement*="top"] > .c2::before {
   border-color: #60666E transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
   position: absolute;
   top: 1px;
 }
 
-.c1[data-popper-placement*='top'] > .c2::after {
+.c1[data-popper-placement*="top"] > .c2::after {
   border-color: #FFFFFF transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
+  border-width: 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2 {
+.c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
   margin-left: -0.7rem;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='right'] > .c2::before {
+.c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #60666E transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
 }
 
-.c1[data-popper-placement*='right'] > .c2::after {
+.c1[data-popper-placement*="right"] > .c2::after {
   border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.4rem 0.5rem 0;
   left: 6px;
   top: 0;
 }
 
-.c1[data-popper-placement*='left'] > .c2 {
+.c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
   right: 0;
   width: 1rem;
 }
 
-.c1[data-popper-placement*='left'] > .c2::before {
+.c1[data-popper-placement*="left"] > .c2::before {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.4em;
 }
 
-.c1[data-popper-placement*='left'] > .c2::after {
+.c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #FFFFFF;
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;

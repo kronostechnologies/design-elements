@@ -334,8 +334,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin: 2px 0;
-  margin-right: var(--spacing-1x);
+  margin: 2px var(--spacing-1x) 2px 0;
   padding: var(--spacing-1x);
 }
 
@@ -353,8 +352,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 
 .c15 {
   line-height: 1.25rem;
-  margin: auto 0;
-  margin-right: var(--spacing-1x);
+  margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -369,18 +367,14 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   font-size: 0.875rem;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 0;
-  padding-left: var(--spacing-half);
+  padding: 0 0 0 var(--spacing-half);
 }
 
 .c11 {
@@ -481,8 +475,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c1 .c5 .c8 {
-  margin: 0;
-  margin-bottom: var(--spacing-1x);
+  margin: 0 0 var(--spacing-1x);
   padding: 0 var(--spacing-4x);
 }
 
@@ -1180,8 +1173,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin: 2px 0;
-  margin-right: var(--spacing-1x);
+  margin: 2px var(--spacing-1x) 2px 0;
   padding: var(--spacing-1x);
 }
 
@@ -1199,8 +1191,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 
 .c15 {
   line-height: 1.25rem;
-  margin: auto 0;
-  margin-right: var(--spacing-1x);
+  margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1215,18 +1206,14 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   font-size: 0.875rem;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 0;
-  padding-left: var(--spacing-half);
+  padding: 0 0 0 var(--spacing-half);
 }
 
 .c11 {
@@ -1327,8 +1314,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c1 .c5 .c8 {
-  margin: 0;
-  margin-bottom: var(--spacing-1x);
+  margin: 0 0 var(--spacing-1x);
   padding: 0 var(--spacing-4x);
 }
 
@@ -1938,8 +1924,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin: 2px 0;
-  margin-right: var(--spacing-1x);
+  margin: 2px var(--spacing-1x) 2px 0;
   padding: var(--spacing-1x);
 }
 
@@ -1957,8 +1942,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c15 {
   line-height: 1.25rem;
-  margin: auto 0;
-  margin-right: var(--spacing-1x);
+  margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1973,18 +1957,14 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   font-size: 0.875rem;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 0;
-  padding-left: var(--spacing-half);
+  padding: 0 0 0 var(--spacing-half);
 }
 
 .c11 {
@@ -2085,8 +2065,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c1 .c5 .c8 {
-  margin: 0;
-  margin-bottom: var(--spacing-1x);
+  margin: 0 0 var(--spacing-1x);
   padding: 0 var(--spacing-4x);
 }
 

@@ -37,6 +37,7 @@ const LinkStyles = css`
     text-decoration: none;
 
     ${focus}
+
     > * {
         height: 100%;
     }

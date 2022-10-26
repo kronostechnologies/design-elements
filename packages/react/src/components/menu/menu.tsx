@@ -31,7 +31,7 @@ const StyledDiv = styled.div<{ numberOfVisibleItems: number }>`
     /* TODO update with next thematization */
     border: 1px solid #878f9a;
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
     flex-direction: column;
     margin: 0;
@@ -55,7 +55,7 @@ const SubMenu = styled.div<SubMenuProps>`
     /* TODO update with next thematization */
     border: 1px solid #878f9a;
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
     flex-direction: column;
     left: ${({ left }) => left}px !important;
     margin: 0;
@@ -67,7 +67,6 @@ const SubMenu = styled.div<SubMenuProps>`
     top: ${({ top }) => top}px !important;
     transform: none !important;
     width: 100%;
-
 `;
 
 interface ButtonProps {

@@ -31,7 +31,7 @@ const TooltipArrow = styled.div`
 
     &::after {
         border-style: solid;
-        content: '';
+        content: "";
         display: block;
         height: 0;
         margin: auto;
@@ -44,7 +44,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
     color: ${({ theme }) => theme.greys.black};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
@@ -59,7 +59,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     transition: opacity 300ms;
     z-index: 1000;
 
-    &[data-popper-placement*='bottom'] > ${TooltipArrow} {
+    &[data-popper-placement*="bottom"] > ${TooltipArrow} {
         height: 1rem;
         left: 0;
         margin-top: -0.4rem;
@@ -67,19 +67,19 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
         width: 1rem;
     }
 
-    &[data-popper-placement*='bottom'] > ${TooltipArrow}::before {
+    &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
         border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
-        border-width: 0 0.5rem 0.4rem 0.5rem;
+        border-width: 0 0.5rem 0.4rem;
         position: absolute;
         top: -1px;
     }
 
-    &[data-popper-placement*='bottom'] > ${TooltipArrow}::after {
+    &[data-popper-placement*="bottom"] > ${TooltipArrow}::after {
         border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
-        border-width: 0 0.5rem 0.4rem 0.5rem;
+        border-width: 0 0.5rem 0.4rem;
     }
 
-    &[data-popper-placement*='top'] > ${TooltipArrow} {
+    &[data-popper-placement*="top"] > ${TooltipArrow} {
         bottom: 0;
         height: 1rem;
         left: 0;
@@ -87,50 +87,50 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
         width: 1rem;
     }
 
-    &[data-popper-placement*='top'] > ${TooltipArrow}::before {
+    &[data-popper-placement*="top"] > ${TooltipArrow}::before {
         border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
-        border-width: 0.4rem 0.5rem 0 0.5rem;
+        border-width: 0.4rem 0.5rem 0;
         position: absolute;
         top: 1px;
     }
 
-    &[data-popper-placement*='top'] > ${TooltipArrow}::after {
+    &[data-popper-placement*="top"] > ${TooltipArrow}::after {
         border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
-        border-width: 0.4rem 0.5rem 0 0.5rem;
+        border-width: 0.4rem 0.5rem 0;
     }
 
-    &[data-popper-placement*='right'] > ${TooltipArrow} {
+    &[data-popper-placement*="right"] > ${TooltipArrow} {
         height: 1rem;
         left: 0;
         margin-left: -0.7rem;
         width: 1rem;
     }
 
-    &[data-popper-placement*='right'] > ${TooltipArrow}::before {
+    &[data-popper-placement*="right"] > ${TooltipArrow}::before {
         border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
-    &[data-popper-placement*='right'] > ${TooltipArrow}::after {
+    &[data-popper-placement*="right"] > ${TooltipArrow}::after {
         border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
         left: 6px;
         top: 0;
     }
 
-    &[data-popper-placement*='left'] > ${TooltipArrow} {
+    &[data-popper-placement*="left"] > ${TooltipArrow} {
         height: 1rem;
         margin-right: -0.7rem;
         right: 0;
         width: 1rem;
     }
 
-    &[data-popper-placement*='left'] > ${TooltipArrow}::before {
+    &[data-popper-placement*="left"] > ${TooltipArrow}::before {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
         border-width: 0.5rem 0 0.5rem 0.4em;
     }
 
-    &[data-popper-placement*='left'] > ${TooltipArrow}::after {
+    &[data-popper-placement*="left"] > ${TooltipArrow}::after {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
         border-width: 0.5rem 0 0.5rem 0.4em;
         left: 3px;

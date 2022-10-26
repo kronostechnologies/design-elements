@@ -16,7 +16,7 @@ import {
 } from 'react';
 import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepicker';
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { v4 as uuid } from '../../utils/uuid';
@@ -63,7 +63,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
 
     .react-datepicker {
         border: 1px solid ${({ theme }) => theme.greys.grey};
-        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
         font-family: var(--font-family);
         padding: var(--spacing-3x) var(--spacing-2x);
     }
@@ -100,7 +100,8 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys.black};
 
-        ${({ isMobile, theme }) => isMobile && `
+        /* stylelint-disable-next-line declaration-colon-newline-after */
+        ${({ isMobile, theme }) => isMobile && css`
             border: 1px solid ${theme.main['primary-1.1']};
             box-shadow: ${theme.tokens['focus-box-shadow']};
         `};
@@ -136,6 +137,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         background-color: ${({ theme }) => theme.main['primary-1.1']};
         border-radius: 50%;
 
+        /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
                 box-shadow: ${theme.tokens['focus-box-shadow']};
@@ -173,7 +175,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     }
 
     .react-datepicker__portal {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgb(0 0 0 / 50%);
 
         .react-datepicker__day-name {
             font-size: 1rem;

@@ -130,7 +130,7 @@ function getListMaxHeight({ numberOfItemsVisible, isMobile }: ListProps): number
 const List = styled.ul<ListProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgb(0 0 0 / 19%);
     list-style-type: none;
     margin: 0;
     max-height: ${getListMaxHeight}px;
@@ -141,7 +141,7 @@ const List = styled.ul<ListProps>`
     z-index: 1000;
 
     &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgb(0 0 0 / 19%);
         outline: none;
     }
 `;

@@ -16,33 +16,40 @@ function getRowBackgroundColor({
     if (selected) {
         return css`
             /* TODO fix with next thematization */
-            background-color: #e0f0f9;`;
+            background-color: #e0f0f9;
+        `;
     }
     if (error) {
         return css`
             /* TODO fix with next thematization theme.notifications.error4 */
-            background-color: #fcf8f9;`;
+            background-color: #fcf8f9;
+        `;
     }
-    return css`background-color: ${theme.greys.white};`;
+    return css`
+        background-color: ${theme.greys.white};
+    `;
 }
 
 function getCellBackgroundCss({
     theme, clickable,
 }: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
-    if (clickable) {
+    if (!clickable) {
         return css`
-            :hover td {
-                background-color: ${theme.greys.grey};
-            }
-
-            :not(:hover) td {
+            td {
                 background-color: inherit;
-            }`;
+            }
+        `;
     }
+
     return css`
-        td {
+        :hover td {
+            background-color: ${theme.greys.grey};
+        }
+
+        :not(:hover) td {
             background-color: inherit;
-        }`;
+        }
+    `;
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`

@@ -154,7 +154,7 @@ const StyledTable = styled.table<StyledTableProps>`
         }
     }
 
-    .${utilColumnClassName} {
+    ${`.${utilColumnClassName}`} {
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys['dark-grey']};
         font-size: 0.75rem;

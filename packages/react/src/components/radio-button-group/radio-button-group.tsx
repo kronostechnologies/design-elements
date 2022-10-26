@@ -8,9 +8,9 @@ import { Label } from '../label/label';
 import { TooltipProps } from '../tooltip/tooltip';
 
 const StyledDiv = styled.div`
-        div + label {
-            margin-top: var(--spacing-1x);
-        }
+    div + label {
+        margin-top: var(--spacing-1x);
+    }
 `;
 
 const StyledLabel = styled.label`

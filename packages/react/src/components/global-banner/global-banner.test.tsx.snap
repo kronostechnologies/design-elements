@@ -112,12 +112,9 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row rap;
+  -ms-flex-flow: row rap;
+  flex-flow: row rap;
   font-size: 0.875rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -387,12 +384,9 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row rap;
+  -ms-flex-flow: row rap;
+  flex-flow: row rap;
   font-size: 0.875rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -677,12 +671,9 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row rap;
+  -ms-flex-flow: row rap;
+  flex-flow: row rap;
   font-size: 0.875rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -967,12 +958,9 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row rap;
+  -ms-flex-flow: row rap;
+  flex-flow: row rap;
   font-size: 0.875rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1236,12 +1224,9 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   font-size: 1rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1261,6 +1246,9 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1271,9 +1259,6 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   justify-content: unset;
   margin-top: 0;
   position: relative;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
 }
 
 .c2 {
@@ -1514,12 +1499,9 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   font-size: 1rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1539,6 +1521,9 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1549,9 +1534,6 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   justify-content: unset;
   margin-top: 0;
   position: relative;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
 }
 
 .c2 {
@@ -1807,12 +1789,9 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   font-size: 1rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1832,6 +1811,9 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1842,9 +1824,6 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   justify-content: unset;
   margin-top: 0;
   position: relative;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
 }
 
 .c2 {
@@ -2100,12 +2079,9 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   font-size: 1rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -2125,6 +2101,9 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2135,9 +2114,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   justify-content: unset;
   margin-top: 0;
   position: relative;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
 }
 
 .c2 {

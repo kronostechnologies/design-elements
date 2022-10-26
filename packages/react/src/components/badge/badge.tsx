@@ -50,16 +50,18 @@ function getPositionRules(position: BadgePosition, offsetX = 0, offsetY = 0): CS
 function getAnimationRules(position: BadgePosition): SimpleInterpolation {
     const baseTransform = getPositionRules(position).transform || '';
 
-    const bounceKeyframes = keyframes`
+    const bounceKeyframes = keyframes` /* stylelint-disable-line keyframes-name-pattern */
         10% { transform: ${baseTransform} translateY(-4px); }
-        20% { transform: ${baseTransform}; }`;
+        20% { transform: ${baseTransform}; }
+    `;
 
     return css`
         animation: ${bounceKeyframes} 2s ease-in infinite;
 
         @media (prefers-reduced-motion: reduce) {
             animation: none;
-        }`;
+        }
+    `;
 }
 
 export const BadgeCircle = styled.span<{

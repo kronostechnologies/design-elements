@@ -169,8 +169,7 @@ exports[`DropdownMenu Is hidden 1`] = `
 
 .c5 {
   line-height: 1.25rem;
-  margin: auto 0;
-  margin-right: var(--spacing-1x);
+  margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -185,18 +184,14 @@ exports[`DropdownMenu Is hidden 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   font-size: 0.875rem;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 0;
-  padding-left: var(--spacing-half);
+  padding: 0 0 0 var(--spacing-half);
 }
 
 .c2 {
@@ -586,8 +581,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 
 .c5 {
   line-height: 1.25rem;
-  margin: auto 0;
-  margin-right: var(--spacing-1x);
+  margin: auto var(--spacing-1x) auto 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -602,18 +596,14 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   font-size: 0.875rem;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 0;
-  padding-left: var(--spacing-half);
+  padding: 0 0 0 var(--spacing-half);
 }
 
 .c2 {

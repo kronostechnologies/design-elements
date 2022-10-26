@@ -19,8 +19,7 @@ const StyledIcon = styled(Icon)`
     border: 1px solid ${({ theme }) => theme.greys.grey};
     border-radius: var(--border-radius);
     flex-shrink: 0;
-    margin: 2px 0;
-    margin-right: var(--spacing-1x);
+    margin: 2px var(--spacing-1x) 2px 0;
     padding: var(--spacing-1x);
 `;
 
@@ -32,8 +31,7 @@ const StyledDiv = styled.div`
 
 const StyledSpan = styled.span`
     line-height: 1.25rem;
-    margin: auto 0;
-    margin-right: var(--spacing-1x);
+    margin: auto var(--spacing-1x) auto 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -66,14 +64,12 @@ const getFontSize = ({ $smallLabel, $device: { isTablet, isMobile } }: LabelCont
 const LabelContainer = styled.span<{ $smallLabel: boolean, $device: DeviceContextProps }>`
     align-items: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     font-size: ${getFontSize};
     height: 100%;
     margin: 0;
     overflow: hidden;
-    padding: 0;
-    padding-left: var(--spacing-half);
+    padding: 0 0 0 var(--spacing-half);
 `;
 
 export const ItemContent: VoidFunctionComponent<ItemContentProps> = ({

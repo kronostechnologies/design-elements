@@ -122,8 +122,7 @@ const DeleteIcon = styled(Icon).attrs({
     'aria-hidden': 'true',
     name: 'x',
     color: '#60666e',
-})`
-`;
+})``;
 
 function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation<ThemeProps<Theme>> | false {
     return $clickable && css`
@@ -138,7 +137,8 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
             }
         }
 
-        ${focus};`;
+        ${focus};
+    `;
 }
 
 const DeleteButton = styled.button<IconOrButtonProps>`
@@ -185,7 +185,7 @@ const Container = styled.span<ContainerProps>`
         margin-left: var(--spacing-1x);
     }
 
-    ${DeleteButton} {
+    ${DeleteButton} { /* stylelint-disable-line no-descending-specificity */
         margin-right: calc(-1 * var(--spacing-half));
     }
 

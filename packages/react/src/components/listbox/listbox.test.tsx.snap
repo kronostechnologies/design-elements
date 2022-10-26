@@ -13,7 +13,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 96px;
@@ -27,7 +27,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
@@ -205,7 +205,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 128px;
@@ -219,7 +219,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
@@ -405,7 +405,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c1 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
   max-height: 96px;
@@ -419,7 +419,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
