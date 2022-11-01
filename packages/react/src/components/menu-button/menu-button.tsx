@@ -1,4 +1,4 @@
-import { FunctionComponent, KeyboardEvent, useState } from 'react';
+import { FunctionComponent, KeyboardEvent, PropsWithChildren, useState } from 'react';
 import { usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
 import { menuDimensions } from '../../tokens/menuDimensions';
@@ -25,7 +25,7 @@ interface Props {
     options: MenuOption[];
 }
 
-export const MenuButton: FunctionComponent<Props> = ({
+export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
     autofocus, buttonType, children, className, defaultOpen, iconName, options,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);

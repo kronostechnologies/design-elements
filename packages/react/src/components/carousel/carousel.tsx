@@ -1,4 +1,11 @@
-import { AriaAttributes, FunctionComponent, ReactElement, ReactNode, VoidFunctionComponent } from 'react';
+import {
+    AriaAttributes,
+    FunctionComponent,
+    PropsWithChildren,
+    ReactElement,
+    ReactNode,
+    VoidFunctionComponent,
+} from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTheme } from '../../hooks/use-theme';
@@ -116,7 +123,7 @@ function getChildrenAsArray(children: ReactNode): ReactNode[] {
     return [children];
 }
 
-export const Carousel: FunctionComponent<CarouselProps> = ({
+export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
     autoTransitionDelay,
     className,
     initialSlide = 0,

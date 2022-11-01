@@ -1,5 +1,5 @@
 import { i18n as i18nType } from 'i18next';
-import { createContext, FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, FunctionComponent, PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
 import { createI18n } from '../../i18n/i18n';
 
 export interface IntlProviderProps {
@@ -18,7 +18,7 @@ const IntlContext = createContext<IntlContextProps>({ i18n: createI18n() });
 /**
  * @deprecated Use {@link DesignSystem} instead
  */
-export const IntlProvider: FunctionComponent<IntlProviderProps> = ({ children, language }) => {
+export const IntlProvider: FunctionComponent<PropsWithChildren<IntlProviderProps>> = ({ children, language }) => {
     const [i18n] = useState(createI18n);
 
     useEffect(() => {

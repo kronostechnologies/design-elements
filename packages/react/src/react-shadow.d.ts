@@ -1,5 +1,5 @@
 declare module 'react-shadow' {
-    import { FunctionComponent } from 'react';
+    import { FunctionComponent, PropsWithChildren } from 'react';
     import root from 'react-shadow/styled-components';
 
     export function useShadowRoot(): ShadowRoot | null;
@@ -7,6 +7,6 @@ declare module 'react-shadow' {
     export function createProxy(
         target: unknown,
         id: string,
-        render: FunctionComponent<{ root?: HTMLElement | undefined, ssr?: boolean }>,
+        render: FunctionComponent<PropsWithChildren<{ root?: HTMLElement | undefined, ssr?: boolean }>>,
     ): typeof root;
 }

@@ -1,4 +1,4 @@
-import { createContext, FunctionComponent, useContext, useEffect, useState } from 'react';
+import { createContext, FunctionComponent, PropsWithChildren, useContext, useEffect, useState } from 'react';
 import { breakpoints, Breakpoints } from '../../tokens/breakpoints';
 
 export type DeviceType = 'desktop' | 'tablet' | 'mobile';
@@ -65,7 +65,10 @@ const DeviceContext = createContext<DeviceContextProps>(getDeviceContext());
 /**
  * @deprecated Use {@link DesignSystem} instead
  */
-export const DeviceContextProvider: FunctionComponent<DeviceContextProviderProps> = ({ children, staticDevice }) => {
+export const DeviceContextProvider: FunctionComponent<PropsWithChildren<DeviceContextProviderProps>> = ({
+    children,
+    staticDevice,
+}) => {
     const [device, setDevice] = useState<DeviceContextProps>(getDeviceContext(staticDevice));
 
     function handleScreenResize(): void {

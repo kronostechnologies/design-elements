@@ -5,6 +5,7 @@ export function createI18n(): i18nType {
     const i18n = i18next.createInstance();
 
     i18n.init({
+        defaultNS: 'common',
         resources: Translations,
         lng: 'en',
         fallbackLng: 'en',

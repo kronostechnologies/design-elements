@@ -1,4 +1,13 @@
-import { ChangeEvent, forwardRef, FunctionComponent, Ref, useEffect, useImperativeHandle, useRef } from 'react';
+import {
+    ChangeEvent,
+    forwardRef,
+    FunctionComponent,
+    PropsWithChildren,
+    Ref,
+    useEffect,
+    useImperativeHandle,
+    useRef,
+} from 'react';
 import styled, { css } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { Icon } from '../icon/icon';
@@ -101,7 +110,7 @@ interface Props {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const Checkbox: FunctionComponent<Props> = forwardRef(({
+export const Checkbox: FunctionComponent<PropsWithChildren<Props>> = forwardRef(({
     checked,
     className,
     defaultChecked,

@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import { useTheme } from '../../hooks/use-theme';
 import { Icon } from '../icon/icon';
 
@@ -8,7 +8,7 @@ export interface SortButtonIconProps {
     sort: SortState;
 }
 
-export const SortButtonIcon: VoidFunctionComponent<SortButtonIconProps> = ({ sort }) => {
+export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconProps>> = ({ sort }) => {
     const theme = useTheme();
 
     switch (sort) {

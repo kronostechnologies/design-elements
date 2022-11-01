@@ -2,6 +2,7 @@ import {
     forwardRef,
     MouseEvent,
     MouseEventHandler,
+    PropsWithChildren,
     ReactElement,
     ReactNode,
     Ref,
@@ -172,7 +173,7 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<Butto
     }
 }
 
-const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<ButtonProps>`
+const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
     color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
 
     &:focus {

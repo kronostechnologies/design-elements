@@ -177,9 +177,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
         <Container className={className} isMobile={isMobile}>
             {numberOfResults !== undefined && (
                 <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                    {numberOfResults}
-                    {' '}
-                    {t('results')}
+                    {`${numberOfResults} ${t('results')}`}
                 </ResultsLabel>
             )}
             <Navigation aria-label="pagination">

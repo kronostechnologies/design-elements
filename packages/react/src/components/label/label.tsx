@@ -1,4 +1,4 @@
-import { Fragment, FunctionComponent } from 'react';
+import { Fragment, FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
@@ -33,7 +33,7 @@ interface LabelProps {
     tooltip?: TooltipProps;
 }
 
-const Label: FunctionComponent<LabelProps> = ({
+const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
     className, children, forId, tooltip,
 }) => {
     const WrapperComponent = tooltip ? StyledDiv : Fragment;

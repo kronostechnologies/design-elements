@@ -1,7 +1,7 @@
 import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import {
     CellProps,
-    Column,
+    Column, ColumnInstance, HeaderGroup, HeaderProps,
     Hooks,
     Row,
     TableState,
@@ -55,9 +55,9 @@ const StyledHeader = styled.th<{ sticky: boolean }>`
     `}
 `;
 
-function getHeading(column: Column, stickyHeader?: boolean): ReactElement {
+function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: boolean): ReactElement {
     if (column.sortable) {
-        return <SortableColumnHeading key={column.id} column={column} />;
+        return <SortableColumnHeading<T> key={column.id} header={column} />;
     }
     return (
         <StyledHeader
@@ -164,21 +164,30 @@ const StyledTable = styled.table<StyledTableProps>`
     }
 `;
 
+interface SelectableRowProps<T extends object> extends CellProps<T> {
+    row: Row<T> & UseRowSelectRowProps<T>;
+}
+
+const SelectableRow: <T extends object>(props: SelectableRowProps<T>) => ReactElement = ({ row }) => (
+    /* eslint-disable-next-line react/jsx-props-no-spreading */
+    <Checkbox data-testid={`row-checkbox-${row.index}`} {...row.getToggleRowSelectedProps()} />
+);
+
+// eslint-disable-next-line max-len
+const SelectableHeader: <T extends object>(props: HeaderProps<T>) => ReactElement = ({ getToggleAllRowsSelectedProps }) => (
+    /* eslint-disable-next-line react/jsx-props-no-spreading */
+    <Checkbox data-testid="row-checkbox-all" {...getToggleAllRowsSelectedProps()} />
+);
+
 function useSelectableRows<T extends object>(selectableRows?: boolean): (hooks: Hooks<T>) => void {
     return (hooks) => {
         if (selectableRows) {
-            hooks.visibleColumns.push((columnsArray) => [
+            hooks.visibleColumns.push((columnsArray: Array<ColumnInstance<T>>): Column<T>[] => [
                 {
                     id: 'selection',
                     className: utilColumnClassName,
-                    Header: ({ getToggleAllRowsSelectedProps }) => (
-                        /* eslint-disable-next-line react/jsx-props-no-spreading */
-                        <Checkbox data-testid="row-checkbox-all" {...getToggleAllRowsSelectedProps()} />
-                    ),
-                    Cell: ({ row }: { row: Row & UseRowSelectRowProps<T> }) => (
-                        /* eslint-disable-next-line react/jsx-props-no-spreading */
-                        <Checkbox data-testid={`row-checkbox-${row.index}`} {...row.getToggleRowSelectedProps()} />
-                    ),
+                    Header: SelectableHeader,
+                    Cell: SelectableRow,
                 },
                 ...columnsArray,
             ]);

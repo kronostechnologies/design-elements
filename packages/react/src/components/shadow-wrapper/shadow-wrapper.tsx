@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import { createProxy } from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
 import { mainCss } from '../../styles';
@@ -25,7 +25,7 @@ const reactShadow = createProxy(
     ),
 );
 
-export const ShadowWrapper: FunctionComponent<ShadowWrapperProps> = (
+export const ShadowWrapper: FunctionComponent<PropsWithChildren<ShadowWrapperProps>> = (
     { children, tagName = 'div' },
 ) => {
     const WrapperTag = reactShadow[tagName];

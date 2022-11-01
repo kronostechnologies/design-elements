@@ -1,4 +1,4 @@
-import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, ReactNode, Ref } from 'react';
+import { forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -15,7 +15,6 @@ interface ButtonProps {
      * @default primary
      */
     buttonType: ButtonType;
-    children?: ReactNode;
     className?: string;
     disabled?: boolean;
     inverted?: boolean;
@@ -32,9 +31,9 @@ const StyledButton = styled(AbstractButton)<{ theme: Theme } & ButtonProps>`
     ${getButtonTypeStyles}
 `;
 
-export const Button = forwardRef(({
+export const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(({
     autofocus, children, className, label, title, type = 'button', buttonType, disabled, onClick, onKeyDown, ...props
-}: ButtonProps, ref: Ref<HTMLButtonElement>): ReactElement => {
+}: PropsWithChildren<ButtonProps>, ref: Ref<HTMLButtonElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
 
     return (

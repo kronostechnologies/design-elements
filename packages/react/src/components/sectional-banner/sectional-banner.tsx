@@ -1,4 +1,12 @@
-import { ComponentProps, ComponentType, FunctionComponent, ReactNode, useMemo, VoidFunctionComponent } from 'react';
+import {
+    ComponentProps,
+    ComponentType,
+    FunctionComponent,
+    PropsWithChildren,
+    ReactNode,
+    useMemo,
+    VoidFunctionComponent,
+} from 'react';
 import styled, { css, ThemedCssFunction } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
@@ -45,7 +53,7 @@ function abstractContainer(
     bgColor: string,
     color?: keyof Theme['notifications'],
     iconColor: keyof Theme['notifications'] | undefined = color,
-): FunctionComponent<AbstractContainerProps> {
+): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.div<AbstractContainerProps>`
         background-color: ${bgColor};
         border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
@@ -129,7 +137,7 @@ const ActionButton: VoidFunctionComponent<ActionButtonProps> = ({
 
 interface BannerTypeProps {
     ariaLive: Live;
-    container: ComponentType<AbstractContainerProps>;
+    container: ComponentType<PropsWithChildren<AbstractContainerProps>>;
     iconName: IconName;
     role: Role;
     title: 'Info' | 'Success' | 'Warning' | 'Alert';
