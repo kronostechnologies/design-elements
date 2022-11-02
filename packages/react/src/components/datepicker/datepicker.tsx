@@ -69,6 +69,10 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         padding: var(--spacing-3x) var(--spacing-2x);
     }
 
+    .react-datepicker-wrapper {
+        width: auto;
+    }
+
     .react-datepicker__day {
         border: 1px solid transparent;
         box-sizing: border-box;
