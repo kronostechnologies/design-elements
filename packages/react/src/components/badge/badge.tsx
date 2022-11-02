@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import styled, { css, keyframes, SimpleInterpolation, CSSObject } from 'styled-components';
 
 const BadgeRoot = styled.span`
@@ -113,7 +113,7 @@ interface BadgeProps {
     value: number;
 }
 
-export const Badge: FunctionComponent<BadgeProps> = ({
+export const Badge: FunctionComponent<PropsWithChildren<BadgeProps>> = ({
     children,
     className,
     animate = false,

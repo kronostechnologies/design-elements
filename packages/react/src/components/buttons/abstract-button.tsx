@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, EventHandler, forwardRef, MouseEvent, Ref, useCallback } from 'react';
+import { ButtonHTMLAttributes, EventHandler, forwardRef, MouseEvent, PropsWithChildren, Ref, useCallback } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
@@ -44,7 +44,7 @@ const StyledButton = styled.button<AbstractButtonProps>`
     ${defaultButtonStyles}
 `;
 
-export const AbstractButton = forwardRef((
+export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<AbstractButtonProps>>((
     { children, onClick, ...props }: AbstractButtonProps,
     ref: Ref<HTMLButtonElement>,
 ) => {

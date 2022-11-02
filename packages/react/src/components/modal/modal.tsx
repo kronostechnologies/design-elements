@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useCallback, useEffect, useState } from 'react';
+import { FunctionComponent, PropsWithChildren, ReactNode, useCallback, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 import styled, { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -151,7 +151,7 @@ export interface ModalProps {
     onRequestClose(): void;
 }
 
-export const Modal: FunctionComponent<ModalProps> = ({
+export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp = true,

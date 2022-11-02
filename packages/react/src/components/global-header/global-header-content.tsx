@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useState } from 'react';
+import { FunctionComponent, PropsWithChildren, ReactNode, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -32,7 +32,7 @@ interface Props {
     mobileDrawerContent: ReactNode;
 }
 
-export const Content: FunctionComponent<Props> = ({ children, mobileDrawerContent }) => {
+export const Content: FunctionComponent<PropsWithChildren<Props>> = ({ children, mobileDrawerContent }) => {
     const { isMobile } = useDeviceContext();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const theme = useTheme();

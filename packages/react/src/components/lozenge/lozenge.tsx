@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -99,7 +99,7 @@ interface Props {
     icon?: IconName;
 }
 
-export const Lozenge: FunctionComponent<Props> = ({
+export const Lozenge: FunctionComponent<PropsWithChildren<Props>> = ({
     children,
     className,
     icon,

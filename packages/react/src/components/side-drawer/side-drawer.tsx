@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, PropsWithChildren, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
@@ -60,7 +60,7 @@ interface SideDrawerProps {
     width?: string;
 }
 
-export const SideDrawer: FunctionComponent<SideDrawerProps> = ({
+export const SideDrawer: FunctionComponent<PropsWithChildren<SideDrawerProps>> = ({
     children,
     className,
     drawerOrigin = 'right',

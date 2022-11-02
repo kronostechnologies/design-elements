@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { FunctionComponent, useRef } from 'react';
+import { FunctionComponent, PropsWithChildren, useRef } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -61,7 +61,7 @@ interface BentoMenuButtonProps {
     title?: string,
 }
 
-export const BentoMenuButton: FunctionComponent<BentoMenuButtonProps> = ({
+export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButtonProps>> = ({
     ariaLabel,
     buttonAriaLabel,
     externalLinks,

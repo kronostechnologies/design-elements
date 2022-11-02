@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -53,7 +53,7 @@ export interface FieldContainerProps {
     validationErrorMessage: string;
 }
 
-export const FieldContainer : FunctionComponent<FieldContainerProps> = ({
+export const FieldContainer : FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
     children,
     className,
     fieldId,

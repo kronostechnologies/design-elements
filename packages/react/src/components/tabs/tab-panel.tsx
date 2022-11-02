@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import styled from 'styled-components';
 import { focus, focusVisibleReset } from '../../utils/css-state';
 
@@ -19,7 +19,7 @@ const StyledDiv = styled.div<{ $contained?: boolean }>`
     ${focusVisibleReset}
 `;
 
-export const TabPanel: FunctionComponent<TabPanelProps> = ({
+export const TabPanel: FunctionComponent<PropsWithChildren<TabPanelProps>> = ({
     buttonId,
     children,
     contained,

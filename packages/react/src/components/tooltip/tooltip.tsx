@@ -2,6 +2,7 @@ import {
     FunctionComponent,
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,
+    PropsWithChildren,
     useCallback,
     useEffect,
     useMemo,
@@ -174,7 +175,7 @@ const modifiers: PopperOptions['modifiers'] = [
 ];
 const titleDelay = 250;
 
-export const Tooltip: FunctionComponent<TooltipProps> = ({
+export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     children,
     className,
     defaultOpen,

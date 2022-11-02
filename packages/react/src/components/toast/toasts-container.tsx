@@ -1,4 +1,4 @@
-import { FunctionComponent, VoidFunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren, VoidFunctionComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { useShadowRoot } from 'react-shadow';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
@@ -70,7 +70,7 @@ interface PortalProps {
     shadowRoot: ShadowRoot | null;
 }
 
-const Portal: FunctionComponent<PortalProps> = ({ children, shadowRoot }) => {
+const Portal: FunctionComponent<PropsWithChildren<PortalProps>> = ({ children, shadowRoot }) => {
     const rootDocument = getRootElement(shadowRoot);
     return ReactDOM.createPortal(children, rootDocument);
 };

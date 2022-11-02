@@ -5,6 +5,7 @@ import {
     FunctionComponent,
     KeyboardEvent,
     MouseEvent,
+    PropsWithChildren,
     ReactElement,
     Ref,
     useCallback,
@@ -482,7 +483,7 @@ export const Datepicker = forwardRef(({
     }, [currentLocale, placeholder, dateFormat]);
 
     // eslint-disable-next-line react/function-component-definition,react/no-unstable-nested-components
-    const CalendarContainer: FunctionComponent = useMemo(() => ({ children }) => (
+    const CalendarContainer: FunctionComponent<PropsWithChildren<{}>> = useMemo(() => ({ children }) => (
         <div
             aria-label={selectedDate?.toLocaleDateString(locale) || t('calendarContainerLabel')}
             aria-live="polite"

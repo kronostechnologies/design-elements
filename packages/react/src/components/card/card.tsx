@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
@@ -17,7 +17,7 @@ interface Props {
     noPadding?: boolean;
 }
 
-export const Card: FunctionComponent<Props> = ({
+export const Card: FunctionComponent<PropsWithChildren<Props>> = ({
     children,
     className,
     noPadding,

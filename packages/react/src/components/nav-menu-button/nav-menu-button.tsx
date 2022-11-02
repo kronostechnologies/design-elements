@@ -1,7 +1,7 @@
 import {
     FunctionComponent,
     KeyboardEvent,
-    MouseEvent as ReactMouseEvent,
+    MouseEvent as ReactMouseEvent, PropsWithChildren,
     ReactNode,
     useCallback,
     useEffect,
@@ -85,7 +85,7 @@ interface MenuButtonProps {
     onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
-export const NavMenuButton: FunctionComponent<MenuButtonProps> = ({
+export const NavMenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
     tag,
     ariaLabel,
     autofocus,

@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useMemo } from 'react';
+import { FunctionComponent, PropsWithChildren, useCallback, useMemo } from 'react';
 import { v4 as uuid } from '../../utils/uuid';
 import { ToastContext } from './toast-context';
 import { ToastType } from './toast-type';
@@ -7,7 +7,7 @@ import { useToastsReducer } from './toasts-reducer';
 
 const dismissTimeInSeconds = 10;
 
-export const ToastProvider: FunctionComponent = ({ children }) => {
+export const ToastProvider: FunctionComponent<PropsWithChildren<{}>> = ({ children }) => {
     const [toasts, dispatch] = useToastsReducer();
 
     const removeToast = useCallback((id: string): void => {

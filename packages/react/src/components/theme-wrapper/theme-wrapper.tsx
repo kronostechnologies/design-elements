@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { equisoftTheme, Theme } from '../../themes';
@@ -16,7 +16,11 @@ export interface ThemeWrapperProps {
 /**
  * @deprecated Use {@link DesignSystem} instead
  */
-export const ThemeWrapper: FunctionComponent<ThemeWrapperProps> = ({ children, isolateStyles = false, theme }) => {
+export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps>> = ({
+    children,
+    isolateStyles = false,
+    theme,
+}) => {
     let selectedTheme = theme;
     if (selectedTheme) {
         if (Object.entries(selectedTheme).length === 0 && selectedTheme.constructor === Object) {
