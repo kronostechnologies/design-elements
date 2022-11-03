@@ -61,6 +61,10 @@ input + .c1 {
   padding: var(--spacing-3x) var(--spacing-2x);
 }
 
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
@@ -349,6 +353,10 @@ input + .c1 {
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
 }
 
 .c4 .react-datepicker__day {
@@ -641,6 +649,10 @@ input + .c1 {
   padding: var(--spacing-3x) var(--spacing-2x);
 }
 
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
@@ -929,6 +941,10 @@ input + .c1 {
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
 }
 
 .c4 .react-datepicker__day {
@@ -1251,6 +1267,10 @@ input + .c1 {
   padding: var(--spacing-3x) var(--spacing-2x);
 }
 
+.c7 .react-datepicker-wrapper {
+  width: auto;
+}
+
 .c7 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
@@ -1561,6 +1581,10 @@ input + .c1 {
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
 }
 
 .c4 .react-datepicker__day {
@@ -2008,6 +2032,10 @@ input + .c1 {
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
 }
 
 .c4 .react-datepicker__day {
@@ -3182,6 +3210,10 @@ input + .c1 {
   padding: var(--spacing-3x) var(--spacing-2x);
 }
 
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
@@ -4285,6 +4317,10 @@ input + .c1 {
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
 }
 
 .c4 .react-datepicker__day {
