@@ -7,7 +7,7 @@ interface UseTranslationState {
     t: TFunction;
 }
 
-function getLang(i18n: i18nType): string | readonly string[] {
+function getFallbackLang(i18n: i18nType): string | readonly string[] {
     const fallbackLng = i18n.options?.fallbackLng;
     return typeof fallbackLng === 'string' || Array.isArray(fallbackLng) ? fallbackLng : 'en';
 }
@@ -16,7 +16,7 @@ export function useTranslation(namespace?: string): UseTranslationResponse {
     const { i18n } = useIntlContext();
     const createState: () => UseTranslationState = useCallback(() => ({
         t: i18n.getFixedT<string>(
-            getLang(i18n),
+            i18n.language || getFallbackLang(i18n),
             namespace || undefined,
         ),
     }), [i18n, namespace]);
