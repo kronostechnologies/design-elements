@@ -19,7 +19,7 @@ const IntlContext = createContext<IntlContextProps>({ i18n: createI18n() });
  * @deprecated Use {@link DesignSystem} instead
  */
 export const IntlProvider: FunctionComponent<PropsWithChildren<IntlProviderProps>> = ({ children, language }) => {
-    const [i18n] = useState(createI18n);
+    const [i18n] = useState(() => createI18n(language));
 
     useEffect(() => {
         if (language) {

@@ -28,4 +28,12 @@ describe('Internationalization Provider', () => {
 
         expect(wrapper.find('button').props().value).toBe('fr');
     });
+
+    test('language should switch', async () => {
+        const wrapper = mountComponentWithIntlProvider('fr');
+
+        wrapper.setProps({ language: 'en' }).update();
+
+        expect(wrapper.find('button').props().value).toBe('en');
+    });
 });
