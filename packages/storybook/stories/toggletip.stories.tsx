@@ -1,22 +1,14 @@
 import {
-    GlobalHeader,
-    IconButton,
-    NavMenuButton,
-    NavMenuOption,
     Select,
     Toggletip,
     ToggletipPlacement,
+    ExternalLink,
 } from '@equisoft/design-elements-react';
 import { Story } from '@storybook/react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { DesktopDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
-import { RouterDecorator } from './utils/router-decorator';
-
-const Container = styled.div`
-    height: 100px;
-`;
 
 export default {
     title: 'Disclosure/Toggletip',
@@ -24,19 +16,15 @@ export default {
 };
 
 export const Normal: Story = () => (
-    <Toggletip label="Tooltip Content" />
+    <Toggletip>Toggletip Content</Toggletip>
 );
 
 export const DefaultOpen: Story = () => (
-    <Toggletip defaultOpen label="Tooltip Content" />
+    <Toggletip defaultOpen>Toggletip Content</Toggletip>
 );
 
-export const WithChildElement: Story = () => (
-    <Container>
-        <Toggletip label="Go to settings page" desktopPlacement="bottom">
-            <IconButton buttonType="primary" label="settings" iconName="settings" />
-        </Toggletip>
-    </Container>
+export const Disabled: Story = () => (
+    <Toggletip disabled>Toggletip Content</Toggletip>
 );
 
 const StyledDiv = styled.div`
@@ -66,40 +54,16 @@ export const DesktopPlacement: Story = () => {
                 options={placements}
                 onChange={(option) => setPlacement(option.value as ToggletipPlacement)}
             />
-            <Toggletip desktopPlacement={placement} label="Tooltip Content" />
+            <Toggletip desktopPlacement={placement}>Toggletip Content</Toggletip>
         </StyledDiv>
     );
 };
 DesktopPlacement.decorators = [DesktopDecorator];
 DesktopPlacement.parameters = rawCodeParameters;
 
-const options: NavMenuOption[] = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        href: '/testa',
-        isHtmlLink: true,
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        href: '/testb',
-        isHtmlLink: true,
-    },
-];
-
-export const WithNavMenuButton: Story = () => {
-    const [isMenuOpen, setMenuOpen] = useState(false);
-
-    return (
-        <Container>
-            <GlobalHeader>
-                <Toggletip label="Label" desktopPlacement="bottom" disabled={isMenuOpen}>
-                    <NavMenuButton iconOnly iconName="info" options={options} onMenuVisibilityChanged={setMenuOpen} />
-                </Toggletip>
-            </GlobalHeader>
-        </Container>
-    );
-};
-
-WithNavMenuButton.decorators = [RouterDecorator];
+export const LinkInContent: Story = () => (
+    <Toggletip>
+        Link
+        <ExternalLink label="https://google.ca/" href="https://google.ca/" />
+    </Toggletip>
+);

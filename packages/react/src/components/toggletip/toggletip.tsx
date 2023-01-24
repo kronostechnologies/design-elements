@@ -1,22 +1,16 @@
 import {
     FunctionComponent,
-    KeyboardEvent as ReactKeyboardEvent,
-    MouseEvent,
-    PropsWithChildren,
-    useCallback,
-    useEffect,
-    useMemo,
-    useState,
+    ReactNode,
+    useMemo, useState,
 } from 'react';
-import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
+import { PopperOptions, usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
-import { useTheme } from '../../hooks/use-theme';
-import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { IconButton } from '../buttons/icon-button';
+import { IconName } from '../icon/icon';
 
-const TooltipArrow = styled.div`
+const ToggletipArrow = styled.div`
     height: 1rem;
     position: absolute;
     width: 1rem;
@@ -41,26 +35,26 @@ const TooltipArrow = styled.div`
     }
 `;
 
-const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
+const ToggletipContainer = styled.div<{ isMobile?: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
     color: ${({ theme }) => theme.greys.black};
-    display: ${({ visible }) => (visible ? 'flex' : 'none')};
+    display: flex;
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
     margin: 0;
     max-width: 327px;
-    min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
-    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
+    min-height: ${({ isMobile }) => (isMobile ? '4.5rem' : '2rem')};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x) var(--spacing-1halfx)')};
     transition: opacity 300ms;
     z-index: 1000;
 
-    &[data-popper-placement*="bottom"] > ${TooltipArrow} {
+    &[data-popper-placement*="bottom"] > ${ToggletipArrow} {
         height: 1rem;
         left: 0;
         margin-top: -0.4rem;
@@ -68,19 +62,19 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
         width: 1rem;
     }
 
-    &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
+    &[data-popper-placement*="bottom"] > ${ToggletipArrow}::before {
         border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
         border-width: 0 0.5rem 0.4rem;
         position: absolute;
         top: -1px;
     }
 
-    &[data-popper-placement*="bottom"] > ${TooltipArrow}::after {
+    &[data-popper-placement*="bottom"] > ${ToggletipArrow}::after {
         border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
         border-width: 0 0.5rem 0.4rem;
     }
 
-    &[data-popper-placement*="top"] > ${TooltipArrow} {
+    &[data-popper-placement*="top"] > ${ToggletipArrow} {
         bottom: 0;
         height: 1rem;
         left: 0;
@@ -88,50 +82,50 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
         width: 1rem;
     }
 
-    &[data-popper-placement*="top"] > ${TooltipArrow}::before {
+    &[data-popper-placement*="top"] > ${ToggletipArrow}::before {
         border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0;
         position: absolute;
         top: 1px;
     }
 
-    &[data-popper-placement*="top"] > ${TooltipArrow}::after {
+    &[data-popper-placement*="top"] > ${ToggletipArrow}::after {
         border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
         border-width: 0.4rem 0.5rem 0;
     }
 
-    &[data-popper-placement*="right"] > ${TooltipArrow} {
+    &[data-popper-placement*="right"] > ${ToggletipArrow} {
         height: 1rem;
         left: 0;
         margin-left: -0.7rem;
         width: 1rem;
     }
 
-    &[data-popper-placement*="right"] > ${TooltipArrow}::before {
+    &[data-popper-placement*="right"] > ${ToggletipArrow}::before {
         border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
-    &[data-popper-placement*="right"] > ${TooltipArrow}::after {
+    &[data-popper-placement*="right"] > ${ToggletipArrow}::after {
         border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
         left: 6px;
         top: 0;
     }
 
-    &[data-popper-placement*="left"] > ${TooltipArrow} {
+    &[data-popper-placement*="left"] > ${ToggletipArrow} {
         height: 1rem;
         margin-right: -0.7rem;
         right: 0;
         width: 1rem;
     }
 
-    &[data-popper-placement*="left"] > ${TooltipArrow}::before {
+    &[data-popper-placement*="left"] > ${ToggletipArrow}::before {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
         border-width: 0.5rem 0 0.5rem 0.4em;
     }
 
-    &[data-popper-placement*="left"] > ${TooltipArrow}::after {
+    &[data-popper-placement*="left"] > ${ToggletipArrow}::after {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
         border-width: 0.5rem 0 0.5rem 0.4em;
         left: 3px;
@@ -139,17 +133,12 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 `;
 
-const StyledSpan = styled.span`
-    align-items: center;
-    display: flex;
-    width: fit-content;
-
-    ${focus};
-`;
-
 export type ToggletipPlacement = 'top' | 'right' | 'bottom' | 'left';
 
 export interface ToggletipProps {
+    label?: string,
+    iconName?: IconName,
+    children?: ReactNode | ReactNode[];
     className?: string;
     /** Set toggletip open by default */
     defaultOpen?: boolean;
@@ -159,8 +148,6 @@ export interface ToggletipProps {
      */
     desktopPlacement?: ToggletipPlacement;
     disabled?: boolean;
-    /** Toggletip text content */
-    label: string;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -172,109 +159,63 @@ const modifiers: PopperOptions['modifiers'] = [
     },
 ];
 
-export const Toggletip: FunctionComponent<PropsWithChildren<ToggletipProps>> = ({
+export const Toggletip: FunctionComponent<ToggletipProps> = ({
+    label,
+    iconName = 'info',
     children,
     className,
-    defaultOpen,
+    defaultOpen = false,
     disabled,
-    label,
     desktopPlacement = 'right',
 }) => {
     const { isMobile } = useDeviceContext();
-    const Theme = useTheme();
+    const [isVisible, setVisible] = useState(defaultOpen);
     const toggletipId = useMemo(uuid, []);
-    const toggletipTriggerId = useMemo(() => `toggletip-trigger-${toggletipId}`, [toggletipId]);
-    const [isVisible, setIsVisible] = useState(defaultOpen);
-    const [controlledToggletipOpen, setControlledToggletipOpen] = useState<boolean>();
 
-    const getTooltipTriggerType = useCallback((): TriggerType | null => {
-        if (disabled) {
-            return null;
-        }
-        return 'click';
-    }, [disabled]);
-
-    const popperTooltip = usePopperTooltip({
+    const {
+        visible,
+        setTooltipRef,
+        setTriggerRef,
+        getTooltipProps,
+        getArrowProps,
+    } = usePopperTooltip({
         defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
-        onVisibleChange: setIsVisible,
-        trigger: getTooltipTriggerType(),
-        visible: disabled ? false : controlledToggletipOpen,
+        trigger: 'click',
+        visible: disabled ? false : isVisible,
         closeOnOutsideClick: false,
     }, { modifiers });
 
-    const closeToggletip = useCallback((): void => {
-        setControlledToggletipOpen(false);
-    }, [setControlledToggletipOpen]);
-
-    const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
-        if (event.key === 'Escape' && !isMobile) {
-            if (isVisible) {
-                document.getElementById(toggletipTriggerId)?.click();
-            }
-        }
-
-        if (event.key === ' ' || event.key === 'Enter') {
-            document.getElementById(toggletipTriggerId)?.click();
-        }
-    }, [isMobile, isVisible, toggletipTriggerId]);
-
-    useEffect(() => {
-        if (disabled) {
-            closeToggletip();
-        }
-    }, [closeToggletip, disabled]);
-
-    useEffect(() => {
-        if (isMobile) {
-            setControlledToggletipOpen(undefined);
-        }
-    }, [isMobile]);
-
-    const handleMouseDown = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
-        event.preventDefault();
-    }, []);
-
     return (
         <>
-            <StyledSpan
-                data-testid="tooltip"
+            <IconButton
+                type="button"
+                disabled={disabled}
+                label={label || iconName}
+                iconName={iconName}
+                data-testid="toggletip"
+                buttonType="tertiary"
                 className={className}
                 aria-controls={toggletipId}
-                aria-describedby={toggletipId}
-                aria-expanded={isVisible}
-                id={toggletipTriggerId}
-                tabIndex={(children || disabled) ? -1 : 0}
-                onBlur={(event) => event.preventDefault()}
-                onMouseDown={handleMouseDown}
-                onKeyDown={handleKeyDown}
-                ref={popperTooltip.setTriggerRef}
-            >
-                {children || (
-                    <Icon
-                        name="info"
-                        size={isMobile ? '24' : '16'}
-                        color={Theme.greys['dark-grey']}
-                        focusable={false}
-                    />
-                )}
-            </StyledSpan>
+                aria-expanded={visible}
+                onClick={() => setVisible(!isVisible)}
+                ref={setTriggerRef}
+            />
 
-            <TooltipContainer
-                data-testid="tooltip-content-container"
-                aria-hidden={!isVisible}
-                isMobile={isMobile}
-                id={toggletipId}
-                role="tooltip"
-                ref={popperTooltip.setTooltipRef}
-                visible={popperTooltip.visible}
-                {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
-            >
-                <TooltipArrow
-                    {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
-                />
-                {label}
-            </TooltipContainer>
+            {isVisible && (
+                <ToggletipContainer
+                    data-testid="toggletip-content-container"
+                    isMobile={isMobile}
+                    id={toggletipId}
+                    ref={setTooltipRef}
+                    {...getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+                >
+                    <ToggletipArrow
+                        {...getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+                    />
+                    {children}
+                </ToggletipContainer>
+            )}
         </>
     );
 };
