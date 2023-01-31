@@ -83,8 +83,7 @@ function getLabelBackgroundColor({ disabled, isChecked, theme }: LabelProps): st
     if (disabled) {
         return theme.greys['light-grey'];
     } if (isChecked) {
-        /* TODO fix with next thematization */
-        return '#e0f0f9';
+        return theme.main['primary-1.4'];
     }
     return theme.greys.white;
 }
