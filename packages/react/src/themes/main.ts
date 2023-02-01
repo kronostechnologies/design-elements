@@ -4,6 +4,7 @@ export const main: Theme['main'] = {
     'primary-1.1': '#006296',
     'primary-1.2': '#84C6EA',
     'primary-1.3': '#003A5A',
+    'primary-1.4': '#E0F0F9',
     'primary-2': '#012639',
     'primary-3': '#004E78',
     'secondary-4.1': '#EF483E',

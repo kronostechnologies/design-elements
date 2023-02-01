@@ -3,6 +3,7 @@ export interface Theme {
         'primary-1.1': string;
         'primary-1.2': string;
         'primary-1.3': string;
+        'primary-1.4': string;
         'primary-2': string;
         'primary-3': string;
         'secondary-4.1': string;

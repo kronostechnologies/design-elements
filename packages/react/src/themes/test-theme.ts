@@ -10,6 +10,7 @@ export const testTheme: Theme = {
         'primary-1.3': '#8984E8',
         'primary-2': '#282D40',
         'primary-3': '#8EA1E6',
+        'primary-1.4': '#E0F0F9',
         'secondary-4.1': '#B3974B',
         'secondary-4.2': '#736130',
         'secondary-4.3': '#FFD86B',
