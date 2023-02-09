@@ -22,11 +22,12 @@ interface Props {
     className?: string;
     defaultOpen?: boolean;
     iconName?: IconName;
+    inverted?: boolean;
     options: MenuOption[];
 }
 
 export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
-    autofocus, buttonType, children, className, defaultOpen, iconName, options,
+    autofocus, buttonType, children, className, defaultOpen, iconName, inverted, options,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
@@ -65,6 +66,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     aria-haspopup="menu"
                     aria-expanded={visible}
                     buttonType={buttonType}
+                    inverted={inverted}
                     iconName={iconName}
                     onClick={() => setControlledVisible(!controlledVisible)}
                     ref={setTriggerRef}
@@ -77,6 +79,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     aria-haspopup="menu"
                     aria-expanded={visible}
                     buttonType={buttonType}
+                    inverted={inverted}
                     onClick={() => setControlledVisible(!controlledVisible)}
                     ref={setTriggerRef}
                 >
