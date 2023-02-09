@@ -59,6 +59,7 @@ export * from './components/progress/progress';
 export { SideDrawer } from './components/side-drawer/side-drawer';
 export { GlobalBanner, GlobalBannerType } from './components/global-banner/global-banner';
 export * from './components/tooltip/tooltip';
+export * from './components/toggletip/toggletip';
 export * from './components/table/table';
 export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
