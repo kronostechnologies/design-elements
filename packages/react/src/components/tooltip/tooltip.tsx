@@ -82,9 +82,9 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="top"] > ${TooltipArrow} {
         bottom: 0;
-        height: 1rem;
+        height: 0;
         left: 0;
-        margin-bottom: -1rem;
+        margin-bottom: 0;
         width: 1rem;
     }
 
