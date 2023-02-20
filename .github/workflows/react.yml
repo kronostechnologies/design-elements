@@ -419,6 +419,7 @@ jobs:
           git-config-email: na-qc@equisoft.com
           git-config-name: kronostechnologies-build
           target-folder: ${{ steps.target.outputs.folder }}
+          token: ${{ secrets.GH_REPO_TOKEN }}
 
       - name: Update latest
         uses: JamesIves/github-pages-deploy-action@v4
