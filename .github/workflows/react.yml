@@ -370,6 +370,7 @@ jobs:
   storybook_deploy:
     name: "Storybook: Deploy"
     runs-on: ubuntu-latest
+    environment: github-pages
     needs:
       - setup
       - react_deploy
@@ -429,6 +430,7 @@ jobs:
           git-config-email: na-qc@equisoft.com
           git-config-name: kronostechnologies-build
           target-folder: latest
+          token: ${{ secrets.GH_REPO_TOKEN }}
 
   notify:
     name: Notify
