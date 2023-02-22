@@ -1,7 +1,6 @@
 import {
     FunctionComponent,
     KeyboardEvent as ReactKeyboardEvent,
-    MouseEvent,
     PropsWithChildren,
     useCallback,
     useEffect,
@@ -266,10 +265,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile, openTooltip]);
 
-    const handleMouseDown = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
-        event.preventDefault();
-    }, []);
-
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
             openTooltip();
@@ -292,7 +287,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 tabIndex={(children || disabled) ? -1 : 0}
                 onBlur={handleBLur}
                 onFocus={handleFocus}
-                onMouseDown={handleMouseDown}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onKeyDown={handleKeyDown}
