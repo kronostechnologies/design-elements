@@ -1,4 +1,4 @@
-import { FunctionComponent, KeyboardEvent, PropsWithChildren, useState } from 'react';
+import { FunctionComponent, KeyboardEvent, PropsWithChildren, useState, useEffect } from 'react';
 import { usePopperTooltip } from 'react-popper-tooltip';
 import styled from 'styled-components';
 import { menuDimensions } from '../../tokens/menuDimensions';
@@ -24,10 +24,20 @@ interface Props {
     iconName?: IconName;
     inverted?: boolean;
     options: MenuOption[];
+
+    onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
 export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
-    autofocus, buttonType, children, className, defaultOpen, iconName, inverted, options,
+    autofocus,
+    buttonType,
+    children,
+    className,
+    defaultOpen,
+    iconName,
+    inverted,
+    options,
+    onMenuVisibilityChanged,
 }) => {
     const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
     const {
@@ -43,6 +53,10 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
         visible: controlledVisible,
         onVisibleChange: setControlledVisible,
     });
+
+    useEffect(() => {
+        onMenuVisibilityChanged?.(controlledVisible);
+    }, [controlledVisible, onMenuVisibilityChanged]);
 
     function handleMenuKeyDown({ key }: KeyboardEvent): void {
         switch (key) {
