@@ -97,3 +97,13 @@ export const WithSubmenu: Story = () => (
 export const Scrollable: Story = () => (
     <MenuButton options={scrollableOptions} buttonType="primary">Button</MenuButton>
 );
+
+export const VisibilityChangeEvent: Story = () => (
+    <MenuButton
+        options={options}
+        buttonType="primary"
+        onMenuVisibilityChanged={(visibility) => console.info(visibility)}
+    >
+        Button
+    </MenuButton>
+);
