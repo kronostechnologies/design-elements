@@ -1,15 +1,20 @@
-import { FunctionComponent, KeyboardEvent, PropsWithChildren, useState, useEffect } from 'react';
-import { usePopperTooltip } from 'react-popper-tooltip';
+import { FunctionComponent, KeyboardEvent, PropsWithChildren, useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import { menuDimensions } from '../../tokens/menuDimensions';
 import { Button, ButtonType } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
 import { Menu, MenuOption } from '../menu/menu';
+import { eventIsInside } from '../../utils/events';
+
+const StyledContainer = styled.div`
+    position: relative;
+`;
 
 const StyledMenu = styled(Menu)`
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
+    position: absolute;
 `;
 
 const StyledIcon = styled(Icon)`
@@ -24,7 +29,6 @@ interface Props {
     iconName?: IconName;
     inverted?: boolean;
     options: MenuOption[];
-
     onMenuVisibilityChanged?(isOpen: boolean): void;
 }
 
@@ -39,41 +43,45 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
     options,
     onMenuVisibilityChanged,
 }) => {
-    const [controlledVisible, setControlledVisible] = useState(!!defaultOpen);
-    const {
-        getTooltipProps,
-        setTooltipRef,
-        setTriggerRef,
-        triggerRef,
-        visible,
-    } = usePopperTooltip({
-        offset: [0, 0],
-        placement: 'bottom-start',
-        trigger: 'click',
-        visible: controlledVisible,
-        onVisibleChange: setControlledVisible,
-    });
+    const [visible, setVisible] = useState(!!defaultOpen);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
+        const clickIsOutside = !eventIsInside(event, containerRef.current);
+
+        if (visible && clickIsOutside) {
+            setVisible(false);
+        }
+    }, [containerRef, visible, setVisible]);
 
     useEffect(() => {
-        onMenuVisibilityChanged?.(controlledVisible);
-    }, [controlledVisible, onMenuVisibilityChanged]);
+        onMenuVisibilityChanged?.(visible);
+    }, [visible, onMenuVisibilityChanged]);
+
+    useEffect(() => {
+        document.addEventListener('mouseup', handleClickOutside);
+
+        return () => document.removeEventListener('mouseup', handleClickOutside);
+    }, [handleClickOutside]);
 
     function handleMenuKeyDown({ key }: KeyboardEvent): void {
         switch (key) {
             case 'Escape':
-                setControlledVisible(false);
-                triggerRef?.focus();
+                buttonRef.current?.focus();
+                setVisible(false);
                 break;
             case 'Tab':
-                setControlledVisible(false);
+                setVisible(false);
                 break;
         }
     }
 
     return (
-        <div className={className}>
+        <StyledContainer className={className} ref={containerRef}>
             {iconName ? (
                 <IconButton
+                    ref={buttonRef}
                     autofocus={autofocus}
                     data-testid="menu-button"
                     type="button"
@@ -82,11 +90,11 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     buttonType={buttonType}
                     inverted={inverted}
                     iconName={iconName}
-                    onClick={() => setControlledVisible(!controlledVisible)}
-                    ref={setTriggerRef}
+                    onClick={() => setVisible(!visible)}
                 />
             ) : (
                 <Button
+                    ref={buttonRef}
                     autofocus={autofocus}
                     data-testid="menu-button"
                     type="button"
@@ -94,8 +102,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     aria-expanded={visible}
                     buttonType={buttonType}
                     inverted={inverted}
-                    onClick={() => setControlledVisible(!controlledVisible)}
-                    ref={setTriggerRef}
+                    onClick={() => setVisible(!visible)}
                 >
                     {children}
                     <StyledIcon
@@ -110,13 +117,10 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                 <StyledMenu
                     initialFocusIndex={0}
                     options={options}
-                    ref={setTooltipRef}
                     onKeyDown={handleMenuKeyDown}
-                    onOptionSelect={() => setControlledVisible(false)}
-                    /* eslint-disable-next-line react/jsx-props-no-spreading */
-                    {...getTooltipProps({ className: 'tooltip-container' })}
+                    onOptionSelect={() => setVisible(false)}
                 />
             )}
-        </div>
+        </StyledContainer>
     );
 };

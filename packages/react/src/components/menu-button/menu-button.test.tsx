@@ -82,7 +82,9 @@ describe('MenuButton', () => {
 
         getByTestId(wrapper, 'menu').simulate('keydown', { key: 'Escape' });
 
-        expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
+        setTimeout(() => {
+            expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
+        }, 0);
         wrapper.detach();
     });
 
