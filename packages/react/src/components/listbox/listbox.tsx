@@ -114,8 +114,8 @@ interface BoxProps {
     isDropdown: boolean;
 }
 
-const itemHeightDesktop = 32;
-const itemHeightMobile = 40;
+const itemHeightDesktop = 2;
+const itemHeightMobile = 2.5;
 
 const Box = styled.div<BoxProps>`
     display: flex;
@@ -133,7 +133,7 @@ const List = styled.ul<ListProps>`
     box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgb(0 0 0 / 19%);
     list-style-type: none;
     margin: 0;
-    max-height: ${getListMaxHeight}px;
+    max-height: ${getListMaxHeight}rem;
     min-width: fit-content;
     overflow-y: auto;
     padding: 0;
@@ -177,8 +177,8 @@ const ListItem = styled.li<ListItemProps>`
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
-    line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}px;
+    height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
+    line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
     overflow: hidden;
     padding: 0 ${({ isMobile }) => (isMobile ? 16 : 8)}px 0 ${getListItemSidePadding};
     text-overflow: ellipsis;

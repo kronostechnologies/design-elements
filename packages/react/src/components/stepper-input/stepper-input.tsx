@@ -31,8 +31,8 @@ const StyledInput = styled.input<StyledInputProps>`
     ${responsiveInputsStyle}
 
     border-radius: ${({ device }) => (device.isMobile ? 'var(--border-radius)' : 'var(--border-radius) 0 0 var(--border-radius)')};
-    height: ${({ device }) => (device.isMobile ? 40 : 32)}px;
-    width: ${({ device }) => (device.isMobile ? 164 : 56)}px;
+    height: ${({ device }) => (device.isMobile ? 2.5 : 2)}rem;
+    width: ${({ device }) => (device.isMobile ? 10.25 : 3.5)}rem;
     z-index: 1;
 
     &::-webkit-outer-spin-button,
