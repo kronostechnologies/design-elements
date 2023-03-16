@@ -15,8 +15,9 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     > button {
         background-color: ${({ theme }) => theme.greys.white};
         border: none;
-        display: flex;
+        height: var(--size-2x);
         padding: 0;
+        width: var(--size-2x);
 
         &:focus {
             outline: none;
@@ -40,8 +41,8 @@ const FlexContainer = styled.div`
 `;
 
 const SelectWrapper = styled.div<{ isMobile: boolean }>`
-    height: ${({ isMobile }) => (isMobile ? 40 : 32)}px;
-    width: ${({ isMobile }) => (isMobile ? 88 : 80)}px;
+    height: ${({ isMobile }) => (isMobile ? 2.5 : 2)}rem;
+    width: ${({ isMobile }) => (isMobile ? 5.5 : 5)}rem;
 `;
 
 interface CalendarHeaderProps {

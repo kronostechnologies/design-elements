@@ -76,10 +76,10 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     .react-datepicker__day {
         border: 1px solid transparent;
         box-sizing: border-box;
-        height: 32px;
-        line-height: 30px;
+        height: var(--size-2x);
+        line-height: 1.875rem;
         margin: 0;
-        width: 32px;
+        width: var(--size-2x);
 
         &:hover {
             background-color: ${({ theme }) => theme.greys.grey};
@@ -127,7 +127,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         line-height: 1.25rem;
         margin: 0;
         text-transform: uppercase;
-        width: 32px;
+        width: var(--size-2x);
     }
 
     .react-datepicker__day--outside-month {
@@ -185,13 +185,13 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         .react-datepicker__day-name {
             font-size: 1rem;
             line-height: 1.5rem;
-            width: 40px;
+            width: var(--size-2halfx);
         }
 
         .react-datepicker__day {
             height: 40px;
             line-height: 2.5rem;
-            width: 40px;
+            width: var(--size-2halfx);
         }
     }
 
@@ -225,9 +225,9 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         box-sizing: border-box;
         font-family: inherit;
         font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-        height: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
+        height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
         padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-        width: ${({ isMobile }) => (isMobile ? 113 : 109)}px;
+        width: ${({ isMobile }) => (isMobile ? 7 : 6.8)}rem;
 
         &::placeholder {
             ${({ disabled, theme }) => (disabled ? `color: ${theme.greys['mid-grey']};` : '')}
@@ -257,9 +257,9 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
-    height: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
+    height: ${({ isMobile }) => (isMobile ? 'width: var(--size-2halfx)' : 'width: var(--size-2x)')};
     justify-content: center;
-    width: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
+    width: ${({ isMobile }) => (isMobile ? 'width: var(--size-2halfx)' : 'width: var(--size-2x)')};
 
     &:hover {
         background-color: ${({ disabled, theme }) => (disabled ? 'none' : theme.greys.grey)};
