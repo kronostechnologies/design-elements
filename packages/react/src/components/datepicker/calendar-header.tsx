@@ -15,7 +15,6 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     > button {
         background-color: ${({ theme }) => theme.greys.white};
         border: none;
-        // display: flex;
         height: var(--size-2x);
         padding: 0;
         width: var(--size-2x);
