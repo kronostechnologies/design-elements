@@ -257,9 +257,9 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
-    height: ${({ isMobile }) => (isMobile ? 'width: var(--size-2halfx)' : 'width: var(--size-2x)')};
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: center;
-    width: ${({ isMobile }) => (isMobile ? 'width: var(--size-2halfx)' : 'width: var(--size-2x)')};
+    width: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
 
     &:hover {
         background-color: ${({ disabled, theme }) => (disabled ? 'none' : theme.greys.grey)};
