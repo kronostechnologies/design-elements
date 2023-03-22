@@ -68,10 +68,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -115,7 +115,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -167,13 +167,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -187,9 +187,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1rem;
-  height: 40px;
+  height: var(--size-2halfx);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 113px;
+  width: 7rem;
 }
 
 .c5.datePickerInput:focus {
@@ -232,12 +232,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  height: var(--size-2halfx);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c6:hover {
@@ -362,10 +362,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -407,7 +407,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -459,13 +459,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -479,9 +479,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
-  height: 32px;
+  height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 109px;
+  width: 6.8rem;
 }
 
 .c5.datePickerInput:focus {
@@ -524,12 +524,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c6:hover {
@@ -656,10 +656,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -701,7 +701,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -753,13 +753,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -773,9 +773,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
-  height: 32px;
+  height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 109px;
+  width: 6.8rem;
 }
 
 .c5.datePickerInput:focus {
@@ -818,12 +818,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c6:hover {
@@ -950,10 +950,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -995,7 +995,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -1047,13 +1047,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -1067,9 +1067,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
-  height: 32px;
+  height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 109px;
+  width: 6.8rem;
 }
 
 .c5.datePickerInput::-webkit-input-placeholder {
@@ -1110,12 +1110,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c6:hover {
@@ -1274,10 +1274,10 @@ input + .c1 {
 .c7 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c7 .react-datepicker__day:hover {
@@ -1319,7 +1319,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c7 .react-datepicker__day--outside-month {
@@ -1371,13 +1371,13 @@ input + .c1 {
 .c7 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c7 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c6 {
@@ -1391,9 +1391,9 @@ label + .c6 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
-  height: 32px;
+  height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 109px;
+  width: 6.8rem;
 }
 
 .c8.datePickerInput:focus {
@@ -1436,12 +1436,12 @@ label + .c6 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c9:hover {
@@ -1590,10 +1590,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -1637,7 +1637,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -1689,13 +1689,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -1709,9 +1709,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1rem;
-  height: 40px;
+  height: var(--size-2halfx);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 113px;
+  width: 7rem;
 }
 
 .c5.datePickerInput:focus {
@@ -1754,12 +1754,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  height: var(--size-2halfx);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c6:hover {
@@ -1891,7 +1891,7 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: 2rem;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -1980,11 +1980,9 @@ input + .c1 {
 .c6 > button {
   background-color: #FFFFFF;
   border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  height: var(--size-2x);
   padding: 0;
+  width: var(--size-2x);
 }
 
 .c6 > button:focus {
@@ -2008,8 +2006,8 @@ input + .c1 {
 }
 
 .c9 {
-  height: 32px;
-  width: 80px;
+  height: 2rem;
+  width: 5rem;
 }
 
 .c4 {
@@ -2041,10 +2039,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -2086,7 +2084,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -2138,13 +2136,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -2158,9 +2156,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
-  height: 32px;
+  height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 109px;
+  width: 6.8rem;
 }
 
 .c5.datePickerInput:focus {
@@ -2203,12 +2201,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c15:hover {
@@ -3067,7 +3065,7 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: 2rem;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -3156,11 +3154,9 @@ input + .c1 {
 .c6 > button {
   background-color: #FFFFFF;
   border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  height: var(--size-2x);
   padding: 0;
+  width: var(--size-2x);
 }
 
 .c6 > button:focus {
@@ -3184,8 +3180,8 @@ input + .c1 {
 }
 
 .c9 {
-  height: 32px;
-  width: 80px;
+  height: 2rem;
+  width: 5rem;
 }
 
 .c4 {
@@ -3217,10 +3213,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -3262,7 +3258,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -3314,13 +3310,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -3334,9 +3330,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
-  height: 32px;
+  height: var(--size-2x);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 109px;
+  width: 6.8rem;
 }
 
 .c5.datePickerInput:focus {
@@ -3385,12 +3381,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c18:hover {
@@ -4176,7 +4172,7 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  height: 2.5rem;
   padding-right: var(--spacing-1x);
   width: 100%;
 }
@@ -4265,11 +4261,9 @@ input + .c1 {
 .c6 > button {
   background-color: #FFFFFF;
   border: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  height: var(--size-2x);
   padding: 0;
+  width: var(--size-2x);
 }
 
 .c6 > button:focus {
@@ -4293,8 +4287,8 @@ input + .c1 {
 }
 
 .c9 {
-  height: 40px;
-  width: 88px;
+  height: 2.5rem;
+  width: 5.5rem;
 }
 
 .c4 {
@@ -4326,10 +4320,10 @@ input + .c1 {
 .c4 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
-  height: 32px;
-  line-height: 30px;
+  height: var(--size-2x);
+  line-height: 1.875rem;
   margin: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day:hover {
@@ -4373,7 +4367,7 @@ input + .c1 {
   line-height: 1.25rem;
   margin: 0;
   text-transform: uppercase;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__day--outside-month {
@@ -4425,13 +4419,13 @@ input + .c1 {
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
   height: 40px;
   line-height: 2.5rem;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 label + .c3 {
@@ -4445,9 +4439,9 @@ label + .c3 {
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1rem;
-  height: 40px;
+  height: var(--size-2halfx);
   padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
-  width: 113px;
+  width: 7rem;
 }
 
 .c5.datePickerInput:focus {
@@ -4490,12 +4484,12 @@ label + .c3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  height: var(--size-2halfx);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 .c15:hover {

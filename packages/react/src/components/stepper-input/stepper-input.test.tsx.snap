@@ -47,8 +47,8 @@ input + .c1 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 32px;
-  width: 23px;
+  height: var(--size-2x);
+  width: 1.4375rem;
 }
 
 .c6 {
@@ -156,8 +156,8 @@ input + .c1 {
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
-  height: 32px;
-  width: 56px;
+  height: 2rem;
+  width: 3.5rem;
   z-index: 1;
 }
 
@@ -357,8 +357,8 @@ input + .c1 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 32px;
-  width: 23px;
+  height: var(--size-2x);
+  width: 1.4375rem;
 }
 
 .c9 {
@@ -466,8 +466,8 @@ input + .c1 {
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
-  height: 32px;
-  width: 56px;
+  height: 2rem;
+  width: 3.5rem;
   z-index: 1;
 }
 
@@ -676,8 +676,8 @@ input + .c1 {
   padding: var(--spacing-1x);
   width: 100%;
   border-radius: var(--border-radius);
-  height: 40px;
-  width: 164px;
+  height: 2.5rem;
+  width: 10.25rem;
   z-index: 1;
 }
 
@@ -810,8 +810,8 @@ input + .c1 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 32px;
-  width: 23px;
+  height: var(--size-2x);
+  width: 1.4375rem;
 }
 
 .c6 {
@@ -919,8 +919,8 @@ input + .c1 {
   padding: var(--spacing-half) var(--spacing-1x);
   width: 100%;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
-  height: 32px;
-  width: 56px;
+  height: 2rem;
+  width: 3.5rem;
   z-index: 1;
 }
 
