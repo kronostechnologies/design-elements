@@ -221,6 +221,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePickerInput {
         background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
         border: 1px solid ${getInputBorderColor};
+        border-right: 0;
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         box-sizing: border-box;
         font-family: inherit;
@@ -251,7 +252,6 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     align-items: center;
     background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
     border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
-    border-left: none;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     box-sizing: border-box;
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
