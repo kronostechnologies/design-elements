@@ -184,6 +184,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1rem;
@@ -223,7 +224,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -476,6 +476,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
@@ -515,7 +516,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -770,6 +770,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
@@ -809,7 +810,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -1064,6 +1064,7 @@ label + .c3 {
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
@@ -1101,7 +1102,6 @@ label + .c3 {
   align-items: center;
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #B7BBC2;
@@ -1388,6 +1388,7 @@ label + .c6 {
   background-color: #FFFFFF;
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
@@ -1427,7 +1428,6 @@ label + .c6 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -1706,6 +1706,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1rem;
@@ -1745,7 +1746,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -2153,6 +2153,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
@@ -2192,7 +2193,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -3327,6 +3327,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.875rem;
@@ -3372,7 +3373,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
@@ -4436,6 +4436,7 @@ label + .c3 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 1rem;
@@ -4475,7 +4476,6 @@ label + .c3 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
