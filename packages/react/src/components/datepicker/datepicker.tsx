@@ -221,8 +221,8 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePickerInput {
         background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
         border: 1px solid ${getInputBorderColor};
-        border-right: 0;
         border-radius: var(--border-radius) 0 0 var(--border-radius);
+        border-right: 0;
         box-sizing: border-box;
         font-family: inherit;
         font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
