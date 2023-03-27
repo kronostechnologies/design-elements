@@ -17,7 +17,7 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
     letter-spacing: ${isMobile ? '0.02875rem' : '0.015rem'};
     line-height: 1.5rem;
     margin: 0;
-    min-height: 32px;
+    min-height: var(--size-2x);
     outline: none;
     padding: 0 var(--spacing-1x);
     width: 100%;

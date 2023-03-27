@@ -7,8 +7,8 @@ import { Icon } from '../icon/icon';
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: 32px;
-    width: 23px;
+    height: var(--size-2x);
+    width: 1.4375rem;
 `;
 
 const buttonStyles = css`

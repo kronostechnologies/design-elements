@@ -16,7 +16,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
-  max-height: 96px;
+  max-height: 6rem;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -45,8 +45,8 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
@@ -71,8 +71,8 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 0;
   text-overflow: ellipsis;
@@ -97,8 +97,8 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
@@ -208,7 +208,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
-  max-height: 128px;
+  max-height: 8rem;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -237,8 +237,8 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 0;
   text-overflow: ellipsis;
@@ -263,8 +263,8 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
@@ -289,8 +289,8 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
@@ -408,7 +408,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   list-style-type: none;
   margin: 0;
-  max-height: 96px;
+  max-height: 6rem;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -437,8 +437,8 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;
@@ -463,8 +463,8 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 0;
   text-overflow: ellipsis;
@@ -489,8 +489,8 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 32px;
-  line-height: 32px;
+  height: 2rem;
+  line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
   text-overflow: ellipsis;

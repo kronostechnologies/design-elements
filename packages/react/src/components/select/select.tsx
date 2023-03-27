@@ -68,7 +68,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     box-shadow: ${({ containerOutline, theme }) => (containerOutline ? theme.tokens['focus-box-shadow'] : 'none')};
     box-sizing: border-box;
     display: flex;
-    height: ${({ isMobile }) => (isMobile ? '40px' : '32px')};
+    height: ${({ isMobile }) => (isMobile ? '2.5rem' : '2rem')};
     padding-right: var(--spacing-1x);
     width: 100%;
 
