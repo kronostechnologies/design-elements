@@ -65,12 +65,12 @@ const Step = styled.li`
         content: counter(step);
         counter-increment: step;
         display: flex;
-        height: 32px;
+        height: var(--size-2x);
         justify-content: center;
         line-height: 2rem;
         margin: 0 auto 0.625rem;
         text-align: center;
-        width: 32px;
+        width: var(--size-2x);
     }
 
     > span {
