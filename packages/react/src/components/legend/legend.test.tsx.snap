@@ -7,13 +7,17 @@ exports[`Legend Matches the snapshot 1`] = `
 }
 
 .c1 {
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
   margin: 0 0 var(--spacing-1x);
-  padding: 0 var(--spacing-2x);
+  padding: 0;
 }
 
 .c1 p {
@@ -26,19 +30,23 @@ exports[`Legend Matches the snapshot 1`] = `
   background-color: #84C6EA;
   border-radius: 50%;
   content: "";
-  height: 8px;
-  margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
-  width: 8px;
+  height: var(--size-half);
+  width: var(--size-half);
+  margin: 0 var(--spacing-1x) 0 0;
 }
 
 .c3 {
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
   margin: 0 0 var(--spacing-1x);
-  padding: 0 var(--spacing-2x);
+  padding: 0;
 }
 
 .c3 p {
@@ -51,19 +59,23 @@ exports[`Legend Matches the snapshot 1`] = `
   background-color: #000014;
   border-radius: 50%;
   content: "";
-  height: 8px;
-  margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
-  width: 8px;
+  height: var(--size-half);
+  width: var(--size-half);
+  margin: 0 var(--spacing-1x) 0 0;
 }
 
 .c4 {
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
   margin: 0 0 var(--spacing-1x);
-  padding: 0 var(--spacing-2x);
+  padding: 0;
 }
 
 .c4 p {
@@ -76,9 +88,9 @@ exports[`Legend Matches the snapshot 1`] = `
   background-color: #304E63;
   border-radius: 50%;
   content: "";
-  height: 8px;
-  margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
-  width: 8px;
+  height: var(--size-half);
+  width: var(--size-half);
+  margin: 0 var(--spacing-1x) 0 0;
 }
 
 .c2 {

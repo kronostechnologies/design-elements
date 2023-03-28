@@ -78,12 +78,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.625rem;
-  height: 24px;
+  height: var(--size-1halfx);
   -webkit-letter-spacing: 0.011rem;
   -moz-letter-spacing: 0.011rem;
   -ms-letter-spacing: 0.011rem;
   letter-spacing: 0.011rem;
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
@@ -558,12 +558,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.625rem;
-  height: 24px;
+  height: var(--size-1halfx);
   -webkit-letter-spacing: 0.011rem;
   -moz-letter-spacing: 0.011rem;
   -ms-letter-spacing: 0.011rem;
   letter-spacing: 0.011rem;
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
@@ -1074,12 +1074,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.75rem;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-letter-spacing: 0.013rem;
   -moz-letter-spacing: 0.013rem;
   -ms-letter-spacing: 0.013rem;
   letter-spacing: 0.013rem;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c6 {
@@ -1510,12 +1510,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.625rem;
-  height: 24px;
+  height: var(--size-1halfx);
   -webkit-letter-spacing: 0.011rem;
   -moz-letter-spacing: 0.011rem;
   -ms-letter-spacing: 0.011rem;
   letter-spacing: 0.011rem;
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
