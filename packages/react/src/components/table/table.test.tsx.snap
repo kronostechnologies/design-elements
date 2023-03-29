@@ -916,11 +916,11 @@ exports[`Table has selectable rows styles 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c4:hover {
@@ -959,11 +959,16 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: 16px;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;

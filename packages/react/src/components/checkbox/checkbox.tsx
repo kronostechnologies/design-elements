@@ -13,7 +13,7 @@ import { focus } from '../../utils/css-state';
 import { Icon } from '../icon/icon';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
-const checkboxWidth = '16px';
+const checkboxWidth = 'var(--size-1x)';
 
 const iconStyles = css`
     color: ${({ theme }) => theme.greys.white};
@@ -39,10 +39,10 @@ const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: inline-block;
-    height: 16px;
+    height: var(--size-1x);
     left: 0;
-    position: absolute;
-    top: 4px;
+    margin-right: var(--spacing-1x);
+    position: relative;
     width: ${checkboxWidth};
 
     &:hover {
@@ -83,11 +83,10 @@ interface StyledLabelProps {
 }
 
 const StyledLabel = styled.label<StyledLabelProps>`
+    align-items: center;
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-    display: block;
+    display: flex;
     line-height: 1.5rem;
-    min-height: 24px;
-    padding-left: ${({ hasLabel }) => (hasLabel ? 'var(--spacing-3x)' : checkboxWidth)};
     position: relative;
     user-select: none;
 
@@ -142,7 +141,6 @@ export const Checkbox: FunctionComponent<PropsWithChildren<Props>> = forwardRef(
             disabled={disabled}
             key={`${name}-${value}`}
         >
-            {label}
             <StyledInput
                 id={id}
                 ref={checkboxRef}
@@ -159,6 +157,7 @@ export const Checkbox: FunctionComponent<PropsWithChildren<Props>> = forwardRef(
                 <CheckMarkIcon />
                 <IndeterminateIcon />
             </CustomCheckbox>
+            {label}
         </StyledLabel>
     );
 });

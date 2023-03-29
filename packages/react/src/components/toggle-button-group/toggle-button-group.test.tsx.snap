@@ -33,7 +33,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -moz-letter-spacing: 0.02875rem;
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-2x);
 }
 
@@ -83,7 +83,7 @@ exports[`ToggleButtonGroup Matches snapshot (desktop) 1`] = `
   -moz-letter-spacing: 0.02875rem;
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   padding: 0 var(--spacing-2x);
 }
 
@@ -191,7 +191,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -moz-letter-spacing: 0.02875rem;
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   padding: 0 var(--spacing-2x);
 }
 
@@ -241,7 +241,7 @@ exports[`ToggleButtonGroup Matches snapshot (mobile) 1`] = `
   -moz-letter-spacing: 0.02875rem;
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   padding: 0 var(--spacing-2x);
 }
 

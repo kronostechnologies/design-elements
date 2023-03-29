@@ -57,6 +57,8 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {
@@ -92,6 +94,11 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -380,6 +387,8 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {
@@ -415,6 +424,11 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -703,6 +717,8 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c3 {
@@ -738,6 +754,11 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c4 {
@@ -1026,6 +1047,8 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c3 {
@@ -1061,6 +1084,11 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c4 {

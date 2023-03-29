@@ -166,14 +166,14 @@ input + .c1 {
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
-  line-height: 1.5rem;
-  width: var(--size-2halfx);
+  line-height: 2rem;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
-  line-height: 2.5rem;
-  width: var(--size-2halfx);
+  height: var(--size-2x);
+  line-height: 2rem;
+  width: var(--size-2x);
 }
 
 label + .c3 {
@@ -250,6 +250,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -468,7 +473,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
+  height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
@@ -547,6 +552,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -767,7 +777,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
+  height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
@@ -846,6 +856,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -1066,7 +1081,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
+  height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
@@ -1143,6 +1158,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -1395,7 +1415,7 @@ input + .c1 {
 }
 
 .c7 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
+  height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
@@ -1474,6 +1494,11 @@ label + .c6 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c9 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -1713,14 +1738,14 @@ input + .c1 {
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
-  line-height: 1.5rem;
-  width: var(--size-2halfx);
+  line-height: 2rem;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
-  line-height: 2.5rem;
-  width: var(--size-2halfx);
+  height: var(--size-2x);
+  line-height: 2rem;
+  width: var(--size-2x);
 }
 
 label + .c3 {
@@ -1797,6 +1822,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -1991,6 +2021,11 @@ input + .c1 {
   display: flex;
 }
 
+.c14 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2170,7 +2205,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
+  height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
@@ -2249,6 +2284,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c15 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -3002,6 +3042,8 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 
 .c16 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c17 {
@@ -3173,6 +3215,11 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.c14 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c6 {
@@ -3354,7 +3401,7 @@ input + .c1 {
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
+  height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
@@ -3439,6 +3486,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c18 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div
@@ -4292,6 +4344,11 @@ input + .c1 {
   display: flex;
 }
 
+.c14 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4468,14 +4525,14 @@ input + .c1 {
 
 .c4 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
-  line-height: 1.5rem;
-  width: var(--size-2halfx);
+  line-height: 2rem;
+  width: var(--size-2x);
 }
 
 .c4 .react-datepicker__portal .react-datepicker__day {
-  height: 40px;
-  line-height: 2.5rem;
-  width: var(--size-2halfx);
+  height: var(--size-2x);
+  line-height: 2rem;
+  width: var(--size-2x);
 }
 
 label + .c3 {
@@ -4552,6 +4609,11 @@ label + .c3 {
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
   z-index: 10;
+}
+
+.c15 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 <div

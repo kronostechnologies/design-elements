@@ -16,10 +16,10 @@ const StyledDiv = styled.div`
 const StyledLabel = styled.label`
     ${(props: { theme: Theme, disabled?: boolean }) => `
             ${props.disabled ? '' : 'cursor: pointer;'};
-            display: block;
+            align-items: center;
+            display: flex;
             font-size: 0.875rem;
             line-height: 1.5rem;
-            padding-left: var(--spacing-3x);
             position: relative;
             user-select: none;
 
@@ -28,13 +28,13 @@ const StyledLabel = styled.label`
             }
 
             input {
-                height: 16px;
+                height: var(--size-1x);
                 left: 0;
                 margin: 0;
                 opacity: 0;
                 position: absolute;
                 top: 2px;
-                width: 16px;
+                width: var(--size-1x);
 
                 &:checked + .radioInput {
                     background-color: ${props.theme.main['primary-1.1']};
@@ -44,12 +44,12 @@ const StyledLabel = styled.label`
                         background-color: ${props.theme.greys.white};
                         border-radius: 50%;
                         content: "";
-                        height: 8px;
+                        height: var(--size-half);
                         left: 50%;
                         position: absolute;
                         top: 50%;
                         transform: translate(-50%, -50%);
-                        width: 8px;
+                        width: var(--size-half);
                     }
                 }
 
@@ -62,12 +62,10 @@ const StyledLabel = styled.label`
                 border-radius: 50%;
                 box-sizing: border-box;
                 display: inline-block;
-                height: 16px;
-                left: 0;
-                margin-top: var(--spacing-half);
-                position: absolute;
-                top: 0;
-                width: 16px;
+                height: var(--size-1x);
+                margin-right: var(--spacing-1x);
+                position: relative;
+                width: var(--size-1x);
             }
 
             &:hover .radioInput {
@@ -116,7 +114,6 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     key={`${groupName}-${button.value}`}
                 >
                     {' '}
-                    {button.label}
                     <input
                         data-testid={`${dataTestId}-${button.value}`}
                         type="radio"
@@ -128,6 +125,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                         onChange={onChange}
                     />
                     <span className="radioInput" />
+                    {button.label}
                 </StyledLabel>
             ))}
         </StyledDiv>

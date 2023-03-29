@@ -126,6 +126,11 @@ const Arrow = styled.button<{ disabled?: boolean }>`
     align-items: center;
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
+
+    > svg {
+        height: var(--size-1x);
+        width: var(--size-1x);
+    }
 `;
 
 interface SelectProps {

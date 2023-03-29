@@ -44,6 +44,12 @@ const IncrementButton = styled.button`
     border-bottom: none;
     border-radius: 0 var(--border-radius) 0 0;
     height: calc(50% - 1px);
+
+    > svg {
+        color: inherit;
+        height: var(--size-1x);
+        width: var(--size-1x);
+    }
 `;
 
 const DecrementButton = styled.button`
@@ -51,6 +57,11 @@ const DecrementButton = styled.button`
 
     border-radius: 0 0 var(--border-radius) 0;
     height: calc(50% + 1px);
+
+    > svg {
+        height: var(--size-1x);
+        width: var(--size-1x);
+    }
 `;
 
 interface StepperButtonsProps {
