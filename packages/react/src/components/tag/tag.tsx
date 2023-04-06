@@ -51,18 +51,6 @@ function getIconSize(isMobile: boolean): string {
     return isMobile ? '20' : '12';
 }
 
-function getIconAndButtonWidth({ $deletable, $hasIcon, $isMobile }: ContainerProps): string {
-    const sizes = [];
-    if ($deletable) {
-        sizes.push(`${getIconSize($isMobile)}px`, 'var(--spacing-1x)');
-    }
-    if ($hasIcon) {
-        sizes.push(`${getIconSize($isMobile)}px`);
-    }
-
-    return sizes.length > 0 ? sizes.join('+') : '0px';
-}
-
 interface IconOrButtonProps {
     $isMobile: boolean;
     $tagSize: TagSize;
@@ -80,23 +68,11 @@ function isSmall(tagSize: TagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 
-function getTagHeight(props: IconOrButtonProps): string {
-    let height: string;
-    const isSmallTag = isSmall(props.$tagSize);
-    if (props.$isMobile) {
-        height = isSmallTag ? '24px' : '32px';
-    } else {
-        height = isSmallTag ? '16px' : '24px';
-    }
-
-    return `calc(${height} - ${getPadding(props)} / 2)`;
-}
-
 function getLineHeight({ $isMobile, $tagSize }: ContainerProps): number {
     if (isSmall($tagSize)) {
-        return $isMobile ? 1.375 : 0.875;
+        return $isMobile ? 1.5 : 0.875;
     }
-    return $isMobile ? 1.875 : 1.375;
+    return $isMobile ? 1.875 : 1.5;
 }
 
 function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): string {
@@ -113,10 +89,10 @@ function getBorderRadius({ $clickable, $isMobile, $tagSize }: ContainerProps): s
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IconOrButtonProps>`
     /* TODO change when updating thematization */
     color: #60666e;
-    display: inline-block;
-    height: ${getTagHeight};
-    margin-right: var(--spacing-1x);
-    vertical-align: middle;
+    height: var(--size-1x);
+    margin-right: var(--spacing-half);
+    vertical-align: text-bottom;
+    width: var(--size-1x);
 `;
 
 const DeleteIcon = styled(Icon).attrs({
@@ -142,15 +118,29 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
     `;
 }
 
-const DeleteButton = styled.button<IconOrButtonProps>`
-    border-radius: 50%;
-    cursor: pointer;
+const TagLabel = styled.span`
     display: inline-block;
-    height: ${getTagHeight};
-    margin-bottom: 1px;
-    margin-left: var(--spacing-1x);
-    padding: var(--spacing-half);
-    vertical-align: middle;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    max-width: 312px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+`
+
+const DeleteButton = styled.button<IconOrButtonProps>`
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    height: var(--size-1halfx);
+    justify-content: center;
+    margin-left: var(--spacing-half);
+    width: var(--size-1halfx);
+
+    > svg {
+        height: 1rem;
+        width: 1rem;
+    }
 
     &:hover {
         /* TODO fix with next thematization gray65 */
@@ -164,23 +154,17 @@ const DeleteButton = styled.button<IconOrButtonProps>`
     ${focus};
 `;
 
-const MAXIMUM_LENGTH = '312px';
 const Container = styled.span<ContainerProps>`
     align-items: center;
     background-color: ${({ theme }) => theme.greys['light-grey']};
 
     /* TODO fix with next thematization gray50 */
-    border: 1px solid #878f9a;
     border-radius: ${getBorderRadius};
-    box-sizing: border-box;
-    display: inline-block;
+    box-shadow: inset 0 0 0 1px #878f9a;
+    display: inline-flex;
     font-size: ${getFontSize}rem;
     line-height: ${getLineHeight}rem;
-    max-width: calc(${MAXIMUM_LENGTH} / ${getFontSize} + ${getIconAndButtonWidth});
-    overflow: hidden;
     padding: 0 ${getPadding};
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     & + & {
         margin-left: var(--spacing-1x);
@@ -247,7 +231,9 @@ export const Tag = forwardRef(({
                 />
             )}
 
-            {value.label}
+            <TagLabel>
+                {value.label}
+            </TagLabel>
 
             {onDelete && (
                 <DeleteButton

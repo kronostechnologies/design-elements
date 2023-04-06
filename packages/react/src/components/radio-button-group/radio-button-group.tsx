@@ -33,7 +33,6 @@ const StyledLabel = styled.label`
                 margin: 0;
                 opacity: 0;
                 position: absolute;
-                top: 2px;
                 width: var(--size-1x);
 
                 &:checked + .radioInput {

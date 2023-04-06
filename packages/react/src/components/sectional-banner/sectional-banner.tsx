@@ -68,6 +68,8 @@ function abstractContainer(
         ${BannerIcon} {
             color: ${(props) => (iconColor ? props.theme.notifications[iconColor] : props.theme.main['primary-3'])};
             flex: 0 0 auto;
+            height: 1rem;
+            width: 1rem;
         }
     `;
 }

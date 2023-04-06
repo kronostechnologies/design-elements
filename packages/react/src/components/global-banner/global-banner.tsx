@@ -51,12 +51,6 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
     }
 }
 
-function getContainerPadding({ isMobile }: ContainerProps): string {
-    return isMobile
-        ? 'var(--spacing-3x) var(--spacing-2x) var(--spacing-2x)'
-        : ' 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x)';
-}
-
 const Label = styled.b<{ isMobile: boolean }>`
     display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
     font-weight: var(--font-semi-bold);
@@ -82,7 +76,7 @@ const Container = styled.section<ContainerProps>`
     justify-content: space-between;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.02875 : 0.0125)}rem;
     line-height: 1.5rem;
-    padding: ${getContainerPadding};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-1halfx)' : 'var(--spacing-1x) var(--spacing-2x)')};
     position: relative;
 `;
 
@@ -91,8 +85,15 @@ const Content = styled.div<{ isMobile: boolean }>`
     align-self: ${({ isMobile }) => (isMobile ? 'flex-start' : null)};
     display: flex;
     justify-content: ${({ isMobile }) => (isMobile ? 'unset' : 'center')};
-    margin-top: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
+    padding-left: var(--spacing-4x);
     position: relative;
+
+    > svg {
+        flex-shrink: 0;
+        height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+        margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+        width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    }
 `;
 
 function getIconPosition(props: IsMobileProps): SimpleInterpolation {
@@ -103,17 +104,14 @@ function getIconPosition(props: IsMobileProps): SimpleInterpolation {
     }
 
     return css`
-        left: calc(var(--spacing-3x) * -1);
-        position: absolute;
-        top: var(--spacing-half);
+        align-self: initial;
     `;
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IsMobileProps>`
-    flex-shrink: 0;
-    margin-right: var(--spacing-1x);
 
     ${getIconPosition};
+
 `;
 
 const Text = styled.span`
@@ -190,16 +188,11 @@ const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: 
 const ButtonContainer = styled.div<{ isMobile: boolean }>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
-    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
-    min-width: fit-content;
     width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
 
-    * + * {
-        ${({ isMobile }) => (isMobile ? css`
-            margin-top: var(--spacing-1x);
-        ` : css`
-            margin-left: var(--spacing-1x);
-        `)}
+    > button {
+        margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : '0')};
+        margin-left: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
     }
 `;
 

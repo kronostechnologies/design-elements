@@ -102,10 +102,10 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 }
 
 .c0 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: var(--border-radius);
   box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
@@ -113,10 +113,6 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  min-height: 56px;
   padding: var(--spacing-2x);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -133,10 +129,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   flex: 1;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin: 0;
-  padding-left: var(--spacing-2x);
-  padding-right: var(--spacing-4x);
-  position: relative;
+  margin: 0 var(--spacing-1halfx);
 }
 
 .c3 {
@@ -144,10 +137,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   -ms-flex-item-align: start;
   align-self: flex-start;
   color: #FFFFFF;
-  margin-top: calc(-1 * var(--spacing-half));
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
 }
 
 .c3:focus {
@@ -160,7 +150,12 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 }
 
 .c1 {
-  height: 24px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  height: var(--size-1x);
+  margin-top: 0.25rem;
+  width: var(--size-1x);
 }
 
 <ToastContainer
@@ -184,7 +179,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
         color="#FFFFFF"
         isMobile={false}
         name="alertOctagon"
-        size="20"
+        size="16"
         type="error"
       >
         <Icon
@@ -194,7 +189,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
           focusable={true}
           isMobile={false}
           name="alertOctagon"
-          size="20"
+          size="16"
           type="error"
         >
           <svg
@@ -202,10 +197,10 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
             className="c1"
             color="#FFFFFF"
             focusable={true}
-            height="20"
+            height="16"
             isMobile={false}
             type="error"
-            width="20"
+            width="16"
           />
         </Icon>
       </Styled(Icon)>
@@ -218,78 +213,78 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
           color="#FFFFFF"
         >
           a message
-          <Styled(IconButton)
-            $color="#FFFFFF"
-            $isMobile={false}
-            $type="error"
+        </p>
+      </styled.p>
+      <Styled(IconButton)
+        $color="#FFFFFF"
+        $isMobile={false}
+        $type="error"
+        data-testid="dismiss"
+        label="Dismiss notification"
+        onClick={[Function]}
+      >
+        <IconButton
+          buttonType="tertiary"
+          className="c3"
+          data-testid="dismiss"
+          iconName="x"
+          label="Dismiss notification"
+          onClick={[Function]}
+        >
+          <Styled(AbstractButton)
+            aria-label="Dismiss notification"
+            buttonType="tertiary"
+            className="c3"
             data-testid="dismiss"
-            label="Dismiss notification"
+            isMobile={false}
             onClick={[Function]}
+            type="submit"
           >
-            <IconButton
+            <AbstractButton
+              aria-label="Dismiss notification"
               buttonType="tertiary"
-              className="c3"
+              className="c4 c3"
               data-testid="dismiss"
-              iconName="x"
-              label="Dismiss notification"
+              isMobile={false}
               onClick={[Function]}
+              type="submit"
             >
-              <Styled(AbstractButton)
+              <styled.button
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
-                className="c3"
+                className="c4 c3"
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
                 type="submit"
               >
-                <AbstractButton
+                <button
                   aria-label="Dismiss notification"
-                  buttonType="tertiary"
-                  className="c4 c3"
+                  className="c5 c4 c3"
                   data-testid="dismiss"
-                  isMobile={false}
                   onClick={[Function]}
                   type="submit"
                 >
-                  <styled.button
-                    aria-label="Dismiss notification"
-                    buttonType="tertiary"
-                    className="c4 c3"
-                    data-testid="dismiss"
-                    isMobile={false}
-                    onClick={[Function]}
-                    type="submit"
+                  <Icon
+                    aria-hidden="true"
+                    color="currentColor"
+                    name="x"
+                    size="16"
                   >
-                    <button
-                      aria-label="Dismiss notification"
-                      className="c5 c4 c3"
-                      data-testid="dismiss"
-                      onClick={[Function]}
-                      type="submit"
-                    >
-                      <Icon
-                        aria-hidden="true"
-                        color="currentColor"
-                        name="x"
-                        size="16"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          color="currentColor"
-                          focusable={false}
-                          height="16"
-                          width="16"
-                        />
-                      </Icon>
-                    </button>
-                  </styled.button>
-                </AbstractButton>
-              </Styled(AbstractButton)>
-            </IconButton>
-          </Styled(IconButton)>
-        </p>
-      </styled.p>
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+      </Styled(IconButton)>
     </div>
   </styled.div>
 </ToastContainer>
@@ -397,10 +392,10 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
 }
 
 .c0 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: var(--border-radius);
   box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
@@ -408,10 +403,6 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  min-height: 56px;
   padding: var(--spacing-2x);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -428,10 +419,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   flex: 1;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin: 0;
-  padding-left: var(--spacing-2x);
-  padding-right: var(--spacing-4x);
-  position: relative;
+  margin: 0 var(--spacing-1halfx);
 }
 
 .c3 {
@@ -439,10 +427,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   -ms-flex-item-align: start;
   align-self: flex-start;
   color: #FFFFFF;
-  margin-top: calc(-1 * var(--spacing-half));
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
 }
 
 .c3:focus {
@@ -455,7 +440,12 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
 }
 
 .c1 {
-  height: 24px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  height: var(--size-1x);
+  margin-top: 0.25rem;
+  width: var(--size-1x);
 }
 
 <ToastContainer
@@ -479,7 +469,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
         color="#FFFFFF"
         isMobile={false}
         name="info"
-        size="20"
+        size="16"
         type="information"
       >
         <Icon
@@ -489,7 +479,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
           focusable={true}
           isMobile={false}
           name="info"
-          size="20"
+          size="16"
           type="information"
         >
           <svg
@@ -497,10 +487,10 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
             className="c1"
             color="#FFFFFF"
             focusable={true}
-            height="20"
+            height="16"
             isMobile={false}
             type="information"
-            width="20"
+            width="16"
           />
         </Icon>
       </Styled(Icon)>
@@ -513,78 +503,78 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
           color="#FFFFFF"
         >
           a message
-          <Styled(IconButton)
-            $color="#FFFFFF"
-            $isMobile={false}
-            $type="information"
+        </p>
+      </styled.p>
+      <Styled(IconButton)
+        $color="#FFFFFF"
+        $isMobile={false}
+        $type="information"
+        data-testid="dismiss"
+        label="Dismiss notification"
+        onClick={[Function]}
+      >
+        <IconButton
+          buttonType="tertiary"
+          className="c3"
+          data-testid="dismiss"
+          iconName="x"
+          label="Dismiss notification"
+          onClick={[Function]}
+        >
+          <Styled(AbstractButton)
+            aria-label="Dismiss notification"
+            buttonType="tertiary"
+            className="c3"
             data-testid="dismiss"
-            label="Dismiss notification"
+            isMobile={false}
             onClick={[Function]}
+            type="submit"
           >
-            <IconButton
+            <AbstractButton
+              aria-label="Dismiss notification"
               buttonType="tertiary"
-              className="c3"
+              className="c4 c3"
               data-testid="dismiss"
-              iconName="x"
-              label="Dismiss notification"
+              isMobile={false}
               onClick={[Function]}
+              type="submit"
             >
-              <Styled(AbstractButton)
+              <styled.button
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
-                className="c3"
+                className="c4 c3"
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
                 type="submit"
               >
-                <AbstractButton
+                <button
                   aria-label="Dismiss notification"
-                  buttonType="tertiary"
-                  className="c4 c3"
+                  className="c5 c4 c3"
                   data-testid="dismiss"
-                  isMobile={false}
                   onClick={[Function]}
                   type="submit"
                 >
-                  <styled.button
-                    aria-label="Dismiss notification"
-                    buttonType="tertiary"
-                    className="c4 c3"
-                    data-testid="dismiss"
-                    isMobile={false}
-                    onClick={[Function]}
-                    type="submit"
+                  <Icon
+                    aria-hidden="true"
+                    color="currentColor"
+                    name="x"
+                    size="16"
                   >
-                    <button
-                      aria-label="Dismiss notification"
-                      className="c5 c4 c3"
-                      data-testid="dismiss"
-                      onClick={[Function]}
-                      type="submit"
-                    >
-                      <Icon
-                        aria-hidden="true"
-                        color="currentColor"
-                        name="x"
-                        size="16"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          color="currentColor"
-                          focusable={false}
-                          height="16"
-                          width="16"
-                        />
-                      </Icon>
-                    </button>
-                  </styled.button>
-                </AbstractButton>
-              </Styled(AbstractButton)>
-            </IconButton>
-          </Styled(IconButton)>
-        </p>
-      </styled.p>
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+      </Styled(IconButton)>
     </div>
   </styled.div>
 </ToastContainer>
@@ -692,10 +682,10 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 }
 
 .c0 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: var(--border-radius);
   box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
@@ -703,10 +693,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  min-height: 56px;
   padding: var(--spacing-2x);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -723,10 +709,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   flex: 1;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin: 0;
-  padding-left: var(--spacing-2x);
-  padding-right: var(--spacing-4x);
-  position: relative;
+  margin: 0 var(--spacing-1halfx);
 }
 
 .c3 {
@@ -734,10 +717,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   -ms-flex-item-align: start;
   align-self: flex-start;
   color: #FFFFFF;
-  margin-top: calc(-1 * var(--spacing-half));
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
 }
 
 .c3:focus {
@@ -750,7 +730,12 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 }
 
 .c1 {
-  height: 24px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  height: var(--size-1x);
+  margin-top: 0.25rem;
+  width: var(--size-1x);
 }
 
 <ToastContainer
@@ -774,7 +759,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
         color="#FFFFFF"
         isMobile={false}
         name="check"
-        size="20"
+        size="16"
         type="success"
       >
         <Icon
@@ -784,7 +769,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           focusable={true}
           isMobile={false}
           name="check"
-          size="20"
+          size="16"
           type="success"
         >
           <svg
@@ -792,10 +777,10 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             className="c1"
             color="#FFFFFF"
             focusable={true}
-            height="20"
+            height="16"
             isMobile={false}
             type="success"
-            width="20"
+            width="16"
           />
         </Icon>
       </Styled(Icon)>
@@ -808,78 +793,78 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           color="#FFFFFF"
         >
           a message
-          <Styled(IconButton)
-            $color="#FFFFFF"
-            $isMobile={false}
-            $type="success"
+        </p>
+      </styled.p>
+      <Styled(IconButton)
+        $color="#FFFFFF"
+        $isMobile={false}
+        $type="success"
+        data-testid="dismiss"
+        label="Dismiss notification"
+        onClick={[Function]}
+      >
+        <IconButton
+          buttonType="tertiary"
+          className="c3"
+          data-testid="dismiss"
+          iconName="x"
+          label="Dismiss notification"
+          onClick={[Function]}
+        >
+          <Styled(AbstractButton)
+            aria-label="Dismiss notification"
+            buttonType="tertiary"
+            className="c3"
             data-testid="dismiss"
-            label="Dismiss notification"
+            isMobile={false}
             onClick={[Function]}
+            type="submit"
           >
-            <IconButton
+            <AbstractButton
+              aria-label="Dismiss notification"
               buttonType="tertiary"
-              className="c3"
+              className="c4 c3"
               data-testid="dismiss"
-              iconName="x"
-              label="Dismiss notification"
+              isMobile={false}
               onClick={[Function]}
+              type="submit"
             >
-              <Styled(AbstractButton)
+              <styled.button
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
-                className="c3"
+                className="c4 c3"
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
                 type="submit"
               >
-                <AbstractButton
+                <button
                   aria-label="Dismiss notification"
-                  buttonType="tertiary"
-                  className="c4 c3"
+                  className="c5 c4 c3"
                   data-testid="dismiss"
-                  isMobile={false}
                   onClick={[Function]}
                   type="submit"
                 >
-                  <styled.button
-                    aria-label="Dismiss notification"
-                    buttonType="tertiary"
-                    className="c4 c3"
-                    data-testid="dismiss"
-                    isMobile={false}
-                    onClick={[Function]}
-                    type="submit"
+                  <Icon
+                    aria-hidden="true"
+                    color="currentColor"
+                    name="x"
+                    size="16"
                   >
-                    <button
-                      aria-label="Dismiss notification"
-                      className="c5 c4 c3"
-                      data-testid="dismiss"
-                      onClick={[Function]}
-                      type="submit"
-                    >
-                      <Icon
-                        aria-hidden="true"
-                        color="currentColor"
-                        name="x"
-                        size="16"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          color="currentColor"
-                          focusable={false}
-                          height="16"
-                          width="16"
-                        />
-                      </Icon>
-                    </button>
-                  </styled.button>
-                </AbstractButton>
-              </Styled(AbstractButton)>
-            </IconButton>
-          </Styled(IconButton)>
-        </p>
-      </styled.p>
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+      </Styled(IconButton)>
     </div>
   </styled.div>
 </ToastContainer>
@@ -987,10 +972,10 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c0 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: var(--border-radius);
   box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
   box-sizing: border-box;
@@ -998,10 +983,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  min-height: 56px;
   padding: var(--spacing-2x);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -1018,10 +999,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   flex: 1;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin: 0;
-  padding-left: var(--spacing-2x);
-  padding-right: var(--spacing-4x);
-  position: relative;
+  margin: 0 var(--spacing-1halfx);
 }
 
 .c3 {
@@ -1029,10 +1007,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -ms-flex-item-align: start;
   align-self: flex-start;
   color: #000000;
-  margin-top: calc(-1 * var(--spacing-half));
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin: calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) calc(-1 * var(--spacing-half)) 0;
 }
 
 .c3:focus {
@@ -1045,7 +1020,12 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c1 {
-  height: 24px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  height: var(--size-1x);
+  margin-top: 0.25rem;
+  width: var(--size-1x);
 }
 
 <ToastContainer
@@ -1069,7 +1049,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
         color="#000000"
         isMobile={false}
         name="alertTriangle"
-        size="20"
+        size="16"
         type="warning"
       >
         <Icon
@@ -1079,7 +1059,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           focusable={true}
           isMobile={false}
           name="alertTriangle"
-          size="20"
+          size="16"
           type="warning"
         >
           <svg
@@ -1087,10 +1067,10 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             className="c1"
             color="#000000"
             focusable={true}
-            height="20"
+            height="16"
             isMobile={false}
             type="warning"
-            width="20"
+            width="16"
           />
         </Icon>
       </Styled(Icon)>
@@ -1103,78 +1083,78 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           color="#000000"
         >
           a message
-          <Styled(IconButton)
-            $color="#000000"
-            $isMobile={false}
-            $type="warning"
+        </p>
+      </styled.p>
+      <Styled(IconButton)
+        $color="#000000"
+        $isMobile={false}
+        $type="warning"
+        data-testid="dismiss"
+        label="Dismiss notification"
+        onClick={[Function]}
+      >
+        <IconButton
+          buttonType="tertiary"
+          className="c3"
+          data-testid="dismiss"
+          iconName="x"
+          label="Dismiss notification"
+          onClick={[Function]}
+        >
+          <Styled(AbstractButton)
+            aria-label="Dismiss notification"
+            buttonType="tertiary"
+            className="c3"
             data-testid="dismiss"
-            label="Dismiss notification"
+            isMobile={false}
             onClick={[Function]}
+            type="submit"
           >
-            <IconButton
+            <AbstractButton
+              aria-label="Dismiss notification"
               buttonType="tertiary"
-              className="c3"
+              className="c4 c3"
               data-testid="dismiss"
-              iconName="x"
-              label="Dismiss notification"
+              isMobile={false}
               onClick={[Function]}
+              type="submit"
             >
-              <Styled(AbstractButton)
+              <styled.button
                 aria-label="Dismiss notification"
                 buttonType="tertiary"
-                className="c3"
+                className="c4 c3"
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
                 type="submit"
               >
-                <AbstractButton
+                <button
                   aria-label="Dismiss notification"
-                  buttonType="tertiary"
-                  className="c4 c3"
+                  className="c5 c4 c3"
                   data-testid="dismiss"
-                  isMobile={false}
                   onClick={[Function]}
                   type="submit"
                 >
-                  <styled.button
-                    aria-label="Dismiss notification"
-                    buttonType="tertiary"
-                    className="c4 c3"
-                    data-testid="dismiss"
-                    isMobile={false}
-                    onClick={[Function]}
-                    type="submit"
+                  <Icon
+                    aria-hidden="true"
+                    color="currentColor"
+                    name="x"
+                    size="16"
                   >
-                    <button
-                      aria-label="Dismiss notification"
-                      className="c5 c4 c3"
-                      data-testid="dismiss"
-                      onClick={[Function]}
-                      type="submit"
-                    >
-                      <Icon
-                        aria-hidden="true"
-                        color="currentColor"
-                        name="x"
-                        size="16"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          color="currentColor"
-                          focusable={false}
-                          height="16"
-                          width="16"
-                        />
-                      </Icon>
-                    </button>
-                  </styled.button>
-                </AbstractButton>
-              </Styled(AbstractButton)>
-            </IconButton>
-          </Styled(IconButton)>
-        </p>
-      </styled.p>
+                    <svg
+                      aria-hidden="true"
+                      color="currentColor"
+                      focusable={false}
+                      height="16"
+                      width="16"
+                    />
+                  </Icon>
+                </button>
+              </styled.button>
+            </AbstractButton>
+          </Styled(AbstractButton)>
+        </IconButton>
+      </Styled(IconButton)>
     </div>
   </styled.div>
 </ToastContainer>
