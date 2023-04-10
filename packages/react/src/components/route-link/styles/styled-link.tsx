@@ -13,6 +13,7 @@ export const StyledLink = styled.a<ContainerProps>`
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: inline-flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
+    line-height: 1.5rem;
     text-decoration: underline;
 
     &:hover {

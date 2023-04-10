@@ -13,8 +13,10 @@ const LeftIcon = styled(Icon)`
 const ExternalIcon = styled(Icon)`
     align-self: center;
     flex-shrink: 0;
+    height: 1rem;
     margin-left: var(--spacing-half);
     margin-right: 0;
+    width: 1rem;
 `;
 
 const Link = styled(StyledLink)`

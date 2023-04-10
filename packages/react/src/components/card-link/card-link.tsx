@@ -5,11 +5,13 @@ import { focus } from '../../utils/css-state';
 import { Icon } from '../icon/icon';
 
 const StyledIcon = styled(Icon)`
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: currentColor;
+    height: var(--size-1x);
     position: absolute;
     right: var(--spacing-3x);
     top: 50%;
     transform: translateY(-50%);
+    width: var(--size-1x);
 `;
 
 const StyledLink = styled(Link)`
@@ -33,10 +35,6 @@ const StyledLink = styled(Link)`
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
         box-shadow: inset 0 0 0 1px ${({ theme }) => theme.greys['dark-grey']}, 0 1px 4px 0 rgb(0 0 0 / 20%);
-
-        ${StyledIcon} {
-            color: ${({ theme }) => theme.greys.black};
-        }
     }
 
     ${focus}

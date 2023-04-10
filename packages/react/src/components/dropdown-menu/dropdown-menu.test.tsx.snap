@@ -75,8 +75,10 @@ exports[`DropdownMenu Is hidden 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c7 {
@@ -251,7 +253,7 @@ exports[`DropdownMenu Is hidden 1`] = `
         href="/testA"
         tabindex="0"
       >
-        <span
+        <div
           class="c3"
         >
           <div
@@ -263,7 +265,7 @@ exports[`DropdownMenu Is hidden 1`] = `
               optionA
             </span>
           </div>
-        </span>
+        </div>
       </a>
     </li>
     <li>
@@ -274,7 +276,7 @@ exports[`DropdownMenu Is hidden 1`] = `
         href="/testB"
         tabindex="0"
       >
-        <span
+        <div
           class="c3"
         >
           <div
@@ -286,7 +288,7 @@ exports[`DropdownMenu Is hidden 1`] = `
               optionB
             </span>
           </div>
-        </span>
+        </div>
       </a>
     </li>
     <li>
@@ -297,7 +299,7 @@ exports[`DropdownMenu Is hidden 1`] = `
         href="/testC"
         tabindex="0"
       >
-        <span
+        <div
           class="c3"
         >
           <div
@@ -309,7 +311,7 @@ exports[`DropdownMenu Is hidden 1`] = `
               optionC
             </span>
           </div>
-        </span>
+        </div>
       </a>
     </li>
   </ul>
@@ -483,8 +485,10 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c7 {
@@ -658,7 +662,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         href="/testA"
         tabindex="0"
       >
-        <span
+        <div
           class="c3"
         >
           <div
@@ -670,7 +674,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
               optionA
             </span>
           </div>
-        </span>
+        </div>
       </a>
     </li>
     <li>
@@ -681,7 +685,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         href="/testB"
         tabindex="0"
       >
-        <span
+        <div
           class="c3"
         >
           <div
@@ -693,7 +697,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
               optionB
             </span>
           </div>
-        </span>
+        </div>
       </a>
     </li>
     <li>
@@ -704,7 +708,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         href="/testC"
         tabindex="0"
       >
-        <span
+        <div
           class="c3"
         >
           <div
@@ -716,7 +720,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
               optionC
             </span>
           </div>
-        </span>
+        </div>
       </a>
     </li>
   </ul>

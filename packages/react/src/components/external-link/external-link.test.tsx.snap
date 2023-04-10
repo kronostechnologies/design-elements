@@ -56,8 +56,10 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c1 {
@@ -174,8 +176,10 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c1 {
@@ -300,8 +304,10 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c1 {
@@ -424,8 +430,10 @@ exports[`External Link matches snapshot (without href) 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c1 {
@@ -546,8 +554,10 @@ exports[`External Link matches snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c1 {

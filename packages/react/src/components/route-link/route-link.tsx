@@ -7,7 +7,9 @@ import { StyledLink } from './styles/styled-link';
 
 const Link = styled(StyledLink)`
     svg {
+        height: 1rem;
         margin-right: ${({ $hasLabel }) => ($hasLabel ? 'var(--spacing-1x)' : '0')};
+        width: 1rem;
     }
 
     &:visited {
