@@ -123,8 +123,8 @@ const TagLabel = styled.span`
     font-size: 0.75rem;
     line-height: 1.5rem;
     max-width: 312px;
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 `
 
