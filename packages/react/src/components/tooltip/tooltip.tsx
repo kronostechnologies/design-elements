@@ -63,7 +63,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     &[data-popper-placement*="bottom"] > ${TooltipArrow} {
         height: 1rem;
         left: 0;
-        margin-top: -0.4rem;
+        margin-top: -0.35rem;
         top: 0;
         width: 1rem;
     }
@@ -115,7 +115,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {
         border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
         border-width: 0.5rem 0.4rem 0.5rem 0;
-        left: 6px;
+        left: 0.375rem;
         top: 0;
     }
 
@@ -128,13 +128,13 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::before {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
-        border-width: 0.5rem 0 0.5rem 0.4em;
+        border-width: 0.5rem 0 0.5rem 0.4rem;
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::after {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
-        border-width: 0.5rem 0 0.5rem 0.4em;
-        left: 3px;
+        border-width: 0.5rem 0 0.5rem 0.4rem;
+        left: 0.25rem;
         top: 0;
     }
 `;
