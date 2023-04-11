@@ -7,14 +7,14 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 16px;
+  width: var(--size-1x);
 }
 
 .c2 {
@@ -70,13 +70,13 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
 }
 
 .c3 {
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
   margin: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  top: 0.125rem;
+  width: var(--size-1x);
 }
 
 .c3:checked + .c4 {
@@ -88,14 +88,14 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 8px;
+  height: var(--size-half);
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 8px;
+  width: var(--size-half);
 }
 
 <label
@@ -136,14 +136,14 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 16px;
+  width: var(--size-1x);
 }
 
 .c2 {
@@ -199,13 +199,13 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
 }
 
 .c3 {
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
   margin: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  top: 0.125rem;
+  width: var(--size-1x);
 }
 
 .c3:checked + .c4 {
@@ -217,14 +217,14 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 8px;
+  height: var(--size-half);
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 8px;
+  width: var(--size-half);
 }
 
 <label
@@ -264,14 +264,14 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
-  height: 24px;
+  height: var(--size-1halfx);
   left: 0;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
@@ -327,13 +327,13 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
 }
 
 .c3 {
-  height: 24px;
+  height: var(--size-1halfx);
   left: 0;
   margin: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 24px;
+  top: 0.125rem;
+  width: var(--size-1halfx);
 }
 
 .c3:checked + .c4 {
@@ -345,14 +345,14 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 8px;
+  height: var(--size-half);
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 8px;
+  width: var(--size-half);
 }
 
 <label
@@ -392,14 +392,14 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 16px;
+  width: var(--size-1x);
 }
 
 .c2 {
@@ -455,13 +455,13 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
 }
 
 .c3 {
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
   margin: 0;
   opacity: 0;
   position: absolute;
-  top: 2px;
-  width: 16px;
+  top: 0.125rem;
+  width: var(--size-1x);
 }
 
 .c3:checked + .c4 {
@@ -473,14 +473,14 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
   background-color: #FFFFFF;
   border-radius: 50%;
   content: "";
-  height: 8px;
+  height: var(--size-half);
   left: 50%;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 8px;
+  width: var(--size-half);
 }
 
 <label
