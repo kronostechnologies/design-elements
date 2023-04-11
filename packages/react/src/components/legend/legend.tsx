@@ -30,8 +30,8 @@ const Item = styled.li<Pick<LegendItem, 'color'>>`
         border-radius: 50%;
         content: "";
         height: var(--size-half);
-        width: var(--size-half);
         margin: 0 var(--spacing-1x) 0 0;
+        width: var(--size-half);
     }
 `;
 

@@ -122,8 +122,8 @@ const ItemLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
 `;
 
 const WrapperNav = styled.div`
-    align-items: center;    
-    display: flex; 
+    align-items: center;
+    display: flex;
     flex-direction: column;
 `
 

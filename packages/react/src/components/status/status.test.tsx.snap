@@ -17,9 +17,9 @@ exports[`Status matches snapshot (blocked) 1`] = `
   border: none;
   border-radius: 50%;
   box-sizing: border-box;
-  height: .625rem;
+  height: 0.625rem;
   margin-right: var(--spacing-1halfx);
-  width: .625rem;
+  width: 0.625rem;
 }
 
 <Status
@@ -67,9 +67,9 @@ exports[`Status matches snapshot (disabled) 1`] = `
   border: 1px solid #60666E;
   border-radius: 50%;
   box-sizing: border-box;
-  height: .625rem;
+  height: 0.625rem;
   margin-right: var(--spacing-1halfx);
-  width: .625rem;
+  width: 0.625rem;
 }
 
 <Status
@@ -116,9 +116,9 @@ exports[`Status matches snapshot (enabled) 1`] = `
   border: none;
   border-radius: 50%;
   box-sizing: border-box;
-  height: .625rem;
+  height: 0.625rem;
   margin-right: var(--spacing-1halfx);
-  width: .625rem;
+  width: 0.625rem;
 }
 
 <Status

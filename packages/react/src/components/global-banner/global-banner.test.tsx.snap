@@ -192,8 +192,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 }
 
 .c6 > button {
-  margin-top: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -476,8 +476,8 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 }
 
 .c6 > button {
-  margin-top: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -767,8 +767,8 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 }
 
 .c6 > button {
-  margin-top: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -1070,8 +1070,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c6 > button {
-  margin-top: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -1323,8 +1323,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 }
 
 .c6 > button {
-  margin-top: var(--spacing-1x);
   margin-left: 0;
+  margin-top: var(--spacing-1x);
 }
 
 <section
@@ -1610,8 +1610,8 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 }
 
 .c6 > button {
-  margin-top: var(--spacing-1x);
   margin-left: 0;
+  margin-top: var(--spacing-1x);
 }
 
 <section
@@ -1904,8 +1904,8 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 }
 
 .c6 > button {
-  margin-top: var(--spacing-1x);
   margin-left: 0;
+  margin-top: var(--spacing-1x);
 }
 
 <section
@@ -2210,8 +2210,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c6 > button {
-  margin-top: var(--spacing-1x);
   margin-left: 0;
+  margin-top: var(--spacing-1x);
 }
 
 <section

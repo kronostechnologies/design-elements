@@ -191,8 +191,8 @@ const ButtonContainer = styled.div<{ isMobile: boolean }>`
     width: ${({ isMobile }) => (isMobile ? '100%' : 'unset')};
 
     > button {
-        margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : '0')};
         margin-left: ${({ isMobile }) => (isMobile ? '0' : 'var(--spacing-1x)')};
+        margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : '0')};
     }
 `;
 
