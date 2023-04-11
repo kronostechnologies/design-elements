@@ -145,7 +145,7 @@ const StyledTable = styled.table<StyledTableProps>`
     th,
     td {
         font-size: ${({ device }) => (device === 'desktop' ? 0.875 : 1)}rem;
-        line-height: 24px;
+        line-height: 1.5rem;
         margin: 0;
         text-align: left;
 
@@ -158,9 +158,9 @@ const StyledTable = styled.table<StyledTableProps>`
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys['dark-grey']};
         font-size: 0.75rem;
-        min-width: 40px;
+        min-width: var(--size-2halfx);
         text-align: center;
-        width: 40px;
+        width: var(--size-2halfx);
     }
 `;
 

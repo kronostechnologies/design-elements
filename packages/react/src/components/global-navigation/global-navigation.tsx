@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    width: 72px;
+    width: var(--size-4halfx);
 `;
 
 const NavList = styled.ul`
@@ -35,7 +35,7 @@ const MenuLink = styled(NavLink)`
     color: ${({ theme }) => theme.greys.black};
     display: flex;
     flex-grow: 1;
-    line-height: 24px;
+    line-height: 1.5rem;
     padding: var(--spacing-half) var(--spacing-2x);
     text-decoration: none;
     width: max-content;
@@ -57,7 +57,7 @@ const ShowMoreMenu = styled.ul<{ open?: boolean }>`
     box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     display: ${({ open }) => (open ? 'flex' : 'none')};
     flex-wrap: wrap;
-    left: 72px;
+    left: 4.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -86,9 +86,9 @@ const ShowMore = styled.button<{ active?: boolean }>`
     cursor: pointer;
     display: flex;
     justify-content: center;
-    min-height: 56px;
+    min-height: var(--size-3halfx);
     padding: var(--spacing-half) var(--spacing-1x);
-    width: 72px;
+    width: var(--size-4halfx);
 
     ${focus};
 
@@ -121,10 +121,17 @@ const ItemLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
     }
 `;
 
+const WrapperNav = styled.div`
+    align-items: center;    
+    display: flex; 
+    flex-direction: column;
+`
+
 const ItemSpan = styled.span`
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     line-height: 1.25rem;
     text-align: center;
+    word-break: break-word;
 `;
 
 const separatorHeight = 17;
@@ -138,11 +145,10 @@ const Separator = styled.hr`
 `;
 
 const coreActionButtonHeight = 72;
-const coreActionButtonMargins = 32;
 const CoreActionButton = styled(IconButton)`
-    height: ${coreActionButtonHeight - coreActionButtonMargins}px;
+    height: var(--size-2halfx);
     margin: var(--spacing-2x);
-    width: 40px;
+    width: var(--size-2halfx);
 `;
 
 export interface GlobalNavigationItem {
@@ -253,7 +259,7 @@ export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
 
     return (
         <Wrapper className={className} ref={wrapperRef}>
-            <div>
+            <WrapperNav>
                 {coreActionButton && (
                     <CoreActionButton
                         {...coreActionButton /* eslint-disable-line react/jsx-props-no-spreading */}
@@ -293,7 +299,7 @@ export const GlobalNavigation: VoidFunctionComponent<GlobalNavigationProps> = ({
                         )}
                     </NavList>
                 </nav>
-            </div>
+            </WrapperNav>
             <div>
                 <Separator />
                 <nav aria-label="App Navigation">
