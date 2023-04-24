@@ -24,6 +24,10 @@ export const Translations = {
             monthSelectLabel: 'Select a month',
             yearSelectLabel: 'Select a year',
         },
+        'error-summary': {
+            title: 'The form contains one or more errors',
+            message: 'Please correct to process to the next step.',
+        },
         'global-banner': {
             ignore: 'Ignore',
         },
@@ -123,6 +127,10 @@ export const Translations = {
             monthNextButtonLabel: 'Aller au mois suivant',
             monthSelectLabel: 'Choisissez un mois',
             yearSelectLabel: 'Choisissez une année',
+        },
+        'error-summary': {
+            title: 'Le formulaire contient une ou plusieurs erreur(s)',
+            message: 'Veuillez corriger avant de passer à l\'étape suivante.',
         },
         'global-banner': {
             ignore: 'Ignorer',

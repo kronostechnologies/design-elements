@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorSummary matches the snapshot 1`] = `
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #006296;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c9:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c9:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c2 {
+  grid-area: icon;
+  margin-top: 2px;
+}
+
+.c0 {
+  background-color: #fdf6f7;
+  border: 1px solid #CD2C23;
+  box-sizing: border-box;
+  line-height: 24px;
+  padding: var(--spacing-2x);
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c1 {
+  color: #CD2C23;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  font-size: 0.875rem;
+  margin: var(--spacing-1x) 0 0 0;
+}
+
+.c3 {
+  box-sizing: border-box;
+  grid-area: content;
+  padding-left: var(--spacing-2x);
+}
+
+.c4 {
+  font-size: 1rem;
+  font-weight: var(--font-semi-bold);
+}
+
+.c6 {
+  font-size: 0.875rem;
+  margin: var(--spacing-1x) 0 0 0;
+}
+
+.c7 {
+  margin: var(--spacing-2x) 0;
+  padding-left: 1rem;
+}
+
+.c8 {
+  margin-bottom: var(--spacing-1x);
+}
+
+<div
+  aria-atomic="true"
+  aria-labelledby="banner-heading-1"
+  aria-live="assertive"
+  class="c0"
+  role="alert"
+>
+  <svg
+    aria-hidden="true"
+    class="c1 c2"
+    color="currentColor"
+    focusable="false"
+    height="20"
+    width="20"
+  />
+  <div
+    class="c3"
+  >
+    <span
+      class="c4"
+      id="banner-heading-1"
+    >
+      The form contains one or more errors
+    </span>
+    <div
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        Please correct to process to the next step.
+      </p>
+      <ul
+        class="c7"
+      >
+        <li
+          class="c8"
+        >
+          <a
+            class="c9"
+            to="#error-input"
+            type="anchor"
+          >
+            This is an error
+          </a>
+        </li>
+        <li
+          class="c8"
+        >
+          <a
+            class="c9"
+            to="#error-input-2"
+            type="anchor"
+          >
+            Another error!
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

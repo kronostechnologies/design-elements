@@ -8,6 +8,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled, { css, ThemedCssFunction } from 'styled-components';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
 import { Button } from '../buttons/button';
@@ -218,12 +219,15 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     const marginTop = (lineHeight - iconSize) / 2;
     const messageTag = (typeof children === 'string') ? 'p' : 'div';
 
+    const headingId = useId('banner-heading-');
+
     return (
         <Container
             className={className}
             isMobile={isMobile}
             aria-live={bannerType.ariaLive}
             aria-atomic="true"
+            aria-labelledby={headingId}
             role={bannerType.role}
         >
             <BannerIcon
@@ -234,7 +238,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
             />
 
             <TextWrapper isMobile={isMobile}>
-                <Heading isMobile={isMobile}>{title || t(bannerType.title)}</Heading>
+                <Heading isMobile={isMobile} id={headingId}>{title || t(bannerType.title)}</Heading>
                 <Message isMobile={isMobile} as={messageTag}>{children}</Message>
                 {!isMobile && buttonLabel && (
                     <ActionButton

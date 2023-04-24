@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { focus } from '../../../utils/css-state';
 
-type Type = 'external' | 'route';
+type Type = 'external' | 'route' | 'anchor';
 
 interface ContainerProps {
     activeClassName?: string;

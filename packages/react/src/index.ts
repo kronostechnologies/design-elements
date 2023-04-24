@@ -47,6 +47,7 @@ export * from './components/carousel/carousel';
 export { ChooserButtonGroup, ChooserButtonOption } from './components/chooser-button-group/chooser-button-group';
 export { ChooserCard } from './components/chooser-card/chooser-card';
 export { EnsoSpinner } from './components/enso-spinner/enso-spinner';
+export { ErrorSummary } from './components/error-summary/error-summary';
 export { ExternalLink } from './components/external-link/external-link';
 export { Heading } from './components/heading/heading';
 export { GlobalHeader } from './components/global-header/global-header';
