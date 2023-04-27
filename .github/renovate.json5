@@ -1,0 +1,36 @@
+{
+  extends: [
+    "github>kronostechnologies/standards:renovate-base"
+  ],
+
+  reviewers: ["team:design-system-core"],
+  rebaseWhen: "conflicted",
+
+  js: {
+    "packageRules": [
+      {
+        "matchPackageNames": [
+          "react",
+          "react-dom",
+        ],
+        "groupName": "React"
+      },
+      {
+        "matchPackageNames": ["react-datepicker"],
+        "groupName": "react-datepicker"
+      },
+      {
+        "matchPackageNames": ["react-modal"],
+        "groupName": "react-modal"
+      },
+      {
+        "matchPackageNames": ["react-popper-tooltip"],
+        "groupName": "react-popper-tooltip"
+      },
+      {
+        "matchPackageNames": ["react-table"],
+        "groupName": "react-table"
+      },
+    ]
+  },
+}
