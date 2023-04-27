@@ -15,6 +15,7 @@ import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
+import { focus } from '../../utils/css-state';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
 export type SectionalBannerType = 'info' | 'success' | 'warning' | 'alert';
@@ -24,6 +25,7 @@ type Live = 'polite' | 'assertive';
 interface AbstractContainerProps extends MobileDeviceContext {
     className?: string;
     role: Role;
+    tabIndex?: number;
 }
 
 function getLineHeight(isMobile: boolean): number {
@@ -65,6 +67,8 @@ function abstractContainer(
         width: 100%;
 
         ${getLayout};
+
+        ${(props) => focus(props, true)};
 
         ${BannerIcon} {
             color: ${(props) => (iconColor ? props.theme.notifications[iconColor] : props.theme.main['primary-3'])};
@@ -185,6 +189,7 @@ interface SectionalBannerProps {
     buttonLabel?: string;
     className?: string;
     children: ReactNode;
+    focusable?: boolean;
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
@@ -203,6 +208,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     buttonLabel,
     className,
     children,
+    focusable,
     title,
     type,
     onButtonClicked,
@@ -225,6 +231,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
         <Container
             className={className}
             isMobile={isMobile}
+            tabIndex={focusable ? 0 : undefined}
             aria-live={bannerType.ariaLive}
             aria-atomic="true"
             aria-labelledby={headingId}

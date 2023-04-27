@@ -55,6 +55,16 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   display: flex;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
 .c0 .c1 {
   color: #CD2C23;
   -webkit-flex: 0 0 auto;
@@ -98,6 +108,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   aria-live="assertive"
   class="c0"
   role="alert"
+  tabindex="0"
 >
   <svg
     aria-hidden="true"
@@ -132,6 +143,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
         >
           <a
             class="c9"
+            tabindex="0"
             to="#error-input"
             type="anchor"
           >
@@ -143,6 +155,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
         >
           <a
             class="c9"
+            tabindex="0"
             to="#error-input-2"
             type="anchor"
           >
