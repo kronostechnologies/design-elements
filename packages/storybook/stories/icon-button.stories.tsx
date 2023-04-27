@@ -41,3 +41,12 @@ export const EventCallback: Story = () => (
     />
 );
 EventCallback.parameters = rawCodeParameters;
+
+export const Small: Story = () => (
+    <>
+        <IconButton label="home" buttonType="primary" iconName="home" size="small" />
+        <IconButton label="mail" buttonType="secondary" iconName="mail" size="small" />
+        <IconButton label="map" buttonType="tertiary" iconName="mapPin" size="small" />
+        <IconButton label="Delete" buttonType="destructive" iconName="x" size="small" />
+    </>
+);

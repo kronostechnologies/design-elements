@@ -413,6 +413,100 @@ exports[`Icon Button Has secondary styles 1`] = `
 </button>
 `;
 
+exports[`Icon Button Has small styles 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: 24px;
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-1halfx);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c0:not(:disabled) {
+  cursor: pointer;
+}
+
+.c0 > svg {
+  color: inherit;
+}
+
+.c1 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1:hover,
+.c1[aria-expanded="true"] {
+  background-color: #003A5A;
+  border-color: #003A5A;
+}
+
+.c1:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  Small Primary Button
+</button>
+`;
+
 exports[`Icon Button Has tertiary styles 1`] = `
 .c0 {
   -webkit-align-items: center;

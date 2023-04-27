@@ -1,11 +1,14 @@
 import { forwardRef, KeyboardEvent, MouseEvent, ReactElement, Ref } from 'react';
-import styled from 'styled-components';
+import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { Theme } from '../../themes';
 import { AvatarProps } from '../avatar/avatar';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';
 import { AbstractButton, getButtonTypeStyles } from './abstract-button';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+
+type Size = 'small' | 'medium';
 
 type Type = 'submit' | 'button' | 'reset';
 
@@ -28,6 +31,11 @@ export interface IconButtonProps {
      * Sets aria-label
      */
     label?: string;
+    /**
+     * Size variant
+     * @default medium
+     */
+    size?: Size;
     title?: string;
     type?: Type;
 
@@ -36,11 +44,29 @@ export interface IconButtonProps {
     onKeyDown?(event: KeyboardEvent<HTMLButtonElement>): void;
 }
 
+const getButtonSizeStyles = (
+    { isMobile, size }: { isMobile: boolean, size?: Size },
+): FlattenInterpolation<ThemeProps<Theme>> => {
+    switch (size) {
+        case 'small':
+            return css`
+                ${!isMobile && 'min-width: 24px'};
+
+                padding: 0;
+                width: ${isMobile ? '48px' : '24px'};
+            `;
+        case 'medium':
+        default:
+            return css`
+                padding: 0;
+                width: ${isMobile ? '48px' : '32px'};
+            `;
+    }
+};
+
 const StyledButton = styled(AbstractButton)`
     ${getButtonTypeStyles};
-
-    padding: 0;
-    width: ${({ isMobile }) => (isMobile ? '48px' : '32px')};
+    ${getButtonSizeStyles};
 `;
 
 export const IconButton = forwardRef(({
