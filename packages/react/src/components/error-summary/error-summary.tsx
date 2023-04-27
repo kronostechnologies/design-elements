@@ -23,16 +23,18 @@ const ErrorItem = styled.li`
 
 const ErrorLink = styled(StyledLink)``;
 
+export interface ErrorMessage {
+    text: string;
+    targetId: string;
+}
+
 interface ErrorSummaryProps {
     className?: string;
     /**
      * Array of objects with a `text` attribute containing the error message and a `targetId`
      * referencing the target input that will get the focus when clicking the error.
      */
-    messages: {
-        text: string;
-        targetId: string;
-    }[];
+    messages: ErrorMessage[];
 }
 
 const handleErrorClick = (targetId: string, event: MouseEvent<HTMLAnchorElement>): void => {
