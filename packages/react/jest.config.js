@@ -50,9 +50,12 @@ module.exports = {
     snapshotResolver: '<rootDir>/test/snapshot-resolver.js',
     snapshotSerializers: ['enzyme-to-json/serializer'],
     testMatch: ['**/*.test.{ts,tsx}'],
-    globals: {
-        'ts-jest': {
-            tsconfig: path.resolve(__dirname, 'tsconfig.test.json'),
-        },
+    transform: {
+        '^.+\\.tsx?$': [
+            'ts-jest',
+            {
+                tsconfig: path.resolve(__dirname, 'tsconfig.test.json'),
+            },
+        ],
     },
 };
