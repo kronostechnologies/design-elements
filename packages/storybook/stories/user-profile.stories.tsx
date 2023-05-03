@@ -1,5 +1,5 @@
 import { GlobalHeader, NavItemProps, UserProfile } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { ComponentType } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';

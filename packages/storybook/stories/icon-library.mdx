@@ -1,13 +1,11 @@
-import { Icon } from '@equisoft/design-elements-react';
-import { IconGallery, IconItem } from '@storybook/addon-docs';
-import { Story } from '@storybook/react';
+import { Icon } from "@equisoft/design-elements-react";
+import { ArgsTable, Canvas, IconGallery, IconItem, Meta, Title } from '@storybook/blocks';
 
-export default {
-    title: 'Icons/Library',
-    component: Icon,
-};
+<Meta title="Icons/Library" />
 
-export const All: Story = () => (
+<Title>Library</Title>
+
+<Canvas>
     <IconGallery>
         <IconItem name="alertFilled">
             <Icon name="alertFilled" />
@@ -157,4 +155,6 @@ export const All: Story = () => (
             <Icon name="x" />
         </IconItem>
     </IconGallery>
-);
+</Canvas>
+
+<ArgsTable of={Icon} />

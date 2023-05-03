@@ -1,9 +1,10 @@
 import { DesignSystem, injectMainCss } from '@equisoft/design-elements-react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
+import { Decorator, Parameters, Preview } from '@storybook/react';
 
 injectMainCss();
 
-export const decorators = [
+const decorators: Decorator[] = [
     Story => (
         <DesignSystem>
             <Story />
@@ -11,7 +12,7 @@ export const decorators = [
     ),
 ];
 
-export const parameters = {
+const parameters: Parameters = {
     docs: {
         container: DocsContainer,
         page: DocsPage,
@@ -21,3 +22,10 @@ export const parameters = {
         },
     },
 };
+
+const preview: Preview = {
+    decorators,
+    parameters,
+};
+
+export default preview;

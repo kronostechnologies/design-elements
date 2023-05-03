@@ -4,7 +4,7 @@ import {
     ToggletipPlacement,
     ExternalLink,
 } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { DesktopDecorator } from './utils/device-context-decorator';

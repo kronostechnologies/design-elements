@@ -1,5 +1,5 @@
 import { Pagination } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 import { rawCodeParameters } from './utils/parameters';
