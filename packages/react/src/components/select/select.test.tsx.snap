@@ -374,7 +374,7 @@ input + .c2 {
 `;
 
 exports[`Select invalid select has a different style 1`] = `
-Array [
+[
   .c4 {
   color: #CD2C23;
   display: -webkit-box;
@@ -890,7 +890,7 @@ input[type="checkbox"]:disabled + .c0,input[type="radio"]:disabled + .c1 {
 `;
 
 exports[`Select matches the snapshot 1`] = `
-Array [
+[
   .c3 {
   color: #000000;
   display: block;
