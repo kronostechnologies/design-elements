@@ -1,4 +1,4 @@
-import { MenuButton } from '@equisoft/design-elements-react';
+import { MenuButton, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -106,4 +106,27 @@ export const VisibilityChangeEvent: Story = () => (
     >
         Button
     </MenuButton>
+);
+
+export const TooltipWrapperWithClickableItems: Story = () => (
+    <Tooltip label="Label" desktopPlacement="right">
+        <MenuButton
+            options={[
+                {
+                    label: 'Option 1',
+                    // eslint-disable-next-line no-console
+                    onClick: () => console.log('option 1 clicked'),
+                },
+                {
+                    label: 'Option 2',
+                    // eslint-disable-next-line no-console
+                    onClick: () => console.log('option 2 clicked'),
+                },
+            ]}
+            buttonType="primary"
+            onMenuVisibilityChanged={(visibility) => console.info(visibility)}
+        >
+            Menu
+        </MenuButton>
+    </Tooltip>
 );

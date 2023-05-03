@@ -55,13 +55,21 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
         }
     }, [containerRef, visible, setVisible]);
 
+    const handleClickWithin: () => void = useCallback(() => {
+        setVisible(!visible);
+        if (!visible) {
+            buttonRef.current?.focus();
+        } else {
+            buttonRef.current?.blur();
+        }
+    }, [buttonRef, visible, setVisible]);
+
     useEffect(() => {
         onMenuVisibilityChanged?.(visible);
     }, [visible, onMenuVisibilityChanged]);
 
     useEffect(() => {
         document.addEventListener('mouseup', handleClickOutside);
-
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside]);
 
@@ -102,7 +110,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     aria-expanded={visible}
                     buttonType={buttonType}
                     inverted={inverted}
-                    onClick={() => setVisible(!visible)}
+                    onClick={() => handleClickWithin()}
                 >
                     {children}
                     <StyledIcon
@@ -115,10 +123,9 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
             )}
             {visible && (
                 <StyledMenu
-                    initialFocusIndex={0}
                     options={options}
                     onKeyDown={handleMenuKeyDown}
-                    onOptionSelect={() => setVisible(false)}
+                    onOptionSelect={() => handleClickWithin()}
                 />
             )}
         </StyledContainer>
