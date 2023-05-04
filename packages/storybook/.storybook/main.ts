@@ -25,7 +25,7 @@ const config: StorybookConfig = {
         },
     },
     stories: [
-        '../stories/0-intro.stories.mdx',
+        '../stories/0-intro.mdx',
         '../stories/**/*.@(stories.tsx|mdx)',
     ],
     addons: [
