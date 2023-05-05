@@ -1,5 +1,5 @@
 import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';

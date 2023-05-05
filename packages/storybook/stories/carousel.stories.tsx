@@ -1,5 +1,5 @@
 import { Carousel } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { ReactNodeArray } from 'react';
 import styled from 'styled-components';
 

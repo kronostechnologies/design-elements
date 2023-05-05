@@ -1,5 +1,5 @@
 import { Avatar } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import AvatarImg from './assets/avatars.png';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 

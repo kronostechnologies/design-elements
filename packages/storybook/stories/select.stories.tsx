@@ -1,6 +1,6 @@
 import { Select } from '@equisoft/design-elements-react';
 import { Option } from '@equisoft/design-elements-react/dist/components/select/select';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';

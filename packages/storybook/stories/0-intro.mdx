@@ -1,7 +1,8 @@
-import { Button, DesignSystem, SectionalBanner, testTheme } from '@equisoft/design-elements-react';
-import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs';
+import { DesignSystem } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as IntroStories from './0-intro.stories';
 
-<Meta title="Introduction" />
+<Meta of={IntroStories} />
 
 # Equisoft's Design System
 ## Getting Started
@@ -27,13 +28,12 @@ export const App: VoidFunctionComponent = () => (
         </Router>
     </DesignSystem>
 );
-
 ```
 
 
 ## Props
 
-<ArgsTable of={DesignSystem} />
+<ArgTypes of={DesignSystem} />
 
 
 ## Theming
@@ -41,26 +41,7 @@ export const App: VoidFunctionComponent = () => (
 For most cases, you won't need to provide a theme, as the DesignSystem uses Equisoft's theme by default. However, it's
 possible to override the theme, or parts of the theme. For more details, take a look at the [Theme definition](https://github.com/kronostechnologies/design-elements/blob/master/packages/react/src/themes/theme.ts).
 
-<Canvas>
-<>
-    <DesignSystem theme={testTheme}>
-        <div>
-            <h3>Custom theme</h3>
-            <Button label="Primary" buttonType="primary" />
-            <Button label="Secondary" buttonType="secondary" />
-            <Button label="Tertiary" buttonType="tertiary" />
-        </div>
-    </DesignSystem>
-    <DesignSystem>
-    <div>
-        <h3>Default Equisoft theme</h3>
-        <Button label="Primary" buttonType="primary" />
-        <Button label="Secondary" buttonType="secondary" />
-        <Button label="Tertiary" buttonType="tertiary" />
-    </div>
-    </DesignSystem>
-</>
-</Canvas>
+<Canvas of={IntroStories.Theming} />
 
 ## Internationalization
 
@@ -69,10 +50,4 @@ the `DesignSystem` provider's `language` prop. The default language is **english
 The following sample shows that the provider only translates the messages
 related to the design system. For a more complex example, take a look at the [webapp-boilerplate](https://github.com/kronostechnologies/webapp-boilerplate/tree/master/web/src/browser).
 
-<Canvas>
-<DesignSystem language="fr">
-    <SectionalBanner type="info">
-        This message however is your responsibility.
-    </SectionalBanner>
-</DesignSystem>
-</Canvas>
+<Canvas of={IntroStories.Internationalization} />
