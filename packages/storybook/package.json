@@ -4,7 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "build-storybook -c .storybook -o ./dist -s public",
-    "start": "start-storybook -s public --docs",
+    "start": "start-storybook -s public",
+    "start-docs": "start-storybook -s public --docs",
     "lint": "yarn eslint && yarn stylelint",
     "eslint": "eslint stories/",
     "eslint:ci": "yarn eslint",
