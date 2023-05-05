@@ -18,6 +18,7 @@ module.exports = {
         'react/jsx-no-bind': 'off',
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
+        'react-hooks/rules-of-hooks': 'off',
         'storybook/prefer-pascal-case': 'error',
     },
     settings: {

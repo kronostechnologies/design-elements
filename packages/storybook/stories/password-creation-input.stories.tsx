@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import {
     PasswordCreationInput,
     isLongEnough,
