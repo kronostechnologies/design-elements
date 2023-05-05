@@ -30,7 +30,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -64,7 +64,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c3:focus {
@@ -353,7 +353,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -387,7 +387,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c3:focus {
@@ -676,7 +676,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -710,7 +710,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 48px;
+  width: var(--size-3x);
 }
 
 .c3:focus {
@@ -999,7 +999,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -1033,7 +1033,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 48px;
+  width: var(--size-3x);
 }
 
 .c3:focus {

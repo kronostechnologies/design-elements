@@ -30,7 +30,7 @@ exports[`Icon Button Has disabled styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -64,7 +64,7 @@ exports[`Icon Button Has disabled styles 1`] = `
   border-color: #006296;
   color: #FFFFFF;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c1:focus {
@@ -134,7 +134,7 @@ exports[`Icon Button Has mobile styles 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -168,7 +168,7 @@ exports[`Icon Button Has mobile styles 1`] = `
   border-color: #006296;
   color: #FFFFFF;
   padding: 0;
-  width: 48px;
+  width: var(--size-3x);
 }
 
 .c1:focus {
@@ -237,7 +237,7 @@ exports[`Icon Button Has primary styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -271,7 +271,7 @@ exports[`Icon Button Has primary styles 1`] = `
   border-color: #006296;
   color: #FFFFFF;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c1:focus {
@@ -340,7 +340,7 @@ exports[`Icon Button Has secondary styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -374,7 +374,7 @@ exports[`Icon Button Has secondary styles 1`] = `
   border-color: #006296;
   color: #006296;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c1:focus {
@@ -443,7 +443,7 @@ exports[`Icon Button Has small styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 24px;
+  min-height: var(--size-1halfx);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-1halfx);
@@ -537,7 +537,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -571,7 +571,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c1:focus {

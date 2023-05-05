@@ -5,13 +5,13 @@ import { focus } from '../../utils/css-state';
 
 type Size = 'small' | 'medium';
 
-const getButtonMinHeight = ({ isMobile, size }: { isMobile: boolean, size?: Size }): number => {
+const getButtonMinHeight = ({ isMobile, size }: { isMobile: boolean, size?: Size }): string => {
     switch (size) {
         case 'small':
-            return isMobile ? 48 : 24;
+            return isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)';
         case 'medium':
         default:
-            return isMobile ? 48 : 32;
+            return isMobile ? 'var(--size-3x)' : 'var(--size-2x)';
     }
 };
 
@@ -40,10 +40,10 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
     justify-content: center;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.033125 : 0.025)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1)}rem;
-    min-height: ${(props) => getButtonMinHeight(props)}px;
+    min-height: ${getButtonMinHeight};
     min-width: 2rem;
     outline: none;
-    padding: ${(props) => getButtonPadding(props)};
+    padding: ${getButtonPadding};
     text-transform: uppercase;
     user-select: none;
 

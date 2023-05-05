@@ -50,16 +50,16 @@ const getButtonSizeStyles = (
     switch (size) {
         case 'small':
             return css`
-                ${!isMobile && 'min-width: 24px'};
+                ${!isMobile && 'min-width: var(--size-1halfx)'};
 
                 padding: 0;
-                width: ${isMobile ? '48px' : '24px'};
+                width: ${isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)'};
             `;
         case 'medium':
         default:
             return css`
                 padding: 0;
-                width: ${isMobile ? '48px' : '32px'};
+                width: ${isMobile ? 'var(--size-3x)' : 'var(--size-2x)'};
             `;
     }
 };

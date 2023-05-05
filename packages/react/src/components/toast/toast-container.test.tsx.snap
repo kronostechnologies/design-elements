@@ -30,7 +30,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -64,7 +64,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4:focus {
@@ -318,7 +318,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -352,7 +352,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4:focus {
@@ -606,7 +606,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -640,7 +640,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4:focus {
@@ -894,7 +894,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -928,7 +928,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4:focus {
