@@ -4,7 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "storybook build -c .storybook -o ./dist --disable-telemetry",
-    "start": "storybook dev -c .storybook --docs --disable-telemetry",
+    "start": "storybook dev -c .storybook --disable-telemetry",
+    "start-docs": "storybook dev -c .storybook --docs --disable-telemetry",
     "lint": "yarn eslint && yarn stylelint",
     "eslint": "eslint stories/",
     "eslint:ci": "yarn eslint",
