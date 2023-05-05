@@ -1,5 +1,5 @@
 import { IconButton } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { InvertedBackground } from './utils/inverted-background';
 import { rawCodeParameters } from './utils/parameters';
 

@@ -1,5 +1,5 @@
 import { GlobalHeader, NavMenuButton, NavMenuOption } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';

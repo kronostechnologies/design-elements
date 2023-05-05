@@ -1,0 +1,35 @@
+import { Modal } from "@equisoft/design-elements-react";
+import { ArgTypes, Meta, Stories } from '@storybook/blocks';
+import * as ModalStories from './modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+The `Modal` component allows you to easily set modals up in your app.
+
+## Import
+
+```js
+    import { Modal, useModal } from '@equisoft/design-elements-react'
+```
+
+## Accessibility
+
+It is important for users of screenreaders that other page content be hidden (via the aria-hidden attribute) while the modal is open. To allow `Modal` to do this, you should set `appElement` prop to a query selector identifying the root of your app. For example, if your app content is located inside an element with the ID `root`, you should set the `appElement` prop like this:
+
+```jsx
+<Modal
+    appElement="#storybook-root"
+    isOpen={isModalOpen}
+    onRequestClose={closeModal}
+>
+    Some Content
+</Modal>
+```
+
+## Props
+
+<ArgTypes of={Modal} />
+
+<Stories of={ModalStories} />

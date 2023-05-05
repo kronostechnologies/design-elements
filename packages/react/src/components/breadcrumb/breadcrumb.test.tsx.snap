@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": .c4 {
   box-sizing: border-box;
@@ -314,7 +314,7 @@ Object {
 `;
 
 exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": .c4 {
   box-sizing: border-box;
@@ -603,7 +603,7 @@ Object {
 `;
 
 exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": .c2 {
   box-sizing: border-box;

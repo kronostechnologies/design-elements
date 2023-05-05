@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { mocked } from 'ts-jest/utils';
 import { useToasts } from '../../hooks/use-toasts';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { Toast, ToastContextProps } from './toast-context';
@@ -14,7 +13,7 @@ describe('ToastsContainer', () => {
             { id: 'an id', type: ToastTypeEnum.INFORMATION, message: 'a message' },
             { id: 'another id', type: ToastTypeEnum.SUCCESS, message: 'a message' },
         ];
-        mocked(useToasts).mockReturnValue({ toasts } as ToastContextProps);
+        jest.mocked(useToasts).mockReturnValue({ toasts } as ToastContextProps);
 
         const wrapper = shallow(<ToastsContainer position="bottom-right" />);
 

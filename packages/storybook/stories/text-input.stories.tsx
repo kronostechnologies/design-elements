@@ -1,5 +1,5 @@
 import { Button, TextInput } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { FormEventHandler } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 

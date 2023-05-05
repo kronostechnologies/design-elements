@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { mocked } from 'ts-jest/utils';
 import { PasswordCreationInput } from './password-creation-input';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
@@ -111,7 +110,7 @@ describe('PasswordCreationInput', () => {
 
     test('sets password strength text to weak when strength is weak', () => {
         const onChange = jest.fn();
-        mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.WEAK);
+        jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.WEAK);
         const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
             Translations.en['password-creation-input'].weak);
         const wrapper = mountWithProviders(
@@ -125,7 +124,7 @@ describe('PasswordCreationInput', () => {
 
     test('sets password strength text to fair when strength is fair', () => {
         const onChange = jest.fn();
-        mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.FAIR);
+        jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.FAIR);
         const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
             Translations.en['password-creation-input'].fair);
         const wrapper = mountWithProviders(
@@ -139,7 +138,7 @@ describe('PasswordCreationInput', () => {
 
     test('sets password strength text to good when strength is good', () => {
         const onChange = jest.fn();
-        mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.GOOD);
+        jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.GOOD);
         const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
             Translations.en['password-creation-input'].good);
         const wrapper = mountWithProviders(
@@ -153,7 +152,7 @@ describe('PasswordCreationInput', () => {
 
     test('sets password strength to strong when strength is strong', () => {
         const onChange = jest.fn();
-        mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.STRONG);
+        jest.mocked(getPasswordStrength).mockReturnValue(PasswordStrengthEnum.STRONG);
         const expectedLabel = Translations.en['password-creation-input']['password-strength'] + (
             Translations.en['password-creation-input'].strong);
         const wrapper = mountWithProviders(

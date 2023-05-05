@@ -299,7 +299,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
     data-testid="toggletip-content-container"
     isMobile={false}
     style={
-      Object {
+      {
         "left": "0",
         "position": "absolute",
         "top": "0",
@@ -311,7 +311,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       data-popper-interactive={false}
       data-testid="toggletip-content-container"
       style={
-        Object {
+        {
           "left": "0",
           "position": "absolute",
           "top": "0",
@@ -321,7 +321,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       <styled.div
         data-popper-arrow={true}
         style={
-          Object {
+          {
             "position": "absolute",
           }
         }
@@ -330,7 +330,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
           className="c3 c4"
           data-popper-arrow={true}
           style={
-            Object {
+            {
               "position": "absolute",
             }
           }
@@ -804,7 +804,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
     data-testid="toggletip-content-container"
     isMobile={true}
     style={
-      Object {
+      {
         "left": "0",
         "position": "absolute",
         "top": "0",
@@ -816,7 +816,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       data-popper-interactive={false}
       data-testid="toggletip-content-container"
       style={
-        Object {
+        {
           "left": "0",
           "position": "absolute",
           "top": "0",
@@ -826,7 +826,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       <styled.div
         data-popper-arrow={true}
         style={
-          Object {
+          {
             "position": "absolute",
           }
         }
@@ -835,7 +835,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
           className="c3 c4"
           data-popper-arrow={true}
           style={
-            Object {
+            {
               "position": "absolute",
             }
           }

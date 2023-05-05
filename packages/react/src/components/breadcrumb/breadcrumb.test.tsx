@@ -1,6 +1,5 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { mocked } from 'ts-jest/utils';
 import { DesignSystem } from '../design-system';
 import { NavMenuOption } from '../nav-menu/nav-menu-option';
 import { Breadcrumb } from './breadcrumb';
@@ -48,7 +47,7 @@ describe('Breadcrumb', () => {
                 href: '/home',
                 value: 'index',
             }];
-            mocked(useBreadcrumbRoutes).mockReturnValue({
+            jest.mocked(useBreadcrumbRoutes).mockReturnValue({
                 shownRoutes: history,
                 hiddenRoutes: [],
                 overflow: { horizontal: false, vertical: false },
@@ -67,7 +66,7 @@ describe('Breadcrumb', () => {
         test('Matches snapshot (double entries)', () => {
             const history = [...defaultHistory];
             history.pop();
-            mocked(useBreadcrumbRoutes).mockReturnValue({
+            jest.mocked(useBreadcrumbRoutes).mockReturnValue({
                 shownRoutes: history,
                 hiddenRoutes: [],
                 overflow: { horizontal: false, vertical: false },
@@ -85,7 +84,7 @@ describe('Breadcrumb', () => {
         });
 
         test('Matches snapshot (Three or more entries)', () => {
-            mocked(useBreadcrumbRoutes).mockReturnValue({
+            jest.mocked(useBreadcrumbRoutes).mockReturnValue({
                 shownRoutes: defaultHistory,
                 hiddenRoutes: [],
                 overflow: { horizontal: false, vertical: false },
@@ -111,7 +110,7 @@ describe('Breadcrumb', () => {
                 ...defaultHistory,
                 hiddenRoute,
             ];
-            mocked(useBreadcrumbRoutes).mockReturnValue({
+            jest.mocked(useBreadcrumbRoutes).mockReturnValue({
                 shownRoutes: defaultHistory,
                 hiddenRoutes: [hiddenRoute],
                 overflow: { horizontal: true, vertical: false },
@@ -130,7 +129,7 @@ describe('Breadcrumb', () => {
     });
 
     test('Menu should be hidden by default', () => {
-        mocked(useBreadcrumbRoutes).mockReturnValue({
+        jest.mocked(useBreadcrumbRoutes).mockReturnValue({
             shownRoutes: shownOverflowHistory,
             hiddenRoutes: hiddenOverflowHistory,
             overflow: { horizontal: true, vertical: false },
@@ -149,7 +148,7 @@ describe('Breadcrumb', () => {
     });
 
     test('Menu should be displayed when button is clicked', async () => {
-        mocked(useBreadcrumbRoutes).mockReturnValue({
+        jest.mocked(useBreadcrumbRoutes).mockReturnValue({
             shownRoutes: shownOverflowHistory,
             hiddenRoutes: hiddenOverflowHistory,
             overflow: { horizontal: true, vertical: false },

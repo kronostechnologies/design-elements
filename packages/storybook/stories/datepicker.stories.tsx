@@ -1,5 +1,5 @@
 import { Button, Datepicker, DatepickerHandles } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { FormEvent, useRef } from 'react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -21,7 +21,7 @@ export default {
     parameters: rawCodeParameters,
 };
 
-export const Normal: Story = () => (
+export const Normal: Story<typeof Datepicker> = () => (
     <Datepicker label="Date" data-testid="a-data-test-id" hint="Hint" />
 );
 
