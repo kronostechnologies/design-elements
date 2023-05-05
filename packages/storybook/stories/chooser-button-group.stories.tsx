@@ -1,6 +1,6 @@
 import { ChooserButtonGroup } from '@equisoft/design-elements-react';
 import { ChooserButtonOption } from '@equisoft/design-elements-react/dist/components/chooser-button-group/chooser-button-group'; // eslint-disable-line max-len
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 

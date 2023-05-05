@@ -1,4 +1,4 @@
-import { AsymmetricMatcher } from 'expect/build/asymmetricMatchers';
+import { AsymmetricMatcher } from 'expect';
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace

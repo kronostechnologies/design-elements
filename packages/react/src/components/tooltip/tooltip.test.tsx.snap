@@ -205,7 +205,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     isMobile={false}
     role="tooltip"
     style={
-      Object {
+      {
         "left": "0",
         "position": "absolute",
         "top": "0",
@@ -220,7 +220,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       data-testid="tooltip-content-container"
       role="tooltip"
       style={
-        Object {
+        {
           "left": "0",
           "position": "absolute",
           "top": "0",
@@ -230,7 +230,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       <styled.div
         data-popper-arrow={true}
         style={
-          Object {
+          {
             "position": "absolute",
           }
         }
@@ -239,7 +239,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
           className="c2 c3"
           data-popper-arrow={true}
           style={
-            Object {
+            {
               "position": "absolute",
             }
           }
@@ -452,7 +452,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
     isMobile={false}
     role="tooltip"
     style={
-      Object {
+      {
         "left": "0",
         "position": "absolute",
         "top": "0",
@@ -467,7 +467,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
       data-testid="tooltip-content-container"
       role="tooltip"
       style={
-        Object {
+        {
           "left": "0",
           "position": "absolute",
           "top": "0",
@@ -477,7 +477,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
       <styled.div
         data-popper-arrow={true}
         style={
-          Object {
+          {
             "position": "absolute",
           }
         }
@@ -486,7 +486,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
           className="c2 c3"
           data-popper-arrow={true}
           style={
-            Object {
+            {
               "position": "absolute",
             }
           }
@@ -703,7 +703,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     isMobile={true}
     role="tooltip"
     style={
-      Object {
+      {
         "left": "0",
         "position": "absolute",
         "top": "0",
@@ -718,7 +718,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       data-testid="tooltip-content-container"
       role="tooltip"
       style={
-        Object {
+        {
           "left": "0",
           "position": "absolute",
           "top": "0",
@@ -728,7 +728,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       <styled.div
         data-popper-arrow={true}
         style={
-          Object {
+          {
             "position": "absolute",
           }
         }
@@ -737,7 +737,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
           className="c2 c3"
           data-popper-arrow={true}
           style={
-            Object {
+            {
               "position": "absolute",
             }
           }
@@ -950,7 +950,7 @@ exports[`Tooltip Has mobile styles 1`] = `
     isMobile={true}
     role="tooltip"
     style={
-      Object {
+      {
         "left": "0",
         "position": "absolute",
         "top": "0",
@@ -965,7 +965,7 @@ exports[`Tooltip Has mobile styles 1`] = `
       data-testid="tooltip-content-container"
       role="tooltip"
       style={
-        Object {
+        {
           "left": "0",
           "position": "absolute",
           "top": "0",
@@ -975,7 +975,7 @@ exports[`Tooltip Has mobile styles 1`] = `
       <styled.div
         data-popper-arrow={true}
         style={
-          Object {
+          {
             "position": "absolute",
           }
         }
@@ -984,7 +984,7 @@ exports[`Tooltip Has mobile styles 1`] = `
           className="c2 c3"
           data-popper-arrow={true}
           style={
-            Object {
+            {
               "position": "absolute",
             }
           }

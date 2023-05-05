@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { mocked } from 'ts-jest/utils';
 import { useTheme } from '../../hooks/use-theme';
 import { equisoftTheme } from '../../themes';
 import { SortButtonIcon } from './sort-button-icon';
@@ -8,7 +7,7 @@ jest.mock('../../hooks/use-theme');
 
 describe('SortButtonIcon', () => {
     beforeEach(() => {
-        mocked(useTheme).mockReturnValue(equisoftTheme);
+        jest.mocked(useTheme).mockReturnValue(equisoftTheme);
     });
 
     it('should display arrow up when sort is ascending', () => {

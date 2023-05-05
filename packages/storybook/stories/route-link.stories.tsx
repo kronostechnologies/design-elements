@@ -1,5 +1,5 @@
 import { RouteLink } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { Link, NavLink } from 'react-router-dom';
 import { RouterDecorator } from './utils/router-decorator';
 

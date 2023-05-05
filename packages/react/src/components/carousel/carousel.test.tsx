@@ -1,6 +1,5 @@
 import { shallow } from 'enzyme';
 import { ReactNode } from 'react';
-import { mocked } from 'ts-jest/utils';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { Carousel } from './carousel';
@@ -33,7 +32,7 @@ describe('Carousel', () => {
             setActive: jest.fn(),
             style: {},
         };
-        mocked(useCarousel).mockReturnValue(useCarouselResponse);
+        jest.mocked(useCarousel).mockReturnValue(useCarouselResponse);
     });
 
     it('should match snapshot', () => {

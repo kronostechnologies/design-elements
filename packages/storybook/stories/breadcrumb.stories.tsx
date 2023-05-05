@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbElement } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { RouterDecorator } from './utils/router-decorator';
 
 const routeMap = (length: number): BreadcrumbElement[] => {

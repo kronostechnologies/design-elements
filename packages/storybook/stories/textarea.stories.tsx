@@ -1,5 +1,5 @@
 import { TextArea } from '@equisoft/design-elements-react';
-import { Story } from '@storybook/react';
+import { StoryFn as Story } from '@storybook/react';
 import { SyntheticEvent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
