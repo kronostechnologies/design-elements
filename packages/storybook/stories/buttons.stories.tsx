@@ -85,3 +85,12 @@ export const WithIcons: Story = () => (
         </Button>
     </>
 );
+
+export const Small: Story = () => (
+    <>
+        <Button label="Primary" buttonType="primary" size="small" />
+        <Button label="Secondary" buttonType="secondary" size="small" />
+        <Button label="Tertiary" buttonType="tertiary" size="small" />
+        <Button label="Destructive" buttonType="destructive" size="small" />
+    </>
+);

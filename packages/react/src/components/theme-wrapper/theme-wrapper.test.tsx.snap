@@ -30,7 +30,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -122,7 +122,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);

@@ -1,5 +1,7 @@
 import { shallow } from 'enzyme';
+import { doNothing } from '../../test-utils/callbacks';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
+import { Button } from './button';
 import { IconButton } from './icon-button';
 
 describe('Icon Button', () => {
@@ -78,6 +80,14 @@ describe('Icon Button', () => {
                 iconName="home"
                 buttonType="tertiary"
             />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('Has small styles', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
         );
 
         expect(tree).toMatchSnapshot();

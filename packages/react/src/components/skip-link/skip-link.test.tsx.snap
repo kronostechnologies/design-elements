@@ -30,7 +30,7 @@ exports[`SkipLink Matches Snapshot (Desktop) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -120,7 +120,7 @@ exports[`SkipLink Matches Snapshot (Mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);

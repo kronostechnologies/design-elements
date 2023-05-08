@@ -102,9 +102,26 @@ describe('Button', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('has small styles', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
     test('has mobile styles', () => {
         const tree = renderWithProviders(
             <Button onClick={doNothing} buttonType="primary" label="Primary Button" />,
+            'mobile',
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has small styles on mobile', () => {
+        const tree = renderWithProviders(
+            <Button onClick={doNothing} buttonType="primary" label="Small Primary Button" size="small" />,
             'mobile',
         );
 

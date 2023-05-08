@@ -6,6 +6,8 @@ import { AbstractButton, getButtonTypeStyles } from './abstract-button';
 
 export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
+type Size = 'small' | 'medium';
+
 type Type = 'submit' | 'button' | 'reset';
 
 interface ButtonProps {
@@ -19,6 +21,11 @@ interface ButtonProps {
     disabled?: boolean;
     inverted?: boolean;
     label?: string;
+    /**
+     * Size variant
+     * @default medium
+     */
+    size?: Size;
     title?: string;
     type?: Type;
 
