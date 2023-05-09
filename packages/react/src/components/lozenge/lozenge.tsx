@@ -90,7 +90,7 @@ const TagLabel = styled.span`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-`
+`;
 
 const StyledIcon = styled(Icon)<{ $isMobile: boolean }>`
     height: 0.75rem;

@@ -43,7 +43,12 @@ interface ContainerProps {
     type?: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>['type'];
 }
 
-function getFontSize({ $isMobile }: ContainerProps): number {
+interface TagLabelProps {
+    $isMobile: boolean;
+    $tagSize: TagSize;
+}
+
+function getFontSize({ $isMobile }: TagLabelProps): number {
     return $isMobile ? 0.875 : 0.75;
 }
 
@@ -61,16 +66,16 @@ function isMedium(tagSize: TagSize): tagSize is 'medium' {
 }
 
 function getPadding({ $isMobile, $tagSize }: IconOrButtonProps): string {
-    return $isMobile || isMedium($tagSize) ? 'var(--spacing-1x)' : 'var(--spacing-half)';
+    return $isMobile || isMedium($tagSize) ? '0 var(--spacing-1x)' : '0 var(--spacing-half)';
 }
 
 function isSmall(tagSize: TagSize): tagSize is 'small' {
     return tagSize === 'small';
 }
 
-function getLineHeight({ $isMobile, $tagSize }: ContainerProps): number {
+function getLineHeight({ $isMobile, $tagSize }: TagLabelProps): number {
     if (isSmall($tagSize)) {
-        return $isMobile ? 1.5 : 0.875;
+        return $isMobile ? 1.5 : 1;
     }
     return $isMobile ? 1.875 : 1.5;
 }
@@ -118,15 +123,15 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
     `;
 }
 
-const TagLabel = styled.span`
+const TagLabel = styled.span<TagLabelProps>`
     display: inline-block;
-    font-size: 0.75rem;
-    line-height: 1.5rem;
+    font-size: ${getFontSize}rem;
+    line-height: ${getLineHeight}rem;
     max-width: 312px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-`
+`;
 
 const DeleteButton = styled.button<IconOrButtonProps>`
     align-items: center;
@@ -162,9 +167,7 @@ const Container = styled.span<ContainerProps>`
     border-radius: ${getBorderRadius};
     box-shadow: inset 0 0 0 1px #878f9a;
     display: inline-flex;
-    font-size: ${getFontSize}rem;
-    line-height: ${getLineHeight}rem;
-    padding: 0 ${getPadding};
+    padding: ${getPadding};
 
     & + & {
         margin-left: var(--spacing-1x);
@@ -231,7 +234,10 @@ export const Tag = forwardRef(({
                 />
             )}
 
-            <TagLabel>
+            <TagLabel
+                $isMobile={isMobile}
+                $tagSize={size}
+            >
                 {value.label}
             </TagLabel>
 

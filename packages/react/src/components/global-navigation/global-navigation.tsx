@@ -125,7 +125,7 @@ const WrapperNav = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
-`
+`;
 
 const ItemSpan = styled.span`
     font-size: 0.75rem;

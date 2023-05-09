@@ -44,12 +44,14 @@ const HeadingWrapper = styled.div`
 `;
 
 const TitleIcon = styled(Icon)`
-    // left: -32px;
-    // margin-top: calc(var(--spacing-half) * 1.5);
-    // position: absolute;
-    // top: 0;
     margin-right: var(--spacing-1x);
 `;
+
+const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
+    align-items: center;
+    display: flex;
+    margin-left: calc(-1 * var(--spacing-4x));
+ `;
 
 export interface ModalDialogProps {
     /** Takes a query selector targeting the app Element. */
@@ -118,19 +120,13 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     }
 
     function getHeader(): ReactElement | undefined {
-        const HeadingWrapperComponent = hasTitleIcon ? HeadingWrapper : Fragment;
-
-        const StyledHeadingWrapperComponent = styled(HeadingWrapperComponent)`
-            align-items: center;
-            display: flex;
-            margin-left: calc(-1 * var(--spacing-4x));
-        `
+        const HeadingWrapperComponent = hasTitleIcon ? StyledHeadingWrapperComponent : Fragment;
 
         if (title || subtitle) {
             return (
                 <>
                     {title && (
-                        <StyledHeadingWrapperComponent>
+                        <HeadingWrapperComponent>
                             {titleIcon && (
                                 <TitleIcon name={titleIcon} size="24" data-testid="title-icon" />
                             )}
@@ -143,7 +139,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                             >
                                 {title}
                             </Heading>
-                        </StyledHeadingWrapperComponent>
+                        </HeadingWrapperComponent>
                     )}
                     {subtitle && (
                         <Subtitle hasTitle={title !== undefined} isMobile={isMobile}>{subtitle}</Subtitle>
