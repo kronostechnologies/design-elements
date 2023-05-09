@@ -23,8 +23,6 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -131,8 +129,6 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -211,8 +207,6 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -274,8 +268,6 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -307,8 +299,8 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
 exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
 .c2 {
   display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -327,8 +319,6 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.875rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -380,8 +370,6 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -488,8 +476,6 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -568,8 +554,6 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -631,8 +615,6 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -664,8 +646,8 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
 exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
 .c2 {
   display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -684,8 +666,6 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.875rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -718,7 +698,7 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 .c2 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -737,8 +717,6 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -788,7 +766,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 .c2 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -845,8 +823,6 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -906,7 +882,7 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
 .c3 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -925,8 +901,6 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -969,7 +943,7 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
 .c2 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -988,8 +962,6 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -1021,7 +993,7 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
 exports[`Tag Tag small matches snapshot (desktop) 2`] = `
 .c2 {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.5rem;
   max-width: 312px;
   overflow: hidden;
@@ -1041,8 +1013,6 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
@@ -1075,7 +1045,7 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 .c2 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1094,8 +1064,6 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -1145,7 +1113,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 .c2 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1202,8 +1170,6 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -1263,7 +1229,7 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
 .c3 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1282,8 +1248,6 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -1326,7 +1290,7 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
 .c2 {
   display: inline-block;
   font-size: 0.75rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   max-width: 312px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1345,8 +1309,6 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   padding: 0 var(--spacing-half);
 }
 
@@ -1378,7 +1340,7 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
 exports[`Tag Tag small matches snapshot (mobile) 2`] = `
 .c2 {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.5rem;
   max-width: 312px;
   overflow: hidden;
@@ -1398,8 +1360,6 @@ exports[`Tag Tag small matches snapshot (mobile) 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
   padding: 0 var(--spacing-1x);
 }
 
