@@ -1,26 +1,16 @@
-import { MouseEvent, VoidFunctionComponent } from 'react';
-
+import { ComponentPropsWithoutRef, MouseEvent, VoidFunctionComponent } from 'react';
 import { NavLink, Link as ReactRouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
 import { StyledLink } from './styles/styled-link';
 
-const Link = styled(StyledLink)<{ $isMobile: boolean, $hasLabel: boolean }>`
-    color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
-    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
-
+const Link = styled(StyledLink)`
     svg {
         margin-right: ${({ $hasLabel }) => ($hasLabel ? 'var(--spacing-1x)' : '0')};
     }
 
-    &:hover {
-        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)};
-    }
-
     &:visited {
-        ${({ disabled }) => (disabled ? '' : 'color: #62a;')};
-
         svg {
             ${({ disabled }) => (disabled ? '' : 'color: #62a;')}
         }
@@ -31,10 +21,14 @@ const Link = styled(StyledLink)<{ $isMobile: boolean, $hasLabel: boolean }>`
     }
 `;
 
-interface LinkProps {
+type RouterLinkProps = Pick<
+    ComponentPropsWithoutRef<typeof NavLink>,
+    'end'
+>;
+
+interface LinkProps extends RouterLinkProps {
     className?: string;
     disabled?: boolean;
-    end?: boolean;
     href: string;
     iconName?: IconName;
     label?: string;
@@ -66,7 +60,6 @@ export const RouteLink: VoidFunctionComponent<LinkProps> = ({
             $isMobile={isMobile}
             tabIndex={disabled ? -1 : 0}
             to={href}
-            type="route"
             onClick={onClick}
         >
             {iconName && <Icon aria-hidden="true" name={iconName} size="16" />}

@@ -12,6 +12,7 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -36,11 +37,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #84C6EA;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: var(--spacing-1x);
 }
@@ -55,7 +51,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   disabled=""
   href="/test"
   tabindex="-1"
-  type="route"
 >
   Navigation Link
 </a>
@@ -73,8 +68,17 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -97,21 +101,8 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: var(--spacing-1x);
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -126,7 +117,6 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   class="c0 c1"
   href="/test"
   tabindex="0"
-  type="route"
 >
   <svg
     aria-hidden="true"
@@ -151,8 +141,17 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -175,21 +174,8 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: 0;
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -204,7 +190,6 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   class="c0 c1"
   href="/test"
   tabindex="0"
-  type="route"
 >
   <svg
     aria-hidden="true"
@@ -228,8 +213,17 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -252,21 +246,8 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: var(--spacing-1x);
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -281,7 +262,6 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   class="c0 c1"
   href="/test"
   tabindex="0"
-  type="route"
 >
   Navigation Link
 </a>
@@ -299,6 +279,7 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -323,11 +304,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #84C6EA;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: var(--spacing-1x);
 }
@@ -342,7 +318,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   disabled=""
   href="/test"
   tabindex="-1"
-  type="route"
 >
   Navigation Link
 </a>
@@ -360,8 +335,17 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -384,21 +368,8 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: var(--spacing-1x);
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -413,7 +384,6 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   class="c0 c1"
   href="/test"
   tabindex="0"
-  type="route"
 >
   <svg
     aria-hidden="true"
@@ -438,8 +408,17 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -462,21 +441,8 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: 0;
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -491,7 +457,6 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   class="c0 c1"
   href="/test"
   tabindex="0"
-  type="route"
 >
   <svg
     aria-hidden="true"
@@ -515,8 +480,17 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -539,21 +513,8 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-}
-
 .c1 svg {
   margin-right: var(--spacing-1x);
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -568,7 +529,6 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   class="c0 c1"
   href="/test"
   tabindex="0"
-  type="route"
 >
   Navigation Link
 </a>

@@ -17,18 +17,10 @@ const ExternalIcon = styled(Icon)`
     margin-right: 0;
 `;
 
-const Link = styled(StyledLink)<{isMobile: boolean}>`
-    color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
+const Link = styled(StyledLink)`
     display: flex;
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-
-    &:hover {
-        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)}
-    }
 
     &:visited {
-        color: #62a; /* TODO change colors when updating thematization */
-
         svg {
             color: #62a; /* TODO change colors when updating thematization */
         }
@@ -53,7 +45,13 @@ export interface ExternalLinkProps {
 }
 
 export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
-    className, disabled, href = '', iconName, label, onClick, target = '_blank',
+    className,
+    disabled,
+    href = '',
+    iconName,
+    label,
+    onClick,
+    target = '_blank',
 }) => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('common');
@@ -72,10 +70,9 @@ export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
             disabled={disabled}
             $hasLabel={!!label}
             href={disabled ? undefined : href}
-            isMobile={isMobile}
+            $isMobile={isMobile}
             onClick={disabled ? undefined : handleClick}
             target={target}
-            type="external"
         >
             {iconName && <LeftIcon aria-hidden="true" name={iconName} size="16" />}
             <StyledLabel>{label}</StyledLabel>
