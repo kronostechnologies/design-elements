@@ -3,7 +3,29 @@ import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
 
-export const defaultButtonStyles = css<{ isMobile: boolean }>`
+type Size = 'small' | 'medium';
+
+const getButtonMinHeight = ({ isMobile, size }: { isMobile: boolean, size?: Size }): string => {
+    switch (size) {
+        case 'small':
+            return isMobile ? 'var(--size-3x)' : 'var(--size-1halfx)';
+        case 'medium':
+        default:
+            return isMobile ? 'var(--size-3x)' : 'var(--size-2x)';
+    }
+};
+
+const getButtonPadding = ({ isMobile, size }: { isMobile: boolean, size?: Size }): string => {
+    switch (size) {
+        case 'small':
+            return isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-1halfx);';
+        case 'medium':
+        default:
+            return isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-2x);';
+    }
+};
+
+export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
     align-items: center;
     appearance: none;
     background: inherit;
@@ -18,10 +40,10 @@ export const defaultButtonStyles = css<{ isMobile: boolean }>`
     justify-content: center;
     letter-spacing: ${({ isMobile }) => (isMobile ? 0.033125 : 0.025)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1)}rem;
-    min-height: ${({ isMobile }) => (isMobile ? 48 : 32)}px;
+    min-height: ${getButtonMinHeight};
     min-width: 2rem;
     outline: none;
-    padding: ${({ isMobile }) => (isMobile ? '0 var(--spacing-3x);' : '0 var(--spacing-2x);')};
+    padding: ${getButtonPadding};
     text-transform: uppercase;
     user-select: none;
 
@@ -38,6 +60,7 @@ export const defaultButtonStyles = css<{ isMobile: boolean }>`
 
 interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isMobile: boolean;
+    size?: Size;
 }
 
 const StyledButton = styled.button<AbstractButtonProps>`

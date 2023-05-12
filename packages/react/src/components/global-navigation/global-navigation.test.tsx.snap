@@ -30,7 +30,7 @@ exports[`Global Navigation matches snapshot 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -64,7 +64,7 @@ exports[`Global Navigation matches snapshot 1`] = `
   border-color: #006296;
   color: #FFFFFF;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c2:focus {

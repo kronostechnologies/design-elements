@@ -246,7 +246,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -280,7 +280,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4:focus {
@@ -455,7 +455,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: 32px;
+  min-height: var(--size-2x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-2x);
@@ -489,7 +489,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c4:focus {
@@ -664,7 +664,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   -ms-letter-spacing: 0.033125rem;
   letter-spacing: 0.033125rem;
   line-height: 1.5rem;
-  min-height: 48px;
+  min-height: var(--size-3x);
   min-width: 2rem;
   outline: none;
   padding: 0 var(--spacing-3x);
@@ -698,7 +698,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   border-color: transparent;
   color: #60666E;
   padding: 0;
-  width: 48px;
+  width: var(--size-3x);
 }
 
 .c4:focus {

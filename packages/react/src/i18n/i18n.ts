@@ -9,10 +9,10 @@ export function createI18n(language = 'en'): i18nType {
         resources: Translations,
         lng: language,
         fallbackLng: language,
-
         interpolation: {
             escapeValue: false,
         },
+        returnNull: false,
     }).catch(console.error);
 
     return i18n;
