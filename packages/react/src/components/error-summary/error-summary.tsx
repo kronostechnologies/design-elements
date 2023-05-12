@@ -21,8 +21,6 @@ const ErrorItem = styled.li`
     margin-bottom: var(--spacing-1x);
 `;
 
-const ErrorLink = styled(StyledLink)<{ $isMobile: boolean, $hasLabel: boolean }>``;
-
 export interface ErrorMessage {
     text: string;
     targetId: string;
@@ -51,16 +49,14 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
 
     const errorItems = messages.map((error) => (
         <ErrorItem key={error.targetId}>
-            <ErrorLink
+            <StyledLink
                 $hasLabel={false}
                 $isMobile={isMobile}
-                tabIndex={0}
-                to={`#${error.targetId}`}
-                type="anchor"
+                href={`#${error.targetId}`}
                 onClick={(event) => handleErrorClick(error.targetId, event)}
             >
                 {error.text}
-            </ErrorLink>
+            </StyledLink>
         </ErrorItem>
     ));
 

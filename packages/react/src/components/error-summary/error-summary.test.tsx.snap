@@ -12,8 +12,17 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c9:hover {
+  color: #003A5A;
+}
+
+.c9:visited {
+  color: #62a;
 }
 
 .c9:focus {
@@ -63,6 +72,11 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c0:focus:not(:focus-visible) {
+  border-color: inherit;
+  box-shadow: none;
 }
 
 .c0 .c1 {
@@ -143,9 +157,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
         >
           <a
             class="c9"
-            tabindex="0"
-            to="#error-input"
-            type="anchor"
+            href="#error-input"
           >
             This is an error
           </a>
@@ -155,9 +167,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
         >
           <a
             class="c9"
-            tabindex="0"
-            to="#error-input-2"
-            type="anchor"
+            href="#error-input-2"
           >
             Another error!
           </a>
