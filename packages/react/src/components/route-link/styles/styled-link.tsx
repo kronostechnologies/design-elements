@@ -1,15 +1,10 @@
 import styled from 'styled-components';
-import { focus } from '../../../utils/css-state';
-
-type Type = 'external' | 'route';
+import { focus, focusVisibleReset } from '../../../utils/css-state';
 
 interface ContainerProps {
-    activeClassName?: string;
     disabled?: boolean;
-    end?: boolean;
     $hasLabel: boolean;
-    to?: string;
-    type: Type;
+    $isMobile: boolean;
 }
 
 export const StyledLink = styled.a<ContainerProps>`
@@ -17,13 +12,20 @@ export const StyledLink = styled.a<ContainerProps>`
     color: ${({ disabled, theme }) => (disabled ? theme.main['primary-1.2'] : theme.main['primary-1.1'])};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: inline-flex;
+    font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
     text-decoration: underline;
+
+    &:hover {
+        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.main['primary-1.3']};`)};
+    }
+
+    &:visited {
+        ${({ disabled }) => (disabled ? '' : 'color: #62a;')}; /* TODO change colors when updating thematization */
+    }
 
     ${focus};
 
-    &:focus:not(:focus-visible) {
-        box-shadow: none;
-    }
+    ${focusVisibleReset};
 
     ${({ theme }) => focus({ theme }, false, '&:focus-visible')}
 `;

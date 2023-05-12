@@ -12,6 +12,7 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -60,16 +61,10 @@ exports[`External Link matches snapshot (disabled) 1`] = `
 }
 
 .c1 {
-  color: #84C6EA;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -87,7 +82,6 @@ exports[`External Link matches snapshot (disabled) 1`] = `
   class="c0 c1"
   disabled=""
   target="_blank"
-  type="external"
 >
   <span
     class="c2"
@@ -124,8 +118,17 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -176,20 +179,10 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
 }
 
 .c1 {
-  color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -207,7 +200,6 @@ exports[`External Link matches snapshot (label and icon) 1`] = `
   class="c0 c1"
   href="#"
   target="_blank"
-  type="external"
 >
   <svg
     aria-hidden="true"
@@ -252,8 +244,17 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -304,20 +305,10 @@ exports[`External Link matches snapshot (only icon) 1`] = `
 }
 
 .c1 {
-  color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -335,7 +326,6 @@ exports[`External Link matches snapshot (only icon) 1`] = `
   class="c0 c1"
   href="#"
   target="_blank"
-  type="external"
 >
   <svg
     aria-hidden="true"
@@ -378,8 +368,17 @@ exports[`External Link matches snapshot (without href) 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -430,20 +429,10 @@ exports[`External Link matches snapshot (without href) 1`] = `
 }
 
 .c1 {
-  color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -461,7 +450,6 @@ exports[`External Link matches snapshot (without href) 1`] = `
   class="c0 c1"
   href=""
   target="_blank"
-  type="external"
 >
   <svg
     aria-hidden="true"
@@ -506,8 +494,17 @@ exports[`External Link matches snapshot 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c0:hover {
+  color: #003A5A;
+}
+
+.c0:visited {
+  color: #62a;
 }
 
 .c0:focus {
@@ -554,20 +551,10 @@ exports[`External Link matches snapshot 1`] = `
 }
 
 .c1 {
-  color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c1:hover {
-  color: #003A5A;
-}
-
-.c1:visited {
-  color: #62a;
 }
 
 .c1:visited svg {
@@ -585,7 +572,6 @@ exports[`External Link matches snapshot 1`] = `
   class="c0 c1"
   href="https://www.google.ca/"
   target="_blank"
-  type="external"
 >
   <span
     class="c2"

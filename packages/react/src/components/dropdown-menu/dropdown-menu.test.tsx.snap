@@ -23,8 +23,17 @@ exports[`DropdownMenu Is hidden 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6:hover {
+  color: #003A5A;
+}
+
+.c6:visited {
+  color: #62a;
 }
 
 .c6:focus {
@@ -71,20 +80,10 @@ exports[`DropdownMenu Is hidden 1`] = `
 }
 
 .c7 {
-  color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c7:hover {
-  color: #003A5A;
-}
-
-.c7:visited {
-  color: #62a;
 }
 
 .c7:visited svg {
@@ -324,7 +323,6 @@ exports[`DropdownMenu Is hidden 1`] = `
         class="c6 c7 c8"
         href="https://external-link.com/a"
         target="_blank"
-        type="external"
       >
         <span
           class="c9"
@@ -354,7 +352,6 @@ exports[`DropdownMenu Is hidden 1`] = `
         class="c6 c7 c8"
         href="https://external-link.com/b"
         target="_blank"
-        type="external"
       >
         <span
           class="c9"
@@ -384,7 +381,6 @@ exports[`DropdownMenu Is hidden 1`] = `
         class="c6 c7 c8"
         href="https://external-link.com/c"
         target="_blank"
-        type="external"
       >
         <span
           class="c9"
@@ -435,8 +431,17 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-size: 0.875rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c6:hover {
+  color: #003A5A;
+}
+
+.c6:visited {
+  color: #62a;
 }
 
 .c6:focus {
@@ -483,20 +488,10 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 }
 
 .c7 {
-  color: #006296;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-}
-
-.c7:hover {
-  color: #003A5A;
-}
-
-.c7:visited {
-  color: #62a;
 }
 
 .c7:visited svg {
@@ -735,7 +730,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         class="c6 c7 c8"
         href="https://external-link.com/a"
         target="_blank"
-        type="external"
       >
         <span
           class="c9"
@@ -765,7 +759,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         class="c6 c7 c8"
         href="https://external-link.com/b"
         target="_blank"
-        type="external"
       >
         <span
           class="c9"
@@ -795,7 +788,6 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
         class="c6 c7 c8"
         href="https://external-link.com/c"
         target="_blank"
-        type="external"
       >
         <span
           class="c9"
