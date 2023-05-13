@@ -122,7 +122,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   aria-live="assertive"
   class="c0"
   role="alert"
-  tabindex="0"
+  tabindex="-1"
 >
   <svg
     aria-hidden="true"

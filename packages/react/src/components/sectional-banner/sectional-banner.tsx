@@ -233,7 +233,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
         <Container
             className={className}
             isMobile={isMobile}
-            tabIndex={focusable ? 0 : undefined}
+            tabIndex={focusable ? -1 : undefined}
             aria-live={bannerType.ariaLive}
             aria-atomic="true"
             aria-labelledby={headingId}
