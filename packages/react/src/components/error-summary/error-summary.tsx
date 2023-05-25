@@ -1,4 +1,4 @@
-import { MouseEvent, VoidFunctionComponent } from 'react';
+import { MouseEvent, RefObject, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { StyledLink } from '../route-link/styles/styled-link';
@@ -24,7 +24,7 @@ const ErrorItem = styled.li`
 
 export interface ErrorMessage {
     text: string;
-    targetId: string;
+    target: RefObject<HTMLElement> | string;
 }
 
 interface ErrorSummaryProps {
@@ -34,15 +34,23 @@ interface ErrorSummaryProps {
      */
     headingTag?: HeadingTag;
     /**
-     * Array of objects with a `text` attribute containing the error message and a `targetId`
-     * referencing the target input that will get the focus when clicking the error.
+     * Array of objects with a `text` attribute containing the error message and a `target`
+     * referencing the target input that will get the focus when clicking the error. The
+     * target can either be the id of the element or a component ref.
      */
     messages: ErrorMessage[];
 }
 
-const handleErrorClick = (targetId: string, event: MouseEvent<HTMLAnchorElement>): void => {
+const getTargetId = (target: RefObject<HTMLElement> | string): string | undefined => (
+    (typeof target === 'string') ? target : target?.current?.id
+);
+
+const handleErrorClick = (targetId: string | undefined, event: MouseEvent<HTMLAnchorElement>): void => {
     event.preventDefault();
-    document.getElementById(targetId)?.focus();
+
+    if (targetId) {
+        document.getElementById(targetId)?.focus();
+    }
 };
 
 export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
@@ -53,13 +61,13 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
     const { t } = useTranslation('error-summary');
     const { isMobile } = useDeviceContext();
 
-    const errorItems = messages.map((error) => (
-        <ErrorItem key={error.targetId}>
+    const errorItems = messages.map((error, i) => (
+        <ErrorItem key={i /* eslint-disable-line react/no-array-index-key */}>
             <StyledLink
                 $hasLabel={false}
                 $isMobile={isMobile}
-                href={`#${error.targetId}`}
-                onClick={(event) => handleErrorClick(error.targetId, event)}
+                href={`#${getTargetId(error.target)}`}
+                onClick={(event) => handleErrorClick(getTargetId(error.target), event)}
             >
                 {error.text}
             </StyledLink>

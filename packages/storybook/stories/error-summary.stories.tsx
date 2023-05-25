@@ -1,5 +1,6 @@
 import { ErrorMessage, ErrorSummary, TextInput } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
+import { createRef } from 'react';
 import styled from 'styled-components';
 
 export default {
@@ -7,9 +8,11 @@ export default {
     component: ErrorSummary,
 };
 
+const postalCodeInput = createRef<HTMLInputElement>();
+
 const errorMessages: ErrorMessage[] = [
-    { text: 'Please provide your first name.', targetId: 'es-first-name' },
-    { text: 'Enter a valid postal code.', targetId: 'es-postal-code' },
+    { text: 'Please provide your first name.', target: 'es-first-name' },
+    { text: 'Enter a valid postal code.', target: postalCodeInput },
 ];
 
 const StyledFormContainer = styled.div`
@@ -22,7 +25,7 @@ export const Normal: Story = () => (
 
         <StyledFormContainer>
             <TextInput id="es-first-name" label="First name" />
-            <TextInput id="es-postal-code" label="Postal code" value="G1H" />
+            <TextInput id="es-postal-code" label="Postal code" value="G1H" ref={postalCodeInput} />
         </StyledFormContainer>
     </>
 );

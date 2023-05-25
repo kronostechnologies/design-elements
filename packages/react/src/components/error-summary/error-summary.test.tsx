@@ -1,12 +1,12 @@
 import { renderWithTheme } from '../../test-utils/renderer';
-import { ErrorSummary } from './error-summary';
+import { ErrorMessage, ErrorSummary } from './error-summary';
 
-const errorMessages = [{
+const errorMessages: ErrorMessage[] = [{
     text: 'This is an error',
-    targetId: 'error-input',
+    target: 'error-input',
 }, {
     text: 'Another error!',
-    targetId: 'error-input-2',
+    target: 'error-input-2',
 }];
 
 describe('ErrorSummary', () => {
