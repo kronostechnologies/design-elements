@@ -6,6 +6,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { SectionalBanner } from '../sectional-banner/sectional-banner';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>;
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
@@ -29,6 +30,10 @@ export interface ErrorMessage {
 interface ErrorSummaryProps {
     className?: string;
     /**
+     * @default h2
+     */
+    headingTag?: HeadingTag;
+    /**
      * Array of objects with a `text` attribute containing the error message and a `targetId`
      * referencing the target input that will get the focus when clicking the error.
      */
@@ -42,6 +47,7 @@ const handleErrorClick = (targetId: string, event: MouseEvent<HTMLAnchorElement>
 
 export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
     className,
+    headingTag,
     messages,
 }) => {
     const { t } = useTranslation('error-summary');
@@ -64,6 +70,7 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
         <SectionalBanner
             className={className}
             focusable
+            headingTag={headingTag ?? 'h2'}
             title={t('title')}
             type="alert"
         >

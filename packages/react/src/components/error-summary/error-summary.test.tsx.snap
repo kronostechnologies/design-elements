@@ -100,6 +100,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 .c4 {
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
+  margin: 0;
 }
 
 .c6 {
@@ -116,7 +117,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   margin-bottom: var(--spacing-1x);
 }
 
-<div
+<section
   aria-atomic="true"
   aria-labelledby="banner-heading-1"
   aria-live="assertive"
@@ -135,12 +136,12 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   <div
     class="c3"
   >
-    <span
+    <h2
       class="c4"
       id="banner-heading-1"
     >
       The form contains one or more errors
-    </span>
+    </h2>
     <div
       class="c5"
     >
@@ -175,5 +176,5 @@ exports[`ErrorSummary matches the snapshot 1`] = `
       </ul>
     </div>
   </div>
-</div>
+</section>
 `;

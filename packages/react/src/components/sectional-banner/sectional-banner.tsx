@@ -21,6 +21,7 @@ type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
 export type SectionalBannerType = 'info' | 'success' | 'warning' | 'alert';
 type Role = 'status' | 'alert';
 type Live = 'polite' | 'assertive';
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
 
 interface AbstractContainerProps extends MobileDeviceContext {
     className?: string;
@@ -57,7 +58,7 @@ function abstractContainer(
     color?: keyof Theme['notifications'],
     iconColor: keyof Theme['notifications'] | undefined = color,
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
-    return styled.div<AbstractContainerProps>`
+    return styled.section<AbstractContainerProps>`
         background-color: ${bgColor};
         border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
         box-sizing: border-box;
@@ -115,6 +116,7 @@ const DismissIconButton = styled(IconButton)
 const Heading = styled.span<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1.125rem' : '1rem')};
     font-weight: var(--font-semi-bold);
+    margin: 0;
 `;
 
 const StyledActionButton = styled(Button)`
@@ -192,6 +194,8 @@ interface SectionalBannerProps {
     className?: string;
     children: ReactNode;
     focusable?: boolean;
+    /** @default `span` */
+    headingTag?: HeadingTag;
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
@@ -211,6 +215,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     className,
     children,
     focusable,
+    headingTag,
     title,
     type,
     onButtonClicked,
@@ -247,7 +252,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
             />
 
             <TextWrapper isMobile={isMobile}>
-                <Heading isMobile={isMobile} id={headingId}>{title || t(bannerType.title)}</Heading>
+                <Heading isMobile={isMobile} as={headingTag} id={headingId}>{title || t(bannerType.title)}</Heading>
                 <Message isMobile={isMobile} as={messageTag}>{children}</Message>
                 {!isMobile && buttonLabel && (
                     <ActionButton
