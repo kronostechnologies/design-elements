@@ -26,10 +26,10 @@
   "resolutions": {
     "@types/react": "^17",
     "react-docgen-typescript": "^2.0.0",
-    "@types/react-router-dom": "5.1.8",
+    "@types/react-router-dom": "5.3.3",
     "webpack": "^5",
     "stylelint-processor-styled-components@~1.10.0": "patch:stylelint-processor-styled-components@npm%3A1.10.0#./.yarn/patches/stylelint-processor-styled-components-npm-1.10.0-17c51326cc.patch",
     "react-docgen-typescript-plugin@^1.0.5": "patch:react-docgen-typescript-plugin@npm%3A1.0.5#./.yarn/patches/react-docgen-typescript-plugin-npm-1.0.5-d533e14225.patch"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.1"
 }
