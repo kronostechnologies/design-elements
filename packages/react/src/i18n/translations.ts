@@ -26,7 +26,7 @@ export const Translations = {
         },
         'error-summary': {
             title: 'The form contains one or more errors',
-            message: 'Please correct to process to the next step.',
+            message: 'Please correct them to proceed to the next step.',
         },
         'global-banner': {
             ignore: 'Ignore',
@@ -129,8 +129,8 @@ export const Translations = {
             yearSelectLabel: 'Choisissez une année',
         },
         'error-summary': {
-            title: 'Le formulaire contient une ou plusieurs erreur(s)',
-            message: 'Veuillez corriger avant de passer à l\'étape suivante.',
+            title: 'Le formulaire contient une ou plusieurs erreurs',
+            message: 'Veuillez les corriger avant de passer à l\'étape suivante.',
         },
         'global-banner': {
             ignore: 'Ignorer',

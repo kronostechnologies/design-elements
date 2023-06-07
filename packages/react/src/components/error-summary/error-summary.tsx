@@ -42,15 +42,14 @@ interface ErrorSummaryProps {
 }
 
 const getTargetId = (target: RefObject<HTMLElement> | string): string | undefined => (
-    (typeof target === 'string') ? target : target?.current?.id
+    typeof target === 'string' ? target : target.current?.id
 );
 
-const handleErrorClick = (targetId: string | undefined, event: MouseEvent<HTMLAnchorElement>): void => {
+const handleErrorClick = (target: RefObject<HTMLElement> | string, event: MouseEvent<HTMLAnchorElement>): void => {
     event.preventDefault();
 
-    if (targetId) {
-        document.getElementById(targetId)?.focus();
-    }
+    const targetElement = typeof target === 'string' ? document.getElementById(target) : target.current;
+    targetElement?.focus();
 };
 
 export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
@@ -67,7 +66,7 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
                 $hasLabel={false}
                 $isMobile={isMobile}
                 href={`#${getTargetId(error.target)}`}
-                onClick={(event) => handleErrorClick(getTargetId(error.target), event)}
+                onClick={(event) => handleErrorClick(error.target, event)}
             >
                 {error.text}
             </StyledLink>

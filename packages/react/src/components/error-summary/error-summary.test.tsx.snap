@@ -148,7 +148,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
       <p
         class="c6"
       >
-        Please correct to process to the next step.
+        Please correct them to proceed to the next step.
       </p>
       <ul
         class="c7"
