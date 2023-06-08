@@ -230,13 +230,13 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
                 {message}
             </StyledMessage>
             <DismissIcon
-                    label={t('dismissButtonLabel')}
-                    $color={toastTextColor}
-                    $isMobile={isMobile}
-                    $type={type}
-                    onClick={() => removeToast(id)}
-                    data-testid="dismiss"
-                />
+                label={t('dismissButtonLabel')}
+                $color={toastTextColor}
+                $isMobile={isMobile}
+                $type={type}
+                onClick={() => removeToast(id)}
+                data-testid="dismiss"
+            />
         </ToastWrapper>
     );
 };
