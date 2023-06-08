@@ -1,4 +1,4 @@
-import { FunctionComponent, KeyboardEvent, PropsWithChildren, useState, useEffect, useRef, useCallback } from 'react';
+import React, { FunctionComponent, PropsWithChildren, useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import { menuDimensions } from '../../tokens/menuDimensions';
 import { Button, ButtonType } from '../buttons/button';
@@ -44,25 +44,54 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
     onMenuVisibilityChanged,
 }) => {
     const [visible, setVisible] = useState(!!defaultOpen);
+    const initialFocusIndex = 0;
     const buttonRef = useRef<HTMLButtonElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    /**
+     * Hide menu when user clicks outside container
+     * @type {() => void}
+     */
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
         const clickIsOutside = !eventIsInside(event, containerRef.current);
-
         if (visible && clickIsOutside) {
             setVisible(false);
         }
     }, [containerRef, visible, setVisible]);
 
-    const handleClickWithin: () => void = useCallback(() => {
+    /**
+     * Close menu list item
+     * whenever Tab key is or Escape keys are pressed
+     * @param event
+     */
+    const handleTabKeyDown = (event: React.KeyboardEvent): void => {
+        if (event.key === 'Tab' || event.key === 'Escape') {
+            buttonRef.current?.focus();
+            setVisible(false);
+        }
+    };
+
+    /**
+     * Set focus on first menu item conditionally
+     * irrespective of whether it's a keypress, or a mouse event
+     * @type {() => void}
+     */
+    const handleClickInside = useCallback(() => {
         setVisible(!visible);
+    }, [visible]);
+
+    /**
+     * Hide menu when option is clicked
+     * @type {() => void}
+     */
+    const handleOnOptionSelect: () => void = useCallback(() => {
         if (!visible) {
             buttonRef.current?.focus();
         } else {
             buttonRef.current?.blur();
         }
-    }, [buttonRef, visible, setVisible]);
+        setVisible(!visible);
+    }, [visible, setVisible]);
 
     useEffect(() => {
         onMenuVisibilityChanged?.(visible);
@@ -73,20 +102,12 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside]);
 
-    function handleMenuKeyDown({ key }: KeyboardEvent): void {
-        switch (key) {
-            case 'Escape':
-                buttonRef.current?.focus();
-                setVisible(false);
-                break;
-            case 'Tab':
-                setVisible(false);
-                break;
-        }
-    }
-
     return (
-        <StyledContainer className={className} ref={containerRef}>
+        <StyledContainer
+            className={className}
+            ref={containerRef}
+            onKeyDown={handleTabKeyDown}
+        >
             {iconName ? (
                 <IconButton
                     ref={buttonRef}
@@ -98,7 +119,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     buttonType={buttonType}
                     inverted={inverted}
                     iconName={iconName}
-                    onClick={() => setVisible(!visible)}
+                    onClick={handleClickInside}
                 />
             ) : (
                 <Button
@@ -110,7 +131,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     aria-expanded={visible}
                     buttonType={buttonType}
                     inverted={inverted}
-                    onClick={() => handleClickWithin()}
+                    onClick={handleClickInside}
                 >
                     {children}
                     <StyledIcon
@@ -124,8 +145,8 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
             {visible && (
                 <StyledMenu
                     options={options}
-                    onKeyDown={handleMenuKeyDown}
-                    onOptionSelect={() => handleClickWithin()}
+                    initialFocusIndex={initialFocusIndex}
+                    onOptionSelect={handleOnOptionSelect}
                 />
             )}
         </StyledContainer>
