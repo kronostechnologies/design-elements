@@ -50,7 +50,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
     background: ${({ theme }) => theme.notifications['success-1.1']};
     border: 1px solid ${({ theme }) => theme.notifications['success-1.1']};
-    border-radius: ${({ isMobile }) => (isMobile ? 1 : .75)}rem;
+    border-radius: ${({ isMobile }) => (isMobile ? 1 : 0.75)}rem;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     position: relative;
     vertical-align: middle;
