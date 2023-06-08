@@ -43,14 +43,14 @@ const HeadingWrapper = styled.div`
     position: relative;
 `;
 
+const TitleIcon = styled(Icon)`
+    margin-right: var(--spacing-1x);
+`;
+
 const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
     align-items: center;
     display: flex;
     margin-left: calc(-1 * var(--spacing-4x));
- `;
-
-const TitleIcon = styled(Icon)`
-    margin-right: var(--spacing-1x);
 `;
 
 export interface ModalDialogProps {
