@@ -23,6 +23,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -55,15 +56,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c3 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c3 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -155,6 +147,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -187,15 +180,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c3 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c3 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -346,6 +330,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -378,15 +363,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c3 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c3 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -467,6 +443,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -499,15 +476,6 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c3 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c3 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);

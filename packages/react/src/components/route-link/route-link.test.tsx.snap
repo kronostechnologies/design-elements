@@ -13,6 +13,7 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -37,15 +38,6 @@ exports[`Route Link matches snapshot (Link | disabled) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #84C6EA;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -80,6 +72,7 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -112,15 +105,6 @@ exports[`Route Link matches snapshot (Link | label and icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -164,6 +148,7 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -196,15 +181,6 @@ exports[`Route Link matches snapshot (Link | only icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: 0;
@@ -247,6 +223,7 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -279,15 +256,6 @@ exports[`Route Link matches snapshot (Link) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -324,6 +292,7 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -348,15 +317,6 @@ exports[`Route Link matches snapshot (NavLink | disabled) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #84C6EA;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -391,6 +351,7 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -423,15 +384,6 @@ exports[`Route Link matches snapshot (NavLink | label and icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);
@@ -475,6 +427,7 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -507,15 +460,6 @@ exports[`Route Link matches snapshot (NavLink | only icon) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: 0;
@@ -558,6 +502,7 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -590,15 +535,6 @@ exports[`Route Link matches snapshot (NavLink) 1`] = `
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-<<<<<<< HEAD
-=======
-.c1 {
-  color: #006296;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-}
-
->>>>>>> a0c9b68a (fix(a11y): fix zoom navigation)
 .c1 svg {
   height: 1rem;
   margin-right: var(--spacing-1x);

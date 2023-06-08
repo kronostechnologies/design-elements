@@ -24,6 +24,7 @@ exports[`DropdownMenu Is hidden 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -434,6 +435,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
