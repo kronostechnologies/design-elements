@@ -1649,7 +1649,7 @@ __metadata:
     "@storybook/react": ^7.0.8
     "@storybook/react-webpack5": ^7.0.8
     "@storybook/theming": ^7.0.8
-    "@types/node": ^16.18.25
+    "@types/node": ^18.0.0
     "@types/react": ^17.0.58
     "@types/react-color": ^3.0.6
     "@types/react-table": ^7.7.14
@@ -3917,10 +3917,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.0.0, @types/node@npm:^16.18.25":
+"@types/node@npm:^16.0.0":
   version: 16.18.35
   resolution: "@types/node@npm:16.18.35"
   checksum: 68e3015eb24f009d2b5a7ad959d1e1090016847248f22242c520b75a2780eb19e2d212e775e68022ed474fac00bcc8edaebcd02712f1dfee542efa23e2a4027e
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.0.0":
+  version: 18.16.17
+  resolution: "@types/node@npm:18.16.17"
+  checksum: 2f7e3a552d525ef4b7a2620ef5ef59b3fdfb1d8ab20627b537e090732b35c2bd103944933d347a319cc7d478b3866b0d1bc3d629ee5899ca663a4547ca078cee
   languageName: node
   linkType: hard
 
