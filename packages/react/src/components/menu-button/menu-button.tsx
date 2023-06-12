@@ -44,7 +44,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
     onMenuVisibilityChanged,
 }) => {
     const [visible, setVisible] = useState(!!defaultOpen);
-    const initialFocusIndex = 0;
+    const [initialFocusIndex, setInitialFocusIndex] = useState(0);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -73,11 +73,15 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
 
     /**
      * Set focus on first menu item conditionally
-     * irrespective of whether it's a keypress, or a mouse event
+     * depending on whether it's a keypress, or a mouse event
      * @type {() => void}
      */
-    const handleClickInside = useCallback(() => {
+    const handleClickInside = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
         setVisible(!visible);
+        // event.detail returns an integer, indicating how many clicks there were
+        // If it's 0, no click was made and onClick was fired by a keypress
+        const focusIndex = event.detail === 0 ? 0 : -1;
+        setInitialFocusIndex(focusIndex);
     }, [visible]);
 
     /**
