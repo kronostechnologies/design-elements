@@ -12974,8 +12974,8 @@ __metadata:
   linkType: hard
 
 "react-datepicker@npm:^4.11.0":
-  version: 4.14.0
-  resolution: "react-datepicker@npm:4.14.0"
+  version: 4.14.1
+  resolution: "react-datepicker@npm:4.14.1"
   dependencies:
     "@popperjs/core": ^2.9.2
     classnames: ^2.2.6
@@ -12986,7 +12986,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 11f40e81ece92eaf5feb08835515cacde202cd21be232a43cdec1026a962cb33157332c09d60af8e000c58669f5616a5a6094c3b7023ff0712da2348570fdc0f
+  checksum: 11ac8d66e964eaadf76b850afc49159f71209b3b3d03f371480bab599c7bbc443f332e6ec2fdb9d3d7e8169a74ab9cf0c13028bd1d6d9b2224a89fed2ff88f33
   languageName: node
   linkType: hard
 
