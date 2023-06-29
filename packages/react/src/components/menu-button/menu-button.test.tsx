@@ -52,6 +52,30 @@ describe('MenuButton', () => {
         expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
     });
 
+    it('should open menu when Space key is pressed', () => {
+        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+        getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Space' });
+        setTimeout(() => {
+            expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
+        }, 0);
+    });
+
+    it('should open menu when Enter key is pressed', () => {
+        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+        getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
+        setTimeout(() => {
+            expect(getByTestId(wrapper, 'menu').exists()).toBe(true);
+        });
+    });
+
+    it('should select menu child #0 if Enter is pressed', () => {
+        const wrapper = mountWithTheme(<MenuButton buttonType="primary" options={options}>Test</MenuButton>);
+        getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
+        setTimeout(() => {
+            expect(document.activeElement).toBe(getByTestId(wrapper, 'menu').getNodes()[0]);
+        });
+    });
+
     it('should be default open when defaultOpen prop is set to true', () => {
         const wrapper = mountWithTheme(
             <MenuButton buttonType="primary" defaultOpen options={options}>
