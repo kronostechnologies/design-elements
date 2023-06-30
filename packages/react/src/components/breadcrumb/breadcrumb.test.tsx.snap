@@ -23,6 +23,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -56,7 +57,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c3 svg {
+  height: 1rem;
   margin-right: var(--spacing-1x);
+  width: 1rem;
 }
 
 .c3:visited svg {
@@ -144,6 +147,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -177,7 +181,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c3 svg {
+  height: 1rem;
   margin-right: var(--spacing-1x);
+  width: 1rem;
 }
 
 .c3:visited svg {
@@ -324,6 +330,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -357,7 +364,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c3 svg {
+  height: 1rem;
   margin-right: var(--spacing-1x);
+  width: 1rem;
 }
 
 .c3:visited svg {
@@ -434,6 +443,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -467,7 +477,9 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c3 svg {
+  height: 1rem;
   margin-right: var(--spacing-1x);
+  width: 1rem;
 }
 
 .c3:visited svg {

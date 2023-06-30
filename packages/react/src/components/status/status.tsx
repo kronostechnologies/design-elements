@@ -27,9 +27,9 @@ const Circle = styled.div<{ type: StatusType }>`
     border: ${({ type, theme }) => (type === 'disabled' ? `1px solid ${theme.greys['dark-grey']}` : 'none')};
     border-radius: 50%;
     box-sizing: border-box;
-    height: 10px;
-    margin-right: calc(var(--spacing-base) * 1.5);
-    width: 10px;
+    height: 0.625rem;
+    margin-right: var(--spacing-1halfx);
+    width: 0.625rem;
 `;
 
 interface Props {

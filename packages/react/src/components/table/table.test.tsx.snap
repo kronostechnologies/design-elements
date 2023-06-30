@@ -51,7 +51,7 @@ exports[`Table has clickable rows styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -65,9 +65,9 @@ exports[`Table has clickable rows styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -187,7 +187,7 @@ exports[`Table has custom text alignment 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -201,9 +201,9 @@ exports[`Table has custom text alignment 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -328,7 +328,7 @@ exports[`Table has desktop styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -342,9 +342,9 @@ exports[`Table has desktop styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -492,7 +492,7 @@ exports[`Table has error rows styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -506,9 +506,9 @@ exports[`Table has error rows styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -625,7 +625,7 @@ exports[`Table has mobile styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 1rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -639,9 +639,9 @@ exports[`Table has mobile styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -758,7 +758,7 @@ exports[`Table has rowNumbers styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -772,9 +772,9 @@ exports[`Table has rowNumbers styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -916,11 +916,11 @@ exports[`Table has selectable rows styles 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c4:hover {
@@ -959,11 +959,16 @@ exports[`Table has selectable rows styles 1`] = `
 }
 
 .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: 16px;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1001,7 +1006,7 @@ exports[`Table has selectable rows styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -1015,9 +1020,9 @@ exports[`Table has selectable rows styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -1264,7 +1269,7 @@ exports[`Table has small rowSize styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -1278,9 +1283,9 @@ exports[`Table has small rowSize styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -1417,7 +1422,7 @@ exports[`Table has sorting styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -1431,9 +1436,9 @@ exports[`Table has sorting styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -1587,7 +1592,7 @@ exports[`Table has sticky column styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -1601,9 +1606,9 @@ exports[`Table has sticky column styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -1752,7 +1757,7 @@ exports[`Table has sticky header styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -1766,9 +1771,9 @@ exports[`Table has sticky header styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -1889,7 +1894,7 @@ exports[`Table has striped styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 0.875rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -1903,9 +1908,9 @@ exports[`Table has striped styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table
@@ -2022,7 +2027,7 @@ exports[`Table has tablet styles 1`] = `
 .c0 th,
 .c0 td {
   font-size: 1rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin: 0;
   text-align: left;
 }
@@ -2036,9 +2041,9 @@ exports[`Table has tablet styles 1`] = `
   box-sizing: border-box;
   color: #60666E;
   font-size: 0.75rem;
-  min-width: 40px;
+  min-width: var(--size-2halfx);
   text-align: center;
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <table

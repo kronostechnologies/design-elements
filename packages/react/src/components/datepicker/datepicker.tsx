@@ -184,14 +184,14 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
 
         .react-datepicker__day-name {
             font-size: 1rem;
-            line-height: 1.5rem;
-            width: var(--size-2halfx);
+            line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
+            width: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-2halfx)')};
         }
 
         .react-datepicker__day {
-            height: 40px;
-            line-height: 2.5rem;
-            width: var(--size-2halfx);
+            height: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-2halfx)')};
+            line-height: ${({ isMobile }) => (isMobile ? 2 : 2.5)}rem;
+            width: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-2halfx)')};
         }
     }
 
@@ -271,6 +271,11 @@ const CalendarButton = styled.button<CalendarButtonProps>`
         box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
         z-index: 10;
+    }
+
+    > svg {
+        height: var(--size-1x);
+        width: var(--size-1x);
     }
 `;
 

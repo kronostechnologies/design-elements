@@ -13,12 +13,12 @@ export const RadioInput = styled.span<RadioInputProps>`
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
-    height: ${({ isMobile }) => (isMobile ? 24 : 16)}px;
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     left: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: ${({ isMobile }) => (isMobile ? 24 : 16)}px;
+    width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 `;
 
 interface InputContainerProps {
@@ -115,13 +115,13 @@ export const Label = styled.label<LabelProps>`
 `;
 
 export const HiddenInput = styled.input<{ isMobile: boolean }>`
-    height: ${({ isMobile }) => (isMobile ? 24 : 16)}px;
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
     left: 0;
     margin: 0;
     opacity: 0;
     position: absolute;
-    top: 2px;
-    width: ${({ isMobile }) => (isMobile ? 24 : 16)}px;
+    top: 0.125rem;
+    width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 
     &:checked + ${RadioInput} {
         background-color: ${({ theme }) => theme.main['primary-1.1']};
@@ -131,12 +131,12 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
             background-color: ${({ theme }) => theme.greys.white};
             border-radius: 50%;
             content: "";
-            height: 8px;
+            height: var(--size-half);
             left: 50%;
             position: absolute;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 8px;
+            width: var(--size-half);
         }
     }
 `;

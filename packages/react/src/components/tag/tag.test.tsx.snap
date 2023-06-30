@@ -1,23 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-3x);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -54,31 +60,58 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
   class="c0 c1"
   type="button"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </button>
 `;
 
 exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
-.c3 {
-  border-radius: 50%;
-  cursor: pointer;
+.c2 {
   display: inline-block;
-  height: calc(24px - var(--spacing-1x) / 2);
-  margin-bottom: 1px;
-  margin-left: var(--spacing-1x);
-  padding: var(--spacing-half);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.c3:hover {
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-1halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  width: var(--size-1halfx);
+}
+
+.c4 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c4:hover {
   background-color: #dbdee1;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -90,24 +123,20 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
   margin-left: var(--spacing-1x);
 }
 
-.c1 .c2 {
+.c1 .c3 {
   margin-right: calc(-1 * var(--spacing-half));
 }
 
@@ -124,10 +153,14 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
   <button
     aria-label="deleteButtonAriaLabel"
-    class="c2 c3"
+    class="c3 c4"
     data-testid="Test-delete-button"
     type="button"
   >
@@ -146,10 +179,20 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
 .c2 {
   color: #60666e;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+.c3 {
   display: inline-block;
-  height: calc(24px - var(--spacing-1x) / 2);
-  margin-right: var(--spacing-1x);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -158,17 +201,13 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 12px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -198,28 +237,38 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
     role="img"
     width="12"
   />
-  Test
+  <span
+    class="c3"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -239,28 +288,38 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.875rem;
-  line-height: 1.875rem;
-  max-width: calc(312px / 0.875 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -280,28 +339,38 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-3x);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -338,31 +407,58 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
   class="c0 c1"
   type="button"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </button>
 `;
 
 exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
-.c3 {
-  border-radius: 50%;
-  cursor: pointer;
+.c2 {
   display: inline-block;
-  height: calc(24px - var(--spacing-1x) / 2);
-  margin-bottom: 1px;
-  margin-left: var(--spacing-1x);
-  padding: var(--spacing-half);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.c3:hover {
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-1halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  width: var(--size-1halfx);
+}
+
+.c4 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c4:hover {
   background-color: #dbdee1;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -374,24 +470,20 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
   margin-left: var(--spacing-1x);
 }
 
-.c1 .c2 {
+.c1 .c3 {
   margin-right: calc(-1 * var(--spacing-half));
 }
 
@@ -408,10 +500,14 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
   <button
     aria-label="deleteButtonAriaLabel"
-    class="c2 c3"
+    class="c3 c4"
     data-testid="Test-delete-button"
     type="button"
   >
@@ -430,10 +526,20 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
 .c2 {
   color: #60666e;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+.c3 {
   display: inline-block;
-  height: calc(24px - var(--spacing-1x) / 2);
-  margin-right: var(--spacing-1x);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -442,17 +548,13 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 12px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -482,28 +584,38 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
     role="img"
     width="12"
   />
-  Test
+  <span
+    class="c3"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -523,28 +635,38 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.875rem;
-  line-height: 1.875rem;
-  max-width: calc(312px / 0.875 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -564,28 +686,38 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -622,31 +754,58 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
   class="c0 c1"
   type="button"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </button>
 `;
 
 exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
-.c3 {
-  border-radius: 50%;
-  cursor: pointer;
+.c2 {
   display: inline-block;
-  height: calc(16px - var(--spacing-half) / 2);
-  margin-bottom: 1px;
-  margin-left: var(--spacing-1x);
-  padding: var(--spacing-half);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.c3:hover {
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-1halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  width: var(--size-1halfx);
+}
+
+.c4 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c4:hover {
   background-color: #dbdee1;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -658,24 +817,20 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-half);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
   margin-left: var(--spacing-1x);
 }
 
-.c1 .c2 {
+.c1 .c3 {
   margin-right: calc(-1 * var(--spacing-half));
 }
 
@@ -692,10 +847,14 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
   <button
     aria-label="deleteButtonAriaLabel"
-    class="c2 c3"
+    class="c3 c4"
     data-testid="Test-delete-button"
     type="button"
   >
@@ -714,10 +873,20 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
 .c2 {
   color: #60666e;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+.c3 {
   display: inline-block;
-  height: calc(16px - var(--spacing-half) / 2);
-  margin-right: var(--spacing-1x);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -726,17 +895,13 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-half);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 12px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -766,28 +931,38 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
     role="img"
     width="12"
   />
-  Test
+  <span
+    class="c3"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag small matches snapshot (desktop) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-half);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -807,28 +982,38 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag small matches snapshot (desktop) 2`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.875 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -848,28 +1033,38 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-2x);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -906,31 +1101,58 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
   class="c0 c1"
   type="button"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </button>
 `;
 
 exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
-.c3 {
-  border-radius: 50%;
-  cursor: pointer;
+.c2 {
   display: inline-block;
-  height: calc(16px - var(--spacing-half) / 2);
-  margin-bottom: 1px;
-  margin-left: var(--spacing-1x);
-  padding: var(--spacing-half);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.c3:hover {
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: var(--size-1halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: var(--spacing-half);
+  width: var(--size-1halfx);
+}
+
+.c4 > svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.c4:hover {
   background-color: #dbdee1;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -942,24 +1164,20 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-half);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 12px+var(--spacing-1x));
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
   margin-left: var(--spacing-1x);
 }
 
-.c1 .c2 {
+.c1 .c3 {
   margin-right: calc(-1 * var(--spacing-half));
 }
 
@@ -976,10 +1194,14 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
   <button
     aria-label="deleteButtonAriaLabel"
-    class="c2 c3"
+    class="c3 c4"
     data-testid="Test-delete-button"
     type="button"
   >
@@ -998,10 +1220,20 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
 .c2 {
   color: #60666e;
+  height: var(--size-1x);
+  margin-right: var(--spacing-half);
+  vertical-align: text-bottom;
+  width: var(--size-1x);
+}
+
+.c3 {
   display: inline-block;
-  height: calc(16px - var(--spacing-half) / 2);
-  margin-right: var(--spacing-1x);
-  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -1010,17 +1242,13 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-half);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 12px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -1050,28 +1278,38 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
     role="img"
     width="12"
   />
-  Test
+  <span
+    class="c3"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag small matches snapshot (mobile) 1`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius-half);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  max-width: calc(312px / 0.75 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-half);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -1091,28 +1329,38 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;
 
 exports[`Tag Tag small matches snapshot (mobile) 2`] = `
+.c2 {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 312px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #F1F2F2;
-  border: 1px solid #878f9a;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  max-width: calc(312px / 0.875 + 0px);
-  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #878f9a;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0 var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c0 + .c0 {
@@ -1132,6 +1380,10 @@ exports[`Tag Tag small matches snapshot (mobile) 2`] = `
 <span
   class="c0 c1"
 >
-  Test
+  <span
+    class="c2"
+  >
+    Test
+  </span>
 </span>
 `;

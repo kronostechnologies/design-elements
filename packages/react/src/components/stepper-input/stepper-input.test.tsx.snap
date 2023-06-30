@@ -90,6 +90,12 @@ input + .c1 {
   cursor: default;
 }
 
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -126,6 +132,11 @@ input + .c1 {
   border-color: #DBDEE1;
   color: #B7BBC2;
   cursor: default;
+}
+
+.c7 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {
@@ -400,6 +411,12 @@ input + .c1 {
   cursor: default;
 }
 
+.c9 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -436,6 +453,11 @@ input + .c1 {
   border-color: #DBDEE1;
   color: #B7BBC2;
   cursor: default;
+}
+
+.c10 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c6 {
@@ -853,6 +875,12 @@ input + .c1 {
   cursor: default;
 }
 
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -889,6 +917,11 @@ input + .c1 {
   border-color: #DBDEE1;
   color: #B7BBC2;
   cursor: default;
+}
+
+.c7 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {

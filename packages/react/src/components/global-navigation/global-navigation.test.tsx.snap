@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Global Navigation matches snapshot 1`] = `
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,25 +41,27 @@ exports[`Global Navigation matches snapshot 1`] = `
   user-select: none;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:not(:disabled) {
+.c2:not(:disabled) {
   cursor: pointer;
 }
 
-.c1 > svg {
+.c2 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
-.c2 {
+.c3 {
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
@@ -67,25 +69,30 @@ exports[`Global Navigation matches snapshot 1`] = `
   width: var(--size-2x);
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:hover,
-.c2[aria-expanded="true"] {
+.c3:hover,
+.c3[aria-expanded="true"] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
 
-.c2:disabled {
+.c3:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+}
+
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c0 {
@@ -104,20 +111,20 @@ exports[`Global Navigation matches snapshot 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 72px;
+  width: var(--size-4halfx);
 }
 
-.c4 {
+.c5 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c4 > li:first-child > :first-child {
+.c5 > li:first-child > :first-child {
   padding-top: var(--spacing-1x);
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -134,31 +141,31 @@ exports[`Global Navigation matches snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: var(--size-3halfx);
   padding: var(--spacing-half) var(--spacing-1x);
-  width: 72px;
+  width: var(--size-4halfx);
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #DBDEE1;
   color: #000000;
 }
 
-.c5 {
+.c6 {
   position: relative;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -178,18 +185,33 @@ exports[`Global Navigation matches snapshot 1`] = `
   text-decoration: none;
 }
 
-.c7.active {
+.c8.active {
   background-color: #E0F0F9;
   color: #000000;
 }
 
-.c8 {
-  font-size: 0.6875rem;
-  line-height: 1.25rem;
-  text-align: center;
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c9 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c10 {
   background-color: #D9DDE2;
   border: 0;
   height: 1px;
@@ -197,10 +219,10 @@ exports[`Global Navigation matches snapshot 1`] = `
   width: 40px;
 }
 
-.c3 {
-  height: 40px;
+.c4 {
+  height: var(--size-2halfx);
   margin: var(--spacing-2x);
-  width: 40px;
+  width: var(--size-2halfx);
 }
 
 <div
@@ -209,10 +231,12 @@ exports[`Global Navigation matches snapshot 1`] = `
   <div
     class="c0"
   >
-    <div>
+    <div
+      class="c1"
+    >
       <button
         aria-label="add"
-        class="c1 c2 c3"
+        class="c2 c3 c4"
         data-testid="core-action-button"
         type="button"
       >
@@ -228,13 +252,13 @@ exports[`Global Navigation matches snapshot 1`] = `
         aria-label="App Navigation"
       >
         <ul
-          class="c4"
+          class="c5"
         >
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="home-home-link"
               href="/test1"
             >
@@ -246,17 +270,17 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 home
               </span>
             </a>
           </li>
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="edit-edit-link"
               href="/test2"
             >
@@ -268,17 +292,17 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 edit
               </span>
             </a>
           </li>
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="map-mapPin-link"
               href="/test3"
             >
@@ -290,17 +314,17 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 map
               </span>
             </a>
           </li>
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="mail-mail-link"
               href="/test4"
             >
@@ -312,17 +336,17 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 mail
               </span>
             </a>
           </li>
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="phone-phone-link"
               href="/test5"
             >
@@ -334,7 +358,7 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 phone
               </span>
@@ -345,19 +369,19 @@ exports[`Global Navigation matches snapshot 1`] = `
     </div>
     <div>
       <hr
-        class="c9"
+        class="c10"
       />
       <nav
         aria-label="App Navigation"
       >
         <ul
-          class="c4"
+          class="c5"
         >
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="info-info-link"
               href="/test6"
             >
@@ -369,17 +393,17 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 info
               </span>
             </a>
           </li>
           <li
-            class="c5"
+            class="c6"
           >
             <a
-              class="c6 c7"
+              class="c7 c8"
               data-testid="help-helpCircle-link"
               href="/test7"
             >
@@ -391,7 +415,7 @@ exports[`Global Navigation matches snapshot 1`] = `
                 width="20"
               />
               <span
-                class="c8"
+                class="c9"
               >
                 help
               </span>

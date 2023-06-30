@@ -30,12 +30,12 @@ const StyledButtonSpan = styled.span<StyledButtonSpanProps>`
     background: ${({ theme }) => theme.greys.white};
     border-radius: 100%;
     box-sizing: border-box;
-    height: ${({ isMobile }) => (isMobile ? 22 : 16)}px;
+    height: ${({ isMobile }) => (isMobile ? 1.375 : 1)}rem;
     position: absolute;
-    right: calc(100% - ${({ isMobile }) => (isMobile ? 26 : 19)}px);
+    right: calc(100% - ${({ isMobile }) => (isMobile ? 1.625 : 1.1875)}rem);
     top: 50%;
     transform: translateY(-50%);
-    width: ${({ isMobile }) => (isMobile ? 22 : 16)}px;
+    width: ${({ isMobile }) => (isMobile ? 1.375 : 1)}rem;
 `;
 
 interface StyledButtonProps {
@@ -50,11 +50,11 @@ const StyledButton = styled.button<StyledButtonProps>`
 
     background: ${({ theme }) => theme.notifications['success-1.1']};
     border: 1px solid ${({ theme }) => theme.notifications['success-1.1']};
-    border-radius: ${({ isMobile }) => (isMobile ? 16 : 12)}px;
-    height: ${({ isMobile }) => (isMobile ? 32 : 24)}px;
+    border-radius: ${({ isMobile }) => (isMobile ? 1 : 0.75)}rem;
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     position: relative;
     vertical-align: middle;
-    width: ${({ isMobile }) => (isMobile ? 48 : 36)}px;
+    width: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2halfx)')};
 
     &[aria-checked="false"] {
         background: ${({ theme }) => theme.greys['mid-grey']};

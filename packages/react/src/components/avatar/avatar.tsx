@@ -26,28 +26,28 @@ function getSpecificSizeStyle({ size, isMobile }: SizeStyleProps): FlattenInterp
         case 'xsmall':
             return css`
                 font-size: ${(isMobile ? '0.75' : '0.625')}rem;
-                height: ${(isMobile ? '32' : '24')}px;
+                height: ${(isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
                 letter-spacing: ${(isMobile ? '0.013' : '0.011')}rem;
-                width: ${(isMobile ? '32' : '24')}px;
+                width: ${(isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
             `;
         case 'small':
             return css`
                 font-size: ${(isMobile ? '0.875' : '0.75')}rem;
-                height: ${(isMobile ? '40' : '32')}px;
+                height: ${(isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
                 letter-spacing: ${(isMobile ? '0.014' : '0.013')}rem;
-                width: ${(isMobile ? '40' : '32')}px;
+                width: ${(isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
             `;
         case 'medium':
             return css`
                 font-size: 1rem;
-                height: 48px;
-                width: 48px;
+                height: var(--size-3x);
+                width: var(--size-3x);
             `;
         case 'large':
             return css`
                 font-size: 1.5rem;
-                height: ${(isMobile ? '72' : '80')}px;
-                width: ${(isMobile ? '72' : '80')}px;
+                height: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
+                width: ${(isMobile ? 'var(--size-4halfx)' : 'var(--size-5x)')};
             `;
     }
 }

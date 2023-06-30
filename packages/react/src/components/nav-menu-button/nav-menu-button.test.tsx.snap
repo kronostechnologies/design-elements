@@ -57,6 +57,8 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c2 {
@@ -319,6 +321,8 @@ exports[`NavMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c2 {
@@ -582,6 +586,8 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c2 {

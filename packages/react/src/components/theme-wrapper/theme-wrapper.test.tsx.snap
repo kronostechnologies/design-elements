@@ -57,6 +57,8 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 
 .c0 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c1 {
@@ -149,6 +151,8 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 
 .c0 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c1 {

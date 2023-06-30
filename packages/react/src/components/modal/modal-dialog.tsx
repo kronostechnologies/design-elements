@@ -44,10 +44,13 @@ const HeadingWrapper = styled.div`
 `;
 
 const TitleIcon = styled(Icon)`
-    left: -32px;
-    margin-top: calc(var(--spacing-half) * 1.5);
-    position: absolute;
-    top: 0;
+    margin-right: var(--spacing-1x);
+`;
+
+const StyledHeadingWrapperComponent = styled(HeadingWrapper)`
+    align-items: center;
+    display: flex;
+    margin-left: calc(-1 * var(--spacing-4x));
 `;
 
 export interface ModalDialogProps {
@@ -117,7 +120,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     }
 
     function getHeader(): ReactElement | undefined {
-        const HeadingWrapperComponent = hasTitleIcon ? HeadingWrapper : Fragment;
+        const HeadingWrapperComponent = hasTitleIcon ? StyledHeadingWrapperComponent : Fragment;
 
         if (title || subtitle) {
             return (

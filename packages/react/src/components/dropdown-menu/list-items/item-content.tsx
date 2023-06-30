@@ -61,7 +61,7 @@ const getFontSize = ({ $smallLabel, $device: { isTablet, isMobile } }: LabelCont
     return (isTablet || isMobile) ? '1rem' : '0.875rem';
 };
 
-const LabelContainer = styled.span<{ $smallLabel: boolean, $device: DeviceContextProps }>`
+const LabelContainer = styled.div<{ $smallLabel: boolean, $device: DeviceContextProps }>`
     align-items: center;
     display: flex;
     flex-flow: row wrap;

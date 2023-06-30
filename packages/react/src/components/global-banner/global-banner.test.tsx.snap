@@ -57,6 +57,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c8 {
@@ -125,7 +127,7 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
+  padding: var(--spacing-1x) var(--spacing-2x);
   position: relative;
 }
 
@@ -142,18 +144,23 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: var(--spacing-1x);
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
-  left: calc(var(--spacing-3x) * -1);
-  position: absolute;
-  top: var(--spacing-half);
+  height: var(--size-1x);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1x);
+}
+
+.c2 {
+  -webkit-align-self: initial;
+  -ms-flex-item-align: initial;
+  align-self: initial;
 }
 
 .c3 {
@@ -181,15 +188,12 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-top: var(--spacing-1x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: unset;
 }
 
-.c6 * + * {
+.c6 > button {
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -296,6 +300,8 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c8 {
@@ -397,7 +403,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
+  padding: var(--spacing-1x) var(--spacing-2x);
   position: relative;
 }
 
@@ -414,18 +420,23 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: var(--spacing-1x);
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
-  left: calc(var(--spacing-3x) * -1);
-  position: absolute;
-  top: var(--spacing-half);
+  height: var(--size-1x);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1x);
+}
+
+.c2 {
+  -webkit-align-self: initial;
+  -ms-flex-item-align: initial;
+  align-self: initial;
 }
 
 .c3 {
@@ -461,15 +472,12 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-top: var(--spacing-1x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: unset;
 }
 
-.c6 * + * {
+.c6 > button {
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -583,6 +591,8 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c8 {
@@ -684,7 +694,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
+  padding: var(--spacing-1x) var(--spacing-2x);
   position: relative;
 }
 
@@ -701,18 +711,23 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: var(--spacing-1x);
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
-  left: calc(var(--spacing-3x) * -1);
-  position: absolute;
-  top: var(--spacing-half);
+  height: var(--size-1x);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1x);
+}
+
+.c2 {
+  -webkit-align-self: initial;
+  -ms-flex-item-align: initial;
+  align-self: initial;
 }
 
 .c3 {
@@ -748,15 +763,12 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-top: var(--spacing-1x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: unset;
 }
 
-.c6 * + * {
+.c6 > button {
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -870,6 +882,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c8 {
@@ -971,7 +985,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   -ms-letter-spacing: 0.0125rem;
   letter-spacing: 0.0125rem;
   line-height: 1.5rem;
-  padding: 0 var(--spacing-2x) var(--spacing-1x) var(--spacing-5x);
+  padding: var(--spacing-1x) var(--spacing-2x);
   position: relative;
 }
 
@@ -988,18 +1002,23 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: var(--spacing-1x);
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
-  left: calc(var(--spacing-3x) * -1);
-  position: absolute;
-  top: var(--spacing-half);
+  height: var(--size-1x);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1x);
+}
+
+.c2 {
+  -webkit-align-self: initial;
+  -ms-flex-item-align: initial;
+  align-self: initial;
 }
 
 .c3 {
@@ -1047,15 +1066,12 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-top: var(--spacing-1x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: unset;
 }
 
-.c6 * + * {
+.c6 > button {
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <section
@@ -1169,6 +1185,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c8 {
@@ -1237,7 +1255,7 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  padding: var(--spacing-1halfx);
   position: relative;
 }
 
@@ -1257,15 +1275,20 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   -webkit-justify-content: unset;
   -ms-flex-pack: unset;
   justify-content: unset;
-  margin-top: 0;
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
+  height: var(--size-1halfx);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
+}
+
+.c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -1296,14 +1319,11 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-top: var(--spacing-3x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: 100%;
 }
 
-.c6 * + * {
+.c6 > button {
+  margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
@@ -1411,6 +1431,8 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c8 {
@@ -1512,7 +1534,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  padding: var(--spacing-1halfx);
   position: relative;
 }
 
@@ -1532,15 +1554,20 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   -webkit-justify-content: unset;
   -ms-flex-pack: unset;
   justify-content: unset;
-  margin-top: 0;
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
+  height: var(--size-1halfx);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
+}
+
+.c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -1579,14 +1606,11 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-top: var(--spacing-3x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: 100%;
 }
 
-.c6 * + * {
+.c6 > button {
+  margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
@@ -1701,6 +1725,8 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c8 {
@@ -1802,7 +1828,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  padding: var(--spacing-1halfx);
   position: relative;
 }
 
@@ -1822,15 +1848,20 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -webkit-justify-content: unset;
   -ms-flex-pack: unset;
   justify-content: unset;
-  margin-top: 0;
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
+  height: var(--size-1halfx);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
+}
+
+.c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -1869,14 +1900,11 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-top: var(--spacing-3x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: 100%;
 }
 
-.c6 * + * {
+.c6 > button {
+  margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 
@@ -1991,6 +2019,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 
 .c7 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c8 {
@@ -2092,7 +2122,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   -ms-letter-spacing: 0.02875rem;
   letter-spacing: 0.02875rem;
   line-height: 1.5rem;
-  padding: var(--spacing-3x) var(--spacing-2x) var(--spacing-2x);
+  padding: var(--spacing-1halfx);
   position: relative;
 }
 
@@ -2112,15 +2142,20 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   -webkit-justify-content: unset;
   -ms-flex-pack: unset;
   justify-content: unset;
-  margin-top: 0;
+  padding-left: var(--spacing-4x);
   position: relative;
 }
 
-.c2 {
+.c1 > svg {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-right: var(--spacing-1x);
+  height: var(--size-1halfx);
+  margin: 0 var(--spacing-1x) 0 calc(-1 * var(--spacing-4x));
+  width: var(--size-1halfx);
+}
+
+.c2 {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -2171,14 +2206,11 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-top: var(--spacing-3x);
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   width: 100%;
 }
 
-.c6 * + * {
+.c6 > button {
+  margin-left: 0;
   margin-top: var(--spacing-1x);
 }
 

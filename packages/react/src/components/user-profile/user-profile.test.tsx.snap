@@ -57,6 +57,8 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -78,12 +80,12 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.625rem;
-  height: 24px;
+  height: var(--size-1halfx);
   -webkit-letter-spacing: 0.011rem;
   -moz-letter-spacing: 0.011rem;
   -ms-letter-spacing: 0.011rem;
   letter-spacing: 0.011rem;
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
@@ -363,7 +365,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
       <li
         class="c10"
       >
-        <span
+        <div
           class="c11"
         >
           <div
@@ -375,7 +377,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
               Test Button
             </span>
           </div>
-        </span>
+        </div>
       </li>
     </ul>
     <ul
@@ -390,7 +392,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
           href="/testa"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -402,7 +404,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
                 Option A
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -414,7 +416,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
           href="/testb"
           tabindex="-1"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -426,7 +428,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
                 Option B
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -437,7 +439,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
           href="/testc"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -449,7 +451,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
                 Option C
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -460,7 +462,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
           href="/testd"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -472,7 +474,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
                 Option D
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
     </ul>
@@ -537,6 +539,8 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -558,12 +562,12 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.625rem;
-  height: 24px;
+  height: var(--size-1halfx);
   -webkit-letter-spacing: 0.011rem;
   -moz-letter-spacing: 0.011rem;
   -ms-letter-spacing: 0.011rem;
   letter-spacing: 0.011rem;
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
@@ -844,7 +848,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
       <li
         class="c10"
       >
-        <span
+        <div
           class="c11"
         >
           <div
@@ -856,7 +860,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
               Test Button
             </span>
           </div>
-        </span>
+        </div>
       </li>
     </ul>
     <ul
@@ -871,7 +875,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
           href="/testa"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -883,7 +887,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
                 Option A
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -895,7 +899,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
           href="/testb"
           tabindex="-1"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -907,7 +911,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
                 Option B
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -918,7 +922,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
           href="/testc"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -930,7 +934,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
                 Option C
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -941,7 +945,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
           href="/testd"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -953,7 +957,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
                 Option D
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
     </ul>
@@ -1018,6 +1022,8 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
 }
 
 .c3 {
@@ -1055,6 +1061,11 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   color: #FFFFFF;
 }
 
+.c3 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
 .c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1074,12 +1085,12 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.75rem;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-letter-spacing: 0.013rem;
   -moz-letter-spacing: 0.013rem;
   -ms-letter-spacing: 0.013rem;
   letter-spacing: 0.013rem;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c6 {
@@ -1315,7 +1326,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
       <li
         class="c9"
       >
-        <span
+        <div
           class="c10"
         >
           <div
@@ -1327,7 +1338,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
               Test Button
             </span>
           </div>
-        </span>
+        </div>
       </li>
     </ul>
     <ul
@@ -1342,7 +1353,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
           href="/testa"
           tabindex="0"
         >
-          <span
+          <div
             class="c14"
           >
             <div
@@ -1354,7 +1365,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
                 Option A
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1366,7 +1377,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
           href="/testb"
           tabindex="-1"
         >
-          <span
+          <div
             class="c14"
           >
             <div
@@ -1378,7 +1389,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
                 Option B
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1389,7 +1400,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
           href="/testc"
           tabindex="0"
         >
-          <span
+          <div
             class="c14"
           >
             <div
@@ -1401,7 +1412,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
                 Option C
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1412,7 +1423,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
           href="/testd"
           tabindex="0"
         >
-          <span
+          <div
             class="c14"
           >
             <div
@@ -1424,7 +1435,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
                 Option D
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
     </ul>
@@ -1489,6 +1500,8 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c4 {
@@ -1510,12 +1523,12 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   justify-content: center;
   text-transform: capitalize;
   font-size: 0.625rem;
-  height: 24px;
+  height: var(--size-1halfx);
   -webkit-letter-spacing: 0.011rem;
   -moz-letter-spacing: 0.011rem;
   -ms-letter-spacing: 0.011rem;
   letter-spacing: 0.011rem;
-  width: 24px;
+  width: var(--size-1halfx);
 }
 
 .c2 {
@@ -1796,7 +1809,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
       <li
         class="c10"
       >
-        <span
+        <div
           class="c11"
         >
           <div
@@ -1808,7 +1821,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
               Test Button
             </span>
           </div>
-        </span>
+        </div>
       </li>
     </ul>
     <ul
@@ -1823,7 +1836,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
           href="/testa"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -1835,7 +1848,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
                 Option A
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1847,7 +1860,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
           href="/testb"
           tabindex="-1"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -1859,7 +1872,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
                 Option B
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1870,7 +1883,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
           href="/testc"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -1882,7 +1895,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
                 Option C
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1893,7 +1906,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
           href="/testd"
           tabindex="0"
         >
-          <span
+          <div
             class="c15"
           >
             <div
@@ -1905,7 +1918,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
                 Option D
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
     </ul>

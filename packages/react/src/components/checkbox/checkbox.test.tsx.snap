@@ -28,11 +28,11 @@ exports[`Checkbox matches snapshot 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c3:hover {
@@ -71,11 +71,16 @@ exports[`Checkbox matches snapshot 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -99,7 +104,6 @@ exports[`Checkbox matches snapshot 1`] = `
     <label
       className="c0"
     >
-      Boat
       <styled.input
         name="vehicule"
         type="checkbox"
@@ -150,6 +154,7 @@ exports[`Checkbox matches snapshot 1`] = `
           </Styled(Icon)>
         </span>
       </styled.span>
+      Boat
     </label>
   </styled.label>
 </Checkbox>

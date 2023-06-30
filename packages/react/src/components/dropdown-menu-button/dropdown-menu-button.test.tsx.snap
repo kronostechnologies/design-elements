@@ -57,6 +57,8 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c13 {
@@ -71,6 +73,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -115,6 +118,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -158,8 +162,10 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c14 {
@@ -459,7 +465,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
           href="/testA"
           tabindex="0"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -471,7 +477,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
                 optionA
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -482,7 +488,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
           href="/testB"
           tabindex="0"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -494,7 +500,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
                 optionB
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -505,7 +511,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
           href="/testC"
           tabindex="0"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -517,7 +523,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
                 optionC
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -529,7 +535,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
           href="/testD"
           tabindex="-1"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -541,7 +547,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
                 optionD
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
     </ul>
@@ -727,6 +733,8 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 
 .c1 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c13 {
@@ -741,6 +749,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -785,6 +794,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -828,8 +838,10 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c14 {
@@ -1130,7 +1142,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
           href="/testA"
           tabindex="0"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -1142,7 +1154,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
                 optionA
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1153,7 +1165,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
           href="/testB"
           tabindex="0"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -1165,7 +1177,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
                 optionB
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1176,7 +1188,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
           href="/testC"
           tabindex="0"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -1188,7 +1200,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
                 optionC
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
       <li>
@@ -1200,7 +1212,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
           href="/testD"
           tabindex="-1"
         >
-          <span
+          <div
             class="c9"
           >
             <div
@@ -1212,7 +1224,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
                 optionD
               </span>
             </div>
-          </span>
+          </div>
         </a>
       </li>
     </ul>

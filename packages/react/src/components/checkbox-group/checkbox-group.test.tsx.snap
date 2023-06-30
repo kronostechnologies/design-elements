@@ -41,11 +41,11 @@ exports[`Checkbox Matches the snapshot 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c3:hover {
@@ -84,11 +84,16 @@ exports[`Checkbox Matches the snapshot 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -103,7 +108,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
 <label
     class="c0"
   >
-    Boat
     <input
       class="c1"
       data-testid="checkboxGroup-boat"
@@ -129,6 +133,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
         width="24"
       />
     </span>
+    Boat
   </label>,
   .c5 {
   color: #FFFFFF;
@@ -157,11 +162,11 @@ exports[`Checkbox Matches the snapshot 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c3:hover {
@@ -200,11 +205,16 @@ exports[`Checkbox Matches the snapshot 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -219,7 +229,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
 <label
     class="c0"
   >
-    Plane
     <input
       checked=""
       class="c1"
@@ -246,6 +255,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
         width="24"
       />
     </span>
+    Plane
   </label>,
   .c5 {
   color: #FFFFFF;
@@ -274,11 +284,11 @@ exports[`Checkbox Matches the snapshot 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c3:hover {
@@ -317,11 +327,16 @@ exports[`Checkbox Matches the snapshot 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: default;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -337,7 +352,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
     class="c0"
     disabled=""
   >
-    Car
     <input
       class="c1"
       data-testid="checkboxGroup-car"
@@ -365,6 +379,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
         width="24"
       />
     </span>
+    Car
   </label>,
   .c5 {
   color: #FFFFFF;
@@ -393,11 +408,11 @@ exports[`Checkbox Matches the snapshot 1`] = `
   border-radius: var(--border-radius);
   box-sizing: border-box;
   display: inline-block;
-  height: 16px;
+  height: var(--size-1x);
   left: 0;
-  position: absolute;
-  top: 4px;
-  width: 16px;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
 }
 
 .c3:hover {
@@ -436,11 +451,16 @@ exports[`Checkbox Matches the snapshot 1`] = `
 }
 
 .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 1.5rem;
-  min-height: 24px;
-  padding-left: var(--spacing-3x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -455,7 +475,6 @@ exports[`Checkbox Matches the snapshot 1`] = `
 <label
     class="c0"
   >
-    Bike
     <input
       class="c1"
       data-testid="checkboxGroup-bike"
@@ -481,6 +500,7 @@ exports[`Checkbox Matches the snapshot 1`] = `
         width="24"
       />
     </span>
+    Bike
   </label>,
 ]
 `;

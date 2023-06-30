@@ -75,7 +75,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -83,7 +83,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
   line-height: 2rem;
   margin: 0 auto 0.625rem;
   text-align: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c3 > span {
@@ -242,7 +242,7 @@ exports[`Progress Component Snapshots without labels 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 32px;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -250,7 +250,7 @@ exports[`Progress Component Snapshots without labels 1`] = `
   line-height: 2rem;
   margin: 0 auto 0.625rem;
   text-align: center;
-  width: 32px;
+  width: var(--size-2x);
 }
 
 .c3 > span {

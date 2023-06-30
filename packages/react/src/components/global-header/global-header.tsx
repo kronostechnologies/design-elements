@@ -22,7 +22,7 @@ const Header = styled.header<{ device: DeviceType }>`
     background: ${(props) => props.theme.main['primary-2']};
     box-sizing: border-box;
     display: flex;
-    height: ${({ device }) => (device === 'desktop' ? 48 : 56)}px;
+    height: ${({ device }) => (device === 'desktop' ? 'var(--size-3x)' : 'var(--size-3halfx)')};
     justify-content: space-between;
     padding: ${({ device }) => getPadding(device)};
     position: relative;

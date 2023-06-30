@@ -67,6 +67,11 @@ const getButtonSizeStyles = (
 const StyledButton = styled(AbstractButton)`
     ${getButtonTypeStyles};
     ${getButtonSizeStyles};
+
+    > svg {
+        height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+        width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    }
 `;
 
 export const IconButton = forwardRef(({

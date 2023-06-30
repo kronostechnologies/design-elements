@@ -87,14 +87,12 @@ function getToastPosition({ position }: ToastWrapperProps): FlattenInterpolation
 }
 
 const ToastWrapper = styled.div<ToastWrapperProps>`
-    align-items: flex-start;
+    align-items: center;
     border-radius: var(--border-radius);
     box-shadow: 0 16px 32px 0 rgb(0 0 0 / 5%);
     box-sizing: border-box;
     display: flex;
-    flex: 1;
-    min-height: ${({ isMobile }) => (isMobile ? '72px' : '56px')};
-    padding: ${({ isMobile }) => (isMobile ? 'calc(2.5 * var(--spacing-1x))' : 'var(--spacing-2x)')};
+    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-2halfx)' : 'var(--spacing-2x)')};
     transition: 0.3s ease;
     width: ${({ isMobile }) => (isMobile ? '100vw' : '400px')};
 
@@ -107,10 +105,7 @@ const StyledMessage = styled.p<{ color: string, $isMobile: boolean }>`
     flex: 1;
     font-size: ${({ $isMobile }) => ($isMobile ? 1.125 : 1)}rem;
     line-height: ${({ $isMobile }) => ($isMobile ? 1.75 : 1.5)}rem;
-    margin: 0;
-    padding-left: var(--spacing-2x);
-    padding-right: var(--spacing-4x);
-    position: relative;
+    margin: 0 var(--spacing-1halfx);
 `;
 
 type DismissIconProps = ThemedStyledProps<Pick<IconButtonProps, 'label' | 'onClick'>, Theme> & {
@@ -145,11 +140,7 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
 }
 
 function getDismissIconMarginTop({ $isMobile }: DismissIconProps): string {
-    return $isMobile ? 'calc(-1.5 * var(--spacing-1x))' : 'calc(-1 * var(--spacing-half))';
-}
-
-function getDismissIconRight({ $isMobile }: DismissIconProps): string {
-    return $isMobile ? 'calc(-1.5 * var(--spacing-1x))' : '0';
+    return $isMobile ? 'calc(-1 * var(--spacing-1x))' : 'calc(-1 * var(--spacing-half))';
 }
 
 const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButtonProps>>({
@@ -158,10 +149,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
 })<DismissIconProps>`
     align-self: flex-start;
     color: ${({ $color }) => $color};
-    margin-top: ${getDismissIconMarginTop};
-    position: absolute;
-    right: ${getDismissIconRight};
-    top: ${({ $isMobile }) => ($isMobile ? '3px' : '0')};
+    margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 
     &:focus {
         box-shadow: 0 0 0 2px ${({ theme }) => theme.main['primary-1.2']};
@@ -190,7 +178,10 @@ const MessageIcon = styled(Icon).attrs(({ type }: MessageIconProps) => ({
     focusable: true,
     'aria-label': getMessageLabel(type),
 }))<MessageIconProps>`
-    height: ${({ isMobile }) => (isMobile ? '28px' : '24px')};
+    align-self: flex-start;
+    height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
+    margin-top: 0.25rem;
+    width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 `;
 
 function getToastIconName(type: ToastType): IconName {
@@ -234,18 +225,18 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
 
     return (
         <ToastWrapper isMobile={isMobile} className={className} type={type} position={position} role="status">
-            <MessageIcon name={toastIconName} color={toastTextColor} size="20" type={type} isMobile={isMobile} />
+            <MessageIcon name={toastIconName} color={toastTextColor} size="16" type={type} isMobile={isMobile} />
             <StyledMessage color={toastTextColor} $isMobile={isMobile}>
                 {message}
-                <DismissIcon
-                    label={t('dismissButtonLabel')}
-                    $color={toastTextColor}
-                    $isMobile={isMobile}
-                    $type={type}
-                    onClick={() => removeToast(id)}
-                    data-testid="dismiss"
-                />
             </StyledMessage>
+            <DismissIcon
+                label={t('dismissButtonLabel')}
+                $color={toastTextColor}
+                $isMobile={isMobile}
+                $type={type}
+                onClick={() => removeToast(id)}
+                data-testid="dismiss"
+            />
         </ToastWrapper>
     );
 };

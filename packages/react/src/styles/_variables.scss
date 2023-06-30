@@ -10,6 +10,7 @@
   --spacing-1x: var(--spacing-base);
   --spacing-1halfx: calc(1.5 * var(--spacing-base));
   --spacing-2x: calc(2 * var(--spacing-base));
+  --spacing-2halfx: calc(2.5 * var(--spacing-base));
   --spacing-3x: calc(3 * var(--spacing-base));
   --spacing-4x: calc(4 * var(--spacing-base));
   --spacing-5x: calc(5 * var(--spacing-base));
@@ -23,9 +24,14 @@
   --border-radius-4x: calc(4 * var(--border-radius));
     // var for heights 
   --size-base: 1rem;
+  --size-half: calc(0.5 * var(--size-base));
   --size-1x: var(--size-base);
   --size-1halfx: calc(1.5 * var(--size-base));
   --size-2x: calc(2 * var(--size-base));
   --size-2halfx: calc(2.5 * var(--size-base));
   --size-3x: calc(3 * var(--size-base));
+  --size-3halfx: calc(3.5 * var(--size-base));
+  --size-4x: calc(4 * var(--size-base));
+  --size-4halfx: calc(4.5 * var(--size-base));
+  --size-5x: calc(5 * var(--size-base));
 }

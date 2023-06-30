@@ -57,6 +57,8 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {
@@ -94,6 +96,11 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #FFFFFF;
 }
 
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c4 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -128,6 +135,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -172,6 +180,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -215,8 +224,10 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c19 {
@@ -522,7 +533,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -534,7 +545,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
                 Option A
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -561,7 +572,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -573,7 +584,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
                 Option B
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -599,7 +610,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -611,7 +622,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
                 Option C
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -637,7 +648,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -649,7 +660,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
                 Option D
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -687,7 +698,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -699,7 +710,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
                 Option E
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -725,7 +736,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -737,7 +748,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
                 Option F
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -878,6 +889,8 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {
@@ -915,6 +928,11 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #FFFFFF;
 }
 
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c4 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -949,6 +967,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -993,6 +1012,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1036,8 +1056,10 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c19 {
@@ -1343,7 +1365,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -1355,7 +1377,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
                 Option A
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -1382,7 +1404,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -1394,7 +1416,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
                 Option B
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -1420,7 +1442,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -1432,7 +1454,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
                 Option C
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -1458,7 +1480,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -1470,7 +1492,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
                 Option D
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -1611,6 +1633,8 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c2 > svg {
   color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c3 {
@@ -1648,6 +1672,11 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   color: #FFFFFF;
 }
 
+.c3 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
 .c4 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -1682,6 +1711,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1726,6 +1756,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1769,8 +1800,10 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  height: 1rem;
   margin-left: var(--spacing-half);
   margin-right: 0;
+  width: 1rem;
 }
 
 .c19 {
@@ -2076,7 +2109,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -2088,7 +2121,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
                 Option A
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -2115,7 +2148,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -2127,7 +2160,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
                 Option B
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -2153,7 +2186,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -2165,7 +2198,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
                 Option C
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"
@@ -2191,7 +2224,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
             height="22"
             width="22"
           />
-          <span
+          <div
             class="c13"
           >
             <div
@@ -2203,7 +2236,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
                 Option D
               </span>
             </div>
-          </span>
+          </div>
           <span
             class="c16"
             data-testid="screen-reader-text"

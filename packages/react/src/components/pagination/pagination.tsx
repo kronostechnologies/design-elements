@@ -18,17 +18,17 @@ const Pages = styled.ol`
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     align-items: center;
     background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
-    border-radius: 16px;
+    border-radius: 1rem;
     box-sizing: border-box;
     color: ${(props) => (props.isSelected ? props.theme.greys.white : props.theme.greys.black)};
     display: inline-flex;
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
-    height: ${(props) => (props.isMobile ? 32 : 24)}px;
+    height: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     justify-content: center;
-    line-height: ${(props) => (props.isMobile ? 32 : 24)}px;
+    line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
-    min-width: ${(props) => (props.isMobile ? 32 : 24)}px;
+    min-width: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     padding: 0 var(--spacing-1x);
     text-align: center;
 
@@ -74,9 +74,9 @@ const Container = styled.div<{ isMobile: boolean }>`
 
 const ResultsLabel = styled.div<{ isMobile: boolean }>`
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
-    line-height: ${(props) => (props.isMobile ? 32 : 24)}px;
-    margin-bottom: ${(props) => (props.isMobile ? '12px' : 0)};
-    margin-right: ${(props) => (props.isMobile ? 0 : '24px')};
+    line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
+    margin-bottom: ${(props) => (props.isMobile ? 'var(--spacing-1halfx)' : 0)};
+    margin-right: ${(props) => (props.isMobile ? 0 : 'var(--spacing-3x)')};
     white-space: nowrap;
 `;
 

@@ -22,7 +22,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
-    min-height: ${({ $isMobile }) => ($isMobile ? 56 : 48)}px;
+    min-height: ${({ $isMobile }) => ($isMobile ? 'var(--size-3halfx)' : 'var(--size-3x)')};
     min-width: 82px;
     padding: 0 var(--spacing-2x);
     position: relative;
@@ -74,14 +74,18 @@ const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
 
 const LeftIcon = styled(Icon)<IsSelected>`
     color: ${({ theme }) => theme.greys.black};
+    height: 1rem;
     min-width: fit-content;
     padding-right: var(--spacing-half);
+    width: 1rem;
 `;
 
 const RightIcon = styled(Icon)<IsSelected>`
     color: ${({ theme }) => theme.greys.black};
+    height: 1rem;
     min-width: fit-content;
     padding-left: var(--spacing-half);
+    width: 1rem;
 `;
 
 interface TabButtonProps {

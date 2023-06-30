@@ -40,6 +40,8 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  height: 1rem;
+  width: 1rem;
 }
 
 .c5 {
@@ -139,6 +141,8 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  height: 1rem;
+  width: 1rem;
 }
 
 .c5 {
@@ -230,6 +234,8 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  height: 1rem;
+  width: 1rem;
 }
 
 .c5 {

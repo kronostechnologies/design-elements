@@ -13,10 +13,11 @@ export interface LegendItem {
 }
 
 const Item = styled.li<Pick<LegendItem, 'color'>>`
+    align-items: baseline;
     display: flex;
     list-style: none;
     margin: 0 0 var(--spacing-1x);
-    padding: 0 var(--spacing-2x);
+    padding: 0;
 
     p {
         font-size: 0.875rem;
@@ -28,9 +29,9 @@ const Item = styled.li<Pick<LegendItem, 'color'>>`
         background-color: ${(props) => props.color || props.theme.main['primary-1.2']};
         border-radius: 50%;
         content: "";
-        height: 8px;
-        margin: var(--spacing-1x) var(--spacing-1x) 0 calc(-1 * var(--spacing-2x));
-        width: 8px;
+        height: var(--size-half);
+        margin: 0 var(--spacing-1x) 0 0;
+        width: var(--size-half);
     }
 `;
 

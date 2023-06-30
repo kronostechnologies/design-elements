@@ -69,7 +69,7 @@ function getLozengeColor({ $type, theme }: StyledLozengeProps): string {
     }
 }
 
-const StyledLozenge = styled.span<StyledLozengeProps>`
+const StyledLozenge = styled.div<StyledLozengeProps>`
     align-items: center;
     background-color: ${getLozengeBackgroundColor};
     border: 1px solid ${getLozengeBorderColor};
@@ -81,16 +81,21 @@ const StyledLozenge = styled.span<StyledLozengeProps>`
     font-weight: var(--font-normal);
     line-height: ${({ $isMobile }) => ($isMobile ? '1.375rem' : '0.875rem')};
     max-width: ${MAXIMUM_LENGTH};
-    overflow: hidden;
     padding: 0 var(--spacing-half);
-    text-overflow: ellipsis;
     text-transform: uppercase;
-    white-space: nowrap;
     width: fit-content;
 `;
 
+const TagLabel = styled.span`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+`;
+
 const StyledIcon = styled(Icon)<{ $isMobile: boolean }>`
+    height: 0.75rem;
     margin-right: ${({ $isMobile }) => ($isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
+    width: 0.75rem;
 `;
 
 interface Props {
@@ -120,7 +125,9 @@ export const Lozenge: FunctionComponent<PropsWithChildren<Props>> = ({
                     $isMobile={isMobile}
                 />
             )}
-            {children}
+            <TagLabel>
+                {children}
+            </TagLabel>
         </StyledLozenge>
     );
 };
