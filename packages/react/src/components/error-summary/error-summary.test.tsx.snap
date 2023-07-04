@@ -13,6 +13,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 0.875rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -84,6 +85,8 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  height: 1rem;
+  width: 1rem;
 }
 
 .c5 {
