@@ -53,6 +53,7 @@ interface BentoMenuButtonProps {
     ariaLabel?: string;
     buttonAriaLabel?: string;
     externalLinks: ExternalItemProps[];
+    inverted?: boolean;
     /** Set wrapper element tag */
     tag?: 'div' | 'nav';
     onMenuVisibilityChanged?(isOpen: boolean): void;
@@ -65,6 +66,7 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
     ariaLabel,
     buttonAriaLabel,
     externalLinks,
+    inverted = true,
     tag,
     onMenuVisibilityChanged,
     productGroups,
@@ -130,7 +132,7 @@ export const BentoMenuButton: FunctionComponent<PropsWithChildren<BentoMenuButto
             hasCaret={false}
             icon={<Icon name="bento" size={isMobile ? '24' : '16'} />}
             buttonType="tertiary"
-            inverted
+            inverted={inverted}
             firstItemRef={firstItemRef}
             onMenuVisibilityChanged={onMenuVisibilityChanged}
         />
