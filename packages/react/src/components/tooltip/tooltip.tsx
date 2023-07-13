@@ -23,7 +23,7 @@ const TooltipArrow = styled.div`
 
     &::before {
         border-style: solid;
-        content: "";
+        content: '';
         display: block;
         height: 0;
         margin: auto;
@@ -32,7 +32,7 @@ const TooltipArrow = styled.div`
 
     &::after {
         border-style: solid;
-        content: "";
+        content: '';
         display: block;
         height: 0;
         margin: auto;

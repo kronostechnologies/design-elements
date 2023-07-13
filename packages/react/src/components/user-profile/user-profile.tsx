@@ -11,7 +11,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)<{ isMobile: boolean 
         ${({ isMobile }) => isMobile && css`
             height: fit-content;
             padding: 0;
-        `}
+`}
     }
 `;
 

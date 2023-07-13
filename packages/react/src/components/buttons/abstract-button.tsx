@@ -38,7 +38,7 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
     font-size: ${({ isMobile }) => (isMobile ? 0.875 : 0.75)}rem;
     font-weight: var(--font-bold);
     justify-content: center;
-    letter-spacing: ${({ isMobile }) => (isMobile ? 0.033125 : 0.025)}rem;
+    letter-spacing: ${({ isMobile }) => (isMobile ? 0.03313 : 0.025)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1)}rem;
     min-height: ${getButtonMinHeight};
     min-width: 2rem;
@@ -102,7 +102,7 @@ const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<
     color: ${inverted ? theme.main['primary-1.1'] : theme.greys.white};
 
     &:hover,
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         background-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
         border-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
         ${inverted && `color: ${theme.main['primary-1.3']}`}
@@ -124,7 +124,7 @@ const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolatio
     color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
 
     &:hover,
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         border-color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
         color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
     }
@@ -150,7 +150,7 @@ const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation
     color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
 
     &:hover,
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         background-color: ${inverted ? theme.main['primary-1.3'] : theme.greys.grey};
         color: ${inverted ? theme.greys.white : theme.greys.black};
     }
@@ -176,7 +176,7 @@ const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolat
     color: ${inverted ? theme.notifications['alert-2.1'] : theme.greys.white};
 
     &:hover,
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         /* TODO change colors when updating thematization */
         background-color: ${inverted ? theme.greys.white : '#7B1A15'};
         border-color: ${inverted ? theme.greys.white : '#7B1A15'};
