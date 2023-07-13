@@ -125,6 +125,7 @@ interface Props {
     initialFocusIndex?: number;
     numberOfVisibleItems?: number;
     options: MenuOption[];
+    direction?: 'left' | 'right';
 
     onKeyDown?(event: KeyboardEvent): void;
     onOptionSelect?(option: ListOption): void;
