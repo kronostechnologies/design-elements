@@ -7,6 +7,8 @@ import { Icon, IconName } from '../icon/icon';
 import { Menu, MenuOption } from '../menu/menu';
 import { eventIsInside } from '../../utils/events';
 
+export type MenuDirection = 'right' | 'left';
+
 const StyledContainer = styled.div`
     position: relative;
 `;
@@ -15,6 +17,7 @@ const StyledMenu = styled(Menu)`
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
     position: absolute;
+    ${({ direction }) => (direction === 'left' ? 'right: 0;' : 'left: 0;')}
 `;
 
 const StyledIcon = styled(Icon)`
@@ -30,6 +33,7 @@ interface Props {
     inverted?: boolean;
     options: MenuOption[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
+    menuDirection?: MenuDirection;
 }
 
 export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
@@ -42,6 +46,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
     inverted,
     options,
     onMenuVisibilityChanged,
+    menuDirection = 'right',
 }) => {
     const [visible, setVisible] = useState(!!defaultOpen);
     const [initialFocusIndex, setInitialFocusIndex] = useState(0);
@@ -148,6 +153,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
             )}
             {visible && (
                 <StyledMenu
+                    direction={menuDirection}
                     options={options}
                     initialFocusIndex={initialFocusIndex}
                     onOptionSelect={handleOnOptionSelect}
