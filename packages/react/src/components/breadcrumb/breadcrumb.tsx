@@ -31,7 +31,7 @@ const StyledLi = styled.li`
     }
 
     &:not(:last-child)::after {
-        content: "/";
+        content: '/';
         margin: 0 var(--spacing-1x);
     }
 `;

@@ -42,7 +42,7 @@ const StyledLabel = styled.label`
                     &::after {
                         background-color: ${props.theme.greys.white};
                         border-radius: 50%;
-                        content: "";
+                        content: '';
                         height: var(--size-half);
                         left: 50%;
                         position: absolute;

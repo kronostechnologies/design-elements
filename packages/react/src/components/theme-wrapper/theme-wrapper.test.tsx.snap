@@ -78,7 +78,7 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -172,7 +172,7 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #8984E8;
   border-color: #8984E8;
 }

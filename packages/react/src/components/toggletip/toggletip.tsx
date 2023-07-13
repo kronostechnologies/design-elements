@@ -17,7 +17,7 @@ const ToggletipArrow = styled.div`
 
     &::before {
         border-style: solid;
-        content: "";
+        content: '';
         display: block;
         height: 0;
         margin: auto;
@@ -26,7 +26,7 @@ const ToggletipArrow = styled.div`
 
     &::after {
         border-style: solid;
-        content: "";
+        content: '';
         display: block;
         height: 0;
         margin: auto;

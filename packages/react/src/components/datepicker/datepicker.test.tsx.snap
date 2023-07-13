@@ -50,7 +50,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -354,7 +354,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -658,7 +658,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -962,7 +962,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -1296,7 +1296,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c7 .popper[data-placement^="bottom"] {
+.c7 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -1622,7 +1622,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -2086,7 +2086,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -3063,7 +3063,7 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c17:hover,
-.c17[aria-expanded="true"] {
+.c17[aria-expanded='true'] {
   border-color: #003A5A;
   color: #003A5A;
 }
@@ -3282,7 +3282,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
@@ -4409,7 +4409,7 @@ input + .c1 {
   z-index: 1000;
 }
 
-.c4 .popper[data-placement^="bottom"] {
+.c4 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 

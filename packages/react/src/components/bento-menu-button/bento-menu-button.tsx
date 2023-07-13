@@ -41,7 +41,7 @@ const StyledDropdownMenuButton = styled(DropdownMenuButton)`
         ul:not(:last-child)::after,
         ol:not(:last-child)::after {
             border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
-            content: "";
+            content: '';
             display: block;
             margin: var(--spacing-2x) var(--spacing-4x);
             margin-bottom: var(--spacing-3x);

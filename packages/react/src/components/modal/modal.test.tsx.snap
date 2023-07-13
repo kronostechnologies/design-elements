@@ -54,7 +54,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 }
 
 .c1::after {
-  content: "";
+  content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
 }
@@ -150,7 +150,7 @@ exports[`Modal Matches snapshot (no close button, mobile) 1`] = `
 }
 
 .c1::after {
-  content: "";
+  content: '';
   display: block;
   padding-bottom: var(--spacing-2x);
 }
@@ -296,7 +296,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -346,7 +346,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 }
 
 .c1::after {
-  content: "";
+  content: '';
   display: block;
   padding-bottom: 0;
 }
@@ -512,7 +512,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -562,7 +562,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c1::after {
-  content: "";
+  content: '';
   display: block;
   padding-bottom: var(--spacing-4x);
 }
@@ -728,7 +728,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -778,7 +778,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c1::after {
-  content: "";
+  content: '';
   display: block;
   padding-bottom: var(--spacing-2x);
 }

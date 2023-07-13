@@ -57,7 +57,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     .popper {
         z-index: 1000;
 
-        &[data-placement^="bottom"] {
+        &[data-placement^='bottom'] {
             margin-top: 0;
         }
     }

@@ -66,7 +66,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
 
             &::after {
                 box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
-                content: "";
+                content: '';
                 height: calc(100% + 3px);
                 left: 0;
                 outline: none;
@@ -87,7 +87,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
 
         &::after {
             box-shadow: inset 0 0 0 1px ${theme.notifications['alert-2.1']};
-            content: "";
+            content: '';
             height: calc(100% + 1px);
             left: 0;
             outline: none;
@@ -98,7 +98,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
 
         td:first-child::after {
             border-left: 1px solid ${theme.notifications['alert-2.1']};
-            content: "";
+            content: '';
             height: 100%;
             left: 0;
             position: absolute;

@@ -78,7 +78,7 @@ exports[`Button has destructive styles (inverted) 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
   color: #7B1A15;
@@ -178,7 +178,7 @@ exports[`Button has destructive styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #7B1A15;
   border-color: #7B1A15;
   color: #FFFFFF;
@@ -278,7 +278,7 @@ exports[`Button has disabled styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -375,7 +375,7 @@ exports[`Button has mobile styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -471,7 +471,7 @@ exports[`Button has primary styles (inverted) 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
   color: #003A5A;
@@ -569,7 +569,7 @@ exports[`Button has primary styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -665,7 +665,7 @@ exports[`Button has secondary styles (inverted) 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -766,7 +766,7 @@ exports[`Button has secondary styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   border-color: #003A5A;
   color: #003A5A;
 }
@@ -862,7 +862,7 @@ exports[`Button has small styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -958,7 +958,7 @@ exports[`Button has small styles on mobile 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }
@@ -1054,7 +1054,7 @@ exports[`Button has tertiary styles (inverted) 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1156,7 +1156,7 @@ exports[`Button has tertiary styles 1`] = `
 }
 
 .c1:hover,
-.c1[aria-expanded="true"] {
+.c1[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }

@@ -109,7 +109,6 @@ function getIconPosition(props: IsMobileProps): SimpleInterpolation {
 }
 
 const StyledIcon = styled(Icon)<SVGProps<SVGSVGElement> & IsMobileProps>`
-
     ${getIconPosition};
 `;
 

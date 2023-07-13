@@ -88,7 +88,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 var(--spacing-1x);
 }
 
@@ -212,7 +212,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (Three or more entries) 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 var(--spacing-1x);
 }
 
@@ -395,7 +395,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 var(--spacing-1x);
 }
 
@@ -508,7 +508,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (double entries) 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 var(--spacing-1x);
 }
 
@@ -621,7 +621,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 var(--spacing-1x);
 }
 
@@ -664,7 +664,7 @@ exports[`Breadcrumb Snapshots Matches snapshot (single entry) 1`] = `
 }
 
 .c1:not(:last-child)::after {
-  content: "/";
+  content: '/';
   margin: 0 var(--spacing-1x);
 }
 

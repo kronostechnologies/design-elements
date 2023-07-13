@@ -65,7 +65,7 @@ input + .c1 {
 .c3 input:checked + .radioInput::after {
   background-color: #FFFFFF;
   border-radius: 50%;
-  content: "";
+  content: '';
   height: var(--size-half);
   left: 50%;
   position: absolute;
@@ -137,7 +137,7 @@ input + .c1 {
 .c4 input:checked + .radioInput::after {
   background-color: #FFFFFF;
   border-radius: 50%;
-  content: "";
+  content: '';
   height: var(--size-half);
   left: 50%;
   position: absolute;
