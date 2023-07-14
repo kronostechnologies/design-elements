@@ -130,7 +130,7 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
         &::after {
             background-color: ${({ theme }) => theme.greys.white};
             border-radius: 50%;
-            content: "";
+            content: '';
             height: var(--size-half);
             left: 50%;
             position: absolute;

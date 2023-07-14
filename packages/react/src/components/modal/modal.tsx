@@ -60,7 +60,7 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     https://bugzilla.mozilla.org/show_bug.cgi?id=748518 */
 
     &::after {
-        content: "";
+        content: '';
         display: block;
         padding-bottom: ${getPadding};
     }

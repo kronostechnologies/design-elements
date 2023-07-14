@@ -24,7 +24,7 @@ const StyledGroup = styled.ul`
 
     :not(:last-child)::after {
         border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
-        content: "";
+        content: '';
         display: block;
         margin: 0 var(--spacing-2x);
     }

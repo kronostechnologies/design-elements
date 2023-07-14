@@ -80,7 +80,7 @@ exports[`Global Navigation matches snapshot 1`] = `
 }
 
 .c3:hover,
-.c3[aria-expanded="true"] {
+.c3[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
 }

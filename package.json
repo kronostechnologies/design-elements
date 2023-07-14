@@ -10,15 +10,15 @@
     "checkLicense": "yarn licenses audit --config=licenses.config.js --output-file=./build/license/license.xml --summary"
   },
   "devDependencies": {
-    "@equisoft/stylelint-config": "^2.1.1",
+    "@equisoft/stylelint-config": "^3.0.1",
     "@types/eslint": "^8.37.0",
     "@types/yargs": "^17.0.24",
     "conventional-changelog-cli": "^3.0.0",
     "conventional-changelog-conventionalcommits": "^6.0.0",
     "eslint": "^8.39.0",
     "postcss": "^8.4.23",
-    "stylelint": "^14.16.1",
-    "stylelint-order": "^6.0.0",
+    "postcss-styled-syntax": "^0.4.0",
+    "stylelint": "^15.10.1",
     "typescript": "~5.1.0",
     "xmlbuilder": "^15.1.1",
     "yargs": "^17.7.2"
@@ -28,7 +28,6 @@
     "react-docgen-typescript": "^2.0.0",
     "@types/react-router-dom": "5.3.3",
     "webpack": "^5",
-    "stylelint-processor-styled-components@~1.10.0": "patch:stylelint-processor-styled-components@npm%3A1.10.0#./.yarn/patches/stylelint-processor-styled-components-npm-1.10.0-17c51326cc.patch",
     "react-docgen-typescript-plugin@^1.0.5": "patch:react-docgen-typescript-plugin@npm%3A1.0.5#./.yarn/patches/react-docgen-typescript-plugin-npm-1.0.5-d533e14225.patch"
   },
   "packageManager": "yarn@3.6.0"

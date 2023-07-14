@@ -43,8 +43,8 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
         return css`
             display: grid;
             grid-template-areas:
-                "icon content"
-                "button button";
+                'icon content'
+                'button button';
             grid-template-columns: auto 1fr;
         `;
     }

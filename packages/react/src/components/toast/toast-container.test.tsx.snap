@@ -80,7 +80,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -370,7 +370,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -660,7 +660,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -950,7 +950,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c4:hover,
-.c4[aria-expanded="true"] {
+.c4[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }

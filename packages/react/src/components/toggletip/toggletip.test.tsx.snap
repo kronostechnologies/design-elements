@@ -80,7 +80,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c0:hover,
-.c0[aria-expanded="true"] {
+.c0[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -109,7 +109,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 
 .c4::before {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -118,7 +118,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 
 .c4::after {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -429,7 +429,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
 }
 
 .c0:hover,
-.c0[aria-expanded="true"] {
+.c0[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -599,7 +599,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c0:hover,
-.c0[aria-expanded="true"] {
+.c0[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }
@@ -628,7 +628,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 
 .c4::before {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -637,7 +637,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 
 .c4::after {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -948,7 +948,7 @@ exports[`Toggletip Has mobile styles 1`] = `
 }
 
 .c0:hover,
-.c0[aria-expanded="true"] {
+.c0[aria-expanded='true'] {
   background-color: #DBDEE1;
   color: #000000;
 }

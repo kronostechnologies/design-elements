@@ -9,7 +9,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 .c3::before {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -18,7 +18,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -260,7 +260,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c3::before {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -269,7 +269,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -507,7 +507,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 .c3::before {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -516,7 +516,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -758,7 +758,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c3::before {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;
@@ -767,7 +767,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c3::after {
   border-style: solid;
-  content: "";
+  content: '';
   display: block;
   height: 0;
   margin: auto;

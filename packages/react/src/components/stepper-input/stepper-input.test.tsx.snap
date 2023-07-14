@@ -229,7 +229,7 @@ input + .c1 {
   margin: 0;
 }
 
-.c4[type="number"] {
+.c4[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -550,7 +550,7 @@ input + .c1 {
   margin: 0;
 }
 
-.c7[type="number"] {
+.c7[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -760,7 +760,7 @@ input + .c1 {
   margin: 0;
 }
 
-.c4[type="number"] {
+.c4[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -1014,7 +1014,7 @@ input + .c1 {
   margin: 0;
 }
 
-.c4[type="number"] {
+.c4[type='number'] {
   -moz-appearance: textfield;
 }
 

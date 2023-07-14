@@ -210,7 +210,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-areas: "icon content" "button button";
+  grid-template-areas: 'icon content' 'button button';
   grid-template-columns: auto 1fr;
 }
 

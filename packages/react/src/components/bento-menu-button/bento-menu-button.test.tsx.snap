@@ -80,7 +80,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c3:hover,
-.c3[aria-expanded="true"] {
+.c3[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -313,7 +313,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 
 .c10:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
-  content: "";
+  content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
@@ -476,7 +476,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 .c1 .c5 ul:not(:last-child)::after,
 .c1 .c5 ol:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
-  content: "";
+  content: '';
   display: block;
   margin: var(--spacing-2x) var(--spacing-4x);
   margin-bottom: var(--spacing-3x);
@@ -912,7 +912,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c3:hover,
-.c3[aria-expanded="true"] {
+.c3[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1145,7 +1145,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 
 .c10:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
-  content: "";
+  content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
@@ -1308,7 +1308,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 .c1 .c5 ul:not(:last-child)::after,
 .c1 .c5 ol:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
-  content: "";
+  content: '';
   display: block;
   margin: var(--spacing-2x) var(--spacing-4x);
   margin-bottom: var(--spacing-3x);
@@ -1656,7 +1656,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c3:hover,
-.c3[aria-expanded="true"] {
+.c3[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -1889,7 +1889,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 
 .c10:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
-  content: "";
+  content: '';
   display: block;
   margin: 0 var(--spacing-2x);
 }
@@ -2052,7 +2052,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 .c1 .c5 ul:not(:last-child)::after,
 .c1 .c5 ol:not(:last-child)::after {
   border-bottom: 1px solid #DBDEE1;
-  content: "";
+  content: '';
   display: block;
   margin: var(--spacing-2x) var(--spacing-4x);
   margin-bottom: var(--spacing-3x);

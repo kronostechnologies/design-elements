@@ -30,17 +30,17 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   cursor: pointer;
 }
 
-.c0[aria-checked="false"] {
+.c0[aria-checked='false'] {
   background: #B7BBC2;
   border-color: #B7BBC2;
 }
 
-.c0[aria-checked="false"] .c1 {
+.c0[aria-checked='false'] .c1 {
   -webkit-transition: right 0.1s ease-in-out;
   transition: right 0.1s ease-in-out;
 }
 
-.c0[aria-checked="true"] > .c1 {
+.c0[aria-checked='true'] > .c1 {
   right: 3px;
   -webkit-transition: right 0.1s ease-in-out;
   transition: right 0.1s ease-in-out;
@@ -51,7 +51,7 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   border-color: #DBDEE1;
 }
 
-.c0:disabled[aria-checked="true"] {
+.c0:disabled[aria-checked='true'] {
   background: #8ADDA9;
   border-color: #8ADDA9;
 }
@@ -128,17 +128,17 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   cursor: pointer;
 }
 
-.c0[aria-checked="false"] {
+.c0[aria-checked='false'] {
   background: #B7BBC2;
   border-color: #B7BBC2;
 }
 
-.c0[aria-checked="false"] .c1 {
+.c0[aria-checked='false'] .c1 {
   -webkit-transition: right 0.1s ease-in-out;
   transition: right 0.1s ease-in-out;
 }
 
-.c0[aria-checked="true"] > .c1 {
+.c0[aria-checked='true'] > .c1 {
   right: 4px;
   -webkit-transition: right 0.1s ease-in-out;
   transition: right 0.1s ease-in-out;
@@ -149,7 +149,7 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   border-color: #DBDEE1;
 }
 
-.c0:disabled[aria-checked="true"] {
+.c0:disabled[aria-checked='true'] {
   background: #8ADDA9;
   border-color: #8ADDA9;
 }
@@ -226,17 +226,17 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   cursor: pointer;
 }
 
-.c0[aria-checked="false"] {
+.c0[aria-checked='false'] {
   background: #B7BBC2;
   border-color: #B7BBC2;
 }
 
-.c0[aria-checked="false"] .c1 {
+.c0[aria-checked='false'] .c1 {
   -webkit-transition: right 0.1s ease-in-out;
   transition: right 0.1s ease-in-out;
 }
 
-.c0[aria-checked="true"] > .c1 {
+.c0[aria-checked='true'] > .c1 {
   right: 3px;
   -webkit-transition: right 0.1s ease-in-out;
   transition: right 0.1s ease-in-out;
@@ -247,7 +247,7 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   border-color: #DBDEE1;
 }
 
-.c0:disabled[aria-checked="true"] {
+.c0:disabled[aria-checked='true'] {
   background: #8ADDA9;
   border-color: #8ADDA9;
 }

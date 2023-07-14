@@ -78,7 +78,7 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 }
 
 .c2:hover,
-.c2[aria-expanded="true"] {
+.c2[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -342,7 +342,7 @@ exports[`NavMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c2:hover,
-.c2[aria-expanded="true"] {
+.c2[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }
@@ -607,7 +607,7 @@ exports[`NavMenuButton Matches Snapshot 1`] = `
 }
 
 .c2:hover,
-.c2[aria-expanded="true"] {
+.c2[aria-expanded='true'] {
   background-color: #003A5A;
   color: #FFFFFF;
 }

@@ -56,7 +56,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     vertical-align: middle;
     width: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2halfx)')};
 
-    &[aria-checked="false"] {
+    &[aria-checked='false'] {
         background: ${({ theme }) => theme.greys['mid-grey']};
         border-color: ${({ theme }) => theme.greys['mid-grey']};
 
@@ -65,7 +65,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         }
     }
 
-    &[aria-checked="true"] > ${StyledButtonSpan} {
+    &[aria-checked='true'] > ${StyledButtonSpan} {
         right: ${({ isMobile }) => (isMobile ? 4 : 3)}px;
         transition: right 0.1s ease-in-out;
     }
@@ -74,7 +74,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         background: ${({ theme }) => theme.greys.grey};
         border-color: ${({ theme }) => theme.greys.grey};
 
-        &[aria-checked="true"] {
+        &[aria-checked='true'] {
             background: ${({ theme }) => theme.notifications['success-1.3']};
             border-color: ${({ theme }) => theme.notifications['success-1.3']};
         }

@@ -31,9 +31,9 @@ const StyledButton = styled.button<StyledButtonProps>`
         background-color: ${({ theme }) => theme.greys.grey};
     }
 
-    ${focus}
-    ${({ theme }) => focus({ theme }, false, ':focus-visible')}
-    ${focusVisibleReset}
+    ${focus};
+    ${({ theme }) => focus({ theme }, false, ':focus-visible')};
+    ${focusVisibleReset};
 
     &:focus {
         z-index: 2;
