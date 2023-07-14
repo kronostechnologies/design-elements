@@ -6,6 +6,8 @@ import { decorateWith } from './utils/decorator';
 const StyledDiv = styled.div`
     display: flex;
     height: 180px;
+    justify-content: center;
+    width: 100%;
 `;
 
 export default {
@@ -84,6 +86,16 @@ export const Normal: Story = () => (
 
 export const IconButton: Story = () => (
     <MenuButton iconName="moreVertical" options={options} buttonType="primary" />
+);
+
+export const LeftDirection: Story = () => (
+    <MenuButton
+        className="end-align"
+        iconName="moreVertical"
+        options={options}
+        buttonType="primary"
+        menuDirection="left"
+    />
 );
 
 export const DefaultOpen: Story = () => (

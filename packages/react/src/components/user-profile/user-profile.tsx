@@ -37,6 +37,7 @@ interface UserProfileProps {
      * */
     defaultOpen?: boolean;
     id?: string;
+    inverted?: boolean;
     /** Set wrapper element tag */
     tag?: 'div' | 'nav';
     options: NavItemProps[];
@@ -51,6 +52,7 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
     className,
     defaultOpen = false,
     id,
+    inverted = true,
     tag,
     onMenuVisibilityChanged,
     options,
@@ -72,6 +74,7 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
             hasCaret={!isMobile}
             id={id}
             icon={<StyledAvatar isMobile={isMobile} username={username} />}
+            inverted={inverted}
             tag={tag}
             isMobile={isMobile}
             // eslint-disable-next-line react/jsx-props-no-spreading
