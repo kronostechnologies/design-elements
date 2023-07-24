@@ -1,6 +1,6 @@
 module.exports = {
     isValidLicense: (license) => {
-        const valid = new RegExp('\\b(mit|apache\\b.*2|0?bsd|isc|unlicense|CC0-\\d\\.\\d|WTFPL)\\b', 'i');
+        const valid = new RegExp('\\b(mit|apache\\b.*2|0?bsd|isc|unlicense|CC0-\\d\\.\\d|WTFPL|BlueOak|LGPL-2|Python-2)\\b', 'i');
         return valid.test(license);
     },
     ignorePackages: [

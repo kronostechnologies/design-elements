@@ -58,7 +58,7 @@ export const Legend: VoidFunctionComponent<LegendProps> = ({ className, items })
     return (
         <List className={className}>
             {items.map((item) => (
-                <Item color={item.color} key={`${item.name}`}>
+                <Item color={item.color} key={item.name}>
                     <div>
                         <p>{item.name}</p>
                         <Description>{item.description}</Description>
