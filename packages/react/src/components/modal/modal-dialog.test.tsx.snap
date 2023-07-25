@@ -134,9 +134,9 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c10 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
 }
 
 .c10:focus {
@@ -151,46 +151,46 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c10:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
+.c10:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
   color: #60666E;
 }
 
-.c12:focus {
+.c11 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c11:focus {
   outline: none;
 }
 
-.c12:focus {
+.c11:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
+.c11:hover,
+.c11[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c12:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c12:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
+.c11:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c3 {
@@ -273,11 +273,15 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
-.c11 {
+.c12 {
   margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+  margin-left: var(--spacing-1x);
 }
 
 <body
@@ -343,18 +347,18 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
             class="c8"
           >
             <button
-              class="c9 c10 c11"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Test Confirm
-            </button>
-            <button
-              class="c9 c12 "
+              class="c9 c10 "
               data-testid="cancel-button"
               type="button"
             >
               Test Cancel
+            </button>
+            <button
+              class="c9 c11 c12"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Test Confirm
             </button>
           </div>
         </footer>
@@ -715,9 +719,9 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 }
 
 .c6 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
 }
 
 .c6:focus {
@@ -732,46 +736,46 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 
 .c6:hover,
 .c6[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c6:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-.c8 {
-  background-color: transparent;
-  border-color: transparent;
+.c6:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
   color: #60666E;
 }
 
-.c8:focus {
+.c7 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c7:focus {
   outline: none;
 }
 
-.c8:focus {
+.c7:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c8:hover,
-.c8[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
+.c7:hover,
+.c7[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c8:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c8:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
+.c7:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c1 {
@@ -831,11 +835,15 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
-.c7 {
+.c8 {
   margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+  margin-left: var(--spacing-1x);
 }
 
 <body
@@ -888,18 +896,18 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
             class="c4"
           >
             <button
-              class="c5 c6 c7"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c5 c8 "
+              class="c5 c6 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
+            </button>
+            <button
+              class="c5 c7 c8"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
             </button>
           </div>
         </footer>
@@ -1033,9 +1041,9 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c9 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
 }
 
 .c9:focus {
@@ -1050,46 +1058,46 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c9:hover,
 .c9[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c9:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-.c11 {
-  background-color: transparent;
-  border-color: transparent;
+.c9:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
   color: #60666E;
 }
 
-.c11:focus {
+.c10 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c10:focus {
   outline: none;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c11:hover,
-.c11[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
+.c10:hover,
+.c10[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c11:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c11:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
+.c10:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c1 {
@@ -1165,11 +1173,15 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
-.c10 {
+.c11 {
   margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+  margin-left: var(--spacing-1x);
 }
 
 <body
@@ -1231,18 +1243,18 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
             class="c7"
           >
             <button
-              class="c8 c9 c10"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c8 c11 "
+              class="c8 c9 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
+            </button>
+            <button
+              class="c8 c10 c11"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
             </button>
           </div>
         </footer>
@@ -1376,9 +1388,9 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 }
 
 .c9 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
 }
 
 .c9:focus {
@@ -1393,46 +1405,46 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 
 .c9:hover,
 .c9[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c9:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-.c11 {
-  background-color: transparent;
-  border-color: transparent;
+.c9:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
   color: #60666E;
 }
 
-.c11:focus {
+.c10 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c10:focus {
   outline: none;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c11:hover,
-.c11[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
+.c10:hover,
+.c10[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c11:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c11:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
+.c10:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c3 {
@@ -1508,11 +1520,15 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
-.c10 {
+.c11 {
   margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+  margin-left: var(--spacing-1x);
 }
 
 <body
@@ -1573,18 +1589,18 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
             class="c7"
           >
             <button
-              class="c8 c9 c10"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c8 c11 "
+              class="c8 c9 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
+            </button>
+            <button
+              class="c8 c10 c11"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
             </button>
           </div>
         </footer>
@@ -1718,9 +1734,9 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c10 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
 }
 
 .c10:focus {
@@ -1735,46 +1751,46 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c10:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
+.c10:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
   color: #60666E;
 }
 
-.c12:focus {
+.c11 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c11:focus {
   outline: none;
 }
 
-.c12:focus {
+.c11:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
+.c11:hover,
+.c11[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c12:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c12:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
+.c11:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c3 {
@@ -1857,11 +1873,15 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   -webkit-flex-direction: unset;
   -ms-flex-direction: unset;
   flex-direction: unset;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
-.c11 {
+.c12 {
   margin-bottom: 0;
-  margin-right: var(--spacing-1x);
+  margin-left: var(--spacing-1x);
 }
 
 <body
@@ -1927,18 +1947,18 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
             class="c8"
           >
             <button
-              class="c9 c10 c11"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c9 c12 "
+              class="c9 c10 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
+            </button>
+            <button
+              class="c9 c11 c12"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
             </button>
           </div>
         </footer>
@@ -2072,9 +2092,9 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c10 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
 }
 
 .c10:focus {
@@ -2089,46 +2109,46 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c10:hover,
 .c10[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
+  background-color: #DBDEE1;
+  color: #000000;
 }
 
 .c10:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
+  background-color: transparent;
+  color: #B7BBC2;
 }
 
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
+.c10:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
   color: #60666E;
 }
 
-.c12:focus {
+.c11 {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c11:focus {
   outline: none;
 }
 
-.c12:focus {
+.c11:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
+.c11:hover,
+.c11[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: #003A5A;
 }
 
-.c12:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c12:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
+.c11:disabled {
+  background-color: #84C6EA;
+  border-color: #84C6EA;
 }
 
 .c3 {
@@ -2211,11 +2231,15 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
-.c11 {
+.c12 {
   margin-bottom: var(--spacing-1x);
-  margin-right: 0;
+  margin-left: 0;
 }
 
 <body
@@ -2281,18 +2305,18 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
             class="c8"
           >
             <button
-              class="c9 c10 c11"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-            <button
-              class="c9 c12 "
+              class="c9 c10 "
               data-testid="cancel-button"
               type="button"
             >
               Cancel
+            </button>
+            <button
+              class="c9 c11 c12"
+              data-testid="confirm-button"
+              type="button"
+            >
+              Confirm
             </button>
           </div>
         </footer>
