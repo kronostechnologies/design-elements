@@ -270,13 +270,8 @@ label + .c3 {
   >
     <div>
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
@@ -574,13 +569,8 @@ label + .c3 {
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput"
           data-testid="some-data-test-id"
@@ -878,13 +868,8 @@ label + .c3 {
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
@@ -1180,13 +1165,8 @@ label + .c3 {
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
@@ -1538,13 +1518,8 @@ label + .c6 {
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c8 datePickerInput"
           data-testid="text-input"
@@ -1842,13 +1817,8 @@ label + .c3 {
   >
     <div>
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
@@ -2306,13 +2276,8 @@ label + .c3 {
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
@@ -3508,13 +3473,8 @@ label + .c3 {
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
@@ -4629,13 +4589,8 @@ label + .c3 {
   >
     <div>
       <div
-        class="react-datepicker__input-container "
+        class="react-datepicker__input-container"
       >
-        <span
-          aria-live="polite"
-          class="react-datepicker__aria-live"
-          role="alert"
-        />
         <input
           class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
