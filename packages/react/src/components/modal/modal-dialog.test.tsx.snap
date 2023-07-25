@@ -280,8 +280,8 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 }
 
 .c12 {
-  margin-bottom: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <body
@@ -842,8 +842,8 @@ exports[`Modal-Dialog Matches snapshot (not titles) 1`] = `
 }
 
 .c8 {
-  margin-bottom: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <body
@@ -1180,8 +1180,8 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 }
 
 .c11 {
-  margin-bottom: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <body
@@ -1527,8 +1527,8 @@ exports[`Modal-Dialog Matches snapshot (only title) 1`] = `
 }
 
 .c11 {
-  margin-bottom: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <body
@@ -1880,8 +1880,8 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 }
 
 .c12 {
-  margin-bottom: 0;
   margin-left: var(--spacing-1x);
+  margin-top: 0;
 }
 
 <body
@@ -2238,8 +2238,8 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 }
 
 .c12 {
-  margin-bottom: var(--spacing-1x);
   margin-left: 0;
+  margin-top: var(--spacing-1x);
 }
 
 <body
