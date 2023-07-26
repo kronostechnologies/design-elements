@@ -26,6 +26,7 @@ const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
 const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: boolean }>`
     display: flex;
     flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'unset')};
+    justify-content: end;
 
     ${({ isMobile, $hasTitleIcon }) => (isMobile && $hasTitleIcon) && css`
         margin-left: calc(var(--spacing-4x) * -1);
@@ -33,8 +34,8 @@ const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: b
 `;
 
 const ConfirmButton = styled(Button)<MobileDeviceContextProps>`
-    margin-bottom: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 0)};
-    margin-right: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
+    margin-left: ${({ isMobile }) => (isMobile ? 0 : 'var(--spacing-1x)')};
+    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 0)};
 `;
 
 const CancelButton = styled(Button)``;
@@ -153,18 +154,18 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     function getFooter(): ReactElement {
         return (
             <ButtonContainer isMobile={isMobile} $hasTitleIcon={hasTitleIcon}>
+                <CancelButton
+                    data-testid="cancel-button"
+                    label={cancelButton?.label || t('cancelButtonLabel')}
+                    buttonType="tertiary"
+                    onClick={handleCancel}
+                />
                 <ConfirmButton
                     data-testid="confirm-button"
                     label={confirmButton?.label || t('confirmButtonLabel')}
                     buttonType="primary"
                     onClick={handleConfirm}
                     isMobile={isMobile}
-                />
-                <CancelButton
-                    data-testid="cancel-button"
-                    label={cancelButton?.label || t('cancelButtonLabel')}
-                    buttonType="tertiary"
-                    onClick={handleCancel}
                 />
             </ButtonContainer>
         );
