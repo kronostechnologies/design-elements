@@ -10,9 +10,9 @@ import { Modal } from './modal';
 
 type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
 
-type ModalType = 'information-modal' | 'action-modal' | 'destructive-modal';
+export type ModalType = 'information-modal' | 'action-modal' | 'destructive-modal';
 
-const MODAL_ROLES: Record<ModalType, string> = {
+const ModalRoles: Record<ModalType, string> = {
     'information-modal': 'dialog',
     'action-modal': 'dialog',
     'destructive-modal': 'alertdialog',
@@ -116,8 +116,8 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
-    const finalTitleIcon = modalType === 'destructive-modal' ? 'alertFilled' : titleIcon;
-    const hasTitleIcon = !!(title && finalTitleIcon);
+    const titleIconName = modalType === 'destructive-modal' ? 'alertFilled' : titleIcon;
+    const hasTitleIcon = !!(title && titleIconName);
 
     function handleConfirm(): void {
         confirmButton?.onConfirm?.();
@@ -139,8 +139,8 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                 <>
                     {title && (
                         <HeadingWrapperComponent>
-                            {finalTitleIcon && (
-                                <TitleIcon name={finalTitleIcon} size="24" data-testid="title-icon" />
+                            {titleIconName && (
+                                <TitleIcon name={titleIconName} size="24" data-testid="title-icon" />
                             )}
                             <Heading
                                 id={titleId}
@@ -197,7 +197,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
             parentSelector={parentSelector}
-            role={MODAL_ROLES[modalType]}
+            role={ModalRoles[modalType]}
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
             isOpen={isOpen}

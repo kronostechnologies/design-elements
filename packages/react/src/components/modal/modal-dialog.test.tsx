@@ -3,7 +3,8 @@ import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId as enzymeGetByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderPortalWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ModalDialog, ModalDialogProps } from './modal-dialog';
+import { ModalDialog, ModalDialogProps, ModalType } from './modal-dialog';
+import { IconName } from '../icon/icon';
 
 jest.mock('../../utils/uuid');
 
@@ -151,4 +152,39 @@ describe('Modal-Dialog', () => {
 
         expect(baseElement).toMatchSnapshot();
     });
+
+    test.each([
+        ['information-modal', 'alertFilled', 'primary', false],
+        ['action-modal', 'home', 'primary', true],
+        ['destructive-modal', 'alertFilled', 'destructive', true],
+    ])(
+        'should respect %s modalType with proper titleIcon and buttons',
+        (modalType, expectedIcon, expectedButtonType, hasCancelButton) => {
+            const wrapper = mountWithProviders(
+                <ModalDialog
+                    ariaHideApp={false}
+                    title="test"
+                    titleIcon={expectedIcon as IconName}
+                    isOpen
+                    modalType={modalType as ModalType}
+                    onRequestClose={jest.fn()}
+                >
+                    <p id="modal-description">Test Content</p>
+                </ModalDialog>,
+                { attachTo: document.body },
+            );
+
+            const titleIcon = enzymeGetByTestId(wrapper, 'title-icon');
+            expect(titleIcon.exists()).toBe(true);
+            expect(titleIcon.prop('name')).toBe(expectedIcon);
+
+            const confirmButton = enzymeGetByTestId(wrapper, 'confirm-button');
+            expect(confirmButton.prop('buttonType')).toBe(expectedButtonType);
+
+            const cancelButton = enzymeGetByTestId(wrapper, 'cancel-button');
+            expect(cancelButton.exists()).toBe(hasCancelButton);
+
+            wrapper.detach();
+        },
+    );
 });
