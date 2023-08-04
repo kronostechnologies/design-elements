@@ -346,7 +346,6 @@ export const DestructiveModal: Story = {
                     onRequestClose={closeModal}
                     title="Destructive Modal"
                     modalType="destructive-modal"
-                    titleIcon="alertFilled"
                 >
                     <p style={{ margin: 0 }} id="story-description">
                         This modal has a destructive button. It is used to destroy something.

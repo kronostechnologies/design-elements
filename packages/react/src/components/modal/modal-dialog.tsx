@@ -116,7 +116,8 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
-    const hasTitleIcon = !!(title && titleIcon);
+    const finalTitleIcon = modalType === 'destructive-modal' ? 'alertFilled' : titleIcon;
+    const hasTitleIcon = !!(title && finalTitleIcon);
 
     function handleConfirm(): void {
         confirmButton?.onConfirm?.();
@@ -138,8 +139,8 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                 <>
                     {title && (
                         <HeadingWrapperComponent>
-                            {titleIcon && (
-                                <TitleIcon name={titleIcon} size="24" data-testid="title-icon" />
+                            {finalTitleIcon && (
+                                <TitleIcon name={finalTitleIcon} size="24" data-testid="title-icon" />
                             )}
                             <Heading
                                 id={titleId}
