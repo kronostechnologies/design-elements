@@ -303,3 +303,56 @@ export const WithinShadowDOM: Story = {
         );
     },
 };
+
+export const InformationModal: Story = {
+    render: () => {
+        const { isModalOpen, closeModal, openModal } = useModal();
+        return (
+            <>
+                <Button label="Open Modal" buttonType="primary" onClick={openModal} />
+                <ModalDialog
+                    appElement="#storybook-root"
+                    ariaDescribedby="story-description"
+                    isOpen={isModalOpen}
+                    onRequestClose={closeModal}
+                    title="Information Modal"
+                    modalType="information-modal"
+                    confirmButton={{
+                        label: 'Got it',
+                    }}
+                >
+                    <p style={{ margin: 0 }} id="story-description">
+                        This modal has only one button. It is used to inform the user of something.
+                    </p>
+                </ModalDialog>
+            </>
+        );
+    },
+};
+
+export const DestructiveModal: Story = {
+    render: () => {
+        const { isModalOpen, closeModal, openModal } = useModal();
+        return (
+            <>
+                <Button label="Open Modal" buttonType="destructive" onClick={openModal} />
+                <ModalDialog
+                    appElement="#storybook-root"
+                    ariaDescribedby="story-description"
+                    confirmButton={{
+                        label: 'Delete',
+                    }}
+                    isOpen={isModalOpen}
+                    onRequestClose={closeModal}
+                    title="Destructive Modal"
+                    modalType="destructive-modal"
+                    titleIcon="alertFilled"
+                >
+                    <p style={{ margin: 0 }} id="story-description">
+                        This modal has a destructive button. It is used to destroy something.
+                    </p>
+                </ModalDialog>
+            </>
+        );
+    },
+};
