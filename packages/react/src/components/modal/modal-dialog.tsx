@@ -10,12 +10,15 @@ import { Modal } from './modal';
 
 type MobileDeviceContextProps = Pick<DeviceContextProps, 'isMobile'>
 
-export type ModalType = 'information-modal' | 'action-modal' | 'destructive-modal';
+export type DialogType =
+    | 'information'
+    | 'action'
+    | 'alert';
 
-const ModalRoles: Record<ModalType, string> = {
-    'information-modal': 'dialog',
-    'action-modal': 'dialog',
-    'destructive-modal': 'alertdialog',
+const ModalRoles: Record<DialogType, string> = {
+    information: 'dialog',
+    action: 'dialog',
+    alert: 'alertdialog',
 };
 
 const StyledModal = styled(Modal)<{ $hasTitleIcon: boolean }>`
@@ -87,7 +90,7 @@ export interface ModalDialogProps {
     subtitle?: string;
     title?: string;
     titleIcon?: IconName;
-    modalType?: ModalType;
+    dialogType?: DialogType;
 
     onRequestClose(): void;
 }
@@ -97,7 +100,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     ariaDescribedby,
     ariaHideApp,
     ariaLabel,
-    modalType = 'action-modal',
+    dialogType = 'action',
     cancelButton,
     children,
     className,
@@ -116,7 +119,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     const { t } = useTranslation('modal-dialog');
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
-    const titleIconName = modalType === 'destructive-modal' ? 'alertFilled' : titleIcon;
+    const titleIconName = dialogType === 'alert' ? 'alertFilled' : titleIcon;
     const hasTitleIcon = !!(title && titleIconName);
 
     function handleConfirm(): void {
@@ -163,11 +166,11 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     }
 
     function getFooter(): ReactElement {
-        const confirmButtonType = modalType === 'destructive-modal' ? 'destructive' : 'primary';
+        const confirmButtonType = dialogType === 'alert' ? 'destructive' : 'primary';
 
         return (
             <ButtonContainer isMobile={isMobile} $hasTitleIcon={hasTitleIcon}>
-                {modalType !== 'information-modal' && (
+                {dialogType !== 'information' && (
                     <CancelButton
                         data-testid="cancel-button"
                         label={cancelButton?.label || t('cancelButtonLabel')}
@@ -197,7 +200,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
             hasCloseButton={hasCloseButton}
             modalFooter={footerContent || getFooter()}
             parentSelector={parentSelector}
-            role={ModalRoles[modalType]}
+            role={ModalRoles[dialogType]}
             onAfterOpen={() => titleRef.current?.focus()}
             onRequestClose={onRequestClose}
             isOpen={isOpen}
