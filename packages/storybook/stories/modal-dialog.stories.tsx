@@ -304,7 +304,7 @@ export const WithinShadowDOM: Story = {
     },
 };
 
-export const InformationModal: Story = {
+export const InformationDialog: Story = {
     render: () => {
         const { isModalOpen, closeModal, openModal } = useModal();
         return (
@@ -316,7 +316,7 @@ export const InformationModal: Story = {
                     isOpen={isModalOpen}
                     onRequestClose={closeModal}
                     title="Information Modal"
-                    modalType="information-modal"
+                    dialogType="information"
                     confirmButton={{
                         label: 'Got it',
                     }}
@@ -330,7 +330,7 @@ export const InformationModal: Story = {
     },
 };
 
-export const DestructiveModal: Story = {
+export const AlertDialog: Story = {
     render: () => {
         const { isModalOpen, closeModal, openModal } = useModal();
         return (
@@ -344,11 +344,11 @@ export const DestructiveModal: Story = {
                     }}
                     isOpen={isModalOpen}
                     onRequestClose={closeModal}
-                    title="Destructive Modal"
-                    modalType="destructive-modal"
+                    title="Alert Modal"
+                    dialogType="alert"
                 >
                     <p style={{ margin: 0 }} id="story-description">
-                        This modal has a destructive button. It is used to destroy something.
+                        This modal has a destructive button. It is used to alert the user of something.
                     </p>
                 </ModalDialog>
             </>

@@ -3,7 +3,7 @@ import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId as enzymeGetByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderPortalWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider/device-context-provider';
-import { ModalDialog, ModalDialogProps, ModalType } from './modal-dialog';
+import { ModalDialog, ModalDialogProps, DialogType } from './modal-dialog';
 import { IconName } from '../icon/icon';
 
 jest.mock('../../utils/uuid');
@@ -154,11 +154,11 @@ describe('Modal-Dialog', () => {
     });
 
     test.each([
-        ['information-modal', 'alertFilled', 'primary', false],
-        ['action-modal', 'home', 'primary', true],
-        ['destructive-modal', 'alertFilled', 'destructive', true],
+        ['information', 'alertFilled', 'primary', false],
+        ['action', 'home', 'primary', true],
+        ['alert', 'alertFilled', 'destructive', true],
     ])(
-        'should respect %s modalType with proper titleIcon and buttons',
+        'should respect %s dialogType with proper titleIcon and buttons',
         (modalType, expectedIcon, expectedButtonType, hasCancelButton) => {
             const wrapper = mountWithProviders(
                 <ModalDialog
@@ -166,7 +166,7 @@ describe('Modal-Dialog', () => {
                     title="test"
                     titleIcon={expectedIcon as IconName}
                     isOpen
-                    modalType={modalType as ModalType}
+                    dialogType={modalType as DialogType}
                     onRequestClose={jest.fn()}
                 >
                     <p id="modal-description">Test Content</p>
