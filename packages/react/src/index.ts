@@ -1,7 +1,7 @@
 // Buttons
 export { Button } from './components/buttons/button';
 export { IconButton } from './components/buttons/icon-button';
-export { NavMenuOption } from './components/nav-menu/nav-menu-option';
+export { NavListOption } from './components/nav-list/nav-list-option';
 export { MenuButton } from './components/menu-button/menu-button';
 export { DropdownNavigation } from './components/dropdown-navigation/dropdown-navigation';
 export { BentoMenuButton } from './components/bento-menu-button/bento-menu-button';

@@ -20,8 +20,8 @@ import { Button, ButtonType } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName } from '../icon/icon';
-import { NavMenu } from '../nav-menu/nav-menu';
-import { NavMenuOption } from '../nav-menu/nav-menu-option';
+import { NavList } from '../nav-list/nav-list';
+import { NavListOption } from '../nav-list/nav-list-option';
 
 const StyledDiv = styled.div`
     position: relative;
@@ -41,14 +41,14 @@ const StyledLeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
 `;
 
-const StyledNavDropdown = styled(NavMenu)`
+const StyledNavDropdown = styled(NavList)`
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
     right: 0;
     width: initial;
 `;
 
-function getFirstFocusableElement(array: NavMenuOption[]): NavMenuOption {
+function getFirstFocusableElement(array: NavListOption[]): NavListOption {
     const focusableElements = array.filter((element) => !element.disabled);
     return focusableElements[0];
 }
@@ -77,12 +77,12 @@ interface NavButtonProps {
     iconName?: IconName;
     iconOnly?: boolean;
     id?: string;
-    options: NavMenuOption[];
+    options: NavListOption[];
     title?: string;
     buttonType?: ButtonType;
     inverted?: boolean;
     onDropdownVisibilityChanged?(isOpen: boolean): void;
-    onLinkSelected?(option: NavMenuOption): void;
+    onLinkSelected?(option: NavListOption): void;
 }
 
 export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonProps>> = ({
@@ -118,12 +118,12 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonPr
     }, [isOpen, onDropdownVisibilityChanged]);
 
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const navMenuRef = useRef<HTMLUListElement>(null);
+    const NavListRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
-        const shouldClose = (navMenuRef.current === null || clickIsOutside) && isOpen;
+        const clickIsOutside = !eventIsInside(event, buttonRef.current, NavListRef.current);
+        const shouldClose = (NavListRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
             setOpen(false);
@@ -160,7 +160,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonPr
         }
     };
 
-    const handleOnLinkSelected: (option: NavMenuOption) => void = (option: NavMenuOption) => {
+    const handleOnLinkSelected: (option: NavListOption) => void = (option: NavListOption) => {
         onLinkSelected?.(option);
         setOpen(false);
     };
@@ -234,7 +234,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonPr
                 onChange={handleOnLinkSelected}
                 onKeyDown={handleNavDropdownKeyDown}
                 options={options}
-                ref={navMenuRef}
+                ref={NavListRef}
                 hidden={!isOpen}
             />
         </StyledDiv>

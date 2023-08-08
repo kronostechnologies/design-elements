@@ -200,7 +200,7 @@ describe('DropdownNavigation', () => {
             <DropdownNavigation tag="div" options={options}>Test Button</DropdownNavigation>,
         );
 
-        const dropdownNavContainer = getByTestId(wrapper, 'dropdownnav-container');
+        const dropdownNavContainer = getByTestId(wrapper, 'nav-container');
         expect(dropdownNavContainer.prop('as')).toEqual('div');
     });
 
@@ -209,7 +209,7 @@ describe('DropdownNavigation', () => {
             <DropdownNavigation tag="nav" options={options}>Test Button</DropdownNavigation>,
         );
 
-        const dropdownNavContainer = getByTestId(wrapper, 'dropdownnav-container');
+        const dropdownNavContainer = getByTestId(wrapper, 'nav-container');
         expect(dropdownNavContainer.prop('as')).toEqual('nav');
     });
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavMenu Is hidden 1`] = `
+exports[`NavList Is hidden 1`] = `
 .c2 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -129,7 +129,7 @@ exports[`NavMenu Is hidden 1`] = `
 </ul>
 `;
 
-exports[`NavMenu Matches the snapshot 1`] = `
+exports[`NavList Matches the snapshot 1`] = `
 .c2 {
   overflow: hidden;
   text-overflow: ellipsis;

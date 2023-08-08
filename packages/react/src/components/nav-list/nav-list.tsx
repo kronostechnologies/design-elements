@@ -2,8 +2,8 @@ import { createRef, forwardRef, KeyboardEvent, ReactElement, Ref, useEffect, use
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { v4 as uuid } from '../../utils/uuid';
-import { ListOption, NavMenuItem } from './nav-menu-item';
-import { NavMenuOption } from './nav-menu-option';
+import { ListOption, NavListItem } from './nav-list-item';
+import { NavListOption } from './nav-list-option';
 
 const List = styled.ul`
     background-color: ${({ theme }) => theme.greys.white};
@@ -18,16 +18,16 @@ const List = styled.ul`
     width: 100%;
 `;
 
-export interface NavMenuProps {
+export interface NavListProps {
     id?: string;
-    options: NavMenuOption[];
+    options: NavListOption[];
     className?: string;
     /** Sets the current focused element in the menu */
     focusedValue?: string;
     hidden?: boolean;
 
     /** onChange callback function, invoked when an option is selected */
-    onChange?(option: NavMenuOption): void;
+    onChange?(option: NavListOption): void;
 
     /** onKeyDown callback function, invoked when a key is pressed */
     onKeyDown?(event: KeyboardEvent): void;
@@ -35,7 +35,7 @@ export interface NavMenuProps {
     ordered?: boolean;
 }
 
-export const NavMenu = forwardRef(({
+export const NavList = forwardRef(({
     className,
     id: providedId,
     options,
@@ -45,7 +45,7 @@ export const NavMenu = forwardRef(({
     onKeyDown,
     ordered,
     ...rest
-}: NavMenuProps, ref: Ref<HTMLUListElement>): ReactElement => {
+}: NavListProps, ref: Ref<HTMLUListElement>): ReactElement => {
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(rest);
     const dataTestId = dataAttributes['data-testid'] ?? 'menu-list';
@@ -64,7 +64,7 @@ export const NavMenu = forwardRef(({
         }
     }, [focusedValue, list]);
 
-    function handleKeyDown(event: KeyboardEvent<HTMLAnchorElement>, option: NavMenuOption): void {
+    function handleKeyDown(event: KeyboardEvent<HTMLAnchorElement>, option: NavListOption): void {
         if (event.key === 'Enter') {
             event.preventDefault();
             event.currentTarget.click();
@@ -85,7 +85,7 @@ export const NavMenu = forwardRef(({
             hidden={hidden}
         >
             {list.map((option) => (
-                <NavMenuItem
+                <NavListItem
                     data-testid={`listitem-${option.value}`}
                     key={option.id}
                     onKeyDown={handleKeyDown}
@@ -97,4 +97,4 @@ export const NavMenu = forwardRef(({
     );
 });
 
-NavMenu.displayName = 'NavMenu';
+NavList.displayName = 'NavList';

@@ -2,9 +2,9 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
-import { HtmlLink, ListOption, NavMenuItem, ReactRouterNavLink } from './nav-menu-item';
+import { HtmlLink, ListOption, NavListItem, ReactRouterNavLink } from './nav-list-item';
 
-describe('NavMenuItem', () => {
+describe('NavListItem', () => {
     function givenOptionA(override: Omit<Partial<ListOption>, 'label' | 'value'> = {}): ListOption {
         return {
             id: 'an-id',
@@ -20,7 +20,7 @@ describe('NavMenuItem', () => {
     it('Should use react-router links by default', () => {
         const option = givenOptionA();
 
-        const wrapper = shallow(<NavMenuItem option={option} />);
+        const wrapper = shallow(<NavListItem option={option} />);
 
         expect(wrapper.find(ReactRouterNavLink).isEmptyRender()).toBe(false);
     });
@@ -28,25 +28,25 @@ describe('NavMenuItem', () => {
     it('displays screen-reader-only text when router link opens in a new tab (target="_blank")', () => {
         const option = givenOptionA({ target: '_blank' });
 
-        const wrapper = mountWithProviders(<NavMenuItem option={option} />);
+        const wrapper = mountWithProviders(<NavListItem option={option} />);
 
-        const navMenuOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionA-link-screen-reader-text');
-        expect(navMenuOptionScreenReaderText.exists()).toBe(true);
+        const navListOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionA-link-screen-reader-text');
+        expect(navListOptionScreenReaderText.exists()).toBe(true);
     });
 
     it('displays screen-reader-only text when html link opens in a new tab (target="_blank")', () => {
         const option = givenOptionA({ target: '_blank', isHtmlLink: true });
 
-        const wrapper = mountWithProviders(<NavMenuItem option={option} />);
+        const wrapper = mountWithProviders(<NavListItem option={option} />);
 
-        const navMenuOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionA-link-screen-reader-text');
-        expect(navMenuOptionScreenReaderText.exists()).toBe(true);
+        const navListOptionScreenReaderText = getByTestId(wrapper, 'listitem-optionA-link-screen-reader-text');
+        expect(navListOptionScreenReaderText.exists()).toBe(true);
     });
 
     it('Should use html links when isHtmlLink is set to true', () => {
         const option = givenOptionA({ isHtmlLink: true });
 
-        const wrapper = shallow(<NavMenuItem option={option} />);
+        const wrapper = shallow(<NavListItem option={option} />);
 
         expect(wrapper.find(HtmlLink).isEmptyRender()).toBe(false);
     });
@@ -54,7 +54,7 @@ describe('NavMenuItem', () => {
     it('Should have start-icon when startIcon prop is defined', () => {
         const option = givenOptionA({ startIcon: 'home' });
 
-        const wrapper = mountWithProviders(<NavMenuItem option={option} />);
+        const wrapper = mountWithProviders(<NavListItem option={option} />);
 
         expect(getByTestId(wrapper, 'start-icon').exists()).toBe(true);
     });
@@ -62,7 +62,7 @@ describe('NavMenuItem', () => {
     it('Should have end-icon when endIcon prop is defined', () => {
         const option = givenOptionA({ endIcon: 'home' });
 
-        const wrapper = mountWithProviders(<NavMenuItem option={option} />);
+        const wrapper = mountWithProviders(<NavListItem option={option} />);
 
         expect(getByTestId(wrapper, 'end-icon').exists()).toBe(true);
     });
@@ -70,7 +70,7 @@ describe('NavMenuItem', () => {
     it('calls option.onClick when an htmlLink is clicked', () => {
         const onClick = jest.fn();
         const option = givenOptionA({ isHtmlLink: true, onClick });
-        const wrapper = mountWithProviders(<NavMenuItem option={option} />);
+        const wrapper = mountWithProviders(<NavListItem option={option} />);
 
         getByTestId(wrapper, 'listitem-optionA-link').simulate('click');
 
@@ -80,7 +80,7 @@ describe('NavMenuItem', () => {
     it('calls option.onClick when an ReactRouterNavLink is clicked', () => {
         const onClick = jest.fn();
         const option = givenOptionA({ onClick });
-        const wrapper = mountWithProviders(<NavMenuItem option={option} />);
+        const wrapper = mountWithProviders(<NavListItem option={option} />);
 
         getByTestId(wrapper, 'listitem-optionA-link').simulate('click');
 

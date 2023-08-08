@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { eventIsInside } from '../../utils/events';
 import { IconButton } from '../buttons/icon-button';
-import { NavMenu } from '../nav-menu/nav-menu';
-import { NavMenuOption } from '../nav-menu/nav-menu-option';
+import { NavList } from '../nav-list/nav-list';
+import { NavListOption } from '../nav-list/nav-list-option';
 import { RouteLink } from '../route-link/route-link';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 
-export type BreadcrumbElement = NavMenuOption;
+export type BreadcrumbElement = NavListOption;
 
 interface BreadcrumbProps {
     className?: string;
@@ -36,7 +36,7 @@ const StyledLi = styled.li`
     }
 `;
 
-const StyledNavMenu = styled(NavMenu)`
+const StyledNavList = styled(NavList)`
     max-width: 350px;
     width: initial;
 `;
@@ -57,7 +57,7 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
     const [focusedValue, setFocusedValue] = useState('');
 
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const navMenuRef = useRef<HTMLUListElement>(null);
+    const navListRef = useRef<HTMLUListElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
     const {
         shownRoutes,
@@ -68,8 +68,8 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
     const showLastRoute = !hiddenRoutes.includes(lastRoute);
 
     const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !eventIsInside(event, buttonRef.current, navMenuRef.current);
-        const shouldClose = (navMenuRef.current === null || clickIsOutside) && isOpen;
+        const clickIsOutside = !eventIsInside(event, buttonRef.current, navListRef.current);
+        const shouldClose = (navListRef.current === null || clickIsOutside) && isOpen;
 
         if (shouldClose) {
             setOpen(false);
@@ -85,7 +85,7 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
         return () => document.removeEventListener('mouseup', handleClickOutside);
     }, [handleClickOutside, isOpen, history]);
 
-    function handleNavMenuKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    function handleNavListKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
         if (event.key === 'Escape') {
             setOpen(false);
             buttonRef.current?.focus();
@@ -103,7 +103,7 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
     }
 
     const showHiddenRoutes = overflow.horizontal || hiddenRoutes.length > 0;
-    const leftShownRoutes: NavMenuOption[] = shownRoutes.slice(0, shownRoutes.length - 1);
+    const leftShownRoutes: NavListOption[] = shownRoutes.slice(0, shownRoutes.length - 1);
 
     return (
         <nav aria-label="breadcrumb" className={className} ref={navRef}>
@@ -130,14 +130,14 @@ export const Breadcrumb: VoidFunctionComponent<BreadcrumbProps> = ({ className, 
                             label="breadcrumb-list"
                             onClick={() => setOpen(!isOpen)}
                         />
-                        <StyledNavMenu
+                        <StyledNavList
                             ordered
-                            data-testid="nav-menu"
-                            ref={navMenuRef}
+                            data-testid="nav-list"
+                            ref={navListRef}
                             hidden={!isOpen}
                             focusedValue={focusedValue}
                             onChange={() => setOpen(false)}
-                            onKeyDown={handleNavMenuKeyDown}
+                            onKeyDown={handleNavListKeyDown}
                             options={hiddenRoutes}
                         />
                     </StyledLi>

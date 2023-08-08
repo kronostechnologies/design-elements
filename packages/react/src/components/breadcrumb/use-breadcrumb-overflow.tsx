@@ -1,5 +1,5 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
-import { NavMenuOption } from '../nav-menu/nav-menu-option';
+import { NavListOption } from '../nav-list/nav-list-option';
 
 export interface Overflow {
     vertical: boolean;
@@ -8,8 +8,8 @@ export interface Overflow {
 
 interface UseBreadcrumbOverlowRequest {
     navRef: RefObject<HTMLDivElement>,
-    hiddenRoutes: NavMenuOption[],
-    shownRoutes: NavMenuOption[]
+    hiddenRoutes: NavListOption[],
+    shownRoutes: NavListOption[]
 }
 
 export function useBreadcrumbOverflow({

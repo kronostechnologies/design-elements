@@ -15,9 +15,9 @@ import { focus } from '../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
-import { NavMenuOption } from './nav-menu-option';
+import { NavListOption } from './nav-list-option';
 
-export interface ListOption extends NavMenuOption {
+export interface ListOption extends NavListOption {
     id: string;
     focusIndex: number;
     ref: RefObject<HTMLAnchorElement>;
@@ -82,15 +82,15 @@ export const HtmlLink = styled.a<LinkProps>`
     ${linkStyles};
 `;
 
-export interface NavMenuItemProps {
+export interface NavListItemProps {
     option: ListOption;
 
-    onKeyDown?(event: KeyboardEvent<HTMLAnchorElement>, option: NavMenuOption): void;
+    onKeyDown?(event: KeyboardEvent<HTMLAnchorElement>, option: NavListOption): void;
 
-    onSelect?(option: NavMenuOption): void;
+    onSelect?(option: NavListOption): void;
 }
 
-const LinkContent: VoidFunctionComponent<NavMenuItemProps> = memo<NavMenuItemProps>(
+const LinkContent: VoidFunctionComponent<NavListItemProps> = memo<NavListItemProps>(
     ({ option }) => (
         <>
             {option.startIcon && <StartIcon data-testid="start-icon" name={option.startIcon} />}
@@ -119,7 +119,7 @@ const ScreenReaderMessage: VoidFunctionComponent<WithTestId> = ({ testId }) => {
     );
 };
 
-export const NavMenuItem: VoidFunctionComponent<NavMenuItemProps> = ({
+export const NavListItem: VoidFunctionComponent<NavListItemProps> = ({
     option,
     onKeyDown,
     onSelect,

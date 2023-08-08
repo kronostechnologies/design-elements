@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { DesignSystem } from '../design-system';
-import { NavMenuOption } from '../nav-menu/nav-menu-option';
+import { NavListOption } from '../nav-list/nav-list-option';
 import { Breadcrumb } from './breadcrumb';
 import { useBreadcrumbRoutes } from './use-breadcrumb-routes';
 
@@ -101,7 +101,7 @@ describe('Breadcrumb', () => {
         });
 
         test('Matches snapshot (Dropdown open with long text)', () => {
-            const hiddenRoute: NavMenuOption = {
+            const hiddenRoute: NavListOption = {
                 label: 'FOUR IS GOING TO BE TOO LONG FOR THE ACTUAL DROPDOWN SO IT WILL HAVE ELLIPSIS',
                 href: '/too-long',
                 value: 'three',
@@ -144,7 +144,7 @@ describe('Breadcrumb', () => {
             </BrowserRouter>,
         );
 
-        expect(getByTestId('nav-menu').getAttribute('hidden')).toBe('');
+        expect(getByTestId('nav-list').getAttribute('hidden')).toBe('');
     });
 
     test('Menu should be displayed when button is clicked', async () => {
@@ -163,6 +163,6 @@ describe('Breadcrumb', () => {
         await waitFor(() => expect(queryByTestId('ellipse-button')).toBeTruthy());
         fireEvent.click(getByTestId('ellipse-button'));
 
-        expect(getByTestId('nav-menu').getAttribute('hidden')).toBe(null);
+        expect(getByTestId('nav-list').getAttribute('hidden')).toBe(null);
     });
 });
