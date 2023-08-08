@@ -133,7 +133,7 @@ const Arrow = styled.button<{ disabled?: boolean }>`
     }
 `;
 
-interface SelectProps {
+interface DropdownListProps {
     /**
      * Sets input's aria-label
      */
@@ -197,7 +197,7 @@ interface SelectProps {
     onChange?(option: Option): void;
 }
 
-export const Select: VoidFunctionComponent<SelectProps> = ({
+export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     ariaLabel,
     className,
     defaultOpen = false,

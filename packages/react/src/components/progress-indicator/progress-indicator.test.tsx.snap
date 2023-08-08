@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProgressBar Matches the snapshot 1`] = `
+exports[`ProgressIndicator Matches the snapshot 1`] = `
 .c2 p {
   color: #000000;
   -webkit-letter-spacing: 0.02875rem;

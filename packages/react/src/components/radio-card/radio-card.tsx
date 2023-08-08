@@ -14,7 +14,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import * as S from './styled-components';
 
-interface ChooserCardProps {
+interface RadioCardProps {
     checked?: boolean;
     children?: ReactNode;
     className?: string;
@@ -29,7 +29,7 @@ interface ChooserCardProps {
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-export const ChooserCard : VoidFunctionComponent<ChooserCardProps> = ({
+export const RadioCard : VoidFunctionComponent<RadioCardProps> = ({
     checked,
     children,
     className,
@@ -76,7 +76,7 @@ export const ChooserCard : VoidFunctionComponent<ChooserCardProps> = ({
     return (
         <S.Label
             className={className}
-            data-testid={`chooser-card-${value}-container`}
+            data-testid={`radio-card-${value}-container`}
             disabled={disabled}
             isMobile={isMobile}
             isChecked={isInputChecked}
@@ -93,7 +93,7 @@ export const ChooserCard : VoidFunctionComponent<ChooserCardProps> = ({
                 <S.HiddenInput
                     aria-describedby={`description-${id}`}
                     checked={checked}
-                    data-testid={`chooser-card-${value}-input`}
+                    data-testid={`radio-card-${value}-input`}
                     defaultChecked={defaultChecked}
                     disabled={disabled}
                     id={id}

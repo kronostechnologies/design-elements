@@ -85,7 +85,7 @@ interface MenuButtonProps {
     onMenuOptionSelected?(option: NavMenuOption): void;
 }
 
-export const NavMenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
+export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
     tag,
     ariaLabel,
     autofocus,
@@ -106,7 +106,7 @@ export const NavMenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>
     ...props
 }) => {
     const { isMobile } = useDeviceContext();
-    const { t } = useTranslation('nav-menu-button');
+    const { t } = useTranslation('dropdown-navigation');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const [focusedValue, setFocusedValue] = useState('');
     const [isOpen, setOpen] = useState(defaultOpen);
@@ -179,7 +179,7 @@ export const NavMenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>
 
     return (
         <StyledDiv
-            data-testid="navmenu-container"
+            data-testid="nav-container"
             as={tag}
             ref={navRef}
             className={className}

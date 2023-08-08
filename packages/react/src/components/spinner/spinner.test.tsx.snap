@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Enso Spinner Matches the snapshot 1`] = `
+exports[`Spinner Matches the snapshot 1`] = `
 .c0 {
   -webkit-animation: roll 1s infinite;
   animation: roll 1s infinite;

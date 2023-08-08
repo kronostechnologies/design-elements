@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
+exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -264,7 +264,7 @@ exports[`NavMenuButton Matches Snapshot (defaultOpen) 1`] = `
 </div>
 `;
 
-exports[`NavMenuButton Matches Snapshot (tag="nav") 1`] = `
+exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -529,7 +529,7 @@ exports[`NavMenuButton Matches Snapshot (tag="nav") 1`] = `
 </nav>
 `;
 
-exports[`NavMenuButton Matches Snapshot 1`] = `
+exports[`DropdownNavigation Matches Snapshot 1`] = `
 .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;

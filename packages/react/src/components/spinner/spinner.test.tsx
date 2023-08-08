@@ -1,9 +1,9 @@
 import { renderWithTheme } from '../../test-utils/renderer';
-import { EnsoSpinner } from './enso-spinner';
+import { Spinner } from './spinner';
 
-describe('Enso Spinner', () => {
+describe('Spinner', () => {
     test('Matches the snapshot', () => {
-        const tree = renderWithTheme(<EnsoSpinner />);
+        const tree = renderWithTheme(<Spinner />);
 
         expect(tree).toMatchSnapshot();
     });

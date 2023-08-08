@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders } from '../../test-utils/renderer';
 import { IconButton } from '../buttons/icon-button';
-import { NavMenuButton } from './nav-menu-button';
+import { DropdownNavigation } from './dropdown-navigation';
 
 jest.mock('../../utils/uuid');
 
@@ -31,7 +31,7 @@ const options = [
 
 const buttonTypes = ['normal', 'iconOnly'] as const;
 
-describe('NavMenuButton', () => {
+describe('DropdownNavigation', () => {
     buttonTypes.forEach((type) => {
         const isIconOnly = type === 'iconOnly';
 
@@ -39,9 +39,9 @@ describe('NavMenuButton', () => {
             const ariaLabel = 'test-aria-label';
 
             const wrapper = shallow(
-                <NavMenuButton buttonAriaLabel={ariaLabel} options={options} iconOnly={isIconOnly} iconName="home">
+                <DropdownNavigation buttonAriaLabel={ariaLabel} options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
             );
 
             expect(getByTestId(wrapper, 'menu-button').prop('aria-label')).toBe(ariaLabel);
@@ -49,9 +49,9 @@ describe('NavMenuButton', () => {
 
         test(`Opens nav-menu when menu-button is clicked (${type})`, () => {
             const wrapper = mountWithProviders(
-                <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
+                <DropdownNavigation options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
             );
 
             getByTestId(wrapper, 'menu-button').simulate('click');
@@ -61,9 +61,9 @@ describe('NavMenuButton', () => {
 
         test(`Focuses the first menu-item when menu opens with Enter (${type})`, () => {
             const wrapper = mountWithProviders(
-                <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
+                <DropdownNavigation options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
             );
 
             getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
@@ -75,9 +75,9 @@ describe('NavMenuButton', () => {
 
         test(`Focuses the first menu-item when menu opens with Space (${type})`, () => {
             const wrapper = mountWithProviders(
-                <NavMenuButton options={options} iconOnly={isIconOnly} iconName="home">
+                <DropdownNavigation options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
             );
 
             getByTestId(wrapper, 'menu-button').simulate('keydown', { key: ' ' });
@@ -89,9 +89,9 @@ describe('NavMenuButton', () => {
 
         test(`Focuses menu-button when escape key is pressed in nav-menu (${type})`, () => {
             const wrapper = mountWithProviders(
-                <NavMenuButton defaultOpen options={options} iconOnly={isIconOnly} iconName="home">
+                <DropdownNavigation defaultOpen options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
                 { attachTo: document.body },
             );
 
@@ -104,7 +104,7 @@ describe('NavMenuButton', () => {
         test(`Should call onMenuVisibilityChanged when nav-menu closes (${type})`, () => {
             const onMenuVisibilityChanged = jest.fn();
             const wrapper = mountWithProviders(
-                <NavMenuButton
+                <DropdownNavigation
                     defaultOpen
                     options={options}
                     iconOnly={isIconOnly}
@@ -112,7 +112,7 @@ describe('NavMenuButton', () => {
                     onMenuVisibilityChanged={onMenuVisibilityChanged}
                 >
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
             );
 
             getByTestId(wrapper, 'menu-button').simulate('click');
@@ -123,14 +123,14 @@ describe('NavMenuButton', () => {
         test(`Should call onMenuVisibilityChanged when nav-menu opens (${type})`, () => {
             const onMenuVisibilityChanged = jest.fn();
             const wrapper = mountWithProviders(
-                <NavMenuButton
+                <DropdownNavigation
                     options={options}
                     iconOnly={isIconOnly}
                     iconName="home"
                     onMenuVisibilityChanged={onMenuVisibilityChanged}
                 >
                     Test Button
-                </NavMenuButton>,
+                </DropdownNavigation>,
             );
 
             getByTestId(wrapper, 'menu-button').simulate('click');
@@ -141,9 +141,9 @@ describe('NavMenuButton', () => {
 
     test('Should use IconButton component when iconOnly is true', () => {
         const wrapper = shallow(
-            <NavMenuButton options={options} iconOnly iconName="home">
+            <DropdownNavigation options={options} iconOnly iconName="home">
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         expect(wrapper.find(IconButton).exists()).toBe(true);
@@ -151,9 +151,9 @@ describe('NavMenuButton', () => {
 
     test('nav-menu is open when defaultOpen prop is set to true', () => {
         const wrapper = shallow(
-            <NavMenuButton defaultOpen options={options}>
+            <DropdownNavigation defaultOpen options={options}>
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
@@ -161,9 +161,9 @@ describe('NavMenuButton', () => {
 
     test('Should close nav-menu when escape key is pressed in nav-menu', () => {
         const wrapper = mountWithProviders(
-            <NavMenuButton defaultOpen options={options}>
+            <DropdownNavigation defaultOpen options={options}>
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         getByTestId(wrapper, 'listitem-optionA-link').simulate('keydown', { key: 'Escape' });
@@ -174,9 +174,9 @@ describe('NavMenuButton', () => {
     test('Should call onMenuOptionsSelected when an option is selected in the nav-menu', () => {
         const onMenuOptionSelected = jest.fn();
         const wrapper = mountWithProviders(
-            <NavMenuButton options={options} onMenuOptionSelected={onMenuOptionSelected}>
+            <DropdownNavigation options={options} onMenuOptionSelected={onMenuOptionSelected}>
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         const navMenuOption = getByTestId(wrapper, `listitem-${options[0].value}-link`);
@@ -187,9 +187,9 @@ describe('NavMenuButton', () => {
 
     test('Matches Snapshot', () => {
         const tree = renderWithProviders(
-            <NavMenuButton options={options}>
+            <DropdownNavigation options={options}>
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         expect(tree).toMatchSnapshot();
@@ -197,7 +197,7 @@ describe('NavMenuButton', () => {
 
     test('Renders div container tag when "tag" prop is set to div', () => {
         const wrapper = mountWithProviders(
-            <NavMenuButton tag="div" options={options}>Test Button</NavMenuButton>,
+            <DropdownNavigation tag="div" options={options}>Test Button</DropdownNavigation>,
         );
 
         const navMenuContainer = getByTestId(wrapper, 'navmenu-container');
@@ -206,7 +206,7 @@ describe('NavMenuButton', () => {
 
     test('Renders nav container tag when "tag" props is set to nav', () => {
         const wrapper = mountWithProviders(
-            <NavMenuButton tag="nav" options={options}>Test Button</NavMenuButton>,
+            <DropdownNavigation tag="nav" options={options}>Test Button</DropdownNavigation>,
         );
 
         const navMenuContainer = getByTestId(wrapper, 'navmenu-container');
@@ -215,9 +215,9 @@ describe('NavMenuButton', () => {
 
     test('Matches Snapshot (tag="nav")', () => {
         const tree = renderWithProviders(
-            <NavMenuButton tag="nav" options={options}>
+            <DropdownNavigation tag="nav" options={options}>
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         expect(tree).toMatchSnapshot();
@@ -225,9 +225,9 @@ describe('NavMenuButton', () => {
 
     test('Matches Snapshot (defaultOpen)', () => {
         const tree = renderWithProviders(
-            <NavMenuButton defaultOpen options={options}>
+            <DropdownNavigation defaultOpen options={options}>
                 Test Button
-            </NavMenuButton>,
+            </DropdownNavigation>,
         );
 
         expect(tree).toMatchSnapshot();

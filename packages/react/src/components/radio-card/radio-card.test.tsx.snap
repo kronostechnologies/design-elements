@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
+exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 .c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -100,7 +100,7 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
 
 <label
   class="c0"
-  data-testid="chooser-card-test-container"
+  data-testid="radio-card-test-container"
 >
   <div
     class="c1 c2"
@@ -110,7 +110,7 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
       aria-describedby="description-undefined"
       checked=""
       class="c3"
-      data-testid="chooser-card-test-input"
+      data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
@@ -129,7 +129,7 @@ exports[`Chooser Card Matches snapshot (Checked, Desktop) 1`] = `
 </label>
 `;
 
-exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
+exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 .c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -229,7 +229,7 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
 
 <label
   class="c0"
-  data-testid="chooser-card-test-container"
+  data-testid="radio-card-test-container"
 >
   <div
     class="c1 c2"
@@ -238,7 +238,7 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
     <input
       aria-describedby="description-undefined"
       class="c3"
-      data-testid="chooser-card-test-input"
+      data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
@@ -257,7 +257,7 @@ exports[`Chooser Card Matches snapshot (Default, Desktop) 1`] = `
 </label>
 `;
 
-exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
+exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 .c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -357,7 +357,7 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
 
 <label
   class="c0"
-  data-testid="chooser-card-test-container"
+  data-testid="radio-card-test-container"
 >
   <div
     class="c1 c2"
@@ -366,7 +366,7 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
     <input
       aria-describedby="description-undefined"
       class="c3"
-      data-testid="chooser-card-test-input"
+      data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
@@ -385,7 +385,7 @@ exports[`Chooser Card Matches snapshot (Default, Mobile) 1`] = `
 </label>
 `;
 
-exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
+exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 .c5 {
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
@@ -485,7 +485,7 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
 
 <label
   class="c0"
-  data-testid="chooser-card-test-container"
+  data-testid="radio-card-test-container"
   disabled=""
 >
   <div
@@ -496,7 +496,7 @@ exports[`Chooser Card Matches snapshot (Disabled, Desktop) 1`] = `
     <input
       aria-describedby="description-undefined"
       class="c3"
-      data-testid="chooser-card-test-input"
+      data-testid="radio-card-test-input"
       disabled=""
       name="test"
       type="radio"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Progress Component Snapshots with labels 1`] = `
+exports[`ProgressTracker Component Snapshots with labels 1`] = `
 .c0 {
   position: relative;
   width: 100%;
@@ -167,7 +167,7 @@ exports[`Progress Component Snapshots with labels 1`] = `
 </div>
 `;
 
-exports[`Progress Component Snapshots without labels 1`] = `
+exports[`ProgressTracker Component Snapshots without labels 1`] = `
 .c0 {
   position: relative;
   width: 100%;

@@ -1,7 +1,7 @@
 import { ReactWrapper, shallow } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { Option, Select } from './select';
+import { Option, DropdownList } from './dropdown-list';
 
 jest.mock('../../utils/uuid');
 
@@ -48,7 +48,7 @@ async function selectOption(wrapper: ReactWrapper, option: Option): Promise<void
 describe('Select', () => {
     test('onChange callback is called when selected value is changed', () => {
         const callback = jest.fn();
-        const wrapper = shallow(<Select onChange={callback} options={provinces} defaultOpen />);
+        const wrapper = shallow(<DropdownList onChange={callback} options={provinces} defaultOpen />);
 
         getByTestId(wrapper, 'listbox').simulate('change', { value: 'ns', label: 'Nova Scotia' });
 
@@ -56,39 +56,39 @@ describe('Select', () => {
     });
 
     test('listbox should be closed by default', () => {
-        const wrapper = shallow(<Select options={provinces} />);
+        const wrapper = shallow(<DropdownList options={provinces} />);
 
         expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
     });
 
     test('listbox should be open when defaultOpen prop is set to true', () => {
-        const wrapper = shallow(<Select options={provinces} defaultOpen />);
+        const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
         expect(findByTestId(wrapper, 'listbox').length).toEqual(1);
     });
 
     test('input should have controllable data-test-id', () => {
         const wrapper = shallow(
-            <Select data-testid="a-controlled-id" options={provinces} defaultValue="qc" />,
+            <DropdownList data-testid="a-controlled-id" options={provinces} defaultValue="qc" />,
         );
 
         expect(getByTestId(wrapper, 'a-controlled-id').props().value).toBe('Quebec');
     });
 
     test('input should have default value', () => {
-        const wrapper = shallow(<Select options={provinces} defaultValue="qc" />);
+        const wrapper = shallow(<DropdownList options={provinces} defaultValue="qc" />);
 
         expect(getByTestId(wrapper, 'input').props().value).toBe('Quebec');
     });
 
     test('input should have value', () => {
-        const wrapper = mountWithTheme(<Select options={provinces} value="qc" />);
+        const wrapper = mountWithTheme(<DropdownList options={provinces} value="qc" />);
 
         expect(getByTestId(wrapper, 'input').props().value).toBe('Quebec');
     });
 
     test('listbox should open on click', () => {
-        const wrapper = shallow(<Select options={provinces} />);
+        const wrapper = shallow(<DropdownList options={provinces} />);
 
         getByTestId(wrapper, 'input-wrapper').simulate('click');
 
@@ -96,7 +96,7 @@ describe('Select', () => {
     });
 
     test('listbox should not open on click when Select is searchable', () => {
-        const wrapper = shallow(<Select options={provinces} searchable />);
+        const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
         getByTestId(wrapper, 'input-wrapper').simulate('click');
 
@@ -104,7 +104,7 @@ describe('Select', () => {
     });
 
     test('listbox should close on click', () => {
-        const wrapper = shallow(<Select options={provinces} defaultOpen />);
+        const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
         getByTestId(wrapper, 'input-wrapper').simulate('click');
 
@@ -112,7 +112,7 @@ describe('Select', () => {
     });
 
     test('listbox should open when arrow is clicked', () => {
-        const wrapper = shallow(<Select options={provinces} />);
+        const wrapper = shallow(<DropdownList options={provinces} />);
 
         getByTestId(wrapper, 'arrow').simulate('click');
 
@@ -120,7 +120,7 @@ describe('Select', () => {
     });
 
     test('listbox should close when arrow is clicked', () => {
-        const wrapper = shallow(<Select options={provinces} defaultOpen />);
+        const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
         getByTestId(wrapper, 'arrow').simulate('click');
 
@@ -130,7 +130,7 @@ describe('Select', () => {
     describe('input', () => {
         describe('ArrowUp', () => {
             test('should open listbox', () => {
-                const wrapper = shallow(<Select options={provinces} />);
+                const wrapper = shallow(<DropdownList options={provinces} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
 
@@ -138,7 +138,7 @@ describe('Select', () => {
             });
 
             test('should open listbox when Select is searchable', () => {
-                const wrapper = shallow(<Select options={provinces} searchable />);
+                const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
 
@@ -146,7 +146,7 @@ describe('Select', () => {
             });
 
             test('should focus last element in listbox', () => {
-                const wrapper = mountWithTheme(<Select options={provinces} />);
+                const wrapper = mountWithTheme(<DropdownList options={provinces} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
 
@@ -154,7 +154,7 @@ describe('Select', () => {
             });
 
             test('should focus last enabled element in listbox when there is disabled options', () => {
-                const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+                const wrapper = mountWithTheme(<DropdownList options={disabledOptions} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowUp' });
 
@@ -164,7 +164,7 @@ describe('Select', () => {
 
         describe('ArrowDown', () => {
             test('should open listbox', () => {
-                const wrapper = shallow(<Select options={provinces} />);
+                const wrapper = shallow(<DropdownList options={provinces} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
 
@@ -172,7 +172,7 @@ describe('Select', () => {
             });
 
             test('should open listbox when Select is searchable', () => {
-                const wrapper = shallow(<Select options={provinces} searchable />);
+                const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
 
@@ -180,7 +180,7 @@ describe('Select', () => {
             });
 
             test('should focus first element in listbox', () => {
-                const wrapper = mountWithTheme(<Select options={provinces} />);
+                const wrapper = mountWithTheme(<DropdownList options={provinces} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
 
@@ -188,7 +188,7 @@ describe('Select', () => {
             });
 
             test('should focus first enabled element in listbox when there is disabled options', () => {
-                const wrapper = mountWithTheme(<Select options={disabledOptions} />);
+                const wrapper = mountWithTheme(<DropdownList options={disabledOptions} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'ArrowDown' });
 
@@ -198,7 +198,7 @@ describe('Select', () => {
 
         describe('Enter', () => {
             test('should open listbox', () => {
-                const wrapper = shallow(<Select options={provinces} />);
+                const wrapper = shallow(<DropdownList options={provinces} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
 
@@ -206,7 +206,7 @@ describe('Select', () => {
             });
 
             test('should not open listbox when Select is searchable', () => {
-                const wrapper = shallow(<Select options={provinces} searchable />);
+                const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'Enter', preventDefault: jest.fn() });
 
@@ -216,7 +216,7 @@ describe('Select', () => {
 
         describe('Spacebar', () => {
             test('should open listbox', () => {
-                const wrapper = shallow(<Select options={provinces} />);
+                const wrapper = shallow(<DropdownList options={provinces} />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
 
@@ -224,7 +224,7 @@ describe('Select', () => {
             });
 
             test('should open listbox when Select is searchable', () => {
-                const wrapper = shallow(<Select options={provinces} searchable />);
+                const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: ' ', preventDefault: jest.fn() });
 
@@ -234,7 +234,7 @@ describe('Select', () => {
 
         describe('Escape', () => {
             test('should close listbox', () => {
-                const wrapper = shallow(<Select options={provinces} defaultOpen />);
+                const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
 
@@ -242,7 +242,7 @@ describe('Select', () => {
             });
 
             test('should close listbox when Select is searchable', () => {
-                const wrapper = shallow(<Select options={provinces} defaultOpen searchable />);
+                const wrapper = shallow(<DropdownList options={provinces} defaultOpen searchable />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
 
@@ -250,7 +250,7 @@ describe('Select', () => {
             });
 
             test('should clear input value when Select is searchable', () => {
-                const wrapper = shallow(<Select options={provinces} defaultValue="qc" searchable />);
+                const wrapper = shallow(<DropdownList options={provinces} defaultValue="qc" searchable />);
 
                 getByTestId(wrapper, 'input').simulate('keydown', { key: 'Escape' });
 
@@ -259,7 +259,7 @@ describe('Select', () => {
         });
 
         test('listbox should open when search entry has matching result(s) when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
+            const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
             getByTestId(wrapper, 'input').simulate('change', { currentTarget: { value: 'a' } });
 
@@ -267,7 +267,7 @@ describe('Select', () => {
         });
 
         test('listbox should close when search entry has no matching result when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
+            const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
             getByTestId(wrapper, 'input').simulate('change', { currentTarget: { value: 'at' } });
 
@@ -275,7 +275,7 @@ describe('Select', () => {
         });
 
         test('should select value that matches search value on blur when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} searchable />);
+            const wrapper = shallow(<DropdownList options={provinces} searchable />);
 
             getByTestId(wrapper, 'input').simulate('change', { currentTarget: { value: 'quebec' } });
             getByTestId(wrapper, 'input').simulate('blur');
@@ -286,7 +286,7 @@ describe('Select', () => {
 
     describe('listbox', () => {
         test('should close when escape is pressed', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen />);
+            const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'Escape' });
 
@@ -294,7 +294,7 @@ describe('Select', () => {
         });
 
         test('should clear input value when escape is pressed when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen defaultValue="qc" searchable />);
+            const wrapper = shallow(<DropdownList options={provinces} defaultOpen defaultValue="qc" searchable />);
 
             getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'Escape' });
 
@@ -302,7 +302,7 @@ describe('Select', () => {
         });
 
         test('should focus last element from array when ArrowUp is pressed', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen />);
+            const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'ArrowUp' });
 
@@ -310,7 +310,7 @@ describe('Select', () => {
         });
 
         test('should focus the first element starting with the letter N', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen />);
+            const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'n' });
 
@@ -318,7 +318,7 @@ describe('Select', () => {
         });
 
         test('should remove focus when a character is pressed when Select is searchable', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen searchable />);
+            const wrapper = shallow(<DropdownList options={provinces} defaultOpen searchable />);
 
             getByTestId(wrapper, 'listbox').simulate('keydown', { key: 'n' });
 
@@ -326,7 +326,7 @@ describe('Select', () => {
         });
 
         test('should close onChange', () => {
-            const wrapper = shallow(<Select options={provinces} defaultOpen />);
+            const wrapper = shallow(<DropdownList options={provinces} defaultOpen />);
 
             getByTestId(wrapper, 'listbox').simulate('change', { option: { label: 'Quebec', value: 'qc' } });
 
@@ -336,7 +336,7 @@ describe('Select', () => {
 
     test('matches the snapshot', () => {
         const tree = renderWithProviders(
-            <Select
+            <DropdownList
                 defaultOpen
                 label="Select an option"
                 options={provinces}
@@ -349,7 +349,7 @@ describe('Select', () => {
 
     test('invalid select has a different style', () => {
         const tree = renderWithProviders(
-            <Select
+            <DropdownList
                 defaultOpen
                 label="Select an option"
                 options={provinces}
@@ -363,7 +363,7 @@ describe('Select', () => {
 
     test('disabled select has a different style', () => {
         const tree = renderWithProviders(
-            <Select
+            <DropdownList
                 defaultOpen
                 label="Select an option"
                 options={provinces}
@@ -376,7 +376,7 @@ describe('Select', () => {
 
     test('mobile select has a different style', () => {
         const tree = renderWithProviders(
-            <Select
+            <DropdownList
                 defaultOpen
                 options={provinces}
             />,
@@ -387,21 +387,21 @@ describe('Select', () => {
     });
 
     test('should select skip option when defaultValue is skip value', () => {
-        const wrapper = shallow(<Select options={[]} skipOption={skipOption} defaultValue={skipOption.value} />);
+        const wrapper = shallow(<DropdownList options={[]} skipOption={skipOption} defaultValue={skipOption.value} />);
 
         const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
         expect(skipOptionWrapper.props().checked).toBe(true);
     });
 
     test('should select skip option when value is skip value', () => {
-        const wrapper = mountWithTheme(<Select options={[]} skipOption={skipOption} value={skipOption.value} />);
+        const wrapper = mountWithTheme(<DropdownList options={[]} skipOption={skipOption} value={skipOption.value} />);
 
         const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
         expect(skipOptionWrapper.props().checked).toBe(true);
     });
 
     test('should not select skip option when defaultValue is different than skip value', () => {
-        const wrapper = shallow(<Select options={[]} skipOption={skipOption} defaultValue="not skip value" />);
+        const wrapper = shallow(<DropdownList options={[]} skipOption={skipOption} defaultValue="not skip value" />);
 
         const skipOptionWrapper = getByTestId(wrapper, 'select-skip-option');
         expect(skipOptionWrapper.props().checked).toBe(false);
@@ -410,7 +410,7 @@ describe('Select', () => {
     test('should call onChange when skipOption is selected', () => {
         const onChange = jest.fn();
         const wrapper = shallow(
-            <Select
+            <DropdownList
                 options={[]}
                 skipOption={skipOption}
                 onChange={onChange}
@@ -425,7 +425,7 @@ describe('Select', () => {
     test('should not filter options when an option is already selected', async () => {
         const onChange = jest.fn();
         const wrapper = mountWithTheme(
-            <Select
+            <DropdownList
                 options={provinces}
                 onChange={onChange}
             />,
@@ -441,7 +441,7 @@ describe('Select', () => {
     test('should filter options again when you search after having a selected option', async () => {
         const onChange = jest.fn();
         const wrapper = mountWithTheme(
-            <Select
+            <DropdownList
                 options={provinces}
                 onChange={onChange}
             />,
@@ -462,7 +462,7 @@ describe('Select', () => {
     });
 
     test('should not display skip option when no skipOption is provided', () => {
-        const wrapper = shallow(<Select options={[]} />);
+        const wrapper = shallow(<DropdownList options={[]} />);
 
         const skipOptionWrapper = findByTestId(wrapper, 'select-skip-option');
         expect(skipOptionWrapper.length).toBe(0);

@@ -2,9 +2,9 @@ import { shallow } from 'enzyme';
 import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { range } from '../../utils/range';
-import { Progress, ProgressStep } from './progress';
+import { Progress, ProgressTracker } from './progress-tracker';
 
-function generateSteps(count: number): ProgressStep[] {
+function generateSteps(count: number): ProgressTracker[] {
     return range(1, count).map((i) => ({ label: `Step ${i}` }));
 }
 

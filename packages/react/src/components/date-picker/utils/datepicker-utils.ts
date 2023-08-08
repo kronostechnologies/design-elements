@@ -1,7 +1,7 @@
 import type { Locale } from 'date-fns';
 import { enCA } from 'date-fns/locale';
 import { range } from '../../../utils/range';
-import { Option } from '../../select/select';
+import { Option } from '../../dropdown-list/dropdown-list';
 
 export type SupportedLocale = 'fr-CA' | 'en-CA' | 'en-US';
 export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;

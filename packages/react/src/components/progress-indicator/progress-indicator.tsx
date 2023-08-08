@@ -29,7 +29,7 @@ interface Props {
     descriptionLabel?: string;
 }
 
-export const ProgressBar: VoidFunctionComponent<Props> = ({
+export const ProgressIndicator: VoidFunctionComponent<Props> = ({
     className, color, descriptionLabel, resultLabel, percent,
 }) => (
     <Container className={className}>

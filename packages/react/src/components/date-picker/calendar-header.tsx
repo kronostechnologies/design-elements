@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
-import { Option, Select } from '../select/select';
+import { Option, DropdownList } from '../dropdown-list/dropdown-list';
 
 const Wrapper = styled.div<{ isMobile: boolean }>`
     align-items: center;
@@ -40,7 +40,7 @@ const FlexContainer = styled.div`
     display: flex;
 `;
 
-const SelectWrapper = styled.div<{ isMobile: boolean }>`
+const DropdownListWrapper = styled.div<{ isMobile: boolean }>`
     height: ${({ isMobile }) => (isMobile ? 2.5 : 2)}rem;
     width: ${({ isMobile }) => (isMobile ? 5.5 : 5)}rem;
 `;
@@ -88,8 +88,8 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                 <Icon name="chevronLeft" size={isMobile ? '26' : '16'} />
             </StyledButton>
             <FlexContainer>
-                <SelectWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
-                    <Select
+                <DropdownListWrapper isMobile={isMobile} style={{ marginRight: '8px' }}>
+                    <DropdownList
                         ariaLabel={t('monthSelectLabel')}
                         data-testid="month-select"
                         options={monthsOptions}
@@ -98,9 +98,9 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                         }}
                         value={monthsOptions[getMonth(date)].value}
                     />
-                </SelectWrapper>
-                <SelectWrapper isMobile={isMobile}>
-                    <Select
+                </DropdownListWrapper>
+                <DropdownListWrapper isMobile={isMobile}>
+                    <DropdownList
                         ariaLabel={t('yearSelectLabel')}
                         data-testid="year-select"
                         options={yearsOptions}
@@ -109,7 +109,7 @@ export const CalendarHeader: VoidFunctionComponent<CalendarHeaderProps> = ({
                         }}
                         value={getYear(date).toString()}
                     />
-                </SelectWrapper>
+                </DropdownListWrapper>
             </FlexContainer>
             <StyledButton
                 aria-label={t('monthNextButtonLabel')}

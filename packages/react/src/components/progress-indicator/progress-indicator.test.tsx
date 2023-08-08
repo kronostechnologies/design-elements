@@ -1,10 +1,10 @@
 import { renderWithTheme } from '../../test-utils/renderer';
-import { ProgressBar } from './progress-bar';
+import { ProgressIndicator } from './progress-indicator';
 
-describe('ProgressBar', () => {
+describe('ProgressIndicator', () => {
     test('Matches the snapshot', () => {
         const tree = renderWithTheme(
-            <ProgressBar
+            <ProgressIndicator
                 color="rgb(101,226,255)"
                 descriptionLabel="You"
                 resultLabel="50k - 100k$"

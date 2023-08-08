@@ -115,17 +115,17 @@ const FutureStep = styled(Step)`
     }
 `;
 
-export interface ProgressStep {
+export interface ProgressTracker {
     label?: string;
 }
 
 interface ProgressProps {
     className?: string;
-    steps: ProgressStep[];
+    steps: ProgressTracker[];
     value: number;
 }
 
-function renderStep(step: ProgressStep, stepIndex: number, value: number): ReactElement {
+function renderStep(step: ProgressTracker, stepIndex: number, value: number): ReactElement {
     let StepComponent;
     let dataTestId: string;
 
@@ -154,7 +154,7 @@ export const Progress:VoidFunctionComponent<ProgressProps> = ({ className, steps
     return (
         <Container className={className}>
             <StyledProgress max={max - 1} value={zeroBasedValue} />
-            <Steps data-testid="progress-steps">
+            <Steps data-testid="progress-tracker">
                 {steps.map((step, stepIndex: number) => renderStep(step, stepIndex, zeroBasedValue))}
             </Steps>
         </Container>

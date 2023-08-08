@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Enso from '../../icons/enso.svg';
 
-const EnsoSpinner = styled(Enso)`
+const Spinner = styled(Enso)`
     animation: roll 1s infinite;
     animation-timing-function: linear;
     fill: ${(props) => props.theme.main['primary-1.1']};
@@ -14,4 +14,4 @@ const EnsoSpinner = styled(Enso)`
     }
 `;
 
-export { EnsoSpinner };
+export { Spinner };

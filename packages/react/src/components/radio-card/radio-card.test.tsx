@@ -1,20 +1,20 @@
 import { shallow } from 'enzyme';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { ChooserCard } from './chooser-card';
+import { RadioCard } from './radio-card';
 
 jest.mock('../../utils/uuid');
 
-describe('Chooser Card', () => {
-    const inputTestId = 'chooser-card-test-input';
-    const containerTestId = 'chooser-card-test-container';
+describe('Radio Card', () => {
+    const inputTestId = 'radio-card-test-input';
+    const containerTestId = 'radio-card-test-container';
 
     test('onChange callback is called when input is changed', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <ChooserCard name="test" label="Test" value="test" onChange={callback}>
+            <RadioCard name="test" label="Test" value="test" onChange={callback}>
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
         );
 
         getByTestId(wrapper, inputTestId).simulate('change');
@@ -25,9 +25,9 @@ describe('Chooser Card', () => {
     test.skip('onChange callback is called when container is clicked', () => {
         const callback = jest.fn();
         const wrapper = mountWithTheme(
-            <ChooserCard name="test" label="Test" value="test" onChange={callback}>
+            <RadioCard name="test" label="Test" value="test" onChange={callback}>
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
         );
 
         getByTestId(wrapper, containerTestId).simulate('click');
@@ -37,9 +37,9 @@ describe('Chooser Card', () => {
 
     test('label should have isChecked prop set to true when input is defaultChecked', () => {
         const wrapper = shallow(
-            <ChooserCard name="test" label="Test" value="test" defaultChecked>
+            <RadioCard name="test" label="Test" value="test" defaultChecked>
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
         );
 
         expect(getByTestId(wrapper, containerTestId).getElement().props.isChecked).toBe(true);
@@ -47,9 +47,9 @@ describe('Chooser Card', () => {
 
     test('container should have isChecked prop set to true when input is checked', () => {
         const wrapper = mountWithTheme(
-            <ChooserCard name="test" label="Test" value="test" defaultChecked>
+            <RadioCard name="test" label="Test" value="test" defaultChecked>
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
         );
 
         expect(getByTestId(wrapper, containerTestId).getElement().props.isChecked).toBe(true);
@@ -57,9 +57,9 @@ describe('Chooser Card', () => {
 
     test('Matches snapshot (Default, Desktop)', () => {
         const tree = renderWithProviders(
-            <ChooserCard name="test" label="Test" value="test">
+            <RadioCard name="test" label="Test" value="test">
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
             'desktop',
         );
 
@@ -68,9 +68,9 @@ describe('Chooser Card', () => {
 
     test('Matches snapshot (Checked, Desktop)', () => {
         const tree = renderWithProviders(
-            <ChooserCard name="test" label="Test" value="test" checked>
+            <RadioCard name="test" label="Test" value="test" checked>
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
             'desktop',
         );
 
@@ -79,9 +79,9 @@ describe('Chooser Card', () => {
 
     test('Matches snapshot (Disabled, Desktop)', () => {
         const tree = renderWithProviders(
-            <ChooserCard name="test" label="Test" value="test" disabled>
+            <RadioCard name="test" label="Test" value="test" disabled>
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
             'desktop',
         );
 
@@ -90,9 +90,9 @@ describe('Chooser Card', () => {
 
     test('Matches snapshot (Default, Mobile)', () => {
         const tree = renderWithProviders(
-            <ChooserCard name="test" label="Test" value="test">
+            <RadioCard name="test" label="Test" value="test">
                 Test description
-            </ChooserCard>,
+            </RadioCard>,
             'mobile',
         );
 
