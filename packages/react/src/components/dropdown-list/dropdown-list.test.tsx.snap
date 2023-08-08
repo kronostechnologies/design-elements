@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownList disabled select has a different style 1`] = `
+exports[`Select disabled select has a different style 1`] = `
 .c3 {
   color: #000000;
   display: block;

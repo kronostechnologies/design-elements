@@ -172,9 +172,9 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
 }
 
 <div
-  aria-label="Menu"
+  aria-label="ariaLabel"
   class="c0"
-  data-testid="navmenu-container"
+  data-testid="nav-container"
 >
   <button
     aria-expanded="true"
@@ -436,9 +436,9 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
 }
 
 <nav
-  aria-label="Menu"
+  aria-label="ariaLabel"
   class="c0"
-  data-testid="navmenu-container"
+  data-testid="nav-container"
 >
   <button
     aria-expanded="false"
@@ -701,9 +701,9 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
 }
 
 <div
-  aria-label="Menu"
+  aria-label="ariaLabel"
   class="c0"
-  data-testid="navmenu-container"
+  data-testid="nav-container"
 >
   <button
     aria-expanded="false"
