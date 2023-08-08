@@ -53,7 +53,7 @@
     "@equisoft/eslint-config-typescript-react": "^3.0.3",
     "@equisoft/typescript-config": "^2.0.0",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
-    "@svgr/webpack": "^7.0.0",
+    "@svgr/webpack": "^8.0.0",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/cheerio": "^0.22.31",
