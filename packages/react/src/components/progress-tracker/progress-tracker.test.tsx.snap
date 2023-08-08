@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProgressTracker Component Snapshots with labels 1`] = `
+exports[`Progress Component Snapshots with labels 1`] = `
 .c0 {
   position: relative;
   width: 100%;
@@ -136,7 +136,7 @@ exports[`ProgressTracker Component Snapshots with labels 1`] = `
   />
   <ol
     class="c2"
-    data-testid="progress-steps"
+    data-testid="progress-tracker"
   >
     <li
       class="c3 c4"
@@ -167,7 +167,7 @@ exports[`ProgressTracker Component Snapshots with labels 1`] = `
 </div>
 `;
 
-exports[`ProgressTracker Component Snapshots without labels 1`] = `
+exports[`Progress Component Snapshots without labels 1`] = `
 .c0 {
   position: relative;
   width: 100%;
@@ -303,7 +303,7 @@ exports[`ProgressTracker Component Snapshots without labels 1`] = `
   />
   <ol
     class="c2"
-    data-testid="progress-steps"
+    data-testid="progress-tracker"
   >
     <li
       class="c3 c4"

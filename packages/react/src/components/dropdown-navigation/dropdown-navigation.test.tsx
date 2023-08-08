@@ -35,7 +35,7 @@ describe('DropdownNavigation', () => {
     buttonTypes.forEach((type) => {
         const isIconOnly = type === 'iconOnly';
 
-        test(`Adds aria-label to menu-button when buttonAriaLabel is defined (${type})`, () => {
+        test(`Adds aria-label to navigation-button when buttonAriaLabel is defined (${type})`, () => {
             const ariaLabel = 'test-aria-label';
 
             const wrapper = shallow(
@@ -44,50 +44,50 @@ describe('DropdownNavigation', () => {
                 </DropdownNavigation>,
             );
 
-            expect(getByTestId(wrapper, 'menu-button').prop('aria-label')).toBe(ariaLabel);
+            expect(getByTestId(wrapper, 'navigation-button').prop('aria-label')).toBe(ariaLabel);
         });
 
-        test(`Opens nav-menu when menu-button is clicked (${type})`, () => {
+        test(`Opens navigation-dropdown when navigation-button is clicked (${type})`, () => {
             const wrapper = mountWithProviders(
                 <DropdownNavigation options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
                 </DropdownNavigation>,
             );
 
-            getByTestId(wrapper, 'menu-button').simulate('click');
+            getByTestId(wrapper, 'navigation-button').simulate('click');
 
-            expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
+            expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('hidden')).toBe(false);
         });
 
-        test(`Focuses the first menu-item when menu opens with Enter (${type})`, () => {
+        test(`Focuses the first navigation-item when navigation opens with Enter (${type})`, () => {
             const wrapper = mountWithProviders(
                 <DropdownNavigation options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
                 </DropdownNavigation>,
             );
 
-            getByTestId(wrapper, 'menu-button').simulate('keydown', { key: 'Enter' });
+            getByTestId(wrapper, 'navigation-button').simulate('keydown', { key: 'Enter' });
 
             setTimeout(() => {
-                expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
+                expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('focusedValue')).toBe('optionA');
             });
         });
 
-        test(`Focuses the first menu-item when menu opens with Space (${type})`, () => {
+        test(`Focuses the first navigation-item when dropdown opens with Space (${type})`, () => {
             const wrapper = mountWithProviders(
                 <DropdownNavigation options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
                 </DropdownNavigation>,
             );
 
-            getByTestId(wrapper, 'menu-button').simulate('keydown', { key: ' ' });
+            getByTestId(wrapper, 'navigation-button').simulate('keydown', { key: ' ' });
 
             setTimeout(() => {
-                expect(getByTestId(wrapper, 'menu-navMenu').prop('focusedValue')).toBe('optionA');
+                expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('focusedValue')).toBe('optionA');
             });
         });
 
-        test(`Focuses menu-button when escape key is pressed in nav-menu (${type})`, () => {
+        test(`Focuses navigation-button when escape key is pressed in navigation-dropdown (${type})`, () => {
             const wrapper = mountWithProviders(
                 <DropdownNavigation defaultOpen options={options} iconOnly={isIconOnly} iconName="home">
                     Test Button
@@ -97,45 +97,45 @@ describe('DropdownNavigation', () => {
 
             getByTestId(wrapper, 'listitem-optionA-link').simulate('keydown', { key: 'Escape' });
 
-            expect(document.activeElement).toBe(getByTestId(wrapper, 'menu-button').getDOMNode());
+            expect(document.activeElement).toBe(getByTestId(wrapper, 'navigation-button').getDOMNode());
             wrapper.unmount();
         });
 
-        test(`Should call onMenuVisibilityChanged when nav-menu closes (${type})`, () => {
-            const onMenuVisibilityChanged = jest.fn();
+        test(`Should call onDropdownVisibilityChanged when navigation-dropdown closes (${type})`, () => {
+            const onDropdownVisibilityChanged = jest.fn();
             const wrapper = mountWithProviders(
                 <DropdownNavigation
                     defaultOpen
                     options={options}
                     iconOnly={isIconOnly}
                     iconName="home"
-                    onMenuVisibilityChanged={onMenuVisibilityChanged}
+                    onDropdownVisibilityChanged={onDropdownVisibilityChanged}
                 >
                     Test Button
                 </DropdownNavigation>,
             );
 
-            getByTestId(wrapper, 'menu-button').simulate('click');
+            getByTestId(wrapper, 'navigation-button').simulate('click');
 
-            expect(onMenuVisibilityChanged).toHaveBeenCalledWith(false);
+            expect(onDropdownVisibilityChanged).toHaveBeenCalledWith(false);
         });
 
-        test(`Should call onMenuVisibilityChanged when nav-menu opens (${type})`, () => {
-            const onMenuVisibilityChanged = jest.fn();
+        test(`Should call onDropdownVisibilityChanged when navigation-dropdown opens (${type})`, () => {
+            const onDropdownVisibilityChanged = jest.fn();
             const wrapper = mountWithProviders(
                 <DropdownNavigation
                     options={options}
                     iconOnly={isIconOnly}
                     iconName="home"
-                    onMenuVisibilityChanged={onMenuVisibilityChanged}
+                    onDropdownVisibilityChanged={onDropdownVisibilityChanged}
                 >
                     Test Button
                 </DropdownNavigation>,
             );
 
-            getByTestId(wrapper, 'menu-button').simulate('click');
+            getByTestId(wrapper, 'navigation-button').simulate('click');
 
-            expect(onMenuVisibilityChanged).toHaveBeenCalledWith(true);
+            expect(onDropdownVisibilityChanged).toHaveBeenCalledWith(true);
         });
     });
 
@@ -149,17 +149,17 @@ describe('DropdownNavigation', () => {
         expect(wrapper.find(IconButton).exists()).toBe(true);
     });
 
-    test('nav-menu is open when defaultOpen prop is set to true', () => {
+    test('navigation-dropdown is open when defaultOpen prop is set to true', () => {
         const wrapper = shallow(
             <DropdownNavigation defaultOpen options={options}>
                 Test Button
             </DropdownNavigation>,
         );
 
-        expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(false);
+        expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('hidden')).toBe(false);
     });
 
-    test('Should close nav-menu when escape key is pressed in nav-menu', () => {
+    test('Should close navigation-dropdown when escape key is pressed in navigation-dropdown', () => {
         const wrapper = mountWithProviders(
             <DropdownNavigation defaultOpen options={options}>
                 Test Button
@@ -168,21 +168,21 @@ describe('DropdownNavigation', () => {
 
         getByTestId(wrapper, 'listitem-optionA-link').simulate('keydown', { key: 'Escape' });
 
-        expect(getByTestId(wrapper, 'menu-navMenu').prop('hidden')).toBe(true);
+        expect(getByTestId(wrapper, 'dropdown-navDropdown').prop('hidden')).toBe(true);
     });
 
-    test('Should call onMenuOptionsSelected when an option is selected in the nav-menu', () => {
-        const onMenuOptionSelected = jest.fn();
+    test('Should call onLinkSelected when an option is selected in the navigation-dropdown', () => {
+        const onLinkSelected = jest.fn();
         const wrapper = mountWithProviders(
-            <DropdownNavigation options={options} onMenuOptionSelected={onMenuOptionSelected}>
+            <DropdownNavigation options={options} onLinkSelected={onLinkSelected}>
                 Test Button
             </DropdownNavigation>,
         );
 
-        const navMenuOption = getByTestId(wrapper, `listitem-${options[0].value}-link`);
-        navMenuOption.simulate('click');
+        const navLink = getByTestId(wrapper, `listitem-${options[0].value}-link`);
+        navLink.simulate('click');
 
-        expect(onMenuOptionSelected).toHaveBeenCalledWith(expect.objectContaining(options[0]));
+        expect(onLinkSelected).toHaveBeenCalledWith(expect.objectContaining(options[0]));
     });
 
     test('Matches Snapshot', () => {
@@ -200,8 +200,8 @@ describe('DropdownNavigation', () => {
             <DropdownNavigation tag="div" options={options}>Test Button</DropdownNavigation>,
         );
 
-        const navMenuContainer = getByTestId(wrapper, 'navmenu-container');
-        expect(navMenuContainer.prop('as')).toEqual('div');
+        const dropdownNavContainer = getByTestId(wrapper, 'dropdownnav-container');
+        expect(dropdownNavContainer.prop('as')).toEqual('div');
     });
 
     test('Renders nav container tag when "tag" props is set to nav', () => {
@@ -209,8 +209,8 @@ describe('DropdownNavigation', () => {
             <DropdownNavigation tag="nav" options={options}>Test Button</DropdownNavigation>,
         );
 
-        const navMenuContainer = getByTestId(wrapper, 'navmenu-container');
-        expect(navMenuContainer.prop('as')).toEqual('nav');
+        const dropdownNavContainer = getByTestId(wrapper, 'dropdownnav-container');
+        expect(dropdownNavContainer.prop('as')).toEqual('nav');
     });
 
     test('Matches Snapshot (tag="nav")', () => {

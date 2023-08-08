@@ -1,7 +1,7 @@
 import { createRef, RefObject } from 'react';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
-import { Datepicker, DatepickerHandles } from './datepicker';
+import { Datepicker, DatepickerHandles } from './date-picker';
 
 jest.mock('../..//utils/uuid');
 

@@ -41,7 +41,7 @@ const StyledLeftIcon = styled(Icon)`
     margin-right: var(--spacing-1x);
 `;
 
-const StyledNavMenu = styled(NavMenu)`
+const StyledNavDropdown = styled(NavMenu)`
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
     right: 0;
@@ -53,7 +53,7 @@ function getFirstFocusableElement(array: NavMenuOption[]): NavMenuOption {
     return focusableElements[0];
 }
 
-interface MenuButtonProps {
+interface NavButtonProps {
     /**
      * Sets nav's description
      * @default 'Menu'
@@ -81,11 +81,11 @@ interface MenuButtonProps {
     title?: string;
     buttonType?: ButtonType;
     inverted?: boolean;
-    onMenuVisibilityChanged?(isOpen: boolean): void;
-    onMenuOptionSelected?(option: NavMenuOption): void;
+    onDropdownVisibilityChanged?(isOpen: boolean): void;
+    onLinkSelected?(option: NavMenuOption): void;
 }
 
-export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
+export const DropdownNavigation: FunctionComponent<PropsWithChildren<NavButtonProps>> = ({
     tag,
     ariaLabel,
     autofocus,
@@ -99,8 +99,8 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
     iconOnly = false,
     id: providedId,
     inverted = true,
-    onMenuOptionSelected,
-    onMenuVisibilityChanged,
+    onLinkSelected,
+    onDropdownVisibilityChanged,
     options,
     title,
     ...props
@@ -114,8 +114,8 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
     const dataAttributes = useDataAttributes(props);
 
     useEffect(() => {
-        onMenuVisibilityChanged?.(isOpen);
-    }, [isOpen, onMenuVisibilityChanged]);
+        onDropdownVisibilityChanged?.(isOpen);
+    }, [isOpen, onDropdownVisibilityChanged]);
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const navMenuRef = useRef<HTMLUListElement>(null);
@@ -142,7 +142,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
         };
     }, [handleClickOutside, isOpen]);
 
-    const handleNavMenuKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+    const handleNavDropdownKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Escape') {
             setOpen(false);
             buttonRef.current?.focus();
@@ -160,8 +160,8 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
         }
     };
 
-    const handleOnMenuOptionSelected: (option: NavMenuOption) => void = (option: NavMenuOption) => {
-        onMenuOptionSelected?.(option);
+    const handleOnLinkSelected: (option: NavMenuOption) => void = (option: NavMenuOption) => {
+        onLinkSelected?.(option);
         setOpen(false);
     };
 
@@ -191,7 +191,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
                     autofocus={autofocus}
-                    data-testid="menu-button"
+                    data-testid="navigation-button"
                     isMobile={isMobile}
                     onClick={handleButtonClick}
                     ref={buttonRef}
@@ -218,7 +218,7 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
                     aria-label={buttonAriaLabel}
                     aria-expanded={isOpen}
                     autofocus={autofocus}
-                    data-testid="menu-button"
+                    data-testid="navigation-button"
                     iconName={iconName}
                     onClick={handleButtonClick}
                     ref={buttonRef}
@@ -228,11 +228,11 @@ export const DropdownNavigation: FunctionComponent<PropsWithChildren<MenuButtonP
                     inverted={inverted}
                 />
             )}
-            <StyledNavMenu
-                data-testid="menu-navMenu"
+            <StyledNavDropdown
+                data-testid="dropdown-navDropdown"
                 focusedValue={focusedValue}
-                onChange={handleOnMenuOptionSelected}
-                onKeyDown={handleNavMenuKeyDown}
+                onChange={handleOnLinkSelected}
+                onKeyDown={handleNavDropdownKeyDown}
                 options={options}
                 ref={navMenuRef}
                 hidden={!isOpen}
