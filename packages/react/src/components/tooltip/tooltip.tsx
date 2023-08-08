@@ -17,7 +17,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Icon } from '../icon/icon';
 
 const TooltipArrow = styled.div`
-    height: 1rem;
+    height: 1.25rem;
     position: absolute;
     width: 1rem;
 
@@ -42,21 +42,20 @@ const TooltipArrow = styled.div`
 `;
 
 const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
-    border-radius: var(--border-radius);
+    background-color: ${({ theme }) => theme.greys['dark-grey']};
+    border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.greys.white};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
+    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.75rem')};
     justify-content: center;
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
     margin: 0;
     max-width: 327px;
-    min-height: ${({ isMobile }) => (isMobile ? '72px' : '32px')};
-    padding: ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
+    min-height: ${({ isMobile }) => (isMobile ? '72px' : '24px')};
+    padding: 1px ${({ isMobile }) => (isMobile ? 'var(--spacing-3x)' : 'var(--spacing-1x)')};
     transition: opacity 300ms;
     z-index: 1000;
 
@@ -70,14 +69,14 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
         border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
-        border-width: 0 0.5rem 0.4rem;
+        border-width: 0 0.5rem 0.5rem;
         position: absolute;
-        top: -1px;
+        top: -3px;
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::after {
-        border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
-        border-width: 0 0.5rem 0.4rem;
+        border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
+        border-width: 0 0.5rem 0.5rem;
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow} {
@@ -90,14 +89,14 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::before {
         border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
-        border-width: 0.4rem 0.5rem 0;
+        border-width: 0.5rem 0.5rem 0;
         position: absolute;
         top: 1px;
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::after {
-        border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
-        border-width: 0.4rem 0.5rem 0;
+        border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
+        border-width: 0.5rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow} {
@@ -109,7 +108,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
         border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
-        border-width: 0.5rem 0.4rem 0.5rem 0;
+        border-width: 0.5rem 0.5rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {
