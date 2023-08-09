@@ -12,3 +12,8 @@ jest.mock('any.scss', () => ({
     unuse: jest.fn(),
     toString: () => 'body {}',
 }));
+
+jest.mock('react', () => ({
+    ...jest.requireActual('react'),
+    useLayoutEffect: jest.requireActual('react').useEffect,
+}));
