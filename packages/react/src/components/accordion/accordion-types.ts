@@ -8,13 +8,13 @@ export interface AccordionGroupProps {
   }
 
 export interface AccordionProps {
-    /** Title Trigger */
+    /** Title Label */
     title: string;
-    /** Id is used in Accessibility implementation */
+    /** Id for Accessibility implementation */
     id: string;
     type?: Type;
     tag?: Tag;
-    /** Property doesn't need value, boolean is based on the property name only */
+    /** Property based on the property name only */
     noMargin?: boolean;
     isExpanded?: boolean;
     onToggle?: () => void;

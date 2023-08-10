@@ -61,7 +61,6 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     return (
       <>
         <StyledHeading type={type} {...props} isExpanded={isExpanded}>
-        
           <StyledButton
             id={headerId}
             buttonType="tertiary"
@@ -74,6 +73,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             <Icon name={isExpanded ? 'chevronDown' : 'chevronRight'} aria-hidden="true"/>
           </StyledButton>
         </StyledHeading>
+        
         <AccordionSection 
             id={panelId} 
             aria-labelledby={headerId} 

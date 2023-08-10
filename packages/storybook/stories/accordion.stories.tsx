@@ -19,7 +19,7 @@ const meta: Meta<typeof Accordion> = {
 
 export default meta;
 
-export const DefaultSingleOpen = () => (
+export const DefaultSingle = () => (
     <SingleOpenAccordionGroup>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
@@ -34,7 +34,7 @@ export const DefaultSingleOpen = () => (
 
 );
 
-export const DefaultMultiOpen = () => (
+export const DefaultMulti = () => (
     <MultiOpenAccordionGroup>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
@@ -49,7 +49,7 @@ export const DefaultMultiOpen = () => (
 
 );
 
-export const SingleOpenExpanded = () => (
+export const SingleDefaultExpanded = () => (
     <SingleOpenAccordionGroup defaultExpandedItemId="3">
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
@@ -64,7 +64,7 @@ export const SingleOpenExpanded = () => (
 
 );
 
-export const MultiOpenExpanded = () => (
+export const MultiDefaultExpanded = () => (
     <MultiOpenAccordionGroup defaultExpandedItemIds={['1', '3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
