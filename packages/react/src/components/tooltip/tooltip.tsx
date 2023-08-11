@@ -43,6 +43,7 @@ const TooltipArrow = styled.div`
 
 const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     background-color: ${({ theme }) => theme.greys['dark-grey']};
+    border: 1px solid ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
@@ -68,7 +69,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
-        border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
         border-width: 0 0.5rem 0.5rem;
         position: absolute;
         top: -2px;
@@ -88,7 +89,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::before {
-        border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         position: absolute;
         top: 0;
@@ -107,8 +108,8 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
-        border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
-        border-width: 0.5rem 0.5rem 0.5rem 0;
+        border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
+        border-width: 0.5rem 0.4rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {
@@ -162,6 +163,7 @@ export interface TooltipProps {
     disabled?: boolean;
     /** Tooltip text content */
     label: string;
+    invertedIcon?: boolean;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -182,6 +184,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     disabled,
     label,
     desktopPlacement = 'right',
+    invertedIcon = false,
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -301,7 +304,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                     <Icon
                         name="info"
                         size={isMobile ? '24' : '16'}
-                        color={Theme.greys['dark-grey']}
+                        color={invertedIcon ? Theme.greys.white : Theme.greys['dark-grey']}
                     />
                 )}
             </StyledSpan>
