@@ -71,7 +71,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
         border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
         border-width: 0 0.5rem 0.5rem;
         position: absolute;
-        top: -3px;
+        top: -2px;
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::after {
@@ -91,7 +91,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
         border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         position: absolute;
-        top: 1px;
+        top: 0;
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::after {
@@ -112,8 +112,8 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {
-        border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
-        border-width: 0.5rem 0.4rem 0.5rem 0;
+        border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
+        border-width: 0.5rem 0.5rem 0.5rem 0;
         left: 0.375rem;
         top: 0;
     }
@@ -127,12 +127,12 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::before {
         border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
-        border-width: 0.5rem 0 0.5rem 0.4rem;
+        border-width: 0.5rem 0 0.5rem 0.5rem;
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::after {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
-        border-width: 0.5rem 0 0.5rem 0.4rem;
+        border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
+        border-width: 0.5rem 0 0.5rem 0.5rem;
         left: 0.25rem;
         top: 0;
     }
