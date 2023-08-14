@@ -1,21 +1,21 @@
-import { Progress, ProgressStep } from '@equisoft/design-elements-react';
+import { Progress, ProgressTracker } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 
 export default {
-    title: 'Data/Progress',
+    title: 'Data/Progress Tracker',
     component: Progress,
 };
 
-function createEmptySteps(count: number): ProgressStep[] {
-    const steps: ProgressStep[] = [];
+function createEmptySteps(count: number): ProgressTracker[] {
+    const steps: ProgressTracker[] = [];
     for (let i = 1; i <= count; i++) {
         steps.push({});
     }
     return steps;
 }
 
-function createSteps(count: number): ProgressStep[] {
-    const steps: ProgressStep[] = [];
+function createSteps(count: number): ProgressTracker[] {
+    const steps: ProgressTracker[] = [];
     for (let i = 1; i <= count; i++) {
         steps.push({ label: `Step ${i}` });
     }

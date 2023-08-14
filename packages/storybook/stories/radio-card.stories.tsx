@@ -1,36 +1,36 @@
-import { ChooserCard } from '@equisoft/design-elements-react';
+import { RadioCard } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Chooser Card',
-    component: ChooserCard,
+    title: 'Controls/Radio Card',
+    component: RadioCard,
 };
 
 export const Normal: Story = () => (
     <>
-        <ChooserCard data-testid="some-data-testid" name="story1" label="Card 1" value="card1">
+        <RadioCard data-testid="some-data-testid" name="story1" label="Card 1" value="card1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </ChooserCard>
-        <ChooserCard name="story1" label="Card 2" value="card2">
+        </RadioCard>
+        <RadioCard name="story1" label="Card 2" value="card2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </ChooserCard>
+        </RadioCard>
     </>
 );
 
 export const DefaultChecked: Story = () => (
     <>
-        <ChooserCard name="story2" label="Card 1" value="card1" defaultChecked>
+        <RadioCard name="story2" label="Card 1" value="card1" defaultChecked>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </ChooserCard>
-        <ChooserCard name="story2" label="Card 2" value="card2">
+        </RadioCard>
+        <RadioCard name="story2" label="Card 2" value="card2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </ChooserCard>
+        </RadioCard>
     </>
 );
 
@@ -39,7 +39,7 @@ export const Controlled: Story = () => {
 
     return (
         <>
-            <ChooserCard
+            <RadioCard
                 checked={value === 'card1'}
                 onChange={(event) => setValue(event.target.value)}
                 name="story3"
@@ -48,8 +48,8 @@ export const Controlled: Story = () => {
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec commodo nulla sapien, at condimentum ipsum tristique id.
-            </ChooserCard>
-            <ChooserCard
+            </RadioCard>
+            <RadioCard
                 checked={value === 'card2'}
                 onChange={(event) => setValue(event.target.value)}
                 name="story3"
@@ -58,22 +58,22 @@ export const Controlled: Story = () => {
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec commodo nulla sapien, at condimentum ipsum tristique id.
-            </ChooserCard>
+            </RadioCard>
         </>
     );
 };
 Controlled.parameters = rawCodeParameters;
 
 export const Disabled: Story = () => (
-    <ChooserCard name="story4" label="Card" value="card" disabled>
+    <RadioCard name="story4" label="Card" value="card" disabled>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec commodo nulla sapien, at condimentum ipsum tristique id.
-    </ChooserCard>
+    </RadioCard>
 );
 
 export const OnChangeCallback: Story = () => (
     <>
-        <ChooserCard
+        <RadioCard
             name="story5"
             label="Card 1"
             value="card1"
@@ -81,8 +81,8 @@ export const OnChangeCallback: Story = () => (
         >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </ChooserCard>
-        <ChooserCard
+        </RadioCard>
+        <RadioCard
             name="story5"
             label="Card 2"
             value="card2"
@@ -90,7 +90,7 @@ export const OnChangeCallback: Story = () => (
         >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Donec commodo nulla sapien, at condimentum ipsum tristique id.
-        </ChooserCard>
+        </RadioCard>
     </>
 );
 OnChangeCallback.parameters = rawCodeParameters;

@@ -1,9 +1,9 @@
 import {
     GlobalHeader,
     IconButton,
-    NavMenuButton,
-    NavMenuOption,
-    Select,
+    DropdownNavigation,
+    NavListOption,
+    DropdownList,
     Tooltip,
     TooltipPlacement,
 } from '@equisoft/design-elements-react';
@@ -83,7 +83,7 @@ export const DesktopPlacement: Story = () => {
 
     return (
         <DesktopPlacementContainer>
-            <Select
+            <DropdownList
                 defaultValue="right"
                 label="Desktop placement"
                 options={placements}
@@ -96,7 +96,7 @@ export const DesktopPlacement: Story = () => {
 DesktopPlacement.decorators = [DesktopDecorator];
 DesktopPlacement.parameters = rawCodeParameters;
 
-const options: NavMenuOption[] = [
+const options: NavListOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -111,18 +111,18 @@ const options: NavMenuOption[] = [
     },
 ];
 
-export const WithNavMenuButton: Story = () => {
-    const [isMenuOpen, setMenuOpen] = useState(false);
+export const WithDropdownNavigation: Story = () => {
+    const [isDropdownexpanded, setDropdownExpanded] = useState(false);
 
     return (
         <Container>
             <GlobalHeader>
-                <Tooltip label="Label" desktopPlacement="bottom" disabled={isMenuOpen} delayed>
-                    <NavMenuButton iconOnly iconName="info" options={options} onMenuVisibilityChanged={setMenuOpen} />
+                <Tooltip label="Label" desktopPlacement="bottom" disabled={isDropdownexpanded} delayed>
+                    <DropdownNavigation iconOnly iconName="info" options={options} onDropdownVisibilityChanged={setDropdownExpanded} />
                 </Tooltip>
             </GlobalHeader>
         </Container>
     );
 };
 
-WithNavMenuButton.decorators = [RouterDecorator];
+WithDropdownNavigation.decorators = [RouterDecorator];

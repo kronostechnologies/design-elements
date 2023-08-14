@@ -1,5 +1,5 @@
 import {
-    Select,
+    DropdownList,
     Toggletip,
     ToggletipPlacement,
     ExternalLink,
@@ -57,7 +57,7 @@ export const DesktopPlacement: Story = () => {
 
     return (
         <StyledDiv>
-            <Select
+            <DropdownList
                 defaultValue="right"
                 label="Desktop placement"
                 options={placements}

@@ -1,4 +1,4 @@
-import { Select } from '@equisoft/design-elements-react';
+import { DropdownList } from '@equisoft/design-elements-react';
 import { Option } from '@equisoft/design-elements-react/dist/components/select/select';
 import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
@@ -33,49 +33,49 @@ const skipOption = {
 };
 
 export default {
-    title: 'Controls/Select',
-    component: Select,
+    title: 'Controls/Dropdown-list',
+    component: DropdownList,
     decorators: [decorateWith(Container)],
 };
 
 export const Normal: Story = () => (
-    <Select data-testid="some-data-test-id" label="Select an option" hint="Hint" options={provinces} />
+    <DropdownList data-testid="some-data-test-id" label="Select an option" hint="Hint" options={provinces} />
 );
 
 export const WithTooltip: Story = () => (
-    <Select label="Select an option" tooltip={{ label: 'Tooltip text content' }} hint="Hint" options={provinces} />
+    <DropdownList label="Select an option" tooltip={{ label: 'Tooltip text content' }} hint="Hint" options={provinces} />
 );
 
 export const InsideShadowDom: Story = () => (
-    <Select label="Select an option" hint="Hint" options={provinces} />
+    <DropdownList label="Select an option" hint="Hint" options={provinces} />
 );
 InsideShadowDom.decorators = [ShadowDomDecorator];
 
 export const CustomPlaceholder: Story = () => (
-    <Select label="Select an option" options={provinces} placeholder="Custom placeholder" />
+    <DropdownList label="Select an option" options={provinces} placeholder="Custom placeholder" />
 );
 
 export const Disabled: Story = () => (
-    <Select label="Select an option" options={provinces} disabled />
+    <DropdownList label="Select an option" options={provinces} disabled />
 );
 
 export const Invalid: Story = () => (
-    <Select label="Select an option" options={provinces} valid={false} />
+    <DropdownList label="Select an option" options={provinces} valid={false} />
 );
 
 export const Required: Story = () => (
     <form onSubmit={(event) => event.preventDefault()}>
-        <Select required label="Select an option" options={provinces} />
+        <DropdownList required label="Select an option" options={provinces} />
         <button type="submit">Submit</button>
     </form>
 );
 
 export const Searchable: Story = () => (
-    <Select label="Select an option" options={provinces} searchable />
+    <DropdownList label="Select an option" options={provinces} searchable />
 );
 
 export const WithCallback: Story = () => (
-    <Select
+    <DropdownList
         label="Select an option"
         options={provinces}
         onChange={(option) => console.info(`Label: ${option.label} | Value: ${option.value}`)}
@@ -84,19 +84,19 @@ export const WithCallback: Story = () => (
 WithCallback.parameters = rawCodeParameters;
 
 export const WithDefaultValue: Story = () => (
-    <Select label="Select an option" options={provinces} defaultValue="qc" />
+    <DropdownList label="Select an option" options={provinces} defaultValue="qc" />
 );
 
 export const WithoutLabel: Story = () => (
-    <Select options={provinces} />
+    <DropdownList options={provinces} />
 );
 
 export const WithSkip: Story = () => (
-    <Select label="Select an option" options={provinces} skipOption={skipOption} />
+    <DropdownList label="Select an option" options={provinces} skipOption={skipOption} />
 );
 
 export const WithTwoItemsVisible: Story = () => (
-    <Select label="Select an option" options={provinces} numberOfItemsVisible={2} />
+    <DropdownList label="Select an option" options={provinces} numberOfItemsVisible={2} />
 );
 
 export const WithDisabledOptions: Story = () => {
@@ -107,7 +107,7 @@ export const WithDisabledOptions: Story = () => {
         { value: 'option4', label: 'Option 4', disabled: true },
     ];
 
-    return <Select label="Select an option" options={disabledOptions} />;
+    return <DropdownList label="Select an option" options={disabledOptions} />;
 };
 
 export const ControlledWithSkipSelected: Story = () => {
@@ -118,7 +118,7 @@ export const ControlledWithSkipSelected: Story = () => {
     };
 
     return (
-        <Select
+        <DropdownList
             label="Select an option"
             options={provinces}
             skipOption={skipOption}
