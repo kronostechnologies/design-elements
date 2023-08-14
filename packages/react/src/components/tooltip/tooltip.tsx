@@ -109,7 +109,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
         border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
-        border-width: 0.5rem 0.4rem 0.5rem 0;
+        border-width: 0.5rem 0.5rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {

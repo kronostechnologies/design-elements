@@ -104,7 +104,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 .c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .c1[data-popper-placement*="right"] > .c2::after {
@@ -352,7 +352,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .c1[data-popper-placement*="right"] > .c2::after {
@@ -602,7 +602,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 .c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .c1[data-popper-placement*="right"] > .c2::after {
@@ -850,7 +850,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c1[data-popper-placement*="right"] > .c2::before {
   border-color: transparent #FFFFFF transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .c1[data-popper-placement*="right"] > .c2::after {
