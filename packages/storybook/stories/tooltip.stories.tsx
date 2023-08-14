@@ -43,9 +43,13 @@ export const WithChildElement: Story = () => (
     </Container>
 );
 
-const StyledDiv = styled.div`
+const DesktopPlacementContainer = styled.div`
     height: 240px;
     max-width: 200px;
+`;
+
+const DesktopPlacementTooltip = styled(Tooltip)`
+    margin-left: 120px;
 `;
 
 export const DesktopPlacement: Story = () => {
@@ -63,15 +67,15 @@ export const DesktopPlacement: Story = () => {
     ];
 
     return (
-        <StyledDiv>
+        <DesktopPlacementContainer>
             <Select
                 defaultValue="right"
                 label="Desktop placement"
                 options={placements}
                 onChange={(option) => setPlacement(option.value as TooltipPlacement)}
             />
-            <Tooltip desktopPlacement={placement} label="Tooltip Content" />
-        </StyledDiv>
+            <DesktopPlacementTooltip desktopPlacement={placement} label="Tooltip Content" />
+        </DesktopPlacementContainer>
     );
 };
 DesktopPlacement.decorators = [DesktopDecorator];
