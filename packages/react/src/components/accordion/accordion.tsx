@@ -12,11 +12,10 @@ export const Accordion: React.FC<AccordionProps> = ({
         type = 'medium',
         tag = "h3",
         noMargin,
-        isExpanded = false,
+        isExpanded,
         onToggle = () => {},
         children,
     }) => {
-
         const headerId = `idHeader${id}`;
         const panelId = `idPanel${id}`;
 
@@ -57,17 +56,18 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     children,
     ...props
   }) => {
-    
+
     return (
       <>
-        <StyledHeading type={type} {...props} isExpanded={isExpanded}>
+        <StyledHeading className="accordion-header" type={type} {...props} isExpanded={isExpanded}>
           <StyledButton
             id={headerId}
+            className="accordion-button"
             buttonType="tertiary"
             label={title}
             aria-expanded={isExpanded}
             aria-controls={panelId}
-            onClick={onToggle}
+            onClick={() => onToggle()}
             isExpanded={isExpanded}
           >
             <Icon name={isExpanded ? 'chevronDown' : 'chevronRight'} aria-hidden="true"/>
@@ -75,6 +75,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         </StyledHeading>
         
         <AccordionSection 
+            className="accordion-content"
             id={panelId} 
             aria-labelledby={headerId} 
             aria-expanded={isExpanded} 
