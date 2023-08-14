@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { ReactNode } from 'react';
 import { Type, Tag } from '../heading/heading';
 
