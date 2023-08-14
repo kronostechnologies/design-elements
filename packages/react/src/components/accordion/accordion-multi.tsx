@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AccordionProps, AccordionGroupProps  } from './accordion-types';
+import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
 export const MultiOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ children, defaultExpandedItemIds }) => {
@@ -14,7 +15,7 @@ export const MultiOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ childre
     return (
       <StyledAccordionGroup className="accordion">
         {React.Children.map(children, (child: React.ReactNode) => {
-          if (React.isValidElement<AccordionProps>(child)) {
+          if (React.isValidElement<AccordionProps>(child)  && child.type === Accordion) {
             const accordionProps: AccordionProps = {
               ...child.props,
               isExpanded: expandedItemIds.includes(child.props.id),
