@@ -70,7 +70,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             onClick={() => onToggle()}
             isExpanded={isExpanded}
           >
-            <Icon name={isExpanded ? 'chevronDown' : 'chevronRight'} aria-hidden="true"/>
+            <Icon name={isExpanded ? 'carretDown' : 'carretRight'} aria-hidden="true"/>
           </StyledButton>
         </StyledHeading>
         
