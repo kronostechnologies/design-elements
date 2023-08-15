@@ -46,7 +46,7 @@ const StyledButton = styled(Button)<{ isExpanded: boolean }>`
 ${({ isExpanded, theme }) => ButtonStyled(isExpanded, theme)};
 `
 
-const AccordionItem: React.FC<AccordionItemProps> = ({
+export const AccordionItem: React.FC<AccordionItemProps> = ({
     headerId,
     panelId,
     title,
