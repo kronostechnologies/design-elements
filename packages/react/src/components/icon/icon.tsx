@@ -51,6 +51,8 @@ import Organization from '../../icons/organization.svg';
 import Reorder from '../../icons/reorder.svg';
 import WarningFilled from '../../icons/warning-filled.svg';
 import Equisoft from '../../logos/logo-equisoft-ico.svg';
+import CarretDown from '../../icons/carret-down.svg';
+import CarretRight from '../../icons/carret-right.svg';
 
 const iconMapping = {
     alertCircle: AlertCircle,
@@ -64,6 +66,8 @@ const iconMapping = {
     bell: Bell,
     bento: Bento,
     calendar: Calendar,
+    carretDown: CarretDown,
+    carretRight: CarretRight,
     check: Check,
     chevronDown: ChevronDown,
     chevronLeft: ChevronLeft,
