@@ -2,21 +2,27 @@
 import { ReactNode } from 'react';
 import { Type, Tag } from '../heading/heading';
 
-export interface AccordionGroupProps {
+
+export interface AccordionSingleProps {
     children: ReactNode;
-    defaultExpandedItemId?: string | null;
+    defaultExpandedItemId?: string;
+    disabledItems?: string[];
+}
+
+export interface AccordionMultiProps {
+    children: ReactNode;
     defaultExpandedItemIds?: string[];
     disabledItems?: string[];
-  }
+}
 
 export interface AccordionProps {
     /** Title Label */
     title: string;
-    /** Id for Accessibility implementation */
+    /** Unique Id for Accessibility implementation */
     id: string;
     type?: Type;
     tag?: Tag;
-    /** Property based on the property name only */
+    /** Property deoesn't use value */
     noMargin?: boolean;
     isExpanded?: boolean;
     disabled?: boolean;

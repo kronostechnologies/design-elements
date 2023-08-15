@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { AccordionProps, AccordionGroupProps  } from './accordion-types';
+import { AccordionProps, AccordionMultiProps  } from './accordion-types';
 import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
-export const MultiOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ children, defaultExpandedItemIds, disabledItems = [] }) => {
+export const MultiOpenAccordionGroup: React.FC<AccordionMultiProps> = ({ children, defaultExpandedItemIds, disabledItems = [] }) => {
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(defaultExpandedItemIds || []);
 
     const handleToggle = (itemId: string) => {

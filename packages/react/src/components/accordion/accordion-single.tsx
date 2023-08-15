@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { AccordionProps, AccordionGroupProps  } from './accordion-types';
+import { AccordionProps, AccordionSingleProps  } from './accordion-types';
 import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
 
 // SingleOpenAccordionGroup
-export const SingleOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ children, defaultExpandedItemId, disabledItems = [] }) => {
+export const SingleOpenAccordionGroup: React.FC<AccordionSingleProps> = ({ children, defaultExpandedItemId, disabledItems = [] }) => {
     const [expandedItemId, setExpandedItemId] = useState<string | null>(defaultExpandedItemId || null);
     const handleToggle = (itemId: string) => {
       setExpandedItemId((prevId) => (prevId === itemId ? null : itemId));
