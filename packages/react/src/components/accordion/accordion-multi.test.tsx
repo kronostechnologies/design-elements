@@ -23,6 +23,11 @@ describe('Accordion Multi Open components', () => {
     );
 
   });
+  
+  it('matches snapshot (no margin)', () => {
+    const tree = mountWithTheme(<Accordion title="Panel 1" id="1" noMargin>Content for Panel 1 </Accordion>);
+    expect(tree).toMatchSnapshot();
+  });
 
   it('should render Accordion components with expected props', () => {
 

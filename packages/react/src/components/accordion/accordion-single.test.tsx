@@ -1,11 +1,9 @@
 import React from 'react';
 import { ReactWrapper} from 'enzyme';
 import { mountWithTheme} from '../../test-utils/renderer';
-import { SingleOpenAccordionGroup, Accordion } from './index';
+import { SingleOpenAccordionGroup, Accordion, AccordionItem } from './index';
+import { Icon } from '../icon/icon';
 
-
-// Mock the useState hook
-//jest.spyOn(React, 'useState').mockReturnValue(['defaultExpandedItemId', jest.fn()]);
 
 describe('SingleOpenAccordionGroup renders with default state open', () => {
 
@@ -15,18 +13,23 @@ describe('SingleOpenAccordionGroup renders with default state open', () => {
     wrapper = mountWithTheme(
      
         <SingleOpenAccordionGroup defaultExpandedItemId="3">
-          <Accordion title="Panel 1" id="1">
+          <Accordion title="Panel 1" id="1" noMargin>
             Content for Panel 1
           </Accordion>
-          <Accordion title="Panel 2" id="2">
+          <Accordion title="Panel 2" id="2" noMargin>
             Content for Panel 2
           </Accordion>
-          <Accordion title="Panel 3" id="3">
+          <Accordion title="Panel 3" id="3" noMargin>
             Content for Panel 3
           </Accordion>
         </SingleOpenAccordionGroup>
     );
 
+  });
+
+  it('matches snapshot (no margin)', () => {
+    const tree = mountWithTheme(<Accordion title="Panel 1" id="1" noMargin>Content for Panel 1 </Accordion>);
+    expect(tree).toMatchSnapshot();
   });
 
 
@@ -59,8 +62,6 @@ describe('SingleOpenAccordionGroup renders with default state open', () => {
 
     const accordions = wrapper.find(Accordion);
 
-    console.log(accordions.debug())
-
     // Ensure all elements in accordions list are of type Accordion
     accordions.forEach((element) => {
       expect(element.is(Accordion)).toBe(true);
@@ -72,7 +73,7 @@ describe('SingleOpenAccordionGroup renders with default state open', () => {
   });
 
 
-  it('SingleOpenAccordionGroup renders with defaultExpandedItemId', () => {
+  it('should render with defaultExpandedItemId', () => {
 
       const firstAccordion = wrapper.find(Accordion).at(0);
       const secondAccordion = wrapper.find(Accordion).at(1);
@@ -145,6 +146,40 @@ describe('SingleOpenAccordionGroup renders with default state open', () => {
     expect(expandedItemId).toBe(null);
 
     jest.clearAllMocks();
+  });
+
+  it('renders an icon based on the isExpanded prop', () => {
+    const wrapper = mountWithTheme(
+      <AccordionItem
+        headerId="header1"
+        panelId="panel1"
+        title="Accordion 1"
+        type="medium"
+        isExpanded={true}
+      >
+        Content for the accordion panel
+      </AccordionItem>
+    );
+
+    const icon = wrapper.find(Icon);
+    expect(icon.prop('name')).toBe('carretDown');
+  });
+
+  it('renders the opposite icon when isExpanded is false', () => {
+    const wrapper = mountWithTheme(
+      <AccordionItem
+        headerId="header2"
+        panelId="panel2"
+        title="Accordion 2"
+        type="medium"
+        isExpanded={false}
+      >
+        Content for the accordion panel
+      </AccordionItem>
+    );
+
+    const icon = wrapper.find(Icon);
+    expect(icon.prop('name')).toBe('carretRight');
   });
 
 });
