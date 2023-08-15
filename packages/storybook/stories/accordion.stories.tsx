@@ -78,3 +78,33 @@ export const MultiDefaultExpanded = () => (
     </MultiOpenAccordionGroup>
 
 );
+
+export const SingleDefaultDisabled = () => (
+    <SingleOpenAccordionGroup disabledItems={['2']}>
+        <Accordion title="Panel Title 1" id="1" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        </Accordion>
+        <Accordion title="Panel Title 2" id="2"  noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        </Accordion>
+        <Accordion title="Panel Title 3" id="3"  noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        </Accordion>
+    </SingleOpenAccordionGroup>
+
+);
+
+export const MultiDefaultDisabled = () => (
+    <MultiOpenAccordionGroup disabledItems={['1', '3']}>
+        <Accordion title="Panel Title 1" id="1" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        </Accordion>
+        <Accordion title="Panel Title 2" id="2"  noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        </Accordion>
+        <Accordion title="Panel Title 3" id="3"  noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        </Accordion>
+    </MultiOpenAccordionGroup>
+
+);

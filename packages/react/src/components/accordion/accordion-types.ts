@@ -4,8 +4,9 @@ import { Type, Tag } from '../heading/heading';
 
 export interface AccordionGroupProps {
     children: ReactNode;
-    defaultExpandedItemId?: string;
+    defaultExpandedItemId?: string | null;
     defaultExpandedItemIds?: string[];
+    disabledItems?: string[];
   }
 
 export interface AccordionProps {
@@ -18,6 +19,7 @@ export interface AccordionProps {
     /** Property based on the property name only */
     noMargin?: boolean;
     isExpanded?: boolean;
+    disabled?: boolean;
     onToggle?: () => void;
 }
 
@@ -29,6 +31,7 @@ export interface AccordionItemProps {
     tag?: Tag;
     noMargin?: boolean;
     isExpanded?: boolean;
+    disabled?: boolean;
     onToggle?: () => void;
     children: ReactNode;
 }

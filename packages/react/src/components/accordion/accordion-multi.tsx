@@ -3,9 +3,9 @@ import { AccordionProps, AccordionGroupProps  } from './accordion-types';
 import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
-export const MultiOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ children, defaultExpandedItemIds }) => {
+export const MultiOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ children, defaultExpandedItemIds, disabledItems = [] }) => {
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(defaultExpandedItemIds || []);
-  
+
     const handleToggle = (itemId: string) => {
       setExpandedItemIds((prevIds) =>
         prevIds.includes(itemId) ? prevIds.filter((id) => id !== itemId) : [...prevIds, itemId]
@@ -20,6 +20,7 @@ export const MultiOpenAccordionGroup: React.FC<AccordionGroupProps> = ({ childre
               ...child.props,
               isExpanded: expandedItemIds.includes(child.props.id),
               onToggle: () => handleToggle(child.props.id),
+              disabled: disabledItems.includes(child.props.id),
             };
             return React.cloneElement(child, accordionProps);
           }

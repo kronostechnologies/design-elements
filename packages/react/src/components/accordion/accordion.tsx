@@ -14,6 +14,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         noMargin,
         isExpanded,
         onToggle = () => {},
+        disabled,
         children,
     }) => {
         const headerId = `idHeader${id}`;
@@ -28,6 +29,7 @@ export const Accordion: React.FC<AccordionProps> = ({
             tag= {tag}
             noMargin={noMargin}
             isExpanded={isExpanded}
+            disabled={disabled}
             onToggle={onToggle}
             >
             {children}
@@ -57,6 +59,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     ...props
   }) => {
 
+    const { disabled = false } = props;
+
     return (
       <>
         <StyledHeading className="accordion-header" type={type} {...props} isExpanded={isExpanded}>
@@ -69,6 +73,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
             aria-controls={panelId}
             onClick={() => onToggle()}
             isExpanded={isExpanded}
+            disabled={disabled}
           >
             <Icon name={isExpanded ? 'carretDown' : 'carretRight'} aria-hidden="true"/>
           </StyledButton>
@@ -80,7 +85,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
             aria-labelledby={headerId} 
             aria-expanded={isExpanded} 
             role="region"
-            isExpanded={isExpanded}>
+            isExpanded={isExpanded}
+            aria-disabled={disabled}>
           {children}
         </AccordionSection>
       </>
