@@ -60,6 +60,10 @@ export const Translations = {
             'show-password': 'Show password in plain text.',
             'hide-password': 'Hide password.',
         },
+        'password-input': {
+            'show-password': 'Show password in plain text.',
+            'hide-password': 'Hide password.',
+        },
         'search-input': {
             label: 'Search',
         },
@@ -161,6 +165,10 @@ export const Translations = {
             fair: 'Raisonnable',
             good: 'Bon',
             strong: 'Fort',
+            'show-password': 'Montrer le mot de passe.',
+            'hide-password': 'Cacher le mot de passe.',
+        },
+        'password-input': {
             'show-password': 'Montrer le mot de passe.',
             'hide-password': 'Cacher le mot de passe.',
         },
