@@ -4,7 +4,7 @@ import { PasswordInput } from '@equisoft/design-elements-react';
 
 export default {
     title: 'Controls/Password Input',
-    component: PasswordInput
+    component: PasswordInput,
 };
 
 export const Normal: Story = () => (

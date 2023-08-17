@@ -46,22 +46,22 @@ const StyledTextInput = styled(TextInput)`
 `;
 
 const StyledIconButton = styled(IconButton) <{ isValid: boolean }>`
-    position: absolute;
-    width: 2rem;
-    min-height: 2rem;
+    background-color: white;
     border-color: ${({ theme }) => theme.greys['dark-grey']};
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     border-width: 1px 1px 1px 0;
-    background-color: white;
+    min-height: 2rem;
+    position: absolute;
     transform: translateX(-2rem);
+    width: 2rem;
 
     ${(props) => !props.isValid && css`
         border-color: ${props.theme.notifications['alert-2.1']};
     `}
 
     &:disabled {
-        border-color: ${({ theme }) => theme.greys['grey']};
         background-color: ${({ theme }) => theme.greys['light-grey']};
+        border-color: ${({ theme }) => theme.greys.grey};
     }
 `;
 
@@ -133,7 +133,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                     type={showPassword ? 'text' : 'password'}
                     defaultValue={defaultValue}
                     value={value}
-                    {...dataAttributes}
+                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
                 <Tooltip desktopPlacement="top" label={showPassword ? t('hide-password') : t('show-password')}>
                     <StyledIconButton
