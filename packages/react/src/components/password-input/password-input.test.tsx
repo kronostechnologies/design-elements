@@ -3,6 +3,8 @@ import { PasswordInput } from './password-input';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithTheme } from '../../test-utils/renderer';
 
+jest.mock('../../utils/uuid');
+
 describe('PasswordInput', () => {
     test('matches the snapshot (Normal)', () => {
         const tree = renderWithTheme(<PasswordInput value="Pass123" />);
