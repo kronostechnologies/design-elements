@@ -1,4 +1,4 @@
-import { SingleOpenAccordionGroup, MultiOpenAccordionGroup, Accordion } from '@equisoft/design-elements-react';
+import { AccordionContainer, Accordion } from '@equisoft/design-elements-react';
 import { Meta, StoryFn } from '@storybook/react';
 
 // eslint-disable-next-line import/no-default-export
@@ -7,14 +7,19 @@ const accordionMeta: Meta<typeof Accordion> = {
     component: Accordion,
     tags: ['autodocs'],
     argTypes: {
-        // isExpanded and onToggle are the properties we want to hide from the UI
         isExpanded: {
-        table: { disable: true },
+            table: { disable: true },
         },
         onToggle: {
-        table: { disable: true },
+            table: { disable: true },
         },
         disabled: {
+            table: { disable: true },
+        },
+        onKeyDown: {
+            table: { disable: true },
+        },
+        buttonRef: {
             table: { disable: true },
         },
     },
@@ -24,8 +29,8 @@ export default accordionMeta;
 
 type Story = StoryFn<typeof Accordion>;
 
-export const SingleOpen: Story = () => (
-    <SingleOpenAccordionGroup>
+export const Default: Story = () => (
+    <AccordionContainer>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
@@ -35,12 +40,12 @@ export const SingleOpen: Story = () => (
         <Accordion title="Panel Title 3" id="3"  noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
-    </SingleOpenAccordionGroup>
+    </AccordionContainer>
 
 );
 
-export const MultiOpen: Story = () => (
-    <MultiOpenAccordionGroup>
+export const MultiOpenToggle: Story = () => (
+    <AccordionContainer mode="multi">
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
@@ -50,12 +55,12 @@ export const MultiOpen: Story = () => (
         <Accordion title="Panel Title 3" id="3"  noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
-    </MultiOpenAccordionGroup>
+    </AccordionContainer>
 
 );
 
 export const SingleDefaultExpanded: Story = () => (
-    <SingleOpenAccordionGroup defaultExpandedItemId="3">
+    <AccordionContainer defaultExpandedItemIds={['3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
@@ -65,12 +70,12 @@ export const SingleDefaultExpanded: Story = () => (
         <Accordion title="Panel Title 3" id="3"  noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
-    </SingleOpenAccordionGroup>
+    </AccordionContainer>
 
 );
 
 export const MultiDefaultExpanded: Story = () => (
-    <MultiOpenAccordionGroup defaultExpandedItemIds={['1', '3']}>
+    <AccordionContainer defaultExpandedItemIds={['1', '3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
@@ -80,12 +85,12 @@ export const MultiDefaultExpanded: Story = () => (
         <Accordion title="Panel Title 3" id="3"  noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
-    </MultiOpenAccordionGroup>
+    </AccordionContainer>
 
 );
 
 export const SingleDisabled: Story = () => (
-    <SingleOpenAccordionGroup disabledItems={['2']}>
+    <AccordionContainer disabledItemIds={['2']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
@@ -95,12 +100,12 @@ export const SingleDisabled: Story = () => (
         <Accordion title="Panel Title 3" id="3"  noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
-    </SingleOpenAccordionGroup>
+    </AccordionContainer>
 
 );
 
 export const MultiDisabled: Story = () => (
-    <MultiOpenAccordionGroup disabledItems={['1', '3']}>
+    <AccordionContainer disabledItemIds={['1', '3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
@@ -110,6 +115,6 @@ export const MultiDisabled: Story = () => (
         <Accordion title="Panel Title 3" id="3"  noMargin>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
         </Accordion>
-    </MultiOpenAccordionGroup>
+    </AccordionContainer>
 
 );

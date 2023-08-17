@@ -1,43 +1,32 @@
 /* istanbul ignore file */
-import { ReactNode } from 'react';
+import { ReactNode, RefObject, KeyboardEvent} from 'react';
 import { Type, Tag } from '../heading/heading';
 
-
-export interface AccordionSingleProps {
+export interface AccordionContainerProps {
     children: ReactNode;
-    defaultExpandedItemId?: string;
-    disabledItems?: string[];
-}
-
-export interface AccordionMultiProps {
-    children: ReactNode;
+    /** Multipe or single panel open concurrently */
+    mode?: 'single' | 'multi';
+    /** Define which panel(s) should be open by default */
     defaultExpandedItemIds?: string[];
-    disabledItems?: string[];
+    /** Defain which accodions should be disabled */
+    disabledItemIds?: string[];
 }
 
 export interface AccordionProps {
     /** Title Label */
     title: string;
-    /** Unique Id for Accessibility implementation */
+    /** Unique Id on each accordion per group */
     id: string;
+    /** This is relate to styling */
     type?: Type;
+    /** Choose the right tag for page outline */
     tag?: Tag;
-    /** Property deoesn't use value */
+    /** Property is used without value */
     noMargin?: boolean;
     isExpanded?: boolean;
     disabled?: boolean;
     onToggle?: () => void;
-}
-
-export interface AccordionItemProps {
-    headerId: string;
-    panelId: string;
-    title: string;
-    type: Type;
-    tag?: Tag;
-    noMargin?: boolean;
-    isExpanded?: boolean;
-    disabled?: boolean;
-    onToggle?: () => void;
+    onKeyDown?: (event: KeyboardEvent<HTMLButtonElement>) => void;
     children: ReactNode;
+    buttonRef?: RefObject<HTMLButtonElement>;
 }
