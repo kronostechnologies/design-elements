@@ -72,7 +72,7 @@ describe('AccordionContianer', () => {
 
     });
 
-    it('Should have multiple accordions open when using mode='multi'', () => {
+    it('Should have multiple accordions open when using mode=multi', () => {
         const wrapper = mountWithTheme(
             <AccordionContainer mode='multi'>
                 <Accordion title='Panel 1' id='1'>

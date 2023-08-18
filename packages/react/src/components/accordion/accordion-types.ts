@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import { ReactNode, RefObject, KeyboardEvent} from 'react';
+import { ReactNode, RefObject, KeyboardEvent } from 'react';
 import { Type, Tag } from '../heading/heading';
 
 export interface AccordionContainerProps {
