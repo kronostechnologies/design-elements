@@ -8,9 +8,9 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({ mode = "
     const focusedAccordionRef = useRef<number | null>(null);
 
     const handleToggle = (itemId: string) => {
-        if (mode ===  "single") {
+        if (mode.toLowerCase() ===  "single") {
             setExpandedItemIds((prevIds) => (prevIds.includes(itemId) ? [] : [itemId]));
-        } else if (mode ===  "multi") {
+        } else if (mode.toLowerCase() ===  "multi") {
             setExpandedItemIds((prevIds) => {
                 if (prevIds.includes(itemId)) {
                     return prevIds.filter((id) => id !== itemId);
@@ -36,11 +36,10 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({ mode = "
               };
               return React.cloneElement(child, modifiedProps);
             }
-            return null;
-          }) as ReactElement<AccordionProps>[],
+            return;
+          }).filter(Boolean) as ReactElement<AccordionProps>[],
         [childrenArray]
-      );
-
+    );
 
     const handleButtonKeyDown = (
       event: React.KeyboardEvent<HTMLButtonElement>,
