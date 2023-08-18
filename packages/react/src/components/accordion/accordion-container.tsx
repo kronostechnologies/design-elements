@@ -1,16 +1,18 @@
-import React, { useState, ReactElement, useMemo, createRef, useRef} from 'react';
+import React, { useState, ReactElement, useMemo, createRef, useRef } from 'react';
 import { AccordionProps, AccordionContainerProps } from './accordion-types';
 import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
-export const AccordionContainer: React.FC<AccordionContainerProps> = ({ mode = "single", children, defaultExpandedItemIds, disabledItemIds = [] }) => {
+export const AccordionContainer: React.FC<AccordionContainerProps> = ({ 
+    mode = 'single', children, defaultExpandedItemIds, disabledItemIds = [] }) => {
+      
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(defaultExpandedItemIds || []);
     const focusedAccordionRef = useRef<number | null>(null);
 
     const handleToggle = (itemId: string) => {
-        if (mode.toLowerCase() ===  "single") {
+        if (mode.toLowerCase() ===  'single') {
             setExpandedItemIds((prevIds) => (prevIds.includes(itemId) ? [] : [itemId]));
-        } else if (mode.toLowerCase() ===  "multi") {
+        } else if (mode.toLowerCase() ===  'multi') {
             setExpandedItemIds((prevIds) => {
                 if (prevIds.includes(itemId)) {
                     return prevIds.filter((id) => id !== itemId);
@@ -46,10 +48,10 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({ mode = "
       index: number 
     ) => {
       const { key } = event;
-      if (key === "ArrowUp" || key === "ArrowDown") {
+      if (key === 'ArrowUp' || key === 'ArrowDown') {
           let newIndex;
   
-          if (key === "ArrowUp") {
+          if (key === 'ArrowUp') {
             newIndex = index - 1;
             if (newIndex < 0) {
               newIndex = accordionItems.length - 1; // Go to the last element if at the first
@@ -65,7 +67,7 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({ mode = "
     };
   
     return (
-      <StyledAccordionGroup className="accordion">
+      <StyledAccordionGroup className='accordion'>
         {accordionItems.map((accordion, index) => {
                 const isAccordionExpanded = expandedItemIds.includes(accordion.props.id);
                 const isDisabled = disabledItemIds?.includes(accordion.props.id)
