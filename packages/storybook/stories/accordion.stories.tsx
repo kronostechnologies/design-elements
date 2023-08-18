@@ -24,7 +24,7 @@ const accordionMeta: Meta<typeof Accordion> = {
         },
     },
 };
-  
+
 export default accordionMeta;
 
 type Story = StoryFn<typeof Accordion>;
@@ -32,13 +32,13 @@ type Story = StoryFn<typeof Accordion>;
 export const Default: Story = () => (
     <AccordionContainer>
         <Accordion title="Panel Title 1" id="1" noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 2" id="2" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 3" id="3" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
     </AccordionContainer>
 
@@ -47,13 +47,13 @@ export const Default: Story = () => (
 export const MultiOpenToggle: Story = () => (
     <AccordionContainer mode="multi">
         <Accordion title="Panel Title 1" id="1" noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 2" id="2" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 3" id="3" noMargin>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
     </AccordionContainer>
 
@@ -62,13 +62,13 @@ export const MultiOpenToggle: Story = () => (
 export const SingleDefaultExpanded: Story = () => (
     <AccordionContainer defaultExpandedItemIds={['3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 2" id="2" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 3" id="3" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
     </AccordionContainer>
 
@@ -77,13 +77,13 @@ export const SingleDefaultExpanded: Story = () => (
 export const MultiDefaultExpanded: Story = () => (
     <AccordionContainer defaultExpandedItemIds={['1', '3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 2" id="2" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 3" id="3" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
     </AccordionContainer>
 
@@ -92,13 +92,13 @@ export const MultiDefaultExpanded: Story = () => (
 export const SingleDisabled: Story = () => (
     <AccordionContainer disabledItemIds={['2']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 2" id="2" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 3" id="3" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
     </AccordionContainer>
 
@@ -107,13 +107,13 @@ export const SingleDisabled: Story = () => (
 export const MultiDisabled: Story = () => (
     <AccordionContainer disabledItemIds={['1', '3']}>
         <Accordion title="Panel Title 1" id="1" noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 2" id="2" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3"  noMargin>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem. Nisl, quam a semper turpis viverra eu id laoreet. Elit dignissim sit arcu faucibus ipsum. Fermentum, nibh massa feugiat dictum proin ac varius.</p>
+        <Accordion title="Panel Title 3" id="3" noMargin>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur amet id egestas lorem.</p>
         </Accordion>
     </AccordionContainer>
 
