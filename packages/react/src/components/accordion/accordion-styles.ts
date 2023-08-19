@@ -22,16 +22,16 @@ export const AccordionSectionStyled = (isExpanded: boolean, theme: Theme) => css
     overflow: hidden;
     padding: ${isExpanded ? '16px 24px 24px 40px' : '0'};
     transition: height 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0ms;
-`;
+` as any;
 
 export const HeadingStyled = (isExpanded: boolean, theme: Theme) => css`
     border: 1px solid ${theme.greys['dark-grey']};
     border-bottom-color: ${isExpanded ? theme.greys.grey : theme.greys['dark-grey']};
     border-radius: ${isExpanded ? '4px 4px 0px 0px' : '4px'};
-`;
+` as any;
 
 export const ButtonStyled = (isExpanded: boolean, theme: Theme) => css`
-    border-radius: ${ isExpanded ? '4px 4px 0px 0px' : '4px' };
+    border-radius: ${isExpanded ? '4px 4px 0px 0px' : '4px'};
     font-size: 0.875rem;
     font-weight: 400;
     justify-content: start;
@@ -48,4 +48,4 @@ export const ButtonStyled = (isExpanded: boolean, theme: Theme) => css`
         margin-right: 4px;
         padding: 4px;
     }
-`;
+` as any;

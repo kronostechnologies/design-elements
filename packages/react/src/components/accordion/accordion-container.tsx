@@ -4,7 +4,7 @@ import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
 export const AccordionContainer: React.FC<AccordionContainerProps> = ({
-    mode = 'single', children, defaultExpandedItemIds, disabledItemIds = []
+    mode = 'single', children, defaultExpandedItemIds, disabledItemIds = [],
 }) => {
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(defaultExpandedItemIds || []);
     const focusedAccordionRef = useRef<number | null>(null);
@@ -19,6 +19,26 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
                 }
                 return [...prevIds, itemId];
             });
+        }
+    };
+
+    const handleButtonKeyDown = (
+        event: React.KeyboardEvent<HTMLButtonElement>,
+        index: number
+    ) => {
+        const { key } = event;
+        if (key === 'ArrowUp' || key === 'ArrowDown') {
+            let newIndex;
+            if (key === 'ArrowUp') {
+                newIndex = index - 1;
+                if (newIndex < 0) {
+                    newIndex = accordionItems.length - 1;
+                }
+            } else {
+                newIndex = (index + 1) % accordionItems.length;
+            }
+            focusedAccordionRef.current = newIndex;
+            accordionItems[newIndex]?.props?.buttonRef?.current?.focus();
         }
     };
 
@@ -38,34 +58,14 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
             }
             return;
         }).filter(Boolean) as ReactElement<AccordionProps>[],
-        [childrenArray]
+        [childrenArray, handleButtonKeyDown]
     );
-
-    const handleButtonKeyDown = (
-        event: React.KeyboardEvent<HTMLButtonElement>,
-        index: number
-    ) => {
-        const { key } = event;
-        if (key === 'ArrowUp' || key === 'ArrowDown') {
-            let newIndex;
-            if (key === 'ArrowUp') {
-              newIndex = index - 1;
-              if (newIndex < 0) {
-                newIndex = accordionItems.length - 1;
-              }
-            } else {
-              newIndex = (index + 1) % accordionItems.length;
-            }
-          focusedAccordionRef.current = newIndex;
-          accordionItems[newIndex]?.props?.buttonRef?.current?.focus();
-        }
-    };
   
     return (
         <StyledAccordionGroup className='accordion'>
             {accordionItems.map((accordion, index) => {
                 const isAccordionExpanded = expandedItemIds.includes(accordion.props.id);
-                const isDisabled = disabledItemIds?.includes(accordion.props.id)
+                const isDisabled = disabledItemIds?.includes(accordion.props.id);
                 const accordionProps: AccordionProps = {
                 ...accordion.props, // Use the accordion item from the array
                 isExpanded: isAccordionExpanded,
@@ -78,4 +78,4 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
             })}
         </StyledAccordionGroup>
     );
-  };
+};

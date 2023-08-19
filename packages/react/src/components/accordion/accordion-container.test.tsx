@@ -98,13 +98,13 @@ describe('AccordionContianer', () => {
         const lastContainer = wrapper.find('.accordion-content').last();
         expect(buttonRefreshed.prop('aria-expanded')).toBe(true);
         expect(containerfreshed.prop('aria-expanded')).toBe(true);
-        expect(lastButton .prop('aria-expanded')).toBe(true);
+        expect(lastButton.prop('aria-expanded')).toBe(true);
         expect(lastContainer.prop('aria-expanded')).toBe(true);
     });
 
     it('Should have single accordion open when not using mode prop or using mode=single', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer >
+            <AccordionContainer>
                 <Accordion title='Panel 1' id='1'>
                     Content for Panel 1
                 </Accordion>
@@ -132,7 +132,7 @@ describe('AccordionContianer', () => {
         const lastContainer = wrapper.find('.accordion-content').last();
         expect(buttonRefreshed.prop('aria-expanded')).toBe(false);
         expect(containerfreshed.prop('aria-expanded')).toBe(false);
-        expect(lastButton .prop('aria-expanded')).toBe(true);
+        expect(lastButton.prop('aria-expanded')).toBe(true);
         expect(lastContainer.prop('aria-expanded')).toBe(true);
     });
 
@@ -147,7 +147,7 @@ describe('AccordionContianer', () => {
                 </Accordion>
             </AccordionContainer>,
         );
-      
+
         const renderedAccordionComponents = wrapper.find('Accordion');
         expect(renderedAccordionComponents).toHaveLength(2);
 
@@ -155,9 +155,9 @@ describe('AccordionContianer', () => {
         expect(renderedAccordionComponents.first().text()).toContain('Content for Panel 1');
         expect(renderedAccordionComponents.last().text()).toContain('Content for Panel 2');
     });
-      
+
     it('Should update default expandedItemId state correctly', () => {
-        const setHookState = (newState: any) =>
+        const setHookState = (newState: any): [any, (newState: any) => void] =>
             jest.fn().mockImplementation(() => [newState.expandedItemIds, newState.setExpandedItemIds]);
 
         // Store the original useState function
@@ -165,7 +165,7 @@ describe('AccordionContianer', () => {
 
         React.useState = setHookState({
             expandedItemIds: [],
-            setExpandedItemIds: originalUseState, 
+            setExpandedItemIds: originalUseState,
         });
 
         mountWithTheme(
@@ -184,7 +184,7 @@ describe('AccordionContianer', () => {
 
         // Assert that useState was called with the expected initial state
         expect(React.useState).toHaveBeenCalledWith(['3']);
-  
+
         // Restore the original useState function
         React.useState = originalUseState;
     });
