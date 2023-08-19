@@ -3,7 +3,6 @@ import { mountWithTheme } from '../../test-utils/renderer';
 import { AccordionContainer, Accordion } from './index';
 
 describe('AccordionContianer', () => {
-
     it('Should have the last accordion opne by default', () => {
         const wrapper = mountWithTheme(
             <AccordionContainer defaultExpandedItemIds={['3']}>
@@ -23,7 +22,6 @@ describe('AccordionContianer', () => {
         const container = wrapper.find('.accordion-content').last();
         expect(button.prop('aria-expanded')).toBe(true);
         expect(container.prop('aria-expanded')).toBe(true);
-
     });
 
     it('Should have the First and Last accordion opne by default', () => {
@@ -45,11 +43,10 @@ describe('AccordionContianer', () => {
         const firstContainer = wrapper.find('.accordion-content').first();
         const lastButton = wrapper.find('.accordion-button').last();
         const LastContainer = wrapper.find('.accordion-content').last();
-        expect(firstButton.prop('aria-expanded')).toBe(true); 
-        expect(firstContainer.prop('aria-expanded')).toBe(true); 
-        expect(lastButton.prop('aria-expanded')).toBe(true); 
-        expect(LastContainer.prop('aria-expanded')).toBe(true); 
-
+        expect(firstButton.prop('aria-expanded')).toBe(true);
+        expect(firstContainer.prop('aria-expanded')).toBe(true);
+        expect(lastButton.prop('aria-expanded')).toBe(true);
+        expect(LastContainer.prop('aria-expanded')).toBe(true);
     });
 
     it('Should have the First accordion disabled by default', () => {
@@ -69,7 +66,6 @@ describe('AccordionContianer', () => {
 
         const firstButton = wrapper.find('.accordion-button').first();
         expect(firstButton.prop('disabled')).toBe(true);
-
     });
 
     it('Should have multiple accordions open when using mode=multi', () => {
@@ -87,18 +83,15 @@ describe('AccordionContianer', () => {
             </AccordionContainer>,
         );
 
-        //Click first
+        // Click first
         wrapper.find('.accordion-button').first().simulate('click');
-
         const button = wrapper.find('.accordion-button').first();
         const container = wrapper.find('.accordion-content').first();
         expect(button.prop('aria-expanded')).toBe(true);
         expect(container.prop('aria-expanded')).toBe(true);
 
-        
-        //Click last
+        // Click last
         wrapper.find('.accordion-button').last().simulate('click');
-        
         const buttonRefreshed = wrapper.find('.accordion-button').first();
         const containerfreshed = wrapper.find('.accordion-content').first();
         const lastButton = wrapper.find('.accordion-button').last();
@@ -126,16 +119,13 @@ describe('AccordionContianer', () => {
 
         // Click first
         wrapper.find('.accordion-button').first().simulate('click');
-
         const button = wrapper.find('.accordion-button').first();
         const container = wrapper.find('.accordion-content').first();
         expect(button.prop('aria-expanded')).toBe(true);
         expect(container.prop('aria-expanded')).toBe(true);
 
-        
         // Click last
         wrapper.find('.accordion-button').last().simulate('click');
-        
         const buttonRefreshed = wrapper.find('.accordion-button').first();
         const containerfreshed = wrapper.find('.accordion-content').first();
         const lastButton = wrapper.find('.accordion-button').last();
@@ -176,9 +166,9 @@ describe('AccordionContianer', () => {
         React.useState = setHookState({
             expandedItemIds: [],
             setExpandedItemIds: originalUseState, 
-          });
+        });
 
-          mountWithTheme(
+        mountWithTheme(
             <AccordionContainer defaultExpandedItemIds={['3']}>
                 <Accordion title='Panel 1' id='1'>
                     Content for Panel 1
@@ -190,7 +180,7 @@ describe('AccordionContianer', () => {
                     Content for Panel 3
                 </Accordion>
             </AccordionContainer>,
-          );
+        );
 
         // Assert that useState was called with the expected initial state
         expect(React.useState).toHaveBeenCalledWith(['3']);
@@ -199,4 +189,3 @@ describe('AccordionContianer', () => {
         React.useState = originalUseState;
     });
 });
-
