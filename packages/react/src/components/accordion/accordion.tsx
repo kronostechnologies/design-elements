@@ -29,14 +29,13 @@ export const Accordion: React.FC<AccordionProps> = ({
     children,
     onKeyDown,
     buttonRef,
-    ...props
 }) => {
     const headerId = `idHeader${id}`;
     const panelId = `idPanel${id}`;
     const { disabled: isDisabled = false } = {};
     return (
         <>
-            <StyledHeading className="accordion-header" type={type} tag={tag} {...props} isExpanded={isExpanded}>
+            <StyledHeading className="accordion-header" type={type} tag={tag} isExpanded={isExpanded}>
                 <StyledButton
                     id={headerId}
                     className="accordion-button"
@@ -67,4 +66,3 @@ export const Accordion: React.FC<AccordionProps> = ({
         </>
     );
 };
-
