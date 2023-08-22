@@ -118,11 +118,11 @@ export const WithDropdownNavigation: Story = () => {
         <Container>
             <GlobalHeader>
                 <Tooltip label="Label" desktopPlacement="bottom" disabled={isDropdownexpanded} delayed>
-                    <DropdownNavigation 
-                        iconOnly 
-                        iconName="info" 
-                        options={options} 
-                        onDropdownVisibilityChanged={setDropdownExpanded} 
+                    <DropdownNavigation
+                        iconOnly
+                        iconName="info"
+                        options={options}
+                        onDropdownVisibilityChanged={setDropdownExpanded}
                     />
                 </Tooltip>
             </GlobalHeader>

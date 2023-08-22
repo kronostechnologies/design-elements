@@ -40,15 +40,20 @@ export default {
 
 export const Normal: Story = () => (
     <DropdownList 
-        data-testid="some-data-test-id" 
-        label="Select an option" 
-        hint="Hint" 
-        options={provinces} 
+        data-testid="some-data-test-id"
+        label="Select an option"
+        hint="Hint"
+        options={provinces}
     />
 );
 
 export const WithTooltip: Story = () => (
-    <DropdownList label="Select an option" tooltip={{ label: 'Tooltip text content' }} hint="Hint" options={provinces} />
+    <DropdownList
+        label="Select an option"
+        tooltip={{ label: 'Tooltip text content' }}
+        hint="Hint"
+        options={provinces}
+    />
 );
 
 export const InsideShadowDom: Story = () => (
