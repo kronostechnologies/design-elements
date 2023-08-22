@@ -1,5 +1,5 @@
 import { DropdownList } from '@equisoft/design-elements-react';
-import { Option } from '@equisoft/design-elements-react/dist/components/select/select';
+import { Option } from '@equisoft/design-elements-react/dist/components/dropdown-list/dropdown-list';
 import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -39,7 +39,12 @@ export default {
 };
 
 export const Normal: Story = () => (
-    <DropdownList data-testid="some-data-test-id" label="Select an option" hint="Hint" options={provinces} />
+    <DropdownList 
+        data-testid="some-data-test-id" 
+        label="Select an option" 
+        hint="Hint" 
+        options={provinces} 
+    />
 );
 
 export const WithTooltip: Story = () => (
