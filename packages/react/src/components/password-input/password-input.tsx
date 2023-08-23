@@ -13,9 +13,8 @@ const PasswordContainer = styled.div`
     display: flex;
     flex-direction: row;
     margin-bottom: calc(var(--spacing-1x) * 1.5);
-    position: relative;
 
-    > div:focus-within {
+    &:focus-within {
         border-radius: var(--border-radius);
 
         /* TODO change when updating thematization */
@@ -23,7 +22,7 @@ const PasswordContainer = styled.div`
         outline: none;
 
         input,
-        + span > button {
+        div + span > button {
             /* TODO change when updating thematization */
             border-color: #006296;
         }
@@ -41,7 +40,6 @@ const StyledTextInput = styled(TextInput)`
 
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         border-width: 1px 0 1px 1px;
-        width: calc(100% - 2rem);
     }
 `;
 
@@ -51,8 +49,6 @@ const StyledIconButton = styled(IconButton) <{ isValid: boolean }>`
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     border-width: 1px 1px 1px 0;
     min-height: 2rem;
-    position: absolute;
-    transform: translateX(-2rem);
     width: 2rem;
 
     ${(props) => !props.isValid && css`
