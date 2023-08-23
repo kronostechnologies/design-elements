@@ -24,15 +24,14 @@ export const AccordionSectionStyled = (isExpanded: boolean, theme: Theme) => css
     transition: height 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0ms;
 ` as any;
 
-export const HeadingStyled = (isExpanded: boolean, theme: Theme) => css`
-    border: 1px solid ${theme.greys['dark-grey']};
-    border-bottom-color: ${isExpanded ? theme.greys.grey : theme.greys['dark-grey']};
-    border-radius: ${isExpanded ? 'var(--border-radius) var(--border-radius) 0 0' : 'var(--border-radius)'};
+export const HeadingStyled = () => css`
     position: relative;
 ` as any;
 
 export const ButtonStyled = (isExpanded: boolean, theme: Theme) => css`
     align-items: flex-start;
+    border: 1px solid ${theme.greys['dark-grey']};
+    border-bottom-color: ${isExpanded ? theme.greys.grey : theme.greys['dark-grey']};
     border-radius: ${isExpanded ? 'var(--border-radius) var(--border-radius) 0 0' : 'var(--border-radius)'};
     color: ${theme.greys['neutral-100']};
     font-size: 0.875rem;
@@ -57,5 +56,16 @@ export const ButtonStyled = (isExpanded: boolean, theme: Theme) => css`
         top: var(--spacing-1halfx);
         width: 16px;
         height: 16px;
+    }
+
+    &:disabled {
+        background-color: ${theme.greys['neutral-05']};
+        border-color:${theme.greys['neutral-15']};
+        &:hover {
+            color: ${theme.greys['neutral-30']};
+        }
+        > svg {
+            color: ${theme.greys['neutral-30']};
+        }
     }
 ` as any;

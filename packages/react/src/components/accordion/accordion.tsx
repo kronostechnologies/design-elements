@@ -10,8 +10,8 @@ const AccordionSection = styled.section<{ isExpanded: boolean }>`
     ${({ isExpanded, theme }) => AccordionSectionStyled(isExpanded, theme)};
 `;
 
-const StyledHeading = styled(Heading)<{ isExpanded: boolean }>`
-    ${({ isExpanded, theme }) => HeadingStyled(isExpanded, theme)};
+const StyledHeading = styled(Heading)`
+    ${HeadingStyled()};
 `;
 
 const StyledButton = styled(Button)<{ isExpanded: boolean }>`
@@ -36,7 +36,7 @@ export const Accordion: React.FC<AccordionProps> = ({
 
     return (
         <>
-            <StyledHeading className="accordion-header" type={type} tag={tag} isExpanded={isExpanded} noMargin>
+            <StyledHeading className="accordion-header" type={type} tag={tag} noMargin>
                 <StyledButton
                     id={headerId}
                     className="accordion-button"
