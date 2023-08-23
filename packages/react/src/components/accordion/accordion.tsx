@@ -32,7 +32,6 @@ export const Accordion: React.FC<AccordionProps> = ({
 }) => {
     const headerId = `idHeader${id}`;
     const panelId = `idPanel${id}`;
-    const { disabled: isDisabled = false } = {};
 
     return (
         <>
@@ -59,7 +58,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                 aria-expanded={isExpanded}
                 role="region"
                 isExpanded={isExpanded}
-                aria-disabled={isDisabled}
+                aria-disabled={disabled}
             >
                 {children}
             </AccordionSection>
