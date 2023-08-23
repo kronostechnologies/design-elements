@@ -8,7 +8,7 @@ export interface AccordionContainerProps {
     mode?: 'single' | 'multi';
     /** Define which panel(s) should be open by default */
     defaultExpandedItemIds?: string[];
-    /** Defain which accodions should be disabled */
+    /** Define which accordion should be disabled */
     disabledItemIds?: string[];
 }
 
