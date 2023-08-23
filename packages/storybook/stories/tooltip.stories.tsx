@@ -23,6 +23,15 @@ export default {
     component: Tooltip,
 };
 
+const DarkDiv = styled.div`
+    align-items: center;
+    background-color: ${({ theme }) => theme.main['primary-1.1']};
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 100%;
+`;
+
 export const Normal: Story = () => (
     <Tooltip label="Tooltip Content" />
 );
@@ -33,6 +42,12 @@ export const DefaultOpen: Story = () => (
 
 export const Delayed: Story = () => (
     <Tooltip label="Tooltip Content" delayed />
+);
+
+export const InvertedIcon: Story = () => (
+    <DarkDiv>
+        <Tooltip label="Tooltip Content" invertedIcon desktopPlacement="left" />
+    </DarkDiv>
 );
 
 export const WithChildElement: Story = () => (

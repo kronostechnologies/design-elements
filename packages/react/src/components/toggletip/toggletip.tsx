@@ -148,6 +148,7 @@ export interface ToggletipProps {
      */
     desktopPlacement?: ToggletipPlacement;
     disabled?: boolean;
+    invertedIcon?: boolean;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -167,6 +168,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
     defaultOpen = false,
     disabled,
     desktopPlacement = 'right',
+    invertedIcon = false,
 }) => {
     const { isMobile } = useDeviceContext();
     const [isVisible, setVisible] = useState(defaultOpen);
@@ -200,6 +202,7 @@ export const Toggletip: FunctionComponent<ToggletipProps> = ({
                 aria-expanded={visible}
                 onClick={() => setVisible(!isVisible)}
                 ref={setTriggerRef}
+                inverted={invertedIcon}
             />
 
             {isVisible && (
