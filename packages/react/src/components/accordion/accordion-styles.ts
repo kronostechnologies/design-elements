@@ -4,6 +4,7 @@ import { Theme } from '../../themes';
 export const StyledAccordionGroup = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 `;
 
 export const AccordionSectionStyled = (isExpanded: boolean, theme: Theme) => css`
@@ -14,14 +15,18 @@ export const AccordionSectionStyled = (isExpanded: boolean, theme: Theme) => css
     color: ${theme.greys['neutral-100']};
     font-size: 0.75rem;
     font-weight: var(--font-normal);
-    height: ${isExpanded ? 'auto' : '0'};
     letter-spacing: 0.015rem;
     line-height: 1.7;
     margin-bottom: var(--spacing-1x);
-    min-height: 0;
+    height: auto;
+    max-height: ${isExpanded ? '500px' : '0'};
+    
     overflow: hidden;
-    padding: ${isExpanded ? 'var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x)' : '0'};
-    transition: height 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0ms;
+    padding: ${isExpanded ? 'var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x)' : '0 0 0 0'};
+
+    transform: translateY(0);
+    transition: max-height 180ms ease-in-out 0ms, padding 180ms ease-in-out 0ms, border 180ms ease-in-out 0ms; 
+
 ` as any;
 
 export const HeadingStyled = () => css`
@@ -47,6 +52,10 @@ export const ButtonStyled = (isExpanded: boolean, theme: Theme) => css`
     &[aria-expanded='true'] {
         color: ${theme.greys['neutral-100']};
         background: ${theme.greys.white};
+    }
+    &:focus {
+        border-bottom-color: ${isExpanded ? theme.greys.grey : theme.greys['dark-grey']};
+        box-shadow: ${theme.tokens['focus-box-shadow-inset']};
     }
     > svg {
         color: ${theme.greys['neutral-100']};
