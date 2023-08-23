@@ -21,8 +21,6 @@ export interface AccordionProps {
     type?: Type;
     /** Choose the right tag for page outline */
     tag?: Tag;
-    /** Property is used without value */
-    noMargin?: boolean;
     isExpanded?: boolean;
     disabled?: boolean;
     onToggle?: () => void;

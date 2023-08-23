@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { AccordionProps } from './accordion-types';
 import { AccordionSectionStyled, HeadingStyled, ButtonStyled } from './accordion-styles';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading } from '../heading/heading';
@@ -15,8 +14,8 @@ const StyledHeading = styled(Heading)<{ isExpanded: boolean }>`
     ${({ isExpanded, theme }) => HeadingStyled(isExpanded, theme)};
 `;
 
-const StyledButton = styled(Button)<{ isExpanded: boolean, isMobile: boolean }>`
-    ${({ isExpanded, theme, isMobile }) => ButtonStyled(isExpanded, theme, isMobile)};
+const StyledButton = styled(Button)<{ isExpanded: boolean }>`
+    ${({ isExpanded, theme }) => ButtonStyled(isExpanded, theme)};
 `;
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -34,7 +33,6 @@ export const Accordion: React.FC<AccordionProps> = ({
     const headerId = `idHeader${id}`;
     const panelId = `idPanel${id}`;
     const { disabled: isDisabled = false } = {};
-    const { isMobile } = useDeviceContext();
 
     return (
         <>
@@ -44,7 +42,6 @@ export const Accordion: React.FC<AccordionProps> = ({
                     className="accordion-button"
                     buttonType="tertiary"
                     label={title}
-                    isMobile={isMobile}
                     aria-expanded={isExpanded}
                     aria-controls={panelId}
                     onClick={() => onToggle()}

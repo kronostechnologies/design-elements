@@ -31,16 +31,16 @@ export const HeadingStyled = (isExpanded: boolean, theme: Theme) => css`
     position: relative;
 ` as any;
 
-export const ButtonStyled = (isExpanded: boolean, theme: Theme, isMobile: boolean) => css`
+export const ButtonStyled = (isExpanded: boolean, theme: Theme) => css`
     align-items: flex-start;
     border-radius: ${isExpanded ? 'var(--border-radius) var(--border-radius) 0 0' : 'var(--border-radius)'};
     color: ${theme.greys['neutral-100']};
     font-size: 0.875rem;
     font-weight: var(--font-normal);
     letter-spacing: 0.015rem;
-    line-height: ${isMobile ? 2 : 1.5 };
+    line-height: 2;
     justify-content: start;
-    padding: ${isMobile ? 'var(--spacing-1x) var(--spacing-3x) var(--spacing-1x)  var(--spacing-5halfx)' : 'var(--spacing-1x) var(--spacing-1x) var(--spacing-1x) var(--spacing-4halfx)'}; 
+    padding: var(--spacing-1x) var(--spacing-1x) var(--spacing-1x) var(--spacing-4halfx); 
     text-align: left;
     text-transform: none;
     width: 100%;
@@ -54,6 +54,8 @@ export const ButtonStyled = (isExpanded: boolean, theme: Theme, isMobile: boolea
         left: var(--spacing-1x);
         padding: var(--spacing-half);
         position: absolute;
-        top: var(--spacing-1x);
+        top: var(--spacing-1halfx);
+        width: 16px;
+        height: 16px;
     }
 ` as any;
