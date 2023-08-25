@@ -43,7 +43,7 @@ const StyledTextInput = styled(TextInput)`
     }
 `;
 
-const StyledIconButton = styled(IconButton) <{ isValid: boolean }>`
+const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
     background-color: white;
     border-color: ${({ theme }) => theme.greys['dark-grey']};
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
@@ -51,7 +51,7 @@ const StyledIconButton = styled(IconButton) <{ isValid: boolean }>`
     min-height: 2rem;
     width: 2rem;
 
-    ${(props) => !props.isValid && css`
+    ${(props) => !props.$isValid && css`
         border-color: ${props.theme.notifications['alert-2.1']};
     `}
 
@@ -133,7 +133,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                 />
                 <Tooltip desktopPlacement="top" label={showPassword ? t('hide-password') : t('show-password')}>
                     <StyledIconButton
-                        isValid={isValid}
+                        $isValid={isValid}
                         disabled={disabled}
                         buttonType="tertiary"
                         aria-label={t('show-password')}
