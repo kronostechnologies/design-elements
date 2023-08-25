@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, VoidFunctionComponent, useMemo, FocusEvent } from 'react';
+import { ChangeEvent, useState, VoidFunctionComponent, useMemo, FocusEvent, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import { FieldContainer } from '../field-container/field-container';
 import { IconButton } from '../buttons/icon-button';
@@ -7,27 +7,7 @@ import { useTranslation } from '../../i18n/use-translation';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Tooltip } from '../tooltip/tooltip';
-
-const PasswordContainer = styled.div`
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: calc(var(--spacing-1x) * 1.5);
-
-    &:focus-within {
-        border-radius: var(--border-radius);
-
-        /* TODO change when updating thematization */
-        box-shadow: 0 0 0 2px #84c6ea;
-        outline: none;
-
-        input,
-        div + span > button {
-            /* TODO change when updating thematization */
-            border-color: #006296;
-        }
-    }
-`;
+import { focus } from '../../utils/css-state';
 
 const StyledTextInput = styled(TextInput)`
     flex: 1;
@@ -39,15 +19,15 @@ const StyledTextInput = styled(TextInput)`
         }
 
         border-radius: var(--border-radius) 0 0 var(--border-radius);
-        border-width: 1px 0 1px 1px;
+        border-right-width: 0;
     }
 `;
 
 const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
-    background-color: white;
+    background-color: ${({ theme }) => theme.greys.white};
     border-color: ${({ theme }) => theme.greys['dark-grey']};
+    border-left-width: 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    border-width: 1px 1px 1px 0;
     min-height: 2rem;
     width: 2rem;
 
@@ -58,6 +38,22 @@ const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
     &:disabled {
         background-color: ${({ theme }) => theme.greys['light-grey']};
         border-color: ${({ theme }) => theme.greys.grey};
+    }
+`;
+
+const PasswordContainer = styled.div`
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    display: flex;
+    flex-direction: row;
+
+    &:focus-within {
+        border-radius: var(--border-radius);
+        ${({ theme }) => focus({ theme }, true, '&')}
+
+        input,
+        ${StyledIconButton} {
+            border-color: ${({ theme }) => theme.main['primary-1.1']};
+        }
     }
 `;
 
@@ -97,14 +93,14 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
 
-    const handleShowPassword = (): void => {
+    const handleShowPassword = useCallback((): void => {
         setShowPassword(!showPassword);
-    };
+    }, [showPassword]);
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
         const newPassword = event.target.value;
         onChange?.(newPassword, event);
-    };
+    }, [onChange]);
 
     return (
         <FieldContainer
@@ -119,7 +115,7 @@ export const PasswordInput: VoidFunctionComponent<PasswordInputProps> = ({
                     id={id}
                     disabled={disabled}
                     name={name ?? 'password'}
-                    autoComplete="current-password"
+                    autoComplete={showPassword ? 'off' : 'current-password'}
                     ariaInvalid={!isValid}
                     onBlur={onBlur}
                     onChange={handleChange}
