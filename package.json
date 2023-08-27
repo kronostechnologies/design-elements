@@ -13,7 +13,7 @@
     "@equisoft/stylelint-config": "^3.0.1",
     "@types/eslint": "^8.37.0",
     "@types/yargs": "^17.0.24",
-    "conventional-changelog-cli": "^3.0.0",
+    "conventional-changelog-cli": "^4.0.0",
     "conventional-changelog-conventionalcommits": "^6.0.0",
     "eslint": "^8.39.0",
     "postcss": "^8.4.23",
