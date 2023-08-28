@@ -53,11 +53,11 @@ describe('KeyBoard Use', () => {
         document.body.appendChild(divElement);
     });
 
-   afterEach(() => {
-         ReactDOM.unmountComponentAtNode(divElement);
+    afterEach(() => {
+        ReactDOM.unmountComponentAtNode(divElement);
     });
 
-   it('Should go to the next Accordion button when ArrowDown is pressed', () => {
+    it('Should go to the next Accordion button when ArrowDown is pressed', () => {
         const wrapper = mountWithTheme(
             <AccordionContainer>
                 <Accordion title='Accordion 1' id='1' type='medium'>

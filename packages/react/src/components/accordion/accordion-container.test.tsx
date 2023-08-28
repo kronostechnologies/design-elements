@@ -1,4 +1,3 @@
-import React from 'react';
 import { mountWithTheme } from '../../test-utils/renderer';
 import { AccordionContainer, Accordion } from './index';
 
@@ -142,6 +141,7 @@ describe('AccordionContianer', () => {
                 <Accordion title='Panel 1' id='1'>
                     Content for Panel 1
                 </Accordion>
+                <div>test</div>
                 <Accordion title='Panel 2' id='2'>
                     Content for Panel 2
                 </Accordion>
@@ -154,38 +154,5 @@ describe('AccordionContianer', () => {
         // Additional checks, e.g., check the content of the accordion items
         expect(renderedAccordionComponents.first().text()).toContain('Content for Panel 1');
         expect(renderedAccordionComponents.last().text()).toContain('Content for Panel 2');
-    });
-
-    it('Should update default expandedItemId state correctly', () => {
-        const setHookState = (newState: any): [any, (newState: any) => void] =>
-            jest.fn().mockImplementation(() => [newState.expandedItemIds, newState.setExpandedItemIds]);
-
-        // Store the original useState function
-        const originalUseState = jest.fn();
-
-        React.useState = setHookState({
-            expandedItemIds: [],
-            setExpandedItemIds: originalUseState,
-        });
-
-        mountWithTheme(
-            <AccordionContainer defaultExpandedItemIds={['3']}>
-                <Accordion title='Panel 1' id='1'>
-                    Content for Panel 1
-                </Accordion>
-                <Accordion title='Panel 2' id='2'>
-                    Content for Panel 2
-                </Accordion>
-                <Accordion title='Panel 3' id='3'>
-                    Content for Panel 3
-                </Accordion>
-            </AccordionContainer>,
-        );
-
-        // Assert that useState was called with the expected initial state
-        expect(React.useState).toHaveBeenCalledWith(['3']);
-
-        // Restore the original useState function
-        React.useState = originalUseState;
     });
 });

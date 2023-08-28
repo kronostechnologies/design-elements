@@ -11,7 +11,7 @@ const AccordionSection = styled.section<{ isExpanded: boolean }>`
 `;
 
 const StyledHeading = styled(Heading)`
-    ${HeadingStyled()};
+    ${HeadingStyled};
 `;
 
 const StyledButton = styled(Button)<{ isExpanded: boolean }>`
@@ -47,8 +47,9 @@ export const Accordion: React.FC<AccordionProps> = ({
                     isExpanded={isExpanded}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
-                    ref={buttonRef}>
-                        <Icon name={isExpanded ? 'carretDown' : 'carretRight'} aria-hidden="true" />
+                    ref={buttonRef}
+                >
+                    <Icon name={isExpanded ? 'carretDown' : 'carretRight'} aria-hidden="true" />
                 </StyledButton>
             </StyledHeading>
             <AccordionSection

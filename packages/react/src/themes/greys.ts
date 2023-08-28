@@ -17,4 +17,3 @@ export const greys: Theme['greys'] = {
     'dark-grey': '#60666E',
     black: '#000000',
 };
-
