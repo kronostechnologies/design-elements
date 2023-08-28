@@ -28,6 +28,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 
 .c1 {
   background-color: #60666E;
+  border: 1px solid #FFFFFF;
   border-radius: var(--border-radius-half);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
@@ -57,13 +58,13 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 .c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-top: -0.35rem;
+  margin-top: -0.375rem;
   top: 0;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="bottom"] > .c2::before {
-  border-color: transparent transparent #60666E transparent;
+  border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.5rem;
   position: absolute;
   top: -2px;
@@ -83,7 +84,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 }
 
 .c1[data-popper-placement*="top"] > .c2::before {
-  border-color: #60666E transparent transparent transparent;
+  border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
   position: absolute;
   top: 0;
@@ -92,17 +93,18 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 .c1[data-popper-placement*="top"] > .c2::after {
   border-color: #60666E transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
+  top: -0.1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-left: -0.7rem;
+  margin-left: -0.8rem;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2::before {
-  border-color: transparent #60666E transparent transparent;
+  border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
@@ -116,19 +118,27 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
 .c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
-  right: 0;
+  right: -1px;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::before {
+<<<<<<< HEAD
   border-color: transparent transparent transparent #60666E;
+=======
+  border-color: transparent transparent transparent #FFFFFF;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   border-width: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.5rem;
+<<<<<<< HEAD
   left: 0.25rem;
+=======
+  left: 0.17rem;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   top: 0;
 }
 
@@ -278,6 +288,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 
 .c1 {
   background-color: #60666E;
+  border: 1px solid #FFFFFF;
   border-radius: var(--border-radius-half);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
@@ -304,13 +315,13 @@ exports[`Tooltip Has default desktop styles 1`] = `
 .c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-top: -0.35rem;
+  margin-top: -0.375rem;
   top: 0;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="bottom"] > .c2::before {
-  border-color: transparent transparent #60666E transparent;
+  border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.5rem;
   position: absolute;
   top: -2px;
@@ -330,7 +341,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
 }
 
 .c1[data-popper-placement*="top"] > .c2::before {
-  border-color: #60666E transparent transparent transparent;
+  border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
   position: absolute;
   top: 0;
@@ -339,17 +350,18 @@ exports[`Tooltip Has default desktop styles 1`] = `
 .c1[data-popper-placement*="top"] > .c2::after {
   border-color: #60666E transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
+  top: -0.1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-left: -0.7rem;
+  margin-left: -0.8rem;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2::before {
-  border-color: transparent #60666E transparent transparent;
+  border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
@@ -363,19 +375,27 @@ exports[`Tooltip Has default desktop styles 1`] = `
 .c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
-  right: 0;
+  right: -1px;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::before {
+<<<<<<< HEAD
   border-color: transparent transparent transparent #60666E;
+=======
+  border-color: transparent transparent transparent #FFFFFF;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   border-width: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.5rem;
+<<<<<<< HEAD
   left: 0.25rem;
+=======
+  left: 0.17rem;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   top: 0;
 }
 
@@ -524,6 +544,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 
 .c1 {
   background-color: #60666E;
+  border: 1px solid #FFFFFF;
   border-radius: var(--border-radius-half);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
@@ -553,13 +574,13 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 .c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-top: -0.35rem;
+  margin-top: -0.375rem;
   top: 0;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="bottom"] > .c2::before {
-  border-color: transparent transparent #60666E transparent;
+  border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.5rem;
   position: absolute;
   top: -2px;
@@ -579,7 +600,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 }
 
 .c1[data-popper-placement*="top"] > .c2::before {
-  border-color: #60666E transparent transparent transparent;
+  border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
   position: absolute;
   top: 0;
@@ -588,17 +609,18 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 .c1[data-popper-placement*="top"] > .c2::after {
   border-color: #60666E transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
+  top: -0.1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-left: -0.7rem;
+  margin-left: -0.8rem;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2::before {
-  border-color: transparent #60666E transparent transparent;
+  border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
@@ -612,19 +634,27 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
 .c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
-  right: 0;
+  right: -1px;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::before {
+<<<<<<< HEAD
   border-color: transparent transparent transparent #60666E;
+=======
+  border-color: transparent transparent transparent #FFFFFF;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   border-width: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.5rem;
+<<<<<<< HEAD
   left: 0.25rem;
+=======
+  left: 0.17rem;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   top: 0;
 }
 
@@ -774,6 +804,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 
 .c1 {
   background-color: #60666E;
+  border: 1px solid #FFFFFF;
   border-radius: var(--border-radius-half);
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   box-sizing: border-box;
@@ -800,13 +831,13 @@ exports[`Tooltip Has mobile styles 1`] = `
 .c1[data-popper-placement*="bottom"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-top: -0.35rem;
+  margin-top: -0.375rem;
   top: 0;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="bottom"] > .c2::before {
-  border-color: transparent transparent #60666E transparent;
+  border-color: transparent transparent #FFFFFF transparent;
   border-width: 0 0.5rem 0.5rem;
   position: absolute;
   top: -2px;
@@ -826,7 +857,7 @@ exports[`Tooltip Has mobile styles 1`] = `
 }
 
 .c1[data-popper-placement*="top"] > .c2::before {
-  border-color: #60666E transparent transparent transparent;
+  border-color: #FFFFFF transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
   position: absolute;
   top: 0;
@@ -835,17 +866,18 @@ exports[`Tooltip Has mobile styles 1`] = `
 .c1[data-popper-placement*="top"] > .c2::after {
   border-color: #60666E transparent transparent transparent;
   border-width: 0.5rem 0.5rem 0;
+  top: -0.1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2 {
   height: 1rem;
   left: 0;
-  margin-left: -0.7rem;
+  margin-left: -0.8rem;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="right"] > .c2::before {
-  border-color: transparent #60666E transparent transparent;
+  border-color: transparent #FFFFFF transparent transparent;
   border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
@@ -859,19 +891,27 @@ exports[`Tooltip Has mobile styles 1`] = `
 .c1[data-popper-placement*="left"] > .c2 {
   height: 1rem;
   margin-right: -0.7rem;
-  right: 0;
+  right: -1px;
   width: 1rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::before {
+<<<<<<< HEAD
   border-color: transparent transparent transparent #60666E;
+=======
+  border-color: transparent transparent transparent #FFFFFF;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   border-width: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .c1[data-popper-placement*="left"] > .c2::after {
   border-color: transparent transparent transparent #60666E;
   border-width: 0.5rem 0 0.5rem 0.5rem;
+<<<<<<< HEAD
   left: 0.25rem;
+=======
+  left: 0.17rem;
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
   top: 0;
 }
 

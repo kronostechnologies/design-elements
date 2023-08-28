@@ -91,7 +91,11 @@
     "react-docgen-typescript-plugin": "^1.0.5",
     "react-dom": "~17.0.2",
     "react-router-dom": "~6.15.0",
+<<<<<<< HEAD
     "sass": "~1.65.0",
+=======
+    "sass": "~1.66.0",
+>>>>>>> 5038ddf0db871ac9ae66b2b5f0c16cc1962a6d77
     "sass-loader": "~13.3.0",
     "style-loader": "^3.3.2",
     "styled-components": "^5.3.10",
