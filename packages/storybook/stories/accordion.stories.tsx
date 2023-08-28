@@ -41,7 +41,6 @@ export const Default: Story = () => (
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
-
 );
 
 export const MultiOpenToggle: Story = () => (
@@ -56,7 +55,6 @@ export const MultiOpenToggle: Story = () => (
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
-
 );
 
 export const SingleDefaultExpanded: Story = () => (
@@ -71,7 +69,6 @@ export const SingleDefaultExpanded: Story = () => (
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
-
 );
 
 export const MultiDefaultExpanded: Story = () => (
@@ -86,7 +83,6 @@ export const MultiDefaultExpanded: Story = () => (
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
-
 );
 
 export const SingleDisabled: Story = () => (
@@ -101,7 +97,6 @@ export const SingleDisabled: Story = () => (
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
-
 );
 
 export const MultiDisabled: Story = () => (
@@ -116,5 +111,4 @@ export const MultiDisabled: Story = () => (
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
-
 );
