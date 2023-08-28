@@ -7097,15 +7097,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:^6.0.0":
-  version: 6.1.0
-  resolution: "conventional-changelog-conventionalcommits@npm:6.1.0"
-  dependencies:
-    compare-func: ^2.0.0
-  checksum: 4383a35cdf72f5964e194a1146e7f78276e301f73bd993b71627bb93586b6470d411b9613507ceb37e0fed0b023199c95e941541fa47172b4e6a7916fc3a53ff
-  languageName: node
-  linkType: hard
-
 "conventional-changelog-conventionalcommits@npm:^7.0.0":
   version: 7.0.0
   resolution: "conventional-changelog-conventionalcommits@npm:7.0.0"
@@ -14443,7 +14434,7 @@ __metadata:
     "@types/eslint": ^8.37.0
     "@types/yargs": ^17.0.24
     conventional-changelog-cli: ^4.0.0
-    conventional-changelog-conventionalcommits: ^6.0.0
+    conventional-changelog-conventionalcommits: ^7.0.0
     eslint: ^8.39.0
     postcss: ^8.4.23
     postcss-styled-syntax: ^0.4.0
