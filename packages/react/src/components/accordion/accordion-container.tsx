@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, useMemo, createRef, useRef } from 'react';
+import React, { useState, ReactElement, createRef, useRef } from 'react';
 import { AccordionProps, AccordionContainerProps } from './accordion-types';
 import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
@@ -22,57 +22,54 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
         }
     };
 
+    const childrenArray: ReactElement<AccordionProps>[] = React.Children.toArray(children)
+        .filter((child): child is ReactElement<AccordionProps> => {
+            if (React.isValidElement<AccordionProps>(child)) {
+                return child.type === Accordion;
+            }
+            return false;
+        })
+        .map((child: ReactElement<AccordionProps>) => {
+            const buttonRef = createRef<HTMLButtonElement>();
+            const childProps = child.props as AccordionProps;
+            const modifiedProps: AccordionProps = {
+                ...childProps,
+                buttonRef,
+            };
+            return React.cloneElement(child, modifiedProps);
+        });
+
     const handleButtonKeyDown = (
         event: React.KeyboardEvent<HTMLButtonElement>,
-        index: number
-    ) => {
+        index: number,
+    ): void => {
         const { key } = event;
         if (key === 'ArrowUp' || key === 'ArrowDown') {
             let newIndex;
             if (key === 'ArrowUp') {
                 newIndex = index - 1;
                 if (newIndex < 0) {
-                    newIndex = accordionItems.length - 1;
+                    newIndex = childrenArray.length - 1;
                 }
             } else {
-                newIndex = (index + 1) % accordionItems.length;
+                newIndex = (index + 1) % childrenArray.length;
             }
             focusedAccordionRef.current = newIndex;
-            accordionItems[newIndex]?.props?.buttonRef?.current?.focus();
+            childrenArray[newIndex]?.props?.buttonRef?.current?.focus();
         }
     };
 
-    const childrenArray: React.ReactNode[] = React.Children.toArray(children);
-    const accordionItems: ReactElement<AccordionProps>[] = useMemo(
-        () => childrenArray.map((child: React.ReactNode, index: number) => {
-            if (React.isValidElement<AccordionProps>(child) && child.type === Accordion) {
-                const buttonRef = createRef<HTMLButtonElement>();
-                const childProps = child.props as AccordionProps;
-                const modifiedProps: AccordionProps = {
-                    ...childProps,
-                    buttonRef,
-                    onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) =>
-                        handleButtonKeyDown(event, index), // Pass the index here
-                };
-                return React.cloneElement(child, modifiedProps);
-            }
-            return;
-        }).filter(Boolean) as ReactElement<AccordionProps>[],
-        [childrenArray, handleButtonKeyDown]
-    );
-  
     return (
         <StyledAccordionGroup className='accordion'>
-            {accordionItems.map((accordion, index) => {
+            {childrenArray.map((accordion, index) => {
                 const isAccordionExpanded = expandedItemIds.includes(accordion.props.id);
                 const isDisabled = disabledItemIds?.includes(accordion.props.id);
                 const accordionProps: AccordionProps = {
-                ...accordion.props, // Use the accordion item from the array
-                isExpanded: isAccordionExpanded,
-                onToggle: () => handleToggle(accordion.props.id),
-                disabled: isDisabled,
-                onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) =>
-                    handleButtonKeyDown(event, index),
+                    ...accordion.props,
+                    isExpanded: isAccordionExpanded,
+                    onToggle: () => handleToggle(accordion.props.id),
+                    disabled: isDisabled,
+                    onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index),
                 };
                 return React.cloneElement(accordion, accordionProps);
             })}
