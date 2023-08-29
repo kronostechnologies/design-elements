@@ -135,6 +135,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
             noMargin={noMargin}
             fieldId={idTextArea}
             label={label}
+            required={required}
             tooltip={tooltip}
             hint={hint}
             valid={validity}

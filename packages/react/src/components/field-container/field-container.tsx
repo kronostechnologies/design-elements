@@ -48,6 +48,7 @@ export interface FieldContainerProps {
     label?: string;
     noInvalidFieldIcon?: boolean;
     noMargin?: boolean;
+    required?: boolean;
     tooltip?: TooltipProps;
     valid: boolean;
     validationErrorMessage: string;
@@ -61,6 +62,7 @@ export const FieldContainer : FunctionComponent<PropsWithChildren<FieldContainer
     label,
     noInvalidFieldIcon,
     noMargin,
+    required,
     tooltip,
     valid,
     validationErrorMessage,
@@ -77,7 +79,7 @@ export const FieldContainer : FunctionComponent<PropsWithChildren<FieldContainer
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label forId={fieldId} tooltip={tooltip}>{label}</Label>}
+            {label && <Label forId={fieldId} tooltip={tooltip} required={required}>{label}</Label>}
             {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField

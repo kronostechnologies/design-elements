@@ -543,6 +543,7 @@ export const Select: VoidFunctionComponent<SelectProps> = ({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                required={required}
                 tooltip={tooltip}
                 valid={valid}
                 validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}

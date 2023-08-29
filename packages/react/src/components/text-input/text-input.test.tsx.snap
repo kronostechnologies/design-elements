@@ -248,7 +248,7 @@ input + .c1 {
   <label
     class="c1 c2"
   >
-    Telephone
+    Telephone (required)
   </label>
   <input
     class="c3"
