@@ -10,9 +10,9 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
     const focusedAccordionRef = useRef<number | null>(null);
 
     const handleToggle = (itemId: string): void => {
-        if (mode.toLowerCase() === 'single') {
+        if (mode === 'single') {
             setExpandedItemIds((prevIds) => (prevIds.includes(itemId) ? [] : [itemId]));
-        } else if (mode.toLowerCase() === 'multi') {
+        } else if (mode === 'multi') {
             setExpandedItemIds((prevIds) => {
                 if (prevIds.includes(itemId)) {
                     return prevIds.filter((id) => id !== itemId);
