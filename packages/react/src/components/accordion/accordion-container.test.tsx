@@ -15,12 +15,12 @@ describe('AccordionContianer', () => {
 
     it('Should only render Accordion child', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer>
-                <Accordion title='Panel 1' id='1'>
+            <AccordionContainer id="test">
+                <Accordion title='Panel 1'>
                     Content for Panel 1
                 </Accordion>
                 <div>test</div>
-                <Accordion title='Panel 2' id='2'>
+                <Accordion title='Panel 2'>
                     Content for Panel 2
                 </Accordion>
             </AccordionContainer>,
@@ -36,14 +36,14 @@ describe('AccordionContianer', () => {
 
     it('Should have the last accordion opne by default', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer defaultExpandedItemIds={['3']}>
-                <Accordion title='Panel 1' id='1'>
+            <AccordionContainer id="test2">
+                <Accordion title='Panel 1'>
                     Content for Panel 1
                 </Accordion>
-                <Accordion title='Panel 2' id='2'>
+                <Accordion title='Panel 2'>
                     Content for Panel 2
                 </Accordion>
-                <Accordion title='Panel 3' id='3'>
+                <Accordion title='Panel 3' isExpanded>
                     Content for Panel 3
                 </Accordion>
             </AccordionContainer>,
@@ -57,14 +57,14 @@ describe('AccordionContianer', () => {
 
     it('Should have multiple accordions open when using mode=multi', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer mode='multi'>
-                <Accordion title='Panel 1' id='1'>
+            <AccordionContainer id="test3" mode='multi'>
+                <Accordion title='Panel 1'>
                     Content for Panel 1
                 </Accordion>
-                <Accordion title='Panel 2' id='2'>
+                <Accordion title='Panel 2'>
                     Content for Panel 2
                 </Accordion>
-                <Accordion title='Panel 3' id='3'>
+                <Accordion title='Panel 3'>
                     Content for Panel 3
                 </Accordion>
             </AccordionContainer>,
@@ -91,14 +91,14 @@ describe('AccordionContianer', () => {
 
     it('Should have single accordion open when not using mode prop or using mode=single', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer>
-                <Accordion title='Panel 1' id='1'>
+            <AccordionContainer id="test4">
+                <Accordion title='Panel 1'>
                     Content for Panel 1
                 </Accordion>
-                <Accordion title='Panel 2' id='2'>
+                <Accordion title='Panel 2'>
                     Content for Panel 2
                 </Accordion>
-                <Accordion title='Panel 3' id='3'>
+                <Accordion title='Panel 3'>
                     Content for Panel 3
                 </Accordion>
             </AccordionContainer>,
@@ -125,14 +125,14 @@ describe('AccordionContianer', () => {
 
     it('Should have the First accordion disabled by default', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer disabledItemIds={['1']}>
-                <Accordion title='Panel 1' id='1'>
+            <AccordionContainer id="test5">
+                <Accordion title='Panel 1' disabled>
                     Content for Panel 1
                 </Accordion>
-                <Accordion title='Panel 2' id='2'>
+                <Accordion title='Panel 2'>
                     Content for Panel 2
                 </Accordion>
-                <Accordion title='Panel 3' id='3'>
+                <Accordion title='Panel 3'>
                     Content for Panel 3
                 </Accordion>
             </AccordionContainer>,
@@ -145,11 +145,11 @@ describe('AccordionContianer', () => {
     // Focus Management
     it('Should go to the next Accordion button when ArrowDown is pressed', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer>
-                <Accordion title='Accordion 1' id='1' type='medium'>
+            <AccordionContainer id='test6'>
+                <Accordion title='Accordion 1'>
                     <div>Accordion content 1</div>
                 </Accordion>
-                <Accordion title='Accordion 2' id='2' type='medium'>
+                <Accordion title='Accordion 2'>
                     <div>Accordion content 2</div>
                 </Accordion>
             </AccordionContainer>,
@@ -164,14 +164,14 @@ describe('AccordionContianer', () => {
 
     it('Should go to the Last Accordion button when ArrowUp is pressed on First Accordion', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer>
-                <Accordion title='Accordion 1' id='1' type='medium'>
+            <AccordionContainer id='test7'>
+                <Accordion title='Accordion 1'>
                     <div>Accordion content 1</div>
                 </Accordion>
-                <Accordion title='Accordion 2' id='2' type='medium'>
+                <Accordion title='Accordion 2'>
                     <div>Accordion content 2</div>
                 </Accordion>
-                <Accordion title='Accordion 3' id='3' type='medium'>
+                <Accordion title='Accordion 3'>
                     <div>Accordion content 3</div>
                 </Accordion>
             </AccordionContainer>,
@@ -186,14 +186,14 @@ describe('AccordionContianer', () => {
 
     it('Should go to the First Accordion button when ArrowDown is pressed on Last Accordion', () => {
         const wrapper = mountWithTheme(
-            <AccordionContainer>
-                <Accordion title='Accordion 1' id='1' type='medium'>
+            <AccordionContainer id='test8'>
+                <Accordion title='Accordion 1'>
                     <div>Accordion content 1</div>
                 </Accordion>
-                <Accordion title='Accordion 2' id='2' type='medium'>
+                <Accordion title='Accordion 2'>
                     <div>Accordion content 2</div>
                 </Accordion>
-                <Accordion title='Accordion 3' id='3' type='medium'>
+                <Accordion title='Accordion 3'>
                     <div>Accordion content 3</div>
                 </Accordion>
             </AccordionContainer>,

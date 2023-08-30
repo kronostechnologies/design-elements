@@ -30,84 +30,56 @@ export default accordionMeta;
 type Story = StoryFn<typeof Accordion>;
 
 export const Default: Story = () => (
-    <AccordionContainer>
-        <Accordion title="Panel Title 1" id="1">
+    <AccordionContainer id="default">
+        <Accordion title="Panel Title 1">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2">
+        <Accordion title="Panel Title 2">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3">
+        <Accordion title="Panel Title 3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
 );
 
 export const MultiOpenToggle: Story = () => (
-    <AccordionContainer mode="multi">
-        <Accordion title="Panel Title 1" id="1">
+    <AccordionContainer mode="multi" id="multi">
+        <Accordion title="Panel Title 1">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2">
+        <Accordion title="Panel Title 2">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </Accordion>
-    </AccordionContainer>
-);
-
-export const SingleDefaultExpanded: Story = () => (
-    <AccordionContainer defaultExpandedItemIds={['3']}>
-        <Accordion title="Panel Title 1" id="1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </Accordion>
-        <Accordion title="Panel Title 2" id="2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </Accordion>
-        <Accordion title="Panel Title 3" id="3">
+        <Accordion title="Panel Title 3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
 );
 
-export const MultiDefaultExpanded: Story = () => (
-    <AccordionContainer defaultExpandedItemIds={['1', '3']}>
-        <Accordion title="Panel Title 1" id="1">
+export const DefaultExpanded: Story = () => (
+    <AccordionContainer id="single">
+        <Accordion title="Panel Title 1" isExpanded>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2">
+        <Accordion title="Panel Title 2">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </Accordion>
-    </AccordionContainer>
-);
-
-export const SingleDisabled: Story = () => (
-    <AccordionContainer disabledItemIds={['2']}>
-        <Accordion title="Panel Title 1" id="1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </Accordion>
-        <Accordion title="Panel Title 2" id="2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </Accordion>
-        <Accordion title="Panel Title 3" id="3">
+        <Accordion title="Panel Title 3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
 );
 
-export const MultiDisabled: Story = () => (
-    <AccordionContainer disabledItemIds={['1', '3']}>
-        <Accordion title="Panel Title 1" id="1">
+export const DefaultDisabled: Story = () => (
+    <AccordionContainer id="diabled">
+        <Accordion title="Panel Title 1">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 2" id="2">
+        <Accordion title="Panel Title 2" disabled>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
-        <Accordion title="Panel Title 3" id="3">
+        <Accordion title="Panel Title 3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </Accordion>
     </AccordionContainer>
