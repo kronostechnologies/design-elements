@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, VoidFunctionComponent } from 'react';
+import { ChangeEvent, ReactElement, useCallback, useMemo, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
@@ -7,11 +7,18 @@ import { v4 as uuid } from '../../utils/uuid';
 import { Label } from '../label/label';
 import { TooltipProps } from '../tooltip/tooltip';
 
-const StyledDiv = styled.div`
-    div + label {
+const StyledFieldset = styled.fieldset`
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    span > label,
+    legend {
         margin-top: var(--spacing-1x);
     }
 `;
+
+const RadioWrapper = styled.span``;
 
 const StyledLabel = styled.label`
     ${(props: { theme: Theme, disabled?: boolean }) => `
@@ -73,6 +80,23 @@ const StyledLabel = styled.label`
             `}
 `;
 
+const ContentWrapper = styled.div<{ isExpanded: boolean, height?: number }>(({ isExpanded, height = 500 }) => `
+  overflow: hidden;
+  max-height: ${isExpanded ? `${height}px` : '0'};
+  transition: ${isExpanded ? 'max-height 1s ease-in' : 'max-height .5s ease-out'};
+`);
+
+interface RadioButtonProps {
+    label: string;
+    value: string;
+    defaultChecked?: boolean;
+    disabled?: boolean;
+    content?: {
+        render: () => ReactElement;
+        height?: number;
+    }
+}
+
 interface RadioButtonGroupProps {
     id?: string;
     label?: string;
@@ -80,12 +104,7 @@ interface RadioButtonGroupProps {
     /** Sets the name property of all buttons */
     groupName: string;
     checkedValue?: string;
-    buttons: {
-        label: string,
-        value: string,
-        defaultChecked?: boolean,
-        disabled?: boolean,
-    }[];
+    buttons: RadioButtonProps[];
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
@@ -100,33 +119,46 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     checkedValue,
     ...otherProps
 }) => {
+    const [currentChecked, setCurrentChecked] = useState(checkedValue);
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
     const id = useMemo(() => providedId || uuid(), [providedId]);
 
+    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        setCurrentChecked(event.target.value);
+        if (onChange) onChange(event);
+    }, [onChange, setCurrentChecked]);
+
     return (
-        <StyledDiv>
-            {label && <Label forId={id} tooltip={tooltip}>{label}</Label>}
+        <StyledFieldset>
+            {label && <legend><Label forId={id} tooltip={tooltip}>{label}</Label></legend>}
             {buttons.map((button) => (
-                <StyledLabel
-                    disabled={button.disabled}
-                    key={`${groupName}-${button.value}`}
-                >
-                    {' '}
-                    <input
-                        data-testid={`${dataTestId}-${button.value}`}
-                        type="radio"
-                        name={groupName}
-                        value={button.value}
-                        checked={checkedValue ? checkedValue === button.value : undefined}
-                        defaultChecked={button.defaultChecked}
-                        disabled={button.disabled}
-                        onChange={onChange}
-                    />
-                    <span className="radioInput" />
-                    {button.label}
-                </StyledLabel>
+                <RadioWrapper key={`${groupName}-${button.value}`}>
+                    <StyledLabel disabled={button.disabled}>
+                        {' '}
+                        <input
+                            data-testid={`${dataTestId}-${button.value}`}
+                            type="radio"
+                            name={groupName}
+                            value={button.value}
+                            checked={checkedValue ? checkedValue === button.value : undefined}
+                            defaultChecked={button.defaultChecked}
+                            disabled={button.disabled}
+                            onChange={handleChange}
+                        />
+                        <span className="radioInput" />
+                        {button.label}
+                    </StyledLabel>
+                    {button.content && (
+                        <ContentWrapper
+                            height={button.content.height}
+                            isExpanded={currentChecked === button.value}
+                        >
+                            {button.content.render()}
+                        </ContentWrapper>
+                    )}
+                </RadioWrapper>
             ))}
-        </StyledDiv>
+        </StyledFieldset>
     );
 };

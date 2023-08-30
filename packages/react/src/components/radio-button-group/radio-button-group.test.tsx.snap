@@ -21,7 +21,14 @@ input + .c1 {
   margin-left: var(--spacing-half);
 }
 
-.c0 div + label {
+.c0 {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 span > label,
+.c0 legend {
   margin-top: var(--spacing-1x);
 }
 
@@ -170,77 +177,95 @@ input + .c1 {
   border: 1px solid #DBDEE1;
 }
 
-<div
+<fieldset
   class="c0"
 >
-  <label
-    class="c1 c2"
-    for="test-id"
+  <legend>
+    <label
+      class="c1 c2"
+      for="test-id"
+    >
+      Planets
+    </label>
+  </legend>
+  <span
+    class=""
   >
-    Planets
-  </label>
-  <label
-    class="c3"
+    <label
+      class="c3"
+    >
+       
+      <input
+        data-testid="radio-button-group-earth"
+        name="planets"
+        type="radio"
+        value="earth"
+      />
+      <span
+        class="radioInput"
+      />
+      Earth
+    </label>
+  </span>
+  <span
+    class=""
   >
-     
-    <input
-      data-testid="radio-button-group-earth"
-      name="planets"
-      type="radio"
-      value="earth"
-    />
-    <span
-      class="radioInput"
-    />
-    Earth
-  </label>
-  <label
-    class="c3"
+    <label
+      class="c3"
+    >
+       
+      <input
+        checked=""
+        data-testid="radio-button-group-mars"
+        name="planets"
+        type="radio"
+        value="mars"
+      />
+      <span
+        class="radioInput"
+      />
+      Mars
+    </label>
+  </span>
+  <span
+    class=""
   >
-     
-    <input
-      checked=""
-      data-testid="radio-button-group-mars"
-      name="planets"
-      type="radio"
-      value="mars"
-    />
-    <span
-      class="radioInput"
-    />
-    Mars
-  </label>
-  <label
-    class="c4"
-    disabled=""
-  >
-     
-    <input
-      data-testid="radio-button-group-pluto"
+    <label
+      class="c4"
       disabled=""
-      name="planets"
-      type="radio"
-      value="pluto"
-    />
-    <span
-      class="radioInput"
-    />
-    Pluto
-  </label>
-  <label
-    class="c3"
+    >
+       
+      <input
+        data-testid="radio-button-group-pluto"
+        disabled=""
+        name="planets"
+        type="radio"
+        value="pluto"
+      />
+      <span
+        class="radioInput"
+      />
+      Pluto
+    </label>
+  </span>
+  <span
+    class=""
   >
-     
-    <input
-      data-testid="radio-button-group-saturn"
-      name="planets"
-      type="radio"
-      value="saturn"
-    />
-    <span
-      class="radioInput"
-    />
-    Saturn
-  </label>
-</div>
+    <label
+      class="c3"
+    >
+       
+      <input
+        data-testid="radio-button-group-saturn"
+        name="planets"
+        type="radio"
+        value="saturn"
+      />
+      <span
+        class="radioInput"
+      />
+      Saturn
+    </label>
+  </span>
+</fieldset>
 `;
