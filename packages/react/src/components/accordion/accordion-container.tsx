@@ -4,10 +4,22 @@ import { Accordion } from './accordion';
 import { StyledAccordionGroup } from './accordion-styles';
 
 export const AccordionContainer: React.FC<AccordionContainerProps> = ({
-    mode = 'single', children, defaultExpandedItemIds, disabledItemIds = [],
+    id, mode = 'single', children,
 }) => {
-    const [expandedItemIds, setExpandedItemIds] = useState<string[]>(defaultExpandedItemIds || []);
+    const generateId = (childProps: AccordionProps, index: number): string => childProps.id || `${id}-${index}`;
+    const isAccordion = (child: React.ReactNode): child is ReactElement<AccordionProps> => (
+        React.isValidElement<AccordionProps>(child) && child.type === Accordion);
     const focusedAccordionRef = useRef<number | null>(null);
+
+    const [expandedItemIds, setExpandedItemIds] = useState<string[]>(() => (
+        React.Children.toArray(children)
+            .filter(isAccordion)
+            .map((child: ReactElement<AccordionProps>, index) => {
+                const childProps = child.props as AccordionProps;
+                return childProps.isExpanded ? generateId(childProps, index) : null;
+            })
+            .filter((expandedId) => expandedId !== null) as string[]
+    ));
 
     const handleToggle = (itemId: string): void => {
         if (mode === 'single') {
@@ -15,7 +27,7 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
         } else if (mode === 'multi') {
             setExpandedItemIds((prevIds) => {
                 if (prevIds.includes(itemId)) {
-                    return prevIds.filter((id) => id !== itemId);
+                    return prevIds.filter((expandedId) => expandedId !== itemId);
                 }
                 return [...prevIds, itemId];
             });
@@ -23,20 +35,18 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
     };
 
     const childrenArray: ReactElement<AccordionProps>[] = React.Children.toArray(children)
-        .filter((child): child is ReactElement<AccordionProps> => {
-            if (React.isValidElement<AccordionProps>(child)) {
-                return child.type === Accordion;
-            }
-            return false;
-        })
-        .map((child: ReactElement<AccordionProps>) => {
+        .filter(isAccordion)
+        .map((child: ReactElement<AccordionProps>, index) => {
             const buttonRef = createRef<HTMLButtonElement>();
             const childProps = child.props as AccordionProps;
-            const modifiedProps: AccordionProps = {
+            const accordionId = generateId(childProps, index);
+            const accordionProps: AccordionProps = {
                 ...childProps,
                 buttonRef,
+                id: accordionId,
+                onToggle: () => handleToggle(accordionId),
             };
-            return React.cloneElement(child, modifiedProps);
+            return React.cloneElement(child, accordionProps);
         });
 
     const handleButtonKeyDown = (
@@ -62,14 +72,15 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
     return (
         <StyledAccordionGroup className='accordion'>
             {childrenArray.map((accordion, index) => {
-                const isAccordionExpanded = expandedItemIds.includes(accordion.props.id);
-                const isDisabled = disabledItemIds?.includes(accordion.props.id);
+                const { id: accordionId, ...restProps } = accordion.props; // Destructuring id and rest of the props
+                const isExpanded = accordionId ? expandedItemIds.includes(accordionId) : false;
                 const accordionProps: AccordionProps = {
-                    ...accordion.props,
-                    isExpanded: isAccordionExpanded,
-                    onToggle: () => handleToggle(accordion.props.id),
-                    disabled: isDisabled,
+                    ...restProps,
                     onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index),
+                    isExpanded,
+                    onToggle: accordion.props.onToggle,
+                    buttonRef: accordion.props.buttonRef,
+                    disabled: accordion.props.disabled,
                 };
                 return React.cloneElement(accordion, accordionProps);
             })}

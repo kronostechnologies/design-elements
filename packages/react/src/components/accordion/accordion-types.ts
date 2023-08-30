@@ -2,20 +2,18 @@ import { ReactNode, RefObject, KeyboardEvent } from 'react';
 import { Type, Tag } from '../heading/heading';
 
 export interface AccordionContainerProps {
+    /** Unique id per accordion */
+    id: string;
     children: ReactNode;
     /** Multipe or single panel open concurrently */
     mode?: 'single' | 'multi';
-    /** Define which panel(s) should be open by default */
-    defaultExpandedItemIds?: string[];
-    /** Define which accordion should be disabled */
-    disabledItemIds?: string[];
 }
 
 export interface AccordionProps {
     /** Title Label */
     title: string;
     /** Unique Id on each accordion per group */
-    id: string;
+    id?: string;
     /** This is relate to styling */
     type?: Type;
     /** Choose the right tag for page outline */
