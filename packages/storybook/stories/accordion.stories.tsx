@@ -7,6 +7,12 @@ const accordionMeta: Meta<typeof Accordion> = {
     component: Accordion,
     tags: ['autodocs'],
     argTypes: {
+        id: {
+            table: { disable: true },
+        },
+        type: {
+            table: { disable: true },
+        },
         isExpanded: {
             table: { disable: true },
         },
