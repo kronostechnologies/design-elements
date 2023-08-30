@@ -14,8 +14,8 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(() => (
         React.Children.toArray(children)
             .filter(isAccordion)
-            .map((child: ReactElement<AccordionProps>, index) => {
-                const childProps = child.props as AccordionProps;
+            .map((child, index) => {
+                const childProps = child.props;
                 return childProps.isExpanded ? generateId(childProps, index) : null;
             })
             .filter((expandedId) => expandedId !== null) as string[]
@@ -36,9 +36,9 @@ export const AccordionContainer: React.FC<AccordionContainerProps> = ({
 
     const childrenArray: ReactElement<AccordionProps>[] = React.Children.toArray(children)
         .filter(isAccordion)
-        .map((child: ReactElement<AccordionProps>, index) => {
+        .map((child, index) => {
             const buttonRef = createRef<HTMLButtonElement>();
-            const childProps = child.props as AccordionProps;
+            const childProps = child.props;
             const accordionId = generateId(childProps, index);
             const accordionProps: AccordionProps = {
                 ...childProps,
