@@ -30,8 +30,8 @@ export const Accordion: React.FC<AccordionProps> = ({
     onKeyDown,
     buttonRef,
 }) => {
-    const headerId = `idHeader${id}`;
-    const panelId = `idPanel${id}`;
+    const headerId = id;
+    const panelId = `panel-${id}`;
 
     return (
         <>
@@ -49,7 +49,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon name={isExpanded ? 'carretDown' : 'carretRight'} aria-hidden="true" />
+                    <Icon name={isExpanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
                 </StyledButton>
             </StyledHeading>
             <AccordionSection
