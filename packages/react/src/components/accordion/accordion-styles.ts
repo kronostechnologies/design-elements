@@ -22,9 +22,9 @@ export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
         border: 1px solid ${theme.greys['neutral-15']};
         border-top-width: 0;
         max-height: 500px;
-        will-change: max-height, border;
         transform: translateZ(0);
         transition: max-height 1s ease, border 1s ease;
+        will-change: max-height, border;
     }
 `;
 
