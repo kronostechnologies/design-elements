@@ -17,11 +17,13 @@ export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
     margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease, border 0.2s ease;
+    transition: max-height 0.5s ease, border 0.5s ease;
     &.expanded {
         border: 1px solid ${theme.greys['neutral-15']};
         border-top-width: 0;
         max-height: 500px;
+        will-change: max-height, border;
+        transform: translateZ(0);
         transition: max-height 1s ease, border 1s ease;
     }
 `;
