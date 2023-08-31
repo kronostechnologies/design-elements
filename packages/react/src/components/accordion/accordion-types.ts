@@ -1,7 +1,7 @@
 import { ReactNode, RefObject, KeyboardEvent } from 'react';
 import { Type, Tag } from '../heading/heading';
 
-export interface AccordionContainerProps {
+export interface AccordionProps {
     /** Unique id per accordion */
     id: string;
     children: ReactNode;
@@ -9,7 +9,7 @@ export interface AccordionContainerProps {
     mode?: 'single' | 'multi';
 }
 
-export interface AccordionProps {
+export interface AccordionItemProps {
     /** Title Label */
     title: string;
     /** Unique Id on each accordion per group */
