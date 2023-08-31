@@ -11,8 +11,8 @@ export const StyledAccordionGroup = styled.div`
 
 export const AccordionSectionStyled: StyledFunction = (isExpanded, theme) => css`
     background: ${theme.greys['colored-white']};
-    border: ${isExpanded ? `1px solid ${theme.greys['neutral-65']}` : '0'};
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border: ${isExpanded ? `1px solid ${theme.greys['neutral-15']}` : '0'};
+    border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-top-width: 0;
     color: ${theme.greys['neutral-100']};
     font-size: 0.75rem;
@@ -33,9 +33,9 @@ export const HeadingStyled = css`
 
 export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     align-items: flex-start;
-    border: 1px solid ${theme.greys['neutral-65']};
-    border-bottom-color: ${isExpanded ? theme.greys['neutral-15'] : theme.greys['neutral-65']};
-    border-radius: ${isExpanded ? 'var(--border-radius) var(--border-radius) 0 0' : 'var(--border-radius)'};
+    border: 1px solid ${theme.greys['neutral-15']};
+    //border-bottom-color: theme.greys['neutral-15'];
+    border-radius: ${isExpanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
     color: ${theme.greys['neutral-100']};
     font-size: 0.875rem;
     font-weight: var(--font-normal);
@@ -53,7 +53,7 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
         color: ${theme.greys['neutral-100']};
     }
     &:focus { /* TODO change colors when updating thematization */
-        border-bottom-color: ${isExpanded ? theme.greys['neutral-15'] : theme.greys['neutral-65']};
+        //border-bottom-color: ${isExpanded ? theme.greys['neutral-15'] : theme.greys['neutral-65']};
         box-shadow: ${theme.tokens['focus-box-shadow-inset']};
         color: ${theme.greys['neutral-100']};
     }
@@ -64,7 +64,7 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     }
     &:disabled { /* TODO change colors when updating thematization */
         background-color: ${theme.greys['neutral-05']};
-        border-color: ${theme.greys['neutral-15']};
+        //border-color: ${theme.greys['neutral-15']};
         &:hover {
             color: ${theme.greys['neutral-30']};
         }
