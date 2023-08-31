@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
 
 type StyledFunction = (isExpanded: boolean, theme: Theme) => ReturnType<typeof css>;
+type AccordionSectionFunction = (theme: Theme) => ReturnType<typeof css>;
 
 export const StyledAccordionGroup = styled.div`
     display: flex;
@@ -9,22 +10,30 @@ export const StyledAccordionGroup = styled.div`
     justify-content: flex-start;
 `;
 
-export const AccordionSectionStyled: StyledFunction = (isExpanded, theme) => css`
-    background: ${theme.greys['colored-white']};
-    border: ${isExpanded ? `1px solid ${theme.greys['neutral-15']}` : '0'};
+export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
+    border: 0 solid ${theme.greys['neutral-15']};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-top-width: 0;
+    margin-bottom: var(--spacing-1x);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, border 0.2s ease;
+    &.expanded {
+        border: 1px solid ${theme.greys['neutral-15']};
+        border-top-width: 0;
+        max-height: 500px;
+        transition: max-height 1s ease, border 1s ease;
+    }
+`;
+
+export const AccordionBodyStyled: AccordionSectionFunction = (theme) => css`
+    background: ${theme.greys['colored-white']};
     color: ${theme.greys['neutral-100']};
     font-size: 0.75rem;
     font-weight: var(--font-normal);
-    height: ${isExpanded ? 'auto' : '0'};
     letter-spacing: 0.015rem;
     line-height: 1.7;
-    margin-bottom: var(--spacing-1x);
-    max-height: ${isExpanded ? '500px' : '0'};
-    overflow: hidden;
-    padding: ${isExpanded ? 'var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x)' : '0 0 0 0'};
-    transition: ${isExpanded ? 'max-height 1.5s ease-in' : 'max-height 0.5s ease-out'};
+    padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
 `;
 
 export const HeadingStyled = css`
@@ -34,7 +43,6 @@ export const HeadingStyled = css`
 export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     align-items: flex-start;
     border: 1px solid ${theme.greys['neutral-15']};
-    //border-bottom-color: theme.greys['neutral-15'];
     border-radius: ${isExpanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
     color: ${theme.greys['neutral-100']};
     font-size: 0.875rem;
@@ -46,14 +54,15 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     padding: var(--spacing-1x); /* TODO change colors when updating thematization */
     text-align: left;
     text-transform: none;
+    transition: border-radius 0.2s ease;
     width: 100%;
     &:hover, /* TODO change colors when updating thematization */
     &[aria-expanded='true'] {/* TODO change colors when updating thematization */
         background: ${theme.greys.white};
         color: ${theme.greys['neutral-100']};
+        transition: border-radius 0.2s ease;
     }
     &:focus { /* TODO change colors when updating thematization */
-        //border-bottom-color: ${isExpanded ? theme.greys['neutral-15'] : theme.greys['neutral-65']};
         box-shadow: ${theme.tokens['focus-box-shadow-inset']};
         color: ${theme.greys['neutral-100']};
     }
@@ -64,7 +73,6 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     }
     &:disabled { /* TODO change colors when updating thematization */
         background-color: ${theme.greys['neutral-05']};
-        //border-color: ${theme.greys['neutral-15']};
         &:hover {
             color: ${theme.greys['neutral-30']};
         }

@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AccordionItemProps } from './accordion-types';
-import { AccordionSectionStyled, HeadingStyled, ButtonStyled } from './accordion-styles';
+import { AccordionItemProps, AccordionBodyProps } from './accordion-types';
+import { AccordionSectionStyled, AccordionBodyStyled, HeadingStyled, ButtonStyled } from './accordion-styles';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading } from '../heading/heading';
 
-const AccordionSection = styled.section<{ isExpanded: boolean }>`
-    ${({ isExpanded, theme }) => AccordionSectionStyled(isExpanded, theme)};
+const AccordionSection = styled.section<AccordionBodyProps>`
+    ${({ theme }) => AccordionSectionStyled(theme)};
+`;
+
+const AccordionBody = styled.div<AccordionBodyProps>`
+    ${({ theme }) => AccordionBodyStyled(theme)};
 `;
 
 const StyledHeading = styled(Heading)`
@@ -53,7 +57,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 </StyledButton>
             </StyledHeading>
             <AccordionSection
-                className="accordion-content"
+                className={`accordion-content ${isExpanded ? 'expanded' : ''}`}
                 id={panelId}
                 aria-labelledby={headerId}
                 aria-expanded={isExpanded}
@@ -61,7 +65,12 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 isExpanded={isExpanded}
                 aria-disabled={disabled}
             >
-                {children}
+                <AccordionBody
+                    className="accordion-body"
+                    isExpanded={isExpanded}
+                >
+                    {children}
+                </AccordionBody>
             </AccordionSection>
         </>
     );

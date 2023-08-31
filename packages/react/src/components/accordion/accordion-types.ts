@@ -25,3 +25,7 @@ export interface AccordionItemProps {
     children: ReactNode;
     buttonRef?: RefObject<HTMLButtonElement>;
 }
+
+export interface AccordionBodyProps {
+    isExpanded?: boolean;
+}
