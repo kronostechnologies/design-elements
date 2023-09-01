@@ -1,6 +1,6 @@
 import { Theme } from './theme';
 
-export const notifications: Theme['notifications'] = {
+export const notifications: Theme['notifications'] = { /* TODO remove unused colors when updating thematization */
     'info-1.1': '#602FA0',
     'success-1.1': '#008533',
     'success-1.2': '#F6FCF8',
@@ -11,4 +11,20 @@ export const notifications: Theme['notifications'] = {
     'warning-3.2': '#FFF9F5',
     'warning-3.3': '#FFB302',
     'warning-3.4': '#A36D00',
+    'success-05': '#F6FCF8',
+    'success-20': '#8ADDA9',
+    'success-50': '#008533',
+    'success-70': '#004F1E',
+    'alert-05': '#FDF7F6',
+    'alert-20': '#F99D99',
+    'alert-50': '#CD2C23',
+    'alert-70': '#7B1A15',
+    'warning-05': '#FFFBF5',
+    'warning-20': '#FFDD99',
+    'warning-50': '#F5A200',
+    'warning-70': '#9E6900',
+    'informative-05': '#F9F7FB',
+    'informative-20': '#CFC1E3',
+    'informative-50': '#602FA0',
+    'informative-70': '#3A1C60',
 };

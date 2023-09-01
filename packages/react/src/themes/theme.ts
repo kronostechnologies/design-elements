@@ -1,4 +1,4 @@
-export interface Theme {
+export interface Theme { /* TODO remove unused colors when updating thematization */
     main: {
         'primary-1.1': string;
         'primary-1.2': string;
@@ -9,6 +9,14 @@ export interface Theme {
         'secondary-4.1': string;
         'secondary-4.2': string;
         'secondary-4.3': string;
+        'brand-05': string;
+        'brand-20': string;
+        'brand-50': string;
+        'brand-70': string;
+        'brand-80': string;
+        'accent-20': string;
+        'accent-50': string;
+        'accent-70': string;
     };
     greys: {
         'white': string;
@@ -38,6 +46,22 @@ export interface Theme {
         'warning-3.2': string;
         'warning-3.3': string;
         'warning-3.4': string;
+        'success-05': string;
+        'success-20': string;
+        'success-50': string;
+        'success-70': string;
+        'alert-05': string;
+        'alert-20': string;
+        'alert-50': string;
+        'alert-70': string;
+        'warning-05': string;
+        'warning-20': string;
+        'warning-50': string;
+        'warning-70': string;
+        'informative-05': string;
+        'informative-20': string;
+        'informative-50': string;
+        'informative-70': string;
     };
     tokens: {
         'focus-box-shadow': string;

@@ -3,7 +3,7 @@ import { notifications } from './notifications';
 import { Theme } from './theme';
 import { tokens } from './tokens';
 
-export const testTheme: Theme = {
+export const testTheme: Theme = { /* TODO remove unused colors when updating thematization */
     main: {
         'primary-1.1': '#9EB3FF',
         'primary-1.2': '#84B4E8',
@@ -14,6 +14,14 @@ export const testTheme: Theme = {
         'secondary-4.1': '#B3974B',
         'secondary-4.2': '#736130',
         'secondary-4.3': '#FFD86B',
+        'brand-05': '#E0F0F9',
+        'brand-20': '#84C6EA',
+        'brand-50': '#006296',
+        'brand-70': '#003A5A',
+        'brand-80': '#012639',
+        'accent-20': '#F9B6B2',
+        'accent-50': '#EF483E',
+        'accent-70': '#D41F14',
     },
     greys,
     notifications,

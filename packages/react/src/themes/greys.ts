@@ -1,6 +1,6 @@
 import { Theme } from './theme';
 
-export const greys: Theme['greys'] = {
+export const greys: Theme['greys'] = { /* TODO remove unused colors when updating thematization */
     white: '#FFFFFF',
     'neutral-00': '#FFFFFF',
     'neutral-02': '#FAFAFA',
