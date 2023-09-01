@@ -11,6 +11,7 @@ export const StyledAccordionGroup = styled.div`
 `;
 
 export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
+    background: ${theme.greys['neutral-02']};
     border: 0 solid ${theme.greys['neutral-15']};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-top-width: 0;
