@@ -12,14 +12,14 @@ interface ButtonProps {
 
 const StyledButton = styled(AbstractButton)`
     background: ${({ theme }) => theme.greys.white};
-    border-color: ${({ theme }) => theme.greys['dark-grey']};
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    border-color: ${({ theme }) => theme.greys['neutral-65']};
+    color: ${({ theme }) => theme.greys['neutral-65']};
     height: 2rem;
     padding: 0 var(--spacing-1x);
     width: 2rem;
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.greys['neutral-15']};
         color: ${({ theme }) => theme.greys.black};
     }
 
@@ -27,9 +27,9 @@ const StyledButton = styled(AbstractButton)`
         &,
         &:focus,
         &:hover {
-            background-color: ${({ theme }) => theme.greys['light-grey']};
-            border-color: ${({ theme }) => theme.greys.grey};
-            color: ${({ theme }) => theme.greys['mid-grey']};
+            background-color: ${({ theme }) => theme.greys['neutral-05']};
+            border-color: ${({ theme }) => theme.greys['neutral-15']};
+            color: ${({ theme }) => theme.greys['neutral-30']};
         }
     }
 `;

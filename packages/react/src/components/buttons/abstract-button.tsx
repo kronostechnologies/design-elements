@@ -97,21 +97,21 @@ const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<
     inverted,
     theme,
 }) => css`
-    background-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    color: ${inverted ? theme.main['primary-1.1'] : theme.greys.white};
+    background-color: ${inverted ? theme.greys.white : theme.main['brand-50']};
+    border-color: ${inverted ? theme.greys.white : theme.main['brand-50']};
+    color: ${inverted ? theme.main['brand-50'] : theme.greys.white};
 
     &:hover,
     &[aria-expanded='true'] {
-        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
-        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
-        ${inverted && `color: ${theme.main['primary-1.3']}`}
+        background-color: ${inverted ? theme.greys.white : theme.main['brand-70']};
+        border-color: ${inverted ? theme.greys.white : theme.main['brand-70']};
+        ${inverted && `color: ${theme.main['brand-70']}`}
     }
 
     &:disabled {
-        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
-        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
-        ${inverted && `color: ${theme.main['primary-1.2']}`}
+        background-color: ${inverted ? theme.greys.white : theme.main['brand-20']};
+        border-color: ${inverted ? theme.greys.white : theme.main['brand-20']};
+        ${inverted && `color: ${theme.main['brand-20']}`}
     }
 `;
 
@@ -120,23 +120,23 @@ const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolatio
     theme,
 }) => css`
     background-color: ${inverted ? 'transparent' : theme.greys.white};
-    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
+    border-color: ${inverted ? theme.greys.white : theme.main['brand-50']};
+    color: ${inverted ? theme.greys.white : theme.main['brand-50']};
 
     &:hover,
     &[aria-expanded='true'] {
-        border-color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
-        color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
+        border-color: ${inverted ? theme.main['brand-20'] : theme.main['brand-70']};
+        color: ${inverted ? theme.main['brand-20'] : theme.main['brand-70']};
     }
 
     &:disabled {
-        border-color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
-        color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
+        border-color: ${inverted ? theme.main['brand-70'] : theme.main['brand-20']};
+        color: ${inverted ? theme.main['brand-70'] : theme.main['brand-20']};
     }
 
     ${inverted && `&:focus {
-        background-color: ${theme.main['primary-2']};
-        border-color: ${theme.main['primary-1.1']}
+        background-color: ${theme.main['brand-80']};
+        border-color: ${theme.main['brand-50']}
         color: ${theme.greys.white};
     }`}
 `;
@@ -147,23 +147,23 @@ const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation
 }) => css`
     background-color: transparent;
     border-color: transparent;
-    color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
+    color: ${inverted ? theme.greys.white : theme.greys['neutral-65']};
 
     &:hover,
     &[aria-expanded='true'] {
-        background-color: ${inverted ? theme.main['primary-1.3'] : theme.greys.grey};
+        background-color: ${inverted ? theme.main['brand-70'] : theme.greys.grey};
         color: ${inverted ? theme.greys.white : theme.greys.black};
     }
 
     &:disabled {
         background-color: transparent;
-        color: ${inverted ? theme.main['primary-1.3'] : theme.greys['mid-grey']};
+        color: ${inverted ? theme.main['brand-70'] : theme.greys['neutral-30']};
     }
 
     &:focus {
-        background-color: ${inverted ? theme.main['primary-2'] : theme.greys.white};
-        border-color: ${theme.main['primary-1.1']};
-        color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
+        background-color: ${inverted ? theme.main['brand-80'] : theme.greys.white};
+        border-color: ${theme.main['brand-50']};
+        color: ${inverted ? theme.greys.white : theme.greys['neutral-65']};
     }
 `;
 
@@ -171,26 +171,26 @@ const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolat
     inverted,
     theme,
 }) => css`
-    background-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    border-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    color: ${inverted ? theme.notifications['alert-2.1'] : theme.greys.white};
+    background-color: ${inverted ? theme.greys.white : theme.notifications['alert-50']};
+    border-color: ${inverted ? theme.greys.white : theme.notifications['alert-50']};
+    color: ${inverted ? theme.notifications['alert-50'] : theme.greys.white};
 
     &:hover,
     &[aria-expanded='true'] {
         /* TODO change colors when updating thematization */
-        background-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        border-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        color: ${inverted ? '#7B1A15' : theme.greys.white};
+        background-color: ${inverted ? theme.greys.white : theme.notifications['alert-70']};
+        border-color: ${inverted ? theme.greys.white : theme.notifications['alert-70']};
+        color: ${inverted ? theme.notifications['alert-70'] : theme.greys.white};
     }
-
+   
     &:disabled {
         &,
         &:focus,
         &:hover {
             /* TODO change colors when updating thematization */
-            background-color: ${inverted ? theme.greys.white : '#F99D99'};
-            border-color: ${inverted ? theme.greys.white : '#F99D99'};
-            color: ${inverted ? '#F99D99' : theme.greys.white};
+            background-color: ${inverted ? theme.greys.white : theme.notifications['alert-20']};
+            border-color: ${inverted ? theme.greys.white : theme.notifications['alert-20']};
+            color: ${inverted ? theme.notifications['alert-20'] : theme.greys.white};
         }
     }
 `;
