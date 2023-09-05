@@ -31,7 +31,7 @@ export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
 
 export const AccordionBodyStyled: AccordionSectionFunction = (theme) => css`
     background: ${theme.greys['colored-white']};
-    color: ${theme.greys['neutral-100']};
+    color: ${theme.greys['neutral-90']};
     font-size: 0.75rem;
     font-weight: var(--font-normal);
     letter-spacing: 0.015rem;
@@ -47,7 +47,7 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     align-items: flex-start;
     border: 1px solid ${theme.greys['neutral-15']};
     border-radius: ${isExpanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
-    color: ${theme.greys['neutral-100']};
+    color: ${theme.greys['neutral-90']};
     font-size: 0.875rem;
     font-weight: var(--font-normal);
     justify-content: start;
@@ -62,19 +62,20 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
 
     &[aria-expanded='true'] {/* TODO change colors when updating thematization */
         background: ${theme.greys.white};
-        color: ${theme.greys['neutral-100']};
-        transition: border-radius 0.2s ease;
-    }
-
-    &:hover {/* TODO change colors when updating thematization */
-        background: ${theme.greys['neutral-15']};
-        color: ${theme.greys['neutral-100']};
+        color: ${theme.greys['neutral-90']};
         transition: border-radius 0.2s ease;
     }
 
     &:focus { /* TODO change colors when updating thematization */
         box-shadow: ${theme.tokens['focus-box-shadow-inset']};
-        color: ${theme.greys['neutral-100']};
+        color: ${theme.greys['neutral-90']};
+    }
+
+    &:hover {/* TODO change colors when updating thematization */
+        background: ${theme.greys['neutral-15']};
+        border-color: ${theme.greys['neutral-90']};
+        color: ${theme.greys['neutral-90']};
+        transition: border-radius 0.2s ease;
     }
 
     > svg {
