@@ -53,8 +53,8 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     justify-content: start;
     letter-spacing: 0.015rem;
     line-height: 1.5;
-    min-height: var(--spacing-5x); /* TODO change colors when updating thematization */
-    padding: var(--spacing-1x); /* TODO change colors when updating thematization */
+    min-height: var(--spacing-5x); /* TODO change space when updating thematization */
+    padding: var(--spacing-1x); /* TODO change space when updating thematization */
     text-align: left;
     text-transform: none;
     transition: border-radius 0.2s ease;
@@ -71,7 +71,7 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     }
     > svg {
         height: 1rem;
-        margin: 3px var(--spacing-1halfx) 0 3px; /* TODO change colors when updating thematization */
+        margin: 3px var(--spacing-1halfx) 0 3px; /* TODO change space when updating thematization */
         width: 1rem;
     }
     &:disabled { /* TODO change colors when updating thematization */
