@@ -59,21 +59,30 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     text-transform: none;
     transition: border-radius 0.2s ease;
     width: 100%;
-    &:hover, /* TODO change colors when updating thematization */
+
     &[aria-expanded='true'] {/* TODO change colors when updating thematization */
+        background: ${theme.greys.white};
+        color: ${theme.greys['neutral-100']};
+        transition: border-radius 0.2s ease;
+    }
+
+    &:hover {/* TODO change colors when updating thematization */
         background: ${theme.greys['neutral-15']};
         color: ${theme.greys['neutral-100']};
         transition: border-radius 0.2s ease;
     }
+
     &:focus { /* TODO change colors when updating thematization */
         box-shadow: ${theme.tokens['focus-box-shadow-inset']};
         color: ${theme.greys['neutral-100']};
     }
+
     > svg {
         height: 1rem;
         margin: 3px var(--spacing-1halfx) 0 3px; /* TODO change space when updating thematization */
         width: 1rem;
     }
+
     &:disabled { /* TODO change colors when updating thematization */
         background-color: ${theme.greys['neutral-05']};
         &:hover {
