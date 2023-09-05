@@ -81,11 +81,19 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
 .c1[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c1:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 <button
@@ -156,8 +164,8 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 }
 
 .c1 {
-  background-color: #9EB3FF;
-  border-color: #9EB3FF;
+  background-color: #006296;
+  border-color: #006296;
   color: #FFFFFF;
 }
 
@@ -173,13 +181,21 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
 
 .c1:hover,
 .c1[aria-expanded='true'] {
-  background-color: #8984E8;
-  border-color: #8984E8;
+  background-color: #003A5A;
+  border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c1:disabled {
-  background-color: #84B4E8;
-  border-color: #84B4E8;
+  background-color: #84C6EA;
+  border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 <button

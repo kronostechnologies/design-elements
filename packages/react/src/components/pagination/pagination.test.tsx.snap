@@ -82,18 +82,20 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #000000;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
 }
 
 .c3:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
 }
 
 .c3 > svg {
@@ -412,18 +414,20 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #000000;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
 }
 
 .c3:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
 }
 
 .c3 > svg {
@@ -742,18 +746,20 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #000000;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
 }
 
 .c3:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
 }
 
 .c3 > svg {
@@ -1072,18 +1078,20 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #DBDEE1;
+  border-color: transparent;
   color: #000000;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
 }
 
 .c3:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #B7BBC2;
 }
 
 .c3 > svg {

@@ -82,18 +82,20 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #003A5A;
 }
 
 .c3:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003A5A;
 }
 
 .c3 > svg {
@@ -914,18 +916,20 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #003A5A;
 }
 
 .c3:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003A5A;
 }
 
 .c3 > svg {
@@ -1658,18 +1662,20 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 .c3:hover,
 .c3[aria-expanded='true'] {
   background-color: #003A5A;
+  border-color: transparent;
   color: #FFFFFF;
-}
-
-.c3:disabled {
-  background-color: transparent;
-  color: #003A5A;
 }
 
 .c3:focus {
   background-color: #012639;
   border-color: #006296;
   color: #FFFFFF;
+}
+
+.c3:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003A5A;
 }
 
 .c3 > svg {
