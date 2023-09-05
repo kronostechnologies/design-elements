@@ -19,7 +19,7 @@ export interface Theme {
         'neutral-30': string;
         'neutral-50': string;
         'neutral-65': string;
-        'neutral-100': string;
+        'neutral-90': string;
         'colored-white': string;
         'light-grey': string;
         'grey': string;
