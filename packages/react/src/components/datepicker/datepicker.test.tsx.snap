@@ -3035,9 +3035,9 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
 }
 
 .c17:focus {
-  background-color: #012639;
+  background-color: #FFFFFF;
   border-color: #006296;
-  color: #FFFFFF;
+  color: #006296;
 }
 
 .c17:disabled {

@@ -197,7 +197,7 @@ exports[`Button has destructive styles 1`] = `
 }
 
 .c1:focus {
-  background-color: #F99D99;
+  background-color: #CD2C23;
   border-color: #F99D99;
   color: #FFFFFF;
 }
@@ -830,9 +830,9 @@ exports[`Button has secondary styles 1`] = `
 }
 
 .c1:focus {
-  background-color: #012639;
+  background-color: #FFFFFF;
   border-color: #006296;
-  color: #FFFFFF;
+  color: #006296;
 }
 
 .c1:disabled {
