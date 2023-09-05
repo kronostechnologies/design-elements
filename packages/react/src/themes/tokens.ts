@@ -97,11 +97,11 @@ export const tokens: Theme['tokens'] = {
         'hover-color': `${main['brand-70']}`,
         'inverted-hover-color': `${main['brand-20']}`,
 
-        'focus-bg': `${main['brand-80']}`,
+        'focus-bg': `${greys.white}`,
         'inverted-focus-bg': `${main['brand-80']}`,
         'focus-border': `${main['brand-50']}`,
         'inverted-focus-border': `${main['brand-50']}`,
-        'focus-color': `${greys.white}`,
+        'focus-color': `${main['brand-50']}`,
         'inverted-focus-color': `${greys.white}`,
 
         'disabled-bg': `${greys.white}`,
@@ -155,7 +155,7 @@ export const tokens: Theme['tokens'] = {
         'hover-color': `${greys.white}`,
         'inverted-hover-color': `${notifications['alert-70']}`,
 
-        'focus-bg': `${notifications['alert-20']}`,
+        'focus-bg': `${notifications['alert-50']}`,
         'inverted-focus-bg': `${greys.white}`,
         'focus-border': `${notifications['alert-20']}`,
         'inverted-focus-border': `${greys.white}`,
