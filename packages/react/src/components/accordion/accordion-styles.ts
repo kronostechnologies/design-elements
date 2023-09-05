@@ -61,7 +61,7 @@ export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
     width: 100%;
     &:hover, /* TODO change colors when updating thematization */
     &[aria-expanded='true'] {/* TODO change colors when updating thematization */
-        background: ${theme.greys.white};
+        background: ${theme.greys['neutral-15']};
         color: ${theme.greys['neutral-100']};
         transition: border-radius 0.2s ease;
     }
