@@ -11,25 +11,25 @@ interface ButtonProps {
 }
 
 const StyledButton = styled(AbstractButton)`
-    background: ${({ theme }) => theme.greys.white};
-    border-color: ${({ theme }) => theme.greys['neutral-65']};
-    color: ${({ theme }) => theme.greys['neutral-65']};
+    background: ${({ theme }) => theme.tokens['bt-search'].bg};
+    border-color: ${({ theme }) => theme.tokens['bt-search'].border};
+    color: ${({ theme }) => theme.tokens['bt-search'].color};
     height: 2rem;
     padding: 0 var(--spacing-1x);
     width: 2rem;
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys['neutral-15']};
-        color: ${({ theme }) => theme.greys.black};
+        background-color: ${({ theme }) => theme.tokens['bt-search']['hover-bg']};
+        color: ${({ theme }) => theme.tokens['bt-search']['hover-color']};
     }
 
     &:disabled {
         &,
         &:focus,
         &:hover {
-            background-color: ${({ theme }) => theme.greys['neutral-05']};
-            border-color: ${({ theme }) => theme.greys['neutral-15']};
-            color: ${({ theme }) => theme.greys['neutral-30']};
+            background-color: ${({ theme }) => theme.tokens['bt-search']['disabled-bg']};
+            border-color: ${({ theme }) => theme.tokens['bt-search']['disabled-border']};
+            color: ${({ theme }) => theme.tokens['bt-search']['disabled-color']};
         }
     }
 `;
