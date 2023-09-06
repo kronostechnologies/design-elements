@@ -1,36 +1,34 @@
 {
-  extends: [
-    "github>kronostechnologies/standards:renovate-base"
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["local>kronostechnologies/renovate-config"],
+  packageRules: [
+    {
+      matchCategories: ["js"],
+      matchPackageNames: [
+        "react",
+        "react-dom",
+      ],
+      groupName: "React",
+    },
+    {
+      matchCategories: ["js"],
+      matchPackageNames: ["react-datepicker"],
+      groupName: "react-datepicker",
+    },
+    {
+      matchCategories: ["js"],
+      matchPackageNames: ["react-modal"],
+      groupName: "react-modal",
+    },
+    {
+      matchCategories: ["js"],
+      matchPackageNames: ["react-popper-tooltip"],
+      groupName: "react-popper-tooltip",
+    },
+    {
+      matchCategories: ["js"],
+      matchPackageNames: ["react-table"],
+      groupName: "react-table",
+    },
   ],
-
-  reviewers: ["team:design-system-core"],
-  rebaseWhen: "conflicted",
-
-  js: {
-    "packageRules": [
-      {
-        "matchPackageNames": [
-          "react",
-          "react-dom",
-        ],
-        "groupName": "React"
-      },
-      {
-        "matchPackageNames": ["react-datepicker"],
-        "groupName": "react-datepicker"
-      },
-      {
-        "matchPackageNames": ["react-modal"],
-        "groupName": "react-modal"
-      },
-      {
-        "matchPackageNames": ["react-popper-tooltip"],
-        "groupName": "react-popper-tooltip"
-      },
-      {
-        "matchPackageNames": ["react-table"],
-        "groupName": "react-table"
-      },
-    ]
-  },
 }
