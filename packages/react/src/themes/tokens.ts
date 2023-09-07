@@ -180,3 +180,32 @@ export const tokens: Theme['tokens'] = {
         'disabled-color': `${greys['neutral-30']}`,
     },
 };
+
+/** This function sould go to the theme-directory */
+function mergeToken(existingTokens: Record<string, any>, userOverrides: Record<string, any>): Record<string, any> {
+    const mergedTokens: Record<string, any> = { ...existingTokens };
+  
+    for (const key in userOverrides) {
+      if (existingTokens.hasOwnProperty(key) && typeof userOverrides[key] === 'object' && userOverrides[key] !== null && !Array.isArray(userOverrides[key])) {
+        // If the value is an object, recursively merge it
+        mergedTokens[key] = mergeToken(existingTokens[key], userOverrides[key]);
+      } else {
+        // Otherwise, use the user-provided value
+        mergedTokens[key] = userOverrides[key];
+      }
+    }
+  
+    return mergedTokens;
+}
+
+// User-provided JSON with token overrides. That is, the user can override any token value.
+const customeTokens = {
+    "bt-primary": {
+        "bg": "#D41F14",
+    },
+};
+
+// Here the tokens are merged
+const newTokens = mergeToken(tokens, customeTokens);
+console.log(tokens,  newTokens)
+
