@@ -291,6 +291,8 @@ export interface DatepickerHandles {
 
 interface DatepickerProps {
     className?: string;
+    /** Sets default selected date */
+    defaultDate?: Date;
     /** Sets date format (e.g.: dd/MM/yyyy). */
     dateFormat?: string;
     'data-testid'?: string;
@@ -317,8 +319,8 @@ interface DatepickerProps {
     placeholder?: string;
     readOnly?: boolean;
     required?: boolean;
-    /** Sets default selected date */
-    startDate?: Date | null;
+    /** Sets calendar date when initially open */
+    openToDate?: Date | null;
     /** Sets calendar initially open (uncontrolled) */
     startOpen?: boolean;
     tabIndex?: number;
@@ -352,6 +354,7 @@ const localeArray = [enUS, enCA, frCA];
 
 export const Datepicker = forwardRef(({
     className,
+    defaultDate,
     dateFormat,
     disabled,
     firstDayOfWeek,
@@ -371,7 +374,7 @@ export const Datepicker = forwardRef(({
     open,
     placeholder,
     required,
-    startDate,
+    openToDate,
     startOpen,
     tooltip,
     valid = true,
@@ -380,7 +383,7 @@ export const Datepicker = forwardRef(({
 }: DatepickerProps, ref: Ref<DatepickerHandles>): ReactElement => {
     const { t } = useTranslation('datepicker');
     const { isMobile } = useDeviceContext();
-    const [selectedDate, setSelectedDate] = useState(startDate);
+    const [selectedDate, setSelectedDate] = useState(defaultDate);
     const currentLocale = useMemo(() => getLocale(localeArray, locale), [locale]);
     const months = useMemo(() => getLocaleMonthsShort(currentLocale), [currentLocale]);
     const monthsOptions = useMemo(() => getLocaleMonthsOptions(currentLocale), [currentLocale]);
@@ -392,7 +395,7 @@ export const Datepicker = forwardRef(({
 
     useImperativeHandle(ref, () => ({
         reset: () => {
-            setSelectedDate(startDate);
+            setSelectedDate(defaultDate);
         },
         setDate: (date: Date) => {
             setSelectedDate(date);
@@ -567,6 +570,7 @@ export const Datepicker = forwardRef(({
                         onInputClick={handleInputClick}
                         onKeyDown={handleCalendarKeyDown}
                         open={open}
+                        openToDate={openToDate || undefined}
                         placeholderText={getPlaceholder}
                         popperClassName="popper"
                         preventOpenOnFocus

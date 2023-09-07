@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Datepicker has startDate 1`] = `
+exports[`Datepicker has openToDate 1`] = `
 .c2 {
   color: #000000;
   display: block;
@@ -277,12 +277,12 @@ label + .c3 {
           data-testid="text-input"
           placeholder="YYYY-MM-DD"
           type="text"
-          value="1995-05-05"
+          value=""
         />
       </div>
     </div>
     <button
-      aria-label="Choose date. The selected date is 1995-05-05"
+      aria-label="Choose date"
       class="c6"
       data-testid="calendar-button"
       tabindex="0"
