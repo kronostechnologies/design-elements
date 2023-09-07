@@ -1,9 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio button Matches the snapshot 1`] = `
-.c2 {
+.c0 {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1 {
   color: #000000;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 0.75rem;
   font-weight: var(--font-normal);
   -webkit-letter-spacing: 0.02rem;
@@ -12,27 +21,13 @@ exports[`Radio button Matches the snapshot 1`] = `
   letter-spacing: 0.02rem;
   line-height: 1.25rem;
   margin: 0;
+  margin-top: var(--spacing-1x);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-input + .c1 {
-  margin-left: var(--spacing-half);
-}
-
-.c0 {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c0 span > label,
-.c0 legend {
-  margin-top: var(--spacing-1x);
-}
-
-.c3 {
+.c2 {
   cursor: pointer;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -44,6 +39,7 @@ input + .c1 {
   display: flex;
   font-size: 0.875rem;
   line-height: 1.5rem;
+  margin-top: var(--spacing-1x);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -51,8 +47,73 @@ input + .c1 {
   user-select: none;
 }
 
-.c3:not(:first-of-type) {
+.c2 input {
+  height: var(--size-1x);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  width: var(--size-1x);
+}
+
+.c2 input:checked + .radioInput {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c2 input:checked + .radioInput::after {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+.c2 input:focus + .radioInput {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2 .radioInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c2:hover .radioInput {
+  border: 1px solid #006296;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   margin-top: var(--spacing-1x);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c3 input {
@@ -90,78 +151,6 @@ input + .c1 {
 }
 
 .c3 .radioInput {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  height: var(--size-1x);
-  margin-right: var(--spacing-1x);
-  position: relative;
-  width: var(--size-1x);
-}
-
-.c3:hover .radioInput {
-  border: 1px solid #006296;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c4:not(:first-of-type) {
-  margin-top: var(--spacing-1x);
-}
-
-.c4 input {
-  height: var(--size-1x);
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  width: var(--size-1x);
-}
-
-.c4 input:checked + .radioInput {
-  background-color: #006296;
-  border: 1px solid #006296;
-}
-
-.c4 input:checked + .radioInput::after {
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  content: '';
-  height: var(--size-half);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: var(--size-half);
-}
-
-.c4 input:focus + .radioInput {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c4 .radioInput {
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
   border-radius: 50%;
@@ -173,26 +162,23 @@ input + .c1 {
   width: var(--size-1x);
 }
 
-.c4:hover .radioInput {
+.c3:hover .radioInput {
   border: 1px solid #DBDEE1;
 }
 
 <fieldset
   class="c0"
 >
-  <legend>
-    <label
-      class="c1 c2"
-      for="test-id"
-    >
-      Planets
-    </label>
+  <legend
+    class="c1"
+  >
+    Planets
   </legend>
-  <span
+  <div
     class=""
   >
     <label
-      class="c3"
+      class="c2"
     >
        
       <input
@@ -206,12 +192,12 @@ input + .c1 {
       />
       Earth
     </label>
-  </span>
-  <span
+  </div>
+  <div
     class=""
   >
     <label
-      class="c3"
+      class="c2"
     >
        
       <input
@@ -226,12 +212,12 @@ input + .c1 {
       />
       Mars
     </label>
-  </span>
-  <span
+  </div>
+  <div
     class=""
   >
     <label
-      class="c4"
+      class="c3"
       disabled=""
     >
        
@@ -247,12 +233,12 @@ input + .c1 {
       />
       Pluto
     </label>
-  </span>
-  <span
+  </div>
+  <div
     class=""
   >
     <label
-      class="c3"
+      class="c2"
     >
        
       <input
@@ -266,6 +252,6 @@ input + .c1 {
       />
       Saturn
     </label>
-  </span>
+  </div>
 </fieldset>
 `;

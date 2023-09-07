@@ -46,11 +46,12 @@ export const WithContent: Story = () => (
         label="Content"
         groupName="content"
         buttons={[
-            { label: 'With content', value: 'with', content: { render: () => (<p>This is some content</p>) } },
+            { label: 'With content', value: 'with', content: { element: <p>This is some content</p> } },
             { label: 'Without content', value: 'without' },
         ]}
     />
 );
+WithContent.parameters = rawCodeParameters;
 
 export const Controlled: Story = () => {
     const [value, setValue] = useState('red');
