@@ -41,9 +41,9 @@ const TooltipArrow = styled.div`
     }
 `;
 
-const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
+const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean, inverted: boolean }>`
     background-color: ${({ theme }) => theme.greys['dark-grey']};
-    border: 1px solid ${({ theme }) => theme.greys.white};
+    border: 1px solid ${({ theme, inverted }) => (inverted ? theme.greys.white : theme.greys['dark-grey'])};
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
@@ -69,7 +69,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
-        border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
+        border-color: transparent transparent ${({ theme, inverted }) => (inverted ? theme.greys.white : theme.greys['dark-grey'])} transparent;
         border-width: 0 0.5rem 0.5rem;
         position: absolute;
         top: -2px;
@@ -89,7 +89,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::before {
-        border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
+        border-color: ${({ theme, inverted }) => (inverted ? theme.greys.white : theme.greys['dark-grey'])} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         position: absolute;
         top: 0;
@@ -109,7 +109,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
-        border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
+        border-color: transparent ${({ theme, inverted }) => (inverted ? theme.greys.white : theme.greys['dark-grey'])} transparent transparent;
         border-width: 0.5rem 0.5rem 0.5rem 0;
     }
 
@@ -128,7 +128,7 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::before {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
+        border-color: transparent transparent transparent ${({ theme, inverted }) => (inverted ? theme.greys.white : theme.greys['dark-grey'])};
         border-width: 0.5rem 0 0.5rem 0.5rem;
     }
 
@@ -318,6 +318,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 role="tooltip"
                 ref={popperTooltip.setTooltipRef}
                 visible={popperTooltip.visible}
+                inverted={invertedIcon}
                 {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 <TooltipArrow
