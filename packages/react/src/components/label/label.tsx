@@ -1,4 +1,4 @@
-import { Fragment, FunctionComponent, PropsWithChildren, ReactElement, useCallback } from 'react';
+import { Fragment, FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
@@ -32,36 +32,41 @@ interface LabelProps {
     className?: string;
     forId: string;
     required?: boolean;
-    requiredLabelType?: string;
+    requiredLabelType?: 'text';
     tooltip?: TooltipProps;
 }
+
+interface RequiredLabelProps {
+    type?: LabelProps['requiredLabelType'];
+}
+
+const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
+    const { t } = useTranslation('text-input');
+
+    switch (type) {
+        case 'text':
+        default:
+            return (
+                <>
+                    &nbsp;(
+                    {t('required')}
+                    )
+                </>
+            );
+    }
+};
 
 const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
     className, children, forId, tooltip, required, requiredLabelType = 'text',
 }) => {
-    const { t } = useTranslation('text-input');
     const WrapperComponent = tooltip ? StyledDiv : Fragment;
     const { isMobile } = useDeviceContext();
-
-    const getRequiredLabel = useCallback((requiredType: string): ReactElement => {
-        switch (requiredType) {
-            case 'text':
-            default:
-                return (
-                    <>
-                        &nbsp;(
-                        {t('required')}
-                        )
-                    </>
-                );
-        }
-    }, [t]);
 
     return (
         <WrapperComponent>
             <StyledLabel className={className} htmlFor={forId} isMobile={isMobile}>
                 {children}
-                {required && getRequiredLabel(requiredLabelType)}
+                {required && <RequiredLabel type={requiredLabelType} />}
             </StyledLabel>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             {tooltip && <StyledTooltip {...tooltip} />}
