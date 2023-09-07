@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
 
-type StyledFunction = (isExpanded: boolean, theme: Theme) => ReturnType<typeof css>;
+type StyledFunction = (expanded: boolean, theme: Theme) => ReturnType<typeof css>;
 type AccordionSectionFunction = (theme: Theme) => ReturnType<typeof css>;
 
 export const StyledAccordionGroup = styled.div`
@@ -43,10 +43,10 @@ export const HeadingStyled = css`
     position: relative;
 `;
 
-export const ButtonStyled: StyledFunction = (isExpanded, theme) => css`
+export const ButtonStyled: StyledFunction = (expanded, theme) => css`
     align-items: flex-start;
     border: 1px solid ${theme.greys['neutral-15']};
-    border-radius: ${isExpanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
+    border-radius: ${expanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
     color: ${theme.greys['neutral-90']};
     font-size: 0.875rem;
     font-weight: var(--font-normal);

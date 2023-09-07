@@ -18,8 +18,8 @@ const StyledHeading = styled(Heading)`
     ${HeadingStyled};
 `;
 
-const StyledButton = styled(Button)<{ isExpanded: boolean }>`
-    ${({ isExpanded, theme }) => ButtonStyled(isExpanded, theme)};
+const StyledButton = styled(Button)<{ expanded: boolean }>`
+    ${({ expanded, theme }) => ButtonStyled(expanded, theme)};
 `;
 
 export const AccordionItem: React.FC<AccordionItemProps> = ({
@@ -27,7 +27,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     id,
     type = 'medium',
     tag = 'h3',
-    isExpanded = false,
+    expanded = false,
     onToggle = () => {},
     disabled,
     children,
@@ -45,29 +45,29 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     className="accordion-button"
                     buttonType="tertiary"
                     label={title}
-                    aria-expanded={isExpanded}
+                    aria-expanded={expanded}
                     aria-controls={panelId}
                     onClick={() => onToggle()}
-                    isExpanded={isExpanded}
+                    expanded={expanded}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon name={isExpanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
+                    <Icon name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
                 </StyledButton>
             </StyledHeading>
             <AccordionSection
-                className={`accordion-content ${isExpanded ? 'expanded' : ''}`}
+                className={`accordion-content ${expanded ? 'expanded' : ''}`}
                 id={panelId}
                 aria-labelledby={headerId}
-                aria-expanded={isExpanded}
+                aria-expanded={expanded}
                 role="region"
-                isExpanded={isExpanded}
+                expanded={expanded}
                 aria-disabled={disabled}
             >
                 <AccordionBody
                     className="accordion-body"
-                    isExpanded={isExpanded}
+                    expanded={expanded}
                 >
                     {children}
                 </AccordionBody>

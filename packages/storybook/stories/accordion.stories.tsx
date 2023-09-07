@@ -13,7 +13,7 @@ const accordionMeta: Meta<typeof AccordionItem> = {
         type: {
             table: { disable: true },
         },
-        isExpanded: {
+        expanded: {
             table: { disable: true },
         },
         onToggle: {
@@ -65,7 +65,7 @@ export const MultiOpenToggle: Story = () => (
 
 export const DefaultExpanded: Story = () => (
     <Accordion id="single">
-        <AccordionItem title="Panel Title 1" isExpanded>
+        <AccordionItem title="Panel Title 1" expanded>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
         </AccordionItem>
         <AccordionItem title="Panel Title 2">

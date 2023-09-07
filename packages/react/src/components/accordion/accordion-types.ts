@@ -18,7 +18,7 @@ export interface AccordionItemProps {
     type?: Type;
     /** Choose the right tag for page outline */
     tag?: Tag;
-    isExpanded?: boolean;
+    expanded?: boolean;
     disabled?: boolean;
     onToggle?: () => void;
     onKeyDown?: (event: KeyboardEvent<HTMLButtonElement>) => void;
@@ -27,5 +27,5 @@ export interface AccordionItemProps {
 }
 
 export interface AccordionBodyProps {
-    isExpanded?: boolean;
+    expanded?: boolean;
 }

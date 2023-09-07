@@ -20,7 +20,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         filteredChildren
             .map((child, index) => {
                 const childProps = child.props;
-                return childProps.isExpanded ? generateId(childProps, index) : null;
+                return childProps.expanded ? generateId(childProps, index) : null;
             })
             .filter((expandedId) => expandedId !== null) as string[]
     ));
@@ -85,7 +85,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                 const accordionItemProps: AccordionItemProps = {
                     ...restProps,
                     onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index),
-                    isExpanded,
+                    expanded: isExpanded,
                     onToggle: accordion.props.onToggle,
                     buttonRef: accordion.props.buttonRef,
                     disabled: accordion.props.disabled,
