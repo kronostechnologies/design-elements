@@ -47,7 +47,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                     label={title}
                     aria-expanded={expanded}
                     aria-controls={panelId}
-                    onClick={() => onToggle()}
+                    onClick={onToggle}
                     expanded={expanded}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
