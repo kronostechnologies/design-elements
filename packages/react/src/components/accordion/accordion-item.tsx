@@ -1,25 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AccordionItemProps, AccordionBodyProps } from './accordion-types';
-import { AccordionSectionStyled, AccordionBodyStyled, HeadingStyled, ButtonStyled } from './accordion-styles';
+import { accordionSectionStyled, accordionBodyStyled, headingStyled, buttonStyled } from './accordion-styles';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading } from '../heading/heading';
 
 const AccordionSection = styled.section<AccordionBodyProps>`
-    ${({ theme }) => AccordionSectionStyled(theme)};
+    ${({ theme }) => accordionSectionStyled(theme)};
 `;
 
 const AccordionBody = styled.div<AccordionBodyProps>`
-    ${({ theme }) => AccordionBodyStyled(theme)};
+    ${({ theme }) => accordionBodyStyled(theme)};
 `;
 
 const StyledHeading = styled(Heading)`
-    ${HeadingStyled};
+    ${headingStyled};
 `;
 
 const StyledButton = styled(Button)<{ expanded: boolean }>`
-    ${({ expanded, theme }) => ButtonStyled(expanded, theme)};
+    ${({ expanded, theme }) => buttonStyled(expanded, theme)};
 `;
 
 export const AccordionItem: React.FC<AccordionItemProps> = ({

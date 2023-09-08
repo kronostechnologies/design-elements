@@ -1,7 +1,12 @@
 import React, { useCallback, useState, ReactElement, createRef, useMemo } from 'react';
+import styled from 'styled-components';
 import { AccordionItemProps, AccordionProps } from './accordion-types';
 import { AccordionItem } from './accordion-item';
-import { StyledAccordionGroup } from './accordion-styles';
+import { styledAccordionGroup } from './accordion-styles';
+
+const StyledAccordionGroup = styled.div`
+    ${styledAccordionGroup};
+`;
 
 export const Accordion: React.FC<AccordionProps> = ({
     id, mode = 'single', children,

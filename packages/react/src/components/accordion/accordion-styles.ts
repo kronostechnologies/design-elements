@@ -1,16 +1,16 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import { Theme } from '../../themes';
 
 type StyledFunction = (expanded: boolean, theme: Theme) => ReturnType<typeof css>;
 type AccordionSectionFunction = (theme: Theme) => ReturnType<typeof css>;
 
-export const StyledAccordionGroup = styled.div`
+export const styledAccordionGroup = css`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 `;
 
-export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
+export const accordionSectionStyled: AccordionSectionFunction = (theme) => css`
     background: ${theme.greys['neutral-02']};
     border: 0 solid ${theme.greys['neutral-15']};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
@@ -29,7 +29,7 @@ export const AccordionSectionStyled: AccordionSectionFunction = (theme) => css`
     }
 `;
 
-export const AccordionBodyStyled: AccordionSectionFunction = (theme) => css`
+export const accordionBodyStyled: AccordionSectionFunction = (theme) => css`
     background: ${theme.greys['colored-white']};
     color: ${theme.greys['neutral-90']};
     font-size: 0.75rem;
@@ -39,11 +39,11 @@ export const AccordionBodyStyled: AccordionSectionFunction = (theme) => css`
     padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
 `;
 
-export const HeadingStyled = css`
+export const headingStyled = css`
     position: relative;
 `;
 
-export const ButtonStyled: StyledFunction = (expanded, theme) => css`
+export const buttonStyled: StyledFunction = (expanded, theme) => css`
     align-items: flex-start;
     border: 1px solid ${theme.greys['neutral-15']};
     border-radius: ${expanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
@@ -53,8 +53,8 @@ export const ButtonStyled: StyledFunction = (expanded, theme) => css`
     justify-content: start;
     letter-spacing: 0.015rem;
     line-height: 1.5;
-    min-height: var(--spacing-5x); /* TODO change space when updating thematization */
-    padding: var(--spacing-1x); /* TODO change space when updating thematization */
+    min-height: var(--spacing-5x);
+    padding: var(--spacing-1x);
     text-align: left;
     text-transform: none;
     transition: border-radius 0.2s ease;
@@ -80,7 +80,7 @@ export const ButtonStyled: StyledFunction = (expanded, theme) => css`
 
     > svg {
         height: 1rem;
-        margin: 3px var(--spacing-1halfx) 0 3px; /* TODO change space when updating thematization */
+        margin: 3px var(--spacing-1halfx) 0 3px;
         width: 1rem;
     }
 
