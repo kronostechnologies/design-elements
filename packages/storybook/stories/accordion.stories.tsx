@@ -41,7 +41,6 @@ const accordionMeta: Meta<typeof AccordionItem> = {
 
 export default accordionMeta;
 
-
 type Story = StoryFn<typeof AccordionItem>;
 
 export const Default: Story = () => (

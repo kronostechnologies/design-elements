@@ -43,7 +43,7 @@ describe('AccordionContianer', () => {
                 <AccordionItem title='Panel 2'>
                     Content for Panel 2
                 </AccordionItem>
-                <AccordionItem title='Panel 3' isExpanded>
+                <AccordionItem title='Panel 3' expanded>
                     Content for Panel 3
                 </AccordionItem>
             </Accordion>,
