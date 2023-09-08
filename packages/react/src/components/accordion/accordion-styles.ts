@@ -12,20 +12,22 @@ export const styledAccordionGroup = css`
 
 export const accordionSectionStyled: AccordionSectionFunction = (theme) => css`
     background: ${theme.greys['colored-white']};
-    border: 0 solid ${theme.greys.grey};
+    border-color: ${theme.greys.grey};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
+    border-style: solid;
     border-top-width: 0;
+    border-width: 0;
     margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, border 0.5s ease;
+    transition: max-height 0.5s ease, border-width 0.5s ease;
     &.expanded {
-        border: 1px solid ${theme.greys.grey};
         border-top-width: 0;
+        border-width: 1px;
         max-height: 500px;
         transform: translateZ(0);
-        transition: max-height 1s ease, border 1s ease;
-        will-change: max-height, border;
+        transition: max-height 1s ease, border-width 0s ease;
+        will-change: max-height, border-width;
     }
 `;
 
@@ -75,7 +77,6 @@ export const buttonStyled: StyledFunction = (expanded, theme) => css`
         background: ${theme.greys.grey};
         border-color: ${theme.greys['neutral-90']};
         color: ${theme.greys['neutral-90']};
-        transition: border-radius 0.2s ease;
     }
 
     > svg {
