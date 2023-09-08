@@ -60,18 +60,18 @@ export const buttonStyled: StyledFunction = (expanded, theme) => css`
     transition: border-radius 0.2s ease;
     width: 100%;
 
-    &[aria-expanded='true'] {/* TODO change colors when updating thematization */
+    &[aria-expanded='true'] {
         background: ${theme.greys.white};
         color: ${theme.greys['neutral-90']};
         transition: border-radius 0.2s ease;
     }
 
-    &:focus { /* TODO change colors when updating thematization */
+    &:focus {
         box-shadow: ${theme.tokens['focus-box-shadow-inset']};
         color: ${theme.greys['neutral-90']};
     }
 
-    &:hover {/* TODO change colors when updating thematization */
+    &:hover {
         background: ${theme.greys['neutral-15']};
         border-color: ${theme.greys['neutral-90']};
         color: ${theme.greys['neutral-90']};
@@ -84,7 +84,7 @@ export const buttonStyled: StyledFunction = (expanded, theme) => css`
         width: 1rem;
     }
 
-    &:disabled { /* TODO change colors when updating thematization */
+    &:disabled {
         background-color: ${theme.greys['neutral-05']};
         &:hover {
             color: ${theme.greys['neutral-30']};
