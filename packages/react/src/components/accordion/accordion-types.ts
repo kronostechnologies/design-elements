@@ -10,13 +10,9 @@ export interface AccordionProps {
 }
 
 export interface AccordionItemProps {
-    /** Title Label */
     title: string;
-    /** Unique Id on each accordion per group */
     id?: string;
-    /** This is relate to styling */
     type?: Type;
-    /** Choose the right tag for page outline */
     tag?: Tag;
     expanded?: boolean;
     disabled?: boolean;

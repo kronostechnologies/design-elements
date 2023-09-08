@@ -7,6 +7,14 @@ const accordionMeta: Meta<typeof AccordionItem> = {
     component: AccordionItem,
     tags: ['autodocs'],
     argTypes: {
+        title: {
+            description: 'Button label',
+            table: { disable: false },
+        },
+        tag: {
+            description: 'Choose the right tag for page outline',
+            table: { disable: false },
+        },
         id: {
             table: { disable: true },
         },
@@ -32,6 +40,7 @@ const accordionMeta: Meta<typeof AccordionItem> = {
 };
 
 export default accordionMeta;
+
 
 type Story = StoryFn<typeof AccordionItem>;
 
