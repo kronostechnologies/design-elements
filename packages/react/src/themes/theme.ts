@@ -62,7 +62,9 @@ export interface Theme { /* TODO remove main, greys and notifications props from
         'informative-50': string;
         'informative-70': string;
     };
+    size: string;
     tokens: {
+        size: string;
         greys: {
             'white': string;
             'neutral-02': string;

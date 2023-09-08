@@ -43,10 +43,13 @@ const notifications = {
     'informative-70': '#3A1C60',
 };
 
+export const size = '1rem';
+
 export const tokens: Theme['tokens'] = {
     greys,
     main,
     notifications,
+    size,
     'focus-box-shadow': `0 0 0 2px ${main['brand-20']}`,
     'focus-border-box-shadow': ` 0 0 0 1px ${main['brand-50']}, 0 0 0 3px ${main['brand-20']}`,
     'focus-border-box-shadow-inset': `inset 0 0 0 2px ${main['brand-20']}, inset 0 0 0 3px ${main['brand-50']}`,
@@ -182,26 +185,52 @@ export const tokens: Theme['tokens'] = {
 };
 
 /** This function sould go to the theme-directory */
+function resolveVariables(value: any, tokens: Record<string, any>): any {
+    if (typeof value === 'string' && value.startsWith('$')) {
+        const tokenKey = value.substring(1); // Remove the $
+        const [category, property] = tokenKey.split('.');
+        if (property && tokens[category] && tokens[category][property]) {
+            return tokens[category][property];
+        } else if (tokens[tokenKey]) {
+            return tokens[tokenKey];
+        }
+    } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+        const resolvedObject: Record<string, any> = {};
+        for (const key in value) {
+            resolvedObject[key] = resolveVariables(value[key], tokens);
+        }
+        return resolvedObject;
+    }
+    return value;
+}
+
+// Updated mergeToken function to handle variables with $
 function mergeToken(existingTokens: Record<string, any>, userOverrides: Record<string, any>): Record<string, any> {
     const mergedTokens: Record<string, any> = { ...existingTokens };
-  
+
     for (const key in userOverrides) {
-      if (existingTokens.hasOwnProperty(key) && typeof userOverrides[key] === 'object' && userOverrides[key] !== null && !Array.isArray(userOverrides[key])) {
-        // If the value is an object, recursively merge it
-        mergedTokens[key] = mergeToken(existingTokens[key], userOverrides[key]);
-      } else {
-        // Otherwise, use the user-provided value
-        mergedTokens[key] = userOverrides[key];
-      }
+        if (existingTokens.hasOwnProperty(key) && typeof userOverrides[key] === 'object' && userOverrides[key] !== null && !Array.isArray(userOverrides[key])) {
+            // If the value is an object, recursively merge it
+            mergedTokens[key] = mergeToken(existingTokens[key], userOverrides[key]);
+        } else {
+            // Otherwise, use the user-provided value and resolve variables if needed
+            mergedTokens[key] = resolveVariables(userOverrides[key], tokens);
+        }
     }
-  
+
     return mergedTokens;
 }
 
-// User-provided JSON with token overrides. That is, the user can override any token value.
+/**
+* User-provided JSON with token overrides. That is, the user can override any token value.
+* Tokens are merged recursively, so only the values that are overridden need to be provided.
+* We can use values or values as variables/tokens (variables/tokens are prefixed with $);
+ */
 const customeTokens = {
     "bt-primary": {
         "bg": "#D41F14",
+        "color": "$greys.black",
+        "font-size": "$size",
     },
 };
 

@@ -2,6 +2,7 @@ import { greys } from './greys';
 import { notifications } from './notifications';
 import { Theme } from './theme';
 import { tokens } from './tokens';
+import { size } from './tokens';
 
 export const testTheme: Theme = { /* TODO remove unused colors when updating thematization */
     main: {
@@ -25,5 +26,6 @@ export const testTheme: Theme = { /* TODO remove unused colors when updating the
     },
     greys,
     notifications,
+    size,
     tokens,
 };
