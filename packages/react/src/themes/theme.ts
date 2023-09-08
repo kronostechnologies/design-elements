@@ -12,13 +12,6 @@ export interface Theme {
     };
     greys: {
         'white': string;
-        'neutral-00': string;
-        'neutral-02': string;
-        'neutral-05': string;
-        'neutral-15': string;
-        'neutral-30': string;
-        'neutral-50': string;
-        'neutral-65': string;
         'neutral-90': string;
         'colored-white': string;
         'light-grey': string;

@@ -11,8 +11,8 @@ export const styledAccordionGroup = css`
 `;
 
 export const accordionSectionStyled: AccordionSectionFunction = (theme) => css`
-    background: ${theme.greys['neutral-02']};
-    border: 0 solid ${theme.greys['neutral-15']};
+    background: ${theme.greys['colored-white']};
+    border: 0 solid ${theme.greys.grey};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-top-width: 0;
     margin-bottom: var(--spacing-1x);
@@ -20,7 +20,7 @@ export const accordionSectionStyled: AccordionSectionFunction = (theme) => css`
     overflow: hidden;
     transition: max-height 0.5s ease, border 0.5s ease;
     &.expanded {
-        border: 1px solid ${theme.greys['neutral-15']};
+        border: 1px solid ${theme.greys.grey};
         border-top-width: 0;
         max-height: 500px;
         transform: translateZ(0);
@@ -45,7 +45,7 @@ export const headingStyled = css`
 
 export const buttonStyled: StyledFunction = (expanded, theme) => css`
     align-items: flex-start;
-    border: 1px solid ${theme.greys['neutral-15']};
+    border: 1px solid ${theme.greys.grey};
     border-radius: ${expanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)'};
     color: ${theme.greys['neutral-90']};
     font-size: 0.875rem;
@@ -72,7 +72,7 @@ export const buttonStyled: StyledFunction = (expanded, theme) => css`
     }
 
     &:hover {
-        background: ${theme.greys['neutral-15']};
+        background: ${theme.greys.grey};
         border-color: ${theme.greys['neutral-90']};
         color: ${theme.greys['neutral-90']};
         transition: border-radius 0.2s ease;
@@ -85,12 +85,12 @@ export const buttonStyled: StyledFunction = (expanded, theme) => css`
     }
 
     &:disabled {
-        background-color: ${theme.greys['neutral-05']};
+        background-color: ${theme.greys['light-grey']};
         &:hover {
-            color: ${theme.greys['neutral-30']};
+            color: ${theme.greys['mid-grey']};
         }
         > svg {
-            color: ${theme.greys['neutral-30']};
+            color: ${theme.greys['mid-grey']};
         }
     }
 `;
