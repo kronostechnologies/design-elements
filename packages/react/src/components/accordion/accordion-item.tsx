@@ -25,10 +25,10 @@ const StyledButton = styled(Button)<{ expanded: boolean }>`
 export const AccordionItem: React.FC<AccordionItemProps> = ({
     title,
     id,
-    type = 'medium',
-    tag = 'h3',
-    expanded = false,
-    onToggle = () => {},
+    type,
+    tag,
+    expanded,
+    onToggle,
     disabled,
     children,
     onKeyDown,
@@ -39,16 +39,16 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
 
     return (
         <>
-            <StyledHeading className="accordion-header" type={type} tag={tag} noMargin>
+            <StyledHeading type={type || 'medium'} tag={tag || 'h3'} noMargin>
                 <StyledButton
                     id={headerId}
-                    className="accordion-button"
+                    className={expanded ? 'expanded' : ''}
                     buttonType="tertiary"
                     label={title}
-                    aria-expanded={expanded}
+                    aria-expanded={expanded || false}
                     aria-controls={panelId}
                     onClick={onToggle}
-                    expanded={expanded}
+                    expanded={expanded || false}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
@@ -57,17 +57,16 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 </StyledButton>
             </StyledHeading>
             <AccordionSection
-                className={`accordion-content ${expanded ? 'expanded' : ''}`}
+                className={expanded ? 'expanded' : ''}
                 id={panelId}
                 aria-labelledby={headerId}
-                aria-expanded={expanded}
+                aria-expanded={expanded || false}
                 role="region"
                 expanded={expanded}
                 aria-disabled={disabled}
             >
                 <AccordionBody
-                    className="accordion-body"
-                    expanded={expanded}
+                    expanded={expanded || false}
                 >
                     {children}
                 </AccordionBody>

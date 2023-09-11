@@ -83,7 +83,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     };
 
     return (
-        <StyledAccordionGroup className='accordion'>
+        <StyledAccordionGroup>
             {childrenArray.map((accordion, index) => {
                 const { id: accordionId, ...restProps } = accordion.props;
                 const isExpanded = accordionId ? expandedItemIds.includes(accordionId) : false;
