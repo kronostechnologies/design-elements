@@ -2,6 +2,7 @@ import { Fragment, FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Tooltip, TooltipProps } from '../tooltip/tooltip';
+import { useTranslation } from '../../i18n/use-translation';
 
 const StyledDiv = styled.div`
     align-items: center;
@@ -30,11 +31,33 @@ const StyledTooltip = styled(Tooltip)`
 interface LabelProps {
     className?: string;
     forId: string;
+    required?: boolean;
+    requiredLabelType?: 'text';
     tooltip?: TooltipProps;
 }
 
+interface RequiredLabelProps {
+    type?: LabelProps['requiredLabelType'];
+}
+
+const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
+    const { t } = useTranslation('text-input');
+
+    switch (type) {
+        case 'text':
+        default:
+            return (
+                <>
+                    &nbsp;(
+                    {t('required')}
+                    )
+                </>
+            );
+    }
+};
+
 const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
-    className, children, forId, tooltip,
+    className, children, forId, tooltip, required, requiredLabelType = 'text',
 }) => {
     const WrapperComponent = tooltip ? StyledDiv : Fragment;
     const { isMobile } = useDeviceContext();
@@ -43,6 +66,7 @@ const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
         <WrapperComponent>
             <StyledLabel className={className} htmlFor={forId} isMobile={isMobile}>
                 {children}
+                {required && <RequiredLabel type={requiredLabelType} />}
             </StyledLabel>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             {tooltip && <StyledTooltip {...tooltip} />}
