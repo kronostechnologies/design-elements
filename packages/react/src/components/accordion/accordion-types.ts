@@ -12,14 +12,14 @@ export interface AccordionProps {
 export interface AccordionItemProps {
     title: string;
     id?: string;
-    type?: Type;
-    tag?: Tag;
-    expanded?: boolean;
-    disabled?: boolean;
+    type?: Type | undefined;
+    tag?: Tag | undefined;
+    expanded?: boolean | undefined;
+    disabled?: boolean | undefined;
     onToggle?: () => void;
-    onKeyDown?: (event: KeyboardEvent<HTMLButtonElement>) => void;
+    onKeyDown?: ((event: KeyboardEvent<HTMLButtonElement>) => void) | undefined;
     children: ReactNode;
-    buttonRef?: RefObject<HTMLButtonElement>;
+    buttonRef?: RefObject<HTMLButtonElement> | undefined;
 }
 
 export interface AccordionBodyProps {
