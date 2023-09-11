@@ -37,36 +37,40 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     const headerId = id;
     const panelId = `panel-${id}`;
 
+    const itemType = type ?? 'medium';
+    const itemTag = tag ?? 'h3';
+    const isExpanded = expanded ?? false;
+
     return (
         <>
-            <StyledHeading type={type || 'medium'} tag={tag || 'h3'} noMargin>
+            <StyledHeading type={itemType} tag={itemTag} noMargin>
                 <StyledButton
                     id={headerId}
-                    className={expanded ? 'expanded' : ''}
+                    className={isExpanded ? 'expanded' : ''}
                     buttonType="tertiary"
                     label={title}
-                    aria-expanded={expanded || false}
+                    aria-expanded={isExpanded}
                     aria-controls={panelId}
                     onClick={onToggle}
-                    expanded={expanded || false}
+                    expanded={isExpanded}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
+                    <Icon name={isExpanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
                 </StyledButton>
             </StyledHeading>
             <AccordionSection
-                className={expanded ? 'expanded' : ''}
+                className={isExpanded ? 'expanded' : ''}
                 id={panelId}
                 aria-labelledby={headerId}
-                aria-expanded={expanded || false}
+                aria-expanded={isExpanded}
                 role="region"
-                expanded={expanded}
+                expanded={isExpanded}
                 aria-disabled={disabled}
             >
                 <AccordionBody
-                    expanded={expanded || false}
+                    expanded={isExpanded}
                 >
                     {children}
                 </AccordionBody>
