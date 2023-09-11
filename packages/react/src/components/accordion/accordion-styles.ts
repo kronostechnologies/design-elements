@@ -15,15 +15,14 @@ export const accordionSectionStyled: AccordionSectionFunction = (theme) => css`
     border-color: ${theme.greys.grey};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-style: solid;
-    border-top-width: 0;
     border-width: 0;
     margin-bottom: var(--spacing-1x);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
     &.expanded {
-        border-top-width: 0;
         border-width: 1px;
+        border-top-width: 0;
         max-height: 500px;
         transform: translateZ(0);
         transition: max-height 1s ease, border-width 0s ease;
