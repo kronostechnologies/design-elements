@@ -370,6 +370,7 @@ export const Datepicker = forwardRef(({
     onFocus,
     open,
     placeholder,
+    required,
     startDate,
     startOpen,
     tooltip,
@@ -525,6 +526,7 @@ export const Datepicker = forwardRef(({
                 noMargin={noMargin}
                 fieldId={fieldId}
                 label={label}
+                required={required}
                 tooltip={tooltip}
                 hint={hint}
                 valid={valid}

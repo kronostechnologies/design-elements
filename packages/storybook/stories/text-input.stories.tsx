@@ -52,7 +52,7 @@ export const WithTooltip: Story = () => (
 export const Required: Story = () => (
     <TextInput
         required
-        label="Last Name (required)"
+        label="Last Name"
         type="text"
         validationErrorMessage="This field is required"
     />
@@ -105,7 +105,7 @@ export const RequiredInForm: Story = () => {
         <form noValidate onSubmit={handleSubmit}>
             <TextInput
                 required
-                label="Last Name (required)"
+                label="Last Name"
                 type="text"
                 validationErrorMessage="This field is required"
             />

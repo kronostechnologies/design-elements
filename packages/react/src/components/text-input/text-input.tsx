@@ -124,6 +124,7 @@ export const TextInput = forwardRef(({
             noMargin={noMargin}
             fieldId={id}
             label={label}
+            required={required}
             tooltip={tooltip}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
