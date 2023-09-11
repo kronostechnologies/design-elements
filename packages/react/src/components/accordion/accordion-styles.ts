@@ -23,7 +23,8 @@ export const accordionSectionStyled: AccordionSectionFunction = (theme) => css`
     &.expanded {
         border-width: 1px;
         border-top-width: 0;
-        max-height: 500px;
+        max-height: 1000px;
+        overflow-y: scroll;
         transform: translateZ(0);
         transition: max-height 1s ease, border-width 0s ease;
         will-change: max-height, border-width;
@@ -61,7 +62,7 @@ export const buttonStyled: StyledFunction = (expanded, theme) => css`
     transition: border-radius 0.2s ease;
     width: 100%;
 
-    &[aria-expanded='true'] {
+    &.expanded {
         background: ${theme.greys.white};
         color: ${theme.greys['neutral-90']};
         transition: border-radius 0.2s ease;
