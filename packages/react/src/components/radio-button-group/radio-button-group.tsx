@@ -50,11 +50,10 @@ const StyledLabel = styled.label`
                 width: var(--size-1x);
 
                 &:checked + .radioInput {
-                    background-color: ${props.theme.main['primary-1.1']};
-                    border: 1px solid ${props.theme.main['primary-1.1']};
+                    border: 2px solid ${props.theme.main['primary-1.1']};
 
                     &::after {
-                        background-color: ${props.theme.greys.white};
+                        background-color: ${props.theme.main['primary-1.1']};
                         border-radius: 50%;
                         content: '';
                         height: var(--size-half);
