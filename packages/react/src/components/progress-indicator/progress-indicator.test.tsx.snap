@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressIndicator Matches the snapshot 1`] = `
+.c2 p {
+  color: #000000;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: right;
+}
+
+.c3 {
+  background-color: #DBDEE1;
+  border-radius: var(--border-radius);
+  height: 0.5rem;
+  margin-bottom: var(--spacing-half);
+  width: 100%;
+}
+
+.c4 {
+  background: rgb(101,226,255);
+  border-radius: var(--border-radius);
+  height: 0.5rem;
+  width: 100%;
+}
+
+.c1 {
+  color: #000000;
+  display: block;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c0 + .c0 {
+  margin-top: var(--spacing-half);
+}
+
+<div
+  class="c0 "
+>
+  <label
+    class="c1"
+  >
+    You
+  </label>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+        color="rgb(101,226,255)"
+      />
+    </div>
+    <p>
+      50k - 100k$
+    </p>
+  </div>
+</div>
+`;

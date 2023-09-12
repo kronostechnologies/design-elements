@@ -1,4 +1,4 @@
-import { GlobalHeader, NavMenuButton, NavMenuOption } from '@equisoft/design-elements-react';
+import { GlobalHeader, DropdownNavigation, NavListOption } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -11,12 +11,12 @@ const StyledDiv = styled.div`
 `;
 
 export default {
-    title: 'Navigation/Nav Menu Button',
-    component: NavMenuButton,
+    title: 'Navigation/Dropdown Navigation',
+    component: DropdownNavigation,
     decorators: [RouterDecorator, decorateWith(StyledDiv)],
 };
 
-const options: NavMenuOption[] = [
+const options: NavListOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -39,7 +39,7 @@ const options: NavMenuOption[] = [
     },
 ];
 
-const optionsWithIcons: NavMenuOption[] = [
+const optionsWithIcons: NavListOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -60,7 +60,7 @@ const optionsWithIcons: NavMenuOption[] = [
     },
 ];
 
-const optionsWithHtmlLinks: NavMenuOption[] = [
+const optionsWithHtmlLinks: NavListOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -75,7 +75,7 @@ const optionsWithHtmlLinks: NavMenuOption[] = [
     },
 ];
 
-const optionsDisabled: NavMenuOption[] = [
+const optionsDisabled: NavListOption[] = [
     {
         label: 'Option A',
         value: 'optionA',
@@ -97,7 +97,7 @@ const optionsDisabled: NavMenuOption[] = [
 
 export const Desktop: Story = () => (
     <GlobalHeader>
-        <NavMenuButton data-testid="some-data-testid" options={options}>Menu</NavMenuButton>
+        <DropdownNavigation data-testid="some-data-testid" options={options}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 Desktop.decorators = [DesktopDecorator];
@@ -105,7 +105,7 @@ Desktop.decorators = [DesktopDecorator];
 export const DesktopIconOnly: Story = () => (
     <StyledDiv>
         <GlobalHeader>
-            <NavMenuButton iconOnly iconName="home" options={options} />
+            <DropdownNavigation iconOnly iconName="home" options={options} />
         </GlobalHeader>
     </StyledDiv>
 );
@@ -114,7 +114,7 @@ DesktopIconOnly.decorators = [DesktopDecorator];
 export const DesktopWithIcon: Story = () => (
     <StyledDiv>
         <GlobalHeader>
-            <NavMenuButton iconName="home" options={options}>Home</NavMenuButton>
+            <DropdownNavigation iconName="home" options={options}>Home</DropdownNavigation>
         </GlobalHeader>
     </StyledDiv>
 );
@@ -122,14 +122,14 @@ DesktopWithIcon.decorators = [DesktopDecorator];
 
 export const DesktopInsideShadowDom: Story = () => (
     <GlobalHeader>
-        <NavMenuButton options={options}>Menu</NavMenuButton>
+        <DropdownNavigation options={options}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 DesktopInsideShadowDom.decorators = [DesktopDecorator, ShadowDomDecorator];
 
 export const Mobile: Story = () => (
     <GlobalHeader>
-        <NavMenuButton options={options}>Menu</NavMenuButton>
+        <DropdownNavigation options={options}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 Mobile.decorators = [MobileDecorator];
@@ -137,7 +137,7 @@ Mobile.decorators = [MobileDecorator];
 export const MobileIconOnly: Story = () => (
     <StyledDiv>
         <GlobalHeader>
-            <NavMenuButton iconOnly iconName="home" options={options} />
+            <DropdownNavigation iconOnly iconName="home" options={options} />
         </GlobalHeader>
     </StyledDiv>
 );
@@ -145,30 +145,30 @@ MobileIconOnly.decorators = [MobileDecorator];
 
 export const DefaultOpen: Story = () => (
     <GlobalHeader>
-        <NavMenuButton defaultOpen options={options}>Menu</NavMenuButton>
+        <DropdownNavigation defaultOpen options={options}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 
 export const WithNavContainer: Story = () => (
     <GlobalHeader>
-        <NavMenuButton tag="nav" options={options}>Menu</NavMenuButton>
+        <DropdownNavigation tag="nav" options={options}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 
 export const WithOptionIcons: Story = () => (
     <GlobalHeader>
-        <NavMenuButton options={optionsWithIcons}>Menu</NavMenuButton>
+        <DropdownNavigation options={optionsWithIcons}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 
 export const WithHtmlLinks: Story = () => (
     <GlobalHeader>
-        <NavMenuButton options={optionsWithHtmlLinks}>Menu</NavMenuButton>
+        <DropdownNavigation options={optionsWithHtmlLinks}>Menu</DropdownNavigation>
     </GlobalHeader>
 );
 
 export const WithDisabledOptions: Story = () => (
     <GlobalHeader>
-        <NavMenuButton options={optionsDisabled}>Menu</NavMenuButton>
+        <DropdownNavigation options={optionsDisabled}>Menu</DropdownNavigation>
     </GlobalHeader>
 );

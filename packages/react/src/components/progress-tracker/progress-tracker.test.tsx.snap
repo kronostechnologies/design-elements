@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress Component Snapshots with labels 1`] = `
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #DBDEE1;
+  border: none;
+  bottom: 1.5rem;
+  color: #004E78;
+  height: 4px;
+  left: 16.666666666666668%;
+  position: absolute;
+  width: 66.66666666666666%;
+}
+
+.c1[value]::-moz-progress-bar {
+  background-color: #004E78;
+}
+
+.c1[value]::-webkit-progress-bar {
+  background-color: #DBDEE1;
+}
+
+.c1[value]::-webkit-progress-value {
+  background-color: #004E78;
+}
+
+.c2 {
+  counter-reset: step;
+  display: grid;
+  grid-auto-columns: unset;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(1rem,1fr));
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  color: #004E78;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  position: relative;
+  text-align: center;
+}
+
+.c3::after {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 0.25rem solid;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: counter(step);
+  counter-increment: step;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 2rem;
+  margin: 0 auto 0.625rem;
+  text-align: center;
+  width: var(--size-2x);
+}
+
+.c3 > span {
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4::after {
+  background-color: #004E78;
+  border-color: #004E78;
+  color: #FFFFFF;
+}
+
+.c4 > span {
+  color: #60666E;
+}
+
+.c5 {
+  color: #004E78;
+}
+
+.c5::after {
+  border-color: #004E78;
+}
+
+.c5 span {
+  color: #004E78;
+  font-weight: var(--font-bold);
+}
+
+.c6::after {
+  border-color: #DBDEE1;
+  color: #60666E;
+}
+
+<div
+  class="c0"
+>
+  <progress
+    class="c1"
+    max="2"
+    value="1"
+  />
+  <ol
+    class="c2"
+    data-testid="progress-tracker"
+  >
+    <li
+      class="c3 c4"
+      data-testid="progress-step-past"
+    >
+      <span>
+        Step 1
+      </span>
+    </li>
+    <li
+      aria-current="step"
+      class="c3 c5"
+      data-testid="progress-step-current"
+    >
+      <span>
+        Step 2
+      </span>
+    </li>
+    <li
+      class="c3 c6"
+      data-testid="progress-step-future"
+    >
+      <span>
+        Step 3
+      </span>
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`Progress Component Snapshots without labels 1`] = `
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #DBDEE1;
+  border: none;
+  bottom: 1.5rem;
+  color: #004E78;
+  height: 4px;
+  left: 16.666666666666668%;
+  position: absolute;
+  width: 66.66666666666666%;
+}
+
+.c1[value]::-moz-progress-bar {
+  background-color: #004E78;
+}
+
+.c1[value]::-webkit-progress-bar {
+  background-color: #DBDEE1;
+}
+
+.c1[value]::-webkit-progress-value {
+  background-color: #004E78;
+}
+
+.c2 {
+  counter-reset: step;
+  display: grid;
+  grid-auto-columns: unset;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(1rem,1fr));
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  color: #004E78;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  position: relative;
+  text-align: center;
+}
+
+.c3::after {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 0.25rem solid;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: counter(step);
+  counter-increment: step;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 2rem;
+  margin: 0 auto 0.625rem;
+  text-align: center;
+  width: var(--size-2x);
+}
+
+.c3 > span {
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.0125rem;
+  -moz-letter-spacing: 0.0125rem;
+  -ms-letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125rem;
+  line-height: 1.25rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4::after {
+  background-color: #004E78;
+  border-color: #004E78;
+  color: #FFFFFF;
+}
+
+.c4 > span {
+  color: #60666E;
+}
+
+.c5 {
+  color: #004E78;
+}
+
+.c5::after {
+  border-color: #004E78;
+}
+
+.c5 span {
+  color: #004E78;
+  font-weight: var(--font-bold);
+}
+
+.c6::after {
+  border-color: #DBDEE1;
+  color: #60666E;
+}
+
+<div
+  class="c0"
+>
+  <progress
+    class="c1"
+    max="2"
+    value="1"
+  />
+  <ol
+    class="c2"
+    data-testid="progress-tracker"
+  >
+    <li
+      class="c3 c4"
+      data-testid="progress-step-past"
+    >
+      <span />
+    </li>
+    <li
+      aria-current="step"
+      class="c3 c5"
+      data-testid="progress-step-current"
+    >
+      <span />
+    </li>
+    <li
+      class="c3 c6"
+      data-testid="progress-step-future"
+    >
+      <span />
+    </li>
+  </ol>
+</div>
+`;
