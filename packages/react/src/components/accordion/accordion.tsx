@@ -1,11 +1,33 @@
-import React, { useCallback, useState, ReactElement, createRef, useMemo } from 'react';
+import React, { useCallback, useState, createRef, useMemo } from 'react';
 import styled from 'styled-components';
-import { AccordionItemProps, AccordionProps } from './accordion-types';
+import { Type, Tag } from '../heading/heading';
 import { AccordionItem } from './accordion-item';
-import { styledAccordionGroup } from './accordion-styles';
 
-const StyledAccordionGroup = styled.div`
-    ${styledAccordionGroup};
+interface AccordionProps {
+    /** Unique id per accordion */
+    id: string;
+    children: React.ReactNode;
+    /** Multipe or single panel open concurrently */
+    mode?: 'single' | 'multi';
+}
+
+interface AccordionItemProps {
+    title: string;
+    id?: string;
+    type?: Type | undefined;
+    tag?: Tag | undefined;
+    expanded?: boolean | undefined;
+    disabled?: boolean | undefined;
+    onToggle?: () => void;
+    onKeyDown?: ((event: React.KeyboardEvent<HTMLButtonElement>) => void) | undefined;
+    children: React.ReactNode;
+    buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
+}
+
+export const StyledAccordionGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 `;
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -16,7 +38,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         [id],
     );
 
-    const isAccordion = (child: React.ReactNode): child is ReactElement<AccordionItemProps> => (
+    const isAccordion = (child: React.ReactNode): child is React.ReactElement<AccordionItemProps> => (
         React.isValidElement<AccordionItemProps>(child) && child.type === AccordionItem);
 
     const filteredChildren = React.Children.toArray(children).filter(isAccordion);
@@ -46,7 +68,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         [mode, setExpandedItemIds],
     );
 
-    const childrenArray: ReactElement<AccordionItemProps>[] = useMemo(
+    const childrenArray: React.ReactElement<AccordionItemProps>[] = useMemo(
         () => filteredChildren.map((child, index) => {
             const buttonRef = createRef<HTMLButtonElement>();
             const childProps = child.props;
