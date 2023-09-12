@@ -34,7 +34,7 @@ const AccordionSection = styled.section<{ theme: Theme }>`
         max-height: 1000px;
         overflow-y: scroll;
         transform: translateZ(0);
-        transition: max-height 1s ease, border-width 0s ease;
+        transition: max-height 0.5s ease, border-width 0s ease;
         will-change: max-height, border-width;
     }
 `;
@@ -77,7 +77,7 @@ const ButtonStyled = styled(Button)<{ theme: Theme, expanded?: boolean }>`
         background: ${({ theme }) => theme.greys.white};
         color: ${({ theme }) => theme.greys['neutral-90']};
         transition-delay: 0s;
-        transition-duration: 0.2s;
+        transition-duration: 0.1s;
         transition-property: border-radius;
         transition-timing-function: ease;
     }
