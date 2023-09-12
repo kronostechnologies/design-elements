@@ -67,18 +67,18 @@ const ButtonStyled = styled(Button)<{ theme: Theme, expanded?: boolean }>`
     padding: var(--spacing-1x);
     text-align: left;
     text-transform: none;
-    transition-property: border-radius;
-    transition-duration: 0.2s;
     transition-delay: 0.5s;
+    transition-duration: 0.2s;
+    transition-property: border-radius;
     transition-timing-function: ease;
     width: 100%;
 
     &.expanded {
         background: ${({ theme }) => theme.greys.white};
         color: ${({ theme }) => theme.greys['neutral-90']};
-        transition-property: border-radius;
-        transition-duration: 0.2s;
         transition-delay: 0s;
+        transition-duration: 0.2s;
+        transition-property: border-radius;
         transition-timing-function: ease;
     }
 
