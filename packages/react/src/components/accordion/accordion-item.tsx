@@ -32,7 +32,7 @@ const AccordionSection = styled.section<{ theme: Theme }>`
         border-width: 1px;
         border-top-width: 0;
         max-height: 1000px;
-        overflow-y: scroll;
+        overflow-y: auto;
         transform: translateZ(0);
         transition: max-height 0.5s ease, border-width 0s ease;
         will-change: max-height, border-width;
