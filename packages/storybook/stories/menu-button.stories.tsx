@@ -1,4 +1,4 @@
-import { MenuButton, Tooltip } from '@equisoft/design-elements-react';
+import { MenuButton, MenuButtonProps, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
@@ -74,6 +74,41 @@ const submenuOptions = [
     },
 ];
 
+const optionsWithIcons: MenuButtonProps['options'] = [
+    {
+        label: 'Option 1',
+        onClick: () => console.info('Option 1 clicked'),
+    },
+    {
+        label: 'Option 2',
+        iconName: 'check',
+        onClick: () => console.info('Option 2 clicked'),
+    },
+    {
+        label: 'Option 3',
+        iconName: 'settings',
+        onClick: () => console.info('Option 3 clicked'),
+    },
+];
+
+const optionsWithIconsAndSubmenu: MenuButtonProps['options'] = [
+    {
+        label: 'Option 1',
+        onClick: () => console.info('Option 1 clicked'),
+    },
+    {
+        label: 'Option 2',
+        iconName: 'check',
+        onClick: () => console.info('Option 2 clicked'),
+        options,
+    },
+    {
+        label: 'Option 3',
+        iconName: 'settings',
+        onClick: () => console.info('Option 3 clicked'),
+    },
+];
+
 export const Normal: Story = () => (
     <>
         <MenuButton options={options} buttonType="primary">Button</MenuButton>
@@ -88,13 +123,13 @@ export const IconButton: Story = () => (
     <MenuButton iconName="moreVertical" options={options} buttonType="primary" />
 );
 
-export const LeftDirection: Story = () => (
+export const LeftPlacement: Story = () => (
     <MenuButton
         className="end-align"
         iconName="moreVertical"
         options={options}
         buttonType="primary"
-        menuDirection="left"
+        menuPlacement="left"
     />
 );
 
@@ -106,6 +141,57 @@ export const WithSubmenu: Story = () => (
     <MenuButton options={submenuOptions} buttonType="primary">Button</MenuButton>
 );
 
+export const OptionsWithIcons: Story = () => (
+    <>
+        <MenuButton options={optionsWithIcons} buttonType="primary">Button</MenuButton>
+        <MenuButton options={optionsWithIconsAndSubmenu} buttonType="primary">With submenu</MenuButton>
+    </>
+);
+
+export const OptionsWithGrouping: Story = () => (
+    <MenuButton
+        options={[
+            {
+                groupLabel: 'Group 1',
+                groupOptions: [
+                    {
+                        label: 'Option 1.1',
+                        onClick: () => console.info('Option 1.1 clicked'),
+                    },
+                    {
+                        label: 'Option 1.2',
+                        onClick: () => console.info('Option 1.2 clicked'),
+                    },
+                    {
+                        label: 'Option 1.3',
+                        onClick: () => console.info('Option 1.3 clicked'),
+                    },
+                ],
+            },
+            {
+                groupLabel: 'Group 2',
+                groupOptions: [
+                    {
+                        label: 'Option 2.1',
+                        onClick: () => console.info('Option 2.1 clicked'),
+                    },
+                    {
+                        label: 'Option 2.2',
+                        onClick: () => console.info('Option 2.2 clicked'),
+                    },
+                    {
+                        label: 'Option 2.3',
+                        onClick: () => console.info('Option 2.3 clicked'),
+                    },
+                ],
+            },
+        ]}
+        buttonType="primary"
+    >
+        Button
+    </MenuButton>
+);
+
 export const Scrollable: Story = () => (
     <MenuButton options={scrollableOptions} buttonType="primary">Button</MenuButton>
 );
@@ -114,7 +200,7 @@ export const VisibilityChangeEvent: Story = () => (
     <MenuButton
         options={options}
         buttonType="primary"
-        onMenuVisibilityChanged={(visibility) => console.info(visibility)}
+        onMenuVisibilityChanged={(visibility) => console.info(`MenuButton visibility: ${visibility}`)}
     >
         Button
     </MenuButton>
@@ -136,7 +222,7 @@ export const TooltipWrapperWithClickableItems: Story = () => (
                 },
             ]}
             buttonType="primary"
-            onMenuVisibilityChanged={(visibility) => console.info(visibility)}
+            onMenuVisibilityChanged={(visibility) => console.info(`MenuButton visibility: ${visibility}`)}
         >
             Menu
         </MenuButton>
