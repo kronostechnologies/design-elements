@@ -47,6 +47,14 @@ const AccordionBody = styled.div<{ theme: Theme }>`
     letter-spacing: 0.015rem;
     line-height: 1.7;
     padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-5x);
+    > *:first-child {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    > *:last-child {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
 `;
 
 const HeadingStyled = styled(Heading)`
