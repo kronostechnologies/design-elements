@@ -154,7 +154,6 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 id={panelId}
                 aria-labelledby={headerId}
                 aria-expanded={isExpanded}
-                role="region"
                 aria-disabled={disabled}
             >
                 <AccordionBody>
