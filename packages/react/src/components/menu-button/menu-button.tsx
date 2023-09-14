@@ -4,7 +4,7 @@ import { menuDimensions } from '../../tokens/menuDimensions';
 import { Button, ButtonType } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
-import { Menu, MenuOption } from '../menu/menu';
+import { Menu, MenuItem } from '../menu/menu';
 import { eventIsInside } from '../../utils/events';
 
 export type MenuPlacement = 'right' | 'left';
@@ -31,7 +31,7 @@ export interface MenuButtonProps {
     defaultOpen?: boolean;
     iconName?: IconName;
     inverted?: boolean;
-    options: MenuOption[];
+    options: MenuItem[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
     menuPlacement?: MenuPlacement;
 }

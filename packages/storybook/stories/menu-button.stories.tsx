@@ -148,44 +148,46 @@ export const OptionsWithIcons: Story = () => (
     </>
 );
 
+const optionsWithGroups: MenuButtonProps['options'] = [
+    {
+        groupLabel: 'Group 1',
+        groupOptions: [
+            {
+                label: 'Option 1.1',
+                onClick: () => console.info('Option 1.1 clicked'),
+            },
+            {
+                label: 'Option 1.2',
+                onClick: () => console.info('Option 1.2 clicked'),
+            },
+            {
+                label: 'Option 1.3',
+                onClick: () => console.info('Option 1.3 clicked'),
+            },
+        ],
+    },
+    {
+        groupLabel: 'Group 2',
+        groupOptions: [
+            {
+                label: 'Option 2.1',
+                onClick: () => console.info('Option 2.1 clicked'),
+            },
+            {
+                label: 'Option 2.2',
+                onClick: () => console.info('Option 2.2 clicked'),
+            },
+            {
+                label: 'Option 2.3',
+                onClick: () => console.info('Option 2.3 clicked'),
+            },
+        ],
+    },
+];
+
 export const OptionsWithGrouping: Story = () => (
     <MenuButton
-        options={[
-            {
-                groupLabel: 'Group 1',
-                groupOptions: [
-                    {
-                        label: 'Option 1.1',
-                        onClick: () => console.info('Option 1.1 clicked'),
-                    },
-                    {
-                        label: 'Option 1.2',
-                        onClick: () => console.info('Option 1.2 clicked'),
-                    },
-                    {
-                        label: 'Option 1.3',
-                        onClick: () => console.info('Option 1.3 clicked'),
-                    },
-                ],
-            },
-            {
-                groupLabel: 'Group 2',
-                groupOptions: [
-                    {
-                        label: 'Option 2.1',
-                        onClick: () => console.info('Option 2.1 clicked'),
-                    },
-                    {
-                        label: 'Option 2.2',
-                        onClick: () => console.info('Option 2.2 clicked'),
-                    },
-                    {
-                        label: 'Option 2.3',
-                        onClick: () => console.info('Option 2.3 clicked'),
-                    },
-                ],
-            },
-        ]}
+        options={optionsWithGroups}
         buttonType="primary"
     >
         Button

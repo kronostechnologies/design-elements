@@ -136,7 +136,7 @@ export interface MenuGroup {
     groupOptions: MenuOption[];
 }
 
-type MenuItem = MenuGroup | MenuOption;
+export type MenuItem = MenuGroup | MenuOption;
 
 interface ListOption extends MenuOption {
     focusIndex: number,
