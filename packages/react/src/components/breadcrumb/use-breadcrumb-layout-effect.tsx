@@ -1,13 +1,13 @@
 import { useLayoutEffect } from 'react';
 import { Overflow } from '../../hooks/use-overflow';
-import { NavMenuOption } from '../nav-menu/nav-menu-option';
+import { NavListOption } from '../nav-list/nav-list-option';
 
 interface UseBreadcrumbLayoutEffectRequest {
     overflow: Overflow;
-    shownRoutes: NavMenuOption[];
-    history: NavMenuOption[];
-    setHiddenRoutes: (value: (((prevState: NavMenuOption[]) => NavMenuOption[]) | NavMenuOption[])) => void;
-    setShownRoutes: (value: (((prevState: NavMenuOption[]) => NavMenuOption[]) | NavMenuOption[])) => void;
+    shownRoutes: NavListOption[];
+    history: NavListOption[];
+    setHiddenRoutes: (value: (((prevState: NavListOption[]) => NavListOption[]) | NavListOption[])) => void;
+    setShownRoutes: (value: (((prevState: NavListOption[]) => NavListOption[]) | NavListOption[])) => void;
 }
 
 export function useBreadcrumbLayoutEffect({
