@@ -62,6 +62,20 @@ describe('TextInput', () => {
         expect(container.prop('valid')).toBe(false);
     });
 
+    test('should set as invalid when valid prop is false', () => {
+        const wrapper = shallow(<TextInput valid={false} />);
+
+        const container = getByTestId(wrapper, 'field-container');
+        expect(container.prop('valid')).toBe(false);
+    });
+
+    test('should set as valid when valid prop is true', () => {
+        const wrapper = shallow(<TextInput valid />);
+
+        const container = getByTestId(wrapper, 'field-container');
+        expect(container.prop('valid')).toBe(true);
+    });
+
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
         const wrapper = setup(callback);
