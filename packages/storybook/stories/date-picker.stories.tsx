@@ -77,8 +77,12 @@ export const StartOpen: Story = () => (
     <Datepicker label="Date" startOpen />
 );
 
-export const StartDate: Story = () => (
-    <Datepicker label="Date" startDate={new Date('1995-05-05')} />
+export const DefaultDate: Story = () => (
+    <Datepicker label="Date" defaultDate={new Date('1995-05-05')} />
+);
+
+export const OpenToDate: Story = () => (
+    <Datepicker label="Date" openToDate={new Date('1995-05-05')} />
 );
 
 export const CustomLocale: Story = () => (
