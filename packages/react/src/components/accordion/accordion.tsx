@@ -4,10 +4,8 @@ import { Type, Tag } from '../heading/heading';
 import { AccordionItem } from './accordion-item';
 
 interface AccordionProps {
-    /** Unique id per accordion */
     id: string;
     children: React.ReactNode;
-    /** Multipe or single panel open concurrently */
     mode?: 'single' | 'multi';
 }
 
