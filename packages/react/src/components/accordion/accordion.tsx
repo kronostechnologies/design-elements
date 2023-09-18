@@ -98,6 +98,14 @@ export const Accordion: React.FC<AccordionProps> = ({
             } else {
                 newIndex = (index + 1) % childrenArray.length;
             }
+
+            while (childrenArray[newIndex]?.props?.disabled) {
+                newIndex = key === 'ArrowUp' ? newIndex - 1 : (newIndex + 1) % childrenArray.length;
+                if (newIndex < 0) {
+                    newIndex = childrenArray.length - 1;
+                }
+            }
+
             childrenArray[newIndex]?.props?.buttonRef?.current?.focus();
         }
     };
