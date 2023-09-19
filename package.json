@@ -17,9 +17,9 @@
     "conventional-changelog-conventionalcommits": "^7.0.0",
     "eslint": "^8.39.0",
     "postcss": "^8.4.23",
-    "postcss-styled-syntax": "^0.4.0",
+    "postcss-styled-syntax": "^0.5.0",
     "stylelint": "^15.10.1",
-    "typescript": "~5.1.0",
+    "typescript": "~5.2.0",
     "xmlbuilder": "^15.1.1",
     "yargs": "^17.7.2"
   },

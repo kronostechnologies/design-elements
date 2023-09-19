@@ -1716,7 +1716,7 @@ __metadata:
     react-shadow: ^20.0.0
     react-swipeable: ~7.0.0
     react-table: ^7.8.0
-    sass: ~1.66.0
+    sass: ~1.67.0
     sass-loader: ~13.3.0
     stream-browserify: ^3.0.0
     style-loader: ^3.3.2
@@ -1725,7 +1725,7 @@ __metadata:
     ts-jest: ^29.1.0
     ts-loader: ^9.4.2
     ts-mockito: ^2.6.1
-    typescript: ~5.1.0
+    typescript: ~5.2.0
     webpack: ^5.81.0
     webpack-cli: ^5.0.2
     webpack-merge: ^5.8.0
@@ -1790,7 +1790,7 @@ __metadata:
     styled-components: ^5.3.10
     stylelint: ^15.10.1
     ts-loader: ^9.4.2
-    typescript: ~5.1.0
+    typescript: ~5.2.0
     webpack: ^5.81.0
     yargs: ^17.7.2
   languageName: unknown
@@ -5046,7 +5046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.62.0, @typescript-eslint/typescript-estree@npm:^5.47.0":
+"@typescript-eslint/typescript-estree@npm:5.62.0, @typescript-eslint/typescript-estree@npm:^5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/typescript-estree@npm:5.62.0"
   dependencies:
@@ -13121,15 +13121,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-styled-syntax@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "postcss-styled-syntax@npm:0.4.0"
+"postcss-styled-syntax@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "postcss-styled-syntax@npm:0.5.0"
   dependencies:
-    "@typescript-eslint/typescript-estree": ^5.47.0
+    "@typescript-eslint/typescript-estree": ^5.62.0
     estree-walker: ^2.0.2
+    typescript: ~5.1.6
   peerDependencies:
     postcss: ^8.4.21
-  checksum: f72ebb30c232b85bc2717582a5ec48114182f4c0d5cb4987256c8eaf896ecdd7519c295d59e6a5f2747da763b523c4cb26a102e8a0ff6d88ac1a4948a26327f9
+  checksum: 1571ea468e9eb9ddf8cd81b298174b310a3ee5ec6b3b1e01a25b4c0e51acb5fc4bb4f76785fe9f9714be29fa6884dd123c7179b475b41c1a108545ca1875af37
   languageName: node
   linkType: hard
 
@@ -14317,9 +14318,9 @@ __metadata:
     conventional-changelog-conventionalcommits: ^7.0.0
     eslint: ^8.39.0
     postcss: ^8.4.23
-    postcss-styled-syntax: ^0.4.0
+    postcss-styled-syntax: ^0.5.0
     stylelint: ^15.10.1
-    typescript: ~5.1.0
+    typescript: ~5.2.0
     xmlbuilder: ^15.1.1
     yargs: ^17.7.2
   languageName: unknown
@@ -14433,16 +14434,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:~1.66.0":
-  version: 1.66.1
-  resolution: "sass@npm:1.66.1"
+"sass@npm:~1.67.0":
+  version: 1.67.0
+  resolution: "sass@npm:1.67.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 74fc11d0fcd5e16c5331b57dd59865705a299c64e89f2b99646869caeb011dc8d0b6144a6c74a90c264e9ef70654207dbf44fc9b7e3393f8bd14809b904c8a52
+  checksum: 9e7566e8b7386cf265dddcdb266a023fb5759c5a8f48a11da199c8bf419e5f08f4ff6404d85d6bf5eac01e1f7c7061fdb6b7b65cbfda164e59b0a06b72ac8567
   languageName: node
   linkType: hard
 
@@ -15954,7 +15955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~5.1.0":
+"typescript@npm:~5.1.6":
   version: 5.1.6
   resolution: "typescript@npm:5.1.6"
   bin:
@@ -15964,13 +15965,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@~5.1.0#~builtin<compat/typescript>":
+"typescript@npm:~5.2.0":
+  version: 5.2.2
+  resolution: "typescript@npm:5.2.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 7912821dac4d962d315c36800fe387cdc0a6298dba7ec171b350b4a6e988b51d7b8f051317786db1094bd7431d526b648aba7da8236607febb26cf5b871d2d3c
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@~5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
   resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@~5.2.0#~builtin<compat/typescript>":
+  version: 5.2.2
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 0f4da2f15e6f1245e49db15801dbee52f2bbfb267e1c39225afdab5afee1a72839cd86000e65ee9d7e4dfaff12239d28beaf5ee431357fcced15fb08583d72ca
   languageName: node
   linkType: hard
 
