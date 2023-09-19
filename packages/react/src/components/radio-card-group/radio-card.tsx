@@ -1,5 +1,7 @@
 import {
     ChangeEvent,
+    isValidElement,
+    ReactElement,
     ReactNode,
     useCallback,
     useEffect,
@@ -88,7 +90,6 @@ export const RadioCard : VoidFunctionComponent<RadioCardProps> = ({
             }}
         >
             <S.HiddenInput
-                aria-describedby={`description-${id}`}
                 checked={checked}
                 data-testid={`radio-card-${value}-input`}
                 defaultChecked={defaultChecked}
@@ -110,10 +111,14 @@ export const RadioCard : VoidFunctionComponent<RadioCardProps> = ({
                     <S.RadioInput isChecked={checked} disabled={disabled} isMobile={isMobile} />
                     {label}
                 </S.Title>
-                <S.Description aria-hidden disabled={disabled} id={`description-${id}`} isMobile={isMobile} isChecked={isInputChecked}>
+                <S.Description disabled={disabled} id={`description-${id}`} isMobile={isMobile} isChecked={isInputChecked}>
                     {children}
                 </S.Description>
             </S.Label>
         </S.Card>
     );
 };
+
+export const isRadioCard = (child: unknown): child is ReactElement<RadioCardProps> => (
+    isValidElement<RadioCardProps>(child) && child.type === RadioCard
+);

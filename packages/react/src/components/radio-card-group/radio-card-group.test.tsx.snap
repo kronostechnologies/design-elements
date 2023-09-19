@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
@@ -13,15 +13,12 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c0 {
-  border: none;
-}
-
 .c1 {
   font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -31,12 +28,11 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #012639;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -45,58 +41,65 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: initial;
-  -moz-letter-spacing: initial;
-  -ms-letter-spacing: initial;
-  letter-spacing: initial;
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
+  margin-bottom: var(--spacing-half);
 }
 
-.c11 {
-  color: #60666E;
+.c12 {
   font-size: 0.875rem;
+  line-height: 1.5rem;
   padding-left: var(--spacing-4x);
 }
 
-.c2 {
+.c3 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #000000;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  color: #000000;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
 
-.c2:focus-within {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c2:hover:not([disabled]) {
+.c3:hover:not([disabled]) {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   cursor: pointer;
 }
 
-.c2:hover:not([disabled]) .c10,
-.c2:hover:not([disabled]) .c6 {
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
-.c2:not(:last-child) {
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
   margin-bottom: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   height: var(--size-1x);
   left: 0;
   margin: 0;
@@ -106,11 +109,11 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c3:checked + .c4 > .c6 > .c8 {
+.c4:checked + .c5 > .c7 > .c9 {
   border: 2px solid #006296;
 }
 
-.c3:checked + .c4 > .c6 > .c8::after {
+.c4:checked + .c5 > .c7 > .c9::after {
   background-color: #006296;
   border-radius: 50%;
   content: '';
@@ -130,32 +133,30 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
     class="c1"
   />
   <div
-    class="c2"
+    class="c2 c3"
     data-testid="radio-card-test-container"
   >
     <input
-      aria-describedby="description-undefined"
       checked=""
-      class="c3"
+      class="c4"
       data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
     />
     <label
-      class="c4 c5"
+      class="c5 c6"
     >
       <span
-        class="c6 c7"
+        class="c7 c8"
       >
         <span
-          class="c8 c9"
+          class="c9 c10"
         />
         Test
       </span>
       <span
-        aria-hidden="true"
-        class="c10 c11"
+        class="c11 c12"
         id="description-undefined"
       >
         Test description
@@ -166,7 +167,7 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 `;
 
 exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
@@ -178,15 +179,12 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c0 {
-  border: none;
-}
-
 .c1 {
   font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -196,12 +194,11 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -210,58 +207,65 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: initial;
-  -moz-letter-spacing: initial;
-  -ms-letter-spacing: initial;
-  letter-spacing: initial;
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
+  margin-bottom: var(--spacing-half);
 }
 
-.c11 {
-  color: #60666E;
+.c12 {
   font-size: 0.875rem;
+  line-height: 1.5rem;
   padding-left: var(--spacing-4x);
 }
 
-.c2 {
+.c3 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #000000;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  color: #000000;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
 
-.c2:focus-within {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c2:hover:not([disabled]) {
+.c3:hover:not([disabled]) {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   cursor: pointer;
 }
 
-.c2:hover:not([disabled]) .c10,
-.c2:hover:not([disabled]) .c6 {
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
-.c2:not(:last-child) {
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
   margin-bottom: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   height: var(--size-1x);
   left: 0;
   margin: 0;
@@ -271,11 +275,11 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c3:checked + .c4 > .c6 > .c8 {
+.c4:checked + .c5 > .c7 > .c9 {
   border: 2px solid #006296;
 }
 
-.c3:checked + .c4 > .c6 > .c8::after {
+.c4:checked + .c5 > .c7 > .c9::after {
   background-color: #006296;
   border-radius: 50%;
   content: '';
@@ -295,31 +299,29 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
     class="c1"
   />
   <div
-    class="c2"
+    class="c2 c3"
     data-testid="radio-card-test-container"
   >
     <input
-      aria-describedby="description-undefined"
-      class="c3"
+      class="c4"
       data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
     />
     <label
-      class="c4 c5"
+      class="c5 c6"
     >
       <span
-        class="c6 c7"
+        class="c7 c8"
       >
         <span
-          class="c8 c9"
+          class="c9 c10"
         />
         Test
       </span>
       <span
-        aria-hidden="true"
-        class="c10 c11"
+        class="c11 c12"
         id="description-undefined"
       >
         Test description
@@ -330,7 +332,7 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 `;
 
 exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
@@ -342,15 +344,12 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c0 {
-  border: none;
-}
-
 .c1 {
   font-size: 0.875rem;
+  margin-bottom: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -360,12 +359,11 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -374,58 +372,65 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: initial;
-  -moz-letter-spacing: initial;
-  -ms-letter-spacing: initial;
-  letter-spacing: initial;
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
+  margin-bottom: var(--spacing-half);
 }
 
-.c11 {
-  color: #60666E;
+.c12 {
   font-size: 1rem;
+  line-height: 1.5rem;
   padding-left: var(--spacing-4x);
 }
 
-.c2 {
+.c3 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #000000;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  color: #000000;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
 
-.c2:focus-within {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c2:hover:not([disabled]) {
+.c3:hover:not([disabled]) {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   cursor: pointer;
 }
 
-.c2:hover:not([disabled]) .c10,
-.c2:hover:not([disabled]) .c6 {
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
-.c2:not(:last-child) {
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
   margin-bottom: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   height: var(--size-1halfx);
   left: 0;
   margin: 0;
@@ -435,11 +440,11 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c3:checked + .c4 > .c6 > .c8 {
+.c4:checked + .c5 > .c7 > .c9 {
   border: 2px solid #006296;
 }
 
-.c3:checked + .c4 > .c6 > .c8::after {
+.c4:checked + .c5 > .c7 > .c9::after {
   background-color: #006296;
   border-radius: 50%;
   content: '';
@@ -459,31 +464,29 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
     class="c1"
   />
   <div
-    class="c2"
+    class="c2 c3"
     data-testid="radio-card-test-container"
   >
     <input
-      aria-describedby="description-undefined"
-      class="c3"
+      class="c4"
       data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
     />
     <label
-      class="c4 c5"
+      class="c5 c6"
     >
       <span
-        class="c6 c7"
+        class="c7 c8"
       >
         <span
-          class="c8 c9"
+          class="c9 c10"
         />
         Test
       </span>
       <span
-        aria-hidden="true"
-        class="c10 c11"
+        class="c11 c12"
         id="description-undefined"
       >
         Test description
@@ -494,7 +497,7 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 `;
 
 exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
-.c9 {
+.c10 {
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
   border-radius: 50%;
@@ -506,15 +509,12 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c0 {
-  border: none;
-}
-
 .c1 {
   font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -524,12 +524,11 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #B7BBC2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,58 +537,65 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: initial;
-  -moz-letter-spacing: initial;
-  -ms-letter-spacing: initial;
-  letter-spacing: initial;
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
+  margin-bottom: var(--spacing-half);
 }
 
-.c11 {
-  color: #B7BBC2;
+.c12 {
   font-size: 0.875rem;
+  line-height: 1.5rem;
   padding-left: var(--spacing-4x);
 }
 
-.c2 {
+.c3 {
   background-color: #F1F2F2;
   border: 1px solid #DBDEE1;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  color: #B7BBC2;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
 
-.c2:focus-within {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c2:hover:not([disabled]) {
+.c3:hover:not([disabled]) {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   cursor: pointer;
 }
 
-.c2:hover:not([disabled]) .c10,
-.c2:hover:not([disabled]) .c6 {
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
-.c2:not(:last-child) {
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
   margin-bottom: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   height: var(--size-1x);
   left: 0;
   margin: 0;
@@ -599,11 +605,11 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c3:checked + .c4 > .c6 > .c8 {
+.c4:checked + .c5 > .c7 > .c9 {
   border: 2px solid #006296;
 }
 
-.c3:checked + .c4 > .c6 > .c8::after {
+.c4:checked + .c5 > .c7 > .c9::after {
   background-color: #006296;
   border-radius: 50%;
   content: '';
@@ -623,13 +629,12 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
     class="c1"
   />
   <div
-    class="c2"
+    class="c2 c3"
     data-testid="radio-card-test-container"
     disabled=""
   >
     <input
-      aria-describedby="description-undefined"
-      class="c3"
+      class="c4"
       data-testid="radio-card-test-input"
       disabled=""
       name="test"
@@ -637,21 +642,20 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
       value="test"
     />
     <label
-      class="c4 c5"
+      class="c5 c6"
     >
       <span
-        class="c6 c7"
+        class="c7 c8"
         disabled=""
       >
         <span
-          class="c8 c9"
+          class="c9 c10"
           disabled=""
         />
         Test
       </span>
       <span
-        aria-hidden="true"
-        class="c10 c11"
+        class="c11 c12"
         disabled=""
         id="description-undefined"
       >
@@ -663,7 +667,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 `;
 
 exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
@@ -675,15 +679,12 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c0 {
-  border: none;
-}
-
 .c1 {
   font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -693,12 +694,11 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -707,58 +707,65 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: initial;
-  -moz-letter-spacing: initial;
-  -ms-letter-spacing: initial;
-  letter-spacing: initial;
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
+  margin-bottom: var(--spacing-half);
 }
 
-.c11 {
-  color: #60666E;
+.c12 {
   font-size: 0.875rem;
+  line-height: 1.5rem;
   padding-left: var(--spacing-4x);
 }
 
-.c2 {
+.c3 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #000000;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  color: #000000;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
 
-.c2:focus-within {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c2:hover:not([disabled]) {
+.c3:hover:not([disabled]) {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   cursor: pointer;
 }
 
-.c2:hover:not([disabled]) .c10,
-.c2:hover:not([disabled]) .c6 {
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
-.c2:not(:last-child) {
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
   margin-bottom: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   height: var(--size-1x);
   left: 0;
   margin: 0;
@@ -768,11 +775,11 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c3:checked + .c4 > .c6 > .c8 {
+.c4:checked + .c5 > .c7 > .c9 {
   border: 2px solid #006296;
 }
 
-.c3:checked + .c4 > .c6 > .c8::after {
+.c4:checked + .c5 > .c7 > .c9::after {
   background-color: #006296;
   border-radius: 50%;
   content: '';
@@ -794,31 +801,29 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
     Test
   </legend>
   <div
-    class="c2"
+    class="c2 c3"
     data-testid="radio-card-test-container"
   >
     <input
-      aria-describedby="description-undefined"
-      class="c3"
+      class="c4"
       data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
     />
     <label
-      class="c4 c5"
+      class="c5 c6"
     >
       <span
-        class="c6 c7"
+        class="c7 c8"
       >
         <span
-          class="c8 c9"
+          class="c9 c10"
         />
         Test
       </span>
       <span
-        aria-hidden="true"
-        class="c10 c11"
+        class="c11 c12"
         id="description-undefined"
       >
         Test description
@@ -829,7 +834,7 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
 `;
 
 exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
-.c9 {
+.c10 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: 50%;
@@ -841,15 +846,12 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c0 {
-  border: none;
-}
-
 .c1 {
   font-size: 0.875rem;
+  margin-bottom: var(--spacing-1x);
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -859,12 +861,11 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -873,58 +874,65 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-weight: var(--font-semi-bold);
-  -webkit-letter-spacing: initial;
-  -moz-letter-spacing: initial;
-  -ms-letter-spacing: initial;
-  letter-spacing: initial;
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
   line-height: 1.5rem;
-  margin-bottom: var(--spacing-1x);
+  margin-bottom: var(--spacing-half);
 }
 
-.c11 {
-  color: #60666E;
+.c12 {
   font-size: 1rem;
+  line-height: 1.5rem;
   padding-left: var(--spacing-4x);
 }
 
-.c2 {
+.c3 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
+  border: 1px solid #000000;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  color: #000000;
   padding: var(--spacing-2x) var(--spacing-3x);
   width: 100%;
 }
 
-.c2:focus-within {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c2:hover:not([disabled]) {
+.c3:hover:not([disabled]) {
   background-color: #DBDEE1;
-  border-color: #60666E;
+  border-color: #000000;
   cursor: pointer;
 }
 
-.c2:hover:not([disabled]) .c10,
-.c2:hover:not([disabled]) .c6 {
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
   color: #000000;
 }
 
-.c2:not(:last-child) {
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
   margin-bottom: var(--spacing-1x);
 }
 
-.c3 {
+.c4 {
   height: var(--size-1halfx);
   left: 0;
   margin: 0;
@@ -934,11 +942,11 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
   width: var(--size-1halfx);
 }
 
-.c3:checked + .c4 > .c6 > .c8 {
+.c4:checked + .c5 > .c7 > .c9 {
   border: 2px solid #006296;
 }
 
-.c3:checked + .c4 > .c6 > .c8::after {
+.c4:checked + .c5 > .c7 > .c9::after {
   background-color: #006296;
   border-radius: 50%;
   content: '';
@@ -960,31 +968,29 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
     Test
   </legend>
   <div
-    class="c2"
+    class="c2 c3"
     data-testid="radio-card-test-container"
   >
     <input
-      aria-describedby="description-undefined"
-      class="c3"
+      class="c4"
       data-testid="radio-card-test-input"
       name="test"
       type="radio"
       value="test"
     />
     <label
-      class="c4 c5"
+      class="c5 c6"
     >
       <span
-        class="c6 c7"
+        class="c7 c8"
       >
         <span
-          class="c8 c9"
+          class="c9 c10"
         />
         Test
       </span>
       <span
-        aria-hidden="true"
-        class="c10 c11"
+        class="c11 c12"
         id="description-undefined"
       >
         Test description
