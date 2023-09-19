@@ -19,17 +19,17 @@ export const Normal: Story = () => (
     <RadioButtonGroup
         data-testid='radio-button-group-id'
         label="Planets"
-        groupName="planets"
+        groupName="planets-1"
         buttons={buttons}
     />
 );
 
 export const Disabled: Story = () => (
-    <RadioButtonGroup groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', disabled: true }]} />
+    <RadioButtonGroup groupName="cars-1" buttons={[{ label: 'Toyota', value: 'toyota', disabled: true }]} />
 );
 
 export const DefaultChecked: Story = () => (
-    <RadioButtonGroup groupName="cars" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]} />
+    <RadioButtonGroup groupName="cars-2" buttons={[{ label: 'Toyota', value: 'toyota', defaultChecked: true }]} />
 );
 
 export const WithTooltip: Story = () => (
@@ -37,10 +37,21 @@ export const WithTooltip: Story = () => (
         data-testid='radio-button-group-id'
         label="Planets"
         tooltip={{ label: 'Tooltip text content' }}
-        groupName="planets"
+        groupName="planets-2"
         buttons={buttons}
     />
 );
+export const WithContent: Story = () => (
+    <RadioButtonGroup
+        label="Content"
+        groupName="content"
+        buttons={[
+            { label: 'With content', value: 'with', content: { element: <p>This is some content</p> } },
+            { label: 'Without content', value: 'without' },
+        ]}
+    />
+);
+WithContent.parameters = rawCodeParameters;
 
 export const Controlled: Story = () => {
     const [value, setValue] = useState('red');
