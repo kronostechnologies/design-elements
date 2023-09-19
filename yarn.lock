@@ -1676,9 +1676,9 @@ __metadata:
     "@types/feather-icons": ^4.7.0
     "@types/jest": ^29.5.1
     "@types/lodash": ^4.14.186
-    "@types/react": ~17.0.58
+    "@types/react": ~18.2.0
     "@types/react-datepicker": ^4.11.2
-    "@types/react-dom": ~17.0.20
+    "@types/react-dom": ~18.2.0
     "@types/react-modal": ^3.16.0
     "@types/react-table": ^7.7.14
     "@types/styled-components": ^5.1.26
@@ -1709,7 +1709,7 @@ __metadata:
     react-datepicker: ^4.11.0
     react-docgen-typescript-plugin: ^1.0.5
     react-dom: ~17.0.2
-    react-is: ~17.0.2
+    react-is: ~18.2.0
     react-modal: ^3.16.1
     react-popper-tooltip: ^4.4.2
     react-router-dom: ~6.16.0
@@ -1760,7 +1760,7 @@ __metadata:
     "@storybook/react-webpack5": ^7.0.8
     "@storybook/theming": ^7.0.8
     "@types/node": ^18.17.4
-    "@types/react": ^17.0.58
+    "@types/react": ^18.0.0
     "@types/react-color": ^3.0.6
     "@types/react-table": ^7.7.14
     "@types/styled-components": ^5.1.26
@@ -1782,7 +1782,7 @@ __metadata:
     node-sass: ^9.0.0
     react: ~17.0.2
     react-dom: ~17.0.2
-    react-is: ~17.0.2
+    react-is: ~18.2.0
     react-router-dom: ~6.16.0
     sass-loader: ^13.2.2
     storybook: ^7.0.8
@@ -4815,12 +4815,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:<18.0.0, @types/react-dom@npm:~17.0.20":
+"@types/react-dom@npm:<18.0.0":
   version: 17.0.20
   resolution: "@types/react-dom@npm:17.0.20"
   dependencies:
     "@types/react": ^17
   checksum: 525439fb14a033fc5dbe74711ecc50ec82273a528df9656594066a6219401e975101dafffd15d9a1a57a9442d52ea0c92eaacae09554dde27cd792e773f67467
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:~18.2.0":
+  version: 18.2.7
+  resolution: "@types/react-dom@npm:18.2.7"
+  dependencies:
+    "@types/react": "*"
+  checksum: e02ea908289a7ad26053308248d2b87f6aeafd73d0e2de2a3d435947bcea0422599016ffd1c3e38ff36c42f5e1c87c7417f05b0a157e48649e4a02f21727d54f
   languageName: node
   linkType: hard
 
@@ -4842,14 +4851,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17":
-  version: 17.0.65
-  resolution: "@types/react@npm:17.0.65"
+"@types/react@npm:^18.0.0":
+  version: 18.2.22
+  resolution: "@types/react@npm:18.2.22"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: bb862f0f97a49e690cd5c62743307d17398ee62b87bbb2c85c1b01cb992244c0aef4ecdedaab0e8d33c6315d5a8f067cf90e7f1c366b8819678c59204e202932
+  checksum: 44289523dabaadcd3fd85689abb98f9ebcc8492d7e978348d1c986138acef4801030b279e89a19e38a6319e294bcea77559e37e0c803e4bacf2b8ae3a56ba587
   languageName: node
   linkType: hard
 
@@ -13610,7 +13619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0":
+"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0, react-is@npm:~18.2.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
@@ -13624,7 +13633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^17.0.0, react-is@npm:^17.0.1, react-is@npm:^17.0.2, react-is@npm:~17.0.2":
+"react-is@npm:^17.0.0, react-is@npm:^17.0.1, react-is@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
