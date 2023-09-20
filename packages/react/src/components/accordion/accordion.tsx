@@ -17,7 +17,7 @@ interface AccordionItemProps {
     expanded?: boolean | undefined;
     disabled?: boolean | undefined;
     onToggle?: () => void;
-    onKeyDown?: ((event: React.KeyboardEvent<HTMLButtonElement>) => void) | undefined;
+    onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement> | undefined;
     children: React.ReactNode;
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
 }
