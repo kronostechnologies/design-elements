@@ -41,10 +41,13 @@ export const Accordion: React.FC<AccordionProps> = ({
         [id],
     );
 
-    const filteredChildren = React.Children.toArray(children).filter(isAccordion);
+    const accordionItems = useMemo(
+        () => React.Children.toArray(children).filter(isAccordion),
+        [children],
+    );
 
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(() => (
-        filteredChildren
+        accordionItems
             .map((child, index) => {
                 const childProps = child.props;
                 return childProps.expanded ? generateId(childProps, index) : null;
@@ -69,7 +72,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     );
 
     const childrenArray: React.ReactElement<AccordionItemProps>[] = useMemo(
-        () => filteredChildren.map((child, index) => {
+        () => accordionItems.map((child, index) => {
             const buttonRef = createRef<HTMLButtonElement>();
             const childProps = child.props;
             const accordionId = generateId(childProps, index);
@@ -81,7 +84,7 @@ export const Accordion: React.FC<AccordionProps> = ({
             };
             return React.cloneElement(child, accordionProps);
         }),
-        [filteredChildren, generateId, handleToggle],
+        [accordionItems, generateId, handleToggle],
     );
 
     const handleButtonKeyDown = (
