@@ -122,9 +122,9 @@ const ButtonStyled = styled(Button)<{ theme: Theme, expanded?: boolean }>`
 export const AccordionItem: React.FC<AccordionItemProps> = ({
     title,
     id,
-    headingType,
-    headingTag,
-    expanded,
+    headingType = 'medium',
+    headingTag = 'h3',
+    expanded = false,
     onToggle,
     disabled,
     children,
@@ -134,34 +134,30 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     const headerId = id;
     const panelId = `panel-${id}`;
 
-    const itemType = headingType ?? 'medium';
-    const itemTag = headingTag ?? 'h3';
-    const isExpanded = expanded ?? false;
-
     return (
         <>
-            <HeadingStyled type={itemType} tag={itemTag} noMargin>
+            <HeadingStyled type={headingType} tag={headingTag} noMargin>
                 <ButtonStyled
                     id={headerId}
-                    className={isExpanded ? 'expanded' : ''}
+                    className={expanded ? 'expanded' : ''}
                     buttonType="tertiary"
                     label={title}
-                    aria-expanded={isExpanded}
+                    aria-expanded={expanded}
                     aria-controls={panelId}
                     onClick={onToggle}
-                    expanded={isExpanded}
+                    expanded={expanded}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
                 >
-                    <Icon name={isExpanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
+                    <Icon name={expanded ? 'caretDown' : 'caretRight'} aria-hidden="true" />
                 </ButtonStyled>
             </HeadingStyled>
             <AccordionSection
-                className={isExpanded ? 'expanded' : ''}
+                className={expanded ? 'expanded' : ''}
                 id={panelId}
                 aria-labelledby={headerId}
-                aria-expanded={isExpanded}
+                aria-expanded={expanded}
                 aria-disabled={disabled}
             >
                 <AccordionBody>
