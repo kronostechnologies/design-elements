@@ -28,7 +28,7 @@ const AccordionSection = styled.section<{ theme: Theme }>`
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
-    &.expanded {
+    &[aria-expanded='true'] {
         border-width: 1px;
         border-top-width: 0;
         max-height: 1000px;
@@ -61,10 +61,10 @@ const HeadingStyled = styled(Heading)`
     position: relative;
 `;
 
-const ButtonStyled = styled(Button)<{ theme: Theme, expanded?: boolean }>`
+const ButtonStyled = styled(Button)<{ theme: Theme }>`
     align-items: flex-start;
     border: 1px solid ${({ theme }) => theme.greys.grey};
-    border-radius: ${({ expanded }) => (expanded ? 'var(--border-radius-2x) var(--border-radius-2x) 0 0' : 'var(--border-radius-2x)')};
+    border-radius: var(--border-radius-2x);
     color: ${({ theme }) => theme.greys['neutral-90']};
     font-size: 0.875rem;
     font-weight: var(--font-normal);
@@ -81,8 +81,9 @@ const ButtonStyled = styled(Button)<{ theme: Theme, expanded?: boolean }>`
     transition-timing-function: ease;
     width: 100%;
 
-    &.expanded {
+    &[aria-expanded="true"] {
         background: ${({ theme }) => theme.greys.white};
+        border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
         color: ${({ theme }) => theme.greys['neutral-90']};
         transition-delay: 0s;
         transition-duration: 0.1s;
@@ -139,13 +140,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
             <HeadingStyled type={headingType} tag={headingTag} noMargin>
                 <ButtonStyled
                     id={headerId}
-                    className={expanded ? 'expanded' : ''}
                     buttonType="tertiary"
                     label={title}
                     aria-expanded={expanded}
                     aria-controls={panelId}
                     onClick={onToggle}
-                    expanded={expanded}
                     disabled={disabled}
                     onKeyDown={onKeyDown}
                     ref={buttonRef}
@@ -154,7 +153,6 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 </ButtonStyled>
             </HeadingStyled>
             <AccordionSection
-                className={expanded ? 'expanded' : ''}
                 id={panelId}
                 aria-labelledby={headerId}
                 aria-expanded={expanded}
