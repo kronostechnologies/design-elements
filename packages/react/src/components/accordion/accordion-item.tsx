@@ -29,8 +29,7 @@ const AccordionSection = styled.section<{ theme: Theme }>`
     overflow: hidden;
     transition: max-height 0.5s ease, border-width 0.5s ease;
     &[aria-expanded='true'] {
-        border-width: 1px;
-        border-top-width: 0;
+        border-width: 0 1px 1px 1px;
         max-height: 1000px;
         overflow-y: auto;
         transform: translateZ(0);
