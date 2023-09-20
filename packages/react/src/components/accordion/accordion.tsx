@@ -1,10 +1,11 @@
 import React, { useCallback, useState, createRef, useMemo } from 'react';
 import styled from 'styled-components';
+import { v4 as uuid } from '../../utils/uuid';
 import { Type, Tag } from '../heading/heading';
 import { AccordionItem } from './accordion-item';
 
 interface AccordionProps {
-    id: string;
+    id?: string;
     children: React.ReactNode;
     mode?: 'single' | 'multi';
 }
@@ -32,14 +33,11 @@ const isAccordion = (child: React.ReactNode): child is React.ReactElement<Accord
     React.isValidElement<AccordionItemProps>(child) && child.type === AccordionItem);
 
 export const Accordion: React.FC<AccordionProps> = ({
-    id,
+    id: providedId,
     mode = 'single',
     children,
 }) => {
-    const generateId = useCallback(
-        (childProps: AccordionItemProps, index: number): string => childProps.id || `${id}-${index}`,
-        [id],
-    );
+    const id = useMemo(() => providedId || uuid(), [providedId]);
 
     const accordionItems = useMemo(
         () => React.Children.toArray(children).filter(isAccordion),
@@ -50,7 +48,8 @@ export const Accordion: React.FC<AccordionProps> = ({
         accordionItems
             .map((child, index) => {
                 const childProps = child.props;
-                return childProps.expanded ? generateId(childProps, index) : null;
+                const uniqueId = `${id}-${index}`;
+                return childProps.expanded ? uniqueId : null;
             })
             .filter((expandedId) => expandedId !== null) as string[]
     ));
@@ -75,16 +74,16 @@ export const Accordion: React.FC<AccordionProps> = ({
         () => accordionItems.map((child, index) => {
             const buttonRef = createRef<HTMLButtonElement>();
             const childProps = child.props;
-            const accordionId = generateId(childProps, index);
+            const uniqueId = `${id}-${index}`;
             const accordionProps: AccordionItemProps = {
                 ...childProps,
                 buttonRef,
-                id: accordionId,
-                onToggle: () => handleToggle(accordionId),
+                id: uniqueId,
+                onToggle: () => handleToggle(uniqueId),
             };
             return React.cloneElement(child, accordionProps);
         }),
-        [accordionItems, generateId, handleToggle],
+        [accordionItems, id, handleToggle],
     );
 
     const handleButtonKeyDown = (
@@ -118,8 +117,8 @@ export const Accordion: React.FC<AccordionProps> = ({
     return (
         <StyledAccordionGroup>
             {childrenArray.map((accordion, index) => {
-                const { id: accordionId, ...restProps } = accordion.props;
-                const isExpanded = accordionId ? expandedItemIds.includes(accordionId) : false;
+                const { id: uniqueId, ...restProps } = accordion.props;
+                const isExpanded = uniqueId ? expandedItemIds.includes(uniqueId) : false;
                 const accordionItemProps: AccordionItemProps = {
                     ...restProps,
                     onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => handleButtonKeyDown(event, index),
