@@ -11,14 +11,14 @@ const accordionMeta: Meta<typeof AccordionItem> = {
             description: 'Button label',
             table: { disable: false },
         },
-        tag: {
+        headingTag: {
             description: 'Choose the right tag for page outline',
             table: { disable: false },
         },
         id: {
             table: { disable: true },
         },
-        type: {
+        headingType: {
             table: { disable: true },
         },
         expanded: {
