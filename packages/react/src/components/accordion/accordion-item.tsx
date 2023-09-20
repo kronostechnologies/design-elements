@@ -8,8 +8,8 @@ import { Heading, Type, Tag } from '../heading/heading';
 interface AccordionItemProps {
     title: string;
     id?: string;
-    type?: Type | undefined;
-    tag?: Tag | undefined;
+    headingType?: Type | undefined;
+    headingTag?: Tag | undefined;
     expanded?: boolean | undefined;
     disabled?: boolean | undefined;
     onToggle?: () => void;
@@ -122,8 +122,8 @@ const ButtonStyled = styled(Button)<{ theme: Theme, expanded?: boolean }>`
 export const AccordionItem: React.FC<AccordionItemProps> = ({
     title,
     id,
-    type,
-    tag,
+    headingType,
+    headingTag,
     expanded,
     onToggle,
     disabled,
@@ -134,8 +134,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     const headerId = id;
     const panelId = `panel-${id}`;
 
-    const itemType = type ?? 'medium';
-    const itemTag = tag ?? 'h3';
+    const itemType = headingType ?? 'medium';
+    const itemTag = headingTag ?? 'h3';
     const isExpanded = expanded ?? false;
 
     return (

@@ -12,8 +12,8 @@ interface AccordionProps {
 interface AccordionItemProps {
     title: string;
     id?: string;
-    type?: Type | undefined;
-    tag?: Tag | undefined;
+    headingType?: Type | undefined;
+    headingTag?: Tag | undefined;
     expanded?: boolean | undefined;
     disabled?: boolean | undefined;
     onToggle?: () => void;
