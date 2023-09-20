@@ -28,6 +28,9 @@ export const StyledAccordionGroup = styled.div`
     justify-content: flex-start;
 `;
 
+const isAccordion = (child: React.ReactNode): child is React.ReactElement<AccordionItemProps> => (
+    React.isValidElement<AccordionItemProps>(child) && child.type === AccordionItem);
+
 export const Accordion: React.FC<AccordionProps> = ({
     id,
     mode = 'single',
@@ -37,9 +40,6 @@ export const Accordion: React.FC<AccordionProps> = ({
         (childProps: AccordionItemProps, index: number): string => childProps.id || `${id}-${index}`,
         [id],
     );
-
-    const isAccordion = (child: React.ReactNode): child is React.ReactElement<AccordionItemProps> => (
-        React.isValidElement<AccordionItemProps>(child) && child.type === AccordionItem);
 
     const filteredChildren = React.Children.toArray(children).filter(isAccordion);
 
