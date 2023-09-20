@@ -80,7 +80,7 @@ const ButtonStyled = styled(Button)<{ theme: Theme }>`
     transition-timing-function: ease;
     width: 100%;
 
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         background: ${({ theme }) => theme.greys.white};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
         color: ${({ theme }) => theme.greys['neutral-90']};
