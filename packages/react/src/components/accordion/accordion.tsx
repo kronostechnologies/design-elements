@@ -29,7 +29,9 @@ export const StyledAccordionGroup = styled.div`
 `;
 
 export const Accordion: React.FC<AccordionProps> = ({
-    id, mode = 'single', children,
+    id, 
+    mode = 'single', 
+    children,
 }) => {
     const generateId = useCallback(
         (childProps: AccordionItemProps, index: number): string => childProps.id || `${id}-${index}`,
