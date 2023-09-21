@@ -20,6 +20,10 @@ export interface IconButtonProps {
     buttonType: ButtonType;
     className?: string;
     disabled?: boolean;
+    /**
+     * @default true
+     */
+    focusable?: boolean;
     inverted?: boolean;
     /**
      * Name of the desired icon (refer to icon library)
@@ -81,6 +85,7 @@ export const IconButton = forwardRef(({
     type = 'submit',
     buttonType,
     disabled,
+    focusable,
     title,
     onClick,
     onKeyDown,
@@ -99,6 +104,7 @@ export const IconButton = forwardRef(({
             type={type}
             buttonType={buttonType}
             disabled={disabled}
+            focusable={focusable}
             onClick={onClick}
             onKeyDown={onKeyDown}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}

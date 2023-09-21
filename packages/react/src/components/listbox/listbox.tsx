@@ -18,6 +18,7 @@ import { useListCursor } from '../../hooks/use-list-cursor';
 import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { unique } from '../../utils/array';
+import { sanitizeId } from '../../utils/dom';
 
 type Value = string | string[];
 
@@ -442,7 +443,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     return (
         <Container
-            aria-activedescendant={focusedOption ? `${id}_${focusedOption.value}` : undefined}
+            aria-activedescendant={focusedOption ? sanitizeId(`${id}_${focusedOption.value}`) : undefined}
             aria-labelledby={ariaLabelledBy}
             aria-multiselectable={multiselect ? 'true' : undefined}
             className={className}
@@ -465,10 +466,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                     <ListItem
                         aria-disabled={option.disabled}
                         aria-selected={multiselect && isOptionSelected(option) ? 'true' : undefined}
-                        data-testid={`listitem-${option.value}`}
+                        data-testid={sanitizeId(`listitem-${option.value}`)}
                         disabled={option.disabled}
                         focused={isOptionFocused(option)}
-                        id={`${id}_${option.value}`}
+                        id={sanitizeId(`${id}_${option.value}`)}
                         isMobile={isMobile}
                         key={option.value}
                         onClick={handleListItemClick(option)}

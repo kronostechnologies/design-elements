@@ -25,7 +25,7 @@ const getButtonPadding = ({ isMobile, size }: { isMobile: boolean, size?: Size }
     }
 };
 
-export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
+export const defaultButtonStyles = css<{ $focusable?: boolean, isMobile: boolean, size?: Size }>`
     align-items: center;
     appearance: none;
     background: inherit;
@@ -47,7 +47,7 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
     text-transform: uppercase;
     user-select: none;
 
-    ${(props) => focus(props, true)};
+    ${(props) => props.$focusable !== false && focus(props, true)};
 
     > svg {
         color: inherit;
@@ -57,20 +57,31 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
 `;
 
 interface AbstractButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    focusable?: boolean;
     isMobile: boolean;
     size?: Size;
 }
 
-const StyledButton = styled.button<AbstractButtonProps>`
+const StyledButton = styled.button<{ $focusable?: boolean; isMobile: boolean; size?: Size }>`
     ${defaultButtonStyles}
 `;
 
-export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<AbstractButtonProps>>((
-    { children, onClick, ...props }: AbstractButtonProps,
-    ref: Ref<HTMLButtonElement>,
-) => (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <StyledButton onClick={onClick} ref={ref} {...props}>{children}</StyledButton>
+export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<AbstractButtonProps>>(({
+    children,
+    onClick,
+    focusable,
+    ...props
+}: AbstractButtonProps, ref: Ref<HTMLButtonElement>) => (
+    <StyledButton
+        $focusable={focusable}
+        onClick={onClick}
+        ref={ref}
+        tabIndex={focusable === false ? -1 : undefined}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+    >
+        {children}
+    </StyledButton>
 ));
 
 AbstractButton.displayName = 'AbstractButton';
@@ -79,6 +90,7 @@ export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 
 
 export interface ButtonTypeStyles {
     buttonType: ButtonType;
+    focusable?: boolean;
     inverted?: boolean;
     theme: Theme;
 }
@@ -106,6 +118,7 @@ const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<
 `;
 
 const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+    focusable,
     inverted,
     theme,
 }) => css`
@@ -124,7 +137,7 @@ const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolatio
         color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
     }
 
-    ${inverted && `&:focus {
+    ${(focusable !== false && inverted) && `&:focus {
         background-color: ${theme.main['primary-2']};
         border-color: ${theme.main['primary-1.1']}
         color: ${theme.greys.white};
@@ -210,7 +223,7 @@ const getDestructiveSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenI
 `;
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = (props) => css`
-    ${focus(props, true)};
+    ${props.focusable !== false && focus(props, true)};
     ${() => {
         switch (props.buttonType) {
             case 'primary':

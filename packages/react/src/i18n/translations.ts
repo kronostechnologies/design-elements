@@ -7,6 +7,9 @@ export const Translations = {
             productsLabel: 'Products',
             externalsLabel: 'Resources',
         },
+        combobox: {
+            showOptions: 'Show {{label}} options',
+        },
         common: {
             opensInNewTab: 'opens in a new tab',
             opensInNewTabScreenReader: '(opens in a new tab)',
@@ -127,6 +130,9 @@ export const Translations = {
         bento: {
             productsLabel: 'Produits',
             externalsLabel: 'Ressources',
+        },
+        combobox: {
+            showOptions: 'Afficher les options pour {{label}}',
         },
         common: {
             opensInNewTab: 'ouvre dans un nouvel onglet',

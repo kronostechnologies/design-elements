@@ -8,7 +8,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled from 'styled-components';
-import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
+import { getNextElement, getPreviousElement } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { IconName } from '../icon/icon';
 import { TabButton } from './tab-button';
@@ -79,15 +79,13 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
         switch (event.key) {
             case 'ArrowRight': {
-                const nextTabButton = getNextElementInArray(tabItems, currentlyFocusedTabIndex)
-                    ?.buttonRef.current;
-                nextTabButton?.focus();
+                const nextTabButton = getNextElement(tabItems, currentlyFocusedTabIndex, true);
+                nextTabButton?.buttonRef.current?.focus();
                 break;
             }
             case 'ArrowLeft': {
-                const previousTabButton = getPreviousElementInArray(tabItems, currentlyFocusedTabIndex)
-                    ?.buttonRef.current;
-                previousTabButton?.focus();
+                const previousTabButton = getPreviousElement(tabItems, currentlyFocusedTabIndex, true);
+                previousTabButton?.buttonRef.current?.focus();
                 break;
             }
             case 'Tab': {

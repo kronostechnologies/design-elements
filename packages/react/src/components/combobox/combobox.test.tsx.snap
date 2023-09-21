@@ -1,0 +1,1853 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox matches the snapshot (disabled) 1`] = `
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c7 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c7:hover,
+.c7[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  color: #1B1C1E;
+}
+
+.c7:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c7 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c9 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c11 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c10 {
+  position: absolute;
+  width: 100%;
+}
+
+.c5 {
+  background-color: #F1F2F2;
+  border: 1px solid #B7BBC2;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #B7BBC2;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #B7BBC2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c8:hover {
+  background-color: transparent;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <div
+    class="c4"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="uuid1_listbox"
+      aria-expanded="true"
+      aria-invalid="false"
+      aria-required="false"
+      class="c5"
+      data-testid="textbox"
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show Select an option options"
+      class="c6 c7 c8"
+      data-testid="arrow"
+      disabled=""
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+  <div
+    aria-labelledby="uuid1_label"
+    class="c9 c10"
+    data-testid="listbox-container"
+    id="uuid1_listbox"
+    role="listbox"
+    tabindex="-1"
+  >
+    <ul
+      class="c11"
+      data-testid="listbox-list"
+      role="presentation"
+    >
+      <li
+        class="c12"
+        data-testid="listitem-Alberta"
+        id="uuid1_listbox_Alberta"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Alberta
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-British_Columbia"
+        id="uuid1_listbox_British_Columbia"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          British Columbia
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Manitoba"
+        id="uuid1_listbox_Manitoba"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Manitoba
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-New_Brunswick"
+        id="uuid1_listbox_New_Brunswick"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          New Brunswick
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Newfoundland_and_Labrador"
+        id="uuid1_listbox_Newfoundland_and_Labrador"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Newfoundland and Labrador
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Northwest_Territories"
+        id="uuid1_listbox_Northwest_Territories"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Northwest Territories
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Nova_Scotia"
+        id="uuid1_listbox_Nova_Scotia"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Nova Scotia
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Nunavut"
+        id="uuid1_listbox_Nunavut"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Nunavut
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Ontario"
+        id="uuid1_listbox_Ontario"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Ontario
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Prince_Edward_Island"
+        id="uuid1_listbox_Prince_Edward_Island"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Prince Edward Island
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Quebec"
+        id="uuid1_listbox_Quebec"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Quebec
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Saskatchewan"
+        id="uuid1_listbox_Saskatchewan"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Saskatchewan
+        </span>
+      </li>
+      <li
+        class="c12"
+        data-testid="listitem-Yukon"
+        id="uuid1_listbox_Yukon"
+        role="option"
+      >
+        <span
+          class="c13"
+        >
+          Yukon
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot (invalid) 1`] = `
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c9 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c9:hover,
+.c9[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  color: #1B1C1E;
+}
+
+.c9:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c9 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c4 {
+  color: #CD2C23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: var(--spacing-base);
+}
+
+.c3 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #CD2C23;
+}
+
+.c0:focus {
+  border-color: #CD2C23;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c11 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c13 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14:hover {
+  background-color: #DBDEE1;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c12 {
+  position: absolute;
+  width: 100%;
+}
+
+.c7 {
+  background-color: #FFFFFF;
+  border: 1px solid #CD2C23;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c10:hover {
+  background-color: transparent;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <span
+    aria-live="polite"
+    class="c4"
+    id="uuid1_invalid"
+    role="alert"
+  >
+    <svg
+      class="c5"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    validationErrorMessage
+  </span>
+  <div
+    class="c6"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="uuid1_listbox"
+      aria-describedby="uuid1_invalid"
+      aria-expanded="true"
+      aria-invalid="true"
+      aria-required="false"
+      class="c7"
+      data-testid="textbox"
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show Select an option options"
+      class="c8 c9 c10"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+  <div
+    aria-labelledby="uuid1_label"
+    class="c11 c12"
+    data-testid="listbox-container"
+    id="uuid1_listbox"
+    role="listbox"
+    tabindex="-1"
+  >
+    <ul
+      class="c13"
+      data-testid="listbox-list"
+      role="presentation"
+    >
+      <li
+        class="c14"
+        data-testid="listitem-Alberta"
+        id="uuid1_listbox_Alberta"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Alberta
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-British_Columbia"
+        id="uuid1_listbox_British_Columbia"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          British Columbia
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Manitoba"
+        id="uuid1_listbox_Manitoba"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Manitoba
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-New_Brunswick"
+        id="uuid1_listbox_New_Brunswick"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          New Brunswick
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Newfoundland_and_Labrador"
+        id="uuid1_listbox_Newfoundland_and_Labrador"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Newfoundland and Labrador
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Northwest_Territories"
+        id="uuid1_listbox_Northwest_Territories"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Northwest Territories
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Nova_Scotia"
+        id="uuid1_listbox_Nova_Scotia"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Nova Scotia
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Nunavut"
+        id="uuid1_listbox_Nunavut"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Nunavut
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Ontario"
+        id="uuid1_listbox_Ontario"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Ontario
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Prince_Edward_Island"
+        id="uuid1_listbox_Prince_Edward_Island"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Prince Edward Island
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Quebec"
+        id="uuid1_listbox_Quebec"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Quebec
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Saskatchewan"
+        id="uuid1_listbox_Saskatchewan"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Saskatchewan
+        </span>
+      </li>
+      <li
+        class="c14"
+        data-testid="listitem-Yukon"
+        id="uuid1_listbox_Yukon"
+        role="option"
+      >
+        <span
+          class="c15"
+        >
+          Yukon
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot (mobile) 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.033125rem;
+  -moz-letter-spacing: 0.033125rem;
+  -ms-letter-spacing: 0.033125rem;
+  letter-spacing: 0.033125rem;
+  line-height: 1.5rem;
+  min-height: var(--size-3x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-3x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 > svg {
+  color: inherit;
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c5 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-3x);
+}
+
+.c5:hover,
+.c5[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  color: #1B1C1E;
+}
+
+.c5:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c5 > svg {
+  height: var(--size-1halfx);
+  width: var(--size-1halfx);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c7 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c9 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c10:hover {
+  background-color: #DBDEE1;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c8 {
+  position: absolute;
+  width: 100%;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 1rem;
+  height: var(--size-2halfx);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c6:hover {
+  background-color: transparent;
+}
+
+<div
+  class="c0 c1"
+>
+  <div
+    class="c2"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="uuid1_listbox"
+      aria-expanded="true"
+      aria-invalid="false"
+      aria-label="inputAriaLabel"
+      aria-required="false"
+      class="c3"
+      data-testid="textbox"
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show  options"
+      class="c4 c5 c6"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+    </button>
+  </div>
+  <div
+    aria-labelledby="uuid1_label"
+    class="c7 c8"
+    data-testid="listbox-container"
+    id="uuid1_listbox"
+    role="listbox"
+    tabindex="-1"
+  >
+    <ul
+      class="c9"
+      data-testid="listbox-list"
+      role="presentation"
+    >
+      <li
+        class="c10"
+        data-testid="listitem-Alberta"
+        id="uuid1_listbox_Alberta"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Alberta
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-British_Columbia"
+        id="uuid1_listbox_British_Columbia"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          British Columbia
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Manitoba"
+        id="uuid1_listbox_Manitoba"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Manitoba
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-New_Brunswick"
+        id="uuid1_listbox_New_Brunswick"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          New Brunswick
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Newfoundland_and_Labrador"
+        id="uuid1_listbox_Newfoundland_and_Labrador"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Newfoundland and Labrador
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Northwest_Territories"
+        id="uuid1_listbox_Northwest_Territories"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Northwest Territories
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Nova_Scotia"
+        id="uuid1_listbox_Nova_Scotia"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Nova Scotia
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Nunavut"
+        id="uuid1_listbox_Nunavut"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Nunavut
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Ontario"
+        id="uuid1_listbox_Ontario"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Ontario
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Prince_Edward_Island"
+        id="uuid1_listbox_Prince_Edward_Island"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Prince Edward Island
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Quebec"
+        id="uuid1_listbox_Quebec"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Quebec
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Saskatchewan"
+        id="uuid1_listbox_Saskatchewan"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Saskatchewan
+        </span>
+      </li>
+      <li
+        class="c10"
+        data-testid="listitem-Yukon"
+        id="uuid1_listbox_Yukon"
+        role="option"
+      >
+        <span
+          class="c11"
+        >
+          Yukon
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Combobox matches the snapshot 1`] = `
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c8 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #60666E;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c8:hover,
+.c8[aria-expanded='true'] {
+  background-color: #DBDEE1;
+  color: #1B1C1E;
+}
+
+.c8:disabled {
+  background-color: transparent;
+  color: #B7BBC2;
+}
+
+.c8 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c3 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c2 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  color: #60666E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c10 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: var(--spacing-half) 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.c12 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c13 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c13:hover {
+  background-color: #DBDEE1;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.c11 {
+  position: absolute;
+  width: 100%;
+}
+
+.c6 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #60666E;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  padding: var(--spacing-half);
+  position: absolute;
+  right: var(--spacing-half);
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  background-color: transparent;
+}
+
+<div
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    Select an option
+  </label>
+  <span
+    class="c4"
+    id="uuid1_hint"
+  >
+    Hint
+  </span>
+  <div
+    class="c5"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="uuid1_listbox"
+      aria-describedby="uuid1_hint"
+      aria-expanded="true"
+      aria-invalid="false"
+      aria-required="false"
+      class="c6"
+      data-testid="textbox"
+      id="uuid1"
+      role="combobox"
+      tabindex="0"
+      value=""
+    />
+    <button
+      aria-label="Show Select an option options"
+      class="c7 c8 c9"
+      data-testid="arrow"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+  <div
+    aria-labelledby="uuid1_label"
+    class="c10 c11"
+    data-testid="listbox-container"
+    id="uuid1_listbox"
+    role="listbox"
+    tabindex="-1"
+  >
+    <ul
+      class="c12"
+      data-testid="listbox-list"
+      role="presentation"
+    >
+      <li
+        class="c13"
+        data-testid="listitem-Alberta"
+        id="uuid1_listbox_Alberta"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Alberta
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-British_Columbia"
+        id="uuid1_listbox_British_Columbia"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          British Columbia
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Manitoba"
+        id="uuid1_listbox_Manitoba"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Manitoba
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-New_Brunswick"
+        id="uuid1_listbox_New_Brunswick"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          New Brunswick
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Newfoundland_and_Labrador"
+        id="uuid1_listbox_Newfoundland_and_Labrador"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Newfoundland and Labrador
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Northwest_Territories"
+        id="uuid1_listbox_Northwest_Territories"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Northwest Territories
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Nova_Scotia"
+        id="uuid1_listbox_Nova_Scotia"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Nova Scotia
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Nunavut"
+        id="uuid1_listbox_Nunavut"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Nunavut
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Ontario"
+        id="uuid1_listbox_Ontario"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Ontario
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Prince_Edward_Island"
+        id="uuid1_listbox_Prince_Edward_Island"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Prince Edward Island
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Quebec"
+        id="uuid1_listbox_Quebec"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Quebec
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Saskatchewan"
+        id="uuid1_listbox_Saskatchewan"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Saskatchewan
+        </span>
+      </li>
+      <li
+        class="c13"
+        data-testid="listitem-Yukon"
+        id="uuid1_listbox_Yukon"
+        role="option"
+      >
+        <span
+          class="c14"
+        >
+          Yukon
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
