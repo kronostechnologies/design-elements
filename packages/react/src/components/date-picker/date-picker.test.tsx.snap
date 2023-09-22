@@ -1,0 +1,5397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Datepicker has openToDate 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected[tabindex="0"] {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-1x);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 2rem;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2x);
+  line-height: 2rem;
+  width: var(--size-2x);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  height: var(--size-2halfx);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 7rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2halfx);
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+}
+
+.c6:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div>
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c6"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (data-testid) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: var(--size-2halfx);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2halfx);
+  line-height: 2.5rem;
+  width: var(--size-2halfx);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 6.8rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2x);
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+}
+
+.c6:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="some-data-test-id"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c6"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (desktop) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: var(--size-2halfx);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2halfx);
+  line-height: 2.5rem;
+  width: var(--size-2halfx);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 6.8rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2x);
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+}
+
+.c6:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c6"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (disabled) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: var(--size-2halfx);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2halfx);
+  line-height: 2.5rem;
+  width: var(--size-2halfx);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 6.8rem;
+}
+
+.c5.datePickerInput::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput::placeholder {
+  color: #B7BBC2;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #B7BBC2;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2x);
+}
+
+.c6:hover {
+  background-color: none;
+}
+
+.c6:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="text-input"
+          disabled=""
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c6"
+      data-testid="calendar-button"
+      disabled=""
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (invalid) 1`] = `
+.c3 {
+  color: #CD2C23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c5 {
+  margin-left: var(--spacing-base);
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #CD2C23;
+}
+
+.c0:focus {
+  border-color: #CD2C23;
+}
+
+.c0 > :nth-child(2) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 .popper {
+  z-index: 1000;
+}
+
+.c7 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c7 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c7 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c7 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c7 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c7 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c7 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c7 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c7 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c7 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c7 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c7 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c7 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c7 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c7 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c7 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c7 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c7 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c7 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c7 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c7 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c7 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c7 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: var(--size-2halfx);
+}
+
+.c7 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2halfx);
+  line-height: 2.5rem;
+  width: var(--size-2halfx);
+}
+
+label + .c6 {
+  margin-top: var(--spacing-half);
+}
+
+.c8.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #CD2C23;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 6.8rem;
+}
+
+.c8.datePickerInput:focus {
+  border: 1px solid #CD2C23;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c8.datePickerInput:focus {
+  border: 1px solid #CD2C23;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c8.datePickerInput:focus {
+  border: 1px solid #CD2C23;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c8.datePickerInput:focus {
+  border: 1px solid #CD2C23;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2x);
+}
+
+.c9:hover {
+  background-color: #DBDEE1;
+}
+
+.c9:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c9 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    aria-live="polite"
+    class="c3"
+    id="undefined_invalid"
+    role="alert"
+  >
+    <div
+      class="c4"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </div>
+    <span
+      class="c5"
+    >
+      Invalid date
+    </span>
+  </div>
+  <div
+    class="c6 c7"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c8 datePickerInput"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c9"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (mobile) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected[tabindex="0"] {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-1x);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 2rem;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2x);
+  line-height: 2rem;
+  width: var(--size-2x);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  height: var(--size-2halfx);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 7rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2halfx);
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+}
+
+.c6:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c6 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div>
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c6"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (open, desktop) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c10 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c10 input,
+.c10 select,
+.c10 textarea {
+  border-color: #60666E;
+}
+
+.c10:focus {
+  border-color: #006296;
+}
+
+.c10 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2rem;
+  padding-right: var(--spacing-1x);
+  width: 100%;
+}
+
+.c12:hover {
+  cursor: pointer;
+}
+
+.c12 svg {
+  color: #60666E;
+}
+
+.c13 {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  caret-color: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  max-height: 100%;
+  min-width: 0;
+  outline: none;
+  overflow: hidden;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.c13:hover {
+  cursor: pointer;
+}
+
+.c13::-webkit-input-placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c13::-moz-placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c13:-ms-input-placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c13::placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 var(--spacing-3x);
+}
+
+.c6 > button {
+  background-color: #FFFFFF;
+  border: none;
+  height: var(--size-2x);
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c6 > button:focus {
+  outline: none;
+}
+
+.c6 > button:hover {
+  cursor: pointer;
+}
+
+.c7:focus {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  height: 2rem;
+  width: 5rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: var(--size-2halfx);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2halfx);
+  line-height: 2.5rem;
+  width: var(--size-2halfx);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 6.8rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2x);
+}
+
+.c15:hover {
+  background-color: #DBDEE1;
+}
+
+.c15:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c15 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="react-datepicker__tab-loop"
+    >
+      <div
+        class="react-datepicker__tab-loop__start"
+        tabindex="0"
+      />
+      <div
+        class="react-datepicker-popper popper"
+        data-placement="bottom-start"
+        style="position:absolute;left:0;top:0"
+      >
+        <div>
+          <div
+            aria-label="Choose date"
+            aria-live="polite"
+            aria-modal="true"
+            class="react-datepicker"
+            role="dialog"
+          >
+            <span
+              aria-live="polite"
+              class="react-datepicker__aria-live"
+              role="alert"
+            />
+            <div
+              class="react-datepicker__month-container"
+            >
+              <div
+                class="react-datepicker__header react-datepicker__header--custom"
+              >
+                <div
+                  class="c6"
+                  data-testid="calendar-header"
+                >
+                  <button
+                    aria-label="Go to previous month"
+                    class="c7"
+                    data-testid="month-previous"
+                  >
+                    <svg
+                      color="currentColor"
+                      focusable="false"
+                      height="16"
+                      width="16"
+                    />
+                  </button>
+                  <div
+                    class="c8"
+                  >
+                    <div
+                      class="c9"
+                      style="margin-right:8px"
+                    >
+                      <div
+                        class="c10 c11"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="listbox_undefined"
+                          class="c12"
+                          data-testid="input-wrapper"
+                        >
+                          <input
+                            aria-activedescendant="undefined_october"
+                            aria-autocomplete="list"
+                            aria-controls="listbox_undefined"
+                            aria-label="Select a month"
+                            aria-multiline="false"
+                            class="c13"
+                            data-testid="month-select"
+                            type="text"
+                            value="Oct"
+                          />
+                          <button
+                            class="c14"
+                            data-testid="arrow"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              color="currentColor"
+                              focusable="false"
+                              height="16"
+                              width="16"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="c9"
+                    >
+                      <div
+                        class="c10 c11"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="listbox_undefined"
+                          class="c12"
+                          data-testid="input-wrapper"
+                        >
+                          <input
+                            aria-activedescendant="undefined_2010"
+                            aria-autocomplete="list"
+                            aria-controls="listbox_undefined"
+                            aria-label="Select a year"
+                            aria-multiline="false"
+                            class="c13"
+                            data-testid="year-select"
+                            type="text"
+                            value="2010"
+                          />
+                          <button
+                            class="c14"
+                            data-testid="arrow"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              color="currentColor"
+                              focusable="false"
+                              height="16"
+                              width="16"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    aria-label="Go to next month"
+                    class="c7"
+                    data-testid="month-next"
+                    disabled=""
+                  >
+                    <svg
+                      color="currentColor"
+                      focusable="false"
+                      height="16"
+                      width="16"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="react-datepicker__day-names"
+                >
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Su
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Mo
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Tu
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    We
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Th
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Fr
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Sa
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="month  2010-10"
+                class="react-datepicker__month"
+                role="listbox"
+              >
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, September 26th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, September 27th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, September 28th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Wednesday, September 29th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Thursday, September 30th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    30
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Friday, October 1st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--001"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Saturday, October 2nd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    2
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, October 3rd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, October 4th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--004"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, October 5th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--005"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Wednesday, October 6th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--006"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    6
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Thursday, October 7th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--007"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    7
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Friday, October 8th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--008"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    8
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Saturday, October 9th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    9
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, October 10th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="0"
+                    title=""
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 11th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 12th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    12
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 13th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    13
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 14th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    14
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 15th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    15
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 16th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    16
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 17th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    17
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 18th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    18
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 19th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    19
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 20th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    20
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 21st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    21
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 22nd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    22
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 23rd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    23
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 24th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 25th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 26th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 27th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 28th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 29th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 30th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    30
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 31st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    31
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, November 1st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, November 2nd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    2
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, November 3rd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, November 4th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, November 5th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, November 6th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    6
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-datepicker__tab-loop__end"
+        tabindex="0"
+      />
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c15"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
+.c16 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16:focus {
+  outline: none;
+}
+
+.c16:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c16:not(:disabled) {
+  cursor: pointer;
+}
+
+.c16 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c17 {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c17:focus {
+  outline: none;
+}
+
+.c17:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c17:hover,
+.c17[aria-expanded='true'] {
+  background-color: #FFFFFF;
+  border-color: #003A5A;
+  color: #003A5A;
+}
+
+.c17:focus {
+  background-color: #FFFFFF;
+  border-color: #006296;
+  color: #006296;
+}
+
+.c17:disabled {
+  background-color: #FFFFFF;
+  border-color: #84C6EA;
+  color: #84C6EA;
+}
+
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c10 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c10 input,
+.c10 select,
+.c10 textarea {
+  border-color: #60666E;
+}
+
+.c10:focus {
+  border-color: #006296;
+}
+
+.c10 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2rem;
+  padding-right: var(--spacing-1x);
+  width: 100%;
+}
+
+.c12:hover {
+  cursor: pointer;
+}
+
+.c12 svg {
+  color: #60666E;
+}
+
+.c13 {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  caret-color: transparent;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  max-height: 100%;
+  min-width: 0;
+  outline: none;
+  overflow: hidden;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.c13:hover {
+  cursor: pointer;
+}
+
+.c13::-webkit-input-placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c13::-moz-placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c13:-ms-input-placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c13::placeholder {
+  color: #60666E;
+  font-size: 0.875rem;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 var(--spacing-3x);
+}
+
+.c6 > button {
+  background-color: #FFFFFF;
+  border: none;
+  height: var(--size-2x);
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c6 > button:focus {
+  outline: none;
+}
+
+.c6 > button:hover {
+  cursor: pointer;
+}
+
+.c7:focus {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  height: 2rem;
+  width: 5rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected:focus {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-half);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: var(--size-2halfx);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2halfx);
+  line-height: 2.5rem;
+  width: var(--size-2halfx);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 6.8rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c15 {
+  clear: both;
+  padding-top: var(--spacing-1x);
+  text-align: center;
+}
+
+.c18 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2x);
+}
+
+.c18:hover {
+  background-color: #DBDEE1;
+}
+
+.c18:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c18 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="react-datepicker__tab-loop"
+    >
+      <div
+        class="react-datepicker__tab-loop__start"
+        tabindex="0"
+      />
+      <div
+        class="react-datepicker-popper popper"
+        data-placement="bottom-start"
+        style="position:absolute;left:0;top:0"
+      >
+        <div>
+          <div
+            aria-label="Choose date"
+            aria-live="polite"
+            aria-modal="true"
+            class="react-datepicker"
+            role="dialog"
+          >
+            <span
+              aria-live="polite"
+              class="react-datepicker__aria-live"
+              role="alert"
+            />
+            <div
+              class="react-datepicker__month-container"
+            >
+              <div
+                class="react-datepicker__header react-datepicker__header--custom"
+              >
+                <div
+                  class="c6"
+                  data-testid="calendar-header"
+                >
+                  <button
+                    aria-label="Go to previous month"
+                    class="c7"
+                    data-testid="month-previous"
+                  >
+                    <svg
+                      color="currentColor"
+                      focusable="false"
+                      height="16"
+                      width="16"
+                    />
+                  </button>
+                  <div
+                    class="c8"
+                  >
+                    <div
+                      class="c9"
+                      style="margin-right:8px"
+                    >
+                      <div
+                        class="c10 c11"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="listbox_undefined"
+                          class="c12"
+                          data-testid="input-wrapper"
+                        >
+                          <input
+                            aria-activedescendant="undefined_october"
+                            aria-autocomplete="list"
+                            aria-controls="listbox_undefined"
+                            aria-label="Select a month"
+                            aria-multiline="false"
+                            class="c13"
+                            data-testid="month-select"
+                            type="text"
+                            value="Oct"
+                          />
+                          <button
+                            class="c14"
+                            data-testid="arrow"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              color="currentColor"
+                              focusable="false"
+                              height="16"
+                              width="16"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="c9"
+                    >
+                      <div
+                        class="c10 c11"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="listbox_undefined"
+                          class="c12"
+                          data-testid="input-wrapper"
+                        >
+                          <input
+                            aria-activedescendant="undefined_2010"
+                            aria-autocomplete="list"
+                            aria-controls="listbox_undefined"
+                            aria-label="Select a year"
+                            aria-multiline="false"
+                            class="c13"
+                            data-testid="year-select"
+                            type="text"
+                            value="2010"
+                          />
+                          <button
+                            class="c14"
+                            data-testid="arrow"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <svg
+                              color="currentColor"
+                              focusable="false"
+                              height="16"
+                              width="16"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    aria-label="Go to next month"
+                    class="c7"
+                    data-testid="month-next"
+                    disabled=""
+                  >
+                    <svg
+                      color="currentColor"
+                      focusable="false"
+                      height="16"
+                      width="16"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="react-datepicker__day-names"
+                >
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Su
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Mo
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Tu
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    We
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Th
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Fr
+                  </div>
+                  <div
+                    class="react-datepicker__day-name"
+                  >
+                    Sa
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="month  2010-10"
+                class="react-datepicker__month"
+                role="listbox"
+              >
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, September 26th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, September 27th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, September 28th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Wednesday, September 29th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Thursday, September 30th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    30
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Friday, October 1st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--001"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Saturday, October 2nd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    2
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, October 3rd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Monday, October 4th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--004"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Tuesday, October 5th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--005"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Wednesday, October 6th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--006"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    6
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Thursday, October 7th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--007"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    7
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Friday, October 8th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--008"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    8
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Saturday, October 9th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    9
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="Choose Sunday, October 10th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="0"
+                    title=""
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 11th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 12th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    12
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 13th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    13
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 14th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    14
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 15th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    15
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 16th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    16
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 17th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    17
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 18th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    18
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 19th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    19
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 20th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    20
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 21st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    21
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 22nd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    22
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 23rd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    23
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 24th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, October 25th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, October 26th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, October 27th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, October 28th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, October 29th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, October 30th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    30
+                  </div>
+                </div>
+                <div
+                  class="react-datepicker__week"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Sunday, October 31st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    31
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Monday, November 1st, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Tuesday, November 2nd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    2
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Wednesday, November 3rd, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Thursday, November 4th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Friday, November 5th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="Not available Saturday, November 6th, 2010"
+                    aria-selected="false"
+                    class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    role="option"
+                    tabindex="-1"
+                    title=""
+                  >
+                    6
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c15"
+            >
+              <button
+                aria-label="Choose today's date"
+                class="c16 c17"
+                data-testid="today-button"
+                type="button"
+              >
+                Today
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-datepicker__tab-loop__end"
+        tabindex="0"
+      />
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c18"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Datepicker matches snapshot (open, mobile) 1`] = `
+.c2 {
+  color: #000000;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c10 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c10 input,
+.c10 select,
+.c10 textarea {
+  border-color: #60666E;
+}
+
+.c10:focus {
+  border-color: #006296;
+}
+
+.c10 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.5rem;
+  padding-right: var(--spacing-1x);
+  width: 100%;
+}
+
+.c12:hover {
+  cursor: pointer;
+}
+
+.c12 svg {
+  color: #60666E;
+}
+
+.c13 {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  caret-color: transparent;
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  max-height: 100%;
+  min-width: 0;
+  outline: none;
+  overflow: hidden;
+  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.c13:hover {
+  cursor: pointer;
+}
+
+.c13::-webkit-input-placeholder {
+  color: #60666E;
+  font-size: 1rem;
+}
+
+.c13::-moz-placeholder {
+  color: #60666E;
+  font-size: 1rem;
+}
+
+.c13:-ms-input-placeholder {
+  color: #60666E;
+  font-size: 1rem;
+}
+
+.c13::placeholder {
+  color: #60666E;
+  font-size: 1rem;
+}
+
+.c14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x) var(--spacing-3x);
+}
+
+.c6 > button {
+  background-color: #FFFFFF;
+  border: none;
+  height: var(--size-2x);
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c6 > button:focus {
+  outline: none;
+}
+
+.c6 > button:hover {
+  cursor: pointer;
+}
+
+.c7:focus {
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  height: 2.5rem;
+  width: 5.5rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .popper {
+  z-index: 1000;
+}
+
+.c4 .popper[data-placement^='bottom'] {
+  margin-top: 0;
+}
+
+.c4 .react-datepicker {
+  border: 1px solid #DBDEE1;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
+  font-family: var(--font-family);
+  padding: var(--spacing-3x) var(--spacing-2x);
+}
+
+.c4 .react-datepicker-wrapper {
+  width: auto;
+}
+
+.c4 .react-datepicker__day {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: var(--size-2x);
+  line-height: 1.875rem;
+  margin: 0;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day:hover {
+  background-color: #DBDEE1;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day:focus {
+  outline: none;
+}
+
+.c4 .react-datepicker__day--disabled {
+  color: #B7BBC2;
+}
+
+.c4 .react-datepicker__day--disabled:hover {
+  background-color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--keyboard-selected {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #000000;
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--keyboard-selected:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day-names {
+  margin: 0;
+}
+
+.c4 .react-datepicker__day-name {
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  line-height: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__day--outside-month {
+  color: #60666E;
+}
+
+.c4 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__day--selected {
+  background-color: #006296;
+  border-radius: 50%;
+}
+
+.c4 .react-datepicker__day--selected[tabindex="0"] {
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4 .react-datepicker__day--selected:hover {
+  color: #000000;
+}
+
+.c4 .react-datepicker__day--today {
+  color: #006296;
+  font-weight: var(--font-normal);
+}
+
+.c4 .react-datepicker__day--today.react-datepicker__day--selected {
+  color: #FFFFFF;
+}
+
+.c4 .react-datepicker__header {
+  background-color: #FFFFFF;
+  border-bottom: none;
+  margin-bottom: var(--spacing-1x);
+  padding: 0;
+}
+
+.c4 .react-datepicker__month {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c4 .react-datepicker__portal {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day-name {
+  font-size: 1rem;
+  line-height: 2rem;
+  width: var(--size-2x);
+}
+
+.c4 .react-datepicker__portal .react-datepicker__day {
+  height: var(--size-2x);
+  line-height: 2rem;
+  width: var(--size-2x);
+}
+
+label + .c3 {
+  margin-top: var(--spacing-half);
+}
+
+.c5.datePickerInput {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-right: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  height: var(--size-2halfx);
+  padding: var(--spacing-half) 0 var(--spacing-half) var(--spacing-1x);
+  width: 7rem;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c5.datePickerInput:focus {
+  border: 1px solid #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-sizing: border-box;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-2halfx);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: var(--size-2halfx);
+}
+
+.c15:hover {
+  background-color: #DBDEE1;
+}
+
+.c15:focus {
+  border: 1px solid #006296;
+  border-left: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  outline: none;
+  z-index: 10;
+}
+
+.c15 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    date
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div>
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
+          data-testid="text-input"
+          placeholder="YYYY-MM-DD"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="react-datepicker__tab-loop"
+      >
+        <div
+          class="react-datepicker__tab-loop__start"
+          tabindex="0"
+        />
+        <div
+          class="react-datepicker__portal"
+          tabindex="-1"
+        >
+          <div>
+            <div
+              aria-label="Choose date"
+              aria-live="polite"
+              aria-modal="true"
+              class="react-datepicker"
+              role="dialog"
+            >
+              <span
+                aria-live="polite"
+                class="react-datepicker__aria-live"
+                role="alert"
+              />
+              <div
+                class="react-datepicker__month-container"
+              >
+                <div
+                  class="react-datepicker__header react-datepicker__header--custom"
+                >
+                  <div
+                    class="c6"
+                    data-testid="calendar-header"
+                  >
+                    <button
+                      aria-label="Go to previous month"
+                      class="c7"
+                      data-testid="month-previous"
+                    >
+                      <svg
+                        color="currentColor"
+                        focusable="false"
+                        height="26"
+                        width="26"
+                      />
+                    </button>
+                    <div
+                      class="c8"
+                    >
+                      <div
+                        class="c9"
+                        style="margin-right:8px"
+                      >
+                        <div
+                          class="c10 c11"
+                        >
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="listbox_undefined"
+                            class="c12"
+                            data-testid="input-wrapper"
+                          >
+                            <input
+                              aria-activedescendant="undefined_october"
+                              aria-autocomplete="list"
+                              aria-controls="listbox_undefined"
+                              aria-label="Select a month"
+                              aria-multiline="false"
+                              class="c13"
+                              data-testid="month-select"
+                              type="text"
+                              value="Oct"
+                            />
+                            <button
+                              class="c14"
+                              data-testid="arrow"
+                              tabindex="-1"
+                              type="button"
+                            >
+                              <svg
+                                color="currentColor"
+                                focusable="false"
+                                height="24"
+                                width="24"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="c9"
+                      >
+                        <div
+                          class="c10 c11"
+                        >
+                          <div
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="listbox_undefined"
+                            class="c12"
+                            data-testid="input-wrapper"
+                          >
+                            <input
+                              aria-activedescendant="undefined_2010"
+                              aria-autocomplete="list"
+                              aria-controls="listbox_undefined"
+                              aria-label="Select a year"
+                              aria-multiline="false"
+                              class="c13"
+                              data-testid="year-select"
+                              type="text"
+                              value="2010"
+                            />
+                            <button
+                              class="c14"
+                              data-testid="arrow"
+                              tabindex="-1"
+                              type="button"
+                            >
+                              <svg
+                                color="currentColor"
+                                focusable="false"
+                                height="24"
+                                width="24"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      aria-label="Go to next month"
+                      class="c7"
+                      data-testid="month-next"
+                      disabled=""
+                    >
+                      <svg
+                        color="currentColor"
+                        focusable="false"
+                        height="24"
+                        width="24"
+                      />
+                    </button>
+                  </div>
+                  <div
+                    class="react-datepicker__day-names"
+                  >
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      Su
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      Mo
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      Tu
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      We
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      Th
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      Fr
+                    </div>
+                    <div
+                      class="react-datepicker__day-name"
+                    >
+                      Sa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-label="month  2010-10"
+                  class="react-datepicker__month"
+                  role="listbox"
+                >
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, September 26th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      26
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, September 27th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      27
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, September 28th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      28
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, September 29th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      29
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, September 30th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      30
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, October 1st, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--001"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      1
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, October 2nd, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      2
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, October 3rd, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      3
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Monday, October 4th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--004"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      4
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Tuesday, October 5th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--005"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      5
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Wednesday, October 6th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--006"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      6
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Thursday, October 7th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--007"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      7
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Friday, October 8th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--008"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      8
+                    </div>
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Saturday, October 9th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--009 react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      9
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="false"
+                      aria-label="Choose Sunday, October 10th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--010 react-datepicker__day--keyboard-selected react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="0"
+                      title=""
+                    >
+                      10
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Monday, October 11th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      11
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Tuesday, October 12th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      12
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Wednesday, October 13th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      13
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Thursday, October 14th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      14
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Friday, October 15th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--015 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      15
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Saturday, October 16th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--016 react-datepicker__day--disabled react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      16
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Sunday, October 17th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--017 react-datepicker__day--disabled react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      17
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Monday, October 18th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      18
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Tuesday, October 19th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      19
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Wednesday, October 20th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      20
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Thursday, October 21st, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      21
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Friday, October 22nd, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      22
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Saturday, October 23rd, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--disabled react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      23
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Sunday, October 24th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--disabled react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      24
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Monday, October 25th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      25
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Tuesday, October 26th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      26
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Wednesday, October 27th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      27
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Thursday, October 28th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      28
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Friday, October 29th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      29
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Saturday, October 30th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      30
+                    </div>
+                  </div>
+                  <div
+                    class="react-datepicker__week"
+                  >
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Sunday, October 31st, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled react-datepicker__day--weekend"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      31
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Monday, November 1st, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      1
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Tuesday, November 2nd, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      2
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Wednesday, November 3rd, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      3
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Thursday, November 4th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      4
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Friday, November 5th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      5
+                    </div>
+                    <div
+                      aria-disabled="true"
+                      aria-label="Not available Saturday, November 6th, 2010"
+                      aria-selected="false"
+                      class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                      role="option"
+                      tabindex="-1"
+                      title=""
+                    >
+                      6
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="react-datepicker__tab-loop__end"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Choose date"
+      class="c15"
+      data-testid="calendar-button"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="24"
+        width="24"
+      />
+    </button>
+  </div>
+</div>
+`;

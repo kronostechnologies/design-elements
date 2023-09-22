@@ -1,6 +1,6 @@
 import { Button, TextInput } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { FormEventHandler } from 'react';
+import { FormEventHandler, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
@@ -52,7 +52,7 @@ export const WithTooltip: Story = () => (
 export const Required: Story = () => (
     <TextInput
         required
-        label="Last Name (required)"
+        label="Last Name"
         type="text"
         validationErrorMessage="This field is required"
     />
@@ -105,9 +105,40 @@ export const RequiredInForm: Story = () => {
         <form noValidate onSubmit={handleSubmit}>
             <TextInput
                 required
-                label="Last Name (required)"
+                label="Last Name"
                 type="text"
                 validationErrorMessage="This field is required"
+            />
+            <Button type="submit" buttonType="primary">Submit</Button>
+        </form>
+    );
+};
+
+export const FormWithCustomValidation: Story = () => {
+    const [value, setValue] = useState('REFERRAL-111');
+    const [valid, setValid] = useState(true);
+    const validate = (): void => {
+        if (value === 'REFERRAL-111') {
+            setValid(false);
+        } else {
+            setValid(true);
+        }
+    };
+
+    const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+        event.preventDefault();
+        validate();
+    };
+
+    return (
+        <form noValidate onSubmit={handleSubmit}>
+            <TextInput
+                label="Enter your referral number (REFERRAL-111 already exists)"
+                type="text"
+                value={value}
+                onChange={(event) => setValue(event.currentTarget.value)}
+                valid={valid}
+                validationErrorMessage="This referral number already exists"
             />
             <Button type="submit" buttonType="primary">Submit</Button>
         </form>

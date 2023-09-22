@@ -95,6 +95,7 @@ export const Translations = {
         },
         'text-input': {
             validationErrorMessage: 'This input is invalid',
+            required: 'required',
         },
         toast: {
             dismissButtonLabel: 'Dismiss notification',
@@ -199,6 +200,7 @@ export const Translations = {
         },
         'text-input': {
             validationErrorMessage: 'Ce champ est invalide',
+            required: 'obligatoire',
         },
         toast: {
             dismissButtonLabel: 'Rejeter la notification',

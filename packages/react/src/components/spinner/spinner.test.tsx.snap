@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner Matches the snapshot 1`] = `
+.c0 {
+  -webkit-animation: roll 1s infinite;
+  animation: roll 1s infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  fill: #006296;
+  height: 80px;
+  width: 83px;
+}
+
+<svg
+  class="c0"
+/>
+`;

@@ -1,0 +1,801 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1:not(:disabled) {
+  cursor: pointer;
+}
+
+.c1 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003A5A;
+}
+
+.c8 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7[disabled] {
+  color: #B7BBC2;
+  pointer-events: none;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
+<div
+  aria-label="ariaLabel"
+  class="c0"
+  data-testid="nav-container"
+>
+  <button
+    aria-expanded="true"
+    class="c1 c2 c3"
+    data-testid="navigation-button"
+    type="button"
+  >
+    Test Button
+    <svg
+      aria-hidden="true"
+      class="c4"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </button>
+  <ul
+    class="c5 c6"
+    data-testid="dropdown-navDropdown"
+  >
+    <li
+      data-testid="listitem-optionA"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionA-link"
+        href="/testa"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option A
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionB"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionB-link"
+        href="/testb"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option B
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionC"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionC-link"
+        href="/testc"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option C
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionD"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionD-link"
+        href="/testd"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option D
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1:not(:disabled) {
+  cursor: pointer;
+}
+
+.c1 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003A5A;
+}
+
+.c8 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7[disabled] {
+  color: #B7BBC2;
+  pointer-events: none;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
+<nav
+  aria-label="ariaLabel"
+  class="c0"
+  data-testid="nav-container"
+>
+  <button
+    aria-expanded="false"
+    class="c1 c2 c3"
+    data-testid="navigation-button"
+    type="button"
+  >
+    Test Button
+    <svg
+      aria-hidden="true"
+      class="c4"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </button>
+  <ul
+    class="c5 c6"
+    data-testid="dropdown-navDropdown"
+    hidden=""
+  >
+    <li
+      data-testid="listitem-optionA"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionA-link"
+        href="/testa"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option A
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionB"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionB-link"
+        href="/testb"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option B
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionC"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionC-link"
+        href="/testc"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option C
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionD"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionD-link"
+        href="/testd"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option D
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`DropdownNavigation Matches Snapshot 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1:not(:disabled) {
+  cursor: pointer;
+}
+
+.c1 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c2 {
+  background-color: transparent;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2:hover,
+.c2[aria-expanded='true'] {
+  background-color: #003A5A;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.c2:focus {
+  background-color: #012639;
+  border-color: #006296;
+  color: #FFFFFF;
+}
+
+.c2:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: #003A5A;
+}
+
+.c8 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  overflow: hidden;
+  padding: 0 var(--spacing-2x);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7[disabled] {
+  color: #B7BBC2;
+  pointer-events: none;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.19);
+  list-style-type: none;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  text-transform: unset;
+}
+
+.c4 {
+  margin-left: var(--spacing-1x);
+}
+
+.c6 {
+  max-width: 350px;
+  min-width: 200px;
+  right: 0;
+  width: initial;
+}
+
+<div
+  aria-label="ariaLabel"
+  class="c0"
+  data-testid="nav-container"
+>
+  <button
+    aria-expanded="false"
+    class="c1 c2 c3"
+    data-testid="navigation-button"
+    type="button"
+  >
+    Test Button
+    <svg
+      aria-hidden="true"
+      class="c4"
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+  </button>
+  <ul
+    class="c5 c6"
+    data-testid="dropdown-navDropdown"
+    hidden=""
+  >
+    <li
+      data-testid="listitem-optionA"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionA-link"
+        href="/testa"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option A
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionB"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionB-link"
+        href="/testb"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option B
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionC"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionC-link"
+        href="/testc"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option C
+        </span>
+      </a>
+    </li>
+    <li
+      data-testid="listitem-optionD"
+    >
+      <a
+        class="c7"
+        data-testid="listitem-optionD-link"
+        href="/testd"
+        tabindex="0"
+      >
+        <span
+          class="c8"
+        >
+          Option D
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
