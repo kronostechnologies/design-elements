@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import { mountWithTheme } from '../../test-utils/renderer';
-import { AccordionItem, Accordion } from './index';
+import { Accordion } from './index';
 
 describe('AccordionContianer', () => {
     const divElement = document.createElement('div');
@@ -13,168 +13,113 @@ describe('AccordionContianer', () => {
         ReactDOM.unmountComponentAtNode(divElement);
     });
 
-    it('Should only render Accordion child', () => {
+    it('should toggle expansion in single mode', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
         const wrapper = mountWithTheme(
-            <Accordion id="test">
-                <AccordionItem title='Panel 1'>
-                    Content for Panel 1
-                </AccordionItem>
-                <div>test</div>
-                <AccordionItem title='Panel 2'>
-                    Content for Panel 2
-                </AccordionItem>
-            </Accordion>,
+            <Accordion id="test" mode="single" items={items} />,
         );
 
-        const renderedAccordionComponents = wrapper.find('AccordionItem');
-        expect(renderedAccordionComponents).toHaveLength(2);
+        // Initially, no accordion items should be expanded
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(false);
+        expect(wrapper.find('AccordionItem').at(1).prop('expanded')).toBe(false);
+        expect(wrapper.find('AccordionItem').at(2).prop('expanded')).toBe(false);
 
-        // Additional checks, e.g., check the content of the accordion items
-        expect(renderedAccordionComponents.first().text()).toContain('Content for Panel 1');
-        expect(renderedAccordionComponents.last().text()).toContain('Content for Panel 2');
+        // Simulate a click on the first accordion item
+        wrapper.find('button').at(0).simulate('click');
+
+        // Only the first accordion item should be expanded in single mode
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(true);
+        expect(wrapper.find('AccordionItem').at(1).prop('expanded')).toBe(false);
+        expect(wrapper.find('AccordionItem').at(2).prop('expanded')).toBe(false);
     });
 
-    it('Should have the last accordion open by default', () => {
+    it('should toggle expansion in multi mode when item is expanded', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
         const wrapper = mountWithTheme(
-            <Accordion id="test2">
-                <AccordionItem title='Panel 1'>
-                    Content for Panel 1
-                </AccordionItem>
-                <AccordionItem title='Panel 2'>
-                    Content for Panel 2
-                </AccordionItem>
-                <AccordionItem title='Panel 3' expanded>
-                    Content for Panel 3
-                </AccordionItem>
-            </Accordion>,
+            <Accordion id="test" mode="multi" items={items} />,
         );
 
-        const button = wrapper.find('Button').last();
-        const container = wrapper.find('section').last();
-        expect(button.prop('aria-expanded')).toBe(true);
-        expect(container.prop('aria-expanded')).toBe(true);
+        // Initially, both accordion items should not be expanded
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(false);
+        expect(wrapper.find('AccordionItem').at(1).prop('expanded')).toBe(false);
+
+        wrapper.find('button').at(0).simulate('click');
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(true);
+        expect(wrapper.find('AccordionItem').at(1).prop('expanded')).toBe(false);
+
+        wrapper.find('button').at(0).simulate('click');
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(false);
     });
 
-    it('Should have multiple accordions open when using mode=multi', () => {
+    it('should toggle expansion in multi mode when item is not expanded', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
         const wrapper = mountWithTheme(
-            <Accordion id="test3" mode='multi'>
-                <AccordionItem title='Panel 1'>
-                    Content for Panel 1
-                </AccordionItem>
-                <AccordionItem title='Panel 2'>
-                    Content for Panel 2
-                </AccordionItem>
-                <AccordionItem title='Panel 3'>
-                    Content for Panel 3
-                </AccordionItem>
-            </Accordion>,
+            <Accordion id="test" mode="multi" items={items} />,
         );
 
-        // Click first
-        wrapper.find('Button').first().simulate('click');
-        const button = wrapper.find('Button').first();
-        const container = wrapper.find('section').first();
-        expect(button.prop('aria-expanded')).toBe(true);
-        expect(container.prop('aria-expanded')).toBe(true);
+        // Initially, both accordion items should not be expanded
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(false);
+        expect(wrapper.find('AccordionItem').at(1).prop('expanded')).toBe(false);
 
-        // Click last
-        wrapper.find('Button').last().simulate('click');
-        const buttonRefreshed = wrapper.find('Button').first();
-        const containerfreshed = wrapper.find('section').first();
-        const lastButton = wrapper.find('Button').last();
-        const lastContainer = wrapper.find('section').last();
-        expect(buttonRefreshed.prop('aria-expanded')).toBe(true);
-        expect(containerfreshed.prop('aria-expanded')).toBe(true);
-        expect(lastButton.prop('aria-expanded')).toBe(true);
-        expect(lastContainer.prop('aria-expanded')).toBe(true);
+        // Simulate a click on the second accordion item's button to expand it
+        wrapper.find('button').at(1).simulate('click');
+        expect(wrapper.find('AccordionItem').at(0).prop('expanded')).toBe(false);
+        expect(wrapper.find('AccordionItem').at(1).prop('expanded')).toBe(true);
     });
 
-    it('Should have single accordion open when not using mode prop or using mode=single', () => {
+    // Focus management
+    it('should handle ArrowUp key press', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
         const wrapper = mountWithTheme(
-            <Accordion id="test4">
-                <AccordionItem title='Panel 1'>
-                    Content for Panel 1
-                </AccordionItem>
-                <AccordionItem title='Panel 2'>
-                    Content for Panel 2
-                </AccordionItem>
-                <AccordionItem title='Panel 3'>
-                    Content for Panel 3
-                </AccordionItem>
-            </Accordion>,
-        );
-
-        // Click first
-        wrapper.find('Button').first().simulate('click');
-        const button = wrapper.find('Button').first();
-        const container = wrapper.find('section').first();
-        expect(button.prop('aria-expanded')).toBe(true);
-        expect(container.prop('aria-expanded')).toBe(true);
-
-        // Click last
-        wrapper.find('Button').last().simulate('click');
-        const buttonRefreshed = wrapper.find('Button').first();
-        const containerfreshed = wrapper.find('section').first();
-        const lastButton = wrapper.find('Button').last();
-        const lastContainer = wrapper.find('section').last();
-        expect(buttonRefreshed.prop('aria-expanded')).toBe(false);
-        expect(containerfreshed.prop('aria-expanded')).toBe(false);
-        expect(lastButton.prop('aria-expanded')).toBe(true);
-        expect(lastContainer.prop('aria-expanded')).toBe(true);
-    });
-
-    it('Should have the First accordion disabled by default', () => {
-        const wrapper = mountWithTheme(
-            <Accordion id="test5">
-                <AccordionItem title='Panel 1' disabled>
-                    Content for Panel 1
-                </AccordionItem>
-                <AccordionItem title='Panel 2'>
-                    Content for Panel 2
-                </AccordionItem>
-                <AccordionItem title='Panel 3'>
-                    Content for Panel 3
-                </AccordionItem>
-            </Accordion>,
-        );
-
-        const firstButton = wrapper.find('Button').first();
-        expect(firstButton.prop('disabled')).toBe(true);
-    });
-
-    // Focus Management
-    it('Should go to the next Accordion button when ArrowDown is pressed', () => {
-        const wrapper = mountWithTheme(
-            <Accordion id='test6'>
-                <AccordionItem title='Accordion 1'>
-                    <div>Accordion content 1</div>
-                </AccordionItem>
-                <AccordionItem title='Accordion 2'>
-                    <div>Accordion content 2</div>
-                </AccordionItem>
-            </Accordion>,
-            { attachTo: divElement },
-        );
-
-        wrapper.find('Button').first().simulate('keydown', { key: 'ArrowDown' });
-        const activeElement = document.activeElement;
-        expect(activeElement instanceof HTMLButtonElement).toBe(true);
-        expect(activeElement?.id).toBe(wrapper.find('Button').last().prop('id'));
-    });
-
-    it('Should go to the Last Accordion button when ArrowUp is pressed on First Accordion', () => {
-        const wrapper = mountWithTheme(
-            <Accordion id='test7'>
-                <AccordionItem title='Accordion 1'>
-                    <div>Accordion content 1</div>
-                </AccordionItem>
-                <AccordionItem title='Accordion 2'>
-                    <div>Accordion content 2</div>
-                </AccordionItem>
-                <AccordionItem title='Accordion 3'>
-                    <div>Accordion content 3</div>
-                </AccordionItem>
-            </Accordion>,
+            <Accordion id="test" mode="multi" items={items} />,
             { attachTo: divElement },
         );
 
@@ -182,28 +127,96 @@ describe('AccordionContianer', () => {
         const activeElement = document.activeElement;
         expect(activeElement instanceof HTMLButtonElement).toBe(true);
         expect(activeElement?.id).toBe(wrapper.find('Button').last().prop('id'));
+
+        wrapper.detach();
     });
 
-    it('Should go to the First Accordion button when ArrowDown is pressed on Last Accordion', () => {
+    it('should handle ArrowDown key press', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
         const wrapper = mountWithTheme(
-            <Accordion id='test8'>
-                <AccordionItem title='Accordion 1'>
-                    <div>Accordion content 1</div>
-                </AccordionItem>
-                <AccordionItem title='Accordion 2'>
-                    <div>Accordion content 2</div>
-                </AccordionItem>
-                <AccordionItem title='Accordion 3'>
-                    <div>Accordion content 3</div>
-                </AccordionItem>
-            </Accordion>,
+            <Accordion id="test" mode="multi" items={items} />,
             { attachTo: divElement },
         );
 
         wrapper.find('Button').last().simulate('keydown', { key: 'ArrowDown' });
+        const activeElement = document.activeElement;
+        expect(activeElement instanceof HTMLButtonElement).toBe(true);
+        expect(activeElement?.id).toBe(wrapper.find('Button').first().prop('id'));
 
-        const activeElementRefreshed = document.activeElement;
-        expect(activeElementRefreshed instanceof HTMLButtonElement).toBe(true);
-        expect(activeElementRefreshed?.id).toBe(wrapper.find('Button').first().prop('id'));
+        wrapper.detach();
+    });
+
+    it('should handle ArrowDown key press with disabled items', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+                disabled: true,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
+        const wrapper = mountWithTheme(
+            <Accordion id="test" mode="multi" items={items} />,
+            { attachTo: divElement },
+        );
+
+        wrapper.find('Button').first().simulate('keydown', { key: 'ArrowDown' });
+        const activeElement = document.activeElement;
+        expect(activeElement instanceof HTMLButtonElement).toBe(true);
+        expect(activeElement?.id).toBe(wrapper.find('Button').last().prop('id'));
+
+        wrapper.detach();
+    });
+
+    it('should handle ArrowDown key press with disabled items', () => {
+        const items = [
+            {
+                title: 'Panel Title 1',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+            {
+                title: 'Panel Title 2',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+                disabled: true,
+            },
+            {
+                title: 'Panel Title 3',
+                content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            },
+        ];
+
+        const wrapper = mountWithTheme(
+            <Accordion id="test" mode="multi" items={items} />,
+            { attachTo: divElement },
+        );
+
+        wrapper.find('Button').last().simulate('keydown', { key: 'ArrowUp' });
+        const activeElement = document.activeElement;
+        expect(activeElement instanceof HTMLButtonElement).toBe(true);
+        expect(activeElement?.id).toBe(wrapper.find('Button').first().prop('id'));
+
+        wrapper.detach();
     });
 });
