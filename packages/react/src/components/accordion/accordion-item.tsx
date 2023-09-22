@@ -5,7 +5,7 @@ import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';
 
-interface AccordionItemProps {
+export interface AccordionItemProps {
     title: string;
     id?: string;
     headingType?: Type | undefined;
@@ -14,7 +14,7 @@ interface AccordionItemProps {
     disabled?: boolean | undefined;
     onToggle?: () => void;
     onKeyDown?: ((event: React.KeyboardEvent<HTMLButtonElement>) => void) | undefined;
-    children: React.ReactNode;
+    content: React.ReactNode | React.ReactElement;
     buttonRef?: React.RefObject<HTMLButtonElement> | undefined;
 }
 
@@ -127,7 +127,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
     expanded = false,
     onToggle,
     disabled,
-    children,
+    content,
     onKeyDown,
     buttonRef,
 }) => {
@@ -158,7 +158,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                 aria-disabled={disabled}
             >
                 <AccordionBody>
-                    {children}
+                    {content}
                 </AccordionBody>
             </AccordionSection>
         </>

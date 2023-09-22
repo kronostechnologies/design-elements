@@ -1,100 +1,104 @@
-import { AccordionItem, Accordion } from '@equisoft/design-elements-react';
+import { Accordion, ItemsProps } from '@equisoft/design-elements-react';
 import { Meta, StoryFn } from '@storybook/react';
+import { rawCodeParameters } from './utils/parameters';
 
 // eslint-disable-next-line import/no-default-export
-const accordionMeta: Meta<typeof AccordionItem> = {
+const accordionMeta: Meta<typeof Accordion> = {
     title: 'Disclosure/Accordion',
-    component: AccordionItem,
+    component: Accordion,
+    parameters: rawCodeParameters,
     tags: ['autodocs'],
     argTypes: {
-        title: {
-            description: 'Button label',
-            table: { disable: false },
-        },
-        headingTag: {
-            description: 'Choose the right tag for page outline',
-            table: { disable: false },
-        },
         id: {
-            table: { disable: true },
+            table: { disable: false },
         },
-        headingType: {
-            table: { disable: true },
+        items: {
+            table: { disable: false },
         },
-        expanded: {
-            table: { disable: true },
-        },
-        onToggle: {
-            table: { disable: true },
-        },
-        disabled: {
-            table: { disable: true },
-        },
-        onKeyDown: {
-            table: { disable: true },
-        },
-        buttonRef: {
-            table: { disable: true },
+        mode: {
+            table: { disable: false },
         },
     },
 };
 
 export default accordionMeta;
 
-type Story = StoryFn<typeof AccordionItem>;
+type Story = StoryFn<typeof Accordion>;
 
-export const Default: Story = () => (
-    <Accordion id="default">
-        <AccordionItem title="Panel Title 1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-    </Accordion>
-);
+export const Default: Story = () => {
+    const items: ItemsProps[] = [
+        {
+            title: 'Panel Title 1',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 2',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 3',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+    ];
 
-export const MultiOpenToggle: Story = () => (
-    <Accordion mode="multi" id="multi">
-        <AccordionItem title="Panel Title 1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-    </Accordion>
-);
+    return <Accordion id="default" items={items} />;
+};
 
-export const DefaultExpanded: Story = () => (
-    <Accordion id="single">
-        <AccordionItem title="Panel Title 1" expanded>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-    </Accordion>
-);
+export const MultiOpenToggle: Story = () => {
+    const items: ItemsProps[] = [
+        {
+            title: 'Panel Title 1',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 2',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 3',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+    ];
 
-export const DefaultDisabled: Story = () => (
-    <Accordion id="diabled">
-        <AccordionItem title="Panel Title 1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 2" disabled>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-        <AccordionItem title="Panel Title 3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim viverra justo, nisl sit nascetur.</p>
-        </AccordionItem>
-    </Accordion>
-);
+    return <Accordion mode="multi" id="multi" items={items} />;
+};
+
+export const DefaultExpanded: Story = () => {
+    const items: ItemsProps[] = [
+        {
+            title: 'Panel Title 1',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            expanded: true,
+        },
+        {
+            title: 'Panel Title 2',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 3',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+    ];
+
+    return <Accordion id="expanded" items={items} />;
+};
+
+export const DefaultDisabled: Story = () => {
+    const items: ItemsProps[] = [
+        {
+            title: 'Panel Title 1',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+        {
+            title: 'Panel Title 2',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+            disabled: true,
+        },
+        {
+            title: 'Panel Title 3',
+            content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>,
+        },
+    ];
+
+    return <Accordion id="disabled" items={items} />;
+};
