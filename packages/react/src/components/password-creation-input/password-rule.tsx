@@ -78,7 +78,7 @@ export const PasswordRule: VoidFunctionComponent<PasswordConditionProps> = ({
                 <StyledIcon
                     aria-label={`${t('error')},`}
                     focusable
-                    name="alertTriangle"
+                    name="alertOctagon"
                     role="img"
                     size="16"
                 />
