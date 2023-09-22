@@ -42,7 +42,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     const [expandedItemIds, setExpandedItemIds] = useState<string[]>(() => (
         items
             .map((item) => {
-                const uniqueId = `${id}-${item.title}`;
+                const uniqueId = `${id}-${item.title.replace(/\s+/g, '-')}`;
                 return item.expanded ? uniqueId : null;
             })
             .filter((expandedId) => expandedId !== null) as string[]
@@ -98,10 +98,11 @@ export const Accordion: React.FC<AccordionProps> = ({
     return (
         <StyledAccordionGroup>
             {items.map((item, index) => {
-                const uniqueId = `${id}-${item.title}`;
+                const uniqueId = `${id}-${item.title.replace(/\s+/g, '-')}`;
                 return (
                     <AccordionItem
                         key={uniqueId}
+                        id={uniqueId}
                         title={item.title}
                         content={item.content}
                         expanded={expandedItemIds.includes(uniqueId)}
