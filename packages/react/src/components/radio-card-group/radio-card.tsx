@@ -1,5 +1,7 @@
 import {
     ChangeEvent,
+    isValidElement,
+    ReactElement,
     ReactNode,
     useCallback,
     useEffect,
@@ -14,7 +16,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import * as S from './styled-components';
 
-interface RadioCardProps {
+export interface RadioCardProps {
     checked?: boolean;
     children?: ReactNode;
     className?: string;
@@ -46,7 +48,8 @@ export const RadioCard : VoidFunctionComponent<RadioCardProps> = ({
     const { isMobile } = useDeviceContext();
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const inputRef = useRef<HTMLInputElement>(null);
-    const containerRef = useRef<HTMLLabelElement>(null);
+    const labelRef = useRef<HTMLLabelElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [isInputChecked, setInputCheck] = useState(defaultChecked);
     const dataAttributes = useDataAttributes(otherProps);
 
@@ -74,45 +77,48 @@ export const RadioCard : VoidFunctionComponent<RadioCardProps> = ({
     }
 
     return (
-        <S.Label
+        <S.Card
             className={className}
             data-testid={`radio-card-${value}-container`}
             disabled={disabled}
             isMobile={isMobile}
             isChecked={isInputChecked}
             ref={containerRef}
-            onMouseDown={(e) => e.preventDefault()}
+            onMouseDown={(e) => {
+                labelRef.current?.click();
+                e.preventDefault();
+            }}
         >
-            <S.InputContainer
+            <S.HiddenInput
+                checked={checked}
+                data-testid={`radio-card-${value}-input`}
+                defaultChecked={defaultChecked}
                 disabled={disabled}
+                id={id}
                 isMobile={isMobile}
-                isChecked={isInputChecked}
-                key={`${name}-${value}`}
-            >
-                {label}
-                <S.HiddenInput
-                    aria-describedby={`description-${id}`}
-                    checked={checked}
-                    data-testid={`radio-card-${value}-input`}
-                    defaultChecked={defaultChecked}
-                    disabled={disabled}
-                    id={id}
-                    isMobile={isMobile}
-                    name={name}
-                    ref={inputRef}
-                    required={required}
-                    type="radio"
-                    value={value}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    onMouseDown={(e) => e.preventDefault()}
-                    {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-                />
-                <S.RadioInput disabled={disabled} isMobile={isMobile} />
-            </S.InputContainer>
-            <S.Description aria-hidden disabled={disabled} id={`description-${id}`} isMobile={isMobile} isChecked={isInputChecked}>
-                {children}
-            </S.Description>
-        </S.Label>
+                name={name}
+                ref={inputRef}
+                required={required}
+                type="radio"
+                value={value}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                onMouseDown={(e) => e.preventDefault()}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
+            />
+            <S.Label ref={labelRef} htmlFor={id}>
+                <S.Title isChecked={checked} disabled={disabled} isMobile={isMobile}>
+                    <S.RadioInput isChecked={checked} disabled={disabled} isMobile={isMobile} />
+                    {label}
+                </S.Title>
+                <S.Description disabled={disabled} id={`description-${id}`} isMobile={isMobile} isChecked={isInputChecked}>
+                    {children}
+                </S.Description>
+            </S.Label>
+        </S.Card>
     );
 };
+
+export const isRadioCard = (child: unknown): child is ReactElement<RadioCardProps> => (
+    isValidElement<RadioCardProps>(child) && child.type === RadioCard
+);

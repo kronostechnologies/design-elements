@@ -1,0 +1,1001 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
+.c10 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  margin-right: var(--spacing-2x);
+  vertical-align: middle;
+  width: var(--size-1x);
+}
+
+.c1 {
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-weight: var(--font-semi-bold);
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c12 {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-4x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  color: #000000;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  width: 100%;
+}
+
+.c3:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:hover:not([disabled]) {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
+  color: #000000;
+}
+
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4 {
+  height: var(--size-1x);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0.125rem;
+  width: var(--size-1x);
+}
+
+.c4:checked + .c5 > .c7 > .c9 {
+  border: 2px solid #006296;
+}
+
+.c4:checked + .c5 > .c7 > .c9::after {
+  background-color: #006296;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  margin: 6px;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+<fieldset
+  class="c0"
+>
+  <legend
+    class="c1"
+  />
+  <div
+    class="c2 c3"
+    data-testid="radio-card-test-container"
+  >
+    <input
+      checked=""
+      class="c4"
+      data-testid="radio-card-test-input"
+      name="test"
+      type="radio"
+      value="test"
+    />
+    <label
+      class="c5 c6"
+    >
+      <span
+        class="c7 c8"
+      >
+        <span
+          class="c9 c10"
+        />
+        Test
+      </span>
+      <span
+        class="c11 c12"
+        id="description-undefined"
+      >
+        Test description
+      </span>
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
+.c10 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  margin-right: var(--spacing-2x);
+  vertical-align: middle;
+  width: var(--size-1x);
+}
+
+.c1 {
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-weight: var(--font-semi-bold);
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c12 {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-4x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  color: #000000;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  width: 100%;
+}
+
+.c3:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:hover:not([disabled]) {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
+  color: #000000;
+}
+
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4 {
+  height: var(--size-1x);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0.125rem;
+  width: var(--size-1x);
+}
+
+.c4:checked + .c5 > .c7 > .c9 {
+  border: 2px solid #006296;
+}
+
+.c4:checked + .c5 > .c7 > .c9::after {
+  background-color: #006296;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  margin: 6px;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+<fieldset
+  class="c0"
+>
+  <legend
+    class="c1"
+  />
+  <div
+    class="c2 c3"
+    data-testid="radio-card-test-container"
+  >
+    <input
+      class="c4"
+      data-testid="radio-card-test-input"
+      name="test"
+      type="radio"
+      value="test"
+    />
+    <label
+      class="c5 c6"
+    >
+      <span
+        class="c7 c8"
+      >
+        <span
+          class="c9 c10"
+        />
+        Test
+      </span>
+      <span
+        class="c11 c12"
+        id="description-undefined"
+      >
+        Test description
+      </span>
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
+.c10 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1halfx);
+  margin-right: var(--spacing-2x);
+  vertical-align: middle;
+  width: var(--size-1halfx);
+}
+
+.c1 {
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-weight: var(--font-semi-bold);
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c12 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-4x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  color: #000000;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  width: 100%;
+}
+
+.c3:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:hover:not([disabled]) {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
+  color: #000000;
+}
+
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4 {
+  height: var(--size-1halfx);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0.125rem;
+  width: var(--size-1halfx);
+}
+
+.c4:checked + .c5 > .c7 > .c9 {
+  border: 2px solid #006296;
+}
+
+.c4:checked + .c5 > .c7 > .c9::after {
+  background-color: #006296;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  margin: 6px;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+<fieldset
+  class="c0"
+>
+  <legend
+    class="c1"
+  />
+  <div
+    class="c2 c3"
+    data-testid="radio-card-test-container"
+  >
+    <input
+      class="c4"
+      data-testid="radio-card-test-input"
+      name="test"
+      type="radio"
+      value="test"
+    />
+    <label
+      class="c5 c6"
+    >
+      <span
+        class="c7 c8"
+      >
+        <span
+          class="c9 c10"
+        />
+        Test
+      </span>
+      <span
+        class="c11 c12"
+        id="description-undefined"
+      >
+        Test description
+      </span>
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
+.c10 {
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  margin-right: var(--spacing-2x);
+  vertical-align: middle;
+  width: var(--size-1x);
+}
+
+.c1 {
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-weight: var(--font-semi-bold);
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c12 {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-4x);
+}
+
+.c3 {
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  color: #B7BBC2;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  width: 100%;
+}
+
+.c3:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:hover:not([disabled]) {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
+  color: #000000;
+}
+
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4 {
+  height: var(--size-1x);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0.125rem;
+  width: var(--size-1x);
+}
+
+.c4:checked + .c5 > .c7 > .c9 {
+  border: 2px solid #006296;
+}
+
+.c4:checked + .c5 > .c7 > .c9::after {
+  background-color: #006296;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  margin: 6px;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+<fieldset
+  class="c0"
+>
+  <legend
+    class="c1"
+  />
+  <div
+    class="c2 c3"
+    data-testid="radio-card-test-container"
+    disabled=""
+  >
+    <input
+      class="c4"
+      data-testid="radio-card-test-input"
+      disabled=""
+      name="test"
+      type="radio"
+      value="test"
+    />
+    <label
+      class="c5 c6"
+    >
+      <span
+        class="c7 c8"
+        disabled=""
+      >
+        <span
+          class="c9 c10"
+          disabled=""
+        />
+        Test
+      </span>
+      <span
+        class="c11 c12"
+        disabled=""
+        id="description-undefined"
+      >
+        Test description
+      </span>
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
+.c10 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  margin-right: var(--spacing-2x);
+  vertical-align: middle;
+  width: var(--size-1x);
+}
+
+.c1 {
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-weight: var(--font-semi-bold);
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c12 {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-4x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  color: #000000;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  width: 100%;
+}
+
+.c3:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:hover:not([disabled]) {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
+  color: #000000;
+}
+
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4 {
+  height: var(--size-1x);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0.125rem;
+  width: var(--size-1x);
+}
+
+.c4:checked + .c5 > .c7 > .c9 {
+  border: 2px solid #006296;
+}
+
+.c4:checked + .c5 > .c7 > .c9::after {
+  background-color: #006296;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  margin: 6px;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+<fieldset
+  class="c0"
+>
+  <legend
+    class="c1"
+  >
+    Test
+  </legend>
+  <div
+    class="c2 c3"
+    data-testid="radio-card-test-container"
+  >
+    <input
+      class="c4"
+      data-testid="radio-card-test-input"
+      name="test"
+      type="radio"
+      value="test"
+    />
+    <label
+      class="c5 c6"
+    >
+      <span
+        class="c7 c8"
+      >
+        <span
+          class="c9 c10"
+        />
+        Test
+      </span>
+      <span
+        class="c11 c12"
+        id="description-undefined"
+      >
+        Test description
+      </span>
+    </label>
+  </div>
+</fieldset>
+`;
+
+exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
+.c10 {
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1halfx);
+  margin-right: var(--spacing-2x);
+  vertical-align: middle;
+  width: var(--size-1halfx);
+}
+
+.c1 {
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-1x);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-weight: var(--font-semi-bold);
+  -webkit-letter-spacing: 0.24px;
+  -moz-letter-spacing: 0.24px;
+  -ms-letter-spacing: 0.24px;
+  letter-spacing: 0.24px;
+  line-height: 1.5rem;
+  margin-bottom: var(--spacing-half);
+}
+
+.c12 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-left: var(--spacing-4x);
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius-2x);
+  box-sizing: border-box;
+  color: #000000;
+  padding: var(--spacing-2x) var(--spacing-3x);
+  width: 100%;
+}
+
+.c3:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c3:hover:not([disabled]) {
+  background-color: #DBDEE1;
+  border-color: #000000;
+  cursor: pointer;
+}
+
+.c3:hover:not([disabled]) .c11,
+.c3:hover:not([disabled]) .c7 {
+  color: #000000;
+}
+
+.c0 {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .c2:not(:last-child) {
+  margin-bottom: var(--spacing-1x);
+}
+
+.c4 {
+  height: var(--size-1halfx);
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0.125rem;
+  width: var(--size-1halfx);
+}
+
+.c4:checked + .c5 > .c7 > .c9 {
+  border: 2px solid #006296;
+}
+
+.c4:checked + .c5 > .c7 > .c9::after {
+  background-color: #006296;
+  border-radius: 50%;
+  content: '';
+  height: var(--size-half);
+  margin: 6px;
+  position: absolute;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: var(--size-half);
+}
+
+<fieldset
+  class="c0"
+>
+  <legend
+    class="c1"
+  >
+    Test
+  </legend>
+  <div
+    class="c2 c3"
+    data-testid="radio-card-test-container"
+  >
+    <input
+      class="c4"
+      data-testid="radio-card-test-input"
+      name="test"
+      type="radio"
+      value="test"
+    />
+    <label
+      class="c5 c6"
+    >
+      <span
+        class="c7 c8"
+      >
+        <span
+          class="c9 c10"
+        />
+        Test
+      </span>
+      <span
+        class="c11 c12"
+        id="description-undefined"
+      >
+        Test description
+      </span>
+    </label>
+  </div>
+</fieldset>
+`;
