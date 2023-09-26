@@ -5,12 +5,14 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 
 interface RadioCardGroupProps {
     children: ReactElement<RadioCardProps> | ReactElement<RadioCardProps>[];
+    className?: string,
     label?: string;
     orientation?: 'horizontal' | 'vertical';
 }
 
 export const RadioCardGroup: VoidFunctionComponent<RadioCardGroupProps> = ({
     children,
+    className,
     orientation = 'vertical',
     label,
 }) => {
@@ -18,7 +20,7 @@ export const RadioCardGroup: VoidFunctionComponent<RadioCardGroupProps> = ({
     const radioCards = useMemo(() => React.Children.toArray(children).filter(isRadioCard), [children]);
 
     return (
-        <Fieldset horizontal={orientation === 'horizontal'}>
+        <Fieldset className={className} horizontal={orientation === 'horizontal'}>
             <Legend isMobile={isMobile}>
                 {label}
             </Legend>
