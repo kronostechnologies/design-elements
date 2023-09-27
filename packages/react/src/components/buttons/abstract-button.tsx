@@ -93,120 +93,50 @@ export interface ButtonTypeStyles {
     theme: Theme;
 }
 
-const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
     inverted,
+    buttonType,
     theme,
-}) => css`
-    background-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    color: ${inverted ? theme.main['primary-1.1'] : theme.greys.white};
+}) => {
+    const token = theme.tokens[`button-${buttonType}`];
 
-    &:hover,
-    &[aria-expanded='true'] {
-        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
-        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
-        ${inverted && `color: ${theme.main['primary-1.3']}`}
-    }
+    return css`
+        background-color: ${inverted ? token['inverted-bg'] : token.bg};
+        border-color: ${inverted ? token['inverted-border'] : token.border};
+        color: ${inverted ? token['inverted-color'] : token.color};
 
-    &:disabled {
-        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
-        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
-        ${inverted && `color: ${theme.main['primary-1.2']}`}
-    }
-`;
-
-const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: ${inverted ? 'transparent' : theme.greys.white};
-    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        border-color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
-        color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
-    }
-
-    &:disabled {
-        border-color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
-        color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
-    }
-
-    ${inverted && `&:focus {
-        background-color: ${theme.main['primary-2']};
-        border-color: ${theme.main['primary-1.1']}
-        color: ${theme.greys.white};
-    }`}
-`;
-
-const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: transparent;
-    border-color: transparent;
-    color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        background-color: ${inverted ? theme.main['primary-1.3'] : theme.greys.grey};
-        color: ${inverted ? theme.greys.white : theme.greys.black};
-    }
-
-    &:disabled {
-        background-color: transparent;
-        color: ${inverted ? theme.main['primary-1.3'] : theme.greys['mid-grey']};
-    }
-
-    &:focus {
-        background-color: ${inverted ? theme.main['primary-2'] : theme.greys.white};
-        border-color: ${theme.main['primary-1.1']};
-        color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
-    }
-`;
-
-const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    border-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    color: ${inverted ? theme.notifications['alert-2.1'] : theme.greys.white};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        /* TODO change colors when updating thematization */
-        background-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        border-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        color: ${inverted ? '#7B1A15' : theme.greys.white};
-    }
-
-    &:disabled {
-        &,
-        &:focus,
-        &:hover {
-            /* TODO change colors when updating thematization */
-            background-color: ${inverted ? theme.greys.white : '#F99D99'};
-            border-color: ${inverted ? theme.greys.white : '#F99D99'};
-            color: ${inverted ? '#F99D99' : theme.greys.white};
+        &:hover,
+        &[aria-expanded='true'] {
+            background-color: ${inverted ? token['inverted-hover-bg'] : token['hover-bg']};
+            border-color: ${inverted ? token['inverted-hover-border'] : token['hover-border']};
+            color: ${inverted ? token['inverted-hover-color'] : token['hover-color']};
         }
-    }
-`;
+
+        &:focus {
+            background-color: ${inverted ? token['inverted-focus-bg'] : token['focus-bg']};
+            border-color: ${inverted ? token['inverted-focus-border'] : token['focus-border']};
+            color: ${inverted ? token['inverted-focus-color'] : token['focus-color']};
+        }
+
+        &:disabled {
+            background-color: ${inverted ? token['inverted-disabled-bg'] : token['disabled-bg']};
+            border-color: ${inverted ? token['inverted-disabled-border'] : token['disabled-border']};
+            color: ${inverted ? token['inverted-disabled-color'] : token['disabled-color']};
+            ${buttonType === 'destructive' ? css`
+                &,
+                &:focus,
+                &:hover {
+                    background-color: ${inverted ? token['inverted-disabled-bg'] : token['disabled-bg']};
+                    border-color: ${inverted ? token['inverted-disabled-border'] : token['disabled-border']};
+                    color: ${inverted ? token['inverted-disabled-color'] : token['disabled-color']};
+                }
+            ` : ''}
+        }
+    `;
+};
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = (props) => css`
     ${focus(props, true)};
-    ${() => {
-        switch (props.buttonType) {
-            case 'primary':
-                return getPrimaryButtonStyles(props);
-            case 'secondary':
-                return getSecondaryButtonStyles(props);
-            case 'tertiary':
-                return getTertiaryButtonStyles(props);
-            case 'destructive':
-                return getDestructiveButtonStyles(props);
-        }
-    }}
+    ${getButtonStyles(props)};
+    
 `;

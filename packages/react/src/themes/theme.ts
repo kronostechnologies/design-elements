@@ -63,7 +63,7 @@ export interface Theme {
         'informative-70': string;
     };
     tokens: {
-        'bt-primary': {
+        'button-primary': {
             bg: string;
             border: string;
             color: string;
@@ -89,7 +89,7 @@ export interface Theme {
             'inverted-disabled-border': string;
             'inverted-disabled-color': string;
         };
-        'bt-secondary': {
+        'button-secondary': {
             bg: string;
             border: string;
             color: string;
@@ -115,7 +115,7 @@ export interface Theme {
             'inverted-disabled-border': string;
             'inverted-disabled-color': string;
         };
-        'bt-tertiary': {
+        'button-tertiary': {
             bg: string;
             border: string;
             color: string;
@@ -141,7 +141,7 @@ export interface Theme {
             'inverted-disabled-border': string;
             'inverted-disabled-color': string;
         };
-        'bt-destructive': {
+        'button-destructive': {
             bg: string;
             border: string;
             color: string;
@@ -167,7 +167,7 @@ export interface Theme {
             'inverted-disabled-border': string;
             'inverted-disabled-color': string;
         };
-        'bt-search': {
+        'button-search': {
             bg: string;
             border: string;
             color: string;
