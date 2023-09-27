@@ -104,6 +104,7 @@ interface RadioButtonProps {
 }
 
 interface RadioButtonGroupProps {
+    className?: string;
     id?: string;
     label?: string;
     tooltip?: TooltipProps;
@@ -117,6 +118,7 @@ interface RadioButtonGroupProps {
 
 export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     buttons,
+    className,
     groupName,
     label,
     tooltip,
@@ -135,7 +137,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     }, [onChange, setCurrentChecked]);
 
     return (
-        <StyledFieldset>
+        <StyledFieldset className={className}>
             {label && (
                 <StyledLegend isMobile={isMobile}>
                     {label}
