@@ -86,8 +86,7 @@ export { ProgressCircle } from './components/progress-circle/progress-circle';
 export { Pagination } from './components/pagination/pagination';
 
 // Themes
-export { equisoftTheme } from './themes/equisoft';
-export { testTheme } from './themes/test-theme';
+export { equisoftTheme, customTheme } from './themes';
 export { injectMainCss } from './styles';
 export { Theme } from './themes/theme';
 
