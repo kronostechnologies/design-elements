@@ -10,7 +10,7 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
         'focus-border': `${main['primary-1.1']}`,
         'modal-overlay-background-color': 'rgba(0, 0, 0, 0.75)',
         'overlay-box-shadow': '0 10px 20px 0 rgba(0, 0, 0, 0.19)',
-        'bt-primary': {
+        'button-primary': {
             bg: `${main['brand-50']}`,
             'inverted-bg': `${greys.white}`,
             border: `${main['brand-50']}`,
@@ -39,7 +39,7 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
             'disabled-color': `${greys.white}`,
             'inverted-disabled-color': `${main['brand-20']}`,
         },
-        'bt-secondary': {
+        'button-secondary': {
             bg: `${greys.white}`,
             'inverted-bg': 'transparent',
             border: `${main['brand-50']}`,
@@ -68,7 +68,7 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
             'disabled-color': `${main['brand-20']}`,
             'inverted-disabled-color': `${main['brand-70']}`,
         },
-        'bt-tertiary': {
+        'button-tertiary': {
             bg: 'transparent',
             'inverted-bg': 'transparent',
             border: 'transparent',
@@ -97,7 +97,7 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
             'disabled-color': `${greys['neutral-30']}`,
             'inverted-disabled-color': `${main['brand-70']}`,
         },
-        'bt-destructive': {
+        'button-destructive': {
             bg: `${notifications['alert-50']}`,
             'inverted-bg': `${greys.white}`,
             border: `${notifications['alert-50']}`,
@@ -126,7 +126,7 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
             'disabled-color': `${greys.white}`,
             'inverted-disabled-color': `${notifications['alert-20']}`,
         },
-        'bt-search': {
+        'button-search': {
             bg: `${greys.white}`,
             border: `${greys['neutral-65']}`,
             color: `${greys['neutral-65']}`,
