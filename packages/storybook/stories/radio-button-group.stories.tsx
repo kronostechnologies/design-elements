@@ -41,6 +41,7 @@ export const WithTooltip: Story = () => (
         buttons={buttons}
     />
 );
+
 export const WithContent: Story = () => (
     <RadioButtonGroup
         label="Content"
@@ -52,6 +53,23 @@ export const WithContent: Story = () => (
     />
 );
 WithContent.parameters = rawCodeParameters;
+
+export const DefaultCheckedWithContent: Story = () => (
+    <RadioButtonGroup
+        label="Content"
+        groupName="content2"
+        buttons={[
+            {
+                defaultChecked: true,
+                label: 'With content',
+                value: 'with',
+                content: { element: <p>This is some content</p> },
+            },
+            { label: 'Without content', value: 'without' },
+        ]}
+    />
+);
+DefaultCheckedWithContent.parameters = rawCodeParameters;
 
 export const Controlled: Story = () => {
     const [value, setValue] = useState('red');
