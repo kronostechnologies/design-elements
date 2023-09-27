@@ -83,11 +83,19 @@ exports[`Global Navigation matches snapshot 1`] = `
 .c3[aria-expanded='true'] {
   background-color: #003A5A;
   border-color: #003A5A;
+  color: #FFFFFF;
+}
+
+.c3:focus {
+  background-color: #006296;
+  border-color: #006296;
+  color: #FFFFFF;
 }
 
 .c3:disabled {
   background-color: #84C6EA;
   border-color: #84C6EA;
+  color: #FFFFFF;
 }
 
 .c3 > svg {
