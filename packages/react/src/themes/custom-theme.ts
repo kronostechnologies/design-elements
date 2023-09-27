@@ -1,13 +1,18 @@
 import { mergedTheme } from './merge-pallets';
-import { CustomTheme } from './custom-types';
 import { Theme } from './theme';
-import { tokens } from './tokens';
+import { generateTokens } from './tokens';
 
 const { main, greys, notifications } = mergedTheme;
 
-export const customTheme: CustomTheme & Pick<Theme, 'tokens'> = {
+const minimalCustomTheme: Omit<Theme, 'tokens'> = {
     main,
     greys,
     notifications,
-    tokens,
+};
+
+const minimalCustomTokens = generateTokens(minimalCustomTheme);
+
+export const customTheme: Theme = {
+    ...minimalCustomTheme,
+    tokens: minimalCustomTokens,
 };
