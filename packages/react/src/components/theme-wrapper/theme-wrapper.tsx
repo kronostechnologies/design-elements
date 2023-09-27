@@ -21,14 +21,7 @@ export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps
     isolateStyles = false,
     theme,
 }) => {
-    let selectedTheme = theme;
-    if (selectedTheme) {
-        if (Object.entries(selectedTheme).length === 0 && selectedTheme.constructor === Object) {
-            selectedTheme = equisoftTheme;
-        }
-    } else {
-        selectedTheme = equisoftTheme;
-    }
+    const selectedTheme = theme || equisoftTheme;
 
     let content: ReactNode;
     if (isolateStyles) {
