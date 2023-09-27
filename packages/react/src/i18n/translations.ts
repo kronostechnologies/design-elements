@@ -31,6 +31,9 @@ export const Translations = {
         'global-banner': {
             ignore: 'Ignore',
         },
+        'menu-button': {
+            buttonAriaLabel: 'Open menu',
+        },
         modal: {
             closeButtonLabel: 'Close dialog',
         },
@@ -135,6 +138,9 @@ export const Translations = {
         },
         'global-banner': {
             ignore: 'Ignorer',
+        },
+        'menu-button': {
+            buttonAriaLabel: 'Ouvrir le menu',
         },
         modal: {
             closeButtonLabel: 'Fermer le dialogue',

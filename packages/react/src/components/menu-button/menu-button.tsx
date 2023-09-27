@@ -6,6 +6,7 @@ import { IconButton } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
 import { Menu, MenuItem } from '../menu/menu';
 import { eventIsInside } from '../../utils/events';
+import { useTranslation } from '../../i18n/use-translation';
 
 export type MenuPlacement = 'right' | 'left';
 
@@ -30,6 +31,7 @@ export interface MenuButtonProps {
     className?: string;
     defaultOpen?: boolean;
     iconName?: IconName;
+    iconLabel?: string;
     inverted?: boolean;
     options: MenuItem[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
@@ -43,11 +45,14 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
     className,
     defaultOpen,
     iconName,
+    iconLabel,
     inverted,
     options,
     onMenuVisibilityChanged,
     menuPlacement = 'right',
 }) => {
+    const { t } = useTranslation('menu-button');
+
     const [visible, setVisible] = useState(!!defaultOpen);
     const [initialFocusIndex, setInitialFocusIndex] = useState(0);
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -123,7 +128,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> =
                     autofocus={autofocus}
                     data-testid="menu-button"
                     type="button"
-                    aria-label="Menu"
+                    label={iconLabel ?? t('buttonAriaLabel')}
                     aria-haspopup="menu"
                     aria-expanded={visible}
                     buttonType={buttonType}
