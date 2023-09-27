@@ -64,9 +64,9 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
             'disabled-bg': `${greys.white}`,
             'inverted-disabled-bg': 'transparent',
             'disabled-border': `${main['brand-20']}`,
-            'inverted-disabled-border': `${main['brand-70']}`,
+            'inverted-disabled-border': `${main['brand-50']}`,
             'disabled-color': `${main['brand-20']}`,
-            'inverted-disabled-color': `${main['brand-70']}`,
+            'inverted-disabled-color': `${main['brand-50']}`,
         },
         'button-tertiary': {
             bg: 'transparent',
@@ -95,7 +95,7 @@ export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] =>
             'disabled-border': 'transparent',
             'inverted-disabled-border': 'transparent',
             'disabled-color': `${greys['neutral-30']}`,
-            'inverted-disabled-color': `${main['brand-70']}`,
+            'inverted-disabled-color': `${main['brand-50']}`,
         },
         'button-destructive': {
             bg: `${notifications['alert-50']}`,
