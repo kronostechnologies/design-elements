@@ -1,6 +1,6 @@
-import { Theme } from './theme';
+import { Theme } from '../theme';
 import { CustomTheme } from './custom-types';
-import * as equisoft from './equisoft-pallet';
+import * as equisoft from '../equisoft-pallet';
 import * as custom from './custom-pallet';
 
 // overwrite equisoft theme with custom theme and if custom theme is missing a key, use equisoft theme
