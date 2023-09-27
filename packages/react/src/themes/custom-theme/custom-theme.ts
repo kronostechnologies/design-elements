@@ -1,6 +1,6 @@
 import { mergedTheme } from './merge-pallets';
-import { Theme } from './theme';
-import { generateTokens } from './tokens';
+import { Theme } from '../theme';
+import { generateTokens } from '../tokens';
 
 const { main, greys, notifications } = mergedTheme;
 
