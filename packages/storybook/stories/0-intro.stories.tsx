@@ -1,4 +1,4 @@
-import { Button, DesignSystem, SectionalBanner, testTheme } from '@equisoft/design-elements-react';
+import { Button, DesignSystem, SectionalBanner, customTheme } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
@@ -14,7 +14,7 @@ export const Theming: Story = {
     render() {
         return (
             <>
-                <DesignSystem theme={testTheme}>
+                <DesignSystem theme={customTheme}>
                     <div>
                         <h3>Custom theme</h3>
                         <Button label="Primary" buttonType="primary" />
