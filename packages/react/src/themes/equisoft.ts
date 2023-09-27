@@ -1,8 +1,8 @@
-import * as equisoftPallet from './equisoft-pallet';
+import * as equisoftPalette from './equisoft-palette';
 import { Theme } from './theme';
 import { generateTokens } from './tokens';
 
-const { main, greys, notifications } = equisoftPallet;
+const { main, greys, notifications } = equisoftPalette;
 
 const minimalTheme: Omit<Theme, 'tokens'> = {
     main,

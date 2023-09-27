@@ -1,4 +1,4 @@
-import { mergedTheme } from './merge-pallets';
+import { mergedTheme } from './merge-palettes';
 import { Theme } from '../theme';
 import { generateTokens } from '../tokens';
 
