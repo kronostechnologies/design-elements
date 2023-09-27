@@ -1,6 +1,4 @@
-import { greys } from './greys';
-import { main } from './main';
-import { notifications } from './notifications';
+import { main, greys, notifications } from './equisoft-pallet';
 import { Theme } from './theme';
 import { tokens } from './tokens';
 
