@@ -24,8 +24,8 @@ interface CardProps {
 }
 
 export const RadioInput = styled.span<CardProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['dark-grey'])};
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -37,31 +37,31 @@ export const RadioInput = styled.span<CardProps>`
 
 function getContentColor({ disabled, theme }: InputContainerProps): string {
     if (disabled) {
-        return theme.greys['mid-grey'];
+        return theme.colors['mid-grey'];
     }
     // TODO: This should be changed to whatever #1B1C1E is with new colors
-    return theme.greys.black;
+    return theme.colors.black;
 }
 
 function getLabelBackgroundColor({ disabled, isChecked, theme }: CardProps): string {
     if (disabled) {
-        return theme.greys['light-grey'];
+        return theme.colors['light-grey'];
     }
     if (isChecked) {
-        return theme.main['primary-1.4'];
+        return theme.colors['primary-1.4'];
     }
-    return theme.greys.white;
+    return theme.colors.white;
 }
 
 function getLabelBorderColor({ disabled, isChecked, theme }: CardProps): string {
     if (disabled) {
-        return theme.greys.grey;
+        return theme.colors.grey;
     }
     if (isChecked) {
-        return theme.main['primary-1.1'];
+        return theme.colors['primary-1.1'];
     }
     // TODO: This should be changed to whatever #1B1C1E is with new colors
-    return theme.greys.black;
+    return theme.colors.black;
 }
 
 export const Legend = styled.legend<{ isMobile: boolean }>`
@@ -104,15 +104,15 @@ export const Card = styled.div<CardProps>`
     }
 
     &:hover:not([disabled]) {
-        background-color: ${({ theme }) => theme.greys.grey};
-        border-color: ${({ theme }) => theme.greys.black};
+        background-color: ${({ theme }) => theme.colors.grey};
+        border-color: ${({ theme }) => theme.colors.black};
         cursor: pointer;
 
         /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
 
         ${Description},
         ${Title} {
-            color: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.colors.black};
         }
     }
 `;
@@ -139,10 +139,10 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
     width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 
     &:checked + ${Label} > ${Title} > ${RadioInput} {
-        border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
+        border: 2px solid ${({ theme }) => theme.colors['primary-1.1']};
 
         &::after {
-            background-color: ${({ theme }) => theme.main['primary-1.1']};
+            background-color: ${({ theme }) => theme.colors['primary-1.1']};
             border-radius: 50%;
             content: '';
             height: var(--size-half);

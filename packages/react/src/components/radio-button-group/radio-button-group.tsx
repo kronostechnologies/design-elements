@@ -13,7 +13,7 @@ const StyledFieldset = styled.fieldset`
 `;
 
 const StyledLegend = styled.legend<{isMobile: boolean}>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
@@ -50,10 +50,10 @@ const StyledLabel = styled.label`
                 width: var(--size-1x);
 
                 &:checked + .radioInput {
-                    border: 2px solid ${props.theme.main['primary-1.1']};
+                    border: 2px solid ${props.theme.colors['primary-1.1']};
 
                     &::after {
-                        background-color: ${props.theme.main['primary-1.1']};
+                        background-color: ${props.theme.colors['primary-1.1']};
                         border-radius: 50%;
                         content: '';
                         height: var(--size-half);
@@ -69,8 +69,8 @@ const StyledLabel = styled.label`
             }
 
             .radioInput {
-                background-color: ${props.disabled ? props.theme.greys['light-grey'] : props.theme.greys.white};
-                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.greys['dark-grey']};
+                background-color: ${props.disabled ? props.theme.colors['light-grey'] : props.theme.colors.white};
+                border: 1px solid ${props.disabled ? props.theme.colors.grey : props.theme.colors['dark-grey']};
                 border-radius: 50%;
                 box-sizing: border-box;
                 display: inline-block;
@@ -81,7 +81,7 @@ const StyledLabel = styled.label`
             }
 
             &:hover .radioInput {
-                border: 1px solid ${props.disabled ? props.theme.greys.grey : props.theme.main['primary-1.1']};
+                border: 1px solid ${props.disabled ? props.theme.colors.grey : props.theme.colors['primary-1.1']};
             }
             `}
 `;

@@ -55,12 +55,12 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
 
 function abstractContainer(
     bgColor: string,
-    color?: keyof Theme['notifications'],
-    iconColor: keyof Theme['notifications'] | undefined = color,
+    color?: keyof Theme['colors'],
+    iconColor: keyof Theme['colors'] | undefined = color,
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
         background-color: ${bgColor};
-        border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
+        border: 1px solid ${(props) => (color ? props.theme.colors[color] : props.theme.colors['primary-3'])};
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
         padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)')};
@@ -74,7 +74,7 @@ function abstractContainer(
         ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
-            color: ${(props) => (iconColor ? props.theme.notifications[iconColor] : props.theme.main['primary-3'])};
+            color: ${(props) => (iconColor ? props.theme.colors[iconColor] : props.theme.colors['primary-3'])};
             flex: 0 0 auto;
             height: 1rem;
             width: 1rem;
