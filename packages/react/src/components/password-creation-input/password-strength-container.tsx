@@ -6,7 +6,7 @@ import { PasswordStrengthMeter } from './password-strength-meter';
 import { PasswordStrengthEnum } from './password-strength.enum';
 
 const PasswordStrengthLabel = styled.div`
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.colors['dark-grey']};
     font-size: 0.75rem;
     line-height: 1.25rem;
 `;

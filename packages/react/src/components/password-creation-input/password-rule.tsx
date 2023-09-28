@@ -10,13 +10,13 @@ interface StyledLiProps {
 
 function getColor({ isEmpty, isSuccess, theme }: StyledProps<StyledLiProps>): string {
     if (isEmpty) {
-        return theme.greys['dark-grey'];
+        return theme.colors['dark-grey'];
     }
     if (isSuccess) {
-        return theme.notifications['success-1.1'];
+        return theme.colors['success-1.1'];
     }
 
-    return theme.notifications['alert-2.1'];
+    return theme.colors['alert-2.1'];
 }
 
 interface ContainerProps {

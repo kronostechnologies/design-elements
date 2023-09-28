@@ -17,10 +17,10 @@ const Pages = styled.ol`
 
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     align-items: center;
-    background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
+    background-color: ${(props) => (props.isSelected ? props.theme.colors['primary-1.1'] : props.theme.colors.white)};
     border-radius: 1rem;
     box-sizing: border-box;
-    color: ${(props) => (props.isSelected ? props.theme.greys.white : props.theme.greys.black)};
+    color: ${(props) => (props.isSelected ? props.theme.colors.white : props.theme.colors.black)};
     display: inline-flex;
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
@@ -35,7 +35,7 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     ${focus};
 
     &:hover {
-        background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey)};
+        background-color: ${(props) => (props.isSelected ? props.theme.colors['primary-1.1'] : props.theme.colors.grey)};
         cursor: ${(props) => (props.isSelected ? 'default' : 'pointer')};
     }
 `;

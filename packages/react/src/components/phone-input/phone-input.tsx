@@ -34,7 +34,7 @@ interface PhoneInputProps {
 const MaskContainer = styled.div<{ isMobile: boolean }>`
     background: transparent;
     bottom: 1px;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.colors['dark-grey']};
     font-family: inherit;
     font-size: ${({ isMobile }) => (isMobile ? '1' : '0.875')}rem;
     left: 2px;
