@@ -13,10 +13,10 @@ const Wrapper = styled.div`
 
 const buttonStyles = css`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background-color: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors['dark-grey']};
     border-left: none;
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.colors['dark-grey']};
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -27,13 +27,13 @@ const buttonStyles = css`
     }
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.colors.grey};
     }
 
     &:disabled {
-        background-color: ${({ theme }) => theme.greys['light-grey']};
-        border-color: ${({ theme }) => theme.greys.grey};
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        background-color: ${({ theme }) => theme.colors['light-grey']};
+        border-color: ${({ theme }) => theme.colors.grey};
+        color: ${({ theme }) => theme.colors['mid-grey']};
         cursor: default;
     }
 `;

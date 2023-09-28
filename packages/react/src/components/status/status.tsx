@@ -7,11 +7,11 @@ export type StatusType = 'enabled' | 'disabled' | 'blocked';
 function getBackgroundColor(type: StatusType, theme: Theme): string {
     switch (type) {
         case 'enabled':
-            return theme.notifications['success-1.1'];
+            return theme.colors['success-1.1'];
         case 'disabled':
-            return theme.greys.white;
+            return theme.colors.white;
         case 'blocked':
-            return theme.notifications['alert-2.1'];
+            return theme.colors['alert-2.1'];
     }
 }
 
@@ -19,12 +19,12 @@ const Wrapper = styled.div<{ type: StatusType }>`
     align-items: center;
     display: flex;
 
-    ${({ type, theme }) => type === 'disabled' && `color: ${theme.greys['dark-grey']}`}
+    ${({ type, theme }) => type === 'disabled' && `color: ${theme.colors['dark-grey']}`}
 `;
 
 const Circle = styled.div<{ type: StatusType }>`
     background-color: ${({ type, theme }) => getBackgroundColor(type, theme)};
-    border: ${({ type, theme }) => (type === 'disabled' ? `1px solid ${theme.greys['dark-grey']}` : 'none')};
+    border: ${({ type, theme }) => (type === 'disabled' ? `1px solid ${theme.colors['dark-grey']}` : 'none')};
     border-radius: 50%;
     box-sizing: border-box;
     height: 0.625rem;

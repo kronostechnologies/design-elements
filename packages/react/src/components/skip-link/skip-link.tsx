@@ -7,7 +7,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 const StyledLink = styled.a<{ isMobile: boolean }>`
     ${defaultButtonStyles}
 
-    color: ${({ theme }) => theme.main['primary-1.1']};
+    color: ${({ theme }) => theme.colors['primary-1.1']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     font-weight: var(--font-normal);
     letter-spacing: 0.015rem;
@@ -23,7 +23,7 @@ const StyledLink = styled.a<{ isMobile: boolean }>`
     }
 
     &:focus {
-        background-color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.colors.white};
         position: absolute;
     }
 `;
