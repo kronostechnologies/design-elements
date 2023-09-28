@@ -23,7 +23,7 @@ const StyledGroup = styled.ul`
     padding: 0;
 
     :not(:last-child)::after {
-        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
         content: '';
         display: block;
         margin: 0 var(--spacing-2x);

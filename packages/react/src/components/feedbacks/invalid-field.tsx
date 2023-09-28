@@ -4,7 +4,7 @@ import { useDeviceContext } from '../device-context-provider/device-context-prov
 import { Icon } from '../icon/icon';
 
 const Field = styled.div<{ isMobile: boolean }>`
-    color: ${(props) => props.theme.notifications['alert-2.1']};
+    color: ${(props) => props.theme.colors['alert-2.1']};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);

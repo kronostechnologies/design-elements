@@ -31,7 +31,7 @@ interface LinkProps {
 
 const NavItemStyle = css<LinkProps>`
     align-items: center;
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     height: ${({ $hasIcon, $device: { isMobile, isTablet } }) => ((isTablet || isMobile || $hasIcon) ? 2.5 : 2)}rem;
@@ -43,14 +43,14 @@ const NavItemStyle = css<LinkProps>`
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ disabled, theme }) => (disabled ? 'transparent' : theme.greys.grey)};
+        background-color: ${({ disabled, theme }) => (disabled ? 'transparent' : theme.colors.grey)};
     }
 
     &[disabled],
     &[disabled] * {
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.colors['mid-grey']};
         cursor: default;
-        fill: ${({ theme }) => theme.greys['mid-grey']};
+        fill: ${({ theme }) => theme.colors['mid-grey']};
         pointer-events: none;
     }
 `;
