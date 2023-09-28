@@ -16,7 +16,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 const checkboxWidth = 'var(--size-1x)';
 
 const iconStyles = css`
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.colors.white};
     display: none;
     height: 100%;
     left: 0;
@@ -34,8 +34,8 @@ const IndeterminateIcon = styled(Icon).attrs({ name: 'minus' })`
 
 const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     align-self: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['dark-grey'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: inline-block;
@@ -46,7 +46,7 @@ const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     width: ${checkboxWidth};
 
     &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['primary-1.1'])};
     }
 `;
 
@@ -57,8 +57,8 @@ const StyledInput = styled.input`
     width: 0;
 
     &:checked + ${CustomCheckbox} {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
-        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        background-color: ${({ theme }) => theme.colors['primary-1.1']};
+        border: 1px solid ${({ theme }) => theme.colors['primary-1.1']};
 
         > ${CheckMarkIcon} {
             display: block;
@@ -66,8 +66,8 @@ const StyledInput = styled.input`
     }
 
     :indeterminate + ${CustomCheckbox} {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
-        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        background-color: ${({ theme }) => theme.colors['primary-1.1']};
+        border: 1px solid ${({ theme }) => theme.colors['primary-1.1']};
 
         > ${IndeterminateIcon} {
             display: block;

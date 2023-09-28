@@ -59,7 +59,7 @@ interface DotProps {
 }
 
 const Dot = styled.button<DotProps>`
-    background-color: ${({ active, theme }) => (active ? theme.main['primary-1.1'] : theme.greys.grey)};
+    background-color: ${({ active, theme }) => (active ? theme.colors['primary-1.1'] : theme.colors.grey)};
     border: 1px solid transparent;
     border-radius: 50%;
     box-sizing: border-box;
@@ -91,12 +91,12 @@ const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'but
 
 const LeftArrowIcon: VoidFunctionComponent = (): ReactElement => {
     const theme = useTheme();
-    return <Icon name="arrowLeft" size="100%" color={theme.greys['dark-grey']} />;
+    return <Icon name="arrowLeft" size="100%" color={theme.colors['dark-grey']} />;
 };
 
 const RightArrowIcon: VoidFunctionComponent = (): ReactElement => {
     const theme = useTheme();
-    return <Icon name="arrowRight" size="100%" color={theme.greys['dark-grey']} />;
+    return <Icon name="arrowRight" size="100%" color={theme.colors['dark-grey']} />;
 };
 
 export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {

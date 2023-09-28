@@ -15,11 +15,11 @@ const StyledIcon = styled(Icon)`
 `;
 
 const StyledLink = styled(Link)`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: ${({ theme }) => theme.colors.white};
     border-radius: var(--border-radius-2x);
-    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 1px 4px 0 rgb(0 0 0 / 20%);
+    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.grey}, 0 1px 4px 0 rgb(0 0 0 / 20%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     display: block;
     font-size: 1rem;
     font-weight: var(--font-semi-bold);
@@ -33,8 +33,8 @@ const StyledLink = styled(Link)`
     width: 100%;
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
-        box-shadow: inset 0 0 0 1px ${({ theme }) => theme.greys['dark-grey']}, 0 1px 4px 0 rgb(0 0 0 / 20%);
+        background-color: ${({ theme }) => theme.colors.grey};
+        box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors['dark-grey']}, 0 1px 4px 0 rgb(0 0 0 / 20%);
     }
 
     ${focus}

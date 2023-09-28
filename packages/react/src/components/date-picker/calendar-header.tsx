@@ -13,7 +13,7 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     padding: ${({ isMobile }) => (isMobile ? '0 var(--spacing-1x) var(--spacing-3x)' : '0 0 var(--spacing-3x)')};
 
     > button {
-        background-color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.colors.white};
         border: none;
         height: var(--size-2x);
         padding: 0;
