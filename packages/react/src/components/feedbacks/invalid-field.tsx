@@ -38,7 +38,7 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
             role="alert"
         >
             {!noIcon && (
-                <StyledIcon><Icon name="alertTriangle" size={isMobile ? '24' : '16'} /></StyledIcon>
+                <StyledIcon><Icon name="alertOctagon" size={isMobile ? '24' : '16'} /></StyledIcon>
             )}
             <StyledSpan>{feedbackMsg}</StyledSpan>
         </Field>
