@@ -1,6 +1,6 @@
 import { Theme } from './theme';
 
-export const main: Theme['main'] = {
+export const colors: Theme['colors'] = {
     'primary-1.1': '#006296',
     'primary-1.2': '#84C6EA',
     'primary-1.3': '#003A5A',
@@ -18,9 +18,6 @@ export const main: Theme['main'] = {
     'accent-20': '#F9B6B2',
     'accent-50': '#EF483E',
     'accent-70': '#D41F14',
-};
-
-export const greys: Theme['greys'] = {
     white: '#FFFFFF',
     'neutral-02': '#FAFAFA',
     'neutral-05': '#F1F2F2',
@@ -35,9 +32,6 @@ export const greys: Theme['greys'] = {
     'mid-grey': '#B7BBC2',
     'dark-grey': '#60666E',
     black: '#000000',
-};
-
-export const notifications: Theme['notifications'] = {
     'info-1.1': '#602FA0',
     'success-1.1': '#008533',
     'success-1.2': '#F6FCF8',
@@ -64,4 +58,134 @@ export const notifications: Theme['notifications'] = {
     'informative-20': '#CFC1E3',
     'informative-50': '#602FA0',
     'informative-70': '#3A1C60',
+};
+
+export const tokens: Theme['tokens'] = {
+    'focus-box-shadow': `0 0 0 2px ${colors['primary-1.2']}`,
+    'focus-border-box-shadow': ` 0 0 0 1px ${colors['primary-1.1']}, 0 0 0 3px ${colors['primary-1.2']}`,
+    'focus-border-box-shadow-inset': `inset 0 0 0 2px ${colors['primary-1.2']}, inset 0 0 0 3px ${colors['primary-1.1']}`,
+    'focus-border': `${colors['primary-1.1']}`,
+    'modal-overlay-background-color': 'rgba(0, 0, 0, 0.75)',
+    'overlay-box-shadow': '0 10px 20px 0 rgba(0, 0, 0, 0.19)',
+
+    'button-primary-bg': `${colors['brand-50']}`,
+    'button-primary-inverted-bg': `${colors.white}`,
+    'button-primary-border': `${colors['brand-50']}`,
+    'button-primary-inverted-border': `${colors.white}`,
+    'button-primary-color': `${colors.white}`,
+    'button-primary-inverted-color': `${colors['brand-50']}`,
+
+    'button-primary-hover-bg': `${colors['brand-70']}`,
+    'button-primary-inverted-hover-bg': `${colors.white}`,
+    'button-primary-hover-border': `${colors['brand-70']}`,
+    'button-primary-inverted-hover-border': `${colors.white}`,
+    'button-primary-hover-color': `${colors.white}}`,
+    'button-primary-inverted-hover-color': `${colors['brand-70']}`,
+
+    'button-primary-focus-bg': `${colors['brand-50']}`,
+    'button-primary-inverted-focus-bg': `${colors.white}`,
+    'button-primary-focus-border': `${colors['brand-50']}`,
+    'button-primary-inverted-focus-border': `${colors.white}`,
+    'button-primary-focus-color': `${colors.white}`,
+    'button-primary-inverted-focus-color': `${colors['brand-50']}`,
+
+    'button-primary-disabled-bg': `${colors['brand-20']}`,
+    'button-primary-inverted-disabled-bg': `${colors.white}`,
+    'button-primary-disabled-border': `${colors['brand-20']}`,
+    'button-primary-inverted-disabled-border': `${colors.white}`,
+    'button-primary-disabled-color': `${colors.white}`,
+    'button-primary-inverted-disabled-color': `${colors['brand-20']}`,
+
+    'button-secondary-bg': `${colors.white}`,
+    'button-secondary-inverted-bg': 'transparent',
+    'button-secondary-border': `${colors['brand-50']}`,
+    'button-secondary-inverted-border': `${colors.white}`,
+    'button-secondary-color': `${colors['brand-50']}`,
+    'button-secondary-inverted-color': `${colors.white}`,
+
+    'button-secondary-hover-bg': `${colors.white}`,
+    'button-secondary-inverted-hover-bg': 'transparent',
+    'button-secondary-hover-border': `${colors['brand-70']}`,
+    'button-secondary-inverted-hover-border': `${colors['brand-20']}`,
+    'button-secondary-hover-color': `${colors['brand-70']}`,
+    'button-secondary-inverted-hover-color': `${colors['brand-20']}`,
+
+    'button-secondary-focus-bg': `${colors.white}`,
+    'button-secondary-inverted-focus-bg': `${colors['brand-80']}`,
+    'button-secondary-focus-border': `${colors['brand-50']}`,
+    'button-secondary-inverted-focus-border': `${colors['brand-50']}`,
+    'button-secondary-focus-color': `${colors['brand-50']}`,
+    'button-secondary-inverted-focus-color': `${colors.white}`,
+
+    'button-secondary-disabled-bg': `${colors.white}`,
+    'button-secondary-inverted-disabled-bg': 'transparent',
+    'button-secondary-disabled-border': `${colors['brand-20']}`,
+    'button-secondary-inverted-disabled-border': `${colors['brand-50']}`,
+    'button-secondary-disabled-color': `${colors['brand-20']}`,
+    'button-secondary-inverted-disabled-color': `${colors['brand-50']}`,
+
+    'button-tertiary-bg': 'transparent',
+    'button-tertiary-inverted-bg': 'transparent',
+    'button-tertiary-border': 'transparent',
+    'button-tertiary-inverted-border': 'transparent',
+    'button-tertiary-color': `${colors['neutral-65']}`,
+    'button-tertiary-inverted-color': `${colors.white}`,
+
+    'button-tertiary-hover-bg': `${colors['neutral-15']}`,
+    'button-tertiary-inverted-hover-bg': `${colors['brand-70']}`,
+    'button-tertiary-hover-border': 'transparent',
+    'button-tertiary-inverted-hover-border': 'transparent',
+    'button-tertiary-hover-color': `${colors.black}`,
+    'button-tertiary-inverted-hover-color': `${colors.white}`,
+
+    'button-tertiary-focus-bg': `${colors.white}`,
+    'button-tertiary-inverted-focus-bg': `${colors['brand-80']}`,
+    'button-tertiary-focus-border': `${colors['brand-50']}`,
+    'button-tertiary-inverted-focus-border': `${colors['brand-50']}`,
+    'button-tertiary-focus-color': `${colors['neutral-65']}`,
+    'button-tertiary-inverted-focus-color': `${colors.white}`,
+
+    'button-tertiary-disabled-bg': 'transparent',
+    'button-tertiary-inverted-disabled-bg': 'transparent',
+    'button-tertiary-disabled-border': 'transparent',
+    'button-tertiary-inverted-disabled-border': 'transparent',
+    'button-tertiary-disabled-color': `${colors['neutral-30']}`,
+    'button-tertiary-inverted-disabled-color': `${colors['brand-50']}`,
+
+    'button-destructive-bg': `${colors['alert-50']}`,
+    'button-destructive-inverted-bg': `${colors.white}`,
+    'button-destructive-border': `${colors['alert-50']}`,
+    'button-destructive-inverted-border': `${colors.white}`,
+    'button-destructive-color': `${colors.white}`,
+    'button-destructive-inverted-color': `${colors['alert-50']}`,
+
+    'button-destructive-hover-bg': `${colors['alert-70']}`,
+    'button-destructive-inverted-hover-bg': `${colors.white}`,
+    'button-destructive-hover-border': `${colors['alert-70']}`,
+    'button-destructive-inverted-hover-border': `${colors.white}`,
+    'button-destructive-hover-color': `${colors.white}`,
+    'button-destructive-inverted-hover-color': `${colors['alert-70']}`,
+
+    'button-destructive-focus-bg': `${colors['alert-50']}`,
+    'button-destructive-inverted-focus-bg': `${colors.white}`,
+    'button-destructive-focus-border': `${colors['alert-20']}`,
+    'button-destructive-inverted-focus-border': `${colors.white}`,
+    'button-destructive-focus-color': `${colors.white}`,
+    'button-destructive-inverted-focus-color': `${colors['alert-20']}`,
+
+    'button-destructive-disabled-bg': `${colors['alert-20']}`,
+    'button-destructive-inverted-disabled-bg': `${colors.white}`,
+    'button-destructive-disabled-border': `${colors['alert-20']}`,
+    'button-destructive-inverted-disabled-border': `${colors.white}`,
+    'button-destructive-disabled-color': `${colors.white}`,
+    'button-destructive-inverted-disabled-color': `${colors['alert-20']}`,
+
+    'button-search-bg': `${colors.white}`,
+    'button-search-border': `${colors['neutral-65']}`,
+    'button-search-color': `${colors['neutral-65']}`,
+    'button-search-hover-bg': `${colors['neutral-15']}`,
+    'button-search-hover-color': `${colors.black}`,
+    'button-search-disabled-bg': `${colors['neutral-05']}`,
+    'button-search-disabled-border': `${colors['neutral-15']}`,
+    'button-search-disabled-color': `${colors['neutral-30']}`,
 };

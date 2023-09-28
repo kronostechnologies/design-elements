@@ -1,4 +1,4 @@
-export * from './custom-theme/custom-theme';
 export * from './equisoft';
 export * from './theme';
-export * from './custom-theme/custom-types';
+export * from './merge-themes';
+export * from './custom-types';
