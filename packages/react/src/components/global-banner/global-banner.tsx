@@ -30,13 +30,13 @@ interface IsMobileProps {
 function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
     switch (bannerType) {
         case 'alert':
-            return theme.notifications['alert-2.1'];
+            return theme.colors['alert-2.1'];
         case 'warning':
-            return theme.notifications['warning-3.1'];
+            return theme.colors['warning-3.1'];
         case 'info':
-            return theme.notifications['info-1.1'];
+            return theme.colors['info-1.1'];
         case 'default':
-            return theme.greys['dark-grey'];
+            return theme.colors['dark-grey'];
     }
 }
 
@@ -45,9 +45,9 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
         case 'alert':
         case 'info':
         case 'default':
-            return theme.greys.white;
+            return theme.colors.white;
         case 'warning':
-            return theme.greys.black;
+            return theme.colors.black;
     }
 }
 
@@ -131,15 +131,15 @@ function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProp
         case 'info':
             return '#cfc1e3';
         case 'default':
-            return theme.greys['mid-grey'];
+            return theme.colors['mid-grey'];
     }
 }
 
 const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
     /* stylelint-disable-next-line declaration-colon-newline-after */
     ${({ bannerType, theme }) => (bannerType === 'warning') && css`
-        border-color: ${theme.greys.black};
-        color: ${theme.greys.black};
+        border-color: ${theme.colors.black};
+        color: ${theme.colors.black};
     `};
 
     &:hover {
@@ -150,7 +150,7 @@ const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', in
     &:focus {
         background-color: ${getContainerBackgroundColor};
         ${({ bannerType, theme }) => bannerType === 'warning' && css`
-            color: ${theme.greys.black};
+            color: ${theme.colors.black};
         `}
     }
 `;
@@ -170,16 +170,16 @@ function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<Butto
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
+    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.colors.black};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.black};
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.colors.black};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.greys.white};
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.colors.white};
     }
 `;
 

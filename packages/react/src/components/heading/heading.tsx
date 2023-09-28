@@ -48,7 +48,7 @@ const HeadingSmall = styled.h4<StyledHeadingProps>`
 `;
 
 const HeadingSubtitle = styled.h2<StyledHeadingProps>`
-    color: ${({ theme }) => theme.greys['dark-grey']};
+    color: ${({ theme }) => theme.colors['dark-grey']};
     font-size: 1rem;
     font-weight: ${({ bold }) => (bold ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: 1.5rem;

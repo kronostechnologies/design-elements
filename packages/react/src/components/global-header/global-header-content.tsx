@@ -18,7 +18,7 @@ const BurgerButton = styled.button`
 
 const Container = styled.div`
     align-items: center;
-    color: ${(props) => props.theme.greys.white};
+    color: ${(props) => props.theme.colors.white};
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -47,7 +47,7 @@ export const Content: FunctionComponent<PropsWithChildren<Props>> = ({ children,
                     type="button"
                     onClick={() => setDrawerOpen(!drawerOpen)}
                 >
-                    <Icon name="menu" color={theme.greys.white} />
+                    <Icon name="menu" color={theme.colors.white} />
                 </BurgerButton>
                 <SideDrawer id="menu-drawer" open={drawerOpen}>
                     {mobileDrawerContent}
