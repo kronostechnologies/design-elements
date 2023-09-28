@@ -42,12 +42,12 @@ const TooltipArrow = styled.div`
 `;
 
 const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
-    background-color: ${({ theme }) => theme.greys['dark-grey']};
-    border: 1px solid ${({ theme }) => theme.greys.white};
+    background-color: ${({ theme }) => theme.colors['dark-grey']};
+    border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.greys.white};
+    color: ${({ theme }) => theme.colors.white};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.75rem')};
@@ -69,14 +69,14 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
-        border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.colors.white} transparent;
         border-width: 0 0.5rem 0.5rem;
         position: absolute;
         top: -2px;
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::after {
-        border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
+        border-color: transparent transparent ${({ theme }) => theme.colors['dark-grey']} transparent;
         border-width: 0 0.5rem 0.5rem;
     }
 
@@ -89,14 +89,14 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::before {
-        border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.colors.white} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         position: absolute;
         top: 0;
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::after {
-        border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
+        border-color: ${({ theme }) => theme.colors['dark-grey']} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         top: -0.1rem;
     }
@@ -109,12 +109,12 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
-        border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
+        border-color: transparent ${({ theme }) => theme.colors.white} transparent transparent;
         border-width: 0.5rem 0.5rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {
-        border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
+        border-color: transparent ${({ theme }) => theme.colors['dark-grey']} transparent transparent;
         border-width: 0.5rem 0.5rem 0.5rem 0;
         left: 0.375rem;
         top: 0;
@@ -128,12 +128,12 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::before {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
+        border-color: transparent transparent transparent ${({ theme }) => theme.colors.white};
         border-width: 0.5rem 0 0.5rem 0.5rem;
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::after {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
+        border-color: transparent transparent transparent ${({ theme }) => theme.colors['dark-grey']};
         border-width: 0.5rem 0 0.5rem 0.5rem;
         left: 0.17rem;
         top: 0;
@@ -305,7 +305,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                     <Icon
                         name="info"
                         size={isMobile ? '24' : '16'}
-                        color={invertedIcon ? Theme.greys.white : Theme.greys['dark-grey']}
+                        color={invertedIcon ? Theme.colors.white : Theme.colors['dark-grey']}
                     />
                 )}
             </StyledSpan>

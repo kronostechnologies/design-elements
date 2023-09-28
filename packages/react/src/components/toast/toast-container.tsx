@@ -28,19 +28,19 @@ function getToastContainerBackground({ theme, type }: ToastWrapperProps): Flatte
     switch (type) {
         case 'information':
             return css`
-                background: ${theme.notifications['info-1.1']};
+                background: ${theme.colors['info-1.1']};
             `;
         case 'success':
             return css`
-                background: ${theme.notifications['success-1.1']};
+                background: ${theme.colors['success-1.1']};
             `;
         case 'warning':
             return css`
-                background: ${theme.notifications['warning-3.3']};
+                background: ${theme.colors['warning-3.3']};
             `;
         case 'error':
             return css`
-                background: ${theme.notifications['alert-2.1']};
+                background: ${theme.colors['alert-2.1']};
             `;
     }
 }
@@ -119,22 +119,22 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
         case 'information':
             return css`
                 background-color: #3a1c60; /* TODO: theme */
-                color: ${theme.greys.white};
+                color: ${theme.colors.white};
             `;
         case 'success':
             return css`
                 background-color: #004f1e; /* TODO: theme */
-                color: ${theme.greys.white};
+                color: ${theme.colors.white};
             `;
         case 'warning':
             return css`
-                background-color: ${theme.notifications['warning-3.4']};
-                color: ${theme.greys.black};
+                background-color: ${theme.colors['warning-3.4']};
+                color: ${theme.colors.black};
             `;
         case 'error':
             return css`
                 background-color: #7b1a15; /* TODO: theme */
-                color: ${theme.greys.white};
+                color: ${theme.colors.white};
             `;
     }
 }
@@ -152,7 +152,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 
     &:focus {
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.main['primary-1.2']};
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors['primary-1.2']};
     }
 
     &:hover {
@@ -198,7 +198,7 @@ function getToastIconName(type: ToastType): IconName {
 }
 
 function getToastTextColor(type: ToastType, theme: Theme): string {
-    return type === 'warning' ? theme.greys.black : theme.greys.white;
+    return type === 'warning' ? theme.colors.black : theme.colors.white;
 }
 
 interface ToastContainerProps {
