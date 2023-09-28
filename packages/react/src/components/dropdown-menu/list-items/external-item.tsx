@@ -17,7 +17,7 @@ interface ExternalItemsStyledProps extends ExternalItemProps {
 }
 
 export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     display: flex;
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
     overflow: hidden;
@@ -29,22 +29,22 @@ export const StyledExternalLink = styled(ExternalLink)<ExternalItemsStyledProps>
     ${(props) => focus(props, undefined, undefined, true)}
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.colors.grey};
     }
 
     &:visited {
-        color: ${({ theme }) => theme.greys.black};
-        fill: ${({ theme }) => theme.greys.black};
+        color: ${({ theme }) => theme.colors.black};
+        fill: ${({ theme }) => theme.colors.black};
 
         svg {
-            color: ${({ theme }) => theme.greys.black};
-            fill: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.colors.black};
+            fill: ${({ theme }) => theme.colors.black};
         }
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.greys['mid-grey']};
-        fill: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.colors['mid-grey']};
+        fill: ${({ theme }) => theme.colors['mid-grey']};
         pointer-events: none;
     }
 `;

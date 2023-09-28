@@ -5,11 +5,11 @@ import { v4 as uuid } from '../../utils/uuid';
 import { GroupItemProps } from './list-items';
 
 const List = styled.div`
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background-color: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors['dark-grey']};
     border-radius: var(--border-radius);
     box-shadow: ${({ theme }) => theme.tokens['overlay-box-shadow']};
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     list-style-type: none;
     position: absolute;
     width: 100%;

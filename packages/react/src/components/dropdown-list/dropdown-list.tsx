@@ -44,16 +44,16 @@ function getBorderColor({
     disabled, focus, theme, valid,
 }: InputWrapperProps): string {
     if (disabled) {
-        return theme.greys.grey;
+        return theme.colors.grey;
     }
     if (!valid) {
-        return theme.notifications['alert-2.1'];
+        return theme.colors['alert-2.1'];
     }
     if (focus) {
-        return theme.main['primary-1.1'];
+        return theme.colors['primary-1.1'];
     }
 
-    return theme.greys['dark-grey'];
+    return theme.colors['dark-grey'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
@@ -62,7 +62,7 @@ const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
 
 const InputWrapper = styled.div<InputWrapperProps>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-shadow: ${({ containerOutline, theme }) => (containerOutline ? theme.tokens['focus-box-shadow'] : 'none')};
@@ -77,7 +77,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     }
 
     svg {
-        color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+        color: ${({ disabled, theme }) => (disabled ? theme.colors['mid-grey'] : theme.colors['dark-grey'])};
     }
 `;
 
@@ -96,7 +96,7 @@ function filterOptions(optionsArray: Option[], filterValue: string): Option[] {
 }
 
 const StyledInput = styled.input<InputProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
     border: none;
     border-radius: var(--border-radius);
     box-sizing: border-box;
@@ -117,7 +117,7 @@ const StyledInput = styled.input<InputProps>`
     }
 
     &::placeholder {
-        color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+        color: ${({ disabled, theme }) => (disabled ? theme.colors['mid-grey'] : theme.colors['dark-grey'])};
         font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     }
 `;

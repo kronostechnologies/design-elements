@@ -63,7 +63,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     }
 
     .react-datepicker {
-        border: 1px solid ${({ theme }) => theme.greys.grey};
+        border: 1px solid ${({ theme }) => theme.colors.grey};
         box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
         font-family: var(--font-family);
         padding: var(--spacing-3x) var(--spacing-2x);
@@ -82,7 +82,7 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         width: var(--size-2x);
 
         &:hover {
-            background-color: ${({ theme }) => theme.greys.grey};
+            background-color: ${({ theme }) => theme.colors.grey};
             border-radius: 50%;
         }
 
@@ -92,27 +92,27 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     }
 
     .react-datepicker__day--disabled {
-        color: ${({ theme }) => theme.greys['mid-grey']};
+        color: ${({ theme }) => theme.colors['mid-grey']};
 
         &:hover {
-            background-color: ${({ theme }) => theme.greys.white};
+            background-color: ${({ theme }) => theme.colors.white};
         }
     }
 
     .react-datepicker__day--keyboard-selected {
-        background-color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.colors.white};
         border-radius: 50%;
         box-sizing: border-box;
-        color: ${({ theme }) => theme.greys.black};
+        color: ${({ theme }) => theme.colors.black};
 
         /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => isMobile && css`
-            border: 1px solid ${theme.main['primary-1.1']};
+            border: 1px solid ${theme.colors['primary-1.1']};
             box-shadow: ${theme.tokens['focus-box-shadow']};
         `};
 
         &:focus {
-            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+            border: 1px solid ${({ theme }) => theme.colors['primary-1.1']};
             box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         }
     }
@@ -131,15 +131,15 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
     }
 
     .react-datepicker__day--outside-month {
-        color: ${({ theme }) => theme.greys['dark-grey']};
+        color: ${({ theme }) => theme.colors['dark-grey']};
 
         &.react-datepicker__day--selected {
-            color: ${({ theme }) => theme.greys.white};
+            color: ${({ theme }) => theme.colors.white};
         }
     }
 
     .react-datepicker__day--selected {
-        background-color: ${({ theme }) => theme.main['primary-1.1']};
+        background-color: ${({ theme }) => theme.colors['primary-1.1']};
         border-radius: 50%;
 
         /* stylelint-disable-next-line declaration-colon-newline-after */
@@ -154,21 +154,21 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         `)};
 
         &:hover {
-            color: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.colors.black};
         }
     }
 
     .react-datepicker__day--today {
-        color: ${({ theme }) => theme.main['primary-1.1']};
+        color: ${({ theme }) => theme.colors['primary-1.1']};
         font-weight: var(--font-normal);
 
         &.react-datepicker__day--selected {
-            color: ${({ theme }) => theme.greys.white};
+            color: ${({ theme }) => theme.colors.white};
         }
     }
 
     .react-datepicker__header {
-        background-color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.colors.white};
         border-bottom: none;
         margin-bottom: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
         padding: 0;
@@ -202,24 +202,24 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
 
 function getInputBorderColor({ theme, disabled, valid }: StyledDatePickerProps): string {
     if (disabled) {
-        return theme.greys.grey;
+        return theme.colors.grey;
     }
     if (valid) {
-        return theme.greys['dark-grey'];
+        return theme.colors['dark-grey'];
     }
-    return theme.notifications['alert-2.1'];
+    return theme.colors['alert-2.1'];
 }
 
 function getInputFocusBorderColor({ theme, valid }: StyledDatePickerProps): string {
     if (valid) {
-        return theme.main['primary-1.1'];
+        return theme.colors['primary-1.1'];
     }
-    return theme.notifications['alert-2.1'];
+    return theme.colors['alert-2.1'];
 }
 
 const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
     &.datePickerInput {
-        background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+        background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
         border: 1px solid ${getInputBorderColor};
         border-radius: var(--border-radius) 0 0 var(--border-radius);
         border-right: 0;
@@ -231,7 +231,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
         width: ${({ isMobile }) => (isMobile ? 7 : 6.8)}rem;
 
         &::placeholder {
-            ${({ disabled, theme }) => (disabled ? `color: ${theme.greys['mid-grey']};` : '')}
+            ${({ disabled, theme }) => (disabled ? `color: ${theme.colors['mid-grey']};` : '')}
         }
 
         &:focus {
@@ -250,11 +250,11 @@ const TodayButtonWrapper = styled.div`
 
 const CalendarButton = styled.button<CalendarButtonProps>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['dark-grey'])};
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     box-sizing: border-box;
-    color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
+    color: ${({ disabled, theme }) => (disabled ? theme.colors['mid-grey'] : theme.colors['dark-grey'])};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
@@ -262,11 +262,11 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     width: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
 
     &:hover {
-        background-color: ${({ disabled, theme }) => (disabled ? 'none' : theme.greys.grey)};
+        background-color: ${({ disabled, theme }) => (disabled ? 'none' : theme.colors.grey)};
     }
 
     &:focus {
-        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        border: 1px solid ${({ theme }) => theme.colors['primary-1.1']};
         border-left: none;
         box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
         outline: none;
