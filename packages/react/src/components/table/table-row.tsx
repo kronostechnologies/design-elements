@@ -21,12 +21,12 @@ function getRowBackgroundColor({
     }
     if (error) {
         return css`
-            /* TODO fix with next thematization theme.notifications.error4 */
+            /* TODO fix with next thematization theme.colors.error4 */
             background-color: #fcf8f9;
         `;
     }
     return css`
-        background-color: ${theme.greys.white};
+        background-color: ${theme.colors.white};
     `;
 }
 
@@ -43,7 +43,7 @@ function getCellBackgroundCss({
 
     return css`
         :hover td {
-            background-color: ${theme.greys.grey};
+            background-color: ${theme.colors.grey};
         }
 
         :not(:hover) td {
@@ -53,10 +53,10 @@ function getCellBackgroundCss({
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
-    border-top: 1px solid ${({ theme }) => theme.greys.grey};
+    border-top: 1px solid ${({ theme }) => theme.colors.grey};
     ${({ error, striped, theme }) => striped && !error && css`
         :nth-child(odd) {
-            background-color: ${theme.greys['colored-white']};
+            background-color: ${theme.colors['colored-white']};
         }
     `}
 
@@ -86,7 +86,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         position: relative;
 
         &::after {
-            box-shadow: inset 0 0 0 1px ${theme.notifications['alert-2.1']};
+            box-shadow: inset 0 0 0 1px ${theme.colors['alert-2.1']};
             content: '';
             height: calc(100% + 1px);
             left: 0;
@@ -97,7 +97,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
         }
 
         td:first-child::after {
-            border-left: 1px solid ${theme.notifications['alert-2.1']};
+            border-left: 1px solid ${theme.colors['alert-2.1']};
             content: '';
             height: 100%;
             left: 0;

@@ -50,7 +50,7 @@ const utilColumnClassName = 'eq-table__util-column';
 
 const StyledHeader = styled.th<{ sticky: boolean }>`
     ${({ sticky }) => sticky && css`
-        background-color: ${({ theme }) => theme.greys.white};
+        background-color: ${({ theme }) => theme.colors.white};
         position: sticky;
     `}
 `;
@@ -156,7 +156,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
     ${`.${utilColumnClassName}`} {
         box-sizing: border-box;
-        color: ${({ theme }) => theme.greys['dark-grey']};
+        color: ${({ theme }) => theme.colors['dark-grey']};
         font-size: 0.75rem;
         min-width: var(--size-2halfx);
         text-align: center;

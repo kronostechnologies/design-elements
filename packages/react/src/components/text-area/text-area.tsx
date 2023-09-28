@@ -19,7 +19,7 @@ const StyledTextArea = styled.textarea`
 `;
 
 const Counter = styled.div<{ valid: boolean, theme: Theme }>`
-    color: ${({ valid, theme }) => (valid ? `${theme.greys['dark-grey']}` : `${theme.notifications['alert-2.1']}`)};
+    color: ${({ valid, theme }) => (valid ? `${theme.colors['dark-grey']}` : `${theme.colors['alert-2.1']}`)};
     font-size: 0.75rem;
     letter-spacing: 0.02rem;
     line-height: 1.25rem;

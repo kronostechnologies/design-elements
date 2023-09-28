@@ -7,11 +7,11 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
     theme: Theme,
     isMobile = false,
 ) => css`
-    background: ${theme.greys.white};
-    border: 1px solid ${theme.greys['dark-grey']};
+    background: ${theme.colors.white};
+    border: 1px solid ${theme.colors['dark-grey']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${theme.greys.black};
+    color: ${theme.colors.black};
     font-family: inherit;
     font-size: ${isMobile ? '1rem' : '0.875rem'};
     letter-spacing: ${isMobile ? '0.02875rem' : '0.015rem'};
@@ -25,16 +25,16 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
     ${focus({ theme }, true)};
 
     &::placeholder {
-        color: ${theme.greys['dark-grey']};
+        color: ${theme.colors['dark-grey']};
     }
 
     &:disabled {
-        background-color: ${theme.greys['light-grey']};
-        border-color: ${theme.greys.grey};
+        background-color: ${theme.colors['light-grey']};
+        border-color: ${theme.colors.grey};
 
         &,
         &::placeholder {
-            color: ${theme.greys['mid-grey']};
+            color: ${theme.colors['mid-grey']};
         }
     }
 `;
@@ -45,11 +45,11 @@ interface ResponsiveInputsStyles {
 }
 
 export const responsiveInputsStyle = ({ theme, device: { isMobile } }: ResponsiveInputsStyles): FlattenSimpleInterpolation => css`
-    background: ${theme.greys.white};
-    border: 1px solid ${theme.greys['dark-grey']};
+    background: ${theme.colors.white};
+    border: 1px solid ${theme.colors['dark-grey']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${theme.greys.black};
+    color: ${theme.colors.black};
     font-family: inherit;
     font-size: ${isMobile ? 1 : 0.875}rem;
     letter-spacing: ${isMobile ? 0.02875 : 0.015}rem;
@@ -60,16 +60,16 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
     width: 100%;
 
     &::placeholder {
-        color: ${theme.greys['dark-grey']};
+        color: ${theme.colors['dark-grey']};
     }
 
     &:disabled {
-        background-color: ${theme.greys['light-grey']};
-        border-color: ${theme.greys.grey};
+        background-color: ${theme.colors['light-grey']};
+        border-color: ${theme.colors.grey};
 
         &,
         &::placeholder {
-            color: ${theme.greys['mid-grey']};
+            color: ${theme.colors['mid-grey']};
         }
     }
 

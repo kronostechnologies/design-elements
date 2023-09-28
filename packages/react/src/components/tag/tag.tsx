@@ -111,11 +111,11 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
         &:hover {
             /* TODO fix with next thematization gray65 */
             background-color: #dbdee1;
-            border-color: ${({ theme }) => theme.greys['dark-grey']};
+            border-color: ${({ theme }) => theme.colors['dark-grey']};
             cursor: pointer;
 
             ${StyledIcon} {
-                color: ${({ theme }) => theme.greys.black};
+                color: ${({ theme }) => theme.colors.black};
             }
         }
 
@@ -152,7 +152,7 @@ const DeleteButton = styled.button<IconOrButtonProps>`
         background-color: #dbdee1;
 
         ${DeleteIcon} {
-            color: ${({ theme }) => theme.greys.black};
+            color: ${({ theme }) => theme.colors.black};
         }
     }
 
@@ -161,7 +161,7 @@ const DeleteButton = styled.button<IconOrButtonProps>`
 
 const Container = styled.span<ContainerProps>`
     align-items: center;
-    background-color: ${({ theme }) => theme.greys['light-grey']};
+    background-color: ${({ theme }) => theme.colors['light-grey']};
 
     /* TODO fix with next thematization gray50 */
     border-radius: ${getBorderRadius};

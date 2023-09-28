@@ -28,7 +28,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     position: relative;
 
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme }) => theme.colors.grey};
     }
 
     ${focus};
@@ -43,7 +43,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         z-index: 1;
 
         ::after {
-            background-color: ${theme.main['primary-1.1']};
+            background-color: ${theme.colors['primary-1.1']};
             bottom: 0;
             content: '';
             display: block;
@@ -55,7 +55,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     `}
 
     ${({ $isGlobal, $isSelected, theme }) => (!$isGlobal && $isSelected) && css`
-        background-color: ${theme.greys.white};
+        background-color: ${theme.colors.white};
         border: 1px solid #878f9a; /* TODO change colors when updating thematization */
         border-bottom: 1px solid transparent;
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
@@ -65,7 +65,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 `;
 
 const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     font-family: var(--font-family);
     font-size: ${({ $isMobile }) => ($isMobile ? 1 : 0.875)}rem;
     font-weight: ${({ $isSelected }) => ($isSelected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
@@ -73,7 +73,7 @@ const StyledButtonText = styled.span<IsSelected & { $isMobile: boolean; }>`
 `;
 
 const LeftIcon = styled(Icon)<IsSelected>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     height: 1rem;
     min-width: fit-content;
     padding-right: var(--spacing-half);
@@ -81,7 +81,7 @@ const LeftIcon = styled(Icon)<IsSelected>`
 `;
 
 const RightIcon = styled(Icon)<IsSelected>`
-    color: ${({ theme }) => theme.greys.black};
+    color: ${({ theme }) => theme.colors.black};
     height: 1rem;
     min-width: fit-content;
     padding-left: var(--spacing-half);
