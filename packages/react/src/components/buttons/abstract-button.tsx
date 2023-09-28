@@ -97,43 +97,41 @@ const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemePr
     inverted,
     buttonType,
     theme,
-}) => {
-    const token = theme.tokens[`button-${buttonType}`];
-
-    return css`
-        background-color: ${inverted ? token['inverted-bg'] : token.bg};
-        border-color: ${inverted ? token['inverted-border'] : token.border};
-        color: ${inverted ? token['inverted-color'] : token.color};
+}) => (
+    css`
+        background-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-bg`] : theme.tokens[`button-${buttonType}-bg`]};
+        border-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-border`] : theme.tokens[`button-${buttonType}-border`]};
+        color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-color`] : theme.tokens[`button-${buttonType}-color`]};
 
         &:hover,
         &[aria-expanded='true'] {
-            background-color: ${inverted ? token['inverted-hover-bg'] : token['hover-bg']};
-            border-color: ${inverted ? token['inverted-hover-border'] : token['hover-border']};
-            color: ${inverted ? token['inverted-hover-color'] : token['hover-color']};
+            background-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-hover-bg`] : theme.tokens[`button-${buttonType}-hover-bg`]};
+            border-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-hover-border`] : theme.tokens[`button-${buttonType}-hover-border`]};
+            color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-hover-color`] : theme.tokens[`button-${buttonType}-hover-color`]};
         }
 
         &:focus {
-            background-color: ${inverted ? token['inverted-focus-bg'] : token['focus-bg']};
-            border-color: ${inverted ? token['inverted-focus-border'] : token['focus-border']};
-            color: ${inverted ? token['inverted-focus-color'] : token['focus-color']};
+            background-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-focus-bg`] : theme.tokens[`button-${buttonType}-focus-bg`]};
+            border-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-focus-border`] : theme.tokens[`button-${buttonType}-focus-border`]};
+            color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-focus-color`] : theme.tokens[`button-${buttonType}-focus-color`]};
         }
 
         &:disabled {
-            background-color: ${inverted ? token['inverted-disabled-bg'] : token['disabled-bg']};
-            border-color: ${inverted ? token['inverted-disabled-border'] : token['disabled-border']};
-            color: ${inverted ? token['inverted-disabled-color'] : token['disabled-color']};
+            background-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-disabled-bg`] : theme.tokens[`button-${buttonType}-disabled-bg`]};
+            border-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-disabled-border`] : theme.tokens[`button-${buttonType}-disabled-border`]};
+            color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-disabled-color`] : theme.tokens[`button-${buttonType}-disabled-color`]};
             ${buttonType === 'destructive' ? css`
                 &,
                 &:focus,
                 &:hover {
-                    background-color: ${inverted ? token['inverted-disabled-bg'] : token['disabled-bg']};
-                    border-color: ${inverted ? token['inverted-disabled-border'] : token['disabled-border']};
-                    color: ${inverted ? token['inverted-disabled-color'] : token['disabled-color']};
+                    background-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-disabled-bg`] : theme.tokens[`button-${buttonType}-disabled-bg`]};
+                    border-color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-disabled-border`] : theme.tokens[`button-${buttonType}-disabled-border`]};
+                    color: ${inverted ? theme.tokens[`button-${buttonType}-inverted-disabled-color`] : theme.tokens[`button-${buttonType}-disabled-color`]};
                 }
             ` : ''}
         }
-    `;
-};
+    `
+);
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = (props) => css`
     ${focus(props, true)};
