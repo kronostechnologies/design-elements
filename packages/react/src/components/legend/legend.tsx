@@ -26,7 +26,7 @@ const Item = styled.li<Pick<LegendItem, 'color'>>`
     }
 
     ::before {
-        background-color: ${(props) => props.color || props.theme.main['primary-1.2']};
+        background-color: ${(props) => props.color || props.theme.colors['primary-1.2']};
         border-radius: 50%;
         content: '';
         height: var(--size-half);
@@ -36,7 +36,7 @@ const Item = styled.li<Pick<LegendItem, 'color'>>`
 `;
 
 const Description = styled.span`
-    color: ${(props) => props.theme.greys['dark-grey']};
+    color: ${(props) => props.theme.colors['dark-grey']};
     display: block;
     font-size: 0.75rem;
     line-height: 1.25rem;

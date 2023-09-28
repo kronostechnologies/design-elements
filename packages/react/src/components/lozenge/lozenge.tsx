@@ -17,55 +17,55 @@ interface StyledLozengeProps {
 function getLozengeBackgroundColor({ $type, theme }: StyledLozengeProps): string {
     switch ($type) {
         case 'success':
-            return theme.notifications['success-1.2'];
+            return theme.colors['success-1.2'];
         case 'disabled':
-            return theme.greys['light-grey'];
+            return theme.colors['light-grey'];
         case 'alert':
-            return theme.notifications['alert-2.2'];
+            return theme.colors['alert-2.2'];
         case 'warning':
-            return theme.notifications['warning-3.2'];
+            return theme.colors['warning-3.2'];
         case 'info':
             // TODO: add this color in default themes
             return '#f9f7fb';
         case 'default':
         default:
-            return theme.greys['light-grey'];
+            return theme.colors['light-grey'];
     }
 }
 
 function getLozengeBorderColor({ $type, theme }: StyledLozengeProps): string {
     switch ($type) {
         case 'success':
-            return theme.notifications['success-1.1'];
+            return theme.colors['success-1.1'];
         case 'disabled':
-            return theme.greys['mid-grey'];
+            return theme.colors['mid-grey'];
         case 'alert':
-            return theme.notifications['alert-2.1'];
+            return theme.colors['alert-2.1'];
         case 'warning':
-            return theme.notifications['warning-3.1'];
+            return theme.colors['warning-3.1'];
         case 'info':
-            return theme.notifications['info-1.1'];
+            return theme.colors['info-1.1'];
         case 'default':
         default:
-            return theme.greys['dark-grey'];
+            return theme.colors['dark-grey'];
     }
 }
 
 function getLozengeColor({ $type, theme }: StyledLozengeProps): string {
     switch ($type) {
         case 'success':
-            return theme.notifications['success-1.1'];
+            return theme.colors['success-1.1'];
         case 'disabled':
-            return theme.greys['mid-grey'];
+            return theme.colors['mid-grey'];
         case 'alert':
-            return theme.notifications['alert-2.1'];
+            return theme.colors['alert-2.1'];
         case 'warning':
-            return theme.notifications['warning-3.1'];
+            return theme.colors['warning-3.1'];
         case 'info':
-            return theme.notifications['info-1.1'];
+            return theme.colors['info-1.1'];
         case 'default':
         default:
-            return theme.greys['dark-grey'];
+            return theme.colors['dark-grey'];
     }
 }
 

@@ -43,8 +43,8 @@ function getModalMinWidth({ breakpoints, isMobile }: StyledModalProps): string {
 }
 
 const StyledModal = styled(ReactModal)<StyledModalProps>`
-    background-color: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background-color: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors['dark-grey']};
     border-radius: var(--border-radius-2x);
     box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
