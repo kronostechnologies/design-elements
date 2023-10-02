@@ -10,31 +10,31 @@ interface MergedColors {
     [key: string]: string;
 }
 
-function resolveTokens(customTokens: { tokens?: TokenObject }, mergedColors: MergedColors, baseTokens: { tokens: TokenObject }): Record<string, string> {
+function resolveTokens(
+    customTokens: { tokens?: TokenObject },
+    mergedColors: MergedColors,
+    baseTokens: { tokens: TokenObject },
+): Record<string, string> {
     const resolved: Record<string, string> = {};
 
     Object.keys(baseTokens.tokens as object).forEach((key) => {
-
         if (customTokens && customTokens.tokens && (key in customTokens.tokens)) {
             const tokenValue = customTokens.tokens[key];
             // Check if tokenValue is a string and starts with colors.
-           if (typeof tokenValue === 'string' && tokenValue.startsWith('colors.')) {
+            if (typeof tokenValue === 'string' && tokenValue.startsWith('colors.')) {
                 const value = tokenValue.substring(7);
-                if(value in mergedColors){
+                if (value in mergedColors) {
                     resolved[key] = mergedColors[value];
-                }else{
-                    throw new Error(`Unknown token reference: ${value}`)
+                } else {
+                    throw new Error(`Unknown token reference: ${value}`);
                 }
             } else {
                 resolved[key] = tokenValue;
             }
-
-        }else{
-
+        } else {
             const tokens = generateTokens(mergedColors as Theme['colors']) as TokenObject;
             resolved[key] = tokens[key];
         }
-
     });
 
     return resolved;
@@ -72,7 +72,7 @@ export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
         : equisoftTheme.colors;
 
     // Resolve tokens variables to colours
-    const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['tokens']; 
+    const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['tokens'];
 
     return {
         colors: mergedColors,
