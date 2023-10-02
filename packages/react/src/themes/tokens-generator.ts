@@ -1,8 +1,6 @@
-import { Theme } from './theme';
+import { Theme } from './default-types';
 
-export const generateTokens = (theme: Omit<Theme, 'tokens'>): Theme['tokens'] => {
-    const { colors } = theme;
-
+export const generateTokens = (colors: Theme['colors']): Theme['tokens'] => {
     const tokens: Theme['tokens'] = {
         'focus-box-shadow': `0 0 0 2px ${colors['primary-1.2']}`,
         'focus-border-box-shadow': ` 0 0 0 1px ${colors['primary-1.1']}, 0 0 0 3px ${colors['primary-1.2']}`,
