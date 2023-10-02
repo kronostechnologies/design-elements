@@ -65,7 +65,6 @@ const customTheme = {
     },
 };
 
-
 describe('Theme Wrapper', () => {
     test('Returns component with default theme', () => {
         const tree = render(
