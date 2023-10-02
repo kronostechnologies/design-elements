@@ -1,23 +1,53 @@
+import { Theme } from './default-types';
 import { equisoftTheme } from './equisoft';
-import { Theme } from './theme';
 import { CustomTheme } from './custom-types';
+import { generateTokens } from './tokens-generator';
 
-function mergeThemes<T>(base: T, customTheme: T): T {
+interface TokenObject {
+    [key: string]: string;
+}
+interface MergedColors {
+    [key: string]: string;
+}
+
+function resolveTokens(customTokens: { tokens?: TokenObject }, mergedColors: MergedColors, baseTokens: { tokens: TokenObject }): Record<string, string> {
+    const resolved: Record<string, string> = {};
+
+    Object.keys(baseTokens.tokens as object).forEach((key) => {
+
+        if (customTokens && customTokens.tokens && (key in customTokens.tokens)) {
+            const tokenValue = customTokens.tokens[key];
+            // Check if tokenValue is a string and starts with colors.
+           if (typeof tokenValue === 'string' && tokenValue.startsWith('colors.')) {
+                const value = tokenValue.substring(7);
+                if(value in mergedColors){
+                    resolved[key] = mergedColors[value];
+                }else{
+                    throw new Error(`Unknown token reference: ${value}`)
+                }
+            } else {
+                resolved[key] = tokenValue;
+            }
+
+        }else{
+
+            const tokens = generateTokens(mergedColors as Theme['colors']) as TokenObject;
+            resolved[key] = tokens[key];
+        }
+
+    });
+
+    return resolved;
+}
+
+function mergeColors<T>(base: T, customTheme: T): T {
     const merged: T = { ...base };
 
-    Object.keys(customTheme as object).forEach((key) => {
+    Object.keys(base as object).forEach((key) => {
         const customValue = customTheme[key as keyof T];
-
         if (typeof customValue === 'object' && customValue !== null) {
-            // Handle nested objects recursively
-            if (typeof base[key as keyof T] === 'object' && base[key as keyof T] !== null) {
-                merged[key as keyof T] = mergeThemes(base[key as keyof T], customValue);
-            } else {
-                // Assign the custom object if the base is not an object
-                merged[key as keyof T] = customValue;
-            }
+            merged[key as keyof T] = customValue;
         } else {
-            // Merge simple values
             merged[key as keyof T] = customValue !== undefined ? customValue : base[key as keyof T];
         }
     });
@@ -25,11 +55,27 @@ function mergeThemes<T>(base: T, customTheme: T): T {
     return merged;
 }
 
-const colorsMerge = (props: { theme?: CustomTheme }): Theme['colors'] => (
-    mergeThemes(equisoftTheme.colors, props.theme?.colors || {}) as Theme['colors']
-);
+export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
+    const customTheme = props.theme;
 
-export const mergedTheme = (props: { theme?: CustomTheme }): Theme => ({
-    colors: colorsMerge(props),
-    tokens: mergeThemes(equisoftTheme.tokens, (props.theme?.tokens || {}) as Theme['tokens']),
-});
+    // If custom theme is not provided, use equisoftTheme
+    if (!customTheme) {
+        return {
+            colors: equisoftTheme.colors,
+            tokens: equisoftTheme.tokens,
+        };
+    }
+
+    // Merge the base colors with custom colors
+    const mergedColors = customTheme.colors
+        ? mergeColors(equisoftTheme.colors, customTheme.colors) as Theme['colors']
+        : equisoftTheme.colors;
+
+    // Resolve tokens variables to colours
+    const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['tokens']; 
+
+    return {
+        colors: mergedColors,
+        tokens: resolvedTokens,
+    };
+};
