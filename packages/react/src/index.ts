@@ -88,7 +88,7 @@ export { Pagination } from './components/pagination/pagination';
 // Themes
 export { equisoftTheme } from './themes';
 export { injectMainCss } from './styles';
-export { Theme } from './themes/theme';
+export { Theme } from './themes/default-types';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';

@@ -1,5 +1,5 @@
-import * as equisoftPalette from './equisoft-palette';
-import { Theme } from './theme';
+import * as equisoftPalette from './default-theme';
+import { Theme } from './default-types';
 
 const { colors, tokens } = equisoftPalette;
 
