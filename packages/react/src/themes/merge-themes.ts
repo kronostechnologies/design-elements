@@ -3,6 +3,33 @@ import { equisoftTheme } from './equisoft';
 import { CustomTheme } from './custom-types';
 import { generateTokens } from './tokens-generator';
 
+const colorMappings = [
+    { from: 'primary-1.1', to: 'brand-50' },
+    { from: 'primary-1.2', to: 'brand-20' },
+    { from: 'primary-1.3', to: 'brand-70' },
+    { from: 'primary-1.4', to: 'brand-05' },
+    { from: 'primary-2', to: 'brand-80' },
+    { from: 'primary-3', to: 'brand-50' },
+    { from: 'secondary-4.1', to: 'accent-50' },
+    { from: 'secondary-4.2', to: 'accent-20' },
+    { from: 'secondary-4.3', to: 'accent-70' },
+    { from: 'colored-white', to: 'neutral-02' },
+    { from: 'light-grey', to: 'neutral-05' },
+    { from: 'grey', to: 'neutral-15' },
+    { from: 'mid-grey', to: 'neutral-30' },
+    { from: 'dark-grey', to: 'neutral-65' },
+    { from: 'info-1.1', to: 'informative-50' },
+    { from: 'success-1.1', to: 'success-50' },
+    { from: 'success-1.2', to: 'success-05' },
+    { from: 'success-1.3', to: 'success-20' },
+    { from: 'alert-2.1', to: 'alert-50' },
+    { from: 'alert-2.2', to: 'alert-05' },
+    { from: 'warning-3.1', to: 'warning-50' },
+    { from: 'warning-3.2', to: 'warning-05' },
+    { from: 'warning-3.3', to: 'warning-50' },
+    { from: 'warning-3.4', to: 'warning-70' },
+];
+
 interface TokenObject {
     [key: string]: string;
 }
@@ -26,7 +53,7 @@ function resolveTokens(
                 if (value in mergedColors) {
                     resolved[key] = mergedColors[value];
                 } else {
-                    throw new Error(`Unknown token reference: ${value}`);
+                    console.error(`Unknown token reference: ${value}. It should be a string starting with colors.property or a valid hex color.`);
                 }
             } else {
                 resolved[key] = tokenValue;
@@ -45,10 +72,20 @@ function mergeColors<T>(base: T, customTheme: T): T {
 
     Object.keys(base as object).forEach((key) => {
         const customValue = customTheme[key as keyof T];
-        if (typeof customValue === 'object' && customValue !== null) {
-            merged[key as keyof T] = customValue;
+
+        // Update colors with custom colors
+        if (typeof customValue === 'string' && customValue.trim() !== '') {
+            if (/^#[0-9A-Fa-f]{6}$/.test(customValue)) {
+                merged[key as keyof T] = customValue;
+            } else {
+                console.error(`Invalid color format on CustomTheme: ${key}, ${customValue}. Please use hex format.`);
+            }
         } else {
-            merged[key as keyof T] = customValue !== undefined ? customValue : base[key as keyof T];
+            // Find a color mapping for the key
+            const colorMapping = colorMappings.find((mapping) => mapping.to === key);
+            merged[key as keyof T] = colorMapping
+                ? merged[colorMapping.from as keyof T]
+                : base[key as keyof T];
         }
     });
 
