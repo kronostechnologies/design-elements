@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, useCallback, useState, VoidFunctionComponent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
@@ -98,9 +98,9 @@ interface RadioButtonProps {
     defaultChecked?: boolean;
     disabled?: boolean;
     content?: {
-        element: React.ReactElement;
+        element: ReactElement;
         maxHeight?: number;
-    }
+    };
 }
 
 interface RadioButtonGroupProps {
@@ -127,7 +127,11 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
-    const [currentChecked, setCurrentChecked] = useState(checkedValue);
+    const [currentChecked, setCurrentChecked] = useState(
+        buttons.find((button) => (
+            checkedValue !== undefined ? checkedValue === button.value : button.defaultChecked
+        ))?.value,
+    );
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
 
@@ -164,6 +168,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     </StyledLabel>
                     {button.content && (
                         <ContentWrapper
+                            data-testid="content-wrapper"
                             maxHeight={button.content.maxHeight}
                             isExpanded={currentChecked === button.value}
                         >
