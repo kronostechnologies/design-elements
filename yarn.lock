@@ -1841,6 +1841,7 @@ __metadata:
     "@equisoft/typescript-config": ^2.0.0
     "@mdx-js/react": ^2.3.0
     "@microsoft/eslint-formatter-sarif": ^3.0.0
+    "@storybook/addon-controls": ^7.4.5
     "@storybook/addon-docs": ^7.0.8
     "@storybook/blocks": ^7.0.8
     "@storybook/preview": ^7.0.8
@@ -3374,6 +3375,34 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^3.0.0
   checksum: 614d30cb4d5201550c940945d44c9e0b6d64a888ff2cd5b357f95ad6721070d6b8839cd10e15b76bf5e14af0bcc1d8f9ec00d49a46318f1f669a4bec1d7f3148
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-controls@npm:^7.4.5":
+  version: 7.4.5
+  resolution: "@storybook/addon-controls@npm:7.4.5"
+  dependencies:
+    "@storybook/blocks": 7.4.5
+    "@storybook/client-logger": 7.4.5
+    "@storybook/components": 7.4.5
+    "@storybook/core-common": 7.4.5
+    "@storybook/core-events": 7.4.5
+    "@storybook/manager-api": 7.4.5
+    "@storybook/node-logger": 7.4.5
+    "@storybook/preview-api": 7.4.5
+    "@storybook/theming": 7.4.5
+    "@storybook/types": 7.4.5
+    lodash: ^4.17.21
+    ts-dedent: ^2.0.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: c8af5ca66bef246c65ffe051115af6a0a02c4267b62e471a5c7686529f63454a481dc3b8c0aeb6d7604cbd6e8716abefe081d5b767cec79d66c718b81a0eddcd
   languageName: node
   linkType: hard
 
