@@ -115,7 +115,7 @@ describe('Datepicker', () => {
     });
 
     test('month select value should change when month-previous button is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-05-05')} label="date" open />);
+        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-05-05')} label="date" open />);
 
         getByTestId(wrapper, 'month-previous').simulate('click');
 
@@ -123,7 +123,7 @@ describe('Datepicker', () => {
     });
 
     test('month select value should change when month-next button is clicked', () => {
-        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-05-05')} label="date" open />);
+        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-05-05')} label="date" open />);
 
         getByTestId(wrapper, 'month-next').simulate('click');
 
@@ -131,7 +131,7 @@ describe('Datepicker', () => {
     });
 
     test('year select value should change when month-previous button is clicked on first month of the year', () => {
-        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-01-12')} label="date" open />);
+        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-01-12')} label="date" open />);
 
         getByTestId(wrapper, 'month-previous').simulate('click');
 
@@ -139,7 +139,7 @@ describe('Datepicker', () => {
     });
 
     test('year select value should change when month-next button is clicked on last month of the year', () => {
-        const wrapper = mountWithTheme(<Datepicker startDate={new Date('2000-12-12')} label="date" open />);
+        const wrapper = mountWithTheme(<Datepicker openToDate={new Date('2000-12-12')} label="date" open />);
 
         getByTestId(wrapper, 'month-next').simulate('click');
 
@@ -154,9 +154,9 @@ describe('Datepicker', () => {
         expect(getByTestId(wrapper, 'text-input').props().value).toBe(new Date().toLocaleDateString('en-CA'));
     });
 
-    test('should reset date to startDate when reset is called on ref', async () => {
+    test('should reset date to defaultDate when reset is called on ref', async () => {
         const ref: RefObject<DatepickerHandles> = createRef();
-        const wrapper = mountWithTheme(<Datepicker ref={ref} startDate={new Date('2002-02-02, 12:00')} />);
+        const wrapper = mountWithTheme(<Datepicker ref={ref} defaultDate={new Date('2002-02-02, 12:00')} />);
 
         getByTestId(wrapper, 'text-input').simulate('change', { target: { value: '2010-07-07' } });
 
@@ -202,9 +202,9 @@ describe('Datepicker', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has startDate', () => {
+    test('has openToDate', () => {
         const tree = renderWithProviders(
-            <Datepicker label="date" startDate={new Date('1995-05-05, 12:00')} />,
+            <Datepicker label="date" openToDate={new Date('1995-05-05, 12:00')} />,
             'mobile',
         );
 

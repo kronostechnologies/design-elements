@@ -10,6 +10,7 @@ import {
     ReactElement,
     Ref,
     useCallback,
+    useEffect,
     useMemo,
     useState,
 } from 'react';
@@ -44,6 +45,7 @@ interface TextInputProps extends PartialInputProps {
     placeholder?: string;
     required?: boolean;
     type?: string;
+    valid?: boolean;
     validationErrorMessage?: string;
     hint?: string;
 
@@ -77,6 +79,7 @@ export const TextInput = forwardRef(({
     placeholder,
     required,
     type,
+    valid,
     validationErrorMessage,
     value,
     autoComplete,
@@ -90,7 +93,7 @@ export const TextInput = forwardRef(({
 }: TextInputProps, ref: Ref<HTMLInputElement>): ReactElement => {
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
-    const [{ validity }, setValidity] = useState({ validity: true });
+    const [{ validity }, setValidity] = useState({ validity: valid ?? true });
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
 
@@ -117,6 +120,12 @@ export const TextInput = forwardRef(({
             onFocus(event);
         }
     }, [onFocus]);
+
+    useEffect(() => {
+        if (valid !== undefined) {
+            setValidity({ validity: valid });
+        }
+    }, [valid]);
 
     return (
         <FieldContainer

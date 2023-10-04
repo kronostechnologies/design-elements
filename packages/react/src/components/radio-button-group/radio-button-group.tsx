@@ -1,17 +1,34 @@
-import { ChangeEvent, useMemo, VoidFunctionComponent } from 'react';
+import { ChangeEvent, useCallback, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
-import { v4 as uuid } from '../../utils/uuid';
-import { Label } from '../label/label';
-import { TooltipProps } from '../tooltip/tooltip';
+import { Tooltip, TooltipProps } from '../tooltip/tooltip';
+import { useDeviceContext } from '../device-context-provider/device-context-provider';
 
-const StyledDiv = styled.div`
-    div + label {
-        margin-top: var(--spacing-1x);
-    }
+const StyledFieldset = styled.fieldset`
+    border: none;
+    margin: 0;
+    padding: 0;
 `;
+
+const StyledLegend = styled.legend<{ isMobile: boolean }>`
+    color: ${({ theme }) => theme.greys.black};
+    display: flex;
+    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
+    font-weight: var(--font-normal);
+    letter-spacing: 0.02rem;
+    line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
+    margin: 0;
+    margin-top: var(--spacing-1x);
+    width: fit-content;
+`;
+
+const StyledTooltip = styled(Tooltip)`
+    margin-left: calc(var(--spacing-1x) * 1.5);
+`;
+
+const RadioWrapper = styled.div``;
 
 const StyledLabel = styled.label`
     ${(props: { theme: Theme, disabled?: boolean }) => `
@@ -20,12 +37,9 @@ const StyledLabel = styled.label`
             display: flex;
             font-size: 0.875rem;
             line-height: 1.5rem;
+            margin-top: var(--spacing-1x);
             position: relative;
             user-select: none;
-
-            &:not(:first-of-type) {
-                margin-top: var(--spacing-1x);
-            }
 
             input {
                 height: var(--size-1x);
@@ -36,11 +50,10 @@ const StyledLabel = styled.label`
                 width: var(--size-1x);
 
                 &:checked + .radioInput {
-                    background-color: ${props.theme.main['primary-1.1']};
-                    border: 1px solid ${props.theme.main['primary-1.1']};
+                    border: 2px solid ${props.theme.main['primary-1.1']};
 
                     &::after {
-                        background-color: ${props.theme.greys.white};
+                        background-color: ${props.theme.main['primary-1.1']};
                         border-radius: 50%;
                         content: '';
                         height: var(--size-half);
@@ -73,26 +86,39 @@ const StyledLabel = styled.label`
             `}
 `;
 
+const ContentWrapper = styled.div<{ isExpanded: boolean, maxHeight?: number }>(({ isExpanded, maxHeight = 500 }) => `
+    overflow: hidden;
+    max-height: ${isExpanded ? `${maxHeight}px` : '0'};
+    transition: ${isExpanded ? 'max-height 1s ease-in' : 'max-height .5s ease-out'};
+`);
+
+interface RadioButtonProps {
+    label: string;
+    value: string;
+    defaultChecked?: boolean;
+    disabled?: boolean;
+    content?: {
+        element: React.ReactElement;
+        maxHeight?: number;
+    };
+}
+
 interface RadioButtonGroupProps {
+    className?: string;
     id?: string;
     label?: string;
     tooltip?: TooltipProps;
     /** Sets the name property of all buttons */
     groupName: string;
     checkedValue?: string;
-    buttons: {
-        label: string,
-        value: string,
-        defaultChecked?: boolean,
-        disabled?: boolean,
-    }[];
+    buttons: RadioButtonProps[];
 
     onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
-    id: providedId,
     buttons,
+    className,
     groupName,
     label,
     tooltip,
@@ -100,33 +126,57 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     checkedValue,
     ...otherProps
 }) => {
+    const { isMobile } = useDeviceContext();
+    const [currentChecked, setCurrentChecked] = useState(
+        buttons.find((button) => (
+            checkedValue !== undefined ? checkedValue === button.value : button.defaultChecked
+        ))?.value,
+    );
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+
+    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        setCurrentChecked(event.target.value);
+        onChange?.(event);
+    }, [onChange, setCurrentChecked]);
 
     return (
-        <StyledDiv>
-            {label && <Label forId={id} tooltip={tooltip}>{label}</Label>}
+        <StyledFieldset className={className}>
+            {label && (
+                <StyledLegend isMobile={isMobile}>
+                    {label}
+                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                    {tooltip && <StyledTooltip {...tooltip} />}
+                </StyledLegend>
+            )}
             {buttons.map((button) => (
-                <StyledLabel
-                    disabled={button.disabled}
-                    key={`${groupName}-${button.value}`}
-                >
-                    {' '}
-                    <input
-                        data-testid={`${dataTestId}-${button.value}`}
-                        type="radio"
-                        name={groupName}
-                        value={button.value}
-                        checked={checkedValue ? checkedValue === button.value : undefined}
-                        defaultChecked={button.defaultChecked}
-                        disabled={button.disabled}
-                        onChange={onChange}
-                    />
-                    <span className="radioInput" />
-                    {button.label}
-                </StyledLabel>
+                <RadioWrapper key={`${groupName}-${button.value}`}>
+                    <StyledLabel disabled={button.disabled}>
+                        {' '}
+                        <input
+                            data-testid={`${dataTestId}-${button.value}`}
+                            type="radio"
+                            name={groupName}
+                            value={button.value}
+                            checked={checkedValue ? checkedValue === button.value : undefined}
+                            defaultChecked={button.defaultChecked}
+                            disabled={button.disabled}
+                            onChange={handleChange}
+                        />
+                        <span className="radioInput" />
+                        {button.label}
+                    </StyledLabel>
+                    {button.content && (
+                        <ContentWrapper
+                            data-testid="content-wrapper"
+                            maxHeight={button.content.maxHeight}
+                            isExpanded={currentChecked === button.value}
+                        >
+                            {button.content.element}
+                        </ContentWrapper>
+                    )}
+                </RadioWrapper>
             ))}
-        </StyledDiv>
+        </StyledFieldset>
     );
 };
