@@ -997,7 +997,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   width: 400px;
   -webkit-animation: etjUAa 0.25s ease-out;
   animation: etjUAa 0.25s ease-out;
-  background: #FFB302;
+  background: #F5A200;
 }
 
 .c2 {
@@ -1023,7 +1023,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
 }
 
 .c3:hover {
-  background-color: #A36D00;
+  background-color: #9E6900;
   color: #000000;
 }
 
