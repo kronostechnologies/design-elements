@@ -42,7 +42,6 @@ const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
 `;
 
 const PasswordContainer = styled.div`
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
     display: flex;
     flex-direction: row;
 
