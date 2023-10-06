@@ -12,6 +12,7 @@ export interface Theme {
     };
     greys: {
         'white': string;
+        'neutral-90': string;
         'colored-white': string;
         'light-grey': string;
         'grey': string;
@@ -33,6 +34,7 @@ export interface Theme {
     };
     tokens: {
         'focus-box-shadow': string;
+        'focus-box-shadow-inset': string;
         'focus-border-box-shadow': string;
         'focus-border-box-shadow-inset': string;
         'focus-border': string;
