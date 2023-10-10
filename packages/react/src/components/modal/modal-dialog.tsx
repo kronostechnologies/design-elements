@@ -148,7 +148,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
                             <Heading
                                 id={titleId}
                                 ref={titleRef}
-                                type="large"
+                                type="medium"
                                 tag="h2"
                                 noMargin
                             >

@@ -68,7 +68,7 @@ exports[`Modal Matches snapshot (no close button, desktop) 1`] = `
 .c2 {
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-3x) var(--spacing-4x) 0;
 }
 
 <body
@@ -246,10 +246,10 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-2x);
+  min-height: var(--size-1halfx);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -281,8 +281,9 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
+  min-width: var(--size-1halfx);
   padding: 0;
-  width: var(--size-2x);
+  width: var(--size-1halfx);
 }
 
 .c4:focus {
@@ -365,8 +366,8 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 
 .c5 {
   position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
+  right: var(--spacing-4x);
+  top: 1.75rem;
 }
 
 <body
@@ -462,10 +463,10 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   -ms-letter-spacing: 0.025rem;
   letter-spacing: 0.025rem;
   line-height: 1rem;
-  min-height: var(--size-2x);
+  min-height: var(--size-1halfx);
   min-width: 2rem;
   outline: none;
-  padding: 0 var(--spacing-2x);
+  padding: 0 var(--spacing-1halfx);
   text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -497,8 +498,9 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   background-color: transparent;
   border-color: transparent;
   color: #60666E;
+  min-width: var(--size-1halfx);
   padding: 0;
-  width: var(--size-2x);
+  width: var(--size-1halfx);
 }
 
 .c4:focus {
@@ -576,13 +578,13 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 .c2 {
   max-height: 100%;
   overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
+  padding: var(--spacing-3x) var(--spacing-4x) 0;
 }
 
 .c5 {
   position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
+  right: var(--spacing-4x);
+  top: 1.75rem;
 }
 
 <body
@@ -798,7 +800,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c5 {
   position: absolute;
   right: var(--spacing-half);
-  top: var(--spacing-1x);
+  top: 1.75rem;
 }
 
 <body
