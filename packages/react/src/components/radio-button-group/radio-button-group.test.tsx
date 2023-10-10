@@ -1,3 +1,4 @@
+import { shallow } from 'enzyme';
 import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
@@ -50,6 +51,42 @@ describe('Radio button', () => {
 
         const input = wrapper.find('input[type="radio"]').at(0);
         expect(input.prop('checked')).toBe(true);
+    });
+
+    test('defaultChecked should show content from radio button', () => {
+        const wrapper = shallow(
+            <RadioButtonGroup
+                groupName="withContent"
+                buttons={[{
+                    label: 'With Content',
+                    value: 'content',
+                    defaultChecked: true,
+                    content: {
+                        element: <div data-testid="content-div">Test</div>,
+                    },
+                }]}
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'content-wrapper').prop('isExpanded')).toBe(true);
+    });
+
+    test('should show content from radio button with checkedValue', () => {
+        const wrapper = shallow(
+            <RadioButtonGroup
+                checkedValue="content"
+                groupName="withContent"
+                buttons={[{
+                    label: 'With Content',
+                    value: 'content',
+                    content: {
+                        element: <div data-testid="content-div">Test</div>,
+                    },
+                }]}
+            />,
+        );
+
+        expect(getByTestId(wrapper, 'content-wrapper').prop('isExpanded')).toBe(true);
     });
 
     test('Matches the snapshot', () => {

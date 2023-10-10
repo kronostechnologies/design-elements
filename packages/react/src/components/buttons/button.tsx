@@ -11,6 +11,7 @@ type Size = 'small' | 'medium';
 type Type = 'submit' | 'button' | 'reset';
 
 interface ButtonProps {
+    id?: string;
     autofocus?: boolean;
     /**
      * Visual style

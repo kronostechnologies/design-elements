@@ -40,6 +40,7 @@ export { IntlProvider } from './components/internationalization-provider/interna
 export { Listbox, ListboxOption } from './components/listbox/listbox';
 
 // Miscellaneous
+export { AccordionItem, Accordion, ItemsProps } from './components/accordion/index';
 export { Badge } from './components/badge/badge';
 export { Card } from './components/card/card';
 export { CardLink } from './components/card-link/card-link';
@@ -64,7 +65,8 @@ export { Modal } from './components/modal/modal';
 export { ModalDialog } from './components/modal/modal-dialog';
 export { Tag, TagProps, TagValue } from './components/tag/tag';
 export { Lozenge } from './components/lozenge/lozenge';
-export { RadioCard } from './components/radio-card/radio-card';
+export { RadioCard } from './components/radio-card-group/radio-card';
+export { RadioCardGroup } from './components/radio-card-group/radio-card-group';
 export { Status, StatusType } from './components/status/status';
 export { SkipLink } from './components/skip-link/skip-link';
 export { Spinner } from './components/spinner/spinner';
