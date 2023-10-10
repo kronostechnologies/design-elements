@@ -49,6 +49,8 @@ export const Translations = {
         },
         pagination: {
             results: 'results',
+            of: 'of',
+            pagination: 'Pagination',
         },
         'password-creation-input': {
             'password-strength': 'Password strength: ',
@@ -162,6 +164,8 @@ export const Translations = {
         },
         pagination: {
             results: 'résultats',
+            pagination: 'Pagination',
+            of: 'de',
         },
         'password-creation-input': {
             'password-strength': 'Force du mot de passe : ',

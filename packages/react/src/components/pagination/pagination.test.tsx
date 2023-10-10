@@ -71,7 +71,61 @@ describe('Pagination', () => {
             const wrapper = shallow(<Pagination totalPages={3} numberOfResults={12345} />);
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.text()).toEqual('12345 results');
+            expect(label.text()).toEqual('Pagination - 1-4115 of 12345 results');
+        });
+
+        test('should display first page results label when number of results is even', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={6} numberOfResults={30} activePage={1} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('Pagination - 1-5 of 30 results');
+        });
+
+        test('should display second page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={6} numberOfResults={30} activePage={2} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('Pagination - 5-10 of 30 results');
+        });
+
+        test('should display last page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={6} numberOfResults={30} activePage={6} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('Pagination - 25-30 of 30 results');
+        });
+
+        test('should display first page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={50} numberOfResults={1530} activePage={1} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('Pagination - 1-31 of 1530 results');
+        });
+
+        test('should display second page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={50} numberOfResults={1530} activePage={2} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('Pagination - 31-62 of 1530 results');
+        });
+
+        test('should display last page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={50} numberOfResults={1530} activePage={50} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('Pagination - 1519-1530 of 1530 results');
         });
 
         test('should be hidden when number of results is not provided', () => {
@@ -85,16 +139,10 @@ describe('Pagination', () => {
     describe('navigation buttons', () => {
         const testCases = [
             {
-                id: 'firstPageButton', goesToPage: 1, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 6,
-            },
-            {
                 id: 'previousPageButton', goesToPage: 2, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 4,
             },
             {
                 id: 'nextPageButton', goesToPage: 4, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 4,
-            },
-            {
-                id: 'lastPageButton', goesToPage: 11, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 6,
             },
         ];
 

@@ -17,10 +17,10 @@ const Pages = styled.ol`
 
 const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     align-items: center;
-    background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.white)};
+    background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.4'] : props.theme.greys.white)};
     border-radius: 1rem;
     box-sizing: border-box;
-    color: ${(props) => (props.isSelected ? props.theme.greys.white : props.theme.greys.black)};
+    color: ${(props) => (props.isSelected ? props.theme.main['primary-1.3'] : props.theme.greys['dark-grey'])};
     display: inline-flex;
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
     font-weight: var(--font-normal);
@@ -29,13 +29,14 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
     min-width: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
+    outline: ${(props) => (props.isSelected ? `1px solid ${props.theme.main['primary-1.1']}` : '0')};
     padding: 0 var(--spacing-1x);
     text-align: center;
 
     ${focus};
 
     &:hover {
-        background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.1'] : props.theme.greys.grey)};
+        background-color: ${(props) => (props.isSelected ? props.theme.main['primary-1.4'] : props.theme.greys.grey)};
         cursor: ${(props) => (props.isSelected ? 'default' : 'pointer')};
     }
 `;
@@ -72,12 +73,27 @@ const Container = styled.div<{ isMobile: boolean }>`
     flex-direction: ${(props) => (props.isMobile ? 'column' : 'row')};
 `;
 
-const ResultsLabel = styled.div<{ isMobile: boolean }>`
+const ResultsLabel = styled.span<{ isMobile: boolean }>`
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
+    font-weight: var(--font-normal);
     line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
     margin-bottom: ${(props) => (props.isMobile ? 'var(--spacing-1halfx)' : 0)};
     margin-right: ${(props) => (props.isMobile ? 0 : 'var(--spacing-3x)')};
     white-space: nowrap;
+`;
+
+const SpanScreenReaderOnly = styled.span`
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px;
+`;
+
+const CurrentPageLabelHeading = styled.h3`
+    font-size: 0.875rem;
+    line-height: 1.5rem;
 `;
 
 const Navigation = styled.nav`
@@ -133,7 +149,6 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
-    const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
     useEffect(() => {
@@ -173,22 +188,26 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
         );
     });
 
+    let pageStartIndex;
+    let pageEndIndex;
+    const pageSize = numberOfResults !== undefined ? Math.ceil(numberOfResults / totalPages) : undefined;
+    if (pageSize !== undefined && numberOfResults !== undefined) {
+        pageStartIndex = Math.max(1, pageSize * (currentPage - 1));
+        pageEndIndex = Math.min(numberOfResults, Math.floor(pageSize * (currentPage)));
+    }
+
     return (
         <Container className={className} isMobile={isMobile}>
-            {numberOfResults !== undefined && (
-                <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                    {`${numberOfResults} ${t('results')}`}
-                </ResultsLabel>
-            )}
-            <Navigation aria-label="pagination">
-                {firstLastNavActive && (
-                    <NavButton
-                        data-testid="firstPageButton"
-                        iconName="chevronsLeft"
-                        label="first page"
-                        enabled={canNavigatePrevious}
-                        onClick={() => changePage(1)}
-                    />
+            <Navigation aria-labelledby="pagination">
+                {numberOfResults !== undefined && (
+                    <span aria-live='off' role='status'>
+                        <CurrentPageLabelHeading data-testid="currentPageLabelHeading">
+                            <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
+                                <SpanScreenReaderOnly>{`${t('pagination')} - `}</SpanScreenReaderOnly>
+                                {`${pageStartIndex}-${pageEndIndex} ${t('of')} ${numberOfResults} ${t('results')}`}
+                            </ResultsLabel>
+                        </CurrentPageLabelHeading>
+                    </span>
                 )}
                 {forwardBackwardNavActive && (
                     <NavButton
@@ -207,15 +226,6 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
                         label="next page"
                         enabled={canNavigateNext}
                         onClick={() => changePage(currentPage + 1)}
-                    />
-                )}
-                {firstLastNavActive && (
-                    <NavButton
-                        data-testid="lastPageButton"
-                        iconName="chevronsRight"
-                        label="last page"
-                        enabled={canNavigateNext}
-                        onClick={() => changePage(totalPages)}
                     />
                 )}
             </Navigation>
