@@ -1,0 +1,713 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumericInput matches the snapshot (Disabled) 1`] = `
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c4 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #000000;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c4::-moz-placeholder {
+  color: #60666E;
+}
+
+.c4:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c4::placeholder {
+  color: #60666E;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+}
+
+.c4:disabled,
+.c4:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c4:disabled,
+.c4:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c4[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.c4:focus,
+.c4:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c3 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: var(--spacing-1x);
+}
+
+.c1 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+}
+
+.c1 .c2 {
+  color: #B7BBC2;
+}
+
+.c1:focus-within {
+  border-radius: var(--border-radius);
+}
+
+.c1:focus-within {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2 c3"
+    >
+      %
+    </span>
+    <input
+      class="c4"
+      data-testid="numeric-input"
+      disabled=""
+      type="number"
+      value="50"
+    />
+  </div>
+</div>
+`;
+
+exports[`NumericInput matches the snapshot (Invalid) 1`] = `
+.c1 {
+  color: #CD2C23;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.25rem;
+}
+
+.c3 {
+  margin-left: var(--spacing-base);
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #CD2C23;
+}
+
+.c0:focus {
+  border-color: #CD2C23;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c6 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #000000;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c6::-moz-placeholder {
+  color: #60666E;
+}
+
+.c6:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c6::placeholder {
+  color: #60666E;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+}
+
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c6:disabled,
+.c6:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.c6:focus,
+.c6:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: var(--spacing-1x);
+}
+
+.c4 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-color: #CD2C23;
+}
+
+.c4:focus-within {
+  border-radius: var(--border-radius);
+}
+
+.c4:focus-within {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-live="polite"
+    class="c1"
+    id="undefined_invalid"
+    role="alert"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+    </div>
+    <span
+      class="c3"
+    >
+      This is an error message
+    </span>
+  </div>
+  <div
+    class="c4"
+  >
+    <span
+      class="c5"
+    >
+      %
+    </span>
+    <input
+      class="c6"
+      data-testid="numeric-input"
+      type="number"
+      value="50"
+    />
+  </div>
+</div>
+`;
+
+exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c2 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #000000;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c2::-moz-placeholder {
+  color: #60666E;
+}
+
+.c2:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c2::placeholder {
+  color: #60666E;
+}
+
+.c2:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+}
+
+.c2:disabled,
+.c2:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c2:disabled,
+.c2:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c2:disabled,
+.c2:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c2:disabled,
+.c2:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c2::-webkit-outer-spin-button,
+.c2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c2[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.c2:focus,
+.c2:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c3 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: var(--spacing-1x);
+}
+
+.c1 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1:focus-within {
+  border-radius: var(--border-radius);
+}
+
+.c1:focus-within {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      data-testid="numeric-input"
+      type="number"
+      value="50"
+    />
+    <span
+      class="c3"
+    >
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0:focus {
+  border-color: #006296;
+}
+
+.c0 > :nth-child(0) {
+  margin-bottom: var(--spacing-half);
+}
+
+.c3 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  color: #000000;
+  font-family: inherit;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
+  line-height: 1.5rem;
+  margin: 0;
+  min-height: var(--size-2x);
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  width: 100%;
+  border: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #60666E;
+}
+
+.c3::-moz-placeholder {
+  color: #60666E;
+}
+
+.c3:-ms-input-placeholder {
+  color: #60666E;
+}
+
+.c3::placeholder {
+  color: #60666E;
+}
+
+.c3:disabled {
+  background-color: #F1F2F2;
+  border-color: #DBDEE1;
+}
+
+.c3:disabled,
+.c3:disabled::-webkit-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled::-moz-placeholder {
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled:-ms-input-placeholder {
+  color: #B7BBC2;
+}
+
+.c3:disabled,
+.c3:disabled::placeholder {
+  color: #B7BBC2;
+}
+
+.c3::-webkit-outer-spin-button,
+.c3::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c3[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.c3:focus,
+.c3:disabled {
+  border: 0;
+  box-shadow: none;
+}
+
+.c2 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: var(--spacing-1x);
+}
+
+.c1 {
+  background: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1:focus-within {
+  border-radius: var(--border-radius);
+}
+
+.c1:focus-within {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+    >
+      %
+    </span>
+    <input
+      class="c3"
+      data-testid="numeric-input"
+      type="number"
+      value="50"
+    />
+  </div>
+</div>
+`;
