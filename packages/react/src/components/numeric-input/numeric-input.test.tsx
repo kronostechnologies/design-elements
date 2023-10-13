@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { NumericInput } from './numeric-input';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { renderWithTheme } from '../../test-utils/renderer';
+import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 
 jest.mock('../../utils/uuid');
 
@@ -32,14 +32,52 @@ describe('NumericInput', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('has controllable data-test-id', () => {
-        const wrapper = shallow(<NumericInput data-testid="numeric-input" />);
+    it('should call onChange with return value as number', () => {
+        const onChange = jest.fn();
+        const wrapper = shallow(
+            <NumericInput onChange={onChange} />,
+        );
 
-        expect(getByTestId(wrapper, 'numeric-input').exists()).toBe(true);
+        getByTestId(wrapper, 'numeric-input').invoke('onChange')({ target: { value: '123' } });
+
+        expect(onChange).toHaveBeenCalledWith(123);
+    });
+
+    it('should call onChange with return value null when empty', () => {
+        const onChange = jest.fn();
+        const wrapper = shallow(
+            <NumericInput onChange={onChange} />,
+        );
+
+        getByTestId(wrapper, 'numeric-input').invoke('onChange')({ target: { value: '' } });
+
+        expect(onChange).toHaveBeenCalledWith(null);
+    });
+
+    it('should change value to the maximum on Home key', () => {
+        const event = { key: 'Home', preventDefault: jest.fn() };
+        const wrapper = mountWithTheme(
+            <NumericInput min={10} max={90} defaultValue={50} />,
+        );
+
+        getByTestId(wrapper, 'numeric-input').invoke('onKeyDown')(event);
+
+        expect((getByTestId(wrapper, 'numeric-input').getDOMNode() as HTMLInputElement).value).toBe('90');
+    });
+
+    it('should change value to the minimum on End key', () => {
+        const event = { key: 'End', preventDefault: jest.fn() };
+        const wrapper = mountWithTheme(
+            <NumericInput min={10} max={90} defaultValue={50} />,
+        );
+
+        getByTestId(wrapper, 'numeric-input').invoke('onKeyDown')(event);
+
+        expect((getByTestId(wrapper, 'numeric-input').getDOMNode() as HTMLInputElement).value).toBe('10');
     });
 
     test('has controllable value', () => {
-        const wrapper = shallow(<NumericInput data-testid="numeric-input" value="500.25" />);
+        const wrapper = shallow(<NumericInput value="500.25" />);
 
         expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('500.25');
     });
