@@ -9,9 +9,9 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
+import { useUniqueId } from '../../hooks/use-unique-id';
 import { focus } from '../../utils/css-state';
 import { Theme } from '../../themes';
-import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
@@ -130,10 +130,10 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
 }) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const device = useDeviceContext();
-    const fieldId = useMemo(() => id || uuid(), [id]);
+    const fieldId = useUniqueId(id);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        const inputValue: string = event.target.value;
+        const inputValue = event.target.value;
         if (inputValue === '') {
             onChange?.(null);
         } else {
@@ -145,14 +145,14 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Home') {
             event.preventDefault();
-            if (max != null) {
+            if (max !== undefined) {
                 inputRef.current!.value = max.toString();
                 onChange?.(max);
             }
         }
         if (event.key === 'End') {
             event.preventDefault();
-            if (min != null) {
+            if (min !== undefined) {
                 inputRef.current!.value = min.toString();
                 onChange?.(min);
             }
