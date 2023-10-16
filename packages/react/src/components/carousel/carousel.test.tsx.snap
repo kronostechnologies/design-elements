@@ -147,7 +147,6 @@ exports[`Carousel should match snapshot 1`] = `
   class="c0"
 >
   <button
-    aria-controls="carousel-slides-1"
     aria-label="previous"
     class="c1"
     data-testid="carousel-previous"
@@ -168,7 +167,6 @@ exports[`Carousel should match snapshot 1`] = `
       aria-live="polite"
       class="c3"
       data-testid="carousel-slides"
-      id="carousel-slides-1"
     >
       <div
         aria-hidden="true"
@@ -258,31 +256,26 @@ exports[`Carousel should match snapshot 1`] = `
       data-testid="carousel-dots"
     >
       <button
-        aria-controls="carousel-slides-1"
         aria-disabled="true"
         class="c6 c7"
         data-testid="carousel-dot-0"
       />
       <button
-        aria-controls="carousel-slides-1"
         aria-disabled="false"
         class="c6 c8"
         data-testid="carousel-dot-1"
       />
       <button
-        aria-controls="carousel-slides-1"
         aria-disabled="false"
         class="c6 c8"
         data-testid="carousel-dot-2"
       />
       <button
-        aria-controls="carousel-slides-1"
         aria-disabled="false"
         class="c6 c8"
         data-testid="carousel-dot-3"
       />
       <button
-        aria-controls="carousel-slides-1"
         aria-disabled="false"
         class="c6 c8"
         data-testid="carousel-dot-4"
@@ -290,7 +283,6 @@ exports[`Carousel should match snapshot 1`] = `
     </div>
   </div>
   <button
-    aria-controls="carousel-slides-1"
     aria-label="next"
     class="c9"
     data-testid="carousel-next"

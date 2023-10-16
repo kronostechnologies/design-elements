@@ -9,7 +9,7 @@ import {
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { useUniqueId } from '../../hooks/use-unique-id';
+import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 import { Theme } from '../../themes';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -130,7 +130,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
 }) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const device = useDeviceContext();
-    const fieldId = useUniqueId(id);
+    const fieldId = useId(id);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
         const inputValue = event.target.value;
