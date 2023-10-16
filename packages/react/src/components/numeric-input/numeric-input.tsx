@@ -89,6 +89,7 @@ type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus'
 interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
     adornmentPosition?: 'start' | 'end';
+    className?: string;
     defaultValue?: number | string;
     hint?: string;
     id?: string;
@@ -109,6 +110,7 @@ interface NumericInputProps extends NativeInputProps {
 export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     adornment,
     adornmentPosition = 'start',
+    className,
     defaultValue,
     disabled,
     hint,
@@ -165,6 +167,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
 
     return (
         <FieldContainer
+            className={className}
             fieldId={fieldId}
             hint={hint}
             label={label}
