@@ -408,6 +408,20 @@ export const Datepicker = forwardRef(({
         }
     }, [currentLocale, firstDayOfWeek]);
 
+    useEffect(() => {
+        function closeOnOtherOpen(): void {
+            if (dateInputRef.current?.isCalendarOpen()) {
+                dateInputRef.current.setOpen(false);
+            }
+        }
+
+        document.addEventListener('closeOtherDatepickers', closeOnOtherOpen);
+
+        return () => {
+            document.removeEventListener('closeOtherDatepickers', closeOnOtherOpen);
+        };
+    }, []);
+
     function focusCalendarDate(): void {
         setTimeout(() => {
             const dateToFocus = calendarRef.current
@@ -441,6 +455,10 @@ export const Datepicker = forwardRef(({
 
     function handleCalendarButtonMouseDown(event: MouseEvent<HTMLButtonElement>): void {
         event.stopPropagation();
+
+        const customEvent = new Event('closeOtherDatepickers');
+        document.dispatchEvent(customEvent);
+
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
         } else {
@@ -463,6 +481,18 @@ export const Datepicker = forwardRef(({
             onChange(date);
         }
     }, [onChange]);
+
+    function handleClickOutside(event: MouseEvent<HTMLInputElement>): void {
+        if (
+            calendarRef.current
+            && dateInputRef.current
+            && calendarButtonRef.current
+            && !calendarRef.current.contains(event.target as Node)
+            && !calendarButtonRef.current.contains(event.target as Node)
+        ) {
+            dateInputRef.current.setOpen(false);
+        }
+    }
 
     function handleInputClick(): void {
         dateInputRef.current?.setOpen(false, true);
@@ -567,6 +597,7 @@ export const Datepicker = forwardRef(({
                         onCalendarClose={onCalendarClose}
                         onCalendarOpen={onCalendarOpen}
                         onFocus={onFocus}
+                        onClickOutside={handleClickOutside}
                         onInputClick={handleInputClick}
                         onKeyDown={handleCalendarKeyDown}
                         open={open}
