@@ -198,7 +198,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
                         <CurrentPageLabelHeading data-testid="currentPageLabelHeading">
                             <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
                                 <ScreenReaderOnlyText label={`${t('pagination')} - `} />
-                                {`${pageStartIndex}-${pageEndIndex} ${t('of')} ${numberOfResults} ${t('results')}`}
+                                {t('results', { pageStartIndex, pageEndIndex, numberOfResults })}
                             </ResultsLabel>
                         </CurrentPageLabelHeading>
                     </span>

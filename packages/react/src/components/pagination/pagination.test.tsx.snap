@@ -225,7 +225,6 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   class="c0"
 >
   <nav
-    aria-labelledby="pagination"
     class="c1"
   >
     <button
@@ -526,7 +525,6 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   class="c0"
 >
   <nav
-    aria-labelledby="pagination"
     class="c1"
   >
     <button
@@ -827,7 +825,6 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   class="c0"
 >
   <nav
-    aria-labelledby="pagination"
     class="c1"
   >
     <button
@@ -1128,7 +1125,6 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   class="c0"
 >
   <nav
-    aria-labelledby="pagination"
     class="c1"
   >
     <button
