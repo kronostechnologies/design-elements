@@ -7,6 +7,7 @@ import { range } from '../../utils/range';
 import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconName } from '../icon/icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { calculateShownPageRange } from './util/pagination-util';
 
 const Pages = styled.ol`
@@ -80,15 +81,6 @@ const ResultsLabel = styled.span<{ isMobile: boolean }>`
     margin-bottom: ${(props) => (props.isMobile ? 'var(--spacing-1halfx)' : 0)};
     margin-right: ${(props) => (props.isMobile ? 0 : 'var(--spacing-3x)')};
     white-space: nowrap;
-`;
-
-const SpanScreenReaderOnly = styled.span`
-    height: 1px;
-    left: -10000px;
-    overflow: hidden;
-    position: absolute;
-    top: auto;
-    width: 1px;
 `;
 
 const CurrentPageLabelHeading = styled.h3`
@@ -200,12 +192,12 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
 
     return (
         <Container className={className} isMobile={isMobile}>
-            <Navigation aria-labelledby={ariaLabelledBy ?? 'pagination'}>
+            <Navigation aria-labelledby={ariaLabelledBy}>
                 {numberOfResults !== undefined && (
                     <span aria-live='off' role='status'>
                         <CurrentPageLabelHeading data-testid="currentPageLabelHeading">
                             <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                                <SpanScreenReaderOnly>{`${t('pagination')} - `}</SpanScreenReaderOnly>
+                                <ScreenReaderOnlyText label={`${t('pagination')} - `} />
                                 {`${pageStartIndex}-${pageEndIndex} ${t('of')} ${numberOfResults} ${t('results')}`}
                             </ResultsLabel>
                         </CurrentPageLabelHeading>
