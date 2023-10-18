@@ -20,6 +20,7 @@ import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -408,20 +409,6 @@ export const Datepicker = forwardRef(({
         }
     }, [currentLocale, firstDayOfWeek]);
 
-    useEffect(() => {
-        function closeOnOtherOpen(): void {
-            if (dateInputRef.current?.isCalendarOpen()) {
-                dateInputRef.current.setOpen(false);
-            }
-        }
-
-        document.addEventListener('closeOtherDatepickers', closeOnOtherOpen);
-
-        return () => {
-            document.removeEventListener('closeOtherDatepickers', closeOnOtherOpen);
-        };
-    }, []);
-
     function focusCalendarDate(): void {
         setTimeout(() => {
             const dateToFocus = calendarRef.current
@@ -453,12 +440,7 @@ export const Datepicker = forwardRef(({
         calendarButtonRef.current?.focus();
     }
 
-    function handleCalendarButtonMouseDown(event: MouseEvent<HTMLButtonElement>): void {
-        event.stopPropagation();
-
-        const customEvent = new Event('closeOtherDatepickers');
-        document.dispatchEvent(customEvent);
-
+    function handleCalendarButtonMouseDown(): void {
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
         } else {
@@ -484,13 +466,11 @@ export const Datepicker = forwardRef(({
 
     function handleClickOutside(event: MouseEvent<HTMLInputElement>): void {
         if (
-            calendarRef.current
-            && dateInputRef.current
+            dateInputRef.current
             && calendarButtonRef.current
-            && !calendarRef.current.contains(event.target as Node)
-            && !calendarButtonRef.current.contains(event.target as Node)
+            && eventIsInside(event as unknown as Event, calendarButtonRef.current)
         ) {
-            dateInputRef.current.setOpen(false);
+            dateInputRef.current.setOpen(true);
         }
     }
 
