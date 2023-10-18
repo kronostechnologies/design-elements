@@ -102,6 +102,7 @@ const Navigation = styled.nav`
 `;
 
 interface PaginationProps {
+    ariaLabelledBy?: string;
     className?: string;
     /**
      * Total number of pages
@@ -135,6 +136,7 @@ interface PaginationProps {
 }
 
 export const Pagination: VoidFunctionComponent<PaginationProps> = ({
+    ariaLabelledBy,
     className,
     totalPages,
     numberOfResults,
@@ -198,7 +200,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
 
     return (
         <Container className={className} isMobile={isMobile}>
-            <Navigation aria-labelledby="pagination">
+            <Navigation aria-labelledby={ariaLabelledBy ?? 'pagination'}>
                 {numberOfResults !== undefined && (
                     <span aria-live='off' role='status'>
                         <CurrentPageLabelHeading data-testid="currentPageLabelHeading">
