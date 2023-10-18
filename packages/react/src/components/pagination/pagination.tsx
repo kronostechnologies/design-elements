@@ -192,8 +192,8 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
     let pageEndIndex;
     const pageSize = numberOfResults !== undefined ? Math.ceil(numberOfResults / totalPages) : undefined;
     if (pageSize !== undefined && numberOfResults !== undefined) {
-        pageStartIndex = Math.max(1, pageSize * (currentPage - 1));
-        pageEndIndex = Math.min(numberOfResults, Math.floor(pageSize * (currentPage)));
+        pageStartIndex = (pageSize * (currentPage - 1)) + 1;
+        pageEndIndex = Math.min(numberOfResults, (pageSize * currentPage));
     }
 
     return (

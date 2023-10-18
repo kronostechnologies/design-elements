@@ -89,7 +89,7 @@ describe('Pagination', () => {
             );
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.text()).toEqual('Pagination - 5-10 of 30 results');
+            expect(label.text()).toEqual('Pagination - 6-10 of 30 results');
         });
 
         test('should display last page results label when number of results is uneven', () => {
@@ -98,7 +98,7 @@ describe('Pagination', () => {
             );
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.text()).toEqual('Pagination - 25-30 of 30 results');
+            expect(label.text()).toEqual('Pagination - 26-30 of 30 results');
         });
 
         test('should display first page results label when number of results is uneven', () => {
@@ -116,7 +116,7 @@ describe('Pagination', () => {
             );
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.text()).toEqual('Pagination - 31-62 of 1530 results');
+            expect(label.text()).toEqual('Pagination - 32-62 of 1530 results');
         });
 
         test('should display last page results label when number of results is uneven', () => {
@@ -125,7 +125,7 @@ describe('Pagination', () => {
             );
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.text()).toEqual('Pagination - 1519-1530 of 1530 results');
+            expect(label.text()).toEqual('Pagination - 1520-1530 of 1530 results');
         });
 
         test('should be hidden when number of results is not provided', () => {
