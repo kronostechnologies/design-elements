@@ -74,7 +74,6 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
   color: #000000;
   cursor: pointer;
   display: -webkit-box;
@@ -91,7 +90,12 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c9:focus {
+.c9:hover {
+  background-color: #DBDEE1;
+}
+
+.c9.focused:not(:hover) {
+  border: 2px solid #006296;
   outline: none;
 }
 
@@ -483,7 +487,6 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
   color: #000000;
   cursor: pointer;
   display: -webkit-box;
@@ -500,7 +503,12 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c12:focus {
+.c12:hover {
+  background-color: #DBDEE1;
+}
+
+.c12.focused:not(:hover) {
+  border: 2px solid #006296;
   outline: none;
 }
 
@@ -977,7 +985,6 @@ input + .c2 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
   color: #000000;
   cursor: pointer;
   display: -webkit-box;
@@ -994,7 +1001,12 @@ input + .c2 {
   white-space: nowrap;
 }
 
-.c9:focus {
+.c9:hover {
+  background-color: #DBDEE1;
+}
+
+.c9.focused:not(:hover) {
+  border: 2px solid #006296;
   outline: none;
 }
 
@@ -1428,7 +1440,6 @@ exports[`Select mobile select has a different style 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
   color: #000000;
   cursor: pointer;
   display: -webkit-box;
@@ -1445,7 +1456,12 @@ exports[`Select mobile select has a different style 1`] = `
   white-space: nowrap;
 }
 
-.c7:focus {
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7.focused:not(:hover) {
+  border: 2px solid #006296;
   outline: none;
 }
 

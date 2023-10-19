@@ -159,19 +159,8 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     return 'var(--spacing-2x)';
 };
 
-function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps): string {
-    if (disabled) {
-        return theme.greys.white;
-    }
-    if (focused) {
-        return theme.greys.grey;
-    }
-    return 'inherit';
-}
-
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    background-color: ${getListItemBackgroundColor};
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
@@ -184,7 +173,12 @@ const ListItem = styled.li<ListItemProps>`
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    &:focus {
+    &:hover {
+        background-color: ${({ theme }) => theme.greys.grey};
+    }
+
+    &.focused:not(:hover) {
+        border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
         outline: none;
     }
 `;
@@ -347,13 +341,25 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [list]);
 
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
-        (option) => () => selectOption(option),
-        [selectOption],
+        (option) => () => {
+            const prevItemRef = list[selectedFocusIndex]?.ref;
+            if (prevItemRef && prevItemRef.current) {
+                prevItemRef.current.classList.remove('focused');
+            }
+            selectOption(option);
+        },
+        [list, selectedFocusIndex, selectOption],
     );
 
     const handleListItemMouseMove: (option: ListOption) => void = useCallback((option) => {
+        const prevFocusIndex = selectedFocusIndex;
         setSelectedFocusIndex(option.focusIndex);
-    }, []);
+
+        const prevItemRef = list[prevFocusIndex]?.ref;
+        if (prevItemRef && prevItemRef.current) {
+            prevItemRef.current.classList.remove('focused');
+        }
+    }, [list, selectedFocusIndex]);
 
     useLayoutEffect(() => {
         const currentOption = list[selectedFocusIndex];
@@ -419,7 +425,18 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                     if (onFocusedValueChange) {
                         onFocusedValueChange(list[prevOption.focusIndex]);
                     }
+
+                    const prevItemRef = list[selectedFocusIndex]?.ref;
+                    if (prevItemRef && prevItemRef.current) {
+                        prevItemRef.current.classList.remove('focused');
+                    }
+
+                    const newItemRef = list[prevOption.focusIndex]?.ref;
+                    if (prevOption.focusIndex >= 0 && newItemRef && newItemRef.current) {
+                        newItemRef.current.classList.add('focused');
+                    }
                 }
+
                 break;
             }
             case 'ArrowDown': {
@@ -431,6 +448,16 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
                     if (onFocusedValueChange) {
                         onFocusedValueChange(list[nextOption.focusIndex]);
+                    }
+
+                    const prevItemRef = list[selectedFocusIndex]?.ref;
+                    if (prevItemRef && prevItemRef.current) {
+                        prevItemRef.current.classList.remove('focused');
+                    }
+
+                    const newItemRef = list[nextOption.focusIndex]?.ref;
+                    if (nextOption.focusIndex >= 0 && newItemRef && newItemRef.current) {
+                        newItemRef.current.classList.add('focused');
                     }
                 }
                 break;
@@ -471,7 +498,13 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 id={id}
                 isMobile={isMobile}
                 numberOfItemsVisible={numberOfItemsVisible}
-                onBlur={() => setSelectedFocusIndex(-1)}
+                onBlur={() => {
+                    const prevItemRef = list[selectedFocusIndex]?.ref;
+                    if (prevItemRef && prevItemRef.current) {
+                        prevItemRef.current.classList.remove('focused');
+                    }
+                    setSelectedFocusIndex(-1);
+                }}
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyDown}
                 ref={listRefCallback}
