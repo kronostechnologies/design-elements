@@ -7,6 +7,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -146,7 +147,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={maxLength ? idCounter : undefined}
+                aria-describedby={`${idTextArea}_hint ${idTextArea}_invalid ${idCounter}`}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
@@ -159,11 +160,17 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 <Counter
                     data-testid="char-counter"
                     aria-live="polite"
-                    aria-hidden="true"
                     id={idCounter}
                     valid={inputValueLength <= maxLength}
                 >
-                    {t('characters', { current: inputValueLength, max: maxLength })}
+                    {inputValueLength}
+                    {' '}
+                    <span aria-hidden="true">/</span>
+                    <ScreenReaderOnlyText label="of" />
+                    {' '}
+                    {t('characters', { max: maxLength })}
+                    {' '}
+                    <ScreenReaderOnlyText label="available" />
                 </Counter>
             )}
         </FieldContainer>

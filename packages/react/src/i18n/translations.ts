@@ -91,7 +91,9 @@ export const Translations = {
             validationErrorMessage: 'This text area is invalid',
             maxLengthValidationErrorMessage:
                 'The number of characters exceeds the maximum allowed. You must shorten the description.',
-            characters: '{{current}}/{{max}} characters',
+            characters: '{{max}} characters',
+            of: 'of',
+            available: 'available',
         },
         'text-input': {
             validationErrorMessage: 'This input is invalid',
@@ -196,7 +198,9 @@ export const Translations = {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
             maxLengthValidationErrorMessage:
                 'Le nombre de caractères dépasse le maximum autorisé. Vous devez raccourcir la description.',
-            characters: '{{current}}/{{max}} caractères',
+            characters: '{{max}} caractères',
+            of: 'sur',
+            available: 'disponibles',
         },
         'text-input': {
             validationErrorMessage: 'Ce champ est invalide',

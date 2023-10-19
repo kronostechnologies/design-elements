@@ -121,13 +121,16 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="UUID"
   >
     Comment (required)
   </label>
   <textarea
+    aria-describedby="UUID_hint UUID_invalid UUID"
     class="c3"
     data-testid="textarea"
     disabled=""
+    id="UUID"
     placeholder="Enter your comment"
     required=""
   >
@@ -257,12 +260,15 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="UUID"
   >
     Comment (required)
   </label>
   <textarea
+    aria-describedby="UUID_hint UUID_invalid UUID"
     class="c3"
     data-testid="some-data-testid"
+    id="UUID"
     placeholder="Enter your comment"
     required=""
   >

@@ -4,7 +4,7 @@ import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { TextArea } from './text-area';
 
-jest.mock('../../utils/uuid');
+jest.mock('../../utils/uuid', () => ({ v4: () => 'UUID' }));
 
 describe('TextArea', () => {
     const defaultProps = {
@@ -93,7 +93,7 @@ describe('TextArea', () => {
         );
 
         const charCounter = getByTestId(wrapper, 'char-counter');
-        expect(charCounter.text()).toContain('18/20');
+        expect(charCounter.text()).toBe('18 /<ScreenReaderOnlyText /> 20 characters <ScreenReaderOnlyText />');
     });
 
     test('should not display character count when maxLength is not provided', () => {
