@@ -55,9 +55,6 @@ input + .c2 {
   list-style-type: none;
   margin: 0;
   max-height: 8rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -86,8 +83,6 @@ input + .c2 {
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c9:hover {
@@ -97,6 +92,12 @@ input + .c2 {
 .c9.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c10 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -255,7 +256,11 @@ input + .c2 {
         id="listbox_undefined_on"
         role="option"
       >
-        Ontario
+        <div
+          class="c10"
+        >
+          Ontario
+        </div>
       </li>
       <li
         aria-label="Quebec"
@@ -265,7 +270,11 @@ input + .c2 {
         id="listbox_undefined_qc"
         role="option"
       >
-        Quebec
+        <div
+          class="c10"
+        >
+          Quebec
+        </div>
       </li>
       <li
         aria-label="British Columbia"
@@ -275,7 +284,11 @@ input + .c2 {
         id="listbox_undefined_bc"
         role="option"
       >
-        British Columbia
+        <div
+          class="c10"
+        >
+          British Columbia
+        </div>
       </li>
       <li
         aria-label="Alberta"
@@ -285,7 +298,11 @@ input + .c2 {
         id="listbox_undefined_ab"
         role="option"
       >
-        Alberta
+        <div
+          class="c10"
+        >
+          Alberta
+        </div>
       </li>
       <li
         aria-label="Manitoba"
@@ -295,7 +312,11 @@ input + .c2 {
         id="listbox_undefined_mb"
         role="option"
       >
-        Manitoba
+        <div
+          class="c10"
+        >
+          Manitoba
+        </div>
       </li>
       <li
         aria-label="Saskatchewan"
@@ -305,7 +326,11 @@ input + .c2 {
         id="listbox_undefined_sk"
         role="option"
       >
-        Saskatchewan
+        <div
+          class="c10"
+        >
+          Saskatchewan
+        </div>
       </li>
       <li
         aria-label="Nova Scotia"
@@ -315,7 +340,11 @@ input + .c2 {
         id="listbox_undefined_ns"
         role="option"
       >
-        Nova Scotia
+        <div
+          class="c10"
+        >
+          Nova Scotia
+        </div>
       </li>
       <li
         aria-label="New Brunswick"
@@ -325,7 +354,11 @@ input + .c2 {
         id="listbox_undefined_nb"
         role="option"
       >
-        New Brunswick
+        <div
+          class="c10"
+        >
+          New Brunswick
+        </div>
       </li>
       <li
         aria-label="Newfoundland and Labrador"
@@ -335,7 +368,11 @@ input + .c2 {
         id="listbox_undefined_nl"
         role="option"
       >
-        Newfoundland and Labrador
+        <div
+          class="c10"
+        >
+          Newfoundland and Labrador
+        </div>
       </li>
       <li
         aria-label="Prince Edward Island"
@@ -345,7 +382,11 @@ input + .c2 {
         id="listbox_undefined_pe"
         role="option"
       >
-        Prince Edward Island
+        <div
+          class="c10"
+        >
+          Prince Edward Island
+        </div>
       </li>
       <li
         aria-label="Northwest Territories"
@@ -355,7 +396,11 @@ input + .c2 {
         id="listbox_undefined_nt"
         role="option"
       >
-        Northwest Territories
+        <div
+          class="c10"
+        >
+          Northwest Territories
+        </div>
       </li>
       <li
         aria-label="Nunavut"
@@ -365,7 +410,11 @@ input + .c2 {
         id="listbox_undefined_nu"
         role="option"
       >
-        Nunavut
+        <div
+          class="c10"
+        >
+          Nunavut
+        </div>
       </li>
       <li
         aria-label="Yukon"
@@ -375,7 +424,11 @@ input + .c2 {
         id="listbox_undefined_yt"
         role="option"
       >
-        Yukon
+        <div
+          class="c10"
+        >
+          Yukon
+        </div>
       </li>
     </ul>
   </div>
@@ -468,9 +521,6 @@ input + .c2 {
   list-style-type: none;
   margin: 0;
   max-height: 8rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -499,8 +549,6 @@ input + .c2 {
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c12:hover {
@@ -510,6 +558,12 @@ input + .c2 {
 .c12.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c13 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -687,7 +741,11 @@ input + .c2 {
           id="listbox_undefined_on"
           role="option"
         >
-          Ontario
+          <div
+            class="c13"
+          >
+            Ontario
+          </div>
         </li>
         <li
           aria-label="Quebec"
@@ -697,7 +755,11 @@ input + .c2 {
           id="listbox_undefined_qc"
           role="option"
         >
-          Quebec
+          <div
+            class="c13"
+          >
+            Quebec
+          </div>
         </li>
         <li
           aria-label="British Columbia"
@@ -707,7 +769,11 @@ input + .c2 {
           id="listbox_undefined_bc"
           role="option"
         >
-          British Columbia
+          <div
+            class="c13"
+          >
+            British Columbia
+          </div>
         </li>
         <li
           aria-label="Alberta"
@@ -717,7 +783,11 @@ input + .c2 {
           id="listbox_undefined_ab"
           role="option"
         >
-          Alberta
+          <div
+            class="c13"
+          >
+            Alberta
+          </div>
         </li>
         <li
           aria-label="Manitoba"
@@ -727,7 +797,11 @@ input + .c2 {
           id="listbox_undefined_mb"
           role="option"
         >
-          Manitoba
+          <div
+            class="c13"
+          >
+            Manitoba
+          </div>
         </li>
         <li
           aria-label="Saskatchewan"
@@ -737,7 +811,11 @@ input + .c2 {
           id="listbox_undefined_sk"
           role="option"
         >
-          Saskatchewan
+          <div
+            class="c13"
+          >
+            Saskatchewan
+          </div>
         </li>
         <li
           aria-label="Nova Scotia"
@@ -747,7 +825,11 @@ input + .c2 {
           id="listbox_undefined_ns"
           role="option"
         >
-          Nova Scotia
+          <div
+            class="c13"
+          >
+            Nova Scotia
+          </div>
         </li>
         <li
           aria-label="New Brunswick"
@@ -757,7 +839,11 @@ input + .c2 {
           id="listbox_undefined_nb"
           role="option"
         >
-          New Brunswick
+          <div
+            class="c13"
+          >
+            New Brunswick
+          </div>
         </li>
         <li
           aria-label="Newfoundland and Labrador"
@@ -767,7 +853,11 @@ input + .c2 {
           id="listbox_undefined_nl"
           role="option"
         >
-          Newfoundland and Labrador
+          <div
+            class="c13"
+          >
+            Newfoundland and Labrador
+          </div>
         </li>
         <li
           aria-label="Prince Edward Island"
@@ -777,7 +867,11 @@ input + .c2 {
           id="listbox_undefined_pe"
           role="option"
         >
-          Prince Edward Island
+          <div
+            class="c13"
+          >
+            Prince Edward Island
+          </div>
         </li>
         <li
           aria-label="Northwest Territories"
@@ -787,7 +881,11 @@ input + .c2 {
           id="listbox_undefined_nt"
           role="option"
         >
-          Northwest Territories
+          <div
+            class="c13"
+          >
+            Northwest Territories
+          </div>
         </li>
         <li
           aria-label="Nunavut"
@@ -797,7 +895,11 @@ input + .c2 {
           id="listbox_undefined_nu"
           role="option"
         >
-          Nunavut
+          <div
+            class="c13"
+          >
+            Nunavut
+          </div>
         </li>
         <li
           aria-label="Yukon"
@@ -807,7 +909,11 @@ input + .c2 {
           id="listbox_undefined_yt"
           role="option"
         >
-          Yukon
+          <div
+            class="c13"
+          >
+            Yukon
+          </div>
         </li>
       </ul>
     </div>
@@ -966,9 +1072,6 @@ input + .c2 {
   list-style-type: none;
   margin: 0;
   max-height: 8rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -997,8 +1100,6 @@ input + .c2 {
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c9:hover {
@@ -1008,6 +1109,12 @@ input + .c2 {
 .c9.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c10 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -1163,7 +1270,11 @@ input + .c2 {
           id="listbox_undefined_on"
           role="option"
         >
-          Ontario
+          <div
+            class="c10"
+          >
+            Ontario
+          </div>
         </li>
         <li
           aria-label="Quebec"
@@ -1173,7 +1284,11 @@ input + .c2 {
           id="listbox_undefined_qc"
           role="option"
         >
-          Quebec
+          <div
+            class="c10"
+          >
+            Quebec
+          </div>
         </li>
         <li
           aria-label="British Columbia"
@@ -1183,7 +1298,11 @@ input + .c2 {
           id="listbox_undefined_bc"
           role="option"
         >
-          British Columbia
+          <div
+            class="c10"
+          >
+            British Columbia
+          </div>
         </li>
         <li
           aria-label="Alberta"
@@ -1193,7 +1312,11 @@ input + .c2 {
           id="listbox_undefined_ab"
           role="option"
         >
-          Alberta
+          <div
+            class="c10"
+          >
+            Alberta
+          </div>
         </li>
         <li
           aria-label="Manitoba"
@@ -1203,7 +1326,11 @@ input + .c2 {
           id="listbox_undefined_mb"
           role="option"
         >
-          Manitoba
+          <div
+            class="c10"
+          >
+            Manitoba
+          </div>
         </li>
         <li
           aria-label="Saskatchewan"
@@ -1213,7 +1340,11 @@ input + .c2 {
           id="listbox_undefined_sk"
           role="option"
         >
-          Saskatchewan
+          <div
+            class="c10"
+          >
+            Saskatchewan
+          </div>
         </li>
         <li
           aria-label="Nova Scotia"
@@ -1223,7 +1354,11 @@ input + .c2 {
           id="listbox_undefined_ns"
           role="option"
         >
-          Nova Scotia
+          <div
+            class="c10"
+          >
+            Nova Scotia
+          </div>
         </li>
         <li
           aria-label="New Brunswick"
@@ -1233,7 +1368,11 @@ input + .c2 {
           id="listbox_undefined_nb"
           role="option"
         >
-          New Brunswick
+          <div
+            class="c10"
+          >
+            New Brunswick
+          </div>
         </li>
         <li
           aria-label="Newfoundland and Labrador"
@@ -1243,7 +1382,11 @@ input + .c2 {
           id="listbox_undefined_nl"
           role="option"
         >
-          Newfoundland and Labrador
+          <div
+            class="c10"
+          >
+            Newfoundland and Labrador
+          </div>
         </li>
         <li
           aria-label="Prince Edward Island"
@@ -1253,7 +1396,11 @@ input + .c2 {
           id="listbox_undefined_pe"
           role="option"
         >
-          Prince Edward Island
+          <div
+            class="c10"
+          >
+            Prince Edward Island
+          </div>
         </li>
         <li
           aria-label="Northwest Territories"
@@ -1263,7 +1410,11 @@ input + .c2 {
           id="listbox_undefined_nt"
           role="option"
         >
-          Northwest Territories
+          <div
+            class="c10"
+          >
+            Northwest Territories
+          </div>
         </li>
         <li
           aria-label="Nunavut"
@@ -1273,7 +1424,11 @@ input + .c2 {
           id="listbox_undefined_nu"
           role="option"
         >
-          Nunavut
+          <div
+            class="c10"
+          >
+            Nunavut
+          </div>
         </li>
         <li
           aria-label="Yukon"
@@ -1283,7 +1438,11 @@ input + .c2 {
           id="listbox_undefined_yt"
           role="option"
         >
-          Yukon
+          <div
+            class="c10"
+          >
+            Yukon
+          </div>
         </li>
       </ul>
     </div>
@@ -1421,9 +1580,6 @@ exports[`Select mobile select has a different style 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 10rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -1452,8 +1608,6 @@ exports[`Select mobile select has a different style 1`] = `
   line-height: 2.5rem;
   overflow: hidden;
   padding: 0 16px 0 var(--spacing-5x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c7:hover {
@@ -1463,6 +1617,12 @@ exports[`Select mobile select has a different style 1`] = `
 .c7.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c8 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c1 {
@@ -1613,7 +1773,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_on"
         role="option"
       >
-        Ontario
+        <div
+          class="c8"
+        >
+          Ontario
+        </div>
       </li>
       <li
         aria-label="Quebec"
@@ -1623,7 +1787,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_qc"
         role="option"
       >
-        Quebec
+        <div
+          class="c8"
+        >
+          Quebec
+        </div>
       </li>
       <li
         aria-label="British Columbia"
@@ -1633,7 +1801,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_bc"
         role="option"
       >
-        British Columbia
+        <div
+          class="c8"
+        >
+          British Columbia
+        </div>
       </li>
       <li
         aria-label="Alberta"
@@ -1643,7 +1815,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_ab"
         role="option"
       >
-        Alberta
+        <div
+          class="c8"
+        >
+          Alberta
+        </div>
       </li>
       <li
         aria-label="Manitoba"
@@ -1653,7 +1829,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_mb"
         role="option"
       >
-        Manitoba
+        <div
+          class="c8"
+        >
+          Manitoba
+        </div>
       </li>
       <li
         aria-label="Saskatchewan"
@@ -1663,7 +1843,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_sk"
         role="option"
       >
-        Saskatchewan
+        <div
+          class="c8"
+        >
+          Saskatchewan
+        </div>
       </li>
       <li
         aria-label="Nova Scotia"
@@ -1673,7 +1857,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_ns"
         role="option"
       >
-        Nova Scotia
+        <div
+          class="c8"
+        >
+          Nova Scotia
+        </div>
       </li>
       <li
         aria-label="New Brunswick"
@@ -1683,7 +1871,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_nb"
         role="option"
       >
-        New Brunswick
+        <div
+          class="c8"
+        >
+          New Brunswick
+        </div>
       </li>
       <li
         aria-label="Newfoundland and Labrador"
@@ -1693,7 +1885,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_nl"
         role="option"
       >
-        Newfoundland and Labrador
+        <div
+          class="c8"
+        >
+          Newfoundland and Labrador
+        </div>
       </li>
       <li
         aria-label="Prince Edward Island"
@@ -1703,7 +1899,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_pe"
         role="option"
       >
-        Prince Edward Island
+        <div
+          class="c8"
+        >
+          Prince Edward Island
+        </div>
       </li>
       <li
         aria-label="Northwest Territories"
@@ -1713,7 +1913,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_nt"
         role="option"
       >
-        Northwest Territories
+        <div
+          class="c8"
+        >
+          Northwest Territories
+        </div>
       </li>
       <li
         aria-label="Nunavut"
@@ -1723,7 +1927,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_nu"
         role="option"
       >
-        Nunavut
+        <div
+          class="c8"
+        >
+          Nunavut
+        </div>
       </li>
       <li
         aria-label="Yukon"
@@ -1733,7 +1941,11 @@ exports[`Select mobile select has a different style 1`] = `
         id="listbox_undefined_yt"
         role="option"
       >
-        Yukon
+        <div
+          class="c8"
+        >
+          Yukon
+        </div>
       </li>
     </ul>
   </div>

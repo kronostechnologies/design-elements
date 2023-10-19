@@ -17,9 +17,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 6rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -48,8 +45,6 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c2:hover {
@@ -61,7 +56,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   outline: none;
 }
 
-.c3 {
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -78,20 +73,18 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.c3:hover {
+.c4:hover {
   background-color: #DBDEE1;
 }
 
-.c3.focused:not(:hover) {
+.c4.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
 }
 
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -108,20 +101,24 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: #DBDEE1;
 }
 
-.c5.focused:not(:hover) {
+.c6.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
 }
 
-.c4 {
+.c3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
   color: #60666E;
   padding: 0 var(--spacing-1x);
 }
@@ -147,26 +144,34 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       id="undefined_optionA"
       role="option"
     >
-      Option A
+      <div
+        class="c3"
+      >
+        Option A
+      </div>
     </li>
     <li
       aria-label="Option B"
       aria-selected="true"
-      class="c3"
+      class="c4"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
       selected=""
     >
       <svg
-        class="c4"
+        class="c5"
         color="currentColor"
         data-testid="check-icon"
         focusable="false"
         height="16"
         width="16"
       />
-      Option B
+      <div
+        class="c3"
+      >
+        Option B
+      </div>
     </li>
     <li
       aria-label="Option C"
@@ -176,7 +181,11 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       id="undefined_optionC"
       role="option"
     >
-      Option C
+      <div
+        class="c3"
+      >
+        Option C
+      </div>
     </li>
     <li
       aria-label="Option D"
@@ -186,19 +195,27 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       id="undefined_optionD"
       role="option"
     >
-      Option D
+      <div
+        class="c3"
+      >
+        Option D
+      </div>
     </li>
     <li
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c5"
+      class="c6"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
       role="option"
     >
-      Option Disabled
+      <div
+        class="c3"
+      >
+        Option Disabled
+      </div>
     </li>
   </ul>
 </div>
@@ -221,9 +238,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 8rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -252,8 +266,6 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c2:hover {
@@ -265,7 +277,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   outline: none;
 }
 
-.c4 {
+.c5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -282,20 +294,18 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: #DBDEE1;
 }
 
-.c4.focused:not(:hover) {
+.c5.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
 }
 
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -312,17 +322,21 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: #DBDEE1;
 }
 
-.c5.focused:not(:hover) {
+.c6.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c3 {
@@ -359,17 +373,25 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
         height="16"
         width="16"
       />
-      Option A
+      <div
+        class="c4"
+      >
+        Option A
+      </div>
     </li>
     <li
       aria-label="Option B"
       aria-selected="false"
-      class="c4"
+      class="c5"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
     >
-      Option B
+      <div
+        class="c4"
+      >
+        Option B
+      </div>
     </li>
     <li
       aria-label="Option C"
@@ -388,29 +410,41 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
         height="16"
         width="16"
       />
-      Option C
+      <div
+        class="c4"
+      >
+        Option C
+      </div>
     </li>
     <li
       aria-label="Option D"
       aria-selected="false"
-      class="c4"
+      class="c5"
       data-testid="listitem-optionD"
       id="undefined_optionD"
       role="option"
     >
-      Option D
+      <div
+        class="c4"
+      >
+        Option D
+      </div>
     </li>
     <li
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c5"
+      class="c6"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
       role="option"
     >
-      Option Disabled
+      <div
+        class="c4"
+      >
+        Option Disabled
+      </div>
     </li>
   </ul>
 </div>
@@ -433,9 +467,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   list-style-type: none;
   margin: 0;
   max-height: 6rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   overflow-y: auto;
   padding: 0;
   width: 100%;
@@ -464,8 +495,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .c2:hover {
@@ -477,7 +506,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   outline: none;
 }
 
-.c3 {
+.c4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -494,20 +523,18 @@ exports[`Listbox Matches the snapshot 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.c3:hover {
+.c4:hover {
   background-color: #DBDEE1;
 }
 
-.c3.focused:not(:hover) {
+.c4.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
 }
 
-.c5 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -524,20 +551,24 @@ exports[`Listbox Matches the snapshot 1`] = `
   line-height: 2rem;
   overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: #DBDEE1;
 }
 
-.c5.focused:not(:hover) {
+.c6.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
 }
 
-.c4 {
+.c3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
   color: #60666E;
   padding: 0 var(--spacing-1x);
 }
@@ -563,26 +594,34 @@ exports[`Listbox Matches the snapshot 1`] = `
       id="undefined_optionA"
       role="option"
     >
-      Option A
+      <div
+        class="c3"
+      >
+        Option A
+      </div>
     </li>
     <li
       aria-label="Option B"
       aria-selected="true"
-      class="c3"
+      class="c4"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
       selected=""
     >
       <svg
-        class="c4"
+        class="c5"
         color="currentColor"
         data-testid="check-icon"
         focusable="false"
         height="16"
         width="16"
       />
-      Option B
+      <div
+        class="c3"
+      >
+        Option B
+      </div>
     </li>
     <li
       aria-label="Option C"
@@ -592,7 +631,11 @@ exports[`Listbox Matches the snapshot 1`] = `
       id="undefined_optionC"
       role="option"
     >
-      Option C
+      <div
+        class="c3"
+      >
+        Option C
+      </div>
     </li>
     <li
       aria-label="Option D"
@@ -602,19 +645,27 @@ exports[`Listbox Matches the snapshot 1`] = `
       id="undefined_optionD"
       role="option"
     >
-      Option D
+      <div
+        class="c3"
+      >
+        Option D
+      </div>
     </li>
     <li
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c5"
+      class="c6"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
       role="option"
     >
-      Option Disabled
+      <div
+        class="c3"
+      >
+        Option Disabled
+      </div>
     </li>
   </ul>
 </div>

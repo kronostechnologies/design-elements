@@ -134,7 +134,6 @@ const List = styled.ul<ListProps>`
     list-style-type: none;
     margin: 0;
     max-height: ${getListMaxHeight}rem;
-    min-width: fit-content;
     overflow-y: auto;
     padding: 0;
     width: 100%;
@@ -170,8 +169,6 @@ const ListItem = styled.li<ListItemProps>`
     line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
     overflow: hidden;
     padding: 0 ${({ isMobile }) => (isMobile ? 16 : 8)}px 0 ${getListItemSidePadding};
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
@@ -181,6 +178,12 @@ const ListItem = styled.li<ListItemProps>`
         border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
         outline: none;
     }
+`;
+
+const ListItemWrapper = styled.div`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
 
 const CheckIndicator = styled(Icon)`
@@ -532,7 +535,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         {shouldDisplayCheckIndicator(option) && (
                             <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
                         )}
-                        {option.label || option.value}
+                        <ListItemWrapper>{option.label || option.value}</ListItemWrapper>
                     </ListItem>
                 ))}
             </List>
