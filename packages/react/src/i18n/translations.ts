@@ -49,7 +49,7 @@ export const Translations = {
         },
         pagination: {
             pagination: 'Pagination',
-            results: '{{pageStartIndex}}-{{pageEndIndex}} of {{numberOfResults}} results',
+            results: '{{pageStartIndex}}–{{pageEndIndex}} of {{numberOfResults}} results',
         },
         'password-creation-input': {
             'password-strength': 'Password strength: ',
@@ -163,7 +163,7 @@ export const Translations = {
         },
         pagination: {
             pagination: 'Pagination',
-            results: '{{pageStartIndex}}-{{pageEndIndex}} de {{numberOfResults}} résultats',
+            results: '{{pageStartIndex}}–{{pageEndIndex}} de {{numberOfResults}} résultats',
         },
         'password-creation-input': {
             'password-strength': 'Force du mot de passe : ',
