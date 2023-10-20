@@ -68,9 +68,11 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 
 <button
     aria-checked="true"
+    aria-labelledby="uuid1"
     aria-readonly="false"
     class="c0"
     data-testid="toggle-switch"
+    id="uuid2"
     role="switch"
     type="button"
   >
@@ -92,6 +94,8 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
 
 <label
     class="c0"
+    for="uuid2"
+    id="uuid1"
   >
     Switch
   </label>,
@@ -166,9 +170,11 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 
 <button
     aria-checked="true"
+    aria-labelledby="uuid1"
     aria-readonly="false"
     class="c0"
     data-testid="toggle-switch"
+    id="uuid2"
     role="switch"
     type="button"
   >
@@ -190,6 +196,8 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
 
 <label
     class="c0"
+    for="uuid2"
+    id="uuid1"
   >
     Switch
   </label>,
@@ -264,10 +272,12 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 
 <button
     aria-checked="true"
+    aria-labelledby="uuid1"
     aria-readonly="true"
     class="c0"
     data-testid="toggle-switch"
     disabled=""
+    id="uuid2"
     role="switch"
     type="button"
   >
@@ -289,6 +299,8 @@ exports[`ToggleSwitch has disabled styles 1`] = `
 <label
     class="c0"
     disabled=""
+    for="uuid2"
+    id="uuid1"
   >
     Switch
   </label>,
