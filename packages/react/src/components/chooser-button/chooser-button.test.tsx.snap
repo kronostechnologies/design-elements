@@ -16,6 +16,7 @@ exports[`Chooser Button Matches the snapshot 1`] = `
 <input
     checked=""
     class="c0"
+    id="uuid1"
     name="maritalStatus"
     type="radio"
     value="test value"
@@ -94,6 +95,7 @@ input[type="radio"]:disabled + .c1 {
 
 <label
     class="c0 c1"
+    for="uuid1"
   >
     Children
   </label>,
