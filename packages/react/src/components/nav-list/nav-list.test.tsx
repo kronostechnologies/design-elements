@@ -5,8 +5,6 @@ import { actAndWaitForEffects, mountWithProviders, renderWithTheme } from '../..
 import { NavList } from './nav-list';
 import { NavListOption } from './nav-list-option';
 
-jest.mock('../../utils/uuid');
-
 const options: NavListOption[] = [
     {
         label: 'Option A',

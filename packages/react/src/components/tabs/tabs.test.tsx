@@ -28,8 +28,6 @@ function expectPanelToBeRendered(wrapper: ReactWrapper, tabPanelTestId: string):
     expect(tabPanel.isEmptyRender()).toBe(false);
 }
 
-jest.mock('../../utils/uuid');
-
 describe('Tabs', () => {
     test('should display the first tab panel by default', () => {
         const expectedTabPanel = 'content';

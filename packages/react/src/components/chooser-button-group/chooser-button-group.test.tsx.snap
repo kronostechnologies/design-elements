@@ -102,24 +102,28 @@ input[type="radio"]:disabled + .c3 {
   >
     <input
       class="c1"
+      id="uuid1"
       name="maritalStatus"
       type="radio"
       value="single"
     />
     <label
       class="c2 c3"
+      for="uuid1"
     >
       Single, living alone or with a roommate
     </label>
     <input
       checked=""
       class="c1"
+      id="uuid2"
       name="maritalStatus"
       type="radio"
       value="married"
     />
     <label
       class="c2 c3"
+      for="uuid2"
     >
       Married or living with a spouse
     </label>
@@ -217,12 +221,14 @@ input[type="radio"]:disabled + .c3 {
     <input
       class="c1"
       data-testid="chooser-button-group-skip"
+      id="uuid3"
       name="maritalStatus"
       type="radio"
       value="skip"
     />
     <label
       class="c2 c3"
+      for="uuid3"
     >
       Would rather not say
     </label>

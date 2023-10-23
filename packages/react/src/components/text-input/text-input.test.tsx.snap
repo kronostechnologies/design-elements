@@ -116,6 +116,7 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     Telephone
   </label>
@@ -123,6 +124,7 @@ input + .c1 {
     class="c3"
     data-testid="text-input"
     disabled=""
+    id="uuid1"
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
     type="tel"
@@ -247,12 +249,14 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     Telephone (required)
   </label>
   <input
     class="c3"
     data-testid="text-input"
+    id="uuid1"
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
     required=""
@@ -378,12 +382,14 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     Telephone
   </label>
   <input
     class="c3"
     data-testid="text-input"
+    id="uuid1"
     pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
     placeholder="Ex.: 555-123-4567"
     type="tel"

@@ -6,8 +6,6 @@ import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps, DialogType } from './modal-dialog';
 import { IconName } from '../icon/icon';
 
-jest.mock('../../utils/uuid');
-
 type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'>;
 
 const defaultTestProps = {

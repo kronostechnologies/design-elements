@@ -3,8 +3,6 @@ import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { Option, DropdownList } from './dropdown-list';
 
-jest.mock('../../utils/uuid');
-
 const provinces = [
     { value: 'on', label: 'Ontario' },
     { value: 'qc', label: 'Quebec' },

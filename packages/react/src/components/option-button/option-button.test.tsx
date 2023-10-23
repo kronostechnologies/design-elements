@@ -1,8 +1,6 @@
 import { renderWithTheme } from '../../test-utils/renderer';
 import { OptionButton } from './option-button';
 
-jest.mock('../../utils/uuid');
-
 describe('Option Button', () => {
     test('Is checked', () => {
         const tree = renderWithTheme(<OptionButton label="option" name="test" value={2} checked />);
