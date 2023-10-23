@@ -122,6 +122,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1"
   aria-live="assertive"
   class="c0"
   role="alert"
@@ -140,6 +141,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   >
     <h2
       class="c4"
+      id="uuid1"
     >
       The form contains one or more errors
     </h2>

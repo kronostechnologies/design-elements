@@ -163,6 +163,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
       class="c4"
       data-testid="numeric-input"
       disabled=""
+      id="uuid1"
       type="number"
       value="50"
     />
@@ -349,7 +350,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   <div
     aria-live="polite"
     class="c1"
-    id="undefined_invalid"
+    id="uuid1_invalid"
     role="alert"
   >
     <div
@@ -379,6 +380,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
     <input
       class="c6"
       data-testid="numeric-input"
+      id="uuid1"
       type="number"
       value="50"
     />
@@ -537,6 +539,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
     <input
       class="c2"
       data-testid="numeric-input"
+      id="uuid1"
       type="number"
       value="50"
     />
@@ -705,6 +708,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
     <input
       class="c3"
       data-testid="numeric-input"
+      id="uuid1"
       type="number"
       value="50"
     />

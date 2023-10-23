@@ -63,6 +63,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1"
   aria-live="polite"
   class="c0"
   role="status"
@@ -80,6 +81,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   >
     <span
       class="c4"
+      id="uuid1"
     >
       Information
     </span>
@@ -162,6 +164,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1"
   aria-live="polite"
   class="c0"
   role="status"
@@ -179,6 +182,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   >
     <span
       class="c4"
+      id="uuid1"
     >
       Information
     </span>
@@ -253,6 +257,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 
 <section
   aria-atomic="true"
+  aria-labelledby="uuid1"
   aria-live="polite"
   class="c0"
   role="status"
@@ -270,6 +275,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   >
     <span
       class="c4"
+      id="uuid1"
     >
       Information
     </span>
