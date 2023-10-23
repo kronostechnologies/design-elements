@@ -3,8 +3,6 @@ import { mountWithProviders, renderWithProviders } from '../../test-utils/render
 import { ExternalItemProps, NavItemProps } from '../dropdown-menu/list-items';
 import { BentoMenuButton } from './bento-menu-button';
 
-jest.mock('../../utils/uuid');
-
 function givenProducts(): NavItemProps[] {
     return [
         {

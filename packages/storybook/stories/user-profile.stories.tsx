@@ -33,6 +33,7 @@ const options: NavItemProps[] = [
     },
     {
         label: 'Option B',
+        lozenge: 'New',
         value: 'optionB',
         href: '/testb',
     },

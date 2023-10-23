@@ -262,6 +262,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -275,6 +276,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -559,6 +561,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -574,6 +577,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="some-data-test-id"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -858,6 +862,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -873,6 +878,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1155,6 +1161,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -1171,6 +1178,7 @@ label + .c3 {
           class="c5 datePickerInput"
           data-testid="text-input"
           disabled=""
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1486,13 +1494,14 @@ label + .c6 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
   <div
     aria-live="polite"
     class="c3"
-    id="undefined_invalid"
+    id="uuid1_invalid"
     role="alert"
   >
     <div
@@ -1523,6 +1532,7 @@ label + .c6 {
         <input
           class="c8 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1809,6 +1819,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -1822,6 +1833,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -2266,6 +2278,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -2281,6 +2294,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -2347,22 +2361,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid2"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_october"
+                            aria-activedescendant="uuid2_october"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid2"
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
                             data-testid="month-select"
+                            id="uuid2"
                             type="text"
                             value="Oct"
                           />
                           <button
+                            aria-labelledby="uuid2"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -2387,22 +2403,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid3"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_2010"
+                            aria-activedescendant="uuid3_2010"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid3"
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
                             data-testid="year-select"
+                            id="uuid3"
                             type="text"
                             value="2010"
                           />
                           <button
+                            aria-labelledby="uuid3"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -3505,6 +3523,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -3520,6 +3539,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -3586,22 +3606,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid2"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_october"
+                            aria-activedescendant="uuid2_october"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid2"
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
                             data-testid="month-select"
+                            id="uuid2"
                             type="text"
                             value="Oct"
                           />
                           <button
+                            aria-labelledby="uuid2"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -3626,22 +3648,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid3"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_2010"
+                            aria-activedescendant="uuid3_2010"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid3"
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
                             data-testid="year-select"
+                            id="uuid3"
                             type="text"
                             value="2010"
                           />
                           <button
+                            aria-labelledby="uuid3"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -4665,6 +4689,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -4678,6 +4703,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -4742,22 +4768,24 @@ label + .c3 {
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-owns="listbox_undefined"
+                            aria-owns="listbox_uuid2"
                             class="c12"
                             data-testid="input-wrapper"
                           >
                             <input
-                              aria-activedescendant="undefined_october"
+                              aria-activedescendant="uuid2_october"
                               aria-autocomplete="list"
-                              aria-controls="listbox_undefined"
+                              aria-controls="listbox_uuid2"
                               aria-label="Select a month"
                               aria-multiline="false"
                               class="c13"
                               data-testid="month-select"
+                              id="uuid2"
                               type="text"
                               value="Oct"
                             />
                             <button
+                              aria-labelledby="uuid2"
                               class="c14"
                               data-testid="arrow"
                               tabindex="-1"
@@ -4782,22 +4810,24 @@ label + .c3 {
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-owns="listbox_undefined"
+                            aria-owns="listbox_uuid3"
                             class="c12"
                             data-testid="input-wrapper"
                           >
                             <input
-                              aria-activedescendant="undefined_2010"
+                              aria-activedescendant="uuid3_2010"
                               aria-autocomplete="list"
-                              aria-controls="listbox_undefined"
+                              aria-controls="listbox_uuid3"
                               aria-label="Select a year"
                               aria-multiline="false"
                               class="c13"
                               data-testid="year-select"
+                              id="uuid3"
                               type="text"
                               value="2010"
                             />
                             <button
+                              aria-labelledby="uuid3"
                               class="c14"
                               data-testid="arrow"
                               tabindex="-1"

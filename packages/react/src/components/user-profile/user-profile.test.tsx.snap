@@ -326,6 +326,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   aria-label=""
   class="c0 "
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="true"
@@ -357,6 +358,7 @@ exports[`UserProfile Matches Snapshot (defaultOpen) 1`] = `
   <div
     class="c7 c8"
     data-testid="user-profile"
+    id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
@@ -808,6 +810,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
   aria-label=""
   class="c0 "
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -840,6 +843,7 @@ exports[`UserProfile Matches Snapshot (desktop) 1`] = `
     class="c7 c8"
     data-testid="user-profile"
     hidden=""
+    id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
@@ -1295,6 +1299,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
   aria-label=""
   class="c0 c1"
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -1318,6 +1323,7 @@ exports[`UserProfile Matches Snapshot (mobile) 1`] = `
     class="c6 c7"
     data-testid="user-profile"
     hidden=""
+    id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
@@ -1769,6 +1775,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
   aria-label="User menu"
   class="c0 "
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -1801,6 +1808,7 @@ exports[`UserProfile Matches Snapshot (tag="nav") 1`] = `
     class="c7 c8"
     data-testid="user-profile"
     hidden=""
+    id="uuid2"
   >
     <ul
       aria-labelledby="user-label"
