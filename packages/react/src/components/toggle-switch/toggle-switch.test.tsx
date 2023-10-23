@@ -3,8 +3,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders, renderWithProviders, renderWithTheme } from '../../test-utils/renderer';
 import { ToggleSwitch } from './toggle-switch';
 
-jest.mock('../../utils/uuid');
-
 describe('ToggleSwitch', () => {
     test('onToggle callback is called when clicked', () => {
         const callback = jest.fn();

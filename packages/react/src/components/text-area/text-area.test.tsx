@@ -4,8 +4,6 @@ import { findByTestId, getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { TextArea } from './text-area';
 
-jest.mock('../../utils/uuid', () => ({ v4: () => 'UUID' }));
-
 describe('TextArea', () => {
     const defaultProps = {
         defaultValue: 'foo',
