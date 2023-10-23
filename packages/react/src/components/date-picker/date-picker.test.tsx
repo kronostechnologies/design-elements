@@ -3,8 +3,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { actAndWaitForEffects, mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { Datepicker, DatepickerHandles } from './date-picker';
 
-jest.mock('../..//utils/uuid');
-
 describe('Datepicker', () => {
     test('onChange callback is called when input changed', () => {
         const callback = jest.fn();

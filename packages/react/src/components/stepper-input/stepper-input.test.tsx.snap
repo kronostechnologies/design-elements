@@ -238,6 +238,7 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     test
   </label>
@@ -248,6 +249,7 @@ input + .c1 {
       class="c4"
       data-testid="stepper-input"
       disabled=""
+      id="uuid1"
       name="points"
       type="number"
     />
@@ -559,13 +561,14 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     test
   </label>
   <div
     aria-live="polite"
     class="c3"
-    id="undefined_invalid"
+    id="uuid1_invalid"
     role="alert"
   >
     <div
@@ -590,6 +593,7 @@ input + .c1 {
     <input
       class="c7"
       data-testid="stepper-input"
+      id="uuid1"
       name="points"
       type="number"
     />
@@ -769,6 +773,7 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     test
   </label>
@@ -778,6 +783,7 @@ input + .c1 {
     <input
       class="c4"
       data-testid="stepper-input"
+      id="uuid1"
       name="points"
       type="number"
     />
@@ -1023,6 +1029,7 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     test
   </label>
@@ -1032,6 +1039,7 @@ input + .c1 {
     <input
       class="c4"
       data-testid="stepper-input"
+      id="uuid1"
       name="points"
       type="number"
     />

@@ -61,6 +61,7 @@ exports[`NavList Is hidden 1`] = `
   class="c0"
   data-testid="menu-list"
   hidden=""
+  id="uuid1"
 >
   <li
     data-testid="listitem-optionA"
@@ -189,6 +190,7 @@ exports[`NavList Matches the snapshot 1`] = `
 <ul
   class="c0"
   data-testid="menu-list"
+  id="uuid1"
 >
   <li
     data-testid="listitem-optionA"

@@ -3,8 +3,6 @@ import { renderWithTheme } from '../../test-utils/renderer';
 import { themeProvider } from '../../test-utils/theme-provider';
 import { MoneyInput } from './money-input';
 
-jest.mock('../../utils/uuid');
-
 function simulateValueChange(input: HTMLInputElement, value: String): void {
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value } });

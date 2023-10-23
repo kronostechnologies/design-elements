@@ -241,6 +241,7 @@ exports[`DropdownMenu Is hidden 1`] = `
   class="c0"
   data-testid="menu-list"
   hidden=""
+  id="uuid1"
 >
   <ul
     aria-labelledby="firstGroup"
@@ -651,6 +652,7 @@ exports[`DropdownMenu Matches the snapshot 1`] = `
 <div
   class="c0"
   data-testid="menu-list"
+  id="uuid1"
 >
   <ul
     aria-labelledby="firstGroup"

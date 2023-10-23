@@ -41,6 +41,7 @@ export { IntlProvider } from './components/internationalization-provider/interna
 export { Listbox, ListboxOption } from './components/listbox/listbox';
 
 // Miscellaneous
+export { AccordionItem, Accordion, ItemsProps } from './components/accordion/index';
 export { Badge } from './components/badge/badge';
 export { Card } from './components/card/card';
 export { CardLink } from './components/card-link/card-link';

@@ -5,8 +5,6 @@ import { mountWithProviders, renderWithProviders } from '../../test-utils/render
 import { ExternalItem, GroupItem, GroupItemProps, NavItem } from '../dropdown-menu/list-items';
 import { DropdownMenuButton } from './dropdown-menu-button';
 
-jest.mock('../../utils/uuid');
-
 const TestGroups = (): ReactElement<GroupItemProps>[] | ReactElement<GroupItemProps> => (
     <>
         <GroupItem id="firstGroup">
