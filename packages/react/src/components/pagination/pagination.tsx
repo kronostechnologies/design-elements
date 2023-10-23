@@ -1,5 +1,6 @@
 import { useEffect, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
 import { clamp } from '../../utils/math';
@@ -94,7 +95,6 @@ const Navigation = styled.nav`
 `;
 
 interface PaginationProps {
-    ariaLabelledBy?: string;
     className?: string;
     /**
      * Total number of pages
@@ -128,7 +128,6 @@ interface PaginationProps {
 }
 
 export const Pagination: VoidFunctionComponent<PaginationProps> = ({
-    ariaLabelledBy,
     className,
     totalPages,
     numberOfResults,
@@ -139,6 +138,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
 }) => {
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
+    const headingId = useId('heading')
     const pagesDisplayed = Math.min(pagesShown, totalPages);
     const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
     const canNavigatePrevious = currentPage > 1;
@@ -182,6 +182,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
         );
     });
 
+    const ariaLabelledby = numberOfResults !== undefined ? headingId : undefined;
     let pageStartIndex;
     let pageEndIndex;
     const pageSize = numberOfResults !== undefined ? Math.ceil(numberOfResults / totalPages) : undefined;
@@ -192,37 +193,37 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
 
     return (
         <Container className={className} isMobile={isMobile}>
-            <Navigation aria-labelledby={ariaLabelledBy}>
-                {numberOfResults !== undefined && (
+            {numberOfResults !== undefined && (
+                <Navigation aria-labelledby={ariaLabelledby}>
                     <span aria-live='off' role='status'>
-                        <CurrentPageLabelHeading data-testid="currentPageLabelHeading">
+                        <CurrentPageLabelHeading id={headingId} data-testid="currentPageLabelHeading">
                             <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
                                 <ScreenReaderOnlyText label={`${t('pagination')} - `} />
                                 {t('results', { pageStartIndex, pageEndIndex, numberOfResults })}
                             </ResultsLabel>
                         </CurrentPageLabelHeading>
                     </span>
-                )}
-                {forwardBackwardNavActive && (
-                    <NavButton
-                        data-testid="previousPageButton"
-                        iconName="chevronLeft"
-                        label="previous page"
-                        enabled={canNavigatePrevious}
-                        onClick={() => changePage(currentPage - 1)}
-                    />
-                )}
-                <Pages>{pages}</Pages>
-                {forwardBackwardNavActive && (
-                    <NavButton
-                        data-testid="nextPageButton"
-                        iconName="chevronRight"
-                        label="next page"
-                        enabled={canNavigateNext}
-                        onClick={() => changePage(currentPage + 1)}
-                    />
-                )}
-            </Navigation>
+                    {forwardBackwardNavActive && (
+                        <NavButton
+                            data-testid="previousPageButton"
+                            iconName="chevronLeft"
+                            label="previous page"
+                            enabled={canNavigatePrevious}
+                            onClick={() => changePage(currentPage - 1)}
+                        />
+                    )}
+                    <Pages>{pages}</Pages>
+                    {forwardBackwardNavActive && (
+                        <NavButton
+                            data-testid="nextPageButton"
+                            iconName="chevronRight"
+                            label="next page"
+                            enabled={canNavigateNext}
+                            onClick={() => changePage(currentPage + 1)}
+                        />
+                    )}
+                </Navigation>
+            )}
         </Container>
     );
 };
