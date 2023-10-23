@@ -12,7 +12,7 @@ const StyledFieldset = styled.fieldset`
     padding: 0;
 `;
 
-const StyledLegend = styled.legend<{isMobile: boolean}>`
+const StyledLegend = styled.legend<{ isMobile: boolean }>`
     color: ${({ theme }) => theme.greys.black};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
@@ -100,10 +100,11 @@ interface RadioButtonProps {
     content?: {
         element: React.ReactElement;
         maxHeight?: number;
-    }
+    };
 }
 
 interface RadioButtonGroupProps {
+    className?: string;
     id?: string;
     label?: string;
     tooltip?: TooltipProps;
@@ -117,6 +118,7 @@ interface RadioButtonGroupProps {
 
 export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     buttons,
+    className,
     groupName,
     label,
     tooltip,
@@ -125,7 +127,11 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     ...otherProps
 }) => {
     const { isMobile } = useDeviceContext();
-    const [currentChecked, setCurrentChecked] = useState(checkedValue);
+    const [currentChecked, setCurrentChecked] = useState(
+        buttons.find((button) => (
+            checkedValue !== undefined ? checkedValue === button.value : button.defaultChecked
+        ))?.value,
+    );
     const dataAttributes = useDataAttributes(otherProps);
     const dataTestId = dataAttributes['data-testid'] ? dataAttributes['data-testid'] : 'radio-button-group';
 
@@ -135,7 +141,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
     }, [onChange, setCurrentChecked]);
 
     return (
-        <StyledFieldset>
+        <StyledFieldset className={className}>
             {label && (
                 <StyledLegend isMobile={isMobile}>
                     {label}
@@ -162,6 +168,7 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
                     </StyledLabel>
                     {button.content && (
                         <ContentWrapper
+                            data-testid="content-wrapper"
                             maxHeight={button.content.maxHeight}
                             isExpanded={currentChecked === button.value}
                         >

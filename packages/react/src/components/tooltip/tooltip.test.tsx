@@ -3,8 +3,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Tooltip } from './tooltip';
 
-jest.mock('../../utils/uuid');
-
 describe('Tooltip', () => {
     describe('desktop', () => {
         test('opens on mouseEnter', () => {

@@ -3,8 +3,6 @@ import { mountWithTheme, renderWithProviders } from '../../test-utils/renderer';
 import { RadioCardGroup } from './radio-card-group';
 import { RadioCard } from './radio-card';
 
-jest.mock('../../utils/uuid');
-
 describe('Radio Card', () => {
     const inputTestId = 'radio-card-test-input';
     const containerTestId = 'radio-card-test-container';

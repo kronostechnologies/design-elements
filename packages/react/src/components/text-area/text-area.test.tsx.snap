@@ -121,6 +121,7 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     Comment (required)
   </label>
@@ -128,6 +129,7 @@ input + .c1 {
     class="c3"
     data-testid="textarea"
     disabled=""
+    id="uuid1"
     placeholder="Enter your comment"
     required=""
   >
@@ -257,12 +259,14 @@ input + .c1 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     Comment (required)
   </label>
   <textarea
     class="c3"
     data-testid="some-data-testid"
+    id="uuid1"
     placeholder="Enter your comment"
     required=""
   >

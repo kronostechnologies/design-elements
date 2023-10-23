@@ -37,11 +37,14 @@ exports[`Option Button Is checked 1`] = `
   <input
     checked=""
     class="c0"
+    id="uuid1"
     name="test"
     type="radio"
     value="2"
   />
-  <label>
+  <label
+    for="uuid1"
+  >
     option
   </label>
 </div>
@@ -83,11 +86,14 @@ exports[`Option Button Matches the snapshot 1`] = `
 <div>
   <input
     class="c0"
+    id="uuid1"
     name="test"
     type="radio"
     value="2"
   />
-  <label>
+  <label
+    for="uuid1"
+  >
     option
   </label>
 </div>

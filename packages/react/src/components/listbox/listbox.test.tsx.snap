@@ -115,7 +115,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 <div
-  aria-activedescendant="undefined_optionB"
+  aria-activedescendant="uuid1_optionB"
   aria-multiselectable="false"
   class="c0"
   role="listbox"
@@ -124,6 +124,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   <ul
     class="c1"
     data-testid="listbox-list"
+    id="uuid1"
     role="presentation"
     tabindex="0"
   >
@@ -132,7 +133,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionA"
-      id="undefined_optionA"
+      id="uuid1_optionA"
       role="option"
     >
       Option A
@@ -142,7 +143,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-selected="true"
       class="c3"
       data-testid="listitem-optionB"
-      id="undefined_optionB"
+      id="uuid1_optionB"
       role="option"
       selected=""
     >
@@ -161,7 +162,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionC"
-      id="undefined_optionC"
+      id="uuid1_optionC"
       role="option"
     >
       Option C
@@ -171,7 +172,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionD"
-      id="undefined_optionD"
+      id="uuid1_optionD"
       role="option"
     >
       Option D
@@ -183,7 +184,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       class="c5"
       data-testid="listitem-optionDisabled"
       disabled=""
-      id="undefined_optionDisabled"
+      id="uuid1_optionDisabled"
       role="option"
     >
       Option Disabled
@@ -315,6 +316,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   <ul
     class="c1"
     data-testid="listbox-list"
+    id="uuid1"
     role="presentation"
     tabindex="0"
   >
@@ -323,7 +325,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionA"
-      id="undefined_optionA"
+      id="uuid1_optionA"
       role="option"
       selected=""
     >
@@ -342,7 +344,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-selected="false"
       class="c4"
       data-testid="listitem-optionB"
-      id="undefined_optionB"
+      id="uuid1_optionB"
       role="option"
     >
       Option B
@@ -352,7 +354,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionC"
-      id="undefined_optionC"
+      id="uuid1_optionC"
       role="option"
       selected=""
     >
@@ -371,7 +373,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-selected="false"
       class="c4"
       data-testid="listitem-optionD"
-      id="undefined_optionD"
+      id="uuid1_optionD"
       role="option"
     >
       Option D
@@ -383,7 +385,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       class="c5"
       data-testid="listitem-optionDisabled"
       disabled=""
-      id="undefined_optionDisabled"
+      id="uuid1_optionDisabled"
       role="option"
     >
       Option Disabled
@@ -507,7 +509,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 <div
-  aria-activedescendant="undefined_optionB"
+  aria-activedescendant="uuid1_optionB"
   aria-multiselectable="false"
   class="c0"
   role="listbox"
@@ -516,6 +518,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   <ul
     class="c1"
     data-testid="listbox-list"
+    id="uuid1"
     role="presentation"
     tabindex="0"
   >
@@ -524,7 +527,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionA"
-      id="undefined_optionA"
+      id="uuid1_optionA"
       role="option"
     >
       Option A
@@ -534,7 +537,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-selected="true"
       class="c3"
       data-testid="listitem-optionB"
-      id="undefined_optionB"
+      id="uuid1_optionB"
       role="option"
       selected=""
     >
@@ -553,7 +556,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionC"
-      id="undefined_optionC"
+      id="uuid1_optionC"
       role="option"
     >
       Option C
@@ -563,7 +566,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-selected="false"
       class="c2"
       data-testid="listitem-optionD"
-      id="undefined_optionD"
+      id="uuid1_optionD"
       role="option"
     >
       Option D
@@ -575,7 +578,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       class="c5"
       data-testid="listitem-optionDisabled"
       disabled=""
-      id="undefined_optionDisabled"
+      id="uuid1_optionDisabled"
       role="option"
     >
       Option Disabled

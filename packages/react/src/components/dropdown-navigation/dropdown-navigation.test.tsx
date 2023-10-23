@@ -4,8 +4,6 @@ import { mountWithProviders, renderWithProviders } from '../../test-utils/render
 import { IconButton } from '../buttons/icon-button';
 import { DropdownNavigation } from './dropdown-navigation';
 
-jest.mock('../../utils/uuid');
-
 const options = [
     {
         label: 'Option A',
