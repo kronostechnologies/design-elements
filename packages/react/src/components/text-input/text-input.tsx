@@ -94,6 +94,7 @@ export const TextInput = forwardRef(({
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: valid ?? true });
+    const [getAriaDescribedBy, setAriaDescribedBy] = useState('');
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
 
@@ -127,6 +128,13 @@ export const TextInput = forwardRef(({
         }
     }, [valid]);
 
+    useEffect(() => {
+        let describedBy = ariaDescribedBy || '';
+        if (!validity) describedBy += ` ${id}_invalid`;
+        if (hint) describedBy += ` ${id}_hint`;
+        setAriaDescribedBy(describedBy.trim());
+    }, [ariaDescribedBy, hint, validity, setAriaDescribedBy, id]);
+
     return (
         <FieldContainer
             className={className}
@@ -141,7 +149,7 @@ export const TextInput = forwardRef(({
             data-testid="field-container"
         >
             <Input
-                aria-describedby={ariaDescribedBy}
+                aria-describedby={getAriaDescribedBy}
                 aria-invalid={ariaInvalid}
                 autoComplete={autoComplete}
                 data-testid="text-input"
