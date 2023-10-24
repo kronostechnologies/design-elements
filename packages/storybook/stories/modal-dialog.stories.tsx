@@ -216,29 +216,6 @@ export const CancelCallback: Story = {
     },
 };
 
-export const NoTitles: Story = {
-    render: () => {
-        const { isModalOpen, closeModal, openModal } = useModal();
-        return (
-            <>
-                <Button label="Open Modal" buttonType="primary" onClick={openModal} />
-                <ModalDialog
-                    appElement="#storybook-root"
-                    ariaLabel="Modal label"
-                    ariaDescribedby="story-description"
-                    isOpen={isModalOpen}
-                    onRequestClose={closeModal}
-                >
-                    <p style={{ margin: 0 }} id="story-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                        fringilla tellus nec auctor gravida.
-                    </p>
-                </ModalDialog>
-            </>
-        );
-    },
-};
-
 export const CustomFooterContent: Story = {
     render: () => {
         const { isModalOpen, closeModal, openModal } = useModal();
