@@ -91,7 +91,7 @@ describe('TextArea', () => {
         );
 
         const charCounter = getByTestId(wrapper, 'char-counter');
-        expect(charCounter.text()).toBe('18 /<ScreenReaderOnlyText /> 20 characters <ScreenReaderOnlyText />');
+        expect(charCounter.text()).toBe('<ScreenReaderOnlyText />18 / 20 characters');
     });
 
     test('should not display character count when maxLength is not provided', () => {

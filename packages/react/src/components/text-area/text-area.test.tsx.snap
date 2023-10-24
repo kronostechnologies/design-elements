@@ -126,7 +126,6 @@ input + .c1 {
     Comment (required)
   </label>
   <textarea
-    aria-describedby="uuid1_hint uuid1_invalid uuid2"
     class="c3"
     data-testid="textarea"
     disabled=""
@@ -265,7 +264,6 @@ input + .c1 {
     Comment (required)
   </label>
   <textarea
-    aria-describedby="uuid1_hint uuid1_invalid uuid2"
     class="c3"
     data-testid="some-data-testid"
     id="uuid1"

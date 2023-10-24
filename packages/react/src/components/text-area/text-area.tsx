@@ -129,6 +129,12 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
+    const textareaAriaDescribedBy = [
+        hint ? `${idTextArea}_hint` : null,
+        !validity && getValidationErrorMessage() ? `${idTextArea}_invalid` : null,
+        maxLength ? idCounter : null,
+    ].filter(Boolean).join(' ') || undefined;
+
     return (
         <FieldContainer
             data-testid="container"
@@ -147,7 +153,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={`${idTextArea}_hint ${idTextArea}_invalid ${idCounter}`}
+                aria-describedby={textareaAriaDescribedBy}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
@@ -163,14 +169,10 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                     id={idCounter}
                     valid={inputValueLength <= maxLength}
                 >
-                    {inputValueLength}
-                    {' '}
-                    <span aria-hidden="true">/</span>
-                    <ScreenReaderOnlyText label="of" />
-                    {' '}
-                    {t('characters', { max: maxLength })}
-                    {' '}
-                    <ScreenReaderOnlyText label="available" />
+                    <ScreenReaderOnlyText
+                        label={t('charactersScreenReader', { length: inputValueLength, max: maxLength })}
+                    />
+                    <span aria-hidden="true">{t('characters', { length: inputValueLength, max: maxLength })}</span>
                 </Counter>
             )}
         </FieldContainer>
