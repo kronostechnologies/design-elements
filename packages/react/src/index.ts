@@ -16,6 +16,7 @@ export { DropdownList } from './components/dropdown-list/dropdown-list';
 export { MoneyInput } from './components/money-input/money-input';
 export { OptionButton } from './components/option-button/option-button';
 export { PasswordCreationInput } from './components/password-creation-input/password-creation-input';
+export { PasswordInput } from './components/password-input/password-input';
 export { PhoneInput } from './components/phone-input/phone-input';
 export { RadioButtonGroup } from './components/radio-button-group/radio-button-group';
 export { SearchContextual } from './components/search/search-contextual';
