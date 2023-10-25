@@ -1,7 +1,6 @@
 import {
     ChangeEvent,
     HTMLProps,
-    KeyboardEvent,
     ReactNode,
     useCallback,
     useMemo,
@@ -144,23 +143,6 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         }
     }, [onChange]);
 
-    const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>): void => {
-        if (event.key === 'Home') {
-            event.preventDefault();
-            if (max !== undefined) {
-                inputRef.current!.value = max.toString();
-                onChange?.(max);
-            }
-        }
-        if (event.key === 'End') {
-            event.preventDefault();
-            if (min !== undefined) {
-                inputRef.current!.value = min.toString();
-                onChange?.(min);
-            }
-        }
-    }, [max, min, onChange]);
-
     const adornmentContent = useMemo(() => (
         adornment ? <Adornment $position={adornmentPosition}>{adornment}</Adornment> : null
     ), [adornment, adornmentPosition]);
@@ -189,7 +171,6 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
                     max={max}
                     min={min}
                     onChange={handleChange}
-                    onKeyDown={handleKeyDown}
                     onBlur={onBlur}
                     onFocus={onFocus}
                     ref={inputRef}

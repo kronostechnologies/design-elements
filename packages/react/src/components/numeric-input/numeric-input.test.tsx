@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { NumericInput } from './numeric-input';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
-import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
+import { renderWithTheme } from '../../test-utils/renderer';
 
 jest.mock('../../utils/uuid');
 
@@ -52,28 +52,6 @@ describe('NumericInput', () => {
         getByTestId(wrapper, 'numeric-input').invoke('onChange')({ target: { value: '' } });
 
         expect(onChange).toHaveBeenCalledWith(null);
-    });
-
-    it('should change value to the maximum on Home key', () => {
-        const event = { key: 'Home', preventDefault: jest.fn() };
-        const wrapper = mountWithTheme(
-            <NumericInput min={10} max={90} defaultValue={50} />,
-        );
-
-        getByTestId(wrapper, 'numeric-input').invoke('onKeyDown')(event);
-
-        expect((getByTestId(wrapper, 'numeric-input').getDOMNode() as HTMLInputElement).value).toBe('90');
-    });
-
-    it('should change value to the minimum on End key', () => {
-        const event = { key: 'End', preventDefault: jest.fn() };
-        const wrapper = mountWithTheme(
-            <NumericInput min={10} max={90} defaultValue={50} />,
-        );
-
-        getByTestId(wrapper, 'numeric-input').invoke('onKeyDown')(event);
-
-        expect((getByTestId(wrapper, 'numeric-input').getDOMNode() as HTMLInputElement).value).toBe('10');
     });
 
     test('has controllable value', () => {
