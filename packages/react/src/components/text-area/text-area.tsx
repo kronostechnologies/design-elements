@@ -129,11 +129,21 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
-    const textareaAriaDescribedBy = [
-        hint ? `${idTextArea}_hint` : null,
-        !validity && getValidationErrorMessage() ? `${idTextArea}_invalid` : null,
-        maxLength ? idCounter : null,
-    ].filter(Boolean).join(' ') || undefined;
+    function getAriaDescribedBy(): string | undefined {
+        let describedBy = '';
+
+        if (hint) {
+            describedBy += ` ${idTextArea}_hint`;
+        }
+        if (!validity && getValidationErrorMessage()) {
+            describedBy += ` ${idTextArea}_invalid`;
+        }
+        if (maxLength) {
+            describedBy += ` ${idCounter}`;
+        }
+
+        return describedBy.trim() || undefined;
+    }
 
     return (
         <FieldContainer
@@ -153,7 +163,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={textareaAriaDescribedBy}
+                aria-describedby={getAriaDescribedBy()}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
