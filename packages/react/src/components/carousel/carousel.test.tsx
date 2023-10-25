@@ -5,6 +5,7 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { Carousel } from './carousel';
 import { useCarousel, UseCarouselResponse } from './use-carousel';
 
+jest.mock('../../utils/uuid');
 jest.mock('./use-carousel');
 
 describe('Carousel', () => {
