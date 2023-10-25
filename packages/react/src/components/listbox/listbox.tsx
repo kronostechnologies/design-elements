@@ -136,6 +136,7 @@ const List = styled.ul<ListProps>`
     max-height: ${getListMaxHeight}rem;
     overflow-y: auto;
     padding: 0;
+    position: relative;
     width: 100%;
     z-index: 1000;
 
@@ -167,8 +168,10 @@ const ListItem = styled.li<ListItemProps>`
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
     line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
-    overflow: hidden;
+    //padding: 4px ${({ isMobile }) => (isMobile ? 16 : 8)}px 4px ${getListItemSidePadding};
     padding: 0 ${({ isMobile }) => (isMobile ? 16 : 8)}px 0 ${getListItemSidePadding};
+    position: relative;
+    white-space: nowrap;
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
@@ -178,12 +181,72 @@ const ListItem = styled.li<ListItemProps>`
         border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
         outline: none;
     }
+
+     /* Tooltip styles */
+    &.ellipsis-text {
+        span {
+            background-color: #60666E; 
+            border-radius: 4px;
+            color: #fff; 
+            display: none; 
+            font-size: 12px;
+            left: 6%;
+            line-height: 20px;
+            padding: 1px 8px 2px 8px; 
+            position: fixed;
+            top: -20px; 
+            white-space: nowrap;
+            z-index: 1000;
+
+            &::after {
+                border-top: 12px solid #60666E;
+                border-right: 9px solid transparent;
+                border-left: 9px solid transparent;
+                content: "";
+                left: 40%;
+                margin-left: 14.6px;
+                position: absolute;
+                bottom: -16px;
+                transform: translate(0, -50%);
+            }
+        }
+
+        &:hover span,
+        &:hover span {
+            display: block;
+        }
+       
+
+       /*&::before {
+            content: attr(data-full-text); 
+            position: absolute;
+        }
+
+        &::after {
+            border-top: 8px solid transparent;
+            border-right: 8px solid #60666E;
+            border-bottom: 8px solid transparent;
+            display: none;
+            content: "";
+            left: 47%;
+            margin-left: 14.6px;
+            position: absolute;
+            top: 20px;
+            transform: translate(0, -50%);
+        }
+
+        &:hover::before,
+        &:hover::after {
+            display: block;
+        }*/
+    }
 `;
 
 const ListItemWrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    position: relative;
 `;
 
 const CheckIndicator = styled(Icon)`
@@ -407,6 +470,33 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         }
     }, [options, focusedValue, listRef]);
 
+    const [containerWidth, setContainerWidth] = useState(0);
+
+    useLayoutEffect(() => {
+        const updateContainerWidth = () => {
+            const itemRefs = list.map((option) => option.ref);
+            const itemWidths = itemRefs
+                .filter((ref) => ref.current) // Filter out null refs
+                .map((ref) => ref.current?.clientWidth || 0); // Get clientWidth of each item
+    
+            // Calculate the maximum width of the list items
+            const containerWidth = Math.max(...itemWidths);
+    
+            setContainerWidth(containerWidth);
+        };
+    
+        // Call the function once to initialize containerWidth
+        updateContainerWidth();
+    
+        // Attach a resize event listener to update containerWidth on window resize
+        window.addEventListener('resize', updateContainerWidth);
+    
+        // Cleanup the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', updateContainerWidth);
+        };
+    }, [list]);
+
     const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
         // ' ' is the space bar key
         switch (e.key) {
@@ -485,6 +575,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         return undefined;
     }
 
+    function shouldHaveEllipsis(containerWidth: number, textWidth: number) {
+        return textWidth > containerWidth;
+    }
+
     return (
         <Box
             aria-activedescendant={getAriaActiveDescendant(selectedFocusIndex)}
@@ -514,30 +608,48 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 role="presentation"
                 tabIndex={0}
             >
-                {list.map((option) => (
-                    <ListItem
-                        aria-disabled={option.disabled}
-                        aria-label={option.label || option.value}
-                        aria-selected={isOptionSelected(option)}
-                        checkIndicator={checkIndicator}
-                        data-testid={`listitem-${option.value}`}
-                        disabled={option.disabled}
-                        focused={isOptionFocused(option)}
-                        id={option.id}
-                        isMobile={isMobile}
-                        key={option.id}
-                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
-                        onMouseMove={() => handleListItemMouseMove(option)}
-                        ref={option.ref}
-                        role="option"
-                        selected={isOptionSelected(option)}
-                    >
-                        {shouldDisplayCheckIndicator(option) && (
-                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
-                        )}
-                        <ListItemWrapper>{option.label || option.value}</ListItemWrapper>
-                    </ListItem>
-                ))}
+                {list.map((option) => {
+                    let textWidth = 0;
+
+                    if (option.ref.current) {
+                        const listItemWrapper = option.ref.current.firstChild as HTMLElement;
+                        textWidth = listItemWrapper.getBoundingClientRect().width + option.ref.current.getBoundingClientRect().left;
+                    }
+
+                    // Determine if the item should have ellipsis
+                    const ellipsis = shouldHaveEllipsis(containerWidth, textWidth);
+                    
+                    return (
+                        <ListItem
+                            data-full-text={option.label || option.value}
+                            className={ellipsis ? 'ellipsis-text' : ''}
+                            aria-disabled={option.disabled}
+                            aria-label={option.label || option.value}
+                            aria-selected={isOptionSelected(option)}
+                            checkIndicator={checkIndicator}
+                            data-testid={`listitem-${option.value}`}
+                            disabled={option.disabled}
+                            focused={isOptionFocused(option)}
+                            id={option.id}
+                            isMobile={isMobile}
+                            key={option.id}
+                            onClick={!option.disabled ? handleListItemClick(option) : undefined}
+                            onMouseMove={() => handleListItemMouseMove(option)}
+                            ref={option.ref}
+                            role="option"
+                            selected={isOptionSelected(option)}
+                        >
+                            {shouldDisplayCheckIndicator(option) && (
+                                <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
+                            )}
+                            <ListItemWrapper>
+                                {option.label || option.value}
+                                <span>{option.label || option.value}</span>
+                            </ListItemWrapper>
+                           
+                        </ListItem>
+                    )
+                })}
             </List>
         </Box>
     );

@@ -8,7 +8,7 @@ export default {
 
 const options = [
     {
-        label: 'Option A',
+        label: 'Option A, with label way longer than container',
         value: 'optionA',
     },
     {
@@ -20,7 +20,7 @@ const options = [
         value: 'optionC',
     },
     {
-        label: 'Option D',
+        label: 'Option D, with label way longer than container',
         value: 'optionD',
     },
 ];
