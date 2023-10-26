@@ -19,6 +19,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   max-height: 6rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -43,8 +44,9 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c2:hover {
@@ -54,6 +56,40 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c2.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c2.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c2.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c2.ellipsis-text:hover span,
+.c2.ellipsis-text.focused span {
+  display: block;
 }
 
 .c4 {
@@ -71,8 +107,9 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   font-weight: var(--font-semi-bold);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 0;
+  position: relative;
+  white-space: nowrap;
 }
 
 .c4:hover {
@@ -82,6 +119,40 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c4.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c4.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c4.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c4.ellipsis-text:hover span,
+.c4.ellipsis-text.focused span {
+  display: block;
 }
 
 .c6 {
@@ -99,8 +170,9 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c6:hover {
@@ -112,8 +184,43 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   outline: none;
 }
 
+.c6.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c6.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c6.ellipsis-text:hover span,
+.c6.ellipsis-text.focused span {
+  display: block;
+}
+
 .c3 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -140,6 +247,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-label="Option A"
       aria-selected="false"
       class="c2"
+      data-full-text="Option A"
       data-testid="listitem-optionA"
       id="undefined_optionA"
       role="option"
@@ -154,6 +262,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-label="Option B"
       aria-selected="true"
       class="c4"
+      data-full-text="Option B"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
@@ -177,6 +286,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-label="Option C"
       aria-selected="false"
       class="c2"
+      data-full-text="Option C"
       data-testid="listitem-optionC"
       id="undefined_optionC"
       role="option"
@@ -191,6 +301,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-label="Option D"
       aria-selected="false"
       class="c2"
+      data-full-text="Option D"
       data-testid="listitem-optionD"
       id="undefined_optionD"
       role="option"
@@ -206,6 +317,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-label="Option Disabled"
       aria-selected="false"
       class="c6"
+      data-full-text="Option Disabled"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
@@ -240,6 +352,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   max-height: 8rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -264,8 +377,9 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   font-weight: var(--font-semi-bold);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 0;
+  position: relative;
+  white-space: nowrap;
 }
 
 .c2:hover {
@@ -275,6 +389,40 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c2.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c2.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c2.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c2.ellipsis-text:hover span,
+.c2.ellipsis-text.focused span {
+  display: block;
 }
 
 .c5 {
@@ -292,8 +440,9 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c5:hover {
@@ -303,6 +452,40 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c5.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c5.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c5.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c5.ellipsis-text:hover span,
+.c5.ellipsis-text.focused span {
+  display: block;
 }
 
 .c6 {
@@ -320,8 +503,9 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c6:hover {
@@ -333,8 +517,43 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   outline: none;
 }
 
+.c6.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c6.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c6.ellipsis-text:hover span,
+.c6.ellipsis-text.focused span {
+  display: block;
+}
+
 .c4 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -360,6 +579,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-label="Option A"
       aria-selected="true"
       class="c2"
+      data-full-text="Option A"
       data-testid="listitem-optionA"
       id="undefined_optionA"
       role="option"
@@ -383,6 +603,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-label="Option B"
       aria-selected="false"
       class="c5"
+      data-full-text="Option B"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
@@ -397,6 +618,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-label="Option C"
       aria-selected="true"
       class="c2"
+      data-full-text="Option C"
       data-testid="listitem-optionC"
       id="undefined_optionC"
       role="option"
@@ -420,6 +642,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-label="Option D"
       aria-selected="false"
       class="c5"
+      data-full-text="Option D"
       data-testid="listitem-optionD"
       id="undefined_optionD"
       role="option"
@@ -435,6 +658,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-label="Option Disabled"
       aria-selected="false"
       class="c6"
+      data-full-text="Option Disabled"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
@@ -469,6 +693,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   max-height: 6rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -493,8 +718,9 @@ exports[`Listbox Matches the snapshot 1`] = `
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c2:hover {
@@ -504,6 +730,40 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c2.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c2.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c2.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c2.ellipsis-text:hover span,
+.c2.ellipsis-text.focused span {
+  display: block;
 }
 
 .c4 {
@@ -521,8 +781,9 @@ exports[`Listbox Matches the snapshot 1`] = `
   font-weight: var(--font-semi-bold);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 0;
+  position: relative;
+  white-space: nowrap;
 }
 
 .c4:hover {
@@ -532,6 +793,40 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c4.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
+}
+
+.c4.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c4.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c4.ellipsis-text:hover span,
+.c4.ellipsis-text.focused span {
+  display: block;
 }
 
 .c6 {
@@ -549,8 +844,9 @@ exports[`Listbox Matches the snapshot 1`] = `
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c6:hover {
@@ -562,8 +858,43 @@ exports[`Listbox Matches the snapshot 1`] = `
   outline: none;
 }
 
+.c6.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c6.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c6.ellipsis-text:hover span,
+.c6.ellipsis-text.focused span {
+  display: block;
+}
+
 .c3 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -590,6 +921,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-label="Option A"
       aria-selected="false"
       class="c2"
+      data-full-text="Option A"
       data-testid="listitem-optionA"
       id="undefined_optionA"
       role="option"
@@ -604,6 +936,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-label="Option B"
       aria-selected="true"
       class="c4"
+      data-full-text="Option B"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
@@ -627,6 +960,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-label="Option C"
       aria-selected="false"
       class="c2"
+      data-full-text="Option C"
       data-testid="listitem-optionC"
       id="undefined_optionC"
       role="option"
@@ -641,6 +975,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-label="Option D"
       aria-selected="false"
       class="c2"
+      data-full-text="Option D"
       data-testid="listitem-optionD"
       id="undefined_optionD"
       role="option"
@@ -656,6 +991,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-label="Option Disabled"
       aria-selected="false"
       class="c6"
+      data-full-text="Option Disabled"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"

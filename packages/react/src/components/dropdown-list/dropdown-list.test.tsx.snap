@@ -57,6 +57,7 @@ input + .c2 {
   max-height: 8rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -81,8 +82,9 @@ input + .c2 {
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c9:hover {
@@ -94,8 +96,43 @@ input + .c2 {
   outline: none;
 }
 
+.c9.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c9.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c9.ellipsis-text:hover span,
+.c9.ellipsis-text.focused span {
+  display: block;
+}
+
 .c10 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -252,6 +289,7 @@ input + .c2 {
         aria-label="Ontario"
         aria-selected="false"
         class="c9"
+        data-full-text="Ontario"
         data-testid="listitem-on"
         id="listbox_undefined_on"
         role="option"
@@ -266,6 +304,7 @@ input + .c2 {
         aria-label="Quebec"
         aria-selected="false"
         class="c9"
+        data-full-text="Quebec"
         data-testid="listitem-qc"
         id="listbox_undefined_qc"
         role="option"
@@ -280,6 +319,7 @@ input + .c2 {
         aria-label="British Columbia"
         aria-selected="false"
         class="c9"
+        data-full-text="British Columbia"
         data-testid="listitem-bc"
         id="listbox_undefined_bc"
         role="option"
@@ -294,6 +334,7 @@ input + .c2 {
         aria-label="Alberta"
         aria-selected="false"
         class="c9"
+        data-full-text="Alberta"
         data-testid="listitem-ab"
         id="listbox_undefined_ab"
         role="option"
@@ -308,6 +349,7 @@ input + .c2 {
         aria-label="Manitoba"
         aria-selected="false"
         class="c9"
+        data-full-text="Manitoba"
         data-testid="listitem-mb"
         id="listbox_undefined_mb"
         role="option"
@@ -322,6 +364,7 @@ input + .c2 {
         aria-label="Saskatchewan"
         aria-selected="false"
         class="c9"
+        data-full-text="Saskatchewan"
         data-testid="listitem-sk"
         id="listbox_undefined_sk"
         role="option"
@@ -336,6 +379,7 @@ input + .c2 {
         aria-label="Nova Scotia"
         aria-selected="false"
         class="c9"
+        data-full-text="Nova Scotia"
         data-testid="listitem-ns"
         id="listbox_undefined_ns"
         role="option"
@@ -350,6 +394,7 @@ input + .c2 {
         aria-label="New Brunswick"
         aria-selected="false"
         class="c9"
+        data-full-text="New Brunswick"
         data-testid="listitem-nb"
         id="listbox_undefined_nb"
         role="option"
@@ -364,6 +409,7 @@ input + .c2 {
         aria-label="Newfoundland and Labrador"
         aria-selected="false"
         class="c9"
+        data-full-text="Newfoundland and Labrador"
         data-testid="listitem-nl"
         id="listbox_undefined_nl"
         role="option"
@@ -378,6 +424,7 @@ input + .c2 {
         aria-label="Prince Edward Island"
         aria-selected="false"
         class="c9"
+        data-full-text="Prince Edward Island"
         data-testid="listitem-pe"
         id="listbox_undefined_pe"
         role="option"
@@ -392,6 +439,7 @@ input + .c2 {
         aria-label="Northwest Territories"
         aria-selected="false"
         class="c9"
+        data-full-text="Northwest Territories"
         data-testid="listitem-nt"
         id="listbox_undefined_nt"
         role="option"
@@ -406,6 +454,7 @@ input + .c2 {
         aria-label="Nunavut"
         aria-selected="false"
         class="c9"
+        data-full-text="Nunavut"
         data-testid="listitem-nu"
         id="listbox_undefined_nu"
         role="option"
@@ -420,6 +469,7 @@ input + .c2 {
         aria-label="Yukon"
         aria-selected="false"
         class="c9"
+        data-full-text="Yukon"
         data-testid="listitem-yt"
         id="listbox_undefined_yt"
         role="option"
@@ -523,6 +573,7 @@ input + .c2 {
   max-height: 8rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -547,8 +598,9 @@ input + .c2 {
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c12:hover {
@@ -560,8 +612,43 @@ input + .c2 {
   outline: none;
 }
 
+.c12.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c12.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c12.ellipsis-text:hover span,
+.c12.ellipsis-text.focused span {
+  display: block;
+}
+
 .c13 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -737,6 +824,7 @@ input + .c2 {
           aria-label="Ontario"
           aria-selected="false"
           class="c12"
+          data-full-text="Ontario"
           data-testid="listitem-on"
           id="listbox_undefined_on"
           role="option"
@@ -751,6 +839,7 @@ input + .c2 {
           aria-label="Quebec"
           aria-selected="false"
           class="c12"
+          data-full-text="Quebec"
           data-testid="listitem-qc"
           id="listbox_undefined_qc"
           role="option"
@@ -765,6 +854,7 @@ input + .c2 {
           aria-label="British Columbia"
           aria-selected="false"
           class="c12"
+          data-full-text="British Columbia"
           data-testid="listitem-bc"
           id="listbox_undefined_bc"
           role="option"
@@ -779,6 +869,7 @@ input + .c2 {
           aria-label="Alberta"
           aria-selected="false"
           class="c12"
+          data-full-text="Alberta"
           data-testid="listitem-ab"
           id="listbox_undefined_ab"
           role="option"
@@ -793,6 +884,7 @@ input + .c2 {
           aria-label="Manitoba"
           aria-selected="false"
           class="c12"
+          data-full-text="Manitoba"
           data-testid="listitem-mb"
           id="listbox_undefined_mb"
           role="option"
@@ -807,6 +899,7 @@ input + .c2 {
           aria-label="Saskatchewan"
           aria-selected="false"
           class="c12"
+          data-full-text="Saskatchewan"
           data-testid="listitem-sk"
           id="listbox_undefined_sk"
           role="option"
@@ -821,6 +914,7 @@ input + .c2 {
           aria-label="Nova Scotia"
           aria-selected="false"
           class="c12"
+          data-full-text="Nova Scotia"
           data-testid="listitem-ns"
           id="listbox_undefined_ns"
           role="option"
@@ -835,6 +929,7 @@ input + .c2 {
           aria-label="New Brunswick"
           aria-selected="false"
           class="c12"
+          data-full-text="New Brunswick"
           data-testid="listitem-nb"
           id="listbox_undefined_nb"
           role="option"
@@ -849,6 +944,7 @@ input + .c2 {
           aria-label="Newfoundland and Labrador"
           aria-selected="false"
           class="c12"
+          data-full-text="Newfoundland and Labrador"
           data-testid="listitem-nl"
           id="listbox_undefined_nl"
           role="option"
@@ -863,6 +959,7 @@ input + .c2 {
           aria-label="Prince Edward Island"
           aria-selected="false"
           class="c12"
+          data-full-text="Prince Edward Island"
           data-testid="listitem-pe"
           id="listbox_undefined_pe"
           role="option"
@@ -877,6 +974,7 @@ input + .c2 {
           aria-label="Northwest Territories"
           aria-selected="false"
           class="c12"
+          data-full-text="Northwest Territories"
           data-testid="listitem-nt"
           id="listbox_undefined_nt"
           role="option"
@@ -891,6 +989,7 @@ input + .c2 {
           aria-label="Nunavut"
           aria-selected="false"
           class="c12"
+          data-full-text="Nunavut"
           data-testid="listitem-nu"
           id="listbox_undefined_nu"
           role="option"
@@ -905,6 +1004,7 @@ input + .c2 {
           aria-label="Yukon"
           aria-selected="false"
           class="c12"
+          data-full-text="Yukon"
           data-testid="listitem-yt"
           id="listbox_undefined_yt"
           role="option"
@@ -1074,6 +1174,7 @@ input + .c2 {
   max-height: 8rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -1098,8 +1199,9 @@ input + .c2 {
   font-weight: var(--font-normal);
   height: 2rem;
   line-height: 2rem;
-  overflow: hidden;
   padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c9:hover {
@@ -1111,8 +1213,43 @@ input + .c2 {
   outline: none;
 }
 
+.c9.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c9.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c9.ellipsis-text:hover span,
+.c9.ellipsis-text.focused span {
+  display: block;
+}
+
 .c10 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1266,6 +1403,7 @@ input + .c2 {
           aria-label="Ontario"
           aria-selected="false"
           class="c9"
+          data-full-text="Ontario"
           data-testid="listitem-on"
           id="listbox_undefined_on"
           role="option"
@@ -1280,6 +1418,7 @@ input + .c2 {
           aria-label="Quebec"
           aria-selected="false"
           class="c9"
+          data-full-text="Quebec"
           data-testid="listitem-qc"
           id="listbox_undefined_qc"
           role="option"
@@ -1294,6 +1433,7 @@ input + .c2 {
           aria-label="British Columbia"
           aria-selected="false"
           class="c9"
+          data-full-text="British Columbia"
           data-testid="listitem-bc"
           id="listbox_undefined_bc"
           role="option"
@@ -1308,6 +1448,7 @@ input + .c2 {
           aria-label="Alberta"
           aria-selected="false"
           class="c9"
+          data-full-text="Alberta"
           data-testid="listitem-ab"
           id="listbox_undefined_ab"
           role="option"
@@ -1322,6 +1463,7 @@ input + .c2 {
           aria-label="Manitoba"
           aria-selected="false"
           class="c9"
+          data-full-text="Manitoba"
           data-testid="listitem-mb"
           id="listbox_undefined_mb"
           role="option"
@@ -1336,6 +1478,7 @@ input + .c2 {
           aria-label="Saskatchewan"
           aria-selected="false"
           class="c9"
+          data-full-text="Saskatchewan"
           data-testid="listitem-sk"
           id="listbox_undefined_sk"
           role="option"
@@ -1350,6 +1493,7 @@ input + .c2 {
           aria-label="Nova Scotia"
           aria-selected="false"
           class="c9"
+          data-full-text="Nova Scotia"
           data-testid="listitem-ns"
           id="listbox_undefined_ns"
           role="option"
@@ -1364,6 +1508,7 @@ input + .c2 {
           aria-label="New Brunswick"
           aria-selected="false"
           class="c9"
+          data-full-text="New Brunswick"
           data-testid="listitem-nb"
           id="listbox_undefined_nb"
           role="option"
@@ -1378,6 +1523,7 @@ input + .c2 {
           aria-label="Newfoundland and Labrador"
           aria-selected="false"
           class="c9"
+          data-full-text="Newfoundland and Labrador"
           data-testid="listitem-nl"
           id="listbox_undefined_nl"
           role="option"
@@ -1392,6 +1538,7 @@ input + .c2 {
           aria-label="Prince Edward Island"
           aria-selected="false"
           class="c9"
+          data-full-text="Prince Edward Island"
           data-testid="listitem-pe"
           id="listbox_undefined_pe"
           role="option"
@@ -1406,6 +1553,7 @@ input + .c2 {
           aria-label="Northwest Territories"
           aria-selected="false"
           class="c9"
+          data-full-text="Northwest Territories"
           data-testid="listitem-nt"
           id="listbox_undefined_nt"
           role="option"
@@ -1420,6 +1568,7 @@ input + .c2 {
           aria-label="Nunavut"
           aria-selected="false"
           class="c9"
+          data-full-text="Nunavut"
           data-testid="listitem-nu"
           id="listbox_undefined_nu"
           role="option"
@@ -1434,6 +1583,7 @@ input + .c2 {
           aria-label="Yukon"
           aria-selected="false"
           class="c9"
+          data-full-text="Yukon"
           data-testid="listitem-yt"
           id="listbox_undefined_yt"
           role="option"
@@ -1582,6 +1732,7 @@ exports[`Select mobile select has a different style 1`] = `
   max-height: 10rem;
   overflow-y: auto;
   padding: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
 }
@@ -1606,8 +1757,9 @@ exports[`Select mobile select has a different style 1`] = `
   font-weight: var(--font-normal);
   height: 2.5rem;
   line-height: 2.5rem;
-  overflow: hidden;
   padding: 0 16px 0 var(--spacing-5x);
+  position: relative;
+  white-space: nowrap;
 }
 
 .c7:hover {
@@ -1619,8 +1771,43 @@ exports[`Select mobile select has a different style 1`] = `
   outline: none;
 }
 
+.c7.ellipsis-text span {
+  background-color: #60666e;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: -20px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c7.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666e;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c7.ellipsis-text:hover span,
+.c7.ellipsis-text.focused span {
+  display: block;
+}
+
 .c8 {
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1769,6 +1956,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Ontario"
         aria-selected="false"
         class="c7"
+        data-full-text="Ontario"
         data-testid="listitem-on"
         id="listbox_undefined_on"
         role="option"
@@ -1783,6 +1971,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Quebec"
         aria-selected="false"
         class="c7"
+        data-full-text="Quebec"
         data-testid="listitem-qc"
         id="listbox_undefined_qc"
         role="option"
@@ -1797,6 +1986,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="British Columbia"
         aria-selected="false"
         class="c7"
+        data-full-text="British Columbia"
         data-testid="listitem-bc"
         id="listbox_undefined_bc"
         role="option"
@@ -1811,6 +2001,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Alberta"
         aria-selected="false"
         class="c7"
+        data-full-text="Alberta"
         data-testid="listitem-ab"
         id="listbox_undefined_ab"
         role="option"
@@ -1825,6 +2016,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Manitoba"
         aria-selected="false"
         class="c7"
+        data-full-text="Manitoba"
         data-testid="listitem-mb"
         id="listbox_undefined_mb"
         role="option"
@@ -1839,6 +2031,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Saskatchewan"
         aria-selected="false"
         class="c7"
+        data-full-text="Saskatchewan"
         data-testid="listitem-sk"
         id="listbox_undefined_sk"
         role="option"
@@ -1853,6 +2046,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Nova Scotia"
         aria-selected="false"
         class="c7"
+        data-full-text="Nova Scotia"
         data-testid="listitem-ns"
         id="listbox_undefined_ns"
         role="option"
@@ -1867,6 +2061,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="New Brunswick"
         aria-selected="false"
         class="c7"
+        data-full-text="New Brunswick"
         data-testid="listitem-nb"
         id="listbox_undefined_nb"
         role="option"
@@ -1881,6 +2076,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Newfoundland and Labrador"
         aria-selected="false"
         class="c7"
+        data-full-text="Newfoundland and Labrador"
         data-testid="listitem-nl"
         id="listbox_undefined_nl"
         role="option"
@@ -1895,6 +2091,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Prince Edward Island"
         aria-selected="false"
         class="c7"
+        data-full-text="Prince Edward Island"
         data-testid="listitem-pe"
         id="listbox_undefined_pe"
         role="option"
@@ -1909,6 +2106,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Northwest Territories"
         aria-selected="false"
         class="c7"
+        data-full-text="Northwest Territories"
         data-testid="listitem-nt"
         id="listbox_undefined_nt"
         role="option"
@@ -1923,6 +2121,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Nunavut"
         aria-selected="false"
         class="c7"
+        data-full-text="Nunavut"
         data-testid="listitem-nu"
         id="listbox_undefined_nu"
         role="option"
@@ -1937,6 +2136,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-label="Yukon"
         aria-selected="false"
         class="c7"
+        data-full-text="Yukon"
         data-testid="listitem-yt"
         id="listbox_undefined_yt"
         role="option"
