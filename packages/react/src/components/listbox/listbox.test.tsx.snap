@@ -59,16 +59,16 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c2.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: -1.2rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -76,7 +76,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c2.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -122,16 +122,16 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c4.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: 0.8rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -139,7 +139,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c4.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -160,8 +160,8 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #B7BBC2;
-  cursor: default;
+  color: #000000;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -185,16 +185,16 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c6.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: 2.8rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -202,7 +202,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c6.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -215,6 +215,132 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 
 .c6.ellipsis-text:hover span,
 .c6.ellipsis-text.focused span {
+  display: block;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7.focused:not(:hover) {
+  border: 2px solid #006296;
+  outline: none;
+}
+
+.c7.ellipsis-text span {
+  background-color: #60666E;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: 4.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c7.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666E;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c7.ellipsis-text:hover span,
+.c7.ellipsis-text.focused span {
+  display: block;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #B7BBC2;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
+}
+
+.c8:hover {
+  background-color: #DBDEE1;
+}
+
+.c8.focused:not(:hover) {
+  border: 2px solid #006296;
+  outline: none;
+}
+
+.c8.ellipsis-text span {
+  background-color: #60666E;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: 6.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c8.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666E;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c8.ellipsis-text:hover span,
+.c8.ellipsis-text.focused span {
   display: block;
 }
 
@@ -285,7 +411,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
     <li
       aria-label="Option C"
       aria-selected="false"
-      class="c2"
+      class="c6"
       data-full-text="Option C"
       data-testid="listitem-optionC"
       id="undefined_optionC"
@@ -300,7 +426,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
     <li
       aria-label="Option D"
       aria-selected="false"
-      class="c2"
+      class="c7"
       data-full-text="Option D"
       data-testid="listitem-optionD"
       id="undefined_optionD"
@@ -316,7 +442,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c6"
+      class="c8"
       data-full-text="Option Disabled"
       data-testid="listitem-optionDisabled"
       disabled=""
@@ -392,16 +518,16 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 }
 
 .c2.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: -1.2rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -409,7 +535,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c2.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -455,16 +581,16 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 }
 
 .c5.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: 0.8rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -472,7 +598,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c5.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -493,6 +619,132 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 8px 0 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.c6:hover {
+  background-color: #DBDEE1;
+}
+
+.c6.focused:not(:hover) {
+  border: 2px solid #006296;
+  outline: none;
+}
+
+.c6.ellipsis-text span {
+  background-color: #60666E;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: 2.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c6.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666E;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c6.ellipsis-text:hover span,
+.c6.ellipsis-text.focused span {
+  display: block;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7.focused:not(:hover) {
+  border: 2px solid #006296;
+  outline: none;
+}
+
+.c7.ellipsis-text span {
+  background-color: #60666E;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: 4.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c7.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666E;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c7.ellipsis-text:hover span,
+.c7.ellipsis-text.focused span {
+  display: block;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #B7BBC2;
   cursor: default;
   display: -webkit-box;
@@ -508,34 +760,34 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   white-space: nowrap;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c6.focused:not(:hover) {
+.c8.focused:not(:hover) {
   border: 2px solid #006296;
   outline: none;
 }
 
-.c6.ellipsis-text span {
-  background-color: #60666e;
+.c8.ellipsis-text span {
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: 6.8rem;
   white-space: nowrap;
   z-index: 1000;
 }
 
-.c6.ellipsis-text span::after {
+.c8.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -546,8 +798,8 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   transform: translate(0,-50%);
 }
 
-.c6.ellipsis-text:hover span,
-.c6.ellipsis-text.focused span {
+.c8.ellipsis-text:hover span,
+.c8.ellipsis-text.focused span {
   display: block;
 }
 
@@ -617,7 +869,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
     <li
       aria-label="Option C"
       aria-selected="true"
-      class="c2"
+      class="c6"
       data-full-text="Option C"
       data-testid="listitem-optionC"
       id="undefined_optionC"
@@ -641,7 +893,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
     <li
       aria-label="Option D"
       aria-selected="false"
-      class="c5"
+      class="c7"
       data-full-text="Option D"
       data-testid="listitem-optionD"
       id="undefined_optionD"
@@ -657,7 +909,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c6"
+      class="c8"
       data-full-text="Option Disabled"
       data-testid="listitem-optionDisabled"
       disabled=""
@@ -733,16 +985,16 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c2.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: -1.2rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -750,7 +1002,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c2.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -796,16 +1048,16 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c4.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: 0.8rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -813,7 +1065,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c4.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -834,8 +1086,8 @@ exports[`Listbox Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #B7BBC2;
-  cursor: default;
+  color: #000000;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -859,16 +1111,16 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c6.ellipsis-text span {
-  background-color: #60666e;
+  background-color: #60666E;
   border-radius: 4px;
-  color: #fff;
+  color: #FFFFFF;
   display: none;
   font-size: 12px;
   left: 6%;
   line-height: 20px;
   padding: 1px 8px 2px 8px;
   position: fixed;
-  top: -20px;
+  top: 2.8rem;
   white-space: nowrap;
   z-index: 1000;
 }
@@ -876,7 +1128,7 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c6.ellipsis-text span::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 12px solid #60666e;
+  border-top: 12px solid #60666E;
   bottom: -16px;
   content: '';
   left: 40%;
@@ -889,6 +1141,132 @@ exports[`Listbox Matches the snapshot 1`] = `
 
 .c6.ellipsis-text:hover span,
 .c6.ellipsis-text.focused span {
+  display: block;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
+}
+
+.c7:hover {
+  background-color: #DBDEE1;
+}
+
+.c7.focused:not(:hover) {
+  border: 2px solid #006296;
+  outline: none;
+}
+
+.c7.ellipsis-text span {
+  background-color: #60666E;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: 4.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c7.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666E;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c7.ellipsis-text:hover span,
+.c7.ellipsis-text.focused span {
+  display: block;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #B7BBC2;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-normal);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 8px 0 var(--spacing-4x);
+  position: relative;
+  white-space: nowrap;
+}
+
+.c8:hover {
+  background-color: #DBDEE1;
+}
+
+.c8.focused:not(:hover) {
+  border: 2px solid #006296;
+  outline: none;
+}
+
+.c8.ellipsis-text span {
+  background-color: #60666E;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: none;
+  font-size: 12px;
+  left: 6%;
+  line-height: 20px;
+  padding: 1px 8px 2px 8px;
+  position: fixed;
+  top: 6.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.c8.ellipsis-text span::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #60666E;
+  bottom: -16px;
+  content: '';
+  left: 40%;
+  margin-left: 14.6px;
+  position: absolute;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c8.ellipsis-text:hover span,
+.c8.ellipsis-text.focused span {
   display: block;
 }
 
@@ -959,7 +1337,7 @@ exports[`Listbox Matches the snapshot 1`] = `
     <li
       aria-label="Option C"
       aria-selected="false"
-      class="c2"
+      class="c6"
       data-full-text="Option C"
       data-testid="listitem-optionC"
       id="undefined_optionC"
@@ -974,7 +1352,7 @@ exports[`Listbox Matches the snapshot 1`] = `
     <li
       aria-label="Option D"
       aria-selected="false"
-      class="c2"
+      class="c7"
       data-full-text="Option D"
       data-testid="listitem-optionD"
       id="undefined_optionD"
@@ -990,7 +1368,7 @@ exports[`Listbox Matches the snapshot 1`] = `
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c6"
+      class="c8"
       data-full-text="Option Disabled"
       data-testid="listitem-optionDisabled"
       disabled=""

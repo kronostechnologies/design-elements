@@ -108,6 +108,7 @@ interface ListItemProps {
     focused: boolean;
     checkIndicator: boolean;
     theme: Theme;
+    dataTop?: number;
 }
 
 interface BoxProps {
@@ -184,23 +185,23 @@ const ListItem = styled.li<ListItemProps>`
      /* Tooltip styles */
     &.ellipsis-text {
         span {
-            background-color: #60666e;
+            background-color: ${({ theme }) => theme.greys['dark-grey']};
             border-radius: 4px;
-            color: #fff;
+            color: ${({ theme }) => theme.greys.white};
             display: none;
             font-size: 12px;
             left: 6%;
             line-height: 20px;
             padding: 1px 8px 2px 8px;
             position: fixed;
-            top: -20px;
+            top: ${({ dataTop }) => dataTop}rem;
             white-space: nowrap;
             z-index: 1000;
 
             &::after {
                 border-left: 9px solid transparent;
                 border-right: 9px solid transparent;
-                border-top: 12px solid #60666e;
+                border-top: 12px solid ${({ theme }) => theme.greys['dark-grey']};
                 bottom: -16px;
                 content: '';
                 left: 40%;
@@ -583,7 +584,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 role="presentation"
                 tabIndex={0}
             >
-                {list.map((option) => {
+                {list.map((option, index) => {
                     let textWidth = 0;
 
                     if (option.ref.current) {
@@ -594,10 +595,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
                     // Determine if the item should have ellipsis
                     const ellipsis = shouldHaveEllipsis(containerWidth, textWidth);
+                    const topPosition = (index * (isMobile ? itemHeightMobile : itemHeightDesktop)) - 1.2;
 
                     return (
                         <ListItem
                             data-full-text={option.label || option.value}
+                            dataTop={topPosition}
                             className={ellipsis ? 'ellipsis-text' : ''}
                             aria-disabled={option.disabled}
                             aria-label={option.label || option.value}
