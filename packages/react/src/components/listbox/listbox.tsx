@@ -108,7 +108,6 @@ interface ListItemProps {
     focused: boolean;
     checkIndicator: boolean;
     theme: Theme;
-    dataTop?: number;
 }
 
 interface BoxProps {
@@ -167,62 +166,17 @@ const ListItem = styled.li<ListItemProps>`
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
-    line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
-    padding: 0 ${({ isMobile }) => (isMobile ? 16 : 8)}px 0 ${getListItemSidePadding};
-    position: relative;
-    white-space: nowrap;
+    line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1.43)};
+    padding: ${({ isMobile }) => (isMobile ? 4 : 6)}px ${({ isMobile }) => (isMobile ? 16 : 8)}px ${({ isMobile }) => (isMobile ? 4 : 6)}px ${getListItemSidePadding};
 
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
     }
 
-    &.focused:not(:hover) {
+    &:focus:not(:hover) {
         border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
         outline: none;
     }
-
-     /* Tooltip styles */
-    &.ellipsis-text {
-        span {
-            background-color: ${({ theme }) => theme.greys['dark-grey']};
-            border-radius: 4px;
-            color: ${({ theme }) => theme.greys.white};
-            display: none;
-            font-size: 12px;
-            left: 6%;
-            line-height: 20px;
-            padding: 1px 8px 2px 8px;
-            position: fixed;
-            top: ${({ dataTop }) => dataTop}rem;
-            white-space: nowrap;
-            z-index: 1000;
-
-            &::after {
-                border-left: 9px solid transparent;
-                border-right: 9px solid transparent;
-                border-top: 12px solid ${({ theme }) => theme.greys['dark-grey']};
-                bottom: -16px;
-                content: '';
-                left: 40%;
-                margin-left: 14.6px;
-                position: absolute;
-                transform: translate(0, -50%);
-            }
-        }
-
-        &:hover span,
-        &.focused span {
-            display: block;
-        }
-    }
-`;
-
-const ListItemWrapper = styled.div`
-    overflow: hidden;
-    position: relative;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 `;
 
 const CheckIndicator = styled(Icon)`
@@ -384,24 +338,14 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
         (option) => () => {
-            const prevItemRef = list[selectedFocusIndex]?.ref;
-            if (prevItemRef && prevItemRef.current) {
-                prevItemRef.current.classList.remove('focused');
-            }
             selectOption(option);
         },
-        [list, selectedFocusIndex, selectOption],
+        [selectOption],
     );
 
     const handleListItemMouseMove: (option: ListOption) => void = useCallback((option) => {
-        const prevFocusIndex = selectedFocusIndex;
         setSelectedFocusIndex(option.focusIndex);
-
-        const prevItemRef = list[prevFocusIndex]?.ref;
-        if (prevItemRef && prevItemRef.current) {
-            prevItemRef.current.classList.remove('focused');
-        }
-    }, [list, selectedFocusIndex]);
+    }, []);
 
     useLayoutEffect(() => {
         const currentOption = list[selectedFocusIndex];
@@ -446,33 +390,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         }
     }, [options, focusedValue, listRef]);
 
-    const [containerWidth, setContainerWidth] = useState(0);
-
-    useLayoutEffect(() => {
-        const updateContainerWidth = (): void => {
-            const itemWidths = list
-                .map((option) => option.ref)
-                .filter((itemRef) => itemRef.current)
-                .map((itemRef) => itemRef.current?.clientWidth || 0);
-
-            // Calculate the maximum width of the list items
-            const listMaxWidth = Math.max(...itemWidths);
-
-            setContainerWidth(listMaxWidth);
-        };
-
-        // Call the function once to initialize containerWidth
-        updateContainerWidth();
-
-        // Attach a resize event listener to update containerWidth on window resize
-        window.addEventListener('resize', updateContainerWidth);
-
-        // Cleanup the event listener when the component unmounts
-        return () => {
-            window.removeEventListener('resize', updateContainerWidth);
-        };
-    }, [list]);
-
     const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
         // ' ' is the space bar key
         switch (e.key) {
@@ -495,15 +412,9 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         onFocusedValueChange(list[prevOption.focusIndex]);
                     }
 
-                    const prevItemRef = list[selectedFocusIndex]?.ref;
-                    if (prevItemRef && prevItemRef.current) {
-                        prevItemRef.current.classList.remove('focused');
-                    }
-
-                    const newItemRef = list[prevOption.focusIndex]?.ref;
-                    if (prevOption.focusIndex >= 0 && newItemRef && newItemRef.current) {
-                        newItemRef.current.classList.add('focused');
-                    }
+                    const prevItem = list[prevOption.focusIndex];
+                    selectOption(prevItem);
+                    prevItem.ref.current?.focus();
                 }
 
                 break;
@@ -519,16 +430,11 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         onFocusedValueChange(list[nextOption.focusIndex]);
                     }
 
-                    const prevItemRef = list[selectedFocusIndex]?.ref;
-                    if (prevItemRef && prevItemRef.current) {
-                        prevItemRef.current.classList.remove('focused');
-                    }
-
-                    const newItemRef = list[nextOption.focusIndex]?.ref;
-                    if (nextOption.focusIndex >= 0 && newItemRef && newItemRef.current) {
-                        newItemRef.current.classList.add('focused');
-                    }
+                    const nextItem = list[nextOption.focusIndex];
+                    selectOption(nextItem);
+                    nextItem.ref.current?.focus();
                 }
+
                 break;
             }
         }
@@ -549,10 +455,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
             return `${id}_${list[optionIndex].value}`;
         }
         return undefined;
-    }
-
-    function shouldHaveEllipsis(listContainerWidth: number, textWidth: number): boolean {
-        return textWidth > listContainerWidth;
     }
 
     return (
@@ -584,51 +486,31 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 role="presentation"
                 tabIndex={0}
             >
-                {list.map((option, index) => {
-                    let textWidth = 0;
-
-                    if (option.ref.current) {
-                        const listItemWrapper = option.ref.current.firstChild as HTMLElement;
-                        textWidth = listItemWrapper.getBoundingClientRect().width
-                                    + option.ref.current.getBoundingClientRect().left;
-                    }
-
-                    // Determine if the item should have ellipsis
-                    const ellipsis = shouldHaveEllipsis(containerWidth, textWidth);
-                    const topPosition = (index * (isMobile ? itemHeightMobile : itemHeightDesktop)) - 1.2;
-
-                    return (
-                        <ListItem
-                            data-full-text={option.label || option.value}
-                            dataTop={topPosition}
-                            className={ellipsis ? 'ellipsis-text' : ''}
-                            aria-disabled={option.disabled}
-                            aria-label={option.label || option.value}
-                            aria-selected={isOptionSelected(option)}
-                            checkIndicator={checkIndicator}
-                            data-testid={`listitem-${option.value}`}
-                            disabled={option.disabled}
-                            focused={isOptionFocused(option)}
-                            id={option.id}
-                            isMobile={isMobile}
-                            key={option.id}
-                            onClick={!option.disabled ? handleListItemClick(option) : undefined}
-                            onMouseMove={() => handleListItemMouseMove(option)}
-                            ref={option.ref}
-                            role="option"
-                            selected={isOptionSelected(option)}
-                        >
-                            {shouldDisplayCheckIndicator(option) && (
-                                <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
-                            )}
-
-                            <ListItemWrapper>
-                                {option.label || option.value}
-                                {ellipsis && <span>{option.label || option.value}</span>}
-                            </ListItemWrapper>
-                        </ListItem>
-                    );
-                })}
+                {list.map((option) => (
+                    <ListItem
+                        aria-disabled={option.disabled}
+                        aria-label={option.label || option.value}
+                        aria-selected={isOptionSelected(option)}
+                        checkIndicator={checkIndicator}
+                        data-testid={`listitem-${option.value}`}
+                        disabled={option.disabled}
+                        focused={isOptionFocused(option)}
+                        id={option.id}
+                        isMobile={isMobile}
+                        key={option.id}
+                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
+                        onMouseMove={() => handleListItemMouseMove(option)}
+                        ref={option.ref}
+                        role="option"
+                        selected={isOptionSelected(option)}
+                        tabIndex={-1}
+                    >
+                        {shouldDisplayCheckIndicator(option) && (
+                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
+                        )}
+                        {option.label || option.value}
+                    </ListItem>
+                ))}
             </List>
         </Box>
     );

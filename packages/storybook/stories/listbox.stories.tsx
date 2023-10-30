@@ -8,11 +8,11 @@ export default {
 
 const options = [
     {
-        label: 'Option A, with label way longer than container',
+        label: 'Option A',
         value: 'optionA',
     },
     {
-        label: 'Option B',
+        label: 'Option B. Option with a really long label creating doubled line.',
         value: 'optionB',
     },
     {
@@ -20,7 +20,7 @@ const options = [
         value: 'optionC',
     },
     {
-        label: 'Option D, with label way longer than container',
+        label: 'Option D',
         value: 'optionD',
     },
 ];
