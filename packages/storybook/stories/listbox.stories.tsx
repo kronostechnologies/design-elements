@@ -8,11 +8,11 @@ export default {
 
 const options = [
     {
-        label: 'Option A',
+        label: 'Option A. Option with a really long label creating doubled line.',
         value: 'optionA',
     },
     {
-        label: 'Option B. Option with a really long label creating doubled line.',
+        label: 'Option B',
         value: 'optionB',
     },
     {
