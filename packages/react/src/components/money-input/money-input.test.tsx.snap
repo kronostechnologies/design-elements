@@ -105,7 +105,6 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
     data-testid="field-container"
   >
     <input
-      aria-describedby=""
       class="c2"
       data-testid="text-input"
       id="uuid1"
@@ -223,7 +222,6 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
     data-testid="field-container"
   >
     <input
-      aria-describedby=""
       class="c2"
       data-testid="text-input"
       id="uuid1"
@@ -341,7 +339,6 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
     data-testid="field-container"
   >
     <input
-      aria-describedby=""
       class="c2"
       data-testid="text-input"
       id="uuid1"

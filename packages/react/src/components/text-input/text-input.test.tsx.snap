@@ -121,7 +121,6 @@ input + .c1 {
     Telephone
   </label>
   <input
-    aria-describedby=""
     class="c3"
     data-testid="text-input"
     disabled=""
@@ -255,7 +254,6 @@ input + .c1 {
     Telephone (required)
   </label>
   <input
-    aria-describedby=""
     class="c3"
     data-testid="text-input"
     id="uuid1"
@@ -389,7 +387,6 @@ input + .c1 {
     Telephone
   </label>
   <input
-    aria-describedby=""
     class="c3"
     data-testid="text-input"
     id="uuid1"
