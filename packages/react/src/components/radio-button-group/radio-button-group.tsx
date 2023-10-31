@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';
@@ -139,6 +139,12 @@ export const RadioButtonGroup: VoidFunctionComponent<RadioButtonGroupProps> = ({
         setCurrentChecked(event.target.value);
         onChange?.(event);
     }, [onChange, setCurrentChecked]);
+
+    useEffect(() => {
+        if (checkedValue !== undefined) {
+            setCurrentChecked(checkedValue);
+        }
+    }, [checkedValue]);
 
     return (
         <StyledFieldset className={className}>
