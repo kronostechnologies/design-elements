@@ -6,16 +6,16 @@ import { DeviceType } from '../device-context-provider/device-context-provider';
 import { ModalDialog, ModalDialogProps, DialogType } from './modal-dialog';
 import { IconName } from '../icon/icon';
 
-type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose'>;
+type ModalDialogPropsLite = Omit<ModalDialogProps, 'ariaDescribedby' | 'ariaHideApp' | 'onRequestClose' | 'title'>;
 
 const defaultTestProps = {
+    title: 'Title',
     ariaDescribedby: 'modal-description',
     ariaHideApp: false,
     onRequestClose: doNothing,
 };
 
-const withTitleAndSubtitle = {
-    title: 'Title',
+const withSubtitle = {
     subtitle: 'Subtitle',
 };
 
@@ -32,7 +32,7 @@ describe('Modal-Dialog', () => {
     test('onConfirm callback is called when confirm-button is clicked', () => {
         const callback = jest.fn();
         const { getByTestId } = renderModal({
-            ...withTitleAndSubtitle,
+            ...withSubtitle,
             isOpen: true,
             confirmButton: {
                 onConfirm: callback,
@@ -47,7 +47,7 @@ describe('Modal-Dialog', () => {
     test('onCancel callback is called when cancel-button is clicked', () => {
         const callback = jest.fn();
         const { getByTestId } = renderModal({
-            ...withTitleAndSubtitle,
+            ...withSubtitle,
             isOpen: true,
             cancelButton: {
                 onCancel: callback,
@@ -59,7 +59,7 @@ describe('Modal-Dialog', () => {
         expect(callback).toHaveBeenCalled();
     });
 
-    test('has title-icon when titleIcon and title props are defined', () => {
+    test('has title-icon when titleIcon prop is defined', () => {
         const wrapper = mountWithProviders(
             <ModalDialog ariaHideApp={false} title="test" titleIcon="home" isOpen onRequestClose={jest.fn()}>
                 <p id="modal-description">Test Content</p>
@@ -71,52 +71,21 @@ describe('Modal-Dialog', () => {
         wrapper.detach();
     });
 
-    test('does not have title-icon when titleIcon is defined but not title', () => {
-        const wrapper = mountWithProviders(
-            <ModalDialog ariaHideApp={false} titleIcon="home" isOpen onRequestClose={jest.fn()}>
-                <p id="modal-description">Test Content</p>
-            </ModalDialog>,
-            { attachTo: document.body },
-        );
-
-        expect(enzymeGetByTestId(wrapper, 'title-icon').exists()).toBe(false);
-        wrapper.detach();
-    });
-
     test('Matches snapshot (opened, desktop)', () => {
-        const { baseElement } = renderModal({ ...withTitleAndSubtitle, isOpen: true }, 'desktop');
+        const { baseElement } = renderModal({ ...withSubtitle, isOpen: true }, 'desktop');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (opened, mobile)', () => {
-        const { baseElement } = renderModal({ ...withTitleAndSubtitle, isOpen: true }, 'mobile');
-
-        expect(baseElement).toMatchSnapshot();
-    });
-
-    test('Matches snapshot (only title)', () => {
-        const { baseElement } = renderModal({
-            title: 'Title',
-            isOpen: true,
-        });
+        const { baseElement } = renderModal({ ...withSubtitle, isOpen: true }, 'mobile');
 
         expect(baseElement).toMatchSnapshot();
     });
 
     test('Matches snapshot (only subtitle)', () => {
         const { baseElement } = renderModal({
-            ariaLabel: 'Test modal',
             subtitle: 'Subtitle',
-            isOpen: true,
-        });
-
-        expect(baseElement).toMatchSnapshot();
-    });
-
-    test('Matches snapshot (not titles)', () => {
-        const { baseElement } = renderModal({
-            ariaLabel: 'Test modal',
             isOpen: true,
         });
 
@@ -125,7 +94,7 @@ describe('Modal-Dialog', () => {
 
     test('Matches snapshot (custom button labels)', () => {
         const { baseElement } = renderModal({
-            ...withTitleAndSubtitle,
+            ...withSubtitle,
             confirmButton: {
                 label: 'Test Confirm',
             },
@@ -139,7 +108,7 @@ describe('Modal-Dialog', () => {
     });
 
     test('Matches snapshot (closed)', () => {
-        const { baseElement } = renderModal({ ...withTitleAndSubtitle, isOpen: false });
+        const { baseElement } = renderModal({ ...withSubtitle, isOpen: false });
 
         expect(baseElement).toMatchSnapshot();
     });
