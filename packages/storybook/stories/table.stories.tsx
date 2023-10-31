@@ -1,4 +1,4 @@
-import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
+import { Table, TableColumn, TableRow, Tooltip, Button, TextInput } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
@@ -51,6 +51,55 @@ export const Normal: Story = () => {
     ];
     return (
         <Table columns={columns} data={data} />
+    );
+};
+
+export const WithFooter: Story = () => {
+    const columns: TableColumn<Data> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+        },
+    ];
+
+    const data: TableRow<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+    ];
+
+    const footer = (
+        <>
+            <Button label="Primary" buttonType="primary" />
+            <TextInput
+                label="Total"
+                type="text"
+            />
+        </>
+    );
+
+    return (
+        <Table columns={columns} data={data} footer={footer} />
     );
 };
 

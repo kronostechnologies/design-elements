@@ -1,4 +1,4 @@
-import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactElement, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import {
     CellProps,
     Column, ColumnInstance, HeaderGroup, HeaderProps,
@@ -53,6 +53,15 @@ const StyledHeader = styled.th<{ sticky: boolean }>`
         background-color: ${({ theme }) => theme.greys.white};
         position: sticky;
     `}
+`;
+
+const StyledFooter = styled.tfoot`
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
 `;
 
 function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: boolean): ReactElement {
@@ -205,6 +214,7 @@ export interface TableProps<T extends object> {
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
     data: T[] & CustomRowProps[];
+    footer?: ReactNode;
     /**
      * Adds row numbers
      * @default false
@@ -233,6 +243,7 @@ export const Table = <T extends object>({
     className,
     columns,
     data,
+    footer,
     rowNumbers = false,
     rowSize = 'medium',
     selectableRows,
@@ -338,6 +349,7 @@ export const Table = <T extends object>({
                     );
                 })}
             </tbody>
+            {footer && (<StyledFooter>{footer}</StyledFooter>)}
         </StyledTable>
     );
 };
