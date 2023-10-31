@@ -94,9 +94,15 @@ export const TextInput = forwardRef(({
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: valid ?? true });
-    const [getAriaDescribedBy, setAriaDescribedBy] = useState<string | undefined>();
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
+
+    const processedAriaDescribedBy = useMemo(() => {
+        const invalidAria = !validity ? `${id}_invalid` : '';
+        const hintAria = hint ? `${id}_hint` : '';
+
+        return `${ariaDescribedBy || ''} ${invalidAria} ${hintAria}`.trim();
+    }, [id, ariaDescribedBy, validity, hint]);
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         setValidity({ validity: event.currentTarget.checkValidity() });
@@ -128,13 +134,6 @@ export const TextInput = forwardRef(({
         }
     }, [valid]);
 
-    useEffect(() => {
-        let describedBy = ariaDescribedBy || undefined;
-        if (!validity) describedBy = `${describedBy} ${id}_invalid`;
-        if (hint) describedBy = `${describedBy} ${id}_hint`;
-        setAriaDescribedBy(describedBy?.trim());
-    }, [ariaDescribedBy, hint, validity, setAriaDescribedBy, id]);
-
     return (
         <FieldContainer
             className={className}
@@ -149,7 +148,7 @@ export const TextInput = forwardRef(({
             data-testid="field-container"
         >
             <Input
-                aria-describedby={getAriaDescribedBy}
+                aria-describedby={processedAriaDescribedBy || undefined}
                 aria-invalid={ariaInvalid}
                 autoComplete={autoComplete}
                 data-testid="text-input"
