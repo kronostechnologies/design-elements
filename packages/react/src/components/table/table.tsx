@@ -72,6 +72,26 @@ function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: bool
     );
 }
 
+const StyledFooter = styled.td<{ sticky: boolean }>`
+    ${({ sticky }) => sticky && css`
+        background-color: ${({ theme }) => theme.greys.white};
+        position: sticky;
+    `}
+`;
+
+function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boolean): ReactElement {
+    return (
+        <StyledFooter
+            className={column.className}
+            style={{ textAlign: column.textAlign }}
+            sticky={stickyFooter}
+            {...column.getFooterProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+        >
+            {column.render('Footer')}
+        </StyledFooter>
+    );
+}
+
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
     if (rowSize === 'small') {
         switch (device) {
@@ -224,6 +244,8 @@ export interface TableProps<T extends object> {
 
     stickyHeader?: boolean;
 
+    stickyFooter?: boolean;
+
     onRowClick?(row: Row<T>): void;
 
     onSelectedRowsChange?(selectedRows: T[]): void;
@@ -240,6 +262,7 @@ export const Table = <T extends object>({
     onRowClick,
     onSelectedRowsChange,
     stickyHeader = false,
+    stickyFooter = false,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
@@ -253,16 +276,17 @@ export const Table = <T extends object>({
 
     const stickyColumns = renderedColumns.map((column) => !!column.sticky);
     useEffect(() => {
-        calculateStickyPosition(stickyColumns, stickyHeader, tableRef);
+        calculateStickyPosition(stickyColumns, stickyHeader, stickyFooter, tableRef);
 
         const handleResize = (): void => calculateStickyPosition(
             stickyColumns,
             stickyHeader,
+            stickyFooter,
             tableRef,
         );
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [stickyColumns, stickyHeader, tableRef]);
+    }, [stickyColumns, stickyHeader, stickyFooter, tableRef]);
 
     const getInitialState = useCallback((): PartialTableState<T> | undefined => {
         const defaultSortColumn = columns.find(({ defaultSort }) => !!defaultSort);
@@ -346,9 +370,7 @@ export const Table = <T extends object>({
                     {footerGroups.map((group) => (
                         <tr {...group.getFooterGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                             {group.headers.map((column) => (
-                                <td {...column.getFooterProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                                    {column.render('Footer')}
-                                </td>
+                                getFooter(column, stickyFooter)
                             ))}
                         </tr>
                     ))}

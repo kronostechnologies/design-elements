@@ -32,9 +32,20 @@ export function calculateStickyHeader(
     });
 }
 
+export function calculateStickyFooter(
+    stickyColumns: boolean[],
+    footerCells: HTMLCollectionOf<HTMLTableCellElement>,
+): void {
+    Array.from(footerCells).forEach((footerCell, index) => {
+        footerCell.style.setProperty('bottom', '0px');
+        footerCell.style.setProperty('z-index', stickyColumns[index] ? '5' : '4');
+    });
+}
+
 export function calculateStickyPosition(
     stickyColumns: boolean[],
     stickyHeader: boolean,
+    stickyFooter: boolean,
     tableRef: React.RefObject<HTMLTableElement>,
 ): void {
     if (tableRef.current === null) {
@@ -42,9 +53,14 @@ export function calculateStickyPosition(
     }
     const headerCells = tableRef.current.getElementsByTagName('th');
     const rows = tableRef.current.getElementsByTagName('tr');
+    const footerCells = tableRef.current.getElementsByTagName('tfoot')[0]?.getElementsByTagName('td');
 
     calculateStickyColumns(stickyColumns, headerCells, rows);
     if (stickyHeader) {
         calculateStickyHeader(stickyColumns, headerCells);
+    }
+
+    if (stickyFooter) {
+        calculateStickyFooter(stickyColumns, footerCells);
     }
 }
