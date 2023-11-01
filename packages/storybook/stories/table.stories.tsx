@@ -54,6 +54,10 @@ export const Normal: Story = () => {
     );
 };
 
+const StyledTextInput = styled(TextInput)`
+    margin-bottom: 0;
+`;
+
 export const WithFooter: Story = () => {
     const columns: TableColumn<Data> = [
         {
@@ -63,10 +67,12 @@ export const WithFooter: Story = () => {
         {
             Header: 'Column 2',
             accessor: 'column2',
+            Footer: <Button label="Primary" buttonType="primary" />,
         },
         {
             Header: 'Column 3',
             accessor: 'column3',
+            Footer: <StyledTextInput label="Total" type="text" />,
         },
     ];
 
@@ -88,18 +94,8 @@ export const WithFooter: Story = () => {
         },
     ];
 
-    const footer = (
-        <>
-            <Button label="Primary" buttonType="primary" />
-            <TextInput
-                label="Total"
-                type="text"
-            />
-        </>
-    );
-
     return (
-        <Table columns={columns} data={data} footer={footer} />
+        <Table columns={columns} data={data} />
     );
 };
 
