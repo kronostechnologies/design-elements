@@ -37,6 +37,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     textAlign?: string,
     className?: string,
     sticky?: boolean,
+    colSpan?: string,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -79,13 +80,21 @@ const StyledFooter = styled.td<{ sticky: boolean }>`
     `}
 `;
 
-function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boolean): ReactElement {
+function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boolean): ReactElement | null {
+    if (column.Footer === 'remove' || column.Footer === undefined || column.Footer === '') {
+        // If the Footer content is empty, return null to skip rendering the td
+        return null;
+    }
+    const footerProps = column.colSpan
+        ? { ...column.getFooterProps(), colSpan: column.colSpan }
+        : column.getFooterProps();
+
     return (
         <StyledFooter
             className={column.className}
             style={{ textAlign: column.textAlign }}
             sticky={stickyFooter}
-            {...column.getFooterProps() /* eslint-disable-line react/jsx-props-no-spreading */}
+            {...footerProps /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {column.render('Footer')}
         </StyledFooter>
@@ -221,6 +230,7 @@ export interface TableProps<T extends object> {
     className?: string;
     /** Array of Objects that defines your table columns.
      * See stories code or refer to react-table docs for more information */
+    colSpan?: string;
     columns: TableColumn<T>;
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
