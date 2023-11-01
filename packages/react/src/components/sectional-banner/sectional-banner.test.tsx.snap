@@ -9,9 +9,10 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 .c0 {
   background-color: #f9f7fb;
   border: 1px solid #602FA0;
+  border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 24px;
-  padding: var(--spacing-2x);
+  padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-3x);
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -46,13 +47,13 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 
 .c5 {
   font-size: 0.875rem;
-  margin: var(--spacing-1x) 0 0 0;
+  margin: var(--spacing-half) 0 0 0;
 }
 
 .c3 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-2x);
+  padding-left: var(--spacing-1halfx);
 }
 
 .c4 {
@@ -110,9 +111,10 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 .c0 {
   background-color: #f9f7fb;
   border: 1px solid #602FA0;
+  border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 24px;
-  padding: var(--spacing-2x);
+  padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-3x);
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -147,13 +149,13 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 
 .c5 {
   font-size: 0.875rem;
-  margin: var(--spacing-1x) 0 0 0;
+  margin: var(--spacing-half) 0 0 0;
 }
 
 .c3 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-2x);
+  padding-left: var(--spacing-1halfx);
 }
 
 .c4 {
@@ -204,6 +206,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 .c0 {
   background-color: #f9f7fb;
   border: 1px solid #602FA0;
+  border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 28px;
   padding: var(--spacing-3x) var(--spacing-2x);
@@ -246,7 +249,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 .c3 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-2x);
+  padding-left: var(--spacing-1halfx);
 }
 
 .c4 {

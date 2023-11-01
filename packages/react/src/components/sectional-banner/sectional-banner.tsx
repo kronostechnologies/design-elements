@@ -61,9 +61,10 @@ function abstractContainer(
     return styled.section<AbstractContainerProps>`
         background-color: ${bgColor};
         border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
+        border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
-        padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)')};
+        padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-3x)')};
         position: relative;
         width: 100%;
 
@@ -89,13 +90,13 @@ const AlertContainer = abstractContainer('#fdf6f7', 'alert-2.1');
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
-    margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)')} 0 0 0;
+    margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-half)')} 0 0 0;
 `;
 
 const TextWrapper = styled.div<MobileDeviceContext>`
     box-sizing: border-box;
     grid-area: content;
-    padding-left: var(--spacing-2x);
+    padding-left: var(--spacing-1halfx);
 `;
 
 type DismissButtonProps = MobileDeviceContext & { $marginTop: number }
