@@ -1,6 +1,6 @@
 import { Table, TableColumn, TableRow, Tooltip, Button, TextInput } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -54,43 +54,60 @@ export const Normal: Story = () => {
     );
 };
 
+interface FooterData {
+    column1: string;
+    column2: string;
+    numbers: number;
+}
+
 const StyledTextInput = styled(TextInput)`
     margin-bottom: 0;
+    input {
+        width: auto;
+    }
 `;
 
 export const WithFooter: Story = () => {
-    const columns: TableColumn<Data> = [
+    const columns: TableColumn<FooterData> = [
         {
             Header: 'Column 1',
             accessor: 'column1',
+            Footer: <Button label="Button" buttonType="primary" />,
         },
         {
             Header: 'Column 2',
             accessor: 'column2',
-            Footer: <Button label="Primary" buttonType="primary" />,
+            Footer: <StyledTextInput label="Imputs" type="text" />,
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
-            Footer: <StyledTextInput label="Total" type="text" />,
+            Header: 'Numbers',
+            accessor: 'numbers',
+            Footer: (value) => {
+                const total = useMemo(
+                    () => value.rows.reduce((sum, row) => row.values.numbers + sum, 0),
+                    [value.rows],
+                );
+
+                return `Total: ${total} `;
+            },
         },
     ];
 
-    const data: TableRow<Data>[] = [
+    const data: TableRow<FooterData>[] = [
         {
             column1: 'a',
             column2: 'a',
-            column3: 'a',
+            numbers: 10,
         },
         {
             column1: 'b',
             column2: 'b',
-            column3: 'b',
+            numbers: 20,
         },
         {
             column1: 'a',
             column2: 'a',
-            column3: 'a',
+            numbers: 30,
         },
     ];
 
