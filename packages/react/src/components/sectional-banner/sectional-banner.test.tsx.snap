@@ -12,7 +12,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 24px;
-  padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-3x);
+  padding: var(--spacing-2x) var(--spacing-3x);
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -114,7 +114,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 24px;
-  padding: var(--spacing-2x) var(--spacing-3x) var(--spacing-3x) var(--spacing-3x);
+  padding: var(--spacing-2x) var(--spacing-3x);
   position: relative;
   width: 100%;
   display: -webkit-box;
