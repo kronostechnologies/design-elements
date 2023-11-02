@@ -17,7 +17,6 @@ import { Theme } from '../../themes';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
 
 type Value = string | string[];
 
@@ -168,7 +167,7 @@ const ListItem = styled.li<ListItemProps>`
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1.43)};
     padding: ${({ isMobile }) => (isMobile ? 4 : 6)}px ${({ isMobile }) => (isMobile ? 16 : 8)}px ${({ isMobile }) => (isMobile ? 4 : 6)}px ${getListItemSidePadding};
-
+    padding-left: ${({ checkIndicator }) => (checkIndicator && '18px')};
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
     }
@@ -177,11 +176,21 @@ const ListItem = styled.li<ListItemProps>`
         border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
         outline: none;
     }
-`;
 
-const CheckIndicator = styled(Icon)`
-    color: ${({ theme }) => theme.greys['dark-grey']};
-    padding: 0 var(--spacing-1x);
+    &:before {
+        background-color: ${({ selected, theme }) => (selected ? theme.main['primary-1.1'] : theme.greys.white)};
+        border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+        border-radius: 4px;
+        content: '';
+        display: ${({ checkIndicator }) => (checkIndicator ? 'block' : 'none')};
+        height: 16px;
+        margin-right: 8px;
+        width: 16px;
+    }
+
+    &:hover:before { }
+
+    &:focus:not(:hover):before { }
 `;
 
 function toArray(val?: Value): string[] {
@@ -305,10 +314,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         [selectedFocusIndex],
     );
 
-    const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
+    /* const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
         (option) => checkIndicator && isOptionSelected(option),
         [checkIndicator, isOptionSelected],
-    );
+    ); */
 
     const selectOption: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
@@ -505,9 +514,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         selected={isOptionSelected(option)}
                         tabIndex={-1}
                     >
-                        {shouldDisplayCheckIndicator(option) && (
-                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
-                        )}
                         {option.label || option.value}
                     </ListItem>
                 ))}
