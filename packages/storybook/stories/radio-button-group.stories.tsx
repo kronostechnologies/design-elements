@@ -1,4 +1,4 @@
-import { RadioButtonGroup } from '@equisoft/design-elements-react';
+import { RadioButtonGroup, Button } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { ChangeEvent, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
@@ -96,6 +96,34 @@ export const Controlled: Story = () => {
     );
 };
 Controlled.parameters = rawCodeParameters;
+
+export const ControlledContent: Story = () => {
+    const [value, setValue] = useState('red');
+
+    function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+        if (value !== event.target.value) {
+            setValue(event.target.value);
+        }
+    }
+
+    return (
+        <>
+            <Button buttonType="primary" label="Change to Blue" onClick={() => setValue('blue')} />
+            <RadioButtonGroup
+                groupName="controlled-default"
+                checkedValue={value}
+                buttons={[
+                    { label: 'Blue', value: 'blue', content: { element: (<div>Pewpew</div>) } },
+                    { label: 'Red', value: 'red', content: { element: (<div>Coucou</div>) } },
+                    { label: 'Green', value: 'green', disabled: true },
+                    { label: 'Yellow', value: 'yellow' },
+                ]}
+                onChange={handleChange}
+            />
+        </>
+    );
+};
+ControlledContent.parameters = rawCodeParameters;
 
 export const Callback: Story = () => {
     function onChange(event: ChangeEvent<HTMLInputElement>): void {
