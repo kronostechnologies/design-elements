@@ -65,13 +65,14 @@ export const WithFooter: Story = () => {
         {
             Header: 'Column 1',
             accessor: 'column1',
-            Footer: '',
+            Footer: <Button label="Button" buttonType="primary" />,
+            colSpan: '2',
+
         },
         {
             Header: 'Column 2',
             accessor: 'column2',
-            Footer: <Button label="Button" buttonType="primary" />,
-            colSpan: '2',
+            Footer: '',
         },
         {
             Header: 'Numbers',
