@@ -81,8 +81,8 @@ const StyledFooter = styled.td<{ sticky: boolean }>`
 `;
 
 function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boolean): ReactElement | null {
-    if (column.Footer === 'remove' || column.Footer === undefined || column.Footer === '') {
-        // If the Footer content is empty, return null to skip rendering the td
+    if (column.Footer === '') {
+        // If the Footer content is empty, skip rendering the td
         return null;
     }
     const footerProps = column.colSpan

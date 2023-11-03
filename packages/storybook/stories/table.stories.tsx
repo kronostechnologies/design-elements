@@ -65,7 +65,7 @@ export const WithFooter: Story = () => {
         {
             Header: 'Column 1',
             accessor: 'column1',
-            Footer: 'remove',
+            Footer: '',
         },
         {
             Header: 'Column 2',
