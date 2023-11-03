@@ -53,7 +53,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 .c3 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-1halfx);
+  margin-left: var(--spacing-1halfx);
 }
 
 .c4 {
@@ -155,7 +155,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 .c3 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-1halfx);
+  margin-left: var(--spacing-1halfx);
 }
 
 .c4 {
@@ -249,7 +249,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 .c3 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-1halfx);
+  margin-left: var(--spacing-1halfx);
 }
 
 .c4 {

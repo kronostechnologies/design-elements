@@ -98,7 +98,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 .c4 {
   box-sizing: border-box;
   grid-area: content;
-  padding-left: var(--spacing-1halfx);
+  margin-left: var(--spacing-1halfx);
 }
 
 .c5 {

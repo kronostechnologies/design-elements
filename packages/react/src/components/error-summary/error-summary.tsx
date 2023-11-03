@@ -22,7 +22,7 @@ const ErrorItem = styled.li`
     margin-bottom: var(--spacing-1x);
 `;
 
-const StyleSectionalBanner = styled(SectionalBanner)`
+const StyledSectionalBanner = styled(SectionalBanner)`
     padding-bottom: var(--spacing-3x);
 `;
 
@@ -78,7 +78,7 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
     ));
 
     return (
-        <StyleSectionalBanner
+        <StyledSectionalBanner
             className={className}
             focusable
             headingTag={headingTag ?? 'h2'}
@@ -87,6 +87,6 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
         >
             <Message isMobile={isMobile}>{t('message')}</Message>
             <ErrorList>{errorItems}</ErrorList>
-        </StyleSectionalBanner>
+        </StyledSectionalBanner>
     );
 };
