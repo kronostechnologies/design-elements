@@ -228,8 +228,6 @@ type PartialTableState<T extends object> = Omit<TableState<T>, 'selectedRowIds'>
 
 export interface TableProps<T extends object> {
     className?: string;
-    /** Array of Objects that defines your table columns.
-     * See stories code or refer to react-table docs for more information */
     colSpan?: string;
     columns: TableColumn<T>;
     /** Array of Objects that defines your table data.
