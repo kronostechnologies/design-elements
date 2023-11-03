@@ -96,7 +96,7 @@ const Message = styled.p<MobileDeviceContext>`
 const TextWrapper = styled.div<MobileDeviceContext>`
     box-sizing: border-box;
     grid-area: content;
-    padding-left: var(--spacing-1halfx);
+    margin-left: var(--spacing-1halfx);
 `;
 
 type DismissButtonProps = MobileDeviceContext & { $marginTop: number }
