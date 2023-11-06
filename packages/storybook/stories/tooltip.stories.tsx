@@ -133,7 +133,7 @@ export const WithDropdownNavigation: Story = () => {
 WithDropdownNavigation.decorators = [RouterDecorator];
 
 export const WithConfirmation: Story = () => {
-    const handleOnClick = () => {
+    const handleOnClick = (): void => {
         console.info('onclick');
     };
 
