@@ -141,9 +141,10 @@ export const WithConfirmation: Story = () => {
         <Container>
             <Tooltip
                 label="label"
-                labelConfirmation="label confirmation"
+                confirmationLabel="label confirmation"
                 onClick={handleOnClick}
                 desktopPlacement="bottom"
+                variant='success'
             >
                 JBSW Y3DP EHPK 3PXP
             </Tooltip>

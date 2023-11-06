@@ -74,8 +74,15 @@ describe('Tooltip', () => {
 
         test('tooltip-confirm-icon should be displayed after tooltip is clicked', () => {
             const onClick = jest.fn();
+            const confirmationLabel = 'confirmLabel';
             const wrapper = mountWithProviders(
-                <Tooltip onClick={onClick} label="Test Content" defaultOpen />,
+                <Tooltip
+                    confirmationLabel={confirmationLabel}
+                    onClick={onClick}
+                    label="Test Content"
+                    variant='success'
+                    defaultOpen
+                />,
                 { wrappingComponentProps: { staticDevice: 'desktop' } },
             );
 
@@ -86,15 +93,21 @@ describe('Tooltip', () => {
 
         test('label should be confirmation label after tooltip is clicked', () => {
             const onClick = jest.fn();
-            const labelConfirmation = 'confirmLabel';
+            const confirmationLabel = 'confirmLabel';
             const wrapper = mountWithProviders(
-                <Tooltip onClick={onClick} label="Test Content" labelConfirmation={labelConfirmation} defaultOpen />,
+                <Tooltip
+                    onClick={onClick}
+                    label="Test Content"
+                    confirmationLabel={confirmationLabel}
+                    variant='success'
+                    defaultOpen
+                />,
                 { wrappingComponentProps: { staticDevice: 'desktop' } },
             );
 
             getByTestId(wrapper, 'tooltip').simulate('click');
 
-            expect(getByTestId(wrapper, 'tooltip-content-container').text()).toBe(labelConfirmation);
+            expect(getByTestId(wrapper, 'tooltip-content-container').text()).toBe(confirmationLabel);
         });
 
         test('does not open on focus given tooltip is disabled', () => {

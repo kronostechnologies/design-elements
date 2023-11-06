@@ -10,13 +10,15 @@ import {
     useState,
 } from 'react';
 import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
-import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 import { Theme as ThemeType } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
+
+export type TooltipVariant = 'success' | 'normal';
 
 const TooltipArrow = styled.div`
     height: 1.25rem;
@@ -45,22 +47,34 @@ const TooltipArrow = styled.div`
 
 interface TooltipContainerProps {
     isMobile?: boolean;
-    isConfirmed: boolean;
+    isClicked: boolean;
+    variant: TooltipVariant;
     visible: boolean;
 }
 
-interface tooltipColorProps {
+interface TooltipColorProps {
+    isClicked: boolean;
     theme: ThemeType;
-    isConfirmed: boolean;
+    variant: TooltipVariant;
 }
 
-const tooltipColor = () => ({ theme, isConfirmed }: tooltipColorProps): FlattenInterpolation<ThemeProps<ThemeType>> => (
-    css`${isConfirmed ? theme.notifications['success-1.1'] : theme.greys['dark-grey']}`
-);
+const tooltipColor = css<TooltipColorProps>`${({ theme, isClicked, variant }) => {
+    if (isClicked && variant === 'success') {
+        return theme.notifications['success-1.1'];
+    }
+    return theme.greys['dark-grey'];
+}}`;
+
+const tooltipBorderColor = css<TooltipColorProps>`${({ theme, isClicked, variant }) => {
+    if (isClicked && variant === 'success') {
+        return theme.notifications['success-1.1'];
+    }
+    return theme.greys.white;
+}}`;
 
 const TooltipContainer = styled.div<TooltipContainerProps>`
     background-color: ${tooltipColor};
-    border: 1px solid ${tooltipColor};
+    border: 1px solid ${tooltipBorderColor};
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
@@ -86,7 +100,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
-        border-color: transparent transparent ${tooltipColor} transparent;
+        border-color: transparent transparent ${tooltipBorderColor} transparent;
         border-width: 0 0.5rem 0.5rem;
         position: absolute;
         top: -2px;
@@ -106,7 +120,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::before {
-        border-color: ${tooltipColor} transparent transparent transparent;
+        border-color: ${tooltipBorderColor} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         position: absolute;
         top: 0;
@@ -126,7 +140,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
-        border-color: transparent ${tooltipColor} transparent transparent;
+        border-color: transparent ${tooltipBorderColor} transparent transparent;
         border-width: 0.5rem 0.5rem 0.5rem 0;
     }
 
@@ -145,7 +159,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::before {
-        border-color: transparent transparent transparent ${tooltipColor};
+        border-color: transparent transparent transparent ${tooltipBorderColor};
         border-width: 0.5rem 0 0.5rem 0.5rem;
     }
 
@@ -190,9 +204,10 @@ export interface TooltipProps {
     disabled?: boolean;
     /** Tooltip text content */
     label: string;
-    labelConfirmation?: string;
+    confirmationLabel?: string;
     onClick?: () => void;
     invertedIcon?: boolean;
+    variant?: TooltipVariant;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -214,7 +229,8 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     disabled,
     invertedIcon = false,
     label,
-    labelConfirmation,
+    variant,
+    confirmationLabel,
     onClick,
 }) => {
     const { isMobile } = useDeviceContext();
@@ -224,8 +240,9 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [isVisible, setIsVisible] = useState(defaultOpen);
     const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
-    const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
-    const currentLabel = isConfirmed ? (labelConfirmation ?? label) : label;
+    const [isClicked, setIsClicked] = useState<boolean>(false);
+    const currentLabel = isClicked ? (confirmationLabel ?? label) : label;
+    const tooltipVariant = variant ?? 'normal';
 
     const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
@@ -297,7 +314,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
 
     const handleOnClick: MouseEventHandler = useCallback(() => {
         onClick?.();
-        setIsConfirmed(true);
+        setIsClicked(true);
     }, [onClick]);
 
     const handleFocus = useCallback((): void => {
@@ -320,7 +337,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         if (!isMobile) {
             closeTooltip();
         }
-        setIsConfirmed(false);
+        setIsClicked(false);
     }, [isMobile, closeTooltip]);
 
     return (
@@ -352,19 +369,22 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
             <TooltipContainer
                 data-testid="tooltip-content-container"
                 aria-hidden={!isVisible}
-                isMobile={isMobile}
                 id={tooltipId}
                 role="tooltip"
                 ref={popperTooltip.setTooltipRef}
+                isClicked={isClicked}
+                isMobile={isMobile}
+                variant={tooltipVariant}
                 visible={popperTooltip.visible}
-                isConfirmed={isConfirmed}
                 {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 <TooltipArrow
                     {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
                 <TooltipLabelContainer>
-                    {isConfirmed && <ConfirmCheckIcon data-testid='tooltip-confirm-icon' name="check" size='16' />}
+                    {(isClicked && tooltipVariant !== 'normal') && (
+                        <ConfirmCheckIcon data-testid='tooltip-confirm-icon' name="check" size='16' />
+                    )}
                     {currentLabel}
                 </TooltipLabelContainer>
             </TooltipContainer>
