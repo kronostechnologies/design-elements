@@ -2,6 +2,7 @@ import {
     FunctionComponent,
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,
+    MouseEventHandler,
     PropsWithChildren,
     useCallback,
     useEffect,
@@ -9,8 +10,9 @@ import {
     useState,
 } from 'react';
 import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
-import styled from 'styled-components';
+import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
+import { Theme as ThemeType } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -41,9 +43,24 @@ const TooltipArrow = styled.div`
     }
 `;
 
-const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
-    background-color: ${({ theme }) => theme.greys['dark-grey']};
-    border: 1px solid ${({ theme }) => theme.greys.white};
+interface TooltipContainerProps {
+    isMobile?: boolean;
+    isConfirmed: boolean;
+    visible: boolean;
+}
+
+interface tooltipColorProps {
+    theme: ThemeType;
+    isConfirmed: boolean;
+}
+
+const tooltipColor = () => ({ theme, isConfirmed }: tooltipColorProps): FlattenInterpolation<ThemeProps<ThemeType>> => (
+    css`${isConfirmed ? theme.notifications['success-1.1'] : theme.greys['dark-grey']}`
+);
+
+const TooltipContainer = styled.div<TooltipContainerProps>`
+    background-color: ${tooltipColor};
+    border: 1px solid ${tooltipColor};
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
@@ -69,14 +86,14 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::before {
-        border-color: transparent transparent ${({ theme }) => theme.greys.white} transparent;
+        border-color: transparent transparent ${tooltipColor} transparent;
         border-width: 0 0.5rem 0.5rem;
         position: absolute;
         top: -2px;
     }
 
     &[data-popper-placement*="bottom"] > ${TooltipArrow}::after {
-        border-color: transparent transparent ${({ theme }) => theme.greys['dark-grey']} transparent;
+        border-color: transparent transparent ${tooltipColor} transparent;
         border-width: 0 0.5rem 0.5rem;
     }
 
@@ -89,14 +106,14 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::before {
-        border-color: ${({ theme }) => theme.greys.white} transparent transparent transparent;
+        border-color: ${tooltipColor} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         position: absolute;
         top: 0;
     }
 
     &[data-popper-placement*="top"] > ${TooltipArrow}::after {
-        border-color: ${({ theme }) => theme.greys['dark-grey']} transparent transparent transparent;
+        border-color: ${tooltipColor} transparent transparent transparent;
         border-width: 0.5rem 0.5rem 0;
         top: -0.1rem;
     }
@@ -109,12 +126,12 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::before {
-        border-color: transparent ${({ theme }) => theme.greys.white} transparent transparent;
+        border-color: transparent ${tooltipColor} transparent transparent;
         border-width: 0.5rem 0.5rem 0.5rem 0;
     }
 
     &[data-popper-placement*="right"] > ${TooltipArrow}::after {
-        border-color: transparent ${({ theme }) => theme.greys['dark-grey']} transparent transparent;
+        border-color: transparent ${tooltipColor} transparent transparent;
         border-width: 0.5rem 0.5rem 0.5rem 0;
         left: 0.375rem;
         top: 0;
@@ -128,16 +145,21 @@ const TooltipContainer = styled.div<{ isMobile?: boolean, visible: boolean }>`
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::before {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys.white};
+        border-color: transparent transparent transparent ${tooltipColor};
         border-width: 0.5rem 0 0.5rem 0.5rem;
     }
 
     &[data-popper-placement*="left"] > ${TooltipArrow}::after {
-        border-color: transparent transparent transparent ${({ theme }) => theme.greys['dark-grey']};
+        border-color: transparent transparent transparent ${tooltipColor};
         border-width: 0.5rem 0 0.5rem 0.5rem;
         left: 0.17rem;
         top: 0;
     }
+`;
+
+const TooltipLabelContainer = styled.div`
+    align-items: center;
+    display: flex;
 `;
 
 const StyledSpan = styled.span`
@@ -146,6 +168,10 @@ const StyledSpan = styled.span`
     width: fit-content;
 
     ${focus};
+`;
+
+const ConfirmCheckIcon = styled(Icon)`
+    margin-right: 0.25rem;
 `;
 
 export type TooltipPlacement = 'top' | 'right' | 'bottom' | 'left';
@@ -164,6 +190,8 @@ export interface TooltipProps {
     disabled?: boolean;
     /** Tooltip text content */
     label: string;
+    labelConfirmation?: string;
+    onClick?: () => void;
     invertedIcon?: boolean;
 }
 
@@ -182,10 +210,12 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     className,
     defaultOpen,
     delayed,
-    disabled,
-    label,
     desktopPlacement = 'right',
+    disabled,
     invertedIcon = false,
+    label,
+    labelConfirmation,
+    onClick,
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -194,6 +224,8 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [isVisible, setIsVisible] = useState(defaultOpen);
     const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
+    const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
+    const currentLabel = isConfirmed ? (labelConfirmation ?? label) : label;
 
     const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
@@ -263,6 +295,11 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile, closeTooltip]);
 
+    const handleOnClick: MouseEventHandler = useCallback(() => {
+        onClick?.();
+        setIsConfirmed(true);
+    }, [onClick]);
+
     const handleFocus = useCallback((): void => {
         if (!isMobile) {
             openTooltip();
@@ -283,6 +320,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         if (!isMobile) {
             closeTooltip();
         }
+        setIsConfirmed(false);
     }, [isMobile, closeTooltip]);
 
     return (
@@ -294,11 +332,12 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 id={tooltipTriggerId}
                 tabIndex={(children || disabled) ? -1 : 0}
                 onBlur={handleBLur}
+                onClick={handleOnClick}
                 onFocus={handleFocus}
+                onKeyDown={handleKeyDown}
                 onMouseDown={handleMouseDown}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onKeyDown={handleKeyDown}
                 ref={popperTooltip.setTriggerRef}
             >
                 {children || (
@@ -318,12 +357,16 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                 role="tooltip"
                 ref={popperTooltip.setTooltipRef}
                 visible={popperTooltip.visible}
+                isConfirmed={isConfirmed}
                 {...popperTooltip.getTooltipProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 <TooltipArrow
                     {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
-                {label}
+                <TooltipLabelContainer>
+                    {isConfirmed && <ConfirmCheckIcon data-testid='tooltip-confirm-icon' name="check" size='16' />}
+                    {currentLabel}
+                </TooltipLabelContainer>
             </TooltipContainer>
         </>
     );
