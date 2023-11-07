@@ -67,6 +67,13 @@ describe('Pagination', () => {
     });
 
     describe('results label', () => {
+        test('should display zero results when number of results is undefined', () => {
+            const wrapper = shallow(<Pagination totalPages={0} numberOfResults={undefined} />);
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />0–0 of 0 results');
+        });
+
         test('should display the number of results when provided', () => {
             const wrapper = shallow(<Pagination totalPages={3} numberOfResults={12345} />);
             const label = findByTestId(wrapper, 'resultsLabel');
@@ -126,13 +133,6 @@ describe('Pagination', () => {
             const label = findByTestId(wrapper, 'resultsLabel');
 
             expect(label.text()).toEqual('<ScreenReaderOnlyText />1520–1530 of 1530 results');
-        });
-
-        test('should be hidden when number of results is not provided', () => {
-            const wrapper = shallow(<Pagination totalPages={3} />);
-            const label = findByTestId(wrapper, 'resultsLabel');
-
-            expect(label.exists()).toBe(false);
         });
     });
 
