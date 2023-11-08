@@ -80,7 +80,7 @@ describe('Tooltip', () => {
                     confirmationLabel={confirmationLabel}
                     onClick={onClick}
                     label="Test Content"
-                    variant='success'
+                    mode='confirm'
                     defaultOpen
                 />,
                 { wrappingComponentProps: { staticDevice: 'desktop' } },
@@ -99,7 +99,7 @@ describe('Tooltip', () => {
                     onClick={onClick}
                     label="Test Content"
                     confirmationLabel={confirmationLabel}
-                    variant='success'
+                    mode='confirm'
                     defaultOpen
                 />,
                 { wrappingComponentProps: { staticDevice: 'desktop' } },

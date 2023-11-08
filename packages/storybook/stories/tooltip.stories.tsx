@@ -144,7 +144,7 @@ export const WithConfirmation: Story = () => {
                 confirmationLabel="label confirmation"
                 onClick={handleOnClick}
                 desktopPlacement="bottom"
-                variant='success'
+                mode='confirm'
             >
                 JBSW Y3DP EHPK 3PXP
             </Tooltip>
