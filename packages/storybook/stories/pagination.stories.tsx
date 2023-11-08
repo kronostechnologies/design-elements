@@ -12,6 +12,7 @@ export default {
 
 export const Normal: Story = () => (
     <>
+        <Pagination totalPages={0} numberOfResults={undefined} />
         <Pagination totalPages={3} numberOfResults={30} />
         <Pagination totalPages={5} numberOfResults={100} />
         <Pagination totalPages={50} numberOfResults={1530} />
