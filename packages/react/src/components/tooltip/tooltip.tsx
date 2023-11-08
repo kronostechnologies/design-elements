@@ -12,7 +12,7 @@ import {
 import { PopperOptions, TriggerType, usePopperTooltip } from 'react-popper-tooltip';
 import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
-import { Theme, Theme as ThemeType } from '../../themes';
+import { Theme as ThemeType } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -64,9 +64,7 @@ const tooltipColor = css<TooltipColorProps>`${({ theme, variant }) => {
     return theme.greys['dark-grey'];
 }}`;
 
-const tooltipBorderColor = css<{ theme: Theme }>`${({ theme }) => {
-    return theme.greys.white;
-}}`;
+const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.greys.white}`;
 
 const TooltipContainer = styled.div<TooltipContainerProps>`
     background-color: ${tooltipColor};
