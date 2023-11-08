@@ -225,7 +225,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     disabled,
     invertedIcon = false,
     label,
-    mode,
+    mode = 'normal',
     confirmationLabel,
     onClick,
 }) => {
@@ -238,8 +238,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
     const [isClicked, setIsClicked] = useState<boolean>(false);
     const currentLabel = isClicked ? (confirmationLabel ?? label) : label;
-    const currentMode = mode ?? 'normal';
-    const tooltipVariant = (currentMode === 'confirm' && isClicked) ? 'success' : 'normal';
+    const tooltipVariant = (mode === 'confirm' && isClicked) ? 'success' : 'normal';
 
     const getTooltipTriggerType = useCallback((): TriggerType | null => {
         if (disabled) {
@@ -378,7 +377,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                     {...popperTooltip.getArrowProps() /* eslint-disable-line react/jsx-props-no-spreading */}
                 />
                 <TooltipLabelContainer>
-                    {(isClicked && currentMode === 'confirm') && (
+                    {(isClicked && mode === 'confirm') && (
                         <ConfirmCheckIcon data-testid='tooltip-confirm-icon' name="check" size='16' />
                     )}
                     {currentLabel}
