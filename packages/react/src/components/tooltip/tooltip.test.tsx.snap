@@ -134,6 +134,17 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -167,6 +178,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -180,6 +192,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -215,6 +228,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={true}
   >
     <div
@@ -250,7 +264,13 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
@@ -387,6 +407,17 @@ exports[`Tooltip Has default desktop styles 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -419,6 +450,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -432,6 +464,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -467,6 +500,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={false}
   >
     <div
@@ -502,7 +536,13 @@ exports[`Tooltip Has default desktop styles 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
@@ -642,6 +682,17 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -675,6 +726,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -688,6 +740,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -723,6 +776,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={true}
   >
     <div
@@ -758,7 +812,13 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
@@ -895,6 +955,17 @@ exports[`Tooltip Has mobile styles 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -927,6 +998,7 @@ exports[`Tooltip Has mobile styles 1`] = `
     data-testid="tooltip"
     id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -940,6 +1012,7 @@ exports[`Tooltip Has mobile styles 1`] = `
       data-testid="tooltip"
       id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -975,6 +1048,7 @@ exports[`Tooltip Has mobile styles 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={false}
   >
     <div
@@ -1010,7 +1084,13 @@ exports[`Tooltip Has mobile styles 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
