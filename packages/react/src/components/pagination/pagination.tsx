@@ -138,7 +138,7 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
 }) => {
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
-    const headingId = useId('heading');
+    const headingId = useId();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
     const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
     const currentNumberOfResults = numberOfResults === undefined ? 0 : numberOfResults;

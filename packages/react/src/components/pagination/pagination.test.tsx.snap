@@ -251,7 +251,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   class="c0"
 >
   <nav
-    aria-labelledby="heading"
+    aria-labelledby="uuid1"
     class="c1"
   >
     <span
@@ -261,7 +261,7 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
       <h3
         class="c2"
         data-testid="currentPageLabelHeading"
-        id="heading"
+        id="uuid1"
       >
         <span
           class="c3"
@@ -600,7 +600,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   class="c0"
 >
   <nav
-    aria-labelledby="heading"
+    aria-labelledby="uuid1"
     class="c1"
   >
     <span
@@ -610,7 +610,7 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
       <h3
         class="c2"
         data-testid="currentPageLabelHeading"
-        id="heading"
+        id="uuid1"
       >
         <span
           class="c3"
@@ -949,7 +949,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   class="c0"
 >
   <nav
-    aria-labelledby="heading"
+    aria-labelledby="uuid1"
     class="c1"
   >
     <span
@@ -959,7 +959,7 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
       <h3
         class="c2"
         data-testid="currentPageLabelHeading"
-        id="heading"
+        id="uuid1"
       >
         <span
           class="c3"
@@ -1298,7 +1298,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   class="c0"
 >
   <nav
-    aria-labelledby="heading"
+    aria-labelledby="uuid1"
     class="c1"
   >
     <span
@@ -1308,7 +1308,7 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
       <h3
         class="c2"
         data-testid="currentPageLabelHeading"
-        id="heading"
+        id="uuid1"
       >
         <span
           class="c3"
