@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ErrorSummary matches the snapshot 1`] = `
-.c10 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -18,38 +18,37 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   text-decoration: underline;
 }
 
-.c10:hover {
+.c9:hover {
   color: #003A5A;
 }
 
-.c10:visited {
+.c9:visited {
   color: #62a;
 }
 
-.c10:focus {
+.c9:focus {
   outline: none;
 }
 
-.c10:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c10:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c10:focus-visible {
+.c9:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
 }
 
-.c3 {
+.c2 {
   grid-area: icon;
-  margin-top: 2px;
-  padding-top: 4px;
+  margin-top: var(--spacing-half);
 }
 
 .c0 {
@@ -82,7 +81,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   box-shadow: none;
 }
 
-.c0 .c2 {
+.c0 .c1 {
   color: #CD2C23;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -91,92 +90,95 @@ exports[`ErrorSummary matches the snapshot 1`] = `
   width: 1rem;
 }
 
-.c6 {
+.c5 {
   font-size: 0.875rem;
   margin: var(--spacing-half) 0 0 0;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
   grid-area: content;
   margin-left: var(--spacing-1halfx);
 }
 
-.c5 {
+.c4 {
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin: 0;
+  line-height: 1.5;
 }
 
-.c7 {
+.c6 {
   font-size: 0.875rem;
   margin: var(--spacing-1x) 0 0 0;
 }
 
+.c6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.c7 {
+  margin: var(--spacing-1x) 0;
+  list-style: inside disc;
+  padding-left: var(--spacing-1x);
+}
+
 .c8 {
-  margin: var(--spacing-2x) 0;
-  padding-left: 1rem;
-}
-
-.c9 {
   margin-bottom: var(--spacing-1x);
-}
-
-.c1 {
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
 }
 
 <section
   aria-atomic="true"
   aria-labelledby="uuid1"
   aria-live="assertive"
-  class="c0 c1"
+  class="c0"
   role="alert"
   tabindex="-1"
 >
   <svg
     aria-hidden="true"
-    class="c2 c3"
+    class="c1 c2"
     color="currentColor"
     focusable="false"
     height="20"
     width="20"
   />
   <div
-    class="c4"
+    class="c3"
   >
     <h2
-      class="c5"
+      class="c4"
       id="uuid1"
     >
       The form contains one or more errors
     </h2>
     <div
-      class="c6"
+      class="c5"
     >
       <p
-        class="c7"
+        class="c6"
       >
         Please correct them to proceed to the next step.
       </p>
       <ul
-        class="c8"
+        class="c7"
       >
         <li
-          class="c9"
+          class="c8"
         >
           <a
-            class="c10"
+            class="c9"
             href="#error-input"
           >
             This is an error
           </a>
         </li>
         <li
-          class="c9"
+          class="c8"
         >
           <a
-            class="c10"
+            class="c9"
             href="#error-input-2"
           >
             Another error!

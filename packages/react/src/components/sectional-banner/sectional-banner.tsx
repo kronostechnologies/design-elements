@@ -33,10 +33,9 @@ function getLineHeight(isMobile: boolean): number {
     return isMobile ? 28 : 24;
 }
 
-const BannerIcon = styled(Icon) <ComponentProps<typeof Icon> & { $marginTop: number }>`
+const BannerIcon = styled(Icon) <ComponentProps<typeof Icon> & { isMobile: boolean }>`
     grid-area: icon;
-    margin-top: ${({ $marginTop }) => `${$marginTop}px`};
-    padding-top: 4px;
+    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
 `;
 
 function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFunction<Theme>> {
@@ -120,6 +119,7 @@ const DismissIconButton = styled(IconButton)
 const Heading = styled.span<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1.125rem' : '1rem')};
     font-weight: var(--font-semi-bold);
+    line-height: ${(props) => (props.isMobile ? '1.7' : '1.5')};
     margin: 0;
 `;
 
@@ -254,7 +254,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
                 name={bannerType.iconName}
                 size={iconSize.toString()}
                 aria-hidden="true"
-                $marginTop={marginTop}
+                isMobile={isMobile}
             />
 
             <TextWrapper isMobile={isMobile}>

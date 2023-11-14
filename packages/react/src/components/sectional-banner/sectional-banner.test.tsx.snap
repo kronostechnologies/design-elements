@@ -3,8 +3,7 @@
 exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 .c2 {
   grid-area: icon;
-  margin-top: 2px;
-  padding-top: 4px;
+  margin-top: var(--spacing-half);
 }
 
 .c0 {
@@ -61,6 +60,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin: 0;
+  line-height: 1.5;
 }
 
 <section
@@ -106,8 +106,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 .c2 {
   grid-area: icon;
-  margin-top: 2px;
-  padding-top: 4px;
+  margin-top: var(--spacing-half);
 }
 
 .c0 {
@@ -164,6 +163,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
   margin: 0;
+  line-height: 1.5;
 }
 
 <section
@@ -202,8 +202,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 .c2 {
   grid-area: icon;
-  margin-top: 2px;
-  padding-top: 4px;
+  margin-top: var(--spacing-1x);
 }
 
 .c0 {
@@ -259,6 +258,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
   font-size: 1.125rem;
   font-weight: var(--font-semi-bold);
   margin: 0;
+  line-height: 1.7;
 }
 
 <section

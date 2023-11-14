@@ -11,19 +11,20 @@ type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
     margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)')} 0 0 0;
+    &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
 `;
 
 const ErrorList = styled.ul`
-    margin: var(--spacing-2x) 0;
-    padding-left: 1rem;
+    list-style: inside disc;
+    margin: var(--spacing-1x) 0;
+    padding-left: var(--spacing-1x);
 `;
 
 const ErrorItem = styled.li`
     margin-bottom: var(--spacing-1x);
-`;
-
-const StyledSectionalBanner = styled(SectionalBanner)`
-    padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
 `;
 
 export interface ErrorMessage {
@@ -78,7 +79,7 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
     ));
 
     return (
-        <StyledSectionalBanner
+        <SectionalBanner
             className={className}
             focusable
             headingTag={headingTag ?? 'h2'}
@@ -87,6 +88,6 @@ export const ErrorSummary: VoidFunctionComponent<ErrorSummaryProps> = ({
         >
             <Message isMobile={isMobile}>{t('message')}</Message>
             <ErrorList>{errorItems}</ErrorList>
-        </StyledSectionalBanner>
+        </SectionalBanner>
     );
 };
