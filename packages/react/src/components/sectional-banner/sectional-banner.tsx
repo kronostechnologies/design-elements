@@ -36,6 +36,7 @@ function getLineHeight(isMobile: boolean): number {
 const BannerIcon = styled(Icon) <ComponentProps<typeof Icon> & { $marginTop: number }>`
     grid-area: icon;
     margin-top: ${({ $marginTop }) => `${$marginTop}px`};
+    padding-top: 4px;
 `;
 
 function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFunction<Theme>> {
