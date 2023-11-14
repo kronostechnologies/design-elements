@@ -23,7 +23,7 @@ const ErrorItem = styled.li`
 `;
 
 const StyledSectionalBanner = styled(SectionalBanner)`
-    padding-bottom: var(--spacing-3x);
+    padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
 `;
 
 export interface ErrorMessage {
