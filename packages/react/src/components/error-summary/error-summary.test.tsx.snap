@@ -104,8 +104,8 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 .c4 {
   font-size: 1rem;
   font-weight: var(--font-semi-bold);
-  margin: 0;
   line-height: 1.5;
+  margin: 0;
 }
 
 .c6 {
@@ -119,8 +119,8 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 .c7 {
-  margin: var(--spacing-1x) 0;
   list-style: inside disc;
+  margin: var(--spacing-1x) 0;
   padding-left: var(--spacing-1x);
 }
 
