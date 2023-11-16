@@ -169,6 +169,7 @@ export interface CustomTheme {
         'button-search-disabled-color'?: string;
 
         'focus-box-shadow'?: string;
+        'focus-box-shadow-inset'?: string;
         'focus-border-box-shadow'?: string;
         'focus-border-box-shadow-inset'?: string;
         'focus-border'?: string;

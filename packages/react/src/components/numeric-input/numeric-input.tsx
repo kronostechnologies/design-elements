@@ -59,21 +59,21 @@ interface StyledWrapperProps {
 }
 
 const Wrapper = styled.div<StyledWrapperProps>`
-    background: ${({ theme }) => theme.greys.white};
-    border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
+    background: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors['dark-grey']};
     border-radius: var(--border-radius);
     display: flex;
 
     ${({ $invalid, theme }) => $invalid && css`
-        border-color: ${theme.notifications['alert-2.1']};
+        border-color: ${theme.colors['alert-2.1']};
     `};
 
     ${({ $disabled, theme }) => $disabled && css`
-        background-color: ${theme.greys['light-grey']};
-        border-color: ${theme.greys.grey};
+        background-color: ${theme.colors['light-grey']};
+        border-color: ${theme.colors.grey};
 
         ${Adornment} {
-            color: ${theme.greys['mid-grey']};
+            color: ${theme.colors['mid-grey']};
         }
     `};
 

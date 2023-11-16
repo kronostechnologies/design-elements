@@ -171,24 +171,19 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   color: #000000;
 }
 
-.c14:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
 .c14:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
 }
 
-.c13:disabled {
+.c14:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
 }
 
-.c13 > svg {
+.c14 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -549,18 +544,13 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   color: #000000;
 }
 
-.c5:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
 .c8:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
 }
 
-.c5:disabled {
+.c8:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -775,27 +765,8 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c9:hover,
-.c9[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c9:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c9:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c9:disabled {
-  background-color: transparent;
-  border-color: transparent;
-  color: #B7BBC2;
+.c9:not(:disabled) {
+  cursor: pointer;
 }
 
 .c9 > svg {
@@ -804,229 +775,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   width: var(--size-1x);
 }
 
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-.c6 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c6:hover,
-.c6[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c6:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c6:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c7 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c7:focus {
-  outline: none;
-}
-
-.c7:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:hover,
-.c7[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-}
-
-.c7:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c1::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
-}
-
-.c2 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c10 {
-  position: absolute;
-  right: var(--spacing-1x);
-  top: var(--spacing-1x);
-}
-
-.c3 {
-  border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset;
-  -ms-flex-direction: unset;
-  flex-direction: unset;
-  -webkit-box-pack: end;
-  -webkit-justify-content: end;
-  -ms-flex-pack: end;
-  justify-content: end;
-}
-
-.c8 {
-  margin-left: var(--spacing-1x);
-  margin-top: 0;
-}
-
-<body
-  class="ReactModal__Body--open"
-  style="overflow: hidden;"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  <div
-    class="c0"
-    data-testid="toasts"
-  />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.75); align-items: center; display: flex; justify-content: center; z-index: 10000;"
-    >
-      <div
-        aria-describedby="modal-description"
-        aria-label="Test modal"
-        aria-modal="true"
-        class="ReactModal__Content c1 "
-        role="dialog"
-        tabindex="-1"
-      >
-        <main
-          class="c2"
-        >
-          <p
-            id="modal-description"
-          >
-            Test Content
-          </p>
-        </main>
-        <footer
-          class="c3"
-        >
-          <div
-            class="c4"
-          >
-            <button
-              class="c5 c6 "
-              data-testid="cancel-button"
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              class="c5 c7 c8"
-              data-testid="confirm-button"
-              type="button"
-            >
-              Confirm
-            </button>
-          </div>
-        </footer>
-        <button
-          aria-label="Close dialog"
-          class="c5 c9 c10"
-          data-testid="close-button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            color="currentColor"
-            focusable="false"
-            height="16"
-            width="16"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
-.c8 {
+.c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1112,18 +861,13 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #000000;
 }
 
-.c12:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
 .c14:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
 }
 
-.c12:disabled {
+.c14:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1165,18 +909,13 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #000000;
 }
 
-.c9:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
 .c10:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
 }
 
-.c9:disabled {
+.c10:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;
@@ -1205,7 +944,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   color: #FFFFFF;
 }
 
-.c10:focus {
+.c11:focus {
   background-color: #006296;
   border-color: #006296;
   color: #FFFFFF;
@@ -1469,168 +1208,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   width: var(--size-1x);
 }
 
-.c12 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-  padding: 0;
-  width: var(--size-2x);
-}
-
-.c12:focus {
-  outline: none;
-}
-
-.c12:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c12:hover,
-.c12[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c12:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c12:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c12 > svg {
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100000;
-  bottom: var(--spacing-2x);
-  right: var(--spacing-2x);
-}
-
-.c9 {
-  background-color: transparent;
-  border-color: transparent;
-  color: #60666E;
-}
-
-.c9:focus {
-  outline: none;
-}
-
-.c9:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c9:hover,
-.c9[aria-expanded='true'] {
-  background-color: #DBDEE1;
-  color: #000000;
-}
-
-.c9:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
-.c9:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
-}
-
-.c10 {
-  background-color: #006296;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10:focus {
-  outline: none;
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c10:hover,
-.c10[aria-expanded='true'] {
-  background-color: #003A5A;
-  border-color: #003A5A;
-}
-
-.c10:disabled {
-  background-color: #84C6EA;
-  border-color: #84C6EA;
-}
-
-.c3 {
-  font-size: 1.5rem;
-  font-weight: var(--font-normal);
-  line-height: 2.25rem;
-  margin: 0;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius-2x);
-  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-height: calc(100vh - var(--spacing-2x));
-  max-width: 700px;
-  min-width: calc(480px - var(--spacing-4x));
-  position: relative;
-  width: 60vw;
-}
-
-.c1::after {
-  content: '';
-  display: block;
-  padding-bottom: var(--spacing-4x);
-}
-
-.c1:focus {
-  border-color: #006296;
-  box-shadow: 0 0 0 2px #84C6EA,0 6px 10px 0 rgb(0 0 0 / 10%);
-  outline: none;
-}
-
-.c5 {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: var(--spacing-4x) var(--spacing-4x) 0;
-}
-
-.c2 {
-  border-bottom: 1px solid transparent;
-  padding: var(--spacing-4x) var(--spacing-4x) var(--spacing-3x);
-}
-
-.c2 + .c4 {
-  padding-top: 0;
-}
-
 .c13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1717,18 +1294,13 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   color: #000000;
 }
 
-.c13:disabled {
-  background-color: transparent;
-  color: #B7BBC2;
-}
-
 .c14:focus {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #60666E;
 }
 
-.c13:disabled {
+.c14:disabled {
   background-color: transparent;
   border-color: transparent;
   color: #B7BBC2;

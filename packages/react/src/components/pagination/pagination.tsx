@@ -31,7 +31,7 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
     min-width: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
-    outline: ${(props) => (props.isSelected ? `1px solid ${props.theme.main['primary-1.1']}` : '0')};
+    outline: ${(props) => (props.isSelected ? `1px solid ${props.theme.colors['primary-1.1']}` : '0')};
     padding: 0 var(--spacing-1x);
     text-align: center;
 

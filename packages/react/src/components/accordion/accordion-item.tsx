@@ -19,8 +19,8 @@ export interface AccordionItemProps {
 }
 
 const AccordionSection = styled.section<{ theme: Theme }>`
-    background: ${({ theme }) => theme.greys['colored-white']};
-    border-color: ${({ theme }) => theme.greys.grey};
+    background: ${({ theme }) => theme.colors['colored-white']};
+    border-color: ${({ theme }) => theme.colors.grey};
     border-radius: 0 0 var(--border-radius-2x) var(--border-radius-2x);
     border-style: solid;
     border-width: 0;
@@ -39,8 +39,8 @@ const AccordionSection = styled.section<{ theme: Theme }>`
 `;
 
 const AccordionBody = styled.div<{ theme: Theme }>`
-    background: ${({ theme }) => theme.greys['colored-white']};
-    color: ${({ theme }) => theme.greys['neutral-90']};
+    background: ${({ theme }) => theme.colors['colored-white']};
+    color: ${({ theme }) => theme.colors['neutral-90']};
     font-size: 0.75rem;
     font-weight: var(--font-normal);
     letter-spacing: 0.015rem;
@@ -62,9 +62,9 @@ const HeadingStyled = styled(Heading)`
 
 const ButtonStyled = styled(Button)<{ theme: Theme }>`
     align-items: flex-start;
-    border: 1px solid ${({ theme }) => theme.greys.grey};
+    border: 1px solid ${({ theme }) => theme.colors.grey};
     border-radius: var(--border-radius-2x);
-    color: ${({ theme }) => theme.greys['neutral-90']};
+    color: ${({ theme }) => theme.colors['neutral-90']};
     font-size: 0.875rem;
     font-weight: var(--font-normal);
     justify-content: start;
@@ -81,9 +81,10 @@ const ButtonStyled = styled(Button)<{ theme: Theme }>`
     width: 100%;
 
     &[aria-expanded='true'] {
-        background: ${({ theme }) => theme.greys.white};
+        background: ${({ theme }) => theme.colors.white};
+        border-color: ${({ theme }) => theme.colors.grey};
         border-radius: var(--border-radius-2x) var(--border-radius-2x) 0 0;
-        color: ${({ theme }) => theme.greys['neutral-90']};
+        color: ${({ theme }) => theme.colors['neutral-90']};
         transition-delay: 0s;
         transition-duration: 0.1s;
         transition-property: border-radius;
@@ -92,13 +93,13 @@ const ButtonStyled = styled(Button)<{ theme: Theme }>`
 
     &:focus {
         box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow-inset']};
-        color: ${({ theme }) => theme.greys['neutral-90']};
+        color: ${({ theme }) => theme.colors['neutral-90']};
     }
 
     &:hover {
-        background: ${({ theme }) => theme.greys.grey};
-        border-color: ${({ theme }) => theme.greys['neutral-90']};
-        color: ${({ theme }) => theme.greys['neutral-90']};
+        background: ${({ theme }) => theme.colors.grey};
+        border-color: ${({ theme }) => theme.colors['neutral-90']};
+        color: ${({ theme }) => theme.colors['neutral-90']};
     }
 
     > svg {
@@ -108,13 +109,13 @@ const ButtonStyled = styled(Button)<{ theme: Theme }>`
     }
 
     &:disabled {
-        background-color: ${({ theme }) => theme.greys['light-grey']};
+        background-color: ${({ theme }) => theme.colors['light-grey']};
         &:hover {
-            border-color: ${({ theme }) => theme.greys.grey};
-            color: ${({ theme }) => theme.greys['mid-grey']};
+            border-color: ${({ theme }) => theme.colors.grey};
+            color: ${({ theme }) => theme.colors['mid-grey']};
         }
         > svg {
-            color: ${({ theme }) => theme.greys['mid-grey']};
+            color: ${({ theme }) => theme.colors['mid-grey']};
         }
     }
 `;

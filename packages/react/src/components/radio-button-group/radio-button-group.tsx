@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState, VoidFunctionComponent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { Theme } from '../../themes';

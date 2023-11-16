@@ -59,7 +59,7 @@ interface TooltipColorProps {
 
 const tooltipColor = css<TooltipColorProps>`${({ theme, variant }) => {
     if (variant === 'success') {
-        return theme.notifications['success-1.1'];
+        return theme.colors['success-1.1'];
     }
     return theme.colors['dark-grey'];
 }}`;

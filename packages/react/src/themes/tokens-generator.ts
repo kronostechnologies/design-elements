@@ -3,6 +3,7 @@ import { Theme } from './default-types';
 export const generateTokens = (colors: Theme['colors']): Theme['tokens'] => {
     const tokens: Theme['tokens'] = {
         'focus-box-shadow': `0 0 0 2px ${colors['primary-1.2']}`,
+        'focus-box-shadow-inset': `inset 0 0 0 2px ${colors['primary-1.2']}`,
         'focus-border-box-shadow': ` 0 0 0 1px ${colors['primary-1.1']}, 0 0 0 3px ${colors['primary-1.2']}`,
         'focus-border-box-shadow-inset': `inset 0 0 0 2px ${colors['primary-1.2']}, inset 0 0 0 3px ${colors['primary-1.1']}`,
         'focus-border': `${colors['primary-1.1']}`,
