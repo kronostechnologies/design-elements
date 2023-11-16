@@ -33,9 +33,8 @@ function getTopPadding({ hasCloseButton, noPadding, isMobile }: ContentProps): s
         if (hasCloseButton) {
             return 'var(--spacing-2x)';
         }
-        return 'var(--spacing-3x)';
     }
-    return 'var(--spacing-4x)';
+    return 'var(--spacing-3x)';
 }
 
 function getModalMinWidth({ breakpoints, isMobile }: StyledModalProps): string {
@@ -84,7 +83,7 @@ interface HeaderProps extends ContentProps {
 const Header = styled.header<HeaderProps>`
     /* TODO change colors when updating thematization */
     border-bottom: 1px solid ${({ isTopScrolled }) => (isTopScrolled ? '#878f9a' : 'transparent')};
-    padding: ${getTopPadding} ${getPadding} var(--spacing-3x);
+    padding: ${getTopPadding} ${getPadding} var(--spacing-2x);
 
     & + ${Main} {
         padding-top: 0;
@@ -93,8 +92,8 @@ const Header = styled.header<HeaderProps>`
 
 const CloseIconButton = styled(IconButton)<Pick<DeviceContextProps, 'isMobile'>>`
     position: absolute;
-    right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-1x)')};
-    top: var(--spacing-1x);
+    right: ${({ isMobile }) => (isMobile ? 'var(--spacing-half)' : 'var(--spacing-4x)')};
+    top: 1.75rem;
 `;
 
 interface FooterProps extends ContentProps {
@@ -284,6 +283,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
                     iconName="x"
                     onClick={onRequestClose}
                     isMobile={isMobile}
+                    size="small"
                 />
             )}
         </StyledModal>

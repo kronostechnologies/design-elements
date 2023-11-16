@@ -140,12 +140,14 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
       checked=""
       class="c4"
       data-testid="radio-card-test-input"
+      id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
     <label
       class="c5 c6"
+      for="uuid1"
     >
       <span
         class="c7 c8"
@@ -157,7 +159,7 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
       </span>
       <span
         class="c11 c12"
-        id="description-undefined"
+        id="description-uuid1"
       >
         Test description
       </span>
@@ -305,12 +307,14 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
     <input
       class="c4"
       data-testid="radio-card-test-input"
+      id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
     <label
       class="c5 c6"
+      for="uuid1"
     >
       <span
         class="c7 c8"
@@ -322,7 +326,7 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
       </span>
       <span
         class="c11 c12"
-        id="description-undefined"
+        id="description-uuid1"
       >
         Test description
       </span>
@@ -470,12 +474,14 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
     <input
       class="c4"
       data-testid="radio-card-test-input"
+      id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
     <label
       class="c5 c6"
+      for="uuid1"
     >
       <span
         class="c7 c8"
@@ -487,7 +493,7 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
       </span>
       <span
         class="c11 c12"
-        id="description-undefined"
+        id="description-uuid1"
       >
         Test description
       </span>
@@ -637,12 +643,14 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
       class="c4"
       data-testid="radio-card-test-input"
       disabled=""
+      id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
     <label
       class="c5 c6"
+      for="uuid1"
     >
       <span
         class="c7 c8"
@@ -657,7 +665,7 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
       <span
         class="c11 c12"
         disabled=""
-        id="description-undefined"
+        id="description-uuid1"
       >
         Test description
       </span>
@@ -807,12 +815,14 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
     <input
       class="c4"
       data-testid="radio-card-test-input"
+      id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
     <label
       class="c5 c6"
+      for="uuid1"
     >
       <span
         class="c7 c8"
@@ -824,7 +834,7 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
       </span>
       <span
         class="c11 c12"
-        id="description-undefined"
+        id="description-uuid1"
       >
         Test description
       </span>
@@ -974,12 +984,14 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
     <input
       class="c4"
       data-testid="radio-card-test-input"
+      id="uuid1"
       name="test"
       type="radio"
       value="test"
     />
     <label
       class="c5 c6"
+      for="uuid1"
     >
       <span
         class="c7 c8"
@@ -991,7 +1003,7 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
       </span>
       <span
         class="c11 c12"
-        id="description-undefined"
+        id="description-uuid1"
       >
         Test description
       </span>

@@ -16,7 +16,7 @@ import { getNextElementInArray, getPreviousElementInArray } from '../../utils/ar
 import { isLetterOrNumber } from '../../utils/regex';
 import { v4 as uuid } from '../../utils/uuid';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { Icon } from '../icon/icon';
+import { Icon, IconName } from '../icon/icon';
 
 function getMaxHeight(numberOfVisibleItems: number): string {
     const menuOptionHeight = 32;
@@ -25,7 +25,7 @@ function getMaxHeight(numberOfVisibleItems: number): string {
     return `calc(var(--spacing-half) + ${optionsHeight.toString()}px)`;
 }
 
-const StyledDiv = styled.div<{ numberOfVisibleItems: number }>`
+const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
     background-color: ${({ theme }) => theme.colors.white};
 
     /* TODO update with next thematization */
@@ -35,16 +35,15 @@ const StyledDiv = styled.div<{ numberOfVisibleItems: number }>`
     box-sizing: border-box;
     flex-direction: column;
     margin: 0;
-    max-height: ${({ numberOfVisibleItems }) => getMaxHeight(numberOfVisibleItems)};
-    overflow-x: hidden;
-    overflow-y: auto;
+    max-height: ${({ numberOfVisibleItems }) => numberOfVisibleItems && getMaxHeight(numberOfVisibleItems)};
+    overflow-y: ${({ numberOfVisibleItems }) => numberOfVisibleItems && 'auto'};
     padding: var(--spacing-half) 0;
     scroll-behavior: smooth;
     width: 100%;
 `;
 
 interface SubMenuProps {
-    numberOfVisibleItems: number;
+    numberOfVisibleItems: number | undefined;
     top?: number;
     left?: number;
 }
@@ -59,8 +58,8 @@ const SubMenu = styled.div<SubMenuProps>`
     flex-direction: column;
     left: ${({ left }) => left}px !important;
     margin: 0;
-    max-height: ${({ numberOfVisibleItems }) => getMaxHeight(numberOfVisibleItems)};
-    overflow-y: auto;
+    max-height: ${({ numberOfVisibleItems }) => numberOfVisibleItems && getMaxHeight(numberOfVisibleItems)};
+    overflow-y: ${({ numberOfVisibleItems }) => numberOfVisibleItems && 'auto'};
     padding: var(--spacing-half) 0;
     position: absolute;
     scroll-behavior: smooth;
@@ -72,6 +71,7 @@ const SubMenu = styled.div<SubMenuProps>`
 interface ButtonProps {
     $device: DeviceContextProps;
     $hasSubMenu: boolean;
+    $withEmptyIcon?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -80,9 +80,11 @@ const Button = styled.button<ButtonProps>`
     cursor: pointer;
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
-    justify-content: space-between;
+    gap: var(--spacing-1x);
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
-    padding: ${({ $hasSubMenu }) => ($hasSubMenu ? '0 var(--spacing-half) 0 var(--spacing-2x)' : '0 var(--spacing-2x)')};
+    padding: 0 var(--spacing-2x);
+    padding-left: ${({ $withEmptyIcon }) => $withEmptyIcon && 'calc(1rem + var(--spacing-3x));'};
+    padding-right: ${({ $hasSubMenu }) => $hasSubMenu && 'var(--spacing-half);'};
     text-align: left;
     text-decoration: none;
     width: 100%;
@@ -92,68 +94,114 @@ const Button = styled.button<ButtonProps>`
         outline: none;
     }
 
-    :hover {
+    &:hover {
         background-color: ${({ theme }) => theme.colors.grey};
     }
 `;
 
+const GroupLabel = styled.span<{ $device: DeviceContextProps }>`
+    color: #60666e; /* TODO: replace by token neutral/65 */
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    overflow: hidden;
+    padding: var(--spacing-base) var(--spacing-2x) var(--spacing-half);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+`;
+
 const Label = styled.span`
+    flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 `;
 
-const StyledIcon = styled(Icon)`
-    min-width: 16px;
-`;
-
 export interface MenuOption {
     label: string;
-    options?: MenuOption[];
+    iconName?: IconName;
+    options?: MenuItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
     onClick?(): void;
 }
 
+export interface MenuGroup {
+    groupLabel: string;
+    groupOptions: MenuOption[];
+}
+
+export type MenuItem = MenuGroup | MenuOption;
+
 interface ListOption extends MenuOption {
     focusIndex: number,
-    options?: ListOption[];
+    options?: ListItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
     ref: RefObject<HTMLButtonElement>,
 }
+
+interface ListGroup extends MenuGroup {
+    groupOptions: ListOption[];
+}
+
+type ListItem = ListGroup | ListOption;
 
 interface Props {
     className?: string;
     id?: string;
     initialFocusIndex?: number;
     numberOfVisibleItems?: number;
-    options: MenuOption[];
-    direction?: 'left' | 'right';
+    options: MenuItem[];
+    $placement?: 'left' | 'right';
 
     onKeyDown?(event: KeyboardEvent): void;
     onOptionSelect?(option: ListOption): void;
 }
 
-function getListOptions(options: MenuOption[]): ListOption[] {
-    return options.map(
-        (option, index) => ({
-            ...option,
-            focusIndex: index,
-            ref: createRef<HTMLButtonElement>(),
-            options: option.options ? getListOptions(option.options) : undefined,
-        }),
+function isMenuGroup(menuItem: MenuItem): menuItem is MenuGroup {
+    return 'groupLabel' in menuItem && menuItem.groupLabel !== undefined;
+}
+
+function isListGroup(listItem: ListItem): listItem is ListGroup {
+    return 'groupLabel' in listItem && listItem.groupLabel !== undefined;
+}
+
+function getAllOptionsInLevel(list: ListItem[]): ListOption[] {
+    return list.flatMap((x) => (isListGroup(x) ? x.groupOptions : x));
+}
+
+function getListItems(options: MenuItem[]): ListItem[] {
+    const indexCounterPerLevel = new Map<number, number>();
+
+    const generateListTree = (items: MenuItem[], level: number): ListItem[] => items.map(
+        (option) => {
+            if (isMenuGroup(option)) {
+                return ({
+                    ...option,
+                    groupOptions: generateListTree(option.groupOptions, level) as ListOption[],
+                });
+            }
+
+            const focusIndex = (indexCounterPerLevel.get(level) ?? -1) + 1;
+            indexCounterPerLevel.set(level, focusIndex);
+
+            return ({
+                ...option,
+                focusIndex,
+                ref: createRef<HTMLButtonElement>(),
+                options: option.options ? generateListTree(option.options, level + 1) : undefined,
+            });
+        },
     );
+
+    return generateListTree(options, 0);
 }
 
-function getSubMenuTopPosition(parentOption: ListOption): number | undefined {
-    const offsetTop = parentOption.ref.current?.offsetTop;
-    const parentScrollTop = parentOption.ref.current?.parentElement?.scrollTop;
+function getSubMenuPosition(parentOption: ListOption): { top: number, left: number; } {
+    const parentButtonPos = parentOption.ref.current!.getBoundingClientRect();
+    const parentMenuPos = parentOption.ref.current!.parentElement!.getBoundingClientRect();
 
-    if (offsetTop && parentScrollTop) {
-        return offsetTop - parentScrollTop;
-    }
-    return offsetTop;
-}
-
-function getSubMenuLeftPosition(parentOption: ListOption): number | undefined {
-    return parentOption.ref.current?.offsetWidth;
+    return {
+        top: parentButtonPos.top - parentMenuPos.top - 5,
+        left: parentButtonPos.right - parentMenuPos.left - 1,
+    };
 }
 
 export const Menu = forwardRef(({
@@ -168,13 +216,13 @@ export const Menu = forwardRef(({
 }: Props, ref: Ref<HTMLDivElement>): ReactElement => {
     const menuId = useMemo(() => id || uuid(), [id]);
     const device = useDeviceContext();
-    const list: ListOption[] = useMemo((): ListOption[] => getListOptions(options), [options]);
+    const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);
     const [focusedIndex, setFocusedIndex] = useState(initialFocusIndex);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
 
     const focusElementAtIndex = useCallback((index: number): void => {
-        activeMenuList[index]?.ref.current?.focus();
+        getAllOptionsInLevel(activeMenuList)[index]?.ref.current?.focus();
     }, [activeMenuList]);
 
     useEffect(() => {
@@ -211,9 +259,10 @@ export const Menu = forwardRef(({
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         setMouseNavigating(false);
         onKeyDown?.(event);
+        const activeMenuOptions = getAllOptionsInLevel(activeMenuList);
 
         if (isLetterOrNumber(event.key)) {
-            const firstMatchingOption = activeMenuList.find((option) => option.label
+            const firstMatchingOption = activeMenuOptions.find((option) => option.label
                 .toLowerCase()
                 .startsWith(event.key.toLowerCase()));
 
@@ -223,7 +272,7 @@ export const Menu = forwardRef(({
         switch (event.key) {
             case 'ArrowUp': {
                 event.preventDefault();
-                const previousElement = getPreviousElementInArray(activeMenuList, focusedIndex);
+                const previousElement = getPreviousElementInArray(activeMenuOptions, focusedIndex);
                 if (previousElement) {
                     setFocusedIndex(previousElement.focusIndex);
                 }
@@ -231,7 +280,7 @@ export const Menu = forwardRef(({
             }
             case 'ArrowDown': {
                 event.preventDefault();
-                const nextElement = getNextElementInArray(activeMenuList, focusedIndex);
+                const nextElement = getNextElementInArray(activeMenuOptions, focusedIndex);
                 if (nextElement) {
                     setFocusedIndex(nextElement.focusIndex);
                 }
@@ -239,7 +288,7 @@ export const Menu = forwardRef(({
             }
             case 'ArrowRight': {
                 event.preventDefault();
-                const subMenu = activeMenuList[focusedIndex].options;
+                const subMenu = activeMenuOptions[focusedIndex].options;
 
                 if (subMenu) {
                     setActiveMenuList(subMenu);
@@ -250,7 +299,7 @@ export const Menu = forwardRef(({
             case 'ArrowLeft': {
                 event.preventDefault();
                 const isSubMenu = list !== activeMenuList;
-                const parentOption = list.find((option) => option.options === activeMenuList);
+                const parentOption = getAllOptionsInLevel(list).find((option) => option.options === activeMenuList);
 
                 if (isSubMenu) {
                     setActiveMenuList(list);
@@ -268,13 +317,28 @@ export const Menu = forwardRef(({
         return opt.options === activeMenuList;
     }
 
-    function renderOptions(listOptions: ListOption[]): ReactElement {
-        const isSubMenu = listOptions !== list;
+    function renderGroup(group: ListGroup, index: number): ReactElement {
+        const groupId = `menu-group-${index}`;
+
+        return (
+            <div key={`${groupId}-${group.groupLabel}`} role="group" aria-labelledby={groupId}>
+                <GroupLabel $device={device} id={groupId}>{group.groupLabel}</GroupLabel>
+                {
+                    /* eslint-disable-next-line @typescript-eslint/no-use-before-define */
+                    group.groupOptions && renderItems(group.groupOptions)
+                }
+            </div>
+        );
+    }
+
+    function renderItems(listItems: ListItem[]): ReactElement {
+        const isSubMenu = listItems !== list;
         const getTestId = (index: number): string => (isSubMenu ? `sub-menu-option-${index}` : `menu-option-${index}`);
+        const hasAnyOptionWithIcon = listItems.some((opt) => !isListGroup(opt) && opt.iconName != null);
 
         return (
             <>
-                {listOptions.map((opt, index) => (
+                {listItems.map((opt, index) => (isListGroup(opt) ? renderGroup(opt, index) : (
                     <Fragment key={`${menuId}-${opt.label}`}>
                         <Button
                             aria-haspopup={opt.options ? 'menu' : undefined}
@@ -289,49 +353,60 @@ export const Menu = forwardRef(({
                             onMouseEnter={() => handleMouseEnter(opt)}
                             onMouseLeave={() => handleMouseLeave(opt)}
                             ref={opt.ref}
+                            $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
                         >
+                            {opt.iconName && (
+                                <Icon
+                                    focusable={false}
+                                    aria-hidden
+                                    name={opt.iconName}
+                                    size="1rem"
+                                    color='#60666E'
+                                />
+                            )}
                             <Label>{opt.label}</Label>
-                            {opt.options && <StyledIcon aria-hidden name="chevronRight" size="16" />}
+                            {opt.options && <Icon aria-hidden name="chevronRight" size="1rem" />}
                         </Button>
                         {opt.options && isSubMenuOpen(opt) && (
                             <SubMenu
                                 data-testid={`menu-option-${index}-sub-menu`}
                                 id={menuId}
-                                numberOfVisibleItems={numberOfVisibleItems}
+                                numberOfVisibleItems={!getAllOptionsInLevel(listItems).some((o) => o.options != null)
+                                    ? numberOfVisibleItems
+                                    : undefined}
                                 onKeyDown={handleKeyDown}
                                 role="menu"
                                 onMouseEnter={() => handleMouseEnter(opt)}
                                 onMouseLeave={() => handleMouseLeave(opt)}
-                                top={getSubMenuTopPosition(opt)}
-                                left={getSubMenuLeftPosition(opt)}
+                                top={getSubMenuPosition(opt).top}
+                                left={getSubMenuPosition(opt).left}
                                 /* eslint-disable-next-line react/jsx-props-no-spreading */
                                 {...props}
                             >
-                                {renderOptions(opt.options)}
+                                {renderItems(opt.options)}
                             </SubMenu>
                         )}
                     </Fragment>
-                ))}
+                )))}
             </>
         );
     }
 
     return (
-        <div
+        <StyledDiv
+            className={className}
+            data-testid="menu"
+            id={menuId}
+            numberOfVisibleItems={!getAllOptionsInLevel(list).some((o) => o.options != null)
+                ? numberOfVisibleItems
+                : undefined}
+            onKeyDown={handleKeyDown}
+            role="menu"
             ref={ref}
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...props}
         >
-            <StyledDiv
-                className={className}
-                data-testid="menu"
-                id={menuId}
-                numberOfVisibleItems={numberOfVisibleItems}
-                onKeyDown={handleKeyDown}
-                role="menu"
-            >
-                {renderOptions(list)}
-            </StyledDiv>
-        </div>
+            {renderItems(list)}
+        </StyledDiv>
     );
 });

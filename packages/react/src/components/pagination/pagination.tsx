@@ -1,5 +1,6 @@
 import { useEffect, useState, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
+import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { focus } from '../../utils/css-state';
 import { clamp } from '../../utils/math';
@@ -7,6 +8,7 @@ import { range } from '../../utils/range';
 import { IconButton } from '../buttons/icon-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { IconName } from '../icon/icon';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 import { calculateShownPageRange } from './util/pagination-util';
 
 const Pages = styled.ol`
@@ -29,6 +31,7 @@ const Page = styled.li<{ isSelected: boolean, isMobile: boolean }>`
     line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
     margin: 0 var(--spacing-half);
     min-width: ${(props) => (props.isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
+    outline: ${(props) => (props.isSelected ? `1px solid ${props.theme.main['primary-1.1']}` : '0')};
     padding: 0 var(--spacing-1x);
     text-align: center;
 
@@ -72,12 +75,18 @@ const Container = styled.div<{ isMobile: boolean }>`
     flex-direction: ${(props) => (props.isMobile ? 'column' : 'row')};
 `;
 
-const ResultsLabel = styled.div<{ isMobile: boolean }>`
+const ResultsLabel = styled.span<{ isMobile: boolean }>`
     font-size: ${(props) => (props.isMobile ? 1 : 0.9)}rem;
+    font-weight: var(--font-normal);
     line-height: ${(props) => (props.isMobile ? 2 : 1.5)}rem;
     margin-bottom: ${(props) => (props.isMobile ? 'var(--spacing-1halfx)' : 0)};
     margin-right: ${(props) => (props.isMobile ? 0 : 'var(--spacing-3x)')};
     white-space: nowrap;
+`;
+
+const CurrentPageLabelHeading = styled.h3`
+    font-size: 0.875rem;
+    line-height: 1.5rem;
 `;
 
 const Navigation = styled.nav`
@@ -129,11 +138,12 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
 }) => {
     const { t } = useTranslation('pagination');
     const { isMobile } = useDeviceContext();
+    const headingId = useId();
     const pagesDisplayed = Math.min(pagesShown, totalPages);
     const [currentPage, setCurrentPage] = useState(clamp(activePage || defaultActivePage, 1, totalPages));
+    const currentNumberOfResults = numberOfResults === undefined ? 0 : numberOfResults;
     const canNavigatePrevious = currentPage > 1;
     const canNavigateNext = currentPage < totalPages;
-    const firstLastNavActive = totalPages > 5;
     const forwardBackwardNavActive = totalPages > 3 || pagesDisplayed < totalPages;
 
     useEffect(() => {
@@ -173,23 +183,33 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
         );
     });
 
+    const ariaLabelledby = headingId;
+    let pageStartIndex;
+    let pageEndIndex;
+    const pageSize = currentNumberOfResults !== 0 ? Math.ceil(currentNumberOfResults / totalPages) : 0;
+    if (pageSize !== 0 && currentNumberOfResults !== 0) {
+        pageStartIndex = (pageSize * (currentPage - 1)) + 1;
+        pageEndIndex = Math.min(currentNumberOfResults, (pageSize * currentPage));
+    } else {
+        pageStartIndex = 0;
+        pageEndIndex = 0;
+    }
+
     return (
         <Container className={className} isMobile={isMobile}>
-            {numberOfResults !== undefined && (
-                <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
-                    {`${numberOfResults} ${t('results')}`}
-                </ResultsLabel>
-            )}
-            <Navigation aria-label="pagination">
-                {firstLastNavActive && (
-                    <NavButton
-                        data-testid="firstPageButton"
-                        iconName="chevronsLeft"
-                        label="first page"
-                        enabled={canNavigatePrevious}
-                        onClick={() => changePage(1)}
-                    />
-                )}
+            <Navigation aria-labelledby={ariaLabelledby}>
+                <span aria-live='off' role='status'>
+                    <CurrentPageLabelHeading id={headingId} data-testid="currentPageLabelHeading">
+                        <ResultsLabel isMobile={isMobile} data-testid="resultsLabel">
+                            <ScreenReaderOnlyText label={`${t('pagination')} - `} />
+                            {t('results', {
+                                pageStartIndex,
+                                pageEndIndex,
+                                numberOfResults: currentNumberOfResults,
+                            })}
+                        </ResultsLabel>
+                    </CurrentPageLabelHeading>
+                </span>
                 {forwardBackwardNavActive && (
                     <NavButton
                         data-testid="previousPageButton"
@@ -207,15 +227,6 @@ export const Pagination: VoidFunctionComponent<PaginationProps> = ({
                         label="next page"
                         enabled={canNavigateNext}
                         onClick={() => changePage(currentPage + 1)}
-                    />
-                )}
-                {firstLastNavActive && (
-                    <NavButton
-                        data-testid="lastPageButton"
-                        iconName="chevronsRight"
-                        label="last page"
-                        enabled={canNavigateNext}
-                        onClick={() => changePage(totalPages)}
                     />
                 )}
             </Navigation>

@@ -4,10 +4,11 @@ import { menuDimensions } from '../../tokens/menuDimensions';
 import { Button, ButtonType } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { Icon, IconName } from '../icon/icon';
-import { Menu, MenuOption } from '../menu/menu';
+import { Menu, MenuItem } from '../menu/menu';
 import { eventIsInside } from '../../utils/events';
+import { useTranslation } from '../../i18n/use-translation';
 
-export type MenuDirection = 'right' | 'left';
+export type MenuPlacement = 'right' | 'left';
 
 const StyledContainer = styled.div`
     position: relative;
@@ -17,37 +18,41 @@ const StyledMenu = styled(Menu)`
     max-width: ${menuDimensions.maxWidth};
     min-width: ${menuDimensions.minWidth};
     position: absolute;
-    ${({ direction }) => (direction === 'left' ? 'right: 0;' : 'left: 0;')}
+    ${({ $placement }) => ($placement === 'left' ? 'right: 0;' : 'left: 0;')}
 `;
 
 const StyledIcon = styled(Icon)`
     margin-left: var(--spacing-1x);
 `;
 
-interface Props {
+export interface MenuButtonProps {
     autofocus?: boolean;
     buttonType: ButtonType;
     className?: string;
     defaultOpen?: boolean;
     iconName?: IconName;
+    iconLabel?: string;
     inverted?: boolean;
-    options: MenuOption[];
+    options: MenuItem[];
     onMenuVisibilityChanged?(isOpen: boolean): void;
-    menuDirection?: MenuDirection;
+    menuPlacement?: MenuPlacement;
 }
 
-export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
+export const MenuButton: FunctionComponent<PropsWithChildren<MenuButtonProps>> = ({
     autofocus,
     buttonType,
     children,
     className,
     defaultOpen,
     iconName,
+    iconLabel,
     inverted,
     options,
     onMenuVisibilityChanged,
-    menuDirection = 'right',
+    menuPlacement = 'right',
 }) => {
+    const { t } = useTranslation('menu-button');
+
     const [visible, setVisible] = useState(!!defaultOpen);
     const [initialFocusIndex, setInitialFocusIndex] = useState(0);
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -123,6 +128,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
                     autofocus={autofocus}
                     data-testid="menu-button"
                     type="button"
+                    label={iconLabel ?? t('buttonAriaLabel')}
                     aria-haspopup="menu"
                     aria-expanded={visible}
                     buttonType={buttonType}
@@ -153,7 +159,7 @@ export const MenuButton: FunctionComponent<PropsWithChildren<Props>> = ({
             )}
             {visible && (
                 <StyledMenu
-                    direction={menuDirection}
+                    $placement={menuPlacement}
                     options={options}
                     initialFocusIndex={initialFocusIndex}
                     onOptionSelect={handleOnOptionSelect}

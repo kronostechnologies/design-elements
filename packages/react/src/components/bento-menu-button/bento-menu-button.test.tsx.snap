@@ -488,6 +488,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   aria-label=""
   class="c0 c1"
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -506,6 +507,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
     class="c4 c5 c6"
     data-testid="menu-dropdownMenu"
     hidden=""
+    id="uuid2"
   >
     <h3
       class="c7 c8 c9"
@@ -1322,6 +1324,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   aria-label=""
   class="c0 c1"
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -1340,6 +1343,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
     class="c4 c5 c6"
     data-testid="menu-dropdownMenu"
     hidden=""
+    id="uuid2"
   >
     <h3
       class="c7 c8 c9"
@@ -2068,6 +2072,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   aria-label="Menu"
   class="c0 c1"
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -2086,6 +2091,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
     class="c4 c5 c6"
     data-testid="menu-dropdownMenu"
     hidden=""
+    id="uuid2"
   >
     <h3
       class="c7 c8 c9"

@@ -177,6 +177,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   aria-label="ariaLabel"
   class="c0"
   data-testid="nav-container"
+  id="uuid1"
 >
   <button
     aria-expanded="true"
@@ -197,6 +198,7 @@ exports[`DropdownNavigation Matches Snapshot (defaultOpen) 1`] = `
   <ul
     class="c5 c6"
     data-testid="dropdown-navDropdown"
+    id="uuid2"
   >
     <li
       data-testid="listitem-optionA"
@@ -443,6 +445,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
   aria-label="ariaLabel"
   class="c0"
   data-testid="nav-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -464,6 +467,7 @@ exports[`DropdownNavigation Matches Snapshot (tag="nav") 1`] = `
     class="c5 c6"
     data-testid="dropdown-navDropdown"
     hidden=""
+    id="uuid2"
   >
     <li
       data-testid="listitem-optionA"
@@ -710,6 +714,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
   aria-label="ariaLabel"
   class="c0"
   data-testid="nav-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -731,6 +736,7 @@ exports[`DropdownNavigation Matches Snapshot 1`] = `
     class="c5 c6"
     data-testid="dropdown-navDropdown"
     hidden=""
+    id="uuid2"
   >
     <li
       data-testid="listitem-optionA"

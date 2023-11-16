@@ -107,6 +107,7 @@ export interface CarouselProps extends Pick<AriaAttributes, 'aria-label'> {
     children: ReactNode;
     className?: string;
     header?: ReactNode;
+    id?: string;
     initialSlide?: number;
     loop?: boolean;
     transitionTime?: number;
@@ -126,6 +127,7 @@ function getChildrenAsArray(children: ReactNode): ReactNode[] {
 export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
     autoTransitionDelay,
     className,
+    id,
     initialSlide = 0,
     children,
     header = null,
@@ -134,7 +136,7 @@ export const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = ({
     withArrows = true,
     ...props
 }) => {
-    const carouselId = useId('carousel-slides-');
+    const carouselId = useId(id);
 
     const childrenAsArray = getChildrenAsArray(children);
     const slidesCount = childrenAsArray.length;

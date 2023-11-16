@@ -67,34 +67,82 @@ describe('Pagination', () => {
     });
 
     describe('results label', () => {
+        test('should display zero results when number of results is undefined', () => {
+            const wrapper = shallow(<Pagination totalPages={0} numberOfResults={undefined} />);
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />0–0 of 0 results');
+        });
+
         test('should display the number of results when provided', () => {
             const wrapper = shallow(<Pagination totalPages={3} numberOfResults={12345} />);
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.text()).toEqual('12345 results');
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–4115 of 12345 results');
         });
 
-        test('should be hidden when number of results is not provided', () => {
-            const wrapper = shallow(<Pagination totalPages={3} />);
+        test('should display first page results label when number of results is even', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={6} numberOfResults={30} activePage={1} />,
+            );
             const label = findByTestId(wrapper, 'resultsLabel');
 
-            expect(label.exists()).toBe(false);
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–5 of 30 results');
+        });
+
+        test('should display second page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={6} numberOfResults={30} activePage={2} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />6–10 of 30 results');
+        });
+
+        test('should display last page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={6} numberOfResults={30} activePage={6} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />26–30 of 30 results');
+        });
+
+        test('should display first page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={50} numberOfResults={1530} activePage={1} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />1–31 of 1530 results');
+        });
+
+        test('should display second page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={50} numberOfResults={1530} activePage={2} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />32–62 of 1530 results');
+        });
+
+        test('should display last page results label when number of results is uneven', () => {
+            const wrapper = shallow(
+                <Pagination totalPages={50} numberOfResults={1530} activePage={50} />,
+            );
+            const label = findByTestId(wrapper, 'resultsLabel');
+
+            expect(label.text()).toEqual('<ScreenReaderOnlyText />1520–1530 of 1530 results');
         });
     });
 
     describe('navigation buttons', () => {
         const testCases = [
             {
-                id: 'firstPageButton', goesToPage: 1, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 6,
-            },
-            {
                 id: 'previousPageButton', goesToPage: 2, disabledWhenOnPage: 1, enabledWhenOnPage: 2, stopRenderAt: 4,
             },
             {
                 id: 'nextPageButton', goesToPage: 4, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 4,
-            },
-            {
-                id: 'lastPageButton', goesToPage: 11, disabledWhenOnPage: 11, enabledWhenOnPage: 10, stopRenderAt: 6,
             },
         ];
 

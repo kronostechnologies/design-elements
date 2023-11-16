@@ -107,6 +107,7 @@ exports[`CurrencyInput Component matches snapshot (en-CA) 1`] = `
     <input
       class="c2"
       data-testid="text-input"
+      id="uuid1"
       inputmode="numeric"
       placeholder="$"
       type="text"
@@ -223,6 +224,7 @@ exports[`CurrencyInput Component matches snapshot (en-US) 1`] = `
     <input
       class="c2"
       data-testid="text-input"
+      id="uuid1"
       inputmode="numeric"
       placeholder="$"
       type="text"
@@ -339,6 +341,7 @@ exports[`CurrencyInput Component matches snapshot (fr-CA) 1`] = `
     <input
       class="c2"
       data-testid="text-input"
+      id="uuid1"
       inputmode="numeric"
       placeholder="$"
       type="text"

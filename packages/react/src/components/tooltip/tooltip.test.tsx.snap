@@ -134,6 +134,17 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -163,9 +174,11 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
   label="Test Content"
 >
   <styled.span
+    aria-describedby="uuid1"
     data-testid="tooltip"
-    id="tooltip-trigger-undefined"
+    id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -174,10 +187,12 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     tabIndex={0}
   >
     <span
+      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
-      id="tooltip-trigger-undefined"
+      id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -203,6 +218,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
     aria-hidden={false}
     data-popper-interactive={false}
     data-testid="tooltip-content-container"
+    id="uuid1"
     isMobile={false}
     role="tooltip"
     style={
@@ -212,6 +228,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={true}
   >
     <div
@@ -219,6 +236,7 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
       className="c1"
       data-popper-interactive={false}
       data-testid="tooltip-content-container"
+      id="uuid1"
       role="tooltip"
       style={
         {
@@ -246,7 +264,13 @@ exports[`Tooltip Has default desktop styles (defaultOpen) 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
@@ -383,6 +407,17 @@ exports[`Tooltip Has default desktop styles 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -411,9 +446,11 @@ exports[`Tooltip Has default desktop styles 1`] = `
   label="Test Content"
 >
   <styled.span
+    aria-describedby="uuid1"
     data-testid="tooltip"
-    id="tooltip-trigger-undefined"
+    id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -422,10 +459,12 @@ exports[`Tooltip Has default desktop styles 1`] = `
     tabIndex={0}
   >
     <span
+      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
-      id="tooltip-trigger-undefined"
+      id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -451,6 +490,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
     aria-hidden={true}
     data-popper-interactive={false}
     data-testid="tooltip-content-container"
+    id="uuid1"
     isMobile={false}
     role="tooltip"
     style={
@@ -460,6 +500,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={false}
   >
     <div
@@ -467,6 +508,7 @@ exports[`Tooltip Has default desktop styles 1`] = `
       className="c1"
       data-popper-interactive={false}
       data-testid="tooltip-content-container"
+      id="uuid1"
       role="tooltip"
       style={
         {
@@ -494,7 +536,13 @@ exports[`Tooltip Has default desktop styles 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
@@ -634,6 +682,17 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -663,9 +722,11 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
   label="Test Content"
 >
   <styled.span
+    aria-describedby="uuid1"
     data-testid="tooltip"
-    id="tooltip-trigger-undefined"
+    id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -674,10 +735,12 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     tabIndex={0}
   >
     <span
+      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
-      id="tooltip-trigger-undefined"
+      id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -703,6 +766,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
     aria-hidden={false}
     data-popper-interactive={false}
     data-testid="tooltip-content-container"
+    id="uuid1"
     isMobile={true}
     role="tooltip"
     style={
@@ -712,6 +776,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={true}
   >
     <div
@@ -719,6 +784,7 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
       className="c1"
       data-popper-interactive={false}
       data-testid="tooltip-content-container"
+      id="uuid1"
       role="tooltip"
       style={
         {
@@ -746,7 +812,13 @@ exports[`Tooltip Has mobile styles (defaultOpen) 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>
@@ -883,6 +955,17 @@ exports[`Tooltip Has mobile styles 1`] = `
   top: 0;
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -911,9 +994,11 @@ exports[`Tooltip Has mobile styles 1`] = `
   label="Test Content"
 >
   <styled.span
+    aria-describedby="uuid1"
     data-testid="tooltip"
-    id="tooltip-trigger-undefined"
+    id="tooltip-trigger-uuid1"
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -922,10 +1007,12 @@ exports[`Tooltip Has mobile styles 1`] = `
     tabIndex={0}
   >
     <span
+      aria-describedby="uuid1"
       className="c0"
       data-testid="tooltip"
-      id="tooltip-trigger-undefined"
+      id="tooltip-trigger-uuid1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -951,6 +1038,7 @@ exports[`Tooltip Has mobile styles 1`] = `
     aria-hidden={true}
     data-popper-interactive={false}
     data-testid="tooltip-content-container"
+    id="uuid1"
     isMobile={true}
     role="tooltip"
     style={
@@ -960,6 +1048,7 @@ exports[`Tooltip Has mobile styles 1`] = `
         "top": "0",
       }
     }
+    variant="normal"
     visible={false}
   >
     <div
@@ -967,6 +1056,7 @@ exports[`Tooltip Has mobile styles 1`] = `
       className="c1"
       data-popper-interactive={false}
       data-testid="tooltip-content-container"
+      id="uuid1"
       role="tooltip"
       style={
         {
@@ -994,7 +1084,13 @@ exports[`Tooltip Has mobile styles 1`] = `
           }
         />
       </styled.div>
-      Test Content
+      <styled.div>
+        <div
+          className="c4"
+        >
+          Test Content
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </Tooltip>

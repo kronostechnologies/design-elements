@@ -2,8 +2,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Toggletip } from './toggletip';
 
-jest.mock('../../utils/uuid');
-
 describe('Toggletip', () => {
     describe('desktop', () => {
         test('opens on mouseClick', async () => {

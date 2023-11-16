@@ -27,11 +27,11 @@ const StyledModal = styled(Modal)<{ $hasTitleIcon: boolean }>`
     `}
 `;
 
-const Subtitle = styled.h3<{ hasTitle: boolean } & MobileDeviceContextProps>`
+const Subtitle = styled.h3<MobileDeviceContextProps>`
     font-size: ${({ isMobile }) => (isMobile ? 1.125 : 1)}rem;
     font-weight: var(--font-normal);
     line-height: ${({ isMobile }) => (isMobile ? 1.75 : 1.375)}rem;
-    margin: ${({ hasTitle }) => (hasTitle ? 'var(--spacing-3x)' : 0)} 0 0;
+    margin: var(--spacing-3x) 0 0;
 `;
 
 const ButtonContainer = styled.div<MobileDeviceContextProps & { $hasTitleIcon: boolean }>`
@@ -72,8 +72,6 @@ export interface ModalDialogProps {
     /** Boolean indicating if the appElement should be hidden. Defaults to true.
      * Should only be used for test purposes. */
     ariaHideApp?: boolean;
-    /** Is set to title value if title is set */
-    ariaLabel?: string;
     cancelButton?: { label?: string, onCancel?(): void };
     children?: ReactNode;
     className?: string;
@@ -88,7 +86,7 @@ export interface ModalDialogProps {
      */
     shouldCloseOnOverlayClick?: boolean;
     subtitle?: string;
-    title?: string;
+    title: string;
     titleIcon?: IconName;
     dialogType?: DialogType;
 
@@ -99,7 +97,6 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     appElement,
     ariaDescribedby,
     ariaHideApp,
-    ariaLabel,
     dialogType = 'action',
     cancelButton,
     children,
@@ -120,7 +117,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     const titleId = useMemo(uuid, []);
     const titleRef: Ref<HTMLHeadingElement> = useRef(null);
     const titleIconName = dialogType === 'alert' ? 'alertFilled' : titleIcon;
-    const hasTitleIcon = !!(title && titleIconName);
+    const hasTitleIcon = !!titleIconName;
 
     function handleConfirm(): void {
         confirmButton?.onConfirm?.();
@@ -137,32 +134,27 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
     function getHeader(): ReactElement | undefined {
         const HeadingWrapperComponent = hasTitleIcon ? StyledHeadingWrapperComponent : Fragment;
 
-        if (title || subtitle) {
-            return (
-                <>
-                    {title && (
-                        <HeadingWrapperComponent>
-                            {titleIconName && (
-                                <TitleIcon name={titleIconName} size="24" data-testid="title-icon" />
-                            )}
-                            <Heading
-                                id={titleId}
-                                ref={titleRef}
-                                type="large"
-                                tag="h2"
-                                noMargin
-                            >
-                                {title}
-                            </Heading>
-                        </HeadingWrapperComponent>
+        return (
+            <>
+                <HeadingWrapperComponent>
+                    {titleIconName && (
+                        <TitleIcon name={titleIconName} size="24" data-testid="title-icon" />
                     )}
-                    {subtitle && (
-                        <Subtitle hasTitle={title !== undefined} isMobile={isMobile}>{subtitle}</Subtitle>
-                    )}
-                </>
-            );
-        }
-        return undefined;
+                    <Heading
+                        id={titleId}
+                        ref={titleRef}
+                        type="medium"
+                        tag="h2"
+                        noMargin
+                    >
+                        {title}
+                    </Heading>
+                </HeadingWrapperComponent>
+                {subtitle && (
+                    <Subtitle isMobile={isMobile}>{subtitle}</Subtitle>
+                )}
+            </>
+        );
     }
 
     function getFooter(): ReactElement {
@@ -193,8 +185,7 @@ export const ModalDialog: VoidFunctionComponent<ModalDialogProps> = ({
         <StyledModal
             ariaDescribedby={ariaDescribedby}
             ariaHideApp={ariaHideApp}
-            ariaLabel={title ? undefined : ariaLabel}
-            ariaLabelledBy={title ? titleId : undefined}
+            ariaLabelledBy={titleId}
             className={className}
             modalHeader={getHeader()}
             hasCloseButton={hasCloseButton}

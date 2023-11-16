@@ -17,3 +17,15 @@ jest.mock('react', () => ({
     ...jest.requireActual('react'),
     useLayoutEffect: jest.requireActual('react').useEffect,
 }));
+
+{
+    let counter = 0;
+    jest.mock('../src/utils/uuid', () => ({
+        // eslint-disable-next-line no-plusplus
+        v4: () => `uuid${++counter}`,
+    }));
+
+    beforeEach(() => {
+        counter = 0;
+    });
+}

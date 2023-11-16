@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
 
-const Field = styled.div<{ isMobile: boolean }>`
+const Field = styled.span<{ isMobile: boolean }>`
     color: ${(props) => props.theme.colors['alert-2.1']};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
@@ -12,13 +12,10 @@ const Field = styled.div<{ isMobile: boolean }>`
     line-height: ${({ isMobile }) => (isMobile ? '1.5rem' : '1.25rem')};
 `;
 
-const StyledSpan = styled.span`
-    margin-left: var(--spacing-base);
-`;
-
-const StyledIcon = styled.div`
-    align-items: center;
+const StyledIcon = styled(Icon)`
+    align-self: center;
     display: flex;
+    margin-right: var(--spacing-base);
 `;
 
 interface InvalidFieldProps {
@@ -38,9 +35,9 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
             role="alert"
         >
             {!noIcon && (
-                <StyledIcon><Icon name="alertOctagon" size={isMobile ? '24' : '16'} /></StyledIcon>
+                <StyledIcon name="alertOctagon" size={isMobile ? '24' : '16'} />
             )}
-            <StyledSpan>{feedbackMsg}</StyledSpan>
+            {feedbackMsg}
         </Field>
     );
 };

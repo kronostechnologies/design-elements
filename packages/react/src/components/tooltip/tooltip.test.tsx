@@ -3,8 +3,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Tooltip } from './tooltip';
 
-jest.mock('../../utils/uuid');
-
 describe('Tooltip', () => {
     describe('desktop', () => {
         test('opens on mouseEnter', () => {
@@ -60,6 +58,56 @@ describe('Tooltip', () => {
             getByTestId(wrapper, 'tooltip').simulate('blur');
 
             expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+        });
+
+        test('onClick callback is called when tooltip is clicked', () => {
+            const onClick = jest.fn();
+            const wrapper = mountWithProviders(
+                <Tooltip onClick={onClick} label="Test Content" defaultOpen />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('click');
+
+            expect(onClick).toHaveBeenCalled();
+        });
+
+        test('tooltip-confirm-icon should be displayed after tooltip is clicked', () => {
+            const onClick = jest.fn();
+            const confirmationLabel = 'confirmLabel';
+            const wrapper = mountWithProviders(
+                <Tooltip
+                    confirmationLabel={confirmationLabel}
+                    onClick={onClick}
+                    label="Test Content"
+                    mode='confirm'
+                    defaultOpen
+                />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('click');
+
+            expect(getByTestId(wrapper, 'tooltip-confirm-icon').exists()).toBe(true);
+        });
+
+        test('label should be confirmation label after tooltip is clicked', () => {
+            const onClick = jest.fn();
+            const confirmationLabel = 'confirmLabel';
+            const wrapper = mountWithProviders(
+                <Tooltip
+                    onClick={onClick}
+                    label="Test Content"
+                    confirmationLabel={confirmationLabel}
+                    mode='confirm'
+                    defaultOpen
+                />,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'tooltip').simulate('click');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').text()).toBe(confirmationLabel);
         });
 
         test('does not open on focus given tooltip is disabled', () => {

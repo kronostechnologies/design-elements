@@ -4,8 +4,6 @@ import { mountWithProviders, renderWithProviders } from '../../test-utils/render
 import { DropdownMenu } from './dropdown-menu';
 import { ExternalItem, GroupItem, NavItem } from './list-items';
 
-jest.mock('../../utils/uuid');
-
 const TestGroups = (
     <>
         <GroupItem id="firstGroup">

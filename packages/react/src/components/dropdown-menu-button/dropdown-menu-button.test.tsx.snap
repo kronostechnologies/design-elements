@@ -435,6 +435,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   aria-label=""
   class="c0"
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="true"
@@ -454,6 +455,7 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   <div
     class="c5 c6"
     data-testid="menu-dropdownMenu"
+    id="uuid2"
   >
     <ul
       aria-labelledby="firstGroup"
@@ -1113,6 +1115,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   aria-label=""
   class="c0"
   data-testid="dropdown-container"
+  id="uuid1"
 >
   <button
     aria-expanded="false"
@@ -1133,6 +1136,7 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
     class="c5 c6"
     data-testid="menu-dropdownMenu"
     hidden=""
+    id="uuid2"
   >
     <ul
       aria-labelledby="firstGroup"

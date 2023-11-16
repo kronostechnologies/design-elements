@@ -33,7 +33,7 @@ function getLineHeight(isMobile: boolean): number {
     return isMobile ? 28 : 24;
 }
 
-const BannerIcon = styled(Icon)<ComponentProps<typeof Icon> & { $marginTop: number }>`
+const BannerIcon = styled(Icon) <ComponentProps<typeof Icon> & { $marginTop: number }>`
     grid-area: icon;
     margin-top: ${({ $marginTop }) => `${$marginTop}px`};
 `;
@@ -109,7 +109,7 @@ function getDismissButtonTop({ $marginTop }: DismissButtonProps): string {
 }
 
 const DismissIconButton = styled(IconButton)
-    .attrs({ buttonType: 'tertiary', iconName: 'x' })<DismissButtonProps>`
+    .attrs({ buttonType: 'tertiary', iconName: 'x' }) <DismissButtonProps>`
     position: absolute;
     right: ${getDismissButtonRight};
     top: ${getDismissButtonTop};
@@ -198,6 +198,7 @@ interface SectionalBannerProps {
     focusable?: boolean;
     /** @default `span` */
     headingTag?: HeadingTag;
+    id?: string;
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
@@ -218,6 +219,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     children,
     focusable,
     headingTag,
+    id,
     title,
     type,
     onButtonClicked,
@@ -234,7 +236,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     const marginTop = (lineHeight - iconSize) / 2;
     const messageTag = (typeof children === 'string') ? 'p' : 'div';
 
-    const headingId = useId('banner-heading-');
+    const headingId = useId(id);
 
     return (
         <Container

@@ -20,6 +20,7 @@ import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
+import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
@@ -439,8 +440,7 @@ export const Datepicker = forwardRef(({
         calendarButtonRef.current?.focus();
     }
 
-    function handleCalendarButtonMouseDown(event: MouseEvent<HTMLButtonElement>): void {
-        event.stopPropagation();
+    function handleCalendarButtonMouseDown(): void {
         if (dateInputRef.current?.isCalendarOpen()) {
             dateInputRef.current?.setOpen(false);
         } else {
@@ -463,6 +463,16 @@ export const Datepicker = forwardRef(({
             onChange(date);
         }
     }, [onChange]);
+
+    function handleClickOutside(event: MouseEvent<HTMLInputElement>): void {
+        if (
+            dateInputRef.current
+            && calendarButtonRef.current
+            && eventIsInside(event as unknown as Event, calendarButtonRef.current)
+        ) {
+            dateInputRef.current.setOpen(true);
+        }
+    }
 
     function handleInputClick(): void {
         dateInputRef.current?.setOpen(false, true);
@@ -567,6 +577,7 @@ export const Datepicker = forwardRef(({
                         onCalendarClose={onCalendarClose}
                         onCalendarOpen={onCalendarOpen}
                         onFocus={onFocus}
+                        onClickOutside={handleClickOutside}
                         onInputClick={handleInputClick}
                         onKeyDown={handleCalendarKeyDown}
                         open={open}

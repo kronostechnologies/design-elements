@@ -239,6 +239,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   defaultOpen={true}
 >
   <IconButton
+    aria-controls="uuid1"
     aria-expanded={true}
     buttonType="tertiary"
     data-testid="toggletip"
@@ -249,6 +250,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
     type="button"
   >
     <Styled(AbstractButton)
+      aria-controls="uuid1"
       aria-expanded={true}
       aria-label="info"
       buttonType="tertiary"
@@ -259,6 +261,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       type="button"
     >
       <AbstractButton
+        aria-controls="uuid1"
         aria-expanded={true}
         aria-label="info"
         buttonType="tertiary"
@@ -270,6 +273,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
         type="button"
       >
         <styled.button
+          aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
           buttonType="tertiary"
@@ -281,6 +285,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
           type="button"
         >
           <button
+            aria-controls="uuid1"
             aria-expanded={true}
             aria-label="info"
             className="c1 c0"
@@ -310,6 +315,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
   <styled.div
     data-popper-interactive={false}
     data-testid="toggletip-content-container"
+    id="uuid1"
     isMobile={false}
     style={
       {
@@ -323,6 +329,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
       className="c2"
       data-popper-interactive={false}
       data-testid="toggletip-content-container"
+      id="uuid1"
       style={
         {
           "left": "0",
@@ -460,6 +467,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
 
 <Toggletip>
   <IconButton
+    aria-controls="uuid1"
     aria-expanded={false}
     buttonType="tertiary"
     data-testid="toggletip"
@@ -470,6 +478,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
     type="button"
   >
     <Styled(AbstractButton)
+      aria-controls="uuid1"
       aria-expanded={false}
       aria-label="info"
       buttonType="tertiary"
@@ -480,6 +489,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
       type="button"
     >
       <AbstractButton
+        aria-controls="uuid1"
         aria-expanded={false}
         aria-label="info"
         buttonType="tertiary"
@@ -491,6 +501,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
         type="button"
       >
         <styled.button
+          aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
           buttonType="tertiary"
@@ -502,6 +513,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
           type="button"
         >
           <button
+            aria-controls="uuid1"
             aria-expanded={false}
             aria-label="info"
             className="c1 c0"
@@ -770,6 +782,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   defaultOpen={true}
 >
   <IconButton
+    aria-controls="uuid1"
     aria-expanded={true}
     buttonType="tertiary"
     data-testid="toggletip"
@@ -780,6 +793,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
     type="button"
   >
     <Styled(AbstractButton)
+      aria-controls="uuid1"
       aria-expanded={true}
       aria-label="info"
       buttonType="tertiary"
@@ -790,6 +804,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       type="button"
     >
       <AbstractButton
+        aria-controls="uuid1"
         aria-expanded={true}
         aria-label="info"
         buttonType="tertiary"
@@ -801,6 +816,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
         type="button"
       >
         <styled.button
+          aria-controls="uuid1"
           aria-expanded={true}
           aria-label="info"
           buttonType="tertiary"
@@ -812,6 +828,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
           type="button"
         >
           <button
+            aria-controls="uuid1"
             aria-expanded={true}
             aria-label="info"
             className="c1 c0"
@@ -841,6 +858,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
   <styled.div
     data-popper-interactive={false}
     data-testid="toggletip-content-container"
+    id="uuid1"
     isMobile={true}
     style={
       {
@@ -854,6 +872,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
       className="c2"
       data-popper-interactive={false}
       data-testid="toggletip-content-container"
+      id="uuid1"
       style={
         {
           "left": "0",
@@ -991,6 +1010,7 @@ exports[`Toggletip Has mobile styles 1`] = `
 
 <Toggletip>
   <IconButton
+    aria-controls="uuid1"
     aria-expanded={false}
     buttonType="tertiary"
     data-testid="toggletip"
@@ -1001,6 +1021,7 @@ exports[`Toggletip Has mobile styles 1`] = `
     type="button"
   >
     <Styled(AbstractButton)
+      aria-controls="uuid1"
       aria-expanded={false}
       aria-label="info"
       buttonType="tertiary"
@@ -1011,6 +1032,7 @@ exports[`Toggletip Has mobile styles 1`] = `
       type="button"
     >
       <AbstractButton
+        aria-controls="uuid1"
         aria-expanded={false}
         aria-label="info"
         buttonType="tertiary"
@@ -1022,6 +1044,7 @@ exports[`Toggletip Has mobile styles 1`] = `
         type="button"
       >
         <styled.button
+          aria-controls="uuid1"
           aria-expanded={false}
           aria-label="info"
           buttonType="tertiary"
@@ -1033,6 +1056,7 @@ exports[`Toggletip Has mobile styles 1`] = `
           type="button"
         >
           <button
+            aria-controls="uuid1"
             aria-expanded={false}
             aria-label="info"
             className="c1 c0"

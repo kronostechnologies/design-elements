@@ -3,8 +3,6 @@ import { doNothing } from '../../test-utils/callbacks';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { SearchContextual } from './search-contextual';
 
-jest.mock('../../utils/uuid');
-
 describe('Search Contextual', () => {
     it('should call onReset when search resets', () => {
         const onReset = jest.fn();
