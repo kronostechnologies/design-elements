@@ -66,7 +66,7 @@ export const WithFooter: Story = () => {
             Header: 'Column 1',
             accessor: 'column1',
             Footer: <Button label="Button" buttonType="primary" />,
-            colSpan: '2',
+            footerColSpan: 2,
 
         },
         {

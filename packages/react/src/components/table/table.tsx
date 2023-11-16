@@ -37,7 +37,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     textAlign?: string,
     className?: string,
     sticky?: boolean,
-    colSpan?: string,
+    footerColSpan?: number | undefined,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -85,8 +85,8 @@ function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boole
         // If the Footer content is empty, skip rendering the td
         return null;
     }
-    const footerProps = column.colSpan
-        ? { ...column.getFooterProps(), colSpan: column.colSpan }
+    const footerProps = column.footerColSpan
+        ? { ...column.getFooterProps(), colSpan: column.footerColSpan }
         : column.getFooterProps();
 
     return (
@@ -228,7 +228,7 @@ type PartialTableState<T extends object> = Omit<TableState<T>, 'selectedRowIds'>
 
 export interface TableProps<T extends object> {
     className?: string;
-    colSpan?: string;
+    footerColSpan?: number | undefined;
     columns: TableColumn<T>;
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
