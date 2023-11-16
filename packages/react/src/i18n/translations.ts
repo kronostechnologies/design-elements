@@ -48,7 +48,8 @@ export const Translations = {
             ariaLabel: 'Menu',
         },
         pagination: {
-            results: 'results',
+            pagination: 'Pagination',
+            results: '{{pageStartIndex}}–{{pageEndIndex}} of {{numberOfResults}} results',
         },
         'password-creation-input': {
             'password-strength': 'Password strength: ',
@@ -161,7 +162,8 @@ export const Translations = {
             ariaLabel: 'Menu',
         },
         pagination: {
-            results: 'résultats',
+            pagination: 'Pagination',
+            results: '{{pageStartIndex}}–{{pageEndIndex}} de {{numberOfResults}} résultats',
         },
         'password-creation-input': {
             'password-strength': 'Force du mot de passe : ',

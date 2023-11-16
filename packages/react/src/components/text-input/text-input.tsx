@@ -97,6 +97,13 @@ export const TextInput = forwardRef(({
     const id = useMemo(() => providedId || uuid(), [providedId]);
     const dataAttributes = useDataAttributes(otherProps);
 
+    const processedAriaDescribedBy = useMemo(() => {
+        const invalidAria = !validity ? `${id}_invalid` : '';
+        const hintAria = hint ? `${id}_hint` : '';
+
+        return `${ariaDescribedBy || ''} ${invalidAria} ${hintAria}`.trim();
+    }, [id, ariaDescribedBy, validity, hint]);
+
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         setValidity({ validity: event.currentTarget.checkValidity() });
 
@@ -141,7 +148,7 @@ export const TextInput = forwardRef(({
             data-testid="field-container"
         >
             <Input
-                aria-describedby={ariaDescribedBy}
+                aria-describedby={processedAriaDescribedBy || undefined}
                 aria-invalid={ariaInvalid}
                 autoComplete={autoComplete}
                 data-testid="text-input"

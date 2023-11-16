@@ -309,19 +309,15 @@ exports[`Stepper input matches snapshot (invalid) 1`] = `
   line-height: 1.25rem;
 }
 
-.c5 {
-  margin-left: var(--spacing-base);
-}
-
 .c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-right: var(--spacing-base);
 }
 
 .c2 {
@@ -362,7 +358,7 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -374,7 +370,7 @@ input + .c1 {
   width: 1.4375rem;
 }
 
-.c9 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -398,28 +394,28 @@ input + .c1 {
   height: calc(50% - 1px);
 }
 
-.c9:focus {
+.c8:focus {
   outline: none;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c9:disabled {
+.c8:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
   cursor: default;
 }
 
-.c9 > svg {
+.c8 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c10 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -442,27 +438,27 @@ input + .c1 {
   height: calc(50% + 1px);
 }
 
-.c10:focus {
+.c9:focus {
   outline: none;
 }
 
-.c10:hover {
+.c9:hover {
   background-color: #DBDEE1;
 }
 
-.c10:disabled {
+.c9:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
   cursor: default;
 }
 
-.c10 > svg {
+.c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -472,7 +468,7 @@ input + .c1 {
   max-width: fit-content;
 }
 
-.c7 {
+.c6 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -495,64 +491,64 @@ input + .c1 {
   z-index: 1;
 }
 
-.c7::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c7::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #60666E;
 }
 
-.c7:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c7::placeholder {
+.c6::placeholder {
   color: #60666E;
 }
 
-.c7:disabled {
+.c6:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
 }
 
-.c7:disabled,
-.c7:disabled::-webkit-input-placeholder {
+.c6:disabled,
+.c6:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c7:disabled,
-.c7:disabled::-moz-placeholder {
+.c6:disabled,
+.c6:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c7:disabled,
-.c7:disabled:-ms-input-placeholder {
+.c6:disabled,
+.c6:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c7:disabled,
-.c7:disabled::placeholder {
+.c6:disabled,
+.c6:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c7:focus {
+.c6:focus {
   outline: none;
 }
 
-.c7:focus {
+.c6:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7::-webkit-outer-spin-button,
-.c7::-webkit-inner-spin-button {
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c7[type='number'] {
+.c6[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -565,44 +561,37 @@ input + .c1 {
   >
     test
   </label>
-  <div
+  <span
     aria-live="polite"
     class="c3"
     id="uuid1_invalid"
     role="alert"
   >
-    <div
+    <svg
       class="c4"
-    >
-      <svg
-        color="currentColor"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-    </div>
-    <span
-      class="c5"
-    >
-      Invalid number
-    </span>
-  </div>
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    Invalid number
+  </span>
   <div
-    class="c6"
+    class="c5"
   >
     <input
-      class="c7"
+      class="c6"
       data-testid="stepper-input"
       id="uuid1"
       name="points"
       type="number"
     />
     <div
-      class="c8"
+      class="c7"
     >
       <button
         aria-label="Increase number"
-        class="c9"
+        class="c8"
         data-testid="stepper-button-increment"
         tabindex="-1"
         type="button"
@@ -617,7 +606,7 @@ input + .c1 {
       </button>
       <button
         aria-label="Decrease number"
-        class="c10"
+        class="c9"
         data-testid="stepper-button-decrement"
         tabindex="-1"
         type="button"

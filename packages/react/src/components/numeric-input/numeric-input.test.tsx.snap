@@ -187,19 +187,15 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   line-height: 1.25rem;
 }
 
-.c3 {
-  margin-left: var(--spacing-base);
-}
-
 .c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-right: var(--spacing-base);
 }
 
 .c0 {
@@ -220,7 +216,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   margin-bottom: var(--spacing-half);
 }
 
-.c6 {
+.c5 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -245,74 +241,74 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   text-align: left;
 }
 
-.c6:focus {
+.c5:focus {
   outline: none;
 }
 
-.c6:focus {
+.c5:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #60666E;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #60666E;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #60666E;
 }
 
-.c6::placeholder {
+.c5::placeholder {
   color: #60666E;
 }
 
-.c6:disabled {
+.c5:disabled {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
 }
 
-.c6:disabled,
-.c6:disabled::-webkit-input-placeholder {
+.c5:disabled,
+.c5:disabled::-webkit-input-placeholder {
   color: #B7BBC2;
 }
 
-.c6:disabled,
-.c6:disabled::-moz-placeholder {
+.c5:disabled,
+.c5:disabled::-moz-placeholder {
   color: #B7BBC2;
 }
 
-.c6:disabled,
-.c6:disabled:-ms-input-placeholder {
+.c5:disabled,
+.c5:disabled:-ms-input-placeholder {
   color: #B7BBC2;
 }
 
-.c6:disabled,
-.c6:disabled::placeholder {
+.c5:disabled,
+.c5:disabled::placeholder {
   color: #B7BBC2;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c6[type='number'] {
+.c5[type='number'] {
   -moz-appearance: textfield;
 }
 
-.c6:focus,
-.c6:disabled {
+.c5:focus,
+.c5:disabled {
   border: 0;
   box-shadow: none;
 }
 
-.c5 {
+.c4 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -323,7 +319,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   padding-left: var(--spacing-1x);
 }
 
-.c4 {
+.c3 {
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
@@ -334,11 +330,11 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   border-color: #CD2C23;
 }
 
-.c4:focus-within {
+.c3:focus-within {
   border-radius: var(--border-radius);
 }
 
-.c4:focus-within {
+.c3:focus-within {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -347,38 +343,31 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
 <div
   class="c0"
 >
-  <div
+  <span
     aria-live="polite"
     class="c1"
     id="uuid1_invalid"
     role="alert"
   >
-    <div
+    <svg
       class="c2"
-    >
-      <svg
-        color="currentColor"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-    </div>
-    <span
-      class="c3"
-    >
-      This is an error message
-    </span>
-  </div>
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    This is an error message
+  </span>
   <div
-    class="c4"
+    class="c3"
   >
     <span
-      class="c5"
+      class="c4"
     >
       %
     </span>
     <input
-      class="c6"
+      class="c5"
       data-testid="numeric-input"
       id="uuid1"
       type="number"
