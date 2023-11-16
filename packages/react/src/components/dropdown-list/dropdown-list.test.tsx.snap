@@ -56,7 +56,7 @@ input + .c2 {
   margin: 0;
   max-height: 8rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -65,6 +65,35 @@ input + .c2 {
 .c8:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c13 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c11 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c11:hover {
+  border: 1px solid #006296;
 }
 
 .c9 {
@@ -80,8 +109,9 @@ input + .c2 {
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
 .c9:hover {
@@ -89,8 +119,17 @@ input + .c2 {
 }
 
 .c9:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c9[aria-selected='true'] .c10 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c9[aria-selected='true'] .c10 > .c12 {
+  display: block;
 }
 
 .c1 {
@@ -250,6 +289,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Ontario
       </li>
       <li
@@ -261,6 +312,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Quebec
       </li>
       <li
@@ -272,6 +335,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         British Columbia
       </li>
       <li
@@ -283,6 +358,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Alberta
       </li>
       <li
@@ -294,6 +381,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Manitoba
       </li>
       <li
@@ -305,6 +404,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Saskatchewan
       </li>
       <li
@@ -316,6 +427,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Nova Scotia
       </li>
       <li
@@ -327,6 +450,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         New Brunswick
       </li>
       <li
@@ -338,6 +473,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Newfoundland and Labrador
       </li>
       <li
@@ -349,6 +496,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Prince Edward Island
       </li>
       <li
@@ -360,6 +519,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Northwest Territories
       </li>
       <li
@@ -371,6 +542,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Nunavut
       </li>
       <li
@@ -382,6 +565,18 @@ input + .c2 {
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          <svg
+            class="c12 c13"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Yukon
       </li>
     </ul>
@@ -476,7 +671,7 @@ input + .c2 {
   margin: 0;
   max-height: 8rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -485,6 +680,35 @@ input + .c2 {
 .c11:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c16 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c14 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c14:hover {
+  border: 1px solid #006296;
 }
 
 .c12 {
@@ -500,8 +724,9 @@ input + .c2 {
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
 .c12:hover {
@@ -509,8 +734,17 @@ input + .c2 {
 }
 
 .c12:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c12[aria-selected='true'] .c13 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c12[aria-selected='true'] .c13 > .c15 {
+  display: block;
 }
 
 .c1 {
@@ -689,6 +923,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Ontario
         </li>
         <li
@@ -700,6 +946,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Quebec
         </li>
         <li
@@ -711,6 +969,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           British Columbia
         </li>
         <li
@@ -722,6 +992,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Alberta
         </li>
         <li
@@ -733,6 +1015,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Manitoba
         </li>
         <li
@@ -744,6 +1038,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Saskatchewan
         </li>
         <li
@@ -755,6 +1061,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Nova Scotia
         </li>
         <li
@@ -766,6 +1084,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           New Brunswick
         </li>
         <li
@@ -777,6 +1107,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Newfoundland and Labrador
         </li>
         <li
@@ -788,6 +1130,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Prince Edward Island
         </li>
         <li
@@ -799,6 +1153,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Northwest Territories
         </li>
         <li
@@ -810,6 +1176,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Nunavut
         </li>
         <li
@@ -821,6 +1199,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c13 c14"
+          >
+            <svg
+              class="c15 c16"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Yukon
         </li>
       </ul>
@@ -981,7 +1371,7 @@ input + .c2 {
   margin: 0;
   max-height: 8rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -990,6 +1380,35 @@ input + .c2 {
 .c8:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c13 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c11 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c11:hover {
+  border: 1px solid #006296;
 }
 
 .c9 {
@@ -1005,8 +1424,9 @@ input + .c2 {
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
 .c9:hover {
@@ -1014,8 +1434,17 @@ input + .c2 {
 }
 
 .c9:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c9[aria-selected='true'] .c10 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c9[aria-selected='true'] .c10 > .c12 {
+  display: block;
 }
 
 .c1 {
@@ -1172,6 +1601,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Ontario
         </li>
         <li
@@ -1183,6 +1624,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Quebec
         </li>
         <li
@@ -1194,6 +1647,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           British Columbia
         </li>
         <li
@@ -1205,6 +1670,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Alberta
         </li>
         <li
@@ -1216,6 +1693,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Manitoba
         </li>
         <li
@@ -1227,6 +1716,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Saskatchewan
         </li>
         <li
@@ -1238,6 +1739,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Nova Scotia
         </li>
         <li
@@ -1249,6 +1762,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           New Brunswick
         </li>
         <li
@@ -1260,6 +1785,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Newfoundland and Labrador
         </li>
         <li
@@ -1271,6 +1808,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Prince Edward Island
         </li>
         <li
@@ -1282,6 +1831,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Northwest Territories
         </li>
         <li
@@ -1293,6 +1854,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Nunavut
         </li>
         <li
@@ -1304,6 +1877,18 @@ input + .c2 {
           role="option"
           tabindex="-1"
         >
+          <span
+            aria-hidden="true"
+            class="c10 c11"
+          >
+            <svg
+              class="c12 c13"
+              color="currentColor"
+              focusable="false"
+              height="24"
+              width="24"
+            />
+          </span>
           Yukon
         </li>
       </ul>
@@ -1443,7 +2028,7 @@ exports[`Select mobile select has a different style 1`] = `
   margin: 0;
   max-height: 10rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -1452,6 +2037,35 @@ exports[`Select mobile select has a different style 1`] = `
 .c6:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c11 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  border: 1px solid #006296;
 }
 
 .c7 {
@@ -1469,6 +2083,7 @@ exports[`Select mobile select has a different style 1`] = `
   font-weight: var(--font-normal);
   line-height: 1.5;
   padding: 4px 16px 4px var(--spacing-5x);
+  padding-left: 16px;
 }
 
 .c7:hover {
@@ -1476,8 +2091,17 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 .c7:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
+}
+
+.c7[aria-selected='true'] .c8 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c7[aria-selected='true'] .c8 > .c10 {
+  display: block;
 }
 
 .c1 {
@@ -1629,6 +2253,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Ontario
       </li>
       <li
@@ -1640,6 +2276,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Quebec
       </li>
       <li
@@ -1651,6 +2299,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         British Columbia
       </li>
       <li
@@ -1662,6 +2322,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Alberta
       </li>
       <li
@@ -1673,6 +2345,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Manitoba
       </li>
       <li
@@ -1684,6 +2368,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Saskatchewan
       </li>
       <li
@@ -1695,6 +2391,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Nova Scotia
       </li>
       <li
@@ -1706,6 +2414,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         New Brunswick
       </li>
       <li
@@ -1717,6 +2437,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Newfoundland and Labrador
       </li>
       <li
@@ -1728,6 +2460,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Prince Edward Island
       </li>
       <li
@@ -1739,6 +2483,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Northwest Territories
       </li>
       <li
@@ -1750,6 +2506,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Nunavut
       </li>
       <li
@@ -1761,6 +2529,18 @@ exports[`Select mobile select has a different style 1`] = `
         role="option"
         tabindex="-1"
       >
+        <span
+          aria-hidden="true"
+          class="c8 c9"
+        >
+          <svg
+            class="c10 c11"
+            color="currentColor"
+            focusable="false"
+            height="24"
+            width="24"
+          />
+        </span>
         Yukon
       </li>
     </ul>

@@ -18,7 +18,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   margin: 0;
   max-height: 6rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -27,6 +27,55 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 .c1:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c6 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c4:hover {
+  border: 1px solid #006296;
+}
+
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  border: 1px solid #DBDEE1;
 }
 
 .c2 {
@@ -42,8 +91,9 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
 .c2:hover {
@@ -51,11 +101,20 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c2:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c3 {
+.c2[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c2[aria-selected='true'] .c3 > .c5 {
+  display: block;
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -68,20 +127,30 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
-  line-height: 1.43;
-  padding: 6px 8px 6px 0;
+  line-height: 1.72;
+  padding: 4px 8px 4px 0;
+  padding-left: 16px;
 }
 
-.c3:hover {
+.c7:hover {
   background-color: #DBDEE1;
 }
 
-.c3:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+.c7:focus:not(:hover) {
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c5 {
+.c7[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c7[aria-selected='true'] .c3 > .c5 {
+  display: block;
+}
+
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -94,22 +163,27 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
-.c5:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c5:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+.c8:focus:not(:hover) {
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c4 {
-  color: #60666E;
-  padding: 0 var(--spacing-1x);
+.c8[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c8[aria-selected='true'] .c3 > .c5 {
+  display: block;
 }
 
 <div
@@ -134,26 +208,42 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option A
     </li>
     <li
       aria-label="Option B"
       aria-selected="true"
-      class="c3"
+      class="c7"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
       selected=""
       tabindex="-1"
     >
-      <svg
-        class="c4"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option B
     </li>
     <li
@@ -165,6 +255,18 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option C
     </li>
     <li
@@ -176,19 +278,44 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option D
     </li>
     <li
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c5"
+      class="c8"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c9"
+        disabled=""
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option Disabled
     </li>
   </ul>
@@ -213,7 +340,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   margin: 0;
   max-height: 8rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -222,6 +349,55 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 .c1:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c6 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c4:hover {
+  border: 1px solid #006296;
+}
+
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  border: 1px solid #DBDEE1;
 }
 
 .c2 {
@@ -237,8 +413,9 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
-  line-height: 1.43;
-  padding: 6px 8px 6px 0;
+  line-height: 1.72;
+  padding: 4px 8px 4px 0;
+  padding-left: 16px;
 }
 
 .c2:hover {
@@ -246,11 +423,20 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 }
 
 .c2:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c4 {
+.c2[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c2[aria-selected='true'] .c3 > .c5 {
+  display: block;
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -263,20 +449,30 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
-.c4:hover {
+.c7:hover {
   background-color: #DBDEE1;
 }
 
-.c4:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+.c7:focus:not(:hover) {
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c5 {
+.c7[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c7[aria-selected='true'] .c3 > .c5 {
+  display: block;
+}
+
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -289,22 +485,27 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
-.c5:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c5:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+.c8:focus:not(:hover) {
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c3 {
-  color: #60666E;
-  padding: 0 var(--spacing-1x);
+.c8[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c8[aria-selected='true'] .c3 > .c5 {
+  display: block;
 }
 
 <div
@@ -329,25 +530,41 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       selected=""
       tabindex="-1"
     >
-      <svg
-        class="c3"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option A
     </li>
     <li
       aria-label="Option B"
       aria-selected="false"
-      class="c4"
+      class="c7"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option B
     </li>
     <li
@@ -360,38 +577,67 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       selected=""
       tabindex="-1"
     >
-      <svg
-        class="c3"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option C
     </li>
     <li
       aria-label="Option D"
       aria-selected="false"
-      class="c4"
+      class="c7"
       data-testid="listitem-optionD"
       id="undefined_optionD"
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option D
     </li>
     <li
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c5"
+      class="c8"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c9"
+        disabled=""
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option Disabled
     </li>
   </ul>
@@ -416,7 +662,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   margin: 0;
   max-height: 6rem;
   overflow-y: auto;
-  padding: 0;
+  padding: 4px 0;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -425,6 +671,55 @@ exports[`Listbox Matches the snapshot 1`] = `
 .c1:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
+}
+
+.c6 {
+  color: #FFFFFF;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c4:hover {
+  border: 1px solid #006296;
+}
+
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--size-1x);
+  left: 0;
+  margin-right: var(--spacing-1x);
+  position: relative;
+  width: var(--size-1x);
+}
+
+.c9:hover {
+  border: 1px solid #DBDEE1;
 }
 
 .c2 {
@@ -440,8 +735,9 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
 .c2:hover {
@@ -449,11 +745,20 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c2:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c3 {
+.c2[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c2[aria-selected='true'] .c3 > .c5 {
+  display: block;
+}
+
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -466,20 +771,30 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
-  line-height: 1.43;
-  padding: 6px 8px 6px 0;
+  line-height: 1.72;
+  padding: 4px 8px 4px 0;
+  padding-left: 16px;
 }
 
-.c3:hover {
+.c7:hover {
   background-color: #DBDEE1;
 }
 
-.c3:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+.c7:focus:not(:hover) {
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c5 {
+.c7[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c7[aria-selected='true'] .c3 > .c5 {
+  display: block;
+}
+
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -492,22 +807,27 @@ exports[`Listbox Matches the snapshot 1`] = `
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  line-height: 1.43;
-  padding: 6px 8px 6px var(--spacing-4x);
+  line-height: 1.72;
+  padding: 4px 8px 4px var(--spacing-4x);
+  padding-left: 16px;
 }
 
-.c5:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c5:focus:not(:hover) {
-  border: 2px solid #006296;
-  outline: none;
+.c8:focus:not(:hover) {
+  outline: 2px solid #006296;
+  outline-offset: -2px;
 }
 
-.c4 {
-  color: #60666E;
-  padding: 0 var(--spacing-1x);
+.c8[aria-selected='true'] .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c8[aria-selected='true'] .c3 > .c5 {
+  display: block;
 }
 
 <div
@@ -532,26 +852,42 @@ exports[`Listbox Matches the snapshot 1`] = `
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option A
     </li>
     <li
       aria-label="Option B"
       aria-selected="true"
-      class="c3"
+      class="c7"
       data-testid="listitem-optionB"
       id="undefined_optionB"
       role="option"
       selected=""
       tabindex="-1"
     >
-      <svg
-        class="c4"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option B
     </li>
     <li
@@ -563,6 +899,18 @@ exports[`Listbox Matches the snapshot 1`] = `
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option C
     </li>
     <li
@@ -574,19 +922,44 @@ exports[`Listbox Matches the snapshot 1`] = `
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option D
     </li>
     <li
       aria-disabled="true"
       aria-label="Option Disabled"
       aria-selected="false"
-      class="c5"
+      class="c8"
       data-testid="listitem-optionDisabled"
       disabled=""
       id="undefined_optionDisabled"
       role="option"
       tabindex="-1"
     >
+      <span
+        aria-hidden="true"
+        class="c3 c9"
+        disabled=""
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
       Option Disabled
     </li>
   </ul>

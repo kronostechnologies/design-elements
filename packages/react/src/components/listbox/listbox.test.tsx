@@ -79,16 +79,6 @@ describe('Listbox', () => {
         expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
     });
 
-    test('Should have the check indicator if selected', () => {
-        const wrapper = shallow(<Listbox options={options} checkIndicator />);
-
-        expect(getByTestId(wrapper, 'listitem-optionC').find('[data-testid="check-icon"]')).toHaveLength(0);
-
-        getByTestId(wrapper, 'listitem-optionC').simulate('click');
-
-        expect(getByTestId(wrapper, 'listitem-optionC').find('[data-testid="check-icon"]')).toHaveLength(1);
-    });
-
     test('Should allow multiple selections given multiselect is set to true', () => {
         const wrapper = shallow(<Listbox options={options} defaultValue={['optionA']} multiselect />);
 

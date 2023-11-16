@@ -12,11 +12,12 @@ import {
     useMemo,
     useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../../themes';
 import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
+import { Icon } from '../icon/icon';
 
 type Value = string | string[];
 
@@ -134,7 +135,7 @@ const List = styled.ul<ListProps>`
     margin: 0;
     max-height: ${getListMaxHeight}rem;
     overflow-y: auto;
-    padding: 0;
+    padding: 4px 0;
     position: relative;
     width: 100%;
     z-index: 1000;
@@ -158,6 +159,39 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
     return 'var(--spacing-2x)';
 };
 
+const checkboxWidth = 'var(--size-1x)';
+
+const iconStyles = css`
+    color: ${({ theme }) => theme.greys.white};
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+`;
+
+const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
+    ${iconStyles}
+`;
+
+const CustomCheckbox = styled.span<{ disabled?: boolean }>`
+    align-self: center;
+    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    display: inline-block;
+    height: var(--size-1x);
+    left: 0;
+    margin-right: var(--spacing-1x);
+    position: relative;
+    width: ${checkboxWidth};
+
+    &:hover {
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
+    }
+`;
+
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
@@ -165,32 +199,26 @@ const ListItem = styled.li<ListItemProps>`
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1.43)};
-    padding: ${({ isMobile }) => (isMobile ? 4 : 6)}px ${({ isMobile }) => (isMobile ? 16 : 8)}px ${({ isMobile }) => (isMobile ? 4 : 6)}px ${getListItemSidePadding};
-    padding-left: ${({ checkIndicator }) => (checkIndicator && '18px')};
+    line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1.72)};
+    padding: ${({ isMobile }) => (isMobile ? 4 : 4)}px ${({ isMobile }) => (isMobile ? 16 : 8)}px ${({ isMobile }) => (isMobile ? 4 : 4)}px ${getListItemSidePadding};
+    padding-left: ${({ checkIndicator }) => (checkIndicator && '16px')};
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
     }
 
     &:focus:not(:hover) {
-        border: 2px solid ${({ theme }) => theme.main['primary-1.1']};
-        outline: none;
+        outline: 2px solid ${({ theme }) => theme.main['primary-1.1']};
+        outline-offset: -2px;
     }
 
-    &:before {
-        background-color: ${({ selected, theme }) => (selected ? theme.main['primary-1.1'] : theme.greys.white)};
-        border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
-        border-radius: 4px;
-        content: '';
-        display: ${({ checkIndicator }) => (checkIndicator ? 'block' : 'none')};
-        height: 16px;
-        margin-right: 8px;
-        width: 16px;
+    &[aria-selected='true'] ${CustomCheckbox} {
+        background-color: ${({ theme }) => theme.main['primary-1.1']};
+        border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+
+        > ${CheckMarkIcon} {
+            display: block;
+        }
     }
-
-    &:hover:before { }
-
-    &:focus:not(:hover):before { }
 `;
 
 function toArray(val?: Value): string[] {
@@ -230,6 +258,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
         ? options.findIndex((option) => option.value === selectedOptionValue[0])
         : -1));
+
     const list: ListOption[] = useMemo((): ListOption[] => options.map(
         (option, index) => ({
             ...option,
@@ -400,14 +429,20 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [options, focusedValue, listRef]);
 
     const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
-        // ' ' is the space bar key
         switch (e.key) {
-            case 'Enter': {
+            case ' ': {
                 e.preventDefault();
 
-                if (selectedFocusIndex >= 0) {
-                    selectOption(list[selectedFocusIndex]);
-                }
+                /* const listItem = e.target as HTMLLIElement;
+                    const option = list.find((item) => item.id === listItem.id);
+                    if (option && option.focusIndex < 0 ) {
+                        console.log("not selected",selectedFocusIndex, listItem, option);
+                        selectOption(option);
+
+                    }else{
+                        console.log("selected",selectedFocusIndex, listItem, option)
+                } */
+
                 break;
             }
             case 'ArrowUp': {
@@ -416,13 +451,12 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
-
                     if (onFocusedValueChange) {
                         onFocusedValueChange(list[prevOption.focusIndex]);
                     }
 
                     const prevItem = list[prevOption.focusIndex];
-                    selectOption(prevItem);
+                    if (!multiselect) { selectOption(prevItem); }
                     prevItem.ref.current?.focus();
                 }
 
@@ -430,18 +464,22 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
             }
             case 'ArrowDown': {
                 e.preventDefault();
-                const nextOption = getNextSelectableOption(selectedFocusIndex);
 
-                if (nextOption) {
-                    setSelectedFocusIndex(nextOption.focusIndex);
+                if (document.activeElement instanceof HTMLUListElement) {
+                    list[selectedFocusIndex].ref.current?.focus();
+                } else {
+                    const nextOption = getNextSelectableOption(selectedFocusIndex);
 
-                    if (onFocusedValueChange) {
-                        onFocusedValueChange(list[nextOption.focusIndex]);
+                    if (nextOption) {
+                        setSelectedFocusIndex(nextOption.focusIndex);
+                        if (onFocusedValueChange) {
+                            onFocusedValueChange(list[nextOption.focusIndex]);
+                        }
+
+                        const nextItem = list[nextOption.focusIndex];
+                        if (!multiselect) { selectOption(nextItem); }
+                        nextItem.ref.current?.focus();
                     }
-
-                    const nextItem = list[nextOption.focusIndex];
-                    selectOption(nextItem);
-                    nextItem.ref.current?.focus();
                 }
 
                 break;
@@ -457,6 +495,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         selectOption,
         getPrevSelectableOption,
         getNextSelectableOption,
+        multiselect,
     ]);
 
     function getAriaActiveDescendant(optionIndex: number): string | undefined {
@@ -514,6 +553,11 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         selected={isOptionSelected(option)}
                         tabIndex={-1}
                     >
+                        {checkIndicator ? (
+                            <CustomCheckbox disabled={option.disabled} aria-hidden="true">
+                                <CheckMarkIcon />
+                            </CustomCheckbox>
+                        ) : null}
                         {option.label || option.value}
                     </ListItem>
                 ))}
