@@ -72,7 +72,7 @@ export const WithFooter: Story = () => {
         {
             Header: 'Column 2',
             accessor: 'column2',
-            Footer: '',
+            footerColSpan: 0,
         },
         {
             Header: 'Numbers',
