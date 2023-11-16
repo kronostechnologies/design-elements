@@ -131,3 +131,23 @@ export const WithDropdownNavigation: Story = () => {
 };
 
 WithDropdownNavigation.decorators = [RouterDecorator];
+
+export const WithConfirmation: Story = () => {
+    const handleOnClick = (): void => {
+        console.info('onclick');
+    };
+
+    return (
+        <Container>
+            <Tooltip
+                label="label"
+                confirmationLabel="label confirmation"
+                onClick={handleOnClick}
+                desktopPlacement="bottom"
+                mode='confirm'
+            >
+                JBSW Y3DP EHPK 3PXP
+            </Tooltip>
+        </Container>
+    );
+};
