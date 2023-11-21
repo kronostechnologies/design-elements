@@ -11,23 +11,23 @@ export default meta;
 type Story = StoryObj<typeof DesignSystem>;
 
 const customTheme = {
-    colors: {
-        'primary-1.1': '#00874E',
-        'primary-1.2': '#9EDBC1',
-        'primary-1.3': '#0B5E37',
-        'primary-1.4': '#E5F3ED',
-        'primary-2': '#00874E',
-        'secondary-4.1': '#00874E',
-        'secondary-4.2': '#CC9B0B',
-        'secondary-4.3': '#3F474C',
+    ref: {
+        'color-brand-50': '#00874E',
+        'color-brand-20': '#9EDBC1',
+        'color-brand-70': '#0B5E37',
+        'color-brand-05': '#E5F3ED',
+        'color-brand-80': '#00874E',
+        'color-accent-50': '#00874E',
+        'color-accent-20': '#CC9B0B',
+        'color-accent-70': '#3F474C',
     },
     tokens: {
-        'button-primary-bg': 'colors.primary-1.1',
-        'button-primary-inverted-bg': 'colors.white',
-        'button-primary-border': 'colors.primary-1.1',
-        'button-primary-inverted-border': 'colors.white',
-        'button-primary-color': 'colors.white',
-        'button-primary-inverted-color': 'colors.primary-1.1',
+        'button-primary-bg': 'color-brand-50',
+        'button-primary-inverted-bg': 'color-white',
+        'button-primary-border': 'color-brand-50',
+        'button-primary-inverted-border': 'color-white',
+        'button-primary-color': 'color-white',
+        'button-primary-inverted-color': 'color-brand-50',
     },
 };
 
