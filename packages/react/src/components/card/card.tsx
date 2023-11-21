@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 
 const StyledDiv = styled.div<{ $noPadding?: boolean }>`
-    background: ${(props) => props.theme.colors.white};
-    border: 1px solid ${(props) => props.theme.colors['light-grey']};
+    background: ${(props) => props.theme.ref['color-white']};
+    border: 1px solid ${(props) => props.theme.ref['color-neutral-05']};
     border-radius: var(--border-radius-2x);
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 20%);
     box-sizing: border-box;

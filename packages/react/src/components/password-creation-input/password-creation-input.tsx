@@ -48,10 +48,10 @@ const PasswordContainer = styled.div`
 
 export function getBorderColor({ isValid, theme }: StyledProps<{ isValid: boolean; }>): string {
     if (isValid) {
-        return theme.colors['dark-grey'];
+        return theme.ref['color-neutral-65'];
     }
 
-    return theme.colors['alert-2.1'];
+    return theme.ref['color-alert-50'];
 }
 
 const StyledInput = styled(TextInput)`

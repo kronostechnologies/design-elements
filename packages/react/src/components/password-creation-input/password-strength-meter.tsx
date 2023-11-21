@@ -16,19 +16,19 @@ function getContainerBackgroundColor(
     { isFilled, passwordStrength, theme }: StyledProps<ProgressBarProps>,
 ): string {
     if (!isFilled) {
-        return theme.colors['mid-grey'];
+        return theme.ref['color-neutral-30'];
     }
     switch (passwordStrength) {
         case PasswordStrengthEnum.WEAK:
-            return theme.colors['alert-2.1'];
+            return theme.ref['color-alert-50'];
         case PasswordStrengthEnum.FAIR:
-            return theme.colors['warning-3.3'];
+            return theme.ref['color-warning-50'];
         case PasswordStrengthEnum.GOOD:
-            return theme.colors['success-1.3'];
+            return theme.ref['color-success-20'];
         case PasswordStrengthEnum.STRONG:
-            return theme.colors['success-1.1'];
+            return theme.ref['color-success-50'];
         default:
-            return theme.colors['mid-grey'];
+            return theme.ref['color-neutral-30'];
     }
 }
 

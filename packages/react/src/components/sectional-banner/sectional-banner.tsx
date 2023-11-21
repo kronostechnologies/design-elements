@@ -55,12 +55,12 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
 
 function abstractContainer(
     bgColor: string,
-    color?: keyof Theme['colors'],
-    iconColor: keyof Theme['colors'] | undefined = color,
+    color?: keyof Theme['ref'],
+    iconColor: keyof Theme['ref'] | undefined = color,
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
         background-color: ${bgColor};
-        border: 1px solid ${(props) => (color ? props.theme.colors[color] : props.theme.colors['primary-3'])};
+        border: 1px solid ${(props) => (color ? props.theme.ref[color] : props.theme.ref['color-brand-50'])};
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
         padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)')};
@@ -74,7 +74,7 @@ function abstractContainer(
         ${(props) => focusVisibleReset(props, true)};
 
         ${BannerIcon} {
-            color: ${(props) => (iconColor ? props.theme.colors[iconColor] : props.theme.colors['primary-3'])};
+            color: ${(props) => (iconColor ? props.theme.ref[iconColor] : props.theme.ref['color-brand-50'])};
             flex: 0 0 auto;
             height: 1rem;
             width: 1rem;
@@ -82,10 +82,10 @@ function abstractContainer(
     `;
 }
 
-const InfoContainer = abstractContainer('#f9f7fb', 'info-1.1');
-const SuccessContainer = abstractContainer('#f6fbf8', 'success-1.1');
-const WarningContainer = abstractContainer('#fffbf5', 'warning-3.1', 'warning-3.4');
-const AlertContainer = abstractContainer('#fdf6f7', 'alert-2.1');
+const InfoContainer = abstractContainer('#f9f7fb', 'color-informative-50');
+const SuccessContainer = abstractContainer('#f6fbf8', 'color-success-50');
+const WarningContainer = abstractContainer('#fffbf5', 'color-warning-50', 'color-warning-70');
+const AlertContainer = abstractContainer('#fdf6f7', 'color-alert-50');
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};

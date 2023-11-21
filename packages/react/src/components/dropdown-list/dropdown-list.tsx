@@ -44,16 +44,16 @@ function getBorderColor({
     disabled, focus, theme, valid,
 }: InputWrapperProps): string {
     if (disabled) {
-        return theme.colors.grey;
+        return theme.ref['color-neutral-15'];
     }
     if (!valid) {
-        return theme.colors['alert-2.1'];
+        return theme.ref['color-alert-50'];
     }
     if (focus) {
-        return theme.colors['primary-1.1'];
+        return theme.ref['color-brand-50'];
     }
 
-    return theme.colors['dark-grey'];
+    return theme.ref['color-neutral-65'];
 }
 
 const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
@@ -62,7 +62,7 @@ const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
 
 const InputWrapper = styled.div<InputWrapperProps>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-05'] : theme.ref['color-white'])};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
     box-shadow: ${({ containerOutline, theme }) => (containerOutline ? theme.tokens['focus-box-shadow'] : 'none')};
@@ -77,7 +77,7 @@ const InputWrapper = styled.div<InputWrapperProps>`
     }
 
     svg {
-        color: ${({ disabled, theme }) => (disabled ? theme.colors['mid-grey'] : theme.colors['dark-grey'])};
+        color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-30'] : theme.ref['color-neutral-65'])};
     }
 `;
 
@@ -96,7 +96,7 @@ function filterOptions(optionsArray: Option[], filterValue: string): Option[] {
 }
 
 const StyledInput = styled.input<InputProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-05'] : theme.ref['color-white'])};
     border: none;
     border-radius: var(--border-radius);
     box-sizing: border-box;
@@ -117,7 +117,7 @@ const StyledInput = styled.input<InputProps>`
     }
 
     &::placeholder {
-        color: ${({ disabled, theme }) => (disabled ? theme.colors['mid-grey'] : theme.colors['dark-grey'])};
+        color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-30'] : theme.ref['color-neutral-65'])};
         font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     }
 `;

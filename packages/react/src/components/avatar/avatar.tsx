@@ -58,9 +58,9 @@ interface StyledDivProps extends SizeStyleProps {
 
 const StyledDiv = styled.div<StyledDivProps>`
     align-items: center;
-    background: ${({ bgColor, theme }) => bgColor ?? theme.colors['light-grey']};
+    background: ${({ bgColor, theme }) => bgColor ?? theme.ref['color-neutral-05']};
     border-radius: 50%;
-    color: ${({ theme }) => theme.colors['dark-grey']};
+    color: ${({ theme }) => theme.ref['color-neutral-65']};
     display: flex;
     font-weight: var(--font-semi-bold);
     justify-content: center;

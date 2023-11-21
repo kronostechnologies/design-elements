@@ -30,13 +30,13 @@ interface IsMobileProps {
 function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ bannerType: GlobalBannerType }>): string {
     switch (bannerType) {
         case 'alert':
-            return theme.colors['alert-2.1'];
+            return theme.ref['color-alert-50'];
         case 'warning':
-            return theme.colors['warning-3.1'];
+            return theme.ref['color-warning-50'];
         case 'info':
-            return theme.colors['info-1.1'];
+            return theme.ref['color-informative-50'];
         case 'default':
-            return theme.colors['dark-grey'];
+            return theme.ref['color-neutral-65'];
     }
 }
 
@@ -45,9 +45,9 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
         case 'alert':
         case 'info':
         case 'default':
-            return theme.colors.white;
+            return theme.ref['color-white'];
         case 'warning':
-            return theme.colors.black;
+            return theme.ref['color-black'];
     }
 }
 
@@ -125,21 +125,21 @@ function getActionButtonHoverColor({ bannerType, theme }: StyledProps<ButtonProp
     /* TODO change colors when updating thematization */
     switch (bannerType) {
         case 'alert':
-            return '#f99d99';
+            return theme.ref['color-alert-20'];
         case 'warning':
-            return '#9e6900';
+            return theme.ref['color-warning-70'];
         case 'info':
-            return '#cfc1e3';
+            return theme.ref['color-discovery-20'];
         case 'default':
-            return theme.colors['mid-grey'];
+            return theme.ref['color-neutral-30'];
     }
 }
 
 const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', inverted: true })<ButtonProps>`
     /* stylelint-disable-next-line declaration-colon-newline-after */
     ${({ bannerType, theme }) => (bannerType === 'warning') && css`
-        border-color: ${theme.colors.black};
-        color: ${theme.colors.black};
+        border-color: ${theme.ref['color-black']};
+        color: ${theme.ref['color-black']};
     `};
 
     &:hover {
@@ -150,36 +150,36 @@ const ActionButtonComponent = styled(Button).attrs({ buttonType: 'secondary', in
     &:focus {
         background-color: ${getContainerBackgroundColor};
         ${({ bannerType, theme }) => bannerType === 'warning' && css`
-            color: ${theme.colors.black};
+            color: ${theme.ref['color-black']};
         `}
     }
 `;
 
-function getTertiaryButtonHoverBackgroundColor({ bannerType }: StyledProps<ButtonProps>): string {
+function getTertiaryButtonHoverBackgroundColor({ bannerType, theme }: StyledProps<ButtonProps>): string {
     /* TODO change colors when updating thematization */
     switch (bannerType) {
         case 'alert':
-            return '#7b1a15';
+            return theme.ref['color-alert-70'];
         case 'warning':
-            return '#9e6900';
+            return theme.ref['color-warning-70'];
         case 'info':
-            return '#3a1c60';
+            return theme.ref['color-discovery-70'];
         case 'default':
-            return '#878f9a';
+            return theme.ref['color-neutral-50'];
     }
 }
 
 const TertiaryButton = styled(Button).attrs({ buttonType: 'tertiary', inverted: true })<PropsWithChildren<ButtonProps>>`
-    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.colors.black};
+    color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.ref['color-black']};
 
     &:focus {
         background-color: ${getContainerBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.colors.black};
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.ref['color-black']};
     }
 
     &:hover {
         background-color: ${getTertiaryButtonHoverBackgroundColor};
-        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.colors.white};
+        color: ${({ bannerType, theme }) => bannerType === 'warning' && theme.ref['color-white']};
     }
 `;
 

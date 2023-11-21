@@ -28,19 +28,19 @@ function getToastContainerBackground({ theme, type }: ToastWrapperProps): Flatte
     switch (type) {
         case 'information':
             return css`
-                background: ${theme.colors['info-1.1']};
+                background: ${theme.ref['color-informative-50']};
             `;
         case 'success':
             return css`
-                background: ${theme.colors['success-1.1']};
+                background: ${theme.ref['color-success-50']};
             `;
         case 'warning':
             return css`
-                background: ${theme.colors['warning-3.3']};
+                background: ${theme.ref['color-warning-50']};
             `;
         case 'error':
             return css`
-                background: ${theme.colors['alert-2.1']};
+                background: ${theme.ref['color-alert-50']};
             `;
     }
 }
@@ -118,23 +118,22 @@ function getDismissHoverCss({ $type, theme }: DismissIconProps): FlattenSimpleIn
     switch ($type) {
         case 'information':
             return css`
-                background-color: #3a1c60; /* TODO: theme */
-                color: ${theme.colors.white};
+                background-color: ${theme.ref['color-discovery-70']};
+                color: ${theme.ref['color-white']};
             `;
         case 'success':
             return css`
-                background-color: #004f1e; /* TODO: theme */
-                color: ${theme.colors.white};
+                background-color: ${theme.ref['color-success-70']};
+                color: ${theme.ref['color-white']};
             `;
         case 'warning':
             return css`
-                background-color: ${theme.colors['warning-3.4']};
-                color: ${theme.colors.black};
+                color: ${theme.ref['color-black']};
             `;
         case 'error':
             return css`
-                background-color: #7b1a15; /* TODO: theme */
-                color: ${theme.colors.white};
+                background-color: ${theme.ref['color-alert-70']};
+                color: ${theme.ref['color-white']};
             `;
     }
 }
@@ -152,7 +151,7 @@ const DismissIcon = styled(IconButton).attrs<DismissIconProps, Partial<IconButto
     margin: ${getDismissIconMarginTop} calc(-1 * var(--spacing-half)) ${getDismissIconMarginTop} 0;
 
     &:focus {
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors['primary-1.2']};
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.ref['color-brand-20']};
     }
 
     &:hover {
@@ -198,7 +197,7 @@ function getToastIconName(type: ToastType): IconName {
 }
 
 function getToastTextColor(type: ToastType, theme: Theme): string {
-    return type === 'warning' ? theme.colors.black : theme.colors.white;
+    return type === 'warning' ? theme.ref['color-black'] : theme.ref['color-white'];
 }
 
 interface ToastContainerProps {

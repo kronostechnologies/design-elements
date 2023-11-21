@@ -7,11 +7,11 @@ export const Label = styled.label`
             --border-radius: 8px;
 
             align-items: center;
-            background: ${theme.colors.white};
-            border: 1px solid ${theme.colors['dark-grey']};
+            background: ${theme.ref['color-white']};
+            border: 1px solid ${theme.ref['color-neutral-65']};
             border-radius: var(--border-radius);
             box-sizing: border-box;
-            color: ${theme.colors['dark-grey']};
+            color: ${theme.ref['color-neutral-65']};
             cursor: pointer;
             display: flex;
             font-size: 1rem;
@@ -24,24 +24,24 @@ export const Label = styled.label`
             transition: all 0.25s ease-in-out;
 
             &:hover {
-                background: ${theme.colors.grey};
-                border-color: ${theme.colors.grey};
+                background: ${theme.ref['color-neutral-15']};
+                border-color: ${theme.ref['color-neutral-15']};
             }
 
             input[type="checkbox"]:checked + &,
             input[type="radio"]:checked + & {
-                background: ${theme.colors['primary-1.1']};
-                border-color: ${theme.colors['primary-1.1']};
-                color: ${theme.colors.white};
+                background: ${theme.ref['color-brand-50']};
+                border-color: ${theme.ref['color-brand-50']};
+                color: ${theme.ref['color-white']};
             }
 
             ${focus({ theme }, true, 'input[type="checkbox"]:focus + &, input[type="radio"]:focus + &')}
 
             input[type="checkbox"]:disabled + &,
             input[type="radio"]:disabled + & {
-                background: ${theme.colors['light-grey']};
-                border-color: ${theme.colors.grey};
-                color: ${theme.colors['mid-grey']};
+                background: ${theme.ref['color-neutral-05']};
+                border-color: ${theme.ref['color-neutral-15']};
+                color: ${theme.ref['color-neutral-30']};
                 cursor: auto;
             }
 

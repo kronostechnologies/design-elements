@@ -16,7 +16,7 @@ const SearchWrapper = styled.div`
 
     label {
         bottom: 0.5rem;
-        color: ${(props) => props.theme.colors['dark-grey']};
+        color: ${(props) => props.theme.ref['color-neutral-65']};
         display: inline-block;
         height: 1rem;
         left: 0.5rem;
@@ -35,10 +35,10 @@ const InnerWrapper = styled.div`
 
 function iconColor(props: { theme: Theme, disabled?: boolean }): string {
     if (props.disabled) {
-        return props.theme.colors['mid-grey'];
+        return props.theme.ref['color-neutral-30'];
     }
 
-    return props.theme.colors['dark-grey'];
+    return props.theme.ref['color-neutral-65'];
 }
 
 const IcoSearch = styled(SearchIcon)`
@@ -48,7 +48,7 @@ const IcoSearch = styled(SearchIcon)`
 `;
 
 const IcoReset = styled(XIcon)`
-    color: ${(props) => props.theme.colors['dark-grey']};
+    color: ${(props) => props.theme.ref['color-neutral-65']};
     height: 1.25rem;
     margin: -1px;
     width: 1.25rem;

@@ -175,8 +175,8 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
 }
 
 .c9:hover {
-  border-color: #f99d99;
-  color: #f99d99;
+  border-color: #F99D99;
+  color: #F99D99;
 }
 
 .c9:focus {
@@ -469,7 +469,7 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
 }
 
 .c11:hover {
-  background-color: #878f9a;
+  background-color: #878F9A;
 }
 
 .c6 {
@@ -688,7 +688,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #602FA0;
+  background-color: #006296;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -752,20 +752,20 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 }
 
 .c9:hover {
-  border-color: #cfc1e3;
-  color: #cfc1e3;
+  border-color: #CFC1E3;
+  color: #CFC1E3;
 }
 
 .c9:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:hover {
-  background-color: #3a1c60;
+  background-color: #3A1C60;
 }
 
 .c6 {
@@ -1053,8 +1053,8 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c9:hover {
-  border-color: #9e6900;
-  color: #9e6900;
+  border-color: #9E6900;
+  color: #9E6900;
 }
 
 .c9:focus {
@@ -1072,7 +1072,7 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 }
 
 .c11:hover {
-  background-color: #9e6900;
+  background-color: #9E6900;
   color: #FFFFFF;
 }
 
@@ -1324,8 +1324,8 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
 }
 
 .c9:hover {
-  border-color: #f99d99;
-  color: #f99d99;
+  border-color: #F99D99;
+  color: #F99D99;
 }
 
 .c9:focus {
@@ -1621,7 +1621,7 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
 }
 
 .c11:hover {
-  background-color: #878f9a;
+  background-color: #878F9A;
 }
 
 .c6 {
@@ -1840,7 +1840,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #602FA0;
+  background-color: #006296;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1907,20 +1907,20 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 }
 
 .c9:hover {
-  border-color: #cfc1e3;
-  color: #cfc1e3;
+  border-color: #CFC1E3;
+  color: #CFC1E3;
 }
 
 .c9:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:hover {
-  background-color: #3a1c60;
+  background-color: #3A1C60;
 }
 
 .c6 {
@@ -2211,8 +2211,8 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c9:hover {
-  border-color: #9e6900;
-  color: #9e6900;
+  border-color: #9E6900;
+  color: #9E6900;
 }
 
 .c9:focus {
@@ -2230,7 +2230,7 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 }
 
 .c11:hover {
-  background-color: #9e6900;
+  background-color: #9E6900;
   color: #FFFFFF;
 }
 

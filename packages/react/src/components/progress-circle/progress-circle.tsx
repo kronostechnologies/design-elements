@@ -35,7 +35,7 @@ const Result = styled.div`
     width: 100%;
 
     p {
-        color: ${(props: ResultProps) => props.theme.colors.black};
+        color: ${(props: ResultProps) => props.theme.ref['color-black']};
         font-size: 1.5rem;
         margin: 0;
         padding: 0;
@@ -43,7 +43,7 @@ const Result = styled.div`
 `;
 
 const Label = styled.p`
-    color: ${(props: ResultProps) => props.theme.colors.black};
+    color: ${(props: ResultProps) => props.theme.ref['color-black']};
     font-size: 1rem;
     letter-spacing: 0.02875rem;
     line-height: 1.5rem;

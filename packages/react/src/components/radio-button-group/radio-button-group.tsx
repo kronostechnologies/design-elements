@@ -13,7 +13,7 @@ const StyledFieldset = styled.fieldset`
 `;
 
 const StyledLegend = styled.legend<{isMobile: boolean}>`
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.ref['color-black']};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);
@@ -50,10 +50,10 @@ const StyledLabel = styled.label`
                 width: var(--size-1x);
 
                 &:checked + .radioInput {
-                    border: 2px solid ${props.theme.colors['primary-1.1']};
+                    border: 2px solid ${props.theme.ref['color-brand-50']};
 
                     &::after {
-                        background-color: ${props.theme.colors['primary-1.1']};
+                        background-color: ${props.theme.ref['color-brand-50']};
                         border-radius: 50%;
                         content: '';
                         height: var(--size-half);
@@ -69,8 +69,8 @@ const StyledLabel = styled.label`
             }
 
             .radioInput {
-                background-color: ${props.disabled ? props.theme.colors['light-grey'] : props.theme.colors.white};
-                border: 1px solid ${props.disabled ? props.theme.colors.grey : props.theme.colors['dark-grey']};
+                background-color: ${props.disabled ? props.theme.ref['color-neutral-05'] : props.theme.ref['color-white']};
+                border: 1px solid ${props.disabled ? props.theme.ref['color-neutral-15'] : props.theme.ref['color-neutral-65']};
                 border-radius: 50%;
                 box-sizing: border-box;
                 display: inline-block;
@@ -81,7 +81,7 @@ const StyledLabel = styled.label`
             }
 
             &:hover .radioInput {
-                border: 1px solid ${props.disabled ? props.theme.colors.grey : props.theme.colors['primary-1.1']};
+                border: 1px solid ${props.disabled ? props.theme.ref['color-neutral-15'] : props.theme.ref['color-brand-50']};
             }
             `}
 `;

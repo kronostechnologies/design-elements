@@ -4,7 +4,7 @@ import { Theme } from '../../themes';
 
 const Container = styled.div`
     p {
-        color: ${(props: { theme: Theme }) => props.theme.colors.black};
+        color: ${(props: { theme: Theme }) => props.theme.ref['color-black']};
         letter-spacing: 0.02875rem;
         line-height: 1.5rem;
         margin: 0;
@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Progress = styled.div`
-    background-color: ${(props) => props.theme.colors.grey};
+    background-color: ${(props) => props.theme.ref['color-neutral-15']};
     border-radius: var(--border-radius);
     height: 0.5rem;
     margin-bottom: var(--spacing-half);

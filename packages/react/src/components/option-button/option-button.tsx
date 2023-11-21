@@ -10,10 +10,10 @@ const Input = styled.input`
 
         + label {
             align-items: center;
-            background-color: ${theme.colors.white};
-            border: 1px solid ${theme.colors.grey};
+            background-color: ${theme.ref['color-white']};
+            border: 1px solid ${theme.ref['color-neutral-15']};
             border-radius: var(--border-radius-2x);
-            color: ${theme.colors['dark-grey']};
+            color: ${theme.ref['color-neutral-65']};
             display: flex;
             font-size: 1.5rem;
             justify-content: center;
@@ -21,9 +21,9 @@ const Input = styled.input`
         }
 
         &:checked + label {
-            background-color: ${theme.colors['primary-1.1']};
-            border-color: ${theme.colors['primary-1.1']};
-            color: ${theme.colors.white};
+            background-color: ${theme.ref['color-brand-50']};
+            border-color: ${theme.ref['color-brand-50']};
+            color: ${theme.ref['color-white']};
         }
     `}
 `;

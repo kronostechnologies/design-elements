@@ -9,7 +9,7 @@ interface ContainerProps {
 
 export const StyledLink = styled.a<ContainerProps>`
     align-items: center;
-    color: ${({ disabled, theme }) => (disabled ? theme.colors['primary-1.2'] : theme.colors['primary-1.1'])};
+    color: ${({ disabled, theme }) => (disabled ? theme.ref['color-brand-20'] : theme.ref['color-brand-50'])};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: inline-flex;
     font-size: ${({ $isMobile }) => ($isMobile ? '1rem' : '0.875rem')};
@@ -17,7 +17,7 @@ export const StyledLink = styled.a<ContainerProps>`
     text-decoration: underline;
 
     &:hover {
-        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.colors['primary-1.3']};`)};
+        ${({ disabled, theme }) => (disabled ? '' : `color: ${theme.ref['color-brand-70']};`)};
     }
 
     &:visited {

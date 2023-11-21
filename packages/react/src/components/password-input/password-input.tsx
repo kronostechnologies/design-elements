@@ -24,20 +24,20 @@ const StyledTextInput = styled(TextInput)`
 `;
 
 const StyledIconButton = styled(IconButton) <{ $isValid: boolean }>`
-    background-color: ${({ theme }) => theme.colors.white};
-    border-color: ${({ theme }) => theme.colors['dark-grey']};
+    background-color: ${({ theme }) => theme.ref['color-white']};
+    border-color: ${({ theme }) => theme.ref['color-neutral-65']};
     border-left-width: 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     min-height: 2rem;
     width: 2rem;
 
     ${(props) => !props.$isValid && css`
-        border-color: ${props.theme.colors['alert-2.1']};
+        border-color: ${props.theme.ref['color-alert-50']};
     `}
 
     &:disabled {
-        background-color: ${({ theme }) => theme.colors['light-grey']};
-        border-color: ${({ theme }) => theme.colors.grey};
+        background-color: ${({ theme }) => theme.ref['color-neutral-05']};
+        border-color: ${({ theme }) => theme.ref['color-neutral-15']};
     }
 `;
 
@@ -51,7 +51,7 @@ const PasswordContainer = styled.div`
 
         input,
         ${StyledIconButton} {
-            border-color: ${({ theme }) => theme.colors['primary-1.1']};
+            border-color: ${({ theme }) => theme.ref['color-brand-50']};
         }
     }
 `;

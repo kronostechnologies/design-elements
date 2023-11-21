@@ -128,9 +128,9 @@ function getListMaxHeight({ numberOfItemsVisible, isMobile }: ListProps): number
 }
 
 const List = styled.ul<ListProps>`
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.ref['color-white']};
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.grey}, 0 10px 20px 0 rgb(0 0 0 / 19%);
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.ref['color-neutral-15']}, 0 10px 20px 0 rgb(0 0 0 / 19%);
     list-style-type: none;
     margin: 0;
     max-height: ${getListMaxHeight}rem;
@@ -161,10 +161,10 @@ const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItem
 
 function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps): string {
     if (disabled) {
-        return theme.colors.white;
+        return theme.ref['color-white'];
     }
     if (focused) {
-        return theme.colors.grey;
+        return theme.ref['color-neutral-15'];
     }
     return 'inherit';
 }
@@ -172,7 +172,7 @@ function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps)
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
     background-color: ${getListItemBackgroundColor};
-    color: ${({ disabled, theme }) => (disabled ? theme.colors['mid-grey'] : theme.colors.black)};
+    color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-30'] : theme.ref['color-black'])};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
@@ -190,7 +190,7 @@ const ListItem = styled.li<ListItemProps>`
 `;
 
 const CheckIndicator = styled(Icon)`
-    color: ${({ theme }) => theme.colors['dark-grey']};
+    color: ${({ theme }) => theme.ref['color-neutral-65']};
     padding: 0 var(--spacing-1x);
 `;
 

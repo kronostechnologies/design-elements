@@ -32,7 +32,7 @@ export const Circle: VoidFunctionComponent<CircleProps> = ({
     return (
         <Svg height="100%" width="100%" viewBox={`0 0 ${diameter} ${diameter}`}>
             <BackgroundCircle
-                stroke={theme.colors.grey}
+                stroke={theme.ref['color-neutral-15']}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeLinecap="round"

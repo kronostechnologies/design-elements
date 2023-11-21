@@ -16,9 +16,9 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-3x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -31,7 +31,7 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
   cursor: pointer;
 }
@@ -104,7 +104,7 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -122,9 +122,9 @@ exports[`Tag Tag medium matches snapshot (desktop deletable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -200,9 +200,9 @@ exports[`Tag Tag medium matches snapshot (desktop with icons) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -261,9 +261,9 @@ exports[`Tag Tag medium matches snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -312,9 +312,9 @@ exports[`Tag Tag medium matches snapshot (desktop) 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -363,9 +363,9 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-3x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -378,7 +378,7 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
   cursor: pointer;
 }
@@ -451,7 +451,7 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -469,9 +469,9 @@ exports[`Tag Tag medium matches snapshot (mobile deletable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -547,9 +547,9 @@ exports[`Tag Tag medium matches snapshot (mobile with icons) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -608,9 +608,9 @@ exports[`Tag Tag medium matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -659,9 +659,9 @@ exports[`Tag Tag medium matches snapshot (mobile) 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -710,9 +710,9 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-2x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -725,7 +725,7 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
   cursor: pointer;
 }
@@ -798,7 +798,7 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -816,9 +816,9 @@ exports[`Tag Tag small matches snapshot (desktop deletable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -894,9 +894,9 @@ exports[`Tag Tag small matches snapshot (desktop with icons) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -955,9 +955,9 @@ exports[`Tag Tag small matches snapshot (desktop) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1006,9 +1006,9 @@ exports[`Tag Tag small matches snapshot (desktop) 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1057,9 +1057,9 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-2x);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1072,7 +1072,7 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 }
 
 .c1:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
   border-color: #60666E;
   cursor: pointer;
 }
@@ -1145,7 +1145,7 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
 }
 
 .c4:hover {
-  background-color: #dbdee1;
+  background-color: #DBDEE1;
 }
 
 .c4:focus {
@@ -1163,9 +1163,9 @@ exports[`Tag Tag small matches snapshot (mobile deletable) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1241,9 +1241,9 @@ exports[`Tag Tag small matches snapshot (mobile with icons) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1302,9 +1302,9 @@ exports[`Tag Tag small matches snapshot (mobile) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius-half);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1353,9 +1353,9 @@ exports[`Tag Tag small matches snapshot (mobile) 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F1F2F2;
+  background-color: #DBDEE1;
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 0 1px #878f9a;
+  box-shadow: inset 0 0 0 1px #878F9A;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;

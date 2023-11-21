@@ -26,7 +26,7 @@ function getMaxHeight(numberOfVisibleItems: number): string {
 }
 
 const StyledDiv = styled.div<{ numberOfVisibleItems: number | undefined; }>`
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.ref['color-white']};
 
     /* TODO update with next thematization */
     border: 1px solid #878f9a;
@@ -49,7 +49,7 @@ interface SubMenuProps {
 }
 
 const SubMenu = styled.div<SubMenuProps>`
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.ref['color-white']};
 
     /* TODO update with next thematization */
     border: 1px solid #878f9a;
@@ -76,7 +76,7 @@ interface ButtonProps {
 
 const Button = styled.button<ButtonProps>`
     align-items: center;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.ref['color-black']};
     cursor: pointer;
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
@@ -95,7 +95,7 @@ const Button = styled.button<ButtonProps>`
     }
 
     &:hover {
-        background-color: ${({ theme }) => theme.colors.grey};
+        background-color: ${({ theme }) => theme.ref['color-neutral-15']};
     }
 `;
 

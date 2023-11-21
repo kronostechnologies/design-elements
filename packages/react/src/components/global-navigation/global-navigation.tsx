@@ -11,7 +11,7 @@ const lightBlue = '#E0F0F9';
 const lightGrey = '#D9DDE2';
 
 const Wrapper = styled.div`
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.ref['color-white']};
     box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
     display: flex;
@@ -32,7 +32,7 @@ const NavList = styled.ul`
 `;
 
 const MenuLink = styled(NavLink)`
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.ref['color-black']};
     display: flex;
     flex-grow: 1;
     line-height: 1.5rem;
@@ -43,7 +43,7 @@ const MenuLink = styled(NavLink)`
     ${focus};
 
     &:hover {
-        background-color: ${(props) => props.theme.colors.grey};
+        background-color: ${(props) => props.theme.ref['color-neutral-15']};
     }
 
     &.active {
@@ -52,7 +52,7 @@ const MenuLink = styled(NavLink)`
 `;
 
 const ShowMoreMenu = styled.ul<{ open?: boolean }>`
-    background-color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.ref['color-white']};
     border-radius: var(--border-radius);
     box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
     display: ${({ open }) => (open ? 'flex' : 'none')};
@@ -80,9 +80,9 @@ const ShowMoreMenu = styled.ul<{ open?: boolean }>`
 
 const ShowMore = styled.button<{ active?: boolean }>`
     align-items: center;
-    background-color: ${({ active, theme }) => (active ? theme.colors.grey : 'transparent')};
+    background-color: ${({ active, theme }) => (active ? theme.ref['color-neutral-15'] : 'transparent')};
     box-sizing: border-box;
-    color: ${({ theme }) => theme.colors['dark-grey']};
+    color: ${({ theme }) => theme.ref['color-neutral-65']};
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -93,8 +93,8 @@ const ShowMore = styled.button<{ active?: boolean }>`
     ${focus};
 
     &:hover {
-        background-color: ${(props) => props.theme.colors.grey};
-        color: ${(props) => props.theme.colors.black};
+        background-color: ${(props) => props.theme.ref['color-neutral-15']};
+        color: ${(props) => props.theme.ref['color-black']};
     }
 `;
 
@@ -117,7 +117,7 @@ const ItemLink = styled(ShowMore).attrs({ as: NavLink })<NavLinkProps>`
 
     &.active {
         background-color: ${lightBlue};
-        color: ${(props) => props.theme.colors.black};
+        color: ${(props) => props.theme.ref['color-black']};
     }
 `;
 

@@ -14,7 +14,7 @@ interface StyledLabelProps {
 const StyledLabel = styled.label<StyledLabelProps>`
     ${({ disabled }) => (disabled ? '' : 'cursor: pointer;')}
 
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.ref['color-black']};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
     margin-left: var(--spacing-1x);
@@ -27,7 +27,7 @@ interface StyledButtonSpanProps {
 }
 
 const StyledButtonSpan = styled.span<StyledButtonSpanProps>`
-    background: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.ref['color-white']};
     border-radius: 100%;
     box-sizing: border-box;
     height: ${({ isMobile }) => (isMobile ? 1.375 : 1)}rem;
@@ -48,8 +48,8 @@ const StyledButton = styled.button<StyledButtonProps>`
         cursor: pointer;
     }
 
-    background: ${({ theme }) => theme.colors['success-1.1']};
-    border: 1px solid ${({ theme }) => theme.colors['success-1.1']};
+    background: ${({ theme }) => theme.ref['color-success-50']};
+    border: 1px solid ${({ theme }) => theme.ref['color-success-50']};
     border-radius: ${({ isMobile }) => (isMobile ? 1 : 0.75)}rem;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2x)' : 'var(--size-1halfx)')};
     position: relative;
@@ -57,8 +57,8 @@ const StyledButton = styled.button<StyledButtonProps>`
     width: ${({ isMobile }) => (isMobile ? 'var(--size-3x)' : 'var(--size-2halfx)')};
 
     &[aria-checked='false'] {
-        background: ${({ theme }) => theme.colors['mid-grey']};
-        border-color: ${({ theme }) => theme.colors['mid-grey']};
+        background: ${({ theme }) => theme.ref['color-neutral-30']};
+        border-color: ${({ theme }) => theme.ref['color-neutral-30']};
 
         ${StyledButtonSpan} {
             transition: right 0.1s ease-in-out;
@@ -71,12 +71,12 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
 
     &:disabled {
-        background: ${({ theme }) => theme.colors.grey};
-        border-color: ${({ theme }) => theme.colors.grey};
+        background: ${({ theme }) => theme.ref['color-neutral-15']};
+        border-color: ${({ theme }) => theme.ref['color-neutral-15']};
 
         &[aria-checked='true'] {
-            background: ${({ theme }) => theme.colors['success-1.3']};
-            border-color: ${({ theme }) => theme.colors['success-1.3']};
+            background: ${({ theme }) => theme.ref['color-success-20']};
+            border-color: ${({ theme }) => theme.ref['color-success-20']};
         }
     }
 

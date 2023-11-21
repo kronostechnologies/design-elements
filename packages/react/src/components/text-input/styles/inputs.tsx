@@ -7,11 +7,11 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
     theme: Theme,
     isMobile = false,
 ) => css`
-    background: ${theme.colors.white};
-    border: 1px solid ${theme.colors['dark-grey']};
+    background: ${theme.ref['color-white']};
+    border: 1px solid ${theme.ref['color-neutral-65']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${theme.colors.black};
+    color: ${theme.ref['color-black']};
     font-family: inherit;
     font-size: ${isMobile ? '1rem' : '0.875rem'};
     letter-spacing: ${isMobile ? '0.02875rem' : '0.015rem'};
@@ -25,16 +25,16 @@ export const inputsStyle: (theme: Theme, isMobile?: boolean) => FlattenSimpleInt
     ${focus({ theme }, true)};
 
     &::placeholder {
-        color: ${theme.colors['dark-grey']};
+        color: ${theme.ref['color-neutral-65']};
     }
 
     &:disabled {
-        background-color: ${theme.colors['light-grey']};
-        border-color: ${theme.colors.grey};
+        background-color: ${theme.ref['color-neutral-05']};
+        border-color: ${theme.ref['color-neutral-15']};
 
         &,
         &::placeholder {
-            color: ${theme.colors['mid-grey']};
+            color: ${theme.ref['color-neutral-30']};
         }
     }
 `;
@@ -45,11 +45,11 @@ interface ResponsiveInputsStyles {
 }
 
 export const responsiveInputsStyle = ({ theme, device: { isMobile } }: ResponsiveInputsStyles): FlattenSimpleInterpolation => css`
-    background: ${theme.colors.white};
-    border: 1px solid ${theme.colors['dark-grey']};
+    background: ${theme.ref['color-white']};
+    border: 1px solid ${theme.ref['color-neutral-65']};
     border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: ${theme.colors.black};
+    color: ${theme.ref['color-black']};
     font-family: inherit;
     font-size: ${isMobile ? 1 : 0.875}rem;
     letter-spacing: ${isMobile ? 0.02875 : 0.015}rem;
@@ -60,16 +60,16 @@ export const responsiveInputsStyle = ({ theme, device: { isMobile } }: Responsiv
     width: 100%;
 
     &::placeholder {
-        color: ${theme.colors['dark-grey']};
+        color: ${theme.ref['color-neutral-65']};
     }
 
     &:disabled {
-        background-color: ${theme.colors['light-grey']};
-        border-color: ${theme.colors.grey};
+        background-color: ${theme.ref['color-neutral-05']};
+        border-color: ${theme.ref['color-neutral-15']};
 
         &,
         &::placeholder {
-            color: ${theme.colors['mid-grey']};
+            color: ${theme.ref['color-neutral-30']};
         }
     }
 

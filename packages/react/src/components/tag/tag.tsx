@@ -110,12 +110,12 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
     return $clickable && css`
         &:hover {
             /* TODO fix with next thematization gray65 */
-            background-color: #dbdee1;
-            border-color: ${({ theme }) => theme.colors['dark-grey']};
+            background-color: ${({ theme }) => theme.ref['color-neutral-15']};
+            border-color: ${({ theme }) => theme.ref['color-neutral-65']};
             cursor: pointer;
 
             ${StyledIcon} {
-                color: ${({ theme }) => theme.colors.black};
+                color: ${({ theme }) => theme.ref['color-black']};
             }
         }
 
@@ -148,11 +148,10 @@ const DeleteButton = styled.button<IconOrButtonProps>`
     }
 
     &:hover {
-        /* TODO fix with next thematization gray65 */
-        background-color: #dbdee1;
+        background-color: ${({ theme }) => theme.ref['color-neutral-15']};
 
         ${DeleteIcon} {
-            color: ${({ theme }) => theme.colors.black};
+            color: ${({ theme }) => theme.ref['color-black']};
         }
     }
 
@@ -161,11 +160,9 @@ const DeleteButton = styled.button<IconOrButtonProps>`
 
 const Container = styled.span<ContainerProps>`
     align-items: center;
-    background-color: ${({ theme }) => theme.colors['light-grey']};
-
-    /* TODO fix with next thematization gray50 */
+    background-color: ${({ theme }) => theme.ref['color-neutral-15']};
     border-radius: ${getBorderRadius};
-    box-shadow: inset 0 0 0 1px #878f9a;
+    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.ref['color-neutral-50']};
     display: inline-flex;
     padding: ${getPadding};
 

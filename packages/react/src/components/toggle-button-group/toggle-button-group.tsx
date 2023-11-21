@@ -22,15 +22,14 @@ interface ToggleButtonProps {
     isMobile: boolean;
 }
 
-const outOfThemeColor = '#e0f0f9'; // TODO: Eventually put somewhere in theme
 const ToggleButton = styled.button<ToggleButtonProps>`
     align-items: center;
-    background-color: ${(props) => (props.pressed ? outOfThemeColor : props.theme.colors.white)};
+    background-color: ${(props) => (props.pressed ? props.theme.ref['color-informative-05'] : props.theme.ref['color-white'])};
     border: 1px solid;
-    border-color: ${(props) => (props.pressed ? props.theme.colors['primary-2'] : '#878f9a')}; /* TODO change colors when updating thematization */
+    border-color: ${(props) => (props.pressed ? props.theme.ref['color-brand-80'] : props.theme.ref['color-neutral-50'])};
     border-right: ${(props) => (props.pressed ? '1px solid' : 0)};
     box-sizing: border-box;
-    color: ${(props) => (props.pressed ? props.theme.colors['primary-2'] : props.theme.colors['dark-grey'])};
+    color: ${(props) => (props.pressed ? props.theme.ref['color-brand-80'] : props.theme.ref['color-neutral-65'])};
     cursor: pointer;
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
     letter-spacing: 0.02875rem;
@@ -42,7 +41,7 @@ const ToggleButton = styled.button<ToggleButtonProps>`
     `}
 
     &:last-child {
-        border-right: 1px solid ${(props) => (props.pressed ? props.theme.colors['primary-2'] : '#878f9a')}; /* TODO change colors when updating thematization */
+        border-right: 1px solid ${(props) => (props.pressed ? props.theme.ref['color-brand-80'] : props.theme.ref['color-neutral-50'])};
         margin: 0;
     }
 
@@ -54,12 +53,12 @@ const ToggleButton = styled.button<ToggleButtonProps>`
 
     ${(props) => !props.pressed && css`
         &:hover {
-            background-color: ${props.theme.colors.grey};
-            border-color: ${props.theme.colors['dark-grey']};
-            color: ${props.theme.colors.black};
+            background-color: ${props.theme.ref['color-neutral-15']};
+            border-color: ${props.theme.ref['color-neutral-65']};
+            color: ${props.theme.ref['color-black']};
 
             & + button {
-                border-left-color: ${props.theme.colors['dark-grey']};
+                border-left-color: ${props.theme.ref['color-neutral-65']};
             }
         }
     `}

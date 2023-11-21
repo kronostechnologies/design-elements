@@ -20,11 +20,11 @@ const StyledDiv = styled.div<StyledDivProps>`
     input,
     select,
     textarea {
-        border-color: ${({ theme, valid }) => (valid ? theme.colors['dark-grey'] : theme.colors['alert-2.1'])};
+        border-color: ${({ theme, valid }) => (valid ? theme.ref['color-neutral-65'] : theme.ref['color-alert-50'])};
     }
 
     &:focus {
-        border-color: ${({ theme, valid }) => (valid ? theme.colors['primary-1.1'] : theme.colors['alert-2.1'])};
+        border-color: ${({ theme, valid }) => (valid ? theme.ref['color-brand-50'] : theme.ref['color-alert-50'])};
     }
 
     > :nth-child(${({ hasLabel, hasHint, valid }) => (hasLabel ? 1 : 0) + (hasHint ? 1 : 0) + (!valid ? 1 : 0)}) {
@@ -33,7 +33,7 @@ const StyledDiv = styled.div<StyledDivProps>`
 `;
 
 const StyledHint = styled.span<{ isMobile: boolean }>`
-    color: ${(props) => props.theme.colors['dark-grey']};
+    color: ${(props) => props.theme.ref['color-neutral-65']};
     display: block;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);

@@ -15,8 +15,8 @@ export interface ItemContentProps {
 
 const StyledIcon = styled(Icon)`
     align-self: flex-start;
-    background-color: ${({ theme }) => theme.colors['light-grey']};
-    border: 1px solid ${({ theme }) => theme.colors.grey};
+    background-color: ${({ theme }) => theme.ref['color-neutral-05']};
+    border: 1px solid ${({ theme }) => theme.ref['color-neutral-15']};
     border-radius: var(--border-radius);
     flex-shrink: 0;
     margin: 2px var(--spacing-1x) 2px 0;
@@ -38,7 +38,7 @@ const StyledSpan = styled.span`
 `;
 
 const Description = styled(StyledSpan)<{ $device: DeviceContextProps }>`
-    color: ${({ theme }) => theme.colors['dark-grey']};
+    color: ${({ theme }) => theme.ref['color-neutral-65']};
     flex: 1 0 100%;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '0.875rem' : '0.75rem')};
     line-height: 1.25rem;

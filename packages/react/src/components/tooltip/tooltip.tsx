@@ -59,12 +59,12 @@ interface TooltipColorProps {
 
 const tooltipColor = css<TooltipColorProps>`${({ theme, variant }) => {
     if (variant === 'success') {
-        return theme.colors['success-1.1'];
+        return theme.ref['color-success-50'];
     }
-    return theme.colors['dark-grey'];
+    return theme.ref['color-neutral-65'];
 }}`;
 
-const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.colors.white}`;
+const tooltipBorderColor = css<{ theme: ThemeType }>`${({ theme }) => theme.ref['color-white']}`;
 
 const TooltipContainer = styled.div<TooltipContainerProps>`
     background-color: ${tooltipColor};
@@ -72,7 +72,7 @@ const TooltipContainer = styled.div<TooltipContainerProps>`
     border-radius: var(--border-radius-half);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
     box-sizing: border-box;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.ref['color-white']};
     display: ${({ visible }) => (visible ? 'flex' : 'none')};
     flex-direction: column;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.75rem')};
@@ -355,7 +355,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
                     <Icon
                         name="info"
                         size={isMobile ? '24' : '16'}
-                        color={invertedIcon ? Theme.colors.white : Theme.colors['dark-grey']}
+                        color={invertedIcon ? Theme.ref['color-white'] : Theme.ref['color-neutral-65']}
                     />
                 )}
             </StyledSpan>

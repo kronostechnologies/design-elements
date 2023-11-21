@@ -24,8 +24,8 @@ interface CardProps {
 }
 
 export const RadioInput = styled.span<CardProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-05'] : theme.ref['color-white'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-15'] : theme.ref['color-neutral-65'])};
     border-radius: 50%;
     box-sizing: border-box;
     display: inline-block;
@@ -37,31 +37,31 @@ export const RadioInput = styled.span<CardProps>`
 
 function getContentColor({ disabled, theme }: InputContainerProps): string {
     if (disabled) {
-        return theme.colors['mid-grey'];
+        return theme.ref['color-neutral-30'];
     }
     // TODO: This should be changed to whatever #1B1C1E is with new colors
-    return theme.colors.black;
+    return theme.ref['color-black'];
 }
 
 function getLabelBackgroundColor({ disabled, isChecked, theme }: CardProps): string {
     if (disabled) {
-        return theme.colors['light-grey'];
+        return theme.ref['color-neutral-05'];
     }
     if (isChecked) {
-        return theme.colors['primary-1.4'];
+        return theme.ref['color-brand-05'];
     }
-    return theme.colors.white;
+    return theme.ref['color-white'];
 }
 
 function getLabelBorderColor({ disabled, isChecked, theme }: CardProps): string {
     if (disabled) {
-        return theme.colors.grey;
+        return theme.ref['color-neutral-15'];
     }
     if (isChecked) {
-        return theme.colors['primary-1.1'];
+        return theme.ref['color-brand-50'];
     }
     // TODO: This should be changed to whatever #1B1C1E is with new colors
-    return theme.colors.black;
+    return theme.ref['color-black'];
 }
 
 export const Legend = styled.legend<{ isMobile: boolean }>`
@@ -104,15 +104,15 @@ export const Card = styled.div<CardProps>`
     }
 
     &:hover:not([disabled]) {
-        background-color: ${({ theme }) => theme.colors.grey};
-        border-color: ${({ theme }) => theme.colors.black};
+        background-color: ${({ theme }) => theme.ref['color-neutral-15']};
+        border-color: ${({ theme }) => theme.ref['color-black']};
         cursor: pointer;
 
         /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
 
         ${Description},
         ${Title} {
-            color: ${({ theme }) => theme.colors.black};
+            color: ${({ theme }) => theme.ref['color-black']};
         }
     }
 `;
@@ -139,10 +139,10 @@ export const HiddenInput = styled.input<{ isMobile: boolean }>`
     width: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
 
     &:checked + ${Label} > ${Title} > ${RadioInput} {
-        border: 2px solid ${({ theme }) => theme.colors['primary-1.1']};
+        border: 2px solid ${({ theme }) => theme.ref['color-brand-50']};
 
         &::after {
-            background-color: ${({ theme }) => theme.colors['primary-1.1']};
+            background-color: ${({ theme }) => theme.ref['color-brand-50']};
             border-radius: 50%;
             content: '';
             height: var(--size-half);

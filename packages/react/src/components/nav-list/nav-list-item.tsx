@@ -31,7 +31,7 @@ const Label = styled.span`
 
 const iconSize = '16';
 const BaseIcon = styled(Icon).attrs({ size: iconSize })`
-    color: ${({ theme }) => theme.colors['dark-grey']};
+    color: ${({ theme }) => theme.ref['color-neutral-65']};
     min-width: ${iconSize}px;
 `;
 
@@ -50,7 +50,7 @@ interface LinkProps {
 
 const linkStyles = css<LinkProps>`
     align-items: center;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.ref['color-black']};
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     line-height: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? 2.5 : 2)}rem;
@@ -61,15 +61,15 @@ const linkStyles = css<LinkProps>`
     ${(props) => focus(props, undefined, undefined, true)};
 
     :hover {
-        background-color: ${({ theme }) => theme.colors.grey};
+        background-color: ${({ theme }) => theme.ref['color-neutral-15']};
 
         ${BaseIcon} {
-            color: ${({ theme }) => theme.colors.black};
+            color: ${({ theme }) => theme.ref['color-black']};
         }
     }
 
     &[disabled] {
-        color: ${({ theme }) => theme.colors['mid-grey']};
+        color: ${({ theme }) => theme.ref['color-neutral-30']};
         pointer-events: none;
     }
 `;

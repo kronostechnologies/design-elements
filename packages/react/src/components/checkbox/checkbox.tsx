@@ -16,7 +16,7 @@ import { useDataAttributes } from '../../hooks/use-data-attributes';
 const checkboxWidth = 'var(--size-1x)';
 
 const iconStyles = css`
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.ref['color-white']};
     display: none;
     height: 100%;
     left: 0;
@@ -34,8 +34,8 @@ const IndeterminateIcon = styled(Icon).attrs({ name: 'minus' })`
 
 const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     align-self: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.colors['light-grey'] : theme.colors.white)};
-    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['dark-grey'])};
+    background-color: ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-05'] : theme.ref['color-white'])};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-15'] : theme.ref['color-neutral-65'])};
     border-radius: var(--border-radius);
     box-sizing: border-box;
     display: inline-block;
@@ -46,7 +46,7 @@ const CustomCheckbox = styled.span<{ disabled?: boolean }>`
     width: ${checkboxWidth};
 
     &:hover {
-        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.colors.grey : theme.colors['primary-1.1'])};
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.ref['color-neutral-15'] : theme.ref['color-brand-50'])};
     }
 `;
 
@@ -57,8 +57,8 @@ const StyledInput = styled.input`
     width: 0;
 
     &:checked + ${CustomCheckbox} {
-        background-color: ${({ theme }) => theme.colors['primary-1.1']};
-        border: 1px solid ${({ theme }) => theme.colors['primary-1.1']};
+        background-color: ${({ theme }) => theme.ref['color-brand-50']};
+        border: 1px solid ${({ theme }) => theme.ref['color-brand-50']};
 
         > ${CheckMarkIcon} {
             display: block;
@@ -66,8 +66,8 @@ const StyledInput = styled.input`
     }
 
     :indeterminate + ${CustomCheckbox} {
-        background-color: ${({ theme }) => theme.colors['primary-1.1']};
-        border: 1px solid ${({ theme }) => theme.colors['primary-1.1']};
+        background-color: ${({ theme }) => theme.ref['color-brand-50']};
+        border: 1px solid ${({ theme }) => theme.ref['color-brand-50']};
 
         > ${IndeterminateIcon} {
             display: block;

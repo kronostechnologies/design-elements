@@ -72,10 +72,10 @@ export const BadgeCircle = styled.span<{
 }>`
     align-content: center;
     align-items: center;
-    background-color: ${(props) => props.theme.colors['alert-2.1']};
+    background-color: ${(props) => props.theme.ref['color-alert-50']};
     border-radius: 0.5rem;
     box-sizing: border-box;
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.ref['color-white']};
     display: flex;
     font-size: 0.75rem;
     font-weight: 400;

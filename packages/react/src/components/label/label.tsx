@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledLabel = styled.label<{isMobile: boolean}>`
-    color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.ref['color-black']};
     display: block;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
     font-weight: var(--font-normal);

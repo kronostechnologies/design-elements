@@ -4,7 +4,7 @@ import { Theme } from '../../themes';
 import { Bar } from '../bar/bar';
 
 const Label = styled.label`
-    color: ${(props: { theme: Theme }) => props.theme.colors.black};
+    color: ${(props: { theme: Theme }) => props.theme.ref['color-black']};
     display: block;
     font-size: 0.875rem;
     letter-spacing: 0.02875rem;
