@@ -42,14 +42,12 @@ function resolveTokens(
 
 function mergeColors<T>(base: T, customTheme: T): T {
     const merged: T = { ...base };
-console.log(customTheme)
     if (customTheme) {
         Object.keys(customTheme).forEach((key) => {
             // Check for undefined value (optional)
             if (customTheme[key as keyof T] !== undefined) {
                 // Use type assertion to inform TypeScript that the key is valid
                 const validKey = key as keyof T;
-                console.log(validKey, customTheme[validKey])
                 merged[validKey] = customTheme[validKey];
             }
         });
@@ -76,7 +74,7 @@ export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
 
     // Resolve tokens variables to colours
     const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['tokens'];
-console.log('customTheme',customTheme, 'mergedColors',mergedColors)
+
     return {
         ref: mergedColors,
         tokens: resolvedTokens,
