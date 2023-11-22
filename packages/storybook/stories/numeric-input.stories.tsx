@@ -12,9 +12,6 @@ export const Normal: Story = () => (
     <NumericInput
         label="Percentage"
         adornment="%"
-        min={0}
-        max={100}
-        step={5}
         defaultValue="50"
     />
 );
@@ -51,25 +48,59 @@ export const WithoutLabel: Story = () => (
     />
 );
 
-export const MinMaxStep: Story = () => (
+export const MinimumMaximum: Story = () => (
+    <>
+        <NumericInput
+            label="Percentage"
+            hint="Minimum 0 - Maximum 100"
+            adornment="%"
+            min={0}
+            max={100}
+        />
+        <NumericInput
+            label="Quantity"
+            hint="Minimum 5"
+            adornment="Qty"
+            min={5}
+        />
+    </>
+);
+
+export const Required: Story = () => (
     <NumericInput
         label="Percentage"
         adornment="%"
-        min={0}
-        max={100}
-        step={5}
-        defaultValue="50"
+        required
     />
 );
 
+export const Precision: Story = () => (
+    <>
+        <NumericInput
+            label="Percentage (precision = 0)"
+            adornment="%"
+            precision={0}
+        />
+        <NumericInput
+            label="Percentage (precision = 2)"
+            adornment="%"
+            precision={2}
+        />
+    </>
+);
+
 export const ControlledValue: Story = () => {
-    const [inputValue, setInputValue] = useState<number | null>(50);
+    const [inputValue, setInputValue] = useState('50');
     return (
         <NumericInput
             label="Percentage"
             adornment="%"
-            onChange={setInputValue}
-            value={inputValue ?? ''}
+            onChange={(event, valueAsNumber) => {
+                setInputValue(event.target.value);
+                console.info(`NumericInput value: ${event.target.value}`);
+                console.info(`NumericInput valueAsNumber: ${valueAsNumber}`);
+            }}
+            value={inputValue}
         />
     );
 };
@@ -84,12 +115,19 @@ export const Disabled: Story = () => (
     />
 );
 
-export const Invalid: Story = () => (
-    <NumericInput
-        label="Percentage"
-        adornment="%"
-        valid={false}
-        validationErrorMessage="This is an error message"
-        defaultValue={100}
-    />
+export const ExplicitInvalid: Story = () => (
+    <>
+        <NumericInput
+            label="Percentage"
+            adornment="%"
+            invalid
+            validationErrorMessage="This is an custom error message"
+            defaultValue={100}
+        />
+        <NumericInput
+            adornment="%"
+            invalid
+            defaultValue={100}
+        />
+    </>
 );

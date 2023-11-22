@@ -26,7 +26,7 @@ describe('NumericInput', () => {
 
     test('matches the snapshot (Invalid)', () => {
         const tree = renderWithTheme(
-            <NumericInput value="50" valid={false} adornment="%" validationErrorMessage="This is an error message" />,
+            <NumericInput value="50" adornment="%" validationErrorMessage="This is an error message" invalid />,
         );
 
         expect(tree).toMatchSnapshot();
@@ -38,9 +38,10 @@ describe('NumericInput', () => {
             <NumericInput onChange={onChange} />,
         );
 
-        getByTestId(wrapper, 'numeric-input').invoke('onChange')({ target: { value: '123' } });
+        const event = { target: { value: '123.50' } };
+        getByTestId(wrapper, 'numeric-input').invoke('onChange')(event);
 
-        expect(onChange).toHaveBeenCalledWith(123);
+        expect(onChange).toHaveBeenCalledWith(event, 123.5);
     });
 
     it('should call onChange with return value null when empty', () => {
@@ -49,9 +50,10 @@ describe('NumericInput', () => {
             <NumericInput onChange={onChange} />,
         );
 
-        getByTestId(wrapper, 'numeric-input').invoke('onChange')({ target: { value: '' } });
+        const event = { target: { value: '' } };
+        getByTestId(wrapper, 'numeric-input').invoke('onChange')(event);
 
-        expect(onChange).toHaveBeenCalledWith(null);
+        expect(onChange).toHaveBeenCalledWith(event, null);
     });
 
     test('has controllable value', () => {

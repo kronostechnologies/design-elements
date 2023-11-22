@@ -1,13 +1,18 @@
+/* eslint-disable no-console */
 import {
     ChangeEvent,
+    FocusEvent,
     HTMLProps,
     ReactNode,
     useCallback,
+    useEffect,
     useMemo,
     useRef,
+    useState,
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
+import { useTranslation } from '../../i18n/use-translation';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 import { Theme } from '../../themes';
@@ -15,6 +20,17 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
+
+function cleanupValueToDisplay(inputValue: string): string {
+    const value = inputValue.trim();
+
+    if (value === '' || value === '-' || value === '.') {
+        return '';
+    }
+
+    // Add missing integral zero (.25 => 0.25)
+    return value.replace(/^(-?)\./, '$10.');
+}
 
 interface StyledInputProps {
     device: DeviceContextProps;
@@ -95,15 +111,15 @@ interface NumericInputProps extends NativeInputProps {
     label?: string;
     max?: number;
     min?: number;
-    step?: number;
     noMargin?: boolean;
-    noInvalidFieldIcon?: boolean;
+    onChange?(event: ChangeEvent<HTMLInputElement>, valueAsNumber: number | null): void;
+    precision?: number;
+    required?: boolean;
     textAlign?: 'left' | 'right';
     tooltip?: TooltipProps;
-    valid?: boolean;
+    invalid?: boolean;
     validationErrorMessage?: string;
     value?: number | string;
-    onChange?(value: number | null): void;
 }
 
 export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
@@ -117,35 +133,93 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     label,
     max,
     min,
-    noInvalidFieldIcon,
     noMargin,
-    step,
-    textAlign = 'left',
-    tooltip,
-    valid = true,
-    validationErrorMessage,
-    value,
     onBlur,
     onChange,
     onFocus,
+    precision,
+    required,
+    textAlign = 'left',
+    tooltip,
+    invalid,
+    validationErrorMessage,
+    value,
 }) => {
+    const { t } = useTranslation('numeric-input');
     const inputRef = useRef<HTMLInputElement>(null);
     const device = useDeviceContext();
     const fieldId = useId(id);
+    const [stateValue, setStateValue] = useState(value?.toString() ?? defaultValue?.toString() ?? '');
+    const [stateErrorMessage, setStateErrorMessage] = useState<string>('');
+
+    const validate = useCallback((inputValue: string): void => {
+        let error: string = '';
+
+        if (required && inputValue === '') {
+            error = t('requiredValidationErrorMessage');
+        } else if (inputValue !== '') {
+            if (max !== undefined && Number(inputValue) > max) {
+                error = t('maxValidationErrorMessage', { max });
+            } else if (min !== undefined && Number(inputValue) < min) {
+                error = t('minValidationErrorMessage', { min });
+            }
+        }
+
+        setStateErrorMessage(error);
+    }, [t, max, min, required]);
+
+    const isValidInputtingChars = useCallback((inputValue: string): boolean => {
+        if (precision === 0 && inputValue.includes('.')) {
+            return false;
+        }
+        if (precision && precision > 0 && inputValue.split('.')[1]?.length > precision) {
+            return false;
+        }
+        if (!/^-?\d*\.?\d*$/.test(inputValue)) {
+            return false;
+        }
+
+        return true;
+    }, [precision]);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        const inputValue = event.target.value;
-        if (inputValue === '') {
-            onChange?.(null);
-        } else {
-            const currentValue = Number(inputValue);
-            onChange?.(currentValue);
+        let inputValue = event.target.value.trim();
+
+        // In case of a copy-paste, automatically truncate the precision if it exceeds the limit
+        if (precision !== undefined && inputValue.includes('.')) {
+            const atDot = inputValue.indexOf('.');
+            inputValue = inputValue.slice(0, precision === 0 ? atDot : atDot + precision + 1);
         }
-    }, [onChange]);
+
+        if (inputValue === '') {
+            setStateValue('');
+            onChange?.(event, null);
+        } else if (isValidInputtingChars(inputValue)) {
+            setStateValue(inputValue);
+            onChange?.(event, Number(inputValue));
+        }
+    }, [onChange, isValidInputtingChars, precision]);
+
+    const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
+        const inputValue = cleanupValueToDisplay(event.target.value);
+        setStateValue(inputValue);
+
+        validate(inputValue);
+        onBlur?.(event);
+    }, [onBlur, validate]);
+
+    useEffect(() => {
+        if (value !== undefined) {
+            setStateValue(value.toString());
+        }
+    }, [value]);
 
     const adornmentContent = useMemo(() => (
         adornment ? <Adornment $position={adornmentPosition}>{adornment}</Adornment> : null
     ), [adornment, adornmentPosition]);
+
+    const isInvalid = invalid ?? (validationErrorMessage !== undefined || stateErrorMessage !== '');
+    const errorMessage = validationErrorMessage ?? stateErrorMessage;
 
     return (
         <FieldContainer
@@ -155,28 +229,25 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            valid={valid}
-            noInvalidFieldIcon={noInvalidFieldIcon}
-            validationErrorMessage={validationErrorMessage ?? ''}
+            valid={!isInvalid}
+            noInvalidFieldIcon={!errorMessage}
+            validationErrorMessage={errorMessage}
         >
-            <Wrapper $disabled={disabled} $invalid={!valid}>
+            <Wrapper $disabled={disabled} $invalid={isInvalid}>
                 {(adornment && adornmentPosition === 'start') && adornmentContent}
                 <StyledInput
                     $textAlign={textAlign}
                     data-testid="numeric-input"
-                    defaultValue={defaultValue}
                     device={device}
                     disabled={disabled}
                     id={fieldId}
-                    max={max}
-                    min={min}
+                    inputMode="numeric"
                     onChange={handleChange}
-                    onBlur={onBlur}
+                    onBlur={handleBlur}
                     onFocus={onFocus}
                     ref={inputRef}
-                    step={step}
-                    type="number"
-                    value={value}
+                    type="text"
+                    value={stateValue}
                 />
                 {(adornment && adornmentPosition === 'end') && adornmentContent}
             </Wrapper>
