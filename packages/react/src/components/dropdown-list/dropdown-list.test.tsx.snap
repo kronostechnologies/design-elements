@@ -118,7 +118,7 @@ input + .c2 {
   background-color: #DBDEE1;
 }
 
-.c9:focus:not(:hover) {
+.c9:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -733,7 +733,7 @@ input + .c2 {
   background-color: #DBDEE1;
 }
 
-.c12:focus:not(:hover) {
+.c12:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -1433,7 +1433,7 @@ input + .c2 {
   background-color: #DBDEE1;
 }
 
-.c9:focus:not(:hover) {
+.c9:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -2090,7 +2090,7 @@ exports[`Select mobile select has a different style 1`] = `
   background-color: #DBDEE1;
 }
 
-.c7:focus:not(:hover) {
+.c7:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }

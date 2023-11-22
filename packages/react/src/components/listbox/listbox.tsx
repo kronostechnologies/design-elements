@@ -202,12 +202,13 @@ const ListItem = styled.li<ListItemProps>`
     line-height: ${({ isMobile }) => (isMobile ? 1.5 : 1.72)};
     padding: ${({ isMobile }) => (isMobile ? 4 : 4)}px ${({ isMobile }) => (isMobile ? 16 : 8)}px ${({ isMobile }) => (isMobile ? 4 : 4)}px ${getListItemSidePadding};
     padding-left: ${({ checkIndicator }) => (checkIndicator && '16px')};
+
     &:hover {
-        background-color: ${({ theme }) => theme.greys.grey};
+        background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
     }
 
-    &:focus:not(:hover) {
-        outline: 2px solid ${({ theme }) => theme.main['primary-1.1']};
+    &:focus {
+        outline: 2px solid ${({ theme, disabled }) => (disabled ? 'transparent' : theme.main['primary-1.1'])};
         outline-offset: -2px;
     }
 
@@ -258,7 +259,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
         ? options.findIndex((option) => option.value === selectedOptionValue[0])
         : -1));
-
     const list: ListOption[] = useMemo((): ListOption[] => options.map(
         (option, index) => ({
             ...option,
@@ -343,11 +343,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         [selectedFocusIndex],
     );
 
-    /* const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
-        (option) => checkIndicator && isOptionSelected(option),
-        [checkIndicator, isOptionSelected],
-    ); */
-
     const selectOption: (option: ListOption) => void = useCallback((option) => {
         setSelectedFocusIndex(option.focusIndex);
 
@@ -375,9 +370,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [list]);
 
     const handleListItemClick: (option: ListOption) => () => void = useCallback(
-        (option) => () => {
-            selectOption(option);
-        },
+        (option) => () => selectOption(option),
         [selectOption],
     );
 
@@ -432,54 +425,52 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         switch (e.key) {
             case ' ': {
                 e.preventDefault();
-
-                /* const listItem = e.target as HTMLLIElement;
-                    const option = list.find((item) => item.id === listItem.id);
-                    if (option && option.focusIndex < 0 ) {
-                        console.log("not selected",selectedFocusIndex, listItem, option);
-                        selectOption(option);
-
-                    }else{
-                        console.log("selected",selectedFocusIndex, listItem, option)
-                } */
+                if (multiselect) {
+                    if (selectedFocusIndex >= 0) {
+                        selectOption(list[selectedFocusIndex]);
+                    }
+                }
 
                 break;
             }
             case 'ArrowUp': {
+                // arrowUp logic does not work for focuse event. the listItem has already a tabindex of -1
+                // it just need the logic to focus the next item
                 e.preventDefault();
                 const prevOption = getPrevSelectableOption(selectedFocusIndex);
 
                 if (prevOption) {
                     setSelectedFocusIndex(prevOption.focusIndex);
+
                     if (onFocusedValueChange) {
                         onFocusedValueChange(list[prevOption.focusIndex]);
                     }
 
-                    const prevItem = list[prevOption.focusIndex];
-                    if (!multiselect) { selectOption(prevItem); }
-                    prevItem.ref.current?.focus();
+                    if (!multiselect) {
+                        selectOption(prevOption);
+                    }
+                    // prevOption.ref.current?.focus();
                 }
 
                 break;
             }
             case 'ArrowDown': {
+                // arrowDown logic does not work for focuse event. the listItem has already a tabindex of -1
+                // it just need the logic to focus the next item
                 e.preventDefault();
+                const nextOption = getNextSelectableOption(selectedFocusIndex);
 
-                if (document.activeElement instanceof HTMLUListElement) {
-                    list[selectedFocusIndex].ref.current?.focus();
-                } else {
-                    const nextOption = getNextSelectableOption(selectedFocusIndex);
+                if (nextOption) {
+                    setSelectedFocusIndex(nextOption.focusIndex);
 
-                    if (nextOption) {
-                        setSelectedFocusIndex(nextOption.focusIndex);
-                        if (onFocusedValueChange) {
-                            onFocusedValueChange(list[nextOption.focusIndex]);
-                        }
-
-                        const nextItem = list[nextOption.focusIndex];
-                        if (!multiselect) { selectOption(nextItem); }
-                        nextItem.ref.current?.focus();
+                    if (onFocusedValueChange) {
+                        onFocusedValueChange(list[nextOption.focusIndex]);
                     }
+
+                    if (!multiselect) {
+                        selectOption(nextOption);
+                    }
+                    // nextOption.ref.current?.focus();
                 }
 
                 break;
@@ -521,13 +512,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 id={id}
                 isMobile={isMobile}
                 numberOfItemsVisible={numberOfItemsVisible}
-                onBlur={() => {
-                    const prevItemRef = list[selectedFocusIndex]?.ref;
-                    if (prevItemRef && prevItemRef.current) {
-                        prevItemRef.current.classList.remove('focused');
-                    }
-                    setSelectedFocusIndex(-1);
-                }}
+                onBlur={() => setSelectedFocusIndex(-1)}
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyDown}
                 ref={listRefCallback}

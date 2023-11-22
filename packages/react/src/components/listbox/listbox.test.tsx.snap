@@ -100,7 +100,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c2:focus:not(:hover) {
+.c2:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -136,7 +136,7 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c7:focus:not(:hover) {
+.c7:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -169,11 +169,11 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
 }
 
 .c8:hover {
-  background-color: #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c8:focus:not(:hover) {
-  outline: 2px solid #006296;
+.c8:focus {
+  outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
@@ -422,7 +422,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c2:focus:not(:hover) {
+.c2:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -458,7 +458,7 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
   background-color: #DBDEE1;
 }
 
-.c7:focus:not(:hover) {
+.c7:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -491,11 +491,11 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 }
 
 .c8:hover {
-  background-color: #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c8:focus:not(:hover) {
-  outline: 2px solid #006296;
+.c8:focus {
+  outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
@@ -744,7 +744,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c2:focus:not(:hover) {
+.c2:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -780,7 +780,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   background-color: #DBDEE1;
 }
 
-.c7:focus:not(:hover) {
+.c7:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
@@ -813,11 +813,11 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 .c8:hover {
-  background-color: #DBDEE1;
+  background-color: #FFFFFF;
 }
 
-.c8:focus:not(:hover) {
-  outline: 2px solid #006296;
+.c8:focus {
+  outline: 2px solid transparent;
   outline-offset: -2px;
 }
 
