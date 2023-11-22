@@ -15,7 +15,7 @@ const routeMap = (length: number): BreadcrumbElement[] => {
 };
 
 export default {
-    title: 'Navigation/Breadcrumb',
+    title: 'Components/Navigation/Breadcrumb',
     component: Breadcrumb,
     decorators: [RouterDecorator],
 };

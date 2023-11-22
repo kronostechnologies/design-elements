@@ -2,7 +2,7 @@ import { Listbox } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 
 export default {
-    title: 'Controls/Listbox',
+    title: 'Components/Controls/Listbox',
     component: Listbox,
 };
 

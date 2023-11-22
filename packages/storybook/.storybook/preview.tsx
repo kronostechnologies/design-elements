@@ -25,7 +25,15 @@ const parameters: Parameters = {
 
 const preview: Preview = {
     decorators,
-    parameters,
+    parameters: {
+        options: {
+          storySort: {
+            method: '',
+            order: ['Foundations', 'Components', ['*', 'Deprecated'], '*'],
+            locales: '',
+          },
+        },
+      },
 };
 
 export default preview;

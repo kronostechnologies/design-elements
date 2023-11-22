@@ -2,7 +2,7 @@ import { Progress, ProgressTracker } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 
 export default {
-    title: 'Data/Progress Tracker',
+    title: 'Components/Data/Progress Tracker',
     component: Progress,
 };
 

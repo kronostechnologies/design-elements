@@ -16,7 +16,7 @@ const Box = styled.div`
 `;
 
 export default {
-    title: 'Structure/Side Drawer',
+    title: 'Components/Structure/Side Drawer',
     component: SideDrawer,
     parameters: rawCodeParameters,
 };

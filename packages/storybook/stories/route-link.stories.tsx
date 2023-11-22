@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { RouterDecorator } from './utils/router-decorator';
 
 export default {
-    title: 'Navigation/Route Link',
+    title: 'Components/Navigation/Route Link',
     component: RouteLink,
     decorators: [RouterDecorator],
 };

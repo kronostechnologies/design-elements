@@ -19,7 +19,7 @@ const legendItems: LegendItem[] = [
 ];
 
 export default {
-    title: 'Data/Legend',
+    title: 'Components/Data/Legend',
     component: Legend,
 };
 

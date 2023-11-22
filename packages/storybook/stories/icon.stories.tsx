@@ -2,7 +2,7 @@ import { Icon } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 
 export default {
-    title: 'Icons/Icon',
+    title: 'Foundations/Icons/Icon',
     component: Icon,
 };
 
