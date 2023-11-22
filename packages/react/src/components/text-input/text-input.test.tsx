@@ -74,6 +74,15 @@ describe('TextInput', () => {
         expect(container.prop('valid')).toBe(true);
     });
 
+    test('should set as invalid when valid prop is false and input trigger blur again', () => {
+        const wrapper = shallow(<TextInput valid={false} />);
+
+        const textInput = getByTestId(wrapper, 'text-input');
+        textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
+
+        expect(wrapper.prop('valid')).toBe(false);
+    });
+
     test('onChange callback is called when content is changed', () => {
         const callback = jest.fn();
         const wrapper = setup(callback);
