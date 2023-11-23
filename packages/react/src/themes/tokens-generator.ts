@@ -1,7 +1,7 @@
-import { Theme } from './default-types';
+import { Theme, ComponentTokens } from './interface';
 
-export const generateTokens = (ref: Theme['ref']): Theme['component'] => {
-    const tokens: Theme['component'] = {
+export const generateTokens = <T extends keyof ComponentTokens>(ref: Theme['ref']): Record<T, string> => {
+    const tokens = {
         'focus-box-shadow': `0 0 0 2px ${ref['color-brand-20']}`,
         'focus-box-shadow-inset': `inset 0 0 0 2px ${ref['color-brand-20']}`,
         'focus-border-box-shadow': ` 0 0 0 1px ${ref['color-brand-50']}, 0 0 0 3px ${ref['color-brand-20']}`,
@@ -130,6 +130,7 @@ export const generateTokens = (ref: Theme['ref']): Theme['component'] => {
         'button-search-disabled-background-color': `${ref['color-neutral-05']}`,
         'button-search-disabled-border-color': `${ref['color-neutral-15']}`,
         'button-search-disabled-text-color': `${ref['color-neutral-30']}`,
-    };
+    } as Record<T, string>;
+
     return tokens;
 };
