@@ -8,7 +8,7 @@ const List = styled.div`
     background-color: ${({ theme }) => theme.ref['color-white']};
     border: 1px solid ${({ theme }) => theme.ref['color-neutral-65']};
     border-radius: var(--border-radius);
-    box-shadow: ${({ theme }) => theme.tokens['overlay-box-shadow']};
+    box-shadow: ${({ theme }) => theme.component['overlay-box-shadow']};
     color: ${({ theme }) => theme.ref['color-black']};
     list-style-type: none;
     position: absolute;

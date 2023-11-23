@@ -65,7 +65,7 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
             position: relative;
 
             &::after {
-                box-shadow: ${theme.tokens['focus-border-box-shadow-inset']};
+                box-shadow: ${theme.component['focus-border-box-shadow-inset']};
                 content: '';
                 height: calc(100% + 3px);
                 left: 0;

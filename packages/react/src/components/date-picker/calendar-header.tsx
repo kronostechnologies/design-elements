@@ -32,7 +32,7 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
 const StyledButton = styled.button`
     &:focus {
         border-radius: var(--border-radius);
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
+        box-shadow: ${({ theme }) => theme.component['focus-box-shadow']};
     }
 `;
 

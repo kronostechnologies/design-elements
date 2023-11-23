@@ -92,7 +92,7 @@ const ButtonStyled = styled(Button)<{ theme: Theme }>`
     }
 
     &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow-inset']};
+        box-shadow: ${({ theme }) => theme.component['focus-box-shadow-inset']};
         color: ${({ theme }) => theme.ref['color-neutral-90']};
     }
 

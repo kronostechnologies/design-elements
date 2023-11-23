@@ -47,4 +47,4 @@ export const palette: Theme['ref'] = {
     'color-discovery-70': '#3A1C60',
 };
 
-export const tokens: Theme['tokens'] = generateTokens(palette);
+export const tokens: Theme['component'] = generateTokens(palette);

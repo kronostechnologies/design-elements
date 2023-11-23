@@ -65,8 +65,8 @@ const StyledModal = styled(ReactModal)<StyledModalProps>`
     }
 
     &:focus {
-        border-color: ${({ theme }) => theme.tokens['focus-border']};
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
+        border-color: ${({ theme }) => theme.component['focus-border']};
+        box-shadow: ${({ theme }) => theme.component['focus-box-shadow']}, 0 6px 10px 0 rgb(0 0 0 / 10%);
         outline: none;
     }
 `;
@@ -180,7 +180,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     const customStyles = {
         overlay: { /* stylelint-disable-line selector-type-no-unknown */
             alignItems: 'center',
-            backgroundColor: theme.tokens['modal-overlay-background-color'],
+            backgroundColor: theme.component['modal-overlay-background-color'],
             display: 'flex',
             justifyContent: 'center',
             zIndex: 10000,

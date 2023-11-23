@@ -90,7 +90,7 @@ const Button = styled.button<ButtonProps>`
     width: 100%;
 
     &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow-inset']};
+        box-shadow: ${({ theme }) => theme.component['focus-border-box-shadow-inset']};
         outline: none;
     }
 

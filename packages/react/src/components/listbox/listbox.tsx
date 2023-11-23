@@ -141,7 +141,7 @@ const List = styled.ul<ListProps>`
     z-index: 1000;
 
     &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgb(0 0 0 / 19%);
+        box-shadow: ${({ theme }) => theme.component['focus-border-box-shadow']}, 0 10px 20px 0 rgb(0 0 0 / 19%);
         outline: none;
     }
 `;

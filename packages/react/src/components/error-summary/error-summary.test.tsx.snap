@@ -52,7 +52,7 @@ exports[`ErrorSummary matches the snapshot 1`] = `
 }
 
 .c0 {
-  background-color: #fdf6f7;
+  background-color: color-alert-02;
   border: 1px solid #CD2C23;
   box-sizing: border-box;
   line-height: 24px;

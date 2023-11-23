@@ -82,10 +82,10 @@ function abstractContainer(
     `;
 }
 
-const InfoContainer = abstractContainer('#f9f7fb', 'color-informative-50');
-const SuccessContainer = abstractContainer('#f6fbf8', 'color-success-50');
-const WarningContainer = abstractContainer('#fffbf5', 'color-warning-50', 'color-warning-70');
-const AlertContainer = abstractContainer('#fdf6f7', 'color-alert-50');
+const InfoContainer = abstractContainer('color-discovery-02', 'color-discovery-50');
+const SuccessContainer = abstractContainer('color-success-02', 'color-success-50');
+const WarningContainer = abstractContainer('color-warning-02', 'color-warning-50', 'color-warning-70');
+const AlertContainer = abstractContainer('color-alert-02', 'color-alert-50');
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};

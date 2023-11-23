@@ -5,9 +5,9 @@ export const focus = ({ theme }: { theme: Theme }, hasBorder = false, selector: 
     ${selector === undefined ? '&:focus { outline: none; }' : ''}
     ${selector === undefined ? '&:focus' : `${selector}`} {
         outline: none;
-        ${hasBorder ? `border-color: ${theme.tokens['focus-border']};` : ''}
-        box-shadow: ${theme.tokens['focus-box-shadow']};
-        ${!hasBorder ? `box-shadow: ${inset ? theme.tokens['focus-border-box-shadow-inset'] : theme.tokens['focus-border-box-shadow']};` : ''}
+        ${hasBorder ? `border-color: ${theme.component['focus-border']};` : ''}
+        box-shadow: ${theme.component['focus-box-shadow']};
+        ${!hasBorder ? `box-shadow: ${inset ? theme.component['focus-border-box-shadow-inset'] : theme.component['focus-border-box-shadow']};` : ''}
     }
 `;
 

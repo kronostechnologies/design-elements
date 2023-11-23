@@ -11,15 +11,15 @@ interface MergedColors {
 }
 
 function resolveTokens(
-    customTokens: { tokens?: TokenObject },
+    customTokens: { component?: TokenObject },
     mergedColors: MergedColors,
-    baseTokens: { tokens: TokenObject },
+    baseTokens: { component: TokenObject },
 ): Record<string, string> {
     const resolved: Record<string, string> = {};
 
-    Object.keys(baseTokens.tokens as object).forEach((key) => {
-        if (customTokens && customTokens.tokens && (key in customTokens.tokens)) {
-            const tokenValue = customTokens.tokens[key];
+    Object.keys(baseTokens.component as object).forEach((key) => {
+        if (customTokens && customTokens.component && (key in customTokens.component)) {
+            const tokenValue = customTokens.component[key];
             // Check if tokenValue is a string and starts with colors.
             if (typeof tokenValue === 'string') {
                 // const value = tokenValue.substring(7);
@@ -63,7 +63,7 @@ export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
     if (!customTheme) {
         return {
             ref: equisoftTheme.ref,
-            tokens: equisoftTheme.tokens,
+            component: equisoftTheme.component,
         };
     }
 
@@ -73,10 +73,10 @@ export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
         : equisoftTheme.ref;
 
     // Resolve tokens variables to colours
-    const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['tokens'];
+    const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['component'];
 
     return {
         ref: mergedColors,
-        tokens: resolvedTokens,
+        component: resolvedTokens,
     };
 };

@@ -109,12 +109,12 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => isMobile && css`
             border: 1px solid ${theme.ref['color-brand-50']};
-            box-shadow: ${theme.tokens['focus-box-shadow']};
+            box-shadow: ${theme.component['focus-box-shadow']};
         `};
 
         &:focus {
             border: 1px solid ${({ theme }) => theme.ref['color-brand-50']};
-            box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
+            box-shadow: ${({ theme }) => theme.component['focus-box-shadow']};
         }
     }
 
@@ -146,11 +146,11 @@ const Container = styled.div<{ isMobile: boolean, theme: Theme }>`
         /* stylelint-disable-next-line declaration-colon-newline-after */
         ${({ isMobile, theme }) => (isMobile ? `
             &[tabindex="0"] {
-                box-shadow: ${theme.tokens['focus-box-shadow']};
+                box-shadow: ${theme.component['focus-box-shadow']};
             }
         ` : `
             &:focus {
-                box-shadow: ${theme.tokens['focus-box-shadow']};
+                box-shadow: ${theme.component['focus-box-shadow']};
             }
         `)};
 
@@ -237,7 +237,7 @@ const StyledDatePicker = styled(DatePicker)<StyledDatePickerProps>`
 
         &:focus {
             border: 1px solid ${getInputFocusBorderColor};
-            box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
+            box-shadow: ${({ theme }) => theme.component['focus-box-shadow']};
             outline: none;
         }
     }
@@ -269,7 +269,7 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     &:focus {
         border: 1px solid ${({ theme }) => theme.ref['color-brand-50']};
         border-left: none;
-        box-shadow: ${({ theme }) => theme.tokens['focus-box-shadow']};
+        box-shadow: ${({ theme }) => theme.component['focus-box-shadow']};
         outline: none;
         z-index: 10;
     }
