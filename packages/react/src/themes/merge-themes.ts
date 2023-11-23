@@ -1,39 +1,28 @@
-import { Theme } from './default-types';
 import { equisoftTheme } from './equisoft';
-import { CustomTheme } from './custom-types';
 import { generateTokens } from './tokens-generator';
-
-interface TokenObject {
-    [key: string]: string;
-}
-interface MergedColors {
-    [key: string]: string;
-}
+import { Palette, ComponentTokens, Theme, ThemeCustomization } from './interface';
 
 function resolveTokens(
-    customTokens: { component?: TokenObject },
-    mergedColors: MergedColors,
-    baseTokens: { component: TokenObject },
-): Record<string, string> {
-    const resolved: Record<string, string> = {};
+    customTokens: ThemeCustomization,
+    mergedColors: Palette,
+    baseTokens: { component: ComponentTokens },
+): ComponentTokens {
+    const resolved: ComponentTokens = { ...baseTokens.component };
 
-    Object.keys(baseTokens.component as object).forEach((key) => {
-        if (customTokens && customTokens.component && (key in customTokens.component)) {
-            const tokenValue = customTokens.component[key];
-            // Check if tokenValue is a string and starts with colors.
-            if (typeof tokenValue === 'string') {
-                // const value = tokenValue.substring(7);
-                if (tokenValue in mergedColors) {
-                    resolved[key] = mergedColors[tokenValue];
-                } else {
-                    console.error(`Unknown token reference: ${tokenValue}. It should be a string color-property.`);
-                }
+    Object.keys(baseTokens.component).forEach((key) => {
+
+        if (customTokens.component) {
+            const tokenValue = (customTokens.component as Record<string, keyof Palette>)[key];
+
+            if (tokenValue in mergedColors) {
+                console.log(`Token reference: ${tokenValue}.`, key);
+                resolved[key] = mergedColors[tokenValue as keyof Palette];
             } else {
-                resolved[key] = tokenValue;
+                console.error(`Unknown token reference: ${tokenValue}. It should be a string color-property.`);
             }
         } else {
-            const tokens = generateTokens(mergedColors as Theme['ref']) as TokenObject;
-            resolved[key] = tokens[key];
+            const tokens = generateTokens(mergedColors);
+            resolved[key as keyof ComponentTokens] = tokens[key];
         }
     });
 
@@ -44,9 +33,7 @@ function mergeColors<T>(base: T, customTheme: T): T {
     const merged: T = { ...base };
     if (customTheme) {
         Object.keys(customTheme).forEach((key) => {
-            // Check for undefined value (optional)
             if (customTheme[key as keyof T] !== undefined) {
-                // Use type assertion to inform TypeScript that the key is valid
                 const validKey = key as keyof T;
                 merged[validKey] = customTheme[validKey];
             }
@@ -56,10 +43,9 @@ function mergeColors<T>(base: T, customTheme: T): T {
     return merged;
 }
 
-export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
+export const mergedTheme = (props: { theme?: ThemeCustomization }): Theme => {
     const customTheme = props.theme;
 
-    // If custom theme is not provided, use equisoftTheme
     if (!customTheme) {
         return {
             ref: equisoftTheme.ref,
@@ -72,8 +58,10 @@ export const mergedTheme = (props: { theme?: CustomTheme }): Theme => {
         ? mergeColors(equisoftTheme.ref, customTheme.ref) as Theme['ref']
         : equisoftTheme.ref;
 
-    // Resolve tokens variables to colours
-    const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme) as Theme['component'];
+    // Resolve tokens variables colours
+    console.log('mergedColors', equisoftTheme, customTheme, mergedColors);
+    //const resolvedTokens = equisoftTheme.component;
+ const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme);
 
     return {
         ref: mergedColors,
