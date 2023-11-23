@@ -20,6 +20,9 @@ const parameters: Parameters = {
             type: 'dynamic',
             excludeDecorators: true,
         },
+        controls: {
+            sort: 'alpha',
+        },
     },
 };
 
