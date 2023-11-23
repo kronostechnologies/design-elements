@@ -1,9 +1,9 @@
 import * as equisoftPalette from './default-theme';
-import { Theme } from './default-types';
+import { Theme } from './interface';
 
-const { palette, tokens } = equisoftPalette;
+const { palette, component } = equisoftPalette;
 
 export const equisoftTheme: Theme = {
     ref: palette,
-    component: tokens,
+    component: component,
 };

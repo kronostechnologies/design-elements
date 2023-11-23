@@ -91,7 +91,7 @@ export { Pagination } from './components/pagination/pagination';
 // Themes
 export { equisoftTheme } from './themes';
 export { injectMainCss } from './styles';
-export { Theme } from './themes/default-types';
+export { Theme } from './themes/interface';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';

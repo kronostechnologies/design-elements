@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
-import { equisoftTheme, CustomTheme, mergedTheme } from '../../themes';
+import { equisoftTheme, ThemeCustomization, mergedTheme } from '../../themes';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 export interface ThemeWrapperProps {
@@ -10,8 +10,9 @@ export interface ThemeWrapperProps {
      * @default false
      */
     isolateStyles?: boolean;
-    theme?: CustomTheme;
+    theme?: ThemeCustomization;
 }
+
 
 /**
  * @deprecated Use {@link DesignSystem} instead

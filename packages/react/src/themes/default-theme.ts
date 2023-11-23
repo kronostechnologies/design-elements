@@ -1,4 +1,4 @@
-import { Theme } from './default-types';
+import { Theme, ComponentTokens, Palette } from './interface';
 import { generateTokens } from './tokens-generator';
 
 export const palette: Theme['ref'] = {
@@ -45,6 +45,6 @@ export const palette: Theme['ref'] = {
     'color-discovery-20': '#CFC1E3',
     'color-discovery-50': '#602FA0',
     'color-discovery-70': '#3A1C60',
-};
+} as Palette;
 
-export const tokens: Theme['component'] = generateTokens(palette);
+export const component: Theme['component'] = generateTokens(palette) as ComponentTokens;
