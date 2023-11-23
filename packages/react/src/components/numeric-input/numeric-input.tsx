@@ -99,7 +99,7 @@ const Wrapper = styled.div<StyledWrapperProps>`
     }
 `;
 
-type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'onBlur'>;
+type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus'>;
 
 interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
@@ -112,6 +112,7 @@ interface NumericInputProps extends NativeInputProps {
     max?: number;
     min?: number;
     noMargin?: boolean;
+    onBlur?(event: ChangeEvent<HTMLInputElement>, valueAsNumber: number | null): void;
     onChange?(event: ChangeEvent<HTMLInputElement>, valueAsNumber: number | null): void;
     precision?: number;
     required?: boolean;
@@ -203,9 +204,10 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
         const inputValue = cleanupValueToDisplay(event.target.value);
         setStateValue(inputValue);
-
         validate(inputValue);
-        onBlur?.(event);
+
+        const valueAsNumber = inputValue === '' ? null : Number(inputValue);
+        onBlur?.(event, valueAsNumber);
     }, [onBlur, validate]);
 
     useEffect(() => {

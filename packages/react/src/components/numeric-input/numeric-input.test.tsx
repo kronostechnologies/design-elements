@@ -44,6 +44,18 @@ describe('NumericInput', () => {
         expect(onChange).toHaveBeenCalledWith(event, 123.5);
     });
 
+    it('should call onBlur with return value as number', () => {
+        const onBlur = jest.fn();
+        const wrapper = shallow(
+            <NumericInput onBlur={onBlur} />,
+        );
+
+        const event = { target: { value: '123.50' } };
+        getByTestId(wrapper, 'numeric-input').invoke('onBlur')(event);
+
+        expect(onBlur).toHaveBeenCalledWith(event, 123.5);
+    });
+
     it('should call onChange with return value null when empty', () => {
         const onChange = jest.fn();
         const wrapper = shallow(
