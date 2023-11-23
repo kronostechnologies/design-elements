@@ -2,6 +2,10 @@ import { equisoftTheme } from './equisoft';
 import { generateTokens } from './tokens-generator';
 import { Palette, ComponentTokens, Theme, ThemeCustomization } from './interface';
 
+type RefTokens = Palette;
+type AliasTokens = ComponentTokens;
+type AllTokens = RefTokens | AliasTokens;
+
 function resolveTokens(
     customTokens: ThemeCustomization,
     mergedColors: Palette,
@@ -9,20 +13,19 @@ function resolveTokens(
 ): ComponentTokens {
     const resolved: ComponentTokens = { ...baseTokens.component };
 
-    Object.keys(baseTokens.component).forEach((key) => {
+    Object.keys(baseTokens.component).forEach((componentKey) => {
+        const key = componentKey as keyof ComponentTokens;
 
         if (customTokens.component) {
-            const tokenValue = (customTokens.component as Record<string, keyof Palette>)[key];
-
-            if (tokenValue in mergedColors) {
-                console.log(`Token reference: ${tokenValue}.`, key);
-                resolved[key] = mergedColors[tokenValue as keyof Palette];
+            const tokenValue = customTokens.component[key];
+            if (tokenValue !== undefined && !(tokenValue in mergedColors)) {
+                console.error(`Error on color reference: ${tokenValue} in component: ${componentKey}. It should be a value existing in the palette/ref colors name.`);
             } else {
-                console.error(`Unknown token reference: ${tokenValue}. It should be a string color-property.`);
+                resolved[key] = mergedColors[tokenValue as keyof AllTokens];
             }
         } else {
             const tokens = generateTokens(mergedColors);
-            resolved[key as keyof ComponentTokens] = tokens[key];
+            resolved[key] = tokens[key] as NonNullable<ComponentTokens[keyof ComponentTokens]>;
         }
     });
 
@@ -59,9 +62,9 @@ export const mergedTheme = (props: { theme?: ThemeCustomization }): Theme => {
         : equisoftTheme.ref;
 
     // Resolve tokens variables colours
-    console.log('mergedColors', equisoftTheme, customTheme, mergedColors);
-    //const resolvedTokens = equisoftTheme.component;
- const resolvedTokens = resolveTokens(customTheme, mergedColors, equisoftTheme);
+    const resolvedTokens = customTheme.component
+        ? resolveTokens(customTheme, mergedColors, equisoftTheme)
+        : equisoftTheme.component;
 
     return {
         ref: mergedColors,
