@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, EventHandler, forwardRef, MouseEvent, PropsWithChildren, Ref, useCallback } from 'react';
+import { ButtonHTMLAttributes, forwardRef, PropsWithChildren, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
 import { focus } from '../../utils/css-state';
@@ -72,17 +72,11 @@ const StyledButton = styled.button<AbstractButtonProps>`
 export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<AbstractButtonProps>>((
     { children, onClick, ...props }: AbstractButtonProps,
     ref: Ref<HTMLButtonElement>,
-) => {
-    const handleClick: EventHandler<MouseEvent<HTMLButtonElement>> = useCallback((event) => {
-        event.stopPropagation();
-        onClick?.(event);
-    }, [onClick]);
+) => (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <StyledButton onClick={onClick} ref={ref} {...props}>{children}</StyledButton>
+));
 
-    return (
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        <StyledButton onClick={handleClick} ref={ref} {...props}>{children}</StyledButton>
-    );
-});
 AbstractButton.displayName = 'AbstractButton';
 
 type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';

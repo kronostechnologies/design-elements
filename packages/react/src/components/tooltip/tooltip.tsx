@@ -2,7 +2,6 @@ import {
     FunctionComponent,
     KeyboardEvent as ReactKeyboardEvent,
     MouseEvent,
-    MouseEventHandler,
     PropsWithChildren,
     useCallback,
     useEffect,
@@ -201,7 +200,6 @@ export interface TooltipProps {
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
-    onClick?: () => void;
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -225,7 +223,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     label,
     mode = 'normal',
     confirmationLabel,
-    onClick,
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -306,10 +303,9 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile, closeTooltip]);
 
-    const handleOnClick: MouseEventHandler = useCallback(() => {
-        onClick?.();
+    const handleOnClick = useCallback(() => {
         setIsClicked(true);
-    }, [onClick]);
+    }, [setIsClicked]);
 
     const handleFocus = useCallback((): void => {
         if (!isMobile) {

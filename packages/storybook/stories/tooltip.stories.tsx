@@ -132,22 +132,32 @@ export const WithDropdownNavigation: Story = () => {
 
 WithDropdownNavigation.decorators = [RouterDecorator];
 
+const CodeContainer = styled.div`
+    display: flex;
+`;
 export const WithConfirmation: Story = () => {
-    const handleOnClick = (): void => {
-        console.info('onclick');
-    };
+    const code = 'JBSW Y3DP EHPK 3PXP';
 
     return (
         <Container>
-            <Tooltip
-                label="label"
-                confirmationLabel="label confirmation"
-                onClick={handleOnClick}
-                desktopPlacement="bottom"
-                mode='confirm'
-            >
-                JBSW Y3DP EHPK 3PXP
-            </Tooltip>
+            <CodeContainer>
+                <span>{code}</span>
+                <Tooltip
+                    label="label"
+                    confirmationLabel="label confirmation"
+                    desktopPlacement="bottom"
+                    mode='confirm'
+                >
+                    <IconButton
+                        buttonType='tertiary'
+                        type='button'
+                        iconName='copy'
+                        onClick={() => {
+                            navigator.clipboard.writeText(code);
+                        }}
+                    />
+                </Tooltip>
+            </CodeContainer>
         </Container>
     );
 };
