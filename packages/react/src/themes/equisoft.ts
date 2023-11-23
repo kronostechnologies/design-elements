@@ -5,5 +5,5 @@ const { palette, component } = equisoftPalette;
 
 export const equisoftTheme: Theme = {
     ref: palette,
-    component: component,
+    component,
 };

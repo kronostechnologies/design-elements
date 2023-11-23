@@ -1,6 +1,7 @@
-import { Palette, AliasTokens } from './';
+import { CommonTypes } from './common-types';
 
-type RefTokens = Palette;
+type RefTokens = CommonTypes['Palette'];
+type AliasTokens = CommonTypes['AliasTokens'];
 
 export interface ComponentTokens {
     'button-primary-background-color': keyof AliasTokens | keyof RefTokens;

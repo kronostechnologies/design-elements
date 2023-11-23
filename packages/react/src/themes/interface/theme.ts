@@ -1,6 +1,7 @@
-import { Palette, ComponentTokens } from './';
+import { CommonTypes } from './common-types';
+import { ComponentTokens } from './component-tokens';
 
-type RefTokens = Palette;
+type RefTokens = CommonTypes['Palette'];
 
 export interface Theme {
     ref: RefTokens;

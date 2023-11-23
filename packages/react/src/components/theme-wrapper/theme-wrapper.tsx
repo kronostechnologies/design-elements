@@ -13,7 +13,6 @@ export interface ThemeWrapperProps {
     theme?: ThemeCustomization;
 }
 
-
 /**
  * @deprecated Use {@link DesignSystem} instead
  */
