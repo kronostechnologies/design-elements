@@ -99,7 +99,7 @@ const Wrapper = styled.div<StyledWrapperProps>`
     }
 `;
 
-type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus'>;
+type NativeInputProps = Pick<HTMLProps<HTMLInputElement>, 'disabled' | 'onFocus' | 'placeholder'>;
 
 interface NumericInputProps extends NativeInputProps {
     adornment?: ReactNode;
@@ -138,6 +138,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     onBlur,
     onChange,
     onFocus,
+    placeholder,
     precision,
     required,
     textAlign = 'left',
@@ -247,6 +248,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
                     onChange={handleChange}
                     onBlur={handleBlur}
                     onFocus={onFocus}
+                    placeholder={placeholder}
                     ref={inputRef}
                     type="text"
                     value={stateValue}
