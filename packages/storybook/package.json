@@ -42,7 +42,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@storybook/react-webpack5": "^7.0.8",
     "@storybook/theming": "^7.0.8",
-    "@types/node": "^18.17.4",
+    "@types/node": "^20.0.0",
     "@types/react": "^17.0.58",
     "@types/react-color": "^3.0.6",
     "@types/react-table": "^7.7.14",
