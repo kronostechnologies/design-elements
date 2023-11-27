@@ -1771,7 +1771,7 @@ __metadata:
     "@storybook/react": "npm:^7.0.8"
     "@storybook/react-webpack5": "npm:^7.0.8"
     "@storybook/theming": "npm:^7.0.8"
-    "@types/node": "npm:^18.17.4"
+    "@types/node": "npm:^20.0.0"
     "@types/react": "npm:^17.0.58"
     "@types/react-color": "npm:^3.0.6"
     "@types/react-table": "npm:^7.7.14"
@@ -4707,7 +4707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^20.0.0":
   version: 20.10.0
   resolution: "@types/node@npm:20.10.0"
   dependencies:
@@ -4716,7 +4716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.0.0, @types/node@npm:^18.17.4":
+"@types/node@npm:^18.0.0":
   version: 18.18.13
   resolution: "@types/node@npm:18.18.13"
   dependencies:
