@@ -16,6 +16,7 @@ interface StyledButtonProps extends IsSelected {
 const StyledButton = styled.button<StyledButtonProps>`
     align-items: center;
     border-bottom: ${({ $isGlobal, theme }) => ($isGlobal ? 'none' : `1px solid ${theme.ref['color-neutral-50']}`)};
+    bottom: -1px;
     color: ${({ $isGlobal, theme }) => ($isGlobal ? `${theme.ref['color-neutral-90']}` : `${theme.ref['color-neutral-50']}`)};
     cursor: pointer;
     display: flex;
