@@ -37,7 +37,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     textAlign?: string,
     className?: string,
     sticky?: boolean,
-    footerColSpan?: number | undefined,
+    footerColSpan?: number,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
