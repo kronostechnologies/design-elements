@@ -48,6 +48,7 @@ jobs:
       deploy: ${{ steps.versions.outputs.deploy }}
       next_version: ${{ steps.versions.outputs.next_version }}
       qualifier: ${{ steps.versions.outputs.qualifier }}
+      is_pr: ${{ steps.versions.outputs.is_pr }}
 
     steps:
       - name: Checkout
@@ -67,6 +68,7 @@ jobs:
           qualifier=dev
           next_version=0.0.0
           deploy=false
+          is_pr=false
 
           if [[ $GITHUB_REF == refs/tags/v*.*.* ]]; then
             next_version=${GITHUB_REF#refs/tags/v}
@@ -89,12 +91,14 @@ jobs:
             latest=$(curl -sS https://registry.npmjs.org/@equisoft/design-elements-react | jq -r '."dist-tags".latest')
             next_version="$(npx semver -i "${latest}")-${qualifier}.$(date -u "+%Y%m%d%H%M%S")"
           elif [[ $GITHUB_REF == refs/pull/* ]]; then
-            qualifier=pr-1234
+            is_pr=true
+            qualifier=pr-${{ github.event.pull_request.number }}
           fi
 
           echo "next_version=${next_version}" >> $GITHUB_OUTPUT
           echo "qualifier=${qualifier}" >> $GITHUB_OUTPUT
           echo "deploy=${deploy}" >> $GITHUB_OUTPUT
+          echo "is_pr=${is_pr}" >> $GITHUB_OUTPUT
 
   react_eslint:
     name: 'React: ESLint'
@@ -377,7 +381,7 @@ jobs:
       - storybook_eslint
       - storybook_stylelint
       - storybook_compile
-    if: ${{ needs.setup.outputs.deploy == 'true' }}
+    if: ${{ needs.setup.outputs.deploy == 'true' || needs.setup.outputs.is_pr == 'true' }}
 
     steps:
       - name: Checkout
@@ -405,6 +409,9 @@ jobs:
           if [ "${QUALIFIER}" == "snapshot" ]; then
               echo "folder=${QUALIFIER}" >> $GITHUB_OUTPUT
               echo "commit=docs: update snapshot to ${GITHUB_SHA}" >> $GITHUB_OUTPUT
+          elseif [[ "${QUALIFIER}" = pr-* ]]; then
+              echo "folder=${QUALIFIER}" >> $GITHUB_OUTPUT
+              echo "commit=docs: update pull request ${QUALIFIER} to ${GITHUB_SHA}" >> $GITHUB_OUTPUT
           else
               echo "folder=${VERSION}" >> $GITHUB_OUTPUT
               echo "commit=docs: add v${VERSION}" >> $GITHUB_OUTPUT
@@ -432,6 +439,18 @@ jobs:
           git-config-name: kronostechnologies-build
           target-folder: latest
           token: ${{ secrets.GH_REPO_TOKEN }}
+
+      - name: Add a comment with a link to storybook
+        uses: actions/github-script@v7
+        if: ${{ needs.setup.outputs.is_pr == 'true' }}
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: '${{ github.event.pull_request.number }}',
+              owner: 'kronostechnologies',
+              repo: 'design-elements',
+              body: 'Storybook for this pull request: <https://ds.equisoft.io/${{ steps.target.outputs.folder }}/>'
+            })
 
   notify:
     name: Notify
