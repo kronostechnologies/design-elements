@@ -25,7 +25,7 @@ export default {
 
 const DarkDiv = styled.div`
     align-items: center;
-    background-color: ${({ theme }) => theme.main['primary-1.1']};
+    background-color: ${({ theme }) => theme.ref['color-brand-50']};
     display: flex;
     height: 50px;
     justify-content: center;

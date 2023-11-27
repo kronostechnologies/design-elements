@@ -34,7 +34,7 @@ function getContainerBackgroundColor({ bannerType, theme }: StyledProps<{ banner
         case 'warning':
             return theme.ref['color-warning-50'];
         case 'info':
-            return theme.ref['color-informative-50'];
+            return theme.ref['color-discovery-50'];
         case 'default':
             return theme.ref['color-neutral-65'];
     }

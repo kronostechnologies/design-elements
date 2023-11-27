@@ -54,12 +54,12 @@ function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFu
 }
 
 function abstractContainer(
-    bgColor: string,
+    bgColor: keyof Theme['ref'],
     color?: keyof Theme['ref'],
     iconColor: keyof Theme['ref'] | undefined = color,
 ): FunctionComponent<PropsWithChildren<AbstractContainerProps>> {
     return styled.section<AbstractContainerProps>`
-        background-color: ${bgColor};
+        background-color: ${(props) => props.theme.ref[bgColor]};
         border: 1px solid ${(props) => (color ? props.theme.ref[color] : props.theme.ref['color-brand-50'])};
         border-radius: var(--border-radius-2x);
         box-sizing: border-box;
