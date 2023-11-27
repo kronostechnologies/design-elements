@@ -51,9 +51,9 @@ export function calculateStickyPosition(
     if (tableRef.current === null) {
         return;
     }
-    const headerCells = tableRef.current?.querySelectorAll('th');
+    const headerCells = tableRef.current.querySelectorAll('th');
     const rows = tableRef.current.querySelectorAll('tr');
-    const footerCells = tableRef.current?.querySelector('tfoot')?.querySelectorAll('td');
+    const footerCells = tableRef.current.querySelector('tfoot')?.querySelectorAll('td');
 
     calculateStickyColumns(stickyColumns, headerCells, rows);
 
