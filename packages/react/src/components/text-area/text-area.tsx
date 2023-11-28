@@ -7,6 +7,7 @@ import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
+import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -128,6 +129,22 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
+    function getAriaDescribedBy(): string | undefined {
+        let describedBy = '';
+
+        if (hint) {
+            describedBy += ` ${idTextArea}_hint`;
+        }
+        if (!validity && getValidationErrorMessage()) {
+            describedBy += ` ${idTextArea}_invalid`;
+        }
+        if (maxLength) {
+            describedBy += ` ${idCounter}`;
+        }
+
+        return describedBy.trim() || undefined;
+    }
+
     return (
         <FieldContainer
             data-testid="container"
@@ -146,7 +163,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={maxLength ? idCounter : undefined}
+                aria-describedby={getAriaDescribedBy()}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}
@@ -159,11 +176,13 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 <Counter
                     data-testid="char-counter"
                     aria-live="polite"
-                    aria-hidden="true"
                     id={idCounter}
                     valid={inputValueLength <= maxLength}
                 >
-                    {t('characters', { current: inputValueLength, max: maxLength })}
+                    <ScreenReaderOnlyText
+                        label={t('charactersScreenReader', { length: inputValueLength, max: maxLength })}
+                    />
+                    <span aria-hidden="true">{t('characters', { length: inputValueLength, max: maxLength })}</span>
                 </Counter>
             )}
         </FieldContainer>

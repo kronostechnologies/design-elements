@@ -1,8 +1,6 @@
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { ChooserButtonGroup } from './chooser-button-group';
 
-jest.mock('../../utils/uuid');
-
 describe('Chooser Button GroupItem', () => {
     const maritalStatus = [
         { value: 'single', label: 'Single, living alone or with a roommate' },

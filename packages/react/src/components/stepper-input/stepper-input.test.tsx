@@ -3,8 +3,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { StepperInput } from './stepper-input';
 
-jest.mock('../../utils/uuid');
-
 describe('Stepper input', () => {
     test('onChange callback should be called when input value changes', () => {
         const callback = jest.fn();

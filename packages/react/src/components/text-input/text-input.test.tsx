@@ -5,8 +5,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { TextInput } from './text-input';
 
-jest.mock('../../utils/uuid');
-
 describe('TextInput', () => {
     const initialProps = {
         label: 'See console for callbacks',

@@ -54,7 +54,7 @@ export interface FieldContainerProps {
     validationErrorMessage: string;
 }
 
-export const FieldContainer : FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
+export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerProps>> = ({
     children,
     className,
     fieldId,
@@ -80,7 +80,7 @@ export const FieldContainer : FunctionComponent<PropsWithChildren<FieldContainer
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {label && <Label forId={fieldId} tooltip={tooltip} required={required}>{label}</Label>}
-            {hint && <StyledHint isMobile={isMobile}>{hint}</StyledHint>}
+            {hint && <StyledHint id={`${fieldId}_hint`} isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField
                     data-testid="text-input-error-msg"

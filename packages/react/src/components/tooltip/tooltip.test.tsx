@@ -1,9 +1,7 @@
-import { Icon } from '../..';
+import { Icon, IconButton } from '../..';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithProviders } from '../../test-utils/renderer';
 import { Tooltip } from './tooltip';
-
-jest.mock('../../utils/uuid');
 
 describe('Tooltip', () => {
     describe('desktop', () => {
@@ -60,6 +58,44 @@ describe('Tooltip', () => {
             getByTestId(wrapper, 'tooltip').simulate('blur');
 
             expect(getByTestId(wrapper, 'tooltip-content-container').prop('visible')).toBe(false);
+        });
+
+        test('tooltip-confirm-icon should be displayed after tooltip children is clicked', () => {
+            const confirmationLabel = 'confirmLabel';
+            const wrapper = mountWithProviders(
+                <Tooltip
+                    confirmationLabel={confirmationLabel}
+                    label="Test Content"
+                    mode='confirm'
+                    defaultOpen
+                >
+                    <IconButton data-testid='icon-button' buttonType='tertiary' type='button' iconName='copy' />
+                </Tooltip>,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'icon-button').simulate('click');
+
+            expect(getByTestId(wrapper, 'tooltip-confirm-icon').exists()).toBe(true);
+        });
+
+        test('label should be confirmation label after tooltip children is clicked', () => {
+            const confirmationLabel = 'confirmLabel';
+            const wrapper = mountWithProviders(
+                <Tooltip
+                    label="Test Content"
+                    confirmationLabel={confirmationLabel}
+                    mode='confirm'
+                    defaultOpen
+                >
+                    <IconButton data-testid='icon-button' buttonType='tertiary' type='button' iconName='copy' />
+                </Tooltip>,
+                { wrappingComponentProps: { staticDevice: 'desktop' } },
+            );
+
+            getByTestId(wrapper, 'icon-button').simulate('click');
+
+            expect(getByTestId(wrapper, 'tooltip-content-container').text()).toBe(confirmationLabel);
         });
 
         test('does not open on focus given tooltip is disabled', () => {

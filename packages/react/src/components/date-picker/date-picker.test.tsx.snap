@@ -262,6 +262,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -275,6 +276,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -559,6 +561,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -574,6 +577,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="some-data-test-id"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -858,6 +862,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -873,6 +878,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1155,6 +1161,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -1171,6 +1178,7 @@ label + .c3 {
           class="c5 datePickerInput"
           data-testid="text-input"
           disabled=""
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1212,19 +1220,15 @@ exports[`Datepicker matches snapshot (invalid) 1`] = `
   line-height: 1.25rem;
 }
 
-.c5 {
-  margin-left: var(--spacing-base);
-}
-
 .c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-right: var(--spacing-base);
 }
 
 .c2 {
@@ -1265,33 +1269,33 @@ input + .c1 {
   margin-bottom: var(--spacing-half);
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c7 .popper {
+.c6 .popper {
   z-index: 1000;
 }
 
-.c7 .popper[data-placement^='bottom'] {
+.c6 .popper[data-placement^='bottom'] {
   margin-top: 0;
 }
 
-.c7 .react-datepicker {
+.c6 .react-datepicker {
   border: 1px solid #DBDEE1;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 19%);
   font-family: var(--font-family);
   padding: var(--spacing-3x) var(--spacing-2x);
 }
 
-.c7 .react-datepicker-wrapper {
+.c6 .react-datepicker-wrapper {
   width: auto;
 }
 
-.c7 .react-datepicker__day {
+.c6 .react-datepicker__day {
   border: 1px solid transparent;
   box-sizing: border-box;
   height: var(--size-2x);
@@ -1300,40 +1304,40 @@ input + .c1 {
   width: var(--size-2x);
 }
 
-.c7 .react-datepicker__day:hover {
+.c6 .react-datepicker__day:hover {
   background-color: #DBDEE1;
   border-radius: 50%;
 }
 
-.c7 .react-datepicker__day:focus {
+.c6 .react-datepicker__day:focus {
   outline: none;
 }
 
-.c7 .react-datepicker__day--disabled {
+.c6 .react-datepicker__day--disabled {
   color: #B7BBC2;
 }
 
-.c7 .react-datepicker__day--disabled:hover {
+.c6 .react-datepicker__day--disabled:hover {
   background-color: #FFFFFF;
 }
 
-.c7 .react-datepicker__day--keyboard-selected {
+.c6 .react-datepicker__day--keyboard-selected {
   background-color: #FFFFFF;
   border-radius: 50%;
   box-sizing: border-box;
   color: #000000;
 }
 
-.c7 .react-datepicker__day--keyboard-selected:focus {
+.c6 .react-datepicker__day--keyboard-selected:focus {
   border: 1px solid #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 .react-datepicker__day-names {
+.c6 .react-datepicker__day-names {
   margin: 0;
 }
 
-.c7 .react-datepicker__day-name {
+.c6 .react-datepicker__day-name {
   font-size: 0.875rem;
   font-weight: var(--font-bold);
   line-height: 1.25rem;
@@ -1342,69 +1346,69 @@ input + .c1 {
   width: var(--size-2x);
 }
 
-.c7 .react-datepicker__day--outside-month {
+.c6 .react-datepicker__day--outside-month {
   color: #60666E;
 }
 
-.c7 .react-datepicker__day--outside-month.react-datepicker__day--selected {
+.c6 .react-datepicker__day--outside-month.react-datepicker__day--selected {
   color: #FFFFFF;
 }
 
-.c7 .react-datepicker__day--selected {
+.c6 .react-datepicker__day--selected {
   background-color: #006296;
   border-radius: 50%;
 }
 
-.c7 .react-datepicker__day--selected:focus {
+.c6 .react-datepicker__day--selected:focus {
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7 .react-datepicker__day--selected:hover {
+.c6 .react-datepicker__day--selected:hover {
   color: #000000;
 }
 
-.c7 .react-datepicker__day--today {
+.c6 .react-datepicker__day--today {
   color: #006296;
   font-weight: var(--font-normal);
 }
 
-.c7 .react-datepicker__day--today.react-datepicker__day--selected {
+.c6 .react-datepicker__day--today.react-datepicker__day--selected {
   color: #FFFFFF;
 }
 
-.c7 .react-datepicker__header {
+.c6 .react-datepicker__header {
   background-color: #FFFFFF;
   border-bottom: none;
   margin-bottom: var(--spacing-half);
   padding: 0;
 }
 
-.c7 .react-datepicker__month {
+.c6 .react-datepicker__month {
   font-size: 0.875rem;
   margin: 0;
 }
 
-.c7 .react-datepicker__portal {
+.c6 .react-datepicker__portal {
   background-color: rgb(0 0 0 / 50%);
 }
 
-.c7 .react-datepicker__portal .react-datepicker__day-name {
+.c6 .react-datepicker__portal .react-datepicker__day-name {
   font-size: 1rem;
   line-height: 1.5rem;
   width: var(--size-2halfx);
 }
 
-.c7 .react-datepicker__portal .react-datepicker__day {
+.c6 .react-datepicker__portal .react-datepicker__day {
   height: var(--size-2halfx);
   line-height: 2.5rem;
   width: var(--size-2halfx);
 }
 
-label + .c6 {
+label + .c5 {
   margin-top: var(--spacing-half);
 }
 
-.c8.datePickerInput {
+.c7.datePickerInput {
   background-color: #FFFFFF;
   border: 1px solid #CD2C23;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
@@ -1417,31 +1421,31 @@ label + .c6 {
   width: 6.8rem;
 }
 
-.c8.datePickerInput:focus {
+.c7.datePickerInput:focus {
   border: 1px solid #CD2C23;
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
-.c8.datePickerInput:focus {
+.c7.datePickerInput:focus {
   border: 1px solid #CD2C23;
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
-.c8.datePickerInput:focus {
+.c7.datePickerInput:focus {
   border: 1px solid #CD2C23;
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
-.c8.datePickerInput:focus {
+.c7.datePickerInput:focus {
   border: 1px solid #CD2C23;
   box-shadow: 0 0 0 2px #84C6EA;
   outline: none;
 }
 
-.c9 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1464,11 +1468,11 @@ label + .c6 {
   width: var(--size-2x);
 }
 
-.c9:hover {
+.c8:hover {
   background-color: #DBDEE1;
 }
 
-.c9:focus {
+.c8:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -1476,7 +1480,7 @@ label + .c6 {
   z-index: 10;
 }
 
-.c9 > svg {
+.c8 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -1486,33 +1490,27 @@ label + .c6 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
-  <div
+  <span
     aria-live="polite"
     class="c3"
-    id="undefined_invalid"
+    id="uuid1_invalid"
     role="alert"
   >
-    <div
+    <svg
       class="c4"
-    >
-      <svg
-        color="currentColor"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-    </div>
-    <span
-      class="c5"
-    >
-      Invalid date
-    </span>
-  </div>
+      color="currentColor"
+      focusable="false"
+      height="16"
+      width="16"
+    />
+    Invalid date
+  </span>
   <div
-    class="c6 c7"
+    class="c5 c6"
   >
     <div
       class="react-datepicker-wrapper"
@@ -1521,8 +1519,9 @@ label + .c6 {
         class="react-datepicker__input-container"
       >
         <input
-          class="c8 datePickerInput"
+          class="c7 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -1531,7 +1530,7 @@ label + .c6 {
     </div>
     <button
       aria-label="Choose date"
-      class="c9"
+      class="c8"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -1809,6 +1808,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -1822,6 +1822,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -2266,6 +2267,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -2281,6 +2283,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -2347,22 +2350,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid2"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_october"
+                            aria-activedescendant="uuid2_october"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid2"
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
                             data-testid="month-select"
+                            id="uuid2"
                             type="text"
                             value="Oct"
                           />
                           <button
+                            aria-labelledby="uuid2"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -2387,22 +2392,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid3"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_2010"
+                            aria-activedescendant="uuid3_2010"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid3"
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
                             data-testid="year-select"
+                            id="uuid3"
                             type="text"
                             value="2010"
                           />
                           <button
+                            aria-labelledby="uuid3"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -2641,7 +2648,7 @@ label + .c3 {
                   </div>
                 </div>
                 <div
-                  class="react-datepicker__week"
+                  class="react-datepicker__week react-datepicker__week--keyboard-selected"
                 >
                   <div
                     aria-disabled="false"
@@ -3505,6 +3512,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -3520,6 +3528,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -3586,22 +3595,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid2"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_october"
+                            aria-activedescendant="uuid2_october"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid2"
                             aria-label="Select a month"
                             aria-multiline="false"
                             class="c13"
                             data-testid="month-select"
+                            id="uuid2"
                             type="text"
                             value="Oct"
                           />
                           <button
+                            aria-labelledby="uuid2"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -3626,22 +3637,24 @@ label + .c3 {
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="listbox_undefined"
+                          aria-owns="listbox_uuid3"
                           class="c12"
                           data-testid="input-wrapper"
                         >
                           <input
-                            aria-activedescendant="undefined_2010"
+                            aria-activedescendant="uuid3_2010"
                             aria-autocomplete="list"
-                            aria-controls="listbox_undefined"
+                            aria-controls="listbox_uuid3"
                             aria-label="Select a year"
                             aria-multiline="false"
                             class="c13"
                             data-testid="year-select"
+                            id="uuid3"
                             type="text"
                             value="2010"
                           />
                           <button
+                            aria-labelledby="uuid3"
                             class="c14"
                             data-testid="arrow"
                             tabindex="-1"
@@ -3880,7 +3893,7 @@ label + .c3 {
                   </div>
                 </div>
                 <div
-                  class="react-datepicker__week"
+                  class="react-datepicker__week react-datepicker__week--keyboard-selected"
                 >
                   <div
                     aria-disabled="false"
@@ -4665,6 +4678,7 @@ label + .c3 {
 >
   <label
     class="c1 c2"
+    for="uuid1"
   >
     date
   </label>
@@ -4678,6 +4692,7 @@ label + .c3 {
         <input
           class="c5 datePickerInput react-datepicker-ignore-onclickoutside"
           data-testid="text-input"
+          id="uuid1"
           placeholder="YYYY-MM-DD"
           type="text"
           value=""
@@ -4742,22 +4757,24 @@ label + .c3 {
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-owns="listbox_undefined"
+                            aria-owns="listbox_uuid2"
                             class="c12"
                             data-testid="input-wrapper"
                           >
                             <input
-                              aria-activedescendant="undefined_october"
+                              aria-activedescendant="uuid2_october"
                               aria-autocomplete="list"
-                              aria-controls="listbox_undefined"
+                              aria-controls="listbox_uuid2"
                               aria-label="Select a month"
                               aria-multiline="false"
                               class="c13"
                               data-testid="month-select"
+                              id="uuid2"
                               type="text"
                               value="Oct"
                             />
                             <button
+                              aria-labelledby="uuid2"
                               class="c14"
                               data-testid="arrow"
                               tabindex="-1"
@@ -4782,22 +4799,24 @@ label + .c3 {
                           <div
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-owns="listbox_undefined"
+                            aria-owns="listbox_uuid3"
                             class="c12"
                             data-testid="input-wrapper"
                           >
                             <input
-                              aria-activedescendant="undefined_2010"
+                              aria-activedescendant="uuid3_2010"
                               aria-autocomplete="list"
-                              aria-controls="listbox_undefined"
+                              aria-controls="listbox_uuid3"
                               aria-label="Select a year"
                               aria-multiline="false"
                               class="c13"
                               data-testid="year-select"
+                              id="uuid3"
                               type="text"
                               value="2010"
                             />
                             <button
+                              aria-labelledby="uuid3"
                               class="c14"
                               data-testid="arrow"
                               tabindex="-1"
@@ -5036,7 +5055,7 @@ label + .c3 {
                     </div>
                   </div>
                   <div
-                    class="react-datepicker__week"
+                    class="react-datepicker__week react-datepicker__week--keyboard-selected"
                   >
                     <div
                       aria-disabled="false"

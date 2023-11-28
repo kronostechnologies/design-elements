@@ -178,6 +178,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     role="tablist"
   >
     <button
+      aria-controls="uuid1"
       aria-selected="true"
       class="c1"
       data-testid="tab-button"
@@ -192,6 +193,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
       </span>
     </button>
     <button
+      aria-controls="uuid2"
       aria-selected="false"
       class="c3"
       data-testid="tab-button"
@@ -211,6 +213,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     aria-hidden="false"
     aria-labelledby="tab-1"
     class="c5"
+    id="uuid1"
     role="tabpanel"
     tabindex="0"
   >
@@ -225,6 +228,7 @@ exports[`Tabs matches snapshot (global) 1`] = `
     aria-labelledby="tab-2"
     class="c5"
     hidden=""
+    id="uuid2"
     role="tabpanel"
     tabindex="0"
   >
@@ -409,6 +413,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     role="tablist"
   >
     <button
+      aria-controls="uuid1"
       aria-selected="true"
       class="c1"
       data-testid="tab-button"
@@ -423,6 +428,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
       </span>
     </button>
     <button
+      aria-controls="uuid2"
       aria-selected="false"
       class="c3"
       data-testid="tab-button"
@@ -442,6 +448,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     aria-hidden="false"
     aria-labelledby="tab-1"
     class="c5"
+    id="uuid1"
     role="tabpanel"
     tabindex="0"
   >
@@ -456,6 +463,7 @@ exports[`Tabs matches snapshot (mobile) 1`] = `
     aria-labelledby="tab-2"
     class="c5"
     hidden=""
+    id="uuid2"
     role="tabpanel"
     tabindex="0"
   >
@@ -640,6 +648,7 @@ exports[`Tabs matches snapshot 1`] = `
     role="tablist"
   >
     <button
+      aria-controls="uuid1"
       aria-selected="true"
       class="c1"
       data-testid="tab-button"
@@ -654,6 +663,7 @@ exports[`Tabs matches snapshot 1`] = `
       </span>
     </button>
     <button
+      aria-controls="uuid2"
       aria-selected="false"
       class="c3"
       data-testid="tab-button"
@@ -673,6 +683,7 @@ exports[`Tabs matches snapshot 1`] = `
     aria-hidden="false"
     aria-labelledby="tab-1"
     class="c5"
+    id="uuid1"
     role="tabpanel"
     tabindex="0"
   >
@@ -687,6 +698,7 @@ exports[`Tabs matches snapshot 1`] = `
     aria-labelledby="tab-2"
     class="c5"
     hidden=""
+    id="uuid2"
     role="tabpanel"
     tabindex="0"
   >

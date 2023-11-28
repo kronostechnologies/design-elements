@@ -1,6 +1,8 @@
 import { renderWithTheme } from '../../test-utils/renderer';
 import { ErrorMessage, ErrorSummary } from './error-summary';
 
+jest.mock('../../utils/uuid');
+
 const errorMessages: ErrorMessage[] = [{
     text: 'This is an error',
     target: 'error-input',

@@ -3,8 +3,6 @@ import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { mountWithTheme, renderWithTheme } from '../../test-utils/renderer';
 import { Listbox } from './listbox';
 
-jest.mock('../../utils/uuid');
-
 const options = [
     {
         label: 'Option A',

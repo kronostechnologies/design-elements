@@ -3,6 +3,8 @@ import { mountWithProviders, renderWithProviders } from '../../test-utils/render
 import { DeviceType } from '../device-context-provider/device-context-provider';
 import { SectionalBanner } from './sectional-banner';
 
+jest.mock('../../utils/uuid');
+
 describe('SectionalBanner', () => {
     it('should match snapshot (desktop)', () => {
         const tree = renderWithProviders(

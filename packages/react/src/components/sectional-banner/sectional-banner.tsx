@@ -33,9 +33,9 @@ function getLineHeight(isMobile: boolean): number {
     return isMobile ? 28 : 24;
 }
 
-const BannerIcon = styled(Icon)<ComponentProps<typeof Icon> & { $marginTop: number }>`
+const BannerIcon = styled(Icon) <ComponentProps<typeof Icon> & { isMobile: boolean }>`
     grid-area: icon;
-    margin-top: ${({ $marginTop }) => `${$marginTop}px`};
+    margin-top: ${({ isMobile }) => (isMobile ? 'var(--spacing-1x)' : 'var(--spacing-half)')};
 `;
 
 function getLayout({ isMobile }: AbstractContainerProps): ReturnType<ThemedCssFunction<Theme>> {
@@ -61,9 +61,10 @@ function abstractContainer(
     return styled.section<AbstractContainerProps>`
         background-color: ${bgColor};
         border: 1px solid ${(props) => (color ? props.theme.notifications[color] : props.theme.main['primary-3'])};
+        border-radius: var(--border-radius-2x);
         box-sizing: border-box;
         line-height: ${({ isMobile }) => getLineHeight(isMobile)}px;
-        padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x)')};
+        padding: ${(props) => (props.isMobile ? 'var(--spacing-3x) var(--spacing-2x)' : 'var(--spacing-2x) var(--spacing-3x)')};
         position: relative;
         width: 100%;
 
@@ -89,13 +90,13 @@ const AlertContainer = abstractContainer('#fdf6f7', 'alert-2.1');
 
 const Message = styled.p<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1rem' : '0.875rem')};
-    margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-1x)')} 0 0 0;
+    margin: ${(props) => (props.isMobile ? 'var(--spacing-2x)' : 'var(--spacing-half)')} 0 0 0;
 `;
 
 const TextWrapper = styled.div<MobileDeviceContext>`
     box-sizing: border-box;
     grid-area: content;
-    padding-left: var(--spacing-2x);
+    margin-left: var(--spacing-1halfx);
 `;
 
 type DismissButtonProps = MobileDeviceContext & { $marginTop: number }
@@ -109,7 +110,7 @@ function getDismissButtonTop({ $marginTop }: DismissButtonProps): string {
 }
 
 const DismissIconButton = styled(IconButton)
-    .attrs({ buttonType: 'tertiary', iconName: 'x' })<DismissButtonProps>`
+    .attrs({ buttonType: 'tertiary', iconName: 'x' }) <DismissButtonProps>`
     position: absolute;
     right: ${getDismissButtonRight};
     top: ${getDismissButtonTop};
@@ -118,6 +119,7 @@ const DismissIconButton = styled(IconButton)
 const Heading = styled.span<MobileDeviceContext>`
     font-size: ${(props) => (props.isMobile ? '1.125rem' : '1rem')};
     font-weight: var(--font-semi-bold);
+    line-height: ${(props) => (props.isMobile ? '1.7' : '1.5')};
     margin: 0;
 `;
 
@@ -198,6 +200,7 @@ interface SectionalBannerProps {
     focusable?: boolean;
     /** @default `span` */
     headingTag?: HeadingTag;
+    id?: string;
     /** Sets custom message title */
     title?: string;
     /** Sets message type */
@@ -218,6 +221,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     children,
     focusable,
     headingTag,
+    id,
     title,
     type,
     onButtonClicked,
@@ -234,7 +238,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
     const marginTop = (lineHeight - iconSize) / 2;
     const messageTag = (typeof children === 'string') ? 'p' : 'div';
 
-    const headingId = useId('banner-heading-');
+    const headingId = useId(id);
 
     return (
         <Container
@@ -250,7 +254,7 @@ export const SectionalBanner: VoidFunctionComponent<SectionalBannerProps> = ({
                 name={bannerType.iconName}
                 size={iconSize.toString()}
                 aria-hidden="true"
-                $marginTop={marginTop}
+                isMobile={isMobile}
             />
 
             <TextWrapper isMobile={isMobile}>

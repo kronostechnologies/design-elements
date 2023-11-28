@@ -230,29 +230,32 @@ input + .c2 {
 >
   <label
     class="c2 c3"
+    for="uuid1"
   >
     Select an option
   </label>
   <div
     aria-expanded="true"
     aria-haspopup="listbox"
-    aria-owns="listbox_undefined"
+    aria-owns="listbox_uuid1"
     class="c4"
     data-testid="input-wrapper"
     disabled=""
   >
     <input
       aria-autocomplete="list"
-      aria-controls="listbox_undefined"
+      aria-controls="listbox_uuid1"
       aria-label="Select an option"
       aria-multiline="false"
       class="c5"
       data-testid="input"
       disabled=""
+      id="uuid1"
       type="text"
       value=""
     />
     <button
+      aria-labelledby="uuid1"
       class="c6"
       data-testid="arrow"
       disabled=""
@@ -268,6 +271,7 @@ input + .c2 {
     </button>
   </div>
   <div
+    aria-labelledby="uuid1"
     aria-multiselectable="false"
     class="c7"
     role="listbox"
@@ -276,7 +280,7 @@ input + .c2 {
     <ul
       class="c8"
       data-testid="listbox-list"
-      id="listbox_undefined"
+      id="listbox_uuid1"
       role="presentation"
       tabindex="0"
     >
@@ -285,7 +289,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-on"
-        id="listbox_undefined_on"
+        id="listbox_uuid1_on"
         role="option"
         tabindex="-1"
       >
@@ -308,7 +312,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-qc"
-        id="listbox_undefined_qc"
+        id="listbox_uuid1_qc"
         role="option"
         tabindex="-1"
       >
@@ -331,7 +335,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-bc"
-        id="listbox_undefined_bc"
+        id="listbox_uuid1_bc"
         role="option"
         tabindex="-1"
       >
@@ -354,7 +358,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-ab"
-        id="listbox_undefined_ab"
+        id="listbox_uuid1_ab"
         role="option"
         tabindex="-1"
       >
@@ -377,7 +381,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-mb"
-        id="listbox_undefined_mb"
+        id="listbox_uuid1_mb"
         role="option"
         tabindex="-1"
       >
@@ -400,7 +404,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-sk"
-        id="listbox_undefined_sk"
+        id="listbox_uuid1_sk"
         role="option"
         tabindex="-1"
       >
@@ -423,7 +427,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-ns"
-        id="listbox_undefined_ns"
+        id="listbox_uuid1_ns"
         role="option"
         tabindex="-1"
       >
@@ -446,7 +450,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-nb"
-        id="listbox_undefined_nb"
+        id="listbox_uuid1_nb"
         role="option"
         tabindex="-1"
       >
@@ -469,7 +473,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-nl"
-        id="listbox_undefined_nl"
+        id="listbox_uuid1_nl"
         role="option"
         tabindex="-1"
       >
@@ -492,7 +496,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-pe"
-        id="listbox_undefined_pe"
+        id="listbox_uuid1_pe"
         role="option"
         tabindex="-1"
       >
@@ -515,7 +519,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-nt"
-        id="listbox_undefined_nt"
+        id="listbox_uuid1_nt"
         role="option"
         tabindex="-1"
       >
@@ -538,7 +542,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-nu"
-        id="listbox_undefined_nu"
+        id="listbox_uuid1_nu"
         role="option"
         tabindex="-1"
       >
@@ -561,7 +565,7 @@ input + .c2 {
         aria-selected="false"
         class="c9"
         data-testid="listitem-yt"
-        id="listbox_undefined_yt"
+        id="listbox_uuid1_yt"
         role="option"
         tabindex="-1"
       >
@@ -601,19 +605,15 @@ exports[`Select invalid select has a different style 1`] = `
   line-height: 1.25rem;
 }
 
-.c6 {
-  margin-left: var(--spacing-base);
-}
-
 .c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-right: var(--spacing-base);
 }
 
 .c3 {
@@ -654,7 +654,7 @@ input + .c2 {
   margin-bottom: var(--spacing-half);
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -663,7 +663,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c11 {
+.c10 {
   background-color: #FFFFFF;
   border-radius: var(--border-radius);
   box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
@@ -677,12 +677,12 @@ input + .c2 {
   z-index: 1000;
 }
 
-.c11:focus {
+.c10:focus {
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
   outline: none;
 }
 
-.c16 {
+.c15 {
   color: #FFFFFF;
   display: none;
   height: 100%;
@@ -691,7 +691,7 @@ input + .c2 {
   width: 100%;
 }
 
-.c14 {
+.c13 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -707,11 +707,11 @@ input + .c2 {
   width: var(--size-1x);
 }
 
-.c14:hover {
+.c13:hover {
   border: 1px solid #006296;
 }
 
-.c12 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -729,21 +729,21 @@ input + .c2 {
   padding-left: 16px;
 }
 
-.c12:hover {
+.c11:hover {
   background-color: #DBDEE1;
 }
 
-.c12:focus {
+.c11:focus {
   outline: 2px solid #006296;
   outline-offset: -2px;
 }
 
-.c12[aria-selected='true'] .c13 {
+.c11[aria-selected='true'] .c12 {
   background-color: #006296;
   border: 1px solid #006296;
 }
 
-.c12[aria-selected='true'] .c13 > .c15 {
+.c11[aria-selected='true'] .c12 > .c14 {
   display: block;
 }
 
@@ -751,7 +751,7 @@ input + .c2 {
   position: relative;
 }
 
-.c7 {
+.c6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -770,15 +770,15 @@ input + .c2 {
   width: 100%;
 }
 
-.c7:hover {
+.c6:hover {
   cursor: pointer;
 }
 
-.c7 svg {
+.c6 svg {
   color: #60666E;
 }
 
-.c8 {
+.c7 {
   background-color: #FFFFFF;
   border: none;
   border-radius: var(--border-radius);
@@ -799,31 +799,31 @@ input + .c2 {
   width: 100%;
 }
 
-.c8:hover {
+.c7:hover {
   cursor: pointer;
 }
 
-.c8::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #60666E;
   font-size: 0.875rem;
 }
 
-.c8::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #60666E;
   font-size: 0.875rem;
 }
 
-.c8:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #60666E;
   font-size: 0.875rem;
 }
 
-.c8::placeholder {
+.c7::placeholder {
   color: #60666E;
   font-size: 0.875rem;
 }
 
-.c9 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -835,7 +835,7 @@ input + .c2 {
   display: flex;
 }
 
-.c9 > svg {
+.c8 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -845,50 +845,46 @@ input + .c2 {
   >
     <label
       class="c2 c3"
+      for="uuid1"
     >
       Select an option
     </label>
-    <div
+    <span
       aria-live="polite"
       class="c4"
-      id="undefined_invalid"
+      id="uuid1_invalid"
       role="alert"
     >
-      <div
+      <svg
         class="c5"
-      >
-        <svg
-          color="currentColor"
-          focusable="false"
-          height="16"
-          width="16"
-        />
-      </div>
-      <span
-        class="c6"
-      >
-        You must select an option
-      </span>
-    </div>
+        color="currentColor"
+        focusable="false"
+        height="16"
+        width="16"
+      />
+      You must select an option
+    </span>
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
-      class="c7"
+      aria-owns="listbox_uuid1"
+      class="c6"
       data-testid="input-wrapper"
     >
       <input
         aria-autocomplete="list"
-        aria-controls="listbox_undefined"
+        aria-controls="listbox_uuid1"
         aria-label="Select an option"
         aria-multiline="false"
-        class="c8"
+        class="c7"
         data-testid="input"
+        id="uuid1"
         type="text"
         value=""
       />
       <button
-        class="c9"
+        aria-labelledby="uuid1"
+        class="c8"
         data-testid="arrow"
         tabindex="-1"
         type="button"
@@ -902,33 +898,34 @@ input + .c2 {
       </button>
     </div>
     <div
+      aria-labelledby="uuid1"
       aria-multiselectable="false"
-      class="c10"
+      class="c9"
       role="listbox"
       tabindex="-1"
     >
       <ul
-        class="c11"
+        class="c10"
         data-testid="listbox-list"
-        id="listbox_undefined"
+        id="listbox_uuid1"
         role="presentation"
         tabindex="0"
       >
         <li
           aria-label="Ontario"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-on"
-          id="listbox_undefined_on"
+          id="listbox_uuid1_on"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -940,18 +937,18 @@ input + .c2 {
         <li
           aria-label="Quebec"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-qc"
-          id="listbox_undefined_qc"
+          id="listbox_uuid1_qc"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -963,18 +960,18 @@ input + .c2 {
         <li
           aria-label="British Columbia"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-bc"
-          id="listbox_undefined_bc"
+          id="listbox_uuid1_bc"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -986,18 +983,18 @@ input + .c2 {
         <li
           aria-label="Alberta"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-ab"
-          id="listbox_undefined_ab"
+          id="listbox_uuid1_ab"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1009,18 +1006,18 @@ input + .c2 {
         <li
           aria-label="Manitoba"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-mb"
-          id="listbox_undefined_mb"
+          id="listbox_uuid1_mb"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1032,18 +1029,18 @@ input + .c2 {
         <li
           aria-label="Saskatchewan"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-sk"
-          id="listbox_undefined_sk"
+          id="listbox_uuid1_sk"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1055,18 +1052,18 @@ input + .c2 {
         <li
           aria-label="Nova Scotia"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-ns"
-          id="listbox_undefined_ns"
+          id="listbox_uuid1_ns"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1078,18 +1075,18 @@ input + .c2 {
         <li
           aria-label="New Brunswick"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-nb"
-          id="listbox_undefined_nb"
+          id="listbox_uuid1_nb"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1101,18 +1098,18 @@ input + .c2 {
         <li
           aria-label="Newfoundland and Labrador"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-nl"
-          id="listbox_undefined_nl"
+          id="listbox_uuid1_nl"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1124,18 +1121,18 @@ input + .c2 {
         <li
           aria-label="Prince Edward Island"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-pe"
-          id="listbox_undefined_pe"
+          id="listbox_uuid1_pe"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1147,18 +1144,18 @@ input + .c2 {
         <li
           aria-label="Northwest Territories"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-nt"
-          id="listbox_undefined_nt"
+          id="listbox_uuid1_nt"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1170,18 +1167,18 @@ input + .c2 {
         <li
           aria-label="Nunavut"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-nu"
-          id="listbox_undefined_nu"
+          id="listbox_uuid1_nu"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1193,18 +1190,18 @@ input + .c2 {
         <li
           aria-label="Yukon"
           aria-selected="false"
-          class="c12"
+          class="c11"
           data-testid="listitem-yt"
-          id="listbox_undefined_yt"
+          id="listbox_uuid1_yt"
           role="option"
           tabindex="-1"
         >
           <span
             aria-hidden="true"
-            class="c13 c14"
+            class="c12 c13"
           >
             <svg
-              class="c15 c16"
+              class="c14 c15"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1230,7 +1227,8 @@ input + .c2 {
 <input
     class="c0"
     data-testid="select-skip-option"
-    name="undefined_skip"
+    id="uuid2"
+    name="uuid1_skip"
     type="radio"
     value="skip"
   />,
@@ -1308,6 +1306,7 @@ input[type="radio"]:disabled + .c1 {
 
 <label
     class="c0 c1"
+    for="uuid2"
   >
     Skip this question
   </label>,
@@ -1545,27 +1544,30 @@ input + .c2 {
   >
     <label
       class="c2 c3"
+      for="uuid1"
     >
       Select an option
     </label>
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="listbox_undefined"
+      aria-owns="listbox_uuid1"
       class="c4"
       data-testid="input-wrapper"
     >
       <input
         aria-autocomplete="list"
-        aria-controls="listbox_undefined"
+        aria-controls="listbox_uuid1"
         aria-label="Select an option"
         aria-multiline="false"
         class="c5"
         data-testid="input"
+        id="uuid1"
         type="text"
         value=""
       />
       <button
+        aria-labelledby="uuid1"
         class="c6"
         data-testid="arrow"
         tabindex="-1"
@@ -1580,6 +1582,7 @@ input + .c2 {
       </button>
     </div>
     <div
+      aria-labelledby="uuid1"
       aria-multiselectable="false"
       class="c7"
       role="listbox"
@@ -1588,7 +1591,7 @@ input + .c2 {
       <ul
         class="c8"
         data-testid="listbox-list"
-        id="listbox_undefined"
+        id="listbox_uuid1"
         role="presentation"
         tabindex="0"
       >
@@ -1597,7 +1600,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-on"
-          id="listbox_undefined_on"
+          id="listbox_uuid1_on"
           role="option"
           tabindex="-1"
         >
@@ -1620,7 +1623,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-qc"
-          id="listbox_undefined_qc"
+          id="listbox_uuid1_qc"
           role="option"
           tabindex="-1"
         >
@@ -1643,7 +1646,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-bc"
-          id="listbox_undefined_bc"
+          id="listbox_uuid1_bc"
           role="option"
           tabindex="-1"
         >
@@ -1666,7 +1669,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-ab"
-          id="listbox_undefined_ab"
+          id="listbox_uuid1_ab"
           role="option"
           tabindex="-1"
         >
@@ -1689,7 +1692,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-mb"
-          id="listbox_undefined_mb"
+          id="listbox_uuid1_mb"
           role="option"
           tabindex="-1"
         >
@@ -1712,7 +1715,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-sk"
-          id="listbox_undefined_sk"
+          id="listbox_uuid1_sk"
           role="option"
           tabindex="-1"
         >
@@ -1735,7 +1738,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-ns"
-          id="listbox_undefined_ns"
+          id="listbox_uuid1_ns"
           role="option"
           tabindex="-1"
         >
@@ -1758,7 +1761,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-nb"
-          id="listbox_undefined_nb"
+          id="listbox_uuid1_nb"
           role="option"
           tabindex="-1"
         >
@@ -1781,7 +1784,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-nl"
-          id="listbox_undefined_nl"
+          id="listbox_uuid1_nl"
           role="option"
           tabindex="-1"
         >
@@ -1804,7 +1807,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-pe"
-          id="listbox_undefined_pe"
+          id="listbox_uuid1_pe"
           role="option"
           tabindex="-1"
         >
@@ -1827,7 +1830,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-nt"
-          id="listbox_undefined_nt"
+          id="listbox_uuid1_nt"
           role="option"
           tabindex="-1"
         >
@@ -1850,7 +1853,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-nu"
-          id="listbox_undefined_nu"
+          id="listbox_uuid1_nu"
           role="option"
           tabindex="-1"
         >
@@ -1873,7 +1876,7 @@ input + .c2 {
           aria-selected="false"
           class="c9"
           data-testid="listitem-yt"
-          id="listbox_undefined_yt"
+          id="listbox_uuid1_yt"
           role="option"
           tabindex="-1"
         >
@@ -1908,7 +1911,8 @@ input + .c2 {
 <input
     class="c0"
     data-testid="select-skip-option"
-    name="undefined_skip"
+    id="uuid2"
+    name="uuid1_skip"
     type="radio"
     value="skip"
   />,
@@ -1986,6 +1990,7 @@ input[type="radio"]:disabled + .c1 {
 
 <label
     class="c0 c1"
+    for="uuid2"
   >
     Skip this question
   </label>,
@@ -2203,21 +2208,23 @@ exports[`Select mobile select has a different style 1`] = `
   <div
     aria-expanded="true"
     aria-haspopup="listbox"
-    aria-owns="listbox_undefined"
+    aria-owns="listbox_uuid1"
     class="c2"
     data-testid="input-wrapper"
   >
     <input
       aria-autocomplete="list"
-      aria-controls="listbox_undefined"
+      aria-controls="listbox_uuid1"
       aria-label="Select an option"
       aria-multiline="false"
       class="c3"
       data-testid="input"
+      id="uuid1"
       type="text"
       value=""
     />
     <button
+      aria-labelledby="uuid1"
       class="c4"
       data-testid="arrow"
       tabindex="-1"
@@ -2232,6 +2239,7 @@ exports[`Select mobile select has a different style 1`] = `
     </button>
   </div>
   <div
+    aria-labelledby="uuid1"
     aria-multiselectable="false"
     class="c5"
     role="listbox"
@@ -2240,7 +2248,7 @@ exports[`Select mobile select has a different style 1`] = `
     <ul
       class="c6"
       data-testid="listbox-list"
-      id="listbox_undefined"
+      id="listbox_uuid1"
       role="presentation"
       tabindex="0"
     >
@@ -2249,7 +2257,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-on"
-        id="listbox_undefined_on"
+        id="listbox_uuid1_on"
         role="option"
         tabindex="-1"
       >
@@ -2272,7 +2280,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-qc"
-        id="listbox_undefined_qc"
+        id="listbox_uuid1_qc"
         role="option"
         tabindex="-1"
       >
@@ -2295,7 +2303,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-bc"
-        id="listbox_undefined_bc"
+        id="listbox_uuid1_bc"
         role="option"
         tabindex="-1"
       >
@@ -2318,7 +2326,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-ab"
-        id="listbox_undefined_ab"
+        id="listbox_uuid1_ab"
         role="option"
         tabindex="-1"
       >
@@ -2341,7 +2349,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-mb"
-        id="listbox_undefined_mb"
+        id="listbox_uuid1_mb"
         role="option"
         tabindex="-1"
       >
@@ -2364,7 +2372,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-sk"
-        id="listbox_undefined_sk"
+        id="listbox_uuid1_sk"
         role="option"
         tabindex="-1"
       >
@@ -2387,7 +2395,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-ns"
-        id="listbox_undefined_ns"
+        id="listbox_uuid1_ns"
         role="option"
         tabindex="-1"
       >
@@ -2410,7 +2418,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-nb"
-        id="listbox_undefined_nb"
+        id="listbox_uuid1_nb"
         role="option"
         tabindex="-1"
       >
@@ -2433,7 +2441,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-nl"
-        id="listbox_undefined_nl"
+        id="listbox_uuid1_nl"
         role="option"
         tabindex="-1"
       >
@@ -2456,7 +2464,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-pe"
-        id="listbox_undefined_pe"
+        id="listbox_uuid1_pe"
         role="option"
         tabindex="-1"
       >
@@ -2479,7 +2487,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-nt"
-        id="listbox_undefined_nt"
+        id="listbox_uuid1_nt"
         role="option"
         tabindex="-1"
       >
@@ -2502,7 +2510,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-nu"
-        id="listbox_undefined_nu"
+        id="listbox_uuid1_nu"
         role="option"
         tabindex="-1"
       >
@@ -2525,7 +2533,7 @@ exports[`Select mobile select has a different style 1`] = `
         aria-selected="false"
         class="c7"
         data-testid="listitem-yt"
-        id="listbox_undefined_yt"
+        id="listbox_uuid1_yt"
         role="option"
         tabindex="-1"
       >

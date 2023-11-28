@@ -3,8 +3,6 @@ import { mountWithProviders, renderWithProviders } from '../../test-utils/render
 import { NavItemProps } from '../dropdown-menu/list-items';
 import { getFirstFocusableItem, UserProfile } from './user-profile';
 
-jest.mock('../../utils/uuid');
-
 const onClick = jest.fn();
 const options: NavItemProps[] = [
     {

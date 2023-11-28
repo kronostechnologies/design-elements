@@ -31,6 +31,9 @@ export const Translations = {
         'global-banner': {
             ignore: 'Ignore',
         },
+        'menu-button': {
+            buttonAriaLabel: 'Open menu',
+        },
         modal: {
             closeButtonLabel: 'Close dialog',
         },
@@ -45,7 +48,8 @@ export const Translations = {
             ariaLabel: 'Menu',
         },
         pagination: {
-            results: 'results',
+            pagination: 'Pagination',
+            results: '{{pageStartIndex}}–{{pageEndIndex}} of {{numberOfResults}} results',
         },
         'password-creation-input': {
             'password-strength': 'Password strength: ',
@@ -57,6 +61,10 @@ export const Translations = {
             fair: 'Fair',
             good: 'Good',
             strong: 'Strong',
+            'show-password': 'Show password in plain text.',
+            'hide-password': 'Hide password.',
+        },
+        'password-input': {
             'show-password': 'Show password in plain text.',
             'hide-password': 'Hide password.',
         },
@@ -91,7 +99,8 @@ export const Translations = {
             validationErrorMessage: 'This text area is invalid',
             maxLengthValidationErrorMessage:
                 'The number of characters exceeds the maximum allowed. You must shorten the description.',
-            characters: '{{current}}/{{max}} characters',
+            characters: '{{length}} / {{max}} characters',
+            charactersScreenReader: '{{length}} of {{max}} characters available',
         },
         'text-input': {
             validationErrorMessage: 'This input is invalid',
@@ -136,6 +145,9 @@ export const Translations = {
         'global-banner': {
             ignore: 'Ignorer',
         },
+        'menu-button': {
+            buttonAriaLabel: 'Ouvrir le menu',
+        },
         modal: {
             closeButtonLabel: 'Fermer le dialogue',
         },
@@ -150,7 +162,8 @@ export const Translations = {
             ariaLabel: 'Menu',
         },
         pagination: {
-            results: 'résultats',
+            pagination: 'Pagination',
+            results: '{{pageStartIndex}}–{{pageEndIndex}} de {{numberOfResults}} résultats',
         },
         'password-creation-input': {
             'password-strength': 'Force du mot de passe : ',
@@ -162,6 +175,10 @@ export const Translations = {
             fair: 'Raisonnable',
             good: 'Bon',
             strong: 'Fort',
+            'show-password': 'Montrer le mot de passe.',
+            'hide-password': 'Cacher le mot de passe.',
+        },
+        'password-input': {
             'show-password': 'Montrer le mot de passe.',
             'hide-password': 'Cacher le mot de passe.',
         },
@@ -196,7 +213,8 @@ export const Translations = {
             validationErrorMessage: 'Cette zone texte n\'est pas valide',
             maxLengthValidationErrorMessage:
                 'Le nombre de caractères dépasse le maximum autorisé. Vous devez raccourcir la description.',
-            characters: '{{current}}/{{max}} caractères',
+            characters: '{{length}} / {{max}} caractères',
+            charactersScreenReader: '{{length}} sur {{max}} caractères disponibles',
         },
         'text-input': {
             validationErrorMessage: 'Ce champ est invalide',
