@@ -30,6 +30,9 @@ const preview: Preview = {
                 locales: '',
             },
         },
+        controls: {
+            sort: 'alpha',
+        },
     },
 };
 

@@ -2648,7 +2648,7 @@ label + .c3 {
                   </div>
                 </div>
                 <div
-                  class="react-datepicker__week"
+                  class="react-datepicker__week react-datepicker__week--keyboard-selected"
                 >
                   <div
                     aria-disabled="false"
@@ -3893,7 +3893,7 @@ label + .c3 {
                   </div>
                 </div>
                 <div
-                  class="react-datepicker__week"
+                  class="react-datepicker__week react-datepicker__week--keyboard-selected"
                 >
                   <div
                     aria-disabled="false"
@@ -5055,7 +5055,7 @@ label + .c3 {
                     </div>
                   </div>
                   <div
-                    class="react-datepicker__week"
+                    class="react-datepicker__week react-datepicker__week--keyboard-selected"
                   >
                     <div
                       aria-disabled="false"
