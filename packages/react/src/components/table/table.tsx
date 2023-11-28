@@ -80,7 +80,7 @@ const StyledFooter = styled.td<{ sticky: boolean }>`
     `}
 `;
 
-function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boolean): ReactElement | null {
+function getFooter<T extends object>(column: HeaderGroup<T>, sticky: boolean): ReactElement | null {
     if (column.footerColSpan === 0) {
         // If the Footer content is empty, skip rendering the td
         return null;
@@ -93,7 +93,7 @@ function getFooter<T extends object>(column: HeaderGroup<T>, stickyFooter: boole
         <StyledFooter
             className={column.className}
             style={{ textAlign: column.textAlign }}
-            sticky={stickyFooter}
+            sticky={sticky}
             {...footerProps /* eslint-disable-line react/jsx-props-no-spreading */}
         >
             {column.render('Footer')}
