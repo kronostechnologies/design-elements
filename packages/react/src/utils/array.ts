@@ -5,3 +5,7 @@ export function getNextElementInArray<T>(array: T[], index: number): T | undefin
 export function getPreviousElementInArray<T>(array: T[], index: number): T | undefined {
     return index === 0 ? array[array.length - 1] : array[index - 1];
 }
+
+export function unique<T>(list: T[]): T[] {
+    return list.filter((item, index) => list.indexOf(item) === index);
+}
