@@ -65,6 +65,7 @@ input + .c2 {
 }
 
 .c9 {
+  height: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -540,6 +541,7 @@ input + .c2 {
 }
 
 .c11 {
+  height: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -1099,6 +1101,7 @@ input + .c2 {
 }
 
 .c9 {
+  height: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -1622,6 +1625,7 @@ exports[`Select mobile select has a different style 1`] = `
 }
 
 .c7 {
+  height: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
