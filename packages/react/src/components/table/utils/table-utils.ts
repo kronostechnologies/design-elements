@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export function calculateStickyColumns(
     stickyColumns: boolean[],
-    headerCells: NodeListOf<HTMLTableHeaderCellElement>,
+    headerCells: NodeListOf<HTMLTableCellElement>,
     rows: NodeListOf<HTMLTableRowElement>,
 ): void {
     let left = 0;
@@ -24,7 +24,7 @@ export function calculateStickyColumns(
 
 export function calculateStickyHeader(
     stickyColumns: boolean[],
-    headerCells: NodeListOf<HTMLTableHeaderCellElement>,
+    headerCells: NodeListOf<HTMLTableCellElement>,
 ): void {
     Array.from(headerCells).forEach((headerCell, index) => {
         headerCell.style.setProperty('top', '0px');
