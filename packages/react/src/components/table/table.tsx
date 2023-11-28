@@ -87,7 +87,7 @@ function getFooter<T extends object>(column: HeaderGroup<T>, sticky: boolean): R
     }
     const footerProps = column.footerColSpan
         ? { ...column.getFooterProps(), colSpan: column.footerColSpan }
-        : (column.getFooterProps() as unknown as CustomColumn<T>);
+        : column.getFooterProps();
 
     return (
         <StyledFooter
