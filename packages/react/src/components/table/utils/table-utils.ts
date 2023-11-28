@@ -52,7 +52,7 @@ export function calculateStickyPosition(
         return;
     }
     const headerCells = tableRef.current.querySelectorAll('th');
-    const rows = tableRef.current.querySelectorAll('tr');
+    const rows = tableRef.current.querySelectorAll<HTMLTableRowElement>('tbody > tr');
     const footerCells = tableRef.current.querySelector('tfoot')?.querySelectorAll('td');
 
     calculateStickyColumns(stickyColumns, headerCells, rows);
