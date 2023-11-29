@@ -4,28 +4,11 @@ import { renderWithTheme } from '../../test-utils/renderer';
 import { Listbox } from './listbox';
 
 const options = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        caption: 'The first one',
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-    },
-    {
-        label: 'Option C',
-        value: 'optionC',
-    },
-    {
-        label: 'Option D',
-        value: 'optionD',
-        disabled: true,
-    },
-    {
-        label: 'Option E',
-        value: 'optionE',
-    },
+    { label: 'Option A', value: 'optionA', caption: 'The first one' },
+    { label: 'Option B', value: 'optionB' },
+    { label: 'Option C', value: 'optionC' },
+    { label: 'Option D', value: 'optionD', disabled: true },
+    { label: 'Option E', value: 'optionE' },
 ];
 
 describe('Listbox', () => {
@@ -96,6 +79,22 @@ describe('Listbox', () => {
             getByTestId(wrapper, 'listitem-optionD').simulate('click');
 
             expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+        });
+
+        test('the selected option is focused when the listbox gets the focus', () => {
+            const wrapper = shallow(<Listbox options={options} defaultValue="optionB" />);
+
+            getByTestId(wrapper, 'listbox-container').simulate('focus');
+
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(true);
+        });
+
+        test('the focused option is not focused when the listbox looses the focus', () => {
+            const wrapper = shallow(<Listbox options={options} defaultValue="optionB" focusedValue="optionB" />);
+
+            getByTestId(wrapper, 'listbox-container').simulate('blur');
+
+            expect(getByTestId(wrapper, 'listitem-optionB').prop('focused')).toBe(false);
         });
     });
 
@@ -182,37 +181,113 @@ describe('Listbox', () => {
             expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
         });
 
-        test('Space toggles the selection of the focused option with multiselect', () => {
-            const wrapper = shallow(<Listbox options={options} multiselect focusedValue="optionB" />);
+        describe('with multiselect', () => {
+            test('Space toggles the selection of the focused option', () => {
+                const wrapper = shallow(<Listbox options={options} multiselect focusedValue="optionB" />);
 
-            getByTestId(wrapper, 'listbox-container').simulate(
-                'keydown',
-                { key: ' ', preventDefault: jest.fn() },
-            );
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: ' ', preventDefault: jest.fn() },
+                );
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
 
-            getByTestId(wrapper, 'listbox-container').simulate(
-                'keydown',
-                { key: ' ', preventDefault: jest.fn() },
-            );
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: ' ', preventDefault: jest.fn() },
+                );
 
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(false);
-        });
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(false);
+            });
 
-        test('Ctrl-A selects all options except disabled with multiselect', () => {
-            const wrapper = shallow(<Listbox options={options} multiselect defaultValue={['optionB']} />);
+            test('Ctrl+A selects all options except disabled', () => {
+                const wrapper = shallow(<Listbox options={options} multiselect defaultValue={['optionB']} />);
 
-            getByTestId(wrapper, 'listbox-container').simulate(
-                'keydown',
-                { key: 'a', ctrlKey: true, preventDefault: jest.fn() },
-            );
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: 'a', ctrlKey: true, preventDefault: jest.fn() },
+                );
 
-            expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
-            expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
-            expect(getByTestId(wrapper, 'listitem-optionE').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+                expect(getByTestId(wrapper, 'listitem-optionE').prop('selected')).toBe(true);
+            });
+
+            test('Ctrl+A deselects all options when all options are selected', () => {
+                const enabledOptionValues = options.filter((o) => !o.disabled).map((o) => o.value);
+                const wrapper = shallow(
+                    <Listbox options={options} multiselect defaultValue={enabledOptionValues} />,
+                );
+
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: 'a', ctrlKey: true, preventDefault: jest.fn() },
+                );
+
+                enabledOptionValues.forEach((value) => {
+                    expect(getByTestId(wrapper, `listitem-${value}`).prop('selected')).toBe(false);
+                });
+            });
+
+            test('Shift+ArrowUp selects the previous option', () => {
+                const wrapper = shallow(
+                    <Listbox options={options} multiselect defaultValue={['optionB']} focusedValue="optionB" />,
+                );
+
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: 'ArrowUp', shiftKey: true, preventDefault: jest.fn() },
+                );
+
+                expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+            });
+
+            test('Shift+ArrowDown selects the next option', () => {
+                const wrapper = shallow(
+                    <Listbox options={options} multiselect defaultValue={['optionB']} focusedValue="optionB" />,
+                );
+
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: 'ArrowDown', shiftKey: true, preventDefault: jest.fn() },
+                );
+
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+            });
+
+            test('Shift+Home selects all options from the first to the focused option', () => {
+                const wrapper = shallow(
+                    <Listbox options={options} multiselect defaultValue={['optionC']} focusedValue="optionC" />,
+                );
+
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: 'Home', shiftKey: true, preventDefault: jest.fn() },
+                );
+
+                expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionB').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+            });
+
+            test('Shift+End selects all options from focused option to the last', () => {
+                const wrapper = shallow(
+                    <Listbox options={options} multiselect defaultValue={['optionC']} focusedValue="optionC" />,
+                );
+
+                getByTestId(wrapper, 'listbox-container').simulate(
+                    'keydown',
+                    { key: 'End', shiftKey: true, preventDefault: jest.fn() },
+                );
+
+                expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
+                expect(getByTestId(wrapper, 'listitem-optionD').prop('selected')).toBe(false);
+                expect(getByTestId(wrapper, 'listitem-optionE').prop('selected')).toBe(true);
+            });
         });
     });
 
@@ -266,7 +341,7 @@ describe('Listbox', () => {
     });
 
     describe('onChange callback', () => {
-        test('callback is fired when an option is selected', async () => {
+        test('callback is fired when an option is selected', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onChange={callback} />);
 
@@ -275,14 +350,14 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledTimes(1);
         });
 
-        test('callback is not fired when setting default values', async () => {
+        test('callback is not fired when setting default values', () => {
             const callback = jest.fn();
             shallow(<Listbox options={options} onChange={callback} defaultValue="optionA" />);
 
             expect(callback).toHaveBeenCalledTimes(0);
         });
 
-        test('callback is not fired when the option is already selected', async () => {
+        test('callback is not fired when the option is already selected', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onChange={callback} defaultValue="optionA" />);
 
@@ -291,7 +366,7 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledTimes(0);
         });
 
-        test('callback is not fired when the value prop is changed', async () => {
+        test('callback is not fired when the value prop is changed', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onChange={callback} value="optionA" />);
 
@@ -300,7 +375,7 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledTimes(0);
         });
 
-        test('callback received the selected option when fired', async () => {
+        test('callback received the selected option when fired', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onChange={callback} />);
 
@@ -309,7 +384,7 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledWith(options[1]);
         });
 
-        test('callback received the list of selected options when fired with multiselect', async () => {
+        test('callback received the list of selected options when fired with multiselect', () => {
             const callback = jest.fn();
             const wrapper = shallow(
                 <Listbox multiselect options={options} onChange={callback} defaultValue={['optionB']} />,
@@ -322,7 +397,7 @@ describe('Listbox', () => {
     });
 
     describe('onFocusChange callback', () => {
-        test('callback is fired when an option is focused', async () => {
+        test('callback is fired when an option is focused', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onFocusChange={callback} />);
 
@@ -334,7 +409,7 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledTimes(1);
         });
 
-        test('callback is not fired when the option is already focused', async () => {
+        test('callback is not fired when the option is already focused', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onFocusChange={callback} focusedValue="optionA" />);
 
@@ -343,7 +418,7 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledTimes(0);
         });
 
-        test('callback is not fired when the focusedValue prop is changed', async () => {
+        test('callback is not fired when the focusedValue prop is changed', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onFocusChange={callback} focusedValue="optionA" />);
 
@@ -352,7 +427,7 @@ describe('Listbox', () => {
             expect(callback).toHaveBeenCalledTimes(0);
         });
 
-        test('callback receives the focused option when fired', async () => {
+        test('callback receives the focused option when fired', () => {
             const callback = jest.fn();
             const wrapper = shallow(<Listbox options={options} onFocusChange={callback} focusedValue="optionA" />);
 

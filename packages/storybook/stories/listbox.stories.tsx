@@ -9,131 +9,45 @@ export default {
 };
 
 const options = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-    },
-    {
-        label: 'Option C',
-        value: 'optionC',
-    },
-    {
-        label: 'Option D',
-        value: 'optionD',
-        disabled: true,
-    },
-    {
-        label: 'Option E',
-        value: 'optionE',
-    },
-    {
-        label: 'Option F',
-        value: 'optionF',
-    },
-    {
-        label: 'Option G',
-        value: 'optionG',
-    },
-];
-
-const optionsWithoutLabel = [
-    {
-        value: 'optionA',
-    },
-    {
-        value: 'optionB',
-    },
-];
-
-const optionsWithCaptions = [
-    {
-        label: 'Option A',
-        value: 'optionA',
-        caption: 'The first one',
-    },
-    {
-        label: 'Option B',
-        value: 'optionB',
-        caption: 'Why not this one?',
-    },
-    {
-        label: 'Option C',
-        value: 'optionC',
-        caption: 'This one is also an option',
-    },
+    { label: 'Option A', value: 'optionA' },
+    { label: 'Option B', value: 'optionB' },
+    { label: 'Option C', value: 'optionC' },
+    { label: 'Option D', value: 'optionD', disabled: true },
+    { label: 'Option E', value: 'optionE' },
+    { label: 'Option F', value: 'optionF' },
+    { label: 'Option G', value: 'optionG' },
 ];
 
 export const Normal: Story = () => (
-    <Listbox
-        options={options}
-        onChange={(option) => console.info('onChange', option)}
-        onFocusChange={(option) => console.info('onFocusChange', option)}
-    />
+    <Listbox options={options} />
 );
 
 export const WithDefaultValue: Story = () => (
-    <Listbox
-        defaultValue="optionF"
-        options={options}
-        onChange={(option) => console.info('onChange', option)}
-    />
+    <Listbox defaultValue="optionF" options={options} />
 );
 
-export const WithMultiselect: Story = () => (
-    <Listbox
-        defaultValue={['optionA', 'optionC']}
-        multiselect
-        options={options}
-        onChange={(option) => console.info('onChange', option)}
-        onFocusChange={(option) => console.info('onFocusChange', option)}
-    />
-);
-
-export const WithoutOptionLabel: Story = () => (
-    <Listbox
-        options={optionsWithoutLabel}
-        onChange={(option) => console.info('onChange', option)}
-    />
-);
-
-export const WithCaptions: Story = () => (
-    <Listbox
-        options={optionsWithCaptions}
-        onChange={(option) => console.info('onChange', option)}
-    />
-);
-
-export const WithDisabledOptions: Story = () => {
-    const disabledOptions = [
-        {
-            label: 'Option A',
-            value: 'optionA',
-        },
-        {
-            label: 'Option B',
-            value: 'optionB',
-            disabled: true,
-        },
-        {
-            label: 'Option C',
-            value: 'optionC',
-            disabled: true,
-        },
-        {
-            label: 'Option D',
-            value: 'optionD',
-        },
+export const WithCaptions: Story = () => {
+    const optionsWithCaptions = [
+        { label: 'Option A', value: 'optionA', caption: 'The first one' },
+        { label: 'Option B', value: 'optionB', caption: 'Why not this one?' },
+        { label: 'Option C', value: 'optionC', caption: 'This one is also an option' },
     ];
 
     return (
-        <Listbox
-            options={disabledOptions}
-            onChange={(option) => console.info('onChange', option)}
-        />
+        <Listbox options={optionsWithCaptions} />
+    );
+}
+
+export const WithDisabledOptions: Story = () => {
+    const disabledOptions = [
+        { label: 'Option A', value: 'optionA' },
+        { label: 'Option B', value: 'optionB', disabled: true },
+        { label: 'Option C', value: 'optionC', disabled: true },
+        { label: 'Option D', value: 'optionD' },
+    ];
+
+    return (
+        <Listbox options={disabledOptions} />
     );
 };
 
@@ -157,3 +71,21 @@ export const WithControlledValue: Story = () => {
         </>
     );
 };
+
+export const WithCallbacks: Story = () => (
+    <Listbox
+        options={options}
+        onFocusChange={(option) => console.info('onFocusChange', option)}
+        onChange={(option) => console.info('onChange', option)}
+    />
+);
+
+export const Multiselect: Story = () => (
+    <Listbox
+        defaultValue={['optionA', 'optionC']}
+        multiselect
+        options={options}
+        onFocusChange={(option) => console.info('onFocusChange', option)}
+        onChange={(option) => console.info('onChange', option)}
+    />
+);

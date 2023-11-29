@@ -243,7 +243,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function selectMultipleOptions(optionList: ListboxOption[]): void {
-        const newSelectedOptions = unique([...selectedOptions, ...optionList]);
+        const newSelectedOptions = unique([...selectedOptions, ...optionList.filter((option) => !option.disabled)]);
         setSelectedOptions(newSelectedOptions);
         onChange?.(newSelectedOptions);
     }
@@ -323,10 +323,6 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function handleListboxFocus(): void {
-        if (multiselect) {
-            return;
-        }
-
         if (!focusedOption && selectedOptions.length > 0 && !focusedWithMouseInteraction) {
             setFocusedOption(selectedOptions[0]);
         }
