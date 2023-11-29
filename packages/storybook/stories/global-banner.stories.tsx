@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 import { DeviceContextDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Notification/Global Banner',
+    title: 'Components/Notification/Global Banner',
     component: GlobalBanner,
     decorators: [DeviceContextDecorator],
 };

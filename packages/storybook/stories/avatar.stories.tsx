@@ -4,7 +4,7 @@ import AvatarImg from './assets/avatars.png';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Data/Avatar',
+    title: 'Components/Data/Avatar',
     component: Avatar,
 };
 

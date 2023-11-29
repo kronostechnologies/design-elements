@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Search Global',
+    title: 'Components/Controls/Search Global',
     component: SearchGlobal,
 };
 

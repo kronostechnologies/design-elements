@@ -4,7 +4,7 @@ import { createRef } from 'react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Notification/Error Summary',
+    title: 'Components/Notification/Error Summary',
     component: ErrorSummary,
 };
 

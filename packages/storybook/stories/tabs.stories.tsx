@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Disclosure/Tabs',
+    title: 'Components/Disclosure/Tabs',
     component: Tabs,
     parameters: rawCodeParameters,
 };

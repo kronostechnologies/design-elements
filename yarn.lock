@@ -1765,7 +1765,10 @@ __metadata:
     "@equisoft/typescript-config": "npm:^2.0.0"
     "@mdx-js/react": "npm:^2.3.0"
     "@microsoft/eslint-formatter-sarif": "npm:^3.0.0"
+    "@storybook/addon-a11y": "npm:^7.5.3"
+    "@storybook/addon-actions": "npm:^7.5.3"
     "@storybook/addon-docs": "npm:^7.0.8"
+    "@storybook/addon-links": "npm:^7.5.3"
     "@storybook/blocks": "npm:^7.0.8"
     "@storybook/preview": "npm:^7.0.8"
     "@storybook/react": "npm:^7.0.8"
@@ -3314,6 +3317,67 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-a11y@npm:^7.5.3":
+  version: 7.5.3
+  resolution: "@storybook/addon-a11y@npm:7.5.3"
+  dependencies:
+    "@storybook/addon-highlight": "npm:7.5.3"
+    "@storybook/channels": "npm:7.5.3"
+    "@storybook/client-logger": "npm:7.5.3"
+    "@storybook/components": "npm:7.5.3"
+    "@storybook/core-events": "npm:7.5.3"
+    "@storybook/global": "npm:^5.0.0"
+    "@storybook/manager-api": "npm:7.5.3"
+    "@storybook/preview-api": "npm:7.5.3"
+    "@storybook/theming": "npm:7.5.3"
+    "@storybook/types": "npm:7.5.3"
+    axe-core: "npm:^4.2.0"
+    lodash: "npm:^4.17.21"
+    react-resize-detector: "npm:^7.1.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 62b7bb256bbd2c9f63ee8701d070543231e5e0ecd599bdd4982edc762357b9d02d630cc7f47d91de4e24bdb6810a79b90a05aaea99cc23ffe74e67b1dbdc6d1b
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-actions@npm:^7.5.3":
+  version: 7.5.3
+  resolution: "@storybook/addon-actions@npm:7.5.3"
+  dependencies:
+    "@storybook/client-logger": "npm:7.5.3"
+    "@storybook/components": "npm:7.5.3"
+    "@storybook/core-events": "npm:7.5.3"
+    "@storybook/global": "npm:^5.0.0"
+    "@storybook/manager-api": "npm:7.5.3"
+    "@storybook/preview-api": "npm:7.5.3"
+    "@storybook/theming": "npm:7.5.3"
+    "@storybook/types": "npm:7.5.3"
+    dequal: "npm:^2.0.2"
+    lodash: "npm:^4.17.21"
+    polished: "npm:^4.2.2"
+    prop-types: "npm:^15.7.2"
+    react-inspector: "npm:^6.0.0"
+    telejson: "npm:^7.2.0"
+    ts-dedent: "npm:^2.0.0"
+    uuid: "npm:^9.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: c9077396239e03370a6010f6cf60cfa566fab7e39c013d887f78398a17b29774d34991eaa8560add3692c25a12ac1db01b15b7a8552709b1d700aac0b7e24c5f
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-docs@npm:^7.0.8":
   version: 7.5.3
   resolution: "@storybook/addon-docs@npm:7.5.3"
@@ -3341,6 +3405,43 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: a54f608cbf9f67db3dde5c2fc8ce05579a2a3ca449cf52a919535710881d88d6548fffad8c1fc7964a16d6e68578a85b5cf1ab3d15b691a0154d94ab444feab1
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-highlight@npm:7.5.3":
+  version: 7.5.3
+  resolution: "@storybook/addon-highlight@npm:7.5.3"
+  dependencies:
+    "@storybook/core-events": "npm:7.5.3"
+    "@storybook/global": "npm:^5.0.0"
+    "@storybook/preview-api": "npm:7.5.3"
+  checksum: d0d8665682bcbc4241489e75695dba4fa831803ddbe17c0936dc7a1e1981237f8698b6b228031594def37a2df9a7ce217afc279aa4f3af052c67c2579972bf70
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-links@npm:^7.5.3":
+  version: 7.5.3
+  resolution: "@storybook/addon-links@npm:7.5.3"
+  dependencies:
+    "@storybook/client-logger": "npm:7.5.3"
+    "@storybook/core-events": "npm:7.5.3"
+    "@storybook/csf": "npm:^0.1.0"
+    "@storybook/global": "npm:^5.0.0"
+    "@storybook/manager-api": "npm:7.5.3"
+    "@storybook/preview-api": "npm:7.5.3"
+    "@storybook/router": "npm:7.5.3"
+    "@storybook/types": "npm:7.5.3"
+    prop-types: "npm:^15.7.2"
+    ts-dedent: "npm:^2.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 5ac8ccf17be8a2029a028cb1e680bcc24ea937b60e5a1d785018668b4388809c5a42744ec4a9c17d1e6571241298c7f4de0750ab32feed49b82ac32aa4d6dcbc
   languageName: node
   linkType: hard
 
@@ -5970,6 +6071,13 @@ __metadata:
   version: 4.7.0
   resolution: "axe-core@npm:4.7.0"
   checksum: 89ac5712b5932ac7d23398b4cb5ba081c394a086e343acc68ba49c83472706e18e0799804e8388c779dcdacc465377deb29f2714241d3fbb389cf3a6b275c9ba
+  languageName: node
+  linkType: hard
+
+"axe-core@npm:^4.2.0":
+  version: 4.8.2
+  resolution: "axe-core@npm:4.8.2"
+  checksum: ad9e1125ba226bbc73d442996d8b9b35fed9af8bcfa995831e29c3d6b8ddb0d16bc7d18c66c5a685211296ee99fe966ae4d59051ca6fbef2a7ee7408322b9dbe
   languageName: node
   linkType: hard
 
@@ -13643,6 +13751,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-inspector@npm:^6.0.0":
+  version: 6.0.2
+  resolution: "react-inspector@npm:6.0.2"
+  peerDependencies:
+    react: ^16.8.4 || ^17.0.0 || ^18.0.0
+  checksum: 8f9b23c21b4d95722e28c9455c2bf00fd9437347714382594461f98e5b9954d60864d0f4e74e881639b065e752a97ba52a65e39930c234072e5bff291bb02b5e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:18.1.0":
   version: 18.1.0
   resolution: "react-is@npm:18.1.0"
@@ -13770,6 +13887,18 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 4952657e6a7b9d661d4ad4dfcef81b9c7fa493e35164abff99c35c0b27b3d172ef7ad70c09416dc44dd14ff2e6b38a5ec7da27e27e90a15cbad36b8fd2fd8054
+  languageName: node
+  linkType: hard
+
+"react-resize-detector@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "react-resize-detector@npm:7.1.2"
+  dependencies:
+    lodash: "npm:^4.17.21"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 2285b0024bcc736c7d5e80279e819835a5e8bef0899778100d2434b1c4b10971e6ae253df073ca96a20cacc47b3c249bc675479e5fc4ec1f6652fcca7f48ec22
   languageName: node
   linkType: hard
 
@@ -16362,6 +16491,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: bcbb807a917d374a49f475fae2e87fdca7da5e5530820ef53f65ba1d12131bd81a92ecf259cc7ce317cbe0f289e7d79fdfebcef9bfa3087c8c8a2fa304c9be54
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.0":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 1607dd32ac7fc22f2d8f77051e6a64845c9bce5cd3dd8aa0070c074ec73e666a1f63c7b4e0f4bf2bc8b9d59dc85a15e17807446d9d2b17c8485fbc2147b27f9b
   languageName: node
   linkType: hard
 
