@@ -1,4 +1,4 @@
-import { Table, TableColumn, TableRow, Tooltip, Button } from '@equisoft/design-elements-react';
+import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import { VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
@@ -65,7 +65,7 @@ export const WithFooter: Story = () => {
         {
             Header: 'Column 1',
             accessor: 'column1',
-            Footer: <Button label="Button" buttonType="primary" />,
+            Footer: 'Total:',
             footerColSpan: 2,
 
         },
@@ -83,7 +83,7 @@ export const WithFooter: Story = () => {
                     [value.rows],
                 );
 
-                return `Total: ${total} `;
+                return total;
             },
         },
     ];

@@ -85,6 +85,7 @@ function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: bool
 
 const StyledFooter = styled.td<{ sticky: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
+    font-weight: var(--font-semi-bold);
     position: relative;
     ${({ sticky }) => sticky && css`
         position: sticky;
@@ -182,6 +183,7 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
 
 const StyledTable = styled.table<StyledTableProps>`
     border-collapse: collapse;
+    color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
 
     th {
