@@ -36,7 +36,7 @@ export const WithCaptions: Story = () => {
     return (
         <Listbox options={optionsWithCaptions} />
     );
-}
+};
 
 export const WithDisabledOptions: Story = () => {
     const disabledOptions = [
