@@ -1,16 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table has clickable rows styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1:focus {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2:focus {
   position: relative;
 }
 
-.c1:focus::after {
+.c2:focus::after {
   box-shadow: inset 0 0 0 2px #84C6EA,inset 0 0 0 3px #006296;
   content: '';
   height: calc(100% + 3px);
@@ -22,16 +25,30 @@ exports[`Table has clickable rows styles 1`] = `
   z-index: 3;
 }
 
-.c1:hover {
+.c2:hover {
   cursor: pointer;
 }
 
-.c1:hover td {
+.c2:hover td {
   background-color: #DBDEE1;
 }
 
-.c1:not(:hover) td {
+.c2:not(:hover) td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -79,7 +96,7 @@ exports[`Table has clickable rows styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -87,7 +104,7 @@ exports[`Table has clickable rows styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -100,7 +117,7 @@ exports[`Table has clickable rows styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="button"
       tabindex="0"
@@ -119,7 +136,7 @@ exports[`Table has clickable rows styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="button"
       tabindex="0"
@@ -138,7 +155,7 @@ exports[`Table has clickable rows styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="button"
       tabindex="0"
@@ -161,13 +178,30 @@ exports[`Table has clickable rows styles 1`] = `
 `;
 
 exports[`Table has custom text alignment 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1 td {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -215,7 +249,7 @@ exports[`Table has custom text alignment 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -224,7 +258,7 @@ exports[`Table has custom text alignment 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -238,7 +272,7 @@ exports[`Table has custom text alignment 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -258,7 +292,7 @@ exports[`Table has custom text alignment 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
@@ -278,7 +312,7 @@ exports[`Table has custom text alignment 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
@@ -302,179 +336,32 @@ exports[`Table has custom text alignment 1`] = `
 `;
 
 exports[`Table has desktop styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-  background-color: #FFFFFF;
-}
-
-.c1 td {
-  background-color: inherit;
-}
-
-.c0 {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.c0 th {
-  font-weight: var(--font-semi-bold);
-  padding: var(--spacing-1x) var(--spacing-2x);
-}
-
-.c0 td {
-  padding: var(--spacing-2x);
-}
-
-.c0 th,
-.c0 td {
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin: 0;
-  text-align: left;
-}
-
-.c0 th:last-child,
-.c0 td:last-child {
-  border-right: 0;
-}
-
-.c0 .eq-table__util-column {
-  box-sizing: border-box;
-  color: #60666E;
-  font-size: 0.75rem;
-  min-width: var(--size-2halfx);
-  text-align: center;
-  width: var(--size-2halfx);
-}
-
-<table
-  class="c0"
-  role="table"
->
-  <thead>
-    <tr
-      role="row"
-    >
-      <th
-        class=""
-        colspan="1"
-        role="columnheader"
-        scope="col"
-      >
-        Column 1
-      </th>
-      <th
-        class=""
-        colspan="1"
-        role="columnheader"
-        scope="col"
-      >
-        Column 2
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    role="rowgroup"
-  >
-    <tr
-      class="c1"
-      data-testid="table-row-0"
-      role="row"
-    >
-      <td
-        class=""
-        role="cell"
-      >
-        Hello
-      </td>
-      <td
-        class=""
-        role="cell"
-      >
-        World
-      </td>
-    </tr>
-    <tr
-      class="c1"
-      data-testid="table-row-1"
-      role="row"
-    >
-      <td
-        class=""
-        role="cell"
-      >
-        Hello
-      </td>
-      <td
-        class=""
-        role="cell"
-      >
-        Planet
-      </td>
-    </tr>
-    <tr
-      class="c1"
-      data-testid="table-row-2"
-      role="row"
-    >
-      <td
-        class=""
-        role="cell"
-      >
-        Hello
-      </td>
-      <td
-        class=""
-        role="cell"
-      >
-        Galaxy
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`Table has error rows styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
-  position: relative;
-  background-color: #fcf8f9;
-}
-
-.c1::after {
-  box-shadow: inset 0 0 0 1px #CD2C23;
-  content: '';
-  height: calc(100% + 1px);
-  left: 0;
-  outline: none;
-  position: absolute;
-  width: 100%;
-  z-index: 3;
-}
-
-.c1 td:first-child::after {
-  border-left: 1px solid #CD2C23;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 3;
-}
-
-.c1 td {
-  background-color: inherit;
-}
-
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
   background-color: inherit;
 }
 
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
 .c0 {
   border-collapse: collapse;
   width: 100%;
@@ -520,7 +407,7 @@ exports[`Table has error rows styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -528,7 +415,7 @@ exports[`Table has error rows styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -541,7 +428,7 @@ exports[`Table has error rows styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -573,11 +460,195 @@ exports[`Table has error rows styles 1`] = `
         class=""
         role="cell"
       >
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c2"
+      data-testid="table-row-2"
+      role="row"
+    >
+      <td
+        class=""
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        Galaxy
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table has error rows styles 1`] = `
+.c2 {
+  position: relative;
+  background-color: #fcf8f9;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2::after {
+  box-shadow: inset 0 0 0 1px #CD2C23;
+  content: '';
+  height: calc(100% + 1px);
+  left: 0;
+  outline: none;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+.c2 td:first-child::after {
+  border-left: 1px solid #CD2C23;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.c2 td {
+  background-color: inherit;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+}
+
+.c3:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c3 td {
+  background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  min-width: var(--size-2halfx);
+  text-align: center;
+  width: var(--size-2halfx);
+}
+
+<table
+  class="c0"
+  role="table"
+>
+  <thead>
+    <tr
+      role="row"
+    >
+      <th
+        class="c1"
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 1
+      </th>
+      <th
+        class="c1"
+        colspan="1"
+        role="columnheader"
+        scope="col"
+      >
+        Column 2
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    role="rowgroup"
+  >
+    <tr
+      class="c2"
+      data-testid="table-row-0"
+      role="row"
+    >
+      <td
+        class=""
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
         World
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c3"
+      data-testid="table-row-1"
+      role="row"
+    >
+      <td
+        class=""
+        role="cell"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        role="cell"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
@@ -599,13 +670,30 @@ exports[`Table has error rows styles 1`] = `
 `;
 
 exports[`Table has mobile styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1 td {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -653,7 +741,7 @@ exports[`Table has mobile styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -661,7 +749,7 @@ exports[`Table has mobile styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -674,7 +762,7 @@ exports[`Table has mobile styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -692,7 +780,7 @@ exports[`Table has mobile styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
@@ -710,7 +798,7 @@ exports[`Table has mobile styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
@@ -732,13 +820,30 @@ exports[`Table has mobile styles 1`] = `
 `;
 
 exports[`Table has rowNumbers styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1 td {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -786,13 +891,13 @@ exports[`Table has rowNumbers styles 1`] = `
       role="row"
     >
       <th
-        class="eq-table__util-column"
+        class="c1 eq-table__util-column"
         colspan="1"
         role="columnheader"
         scope="col"
       />
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -800,7 +905,7 @@ exports[`Table has rowNumbers styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -813,7 +918,7 @@ exports[`Table has rowNumbers styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -837,7 +942,7 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
@@ -861,7 +966,7 @@ exports[`Table has rowNumbers styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
@@ -889,7 +994,7 @@ exports[`Table has rowNumbers styles 1`] = `
 `;
 
 exports[`Table has selectable rows styles 1`] = `
-.c6 {
+.c7 {
   color: #FFFFFF;
   display: none;
   height: 100%;
@@ -898,7 +1003,7 @@ exports[`Table has selectable rows styles 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c9 {
   color: #FFFFFF;
   display: none;
   height: 100%;
@@ -907,7 +1012,7 @@ exports[`Table has selectable rows styles 1`] = `
   width: 100%;
 }
 
-.c4 {
+.c5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -923,42 +1028,42 @@ exports[`Table has selectable rows styles 1`] = `
   width: var(--size-1x);
 }
 
-.c4:hover {
+.c5:hover {
   border: 1px solid #006296;
 }
 
-.c2 {
+.c3 {
   height: 0;
   opacity: 0;
   position: absolute;
   width: 0;
 }
 
-.c2:checked + .c3 {
+.c3:checked + .c4 {
   background-color: #006296;
   border: 1px solid #006296;
 }
 
-.c2:checked + .c3 > .c5 {
+.c3:checked + .c4 > .c6 {
   display: block;
 }
 
-.c2:indeterminate + .c3 {
+.c3:indeterminate + .c4 {
   background-color: #006296;
   border: 1px solid #006296;
 }
 
-.c2:indeterminate + .c3 > .c7 {
+.c3:indeterminate + .c4 > .c8 {
   display: block;
 }
 
-.c2:focus + .c3 {
+.c3:focus + .c4 {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -976,17 +1081,34 @@ exports[`Table has selectable rows styles 1`] = `
   user-select: none;
 }
 
-.c1:not(:first-of-type) {
+.c2:not(:first-of-type) {
   margin-top: var(--spacing-1x);
 }
 
-.c9 {
-  border-top: 1px solid #DBDEE1;
+.c10 {
   background-color: #FFFFFF;
 }
 
-.c9 td {
+.c10:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c10 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1034,31 +1156,31 @@ exports[`Table has selectable rows styles 1`] = `
       role="row"
     >
       <th
-        class="eq-table__util-column"
+        class="c1 eq-table__util-column"
         colspan="1"
         role="columnheader"
         scope="col"
       >
         <label
-          class="c1"
+          class="c2"
         >
           <input
-            class="c2"
+            class="c3"
             data-testid="row-checkbox-all"
             type="checkbox"
           />
           <span
-            class="c3 c4"
+            class="c4 c5"
           >
             <svg
-              class="c5 c6"
+              class="c6 c7"
               color="currentColor"
               focusable="false"
               height="24"
               width="24"
             />
             <svg
-              class="c7 c8"
+              class="c8 c9"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1068,7 +1190,7 @@ exports[`Table has selectable rows styles 1`] = `
         </label>
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1076,7 +1198,7 @@ exports[`Table has selectable rows styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1089,7 +1211,7 @@ exports[`Table has selectable rows styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c9"
+      class="c10"
       data-testid="table-row-0"
       role="row"
     >
@@ -1098,25 +1220,25 @@ exports[`Table has selectable rows styles 1`] = `
         role="cell"
       >
         <label
-          class="c1"
+          class="c2"
         >
           <input
-            class="c2"
+            class="c3"
             data-testid="row-checkbox-0"
             type="checkbox"
           />
           <span
-            class="c3 c4"
+            class="c4 c5"
           >
             <svg
-              class="c5 c6"
+              class="c6 c7"
               color="currentColor"
               focusable="false"
               height="24"
               width="24"
             />
             <svg
-              class="c7 c8"
+              class="c8 c9"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1139,7 +1261,7 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c9"
+      class="c10"
       data-testid="table-row-1"
       role="row"
     >
@@ -1148,25 +1270,25 @@ exports[`Table has selectable rows styles 1`] = `
         role="cell"
       >
         <label
-          class="c1"
+          class="c2"
         >
           <input
-            class="c2"
+            class="c3"
             data-testid="row-checkbox-1"
             type="checkbox"
           />
           <span
-            class="c3 c4"
+            class="c4 c5"
           >
             <svg
-              class="c5 c6"
+              class="c6 c7"
               color="currentColor"
               focusable="false"
               height="24"
               width="24"
             />
             <svg
-              class="c7 c8"
+              class="c8 c9"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1189,7 +1311,7 @@ exports[`Table has selectable rows styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c9"
+      class="c10"
       data-testid="table-row-2"
       role="row"
     >
@@ -1198,25 +1320,25 @@ exports[`Table has selectable rows styles 1`] = `
         role="cell"
       >
         <label
-          class="c1"
+          class="c2"
         >
           <input
-            class="c2"
+            class="c3"
             data-testid="row-checkbox-2"
             type="checkbox"
           />
           <span
-            class="c3 c4"
+            class="c4 c5"
           >
             <svg
-              class="c5 c6"
+              class="c6 c7"
               color="currentColor"
               focusable="false"
               height="24"
               width="24"
             />
             <svg
-              class="c7 c8"
+              class="c8 c9"
               color="currentColor"
               focusable="false"
               height="24"
@@ -1243,13 +1365,30 @@ exports[`Table has selectable rows styles 1`] = `
 `;
 
 exports[`Table has small rowSize styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1 td {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1297,7 +1436,7 @@ exports[`Table has small rowSize styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1305,7 +1444,7 @@ exports[`Table has small rowSize styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1318,7 +1457,7 @@ exports[`Table has small rowSize styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -1336,7 +1475,7 @@ exports[`Table has small rowSize styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
@@ -1354,7 +1493,7 @@ exports[`Table has small rowSize styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
@@ -1376,16 +1515,16 @@ exports[`Table has small rowSize styles 1`] = `
 `;
 
 exports[`Table has sorting styles 1`] = `
-.c2 {
+.c3 {
   cursor: pointer;
   margin-right: var(--spacing-1x);
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
 }
 
-.c1 {
+.c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1396,12 +1535,29 @@ exports[`Table has sorting styles 1`] = `
   display: flex;
 }
 
-.c3 {
-  border-top: 1px solid #DBDEE1;
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c4 {
   background-color: #FFFFFF;
 }
 
-.c3 td {
+.c4:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c4 td {
   background-color: inherit;
 }
 
@@ -1451,6 +1607,7 @@ exports[`Table has sorting styles 1`] = `
     >
       <th
         aria-sort="ascending"
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1458,10 +1615,10 @@ exports[`Table has sorting styles 1`] = `
         title="Toggle SortBy"
       >
         <div
-          class="c1"
+          class="c2"
         >
           <button
-            class="c2"
+            class="c3"
           >
             <svg
               color="#60666E"
@@ -1475,6 +1632,7 @@ exports[`Table has sorting styles 1`] = `
       </th>
       <th
         aria-sort="none"
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1482,10 +1640,10 @@ exports[`Table has sorting styles 1`] = `
         title="Toggle SortBy"
       >
         <div
-          class="c1"
+          class="c2"
         >
           <button
-            class="c2"
+            class="c3"
           >
             <svg
               color="#60666E"
@@ -1503,7 +1661,7 @@ exports[`Table has sorting styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-0"
       role="row"
     >
@@ -1521,7 +1679,7 @@ exports[`Table has sorting styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-1"
       role="row"
     >
@@ -1539,7 +1697,7 @@ exports[`Table has sorting styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-2"
       role="row"
     >
@@ -1561,18 +1719,35 @@ exports[`Table has sorting styles 1`] = `
 `;
 
 exports[`Table has sticky column styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1 td {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2 td {
   background-color: inherit;
 }
 
-.c2 {
+.c3 {
   position: -webkit-sticky;
   position: sticky;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1620,7 +1795,7 @@ exports[`Table has sticky column styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1628,7 +1803,7 @@ exports[`Table has sticky column styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1636,7 +1811,7 @@ exports[`Table has sticky column styles 1`] = `
         Column 2
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1649,18 +1824,18 @@ exports[`Table has sticky column styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
       <td
-        class="c2"
+        class="c3"
         role="cell"
       >
         Hello
       </td>
       <td
-        class="c2"
+        class="c3"
         role="cell"
       >
         Big
@@ -1673,18 +1848,18 @@ exports[`Table has sticky column styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
       <td
-        class="c2"
+        class="c3"
         role="cell"
       >
         Hello
       </td>
       <td
-        class="c2"
+        class="c3"
         role="cell"
       >
         Big
@@ -1697,18 +1872,18 @@ exports[`Table has sticky column styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
       <td
-        class="c2"
+        class="c3"
         role="cell"
       >
         Hello
       </td>
       <td
-        class="c2"
+        class="c3"
         role="cell"
       >
         Big
@@ -1726,8 +1901,11 @@ exports[`Table has sticky column styles 1`] = `
 
 exports[`Table has sticky header styles 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -1736,8 +1914,18 @@ exports[`Table has sticky header styles 1`] = `
 
 .c1 {
   background-color: #FFFFFF;
+  position: relative;
   position: -webkit-sticky;
   position: sticky;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1864,17 +2052,34 @@ exports[`Table has sticky header styles 1`] = `
 `;
 
 exports[`Table has striped styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1:nth-child(odd) {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2:nth-child(odd) {
   background-color: #FAFAFA;
 }
 
-.c1 td {
+.c2 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1922,7 +2127,7 @@ exports[`Table has striped styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1930,7 +2135,7 @@ exports[`Table has striped styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -1943,7 +2148,7 @@ exports[`Table has striped styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -1961,7 +2166,7 @@ exports[`Table has striped styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
@@ -1979,7 +2184,7 @@ exports[`Table has striped styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >
@@ -2001,13 +2206,30 @@ exports[`Table has striped styles 1`] = `
 `;
 
 exports[`Table has tablet styles 1`] = `
-.c1 {
-  border-top: 1px solid #DBDEE1;
+.c2 {
   background-color: #FFFFFF;
 }
 
-.c1 td {
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
+}
+
+.c2 td {
   background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -2055,7 +2277,7 @@ exports[`Table has tablet styles 1`] = `
       role="row"
     >
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -2063,7 +2285,7 @@ exports[`Table has tablet styles 1`] = `
         Column 1
       </th>
       <th
-        class=""
+        class="c1"
         colspan="1"
         role="columnheader"
         scope="col"
@@ -2076,7 +2298,7 @@ exports[`Table has tablet styles 1`] = `
     role="rowgroup"
   >
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-0"
       role="row"
     >
@@ -2094,7 +2316,7 @@ exports[`Table has tablet styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-1"
       role="row"
     >
@@ -2112,7 +2334,7 @@ exports[`Table has tablet styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c1"
+      class="c2"
       data-testid="table-row-2"
       role="row"
     >

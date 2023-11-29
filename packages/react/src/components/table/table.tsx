@@ -50,10 +50,20 @@ interface CustomRowProps {
 const utilColumnClassName = 'eq-table__util-column';
 
 const StyledHeader = styled.th<{ sticky: boolean }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    position: relative;
     ${({ sticky }) => sticky && css`
-        background-color: ${({ theme }) => theme.greys.white};
         position: sticky;
     `}
+
+    &:before {
+        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        bottom: 0;
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
 `;
 
 function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: boolean): ReactElement {
@@ -74,10 +84,22 @@ function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: bool
 }
 
 const StyledFooter = styled.td<{ sticky: boolean }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    position: relative;
     ${({ sticky }) => sticky && css`
-        background-color: ${({ theme }) => theme.greys.white};
         position: sticky;
     `}
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px -2px 6px 0px rgba(0, 0, 0, 0.05);
+        content: '';
+        height: 1px;
+        position: absolute;
+        right: 0;
+        top: 1px;
+        width: 100%;
+    }
 `;
 
 function getFooter<T extends object>(column: HeaderGroup<T>, sticky: boolean): ReactElement | null {
