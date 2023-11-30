@@ -19,6 +19,16 @@ export function cleanIncompleteNumber(inputValue: string): string {
     return value;
 }
 
+export function isValidPrecisionLimit(precision: number, value: string): boolean {
+    if (precision === 0 && value.includes('.')) {
+        return false;
+    }
+    if (precision > 0 && value.split('.')[1]?.length > precision) {
+        return false;
+    }
+    return true;
+}
+
 export function cleanPastedContent(content: string): string {
     // Remove spaces and invisible characters (ex: \r, \n, ZWSP) around the copied text
     return content.trim();

@@ -1,4 +1,4 @@
-import { cleanIncompleteNumber, truncateAtPrecision } from './utils';
+import { cleanIncompleteNumber, isValidPrecisionLimit, truncateAtPrecision } from './utils';
 
 describe('Test NumericInput utils', () => {
     test('should truncateAtPrecision return expected results', () => {
@@ -32,6 +32,30 @@ describe('Test NumericInput utils', () => {
         tests.forEach(({ value, expected }) => {
             const result = cleanIncompleteNumber(value);
             expect(result).toEqual(expected);
+        });
+    });
+
+    test('should isValidPrecisionLimit return expected results', () => {
+        const validTests = [
+            { precision: 0, value: '' },
+            { precision: 2, value: '' },
+            { precision: 2, value: '123.50' },
+            { precision: 2, value: '123' },
+        ];
+
+        const invalidTests = [
+            { precision: 0, value: '123.50' },
+            { precision: 2, value: '123.4567' },
+        ];
+
+        validTests.forEach(({ precision, value }) => {
+            const result = isValidPrecisionLimit(precision, value);
+            expect(result).toBe(true);
+        });
+
+        invalidTests.forEach(({ precision, value }) => {
+            const result = isValidPrecisionLimit(precision, value);
+            expect(result).toBe(false);
         });
     });
 });

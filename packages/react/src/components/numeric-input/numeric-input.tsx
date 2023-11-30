@@ -21,7 +21,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
-import { cleanIncompleteNumber, cleanPastedContent, truncateAtPrecision } from './utils';
+import { cleanIncompleteNumber, cleanPastedContent, isValidPrecisionLimit, truncateAtPrecision } from './utils';
 
 interface StyledInputProps {
     device: DeviceContextProps;
@@ -151,19 +151,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         setStateErrorMessage(error);
     }, [t, max, min, required]);
 
-    const isValidInputtingChars = useCallback((inputValue: string): boolean => {
-        if (precision === 0 && inputValue.includes('.')) {
-            return false;
-        }
-        if (precision && precision > 0 && inputValue.split('.')[1]?.length > precision) {
-            return false;
-        }
-        if (!/^-?\d*\.?\d*$/.test(inputValue)) {
-            return false;
-        }
-
-        return true;
-    }, [precision]);
+    const isValidInputtingChars = useCallback((inputValue: string): boolean => /^-?\d*\.?\d*$/.test(inputValue), []);
 
     const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
         event.preventDefault();
@@ -184,16 +172,21 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     }, [precision, isValidInputtingChars]);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        const inputValue = event.currentTarget.value;
+        const inputValue = event.target.value;
+        const valueAsNumber = inputValue === '' ? null : Number(inputValue);
 
-        if (inputValue === '') {
-            setStateValue('');
-            onChange?.(event, null);
-        } else if (isValidInputtingChars(inputValue)) {
-            setStateValue(inputValue);
-            onChange?.(event, Number(inputValue));
+        if (inputValue !== '') {
+            if (!isValidInputtingChars(inputValue)) {
+                return;
+            }
+            if (precision !== undefined && !isValidPrecisionLimit(precision, inputValue)) {
+                return;
+            }
         }
-    }, [onChange, isValidInputtingChars]);
+
+        setStateValue(inputValue);
+        onChange?.(event, valueAsNumber);
+    }, [isValidInputtingChars, precision, onChange]);
 
     const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
         const inputValue = cleanIncompleteNumber(event.target.value);

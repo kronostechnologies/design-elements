@@ -95,16 +95,6 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   color: #B7BBC2;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c4[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c4:focus,
 .c4:disabled {
   border: 0;
@@ -293,16 +283,6 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   color: #B7BBC2;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c5[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c5:focus,
 .c5:disabled {
   border: 0;
@@ -474,16 +454,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   color: #B7BBC2;
 }
 
-.c2::-webkit-outer-spin-button,
-.c2::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c2[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c2:focus,
 .c2:disabled {
   border: 0;
@@ -637,16 +607,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
 .c3:disabled,
 .c3:disabled::placeholder {
   color: #B7BBC2;
-}
-
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c3[type='number'] {
-  -moz-appearance: textfield;
 }
 
 .c3:focus,
