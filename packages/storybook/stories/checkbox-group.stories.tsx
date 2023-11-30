@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Checkbox Group',
+    title: 'Components/Controls/Checkbox Group',
     component: CheckboxGroup,
 };
 

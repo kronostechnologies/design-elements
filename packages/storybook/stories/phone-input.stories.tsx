@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 import { DesktopDecorator, MobileDecorator } from './utils/device-context-decorator';
 
 export default {
-    title: 'Controls/Phone Input',
+    title: 'Components/Controls/Phone Input',
     component: PhoneInput,
 };
 

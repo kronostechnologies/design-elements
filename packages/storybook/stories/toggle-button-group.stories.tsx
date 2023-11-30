@@ -25,7 +25,7 @@ const disabledGroup = [
 ];
 
 export default {
-    title: 'Controls/Toggle Button Group',
+    title: 'Components/Controls/Toggle Button Group',
     component: ToggleButtonGroup,
 };
 

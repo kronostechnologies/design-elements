@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Search Contextual',
+    title: 'Components/Controls/Search Contextual',
     component: SearchContextual,
 };
 

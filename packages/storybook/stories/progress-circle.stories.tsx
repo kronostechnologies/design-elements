@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Data/Progress Circle',
+    title: 'Components/Data/Progress Circle',
     component: ProgressCircle,
 };
 
