@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import {
     ChangeEvent,
+    ClipboardEvent,
     FocusEvent,
     HTMLProps,
     ReactNode,
@@ -20,17 +21,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
-
-function cleanupValueToDisplay(inputValue: string): string {
-    const value = inputValue.trim();
-
-    if (value === '' || value === '-' || value === '.') {
-        return '';
-    }
-
-    // Add missing integral zero (.25 => 0.25)
-    return value.replace(/^(-?)\./, '$10.');
-}
+import { cleanIncompleteNumber, cleanPastedContent, truncateAtPrecision } from './utils';
 
 interface StyledInputProps {
     device: DeviceContextProps;
@@ -44,16 +35,6 @@ const StyledInput = styled.input<StyledInputProps>`
     border: 0;
     flex: 1 1 auto;
     text-align: ${({ $textAlign }) => $textAlign};
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-        margin: 0;
-    }
-
-    &[type='number'] {
-        -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
-    }
 
     &:focus,
     &:disabled {
@@ -112,7 +93,7 @@ interface NumericInputProps extends NativeInputProps {
     max?: number;
     min?: number;
     noMargin?: boolean;
-    onBlur?(event: ChangeEvent<HTMLInputElement>, valueAsNumber: number | null): void;
+    onBlur?(event: FocusEvent<HTMLInputElement>, valueAsNumber: number | null): void;
     onChange?(event: ChangeEvent<HTMLInputElement>, valueAsNumber: number | null): void;
     precision?: number;
     required?: boolean;
@@ -184,14 +165,26 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
         return true;
     }, [precision]);
 
-    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        let inputValue = event.target.value.trim();
+    const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
+        event.preventDefault();
+        let newValue = event.clipboardData.getData('text/plain');
 
-        // In case of a copy-paste, automatically truncate the precision if it exceeds the limit
-        if (precision !== undefined && inputValue.includes('.')) {
-            const atDot = inputValue.indexOf('.');
-            inputValue = inputValue.slice(0, precision === 0 ? atDot : atDot + precision + 1);
+        newValue = cleanPastedContent(newValue);
+
+        // When the content is invalid, we will clear the field so the user has a feedback that the paste didn't work
+        if (!isValidInputtingChars(newValue)) {
+            newValue = '';
         }
+
+        if (precision !== undefined) {
+            newValue = truncateAtPrecision(precision, newValue);
+        }
+
+        setStateValue(newValue);
+    }, [precision, isValidInputtingChars]);
+
+    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
+        const inputValue = event.currentTarget.value;
 
         if (inputValue === '') {
             setStateValue('');
@@ -200,10 +193,10 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             setStateValue(inputValue);
             onChange?.(event, Number(inputValue));
         }
-    }, [onChange, isValidInputtingChars, precision]);
+    }, [onChange, isValidInputtingChars]);
 
     const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
-        const inputValue = cleanupValueToDisplay(event.target.value);
+        const inputValue = cleanIncompleteNumber(event.target.value);
         setStateValue(inputValue);
         validate(inputValue);
 
@@ -245,6 +238,7 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
                     disabled={disabled}
                     id={fieldId}
                     inputMode="numeric"
+                    onPaste={handlePaste}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     onFocus={onFocus}

@@ -97,8 +97,12 @@ export const ControlledValue: Story = () => {
             adornment="%"
             onChange={(event, valueAsNumber) => {
                 setInputValue(event.target.value);
-                console.info(`NumericInput value: ${event.target.value}`);
-                console.info(`NumericInput valueAsNumber: ${valueAsNumber}`);
+                console.info(`NumericInput onChange value: ${event.target.value}`);
+                console.info(`NumericInput onChange valueAsNumber: ${valueAsNumber}`);
+            }}
+            onBlur={(event, valueAsNumber) => {
+                console.info(`NumericInput onBlur value: ${event.target.value}`);
+                console.info(`NumericInput onBlur valueAsNumber: ${valueAsNumber}`);
             }}
             value={inputValue}
         />
