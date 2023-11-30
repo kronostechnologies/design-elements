@@ -1,0 +1,41 @@
+name: GitHub Pages Cleanup
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Detect folder
+        id: detect_folder
+        run: |
+          folder_name=pr-${{ github.event.pull_request.number }}
+          folder_exists=false
+          if [ -d "$folder_name" ]; then
+              folder_exists=true
+          fi
+          
+          echo "folder_name=${folder_name}" >> $GITHUB_OUTPUT
+          echo "folder_exists=${folder_exists}" >> $GITHUB_OUTPUT
+
+      - name: Delete Folder
+        if: steps.detect_folder.outputs.folder_exists == 'true'
+        run: |
+          rm -rf "${{ steps.detect_folder.outputs.folder_name }}"
+
+      - name: Commit and push changes
+        if: steps.detect_folder.outputs.folder_exists == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: remove PR folder '${{ steps.detect_folder.outputs.folder_name }}'"
+          skip_checkout: true
+          commit_user_name: kronostechnologies-build
+          commit_user_email: na-qc@equisoft.com
+          commit_author: kronostechnologies-build <na-qc@equisoft.com>
