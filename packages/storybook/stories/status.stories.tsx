@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 
 export default {
     component: Status,
-    title: 'Data/Status',
+    title: 'Components/Data/Status',
 };
 
 export const Normal: Story = () => (

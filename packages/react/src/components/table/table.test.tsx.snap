@@ -1525,7 +1525,7 @@ exports[`Table has small rowSize styles 1`] = `
 exports[`Table has sorting styles 1`] = `
 .c3 {
   cursor: pointer;
-  margin-right: var(--spacing-1x);
+  margin-left: var(--spacing-1x);
 }
 
 .c3:focus {
@@ -1626,6 +1626,7 @@ exports[`Table has sorting styles 1`] = `
         <div
           class="c2"
         >
+          Column 1
           <button
             class="c3"
           >
@@ -1636,7 +1637,6 @@ exports[`Table has sorting styles 1`] = `
               width="16"
             />
           </button>
-          Column 1
         </div>
       </th>
       <th
@@ -1651,6 +1651,7 @@ exports[`Table has sorting styles 1`] = `
         <div
           class="c2"
         >
+          Column 2
           <button
             class="c3"
           >
@@ -1661,7 +1662,6 @@ exports[`Table has sorting styles 1`] = `
               width="16"
             />
           </button>
-          Column 2
         </div>
       </th>
     </tr>

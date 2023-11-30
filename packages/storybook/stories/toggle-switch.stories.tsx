@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Toggle Switch',
+    title: 'Components/Controls/Toggle Switch',
     component: ToggleSwitch,
     parameters: rawCodeParameters,
 };

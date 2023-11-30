@@ -5,7 +5,7 @@ import { SortButtonIcon, SortState } from './sort-button-icon';
 
 const SortButton = styled.button`
     cursor: pointer;
-    margin-right: var(--spacing-1x);
+    margin-left: var(--spacing-1x);
 
     &:focus {
         outline: none;
@@ -50,10 +50,10 @@ export const SortableColumnHeading = <T extends object>({ header }: SortableColu
             aria-sort={sortState}
         >
             <StyledDiv textAlign={header.textAlign}>
+                {header.render('Header')}
                 <SortButton>
                     <SortButtonIcon sort={sortState} data-testid="sort-icon" />
                 </SortButton>
-                {header.render('Header')}
             </StyledDiv>
         </StyledHeader>
     );

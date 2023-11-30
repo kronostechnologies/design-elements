@@ -256,7 +256,7 @@ export interface TableProps<T extends object> {
     columns: TableColumn<T>;
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
-    data: T[] & CustomRowProps[];
+    data: (T & CustomRowProps)[];
     /**
      * Adds row numbers
      * @default false

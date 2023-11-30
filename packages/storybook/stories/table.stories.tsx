@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Structure/Table',
+    title: 'Components/Structure/Table',
     component: Table,
     parameters: rawCodeParameters,
 };

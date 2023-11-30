@@ -4,7 +4,7 @@ import { PasswordInput } from '@equisoft/design-elements-react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Password Input',
+    title: 'Components/Controls/Password Input',
     component: PasswordInput,
 };
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Money Input',
+    title: 'Components/Controls/Money Input',
     component: MoneyInput,
 };
 

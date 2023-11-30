@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 
 export default {
-    title: 'Notification/Badge',
+    title: 'Components/Notification/Badge',
     component: Badge,
 };
 

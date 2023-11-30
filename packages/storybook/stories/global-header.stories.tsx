@@ -6,7 +6,7 @@ import { MobileDecorator } from './utils/device-context-decorator';
 import { RouterDecorator } from './utils/router-decorator';
 
 export default {
-    title: 'Structure/Global Header',
+    title: 'Components/Structure/Global Header',
     component: GlobalHeader,
     decorators: [RouterDecorator],
 };

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Radio Card Group',
+    title: 'Components/Controls/Radio Card Group',
     component: RadioCardGroup,
 };
 

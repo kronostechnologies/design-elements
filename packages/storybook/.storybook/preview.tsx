@@ -12,20 +12,28 @@ const decorators: Decorator[] = [
     ),
 ];
 
-const parameters: Parameters = {
-    docs: {
-        container: DocsContainer,
-        page: DocsPage,
-        source: {
-            type: 'dynamic',
-            excludeDecorators: true,
-        },
-    },
-};
-
 const preview: Preview = {
     decorators,
-    parameters,
+    parameters: {
+        docs: {
+            container: DocsContainer,
+            page: DocsPage,
+            source: {
+            type: 'dynamic',
+            excludeDecorators: true,
+            },
+        },
+        options: {
+            storySort: {
+                method: '',
+                order: ['Foundations', 'Components', ['*', 'Deprecated'], '*'],
+                locales: '',
+            },
+        },
+        controls: {
+            sort: 'alpha',
+        },
+    },
 };
 
 export default preview;

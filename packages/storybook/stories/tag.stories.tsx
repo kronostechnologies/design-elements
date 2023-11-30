@@ -4,7 +4,7 @@ import { ReactElement, useRef, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Notification/Tag',
+    title: 'Components/Notification/Tag',
     component: Tag,
 };
 
