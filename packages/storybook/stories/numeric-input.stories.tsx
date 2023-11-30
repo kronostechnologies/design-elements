@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Controls/Numeric Input',
+    title: 'Components/Controls/Numeric Input',
     component: NumericInput,
 };
 

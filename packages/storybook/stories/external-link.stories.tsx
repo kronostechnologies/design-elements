@@ -3,7 +3,7 @@ import { StoryFn as Story } from '@storybook/react';
 import { rawCodeParameters } from './utils/parameters';
 
 export default {
-    title: 'Navigation/External Link',
+    title: 'Components/Navigation/External Link',
     component: ExternalLink,
 };
 

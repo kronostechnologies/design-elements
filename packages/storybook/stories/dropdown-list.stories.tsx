@@ -33,7 +33,7 @@ const skipOption = {
 };
 
 export default {
-    title: 'Controls/Dropdown-list',
+    title: 'Components/Controls/Dropdown-list',
     component: DropdownList,
     decorators: [decorateWith(Container)],
 };
