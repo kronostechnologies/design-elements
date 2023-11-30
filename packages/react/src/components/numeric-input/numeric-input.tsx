@@ -171,13 +171,13 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
 
         newValue = cleanPastedContent(newValue);
 
+        if (precision !== undefined) {
+            newValue = truncateAtPrecision(precision, newValue);
+        }
+
         // When the content is invalid, we will clear the field so the user has a feedback that the paste didn't work
         if (!isValidInputtingChars(newValue)) {
             newValue = '';
-        }
-
-        if (precision !== undefined) {
-            newValue = truncateAtPrecision(precision, newValue);
         }
 
         setStateValue(newValue);
