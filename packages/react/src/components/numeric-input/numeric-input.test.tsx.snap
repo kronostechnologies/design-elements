@@ -41,6 +41,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -116,10 +117,12 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
   background-color: #F1F2F2;
   border-color: #DBDEE1;
 }
@@ -229,6 +232,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -304,10 +308,12 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
   border-color: #CD2C23;
 }
 
@@ -400,6 +406,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -475,10 +482,12 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
 }
 
 .c1:focus-within {
@@ -555,6 +564,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -630,10 +640,12 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
 }
 
 .c1:focus-within {

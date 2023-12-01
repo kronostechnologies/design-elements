@@ -34,6 +34,7 @@ const StyledInput = styled.input<StyledInputProps>`
 
     border: 0;
     flex: 1 1 auto;
+    min-height: 100%;
     text-align: ${({ $textAlign }) => $textAlign};
 
     &:focus,
@@ -59,7 +60,9 @@ const Wrapper = styled.div<StyledWrapperProps>`
     background: ${({ theme }) => theme.greys.white};
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-radius: var(--border-radius);
+    box-sizing: border-box;
     display: flex;
+    height: var(--size-2x);
 
     ${({ $invalid, theme }) => $invalid && css`
         border-color: ${theme.notifications['alert-2.1']};
