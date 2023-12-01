@@ -34,6 +34,8 @@ jobs:
         if: steps.detect_folder.outputs.folder_exists == 'true'
         uses: EndBug/add-and-commit@v9
         with:
-          message: "docs: remove PR folder '${{ steps.detect_folder.outputs.folder_name }}'"
-          add: "${{ steps.detect_folder.outputs.folder_name }}"
           pull: '--rebase --autostash'
+          add: "${{ steps.detect_folder.outputs.folder_name }}"
+          message: "docs: remove PR folder '${{ steps.detect_folder.outputs.folder_name }}'"
+          author_name: kronostechnologies-build
+          author_email: na-qc@equisoft.com
