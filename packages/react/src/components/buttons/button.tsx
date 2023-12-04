@@ -2,9 +2,7 @@ import { forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement,
 import styled from 'styled-components';
 import { Theme } from '../../themes';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { AbstractButton, getButtonTypeStyles } from './abstract-button';
-
-export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 
 type Size = 'small' | 'medium';
 

@@ -23,6 +23,7 @@ export const Buttons: Story = () => (
         <Button label="Secondary" buttonType="secondary" />
         <Button label="Tertiary" buttonType="tertiary" />
         <Button label="Destructive" buttonType="destructive" />
+        <Button label="Destructive-Secondary" buttonType="destructive-secondary" />
     </>
 );
 
@@ -32,6 +33,7 @@ export const Disabled: Story = () => (
         <Button label="Secondary" buttonType="secondary" disabled />
         <Button label="Tertiary" buttonType="tertiary" disabled />
         <Button label="Destructive" buttonType="destructive" disabled />
+        <Button label="Destructive-Secondary" buttonType="destructive-secondary" disabled />
     </>
 );
 
@@ -41,6 +43,7 @@ export const Inverted: Story = () => (
         <Button label="Secondary" buttonType="secondary" inverted />
         <Button label="Tertiary" buttonType="tertiary" inverted />
         <Button label="Destructive" buttonType="destructive" inverted />
+        <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted />
     </InvertedBackground>
 );
 export const InvertedDisabled: Story = () => (
@@ -49,6 +52,7 @@ export const InvertedDisabled: Story = () => (
         <Button label="Secondary" buttonType="secondary" inverted disabled />
         <Button label="Tertiary" buttonType="tertiary" inverted disabled />
         <Button label="Destructive" buttonType="destructive" inverted disabled />
+        <Button label="Destructive-Secondary" buttonType="destructive-secondary" inverted disabled />
     </InvertedBackground>
 );
 
@@ -83,6 +87,11 @@ export const WithIcons: Story = () => (
             Destructive
             <ChevronDownIcon />
         </Button>
+        <Button buttonType="destructive-secondary">
+            <PlusIcon />
+            Destructive Secondary
+            <ChevronDownIcon />
+        </Button>
     </>
 );
 
@@ -92,5 +101,6 @@ export const Small: Story = () => (
         <Button label="Secondary" buttonType="secondary" size="small" />
         <Button label="Tertiary" buttonType="tertiary" size="small" />
         <Button label="Destructive" buttonType="destructive" size="small" />
+        <Button label="Destructive-Secondary" buttonType="destructive-secondary" size="small" />
     </>
 );
