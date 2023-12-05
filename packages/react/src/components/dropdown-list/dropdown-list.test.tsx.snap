@@ -54,11 +54,11 @@ input + .c2 {
   z-index: 1000;
 }
 
-.c7:focus:focus {
+.c7:focus {
   outline: none;
 }
 
-.c7:focus:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -78,7 +78,6 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -249,10 +248,8 @@ input + .c2 {
   </div>
   <div
     aria-labelledby="uuid1"
-    aria-multiselectable="false"
     class="c7 c8"
     data-testid="listbox-container"
-    focusable="true"
     id="listbox_uuid1"
     role="listbox"
     tabindex="0"
@@ -263,8 +260,6 @@ input + .c2 {
       role="presentation"
     >
       <li
-        aria-label="Ontario"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-on"
         id="listbox_uuid1_on"
@@ -277,8 +272,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Quebec"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-qc"
         id="listbox_uuid1_qc"
@@ -291,8 +284,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="British Columbia"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-bc"
         id="listbox_uuid1_bc"
@@ -305,8 +296,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Alberta"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-ab"
         id="listbox_uuid1_ab"
@@ -319,8 +308,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Manitoba"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-mb"
         id="listbox_uuid1_mb"
@@ -333,8 +320,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Saskatchewan"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-sk"
         id="listbox_uuid1_sk"
@@ -347,8 +332,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Nova Scotia"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-ns"
         id="listbox_uuid1_ns"
@@ -361,8 +344,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="New Brunswick"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-nb"
         id="listbox_uuid1_nb"
@@ -375,8 +356,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Newfoundland and Labrador"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-nl"
         id="listbox_uuid1_nl"
@@ -389,8 +368,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Prince Edward Island"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-pe"
         id="listbox_uuid1_pe"
@@ -403,8 +380,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Northwest Territories"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-nt"
         id="listbox_uuid1_nt"
@@ -417,8 +392,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Nunavut"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-nu"
         id="listbox_uuid1_nu"
@@ -431,8 +404,6 @@ input + .c2 {
         </span>
       </li>
       <li
-        aria-label="Yukon"
-        aria-selected="false"
         class="c10"
         data-testid="listitem-yt"
         id="listbox_uuid1_yt"
@@ -530,11 +501,11 @@ input + .c2 {
   z-index: 1000;
 }
 
-.c9:focus:focus {
+.c9:focus {
   outline: none;
 }
 
-.c9:focus:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -554,7 +525,6 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -737,10 +707,8 @@ input + .c2 {
     </div>
     <div
       aria-labelledby="uuid1"
-      aria-multiselectable="false"
       class="c9 c10"
       data-testid="listbox-container"
-      focusable="true"
       id="listbox_uuid1"
       role="listbox"
       tabindex="0"
@@ -751,8 +719,6 @@ input + .c2 {
         role="presentation"
       >
         <li
-          aria-label="Ontario"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-on"
           id="listbox_uuid1_on"
@@ -765,8 +731,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Quebec"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-qc"
           id="listbox_uuid1_qc"
@@ -779,8 +743,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="British Columbia"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-bc"
           id="listbox_uuid1_bc"
@@ -793,8 +755,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Alberta"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-ab"
           id="listbox_uuid1_ab"
@@ -807,8 +767,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Manitoba"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-mb"
           id="listbox_uuid1_mb"
@@ -821,8 +779,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Saskatchewan"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-sk"
           id="listbox_uuid1_sk"
@@ -835,8 +791,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Nova Scotia"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-ns"
           id="listbox_uuid1_ns"
@@ -849,8 +803,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="New Brunswick"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-nb"
           id="listbox_uuid1_nb"
@@ -863,8 +815,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Newfoundland and Labrador"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-nl"
           id="listbox_uuid1_nl"
@@ -877,8 +827,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Prince Edward Island"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-pe"
           id="listbox_uuid1_pe"
@@ -891,8 +839,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Northwest Territories"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-nt"
           id="listbox_uuid1_nt"
@@ -905,8 +851,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Nunavut"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-nu"
           id="listbox_uuid1_nu"
@@ -919,8 +863,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Yukon"
-          aria-selected="false"
           class="c12"
           data-testid="listitem-yt"
           id="listbox_uuid1_yt"
@@ -1090,11 +1032,11 @@ input + .c2 {
   z-index: 1000;
 }
 
-.c7:focus:focus {
+.c7:focus {
   outline: none;
 }
 
-.c7:focus:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -1114,7 +1056,6 @@ input + .c2 {
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1282,10 +1223,8 @@ input + .c2 {
     </div>
     <div
       aria-labelledby="uuid1"
-      aria-multiselectable="false"
       class="c7 c8"
       data-testid="listbox-container"
-      focusable="true"
       id="listbox_uuid1"
       role="listbox"
       tabindex="0"
@@ -1296,8 +1235,6 @@ input + .c2 {
         role="presentation"
       >
         <li
-          aria-label="Ontario"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-on"
           id="listbox_uuid1_on"
@@ -1310,8 +1247,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Quebec"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-qc"
           id="listbox_uuid1_qc"
@@ -1324,8 +1259,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="British Columbia"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-bc"
           id="listbox_uuid1_bc"
@@ -1338,8 +1271,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Alberta"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-ab"
           id="listbox_uuid1_ab"
@@ -1352,8 +1283,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Manitoba"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-mb"
           id="listbox_uuid1_mb"
@@ -1366,8 +1295,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Saskatchewan"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-sk"
           id="listbox_uuid1_sk"
@@ -1380,8 +1307,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Nova Scotia"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-ns"
           id="listbox_uuid1_ns"
@@ -1394,8 +1319,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="New Brunswick"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-nb"
           id="listbox_uuid1_nb"
@@ -1408,8 +1331,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Newfoundland and Labrador"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-nl"
           id="listbox_uuid1_nl"
@@ -1422,8 +1343,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Prince Edward Island"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-pe"
           id="listbox_uuid1_pe"
@@ -1436,8 +1355,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Northwest Territories"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-nt"
           id="listbox_uuid1_nt"
@@ -1450,8 +1367,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Nunavut"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-nu"
           id="listbox_uuid1_nu"
@@ -1464,8 +1379,6 @@ input + .c2 {
           </span>
         </li>
         <li
-          aria-label="Yukon"
-          aria-selected="false"
           class="c10"
           data-testid="listitem-yt"
           id="listbox_uuid1_yt"
@@ -1614,11 +1527,11 @@ exports[`Select mobile select has a different style 1`] = `
   z-index: 1000;
 }
 
-.c5:focus:focus {
+.c5:focus {
   outline: none;
 }
 
-.c5:focus:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -1638,7 +1551,6 @@ exports[`Select mobile select has a different style 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1799,10 +1711,8 @@ exports[`Select mobile select has a different style 1`] = `
   </div>
   <div
     aria-labelledby="uuid1"
-    aria-multiselectable="false"
     class="c5 c6"
     data-testid="listbox-container"
-    focusable="true"
     id="listbox_uuid1"
     role="listbox"
     tabindex="0"
@@ -1813,8 +1723,6 @@ exports[`Select mobile select has a different style 1`] = `
       role="presentation"
     >
       <li
-        aria-label="Ontario"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-on"
         id="listbox_uuid1_on"
@@ -1827,8 +1735,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Quebec"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-qc"
         id="listbox_uuid1_qc"
@@ -1841,8 +1747,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="British Columbia"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-bc"
         id="listbox_uuid1_bc"
@@ -1855,8 +1759,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Alberta"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-ab"
         id="listbox_uuid1_ab"
@@ -1869,8 +1771,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Manitoba"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-mb"
         id="listbox_uuid1_mb"
@@ -1883,8 +1783,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Saskatchewan"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-sk"
         id="listbox_uuid1_sk"
@@ -1897,8 +1795,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Nova Scotia"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-ns"
         id="listbox_uuid1_ns"
@@ -1911,8 +1807,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="New Brunswick"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-nb"
         id="listbox_uuid1_nb"
@@ -1925,8 +1819,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Newfoundland and Labrador"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-nl"
         id="listbox_uuid1_nl"
@@ -1939,8 +1831,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Prince Edward Island"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-pe"
         id="listbox_uuid1_pe"
@@ -1953,8 +1843,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Northwest Territories"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-nt"
         id="listbox_uuid1_nt"
@@ -1967,8 +1855,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Nunavut"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-nu"
         id="listbox_uuid1_nu"
@@ -1981,8 +1867,6 @@ exports[`Select mobile select has a different style 1`] = `
         </span>
       </li>
       <li
-        aria-label="Yukon"
-        aria-selected="false"
         class="c8"
         data-testid="listitem-yt"
         id="listbox_uuid1_yt"

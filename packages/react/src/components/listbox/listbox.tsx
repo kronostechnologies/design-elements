@@ -76,7 +76,7 @@ interface ListboxProps {
 }
 
 interface ContainerProps {
-    focusable: boolean;
+    $focusable: boolean;
 }
 
 interface ListItemProps {
@@ -97,9 +97,7 @@ const Container = styled.div<ContainerProps>`
     position: relative;
     z-index: 1000;
   
-    &:focus {
-        ${({ focusable, theme }) => focusable && focus({ theme })};
-    }
+    ${({ $focusable, theme }) => $focusable && focus({ theme })};
 `;
 
 const List = styled.ul`
@@ -142,7 +140,6 @@ const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
@@ -180,6 +177,8 @@ const ListItemCaption = styled.span<{ disabled?: boolean, isMobile: boolean }>`
     display: block;
     font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
 `;
+
+const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
 
 export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTMLDivElement>> = forwardRef(({
     ariaLabelledBy,
@@ -220,7 +219,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     } = useListCursor({
         elements: options,
         initialElement: findOptionsByValue(focusedValue)[0],
-        predicate: (element) => !element.disabled,
+        predicate: optionPredicate,
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
@@ -243,7 +242,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function selectMultipleOptions(optionList: ListboxOption[]): void {
-        const newSelectedOptions = unique([...selectedOptions, ...optionList.filter((option) => !option.disabled)]);
+        const newSelectedOptions = unique([...selectedOptions, ...optionList.filter(optionPredicate)]);
         setSelectedOptions(newSelectedOptions);
         onChange?.(newSelectedOptions);
     }
@@ -258,7 +257,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }
 
     function toggleAllOptions(): void {
-        const enabledOptions = options.filter((option) => !option.disabled);
+        const enabledOptions = options.filter(optionPredicate);
         const newSelectedOptions = selectedOptions.length === enabledOptions.length ? [] : enabledOptions;
 
         setSelectedOptions(newSelectedOptions);
@@ -431,10 +430,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         <Container
             aria-activedescendant={focusedOption ? `${id}_${focusedOption.value}` : undefined}
             aria-labelledby={ariaLabelledBy}
-            aria-multiselectable={multiselect}
+            aria-multiselectable={multiselect ? 'true' : undefined}
             className={className}
             data-testid="listbox-container"
-            focusable={focusable}
+            $focusable={focusable}
             id={id}
             onBlur={handleListboxBlur}
             onFocus={handleListboxFocus}
@@ -450,8 +449,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                 {options.map((option) => (
                     <ListItem
                         aria-disabled={option.disabled}
-                        aria-label={option.label || option.value}
-                        aria-selected={isOptionSelected(option)}
+                        aria-selected={multiselect && isOptionSelected(option) ? 'true' : undefined}
                         data-testid={`listitem-${option.value}`}
                         disabled={option.disabled}
                         focused={isOptionFocused(option)}

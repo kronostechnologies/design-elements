@@ -16,11 +16,11 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   z-index: 1000;
 }
 
-.c0:focus:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0:focus:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -132,7 +132,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -159,7 +158,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -181,7 +179,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #B7BBC2;
-  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -217,7 +214,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   aria-multiselectable="true"
   class="c0"
   data-testid="listbox-container"
-  focusable="true"
   id="uuid1"
   role="listbox"
   tabindex="0"
@@ -228,7 +224,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
     role="presentation"
   >
     <li
-      aria-label="Option A"
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionA"
@@ -261,8 +256,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       </span>
     </li>
     <li
-      aria-label="Option B"
-      aria-selected="false"
       class="c9"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
@@ -287,7 +280,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       </span>
     </li>
     <li
-      aria-label="Option C"
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionC"
@@ -316,8 +308,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option D"
-      aria-selected="false"
       class="c11"
       data-testid="listitem-optionD"
       disabled=""
@@ -344,8 +334,6 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
       </span>
     </li>
     <li
-      aria-label="Option E"
-      aria-selected="false"
       class="c9"
       data-testid="listitem-optionE"
       id="uuid1_optionE"
@@ -389,11 +377,11 @@ exports[`Listbox Matches the snapshot 1`] = `
   z-index: 1000;
 }
 
-.c0:focus:focus {
+.c0:focus {
   outline: none;
 }
 
-.c0:focus:focus {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 0 2px #84C6EA;
   box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
@@ -413,7 +401,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -435,7 +422,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -457,7 +443,6 @@ exports[`Listbox Matches the snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #B7BBC2;
-  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -490,10 +475,8 @@ exports[`Listbox Matches the snapshot 1`] = `
 }
 
 <div
-  aria-multiselectable="false"
   class="c0"
   data-testid="listbox-container"
-  focusable="true"
   id="uuid1"
   role="listbox"
   tabindex="0"
@@ -504,8 +487,6 @@ exports[`Listbox Matches the snapshot 1`] = `
     role="presentation"
   >
     <li
-      aria-label="Option A"
-      aria-selected="false"
       class="c2"
       data-testid="listitem-optionA"
       id="uuid1_optionA"
@@ -523,8 +504,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
-      aria-label="Option B"
-      aria-selected="true"
       class="c5"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
@@ -538,8 +517,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
-      aria-label="Option C"
-      aria-selected="false"
       class="c2"
       data-testid="listitem-optionC"
       id="uuid1_optionC"
@@ -553,8 +530,6 @@ exports[`Listbox Matches the snapshot 1`] = `
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option D"
-      aria-selected="false"
       class="c6"
       data-testid="listitem-optionD"
       disabled=""
@@ -568,8 +543,6 @@ exports[`Listbox Matches the snapshot 1`] = `
       </span>
     </li>
     <li
-      aria-label="Option E"
-      aria-selected="false"
       class="c2"
       data-testid="listitem-optionE"
       id="uuid1_optionE"

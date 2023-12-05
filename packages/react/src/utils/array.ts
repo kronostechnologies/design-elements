@@ -7,5 +7,5 @@ export function getPreviousElementInArray<T>(array: T[], index: number): T | und
 }
 
 export function unique<T>(list: T[]): T[] {
-    return list.filter((item, index) => list.indexOf(item) === index);
+    return [...new Set(list)];
 }

@@ -21,8 +21,8 @@ export function useScrollIntoView<TElement extends HTMLElement>({
             const { offsetHeight: parentOffsetHeight, scrollTop: parentScrollTop } = container.current;
 
             const computedStyle = getComputedStyle(container.current);
-            const paddingTop = parseInt(computedStyle.paddingTop, 10);
-            const paddingBottom = parseInt(computedStyle.paddingBottom, 10);
+            const paddingTop = parseFloat(computedStyle.paddingTop);
+            const paddingBottom = parseFloat(computedStyle.paddingBottom);
 
             const topScrollPosition = elementOffsetTop - paddingTop;
             const bottomScrollPosition = elementOffsetTop - parentOffsetHeight + elementOffsetHeight + paddingBottom;

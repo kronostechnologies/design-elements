@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 interface UseListCursorResponse<T> {
     selectedElement: T | undefined;
@@ -22,7 +22,7 @@ export function useListCursor<TElement>({
 }: UseListCursorRequest<TElement>): UseListCursorResponse<TElement> {
     const [selectedElement, setSelectedElement] = useState<TElement | undefined>(initialElement);
 
-    function selectFirst(): TElement | undefined {
+    const selectFirst: () => TElement | undefined = useCallback(() => {
         const firstElement = elements.find(predicate);
 
         if (firstElement) {
@@ -30,9 +30,9 @@ export function useListCursor<TElement>({
         }
 
         return firstElement;
-    }
+    }, [elements, predicate]);
 
-    function selectLast(): TElement | undefined {
+    const selectLast: () => TElement | undefined = useCallback(() => {
         const lastElement = [...elements].reverse().find(predicate);
 
         if (lastElement) {
@@ -40,9 +40,9 @@ export function useListCursor<TElement>({
         }
 
         return lastElement;
-    }
+    }, [elements, predicate]);
 
-    function selectPrevious(): TElement | undefined {
+    const selectPrevious: () => TElement | undefined = useCallback(() => {
         if (selectedElement === undefined) {
             return selectFirst();
         }
@@ -55,9 +55,9 @@ export function useListCursor<TElement>({
         }
 
         return previousElement;
-    }
+    }, [elements, predicate, selectFirst, selectedElement]);
 
-    function selectNext(): TElement | undefined {
+    const selectNext: () => TElement | undefined = useCallback(() => {
         if (selectedElement === undefined) {
             return selectFirst();
         }
@@ -70,7 +70,7 @@ export function useListCursor<TElement>({
         }
 
         return nextElement;
-    }
+    }, [elements, predicate, selectFirst, selectedElement]);
 
     return {
         selectedElement,
