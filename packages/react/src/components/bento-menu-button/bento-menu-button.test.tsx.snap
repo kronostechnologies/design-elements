@@ -51,10 +51,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:not(:disabled) {
-  cursor: pointer;
-}
-
 .c2 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -885,10 +881,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:not(:disabled) {
-  cursor: pointer;
-}
-
 .c2 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -1629,10 +1621,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c2:not(:disabled) {
-  cursor: pointer;
 }
 
 .c2 > svg {

@@ -51,10 +51,6 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c5:not(:disabled) {
-  cursor: pointer;
-}
-
 .c5 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -339,10 +335,6 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c5:not(:disabled) {
-  cursor: pointer;
 }
 
 .c5 > svg {
@@ -631,10 +623,6 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c5:not(:disabled) {
-  cursor: pointer;
-}
-
 .c5 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -919,10 +907,6 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c5:not(:disabled) {
-  cursor: pointer;
 }
 
 .c5 > svg {

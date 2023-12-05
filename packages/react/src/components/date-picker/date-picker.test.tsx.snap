@@ -3050,10 +3050,6 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c16:not(:disabled) {
-  cursor: pointer;
-}
-
 .c16 > svg {
   color: inherit;
   height: var(--size-1x);

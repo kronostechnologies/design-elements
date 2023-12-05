@@ -51,10 +51,6 @@ exports[`SearchInput should match the snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c13:not(:disabled) {
-  cursor: pointer;
-}
-
 .c13 > svg {
   color: inherit;
   height: var(--size-1x);
