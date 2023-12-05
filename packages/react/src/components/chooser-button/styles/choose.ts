@@ -12,7 +12,6 @@ export const Label = styled.label`
             border-radius: var(--border-radius);
             box-sizing: border-box;
             color: ${theme.greys['dark-grey']};
-            cursor: pointer;
             display: flex;
             font-size: 1rem;
             justify-content: center;
@@ -42,7 +41,6 @@ export const Label = styled.label`
                 background: ${theme.greys['light-grey']};
                 border-color: ${theme.greys.grey};
                 color: ${theme.greys['mid-grey']};
-                cursor: auto;
             }
 
             b {

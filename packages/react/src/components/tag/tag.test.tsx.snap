@@ -33,7 +33,6 @@ exports[`Tag Tag medium matches snapshot (desktop clickable) 1`] = `
 .c1:hover {
   background-color: #dbdee1;
   border-color: #60666E;
-  cursor: pointer;
 }
 
 .c1:focus {
@@ -380,7 +379,6 @@ exports[`Tag Tag medium matches snapshot (mobile clickable) 1`] = `
 .c1:hover {
   background-color: #dbdee1;
   border-color: #60666E;
-  cursor: pointer;
 }
 
 .c1:focus {
@@ -727,7 +725,6 @@ exports[`Tag Tag small matches snapshot (desktop clickable) 1`] = `
 .c1:hover {
   background-color: #dbdee1;
   border-color: #60666E;
-  cursor: pointer;
 }
 
 .c1:focus {
@@ -1074,7 +1071,6 @@ exports[`Tag Tag small matches snapshot (mobile clickable) 1`] = `
 .c1:hover {
   background-color: #dbdee1;
   border-color: #60666E;
-  cursor: pointer;
 }
 
 .c1:focus {

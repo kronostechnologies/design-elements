@@ -22,10 +22,6 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
         &:focus {
             outline: none;
         }
-
-        &:hover {
-            cursor: pointer;
-        }
     }
 `;
 

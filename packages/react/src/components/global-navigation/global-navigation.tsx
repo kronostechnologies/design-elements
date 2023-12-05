@@ -83,7 +83,6 @@ const ShowMore = styled.button<{ active?: boolean }>`
     background-color: ${({ active, theme }) => (active ? theme.greys.grey : 'transparent')};
     box-sizing: border-box;
     color: ${({ theme }) => theme.greys['dark-grey']};
-    cursor: pointer;
     display: flex;
     justify-content: center;
     min-height: var(--size-3halfx);
