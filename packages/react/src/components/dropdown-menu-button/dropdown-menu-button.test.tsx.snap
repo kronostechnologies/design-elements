@@ -391,12 +391,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   color: #003A5A;
 }
 
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c5 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
@@ -1067,12 +1061,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
 .c2:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c2:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c5 {

@@ -153,12 +153,6 @@ const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation
         background-color: transparent;
         color: ${inverted ? theme.main['primary-1.3'] : theme.greys['mid-grey']};
     }
-
-    &:focus {
-        background-color: ${inverted ? theme.main['primary-2'] : theme.greys.white};
-        border-color: ${theme.main['primary-1.1']};
-        color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
-    }
 `;
 
 const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({

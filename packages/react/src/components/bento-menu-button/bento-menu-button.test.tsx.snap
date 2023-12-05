@@ -90,12 +90,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   color: #003A5A;
 }
 
-.c3:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -924,12 +918,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   color: #003A5A;
 }
 
-.c3:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c3 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
@@ -1668,12 +1656,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 .c3:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c3:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c3 > svg {

@@ -1064,12 +1064,6 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   color: #003A5A;
 }
 
-.c1:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 <button
   class="c0 c1"
   type="button"
@@ -1164,12 +1158,6 @@ exports[`Button has tertiary styles 1`] = `
 .c1:disabled {
   background-color: transparent;
   color: #B7BBC2;
-}
-
-.c1:focus {
-  background-color: #FFFFFF;
-  border-color: #006296;
-  color: #60666E;
 }
 
 <button
