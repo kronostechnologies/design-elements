@@ -51,10 +51,6 @@ exports[`DropdownMenuButton Matches Snapshot (defaultOpen) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c1:not(:disabled) {
-  cursor: pointer;
-}
-
 .c1 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -727,10 +723,6 @@ exports[`DropdownMenuButton Matches Snapshot 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c1:not(:disabled) {
-  cursor: pointer;
 }
 
 .c1 > svg {

@@ -84,7 +84,6 @@ interface StyledLabelProps {
 
 const StyledLabel = styled.label<StyledLabelProps>`
     align-items: center;
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     line-height: 1.5rem;
     position: relative;

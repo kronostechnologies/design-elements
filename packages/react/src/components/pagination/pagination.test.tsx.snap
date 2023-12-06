@@ -51,10 +51,6 @@ exports[`Pagination Matches the desktop snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c5:not(:disabled) {
-  cursor: pointer;
-}
-
 .c5 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -398,10 +394,6 @@ exports[`Pagination Matches the desktop snapshot with multiples digits page numb
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c5:not(:disabled) {
-  cursor: pointer;
 }
 
 .c5 > svg {
@@ -749,10 +741,6 @@ exports[`Pagination Matches the mobile snapshot 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c5:not(:disabled) {
-  cursor: pointer;
-}
-
 .c5 > svg {
   color: inherit;
   height: var(--size-1halfx);
@@ -1096,10 +1084,6 @@ exports[`Pagination Matches the mobile snapshot with multiples digits page numbe
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c5:not(:disabled) {
-  cursor: pointer;
 }
 
 .c5 > svg {

@@ -256,7 +256,6 @@ const CalendarButton = styled.button<CalendarButtonProps>`
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     box-sizing: border-box;
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     height: ${({ isMobile }) => (isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: center;

@@ -77,7 +77,6 @@ interface ButtonProps {
 const Button = styled.button<ButtonProps>`
     align-items: center;
     color: ${({ theme }) => theme.greys.black};
-    cursor: pointer;
     display: flex;
     font-size: ${({ $device: { isMobile, isTablet } }) => ((isTablet || isMobile) ? '1rem' : '0.875rem')};
     gap: var(--spacing-1x);

@@ -18,7 +18,6 @@ const StyledButton = styled.button<StyledButtonProps>`
     border-bottom: ${({ $isGlobal }) => ($isGlobal ? 'none' : '1px solid #878f9a')}; /* TODO change colors when updating thematization */
     bottom: -1px;
     color: ${({ $isGlobal }) => ($isGlobal ? '#1B1C1E' : '#878f9a')}; /* TODO change colors when updating thematization */
-    cursor: pointer;
     display: flex;
     justify-content: center;
     line-height: 1.5rem;
