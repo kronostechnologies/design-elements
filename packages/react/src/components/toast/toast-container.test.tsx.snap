@@ -409,7 +409,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
   width: 400px;
   -webkit-animation: etjUAa 0.25s ease-out;
   animation: etjUAa 0.25s ease-out;
-  background: #602FA0;
+  background: #006296;
 }
 
 .c2 {

@@ -675,7 +675,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #602FA0;
+  background-color: #006296;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -744,11 +744,11 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 }
 
 .c9:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:hover {
@@ -1809,7 +1809,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #602FA0;
+  background-color: #006296;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1881,11 +1881,11 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 }
 
 .c9:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:hover {
