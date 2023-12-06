@@ -213,11 +213,11 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         alert
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -493,11 +493,11 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         default
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -780,11 +780,11 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         info
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1079,11 +1079,11 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         warning
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1328,11 +1328,11 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         alert
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1611,11 +1611,11 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         default
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1901,11 +1901,11 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         info
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -2203,11 +2203,11 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         warning
-      </b>
+      </strong>
       <span
         class="c5"
       >
