@@ -225,12 +225,12 @@ export const ToastContainer: VoidFunctionComponent<ToastContainerProps> = ({
 
     return (
         <ToastWrapper isMobile={isMobile} className={className} type={type} position={position} role="status">
-            <MessageIcon 
-                name={toastIconName} 
-                color={toastTextColor} 
-                size="16" 
-                role="img" 
-                type={type} 
+            <MessageIcon
+                name={toastIconName}
+                color={toastTextColor}
+                size="16"
+                role="img"
+                type={type}
                 isMobile={isMobile}
             />
             <StyledMessage color={toastTextColor} $isMobile={isMobile}>
