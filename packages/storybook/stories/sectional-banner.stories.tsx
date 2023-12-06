@@ -94,11 +94,11 @@ export const WithButton: Story = () => {
             <SectionalBanner type="neutral" buttonLabel="Click me" onButtonClicked={() => handleClick('neutral')}>
                 Here&apos;s a contextual notice with an icon and title.
             </SectionalBanner>
-            
+
             <SectionalBanner type="info" buttonLabel="Click me" onButtonClicked={() => handleClick('info')}>
                 Here&apos;s a contextual notice with an icon and title.
             </SectionalBanner>
-            
+
             <SectionalBanner type="discovery" buttonLabel="Click me" onButtonClicked={() => handleClick('discovery')}>
                 Here&apos;s a contextual notice with an icon and title.
             </SectionalBanner>
