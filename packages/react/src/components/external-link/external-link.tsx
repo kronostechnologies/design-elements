@@ -7,7 +7,8 @@ import { StyledLink } from '../route-link/styles/styled-link';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
 
 const LeftIcon = styled(Icon)`
-    margin-right: var(--spacing-1x);
+    align-self: center;
+    margin-right: var(--spacing-quarter);
 `;
 
 const ExternalIcon = styled(Icon)`
@@ -20,7 +21,8 @@ const ExternalIcon = styled(Icon)`
 `;
 
 const Link = styled(StyledLink)`
-    display: flex;
+    align-items: baseline;
+    display: inline-flex;
 
     &:visited {
         svg {
