@@ -1,6 +1,6 @@
+import { ReactElement } from 'react';
 import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -19,16 +19,16 @@ interface Data {
 export const Normal: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -71,18 +71,18 @@ const StyledTable = styled(
 export const WithColumnClassnames: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
             className: 'column-1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             className: 'column-2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
             className: 'column-3',
         },
     ];
@@ -109,19 +109,81 @@ export const WithColumnClassnames: Story = () => {
     );
 };
 
+interface FooterData {
+    column1: string;
+    column2: string;
+    numbers: number;
+}
+
+export const WithFooter: Story = () => {
+    const data: TableRow<FooterData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            numbers: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            numbers: 20,
+        },
+        {
+            column1: 'a',
+            column2: 'a',
+            numbers: 30,
+        },
+    ];
+
+    // Footer function for the 'numbers' column
+    const footerSum = (): ReactElement => {
+        const total = data.reduce((sum, row) => row.numbers + sum, 0);
+        return (
+            <span>
+                Total:
+                {total}
+            </span>
+        );
+    };
+
+    // Calculate the total sum of 'numbers'
+    const columns: TableColumn<FooterData> = [
+        {
+            header: 'Column 1',
+            accessorKey: 'column1',
+            footer: 'Total:',
+            footerColSpan: 2,
+
+        },
+        {
+            header: 'Column 2',
+            accessorKey: 'column2',
+            footerColSpan: 0,
+        },
+        {
+            header: 'Numbers',
+            accessorKey: 'numbers',
+            footer: footerSum,
+        },
+    ];
+
+    return (
+        <Table columns={columns} data={data} />
+    );
+};
+
 export const ErrorRows: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -152,16 +214,16 @@ export const ErrorRows: Story = () => {
 export const Striped: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -190,16 +252,16 @@ export const Striped: Story = () => {
 export const RowNumbers: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -228,16 +290,16 @@ export const RowNumbers: Story = () => {
 export const SmallRows: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -273,16 +335,16 @@ export const RowClickCallback: Story = () => {
 
     const columns: TableColumn<DataWithHref> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -316,17 +378,17 @@ export const RowClickCallback: Story = () => {
 export const CustomTextAlignment: Story = () => {
     const columns: TableColumn<Data> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             textAlign: 'center',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
             textAlign: 'right',
         },
     ];
@@ -357,40 +419,25 @@ interface ComplexData {
     amount?: string;
 }
 
-interface CategoryCellProps {
-    value: ComplexData['category'];
-}
+const CategoryCell = ({ cellValue }: { cellValue: ComplexData['category'] }): ReactElement => {
+    const { value, tooltip } = cellValue;
 
-const CategoryCell: VoidFunctionComponent<CategoryCellProps> = ({ value }) => (
-    <div style={{ display: 'flex' }}>
-        <p style={{ marginRight: 'var(--spacing-half)' }}>{value.value}</p>
-        {value.tooltip && (<Tooltip label={value.tooltip} />)}
-    </div>
+    return (
+        <div style={{ display: 'flex' }}>
+            <p style={{ marginRight: 'var(--spacing-half)' }}>{value}</p>
+            {tooltip && <Tooltip label={tooltip} />}
+        </div>
+    );
+};
+
+const AmountHeader = (): ReactElement => (
+    <div style={{ textAlign: 'right' }}>Amount ($)</div>
 );
-
-interface AmountCellProps {
-    value: ComplexData['amount'];
-}
-
-const AmountHeader: VoidFunctionComponent = () => <div style={{ textAlign: 'right' }}>Amount ($)</div>;
-const AmountCell: VoidFunctionComponent<AmountCellProps> = ({ value }) => (
-    <div style={{ textAlign: 'right' }}>{value}</div>
+const AmountCell = ({ cellValue }: { cellValue: ComplexData['amount'] }): ReactElement => (
+    <div style={{ textAlign: 'right' }}>{cellValue}</div>
 );
 
 export const CustomColumns: Story = () => {
-    const columns: TableColumn<ComplexData> = [
-        {
-            Header: 'Category',
-            accessor: 'category',
-            Cell: CategoryCell,
-        },
-        {
-            Header: AmountHeader,
-            accessor: 'amount',
-            Cell: AmountCell,
-        },
-    ];
-
     const data: ComplexData[] = [
         {
             category: {
@@ -404,6 +451,21 @@ export const CustomColumns: Story = () => {
                 value: 'Investments',
             },
             amount: '12000$',
+        },
+    ];
+
+    const columns: TableColumn<ComplexData> = [
+        {
+            header: 'Category',
+            accessorKey: 'category',
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: (props) => <CategoryCell cellValue={props.cell.getValue() as ComplexData['category']} />,
+        },
+        {
+            header: AmountHeader,
+            accessorKey: 'amount',
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: (props) => <AmountCell cellValue={props.cell.getValue() as ComplexData['amount']} />,
         },
     ];
 
@@ -421,18 +483,18 @@ export const SortableRows: Story = () => {
 
     const columns: TableColumn<SortableData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             sortable: true,
             defaultSort: 'asc',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
             sortable: true,
         },
     ];
@@ -463,16 +525,16 @@ export const SelectableRows: Story = () => {
 
     const columns: TableColumn<SelectableData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
     ];
 
@@ -519,66 +581,66 @@ const Wrap = styled.div`
 export const Sticky: Story = () => {
     const columns: TableColumn<StickyData> = [
         {
-            Header: 'Column 1',
-            accessor: 'column1',
+            header: 'Column 1',
+            accessorKey: 'column1',
             sticky: true,
         },
         {
-            Header: 'Column 2',
-            accessor: 'column2',
+            header: 'Column 2',
+            accessorKey: 'column2',
             sticky: true,
         },
         {
-            Header: 'Column 3',
-            accessor: 'column3',
+            header: 'Column 3',
+            accessorKey: 'column3',
         },
         {
-            Header: 'Column 4',
-            accessor: 'column4',
+            header: 'Column 4',
+            accessorKey: 'column4',
         },
         {
-            Header: 'Column 5',
-            accessor: 'column5',
+            header: 'Column 5',
+            accessorKey: 'column5',
         },
         {
-            Header: 'Column 6',
-            accessor: 'column6',
+            header: 'Column 6',
+            accessorKey: 'column6',
         },
         {
-            Header: 'Column 7',
-            accessor: 'column7',
+            header: 'Column 7',
+            accessorKey: 'column7',
         },
         {
-            Header: 'Column 8',
-            accessor: 'column8',
+            header: 'Column 8',
+            accessorKey: 'column8',
         },
         {
-            Header: 'Column 9',
-            accessor: 'column9',
+            header: 'Column 9',
+            accessorKey: 'column9',
         },
         {
-            Header: 'Column 10',
-            accessor: 'column10',
+            header: 'Column 10',
+            accessorKey: 'column10',
         },
         {
-            Header: 'Column 11',
-            accessor: 'column11',
+            header: 'Column 11',
+            accessorKey: 'column11',
         },
         {
-            Header: 'Column 12',
-            accessor: 'column12',
+            header: 'Column 12',
+            accessorKey: 'column12',
         },
         {
-            Header: 'Column 13',
-            accessor: 'column13',
+            header: 'Column 13',
+            accessorKey: 'column13',
         },
         {
-            Header: 'Column 14',
-            accessor: 'column14',
+            header: 'Column 14',
+            accessorKey: 'column14',
         },
         {
-            Header: 'Column 15',
-            accessor: 'column15',
+            header: 'Column 15',
+            accessorKey: 'column15',
         },
     ];
 
