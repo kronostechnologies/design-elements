@@ -1,27 +1,25 @@
-import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactElement, useRef, useState, useMemo, useEffect } from 'react';
+import styled from 'styled-components';
 import {
-    CellProps,
-    Column, ColumnInstance, HeaderGroup, HeaderProps,
-    Hooks,
+    HeaderContext,
     Row,
-    TableState,
-    useRowSelect,
-    UseRowSelectRowProps,
-    useSortBy,
-    UseSortByColumnOptions,
-    useTable,
-} from 'react-table';
-import styled, { css } from 'styled-components';
-import { Theme } from '../../themes';
+    ColumnDef,
+    getCoreRowModel,
+    getSortedRowModel,
+    SortingState,
+    SortingFn,
+    useReactTable,
+} from '@tanstack/react-table';
+import { TableRow } from './table-row';
+import { TableHeader } from './table-header';
+import { TableFooter } from './table-footer';
 import { Checkbox } from '../checkbox/checkbox';
 import { DeviceType, useDeviceContext } from '../device-context-provider/device-context-provider';
-import { SortableColumnHeading } from './sortable-column-heading';
-import { TableRow } from './table-row';
-import { calculateStickyPosition } from './utils/table-utils';
+import { Theme } from '../../themes';
 
 type RowSize = 'small' | 'medium';
-
-type ColumnSort = 'asc' | 'desc';
+type ColumnSortDirection = 'asc' | 'desc';
+type TextAlignOptions = 'left' | 'right' | 'center' | 'justify' | 'initial' | 'inherit';
 
 interface StyledTableProps {
     clickableRows: boolean;
@@ -31,12 +29,16 @@ interface StyledTableProps {
     rowSize?: RowSize;
 }
 
-type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
-    defaultSort?: ColumnSort;
-    sortable?: boolean,
-    textAlign?: string,
-    className?: string,
-    sticky?: boolean,
+type CustomColumn<T extends object> = ColumnDef<T> & {
+    defaultSort?: ColumnSortDirection;
+    sortable?: boolean;
+    textAlign?: TextAlignOptions;
+    className?: string;
+    colSpan?: number;
+    sticky?: boolean;
+    sortingFn?: SortingFn<T>;
+    headerColSpan?: number;
+    footerColSpan?: number;
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -44,32 +46,6 @@ export type TableRow<T> = T & { error?: boolean };
 
 interface CustomRowProps {
     error?: boolean;
-}
-
-const utilColumnClassName = 'eq-table__util-column';
-
-const StyledHeader = styled.th<{ sticky: boolean }>`
-    ${({ sticky }) => sticky && css`
-        background-color: ${({ theme }) => theme.greys.white};
-        position: sticky;
-    `}
-`;
-
-function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: boolean): ReactElement {
-    if (column.sortable) {
-        return <SortableColumnHeading<T> key={column.id} header={column} />;
-    }
-    return (
-        <StyledHeader
-            className={column.className}
-            scope="col"
-            style={{ textAlign: column.textAlign }}
-            sticky={stickyHeader}
-            {...column.getHeaderProps() /* eslint-disable-line react/jsx-props-no-spreading */}
-        >
-            {column.render('Header')}
-        </StyledHeader>
-    );
 }
 
 function getThPadding(device: DeviceType, rowSize?: RowSize): string {
@@ -112,21 +88,53 @@ function getTdPadding(device: DeviceType, rowSize?: RowSize): string {
     }
 }
 
-function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: TableColumn<T>): TableColumn<T> {
-    if (rowNumbers) {
-        // Cast because we don't really need the accessor here
-        const accessor = utilColumnClassName as unknown as keyof T;
-        return [
-            {
-                Header: '',
-                accessor,
-                className: utilColumnClassName,
-                Cell: ({ viewIndex }: CellProps<T, unknown>) => (viewIndex + 1),
-            },
-            ...columns,
-        ];
-    }
-    return columns;
+const utilColumnClassName = 'eq-table__util-column';
+function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
+    return {
+        id: type,
+        header(props: HeaderContext<T, unknown>) {
+            if (type === 'selection') {
+                const { table } = props;
+                return (
+                    <Checkbox
+                        data-testid="row-checkbox-all"
+                        {...{
+                            checked: table.getIsAllRowsSelected(),
+                            indeterminate: table.getIsSomeRowsSelected(),
+                            onChange: table.getToggleAllRowsSelectedHandler(),
+                        }}
+                    />
+                );
+            }
+            // For 'numbers' type or any other type, return null or an empty header
+            return null;
+        },
+        cell({ row }) {
+            if (type === 'selection') {
+                return (
+                    <Checkbox
+                        data-testid={`row-checkbox-${row.index}`}
+                        {...{
+                            checked: row.getIsSelected(),
+                            disabled: !row.getCanSelect(),
+                            indeterminate: row.getIsSomeSelected(),
+                            onChange: row.getToggleSelectedHandler(),
+                        }}
+                    />
+                );
+            }
+
+            if (type === 'numbers') {
+                return (
+                    <span className={utilColumnClassName}>
+                        {row.index + 1}
+                    </span>
+                );
+            }
+
+            return null;
+        },
+    };
 }
 
 const StyledTable = styled.table<StyledTableProps>`
@@ -158,53 +166,16 @@ const StyledTable = styled.table<StyledTableProps>`
         box-sizing: border-box;
         color: ${({ theme }) => theme.greys['dark-grey']};
         font-size: 0.75rem;
+        margin-left: 50%;
         min-width: var(--size-2halfx);
-        text-align: center;
+        transform: translateX(-50%);
         width: var(--size-2halfx);
     }
 `;
 
-interface SelectableRowProps<T extends object> extends CellProps<T> {
-    row: Row<T> & UseRowSelectRowProps<T>;
-}
-
-const SelectableRow: <T extends object>(props: SelectableRowProps<T>) => ReactElement = ({ row }) => (
-    /* eslint-disable-next-line react/jsx-props-no-spreading */
-    <Checkbox data-testid={`row-checkbox-${row.index}`} {...row.getToggleRowSelectedProps()} />
-);
-
-// eslint-disable-next-line max-len
-const SelectableHeader: <T extends object>(props: HeaderProps<T>) => ReactElement = ({ getToggleAllRowsSelectedProps }) => (
-    /* eslint-disable-next-line react/jsx-props-no-spreading */
-    <Checkbox data-testid="row-checkbox-all" {...getToggleAllRowsSelectedProps()} />
-);
-
-function useSelectableRows<T extends object>(selectableRows?: boolean): (hooks: Hooks<T>) => void {
-    return (hooks) => {
-        if (selectableRows) {
-            hooks.visibleColumns.push((columnsArray: Array<ColumnInstance<T>>): Column<T>[] => [
-                {
-                    id: 'selection',
-                    className: utilColumnClassName,
-                    Header: SelectableHeader,
-                    Cell: SelectableRow,
-                },
-                ...columnsArray,
-            ]);
-        }
-    };
-}
-
-type PartialTableState<T extends object> = Omit<TableState<T>, 'selectedRowIds'>;
-
 export interface TableProps<T extends object> {
-    className?: string;
-    /** Array of Objects that defines your table columns.
-     * See stories code or refer to react-table docs for more information */
-    columns: TableColumn<T>;
-    /** Array of Objects that defines your table data.
-     * See stories code or refer to react-table docs for more information */
-    data: (T & CustomRowProps)[];
+    data: T[];
+    columns: ColumnDef<T>[];
     /**
      * Adds row numbers
      * @default false
@@ -221,90 +192,70 @@ export interface TableProps<T extends object> {
      * @default false
      */
     striped?: boolean;
-
+    className?: string;
     stickyHeader?: boolean;
-
+    stickyFooter?: boolean;
     onRowClick?(row: Row<T>): void;
-
     onSelectedRowsChange?(selectedRows: T[]): void;
 }
 
 export const Table = <T extends object>({
     className,
-    columns,
     data,
+    columns: defaultColumns,
+    stickyHeader = false,
+    stickyFooter = false,
     rowNumbers = false,
     rowSize = 'medium',
     selectableRows,
     striped = false,
     onRowClick,
     onSelectedRowsChange,
-    stickyHeader = false,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
-    const [renderedColumns, setRenderedColumns] = useState<TableColumn<T>>(
-        () => getRenderedColumns(rowNumbers, columns),
-    );
+    const [sorting, setSorting] = useState<SortingState>([]);
+    const [rowSelection, setRowSelection] = useState({});
 
-    useEffect(() => {
-        setRenderedColumns(getRenderedColumns(rowNumbers, columns));
-    }, [columns, rowNumbers]);
-
-    const stickyColumns = renderedColumns.map((column) => !!column.sticky);
-    useEffect(() => {
-        calculateStickyPosition(stickyColumns, stickyHeader, tableRef);
-
-        const handleResize = (): void => calculateStickyPosition(
-            stickyColumns,
-            stickyHeader,
-            tableRef,
-        );
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [stickyColumns, stickyHeader, tableRef]);
-
-    const getInitialState = useCallback((): PartialTableState<T> | undefined => {
-        const defaultSortColumn = columns.find(({ defaultSort }) => !!defaultSort);
-
-        if (defaultSortColumn) {
-            const { id, accessor, defaultSort } = defaultSortColumn;
-
-            return {
-                sortBy: [{
-                    id: id || accessor as string,
-                    desc: defaultSort === 'desc',
-                },
-                ],
-            };
-        }
-        return undefined;
-    }, [columns]);
-
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-        selectedFlatRows,
-    } = useTable<T>(
-        {
-            columns: renderedColumns,
-            data,
-            initialState: getInitialState(),
-            disableMultiSort: true,
-        },
-        useSortBy,
-        useRowSelect,
-        useSelectableRows(selectableRows),
-    );
-
-    useEffect(() => {
+    // Add custom columns for row numbers and row selection
+    const columns = useMemo(() => {
+        const cols = [...defaultColumns];
         if (selectableRows) {
-            onSelectedRowsChange?.(selectedFlatRows.map((row) => row.original));
+            cols.unshift(getCustomColumn<T>('selection'));
+        } else if (rowNumbers) {
+            cols.unshift(getCustomColumn<T>('numbers'));
         }
-    }, [selectableRows, selectedFlatRows, onSelectedRowsChange]);
+        return cols;
+    }, [selectableRows, rowNumbers, defaultColumns]);
+
+    const tableOptions = {
+        data,
+        columns,
+        state: {
+            sorting,
+            rowSelection,
+        },
+        getCoreRowModel: getCoreRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        onSortingChange: setSorting,
+        enableRowSelection: true,
+        onRowSelectionChange: setRowSelection,
+        debugTable: true,
+    };
+
+    const table = useReactTable(tableOptions);
+    const hasFooter = columns.some((column) => 'footer' in column);
+    const currentRowSelection = table.getState().rowSelection;
+
+    useEffect(() => {
+        if (selectableRows && onSelectedRowsChange) {
+            const selectedRowIds = currentRowSelection;
+            const selectedIndexes = Object.keys(selectedRowIds).filter((index) => selectedRowIds[index]);
+            const selectedRows = selectedIndexes.map((index) => data[parseInt(index, 10)]);
+
+            onSelectedRowsChange(selectedRows);
+        }
+    }, [selectableRows, currentRowSelection, onSelectedRowsChange, data]);
 
     return (
         <StyledTable
@@ -313,31 +264,36 @@ export const Table = <T extends object>({
             striped={striped}
             device={device}
             clickableRows={onRowClick !== undefined}
-            {...getTableProps() /* eslint-disable-line react/jsx-props-no-spreading */}
             ref={tableRef}
         >
             <thead>
-                {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                        {headerGroup.headers.map((column) => getHeading(column, stickyHeader))}
-                    </tr>
+                {table.getHeaderGroups().map((headerGroup) => (
+                    <TableHeader<T>
+                        headerGroup={headerGroup}
+                        stickyHeader={stickyHeader}
+                    />
                 ))}
             </thead>
-            <tbody {...getTableBodyProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
-                {rows.map((row: Row<T>, i: number) => {
-                    prepareRow(row);
-                    return (
-                        <TableRow<T>
-                            striped={striped}
-                            error={!!(row.original as CustomRowProps).error}
-                            key={row.id}
-                            row={row}
-                            onClick={onRowClick}
-                            viewIndex={i}
-                        />
-                    );
-                })}
+            <tbody>
+                {table.getRowModel().rows.map((row) => (
+                    <TableRow<T>
+                        striped={striped}
+                        error={!!(row.original as CustomRowProps).error}
+                        row={row}
+                        onClick={onRowClick}
+                    />
+                ))}
             </tbody>
+            {hasFooter && (
+                <tfoot>
+                    {table.getFooterGroups().map((footerGroup) => (
+                        <TableFooter<T>
+                            footerGroup={footerGroup}
+                            stickyFooter={stickyFooter}
+                        />
+                    ))}
+                </tfoot>
+            )}
         </StyledTable>
     );
 };
