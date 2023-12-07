@@ -45,56 +45,56 @@ function renderTable(
 
 const columns: TableColumn<TestData> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
     },
 ];
 
 const columnsTextAligned: TableColumn<TestData> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
         textAlign: 'right',
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
         textAlign: 'center',
     },
 ];
 
 const columnsSorted: TableColumn<TestData> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
         sortable: true,
         defaultSort: 'asc',
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
         sortable: true,
     },
 ];
 
 const columnsSticky: TableColumn<TestData3Columns> = [
     {
-        Header: 'Column 1',
-        accessor: 'column1',
+        header: 'Column 1',
+        accessorKey: 'column1',
         sticky: true,
     },
     {
-        Header: 'Column 2',
-        accessor: 'column2',
+        header: 'Column 2',
+        accessorKey: 'column2',
         sticky: true,
     },
     {
-        Header: 'Column 3',
-        accessor: 'column3',
+        header: 'Column 3',
+        accessorKey: 'column3',
     },
 ];
 
