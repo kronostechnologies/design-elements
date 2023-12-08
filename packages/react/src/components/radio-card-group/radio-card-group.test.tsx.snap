@@ -74,7 +74,6 @@ exports[`Radio Card Matches snapshot (Checked, Desktop) 1`] = `
 .c3:hover:not([disabled]) {
   background-color: #DBDEE1;
   border-color: #000000;
-  cursor: pointer;
 }
 
 .c3:hover:not([disabled]) .c11,
@@ -242,7 +241,6 @@ exports[`Radio Card Matches snapshot (Default, Desktop) 1`] = `
 .c3:hover:not([disabled]) {
   background-color: #DBDEE1;
   border-color: #000000;
-  cursor: pointer;
 }
 
 .c3:hover:not([disabled]) .c11,
@@ -409,7 +407,6 @@ exports[`Radio Card Matches snapshot (Default, Mobile) 1`] = `
 .c3:hover:not([disabled]) {
   background-color: #DBDEE1;
   border-color: #000000;
-  cursor: pointer;
 }
 
 .c3:hover:not([disabled]) .c11,
@@ -576,7 +573,6 @@ exports[`Radio Card Matches snapshot (Disabled, Desktop) 1`] = `
 .c3:hover:not([disabled]) {
   background-color: #DBDEE1;
   border-color: #000000;
-  cursor: pointer;
 }
 
 .c3:hover:not([disabled]) .c11,
@@ -748,7 +744,6 @@ exports[`Radio Card Matches snapshot (Label, Desktop) 1`] = `
 .c3:hover:not([disabled]) {
   background-color: #DBDEE1;
   border-color: #000000;
-  cursor: pointer;
 }
 
 .c3:hover:not([disabled]) .c11,
@@ -917,7 +912,6 @@ exports[`Radio Card Matches snapshot (Label, Mobile) 1`] = `
 .c3:hover:not([disabled]) {
   background-color: #DBDEE1;
   border-color: #000000;
-  cursor: pointer;
 }
 
 .c3:hover:not([disabled]) .c11,

@@ -51,10 +51,6 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -292,10 +288,6 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -585,10 +577,6 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -874,10 +862,6 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -1179,10 +1163,6 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1halfx);
@@ -1423,10 +1403,6 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -1719,10 +1695,6 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1halfx);
@@ -2011,10 +1983,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {

@@ -112,7 +112,6 @@ function getClickableStyle({ $clickable }: ContainerProps): FlattenInterpolation
             /* TODO fix with next thematization gray65 */
             background-color: #dbdee1;
             border-color: ${({ theme }) => theme.greys['dark-grey']};
-            cursor: pointer;
 
             ${StyledIcon} {
                 color: ${({ theme }) => theme.greys.black};

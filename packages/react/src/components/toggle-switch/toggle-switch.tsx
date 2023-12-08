@@ -12,8 +12,6 @@ interface StyledLabelProps {
     disabled: boolean;
 }
 const StyledLabel = styled.label<StyledLabelProps>`
-    ${({ disabled }) => (disabled ? '' : 'cursor: pointer;')}
-
     color: ${({ theme }) => theme.greys.black};
     font-size: ${({ isMobile }) => (isMobile ? 1 : 0.875)}rem;
     line-height: ${({ isMobile }) => (isMobile ? 2 : 1.5)}rem;
@@ -44,10 +42,6 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-    &:not([disabled]) {
-        cursor: pointer;
-    }
-
     background: ${({ theme }) => theme.notifications['success-1.1']};
     border: 1px solid ${({ theme }) => theme.notifications['success-1.1']};
     border-radius: ${({ isMobile }) => (isMobile ? 1 : 0.75)}rem;

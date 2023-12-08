@@ -267,10 +267,6 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:not(:disabled) {
-  cursor: pointer;
-}
-
 .c3 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -484,10 +480,6 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c3:not(:disabled) {
-  cursor: pointer;
-}
-
 .c3 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -699,10 +691,6 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c3:not(:disabled) {
-  cursor: pointer;
 }
 
 .c3 > svg {

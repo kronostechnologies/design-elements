@@ -26,10 +26,6 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
   width: var(--size-2halfx);
 }
 
-.c0:not([disabled]) {
-  cursor: pointer;
-}
-
 .c0[aria-checked='false'] {
   background: #B7BBC2;
   border-color: #B7BBC2;
@@ -81,7 +77,6 @@ exports[`ToggleSwitch Matches snapshot (desktop) 1`] = `
     />
   </button>,
   .c0 {
-  cursor: pointer;
   color: #000000;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -126,10 +121,6 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
   position: relative;
   vertical-align: middle;
   width: var(--size-3x);
-}
-
-.c0:not([disabled]) {
-  cursor: pointer;
 }
 
 .c0[aria-checked='false'] {
@@ -183,7 +174,6 @@ exports[`ToggleSwitch Matches snapshot (mobile) 1`] = `
     />
   </button>,
   .c0 {
-  cursor: pointer;
   color: #000000;
   font-size: 1rem;
   line-height: 2rem;
@@ -228,10 +218,6 @@ exports[`ToggleSwitch has disabled styles 1`] = `
   position: relative;
   vertical-align: middle;
   width: var(--size-2halfx);
-}
-
-.c0:not([disabled]) {
-  cursor: pointer;
 }
 
 .c0[aria-checked='false'] {

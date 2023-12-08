@@ -51,10 +51,6 @@ exports[`Button has destructive styles (inverted) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -149,10 +145,6 @@ exports[`Button has destructive styles 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {
@@ -251,10 +243,6 @@ exports[`Button has disabled styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -348,10 +336,6 @@ exports[`Button has mobile styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1halfx);
@@ -442,10 +426,6 @@ exports[`Button has primary styles (inverted) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {
@@ -542,10 +522,6 @@ exports[`Button has primary styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -636,10 +612,6 @@ exports[`Button has secondary styles (inverted) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {
@@ -739,10 +711,6 @@ exports[`Button has secondary styles 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -833,10 +801,6 @@ exports[`Button has small styles 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {
@@ -931,10 +895,6 @@ exports[`Button has small styles on mobile 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1halfx);
@@ -1025,10 +985,6 @@ exports[`Button has tertiary styles (inverted) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {
@@ -1127,10 +1083,6 @@ exports[`Button has tertiary styles 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {

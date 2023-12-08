@@ -17,7 +17,6 @@ const buttonStyles = css`
     border: 1px solid ${({ theme }) => theme.greys['dark-grey']};
     border-left: none;
     color: ${({ theme }) => theme.greys['dark-grey']};
-    cursor: pointer;
     display: flex;
     justify-content: center;
     padding: 0 var(--spacing-half);
@@ -34,7 +33,6 @@ const buttonStyles = css`
         background-color: ${({ theme }) => theme.greys['light-grey']};
         border-color: ${({ theme }) => theme.greys.grey};
         color: ${({ theme }) => theme.greys['mid-grey']};
-        cursor: default;
     }
 `;
 
