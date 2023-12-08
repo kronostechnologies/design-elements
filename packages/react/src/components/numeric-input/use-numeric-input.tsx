@@ -102,7 +102,7 @@ export function useNumericInput({
         valueAsNumber: inputValue === '' ? null : Number(inputValue),
     });
 
-    const handlePaste = (event: ClipboardEvent<HTMLInputElement>): void => {
+    const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
         event.preventDefault();
         let newValue = event.clipboardData.getData('text/plain');
 
@@ -118,7 +118,7 @@ export function useNumericInput({
         }
 
         setStateValue(newValue);
-    };
+    }, [precision]);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
         const inputValue = event.target.value;
