@@ -74,13 +74,44 @@ describe('TextInput', () => {
         expect(container.prop('valid')).toBe(true);
     });
 
-    test('should set as invalid when valid prop is false and input trigger blur again', () => {
+    test('should set as invalid when valid prop is false and input trigger blur with checkValidity is true', () => {
         const wrapper = shallow(<TextInput valid={false} />);
 
         const textInput = getByTestId(wrapper, 'text-input');
         textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
+        const container = getByTestId(wrapper, 'field-container');
 
-        expect(wrapper.prop('valid')).toBe(false);
+        expect(container.prop('valid')).toBe(false);
+    });
+
+    test('should set as valid when valid prop is true and input trigger blur with checkValidity is true', () => {
+        const wrapper = shallow(<TextInput valid />);
+
+        const textInput = getByTestId(wrapper, 'text-input');
+        textInput.simulate('blur', { currentTarget: { checkValidity: () => true } });
+        const container = getByTestId(wrapper, 'field-container');
+
+        expect(container.prop('valid')).toBe(true);
+    });
+
+    test('should set as valid when valid prop is true and input trigger blur with checkValidity is false', () => {
+        const wrapper = shallow(<TextInput valid />);
+
+        const textInput = getByTestId(wrapper, 'text-input');
+        textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
+        const container = getByTestId(wrapper, 'field-container');
+
+        expect(container.prop('valid')).toBe(true);
+    });
+
+    test('should set as invalid when valid prop is false and input trigger blur with checkValidity is false', () => {
+        const wrapper = shallow(<TextInput valid={false} />);
+
+        const textInput = getByTestId(wrapper, 'text-input');
+        textInput.simulate('blur', { currentTarget: { checkValidity: () => false } });
+        const container = getByTestId(wrapper, 'field-container');
+
+        expect(container.prop('valid')).toBe(false);
     });
 
     test('onChange callback is called when content is changed', () => {

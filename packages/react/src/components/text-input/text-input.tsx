@@ -105,7 +105,9 @@ export const TextInput = forwardRef(({
     }, [id, ariaDescribedBy, validity, hint]);
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
-        setValidity({ validity: (valid ?? true) && event.currentTarget.checkValidity() });
+        if (valid === undefined) {
+            setValidity({ validity: event.currentTarget.checkValidity() });
+        }
 
         if (onBlur) {
             onBlur(event);
@@ -113,8 +115,10 @@ export const TextInput = forwardRef(({
     }, [onBlur, valid]);
 
     const handleOnInvalid: FormEventHandler<HTMLInputElement> = useCallback(() => {
-        setValidity({ validity: false });
-    }, []);
+        if (valid === undefined) {
+            setValidity({ validity: false });
+        }
+    }, [valid]);
 
     const handleChange: (event: ChangeEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (onChange) {
