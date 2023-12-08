@@ -10,8 +10,7 @@ export default {
 
 export const Normal: Story = () => (
     <NumericInput
-        label="Percentage"
-        adornment="%"
+        label="Number"
         defaultValue="50"
     />
 );
@@ -28,27 +27,24 @@ export const Adornment: Story = () => (
             label="End"
             adornment="%"
             adornmentPosition="end"
+            textAlign="right"
             defaultValue="50"
         />
         <NumericInput
-            label="Period"
-            textAlign="right"
+            label="Text"
             adornmentPosition="end"
             adornment="years"
+            textAlign="right"
             defaultValue="5"
         />
     </>
 );
 
 export const WithoutLabel: Story = () => (
-    <NumericInput
-        adornment="%"
-        adornmentPosition="start"
-        defaultValue="50"
-    />
+    <NumericInput defaultValue="50" />
 );
 
-export const MinimumMaximum: Story = () => (
+export const MinimumAndMaximum: Story = () => (
     <>
         <NumericInput
             label="Percentage"
@@ -68,8 +64,7 @@ export const MinimumMaximum: Story = () => (
 
 export const Required: Story = () => (
     <NumericInput
-        label="Percentage"
-        adornment="%"
+        label="Label"
         required
     />
 );
@@ -77,13 +72,11 @@ export const Required: Story = () => (
 export const Precision: Story = () => (
     <>
         <NumericInput
-            label="Percentage (precision = 0)"
-            adornment="%"
+            label="Label (precision = 0)"
             precision={0}
         />
         <NumericInput
-            label="Percentage (precision = 2)"
-            adornment="%"
+            label="Label (precision = 2)"
             precision={2}
         />
     </>
@@ -93,15 +86,14 @@ export const ControlledValue: Story = () => {
     const [inputValue, setInputValue] = useState('50');
     return (
         <NumericInput
-            label="Percentage"
-            adornment="%"
-            onChange={(event, valueAsNumber) => {
-                setInputValue(event.target.value);
-                console.info(`NumericInput onChange value: ${event.target.value}`);
+            label="Label"
+            onChange={(_event, { value, valueAsNumber }) => {
+                console.info(`NumericInput onChange value: ${value}`);
                 console.info(`NumericInput onChange valueAsNumber: ${valueAsNumber}`);
             }}
-            onBlur={(event, valueAsNumber) => {
-                console.info(`NumericInput onBlur value: ${event.target.value}`);
+            onBlur={(_event, { value, valueAsNumber }) => {
+                setInputValue(value);
+                console.info(`NumericInput onBlur value: ${value}`);
                 console.info(`NumericInput onBlur valueAsNumber: ${valueAsNumber}`);
             }}
             value={inputValue}
@@ -112,8 +104,7 @@ ControlledValue.parameters = rawCodeParameters;
 
 export const Disabled: Story = () => (
     <NumericInput
-        label="Percentage"
-        adornment="%"
+        label="Label"
         disabled
         defaultValue={100}
     />
@@ -122,14 +113,12 @@ export const Disabled: Story = () => (
 export const ExplicitInvalid: Story = () => (
     <>
         <NumericInput
-            label="Percentage"
-            adornment="%"
+            label="Label"
             invalid
-            validationErrorMessage="This is an custom error message"
+            validationErrorMessage="This is a custom error message"
             defaultValue={100}
         />
         <NumericInput
-            adornment="%"
             invalid
             defaultValue={100}
         />

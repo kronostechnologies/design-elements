@@ -1,7 +1,7 @@
-import { cleanIncompleteNumber, isValidPrecisionLimit, truncateAtPrecision } from './utils';
+import { cleanIncompleteNumber, isValidValueForInput, isWithinPrecision, truncateAtPrecision } from './utils';
 
-describe('Test NumericInput utils', () => {
-    test('should truncateAtPrecision return expected results', () => {
+describe('NumericInput utils', () => {
+    describe('truncateAtPrecision', () => {
         const tests = [
             { precision: 0, value: '', expected: '' },
             { precision: 0, value: '123.50', expected: '123' },
@@ -10,12 +10,14 @@ describe('Test NumericInput utils', () => {
         ];
 
         tests.forEach(({ precision, value, expected }) => {
-            const result = truncateAtPrecision(precision, value);
-            expect(result).toEqual(expected);
+            test(`should match expected (value: ${value}, precision: ${precision})`, () => {
+                const result = truncateAtPrecision(value, precision);
+                expect(result).toEqual(expected);
+            });
         });
     });
 
-    test('should cleanIncompleteNumber return expected results', () => {
+    describe('cleanIncompleteNumber', () => {
         const tests = [
             { value: '', expected: '' },
             { value: '-', expected: '' },
@@ -30,12 +32,14 @@ describe('Test NumericInput utils', () => {
         ];
 
         tests.forEach(({ value, expected }) => {
-            const result = cleanIncompleteNumber(value);
-            expect(result).toEqual(expected);
+            test(`should match expected (value: ${value})`, () => {
+                const result = cleanIncompleteNumber(value);
+                expect(result).toEqual(expected);
+            });
         });
     });
 
-    test('should isValidPrecisionLimit return expected results', () => {
+    describe('isWithinPrecision', () => {
         const validTests = [
             { precision: 0, value: '' },
             { precision: 2, value: '' },
@@ -49,13 +53,36 @@ describe('Test NumericInput utils', () => {
         ];
 
         validTests.forEach(({ precision, value }) => {
-            const result = isValidPrecisionLimit(precision, value);
-            expect(result).toBe(true);
+            test(`should return true (value: ${value}, precision: ${precision})`, () => {
+                const result = isWithinPrecision(value, precision);
+                expect(result).toBe(true);
+            });
         });
 
         invalidTests.forEach(({ precision, value }) => {
-            const result = isValidPrecisionLimit(precision, value);
-            expect(result).toBe(false);
+            test(`should return false (value: ${value}, precision: ${precision})`, () => {
+                const result = isWithinPrecision(value, precision);
+                expect(result).toBe(false);
+            });
+        });
+    });
+
+    describe('isValidValueForInput', () => {
+        const validTests = ['', '-', '.', '-.', '123', '12.', '123.4567', '.12', '-.12', '.000'];
+        const invalidTests = ['abc', 'e', '123e'];
+
+        validTests.forEach((value) => {
+            test(`should return true (value: ${value})`, () => {
+                const result = isValidValueForInput(value);
+                expect(result).toBe(true);
+            });
+        });
+
+        invalidTests.forEach((value) => {
+            test(`should return false (value: ${value})`, () => {
+                const result = isValidValueForInput(value);
+                expect(result).toBe(false);
+            });
         });
     });
 });

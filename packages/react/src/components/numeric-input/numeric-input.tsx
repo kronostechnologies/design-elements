@@ -1,19 +1,11 @@
-/* eslint-disable no-console */
 import {
-    ChangeEvent,
-    ClipboardEvent,
-    FocusEvent,
     HTMLProps,
     ReactNode,
-    useCallback,
-    useEffect,
     useMemo,
     useRef,
-    useState,
     VoidFunctionComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { useTranslation } from '../../i18n/use-translation';
 import { useId } from '../../hooks/use-id';
 import { focus } from '../../utils/css-state';
 import { Theme } from '../../themes';
@@ -21,7 +13,7 @@ import { DeviceContextProps, useDeviceContext } from '../device-context-provider
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
-import { cleanIncompleteNumber, cleanPastedContent, isValidPrecisionLimit, truncateAtPrecision } from './utils';
+import { useNumericInput, UseNumericInputParams } from './use-numeric-input';
 
 interface StyledInputProps {
     device: DeviceContextProps;
@@ -96,8 +88,8 @@ interface NumericInputProps extends NativeInputProps {
     max?: number;
     min?: number;
     noMargin?: boolean;
-    onBlur?(event: FocusEvent<HTMLInputElement>, valueAsNumber: number | null): void;
-    onChange?(event: ChangeEvent<HTMLInputElement>, valueAsNumber: number | null): void;
+    onBlur?: UseNumericInputParams['onBlur'];
+    onChange?: UseNumericInputParams['onChange'];
     precision?: number;
     required?: boolean;
     textAlign?: 'left' | 'right';
@@ -131,87 +123,26 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
     validationErrorMessage,
     value,
 }) => {
-    const { t } = useTranslation('numeric-input');
     const inputRef = useRef<HTMLInputElement>(null);
     const device = useDeviceContext();
     const fieldId = useId(id);
-    const [stateValue, setStateValue] = useState(value?.toString() ?? defaultValue?.toString() ?? '');
-    const [stateErrorMessage, setStateErrorMessage] = useState<string>('');
 
-    const validate = useCallback((inputValue: string): void => {
-        let error: string = '';
-
-        if (required && inputValue === '') {
-            error = t('requiredValidationErrorMessage');
-        } else if (inputValue !== '') {
-            if (max !== undefined && Number(inputValue) > max) {
-                error = t('maxValidationErrorMessage', { max });
-            } else if (min !== undefined && Number(inputValue) < min) {
-                error = t('minValidationErrorMessage', { min });
-            }
-        }
-
-        setStateErrorMessage(error);
-    }, [t, max, min, required]);
-
-    const isValidInputtingChars = useCallback((inputValue: string): boolean => /^-?\d*\.?\d*$/.test(inputValue), []);
-
-    const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
-        event.preventDefault();
-        let newValue = event.clipboardData.getData('text/plain');
-
-        newValue = cleanPastedContent(newValue);
-
-        if (precision !== undefined) {
-            newValue = truncateAtPrecision(precision, newValue);
-        }
-
-        // When the content is invalid, we will clear the field so the user has a feedback that the paste didn't work
-        if (!isValidInputtingChars(newValue)) {
-            newValue = '';
-        }
-
-        setStateValue(newValue);
-    }, [precision, isValidInputtingChars]);
-
-    const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        const inputValue = event.target.value;
-        const valueAsNumber = inputValue === '' ? null : Number(inputValue);
-
-        if (inputValue !== '') {
-            if (!isValidInputtingChars(inputValue)) {
-                return;
-            }
-            if (precision !== undefined && !isValidPrecisionLimit(precision, inputValue)) {
-                return;
-            }
-        }
-
-        setStateValue(inputValue);
-        onChange?.(event, valueAsNumber);
-    }, [isValidInputtingChars, precision, onChange]);
-
-    const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
-        const inputValue = cleanIncompleteNumber(event.target.value);
-        setStateValue(inputValue);
-        validate(inputValue);
-
-        const valueAsNumber = inputValue === '' ? null : Number(inputValue);
-        onBlur?.(event, valueAsNumber);
-    }, [onBlur, validate]);
-
-    useEffect(() => {
-        if (value !== undefined) {
-            setStateValue(value.toString());
-        }
-    }, [value]);
+    const numericInput = useNumericInput({
+        defaultValue,
+        max,
+        min,
+        onBlur,
+        onChange,
+        precision,
+        required,
+        invalid,
+        validationErrorMessage,
+        value,
+    });
 
     const adornmentContent = useMemo(() => (
         adornment ? <Adornment $position={adornmentPosition}>{adornment}</Adornment> : null
     ), [adornment, adornmentPosition]);
-
-    const isInvalid = invalid ?? (validationErrorMessage !== undefined || stateErrorMessage !== '');
-    const errorMessage = validationErrorMessage ?? stateErrorMessage;
 
     return (
         <FieldContainer
@@ -221,11 +152,11 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
             label={label}
             tooltip={tooltip}
             noMargin={noMargin}
-            valid={!isInvalid}
-            noInvalidFieldIcon={!errorMessage}
-            validationErrorMessage={errorMessage}
+            valid={!numericInput.invalid}
+            noInvalidFieldIcon={!numericInput.validationErrorMessage}
+            validationErrorMessage={numericInput.validationErrorMessage ?? ''}
         >
-            <Wrapper $disabled={disabled} $invalid={isInvalid}>
+            <Wrapper $disabled={disabled} $invalid={numericInput.invalid}>
                 {(adornment && adornmentPosition === 'start') && adornmentContent}
                 <StyledInput
                     $textAlign={textAlign}
@@ -234,14 +165,14 @@ export const NumericInput: VoidFunctionComponent<NumericInputProps> = ({
                     disabled={disabled}
                     id={fieldId}
                     inputMode="numeric"
-                    onPaste={handlePaste}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
+                    onBlur={numericInput.onBlurHandler}
+                    onChange={numericInput.onChangeHandler}
                     onFocus={onFocus}
+                    onPaste={numericInput.onPasteHandler}
                     placeholder={placeholder}
                     ref={inputRef}
                     type="text"
-                    value={stateValue}
+                    value={numericInput.value}
                 />
                 {(adornment && adornmentPosition === 'end') && adornmentContent}
             </Wrapper>

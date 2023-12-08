@@ -19,7 +19,7 @@ export function cleanIncompleteNumber(inputValue: string): string {
     return value;
 }
 
-export function isValidPrecisionLimit(precision: number, value: string): boolean {
+export function isWithinPrecision(value: string, precision: number): boolean {
     if (precision === 0 && value.includes('.')) {
         return false;
     }
@@ -34,11 +34,21 @@ export function cleanPastedContent(content: string): string {
     return content.trim();
 }
 
-export function truncateAtPrecision(precision: number, value: string): string {
+export function truncateAtPrecision(value: string, precision: number): string {
     if (value === '' || !value.includes('.')) {
         return value;
     }
 
     const atDot = value.indexOf('.');
     return value.slice(0, precision === 0 ? atDot : atDot + precision + 1);
+}
+
+/**
+ * Validate that value can be put in the input (including partially incomplete number)
+ */
+export function isValidValueForInput(value: string): boolean {
+    if (value.includes('.')) {
+        return /^-?\d*\.\d*$/.test(value);
+    }
+    return /^-?\d*$/.test(value);
 }

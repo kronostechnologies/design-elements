@@ -32,7 +32,7 @@ describe('NumericInput', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('should call onChange with return value as number', () => {
+    it('should call onChange with returned oject', () => {
         const onChange = jest.fn();
         const wrapper = shallow(
             <NumericInput onChange={onChange} />,
@@ -41,10 +41,10 @@ describe('NumericInput', () => {
         const event = { target: { value: '123.50' } };
         getByTestId(wrapper, 'numeric-input').invoke('onChange')(event);
 
-        expect(onChange).toHaveBeenCalledWith(event, 123.5);
+        expect(onChange).toHaveBeenCalledWith(event, { value: '123.50', valueAsNumber: 123.5 });
     });
 
-    it('should call onBlur with return value as number', () => {
+    it('should call onBlur with returned oject', () => {
         const onBlur = jest.fn();
         const wrapper = shallow(
             <NumericInput onBlur={onBlur} />,
@@ -53,7 +53,7 @@ describe('NumericInput', () => {
         const event = { target: { value: '123.50' } };
         getByTestId(wrapper, 'numeric-input').invoke('onBlur')(event);
 
-        expect(onBlur).toHaveBeenCalledWith(event, 123.5);
+        expect(onBlur).toHaveBeenCalledWith(event, { value: '123.50', valueAsNumber: 123.5 });
     });
 
     it('should call onChange with return value null when empty', () => {
@@ -65,12 +65,18 @@ describe('NumericInput', () => {
         const event = { target: { value: '' } };
         getByTestId(wrapper, 'numeric-input').invoke('onChange')(event);
 
-        expect(onChange).toHaveBeenCalledWith(event, null);
+        expect(onChange).toHaveBeenCalledWith(event, { value: '', valueAsNumber: null });
     });
 
     test('has controllable value', () => {
         const wrapper = shallow(<NumericInput value="500.25" />);
 
         expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('500.25');
+    });
+
+    test('should not accept invalid value', () => {
+        const wrapper = shallow(<NumericInput value="test" />);
+
+        expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('');
     });
 });
