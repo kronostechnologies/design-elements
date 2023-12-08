@@ -106,7 +106,6 @@ export const Card = styled.div<CardProps>`
     &:hover:not([disabled]) {
         background-color: ${({ theme }) => theme.greys.grey};
         border-color: ${({ theme }) => theme.greys.black};
-        cursor: pointer;
 
         /* stylelint-disable-next-line declaration-block-semicolon-newline-after,rule-empty-line-before */
 

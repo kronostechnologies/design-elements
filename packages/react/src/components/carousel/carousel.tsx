@@ -63,7 +63,6 @@ const Dot = styled.button<DotProps>`
     border: 1px solid transparent;
     border-radius: 50%;
     box-sizing: border-box;
-    cursor: pointer;
     display: inline-block;
     height: 12px;
     width: 12px;
@@ -81,7 +80,6 @@ interface NavigationButtonProps {
 
 const NavigationButton = styled.button.attrs<NavigationButtonProps>({ type: 'button' })`
     border: 1px solid transparent;
-    cursor: pointer;
     height: 34px;
     visibility: ${({ disabled }) => (disabled ? 'hidden' : 'visible')};
     width: 34px;

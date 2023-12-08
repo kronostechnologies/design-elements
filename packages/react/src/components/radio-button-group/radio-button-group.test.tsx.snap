@@ -28,7 +28,6 @@ exports[`Radio button Matches the snapshot 1`] = `
 }
 
 .c2 {
-  cursor: pointer;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;

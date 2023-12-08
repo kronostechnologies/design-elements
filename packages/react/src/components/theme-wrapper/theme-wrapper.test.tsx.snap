@@ -51,10 +51,6 @@ exports[`Theme Wrapper Returns component with default theme 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c0:not(:disabled) {
-  cursor: pointer;
-}
-
 .c0 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -143,10 +139,6 @@ exports[`Theme Wrapper Returns component with test theme 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c0:not(:disabled) {
-  cursor: pointer;
 }
 
 .c0 > svg {

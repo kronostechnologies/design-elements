@@ -60,7 +60,6 @@ input + .c1 {
   border: 1px solid #60666E;
   border-left: none;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,7 +86,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: default;
 }
 
 .c6 > svg {
@@ -105,7 +103,6 @@ input + .c1 {
   border: 1px solid #60666E;
   border-left: none;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -131,7 +128,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: default;
 }
 
 .c7 > svg {
@@ -379,7 +375,6 @@ input + .c1 {
   border: 1px solid #60666E;
   border-left: none;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -406,7 +401,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: default;
 }
 
 .c8 > svg {
@@ -424,7 +418,6 @@ input + .c1 {
   border: 1px solid #60666E;
   border-left: none;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -450,7 +443,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: default;
 }
 
 .c9 > svg {
@@ -840,7 +832,6 @@ input + .c1 {
   border: 1px solid #60666E;
   border-left: none;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -867,7 +858,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: default;
 }
 
 .c6 > svg {
@@ -885,7 +875,6 @@ input + .c1 {
   border: 1px solid #60666E;
   border-left: none;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -911,7 +900,6 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: default;
 }
 
 .c7 > svg {

@@ -32,7 +32,6 @@ const RadioWrapper = styled.div``;
 
 const StyledLabel = styled.label`
     ${(props: { theme: Theme, disabled?: boolean }) => `
-            ${props.disabled ? '' : 'cursor: pointer;'};
             align-items: center;
             display: flex;
             font-size: 0.875rem;
