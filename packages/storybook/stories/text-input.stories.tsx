@@ -117,8 +117,8 @@ export const RequiredInForm: Story = () => {
 export const FormWithCustomValidation: Story = () => {
     const [value, setValue] = useState('REFERRAL-111');
     const [valid, setValid] = useState(true);
-    const validate = (): void => {
-        if (value === 'REFERRAL-111') {
+    const validate = (validationValue: string): void => {
+        if (validationValue === 'REFERRAL-111') {
             setValid(false);
         } else {
             setValid(true);
@@ -127,7 +127,7 @@ export const FormWithCustomValidation: Story = () => {
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
-        validate();
+        validate(value);
     };
 
     return (
@@ -136,7 +136,11 @@ export const FormWithCustomValidation: Story = () => {
                 label="Enter your referral number (REFERRAL-111 already exists)"
                 type="text"
                 value={value}
-                onChange={(event) => setValue(event.currentTarget.value)}
+                onChange={(event) => {
+                    const inputValue = event.currentTarget.value;
+                    setValue(inputValue);
+                    validate(inputValue);
+                }}
                 valid={valid}
                 validationErrorMessage="This referral number already exists"
             />
