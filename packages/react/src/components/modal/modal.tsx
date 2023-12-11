@@ -102,7 +102,7 @@ interface FooterProps extends ContentProps {
 const Footer = styled.footer<FooterProps>`
     /* TODO change colors when updating thematization */
     border-top: 1px solid ${({ isBottomScrolled }) => (isBottomScrolled ? '#878f9a' : 'transparent')};
-    padding: var(--spacing-5x) ${getPadding} 0;
+    padding: var(--spacing-4x) ${getPadding} 0;
 `;
 
 export interface ModalProps {
