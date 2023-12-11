@@ -2291,7 +2291,9 @@ label + .c3 {
         data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
-        <div>
+        <div
+          style="display:contents"
+        >
           <div
             aria-label="Choose date"
             aria-live="polite"
@@ -3527,7 +3529,9 @@ label + .c3 {
         data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
-        <div>
+        <div
+          style="display:contents"
+        >
           <div
             aria-label="Choose date"
             aria-live="polite"
@@ -4684,7 +4688,9 @@ label + .c3 {
           class="react-datepicker__portal"
           tabindex="-1"
         >
-          <div>
+          <div
+            style="display:contents"
+          >
             <div
               aria-label="Choose date"
               aria-live="polite"
