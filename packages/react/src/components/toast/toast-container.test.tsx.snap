@@ -175,6 +175,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
         color="#FFFFFF"
         isMobile={false}
         name="alertOctagon"
+        role="img"
         size="16"
         type="error"
       >
@@ -185,6 +186,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
           focusable={true}
           isMobile={false}
           name="alertOctagon"
+          role="img"
           size="16"
           type="error"
         >
@@ -195,6 +197,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
             focusable={true}
             height="16"
             isMobile={false}
+            role="img"
             type="error"
             width="16"
           />
@@ -218,6 +221,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
         data-testid="dismiss"
         label="Dismiss notification"
         onClick={[Function]}
+        type="button"
       >
         <IconButton
           buttonType="tertiary"
@@ -226,6 +230,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
           iconName="x"
           label="Dismiss notification"
           onClick={[Function]}
+          type="button"
         >
           <Styled(AbstractButton)
             aria-label="Dismiss notification"
@@ -234,7 +239,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
             data-testid="dismiss"
             isMobile={false}
             onClick={[Function]}
-            type="submit"
+            type="button"
           >
             <AbstractButton
               aria-label="Dismiss notification"
@@ -243,7 +248,7 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
               data-testid="dismiss"
               isMobile={false}
               onClick={[Function]}
-              type="submit"
+              type="button"
             >
               <styled.button
                 aria-label="Dismiss notification"
@@ -252,14 +257,14 @@ exports[`ToastContainer should match snapshot (error) 1`] = `
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
-                type="submit"
+                type="button"
               >
                 <button
                   aria-label="Dismiss notification"
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  type="submit"
+                  type="button"
                 >
                   <Icon
                     aria-hidden="true"
@@ -461,6 +466,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
         color="#FFFFFF"
         isMobile={false}
         name="info"
+        role="img"
         size="16"
         type="information"
       >
@@ -471,6 +477,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
           focusable={true}
           isMobile={false}
           name="info"
+          role="img"
           size="16"
           type="information"
         >
@@ -481,6 +488,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
             focusable={true}
             height="16"
             isMobile={false}
+            role="img"
             type="information"
             width="16"
           />
@@ -504,6 +512,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
         data-testid="dismiss"
         label="Dismiss notification"
         onClick={[Function]}
+        type="button"
       >
         <IconButton
           buttonType="tertiary"
@@ -512,6 +521,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
           iconName="x"
           label="Dismiss notification"
           onClick={[Function]}
+          type="button"
         >
           <Styled(AbstractButton)
             aria-label="Dismiss notification"
@@ -520,7 +530,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
             data-testid="dismiss"
             isMobile={false}
             onClick={[Function]}
-            type="submit"
+            type="button"
           >
             <AbstractButton
               aria-label="Dismiss notification"
@@ -529,7 +539,7 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
               data-testid="dismiss"
               isMobile={false}
               onClick={[Function]}
-              type="submit"
+              type="button"
             >
               <styled.button
                 aria-label="Dismiss notification"
@@ -538,14 +548,14 @@ exports[`ToastContainer should match snapshot (information) 1`] = `
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
-                type="submit"
+                type="button"
               >
                 <button
                   aria-label="Dismiss notification"
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  type="submit"
+                  type="button"
                 >
                   <Icon
                     aria-hidden="true"
@@ -747,6 +757,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
         color="#FFFFFF"
         isMobile={false}
         name="check"
+        role="img"
         size="16"
         type="success"
       >
@@ -757,6 +768,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           focusable={true}
           isMobile={false}
           name="check"
+          role="img"
           size="16"
           type="success"
         >
@@ -767,6 +779,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             focusable={true}
             height="16"
             isMobile={false}
+            role="img"
             type="success"
             width="16"
           />
@@ -790,6 +803,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
         data-testid="dismiss"
         label="Dismiss notification"
         onClick={[Function]}
+        type="button"
       >
         <IconButton
           buttonType="tertiary"
@@ -798,6 +812,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
           iconName="x"
           label="Dismiss notification"
           onClick={[Function]}
+          type="button"
         >
           <Styled(AbstractButton)
             aria-label="Dismiss notification"
@@ -806,7 +821,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
             data-testid="dismiss"
             isMobile={false}
             onClick={[Function]}
-            type="submit"
+            type="button"
           >
             <AbstractButton
               aria-label="Dismiss notification"
@@ -815,7 +830,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
               data-testid="dismiss"
               isMobile={false}
               onClick={[Function]}
-              type="submit"
+              type="button"
             >
               <styled.button
                 aria-label="Dismiss notification"
@@ -824,14 +839,14 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
-                type="submit"
+                type="button"
               >
                 <button
                   aria-label="Dismiss notification"
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  type="submit"
+                  type="button"
                 >
                   <Icon
                     aria-hidden="true"
@@ -1033,6 +1048,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
         color="#000000"
         isMobile={false}
         name="alertTriangle"
+        role="img"
         size="16"
         type="warning"
       >
@@ -1043,6 +1059,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           focusable={true}
           isMobile={false}
           name="alertTriangle"
+          role="img"
           size="16"
           type="warning"
         >
@@ -1053,6 +1070,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             focusable={true}
             height="16"
             isMobile={false}
+            role="img"
             type="warning"
             width="16"
           />
@@ -1076,6 +1094,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
         data-testid="dismiss"
         label="Dismiss notification"
         onClick={[Function]}
+        type="button"
       >
         <IconButton
           buttonType="tertiary"
@@ -1084,6 +1103,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
           iconName="x"
           label="Dismiss notification"
           onClick={[Function]}
+          type="button"
         >
           <Styled(AbstractButton)
             aria-label="Dismiss notification"
@@ -1092,7 +1112,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
             data-testid="dismiss"
             isMobile={false}
             onClick={[Function]}
-            type="submit"
+            type="button"
           >
             <AbstractButton
               aria-label="Dismiss notification"
@@ -1101,7 +1121,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
               data-testid="dismiss"
               isMobile={false}
               onClick={[Function]}
-              type="submit"
+              type="button"
             >
               <styled.button
                 aria-label="Dismiss notification"
@@ -1110,14 +1130,14 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
                 data-testid="dismiss"
                 isMobile={false}
                 onClick={[Function]}
-                type="submit"
+                type="button"
               >
                 <button
                   aria-label="Dismiss notification"
                   className="c5 c4 c3"
                   data-testid="dismiss"
                   onClick={[Function]}
-                  type="submit"
+                  type="button"
                 >
                   <Icon
                     aria-hidden="true"
