@@ -19,28 +19,9 @@ export function cleanIncompleteNumber(inputValue: string): string {
     return value;
 }
 
-export function isWithinPrecision(value: string, precision: number): boolean {
-    if (precision === 0 && value.includes('.')) {
-        return false;
-    }
-    if (precision > 0 && value.split('.')[1]?.length > precision) {
-        return false;
-    }
-    return true;
-}
-
 export function cleanPastedContent(content: string): string {
     // Remove spaces and invisible characters (ex: \r, \n, ZWSP) around the copied text
     return content.trim();
-}
-
-export function truncateAtPrecision(value: string, precision: number): string {
-    if (value === '' || !value.includes('.')) {
-        return value;
-    }
-
-    const atDot = value.indexOf('.');
-    return value.slice(0, precision === 0 ? atDot : atDot + precision + 1);
 }
 
 /**

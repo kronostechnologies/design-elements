@@ -88,11 +88,11 @@ export const ControlledValue: Story = () => {
         <NumericInput
             label="Label"
             onChange={(_event, { value, valueAsNumber }) => {
+                setInputValue(value);
                 console.info(`NumericInput onChange value: ${value}`);
                 console.info(`NumericInput onChange valueAsNumber: ${valueAsNumber}`);
             }}
             onBlur={(_event, { value, valueAsNumber }) => {
-                setInputValue(value);
                 console.info(`NumericInput onBlur value: ${value}`);
                 console.info(`NumericInput onBlur valueAsNumber: ${valueAsNumber}`);
             }}

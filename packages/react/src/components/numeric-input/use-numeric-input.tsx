@@ -6,16 +6,14 @@ import {
     FocusEvent,
     FocusEventHandler,
     useCallback,
-    useEffect,
     useState,
 } from 'react';
+import { isNumber, isWithinPrecision, truncateAtPrecision } from '../../utils/math';
 import { useTranslation } from '../../i18n/use-translation';
 import {
     cleanIncompleteNumber,
     cleanPastedContent,
     isValidValueForInput,
-    isWithinPrecision,
-    truncateAtPrecision,
 } from './utils';
 
 interface NumericInputCallbackData {
@@ -50,15 +48,21 @@ export interface UseNumericInputReturn {
 }
 
 function validateProvidedValue(newValue: number | string): string {
-    if (typeof newValue === 'number' && !Number.isNaN(newValue)) {
+    if (isNumber(newValue)) {
         return newValue.toString();
-    } if (typeof newValue === 'string' && isValidValueForInput(newValue)) {
+    }
+    if (typeof newValue === 'string' && isValidValueForInput(newValue)) {
         return newValue;
     }
 
     console.warn(`Invalid value passed to NumericInput: ${newValue}`);
     return '';
 }
+
+const createCallbackData = (inputValue: string): NumericInputCallbackData => ({
+    value: inputValue,
+    valueAsNumber: inputValue === '' ? null : Number(inputValue),
+});
 
 export function useNumericInput({
     defaultValue,
@@ -69,38 +73,40 @@ export function useNumericInput({
     precision,
     required,
     invalid,
-    validationErrorMessage,
-    value,
+    validationErrorMessage: providedValidationErrorMessage,
+    value: providedValue,
 }: UseNumericInputParams): UseNumericInputReturn {
     const { t } = useTranslation('numeric-input');
-    const [stateValue, setStateValue] = useState(
-        validateProvidedValue(value?.toString() ?? defaultValue?.toString() ?? ''),
+    const [inputValue, setInputValue] = useState(
+        validateProvidedValue(providedValue ?? defaultValue ?? ''),
     );
-    const [stateErrorMessage, setStateErrorMessage] = useState<string | undefined>();
+    const [validationErrorMessage, setValidationErrorMessage] = useState<string | undefined>();
 
-    const isInvalid = invalid ?? (validationErrorMessage !== undefined || stateErrorMessage !== undefined);
-    const errorMessage = (validationErrorMessage ?? stateErrorMessage);
+    if (providedValue !== undefined) {
+        const validatedProvidedValue = validateProvidedValue(providedValue);
+        if (validatedProvidedValue !== inputValue) {
+            setInputValue(validatedProvidedValue);
+        }
+    }
 
-    const validate = useCallback((inputValue: string): void => {
+    const isInvalid = invalid ?? (providedValidationErrorMessage !== undefined || validationErrorMessage !== undefined);
+    const errorMessage = (providedValidationErrorMessage ?? validationErrorMessage);
+
+    const validate = useCallback((value: string): void => {
         let error: string | undefined;
 
-        if (required && inputValue === '') {
+        if (required && value === '') {
             error = t('requiredValidationErrorMessage');
-        } else if (inputValue !== '') {
-            if (max !== undefined && Number(inputValue) > max) {
+        } else if (value !== '') {
+            if (max !== undefined && Number(value) > max) {
                 error = t('maxValidationErrorMessage', { max });
-            } else if (min !== undefined && Number(inputValue) < min) {
+            } else if (min !== undefined && Number(value) < min) {
                 error = t('minValidationErrorMessage', { min });
             }
         }
 
-        setStateErrorMessage(error);
+        setValidationErrorMessage(error);
     }, [max, min, required, t]);
-
-    const createCallbackData = (inputValue: string): NumericInputCallbackData => ({
-        value: inputValue,
-        valueAsNumber: inputValue === '' ? null : Number(inputValue),
-    });
 
     const handlePaste = useCallback((event: ClipboardEvent<HTMLInputElement>): void => {
         event.preventDefault();
@@ -117,37 +123,30 @@ export function useNumericInput({
             newValue = '';
         }
 
-        setStateValue(newValue);
+        setInputValue(newValue);
     }, [precision]);
 
     const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-        const inputValue = event.target.value;
-        if (inputValue !== '') {
-            if (!isValidValueForInput(inputValue)) {
+        const value = event.target.value;
+        if (value !== '') {
+            if (!isValidValueForInput(value)) {
                 return;
             }
-            if (precision !== undefined && !isWithinPrecision(inputValue, precision)) {
+            if (precision !== undefined && !isWithinPrecision(value, precision)) {
                 return;
             }
         }
 
-        setStateValue(inputValue);
-        onChange?.(event, createCallbackData(inputValue));
+        setInputValue(value);
+        onChange?.(event, createCallbackData(value));
     }, [onChange, precision]);
 
     const handleBlur = useCallback((event: FocusEvent<HTMLInputElement>): void => {
-        const inputValue = cleanIncompleteNumber(event.target.value);
-        setStateValue(inputValue);
-        validate(inputValue);
-
-        onBlur?.(event, createCallbackData(inputValue));
+        const value = cleanIncompleteNumber(event.target.value);
+        setInputValue(value);
+        validate(value);
+        onBlur?.(event, createCallbackData(value));
     }, [onBlur, validate]);
-
-    useEffect(() => {
-        if (value !== undefined) {
-            setStateValue(validateProvidedValue(value));
-        }
-    }, [value]);
 
     return {
         max,
@@ -159,6 +158,6 @@ export function useNumericInput({
         required,
         invalid: isInvalid,
         validationErrorMessage: errorMessage,
-        value: stateValue,
+        value: inputValue,
     };
 }
