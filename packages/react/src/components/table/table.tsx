@@ -37,6 +37,7 @@ type CustomColumn<T extends object> = Column<T> & UseSortByColumnOptions<T> & {
     textAlign?: string,
     className?: string,
     sticky?: boolean,
+    footerColSpan?: number,
 };
 
 export type TableColumn<T extends object> = CustomColumn<T>[];
@@ -49,10 +50,20 @@ interface CustomRowProps {
 const utilColumnClassName = 'eq-table__util-column';
 
 const StyledHeader = styled.th<{ sticky: boolean }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    position: relative;
     ${({ sticky }) => sticky && css`
-        background-color: ${({ theme }) => theme.greys.white};
         position: sticky;
     `}
+
+    &:before {
+        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        bottom: 0;
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
 `;
 
 function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: boolean): ReactElement {
@@ -69,6 +80,47 @@ function getHeading<T extends object>(column: HeaderGroup<T>, stickyHeader: bool
         >
             {column.render('Header')}
         </StyledHeader>
+    );
+}
+
+const StyledFooter = styled.td<{ sticky: boolean }>`
+    background-color: ${({ theme }) => theme.greys.white};
+    font-weight: var(--font-semi-bold);
+    position: relative;
+    ${({ sticky }) => sticky && css`
+        position: sticky;
+    `}
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px -2px 6px 0px rgba(0, 0, 0, 0.05);
+        content: '';
+        height: 1px;
+        position: absolute;
+        right: 0;
+        top: 1px;
+        width: 100%;
+    }
+`;
+
+function getFooter<T extends object>(column: HeaderGroup<T>, sticky: boolean): ReactElement | null {
+    if (column.footerColSpan === 0) {
+        // If the Footer content is empty, skip rendering the td
+        return null;
+    }
+    const footerProps = column.footerColSpan
+        ? { ...column.getFooterProps(), colSpan: column.footerColSpan }
+        : column.getFooterProps();
+
+    return (
+        <StyledFooter
+            className={column.className}
+            style={{ textAlign: column.textAlign }}
+            sticky={sticky}
+            {...footerProps /* eslint-disable-line react/jsx-props-no-spreading */}
+        >
+            {column.render('Footer')}
+        </StyledFooter>
     );
 }
 
@@ -131,6 +183,7 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
 
 const StyledTable = styled.table<StyledTableProps>`
     border-collapse: collapse;
+    color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
 
     th {
@@ -199,8 +252,7 @@ type PartialTableState<T extends object> = Omit<TableState<T>, 'selectedRowIds'>
 
 export interface TableProps<T extends object> {
     className?: string;
-    /** Array of Objects that defines your table columns.
-     * See stories code or refer to react-table docs for more information */
+    footerColSpan?: number | undefined;
     columns: TableColumn<T>;
     /** Array of Objects that defines your table data.
      * See stories code or refer to react-table docs for more information */
@@ -224,6 +276,8 @@ export interface TableProps<T extends object> {
 
     stickyHeader?: boolean;
 
+    stickyFooter?: boolean;
+
     onRowClick?(row: Row<T>): void;
 
     onSelectedRowsChange?(selectedRows: T[]): void;
@@ -240,6 +294,7 @@ export const Table = <T extends object>({
     onRowClick,
     onSelectedRowsChange,
     stickyHeader = false,
+    stickyFooter = false,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
@@ -253,16 +308,17 @@ export const Table = <T extends object>({
 
     const stickyColumns = renderedColumns.map((column) => !!column.sticky);
     useEffect(() => {
-        calculateStickyPosition(stickyColumns, stickyHeader, tableRef);
+        calculateStickyPosition(stickyColumns, stickyHeader, stickyFooter, tableRef);
 
         const handleResize = (): void => calculateStickyPosition(
             stickyColumns,
             stickyHeader,
+            stickyFooter,
             tableRef,
         );
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [stickyColumns, stickyHeader, tableRef]);
+    }, [stickyColumns, stickyHeader, stickyFooter, tableRef]);
 
     const getInitialState = useCallback((): PartialTableState<T> | undefined => {
         const defaultSortColumn = columns.find(({ defaultSort }) => !!defaultSort);
@@ -281,10 +337,13 @@ export const Table = <T extends object>({
         return undefined;
     }, [columns]);
 
+    const hasFooter = columns.some((column) => 'Footer' in column);
+
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
+        footerGroups,
         rows,
         prepareRow,
         selectedFlatRows,
@@ -338,6 +397,17 @@ export const Table = <T extends object>({
                     );
                 })}
             </tbody>
+            {hasFooter && (
+                <tfoot>
+                    {footerGroups.map((group) => (
+                        <tr {...group.getFooterGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
+                            {group.headers.map((column) => (
+                                getFooter(column, stickyFooter)
+                            ))}
+                        </tr>
+                    ))}
+                </tfoot>
+            )}
         </StyledTable>
     );
 };
