@@ -18,6 +18,19 @@ const StyledDiv = styled.div<{ textAlign: string }>`
     ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
 `;
 
+const StyledHeader = styled.th`
+    background-color: ${({ theme }) => theme.greys.white};
+    position: relative;
+    &:before {
+        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        bottom: 0;
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
+`;
+
 interface SortableColumnHeadingProps<T extends object = {}> {
     header: HeaderGroup<T>;
 }
@@ -31,7 +44,7 @@ export const SortableColumnHeading = <T extends object>({ header }: SortableColu
     }, [header.isSorted, header.isSortedDesc]);
 
     return (
-        <th
+        <StyledHeader
             {...header.getHeaderProps(header.getSortByToggleProps()) /* eslint-disable-line react/jsx-props-no-spreading,max-len */}
             scope="col"
             aria-sort={sortState}
@@ -42,6 +55,6 @@ export const SortableColumnHeading = <T extends object>({ header }: SortableColu
                     <SortButtonIcon sort={sortState} data-testid="sort-icon" />
                 </SortButton>
             </StyledDiv>
-        </th>
+        </StyledHeader>
     );
 };

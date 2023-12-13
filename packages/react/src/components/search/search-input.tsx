@@ -90,7 +90,6 @@ const Reset = styled.button`
     background: transparent;
     border: 1px solid transparent;
     bottom: 0.5rem;
-    cursor: pointer;
     display: none;
     height: 1.25rem;
     margin: auto;

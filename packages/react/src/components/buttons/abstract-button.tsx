@@ -49,10 +49,6 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
 
     ${(props) => focus(props, true)};
 
-    &:not(:disabled) {
-        cursor: pointer;
-    }
-
     > svg {
         color: inherit;
         height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};

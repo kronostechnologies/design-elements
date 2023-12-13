@@ -75,10 +75,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c9:not(:disabled) {
-  cursor: pointer;
-}
-
 .c9 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -133,10 +129,6 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c13:not(:disabled) {
-  cursor: pointer;
 }
 
 .c13 > svg {
@@ -316,7 +308,7 @@ exports[`Modal-Dialog Matches snapshot (custom button labels) 1`] = `
 
 .c7 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -496,10 +488,6 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -617,7 +605,7 @@ exports[`Modal-Dialog Matches snapshot (custom footer content) 1`] = `
 
 .c6 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 <body
@@ -751,10 +739,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c9:not(:disabled) {
-  cursor: pointer;
-}
-
 .c9 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -809,10 +793,6 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c13:not(:disabled) {
-  cursor: pointer;
 }
 
 .c13 > svg {
@@ -992,7 +972,7 @@ exports[`Modal-Dialog Matches snapshot (only subtitle) 1`] = `
 
 .c7 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -1172,10 +1152,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c9:not(:disabled) {
-  cursor: pointer;
-}
-
 .c9 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -1230,10 +1206,6 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c13:not(:disabled) {
-  cursor: pointer;
 }
 
 .c13 > svg {
@@ -1413,7 +1385,7 @@ exports[`Modal-Dialog Matches snapshot (opened, desktop) 1`] = `
 
 .c7 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-4x) 0;
+  padding: var(--spacing-4x) var(--spacing-4x) 0;
 }
 
 .c4 {
@@ -1593,10 +1565,6 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c9:not(:disabled) {
-  cursor: pointer;
-}
-
 .c9 > svg {
   color: inherit;
   height: var(--size-1halfx);
@@ -1773,7 +1741,7 @@ exports[`Modal-Dialog Matches snapshot (opened, mobile) 1`] = `
 
 .c7 {
   border-top: 1px solid transparent;
-  padding: var(--spacing-5x) var(--spacing-2x) 0;
+  padding: var(--spacing-4x) var(--spacing-2x) 0;
 }
 
 .c4 {

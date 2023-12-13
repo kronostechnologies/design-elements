@@ -907,7 +907,6 @@ input + .c2 {
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -953,7 +952,6 @@ input[type="radio"]:disabled + .c1 {
   background: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: auto;
 }
 
 .c1 b {
@@ -1423,7 +1421,6 @@ input + .c2 {
   border-radius: var(--border-radius);
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1469,7 +1466,6 @@ input[type="radio"]:disabled + .c1 {
   background: #F1F2F2;
   border-color: #DBDEE1;
   color: #B7BBC2;
-  cursor: auto;
 }
 
 .c1 b {

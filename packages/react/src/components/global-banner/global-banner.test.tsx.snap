@@ -51,10 +51,6 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -217,11 +213,11 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         alert
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -292,10 +288,6 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -501,11 +493,11 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         default
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -585,10 +577,6 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c7:not(:disabled) {
-  cursor: pointer;
-}
-
 .c7 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -792,11 +780,11 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         info
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -874,10 +862,6 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -1095,11 +1079,11 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         warning
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1177,10 +1161,6 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -1348,11 +1328,11 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         alert
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1423,10 +1403,6 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -1635,11 +1611,11 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         default
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1717,10 +1693,6 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -1929,11 +1901,11 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         info
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -2011,10 +1983,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
-}
-
-.c7:not(:disabled) {
-  cursor: pointer;
 }
 
 .c7 > svg {
@@ -2235,11 +2203,11 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         warning
-      </b>
+      </strong>
       <span
         class="c5"
       >

@@ -51,10 +51,6 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:not(:disabled) {
-  cursor: pointer;
-}
-
 .c2 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -231,10 +227,14 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
 }
 
 .c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c19:visited svg {
@@ -885,10 +885,6 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:not(:disabled) {
-  cursor: pointer;
-}
-
 .c2 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -1065,10 +1061,14 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
 }
 
 .c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c19:visited svg {
@@ -1631,10 +1631,6 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c2:not(:disabled) {
-  cursor: pointer;
-}
-
 .c2 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -1811,10 +1807,14 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
 }
 
 .c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c19:visited svg {

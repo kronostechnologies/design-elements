@@ -227,7 +227,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -526,7 +525,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -827,7 +825,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1126,7 +1123,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #B7BBC2;
-  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1455,7 +1451,6 @@ label + .c5 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1773,7 +1768,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2025,10 +2019,6 @@ input + .c1 {
   outline: none;
 }
 
-.c6 > button:hover {
-  cursor: pointer;
-}
-
 .c7:focus {
   border-radius: var(--border-radius);
   box-shadow: 0 0 0 2px #84C6EA;
@@ -2232,7 +2222,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2302,7 +2291,9 @@ label + .c3 {
         data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
-        <div>
+        <div
+          style="display:contents"
+        >
           <div
             aria-label="Choose date"
             aria-live="polite"
@@ -3050,10 +3041,6 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c16:not(:disabled) {
-  cursor: pointer;
-}
-
 .c16 > svg {
   color: inherit;
   height: var(--size-1x);
@@ -3262,10 +3249,6 @@ input + .c1 {
 
 .c6 > button:focus {
   outline: none;
-}
-
-.c6 > button:hover {
-  cursor: pointer;
 }
 
 .c7:focus {
@@ -3477,7 +3460,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3547,7 +3529,9 @@ label + .c3 {
         data-placement="bottom-start"
         style="position:absolute;left:0;top:0"
       >
-        <div>
+        <div
+          style="display:contents"
+        >
           <div
             aria-label="Choose date"
             aria-live="polite"
@@ -4434,10 +4418,6 @@ input + .c1 {
   outline: none;
 }
 
-.c6 > button:hover {
-  cursor: pointer;
-}
-
 .c7:focus {
   border-radius: var(--border-radius);
   box-shadow: 0 0 0 2px #84C6EA;
@@ -4643,7 +4623,6 @@ label + .c3 {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   box-sizing: border-box;
   color: #60666E;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4709,7 +4688,9 @@ label + .c3 {
           class="react-datepicker__portal"
           tabindex="-1"
         >
-          <div>
+          <div
+            style="display:contents"
+          >
             <div
               aria-label="Choose date"
               aria-live="polite"

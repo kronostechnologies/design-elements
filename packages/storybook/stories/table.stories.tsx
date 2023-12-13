@@ -1,6 +1,6 @@
 import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
-import { VoidFunctionComponent } from 'react';
+import { VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
 
@@ -49,6 +49,63 @@ export const Normal: Story = () => {
             column3: 'a',
         },
     ];
+    return (
+        <Table columns={columns} data={data} />
+    );
+};
+
+interface FooterData {
+    column1: string;
+    column2: string;
+    numbers: number;
+}
+
+export const WithFooter: Story = () => {
+    const columns: TableColumn<FooterData> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+            Footer: 'Total:',
+            footerColSpan: 2,
+
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            footerColSpan: 0,
+        },
+        {
+            Header: 'Numbers',
+            accessor: 'numbers',
+            Footer: (value) => {
+                const total = useMemo(
+                    () => value.rows.reduce((sum, row) => row.values.numbers + sum, 0),
+                    [value.rows],
+                );
+
+                return total;
+            },
+        },
+    ];
+
+    const data: TableRow<FooterData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            numbers: 10,
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            numbers: 20,
+        },
+        {
+            column1: 'a',
+            column2: 'a',
+            numbers: 30,
+        },
+    ];
+
     return (
         <Table columns={columns} data={data} />
     );
@@ -512,7 +569,7 @@ interface StickyData {
 }
 
 const Wrap = styled.div`
-    height: 200px;
+    height: 400px;
     overflow: scroll;
 `;
 
@@ -742,6 +799,292 @@ export const Sticky: Story = () => {
     return (
         <Wrap>
             <Table columns={columns} data={data} stickyHeader onRowClick={(row) => console.info('row: ', row)} />
+        </Wrap>
+    );
+};
+
+interface StickyFooterData {
+    column1: string;
+    column2: string;
+    column3: string;
+    column4: string;
+    column5: string;
+    column6: string;
+    column7: string;
+}
+
+export const StickyFooter: Story = () => {
+    const columns: TableColumn<StickyFooterData> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+            Footer: 'Footer 1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            Footer: 'Footer 2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+            Footer: 'Footer 3',
+        },
+        {
+            Header: 'Column 4',
+            accessor: 'column4',
+            Footer: 'Footer 4',
+        },
+        {
+            Header: 'Column 5',
+            accessor: 'column5',
+            Footer: 'Footer 5',
+        },
+        {
+            Header: 'Column 6',
+            accessor: 'column6',
+            Footer: 'Footer 6',
+        },
+        {
+            Header: 'Column 7',
+            accessor: 'column7',
+            Footer: 'Footer 7',
+        },
+    ];
+
+    const data: TableRow<StickyFooterData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+            column4: 'a',
+            column5: 'a',
+            column6: 'a',
+            column7: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+            column4: 'b',
+            column5: 'b',
+            column6: 'b',
+            column7: 'b',
+        },
+        {
+            column1: 'c',
+            column2: 'c',
+            column3: 'c',
+            column4: 'c',
+            column5: 'c',
+            column6: 'c',
+            column7: 'c',
+        },
+        {
+            column1: 'd',
+            column2: 'd',
+            column3: 'd',
+            column4: 'd',
+            column5: 'd',
+            column6: 'd',
+            column7: 'd',
+        },
+        {
+            column1: 'e',
+            column2: 'e',
+            column3: 'e',
+            column4: 'e',
+            column5: 'e',
+            column6: 'e',
+            column7: 'e',
+        },
+        {
+            column1: 'f',
+            column2: 'f',
+            column3: 'f',
+            column4: 'f',
+            column5: 'f',
+            column6: 'f',
+            column7: 'f',
+        },
+        {
+            column1: 'g',
+            column2: 'g',
+            column3: 'g',
+            column4: 'g',
+            column5: 'g',
+            column6: 'g',
+            column7: 'g',
+        },
+        {
+            column1: 'h',
+            column2: 'h',
+            column3: 'h',
+            column4: 'h',
+            column5: 'h',
+            column6: 'h',
+            column7: 'h',
+        },
+        {
+            column1: 'i',
+            column2: 'i',
+            column3: 'i',
+            column4: 'i',
+            column5: 'i',
+            column6: 'i',
+            column7: 'i',
+        },
+    ];
+
+    return (
+        <Wrap>
+            <Table columns={columns} data={data} stickyFooter onRowClick={(row) => console.info('row: ', row)} />
+        </Wrap>
+    );
+};
+
+interface StickyFooterData {
+    column1: string;
+    column2: string;
+    column3: string;
+    column4: string;
+    column5: string;
+    column6: string;
+    column7: string;
+}
+
+export const StickyHeaderAndFooter: Story = () => {
+    const columns: TableColumn<StickyFooterData> = [
+        {
+            Header: 'Column 1',
+            accessor: 'column1',
+            Footer: 'Footer 1',
+        },
+        {
+            Header: 'Column 2',
+            accessor: 'column2',
+            Footer: 'Footer 2',
+        },
+        {
+            Header: 'Column 3',
+            accessor: 'column3',
+            Footer: 'Footer 3',
+        },
+        {
+            Header: 'Column 4',
+            accessor: 'column4',
+            Footer: 'Footer 4',
+        },
+        {
+            Header: 'Column 5',
+            accessor: 'column5',
+            Footer: 'Footer 5',
+        },
+        {
+            Header: 'Column 6',
+            accessor: 'column6',
+            Footer: 'Footer 6',
+        },
+        {
+            Header: 'Column 7',
+            accessor: 'column7',
+            Footer: 'Footer 7',
+        },
+    ];
+
+    const data: TableRow<StickyFooterData>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+            column4: 'a',
+            column5: 'a',
+            column6: 'a',
+            column7: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+            column4: 'b',
+            column5: 'b',
+            column6: 'b',
+            column7: 'b',
+        },
+        {
+            column1: 'c',
+            column2: 'c',
+            column3: 'c',
+            column4: 'c',
+            column5: 'c',
+            column6: 'c',
+            column7: 'c',
+        },
+        {
+            column1: 'd',
+            column2: 'd',
+            column3: 'd',
+            column4: 'd',
+            column5: 'd',
+            column6: 'd',
+            column7: 'd',
+        },
+        {
+            column1: 'e',
+            column2: 'e',
+            column3: 'e',
+            column4: 'e',
+            column5: 'e',
+            column6: 'e',
+            column7: 'e',
+        },
+        {
+            column1: 'f',
+            column2: 'f',
+            column3: 'f',
+            column4: 'f',
+            column5: 'f',
+            column6: 'f',
+            column7: 'f',
+        },
+        {
+            column1: 'g',
+            column2: 'g',
+            column3: 'g',
+            column4: 'g',
+            column5: 'g',
+            column6: 'g',
+            column7: 'g',
+        },
+        {
+            column1: 'h',
+            column2: 'h',
+            column3: 'h',
+            column4: 'h',
+            column5: 'h',
+            column6: 'h',
+            column7: 'h',
+        },
+        {
+            column1: 'i',
+            column2: 'i',
+            column3: 'i',
+            column4: 'i',
+            column5: 'i',
+            column6: 'i',
+            column7: 'i',
+        },
+    ];
+
+    return (
+        <Wrap>
+            <Table
+                columns={columns}
+                data={data}
+                stickyHeader
+                stickyFooter
+                onRowClick={(row) => console.info('row: ', row)}
+            />
         </Wrap>
     );
 };
