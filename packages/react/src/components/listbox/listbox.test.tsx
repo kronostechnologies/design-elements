@@ -259,14 +259,19 @@ describe('Listbox', () => {
                 expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
             });
 
-            test('Shift+Home selects all options from the first to the focused option', () => {
+            test('Ctrl+Shift+Home selects all options from the first to the focused option', () => {
                 const wrapper = shallow(
                     <Listbox options={options} multiselect defaultValue={['optionC']} focusedValue="optionC" />,
                 );
 
                 getByTestId(wrapper, 'listbox-container').simulate(
                     'keydown',
-                    { key: 'Home', shiftKey: true, preventDefault: jest.fn() },
+                    {
+                        key: 'Home',
+                        shiftKey: true,
+                        ctrlKey: true,
+                        preventDefault: jest.fn(),
+                    },
                 );
 
                 expect(getByTestId(wrapper, 'listitem-optionA').prop('selected')).toBe(true);
@@ -274,14 +279,19 @@ describe('Listbox', () => {
                 expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
             });
 
-            test('Shift+End selects all options from focused option to the last', () => {
+            test('Ctrl+Shift+End selects all options from focused option to the last', () => {
                 const wrapper = shallow(
                     <Listbox options={options} multiselect defaultValue={['optionC']} focusedValue="optionC" />,
                 );
 
                 getByTestId(wrapper, 'listbox-container').simulate(
                     'keydown',
-                    { key: 'End', shiftKey: true, preventDefault: jest.fn() },
+                    {
+                        key: 'End',
+                        shiftKey: true,
+                        ctrlKey: true,
+                        preventDefault: jest.fn(),
+                    },
                 );
 
                 expect(getByTestId(wrapper, 'listitem-optionC').prop('selected')).toBe(true);
