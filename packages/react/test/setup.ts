@@ -29,5 +29,3 @@ jest.mock('react', () => ({
         counter = 0;
     });
 }
-
-jest.spyOn(console, 'warn').mockImplementation(() => {});

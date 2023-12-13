@@ -3,8 +3,6 @@ import { NumericInput } from './numeric-input';
 import { getByTestId } from '../../test-utils/enzyme-selectors';
 import { renderWithTheme } from '../../test-utils/renderer';
 
-jest.mock('../../utils/uuid');
-
 describe('NumericInput', () => {
     test('matches the snapshot (Normal - Adornment at start)', () => {
         const tree = renderWithTheme(<NumericInput adornment="%" value="50" />);
@@ -32,7 +30,7 @@ describe('NumericInput', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('should call onChange with returned oject', () => {
+    test('should call onChange with returned oject', () => {
         const onChange = jest.fn();
         const wrapper = shallow(
             <NumericInput onChange={onChange} />,
@@ -44,7 +42,7 @@ describe('NumericInput', () => {
         expect(onChange).toHaveBeenCalledWith(event, { value: '123.50', valueAsNumber: 123.5 });
     });
 
-    it('should call onBlur with returned oject', () => {
+    test('should call onBlur with returned oject', () => {
         const onBlur = jest.fn();
         const wrapper = shallow(
             <NumericInput onBlur={onBlur} />,
@@ -56,7 +54,7 @@ describe('NumericInput', () => {
         expect(onBlur).toHaveBeenCalledWith(event, { value: '123.50', valueAsNumber: 123.5 });
     });
 
-    it('should call onChange with return value null when empty', () => {
+    test('should call onChange with return value null when empty', () => {
         const onChange = jest.fn();
         const wrapper = shallow(
             <NumericInput onChange={onChange} />,
@@ -75,6 +73,8 @@ describe('NumericInput', () => {
     });
 
     test('should not accept invalid value', () => {
+        jest.spyOn(console, 'warn').mockImplementation(() => { });
+
         const wrapper = shallow(<NumericInput value="test" />);
 
         expect(getByTestId(wrapper, 'numeric-input').prop('value')).toBe('');
