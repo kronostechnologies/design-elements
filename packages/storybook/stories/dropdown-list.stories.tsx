@@ -105,10 +105,6 @@ export const WithSkip: Story = () => (
     <DropdownList label="Select an option" options={provinces} skipOption={skipOption} />
 );
 
-export const WithTwoItemsVisible: Story = () => (
-    <DropdownList label="Select an option" options={provinces} numberOfItemsVisible={2} />
-);
-
 export const WithDisabledOptions: Story = () => {
     const disabledOptions = [
         { value: 'option1', label: 'Option 1', disabled: true },

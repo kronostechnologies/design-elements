@@ -1,34 +1,129 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Listbox Matches the snapshot (dropdown) 1`] = `
+exports[`Listbox Matches the snapshot (multiselect) 1`] = `
 .c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  width: 100%;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
-  list-style-type: none;
-  margin: 0;
-  max-height: 6rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
+  max-height: 160px;
   overflow-y: auto;
-  padding: 0;
-  width: 100%;
+  padding: var(--spacing-half) 0;
+  position: relative;
   z-index: 1000;
 }
 
-.c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
+.c0:focus {
   outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.c6 {
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: var(--spacing-1x);
+  width: var(--size-1x);
+}
+
+.c4:hover {
+  border: 1px solid #006296;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: var(--spacing-1x);
+  width: var(--size-1x);
+}
+
+.c10:hover {
+  border: 1px solid #006296;
+}
+
+.c10 > .c5 {
+  display: none;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F1F2F2;
+  border: 1px solid #DBDEE1;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: var(--size-1x);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: var(--spacing-1x);
+  width: var(--size-1x);
+}
+
+.c12:hover {
+  border: 1px solid #DBDEE1;
+}
+
+.c12 > .c5 {
+  display: none;
 }
 
 .c2 {
@@ -36,292 +131,99 @@ exports[`Listbox Matches the snapshot (dropdown) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c2:hover {
   background-color: #DBDEE1;
+}
+
+.c2 .c3 {
+  background-color: #006296;
+  border: 1px solid #006296;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-weight: var(--font-normal);
+  line-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
 }
 
-.c3:focus {
-  outline: none;
+.c9:hover {
+  background-color: #DBDEE1;
 }
 
-.c5 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
   color: #B7BBC2;
-  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
 }
 
-.c5:focus {
-  outline: none;
-}
-
-.c4 {
-  color: #60666E;
-  padding: 0 var(--spacing-1x);
-}
-
-<div
-  aria-activedescendant="uuid1_optionB"
-  aria-multiselectable="false"
-  class="c0"
-  role="listbox"
-  tabindex="-1"
->
-  <ul
-    class="c1"
-    data-testid="listbox-list"
-    id="uuid1"
-    role="presentation"
-    tabindex="0"
-  >
-    <li
-      aria-label="Option A"
-      aria-selected="false"
-      class="c2"
-      data-testid="listitem-optionA"
-      id="uuid1_optionA"
-      role="option"
-    >
-      Option A
-    </li>
-    <li
-      aria-label="Option B"
-      aria-selected="true"
-      class="c3"
-      data-testid="listitem-optionB"
-      id="uuid1_optionB"
-      role="option"
-      selected=""
-    >
-      <svg
-        class="c4"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-      Option B
-    </li>
-    <li
-      aria-label="Option C"
-      aria-selected="false"
-      class="c2"
-      data-testid="listitem-optionC"
-      id="uuid1_optionC"
-      role="option"
-    >
-      Option C
-    </li>
-    <li
-      aria-label="Option D"
-      aria-selected="false"
-      class="c2"
-      data-testid="listitem-optionD"
-      id="uuid1_optionD"
-      role="option"
-    >
-      Option D
-    </li>
-    <li
-      aria-disabled="true"
-      aria-label="Option Disabled"
-      aria-selected="false"
-      class="c5"
-      data-testid="listitem-optionDisabled"
-      disabled=""
-      id="uuid1_optionDisabled"
-      role="option"
-    >
-      Option Disabled
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: unset;
-  width: unset;
-}
-
-.c1 {
+.c11:hover {
   background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
-  list-style-type: none;
-  margin: 0;
-  max-height: 8rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  overflow-y: auto;
-  padding: 0;
-  width: 100%;
-  z-index: 1000;
 }
 
-.c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
-  outline: none;
-}
-
-.c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: inherit;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c4:focus {
-  outline: none;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  color: #B7BBC2;
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-normal);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c3 {
+.c8 {
   color: #60666E;
-  padding: 0 var(--spacing-1x);
+  display: block;
+  font-size: 0.75rem;
 }
 
 <div
   aria-multiselectable="true"
   class="c0"
+  data-testid="listbox-container"
+  id="uuid1"
   role="listbox"
-  tabindex="-1"
+  tabindex="0"
 >
   <ul
     class="c1"
     data-testid="listbox-list"
-    id="uuid1"
     role="presentation"
-    tabindex="0"
   >
     <li
-      aria-label="Option A"
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionA"
@@ -329,28 +231,55 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       role="option"
       selected=""
     >
-      <svg
-        class="c3"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-      Option A
+      <span
+        aria-hidden="true"
+        checked=""
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
+      <span
+        class="c7"
+      >
+        Option A
+        <span
+          class="c8"
+        >
+          The first one
+        </span>
+      </span>
     </li>
     <li
-      aria-label="Option B"
-      aria-selected="false"
-      class="c4"
+      class="c9"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
       role="option"
     >
-      Option B
+      <span
+        aria-hidden="true"
+        class="c3 c10"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
+      <span
+        class="c7"
+      >
+        Option B
+      </span>
     </li>
     <li
-      aria-label="Option C"
       aria-selected="true"
       class="c2"
       data-testid="listitem-optionC"
@@ -358,37 +287,75 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
       role="option"
       selected=""
     >
-      <svg
-        class="c3"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-      Option C
-    </li>
-    <li
-      aria-label="Option D"
-      aria-selected="false"
-      class="c4"
-      data-testid="listitem-optionD"
-      id="uuid1_optionD"
-      role="option"
-    >
-      Option D
+      <span
+        aria-hidden="true"
+        checked=""
+        class="c3 c4"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
+      <span
+        class="c7"
+      >
+        Option C
+      </span>
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option Disabled"
-      aria-selected="false"
-      class="c5"
-      data-testid="listitem-optionDisabled"
+      class="c11"
+      data-testid="listitem-optionD"
       disabled=""
-      id="uuid1_optionDisabled"
+      id="uuid1_optionD"
       role="option"
     >
-      Option Disabled
+      <span
+        aria-hidden="true"
+        class="c3 c12"
+        disabled=""
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
+      <span
+        class="c7"
+      >
+        Option D
+      </span>
+    </li>
+    <li
+      class="c9"
+      data-testid="listitem-optionE"
+      id="uuid1_optionE"
+      role="option"
+    >
+      <span
+        aria-hidden="true"
+        class="c3 c10"
+      >
+        <svg
+          class="c5 c6"
+          color="currentColor"
+          focusable="false"
+          height="24"
+          width="24"
+        />
+      </span>
+      <span
+        class="c7"
+      >
+        Option E
+      </span>
     </li>
   </ul>
 </div>
@@ -396,33 +363,36 @@ exports[`Listbox Matches the snapshot (multiselect + checkIndicator) 1`] = `
 
 exports[`Listbox Matches the snapshot 1`] = `
 .c0 {
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: unset;
-  width: unset;
-}
-
-.c1 {
-  background-color: #FFFFFF;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 1px #DBDEE1,0 10px 20px 0 rgb(0 0 0 / 19%);
-  list-style-type: none;
-  margin: 0;
-  max-height: 6rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
+  max-height: 160px;
   overflow-y: auto;
-  padding: 0;
-  width: 100%;
+  padding: var(--spacing-half) 0;
+  position: relative;
   z-index: 1000;
 }
 
-.c1:focus {
-  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA,0 10px 20px 0 rgb(0 0 0 / 19%);
+.c0:focus {
   outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #84C6EA;
+  box-shadow: 0 0 0 1px #006296,0 0 0 3px #84C6EA;
+}
+
+.c1 {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .c2 {
@@ -430,51 +400,20 @@ exports[`Listbox Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: inherit;
   color: #000000;
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
 }
 
-.c2:focus {
-  outline: none;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c2:hover {
   background-color: #DBDEE1;
-  color: #000000;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: var(--font-semi-bold);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3:focus {
-  outline: none;
 }
 
 .c5 {
@@ -482,106 +421,138 @@ exports[`Listbox Matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  color: #000000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  line-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
+}
+
+.c5:hover {
+  background-color: #DBDEE1;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #B7BBC2;
-  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 0.875rem;
   font-weight: var(--font-normal);
-  height: 2rem;
-  line-height: 2rem;
-  overflow: hidden;
-  padding: 0 8px 0 var(--spacing-4x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: var(--size-1halfx);
+  padding: var(--spacing-half) var(--spacing-2x);
+  padding-right: var(--spacing-1x);
 }
 
-.c5:focus {
-  outline: none;
+.c6:hover {
+  background-color: #FFFFFF;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c4 {
   color: #60666E;
-  padding: 0 var(--spacing-1x);
+  display: block;
+  font-size: 0.75rem;
 }
 
 <div
-  aria-activedescendant="uuid1_optionB"
-  aria-multiselectable="false"
   class="c0"
+  data-testid="listbox-container"
+  id="uuid1"
   role="listbox"
-  tabindex="-1"
+  tabindex="0"
 >
   <ul
     class="c1"
     data-testid="listbox-list"
-    id="uuid1"
     role="presentation"
-    tabindex="0"
   >
     <li
-      aria-label="Option A"
-      aria-selected="false"
       class="c2"
       data-testid="listitem-optionA"
       id="uuid1_optionA"
       role="option"
     >
-      Option A
+      <span
+        class="c3"
+      >
+        Option A
+        <span
+          class="c4"
+        >
+          The first one
+        </span>
+      </span>
     </li>
     <li
-      aria-label="Option B"
-      aria-selected="true"
-      class="c3"
+      class="c5"
       data-testid="listitem-optionB"
       id="uuid1_optionB"
       role="option"
       selected=""
     >
-      <svg
-        class="c4"
-        color="currentColor"
-        data-testid="check-icon"
-        focusable="false"
-        height="16"
-        width="16"
-      />
-      Option B
+      <span
+        class="c3"
+      >
+        Option B
+      </span>
     </li>
     <li
-      aria-label="Option C"
-      aria-selected="false"
       class="c2"
       data-testid="listitem-optionC"
       id="uuid1_optionC"
       role="option"
     >
-      Option C
-    </li>
-    <li
-      aria-label="Option D"
-      aria-selected="false"
-      class="c2"
-      data-testid="listitem-optionD"
-      id="uuid1_optionD"
-      role="option"
-    >
-      Option D
+      <span
+        class="c3"
+      >
+        Option C
+      </span>
     </li>
     <li
       aria-disabled="true"
-      aria-label="Option Disabled"
-      aria-selected="false"
-      class="c5"
-      data-testid="listitem-optionDisabled"
+      class="c6"
+      data-testid="listitem-optionD"
       disabled=""
-      id="uuid1_optionDisabled"
+      id="uuid1_optionD"
       role="option"
     >
-      Option Disabled
+      <span
+        class="c3"
+      >
+        Option D
+      </span>
+    </li>
+    <li
+      class="c2"
+      data-testid="listitem-optionE"
+      id="uuid1_optionE"
+      role="option"
+    >
+      <span
+        class="c3"
+      >
+        Option E
+      </span>
     </li>
   </ul>
 </div>

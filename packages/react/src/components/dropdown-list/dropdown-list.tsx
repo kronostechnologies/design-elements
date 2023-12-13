@@ -60,6 +60,11 @@ const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
     position: relative;
 `;
 
+const StyledListbox = styled(Listbox)`
+    position: absolute;
+    width: 100%;
+`;
+
 const InputWrapper = styled.div<InputWrapperProps>`
     align-items: center;
     background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
@@ -157,11 +162,6 @@ interface DropdownListProps {
     label?: string;
     name?: string;
     /**
-     * Number of visible items in the listbox before overflow
-     * @default 4
-     */
-    numberOfItemsVisible?: number;
-    /**
      * { disabled?: boolean, value: string; label: string; }[]
      */
     options: Option[];
@@ -209,7 +209,6 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     onChange,
     options,
     name,
-    numberOfItemsVisible = 4,
     placeholder,
     required,
     searchable,
@@ -598,22 +597,18 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
                     </Arrow>
                 </InputWrapper>
                 {open && (
-                    <Listbox
+                    <StyledListbox
                         ariaLabelledBy={fieldId}
-                        autofocus={searchable ? autoFocus : open}
                         ref={listboxRef}
-                        checkIndicator
                         data-testid="listbox"
                         defaultValue={defaultValue}
                         focusedValue={focusedValue}
                         id={`listbox_${fieldId}`}
-                        numberOfItemsVisible={numberOfItemsVisible}
                         onChange={handleChange}
-                        onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
+                        onFocusChange={searchable ? undefined : handleFocusedValueChange}
                         onKeyDown={handleListboxKeyDown}
                         options={filteredOptions}
                         value={selectedOptionValue}
-                        dropdown
                     />
                 )}
             </StyledFieldContainer>
