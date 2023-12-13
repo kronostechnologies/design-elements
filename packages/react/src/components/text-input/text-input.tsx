@@ -11,17 +11,17 @@ import {
     Ref,
     useCallback,
     useEffect,
-    useMemo,
     useState,
 } from 'react';
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container/field-container';
 import { TooltipProps } from '../tooltip/tooltip';
 import { inputsStyle } from './styles/inputs';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useId } from '../../hooks/use-id';
 
 const Input = styled.input<{ isMobile: boolean; }>`
     ${({ theme, isMobile }) => inputsStyle(theme, isMobile)}
@@ -94,15 +94,14 @@ export const TextInput = forwardRef(({
     const { isMobile } = useDeviceContext();
     const { t } = useTranslation('text-input');
     const [{ validity }, setValidity] = useState({ validity: valid ?? true });
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const fieldId = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
-    const processedAriaDescribedBy = useMemo(() => {
-        const invalidAria = !validity ? `${id}_invalid` : '';
-        const hintAria = hint ? `${id}_hint` : '';
-
-        return `${ariaDescribedBy || ''} ${invalidAria} ${hintAria}`.trim();
-    }, [id, ariaDescribedBy, validity, hint]);
+    const processedAriaDescribedBy = useAriaConditionalIds([
+        { id: ariaDescribedBy },
+        { id: `${fieldId}_invalid`, include: !validity },
+        { id: `${fieldId}_hint`, include: !!hint },
+    ]);
 
     const handleBlur: (event: FocusEvent<HTMLInputElement>) => void = useCallback((event) => {
         if (valid === undefined) {
@@ -142,7 +141,7 @@ export const TextInput = forwardRef(({
         <FieldContainer
             className={className}
             noMargin={noMargin}
-            fieldId={id}
+            fieldId={fieldId}
             label={label}
             required={required}
             tooltip={tooltip}
@@ -159,7 +158,7 @@ export const TextInput = forwardRef(({
                 isMobile={isMobile}
                 defaultValue={defaultValue}
                 disabled={disabled}
-                id={id}
+                id={fieldId}
                 inputMode={inputMode}
                 name={name}
                 ref={ref}

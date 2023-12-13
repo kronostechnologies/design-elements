@@ -79,7 +79,7 @@ export const FieldContainer: FunctionComponent<PropsWithChildren<FieldContainerP
             valid={valid}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
         >
-            {label && <Label forId={fieldId} tooltip={tooltip} required={required}>{label}</Label>}
+            {label && <Label id={`${fieldId}_label`} forId={fieldId} tooltip={tooltip} required={required}>{label}</Label>}
             {hint && <StyledHint id={`${fieldId}_hint`} isMobile={isMobile}>{hint}</StyledHint>}
             {!valid && (
                 <InvalidField

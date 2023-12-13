@@ -73,6 +73,11 @@ interface ListboxProps {
      * Callback function, invoked when focused value changes
      */
     onFocusChange?(option?: ListboxOption): void;
+
+    /**
+     * Callback function, invoked when an option is clicked
+     */
+    onOptionClick?(option?: ListboxOption): void;
 }
 
 interface ContainerProps {
@@ -144,6 +149,7 @@ const ListItem = styled.li<ListItemProps>`
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
     line-height: var(--size-1halfx);
+    min-height: var(--size-1halfx);
     padding: var(--spacing-half) var(--spacing-2x);
   
     ${({ isMobile }) => (!isMobile && css`
@@ -187,6 +193,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     onChange,
     onFocusChange,
     onKeyDown,
+    onOptionClick,
     className,
     defaultValue,
     focusable = true,
@@ -223,7 +230,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     });
 
     const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
-        () => findOptionsByValue(value || defaultValue),
+        () => findOptionsByValue(value ?? defaultValue),
     );
 
     function isOptionSelected(option: ListboxOption): boolean {
@@ -333,6 +340,8 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
     function handleListItemClick(option: ListboxOption): () => void {
         return () => {
+            onOptionClick?.(option);
+
             if (option !== focusedOption) {
                 setFocusedOption(option);
                 onFocusChange?.(option);

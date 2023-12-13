@@ -12,7 +12,7 @@ export { Avatar } from './components/avatar/avatar';
 export { Checkbox } from './components/checkbox/checkbox';
 export { CheckboxGroup } from './components/checkbox-group/checkbox-group';
 export { Datepicker, DatepickerHandles } from './components/date-picker/date-picker';
-export { DropdownList } from './components/dropdown-list/dropdown-list';
+export { DropdownList, DropdownListOption } from './components/dropdown-list/dropdown-list';
 export { MoneyInput } from './components/money-input/money-input';
 export { NumericInput } from './components/numeric-input/numeric-input';
 export { OptionButton } from './components/option-button/option-button';

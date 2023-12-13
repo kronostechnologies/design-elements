@@ -139,6 +139,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
   line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
 }
@@ -165,6 +166,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
 }
@@ -186,6 +188,7 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
 }
@@ -408,6 +411,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
 }
@@ -429,6 +433,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-semi-bold);
   line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
 }
@@ -450,6 +455,7 @@ exports[`Listbox Matches the snapshot 1`] = `
   font-size: 0.875rem;
   font-weight: var(--font-normal);
   line-height: var(--size-1halfx);
+  min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
 }

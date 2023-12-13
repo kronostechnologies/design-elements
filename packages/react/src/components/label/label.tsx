@@ -31,6 +31,7 @@ const StyledTooltip = styled(Tooltip)`
 interface LabelProps {
     className?: string;
     forId: string;
+    id?: string;
     required?: boolean;
     requiredLabelType?: 'text';
     tooltip?: TooltipProps;
@@ -57,14 +58,14 @@ const RequiredLabel: FunctionComponent<RequiredLabelProps> = ({ type }) => {
 };
 
 const Label: FunctionComponent<PropsWithChildren<LabelProps>> = ({
-    className, children, forId, tooltip, required, requiredLabelType = 'text',
+    className, children, forId, id, tooltip, required, requiredLabelType = 'text',
 }) => {
     const WrapperComponent = tooltip ? StyledDiv : Fragment;
     const { isMobile } = useDeviceContext();
 
     return (
         <WrapperComponent>
-            <StyledLabel className={className} htmlFor={forId} isMobile={isMobile}>
+            <StyledLabel className={className} htmlFor={forId} id={id} isMobile={isMobile}>
                 {children}
                 {required && <RequiredLabel type={requiredLabelType} />}
             </StyledLabel>

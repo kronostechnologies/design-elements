@@ -24,6 +24,10 @@ export const Translations = {
             monthSelectLabel: 'Select a month',
             yearSelectLabel: 'Select a year',
         },
+        'dropdown-list': {
+            inputAriaLabel: 'Select an option',
+            validationErrorMessage: 'You must select an option',
+        },
         'error-summary': {
             title: 'The form contains one or more errors',
             message: 'Please correct them to proceed to the next step.',
@@ -85,10 +89,6 @@ export const Translations = {
             Neutral: 'Information',
             dismissLabel: 'Dismiss banner',
         },
-        select: {
-            inputAriaLabel: 'Select an option',
-            validationErrorMessage: 'You must select an option',
-        },
         'skip-link': {
             label: 'Skip to main content',
         },
@@ -144,6 +144,10 @@ export const Translations = {
             monthNextButtonLabel: 'Aller au mois suivant',
             monthSelectLabel: 'Choisissez un mois',
             yearSelectLabel: 'Choisissez une année',
+        },
+        'dropdown-list': {
+            inputAriaLabel: 'Choisissez une option',
+            validationErrorMessage: 'Vous devez choisir une option',
         },
         'error-summary': {
             title: 'Le formulaire contient une ou plusieurs erreurs',
@@ -205,10 +209,6 @@ export const Translations = {
             Discovery: 'Truc de pro',
             Neutral: 'Information',
             dismissLabel: 'Rejeter la bannière',
-        },
-        select: {
-            inputAriaLabel: 'Choisissez une option',
-            validationErrorMessage: 'Vous devez choisir une option',
         },
         'skip-link': {
             label: 'Passer au contenu principal',
