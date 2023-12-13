@@ -261,7 +261,7 @@ describe('Listbox', () => {
 
             test('Ctrl+Shift+Home selects all options from the first to the focused option', () => {
                 const wrapper = shallow(
-                    <Listbox options={options} multiselect defaultValue={['optionC']} focusedValue="optionC" />,
+                    <Listbox options={options} multiselect focusedValue="optionC" />,
                 );
 
                 getByTestId(wrapper, 'listbox-container').simulate(
@@ -281,7 +281,7 @@ describe('Listbox', () => {
 
             test('Ctrl+Shift+End selects all options from focused option to the last', () => {
                 const wrapper = shallow(
-                    <Listbox options={options} multiselect defaultValue={['optionC']} focusedValue="optionC" />,
+                    <Listbox options={options} multiselect focusedValue="optionC" />,
                 );
 
                 getByTestId(wrapper, 'listbox-container').simulate(

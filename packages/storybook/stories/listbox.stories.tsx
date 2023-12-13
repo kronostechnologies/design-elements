@@ -85,7 +85,5 @@ export const Multiselect: Story = () => (
         defaultValue={['optionA', 'optionC']}
         multiselect
         options={options}
-        onFocusChange={(option) => console.info('onFocusChange', option)}
-        onChange={(option) => console.info('onChange', option)}
     />
 );

@@ -392,7 +392,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
 
                     if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
                         selectMultipleOptions(
-                            options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption)),
+                            options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption) + 1),
                         );
                     } else if (!multiselect) {
                         selectSingleOption(newFocusedOption);
