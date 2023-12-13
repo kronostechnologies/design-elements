@@ -82,7 +82,7 @@ exports[`Toggletip Has default desktop styles (defaultOpen) 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
@@ -436,7 +436,7 @@ exports[`Toggletip Has default desktop styles 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
@@ -609,7 +609,7 @@ exports[`Toggletip Has mobile styles (defaultOpen) 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {
@@ -963,7 +963,7 @@ exports[`Toggletip Has mobile styles 1`] = `
 .c0:hover,
 .c0[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c0:disabled {

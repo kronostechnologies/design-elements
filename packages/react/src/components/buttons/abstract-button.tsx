@@ -146,7 +146,7 @@ const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation
     &:hover,
     &[aria-expanded='true'] {
         background-color: ${inverted ? theme.main['primary-1.3'] : theme.greys.grey};
-        color: ${inverted ? theme.greys.white : theme.greys.black};
+        color: ${inverted ? theme.greys.white : theme.greys['neutral-90']};
     }
 
     &:disabled {

@@ -619,7 +619,7 @@ exports[`Icon Button Has tertiary styles 1`] = `
 .c1:hover,
 .c1[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c1:disabled {

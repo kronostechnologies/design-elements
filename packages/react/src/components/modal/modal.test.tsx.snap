@@ -299,7 +299,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
 .c4:hover,
 .c4[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c4:disabled {
@@ -510,7 +510,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
 .c4:hover,
 .c4[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c4:disabled {
@@ -720,7 +720,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
 .c4:hover,
 .c4[aria-expanded='true'] {
   background-color: #DBDEE1;
-  color: #000000;
+  color: #1B1C1E;
 }
 
 .c4:disabled {
