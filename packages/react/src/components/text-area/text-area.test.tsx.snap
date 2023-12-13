@@ -122,6 +122,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     Comment (required)
   </label>
@@ -260,6 +261,7 @@ input + .c1 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     Comment (required)
   </label>

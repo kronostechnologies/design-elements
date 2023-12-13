@@ -262,6 +262,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -560,6 +561,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -860,6 +862,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1158,6 +1161,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1486,6 +1490,7 @@ label + .c5 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1803,6 +1808,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -1910,84 +1916,43 @@ input + .c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2rem;
-  padding-right: var(--spacing-1x);
+  height: var(--size-2x);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c12:hover {
-  cursor: pointer;
+.c12:focus {
+  outline: none;
 }
 
-.c12 svg {
-  color: #60666E;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  max-height: 100%;
-  min-width: 0;
-  outline: none;
-  overflow: hidden;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.c13:hover {
-  cursor: pointer;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::-moz-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13:-ms-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c14 > svg {
   height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
   width: var(--size-1x);
 }
 
@@ -2212,7 +2177,7 @@ label + .c3 {
   outline: none;
 }
 
-.c15 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2234,11 +2199,11 @@ label + .c3 {
   width: var(--size-2x);
 }
 
-.c15:hover {
+.c14:hover {
   background-color: #DBDEE1;
 }
 
-.c15:focus {
+.c14:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -2246,7 +2211,7 @@ label + .c3 {
   z-index: 10;
 }
 
-.c15 > svg {
+.c14 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -2257,6 +2222,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -2339,38 +2305,34 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid2_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid2"
+                          aria-invalid="false"
+                          aria-label="Select a month"
+                          aria-labelledby="uuid2_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="month-select"
+                          id="uuid2"
+                          role="combobox"
+                          tabindex="0"
+                          value="october"
                         >
                           <input
-                            aria-activedescendant="uuid2_october"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid2"
-                            aria-label="Select a month"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="month-select"
-                            id="uuid2"
-                            type="text"
-                            value="Oct"
+                            data-testid="input"
+                            type="hidden"
+                            value="october"
                           />
-                          <button
-                            aria-labelledby="uuid2"
-                            class="c14"
+                          Oct
+                          <svg
+                            aria-hidden="true"
+                            class="c13"
+                            color="currentColor"
                             data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
-                          >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2381,38 +2343,34 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid3_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid3"
+                          aria-invalid="false"
+                          aria-label="Select a year"
+                          aria-labelledby="uuid3_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="year-select"
+                          id="uuid3"
+                          role="combobox"
+                          tabindex="0"
+                          value="2010"
                         >
                           <input
-                            aria-activedescendant="uuid3_2010"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid3"
-                            aria-label="Select a year"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="year-select"
-                            id="uuid3"
-                            type="text"
+                            data-testid="input"
+                            type="hidden"
                             value="2010"
                           />
-                          <button
-                            aria-labelledby="uuid3"
-                            class="c14"
+                          2010
+                          <svg
+                            aria-hidden="true"
+                            class="c13"
+                            color="currentColor"
                             data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
-                          >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2974,7 +2932,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c15"
+      class="c14"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -2991,7 +2949,7 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
-.c16 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3031,45 +2989,45 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   user-select: none;
 }
 
-.c16:focus {
+.c15:focus {
   outline: none;
 }
 
-.c16:focus {
+.c15:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c16 > svg {
+.c15 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c17 {
+.c16 {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #006296;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c17:hover,
-.c17[aria-expanded='true'] {
+.c16:hover,
+.c16[aria-expanded='true'] {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c17:disabled {
+.c16:disabled {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -3142,84 +3100,43 @@ input + .c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2rem;
-  padding-right: var(--spacing-1x);
+  height: var(--size-2x);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c12:hover {
-  cursor: pointer;
+.c12:focus {
+  outline: none;
 }
 
-.c12 svg {
-  color: #60666E;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 0.875rem;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  max-height: 100%;
-  min-width: 0;
-  outline: none;
-  overflow: hidden;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.c13:hover {
-  cursor: pointer;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::-moz-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13:-ms-input-placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c13::placeholder {
-  color: #60666E;
-  font-size: 0.875rem;
-}
-
-.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c14 > svg {
   height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
   width: var(--size-1x);
 }
 
@@ -3444,13 +3361,13 @@ label + .c3 {
   outline: none;
 }
 
-.c15 {
+.c14 {
   clear: both;
   padding-top: var(--spacing-1x);
   text-align: center;
 }
 
-.c18 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3472,11 +3389,11 @@ label + .c3 {
   width: var(--size-2x);
 }
 
-.c18:hover {
+.c17:hover {
   background-color: #DBDEE1;
 }
 
-.c18:focus {
+.c17:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -3484,7 +3401,7 @@ label + .c3 {
   z-index: 10;
 }
 
-.c18 > svg {
+.c17 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -3495,6 +3412,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -3577,38 +3495,34 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid2_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid2"
+                          aria-invalid="false"
+                          aria-label="Select a month"
+                          aria-labelledby="uuid2_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="month-select"
+                          id="uuid2"
+                          role="combobox"
+                          tabindex="0"
+                          value="october"
                         >
                           <input
-                            aria-activedescendant="uuid2_october"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid2"
-                            aria-label="Select a month"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="month-select"
-                            id="uuid2"
-                            type="text"
-                            value="Oct"
+                            data-testid="input"
+                            type="hidden"
+                            value="october"
                           />
-                          <button
-                            aria-labelledby="uuid2"
-                            class="c14"
+                          Oct
+                          <svg
+                            aria-hidden="true"
+                            class="c13"
+                            color="currentColor"
                             data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
-                          >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -3619,38 +3533,34 @@ label + .c3 {
                         class="c10 c11"
                       >
                         <div
+                          aria-controls="uuid3_listbox"
                           aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="listbox_uuid3"
+                          aria-invalid="false"
+                          aria-label="Select a year"
+                          aria-labelledby="uuid3_label"
+                          aria-required="false"
                           class="c12"
-                          data-testid="input-wrapper"
+                          data-testid="year-select"
+                          id="uuid3"
+                          role="combobox"
+                          tabindex="0"
+                          value="2010"
                         >
                           <input
-                            aria-activedescendant="uuid3_2010"
-                            aria-autocomplete="list"
-                            aria-controls="listbox_uuid3"
-                            aria-label="Select a year"
-                            aria-multiline="false"
-                            class="c13"
-                            data-testid="year-select"
-                            id="uuid3"
-                            type="text"
+                            data-testid="input"
+                            type="hidden"
                             value="2010"
                           />
-                          <button
-                            aria-labelledby="uuid3"
-                            class="c14"
+                          2010
+                          <svg
+                            aria-hidden="true"
+                            class="c13"
+                            color="currentColor"
                             data-testid="arrow"
-                            tabindex="-1"
-                            type="button"
-                          >
-                            <svg
-                              color="currentColor"
-                              focusable="false"
-                              height="16"
-                              width="16"
-                            />
-                          </button>
+                            focusable="false"
+                            height="16"
+                            width="16"
+                          />
                         </div>
                       </div>
                     </div>
@@ -4203,11 +4113,11 @@ label + .c3 {
               </div>
             </div>
             <div
-              class="c15"
+              class="c14"
             >
               <button
                 aria-label="Choose today's date"
-                class="c16 c17"
+                class="c15 c16"
                 data-testid="today-button"
                 type="button"
               >
@@ -4224,7 +4134,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c18"
+      class="c17"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -4309,84 +4219,43 @@ input + .c1 {
   background-color: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
-  box-shadow: none;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 2.5rem;
-  padding-right: var(--spacing-1x);
+  height: var(--size-2halfx);
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 var(--spacing-1x);
   width: 100%;
 }
 
-.c12:hover {
-  cursor: pointer;
+.c12:focus {
+  outline: none;
 }
 
-.c12 svg {
-  color: #60666E;
+.c12:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
 }
 
 .c13 {
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  caret-color: transparent;
-  font-size: 1rem;
-  -webkit-letter-spacing: 0.025rem;
-  -moz-letter-spacing: 0.025rem;
-  -ms-letter-spacing: 0.025rem;
-  letter-spacing: 0.025rem;
-  max-height: 100%;
-  min-width: 0;
-  outline: none;
-  overflow: hidden;
-  padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.c13:hover {
-  cursor: pointer;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c13::-moz-placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c13:-ms-input-placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c13::placeholder {
-  color: #60666E;
-  font-size: 1rem;
-}
-
-.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer;
+  color: #60666E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c14 > svg {
   height: var(--size-1x);
+  margin-left: auto;
+  padding: var(--spacing-half);
   width: var(--size-1x);
 }
 
@@ -4613,7 +4482,7 @@ label + .c3 {
   outline: none;
 }
 
-.c15 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4635,11 +4504,11 @@ label + .c3 {
   width: var(--size-2halfx);
 }
 
-.c15:hover {
+.c14:hover {
   background-color: #DBDEE1;
 }
 
-.c15:focus {
+.c14:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -4647,7 +4516,7 @@ label + .c3 {
   z-index: 10;
 }
 
-.c15 > svg {
+.c14 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -4658,6 +4527,7 @@ label + .c3 {
   <label
     class="c1 c2"
     for="uuid1"
+    id="uuid1_label"
   >
     date
   </label>
@@ -4736,38 +4606,34 @@ label + .c3 {
                           class="c10 c11"
                         >
                           <div
+                            aria-controls="uuid2_listbox"
                             aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-owns="listbox_uuid2"
+                            aria-invalid="false"
+                            aria-label="Select a month"
+                            aria-labelledby="uuid2_label"
+                            aria-required="false"
                             class="c12"
-                            data-testid="input-wrapper"
+                            data-testid="month-select"
+                            id="uuid2"
+                            role="combobox"
+                            tabindex="0"
+                            value="october"
                           >
                             <input
-                              aria-activedescendant="uuid2_october"
-                              aria-autocomplete="list"
-                              aria-controls="listbox_uuid2"
-                              aria-label="Select a month"
-                              aria-multiline="false"
-                              class="c13"
-                              data-testid="month-select"
-                              id="uuid2"
-                              type="text"
-                              value="Oct"
+                              data-testid="input"
+                              type="hidden"
+                              value="october"
                             />
-                            <button
-                              aria-labelledby="uuid2"
-                              class="c14"
+                            Oct
+                            <svg
+                              aria-hidden="true"
+                              class="c13"
+                              color="currentColor"
                               data-testid="arrow"
-                              tabindex="-1"
-                              type="button"
-                            >
-                              <svg
-                                color="currentColor"
-                                focusable="false"
-                                height="24"
-                                width="24"
-                              />
-                            </button>
+                              focusable="false"
+                              height="24"
+                              width="24"
+                            />
                           </div>
                         </div>
                       </div>
@@ -4778,38 +4644,34 @@ label + .c3 {
                           class="c10 c11"
                         >
                           <div
+                            aria-controls="uuid3_listbox"
                             aria-expanded="false"
-                            aria-haspopup="listbox"
-                            aria-owns="listbox_uuid3"
+                            aria-invalid="false"
+                            aria-label="Select a year"
+                            aria-labelledby="uuid3_label"
+                            aria-required="false"
                             class="c12"
-                            data-testid="input-wrapper"
+                            data-testid="year-select"
+                            id="uuid3"
+                            role="combobox"
+                            tabindex="0"
+                            value="2010"
                           >
                             <input
-                              aria-activedescendant="uuid3_2010"
-                              aria-autocomplete="list"
-                              aria-controls="listbox_uuid3"
-                              aria-label="Select a year"
-                              aria-multiline="false"
-                              class="c13"
-                              data-testid="year-select"
-                              id="uuid3"
-                              type="text"
+                              data-testid="input"
+                              type="hidden"
                               value="2010"
                             />
-                            <button
-                              aria-labelledby="uuid3"
-                              class="c14"
+                            2010
+                            <svg
+                              aria-hidden="true"
+                              class="c13"
+                              color="currentColor"
                               data-testid="arrow"
-                              tabindex="-1"
-                              type="button"
-                            >
-                              <svg
-                                color="currentColor"
-                                focusable="false"
-                                height="24"
-                                width="24"
-                              />
-                            </button>
+                              focusable="false"
+                              height="24"
+                              width="24"
+                            />
                           </div>
                         </div>
                       </div>
@@ -5372,7 +5234,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c15"
+      class="c14"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
