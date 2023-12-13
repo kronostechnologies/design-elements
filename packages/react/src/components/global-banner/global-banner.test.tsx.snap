@@ -355,12 +355,6 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
@@ -642,12 +636,6 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
@@ -927,12 +915,6 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c10:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c4 {
@@ -1470,12 +1452,6 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: block;
   font-weight: var(--font-semi-bold);
@@ -1760,12 +1736,6 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: block;
   font-weight: var(--font-semi-bold);
@@ -2048,12 +2018,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c10:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c4 {
