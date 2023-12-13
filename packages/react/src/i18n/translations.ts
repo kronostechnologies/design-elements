@@ -81,6 +81,8 @@ export const Translations = {
             Warning: 'Warning',
             Success: 'Success',
             Info: 'Information',
+            Discovery: 'Pro-tip',
+            Neutral: 'Information',
             dismissLabel: 'Dismiss banner',
         },
         select: {
@@ -200,6 +202,8 @@ export const Translations = {
             Warning: 'Attention',
             Success: 'Succès',
             Info: 'Information',
+            Discovery: 'Truc de pro',
+            Neutral: 'Information',
             dismissLabel: 'Rejeter la bannière',
         },
         select: {

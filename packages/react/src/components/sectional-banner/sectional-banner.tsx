@@ -18,7 +18,7 @@ import { Icon, IconName } from '../icon/icon';
 import { focus, focusVisibleReset } from '../../utils/css-state';
 
 type MobileDeviceContext = Pick<DeviceContextProps, 'isMobile'>
-export type SectionalBannerType = 'info' | 'success' | 'warning' | 'alert';
+export type SectionalBannerType = 'neutral' | 'info' | 'discovery' | 'success' | 'warning' | 'alert';
 type Role = 'status' | 'alert';
 type Live = 'polite' | 'assertive';
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
@@ -83,7 +83,9 @@ function abstractContainer(
     `;
 }
 
-const InfoContainer = abstractContainer('#f9f7fb', 'info-1.1');
+const NeutralContainer = abstractContainer('#fafafa', 'neutral-1.1');
+const InfoContainer = abstractContainer('#f3f9fd', 'info-1.1');
+const DiscoveryContainer = abstractContainer('#f9f7fb', 'discovery-1.1');
 const SuccessContainer = abstractContainer('#f6fbf8', 'success-1.1');
 const WarningContainer = abstractContainer('#fffbf5', 'warning-3.1', 'warning-3.4');
 const AlertContainer = abstractContainer('#fdf6f7', 'alert-2.1');
@@ -153,18 +155,34 @@ interface BannerTypeProps {
     container: ComponentType<PropsWithChildren<AbstractContainerProps>>;
     iconName: IconName;
     role: Role;
-    title: 'Info' | 'Success' | 'Warning' | 'Alert';
+    title: 'Neutral' | 'Info' | 'Discovery' | 'Success' | 'Warning' | 'Alert';
 }
 
 function handleType(type: SectionalBannerType): BannerTypeProps {
     switch (type) {
+        case 'neutral':
+            return {
+                container: NeutralContainer,
+                iconName: 'info',
+                ariaLive: 'polite',
+                role: 'status',
+                title: 'Neutral',
+            };
         case 'info':
             return {
                 container: InfoContainer,
-                iconName: 'star',
+                iconName: 'info',
                 ariaLive: 'polite',
                 role: 'status',
                 title: 'Info',
+            };
+        case 'discovery':
+            return {
+                container: DiscoveryContainer,
+                iconName: 'lightbulb',
+                ariaLive: 'polite',
+                role: 'status',
+                title: 'Discovery',
             };
         case 'success':
             return {

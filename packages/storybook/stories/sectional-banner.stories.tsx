@@ -18,7 +18,9 @@ export default {
 };
 
 interface DismissState {
+    neutral: boolean;
     info: boolean;
+    discovery: boolean;
     success: boolean;
     warning: boolean;
     alert: boolean;
@@ -26,7 +28,9 @@ interface DismissState {
 
 export const AllMessageTypes: Story = () => {
     const [state, setState] = useState<DismissState>({
+        neutral: true,
         info: true,
+        discovery: true,
         success: true,
         warning: true,
         alert: true,
@@ -38,8 +42,20 @@ export const AllMessageTypes: Story = () => {
 
     return (
         <>
+            {state.neutral && (
+                <SectionalBanner type="neutral" onDismiss={() => handleDismiss('neutral')}>
+                    Here&apos;s a contextual notice with an icon and title.
+                </SectionalBanner>
+            )}
+
             {state.info && (
                 <SectionalBanner type="info" onDismiss={() => handleDismiss('info')}>
+                    Here&apos;s a contextual notice with an icon and title.
+                </SectionalBanner>
+            )}
+
+            {state.discovery && (
+                <SectionalBanner type="discovery" onDismiss={() => handleDismiss('discovery')}>
                     Here&apos;s a contextual notice with an icon and title.
                 </SectionalBanner>
             )}
@@ -75,7 +91,15 @@ export const WithButton: Story = () => {
 
     return (
         <>
+            <SectionalBanner type="neutral" buttonLabel="Click me" onButtonClicked={() => handleClick('neutral')}>
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+
             <SectionalBanner type="info" buttonLabel="Click me" onButtonClicked={() => handleClick('info')}>
+                Here&apos;s a contextual notice with an icon and title.
+            </SectionalBanner>
+
+            <SectionalBanner type="discovery" buttonLabel="Click me" onButtonClicked={() => handleClick('discovery')}>
                 Here&apos;s a contextual notice with an icon and title.
             </SectionalBanner>
 
