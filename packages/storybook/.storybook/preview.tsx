@@ -19,8 +19,11 @@ const preview: Preview = {
             container: DocsContainer,
             page: DocsPage,
             source: {
-            type: 'dynamic',
-            excludeDecorators: true,
+                type: 'dynamic',
+                excludeDecorators: true,
+            },
+            controls: {
+                sort: 'alpha',
             },
         },
         options: {
@@ -29,9 +32,6 @@ const preview: Preview = {
                 order: ['Foundations', 'Components', ['*', 'Deprecated'], '*'],
                 locales: '',
             },
-        },
-        controls: {
-            sort: 'alpha',
         },
     },
 };

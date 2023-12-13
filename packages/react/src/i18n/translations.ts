@@ -47,6 +47,11 @@ export const Translations = {
         'nav-menu-button': {
             ariaLabel: 'Menu',
         },
+        'numeric-input': {
+            requiredValidationErrorMessage: 'This field is required',
+            maxValidationErrorMessage: 'The value must be less than or equal to {{max}}',
+            minValidationErrorMessage: 'The value must be greater than or equal to {{min}}',
+        },
         pagination: {
             pagination: 'Pagination',
             results: '{{pageStartIndex}}–{{pageEndIndex}} of {{numberOfResults}} results',
@@ -160,6 +165,11 @@ export const Translations = {
         },
         'nav-menu-button': {
             ariaLabel: 'Menu',
+        },
+        'numeric-input': {
+            requiredValidationErrorMessage: 'Ce champ est obligatoire',
+            maxValidationErrorMessage: 'La valeur doit être inférieure ou égale à {{max}}',
+            minValidationErrorMessage: 'La valeur doit être supérieure ou égale à {{min}}',
         },
         pagination: {
             pagination: 'Pagination',
