@@ -1,5 +1,119 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Icon Button Has destructive-secondary styles 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: inherit;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-letter-spacing: 0.025rem;
+  -moz-letter-spacing: 0.025rem;
+  -ms-letter-spacing: 0.025rem;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+  min-height: var(--size-2x);
+  min-width: 2rem;
+  outline: none;
+  padding: 0 var(--spacing-2x);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c0 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border-color: #CD2C23;
+  color: #CD2C23;
+  padding: 0;
+  width: var(--size-2x);
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus {
+  outline: none;
+  border-color: #006296;
+  box-shadow: 0 0 0 2px #84C6EA;
+}
+
+.c1:hover,
+.c1[aria-expanded='true'] {
+  background-color: #FFFFFF;
+  border-color: #7B1A15;
+  color: #7B1A15;
+}
+
+.c1:disabled {
+  color: #F99D99;
+}
+
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover {
+  background-color: #FFFFFF;
+  border-color: #F99D99;
+  color: #F99D99;
+}
+
+.c1 > svg {
+  height: var(--size-1x);
+  width: var(--size-1x);
+}
+
+<button
+  aria-label="home"
+  class="c0 c1"
+  type="submit"
+>
+  <svg
+    aria-hidden="true"
+    color="currentColor"
+    focusable="false"
+    height="16"
+    width="16"
+  />
+</button>
+`;
+
 exports[`Icon Button Has disabled styles 1`] = `
 .c0 {
   -webkit-align-items: center;
