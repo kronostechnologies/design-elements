@@ -258,13 +258,19 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     }
 
     function handleListboxOptionClick(option: DropdownListOption): void {
-        if (option !== focusedOption) {
-            setFocusedOption(option);
+        if (optionPredicate(option)) {
+            if (option !== focusedOption) {
+                setFocusedOption(option);
+            }
+
+            if (option !== selectedOption) {
+                selectOption(option);
+            }
+
+            closeListbox();
         }
-        if (option !== selectedOption) {
-            selectOption(option);
-        }
-        closeListbox();
+
+        textboxRef.current?.focus();
     }
 
     const handleFoundOption: (option?: DropdownListOption) => void = useCallback((option) => {
