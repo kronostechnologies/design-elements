@@ -38,6 +38,7 @@ type CustomColumn<T extends object> = ColumnDef<T> & {
     sticky?: boolean;
     sortingFn?: SortingFn<T>;
     headerColSpan?: number;
+    headerAriaLabel?: string;
     footerColSpan?: number;
 };
 

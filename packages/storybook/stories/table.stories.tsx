@@ -807,3 +807,39 @@ export const Sticky: Story = () => {
         </Wrap>
     );
 };
+
+export const HeaderAriaLabel: Story = () => {
+    const columns: TableColumn<Data> = [
+        {
+            header: 'Column with text',
+            headerAriaLabel: 'Column with text',
+            accessorKey: 'column1',
+        },
+        {
+            header: '',
+            headerAriaLabel: 'Column 2 without text',
+            accessorKey: 'column2',
+        },
+        {
+            header: 'Column 3 with text',
+            headerAriaLabel: 'Column 3 with text',
+            accessorKey: 'column3',
+        },
+    ];
+
+    const data: TableRow<Data>[] = [
+        {
+            column1: 'a',
+            column2: 'a',
+            column3: 'a',
+        },
+        {
+            column1: 'b',
+            column2: 'b',
+            column3: 'b',
+        },
+    ];
+    return (
+        <Table columns={columns} data={data} />
+    );
+};

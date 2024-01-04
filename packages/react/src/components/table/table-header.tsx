@@ -28,6 +28,7 @@ interface CustomHeader<TData extends object, TValue> extends Header<TData, TValu
   };
   sortable?: boolean;
   headerColSpan?: number;
+  headerAriaLabel?: string;
   iconAlign?: 'left' | 'right';
 }
 
@@ -77,6 +78,7 @@ function getHeading<TData extends object, TValue>(
     if (!header.column.columnDef.sortable) {
         return (
             <StyledHeader
+                aria-label={header.headerAriaLabel}
                 key={header.id}
                 className={header.column.columnDef.className || ''}
                 scope="col"
@@ -95,6 +97,7 @@ function getHeading<TData extends object, TValue>(
     }
     return (
         <StyledHeader
+            aria-label={header.headerAriaLabel}
             aria-sort={sortState}
             key={header.id}
             className={header.column.columnDef.className || ''}
