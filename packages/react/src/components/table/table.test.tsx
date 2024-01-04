@@ -43,6 +43,19 @@ function renderTable(
     );
 }
 
+const columnsWithHeaderAriaLabel: TableColumn<TestData> = [
+    {
+        header: 'Column 1',
+        headerAriaLabel: 'column 1 aria label',
+        accessorKey: 'column1',
+    },
+    {
+        header: '',
+        headerAriaLabel: 'column 2 aria label',
+        accessorKey: 'column2',
+    },
+];
+
 const columns: TableColumn<TestData> = [
     {
         header: 'Column 1',
@@ -278,6 +291,17 @@ describe('Table', () => {
 
     test('has sticky column styles', () => {
         const tree = renderWithProviders(<Table<TestData3Columns> columns={columnsSticky} data={stickyColumnsData} />);
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('has aria-label on header columns', () => {
+        const tree = renderWithProviders(
+            <Table<TestData>
+                columns={columnsWithHeaderAriaLabel}
+                data={data}
+            />,
+        );
 
         expect(tree).toMatchSnapshot();
     });

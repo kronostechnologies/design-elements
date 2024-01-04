@@ -16,6 +16,7 @@ type CustomColumnDef<TData extends object, TValue> = OriginalColumnDef<TData, TV
     textAlign?: TextAlignOptions; // Define this type if not already defined
     sticky?: boolean;
     stickyHeader?: boolean;
+    headerAriaLabel?: string;
     position?: number;
     sortable?: boolean;
     iconAlign?: 'left' | 'right';
@@ -78,7 +79,7 @@ function getHeading<TData extends object, TValue>(
     if (!header.column.columnDef.sortable) {
         return (
             <StyledHeader
-                aria-label={header.headerAriaLabel}
+                aria-label={header.column.columnDef.headerAriaLabel}
                 key={header.id}
                 className={header.column.columnDef.className || ''}
                 scope="col"
@@ -97,7 +98,7 @@ function getHeading<TData extends object, TValue>(
     }
     return (
         <StyledHeader
-            aria-label={header.headerAriaLabel}
+            aria-label={header.column.columnDef.headerAriaLabel}
             aria-sort={sortState}
             key={header.id}
             className={header.column.columnDef.className || ''}

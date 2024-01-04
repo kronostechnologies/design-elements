@@ -1,5 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Table has aria-label on header columns 1`] = `
+.c2 {
+  border-top: 1px solid #DBDEE1;
+  background-color: #FFFFFF;
+}
+
+.c2 td {
+  background-color: inherit;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.c0 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.c0 th {
+  font-weight: var(--font-semi-bold);
+  padding: var(--spacing-1x) var(--spacing-2x);
+}
+
+.c0 td {
+  padding: var(--spacing-2x);
+}
+
+.c0 th,
+.c0 td {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+.c0 th:last-child,
+.c0 td:last-child {
+  border-right: 0;
+}
+
+.c0 .eq-table__util-column {
+  box-sizing: border-box;
+  color: #60666E;
+  font-size: 0.75rem;
+  margin-left: 50%;
+  min-width: var(--size-2halfx);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: var(--size-2halfx);
+}
+
+<table
+  class="c0"
+>
+  <thead>
+    <tr
+      class=""
+    >
+      <th
+        aria-label="column 1 aria label"
+        class="c1"
+        scope="col"
+        style="text-align:left"
+      >
+        Column 1
+      </th>
+      <th
+        aria-label="column 2 aria label"
+        class="c1"
+        scope="col"
+        style="text-align:left"
+      />
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="c2"
+      data-testid="table-row-0"
+    >
+      <td
+        class=""
+        style="text-align:left"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        style="text-align:left"
+      >
+        World
+      </td>
+    </tr>
+    <tr
+      class="c2"
+      data-testid="table-row-1"
+    >
+      <td
+        class=""
+        style="text-align:left"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        style="text-align:left"
+      >
+        Planet
+      </td>
+    </tr>
+    <tr
+      class="c2"
+      data-testid="table-row-2"
+    >
+      <td
+        class=""
+        style="text-align:left"
+      >
+        Hello
+      </td>
+      <td
+        class=""
+        style="text-align:left"
+      >
+        Galaxy
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Table has clickable rows styles 1`] = `
 .c2 {
   border-top: 1px solid #DBDEE1;
