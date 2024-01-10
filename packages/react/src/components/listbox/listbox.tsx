@@ -155,6 +155,8 @@ const ListItem = styled.li<ListItemProps>`
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
+    
+    user-select: none;
 
     &:hover {
         background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
@@ -450,6 +452,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
             onBlur={focusable ? handleListboxBlur : undefined}
             onFocus={focusable ? handleListboxFocus : undefined}
             onKeyDown={focusable ? handleListboxKeyDown : undefined}
+            onMouseDown={!focusable ? (event) => event.preventDefault() : undefined}
             ref={mergeRefs(ref, containerRef)}
             role="listbox"
             tabIndex={focusable ? 0 : -1}
