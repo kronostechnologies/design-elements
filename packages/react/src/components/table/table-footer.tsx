@@ -1,5 +1,5 @@
 import { CSSProperties, ReactElement } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     Header,
     HeaderGroup,
@@ -24,7 +24,28 @@ interface CustomFooter<TData extends object, TValue> extends Header<TData, TValu
 
 const StyledFooter = styled.td<{ sticky: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
-    position: ${({ sticky }) => (sticky ? 'sticky' : undefined)};    
+    font-weight: var(--font-semi-bold);
+    position: relative;
+    ${({ sticky }) => sticky && css`
+        position: sticky;
+    `}
+    &:before {
+        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        content: '';
+        height: 1px;
+        position: absolute;
+        right: 0;
+        top: 1px;
+        width: 100%;
+    }
+`;
+
+const StyleFooterRow = styled.tr<{ stickyFooter: boolean }>`
+    ${({ stickyFooter }) => stickyFooter && css`
+        bottom: 0;
+        position: sticky;
+        z-index: 6;
+    `}
 `;
 
 function getFooter<TData extends object, TValue>(
@@ -53,11 +74,12 @@ export interface FooterProps<T extends object> {
     footerGroup: HeaderGroup<T>;
     stickyFooter: boolean;
 }
+
 export const TableFooter = <T extends object>({
     footerGroup,
     stickyFooter,
 }: FooterProps<T>): ReactElement => (
-    <tr key={footerGroup.id}>
+    <StyleFooterRow key={footerGroup.id} stickyFooter={stickyFooter}>
         {footerGroup.headers.map((footer) => getFooter(footer, stickyFooter))}
-    </tr>
+    </StyleFooterRow>
 );

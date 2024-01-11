@@ -49,7 +49,8 @@ function getRowBackgroundColor({
 }
 
 function getCellBackgroundCss({
-    theme, clickable,
+    theme,
+    clickable,
 }: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
     if (!clickable) {
         return css`

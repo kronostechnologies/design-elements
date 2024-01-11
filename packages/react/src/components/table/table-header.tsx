@@ -13,7 +13,6 @@ type CustomColumnDef<TData extends object, TValue> = ColumnDef<TData, TValue> & 
     className?: string;
     textAlign?: CSSProperties['textAlign'];
     sticky?: boolean;
-    stickyHeader?: boolean;
     sortable?: boolean;
     iconAlign?: 'left' | 'right';
     defaultSort?: 'asc' | 'desc';
@@ -43,11 +42,20 @@ const SortButton = styled.button<{ textAlign: string }>`
 const StyledHeader = styled.th<{ sticky: boolean, startOffset: number }>`
     background-color: ${({ theme }) => theme.greys.white};
     box-sizing: border-box;
+    position: relative;
     ${({ sticky, startOffset }) => sticky && css`
         left: ${startOffset / 2}px;
         position: sticky;
         z-index: 5;
     `}
+    &:before {
+        border-bottom: 1px solid ${({ theme }) => theme.greys.grey};
+        bottom: 0;
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
 `;
 
 const StyleHeaderRow = styled.tr<{ stickyHeader: boolean }>`
