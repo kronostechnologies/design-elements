@@ -12,6 +12,12 @@ module.exports = {
                 '@typescript-eslint/explicit-module-boundary-types': 'off',
             },
         },
+        {
+            files: ['*.tsx'],
+            rules: {
+                indent: 'off', // buggy and conflicting with react/jsx-indent
+            },
+        },
     ],
     rules: {
         'linebreak-style': 'off',
