@@ -31,7 +31,7 @@ const SortButton = styled.button<{ textAlign: string }>`
     align-items: center;
     cursor: pointer;
     display: flex;
-    margin-left: var(--spacing-1x);
+    font: inherit;
     text-align:: ${({ textAlign }) => textAlign};
 
     &:focus {
@@ -64,6 +64,10 @@ const StyleHeaderRow = styled.tr<{ stickyHeader: boolean }>`
         top: 0;
         z-index: 6;
     `}
+`;
+
+const StyledSortButtonIcon = styled(SortButtonIcon)`
+    margin-left: var(--spacing-1x);
 `;
 
 function getHeading<TData extends object, TValue>(
@@ -117,7 +121,7 @@ function getHeading<TData extends object, TValue>(
                         header.getContext(),
                     )}
                     {header.column.columnDef.sortable && (
-                        <SortButtonIcon sort={sortState} data-testid="sort-icon" />
+                        <StyledSortButtonIcon sort={sortState} data-testid="sort-icon" />
                     )}
                 </SortButton>
             )}

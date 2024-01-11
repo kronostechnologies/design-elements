@@ -5,18 +5,19 @@ import { Icon } from '../icon/icon';
 export type SortState = 'ascending' | 'descending' | 'none';
 
 export interface SortButtonIconProps {
+    className?: string;
     sort: SortState;
 }
 
-export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconProps>> = ({ sort }) => {
+export const SortButtonIcon: FunctionComponent<PropsWithChildren<SortButtonIconProps>> = ({ sort, className }) => {
     const theme = useTheme();
 
     switch (sort) {
         case 'ascending':
-            return <Icon name="arrowDown" size="16" color={theme.greys['dark-grey']} />;
+            return <Icon name="arrowDown" size="16" color={theme.greys['dark-grey']} className={className} />;
         case 'descending':
-            return <Icon name="arrowUp" size="16" color={theme.greys['dark-grey']} />;
+            return <Icon name="arrowUp" size="16" color={theme.greys['dark-grey']} className={className} />;
         default:
-            return <Icon name="reorder" size="16" color={theme.greys['dark-grey']} />;
+            return <Icon name="reorder" size="16" color={theme.greys['dark-grey']} className={className} />;
     }
 };
