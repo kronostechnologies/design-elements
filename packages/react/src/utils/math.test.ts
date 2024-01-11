@@ -1,4 +1,4 @@
-import { clamp, isNumber, toInt } from './math';
+import { clamp, isNumber, isWithinPrecision, toInt, truncateAtPrecision } from './math';
 
 describe('math', () => {
     describe('isNumber', () => {
@@ -51,5 +51,53 @@ describe('math', () => {
 
             expect(result).toEqual(expected);
         });
+    });
+
+    describe('truncateAtPrecision', () => {
+        const tests = [
+            { value: '', precision: 0, expected: '' },
+            { value: '', precision: 2, expected: '' },
+            { value: '123.50', precision: 0, expected: '123' },
+            { value: '123', precision: 2, expected: '123' },
+            { value: '123.4567', precision: 2, expected: '123.45' },
+        ];
+
+        test.each(tests)(
+            'should return $expected when (value: $value, precision: $precision)',
+            ({ precision, value, expected }) => {
+                const result = truncateAtPrecision(value, precision);
+                expect(result).toEqual(expected);
+            },
+        );
+    });
+
+    describe('isWithinPrecision', () => {
+        const validTests = [
+            { precision: 0, value: '' },
+            { precision: 2, value: '' },
+            { precision: 2, value: '123.50' },
+            { precision: 2, value: '123' },
+        ];
+
+        test.each(validTests)(
+            'should return true when (value: $value, precision: $precision)',
+            ({ precision, value }) => {
+                const result = isWithinPrecision(value, precision);
+                expect(result).toBe(true);
+            },
+        );
+
+        const invalidTests = [
+            { precision: 0, value: '123.50' },
+            { precision: 2, value: '123.4567' },
+        ];
+
+        test.each(invalidTests)(
+            'should return false when (value: $value, precision: $precision)',
+            ({ precision, value }) => {
+                const result = isWithinPrecision(value, precision);
+                expect(result).toBe(false);
+            },
+        );
     });
 });

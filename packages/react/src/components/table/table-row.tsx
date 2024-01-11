@@ -71,7 +71,10 @@ function getCellBackgroundCss({
 }
 
 const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
-    border-top: 1px solid ${({ theme }) => theme.greys.grey};
+    &:not(:first-child) {
+        border-top: 1px solid ${({ theme }) => theme.greys.grey};
+    }
+
     ${({ error, striped, theme }) => striped && !error && css`
         :nth-child(odd) {
             background-color: ${theme.greys['colored-white']};

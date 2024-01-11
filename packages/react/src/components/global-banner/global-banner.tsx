@@ -51,7 +51,7 @@ function getContainerColor({ bannerType, theme }: StyledProps<ContainerProps>): 
     }
 }
 
-const Label = styled.b<{ isMobile: boolean }>`
+const Label = styled.strong<{ isMobile: boolean }>`
     display: ${({ isMobile }) => (isMobile ? 'block' : 'inline')};
     font-weight: var(--font-semi-bold);
 

@@ -10,11 +10,7 @@ export default {
 
 export const Normal: Story = () => (
     <NumericInput
-        label="Percentage"
-        adornment="%"
-        min={0}
-        max={100}
-        step={5}
+        label="Number"
         defaultValue="50"
     />
 );
@@ -31,45 +27,76 @@ export const Adornment: Story = () => (
             label="End"
             adornment="%"
             adornmentPosition="end"
+            textAlign="right"
             defaultValue="50"
         />
         <NumericInput
-            label="Period"
-            textAlign="right"
+            label="Text"
             adornmentPosition="end"
             adornment="years"
+            textAlign="right"
             defaultValue="5"
         />
     </>
 );
 
 export const WithoutLabel: Story = () => (
+    <NumericInput defaultValue="50" />
+);
+
+export const MinimumAndMaximum: Story = () => (
+    <>
+        <NumericInput
+            label="Percentage"
+            hint="Minimum 0 - Maximum 100"
+            adornment="%"
+            min={0}
+            max={100}
+        />
+        <NumericInput
+            label="Quantity"
+            hint="Minimum 5"
+            adornment="Qty"
+            min={5}
+        />
+    </>
+);
+
+export const Required: Story = () => (
     <NumericInput
-        adornment="%"
-        adornmentPosition="start"
-        defaultValue="50"
+        label="Label"
+        required
     />
 );
 
-export const MinMaxStep: Story = () => (
-    <NumericInput
-        label="Percentage"
-        adornment="%"
-        min={0}
-        max={100}
-        step={5}
-        defaultValue="50"
-    />
+export const Precision: Story = () => (
+    <>
+        <NumericInput
+            label="Label (precision = 0)"
+            precision={0}
+        />
+        <NumericInput
+            label="Label (precision = 2)"
+            precision={2}
+        />
+    </>
 );
 
 export const ControlledValue: Story = () => {
-    const [inputValue, setInputValue] = useState<number | null>(50);
+    const [inputValue, setInputValue] = useState('50');
     return (
         <NumericInput
-            label="Percentage"
-            adornment="%"
-            onChange={setInputValue}
-            value={inputValue ?? ''}
+            label="Label"
+            onChange={(_event, { value, valueAsNumber }) => {
+                setInputValue(value);
+                console.info(`NumericInput onChange value: ${value}`);
+                console.info(`NumericInput onChange valueAsNumber: ${valueAsNumber}`);
+            }}
+            onBlur={(_event, { value, valueAsNumber }) => {
+                console.info(`NumericInput onBlur value: ${value}`);
+                console.info(`NumericInput onBlur valueAsNumber: ${valueAsNumber}`);
+            }}
+            value={inputValue}
         />
     );
 };
@@ -77,19 +104,23 @@ ControlledValue.parameters = rawCodeParameters;
 
 export const Disabled: Story = () => (
     <NumericInput
-        label="Percentage"
-        adornment="%"
+        label="Label"
         disabled
         defaultValue={100}
     />
 );
 
-export const Invalid: Story = () => (
-    <NumericInput
-        label="Percentage"
-        adornment="%"
-        valid={false}
-        validationErrorMessage="This is an error message"
-        defaultValue={100}
-    />
+export const ExplicitInvalid: Story = () => (
+    <>
+        <NumericInput
+            label="Label"
+            invalid
+            validationErrorMessage="This is a custom error message"
+            defaultValue={100}
+        />
+        <NumericInput
+            invalid
+            defaultValue={100}
+        />
+    </>
 );

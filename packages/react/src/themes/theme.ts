@@ -22,6 +22,8 @@ export interface Theme {
     };
     notifications: {
         'info-1.1': string;
+        'neutral-1.1': string;
+        'discovery-1.1': string;
         'success-1.1': string;
         'success-1.2': string;
         'success-1.3': string;

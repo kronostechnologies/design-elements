@@ -1,9 +1,7 @@
 import {
-    ChangeEvent,
+    FocusEvent,
     KeyboardEvent,
     useCallback,
-    useEffect,
-    useMemo,
     useRef,
     useState,
     VoidFunctionComponent,
@@ -12,130 +10,81 @@ import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
 import { Theme } from '../../themes';
-import { eventIsInside } from '../../utils/events';
+import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
-import { v4 as uuid } from '../../utils/uuid';
-import { ChooserButton } from '../chooser-button/chooser-button';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
-import { FieldContainer, FieldContainerProps } from '../field-container/field-container';
+import { FieldContainer } from '../field-container/field-container';
 import { Icon } from '../icon/icon';
 import { Listbox, ListboxOption } from '../listbox/listbox';
 import { TooltipProps } from '../tooltip/tooltip';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
+import { useId } from '../../hooks/use-id';
+import { useListCursor } from '../../hooks/use-list-cursor';
+import { useClickOutside } from '../../hooks/use-click-outside';
+import { useListSearch } from '../../hooks/use-list-search';
 
-interface InputProps {
-    searchable?: boolean;
-    isMobile: boolean;
-    disabled?: boolean;
+interface TextboxProps {
+    $disabled?: boolean;
+    $isMobile: boolean;
     theme: Theme;
+    $valid: boolean;
+    value: string;
 }
 
-interface InputWrapperProps extends InputProps {
-    isMobile: boolean;
-    focus?: boolean;
-    containerOutline: boolean;
-    valid: boolean;
-}
-
-export interface Option extends ListboxOption {
+export interface DropdownListOption extends ListboxOption {
     label: string;
 }
 
-function getBorderColor({
-    disabled, focus, theme, valid,
-}: InputWrapperProps): string {
-    if (disabled) {
-        return theme.greys.grey;
+function getBorderColor({ $disabled, theme, $valid }: TextboxProps): string {
+    if ($disabled) {
+        return theme.greys['mid-grey'];
     }
-    if (!valid) {
+    if (!$valid) {
         return theme.notifications['alert-2.1'];
-    }
-    if (focus) {
-        return theme.main['primary-1.1'];
     }
 
     return theme.greys['dark-grey'];
 }
 
-const StyledFieldContainer = styled(FieldContainer)<FieldContainerProps>`
+const StyledFieldContainer = styled(FieldContainer)`
     position: relative;
 `;
 
-const InputWrapper = styled.div<InputWrapperProps>`
+const StyledListbox = styled(Listbox)`
+    position: absolute;
+    width: 100%;
+`;
+
+const Textbox = styled.div<TextboxProps>`
     align-items: center;
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    background-color: ${({ $disabled, theme }) => ($disabled ? theme.greys['light-grey'] : theme.greys.white)};
     border: 1px solid ${getBorderColor};
     border-radius: var(--border-radius);
-    box-shadow: ${({ containerOutline, theme }) => (containerOutline ? theme.tokens['focus-box-shadow'] : 'none')};
     box-sizing: border-box;
+    ${({ $disabled, theme }) => $disabled && `color: ${theme.greys['mid-grey']}`};
     display: flex;
-    height: ${({ isMobile }) => (isMobile ? '2.5rem' : '2rem')};
-    padding-right: var(--spacing-1x);
+    height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
+    justify-content: space-between;
+    padding: 0 var(--spacing-1x);
+    user-select: none;
     width: 100%;
-
-    &:hover {
-        cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-    }
-
-    svg {
-        color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
-    }
+    
+    ${({ theme }) => focus({ theme }, true)};
 `;
 
-function getInputCursor({ disabled, searchable }: InputProps): string {
-    if (disabled) {
-        return 'default';
-    }
-    if (searchable) {
-        return 'text';
-    }
-    return 'pointer';
-}
-
-function filterOptions(optionsArray: Option[], filterValue: string): Option[] {
-    return optionsArray.filter((option) => option.label.toLowerCase().startsWith(filterValue.toLowerCase()));
-}
-
-const StyledInput = styled.input<InputProps>`
-    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
-    border: none;
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    caret-color: ${({ searchable }) => (searchable ? 'unset' : 'transparent')};
-    font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    letter-spacing: 0.025rem;
-    max-height: 100%;
-    min-width: 0;
-    outline: none;
-    overflow: hidden;
-    padding: var(--spacing-1x) 0 var(--spacing-1x) var(--spacing-1x);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-
-    &:hover {
-        cursor: ${getInputCursor};
-    }
-
-    &::placeholder {
-        color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
-        font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
-    }
-`;
-
-const Arrow = styled.button<{ disabled?: boolean }>`
+const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     align-items: center;
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+    color: ${({ $disabled, theme }) => ($disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
     display: flex;
-
-    > svg {
-        height: var(--size-1x);
-        width: var(--size-1x);
-    }
+    height: var(--size-1x);
+    margin-left: auto;
+    padding: var(--spacing-half);
+    width: var(--size-1x);
 `;
 
 interface DropdownListProps {
     /**
-     * Sets input's aria-label
+     * Aria label for the input (used when no visual label is present)
      */
     ariaLabel?: string;
     className?: string;
@@ -157,24 +106,10 @@ interface DropdownListProps {
     label?: string;
     name?: string;
     /**
-     * Number of visible items in the listbox before overflow
-     * @default 4
-     */
-    numberOfItemsVisible?: number;
-    /**
      * { disabled?: boolean, value: string; label: string; }[]
      */
-    options: Option[];
-    placeholder?: string;
+    options: DropdownListOption[];
     required?: boolean;
-    /**
-     * Adds search functionality with autocomplete
-     */
-    searchable?: boolean;
-    /**
-     * Adds a skip button
-     */
-    skipOption?: { label: string; value?: string };
     tooltip?: TooltipProps;
     /**
      * Sets input validity
@@ -194,8 +129,11 @@ interface DropdownListProps {
     /**
      * OnChange callback function, invoked when an option is selected
      */
-    onChange?(option: Option): void;
+    onChange?(option: DropdownListOption): void;
 }
+
+const optionPredicate: (option: DropdownListOption) => boolean = (option) => !option.disabled;
+const searchPropertyAccessor: (option: DropdownListOption) => string = (option) => option.label;
 
 export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     ariaLabel,
@@ -204,16 +142,12 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     defaultValue,
     disabled,
     noMargin,
-    id,
+    id: providedId,
     label,
     onChange,
     options,
     name,
-    numberOfItemsVisible = 4,
-    placeholder,
     required,
-    searchable,
-    skipOption,
     tooltip,
     valid = true,
     validationErrorMessage,
@@ -221,414 +155,269 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     hint,
     ...otherProps
 }) => {
-    const { t } = useTranslation('select');
+    const { t } = useTranslation('dropdown-list');
     const { device, isMobile } = useDeviceContext();
-    const fieldId = useMemo(() => id || uuid(), [id]);
+    const id = useId(providedId);
     const dataAttributes = useDataAttributes(otherProps);
 
-    const [autoFocus, setAutofocus] = useState(false);
-    const [containerOutline, setContainerOutline] = useState(false);
-    const [focus, setFocus] = useState(false);
-    const [open, setOpen] = useState(defaultOpen);
-    const [searchValue, setSearchValue] = useState('');
-    const [focusedValue, setFocusedValue] = useState<string>();
-    const [selectedOptionValue, setSelectedOptionValue] = useState(defaultValue || value);
-    const skipSelected = useMemo(
-        () => skipOption && skipOption.value === selectedOptionValue,
-        [selectedOptionValue, skipOption],
-    );
-    const inputRef = useRef<HTMLInputElement>(null);
-    const wrapperRef = useRef<HTMLDivElement>(null);
+    const textboxRef = useRef<HTMLDivElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
-    const [shouldFilterOptions, setShouldFilterOptions] = useState<boolean | undefined>(searchable);
-    const filteredOptions = useMemo(
-        () => {
-            if (!shouldFilterOptions) {
-                return options;
-            }
-            return filterOptions(options, searchValue);
-        },
-        [options, searchValue, shouldFilterOptions],
+
+    const [open, setOpen] = useState(defaultOpen);
+
+    function findOptionByValue(searchValue?: string): DropdownListOption | undefined {
+        return options.find((option) => option.value === searchValue);
+    }
+
+    function getDefaultOption(): DropdownListOption | undefined {
+        let defaultOption: DropdownListOption | undefined;
+
+        if (value !== undefined || defaultValue !== undefined) {
+            defaultOption = findOptionByValue(value ?? defaultValue);
+        }
+
+        if (defaultOption === undefined) {
+            defaultOption = options.find(optionPredicate);
+        }
+
+        return defaultOption;
+    }
+
+    const [selectedOption, setSelectedOption] = useState<DropdownListOption | undefined>(
+        () => getDefaultOption(),
     );
 
-    const findOptionByValue: (needle?: string) => Option | undefined = useCallback(
-        (needle) => options.find((option) => option.value === needle),
-        [options],
-    );
-    const [inputValue, setInputValue] = useState(() => findOptionByValue(selectedOptionValue)?.label ?? '');
+    const {
+        selectedElement: focusedOption,
+        setSelectedElement: setFocusedOption,
+        selectPrevious: focusPreviousOption,
+        selectNext: focusNextOption,
+        selectFirst: focusFirstOption,
+        selectLast: focusLastOption,
+    } = useListCursor({
+        elements: options,
+        initialElement: selectedOption,
+        predicate: optionPredicate,
+    });
 
-    useEffect(() => {
-        const wantedOption = findOptionByValue(value);
-        if (wantedOption) {
-            setSelectedOptionValue(wantedOption.value);
-            setInputValue(wantedOption.label);
-        } else if (skipOption && skipOption.value === value) {
-            setSelectedOptionValue(skipOption.value);
-            setInputValue('');
-        }
-    }, [findOptionByValue, options, skipOption, skipSelected, value]);
+    const [previousValue, setPreviousValue] = useState<string | undefined>(value);
 
-    const handleOpen: () => void = useCallback(() => {
-        if (!disabled) {
-            if (!open) {
-                setFocus(true);
-                if (searchable && inputRef.current) {
-                    inputRef.current.focus();
-                    setFocusedValue('');
-                } else {
-                    setFocusedValue(selectedOptionValue);
-                }
-            } else {
-                inputRef.current?.focus();
-                setAutofocus(false);
-                setFocusedValue('');
-            }
-            setOpen(!open);
-        }
-    }, [disabled, open, searchable, selectedOptionValue]);
-
-    const handleClickOutside: (event: MouseEvent) => void = useCallback((event) => {
-        const clickIsOutside = !eventIsInside(event, wrapperRef.current, listboxRef.current);
-        const shouldClose = (wrapperRef.current === null || clickIsOutside) && open;
-
-        if (shouldClose) {
-            handleOpen();
-            inputRef.current?.blur();
-        }
-    }, [open, handleOpen]);
-
-    useEffect(() => {
-        document.addEventListener('mouseup', handleClickOutside);
-        return () => document.removeEventListener('mouseup', handleClickOutside);
-    }, [handleClickOutside, open]);
-
-    function findOption(optionsArray: Option[], findValue: string): Option | undefined {
-        return optionsArray.find((option) => option.label.toLowerCase() === findValue.toLowerCase());
+    if (value !== previousValue) {
+        const newOption = findOptionByValue(value);
+        setSelectedOption(newOption);
+        setFocusedOption(newOption);
+        setPreviousValue(value);
     }
 
-    function focusFirstElementFromArray(array: Option[]): void {
-        const firstArrayElement = array.find((element) => !element.disabled);
-
-        if (firstArrayElement) {
-            setFocusedValue(firstArrayElement.value);
+    function openListbox(): void {
+        if (disabled) {
+            return;
         }
-    }
 
-    function focusLastElementFromArray(array: Option[]): void {
-        const lastArrayElement = [...array].reverse().find((element) => !element.disabled);
-
-        if (lastArrayElement) {
-            setFocusedValue(lastArrayElement.value);
+        if (!focusedOption && selectedOption) {
+            setFocusedOption(selectedOption);
         }
+
+        setOpen(true);
     }
 
-    function resetField(): void {
-        setFocusedValue('');
-        setInputValue('');
-        setSelectedOptionValue('');
-        setSearchValue('');
-    }
-
-    const matchInputValueToOption: () => void = useCallback(() => {
-        const matchingOption = findOption(options, inputValue);
-
-        if (matchingOption) {
-            setSelectedOptionValue(matchingOption.value);
-            setInputValue(matchingOption.label);
-        }
-    }, [inputValue, options]);
-
-    function handleSkipChange(): void {
-        if (!skipSelected && skipOption) {
-            setSelectedOptionValue(skipOption.value);
-            setInputValue('');
-            onChange?.({ label: skipOption.label, value: skipOption.value ?? skipOption.label });
-        }
-    }
-
-    function handleArrowClick(): void {
-        handleOpen();
-        matchInputValueToOption();
-    }
-
-    function handleBlur(): void {
-        matchInputValueToOption();
-        if (!open) {
-            setFocus(false);
-        }
-        setContainerOutline(false);
-    }
-
-    const handleChange: (option: Option) => void = useCallback((option) => {
+    const closeListbox: () => void = useCallback(() => {
         setOpen(false);
-        setFocus(false);
-        setFocusedValue('');
-        setInputValue(option.label);
-        setSelectedOptionValue(option.value);
-        setShouldFilterOptions(false);
-        onChange?.(option);
-        if (searchable) {
-            setAutofocus(false);
-            setSearchValue(option.label);
-        }
-        inputRef.current?.focus();
-    }, [onChange, searchable]);
-
-    function handleFocus(): void {
-        setFocus(true);
-        setContainerOutline(true);
-    }
-
-    const handleFocusedValueChange: (option?: Option) => void = useCallback((option) => {
-        if (option) {
-            setInputValue(option.label);
-        }
     }, []);
 
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
-        if (searchable) {
-            const newValue = event.currentTarget.value;
-            const newFilteredOptions = filterOptions(options, newValue);
-            if (inputValue !== newValue) {
-                setShouldFilterOptions(true);
-            }
+    const selectOption: (option: DropdownListOption) => void = useCallback((option) => {
+        setSelectedOption(option);
+        onChange?.(option);
+    }, [onChange, setSelectedOption]);
 
-            if (newValue === '') {
-                setFocusedValue('');
-                setSearchValue('');
-                setInputValue(newValue);
-                setOpen(false);
-                setSelectedOptionValue('');
-            } else {
-                setInputValue(newValue);
-                setSearchValue(newValue);
-                setOpen(newFilteredOptions.length >= 1);
+    const handleClickOutside: () => void = useCallback(() => {
+        if (open) {
+            if (focusedOption && focusedOption !== selectedOption) {
+                selectOption(focusedOption);
             }
+            closeListbox();
+        }
+    }, [closeListbox, focusedOption, open, selectOption, selectedOption]);
+
+    useClickOutside([textboxRef, listboxRef], handleClickOutside);
+
+    function handleTextboxBlur(event: FocusEvent): void {
+        if (open && event.relatedTarget !== listboxRef.current) {
+            if (focusedOption && focusedOption !== selectedOption) {
+                selectOption(focusedOption);
+            }
+            closeListbox();
         }
     }
 
-    useEffect(() => {
-        if (open && (!focusedValue || !filteredOptions.find((option) => option.value === focusedValue))) {
-            if (filteredOptions.length > 0) {
-                focusFirstElementFromArray(filteredOptions);
-            } else {
-                setSelectedOptionValue('');
-                setFocusedValue('');
-            }
-        }
-    }, [focusedValue, filteredOptions, open]);
-
-    const handleInputClick: () => void = useCallback(() => {
-        if (searchable) {
-            setFocusedValue('');
+    function handleTextboxClick(): void {
+        if (open) {
+            closeListbox();
         } else {
-            handleOpen();
-            matchInputValueToOption();
+            openListbox();
         }
-        setAutofocus(false);
-    }, [handleOpen, matchInputValueToOption, searchable]);
+    }
 
-    const handleInputKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
+    function handleListboxOptionClick(option: DropdownListOption): void {
+        if (optionPredicate(option)) {
+            if (option !== focusedOption) {
+                setFocusedOption(option);
+            }
+
+            if (option !== selectedOption) {
+                selectOption(option);
+            }
+
+            closeListbox();
+        }
+    }
+
+    const handleFoundOption: (option?: DropdownListOption) => void = useCallback((option) => {
+        if (option) {
+            setFocusedOption(option);
+        }
+    }, [setFocusedOption]);
+
+    const {
+        handleSearchInput,
+    } = useListSearch({
+        elements: options,
+        focusedElement: focusedOption,
+        onFoundElementChange: handleFoundOption,
+        searchPropertyAccessor,
+        predicate: optionPredicate,
+    });
+
+    function handleTextboxKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         switch (event.key) {
             case 'ArrowDown':
+                event.preventDefault();
                 if (!open) {
-                    handleOpen();
-                    if (searchable || !selectedOptionValue) {
-                        focusFirstElementFromArray(filteredOptions);
-                    } else {
-                        setFocusedValue(selectedOptionValue);
-                    }
-                } else if (searchable) {
-                    if (searchValue !== '') {
-                        const optionToSelect = filteredOptions.length > 1 ? filteredOptions[1] : filteredOptions[0];
-                        setTimeout(() => setFocusedValue(optionToSelect.value), 10);
-                    } else {
-                        setTimeout(() => focusFirstElementFromArray(filteredOptions), 10);
-                    }
+                    openListbox();
+                } else {
+                    focusNextOption();
                 }
-                setAutofocus(true);
                 break;
             case 'ArrowUp':
+                event.preventDefault();
                 if (!open) {
-                    handleOpen();
-                    if (searchable || !selectedOptionValue) {
-                        focusLastElementFromArray(filteredOptions);
-                    } else {
-                        setTimeout(() => setFocusedValue(selectedOptionValue), 10);
-                    }
-                } else if (searchable) {
-                    setTimeout(() => focusLastElementFromArray(filteredOptions), 10);
-                } else if (autoFocus) {
-                    setAutofocus(false);
+                    openListbox();
+                } else {
+                    focusPreviousOption();
                 }
-                setAutofocus(true);
+                break;
+            case 'Home':
+                event.preventDefault();
+                if (!open) {
+                    openListbox();
+                }
+                focusFirstOption();
+                break;
+            case 'End':
+                event.preventDefault();
+                if (!open) {
+                    openListbox();
+                }
+                focusLastOption();
                 break;
             case 'Enter':
                 event.preventDefault();
-                if (searchValue !== '' && filteredOptions.length > 0 && open) {
-                    const optionToSelect = findOptionByValue(focusedValue);
-                    if (optionToSelect) {
-                        handleChange(optionToSelect);
+                if (!open) {
+                    openListbox();
+                } else {
+                    if (focusedOption && focusedOption !== selectedOption) {
+                        selectOption(focusedOption);
                     }
-                } else if (!open && !searchable) {
-                    handleOpen();
-                    setTimeout(() => setFocusedValue(selectedOptionValue), 10);
+                    closeListbox();
                 }
                 break;
             case ' ':
+                event.preventDefault();
                 if (!open) {
-                    event.preventDefault();
-                    handleOpen();
-                    if (!searchable) {
-                        setTimeout(() => setFocusedValue(selectedOptionValue), 10);
-                    }
+                    openListbox();
                 }
                 break;
             case 'Escape':
-                if (searchable) {
-                    resetField();
-                }
                 if (open) {
-                    handleOpen();
-                    matchInputValueToOption();
+                    setFocusedOption(undefined);
+                    closeListbox();
                 }
                 break;
             default:
-                break;
+                if (isLetterOrNumber(event.key)) {
+                    event.preventDefault();
+                    if (!open) {
+                        openListbox();
+                    }
+                    handleSearchInput(event.key);
+                }
         }
-    }, [
-        autoFocus,
-        filteredOptions,
-        handleChange,
-        handleOpen,
-        matchInputValueToOption,
-        open,
-        searchValue,
-        searchable,
-        selectedOptionValue,
-        findOptionByValue,
-        focusedValue,
+    }
+
+    const ariaDescribedBy = useAriaConditionalIds([
+        { id: `${id}_hint`, include: !!hint },
+        { id: `${id}_invalid`, include: !valid },
     ]);
 
-    const handleListboxKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void = useCallback((event) => {
-        if (event.key === 'Escape') {
-            if (searchable) {
-                resetField();
-            } else {
-                matchInputValueToOption();
-            }
-            setFocusedValue('');
-            handleOpen();
-        } else if (event.key === 'ArrowUp' && !focusedValue) {
-            focusLastElementFromArray(options);
-        } else if (isLetterOrNumber(event.key)) /* Check if key is a character */ {
-            if (searchable) {
-                setAutofocus(false);
-                setFocusedValue('');
-                inputRef.current?.focus();
-            } else {
-                const suggestOption = options.find((option) => option.label.toLowerCase()
-                    .startsWith(event.key.toLowerCase()));
-                if (suggestOption) {
-                    setFocusedValue(suggestOption.value);
-                }
-            }
-        }
-    }, [focusedValue, handleOpen, matchInputValueToOption, options, searchable]);
-
     return (
-        <>
-            <StyledFieldContainer
-                className={className}
-                noMargin={noMargin}
-                fieldId={fieldId}
-                label={label}
-                required={required}
-                tooltip={tooltip}
-                valid={valid}
-                validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
-                hint={hint}
+        <StyledFieldContainer
+            className={className}
+            noMargin={noMargin}
+            fieldId={id}
+            label={label}
+            required={required}
+            tooltip={tooltip}
+            valid={valid}
+            validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
+            hint={hint}
+        >
+            <Textbox
+                aria-label={!label ? ariaLabel || t('inputAriaLabel') : undefined}
+                aria-activedescendant={open && focusedOption ? `${id}_${focusedOption.value}` : undefined}
+                aria-controls={`${id}_listbox`}
+                aria-describedby={ariaDescribedBy}
+                aria-expanded={open}
+                aria-invalid={!valid ? 'true' : 'false'}
+                aria-labelledby={`${id}_label`}
+                aria-required={required ? 'true' : 'false'}
+                data-testid="textbox"
+                id={id}
+                $isMobile={isMobile}
+                $disabled={disabled}
+                onBlur={handleTextboxBlur}
+                onClick={handleTextboxClick}
+                onKeyDown={handleTextboxKeyDown}
+                ref={textboxRef}
+                role="combobox"
+                tabIndex={0}
+                $valid={valid}
+                value={selectedOption?.value ?? ''}
+                {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
-                <InputWrapper
-                    aria-expanded={open}
-                    aria-haspopup="listbox"
-                    aria-owns={`listbox_${fieldId}`}
-                    data-testid="input-wrapper"
-                    containerOutline={containerOutline}
-                    isMobile={isMobile}
-                    disabled={disabled}
-                    focus={focus}
-                    ref={wrapperRef}
-                    role={searchable ? 'combobox' : undefined}
-                    valid={valid}
-                    onClick={handleInputClick}
-                >
-                    <StyledInput
-                        aria-label={ariaLabel || label || t('inputAriaLabel')}
-                        aria-activedescendant={selectedOptionValue ? `${fieldId}_${selectedOptionValue}` : undefined}
-                        aria-autocomplete={searchable ? 'both' : 'list'}
-                        aria-controls={`listbox_${fieldId}`}
-                        aria-multiline="false"
-                        data-testid="input"
-                        id={fieldId}
-                        isMobile={isMobile}
-                        disabled={disabled}
-                        name={name}
-                        onBlur={handleBlur}
-                        onChange={handleInputChange}
-                        onFocus={handleFocus}
-                        onKeyDown={handleInputKeyDown}
-                        placeholder={placeholder}
-                        ref={inputRef}
-                        required={required}
-                        searchable={searchable}
-                        type="text"
-                        value={inputValue}
-                        {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
-                    />
-                    <Arrow
-                        aria-labelledby={fieldId}
-                        type="button"
-                        data-testid="arrow"
-                        tabIndex={-1}
-                        onClick={disabled ? undefined : handleArrowClick}
-                        disabled={disabled}
-                    >
-                        <Icon name={open ? 'chevronUp' : 'chevronDown'} size={device === 'mobile' ? '24' : '16'} />
-                    </Arrow>
-                </InputWrapper>
-                {open && (
-                    <Listbox
-                        ariaLabelledBy={fieldId}
-                        autofocus={searchable ? autoFocus : open}
-                        ref={listboxRef}
-                        checkIndicator
-                        data-testid="listbox"
-                        defaultValue={defaultValue}
-                        focusedValue={focusedValue}
-                        id={`listbox_${fieldId}`}
-                        numberOfItemsVisible={numberOfItemsVisible}
-                        onChange={handleChange}
-                        onFocusedValueChange={searchable ? undefined : handleFocusedValueChange}
-                        onKeyDown={handleListboxKeyDown}
-                        options={filteredOptions}
-                        value={selectedOptionValue}
-                        dropdown
-                    />
-                )}
-            </StyledFieldContainer>
-            {skipOption && (
-                <ChooserButton
-                    checked={skipSelected}
-                    data-testid="select-skip-option"
-                    groupName={`${fieldId}_skip`}
-                    onChange={handleSkipChange}
-                    type="radio"
-                    value={skipOption.value}
-                >
-                    {skipOption.label}
-                </ChooserButton>
+                <input type="hidden" name={name} value={selectedOption?.value} data-testid="input" />
+                {selectedOption?.label ?? ''}
+                <Arrow
+                    aria-hidden="true"
+                    data-testid="arrow"
+                    $disabled={disabled}
+                    name={open ? 'chevronUp' : 'chevronDown'}
+                    size={device === 'mobile' ? '24' : '16'}
+                />
+            </Textbox>
+
+            {open && (
+                <StyledListbox
+                    ariaLabelledBy={`${id}_label`}
+                    ref={listboxRef}
+                    data-testid="listbox"
+                    focusable={false}
+                    focusedValue={focusedOption?.value}
+                    id={`${id}_listbox`}
+                    onOptionClick={handleListboxOptionClick}
+                    options={options}
+                    value={[selectedOption?.value ?? '']}
+                />
             )}
-        </>
+        </StyledFieldContainer>
     );
 };

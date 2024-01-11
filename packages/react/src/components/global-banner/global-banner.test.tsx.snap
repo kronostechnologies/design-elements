@@ -213,11 +213,11 @@ exports[`GlobalBanner matches snapshot (desktop, alert) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         alert
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -355,12 +355,6 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
@@ -493,11 +487,11 @@ exports[`GlobalBanner matches snapshot (desktop, default) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         default
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -642,12 +636,6 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: inline;
   font-weight: var(--font-semi-bold);
@@ -663,7 +651,7 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #602FA0;
+  background-color: #006296;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -732,11 +720,11 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
 }
 
 .c9:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:hover {
@@ -780,11 +768,11 @@ exports[`GlobalBanner matches snapshot (desktop, info) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         info
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -927,12 +915,6 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
 .c10:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c4 {
@@ -1079,11 +1061,11 @@ exports[`GlobalBanner matches snapshot (desktop, warning) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         warning
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1328,11 +1310,11 @@ exports[`GlobalBanner matches snapshot (mobile, alert) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         alert
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1470,12 +1452,6 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: block;
   font-weight: var(--font-semi-bold);
@@ -1611,11 +1587,11 @@ exports[`GlobalBanner matches snapshot (mobile, default) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         default
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -1760,12 +1736,6 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   color: #003A5A;
 }
 
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
-}
-
 .c4 {
   display: block;
   font-weight: var(--font-semi-bold);
@@ -1781,7 +1751,7 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #602FA0;
+  background-color: #006296;
   color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1853,11 +1823,11 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
 }
 
 .c9:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:focus {
-  background-color: #602FA0;
+  background-color: #006296;
 }
 
 .c11:hover {
@@ -1901,11 +1871,11 @@ exports[`GlobalBanner matches snapshot (mobile, info) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         info
-      </b>
+      </strong>
       <span
         class="c5"
       >
@@ -2048,12 +2018,6 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
 .c10:disabled {
   background-color: transparent;
   color: #003A5A;
-}
-
-.c10:focus {
-  background-color: #012639;
-  border-color: #006296;
-  color: #FFFFFF;
 }
 
 .c4 {
@@ -2203,11 +2167,11 @@ exports[`GlobalBanner matches snapshot (mobile, warning) 1`] = `
     <span
       class="c3"
     >
-      <b
+      <strong
         class="c4"
       >
         warning
-      </b>
+      </strong>
       <span
         class="c5"
       >

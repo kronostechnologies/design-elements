@@ -1,76 +1,55 @@
 import {
-    createRef,
     forwardRef,
     ForwardRefExoticComponent,
     KeyboardEvent,
     Ref,
     RefAttributes,
-    RefObject,
     useCallback,
-    useEffect,
     useLayoutEffect,
-    useMemo,
+    useRef,
     useState,
 } from 'react';
-import styled from 'styled-components';
-import { Theme } from '../../themes';
-import { getNextElementInArray, getPreviousElementInArray } from '../../utils/array';
-import { v4 as uuid } from '../../utils/uuid';
+import styled, { css } from 'styled-components';
+import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon/icon';
+import { useId } from '../../hooks/use-id';
+import { useListCursor } from '../../hooks/use-list-cursor';
+import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
+import { mergeRefs } from '../../utils/react-merge-refs';
+import { unique } from '../../utils/array';
 
 type Value = string | string[];
 
 export interface ListboxOption {
     disabled?: boolean;
     value: string;
-    // Option label, if not provided will be set with value
     label?: string;
-}
-
-interface ListOption extends ListboxOption {
-    id: string;
-    focusIndex: number;
-    ref: RefObject<HTMLLIElement>;
+    caption?: string;
 }
 
 interface ListboxProps {
     ariaLabelledBy?: string;
     id?: string;
     /**
-     * { value: string; label?: string; }[]
+     * { value: string; label?: string; caption?: string; disabled?: boolean }[]
      */
     options: ListboxOption[];
-    /**
-     * Autofocus
-     * @default false
-     */
-    autofocus?: boolean;
-    /**
-     * Display check indicator on the selected option
-     * @default false
-     */
-    checkIndicator?: boolean;
     className?: string;
     /**
      * The default selected option. You may specify an array of strings when using multiselect feature.
      */
     defaultValue?: Value;
     /**
-     * Add this if its used as a dropdown (Adds absolute positioning)
-     * @default false
+     * Set to false to prevent the listbox from receiving focus
+     * @default true
      */
-    dropdown?: boolean;
+    focusable?: boolean;
     /**
      * Activates multiple selection feature
      * @default false
      */
     multiselect?: boolean;
-    /**
-     * Number of visible items in the listbox before overflow
-     * @default 4
-     */
-    numberOfItemsVisible?: number;
     /**
      * Sets the current focused element in the listbox
      */
@@ -81,24 +60,28 @@ interface ListboxProps {
     value?: Value;
 
     /**
-     * onChange callback function, invoked when an option is selected
+     * Callback function, invoked when an option is selected
      */
-    onChange?(option: ListboxOption): void;
+    onChange?(options: ListboxOption | ListboxOption[]): void;
 
     /**
-     * onKeyDown callback function, invoked when a key is pressed
+     * Callback function, invoked when a key is pressed
      */
     onKeyDown?(event: KeyboardEvent): void;
 
     /**
-     * onFocusedValueChange callback function, invoked when focused value changes
+     * Callback function, invoked when focused value changes
      */
-    onFocusedValueChange?(option?: ListboxOption): void;
+    onFocusChange?(option?: ListboxOption): void;
+
+    /**
+     * Callback function, invoked when an option is clicked
+     */
+    onOptionClick?(option?: ListboxOption): void;
 }
 
-interface ListProps {
-    isMobile: boolean;
-    numberOfItemsVisible: number;
+interface ContainerProps {
+    $focusable: boolean;
 }
 
 interface ListItemProps {
@@ -106,404 +89,425 @@ interface ListItemProps {
     isMobile: boolean;
     selected: boolean;
     focused: boolean;
-    checkIndicator: boolean;
-    theme: Theme;
 }
 
-interface BoxProps {
-    isDropdown: boolean;
-}
-
-const itemHeightDesktop = 2;
-const itemHeightMobile = 2.5;
-
-const Box = styled.div<BoxProps>`
-    display: flex;
-    position: ${(props) => (props.isDropdown ? 'absolute' : 'unset')};
-    width: ${(props) => (props.isDropdown ? '100%' : 'unset')};
-`;
-
-function getListMaxHeight({ numberOfItemsVisible, isMobile }: ListProps): number {
-    return numberOfItemsVisible * (isMobile ? itemHeightMobile : itemHeightDesktop);
-}
-
-const List = styled.ul<ListProps>`
+const Container = styled.div<ContainerProps>`
     background-color: ${({ theme }) => theme.greys.white};
     border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px ${({ theme }) => theme.greys.grey}, 0 10px 20px 0 rgb(0 0 0 / 19%);
-    list-style-type: none;
-    margin: 0;
-    max-height: ${getListMaxHeight}rem;
-    min-width: fit-content;
+    display: flex;
+    max-height: 160px;
     overflow-y: auto;
-    padding: 0;
-    width: 100%;
+    padding: var(--spacing-half) 0;
+    position: relative;
     z-index: 1000;
-
-    &:focus {
-        box-shadow: ${({ theme }) => theme.tokens['focus-border-box-shadow']}, 0 10px 20px 0 rgb(0 0 0 / 19%);
-        outline: none;
-    }
+  
+    ${({ $focusable, theme }) => $focusable && focus({ theme })};
 `;
 
-const getListItemSidePadding = ({ checkIndicator, selected, isMobile }: ListItemProps): string => {
-    if (checkIndicator) {
-        if (selected) {
-            return '0';
-        }
-        if (isMobile) {
-            return 'var(--spacing-5x)';
-        }
-        return 'var(--spacing-4x)';
-    }
-    return 'var(--spacing-2x)';
-};
+const List = styled.ul`
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+`;
 
-function getListItemBackgroundColor({ disabled, focused, theme }: ListItemProps): string {
-    if (disabled) {
-        return theme.greys.white;
+const CheckMarkIcon = styled(Icon).attrs({ name: 'check' })`
+    color: ${({ theme }) => theme.greys.white};
+    height: 100%;
+    width: 100%;
+`;
+
+const CustomCheckbox = styled.span<{ checked?: boolean, disabled?: boolean }>`
+    align-items: center;
+    background-color: ${({ disabled, theme }) => (disabled ? theme.greys['light-grey'] : theme.greys.white)};
+    border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    display: flex;
+    height: var(--size-1x);
+    justify-content: center;
+    margin-right: var(--spacing-1x);
+    width: var(--size-1x);
+
+    &:hover {
+        border: 1px solid ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.main['primary-1.1'])};
     }
-    if (focused) {
-        return theme.greys.grey;
-    }
-    return 'inherit';
-}
+  
+    ${({ checked }) => (!checked && css`
+        > ${CheckMarkIcon} {
+            display: none;
+        }
+    `)}
+`;
 
 const ListItem = styled.li<ListItemProps>`
     align-items: center;
-    background-color: ${getListItemBackgroundColor};
     color: ${({ disabled, theme }) => (disabled ? theme.greys['mid-grey'] : theme.greys.black)};
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
     display: flex;
     font-size: ${({ isMobile }) => (isMobile ? '1rem' : '0.875rem')};
     font-weight: ${({ selected }) => (selected ? 'var(--font-semi-bold)' : 'var(--font-normal)')};
-    height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
-    line-height: ${({ isMobile }) => (isMobile ? itemHeightMobile : itemHeightDesktop)}rem;
-    overflow: hidden;
-    padding: 0 ${({ isMobile }) => (isMobile ? 16 : 8)}px 0 ${getListItemSidePadding};
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    line-height: var(--size-1halfx);
+    min-height: var(--size-1halfx);
+    padding: var(--spacing-half) var(--spacing-2x);
+  
+    ${({ isMobile }) => (!isMobile && css`
+        padding-right: var(--spacing-1x);
+    `)}
+    
+    user-select: none;
 
-    &:focus {
-        outline: none;
+    &:hover {
+        background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
     }
+  
+    ${({ focused, disabled, theme }) => (focused && css`
+        outline: 2px solid ${disabled ? 'transparent' : theme.main['primary-1.1']};
+        outline-offset: -2px;
+    `)}
+
+    ${({ selected }) => (selected && css`
+        & ${CustomCheckbox} {
+            background-color: ${({ theme }) => theme.main['primary-1.1']};
+            border: 1px solid ${({ theme }) => theme.main['primary-1.1']};
+        }
+    `)}
 `;
 
-const CheckIndicator = styled(Icon)`
-    color: ${({ theme }) => theme.greys['dark-grey']};
-    padding: 0 var(--spacing-1x);
+const ListItemTextContainer = styled.span`
+    display: flex;
+    flex-direction: column;
 `;
 
-function toArray(val?: Value): string[] {
-    if (!val) {
-        return [];
-    }
+const ListItemCaption = styled.span<{ disabled?: boolean, isMobile: boolean }>`
+    color: ${({ disabled, theme }) => (disabled ? theme.greys.grey : theme.greys['dark-grey'])};
+    display: block;
+    font-size: ${({ isMobile }) => (isMobile ? '0.875rem' : '0.75rem')};
+`;
 
-    if (Array.isArray(val)) {
-        return val;
-    }
-
-    return [val];
-}
+const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.disabled;
 
 export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTMLDivElement>> = forwardRef(({
     ariaLabelledBy,
     id: providedId,
-    options,
-    onChange,
-    onFocusedValueChange,
-    onKeyDown,
-    checkIndicator = false,
     className,
     defaultValue,
-    dropdown = false,
-    multiselect = false,
-    numberOfItemsVisible = 4,
-    autofocus = false,
+    focusable = true,
     focusedValue,
+    multiselect = false,
+    options,
+    onChange,
+    onFocusChange,
+    onKeyDown,
+    onOptionClick,
     value,
 }, ref: Ref<HTMLDivElement>) => {
-    const id = useMemo(() => providedId || uuid(), [providedId]);
+    const id = useId(providedId);
     const { isMobile } = useDeviceContext();
-    const [listRef, setListRef] = useState<HTMLUListElement>();
-    const listRefCallback = useCallback((node: HTMLUListElement) => setListRef(node), []);
-    const [selectedOptionValue, setSelectedOptionValue] = useState(toArray(value || defaultValue));
-    const [selectedFocusIndex, setSelectedFocusIndex] = useState(() => (!multiselect
-        ? options.findIndex((option) => option.value === selectedOptionValue[0])
-        : -1));
-    const list: ListOption[] = useMemo((): ListOption[] => options.map(
-        (option, index) => ({
-            ...option,
-            id: `${id}_${option.value}`,
-            focusIndex: index,
-            ref: createRef<HTMLLIElement>(),
-        }),
-    ), [id, options]);
 
-    const setValue: (newValue: Value) => void = useCallback((newValue) => {
-        setSelectedOptionValue(toArray(newValue));
-        if (Array.isArray(newValue) && newValue.length === 0) {
-            setSelectedFocusIndex(-1);
-        } else if (list.length > 0 && !multiselect) {
-            setSelectedFocusIndex(options.findIndex((option) => option.value === newValue[0]));
+    const containerRef = useRef<HTMLDivElement>(null);
+    const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
+
+    const findOptionsByValue: (searchValue?: Value | string) => ListboxOption[] = useCallback(
+        (searchValue) => options.filter(
+            (option) => (Array.isArray(searchValue)
+                ? searchValue.includes(option.value)
+                : option.value === searchValue),
+        ),
+        [options],
+    );
+
+    const {
+        selectedElement: focusedOption,
+        setSelectedElement: setFocusedOption,
+        selectPrevious: focusPreviousOption,
+        selectNext: focusNextOption,
+        selectFirst: focusFirstOption,
+        selectLast: focusLastOption,
+    } = useListCursor({
+        elements: options,
+        initialElement: findOptionsByValue(focusedValue)[0],
+        predicate: optionPredicate,
+    });
+
+    const [selectedOptions, setSelectedOptions] = useState<ListboxOption[]>(
+        () => findOptionsByValue(value ?? defaultValue),
+    );
+
+    function isOptionSelected(option: ListboxOption): boolean {
+        return multiselect ? selectedOptions.includes(option) : selectedOptions[0] === option;
+    }
+
+    function isOptionFocused(option: ListboxOption): boolean {
+        return option === focusedOption;
+    }
+
+    function selectSingleOption(option: ListboxOption): void {
+        if (!selectedOptions.includes(option)) {
+            setSelectedOptions([option]);
+            onChange?.(option);
         }
-    }, [list.length, multiselect, options]);
+    }
 
-    useEffect(() => {
-        if (value !== undefined) {
-            setValue(value);
-        }
-    }, [setValue, value]);
+    function selectMultipleOptions(optionList: ListboxOption[]): void {
+        const newSelectedOptions = unique([...selectedOptions, ...optionList.filter(optionPredicate)]);
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(newSelectedOptions);
+    }
 
-    const handleAutoScroll: (option?: ListOption, focusedIndex?: number) => void = useCallback((
-        option,
-        focusedIndex,
-    ) => {
-        const itemRef: HTMLLIElement | null | undefined = option?.ref.current;
-        if (!listRef || !option || !itemRef || focusedIndex === undefined) {
-            return;
-        }
+    function toggleOptionSelection(option: ListboxOption, forceSelected?: boolean): void {
+        const newSelectedOptions = !selectedOptions.includes(option) || forceSelected
+            ? unique([...selectedOptions, option])
+            : selectedOptions.filter((opt) => opt !== option);
 
-        const listRect = listRef.getBoundingClientRect();
-        const itemRect = itemRef.getBoundingClientRect();
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(newSelectedOptions);
+    }
 
-        if (itemRef.offsetTop >= listRef.scrollTop + listRect.height) {
-            listRef.scrollTop = (itemRect.height * (focusedIndex + 1)) - listRect.height;
-        } else if (listRect.top - itemRect.top >= 0) {
-            const spaceDif = listRect.top - itemRect.top;
-            const numberOfItemsToScroll = spaceDif / itemRect.height;
+    function toggleAllOptions(): void {
+        const enabledOptions = options.filter(optionPredicate);
+        const newSelectedOptions = selectedOptions.length === enabledOptions.length ? [] : enabledOptions;
 
-            listRef.scrollTop -= (itemRect.height * numberOfItemsToScroll);
-        } else {
-            listRef.scrollTop = itemRef.offsetTop;
-        }
-    }, [listRef]);
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(newSelectedOptions);
+    }
 
-    useEffect(() => {
-        if (focusedValue) {
-            const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
-            const currentOption = list[focusedValueIndex];
-            setSelectedFocusIndex(focusedValueIndex);
-            handleAutoScroll(currentOption, focusedValueIndex);
-        } else {
-            setSelectedFocusIndex(-1);
-        }
-    }, [focusedValue, list, options, handleAutoScroll]);
+    const { scrollIntoView } = useScrollIntoView({ container: containerRef });
 
-    useEffect(() => {
-        if (autofocus && listRef) {
-            listRef.focus();
-        }
+    const scrollToOption: (
+        option?: ListboxOption,
+        forceAlignToTop?: boolean,
+    ) => void = useCallback((option?: ListboxOption, forceAlignToTop = false) => {
+        if (option) {
+            const itemRef = itemRefs.current.get(option.value);
 
-        if (selectedOptionValue && !multiselect) {
-            const newSelectedFocusIndex = options.findIndex((option) => option.value === selectedOptionValue[0]);
-            if (newSelectedFocusIndex !== -1) {
-                setSelectedFocusIndex(newSelectedFocusIndex);
+            if (itemRef) {
+                scrollIntoView(itemRef, forceAlignToTop);
             }
         }
-    }, [autofocus, multiselect, options, selectedOptionValue, listRef]);
-
-    const isOptionSelected: (option: ListOption) => boolean = useCallback((option) => {
-        if (multiselect) {
-            return selectedOptionValue.includes(option.value);
-        }
-        return selectedOptionValue.length > 0 && selectedOptionValue[0] === option.value;
-    }, [multiselect, selectedOptionValue]);
-
-    const isOptionFocused: (option: ListOption) => boolean = useCallback(
-        (option) => option.focusIndex === selectedFocusIndex,
-        [selectedFocusIndex],
-    );
-
-    const shouldDisplayCheckIndicator: (option: ListOption) => boolean = useCallback(
-        (option) => checkIndicator && isOptionSelected(option),
-        [checkIndicator, isOptionSelected],
-    );
-
-    const selectOption: (option: ListOption) => void = useCallback((option) => {
-        setSelectedFocusIndex(option.focusIndex);
-
-        if (multiselect) {
-            if (selectedOptionValue.includes(option.value)) {
-                setSelectedOptionValue(selectedOptionValue.filter((opt) => opt !== option.value));
-            } else {
-                setSelectedOptionValue([...selectedOptionValue, option.value]);
-            }
-        } else {
-            setSelectedOptionValue([option.value]);
-        }
-
-        onChange?.(option);
-    }, [multiselect, onChange, selectedOptionValue]);
-
-    const getPrevSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
-        const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
-        return getPreviousElementInArray(enabledItems, enabledItems.findIndex((x) => x.focusIndex === focusIndex));
-    }, [list]);
-
-    const getNextSelectableOption = useCallback((focusIndex: number): ListOption | undefined => {
-        const enabledItems: ListOption[] = list.filter((x) => !x.disabled);
-        return getNextElementInArray(enabledItems, enabledItems.findIndex((x) => x.focusIndex === focusIndex));
-    }, [list]);
-
-    const handleListItemClick: (option: ListOption) => () => void = useCallback(
-        (option) => () => selectOption(option),
-        [selectOption],
-    );
-
-    const handleListItemMouseMove: (option: ListOption) => void = useCallback((option) => {
-        setSelectedFocusIndex(option.focusIndex);
-    }, []);
+    }, [scrollIntoView]);
 
     useLayoutEffect(() => {
-        const currentOption = list[selectedFocusIndex];
-
-        if (!listRef || !currentOption?.ref?.current) {
-            return;
+        if (focusedOption) {
+            scrollToOption(focusedOption);
         }
+    }, [focusedOption, options, scrollToOption]);
 
-        const listRect = listRef.getBoundingClientRect();
-        const itemRect = currentOption.ref.current.getBoundingClientRect();
-        const currentView = { from: listRect.y, to: listRect.y + listRect.height };
-        const currentItem = { from: itemRect.y, to: itemRect.y + itemRect.height };
+    useLayoutEffect(() => {
+        const initialOption = findOptionsByValue(focusedValue ?? defaultValue);
 
-        let scrollDirection: 'up' | 'down' | null = null;
-        if (currentItem.from >= currentView.from && currentItem.to <= currentView.to) {
-            scrollDirection = null;
-        } else if (currentItem.from <= currentView.from) {
-            scrollDirection = 'up';
-        } else if (currentItem.to >= currentView.to) {
-            scrollDirection = 'down';
+        if (initialOption.length > 0) {
+            scrollToOption(initialOption[0], true);
         }
+    }, [defaultValue, focusedValue, findOptionsByValue, scrollToOption]);
 
-        switch (scrollDirection) {
-            case 'up': {
-                handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
-                break;
+    const [previousFocusedValue, setPreviousFocusedValue] = useState<string | undefined>(focusedValue);
+
+    if (focusedValue !== previousFocusedValue) {
+        const targetOption = findOptionsByValue(focusedValue)[0];
+        setFocusedOption(targetOption);
+        setPreviousFocusedValue(focusedValue);
+    }
+
+    const [previousValue, setPreviousValue] = useState<Value | undefined>(value);
+
+    if (value !== previousValue) {
+        setSelectedOptions(findOptionsByValue(value));
+        setPreviousValue(value);
+    }
+
+    // When the listbox gets the focus, the currently selected option gets the visual focus and
+    // is scrolled into view. However, if the focus is obtained with a click, the list scrolls
+    // before the click event is dispatched, causing it to have the wrong target. This issue is
+    // solved by ignoring the initial visual focus / scroll with click events.
+    let focusedWithMouseInteraction = false;
+
+    function handleListItemMouseDown(): void {
+        focusedWithMouseInteraction = true;
+        document.addEventListener('mouseup', () => {
+            focusedWithMouseInteraction = false;
+        }, { once: true });
+    }
+
+    function handleListboxFocus(): void {
+        if (!focusedOption && selectedOptions.length > 0 && !focusedWithMouseInteraction) {
+            setFocusedOption(selectedOptions[0]);
+        }
+    }
+
+    function handleListboxBlur(): void {
+        setFocusedOption(undefined);
+    }
+
+    function handleListItemClick(option: ListboxOption): () => void {
+        return () => {
+            onOptionClick?.(option);
+
+            if (optionPredicate(option)) {
+                if (option !== focusedOption) {
+                    setFocusedOption(option);
+                    onFocusChange?.(option);
+                }
+
+                if (multiselect) {
+                    toggleOptionSelection(option);
+                } else {
+                    selectSingleOption(option);
+                }
             }
-            case 'down': {
-                handleAutoScroll(list[selectedFocusIndex], selectedFocusIndex);
-                break;
-            }
-            case null: {
-                break;
-            }
-        }
-    }, [list, numberOfItemsVisible, selectedFocusIndex, handleAutoScroll, listRef]);
+        };
+    }
 
-    useEffect(() => {
-        const focusedValueIndex = options.findIndex((option) => option.value === focusedValue);
-        if (focusedValueIndex !== -1 && listRef) {
-            setSelectedFocusIndex(focusedValueIndex);
-        }
-    }, [options, focusedValue, listRef]);
+    function handleListboxKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
+        let newFocusedOption: ListboxOption | undefined;
 
-    const handleKeyDown: (e: KeyboardEvent<HTMLUListElement>) => void = useCallback((e) => {
-        // ' ' is the space bar key
-        switch (e.key) {
-            case 'Enter': {
-                e.preventDefault();
-
-                if (selectedFocusIndex >= 0) {
-                    selectOption(list[selectedFocusIndex]);
+        switch (event.key) {
+            case ' ':
+                event.preventDefault();
+                if (multiselect && focusedOption) {
+                    toggleOptionSelection(focusedOption);
                 }
                 break;
-            }
-            case 'ArrowUp': {
-                e.preventDefault();
-                const prevOption = getPrevSelectableOption(selectedFocusIndex);
+            case 'ArrowUp':
+                event.preventDefault();
+                newFocusedOption = focusPreviousOption();
 
-                if (prevOption) {
-                    setSelectedFocusIndex(prevOption.focusIndex);
+                if (newFocusedOption) {
+                    onFocusChange?.(newFocusedOption);
 
-                    if (onFocusedValueChange) {
-                        onFocusedValueChange(list[prevOption.focusIndex]);
+                    if (multiselect && event.shiftKey && focusedOption) {
+                        toggleOptionSelection(newFocusedOption, true);
+                    } else if (!multiselect) {
+                        selectSingleOption(newFocusedOption);
                     }
                 }
                 break;
-            }
-            case 'ArrowDown': {
-                e.preventDefault();
-                const nextOption = getNextSelectableOption(selectedFocusIndex);
+            case 'ArrowDown':
+                event.preventDefault();
+                newFocusedOption = focusNextOption();
 
-                if (nextOption) {
-                    setSelectedFocusIndex(nextOption.focusIndex);
+                if (newFocusedOption) {
+                    onFocusChange?.(newFocusedOption);
 
-                    if (onFocusedValueChange) {
-                        onFocusedValueChange(list[nextOption.focusIndex]);
+                    if (multiselect && event.shiftKey && focusedOption) {
+                        toggleOptionSelection(newFocusedOption, true);
+                    } else if (!multiselect) {
+                        selectSingleOption(newFocusedOption);
                     }
                 }
                 break;
-            }
+            case 'Home':
+                event.preventDefault();
+                newFocusedOption = focusFirstOption();
+
+                if (newFocusedOption) {
+                    onFocusChange?.(newFocusedOption);
+
+                    if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
+                        selectMultipleOptions(
+                            options.slice(options.indexOf(newFocusedOption), options.indexOf(focusedOption) + 1),
+                        );
+                    } else if (!multiselect) {
+                        selectSingleOption(newFocusedOption);
+                    }
+                }
+                break;
+            case 'End':
+                event.preventDefault();
+                newFocusedOption = focusLastOption();
+
+                if (newFocusedOption) {
+                    onFocusChange?.(newFocusedOption);
+
+                    if (multiselect && event.shiftKey && (event.ctrlKey || event.metaKey) && focusedOption) {
+                        selectMultipleOptions(
+                            options.slice(options.indexOf(focusedOption), options.indexOf(newFocusedOption) + 1),
+                        );
+                    } else if (!multiselect) {
+                        selectSingleOption(newFocusedOption);
+                    }
+                }
+                break;
+            case 'a':
+                if (multiselect && (event.ctrlKey || event.metaKey)) {
+                    event.preventDefault();
+                    toggleAllOptions();
+                }
+                break;
         }
 
-        onKeyDown?.(e);
-    }, [
-        list,
-        onFocusedValueChange,
-        onKeyDown,
-        selectedFocusIndex,
-        selectOption,
-        getPrevSelectableOption,
-        getNextSelectableOption,
-    ]);
-
-    function getAriaActiveDescendant(optionIndex: number): string | undefined {
-        if (optionIndex >= 0 && list[optionIndex]) {
-            return `${id}_${list[optionIndex].value}`;
-        }
-        return undefined;
+        onKeyDown?.(event);
     }
 
     return (
-        <Box
-            aria-activedescendant={getAriaActiveDescendant(selectedFocusIndex)}
+        <Container
+            aria-activedescendant={focusedOption ? `${id}_${focusedOption.value}` : undefined}
             aria-labelledby={ariaLabelledBy}
-            aria-multiselectable={multiselect}
+            aria-multiselectable={multiselect ? 'true' : undefined}
             className={className}
-            isDropdown={dropdown}
-            ref={ref}
+            data-testid="listbox-container"
+            $focusable={focusable}
+            id={id}
+            onBlur={focusable ? handleListboxBlur : undefined}
+            onFocus={focusable ? handleListboxFocus : undefined}
+            onKeyDown={focusable ? handleListboxKeyDown : undefined}
+            onMouseDown={!focusable ? (event) => event.preventDefault() : undefined}
+            ref={mergeRefs(ref, containerRef)}
             role="listbox"
-            tabIndex={-1}
+            tabIndex={focusable ? 0 : -1}
         >
             <List
                 data-testid="listbox-list"
-                id={id}
-                isMobile={isMobile}
-                numberOfItemsVisible={numberOfItemsVisible}
-                onBlur={() => setSelectedFocusIndex(-1)}
-                onKeyDown={handleKeyDown}
-                onKeyPress={handleKeyDown}
-                ref={listRefCallback}
                 role="presentation"
-                tabIndex={0}
             >
-                {list.map((option) => (
+                {options.map((option) => (
                     <ListItem
                         aria-disabled={option.disabled}
-                        aria-label={option.label || option.value}
-                        aria-selected={isOptionSelected(option)}
-                        checkIndicator={checkIndicator}
+                        aria-selected={multiselect && isOptionSelected(option) ? 'true' : undefined}
                         data-testid={`listitem-${option.value}`}
                         disabled={option.disabled}
                         focused={isOptionFocused(option)}
-                        id={option.id}
+                        id={`${id}_${option.value}`}
                         isMobile={isMobile}
-                        key={option.id}
-                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
-                        onMouseMove={() => handleListItemMouseMove(option)}
-                        ref={option.ref}
+                        key={option.value}
+                        onClick={handleListItemClick(option)}
+                        onMouseDown={handleListItemMouseDown}
+                        ref={(node) => {
+                            const map = itemRefs.current;
+                            if (node) {
+                                map.set(option.value, node);
+                            } else {
+                                map.delete(option.value);
+                            }
+                        }}
                         role="option"
                         selected={isOptionSelected(option)}
                     >
-                        {shouldDisplayCheckIndicator(option) && (
-                            <CheckIndicator data-testid="check-icon" name="check" size={isMobile ? '24' : '16'} />
-                        )}
-                        {option.label || option.value}
+                        {multiselect ? (
+                            <CustomCheckbox
+                                aria-hidden="true"
+                                disabled={option.disabled}
+                                checked={isOptionSelected(option)}
+                            >
+                                <CheckMarkIcon />
+                            </CustomCheckbox>
+                        ) : null}
+                        <ListItemTextContainer>
+                            {option.label || option.value}
+                            {option.caption && (
+                                <ListItemCaption
+                                    disabled={option.disabled}
+                                    isMobile={isMobile}
+                                >
+                                    {option.caption}
+                                </ListItemCaption>
+                            )}
+                        </ListItemTextContainer>
                     </ListItem>
                 ))}
             </List>
-        </Box>
+        </Container>
     );
 });
 

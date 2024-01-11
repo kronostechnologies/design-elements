@@ -1,39 +1,33 @@
-import { DropdownList } from '@equisoft/design-elements-react';
-import { Option } from '@equisoft/design-elements-react/dist/components/dropdown-list/dropdown-list';
-import { StoryFn as Story } from '@storybook/react';
 import { useState } from 'react';
+import { Button, DropdownList, DropdownListOption } from '@equisoft/design-elements-react';
+import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
 import { ShadowDomDecorator } from './utils/shadow-dom-decorator';
 
 const Container = styled.div`
-    height: 240px;
+    height: 260px;
 `;
 
 const provinces = [
-    { value: 'on', label: 'Ontario' },
-    { value: 'qc', label: 'Quebec' },
-    { value: 'bc', label: 'British Columbia' },
     { value: 'ab', label: 'Alberta' },
-    { value: 'mb', label: 'Manitoba' },
-    { value: 'sk', label: 'Saskatchewan' },
-    { value: 'ns', label: 'Nova Scotia' },
+    { value: 'bc', label: 'British Columbia' },
+    { value: 'mb', label: 'Manitoba', disabled: true },
     { value: 'nb', label: 'New Brunswick' },
     { value: 'nl', label: 'Newfoundland and Labrador' },
-    { value: 'pe', label: 'Prince Edward Island' },
     { value: 'nt', label: 'Northwest Territories' },
+    { value: 'ns', label: 'Nova Scotia' },
     { value: 'nu', label: 'Nunavut' },
+    { value: 'on', label: 'Ontario', disabled: true },
+    { value: 'pe', label: 'Prince Edward Island' },
+    { value: 'qc', label: 'Quebec' },
+    { value: 'sk', label: 'Saskatchewan' },
     { value: 'yt', label: 'Yukon' },
 ];
 
-const skipOption = {
-    label: 'Skip this question',
-    value: 'skip',
-};
-
 export default {
-    title: 'Components/Controls/Dropdown-list',
+    title: 'Components/Controls/Dropdown List',
     component: DropdownList,
     decorators: [decorateWith(Container)],
 };
@@ -61,10 +55,6 @@ export const InsideShadowDom: Story = () => (
 );
 InsideShadowDom.decorators = [ShadowDomDecorator];
 
-export const CustomPlaceholder: Story = () => (
-    <DropdownList label="Select an option" options={provinces} placeholder="Custom placeholder" />
-);
-
 export const Disabled: Story = () => (
     <DropdownList label="Select an option" options={provinces} disabled />
 );
@@ -76,12 +66,8 @@ export const Invalid: Story = () => (
 export const Required: Story = () => (
     <form onSubmit={(event) => event.preventDefault()}>
         <DropdownList required label="Select an option" options={provinces} />
-        <button type="submit">Submit</button>
+        <Button type="submit" buttonType="primary">Submit</Button>
     </form>
-);
-
-export const Searchable: Story = () => (
-    <DropdownList label="Select an option" options={provinces} searchable />
 );
 
 export const WithCallback: Story = () => (
@@ -97,16 +83,23 @@ export const WithDefaultValue: Story = () => (
     <DropdownList label="Select an option" options={provinces} defaultValue="qc" />
 );
 
+export const WithControlledValue: Story = () => {
+    const [value, setValue] = useState<string | undefined>(undefined);
+
+    function handleChange(option: DropdownListOption): void {
+        setValue(option.value);
+    }
+
+    return (
+        <>
+            <DropdownList label="Select an option" options={provinces} onChange={handleChange} value={value} />
+            <Button buttonType="primary" onClick={() => setValue('qc')}>Set value to Quebec</Button>
+        </>
+    );
+};
+
 export const WithoutLabel: Story = () => (
     <DropdownList options={provinces} />
-);
-
-export const WithSkip: Story = () => (
-    <DropdownList label="Select an option" options={provinces} skipOption={skipOption} />
-);
-
-export const WithTwoItemsVisible: Story = () => (
-    <DropdownList label="Select an option" options={provinces} numberOfItemsVisible={2} />
 );
 
 export const WithDisabledOptions: Story = () => {
@@ -120,20 +113,24 @@ export const WithDisabledOptions: Story = () => {
     return <DropdownList label="Select an option" options={disabledOptions} />;
 };
 
-export const ControlledWithSkipSelected: Story = () => {
-    const [value, setValue] = useState(skipOption.value);
+export const WithDisabledDefaultOption: Story = () => {
+    const [value, setValue] = useState<string>('');
 
-    const handleChange: (option: Option) => void = (option) => {
+    function handleChange(option: DropdownListOption): void {
         setValue(option.value);
-    };
+    }
+
+    const options = [
+        { value: '', label: '', disabled: true },
+        { value: 'optionA', label: 'Option A' },
+        { value: 'optionB', label: 'Option B' },
+        { value: 'optionC', label: 'Option C' },
+    ];
 
     return (
-        <DropdownList
-            label="Select an option"
-            options={provinces}
-            skipOption={skipOption}
-            onChange={handleChange}
-            value={value}
-        />
+        <>
+            <DropdownList label="Select an option" options={options} value={value} onChange={handleChange} />
+            <Button buttonType="primary" onClick={() => setValue('')}>Re-select empty option</Button>
+        </>
     );
 };

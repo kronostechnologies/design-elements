@@ -41,6 +41,7 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -95,16 +96,6 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   color: #B7BBC2;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c4[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c4:focus,
 .c4:disabled {
   border: 0;
@@ -126,10 +117,12 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
   background-color: #F1F2F2;
   border-color: #DBDEE1;
 }
@@ -164,7 +157,8 @@ exports[`NumericInput matches the snapshot (Disabled) 1`] = `
       data-testid="numeric-input"
       disabled=""
       id="uuid1"
-      type="number"
+      inputmode="numeric"
+      type="text"
       value="50"
     />
   </div>
@@ -238,6 +232,7 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -292,16 +287,6 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   color: #B7BBC2;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c5[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c5:focus,
 .c5:disabled {
   border: 0;
@@ -323,10 +308,12 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
   border-color: #CD2C23;
 }
 
@@ -370,7 +357,8 @@ exports[`NumericInput matches the snapshot (Invalid) 1`] = `
       class="c5"
       data-testid="numeric-input"
       id="uuid1"
-      type="number"
+      inputmode="numeric"
+      type="text"
       value="50"
     />
   </div>
@@ -418,6 +406,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -472,16 +461,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   color: #B7BBC2;
 }
 
-.c2::-webkit-outer-spin-button,
-.c2::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c2[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c2:focus,
 .c2:disabled {
   border: 0;
@@ -503,10 +482,12 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
 }
 
 .c1:focus-within {
@@ -529,7 +510,8 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at end) 1`] = `
       class="c2"
       data-testid="numeric-input"
       id="uuid1"
-      type="number"
+      inputmode="numeric"
+      type="text"
       value="50"
     />
     <span
@@ -582,6 +564,7 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  min-height: 100%;
   text-align: left;
 }
 
@@ -636,16 +619,6 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   color: #B7BBC2;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c3[type='number'] {
-  -moz-appearance: textfield;
-}
-
 .c3:focus,
 .c3:disabled {
   border: 0;
@@ -667,10 +640,12 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
   background: #FFFFFF;
   border: 1px solid #60666E;
   border-radius: var(--border-radius);
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: var(--size-2x);
 }
 
 .c1:focus-within {
@@ -698,7 +673,8 @@ exports[`NumericInput matches the snapshot (Normal - Adornment at start) 1`] = `
       class="c3"
       data-testid="numeric-input"
       id="uuid1"
-      type="number"
+      inputmode="numeric"
+      type="text"
       value="50"
     />
   </div>

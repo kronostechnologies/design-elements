@@ -134,6 +134,7 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
 
 const StyledTable = styled.table<StyledTableProps>`
     border-collapse: collapse;
+    color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
 
     th {

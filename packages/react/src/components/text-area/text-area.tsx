@@ -8,6 +8,7 @@ import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';
 import { TooltipProps } from '../tooltip/tooltip';
 import { ScreenReaderOnlyText } from '../screen-reader-only-text/ScreenReaderOnlyText';
+import { useAriaConditionalIds } from '../../hooks/use-aria-conditional-ids';
 
 const StyledTextArea = styled.textarea`
     ${(props) => inputsStyle(props.theme)};
@@ -129,21 +130,11 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
         return t('validationErrorMessage');
     }
 
-    function getAriaDescribedBy(): string | undefined {
-        let describedBy = '';
-
-        if (hint) {
-            describedBy += ` ${idTextArea}_hint`;
-        }
-        if (!validity && getValidationErrorMessage()) {
-            describedBy += ` ${idTextArea}_invalid`;
-        }
-        if (maxLength) {
-            describedBy += ` ${idCounter}`;
-        }
-
-        return describedBy.trim() || undefined;
-    }
+    const ariaDescribedBy = useAriaConditionalIds([
+        { id: `${idTextArea}_hint`, include: !!hint },
+        { id: `${idTextArea}_invalid`, include: !validity && !!getValidationErrorMessage() },
+        { id: idCounter, include: !!maxLength },
+    ]);
 
     return (
         <FieldContainer
@@ -163,7 +154,7 @@ export const TextArea: VoidFunctionComponent<TextAreaProps> = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={idTextArea}
-                aria-describedby={getAriaDescribedBy()}
+                aria-describedby={ariaDescribedBy}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 onFocus={handleFocus}

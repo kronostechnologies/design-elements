@@ -7,8 +7,8 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 }
 
 .c0 {
-  background-color: #f9f7fb;
-  border: 1px solid #602FA0;
+  background-color: #f3f9fd;
+  border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 24px;
@@ -37,7 +37,7 @@ exports[`SectionalBanner should match snapshot (custom message) 1`] = `
 }
 
 .c0 .c1 {
-  color: #602FA0;
+  color: #006296;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -110,8 +110,8 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 }
 
 .c0 {
-  background-color: #f9f7fb;
-  border: 1px solid #602FA0;
+  background-color: #f3f9fd;
+  border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 24px;
@@ -140,7 +140,7 @@ exports[`SectionalBanner should match snapshot (desktop) 1`] = `
 }
 
 .c0 .c1 {
-  color: #602FA0;
+  color: #006296;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -206,8 +206,8 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 }
 
 .c0 {
-  background-color: #f9f7fb;
-  border: 1px solid #602FA0;
+  background-color: #f3f9fd;
+  border: 1px solid #006296;
   border-radius: var(--border-radius-2x);
   box-sizing: border-box;
   line-height: 28px;
@@ -235,7 +235,7 @@ exports[`SectionalBanner should match snapshot (mobile) 1`] = `
 }
 
 .c0 .c1 {
-  color: #602FA0;
+  color: #006296;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
