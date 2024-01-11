@@ -1,18 +1,16 @@
-import { ReactElement } from 'react';
-import styled, { css } from 'styled-components';
+import { CSSProperties, ReactElement } from 'react';
+import styled from 'styled-components';
 import {
     Header,
     HeaderGroup,
-    ColumnDef as OriginalColumnDef,
+    ColumnDef,
     Column,
     flexRender,
 } from '@tanstack/react-table';
 
-type TextAlignOptions = 'left' | 'right' | 'center' | 'justify' | 'initial' | 'inherit';
-
-type CustomColumnDef<TData extends object, TValue> = OriginalColumnDef<TData, TValue> & {
+type CustomColumnDef<TData extends object, TValue> = ColumnDef<TData, TValue> & {
     className?: string;
-    textAlign?: TextAlignOptions; // Define this type if not already defined
+    textAlign?: CSSProperties['textAlign'];
     sticky?: boolean;
     footerColSpan?: number;
 };
@@ -26,9 +24,7 @@ interface CustomFooter<TData extends object, TValue> extends Header<TData, TValu
 
 const StyledFooter = styled.td<{ sticky: boolean }>`
     background-color: ${({ theme }) => theme.greys.white};
-    ${({ sticky }) => sticky && css`
-        position: sticky;
-    `}
+    position: ${({ sticky }) => (sticky ? 'sticky' : undefined)};    
 `;
 
 function getFooter<TData extends object, TValue>(
@@ -45,12 +41,10 @@ function getFooter<TData extends object, TValue>(
             colSpan={footer.column.columnDef.footerColSpan || footer.colSpan}
             sticky={stickyFooter}
         >
-            {footer.isPlaceholder
-                ? null
-                : flexRender(
-                    footer.column.columnDef.footer,
-                    footer.getContext(),
-                )}
+            {!footer.isPlaceholder && flexRender(
+                footer.column.columnDef.footer,
+                footer.getContext(),
+            )}
         </StyledFooter>
     );
 }
@@ -62,10 +56,8 @@ export interface FooterProps<T extends object> {
 export const TableFooter = <T extends object>({
     footerGroup,
     stickyFooter,
-}:FooterProps<T>): ReactElement => { // eslint-disable-line arrow-body-style
-    return (
-        <tr key={footerGroup.id}>
-            {footerGroup.headers.map((footer) => getFooter(footer, stickyFooter))}
-        </tr>
-    );
-};
+}: FooterProps<T>): ReactElement => (
+    <tr key={footerGroup.id}>
+        {footerGroup.headers.map((footer) => getFooter(footer, stickyFooter))}
+    </tr>
+);

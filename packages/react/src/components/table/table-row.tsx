@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import {
     flexRender,
     Row,
     Cell,
     Column,
-    ColumnDef as OriginalColumnDef,
+    ColumnDef,
 } from '@tanstack/react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
 import { Theme } from '../../themes';
@@ -16,19 +16,16 @@ interface StyledTableRowProps {
     striped?: boolean;
 }
 
-type TextAlignOptions = 'left' | 'right' | 'center' | 'justify' | 'initial' | 'inherit';
-
-type CustomColumnDef<TData extends object, TValue> = OriginalColumnDef<TData, TValue> & {
+type CustomColumnDef<TData extends object, TValue> = ColumnDef<TData, TValue> & {
     className?: string;
-    textAlign?: TextAlignOptions; // Define this type if not already defined
+    textAlign?: CSSProperties['textAlign'];
     sticky?: boolean;
-    position?: number;
 };
 
 interface CustomCell<TData extends object, TValue> extends Cell<TData, TValue> {
-  column: Column<TData, TValue> & {
-      columnDef: CustomColumnDef<TData, TValue>;
-  };
+    column: Column<TData, TValue> & {
+        columnDef: CustomColumnDef<TData, TValue>;
+    };
 }
 
 function getRowBackgroundColor({
@@ -132,9 +129,9 @@ const StyledTableRow = styled.tr<StyledTableRowProps & { theme: Theme }>`
     ${getCellBackgroundCss}
 `;
 
-const StyledCell = styled.td<{ sticky?: boolean, position:number }>`
-    ${({ sticky, position }) => (sticky) && css`
-        left: ${position / 2}px;
+const StyledCell = styled.td<{ sticky?: boolean, startOffset: number }>`
+    ${({ sticky, startOffset }) => (sticky) && css`
+        left: ${startOffset / 2}px;
         position: sticky;
         z-index: 2;
     `}
@@ -145,7 +142,7 @@ function getCell<TData extends object, TValue>(cell: CustomCell<TData, TValue>):
         <StyledCell
             sticky={cell.column.columnDef.sticky || false}
             style={{ textAlign: cell.column.columnDef.textAlign || 'left' }}
-            position={cell.column.getStart()}
+            startOffset={cell.column.getStart()}
             key={cell.id}
         >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -165,19 +162,18 @@ export const TableRow = <T extends object>({
     onClick,
     row,
     striped,
-}: TableRowProps<T>): ReactElement => { // eslint-disable-line arrow-body-style
-    return (
-        <StyledTableRow
-            clickable={!!onClick}
-            data-testid={`table-row-${row.index}`}
-            error={error}
-            key={row.id}
-            striped={striped}
-            selected={row.getIsSelected()}
-            onClick={() => onClick && onClick(row)}
-            {...(onClick ? { tabIndex: 0, role: 'button' } : {})/* eslint-disable-line react/jsx-props-no-spreading */}
-        >
-            {row.getVisibleCells().map((cell) => getCell(cell))}
-        </StyledTableRow>
-    );
-};
+}: TableRowProps<T>): ReactElement => (
+    <StyledTableRow
+        clickable={!!onClick}
+        data-testid={`table-row-${row.index}`}
+        error={error}
+        key={row.id}
+        striped={striped}
+        selected={row.getIsSelected()}
+        onClick={() => onClick && onClick(row)}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...(onClick ? { tabIndex: 0, role: 'button' } : null)}
+    >
+        {row.getVisibleCells().map((cell) => getCell(cell))}
+    </StyledTableRow>
+);

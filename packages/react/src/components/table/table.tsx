@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState, useMemo, useEffect } from 'react';
+import { ReactElement, useRef, useState, useMemo, useEffect, CSSProperties } from 'react';
 import styled from 'styled-components';
 import {
     HeaderContext,
@@ -19,7 +19,6 @@ import { Theme } from '../../themes';
 
 type RowSize = 'small' | 'medium';
 type ColumnSortDirection = 'asc' | 'desc';
-type TextAlignOptions = 'left' | 'right' | 'center' | 'justify' | 'initial' | 'inherit';
 
 interface StyledTableProps {
     clickableRows: boolean;
@@ -32,7 +31,7 @@ interface StyledTableProps {
 type CustomColumn<T extends object> = ColumnDef<T> & {
     defaultSort?: ColumnSortDirection;
     sortable?: boolean;
-    textAlign?: TextAlignOptions;
+    textAlign?: CSSProperties['textAlign'];
     className?: string;
     colSpan?: number;
     sticky?: boolean;
@@ -98,11 +97,9 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
                 return (
                     <Checkbox
                         data-testid="row-checkbox-all"
-                        {...{
-                            checked: table.getIsAllRowsSelected(),
-                            indeterminate: table.getIsSomeRowsSelected(),
-                            onChange: table.getToggleAllRowsSelectedHandler(),
-                        }}
+                        checked={table.getIsAllRowsSelected()}
+                        indeterminate={table.getIsSomeRowsSelected()}
+                        onChange={table.getToggleAllRowsSelectedHandler()}
                     />
                 );
             }
@@ -114,12 +111,10 @@ function getCustomColumn<T extends object>(type: string): ColumnDef<T> {
                 return (
                     <Checkbox
                         data-testid={`row-checkbox-${row.index}`}
-                        {...{
-                            checked: row.getIsSelected(),
-                            disabled: !row.getCanSelect(),
-                            indeterminate: row.getIsSomeSelected(),
-                            onChange: row.getToggleSelectedHandler(),
-                        }}
+                        checked={row.getIsSelected()}
+                        disabled={!row.getCanSelect()}
+                        indeterminate={row.getIsSomeSelected()}
+                        onChange={row.getToggleSelectedHandler()}
                     />
                 );
             }
@@ -240,7 +235,6 @@ export const Table = <T extends object>({
         onSortingChange: setSorting,
         enableRowSelection: true,
         onRowSelectionChange: setRowSelection,
-        debugTable: true,
     };
 
     const table = useReactTable(tableOptions);
