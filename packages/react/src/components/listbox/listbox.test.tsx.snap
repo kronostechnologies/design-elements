@@ -142,6 +142,10 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c2:hover {
@@ -169,6 +173,10 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c9:hover {
@@ -191,6 +199,10 @@ exports[`Listbox Matches the snapshot (multiselect) 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c11:hover {
@@ -414,6 +426,10 @@ exports[`Listbox Matches the snapshot 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c2:hover {
@@ -436,6 +452,10 @@ exports[`Listbox Matches the snapshot 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c5:hover {
@@ -458,6 +478,10 @@ exports[`Listbox Matches the snapshot 1`] = `
   min-height: var(--size-1halfx);
   padding: var(--spacing-half) var(--spacing-2x);
   padding-right: var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c6:hover {

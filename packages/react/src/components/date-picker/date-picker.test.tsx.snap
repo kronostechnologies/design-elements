@@ -1927,6 +1927,10 @@ input + .c1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -3111,6 +3115,10 @@ input + .c1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -4230,6 +4238,10 @@ input + .c1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 var(--spacing-1x);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 

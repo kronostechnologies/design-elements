@@ -66,6 +66,7 @@ const Textbox = styled.div<TextboxProps>`
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: space-between;
     padding: 0 var(--spacing-1x);
+    user-select: none;
     width: 100%;
     
     ${({ theme }) => focus({ theme }, true)};
@@ -258,13 +259,17 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     }
 
     function handleListboxOptionClick(option: DropdownListOption): void {
-        if (option !== focusedOption) {
-            setFocusedOption(option);
+        if (optionPredicate(option)) {
+            if (option !== focusedOption) {
+                setFocusedOption(option);
+            }
+
+            if (option !== selectedOption) {
+                selectOption(option);
+            }
+
+            closeListbox();
         }
-        if (option !== selectedOption) {
-            selectOption(option);
-        }
-        closeListbox();
     }
 
     const handleFoundOption: (option?: DropdownListOption) => void = useCallback((option) => {

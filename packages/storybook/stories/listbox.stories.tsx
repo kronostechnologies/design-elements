@@ -51,16 +51,16 @@ export const WithDisabledOptions: Story = () => {
     );
 };
 
+const StyledButton = styled(Button)`
+    margin-top: 1rem;
+`;
+
 export const WithControlledValue: Story = () => {
     const [value, setValue] = useState<string | undefined>(undefined);
 
     function handleChange(option: ListboxOption): void {
         setValue(option.value);
     }
-
-    const StyledButton = styled(Button)`
-        margin-top: 1rem;
-    `;
 
     return (
         <>
