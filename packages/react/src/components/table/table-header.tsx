@@ -32,7 +32,7 @@ const SortButton = styled.button<{ textAlign: string }>`
     cursor: pointer;
     display: flex;
     font: inherit;
-    text-align:: ${({ textAlign }) => textAlign};
+    text-align: ${({ textAlign }) => textAlign};
 
     &:focus {
         outline: none;

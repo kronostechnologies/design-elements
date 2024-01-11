@@ -40,6 +40,16 @@ exports[`Table has clickable rows styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -191,6 +201,16 @@ exports[`Table has custom text alignment 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -336,6 +356,16 @@ exports[`Table has desktop styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -515,6 +545,16 @@ exports[`Table has error rows styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -660,6 +700,16 @@ exports[`Table has mobile styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -805,6 +855,16 @@ exports[`Table has rowNumbers styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -989,6 +1049,16 @@ exports[`Table has selectable rows styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c7 {
@@ -1357,6 +1427,16 @@ exports[`Table has small rowSize styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1487,15 +1567,15 @@ exports[`Table has small rowSize styles 1`] = `
 `;
 
 exports[`Table has sorting styles 1`] = `
-.c3 {
+.c4 {
   background-color: #FFFFFF;
 }
 
-.c3:not(:first-child) {
+.c4:not(:first-child) {
   border-top: 1px solid #DBDEE1;
 }
 
-.c3 td {
+.c4 td {
   background-color: inherit;
 }
 
@@ -1509,8 +1589,8 @@ exports[`Table has sorting styles 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: var(--spacing-1x);
-  text-align: :left;
+  font: inherit;
+  text-align: left;
 }
 
 .c2:focus {
@@ -1520,6 +1600,20 @@ exports[`Table has sorting styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.c3 {
+  margin-left: var(--spacing-1x);
 }
 
 .c0 {
@@ -1581,6 +1675,7 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 1
           <svg
+            class="c3"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1600,6 +1695,7 @@ exports[`Table has sorting styles 1`] = `
         >
           Column 2
           <svg
+            class="c3"
             color="#60666E"
             focusable="false"
             height="16"
@@ -1611,7 +1707,7 @@ exports[`Table has sorting styles 1`] = `
   </thead>
   <tbody>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-0"
     >
       <td
@@ -1630,7 +1726,7 @@ exports[`Table has sorting styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-1"
     >
       <td
@@ -1649,7 +1745,7 @@ exports[`Table has sorting styles 1`] = `
       </td>
     </tr>
     <tr
-      class="c3"
+      class="c4"
       data-testid="table-row-2"
     >
       <td
@@ -1701,24 +1797,54 @@ exports[`Table has sticky column styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
   left: 0px;
   position: -webkit-sticky;
   position: sticky;
   z-index: 5;
 }
 
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
 .c2 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
   left: 75px;
   position: -webkit-sticky;
   position: sticky;
   z-index: 5;
 }
 
+.c2:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
 .c3 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c3:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -1893,6 +2019,16 @@ exports[`Table has sticky header styles 1`] = `
 .c2 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c2:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c1 {
@@ -2049,6 +2185,16 @@ exports[`Table has striped styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
@@ -2194,6 +2340,16 @@ exports[`Table has tablet styles 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
