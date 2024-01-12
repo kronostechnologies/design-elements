@@ -1,0 +1,45 @@
+name: GitHub Pages Cleanup
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          token: ${{ secrets.GH_REPO_TOKEN }}
+
+      - name: Check and delete directories
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for dir in pr-*; do
+            pr_number=${dir#pr-}
+            pr_state=$(gh pr view $pr_number --json state -q .state | tr '[:upper:]' '[:lower:]')
+  
+            if [[ $? -ne 0 ]]; then
+              echo "Error occurred while checking PR #$pr_number. Skipping to the next one."
+              continue
+            fi
+
+            if [[ $pr_state != "open" ]]; then
+              echo "PR #$pr_number is not open. Deleting directory $dir."
+              rm -rf "$dir"
+            else
+              echo "PR #$pr_number is open. Keeping directory $dir."
+            fi
+          done
+
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          pull: '--rebase --autostash'
+          message: "docs: remove closed PRs"
+          author_name: kronostechnologies-build
+          author_email: na-qc@equisoft.com
