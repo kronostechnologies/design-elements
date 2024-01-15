@@ -1,7 +1,5 @@
-import { greys } from './greys';
-import { notifications } from './notifications';
-import { Theme } from './theme';
-import { tokens } from './tokens';
+import { defaultTheme } from './default-theme';
+import { Theme } from './interface/theme';
 
 export const testTheme: Theme = {
     main: {
@@ -15,7 +13,10 @@ export const testTheme: Theme = {
         'secondary-4.2': '#736130',
         'secondary-4.3': '#FFD86B',
     },
-    greys,
-    notifications,
-    tokens,
+    greys: defaultTheme.greys,
+    notifications: defaultTheme.notifications,
+    tokens: defaultTheme.tokens,
+    ref: defaultTheme.ref,
+    alias: defaultTheme.alias,
+    component: defaultTheme.component,
 };

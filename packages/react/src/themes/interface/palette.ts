@@ -1,0 +1,47 @@
+export interface Palette {
+    'color-brand-05': string;
+    'color-brand-20': string;
+    'color-brand-50': string;
+    'color-brand-70': string;
+    'color-brand-80': string;
+    'color-accent-20': string;
+    'color-accent-50': string;
+    'color-accent-70': string;
+    'color-white': string;
+    'color-black': string;
+    'color-neutral-02': string;
+    'color-neutral-05': string;
+    'color-neutral-15': string;
+    'color-neutral-30': string;
+    'color-neutral-50': string;
+    'color-neutral-65': string;
+    'color-neutral-90': string;
+    'color-alert-02': string;
+    'color-alert-05': string;
+    'color-alert-20': string;
+    'color-alert-50': string;
+    'color-alert-70': string;
+    'color-informative-02': string;
+    'color-informative-05': string;
+    'color-informative-20': string;
+    'color-informative-50': string;
+    'color-informative-70': string;
+    'color-success-02': string;
+    'color-success-05': string;
+    'color-success-20': string;
+    'color-success-50': string;
+    'color-success-70': string;
+    'color-warning-02': string;
+    'color-warning-05': string;
+    'color-warning-20': string;
+    'color-warning-50': string;
+    'color-warning-70': string;
+    'color-warning-80': string;
+    'color-discovery-02': string;
+    'color-discovery-05': string;
+    'color-discovery-20': string;
+    'color-discovery-50': string;
+    'color-discovery-70': string;
+}
+
+export type PaletteKeys = keyof Palette;
