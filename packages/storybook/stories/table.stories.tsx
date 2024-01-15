@@ -50,7 +50,9 @@ export const Normal: Story = () => {
         },
     ];
     return (
-        <Table columns={columns} data={data} />
+        <Wrap>
+            <Table columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -107,7 +109,9 @@ export const WithFooter: Story = () => {
     ];
 
     return (
-        <Table columns={columns} data={data} />
+        <Wrap>
+            <Table columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -162,7 +166,9 @@ export const WithColumnClassnames: Story = () => {
         },
     ];
     return (
-        <StyledTable columns={columns} data={data} />
+        <Wrap>
+            <StyledTable columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -202,7 +208,9 @@ export const ErrorRows: Story = () => {
         },
     ];
     return (
-        <Table columns={columns} data={data} />
+        <Wrap>
+            <Table columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -240,7 +248,9 @@ export const Striped: Story = () => {
         },
     ];
     return (
-        <Table striped columns={columns} data={data} />
+        <Wrap>
+            <Table striped columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -278,7 +288,9 @@ export const RowNumbers: Story = () => {
         },
     ];
     return (
-        <Table rowNumbers columns={columns} data={data} />
+        <Wrap>
+            <Table rowNumbers columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -316,7 +328,9 @@ export const SmallRows: Story = () => {
         },
     ];
     return (
-        <Table rowSize="small" columns={columns} data={data} />
+        <Wrap>
+            <Table rowSize="small" columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -359,14 +373,16 @@ export const RowClickCallback: Story = () => {
     ];
 
     return (
-        <Table<DataWithHref>
-            columns={columns}
-            data={data}
-            onRowClick={(row) => {
-                console.info('row: ', row);
-                console.info('href: ', row.original.href);
-            }}
-        />
+        <Wrap>
+            <Table<DataWithHref>
+                columns={columns}
+                data={data}
+                onRowClick={(row) => {
+                    console.info('row: ', row);
+                    console.info('href: ', row.original.href);
+                }}
+            />
+        </Wrap>
     );
 };
 
@@ -402,7 +418,9 @@ export const CustomTextAlignment: Story = () => {
     ];
 
     return (
-        <Table columns={columns} data={data} />
+        <Wrap>
+            <Table columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -465,7 +483,9 @@ export const CustomColumns: Story = () => {
     ];
 
     return (
-        <Table<ComplexData> columns={columns} data={data} />
+        <Wrap>
+            <Table<ComplexData> columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -507,7 +527,9 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Table<SortableData> columns={columns} data={data} />
+        <Wrap>
+            <Table<SortableData> columns={columns} data={data} />
+        </Wrap>
     );
 };
 
@@ -546,7 +568,9 @@ export const SelectableRows: Story = () => {
         },
     ];
     return (
-        <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+        <Wrap>
+            <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
+        </Wrap>
     );
 };
 
@@ -569,8 +593,9 @@ interface StickyData {
 }
 
 const Wrap = styled.div`
-    height: 400px;
+    max-height: 400px;
     overflow: scroll;
+    background-color: white;
 `;
 
 export const Sticky: Story = () => {

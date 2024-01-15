@@ -19,7 +19,7 @@ const StyledDiv = styled.div<{ textAlign: string }>`
 `;
 
 const StyledHeader = styled.th`
-    background-color: ${({ theme }) => theme.greys.white};
+    background-color: inherit;
     position: relative;
     &:before {
         border-bottom: 1px solid ${({ theme }) => theme.greys.grey};

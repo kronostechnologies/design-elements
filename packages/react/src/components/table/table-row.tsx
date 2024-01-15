@@ -11,7 +11,7 @@ interface StyledTableRowProps {
 }
 
 function getRowBackgroundColor({
-    theme, selected, error,
+    selected, error,
 }: ThemedStyledProps<StyledTableRowProps, Theme>): FlattenInterpolation<ThemeProps<Theme>> {
     if (selected) {
         return css`
@@ -26,7 +26,7 @@ function getRowBackgroundColor({
         `;
     }
     return css`
-        background-color: ${theme.greys.white};
+        background-color: inherit;
     `;
 }
 
