@@ -66,20 +66,20 @@ export const HtmlLink = styled.a<LinkProps>`
 `;
 
 export const StyledExternalLink = styled(ExternalLink)`
-  ${NavItemStyle}
+    ${NavItemStyle}
   
-  &:visited {
-    svg {
-      color: ${({ theme }) => theme.greys.black};
+    &:visited {
+        svg {
+            color: ${({ theme }) => theme.greys.black};
+        }
     }
-  }
-  
-  span {
-    color: ${({ theme }) => theme.greys.black};
-    padding: 0 0 0 var(--spacing-half);
-  }
-  
-  padding: 0 var(--spacing-2x);
+    
+    span {
+        color: ${({ theme }) => theme.greys.black};
+        padding: 0 0 0 var(--spacing-half);
+    }
+    
+    padding: 0 var(--spacing-2x);
 `;
 
 export const NavItem = forwardRef(({
@@ -107,6 +107,19 @@ export const NavItem = forwardRef(({
     }
 
     function renderNavItem(): ReactElement {
+        if (isExternalLink) {
+            return (
+                <StyledExternalLink
+                    disabled={disabled}
+                    href={href}
+                    label={label}
+                    onClick={onClick}
+                    target={target}
+                    $device={device}
+                />
+            );
+        }
+
         if (isHtmlLink) {
             return (
                 <HtmlLink
@@ -129,19 +142,6 @@ export const NavItem = forwardRef(({
                     />
                     {opensInNewTab && renderScreenReaderOnlyText()}
                 </HtmlLink>
-            );
-        }
-
-        if (isExternalLink) {
-            return (
-                <StyledExternalLink
-                    disabled={disabled}
-                    href={href}
-                    label={label}
-                    onClick={onClick}
-                    target={target}
-                    $device={device}
-                />
             );
         }
 
