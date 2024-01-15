@@ -1,6 +1,6 @@
-import { PaletteKeys } from './palette';
+import { RefTokens } from './ref-tokens';
 
 export interface AliasTokens {
     // Allow either color tokens from the palette or other alias tokens
-    [key: string]: PaletteKeys | keyof AliasTokens;
+    [key: string]: keyof RefTokens | keyof AliasTokens;
 }

@@ -1,5 +1,5 @@
 import { defaultTheme } from './default-theme';
-import { Theme } from './interface/theme';
+import { Theme, ThemeCustomization } from './interface/theme';
 
 export const testTheme: Theme = {
     main: {
@@ -16,6 +16,12 @@ export const testTheme: Theme = {
     greys: defaultTheme.greys,
     notifications: defaultTheme.notifications,
     tokens: defaultTheme.tokens,
+    ref: defaultTheme.ref,
+    alias: defaultTheme.alias,
+    component: defaultTheme.component,
+};
+
+export const customTheme: ThemeCustomization = {
     ref: defaultTheme.ref,
     alias: defaultTheme.alias,
     component: defaultTheme.component,

@@ -20,6 +20,8 @@ export const Theming: Story = {
                         <Button label="Primary" buttonType="primary" />
                         <Button label="Secondary" buttonType="secondary" />
                         <Button label="Tertiary" buttonType="tertiary" />
+                        <Button label="Destructive" buttonType="destructive" />
+                        <Button label="Destructive Secondary" buttonType="destructive-secondary" />
                     </div>
                 </DesignSystem>
                 <DesignSystem>
@@ -28,6 +30,8 @@ export const Theming: Story = {
                         <Button label="Primary" buttonType="primary" />
                         <Button label="Secondary" buttonType="secondary" />
                         <Button label="Tertiary" buttonType="tertiary" />
+                        <Button label="Destructive" buttonType="destructive" />
+                        <Button label="Destructive Secondary" buttonType="destructive-secondary" />
                     </div>
                 </DesignSystem>
             </>
