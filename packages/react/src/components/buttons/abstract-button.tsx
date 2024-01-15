@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef, PropsWithChildren, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 import { focus } from '../../utils/css-state';
 
 type Size = 'small' | 'medium';
@@ -49,6 +49,10 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
 
     ${(props) => focus(props, true)};
 
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
     > svg {
         color: inherit;
         height: ${({ isMobile }) => (isMobile ? 'var(--size-1halfx)' : 'var(--size-1x)')};
@@ -75,7 +79,7 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 
 AbstractButton.displayName = 'AbstractButton';
 
-export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'destructive-secondary';
+type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
 
 export interface ButtonTypeStyles {
     buttonType: ButtonType;
@@ -83,146 +87,48 @@ export interface ButtonTypeStyles {
     theme: Theme;
 }
 
-const getPrimaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
+const getButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
     inverted,
+    buttonType,
     theme,
-}) => css`
-    background-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    color: ${inverted ? theme.main['primary-1.1'] : theme.greys.white};
+}) => (
+    css`
+        background-color: ${inverted ? theme.component[`button-${buttonType}-inverted-background-color`] : theme.component[`button-${buttonType}-background-color`]};
+        border-color: ${inverted ? theme.component[`button-${buttonType}-inverted-border-color`] : theme.component[`button-${buttonType}-border-color`]};
+        color: ${inverted ? theme.component[`button-${buttonType}-inverted-text-color`] : theme.component[`button-${buttonType}-text-color`]};
 
-    &:hover,
-    &[aria-expanded='true'] {
-        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
-        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.3']};
-        ${inverted && `color: ${theme.main['primary-1.3']}`}
-    }
-
-    &:disabled {
-        background-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
-        border-color: ${inverted ? theme.greys.white : theme.main['primary-1.2']};
-        ${inverted && `color: ${theme.main['primary-1.2']}`}
-    }
-`;
-
-const getSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: ${inverted ? 'transparent' : theme.greys.white};
-    border-color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-    color: ${inverted ? theme.greys.white : theme.main['primary-1.1']};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        border-color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
-        color: ${inverted ? theme.main['primary-1.2'] : theme.main['primary-1.3']};
-    }
-
-    &:disabled {
-        border-color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
-        color: ${inverted ? theme.main['primary-1.3'] : theme.main['primary-1.2']};
-    }
-
-    ${inverted && `&:focus {
-        background-color: ${theme.main['primary-2']};
-        border-color: ${theme.main['primary-1.1']}
-        color: ${theme.greys.white};
-    }`}
-`;
-
-const getTertiaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: transparent;
-    border-color: transparent;
-    color: ${inverted ? theme.greys.white : theme.greys['dark-grey']};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        background-color: ${inverted ? theme.main['primary-1.3'] : theme.greys.grey};
-        color: ${inverted ? theme.greys.white : theme.greys['neutral-90']};
-    }
-
-    &:disabled {
-        background-color: transparent;
-        color: ${inverted ? theme.main['primary-1.3'] : theme.greys['mid-grey']};
-    }
-`;
-
-const getDestructiveButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    border-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    color: ${inverted ? theme.notifications['alert-2.1'] : theme.greys.white};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        /* TODO change colors when updating thematization */
-        background-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        border-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        color: ${inverted ? '#7B1A15' : theme.greys.white};
-    }
-
-    &:disabled {
-        &,
-        &:focus,
-        &:hover {
-            /* TODO change colors when updating thematization */
-            background-color: ${inverted ? theme.greys.white : '#F99D99'};
-            border-color: ${inverted ? theme.greys.white : '#F99D99'};
-            color: ${inverted ? '#F99D99' : theme.greys.white};
+        &:hover,
+        &[aria-expanded='true'] {
+            background-color: ${inverted ? theme.component[`button-${buttonType}-inverted-hover-background-color`] : theme.component[`button-${buttonType}-hover-background-color`]};
+            border-color: ${inverted ? theme.component[`button-${buttonType}-inverted-hover-border-color`] : theme.component[`button-${buttonType}-hover-border-color`]};
+            color: ${inverted ? theme.component[`button-${buttonType}-inverted-hover-text-color`] : theme.component[`button-${buttonType}-hover-text-color`]};
         }
-    }
-`;
 
-const getDestructiveSecondaryButtonStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = ({
-    inverted,
-    theme,
-}) => css`
-    background-color: ${inverted ? 'transparent' : theme.greys.white};
-    border-color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-    color: ${inverted ? theme.greys.white : theme.notifications['alert-2.1']};
-
-    &:hover,
-    &[aria-expanded='true'] {
-        /* TODO change colors when updating thematization */
-        background-color: ${inverted ? '#7B1A15' : theme.greys.white};
-        border-color: ${inverted ? theme.greys.white : '#7B1A15'};
-        color: ${inverted ? theme.greys.white : '#7B1A15'};
-    }
-
-    &:disabled {
-        color: ${inverted ? theme.greys.white : '#F99D99'};
-
-        &,
-        &:focus,
-        &:hover {
-            /* TODO change colors when updating thematization */
-            background-color: ${inverted ? '#F99D99' : theme.greys.white};
-            border-color: ${inverted ? theme.greys.white : '#F99D99'};
-            color: ${inverted ? theme.greys.white : '#F99D99'};
+        &:focus {
+            background-color: ${inverted ? theme.component[`button-${buttonType}-inverted-focus-background-color`] : theme.component[`button-${buttonType}-focus-background-color`]};
+            border-color: ${inverted ? theme.component[`button-${buttonType}-inverted-focus-border-color`] : theme.component[`button-${buttonType}-focus-border-color`]};
+            color: ${inverted ? theme.component[`button-${buttonType}-inverted-focus-text-color`] : theme.component[`button-${buttonType}-focus-text-color`]};
         }
-    }
-`;
+
+        &:disabled {
+            background-color: ${inverted ? theme.component[`button-${buttonType}-inverted-disabled-background-color`] : theme.component[`button-${buttonType}-disabled-background-color`]};
+            border-color: ${inverted ? theme.component[`button-${buttonType}-inverted-disabled-border-color`] : theme.component[`button-${buttonType}-disabled-border-color`]};
+            color: ${inverted ? theme.component[`button-${buttonType}-inverted-disabled-text-color`] : theme.component[`button-${buttonType}-disabled-text-color`]};
+            ${buttonType === 'destructive' ? css`
+                &,
+                &:focus,
+                &:hover {
+                    background-color: ${inverted ? theme.component[`button-${buttonType}-inverted-disabled-background-color`] : theme.component[`button-${buttonType}-disabled-background-color`]};
+                    border-color: ${inverted ? theme.component[`button-${buttonType}-inverted-disabled-border-color`] : theme.component[`button-${buttonType}-disabled-border-color`]};
+                    color: ${inverted ? theme.component[`button-${buttonType}-inverted-disabled-text-color`] : theme.component[`button-${buttonType}-disabled-text-color`]};
+                }
+            ` : ''}
+        }
+    `
+);
 
 export const getButtonTypeStyles: (props: ButtonTypeStyles) => FlattenInterpolation<ThemeProps<Theme>> = (props) => css`
     ${focus(props, true)};
-    ${() => {
-        switch (props.buttonType) {
-            case 'primary':
-                return getPrimaryButtonStyles(props);
-            case 'secondary':
-                return getSecondaryButtonStyles(props);
-            case 'tertiary':
-                return getTertiaryButtonStyles(props);
-            case 'destructive':
-                return getDestructiveButtonStyles(props);
-            case 'destructive-secondary':
-                return getDestructiveSecondaryButtonStyles(props);
-        }
-    }}
+    ${getButtonStyles(props)};
+
 `;
