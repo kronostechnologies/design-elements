@@ -155,6 +155,8 @@ const ListItem = styled.li<ListItemProps>`
     ${({ isMobile }) => (!isMobile && css`
         padding-right: var(--spacing-1x);
     `)}
+    
+    user-select: none;
 
     &:hover {
         background-color: ${({ theme, disabled }) => (disabled ? theme.greys.white : theme.greys.grey)};
@@ -189,16 +191,16 @@ const optionPredicate: (option: ListboxOption) => boolean = (option) => !option.
 export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTMLDivElement>> = forwardRef(({
     ariaLabelledBy,
     id: providedId,
+    className,
+    defaultValue,
+    focusable = true,
+    focusedValue,
+    multiselect = false,
     options,
     onChange,
     onFocusChange,
     onKeyDown,
     onOptionClick,
-    className,
-    defaultValue,
-    focusable = true,
-    multiselect = false,
-    focusedValue,
     value,
 }, ref: Ref<HTMLDivElement>) => {
     const id = useId(providedId);
@@ -293,7 +295,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
     }, [focusedOption, options, scrollToOption]);
 
     useLayoutEffect(() => {
-        const initialOption = findOptionsByValue(focusedValue || defaultValue);
+        const initialOption = findOptionsByValue(focusedValue ?? defaultValue);
 
         if (initialOption.length > 0) {
             scrollToOption(initialOption[0], true);
@@ -342,14 +344,17 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
         return () => {
             onOptionClick?.(option);
 
-            if (option !== focusedOption) {
-                setFocusedOption(option);
-                onFocusChange?.(option);
-            }
-            if (multiselect) {
-                toggleOptionSelection(option);
-            } else {
-                selectSingleOption(option);
+            if (optionPredicate(option)) {
+                if (option !== focusedOption) {
+                    setFocusedOption(option);
+                    onFocusChange?.(option);
+                }
+
+                if (multiselect) {
+                    toggleOptionSelection(option);
+                } else {
+                    selectSingleOption(option);
+                }
             }
         };
     }
@@ -444,9 +449,10 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
             data-testid="listbox-container"
             $focusable={focusable}
             id={id}
-            onBlur={handleListboxBlur}
-            onFocus={handleListboxFocus}
-            onKeyDown={handleListboxKeyDown}
+            onBlur={focusable ? handleListboxBlur : undefined}
+            onFocus={focusable ? handleListboxFocus : undefined}
+            onKeyDown={focusable ? handleListboxKeyDown : undefined}
+            onMouseDown={!focusable ? (event) => event.preventDefault() : undefined}
             ref={mergeRefs(ref, containerRef)}
             role="listbox"
             tabIndex={focusable ? 0 : -1}
@@ -465,7 +471,7 @@ export const Listbox: ForwardRefExoticComponent<ListboxProps & RefAttributes<HTM
                         id={`${id}_${option.value}`}
                         isMobile={isMobile}
                         key={option.value}
-                        onClick={!option.disabled ? handleListItemClick(option) : undefined}
+                        onClick={handleListItemClick(option)}
                         onMouseDown={handleListItemMouseDown}
                         ref={(node) => {
                             const map = itemRefs.current;

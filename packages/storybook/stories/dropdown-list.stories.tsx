@@ -134,3 +134,15 @@ export const WithDisabledDefaultOption: Story = () => {
         </>
     );
 };
+
+export const WithOverflowingText: Story = () => {
+    const longLabel = 'This is option 1, with a very long label that should allow some wrapping in the listbox, '
+        + 'while showcasing an ellipsis in the textbox when selected (you may have to resize your browser window)';
+
+    const options = [
+        { value: 'option1', label: longLabel },
+        { value: 'option2', label: 'This is option 2' },
+    ];
+
+    return <DropdownList label="Select an option" options={options} defaultValue="option1" />;
+};

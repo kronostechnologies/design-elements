@@ -1927,6 +1927,11 @@ input + .c1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -1941,6 +1946,16 @@ input + .c1 {
 }
 
 .c13 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1950,6 +1965,9 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   height: var(--size-1x);
   margin-left: auto;
   padding: var(--spacing-half);
@@ -2177,7 +2195,7 @@ label + .c3 {
   outline: none;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2199,11 +2217,11 @@ label + .c3 {
   width: var(--size-2x);
 }
 
-.c14:hover {
+.c15:hover {
   background-color: #DBDEE1;
 }
 
-.c14:focus {
+.c15:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -2211,7 +2229,7 @@ label + .c3 {
   z-index: 10;
 }
 
-.c14 > svg {
+.c15 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -2323,10 +2341,14 @@ label + .c3 {
                             type="hidden"
                             value="october"
                           />
-                          Oct
+                          <span
+                            class="c13"
+                          >
+                            Oct
+                          </span>
                           <svg
                             aria-hidden="true"
-                            class="c13"
+                            class="c14"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -2361,10 +2383,14 @@ label + .c3 {
                             type="hidden"
                             value="2010"
                           />
-                          2010
+                          <span
+                            class="c13"
+                          >
+                            2010
+                          </span>
                           <svg
                             aria-hidden="true"
-                            class="c13"
+                            class="c14"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -2932,7 +2958,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c14"
+      class="c15"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -2949,7 +2975,7 @@ label + .c3 {
 `;
 
 exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
-.c15 {
+.c16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2989,45 +3015,45 @@ exports[`Datepicker matches snapshot (open, hasTodayButton) 1`] = `
   user-select: none;
 }
 
-.c15:focus {
+.c16:focus {
   outline: none;
 }
 
-.c15:focus {
+.c16:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c15 > svg {
+.c16 > svg {
   color: inherit;
   height: var(--size-1x);
   width: var(--size-1x);
 }
 
-.c16 {
+.c17 {
   background-color: #FFFFFF;
   border-color: #006296;
   color: #006296;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   border-color: #006296;
   box-shadow: 0 0 0 2px #84C6EA;
 }
 
-.c16:hover,
-.c16[aria-expanded='true'] {
+.c17:hover,
+.c17[aria-expanded='true'] {
   border-color: #003A5A;
   color: #003A5A;
 }
 
-.c16:disabled {
+.c17:disabled {
   border-color: #84C6EA;
   color: #84C6EA;
 }
@@ -3111,6 +3137,11 @@ input + .c1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -3125,6 +3156,16 @@ input + .c1 {
 }
 
 .c13 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3134,6 +3175,9 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   height: var(--size-1x);
   margin-left: auto;
   padding: var(--spacing-half);
@@ -3361,13 +3405,13 @@ label + .c3 {
   outline: none;
 }
 
-.c14 {
+.c15 {
   clear: both;
   padding-top: var(--spacing-1x);
   text-align: center;
 }
 
-.c17 {
+.c18 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3389,11 +3433,11 @@ label + .c3 {
   width: var(--size-2x);
 }
 
-.c17:hover {
+.c18:hover {
   background-color: #DBDEE1;
 }
 
-.c17:focus {
+.c18:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -3401,7 +3445,7 @@ label + .c3 {
   z-index: 10;
 }
 
-.c17 > svg {
+.c18 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -3513,10 +3557,14 @@ label + .c3 {
                             type="hidden"
                             value="october"
                           />
-                          Oct
+                          <span
+                            class="c13"
+                          >
+                            Oct
+                          </span>
                           <svg
                             aria-hidden="true"
-                            class="c13"
+                            class="c14"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -3551,10 +3599,14 @@ label + .c3 {
                             type="hidden"
                             value="2010"
                           />
-                          2010
+                          <span
+                            class="c13"
+                          >
+                            2010
+                          </span>
                           <svg
                             aria-hidden="true"
-                            class="c13"
+                            class="c14"
                             color="currentColor"
                             data-testid="arrow"
                             focusable="false"
@@ -4113,11 +4165,11 @@ label + .c3 {
               </div>
             </div>
             <div
-              class="c14"
+              class="c15"
             >
               <button
                 aria-label="Choose today's date"
-                class="c15 c16"
+                class="c16 c17"
                 data-testid="today-button"
                 type="button"
               >
@@ -4134,7 +4186,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c17"
+      class="c18"
       data-testid="calendar-button"
       tabindex="0"
       type="button"
@@ -4230,6 +4282,11 @@ input + .c1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 var(--spacing-1x);
+  text-wrap: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -4244,6 +4301,16 @@ input + .c1 {
 }
 
 .c13 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4253,6 +4320,9 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   height: var(--size-1x);
   margin-left: auto;
   padding: var(--spacing-half);
@@ -4482,7 +4552,7 @@ label + .c3 {
   outline: none;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4504,11 +4574,11 @@ label + .c3 {
   width: var(--size-2halfx);
 }
 
-.c14:hover {
+.c15:hover {
   background-color: #DBDEE1;
 }
 
-.c14:focus {
+.c15:focus {
   border: 1px solid #006296;
   border-left: none;
   box-shadow: 0 0 0 2px #84C6EA;
@@ -4516,7 +4586,7 @@ label + .c3 {
   z-index: 10;
 }
 
-.c14 > svg {
+.c15 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -4624,10 +4694,14 @@ label + .c3 {
                               type="hidden"
                               value="october"
                             />
-                            Oct
+                            <span
+                              class="c13"
+                            >
+                              Oct
+                            </span>
                             <svg
                               aria-hidden="true"
-                              class="c13"
+                              class="c14"
                               color="currentColor"
                               data-testid="arrow"
                               focusable="false"
@@ -4662,10 +4736,14 @@ label + .c3 {
                               type="hidden"
                               value="2010"
                             />
-                            2010
+                            <span
+                              class="c13"
+                            >
+                              2010
+                            </span>
                             <svg
                               aria-hidden="true"
-                              class="c13"
+                              class="c14"
                               color="currentColor"
                               data-testid="arrow"
                               focusable="false"
@@ -5234,7 +5312,7 @@ label + .c3 {
     </div>
     <button
       aria-label="Choose date"
-      class="c14"
+      class="c15"
       data-testid="calendar-button"
       tabindex="0"
       type="button"

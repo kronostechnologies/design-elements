@@ -66,15 +66,25 @@ const Textbox = styled.div<TextboxProps>`
     height: ${({ $isMobile }) => ($isMobile ? 'var(--size-2halfx)' : 'var(--size-2x)')};
     justify-content: space-between;
     padding: 0 var(--spacing-1x);
+    text-wrap: none;
+    user-select: none;
     width: 100%;
     
     ${({ theme }) => focus({ theme }, true)};
+`;
+
+const TextWrapper = styled.span`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
 `;
 
 const Arrow = styled(Icon)<{ $disabled?: boolean }>`
     align-items: center;
     color: ${({ $disabled, theme }) => ($disabled ? theme.greys['mid-grey'] : theme.greys['dark-grey'])};
     display: flex;
+    flex: none;
     height: var(--size-1x);
     margin-left: auto;
     padding: var(--spacing-half);
@@ -258,13 +268,17 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
     }
 
     function handleListboxOptionClick(option: DropdownListOption): void {
-        if (option !== focusedOption) {
-            setFocusedOption(option);
+        if (optionPredicate(option)) {
+            if (option !== focusedOption) {
+                setFocusedOption(option);
+            }
+
+            if (option !== selectedOption) {
+                selectOption(option);
+            }
+
+            closeListbox();
         }
-        if (option !== selectedOption) {
-            selectOption(option);
-        }
-        closeListbox();
     }
 
     const handleFoundOption: (option?: DropdownListOption) => void = useCallback((option) => {
@@ -390,7 +404,7 @@ export const DropdownList: VoidFunctionComponent<DropdownListProps> = ({
                 {...dataAttributes /* eslint-disable-line react/jsx-props-no-spreading */}
             >
                 <input type="hidden" name={name} value={selectedOption?.value} data-testid="input" />
-                {selectedOption?.label ?? ''}
+                <TextWrapper>{selectedOption?.label ?? ''}</TextWrapper>
                 <Arrow
                     aria-hidden="true"
                     data-testid="arrow"
