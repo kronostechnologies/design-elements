@@ -1,6 +1,6 @@
 import { ReactText, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 import { Bar } from '../bar/bar';
 
 const Label = styled.label`

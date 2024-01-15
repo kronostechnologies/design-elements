@@ -26,6 +26,7 @@ export interface ComponentTokens {
     'button-primary-inverted-disabled-background-color': PaletteKeys | keyof AliasTokens;
     'button-primary-inverted-disabled-border-color': PaletteKeys | keyof AliasTokens;
     'button-primary-inverted-disabled-text-color': PaletteKeys | keyof AliasTokens;
+
     'button-secondary-background-color': PaletteKeys | keyof AliasTokens;
     'button-secondary-border-color': PaletteKeys | keyof AliasTokens;
     'button-secondary-text-color': PaletteKeys | keyof AliasTokens;
@@ -50,6 +51,7 @@ export interface ComponentTokens {
     'button-secondary-inverted-disabled-background-color': PaletteKeys | keyof AliasTokens;
     'button-secondary-inverted-disabled-border-color': PaletteKeys | keyof AliasTokens;
     'button-secondary-inverted-disabled-text-color': PaletteKeys | keyof AliasTokens;
+
     'button-tertiary-background-color': PaletteKeys | keyof AliasTokens;
     'button-tertiary-border-color': PaletteKeys | keyof AliasTokens;
     'button-tertiary-text-color': PaletteKeys | keyof AliasTokens;
@@ -74,6 +76,7 @@ export interface ComponentTokens {
     'button-tertiary-inverted-disabled-background-color': PaletteKeys | keyof AliasTokens;
     'button-tertiary-inverted-disabled-border-color': PaletteKeys | keyof AliasTokens;
     'button-tertiary-inverted-disabled-text-color': PaletteKeys | keyof AliasTokens;
+
     'button-destructive-background-color': PaletteKeys | keyof AliasTokens;
     'button-destructive-border-color': PaletteKeys | keyof AliasTokens;
     'button-destructive-text-color': PaletteKeys | keyof AliasTokens;
@@ -98,6 +101,32 @@ export interface ComponentTokens {
     'button-destructive-inverted-disabled-background-color': PaletteKeys | keyof AliasTokens;
     'button-destructive-inverted-disabled-border-color': PaletteKeys | keyof AliasTokens;
     'button-destructive-inverted-disabled-text-color': PaletteKeys | keyof AliasTokens;
+
+    'button-destructive-secondary-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-hover-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-hover-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-hover-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-disabled-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-disabled-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-disabled-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-focus-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-focus-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-focus-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-hover-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-hover-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-hover-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-focus-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-focus-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-focus-text-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-disabled-background-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-disabled-border-color': PaletteKeys | keyof AliasTokens;
+    'button-destructive-secondary-inverted-disabled-text-color': PaletteKeys | keyof AliasTokens;
+
     'button-search-background-color': PaletteKeys | keyof AliasTokens;
     'button-search-border-color': PaletteKeys | keyof AliasTokens;
     'button-search-text-color': PaletteKeys | keyof AliasTokens;

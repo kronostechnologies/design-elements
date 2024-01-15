@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react';
 import { Row } from 'react-table';
 import styled, { css, FlattenInterpolation, ThemedStyledProps, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 
 interface StyledTableRowProps {
     clickable: boolean;

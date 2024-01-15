@@ -10,7 +10,7 @@ import styled, {
 import { useTheme } from '../../hooks/use-theme';
 import { useToasts } from '../../hooks/use-toasts';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 import { IconButton, IconButtonProps } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, IconName, IconProps } from '../icon/icon';

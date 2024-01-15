@@ -1,6 +1,6 @@
 import { forwardRef, KeyboardEvent, MouseEvent, PropsWithChildren, ReactElement, Ref } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { AbstractButton, ButtonType, getButtonTypeStyles } from './abstract-button';
 

@@ -1,5 +1,5 @@
 import { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../themes';
+import { Theme } from '../themes/interface/theme';
 
 export const focus = ({ theme }: { theme: Theme }, hasBorder = false, selector: string | undefined = undefined, inset = false): string => `
     ${selector === undefined ? '&:focus { outline: none; }' : ''}

@@ -2,7 +2,7 @@ import { ChangeEvent, FocusEvent, useMemo, useState, VoidFunctionComponent } fro
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 import { v4 as uuid } from '../../utils/uuid';
 import { FieldContainer } from '../field-container/field-container';
 import { inputsStyle } from '../text-input/styles/inputs';

@@ -19,7 +19,7 @@ import DatePicker, { ReactDatePickerProps, registerLocale } from 'react-datepick
 import datepickerCss from 'react-datepicker/dist/react-datepicker.min.css';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes';
+import { Theme } from '../../themes/interface/theme';
 import { eventIsInside } from '../../utils/events';
 import { v4 as uuid } from '../../utils/uuid';
 import { Button } from '../buttons/button';

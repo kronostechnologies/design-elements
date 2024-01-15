@@ -79,7 +79,7 @@ export const AbstractButton = forwardRef<HTMLButtonElement, PropsWithChildren<Ab
 
 AbstractButton.displayName = 'AbstractButton';
 
-type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'destructive-secondary';
 
 export interface ButtonTypeStyles {
     buttonType: ButtonType;
