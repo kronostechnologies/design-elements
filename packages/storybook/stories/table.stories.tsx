@@ -2,12 +2,18 @@ import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements
 import { StoryFn as Story } from '@storybook/react';
 import { VoidFunctionComponent, useMemo } from 'react';
 import styled from 'styled-components';
+import { decorateWith } from './utils/decorator';
 import { rawCodeParameters } from './utils/parameters';
+
+const Decorator = styled.div`
+    background-color: white;
+`;
 
 export default {
     title: 'Components/Structure/Table',
     component: Table,
     parameters: rawCodeParameters,
+    decorators: [decorateWith(Decorator)],
 };
 
 interface Data {
@@ -15,12 +21,6 @@ interface Data {
     column2: string;
     column3: string;
 }
-
-const Wrap = styled.div`
-    background-color: white;
-    max-height: 400px;
-    overflow: scroll;
-`;
 
 export const Normal: Story = () => {
     const columns: TableColumn<Data> = [
@@ -56,9 +56,7 @@ export const Normal: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table columns={columns} data={data} />
-        </Wrap>
+        <Table columns={columns} data={data} />
     );
 };
 
@@ -115,9 +113,7 @@ export const WithFooter: Story = () => {
     ];
 
     return (
-        <Wrap>
-            <Table columns={columns} data={data} />
-        </Wrap>
+        <Table columns={columns} data={data} />
     );
 };
 
@@ -172,9 +168,7 @@ export const WithColumnClassnames: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <StyledTable columns={columns} data={data} />
-        </Wrap>
+        <StyledTable columns={columns} data={data} />
     );
 };
 
@@ -214,9 +208,7 @@ export const ErrorRows: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table columns={columns} data={data} />
-        </Wrap>
+        <Table columns={columns} data={data} />
     );
 };
 
@@ -254,9 +246,7 @@ export const Striped: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table striped columns={columns} data={data} />
-        </Wrap>
+        <Table striped columns={columns} data={data} />
     );
 };
 
@@ -294,9 +284,7 @@ export const RowNumbers: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table rowNumbers columns={columns} data={data} />
-        </Wrap>
+        <Table rowNumbers columns={columns} data={data} />
     );
 };
 
@@ -334,9 +322,7 @@ export const SmallRows: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table rowSize="small" columns={columns} data={data} />
-        </Wrap>
+        <Table rowSize="small" columns={columns} data={data} />
     );
 };
 
@@ -379,16 +365,14 @@ export const RowClickCallback: Story = () => {
     ];
 
     return (
-        <Wrap>
-            <Table<DataWithHref>
-                columns={columns}
-                data={data}
-                onRowClick={(row) => {
-                    console.info('row: ', row);
-                    console.info('href: ', row.original.href);
-                }}
-            />
-        </Wrap>
+        <Table<DataWithHref>
+            columns={columns}
+            data={data}
+            onRowClick={(row) => {
+                console.info('row: ', row);
+                console.info('href: ', row.original.href);
+            }}
+        />
     );
 };
 
@@ -424,9 +408,7 @@ export const CustomTextAlignment: Story = () => {
     ];
 
     return (
-        <Wrap>
-            <Table columns={columns} data={data} />
-        </Wrap>
+        <Table columns={columns} data={data} />
     );
 };
 
@@ -489,9 +471,7 @@ export const CustomColumns: Story = () => {
     ];
 
     return (
-        <Wrap>
-            <Table<ComplexData> columns={columns} data={data} />
-        </Wrap>
+        <Table<ComplexData> columns={columns} data={data} />
     );
 };
 
@@ -533,9 +513,7 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table<SortableData> columns={columns} data={data} />
-        </Wrap>
+        <Table<SortableData> columns={columns} data={data} />
     );
 };
 
@@ -574,9 +552,7 @@ export const SelectableRows: Story = () => {
         },
     ];
     return (
-        <Wrap>
-            <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
-        </Wrap>
+        <Table<SelectableData> selectableRows columns={columns} data={data} onSelectedRowsChange={console.info} />
     );
 };
 
@@ -597,6 +573,12 @@ interface StickyData {
     column14: string;
     column15: string,
 }
+
+const Wrap = styled.div`
+    background-color: inherit;
+    height: 400px;
+    overflow: scroll;
+`;
 
 export const Sticky: Story = () => {
     const columns: TableColumn<StickyData> = [
