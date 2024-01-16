@@ -394,6 +394,7 @@ export const Table = <T extends object>({
         >
             <StyledTableHead>
                 {headerGroups.map((headerGroup) => (
+                    /* eslint-disable-next-line max-len */
                     <StyledTableRow {...headerGroup.getHeaderGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                         {headerGroup.headers.map((column) => getHeading(column, stickyHeader))}
                     </StyledTableRow>
@@ -417,6 +418,7 @@ export const Table = <T extends object>({
             {hasFooter && (
                 <StyledTableFooter>
                     {footerGroups.map((group) => (
+                        /* eslint-disable-next-line max-len */
                         <StyledFooterTableRow {...group.getFooterGroupProps() /* eslint-disable-line react/jsx-props-no-spreading */}>
                             {group.headers.map((column) => (
                                 getFooter(column, stickyFooter)

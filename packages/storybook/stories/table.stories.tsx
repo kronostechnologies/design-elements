@@ -16,6 +16,12 @@ interface Data {
     column3: string;
 }
 
+const Wrap = styled.div`
+    background-color: white;
+    max-height: 400px;
+    overflow: scroll;
+`;
+
 export const Normal: Story = () => {
     const columns: TableColumn<Data> = [
         {
@@ -591,12 +597,6 @@ interface StickyData {
     column14: string;
     column15: string,
 }
-
-const Wrap = styled.div`
-    max-height: 400px;
-    overflow: scroll;
-    background-color: white;
-`;
 
 export const Sticky: Story = () => {
     const columns: TableColumn<StickyData> = [
