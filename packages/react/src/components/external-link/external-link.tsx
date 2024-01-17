@@ -45,7 +45,7 @@ export interface ExternalLinkProps {
     label?: string;
     target?: string;
 
-    onClick?(): void;
+    onClick?(event: MouseEvent<Element, globalThis.MouseEvent>): void;
 }
 
 export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
@@ -64,7 +64,7 @@ export const ExternalLink: VoidFunctionComponent<ExternalLinkProps> = ({
         if (!href) {
             event.preventDefault();
         }
-        onClick?.();
+        onClick?.(event);
     }, [href, onClick]);
 
     return (
