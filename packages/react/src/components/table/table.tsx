@@ -154,7 +154,7 @@ const StyledTable = styled.table<StyledTableProps>`
         margin: 0;
         text-align: left;
 
-        :last-child {
+        &:last-child {
             border-right: 0;
         }
     }
