@@ -9,6 +9,7 @@ import {
     SortingState,
     SortingFn,
     useReactTable,
+    ColumnSort,
 } from '@tanstack/react-table';
 import { TableRow } from './table-row';
 import { TableHeader } from './table-header';
@@ -193,6 +194,7 @@ export interface TableProps<T extends object> {
     stickyFooter?: boolean;
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
+    initialSorting?: ColumnSort;
 }
 
 export const Table = <T extends object>({
@@ -207,10 +209,11 @@ export const Table = <T extends object>({
     striped = false,
     onRowClick,
     onSelectedRowsChange,
+    initialSorting,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
-    const [sorting, setSorting] = useState<SortingState>([]);
+    const [sorting, setSorting] = useState<SortingState>(initialSorting ? [initialSorting] : []);
     const [rowSelection, setRowSelection] = useState({});
 
     // Add custom columns for row numbers and row selection
@@ -231,6 +234,7 @@ export const Table = <T extends object>({
             sorting,
             rowSelection,
         },
+        enableMultiSort: false,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
         onSortingChange: setSorting,

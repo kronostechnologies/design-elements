@@ -490,7 +490,6 @@ export const SortableRows: Story = () => {
             header: 'Column 2',
             accessorKey: 'column2',
             sortable: true,
-            defaultSort: 'asc',
         },
         {
             header: 'Column 3',
@@ -512,7 +511,7 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Table<SortableData> columns={columns} data={data} />
+        <Table<SortableData> columns={columns} data={data} initialSorting={{ id: 'column2', desc: false }} />
     );
 };
 
