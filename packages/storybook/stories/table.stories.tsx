@@ -1164,9 +1164,6 @@ export const Optimization: Story = () => {
             <Table
                 columns={columns}
                 data={data}
-                stickyHeader
-                stickyFooter
-                onRowClick={(row) => console.info('row: ', row)}
             />
         </>
     );
