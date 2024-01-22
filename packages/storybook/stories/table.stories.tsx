@@ -1101,9 +1101,9 @@ interface OptimizationData {
 
 /**
  * The table will always update the table with the new data and columns when React is re-rendering this component.
- * But the important key factor here is that if you pass a new **columns** object, the Table will unmount and re-mount
- * each cell (instead of the usual React update). So it is very important to memoize the columns object (ex: useMemo)
- * and reuse it as much as possible to prevent that.
+ * But the important key here is if you pass a different **columns** object, the Table will UNMOUNT and RE-MOUNT
+ * every cell (instead of the usual React update). So it is very important to memoize the columns object (ex: using
+ * useMemo) and reuse it as much as possible.
  *
  * If your memoized columns need to be recreated because it has dependencies, you could pass these dependencies via
  * useRef instead. This way you will always retrieve the current value of that variable.
