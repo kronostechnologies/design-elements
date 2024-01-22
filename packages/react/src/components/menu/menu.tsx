@@ -96,6 +96,14 @@ const Button = styled.button<ButtonProps>`
     &:hover {
         background-color: ${({ theme }) => theme.greys.grey};
     }
+
+    &[disabled],
+    &[disabled] * {
+        color: ${({ theme }) => theme.greys['mid-grey']};
+        cursor: default;
+        fill: ${({ theme }) => theme.greys['mid-grey']};
+        pointer-events: none;
+    }
 `;
 
 const GroupLabel = styled.span<{ $device: DeviceContextProps }>`
@@ -120,6 +128,7 @@ export interface MenuOption {
     label: string;
     iconName?: IconName;
     options?: MenuItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
+    disabled?: boolean;
     onClick?(): void;
 }
 
@@ -348,6 +357,7 @@ export const Menu = forwardRef(({
                             type="button"
                             role="menuitem"
                             tabIndex={-1}
+                            disabled={opt.disabled}
                             onClick={() => handleOptionClick(opt)}
                             onMouseEnter={() => handleMouseEnter(opt)}
                             onMouseLeave={() => handleMouseLeave(opt)}

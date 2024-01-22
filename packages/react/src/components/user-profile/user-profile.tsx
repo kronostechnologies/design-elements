@@ -98,8 +98,10 @@ export const UserProfile: VoidFunctionComponent<UserProfileProps> = ({
                                 href={action.href}
                                 label={action.label}
                                 isHtmlLink={action.isHtmlLink}
+                                isExternalLink={action.isExternalLink}
                                 lozenge={action.lozenge}
                                 disabled={action.disabled}
+                                target={action.target}
                                 onClick={action.disabled ? undefined : (event) => {
                                     action.onClick?.(event);
                                     close();
