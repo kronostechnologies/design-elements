@@ -1,4 +1,4 @@
-import { ComponentTokens } from './component-tokens';
+import { ComponentTokens } from '../interface';
 
 export const defaultComponentTokens: ComponentTokens = {
     'button-primary-background-color': 'color-brand-50',

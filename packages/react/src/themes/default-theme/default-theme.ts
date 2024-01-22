@@ -1,5 +1,6 @@
-import { Theme, ThemeCustomization } from './interface/theme';
-import { Palette, TextAttributes, defaultComponentTokens, AliasTokens } from './interface';
+import { Theme, ThemeCustomization } from '../interface/theme';
+import { Palette, TextAttributes, AliasTokens } from '../interface';
+import { defaultComponentTokens } from './default-component-tokens';
 
 export const defaultMain: Theme['main'] = {
     'primary-1.1': '#006296',

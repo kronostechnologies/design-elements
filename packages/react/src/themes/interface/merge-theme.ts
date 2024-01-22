@@ -1,4 +1,4 @@
-import { defaultMain, defaultGreys, defaultNotifications, defaultTokens, defaultTheme } from '../default-theme';
+import { defaultMain, defaultGreys, defaultNotifications, defaultTokens, defaultTheme } from '../default-theme/default-theme';
 import { AliasTokenKeys, AliasTokens } from './alias-tokens';
 import { ComponentTokens } from './component-tokens';
 import { RefTokenKeys, RefTokens } from './ref-tokens';
