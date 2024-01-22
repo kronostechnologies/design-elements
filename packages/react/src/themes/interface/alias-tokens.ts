@@ -1,6 +1,8 @@
 import { RefTokens } from './ref-tokens';
 
 export interface AliasTokens {
-    // Allow either color tokens from the palette or other alias tokens
-    [key: string]: keyof RefTokens | keyof AliasTokens;
+    'button-color-secondary': keyof AliasTokens | keyof RefTokens;
+    'interaction-color': keyof AliasTokens | keyof RefTokens;
 }
+
+export type AliasTokenKeys = keyof AliasTokens;

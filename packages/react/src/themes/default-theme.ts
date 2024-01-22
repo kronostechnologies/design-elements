@@ -1,7 +1,7 @@
-import { Theme } from './interface/theme';
-import { Palette, generateTokens } from './interface';
+import { Theme, ThemeCustomization } from './interface/theme';
+import { Palette, TextAttributes, defaultComponentTokens, AliasTokens } from './interface';
 
-export const main: Theme['main'] = {
+export const defaultMain: Theme['main'] = {
     'primary-1.1': '#006296',
     'primary-1.2': '#84C6EA',
     'primary-1.3': '#003A5A',
@@ -13,7 +13,7 @@ export const main: Theme['main'] = {
     'secondary-4.3': '#D41F14',
 };
 
-export const greys: Theme['greys'] = {
+export const defaultGreys: Theme['greys'] = {
     white: '#FFFFFF',
     'neutral-90': '#1B1C1E',
     'colored-white': '#FAFAFA',
@@ -24,7 +24,7 @@ export const greys: Theme['greys'] = {
     black: '#000000',
 };
 
-export const notifications: Theme['notifications'] = {
+export const defaultNotifications: Theme['notifications'] = {
     'info-1.1': '#006296',
     'discovery-1.1': '#602FA0',
     'neutral-1.1': '#878F9A',
@@ -39,12 +39,12 @@ export const notifications: Theme['notifications'] = {
     'warning-3.4': '#A36D00',
 };
 
-export const tokens: Theme['tokens'] = {
-    'focus-box-shadow': `0 0 0 2px ${main['primary-1.2']}`,
-    'focus-box-shadow-inset': `inset 0 0 0 2px ${main['primary-1.2']}`,
-    'focus-border-box-shadow': ` 0 0 0 1px ${main['primary-1.1']}, 0 0 0 3px ${main['primary-1.2']}`,
-    'focus-border-box-shadow-inset': `inset 0 0 0 2px ${main['primary-1.2']}, inset 0 0 0 3px ${main['primary-1.1']}`,
-    'focus-border': `${main['primary-1.1']}`,
+export const defaultTokens: Theme['tokens'] = {
+    'focus-box-shadow': `0 0 0 2px ${defaultMain['primary-1.2']}`,
+    'focus-box-shadow-inset': `inset 0 0 0 2px ${defaultMain['primary-1.2']}`,
+    'focus-border-box-shadow': ` 0 0 0 1px ${defaultMain['primary-1.1']}, 0 0 0 3px ${defaultMain['primary-1.2']}`,
+    'focus-border-box-shadow-inset': `inset 0 0 0 2px ${defaultMain['primary-1.2']}, inset 0 0 0 3px ${defaultMain['primary-1.1']}`,
+    'focus-border': `${defaultMain['primary-1.1']}`,
     'modal-overlay-background-color': 'rgba(0, 0, 0, 0.75)',
     'overlay-box-shadow': '0 10px 20px 0 rgba(0, 0, 0, 0.19)',
 };
@@ -95,14 +95,21 @@ export const defaultPalette: Palette = {
     'color-discovery-70': '#3A1C60',
 };
 
-export const defaultTheme: Theme = {
-    main,
-    greys,
-    notifications,
-    tokens,
-    ref: defaultPalette,
-    alias: {
-        'accent-color-05': 'color-brand-05',
+export const defaultTextAttributes: TextAttributes = {
+    'font-weight-bold': 'bold',
+    transparent: 'transparent',
+};
+
+export const defaultAlias: AliasTokens = {
+    'button-color-secondary': 'color-brand-05',
+    'interaction-color': 'color-brand-50',
+};
+
+export const defaultTheme: ThemeCustomization = {
+    ref: {
+        ...defaultPalette,
+        ...defaultTextAttributes,
     },
-    component: generateTokens(defaultPalette),
+    alias: defaultAlias,
+    component: defaultComponentTokens,
 };

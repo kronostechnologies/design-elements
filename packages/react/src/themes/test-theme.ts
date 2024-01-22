@@ -1,28 +1,26 @@
-import { defaultTheme } from './default-theme';
-import { Theme, ThemeCustomization } from './interface/theme';
-
-export const testTheme: Theme = {
-    main: {
-        'primary-1.1': '#9EB3FF',
-        'primary-1.2': '#84B4E8',
-        'primary-1.3': '#8984E8',
-        'primary-2': '#282D40',
-        'primary-3': '#8EA1E6',
-        'primary-1.4': '#E0F0F9',
-        'secondary-4.1': '#B3974B',
-        'secondary-4.2': '#736130',
-        'secondary-4.3': '#FFD86B',
-    },
-    greys: defaultTheme.greys,
-    notifications: defaultTheme.notifications,
-    tokens: defaultTheme.tokens,
-    ref: defaultTheme.ref,
-    alias: defaultTheme.alias,
-    component: defaultTheme.component,
-};
+import { ThemeCustomization } from './interface/theme';
 
 export const customTheme: ThemeCustomization = {
-    ref: defaultTheme.ref,
-    alias: defaultTheme.alias,
-    component: defaultTheme.component,
+    ref: {
+        'color-brand-50': '#00874E',
+        'color-brand-20': '#9EDBC1',
+        'color-brand-70': '#0B5E37',
+        'color-brand-05': '#E5F3ED',
+        'color-brand-80': '#00874E',
+        'color-accent-50': '#00874E',
+        'color-accent-20': '#CC9B0B',
+        'color-accent-70': '#3F474C',
+    },
+    alias: {
+        'button-color-secondary': 'color-brand-70',
+        'interaction-color': 'color-accent-70',
+    },
+    component: {
+        'button-primary-background-color': 'color-brand-50',
+        'button-primary-inverted-background-color': 'color-white',
+        'button-primary-border-color': 'color-brand-50',
+        'button-primary-inverted-border-color': 'color-white',
+        'button-primary-text-color': 'color-white',
+        'button-primary-inverted-text-color': 'color-brand-50',
+    },
 };

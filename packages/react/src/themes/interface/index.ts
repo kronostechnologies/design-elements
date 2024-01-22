@@ -1,5 +1,6 @@
 export { Palette, PaletteKeys } from './palette';
-export { RefTokens } from './ref-tokens';
-export { AliasTokens } from './alias-tokens';
-export { ComponentTokens } from './component-tokens';
-export { generateTokens } from './tokens-generator';
+export { TextAttributes, TextAttributeKeys } from './text-attributes';
+export { RefTokens, RefTokenKeys } from './ref-tokens';
+export { AliasTokens, AliasTokenKeys } from './alias-tokens';
+export { ComponentTokens, ComponentTokensKeys } from './component-tokens';
+export { defaultComponentTokens } from './tokens-generator';

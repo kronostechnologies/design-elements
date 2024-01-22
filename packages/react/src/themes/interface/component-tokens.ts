@@ -136,3 +136,9 @@ export interface ComponentTokens {
     'button-search-disabled-border-color': keyof RefTokens | keyof AliasTokens;
     'button-search-disabled-text-color': keyof RefTokens | keyof AliasTokens;
 }
+
+export type ComponentTokensKeys = keyof ComponentTokens;
+
+export type ComponentTokensColors = {
+    [key in keyof ComponentTokens]: string;
+};

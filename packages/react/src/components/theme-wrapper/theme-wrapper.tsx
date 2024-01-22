@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { equisoftTheme } from '../../themes';
 import { mergeTheme } from '../../themes/interface/merge-theme';
-import { Theme, ThemeCustomization } from '../../themes/interface/theme';
+import { ThemeCustomization } from '../../themes/interface/theme';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 export interface ThemeWrapperProps {
@@ -12,7 +12,7 @@ export interface ThemeWrapperProps {
      * @default false
      */
     isolateStyles?: boolean;
-    theme?: Theme | ThemeCustomization;
+    theme?: ThemeCustomization;
 }
 
 /**
@@ -23,10 +23,7 @@ export const ThemeWrapper: FunctionComponent<PropsWithChildren<ThemeWrapperProps
     isolateStyles = false,
     theme,
 }) => {
-    let selectedTheme = equisoftTheme;
-    if (theme) {
-        selectedTheme = mergeTheme(theme);
-    }
+    const selectedTheme = mergeTheme(theme || equisoftTheme);
 
     let content: ReactNode;
     if (isolateStyles) {

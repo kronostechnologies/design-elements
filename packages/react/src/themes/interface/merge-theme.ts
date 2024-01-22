@@ -1,63 +1,62 @@
-import { defaultTheme } from '../default-theme';
+import { defaultMain, defaultGreys, defaultNotifications, defaultTokens, defaultTheme } from '../default-theme';
+import { AliasTokenKeys, AliasTokens } from './alias-tokens';
+import { ComponentTokens } from './component-tokens';
+import { RefTokenKeys, RefTokens } from './ref-tokens';
 import { Theme, ThemeCustomization } from './theme';
 
-/*
- import { AliasTokens } from './alias-tokens';
- import { RefTokens } from './ref-tokens';
-
-function resolveTokenValue(token: keyof RefTokens | keyof AliasTokens, theme: Theme): string {
-    // Check if the token is a palette color
-    if (theme.ref[token as keyof RefTokens]) {
-        return theme.ref[token as keyof RefTokens];
-    }
-
-    // If it's an alias token, recursively resolve it
-    const aliasValue = theme.alias[token as keyof AliasTokens];
-    if (aliasValue) {
-        return resolveTokenValue(aliasValue, theme);
-    }
-
-    // Fallback in case of unresolved token
-    throw new Error(`Token '${token}' not found in RefTokens or AliasTokens`);
-}
-*/
-
 export function mergeTheme(customization: ThemeCustomization): Theme {
-    const finalTheme = { ...defaultTheme };
-
-    // Resolve and merge ref tokens
-    if (customization.ref) {
-        finalTheme.ref = { ...finalTheme.ref, ...customization.ref };
-        console.log('Default RefTokens: ', defaultTheme.ref);
-        console.log('Customization RefTokens: ', customization.ref);
-        console.log('Final RefTokens: ', finalTheme.ref);
-    }
-
-    /*
-    // Resolve and merge alias tokens
-    if (customization.alias) {
-        finalTheme.alias = { ...finalTheme.alias, ...customization.alias };
-        // Object.keys(finalTheme.alias).forEach((key) => {
-        // finalTheme.alias[key] = resolveTokenValue(finalTheme.alias[key], finalTheme);
-        // });
-    }
-
-    // Resolve and merge component tokens
-    if (customization.component) {
-        finalTheme.component = { ...finalTheme.component, ...customization.component };
-        // Object.keys(finalTheme.component).forEach((key) => {
-        // finalTheme.component[key] = resolveTokenValue(finalTheme.component[key], finalTheme);
-        // });
-    }
-*/
-    // Return the computed Theme object
-    return {
-        main: defaultTheme.main,
-        greys: defaultTheme.greys,
-        notifications: defaultTheme.notifications,
-        tokens: defaultTheme.tokens,
-        ref: finalTheme.ref,
-        alias: finalTheme.alias,
-        component: finalTheme.component,
+    // Merge the default theme with the customization provided
+    const mergedTheme: ThemeCustomization = {
+        ref: { ...defaultTheme.ref, ...customization.ref },
+        alias: { ...defaultTheme.alias, ...customization.alias },
+        component: { ...defaultTheme.component, ...customization.component },
     };
+
+    function isRefToken(token: string): token is RefTokenKeys {
+        // @ts-ignore-typing
+        return mergedTheme.ref && token in mergedTheme.ref;
+    }
+
+    function isAliasToken(token: string): token is AliasTokenKeys {
+        // @ts-ignore-typing
+        return mergedTheme.alias && token in mergedTheme.alias;
+    }
+
+    // Resolve references within the theme
+    function resolveToken(token: keyof AliasTokens | keyof RefTokens | undefined): string {
+        if (token && isRefToken(token)) {
+            return mergedTheme.ref![token];
+        }
+
+        if (token && isAliasToken(token)) {
+            const aliasToken = mergedTheme.alias![token];
+            return resolveToken(aliasToken);
+        }
+
+        // Fallback in case of unresolved token
+        throw new Error(`Token '${token}' not found in RefTokens or AliasTokens`);
+    }
+
+    // Final theme with resolved values
+    const finalTheme: Theme = {
+        main: defaultMain,
+        greys: defaultGreys,
+        notifications: defaultNotifications,
+        tokens: defaultTokens,
+        ref: mergedTheme.ref as RefTokens,
+        alias: mergedTheme.alias as AliasTokens,
+        component: {} as ComponentTokens,
+    };
+
+    // Resolve component tokens
+    if (mergedTheme.component) {
+        Object.keys(mergedTheme.component).forEach((key) => {
+            if (Object.prototype.hasOwnProperty.call(mergedTheme.component, key)) {
+                const token = mergedTheme.component![key as keyof ComponentTokens];
+                finalTheme.component[key as keyof ComponentTokens] = resolveToken(token);
+            }
+        });
+    }
+
+    return finalTheme;
 }
