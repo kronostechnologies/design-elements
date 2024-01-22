@@ -15,7 +15,6 @@ type CustomColumnDef<TData extends object, TValue> = ColumnDef<TData, TValue> & 
     sticky?: boolean;
     sortable?: boolean;
     iconAlign?: 'left' | 'right';
-    defaultSort?: 'asc' | 'desc';
 };
 
 interface CustomHeader<TData extends object, TValue> extends Header<TData, TValue> {
@@ -74,13 +73,12 @@ function getHeading<TData extends object, TValue>(
     header: CustomHeader<TData, TValue>,
 ): ReactElement {
     const currentSort = header.column.getIsSorted();
-    const defaultSort = header.column.columnDef.defaultSort;
     let sortState: SortState = 'none';
 
-    if (currentSort) {
-        sortState = currentSort === 'asc' ? 'ascending' : 'descending';
-    } else if (defaultSort) {
-        sortState = defaultSort === 'asc' ? 'ascending' : 'descending';
+    if (currentSort === 'asc') {
+        sortState = 'ascending';
+    } else if (currentSort === 'desc') {
+        sortState = 'descending';
     }
 
     if (!header.column.columnDef.sortable) {

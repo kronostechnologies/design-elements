@@ -511,7 +511,7 @@ export const SortableRows: Story = () => {
         },
     ];
     return (
-        <Table<SortableData> columns={columns} data={data} initialSorting={{ id: 'column2', desc: false }} />
+        <Table<SortableData> columns={columns} data={data} defaultSort={{ id: 'column2', desc: false }} />
     );
 };
 

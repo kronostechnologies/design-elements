@@ -19,7 +19,6 @@ import { DeviceType, useDeviceContext } from '../device-context-provider/device-
 import { Theme } from '../../themes';
 
 type RowSize = 'small' | 'medium';
-type ColumnSortDirection = 'asc' | 'desc';
 
 interface StyledTableProps {
     clickableRows: boolean;
@@ -30,7 +29,6 @@ interface StyledTableProps {
 }
 
 type CustomColumn<T extends object> = ColumnDef<T> & {
-    defaultSort?: ColumnSortDirection;
     sortable?: boolean;
     textAlign?: CSSProperties['textAlign'];
     className?: string;
@@ -172,6 +170,7 @@ const StyledTable = styled.table<StyledTableProps>`
 
 export interface TableProps<T extends object> {
     data: T[];
+    defaultSort?: ColumnSort;
     columns: ColumnDef<T>[];
     /**
      * Adds row numbers
@@ -194,12 +193,12 @@ export interface TableProps<T extends object> {
     stickyFooter?: boolean;
     onRowClick?(row: Row<T>): void;
     onSelectedRowsChange?(selectedRows: T[]): void;
-    initialSorting?: ColumnSort;
 }
 
 export const Table = <T extends object>({
     className,
     data,
+    defaultSort,
     columns: defaultColumns,
     stickyHeader = false,
     stickyFooter = false,
@@ -209,11 +208,10 @@ export const Table = <T extends object>({
     striped = false,
     onRowClick,
     onSelectedRowsChange,
-    initialSorting,
 }: TableProps<T>): ReactElement => {
     const tableRef = useRef<HTMLTableElement>(null);
     const { device } = useDeviceContext();
-    const [sorting, setSorting] = useState<SortingState>(initialSorting ? [initialSorting] : []);
+    const [sorting, setSorting] = useState<SortingState>(defaultSort ? [defaultSort] : []);
     const [rowSelection, setRowSelection] = useState({});
 
     // Add custom columns for row numbers and row selection
