@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { Table, TableColumn, TableRow, Tooltip } from '@equisoft/design-elements-react';
+import { ReactElement, useMemo, useRef, useState } from 'react';
+import { Button, Table, TableColumn, TableRow, TextInput, Tooltip } from '@equisoft/design-elements-react';
 import { StoryFn as Story } from '@storybook/react';
 import styled from 'styled-components';
 import { rawCodeParameters } from './utils/parameters';
@@ -1090,5 +1090,84 @@ export const StickyHeaderAndFooter: Story = () => {
                 onRowClick={(row) => console.info('row: ', row)}
             />
         </Wrap>
+    );
+};
+
+interface OptimizationData {
+    id: number;
+    name: string;
+    country: string;
+}
+
+/**
+ * The table will always update the table with the new data and columns when React is re-rendering this component.
+ * But the important key factor here is that if you pass a new **columns** object, the Table will unmount and re-mount
+ * each cell (instead of the usual React update). So it is very important to memoize the columns object (ex: useMemo)
+ * and reuse it as much as possible to prevent that.
+ *
+ * If your memoized columns need to be recreated because it has dependencies, you could pass these dependencies via
+ * useRef instead. This way you will always retrieve the current value of that variable.
+ */
+export const Optimization: Story = () => {
+    const [data, setData] = useState<OptimizationData[]>([
+        {
+            id: 1,
+            name: 'Jennifer',
+            country: 'Canada',
+        },
+        {
+            id: 2,
+            name: 'William',
+            country: 'USA',
+        },
+    ]);
+
+    const [allowEditing, setAllowEditing] = useState<boolean>(true);
+
+    const allowEditingRef = useRef<boolean>();
+    allowEditingRef.current = allowEditing;
+
+    const columns: TableColumn<OptimizationData> = useMemo(() => [
+        {
+            header: 'ID',
+            accessorKey: 'id',
+        },
+        {
+            header: 'Name',
+            accessorKey: 'name',
+            // eslint-disable-next-line react/no-unstable-nested-components
+            cell: ({ row }) => (allowEditingRef.current ? (
+                <TextInput
+                    noMargin
+                    value={row.original.name}
+                    onChange={(event) => {
+                        setData((prev) => prev.map((d) => (
+                            d.id === row.original.id
+                                ? { ...d, name: event.target.value }
+                                : d
+                        )));
+                    }}
+                />
+            ) : row.original.name),
+        },
+        {
+            header: 'Country',
+            accessorKey: 'country',
+        },
+    ], []);
+
+    return (
+        <>
+            <Button type="button" buttonType='secondary' onClick={() => setAllowEditing(!allowEditing)}>
+                Toggle Editable
+            </Button>
+            <Table
+                columns={columns}
+                data={data}
+                stickyHeader
+                stickyFooter
+                onRowClick={(row) => console.info('row: ', row)}
+            />
+        </>
     );
 };
