@@ -558,6 +558,7 @@ input + .c1 {
   <span
     aria-live="polite"
     class="c3"
+    data-testid="invalid-error-message"
     id="uuid1_invalid"
     role="alert"
   >

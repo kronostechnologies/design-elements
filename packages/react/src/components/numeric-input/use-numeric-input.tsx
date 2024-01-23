@@ -6,6 +6,7 @@ import {
     FocusEvent,
     FocusEventHandler,
     useCallback,
+    useEffect,
     useState,
 } from 'react';
 import { isNumber, isWithinPrecision, truncateAtPrecision } from '../../utils/math';
@@ -82,16 +83,6 @@ export function useNumericInput({
     );
     const [validationErrorMessage, setValidationErrorMessage] = useState<string | undefined>();
 
-    if (providedValue !== undefined) {
-        const validatedProvidedValue = validateProvidedValue(providedValue);
-        if (validatedProvidedValue !== inputValue) {
-            setInputValue(validatedProvidedValue);
-        }
-    }
-
-    const isInvalid = invalid ?? (providedValidationErrorMessage !== undefined || validationErrorMessage !== undefined);
-    const errorMessage = (providedValidationErrorMessage ?? validationErrorMessage);
-
     const validate = useCallback((value: string): void => {
         let error: string | undefined;
 
@@ -147,6 +138,24 @@ export function useNumericInput({
         validate(value);
         onBlur?.(event, createCallbackData(value));
     }, [onBlur, validate]);
+
+    useEffect(() => {
+        if (inputValue !== '') {
+            validate(inputValue);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    if (providedValue !== undefined) {
+        const validatedProvidedValue = validateProvidedValue(providedValue);
+        if (validatedProvidedValue !== inputValue) {
+            setInputValue(validatedProvidedValue);
+            validate(validatedProvidedValue);
+        }
+    }
+
+    const isInvalid = invalid ?? (providedValidationErrorMessage !== undefined || validationErrorMessage !== undefined);
+    const errorMessage = (providedValidationErrorMessage ?? validationErrorMessage);
 
     return {
         max,

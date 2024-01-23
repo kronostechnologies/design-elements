@@ -29,6 +29,7 @@ const InvalidField: VoidFunctionComponent<InvalidFieldProps> = ({ controlId, fee
 
     return (
         <Field
+            data-testid="invalid-error-message"
             aria-live="polite"
             id={`${controlId}_invalid`}
             isMobile={isMobile}
