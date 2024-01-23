@@ -34,6 +34,11 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
 
         if (token && isAliasToken(token)) {
             const aliasToken = mergedTheme.alias![token];
+
+            if (aliasToken === token) {
+                throw new Error(`Self-referencing AliasToken detected: '${token}'`);
+            }
+
             return resolveToken(aliasToken);
         }
 

@@ -1,5 +1,5 @@
 import { render, shallow } from 'enzyme';
-import { Button, testTheme } from '../..';
+import { Button, themeCustomization1, themeCustomization2 } from '../..';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 import { ThemeWrapper } from './theme-wrapper';
 
@@ -14,14 +14,21 @@ describe('Theme Wrapper', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('Returns component with test theme', () => {
-        const tree = render(
-            <ThemeWrapper theme={testTheme}>
+    test('Returns component with custom theme', () => {
+        const tree1 = render(
+            <ThemeWrapper theme={themeCustomization1}>
                 <Button buttonType="primary" />
             </ThemeWrapper>,
         );
 
-        expect(tree).toMatchSnapshot();
+        const tree2 = render(
+            <ThemeWrapper theme={themeCustomization2}>
+                <Button buttonType="primary" />
+            </ThemeWrapper>,
+        );
+
+        expect(tree1).toMatchSnapshot();
+        expect(tree2).toMatchSnapshot();
     });
 
     test('should not use ShadowWrapper by default', () => {

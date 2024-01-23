@@ -2,7 +2,7 @@ import { Theme, ThemeCustomization } from '../interface/theme';
 import {
     AliasTokenMap,
     TextAttributeTokenMap,
-    PaletteTokenMap,
+    PaletteTokenMap, RefTokenMap,
 } from '../interface';
 import { defaultComponentTokens } from './default-component-tokens';
 
@@ -105,16 +105,18 @@ export const defaultTextAttributeTokens: TextAttributeTokenMap = {
     transparent: 'transparent',
 };
 
+export const defaultRefTokens: RefTokenMap = {
+    ...defaultPaletteTokens,
+    ...defaultTextAttributeTokens,
+};
+
 export const defaultAliasTokens: AliasTokenMap = {
     'button-color-secondary': 'color-brand-05',
     'interaction-color': 'color-brand-50',
 };
 
 export const defaultThemeCustomization: ThemeCustomization = {
-    ref: {
-        ...defaultPaletteTokens,
-        ...defaultTextAttributeTokens,
-    },
+    ref: defaultRefTokens,
     alias: defaultAliasTokens,
     component: defaultComponentTokens,
 };
