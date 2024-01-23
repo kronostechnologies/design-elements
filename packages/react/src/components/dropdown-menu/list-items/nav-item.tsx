@@ -7,6 +7,7 @@ import { DeviceContextProps, useDeviceContext } from '../../device-context-provi
 import { IconName } from '../../icon/icon';
 import { ScreenReaderOnlyText } from '../../screen-reader-only-text/ScreenReaderOnlyText';
 import { ItemContent } from './item-content';
+import { ExternalLink } from '../../external-link/external-link';
 
 export interface NavItemProps {
     value: string;
@@ -16,6 +17,7 @@ export interface NavItemProps {
     label?: string;
     lozenge?: string;
     end?: boolean;
+    isExternalLink?: boolean;
     isHtmlLink?: boolean;
     disabled?: boolean;
     target?: string;
@@ -63,6 +65,23 @@ export const HtmlLink = styled.a<LinkProps>`
     ${NavItemStyle};
 `;
 
+export const StyledExternalLink = styled(ExternalLink)`
+    ${NavItemStyle}
+  
+    &:visited {
+        svg {
+            color: ${({ theme }) => theme.greys.black};
+        }
+    }
+    
+    span {
+        color: ${({ theme }) => theme.greys.black};
+        padding: 0 0 0 var(--spacing-half);
+    }
+    
+    padding: 0 var(--spacing-2x);
+`;
+
 export const NavItem = forwardRef(({
     href,
     value,
@@ -71,6 +90,7 @@ export const NavItem = forwardRef(({
     label,
     disabled,
     onClick,
+    isExternalLink = false,
     isHtmlLink = false,
     lozenge,
     end,
@@ -86,9 +106,22 @@ export const NavItem = forwardRef(({
         );
     }
 
-    return (
-        <li>
-            {isHtmlLink && (
+    function renderNavItem(): ReactElement {
+        if (isExternalLink) {
+            return (
+                <StyledExternalLink
+                    disabled={disabled}
+                    href={href}
+                    label={label}
+                    onClick={onClick}
+                    target={target}
+                    $device={device}
+                />
+            );
+        }
+
+        if (isHtmlLink) {
+            return (
                 <HtmlLink
                     aria-disabled={disabled ? 'true' : 'false'}
                     ref={ref}
@@ -109,31 +142,38 @@ export const NavItem = forwardRef(({
                     />
                     {opensInNewTab && renderScreenReaderOnlyText()}
                 </HtmlLink>
-            )}
-            {!isHtmlLink && (
-                <StyledNavItem
-                    aria-disabled={disabled ? 'true' : 'false'}
-                    tabIndex={disabled ? -1 : 0}
-                    ref={ref}
-                    to={href}
-                    $hasIcon={!!iconName}
-                    $device={device}
-                    data-testid={`listitem-${value}`}
-                    disabled={disabled}
-                    end={end}
-                    target={target}
-                    onClick={disabled ? undefined : onClick}
-                >
-                    <ItemContent
-                        device={device}
-                        label={label || value}
-                        description={description}
-                        iconName={iconName}
-                        lozenge={lozenge}
-                    />
-                    {opensInNewTab && renderScreenReaderOnlyText()}
-                </StyledNavItem>
-            )}
+            );
+        }
+
+        return (
+            <StyledNavItem
+                aria-disabled={disabled ? 'true' : 'false'}
+                tabIndex={disabled ? -1 : 0}
+                ref={ref}
+                to={href}
+                $hasIcon={!!iconName}
+                $device={device}
+                data-testid={`listitem-${value}`}
+                disabled={disabled}
+                end={end}
+                target={target}
+                onClick={disabled ? undefined : onClick}
+            >
+                <ItemContent
+                    device={device}
+                    label={label || value}
+                    description={description}
+                    iconName={iconName}
+                    lozenge={lozenge}
+                />
+                {opensInNewTab && renderScreenReaderOnlyText()}
+            </StyledNavItem>
+        );
+    }
+
+    return (
+        <li>
+            {renderNavItem()}
         </li>
     );
 });

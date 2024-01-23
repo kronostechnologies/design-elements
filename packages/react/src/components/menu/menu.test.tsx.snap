@@ -50,6 +50,14 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
   background-color: #DBDEE1;
 }
 
+.c2[disabled],
+.c2[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
+}
+
 .c1 {
   color: #60666e;
   display: block;
@@ -202,6 +210,14 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
 
 .c1:hover {
   background-color: #DBDEE1;
+}
+
+.c1[disabled],
+.c1[disabled] * {
+  color: #B7BBC2;
+  cursor: default;
+  fill: #B7BBC2;
+  pointer-events: none;
 }
 
 .c2 {
