@@ -2,11 +2,12 @@ import {
     Button,
     DesignSystem,
     SectionalBanner,
-    customTheme,
     DropdownList,
-    equisoftTheme, DropdownListOption,
+    equisoftTheme,
+    themeCustomization1,
+    themeCustomization2,
+    DropdownListOption,
 } from '@equisoft/design-elements-react';
-import { ThemeCustomization } from '@equisoft/design-elements-react/dist/themes/interface/theme';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -27,11 +28,11 @@ export const Theming: Story = {
         function setCustomTheme(newSelectedTheme: DropdownListOption): void {
             setLabel(newSelectedTheme.label);
             switch (newSelectedTheme.value) {
-                case 'customTheme':
-                    setTheme(customTheme);
+                case 'customTheme1':
+                    setTheme(themeCustomization1);
                     break;
-                case 'darkTheme':
-                    setTheme(darkTheme);
+                case 'customTheme2':
+                    setTheme(themeCustomization2);
                     break;
                 case 'equisoftTheme':
                     setTheme(equisoftTheme);
@@ -55,21 +56,29 @@ export const Theming: Story = {
                 </DesignSystem>
                 <DesignSystem theme={theme}>
                     <div>
-                        <DropdownList
-                            label="Select a theme"
-                            onChange={(option) => setCustomTheme(option)}
-                            options={[
-                                {
-                                    label: 'Custom theme',
-                                    value: 'customTheme',
-                                },
-                                {
-                                    label: 'Dark Theme',
-                                    value: 'darkTheme',
-                                },
-                            ]}
-                        />
-                        <h3>{label}</h3>
+                        <div style={{ display: 'box', alignItems: 'center', gap: '2rem' }}>
+                            <h3>{label}</h3>
+                            <div style={{ width: '200px' }}>
+                                <DropdownList
+                                    onChange={(option) => setCustomTheme(option)}
+                                    defaultValue="equisoftTheme"
+                                    options={[
+                                        {
+                                            label: 'Equisoft Theme',
+                                            value: 'equisoftTheme',
+                                        },
+                                        {
+                                            label: 'Custom theme 1',
+                                            value: 'customTheme1',
+                                        },
+                                        {
+                                            label: 'Custom Theme 2',
+                                            value: 'customTheme2',
+                                        },
+                                    ]}
+                                />
+                            </div>
+                        </div>
                         <Button label="Primary" buttonType="primary" />
                         <Button label="Secondary" buttonType="secondary" />
                         <Button label="Tertiary" buttonType="tertiary" />
