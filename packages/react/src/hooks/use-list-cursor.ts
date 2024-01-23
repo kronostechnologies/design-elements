@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { getFirstElement, getLastElement, getNextElement, getPreviousElement } from '../utils/array';
+import { findFirstElement, findLastElement, findNextElement, findPreviousElement } from '../utils/array';
 
 interface UseListCursorResponse<T> {
     selectedElement: T | undefined;
@@ -26,7 +26,7 @@ export function useListCursor<TElement>({
     const [selectedElement, setSelectedElement] = useState<TElement | undefined>(initialElement);
 
     const selectFirst: () => TElement | undefined = useCallback(() => {
-        const firstElement = getFirstElement(elements, predicate);
+        const firstElement = findFirstElement(elements, predicate);
 
         if (firstElement) {
             setSelectedElement(firstElement);
@@ -36,7 +36,7 @@ export function useListCursor<TElement>({
     }, [elements, predicate]);
 
     const selectLast: () => TElement | undefined = useCallback(() => {
-        const lastElement = getLastElement(elements, predicate);
+        const lastElement = findLastElement(elements, predicate);
 
         if (lastElement) {
             setSelectedElement(lastElement);
@@ -51,7 +51,7 @@ export function useListCursor<TElement>({
         }
 
         const selectedIndex = elements.indexOf(selectedElement);
-        const previousElement = getPreviousElement(elements, selectedIndex, wrapAround, predicate);
+        const previousElement = findPreviousElement(elements, selectedIndex, predicate, { wrapAround });
 
         if (previousElement) {
             setSelectedElement(previousElement);
@@ -66,7 +66,7 @@ export function useListCursor<TElement>({
         }
 
         const selectedIndex = elements.indexOf(selectedElement);
-        const nextElement = getNextElement(elements, selectedIndex, wrapAround, predicate);
+        const nextElement = findNextElement(elements, selectedIndex, predicate, { wrapAround });
 
         if (nextElement) {
             setSelectedElement(nextElement);

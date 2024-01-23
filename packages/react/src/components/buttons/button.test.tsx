@@ -148,4 +148,32 @@ describe('Button', () => {
 
         expect(tree).toMatchSnapshot();
     });
+
+    test('focusable button has no tabIndex prop', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
+
+        expect(wrapper.find(Button).getDOMNode().getAttribute('tabIndex')).toBeNull();
+    });
+
+    test('non-focusable button has tabIndex=-1', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
+
+        expect(wrapper.find(Button).getDOMNode().getAttribute('tabIndex')).toBe('-1');
+    });
+
+    test('focusable button has focus styles', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" />);
+
+        expect(wrapper).toHaveStyleRule('outline', 'none', {
+            modifier: ':focus',
+        });
+    });
+
+    test('non-focusable button does not have focus styles', () => {
+        const wrapper = mountWithProviders(<Button buttonType="primary" label="Primary Button" focusable={false} />);
+
+        expect(wrapper).not.toHaveStyleRule('outline', 'none', {
+            modifier: ':focus',
+        });
+    });
 });

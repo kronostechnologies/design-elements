@@ -271,7 +271,7 @@ export const Menu = forwardRef(({
         switch (event.key) {
             case 'ArrowUp': {
                 event.preventDefault();
-                const previousElement = getPreviousElement(activeMenuOptions, focusedIndex, true);
+                const previousElement = getPreviousElement(activeMenuOptions, focusedIndex, { wrapAround: true });
                 if (previousElement) {
                     setFocusedIndex(previousElement.focusIndex);
                 }
@@ -279,7 +279,7 @@ export const Menu = forwardRef(({
             }
             case 'ArrowDown': {
                 event.preventDefault();
-                const nextElement = getNextElement(activeMenuOptions, focusedIndex, true);
+                const nextElement = getNextElement(activeMenuOptions, focusedIndex, { wrapAround: true });
                 if (nextElement) {
                     setFocusedIndex(nextElement.focusIndex);
                 }

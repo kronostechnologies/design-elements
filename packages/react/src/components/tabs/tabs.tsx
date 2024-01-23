@@ -79,12 +79,12 @@ export const Tabs: VoidFunctionComponent<Props> = ({
 
         switch (event.key) {
             case 'ArrowRight': {
-                const nextTabButton = getNextElement(tabItems, currentlyFocusedTabIndex, true);
+                const nextTabButton = getNextElement(tabItems, currentlyFocusedTabIndex, { wrapAround: true });
                 nextTabButton?.buttonRef.current?.focus();
                 break;
             }
             case 'ArrowLeft': {
-                const previousTabButton = getPreviousElement(tabItems, currentlyFocusedTabIndex, true);
+                const previousTabButton = getPreviousElement(tabItems, currentlyFocusedTabIndex, { wrapAround: true });
                 previousTabButton?.buttonRef.current?.focus();
                 break;
             }

@@ -436,7 +436,7 @@ describe('Combobox', () => {
         });
 
         test('Escape closes the listbox', () => {
-            const wrapper = shallow(<Combobox options={provinces} defaultOpen />);
+            const wrapper = shallow(<Combobox options={provinces} defaultOpen defaultValue="Test" />);
 
             getByTestId(wrapper, 'textbox').simulate(
                 'keydown',
@@ -444,6 +444,18 @@ describe('Combobox', () => {
             );
 
             expect(findByTestId(wrapper, 'listbox').length).toEqual(0);
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toEqual('Test');
+        });
+
+        test('Escape clears the textbox when the listbox is closed', () => {
+            const wrapper = shallow(<Combobox options={provinces} defaultValue="Test" />);
+
+            getByTestId(wrapper, 'textbox').simulate(
+                'keydown',
+                { key: 'Escape', preventDefault: jest.fn() },
+            );
+
+            expect(getByTestId(wrapper, 'textbox').prop('value')).toEqual('');
         });
 
         test('Enter selects the focused option', () => {
