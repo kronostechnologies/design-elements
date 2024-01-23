@@ -82,7 +82,6 @@ describe('NumericInput', () => {
 
     test('should display error message on invalid value', () => {
         const wrapper = mountWithTheme(<NumericInput value="2" min={100} />);
-        // eslint-disable-next-line no-console
         expect(getByTestId(wrapper, 'invalid-error-message').exists()).toBe(true);
     });
 
@@ -93,7 +92,6 @@ describe('NumericInput', () => {
 
     test('should not have error message on required when value is empty', () => {
         const wrapper = mountWithTheme(<NumericInput value="" required />);
-        // eslint-disable-next-line no-console
         expect(getByTestId(wrapper, 'invalid-error-message').exists()).toBe(false);
     });
 
