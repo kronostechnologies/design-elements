@@ -139,6 +139,6 @@ export interface ComponentTokens {
 
 export type ComponentTokensKeys = keyof ComponentTokens;
 
-export type ComponentTokensColors = {
+export type ResolvedComponentTokens = {
     [key in keyof ComponentTokens]: string;
 };

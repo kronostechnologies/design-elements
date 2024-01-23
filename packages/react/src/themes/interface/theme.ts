@@ -1,4 +1,4 @@
-import { ComponentTokensColors } from './component-tokens';
+import { ResolvedComponentTokens } from './component-tokens';
 import { AliasTokens, ComponentTokens, RefTokens } from './index';
 
 export interface ThemeCustomization {
@@ -54,5 +54,5 @@ export interface Theme {
     };
     ref: RefTokens;
     alias: AliasTokens;
-    component: ComponentTokensColors;
+    component: ResolvedComponentTokens;
 }

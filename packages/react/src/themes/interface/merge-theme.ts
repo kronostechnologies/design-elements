@@ -1,6 +1,6 @@
-import { defaultMain, defaultGreys, defaultNotifications, defaultTokens, defaultTheme } from '../default-theme/default-theme';
+import { defaultMain, defaultGreys, defaultNotifications, defaultTokens, defaultTheme } from '../default-theme';
 import { AliasTokenKeys, AliasTokens } from './alias-tokens';
-import { ComponentTokens } from './component-tokens';
+import { ComponentTokens, ResolvedComponentTokens } from './component-tokens';
 import { RefTokenKeys, RefTokens } from './ref-tokens';
 import { Theme, ThemeCustomization } from './theme';
 
@@ -13,13 +13,11 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
     };
 
     function isRefToken(token: string): token is RefTokenKeys {
-        // @ts-ignore-typing
-        return mergedTheme.ref && token in mergedTheme.ref;
+        return mergedTheme.ref ? token in mergedTheme.ref : false;
     }
 
     function isAliasToken(token: string): token is AliasTokenKeys {
-        // @ts-ignore-typing
-        return mergedTheme.alias && token in mergedTheme.alias;
+        return mergedTheme.alias ? token in mergedTheme.alias : false;
     }
 
     // Resolve references within the theme
@@ -45,7 +43,7 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
         tokens: defaultTokens,
         ref: mergedTheme.ref as RefTokens,
         alias: mergedTheme.alias as AliasTokens,
-        component: {} as ComponentTokens,
+        component: {} as ResolvedComponentTokens,
     };
 
     // Resolve component tokens
