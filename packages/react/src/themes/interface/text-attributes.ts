@@ -1,6 +1,9 @@
-export interface TextAttributes {
-    'font-weight-bold': string;
-    'transparent': string;
-}
+export type TextAttributeValue = string;
 
-export type TextAttributeKeys = keyof TextAttributes;
+export type TextAttributeTokens =
+    | 'font-weight-bold'
+    | 'transparent';
+
+export type TextAttributeTokenMap = {
+    [Token in TextAttributeTokens]: TextAttributeValue;
+};

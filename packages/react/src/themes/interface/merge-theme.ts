@@ -1,29 +1,35 @@
-import { defaultMain, defaultGreys, defaultNotifications, defaultTokens, defaultTheme } from '../default-theme';
-import { AliasTokenKeys, AliasTokens } from './alias-tokens';
+import {
+    defaultMain,
+    defaultGreys,
+    defaultNotifications,
+    defaultTokens,
+    defaultThemeCustomization,
+} from '../default-theme';
+import { AliasTokenMap, AliasTokens } from './alias-tokens';
 import { ComponentTokens, ResolvedComponentTokens } from './component-tokens';
-import { RefTokenKeys, RefTokens } from './ref-tokens';
+import { RefTokenMap, RefTokens, RefTokenValue } from './ref-tokens';
 import { Theme, ThemeCustomization } from './theme';
 
 export function mergeTheme(customization: ThemeCustomization): Theme {
     // Merge the default theme with the customization provided
     const mergedTheme: ThemeCustomization = {
-        ref: { ...defaultTheme.ref, ...customization.ref },
-        alias: { ...defaultTheme.alias, ...customization.alias },
-        component: { ...defaultTheme.component, ...customization.component },
+        ref: { ...defaultThemeCustomization.ref, ...customization.ref },
+        alias: { ...defaultThemeCustomization.alias, ...customization.alias },
+        component: { ...defaultThemeCustomization.component, ...customization.component },
     };
 
-    function isRefToken(token: string): token is RefTokenKeys {
+    function isRefToken(token: string): token is RefTokens {
         return mergedTheme.ref ? token in mergedTheme.ref : false;
     }
 
-    function isAliasToken(token: string): token is AliasTokenKeys {
+    function isAliasToken(token: string): token is AliasTokens {
         return mergedTheme.alias ? token in mergedTheme.alias : false;
     }
 
     // Resolve references within the theme
-    function resolveToken(token: keyof AliasTokens | keyof RefTokens | undefined): string {
+    function resolveToken(token: AliasTokens | RefTokens | undefined): RefTokenValue {
         if (token && isRefToken(token)) {
-            return mergedTheme.ref![token];
+            return mergedTheme.ref![token] as RefTokenValue;
         }
 
         if (token && isAliasToken(token)) {
@@ -41,17 +47,17 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
         greys: defaultGreys,
         notifications: defaultNotifications,
         tokens: defaultTokens,
-        ref: mergedTheme.ref as RefTokens,
-        alias: mergedTheme.alias as AliasTokens,
+        ref: mergedTheme.ref as RefTokenMap,
+        alias: mergedTheme.alias as AliasTokenMap,
         component: {} as ResolvedComponentTokens,
     };
 
     // Resolve component tokens
     if (mergedTheme.component) {
-        Object.keys(mergedTheme.component).forEach((key) => {
-            if (Object.prototype.hasOwnProperty.call(mergedTheme.component, key)) {
-                const token = mergedTheme.component![key as keyof ComponentTokens];
-                finalTheme.component[key as keyof ComponentTokens] = resolveToken(token);
+        Object.keys(mergedTheme.component).forEach((token) => {
+            if (Object.prototype.hasOwnProperty.call(mergedTheme.component, token)) {
+                const tokenToResolve = mergedTheme.component![token as ComponentTokens];
+                finalTheme.component[token as ComponentTokens] = resolveToken(tokenToResolve);
             }
         });
     }

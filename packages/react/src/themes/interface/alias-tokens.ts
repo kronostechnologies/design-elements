@@ -1,8 +1,9 @@
 import { RefTokens } from './ref-tokens';
 
-export interface AliasTokens {
-    'button-color-secondary': keyof AliasTokens | keyof RefTokens;
-    'interaction-color': keyof AliasTokens | keyof RefTokens;
-}
+export type AliasTokens =
+    | 'button-color-secondary'
+    | 'interaction-color';
 
-export type AliasTokenKeys = keyof AliasTokens;
+export type AliasTokenMap = {
+    [Token in AliasTokens]: RefTokens;
+}

@@ -1,144 +1,144 @@
 import { AliasTokens } from './alias-tokens';
-import { RefTokens } from './ref-tokens';
+import { RefTokens, RefTokenValue } from './ref-tokens';
 
-export interface ComponentTokens {
-    'button-primary-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-primary-inverted-disabled-text-color': keyof RefTokens | keyof AliasTokens;
+export type ComponentTokens =
+    | 'button-primary-background-color'
+    | 'button-primary-border-color'
+    | 'button-primary-text-color'
+    | 'button-primary-hover-background-color'
+    | 'button-primary-hover-border-color'
+    | 'button-primary-hover-text-color'
+    | 'button-primary-disabled-background-color'
+    | 'button-primary-disabled-border-color'
+    | 'button-primary-disabled-text-color'
+    | 'button-primary-focus-background-color'
+    | 'button-primary-focus-border-color'
+    | 'button-primary-focus-text-color'
+    | 'button-primary-inverted-background-color'
+    | 'button-primary-inverted-border-color'
+    | 'button-primary-inverted-text-color'
+    | 'button-primary-inverted-hover-background-color'
+    | 'button-primary-inverted-hover-border-color'
+    | 'button-primary-inverted-hover-text-color'
+    | 'button-primary-inverted-focus-background-color'
+    | 'button-primary-inverted-focus-border-color'
+    | 'button-primary-inverted-focus-text-color'
+    | 'button-primary-inverted-disabled-background-color'
+    | 'button-primary-inverted-disabled-border-color'
+    | 'button-primary-inverted-disabled-text-color'
+    | 'button-secondary-background-color'
+    | 'button-secondary-border-color'
+    | 'button-secondary-text-color'
+    | 'button-secondary-hover-background-color'
+    | 'button-secondary-hover-border-color'
+    | 'button-secondary-hover-text-color'
+    | 'button-secondary-disabled-background-color'
+    | 'button-secondary-disabled-border-color'
+    | 'button-secondary-disabled-text-color'
+    | 'button-secondary-focus-background-color'
+    | 'button-secondary-focus-border-color'
+    | 'button-secondary-focus-text-color'
+    | 'button-secondary-inverted-background-color'
+    | 'button-secondary-inverted-border-color'
+    | 'button-secondary-inverted-text-color'
+    | 'button-secondary-inverted-hover-background-color'
+    | 'button-secondary-inverted-hover-border-color'
+    | 'button-secondary-inverted-hover-text-color'
+    | 'button-secondary-inverted-focus-background-color'
+    | 'button-secondary-inverted-focus-border-color'
+    | 'button-secondary-inverted-focus-text-color'
+    | 'button-secondary-inverted-disabled-background-color'
+    | 'button-secondary-inverted-disabled-border-color'
+    | 'button-secondary-inverted-disabled-text-color'
+    | 'button-tertiary-background-color'
+    | 'button-tertiary-border-color'
+    | 'button-tertiary-text-color'
+    | 'button-tertiary-hover-background-color'
+    | 'button-tertiary-hover-border-color'
+    | 'button-tertiary-hover-text-color'
+    | 'button-tertiary-disabled-background-color'
+    | 'button-tertiary-disabled-border-color'
+    | 'button-tertiary-disabled-text-color'
+    | 'button-tertiary-focus-background-color'
+    | 'button-tertiary-focus-border-color'
+    | 'button-tertiary-focus-text-color'
+    | 'button-tertiary-inverted-background-color'
+    | 'button-tertiary-inverted-border-color'
+    | 'button-tertiary-inverted-text-color'
+    | 'button-tertiary-inverted-hover-background-color'
+    | 'button-tertiary-inverted-hover-border-color'
+    | 'button-tertiary-inverted-hover-text-color'
+    | 'button-tertiary-inverted-focus-background-color'
+    | 'button-tertiary-inverted-focus-border-color'
+    | 'button-tertiary-inverted-focus-text-color'
+    | 'button-tertiary-inverted-disabled-background-color'
+    | 'button-tertiary-inverted-disabled-border-color'
+    | 'button-tertiary-inverted-disabled-text-color'
+    | 'button-destructive-background-color'
+    | 'button-destructive-border-color'
+    | 'button-destructive-text-color'
+    | 'button-destructive-hover-background-color'
+    | 'button-destructive-hover-border-color'
+    | 'button-destructive-hover-text-color'
+    | 'button-destructive-disabled-background-color'
+    | 'button-destructive-disabled-border-color'
+    | 'button-destructive-disabled-text-color'
+    | 'button-destructive-focus-background-color'
+    | 'button-destructive-focus-border-color'
+    | 'button-destructive-focus-text-color'
+    | 'button-destructive-inverted-background-color'
+    | 'button-destructive-inverted-border-color'
+    | 'button-destructive-inverted-text-color'
+    | 'button-destructive-inverted-hover-background-color'
+    | 'button-destructive-inverted-hover-border-color'
+    | 'button-destructive-inverted-hover-text-color'
+    | 'button-destructive-inverted-focus-background-color'
+    | 'button-destructive-inverted-focus-border-color'
+    | 'button-destructive-inverted-focus-text-color'
+    | 'button-destructive-inverted-disabled-background-color'
+    | 'button-destructive-inverted-disabled-border-color'
+    | 'button-destructive-inverted-disabled-text-color'
+    | 'button-destructive-secondary-background-color'
+    | 'button-destructive-secondary-border-color'
+    | 'button-destructive-secondary-text-color'
+    | 'button-destructive-secondary-hover-background-color'
+    | 'button-destructive-secondary-hover-border-color'
+    | 'button-destructive-secondary-hover-text-color'
+    | 'button-destructive-secondary-disabled-background-color'
+    | 'button-destructive-secondary-disabled-border-color'
+    | 'button-destructive-secondary-disabled-text-color'
+    | 'button-destructive-secondary-focus-background-color'
+    | 'button-destructive-secondary-focus-border-color'
+    | 'button-destructive-secondary-focus-text-color'
+    | 'button-destructive-secondary-inverted-background-color'
+    | 'button-destructive-secondary-inverted-border-color'
+    | 'button-destructive-secondary-inverted-text-color'
+    | 'button-destructive-secondary-inverted-hover-background-color'
+    | 'button-destructive-secondary-inverted-hover-border-color'
+    | 'button-destructive-secondary-inverted-hover-text-color'
+    | 'button-destructive-secondary-inverted-focus-background-color'
+    | 'button-destructive-secondary-inverted-focus-border-color'
+    | 'button-destructive-secondary-inverted-focus-text-color'
+    | 'button-destructive-secondary-inverted-disabled-background-color'
+    | 'button-destructive-secondary-inverted-disabled-border-color'
+    | 'button-destructive-secondary-inverted-disabled-text-color'
+    | 'button-search-background-color'
+    | 'button-search-border-color'
+    | 'button-search-text-color'
+    | 'button-search-hover-background-color'
+    | 'button-search-hover-text-color'
+    | 'button-search-disabled-background-color'
+    | 'button-search-disabled-border-color'
+    | 'button-search-disabled-text-color';
 
-    'button-secondary-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-secondary-inverted-disabled-text-color': keyof RefTokens | keyof AliasTokens;
+export type ComponentTokenValue = AliasTokens | RefTokens;
 
-    'button-tertiary-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-tertiary-inverted-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-
-    'button-destructive-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-inverted-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-
-    'button-destructive-secondary-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-hover-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-focus-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-focus-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-focus-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-destructive-secondary-inverted-disabled-text-color': keyof RefTokens | keyof AliasTokens;
-
-    'button-search-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-hover-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-hover-text-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-disabled-background-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-disabled-border-color': keyof RefTokens | keyof AliasTokens;
-    'button-search-disabled-text-color': keyof RefTokens | keyof AliasTokens;
+export type ComponentTokenMap = {
+    [Token in ComponentTokens]: ComponentTokenValue;
 }
 
-export type ComponentTokensKeys = keyof ComponentTokens;
+export type ResolvedComponentTokenValue = RefTokenValue;
 
 export type ResolvedComponentTokens = {
-    [key in keyof ComponentTokens]: string;
-};
+    [Token in ComponentTokens]: ResolvedComponentTokenValue;
+}

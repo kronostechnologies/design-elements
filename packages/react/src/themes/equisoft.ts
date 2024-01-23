@@ -1,15 +1,16 @@
 import { ThemeCustomization } from './interface/theme';
 import {
-    defaultAlias,
-    defaultPalette, defaultTextAttributes,
-    defaultTheme,
+    defaultAliasTokens,
+    defaultPaletteTokens,
+    defaultTextAttributeTokens,
+    defaultThemeCustomization,
 } from './default-theme';
 
 export const equisoftTheme: ThemeCustomization = {
     ref: {
-        ...defaultPalette,
-        ...defaultTextAttributes,
+        ...defaultPaletteTokens,
+        ...defaultTextAttributeTokens,
     },
-    alias: defaultAlias,
-    component: defaultTheme.component,
+    alias: defaultAliasTokens,
+    component: defaultThemeCustomization.component,
 };

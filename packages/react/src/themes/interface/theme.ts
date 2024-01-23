@@ -1,10 +1,9 @@
-import { ResolvedComponentTokens } from './component-tokens';
-import { AliasTokens, ComponentTokens, RefTokens } from './index';
+import { AliasTokenMap, RefTokenMap, ComponentTokenMap, ResolvedComponentTokens } from './index';
 
 export interface ThemeCustomization {
-    ref?: Partial<RefTokens>;
-    alias?: Partial<AliasTokens>;
-    component?: Partial<ComponentTokens>;
+    ref?: Partial<RefTokenMap>;
+    alias?: Partial<AliasTokenMap>;
+    component?: Partial<ComponentTokenMap>;
 }
 
 export interface Theme {
@@ -52,7 +51,7 @@ export interface Theme {
         'modal-overlay-background-color': string;
         'overlay-box-shadow': string;
     };
-    ref: RefTokens;
-    alias: AliasTokens;
+    ref: RefTokenMap;
+    alias: AliasTokenMap;
     component: ResolvedComponentTokens;
 }

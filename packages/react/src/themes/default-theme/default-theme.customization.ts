@@ -1,5 +1,9 @@
 import { Theme, ThemeCustomization } from '../interface/theme';
-import { Palette, TextAttributes, AliasTokens } from '../interface';
+import {
+    AliasTokenMap,
+    TextAttributeTokenMap,
+    PaletteTokenMap,
+} from '../interface';
 import { defaultComponentTokens } from './default-component-tokens';
 
 export const defaultMain: Theme['main'] = {
@@ -50,7 +54,7 @@ export const defaultTokens: Theme['tokens'] = {
     'overlay-box-shadow': '0 10px 20px 0 rgba(0, 0, 0, 0.19)',
 };
 
-export const defaultPalette: Palette = {
+export const defaultPaletteTokens: PaletteTokenMap = {
     'color-brand-05': '#E0F0F9',
     'color-brand-20': '#84C6EA',
     'color-brand-50': '#006296',
@@ -96,21 +100,21 @@ export const defaultPalette: Palette = {
     'color-discovery-70': '#3A1C60',
 };
 
-export const defaultTextAttributes: TextAttributes = {
+export const defaultTextAttributeTokens: TextAttributeTokenMap = {
     'font-weight-bold': 'bold',
     transparent: 'transparent',
 };
 
-export const defaultAlias: AliasTokens = {
+export const defaultAliasTokens: AliasTokenMap = {
     'button-color-secondary': 'color-brand-05',
     'interaction-color': 'color-brand-50',
 };
 
-export const defaultTheme: ThemeCustomization = {
+export const defaultThemeCustomization: ThemeCustomization = {
     ref: {
-        ...defaultPalette,
-        ...defaultTextAttributes,
+        ...defaultPaletteTokens,
+        ...defaultTextAttributeTokens,
     },
-    alias: defaultAlias,
+    alias: defaultAliasTokens,
     component: defaultComponentTokens,
 };

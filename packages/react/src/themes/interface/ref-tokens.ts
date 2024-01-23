@@ -1,6 +1,10 @@
-import { Palette, PaletteKeys } from './palette';
-import { TextAttributeKeys, TextAttributes } from './text-attributes';
+import { PaletteTokens, PaletteValue } from './palette';
+import { TextAttributeTokens, TextAttributeValue } from './text-attributes';
 
-export type RefTokens = Palette & TextAttributes;
+export type RefTokenValue = PaletteValue | TextAttributeValue;
 
-export type RefTokenKeys = PaletteKeys & TextAttributeKeys
+export type RefTokens = PaletteTokens | TextAttributeTokens;
+
+export type RefTokenMap = {
+    [Token in RefTokens]: RefTokenValue;
+}

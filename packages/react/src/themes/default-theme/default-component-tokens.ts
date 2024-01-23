@@ -1,6 +1,6 @@
-import { ComponentTokens } from '../interface';
+import { ComponentTokenMap } from '../interface';
 
-export const defaultComponentTokens: ComponentTokens = {
+export const defaultComponentTokens: ComponentTokenMap = {
     'button-primary-background-color': 'color-brand-50',
     'button-primary-inverted-background-color': 'color-white',
     'button-primary-border-color': 'color-brand-50',
