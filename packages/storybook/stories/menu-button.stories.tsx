@@ -109,6 +109,22 @@ const optionsWithIconsAndSubmenu: MenuButtonProps['options'] = [
     },
 ];
 
+const optionsWithDisabled = [
+    {
+        label: 'Option 1',
+        onClick: () => console.info('Option 1 clicked'),
+    },
+    {
+        label: 'Option 2',
+        disabled: true,
+        onClick: () => console.info('Option 2 clicked'),
+    },
+    {
+        label: 'Option 3',
+        onClick: () => console.info('Option 3 clicked'),
+    },
+];
+
 export const Normal: Story = () => (
     <>
         <MenuButton options={options} buttonType="primary">Button</MenuButton>
@@ -146,6 +162,10 @@ export const OptionsWithIcons: Story = () => (
         <MenuButton options={optionsWithIcons} buttonType="primary">Button</MenuButton>
         <MenuButton options={optionsWithIconsAndSubmenu} buttonType="primary">With submenu</MenuButton>
     </>
+);
+
+export const OptionsWithDisabled: Story = () => (
+    <MenuButton options={optionsWithDisabled} buttonType="primary">Button</MenuButton>
 );
 
 const optionsWithGroups: MenuButtonProps['options'] = [

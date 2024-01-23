@@ -47,7 +47,7 @@ const options: NavItemProps[] = [
         label: 'Google',
         value: 'google',
         href: 'https://www.google.ca',
-        isHtmlLink: true,
+        isExternalLink: true,
     },
 ];
 
