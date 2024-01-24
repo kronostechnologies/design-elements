@@ -1,2 +1,2 @@
 export * from './equisoft';
-export * from './interface';
+export * from './tokens';

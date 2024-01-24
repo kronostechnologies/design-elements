@@ -9,7 +9,7 @@ import {
 import styled from 'styled-components';
 import { useDataAttributes } from '../../hooks/use-data-attributes';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { focus } from '../../utils/css-state';
 import { isLetterOrNumber } from '../../utils/regex';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';

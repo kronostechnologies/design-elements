@@ -1,2 +1,2 @@
-export * from './default-theme.customization';
+export * from './default-theme';
 export * from './default-component-tokens';

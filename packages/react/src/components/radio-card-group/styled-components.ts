@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { focus } from '../../utils/css-state';
 
 interface InputContainerProps {

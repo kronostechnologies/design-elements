@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 
 export type StatusType = 'enabled' | 'disabled' | 'blocked';
 

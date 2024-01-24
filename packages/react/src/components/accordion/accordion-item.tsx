@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { Button } from '../buttons/button';
 import { Icon } from '../icon/icon';
 import { Heading, Type, Tag } from '../heading/heading';

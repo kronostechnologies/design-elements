@@ -10,7 +10,7 @@ import {
 import styled, { css, ThemedCssFunction } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { Button } from '../buttons/button';
 import { IconButton } from '../buttons/icon-button';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';

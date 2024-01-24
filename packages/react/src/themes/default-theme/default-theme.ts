@@ -1,9 +1,9 @@
-import { Theme, ThemeCustomization } from '../interface/theme';
+import { Theme, ThemeCustomization } from '../tokens/theme';
 import {
     AliasTokenMap,
     TextAttributeTokenMap,
     PaletteTokenMap, RefTokenMap,
-} from '../interface';
+} from '../tokens';
 import { defaultComponentTokens } from './default-component-tokens';
 
 export const defaultMain: Theme['main'] = {
@@ -115,7 +115,7 @@ export const defaultAliasTokens: AliasTokenMap = {
     'interaction-color': 'color-brand-50',
 };
 
-export const defaultThemeCustomization: ThemeCustomization = {
+export const defaultTheme: ThemeCustomization = {
     ref: defaultRefTokens,
     alias: defaultAliasTokens,
     component: defaultComponentTokens,

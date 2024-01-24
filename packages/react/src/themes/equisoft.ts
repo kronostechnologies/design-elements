@@ -1,9 +1,9 @@
-import { ThemeCustomization } from './interface/theme';
+import { ThemeCustomization } from './tokens/theme';
 import {
     defaultAliasTokens,
     defaultPaletteTokens,
     defaultTextAttributeTokens,
-    defaultThemeCustomization,
+    defaultTheme,
 } from './default-theme';
 
 export const equisoftTheme: ThemeCustomization = {
@@ -12,5 +12,5 @@ export const equisoftTheme: ThemeCustomization = {
         ...defaultTextAttributeTokens,
     },
     alias: defaultAliasTokens,
-    component: defaultThemeCustomization.component,
+    component: defaultTheme.component,
 };

@@ -1,6 +1,6 @@
 import { ReactText, VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 
 const Container = styled.div`
     p {

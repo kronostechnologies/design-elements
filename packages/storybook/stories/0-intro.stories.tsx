@@ -4,12 +4,11 @@ import {
     SectionalBanner,
     DropdownList,
     equisoftTheme,
-    themeCustomization1,
-    themeCustomization2,
     DropdownListOption,
 } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+import { ThemeCustomization1, ThemeCustomization2 } from '../test-theme';
 
 const meta: Meta = {
     title: 'Introduction',
@@ -29,10 +28,10 @@ export const Theming: Story = {
             setLabel(newSelectedTheme.label);
             switch (newSelectedTheme.value) {
                 case 'customTheme1':
-                    setTheme(themeCustomization1);
+                    setTheme(ThemeCustomization1);
                     break;
                 case 'customTheme2':
-                    setTheme(themeCustomization2);
+                    setTheme(ThemeCustomization2);
                     break;
                 case 'equisoftTheme':
                     setTheme(equisoftTheme);

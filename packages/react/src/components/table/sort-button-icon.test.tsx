@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { useTheme } from '../../hooks/use-theme';
-import { equisoftTheme } from '../../themes/interface/theme';
+import { equisoftTheme } from '../../themes/tokens/theme';
 import { SortButtonIcon } from './sort-button-icon';
 
 jest.mock('../../hooks/use-theme');

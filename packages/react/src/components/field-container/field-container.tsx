@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { InvalidField } from '../feedbacks/invalid-field';
 import { Label } from '../label/label';

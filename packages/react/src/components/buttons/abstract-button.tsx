@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef, PropsWithChildren, Ref } from 'react';
 import styled, { css, FlattenInterpolation, ThemeProps } from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { focus } from '../../utils/css-state';
 
 type Size = 'small' | 'medium';
@@ -48,10 +48,6 @@ export const defaultButtonStyles = css<{ isMobile: boolean, size?: Size }>`
     user-select: none;
 
     ${(props) => focus(props, true)};
-
-    &:not(:disabled) {
-        cursor: pointer;
-    }
 
     > svg {
         color: inherit;

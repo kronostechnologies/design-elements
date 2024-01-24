@@ -2,8 +2,8 @@ import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStyle } from '../../styles';
 import { equisoftTheme } from '../../themes';
-import { mergeTheme } from '../../themes/interface/merge-theme';
-import { ThemeCustomization } from '../../themes/interface/theme';
+import { mergeTheme } from '../../themes/merge-theme';
+import { ThemeCustomization } from '../../themes/tokens/theme';
 import { ShadowWrapper } from '../shadow-wrapper/shadow-wrapper';
 
 export interface ThemeWrapperProps {

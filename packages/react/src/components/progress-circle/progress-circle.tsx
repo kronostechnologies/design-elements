@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../themes/interface/theme';
+import { Theme } from '../../themes/tokens/theme';
 import { Circle } from '../circle/circle';
 
 const RADIUS = 62;

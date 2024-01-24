@@ -3,19 +3,19 @@ import {
     defaultGreys,
     defaultNotifications,
     defaultTokens,
-    defaultThemeCustomization,
-} from '../default-theme';
-import { AliasTokenMap, AliasTokens } from './alias-tokens';
-import { ComponentTokens, ResolvedComponentTokens } from './component-tokens';
-import { RefTokenMap, RefTokens, RefTokenValue } from './ref-tokens';
-import { Theme, ThemeCustomization } from './theme';
+    defaultTheme,
+} from './default-theme';
+import { AliasTokenMap, AliasTokens } from './tokens/alias-tokens';
+import { ComponentTokens, ResolvedComponentTokens } from './tokens/component-tokens';
+import { RefTokenMap, RefTokens, RefTokenValue } from './tokens/ref-tokens';
+import { Theme, ThemeCustomization } from './tokens/theme';
 
 export function mergeTheme(customization: ThemeCustomization): Theme {
     // Merge the default theme with the customization provided
     const mergedTheme: ThemeCustomization = {
-        ref: { ...defaultThemeCustomization.ref, ...customization.ref },
-        alias: { ...defaultThemeCustomization.alias, ...customization.alias },
-        component: { ...defaultThemeCustomization.component, ...customization.component },
+        ref: { ...defaultTheme.ref, ...customization.ref },
+        alias: { ...defaultTheme.alias, ...customization.alias },
+        component: { ...defaultTheme.component, ...customization.component },
     };
 
     function isRefToken(token: string): token is RefTokens {
@@ -36,14 +36,18 @@ export function mergeTheme(customization: ThemeCustomization): Theme {
             const aliasToken = mergedTheme.alias![token];
 
             if (aliasToken === token) {
-                throw new Error(`Self-referencing AliasToken detected: '${token}'`);
+                // eslint-disable-next-line no-console
+                console.error(`Self-referencing AliasToken detected: '${token}'`);
+                return '';
             }
 
             return resolveToken(aliasToken);
         }
 
         // Fallback in case of unresolved token
-        throw new Error(`Token '${token}' not found in RefTokens or AliasTokens`);
+        // eslint-disable-next-line no-console
+        console.error(`Token '${token}' not found in RefTokens or AliasTokens`);
+        return '';
     }
 
     // Final theme with resolved values

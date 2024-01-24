@@ -3,9 +3,9 @@ import {
     defaultGreys,
     defaultNotifications,
     defaultTokens, defaultRefTokens, defaultAliasTokens,
-} from '../default-theme';
+} from './default-theme';
 import { mergeTheme } from './merge-theme';
-import { ThemeCustomization } from './theme';
+import { ThemeCustomization } from './tokens/theme';
 
 const customization : ThemeCustomization = {
     ref: {
@@ -82,7 +82,10 @@ describe('mergeTheme', () => {
             expectedTheme.component['button-primary-border-color'],
         );
     });
-    it('should throw an error for an unresolved token', () => {
+    it('should log an error for for an unresolved token', () => {
+        const consoleSpy = jest.spyOn(console, 'error');
+        consoleSpy.mockImplementation(() => {});
+
         const token = 'invalid-token';
         const invalidCustomizationWithUnresolvedToken : ThemeCustomization = {
             component: {
@@ -90,13 +93,16 @@ describe('mergeTheme', () => {
                 'button-primary-background-color': 'invalid-token',
             },
         };
-        expect(() => {
-            // @ts-ignore-unresolved-token-test-purpose
-            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-            mergeTheme(invalidCustomizationWithUnresolvedToken).component[token];
-        }).toThrowError(`Token '${token}' not found in RefTokens or AliasTokens`);
+
+        mergeTheme(invalidCustomizationWithUnresolvedToken);
+
+        expect(consoleSpy).toHaveBeenCalledWith(`Token '${token}' not found in RefTokens or AliasTokens`);
+        consoleSpy.mockRestore();
     });
-    it('should throw an error for a self-referenced AliasToken', () => {
+    it('should log an error for self-referencing AliasToken', () => {
+        const consoleSpy = jest.spyOn(console, 'error');
+        consoleSpy.mockImplementation(() => {});
+
         const token = 'button-color-secondary';
         const invalidCustomizationWithSelfReferenced : ThemeCustomization = {
             alias: {
@@ -108,10 +114,9 @@ describe('mergeTheme', () => {
             },
         };
 
-        expect(() => {
-            // @ts-ignore-unresolved-token-test-purpose
-            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-            mergeTheme(invalidCustomizationWithSelfReferenced).component[token];
-        }).toThrowError(`Self-referencing AliasToken detected: '${token}'`);
+        mergeTheme(invalidCustomizationWithSelfReferenced);
+
+        expect(consoleSpy).toHaveBeenCalledWith(`Self-referencing AliasToken detected: '${token}'`);
+        consoleSpy.mockRestore();
     });
 });

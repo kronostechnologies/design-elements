@@ -90,9 +90,8 @@ export { Pagination } from './components/pagination/pagination';
 
 // Themes
 export { equisoftTheme } from './themes/equisoft';
-export { themeCustomization1, themeCustomization2 } from './themes/test-theme';
 export { injectMainCss } from './styles';
-export { Theme } from './themes/interface/theme';
+export { Theme } from './themes/tokens/theme';
 
 // Hooks
 export { useTheme } from './hooks/use-theme';

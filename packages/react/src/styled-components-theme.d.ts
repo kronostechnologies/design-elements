@@ -1,4 +1,4 @@
-import { Theme } from './themes/interface/theme';
+import { Theme } from './themes/tokens/theme';
 
 declare module 'styled-components' {
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
