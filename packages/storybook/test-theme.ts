@@ -1,4 +1,4 @@
-import { ThemeCustomization } from '@equisoft/design-elements-react/dist/themes/interface/theme';
+import { ThemeCustomization } from '@equisoft/design-elements-react/dist/themes/tokens/theme';
 
 export const ThemeCustomization1: ThemeCustomization = {
     ref: {
