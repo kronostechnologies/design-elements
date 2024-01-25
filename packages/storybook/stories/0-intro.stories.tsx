@@ -19,7 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof DesignSystem>;
 
-export const ThemeCustomization1: ThemeCustomization = {
+const ThemeCustomization1: ThemeCustomization = {
     ref: {
         'color-brand-50': '#00874E',
         'color-brand-20': '#9EDBC1',
@@ -44,7 +44,7 @@ export const ThemeCustomization1: ThemeCustomization = {
     },
 };
 
-export const ThemeCustomization2: ThemeCustomization = {
+const ThemeCustomization2: ThemeCustomization = {
     ref: {
         'color-brand-05': '#e9e0f9',
         'color-brand-20': '#ad84ea',
