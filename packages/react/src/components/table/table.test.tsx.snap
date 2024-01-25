@@ -2,8 +2,11 @@
 
 exports[`Table has aria-label on header columns 1`] = `
 .c2 {
-  border-top: 1px solid #DBDEE1;
   background-color: #FFFFFF;
+}
+
+.c2:not(:first-child) {
+  border-top: 1px solid #DBDEE1;
 }
 
 .c2 td {
@@ -13,10 +16,21 @@ exports[`Table has aria-label on header columns 1`] = `
 .c1 {
   background-color: #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+}
+
+.c1:before {
+  border-bottom: 1px solid #DBDEE1;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
 }
 
 .c0 {
   border-collapse: collapse;
+  color: #1B1C1E;
   width: 100%;
 }
 
@@ -65,6 +79,7 @@ exports[`Table has aria-label on header columns 1`] = `
         aria-label="column 1 aria label"
         class="c1"
         scope="col"
+        startoffset="0"
         style="text-align:left"
       >
         Column 1
@@ -73,6 +88,7 @@ exports[`Table has aria-label on header columns 1`] = `
         aria-label="column 2 aria label"
         class="c1"
         scope="col"
+        startoffset="150"
         style="text-align:left"
       />
     </tr>
@@ -84,12 +100,14 @@ exports[`Table has aria-label on header columns 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         World
@@ -101,12 +119,14 @@ exports[`Table has aria-label on header columns 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Planet
@@ -118,12 +138,14 @@ exports[`Table has aria-label on header columns 1`] = `
     >
       <td
         class=""
+        startoffset="0"
         style="text-align:left"
       >
         Hello
       </td>
       <td
         class=""
+        startoffset="150"
         style="text-align:left"
       >
         Galaxy
