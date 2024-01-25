@@ -19,6 +19,7 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
         'react-hooks/rules-of-hooks': 'off',
+        'jsx-quotes': [2, 'prefer-double'],
         'storybook/prefer-pascal-case': 'error',
     },
     settings: {

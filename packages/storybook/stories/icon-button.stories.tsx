@@ -31,7 +31,7 @@ export const Disabled: Story = () => (
         <IconButton label="mail" buttonType="secondary" iconName="mail" disabled />
         <IconButton label="map" buttonType="tertiary" iconName="mapPin" disabled />
         <IconButton label="Delete" buttonType="destructive" iconName="x" disabled />
-        <IconButton label="Delete" buttonType='destructive-secondary' iconName="x" disabled />
+        <IconButton label="Delete" buttonType="destructive-secondary" iconName="x" disabled />
     </>
 );
 
