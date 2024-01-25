@@ -183,7 +183,7 @@ function getRenderedColumns<T extends object>(rowNumbers: boolean, columns: Tabl
 }
 
 const StyledTable = styled.table<StyledTableProps>`
-    background: inherit;
+    background: white;
     border-collapse: collapse;
     color: ${({ theme }) => theme.greys['neutral-90']};
     width: 100%;
