@@ -1,12 +1,6 @@
 import { AliasTokenMap, RefTokenMap, ComponentTokenMap, ResolvedComponentTokens } from './index';
 
-export interface ThemeCustomization {
-    ref?: Partial<RefTokenMap>;
-    alias?: Partial<AliasTokenMap>;
-    component?: Partial<ComponentTokenMap>;
-}
-
-export interface Theme {
+export interface LegacyTheme {
     main: {
         'primary-1.1': string;
         'primary-1.2': string;
@@ -51,6 +45,23 @@ export interface Theme {
         'modal-overlay-background-color': string;
         'overlay-box-shadow': string;
     };
+}
+
+export interface ThemeCustomization {
+    main?: Partial<LegacyTheme['main']>;
+    greys?: Partial<LegacyTheme['greys']>;
+    notifications?: Partial<LegacyTheme['notifications']>;
+    tokens?: Partial<LegacyTheme['tokens']>;
+    ref?: Partial<RefTokenMap>;
+    alias?: Partial<AliasTokenMap>;
+    component?: Partial<ComponentTokenMap>;
+}
+
+export interface Theme {
+    main: LegacyTheme['main'];
+    greys: LegacyTheme['greys'];
+    notifications: LegacyTheme['notifications'];
+    tokens: LegacyTheme['tokens'];
     ref: RefTokenMap;
     alias: AliasTokenMap;
     component: ResolvedComponentTokens;
