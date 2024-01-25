@@ -120,6 +120,7 @@ jobs:
       - name: Run ESLint
         uses: equisoft-actions/yarn-eslint@v2
         with:
+          report-name: react-eslint.sarif
           working-directory: packages/react
 
   react_stylelint:
@@ -139,9 +140,10 @@ jobs:
         with:
           working-directory: ${{ env.working_directory }}
 
-      - name: Run ESLint
+      - name: Run Stylelint
         uses: equisoft-actions/yarn-stylelint@v1
         with:
+          report-name: react-stylelint.sarif
           working-directory: packages/react
 
       - name: Create annotations
@@ -286,6 +288,7 @@ jobs:
       - name: Run ESLint
         uses: equisoft-actions/yarn-eslint@v2
         with:
+          report-name: storybook-eslint.sarif
           working-directory: packages/storybook
 
   storybook_stylelint:
@@ -313,9 +316,10 @@ jobs:
         with:
           working-directory: ${{ env.working_directory }}
 
-      - name: Run ESLint
+      - name: Run Stylelint
         uses: equisoft-actions/yarn-stylelint@v1
         with:
+          report-name: storybook-stylelint.sarif
           working-directory: packages/storybook
 
       - name: Create annotations
